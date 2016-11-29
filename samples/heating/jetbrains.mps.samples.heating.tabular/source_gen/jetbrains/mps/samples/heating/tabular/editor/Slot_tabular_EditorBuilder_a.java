@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.samples.heating.behavior.Slot__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
-import jetbrains.mps.samples.heating.behavior.Slot__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -41,12 +41,15 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setCellId("Collection_ggt0rc_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_ggt0rc_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_ggt0rc_a0a()) {
       editorCell.addEditorCell(createConstant_ggt0rc_a0());
     }
     editorCell.addEditorCell(createProperty_ggt0rc_b0());
     editorCell.addEditorCell(createConstant_ggt0rc_c0());
     return editorCell;
+  }
+  private boolean nodeCondition_ggt0rc_a0a() {
+    return (boolean) Slot__BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(myNode);
   }
   private EditorCell createConstant_ggt0rc_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "customizing");
@@ -56,9 +59,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_ggt0rc_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) Slot__BehaviorDescriptor.isCustomizing_idNU25Mr1t4q.invoke(node);
   }
   private EditorCell createProperty_ggt0rc_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

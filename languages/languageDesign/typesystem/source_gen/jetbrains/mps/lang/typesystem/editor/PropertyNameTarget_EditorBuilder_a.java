@@ -58,10 +58,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     SingleRoleCellProvider provider = new PropertyNameTarget_EditorBuilder_a.propertyNameSingleRoleHandler_mqpyhp_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, 0x11db54c4ff3L, "propertyName"), getEditorContext());
     return provider.createCell();
   }
-  private class propertyNameSingleRoleHandler_mqpyhp_b0 extends SingleRoleCellProvider {
+  private static class propertyNameSingleRoleHandler_mqpyhp_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public propertyNameSingleRoleHandler_mqpyhp_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -69,7 +80,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, 0x11db54c4ff3L, "propertyName"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db54b106bL, 0x11db54c4ff3L, "propertyName"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("propertyName");

@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
@@ -49,10 +49,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createComponent_yg6waa_a0());
-    if (renderingCondition_yg6waa_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_yg6waa_a1a()) {
       editorCell.addEditorCell(createCollection_yg6waa_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_yg6waa_a1a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator"))).isNotEmpty();
   }
   private EditorCell createComponent_yg6waa_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component");
@@ -69,9 +72,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.addEditorCell(createConstant_yg6waa_c1a());
     return editorCell;
   }
-  private static boolean renderingCondition_yg6waa_a1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator"))).isNotEmpty();
-  }
   private EditorCell createConstant_yg6waa_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_yg6waa_a1a");
@@ -85,10 +85,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     SingleRoleCellProvider provider = new TreeSetCreator_EditorBuilder_a.comparatorSingleRoleHandler_yg6waa_b1a(myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator"), getEditorContext());
     return provider.createCell();
   }
-  private class comparatorSingleRoleHandler_yg6waa_b1a extends SingleRoleCellProvider {
+  private static class comparatorSingleRoleHandler_yg6waa_b1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public comparatorSingleRoleHandler_yg6waa_b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -96,7 +107,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4838d33L, 0x1f622b3701eae8beL, "comparator"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("comparator");

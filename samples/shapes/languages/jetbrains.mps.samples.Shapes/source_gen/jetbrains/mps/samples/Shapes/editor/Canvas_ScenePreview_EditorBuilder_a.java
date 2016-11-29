@@ -99,10 +99,21 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class shapesListHandler_3bcydw_a2a extends RefNodeListHandler {
+  private static class shapesListHandler_3bcydw_a2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public shapesListHandler_3bcydw_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -141,11 +152,11 @@ import jetbrains.mps.samples.Shapes.behavior.PreviewFactory;
     return editorCell;
   }
   private EditorCell createJComponent_3bcydw_a2c0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Canvas_ScenePreview_EditorBuilder_a._QueryFunction_JComponent_3bcydw_a0c2a(myNode, getEditorContext()), "_3bcydw_a2c0");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_3bcydw_a0c2a(), "_3bcydw_a2c0");
     editorCell.setCellId("JComponent_3bcydw_a2c0");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_3bcydw_a0c2a(final SNode node, final EditorContext editorContext) {
-    return PreviewFactory.createPanel(node);
+  private JComponent _QueryFunction_JComponent_3bcydw_a0c2a() {
+    return PreviewFactory.createPanel(myNode);
   }
 }

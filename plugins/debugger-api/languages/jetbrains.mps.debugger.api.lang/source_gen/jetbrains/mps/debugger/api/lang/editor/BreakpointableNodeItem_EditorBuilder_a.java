@@ -52,10 +52,10 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setCellId("Collection_4n0rw6_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_4n0rw6_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_4n0rw6_a0a()) {
       editorCell.addEditorCell(createCollection_4n0rw6_a0());
     }
-    if (renderingCondition_4n0rw6_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_4n0rw6_a1a()) {
       editorCell.addEditorCell(createCollection_4n0rw6_b0());
     }
     editorCell.addEditorCell(createConstant_4n0rw6_c0());
@@ -63,15 +63,18 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.addEditorCell(createConstant_4n0rw6_e0());
     return editorCell;
   }
+  private boolean nodeCondition_4n0rw6_a0a() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x79747203892d4cd6L, "isComplex")));
+  }
+  private boolean nodeCondition_4n0rw6_a1a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x79747203892d4cd6L, "isComplex"));
+  }
   private EditorCell createCollection_4n0rw6_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
     editorCell.setCellId("Collection_4n0rw6_a0");
     editorCell.addEditorCell(createConstant_4n0rw6_a0a());
     editorCell.addEditorCell(createCollection_4n0rw6_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_4n0rw6_a0a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x79747203892d4cd6L, "isComplex")));
   }
   private EditorCell createConstant_4n0rw6_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "for concepts:");
@@ -100,10 +103,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class conceptsToCreateBreakpointListHandler_4n0rw6_b1a0 extends RefNodeListHandler {
+  private static class conceptsToCreateBreakpointListHandler_4n0rw6_b1a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public conceptsToCreateBreakpointListHandler_4n0rw6_b1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -141,9 +155,6 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.addEditorCell(createCollection_4n0rw6_b1a());
     return editorCell;
   }
-  private static boolean renderingCondition_4n0rw6_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x79747203892d4cd6L, "isComplex"));
-  }
   private EditorCell createConstant_4n0rw6_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is breakpoint applicable:");
     editorCell.setCellId("Constant_4n0rw6_a1a");
@@ -165,10 +176,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new BreakpointableNodeItem_EditorBuilder_a.isApplicableBreakpointSingleRoleHandler_4n0rw6_b1b0(myNode, MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2b1681328a5d11f6L, "isApplicableBreakpoint"), getEditorContext());
     return provider.createCell();
   }
-  private class isApplicableBreakpointSingleRoleHandler_4n0rw6_b1b0 extends SingleRoleCellProvider {
+  private static class isApplicableBreakpointSingleRoleHandler_4n0rw6_b1b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public isApplicableBreakpointSingleRoleHandler_4n0rw6_b1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -176,7 +198,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2b1681328a5d11f6L, "isApplicableBreakpoint"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2b1681328a5d11f6L, "isApplicableBreakpoint"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("isApplicableBreakpoint");
@@ -218,10 +240,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new BreakpointableNodeItem_EditorBuilder_a.createBreakpointSingleRoleHandler_4n0rw6_b3a(myNode, MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2bd07aa080dfb938L, "createBreakpoint"), getEditorContext());
     return provider.createCell();
   }
-  private class createBreakpointSingleRoleHandler_4n0rw6_b3a extends SingleRoleCellProvider {
+  private static class createBreakpointSingleRoleHandler_4n0rw6_b3a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public createBreakpointSingleRoleHandler_4n0rw6_b3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -229,7 +262,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2bd07aa080dfb938L, "createBreakpoint"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xfbc142795e2a4c87L, 0xa5d15f7061e6c456L, 0x2bd07aa080dfb937L, 0x2bd07aa080dfb938L, "createBreakpoint"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("createBreakpoint");

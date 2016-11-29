@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
@@ -17,8 +19,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -50,14 +50,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setCellId("Collection_e4lyhc_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_e4lyhc_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_e4lyhc_a0a()) {
       editorCell.addEditorCell(createProperty_e4lyhc_a0());
     }
     editorCell.addEditorCell(createRefNode_e4lyhc_b0());
-    if (renderingCondition_e4lyhc_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_e4lyhc_a2a()) {
       editorCell.addEditorCell(createProperty_e4lyhc_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_e4lyhc_a0a() {
+    return SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH");
+  }
+  private boolean nodeCondition_e4lyhc_a2a() {
+    return !(SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH"));
   }
   private EditorCell createProperty_e4lyhc_a0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -78,17 +84,25 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_e4lyhc_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH");
-  }
   private EditorCell createRefNode_e4lyhc_b0() {
     SingleRoleCellProvider provider = new Quantity_EditorBuilder_a.amountSingleRoleHandler_e4lyhc_b0(myNode, MetaAdapterFactory.getContainmentLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c6b1dL, "amount"), getEditorContext());
     return provider.createCell();
   }
-  private class amountSingleRoleHandler_e4lyhc_b0 extends SingleRoleCellProvider {
+  private static class amountSingleRoleHandler_e4lyhc_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public amountSingleRoleHandler_e4lyhc_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -96,7 +110,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c6b1dL, "amount"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c6b1dL, "amount"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("amount");
@@ -132,8 +146,5 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private static boolean renderingCondition_e4lyhc_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102dbf92b68L, 0x102dc0c5503L, "unit"), "USD", "USD_KWH"));
   }
 }

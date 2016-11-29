@@ -62,7 +62,7 @@ import jetbrains.mps.util.NameUtil;
     Style style = new StyleImpl();
     new VariableNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_j36akn_a0(myNode, getEditorContext())) {
+    if (nodeCondition_j36akn_a0()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.addKeyMap(new IgnoreRightSquareBracketInVariableName());
@@ -75,10 +75,10 @@ import jetbrains.mps.util.NameUtil;
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext) {
-    boolean condition = SNodeOperations.getConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))) != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"))) {
-      return condition && !((boolean) Type__BehaviorDescriptor.hasMissingParameters_id32KZwowVoMu.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
+  private boolean nodeCondition_j36akn_a0() {
+    boolean condition = SNodeOperations.getConcept(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))) != MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type");
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type"))) {
+      return condition && !((boolean) Type__BehaviorDescriptor.hasMissingParameters_id32KZwowVoMu.invoke(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"))));
     } else {
       return condition;
     }

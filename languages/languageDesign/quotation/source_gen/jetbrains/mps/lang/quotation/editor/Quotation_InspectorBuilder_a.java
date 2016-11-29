@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
@@ -63,13 +63,19 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_29llnk_a0a());
-    if (renderingCondition_29llnk_a1a0(myNode, getEditorContext())) {
+    if (nodeCondition_29llnk_a1a0()) {
       editorCell.addEditorCell(createReadOnlyModelAccessor_29llnk_b0a());
     }
-    if (renderingCondition_29llnk_a2a0(myNode, getEditorContext())) {
+    if (nodeCondition_29llnk_a2a0()) {
       editorCell.addEditorCell(createError_29llnk_c0a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_29llnk_a1a0() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) != null;
+  }
+  private boolean nodeCondition_29llnk_a2a0() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) == null;
   }
   private EditorCell createConstant_29llnk_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "concept:");
@@ -98,9 +104,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setCellId("ReadOnlyModelAccessor_29llnk_b0a");
     return editorCell;
   }
-  private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) != null;
-  }
   public static class Quotation_component_cellMenu_29llnk_a0b0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
     public Quotation_component_cellMenu_29llnk_a0b0a() {
@@ -115,9 +118,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setCellId("Error_29llnk_c0a");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new Quotation_InspectorBuilder_a.Quotation_component_cellMenu_29llnk_a0c0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
-  }
-  private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x1168c104659L, 0x1168c10465aL, "quotedNode")) == null;
   }
   public static class Quotation_component_cellMenu_29llnk_a0c0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;

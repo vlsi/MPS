@@ -156,16 +156,27 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     AbstractCellListHandler handler = new UtilityMethodCall_EditorBuilder_a.parameterListHandler_26flog_c0(myNode, "parameter", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_26flog_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_26flog_a2a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_26flog_c0 extends RefNodeListHandler {
+  private static class parameterListHandler_26flog_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_26flog_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -216,8 +227,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return editorCell;
     }
   }
-  private static boolean renderingCondition_26flog_a2a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall")), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isNotEmpty();
+  private boolean nodeCondition_26flog_a2a() {
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(SNodeOperations.cast(myNode, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, "jetbrains.mps.lang.textGen.structure.UtilityMethodCall")), MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isNotEmpty();
   }
   private EditorCell createConstant_26flog_d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ")");
@@ -228,16 +239,16 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_26flog_a3a(myNode, getEditorContext())) {
+    if (nodeCondition_26flog_a3a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_26flog_a3a(SNode node, EditorContext editorContext) {
-    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")) == null) {
+  private boolean nodeCondition_26flog_a3a() {
+    if (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f6faa8c98L, 0x11f6fac17ecL, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
   }
 }

@@ -54,7 +54,7 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
 
   private EditorCell createAlternation_1uorir_a() {
     boolean alternationCondition = true;
-    alternationCondition = XmlAttribute_EditorBuilder_a.renderingCondition_1uorir_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_1uorir_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_1uorir_a0();
@@ -68,8 +68,8 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_1uorir_a0(SNode node, EditorContext editorContext) {
-    return (boolean) XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(node);
+  private boolean nodeCondition_1uorir_a0() {
+    return (boolean) XmlBaseAttribute__BehaviorDescriptor.isMultiline_id2EZ251fZScc.invoke(myNode);
   }
   private EditorCell createCollection_1uorir_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -139,14 +139,25 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class valueListHandler_1uorir_a3a0 extends RefNodeListHandler {
+  private static class valueListHandler_1uorir_a3a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public valueListHandler_1uorir_a3a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
     }
     public EditorCell createNodeCell(SNode elementNode) {
@@ -249,14 +260,25 @@ import jetbrains.mps.smodel.language.LanguageRegistry;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class valueListHandler_1uorir_d0a extends RefNodeListHandler {
+  private static class valueListHandler_1uorir_d0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public valueListHandler_1uorir_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1fL, "jetbrains.mps.core.xml.structure.XmlTextValue"));
     }
     public EditorCell createNodeCell(SNode elementNode) {

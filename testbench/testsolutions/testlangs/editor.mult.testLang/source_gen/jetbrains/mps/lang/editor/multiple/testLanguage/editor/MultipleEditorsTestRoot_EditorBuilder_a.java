@@ -113,7 +113,7 @@ import java.util.Collections;
       editorCell.addEditorCell(createRefNodeList_zejl81_c0c0());
       editorCell.addEditorCell(createConstant_zejl81_d0c0());
       editorCell.addEditorCell(createCollection_zejl81_e0c0());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -147,10 +147,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class richChildListHandler_zejl81_c0c0 extends RefNodeListHandler {
+  private static class richChildListHandler_zejl81_c0c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public richChildListHandler_zejl81_c0c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -200,7 +211,7 @@ import java.util.Collections;
       editorCell.addEditorCell(createConstant_zejl81_a4a2a());
       editorCell.addEditorCell(createConstant_zejl81_b4a2a());
       editorCell.addEditorCell(createRefNodeList_zejl81_c4a2a());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -234,10 +245,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class compactChildListHandler_zejl81_c4a2a extends RefNodeListHandler {
+  private static class compactChildListHandler_zejl81_c4a2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public compactChildListHandler_zejl81_c4a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -302,10 +324,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class defaultChildListHandler_zejl81_e2a extends RefNodeListHandler {
+  private static class defaultChildListHandler_zejl81_e2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public defaultChildListHandler_zejl81_e2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -380,18 +413,18 @@ import java.util.Collections;
     editorCell.getStyle().putAll(style);
     try {
       getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a9c0(getNode(), getEditorContext())).toGenericArray(String.class));
+      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a9c0()).toGenericArray(String.class));
       editorCell.addEditorCell(createRefNodeList_zejl81_a9c0());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
     return editorCell;
   }
-  private Iterable<String> getEditorHints_zejl81_a9c0(SNode node, EditorContext editorContext) {
-    if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x6aae07ffdad12101L, "projectionType"), "rich", null)) {
+  private Iterable<String> getEditorHints_zejl81_a9c0() {
+    if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x6aae07ffdad12101L, "projectionType"), "rich", null)) {
       return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich");
-    } else if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x6aae07ffdad12101L, "projectionType"), "compact", null)) {
+    } else if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x6aae07ffdad12101L, "projectionType"), "compact", null)) {
       return Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact");
     }
     return Collections.emptyList();
@@ -408,10 +441,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class conditionallyProjectedChildListHandler_zejl81_a9c0 extends RefNodeListHandler {
+  private static class conditionallyProjectedChildListHandler_zejl81_a9c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public conditionallyProjectedChildListHandler_zejl81_a9c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -471,7 +515,7 @@ import java.util.Collections;
       editorCell.addEditorCell(createConstant_zejl81_c21c0());
       editorCell.addEditorCell(createCollection_zejl81_d21c0());
       editorCell.addEditorCell(createConstant_zejl81_e21c0());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -515,20 +559,20 @@ import java.util.Collections;
     editorCell.getStyle().putAll(style);
     try {
       getCellFactory().pushCellContext();
-      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a3m2a(getNode(), getEditorContext())).toGenericArray(String.class));
-      getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a3m2a_0(getNode(), getEditorContext())).toGenericArray(String.class));
+      getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a3m2a()).toGenericArray(String.class));
+      getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_zejl81_a3m2a_0()).toGenericArray(String.class));
       editorCell.addEditorCell(createRefNodeList_zejl81_a3m2a());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
     return editorCell;
   }
-  private Iterable<String> getEditorHints_zejl81_a3m2a(SNode node, EditorContext editorContext) {
-    return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x69f8aea9c55aac7aL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
+  private Iterable<String> getEditorHints_zejl81_a3m2a() {
+    return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x69f8aea9c55aac7aL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact") : Collections.<String>emptyList());
   }
-  private Iterable<String> getEditorHints_zejl81_a3m2a_0(SNode node, EditorContext editorContext) {
-    return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x69f8aea9c55aac7aL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
+  private Iterable<String> getEditorHints_zejl81_a3m2a_0() {
+    return (SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a80051c66e94bfcL, 0x9698b12adfed3d9fL, 0x5c5c8f07ee27ef15L, 0x69f8aea9c55aac7aL, "projectAsCompact")) ? Collections.singletonList("jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich") : Collections.<String>emptyList());
   }
   private EditorCell createRefNodeList_zejl81_a3m2a() {
     AbstractCellListHandler handler = new MultipleEditorsTestRoot_EditorBuilder_a.conditionallyRichOrCompactChildListHandler_zejl81_a3m2a(myNode, "conditionallyRichOrCompactChild", getEditorContext());
@@ -542,10 +586,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class conditionallyRichOrCompactChildListHandler_zejl81_a3m2a extends RefNodeListHandler {
+  private static class conditionallyRichOrCompactChildListHandler_zejl81_a3m2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public conditionallyRichOrCompactChildListHandler_zejl81_a3m2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -602,7 +657,7 @@ import java.util.Collections;
       getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.unsupported"});
       editorCell.addEditorCell(createConstant_zejl81_a41c0());
       editorCell.addEditorCell(createRefNodeList_zejl81_b41c0());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -630,10 +685,21 @@ import java.util.Collections;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class notSupportedPresentationListHandler_zejl81_b41c0 extends RefNodeListHandler {
+  private static class notSupportedPresentationListHandler_zejl81_b41c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public notSupportedPresentationListHandler_zejl81_b41c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

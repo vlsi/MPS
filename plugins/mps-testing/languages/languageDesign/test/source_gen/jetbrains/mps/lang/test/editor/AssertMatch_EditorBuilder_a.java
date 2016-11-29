@@ -90,10 +90,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class beforeListHandler_nev4di_c0 extends RefNodeListHandler {
+  private static class beforeListHandler_nev4di_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public beforeListHandler_nev4di_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -168,10 +179,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class afterListHandler_nev4di_g0 extends RefNodeListHandler {
+  private static class afterListHandler_nev4di_g0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public afterListHandler_nev4di_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

@@ -71,10 +71,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new MoneyCreator_EditorBuilder_a.amountSingleRoleHandler_ccfkrk_c0(myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473383db1L, "amount"), getEditorContext());
     return provider.createCell();
   }
-  private class amountSingleRoleHandler_ccfkrk_c0 extends SingleRoleCellProvider {
+  private static class amountSingleRoleHandler_ccfkrk_c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public amountSingleRoleHandler_ccfkrk_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -82,7 +93,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473383db1L, "amount"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473383db1L, "amount"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("amount");
@@ -110,10 +121,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new MoneyCreator_EditorBuilder_a.currencySingleRoleHandler_ccfkrk_e0(myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473390f4aL, "currency"), getEditorContext());
     return provider.createCell();
   }
-  private class currencySingleRoleHandler_ccfkrk_e0 extends SingleRoleCellProvider {
+  private static class currencySingleRoleHandler_ccfkrk_e0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public currencySingleRoleHandler_ccfkrk_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -121,7 +143,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473390f4aL, "currency"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf43135f9b8334685L, 0x8d26ffb6c8215f72L, 0x11472ff5968L, 0x11473390f4aL, "currency"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("currency");

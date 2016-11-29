@@ -11,13 +11,13 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class ClassConcept_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -50,11 +50,14 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createProperty_uj0cpq_b0());
     editorCell.addEditorCell(createConstant_uj0cpq_c0());
     editorCell.addEditorCell(createProperty_uj0cpq_d0());
-    if (renderingCondition_uj0cpq_a4a_0(myNode, getEditorContext())) {
+    if (nodeCondition_uj0cpq_a4a_0()) {
       editorCell.addEditorCell(createCollection_uj0cpq_e0());
     }
     editorCell.addEditorCell(createComponent_uj0cpq_f0());
     return editorCell;
+  }
+  private boolean nodeCondition_uj0cpq_a4a_0() {
+    return (boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(myNode) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_uj0cpq_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "abstract");
@@ -113,9 +116,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_uj0cpq_a4a());
     editorCell.addEditorCell(createProperty_uj0cpq_b4a());
     return editorCell;
-  }
-  private static boolean renderingCondition_uj0cpq_a4a_0(SNode node, EditorContext editorContext) {
-    return (boolean) Classifier__BehaviorDescriptor.isInner_idsWroEc0xXl.invoke(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface")));
   }
   private EditorCell createConstant_uj0cpq_a4a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "static");

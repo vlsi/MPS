@@ -66,14 +66,25 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class commandsListHandler_yxeg41_a0 extends RefNodeListHandler {
+  private static class commandsListHandler_yxeg41_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public commandsListHandler_yxeg41_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ee0a16L, "jetbrains.mps.samples.Kaja.structure.EmptyLine"));
     }
     public EditorCell createNodeCell(SNode elementNode) {

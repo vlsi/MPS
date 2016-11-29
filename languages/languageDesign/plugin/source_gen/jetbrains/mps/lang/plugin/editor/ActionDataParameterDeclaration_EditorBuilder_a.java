@@ -107,7 +107,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       editorCell.setRole("key");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_d8l4wt_a0d0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_d8l4wt_a0d0());
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -167,8 +167,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return editorCell;
     }
   }
-  private static boolean _StyleParameter_QueryFunction_d8l4wt_a0d0(EditorContext editorContext, SNode node) {
-    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key")));
+  private boolean _StyleParameter_QueryFunction_d8l4wt_a0d0() {
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key")));
   }
   private EditorCell createRefNodeList_d8l4wt_e0() {
     AbstractCellListHandler handler = new ActionDataParameterDeclaration_EditorBuilder_a.conditionListHandler_d8l4wt_e0(myNode, "condition", getEditorContext());
@@ -177,10 +177,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class conditionListHandler_d8l4wt_e0 extends RefNodeListHandler {
+  private static class conditionListHandler_d8l4wt_e0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public conditionListHandler_d8l4wt_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

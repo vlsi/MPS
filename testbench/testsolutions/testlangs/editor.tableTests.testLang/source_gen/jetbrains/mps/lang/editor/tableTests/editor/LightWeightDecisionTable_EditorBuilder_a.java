@@ -36,11 +36,11 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
   private EditorCell createTable_qbxdb8_a() {
     TableModelFactory creator = new TableModelFactory() {
-      public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
-        return new XYCTableModel(node, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121001L, "column")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121026L, "row")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121027L, "body")), editorContext) {};
+      public TableModel createTableModel() {
+        return new XYCTableModel(myNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121001L, "column")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121026L, "row")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x6a2febf37d11d3dfL, 0x6a2febf37d121027L, "body")), getEditorContext()) {};
       }
     };
-    EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(myNode, getEditorContext()), "Table_qbxdb8_a");
+    EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(), "Table_qbxdb8_a");
     editorCell.setCellId("Table_qbxdb8_a_0");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());

@@ -205,10 +205,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_q42gqn_d0 extends RefNodeListHandler {
+  private static class parameterListHandler_q42gqn_d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_q42gqn_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -292,10 +303,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new TemplateSwitch_EditorBuilder_a.nullInputMessageSingleRoleHandler_q42gqn_b0b5a(myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11d88828be1L, "nullInputMessage"), getEditorContext());
     return provider.createCell();
   }
-  private class nullInputMessageSingleRoleHandler_q42gqn_b0b5a extends SingleRoleCellProvider {
+  private static class nullInputMessageSingleRoleHandler_q42gqn_b0b5a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public nullInputMessageSingleRoleHandler_q42gqn_b0b5a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -303,7 +325,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11d88828be1L, "nullInputMessage"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11d88828be1L, "nullInputMessage"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("nullInputMessage");
@@ -371,10 +393,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class reductionMappingRuleListHandler_q42gqn_b4b5a extends RefNodeListHandler {
+  private static class reductionMappingRuleListHandler_q42gqn_b4b5a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public reductionMappingRuleListHandler_q42gqn_b4b5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -440,10 +473,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new TemplateSwitch_EditorBuilder_a.defaultConsequenceSingleRoleHandler_q42gqn_b7b5a(myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11013877b73L, "defaultConsequence"), getEditorContext());
     return provider.createCell();
   }
-  private class defaultConsequenceSingleRoleHandler_q42gqn_b7b5a extends SingleRoleCellProvider {
+  private static class defaultConsequenceSingleRoleHandler_q42gqn_b7b5a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public defaultConsequenceSingleRoleHandler_q42gqn_b7b5a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -451,7 +495,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11013877b73L, "defaultConsequence"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10313ed7688L, 0x11013877b73L, "defaultConsequence"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("defaultConsequence");

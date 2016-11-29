@@ -138,16 +138,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     AbstractCellListHandler handler = new OperationCall_EditorBuilder_a.parameterListHandler_hquq1v_b0(myNode, "parameter", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_hquq1v_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_hquq1v_a1a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_hquq1v_b0 extends RefNodeListHandler {
+  private static class parameterListHandler_hquq1v_b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_hquq1v_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -198,7 +209,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
       return editorCell;
     }
   }
-  private static boolean renderingCondition_hquq1v_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, 0x11f5b7f02d9L, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isNotEmpty();
+  private boolean nodeCondition_hquq1v_a1a() {
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4ba6faaaL, 0x11f5b7f02d9L, "function")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isNotEmpty();
   }
 }

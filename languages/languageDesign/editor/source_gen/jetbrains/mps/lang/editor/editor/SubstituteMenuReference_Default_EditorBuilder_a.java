@@ -72,14 +72,14 @@ import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuP
     editorCell.setCellId("Constant_h77kbg_a0");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_h77kbg_a0a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_h77kbg_a0a0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new SubstituteMenuReference_Default_EditorBuilder_a.ReplaceWith_ISubstituteMenuReference_cellMenu_h77kbg_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  private static SNode _StyleParameter_QueryFunction_h77kbg_a0a0(EditorContext editorContext, SNode node) {
-    final SNode concept = SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
+  private SNode _StyleParameter_QueryFunction_h77kbg_a0a0() {
+    final SNode concept = SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept"));
     if ((concept == null)) {
       return null;
     }

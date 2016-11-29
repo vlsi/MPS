@@ -8,13 +8,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class XmlContent_EditorBuilder_a extends AbstractEditorBuilder {
@@ -42,23 +42,26 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createError_91idit_a0());
-    if (renderingCondition_91idit_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_91idit_a1a()) {
       editorCell.addEditorCell(createConstant_91idit_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_91idit_a1a() {
+    return (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(myNode);
   }
   private EditorCell createError_91idit_a0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<no content>");
     editorCell.setCellId("Error_91idit_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_91idit_a0a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_91idit_a0a0());
     style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_91idit_a0a0(EditorContext editorContext, SNode node) {
-    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+  private boolean _StyleParameter_QueryFunction_91idit_a0a0() {
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(getNode());
   }
   private EditorCell createConstant_91idit_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
@@ -69,8 +72,5 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_91idit_a1a(SNode node, EditorContext editorContext) {
-    return (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
   }
 }

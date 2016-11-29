@@ -150,10 +150,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new FoldingContainer_EditorBuilder_a.collapsedByDefaultSingleRoleHandler_mc5axy_g2a(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0x569b712fbc6572f1L, "collapsedByDefault"), getEditorContext());
     return provider.createCell();
   }
-  private class collapsedByDefaultSingleRoleHandler_mc5axy_g2a extends SingleRoleCellProvider {
+  private static class collapsedByDefaultSingleRoleHandler_mc5axy_g2a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public collapsedByDefaultSingleRoleHandler_mc5axy_g2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -161,7 +172,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0x569b712fbc6572f1L, "collapsedByDefault"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0x569b712fbc6572f1L, "collapsedByDefault"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("collapsedByDefault");
@@ -212,10 +223,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new FoldingContainer_EditorBuilder_a.collapsedConditionallySingleRoleHandler_mc5axy_k2a(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab9716356L, "collapsedConditionally"), getEditorContext());
     return provider.createCell();
   }
-  private class collapsedConditionallySingleRoleHandler_mc5axy_k2a extends SingleRoleCellProvider {
+  private static class collapsedConditionallySingleRoleHandler_mc5axy_k2a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public collapsedConditionallySingleRoleHandler_mc5axy_k2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -223,7 +245,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab9716356L, "collapsedConditionally"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab9716356L, "collapsedConditionally"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("collapsedConditionally");

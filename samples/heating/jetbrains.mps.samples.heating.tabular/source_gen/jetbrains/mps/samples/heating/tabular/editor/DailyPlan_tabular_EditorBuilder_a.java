@@ -8,16 +8,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -73,17 +73,26 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
     editorCell.setCellId("Collection_dgsw3q_a0a");
     editorCell.addEditorCell(createConstant_dgsw3q_a0a0());
-    if (renderingCondition_dgsw3q_a1a0a(myNode, getEditorContext())) {
+    if (nodeCondition_dgsw3q_a1a0a()) {
       editorCell.addEditorCell(createConstant_dgsw3q_b0a0());
     }
     editorCell.addEditorCell(createRefNode_dgsw3q_c0a0());
-    if (renderingCondition_dgsw3q_a3a0a(myNode, getEditorContext())) {
+    if (nodeCondition_dgsw3q_a3a0a()) {
       editorCell.addEditorCell(createConstant_dgsw3q_d0a0());
     }
-    if (renderingCondition_dgsw3q_a4a0a(myNode, getEditorContext())) {
+    if (nodeCondition_dgsw3q_a4a0a()) {
       editorCell.addEditorCell(createConstant_dgsw3q_e0a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_dgsw3q_a1a0a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) != null);
+  }
+  private boolean nodeCondition_dgsw3q_a3a0a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) == null);
+  }
+  private boolean nodeCondition_dgsw3q_a4a0a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) != null);
   }
   private EditorCell createConstant_dgsw3q_a0a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Daily plan");
@@ -106,17 +115,25 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_dgsw3q_a1a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) != null);
-  }
   private EditorCell createRefNode_dgsw3q_c0a0() {
     SingleRoleCellProvider provider = new DailyPlan_tabular_EditorBuilder_a.customizesSingleRoleHandler_dgsw3q_c0a0(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes"), getEditorContext());
     return provider.createCell();
   }
-  private class customizesSingleRoleHandler_dgsw3q_c0a0 extends SingleRoleCellProvider {
+  private static class customizesSingleRoleHandler_dgsw3q_c0a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public customizesSingleRoleHandler_dgsw3q_c0a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -124,7 +141,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("customizes");
@@ -162,9 +179,6 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     editorCell.setSubstituteInfo(new SChildSubstituteInfo(editorCell));
     return editorCell;
   }
-  private static boolean renderingCondition_dgsw3q_a3a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) == null);
-  }
   private EditorCell createConstant_dgsw3q_e0a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "plan");
     editorCell.setCellId("Constant_dgsw3q_e0a0");
@@ -175,12 +189,9 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_dgsw3q_a4a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0xcfa085c9af881f8L, "customizes")) != null);
-  }
   private EditorCell createTable_dgsw3q_b0a() {
     TableModelFactory creator = new TableModelFactory() {
-      public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
+      public TableModel createTableModel() {
         return new AbstractTableModel() {
           @Override
           public int getColumnCount() {
@@ -188,18 +199,18 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
           }
           @Override
           public int getRowCount() {
-            return 1 + ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).count();
+            return 1 + ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).count();
           }
           @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
-              return SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x40bcae6c0e686ffeL, "applicability"));
+              return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x40bcae6c0e686ffeL, "applicability"));
             }
             if (column == 0 && row > 0) {
-              return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(row - 1);
+              return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(row - 1);
             }
             if (row > 0 && column > 0) {
-              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(row - 1), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event"));
+              SNode item = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(row - 1), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event"));
               return item;
             }
             return null;
@@ -207,9 +218,9 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
-              SNode slot = DailyPlan__BehaviorDescriptor.slotByStartTime_id2XgRSpVOzcU.invoke(node, ((int) (row - 1)));
+              SNode slot = DailyPlan__BehaviorDescriptor.slotByStartTime_id2XgRSpVOzcU.invoke(myNode, ((int) (row - 1)));
               if (slot == null) {
-                SNode item = SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot")));
+                SNode item = SNodeFactoryOperations.addNewChild(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot")));
                 SPropertyOperations.set(item, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"), "" + (row - 1));
                 SPropertyOperations.set(SLinkOperations.getTarget(item, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature"), "" + (20));
               }
@@ -226,13 +237,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
             }
             SNode slot = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, "jetbrains.mps.samples.heating.structure.Slot")), null);
             SPropertyOperations.set(SLinkOperations.getTarget(slot, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe289dd1L, "event")), MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec62L, 0x4644aa4ce08aec70L, "temperature"), "" + (20));
-            SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).last())));
+            SNode prevSlot = (rowNumber == 1 ? null : ((ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).count() > rowNumber - 2 ? ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).getElement(rowNumber - 2) : ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).last())));
             if (prevSlot != null) {
               SPropertyOperations.set(slot, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"), "" + (SPropertyOperations.getInteger(prevSlot, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start")) + 1));
             } else {
               SPropertyOperations.set(slot, MetaAdapterFactory.getProperty(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4f786d85fe288176L, 0x4f786d85fe28827cL, "start"), "" + (0));
             }
-            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).insertElement(rowNumber - 1, slot);
+            ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).insertElement(rowNumber - 1, slot);
             return;
           }
           @Override
@@ -244,13 +255,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
             if (rowNumber <= 0) {
               return;
             }
-            ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).removeElementAt(rowNumber - 1);
+            ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, 0x4644aa4ce08aec57L, "items"))).removeElementAt(rowNumber - 1);
             return;
           }
         };
       }
     };
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(myNode, getEditorContext()), "Table_dgsw3q_b0a");
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(), "Table_dgsw3q_b0a");
     editorCell.setCellId("Table_dgsw3q_b0a_0");
     return editorCell;
   }

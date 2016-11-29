@@ -48,13 +48,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_qmyjjk_a1a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_qmyjjk_a1a0());
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_qmyjjk_a1a0(EditorContext editorContext, SNode node) {
-    return (SNodeOperations.getPrevSibling(node) != null);
+  private boolean _StyleParameter_QueryFunction_qmyjjk_a1a0() {
+    return (SNodeOperations.getPrevSibling(getNode()) != null);
   }
   private EditorCell createProperty_qmyjjk_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

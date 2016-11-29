@@ -11,6 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -25,8 +27,6 @@ import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 /*package*/ class InferenceRule_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -52,22 +52,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.setCellId("Collection_robprv_a_0");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_robprv_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_robprv_a0a()) {
       editorCell.addEditorCell(createCollection_robprv_a0_0());
     }
-    if (renderingCondition_robprv_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_robprv_a1a()) {
       editorCell.addEditorCell(createRefNodeList_robprv_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_robprv_a0a() {
+    return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency"))).isNotEmpty();
+  }
+  private boolean nodeCondition_robprv_a1a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency"))).isNotEmpty();
   }
   private EditorCell createCollection_robprv_a0_0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
     editorCell.setCellId("Collection_robprv_a0_0");
     editorCell.addEditorCell(createConstant_robprv_a0a_0());
     return editorCell;
-  }
-  private static boolean renderingCondition_robprv_a0a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency"))).isNotEmpty();
   }
   private EditorCell createConstant_robprv_a0a_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "user-defined dependencies(advanced):");
@@ -86,10 +89,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class dependencyListHandler_robprv_b0 extends RefNodeListHandler {
+  private static class dependencyListHandler_robprv_b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public dependencyListHandler_robprv_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -116,8 +130,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
         }
       }
     }
-  }
-  private static boolean renderingCondition_robprv_a1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2f5efaL, 0x115f0161343L, "dependency"))).isNotEmpty();
   }
 }

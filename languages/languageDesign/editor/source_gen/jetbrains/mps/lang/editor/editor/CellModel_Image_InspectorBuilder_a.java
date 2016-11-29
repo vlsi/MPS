@@ -112,10 +112,21 @@ import javax.swing.JComponent;
     SingleRoleCellProvider provider = new CellModel_Image_InspectorBuilder_a.imagePathProviderSingleRoleHandler_yczb8_b0d0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x11204b37791L, "imagePathProvider"), getEditorContext());
     return provider.createCell();
   }
-  private class imagePathProviderSingleRoleHandler_yczb8_b0d0 extends SingleRoleCellProvider {
+  private static class imagePathProviderSingleRoleHandler_yczb8_b0d0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public imagePathProviderSingleRoleHandler_yczb8_b0d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -123,7 +134,7 @@ import javax.swing.JComponent;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x11204b37791L, "imagePathProvider"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1095e12de6fL, 0x11204b37791L, "imagePathProvider"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("imagePathProvider");
@@ -192,15 +203,15 @@ import javax.swing.JComponent;
     return editorCell;
   }
   private EditorCell createJComponent_yczb8_b1b3a() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, CellModel_Image_InspectorBuilder_a._QueryFunction_JComponent_yczb8_a1b1d0(myNode, getEditorContext()), "_yczb8_b1b3a");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_yczb8_a1b1d0(), "_yczb8_b1b3a");
     editorCell.setCellId("JComponent_yczb8_b1b3a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_yczb8_a1b1d0(final SNode node, final EditorContext editorContext) {
-    return new SelectImageFileButton(node, editorContext);
+  private JComponent _QueryFunction_JComponent_yczb8_a1b1d0() {
+    return new SelectImageFileButton(myNode, getEditorContext());
   }
   private EditorCell createCollection_yczb8_c3a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);

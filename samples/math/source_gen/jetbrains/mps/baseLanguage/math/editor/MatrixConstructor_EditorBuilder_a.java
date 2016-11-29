@@ -51,7 +51,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
   private EditorCell createAlternation_lhhqxl_a() {
     boolean alternationCondition = true;
-    alternationCondition = MatrixConstructor_EditorBuilder_a.renderingCondition_lhhqxl_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_lhhqxl_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_lhhqxl_a0();
@@ -65,8 +65,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_lhhqxl_a0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, 0x308cb55abc73bd40L, "column"));
+  private boolean nodeCondition_lhhqxl_a0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x42d5783a626b0a85L, 0x308cb55abc73bd40L, "column"));
   }
   private EditorCell createCollection_lhhqxl_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -98,10 +98,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class componentsListHandler_lhhqxl_b0a extends RefNodeListHandler {
+  private static class componentsListHandler_lhhqxl_b0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public componentsListHandler_lhhqxl_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -169,10 +180,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class componentsListHandler_lhhqxl_b0a_0 extends RefNodeListHandler {
+  private static class componentsListHandler_lhhqxl_b0a_0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public componentsListHandler_lhhqxl_b0a_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

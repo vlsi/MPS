@@ -8,20 +8,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 
 /*package*/ class SelectInEditorOperation_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -51,11 +51,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.addEditorCell(createConstant_gmlwwp_b0());
     editorCell.addEditorCell(createConstant_gmlwwp_c0());
     editorCell.addEditorCell(createRefNode_gmlwwp_d0());
-    if (renderingCondition_gmlwwp_a4a(myNode, getEditorContext())) {
+    if (nodeCondition_gmlwwp_a4a()) {
       editorCell.addEditorCell(createCollection_gmlwwp_e0());
     }
     editorCell.addEditorCell(createConstant_gmlwwp_f0());
     return editorCell;
+  }
+  private boolean nodeCondition_gmlwwp_a4a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"))).isNotEmpty();
   }
   private EditorCell createConstant_gmlwwp_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "select");
@@ -92,10 +95,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     SingleRoleCellProvider provider = new SelectInEditorOperation_EditorBuilder_a.editorContextSingleRoleHandler_gmlwwp_d0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), getEditorContext());
     return provider.createCell();
   }
-  private class editorContextSingleRoleHandler_gmlwwp_d0 extends SingleRoleCellProvider {
+  private static class editorContextSingleRoleHandler_gmlwwp_d0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public editorContextSingleRoleHandler_gmlwwp_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -103,7 +117,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0e947adeL, "editorContext"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("editorContext");
@@ -134,13 +148,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.addEditorCell(createConstant_gmlwwp_a4a());
     editorCell.addEditorCell(createConstant_gmlwwp_b4a());
     editorCell.addEditorCell(createRefNode_gmlwwp_c4a());
-    if (renderingCondition_gmlwwp_a3e0(myNode, getEditorContext())) {
+    if (nodeCondition_gmlwwp_a3e0()) {
       editorCell.addEditorCell(createCollection_gmlwwp_d4a());
     }
     return editorCell;
   }
-  private static boolean renderingCondition_gmlwwp_a4a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"))).isNotEmpty();
+  private boolean nodeCondition_gmlwwp_a3e0() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x320558d6ffc96d72L, "selectionStart"))).isNotEmpty();
   }
   private EditorCell createConstant_gmlwwp_a4a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
@@ -168,10 +182,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     SingleRoleCellProvider provider = new SelectInEditorOperation_EditorBuilder_a.cellSelectorSingleRoleHandler_gmlwwp_c4a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), getEditorContext());
     return provider.createCell();
   }
-  private class cellSelectorSingleRoleHandler_gmlwwp_c4a extends SingleRoleCellProvider {
+  private static class cellSelectorSingleRoleHandler_gmlwwp_c4a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public cellSelectorSingleRoleHandler_gmlwwp_c4a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -179,7 +204,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x1b0a9b8c0eb90bdeL, "cellSelector"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("cellSelector");
@@ -207,13 +232,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.addEditorCell(createConstant_gmlwwp_a3e0());
     editorCell.addEditorCell(createConstant_gmlwwp_b3e0());
     editorCell.addEditorCell(createRefNode_gmlwwp_c3e0());
-    if (renderingCondition_gmlwwp_a3d4a(myNode, getEditorContext())) {
+    if (nodeCondition_gmlwwp_a3d4a()) {
       editorCell.addEditorCell(createCollection_gmlwwp_d3e0());
     }
     return editorCell;
   }
-  private static boolean renderingCondition_gmlwwp_a3e0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x320558d6ffc96d72L, "selectionStart"))).isNotEmpty();
+  private boolean nodeCondition_gmlwwp_a3d4a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x257f272033b0db88L, "selectionEnd"))).isNotEmpty();
   }
   private EditorCell createConstant_gmlwwp_a3e0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
@@ -241,10 +266,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     SingleRoleCellProvider provider = new SelectInEditorOperation_EditorBuilder_a.selectionStartSingleRoleHandler_gmlwwp_c3e0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x320558d6ffc96d72L, "selectionStart"), getEditorContext());
     return provider.createCell();
   }
-  private class selectionStartSingleRoleHandler_gmlwwp_c3e0 extends SingleRoleCellProvider {
+  private static class selectionStartSingleRoleHandler_gmlwwp_c3e0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public selectionStartSingleRoleHandler_gmlwwp_c3e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -252,7 +288,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x320558d6ffc96d72L, "selectionStart"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x320558d6ffc96d72L, "selectionStart"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("selectionStart");
@@ -285,9 +321,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     editorCell.addEditorCell(createRefNode_gmlwwp_c3d4a());
     return editorCell;
   }
-  private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x257f272033b0db88L, "selectionEnd"))).isNotEmpty();
-  }
   private EditorCell createConstant_gmlwwp_a3d4a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ",");
     editorCell.setCellId("Constant_gmlwwp_a3d4a");
@@ -314,10 +347,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     SingleRoleCellProvider provider = new SelectInEditorOperation_EditorBuilder_a.selectionEndSingleRoleHandler_gmlwwp_c3d4a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x257f272033b0db88L, "selectionEnd"), getEditorContext());
     return provider.createCell();
   }
-  private class selectionEndSingleRoleHandler_gmlwwp_c3d4a extends SingleRoleCellProvider {
+  private static class selectionEndSingleRoleHandler_gmlwwp_c3d4a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public selectionEndSingleRoleHandler_gmlwwp_c3d4a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -325,7 +369,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x257f272033b0db88L, "selectionEnd"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, 0x257f272033b0db88L, "selectionEnd"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("selectionEnd");

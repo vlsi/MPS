@@ -159,10 +159,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class actualArgumentListHandler_il97sk_c0a extends RefNodeListHandler {
+  private static class actualArgumentListHandler_il97sk_c0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public actualArgumentListHandler_il97sk_c0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

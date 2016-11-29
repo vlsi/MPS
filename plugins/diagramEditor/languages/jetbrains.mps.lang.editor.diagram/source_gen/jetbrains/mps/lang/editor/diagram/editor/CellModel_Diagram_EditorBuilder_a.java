@@ -108,14 +108,25 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class diagramElementsListHandler_7br2q0_e0 extends RefNodeListHandler {
+  private static class diagramElementsListHandler_7br2q0_e0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public diagramElementsListHandler_7br2q0_e0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
-    private String getSeparatorText(EditorContext context, SNode node) {
+    private String getSeparatorText() {
       return ",";
     }
     public EditorCell createNodeCell(SNode elementNode) {
@@ -143,7 +154,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     @Override
     public EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), diagramElementsListHandler_7br2q0_e0.this.getSeparatorText(getEditorContext(), prevNode));
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), diagramElementsListHandler_7br2q0_e0.this.getSeparatorText());
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
@@ -168,10 +179,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new CellModel_Diagram_EditorBuilder_a.paletteDeclarationSingleRoleHandler_7br2q0_g0(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, 0x5bdb7aaec1476e7cL, "paletteDeclaration"), getEditorContext());
     return provider.createCell();
   }
-  private class paletteDeclarationSingleRoleHandler_7br2q0_g0 extends SingleRoleCellProvider {
+  private static class paletteDeclarationSingleRoleHandler_7br2q0_g0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public paletteDeclarationSingleRoleHandler_7br2q0_g0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -179,7 +201,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, 0x5bdb7aaec1476e7cL, "paletteDeclaration"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, 0x5bdb7aaec1476e7cL, "paletteDeclaration"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("paletteDeclaration");

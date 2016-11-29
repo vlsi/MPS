@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -28,8 +30,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBraceStyleClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
 
 /*package*/ class KeyMapKeystroke_EditorBuilder_a extends AbstractEditorBuilder {
@@ -63,11 +63,14 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.addEditorCell(createConstant_paq7mh_e0());
     editorCell.addEditorCell(createProperty_paq7mh_f0());
     editorCell.addEditorCell(createConstant_paq7mh_g0());
-    if (renderingCondition_paq7mh_a7a(myNode, getEditorContext())) {
+    if (nodeCondition_paq7mh_a7a()) {
       editorCell.addEditorCell(createProperty_paq7mh_h0());
     }
     editorCell.addEditorCell(createContextAssistant_paq7mh_i0());
     return editorCell;
+  }
+  private boolean nodeCondition_paq7mh_a7a() {
+    return isNotEmptyString(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null));
   }
   private EditorCell createConstant_paq7mh_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
@@ -197,9 +200,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private static boolean renderingCondition_paq7mh_a7a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L, 0x5e2b603c8f03ab4dL, "change"), null));
   }
   private EditorCell createContextAssistant_paq7mh_i0() {
     EditorCell editorCell = new EditorCell_ContextAssistantComponent(getEditorContext(), myNode);

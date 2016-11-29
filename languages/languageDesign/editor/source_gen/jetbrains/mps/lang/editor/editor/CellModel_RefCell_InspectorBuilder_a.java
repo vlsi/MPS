@@ -13,6 +13,9 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.headerStyleClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.propertyStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
@@ -20,12 +23,9 @@ import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.Referenc
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /*package*/ class CellModel_RefCell_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -87,14 +87,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setCellId("Collection_lfsepz_d0");
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_lfsepz_a3a());
-    if (renderingCondition_lfsepz_a1d0(myNode, getEditorContext())) {
+    if (nodeCondition_lfsepz_a1d0()) {
       editorCell.addEditorCell(createCollection_lfsepz_b3a());
     }
     editorCell.addEditorCell(createCollection_lfsepz_c3a());
-    if (renderingCondition_lfsepz_a3d0(myNode, getEditorContext())) {
+    if (nodeCondition_lfsepz_a3d0()) {
       editorCell.addEditorCell(createCollection_lfsepz_d3a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_lfsepz_a1d0() {
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, 0xfd5cf2df2aL, "editorComponent")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")) != null);
+  }
+  private boolean nodeCondition_lfsepz_a3d0() {
+    return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x109648427f2L, "noTargetText")) == null;
   }
   private EditorCell createCollection_lfsepz_a3a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -202,9 +208,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createConstant_lfsepz_a1d0());
     editorCell.addEditorCell(createRefCell_lfsepz_b1d0());
     return editorCell;
-  }
-  private static boolean renderingCondition_lfsepz_a1d0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, 0xfd5cf2df2aL, "editorComponent")), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")) != null);
   }
   private EditorCell createConstant_lfsepz_a1d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "effective type (deprectated)");
@@ -396,9 +399,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createConstant_lfsepz_a3d0());
     editorCell.addEditorCell(createProperty_lfsepz_b3d0());
     return editorCell;
-  }
-  private static boolean renderingCondition_lfsepz_a3d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x109648427f2L, "noTargetText")) == null;
   }
   private EditorCell createConstant_lfsepz_a3d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "empty text*");

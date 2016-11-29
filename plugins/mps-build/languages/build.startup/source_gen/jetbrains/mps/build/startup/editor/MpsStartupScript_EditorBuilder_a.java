@@ -186,10 +186,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class bootClasspathListHandler_gszs7u_b6a extends RefNodeListHandler {
+  private static class bootClasspathListHandler_gszs7u_b6a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public bootClasspathListHandler_gszs7u_b6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -253,10 +264,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class vmOptions64ListHandler_gszs7u_b9a extends RefNodeListHandler {
+  private static class vmOptions64ListHandler_gszs7u_b9a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public vmOptions64ListHandler_gszs7u_b9a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -320,10 +342,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class vmOptionsListHandler_gszs7u_b21a extends RefNodeListHandler {
+  private static class vmOptionsListHandler_gszs7u_b21a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public vmOptionsListHandler_gszs7u_b21a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

@@ -72,10 +72,21 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childrenListHandler_ed5dz9_b0 extends RefNodeListHandler {
+  private static class childrenListHandler_ed5dz9_b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childrenListHandler_ed5dz9_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

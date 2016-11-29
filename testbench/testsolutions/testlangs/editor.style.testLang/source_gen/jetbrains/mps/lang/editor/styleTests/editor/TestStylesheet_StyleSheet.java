@@ -58,10 +58,10 @@ public class TestStylesheet_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 1, _StyleParameter_QueryFunction_mmtlxs_a0c(getEditorContext(), getNode()));
+      style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 1, _StyleParameter_QueryFunction_mmtlxs_a0c());
     }
 
-    private static String _StyleParameter_QueryFunction_mmtlxs_a0c(EditorContext editorContext, SNode node) {
+    private String _StyleParameter_QueryFunction_mmtlxs_a0c() {
       return "Priority";
     }
   }
@@ -83,10 +83,10 @@ public class TestStylesheet_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, _StyleParameter_QueryFunction_mmtlxs_a0e(getEditorContext(), getNode()));
+      style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), 2, _StyleParameter_QueryFunction_mmtlxs_a0e());
     }
 
-    private static String _StyleParameter_QueryFunction_mmtlxs_a0e(EditorContext editorContext, SNode node) {
+    private String _StyleParameter_QueryFunction_mmtlxs_a0e() {
       return "Huge";
     }
   }

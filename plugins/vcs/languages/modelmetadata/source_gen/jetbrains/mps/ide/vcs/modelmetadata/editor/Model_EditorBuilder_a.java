@@ -187,10 +187,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class languageListHandler_pyq9q9_f3a extends RefNodeListHandler {
+  private static class languageListHandler_pyq9q9_f3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public languageListHandler_pyq9q9_f3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -258,10 +269,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class languageEngagedOnGenerationListHandler_pyq9q9_j3a extends RefNodeListHandler {
+  private static class languageEngagedOnGenerationListHandler_pyq9q9_j3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public languageEngagedOnGenerationListHandler_pyq9q9_j3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -329,10 +351,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class devkitListHandler_pyq9q9_n3a extends RefNodeListHandler {
+  private static class devkitListHandler_pyq9q9_n3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public devkitListHandler_pyq9q9_n3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -400,10 +433,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class importListHandler_pyq9q9_r3a extends RefNodeListHandler {
+  private static class importListHandler_pyq9q9_r3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public importListHandler_pyq9q9_r3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

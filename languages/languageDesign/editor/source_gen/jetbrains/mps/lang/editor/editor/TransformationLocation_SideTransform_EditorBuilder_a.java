@@ -75,10 +75,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class placeInCellListHandler_gmxq4c_c0 extends RefNodeListHandler {
+  private static class placeInCellListHandler_gmxq4c_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public placeInCellListHandler_gmxq4c_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

@@ -46,13 +46,13 @@ public class Styles_StyleSheet {
       style.set(StyleAttributes.EDITABLE, true);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
-      if (_StyleParameter_QueryFunction_kkd5s1_a3a(getEditorContext(), getNode())) {
+      if (_StyleParameter_QueryFunction_kkd5s1_a3a()) {
         new deprecatedStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
       }
     }
 
-    private static boolean _StyleParameter_QueryFunction_kkd5s1_a3a(EditorContext editorContext, SNode node) {
-      return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.getConceptDeclaration(node));
+    private boolean _StyleParameter_QueryFunction_kkd5s1_a3a() {
+      return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.getConceptDeclaration(getNode()));
     }
   }
   public static class deprecatedStyleClass extends AbstractStyleClass {

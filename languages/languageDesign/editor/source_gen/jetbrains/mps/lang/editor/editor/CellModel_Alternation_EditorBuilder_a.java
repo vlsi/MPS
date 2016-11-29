@@ -12,10 +12,10 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import java.awt.Color;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import java.awt.Color;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.borderedCollectionStyleClass;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.borderedStyleClass;
@@ -55,14 +55,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createComponent_zgm7s3_a0());
-    if (renderingCondition_zgm7s3_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_zgm7s3_a1a()) {
       editorCell.addEditorCell(createCollection_zgm7s3_b0());
     }
-    if (renderingCondition_zgm7s3_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_zgm7s3_a2a()) {
       editorCell.addEditorCell(createCollection_zgm7s3_c0());
     }
     editorCell.addEditorCell(createComponent_zgm7s3_d0());
     return editorCell;
+  }
+  private boolean nodeCondition_zgm7s3_a1a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76656383L, "vertical"));
+  }
+  private boolean nodeCondition_zgm7s3_a2a() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76656383L, "vertical")));
   }
   private EditorCell createComponent_zgm7s3_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
@@ -77,18 +83,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zgm7s3_a2b0(getEditorContext(), getNode())));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zgm7s3_a2b0()));
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_zgm7s3_a1a());
     editorCell.addEditorCell(createCollection_zgm7s3_b1a());
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a2b0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
-  private static boolean renderingCondition_zgm7s3_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76656383L, "vertical"));
+  private Color _StyleParameter_QueryFunction_zgm7s3_a2b0() {
+    return _EditorUtil.grayIfNotSelectable(getNode());
   }
   private EditorCell createCollection_zgm7s3_a1a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -113,10 +116,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new CellModel_Alternation_EditorBuilder_a.ifTrueCellModelSingleRoleHandler_zgm7s3_b0b0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class ifTrueCellModelSingleRoleHandler_zgm7s3_b0b0 extends SingleRoleCellProvider {
+  private static class ifTrueCellModelSingleRoleHandler_zgm7s3_b0b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public ifTrueCellModelSingleRoleHandler_zgm7s3_b0b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -124,7 +138,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("ifTrueCellModel");
@@ -168,10 +182,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new CellModel_Alternation_EditorBuilder_a.ifFalseCellModelSingleRoleHandler_zgm7s3_b1b0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class ifFalseCellModelSingleRoleHandler_zgm7s3_b1b0 extends SingleRoleCellProvider {
+  private static class ifFalseCellModelSingleRoleHandler_zgm7s3_b1b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public ifFalseCellModelSingleRoleHandler_zgm7s3_b1b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -179,7 +204,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("ifFalseCellModel");
@@ -206,17 +231,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     Style style = new StyleImpl();
     new borderedCollectionStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zgm7s3_a1c0(getEditorContext(), getNode())));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zgm7s3_a1c0()));
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createCollection_zgm7s3_a2a());
     editorCell.addEditorCell(createCollection_zgm7s3_b2a());
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_zgm7s3_a1c0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
-  }
-  private static boolean renderingCondition_zgm7s3_a2a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76656383L, "vertical")));
+  private Color _StyleParameter_QueryFunction_zgm7s3_a1c0() {
+    return _EditorUtil.grayIfNotSelectable(getNode());
   }
   private EditorCell createCollection_zgm7s3_a2a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -242,10 +264,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new CellModel_Alternation_EditorBuilder_a.ifTrueCellModelSingleRoleHandler_zgm7s3_b0c0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class ifTrueCellModelSingleRoleHandler_zgm7s3_b0c0 extends SingleRoleCellProvider {
+  private static class ifTrueCellModelSingleRoleHandler_zgm7s3_b0c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public ifTrueCellModelSingleRoleHandler_zgm7s3_b0c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -253,7 +286,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd76638039L, "ifTrueCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("ifTrueCellModel");
@@ -297,10 +330,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new CellModel_Alternation_EditorBuilder_a.ifFalseCellModelSingleRoleHandler_zgm7s3_b1c0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class ifFalseCellModelSingleRoleHandler_zgm7s3_b1c0 extends SingleRoleCellProvider {
+  private static class ifFalseCellModelSingleRoleHandler_zgm7s3_b1c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public ifFalseCellModelSingleRoleHandler_zgm7s3_b1c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -308,7 +352,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, 0xfd7663bd83L, "ifFalseCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("ifFalseCellModel");

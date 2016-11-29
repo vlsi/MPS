@@ -183,10 +183,21 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class actualArgumentListHandler_pxtadd_f0 extends RefNodeListHandler {
+  private static class actualArgumentListHandler_pxtadd_f0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public actualArgumentListHandler_pxtadd_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -243,16 +254,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     Style style = new StyleImpl();
     new RightParenStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_pxtadd_a6a(myNode, getEditorContext())) {
+    if (nodeCondition_pxtadd_a6a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_pxtadd_a6a(SNode node, EditorContext editorContext) {
-    if (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) == null) {
+  private boolean nodeCondition_pxtadd_a6a() {
+    if (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) == null) {
       return false;
     }
-    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).isEmpty();
   }
 }

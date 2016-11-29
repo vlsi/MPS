@@ -50,10 +50,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     SingleRoleCellProvider provider = new MultipleForeachLoopVariable_EditorBuilder_a.variableSingleRoleHandler_b2af0p_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb7f35eL, "variable"), getEditorContext());
     return provider.createCell();
   }
-  private class variableSingleRoleHandler_b2af0p_a0 extends SingleRoleCellProvider {
+  private static class variableSingleRoleHandler_b2af0p_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public variableSingleRoleHandler_b2af0p_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -61,7 +72,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb7f35eL, "variable"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb7f35eL, "variable"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("variable");
@@ -89,10 +100,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     SingleRoleCellProvider provider = new MultipleForeachLoopVariable_EditorBuilder_a.iterableSingleRoleHandler_b2af0p_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb82e45L, "iterable"), getEditorContext());
     return provider.createCell();
   }
-  private class iterableSingleRoleHandler_b2af0p_c0 extends SingleRoleCellProvider {
+  private static class iterableSingleRoleHandler_b2af0p_c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public iterableSingleRoleHandler_b2af0p_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -100,7 +122,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb82e45L, "iterable"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111efb75e90L, 0x111efb82e45L, "iterable"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("iterable");

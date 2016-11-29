@@ -60,17 +60,17 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell.setCellId("Constant_9zto5v_a0");
     Style style = new StyleImpl();
     new EditorKeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_9zto5v_a0a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_9zto5v_a0a0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new TransformationMenuReference_Default_EditorBuilder_a.ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  private static SNode _StyleParameter_QueryFunction_9zto5v_a0a0(EditorContext editorContext, SNode node) {
-    if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")) == null)) {
+  private SNode _StyleParameter_QueryFunction_9zto5v_a0a0() {
+    if ((SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")) == null)) {
       return null;
     }
-    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")));
+    return DefaultTransformationMenuUtil.findDefaultTransformationMenuForConcept(SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, 0x169efbc9a91440deL, "concept")));
   }
   public static class ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ITransformationMenuReference_cellMenu_9zto5v_a0a0() {

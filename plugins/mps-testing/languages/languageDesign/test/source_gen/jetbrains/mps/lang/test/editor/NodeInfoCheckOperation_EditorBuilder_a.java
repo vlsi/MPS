@@ -86,10 +86,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
     SingleRoleCellProvider provider = new NodeInfoCheckOperation_EditorBuilder_a.statementRefSingleRoleHandler_4bw08u_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef"), getEditorContext());
     return provider.createCell();
   }
-  private class statementRefSingleRoleHandler_4bw08u_b0 extends SingleRoleCellProvider {
+  private static class statementRefSingleRoleHandler_4bw08u_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public statementRefSingleRoleHandler_4bw08u_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -97,7 +108,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new NodeInfoCheckOperation_EditorBuilder_a.NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new NodeInfoCheckOperation_EditorBuilder_a.statementRefSingleRoleHandler_4bw08u_b0.NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("statementRef");
@@ -114,35 +125,35 @@ import jetbrains.mps.nodeEditor.EditorManager;
     protected String getNoTargetText() {
       return "<no statementRef>";
     }
-  }
-  public static class NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0 extends AbstractCellMenuPart_Generic_Group {
-    public NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement");
-      AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
-      Set<SNode> statementInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
-      return SetSequence.fromSet(statementInstances).toListSequence().select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement"));
-        }
-      }).toListSequence();
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe9cf9L, "jetbrains.mps.lang.test.structure.InfoStatementReference")));
-      SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), parameterObject);
-    }
-    public boolean isReferentPresentation() {
-      return false;
-    }
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SNode) parameterObject);
-    }
-    public String getMatchingText_internal(SNode parameterObject) {
-      return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(parameterObject);
+    public static class NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0 extends AbstractCellMenuPart_Generic_Group {
+      public NodeInfoCheckOperation_generic_cellMenu_4bw08u_a0b0() {
+      }
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement");
+        AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
+        Set<SNode> statementInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
+        return SetSequence.fromSet(statementInstances).toListSequence().select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11d2965916bL, "jetbrains.mps.lang.typesystem.structure.InfoStatement"));
+          }
+        }).toListSequence();
+      }
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe9cf9L, "jetbrains.mps.lang.test.structure.InfoStatementReference")));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbfe6272L, 0x1de1fbd5fbfe97adL, "statementRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), parameterObject);
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
+      public String getMatchingText(Object parameterObject) {
+        return this.getMatchingText_internal((SNode) parameterObject);
+      }
+      public String getMatchingText_internal(SNode parameterObject) {
+        return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(parameterObject);
+      }
     }
   }
   private EditorCell createNonEmptyProperty_4bw08u_c0() {

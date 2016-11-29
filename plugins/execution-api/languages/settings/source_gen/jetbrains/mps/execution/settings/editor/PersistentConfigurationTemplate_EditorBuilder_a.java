@@ -119,10 +119,21 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class templateParameterListHandler_85j21_d0a extends RefNodeListHandler {
+  private static class templateParameterListHandler_85j21_d0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public templateParameterListHandler_85j21_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

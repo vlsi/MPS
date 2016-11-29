@@ -45,8 +45,8 @@ import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a0a(getEditorContext(), getNode()));
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a1a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a0a());
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_2bpkx8_a1a());
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -56,10 +56,10 @@ import jetbrains.mps.core.xml.behavior.XmlPart__BehaviorDescriptor;
     } else
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_2bpkx8_a0a(EditorContext editorContext, SNode node) {
-    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node);
+  private boolean _StyleParameter_QueryFunction_2bpkx8_a0a() {
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(getNode());
   }
-  private static boolean _StyleParameter_QueryFunction_2bpkx8_a1a(EditorContext editorContext, SNode node) {
-    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(node) && (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(node);
+  private boolean _StyleParameter_QueryFunction_2bpkx8_a1a() {
+    return (boolean) XmlPart__BehaviorDescriptor.onNewLine_id1Qs9WekVZ9$.invoke(getNode()) && (boolean) XmlPart__BehaviorDescriptor.hasNewLineAfter_id1Qs9WekVZ9E.invoke(getNode());
   }
 }

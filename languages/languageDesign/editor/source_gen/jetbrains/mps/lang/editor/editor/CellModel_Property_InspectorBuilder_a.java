@@ -14,17 +14,17 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.headerStyleClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.propertyStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class CellModel_Property_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -90,17 +90,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_adk1cf_a3a());
-    if (renderingCondition_adk1cf_a1d0(myNode, getEditorContext())) {
+    if (nodeCondition_adk1cf_a1d0()) {
       editorCell.addEditorCell(createCollection_adk1cf_b3a());
     }
-    if (renderingCondition_adk1cf_a2d0(myNode, getEditorContext())) {
+    if (nodeCondition_adk1cf_a2d0()) {
       editorCell.addEditorCell(createCollection_adk1cf_c3a());
     }
     editorCell.addEditorCell(createCollection_adk1cf_d3a());
-    if (renderingCondition_adk1cf_a4d0(myNode, getEditorContext())) {
+    if (nodeCondition_adk1cf_a4d0()) {
       editorCell.addEditorCell(createCollection_adk1cf_e3a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_adk1cf_a1d0() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x11ac9707881L, "emptyNoTargetText")));
+  }
+  private boolean nodeCondition_adk1cf_a2d0() {
+    return SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x109648427f2L, "noTargetText")) == null;
+  }
+  private boolean nodeCondition_adk1cf_a4d0() {
+    return !(SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty")));
   }
   private EditorCell createCollection_adk1cf_a3a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -208,9 +217,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.addEditorCell(createProperty_adk1cf_b1d0());
     return editorCell;
   }
-  private static boolean renderingCondition_adk1cf_a1d0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x11ac9707881L, "emptyNoTargetText")));
-  }
   private EditorCell createConstant_adk1cf_a1d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "text*");
     editorCell.setCellId("Constant_adk1cf_a1d0");
@@ -251,9 +257,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.addEditorCell(createConstant_adk1cf_a2d0());
     editorCell.addEditorCell(createProperty_adk1cf_b2d0());
     return editorCell;
-  }
-  private static boolean renderingCondition_adk1cf_a2d0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x109648427f2L, "noTargetText")) == null;
   }
   private EditorCell createConstant_adk1cf_a2d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "empty text*");
@@ -333,9 +336,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.addEditorCell(createConstant_adk1cf_a4d0());
     editorCell.addEditorCell(createProperty_adk1cf_b4d0());
     return editorCell;
-  }
-  private static boolean renderingCondition_adk1cf_a4d0(SNode node, EditorContext editorContext) {
-    return !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty")));
   }
   private EditorCell createConstant_adk1cf_a4d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "allow empty");

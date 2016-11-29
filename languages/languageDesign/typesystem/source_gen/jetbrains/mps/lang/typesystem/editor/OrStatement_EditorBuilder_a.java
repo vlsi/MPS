@@ -55,10 +55,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class orClauseListHandler_s3jzuo_a0 extends RefNodeListHandler {
+  private static class orClauseListHandler_s3jzuo_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public orClauseListHandler_s3jzuo_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

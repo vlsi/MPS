@@ -92,10 +92,21 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     SingleRoleCellProvider provider = new AbstractDiagramCreation_EditorBuilder_a.querySingleRoleHandler_hhggu6_d0(myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, 0x120f760a0439bb2bL, "query"), getEditorContext());
     return provider.createCell();
   }
-  private class querySingleRoleHandler_hhggu6_d0 extends SingleRoleCellProvider {
+  private static class querySingleRoleHandler_hhggu6_d0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public querySingleRoleHandler_hhggu6_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -103,7 +114,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, 0x120f760a0439bb2bL, "query"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x120f760a04397296L, 0x120f760a0439bb2bL, "query"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("query");

@@ -56,14 +56,25 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class methodsListHandler_55zktd_a0 extends RefNodeListHandler {
+  private static class methodsListHandler_55zktd_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public methodsListHandler_55zktd_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
-    private String getSeparatorText(EditorContext context, SNode node) {
+    private String getSeparatorText() {
       return "";
     }
     public EditorCell createNodeCell(SNode elementNode) {
@@ -91,7 +102,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     }
     @Override
     public EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), methodsListHandler_55zktd_a0.this.getSeparatorText(getEditorContext(), prevNode));
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), methodsListHandler_55zktd_a0.this.getSeparatorText());
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");

@@ -108,7 +108,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
   private EditorCell createAlternation_rpujt6_b1a() {
     boolean alternationCondition = true;
-    alternationCondition = CustomWatchable_EditorBuilder_a.renderingCondition_rpujt6_a1b0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_rpujt6_a1b0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_rpujt6_a1b0();
@@ -117,11 +117,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_rpujt6_a1b0(SNode node, EditorContext editorContext) {
+  private boolean nodeCondition_rpujt6_a1b0() {
     String path = null;
-    SModule module = SNodeOperations.getModel(node).getModule();
+    SModule module = SNodeOperations.getModel(myNode).getModule();
     if (module instanceof AbstractModule) {
-      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b7665563ef3L, 0x47047b76655643d4L, "iconPath")));
+      path = MacrosFactory.forModule((AbstractModule) module).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x47047b7665563ef3L, 0x47047b76655643d4L, "iconPath")));
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }

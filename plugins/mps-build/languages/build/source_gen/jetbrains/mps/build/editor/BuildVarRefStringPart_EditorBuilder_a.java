@@ -60,14 +60,14 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     Style style = new StyleImpl();
     new macroStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_ayjduv_a1a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_ayjduv_a1a0());
     editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_ayjduv_a1a0(EditorContext editorContext, SNode node) {
-    return !((boolean) BuildStringPart__BehaviorDescriptor.isFirstPositionAllowed_idyEtdY40p7m.invoke(node));
+  private boolean _StyleParameter_QueryFunction_ayjduv_a1a0() {
+    return !((boolean) BuildStringPart__BehaviorDescriptor.isFirstPositionAllowed_idyEtdY40p7m.invoke(getNode()));
   }
   private EditorCell createRefCell_ayjduv_b0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
@@ -147,13 +147,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     Style style = new StyleImpl();
     new macroStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_ayjduv_a1c0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_ayjduv_a1c0());
     editorCell.getStyle().putAll(style);
     delete_BuildStringPart.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_ayjduv_a1c0(EditorContext editorContext, SNode node) {
-    return !((boolean) BuildStringPart__BehaviorDescriptor.isLastPositionAllowed_idyEtdY40wNH.invoke(node));
+  private boolean _StyleParameter_QueryFunction_ayjduv_a1c0() {
+    return !((boolean) BuildStringPart__BehaviorDescriptor.isLastPositionAllowed_idyEtdY40wNH.invoke(getNode()));
   }
 }

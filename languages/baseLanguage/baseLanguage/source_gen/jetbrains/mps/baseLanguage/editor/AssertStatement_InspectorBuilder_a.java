@@ -58,10 +58,21 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     SingleRoleCellProvider provider = new AssertStatement_InspectorBuilder_a.messageSingleRoleHandler_avk0kx_b0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, 0x10e50ed92e0L, "message"), getEditorContext());
     return provider.createCell();
   }
-  private class messageSingleRoleHandler_avk0kx_b0 extends SingleRoleCellProvider {
+  private static class messageSingleRoleHandler_avk0kx_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public messageSingleRoleHandler_avk0kx_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -69,7 +80,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, 0x10e50ed92e0L, "message"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10e50ecba3dL, 0x10e50ed92e0L, "message"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("message");

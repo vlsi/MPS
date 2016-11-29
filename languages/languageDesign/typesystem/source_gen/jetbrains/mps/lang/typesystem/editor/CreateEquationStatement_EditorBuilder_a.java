@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import java.awt.Color;
@@ -56,14 +56,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setCellId("Collection_mi4qyq_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_mi4qyq_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_mi4qyq_a0a()) {
       editorCell.addEditorCell(createCollection_mi4qyq_a0());
     }
-    if (renderingCondition_mi4qyq_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_mi4qyq_a1a()) {
       editorCell.addEditorCell(createCollection_mi4qyq_b0());
     }
     editorCell.addEditorCell(createConstant_mi4qyq_c0());
     return editorCell;
+  }
+  private boolean nodeCondition_mi4qyq_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly"));
+  }
+  private boolean nodeCondition_mi4qyq_a1a() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly")));
   }
   private EditorCell createCollection_mi4qyq_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -79,20 +85,17 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.addEditorCell(createConstant_mi4qyq_f0a());
     return editorCell;
   }
-  private static boolean renderingCondition_mi4qyq_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly"));
-  }
   private EditorCell createConstant_mi4qyq_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "check");
     editorCell.setCellId("Constant_mi4qyq_a0a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0a0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0a0a()));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0a0a(EditorContext editorContext, SNode node) {
+  private Color _StyleParameter_QueryFunction_mi4qyq_a0a0a() {
     return MPSColors.DARK_BLUE;
   }
   private EditorCell createConstant_mi4qyq_b0a() {
@@ -100,23 +103,34 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setCellId("Constant_mi4qyq_b0a");
     Style style = new StyleImpl();
     new ParenthesisStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0b0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0b0a()));
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0b0a(EditorContext editorContext, SNode node) {
+  private Color _StyleParameter_QueryFunction_mi4qyq_a0b0a() {
     return MPSColors.DARK_BLUE;
   }
   private EditorCell createRefNode_mi4qyq_c0a() {
     SingleRoleCellProvider provider = new CreateEquationStatement_EditorBuilder_a.leftExpressionSingleRoleHandler_mi4qyq_c0a(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), getEditorContext());
     return provider.createCell();
   }
-  private class leftExpressionSingleRoleHandler_mi4qyq_c0a extends SingleRoleCellProvider {
+  private static class leftExpressionSingleRoleHandler_mi4qyq_c0a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public leftExpressionSingleRoleHandler_mi4qyq_c0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -124,7 +138,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("leftExpression");
@@ -158,10 +172,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     SingleRoleCellProvider provider = new CreateEquationStatement_EditorBuilder_a.rightExpressionSingleRoleHandler_mi4qyq_e0a(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), getEditorContext());
     return provider.createCell();
   }
-  private class rightExpressionSingleRoleHandler_mi4qyq_e0a extends SingleRoleCellProvider {
+  private static class rightExpressionSingleRoleHandler_mi4qyq_e0a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public rightExpressionSingleRoleHandler_mi4qyq_e0a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -169,7 +194,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("rightExpression");
@@ -192,13 +217,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setCellId("Constant_mi4qyq_f0a");
     Style style = new StyleImpl();
     new ParenthesisStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0f0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mi4qyq_a0f0a()));
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_mi4qyq_a0f0a(EditorContext editorContext, SNode node) {
+  private Color _StyleParameter_QueryFunction_mi4qyq_a0f0a() {
     return MPSColors.DARK_BLUE;
   }
   private EditorCell createCollection_mi4qyq_b0() {
@@ -212,17 +237,25 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.addEditorCell(createRefNode_mi4qyq_c1a());
     return editorCell;
   }
-  private static boolean renderingCondition_mi4qyq_a1a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly")));
-  }
   private EditorCell createRefNode_mi4qyq_a1a() {
     SingleRoleCellProvider provider = new CreateEquationStatement_EditorBuilder_a.leftExpressionSingleRoleHandler_mi4qyq_a1a(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), getEditorContext());
     return provider.createCell();
   }
-  private class leftExpressionSingleRoleHandler_mi4qyq_a1a extends SingleRoleCellProvider {
+  private static class leftExpressionSingleRoleHandler_mi4qyq_a1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public leftExpressionSingleRoleHandler_mi4qyq_a1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -230,7 +263,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d35L, "leftExpression"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("leftExpression");
@@ -264,10 +297,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     SingleRoleCellProvider provider = new CreateEquationStatement_EditorBuilder_a.rightExpressionSingleRoleHandler_mi4qyq_c1a(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), getEditorContext());
     return provider.createCell();
   }
-  private class rightExpressionSingleRoleHandler_mi4qyq_c1a extends SingleRoleCellProvider {
+  private static class rightExpressionSingleRoleHandler_mi4qyq_c1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public rightExpressionSingleRoleHandler_mi4qyq_c1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -275,7 +319,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x1117f3d1d36L, "rightExpression"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("rightExpression");

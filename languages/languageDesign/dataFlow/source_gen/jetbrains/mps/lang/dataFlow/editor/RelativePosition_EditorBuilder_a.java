@@ -67,10 +67,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     SingleRoleCellProvider provider = new RelativePosition_EditorBuilder_a.relativeToSingleRoleHandler_wv5dgr_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5b86667L, 0x118e5b89bc2L, "relativeTo"), getEditorContext());
     return provider.createCell();
   }
-  private class relativeToSingleRoleHandler_wv5dgr_b0 extends SingleRoleCellProvider {
+  private static class relativeToSingleRoleHandler_wv5dgr_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public relativeToSingleRoleHandler_wv5dgr_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -78,7 +89,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new RelativePosition_EditorBuilder_a.RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0(), new RelativePosition_EditorBuilder_a.RelativePosition_customReplace_cellMenu_wv5dgr_b0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new RelativePosition_EditorBuilder_a.relativeToSingleRoleHandler_wv5dgr_b0.RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0(), new RelativePosition_EditorBuilder_a.relativeToSingleRoleHandler_wv5dgr_b0.RelativePosition_customReplace_cellMenu_wv5dgr_b0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("relativeTo");
@@ -95,25 +106,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     protected String getNoTargetText() {
       return "<no relativeTo>";
     }
-  }
-  public static class RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0 extends PrimaryReplaceChildMenuCellMenuPart {
-    public RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0() {
+    public static class RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0 extends PrimaryReplaceChildMenuCellMenuPart {
+      public RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0() {
+      }
     }
-  }
-  public static class RelativePosition_customReplace_cellMenu_wv5dgr_b0b0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public RelativePosition_customReplace_cellMenu_wv5dgr_b0b0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<String>(), "label");
-    }
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return createReplacementNode_impl((String) parameterObject, node, model, operationContext, editorContext);
-    }
-    public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"));
-    }
-    public boolean isReferentPresentation() {
-      return false;
+    public static class RelativePosition_customReplace_cellMenu_wv5dgr_b0b0 extends AbstractCellMenuPart_ReplaceNode_Group {
+      public RelativePosition_customReplace_cellMenu_wv5dgr_b0b0() {
+      }
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        return ListSequence.fromListAndArray(new ArrayList<String>(), "label");
+      }
+      public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        return createReplacementNode_impl((String) parameterObject, node, model, operationContext, editorContext);
+      }
+      public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x1190a8b1526L, "jetbrains.mps.lang.dataFlow.structure.LabelPosition"));
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
     }
   }
 }

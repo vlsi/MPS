@@ -44,7 +44,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
   private EditorCell createAlternation_z8oglp_a() {
     boolean alternationCondition = true;
-    alternationCondition = SConceptOperation_EditorBuilder_a.renderingCondition_z8oglp_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_z8oglp_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createComponent_z8oglp_a0();
@@ -58,8 +58,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_z8oglp_a0(SNode node, EditorContext editorContext) {
-    return !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation")));
+  private boolean nodeCondition_z8oglp_a0() {
+    return !(SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5f5952af8843faf9L, "jetbrains.mps.lang.smodel.structure.SConceptOperation")));
   }
   private EditorCell createComponent_z8oglp_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");

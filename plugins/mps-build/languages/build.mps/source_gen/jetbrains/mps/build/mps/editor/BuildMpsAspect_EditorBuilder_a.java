@@ -107,10 +107,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_koy33t_a2a());
     editorCell.addEditorCell(createProperty_koy33t_b2a());
-    if (renderingCondition_koy33t_a2c0(myNode, getEditorContext())) {
+    if (nodeCondition_koy33t_a2c0()) {
       editorCell.addEditorCell(createCollection_koy33t_c2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_koy33t_a2c0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L, 0x18cf12266aabddbfL, "testGeneration"));
   }
   private EditorCell createConstant_koy33t_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "test generation");
@@ -145,9 +148,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_koy33t_a2c0());
     editorCell.addEditorCell(createProperty_koy33t_b2c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_koy33t_a2c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5a408fb8c80220a9L, 0x18cf12266aabddbfL, "testGeneration"));
   }
   private EditorCell createConstant_koy33t_a2c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "excludes:");

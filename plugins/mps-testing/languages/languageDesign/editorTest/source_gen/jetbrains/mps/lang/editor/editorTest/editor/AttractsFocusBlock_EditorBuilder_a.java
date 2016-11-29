@@ -57,10 +57,21 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     SingleRoleCellProvider provider = new AttractsFocusBlock_EditorBuilder_a.childSingleRoleHandler_on5i7m_b0(myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, 0x2444dad137f8d779L, "child"), getEditorContext());
     return provider.createCell();
   }
-  private class childSingleRoleHandler_on5i7m_b0 extends SingleRoleCellProvider {
+  private static class childSingleRoleHandler_on5i7m_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public childSingleRoleHandler_on5i7m_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -68,7 +79,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, 0x2444dad137f8d779L, "child"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, 0x2444dad137f8d779L, "child"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("child");

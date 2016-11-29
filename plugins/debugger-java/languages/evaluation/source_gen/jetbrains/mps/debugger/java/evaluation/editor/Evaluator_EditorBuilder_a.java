@@ -51,10 +51,21 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     SingleRoleCellProvider provider = new Evaluator_EditorBuilder_a.codeSingleRoleHandler_p2jqam_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, 0xbbe5b47d7cc6080L, "code"), getEditorContext());
     return provider.createCell();
   }
-  private class codeSingleRoleHandler_p2jqam_a0 extends SingleRoleCellProvider {
+  private static class codeSingleRoleHandler_p2jqam_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public codeSingleRoleHandler_p2jqam_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -62,7 +73,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, 0xbbe5b47d7cc6080L, "code"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7da4580f9d754603L, 0x816251a896d78375L, 0xbbe5b47d7cc5fa1L, 0xbbe5b47d7cc6080L, "code"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("code");

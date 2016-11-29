@@ -8,16 +8,18 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LabelStyleClass;
@@ -34,8 +36,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -69,14 +69,20 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_xk0l2m_a0());
-    if (renderingCondition_xk0l2m_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_xk0l2m_a1a()) {
       editorCell.addEditorCell(createCollection_xk0l2m_b0());
     }
-    if (renderingCondition_xk0l2m_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_xk0l2m_a2a()) {
       editorCell.addEditorCell(createCollection_xk0l2m_c0());
     }
     editorCell.addEditorCell(createConstant_xk0l2m_d0());
     return editorCell;
+  }
+  private boolean nodeCondition_xk0l2m_a1a() {
+    return !(SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x11745bfb2d8L, "label"), null));
+  }
+  private boolean nodeCondition_xk0l2m_a2a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"))).isNotEmpty();
   }
   private EditorCell createConstant_xk0l2m_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "break");
@@ -97,9 +103,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.SemicolonS
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createProperty_xk0l2m_a1a());
     return editorCell;
-  }
-  private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x11745bfb2d8L, "label"), null));
   }
   private EditorCell createProperty_xk0l2m_a1a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -188,17 +191,25 @@ __switch__:
     editorCell.addEditorCell(createRefNode_xk0l2m_a2a());
     return editorCell;
   }
-  private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"))).isNotEmpty();
-  }
   private EditorCell createRefNode_xk0l2m_a2a() {
     SingleRoleCellProvider provider = new BreakStatement_EditorBuilder_a.loopLabelReferenceSingleRoleHandler_xk0l2m_a2a(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"), getEditorContext());
     return provider.createCell();
   }
-  private class loopLabelReferenceSingleRoleHandler_xk0l2m_a2a extends SingleRoleCellProvider {
+  private static class loopLabelReferenceSingleRoleHandler_xk0l2m_a2a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public loopLabelReferenceSingleRoleHandler_xk0l2m_a2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -206,7 +217,7 @@ __switch__:
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbe39a867fL, 0x7dae85d6eb42f8c4L, "loopLabelReference"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("loopLabelReference");

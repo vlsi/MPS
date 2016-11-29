@@ -56,14 +56,25 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class elementsListHandler_ul5idr_a0 extends RefNodeListHandler {
+  private static class elementsListHandler_ul5idr_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public elementsListHandler_ul5idr_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       SNode n = SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, "jetbrains.mps.core.xml.structure.XmlWhitespace")), null);
       SPropertyOperations.set(n, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x6988ccb84e3cfaa8L, 0x4890619bb3ff9b53L, "value"), "");
       return n;

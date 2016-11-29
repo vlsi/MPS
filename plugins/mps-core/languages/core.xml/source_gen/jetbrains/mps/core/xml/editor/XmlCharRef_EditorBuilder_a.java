@@ -53,13 +53,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
     Style style = new StyleImpl();
     new xmlCharRefStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_5huibn_a1a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_5huibn_a1a0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_5huibn_a1a0(EditorContext editorContext, SNode node) {
-    return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node));
+  private boolean _StyleParameter_QueryFunction_5huibn_a1a0() {
+    return !((boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(getNode()));
   }
   private EditorCell createProperty_5huibn_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -85,12 +85,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
     Style style = new StyleImpl();
     new xmlCharRefStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_5huibn_a1c0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_5huibn_a1c0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_5huibn_a1c0(EditorContext editorContext, SNode node) {
-    return !((boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node));
+  private boolean _StyleParameter_QueryFunction_5huibn_a1c0() {
+    return !((boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(getNode()));
   }
 }

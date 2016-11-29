@@ -37,17 +37,17 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_CreateChildRangeSelection;
 import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.generator.TransientModelsModule;
 
 /*package*/ class InterfaceConceptDeclaration_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -160,10 +160,21 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class extendsListHandler_7v1nzk_b2a0 extends RefNodeListHandler {
+  private static class extendsListHandler_7v1nzk_b2a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public extendsListHandler_7v1nzk_b2a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -238,10 +249,15 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.addEditorCell(createConstant_7v1nzk_g1c0());
     editorCell.addEditorCell(createConstant_7v1nzk_h1c0());
     editorCell.addEditorCell(createRefNodeList_7v1nzk_i1c0());
-    if (renderingCondition_7v1nzk_a9b2a(myNode, getEditorContext())) {
+    if (nodeCondition_7v1nzk_a9b2a()) {
       editorCell.addEditorCell(createCollection_7v1nzk_j1c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_7v1nzk_a9b2a() {
+    // this will be shown only when generating into a concept 
+    // otherwise, only concept id will be shown in inspector 
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(myNode)) || (SNodeOperations.getModel(myNode).getModule() instanceof TransientModelsModule);
   }
   private EditorCell createConstant_7v1nzk_a1c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
@@ -276,10 +292,21 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class propertyDeclarationListHandler_7v1nzk_c1c0 extends RefNodeListHandler {
+  private static class propertyDeclarationListHandler_7v1nzk_c1c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public propertyDeclarationListHandler_7v1nzk_c1c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -350,15 +377,26 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class linkDeclarationListHandler_7v1nzk_f1c0 extends RefNodeListHandler {
+  private static class linkDeclarationListHandler_7v1nzk_f1c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public linkDeclarationListHandler_7v1nzk_f1c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
+    public SNode nodeFactory() {
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
       SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation");
       return result;
     }
@@ -443,15 +481,26 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class linkDeclarationListHandler_7v1nzk_i1c0 extends RefNodeListHandler {
+  private static class linkDeclarationListHandler_7v1nzk_i1c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public linkDeclarationListHandler_7v1nzk_i1c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
+    public SNode nodeFactory() {
+      SNode result = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myNode), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration")), null);
       SPropertyOperations.set(result, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference");
       return result;
     }
@@ -517,11 +566,6 @@ import jetbrains.mps.generator.TransientModelsModule;
     editorCell.addEditorCell(createConstant_7v1nzk_d9b2a());
     editorCell.addEditorCell(createProperty_7v1nzk_e9b2a());
     return editorCell;
-  }
-  private static boolean renderingCondition_7v1nzk_a9b2a(SNode node, EditorContext editorContext) {
-    // this will be shown only when generating into a concept 
-    // otherwise, only concept id will be shown in inspector 
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node)) || (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule);
   }
   private EditorCell createConstant_7v1nzk_a9b2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, " ");

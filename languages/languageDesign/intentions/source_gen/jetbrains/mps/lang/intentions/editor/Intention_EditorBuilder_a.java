@@ -66,10 +66,21 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     SingleRoleCellProvider provider = new Intention_EditorBuilder_a.prioritySingleRoleHandler_dnq3sg_a0(myNode, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority"), getEditorContext());
     return provider.createCell();
   }
-  private class prioritySingleRoleHandler_dnq3sg_a0 extends SingleRoleCellProvider {
+  private static class prioritySingleRoleHandler_dnq3sg_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public prioritySingleRoleHandler_dnq3sg_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -77,7 +88,7 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x71ffad1474b12a0bL, 0x59427edd75744671L, "priority"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("priority");

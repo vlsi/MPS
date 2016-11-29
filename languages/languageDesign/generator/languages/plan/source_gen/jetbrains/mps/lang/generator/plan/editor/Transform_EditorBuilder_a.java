@@ -86,10 +86,21 @@ import jetbrains.mps.lang.smodel.behavior.LanguageIdentity__BehaviorDescriptor;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class languagesListHandler_5ya0vk_a1a extends RefNodeListHandler {
+  private static class languagesListHandler_5ya0vk_a1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public languagesListHandler_5ya0vk_a1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

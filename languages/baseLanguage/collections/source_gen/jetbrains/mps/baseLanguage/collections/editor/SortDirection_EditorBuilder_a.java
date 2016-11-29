@@ -39,7 +39,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
 
   private EditorCell createAlternation_hdhct1_a() {
     boolean alternationCondition = true;
-    alternationCondition = SortDirection_EditorBuilder_a.renderingCondition_hdhct1_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_hdhct1_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_hdhct1_a0();
@@ -53,8 +53,8 @@ import jetbrains.mps.editor.runtime.style.Measure;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"));
+  private boolean nodeCondition_hdhct1_a0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b201L, 0xf8cc56b202L, "value"));
   }
   private EditorCell createConstant_hdhct1_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "asc");

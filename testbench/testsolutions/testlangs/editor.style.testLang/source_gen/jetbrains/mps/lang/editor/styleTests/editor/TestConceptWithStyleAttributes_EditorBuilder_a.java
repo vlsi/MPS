@@ -41,13 +41,13 @@ import jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet.una
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a0a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a0a());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_58m68g_a0());
     editorCell.addEditorCell(createCollection_58m68g_b0());
     return editorCell;
   }
-  private static String _StyleParameter_QueryFunction_58m68g_a0a(EditorContext editorContext, SNode node) {
+  private String _StyleParameter_QueryFunction_58m68g_a0a() {
     return "Hey!";
   }
   private EditorCell createConstant_58m68g_a0() {
@@ -61,34 +61,34 @@ import jetbrains.mps.lang.editor.styleTests.editor.TestStylesheet_StyleSheet.una
     editorCell.setCellId("Collection_58m68g_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a1b0(getEditorContext(), getNode()));
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_58m68g_a2b0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a1b0());
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_58m68g_a2b0());
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_58m68g_a1a());
     editorCell.addEditorCell(createConstant_58m68g_b1a());
     editorCell.addEditorCell(createCollection_58m68g_c1a());
     return editorCell;
   }
-  private static String _StyleParameter_QueryFunction_58m68g_a1b0(EditorContext editorContext, SNode node) {
+  private String _StyleParameter_QueryFunction_58m68g_a1b0() {
     return "Bye!";
   }
-  private static boolean _StyleParameter_QueryFunction_58m68g_a2b0(EditorContext editorContext, SNode node) {
+  private boolean _StyleParameter_QueryFunction_58m68g_a2b0() {
     return true;
   }
   private EditorCell createConstant_58m68g_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "re");
     editorCell.setCellId("Constant_58m68g_a1a");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a0a1a(getEditorContext(), getNode()));
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_58m68g_a1a1a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-inherited-attribute"), _StyleParameter_QueryFunction_58m68g_a0a1a());
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_58m68g_a1a1a());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static String _StyleParameter_QueryFunction_58m68g_a0a1a(EditorContext editorContext, SNode node) {
+  private String _StyleParameter_QueryFunction_58m68g_a0a1a() {
     return "Yeah!";
   }
-  private static boolean _StyleParameter_QueryFunction_58m68g_a1a1a(EditorContext editorContext, SNode node) {
+  private boolean _StyleParameter_QueryFunction_58m68g_a1a1a() {
     return false;
   }
   private EditorCell createConstant_58m68g_b1a() {

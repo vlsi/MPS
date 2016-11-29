@@ -52,7 +52,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
   private EditorCell createAlternation_axvdb8_a0() {
     boolean alternationCondition = true;
-    alternationCondition = XmlDeclaration_EditorBuilder_a.renderingCondition_axvdb8_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_axvdb8_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_axvdb8_a0a();
@@ -61,8 +61,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_axvdb8_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(node);
+  private boolean nodeCondition_axvdb8_a0a() {
+    return (boolean) XmlPart__BehaviorDescriptor.isFirstPositionAllowed_id1Qs9WekVZ7m.invoke(myNode);
   }
   private EditorCell createConstant_axvdb8_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<?");
@@ -307,7 +307,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
   private EditorCell createAlternation_axvdb8_c0() {
     boolean alternationCondition = true;
-    alternationCondition = XmlDeclaration_EditorBuilder_a.renderingCondition_axvdb8_a2a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_axvdb8_a2a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_axvdb8_a2a();
@@ -316,8 +316,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_axvdb8_a2a(SNode node, EditorContext editorContext) {
-    return (boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(node);
+  private boolean nodeCondition_axvdb8_a2a() {
+    return (boolean) XmlPart__BehaviorDescriptor.isLastPositionAllowed_id1Qs9WekVZ8v.invoke(myNode);
   }
   private EditorCell createConstant_axvdb8_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "?>");

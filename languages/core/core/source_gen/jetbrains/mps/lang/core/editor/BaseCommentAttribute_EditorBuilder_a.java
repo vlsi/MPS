@@ -48,10 +48,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     SingleRoleCellProvider provider = new BaseCommentAttribute_EditorBuilder_a.commentedNodeSingleRoleHandler_si1ien_a0(myNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), getEditorContext());
     return provider.createCell();
   }
-  private class commentedNodeSingleRoleHandler_si1ien_a0 extends SingleRoleCellProvider {
+  private static class commentedNodeSingleRoleHandler_si1ien_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public commentedNodeSingleRoleHandler_si1ien_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -59,7 +70,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x3dcc194340c24debL, 0x2ab99f0d2248e89dL, "commentedNode"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("commentedNode");
@@ -71,7 +82,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       try {
         getCellFactory().pushCellContext();
         getCellFactory().addCellContextHints(new String[]{"jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment"});
-        getCellFactory().removeCellContextHints();
         return setCellContext(super.createCell());
       } finally {
         getCellFactory().popCellContext();

@@ -63,11 +63,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.addEditorCell(createConstant_gbleq0_a1a());
     editorCell.addEditorCell(createCollection_gbleq0_b1a());
     editorCell.addEditorCell(createConstant_gbleq0_c1a());
-    editorCell.setInitiallyCollapsed(renderingCondition_gbleq0_a1a(myNode, getEditorContext()));
+    editorCell.setInitiallyCollapsed(nodeCondition_gbleq0_a1a());
     return editorCell;
   }
-  private static boolean renderingCondition_gbleq0_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer")), MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab971f717L, "collapsed"));
+  private boolean nodeCondition_gbleq0_a1a() {
+    return SPropertyOperations.getBoolean(SNodeOperations.as(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer")), MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, 0xc06e5dab971f717L, "collapsed"));
   }
   private EditorCell createConstant_gbleq0_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");

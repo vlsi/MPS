@@ -36,7 +36,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   private EditorCell createNextEditor_fqq7dl_a_0() {
     try {
       getCellFactory().pushCellContext();
-      getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fqq7dl_a0_0(getNode(), getEditorContext())).toGenericArray(String.class));
+      getCellFactory().removeCellContextHints(Sequence.fromIterable(getEditorHints_fqq7dl_a0_0()).toGenericArray(String.class));
       {
         EditorCell editorCell = getCellFactory().createEditorCell(myNode, true, NodeAttribute_comment_Editor.class);
         editorCell.setBig(true);
@@ -47,9 +47,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       getCellFactory().popCellContext();
     }
   }
-  private Iterable<String> getEditorHints_fqq7dl_a0_0(SNode node, EditorContext editorContext) {
+  private Iterable<String> getEditorHints_fqq7dl_a0_0() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (check_ucj1np_a1a9(node.getContainmentLink())) {
+    if (check_ucj1np_a1a9(myNode.getContainmentLink())) {
       ListSequence.fromList(result).addElement("jetbrains.mps.lang.core.editor.BaseEditorContextHints.comment");
     }
     return result;

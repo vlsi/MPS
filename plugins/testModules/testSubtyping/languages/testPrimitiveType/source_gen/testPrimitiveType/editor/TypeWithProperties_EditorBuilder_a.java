@@ -77,7 +77,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
   private EditorCell createAlternation_8yz4v0_d0() {
     boolean alternationCondition = true;
-    alternationCondition = TypeWithProperties_EditorBuilder_a.renderingCondition_8yz4v0_a3a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_8yz4v0_a3a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_8yz4v0_a3a();
@@ -86,8 +86,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_8yz4v0_a3a(SNode node, EditorContext editorContext) {
-    return node.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556a2L, "str")) != null;
+  private boolean nodeCondition_8yz4v0_a3a() {
+    return myNode.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556a2L, "str")) != null;
   }
   private EditorCell createProperty_8yz4v0_a3a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -135,7 +135,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
   private EditorCell createAlternation_8yz4v0_g0() {
     boolean alternationCondition = true;
-    alternationCondition = TypeWithProperties_EditorBuilder_a.renderingCondition_8yz4v0_a6a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_8yz4v0_a6a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_8yz4v0_a6a();
@@ -144,8 +144,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_8yz4v0_a6a(SNode node, EditorContext editorContext) {
-    return node.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556a8L, "num")) != null;
+  private boolean nodeCondition_8yz4v0_a6a() {
+    return myNode.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556a8L, "num")) != null;
   }
   private EditorCell createProperty_8yz4v0_a6a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -193,7 +193,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   }
   private EditorCell createAlternation_8yz4v0_j0() {
     boolean alternationCondition = true;
-    alternationCondition = TypeWithProperties_EditorBuilder_a.renderingCondition_8yz4v0_a9a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_8yz4v0_a9a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_8yz4v0_a9a();
@@ -202,8 +202,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_8yz4v0_a9a(SNode node, EditorContext editorContext) {
-    return node.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556abL, "bool")) != null;
+  private boolean nodeCondition_8yz4v0_a9a() {
+    return myNode.getProperty(MetaAdapterFactory.getProperty(0x8a53c70515e44f87L, 0x8796457845605512L, 0x9cc88b154a54d6cL, 0x9cc88b154a556abL, "bool")) != null;
   }
   private EditorCell createProperty_8yz4v0_a9a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

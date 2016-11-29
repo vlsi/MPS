@@ -122,10 +122,21 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childrenListHandler_vx0ep_a1b0 extends RefNodeListHandler {
+  private static class childrenListHandler_vx0ep_a1b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childrenListHandler_vx0ep_a1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -16,8 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -25,7 +26,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /*package*/ class GeneratorParameterReference_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -52,13 +52,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createRefCell_p6qpij_a0());
-    if (renderingCondition_p6qpij_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_p6qpij_a1a()) {
       editorCell.addEditorCell(createCollection_p6qpij_b0());
     }
-    if (renderingCondition_p6qpij_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_p6qpij_a2a()) {
       editorCell.addEditorCell(createCollection_p6qpij_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_p6qpij_a1a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x90726ff283cbf8cL, "declaration")) != null);
+  }
+  private boolean nodeCondition_p6qpij_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x4ce4ccc2d0919d18L, "isOptional"));
   }
   private EditorCell createRefCell_p6qpij_a0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
@@ -139,9 +145,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createReadOnlyModelAccessor_p6qpij_b1a());
     return editorCell;
   }
-  private static boolean renderingCondition_p6qpij_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x90726ff283cbf8cL, "declaration")) != null);
-  }
   private EditorCell createConstant_p6qpij_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ":");
     editorCell.setCellId("Constant_p6qpij_a1a");
@@ -174,9 +177,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createConstant_p6qpij_b2a());
     editorCell.addEditorCell(createConstant_p6qpij_c2a());
     return editorCell;
-  }
-  private static boolean renderingCondition_p6qpij_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb401a68083254110L, 0x8fd384331ff25befL, 0x90726ff283cbf8aL, 0x4ce4ccc2d0919d18L, "isOptional"));
   }
   private EditorCell createConstant_p6qpij_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");

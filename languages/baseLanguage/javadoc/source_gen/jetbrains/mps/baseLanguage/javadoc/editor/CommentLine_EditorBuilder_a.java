@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -49,11 +49,14 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setCellId("Collection_dzsxo_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_dzsxo_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_dzsxo_a0a()) {
       editorCell.addEditorCell(createConstant_dzsxo_a0());
     }
     editorCell.addEditorCell(createRefNodeList_dzsxo_b0());
     return editorCell;
+  }
+  private boolean nodeCondition_dzsxo_a0a() {
+    return SNodeOperations.getIndexInParent(myNode) != 0;
   }
   private EditorCell createConstant_dzsxo_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
@@ -66,9 +69,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_dzsxo_a0a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getIndexInParent(node) != 0;
-  }
   private EditorCell createRefNodeList_dzsxo_b0() {
     AbstractCellListHandler handler = new CommentLine_EditorBuilder_a.partListHandler_dzsxo_b0(myNode, "part", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
@@ -80,10 +80,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class partListHandler_dzsxo_b0 extends RefNodeListHandler {
+  private static class partListHandler_dzsxo_b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public partListHandler_dzsxo_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

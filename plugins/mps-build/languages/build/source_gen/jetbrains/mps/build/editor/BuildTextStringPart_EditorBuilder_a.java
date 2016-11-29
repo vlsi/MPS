@@ -43,7 +43,7 @@ import java.awt.Color;
 
   private EditorCell createAlternation_zen9g6_a() {
     boolean alternationCondition = true;
-    alternationCondition = BuildTextStringPart_EditorBuilder_a.renderingCondition_zen9g6_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_zen9g6_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createAlternation_zen9g6_a0();
@@ -57,12 +57,12 @@ import java.awt.Color;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext) {
-    return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node), SNodeOperations.getParent(node).getRoleInParent()) != null;
+  private boolean nodeCondition_zen9g6_a0() {
+    return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode), SNodeOperations.getParent(myNode).getRoleInParent()) != null;
   }
   private EditorCell createAlternation_zen9g6_a0() {
     boolean alternationCondition = true;
-    alternationCondition = BuildTextStringPart_EditorBuilder_a.renderingCondition_zen9g6_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_zen9g6_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_zen9g6_a0a();
@@ -71,8 +71,8 @@ import java.awt.Color;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_zen9g6_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
+  private boolean nodeCondition_zen9g6_a0a() {
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(myNode);
   }
   private EditorCell createProperty_zen9g6_a0a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -84,7 +84,7 @@ import java.awt.Color;
     Style style = new StyleImpl();
     new stringStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zen9g6_a1a0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zen9g6_a1a0a()));
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -95,10 +95,10 @@ import java.awt.Color;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_zen9g6_a1a0a(EditorContext editorContext, SNode node) {
-    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
+  private Color _StyleParameter_QueryFunction_zen9g6_a1a0a() {
+    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(getNode());
     if ((container != null)) {
-      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(node).getRoleInParent());
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getRoleInParent());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -114,7 +114,7 @@ import java.awt.Color;
     editorCell.setCellId("property_text_1");
     Style style = new StyleImpl();
     new stringStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zen9g6_a0a0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_zen9g6_a0a0a()));
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new BuildSimpleName_text());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -125,10 +125,10 @@ import java.awt.Color;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_zen9g6_a0a0a(EditorContext editorContext, SNode node) {
-    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
+  private Color _StyleParameter_QueryFunction_zen9g6_a0a0a() {
+    SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(getNode());
     if ((container != null)) {
-      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(node).getRoleInParent());
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getRoleInParent());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -137,7 +137,7 @@ import java.awt.Color;
   }
   private EditorCell createAlternation_zen9g6_a0_0() {
     boolean alternationCondition = true;
-    alternationCondition = BuildTextStringPart_EditorBuilder_a.renderingCondition_zen9g6_a0a_0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_zen9g6_a0a_0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_zen9g6_a0a_1();
@@ -146,8 +146,8 @@ import java.awt.Color;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext) {
-    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(node);
+  private boolean nodeCondition_zen9g6_a0a_0() {
+    return (boolean) BuildStringPart__BehaviorDescriptor.punctuationLeft_id4qU2HB9e$4N.invoke(myNode);
   }
   private EditorCell createProperty_zen9g6_a0a_1() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

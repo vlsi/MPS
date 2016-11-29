@@ -8,6 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -16,10 +20,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.persistentConfigurationRefStyleClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.persistentConfigurationRefDeprecatedStyleClass;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.leftOperationBraceStyleClass;
@@ -63,16 +63,22 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     editorCell.setCellId("Collection_e5b6m9_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_e5b6m9_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_e5b6m9_a0a()) {
       editorCell.addEditorCell(createRefCell_e5b6m9_a0());
     }
-    if (renderingCondition_e5b6m9_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_e5b6m9_a1a()) {
       editorCell.addEditorCell(createRefCell_e5b6m9_b0());
     }
     editorCell.addEditorCell(createConstant_e5b6m9_c0());
     editorCell.addEditorCell(createRefNodeList_e5b6m9_d0());
     editorCell.addEditorCell(createConstant_e5b6m9_e0());
     return editorCell;
+  }
+  private boolean nodeCondition_e5b6m9_a0a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
+  }
+  private boolean nodeCondition_e5b6m9_a1a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
   private EditorCell createRefCell_e5b6m9_a0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
@@ -146,9 +152,6 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
       return editorCell;
     }
   }
-  private static boolean renderingCondition_e5b6m9_a0a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) == null);
-  }
   private EditorCell createRefCell_e5b6m9_b0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
     provider.setRole("template");
@@ -221,9 +224,6 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
       return editorCell;
     }
   }
-  private static boolean renderingCondition_e5b6m9_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
-  }
   private EditorCell createConstant_e5b6m9_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
     editorCell.setCellId("Constant_e5b6m9_c0");
@@ -241,10 +241,21 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_e5b6m9_d0 extends RefNodeListHandler {
+  private static class parameterListHandler_e5b6m9_d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_e5b6m9_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

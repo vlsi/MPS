@@ -11,12 +11,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyleClass;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.tagStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.borderedCollectionStyleClass;
@@ -61,12 +61,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createComponent_2v2794_a0());
-    if (renderingCondition_2v2794_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_2v2794_a1a()) {
       editorCell.addEditorCell(createProperty_2v2794_b0());
     }
     editorCell.addEditorCell(createCollection_2v2794_c0());
     editorCell.addEditorCell(createComponent_2v2794_d0());
     return editorCell;
+  }
+  private boolean nodeCondition_2v2794_a1a() {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(myNode));
   }
   private EditorCell createComponent_2v2794_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
@@ -90,9 +93,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_2v2794_a1a(SNode node, EditorContext editorContext) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
-  }
   private EditorCell createCollection_2v2794_c0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
     editorCell.setCellId("Collection_2v2794_c0");
@@ -100,13 +100,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.DRAW_BORDER, true);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_2v2794_a0c0(myNode, getEditorContext())) {
+    if (nodeCondition_2v2794_a0c0()) {
       editorCell.addEditorCell(createCollection_2v2794_a2a());
     }
-    if (renderingCondition_2v2794_a1c0(myNode, getEditorContext())) {
+    if (nodeCondition_2v2794_a1c0()) {
       editorCell.addEditorCell(createCollection_2v2794_b2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_2v2794_a0c0() {
+    return (boolean) CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(myNode);
+  }
+  private boolean nodeCondition_2v2794_a1c0() {
+    return !((boolean) CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(myNode));
   }
   private EditorCell createCollection_2v2794_a2a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
@@ -118,9 +124,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createCollection_2v2794_a0c0());
     editorCell.addEditorCell(createCollection_2v2794_b0c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_2v2794_a0c0(SNode node, EditorContext editorContext) {
-    return (boolean) CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node);
   }
   private EditorCell createCollection_2v2794_a0c0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -234,10 +237,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.getStyle().putAll(style);
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_2v2794_a1a2a());
-    if (renderingCondition_2v2794_a1b0c0(myNode, getEditorContext())) {
+    if (nodeCondition_2v2794_a1b0c0()) {
       editorCell.addEditorCell(createComponent_2v2794_b1a2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_2v2794_a1b0c0() {
+    return (boolean) CellModel_ListWithRole__BehaviorDescriptor.isFoldingEnabled_id3ZqNA5Aj2vG.invoke(myNode);
   }
   private EditorCell createCollection_2v2794_a1a2a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -262,10 +268,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     SingleRoleCellProvider provider = new CellModel_RefNodeList_EditorBuilder_a.emptyCellModelSingleRoleHandler_2v2794_b0b0c0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class emptyCellModelSingleRoleHandler_2v2794_b0b0c0 extends SingleRoleCellProvider {
+  private static class emptyCellModelSingleRoleHandler_2v2794_b0b0c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public emptyCellModelSingleRoleHandler_2v2794_b0b0c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -273,7 +290,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("emptyCellModel");
@@ -298,9 +315,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent");
     return editorCell;
   }
-  private static boolean renderingCondition_2v2794_a1b0c0(SNode node, EditorContext editorContext) {
-    return (boolean) CellModel_ListWithRole__BehaviorDescriptor.isFoldingEnabled_id3ZqNA5Aj2vG.invoke(node);
-  }
   private EditorCell createCollection_2v2794_b2a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
     editorCell.setCellId("Collection_2v2794_b2a");
@@ -309,9 +323,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createCollection_2v2794_a1c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_2v2794_a1c0(SNode node, EditorContext editorContext) {
-    return !((boolean) CellModel_ListWithRole__BehaviorDescriptor.isVertical_idi2IdWzG.invoke(node));
   }
   private EditorCell createCollection_2v2794_a1c0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -324,10 +335,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createConstant_2v2794_c0b2a());
     editorCell.addEditorCell(createConstant_2v2794_d0b2a());
     editorCell.addEditorCell(createRefNode_2v2794_e0b2a());
-    if (renderingCondition_2v2794_a5a1c0(myNode, getEditorContext())) {
+    if (nodeCondition_2v2794_a5a1c0()) {
       editorCell.addEditorCell(createComponent_2v2794_f0b2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_2v2794_a5a1c0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x10e3892b1d5L, "usesFolding"));
   }
   private EditorCell createConstant_2v2794_a0b2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "%");
@@ -435,10 +449,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     SingleRoleCellProvider provider = new CellModel_RefNodeList_EditorBuilder_a.emptyCellModelSingleRoleHandler_2v2794_e0b2a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), getEditorContext());
     return provider.createCell();
   }
-  private class emptyCellModelSingleRoleHandler_2v2794_e0b2a extends SingleRoleCellProvider {
+  private static class emptyCellModelSingleRoleHandler_2v2794_e0b2a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public emptyCellModelSingleRoleHandler_2v2794_e0b2a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -446,7 +471,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e7L, "emptyCellModel"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("emptyCellModel");
@@ -470,9 +495,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
   private EditorCell createComponent_2v2794_f0b2a() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor.CellModelListWithRole_FoldedCellComponent");
     return editorCell;
-  }
-  private static boolean renderingCondition_2v2794_a5a1c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x10e3892b1d5L, "usesFolding"));
   }
   private EditorCell createComponent_2v2794_d0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");

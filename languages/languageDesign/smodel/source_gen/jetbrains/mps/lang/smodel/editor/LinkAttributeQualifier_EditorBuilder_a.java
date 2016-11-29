@@ -133,10 +133,21 @@ import jetbrains.mps.editor.runtime.style.Measure;
     SingleRoleCellProvider provider = new LinkAttributeQualifier_EditorBuilder_a.linkQualifierSingleRoleHandler_mg3hvm_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, 0x58ea5217b045be92L, "linkQualifier"), getEditorContext());
     return provider.createCell();
   }
-  private class linkQualifierSingleRoleHandler_mg3hvm_c0 extends SingleRoleCellProvider {
+  private static class linkQualifierSingleRoleHandler_mg3hvm_c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public linkQualifierSingleRoleHandler_mg3hvm_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -144,7 +155,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, 0x58ea5217b045be92L, "linkQualifier"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b7L, 0x58ea5217b045be92L, "linkQualifier"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("linkQualifier");

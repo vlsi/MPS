@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -15,8 +17,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class MathContextEditorPart_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -41,13 +41,19 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
     editorCell.setCellId("Collection_qri1nn_a");
     editorCell.addEditorCell(createCollection_qri1nn_a0());
-    if (renderingCondition_qri1nn_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_qri1nn_a1a()) {
       editorCell.addEditorCell(createCollection_qri1nn_b0());
     }
-    if (renderingCondition_qri1nn_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_qri1nn_a2a()) {
       editorCell.addEditorCell(createCollection_qri1nn_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_qri1nn_a1a() {
+    return SPropertyOperations.getInteger_def(myNode, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, 0x1a6fbb5a434b3535L, "precisionSetting"), "0") == 0;
+  }
+  private boolean nodeCondition_qri1nn_a2a() {
+    return SPropertyOperations.getInteger_def(myNode, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, 0x1a6fbb5a434b3535L, "precisionSetting"), "0") == 0;
   }
   private EditorCell createCollection_qri1nn_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -92,9 +98,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createProperty_qri1nn_b1a());
     return editorCell;
   }
-  private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger_def(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, 0x1a6fbb5a434b3535L, "precisionSetting"), "0") == 0;
-  }
   private EditorCell createConstant_qri1nn_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "rounding mode:");
     editorCell.setCellId("Constant_qri1nn_a1a");
@@ -126,9 +129,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_qri1nn_a2a());
     editorCell.addEditorCell(createProperty_qri1nn_b2a());
     return editorCell;
-  }
-  private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getInteger_def(node, MetaAdapterFactory.getProperty(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x1a6fbb5a434b008bL, 0x1a6fbb5a434b3535L, "precisionSetting"), "0") == 0;
   }
   private EditorCell createConstant_qri1nn_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "precision:");

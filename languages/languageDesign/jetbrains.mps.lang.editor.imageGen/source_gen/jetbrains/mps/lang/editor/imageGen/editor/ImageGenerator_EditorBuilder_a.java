@@ -20,9 +20,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBraceStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBraceStyleClass;
 
 /*package*/ class ImageGenerator_EditorBuilder_a extends AbstractEditorBuilder {
@@ -173,10 +173,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.addEditorCell(createCollection_ess7oq_a6a());
     editorCell.addEditorCell(createCollection_ess7oq_b6a());
     editorCell.addEditorCell(createCollection_ess7oq_c6a());
-    if (renderingCondition_ess7oq_a3g0(myNode, getEditorContext())) {
+    if (nodeCondition_ess7oq_a3g0()) {
       editorCell.addEditorCell(createCollection_ess7oq_d6a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_ess7oq_a3g0() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad25283902716L, "node")) == null;
   }
   private EditorCell createCollection_ess7oq_a6a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -347,9 +350,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.addEditorCell(createConstant_ess7oq_c3g0());
     editorCell.addEditorCell(createProperty_ess7oq_d3g0());
     return editorCell;
-  }
-  private static boolean renderingCondition_ess7oq_a3g0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x1839bec5cea641dfL, 0xb9e0c405ff35c41eL, 0x20c051df23a9488cL, 0x2d0ad25283902716L, "node")) == null;
   }
   private EditorCell createConstant_ess7oq_a3g0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "node");

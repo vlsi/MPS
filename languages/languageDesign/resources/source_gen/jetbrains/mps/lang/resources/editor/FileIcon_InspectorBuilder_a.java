@@ -46,7 +46,7 @@ import jetbrains.mps.lang.resources.behavior.FileIcon__BehaviorDescriptor;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_tl1n57_a0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_tl1n57_a0a()));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -56,7 +56,7 @@ import jetbrains.mps.lang.resources.behavior.FileIcon__BehaviorDescriptor;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_tl1n57_a0a(EditorContext editorContext, SNode node) {
-    return ((boolean) FileIcon__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(node) ? Color.BLACK : Color.RED);
+  private Color _StyleParameter_QueryFunction_tl1n57_a0a() {
+    return ((boolean) FileIcon__BehaviorDescriptor.isValid_id7Mb2akaestJ.invoke(getNode()) ? Color.BLACK : Color.RED);
   }
 }

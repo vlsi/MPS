@@ -60,7 +60,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 
   private EditorCell createAlternation_h096ql_a() {
     boolean alternationCondition = true;
-    alternationCondition = HTMLElement_EditorBuilder_a.renderingCondition_h096ql_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_h096ql_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_h096ql_a0();
@@ -74,8 +74,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).isEmpty();
+  private boolean nodeCondition_h096ql_a0() {
+    return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x5bc4aa08e154b399L, 0x5bc4aa08e154b39bL, "line"))).isEmpty();
   }
   private EditorCell createCollection_h096ql_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -204,10 +204,21 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class lineListHandler_h096ql_d0a extends RefNodeListHandler {
+  private static class lineListHandler_h096ql_d0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public lineListHandler_h096ql_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

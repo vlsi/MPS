@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -17,8 +19,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class BuildSource_JavaDependencyModule_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -46,10 +46,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_qk2lri_a0());
     editorCell.addEditorCell(createRefCell_qk2lri_b0());
-    if (renderingCondition_qk2lri_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_qk2lri_a2a()) {
       editorCell.addEditorCell(createConstant_qk2lri_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_qk2lri_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x64bd442e1cfb0eaaL, "reexport"));
   }
   private EditorCell createConstant_qk2lri_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "module");
@@ -138,8 +141,5 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     delete_reexport_inJavaDependencyModule.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_qk2lri_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x64bd442e1cfb0eaaL, "reexport"));
   }
 }

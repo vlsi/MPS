@@ -68,10 +68,21 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     SingleRoleCellProvider provider = new TransformationMenuPart_IncludeSubstituteMenu_EditorBuilder_a.menuReferenceSingleRoleHandler_5av1d3_b0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, 0x5480a271c0f085d2L, "menuReference"), getEditorContext());
     return provider.createCell();
   }
-  private class menuReferenceSingleRoleHandler_5av1d3_b0 extends SingleRoleCellProvider {
+  private static class menuReferenceSingleRoleHandler_5av1d3_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public menuReferenceSingleRoleHandler_5av1d3_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -79,7 +90,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, 0x5480a271c0f085d2L, "menuReference"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, 0x5480a271c0f085d2L, "menuReference"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("menuReference");

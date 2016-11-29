@@ -15,13 +15,13 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -56,14 +56,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
     delete_sourcesKind.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new SourcesKindComponent_ComponentBuilder_a.BuildMps_Solution_generic_cellMenu_qubgco_a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     editorCell.addEditorCell(createConstant_qubgco_a0());
-    if (renderingCondition_qubgco_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_qubgco_a1a()) {
       editorCell.addEditorCell(createProperty_qubgco_b0());
     }
-    if (renderingCondition_qubgco_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_qubgco_a2a()) {
       editorCell.addEditorCell(createConstant_qubgco_c0());
     }
     editorCell.addEditorCell(createConstant_qubgco_d0());
     return editorCell;
+  }
+  private boolean nodeCondition_qubgco_a1a() {
+    return isNotEmptyString(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null));
+  }
+  private boolean nodeCondition_qubgco_a2a() {
+    return isEmptyString(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null));
   }
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0a extends AbstractCellMenuPart_Generic_Group {
     public BuildMps_Solution_generic_cellMenu_qubgco_a0a() {
@@ -115,9 +121,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_qubgco_a1a(SNode node, EditorContext editorContext) {
-    return isNotEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null));
-  }
   private EditorCell createConstant_qubgco_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "sources");
     editorCell.setCellId("Constant_qubgco_c0");
@@ -128,9 +131,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new SourcesKindComponent_ComponentBuilder_a.BuildMps_Solution_generic_cellMenu_qubgco_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
-  }
-  private static boolean renderingCondition_qubgco_a2a(SNode node, EditorContext editorContext) {
-    return isEmptyString(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), null));
   }
   public static class BuildMps_Solution_generic_cellMenu_qubgco_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public BuildMps_Solution_generic_cellMenu_qubgco_a0c0() {

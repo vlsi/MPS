@@ -154,16 +154,16 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     return editorCell;
   }
   private EditorCell createJComponent_uvqhkl_a6a() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Notes_EditorBuilder_a._QueryFunction_JComponent_uvqhkl_a0g0(myNode, getEditorContext()), "_uvqhkl_a6a");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_uvqhkl_a0g0(), "_uvqhkl_a6a");
     editorCell.setCellId("JComponent_uvqhkl_a6a");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_uvqhkl_a0g0(final SNode node, final EditorContext editorContext) {
-    final ModelAccess modelAccess = editorContext.getRepository().getModelAccess();
+  private JComponent _QueryFunction_JComponent_uvqhkl_a0g0() {
+    final ModelAccess modelAccess = getEditorContext().getRepository().getModelAccess();
     final boolean[] active = new boolean[]{false};
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        active[0] = SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"));
+        active[0] = SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"));
       }
     });
 
@@ -173,7 +173,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       public void actionPerformed(ActionEvent p0) {
         modelAccess.executeCommand(new Runnable() {
           public void run() {
-            SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"), "" + (!(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive")))));
+            SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"), "" + (!(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive")))));
           }
         });
       }
@@ -181,20 +181,20 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     return button;
   }
   private EditorCell createJComponent_uvqhkl_b6a() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Notes_EditorBuilder_a._QueryFunction_JComponent_uvqhkl_a1g0(myNode, getEditorContext()), "_uvqhkl_b6a");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_uvqhkl_a1g0(), "_uvqhkl_b6a");
     editorCell.setCellId("JComponent_uvqhkl_b6a");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_uvqhkl_a1g0(final SNode node, final EditorContext editorContext) {
-    final ModelAccess modelAccess = editorContext.getRepository().getModelAccess();
+  private JComponent _QueryFunction_JComponent_uvqhkl_a1g0() {
+    final ModelAccess modelAccess = getEditorContext().getRepository().getModelAccess();
     final String[] selectedCategory = new String[]{""};
     modelAccess.runReadAction(new Runnable() {
       public void run() {
-        selectedCategory[0] = SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"));
+        selectedCategory[0] = SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"));
       }
     });
 
-    SNode config = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(node), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"))).first();
+    SNode config = ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(myNode), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"))).first();
     if (config == null) {
       return new JComboBox();
     }
@@ -214,7 +214,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
         modelAccess.executeCommand(new Runnable() {
           public void run() {
             Object selectedItem = categorySelector.getSelectedItem();
-            SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"), (selectedItem != null ? selectedItem.toString() : ""));
+            SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"), (selectedItem != null ? selectedItem.toString() : ""));
           }
         });
       }
@@ -242,10 +242,21 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class notesListHandler_uvqhkl_i0 extends RefNodeListHandler {
+  private static class notesListHandler_uvqhkl_i0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public notesListHandler_uvqhkl_i0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -279,7 +290,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       final String selectedCategory = SPropertyOperations.getString(notes, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea354a85565L, "selectedCategory"));
       return (!(SPropertyOperations.getBoolean(notes, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x36042ea3549ce25fL, "showActive"))) || SPropertyOperations.getBoolean(SLinkOperations.getTarget(childNode, MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df384L, "status")), MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df360L, 0x36042ea3549551c8L, "active"))) && ((selectedCategory == null || selectedCategory.length() == 0) || ListSequence.fromList(SLinkOperations.getChildren(childNode, MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df35dL, "category"))).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_7btiix_a0a0a0a0a0a0a2a5w(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, 0x7ba12f0b163df335L, "target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), selectedCategory);
+          return eq_7btiix_a0a0a0a0a0a0a2a01w(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, 0x7ba12f0b163df335L, "target")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), selectedCategory);
         }
       }));
     }
@@ -287,7 +298,7 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     protected void createInnerCells() {
       try {
         getCellFactory().pushCellContext();
-        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_uvqhkl_a8a(getNode(), getEditorContext())).toGenericArray(String.class));
+        getCellFactory().addCellContextHints(Sequence.fromIterable(getEditorHints_uvqhkl_a8a()).toGenericArray(String.class));
         getCellFactory().removeCellContextHints();
         super.createInnerCells();
         setInnerCellsContext();
@@ -295,14 +306,17 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
         getCellFactory().popCellContext();
       }
     }
-    private Iterable<String> getEditorHints_uvqhkl_a8a(SNode node, EditorContext editorContext) {
-      if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "compact", "default")) {
+    private Iterable<String> getEditorHints_uvqhkl_a8a() {
+      if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "compact", "default")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.compact");
       }
-      if (SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "inspected", "default")) {
+      if (SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1742L, 0x7ba12f0b1640efd3L, "presentation"), "inspected", "default")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.notesOrganizer.editor.NotesHints.inspected");
       }
       return Collections.<String>emptyList();
+    }
+    private static boolean eq_7btiix_a0a0a0a0a0a0a2a01w(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
     }
   }
   public static class RangeSelectionFilter_uvqhkl_i0 extends NodeRangeSelection.RangeSelectionFilter {
@@ -322,8 +336,5 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
     private static boolean eq_7btiix_a0a0a0a0a0a0a2a1x(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-  }
-  private static boolean eq_7btiix_a0a0a0a0a0a0a2a5w(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

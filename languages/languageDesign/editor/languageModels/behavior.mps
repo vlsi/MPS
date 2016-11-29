@@ -419,7 +419,6 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -22152,9 +22151,11 @@
             <node concept="2OqwBi" id="7U96x5QFlY1" role="3uHU7w">
               <node concept="1PxgMI" id="7U96x5QFlY2" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="tpc2:6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
                 <node concept="37vLTw" id="7U96x5QFlY3" role="1m5AlR">
                   <ref role="3cqZAo" node="7U96x5QFkP0" resolve="conceptFunction" />
+                </node>
+                <node concept="chp4Y" id="64E_ac331qB" role="3oSUPX">
+                  <ref role="cht4Q" to="tpc2:6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
                 </node>
               </node>
               <node concept="2qgKlT" id="7U96x5QFlY4" role="2OqNvi">
@@ -22226,9 +22227,11 @@
               <node concept="2OqwBi" id="7U96x5QEugS" role="3fr31v">
                 <node concept="1PxgMI" id="7U96x5QEugT" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="tpc2:1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
                   <node concept="37vLTw" id="7U96x5QEugU" role="1m5AlR">
                     <ref role="3cqZAo" node="7U96x5QE9x5" resolve="conceptFunction" />
+                  </node>
+                  <node concept="chp4Y" id="64E_ac331qC" role="3oSUPX">
+                    <ref role="cht4Q" to="tpc2:1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="7U96x5QEugV" role="2OqNvi">

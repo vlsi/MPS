@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
 import javax.swing.JComponent;
 import javax.swing.JCheckBox;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import java.awt.event.ActionListener;
@@ -61,13 +61,19 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_7uomxw_a0());
     editorCell.addEditorCell(createJComponent_7uomxw_b0());
-    if (renderingCondition_7uomxw_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_7uomxw_a2a()) {
       editorCell.addEditorCell(createRefNodeList_7uomxw_c0());
     }
-    if (renderingCondition_7uomxw_a3a(myNode, getEditorContext())) {
+    if (nodeCondition_7uomxw_a3a()) {
       editorCell.addEditorCell(createRefNodeList_7uomxw_d0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_7uomxw_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"));
+  }
+  private boolean nodeCondition_7uomxw_a3a() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical")));
   }
   private EditorCell createConstant_7uomxw_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "panel");
@@ -76,14 +82,14 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     return editorCell;
   }
   private EditorCell createJComponent_7uomxw_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Panel_EditorBuilder_a._QueryFunction_JComponent_7uomxw_a1a(myNode, getEditorContext()), "_7uomxw_b0");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_7uomxw_a1a(), "_7uomxw_b0");
     editorCell.setCellId("JComponent_7uomxw_b0");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_7uomxw_a1a(final SNode node, final EditorContext editorContext) {
+  private JComponent _QueryFunction_JComponent_7uomxw_a1a() {
     final JCheckBox box = new JCheckBox("vertical align");
-    box.setSelected(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical")));
-    SRepository repository = editorContext.getRepository();
+    box.setSelected(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical")));
+    SRepository repository = getEditorContext().getRepository();
     final ModelAccess modelAccess = repository.getModelAccess();
     box.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
@@ -91,9 +97,9 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
           modelAccess.executeCommand(new Runnable() {
             public void run() {
               if (box.isSelected()) {
-                SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (true));
+                SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (true));
               } else {
-                SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (false));
+                SPropertyOperations.set(myNode, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"), "" + (false));
               }
             }
           });
@@ -115,14 +121,25 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class componentsListHandler_7uomxw_c0 extends RefNodeListHandler {
+  private static class componentsListHandler_7uomxw_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public componentsListHandler_7uomxw_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa545621L, "jetbrains.mps.samples.SwingBuilder.structure.EmptyComponent")), null);
     }
     public EditorCell createNodeCell(SNode elementNode) {
@@ -149,9 +166,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
       }
     }
   }
-  private static boolean renderingCondition_7uomxw_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical"));
-  }
   private EditorCell createRefNodeList_7uomxw_d0() {
     AbstractCellListHandler handler = new Panel_EditorBuilder_a.componentsListHandler_7uomxw_d0(myNode, "components", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
@@ -159,10 +173,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class componentsListHandler_7uomxw_d0 extends RefNodeListHandler {
+  private static class componentsListHandler_7uomxw_d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public componentsListHandler_7uomxw_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -202,8 +227,5 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
       editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(prevNode, CellAction_DeleteNode.DeleteDirection.BACKWARD));
       return editorCell;
     }
-  }
-  private static boolean renderingCondition_7uomxw_a3a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0x4a1cc65caa543033L, 0x3752e6616e34d13dL, "vertical")));
   }
 }

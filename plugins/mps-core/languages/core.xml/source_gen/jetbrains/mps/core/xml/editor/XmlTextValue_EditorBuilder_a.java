@@ -49,14 +49,17 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createAlternation_qyzwn3_a0());
-    if (renderingCondition_qyzwn3_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_qyzwn3_a1a()) {
       editorCell.addEditorCell(createConstant_qyzwn3_b0());
     }
     return editorCell;
   }
+  private boolean nodeCondition_qyzwn3_a1a() {
+    return (boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(myNode);
+  }
   private EditorCell createAlternation_qyzwn3_a0() {
     boolean alternationCondition = true;
-    alternationCondition = XmlTextValue_EditorBuilder_a.renderingCondition_qyzwn3_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_qyzwn3_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_qyzwn3_a0a();
@@ -65,8 +68,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(node);
+  private boolean nodeCondition_qyzwn3_a0a() {
+    return (boolean) XmlValuePart__BehaviorDescriptor.onNewLine_id2EZ251g0bS6.invoke(myNode);
   }
   private EditorCell createProperty_qyzwn3_a0a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -132,8 +135,5 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext) {
-    return (boolean) XmlValuePart__BehaviorDescriptor.hasNewLineAfter_id2EZ251g0bSd.invoke(node);
   }
 }

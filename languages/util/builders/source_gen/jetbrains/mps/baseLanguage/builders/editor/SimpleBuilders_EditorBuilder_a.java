@@ -188,14 +188,25 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class builderListHandler_hh7u75_f0 extends RefNodeListHandler {
+  private static class builderListHandler_hh7u75_f0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public builderListHandler_hh7u75_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x6524536b2e1a1e38L, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration"));
     }
     public EditorCell createNodeCell(SNode elementNode) {

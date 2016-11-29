@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -18,9 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.nodeEditor.EditorManager;
-import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 /*package*/ class TestMethod_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -51,10 +51,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     editorCell.addEditorCell(createConstant_ml6tu4_c0());
     editorCell.addEditorCell(createProperty_ml6tu4_d0());
     editorCell.addEditorCell(createComponent_ml6tu4_e0());
-    if (renderingCondition_ml6tu4_a5a(myNode, getEditorContext())) {
+    if (nodeCondition_ml6tu4_a5a()) {
       editorCell.addEditorCell(createConstant_ml6tu4_f0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_ml6tu4_a5a() {
+    List<SNode> nextSiblings = SNodeOperations.getNextSiblings(myNode, false);
+    return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
   private EditorCell createComponent_ml6tu4_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.baseLanguage.editor._DeprecatedPart");
@@ -107,9 +111,5 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_ml6tu4_a5a(SNode node, EditorContext editorContext) {
-    List<SNode> nextSiblings = SNodeOperations.getNextSiblings(node, false);
-    return ListSequence.fromList(nextSiblings).isNotEmpty();
   }
 }

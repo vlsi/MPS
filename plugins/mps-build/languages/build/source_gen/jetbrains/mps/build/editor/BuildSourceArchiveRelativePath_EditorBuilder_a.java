@@ -75,10 +75,21 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     SingleRoleCellProvider provider = new BuildSourceArchiveRelativePath_EditorBuilder_a.archivePathSingleRoleHandler_4z471d_a0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"), getEditorContext());
     return provider.createCell();
   }
-  private class archivePathSingleRoleHandler_4z471d_a0 extends SingleRoleCellProvider {
+  private static class archivePathSingleRoleHandler_4z471d_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public archivePathSingleRoleHandler_4z471d_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -86,7 +97,7 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("archivePath");
@@ -121,10 +132,21 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     SingleRoleCellProvider provider = new BuildSourceArchiveRelativePath_EditorBuilder_a.compositePartSingleRoleHandler_4z471d_c0(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), getEditorContext());
     return provider.createCell();
   }
-  private class compositePartSingleRoleHandler_4z471d_c0 extends SingleRoleCellProvider {
+  private static class compositePartSingleRoleHandler_4z471d_c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public compositePartSingleRoleHandler_4z471d_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -132,7 +154,7 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_EditorBuilder_a.BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new BuildSourceArchiveRelativePath_EditorBuilder_a.compositePartSingleRoleHandler_4z471d_c0.BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("compositePart");
@@ -156,42 +178,42 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
     protected String getNoTargetText() {
       return "";
     }
-  }
-  public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
-      if (!(file.exists())) {
-        return ListSequence.fromList(new ArrayList<String>());
+    public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
+      public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
       }
-      List<IFile> children = file.getChildren();
-      Iterable<String> names = ListSequence.fromList(children).select(new ISelector<IFile, String>() {
-        public String select(IFile it) {
-          return it.getName();
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        IFile file = FileSystem.getInstance().getFileByPath(BuildRelativePath__BehaviorDescriptor.getBasePath_id4jjtc7WZMYz.invoke(node, Context.defaultContext()));
+        if (!(file.exists())) {
+          return ListSequence.fromList(new ArrayList<String>());
         }
-      });
-      if (file.getParent() != null) {
-        names = Sequence.fromIterable(names).union(Sequence.fromIterable(Sequence.<String>singleton("..")));
-      }
-      return Sequence.fromIterable(names).sort(new ISelector<String, String>() {
-        public String select(String it) {
-          return it;
+        List<IFile> children = file.getChildren();
+        Iterable<String> names = ListSequence.fromList(children).select(new ISelector<IFile, String>() {
+          public String select(IFile it) {
+            return it.getName();
+          }
+        });
+        if (file.getParent() != null) {
+          names = Sequence.fromIterable(names).union(Sequence.fromIterable(Sequence.<String>singleton("..")));
         }
-      }, true).toListSequence();
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) == null)) {
-        SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
+        return Sequence.fromIterable(names).sort(new ISelector<String, String>() {
+          public String select(String it) {
+            return it;
+          }
+        }, true).toListSequence();
       }
-      SPropertyOperations.set(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), parameterObject);
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), "*" + CellIdManager.createPropertyId("head"), -1);
-    }
-    public boolean isReferentPresentation() {
-      return false;
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) == null)) {
+          SNodeFactoryOperations.setNewChild(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, "jetbrains.mps.build.structure.BuildCompositePath")));
+        }
+        SPropertyOperations.set(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"), parameterObject);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), "*" + CellIdManager.createPropertyId("head"), -1);
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
     }
   }
 }

@@ -66,7 +66,7 @@ import java.util.ArrayList;
     editorCell.setCellId("methodName");
     Style style = new StyleImpl();
     new MethodNameStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_8989zw_a0a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_8989zw_a0a0());
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), provider.getCellContext(), new SubstituteInfoPartExt[]{new BaseMethodDeclaration_NameCellComponent_ComponentBuilder_a.BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
@@ -76,8 +76,8 @@ import java.util.ArrayList;
     } else
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(EditorContext editorContext, SNode node) {
-    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) && (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(node);
+  private boolean _StyleParameter_QueryFunction_8989zw_a0a0() {
+    return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(getNode()), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) && (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(getNode());
   }
   public static class BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0() {

@@ -63,7 +63,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
       editorCell.setRole("target");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_dzi49r_a0a0(getEditorContext(), getNode())));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_dzi49r_a0a0()));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -126,7 +126,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
       return editorCell;
     }
   }
-  private static Color _StyleParameter_QueryFunction_dzi49r_a0a0(EditorContext editorContext, SNode node) {
-    return (Color) Note__BehaviorDescriptor.findColor_id3o4bEdkAIk2.invoke(SNodeOperations.as(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note")), SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, 0x7ba12f0b163df335L, "target")), MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x36042ea354974c99L, 0x36042ea354974c9dL, "color")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+  private Color _StyleParameter_QueryFunction_dzi49r_a0a0() {
+    return (Color) Note__BehaviorDescriptor.findColor_id3o4bEdkAIk2.invoke(SNodeOperations.as(SNodeOperations.getParent(getNode()), MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, "jetbrains.mps.samples.notesOrganizer.structure.Note")), SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df334L, 0x7ba12f0b163df335L, "target")), MetaAdapterFactory.getReferenceLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x36042ea354974c99L, 0x36042ea354974c9dL, "color")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
 }

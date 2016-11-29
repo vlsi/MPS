@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -18,9 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.editor.Styles_StyleSheet.operationParameterStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -61,10 +61,13 @@ import jetbrains.mps.editor.runtime.style.CaretPosition;
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
     editorCell.setCellId("Collection_n84rmm_a");
     editorCell.addEditorCell(createComponent_n84rmm_a0());
-    if (renderingCondition_n84rmm_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_n84rmm_a1a()) {
       editorCell.addEditorCell(createCollection_n84rmm_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_n84rmm_a1a() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).isNotEmpty();
   }
   private EditorCell createComponent_n84rmm_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
@@ -93,9 +96,6 @@ import jetbrains.mps.editor.runtime.style.CaretPosition;
     editorCell.addEditorCell(createConstant_n84rmm_c1a());
     return editorCell;
   }
-  private static boolean renderingCondition_n84rmm_a1a(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).isNotEmpty();
-  }
   private EditorCell createConstant_n84rmm_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<");
     editorCell.setCellId("Constant_n84rmm_a1a");
@@ -117,10 +117,21 @@ import jetbrains.mps.editor.runtime.style.CaretPosition;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {
+  private static class parameterListHandler_n84rmm_b1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_n84rmm_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

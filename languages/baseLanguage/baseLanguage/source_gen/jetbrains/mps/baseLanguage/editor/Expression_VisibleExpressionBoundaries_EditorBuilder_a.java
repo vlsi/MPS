@@ -8,14 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -43,14 +43,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.setCellId("Collection_nejlv4_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_nejlv4_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_nejlv4_a0a()) {
       editorCell.addEditorCell(createConstant_nejlv4_a0());
     }
     editorCell.addEditorCell(createNextEditor_nejlv4_b0());
-    if (renderingCondition_nejlv4_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_nejlv4_a2a()) {
       editorCell.addEditorCell(createConstant_nejlv4_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_nejlv4_a0a() {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && (!((boolean) Expression__BehaviorDescriptor.singleValue_id1o8Ht9sES3u.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode))))) && !(SNodeOperations.getConcept(myNode).isAbstract()) && !(SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
+  }
+  private boolean nodeCondition_nejlv4_a2a() {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(myNode), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && (!((boolean) Expression__BehaviorDescriptor.singleValue_id1o8Ht9sES3u.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)))) && !(SNodeOperations.getConcept(myNode).isAbstract())) && !(SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
   }
   private EditorCell createConstant_nejlv4_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "[");
@@ -63,9 +69,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_nejlv4_a0a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && (!((boolean) Expression__BehaviorDescriptor.singleValue_id1o8Ht9sES3u.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(node))))) && !(SNodeOperations.getConcept(node).isAbstract()) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
   }
   private EditorCell createNextEditor_nejlv4_b0() {
     {
@@ -91,8 +94,5 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_nejlv4_a2a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")) && (!((boolean) Expression__BehaviorDescriptor.singleValue_id1o8Ht9sES3u.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)))) && !(SNodeOperations.getConcept(node).isAbstract())) && !(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
   }
 }

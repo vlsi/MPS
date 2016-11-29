@@ -105,10 +105,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class performersListHandler_4yjeb_d0 extends RefNodeListHandler {
+  private static class performersListHandler_4yjeb_d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public performersListHandler_4yjeb_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -165,10 +176,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class performancesListHandler_4yjeb_g0 extends RefNodeListHandler {
+  private static class performancesListHandler_4yjeb_g0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public performancesListHandler_4yjeb_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

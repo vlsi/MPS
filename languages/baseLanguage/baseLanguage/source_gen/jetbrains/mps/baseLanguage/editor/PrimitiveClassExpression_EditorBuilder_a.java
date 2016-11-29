@@ -59,10 +59,21 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     SingleRoleCellProvider provider = new PrimitiveClassExpression_EditorBuilder_a.primitiveTypeSingleRoleHandler_bw5rf5_a0(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x3f57ea36bd70a4e1L, 0x3f57ea36bd70a4e2L, "primitiveType"), getEditorContext());
     return provider.createCell();
   }
-  private class primitiveTypeSingleRoleHandler_bw5rf5_a0 extends SingleRoleCellProvider {
+  private static class primitiveTypeSingleRoleHandler_bw5rf5_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public primitiveTypeSingleRoleHandler_bw5rf5_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -70,7 +81,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new PrimitiveClassExpression_EditorBuilder_a.ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new PrimitiveClassExpression_EditorBuilder_a.primitiveTypeSingleRoleHandler_bw5rf5_a0.ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("primitiveType");
@@ -87,12 +98,12 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     protected String getNoTargetText() {
       return "<no primitiveType>";
     }
-  }
-  public static class ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0() {
-    }
-    public SAbstractConcept getReplacementConcept() {
-      return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference");
+    public static class ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+      public ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0() {
+      }
+      public SAbstractConcept getReplacementConcept() {
+        return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference");
+      }
     }
   }
   private EditorCell createConstant_bw5rf5_b0() {

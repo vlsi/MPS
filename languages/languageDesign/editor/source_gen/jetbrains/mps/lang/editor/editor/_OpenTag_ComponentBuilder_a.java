@@ -55,12 +55,12 @@ import java.awt.Color;
     editorCell.setCellId("ReadOnlyModelAccessor_mtiojs_a");
     Style style = new StyleImpl();
     new borderedStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mtiojs_a0a(getEditorContext(), getNode())));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_mtiojs_a0a()));
     style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_mtiojs_a0a(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
+  private Color _StyleParameter_QueryFunction_mtiojs_a0a() {
+    return _EditorUtil.grayIfNotSelectable(getNode());
   }
 }

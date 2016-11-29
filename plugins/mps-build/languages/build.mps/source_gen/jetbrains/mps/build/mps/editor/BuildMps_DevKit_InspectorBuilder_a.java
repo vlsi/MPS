@@ -56,10 +56,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_pa0pfb_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_pa0pfb_a0a()) {
       editorCell.addEditorCell(createCollection_pa0pfb_a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_pa0pfb_a0a() {
+    return (boolean) BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(myNode);
   }
   private EditorCell createCollection_pa0pfb_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
@@ -67,9 +70,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.addEditorCell(createCollection_pa0pfb_a0a());
     editorCell.addEditorCell(createCollection_pa0pfb_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_pa0pfb_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) BuildMps_AbstractModule__BehaviorDescriptor.isCompact_id7gAtt1ju6Jy.invoke(node);
   }
   private EditorCell createCollection_pa0pfb_a0a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -142,10 +142,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class extendsListHandler_pa0pfb_b1a0 extends RefNodeListHandler {
+  private static class extendsListHandler_pa0pfb_b1a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public extendsListHandler_pa0pfb_b1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -203,10 +214,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class exportsListHandler_pa0pfb_d1a0 extends RefNodeListHandler {
+  private static class exportsListHandler_pa0pfb_d1a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public exportsListHandler_pa0pfb_d1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

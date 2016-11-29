@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
   private EditorCell createAlternation_7zoim2_a() {
     boolean alternationCondition = true;
-    alternationCondition = InternalClassifierType_EditorBuilder_a.renderingCondition_7zoim2_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_7zoim2_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_7zoim2_a0();
@@ -71,8 +71,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_7zoim2_a0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).isNotEmpty();
+  private boolean nodeCondition_7zoim2_a0() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))).isNotEmpty();
   }
   private EditorCell createCollection_7zoim2_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -214,10 +214,21 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_7zoim2_g0a extends RefNodeListHandler {
+  private static class parameterListHandler_7zoim2_g0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_7zoim2_g0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

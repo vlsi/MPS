@@ -53,7 +53,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
   private EditorCell createAlternation_bnhthl_a0a() {
     boolean alternationCondition = true;
-    alternationCondition = UnknownConsCall_EditorBuilder_a.renderingCondition_bnhthl_a0a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_bnhthl_a0a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_bnhthl_a0a0();
@@ -62,8 +62,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_bnhthl_a0a0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, 0x7e4a5cff51167ce2L, "isSuper"));
+  private boolean nodeCondition_bnhthl_a0a0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x7e4a5cff51167b74L, 0x7e4a5cff51167ce2L, "isSuper"));
   }
   private EditorCell createConstant_bnhthl_a0a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "super");

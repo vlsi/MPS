@@ -58,10 +58,13 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     editorCell.addEditorCell(createConstant_lnae77_b0());
     editorCell.addEditorCell(createRefCell_lnae77_c0());
     editorCell.addEditorCell(createCollection_lnae77_d0());
-    if (renderingCondition_lnae77_a4a(myNode, getEditorContext())) {
+    if (nodeCondition_lnae77_a4a()) {
       editorCell.addEditorCell(createCollection_lnae77_e0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_lnae77_a4a() {
+    return IdEditorHelper.shownInEditor(myNode);
   }
   private EditorCell createTransactionalProperty_lnae77_a0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -195,9 +198,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     editorCell.addEditorCell(createConstant_lnae77_a4a());
     editorCell.addEditorCell(createProperty_lnae77_b4a());
     return editorCell;
-  }
-  private static boolean renderingCondition_lnae77_a4a(SNode node, EditorContext editorContext) {
-    return IdEditorHelper.shownInEditor(node);
   }
   private EditorCell createConstant_lnae77_a4a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ID: ");

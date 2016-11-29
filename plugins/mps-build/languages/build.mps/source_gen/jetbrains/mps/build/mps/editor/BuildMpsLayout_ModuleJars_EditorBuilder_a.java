@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.editor.buildStyles_StyleSheet.outputLayoutStyleClass;
@@ -18,13 +20,11 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
@@ -61,10 +61,13 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createComponent_aqxvre_a0());
     editorCell.addEditorCell(createRefCell_aqxvre_b0());
-    if (renderingCondition_aqxvre_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_aqxvre_a2a()) {
       editorCell.addEditorCell(createCollection_aqxvre_c0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_aqxvre_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd40dL, "customContent"));
   }
   private EditorCell createComponent_aqxvre_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");
@@ -168,9 +171,6 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     editorCell.addEditorCell(createCollection_aqxvre_d2a());
     return editorCell;
   }
-  private static boolean renderingCondition_aqxvre_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd40dL, "customContent"));
-  }
   private EditorCell createConstant_aqxvre_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Extras for deployment jar:");
     editorCell.setCellId("Constant_aqxvre_a2a");
@@ -196,10 +196,21 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_EditorBuilder_a.deployedJarSingleRoleHandler_aqxvre_a1c0(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dc749L, "deployedJar"), getEditorContext());
     return provider.createCell();
   }
-  private class deployedJarSingleRoleHandler_aqxvre_a1c0 extends SingleRoleCellProvider {
+  private static class deployedJarSingleRoleHandler_aqxvre_a1c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public deployedJarSingleRoleHandler_aqxvre_a1c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -207,7 +218,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dc749L, "deployedJar"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dc749L, "deployedJar"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("deployedJar");
@@ -253,10 +264,21 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     SingleRoleCellProvider provider = new BuildMpsLayout_ModuleJars_EditorBuilder_a.sourceJarSingleRoleHandler_aqxvre_a3c0(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), getEditorContext());
     return provider.createCell();
   }
-  private class sourceJarSingleRoleHandler_aqxvre_a3c0 extends SingleRoleCellProvider {
+  private static class sourceJarSingleRoleHandler_aqxvre_a3c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public sourceJarSingleRoleHandler_aqxvre_a3c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -264,7 +286,7 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd410L, "sourceJar"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("sourceJar");

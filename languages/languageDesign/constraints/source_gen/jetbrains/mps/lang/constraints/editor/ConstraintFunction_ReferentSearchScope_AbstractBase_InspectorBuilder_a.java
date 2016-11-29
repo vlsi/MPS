@@ -127,7 +127,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createCollection_5v10so_c5a());
     editorCell.addEditorCell(createCollection_5v10so_d5a());
     editorCell.addEditorCell(createCollection_5v10so_e5a());
-    if (renderingCondition_5v10so_a5f0(myNode, getEditorContext())) {
+    if (nodeCondition_5v10so_a5f0()) {
       editorCell.addEditorCell(createCollection_5v10so_f5a());
     }
     editorCell.addEditorCell(createCollection_5v10so_g5a());
@@ -137,6 +137,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createCollection_5v10so_k5a());
     editorCell.addEditorCell(createCollection_5v10so_l5a());
     return editorCell;
+  }
+  private boolean nodeCondition_5v10so_a5f0() {
+    return SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
   }
   private EditorCell createCollection_5v10so_a5a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -272,9 +275,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_5v10so_a5f0());
     editorCell.addEditorCell(createConstant_5v10so_b5f0());
     return editorCell;
-  }
-  private static boolean renderingCondition_5v10so_a5f0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x36367902116a44c1L, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation"));
   }
   private EditorCell createConstant_5v10so_a5f0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "parameterNode");

@@ -53,10 +53,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
     SingleRoleCellProvider provider = new BuildMpsLayout_ModuleXml_CustomJarLocation_EditorBuilder_a.pathSingleRoleHandler_r8678q_a0(myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"), getEditorContext());
     return provider.createCell();
   }
-  private class pathSingleRoleHandler_r8678q_a0 extends SingleRoleCellProvider {
+  private static class pathSingleRoleHandler_r8678q_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public pathSingleRoleHandler_r8678q_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -64,7 +75,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3c765492deb1a384L, 0x3c765492deb1a385L, "path"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("path");

@@ -76,7 +76,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
   }
   private EditorCell createAlternation_cbnorm_c0() {
     boolean alternationCondition = true;
-    alternationCondition = JavaImport_EditorBuilder_a.renderingCondition_cbnorm_a2a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_cbnorm_a2a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_cbnorm_a2a();
@@ -85,8 +85,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"));
+  private boolean nodeCondition_cbnorm_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x64c0181e603bcfL, 0x64c0181e603bd0L, "onDemand"));
   }
   private EditorCell createConstant_cbnorm_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, ".*");

@@ -82,11 +82,11 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setFoldedCell(createReadOnlyModelAccessor_b5vsyg_a1a());
     editorCell.addEditorCell(createConstant_b5vsyg_a1a());
     editorCell.addEditorCell(createRefNode_b5vsyg_b1a());
-    editorCell.setInitiallyCollapsed(renderingCondition_b5vsyg_a1a(myNode, getEditorContext()));
+    editorCell.setInitiallyCollapsed(nodeCondition_b5vsyg_a1a());
     return editorCell;
   }
-  private static boolean renderingCondition_b5vsyg_a1a(SNode node, EditorContext editorContext) {
-    return ConceptFunctionFoldingUtil.getSimpleString(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction"))) != null;
+  private boolean nodeCondition_b5vsyg_a1a() {
+    return ConceptFunctionFoldingUtil.getSimpleString(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction"))) != null;
   }
   private EditorCell createConstant_b5vsyg_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "text");
@@ -101,10 +101,21 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     SingleRoleCellProvider provider = new TransformationMenuPart_SubMenu_EditorBuilder_a.textFunctionSingleRoleHandler_b5vsyg_b1a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction"), getEditorContext());
     return provider.createCell();
   }
-  private class textFunctionSingleRoleHandler_b5vsyg_b1a extends SingleRoleCellProvider {
+  private static class textFunctionSingleRoleHandler_b5vsyg_b1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public textFunctionSingleRoleHandler_b5vsyg_b1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -112,7 +123,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x384b3925671e99efL, 0x4eff4d8b1f5dd0b3L, "textFunction"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("textFunction");
@@ -190,10 +201,21 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class itemsListHandler_b5vsyg_b2a extends RefNodeListHandler {
+  private static class itemsListHandler_b5vsyg_b2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public itemsListHandler_b5vsyg_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

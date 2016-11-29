@@ -102,10 +102,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class accountTypeListHandler_5606pw_b2a extends RefNodeListHandler {
+  private static class accountTypeListHandler_5606pw_b2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public accountTypeListHandler_5606pw_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -201,10 +212,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class eventTypeListHandler_5606pw_b4a extends RefNodeListHandler {
+  private static class eventTypeListHandler_5606pw_b4a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public eventTypeListHandler_5606pw_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

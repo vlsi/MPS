@@ -209,38 +209,38 @@ public class Styles_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_kkd5s1_a0a(getEditorContext(), getNode()));
-      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_kkd5s1_a1a(getEditorContext(), getNode()));
-      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_kkd5s1_a2a(getEditorContext(), getNode()));
+      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_kkd5s1_a0a());
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_kkd5s1_a1a());
+      style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_kkd5s1_a2a());
       style.set(StyleAttributes.DRAW_BORDER, true);
     }
 
-    private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
-      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+    private boolean _StyleParameter_QueryFunction_kkd5s1_a0a() {
+      if (!(SNodeOperations.isInstanceOf(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return false;
       }
-      return (boolean) EditorCellModel__BehaviorDescriptor.isIndented_idi0pN94$.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
+      return (boolean) EditorCellModel__BehaviorDescriptor.isIndented_idi0pN94$.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
     }
-    private static boolean _StyleParameter_QueryFunction_kkd5s1_a1a(EditorContext editorContext, SNode node) {
-      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+    private boolean _StyleParameter_QueryFunction_kkd5s1_a1a() {
+      if (!(SNodeOperations.isInstanceOf(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return false;
       }
-      if ((boolean) EditorCellModel__BehaviorDescriptor.isNewLine_idi0pLPAc.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+      if ((boolean) EditorCellModel__BehaviorDescriptor.isNewLine_idi0pLPAc.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return true;
       }
-      if ((boolean) EditorCellModel__BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+      if ((boolean) EditorCellModel__BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return true;
       }
-      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
-        return (boolean) EditorCellModel__BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(SNodeOperations.cast(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
+        return (boolean) EditorCellModel__BehaviorDescriptor.isNewLineChildren_idi0pNGlC.invoke(SNodeOperations.cast(SNodeOperations.getParent(getNode()), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
       }
       return false;
     }
-    private static boolean _StyleParameter_QueryFunction_kkd5s1_a2a(EditorContext editorContext, SNode node) {
-      if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
+    private boolean _StyleParameter_QueryFunction_kkd5s1_a2a() {
+      if (!(SNodeOperations.isInstanceOf(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")))) {
         return false;
       }
-      return (boolean) EditorCellModel__BehaviorDescriptor.isOnNewLine_idi0pUMOG.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
+      return (boolean) EditorCellModel__BehaviorDescriptor.isOnNewLine_idi0pUMOG.invoke(SNodeOperations.cast(getNode(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel")));
     }
   }
   public static class styleStyleClass extends AbstractStyleClass {
@@ -349,10 +349,10 @@ public class Styles_StyleSheet {
       style.set(StyleAttributes.DRAW_BORDER, true);
       style.set(StyleAttributes.EDITABLE, false);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
-      style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_kkd5s1_a3j(getEditorContext(), getNode()));
+      style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_kkd5s1_a3j());
     }
 
-    private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(EditorContext editorContext, SNode node) {
+    private boolean _StyleParameter_QueryFunction_kkd5s1_a3j() {
       return true;
     }
   }
@@ -435,10 +435,10 @@ public class Styles_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_kkd5s1_a0q(getEditorContext(), getNode()).o1 : _StyleParameter_QueryFunction_kkd5s1_a0q(getEditorContext(), getNode()).o2));
+      style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_kkd5s1_a0q().o1 : _StyleParameter_QueryFunction_kkd5s1_a0q().o2));
     }
 
-    private static Pair<Color, Color> _StyleParameter_QueryFunction_kkd5s1_a0q(EditorContext editorContext, SNode node) {
+    private Pair<Color, Color> _StyleParameter_QueryFunction_kkd5s1_a0q() {
       return new Pair<Color, Color>(new Color(0x90, 0x60, 0), new Color(0xff, 0xc6, 0x6d));
     }
   }

@@ -45,10 +45,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_zfkwl8_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_zfkwl8_a0a()) {
       editorCell.addEditorCell(createCollection_zfkwl8_a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_zfkwl8_a0a() {
+    return SNodeOperations.getNodeAncestor(myNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), false, false) != null;
   }
   private EditorCell createCollection_zfkwl8_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -56,9 +59,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.addEditorCell(createConstant_zfkwl8_a0a());
     editorCell.addEditorCell(createProperty_zfkwl8_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_zfkwl8_a0a(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getNodeAncestor(node, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x117c5668bf2L, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"), false, false) != null;
   }
   private EditorCell createConstant_zfkwl8_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "strong:");

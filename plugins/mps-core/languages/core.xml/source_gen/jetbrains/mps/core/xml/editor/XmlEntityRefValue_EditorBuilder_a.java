@@ -61,14 +61,14 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
     Style style = new StyleImpl();
     new xmlAttrEntityRefValueStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_poez2y_a1a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_poez2y_a1a0());
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_poez2y_a1a0(EditorContext editorContext, SNode node) {
-    return !((boolean) XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(node));
+  private boolean _StyleParameter_QueryFunction_poez2y_a1a0() {
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isFirstPositionAllowed_id2EZ251g0bSk.invoke(getNode()));
   }
   private EditorCell createProperty_poez2y_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -102,13 +102,13 @@ import jetbrains.mps.core.xml.constraints.XmlNameUtil;
     Style style = new StyleImpl();
     new xmlAttrEntityRefValueStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_poez2y_a1c0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_poez2y_a1c0());
     editorCell.getStyle().putAll(style);
     delete_XmlEntityRefValueDelete.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_poez2y_a1c0(EditorContext editorContext, SNode node) {
-    return !((boolean) XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(node));
+  private boolean _StyleParameter_QueryFunction_poez2y_a1c0() {
+    return !((boolean) XmlValuePart__BehaviorDescriptor.isLastPositionAllowed_id2EZ251g0bSp.invoke(getNode()));
   }
 }

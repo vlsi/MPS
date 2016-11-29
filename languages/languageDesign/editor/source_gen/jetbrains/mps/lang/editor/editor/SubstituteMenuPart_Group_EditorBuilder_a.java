@@ -110,10 +110,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class variablesListHandler_6tc1kw_a1b0 extends RefNodeListHandler {
+  private static class variablesListHandler_6tc1kw_a1b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public variablesListHandler_6tc1kw_a1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -156,10 +167,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     SingleRoleCellProvider provider = new SubstituteMenuPart_Group_EditorBuilder_a.conditionSingleRoleHandler_6tc1kw_d1a(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46daeL, "condition"), getEditorContext());
     return provider.createCell();
   }
-  private class conditionSingleRoleHandler_6tc1kw_d1a extends SingleRoleCellProvider {
+  private static class conditionSingleRoleHandler_6tc1kw_d1a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public conditionSingleRoleHandler_6tc1kw_d1a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -167,7 +189,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46daeL, "condition"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, 0x5c03050cab46daeL, "condition"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("condition");
@@ -220,14 +242,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class partsListHandler_6tc1kw_c0 extends RefNodeListHandler {
+  private static class partsListHandler_6tc1kw_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public partsListHandler_6tc1kw_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x25c7da75de4cff05L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Placeholder"));
     }
     public EditorCell createNodeCell(SNode elementNode) {

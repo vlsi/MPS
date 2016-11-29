@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -18,12 +21,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
@@ -64,13 +64,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_n0gj60_a0());
     editorCell.addEditorCell(createConstant_n0gj60_b0());
-    if (renderingCondition_n0gj60_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_n0gj60_a2a()) {
       editorCell.addEditorCell(createProperty_n0gj60_c0());
     }
-    if (renderingCondition_n0gj60_a3a(myNode, getEditorContext())) {
+    if (nodeCondition_n0gj60_a3a()) {
       editorCell.addEditorCell(createRefNode_n0gj60_d0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_n0gj60_a2a() {
+    return neq_dowdhi_a0a0j(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
+  }
+  private boolean nodeCondition_n0gj60_a3a() {
+    return eq_dowdhi_a0a0k(SPropertyOperations.getString_def(myNode, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
   }
   private EditorCell createConstant_n0gj60_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "font-style");
@@ -110,9 +116,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_n0gj60_a2a(SNode node, EditorContext editorContext) {
-    return neq_dowdhi_a0a0n(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
-  }
   public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0c0() {
     }
@@ -124,14 +127,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
-      if (eq_dowdhi_a0b0d41(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
+      if (eq_dowdhi_a0b0d51(parameterObject, SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query"))) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x11c47cb352dL, "query"), SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle")), null));
       }
     }
     public boolean isReferentPresentation() {
       return false;
     }
-    private static boolean eq_dowdhi_a0b0d41(Object a, Object b) {
+    private static boolean eq_dowdhi_a0b0d51(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
@@ -139,10 +142,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     SingleRoleCellProvider provider = new FontStyleStyleClassItem_EditorBuilder_a.querySingleRoleHandler_n0gj60_d0(myNode, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x11c47cb352dL, "query"), getEditorContext());
     return provider.createCell();
   }
-  private class querySingleRoleHandler_n0gj60_d0 extends SingleRoleCellProvider {
+  private static class querySingleRoleHandler_n0gj60_d0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public querySingleRoleHandler_n0gj60_d0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -150,7 +164,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_EditorBuilder_a.FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new FontStyleStyleClassItem_EditorBuilder_a.querySingleRoleHandler_n0gj60_d0.FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("query");
@@ -170,31 +184,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     protected String getNoTargetText() {
       return "<no query>";
     }
-  }
-  private static boolean renderingCondition_n0gj60_a3a(SNode node, EditorContext editorContext) {
-    return eq_dowdhi_a0a0r(SPropertyOperations.getString_def(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), "PLAIN"), SEnumOperations.getEnumMemberValue(SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"), "query")));
-  }
-  public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0 extends AbstractCellMenuPart_Generic_Group {
-    public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNodeOperations.deleteNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x11c47cb352dL, "query")));
-      SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
-    }
-    public boolean isReferentPresentation() {
-      return false;
+    public static class FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0 extends AbstractCellMenuPart_Generic_Group {
+      public FontStyleStyleClassItem_generic_cellMenu_n0gj60_a0d0() {
+      }
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "_FontStyle_Enum"));
+      }
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x11c47cb352dL, "query")));
+        SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L, 0x1143b2ce41fL, "style"), SEnumOperations.getEnumMemberValue(parameterObject));
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
     }
   }
-  private static boolean neq_dowdhi_a0a0n(Object a, Object b) {
+  private static boolean neq_dowdhi_a0a0j(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_dowdhi_a0a0r(Object a, Object b) {
+  private static boolean eq_dowdhi_a0a0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

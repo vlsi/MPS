@@ -90,10 +90,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class messagesListHandler_z6mw6q_c0 extends RefNodeListHandler {
+  private static class messagesListHandler_z6mw6q_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public messagesListHandler_z6mw6q_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

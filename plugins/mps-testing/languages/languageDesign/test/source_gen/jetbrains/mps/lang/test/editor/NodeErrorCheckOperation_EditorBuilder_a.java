@@ -86,10 +86,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
     SingleRoleCellProvider provider = new NodeErrorCheckOperation_EditorBuilder_a.errorRefSingleRoleHandler_kzyi6r_b0(myNode, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef"), getEditorContext());
     return provider.createCell();
   }
-  private class errorRefSingleRoleHandler_kzyi6r_b0 extends SingleRoleCellProvider {
+  private static class errorRefSingleRoleHandler_kzyi6r_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public errorRefSingleRoleHandler_kzyi6r_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -97,7 +108,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new NodeErrorCheckOperation_EditorBuilder_a.NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new NodeErrorCheckOperation_EditorBuilder_a.errorRefSingleRoleHandler_kzyi6r_b0.NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("errorRef");
@@ -114,36 +125,36 @@ import jetbrains.mps.nodeEditor.EditorManager;
     protected String getNoTargetText() {
       return "<no errorRef>";
     }
-  }
-  public static class NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0 extends AbstractCellMenuPart_Generic_Group {
-    public NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
-      AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
-      Set<SNode> errorInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
-      return SetSequence.fromSet(errorInstances).toListSequence().select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
-        }
-      }).toListSequence();
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b19b06dL, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference")));
-      SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), parameterObject);
-    }
-    public boolean isReferentPresentation() {
-      return false;
-    }
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SNode) parameterObject);
-    }
-    public String getMatchingText_internal(SNode parameterObject) {
-      SNode errorStatement = parameterObject;
-      return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(errorStatement);
+    public static class NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0 extends AbstractCellMenuPart_Generic_Group {
+      public NodeErrorCheckOperation_generic_cellMenu_kzyi6r_a0b0() {
+      }
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        SAbstractConcept concept = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
+        AbstractModule module = ((AbstractModule) SNodeOperations.getModel(node).getModule());
+        Set<SNode> errorInstances = FindUsagesManager.getInstance().findInstances(module.getScope(), Collections.singleton(concept), true, new EmptyProgressMonitor());
+        return SetSequence.fromSet(errorInstances).toListSequence().select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"));
+          }
+        }).toListSequence();
+      }
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x3ee2cbee8b19b06dL, "jetbrains.mps.lang.test.structure.ReportErrorStatementReference")));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b01e7283dL, 0x75cf259aa047ff15L, "errorRef")), MetaAdapterFactory.getReferenceLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x6abc06f5f4afab9dL, 0x73a7cdcfba51f755L, "declaration"), parameterObject);
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
+      public String getMatchingText(Object parameterObject) {
+        return this.getMatchingText_internal((SNode) parameterObject);
+      }
+      public String getMatchingText_internal(SNode parameterObject) {
+        SNode errorStatement = parameterObject;
+        return MessageStatement__BehaviorDescriptor.getName_id1oFBbRehoLP.invoke(errorStatement);
+      }
     }
   }
   private EditorCell createNonEmptyProperty_kzyi6r_c0() {

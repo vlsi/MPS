@@ -52,13 +52,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "Test");
     editorCell.setCellId("Constant_hazblc_a0");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_hazblc_a0a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_hazblc_a0a0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_hazblc_a0a0(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted"));
+  private boolean _StyleParameter_QueryFunction_hazblc_a0a0() {
+    return SPropertyOperations.getBoolean(getNode(), MetaAdapterFactory.getProperty(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cbaL, 0x776b1eb017f5bc5eL, "muted"));
   }
   private EditorCell createRefCell_hazblc_b0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());

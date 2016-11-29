@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -15,13 +17,11 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 /*package*/ class InlineRegexpExpression_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -50,16 +50,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.addEditorCell(createConstant_5rturt_a0());
     editorCell.addEditorCell(createRefNode_5rturt_b0());
     editorCell.addEditorCell(createConstant_5rturt_c0());
-    if (renderingCondition_5rturt_a3a(myNode, getEditorContext())) {
+    if (nodeCondition_5rturt_a3a()) {
       editorCell.addEditorCell(createConstant_5rturt_d0());
     }
-    if (renderingCondition_5rturt_a4a(myNode, getEditorContext())) {
+    if (nodeCondition_5rturt_a4a()) {
       editorCell.addEditorCell(createConstant_5rturt_e0());
     }
-    if (renderingCondition_5rturt_a5a(myNode, getEditorContext())) {
+    if (nodeCondition_5rturt_a5a()) {
       editorCell.addEditorCell(createConstant_5rturt_f0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_5rturt_a3a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119ceddfe3L, "multiLine"));
+  }
+  private boolean nodeCondition_5rturt_a4a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cedcf38L, "dotAll"));
+  }
+  private boolean nodeCondition_5rturt_a5a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cf15020L, "caseInsensitive"));
   }
   private EditorCell createConstant_5rturt_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "/");
@@ -75,10 +84,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     SingleRoleCellProvider provider = new InlineRegexpExpression_EditorBuilder_a.regexpSingleRoleHandler_5rturt_b0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp"), getEditorContext());
     return provider.createCell();
   }
-  private class regexpSingleRoleHandler_5rturt_b0 extends SingleRoleCellProvider {
+  private static class regexpSingleRoleHandler_5rturt_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public regexpSingleRoleHandler_5rturt_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -86,7 +106,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x11176490e08L, "regexp"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("regexp");
@@ -125,9 +145,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_5rturt_a3a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119ceddfe3L, "multiLine"));
-  }
   private EditorCell createConstant_5rturt_e0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "s");
     editorCell.setCellId("Constant_5rturt_e0");
@@ -139,9 +156,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_5rturt_a4a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cedcf38L, "dotAll"));
-  }
   private EditorCell createConstant_5rturt_f0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "i");
     editorCell.setCellId("Constant_5rturt_f0");
@@ -152,8 +166,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     InlineRegexpExpression_removeI.setCellActions(editorCell, myNode, getEditorContext());
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_5rturt_a5a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, 0x1119cf15020L, "caseInsensitive"));
   }
 }

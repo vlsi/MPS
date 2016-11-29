@@ -122,7 +122,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
     private EditorCell createAlternation_6u0t67_a0b0() {
       boolean alternationCondition = true;
-      alternationCondition = GeneratorDebug_InputNode_InspectorBuilder_a.Inline_Builder_6u0t67_a1a_0.renderingCondition_6u0t67_a0a1a(myNode, getEditorContext());
+      alternationCondition = nodeCondition_6u0t67_a0a1a();
       EditorCell editorCell = null;
       if (alternationCondition) {
         editorCell = createReadOnlyModelAccessor_6u0t67_a0a1a();
@@ -131,8 +131,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       }
       return editorCell;
     }
-    private static boolean renderingCondition_6u0t67_a0a1a(SNode node, EditorContext editorContext) {
-      return SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId"));
+    private boolean nodeCondition_6u0t67_a0a1a() {
+      return SNodeOperations.isInstanceOf(myNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7d58bd9fd9b64463L, "jetbrains.mps.lang.generator.structure.TrivialNodeId"));
     }
     private EditorCell createReadOnlyModelAccessor_6u0t67_a0a1a() {
       EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {

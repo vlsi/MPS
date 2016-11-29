@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -43,13 +43,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setCellId("Collection_kawrig_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_kawrig_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_kawrig_a0a()) {
       editorCell.addEditorCell(createConstant_kawrig_a0());
     }
-    if (renderingCondition_kawrig_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_kawrig_a1a()) {
       editorCell.addEditorCell(createConstant_kawrig_b0());
     }
-    if (renderingCondition_kawrig_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_kawrig_a2a()) {
       editorCell.addEditorCell(createConstant_kawrig_c0());
     }
     editorCell.addEditorCell(createConstant_kawrig_d0());
@@ -58,6 +58,15 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.addEditorCell(createProperty_kawrig_g0());
     editorCell.addEditorCell(createConstant_kawrig_h0());
     return editorCell;
+  }
+  private boolean nodeCondition_kawrig_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4eL, "exportToProperiesFile"));
+  }
+  private boolean nodeCondition_kawrig_a1a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4fL, "isLocation"));
+  }
+  private boolean nodeCondition_kawrig_a2a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x600ce6822a9cc358L, "uninitialized"));
   }
   private EditorCell createConstant_kawrig_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "export");
@@ -68,9 +77,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4eL, "exportToProperiesFile"));
-  }
   private EditorCell createConstant_kawrig_b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "location");
     editorCell.setCellId("Constant_kawrig_b0");
@@ -80,9 +86,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x5fb388b43aa25d4fL, "isLocation"));
-  }
   private EditorCell createConstant_kawrig_c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "uninitialized");
     editorCell.setCellId("Constant_kawrig_c0");
@@ -91,9 +94,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x5fb388b43aa25d48L, 0x600ce6822a9cc358L, "uninitialized"));
   }
   private EditorCell createConstant_kawrig_d0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "macro");

@@ -38,11 +38,14 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setCellId("Collection_bepn0t_a_0");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_bepn0t_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_bepn0t_a0a()) {
       editorCell.addEditorCell(createCollection_bepn0t_a0_0());
     }
     editorCell.addEditorCell(createCollection_bepn0t_b0_0());
     return editorCell;
+  }
+  private boolean nodeCondition_bepn0t_a0a() {
+    return InternalFlag.isInternalMode();
   }
   private EditorCell createCollection_bepn0t_a0_0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -50,9 +53,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.addEditorCell(createConstant_bepn0t_a0a_0());
     editorCell.addEditorCell(createProperty_bepn0t_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_bepn0t_a0a(SNode node, EditorContext editorContext) {
-    return InternalFlag.isInternalMode();
   }
   private EditorCell createConstant_bepn0t_a0a_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "isInternal:");

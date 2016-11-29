@@ -122,10 +122,21 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class hintsListHandler_g9eea5_c2a extends RefNodeListHandler {
+  private static class hintsListHandler_g9eea5_c2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public hintsListHandler_g9eea5_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

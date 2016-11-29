@@ -75,13 +75,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     editorCell.setCellId("Constant_p7dwc8_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_p7dwc8_a1c0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_p7dwc8_a1c0());
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(EditorContext editorContext, SNode node) {
-    return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
+  private boolean _StyleParameter_QueryFunction_p7dwc8_a1c0() {
+    return (SNodeOperations.getParent(getNode()) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(getNode()));
   }
   private EditorCell createAttributedNodeCell_p7dwc8_d0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());

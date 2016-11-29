@@ -41,11 +41,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       bigCell.setCellContext(getCellFactory().getCellContext());
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_cfre1m_a0a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.getInstance().<Boolean>getAttribute("jetbrains.mps.lang.editor.styleTests", "test-simple-attribute"), _StyleParameter_QueryFunction_cfre1m_a0a());
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_cfre1m_a0a(EditorContext editorContext, SNode node) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, 0x7bc02723c1a35ed3L, "value"));
+  private boolean _StyleParameter_QueryFunction_cfre1m_a0a() {
+    return SPropertyOperations.getBoolean(getNode(), MetaAdapterFactory.getProperty(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x7bc02723c1a3595dL, 0x7bc02723c1a35ed3L, "value"));
   }
 }

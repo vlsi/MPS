@@ -71,10 +71,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     SingleRoleCellProvider provider = new AssertStatement_EditorBuilder_a.conditionSingleRoleHandler_avk0kx_b0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L, 0x111b2518fb4L, "condition"), getEditorContext());
     return provider.createCell();
   }
-  private class conditionSingleRoleHandler_avk0kx_b0 extends SingleRoleCellProvider {
+  private static class conditionSingleRoleHandler_avk0kx_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public conditionSingleRoleHandler_avk0kx_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -82,7 +93,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L, 0x111b2518fb4L, "condition"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b24c0cd8L, 0x111b2518fb4L, "condition"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("condition");
@@ -124,10 +135,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     SingleRoleCellProvider provider = new AssertStatement_EditorBuilder_a.errorStringSingleRoleHandler_avk0kx_e0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, 0x111b252f0c9L, "errorString"), getEditorContext());
     return provider.createCell();
   }
-  private class errorStringSingleRoleHandler_avk0kx_e0 extends SingleRoleCellProvider {
+  private static class errorStringSingleRoleHandler_avk0kx_e0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public errorStringSingleRoleHandler_avk0kx_e0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -135,7 +157,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, 0x111b252f0c9L, "errorString"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x111b251a62aL, 0x111b252f0c9L, "errorString"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("errorString");
@@ -166,10 +188,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     SingleRoleCellProvider provider = new AssertStatement_EditorBuilder_a.nodeToReportSingleRoleHandler_avk0kx_g0(myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e6L, "nodeToReport"), getEditorContext());
     return provider.createCell();
   }
-  private class nodeToReportSingleRoleHandler_avk0kx_g0 extends SingleRoleCellProvider {
+  private static class nodeToReportSingleRoleHandler_avk0kx_g0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public nodeToReportSingleRoleHandler_avk0kx_g0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -177,7 +210,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.OperatorSt
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e6L, "nodeToReport"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L, 0x11db4ab45e6L, "nodeToReport"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("nodeToReport");

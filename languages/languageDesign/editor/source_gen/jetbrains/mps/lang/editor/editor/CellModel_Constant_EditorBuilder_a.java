@@ -47,21 +47,24 @@ import java.awt.Color;
     Style style = new StyleImpl();
     new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_8hdu2g_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_8hdu2g_a0a()) {
       editorCell.addEditorCell(createComponent_8hdu2g_a0());
     }
     editorCell.addEditorCell(createProperty_8hdu2g_b0());
-    if (renderingCondition_8hdu2g_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_8hdu2g_a2a()) {
       editorCell.addEditorCell(createComponent_8hdu2g_c0());
     }
     return editorCell;
   }
+  private boolean nodeCondition_8hdu2g_a0a() {
+    return EditorCellModel__BehaviorDescriptor.getOpeningTag_idhKxXtpm.invoke(myNode).length() > 0;
+  }
+  private boolean nodeCondition_8hdu2g_a2a() {
+    return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(myNode).length() > 0;
+  }
   private EditorCell createComponent_8hdu2g_a0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
-  }
-  private static boolean renderingCondition_8hdu2g_a0a(SNode node, EditorContext editorContext) {
-    return EditorCellModel__BehaviorDescriptor.getOpeningTag_idhKxXtpm.invoke(node).length() > 0;
   }
   private EditorCell createProperty_8hdu2g_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -73,13 +76,13 @@ import java.awt.Color;
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
     new borderedStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a0b0(getEditorContext(), getNode())));
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a1b0(getEditorContext(), getNode())));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a2b0(getEditorContext(), getNode())));
-    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_8hdu2g_a3b0(getEditorContext(), getNode()));
-    style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_8hdu2g_a4b0(getEditorContext(), getNode()));
-    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_8hdu2g_a5b0(getEditorContext(), getNode()));
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_8hdu2g_a6b0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a0b0()));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a1b0()));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_8hdu2g_a2b0()));
+    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_8hdu2g_a3b0());
+    style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_8hdu2g_a4b0());
+    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_8hdu2g_a5b0());
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_8hdu2g_a6b0());
     editorCell.getStyle().putAll(style);
     editorCell.addKeyMap(new _SplitConctantCellIntoWordsKeyMap());
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -90,32 +93,29 @@ import java.awt.Color;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a0b0(EditorContext editorContext, SNode node) {
-    return (Color) EditorCellModel__BehaviorDescriptor.getTextBackgroundColor_idhL7BhMP.invoke(node);
+  private Color _StyleParameter_QueryFunction_8hdu2g_a0b0() {
+    return (Color) EditorCellModel__BehaviorDescriptor.getTextBackgroundColor_idhL7BhMP.invoke(getNode());
   }
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a1b0(EditorContext editorContext, SNode node) {
-    return (Color) EditorCellModel__BehaviorDescriptor.getBackgroundColor_idhL7rNfN.invoke(node);
+  private Color _StyleParameter_QueryFunction_8hdu2g_a1b0() {
+    return (Color) EditorCellModel__BehaviorDescriptor.getBackgroundColor_idhL7rNfN.invoke(getNode());
   }
-  private static Color _StyleParameter_QueryFunction_8hdu2g_a2b0(EditorContext editorContext, SNode node) {
-    return (Color) EditorCellModel__BehaviorDescriptor.getForegroundColor_idhL6TA5F.invoke(node);
+  private Color _StyleParameter_QueryFunction_8hdu2g_a2b0() {
+    return (Color) EditorCellModel__BehaviorDescriptor.getForegroundColor_idhL6TA5F.invoke(getNode());
   }
-  private static int _StyleParameter_QueryFunction_8hdu2g_a3b0(EditorContext editorContext, SNode node) {
-    return (int) EditorCellModel__BehaviorDescriptor.getFontStyle_idhLcv3Z9.invoke(node);
+  private int _StyleParameter_QueryFunction_8hdu2g_a3b0() {
+    return (int) EditorCellModel__BehaviorDescriptor.getFontStyle_idhLcv3Z9.invoke(getNode());
   }
-  private static int _StyleParameter_QueryFunction_8hdu2g_a4b0(EditorContext editorContext, SNode node) {
-    return (int) EditorCellModel__BehaviorDescriptor.getFontSize_idhLmaQwP.invoke(node);
+  private int _StyleParameter_QueryFunction_8hdu2g_a4b0() {
+    return (int) EditorCellModel__BehaviorDescriptor.getFontSize_idhLmaQwP.invoke(getNode());
   }
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a5b0(EditorContext editorContext, SNode node) {
-    return (boolean) EditorCellModel__BehaviorDescriptor.isUnderlined_idhLmqR8u.invoke(node);
+  private boolean _StyleParameter_QueryFunction_8hdu2g_a5b0() {
+    return (boolean) EditorCellModel__BehaviorDescriptor.isUnderlined_idhLmqR8u.invoke(getNode());
   }
-  private static boolean _StyleParameter_QueryFunction_8hdu2g_a6b0(EditorContext editorContext, SNode node) {
-    return (boolean) EditorCellModel__BehaviorDescriptor.isStrikeOut_idhNnL8J1.invoke(node);
+  private boolean _StyleParameter_QueryFunction_8hdu2g_a6b0() {
+    return (boolean) EditorCellModel__BehaviorDescriptor.isStrikeOut_idhNnL8J1.invoke(getNode());
   }
   private EditorCell createComponent_8hdu2g_c0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
-  }
-  private static boolean renderingCondition_8hdu2g_a2a(SNode node, EditorContext editorContext) {
-    return EditorCellModel__BehaviorDescriptor.getClosingTag_idhKxXx_K.invoke(node).length() > 0;
   }
 }
