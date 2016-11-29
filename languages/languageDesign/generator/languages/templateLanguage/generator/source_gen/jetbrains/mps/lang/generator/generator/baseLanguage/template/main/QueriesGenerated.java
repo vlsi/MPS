@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
-import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.generator.behavior.NodeMacro__BehaviorDescriptor;
 import jetbrains.mps.generator.impl.RuleUtil;
@@ -55,6 +54,8 @@ import jetbrains.mps.lang.smodel.behavior.ContainmentLinkId__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
+import jetbrains.mps.lang.pattern.behavior.PatternExpression__BehaviorDescriptor;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.TemplateArgumentContext;
@@ -62,7 +63,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation__BehaviorDescriptor;
@@ -1172,9 +1172,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_9191117361655150707(final ReferenceMacroContext _context) {
     return GenUtil.getVarHack(_context, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, 0x1104fd38a1cL, "ruleConsequence")));
   }
-  public static Object referenceMacro_GetReferent_3615289984453653130(final ReferenceMacroContext _context) {
-    return SNodeOperations.asNode(PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern"))));
-  }
   public static Object referenceMacro_GetReferent_9191117361655049707(final ReferenceMacroContext _context) {
     return GenUtil.getVarHack(_context, SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a12ebb8L, "ruleConsequence")));
   }
@@ -2279,6 +2276,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_559189405767894994(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x10fc0d8c573L, 0x1104fd38a1cL, "ruleConsequence"));
+  }
+  public static SNode sourceNodeQuery_1340813738844795847(final SourceSubstituteMacroNodeContext _context) {
+    SNode concept = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
+    ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(concept, PatternExpression__BehaviorDescriptor.getQuotedNodeConcept_id4vXWNHn1_L$.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a13891aL, "pattern"))));
+    return concept;
   }
   public static SNode sourceNodeQuery_3205439297087202526(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x190d31fe6a12ebb4L, 0x190d31fe6a12ebb8L, "ruleConsequence"));

@@ -253,7 +253,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule0 extends ReductionRuleBase {
     public PatternRule0() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992608883"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992608883"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -269,7 +269,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule1 extends ReductionRuleBase {
     public PatternRule1() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288275225"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb7c3070eeL, "jetbrains.mps.baseLanguage.structure.AndExpression"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288275225"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfb7c3070eeL, "AndExpression"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -343,7 +343,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule2 extends ReductionRuleBase {
     public PatternRule2() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288382558"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288382558"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbcf6bd10dL, "NotExpression"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -381,7 +381,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule3 extends ReductionRuleBase {
     public PatternRule3() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288486365"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x2535e9813339efcaL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatement"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2681305894288486365"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x2535e9813339efcaL, "CustomStatement"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -397,7 +397,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule4 extends ReductionRuleBase {
     public PatternRule4() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913701566"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2163819695913701566"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1e076e8c8ce9211aL, "CustomStatementRef"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -462,7 +462,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule5 extends ReductionRuleBase {
     public PatternRule5() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030949"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030949"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1e076e8c8ce9211aL, "CustomStatementRef"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -478,7 +478,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule6 extends ReductionRuleBase {
     public PatternRule6() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154465852759"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "933643154465852759"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1e076e8c8ce9211aL, "CustomStatementRef"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
@@ -524,7 +524,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
   }
   public class PatternRule7 extends ReductionRuleBase {
     public PatternRule7() {
-      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088644"), MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1e076e8c8ce9211aL, "jetbrains.mps.transformation.test.outputLang.structure.CustomStatementRef"), false);
+      super(new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "8371596541809088644"), MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1e076e8c8ce9211aL, "CustomStatementRef"), false);
     }
     @Override
     public Collection<SNode> apply(@NotNull TemplateContext templateContext) throws GenerationException {
