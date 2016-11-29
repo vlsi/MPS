@@ -48,7 +48,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getOperationConcept_idhEwIBCc(@NotNull SNode __thisNode__) {
     SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first());
     if (memberOperationConcept == null) {
-      throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(__thisNode__) + " concept");
+      throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConcept(__thisNode__) + " concept");
     }
     return memberOperationConcept;
   }
