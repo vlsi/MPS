@@ -39,7 +39,10 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.HashMap;
+
+import static java.util.Collections.emptyMap;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -143,7 +146,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     fireConflictDetected();
   }
 
-  public boolean checkAndResolveConflictOnSave() {
+  private boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getReference().getModelName() + " was modified externally! " +
           "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
@@ -157,7 +160,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     return true;
   }
 
-  public void changeModelFile(IFile newModelFile) {
+  private void changeModelFile(IFile newModelFile) {
     assertCanChange();
     if (!(getSource() instanceof FileDataSource)) {
       throw new UnsupportedOperationException("cannot change model file on non-file data source");
@@ -227,8 +230,8 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
     // TODO update SModelId (if it contains modelName)
     //if(getReference().getModelId().getModelName() != null) { }
-    SModelReference newModelReference = PersistenceFacade.getInstance().createModelReference(getReference().getModuleReference(),
-        getReference().getModelId(), newModelName);
+    SModelReference newModelReference =
+        PersistenceFacade.getInstance().createModelReference(getReference().getModuleReference(), getReference().getModelId(), newModelName);
 
     fireBeforeModelRenamed(newModelReference);
     changeModelReference(newModelReference);
@@ -253,17 +256,17 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           }
         }
         try {
-          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot,
-              new HashMap<String, String>()).getFile();
-          newFile.getParent().mkdirs();
-          newFile.createNewFile();
-          changeModelFile(newFile);
-          save();
-          oldFile.delete();
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot, new HashMap<>()).getFile();
+          if (!newFile.equals(oldFile)) {
+            newFile.getParent().mkdirs();
+            newFile.createNewFile();
+            changeModelFile(newFile);
+            oldFile.delete();
+          }
         } catch (IOException e) {
           LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
-          save();
         }
+        save();
       }
     }
 
