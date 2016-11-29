@@ -385,11 +385,6 @@
       </concept>
     </language>
     <language id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext">
-      <concept id="1217960314443" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase" flags="nn" index="2k5Stg">
-        <child id="1217960314448" name="messageText" index="2k5Stb" />
-        <child id="1217960407512" name="referenceNode" index="2k6f33" />
-      </concept>
-      <concept id="1217970068025" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage" flags="nn" index="2kF5Gy" />
       <concept id="2721957369897614808" name="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef" flags="nn" index="1bhEwm">
         <reference id="2721957369897614810" name="varmacro" index="1bhEwk" />
       </concept>
@@ -3550,25 +3545,6 @@
       <property role="2qtEX9" value="name" />
       <node concept="3zFVjK" id="1HtRHZzxM2j" role="3zH0cK">
         <node concept="3clFbS" id="1HtRHZzxM2k" role="2VODD2">
-          <node concept="3clFbF" id="7rdthmpGwL6" role="3cqZAp">
-            <node concept="2OqwBi" id="7rdthmpGwR5" role="3clFbG">
-              <node concept="1iwH7S" id="7rdthmpGwL4" role="2Oq$k0" />
-              <node concept="2kF5Gy" id="7rdthmpGwXi" role="2OqNvi">
-                <node concept="2OqwBi" id="7rdthmpGxS4" role="2k5Stb">
-                  <node concept="2OqwBi" id="7rdthmpGxfs" role="2Oq$k0">
-                    <node concept="30H73N" id="7rdthmpGx6N" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="7rdthmpGx$N" role="2OqNvi">
-                      <ref role="3Tt5mk" to="1i04:hP3h7Gv" resolve="concept" />
-                    </node>
-                  </node>
-                  <node concept="3TrcHB" id="7rdthmpGy4P" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
-                  </node>
-                </node>
-                <node concept="30H73N" id="7rdthmpGHTa" role="2k6f33" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="1HtRHZzxPWw" role="3cqZAp">
             <node concept="3cpWs3" id="CVylynET$s" role="3clFbG">
               <node concept="10M0yZ" id="1kGvb30KkPW" role="3uHU7w">
