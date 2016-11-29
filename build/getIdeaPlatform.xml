@@ -1,4 +1,4 @@
-<project name="Get Idea Platform" default="resolve" xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="Get Idea Platform" default="install" xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <property name="idea.platform.version" value="163.7743.44"/>
   <property name="idea.platform.snapshot" value="163-SNAPSHOT"/>
@@ -6,7 +6,6 @@
   <property name="ivy.cache.ttl.default" value="eternal"/>
 
   <target name="install-ivy">
-    <property name="mps.ivy.home" value="${user.home}"/>
     <path id="ivy.lib.path">
       <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
     </path>
@@ -14,83 +13,85 @@
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
   </target>
 
-  <target name="checkPlatformIsUpToDate" depends="readFile">
-    <condition property="platformNeedUpdate" value="true" else="false">
+  <target name="check" depends="version" description="Check version of currently downloaded platform">
+    <condition property="platform.need.update" value="true" else="false">
       <not>
-        <and>
-          <equals arg1="${buildTxtExist}" arg2="true"/>
-          <equals arg1="${idea.platform.version}" arg2="${current.version}"/>
-        </and>
+        <equals arg1="${idea.platform.version}" arg2="${current.version}"/>
       </not>
     </condition>
+    <echo message="Platform is need to be updated: ${platform.need.update}"/>
   </target>
 
-  <target name="checkFileExist">
-    <condition property="buildTxtExist" value="true" else="false">
+  <target name="version-file" description="Util task to check if build.txt exists">
+    <condition property="build.txt.exists" value="true" else="false">
       <available file="../lib/build.txt"/>
     </condition>
   </target>
 
-  <target name="readFile" depends="checkFileExist" if="${buildTxtExist}" description="Load platform version from build.txt to property">
+  <target name="version" depends="version-file" description="Load platform version from build.txt to property" if="${build.txt.exists}">
     <loadfile property="current.version" srcfile="../lib/build.txt">
       <filterchain>
         <replacestring from="MPS-" to=""/>
         <striplinebreaks/>
       </filterchain>
     </loadfile>
-    <loadfile property="current.version2" failonerror="false">
-      <zipentry zipfile="../platform.zip" name="lib/build.txtdd"/>
-      <filterchain>
-        <replacestring from="MPS-" to=""/>
-        <striplinebreaks/>
-      </filterchain>
-    </loadfile>
     <echo message="File build.txt contains build number: ${current.version}"/>
-    <echo message="File build.txt contains build number: ${current.version2}"/>
   </target>
 
-  <target name="checkSnapshot" depends="readFile">
-    <condition property="isSnapshot" value="true" else="false">
+  <!--TODO: investigate ivy behaviour and remove if not needed-->
+  <target name="snapshot" depends="version" description="Compare current platform version with snapshot">
+    <condition property="is.snapshot" value="true" else="false">
       <equals arg1="${idea.platform.snapshot}" arg2="${idea.platform.version}"/>
     </condition>
   </target>
 
-  <target name="cleanCache" depends="checkSnapshot" if="${isSnapshot}">
+  <target name="invalidate" depends="snapshot" if="${is.snapshot}" description="Cleans local ivy cache. Can dramatically increase build time!">
     <ivy:cleancache/>
   </target>
 
-  <target name="force-resolve" depends="install-ivy, cleanCache">
-    <ivy:resolve file="ivy.xml"/>
-    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
+  <target name="download" description="Download all platform libs and sources">
+    <antcall target="download-platform"/>
+    <antcall target="download-diffutils"/>
+    <antcall target="download-testlib"/>
+  </target>
 
-    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar"/>
+  <target name="download-platform" depends="install-ivy, invalidate" description="Download platform based on IDEA Community from TeamCity">
+    <ivy:resolve file="ivy.xml" showprogress="true"/>
+    <ivy:retrieve pattern="../[artifact].[ext]" overwritemode="different"/>
+
+  </target>
+
+  <target name="download-diffutils" depends="install-ivy" description="Download com.googlecode.java-diff-utils-diffutils library">
+    <ivy:resolve file="ivyDiffUtils.xml" showprogress="true"/>
+    <ivy:retrieve pattern="../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-testlib" depends="install-ivy" description="Download jmock and hamcrest libraries">
+    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar" showprogress="true"/>
     <ivy:retrieve pattern="../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
-  <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">
+  <target name="install" depends="check" description="Download and install MPS platform" if="${platform.need.update}">
     <antcall target="clean"/>
-    <antcall target="force-resolve"/>
+    <antcall target="download"/>
+    <unzip src="../mps-platform.zip" dest="../" overwrite="true">
+      <!--TODO use license files from IDEA Community-->
+      <patternset>
+        <exclude name="license/*"/>
+      </patternset>
+    </unzip>
   </target>
 
-  <target name="clean" description="Delete platform files">
-    <delete dir="../lib" includeemptydirs="true">
-      <exclude name="diffutils-1.2.1.jar"/>
-      <exclude name="src/diffutils-1.2.1-sources.jar"/>
-    </delete>
+  <target name="clean" description="Delete platform files and downloaded libraries">
+    <delete dir="../lib" includeemptydirs="true"/>
     <delete dir="../plugins/cvsIntegration/lib"/>
     <delete dir="../plugins/git4idea/lib"/>
     <delete dir="../plugins/svn4idea/lib"/>
     <delete dir="../plugins/terminal"/>
-  </target>
 
-  <target name="download" description="Download platform artifacts">
-    <get src="https://teamcity.jetbrains.com/guestAuth/repository/downloadAll/MPS_35_Distribution_Platform/${idea.platform.version}/artifacts.zip"
-         dest="../platform.zip" verbose="true"/>
-  </target>
-
-  <target name="setup" depends="checkPlatformIsUpToDate,download" if="${platformNeedUpdate}">
-    <antcall target="clean"/>
-    <unzip src="../platform.zip" dest="../" overwrite="true"/>
+    <delete dir="../languages/baseLanguage/unitTest/lib">
+      <exclude name=".gitignore"/>
+    </delete>
   </target>
 
 </project>

@@ -6,7 +6,6 @@
 
 
   <target name="install-ivy">
-    <property name="mps.ivy.home" value="${user.home}"/>
     <path id="ivy.lib.path">
       <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
     </path>
