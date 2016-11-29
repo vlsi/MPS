@@ -22,7 +22,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
     return _quotation_createNode_5z9xz6_a0a2(status.getPattern().getMatchedNode("elementType"));
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType");
+    return MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, "jetbrains.mps.baseLanguage.collections"), 0x11d91cbbcd0L, "SetType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
