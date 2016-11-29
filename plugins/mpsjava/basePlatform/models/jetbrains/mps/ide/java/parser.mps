@@ -446,6 +446,7 @@
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115029295477" name="jetbrains.mps.lang.smodel.structure.SReferenceType" flags="in" index="2z4iKi" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
@@ -25905,7 +25906,7 @@
                 <node concept="37vLTw" id="4ykJ8Y7nXwy" role="2Oq$k0">
                   <ref role="3cqZAo" node="2IXrFxMn2lX" resolve="varRef" />
                 </node>
-                <node concept="3NT_Vc" id="4ykJ8Y7nZco" role="2OqNvi" />
+                <node concept="2yIwOk" id="2eXSyKpuDVc" role="2OqNvi" />
               </node>
               <node concept="3O6GUB" id="4ykJ8Y7o5pP" role="2OqNvi">
                 <node concept="chp4Y" id="4ykJ8Y7o5w2" role="3QVz_e">

@@ -171,6 +171,7 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
@@ -420,7 +421,7 @@
                   <node concept="2OqwBi" id="2D1PBM_b_Dq" role="2Oq$k0">
                     <node concept="2OqwBi" id="2D1PBM_b_Dr" role="2Oq$k0">
                       <node concept="13iPFW" id="2D1PBM_b_Ds" role="2Oq$k0" />
-                      <node concept="3NT_Vc" id="2D1PBM_b_Dt" role="2OqNvi" />
+                      <node concept="2yIwOk" id="2eXSyKpuEkK" role="2OqNvi" />
                     </node>
                     <node concept="2qgKlT" id="2D1PBM_b_Du" role="2OqNvi">
                       <ref role="37wK5l" node="2D1PBM_bxJ5" resolve="getOperationConcept" />

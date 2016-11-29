@@ -166,6 +166,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
@@ -193,7 +194,6 @@
       <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
         <reference id="1139867957129" name="concept" index="1_rbq0" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -573,7 +573,7 @@
                   <node concept="2OqwBi" id="1653mnvBcWK" role="3fr31v">
                     <node concept="2OqwBi" id="1653mnvBcWL" role="2Oq$k0">
                       <node concept="2Sf5sV" id="1653mnvBcWM" role="2Oq$k0" />
-                      <node concept="3NT_Vc" id="1653mnvBcWN" role="2OqNvi" />
+                      <node concept="2yIwOk" id="2eXSyKpu61F" role="2OqNvi" />
                     </node>
                     <node concept="2qgKlT" id="1653mnvBcWO" role="2OqNvi">
                       <ref role="37wK5l" to="tp2z:1653mnvAgqc" resolve="hasInitSize" />

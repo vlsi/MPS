@@ -461,7 +461,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -20531,7 +20530,7 @@
               <node concept="2OqwBi" id="5otPu$gqXqm" role="3fr31v">
                 <node concept="2OqwBi" id="5otPu$gqXqn" role="2Oq$k0">
                   <node concept="2Sf5sV" id="79HfvPe40C1" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="5otPu$gqXqp" role="2OqNvi" />
+                  <node concept="2yIwOk" id="2eXSyKpuDeS" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="5otPu$gqXqq" role="2OqNvi">
                   <ref role="37wK5l" to="tpek:1653mnvAgr2" resolve="constant" />
@@ -21128,7 +21127,7 @@
               <node concept="2OqwBi" id="79HfvPecttb" role="3fr31v">
                 <node concept="2OqwBi" id="79HfvPecttc" role="2Oq$k0">
                   <node concept="2Sf5sV" id="79HfvPecttd" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="79HfvPectte" role="2OqNvi" />
+                  <node concept="2yIwOk" id="2eXSyKpuDeT" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="79HfvPecttf" role="2OqNvi">
                   <ref role="37wK5l" to="tpek:1653mnvAgr2" resolve="constant" />

@@ -305,6 +305,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -332,7 +333,6 @@
         <reference id="1144195362400" name="conceptOfParent" index="1BmUXE" />
         <reference id="1144195396777" name="linkInParent" index="1Bn3mz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -9297,7 +9297,7 @@
                       <ref role="3Tt5mk" to="39kg:5yEI9AszOcW" resolve="expression" />
                     </node>
                   </node>
-                  <node concept="3NT_Vc" id="1653mnvC3YG" role="2OqNvi" />
+                  <node concept="2yIwOk" id="2eXSyKpu4Fr" role="2OqNvi" />
                 </node>
                 <node concept="2qgKlT" id="1653mnvC3YH" role="2OqNvi">
                   <ref role="37wK5l" to="tpek:1653mnvAgpj" resolve="lvalue" />

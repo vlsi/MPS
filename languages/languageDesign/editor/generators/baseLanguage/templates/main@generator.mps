@@ -737,7 +737,6 @@
       <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
         <reference id="1240930444946" name="member" index="3HdYuM" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -14840,7 +14839,7 @@
                     <node concept="2OqwBi" id="1TL0VdKR9sJ" role="3uHU7B">
                       <node concept="2OqwBi" id="1TL0VdKR9sD" role="2Oq$k0">
                         <node concept="30H73N" id="1TL0VdKR9sC" role="2Oq$k0" />
-                        <node concept="3NT_Vc" id="1TL0VdKR9sH" role="2OqNvi" />
+                        <node concept="2yIwOk" id="2eXSyKpu535" role="2OqNvi" />
                       </node>
                       <node concept="3O6GUB" id="1TL0VdKR9sO" role="2OqNvi">
                         <node concept="chp4Y" id="1TL0VdKR9tg" role="3QVz_e">
@@ -14851,7 +14850,7 @@
                     <node concept="2OqwBi" id="1TL0VdKR9sV" role="3uHU7w">
                       <node concept="2OqwBi" id="1TL0VdKR9sW" role="2Oq$k0">
                         <node concept="30H73N" id="1TL0VdKR9sX" role="2Oq$k0" />
-                        <node concept="3NT_Vc" id="1TL0VdKR9sY" role="2OqNvi" />
+                        <node concept="2yIwOk" id="2eXSyKpu536" role="2OqNvi" />
                       </node>
                       <node concept="3O6GUB" id="1TL0VdKR9sZ" role="2OqNvi">
                         <node concept="chp4Y" id="1TL0VdKR9ti" role="3QVz_e">
@@ -14863,7 +14862,7 @@
                   <node concept="2OqwBi" id="1TL0VdKR9t8" role="3uHU7w">
                     <node concept="2OqwBi" id="1TL0VdKR9t9" role="2Oq$k0">
                       <node concept="30H73N" id="1TL0VdKR9ta" role="2Oq$k0" />
-                      <node concept="3NT_Vc" id="1TL0VdKR9tb" role="2OqNvi" />
+                      <node concept="2yIwOk" id="2eXSyKpu537" role="2OqNvi" />
                     </node>
                     <node concept="3O6GUB" id="1TL0VdKR9tc" role="2OqNvi">
                       <node concept="chp4Y" id="1TL0VdKR9tk" role="3QVz_e">
@@ -18372,7 +18371,7 @@
                         <node concept="2OqwBi" id="1653mnvBZGs" role="33vP2m">
                           <node concept="2OqwBi" id="1653mnvBZGt" role="2Oq$k0">
                             <node concept="30H73N" id="1653mnvBZGu" role="2Oq$k0" />
-                            <node concept="3NT_Vc" id="1653mnvBZGv" role="2OqNvi" />
+                            <node concept="2yIwOk" id="2eXSyKpu534" role="2OqNvi" />
                           </node>
                           <node concept="2qgKlT" id="1653mnvBZGw" role="2OqNvi">
                             <ref role="37wK5l" to="tpcb:1653mnvAf1C" resolve="getMethodToGenerate" />

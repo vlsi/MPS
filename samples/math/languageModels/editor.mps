@@ -462,7 +462,6 @@
       <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
         <reference id="1139867957129" name="concept" index="1_rbq0" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -1429,8 +1428,8 @@
                       <ref role="37wK5l" to="r3rn:1653mnvAgoA" resolve="getOpName" />
                     </node>
                     <node concept="2OqwBi" id="1653mnvCjb1" role="2Oq$k0">
-                      <node concept="3NT_Vc" id="1653mnvCjb2" role="2OqNvi" />
                       <node concept="pncrf" id="1653mnvCjaY" role="2Oq$k0" />
+                      <node concept="2yIwOk" id="2eXSyKpu4Fp" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
@@ -1521,8 +1520,8 @@
                     <ref role="37wK5l" to="r3rn:1653mnvAgoA" resolve="getOpName" />
                   </node>
                   <node concept="2OqwBi" id="1653mnvCjaj" role="2Oq$k0">
-                    <node concept="3NT_Vc" id="1653mnvCjak" role="2OqNvi" />
                     <node concept="pncrf" id="1653mnvCjag" role="2Oq$k0" />
+                    <node concept="2yIwOk" id="2eXSyKpu4Fq" role="2OqNvi" />
                   </node>
                 </node>
               </node>

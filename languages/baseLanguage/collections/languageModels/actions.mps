@@ -261,6 +261,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
@@ -3139,7 +3140,7 @@
                           <node concept="2OqwBi" id="1653mnvBLWM" role="3fr31v">
                             <node concept="2OqwBi" id="1653mnvBLWN" role="2Oq$k0">
                               <node concept="Cj7Ep" id="1653mnvBLWO" role="2Oq$k0" />
-                              <node concept="3NT_Vc" id="1653mnvBLWP" role="2OqNvi" />
+                              <node concept="2yIwOk" id="2eXSyKpu61B" role="2OqNvi" />
                             </node>
                             <node concept="2qgKlT" id="1653mnvBLWQ" role="2OqNvi">
                               <ref role="37wK5l" to="tp2z:1653mnvAgtY" resolve="hasInitSize" />
@@ -4328,7 +4329,7 @@
                     <node concept="2OqwBi" id="1653mnvBrt0" role="3uHU7w">
                       <node concept="2OqwBi" id="1653mnvBrt1" role="2Oq$k0">
                         <node concept="Cj7Ep" id="1653mnvBrt2" role="2Oq$k0" />
-                        <node concept="3NT_Vc" id="1653mnvBrt3" role="2OqNvi" />
+                        <node concept="2yIwOk" id="2eXSyKpu61E" role="2OqNvi" />
                       </node>
                       <node concept="2qgKlT" id="1653mnvBrt4" role="2OqNvi">
                         <ref role="37wK5l" to="tp2z:1653mnvAgtY" resolve="hasInitSize" />
@@ -4378,7 +4379,7 @@
                 <node concept="2OqwBi" id="1653mnvCgb$" role="3uHU7w">
                   <node concept="2OqwBi" id="1653mnvCgb_" role="2Oq$k0">
                     <node concept="Cj7Ep" id="1653mnvCgbA" role="2Oq$k0" />
-                    <node concept="3NT_Vc" id="1653mnvCgbB" role="2OqNvi" />
+                    <node concept="2yIwOk" id="2eXSyKpu61I" role="2OqNvi" />
                   </node>
                   <node concept="2qgKlT" id="1653mnvCgbC" role="2OqNvi">
                     <ref role="37wK5l" to="tp2z:1653mnvAgqc" resolve="hasInitSize" />

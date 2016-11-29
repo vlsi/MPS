@@ -100,7 +100,7 @@
                 <node concept="2OqwBi" id="1NmRLF_DYSm" role="2Oq$k0">
                   <node concept="13iPFW" id="1NmRLF_DYIB" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1NmRLF_DZon" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tb4y:1NmRLF_Cu8f" />
+                    <ref role="3Tt5mk" to="tb4y:1NmRLF_Cu8f" resolve="wrapped" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="1NmRLF_E0aE" role="2OqNvi">

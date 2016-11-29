@@ -298,7 +298,7 @@
     <property role="3GE5qa" value="SourcePath" />
     <ref role="1M2myG" to="3ior:6qcrfIJFx8t" resolve="BuildSourceMacroRelativePath" />
     <node concept="1N5Pfh" id="6qcrfIJFCeo" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:6qcrfIJFx8E" />
+      <ref role="1N5Vy1" to="3ior:6qcrfIJFx8E" resolve="macro" />
       <node concept="Bn3R3" id="6qcrfIJFCeq" role="Bn3R6">
         <node concept="3clFbS" id="6qcrfIJFCer" role="2VODD2">
           <node concept="3clFbF" id="6qcrfIJFCe$" role="3cqZAp">
@@ -440,7 +440,7 @@
                     <node concept="nLn13" id="6DMiG0xqV6Y" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr7fW" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xr7gp" role="2OqNvi">
@@ -530,7 +530,7 @@
                     <node concept="nLn13" id="6DMiG0xr7hc" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr7hd" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xr7he" role="2OqNvi">
@@ -663,7 +663,7 @@
     <property role="3GE5qa" value="Names" />
     <ref role="1M2myG" to="3ior:4gdvEeQyRO1" resolve="BuildVarRefStringPart" />
     <node concept="1N5Pfh" id="4gdvEeQyUx7" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4gdvEeQyRO2" />
+      <ref role="1N5Vy1" to="3ior:4gdvEeQyRO2" resolve="macro" />
       <node concept="1dDu$B" id="4gdvEeQyUx8" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
       </node>
@@ -681,7 +681,7 @@
               <node concept="2OqwBi" id="3NagsOfU4Gz" role="2Oq$k0">
                 <node concept="EsrRn" id="3NagsOfU4Gw" role="2Oq$k0" />
                 <node concept="3TrEf2" id="3NagsOfU4GD" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:3NagsOfTPim" />
+                  <ref role="3Tt5mk" to="3ior:3NagsOfTPim" resolve="containerName" />
                 </node>
               </node>
               <node concept="2qgKlT" id="3NagsOfU4GN" role="2OqNvi">
@@ -764,7 +764,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="3ior:IFRVVI4P3M" resolve="BuildLayout_Import" />
     <node concept="1N5Pfh" id="IFRVVI4Uzl" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:IFRVVI4P3O" />
+      <ref role="1N5Vy1" to="3ior:IFRVVI4P3O" resolve="target" />
       <node concept="Bn3R3" id="IFRVVI4Uzm" role="Bn3R6">
         <node concept="3clFbS" id="IFRVVI4Uzn" role="2VODD2">
           <node concept="3cpWs8" id="1bWeed$oEHc" role="3cqZAp">
@@ -965,7 +965,7 @@
     <property role="3GE5qa" value="Layout.Java" />
     <ref role="1M2myG" to="3ior:2fQZjorRfO$" resolve="BuildLayout_CompileOutputOf" />
     <node concept="1N5Pfh" id="13YBgBBSbqE" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:2fQZjorRfOA" />
+      <ref role="1N5Vy1" to="3ior:2fQZjorRfOA" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSbqF" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:2fQZjorRfOB" resolve="BuildSource_CompilablePart" />
       </node>
@@ -1076,7 +1076,7 @@
     <property role="3GE5qa" value="Layout.External" />
     <ref role="1M2myG" to="3ior:6eCuTcwOX2$" resolve="BuildExternalLayoutDependency" />
     <node concept="1N5Pfh" id="7aqYYYFvBiD" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:6eCuTcwOX2B" />
+      <ref role="1N5Vy1" to="3ior:6eCuTcwOX2B" resolve="layout" />
       <node concept="1dDu$B" id="7aqYYYFvBiE" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:6eCuTcwObZ9" resolve="BuildExternalLayout" />
       </node>
@@ -1086,7 +1086,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="3ior:4RsV8qJBXHj" resolve="BuildLayout_ImportContent" />
     <node concept="1N5Pfh" id="4RsV8qJC0pb" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4RsV8qJBXHl" />
+      <ref role="1N5Vy1" to="3ior:4RsV8qJBXHl" resolve="target" />
       <node concept="Bn3R3" id="4RsV8qJC0pc" role="Bn3R6">
         <node concept="3clFbS" id="4RsV8qJC0pd" role="2VODD2">
           <node concept="3cpWs8" id="4RsV8qJC0pe" role="3cqZAp">
@@ -1327,7 +1327,7 @@
     <property role="3GE5qa" value="Project.Java.Classpath" />
     <ref role="1M2myG" to="3ior:4RsV8qJGJpc" resolve="BuildSource_JavaExternalJarRef" />
     <node concept="1N5Pfh" id="4RsV8qJGJpf" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4RsV8qJGJpd" />
+      <ref role="1N5Vy1" to="3ior:4RsV8qJGJpd" resolve="jar" />
       <node concept="13QW63" id="4RsV8qJGJpg" role="1N6uqs">
         <node concept="3clFbS" id="4RsV8qJGJph" role="2VODD2">
           <node concept="3cpWs8" id="4RsV8qJGJpi" role="3cqZAp">
@@ -1491,7 +1491,7 @@
                           <node concept="Bn53e" id="4RsV8qJGJqu" role="1m5AlR" />
                         </node>
                         <node concept="3TrEf2" id="4RsV8qJGJqv" role="2OqNvi">
-                          <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" />
+                          <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="4RsV8qJGJqw" role="2OqNvi">
@@ -1536,7 +1536,7 @@
     <property role="3GE5qa" value="Project.Java.Classpath" />
     <ref role="1M2myG" to="3ior:4RsV8qJH_CZ" resolve="BuildSource_JavaExternalJarFolderRef" />
     <node concept="1N5Pfh" id="4RsV8qJH_D8" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4RsV8qJH_D0" />
+      <ref role="1N5Vy1" to="3ior:4RsV8qJH_D0" resolve="folder" />
       <node concept="13QW63" id="4RsV8qJH_D9" role="1N6uqs">
         <node concept="3clFbS" id="4RsV8qJH_Da" role="2VODD2">
           <node concept="3cpWs8" id="4RsV8qJH_Db" role="3cqZAp">
@@ -1700,7 +1700,7 @@
                           <node concept="Bn53e" id="4RsV8qJH_En" role="1m5AlR" />
                         </node>
                         <node concept="3TrEf2" id="2vaDE4tApLK" role="2OqNvi">
-                          <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" />
+                          <ref role="3Tt5mk" to="3ior:1ZTcb8AgV40" resolve="path" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="4RsV8qJH_Ep" role="2OqNvi">
@@ -1800,7 +1800,7 @@
                     <node concept="nLn13" id="6DMiG0xr9A9" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr9Aa" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xr9Ab" role="2OqNvi">
@@ -1844,7 +1844,7 @@
     <property role="3GE5qa" value="Project.Java" />
     <ref role="1M2myG" to="3ior:1s8OwvM5SHi" resolve="BuildSource_JavaModuleOptions" />
     <node concept="1N5Pfh" id="1s8OwvM5zNj" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:1s8OwvM52kF" />
+      <ref role="1N5Vy1" to="3ior:1s8OwvM52kF" resolve="compileOptions" />
       <node concept="Bn3R3" id="1s8OwvM5zNk" role="Bn3R6">
         <node concept="3clFbS" id="1s8OwvM5zNl" role="2VODD2">
           <node concept="3clFbF" id="1s8OwvM5SHx" role="3cqZAp">
@@ -1882,7 +1882,7 @@
     <property role="3GE5qa" value="Project.Java.Dependencies" />
     <ref role="1M2myG" to="3ior:4lbsKRp1TRe" resolve="BuildSource_JavaDependencyLibrary" />
     <node concept="1N5Pfh" id="1lMM4owG7dt" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4lbsKRp1TRf" />
+      <ref role="1N5Vy1" to="3ior:4lbsKRp1TRf" resolve="library" />
       <node concept="1dDu$B" id="1lMM4owG7du" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
       </node>
@@ -1960,7 +1960,7 @@
     <property role="3GE5qa" value="Layout.File" />
     <ref role="1M2myG" to="3ior:6Iq8148fTg4" resolve="BuildLayout_FilesOf" />
     <node concept="1N5Pfh" id="6Iq8148gLJz" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:6Iq8148fTg6" />
+      <ref role="1N5Vy1" to="3ior:6Iq8148fTg6" resolve="element" />
       <node concept="Bn3R3" id="6Iq8148gLJ$" role="Bn3R6">
         <node concept="3clFbS" id="6Iq8148gLJ_" role="2VODD2">
           <node concept="3clFbF" id="6Iq8148gLJA" role="3cqZAp">
@@ -2059,7 +2059,7 @@
     <property role="3GE5qa" value="Dependencies" />
     <ref role="1M2myG" to="3ior:4lbsKRp2c8w" resolve="BuildProjectDependency" />
     <node concept="1N5Pfh" id="7aqYYYFvBix" role="1Mr941">
-      <ref role="1N5Vy1" to="3ior:4RPz6WoY4C$" />
+      <ref role="1N5Vy1" to="3ior:4RPz6WoY4C$" resolve="script" />
       <node concept="1dDu$B" id="7aqYYYFvBiC" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
       </node>
@@ -2086,7 +2086,7 @@
           <node concept="3clFbC" id="2oE1c2bn$8M" role="3clFbw">
             <node concept="28GBK8" id="2oE1c2bn$8P" role="3uHU7w">
               <ref role="28GBKb" to="3ior:7UAfeVQUc3H" resolve="BuildLayout_File" />
-              <ref role="28H3Ia" to="3ior:7UAfeVQUc4A" />
+              <ref role="28H3Ia" to="3ior:7UAfeVQUc4A" resolve="parameters" />
             </node>
             <node concept="oXsJc" id="2oE1c2bn$8a" role="3uHU7B" />
           </node>

@@ -147,6 +147,7 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -160,7 +161,6 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -197,7 +197,7 @@
     <property role="3GE5qa" value="foreach" />
     <ref role="1M2myG" to="tp2q:gMGrUn3" resolve="ForEachVariableReference" />
     <node concept="1N5Pfh" id="hDMFJzV" role="1Mr941">
-      <ref role="1N5Vy1" to="tp2q:gMGs0uU" />
+      <ref role="1N5Vy1" to="tp2q:gMGs0uU" resolve="variable" />
       <node concept="1dDu$B" id="2aLCAEFp1Nn" role="1N6uqs">
         <ref role="1dDu$A" to="tp2q:gMGrK_y" resolve="ForEachVariable" />
       </node>
@@ -352,7 +352,7 @@
     <property role="3GE5qa" value="customContainers" />
     <ref role="1M2myG" to="tp2q:19VU1QT9_mN" resolve="CustomContainerCreator" />
     <node concept="1N5Pfh" id="7Py4e1LTE5o" role="1Mr941">
-      <ref role="1N5Vy1" to="tp2q:19VU1QT9_mO" />
+      <ref role="1N5Vy1" to="tp2q:19VU1QT9_mO" resolve="containerDeclaration" />
       <node concept="1MUpDS" id="7Py4e1LTE5p" role="1N6uqs">
         <node concept="3clFbS" id="7Py4e1LTE5q" role="2VODD2">
           <node concept="3cpWs8" id="7Py4e1LUaqq" role="3cqZAp">
@@ -424,10 +424,10 @@
                                   <ref role="3cqZAo" node="7Py4e1LUwZH" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="7Py4e1LUx0e" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp2q:5i_Pov1WWwZ" />
+                                  <ref role="3Tt5mk" to="tp2q:5i_Pov1WWwZ" resolve="containerType" />
                                 </node>
                               </node>
-                              <node concept="3NT_Vc" id="7Py4e1LUx1m" role="2OqNvi" />
+                              <node concept="2yIwOk" id="2eXSyKpu61C" role="2OqNvi" />
                             </node>
                             <node concept="2Zo12i" id="7Py4e1LUx1J" role="2OqNvi">
                               <node concept="chp4Y" id="7Py4e1LUx21" role="2Zo12j">
@@ -459,7 +459,7 @@
               <node concept="2OqwBi" id="19VU1QTaiQP" role="2Oq$k0">
                 <node concept="EsrRn" id="19VU1QTaiQO" role="2Oq$k0" />
                 <node concept="3TrEf2" id="19VU1QTaiQT" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp2q:19VU1QT9_mO" />
+                  <ref role="3Tt5mk" to="tp2q:19VU1QT9_mO" resolve="containerDeclaration" />
                 </node>
               </node>
               <node concept="3TrcHB" id="19VU1QTaiQY" role="2OqNvi">
@@ -475,7 +475,7 @@
     <property role="3GE5qa" value="mapType" />
     <ref role="1M2myG" to="tp2q:1ny5gPbZSDB" resolve="CustomMapCreator" />
     <node concept="1N5Pfh" id="7Py4e1LTCWS" role="1Mr941">
-      <ref role="1N5Vy1" to="tp2q:1ny5gPbZSDE" />
+      <ref role="1N5Vy1" to="tp2q:1ny5gPbZSDE" resolve="containerDeclaration" />
       <node concept="1MUpDS" id="7Py4e1LTCWU" role="1N6uqs">
         <node concept="3clFbS" id="7Py4e1LTCWV" role="2VODD2">
           <node concept="3cpWs8" id="7Py4e1LTD65" role="3cqZAp">
@@ -548,7 +548,7 @@
               <node concept="2OqwBi" id="1ny5gPbZSF2" role="2Oq$k0">
                 <node concept="EsrRn" id="1ny5gPbZSF3" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1ny5gPbZSF6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp2q:1ny5gPbZSDE" />
+                  <ref role="3Tt5mk" to="tp2q:1ny5gPbZSDE" resolve="containerDeclaration" />
                 </node>
               </node>
               <node concept="3TrcHB" id="1ny5gPbZSF7" role="2OqNvi">
@@ -564,7 +564,7 @@
     <property role="3GE5qa" value="foreach" />
     <ref role="1M2myG" to="tp2q:7cq3qQ1ylWm" resolve="MultiForEachVariableReference" />
     <node concept="1N5Pfh" id="7cq3qQ1yoBl" role="1Mr941">
-      <ref role="1N5Vy1" to="tp2q:7cq3qQ1yojP" />
+      <ref role="1N5Vy1" to="tp2q:7cq3qQ1yojP" resolve="variable" />
       <node concept="1dDu$B" id="2aLCAEFp1Np" role="1N6uqs">
         <ref role="1dDu$A" to="tp2q:7PXIfgo7YCo" resolve="MultiForEachVariable" />
       </node>

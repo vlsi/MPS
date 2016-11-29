@@ -526,7 +526,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -3302,7 +3301,7 @@
               <node concept="2OqwBi" id="1lUJQtrPk1C" role="3fr31v">
                 <node concept="2OqwBi" id="1lUJQtrPk1D" role="2Oq$k0">
                   <node concept="pncrf" id="1lUJQtrPk1E" role="2Oq$k0" />
-                  <node concept="3NT_Vc" id="1lUJQtrPk1F" role="2OqNvi" />
+                  <node concept="2yIwOk" id="2eXSyKpuD3b" role="2OqNvi" />
                 </node>
                 <node concept="3O6GUB" id="1lUJQtrPk1G" role="2OqNvi">
                   <node concept="chp4Y" id="1lUJQtrPk1H" role="3QVz_e">
@@ -5942,7 +5941,7 @@
                 <node concept="2OqwBi" id="1wEcoXjJgnA" role="2Oq$k0">
                   <node concept="2OqwBi" id="1wEcoXjJgnB" role="2Oq$k0">
                     <node concept="7Obwk" id="1wEcoXjJgnH" role="2Oq$k0" />
-                    <node concept="3NT_Vc" id="1wEcoXjJgnD" role="2OqNvi" />
+                    <node concept="2yIwOk" id="2eXSyKpuD38" role="2OqNvi" />
                   </node>
                   <node concept="2qgKlT" id="1wEcoXjJgnE" role="2OqNvi">
                     <ref role="37wK5l" to="tpeu:2D1PBM_bxI0" resolve="getApplicableParameter" />
@@ -7100,7 +7099,7 @@
                             <ref role="1m5ApE" to="tp25:g$eCIIG" resolve="SNodeOperation" />
                             <node concept="3bvxqY" id="1wEcoXjJgug" role="1m5AlR" />
                           </node>
-                          <node concept="3NT_Vc" id="1wEcoXjJguc" role="2OqNvi" />
+                          <node concept="2yIwOk" id="2eXSyKpuD35" role="2OqNvi" />
                         </node>
                         <node concept="2qgKlT" id="1wEcoXjJgud" role="2OqNvi">
                           <ref role="37wK5l" to="tpeu:2D1PBM_bxI0" resolve="getApplicableParameter" />

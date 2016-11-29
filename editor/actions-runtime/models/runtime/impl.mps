@@ -265,7 +265,6 @@
       <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
         <reference id="1240930444946" name="member" index="3HdYuM" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -2336,7 +2335,7 @@
                 <node concept="37vLTw" id="2BHiRxgmG4p" role="2Oq$k0">
                   <ref role="3cqZAo" node="wcCOXqKiJN" resolve="node" />
                 </node>
-                <node concept="3NT_Vc" id="wcCOXqKiKd" role="2OqNvi" />
+                <node concept="2yIwOk" id="2eXSyKpuTb7" role="2OqNvi" />
               </node>
               <node concept="2Zo12i" id="wcCOXqK6E8" role="2OqNvi">
                 <node concept="25Kdxt" id="wcCOXqK6Ea" role="2Zo12j">
