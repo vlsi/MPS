@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder;
 import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
@@ -27,9 +28,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.update.UpdateSession;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -41,22 +40,36 @@ import java.util.Iterator;
 /**
  * @author simon
  */
-public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment {
+public abstract class SingleRoleCellProvider extends AbstractEditorBuilder implements EditorBuilderEnvironment {
 
   protected final SContainmentLink myContainmentLink;
+
   /**
-   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will become private in the next release
+   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will be removed in the next release
    */
   @Deprecated
   protected final SNode myOwnerNode;
+
   /**
-   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will become private in the next release
+   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will be removed in the next release
    */
   @Deprecated
   protected final EditorContext myEditorContext;
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #SingleRoleCellProvider(SContainmentLink, EditorContext)} constructor
+   */
+  @Deprecated
   public SingleRoleCellProvider(final SNode ownerNode, final SContainmentLink containmentLink, EditorContext editorContext) {
+    super(editorContext);
     myOwnerNode = ownerNode;
+    myContainmentLink = containmentLink;
+    myEditorContext = editorContext;
+  }
+
+  public SingleRoleCellProvider(final SContainmentLink containmentLink, EditorContext editorContext) {
+    super(editorContext);
+    myOwnerNode = null;
     myContainmentLink = containmentLink;
     myEditorContext = editorContext;
   }
@@ -161,31 +174,6 @@ public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment
 
   protected Iterable<SNode> getNodesToPresent() {
     return AttributeOperations.getChildNodesAndAttributes(getNode(), myContainmentLink);
-  }
-
-  public SNode getNode() {
-    return myOwnerNode;
-  }
-
-  public EditorContext getEditorContext() {
-    return myEditorContext;
-  }
-
-  @Override
-  public EditorCellFactory getCellFactory() {
-    return getUpdateSession().getCellFactory();
-  }
-
-  @Override
-  public UpdateSession getUpdateSession() {
-    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
-  }
-
-  protected EditorCell setCellContext(EditorCell cell) {
-    if (cell.getCellContext() == null) {
-      cell.setCellContext(getCellFactory().getCellContext());
-    }
-    return cell;
   }
 }
 

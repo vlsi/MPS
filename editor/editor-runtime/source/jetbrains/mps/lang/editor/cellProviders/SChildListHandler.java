@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -34,17 +35,25 @@ import java.util.List;
 
 public abstract class SChildListHandler extends AbstractCellListHandler {
 
+  private final SNode myNode;
   protected SContainmentLink myLink;
   private boolean myIsReverseOrder = false;
 
   public SChildListHandler(final SNode ownerNode, final SContainmentLink link, EditorContext editorContext) {
-    super(ownerNode, link.getRoleName(), editorContext);
+    super(link.getRoleName(), editorContext);
+    myNode = ownerNode;
     myLink = link;
   }
 
   public SChildListHandler(SNode ownerNode, SContainmentLink link, EditorContext editorContext, boolean isReverseOrder) {
     this(ownerNode, link, editorContext);
     myIsReverseOrder = isReverseOrder;
+  }
+
+  @NotNull
+  @Override
+  public SNode getNode() {
+    return myNode;
   }
 
   @Override

@@ -2,11 +2,11 @@
 <model ref="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
@@ -7243,29 +7243,6 @@
       <ref role="3uigEE" to="b8lf:~AbstractMultipleSelection" resolve="AbstractMultipleSelection" />
     </node>
   </node>
-  <node concept="3HP615" id="42Cv_c9rHCQ">
-    <property role="TrG5h" value="TableModelFactory" />
-    <node concept="3Tm1VV" id="42Cv_c9rHCR" role="1B3o_S" />
-    <node concept="3clFb_" id="42Cv_c9rHCS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="createTableModel" />
-      <node concept="37vLTG" id="42Cv_c9rHCT" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="42Cv_c9rHCU" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="42Cv_c9rHCV" role="3clF46">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="42Cv_c9rHD0" role="1tU5fm">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="42Cv_c9rHCX" role="3clF45">
-        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
-      </node>
-      <node concept="3Tm1VV" id="42Cv_c9rHCY" role="1B3o_S" />
-      <node concept="3clFbS" id="42Cv_c9rHCZ" role="3clF47" />
-    </node>
-  </node>
   <node concept="312cEu" id="6XSzU5vH9q_">
     <property role="TrG5h" value="ColumnNotFoundException" />
     <node concept="312cEg" id="6XSzU5vHOlN" role="jymVt">
@@ -7316,6 +7293,61 @@
     <node concept="3uibUv" id="6XSzU5vHbGO" role="1zkMxy">
       <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
     </node>
+  </node>
+  <node concept="312cEu" id="6E2BWlD7mOx">
+    <property role="TrG5h" value="TableModelFactory" />
+    <property role="1sVAO0" value="true" />
+    <node concept="3clFb_" id="6E2BWlD7mQd" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createTableModel" />
+      <node concept="37vLTG" id="6E2BWlD7mQe" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="6E2BWlD7mQf" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="6E2BWlD7mQg" role="3clF46">
+        <property role="TrG5h" value="editorContext" />
+        <node concept="3uibUv" id="6E2BWlD7mQh" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="6E2BWlD7mQi" role="3clF45">
+        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
+      </node>
+      <node concept="3Tm1VV" id="6E2BWlD7mQj" role="1B3o_S" />
+      <node concept="3clFbS" id="6E2BWlD7mQk" role="3clF47">
+        <node concept="3SKdUt" id="6E2BWlD7oT3" role="3cqZAp">
+          <node concept="3SKdUq" id="6E2BWlD7oT5" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: not used anymore, remove after MPS 3.5 release" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6E2BWlD7oNE" role="3cqZAp">
+          <node concept="10Nm6u" id="6E2BWlD7oPw" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6E2BWlD7oQr" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6E2BWlD7pth" role="jymVt" />
+    <node concept="3clFb_" id="6E2BWlD7pur" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createTableModel" />
+      <node concept="3uibUv" id="6E2BWlD7puw" role="3clF45">
+        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
+      </node>
+      <node concept="3Tm1VV" id="6E2BWlD7pux" role="1B3o_S" />
+      <node concept="3clFbS" id="6E2BWlD7puy" role="3clF47">
+        <node concept="3SKdUt" id="6E2BWlD7puz" role="3cqZAp">
+          <node concept="3SKdUq" id="6E2BWlD7pu$" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: make abstract after MPS 3.5 release" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6E2BWlD7pu_" role="3cqZAp">
+          <node concept="10Nm6u" id="6E2BWlD7puA" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="6E2BWlD7mOy" role="1B3o_S" />
   </node>
 </model>
 

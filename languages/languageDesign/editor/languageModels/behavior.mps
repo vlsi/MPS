@@ -419,6 +419,7 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -22114,6 +22115,106 @@
     </node>
     <node concept="13hLZK" id="3w77Jl_h9Le" role="13h7CW">
       <node concept="3clFbS" id="3w77Jl_h9Lf" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1PvcgmUaKhc">
+    <property role="3GE5qa" value="QueryFunction" />
+    <ref role="13h7C2" to="tpc2:1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    <node concept="13i0hz" id="1PvcgmUaKhn" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="useDefaultAccessor" />
+      <node concept="3Tm1VV" id="1PvcgmUaKho" role="1B3o_S" />
+      <node concept="10P_77" id="1PvcgmUaKhN" role="3clF45" />
+      <node concept="3clFbS" id="1PvcgmUaKhq" role="3clF47">
+        <node concept="3cpWs6" id="1PvcgmUaKU3" role="3cqZAp">
+          <node concept="3clFbT" id="1PvcgmUaKUy" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1PvcgmUaKhd" role="13h7CW">
+      <node concept="3clFbS" id="1PvcgmUaKhe" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="1PvcgmUaIFo">
+    <property role="3GE5qa" value="QueryFunction.Parameters" />
+    <ref role="13h7C2" to="tpc2:gTQ80DJ" resolve="ConceptFunctionParameter_editorContext" />
+    <node concept="13i0hz" id="1PvcgmUaIFz" role="13h7CS">
+      <property role="TrG5h" value="useGenericAccessor" />
+      <node concept="3Tm1VV" id="1PvcgmUaIF$" role="1B3o_S" />
+      <node concept="10P_77" id="1PvcgmUaIOE" role="3clF45" />
+      <node concept="3clFbS" id="1PvcgmUaIFA" role="3clF47">
+        <node concept="3cpWs6" id="1PvcgmUaK75" role="3cqZAp">
+          <node concept="3fqX7Q" id="1PvcgmUaLk8" role="3cqZAk">
+            <node concept="2OqwBi" id="1PvcgmUaLka" role="3fr31v">
+              <node concept="1PxgMI" id="1PvcgmUaLkb" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <ref role="1m5ApE" to="tpc2:1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+                <node concept="BsUDl" id="1PvcgmUaLkc" role="1m5AlR">
+                  <ref role="37wK5l" to="tpek:hEwJh7Q" resolve="findConceptFunction" />
+                </node>
+              </node>
+              <node concept="2qgKlT" id="1PvcgmUaLkd" role="2OqNvi">
+                <ref role="37wK5l" node="1PvcgmUaKhn" resolve="useDefaultAccessor" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="1PvcgmUaIFp" role="13h7CW">
+      <node concept="3clFbS" id="1PvcgmUaIFq" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6E2BWlDjMOd">
+    <property role="3GE5qa" value="QueryFunction" />
+    <ref role="13h7C2" to="tpc2:6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
+    <node concept="13i0hz" id="6E2BWlDjMQu" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="13i0it" value="true" />
+      <property role="TrG5h" value="useNodeGetter" />
+      <node concept="3Tm1VV" id="6E2BWlDjMQv" role="1B3o_S" />
+      <node concept="10P_77" id="6E2BWlDjMQM" role="3clF45" />
+      <node concept="3clFbS" id="6E2BWlDjMQx" role="3clF47">
+        <node concept="3cpWs6" id="6E2BWlDjMVq" role="3cqZAp">
+          <node concept="3clFbT" id="6E2BWlDjMVF" role="3cqZAk">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="6E2BWlDjMOe" role="13h7CW">
+      <node concept="3clFbS" id="6E2BWlDjMOf" role="2VODD2" />
+    </node>
+  </node>
+  <node concept="13h7C7" id="6E2BWlDjAu4">
+    <property role="3GE5qa" value="QueryFunction.Parameters" />
+    <ref role="13h7C2" to="tpc2:gCpncv5" resolve="ConceptFunctionParameter_node" />
+    <node concept="13i0hz" id="6E2BWlDjAuB" role="13h7CS">
+      <property role="TrG5h" value="useGenericAccessor" />
+      <node concept="3Tm1VV" id="6E2BWlDjAuC" role="1B3o_S" />
+      <node concept="10P_77" id="6E2BWlDjAuV" role="3clF45" />
+      <node concept="3clFbS" id="6E2BWlDjAuE" role="3clF47">
+        <node concept="3cpWs6" id="6E2BWlDjKda" role="3cqZAp">
+          <node concept="2OqwBi" id="6E2BWlDjMMK" role="3cqZAk">
+            <node concept="1PxgMI" id="6E2BWlDjMzH" role="2Oq$k0">
+              <property role="1BlNFB" value="true" />
+              <ref role="1m5ApE" to="tpc2:6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
+              <node concept="BsUDl" id="6E2BWlDjKIJ" role="1m5AlR">
+                <ref role="37wK5l" to="tpek:hEwJh7Q" resolve="findConceptFunction" />
+              </node>
+            </node>
+            <node concept="2qgKlT" id="6E2BWlDoKR6" role="2OqNvi">
+              <ref role="37wK5l" node="6E2BWlDjMQu" resolve="useNodeGetter" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13hLZK" id="6E2BWlDjAu5" role="13h7CW">
+      <node concept="3clFbS" id="6E2BWlDjAu6" role="2VODD2" />
     </node>
   </node>
 </model>

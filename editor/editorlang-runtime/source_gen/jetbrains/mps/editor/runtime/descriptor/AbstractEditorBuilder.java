@@ -7,6 +7,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
@@ -35,11 +36,16 @@ public abstract class AbstractEditorBuilder implements EditorBuilderEnvironment 
     return myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 
-  protected void setCellContext(Iterable<EditorCell> cells) {
+  protected void setInnerCellsContext(EditorCell_Collection cells) {
     for (EditorCell cell : Sequence.fromIterable(cells)) {
-      if (cell.getCellContext() == null) {
-        cell.setCellContext(getCellFactory().getCellContext());
-      }
+      setCellContext(cell);
     }
+  }
+
+  protected EditorCell setCellContext(EditorCell cell) {
+    if (cell.getCellContext() == null) {
+      cell.setCellContext(getCellFactory().getCellContext());
+    }
+    return cell;
   }
 }

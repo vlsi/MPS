@@ -697,16 +697,6 @@
       <unit id="4490468428501048480" at="8,0,20,0" name="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     </file>
   </root>
-  <root nodeRef="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)/4659112709620423222">
-    <file name="TableModelFactory.java">
-      <node id="4659112709620423224" at="9,0,10,0" concept="9" trace="createTableModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
-      <scope id="4659112709620423224" at="9,0,10,0">
-        <var name="editorContext" id="4659112709620423227" />
-        <var name="node" id="4659112709620423225" />
-      </scope>
-      <unit id="4659112709620423222" at="8,0,11,0" name="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
-    </file>
-  </root>
   <root nodeRef="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)/6332812368705012669">
     <file name="HierarchycalTableModel.java">
       <node id="6332812368705012679" at="16,0,17,0" concept="5" trace="myTableNode" />
@@ -950,6 +940,24 @@
         <var name="columnNumber" id="4550201027691220107" />
       </scope>
       <unit id="730733254587404137" at="7,0,34,0" name="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel" />
+    </file>
+  </root>
+  <root nodeRef="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)/7674872385213656353">
+    <file name="TableModelFactory.java">
+      <node id="7674872385213664835" at="10,79,11,60" concept="12" />
+      <node id="7674872385213664490" at="11,60,12,16" concept="11" />
+      <node id="7674872385213667235" at="15,40,16,49" concept="12" />
+      <node id="7674872385213667237" at="16,49,17,16" concept="11" />
+      <node id="7674872385213667227" at="15,0,19,0" concept="9" trace="createTableModel#()Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
+      <node id="7674872385213656461" at="9,0,14,0" concept="9" trace="createTableModel#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/lang/editor/table/runtime/TableModel;" />
+      <scope id="7674872385213656468" at="10,79,12,16" />
+      <scope id="7674872385213667234" at="15,40,17,16" />
+      <scope id="7674872385213667227" at="15,0,19,0" />
+      <scope id="7674872385213656461" at="9,0,14,0">
+        <var name="editorContext" id="7674872385213656464" />
+        <var name="node" id="7674872385213656462" />
+      </scope>
+      <unit id="7674872385213656353" at="8,0,20,0" name="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
     </file>
   </root>
   <root nodeRef="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)/8032327858673456805">
