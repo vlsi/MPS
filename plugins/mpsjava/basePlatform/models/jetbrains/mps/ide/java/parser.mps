@@ -43,7 +43,7 @@
     <import index="pa15" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.persistence(MPS.Core/)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="et5u" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.messages(MPS.Core/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" implicit="true" />
   </imports>
   <registry>
@@ -519,7 +519,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -1824,14 +1823,14 @@
               <node concept="3clFbF" id="31WmxQNAIoD" role="8Wnug">
                 <node concept="37vLTI" id="31WmxQNAIoE" role="3clFbG">
                   <node concept="2OqwBi" id="2wdLO7Kds5M" role="37vLTJ">
-                    <node concept="3TrcHB" id="2wdLO7Kds5N" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-                    </node>
-                    <node concept="2OqwBi" id="2wdLO7Kds5O" role="2Oq$k0">
-                      <node concept="3NT_Vc" id="2wdLO7Kds5P" role="2OqNvi" />
+                    <node concept="2OqwBi" id="6rh9tzl$Wdd" role="2Oq$k0">
+                      <node concept="2yIwOk" id="6rh9tzl$Wde" role="2OqNvi" />
                       <node concept="Jnkvi" id="2wdLO7Kds5Q" role="2Oq$k0">
                         <ref role="1M0zk5" node="31WmxQNAIp4" resolve="iface" />
                       </node>
+                    </node>
+                    <node concept="liA8E" id="6rh9tzl$Wdf" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                     </node>
                   </node>
                   <node concept="3clFbT" id="31WmxQNAIoF" role="37vLTx">

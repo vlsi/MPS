@@ -54,8 +54,8 @@
     <import index="gp7a" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.dependency(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
-    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
   </imports>
   <registry>
     <language id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers">
@@ -7427,14 +7427,14 @@
       </node>
       <node concept="3clFbJ" id="h9W8m5U" role="3cqZAp">
         <node concept="2OqwBi" id="2wdLO7KeRqJ" role="3clFbw">
-          <node concept="3TrcHB" id="2wdLO7KeRqK" role="2OqNvi">
-            <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-          </node>
-          <node concept="2OqwBi" id="2wdLO7KeRqL" role="2Oq$k0">
-            <node concept="3NT_Vc" id="2wdLO7KeRqM" role="2OqNvi" />
+          <node concept="2OqwBi" id="6rh9tzl$V7X" role="2Oq$k0">
+            <node concept="2yIwOk" id="6rh9tzl$V7Y" role="2OqNvi" />
             <node concept="1YBJjd" id="2wdLO7KeRqN" role="2Oq$k0">
               <ref role="1YBMHb" node="h84_wqr" resolve="bmd" />
             </node>
+          </node>
+          <node concept="liA8E" id="6rh9tzl$V7Z" role="2OqNvi">
+            <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
           </node>
         </node>
         <node concept="3clFbS" id="h9W8m5V" role="3clFbx">

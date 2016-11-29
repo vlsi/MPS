@@ -28,7 +28,7 @@
     <import index="8xvf" ref="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="hox0" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.style(MPS.Editor/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
     <import index="nq57" ref="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)" implicit="true" />
@@ -656,7 +656,6 @@
       <concept id="1139867745658" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" flags="nn" index="1_qnLN">
         <reference id="1139867957129" name="concept" index="1_rbq0" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
@@ -1165,10 +1164,8 @@
             <node concept="3clFbF" id="4lbsKRp1Yhl" role="3cqZAp">
               <node concept="22lmx$" id="4lbsKRp2akf" role="3clFbG">
                 <node concept="2OqwBi" id="2wdLO7KeB3b" role="3uHU7w">
-                  <node concept="3TrcHB" id="2wdLO7KeB3c" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-                  </node>
-                  <node concept="2OqwBi" id="2wdLO7KeB3d" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6rh9tzl$nNx" role="2Oq$k0">
+                    <node concept="2yIwOk" id="6rh9tzl$nNy" role="2OqNvi" />
                     <node concept="2OqwBi" id="2wdLO7KeB3e" role="2Oq$k0">
                       <node concept="2OqwBi" id="2wdLO7KeB3f" role="2Oq$k0">
                         <node concept="pncrf" id="2wdLO7KeB3g" role="2Oq$k0" />
@@ -1178,7 +1175,9 @@
                       </node>
                       <node concept="1yVyf7" id="2wdLO7KeB3i" role="2OqNvi" />
                     </node>
-                    <node concept="3NT_Vc" id="2wdLO7KeB3j" role="2OqNvi" />
+                  </node>
+                  <node concept="liA8E" id="6rh9tzl$nNz" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="4lbsKRp25XE" role="3uHU7B">

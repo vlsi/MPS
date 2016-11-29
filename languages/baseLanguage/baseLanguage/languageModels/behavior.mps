@@ -50,6 +50,7 @@
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="bzl4" ref="r:9d0684e9-039f-4e88-b824-947b454f70f2(jetbrains.mps.baseLanguage.javadoc.behavior)" implicit="true" />
     <import index="tp4f" ref="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" implicit="true" />
   </imports>
@@ -22290,17 +22291,17 @@
                       <node concept="1eOMI4" id="4GM03FJm5tW" role="3uHU7w">
                         <node concept="1Wc70l" id="4GM03FJm5tX" role="1eOMHV">
                           <node concept="2OqwBi" id="2wdLO7KgW6R" role="3uHU7w">
-                            <node concept="3TrcHB" id="2wdLO7KgW6S" role="2OqNvi">
-                              <ref role="3TsBF5" to="tpce:40UcGlRb7V2" resolve="abstract" />
-                            </node>
-                            <node concept="2OqwBi" id="2wdLO7KgW6T" role="2Oq$k0">
-                              <node concept="3NT_Vc" id="2wdLO7KgW6U" role="2OqNvi" />
+                            <node concept="2OqwBi" id="6rh9tzl$V7_" role="2Oq$k0">
+                              <node concept="2yIwOk" id="6rh9tzl$V7A" role="2OqNvi" />
                               <node concept="1PxgMI" id="2wdLO7KgW6V" role="2Oq$k0">
                                 <ref role="1m5ApE" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                                 <node concept="37vLTw" id="3GM_nagTwxQ" role="1m5AlR">
                                   <ref role="3cqZAo" node="4GM03FJm5u8" resolve="overridingMethod" />
                                 </node>
                               </node>
+                            </node>
+                            <node concept="liA8E" id="6rh9tzl$V7B" role="2OqNvi">
+                              <ref role="37wK5l" to="c17a:~SAbstractConcept.isAbstract():boolean" resolve="isAbstract" />
                             </node>
                           </node>
                           <node concept="2OqwBi" id="4GM03FJm5u2" role="3uHU7B">
