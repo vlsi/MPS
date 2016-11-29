@@ -51,12 +51,11 @@ public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDe
   /*package*/ static boolean isParameterObjectUsed_idhEwJh7I(@NotNull SNode __thisNode__) {
     return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__))));
   }
-  /*package*/ static SNode findConceptFunction_idhEwJh7Q(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode findConceptFunction_idhEwJh7Q(@NotNull final SNode __thisNode__) {
     List<SNode> functions = SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
-    final SNode ourConcept = SNodeOperations.getConceptDeclaration(__thisNode__);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
+        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(SNodeOperations.getConceptDeclaration(__thisNode__));
       }
     }).first();
   }

@@ -44,10 +44,10 @@ public final class IBinaryLike__BehaviorDescriptor extends BaseBHDescriptor {
     return ListSequence.fromList(leafAncestors).contains(IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(__thisNode__)) || ListSequence.fromList(leafAncestors).contains(IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(__thisNode__));
   }
   /*package*/ static void setSyntacticallyLeftSideExpression_id1wHCnsn58ZK(@NotNull SNode __thisNode__, SNode expr) {
-    throw new UnsupportedOperationException("This expression cannot have its left child set: " + SNodeOperations.getConceptDeclaration(__thisNode__));
+    throw new UnsupportedOperationException("This expression cannot have its left child set: " + SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static void setSyntacticallyRightSideExpression_id1wHCnsn58ZY(@NotNull SNode __thisNode__, SNode expr) {
-    throw new UnsupportedOperationException("This expression cannot have its right child set: " + SNodeOperations.getConceptDeclaration(__thisNode__));
+    throw new UnsupportedOperationException("This expression cannot have its right child set: " + SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static SNode getSyntacticallyLeftSideExpression_id1wHCnsn590c(@NotNull SNode __thisNode__) {
     return null;
