@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,7 @@ package jetbrains.mps.library.contributor;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.LanguageLibrary;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -56,16 +50,7 @@ public final class PluginLibraryContributor implements LibraryContributor {
       throw new IllegalStateException("Plugin could not be found: plugin=" + pluginId.getIdString());
     }
     final String libraryPath = new File(plugin.getPath(), library.dir).getCanonicalPath();
-    return createLibDescriptor(libraryPath, plugin.getPluginClassLoader());
-  }
-
-  @NotNull
-  private LibDescriptor createLibDescriptor(String path, ClassLoader classLoader) {
-    if (!InternalFlag.isInternalMode()) {
-      return new LibDescriptor(myFileSystem.getFile(path), classLoader);
-    } else {
-      return new LibDescriptor(myFileSystem.getFile(path), classLoader);
-    }
+    return new LibDescriptor(myFileSystem.getFile(libraryPath), plugin.getPluginClassLoader());
   }
 
   @Override
