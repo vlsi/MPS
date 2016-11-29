@@ -89,10 +89,8 @@ public interface IFile {
    *
    * @see File#getCanonicalPath()
    * @see Path
-   * @deprecated use {@link #toPath()} instead
    */
   @ToRemove(version = 3.5)
-  @Deprecated
   @NotNull String getPath();
 
   /**
@@ -101,10 +99,6 @@ public interface IFile {
   @NotNull
   UniPath toPath();
 
-  /**
-   * @deprecated TODO REMOVE ONLY ONE USAGE
-   */
-  @Deprecated
   @ToRemove(version = 3.4)
   URL getUrl() throws MalformedURLException;
 
