@@ -66,7 +66,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
   private EditorCell createReadOnlyModelAccessor_rvpzqy_a0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return (String) IndexedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgn6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(myNode)));
+        return (String) IndexedTupleLiteral__BehaviorDescriptor.getLeftBracket_id1653mnvAgn6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
       }
       public void setText(String s) {
       }
@@ -143,7 +143,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrack
   private EditorCell createReadOnlyModelAccessor_rvpzqy_c0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return (String) IndexedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgtJ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(myNode)));
+        return (String) IndexedTupleLiteral__BehaviorDescriptor.getRightBracket_id1653mnvAgtJ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
       }
       public void setText(String s) {
       }

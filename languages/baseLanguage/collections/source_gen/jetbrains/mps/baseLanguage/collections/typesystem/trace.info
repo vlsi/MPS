@@ -12004,7 +12004,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4998595809121260103">
     <file name="check_HashMapCreator_NonTypesystemRule.java">
       <node id="1241447267829" at="22,116,23,502" concept="9" />
-      <node id="4998595809121264603" at="24,291,25,58" concept="9" />
+      <node id="4998595809121264603" at="24,280,25,58" concept="9" />
       <node id="4998595809121264603" at="25,58,26,242" concept="9" />
       <node id="4998595809121260103" at="29,50,30,166" concept="10" />
       <node id="4998595809121260103" at="32,68,33,102" concept="10" />
@@ -12020,7 +12020,7 @@
       <scope id="4998595809121260103" at="32,68,33,102" />
       <scope id="4998595809121260103" at="35,30,36,17" />
       <scope id="4998595809121260103" at="20,0,22,0" />
-      <scope id="4998595809121264603" at="24,291,26,242">
+      <scope id="4998595809121264603" at="24,280,26,242">
         <var name="_reporter_2309309498" id="4998595809121264603" />
         <var name="errorTarget" id="4998595809121264603" />
       </scope>
@@ -12079,7 +12079,7 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)/4998595809121271016">
     <file name="check_TreeMapCreator_NonTypesystemRule.java">
       <node id="1241447284982" at="22,116,23,502" concept="9" />
-      <node id="4998595809121273803" at="24,297,25,58" concept="9" />
+      <node id="4998595809121273803" at="24,286,25,58" concept="9" />
       <node id="4998595809121273803" at="25,58,26,242" concept="9" />
       <node id="4998595809121271016" at="29,50,30,166" concept="10" />
       <node id="4998595809121271016" at="32,68,33,102" concept="10" />
@@ -12095,7 +12095,7 @@
       <scope id="4998595809121271016" at="32,68,33,102" />
       <scope id="4998595809121271016" at="35,30,36,17" />
       <scope id="4998595809121271016" at="20,0,22,0" />
-      <scope id="4998595809121273803" at="24,297,26,242">
+      <scope id="4998595809121273803" at="24,286,26,242">
         <var name="_reporter_2309309498" id="4998595809121273803" />
         <var name="errorTarget" id="4998595809121273803" />
       </scope>

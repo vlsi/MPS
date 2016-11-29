@@ -46,7 +46,7 @@ public class AbstractOperationParameter_SubstituteMenu extends SubstituteMenuBas
     }
     public class SubstituteMenuPart_Concepts_6hfhq2_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(SubstituteMenuContext _context) {
-        return ListSequence.fromList(((List<SNode>) SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"))))))).select(new ISelector<SNode, SAbstractConcept>() {
+        return ListSequence.fromList(((List<SNode>) SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(_context.getParentNode(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, "jetbrains.mps.lang.smodel.structure.SNodeOperation"))))))).select(new ISelector<SNode, SAbstractConcept>() {
           public SAbstractConcept select(SNode it) {
             return SNodeOperations.asSConcept(it);
           }

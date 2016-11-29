@@ -2249,7 +2249,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)/6050628152418936547">
     <file name="typeof_AbstractOperationArguments_InferenceRule.java">
-      <node id="6050628152418938572" at="26,122,27,204" concept="8" />
+      <node id="6050628152418938572" at="26,122,27,193" concept="8" />
       <node id="6050628152418938611" at="29,7,30,60" concept="8" />
       <node id="6050628152418938611" at="30,60,31,244" concept="8" />
       <node id="6050628152418938626" at="34,7,35,23" concept="8" />
@@ -2277,7 +2277,7 @@
       <node id="6050628152418938626" at="38,88,53,9" concept="14" />
       <node id="6050628152418938626" at="33,12,54,7" concept="0" />
       <node id="6050628152418938616" at="33,10,55,5" concept="0" />
-      <node id="6050628152418938579" at="27,204,55,5" concept="6" />
+      <node id="6050628152418938579" at="27,193,55,5" concept="6" />
       <node id="6050628152418936547" at="26,0,57,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="6050628152418936547" at="24,60,24,60" />
       <scope id="6050628152418938626" at="40,47,41,18" />

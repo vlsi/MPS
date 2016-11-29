@@ -139,7 +139,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
   private EditorCell createReadOnlyModelAccessor_b0ego6_b1a() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
       public String getText() {
-        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(myNode)));
+        return (String) MathSymbol__BehaviorDescriptor.getOpName_id1653mnvAgoA.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)));
       }
       public void setText(String s) {
       }
