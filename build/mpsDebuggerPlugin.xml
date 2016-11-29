@@ -249,9 +249,18 @@
     </copy>
     <mkdir dir="${build.layout}/mps-debugger-java/languages" />
     <mkdir dir="${build.layout}/mps-debugger-java/languages/mps-debugger-java" />
+    <mkdir dir="${build.tmp}/default/JDK-tools.jar" />
+    <mkdir dir="${build.tmp}/default/JDK-tools.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/JDK-tools.jar/META-INF/module.xml">
+      <module namespace="JDK-tools" type="solution" uuid="b387285c-3448-452c-b3bb-a3f8de8eaf08">
+        <dependencies />
+        <sources jar="." descriptor="JDK-tools.msd" />
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/JDK-tools.jar" duplicate="preserve">
-      <zipfileset file="${mps_home}/languages/core/stub/JDK-tools/JDK-tools.msd" prefix="modules/JDK-tools" />
-      <zipfileset dir="${mps_home}/languages/core/stub/JDK-tools" includes="icons/**, resources/**" prefix="modules/JDK-tools" />
+      <zipfileset file="${mps_home}/languages/core/stub/JDK-tools/JDK-tools.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/languages/core/stub/JDK-tools" includes="icons/**, resources/**" prefix="module" />
+      <fileset dir="${build.tmp}/default/JDK-tools.jar" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.privateMembers.jar/META-INF" />
