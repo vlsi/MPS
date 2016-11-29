@@ -94,7 +94,7 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   public class SubstituteMenuPart_Group_z82rnb_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"));
+      return SNodeOperations.getConcept(_context.getCurrentTargetNode()).isAbstract();
     }
 
     @Override
