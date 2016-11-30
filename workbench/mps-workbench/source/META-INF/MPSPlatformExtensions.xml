@@ -141,14 +141,13 @@
   <statistics.usagesCollector implementation="com.intellij.diff.statistics.DiffUsagesCollector"/>
   <colorAndFontPanelFactory implementation="com.intellij.openapi.diff.impl.settings.DiffColorsPageFactory"/>
   <colorAndFontDescriptorProvider implementation="com.intellij.openapi.diff.impl.settings.DiffColorsPageFactory"/>
-
   <!--
-  <fileTypeFactory implementation="com.intellij.diff.contents.DiffPsiFileType$TypeFactory"/>
-  <lang.substitutor language="TEXT" implementationClass="com.intellij.diff.contents.DiffPsiFileType$Substitutor" order="first"/>
-  <daemon.highlightInfoFilter implementation="com.intellij.diff.contents.DiffPsiFileType$HighlightFilter"/>
-  <daemon.intentionActionFilter implementation="com.intellij.diff.contents.DiffPsiFileType$IntentionFilter"/>
+  <getDataRule key="diff_navigatable_array" implementationClass="com.intellij.diff.actions.impl.DiffNavigatableArrayRule"/>
+
+    <daemon.highlightInfoFilter implementation="com.intellij.diff.contents."/>
+    <daemon.intentionActionFilter implementation="com.intellij.diff.contents.DiffPsiFileSupDiffPsiFileSupport$HighlightFilterport$IntentionFilter"/>
   <defaultHighlightingSettingProvider id="GeneratedSourcesHighlightingSettingProvider"
-                                      implementation="com.intellij.diff.contents.DiffPsiFileType$HighlightingSettingProvider"/>
+                                      implementation="com.intellij.diff.contents.DiffPsiFileSupport$HighlightingSettingProvider"/>
   -->
 
   <applicationService serviceInterface="com.intellij.ui.SystemNotifications"
@@ -258,13 +257,15 @@
 
   <applicationService serviceInterface="com.intellij.ide.UiActivityMonitor" serviceImplementation="com.intellij.ide.UiActivityMonitorImpl"/>
 
+    <applicationService serviceInterface="com.intellij.execution.process.ProcessHandlerFactory"
+                        serviceImplementation="com.intellij.execution.process.ProcessHandlerFactoryImpl" />
+
   <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                   serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
   <projectService serviceInterface="com.intellij.openapi.startup.StartupManager"
                   serviceImplementation="com.intellij.ide.startup.impl.StartupManagerImpl"/>
   <projectService serviceImplementation="com.intellij.openapi.project.ProjectTypeService"/>
-  <projectService serviceInterface="com.intellij.openapi.ui.MasterDetailsStateService"
-                  serviceImplementation="com.intellij.openapi.ui.MasterDetailsStateService"/>
+    <projectService serviceInterface="com.intellij.openapi.ui.MasterDetailsStateService" serviceImplementation="com.intellij.openapi.ui.MasterDetailsStateService"/>
   <projectService serviceInterface="com.intellij.ide.SelectInManager" serviceImplementation="com.intellij.ide.SelectInManager"/>
 
   <projectService serviceInterface="com.intellij.ide.errorTreeView.impl.ErrorTreeViewConfiguration"
@@ -282,8 +283,7 @@
   <projectService serviceImplementation="com.intellij.ui.tabs.FileColorProjectLevelConfigurationManager"/>
 
   <projectService serviceInterface="com.intellij.openapi.project.DumbService" serviceImplementation="com.intellij.openapi.project.DumbServiceImpl"/>
-  <applicationService serviceInterface="com.intellij.openapi.project.DumbPermissionService"
-                      serviceImplementation="com.intellij.openapi.project.DumbPermissionServiceImpl"/>
+    <applicationService serviceInterface="com.intellij.openapi.project.DumbPermissionService" serviceImplementation="com.intellij.openapi.project.DumbPermissionServiceImpl"/>
 
   <projectService serviceInterface="com.intellij.psi.util.CachedValuesManager"
                   serviceImplementation="com.intellij.util.CachedValuesManagerImpl"/>
@@ -313,10 +313,9 @@
   <projectService serviceInterface="com.intellij.openapi.project.ProjectReloadState"
                   serviceImplementation="com.intellij.openapi.project.impl.ProjectReloadStateImpl"/>
 
-  <!--
-    <projectService serviceInterface="com.intellij.externalDependencies.ExternalDependenciesManager"
-                    serviceImplementation="com.intellij.externalDependencies.impl.ExternalDependenciesManagerImpl"/>
-  -->
+  <projectService serviceInterface="com.intellij.externalDependencies.ExternalDependenciesManager"
+                  serviceImplementation="com.intellij.externalDependencies.impl.ExternalDependenciesManagerImpl"/>
+
 
   <welcomeFrameProvider implementation="com.intellij.openapi.wm.impl.welcomeScreen.FlatWelcomeFrameProvider"/>
 
@@ -325,20 +324,17 @@
                            instance="com.intellij.ide.GeneralSettingsConfigurable"/>
 
   <!-- Appearance -->
-  <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="preferences.lookFeel"
-                           key="title.appearance"
+    <applicationConfigurable groupId="appearance" groupWeight="150" instance="com.intellij.ide.ui.AppearanceConfigurable" id="preferences.lookFeel" key="title.appearance"
                            bundle="messages.IdeBundle"/>
 
   <!-- Keymap -->
-  <applicationConfigurable groupId="root" groupWeight="65" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap"
-                           key="keymap.display.name"
+    <applicationConfigurable groupId="root" groupWeight="65" instance="com.intellij.openapi.keymap.impl.ui.KeymapPanel" id="preferences.keymap" key="keymap.display.name"
                            bundle="messages.KeyMapBundle"/>
   <applicationConfigurable groupId="appearance" instance="com.intellij.openapi.keymap.impl.ui.QuickListsPanel" id="reference.idesettings.quicklists"
                            displayName="Quick Lists"/>
 
   <!-- Customizations -->
-  <applicationConfigurable groupId="appearance" groupWeight="130" instance="com.intellij.ide.ui.customization.CustomizationConfigurable"
-                           id="preferences.customizations"
+    <applicationConfigurable groupId="appearance" groupWeight="130" instance="com.intellij.ide.ui.customization.CustomizationConfigurable" id="preferences.customizations"
                            key="title.customizations" bundle="messages.IdeBundle"/>
 
   <!-- Notifications -->
@@ -354,8 +350,7 @@
                            displayName="Plugins"/>
   <actionFromOptionDescriptorProvider implementation="com.intellij.ide.plugins.InstalledPluginsManagerMain$PluginsActionFromOptionDescriptorProvider"/>
   <applicationConfigurable parentId="preferences.general" instance="com.intellij.util.net.HttpProxyConfigurable" id="http.proxy" displayName="HTTP Proxy"/>
-  <applicationConfigurable groupId="tools" displayName="Server Certificates" id="http.certificates"
-                           instance="com.intellij.util.net.ssl.CertificateConfigurable"/>
+    <applicationConfigurable groupId="tools" displayName="Server Certificates" id="http.certificates" instance="com.intellij.util.net.ssl.CertificateConfigurable"/>
   <!--<applicationConfigurable instance="com.intellij.ui.switcher.QuickAccessConfigurable"/>-->
 
   <fileTypeFactory implementation="com.intellij.openapi.fileTypes.impl.PlatformFileTypeFactory"/>
@@ -364,8 +359,7 @@
   <applicationService serviceInterface="com.intellij.openapi.options.colors.ColorSettingsPages"
                       serviceImplementation="com.intellij.openapi.options.colors.pages.ColorSettingsPagesImpl"/>
 
-  <applicationConfigurable parentId="preferences.general" instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable"
-                           id="preferences.updates"
+    <applicationConfigurable parentId="preferences.general" instance="com.intellij.openapi.updateSettings.impl.UpdateSettingsConfigurable" id="preferences.updates"
                            key="updates.settings.title" bundle="messages.IdeBundle"/>
 
   <applicationService serviceInterface="com.intellij.psi.search.scope.packageSet.PackageSetFactory"
@@ -378,12 +372,12 @@
                       serviceImplementation="com.intellij.openapi.actionSystem.impl.AbbreviationManagerImpl"/>
 
   <applicationService serviceImplementation="com.intellij.openapi.editor.ex.EditorSettingsExternalizable"/>
+    <applicationService serviceImplementation="com.intellij.codeInsight.hints.settings.ParameterNameHintsSettings"/>
   <applicationService serviceImplementation="com.intellij.openapi.keymap.KeyboardSettingsExternalizable"/>
   <applicationService serviceImplementation="com.intellij.openapi.editor.SpellCheckingEditorCustomizationProvider"/>
 
   <scopeParserExtension implementation="com.intellij.psi.search.scope.packageSet.FilePackageSetParserExtension"/>
-  <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher"
-                      serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
+    <applicationService serviceInterface="com.intellij.openapi.ui.popup.StackingPopupDispatcher" serviceImplementation="com.intellij.ui.popup.StackingPopupDispatcherImpl"/>
 
   <applicationService serviceImplementation="com.intellij.ide.RemoteDesktopDetector"/>
 

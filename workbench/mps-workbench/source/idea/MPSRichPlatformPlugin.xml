@@ -11,7 +11,6 @@
   <xi:include href="/componentSets/MPSIdeaComponents.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="/idea/MPSRichPlatformActions.xml" xpointer="xpointer(/component/*)"/>
 
-
   <!--
   <project-components>
     <component>
@@ -234,6 +233,7 @@
                         serviceImplementation="com.intellij.openapi.roots.ui.configuration.libraries.impl.LibraryPresentationManagerImpl"/>
     <projectService serviceInterface="com.intellij.openapi.roots.ui.configuration.dependencyAnalysis.AnalyzeDependenciesSettings"
                     serviceImplementation="com.intellij.openapi.roots.ui.configuration.dependencyAnalysis.AnalyzeDependenciesSettings"/>
+    <projectService serviceImplementation="com.intellij.ide.bookmarks.BookmarkManager"/>
 
     <daemon.highlightInfoFilter implementation="com.intellij.debugger.engine.evaluation.DebuggerHighlightFilter"/>
     <daemon.highlightInfoFilter implementation="com.intellij.codeInsight.daemon.impl.HighlightInfoFilterImpl"/>
@@ -248,7 +248,7 @@
 
     &lt;!&ndash; Errors &ndash;&gt;
     &lt;!&ndash; Show full error options configurable only in full IDEA - platform supports only default IDE profile for now &ndash;&gt;
-    <projectConfigurable groupId="editor" groupWeight="160" displayName="Inspections" id="Errors" provider="com.intellij.profile.codeInspection.ui.ProjectInspectionToolsConfigurableProvider"/>
+    <projectConfigurable groupId="editor" groupWeight="160" displayName="Inspections" id="Errors" instance="com.intellij.profile.codeInspection.ui.ProjectInspectionToolsConfigurable"/>
 
     &lt;!&ndash; Compiler &ndash;&gt;
     <projectConfigurable groupId="build" groupWeight="130" instance="com.intellij.compiler.options.CompilerConfigurable" id="project.propCompiler" order="after project"
@@ -278,12 +278,14 @@
          it's only required in full IDEA -->
     <applicationConfigurable groupId="appearance" groupWeight="-10" instance="com.intellij.application.options.pathMacros.PathMacroConfigurable" id="preferences.pathVariables"
                              key="title.path.variables" bundle="messages.ApplicationBundle"/>
-    <projectConfigurable groupId="build" groupWeight="130" instance="jetbrains.mps.library.ProjectLibraryManagerConfigurable" id="preferences.projectLibraryManager" nonDefaultProject="true"/>
+    <postStartupActivity implementation="com.intellij.externalDependencies.impl.CheckRequiredPluginsActivity"/>
+    <projectConfigurable groupId="build" provider="com.intellij.externalDependencies.impl.ExternalDependenciesConfigurableProvider"
+                         id="preferences.externalDependencies" displayName="Required Plugins"/>
+    <projectConfigurable groupId="build" groupWeight="130" instance="jetbrains.mps.library.ProjectLibraryManagerConfigurable"
+                         id="preferences.projectLibraryManager" nonDefaultProject="true"/>
     <applicationConfigurable groupId="build" groupWeight="120" instance="jetbrains.mps.library.LibraryManagerConfigurable" id="preferences.libraryManager"/>
-    <!--
 
-    <applicationConfigurable parentId="preferences.editor" instance="com.intellij.execution.console.ConsoleFoldingConfigurable" id="Console Folding"
-                             displayName="Console Folding"/>
+    <!--
 
     <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.AttachSourcesNotificationProvider"/>
     <editorNotificationProvider implementation="com.intellij.codeInsight.daemon.impl.LibrarySourceNotificationProvider"/>
