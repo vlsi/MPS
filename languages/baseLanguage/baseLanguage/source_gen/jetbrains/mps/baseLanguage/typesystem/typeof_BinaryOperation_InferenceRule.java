@@ -14,7 +14,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
@@ -48,7 +48,7 @@ public class typeof_BinaryOperation_InferenceRule extends AbstractInferenceRule_
                 } else {
                   {
                     MessageTarget errorTarget = new NodeMessageTarget();
-                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "Operator '" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(operation), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + "' cannot be applied to '" + typeCheckingContext.getExpandedNode(leftType) + "', '" + typeCheckingContext.getExpandedNode(rightType) + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571120", null, errorTarget);
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "Operator '" + SConceptOperations.conceptAlias(SNodeOperations.getConcept(operation)) + "' cannot be applied to '" + typeCheckingContext.getExpandedNode(leftType) + "', '" + typeCheckingContext.getExpandedNode(rightType) + "'", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1387988544209571120", null, errorTarget);
                   }
                 }
               }

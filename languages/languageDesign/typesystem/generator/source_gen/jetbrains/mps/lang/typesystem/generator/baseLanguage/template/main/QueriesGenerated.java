@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.typesystem.generator.baseLanguage.template.genUtil.TypesystemGenUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -206,14 +207,14 @@ public class QueriesGenerated {
     return !(TypesystemGenUtil.isInCheckEquation(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_1215528815701(final BaseMappingRuleContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     if (":>=:".equals(alias) || ":<=:".equals(alias) || ":<<=:".equals(alias)) {
       return TypesystemGenUtil.isInCheckEquation(_context.getNode());
     }
     return false;
   }
   public static boolean baseMappingRule_Condition_1215531456103(final BaseMappingRuleContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     if (":==:".equals(alias)) {
       return TypesystemGenUtil.isInCheckEquation(_context.getNode());
     }
@@ -592,11 +593,11 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3be2294807013eb7L, "jetbrains.mps.lang.typesystem.structure.AbstractComparableStatement")), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x3be2294807013eb7L, 0x3be2294807021f34L, "infer"));
   }
   public static Object propertyMacro_GetPropertyValue_1707333141173512013(final PropertyMacroContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     return ":<=:".equals(alias) || ":>=:".equals(alias);
   }
   public static Object propertyMacro_GetPropertyValue_1707333141173512083(final PropertyMacroContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     if (":==:".equals(alias)) {
       return "createEquation";
     }
@@ -615,7 +616,7 @@ public class QueriesGenerated {
     return null;
   }
   public static Object propertyMacro_GetPropertyValue_1215531866925(final PropertyMacroContext _context) {
-    return !(":<<=:".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"))));
+    return !(":<<=:".equals(SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()))));
   }
   public static Object propertyMacro_GetPropertyValue_6754779536334592133(final PropertyMacroContext _context) {
     SNode origin = _context.getOriginalCopiedInputNode(_context.getNode());
@@ -1278,11 +1279,11 @@ public class QueriesGenerated {
     return false;
   }
   public static boolean ifMacro_Condition_1707333141173511945(final IfMacroContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     return (":==:".equals(alias) && SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117f3c1ffaL, 0x118e0a511a0L, "checkOnly"))) || ":<=:".equals(alias) || ":>=:".equals(alias) || ":<<=:".equals(alias) || ":>>=:".equals(alias);
   }
   public static boolean ifMacro_Condition_1707333141173511993(final IfMacroContext _context) {
-    String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getNode()));
     return ":~:".equals(alias) || ":~~:".equals(alias);
   }
   public static boolean ifMacro_Condition_1707333141173544240(final IfMacroContext _context) {

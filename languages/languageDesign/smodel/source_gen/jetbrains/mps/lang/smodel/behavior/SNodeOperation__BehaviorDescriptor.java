@@ -21,7 +21,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -85,7 +85,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   /*package*/ static String getVariableExpectedName_idhEwIP$B(@NotNull SNode __thisNode__) {
-    String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
+    String variableExpectedName = NameUtil.toValidCamelIdentifier(SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__)));
     return variableExpectedName;
   }
   /*package*/ static boolean applicableToModel_id1653mnvAf1y(@NotNull SAbstractConcept __thisConcept__) {

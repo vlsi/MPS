@@ -46,7 +46,7 @@ public class NewClassLike_Action extends BaseAction {
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     String alias = SPropertyOperations.getString(SLinkOperations.getTarget(NewClassLike_Action.this.descr, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
-    event.getPresentation().setText((alias == null ? SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : alias));
+    event.getPresentation().setText(((alias == null || alias.length() == 0) ? SPropertyOperations.getString(NewClassLike_Action.this.descr, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) : alias));
     Icon icon;
     SNode pc = SLinkOperations.getTarget(NewClassLike_Action.this.descr, MetaAdapterFactory.getReferenceLink(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d160L, 0x1955e1ca83e5ed92L, "preferredConcept"));
     if (pc != null) {

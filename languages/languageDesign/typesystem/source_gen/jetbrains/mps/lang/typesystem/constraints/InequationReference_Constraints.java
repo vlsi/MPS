@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InequationReference_Constraints extends BaseConstraintsDescriptor {
@@ -38,9 +39,9 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (isNotEmptyString(SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x42501924d0bd6481L, "label")))) {
-              return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x42501924d0bd6481L, "label")) + " " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              return SPropertyOperations.getString(_context.getParameterNode(), MetaAdapterFactory.getProperty(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11a342c1412L, 0x42501924d0bd6481L, "label")) + " " + SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getParameterNode()));
             } else {
-              return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getParameterNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+              return SConceptOperations.conceptAlias(SNodeOperations.getConcept(_context.getParameterNode()));
             }
           }
         };
