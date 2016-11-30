@@ -2020,8 +2020,8 @@
             <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
             <node concept="2Ry0Ak" id="1ePifXyyEr4" role="iGT6I">
               <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="1ePifXyyEr6" role="2Ry0An">
-                <property role="2Ry0Am" value="platform-api.jar" />
+              <node concept="2Ry0Ak" id="5J70wuMRa_H" role="2Ry0An">
+                <property role="2Ry0Am" value="openapi.jar" />
               </node>
             </node>
           </node>
@@ -2123,8 +2123,8 @@
             <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
             <node concept="2Ry0Ak" id="2ZTNkpvxXsi" role="iGT6I">
               <property role="2Ry0Am" value="lib" />
-              <node concept="2Ry0Ak" id="2ZTNkpvxXsk" role="2Ry0An">
-                <property role="2Ry0Am" value="platform-api.jar" />
+              <node concept="2Ry0Ak" id="5J70wuMRb6_" role="2Ry0An">
+                <property role="2Ry0Am" value="openapi.jar" />
               </node>
             </node>
           </node>
@@ -15693,8 +15693,8 @@
       </node>
       <node concept="13uQ2_" id="5w9VucA$Mg7" role="39821P">
         <node concept="3_J27D" id="5w9VucA$Mg9" role="13uQ07">
-          <node concept="3Mxwew" id="5w9VucA$Mlw" role="3MwsjC">
-            <property role="3MwjfP" value="ecj-4.5.2.jar" />
+          <node concept="3Mxwew" id="4vNfevbfZxr" role="3MwsjC">
+            <property role="3MwjfP" value="ecj-4.6.1.jar" />
           </node>
         </node>
       </node>

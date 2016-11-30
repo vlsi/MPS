@@ -237,7 +237,7 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
@@ -281,7 +281,7 @@
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />

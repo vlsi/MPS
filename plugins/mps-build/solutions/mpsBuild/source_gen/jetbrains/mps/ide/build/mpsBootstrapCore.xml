@@ -46,7 +46,7 @@
   </path>
   
   <path id="path.java.library.ecj">
-    <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.6.1.jar" />
   </path>
   
   <path id="path.java.library.log4j-lib">
@@ -5482,7 +5482,7 @@
         <pathelement path="${build.tmp}/java/out/mps-environment" />
         <pathelement path="${build.tmp}/java/out/mps-migration" />
         <fileset file="${mps_home}/lib/platform.jar" />
-        <fileset file="${mps_home}/lib/platform-api.jar" />
+        <fileset file="${mps_home}/lib/openapi.jar" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
         <path refid="path.java.library.jdom-lib" />
@@ -5564,7 +5564,7 @@
         <path location="${mps_home}/workbench/mps-icons/source" />
       </src>
       <classpath>
-        <fileset file="${mps_home}/lib/platform-api.jar" />
+        <fileset file="${mps_home}/lib/openapi.jar" />
         <fileset file="${artifacts.IDEA}/lib/icons.jar" />
         <fileset file="${artifacts.IDEA}/lib/util.jar" />
         <path refid="path.jdk.classpath" />
