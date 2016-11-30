@@ -581,6 +581,7 @@
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271369338" name="jetbrains.mps.baseLanguage.structure.IsEmptyOperation" flags="nn" index="17RlXB" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -18086,9 +18087,8 @@
                   </node>
                 </node>
               </node>
-              <node concept="3y3z36" id="4aTAL7cPUXL" role="3clFbw">
-                <node concept="10Nm6u" id="4aTAL7cPVlF" role="3uHU7w" />
-                <node concept="2OqwBi" id="4aTAL7cPPpN" role="3uHU7B">
+              <node concept="2OqwBi" id="5x65j4jD9Dv" role="3clFbw">
+                <node concept="2OqwBi" id="4aTAL7cPPpN" role="2Oq$k0">
                   <node concept="2OqwBi" id="4aTAL7cPOuu" role="2Oq$k0">
                     <node concept="3TrEf2" id="4aTAL7cPOuv" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpc2:gXXX56I" resolve="conceptDeclaration" />
@@ -18106,6 +18106,7 @@
                     <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
                   </node>
                 </node>
+                <node concept="17RvpY" id="5x65j4jDazj" role="2OqNvi" />
               </node>
             </node>
             <node concept="3clFbH" id="4aTAL7cPY6V" role="3cqZAp" />
