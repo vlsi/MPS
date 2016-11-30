@@ -8,6 +8,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1076505808687:jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1145576838780">
     <file name="SemanticDowncast.java">
@@ -95,7 +96,7 @@
       <node id="1145577972932" at="30,0,35,0" concept="4" trace="accessToChildNode_4#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1206556966506" at="35,0,40,0" concept="4" trace="accessToChildNode_5#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1145580908119" at="40,0,46,0" concept="4" trace="accessToReferentNode_1#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1145578745054" at="51,68,58,5" concept="8" />
+      <node id="1145578745054" at="51,68,58,5" concept="9" />
       <node id="1145578543179" at="49,0,60,0" concept="4" trace="accessToParentNode_1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1206559463498" at="46,70,47,185" />
       <scope id="1171242667793" at="60,54,61,390">
@@ -434,44 +435,47 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146073464944">
     <file name="ConceptProperties.java">
-      <node id="1146073487582" at="12,49,13,233" concept="5" />
-      <node id="1146073487590" at="13,233,14,221" concept="5" />
-      <node id="1146073487596" at="14,221,15,234" concept="5" />
-      <node id="1146073487604" at="15,234,16,228" concept="5" />
-      <node id="2648652578096734541" at="16,228,17,207" concept="1" />
-      <node id="4726561250374487644" at="17,207,18,207" concept="1" />
-      <node id="1146073487617" at="20,50,21,31" concept="5" />
-      <node id="1146073487626" at="22,209,23,24" concept="1" />
-      <node id="1146073487630" at="24,5,25,225" concept="5" />
-      <node id="2648652578096734556" at="25,225,26,209" concept="1" />
-      <node id="4726561250374487653" at="26,209,27,210" concept="1" />
-      <node id="1208196943628" at="29,30,30,368" concept="1" />
-      <node id="1146073487621" at="21,31,24,5" concept="3" />
-      <node id="1208196798356" at="29,0,32,0" concept="4" trace="m1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1146073487579" at="12,0,20,0" concept="4" trace="stringConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1146073487614" at="20,0,29,0" concept="4" trace="booleanConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1146073487625" at="22,209,23,24" />
-      <scope id="1208196798359" at="29,30,30,368" />
-      <scope id="1208196798356" at="29,0,32,0">
+      <node id="1146073487582" at="13,49,14,243" concept="5" />
+      <node id="1146073487590" at="14,243,15,221" concept="5" />
+      <node id="1146073487596" at="15,221,16,234" concept="5" />
+      <node id="1146073487604" at="16,234,17,228" concept="5" />
+      <node id="2648652578096734541" at="17,228,18,156" concept="1" />
+      <node id="4726561250374487644" at="18,156,19,156" concept="1" />
+      <node id="1146073487630" at="21,50,22,225" concept="5" />
+      <node id="4881134848115356914" at="22,225,23,197" concept="5" />
+      <node id="2648652578096734556" at="23,197,24,168" concept="1" />
+      <node id="4726561250374487653" at="24,168,25,169" concept="1" />
+      <node id="1208196943628" at="27,30,28,368" concept="1" />
+      <node id="6360794824234304650" at="30,55,31,43" concept="6" />
+      <node id="1208196798356" at="27,0,30,0" concept="4" trace="m1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6360794824234304650" at="30,0,33,0" concept="8" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1146073487614" at="21,0,27,0" concept="4" trace="booleanConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1146073487579" at="13,0,21,0" concept="4" trace="stringConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1208196798359" at="27,30,28,368" />
+      <scope id="6360794824234304650" at="30,55,31,43" />
+      <scope id="1208196798356" at="27,0,30,0">
         <var name="node" id="1208196934516" />
       </scope>
-      <scope id="1146073487581" at="12,49,18,207">
+      <scope id="6360794824234304650" at="30,0,33,0">
+        <var name="str" id="6360794824234304650" />
+      </scope>
+      <scope id="1146073487616" at="21,50,25,169">
+        <var name="cd" id="4881134848115356915" />
+        <var name="isAbstract2" id="1146073487631" />
+      </scope>
+      <scope id="1146073487581" at="13,49,19,156">
         <var name="alias" id="1146073487591" />
         <var name="hasAlias" id="1146073487583" />
         <var name="length" id="1146073487605" />
         <var name="text" id="1146073487597" />
       </scope>
-      <scope id="1146073487616" at="20,50,27,210">
-        <var name="isAbstract" id="1146073487618" />
-        <var name="isAbstract2" id="1146073487631" />
-      </scope>
-      <scope id="1146073487579" at="12,0,20,0">
-        <var name="node" id="1146073487612" />
-      </scope>
-      <scope id="1146073487614" at="20,0,29,0">
+      <scope id="1146073487614" at="21,0,27,0">
         <var name="node" id="1146073487636" />
       </scope>
-      <unit id="1146073464944" at="11,0,33,0" name="smodelLanguage.samples.ConceptProperties" />
+      <scope id="1146073487579" at="13,0,21,0">
+        <var name="node" id="1146073487612" />
+      </scope>
+      <unit id="1146073464944" at="12,0,34,0" name="smodelLanguage.samples.ConceptProperties" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146073640825">
