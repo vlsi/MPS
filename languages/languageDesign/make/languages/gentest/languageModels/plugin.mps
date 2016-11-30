@@ -36,7 +36,6 @@
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="2o" ref="3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7/java:difflib(jetbrains.mps.tool.gentest/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -346,6 +345,7 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -361,7 +361,7 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -3157,11 +3157,8 @@
                           <node concept="liA8E" id="1TaHNgiI6s9" role="2OqNvi">
                             <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="2wdLO7KfSsy" role="37wK5m">
-                              <node concept="3TrcHB" id="2wdLO7KfSsz" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
-                              <node concept="2OqwBi" id="2wdLO7KfSs$" role="2Oq$k0">
-                                <node concept="3NT_Vc" id="2wdLO7KfSs_" role="2OqNvi" />
+                              <node concept="2OqwBi" id="6b5F$bhojNP" role="2Oq$k0">
+                                <node concept="2yIwOk" id="6b5F$bhojNQ" role="2OqNvi" />
                                 <node concept="2OqwBi" id="2wdLO7KfSsA" role="2Oq$k0">
                                   <node concept="37vLTw" id="2BHiRxgkWB6" role="2Oq$k0">
                                     <ref role="3cqZAo" node="1TaHNgiI6sf" resolve="meth" />
@@ -3171,6 +3168,7 @@
                                   </node>
                                 </node>
                               </node>
+                              <node concept="3n3YKJ" id="6b5F$bhojNR" role="2OqNvi" />
                             </node>
                           </node>
                         </node>
@@ -3300,11 +3298,8 @@
                           <node concept="liA8E" id="1TaHNgiI6tb" role="2OqNvi">
                             <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                             <node concept="2OqwBi" id="2wdLO7Kf$tT" role="37wK5m">
-                              <node concept="3TrcHB" id="2wdLO7Kf$tU" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
-                              <node concept="2OqwBi" id="2wdLO7Kf$tV" role="2Oq$k0">
-                                <node concept="3NT_Vc" id="2wdLO7Kf$tW" role="2OqNvi" />
+                              <node concept="2OqwBi" id="6b5F$bhojNT" role="2Oq$k0">
+                                <node concept="2yIwOk" id="6b5F$bhojNU" role="2OqNvi" />
                                 <node concept="2OqwBi" id="2wdLO7Kf$tX" role="2Oq$k0">
                                   <node concept="37vLTw" id="2BHiRxgmI7f" role="2Oq$k0">
                                     <ref role="3cqZAo" node="1TaHNgiI6th" resolve="meth" />
@@ -3314,6 +3309,7 @@
                                   </node>
                                 </node>
                               </node>
+                              <node concept="3n3YKJ" id="6b5F$bhojNV" role="2OqNvi" />
                             </node>
                           </node>
                         </node>

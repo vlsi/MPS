@@ -608,6 +608,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -642,6 +643,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -3028,13 +3030,11 @@
                                 </node>
                                 <node concept="3cpWs3" id="4zlO3QT8sD9" role="3uHU7B">
                                   <node concept="2OqwBi" id="2wdLO7Kfy8Q" role="3uHU7w">
-                                    <node concept="2OqwBi" id="2wdLO7Kfy8S" role="2Oq$k0">
-                                      <node concept="3NT_Vc" id="2wdLO7Kfy8T" role="2OqNvi" />
+                                    <node concept="2OqwBi" id="6b5F$bhnIU_" role="2Oq$k0">
+                                      <node concept="2yIwOk" id="6b5F$bhnIUA" role="2OqNvi" />
                                       <node concept="pncrf" id="2wdLO7Kfy8U" role="2Oq$k0" />
                                     </node>
-                                    <node concept="3TrcHB" id="2wdLO7Kfy8R" role="2OqNvi">
-                                      <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                                    </node>
+                                    <node concept="3n3YKJ" id="6b5F$bhnIUB" role="2OqNvi" />
                                   </node>
                                   <node concept="Xl_RD" id="4zlO3QT8rPK" role="3uHU7B">
                                     <property role="Xl_RC" value="&lt;no " />
