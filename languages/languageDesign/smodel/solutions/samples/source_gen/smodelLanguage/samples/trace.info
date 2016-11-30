@@ -435,23 +435,23 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1146073464944">
     <file name="ConceptProperties.java">
-      <node id="1146073487582" at="13,49,14,243" concept="5" />
-      <node id="1146073487590" at="14,243,15,221" concept="5" />
-      <node id="1146073487596" at="15,221,16,234" concept="5" />
-      <node id="1146073487604" at="16,234,17,228" concept="5" />
-      <node id="2648652578096734541" at="17,228,18,156" concept="1" />
+      <node id="1146073487582" at="13,49,14,107" concept="5" />
+      <node id="1146073487590" at="14,107,15,85" concept="5" />
+      <node id="1146073487596" at="15,85,16,98" concept="5" />
+      <node id="1146073487604" at="16,98,17,92" concept="5" />
+      <node id="2648652578096734541" at="17,92,18,156" concept="1" />
       <node id="4726561250374487644" at="18,156,19,156" concept="1" />
-      <node id="1146073487630" at="21,50,22,225" concept="5" />
-      <node id="4881134848115356914" at="22,225,23,197" concept="5" />
+      <node id="1146073487630" at="21,50,22,72" concept="5" />
+      <node id="4881134848115356914" at="22,72,23,197" concept="5" />
       <node id="2648652578096734556" at="23,197,24,168" concept="1" />
       <node id="4726561250374487653" at="24,168,25,169" concept="1" />
-      <node id="1208196943628" at="27,30,28,368" concept="1" />
+      <node id="1208196943628" at="27,30,28,232" concept="1" />
       <node id="6360794824234304650" at="30,55,31,43" concept="6" />
       <node id="1208196798356" at="27,0,30,0" concept="4" trace="m1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="6360794824234304650" at="30,0,33,0" concept="8" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="1146073487614" at="21,0,27,0" concept="4" trace="booleanConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1146073487579" at="13,0,21,0" concept="4" trace="stringConceptProperty#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1208196798359" at="27,30,28,368" />
+      <scope id="1208196798359" at="27,30,28,232" />
       <scope id="6360794824234304650" at="30,55,31,43" />
       <scope id="1208196798356" at="27,0,30,0">
         <var name="node" id="1208196934516" />
