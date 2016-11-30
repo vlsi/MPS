@@ -156,7 +156,13 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
 
   @Override
   public int hashCode() {
-    return Objects.hash(myModelId, myModuleReference);
+    int result = myModelId.hashCode();
+    // It's vital not to take module reference into account for models with globally unique ids as we need to match (e.g. in map keys)
+    // model references in both formats (with and without module identity part).
+    if (!myModelId.isGloballyUnique()) {
+      result += 31 * getModuleReference().hashCode();
+    }
+    return result;
   }
 
   /**
