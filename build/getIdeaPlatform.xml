@@ -2,6 +2,7 @@
 
   <property name="idea.platform.version" value="163.7743.44"/>
   <property name="idea.platform.snapshot" value="163-SNAPSHOT"/>
+  <property name="jetpad.version" value="1.0.0" />
   <property name="ivy.jar.dir" value="${basedir}/ivy"/>
   <property name="ivy.cache.ttl.default" value="eternal"/>
 
@@ -51,8 +52,7 @@
 
   <target name="download" description="Download all platform libs and sources">
     <antcall target="download-platform"/>
-    <antcall target="download-diffutils"/>
-    <antcall target="download-testlib"/>
+    <antcall target="download-3rd-party"/>
   </target>
 
   <target name="download-platform" depends="install-ivy, invalidate" description="Download platform based on IDEA Community from TeamCity">
@@ -69,6 +69,17 @@
   <target name="download-testlib" depends="install-ivy" description="Download jmock and hamcrest libraries">
     <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar" showprogress="true"/>
     <ivy:retrieve pattern="../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-jetpad" depends="install-ivy" description="Download JetPad framework libraries">
+    <ivy:resolve file="./ivyJetPad.xml" validate="false" showprogress="true"/>
+    <ivy:retrieve pattern="../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-3rd-party" description="Download all non platform related libs">
+    <antcall target="download-diffutils"/>
+    <antcall target="download-testlib"/>
+    <antcall target="download-jetpad"/>
   </target>
 
   <target name="install" depends="check" description="Download and install MPS platform" if="${platform.need.update}">
@@ -88,6 +99,8 @@
     <delete dir="../plugins/git4idea/lib"/>
     <delete dir="../plugins/svn4idea/lib"/>
     <delete dir="../plugins/terminal"/>
+
+    <delete dir="../plugins/jetpad/lib"/>
 
     <delete dir="../languages/baseLanguage/unitTest/lib">
       <exclude name=".gitignore"/>

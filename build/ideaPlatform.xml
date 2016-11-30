@@ -1,6 +1,27 @@
 <project name="Get MPS dependencies" default="default">
-  <target name="default">
-    <ant antfile="getIdeaPlatform.xml" inheritall="false"/>
-    <ant antfile="./jetpad/build.xml" inheritall="false"/>
+
+  <property name="is.team.city.build" value="false" description="Determines if current build is running on TeamCity"/>
+
+  <target name="default" description="Download all needed libraries">
+    <antcall target="download-all"/>
+    <antcall target="download-wo-platform"/>
   </target>
+
+  <target name="check" description="Checks if it is local or TeamCity build">
+    <condition property="is.local.build" value="true" else="false">
+      <isfalse value="${is.team.city.build}"/>
+    </condition>
+    <echo message="${is.local.build}"/>
+  </target>
+
+  <target name="download-all" depends="check" if="${is.local.build}"
+          description="Download all libraries including MPS platform from IDEA Community">
+    <ant antfile="getIdeaPlatform.xml" inheritall="false"/>
+  </target>
+
+  <target name="download-wo-platform" if="${is.team.city.build}"
+          description="Download all 3-rd party libraries without MPS platform, because it is downloaded as artifact in teamcity build">
+    <ant antfile="getIdeaPlatform.xml" target="download-3rd-party" inheritall="false"/>
+  </target>
+
 </project>
