@@ -894,7 +894,6 @@
       <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
         <reference id="1240930444946" name="member" index="3HdYuM" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -12026,8 +12025,8 @@
               </node>
             </node>
             <node concept="2OqwBi" id="76F8Lg7Ecua" role="3clFbw">
-              <node concept="3TUQnm" id="76F8Lg7Ecj5" role="2Oq$k0">
-                <ref role="3TV0OU" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
+              <node concept="35c_gC" id="66vxhH6jbhK" role="2Oq$k0">
+                <ref role="35c_gD" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
               </node>
               <node concept="3O6GUB" id="76F8Lg7EdBu" role="2OqNvi">
                 <node concept="25Kdxt" id="76F8Lg7EdId" role="3QVz_e">
@@ -12038,7 +12037,7 @@
                         <ref role="3Tt5mk" to="tpc2:1GaASKeIgJu" resolve="cellSelector" />
                       </node>
                     </node>
-                    <node concept="3NT_Vc" id="76F8Lg7Eiw_" role="2OqNvi" />
+                    <node concept="2yIwOk" id="66vxhH6jb9C" role="2OqNvi" />
                   </node>
                 </node>
               </node>

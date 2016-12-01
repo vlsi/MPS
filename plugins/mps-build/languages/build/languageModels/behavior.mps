@@ -407,7 +407,6 @@
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1144146199828" name="jetbrains.mps.lang.smodel.structure.Node_CopyOperation" flags="nn" index="1$rogu" />
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -5164,11 +5163,11 @@
                 <node concept="13iPFW" id="4qU2HB9eDTz" role="2Oq$k0" />
                 <node concept="YBYNd" id="4qU2HB9eDT$" role="2OqNvi" />
               </node>
-              <node concept="3NT_Vc" id="4qU2HB9eDT_" role="2OqNvi" />
+              <node concept="2yIwOk" id="66vxhH6iSVh" role="2OqNvi" />
             </node>
             <node concept="2OqwBi" id="4qU2HB9eDTA" role="3uHU7w">
               <node concept="13iPFW" id="4qU2HB9eDTB" role="2Oq$k0" />
-              <node concept="3NT_Vc" id="4qU2HB9eDTC" role="2OqNvi" />
+              <node concept="2yIwOk" id="66vxhH6iT9y" role="2OqNvi" />
             </node>
           </node>
         </node>

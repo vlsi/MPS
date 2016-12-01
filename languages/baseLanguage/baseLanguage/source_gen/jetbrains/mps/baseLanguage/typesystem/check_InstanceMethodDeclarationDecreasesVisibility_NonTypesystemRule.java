@@ -34,7 +34,7 @@ public class check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRul
     SNode superVisibility = SLinkOperations.getTarget(SNodeOperations.cast(nearestOverriddenMethod, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
     SNode myVisibility = SLinkOperations.getTarget(instanceMethodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
 
-    if (SNodeOperations.isInstanceOf(superVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) || eq_68cpna_a0a7a1(SNodeOperations.getConceptDeclaration(myVisibility), SNodeOperations.getConceptDeclaration(superVisibility))) {
+    if (SNodeOperations.isInstanceOf(superVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9586f0cL, "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) || eq_68cpna_a0a7a1(SNodeOperations.getConcept(myVisibility), SNodeOperations.getConcept(superVisibility))) {
       return;
     }
     if (SNodeOperations.isInstanceOf(superVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af958b686L, "jetbrains.mps.baseLanguage.structure.ProtectedVisibility")) && SNodeOperations.isInstanceOf(myVisibility, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
