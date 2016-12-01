@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -136,6 +137,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
 
   private void initRepository(CompileContext context, String languages, String repoFile) {
+    final ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myRepository);
     if (repoFile != null) {
       File f = new File(repoFile);
       ModelInputStream mos = null;
@@ -166,7 +168,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
         start = System.nanoTime();
         for (CachedModuleData data : myRepo.getModules()) {
-          ModuleRepositoryFacade.createModule(data.getHandle(), this);
+          repoFacade.instantiateModule(data.getHandle(), this);
         }
         if (MPSCompilerUtil.isTracingMode()) {
           context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
@@ -183,22 +185,28 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       long start = System.nanoTime();
       List<ModuleHandle> loadedModules = new ArrayList<ModuleHandle>();
+      List<IFile> filesToLoad = new ArrayList<>();
       for (String path: languages.split(";")) {
         IFile ipath = FileSystem.getInstance().getFileByPath(path);
-        loadedModules.addAll(ModulesMiner.getInstance().collectModules(ipath, true));
+        filesToLoad.add(ipath);
+      }
+      new FileRefresh(filesToLoad).run();
+      ModulesMiner modulesMiner = new ModulesMiner();
+      for (IFile ipath : filesToLoad) {
+        modulesMiner.collectModules(ipath);
       }
 
       if (MPSCompilerUtil.isTracingMode()) {
-        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "loaded " + loadedModules.size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "loaded " + modulesMiner.getCollectedModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
       }
 
       start = System.nanoTime();
-      for (ModuleHandle moduleHandle : loadedModules) {
-        ModuleRepositoryFacade.createModule(moduleHandle, OWNER);
+      for (ModuleHandle moduleHandle : modulesMiner.getCollectedModules()) {
+        repoFacade.instantiateModule(moduleHandle, OWNER);
       }
 
       if (MPSCompilerUtil.isTracingMode()) {
-        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + loadedModules.size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + modulesMiner.getCollectedModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
       }
 
       return;

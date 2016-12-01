@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,8 +45,7 @@ public class ModuleXmlRootDetector extends RootDetector {
   public Collection<VirtualFile> detectRoots(@NotNull VirtualFile rootCandidate, @NotNull ProgressIndicator progressIndicator) {
     LinkedHashSet<VirtualFile> result = new LinkedHashSet<VirtualFile>();
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(VirtualFileUtils.toIFile(rootCandidate), false);
-    for (ModuleHandle handle : moduleHandles) {
+    for (ModuleHandle handle : new ModulesMiner().collectModules(VirtualFileUtils.toIFile(rootCandidate)).getCollectedModules()) {
       // need only loaded modules
       // we may want loading in the future, but the time has not come yet
       if (ModuleRepositoryFacade.getInstance().getModule(handle.getDescriptor().getModuleReference()) != null) {

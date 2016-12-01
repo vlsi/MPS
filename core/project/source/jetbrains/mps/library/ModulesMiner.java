@@ -71,15 +71,6 @@ public final class ModulesMiner {
   private final Set<IFile> myExcludes = new HashSet<IFile>();
   private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
 
-  /**
-   * @deprecated use {@link #ModulesMiner()} constructor} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static ModulesMiner getInstance() {
-    return new ModulesMiner();
-  }
-
   public ModulesMiner() {
     this(Collections.emptySet());
   }
