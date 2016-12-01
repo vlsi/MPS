@@ -19,6 +19,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.debug.api.IDebugger;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -29,7 +30,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.TraceInfo;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BHReflection;
@@ -162,7 +162,7 @@ public class Java_Command {
         if (module.value == null) {
           errorText.value = "Can't find module for node " + nodePointer;
         } else {
-          cp.value = Java_Command.getClasspath(module.value);
+          cp.value = Java_Command.getClasspath(Sequence.<SModule>singleton(module.value));
           cn.value = Java_Command.getClassName(resolved);
         }
       }
@@ -226,15 +226,15 @@ public class Java_Command {
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-  public static List<String> getClasspath(SModule... modules) {
-    Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(modules);
+  public static List<String> getClasspath(Iterable<SModule> modules) {
+    Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(Sequence.fromIterable(modules).toListSequence().toGenericArray(SModule.class));
     classpath.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
     return new ArrayList<String>(classpath);
   }
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)")));
+        return Java_Command.getClasspath(Sequence.<SModule>singleton(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)"))));
       }
     });
   }

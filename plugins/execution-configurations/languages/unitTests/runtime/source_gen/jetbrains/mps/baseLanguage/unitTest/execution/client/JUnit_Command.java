@@ -149,7 +149,7 @@ public class JUnit_Command {
           SModule module = SNodeOperations.getModel(testable.getNode()).getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
-        List<String> classpath = Java_Command.getClasspath(SetSequence.fromSet(uniqueModules).toListSequence().toGenericArray(SModule.class));
+        List<String> classpath = Java_Command.getClasspath(uniqueModules);
         // fixme need this to allow user to start MPS inside the BTestCase 
         ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
         ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();

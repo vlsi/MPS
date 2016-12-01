@@ -10,8 +10,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 
 @Immutable
@@ -59,7 +61,8 @@ public final class TestParameters {
   public static TestParameters calcDefault(final SRepository repo) {
     List<String> classPath = new ModelAccessHelper(repo).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return Java_Command.getClasspath(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo));
+        SModule m = PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo);
+        return Java_Command.getClasspath(Sequence.<SModule>singleton(m));
       }
     });
     return new TestParameters(DefaultTestExecutor.class, classPath);
