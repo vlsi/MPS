@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Attribute = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0a).create();
   private final ConceptPresentation props_BaseCommentAttribute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BaseConcept = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BaseConcept = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x115eca8579fL, "virtualPackage")).create();
   private final ConceptPresentation props_ChildAttribute = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b585L, "linkRole"), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x9d98713f247885aL, 0x9d98713f249b587L, "linkId")).create();
   private final ConceptPresentation props_ExportScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportScopeModule = new ConceptPresentationBuilder().create();
