@@ -5,7 +5,7 @@
       <maximumHeapSize value="1024" />
       <maximumStackSize value="8" />
       <properties>
-        <property name="idea.commit" value="idea/163.7743.44" />
+        <property name="idea.commit" value="163.7743" />
       </properties>
     </buildFile>
   </component>
