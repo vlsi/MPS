@@ -2394,7 +2394,7 @@
       <node id="1213877386047" at="66,0,67,0" concept="15" trace="getParentCollectionCell_id7XYaZQUjT8u" />
       <node id="1213877386047" at="67,0,68,0" concept="15" trace="canBeUsedAsEmptyCell_id6RO52Mcgrfa" />
       <node id="1213877386047" at="69,0,70,0" concept="15" trace="BH_METHODS" />
-      <node id="1216811688236" at="74,85,75,217" concept="11" />
+      <node id="1216811688236" at="74,85,75,71" concept="11" />
       <node id="1216811688246" at="76,42,77,55" concept="5" />
       <node id="1216811694604" at="78,5,79,18" concept="12" />
       <node id="3649021680717343572" at="82,510,83,321" concept="12" />
@@ -2517,7 +2517,7 @@
       <node id="1213877386047" at="378,40,379,19" concept="12" />
       <node id="4323500428134085197" at="381,55,382,43" concept="12" />
       <node id="1213877386047" at="71,0,73,0" concept="16" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1216811688244" at="75,217,78,5" concept="9" />
+      <node id="1216811688244" at="75,71,78,5" concept="9" />
       <node id="3649021680717325953" at="81,103,84,5" concept="9" />
       <node id="3649021680717357580" at="85,115,88,5" concept="9" />
       <node id="1213877386047" at="91,0,94,0" concept="16" trace="getDefaultCellId_id3VYF6qfIQs_#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
