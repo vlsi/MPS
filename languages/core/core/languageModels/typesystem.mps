@@ -1084,14 +1084,14 @@
                 <property role="Xl_RC" value="Abstract concept instance detected. Use one of sub-concepts instead. Concept: " />
               </node>
               <node concept="2OqwBi" id="1hhaX1dquAW" role="3uHU7w">
-                <node concept="2OqwBi" id="1hhaX1dqmCk" role="2Oq$k0">
+                <node concept="2OqwBi" id="66vxhH6hqhC" role="2Oq$k0">
+                  <node concept="2yIwOk" id="66vxhH6hqhD" role="2OqNvi" />
                   <node concept="1YBJjd" id="1hhaX1dqmCi" role="2Oq$k0">
                     <ref role="1YBMHb" node="6klo$89LENp" resolve="baseConcept" />
                   </node>
-                  <node concept="3NT_Vc" id="1hhaX1dquAR" role="2OqNvi" />
                 </node>
-                <node concept="3TrcHB" id="1hhaX1dquB4" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                <node concept="liA8E" id="66vxhH6hqhE" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>

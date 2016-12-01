@@ -487,7 +487,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -2211,12 +2210,12 @@
             <property role="TrG5h" value="result" />
             <node concept="17QB3L" id="4druX3VZWxC" role="1tU5fm" />
             <node concept="2OqwBi" id="hHfCe4J" role="33vP2m">
-              <node concept="2OqwBi" id="hHfCe4K" role="2Oq$k0">
+              <node concept="2OqwBi" id="66vxhH6he5u" role="2Oq$k0">
+                <node concept="2yIwOk" id="66vxhH6he5v" role="2OqNvi" />
                 <node concept="13iPFW" id="hHfCe4L" role="2Oq$k0" />
-                <node concept="3NT_Vc" id="hHfCe4M" role="2OqNvi" />
               </node>
-              <node concept="3TrcHB" id="hHfCe4N" role="2OqNvi">
-                <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+              <node concept="liA8E" id="66vxhH6he5w" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
               </node>
             </node>
           </node>

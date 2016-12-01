@@ -322,14 +322,10 @@
       <concept id="6870613620391345436" name="jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation" flags="ng" index="3neUYN" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
       <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
-      <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
-        <reference id="1138056395725" name="property" index="3TsBF5" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -464,12 +460,12 @@
             <node concept="3clFbS" id="2ZnZLV$dMjz" role="2VODD2">
               <node concept="3clFbF" id="2ZnZLV$dN1y" role="3cqZAp">
                 <node concept="2OqwBi" id="2ZnZLV$dXyn" role="3clFbG">
-                  <node concept="2OqwBi" id="2ZnZLV$dN5s" role="2Oq$k0">
+                  <node concept="2OqwBi" id="66vxhH6hqh$" role="2Oq$k0">
+                    <node concept="2yIwOk" id="66vxhH6hqh_" role="2OqNvi" />
                     <node concept="pncrf" id="2ZnZLV$dN1x" role="2Oq$k0" />
-                    <node concept="3NT_Vc" id="2ZnZLV$dXgb" role="2OqNvi" />
                   </node>
-                  <node concept="3TrcHB" id="2ZnZLV$dY25" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                  <node concept="liA8E" id="66vxhH6hqhA" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
               </node>

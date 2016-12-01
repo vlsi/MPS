@@ -252,7 +252,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -564,12 +563,12 @@
                     <property role="Xl_RC" value="&lt;no name&gt;[" />
                   </node>
                   <node concept="2OqwBi" id="hEwIMiR" role="3uHU7w">
-                    <node concept="2OqwBi" id="hEwIMiS" role="2Oq$k0">
+                    <node concept="2OqwBi" id="66vxhH6hqhw" role="2Oq$k0">
+                      <node concept="2yIwOk" id="66vxhH6hqhx" role="2OqNvi" />
                       <node concept="13iPFW" id="hEwIMiT" role="2Oq$k0" />
-                      <node concept="3NT_Vc" id="hEwIMiU" role="2OqNvi" />
                     </node>
-                    <node concept="3TrcHB" id="hEwIMiV" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                    <node concept="liA8E" id="66vxhH6hqhy" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                     </node>
                   </node>
                 </node>
@@ -656,12 +655,12 @@
         </node>
         <node concept="3cpWs6" id="hEwIMjt" role="3cqZAp">
           <node concept="2OqwBi" id="hEwIMju" role="3cqZAk">
-            <node concept="2OqwBi" id="hEwIMjv" role="2Oq$k0">
+            <node concept="2OqwBi" id="66vxhH6hqhG" role="2Oq$k0">
+              <node concept="2yIwOk" id="66vxhH6hqhH" role="2OqNvi" />
               <node concept="13iPFW" id="hEwIMjw" role="2Oq$k0" />
-              <node concept="3NT_Vc" id="hEwIMjx" role="2OqNvi" />
             </node>
-            <node concept="3TrcHB" id="hEwIMjy" role="2OqNvi">
-              <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+            <node concept="liA8E" id="66vxhH6hqhI" role="2OqNvi">
+              <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
             </node>
           </node>
         </node>
