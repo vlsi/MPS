@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 
 public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor {
   private final BHDescriptor myCommandType__BehaviorDescriptor = new CommandType__BehaviorDescriptor();
+  private final BHDescriptor myCommandParameterReference__BehaviorDescriptor = new CommandParameterReference__BehaviorDescriptor();
   private final BHDescriptor myExplicitCommandParameterDeclaration__BehaviorDescriptor = new ExplicitCommandParameterDeclaration__BehaviorDescriptor();
   private final BHDescriptor myCommandMethod__BehaviorDescriptor = new CommandMethod__BehaviorDescriptor();
   private final BHDescriptor myCommandDeclaration__BehaviorDescriptor = new CommandDeclaration__BehaviorDescriptor();
@@ -35,7 +36,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0t.index(cncpt)) {
+    switch (index_846f5o_a0u.index(cncpt)) {
       case 0:
         return myBuilderBlockStatement__BehaviorDescriptor;
       case 1:
@@ -49,28 +50,30 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 5:
         return myCommandParameterDeclaration__BehaviorDescriptor;
       case 6:
-        return myCommandPartLengthOperation__BehaviorDescriptor;
+        return myCommandParameterReference__BehaviorDescriptor;
       case 7:
-        return myCommandPartToListOperation__BehaviorDescriptor;
+        return myCommandPartLengthOperation__BehaviorDescriptor;
       case 8:
-        return myCommandType__BehaviorDescriptor;
+        return myCommandPartToListOperation__BehaviorDescriptor;
       case 9:
-        return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
+        return myCommandType__BehaviorDescriptor;
       case 10:
-        return myExecuteCommandPart__BehaviorDescriptor;
+        return myDebuggerSettingsCommandParameterDeclaration__BehaviorDescriptor;
       case 11:
-        return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
+        return myExecuteCommandPart__BehaviorDescriptor;
       case 12:
-        return myNewProcessBuilderExpression__BehaviorDescriptor;
+        return myExplicitCommandParameterDeclaration__BehaviorDescriptor;
       case 13:
-        return myRedirectOutputExpression__BehaviorDescriptor;
+        return myNewProcessBuilderExpression__BehaviorDescriptor;
       case 14:
-        return myReportErrorStatement__BehaviorDescriptor;
+        return myRedirectOutputExpression__BehaviorDescriptor;
       case 15:
+        return myReportErrorStatement__BehaviorDescriptor;
+      case 16:
         return myReportExecutionError__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0t = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf8L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfbL), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be7L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x166dfef127134569L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x72450cdacb885c78L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x75aadb0d4e61a576L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be2L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x2085f2c5c8400c12L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfeL)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0u = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf8L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfbL), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bf4L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be7L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bdcL), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x166dfef127134569L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x72450cdacb885c78L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bd6L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x75aadb0d4e61a576L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x550ea9458ea107acL), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be2L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x2085f2c5c8400c12L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c14L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2c00L), MetaIdFactory.conceptId(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bfeL)).seal();
 }

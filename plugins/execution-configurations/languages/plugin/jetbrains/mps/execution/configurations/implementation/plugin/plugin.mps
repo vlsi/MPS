@@ -1444,6 +1444,14 @@
                 <ref role="3cqZAo" node="25rknuvGQRB" resolve="pointer" />
               </node>
             </node>
+            <node concept="2LYoGL" id="1CVOLqONXfw" role="2LYoGw">
+              <ref role="2LYoGK" to="go48:1CVOLqONX6R" resolve="repository" />
+              <node concept="2YIFZM" id="1CVOLqONXnj" role="2LYoGN">
+                <ref role="37wK5l" to="alof:~ProjectHelper.getProjectRepository(com.intellij.openapi.project.Project):org.jetbrains.mps.openapi.module.SRepository" resolve="getProjectRepository" />
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <node concept="21ER0p" id="1CVOLqONXnW" role="37wK5m" />
+              </node>
+            </node>
             <node concept="2LYoGL" id="5gyVhZ17JmG" role="2LYoGw">
               <ref role="2LYoGK" to="go48:14R2qyOBxfN" resolve="runParameters" />
               <node concept="2OqwBi" id="5gyVhZ17JmH" role="2LYoGN">

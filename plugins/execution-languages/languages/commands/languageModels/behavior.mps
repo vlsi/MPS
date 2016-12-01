@@ -2,7 +2,7 @@
 <model ref="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1773,6 +1773,33 @@
             <property role="3clFbU" value="true" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13h7C7" id="1CVOLqOQ4Vu">
+    <property role="3GE5qa" value="command" />
+    <ref role="13h7C2" to="rzqf:JzCdmU6yJs" resolve="CommandParameterReference" />
+    <node concept="13hLZK" id="1CVOLqOQ4Vv" role="13h7CW">
+      <node concept="3clFbS" id="1CVOLqOQ4Vw" role="2VODD2" />
+    </node>
+    <node concept="13i0hz" id="1CVOLqOQ4VS" role="13h7CS">
+      <property role="13i0iv" value="false" />
+      <property role="TrG5h" value="getVariable" />
+      <property role="13i0it" value="false" />
+      <ref role="13i0hy" to="tpek:SORzhOpB6t" resolve="getVariable" />
+      <node concept="3Tm1VV" id="1CVOLqOQ4VT" role="1B3o_S" />
+      <node concept="3clFbS" id="1CVOLqOQ4VW" role="3clF47">
+        <node concept="3clFbF" id="1CVOLqOQ4Wj" role="3cqZAp">
+          <node concept="2OqwBi" id="1CVOLqOQ56r" role="3clFbG">
+            <node concept="13iPFW" id="1CVOLqOQ4Wi" role="2Oq$k0" />
+            <node concept="3TrEf2" id="1CVOLqOQ5f5" role="2OqNvi">
+              <ref role="3Tt5mk" to="rzqf:JzCdmU6yJu" resolve="parameter" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tqbb2" id="1CVOLqOQ4VX" role="3clF45">
+        <ref role="ehGHo" to="tpee:4H$HgYMZ7sw" resolve="IVariableDeclaration" />
       </node>
     </node>
   </node>

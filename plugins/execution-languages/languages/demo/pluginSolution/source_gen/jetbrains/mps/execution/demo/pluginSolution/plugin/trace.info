@@ -133,74 +133,74 @@
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/7806358006983646762">
     <file name="DemoApplication_Configuration_RunProfileState.java">
-      <node id="7806358006983646762" at="37,181,38,36" concept="2" />
-      <node id="7806358006983646762" at="38,36,39,32" concept="2" />
-      <node id="7806358006983646762" at="41,68,42,16" concept="7" />
-      <node id="7806358006983646762" at="44,45,45,16" concept="7" />
-      <node id="7806358006983646762" at="48,110,49,49" concept="6" />
-      <node id="4318884729311291896" at="50,5,51,220" concept="6" />
-      <node id="4318884729311291896" at="51,220,52,88" concept="6" />
-      <node id="4318884729311291896" at="52,88,53,52" concept="2" />
-      <node id="4318884729311291896" at="55,30,56,33" concept="2" />
-      <node id="3355125556689908748" at="65,57,66,49" concept="7" />
-      <node id="3355125556689860021" at="68,38,69,65" concept="7" />
-      <node id="7806358006983646762" at="74,60,75,18" concept="7" />
-      <node id="7806358006983646762" at="77,62,78,18" concept="7" />
-      <node id="7806358006983646762" at="79,5,80,17" concept="7" />
-      <node id="7806358006983646762" at="33,0,35,0" concept="3" trace="myConfiguration" />
-      <node id="7806358006983646762" at="35,0,37,0" concept="3" trace="myEnvironment" />
-      <node id="7806358006983646762" at="41,0,44,0" concept="5" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
-      <node id="7806358006983646762" at="44,0,47,0" concept="5" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
-      <node id="4318884729311291896" at="55,0,58,0" concept="5" trace="invoke#()V" />
-      <node id="3355125556689860021" at="68,0,71,0" concept="5" trace="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
-      <node id="7806358006983646762" at="73,55,76,5" concept="4" />
-      <node id="7806358006983646762" at="76,5,79,5" concept="4" />
-      <node id="7806358006983646762" at="37,0,41,0" concept="1" trace="DemoApplication_Configuration_RunProfileState#(Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
-      <node id="3355125556689860021" at="64,0,68,0" concept="5" trace="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
-      <node id="4318884729311291896" at="53,52,58,10" concept="7" />
-      <node id="7806358006983646762" at="62,60,71,6" concept="7" />
-      <node id="7806358006983646762" at="73,0,82,0" concept="10" trace="canExecute#(Ljava/lang/String;)Z" />
-      <node id="4318884729311291896" at="49,49,59,5" concept="0" />
-      <node id="7806358006983646762" at="61,0,73,0" concept="5" trace="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
-      <node id="7806358006983646762" at="47,0,61,0" concept="5" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
-      <scope id="7806358006983646762" at="41,68,42,16" />
-      <scope id="7806358006983646762" at="44,45,45,16" />
-      <scope id="4318884729311291896" at="55,30,56,33" />
-      <scope id="3355125556689860021" at="65,57,66,49" />
-      <scope id="3355125556689860021" at="68,38,69,65" />
-      <scope id="7806358006983646762" at="74,60,75,18" />
-      <scope id="7806358006983646762" at="77,62,78,18" />
-      <scope id="7806358006983646762" at="37,181,39,32" />
-      <scope id="7806358006983646762" at="41,0,44,0" />
-      <scope id="7806358006983646762" at="44,0,47,0" />
-      <scope id="4318884729311291896" at="55,0,58,0" />
-      <scope id="3355125556689860021" at="68,0,71,0" />
-      <scope id="7806358006983646762" at="37,0,41,0">
+      <node id="7806358006983646762" at="38,181,39,36" concept="2" />
+      <node id="7806358006983646762" at="39,36,40,32" concept="2" />
+      <node id="7806358006983646762" at="42,68,43,16" concept="7" />
+      <node id="7806358006983646762" at="45,45,46,16" concept="7" />
+      <node id="7806358006983646762" at="49,110,50,49" concept="6" />
+      <node id="4318884729311291896" at="51,5,52,265" concept="6" />
+      <node id="4318884729311291896" at="52,265,53,88" concept="6" />
+      <node id="4318884729311291896" at="53,88,54,52" concept="2" />
+      <node id="4318884729311291896" at="56,30,57,33" concept="2" />
+      <node id="3355125556689908748" at="66,57,67,49" concept="7" />
+      <node id="3355125556689860021" at="69,38,70,65" concept="7" />
+      <node id="7806358006983646762" at="75,60,76,18" concept="7" />
+      <node id="7806358006983646762" at="78,62,79,18" concept="7" />
+      <node id="7806358006983646762" at="80,5,81,17" concept="7" />
+      <node id="7806358006983646762" at="34,0,36,0" concept="3" trace="myConfiguration" />
+      <node id="7806358006983646762" at="36,0,38,0" concept="3" trace="myEnvironment" />
+      <node id="7806358006983646762" at="42,0,45,0" concept="5" trace="getConfigurationSettings#()Lcom/intellij/execution/configurations/ConfigurationPerRunnerSettings;" />
+      <node id="7806358006983646762" at="45,0,48,0" concept="5" trace="getRunnerSettings#()Lcom/intellij/execution/configurations/RunnerSettings;" />
+      <node id="4318884729311291896" at="56,0,59,0" concept="5" trace="invoke#()V" />
+      <node id="3355125556689860021" at="69,0,72,0" concept="5" trace="getDebugger#()Ljetbrains/mps/debug/api/IDebugger;" />
+      <node id="7806358006983646762" at="74,55,77,5" concept="4" />
+      <node id="7806358006983646762" at="77,5,80,5" concept="4" />
+      <node id="7806358006983646762" at="38,0,42,0" concept="1" trace="DemoApplication_Configuration_RunProfileState#(Ljetbrains/mps/execution/demo/pluginSolution/plugin/DemoApplication_Configuration;Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ExecutionEnvironment;)V" />
+      <node id="3355125556689860021" at="65,0,69,0" concept="5" trace="createDebuggerSettings#()Ljetbrains/mps/debug/api/IDebuggerSettings;" />
+      <node id="4318884729311291896" at="54,52,59,10" concept="7" />
+      <node id="7806358006983646762" at="63,60,72,6" concept="7" />
+      <node id="7806358006983646762" at="74,0,83,0" concept="10" trace="canExecute#(Ljava/lang/String;)Z" />
+      <node id="4318884729311291896" at="50,49,60,5" concept="0" />
+      <node id="7806358006983646762" at="62,0,74,0" concept="5" trace="getDebuggerConfiguration#()Ljetbrains/mps/debug/api/run/IDebuggerConfiguration;" />
+      <node id="7806358006983646762" at="48,0,62,0" concept="5" trace="execute#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/runners/ProgramRunner;)Lcom/intellij/execution/ExecutionResult;" />
+      <scope id="7806358006983646762" at="42,68,43,16" />
+      <scope id="7806358006983646762" at="45,45,46,16" />
+      <scope id="4318884729311291896" at="56,30,57,33" />
+      <scope id="3355125556689860021" at="66,57,67,49" />
+      <scope id="3355125556689860021" at="69,38,70,65" />
+      <scope id="7806358006983646762" at="75,60,76,18" />
+      <scope id="7806358006983646762" at="78,62,79,18" />
+      <scope id="7806358006983646762" at="38,181,40,32" />
+      <scope id="7806358006983646762" at="42,0,45,0" />
+      <scope id="7806358006983646762" at="45,0,48,0" />
+      <scope id="4318884729311291896" at="56,0,59,0" />
+      <scope id="3355125556689860021" at="69,0,72,0" />
+      <scope id="7806358006983646762" at="38,0,42,0">
         <var name="configuration" id="7806358006983646762" />
         <var name="environment" id="7806358006983646762" />
         <var name="executor" id="7806358006983646762" />
       </scope>
-      <scope id="3355125556689860021" at="64,0,68,0" />
-      <scope id="7806358006983646762" at="73,55,80,17" />
-      <scope id="4318884729311291896" at="50,5,58,10">
+      <scope id="3355125556689860021" at="65,0,69,0" />
+      <scope id="7806358006983646762" at="74,55,81,17" />
+      <scope id="4318884729311291896" at="51,5,59,10">
         <var name="_consoleView" id="4318884729311291896" />
         <var name="_processHandler" id="4318884729311291896" />
       </scope>
-      <scope id="7806358006983646762" at="62,60,71,6" />
-      <scope id="7806358006983646762" at="73,0,82,0">
+      <scope id="7806358006983646762" at="63,60,72,6" />
+      <scope id="7806358006983646762" at="74,0,83,0">
         <var name="executorId" id="7806358006983646762" />
       </scope>
-      <scope id="7806358006983646762" at="48,110,59,5">
+      <scope id="7806358006983646762" at="49,110,60,5">
         <var name="project" id="7806358006983646762" />
       </scope>
-      <scope id="7806358006983646762" at="61,0,73,0" />
-      <scope id="7806358006983646762" at="47,0,61,0">
+      <scope id="7806358006983646762" at="62,0,74,0" />
+      <scope id="7806358006983646762" at="48,0,62,0">
         <var name="executor" id="7806358006983646762" />
         <var name="runner" id="7806358006983646762" />
       </scope>
-      <unit id="4318884729311291896" at="54,118,58,7" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState$1" />
-      <unit id="3355125556689860021" at="63,15,71,5" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState$2" />
-      <unit id="7806358006983646762" at="32,0,83,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState" />
+      <unit id="4318884729311291896" at="55,118,59,7" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState$1" />
+      <unit id="3355125556689860021" at="64,15,72,5" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState$2" />
+      <unit id="7806358006983646762" at="33,0,84,0" name="jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_RunProfileState" />
     </file>
   </root>
   <root nodeRef="r:3efdf908-9d74-483a-b1cf-495292800da4(jetbrains.mps.execution.demo.pluginSolution.plugin)/8750596094204760415">

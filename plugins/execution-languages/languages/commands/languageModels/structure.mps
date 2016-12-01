@@ -79,7 +79,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="856705193941281751" />
       <ref role="20lvS9" node="JzCdmU6yJC" resolve="CommandDeclaration" />
-      <ref role="20ksaX" to="tp4f:hyWumMg" />
+      <ref role="20ksaX" to="tp4f:hyWumMg" resolve="classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="JzCdmU6yJp">
@@ -116,6 +116,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="856705193941281758" />
       <ref role="20lvS9" node="6mJVBGGsi5o" resolve="CommandParameterDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1CVOLqOQ4V1" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="JzCdmU6yJy">
