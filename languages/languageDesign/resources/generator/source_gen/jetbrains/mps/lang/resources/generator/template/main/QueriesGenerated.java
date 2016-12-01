@@ -109,6 +109,12 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
     return Icon__BehaviorDescriptor.getResourceId_id2p1v3tOadt0.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon"))) != null;
   }
+  public static boolean ifMacro_Condition_4786190798786384253(final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x426bf72c54e74e64L, "concept")) == null);
+  }
+  public static boolean ifMacro_Condition_4786190798786580768(final IfMacroContext _context) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x426bf72c54e74e64L, "concept")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"));
+  }
   public static boolean ifMacro_Condition_6638738203687335897(final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"));
   }
@@ -118,8 +124,14 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4965310991037946893(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c3L, 0x7c8b08a50a39c6c5L, "icon")), MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, "jetbrains.mps.lang.resources.structure.FileIcon")), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x60d1cf8c81faea09L, "iconExpression"));
   }
+  public static SNode sourceNodeQuery_4786190798786581656(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x426bf72c54e74e64L, "concept")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11885c0d945L, "jetbrains.mps.lang.smodel.structure.PoundExpression")), MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11885c0d945L, 0x11885c11e0fL, "expression"));
+  }
+  public static SNode sourceNodeQuery_2565258849285850021(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x426bf72c54e74e64L, "concept")), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, "jetbrains.mps.lang.smodel.structure.ConceptRefExpression")), MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L, 0x110f9ec0c2aL, "conceptDeclaration"));
+  }
   public static SNode sourceNodeQuery_562388756444871926(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept"));
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept_old"));
   }
   public static SNode sourceNodeQuery_562388756444903398(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce019825925c1aL, 0x7ce019825925c1cL, "node"));
