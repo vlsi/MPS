@@ -124,7 +124,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/562388756444790046");
     b.associate("concept", 0x7ce01982590bd48L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("562388756444790088").done();
-    b.alias("icon resource for concept");
+    b.alias("conceptIcon");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForFileIcon() {
@@ -183,7 +183,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/562388756444896282");
     b.aggregate("node", 0x7ce019825925c1cL).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(true).ordered(true).multiple(false).origin("562388756444896284").done();
-    b.alias("icon resource for node");
+    b.alias("nodeIcon");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOldIconBundle() {

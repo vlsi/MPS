@@ -363,7 +363,7 @@
     <property role="EcuMT" value="562388756444790046" />
     <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="ConceptIconResourceExpression" />
-    <property role="34LRSv" value="icon resource for concept" />
+    <property role="34LRSv" value="conceptIcon" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="ve0pw_$bP8" role="1TKVEi">
       <property role="IQ2ns" value="562388756444790088" />
@@ -377,7 +377,7 @@
     <property role="EcuMT" value="562388756444896282" />
     <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="NodeIconResourceExpression" />
-    <property role="34LRSv" value="icon resource for node" />
+    <property role="34LRSv" value="nodeIcon" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="ve0pw_$_Ks" role="1TKVEi">
       <property role="IQ2ns" value="562388756444896284" />
