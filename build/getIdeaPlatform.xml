@@ -1,5 +1,6 @@
 <project name="Get Idea Platform" default="install" xmlns:ivy="antlib:org.apache.ivy.ant">
 
+  <property name="mps.ivy.home" value="${user.home}" description="Property used to set custom path on TeamCity"/>
   <property name="idea.platform.version" value="163.7743.44"/>
   <property name="idea.platform.snapshot" value="163-SNAPSHOT"/>
   <property name="jetpad.version" value="1.0.0" />
@@ -58,7 +59,6 @@
   <target name="download-platform" depends="install-ivy, invalidate" description="Download platform based on IDEA Community from TeamCity">
     <ivy:resolve file="ivy.xml" showprogress="true"/>
     <ivy:retrieve pattern="../[artifact].[ext]" overwritemode="different"/>
-
   </target>
 
   <target name="download-diffutils" depends="install-ivy" description="Download com.googlecode.java-diff-utils-diffutils library">

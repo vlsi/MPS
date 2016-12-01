@@ -5,11 +5,11 @@
   <caches defaultCacheDir="${user.home}/.ivy2/cache"/>
 
   <settings defaultResolver="mps-chain"/>
+  <!-- Local path will be equal default value, but custom on TeamCity -->
+  <caches defaultCacheDir="${mps.ivy.home}/.ivy2/cache" />
   <statuses>
     <status name="integration" integration="true"/>
   </statuses>
-  <!--Authentication required for publishing (deployment). "Artifactory Realm" is the realm used by Artifactory so don"t change it.-->
-  <credentials host="repository.jetbrains.com" realm="Artifactory Realm" username="mps" passwd=""/>
   <resolvers>
     <chain name="mps-chain">
       <url name="teamcity-rep" alwaysCheckExactRevision="yes" checkmodified="true">
