@@ -24,11 +24,13 @@ public class FinderUtils {
   }
   public static void sortNodeResultsByEditorPosition(SearchResults<SNode> results) {
     List<SearchResult<SNode>> resultList = results.getSearchResults();
-    ListSequence.fromList(resultList).sort(new Comparator<SearchResult<SNode>>() {
+    List<SearchResult<SNode>> sorted = ListSequence.fromList(resultList).sort(new Comparator<SearchResult<SNode>>() {
       public int compare(SearchResult<SNode> a, SearchResult<SNode> b) {
         return FinderUtils.compareNodes(a.getObject(), b.getObject());
       }
-    }, true);
+    }, true).toListSequence();
+    results.getSearchResults().clear();
+    results.getSearchResults().addAll(sorted);
   }
   public static int compareNodes(SNode n1, SNode n2) {
     List<SNode> path1 = ListSequence.fromList(SNodeOperations.getNodeAncestors(n1, null, true)).reversedList();
