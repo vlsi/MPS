@@ -577,8 +577,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL);
     b.origin("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)/2396822768958367367");
-    b.associate("concept", 0x5d71a86e0b67ce04L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("6733348108486823428").done();
+    b.associate("concept", 0x5d71a86e0b67ce04L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("6733348108486823428").done();
     b.aggregate("leftExpression", 0x5d71a86e0b67cd19L).target(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL).optional(false).ordered(true).multiple(false).origin("6733348108486823193").done();
+    b.aggregate("conceptArgument", 0x3636a984eed504f9L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L).optional(false).ordered(true).multiple(false).origin("3906496115198199033").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }

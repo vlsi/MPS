@@ -151,6 +151,14 @@
     <ref role="3_znuS" to="tp25:253epK5leq7" resolve="AbstractTypeCastExpression" />
     <node concept="3__wT9" id="hCKoso9" role="3_A6iZ">
       <node concept="3clFbS" id="hCKosoa" role="2VODD2">
+        <node concept="3AgYrR" id="3oQEojIP6bG" role="3cqZAp">
+          <node concept="2OqwBi" id="3oQEojIP6lj" role="3Ah4Yx">
+            <node concept="3__QtB" id="3oQEojIP6ez" role="2Oq$k0" />
+            <node concept="3TrEf2" id="3oQEojIPYnt" role="2OqNvi">
+              <ref role="3Tt5mk" to="tp25:3oQEojIPgjT" resolve="conceptArgument" />
+            </node>
+          </node>
+        </node>
         <node concept="3AgYrR" id="hCKotuv" role="3cqZAp">
           <node concept="2OqwBi" id="hCKov_4" role="3Ah4Yx">
             <node concept="3__QtB" id="hCKouC1" role="2Oq$k0" />

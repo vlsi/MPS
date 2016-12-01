@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractNodeRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractOperationParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AbstractTypeCastExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AbstractTypeCastExpression = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67ce04L, "concept")).create();
   private final ConceptPresentation props_AggregationIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AllAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AsNodeOperation = new ConceptPresentationBuilder().create();

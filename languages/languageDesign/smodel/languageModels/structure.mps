@@ -309,6 +309,7 @@
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
       <node concept="asaX9" id="5PLE6SbpWOr" role="lGtFl">
         <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression&quot;" />
+        <property role="YLPcu" value="3.5" />
       </node>
     </node>
     <node concept="1TJgyj" id="g_PxNly" role="1TKVEi">
@@ -318,6 +319,7 @@
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       <node concept="asaX9" id="5PLE6SbpWSc" role="lGtFl">
         <property role="YLQ7P" value="The link was moved to concept &quot;jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression&quot;" />
+        <property role="YLPcu" value="3.5" />
       </node>
     </node>
     <node concept="1TJgyi" id="i1BlNJ7" role="1TKVEl">
@@ -2532,11 +2534,19 @@
       <property role="IQ2ns" value="6733348108486823193" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
+    <node concept="1TJgyj" id="3oQEojIPgjT" role="1TKVEi">
+      <property role="IQ2ns" value="3906496115198199033" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="conceptArgument" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="hzMxujR" resolve="IRefConceptArg" />
+    </node>
     <node concept="1TJgyj" id="5PLE6SbpWS4" role="1TKVEi">
       <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="6733348108486823428" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <node concept="asaX9" id="3oQEojIP68F" role="lGtFl" />
     </node>
   </node>
   <node concept="PlHQZ" id="5ZE7FBYYOon">
