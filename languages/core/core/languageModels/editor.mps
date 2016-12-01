@@ -18,8 +18,8 @@
     <import index="y4ob" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.menus(MPS.Editor/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -319,6 +319,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
+      <concept id="6870613620391345436" name="jetbrains.mps.lang.smodel.structure.ConceptShortDescriptionOperation" flags="ng" index="3neUYN" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -506,13 +507,11 @@
           <node concept="3clFbS" id="5K$8XMPcbrp" role="2VODD2">
             <node concept="3clFbF" id="5K$8XMPcbuq" role="3cqZAp">
               <node concept="2OqwBi" id="5K$8XMPcc5k" role="3clFbG">
-                <node concept="3TrcHB" id="2wdLO7LUnVP" role="2OqNvi">
-                  <ref role="3TsBF5" to="tpce:40UcGlRaVSw" resolve="conceptShortDescription" />
-                </node>
-                <node concept="2OqwBi" id="5K$8XMPcbzc" role="2Oq$k0">
-                  <node concept="3NT_Vc" id="5K$8XMPcbN_" role="2OqNvi" />
+                <node concept="2OqwBi" id="66vxhH69X9$" role="2Oq$k0">
+                  <node concept="2yIwOk" id="66vxhH69X9_" role="2OqNvi" />
                   <node concept="pncrf" id="5K$8XMPcbup" role="2Oq$k0" />
                 </node>
+                <node concept="3neUYN" id="66vxhH69X9A" role="2OqNvi" />
               </node>
             </node>
           </node>
