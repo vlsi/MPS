@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
 import com.intellij.execution.ExecutionException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.debug.api.IDebugger;
@@ -17,9 +18,9 @@ import java.util.ArrayList;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.apache.log4j.Level;
+import jetbrains.mps.util.Computable;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -73,7 +74,15 @@ public class JUnit_Command {
     if (tests == null) {
       throw new ExecutionException("Tests to run are null.");
     }
-    TestsWithParameters testsToRun = JUnit_Command.getTestsToRunWithParameters(tests);
+    List<ITestNodeWrapper> testsNoNull = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+      public boolean accept(ITestNodeWrapper it) {
+        return it != null;
+      }
+    }).toListSequence();
+    if (ListSequence.fromList(testsNoNull).isEmpty()) {
+      throw new ExecutionException("No tests to run");
+    }
+    TestsWithParameters testsToRun = JUnit_Command.getTestsToRunWithParameters(testsNoNull);
     if (ListSequence.fromList(tests).isEmpty()) {
       throw new ExecutionException("Could not find tests to run.");
     }
@@ -99,16 +108,6 @@ public class JUnit_Command {
   }
   protected static Logger LOG = LogManager.getLogger(JUnit_Command.class);
   private static TestsWithParameters getTestsToRunWithParameters(@NotNull List<ITestNodeWrapper> tests) throws ExecutionException {
-    tests = ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
-      public boolean accept(ITestNodeWrapper it) {
-        return it != null;
-      }
-    }).toListSequence();
-    if (ListSequence.fromList(tests).isEmpty()) {
-      TestParameters defaultRunParameters;
-      defaultRunParameters = TestParameters.DEFAULT;
-      return new TestsWithParameters(ListSequence.fromList(new ArrayList<ITestNodeWrapper>()), defaultRunParameters);
-    }
     TestParameters runParams = JUnit_Command.getMaxParams(tests);
     List<ITestNodeWrapper> testsToRun = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     List<ITestNodeWrapper> testsToSkip = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
@@ -143,21 +142,20 @@ public class JUnit_Command {
     return maxParams;
   }
   private static List<String> getClasspath(final List<ITestNodeWrapper> tests) {
-    final Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
+    return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
+      public List<String> compute() {
+        Set<SModule> uniqueModules = SetSequence.fromSet(new HashSet<SModule>());
         for (ITestNodeWrapper testable : tests) {
           SModule module = SNodeOperations.getModel(testable.getNode()).getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
+        List<String> classpath = Java_Command.getClasspath(SetSequence.fromSet(uniqueModules).toListSequence().toGenericArray(SModule.class));
+        // fixme need this to allow user to start MPS inside the BTestCase 
+        ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
+        ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
+        return classpath;
       }
     });
-    List<String> classpath = Java_Command.getClasspath(SetSequence.fromSet(uniqueModules).toListSequence().toGenericArray(SModule.class));
-    // fixme need this to allow user to start MPS inside the BTestCase 
-    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromLibFolder())).distinct();
-    ListSequence.fromList(classpath).addSequence(ListSequence.fromList(JUnit_Command.collectFromPreInstalledPluginsFolder())).distinct();
-
-    return classpath;
   }
   private static List<String> collectFromLibFolder() {
     List<URL> urls = ListSequence.fromList(new ArrayList<URL>());

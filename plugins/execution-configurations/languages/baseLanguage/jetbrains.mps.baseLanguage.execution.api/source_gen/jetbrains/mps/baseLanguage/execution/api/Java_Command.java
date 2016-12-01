@@ -243,15 +243,10 @@ public class Java_Command {
     });
     return new ArrayList<String>(classpath.value);
   }
-  public static List<String> getClasspath(final SModule... modules) {
-    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        classpath.value = JavaModuleOperations.collectExecuteClasspath(modules);
-        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
-      }
-    });
-    return new ArrayList<String>(classpath.value);
+  public static List<String> getClasspath(SModule... modules) {
+    Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(modules);
+    classpath.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+    return new ArrayList<String>(classpath);
   }
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
