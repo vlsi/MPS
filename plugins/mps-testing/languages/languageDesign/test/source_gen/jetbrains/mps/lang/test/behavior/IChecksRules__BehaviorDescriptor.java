@@ -13,6 +13,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.errors.IErrorReporter;
+import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -25,7 +26,7 @@ public final class IChecksRules__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x770c2c9f6ef97f30L, "jetbrains.mps.lang.test.structure.IChecksRules");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<IErrorReporter>>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> hasExpectedRuleMessage_id4CT6QR8SJl8 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasExpectedRuleMessage").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4CT6QR8SJl8").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Iterable<IErrorReporter>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SRepository.class, ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(hasExpectedRuleMessage_id4CT6QR8SJl8);
 

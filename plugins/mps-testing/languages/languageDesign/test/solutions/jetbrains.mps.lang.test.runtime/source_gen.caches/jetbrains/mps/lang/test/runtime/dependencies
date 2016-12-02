@@ -262,9 +262,9 @@
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.CheckErrorMessagesAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil" file="NodeDataFlowCheckerUtil.java">
     <classNode dependClassName="java.lang.Object" />

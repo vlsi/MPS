@@ -8,9 +8,8 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
   </languages>
   <imports>
     <import index="tp5g" ref="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" />
@@ -446,6 +445,7 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
+      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -459,7 +459,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1249,7 +1248,7 @@
                           <node concept="2GrUjf" id="hRNaM96" role="2Oq$k0">
                             <ref role="2Gs0qQ" node="hRNaM8X" resolve="a" />
                           </node>
-                          <node concept="3YRAZt" id="hRNaM97" role="2OqNvi" />
+                          <node concept="1PgB_6" id="hRNaM97" role="2OqNvi" />
                         </node>
                       </node>
                     </node>
@@ -7648,20 +7647,28 @@
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="18jf_F1WDw2" role="3clF47">
         <node concept="3clFbJ" id="27e_8zUv47n" role="3cqZAp">
+          <node concept="22lmx$" id="525bmK9ueDc" role="3clFbw">
+            <node concept="3clFbC" id="525bmK9ueZc" role="3uHU7w">
+              <node concept="10Nm6u" id="525bmK9uf5n" role="3uHU7w" />
+              <node concept="37vLTw" id="525bmK9ueNO" role="3uHU7B">
+                <ref role="3cqZAo" node="525bmK9tYOD" resolve="contextRepository" />
+              </node>
+            </node>
+            <node concept="3clFbC" id="27e_8zUv4qP" role="3uHU7B">
+              <node concept="2OqwBi" id="27e_8zUv4h4" role="3uHU7B">
+                <node concept="37vLTw" id="27e_8zUv4c8" role="2Oq$k0">
+                  <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
+                </node>
+                <node concept="liA8E" id="27e_8zUv4nq" role="2OqNvi">
+                  <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
+                </node>
+              </node>
+              <node concept="10Nm6u" id="27e_8zUv4vQ" role="3uHU7w" />
+            </node>
+          </node>
           <node concept="3clFbS" id="27e_8zUv47p" role="3clFbx">
             <node concept="3cpWs6" id="27e_8zUv4BB" role="3cqZAp">
               <node concept="10Nm6u" id="27e_8zUv4FM" role="3cqZAk" />
-            </node>
-          </node>
-          <node concept="3clFbC" id="27e_8zUv4qP" role="3clFbw">
-            <node concept="10Nm6u" id="27e_8zUv4vQ" role="3uHU7w" />
-            <node concept="2OqwBi" id="27e_8zUv4h4" role="3uHU7B">
-              <node concept="37vLTw" id="27e_8zUv4c8" role="2Oq$k0">
-                <ref role="3cqZAo" node="18jf_F1WDwl" resolve="reporter" />
-              </node>
-              <node concept="liA8E" id="27e_8zUv4nq" role="2OqNvi">
-                <ref role="37wK5l" to="2gg1:~IErrorReporter.getRuleNode():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getRuleNode" />
-              </node>
             </node>
           </node>
         </node>
@@ -7677,9 +7684,8 @@
             </node>
             <node concept="liA8E" id="18jf_F1WDwi" role="2OqNvi">
               <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-              <node concept="2YIFZM" id="18jf_F1WDwj" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+              <node concept="37vLTw" id="525bmK9ufk3" role="37wK5m">
+                <ref role="3cqZAo" node="525bmK9tYOD" resolve="contextRepository" />
               </node>
             </node>
           </node>
@@ -7690,6 +7696,12 @@
         <property role="TrG5h" value="reporter" />
         <node concept="3uibUv" id="18jf_F1WDwm" role="1tU5fm">
           <ref role="3uigEE" to="2gg1:~IErrorReporter" resolve="IErrorReporter" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="525bmK9tYOD" role="3clF46">
+        <property role="TrG5h" value="contextRepository" />
+        <node concept="3uibUv" id="525bmK9ue$v" role="1tU5fm">
+          <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
         </node>
       </node>
       <node concept="3Tqbb2" id="18jf_F1WDwn" role="3clF45">

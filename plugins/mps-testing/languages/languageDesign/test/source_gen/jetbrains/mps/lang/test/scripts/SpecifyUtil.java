@@ -32,7 +32,7 @@ public class SpecifyUtil {
     NodeOperationsContainer__BehaviorDescriptor.detachAllErrorOperations_id4QaU5oI0Q4j.invoke(operationsContainer);
     Iterable<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
     for (IErrorReporter reporter : reporters) {
-      SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter);
+      SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter, SNodeOperations.getModel(node).getRepository());
       NodeOperationsContainer__BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);
     }

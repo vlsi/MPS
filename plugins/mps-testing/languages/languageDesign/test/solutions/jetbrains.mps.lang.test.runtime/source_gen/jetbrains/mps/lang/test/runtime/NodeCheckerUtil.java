@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class NodeCheckerUtil {
 
@@ -19,11 +19,11 @@ public class NodeCheckerUtil {
     Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
   }
 
-  public static SNode getRuleNodeFromReporter(IErrorReporter reporter) {
-    if (reporter.getRuleNode() == null) {
+  public static SNode getRuleNodeFromReporter(IErrorReporter reporter, SRepository contextRepository) {
+    if (reporter.getRuleNode() == null || contextRepository == null) {
       return null;
     }
-    return reporter.getRuleNode().resolve(MPSModuleRepository.getInstance());
+    return reporter.getRuleNode().resolve(contextRepository);
   }
 
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings, boolean includeSelf) {
