@@ -227,8 +227,8 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -905,8 +905,10 @@
             <node concept="3cpWs6" id="2nUiI4k7wfb" role="3cqZAp">
               <node concept="2OqwBi" id="2nUiI4k7wlS" role="3cqZAk">
                 <node concept="1PxgMI" id="2nUiI4k7wie" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                   <node concept="13iPFW" id="2nUiI4k7wg7" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH06T" role="3oSUPX">
+                    <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                  </node>
                 </node>
                 <node concept="3TrcHB" id="2nUiI4k7wvg" role="2OqNvi">
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -1070,9 +1072,11 @@
               </node>
               <node concept="2OqwBi" id="2h59CdJpog1" role="3K4E3e">
                 <node concept="1PxgMI" id="2h59CdJpo9m" role="2Oq$k0">
-                  <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                   <node concept="BsUDl" id="2h59CdJp_Wm" role="1m5AlR">
                     <ref role="37wK5l" node="3m06Jgso0l8" resolve="getReturnType" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH06R" role="3oSUPX">
+                    <ref role="cht4Q" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="2h59CdJpoCj" role="2OqNvi">
@@ -2188,12 +2192,14 @@
                   <ref role="ehGHo" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                 </node>
                 <node concept="1PxgMI" id="3yKhys4JTKN" role="33vP2m">
-                  <ref role="1m5ApE" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                   <node concept="2OqwBi" id="3yKhys4JTKO" role="1m5AlR">
                     <node concept="13iPFW" id="3yKhys4JTKP" role="2Oq$k0" />
                     <node concept="3TrEf2" id="3yKhys4JTKQ" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpee:fzclF7X" resolve="returnType" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH06M" role="3oSUPX">
+                    <ref role="cht4Q" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                   </node>
                 </node>
               </node>
@@ -2658,12 +2664,14 @@
                     </node>
                     <node concept="2OqwBi" id="2h59CdJpd7J" role="3K4E3e">
                       <node concept="1PxgMI" id="2h59CdJpcZl" role="2Oq$k0">
-                        <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                         <node concept="2OqwBi" id="2h59CdJpcux" role="1m5AlR">
                           <node concept="13iPFW" id="2h59CdJpclW" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2h59CdJpcNa" role="2OqNvi">
                             <ref role="3Tt5mk" to="oubp:3geGFOI0X5A" resolve="type" />
                           </node>
+                        </node>
+                        <node concept="chp4Y" id="714IaVdH06P" role="3oSUPX">
+                          <ref role="cht4Q" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="2h59CdJpdlP" role="2OqNvi">

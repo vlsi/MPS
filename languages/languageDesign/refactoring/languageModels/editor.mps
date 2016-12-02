@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -201,8 +201,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -995,7 +995,6 @@
                     <node concept="2OqwBi" id="5siq46Bz6KW" role="3uHU7w">
                       <node concept="2OqwBi" id="5siq46Bz6KX" role="2Oq$k0">
                         <node concept="1PxgMI" id="5siq46Bz6KY" role="2Oq$k0">
-                          <ref role="1m5ApE" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
                           <node concept="2OqwBi" id="5siq46Bz6KZ" role="1m5AlR">
                             <node concept="37vLTw" id="2BHiRxgm6rv" role="2Oq$k0">
                               <ref role="3cqZAo" node="5siq46Bz6Km" resolve="ref" />
@@ -1003,6 +1002,9 @@
                             <node concept="3TrEf2" id="5siq46Bz6L1" role="2OqNvi">
                               <ref role="3Tt5mk" to="tp1h:5YKiRiBuwpm" resolve="target" />
                             </node>
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH0SV" role="3oSUPX">
+                            <ref role="cht4Q" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
                           </node>
                         </node>
                         <node concept="3TrEf2" id="5siq46Bz6L2" role="2OqNvi">

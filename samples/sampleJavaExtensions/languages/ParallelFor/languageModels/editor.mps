@@ -43,7 +43,7 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallynnotation" flags="ng" index="xG$WE" />
+      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -220,8 +220,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -891,12 +891,14 @@
                             <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                           </node>
                           <node concept="1PxgMI" id="1wEcoXjJjH8" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
                             <node concept="2OqwBi" id="1wEcoXjJjH9" role="1m5AlR">
                               <node concept="3TrEf2" id="1wEcoXjJjHa" role="2OqNvi">
                                 <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                               </node>
                               <node concept="7Obwk" id="1wEcoXjJjHj" role="2Oq$k0" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZ7d" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fz7vLUo" resolve="VariableReference" />
                             </node>
                           </node>
                         </node>
@@ -1036,12 +1038,14 @@
                             <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                           </node>
                           <node concept="1PxgMI" id="1wEcoXjJjIn" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
                             <node concept="2OqwBi" id="1wEcoXjJjIo" role="1m5AlR">
                               <node concept="3TrEf2" id="1wEcoXjJjIp" role="2OqNvi">
                                 <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                               </node>
                               <node concept="7Obwk" id="1wEcoXjJjIy" role="2Oq$k0" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZ79" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fz7vLUo" resolve="VariableReference" />
                             </node>
                           </node>
                         </node>

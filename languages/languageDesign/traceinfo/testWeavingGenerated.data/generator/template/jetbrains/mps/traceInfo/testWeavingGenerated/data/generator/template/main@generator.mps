@@ -126,9 +126,12 @@
       <concept id="1216860049635" name="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" flags="nn" index="1iwH7S" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
@@ -196,10 +199,12 @@
               <node concept="1iwH70" id="5nqBR0sq0AF" role="2OqNvi">
                 <ref role="1iwH77" node="5nqBR0sq0A$" resolve="map_RootConcept" />
                 <node concept="1PxgMI" id="5nqBR0sq0AH" role="1iwH7V">
-                  <ref role="1m5ApE" to="c5w2:5nqBR0spcFc" resolve="RootConcept" />
                   <node concept="2OqwBi" id="5nqBR0spQ_E" role="1m5AlR">
                     <node concept="30H73N" id="5nqBR0spQ_D" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="5nqBR0spYrZ" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZ45" role="3oSUPX">
+                    <ref role="cht4Q" to="c5w2:5nqBR0spcFc" resolve="RootConcept" />
                   </node>
                 </node>
               </node>
@@ -266,10 +271,12 @@
               <node concept="1iwH70" id="5nqBR0sq16d" role="2OqNvi">
                 <ref role="1iwH77" node="5nqBR0sq0A$" resolve="map_RootConcept" />
                 <node concept="1PxgMI" id="5nqBR0sq16e" role="1iwH7V">
-                  <ref role="1m5ApE" to="c5w2:5nqBR0spcFc" resolve="RootConcept" />
                   <node concept="2OqwBi" id="5nqBR0sq16f" role="1m5AlR">
                     <node concept="30H73N" id="5nqBR0sq16g" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="5nqBR0sq16h" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZ46" role="3oSUPX">
+                    <ref role="cht4Q" to="c5w2:5nqBR0spcFc" resolve="RootConcept" />
                   </node>
                 </node>
               </node>

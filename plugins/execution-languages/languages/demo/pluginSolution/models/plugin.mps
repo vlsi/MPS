@@ -12,7 +12,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -250,9 +250,12 @@
       <concept id="6720907903633266914" name="jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function" flags="in" index="1Tq6V3" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
@@ -513,9 +516,11 @@
               <node concept="3clFbF" id="1gqKYqdHuMW" role="3cqZAp">
                 <node concept="2OqwBi" id="1gqKYqdHuMX" role="3clFbG">
                   <node concept="1PxgMI" id="1gqKYqdHuMY" role="2Oq$k0">
-                    <ref role="1m5ApE" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
                     <node concept="3cpWs2" id="1gqKYqdHuMZ" role="1m5AlR">
                       <ref role="3cqZAo" node="1gqKYqdHuN1" resolve="node" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGZ88" role="3oSUPX">
+                      <ref role="cht4Q" to="f1er:4hBeuoVSNq4" resolve="SomeConcept" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="1gqKYqdHuN0" role="2OqNvi">

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
@@ -272,8 +272,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -2242,9 +2242,11 @@
                   <ref role="ehGHo" to="tpee:hxndl_i" resolve="IMethodCall" />
                 </node>
                 <node concept="1PxgMI" id="36YhQHIewyS" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:hxndl_i" resolve="IMethodCall" />
                   <node concept="37vLTw" id="36YhQHIewyT" role="1m5AlR">
                     <ref role="3cqZAo" node="36YhQHIewy$" resolve="parent" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYOL" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hxndl_i" resolve="IMethodCall" />
                   </node>
                 </node>
               </node>
@@ -2365,9 +2367,11 @@
                   <ref role="ehGHo" to="tpee:hxndl_i" resolve="IMethodCall" />
                 </node>
                 <node concept="1PxgMI" id="36YhQHIewzN" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:hxndl_i" resolve="IMethodCall" />
                   <node concept="37vLTw" id="36YhQHIewzO" role="1m5AlR">
                     <ref role="3cqZAo" node="36YhQHIewzq" resolve="formerParent" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYP9" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hxndl_i" resolve="IMethodCall" />
                   </node>
                 </node>
               </node>
@@ -2564,9 +2568,11 @@
                     <node concept="2OqwBi" id="36YhQHIdukC" role="2Oq$k0">
                       <node concept="1PxgMI" id="36YhQHIdukD" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1m5ApE" to="tpee:h1Y3b43" resolve="AnonymousClass" />
                         <node concept="37vLTw" id="36YhQHIdukE" role="1m5AlR">
                           <ref role="3cqZAo" node="36YhQHIdukX" resolve="methodCall" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYPh" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:h1Y3b43" resolve="AnonymousClass" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="36YhQHIdukF" role="2OqNvi">
@@ -2584,9 +2590,11 @@
                 <node concept="2OqwBi" id="36YhQHIdukJ" role="3uHU7B">
                   <node concept="1PxgMI" id="36YhQHIdukK" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="tpee:h1Y3b43" resolve="AnonymousClass" />
                     <node concept="37vLTw" id="36YhQHIdukL" role="1m5AlR">
                       <ref role="3cqZAo" node="36YhQHIdukX" resolve="methodCall" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYOY" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:h1Y3b43" resolve="AnonymousClass" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="36YhQHIdukM" role="2OqNvi">
@@ -2998,9 +3006,11 @@
                   <ref role="ehGHo" to="tpee:hxndl_i" resolve="IMethodCall" />
                 </node>
                 <node concept="1PxgMI" id="36YhQHIdueP" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:hxndl_i" resolve="IMethodCall" />
                   <node concept="37vLTw" id="36YhQHIdueQ" role="1m5AlR">
                     <ref role="3cqZAo" node="36YhQHIduex" resolve="sourceNode" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYOr" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hxndl_i" resolve="IMethodCall" />
                   </node>
                 </node>
               </node>

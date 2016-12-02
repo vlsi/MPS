@@ -9,7 +9,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -259,8 +259,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -1684,12 +1684,14 @@
                             <node concept="2OqwBi" id="6$pyvmK_j3T" role="3cqZAk">
                               <node concept="2OqwBi" id="6$pyvmK_j3U" role="2Oq$k0">
                                 <node concept="1PxgMI" id="6$pyvmK_j3V" role="2Oq$k0">
-                                  <ref role="1m5ApE" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                   <node concept="2OqwBi" id="6$pyvmK_j4y" role="1m5AlR">
                                     <node concept="30H73N" id="6$pyvmK_j4z" role="2Oq$k0" />
                                     <node concept="3TrEf2" id="6$pyvmK_j4$" role="2OqNvi">
                                       <ref role="3Tt5mk" to="tpee:fz7vLUn" resolve="lValue" />
                                     </node>
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdH0T4" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="6$pyvmK_j3X" role="2OqNvi">
@@ -1721,12 +1723,14 @@
                               <node concept="2OqwBi" id="6$pyvmK_j46" role="3cqZAk">
                                 <node concept="2OqwBi" id="6$pyvmK_j47" role="2Oq$k0">
                                   <node concept="1PxgMI" id="6$pyvmK_j48" role="2Oq$k0">
-                                    <ref role="1m5ApE" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
                                     <node concept="2OqwBi" id="6$pyvmK_j4_" role="1m5AlR">
                                       <node concept="30H73N" id="6$pyvmK_j4A" role="2Oq$k0" />
                                       <node concept="3TrEf2" id="6$pyvmK_j4B" role="2OqNvi">
                                         <ref role="3Tt5mk" to="tpee:fz7vLUn" resolve="lValue" />
                                       </node>
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdH0T2" role="3oSUPX">
+                                      <ref role="cht4Q" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
                                     </node>
                                   </node>
                                   <node concept="3TrEf2" id="6$pyvmK_j4a" role="2OqNvi">
@@ -1828,8 +1832,10 @@
                                 <node concept="2OqwBi" id="6$pyvmK_j3L" role="3cqZAk">
                                   <node concept="2OqwBi" id="6$pyvmK_j3G" role="2Oq$k0">
                                     <node concept="1PxgMI" id="6$pyvmK_j3E" role="2Oq$k0">
-                                      <ref role="1m5ApE" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
                                       <node concept="30H73N" id="6$pyvmK_j3D" role="1m5AlR" />
+                                      <node concept="chp4Y" id="714IaVdH0T3" role="3oSUPX">
+                                        <ref role="cht4Q" to="tp1h:4Lb$w0Yi3EE" resolve="RefactoringFieldReference" />
+                                      </node>
                                     </node>
                                     <node concept="3TrEf2" id="6$pyvmK_j3K" role="2OqNvi">
                                       <ref role="3Tt5mk" to="tp1h:4Lb$w0Yi3EF" resolve="refactoringField" />
@@ -1855,8 +1861,10 @@
                                   <node concept="2OqwBi" id="6$pyvmK_j3x" role="3cqZAk">
                                     <node concept="2OqwBi" id="6$pyvmK_j3y" role="2Oq$k0">
                                       <node concept="1PxgMI" id="6$pyvmK_j3z" role="2Oq$k0">
-                                        <ref role="1m5ApE" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
                                         <node concept="30H73N" id="6$pyvmK_j3$" role="1m5AlR" />
+                                        <node concept="chp4Y" id="714IaVdH0T5" role="3oSUPX">
+                                          <ref role="cht4Q" to="tp1h:5YKiRiBvdC6" resolve="RefactoringParameterReference" />
+                                        </node>
                                       </node>
                                       <node concept="3TrEf2" id="6$pyvmK_j3_" role="2OqNvi">
                                         <ref role="3Tt5mk" to="tp1h:5YKiRiBvdC7" resolve="refactoringParameter" />

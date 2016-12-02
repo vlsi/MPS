@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -155,8 +155,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -670,9 +670,11 @@
                       </node>
                       <node concept="TSZUe" id="5ed9yo03Oo6" role="2OqNvi">
                         <node concept="1PxgMI" id="5ed9yo03Oo9" role="25WWJ7">
-                          <ref role="1m5ApE" to="tpf8:4mp7qFmCXde" resolve="VarMacro" />
                           <node concept="37vLTw" id="3GM_nagTvAX" role="1m5AlR">
                             <ref role="3cqZAo" node="2n6lsTIwfSa" resolve="contextNode" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH04U" role="3oSUPX">
+                            <ref role="cht4Q" to="tpf8:4mp7qFmCXde" resolve="VarMacro" />
                           </node>
                         </node>
                       </node>
@@ -867,9 +869,11 @@
               <node concept="2OqwBi" id="6suuiWXKi1i" role="2Oq$k0">
                 <node concept="2OqwBi" id="5ed9yo03G1F" role="2Oq$k0">
                   <node concept="1PxgMI" id="5ed9yo03G1D" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     <node concept="37vLTw" id="2BHiRxgl7vM" role="1m5AlR">
                       <ref role="3cqZAo" node="5ed9yo03G1m" resolve="n" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH04R" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="5ed9yo03NSi" role="2OqNvi">
@@ -942,9 +946,11 @@
                     <node concept="2OqwBi" id="6suuiWXKW0p" role="3clFbw">
                       <node concept="2OqwBi" id="6suuiWXKUl2" role="2Oq$k0">
                         <node concept="1PxgMI" id="6suuiWXKTMe" role="2Oq$k0">
-                          <ref role="1m5ApE" to="tpf8:6suuiWX$OMG" resolve="ContextVariableProvider" />
                           <node concept="37vLTw" id="6suuiWXL9gW" role="1m5AlR">
                             <ref role="3cqZAo" node="6suuiWXKu5J" resolve="n" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH04I" role="3oSUPX">
+                            <ref role="cht4Q" to="tpf8:6suuiWX$OMG" resolve="ContextVariableProvider" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="6suuiWXKUVU" role="2OqNvi">

@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -289,8 +289,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -1437,9 +1437,11 @@
                       <node concept="2Gpval" id="7k6J8c3tinC" role="3cqZAp">
                         <node concept="2OqwBi" id="7k6J8c3tinE" role="2GsD0m">
                           <node concept="1PxgMI" id="7k6J8c3tinF" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fKQs72_" resolve="EnumClass" />
                             <node concept="2GrUjf" id="7k6J8c3tinG" role="1m5AlR">
                               <ref role="2Gs0qQ" node="7k6J8c3tino" resolve="subClassifier" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGYOz" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fKQs72_" resolve="EnumClass" />
                             </node>
                           </node>
                           <node concept="3Tsc0h" id="7k6J8c3tinH" role="2OqNvi">
@@ -2924,9 +2926,11 @@
               <node concept="1rXfSq" id="4hiugqyzhsP" role="3cqZAk">
                 <ref role="37wK5l" node="7k6J8c3tix6" resolve="getClassifierPresentation" />
                 <node concept="1PxgMI" id="7k6J8c3tiwO" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="37vLTw" id="2BHiRxgm6TD" role="1m5AlR">
                     <ref role="3cqZAo" node="7k6J8c3tix4" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYPn" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
               </node>
@@ -2939,9 +2943,11 @@
               <node concept="1rXfSq" id="4hiugqyzgkG" role="3cqZAk">
                 <ref role="37wK5l" node="7k6J8c3tixg" resolve="getEnumConstantPresentation" />
                 <node concept="1PxgMI" id="7k6J8c3tiwU" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
                   <node concept="37vLTw" id="2BHiRxgm60F" role="1m5AlR">
                     <ref role="3cqZAo" node="7k6J8c3tix4" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYPA" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
                   </node>
                 </node>
               </node>

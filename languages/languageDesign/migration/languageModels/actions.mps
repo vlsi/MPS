@@ -82,8 +82,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -151,8 +151,10 @@
                         <node concept="2OqwBi" id="gwqcHBKcnm" role="2c44t1">
                           <node concept="1PxgMI" id="gwqcHBKbFX" role="2Oq$k0">
                             <property role="1BlNFB" value="true" />
-                            <ref role="1m5ApE" to="53vh:4SSaNAQkDV9" resolve="TransformStatement" />
                             <node concept="1r4N1M" id="gwqcHBKbjA" role="1m5AlR" />
+                            <node concept="chp4Y" id="714IaVdH0xz" role="3oSUPX">
+                              <ref role="cht4Q" to="53vh:4SSaNAQkDV9" resolve="TransformStatement" />
+                            </node>
                           </node>
                           <node concept="2qgKlT" id="gwqcHBKeb3" role="2OqNvi">
                             <ref role="37wK5l" to="buve:4SSaNAQl5wN" resolve="getPatternConcept" />
@@ -198,8 +200,10 @@
                       <node concept="2JrnkZ" id="2uZcAeYa5Kk" role="2Oq$k0">
                         <node concept="2OqwBi" id="2uZcAeYa5Kl" role="2JrQYb">
                           <node concept="1PxgMI" id="2uZcAeYa5Km" role="2Oq$k0">
-                            <ref role="1m5ApE" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
                             <node concept="1r4N5L" id="2uZcAeYa5Kn" role="1m5AlR" />
+                            <node concept="chp4Y" id="714IaVdH0x$" role="3oSUPX">
+                              <ref role="cht4Q" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
+                            </node>
                           </node>
                           <node concept="3TrEf2" id="6szrkDocr6f" role="2OqNvi">
                             <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />
@@ -242,8 +246,10 @@
                           <node concept="2OqwBi" id="2uZcAeYa7ng" role="2JrQYb">
                             <node concept="2OqwBi" id="2uZcAeYa7nh" role="2Oq$k0">
                               <node concept="1PxgMI" id="2uZcAeYa7ni" role="2Oq$k0">
-                                <ref role="1m5ApE" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
                                 <node concept="1r4N5L" id="2uZcAeYa7nj" role="1m5AlR" />
+                                <node concept="chp4Y" id="714IaVdH0xN" role="3oSUPX">
+                                  <ref role="cht4Q" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
+                                </node>
                               </node>
                               <node concept="3TrEf2" id="6szrkDocsYS" role="2OqNvi">
                                 <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />
@@ -271,8 +277,10 @@
                   <node concept="2OqwBi" id="2uZcAeYa6m2" role="37vLTx">
                     <node concept="2OqwBi" id="2uZcAeYa45p" role="2Oq$k0">
                       <node concept="1PxgMI" id="2uZcAeYa42l" role="2Oq$k0">
-                        <ref role="1m5ApE" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
                         <node concept="1r4N5L" id="2uZcAeYa3RW" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdH0xQ" role="3oSUPX">
+                          <ref role="cht4Q" to="53vh:6szrkDoc3tL" resolve="DirectNodeReference" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="6szrkDocrme" role="2OqNvi">
                         <ref role="3Tt5mk" to="53vh:6szrkDoc3Cg" resolve="target" />

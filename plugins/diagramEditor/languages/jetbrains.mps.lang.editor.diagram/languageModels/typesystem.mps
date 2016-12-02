@@ -173,8 +173,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
@@ -494,12 +494,14 @@
             <ref role="ehGHo" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
           </node>
           <node concept="1PxgMI" id="2NgG6tkLQTk" role="33vP2m">
-            <ref role="1m5ApE" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
             <node concept="2OqwBi" id="2NgG6tkLQTl" role="1m5AlR">
               <node concept="1YBJjd" id="2NgG6tkLQTm" role="2Oq$k0">
                 <ref role="1YBMHb" node="2NgG6tkL0SB" resolve="node" />
               </node>
               <node concept="2Rxl7S" id="2NgG6tkLQTn" role="2OqNvi" />
+            </node>
+            <node concept="chp4Y" id="714IaVdGYyN" role="3oSUPX">
+              <ref role="cht4Q" to="tpc2:fIwURLg" resolve="BaseEditorComponent" />
             </node>
           </node>
         </node>
@@ -562,10 +564,8 @@
                 </node>
                 <node concept="2OqwBi" id="18ftwC4dRYv" role="33vP2m">
                   <node concept="1PxgMI" id="18ftwC4dRYw" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tp25:gzTsc4p" resolve="SLinkListAccess" />
                     <node concept="2OqwBi" id="18ftwC4dRYx" role="1m5AlR">
                       <node concept="1PxgMI" id="18ftwC4dRYy" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                         <node concept="2OqwBi" id="18ftwC4dRYz" role="1m5AlR">
                           <node concept="1YBJjd" id="18ftwC4dRY$" role="2Oq$k0">
                             <ref role="1YBMHb" node="7rLMM2UwNsO" resolve="abstractDiagramCreation" />
@@ -574,10 +574,16 @@
                             <ref role="3Tt5mk" to="gbdf:18ftwC4erGF" resolve="query" />
                           </node>
                         </node>
+                        <node concept="chp4Y" id="714IaVdGYyQ" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="18ftwC4dRYA" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYyS" role="3oSUPX">
+                      <ref role="cht4Q" to="tp25:gzTsc4p" resolve="SLinkListAccess" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="18ftwC4dRYB" role="2OqNvi">
@@ -688,7 +694,6 @@
               <node concept="2OqwBi" id="7rLMM2UwWBC" role="3uHU7w">
                 <node concept="2OqwBi" id="7rLMM2UwUyD" role="2Oq$k0">
                   <node concept="1PxgMI" id="7rLMM2UwUgv" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                     <node concept="2OqwBi" id="7rLMM2UwToD" role="1m5AlR">
                       <node concept="3TrEf2" id="1R$Mpy$tAFw" role="2OqNvi">
                         <ref role="3Tt5mk" to="gbdf:18ftwC4erGF" resolve="query" />
@@ -696,6 +701,9 @@
                       <node concept="1YBJjd" id="7rLMM2UwThB" role="2Oq$k0">
                         <ref role="1YBMHb" node="7rLMM2UwNsO" resolve="abstractDiagramCreation" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYyY" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="7rLMM2UwVPQ" role="2OqNvi">
@@ -765,12 +773,14 @@
                     <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698/1138405853777" />
                     <node concept="2OqwBi" id="1R$Mpy$wW7i" role="2c44t1">
                       <node concept="1PxgMI" id="1R$Mpy$wW4a" role="2Oq$k0">
-                        <ref role="1m5ApE" to="gbdf:18ftwC4enam" resolve="AbstractDiagramCreation" />
                         <node concept="2OqwBi" id="1R$Mpy$wW1X" role="1m5AlR">
                           <node concept="37vLTw" id="1R$Mpy$wW1Y" role="2Oq$k0">
                             <ref role="3cqZAo" node="1R$Mpy$wUaN" resolve="conceptFunction" />
                           </node>
                           <node concept="1mfA1w" id="1R$Mpy$wW1Z" role="2OqNvi" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYyL" role="3oSUPX">
+                          <ref role="cht4Q" to="gbdf:18ftwC4enam" resolve="AbstractDiagramCreation" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="1R$Mpy$xT3K" role="2OqNvi">
@@ -995,12 +1005,14 @@
           <node concept="3clFbF" id="5LUdCiaUpLk" role="3cqZAp">
             <node concept="37vLTI" id="5LUdCiaUpN_" role="3clFbG">
               <node concept="1PxgMI" id="5LUdCiaUqfz" role="37vLTx">
-                <ref role="1m5ApE" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
                 <node concept="2OqwBi" id="5LUdCiaUpPY" role="1m5AlR">
                   <node concept="37vLTw" id="5LUdCiaUpNV" role="2Oq$k0">
                     <ref role="3cqZAo" node="5LUdCiaUp1$" resolve="topLevelCell" />
                   </node>
                   <node concept="1mfA1w" id="5LUdCiaUq7u" role="2OqNvi" />
+                </node>
+                <node concept="chp4Y" id="714IaVdGYyU" role="3oSUPX">
+                  <ref role="cht4Q" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
                 </node>
               </node>
               <node concept="37vLTw" id="5LUdCiaUpLj" role="37vLTJ">

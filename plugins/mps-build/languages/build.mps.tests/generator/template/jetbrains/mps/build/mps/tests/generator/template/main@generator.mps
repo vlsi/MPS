@@ -230,8 +230,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -240,10 +240,7 @@
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -792,15 +789,12 @@
                               <node concept="3cpWsn" id="63InNWG5ay7" role="3cpWs9">
                                 <property role="TrG5h" value="project" />
                                 <node concept="1PxgMI" id="63InNWG5ay8" role="33vP2m">
-                                  <ref role="1PxNhF" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                                  <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                                  <node concept="2OqwBi" id="63InNWG5ay9" role="1PxMeX">
+                                  <node concept="2OqwBi" id="63InNWG5ay9" role="1m5AlR">
                                     <node concept="30H73N" id="akLgX4n9r4" role="2Oq$k0" />
                                     <node concept="2Rxl7S" id="63InNWG5aya" role="2OqNvi" />
                                   </node>
-                                  <node concept="2OqwBi" id="2YdNGB0T7FC" role="1m5AlR">
-                                    <node concept="30H73N" id="2YdNGB0T7on" role="2Oq$k0" />
-                                    <node concept="2Rxl7S" id="2YdNGB0T9NU" role="2OqNvi" />
+                                  <node concept="chp4Y" id="714IaVdH1GU" role="3oSUPX">
+                                    <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                                   </node>
                                 </node>
                                 <node concept="3Tqbb2" id="63InNWG5ayc" role="1tU5fm">
@@ -1058,10 +1052,12 @@
                                 <ref role="ehGHo" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                               </node>
                               <node concept="1PxgMI" id="6g2MV4s7TUz" role="33vP2m">
-                                <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                                 <node concept="2OqwBi" id="6g2MV4s7TU$" role="1m5AlR">
                                   <node concept="2Rxl7S" id="6g2MV4s7TU_" role="2OqNvi" />
                                   <node concept="30H73N" id="6g2MV4s7TUA" role="2Oq$k0" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH1GX" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                                 </node>
                               </node>
                             </node>
@@ -1318,10 +1314,12 @@
                               <node concept="2OqwBi" id="8knae4B24p" role="2Oq$k0">
                                 <node concept="2OqwBi" id="8knae4AMxt" role="2Oq$k0">
                                   <node concept="1PxgMI" id="8knae4ALQy" role="2Oq$k0">
-                                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                                     <node concept="2OqwBi" id="8knae4_X6c" role="1m5AlR">
                                       <node concept="30H73N" id="8knae4_WUR" role="2Oq$k0" />
                                       <node concept="1mfA1w" id="8knae4AJWv" role="2OqNvi" />
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdH1GY" role="3oSUPX">
+                                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                                     </node>
                                   </node>
                                   <node concept="3Tsc0h" id="8knae4AZfL" role="2OqNvi">
@@ -1356,9 +1354,11 @@
                                   <node concept="3clFbS" id="8knae4BSAW" role="1bW5cS">
                                     <node concept="3clFbF" id="8knae4BTcf" role="3cqZAp">
                                       <node concept="1PxgMI" id="8knae4BUO5" role="3clFbG">
-                                        <ref role="1m5ApE" to="3ior:6qcrfIJFt02" resolve="BuildFolderMacro" />
                                         <node concept="37vLTw" id="8knae4BTce" role="1m5AlR">
                                           <ref role="3cqZAo" node="8knae4BSAX" resolve="it" />
+                                        </node>
+                                        <node concept="chp4Y" id="714IaVdH1GV" role="3oSUPX">
+                                          <ref role="cht4Q" to="3ior:6qcrfIJFt02" resolve="BuildFolderMacro" />
                                         </node>
                                       </node>
                                     </node>
@@ -1558,10 +1558,12 @@
                       <node concept="1pGfFk" id="3pzPpUGgK73" role="2ShVmc">
                         <ref role="37wK5l" to="tken:3pzPpUFO9wL" resolve="ModulePlugins" />
                         <node concept="1PxgMI" id="3pzPpUGgKnY" role="37wK5m">
-                          <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                           <node concept="2OqwBi" id="3pzPpUGgKnZ" role="1m5AlR">
                             <node concept="2Rxl7S" id="3pzPpUGgKo0" role="2OqNvi" />
                             <node concept="30H73N" id="3pzPpUGgKo1" role="2Oq$k0" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH1GW" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                           </node>
                         </node>
                         <node concept="1iwH7S" id="3pzPpUGgK75" role="37wK5m" />

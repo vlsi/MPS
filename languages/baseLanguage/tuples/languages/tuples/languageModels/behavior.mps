@@ -213,8 +213,8 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -682,9 +682,11 @@
                       </node>
                     </node>
                     <node concept="1PxgMI" id="7PtaNzTXq_R" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                       <node concept="2GrUjf" id="7PtaNzTXpLN" role="1m5AlR">
                         <ref role="2Gs0qQ" node="7PtaNzTXnZ3" resolve="ct" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGYSe" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                       </node>
                     </node>
                   </node>
@@ -2445,9 +2447,11 @@
                       <node concept="3clFbF" id="3zZky3wG4i3" role="3cqZAp">
                         <node concept="2OqwBi" id="3zZky3wG4iR" role="3clFbG">
                           <node concept="1PxgMI" id="3zZky3wG4it" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                             <node concept="3M$PaV" id="3zZky3wG4i4" role="1m5AlR">
                               <ref role="3M$S_o" node="3zZky3wG4aF" resolve="tval" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGYSg" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                             </node>
                           </node>
                           <node concept="2qgKlT" id="3zZky3wG4iX" role="2OqNvi">

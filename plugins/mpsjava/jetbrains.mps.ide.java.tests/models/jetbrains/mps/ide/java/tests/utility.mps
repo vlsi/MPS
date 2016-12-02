@@ -8,7 +8,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -292,8 +292,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="559557797393017698" name="jetbrains.mps.lang.smodel.structure.ModelReferenceExpression" flags="nn" index="BaHAS">
         <property id="559557797393041554" name="fqName" index="BaBD8" />
@@ -675,7 +675,6 @@
                   <ref role="ehGHo" to="tpee:g7pOWCK" resolve="Classifier" />
                 </node>
                 <node concept="1PxgMI" id="13DhuT6A0hG" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="2OqwBi" id="13DhuT6A0hH" role="1m5AlR">
                     <node concept="37vLTw" id="3GM_nagTz$V" role="2Oq$k0">
                       <ref role="3cqZAo" node="13DhuT6A0h7" resolve="res" />
@@ -686,6 +685,9 @@
                         <property role="3cmrfH" value="0" />
                       </node>
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZkx" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
               </node>
@@ -1143,7 +1145,6 @@
           <node concept="3cpWsn" id="3$PIpB7If$s" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="1PxgMI" id="3$PIpB7IDfF" role="33vP2m">
-              <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
               <node concept="1eOMI4" id="3$PIpB7IC4B" role="1m5AlR">
                 <node concept="2OqwBi" id="3$PIpB7IC4E" role="1eOMHV">
                   <node concept="37vLTw" id="5EoRO04ieDm" role="2Oq$k0">
@@ -1153,6 +1154,9 @@
                     <ref role="37wK5l" to="33ny:~Iterator.next():java.lang.Object" resolve="next" />
                   </node>
                 </node>
+              </node>
+              <node concept="chp4Y" id="714IaVdGZkH" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
               </node>
             </node>
             <node concept="3Tqbb2" id="3$PIpB7If$n" role="1tU5fm">
@@ -1471,9 +1475,11 @@
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
                     <ref role="37wK5l" node="70HT6wFrYV9" resolve="removeStatements" />
                     <node concept="1PxgMI" id="70HT6wFrZd8" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                       <node concept="2GrUjf" id="70HT6wFrZcR" role="1m5AlR">
                         <ref role="2Gs0qQ" node="70HT6wFrZcn" resolve="root" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkL" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                       </node>
                     </node>
                   </node>
@@ -1483,9 +1489,11 @@
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
                     <ref role="37wK5l" node="70HT6wFrZAZ" resolve="fixNonStatic" />
                     <node concept="1PxgMI" id="70HT6wFs08A" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                       <node concept="2GrUjf" id="70HT6wFs08l" role="1m5AlR">
                         <ref role="2Gs0qQ" node="70HT6wFrZcn" resolve="root" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZk_" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                       </node>
                     </node>
                   </node>
@@ -1819,9 +1827,11 @@
                     <ref role="37wK5l" node="70HT6wFrZAZ" resolve="fixNonStatic" />
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
                     <node concept="1PxgMI" id="1c0m78RIf9r" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                       <node concept="2GrUjf" id="1c0m78RIf9s" role="1m5AlR">
                         <ref role="2Gs0qQ" node="1c0m78RIf9g" resolve="root" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkC" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                       </node>
                     </node>
                   </node>
@@ -2152,9 +2162,11 @@
                     <ref role="37wK5l" node="66hA68pi23r" resolve="sortNestedClass" />
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
                     <node concept="1PxgMI" id="Tb4Psnn77L" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                       <node concept="2GrUjf" id="Tb4Psnn77M" role="1m5AlR">
                         <ref role="2Gs0qQ" node="Tb4Psnn77T" resolve="binRoot" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkI" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                       </node>
                     </node>
                   </node>
@@ -2364,9 +2376,11 @@
                     <ref role="1Pybhc" node="70HT6wFrYV3" resolve="NodePatcher" />
                     <ref role="37wK5l" node="66hA68pi23r" resolve="sortNestedClass" />
                     <node concept="1PxgMI" id="Tb4Psnn797" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                       <node concept="2GrUjf" id="Tb4Psnn798" role="1m5AlR">
                         <ref role="2Gs0qQ" node="Tb4Psnn78T" resolve="srcRoot" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkF" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                       </node>
                     </node>
                   </node>
@@ -2864,9 +2878,11 @@
                             <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                           <node concept="1PxgMI" id="6YV7lv2CRoF" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                             <node concept="37vLTw" id="2BHiRxglGNL" role="1m5AlR">
                               <ref role="3cqZAo" node="6YV7lv2CRoI" resolve="it" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZkD" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                             </node>
                           </node>
                         </node>
@@ -2894,9 +2910,11 @@
                       <node concept="3cpWs6" id="6YV7lv2CRoV" role="3cqZAp">
                         <node concept="2OqwBi" id="6YV7lv2CRoW" role="3cqZAk">
                           <node concept="1PxgMI" id="6YV7lv2CRoX" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                             <node concept="37vLTw" id="2BHiRxgmtvM" role="1m5AlR">
                               <ref role="3cqZAo" node="6YV7lv2CRp0" resolve="it" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZkA" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="6YV7lv2CRoZ" role="2OqNvi">
@@ -3064,9 +3082,11 @@
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                     <node concept="1PxgMI" id="6zNM6VZneCc" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
                       <node concept="2GrUjf" id="6zNM6VZneB_" role="1m5AlR">
                         <ref role="2Gs0qQ" node="6zNM6VZneAN" resolve="rightRoot" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkw" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
                       </node>
                     </node>
                   </node>
@@ -3106,9 +3126,11 @@
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                     </node>
                     <node concept="1PxgMI" id="6zNM6VZnmup" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
                       <node concept="2GrUjf" id="6zNM6VZnmu8" role="1m5AlR">
                         <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZkz" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
                       </node>
                     </node>
                   </node>
@@ -3141,15 +3163,19 @@
               <node concept="1rXfSq" id="4hiugqysqt_" role="3clFbG">
                 <ref role="37wK5l" node="6zNM6VZne_w" resolve="buildClassifierNodeMap" />
                 <node concept="1PxgMI" id="70HT6wFs4Mk" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="2GrUjf" id="70HT6wFs4LI" role="1m5AlR">
                     <ref role="2Gs0qQ" node="6zNM6VZnmsL" resolve="leftRoot" />
                   </node>
+                  <node concept="chp4Y" id="714IaVdGZkJ" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                  </node>
                 </node>
                 <node concept="1PxgMI" id="70HT6wFs4MI" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="37vLTw" id="3GM_nagT_x7" role="1m5AlR">
                     <ref role="3cqZAo" node="6zNM6VZnmtJ" resolve="rightBrother" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZkK" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
                 <node concept="37vLTw" id="2BHiRxglcQT" role="37wK5m">
@@ -3273,7 +3299,6 @@
               <node concept="3cpWsn" id="66hA68pgXgZ" role="3cpWs9">
                 <property role="TrG5h" value="rightBrother" />
                 <node concept="1PxgMI" id="66hA68ph9Co" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="3EllGN" id="66hA68pgXh6" role="1m5AlR">
                     <node concept="2OqwBi" id="66hA68pgXh7" role="3ElVtu">
                       <node concept="3TrcHB" id="66hA68pgXh9" role="2OqNvi">
@@ -3286,6 +3311,9 @@
                     <node concept="37vLTw" id="3GM_nagTyyR" role="3ElQJh">
                       <ref role="3cqZAo" node="6zNM6VZnxYp" resolve="rightNestedIndex" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZkG" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
                 <node concept="3Tqbb2" id="66hA68pgXh0" role="1tU5fm">
@@ -3479,9 +3507,11 @@
                   <ref role="3TtcxE" to="tpee:hiACsvU" resolve="annotationMethod" />
                 </node>
                 <node concept="1PxgMI" id="70HT6wFsd_b" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
                   <node concept="37vLTw" id="2BHiRxgmaAH" role="1m5AlR">
                     <ref role="3cqZAo" node="70HT6wFs4KE" resolve="right" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZk$" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hiABswc" resolve="Annotation" />
                   </node>
                 </node>
               </node>
@@ -3493,9 +3523,11 @@
                   <ref role="3TtcxE" to="tpee:hiACsvU" resolve="annotationMethod" />
                 </node>
                 <node concept="1PxgMI" id="70HT6wFsdBB" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
                   <node concept="37vLTw" id="2BHiRxgm8MF" role="1m5AlR">
                     <ref role="3cqZAo" node="70HT6wFs4KC" resolve="left" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZkM" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hiABswc" resolve="Annotation" />
                   </node>
                 </node>
               </node>
@@ -4961,9 +4993,11 @@
             <node concept="3x8VRR" id="5EoRO04$VDY" role="2OqNvi" />
             <node concept="2OqwBi" id="5EoRO04$Ugf" role="2Oq$k0">
               <node concept="1PxgMI" id="5EoRO04$UEv" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                 <node concept="37vLTw" id="5EoRO04$UbD" role="1m5AlR">
                   <ref role="3cqZAo" node="5EoRO04$SP3" resolve="from" />
+                </node>
+                <node concept="chp4Y" id="714IaVdGZkB" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                 </node>
               </node>
               <node concept="3CFZ6_" id="5EoRO04$U$q" role="2OqNvi">
@@ -4981,9 +5015,11 @@
                     <node concept="1$rogu" id="5ll4uk5p5Ns" role="2OqNvi" />
                     <node concept="2OqwBi" id="5EoRO04$YVv" role="2Oq$k0">
                       <node concept="1PxgMI" id="5EoRO04$YVw" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                         <node concept="37vLTw" id="5EoRO04$YVx" role="1m5AlR">
                           <ref role="3cqZAo" node="5EoRO04$SP3" resolve="from" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGZkE" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                         </node>
                       </node>
                       <node concept="3CFZ6_" id="5EoRO04$YVy" role="2OqNvi">
@@ -5001,9 +5037,11 @@
                     </node>
                   </node>
                   <node concept="1PxgMI" id="5EoRO04$VJb" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                     <node concept="37vLTw" id="5EoRO04$VEj" role="1m5AlR">
                       <ref role="3cqZAo" node="5EoRO04$SP9" resolve="to" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGZky" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                     </node>
                   </node>
                 </node>

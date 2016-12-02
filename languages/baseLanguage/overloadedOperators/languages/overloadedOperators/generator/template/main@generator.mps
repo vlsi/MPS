@@ -9,7 +9,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -168,10 +168,13 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -646,12 +649,14 @@
                     <node concept="3clFbF" id="33Da_9PaoG4" role="3cqZAp">
                       <node concept="2OqwBi" id="33Da_9PaoG5" role="3clFbG">
                         <node concept="1PxgMI" id="33Da_9PaoG6" role="2Oq$k0">
-                          <ref role="1m5ApE" to="vgj4:qQXsgj0h87" resolve="OverloadedOperatorContainer" />
                           <node concept="2OqwBi" id="33Da_9PaoG7" role="1m5AlR">
                             <node concept="37vLTw" id="3GM_nagT_O7" role="2Oq$k0">
                               <ref role="3cqZAo" node="33Da_9PaoFN" resolve="op" />
                             </node>
                             <node concept="1mfA1w" id="33Da_9PaoG9" role="2OqNvi" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH0Hw" role="3oSUPX">
+                            <ref role="cht4Q" to="vgj4:qQXsgj0h87" resolve="OverloadedOperatorContainer" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="33Da_9PaoGa" role="2OqNvi">

@@ -335,8 +335,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -1441,7 +1441,6 @@
                 <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
               <node concept="1PxgMI" id="i2npIJv" role="33vP2m">
-                <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 <node concept="2OqwBi" id="hMpO8G0" role="1m5AlR">
                   <node concept="37vLTw" id="3GM_nagT$9A" role="2Oq$k0">
                     <ref role="3cqZAo" node="hqc4$kC" resolve="selectedCell" />
@@ -1449,6 +1448,9 @@
                   <node concept="liA8E" id="hMpOgbN" role="2OqNvi">
                     <ref role="37wK5l" to="f4zo:~EditorCell.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdGYLd" role="3oSUPX">
+                  <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 </node>
               </node>
             </node>
@@ -1531,12 +1533,14 @@
                     <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                   <node concept="1PxgMI" id="hqc4$lu" role="33vP2m">
-                    <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     <node concept="2OqwBi" id="hxx_6m1" role="1m5AlR">
                       <node concept="37vLTw" id="3GM_nagTsfl" role="2Oq$k0">
                         <ref role="3cqZAo" node="hqc4$kH" resolve="contextNode" />
                       </node>
                       <node concept="1mfA1w" id="hqc4$lw" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYL0" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     </node>
                   </node>
                 </node>
@@ -1737,7 +1741,6 @@
                 <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
               </node>
               <node concept="1PxgMI" id="i2npJ75" role="33vP2m">
-                <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 <node concept="2OqwBi" id="hMpOzDN" role="1m5AlR">
                   <node concept="37vLTw" id="3GM_nagTrXO" role="2Oq$k0">
                     <ref role="3cqZAo" node="hqEP9vA" resolve="selectedCell" />
@@ -1745,6 +1748,9 @@
                   <node concept="liA8E" id="hMpO$9k" role="2OqNvi">
                     <ref role="37wK5l" to="f4zo:~EditorCell.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdGYL5" role="3oSUPX">
+                  <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 </node>
               </node>
             </node>
@@ -1862,12 +1868,14 @@
                     <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                   <node concept="1PxgMI" id="hqEP9ws" role="33vP2m">
-                    <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     <node concept="2OqwBi" id="hxx$D4C" role="1m5AlR">
                       <node concept="37vLTw" id="3GM_nagTs19" role="2Oq$k0">
                         <ref role="3cqZAo" node="hqEP9vF" resolve="contextNode" />
                       </node>
                       <node concept="1mfA1w" id="hqEP9wu" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYKT" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     </node>
                   </node>
                 </node>

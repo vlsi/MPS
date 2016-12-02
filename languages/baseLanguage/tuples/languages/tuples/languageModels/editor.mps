@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
@@ -411,8 +411,8 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
@@ -2250,10 +2250,12 @@
                   <node concept="2OqwBi" id="1wEcoXjJ_LI" role="3fr31v">
                     <node concept="1PxgMI" id="1wEcoXjJ_LJ" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
-                      <ref role="1m5ApE" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                       <node concept="2OqwBi" id="1wEcoXjJ_LK" role="1m5AlR">
                         <node concept="7Obwk" id="1wEcoXjJ_LO" role="2Oq$k0" />
                         <node concept="1mfA1w" id="1wEcoXjJ_LM" role="2OqNvi" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGYS6" role="3oSUPX">
+                        <ref role="cht4Q" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1wEcoXjJ_LN" role="2OqNvi">
@@ -2285,10 +2287,12 @@
                   <node concept="2OqwBi" id="1wEcoXjJ_LZ" role="37vLTJ">
                     <node concept="1PxgMI" id="1wEcoXjJ_M0" role="2Oq$k0">
                       <property role="1BlNFB" value="true" />
-                      <ref role="1m5ApE" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                       <node concept="2OqwBi" id="1wEcoXjJ_M1" role="1m5AlR">
                         <node concept="7Obwk" id="1wEcoXjJ_M7" role="2Oq$k0" />
                         <node concept="1mfA1w" id="1wEcoXjJ_M3" role="2OqNvi" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGYS9" role="3oSUPX">
+                        <ref role="cht4Q" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1wEcoXjJ_M4" role="2OqNvi">

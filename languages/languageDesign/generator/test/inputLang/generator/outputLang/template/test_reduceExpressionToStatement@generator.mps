@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -71,12 +71,15 @@
       <concept id="1168024337012" name="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" flags="in" index="3NFfHV" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1138676077309" name="jetbrains.mps.lang.smodel.structure.EnumMemberReference" flags="nn" index="uoxfO">
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
@@ -116,10 +119,12 @@
             <node concept="2OqwBi" id="hA6ZI5z" role="3clFbG">
               <node concept="2OqwBi" id="hA6ZFXh" role="2Oq$k0">
                 <node concept="1PxgMI" id="hA6ZEAk" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpm0:hA6UZAi" resolve="InputRootWithStatementList" />
                   <node concept="2OqwBi" id="hA6Z$C1" role="1m5AlR">
                     <node concept="30H73N" id="hA6Z$nS" role="2Oq$k0" />
                     <node concept="2Rxl7S" id="hA6Z_NR" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYVe" role="3oSUPX">
+                    <ref role="cht4Q" to="tpm0:hA6UZAi" resolve="InputRootWithStatementList" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="hA6ZHK3" role="2OqNvi">

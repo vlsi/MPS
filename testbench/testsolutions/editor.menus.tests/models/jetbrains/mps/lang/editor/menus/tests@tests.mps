@@ -10,7 +10,7 @@
     <use id="9b3af7e0-9a52-4741-a75d-becf7e1d5117" name="jetbrains.mps.lang.editor.menus.testExtendingLanguage" version="-1" />
     <use id="69068b7c-ba1f-47fb-a486-4981f42606e9" name="jetbrains.mps.lang.editor.menus.testMetaLanguage" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
   </languages>
   <imports>
@@ -394,14 +394,17 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
         <property id="3542851458883439831" name="namespace" index="2V$B1Q" />
@@ -849,7 +852,6 @@
                 <node concept="37vLTI" id="5oiZ4v5defl" role="3clFbG">
                   <node concept="2OqwBi" id="5oiZ4v5defm" role="37vLTx">
                     <node concept="1PxgMI" id="5oiZ4v5defn" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       <node concept="2OqwBi" id="5oiZ4v5defo" role="1m5AlR">
                         <node concept="37vLTw" id="5oiZ4v5defD" role="2Oq$k0">
                           <ref role="3cqZAo" node="5oiZ4v5d7sI" resolve="menuNode" />
@@ -860,6 +862,9 @@
                             <ref role="3cqZAo" node="5oiZ4v5defx" resolve="repository" />
                           </node>
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH1Go" role="3oSUPX">
+                        <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="5oiZ4v5defs" role="2OqNvi">

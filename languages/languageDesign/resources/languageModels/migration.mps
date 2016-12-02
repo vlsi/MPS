@@ -126,8 +126,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -482,7 +482,6 @@
                             <node concept="2OqwBi" id="4WvVqJwAiPF" role="2Oq$k0">
                               <node concept="1PxgMI" id="4WvVqJwAi0m" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 <node concept="2OqwBi" id="4WvVqJwAdbD" role="1m5AlR">
                                   <node concept="37vLTw" id="4WvVqJwAd0B" role="2Oq$k0">
                                     <ref role="3cqZAo" node="4WvVqJwAcU7" resolve="it" />
@@ -490,6 +489,9 @@
                                   <node concept="3TrEf2" id="4WvVqJwAdG0" role="2OqNvi">
                                     <ref role="3Tt5mk" to="1oap:7Mb2akaesr5" resolve="icon" />
                                   </node>
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGYRi" role="3oSUPX">
+                                  <ref role="cht4Q" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="4WvVqJwAj6i" role="2OqNvi">
@@ -519,7 +521,6 @@
                             <node concept="2OqwBi" id="4WvVqJwAlSr" role="1P9ThW">
                               <node concept="1PxgMI" id="4WvVqJwAlSs" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 <node concept="2OqwBi" id="4WvVqJwAlSt" role="1m5AlR">
                                   <node concept="37vLTw" id="4WvVqJwAlSu" role="2Oq$k0">
                                     <ref role="3cqZAo" node="4WvVqJwAkSC" resolve="it" />
@@ -527,6 +528,9 @@
                                   <node concept="3TrEf2" id="4WvVqJwAlSv" role="2OqNvi">
                                     <ref role="3Tt5mk" to="1oap:7Mb2akaesr5" resolve="icon" />
                                   </node>
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGYRh" role="3oSUPX">
+                                  <ref role="cht4Q" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="4WvVqJwAlSw" role="2OqNvi">
@@ -587,7 +591,6 @@
                             <node concept="2OqwBi" id="4WvVqJwAm9_" role="2Oq$k0">
                               <node concept="1PxgMI" id="4WvVqJwAm9A" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 <node concept="2OqwBi" id="4WvVqJwAm9B" role="1m5AlR">
                                   <node concept="37vLTw" id="4WvVqJwAm9C" role="2Oq$k0">
                                     <ref role="3cqZAo" node="4WvVqJwAm9G" resolve="it" />
@@ -595,6 +598,9 @@
                                   <node concept="3TrEf2" id="4WvVqJwAm9D" role="2OqNvi">
                                     <ref role="3Tt5mk" to="1oap:7Mb2akaesr5" resolve="icon" />
                                   </node>
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGYRj" role="3oSUPX">
+                                  <ref role="cht4Q" to="1oap:7Mb2akaesqV" resolve="FileIcon" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="4WvVqJwAm9E" role="2OqNvi">

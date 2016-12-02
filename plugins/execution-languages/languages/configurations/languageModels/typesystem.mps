@@ -172,8 +172,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -246,7 +246,7 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="6LlKjXrML1V" role="2OqNvi">
-                    <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" />
+                    <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" resolve="runConfiguration" />
                   </node>
                 </node>
               </node>
@@ -272,20 +272,22 @@
                 <node concept="2OqwBi" id="5HAZRDA9WtO" role="1Z2MuG">
                   <node concept="2OqwBi" id="2vbxNJqhI6O" role="2Oq$k0">
                     <node concept="1PxgMI" id="2vbxNJqhI6P" role="2Oq$k0">
-                      <ref role="1m5ApE" to="uhxm:6LlKjXrMe7G" resolve="RunConfigurationExecutor" />
                       <node concept="2OqwBi" id="2vbxNJqhI6Q" role="1m5AlR">
                         <node concept="1YBJjd" id="2vbxNJqhI6R" role="2Oq$k0">
                           <ref role="1YBMHb" node="2F_uerOhSm6" resolve="debuggerConnectionSettings" />
                         </node>
                         <node concept="2Rxl7S" id="2vbxNJqhI6S" role="2OqNvi" />
                       </node>
+                      <node concept="chp4Y" id="714IaVdGZ8e" role="3oSUPX">
+                        <ref role="cht4Q" to="uhxm:6LlKjXrMe7G" resolve="RunConfigurationExecutor" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="5HAZRDA9WtN" role="2OqNvi">
-                      <ref role="3Tt5mk" to="uhxm:5P5ty4$bo88" />
+                      <ref role="3Tt5mk" to="uhxm:5P5ty4$bo88" resolve="debuggerConfiguration" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="5HAZRDA9WtS" role="2OqNvi">
-                    <ref role="3Tt5mk" to="86gq:5P5ty4$bhzx" />
+                    <ref role="3Tt5mk" to="86gq:5P5ty4$bhzx" resolve="getSettings" />
                   </node>
                 </node>
               </node>
@@ -367,7 +369,7 @@
                     <ref role="1YBMHb" node="3aewtBM3d7K" resolve="creator" />
                   </node>
                   <node concept="3TrEf2" id="3aewtBM3d84" role="2OqNvi">
-                    <ref role="3Tt5mk" to="uhxm:3aewtBM3d7v" />
+                    <ref role="3Tt5mk" to="uhxm:3aewtBM3d7v" resolve="configuration" />
                   </node>
                 </node>
               </node>
@@ -395,7 +397,7 @@
                 <ref role="1YBMHb" node="3aewtBM3d7K" resolve="creator" />
               </node>
               <node concept="3TrEf2" id="toP3SpHfR2" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:toP3SpHfQQ" />
+                <ref role="3Tt5mk" to="uhxm:toP3SpHfQQ" resolve="configurationName" />
               </node>
             </node>
           </node>
@@ -436,7 +438,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="6liWaRMAf9g" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:6liWaRMAf9f" />
+                <ref role="3Tt5mk" to="uhxm:6liWaRMAf9f" resolve="source" />
               </node>
             </node>
           </node>
@@ -465,7 +467,7 @@
                     <ref role="1YBMHb" node="toP3SpHuFH" resolve="nodeListSource" />
                   </node>
                   <node concept="3TrEf2" id="7WjXFsueHpf" role="2OqNvi">
-                    <ref role="3Tt5mk" to="uhxm:6liWaRMAiqi" />
+                    <ref role="3Tt5mk" to="uhxm:6liWaRMAiqi" resolve="concept" />
                   </node>
                 </node>
               </node>
@@ -503,7 +505,7 @@
                     <ref role="1YBMHb" node="toP3SpHuFm" resolve="nodeSource" />
                   </node>
                   <node concept="3TrEf2" id="toP3SpHuFE" role="2OqNvi">
-                    <ref role="3Tt5mk" to="uhxm:6liWaRMAiq2" />
+                    <ref role="3Tt5mk" to="uhxm:6liWaRMAiq2" resolve="concept" />
                   </node>
                 </node>
               </node>
@@ -540,11 +542,11 @@
                 <ref role="1YBMHb" node="4JYgQwOw8NX" resolve="beforeTaskCall" />
               </node>
               <node concept="3TrEf2" id="4JYgQwOwbMP" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:5FAUXTS7LZp" />
+                <ref role="3Tt5mk" to="uhxm:5FAUXTS7LZp" resolve="beforeTask" />
               </node>
             </node>
             <node concept="3Tsc0h" id="4JYgQwOwbMQ" role="2OqNvi">
-              <ref role="3TtcxE" to="uhxm:5FAUXTS7TqE" />
+              <ref role="3TtcxE" to="uhxm:5FAUXTS7TqE" resolve="parameter" />
             </node>
           </node>
         </node>
@@ -567,7 +569,7 @@
                 <ref role="1YBMHb" node="4JYgQwOw8NX" resolve="beforeTaskCall" />
               </node>
               <node concept="3Tsc0h" id="4JYgQwOwbOq" role="2OqNvi">
-                <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" />
+                <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" resolve="parameter" />
               </node>
             </node>
             <node concept="34oBXx" id="4JYgQwOwbOv" role="2OqNvi" />
@@ -592,7 +594,7 @@
                       <ref role="1YBMHb" node="4JYgQwOw8NX" resolve="beforeTaskCall" />
                     </node>
                     <node concept="3Tsc0h" id="4JYgQwOwbNI" role="2OqNvi">
-                      <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" />
+                      <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" resolve="parameter" />
                     </node>
                   </node>
                   <node concept="34jXtK" id="4JYgQwOwbNN" role="2OqNvi">
@@ -633,7 +635,7 @@
                 <ref role="1YBMHb" node="4JYgQwOw8NX" resolve="beforeTaskCall" />
               </node>
               <node concept="3Tsc0h" id="4JYgQwOwbN8" role="2OqNvi">
-                <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" />
+                <ref role="3TtcxE" to="uhxm:4JYgQwOvPg0" resolve="parameter" />
               </node>
             </node>
             <node concept="34oBXx" id="4JYgQwOwcrZ" role="2OqNvi" />
@@ -665,7 +667,7 @@
               <ref role="1YBMHb" node="5RwTMTq3tyc" resolve="startProcessHandler" />
             </node>
             <node concept="3TrEf2" id="5RwTMTq3tyl" role="2OqNvi">
-              <ref role="3Tt5mk" to="uhxm:O$iR4JBkji" />
+              <ref role="3Tt5mk" to="uhxm:O$iR4JBkji" resolve="process" />
             </node>
           </node>
           <node concept="3w_OXm" id="5RwTMTq3tyq" role="2OqNvi" />
@@ -724,11 +726,11 @@
             <node concept="2pJPED" id="67V23qSRO6n" role="2pJPEn">
               <ref role="2pJxaS" to="tpd4:hausRW2" resolve="JoinType" />
               <node concept="2pIpSj" id="7a3n6lJjEXL" role="2pJxcM">
-                <ref role="2pIpSl" to="tpd4:hausUtE" />
+                <ref role="2pIpSl" to="tpd4:hausUtE" resolve="argument" />
                 <node concept="2pJPED" id="67V23qSRO6q" role="2pJxcZ">
                   <ref role="2pJxaS" to="cx9y:i2pR1d_" resolve="NamedTupleType" />
                   <node concept="2pIpSj" id="67V23qSRO6r" role="2pJxcM">
-                    <ref role="2pIpSl" to="cx9y:i2pR8DE" />
+                    <ref role="2pIpSl" to="cx9y:i2pR8DE" resolve="tupleDeclaration" />
                     <node concept="36bGnv" id="67V23qSRO6s" role="2pJxcZ">
                       <ref role="36bGnp" to="awpe:1HMPpNJqv3x" resolve="ExecutionTool" />
                     </node>
@@ -736,7 +738,7 @@
                 </node>
               </node>
               <node concept="2pIpSj" id="7a3n6lJjEZj" role="2pJxcM">
-                <ref role="2pIpSl" to="tpd4:hausUtE" />
+                <ref role="2pIpSl" to="tpd4:hausUtE" resolve="argument" />
                 <node concept="2pJPED" id="67V23qSRO6t" role="2pJxcZ">
                   <ref role="2pJxaS" to="uhxm:1ovLDatOqMj" resolve="ConsoleType" />
                 </node>
@@ -751,7 +753,7 @@
                 <ref role="1YBMHb" node="1ovLDatObEt" resolve="startProcessHandlerStatement" />
               </node>
               <node concept="3TrEf2" id="1ovLDatObEU" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:1ovLDatNZew" />
+                <ref role="3Tt5mk" to="uhxm:1ovLDatNZew" resolve="tool" />
               </node>
             </node>
           </node>
@@ -815,7 +817,7 @@
                 <ref role="1YBMHb" node="1ovLDatO$Eg" resolve="consoleCreator" />
               </node>
               <node concept="3TrEf2" id="1ovLDatO$NA" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:1ovLDatO$Nd" />
+                <ref role="3Tt5mk" to="uhxm:1ovLDatO$Nd" resolve="project" />
               </node>
             </node>
           </node>
@@ -829,7 +831,7 @@
                 <ref role="1YBMHb" node="1ovLDatO$Eg" resolve="consoleCreator" />
               </node>
               <node concept="3TrEf2" id="1ovLDatO$NT" role="2OqNvi">
-                <ref role="3Tt5mk" to="uhxm:1ovLDatO$Ne" />
+                <ref role="3Tt5mk" to="uhxm:1ovLDatO$Ne" resolve="viewer" />
               </node>
             </node>
           </node>
@@ -1073,7 +1075,7 @@
             <node concept="2pJPED" id="5qZfoDoCcMY" role="2pJPEn">
               <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
               <node concept="2pIpSj" id="5qZfoDoCcP9" role="2pJxcM">
-                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
                 <node concept="36bGnv" id="5qZfoDoCcPH" role="2pJxcZ">
                   <ref role="36bGnp" to="feyl:~ConfigurationContext" resolve="ConfigurationContext" />
                 </node>

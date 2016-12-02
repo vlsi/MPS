@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
@@ -168,8 +168,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
@@ -1106,12 +1106,14 @@
                     <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                   </node>
                   <node concept="1PxgMI" id="1fdcuoIXRhE" role="33vP2m">
-                    <ref role="1m5ApE" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                     <node concept="2OqwBi" id="1fdcuoIXRhF" role="1m5AlR">
                       <node concept="pncrf" id="1fdcuoIXRhG" role="2Oq$k0" />
                       <node concept="3TrEf2" id="1fdcuoIXRhH" role="2OqNvi">
                         <ref role="3Tt5mk" to="tp1t:hDM2mAQ" resolve="concept" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH0wR" role="3oSUPX">
+                      <ref role="cht4Q" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                     </node>
                   </node>
                 </node>

@@ -214,8 +214,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -498,7 +498,6 @@
               <ref role="3cqZAo" node="65nWw9K2SD5" resolve="myCellFactoryCompatibilityTemplate" />
             </node>
             <node concept="1PxgMI" id="65nWw9K2YNG" role="37vLTx">
-              <ref role="1m5ApE" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
               <node concept="2OqwBi" id="65nWw9K2Vdm" role="1m5AlR">
                 <node concept="1N_AGu" id="65nWw9K2UCS" role="2Oq$k0">
                   <ref role="1N_AGt" to="tpc3:2dNBF9rt5kk" resolve="template_cellFactoryCompatibility" />
@@ -514,6 +513,9 @@
                     </node>
                   </node>
                 </node>
+              </node>
+              <node concept="chp4Y" id="714IaVdGYri" role="3oSUPX">
+                <ref role="cht4Q" to="tpf8:fT3MO7g" resolve="TemplateDeclaration" />
               </node>
             </node>
           </node>
@@ -741,12 +743,14 @@
                                 <node concept="1rXfSq" id="1T4k4GOl7HF" role="3clFbG">
                                   <ref role="37wK5l" node="1T4k4GOkYq$" resolve="migrate" />
                                   <node concept="1PxgMI" id="1T4k4GOlsl4" role="37wK5m">
-                                    <ref role="1m5ApE" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                                     <node concept="2OqwBi" id="1T4k4GOlhFa" role="1m5AlR">
                                       <node concept="37vLTw" id="1T4k4GOl7Tz" role="2Oq$k0">
                                         <ref role="3cqZAo" node="1T4k4GOl7DE" resolve="it" />
                                       </node>
                                       <node concept="1mfA1w" id="1T4k4GOlhZD" role="2OqNvi" />
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdGYrl" role="3oSUPX">
+                                      <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                                     </node>
                                   </node>
                                 </node>
@@ -868,9 +872,11 @@
                                   <node concept="2OqwBi" id="1T4k4GOn5lI" role="3uHU7B">
                                     <node concept="1PxgMI" id="1T4k4GOn5lJ" role="2Oq$k0">
                                       <property role="1BlNFB" value="true" />
-                                      <ref role="1m5ApE" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
                                       <node concept="37vLTw" id="1T4k4GOn5lK" role="1m5AlR">
                                         <ref role="3cqZAo" node="1T4k4GOn5lM" resolve="nodeMacro" />
+                                      </node>
+                                      <node concept="chp4Y" id="714IaVdGYrj" role="3oSUPX">
+                                        <ref role="cht4Q" to="tpf8:1jRYachIf5f" resolve="TemplateCallMacro" />
                                       </node>
                                     </node>
                                     <node concept="3TrEf2" id="1T4k4GOn5lL" role="2OqNvi">
@@ -974,7 +980,6 @@
             <node concept="2OqwBi" id="1T4k4GOk1nD" role="2Oq$k0">
               <node concept="2OqwBi" id="1T4k4GOjY6s" role="2Oq$k0">
                 <node concept="1PxgMI" id="1T4k4GOjXLv" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
                   <node concept="2OqwBi" id="1T4k4GOjWNL" role="1m5AlR">
                     <node concept="1N_AGu" id="1T4k4GOjVzA" role="2Oq$k0">
                       <ref role="1N_AGt" to="tpc3:fXkez3b" resolve="MAPPING_main" />
@@ -985,6 +990,9 @@
                         <ref role="3cqZAo" node="1T4k4GOjVY0" resolve="repo" />
                       </node>
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYrk" role="3oSUPX">
+                    <ref role="cht4Q" to="tpf8:fWbUwhP" resolve="MappingConfiguration" />
                   </node>
                 </node>
                 <node concept="3Tsc0h" id="1T4k4GOjYES" role="2OqNvi">

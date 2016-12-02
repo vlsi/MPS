@@ -6,7 +6,7 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -518,7 +518,7 @@
     </node>
     <node concept="3aamgX" id="692cUnf6I4G" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
+      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertIsNotNull" />
       <node concept="j$656" id="692cUnf6I4I" role="1lVwrX">
         <ref role="v9R2y" node="692cUnf6I4j" resolve="reduce_AssertInNotNull" />
       </node>
@@ -570,7 +570,7 @@
     </node>
     <node concept="3aamgX" id="692cUnf6I4g" role="3acgRq">
       <property role="3GE5qa" value="assert" />
-      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
+      <ref role="30HIoZ" to="tpe3:692cUnf6I3R" resolve="AssertIsNotNull" />
       <node concept="j$656" id="692cUnf6I4i" role="1lVwrX">
         <ref role="v9R2y" node="692cUnf6I4j" resolve="reduce_AssertInNotNull" />
       </node>
@@ -1179,7 +1179,7 @@
   <node concept="13MO4I" id="692cUnf6I4j">
     <property role="TrG5h" value="reduce_AssertInNotNull" />
     <property role="3GE5qa" value="assert" />
-    <ref role="3gUMe" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
+    <ref role="3gUMe" to="tpe3:692cUnf6I3R" resolve="AssertIsNotNull" />
     <node concept="3clFbF" id="692cUnf6I4l" role="13RCb5">
       <node concept="2YIFZM" id="692cUnf6I4x" role="3clFbG">
         <ref role="1Pybhc" to="u132:~Assert" resolve="Assert" />

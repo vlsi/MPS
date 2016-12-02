@@ -143,8 +143,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -311,10 +311,12 @@
                 <property role="TrG5h" value="node" />
                 <node concept="1PxgMI" id="460Ozqr7Awz" role="33vP2m">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
                   <node concept="2OqwBi" id="460Ozqr7$$N" role="1m5AlR">
                     <node concept="1mfA1w" id="460Ozqr7Ae6" role="2OqNvi" />
                     <node concept="13iPFW" id="460Ozqr7$ox" role="2Oq$k0" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZ5k" role="3oSUPX">
+                    <ref role="cht4Q" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
                   </node>
                 </node>
                 <node concept="3Tqbb2" id="460Ozqr7zOE" role="1tU5fm">
@@ -348,7 +350,7 @@
                 </node>
                 <node concept="359W_D" id="5TYh2YDXEzL" role="37wK5m">
                   <ref role="359W_E" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
-                  <ref role="359W_F" to="nv7r:1XGsQcRHubO" />
+                  <ref role="359W_F" to="nv7r:1XGsQcRHubO" resolve="attrs" />
                 </node>
               </node>
             </node>
@@ -438,7 +440,7 @@
                 <node concept="2OqwBi" id="1XGsQcRHuf8" role="2Oq$k0">
                   <node concept="13iPFW" id="1XGsQcRHuf9" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1XGsQcRHufa" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" />
+                    <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" resolve="rule" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="1XGsQcRHufb" role="2OqNvi">
@@ -453,7 +455,7 @@
                 <node concept="2OqwBi" id="1XGsQcRHuff" role="2Oq$k0">
                   <node concept="13iPFW" id="1XGsQcRHufg" role="2Oq$k0" />
                   <node concept="3TrEf2" id="1XGsQcRHufh" role="2OqNvi">
-                    <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" />
+                    <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" resolve="rule" />
                   </node>
                 </node>
                 <node concept="3x8VRR" id="1XGsQcRHufi" role="2OqNvi" />
@@ -463,7 +465,7 @@
                   <node concept="2OqwBi" id="1XGsQcRHufl" role="2Oq$k0">
                     <node concept="13iPFW" id="1XGsQcRHufm" role="2Oq$k0" />
                     <node concept="3TrEf2" id="1XGsQcRHufn" role="2OqNvi">
-                      <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" />
+                      <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" resolve="rule" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="1XGsQcRHufo" role="2OqNvi">
@@ -556,7 +558,7 @@
                   </node>
                   <node concept="359W_D" id="5TYh2YDXCpM" role="37wK5m">
                     <ref role="359W_E" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
-                    <ref role="359W_F" to="nv7r:1XGsQcRHubO" />
+                    <ref role="359W_F" to="nv7r:1XGsQcRHubO" resolve="attrs" />
                   </node>
                 </node>
               </node>
@@ -601,7 +603,7 @@
                 <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                 <node concept="prKvN" id="460Ozqrj46g" role="37wK5m">
                   <ref role="prhl4" to="nv7r:1XGsQcRHubo" resolve="XMLSAXChildRule" />
-                  <ref role="prhl7" to="nv7r:fz7wK6I" />
+                  <ref role="prhl7" to="nv7r:fz7wK6I" resolve="actualArgument" />
                 </node>
               </node>
               <node concept="2OqwBi" id="460OzqriXjq" role="2Oq$k0">
@@ -658,7 +660,7 @@
           <node concept="3clFbC" id="460Ozqs1wSZ" role="3clFbw">
             <node concept="2OqwBi" id="460Ozqs1xkZ" role="3uHU7w">
               <node concept="3TrEf2" id="460Ozqs1zd1" role="2OqNvi">
-                <ref role="3Tt5mk" to="nv7r:460OzqrVqt_" />
+                <ref role="3Tt5mk" to="nv7r:460OzqrVqt_" resolve="condition" />
               </node>
               <node concept="13iPFW" id="460Ozqs1xeC" role="2Oq$k0" />
             </node>
@@ -679,13 +681,13 @@
                       <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                       <node concept="2OqwBi" id="460Ozqs1Csq" role="37wK5m">
                         <node concept="3TrEf2" id="460Ozqs1Csr" role="2OqNvi">
-                          <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" />
+                          <ref role="3Tt5mk" to="nv7r:1XGsQcRHubs" resolve="rule" />
                         </node>
                         <node concept="13iPFW" id="460Ozqs1Css" role="2Oq$k0" />
                       </node>
                       <node concept="359W_D" id="5TYh2YDXCeq" role="37wK5m">
                         <ref role="359W_E" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
-                        <ref role="359W_F" to="nv7r:1XGsQcRHubO" />
+                        <ref role="359W_F" to="nv7r:1XGsQcRHubO" resolve="attrs" />
                       </node>
                     </node>
                   </node>
@@ -753,7 +755,7 @@
             <node concept="liA8E" id="460Ozqrjfx0" role="2OqNvi">
               <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="prKvN" id="460Ozqrjfx1" role="37wK5m">
-                <ref role="prhl7" to="nv7r:fz7wK6I" />
+                <ref role="prhl7" to="nv7r:fz7wK6I" resolve="actualArgument" />
                 <ref role="prhl4" to="nv7r:1XGsQcRHubo" resolve="XMLSAXChildRule" />
               </node>
             </node>
@@ -828,7 +830,7 @@
               <node concept="2OqwBi" id="1XGsQcRHufO" role="2Oq$k0">
                 <node concept="13iPFW" id="1XGsQcRHufP" role="2Oq$k0" />
                 <node concept="3TrEf2" id="1XGsQcRHufQ" role="2OqNvi">
-                  <ref role="3Tt5mk" to="nv7r:1XGsQcRHubN" />
+                  <ref role="3Tt5mk" to="nv7r:1XGsQcRHubN" resolve="type" />
                 </node>
               </node>
               <node concept="3x8VRR" id="1XGsQcRHufR" role="2OqNvi" />
@@ -836,7 +838,7 @@
             <node concept="2OqwBi" id="1XGsQcRHufS" role="3K4E3e">
               <node concept="13iPFW" id="1XGsQcRHufT" role="2Oq$k0" />
               <node concept="3TrEf2" id="1XGsQcRHufU" role="2OqNvi">
-                <ref role="3Tt5mk" to="nv7r:1XGsQcRHubN" />
+                <ref role="3Tt5mk" to="nv7r:1XGsQcRHubN" resolve="type" />
               </node>
             </node>
             <node concept="2c44tf" id="1XGsQcRHufV" role="3K4GZi">
@@ -883,7 +885,7 @@
                 <node concept="13iPFW" id="QrUm5O84tv" role="37wK5m" />
                 <node concept="359W_D" id="5TYh2YDXEU2" role="37wK5m">
                   <ref role="359W_E" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
-                  <ref role="359W_F" to="nv7r:QrUm5N2Yby" />
+                  <ref role="359W_F" to="nv7r:QrUm5N2Yby" resolve="params" />
                 </node>
               </node>
             </node>

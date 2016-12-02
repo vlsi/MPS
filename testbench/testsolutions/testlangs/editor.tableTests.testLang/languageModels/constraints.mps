@@ -50,8 +50,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -71,22 +71,24 @@
     <property role="3GE5qa" value="genericStateMachine" />
     <ref role="1M2myG" to="2qyu:EpZY78hnh6" resolve="EventReference" />
     <node concept="1N5Pfh" id="6SYFRDkTaDH" role="1Mr941">
-      <ref role="1N5Vy1" to="2qyu:EpZY78hnh7" />
+      <ref role="1N5Vy1" to="2qyu:EpZY78hnh7" resolve="event" />
       <node concept="1MUpDS" id="6SYFRDkTaDI" role="1N6uqs">
         <node concept="3clFbS" id="6SYFRDkTaDJ" role="2VODD2">
           <node concept="3clFbF" id="5RFOWxSxOqH" role="3cqZAp">
             <node concept="2OqwBi" id="5RFOWxSxOqQ" role="3clFbG">
               <node concept="2OqwBi" id="5RFOWxSxOqL" role="2Oq$k0">
                 <node concept="1PxgMI" id="5RFOWxSxOqJ" role="2Oq$k0">
-                  <ref role="1m5ApE" to="2qyu:EpZY78hngX" resolve="Transition" />
                   <node concept="21POm0" id="5RFOWxSxOqI" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH0Hz" role="3oSUPX">
+                    <ref role="cht4Q" to="2qyu:EpZY78hngX" resolve="Transition" />
+                  </node>
                 </node>
                 <node concept="2qgKlT" id="5RFOWxSxOqP" role="2OqNvi">
                   <ref role="37wK5l" to="dzz3:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
               </node>
               <node concept="3Tsc0h" id="5RFOWxSxOqU" role="2OqNvi">
-                <ref role="3TtcxE" to="2qyu:EpZY78hmIz" />
+                <ref role="3TtcxE" to="2qyu:EpZY78hmIz" resolve="events" />
               </node>
             </node>
           </node>
@@ -130,22 +132,24 @@
     <property role="3GE5qa" value="genericStateMachine" />
     <ref role="1M2myG" to="2qyu:EpZY78hnh4" resolve="StateReference" />
     <node concept="1N5Pfh" id="6SYFRDkU0Ci" role="1Mr941">
-      <ref role="1N5Vy1" to="2qyu:EpZY78hnh5" />
+      <ref role="1N5Vy1" to="2qyu:EpZY78hnh5" resolve="state" />
       <node concept="1MUpDS" id="6SYFRDkU0Cj" role="1N6uqs">
         <node concept="3clFbS" id="6SYFRDkU0Ck" role="2VODD2">
           <node concept="3clFbF" id="5RFOWxSxDL8" role="3cqZAp">
             <node concept="2OqwBi" id="5RFOWxSxLFN" role="3clFbG">
               <node concept="2OqwBi" id="5RFOWxSxDLh" role="2Oq$k0">
                 <node concept="1PxgMI" id="5RFOWxSxDLf" role="2Oq$k0">
-                  <ref role="1m5ApE" to="2qyu:EpZY78hngX" resolve="Transition" />
                   <node concept="21POm0" id="5RFOWxSxDL9" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH0Hy" role="3oSUPX">
+                    <ref role="cht4Q" to="2qyu:EpZY78hngX" resolve="Transition" />
+                  </node>
                 </node>
                 <node concept="2qgKlT" id="5RFOWxSxLFM" role="2OqNvi">
                   <ref role="37wK5l" to="dzz3:6SYFRDkTQVW" resolve="getStateMachine" />
                 </node>
               </node>
               <node concept="3Tsc0h" id="5RFOWxSxLFR" role="2OqNvi">
-                <ref role="3TtcxE" to="2qyu:EpZY78hmI_" />
+                <ref role="3TtcxE" to="2qyu:EpZY78hmI_" resolve="states" />
               </node>
             </node>
           </node>

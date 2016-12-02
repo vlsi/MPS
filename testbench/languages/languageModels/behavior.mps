@@ -161,8 +161,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -524,9 +524,11 @@
             <node concept="2OqwBi" id="1ouvi_yvmP" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_yurE" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yupc" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yueR" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wD" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_yvAw" role="2OqNvi">
@@ -695,9 +697,11 @@
             <node concept="2OqwBi" id="1ouvi_yogR" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_yo72" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yo4O" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yneF" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wE" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_yooE" role="2OqNvi">
@@ -1042,9 +1046,11 @@
             <node concept="2OqwBi" id="1ouvi_ysqb" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_ysnA" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yslo" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yrCq" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wC" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_ysDv" role="2OqNvi">

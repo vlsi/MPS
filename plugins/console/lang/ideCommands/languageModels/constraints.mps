@@ -124,8 +124,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -261,7 +261,7 @@
     <property role="3GE5qa" value="expression.callAction" />
     <ref role="1M2myG" to="caxt:4PRmqZe_ouB" resolve="ActionCallDeclaredParameter" />
     <node concept="1N5Pfh" id="4PRmqZe_o_h" role="1Mr941">
-      <ref role="1N5Vy1" to="caxt:4PRmqZe_ouC" />
+      <ref role="1N5Vy1" to="caxt:4PRmqZe_ouC" resolve="declaration" />
       <node concept="13QW63" id="4PRmqZe_o_i" role="1N6uqs">
         <node concept="3clFbS" id="4PRmqZe_o_j" role="2VODD2">
           <node concept="3clFbJ" id="4PRmqZe_o_k" role="3cqZAp">
@@ -275,11 +275,13 @@
                         <node concept="2OqwBi" id="4PRmqZe_o_r" role="2Oq$k0">
                           <node concept="2OqwBi" id="4PRmqZe_o_s" role="2Oq$k0">
                             <node concept="1PxgMI" id="4PRmqZe_o_t" role="2Oq$k0">
-                              <ref role="1m5ApE" to="caxt:4PRmqZe_ouH" resolve="CallActionExpression" />
                               <node concept="21POm0" id="4PRmqZe_o_u" role="1m5AlR" />
+                              <node concept="chp4Y" id="714IaVdGYOg" role="3oSUPX">
+                                <ref role="cht4Q" to="caxt:4PRmqZe_ouH" resolve="CallActionExpression" />
+                              </node>
                             </node>
                             <node concept="3TrEf2" id="4PRmqZe_o_v" role="2OqNvi">
-                              <ref role="3Tt5mk" to="caxt:4PRmqZe_ouI" />
+                              <ref role="3Tt5mk" to="caxt:4PRmqZe_ouI" resolve="action" />
                             </node>
                           </node>
                           <node concept="32TBzR" id="4PRmqZe_o_w" role="2OqNvi" />
@@ -312,9 +314,11 @@
                           <node concept="3clFbS" id="4PRmqZe_o_H" role="1bW5cS">
                             <node concept="3clFbF" id="4PRmqZe_o_I" role="3cqZAp">
                               <node concept="1PxgMI" id="4PRmqZe_o_J" role="3clFbG">
-                                <ref role="1m5ApE" to="tp4k:hHDS2nw" resolve="ActionDataParameterDeclaration" />
                                 <node concept="37vLTw" id="4PRmqZe_o_K" role="1m5AlR">
                                   <ref role="3cqZAo" node="4PRmqZe_o_L" resolve="it" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGYOf" role="3oSUPX">
+                                  <ref role="cht4Q" to="tp4k:hHDS2nw" resolve="ActionDataParameterDeclaration" />
                                 </node>
                               </node>
                             </node>
@@ -363,7 +367,7 @@
   <node concept="1M2fIO" id="59iQg8rz2Lg">
     <ref role="1M2myG" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
     <node concept="1N5Pfh" id="7Nk8HJUuNsz" role="1Mr941">
-      <ref role="1N5Vy1" to="caxt:7Nk8HJUuKrS" />
+      <ref role="1N5Vy1" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
       <node concept="13QW63" id="7Nk8HJUuNBt" role="1N6uqs">
         <node concept="3clFbS" id="7Nk8HJUuNBw" role="2VODD2">
           <node concept="3cpWs8" id="7Nk8HJUv4vP" role="3cqZAp">
@@ -427,7 +431,7 @@
                 <node concept="2OqwBi" id="7Nk8HJUvaFP" role="37wK5m">
                   <node concept="359W_D" id="7Nk8HJUv9ZW" role="2Oq$k0">
                     <ref role="359W_E" to="caxt:59iQg8ryOmC" resolve="OfAspectOperation" />
-                    <ref role="359W_F" to="caxt:7Nk8HJUuKrS" />
+                    <ref role="359W_F" to="caxt:7Nk8HJUuKrS" resolve="requestedAspect" />
                   </node>
                   <node concept="liA8E" id="7Nk8HJUvb3e" role="2OqNvi">
                     <ref role="37wK5l" to="c17a:~SAbstractLink.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
@@ -446,7 +450,7 @@
               <node concept="2OqwBi" id="7Nk8HJUv_73" role="37vLTJ">
                 <node concept="3kakTB" id="7Nk8HJUv$YU" role="2Oq$k0" />
                 <node concept="3TrEf2" id="7Nk8HJUv_jx" role="2OqNvi">
-                  <ref role="3Tt5mk" to="caxt:59iQg8rz2mK" />
+                  <ref role="3Tt5mk" to="caxt:59iQg8rz2mK" resolve="requestedAspect_old" />
                 </node>
               </node>
             </node>

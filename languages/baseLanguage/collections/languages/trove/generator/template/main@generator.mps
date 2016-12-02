@@ -7,7 +7,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -241,10 +241,13 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
@@ -1902,20 +1905,24 @@
                   <node concept="3clFbF" id="4LiorovoQor" role="3cqZAp">
                     <node concept="1PxgMI" id="4LiorovoQos" role="3clFbG">
                       <property role="1BlNFB" value="true" />
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="2OqwBi" id="4LiorovoQot" role="1m5AlR">
                         <node concept="1PxgMI" id="4LiorovoQou" role="2Oq$k0">
-                          <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                           <node concept="2OqwBi" id="4LiorovoQov" role="1m5AlR">
                             <node concept="30H73N" id="4LiorovoQow" role="2Oq$k0" />
                             <node concept="2qgKlT" id="4LiorovoQox" role="2OqNvi">
                               <ref role="37wK5l" to="tpek:hEwIzNC" resolve="getBoxedType" />
                             </node>
                           </node>
+                          <node concept="chp4Y" id="714IaVdH0zo" role="3oSUPX">
+                            <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="4LiorovoQoy" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH0zn" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                       </node>
                     </node>
                   </node>
@@ -2015,12 +2022,14 @@
                     <node concept="2OqwBi" id="4LiorovqfMc" role="2Oq$k0">
                       <node concept="1PxgMI" id="4LiorovqfMd" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                         <node concept="2OqwBi" id="4LiorovqfMe" role="1m5AlR">
                           <node concept="30H73N" id="4LiorovqfMf" role="2Oq$k0" />
                           <node concept="2qgKlT" id="4LiorovqfMg" role="2OqNvi">
                             <ref role="37wK5l" to="tpek:hEwIzNC" resolve="getBoxedType" />
                           </node>
+                        </node>
+                        <node concept="chp4Y" id="714IaVdH0zm" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
                         </node>
                       </node>
                       <node concept="3TrEf2" id="4LiorovqfMh" role="2OqNvi">

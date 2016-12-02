@@ -63,8 +63,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
@@ -142,21 +142,23 @@
                   <ref role="3cqZAo" node="35zoHQHRCsG" resolve="file" />
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCuz" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:7UAfeVQUc4q" />
+                  <ref role="3Tt5mk" to="3ior:7UAfeVQUc4q" resolve="path" />
                 </node>
               </node>
               <node concept="2OqwBi" id="35zoHQHRCvq" role="37vLTx">
                 <node concept="1PxgMI" id="35zoHQHRCv4" role="2Oq$k0">
-                  <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                   <node concept="2OqwBi" id="35zoHQHRCuW" role="1m5AlR">
                     <node concept="_YI3z" id="35zoHQHRCuB" role="2Oq$k0" />
                     <node concept="3TrEf2" id="35zoHQHRCv3" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH0_4" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCvw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
                 </node>
               </node>
             </node>
@@ -170,7 +172,7 @@
               <node concept="2OqwBi" id="35zoHQHRwJu" role="2Oq$k0">
                 <node concept="_YI3z" id="35zoHQHRwJ9" role="2Oq$k0" />
                 <node concept="3TrEf2" id="35zoHQHRCsc" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="35zoHQHRCsC" role="2OqNvi">
@@ -223,21 +225,23 @@
                   <ref role="3cqZAo" node="35zoHQHRCv_" resolve="files" />
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCw7" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:2oE1c2blJG0" />
+                  <ref role="3Tt5mk" to="3ior:2oE1c2blJG0" resolve="path" />
                 </node>
               </node>
               <node concept="2OqwBi" id="35zoHQHRCvQ" role="37vLTx">
                 <node concept="1PxgMI" id="35zoHQHRCvR" role="2Oq$k0">
-                  <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                   <node concept="2OqwBi" id="35zoHQHRCvS" role="1m5AlR">
                     <node concept="_YI3z" id="35zoHQHRCvT" role="2Oq$k0" />
                     <node concept="3TrEf2" id="35zoHQHRCvU" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH0AT" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCwb" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mA" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mA" resolve="dir" />
                 </node>
               </node>
             </node>
@@ -249,22 +253,24 @@
                   <ref role="3cqZAo" node="35zoHQHRCv_" resolve="files" />
                 </node>
                 <node concept="3Tsc0h" id="35zoHQHRCwD" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" />
+                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" resolve="parameters" />
                 </node>
               </node>
               <node concept="X8dFx" id="35zoHQHRCx5" role="2OqNvi">
                 <node concept="2OqwBi" id="35zoHQHRCxv" role="25WWJ7">
                   <node concept="1PxgMI" id="35zoHQHRCx7" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                     <node concept="2OqwBi" id="35zoHQHRCx8" role="1m5AlR">
                       <node concept="_YI3z" id="35zoHQHRCx9" role="2Oq$k0" />
                       <node concept="3TrEf2" id="35zoHQHRCxa" role="2OqNvi">
-                        <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                        <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH0Ar" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="35zoHQHRCx_" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:4zlO3QT8$nR" />
+                    <ref role="3TtcxE" to="3ior:4zlO3QT8$nR" resolve="selectors" />
                   </node>
                 </node>
               </node>
@@ -279,7 +285,7 @@
               <node concept="2OqwBi" id="35zoHQHRCw0" role="2Oq$k0">
                 <node concept="_YI3z" id="35zoHQHRCw1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="35zoHQHRCw2" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="35zoHQHRCw3" role="2OqNvi">
@@ -332,21 +338,23 @@
                   <ref role="3cqZAo" node="35zoHQHRCyq" resolve="file" />
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCyE" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:7UAfeVQUc4q" />
+                  <ref role="3Tt5mk" to="3ior:7UAfeVQUc4q" resolve="path" />
                 </node>
               </node>
               <node concept="2OqwBi" id="35zoHQHRCyF" role="37vLTx">
                 <node concept="1PxgMI" id="35zoHQHRCyG" role="2Oq$k0">
-                  <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                   <node concept="2OqwBi" id="35zoHQHRCyH" role="1m5AlR">
                     <node concept="_YI3z" id="35zoHQHRCyI" role="2Oq$k0" />
                     <node concept="3TrEf2" id="35zoHQHRCyJ" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH0B6" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCyK" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
                 </node>
               </node>
             </node>
@@ -358,14 +366,14 @@
                   <ref role="3cqZAo" node="35zoHQHRCyq" resolve="file" />
                 </node>
                 <node concept="3Tsc0h" id="35zoHQHRCzp" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:7UAfeVQUc4A" />
+                  <ref role="3TtcxE" to="3ior:7UAfeVQUc4A" resolve="parameters" />
                 </node>
               </node>
               <node concept="X8dFx" id="35zoHQHRCzP" role="2OqNvi">
                 <node concept="2OqwBi" id="35zoHQHRC$g" role="25WWJ7">
                   <node concept="_YI3z" id="35zoHQHRCzV" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="35zoHQHRC$m" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:7XQqoCTjyOu" />
+                    <ref role="3TtcxE" to="3ior:7XQqoCTjyOu" resolve="handlers" />
                   </node>
                 </node>
               </node>
@@ -380,7 +388,7 @@
               <node concept="2OqwBi" id="35zoHQHRCyP" role="2Oq$k0">
                 <node concept="_YI3z" id="35zoHQHRCyQ" role="2Oq$k0" />
                 <node concept="3TrEf2" id="35zoHQHRCyV" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="35zoHQHRCyS" role="2OqNvi">
@@ -433,21 +441,23 @@
                   <ref role="3cqZAo" node="35zoHQHRCxE" resolve="files" />
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCxU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:2oE1c2blJG0" />
+                  <ref role="3Tt5mk" to="3ior:2oE1c2blJG0" resolve="path" />
                 </node>
               </node>
               <node concept="2OqwBi" id="35zoHQHRCxV" role="37vLTx">
                 <node concept="1PxgMI" id="35zoHQHRCxW" role="2Oq$k0">
-                  <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                   <node concept="2OqwBi" id="35zoHQHRCxX" role="1m5AlR">
                     <node concept="_YI3z" id="35zoHQHRCxY" role="2Oq$k0" />
                     <node concept="3TrEf2" id="35zoHQHRCxZ" role="2OqNvi">
-                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                      <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH0At" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="35zoHQHRCy0" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mA" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8$mA" resolve="dir" />
                 </node>
               </node>
             </node>
@@ -459,22 +469,24 @@
                   <ref role="3cqZAo" node="35zoHQHRCxE" resolve="files" />
                 </node>
                 <node concept="3Tsc0h" id="35zoHQHRCy5" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" />
+                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" resolve="parameters" />
                 </node>
               </node>
               <node concept="X8dFx" id="35zoHQHRCy6" role="2OqNvi">
                 <node concept="2OqwBi" id="35zoHQHRCy7" role="25WWJ7">
                   <node concept="1PxgMI" id="35zoHQHRCy8" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                     <node concept="2OqwBi" id="35zoHQHRCy9" role="1m5AlR">
                       <node concept="_YI3z" id="35zoHQHRCya" role="2Oq$k0" />
                       <node concept="3TrEf2" id="35zoHQHRCyb" role="2OqNvi">
-                        <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                        <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH0_n" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="35zoHQHRCyc" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:4zlO3QT8$nR" />
+                    <ref role="3TtcxE" to="3ior:4zlO3QT8$nR" resolve="selectors" />
                   </node>
                 </node>
               </node>
@@ -487,14 +499,14 @@
                   <ref role="3cqZAo" node="35zoHQHRCxE" resolve="files" />
                 </node>
                 <node concept="3Tsc0h" id="35zoHQHRC$z" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" />
+                  <ref role="3TtcxE" to="3ior:2oE1c2blJG1" resolve="parameters" />
                 </node>
               </node>
               <node concept="X8dFx" id="35zoHQHRC$t" role="2OqNvi">
                 <node concept="2OqwBi" id="35zoHQHRC$u" role="25WWJ7">
                   <node concept="_YI3z" id="35zoHQHRC$v" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="35zoHQHRC$w" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:7XQqoCTjyOu" />
+                    <ref role="3TtcxE" to="3ior:7XQqoCTjyOu" resolve="handlers" />
                   </node>
                 </node>
               </node>
@@ -509,7 +521,7 @@
               <node concept="2OqwBi" id="35zoHQHRCyh" role="2Oq$k0">
                 <node concept="_YI3z" id="35zoHQHRCyi" role="2Oq$k0" />
                 <node concept="3TrEf2" id="35zoHQHRCyj" role="2OqNvi">
-                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" />
+                  <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
                 </node>
               </node>
               <node concept="1mIQ4w" id="35zoHQHRCyk" role="2OqNvi">

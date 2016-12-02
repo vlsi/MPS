@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -148,8 +148,8 @@
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143221076066" name="jetbrains.mps.lang.smodel.structure.Node_InsertNewPrevSiblingOperation" flags="nn" index="Hik5C">
@@ -1000,9 +1000,11 @@
               <ref role="ehGHo" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
             </node>
             <node concept="1PxgMI" id="h4CIWoF" role="33vP2m">
-              <ref role="1m5ApE" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               <node concept="37vLTw" id="2BHiRxglxd6" role="1m5AlR">
                 <ref role="3cqZAo" node="h208F56" resolve="node" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGYB3" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               </node>
             </node>
           </node>
@@ -1014,9 +1016,11 @@
               <ref role="ehGHo" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
             </node>
             <node concept="1PxgMI" id="h4CJCve" role="33vP2m">
-              <ref role="1m5ApE" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               <node concept="37vLTw" id="2BHiRxgm5Mg" role="1m5AlR">
                 <ref role="3cqZAo" node="h208F56" resolve="node" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGYB1" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               </node>
             </node>
           </node>
@@ -1041,9 +1045,11 @@
               <ref role="ehGHo" to="tpee:fzclF8l" resolve="Statement" />
             </node>
             <node concept="1PxgMI" id="h4CJwMk" role="33vP2m">
-              <ref role="1m5ApE" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               <node concept="37vLTw" id="2BHiRxgmv1O" role="1m5AlR">
                 <ref role="3cqZAo" node="h4CJwM1" resolve="node" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGYB2" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
               </node>
             </node>
           </node>
@@ -3319,12 +3325,14 @@
         <node concept="3clFbF" id="hasoLMg" role="3cqZAp">
           <node concept="2OqwBi" id="hxx$Nkk" role="3clFbG">
             <node concept="1PxgMI" id="hasoMkq" role="2Oq$k0">
-              <ref role="1m5ApE" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
               <node concept="2OqwBi" id="4wz6$JeqGci" role="1m5AlR">
                 <node concept="37vLTw" id="3GM_nagTBiJ" role="2Oq$k0">
                   <ref role="3cqZAo" node="h8brUSE" resolve="concept" />
                 </node>
                 <node concept="FGMqu" id="4wz6$JeqGeU" role="2OqNvi" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGYB0" role="3oSUPX">
+                <ref role="cht4Q" to="tpce:h0PlHMJ" resolve="InterfaceConceptDeclaration" />
               </node>
             </node>
             <node concept="3TrcHB" id="hasoZso" role="2OqNvi">

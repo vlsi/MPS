@@ -5,7 +5,7 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -172,8 +172,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -224,12 +224,14 @@
           <node concept="3clFbS" id="5Sg$D5FMgdJ" role="3clFbx">
             <node concept="3cpWs6" id="5Sg$D5FMgdK" role="3cqZAp">
               <node concept="1PxgMI" id="5Sg$D5FMgdL" role="3cqZAk">
-                <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                 <node concept="2OqwBi" id="5Sg$D5FMge6" role="1m5AlR">
                   <node concept="13iPFW" id="5Sg$D5FMge7" role="2Oq$k0" />
                   <node concept="3TrEf2" id="5Sg$D5FMge8" role="2OqNvi">
                     <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdGZlE" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
                 </node>
               </node>
             </node>

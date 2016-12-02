@@ -357,8 +357,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
@@ -3127,9 +3127,11 @@
                           <ref role="3TtcxE" to="kxd5:7Y0nKKHP6d3" resolve="child1" />
                         </node>
                         <node concept="1PxgMI" id="1wEcoXjJ1ls" role="2Oq$k0">
-                          <ref role="1m5ApE" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
                           <node concept="37vLTw" id="1wEcoXjJ1lt" role="1m5AlR">
                             <ref role="3cqZAo" node="1wEcoXjJ1lg" resolve="result" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH0zi" role="3oSUPX">
+                            <ref role="cht4Q" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
                           </node>
                         </node>
                       </node>
@@ -3439,8 +3441,10 @@
                               <ref role="3TtcxE" to="kxd5:7Y0nKKHP6d3" resolve="child1" />
                             </node>
                             <node concept="1PxgMI" id="1wEcoXjJ1ob" role="2Oq$k0">
-                              <ref role="1m5ApE" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
                               <node concept="uqdCJ" id="1wEcoXjJ1oi" role="1m5AlR" />
+                              <node concept="chp4Y" id="714IaVdH0zj" role="3oSUPX">
+                                <ref role="cht4Q" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
+                              </node>
                             </node>
                           </node>
                         </node>

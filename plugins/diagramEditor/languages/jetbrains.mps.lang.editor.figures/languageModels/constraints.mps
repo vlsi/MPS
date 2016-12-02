@@ -145,8 +145,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -185,7 +185,7 @@
   <node concept="1M2fIO" id="WK6Z46COzZ">
     <ref role="1M2myG" to="ny2:1SVBbIvt9f2" resolve="ExternalViewFigure" />
     <node concept="1N5Pfh" id="4H19mAvWamL" role="1Mr941">
-      <ref role="1N5Vy1" to="ny2:1SVBbIvt9fR" />
+      <ref role="1N5Vy1" to="ny2:1SVBbIvt9fR" resolve="classifier" />
       <node concept="13QW63" id="4H19mAw3X18" role="1N6uqs">
         <node concept="3clFbS" id="4H19mAw3X19" role="2VODD2">
           <node concept="3cpWs6" id="4H19mAw3X1W" role="3cqZAp">
@@ -208,7 +208,7 @@
               <node concept="2OqwBi" id="WK6Z46COSt" role="2Oq$k0">
                 <node concept="EsrRn" id="WK6Z46COM6" role="2Oq$k0" />
                 <node concept="3TrEf2" id="WK6Z46CQCP" role="2OqNvi">
-                  <ref role="3Tt5mk" to="ny2:1SVBbIvt9fR" />
+                  <ref role="3Tt5mk" to="ny2:1SVBbIvt9fR" resolve="classifier" />
                 </node>
               </node>
               <node concept="3TrcHB" id="WK6Z46D0ru" role="2OqNvi">
@@ -231,7 +231,7 @@
               <node concept="2OqwBi" id="WK6Z46D2Al" role="2Oq$k0">
                 <node concept="EsrRn" id="WK6Z46D2vY" role="2Oq$k0" />
                 <node concept="3TrEf2" id="WK6Z46D4mH" role="2OqNvi">
-                  <ref role="3Tt5mk" to="ny2:1SVBbIvt9gL" />
+                  <ref role="3Tt5mk" to="ny2:1SVBbIvt9gL" resolve="fieldDeclaration" />
                 </node>
               </node>
               <node concept="3TrcHB" id="WK6Z46Dfxm" role="2OqNvi">
@@ -243,7 +243,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="4H19mAw45Y_" role="1Mr941">
-      <ref role="1N5Vy1" to="ny2:1SVBbIvt9gL" />
+      <ref role="1N5Vy1" to="ny2:1SVBbIvt9gL" resolve="fieldDeclaration" />
       <node concept="1dDu$B" id="4H19mAw46fw" role="1N6uqs">
         <ref role="1dDu$A" to="tpee:fz12cDC" resolve="FieldDeclaration" />
       </node>
@@ -317,9 +317,11 @@
               <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
             </node>
             <node concept="1PxgMI" id="4H19mAvXSex" role="33vP2m">
-              <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
               <node concept="37vLTw" id="4H19mAvXSbj" role="1m5AlR">
                 <ref role="3cqZAo" node="4H19mAvXQ5X" resolve="node" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGZ51" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
               </node>
             </node>
           </node>
@@ -338,7 +340,7 @@
                 <ref role="3cqZAo" node="4H19mAvXRZe" resolve="classConcept" />
               </node>
               <node concept="3TrEf2" id="4H19mAvYuB5" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
               </node>
             </node>
             <node concept="1mIQ4w" id="4H19mAvYxUa" role="2OqNvi">
@@ -364,7 +366,7 @@
                     <ref role="3cqZAo" node="4H19mAvXRZe" resolve="classConcept" />
                   </node>
                   <node concept="3TrEf2" id="4H19mAvYMw_" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                    <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="4H19mAvYMwA" role="2OqNvi">

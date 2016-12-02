@@ -5,7 +5,7 @@
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -134,8 +134,8 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -517,8 +517,10 @@
                   <node concept="2oxUTD" id="gUYGu8M" role="2OqNvi">
                     <node concept="2OqwBi" id="hERvwZU" role="2oxUTC">
                       <node concept="1PxgMI" id="gUYGxDt" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpnk:gbrxy3r" resolve="Operation" />
                         <node concept="1r4N5L" id="gUYGvza" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdGZnz" role="3oSUPX">
+                          <ref role="cht4Q" to="tpnk:gbrxy3r" resolve="Operation" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="gUYGzf3" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpnk:gbrxImN" resolve="leftOperand" />
@@ -538,8 +540,10 @@
                   <node concept="2oxUTD" id="gUYG$SG" role="2OqNvi">
                     <node concept="2OqwBi" id="hERvx2d" role="2oxUTC">
                       <node concept="1PxgMI" id="gUYG$SI" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpnk:gbrxy3r" resolve="Operation" />
                         <node concept="1r4N5L" id="gUYG$SJ" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdGZny" role="3oSUPX">
+                          <ref role="cht4Q" to="tpnk:gbrxy3r" resolve="Operation" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="gUYG_HZ" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpnk:gbrxQ_F" resolve="rightOperand" />

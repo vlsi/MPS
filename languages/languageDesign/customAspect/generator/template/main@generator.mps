@@ -13,7 +13,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -367,8 +367,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -1734,7 +1734,6 @@
                                                 <node concept="3clFbF" id="4F0TDiuDddC" role="3cqZAp">
                                                   <node concept="2OqwBi" id="4F0TDiuDpKR" role="3clFbG">
                                                     <node concept="1PxgMI" id="4F0TDiuDpx3" role="2Oq$k0">
-                                                      <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                                                       <node concept="2OqwBi" id="4F0TDiuDnJd" role="1m5AlR">
                                                         <node concept="1UaxmW" id="7Jfx5bwQr$k" role="2Oq$k0">
                                                           <node concept="1YaCAy" id="7Jfx5bwQrQm" role="1Ub_4A">
@@ -1756,6 +1755,9 @@
                                                         <node concept="3TrEf2" id="4F0TDiuDo0S" role="2OqNvi">
                                                           <ref role="3Tt5mk" to="tp2q:gKA3Ige" resolve="elementType" />
                                                         </node>
+                                                      </node>
+                                                      <node concept="chp4Y" id="714IaVdH1Gu" role="3oSUPX">
+                                                        <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
                                                       </node>
                                                     </node>
                                                     <node concept="3TrEf2" id="4F0TDiuDqjx" role="2OqNvi">
@@ -1893,9 +1895,11 @@
                                             <ref role="37wK5l" to="b2yo:7Jfx5bwQG3A" resolve="getGeneratedClassName" />
                                           </node>
                                           <node concept="1PxgMI" id="4F0TDiuDy9y" role="2Oq$k0">
-                                            <ref role="1m5ApE" to="hfbu:7Jfx5bwQG39" resolve="IAspectConcept" />
                                             <node concept="37vLTw" id="4F0TDiuDxsM" role="1m5AlR">
                                               <ref role="3cqZAo" node="4F0TDiuDdej" resolve="instance" />
+                                            </node>
+                                            <node concept="chp4Y" id="714IaVdH1Gv" role="3oSUPX">
+                                              <ref role="cht4Q" to="hfbu:7Jfx5bwQG39" resolve="IAspectConcept" />
                                             </node>
                                           </node>
                                         </node>

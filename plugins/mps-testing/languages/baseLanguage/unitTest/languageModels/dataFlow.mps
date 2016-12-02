@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -163,7 +163,7 @@
   </node>
   <node concept="3_zdsH" id="692cUnf6I45">
     <property role="3GE5qa" value="assert" />
-    <ref role="3_znuS" to="tpe3:692cUnf6I3R" resolve="AssertInNotNull" />
+    <ref role="3_znuS" to="tpe3:692cUnf6I3R" resolve="AssertIsNotNull" />
     <node concept="3__wT9" id="692cUnf6I46" role="3_A6iZ">
       <node concept="3clFbS" id="692cUnf6I47" role="2VODD2">
         <node concept="3AgYrR" id="692cUnf6I48" role="3cqZAp">

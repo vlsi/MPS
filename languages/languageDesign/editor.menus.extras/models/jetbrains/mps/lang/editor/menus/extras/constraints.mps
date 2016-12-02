@@ -127,8 +127,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
@@ -157,7 +157,7 @@
   <node concept="1M2fIO" id="46W80XA5Tji">
     <ref role="1M2myG" to="a1gu:2ytFvC$HnDh" resolve="TransformationMenuPart_Intention" />
     <node concept="1N5Pfh" id="46W80XA5Tjn" role="1Mr941">
-      <ref role="1N5Vy1" to="a1gu:2ytFvC$HnDi" />
+      <ref role="1N5Vy1" to="a1gu:2ytFvC$HnDi" resolve="intention" />
       <node concept="13QW63" id="46W80XA5Tjp" role="1N6uqs">
         <node concept="3clFbS" id="46W80XA5Tjq" role="2VODD2">
           <node concept="3clFbF" id="46W80XA5YJv" role="3cqZAp">
@@ -198,13 +198,15 @@
                           </node>
                           <node concept="2OqwBi" id="46W80XA62SD" role="33vP2m">
                             <node concept="1PxgMI" id="46W80XA62SE" role="2Oq$k0">
-                              <ref role="1m5ApE" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
                               <node concept="37vLTw" id="46W80XA62SF" role="1m5AlR">
                                 <ref role="3cqZAo" node="46W80XA60Sb" resolve="node" />
                               </node>
+                              <node concept="chp4Y" id="714IaVdH1$v" role="3oSUPX">
+                                <ref role="cht4Q" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
+                              </node>
                             </node>
                             <node concept="3TrEf2" id="46W80XA62SG" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp3j:2c3oNEsfAwi" />
+                              <ref role="3Tt5mk" to="tp3j:2c3oNEsfAwi" resolve="forConcept" />
                             </node>
                           </node>
                         </node>
@@ -279,7 +281,7 @@
   <node concept="1M2fIO" id="46W80XA6pvL">
     <ref role="1M2myG" to="a1gu:46W80XA3sdR" resolve="TransformationMenuPart_Refactoring" />
     <node concept="1N5Pfh" id="46W80XA6pvM" role="1Mr941">
-      <ref role="1N5Vy1" to="a1gu:46W80XA3sdU" />
+      <ref role="1N5Vy1" to="a1gu:46W80XA3sdU" resolve="refactoring" />
       <node concept="13QW63" id="46W80XA6pvO" role="1N6uqs">
         <node concept="3clFbS" id="46W80XA6pvP" role="2VODD2">
           <node concept="3clFbF" id="46W80XA6pBx" role="3cqZAp">
@@ -321,21 +323,25 @@
                           <node concept="2EnYce" id="46W80XA76cc" role="33vP2m">
                             <node concept="1PxgMI" id="46W80XA779d" role="2Oq$k0">
                               <property role="1BlNFB" value="true" />
-                              <ref role="1m5ApE" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
                               <node concept="2OqwBi" id="46W80XA7brv" role="1m5AlR">
                                 <node concept="1PxgMI" id="46W80XA79qM" role="2Oq$k0">
-                                  <ref role="1m5ApE" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
                                   <node concept="37vLTw" id="46W80XA779g" role="1m5AlR">
                                     <ref role="3cqZAo" node="46W80XA6pBI" resolve="node" />
                                   </node>
+                                  <node concept="chp4Y" id="714IaVdH1$u" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
+                                  </node>
                                 </node>
                                 <node concept="3TrEf2" id="46W80XA779h" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp1h:5YKiRiBuwpm" />
+                                  <ref role="3Tt5mk" to="tp1h:5YKiRiBuwpm" resolve="target" />
                                 </node>
+                              </node>
+                              <node concept="chp4Y" id="714IaVdH1$w" role="3oSUPX">
+                                <ref role="cht4Q" to="tp1h:5YKiRiBuwlG" resolve="NodeTarget" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="46W80XA6whw" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp1h:5YKiRiBuwmm" />
+                              <ref role="3Tt5mk" to="tp1h:5YKiRiBuwmm" resolve="concept" />
                             </node>
                           </node>
                         </node>

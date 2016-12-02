@@ -5,7 +5,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -310,8 +310,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1181949435690" name="jetbrains.mps.lang.smodel.structure.Concept_NewInstance" flags="nn" index="LFhST" />
@@ -1248,12 +1248,14 @@
                     <ref role="ehGHo" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                   <node concept="1PxgMI" id="h7UYtIh" role="33vP2m">
-                    <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     <node concept="2OqwBi" id="hxx$Sc3" role="1m5AlR">
                       <node concept="37vLTw" id="3GM_nagTwWr" role="2Oq$k0">
                         <ref role="3cqZAo" node="h7UYtHw" resolve="contextNode" />
                       </node>
                       <node concept="1mfA1w" id="h7UYtIj" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH1wI" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
                     </node>
                   </node>
                 </node>

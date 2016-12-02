@@ -7,7 +7,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -61,8 +61,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -104,8 +104,10 @@
                   </node>
                   <node concept="2OqwBi" id="hHiAC_N" role="37vLTx">
                     <node concept="1PxgMI" id="hHiAC_O" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
                       <node concept="1r4N5L" id="hHiAC_P" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04S" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hHiAKNO" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hHiwH3s" resolve="label" />
@@ -135,8 +137,10 @@
                   </node>
                   <node concept="2OqwBi" id="hLiEkfI" role="37vLTx">
                     <node concept="1PxgMI" id="hLiEkfJ" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
                       <node concept="1r4N5L" id="hLiEkfK" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04G" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hLiEr3A" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hLiAAM5" resolve="label" />
@@ -173,8 +177,10 @@
                   </node>
                   <node concept="2OqwBi" id="hHiACA5" role="37vLTx">
                     <node concept="1PxgMI" id="hHiACA6" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
                       <node concept="1r4N5L" id="hHiACA7" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04V" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hHiAPnQ" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hHiwH3n" resolve="label" />
@@ -204,8 +210,10 @@
                   </node>
                   <node concept="2OqwBi" id="hLiEIZY" role="37vLTx">
                     <node concept="1PxgMI" id="hLiEIZZ" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
                       <node concept="1r4N5L" id="hLiEJ00" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04M" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hLiEMlr" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hLiAAM5" resolve="label" />
@@ -242,8 +250,10 @@
                   </node>
                   <node concept="2OqwBi" id="hLiEunZ" role="37vLTx">
                     <node concept="1PxgMI" id="hLiEuo0" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
                       <node concept="1r4N5L" id="hLiEuo1" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04T" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hLiEuo2" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hHiwH3n" resolve="label" />
@@ -273,8 +283,10 @@
                   </node>
                   <node concept="2OqwBi" id="hLiEybS" role="37vLTx">
                     <node concept="1PxgMI" id="hLiEybT" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
                       <node concept="1r4N5L" id="hLiEybU" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04N" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hLiEHuo" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hHiwH3s" resolve="label" />
@@ -311,8 +323,10 @@
                   </node>
                   <node concept="2OqwBi" id="hIgdmeN" role="37vLTx">
                     <node concept="1PxgMI" id="hIgdiHF" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
                       <node concept="1r4N5L" id="hIgdhEL" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04J" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hIgdn0q" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hIfWi7C" resolve="userKey" />
@@ -349,8 +363,10 @@
                   </node>
                   <node concept="2OqwBi" id="hIgdnTi" role="37vLTx">
                     <node concept="1PxgMI" id="hIgdnTj" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
                       <node concept="1r4N5L" id="hIgdnTk" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04W" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hIgdnTl" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hIfWi7C" resolve="userKey" />
@@ -387,8 +403,10 @@
                   </node>
                   <node concept="2OqwBi" id="hIgdsnG" role="37vLTx">
                     <node concept="1PxgMI" id="hIgdsnH" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
                       <node concept="1r4N5L" id="hIgdsnI" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH04O" role="3oSUPX">
+                        <ref role="cht4Q" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hIgdsnJ" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpf3:hIfWi7C" resolve="userKey" />

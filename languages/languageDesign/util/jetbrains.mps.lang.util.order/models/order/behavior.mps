@@ -112,8 +112,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -178,7 +178,6 @@
                 </node>
                 <node concept="2OqwBi" id="2CFL3ni7A9L" role="37vLTx">
                   <node concept="1PxgMI" id="264$spPgr6O" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                     <node concept="2OqwBi" id="2CFL3ni7A9M" role="1m5AlR">
                       <node concept="13iPFW" id="2CFL3ni7A9N" role="2Oq$k0" />
                       <node concept="2Xjw5R" id="2CFL3ni7A9O" role="2OqNvi">
@@ -188,6 +187,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGZ3n" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="2CFL3ni7A9S" role="2OqNvi">

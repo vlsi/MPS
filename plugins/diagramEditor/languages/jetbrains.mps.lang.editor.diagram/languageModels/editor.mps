@@ -394,8 +394,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -1983,9 +1983,11 @@
                   <node concept="3clFbS" id="1wEcoXjJkyk" role="1bW5cS">
                     <node concept="3clFbF" id="1wEcoXjJkyl" role="3cqZAp">
                       <node concept="1PxgMI" id="1wEcoXjJkym" role="3clFbG">
-                        <ref role="1m5ApE" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                         <node concept="37vLTw" id="1wEcoXjJkyn" role="1m5AlR">
                           <ref role="3cqZAo" node="1wEcoXjJkyo" resolve="it" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYyR" role="3oSUPX">
+                          <ref role="cht4Q" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                         </node>
                       </node>
                     </node>
@@ -2133,9 +2135,11 @@
                   <node concept="3clFbS" id="1wEcoXjJk_9" role="1bW5cS">
                     <node concept="3clFbF" id="1wEcoXjJk_a" role="3cqZAp">
                       <node concept="1PxgMI" id="1wEcoXjJk_b" role="3clFbG">
-                        <ref role="1m5ApE" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
                         <node concept="37vLTw" id="1wEcoXjJk_c" role="1m5AlR">
                           <ref role="3cqZAo" node="1wEcoXjJk_d" resolve="it" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYz0" role="3oSUPX">
+                          <ref role="cht4Q" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
                         </node>
                       </node>
                     </node>

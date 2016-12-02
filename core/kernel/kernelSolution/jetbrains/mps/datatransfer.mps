@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -225,8 +225,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -937,9 +937,11 @@
                   </node>
                   <node concept="2OqwBi" id="1TZ7NoVDTlX" role="2GsD0m">
                     <node concept="1PxgMI" id="1TZ7NoVDTnG" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpdg:5abCRRje3Su" resolve="CopyPasteHandlers" />
                       <node concept="37vLTw" id="3GM_nagTxeQ" role="1m5AlR">
                         <ref role="3cqZAo" node="1TZ7NoVDTls" resolve="root" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZln" role="3oSUPX">
+                        <ref role="cht4Q" to="tpdg:5abCRRje3Su" resolve="CopyPasteHandlers" />
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="1TZ7NoVDTlZ" role="2OqNvi">
@@ -1025,9 +1027,11 @@
                   </node>
                   <node concept="2OqwBi" id="1TZ7NoVDTmv" role="2GsD0m">
                     <node concept="1PxgMI" id="1TZ7NoVDTnK" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpdg:5abCRRje3Su" resolve="CopyPasteHandlers" />
                       <node concept="37vLTw" id="3GM_nagTyUt" role="1m5AlR">
                         <ref role="3cqZAo" node="1TZ7NoVDTls" resolve="root" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZlr" role="3oSUPX">
+                        <ref role="cht4Q" to="tpdg:5abCRRje3Su" resolve="CopyPasteHandlers" />
                       </node>
                     </node>
                     <node concept="3Tsc0h" id="1TZ7NoVDTmx" role="2OqNvi">

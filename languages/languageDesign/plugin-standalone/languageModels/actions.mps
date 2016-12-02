@@ -88,13 +88,16 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -147,7 +150,6 @@
                       <ref role="37wK5l" to="tpek:4_LVZ3pBr7M" resolve="staticFields" />
                     </node>
                     <node concept="1PxgMI" id="hRlaacB" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="2OqwBi" id="hRlaacC" role="1m5AlR">
                         <node concept="2c44tf" id="hRlaacD" role="2Oq$k0">
                           <node concept="3uibUv" id="hRlaacE" role="2c44tc">
@@ -157,6 +159,9 @@
                         <node concept="3TrEf2" id="hRlaacF" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH0GH" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
                       </node>
                     </node>
                   </node>

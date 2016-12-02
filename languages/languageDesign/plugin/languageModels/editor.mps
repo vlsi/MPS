@@ -4,7 +4,7 @@
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
@@ -460,8 +460,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
@@ -2523,7 +2523,6 @@
                                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                   <node concept="2OqwBi" id="112RIkgil1t" role="37wK5m">
                                     <node concept="1PxgMI" id="112RIkgil1u" role="2Oq$k0">
-                                      <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
                                       <node concept="2OqwBi" id="112RIkgil1v" role="1m5AlR">
                                         <node concept="2c44tf" id="112RIkgil1w" role="2Oq$k0">
                                           <node concept="3uibUv" id="5nlt9wE7MUR" role="2c44tc">
@@ -2533,6 +2532,9 @@
                                         <node concept="3TrEf2" id="112RIkgil1y" role="2OqNvi">
                                           <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                                         </node>
+                                      </node>
+                                      <node concept="chp4Y" id="714IaVdGY$E" role="3oSUPX">
+                                        <ref role="cht4Q" to="tpee:hiABswc" resolve="Annotation" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="112RIkgil1z" role="2OqNvi">
@@ -2659,7 +2661,6 @@
                   <node concept="17QB3L" id="112RIkgil2c" role="1tU5fm" />
                   <node concept="2OqwBi" id="112RIkgil2d" role="33vP2m">
                     <node concept="1PxgMI" id="112RIkgil2e" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                       <node concept="2OqwBi" id="112RIkgil2f" role="1m5AlR">
                         <node concept="37vLTw" id="3GM_nagT$f0" role="2Oq$k0">
                           <ref role="3cqZAo" node="112RIkgil1H" resolve="description" />
@@ -2667,6 +2668,9 @@
                         <node concept="3TrEf2" id="112RIkgil2h" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:hiB70Z4" resolve="value" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGY$L" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="112RIkgil2i" role="2OqNvi">
@@ -2737,7 +2741,6 @@
                                   <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                   <node concept="2OqwBi" id="112RIkgil2U" role="37wK5m">
                                     <node concept="1PxgMI" id="112RIkgil2V" role="2Oq$k0">
-                                      <ref role="1m5ApE" to="tpee:hiABswc" resolve="Annotation" />
                                       <node concept="2OqwBi" id="112RIkgil2W" role="1m5AlR">
                                         <node concept="2c44tf" id="112RIkgil2X" role="2Oq$k0">
                                           <node concept="3uibUv" id="5nlt9wE7MUS" role="2c44tc">
@@ -2747,6 +2750,9 @@
                                         <node concept="3TrEf2" id="112RIkgil2Z" role="2OqNvi">
                                           <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                                         </node>
+                                      </node>
+                                      <node concept="chp4Y" id="714IaVdGY$G" role="3oSUPX">
+                                        <ref role="cht4Q" to="tpee:hiABswc" resolve="Annotation" />
                                       </node>
                                     </node>
                                     <node concept="3TrcHB" id="112RIkgil30" role="2OqNvi">
@@ -2873,7 +2879,6 @@
                   <node concept="17QB3L" id="112RIkgil3D" role="1tU5fm" />
                   <node concept="2OqwBi" id="112RIkgil3E" role="33vP2m">
                     <node concept="1PxgMI" id="112RIkgil3F" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                       <node concept="2OqwBi" id="112RIkgil3G" role="1m5AlR">
                         <node concept="37vLTw" id="3GM_nagTs9p" role="2Oq$k0">
                           <ref role="3cqZAo" node="112RIkgil3a" resolve="longDescription" />
@@ -2881,6 +2886,9 @@
                         <node concept="3TrEf2" id="112RIkgil3I" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:hiB70Z4" resolve="value" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGY$U" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="112RIkgil3J" role="2OqNvi">

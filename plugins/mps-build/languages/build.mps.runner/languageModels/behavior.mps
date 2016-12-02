@@ -128,8 +128,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -345,7 +345,6 @@
                 </node>
                 <node concept="1PxgMI" id="2whOjLMv7ZX" role="33vP2m">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                   <node concept="2OqwBi" id="2whOjLMv7ZZ" role="1m5AlR">
                     <node concept="37vLTw" id="7eQOMx7ZvWz" role="2Oq$k0">
                       <ref role="3cqZAo" node="3X9rC2XzJeg" resolve="artifacts" />
@@ -356,6 +355,9 @@
                         <ref role="2Gs0qQ" node="2whOjLMv81j" resolve="m" />
                       </node>
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGZno" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                   </node>
                 </node>
               </node>
@@ -391,7 +393,6 @@
                       </node>
                       <node concept="1PxgMI" id="2whOjLMvVXg" role="37vLTx">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                         <node concept="2OqwBi" id="2whOjLMvVXh" role="1m5AlR">
                           <node concept="37vLTw" id="7eQOMx7ZvW$" role="2Oq$k0">
                             <ref role="3cqZAo" node="3X9rC2XzJeg" resolve="artifacts" />
@@ -401,9 +402,11 @@
                             <node concept="2OqwBi" id="2whOjLMvVXk" role="37wK5m">
                               <node concept="1PxgMI" id="2whOjLMvVXl" role="2Oq$k0">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
                                 <node concept="2GrUjf" id="7eQOMx7ZY2x" role="1m5AlR">
                                   <ref role="2Gs0qQ" node="2whOjLMv81j" resolve="m" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGZnm" role="3oSUPX">
+                                  <ref role="cht4Q" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="2whOjLMvVXn" role="2OqNvi">
@@ -411,6 +414,9 @@
                               </node>
                             </node>
                           </node>
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGZnk" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                         </node>
                       </node>
                     </node>
@@ -426,9 +432,11 @@
                             <ref role="37wK5l" to="o3n2:57YmpYyL8Fh" resolve="add" />
                             <node concept="1PxgMI" id="4fCiNXDYw1C" role="37wK5m">
                               <property role="1BlNFB" value="true" />
-                              <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                               <node concept="37vLTw" id="7eQOMx7ZVsC" role="1m5AlR">
                                 <ref role="3cqZAo" node="2whOjLMv81d" resolve="artifact" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdGZnl" role="3oSUPX">
+                                <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                               </node>
                             </node>
                           </node>

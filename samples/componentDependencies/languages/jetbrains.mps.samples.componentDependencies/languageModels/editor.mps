@@ -372,8 +372,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -533,10 +533,12 @@
         <node concept="2OqwBi" id="16YoZ8JBkp4" role="3B0qBL">
           <node concept="2OqwBi" id="16YoZ8JAJHb" role="2Oq$k0">
             <node concept="1PxgMI" id="7SUlOxgBbO1" role="2Oq$k0">
-              <ref role="1m5ApE" to="ktbj:5pu6noS5f54" resolve="Component" />
               <node concept="2OqwBi" id="7SUlOxgxSIX" role="1m5AlR">
                 <node concept="1SoGT8" id="7SUlOxgxSHj" role="2Oq$k0" />
                 <node concept="1mfA1w" id="7SUlOxgBbEM" role="2OqNvi" />
+              </node>
+              <node concept="chp4Y" id="714IaVdH1_8" role="3oSUPX">
+                <ref role="cht4Q" to="ktbj:5pu6noS5f54" resolve="Component" />
               </node>
             </node>
             <node concept="3Tsc0h" id="16YoZ8JAJTu" role="2OqNvi">
@@ -611,10 +613,12 @@
                       <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                       <node concept="2OqwBi" id="74C6il$lro0" role="37wK5m">
                         <node concept="1PxgMI" id="74C6il$lr29" role="2Oq$k0">
-                          <ref role="1m5ApE" to="ktbj:5pu6noS5f54" resolve="Component" />
                           <node concept="2OqwBi" id="74C6il$lqtg" role="1m5AlR">
                             <node concept="1SoGT8" id="74C6il$lqeQ" role="2Oq$k0" />
                             <node concept="1mfA1w" id="74C6il$lqFF" role="2OqNvi" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH1_7" role="3oSUPX">
+                            <ref role="cht4Q" to="ktbj:5pu6noS5f54" resolve="Component" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="74C6il$lrQC" role="2OqNvi">

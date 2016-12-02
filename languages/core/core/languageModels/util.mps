@@ -130,13 +130,16 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -359,9 +362,11 @@
                 </node>
                 <node concept="2OqwBi" id="ANVkWUjkco" role="33vP2m">
                   <node concept="1PxgMI" id="ANVkWUjkcp" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
                     <node concept="2GrUjf" id="ANVkWUjkcq" role="1m5AlR">
                       <ref role="2Gs0qQ" node="ANVkWUiPp4" resolve="comment" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYBo" role="3oSUPX">
+                      <ref role="cht4Q" to="tpck:3$Sh7m_tmYK" resolve="IOldCommentContainer" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="ANVkWUjkcr" role="2OqNvi">

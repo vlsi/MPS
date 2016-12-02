@@ -161,8 +161,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -384,9 +384,11 @@
                     </node>
                     <node concept="1PxgMI" id="5WtSFRWuR08" role="33vP2m">
                       <property role="1BlNFB" value="true" />
-                      <ref role="1m5ApE" to="3ior:3elU8iQ7kMV" resolve="BuildSource_JavaLibraryCP" />
                       <node concept="2GrUjf" id="5WtSFRWuR07" role="1m5AlR">
                         <ref role="2Gs0qQ" node="5WtSFRWuQYz" resolve="element" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH0DD" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:3elU8iQ7kMV" resolve="BuildSource_JavaLibraryCP" />
                       </node>
                     </node>
                   </node>
@@ -436,9 +438,11 @@
                             <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                             <node concept="2OqwBi" id="5WtSFRWuR2R" role="37wK5m">
                               <node concept="1PxgMI" id="5WtSFRWuR2x" role="2Oq$k0">
-                                <ref role="1m5ApE" to="3ior:15RAxQWZPkq" resolve="BuildSource_JavaJar" />
                                 <node concept="37vLTw" id="3GM_nagTwDg" role="1m5AlR">
                                   <ref role="3cqZAo" node="5WtSFRWuR1h" resolve="classpath" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0Ee" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:15RAxQWZPkq" resolve="BuildSource_JavaJar" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWuR2X" role="2OqNvi">
@@ -486,9 +490,11 @@
                                     <node concept="2OqwBi" id="5WtSFRWvglk" role="3uHU7w">
                                       <node concept="2OqwBi" id="5WtSFRWvgl0" role="2Oq$k0">
                                         <node concept="1PxgMI" id="5WtSFRWvgl1" role="2Oq$k0">
-                                          <ref role="1m5ApE" to="3ior:15RAxQWZPkq" resolve="BuildSource_JavaJar" />
                                           <node concept="37vLTw" id="3GM_nagTvWE" role="1m5AlR">
                                             <ref role="3cqZAo" node="5WtSFRWuR1h" resolve="classpath" />
+                                          </node>
+                                          <node concept="chp4Y" id="714IaVdH0DJ" role="3oSUPX">
+                                            <ref role="cht4Q" to="3ior:15RAxQWZPkq" resolve="BuildSource_JavaJar" />
                                           </node>
                                         </node>
                                         <node concept="3TrEf2" id="5WtSFRWvgl3" role="2OqNvi">
@@ -555,9 +561,11 @@
                           <node concept="2OqwBi" id="5WtSFRWvgmp" role="33vP2m">
                             <node concept="2OqwBi" id="5WtSFRWvgmq" role="2Oq$k0">
                               <node concept="1PxgMI" id="5WtSFRWvgmr" role="2Oq$k0">
-                                <ref role="1m5ApE" to="3ior:4RsV8qJHgQB" resolve="BuildSource_JavaLibraryExternalJar" />
                                 <node concept="37vLTw" id="3GM_nagT$Cd" role="1m5AlR">
                                   <ref role="3cqZAo" node="5WtSFRWuR1h" resolve="classpath" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0EE" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:4RsV8qJHgQB" resolve="BuildSource_JavaLibraryExternalJar" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWvgmt" role="2OqNvi">
@@ -578,9 +586,11 @@
                           </node>
                           <node concept="1PxgMI" id="7B9bSSBH7cY" role="33vP2m">
                             <property role="1BlNFB" value="true" />
-                            <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                             <node concept="37vLTw" id="3GM_nagTxfG" role="1m5AlR">
                               <ref role="3cqZAo" node="5WtSFRWvgmn" resolve="file" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdH0Eg" role="3oSUPX">
+                              <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                             </node>
                           </node>
                         </node>
@@ -594,7 +604,6 @@
                               </node>
                               <node concept="1PxgMI" id="7B9bSSBH7gb" role="37vLTx">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                                 <node concept="2OqwBi" id="7B9bSSBH7gc" role="1m5AlR">
                                   <node concept="37vLTw" id="2BHiRxeumwR" role="2Oq$k0">
                                     <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
@@ -603,9 +612,11 @@
                                     <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                                     <node concept="2OqwBi" id="7B9bSSBH7gh" role="37wK5m">
                                       <node concept="1PxgMI" id="7B9bSSBH7gi" role="2Oq$k0">
-                                        <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                                         <node concept="37vLTw" id="3GM_nagTy9I" role="1m5AlR">
                                           <ref role="3cqZAo" node="5WtSFRWvgmn" resolve="file" />
+                                        </node>
+                                        <node concept="chp4Y" id="714IaVdH0Ew" role="3oSUPX">
+                                          <ref role="cht4Q" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7B9bSSBH7gz" role="2OqNvi">
@@ -613,6 +624,9 @@
                                       </node>
                                     </node>
                                   </node>
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0DX" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
                                 </node>
                               </node>
                             </node>
@@ -726,9 +740,11 @@
                           <node concept="2OqwBi" id="5WtSFRWvgmB" role="33vP2m">
                             <node concept="2OqwBi" id="5WtSFRWvgmC" role="2Oq$k0">
                               <node concept="1PxgMI" id="5WtSFRWvgmD" role="2Oq$k0">
-                                <ref role="1m5ApE" to="3ior:4RsV8qJH_FS" resolve="BuildSource_JavaLibraryExternalJarFolder" />
                                 <node concept="37vLTw" id="3GM_nagTzFg" role="1m5AlR">
                                   <ref role="3cqZAo" node="5WtSFRWuR1h" resolve="classpath" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0Ec" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:4RsV8qJH_FS" resolve="BuildSource_JavaLibraryExternalJarFolder" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="5WtSFRWvgmF" role="2OqNvi">
@@ -749,9 +765,11 @@
                           </node>
                           <node concept="1PxgMI" id="5WtSFRWvgnh" role="33vP2m">
                             <property role="1BlNFB" value="true" />
-                            <ref role="1m5ApE" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
                             <node concept="37vLTw" id="3GM_nagTASn" role="1m5AlR">
                               <ref role="3cqZAo" node="5WtSFRWvgm_" resolve="folder" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdH0EU" role="3oSUPX">
+                              <ref role="cht4Q" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
                             </node>
                           </node>
                         </node>
@@ -765,7 +783,6 @@
                               </node>
                               <node concept="1PxgMI" id="7B9bSSBH7g0" role="37vLTx">
                                 <property role="1BlNFB" value="true" />
-                                <ref role="1m5ApE" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
                                 <node concept="2OqwBi" id="7B9bSSBH7fh" role="1m5AlR">
                                   <node concept="37vLTw" id="2BHiRxeumx9" role="2Oq$k0">
                                     <ref role="3cqZAo" node="7B9bSSBGZae" resolve="helper" />
@@ -774,9 +791,11 @@
                                     <ref role="37wK5l" to="o3n2:3h6igUoZq0X" resolve="getArtifact" />
                                     <node concept="2OqwBi" id="4RsV8qJH_Fw" role="37wK5m">
                                       <node concept="1PxgMI" id="4RsV8qJH_Fx" role="2Oq$k0">
-                                        <ref role="1m5ApE" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
                                         <node concept="37vLTw" id="3GM_nagTtFR" role="1m5AlR">
                                           <ref role="3cqZAo" node="5WtSFRWvgm_" resolve="folder" />
+                                        </node>
+                                        <node concept="chp4Y" id="714IaVdH0DA" role="3oSUPX">
+                                          <ref role="cht4Q" to="3ior:1ZTcb8AgV3Z" resolve="BuildInputSingleFolder" />
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7B9bSSBH7fO" role="2OqNvi">
@@ -784,6 +803,9 @@
                                       </node>
                                     </node>
                                   </node>
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0DR" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:6qcrfIJEWWc" resolve="BuildLayout_AbstractContainer" />
                                 </node>
                               </node>
                             </node>
@@ -1001,9 +1023,11 @@
                           <node concept="X8dFx" id="7B9bSSBH77H" role="2OqNvi">
                             <node concept="2OqwBi" id="5bUGwboXCbB" role="25WWJ7">
                               <node concept="1PxgMI" id="5bUGwboXCbC" role="2Oq$k0">
-                                <ref role="1m5ApE" to="3ior:2xHpXR_dfqr" resolve="BuildLayout_ExportAsJavaLibrary" />
                                 <node concept="37vLTw" id="3GM_nagTyVX" role="1m5AlR">
                                   <ref role="3cqZAo" node="5bUGwboXCaX" resolve="layoutNode" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0E4" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:2xHpXR_dfqr" resolve="BuildLayout_ExportAsJavaLibrary" />
                                 </node>
                               </node>
                               <node concept="3Tsc0h" id="5bUGwboXCbE" role="2OqNvi">

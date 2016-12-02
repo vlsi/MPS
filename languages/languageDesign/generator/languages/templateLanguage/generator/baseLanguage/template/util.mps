@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
@@ -210,8 +210,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -1142,9 +1142,11 @@
             <node concept="3cpWs6" id="7Jb9ybfPPdu" role="3cqZAp">
               <node concept="2OqwBi" id="7Jb9ybfPPdz" role="3cqZAk">
                 <node concept="1PxgMI" id="7Jb9ybfPPdx" role="2Oq$k0">
-                  <ref role="1m5ApE" to="hypd:5xDtKQA7vSx" resolve="Generator" />
                   <node concept="37vLTw" id="3GM_nagTAnF" role="1m5AlR">
                     <ref role="3cqZAo" node="7Jb9ybfPCYg" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYvU" role="3oSUPX">
+                    <ref role="cht4Q" to="hypd:5xDtKQA7vSx" resolve="Generator" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="7Jb9ybfPPdB" role="2OqNvi">

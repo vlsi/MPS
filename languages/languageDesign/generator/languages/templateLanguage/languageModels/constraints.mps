@@ -7,7 +7,7 @@
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -195,8 +195,8 @@
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -656,10 +656,12 @@
               <node concept="3cpWs6" id="4lQlo5qup7I" role="3cqZAp">
                 <node concept="2OqwBi" id="4lQlo5qup7W" role="3cqZAk">
                   <node concept="1PxgMI" id="4lQlo5qup7U" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpf8:QzR6ThdYAL" resolve="IParameterizedTemplate" />
                     <node concept="2OqwBi" id="4lQlo5qup7L" role="1m5AlR">
                       <node concept="21POm0" id="4lQlo5qup7K" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="4lQlo5qup7P" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYtL" role="3oSUPX">
+                      <ref role="cht4Q" to="tpf8:QzR6ThdYAL" resolve="IParameterizedTemplate" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="QzR6ThiGde" role="2OqNvi">

@@ -4,7 +4,7 @@
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -116,8 +116,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -190,8 +190,10 @@
               <node concept="2OqwBi" id="5US8fp9IPe3" role="33vP2m">
                 <node concept="1PxgMI" id="5US8fp9IPe4" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                   <node concept="21POm0" id="5US8fp9IPe5" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH03j" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                  </node>
                 </node>
                 <node concept="3TrEf2" id="5US8fp9IPe6" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
@@ -370,8 +372,10 @@
               <node concept="2OqwBi" id="5US8fp9IR0z" role="33vP2m">
                 <node concept="1PxgMI" id="5US8fp9IR0$" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                   <node concept="21POm0" id="5US8fp9IR0_" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH03o" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                  </node>
                 </node>
                 <node concept="3TrEf2" id="5US8fp9IR0A" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
@@ -549,8 +553,10 @@
               </node>
               <node concept="1PxgMI" id="5z_5WH3VWnx" role="33vP2m">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="wch2:3$0WX3VmNr9" resolve="PrivateStaticFieldReference" />
                 <node concept="2rP1CM" id="5z_5WH3W4MZ" role="1m5AlR" />
+                <node concept="chp4Y" id="714IaVdH03k" role="3oSUPX">
+                  <ref role="cht4Q" to="wch2:3$0WX3VmNr9" resolve="PrivateStaticFieldReference" />
+                </node>
               </node>
             </node>
           </node>
@@ -664,8 +670,10 @@
               </node>
               <node concept="1PxgMI" id="5z_5WH46$PG" role="33vP2m">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="wch2:2Vme0ZnCJFb" resolve="PrivateStaticMethodCall" />
                 <node concept="2rP1CM" id="5z_5WH46$PH" role="1m5AlR" />
+                <node concept="chp4Y" id="714IaVdH03l" role="3oSUPX">
+                  <ref role="cht4Q" to="wch2:2Vme0ZnCJFb" resolve="PrivateStaticMethodCall" />
+                </node>
               </node>
             </node>
           </node>

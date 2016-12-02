@@ -112,8 +112,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -139,7 +139,7 @@
   <node concept="1M2fIO" id="70qA1hy$CKx">
     <ref role="1M2myG" to="genb:70qA1hy$CJv" resolve="ComeFromExpression" />
     <node concept="1N5Pfh" id="70qA1hy$CWv" role="1Mr941">
-      <ref role="1N5Vy1" to="genb:70qA1hy$CWu" />
+      <ref role="1N5Vy1" to="genb:70qA1hy$CWu" resolve="link" />
       <node concept="13QW63" id="70qA1hy$CWx" role="1N6uqs">
         <node concept="3clFbS" id="70qA1hy$CWy" role="2VODD2">
           <node concept="3SKdUt" id="70qA1hy$CWz" role="3cqZAp">
@@ -165,7 +165,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="70qA1hy$CXI" role="2OqNvi">
-                  <ref role="3Tt5mk" to="1i04:hP3h7Gv" />
+                  <ref role="3Tt5mk" to="1i04:hP3h7Gv" resolve="concept" />
                 </node>
               </node>
             </node>
@@ -205,9 +205,11 @@
                       <node concept="3clFbF" id="2DmG$ciAtiC" role="3cqZAp">
                         <node concept="2OqwBi" id="2DmG$ciAtjJ" role="3clFbG">
                           <node concept="1PxgMI" id="2DmG$ciAtiY" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                             <node concept="37vLTw" id="2BHiRxglmYv" role="1m5AlR">
                               <ref role="3cqZAo" node="2DmG$ciAtiu" resolve="target" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZsy" role="3oSUPX">
+                              <ref role="cht4Q" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="2DmG$ciAtjP" role="2OqNvi">

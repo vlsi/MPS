@@ -278,8 +278,8 @@
         <reference id="1138676095763" name="enumMember" index="uo_Cq" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -681,8 +681,10 @@
               <node concept="2OqwBi" id="3NWQyev7jnV" role="3clFbG">
                 <node concept="2OqwBi" id="3NWQyev7jnq" role="2Oq$k0">
                   <node concept="1PxgMI" id="3NWQyev7jmI" role="2Oq$k0">
-                    <ref role="1m5ApE" to="c2kz:3NWQyev6x19" resolve="Require" />
                     <node concept="30H73N" id="3NWQyev7jlW" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdGZkq" role="3oSUPX">
+                      <ref role="cht4Q" to="c2kz:3NWQyev6x19" resolve="Require" />
+                    </node>
                   </node>
                   <node concept="3TrEf2" id="3NWQyev7jnz" role="2OqNvi">
                     <ref role="3Tt5mk" to="c2kz:3NWQyev6x1a" resolve="library" />
@@ -1454,9 +1456,11 @@
                       </node>
                       <node concept="TSZUe" id="2RDssu5WoMs" role="2OqNvi">
                         <node concept="1PxgMI" id="2RDssu5WoMt" role="25WWJ7">
-                          <ref role="1m5ApE" to="c2kz:2RDssu5VmXT" resolve="RoutineDefinition" />
                           <node concept="37vLTw" id="2BHiRxgll5m" role="1m5AlR">
                             <ref role="3cqZAo" node="2RDssu5WoMv" resolve="it" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdGZkp" role="3oSUPX">
+                            <ref role="cht4Q" to="c2kz:2RDssu5VmXT" resolve="RoutineDefinition" />
                           </node>
                         </node>
                       </node>
@@ -2112,9 +2116,11 @@
                                 <node concept="2OqwBi" id="3NWQyev7Pey" role="33vP2m">
                                   <node concept="2OqwBi" id="3NWQyev7Pez" role="2Oq$k0">
                                     <node concept="1PxgMI" id="3NWQyev7Pe$" role="2Oq$k0">
-                                      <ref role="1m5ApE" to="c2kz:3NWQyev6x19" resolve="Require" />
                                       <node concept="37vLTw" id="2BHiRxgmOdd" role="1m5AlR">
                                         <ref role="3cqZAo" node="3NWQyev7Pcf" resolve="requireCommand" />
+                                      </node>
+                                      <node concept="chp4Y" id="714IaVdGZkr" role="3oSUPX">
+                                        <ref role="cht4Q" to="c2kz:3NWQyev6x19" resolve="Require" />
                                       </node>
                                     </node>
                                     <node concept="3TrEf2" id="3NWQyev7PeA" role="2OqNvi">
@@ -2195,9 +2201,11 @@
                                             <node concept="2OqwBi" id="3NWQyev7PjI" role="3uHU7w">
                                               <node concept="2OqwBi" id="3NWQyev7Pji" role="2Oq$k0">
                                                 <node concept="1PxgMI" id="3NWQyev7PiW" role="2Oq$k0">
-                                                  <ref role="1m5ApE" to="c2kz:3NWQyev6x19" resolve="Require" />
                                                   <node concept="37vLTw" id="2BHiRxgm7LX" role="1m5AlR">
                                                     <ref role="3cqZAo" node="3NWQyev7Pcf" resolve="requireCommand" />
+                                                  </node>
+                                                  <node concept="chp4Y" id="714IaVdGZko" role="3oSUPX">
+                                                    <ref role="cht4Q" to="c2kz:3NWQyev6x19" resolve="Require" />
                                                   </node>
                                                 </node>
                                                 <node concept="3TrEf2" id="3NWQyev7Pjo" role="2OqNvi">

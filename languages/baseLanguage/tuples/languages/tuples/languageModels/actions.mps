@@ -9,7 +9,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -215,8 +215,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1182511038748" name="jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation" flags="nn" index="1j9C0f">
         <reference id="1182511038750" name="concept" index="1j9C0d" />
@@ -476,10 +476,12 @@
                 <node concept="2OqwBi" id="i3dHEpi" role="3fr31v">
                   <node concept="1PxgMI" id="i3dHCBQ" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                     <node concept="2OqwBi" id="i3dHAYN" role="1m5AlR">
                       <node concept="Cj7Ep" id="i3dELrN" role="2Oq$k0" />
                       <node concept="1mfA1w" id="i3dHBXY" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYSc" role="3oSUPX">
+                      <ref role="cht4Q" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="i3dHExG" role="2OqNvi">
@@ -503,10 +505,12 @@
                     <node concept="2OqwBi" id="i3dEQV2" role="37vLTJ">
                       <node concept="1PxgMI" id="i3dHGWt" role="2Oq$k0">
                         <property role="1BlNFB" value="true" />
-                        <ref role="1m5ApE" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                         <node concept="2OqwBi" id="i3dHGa5" role="1m5AlR">
                           <node concept="Cj7Ep" id="i3dEQQ3" role="2Oq$k0" />
                           <node concept="1mfA1w" id="i3dHGuF" role="2OqNvi" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYSk" role="3oSUPX">
+                          <ref role="cht4Q" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
                         </node>
                       </node>
                       <node concept="3TrcHB" id="i3dHIbI" role="2OqNvi">

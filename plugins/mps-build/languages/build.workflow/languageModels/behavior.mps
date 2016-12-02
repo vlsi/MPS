@@ -165,8 +165,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145573345940" name="jetbrains.mps.lang.smodel.structure.Node_GetAllSiblingsOperation" flags="nn" index="2TvwIu" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
@@ -235,7 +235,7 @@
                   <node concept="13iPFW" id="3rV3sBXetzD" role="37wK5m" />
                   <node concept="359W_D" id="6t3ylNOzOTK" role="37wK5m">
                     <ref role="359W_E" to="8xvf:2pKPpytmA9N" resolve="BwfTask" />
-                    <ref role="359W_F" to="8xvf:2pKPpytmA9R" />
+                    <ref role="359W_F" to="8xvf:2pKPpytmA9R" resolve="subTasks" />
                   </node>
                 </node>
               </node>
@@ -262,7 +262,7 @@
                               <ref role="3cqZAo" node="3rV3sBXetzK" resolve="n" />
                             </node>
                             <node concept="359W_D" id="6t3ylNOzON3" role="37wK5m">
-                              <ref role="359W_F" to="8xvf:3rV3sBXcG6U" />
+                              <ref role="359W_F" to="8xvf:3rV3sBXcG6U" resolve="subTasks" />
                               <ref role="359W_E" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
                             </node>
                           </node>
@@ -275,13 +275,15 @@
                       <node concept="13iPFW" id="3rV3sBXet$x" role="3uHU7w" />
                       <node concept="2OqwBi" id="3rV3sBXet$n" role="3uHU7B">
                         <node concept="1PxgMI" id="3rV3sBXet$j" role="2Oq$k0">
-                          <ref role="1m5ApE" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
                           <node concept="37vLTw" id="3GM_nagTvW4" role="1m5AlR">
                             <ref role="3cqZAo" node="3rV3sBXetzK" resolve="n" />
                           </node>
+                          <node concept="chp4Y" id="714IaVdH03S" role="3oSUPX">
+                            <ref role="cht4Q" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="3rV3sBXet$t" role="2OqNvi">
-                          <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" />
+                          <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" resolve="task" />
                         </node>
                       </node>
                     </node>
@@ -536,7 +538,7 @@
                 <node concept="2OqwBi" id="3rV3sBXetyC" role="33vP2m">
                   <node concept="13iPFW" id="3rV3sBXetyD" role="2Oq$k0" />
                   <node concept="3TrEf2" id="3rV3sBXetyE" role="2OqNvi">
-                    <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" />
+                    <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" resolve="task" />
                   </node>
                 </node>
               </node>
@@ -552,7 +554,7 @@
                   <ref role="37wK5l" to="o8zo:6t3ylNOzI9Y" resolve="forNamedElements" />
                   <node concept="13iPFW" id="4$Hv_cWQgkU" role="37wK5m" />
                   <node concept="359W_D" id="6t3ylNOzNoc" role="37wK5m">
-                    <ref role="359W_F" to="8xvf:3rV3sBXcG6U" />
+                    <ref role="359W_F" to="8xvf:3rV3sBXcG6U" resolve="subTasks" />
                     <ref role="359W_E" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
                   </node>
                 </node>
@@ -644,7 +646,7 @@
                                 </node>
                                 <node concept="359W_D" id="6t3ylNOzKIU" role="37wK5m">
                                   <ref role="359W_E" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
-                                  <ref role="359W_F" to="8xvf:3rV3sBXcG6U" />
+                                  <ref role="359W_F" to="8xvf:3rV3sBXcG6U" resolve="subTasks" />
                                 </node>
                               </node>
                             </node>
@@ -658,19 +660,21 @@
                         <node concept="3clFbC" id="4$Hv_cWQSPT" role="3uHU7w">
                           <node concept="2OqwBi" id="4$Hv_cWQW3T" role="3uHU7w">
                             <node concept="3TrEf2" id="4$Hv_cWQXig" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" />
+                              <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" resolve="task" />
                             </node>
                             <node concept="13iPFW" id="4$Hv_cWQSPU" role="2Oq$k0" />
                           </node>
                           <node concept="2OqwBi" id="4$Hv_cWQSPV" role="3uHU7B">
                             <node concept="1PxgMI" id="4$Hv_cWQSPW" role="2Oq$k0">
-                              <ref role="1m5ApE" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
                               <node concept="37vLTw" id="3GM_nagT_92" role="1m5AlR">
                                 <ref role="3cqZAo" node="4$Hv_cWQSQ3" resolve="n" />
                               </node>
+                              <node concept="chp4Y" id="714IaVdH03R" role="3oSUPX">
+                                <ref role="cht4Q" to="8xvf:3rV3sBXcG6S" resolve="BwfTaskPart" />
+                              </node>
                             </node>
                             <node concept="3TrEf2" id="4$Hv_cWQSPY" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" />
+                              <ref role="3Tt5mk" to="8xvf:3rV3sBXcG6T" resolve="task" />
                             </node>
                           </node>
                         </node>

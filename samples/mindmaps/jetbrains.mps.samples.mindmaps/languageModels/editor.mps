@@ -183,8 +183,8 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -293,8 +293,10 @@
                 <node concept="2OqwBi" id="55Vum9np$2k" role="3clFbG">
                   <node concept="2OqwBi" id="55Vum9npzG6" role="2Oq$k0">
                     <node concept="1PxgMI" id="55Vum9npzDt" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3g6l:4pxCBZ5bFj" resolve="Relationship" />
                       <node concept="3cyWnY" id="55Vum9npzB3" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGZst" role="3oSUPX">
+                        <ref role="cht4Q" to="3g6l:4pxCBZ5bFj" resolve="Relationship" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="55Vum9nqTcz" role="2OqNvi">
                       <ref role="3Tt5mk" to="3g6l:55Vum9nqrEu" resolve="source" />
@@ -309,8 +311,10 @@
                 <node concept="2OqwBi" id="55Vum9nqSRF" role="3clFbG">
                   <node concept="2OqwBi" id="55Vum9nqSRG" role="2Oq$k0">
                     <node concept="1PxgMI" id="55Vum9nqSRH" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3g6l:4pxCBZ5bFj" resolve="Relationship" />
                       <node concept="3cyWnY" id="55Vum9nqSRI" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGZsu" role="3oSUPX">
+                        <ref role="cht4Q" to="3g6l:4pxCBZ5bFj" resolve="Relationship" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="55Vum9nqSRJ" role="2OqNvi">
                       <ref role="3Tt5mk" to="3g6l:4pxCBZ5cnv" resolve="target" />
@@ -342,8 +346,10 @@
                     <ref role="ehGHo" to="3g6l:4pxCBZ5bF8" resolve="Thought" />
                   </node>
                   <node concept="1PxgMI" id="55Vum9npqPZ" role="33vP2m">
-                    <ref role="1m5ApE" to="3g6l:4pxCBZ5bF8" resolve="Thought" />
                     <node concept="3cyWnY" id="55Vum9npqQ0" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdGZss" role="3oSUPX">
+                      <ref role="cht4Q" to="3g6l:4pxCBZ5bF8" resolve="Thought" />
+                    </node>
                   </node>
                 </node>
               </node>

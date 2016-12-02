@@ -170,10 +170,13 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -224,12 +227,14 @@
           <node concept="1Z2H0r" id="2F8bNQtx5j" role="mwGJk">
             <node concept="2OqwBi" id="2F8bNQtx5k" role="1Z2MuG">
               <node concept="1PxgMI" id="2F8bNQtx5l" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                 <node concept="2OqwBi" id="2F8bNQtx5m" role="1m5AlR">
                   <node concept="1YBJjd" id="2F8bNQtx5n" role="2Oq$k0">
                     <ref role="1YBMHb" node="63yBSeEXd9D" resolve="operation" />
                   </node>
                   <node concept="1mfA1w" id="2F8bNQtx5o" role="2OqNvi" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH0zt" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
               </node>
               <node concept="3TrEf2" id="2F8bNQtx5p" role="2OqNvi">

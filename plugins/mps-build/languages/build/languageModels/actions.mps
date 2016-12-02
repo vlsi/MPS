@@ -301,8 +301,8 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -567,8 +567,10 @@
                     <node concept="2OqwBi" id="6mpuAlRaUqa" role="2oxUTC">
                       <node concept="2OqwBi" id="6qcrfIJF_Ka" role="2Oq$k0">
                         <node concept="1PxgMI" id="6qcrfIJF_K8" role="2Oq$k0">
-                          <ref role="1m5ApE" to="3ior:4Kip2_918YM" resolve="BuildSourceProjectRelativePath" />
                           <node concept="1r4N5L" id="6qcrfIJF_K7" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdH0An" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:4Kip2_918YM" resolve="BuildSourceProjectRelativePath" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="6mpuAlRaUq9" role="2OqNvi">
                           <ref role="3Tt5mk" to="3ior:6mpuAlRaIJb" resolve="compositePart" />
@@ -610,8 +612,10 @@
                     <node concept="2OqwBi" id="6mpuAlRaUqh" role="2oxUTC">
                       <node concept="2OqwBi" id="6mpuAlRaUpy" role="2Oq$k0">
                         <node concept="1PxgMI" id="4Kip2_918Z9" role="2Oq$k0">
-                          <ref role="1m5ApE" to="3ior:6qcrfIJFx8t" resolve="BuildSourceMacroRelativePath" />
                           <node concept="1r4N5L" id="4Kip2_918Za" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdH0AJ" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:6qcrfIJFx8t" resolve="BuildSourceMacroRelativePath" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="6mpuAlRaUqg" role="2OqNvi">
                           <ref role="3Tt5mk" to="3ior:6mpuAlRaIJb" resolve="compositePart" />
@@ -651,8 +655,10 @@
                   </node>
                   <node concept="2OqwBi" id="15RAxQX0Jvv" role="37vLTx">
                     <node concept="1PxgMI" id="15RAxQX0Jvr" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
                       <node concept="1r4N5L" id="15RAxQX0Jvi" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0AL" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:4zlO3QT8$mm" resolve="BuildInputSingleFile" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="15RAxQX0Jv$" role="2OqNvi">
                       <ref role="3Tt5mk" to="3ior:4zlO3QT8$mq" resolve="path" />
@@ -689,8 +695,10 @@
                   </node>
                   <node concept="2OqwBi" id="15RAxQX0JvN" role="37vLTx">
                     <node concept="1PxgMI" id="15RAxQX0JvO" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                       <node concept="1r4N5L" id="15RAxQX0JvP" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0_X" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="15RAxQX0JvY" role="2OqNvi">
                       <ref role="3Tt5mk" to="3ior:4zlO3QT8$mA" resolve="dir" />
@@ -709,8 +717,10 @@
                   <node concept="X8dFx" id="15RAxQX0Jxg" role="2OqNvi">
                     <node concept="2OqwBi" id="15RAxQX0JwX" role="25WWJ7">
                       <node concept="1PxgMI" id="15RAxQX0JwY" role="2Oq$k0">
-                        <ref role="1m5ApE" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
                         <node concept="1r4N5L" id="15RAxQX0JwZ" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdH0A4" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:4zlO3QT8$m$" resolve="BuildInputFiles" />
+                        </node>
                       </node>
                       <node concept="3Tsc0h" id="15RAxQX0Jx5" role="2OqNvi">
                         <ref role="3TtcxE" to="3ior:4zlO3QT8$nR" resolve="selectors" />
@@ -752,8 +762,10 @@
                 <node concept="37vLTI" id="5iAPpylWQoQ" role="3clFbG">
                   <node concept="2OqwBi" id="5iAPpylWQou" role="37vLTJ">
                     <node concept="1PxgMI" id="5iAPpylWQoc" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       <node concept="1r4Lsj" id="5iAPpylWQnB" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0Aj" role="3oSUPX">
+                        <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                      </node>
                     </node>
                     <node concept="3TrcHB" id="5iAPpylWQo$" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -761,8 +773,10 @@
                   </node>
                   <node concept="2OqwBi" id="5iAPpylWQps" role="37vLTx">
                     <node concept="1PxgMI" id="5iAPpylWQpa" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       <node concept="1r4N5L" id="5iAPpylWQoT" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0_0" role="3oSUPX">
+                        <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                      </node>
                     </node>
                     <node concept="3TrcHB" id="5iAPpylWQpx" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -792,8 +806,10 @@
                   <node concept="X8dFx" id="5iAPpylWVum" role="2OqNvi">
                     <node concept="2OqwBi" id="5iAPpylWVuV" role="25WWJ7">
                       <node concept="1PxgMI" id="5iAPpylWVuD" role="2Oq$k0">
-                        <ref role="1m5ApE" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
                         <node concept="1r4N5L" id="5iAPpylWVuo" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdH0_p" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                        </node>
                       </node>
                       <node concept="3Tsc0h" id="5iAPpylWVv1" role="2OqNvi">
                         <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
@@ -813,8 +829,10 @@
                   <node concept="2oxUTD" id="5iAPpylWVw7" role="2OqNvi">
                     <node concept="2OqwBi" id="5iAPpylWVwa" role="2oxUTC">
                       <node concept="1PxgMI" id="5iAPpylWVwb" role="2Oq$k0">
-                        <ref role="1m5ApE" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
                         <node concept="1r4N5L" id="5iAPpylWVwc" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdH0AY" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="5iAPpylWVwh" role="2OqNvi">
                         <ref role="3Tt5mk" to="3ior:3NagsOfTPim" resolve="containerName" />
@@ -852,8 +870,10 @@
                   </node>
                   <node concept="2OqwBi" id="5iAPpylWW66" role="37vLTx">
                     <node concept="1PxgMI" id="5iAPpylWW5N" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                       <node concept="1r4N5L" id="5iAPpylWW5P" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0_S" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                      </node>
                     </node>
                     <node concept="3TrcHB" id="5iAPpylWW6c" role="2OqNvi">
                       <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -898,8 +918,10 @@
                   </node>
                   <node concept="2OqwBi" id="63lu3g6FC8G" role="37vLTx">
                     <node concept="1PxgMI" id="63lu3g6FC8k" role="2Oq$k0">
-                      <ref role="1m5ApE" to="3ior:7XQqoCTjpIh" resolve="BuildLayout_AbstractCopy" />
                       <node concept="1r4N5L" id="63lu3g6FC7z" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH0_Q" role="3oSUPX">
+                        <ref role="cht4Q" to="3ior:7XQqoCTjpIh" resolve="BuildLayout_AbstractCopy" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="63lu3g6FC8M" role="2OqNvi">
                       <ref role="3Tt5mk" to="3ior:4zlO3QT8NAU" resolve="fileset" />
@@ -1839,9 +1861,11 @@
                           <node concept="3clFbS" id="z2ICeMSeaD" role="1bW5cS">
                             <node concept="3clFbF" id="z2ICeMSeaG" role="3cqZAp">
                               <node concept="1PxgMI" id="z2ICeMSeaK" role="3clFbG">
-                                <ref role="1m5ApE" to="3ior:3h9a8EwPm3y" resolve="BuildVariableMacro" />
                                 <node concept="37vLTw" id="2BHiRxglWL_" role="1m5AlR">
                                   <ref role="3cqZAo" node="z2ICeMSeaE" resolve="it" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH0_I" role="3oSUPX">
+                                  <ref role="cht4Q" to="3ior:3h9a8EwPm3y" resolve="BuildVariableMacro" />
                                 </node>
                               </node>
                             </node>
@@ -2018,9 +2042,11 @@
                           </node>
                           <node concept="2OqwBi" id="1mpssCUBA51" role="3clFbw">
                             <node concept="1PxgMI" id="1mpssCUBA4D" role="2Oq$k0">
-                              <ref role="1m5ApE" to="3ior:7XQqoCTkVIO" resolve="BuildStringContainer" />
                               <node concept="37vLTw" id="3GM_nagTusu" role="1m5AlR">
                                 <ref role="3cqZAo" node="1mpssCUBA28" resolve="container" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdH0_W" role="3oSUPX">
+                                <ref role="cht4Q" to="3ior:7XQqoCTkVIO" resolve="BuildStringContainer" />
                               </node>
                             </node>
                             <node concept="2qgKlT" id="1mpssCUBHLJ" role="2OqNvi">

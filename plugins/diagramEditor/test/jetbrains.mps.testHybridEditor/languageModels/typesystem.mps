@@ -91,9 +91,12 @@
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
@@ -141,7 +144,7 @@
             <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
           </node>
           <node concept="3Tsc0h" id="4f5uMdGlodQ" role="2OqNvi">
-            <ref role="3TtcxE" to="adck:CgolD_s2ZY" />
+            <ref role="3TtcxE" to="adck:CgolD_s2ZY" resolve="inputPorts" />
           </node>
         </node>
         <node concept="3clFbS" id="L6rm9$n_PB" role="2LFqv$">
@@ -158,16 +161,18 @@
             </node>
             <node concept="2OqwBi" id="L6rm9$nCku" role="2GsD0m">
               <node concept="1PxgMI" id="L6rm9$nC3G" role="2Oq$k0">
-                <ref role="1m5ApE" to="adck:CgolD_s2V1" resolve="Diagram" />
                 <node concept="2OqwBi" id="L6rm9$nB1C" role="1m5AlR">
                   <node concept="1YBJjd" id="L6rm9$nAVv" role="2Oq$k0">
                     <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
                   </node>
                   <node concept="1mfA1w" id="L6rm9$nBxN" role="2OqNvi" />
                 </node>
+                <node concept="chp4Y" id="714IaVdH0$e" role="3oSUPX">
+                  <ref role="cht4Q" to="adck:CgolD_s2V1" resolve="Diagram" />
+                </node>
               </node>
               <node concept="3Tsc0h" id="L6rm9$nDl5" role="2OqNvi">
-                <ref role="3TtcxE" to="adck:CgolD_s2Zq" />
+                <ref role="3TtcxE" to="adck:CgolD_s2Zq" resolve="connectors" />
               </node>
             </node>
             <node concept="3clFbS" id="L6rm9$nATy" role="2LFqv$">
@@ -183,7 +188,7 @@
                           <ref role="2Gs0qQ" node="L6rm9$nATw" resolve="connector" />
                         </node>
                         <node concept="3TrEf2" id="L6rm9$nHeh" role="2OqNvi">
-                          <ref role="3Tt5mk" to="adck:CgolD_s30o" />
+                          <ref role="3Tt5mk" to="adck:CgolD_s30o" resolve="inputPort" />
                         </node>
                       </node>
                     </node>
@@ -224,7 +229,7 @@
             <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
           </node>
           <node concept="3Tsc0h" id="L6rm9$siDu" role="2OqNvi">
-            <ref role="3TtcxE" to="adck:CgolD_s300" />
+            <ref role="3TtcxE" to="adck:CgolD_s300" resolve="outputPorts" />
           </node>
         </node>
         <node concept="3clFbS" id="L6rm9$sgCm" role="2LFqv$">
@@ -241,16 +246,18 @@
             </node>
             <node concept="2OqwBi" id="L6rm9$sgCt" role="2GsD0m">
               <node concept="1PxgMI" id="L6rm9$sgCu" role="2Oq$k0">
-                <ref role="1m5ApE" to="adck:CgolD_s2V1" resolve="Diagram" />
                 <node concept="2OqwBi" id="L6rm9$sgCv" role="1m5AlR">
                   <node concept="1YBJjd" id="L6rm9$sgCw" role="2Oq$k0">
                     <ref role="1YBMHb" node="L6rm9$n_Pf" resolve="block" />
                   </node>
                   <node concept="1mfA1w" id="L6rm9$sgCx" role="2OqNvi" />
                 </node>
+                <node concept="chp4Y" id="714IaVdH0$f" role="3oSUPX">
+                  <ref role="cht4Q" to="adck:CgolD_s2V1" resolve="Diagram" />
+                </node>
               </node>
               <node concept="3Tsc0h" id="L6rm9$sgCy" role="2OqNvi">
-                <ref role="3TtcxE" to="adck:CgolD_s2Zq" />
+                <ref role="3TtcxE" to="adck:CgolD_s2Zq" resolve="connectors" />
               </node>
             </node>
             <node concept="3clFbS" id="L6rm9$sgCz" role="2LFqv$">
@@ -266,7 +273,7 @@
                           <ref role="2Gs0qQ" node="L6rm9$sgCs" resolve="connector" />
                         </node>
                         <node concept="3TrEf2" id="L6rm9$sjV6" role="2OqNvi">
-                          <ref role="3Tt5mk" to="adck:CgolD_s30k" />
+                          <ref role="3Tt5mk" to="adck:CgolD_s30k" resolve="outputPort" />
                         </node>
                       </node>
                     </node>

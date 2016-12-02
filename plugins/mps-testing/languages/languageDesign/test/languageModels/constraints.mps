@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -135,8 +135,8 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="8758390115028452779" name="jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation" flags="nn" index="2z74zc" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -344,8 +344,10 @@
                 <ref role="ehGHo" to="tp5g:so7passww9" resolve="ScopesTest" />
               </node>
               <node concept="1PxgMI" id="3iQxHqkitXR" role="33vP2m">
-                <ref role="1m5ApE" to="tp5g:so7passww9" resolve="ScopesTest" />
                 <node concept="21POm0" id="3iQxHqkivp5" role="1m5AlR" />
+                <node concept="chp4Y" id="714IaVdGZ4j" role="3oSUPX">
+                  <ref role="cht4Q" to="tp5g:so7passww9" resolve="ScopesTest" />
+                </node>
               </node>
             </node>
           </node>
@@ -451,8 +453,10 @@
                         <node concept="2OqwBi" id="4IvydoGvwUV" role="2GsD0m">
                           <node concept="2OqwBi" id="4IvydoGvwUA" role="2Oq$k0">
                             <node concept="1PxgMI" id="4IvydoGvwUo" role="2Oq$k0">
-                              <ref role="1m5ApE" to="tp5g:so7passww9" resolve="ScopesTest" />
                               <node concept="2rP1CM" id="4IvydoGvwUb" role="1m5AlR" />
+                              <node concept="chp4Y" id="714IaVdGZ49" role="3oSUPX">
+                                <ref role="cht4Q" to="tp5g:so7passww9" resolve="ScopesTest" />
+                              </node>
                             </node>
                             <node concept="1mfA1w" id="4IvydoGvwUH" role="2OqNvi" />
                           </node>

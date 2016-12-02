@@ -9,7 +9,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -211,8 +211,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
@@ -904,9 +904,11 @@
               <node concept="1Z2H0r" id="qXyebw2Fli" role="mwGJk">
                 <node concept="2OqwBi" id="qXyebw4qpq" role="1Z2MuG">
                   <node concept="1PxgMI" id="qXyebw2Fll" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tp4k:57l5h3LszuS" resolve="AddTabOperation" />
                     <node concept="37vLTw" id="3GM_nagTuVy" role="1m5AlR">
                       <ref role="3cqZAo" node="4raQOpB1EQh" resolve="tab" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGY$R" role="3oSUPX">
+                      <ref role="cht4Q" to="tp4k:57l5h3LszuS" resolve="AddTabOperation" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="qXyebw4qpu" role="2OqNvi">

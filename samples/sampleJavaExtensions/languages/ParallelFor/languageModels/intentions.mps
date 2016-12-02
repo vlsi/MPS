@@ -131,8 +131,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -945,9 +945,11 @@
                           <node concept="2OqwBi" id="AVI$K8_YXk" role="3clFbG">
                             <node concept="2OqwBi" id="AVI$K8_YXl" role="2Oq$k0">
                               <node concept="1PxgMI" id="AVI$K8_YXm" role="2Oq$k0">
-                                <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
                                 <node concept="37vLTw" id="AVI$K8_YXn" role="1m5AlR">
                                   <ref role="3cqZAo" node="AVI$K8_YXr" resolve="it" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGZ7j" role="3oSUPX">
+                                  <ref role="cht4Q" to="tpee:fz7vLUo" resolve="VariableReference" />
                                 </node>
                               </node>
                               <node concept="3TrEf2" id="AVI$K8_YXo" role="2OqNvi">
@@ -1167,7 +1169,6 @@
           <node concept="37vLTI" id="4ERQEDB1Mw0" role="3clFbG">
             <node concept="2OqwBi" id="32jmVfUAMw3" role="37vLTx">
               <node concept="1PxgMI" id="32jmVfUAMwc" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:fz3vP1H" resolve="Type" />
                 <node concept="2OqwBi" id="32jmVfUAMwd" role="1m5AlR">
                   <node concept="2OqwBi" id="32jmVfUAMwe" role="2Oq$k0">
                     <node concept="2Sf5sV" id="32jmVfUAMwf" role="2Oq$k0" />
@@ -1176,6 +1177,9 @@
                     </node>
                   </node>
                   <node concept="3JvlWi" id="32jmVfUAMwh" role="2OqNvi" />
+                </node>
+                <node concept="chp4Y" id="714IaVdGZ7e" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:fz3vP1H" resolve="Type" />
                 </node>
               </node>
               <node concept="1$rogu" id="32jmVfUAMw9" role="2OqNvi" />

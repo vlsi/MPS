@@ -610,8 +610,8 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
@@ -1693,10 +1693,12 @@
                   </node>
                   <node concept="1PxgMI" id="1s8OwvM686h" role="33vP2m">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="2OqwBi" id="1s8OwvM686i" role="1m5AlR">
                       <node concept="pncrf" id="1s8OwvM686j" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="1s8OwvM686k" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH0A0" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     </node>
                   </node>
                 </node>
@@ -1729,9 +1731,11 @@
                             <node concept="2OqwBi" id="1s8OwvM688p" role="3uHU7w">
                               <node concept="2OqwBi" id="1s8OwvM6883" role="2Oq$k0">
                                 <node concept="1PxgMI" id="1s8OwvM687N" role="2Oq$k0">
-                                  <ref role="1m5ApE" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
                                   <node concept="37vLTw" id="2BHiRxgm5GW" role="1m5AlR">
                                     <ref role="3cqZAo" node="1s8OwvM6876" resolve="it" />
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdH0_b" role="3oSUPX">
+                                    <ref role="cht4Q" to="3ior:NvWe6DpNB2" resolve="BuildSource_JavaOptions" />
                                   </node>
                                 </node>
                                 <node concept="3TrcHB" id="1s8OwvM6889" role="2OqNvi">
@@ -9171,9 +9175,11 @@
                     <node concept="3clFbS" id="1wEcoXjJD_q" role="1bW5cS">
                       <node concept="3clFbF" id="1wEcoXjJD_r" role="3cqZAp">
                         <node concept="1PxgMI" id="1wEcoXjJD_s" role="3clFbG">
-                          <ref role="1m5ApE" to="3ior:3h9a8EwPm3y" resolve="BuildVariableMacro" />
                           <node concept="37vLTw" id="1wEcoXjJD_t" role="1m5AlR">
                             <ref role="3cqZAo" node="1wEcoXjJD_u" resolve="it" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH0Ay" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:3h9a8EwPm3y" resolve="BuildVariableMacro" />
                           </node>
                         </node>
                       </node>
@@ -9313,9 +9319,11 @@
                       </node>
                       <node concept="2OqwBi" id="1wEcoXjJDBQ" role="3clFbw">
                         <node concept="1PxgMI" id="1wEcoXjJDBR" role="2Oq$k0">
-                          <ref role="1m5ApE" to="3ior:7XQqoCTkVIO" resolve="BuildStringContainer" />
                           <node concept="37vLTw" id="1wEcoXjJDBS" role="1m5AlR">
                             <ref role="3cqZAo" node="1wEcoXjJDB_" resolve="container" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH0B2" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:7XQqoCTkVIO" resolve="BuildStringContainer" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="1wEcoXjJDBT" role="2OqNvi">

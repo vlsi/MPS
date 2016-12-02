@@ -163,8 +163,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -229,8 +229,10 @@
             <node concept="2OqwBi" id="2TmYHHddQ2V" role="3JuY14">
               <node concept="2OqwBi" id="2TmYHHddQ2W" role="2Oq$k0">
                 <node concept="1PxgMI" id="2TmYHHddQ2X" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                   <node concept="nLn13" id="2TmYHHddQ2Y" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH07w" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                  </node>
                 </node>
                 <node concept="3TrEf2" id="2TmYHHddQ2Z" role="2OqNvi">
                   <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
@@ -287,15 +289,19 @@
               <node concept="3K4zz7" id="xSXmQZvoIS" role="33vP2m">
                 <node concept="1PxgMI" id="xSXmQZvpCc" role="3K4E3e">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
                   <node concept="2rP1CM" id="xSXmQZvp15" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH07y" role="3oSUPX">
+                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
+                  </node>
                 </node>
                 <node concept="1PxgMI" id="xSXmQZvsfT" role="3K4GZi">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
                   <node concept="2OqwBi" id="xSXmQZvq$1" role="1m5AlR">
                     <node concept="2rP1CM" id="xSXmQZvqcL" role="2Oq$k0" />
                     <node concept="1mfA1w" id="xSXmQZvqZl" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH07A" role="3oSUPX">
+                    <ref role="cht4Q" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="xSXmQZvm6p" role="3K4Cdx">

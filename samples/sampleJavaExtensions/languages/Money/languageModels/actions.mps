@@ -101,9 +101,12 @@
       <concept id="1138079416598" name="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" flags="ng" index="3UOs0u" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
@@ -274,8 +277,10 @@
                       <node concept="37vLTI" id="38gGBrhh0bo" role="3clFbG">
                         <node concept="2OqwBi" id="38gGBrhh0by" role="37vLTx">
                           <node concept="1PxgMI" id="38gGBrhh0bw" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fzcmrck" resolve="IntegerConstant" />
                             <node concept="Cj7Ep" id="38gGBrhh0br" role="1m5AlR" />
+                            <node concept="chp4Y" id="714IaVdGZ3t" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fzcmrck" resolve="IntegerConstant" />
+                            </node>
                           </node>
                           <node concept="3TrcHB" id="38gGBrhh0bA" role="2OqNvi">
                             <ref role="3TsBF5" to="tpee:fzcmrcl" resolve="value" />

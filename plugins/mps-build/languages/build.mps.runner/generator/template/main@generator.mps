@@ -245,8 +245,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -1081,10 +1081,12 @@
                       <node concept="1pGfFk" id="3pzPpUGgK73" role="2ShVmc">
                         <ref role="37wK5l" to="tken:3pzPpUFO9wL" resolve="ModulePlugins" />
                         <node concept="1PxgMI" id="3pzPpUGgKnY" role="37wK5m">
-                          <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                           <node concept="2OqwBi" id="3pzPpUGgKnZ" role="1m5AlR">
                             <node concept="2Rxl7S" id="3pzPpUGgKo0" role="2OqNvi" />
                             <node concept="30H73N" id="3pzPpUGgKo1" role="2Oq$k0" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdGZnu" role="3oSUPX">
+                            <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                           </node>
                         </node>
                         <node concept="1iwH7S" id="3pzPpUGgK75" role="37wK5m" />
@@ -1105,10 +1107,12 @@
                 <node concept="3clFbF" id="3pzPpUGjs$z" role="3cqZAp">
                   <node concept="1PxgMI" id="3pzPpUGjsWC" role="3clFbG">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="2OqwBi" id="3pzPpUGjsAU" role="1m5AlR">
                       <node concept="30H73N" id="3pzPpUGjs$y" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="3pzPpUGjsTS" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGZnv" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     </node>
                   </node>
                 </node>

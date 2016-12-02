@@ -6,7 +6,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -456,8 +456,8 @@
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -4841,7 +4841,6 @@
                 <node concept="eON6Q" id="3Un2VKNJJYu" role="lGT1i">
                   <node concept="1PxgMI" id="7R2Gq48BWko" role="ciSds">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
                     <node concept="2OqwBi" id="7R2Gq48BVUE" role="1m5AlR">
                       <node concept="2OqwBi" id="7R2Gq48BUEl" role="2Oq$k0">
                         <node concept="0IXxy" id="7R2Gq48BU$O" role="2Oq$k0" />
@@ -4852,6 +4851,9 @@
                       <node concept="liA8E" id="7R2Gq48BWdi" role="2OqNvi">
                         <ref role="37wK5l" to="c17a:~SProperty.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYtO" role="3oSUPX">
+                      <ref role="cht4Q" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -7308,8 +7310,10 @@
                           <ref role="ehGHo" to="tpf8:7PoJpZpH$hz" resolve="TrivialNodeId" />
                         </node>
                         <node concept="1PxgMI" id="52s0aAoyGxh" role="33vP2m">
-                          <ref role="1m5ApE" to="tpf8:7PoJpZpH$hz" resolve="TrivialNodeId" />
                           <node concept="pncrf" id="52s0aAoyGxi" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdGYtR" role="3oSUPX">
+                            <ref role="cht4Q" to="tpf8:7PoJpZpH$hz" resolve="TrivialNodeId" />
+                          </node>
                         </node>
                       </node>
                     </node>

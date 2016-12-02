@@ -5,7 +5,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -230,8 +230,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
@@ -903,8 +903,10 @@
                   </node>
                   <node concept="2oxUTD" id="1wEcoXjJllH" role="2OqNvi">
                     <node concept="1PxgMI" id="1wEcoXjJllI" role="2oxUTC">
-                      <ref role="1m5ApE" to="uigu:1m3OroNpuvT" resolve="ExtensionMethodDeclaration" />
                       <node concept="2ZBlsa" id="1wEcoXjJllV" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGYsJ" role="3oSUPX">
+                        <ref role="cht4Q" to="uigu:1m3OroNpuvT" resolve="ExtensionMethodDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1072,8 +1074,10 @@
                   </node>
                   <node concept="2oxUTD" id="1wEcoXjJlog" role="2OqNvi">
                     <node concept="1PxgMI" id="1wEcoXjJloh" role="2oxUTC">
-                      <ref role="1m5ApE" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                       <node concept="2ZBlsa" id="1wEcoXjJlov" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGYsw" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>

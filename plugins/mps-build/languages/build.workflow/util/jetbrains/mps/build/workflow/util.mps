@@ -146,8 +146,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143512015885" name="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation" flags="nn" index="YCak7" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -266,9 +266,11 @@
               <node concept="1rXfSq" id="4hiugqyzhP_" role="3clFbG">
                 <ref role="37wK5l" node="75uV$1s0VL9" resolve="addElement" />
                 <node concept="1PxgMI" id="75uV$1s0VKz" role="37wK5m">
-                  <ref role="1m5ApE" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                   <node concept="37vLTw" id="2BHiRxglB5T" role="1m5AlR">
                     <ref role="3cqZAo" node="75uV$1s0VL7" resolve="element" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH03Q" role="3oSUPX">
+                    <ref role="cht4Q" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                   </node>
                 </node>
               </node>
@@ -309,13 +311,15 @@
                     <node concept="2OqwBi" id="75uV$1s0VKO" role="37wK5m">
                       <node concept="2OqwBi" id="75uV$1s0VKP" role="2Oq$k0">
                         <node concept="1PxgMI" id="75uV$1s0VKQ" role="2Oq$k0">
-                          <ref role="1m5ApE" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
                           <node concept="37vLTw" id="2BHiRxglwaC" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VL7" resolve="element" />
                           </node>
+                          <node concept="chp4Y" id="714IaVdH03O" role="3oSUPX">
+                            <ref role="cht4Q" to="8xvf:5KZfyKsVOKv" resolve="BwfPathReference" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="75uV$1s0VKS" role="2OqNvi">
-                          <ref role="3Tt5mk" to="8xvf:5KZfyKsVOKw" />
+                          <ref role="3Tt5mk" to="8xvf:5KZfyKsVOKw" resolve="target" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="75uV$1s0VKT" role="2OqNvi">
@@ -427,9 +431,11 @@
                       <node concept="1rXfSq" id="4hiugqyz3$s" role="3clFbG">
                         <ref role="37wK5l" node="75uV$1s0VNa" resolve="addAttribute" />
                         <node concept="1PxgMI" id="75uV$1s0VLA" role="37wK5m">
-                          <ref role="1m5ApE" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
                           <node concept="37vLTw" id="3GM_nagT_bF" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VLM" resolve="attr" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH03K" role="3oSUPX">
+                            <ref role="cht4Q" to="iuxj:5M4a$b5iSRN" resolve="XmlAttribute" />
                           </node>
                         </node>
                       </node>
@@ -472,7 +478,7 @@
                   <ref role="3cqZAo" node="75uV$1s0VN8" resolve="element" />
                 </node>
                 <node concept="3Tsc0h" id="75uV$1s0VLQ" role="2OqNvi">
-                  <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" />
+                  <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
                 </node>
               </node>
             </node>
@@ -483,7 +489,7 @@
                 <ref role="3cqZAo" node="75uV$1s0VN8" resolve="element" />
               </node>
               <node concept="3Tsc0h" id="75uV$1s0VLU" role="2OqNvi">
-                <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" />
+                <ref role="3TtcxE" to="iuxj:5M4a$b5iL2P" resolve="attributes" />
               </node>
             </node>
             <node concept="3GX2aA" id="75uV$1s0VLV" role="2OqNvi" />
@@ -514,7 +520,7 @@
                 <ref role="3cqZAo" node="75uV$1s0VN8" resolve="element" />
               </node>
               <node concept="3Tsc0h" id="75uV$1s0VM8" role="2OqNvi">
-                <ref role="3TtcxE" to="iuxj:1q3yNZeA$$y" />
+                <ref role="3TtcxE" to="iuxj:1q3yNZeA$$y" resolve="content" />
               </node>
             </node>
             <node concept="1v1jN8" id="75uV$1s0VM9" role="2OqNvi" />
@@ -541,9 +547,11 @@
                   <node concept="1rXfSq" id="4hiugqyz8pD" role="3clFbG">
                     <ref role="37wK5l" node="75uV$1s0VKd" resolve="add" />
                     <node concept="1PxgMI" id="75uV$1s0VMl" role="37wK5m">
-                      <ref role="1m5ApE" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                       <node concept="37vLTw" id="3GM_nagTxhB" role="1m5AlR">
                         <ref role="3cqZAo" node="75uV$1s0VMK" resolve="content" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH03P" role="3oSUPX">
+                        <ref role="cht4Q" to="iuxj:5M4a$b5iL2M" resolve="XmlElement" />
                       </node>
                     </node>
                   </node>
@@ -595,9 +603,11 @@
                   <node concept="2OqwBi" id="75uV$1s0VME" role="3uHU7w">
                     <node concept="2OqwBi" id="75uV$1s0VMF" role="2Oq$k0">
                       <node concept="1PxgMI" id="75uV$1s0VMG" role="2Oq$k0">
-                        <ref role="1m5ApE" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
                         <node concept="37vLTw" id="3GM_nagTwDp" role="1m5AlR">
                           <ref role="3cqZAo" node="75uV$1s0VMK" resolve="content" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdH03M" role="3oSUPX">
+                          <ref role="cht4Q" to="iuxj:1q3yNZeAEkj" resolve="XmlText" />
                         </node>
                       </node>
                       <node concept="3TrcHB" id="75uV$1s0VMI" role="2OqNvi">
@@ -621,7 +631,7 @@
               <ref role="3cqZAo" node="75uV$1s0VN8" resolve="element" />
             </node>
             <node concept="3Tsc0h" id="75uV$1s0VMO" role="2OqNvi">
-              <ref role="3TtcxE" to="iuxj:1q3yNZeA$$y" />
+              <ref role="3TtcxE" to="iuxj:1q3yNZeA$$y" resolve="content" />
             </node>
           </node>
         </node>
@@ -755,9 +765,11 @@
                       <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                       <node concept="2OqwBi" id="75uV$1s0VNG" role="37wK5m">
                         <node concept="1PxgMI" id="75uV$1s0VNH" role="2Oq$k0">
-                          <ref role="1m5ApE" to="iuxj:2EZ251fZHvY" resolve="XmlCharRefValue" />
                           <node concept="37vLTw" id="3GM_nagTwkB" role="1m5AlR">
                             <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH03U" role="3oSUPX">
+                            <ref role="cht4Q" to="iuxj:2EZ251fZHvY" resolve="XmlCharRefValue" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="75uV$1s0VNJ" role="2OqNvi">
@@ -815,9 +827,11 @@
                         <ref role="37wK5l" to="wyt6:~StringBuilder.append(java.lang.String):java.lang.StringBuilder" resolve="append" />
                         <node concept="2OqwBi" id="75uV$1s0VO4" role="37wK5m">
                           <node concept="1PxgMI" id="75uV$1s0VO5" role="2Oq$k0">
-                            <ref role="1m5ApE" to="iuxj:5M4a$b5jfOx" resolve="XmlEntityRefValue" />
                             <node concept="37vLTw" id="3GM_nagTx1T" role="1m5AlR">
                               <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdH03N" role="3oSUPX">
+                              <ref role="cht4Q" to="iuxj:5M4a$b5jfOx" resolve="XmlEntityRefValue" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="75uV$1s0VO7" role="2OqNvi">
@@ -880,9 +894,11 @@
                         <ref role="ehGHo" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
                       </node>
                       <node concept="1PxgMI" id="75uV$1s0VOu" role="33vP2m">
-                        <ref role="1m5ApE" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
                         <node concept="37vLTw" id="3GM_nagTsRB" role="1m5AlR">
                           <ref role="3cqZAo" node="75uV$1s0VPl" resolve="val" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdH03T" role="3oSUPX">
+                          <ref role="cht4Q" to="iuxj:5M4a$b5jfOv" resolve="XmlTextValue" />
                         </node>
                       </node>
                     </node>
@@ -952,12 +968,14 @@
                           </node>
                           <node concept="2OqwBi" id="75uV$1s0VOX" role="3uHU7w">
                             <node concept="1PxgMI" id="75uV$1s0VOY" role="2Oq$k0">
-                              <ref role="1m5ApE" to="iuxj:5M4a$b5jfOs" resolve="XmlValuePart" />
                               <node concept="2OqwBi" id="75uV$1s0VOZ" role="1m5AlR">
                                 <node concept="37vLTw" id="3GM_nagTt$2" role="2Oq$k0">
                                   <ref role="3cqZAo" node="75uV$1s0VOs" resolve="tv" />
                                 </node>
                                 <node concept="YCak7" id="75uV$1s0VP1" role="2OqNvi" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdH03L" role="3oSUPX">
+                                <ref role="cht4Q" to="iuxj:5M4a$b5jfOs" resolve="XmlValuePart" />
                               </node>
                             </node>
                             <node concept="2qgKlT" id="75uV$1s0VP2" role="2OqNvi">
@@ -1028,7 +1046,7 @@
               <ref role="3cqZAo" node="75uV$1s0VPv" resolve="attr" />
             </node>
             <node concept="3Tsc0h" id="75uV$1s0VPp" role="2OqNvi">
-              <ref role="3TtcxE" to="iuxj:5M4a$b5jfOu" />
+              <ref role="3TtcxE" to="iuxj:5M4a$b5jfOu" resolve="value" />
             </node>
           </node>
         </node>

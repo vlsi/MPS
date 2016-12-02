@@ -297,6 +297,9 @@
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
@@ -304,8 +307,8 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
@@ -2862,8 +2865,10 @@
               <node concept="2OqwBi" id="41ZU75Xz7CB" role="3clFbG">
                 <node concept="2OqwBi" id="41ZU75Xz5Yn" role="2Oq$k0">
                   <node concept="1PxgMI" id="41ZU75Xzc0m" role="2Oq$k0">
-                    <ref role="1m5ApE" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
                     <node concept="X5bN_" id="41ZU75XzbGp" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdH1_2" role="3oSUPX">
+                      <ref role="cht4Q" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="41ZU75Xzcvo" role="2OqNvi">
                     <ref role="3TtcxE" to="wdez:41ZU75Xz30D" resolve="wrapSubstituteFromTransform" />

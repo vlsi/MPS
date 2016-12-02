@@ -7,7 +7,7 @@
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -276,8 +276,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -1130,9 +1130,11 @@
                       </node>
                     </node>
                     <node concept="1PxgMI" id="4s5tm1XC$z$" role="2Oq$k0">
-                      <ref role="1m5ApE" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                       <node concept="37vLTw" id="4s5tm1XC$op" role="1m5AlR">
                         <ref role="3cqZAo" node="4s5tm1XCzQN" resolve="type" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGYS8" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:3zZky3wF74d" resolve="IGenericType" />
                       </node>
                     </node>
                   </node>
@@ -1358,7 +1360,6 @@
             <ref role="ehGHo" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
           </node>
           <node concept="1PxgMI" id="i2OeX_2" role="33vP2m">
-            <ref role="1m5ApE" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
             <node concept="2OqwBi" id="i2OeX_3" role="1m5AlR">
               <node concept="2OqwBi" id="i2OeX_4" role="2Oq$k0">
                 <node concept="1YBJjd" id="i2OeX_5" role="2Oq$k0">
@@ -1369,6 +1370,9 @@
                 </node>
               </node>
               <node concept="1mfA1w" id="i2OeX_7" role="2OqNvi" />
+            </node>
+            <node concept="chp4Y" id="714IaVdGYS5" role="3oSUPX">
+              <ref role="cht4Q" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
             </node>
           </node>
         </node>
@@ -1469,9 +1473,11 @@
               <node concept="2OqwBi" id="32wUDhaLfOz" role="33vP2m">
                 <node concept="2OqwBi" id="32wUDhaLfO$" role="2Oq$k0">
                   <node concept="1PxgMI" id="32wUDhaLfOE" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpee:g96syBo" resolve="TypeVariableReference" />
                     <node concept="37vLTw" id="3GM_nagTzc7" role="1m5AlR">
                       <ref role="3cqZAo" node="32wUDhaLfxw" resolve="opType" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYSj" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:g96syBo" resolve="TypeVariableReference" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="32wUDhaLfOA" role="2OqNvi">
@@ -1835,9 +1841,11 @@
                                       <node concept="2OqwBi" id="i2Oa2f1" role="33vP2m">
                                         <node concept="2OqwBi" id="i2Oa0zS" role="2Oq$k0">
                                           <node concept="1PxgMI" id="i2O9lQc" role="2Oq$k0">
-                                            <ref role="1m5ApE" to="tpee:g96syBo" resolve="TypeVariableReference" />
                                             <node concept="37vLTw" id="3GM_nagTwW8" role="1m5AlR">
                                               <ref role="3cqZAo" node="i2O9lQ1" resolve="t" />
+                                            </node>
+                                            <node concept="chp4Y" id="714IaVdGYSb" role="3oSUPX">
+                                              <ref role="cht4Q" to="tpee:g96syBo" resolve="TypeVariableReference" />
                                             </node>
                                           </node>
                                           <node concept="3TrEf2" id="i2Oa1r5" role="2OqNvi">
@@ -2748,7 +2756,6 @@
                   <ref role="2pIpSl" to="cx9y:i2pR8DE" resolve="tupleDeclaration" />
                   <node concept="36biLy" id="7Sw_42UhDK8" role="2pJxcZ">
                     <node concept="1PxgMI" id="7Sw_42UhF0D" role="36biLW">
-                      <ref role="1m5ApE" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
                       <node concept="2OqwBi" id="7Sw_42UhDUO" role="1m5AlR">
                         <node concept="1YBJjd" id="7Sw_42UhDKr" role="2Oq$k0">
                           <ref role="1YBMHb" node="7Sw_42UhBNp" resolve="classifierType" />
@@ -2756,6 +2763,9 @@
                         <node concept="3TrEf2" id="7Sw_42UhEhW" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                         </node>
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGYSh" role="3oSUPX">
+                        <ref role="cht4Q" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
                       </node>
                     </node>
                   </node>

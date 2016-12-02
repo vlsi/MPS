@@ -10,7 +10,7 @@
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -307,7 +307,6 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -342,10 +341,7 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
-        <reference id="1140138128738" name="concept_old" index="1PxNhF" />
-        <child id="1140138123956" name="leftExpression_old" index="1PxMeX" />
-      </concept>
+      <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -1878,19 +1874,14 @@
                     <node concept="3clFbF" id="5vTxdEzxx41" role="3cqZAp">
                       <node concept="2OqwBi" id="5vTxdEzxI5R" role="3clFbG">
                         <node concept="1PxgMI" id="5vTxdEzxHym" role="2Oq$k0">
-                          <ref role="1PxNhF" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
-                          <ref role="1m5ApE" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
-                          <node concept="2OqwBi" id="5vTxdEzxx91" role="1PxMeX">
+                          <node concept="2OqwBi" id="5vTxdEzxx91" role="1m5AlR">
                             <node concept="30H73N" id="5vTxdEzxx40" role="2Oq$k0" />
                             <node concept="2qgKlT" id="5vTxdEzxGeX" role="2OqNvi">
                               <ref role="37wK5l" to="tpe5:hGBgWVd" resolve="getTestCase" />
                             </node>
                           </node>
-                          <node concept="2OqwBi" id="2YdNGB0TlCx" role="1m5AlR">
-                            <node concept="30H73N" id="2YdNGB0Tlsj" role="2Oq$k0" />
-                            <node concept="2qgKlT" id="2YdNGB0TlYL" role="2OqNvi">
-                              <ref role="37wK5l" to="tpe5:hGBgWVd" resolve="getTestCase" />
-                            </node>
+                          <node concept="chp4Y" id="714IaVdGZ4B" role="3oSUPX">
+                            <ref role="cht4Q" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
                           </node>
                         </node>
                         <node concept="2qgKlT" id="5vTxdEzxIZp" role="2OqNvi">
@@ -1970,7 +1961,6 @@
                 <ref role="ehGHo" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
               </node>
               <node concept="1PxgMI" id="i2npJ_Q" role="33vP2m">
-                <ref role="1m5ApE" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
                 <node concept="1rXfSq" id="2YdNGB0TIox" role="1m5AlR">
                   <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
                   <node concept="Xl_RD" id="2YdNGB0SmGL" role="37wK5m">
@@ -1999,6 +1989,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdGZ4C" role="3oSUPX">
+                  <ref role="cht4Q" to="tp5g:1kgh5Yab2sH" resolve="INodesTestMethod" />
                 </node>
               </node>
             </node>
@@ -2468,9 +2461,11 @@
                           </node>
                           <node concept="TSZUe" id="hPLRIvR" role="2OqNvi">
                             <node concept="1PxgMI" id="i2npI4X" role="25WWJ7">
-                              <ref role="1m5ApE" to="tp5g:hHqefK1" resolve="TestNode" />
                               <node concept="2GrUjf" id="hPLRIvU" role="1m5AlR">
                                 <ref role="2Gs0qQ" node="hPLRIvM" resolve="nodeTocheck" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdGZ4D" role="3oSUPX">
+                                <ref role="cht4Q" to="tp5g:hHqefK1" resolve="TestNode" />
                               </node>
                             </node>
                           </node>

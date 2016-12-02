@@ -62,7 +62,7 @@
       <concept id="1080736578640" name="jetbrains.mps.lang.editor.structure.BaseEditorComponent" flags="ig" index="2wURMF">
         <child id="1080736633877" name="cellModel" index="2wV5jI" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallynnotation" flags="ng" index="xG$WE" />
+      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="795210086017940429" name="jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem" flags="lg" index="xShMh" />
       <concept id="8371900013785948369" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter" flags="ig" index="2$S_p_" />
       <concept id="308059530142752797" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized" flags="ng" index="2F$Pav">
@@ -383,8 +383,8 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
@@ -1260,9 +1260,11 @@
                     <ref role="37wK5l" to="9nqt:7T23sO8vZuR" resolve="getDeclaration" />
                   </node>
                   <node concept="1PxgMI" id="UBgfI9cwSz" role="2Oq$k0">
-                    <ref role="1m5ApE" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                     <node concept="37vLTw" id="UBgfI9cvr9" role="1m5AlR">
                       <ref role="3cqZAo" node="7T23sO8wicy" resolve="mi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH06_" role="3oSUPX">
+                      <ref role="cht4Q" to="oubp:5BD$AU43p5T" resolve="MemberInstance" />
                     </node>
                   </node>
                 </node>
@@ -1998,8 +2000,10 @@
                   <node concept="2qgKlT" id="1wEcoXjIAVp" role="2OqNvi">
                     <ref role="37wK5l" to="9nqt:5ZzANK5B6wZ" resolve="findPlaceholders" />
                     <node concept="1PxgMI" id="1wEcoXjIAVq" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="3bvxqY" id="1wEcoXjIAVG" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH06Q" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2103,8 +2107,10 @@
                   <node concept="2qgKlT" id="1wEcoXjIAXS" role="2OqNvi">
                     <ref role="37wK5l" to="9nqt:5ZzANK5B6wZ" resolve="findPlaceholders" />
                     <node concept="1PxgMI" id="1wEcoXjIAXT" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="3bvxqY" id="1wEcoXjIAYb" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH06K" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -2201,8 +2207,10 @@
                   <node concept="2qgKlT" id="1wEcoXjIAZU" role="2OqNvi">
                     <ref role="37wK5l" to="9nqt:5ZzANK5B6wZ" resolve="findPlaceholders" />
                     <node concept="1PxgMI" id="1wEcoXjIAZV" role="37wK5m">
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="3bvxqY" id="1wEcoXjIB0d" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdH06Y" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>

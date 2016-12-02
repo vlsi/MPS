@@ -77,8 +77,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -139,11 +139,13 @@
               <node concept="2OqwBi" id="1Vi5mb_ByOk" role="2Oq$k0">
                 <node concept="1PxgMI" id="1Vi5mb_ByOl" role="2Oq$k0">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                   <node concept="nLn13" id="1Vi5mb_ByOm" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdGZnn" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                  </node>
                 </node>
                 <node concept="3Tsc0h" id="1Vi5mb_ByOn" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                 </node>
               </node>
               <node concept="v3k3i" id="1Vi5mb_ByOo" role="2OqNvi">
@@ -158,7 +160,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="1aYLt$9deqK" role="1Mr941">
-      <ref role="1N5Vy1" to="as3y:5iKxrmkn6qh" />
+      <ref role="1N5Vy1" to="as3y:5iKxrmkn6qh" resolve="solution" />
       <node concept="1dDu$B" id="1aYLt$9derk" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
       </node>

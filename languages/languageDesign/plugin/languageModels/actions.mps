@@ -6,7 +6,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -168,8 +168,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
@@ -613,9 +613,11 @@
               <node concept="2OqwBi" id="qXyebw2Fmn" role="33vP2m">
                 <node concept="2OqwBi" id="qXyebw2Fmo" role="2Oq$k0">
                   <node concept="1PxgMI" id="qXyebw2Fmp" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
                     <node concept="37vLTw" id="3GM_nagTrq6" role="1m5AlR">
                       <ref role="3cqZAo" node="qXyebw2Fm2" resolve="disposeTabClosure" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGY$M" role="3oSUPX">
+                      <ref role="cht4Q" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="qXyebw2Fmr" role="2OqNvi">

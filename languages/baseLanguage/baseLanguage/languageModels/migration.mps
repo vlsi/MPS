@@ -5,7 +5,7 @@
     <use id="d4615e3b-d671-4ba9-af01-2b78369b0ba7" name="jetbrains.mps.lang.pattern" version="1" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -200,8 +200,8 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
@@ -772,7 +772,6 @@
                                   <node concept="1P9Npp" id="7YwKlJL4L5D" role="2OqNvi">
                                     <node concept="2OqwBi" id="7YwKlJL4Omp" role="1P9ThW">
                                       <node concept="1PxgMI" id="7YwKlJL4O42" role="2Oq$k0">
-                                        <ref role="1m5ApE" to="tpee:5vlcUuJ5JXB" resolve="StatementCommentPart" />
                                         <node concept="2OqwBi" id="7YwKlJL4L5E" role="1m5AlR">
                                           <node concept="2OqwBi" id="7YwKlJL4L5F" role="2Oq$k0">
                                             <node concept="37vLTw" id="7YwKlJL4L5G" role="2Oq$k0">
@@ -783,6 +782,9 @@
                                             </node>
                                           </node>
                                           <node concept="1uHKPH" id="7YwKlJL4L5I" role="2OqNvi" />
+                                        </node>
+                                        <node concept="chp4Y" id="714IaVdH10N" role="3oSUPX">
+                                          <ref role="cht4Q" to="tpee:5vlcUuJ5JXB" resolve="StatementCommentPart" />
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="7YwKlJL4ODK" role="2OqNvi">

@@ -6,7 +6,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -198,8 +198,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -768,7 +768,6 @@
                         <node concept="3clFbF" id="16t6kMkZM3r" role="3cqZAp">
                           <node concept="2OqwBi" id="16t6kMkZM3s" role="3clFbG">
                             <node concept="1PxgMI" id="16t6kMkZM3t" role="2Oq$k0">
-                              <ref role="1m5ApE" to="tpee:f_0Q1BR" resolve="ArrayType" />
                               <node concept="2OqwBi" id="16t6kMkZM3u" role="1m5AlR">
                                 <node concept="2OqwBi" id="16t6kMkZM3v" role="2Oq$k0">
                                   <node concept="30H73N" id="16t6kMkZM3w" role="2Oq$k0" />
@@ -777,6 +776,9 @@
                                   </node>
                                 </node>
                                 <node concept="3JvlWi" id="16t6kMkZM3y" role="2OqNvi" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdGYGY" role="3oSUPX">
+                                <ref role="cht4Q" to="tpee:f_0Q1BR" resolve="ArrayType" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="16t6kMkZM3z" role="2OqNvi">
@@ -949,9 +951,11 @@
                           </node>
                           <node concept="2OqwBi" id="1p5Rk4z0Yaz" role="33vP2m">
                             <node concept="1PxgMI" id="1p5Rk4z0Ya$" role="2Oq$k0">
-                              <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                               <node concept="37vLTw" id="1p5Rk4z0Ya_" role="1m5AlR">
                                 <ref role="3cqZAo" node="1p5Rk4yXtiE" resolve="elementType" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdGYH9" role="3oSUPX">
+                                <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="1p5Rk4z0YaA" role="2OqNvi">
@@ -1591,7 +1595,6 @@
                       <node concept="1iwH70" id="16t6kMkZM6G" role="2OqNvi">
                         <ref role="1iwH77" to="tp2r:hz2f0zg" resolve="foreach" />
                         <node concept="1PxgMI" id="16t6kMkZM6H" role="1iwH7V">
-                          <ref role="1m5ApE" to="tp2q:gMGpvep" resolve="ForEachStatement" />
                           <node concept="2OqwBi" id="16t6kMkZM6I" role="1m5AlR">
                             <node concept="2OqwBi" id="16t6kMkZM6J" role="2Oq$k0">
                               <node concept="30H73N" id="16t6kMkZM6K" role="2Oq$k0" />
@@ -1600,6 +1603,9 @@
                               </node>
                             </node>
                             <node concept="1mfA1w" id="16t6kMkZM6M" role="2OqNvi" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdGYGK" role="3oSUPX">
+                            <ref role="cht4Q" to="tp2q:gMGpvep" resolve="ForEachStatement" />
                           </node>
                         </node>
                       </node>

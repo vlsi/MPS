@@ -115,8 +115,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -282,8 +282,10 @@
                   </node>
                   <node concept="2OqwBi" id="4AHaCIod54i" role="37vLTx">
                     <node concept="1PxgMI" id="4AHaCIod4YN" role="2Oq$k0">
-                      <ref role="1m5ApE" to="caxt:2tFdLTRKaaq" resolve="AbsractMake" />
                       <node concept="1r4N5L" id="4AHaCIod4Gm" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGYOc" role="3oSUPX">
+                        <ref role="cht4Q" to="caxt:2tFdLTRKaaq" resolve="AbsractMake" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="4AHaCIod5yY" role="2OqNvi">
                       <ref role="3Tt5mk" to="caxt:2tFdLTRKabK" resolve="argument" />
@@ -323,8 +325,10 @@
                       <node concept="3Tqbb2" id="1EV$wAslt9K" role="1tU5fm" />
                       <node concept="2OqwBi" id="1EV$wAslpM0" role="33vP2m">
                         <node concept="1PxgMI" id="1EV$wAslp9d" role="2Oq$k0">
-                          <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                           <node concept="3bvxqY" id="1EV$wAslozS" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdGYOb" role="3oSUPX">
+                            <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="1EV$wAslsib" role="2OqNvi">
                           <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
