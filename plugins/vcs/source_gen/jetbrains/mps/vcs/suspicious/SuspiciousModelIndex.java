@@ -28,10 +28,12 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import java.util.LinkedList;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import java.util.ArrayList;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
+import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
@@ -87,7 +89,9 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     myTaskQueue.stop();
     myPlatformWatcher.deactivate();
   }
-  public void mergeLater(List<Conflictable> tasks) {
+
+  /*package*/ void mergeLater(List<Conflictable> tasks) {
+    // invoked from non-EDT thread (usually one of Application's pooled threads) 
     final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
     final Map<VirtualFile, Conflictable> fileToConflictable = new LinkedHashMap<VirtualFile, Conflictable>();
     final Set<Conflictable> toReload = new HashSet<Conflictable>();
@@ -116,25 +120,38 @@ public class SuspiciousModelIndex implements ApplicationComponent {
       }
     });
 
+    // runnable to get executed in EDT 
     final Computable<Object> conflictableReload = new Computable<Object>() {
       public Object compute() {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          public void run() {
-            // see MPS-18743 
-            MPSModuleRepository.getInstance().saveAll();
+        // see MPS-18743 
+        for (Project project : toMerge.keySet()) {
+          SRepository projectRepo = ProjectHelper.getProjectRepository(project);
+          if (projectRepo == null) {
+            continue;
           }
-        });
+          new SaveRepositoryCommand(projectRepo).execute();
+        }
 
         for (final Project project : toMerge.keySet()) {
           List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
           virtualFileList.addAll(AbstractVcsHelper.getInstance(project).showMergeDialog(toMerge.get(project)));
           for (VirtualFile vfile : virtualFileList) {
-            Conflictable conflictable = fileToConflictable.get(vfile);
+            final Conflictable conflictable = fileToConflictable.get(vfile);
             if (conflictable != null) {
-              toReload.add(conflictable);
+              SRepository projectRepo = ProjectHelper.getProjectRepository(project);
+              if (projectRepo == null) {
+                toReload.add(conflictable);
+              } else {
+                projectRepo.getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    conflictable.reloadFromDisk();
+                  }
+                });
+              }
             }
           }
         }
+        // XXX no idea what to do with conflicts not from a project 
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
             for (Conflictable conflictable : toReload) {
@@ -168,6 +185,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     return null;
   }
   private static boolean isInConflict(IFile ifile) {
+    // use of deprecated method not to get warning for non-project files (see VFU.getProjectVirtualFile impl) 
+    // However, it it possible to get IFile not from project here (e.g. reloaded model from distribution)? 
     VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
       for (Project project : ProjectManager.getInstance().getOpenProjects()) {
