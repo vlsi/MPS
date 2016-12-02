@@ -2,7 +2,7 @@
 <model ref="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
@@ -148,7 +148,7 @@
       </node>
       <node concept="3F1sOY" id="hP5Yl5$" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no root element&gt;" />
-        <ref role="1NtTu8" to="dghb:hP5YayS" />
+        <ref role="1NtTu8" to="dghb:hP5YayS" resolve="rootElement" />
       </node>
       <node concept="2iRkQZ" id="i2IQmIb" role="2iSdaV" />
     </node>
@@ -183,7 +183,7 @@
         </node>
         <node concept="3F2HdR" id="hP5Yl5J" role="3EZMnx">
           <property role="2czwfN" value="false" />
-          <ref role="1NtTu8" to="dghb:hP5YayU" />
+          <ref role="1NtTu8" to="dghb:hP5YayU" resolve="attribute" />
           <node concept="3F0ifn" id="hP5Yl5K" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5L" role="3F10Kt">
@@ -206,7 +206,7 @@
         <node concept="3XFhqQ" id="hP5Yl5Q" role="3EZMnx" />
         <node concept="3F2HdR" id="hP5Yl5R" role="3EZMnx">
           <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="dghb:hP5YayV" />
+          <ref role="1NtTu8" to="dghb:hP5YayV" resolve="content" />
           <node concept="3F0ifn" id="hP5Yl5S" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5T" role="3F10Kt">
