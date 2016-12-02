@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import java.util.concurrent.TimeUnit;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import java.util.List;
 import java.util.Map;
@@ -40,18 +41,22 @@ import jetbrains.mps.vcs.MPSVcsManager;
 public class SuspiciousModelIndex implements ApplicationComponent {
   private final ProjectManager myProjectManager;
   private final VirtualFileManager myVirtualFileManager;
-  private TaskQueue<Conflictable> myTaskQueue;
+  private PlatformActivityTracker myPlatformWatcher;
+  private SuspiciousModelIndex.MyTaskQueue myTaskQueue;
   private ReloadManagerComponent myReloadManager;
   public SuspiciousModelIndex(ProjectManager manager, FSChangesWatcher watcher, VirtualFileManager vfManager, ReloadManagerComponent reloadManager) {
     myProjectManager = manager;
-    this.myReloadManager = reloadManager;
+    myReloadManager = reloadManager;
     myVirtualFileManager = vfManager;
+    myPlatformWatcher = new PlatformActivityTracker(manager, vfManager, reloadManager);
   }
+
   public void addModel(SModel model, boolean isInConflict) {
     if (model instanceof EditableSModel && !(model.isReadOnly())) {
       myTaskQueue.addTask(new ConflictableModelAdapter((EditableSModel) model, isInConflict));
     }
   }
+
   public void addModule(AbstractModule abstractModule, boolean inConflict) {
     myTaskQueue.addTask(new ConflictableModuleAdapter(abstractModule, inConflict));
   }
@@ -63,7 +68,9 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
   @Override
   public void initComponent() {
-    myTaskQueue = new SuspiciousModelIndex.MyTaskQueue(myProjectManager, myVirtualFileManager, myReloadManager);
+    myPlatformWatcher.activate();
+    myTaskQueue = new SuspiciousModelIndex.MyTaskQueue();
+    myTaskQueue.start(500, TimeUnit.MILLISECONDS);
     SuspiciousModelHandler.setHandler(new SuspiciousModelHandler() {
       @Override
       public void handleSuspiciousModel(SModel model, boolean inConflict) {
@@ -77,7 +84,8 @@ public class SuspiciousModelIndex implements ApplicationComponent {
   }
   @Override
   public void disposeComponent() {
-    myTaskQueue.dispose();
+    myTaskQueue.stop();
+    myPlatformWatcher.deactivate();
   }
   public void mergeLater(List<Conflictable> tasks) {
     final Map<Project, List<VirtualFile>> toMerge = new HashMap<Project, List<VirtualFile>>();
@@ -116,7 +124,6 @@ public class SuspiciousModelIndex implements ApplicationComponent {
             MPSModuleRepository.getInstance().saveAll();
           }
         });
-
 
         for (final Project project : toMerge.keySet()) {
           List<VirtualFile> virtualFileList = new ArrayList<VirtualFile>();
@@ -171,13 +178,10 @@ public class SuspiciousModelIndex implements ApplicationComponent {
     }
     return false;
   }
-  private class MyTaskQueue extends TaskQueue<Conflictable> {
-    public MyTaskQueue(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
-      super(manager, virtualFileManager, reloadManager);
-    }
+  private class MyTaskQueue extends BaseTaskQueue<Conflictable> {
     @Override
     protected boolean isProcessingAllowed() {
-      return super.isProcessingAllowed() && !(ModelAccess.instance().canRead());
+      return myPlatformWatcher.isProcessingAllowed() && !(ModelAccess.instance().canRead());
     }
     @Override
     protected void processTask(final List<Conflictable> tasks) {

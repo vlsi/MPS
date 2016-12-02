@@ -10,41 +10,43 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 
-public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
-  private final TaskQueue.BanVFMListener myVirtualFileManagerListener = new TaskQueue.BanVFMListener();
-  private final TaskQueue.BanReloadListener myReloadListener = new TaskQueue.BanReloadListener();
-  private ProjectManager myManager;
-  private VirtualFileManager myVirtualFileManager;
-  private ReloadManagerComponent myReloadManager;
-  public TaskQueue(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
-    super();
-    myManager = manager;
+/**
+ * Monitors and {@link jetbrains.mps.vcs.suspicious.PlatformActivityTracker#isProcessingAllowed() tells} if it's ok to perform our VCS operations (i.e. if no other backround platform VCS job is running and VFS is ready for action
+ */
+/*package*/ class PlatformActivityTracker {
+  private final PlatformActivityTracker.BanVFMListener myVirtualFileManagerListener = new PlatformActivityTracker.BanVFMListener();
+  private final PlatformActivityTracker.BanReloadListener myReloadListener = new PlatformActivityTracker.BanReloadListener();
+  private final ProjectManager myProjectManager;
+  private final VirtualFileManager myVirtualFileManager;
+  private final ReloadManagerComponent myReloadManager;
+
+  public PlatformActivityTracker(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
+    myProjectManager = manager;
     myVirtualFileManager = virtualFileManager;
-    this.myReloadManager = reloadManager;
+    myReloadManager = reloadManager;
+  }
+
+  public void activate() {
     myReloadManager.addReloadListener(myReloadListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
-  public void dispose() {
+
+  public void deactivate() {
     myReloadManager.removeReloadListener(myReloadListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }
-  @Override
-  protected boolean isProcessingAllowed() {
-    for (Project p : myManager.getOpenProjects()) {
+
+  public boolean isProcessingAllowed() {
+    for (Project p : myProjectManager.getOpenProjects()) {
       ProjectLevelVcsManager vcsMan = p.getComponent(ProjectLevelVcsManager.class);
       if (vcsMan.isBackgroundVcsOperationRunning()) {
         return false;
       }
     }
-    if (myVirtualFileManagerListener.isBanned()) {
-      return false;
-    }
-    if (myReloadListener.isBanned()) {
-      return false;
-    }
-    return true;
+    return !(myVirtualFileManagerListener.isBanned()) && !(myReloadListener.isBanned());
   }
-  private class BanVFMListener implements VirtualFileManagerListener {
+
+  private static class BanVFMListener implements VirtualFileManagerListener {
     private int myVFMBan = 0;
     private BanVFMListener() {
     }
@@ -66,7 +68,8 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
       return myVFMBan != 0;
     }
   }
-  private class BanReloadListener implements ReloadListener {
+
+  private static class BanReloadListener implements ReloadListener {
     private int myReloadBan = 0;
     private BanReloadListener() {
     }

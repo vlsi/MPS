@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.suspicious.BaseTaskQueue" file="BaseTaskQueue.java">
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.util.ui.Timer" />
-    <classNode dependClassName="java.lang.InterruptedException" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="com.intellij.concurrency.JobScheduler" />
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Runnable" />
-    <classNode dependClassName="java.util.LinkedList" />
+    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.concurrent.LinkedBlockingQueue" />
+    <classNode dependClassName="java.util.concurrent.ScheduledExecutorService" />
+    <classNode dependClassName="java.util.concurrent.ScheduledFuture" />
+    <classNode dependClassName="java.util.concurrent.Semaphore" />
+    <classNode dependClassName="java.util.concurrent.TimeUnit" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.suspicious.Conflictable" file="Conflictable.java">
     <classNode dependClassName="java.lang.Object" />
@@ -33,6 +35,16 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.vcs.suspicious.Conflictable" />
   </dependency>
+  <dependency className="jetbrains.mps.vcs.suspicious.PlatformActivityTracker" file="PlatformActivityTracker.java">
+    <classNode dependClassName="com.intellij.openapi.project.Project" />
+    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
+    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
+  </dependency>
   <dependency className="jetbrains.mps.vcs.suspicious.SuspiciousModelIndex" file="SuspiciousModelIndex.java">
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
@@ -54,6 +66,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.concurrent.TimeUnit" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -65,10 +78,11 @@
     <classNode dependClassName="jetbrains.mps.smodel.SuspiciousModelHandler" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vcs.MPSVcsManager" />
+    <classNode dependClassName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
     <classNode dependClassName="jetbrains.mps.vcs.suspicious.Conflictable" />
     <classNode dependClassName="jetbrains.mps.vcs.suspicious.ConflictableModelAdapter" />
     <classNode dependClassName="jetbrains.mps.vcs.suspicious.ConflictableModuleAdapter" />
-    <classNode dependClassName="jetbrains.mps.vcs.suspicious.TaskQueue" />
+    <classNode dependClassName="jetbrains.mps.vcs.suspicious.PlatformActivityTracker" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -76,17 +90,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-  </dependency>
-  <dependency className="jetbrains.mps.vcs.suspicious.TaskQueue" file="TaskQueue.java">
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.project.ProjectManager" />
-    <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
-    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
-    <classNode extendsClassName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
   </dependency>
 </dependenciesRoot>
 
