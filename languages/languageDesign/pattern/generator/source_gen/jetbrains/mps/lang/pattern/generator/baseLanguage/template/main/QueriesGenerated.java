@@ -391,7 +391,7 @@ public class QueriesGenerated {
     SContainmentLink role = MetaAdapterByDeclaration.getContainmentLink(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x7e881d31a4196e17L, 0x7e881d31a41979c5L, "childLinkDeclaration")));
     return mainNode.getChildren(role).iterator().next();
   }
-  public static SNode sourceNodeQuery_1340813738845889594(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_8558881887917633480(final SourceSubstituteMacroNodeContext _context) {
     SNode patternConcept = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
     ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(patternConcept, SNodeOperations.getConcept(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x108a9cb4791L, 0x108a9cb4792L, "patternNode"))));
     return patternConcept;
