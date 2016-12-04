@@ -321,7 +321,6 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -3558,7 +3557,6 @@
               <node concept="3BYIHo" id="4K12N3pLdnp" role="2OqNvi">
                 <node concept="2OqwBi" id="4K12N3pNynX" role="3BYIHq">
                   <node concept="1PxgMI" id="4K12N3pNtMG" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tp5g:hHqefK1" resolve="TestNode" />
                     <node concept="1rXfSq" id="4K12N3pLhMf" role="1m5AlR">
                       <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
                       <node concept="Xl_RD" id="4K12N3pLhMg" role="37wK5m">
@@ -3587,6 +3585,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node concept="chp4Y" id="bRxVSy$0xf" role="3oSUPX">
+                      <ref role="cht4Q" to="tp5g:hHqefK1" resolve="TestNode" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="4K12N3pN$Jj" role="2OqNvi">
@@ -3720,7 +3721,6 @@
             </node>
             <node concept="2OqwBi" id="4K12N3pNECZ" role="JAdkl">
               <node concept="1PxgMI" id="4K12N3pN_CS" role="2Oq$k0">
-                <ref role="1m5ApE" to="tp5g:hHqefK1" resolve="TestNode" />
                 <node concept="1rXfSq" id="4K12N3pLN4f" role="1m5AlR">
                   <ref role="37wK5l" to="tp6m:hLFg$wA" resolve="getRealNodeById" />
                   <node concept="Xl_RD" id="4K12N3pLN4g" role="37wK5m">
@@ -3749,6 +3749,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="chp4Y" id="bRxVSy$0xe" role="3oSUPX">
+                  <ref role="cht4Q" to="tp5g:hHqefK1" resolve="TestNode" />
                 </node>
               </node>
               <node concept="3TrEf2" id="4K12N3pNGO1" role="2OqNvi">
