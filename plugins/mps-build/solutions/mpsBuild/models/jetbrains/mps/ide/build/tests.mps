@@ -2142,6 +2142,12 @@
             <ref role="3bR37D" to="ffeo:14x5$qAUbkb" resolve="jetbrains.mps.lang.access" />
           </node>
         </node>
+        <node concept="1SiIV0" id="4K12N3pRIQL" role="3bR37C">
+          <node concept="3bR9La" id="4K12N3pRIQM" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" to="ffeo:7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5N4jA$0t5TT" role="2G$12L">
         <property role="BnDLt" value="true" />
