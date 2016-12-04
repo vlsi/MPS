@@ -156,11 +156,11 @@
               <ref role="1YBMHb" node="74C6il$lIN7" resolve="component" />
             </node>
             <node concept="3Tsc0h" id="74C6il$m8YH" role="2OqNvi">
-              <ref role="3TtcxE" to="ktbj:5pu6noS5f57" />
+              <ref role="3TtcxE" to="ktbj:5pu6noS5f57" resolve="dep" />
             </node>
           </node>
           <node concept="13MTOL" id="74C6il$mbUI" role="2OqNvi">
-            <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" />
+            <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" resolve="to" />
           </node>
         </node>
         <node concept="3clFbS" id="74C6il$m8Bn" role="2LFqv$">
@@ -272,11 +272,11 @@
                             <ref role="3cqZAo" node="74C6il$mjuI" resolve="nextComponent" />
                           </node>
                           <node concept="3Tsc0h" id="74C6il$mpsw" role="2OqNvi">
-                            <ref role="3TtcxE" to="ktbj:5pu6noS5f57" />
+                            <ref role="3TtcxE" to="ktbj:5pu6noS5f57" resolve="dep" />
                           </node>
                         </node>
                         <node concept="13MTOL" id="74C6il$mrFz" role="2OqNvi">
-                          <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" />
+                          <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" resolve="to" />
                         </node>
                       </node>
                       <node concept="3zZkjj" id="74C6il$mttR" role="2OqNvi">
@@ -337,15 +337,15 @@
                 <ref role="1YBMHb" node="74C6il$mGeV" resolve="dependency" />
               </node>
               <node concept="3TrEf2" id="74C6il$mKW2" role="2OqNvi">
-                <ref role="3Tt5mk" to="ktbj:5pu6noS6Rpk" />
+                <ref role="3Tt5mk" to="ktbj:5pu6noS6Rpk" resolve="to" />
               </node>
             </node>
             <node concept="3Tsc0h" id="74C6il$mGiy" role="2OqNvi">
-              <ref role="3TtcxE" to="ktbj:5pu6noS5f57" />
+              <ref role="3TtcxE" to="ktbj:5pu6noS5f57" resolve="dep" />
             </node>
           </node>
           <node concept="13MTOL" id="74C6il$mGiz" role="2OqNvi">
-            <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" />
+            <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" resolve="to" />
           </node>
         </node>
         <node concept="3clFbS" id="74C6il$mGi$" role="2LFqv$">
@@ -441,7 +441,7 @@
                       <ref role="1YBMHb" node="74C6il$mGeV" resolve="dependency" />
                     </node>
                     <node concept="3TrEf2" id="74C6il$mLFz" role="2OqNvi">
-                      <ref role="3Tt5mk" to="ktbj:5pu6noS6Rpk" />
+                      <ref role="3Tt5mk" to="ktbj:5pu6noS6Rpk" resolve="to" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="74C6il$mGjd" role="3uHU7B">
@@ -462,11 +462,11 @@
                             <ref role="3cqZAo" node="74C6il$mGiV" resolve="nextComponent" />
                           </node>
                           <node concept="3Tsc0h" id="74C6il$mGjm" role="2OqNvi">
-                            <ref role="3TtcxE" to="ktbj:5pu6noS5f57" />
+                            <ref role="3TtcxE" to="ktbj:5pu6noS5f57" resolve="dep" />
                           </node>
                         </node>
                         <node concept="13MTOL" id="74C6il$mGjn" role="2OqNvi">
-                          <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" />
+                          <ref role="13MTZf" to="ktbj:5pu6noS6Rpk" resolve="to" />
                         </node>
                       </node>
                       <node concept="3zZkjj" id="74C6il$mGjo" role="2OqNvi">

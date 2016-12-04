@@ -301,7 +301,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="parameterDeclaration" />
       <property role="IQ2ns" value="6832197706140518109" />
-      <ref role="20ksaX" node="5VgPTPXJCrs" />
+      <ref role="20ksaX" node="5VgPTPXJCrs" resolve="param" />
       <ref role="20lvS9" to="tpee:fz7vLUk" resolve="ParameterDeclaration" />
     </node>
   </node>
@@ -314,7 +314,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="typeVariableDeclaration" />
       <property role="IQ2ns" value="6832197706140518110" />
-      <ref role="20ksaX" node="5VgPTPXJCrs" />
+      <ref role="20ksaX" node="5VgPTPXJCrs" resolve="param" />
       <ref role="20lvS9" to="tpee:g96euPO" resolve="TypeVariableDeclaration" />
     </node>
   </node>
@@ -440,7 +440,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2217234381367188009" />
       <ref role="20lvS9" to="tpee:fz12cDC" resolve="FieldDeclaration" />
-      <ref role="20ksaX" node="4OLqP_NP$j4" />
+      <ref role="20ksaX" node="4OLqP_NP$j4" resolve="declaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1V5cIK_baeF">
@@ -559,7 +559,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="staticFieldDeclaration" />
       <property role="IQ2ns" value="6501140109493894278" />
-      <ref role="20ksaX" node="4OLqP_NP$j4" />
+      <ref role="20ksaX" node="4OLqP_NP$j4" resolve="declaration" />
       <ref role="20lvS9" to="tpee:f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
   </node>

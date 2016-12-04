@@ -94,7 +94,7 @@
   <node concept="1M2fIO" id="3U1VhSFTRN2">
     <ref role="1M2myG" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
     <node concept="1N5Pfh" id="3U1VhSFTRN3" role="1Mr941">
-      <ref role="1N5Vy1" to="pop3:3U1VhSFTRN1" />
+      <ref role="1N5Vy1" to="pop3:3U1VhSFTRN1" resolve="klass" />
       <node concept="1MUpDS" id="3U1VhSFTRN4" role="1N6uqs">
         <node concept="3clFbS" id="3U1VhSFTRN5" role="2VODD2">
           <node concept="3clFbF" id="1k5vvhz$UlD" role="3cqZAp">
@@ -125,7 +125,7 @@
   <node concept="1M2fIO" id="173Z5qAOgIX">
     <ref role="1M2myG" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
     <node concept="1N5Pfh" id="173Z5qAOgJ0" role="1Mr941">
-      <ref role="1N5Vy1" to="pop3:173Z5qAOgIZ" />
+      <ref role="1N5Vy1" to="pop3:173Z5qAOgIZ" resolve="klass" />
       <node concept="1MUpDS" id="173Z5qAOgJ1" role="1N6uqs">
         <node concept="3clFbS" id="173Z5qAOgJ2" role="2VODD2">
           <node concept="3clFbF" id="1k5vvhz$P5y" role="3cqZAp">
@@ -156,7 +156,7 @@
   <node concept="1M2fIO" id="173Z5qAOvNx">
     <ref role="1M2myG" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
     <node concept="1N5Pfh" id="173Z5qAOvNy" role="1Mr941">
-      <ref role="1N5Vy1" to="pop3:3U1VhSFTRN0" />
+      <ref role="1N5Vy1" to="pop3:3U1VhSFTRN0" resolve="testCase" />
       <node concept="1MUpDS" id="173Z5qAOvNz" role="1N6uqs">
         <node concept="3clFbS" id="173Z5qAOvN$" role="2VODD2">
           <node concept="3clFbF" id="173Z5qAOvNK" role="3cqZAp">
@@ -185,7 +185,7 @@
               <node concept="2OqwBi" id="173Z5qAPmYO" role="2Oq$k0">
                 <node concept="EsrRn" id="173Z5qAPmYN" role="2Oq$k0" />
                 <node concept="3TrEf2" id="173Z5qAPmYS" role="2OqNvi">
-                  <ref role="3Tt5mk" to="pop3:173Z5qAOsM8" />
+                  <ref role="3Tt5mk" to="pop3:173Z5qAOsM8" resolve="moduleRef" />
                 </node>
               </node>
               <node concept="2qgKlT" id="173Z5qAPmZk" role="2OqNvi">

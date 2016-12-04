@@ -474,7 +474,7 @@
                 <ref role="1YBMHb" node="4cWf37B8p08" resolve="expression" />
               </node>
               <node concept="3TrEf2" id="4cWf37B8p07" role="2OqNvi">
-                <ref role="3Tt5mk" to="4j10:4cWf37B8oWU" />
+                <ref role="3Tt5mk" to="4j10:4cWf37B8oWU" resolve="nodeExpr" />
               </node>
             </node>
           </node>

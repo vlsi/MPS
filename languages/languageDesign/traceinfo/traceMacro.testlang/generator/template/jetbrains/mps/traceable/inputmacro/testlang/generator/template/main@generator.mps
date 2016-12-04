@@ -143,7 +143,7 @@
                   <node concept="3clFbF" id="6V1k6Hk$rum" role="3cqZAp">
                     <node concept="2OqwBi" id="6V1k6Hk$run" role="3clFbG">
                       <node concept="3TrEf2" id="6V1k6Hk$ruo" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp2q:gMGsD4q" />
+                        <ref role="3Tt5mk" to="tp2q:gMGsD4q" resolve="inputSequence" />
                       </node>
                       <node concept="30H73N" id="6V1k6Hk$rup" role="2Oq$k0" />
                     </node>
@@ -159,7 +159,7 @@
                   <node concept="3clFbF" id="6V1k6Hk$ruF" role="3cqZAp">
                     <node concept="2OqwBi" id="6V1k6Hk$ruG" role="3clFbG">
                       <node concept="3TrEf2" id="6V1k6Hk$ruH" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:gMLFqrC" />
+                        <ref role="3Tt5mk" to="tpee:gMLFqrC" resolve="body" />
                       </node>
                       <node concept="30H73N" id="6V1k6Hk$ruI" role="2Oq$k0" />
                     </node>
@@ -184,7 +184,7 @@
                         <node concept="2OqwBi" id="6V1k6Hk$sNr" role="2Oq$k0">
                           <node concept="30H73N" id="6V1k6Hk$sN6" role="2Oq$k0" />
                           <node concept="3TrEf2" id="6V1k6Hk$sNx" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp2q:gMGsz7L" />
+                            <ref role="3Tt5mk" to="tp2q:gMGsz7L" resolve="variable" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="6V1k6Hk$sNW" role="2OqNvi">
@@ -203,7 +203,7 @@
                     <node concept="2OqwBi" id="6V1k6Hk$sOP" role="3clFbG">
                       <node concept="30H73N" id="6V1k6Hk$sOw" role="2Oq$k0" />
                       <node concept="3TrEf2" id="6V1k6Hk$sOV" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tp2q:gMGsz7L" />
+                        <ref role="3Tt5mk" to="tp2q:gMGsz7L" resolve="variable" />
                       </node>
                     </node>
                   </node>
@@ -242,7 +242,7 @@
                       </node>
                     </node>
                     <node concept="3TrEf2" id="6V1k6Hk$sQP" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp2q:gMGsz7L" />
+                      <ref role="3Tt5mk" to="tp2q:gMGsz7L" resolve="variable" />
                     </node>
                   </node>
                 </node>

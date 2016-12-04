@@ -65,7 +65,7 @@
               <node concept="37Cfm0" id="6fUw26UkGHH" role="2OqNvi">
                 <node concept="1aIX9F" id="6fUw26UkGHI" role="37CeNk">
                   <node concept="26LbJo" id="5_deIS4Vu0a" role="1aIX9E">
-                    <ref role="26LbJp" to="jqf9:1vrGgVFtizu" />
+                    <ref role="26LbJp" to="jqf9:1vrGgVFtizu" resolve="classifier" />
                   </node>
                 </node>
               </node>

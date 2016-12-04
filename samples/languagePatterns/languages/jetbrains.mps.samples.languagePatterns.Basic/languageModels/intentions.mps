@@ -198,7 +198,7 @@
                   <ref role="3cqZAo" node="603vF1qrTi3" resolve="concert" />
                 </node>
                 <node concept="3Tsc0h" id="603vF1qrZ7T" role="2OqNvi">
-                  <ref role="3TtcxE" to="vseb:3j8xjFBylMb" />
+                  <ref role="3TtcxE" to="vseb:3j8xjFBylMb" resolve="performers" />
                 </node>
               </node>
               <node concept="2DeJg1" id="603vF1qrZ7U" role="2OqNvi" />
@@ -244,7 +244,7 @@
                 <ref role="3cqZAo" node="603vF1qs0V3" resolve="performance" />
               </node>
               <node concept="3TrEf2" id="603vF1qs1hi" role="2OqNvi">
-                <ref role="3Tt5mk" to="vseb:3j8xjFBylNy" />
+                <ref role="3Tt5mk" to="vseb:3j8xjFBylNy" resolve="singer" />
               </node>
             </node>
           </node>

@@ -57,7 +57,7 @@
           <node concept="2OqwBi" id="O$iR4JBkju" role="3Ah4Yx">
             <node concept="3__QtB" id="O$iR4JBkjv" role="2Oq$k0" />
             <node concept="3TrEf2" id="O$iR4JBkjw" role="2OqNvi">
-              <ref role="3Tt5mk" to="uhxm:O$iR4JBkji" />
+              <ref role="3Tt5mk" to="uhxm:O$iR4JBkji" resolve="process" />
             </node>
           </node>
         </node>
@@ -65,7 +65,7 @@
           <node concept="2OqwBi" id="1ovLDatOft9" role="3Ah4Yx">
             <node concept="3__QtB" id="1ovLDatOft8" role="2Oq$k0" />
             <node concept="3TrEf2" id="1ovLDatOftd" role="2OqNvi">
-              <ref role="3Tt5mk" to="uhxm:1ovLDatNZew" />
+              <ref role="3Tt5mk" to="uhxm:1ovLDatNZew" resolve="tool" />
             </node>
           </node>
         </node>
@@ -82,7 +82,7 @@
           <node concept="2OqwBi" id="3buonKH8MlS" role="3_H1SZ">
             <node concept="3__QtB" id="3buonKH8MlR" role="2Oq$k0" />
             <node concept="3TrEf2" id="3buonKH8MlW" role="2OqNvi">
-              <ref role="3Tt5mk" to="uhxm:3aewtBM3d7v" />
+              <ref role="3Tt5mk" to="uhxm:3aewtBM3d7v" resolve="configuration" />
             </node>
           </node>
         </node>
@@ -90,7 +90,7 @@
           <node concept="2OqwBi" id="3buonKH8MlG" role="3Ah4Yx">
             <node concept="3__QtB" id="3buonKH8MlF" role="2Oq$k0" />
             <node concept="3TrEf2" id="3buonKH8MlK" role="2OqNvi">
-              <ref role="3Tt5mk" to="uhxm:toP3SpHfQQ" />
+              <ref role="3Tt5mk" to="uhxm:toP3SpHfQQ" resolve="configurationName" />
             </node>
           </node>
         </node>

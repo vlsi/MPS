@@ -56,7 +56,7 @@
           <node concept="l9S2W" id="1w81suLRd7L" role="lcghm">
             <node concept="2OqwBi" id="1w81suLRdez" role="lbANJ">
               <node concept="3Tsc0h" id="1w81suLRo_$" role="2OqNvi">
-                <ref role="3TtcxE" to="s7om:1w81suLPAyL" />
+                <ref role="3TtcxE" to="s7om:1w81suLPAyL" resolve="lines" />
               </node>
               <node concept="117lpO" id="1w81suLRd8d" role="2Oq$k0" />
             </node>

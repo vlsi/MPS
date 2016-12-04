@@ -102,7 +102,7 @@
                       <node concept="2OqwBi" id="4lITsQs52AL" role="3clFbG">
                         <node concept="30H73N" id="4lITsQs52AM" role="2Oq$k0" />
                         <node concept="3TrEf2" id="4lITsQs52AN" role="2OqNvi">
-                          <ref role="3Tt5mk" to="4j10:4cWf37B8oWU" />
+                          <ref role="3Tt5mk" to="4j10:4cWf37B8oWU" resolve="nodeExpr" />
                         </node>
                       </node>
                     </node>
@@ -122,7 +122,7 @@
                         <node concept="2OqwBi" id="4lITsQs52AU" role="2Oq$k0">
                           <node concept="30H73N" id="4lITsQs52AV" role="2Oq$k0" />
                           <node concept="3TrEf2" id="4lITsQs52AW" role="2OqNvi">
-                            <ref role="3Tt5mk" to="4j10:4cWf37B8oWV" />
+                            <ref role="3Tt5mk" to="4j10:4cWf37B8oWV" resolve="propertyDeclaration" />
                           </node>
                         </node>
                         <node concept="3TrcHB" id="4lITsQs52AX" role="2OqNvi">

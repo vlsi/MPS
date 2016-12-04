@@ -118,7 +118,7 @@
                 <ref role="3cqZAo" node="15xlXKdzaSA" resolve="twi" />
               </node>
               <node concept="3TrEf2" id="15xlXKdzbtK" role="2OqNvi">
-                <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" />
+                <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" resolve="wrapped" />
               </node>
             </node>
             <node concept="2oxUTD" id="15xlXKdzc1d" role="2OqNvi">

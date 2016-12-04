@@ -331,7 +331,7 @@
           <node concept="2OqwBi" id="2n3WChplMt7" role="2GsD0m">
             <node concept="13iPFW" id="2n3WChplKcw" role="2Oq$k0" />
             <node concept="3Tsc0h" id="2n3WChplMtb" role="2OqNvi">
-              <ref role="3TtcxE" to="hypd:2n3WChplKcc" />
+              <ref role="3TtcxE" to="hypd:2n3WChplKcc" resolve="refs" />
             </node>
           </node>
         </node>
@@ -444,7 +444,7 @@
               <node concept="2OqwBi" id="2n3WChplMwL" role="2Oq$k0">
                 <node concept="13iPFW" id="2n3WChplMwK" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2n3WChplMwP" role="2OqNvi">
-                  <ref role="3Tt5mk" to="hypd:2n3WChplMvy" />
+                  <ref role="3Tt5mk" to="hypd:2n3WChplMvy" resolve="innerRef" />
                 </node>
               </node>
               <node concept="2qgKlT" id="2n3WChplMwU" role="2OqNvi">
@@ -455,7 +455,7 @@
               <node concept="2OqwBi" id="2n3WChplMwz" role="2Oq$k0">
                 <node concept="13iPFW" id="2n3WChplMwy" role="2Oq$k0" />
                 <node concept="3TrEf2" id="2n3WChplMwB" role="2OqNvi">
-                  <ref role="3Tt5mk" to="hypd:2n3WChplMvz" />
+                  <ref role="3Tt5mk" to="hypd:2n3WChplMvz" resolve="generator" />
                 </node>
               </node>
               <node concept="3x8VRR" id="2n3WChplMwG" role="2OqNvi" />
@@ -570,7 +570,7 @@
                   <node concept="2OqwBi" id="2BHFktfnpCa" role="2Oq$k0">
                     <node concept="13iPFW" id="2BHFktfnpAw" role="2Oq$k0" />
                     <node concept="3TrEf2" id="2BHFktfnpEY" role="2OqNvi">
-                      <ref role="3Tt5mk" to="hypd:2BHFktfnliL" />
+                      <ref role="3Tt5mk" to="hypd:2BHFktfnliL" resolve="module" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="2BHFktfnpTw" role="2OqNvi">
@@ -588,7 +588,7 @@
             <node concept="2OqwBi" id="2BHFktfnpqm" role="3uHU7B">
               <node concept="13iPFW" id="2BHFktfnpow" role="2Oq$k0" />
               <node concept="3TrEf2" id="2BHFktfnpvN" role="2OqNvi">
-                <ref role="3Tt5mk" to="hypd:2BHFktfnliL" />
+                <ref role="3Tt5mk" to="hypd:2BHFktfnliL" resolve="module" />
               </node>
             </node>
           </node>
@@ -668,7 +668,7 @@
                 <node concept="2OqwBi" id="2BHFktfnlum" role="2Oq$k0">
                   <node concept="13iPFW" id="2BHFktfnlt5" role="2Oq$k0" />
                   <node concept="3TrEf2" id="2BHFktfnlx2" role="2OqNvi">
-                    <ref role="3Tt5mk" to="hypd:2BHFktfnliL" />
+                    <ref role="3Tt5mk" to="hypd:2BHFktfnliL" resolve="module" />
                   </node>
                 </node>
                 <node concept="1PgB_6" id="2BHFktfnpiJ" role="2OqNvi" />
@@ -733,7 +733,7 @@
                   <node concept="2OqwBi" id="2BHFktfnlD8" role="37vLTJ">
                     <node concept="13iPFW" id="2BHFktfnlBw" role="2Oq$k0" />
                     <node concept="3TrEf2" id="2BHFktfnlFO" role="2OqNvi">
-                      <ref role="3Tt5mk" to="hypd:2BHFktfnliL" />
+                      <ref role="3Tt5mk" to="hypd:2BHFktfnliL" resolve="module" />
                     </node>
                   </node>
                 </node>

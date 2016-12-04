@@ -272,14 +272,14 @@
                       <ref role="3cqZAo" node="1uUMibxO6sQ" resolve="linkNode" />
                     </node>
                     <node concept="3TrEf2" id="2wBnf4toVoG" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                      <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="73yVtVm1pfx" role="2OqNvi">
                     <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
                     <node concept="2OqwBi" id="2wBnf4toVnQ" role="37wK5m">
                       <node concept="3TrEf2" id="2wBnf4toVou" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                        <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                       </node>
                       <node concept="2GrUjf" id="2wBnf4toVnP" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1uUMibxO6sU" resolve="linkDecl" />

@@ -105,7 +105,7 @@
                 <ref role="1YBMHb" node="5m$620fQiLQ" resolve="e" />
               </node>
               <node concept="3TrEf2" id="5m$620fQjMZ" role="2OqNvi">
-                <ref role="3Tt5mk" to="5ds8:5m$620fQi1F" />
+                <ref role="3Tt5mk" to="5ds8:5m$620fQi1F" resolve="lang" />
               </node>
             </node>
           </node>

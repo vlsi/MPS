@@ -276,7 +276,7 @@
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="expression" />
       <property role="IQ2ns" value="7320828025189375156" />
-      <ref role="20ksaX" to="tpee:hqOq$gm" />
+      <ref role="20ksaX" to="tpee:hqOq$gm" resolve="operand" />
       <ref role="20lvS9" node="6moN$OJ8LMM" resolve="LocalParametersExpression" />
     </node>
     <node concept="PrWs8" id="75$Aq$6yFQ5" role="PzmwI">
@@ -312,7 +312,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3344436107830227890" />
       <ref role="20lvS9" node="2TDOII_dveK" resolve="ForeignParametersExpression" />
-      <ref role="20ksaX" to="tpee:hqOq$gm" />
+      <ref role="20ksaX" to="tpee:hqOq$gm" resolve="operand" />
     </node>
     <node concept="PrWs8" id="75$Aq$6yFQ4" role="PzmwI">
       <ref role="PrY4T" node="1TDZrawdcfS" resolve="IPropertyExpression" />
@@ -362,7 +362,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="resource" />
       <property role="IQ2ns" value="119022571402207413" />
-      <ref role="20ksaX" to="tpee:g7uigIF" />
+      <ref role="20ksaX" to="tpee:g7uigIF" resolve="classifier" />
       <ref role="20lvS9" to="tpee:g7pOWCK" resolve="Classifier" />
     </node>
   </node>

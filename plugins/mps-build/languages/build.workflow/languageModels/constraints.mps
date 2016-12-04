@@ -254,7 +254,7 @@
     <property role="3GE5qa" value="Tasks" />
     <ref role="1M2myG" to="8xvf:2pKPpytmOAS" resolve="BwfSubTaskDependency" />
     <node concept="1N5Pfh" id="2pKPpytmOB1" role="1Mr941">
-      <ref role="1N5Vy1" to="8xvf:2pKPpytmOAT" />
+      <ref role="1N5Vy1" to="8xvf:2pKPpytmOAT" resolve="target" />
       <node concept="1dDu$B" id="2pKPpytmOB5" role="1N6uqs">
         <ref role="1dDu$A" to="8xvf:2pKPpytmA9P" resolve="BwfSubTask" />
       </node>
@@ -409,7 +409,7 @@
                       <ref role="3cqZAo" node="Y2EImGHLSb" resolve="tldep" />
                     </node>
                     <node concept="3TrEf2" id="Y2EImGHLSa" role="2OqNvi">
-                      <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
+                      <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" resolve="target" />
                     </node>
                   </node>
                 </node>
@@ -427,7 +427,7 @@
               <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
             </node>
             <node concept="3Tsc0h" id="Y2EImGHLSf" role="2OqNvi">
-              <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" />
+              <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" resolve="imports" />
             </node>
           </node>
         </node>
@@ -632,7 +632,7 @@
                   <ref role="3cqZAo" node="Y2EImGHLSk" resolve="libs" />
                 </node>
                 <node concept="13MTOL" id="Y2EImGHLT_" role="2OqNvi">
-                  <ref role="13MTZf" to="8xvf:6l_Qx579cUk" />
+                  <ref role="13MTZf" to="8xvf:6l_Qx579cUk" resolve="parts" />
                 </node>
               </node>
               <node concept="ANE8D" id="Y2EImGHLTA" role="2OqNvi" />
@@ -704,7 +704,7 @@
                 <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
               </node>
               <node concept="3Tsc0h" id="Y2EImGHLU0" role="2OqNvi">
-                <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" />
+                <ref role="3TtcxE" to="8xvf:6l_Qx579sqR" resolve="imports" />
               </node>
             </node>
             <node concept="2Kehj3" id="Y2EImGHLU1" role="2OqNvi" />
@@ -868,7 +868,7 @@
                     <ref role="3cqZAo" node="Y2EImGHLV8" resolve="project" />
                   </node>
                   <node concept="3Tsc0h" id="4qU2HB9eLEH" role="2OqNvi">
-                    <ref role="3TtcxE" to="8xvf:2pKPpytmGTw" />
+                    <ref role="3TtcxE" to="8xvf:2pKPpytmGTw" resolve="parts" />
                   </node>
                 </node>
                 <node concept="2Ke4WJ" id="4qU2HB9eLF6" role="2OqNvi">
@@ -986,7 +986,7 @@
                               <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                             </node>
                             <node concept="3TrEf2" id="Y2EImGHLRs" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
+                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" resolve="target" />
                             </node>
                           </node>
                         </node>
@@ -1003,7 +1003,7 @@
                               <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                             </node>
                             <node concept="3TrEf2" id="Y2EImGHLRz" role="2OqNvi">
-                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
+                              <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" resolve="target" />
                             </node>
                           </node>
                         </node>
@@ -1022,7 +1022,7 @@
                             <ref role="3cqZAo" node="Y2EImGHLRF" resolve="dep" />
                           </node>
                           <node concept="3TrEf2" id="Y2EImGHLRE" role="2OqNvi">
-                            <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
+                            <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -1041,7 +1041,7 @@
                   <ref role="3cqZAo" node="Y2EImGHLRd" resolve="lib" />
                 </node>
                 <node concept="3Tsc0h" id="Y2EImGHLRJ" role="2OqNvi">
-                  <ref role="3TtcxE" to="8xvf:6l_Qx579sqQ" />
+                  <ref role="3TtcxE" to="8xvf:6l_Qx579sqQ" resolve="imports" />
                 </node>
               </node>
             </node>

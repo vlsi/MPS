@@ -242,7 +242,7 @@
                 <ref role="3cqZAo" node="qKmr2orM3l" resolve="type" />
               </node>
               <node concept="3TrEf2" id="qKmr2orM3u" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:qKmr2orM1E" />
+                <ref role="3Tt5mk" to="tgbt:qKmr2orM1E" resolve="plugin" />
               </node>
             </node>
             <node concept="2oxUTD" id="qKmr2orM3v" role="2OqNvi">
@@ -278,7 +278,7 @@
             <node concept="2OqwBi" id="qKmr2orM3G" role="2Oq$k0">
               <node concept="13iPFW" id="qKmr2orM3H" role="2Oq$k0" />
               <node concept="3TrEf2" id="qKmr2orM3I" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:qKmr2orM1E" />
+                <ref role="3Tt5mk" to="tgbt:qKmr2orM1E" resolve="plugin" />
               </node>
             </node>
             <node concept="2qgKlT" id="qKmr2orM3J" role="2OqNvi">
@@ -313,7 +313,7 @@
             <node concept="2OqwBi" id="qKmr2orM3U" role="2Oq$k0">
               <node concept="13iPFW" id="qKmr2orM3V" role="2Oq$k0" />
               <node concept="3TrEf2" id="qKmr2orM3W" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:qKmr2orM1h" />
+                <ref role="3Tt5mk" to="tgbt:qKmr2orM1h" resolve="plugin" />
               </node>
             </node>
             <node concept="2qgKlT" id="qKmr2orM3X" role="2OqNvi">
@@ -423,7 +423,7 @@
                 <ref role="3cqZAo" node="qKmr2orM4z" resolve="type" />
               </node>
               <node concept="3TrEf2" id="qKmr2orM4G" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:qKmr2orM1h" />
+                <ref role="3Tt5mk" to="tgbt:qKmr2orM1h" resolve="plugin" />
               </node>
             </node>
             <node concept="2oxUTD" id="qKmr2orM4H" role="2OqNvi">

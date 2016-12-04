@@ -171,7 +171,7 @@
                             <ref role="3cqZAo" node="44M3aQW8xbR" resolve="it" />
                           </node>
                           <node concept="3TrEf2" id="44M3aQW8xcl" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" />
+                            <ref role="3Tt5mk" to="tpee:6LFqxSRBTg7" resolve="method" />
                           </node>
                         </node>
                         <node concept="1mIQ4w" id="44M3aQW8xcL" role="2OqNvi">

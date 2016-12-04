@@ -149,7 +149,7 @@
                   <node concept="13iPFW" id="379IfaV77Eu" role="37wK5m" />
                   <node concept="359W_D" id="5TYh2YDXGkM" role="37wK5m">
                     <ref role="359W_E" to="tpm0:2S48fJgAlRV" resolve="RefTestClass" />
-                    <ref role="359W_F" to="tpm0:2S48fJgAlSA" />
+                    <ref role="359W_F" to="tpm0:2S48fJgAlSA" resolve="methods" />
                   </node>
                 </node>
                 <node concept="3K4zz7" id="2S48fJgAM5C" role="37wK5m">
@@ -157,7 +157,7 @@
                     <node concept="2OqwBi" id="2S48fJgAM5H" role="2Oq$k0">
                       <node concept="13iPFW" id="2S48fJgAM5G" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2S48fJgAM5L" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" />
+                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" resolve="extends" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="2S48fJgAM5Q" role="2OqNvi">
@@ -174,7 +174,7 @@
                     <node concept="2OqwBi" id="2S48fJgAM5v" role="3uHU7B">
                       <node concept="13iPFW" id="2S48fJgAM5u" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2S48fJgAM5z" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" />
+                        <ref role="3Tt5mk" to="tpm0:2S48fJgAlRX" resolve="extends" />
                       </node>
                     </node>
                   </node>
@@ -224,7 +224,7 @@
                 <node concept="13iPFW" id="379IfaV77As" role="37wK5m" />
                 <node concept="359W_D" id="5TYh2YDXGy9" role="37wK5m">
                   <ref role="359W_E" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
-                  <ref role="359W_F" to="tpm0:2S48fJgAlT0" />
+                  <ref role="359W_F" to="tpm0:2S48fJgAlT0" resolve="params" />
                 </node>
               </node>
             </node>

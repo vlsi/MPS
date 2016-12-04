@@ -155,7 +155,7 @@
                 <ref role="1YBMHb" node="4yAESKAJGmj" resolve="someForm" />
               </node>
               <node concept="3TrEf2" id="4yAESKAJGx4" role="2OqNvi">
-                <ref role="3Tt5mk" to="vseb:4yAESKAGZhf" />
+                <ref role="3Tt5mk" to="vseb:4yAESKAGZhf" resolve="validation" />
               </node>
             </node>
           </node>
@@ -203,7 +203,7 @@
                 <ref role="1YBMHb" node="7UfLy9aLYaW" resolve="itemReference" />
               </node>
               <node concept="3TrEf2" id="7UfLy9aLYyJ" role="2OqNvi">
-                <ref role="3Tt5mk" to="vseb:7UfLy9aLY1k" />
+                <ref role="3Tt5mk" to="vseb:7UfLy9aLY1k" resolve="item" />
               </node>
             </node>
           </node>

@@ -216,7 +216,7 @@
                 <node concept="2OqwBi" id="vvfLbL9rLE" role="2Oq$k0">
                   <node concept="117lpO" id="vvfLbL9rFH" role="2Oq$k0" />
                   <node concept="3Tsc0h" id="vvfLbL9sbc" role="2OqNvi">
-                    <ref role="3TtcxE" to="mlwq:vvfLbL9anB" />
+                    <ref role="3TtcxE" to="mlwq:vvfLbL9anB" resolve="messages" />
                   </node>
                 </node>
                 <node concept="2es0OD" id="vvfLbL9$6Z" role="2OqNvi">

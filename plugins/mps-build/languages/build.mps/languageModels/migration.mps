@@ -334,7 +334,7 @@
                         <ref role="2Gs0qQ" node="6wglnuBgJbV" resolve="project" />
                       </node>
                       <node concept="3Tsc0h" id="6wglnuBgMIX" role="2OqNvi">
-                        <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" />
+                        <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
                       </node>
                     </node>
                     <node concept="v3k3i" id="6wglnuBgMIY" role="2OqNvi">
@@ -380,7 +380,7 @@
                             <ref role="2Gs0qQ" node="6wglnuBgJbV" resolve="project" />
                           </node>
                           <node concept="3Tsc0h" id="6wglnuBh_NP" role="2OqNvi">
-                            <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                            <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                           </node>
                         </node>
                         <node concept="TSZUe" id="6wglnuBhEwu" role="2OqNvi">
@@ -402,7 +402,7 @@
                           <ref role="2Gs0qQ" node="6wglnuBgJbV" resolve="project" />
                         </node>
                         <node concept="3Tsc0h" id="2IzsICsUhIY" role="2OqNvi">
-                          <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                          <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                         </node>
                       </node>
                       <node concept="v3k3i" id="2IzsICsUlvM" role="2OqNvi">
@@ -451,7 +451,7 @@
                         <ref role="2Gs0qQ" node="6wglnuBgJbV" resolve="project" />
                       </node>
                       <node concept="3Tsc0h" id="6wglnuBh8rs" role="2OqNvi">
-                        <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" />
+                        <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
                       </node>
                     </node>
                     <node concept="TSZUe" id="6wglnuBhbVf" role="2OqNvi">
@@ -523,7 +523,7 @@
                       <ref role="2Gs0qQ" node="4aPbW1adV$x" resolve="project" />
                     </node>
                     <node concept="3Tsc0h" id="4aPbW1adWcC" role="2OqNvi">
-                      <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" />
+                      <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
                     </node>
                   </node>
                   <node concept="v3k3i" id="4aPbW1adWcD" role="2OqNvi">
@@ -704,7 +704,7 @@
                       <ref role="2Gs0qQ" node="3gXsCubla4a" resolve="project" />
                     </node>
                     <node concept="3Tsc0h" id="3gXsCubla4j" role="2OqNvi">
-                      <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" />
+                      <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
                     </node>
                   </node>
                   <node concept="v3k3i" id="3gXsCubla4k" role="2OqNvi">

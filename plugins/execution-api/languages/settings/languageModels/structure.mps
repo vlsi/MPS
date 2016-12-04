@@ -145,7 +145,7 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="946964771156066558" />
       <ref role="20lvS9" node="O$iR4J$g4j" resolve="PersistentConfigurationTemplate" />
-      <ref role="20ksaX" node="O$iR4J$g0t" />
+      <ref role="20ksaX" node="O$iR4J$g0t" resolve="persistentConfiguration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g41">
@@ -160,7 +160,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="946964771156066562" />
       <ref role="20lvS9" node="O$iR4J$g4q" resolve="TemplateParameter" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g43">
@@ -302,7 +302,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="946964771156066593" />
       <ref role="20lvS9" node="O$iR4J$g4_" resolve="CheckProperties_Function" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" />
+      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
     </node>
   </node>
   <node concept="PlHQZ" id="O$iR4J$g4y">
@@ -391,7 +391,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="946964771156066612" />
       <ref role="20lvS9" node="O$iR4J$g4M" resolve="EditorPropertyDeclaration" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="O$iR4J$g4Q">

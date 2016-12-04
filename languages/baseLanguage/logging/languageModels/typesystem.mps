@@ -75,7 +75,7 @@
           <node concept="1Z2H0r" id="5Uf5NKHQNYz" role="mwGJk">
             <node concept="2OqwBi" id="5Uf5NKHQO8u" role="1Z2MuG">
               <node concept="3TrEf2" id="5Uf5NKHQO_9" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:gZ4bqmg" />
+                <ref role="3Tt5mk" to="tpib:gZ4bqmg" resolve="logExpression" />
               </node>
               <node concept="1YBJjd" id="5Uf5NKHQNYN" role="2Oq$k0">
                 <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />
@@ -101,7 +101,7 @@
           <node concept="1Z2H0r" id="5Uf5NKHT2SE" role="mwGJk">
             <node concept="2OqwBi" id="5Uf5NKHT34_" role="1Z2MuG">
               <node concept="3TrEf2" id="5Uf5NKHT3jz" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpib:gZ4bMnD" />
+                <ref role="3Tt5mk" to="tpib:gZ4bMnD" resolve="exception" />
               </node>
               <node concept="1YBJjd" id="5Uf5NKHT2UK" role="2Oq$k0">
                 <ref role="1YBMHb" node="30LfEMLAnHK" resolve="logStatement" />

@@ -429,7 +429,7 @@
                             <ref role="3cqZAo" node="5OIo7_R8TRt" resolve="it" />
                           </node>
                           <node concept="3Tsc0h" id="dqwjwH$iL7" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpce:f_TKVDG" />
+                            <ref role="3TtcxE" to="tpce:f_TKVDG" resolve="propertyDeclaration" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="dqwjwH$gBd" role="2LFqv$">
@@ -497,7 +497,7 @@
                             <ref role="3cqZAo" node="5OIo7_R8TRt" resolve="it" />
                           </node>
                           <node concept="3Tsc0h" id="dqwjwH$oyF" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpce:f_TKVDF" />
+                            <ref role="3TtcxE" to="tpce:f_TKVDF" resolve="linkDeclaration" />
                           </node>
                         </node>
                         <node concept="3clFbS" id="dqwjwH$mOH" role="2LFqv$">
@@ -1139,7 +1139,7 @@
                                   <ref role="3cqZAo" node="4qBHWh_rCK_" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="4qBHWh_rDHV" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tpce:5vfjF5cjTVP" />
+                                  <ref role="3Tt5mk" to="tpce:5vfjF5cjTVP" resolve="icon" />
                                 </node>
                               </node>
                               <node concept="zfrQC" id="4qBHWh_rFp3" role="2OqNvi">

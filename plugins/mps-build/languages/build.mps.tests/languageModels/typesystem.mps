@@ -111,7 +111,7 @@
                     <ref role="1YBMHb" node="1CnLp85qAeE" resolve="node" />
                   </node>
                   <node concept="3TrEf2" id="7xxJYNIbUE3" role="2OqNvi">
-                    <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" />
+                    <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" resolve="haltonfailure" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="7xxJYNIbUE4" role="2OqNvi">
@@ -188,7 +188,7 @@
               <ref role="1YBMHb" node="1CnLp85qAeE" resolve="node" />
             </node>
             <node concept="3TrEf2" id="1CnLp85qwXp" role="2OqNvi">
-              <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" />
+              <ref role="3Tt5mk" to="5tjl:6g2MV4s4KuI" resolve="haltonfailure" />
             </node>
           </node>
           <node concept="3x8VRR" id="7xxJYNIbOIH" role="2OqNvi" />

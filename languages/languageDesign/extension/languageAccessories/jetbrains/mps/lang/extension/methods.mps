@@ -124,11 +124,11 @@
                     </node>
                   </node>
                   <node concept="3TrEf2" id="3zLwYDe0zs$" role="2OqNvi">
-                    <ref role="3Tt5mk" to="v54s:7335HkeYl_" />
+                    <ref role="3Tt5mk" to="v54s:7335HkeYl_" resolve="extensionPoint" />
                   </node>
                 </node>
                 <node concept="3TrEf2" id="3zLwYDe0_S$" role="2OqNvi">
-                  <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" />
+                  <ref role="3Tt5mk" to="v54s:6XJvNHU5VOb" resolve="objectType" />
                 </node>
               </node>
             </node>

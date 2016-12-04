@@ -112,7 +112,7 @@
           <node concept="2OqwBi" id="1whNchEKZrZ" role="3clFbG">
             <node concept="13iPFW" id="1whNchEKZs0" role="2Oq$k0" />
             <node concept="3Tsc0h" id="1whNchEKZs1" role="2OqNvi">
-              <ref role="3TtcxE" to="z2sp:1whNchEKZrv" />
+              <ref role="3TtcxE" to="z2sp:1whNchEKZrv" resolve="command" />
             </node>
           </node>
         </node>

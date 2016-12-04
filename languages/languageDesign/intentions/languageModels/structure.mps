@@ -150,14 +150,14 @@
       <property role="20kJfa" value="descriptionBlock" />
       <property role="IQ2ns" value="1812109616120819788" />
       <ref role="20lvS9" node="1$_U1xaW3xx" resolve="ParameterizedDescriptionBlock" />
-      <ref role="20ksaX" node="2c3oNEsfd2D" />
+      <ref role="20ksaX" node="2c3oNEsfd2D" resolve="descriptionFunction" />
     </node>
     <node concept="1TJgyj" id="1$_U1xaWR1f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="executeBlock" />
       <property role="IQ2ns" value="1812109616120819791" />
       <ref role="20lvS9" node="1$_U1xaWL3H" resolve="ParameterizedExecuteBlock" />
-      <ref role="20ksaX" node="2c3oNEsfAwj" />
+      <ref role="20ksaX" node="2c3oNEsfAwj" resolve="executeFunction" />
     </node>
   </node>
   <node concept="PlHQZ" id="38RcvkhOs6o">

@@ -73,7 +73,7 @@
       <property role="20kJfa" value="extension" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1550313277221324860" />
-      <ref role="20ksaX" to="tpee:fz7wK6H" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="1m3OroNpuvT" resolve="ExtensionMethodDeclaration" />
     </node>
     <node concept="PrWs8" id="1m3OroNnQsi" role="PzmwI">
@@ -155,7 +155,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1713017043371814013" />
       <ref role="20lvS9" node="1HybphbKaZR" resolve="ExtensionStaticFieldDeclaration" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1HybphbKaZR">
@@ -176,7 +176,7 @@
       <property role="20kJfa" value="instanceMethodDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7685333756920172913" />
-      <ref role="20ksaX" to="tpee:fz7wK6H" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
     </node>
   </node>

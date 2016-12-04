@@ -250,7 +250,7 @@
         <property role="3F0ifm" value="color:" />
       </node>
       <node concept="3F1sOY" id="3CF0obv99ai" role="3EZMnx">
-        <ref role="1NtTu8" to="lpry:3CF0obv99ac" resolve="color" />
+        <ref role="1NtTu8" to="lpry:3CF0obv99ac" resolve="colorRef" />
       </node>
       <node concept="l2Vlx" id="57sEyAnjX6N" role="2iSdaV" />
     </node>
@@ -308,7 +308,7 @@
   <node concept="24kQdi" id="3CF0obv98wp">
     <ref role="1XX52x" to="lpry:3CF0obv8w6J" resolve="ColorReference" />
     <node concept="1iCGBv" id="3CF0obv98Cu" role="2wV5jI">
-      <ref role="1NtTu8" to="lpry:3CF0obv8waq" resolve="color" />
+      <ref role="1NtTu8" to="lpry:3CF0obv8waq" resolve="target" />
       <node concept="1sVBvm" id="3CF0obv98Cv" role="1sWHZn">
         <node concept="3F0A7n" id="3CF0obv98C$" role="2wV5jI">
           <property role="1Intyy" value="true" />

@@ -70,7 +70,7 @@
     <property role="3GE5qa" value="parameter" />
     <ref role="1M2myG" to="q5cj:2E6akI4$s1W" resolve="DefaultGenerationParameterId" />
     <node concept="1N5Pfh" id="2E6akI4$sbI" role="1Mr941">
-      <ref role="1N5Vy1" to="q5cj:2E6akI4$s33" />
+      <ref role="1N5Vy1" to="q5cj:2E6akI4$s33" resolve="parameter" />
       <node concept="1MUpDS" id="2E6akI4$sbJ" role="1N6uqs">
         <node concept="3clFbS" id="2E6akI4$sbK" role="2VODD2">
           <node concept="3clFbJ" id="2E6akI4$sbO" role="3cqZAp">
@@ -79,12 +79,12 @@
                 <node concept="2OqwBi" id="2E6akI4$sc8" role="3cqZAk">
                   <node concept="2OqwBi" id="2E6akI4$sc0" role="2Oq$k0">
                     <node concept="3TrEf2" id="2E6akI4$sc7" role="2OqNvi">
-                      <ref role="3Tt5mk" to="q5cj:2E6akI4$s32" />
+                      <ref role="3Tt5mk" to="q5cj:2E6akI4$s32" resolve="container" />
                     </node>
                     <node concept="3kakTB" id="2E6akI4$sc5" role="2Oq$k0" />
                   </node>
                   <node concept="3Tsc0h" id="2E6akI4$scc" role="2OqNvi">
-                    <ref role="3TtcxE" to="q5cj:7mYJ4gC7JET" />
+                    <ref role="3TtcxE" to="q5cj:7mYJ4gC7JET" resolve="parameters" />
                   </node>
                 </node>
               </node>

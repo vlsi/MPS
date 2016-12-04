@@ -33,7 +33,7 @@
     <property role="3GE5qa" value="member" />
     <ref role="1M2myG" to="53vh:6d7r2FpJdsQ" resolve="DataDependencyReference" />
     <node concept="1N5Pfh" id="6d7r2FpJqYb" role="1Mr941">
-      <ref role="1N5Vy1" to="53vh:6d7r2FpJdsT" />
+      <ref role="1N5Vy1" to="53vh:6d7r2FpJdsT" resolve="dataDependency" />
       <node concept="1dDu$B" id="6d7r2FpJqYd" role="1N6uqs">
         <ref role="1dDu$A" to="53vh:4iMwkz$0syh" resolve="DataDependency" />
       </node>
@@ -43,7 +43,7 @@
     <property role="3GE5qa" value="transformExtension" />
     <ref role="1M2myG" to="53vh:2MN8ysKPshV" resolve="LinkPatternVariableReference" />
     <node concept="1N5Pfh" id="2MN8ysKPxAp" role="1Mr941">
-      <ref role="1N5Vy1" to="53vh:2MN8ysKPshW" />
+      <ref role="1N5Vy1" to="53vh:2MN8ysKPshW" resolve="declaration" />
       <node concept="1dDu$B" id="2MN8ysKPxAq" role="1N6uqs">
         <ref role="1dDu$A" to="tp3t:gzjrplq" resolve="LinkPatternVariableDeclaration" />
       </node>
@@ -53,7 +53,7 @@
     <property role="3GE5qa" value="transformExtension" />
     <ref role="1M2myG" to="53vh:6xRUAczIf6z" resolve="NodePatternVariableReference" />
     <node concept="1N5Pfh" id="6xRUAczIfiw" role="1Mr941">
-      <ref role="1N5Vy1" to="53vh:6xRUAczIf6$" />
+      <ref role="1N5Vy1" to="53vh:6xRUAczIf6$" resolve="declaration" />
       <node concept="1dDu$B" id="6xRUAczIfix" role="1N6uqs">
         <ref role="1dDu$A" to="tp3t:gyDMOuj" resolve="PatternVariableDeclaration" />
       </node>
@@ -63,7 +63,7 @@
     <property role="3GE5qa" value="transformExtension" />
     <ref role="1M2myG" to="53vh:2MN8ysKNWJc" resolve="PropertyPatternVariableReference" />
     <node concept="1N5Pfh" id="2MN8ysKO5kQ" role="1Mr941">
-      <ref role="1N5Vy1" to="53vh:2MN8ysKNYhD" />
+      <ref role="1N5Vy1" to="53vh:2MN8ysKNYhD" resolve="declaration" />
       <node concept="1dDu$B" id="2MN8ysKPgT_" role="1N6uqs">
         <ref role="1dDu$A" to="tp3t:gyDMOul" resolve="PropertyPatternVariableDeclaration" />
       </node>
@@ -73,7 +73,7 @@
     <property role="3GE5qa" value="transformExtension" />
     <ref role="1M2myG" to="53vh:5kfvu3HEc1U" resolve="ListPatternVariableReference" />
     <node concept="1N5Pfh" id="5kfvu3HEc4g" role="1Mr941">
-      <ref role="1N5Vy1" to="53vh:5kfvu3HEc1V" />
+      <ref role="1N5Vy1" to="53vh:5kfvu3HEc1V" resolve="declaration" />
       <node concept="1dDu$B" id="5kfvu3HEc4h" role="1N6uqs">
         <ref role="1dDu$A" to="tp3t:gyEdBcq" resolve="ListPattern" />
       </node>

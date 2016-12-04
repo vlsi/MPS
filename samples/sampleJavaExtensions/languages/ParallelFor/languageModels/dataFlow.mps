@@ -81,7 +81,7 @@
           <node concept="2OqwBi" id="6KBb0wH6DJ$" role="3Ah4Yx">
             <node concept="3__QtB" id="6KBb0wH6DJz" role="2Oq$k0" />
             <node concept="3TrEf2" id="6KBb0wH6DJC" role="2OqNvi">
-              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy132" />
+              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy132" resolve="loopVariable" />
             </node>
           </node>
         </node>
@@ -89,7 +89,7 @@
           <node concept="2OqwBi" id="6KBb0wH6DB_" role="3Ah4Yx">
             <node concept="3__QtB" id="6KBb0wH6DB$" role="2Oq$k0" />
             <node concept="3TrEf2" id="6KBb0wH6DBD" role="2OqNvi">
-              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" />
+              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" resolve="inputSequence" />
             </node>
           </node>
         </node>
@@ -99,7 +99,7 @@
               <node concept="2OqwBi" id="42COxuQQgH8" role="3Ah4Yx">
                 <node concept="3__QtB" id="42COxuQQgH5" role="2Oq$k0" />
                 <node concept="3TrEf2" id="42COxuQQgHd" role="2OqNvi">
-                  <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" />
+                  <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                 </node>
               </node>
             </node>
@@ -107,7 +107,7 @@
               <node concept="2OqwBi" id="42COxuQQgHk" role="3_H1SZ">
                 <node concept="3__QtB" id="42COxuQQgHh" role="2Oq$k0" />
                 <node concept="3TrEf2" id="42COxuQQgHp" role="2OqNvi">
-                  <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" />
+                  <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                 </node>
               </node>
             </node>
@@ -117,7 +117,7 @@
             <node concept="2OqwBi" id="42COxuQQgGQ" role="3uHU7B">
               <node concept="3__QtB" id="42COxuQQgGN" role="2Oq$k0" />
               <node concept="3TrEf2" id="42COxuQQgGV" role="2OqNvi">
-                <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" />
+                <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
               </node>
             </node>
           </node>
@@ -129,13 +129,13 @@
           <node concept="2OqwBi" id="6KBb0wH6BD$" role="3_H1SZ">
             <node concept="3__QtB" id="6KBb0wH6BDz" role="2Oq$k0" />
             <node concept="3TrEf2" id="6KBb0wH6BDC" role="2OqNvi">
-              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy132" />
+              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy132" resolve="loopVariable" />
             </node>
           </node>
           <node concept="2OqwBi" id="6KBb0wH6BDE" role="1XBRO_">
             <node concept="3__QtB" id="6KBb0wH6BDD" role="2Oq$k0" />
             <node concept="3TrEf2" id="6KBb0wH6BDI" role="2OqNvi">
-              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" />
+              <ref role="3Tt5mk" to="cgfx:7Joh5Ouy8LY" resolve="inputSequence" />
             </node>
           </node>
         </node>
@@ -148,7 +148,7 @@
           <node concept="2OqwBi" id="6KBb0wH6BEc" role="3Ah4Yx">
             <node concept="3__QtB" id="6KBb0wH6BEb" role="2Oq$k0" />
             <node concept="3TrEf2" id="6KBb0wH6BEg" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:gMLFqrC" />
+              <ref role="3Tt5mk" to="tpee:gMLFqrC" resolve="body" />
             </node>
           </node>
         </node>

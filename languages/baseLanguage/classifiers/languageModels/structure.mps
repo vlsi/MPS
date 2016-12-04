@@ -155,7 +155,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1205769403793" />
       <ref role="20lvS9" node="hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
-      <ref role="20ksaX" node="hyWH_vG" />
+      <ref role="20ksaX" node="hyWH_vG" resolve="member" />
     </node>
     <node concept="PrWs8" id="hyXsld6" role="PzmwI">
       <ref role="PrY4T" node="hyWEnem" resolve="IMemberOperation" />
@@ -183,7 +183,7 @@
       <property role="20kJfa" value="field" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1213999117683" />
-      <ref role="20ksaX" node="hyWH_vG" />
+      <ref role="20ksaX" node="hyWH_vG" resolve="member" />
       <ref role="20lvS9" node="hEBZ0aj" resolve="DefaultClassifierFieldDeclaration" />
     </node>
   </node>

@@ -344,7 +344,7 @@
                       <node concept="2OqwBi" id="3z1mdFUF$hu" role="2Oq$k0">
                         <node concept="30H73N" id="3z1mdFUF$ht" role="2Oq$k0" />
                         <node concept="3TrEf2" id="3z1mdFUF$hy" role="2OqNvi">
-                          <ref role="3Tt5mk" to="pop3:173Z5qAOsM8" />
+                          <ref role="3Tt5mk" to="pop3:173Z5qAOsM8" resolve="moduleRef" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="3z1mdFUF$hB" role="2OqNvi">

@@ -180,7 +180,7 @@
                 <ref role="1YBMHb" node="2Pn89z5f$_D" resolve="refactorOperation" />
               </node>
               <node concept="3TrEf2" id="2rpbYG7pTIp" role="2OqNvi">
-                <ref role="3Tt5mk" to="z2sp:23X86fnRD_Y" />
+                <ref role="3Tt5mk" to="z2sp:23X86fnRD_Y" resolve="refactoring" />
               </node>
             </node>
           </node>

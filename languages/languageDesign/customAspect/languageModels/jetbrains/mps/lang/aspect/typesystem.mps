@@ -183,7 +183,7 @@
                 <ref role="1YBMHb" node="5$xTughlZeq" resolve="c" />
               </node>
               <node concept="3TrEf2" id="5$xTughlZIC" role="2OqNvi">
-                <ref role="3Tt5mk" to="hfbu:5$xTughlvvt" />
+                <ref role="3Tt5mk" to="hfbu:5$xTughlvvt" resolve="implTemplate" />
               </node>
             </node>
             <node concept="3CFZ6_" id="5$xTughlZnz" role="2OqNvi">
@@ -206,7 +206,7 @@
           <property role="Xl_RC" value="Template should have no property macro on the 'name' property" />
         </node>
         <node concept="2OE7Q9" id="5$xTughm0$D" role="2OEWyd">
-          <ref role="2OEe5H" to="hfbu:5$xTughlvvt" />
+          <ref role="2OEe5H" to="hfbu:5$xTughlvvt" resolve="implTemplate" />
         </node>
       </node>
     </node>
@@ -233,7 +233,7 @@
                       <ref role="1YBMHb" node="4F0TDiuCZeY" resolve="amd" />
                     </node>
                     <node concept="3TrEf2" id="4F0TDiuCZ$R" role="2OqNvi">
-                      <ref role="3Tt5mk" to="hfbu:4F0TDiuCZaT" />
+                      <ref role="3Tt5mk" to="hfbu:4F0TDiuCZaT" resolve="cncpt" />
                     </node>
                   </node>
                 </node>

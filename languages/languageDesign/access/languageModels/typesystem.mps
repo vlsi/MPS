@@ -162,7 +162,7 @@
                   <ref role="3cqZAo" node="7Mb2akafE9j" resolve="rs" />
                 </node>
                 <node concept="3TrEf2" id="7Mb2akafE9h" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:fzcqZ_G" />
+                  <ref role="3Tt5mk" to="tpee:fzcqZ_G" resolve="expression" />
                 </node>
               </node>
               <node concept="3x8VRR" id="7Mb2akafE9i" role="2OqNvi" />
@@ -218,7 +218,7 @@
                 <ref role="1YBMHb" node="7Mb2akafE9A" resolve="comminEDT" />
               </node>
               <node concept="3TrEf2" id="7Mb2akafE9_" role="2OqNvi">
-                <ref role="3Tt5mk" to="qff7:7Mb2akafE8f" />
+                <ref role="3Tt5mk" to="qff7:7Mb2akafE8f" resolve="project" />
               </node>
             </node>
           </node>
@@ -243,7 +243,7 @@
                 <ref role="1YBMHb" node="1eZSuKdVolC" resolve="baseExecuteCommandStatement" />
               </node>
               <node concept="3TrEf2" id="4N6D1IQ0OS3" role="2OqNvi">
-                <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+                <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" resolve="repo" />
               </node>
             </node>
           </node>
@@ -253,7 +253,7 @@
             <node concept="2pJPED" id="4N6D1IQ0OS6" role="2pJPEn">
               <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
               <node concept="2pIpSj" id="4N6D1IQ0OS7" role="2pJxcM">
-                <ref role="2pIpSl" to="tpee:g7uigIF" />
+                <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
                 <node concept="36bGnv" id="4N6D1IQ0OS8" role="2pJxcZ">
                   <ref role="36bGnp" to="lui2:~SRepository" resolve="SRepository" />
                 </node>
@@ -289,7 +289,7 @@
               <ref role="1YBMHb" node="1eZSuKdVoFu" resolve="baseExecuteCommandStatement" />
             </node>
             <node concept="3TrEf2" id="1eZSuKdVoV0" role="2OqNvi">
-              <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" />
+              <ref role="3Tt5mk" to="qff7:1eZSuKdVoku" resolve="repo" />
             </node>
           </node>
           <node concept="3w_OXm" id="1eZSuKdVplj" role="2OqNvi" />

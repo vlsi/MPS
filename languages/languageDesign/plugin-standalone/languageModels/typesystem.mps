@@ -125,7 +125,7 @@
                 <ref role="1YBMHb" node="_QrTcSEy4B" resolve="operation" />
               </node>
               <node concept="3TrEf2" id="_QrTcSEy4y" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:_QrTcSEy4m" />
+                <ref role="3Tt5mk" to="tgbt:_QrTcSEy4m" resolve="tool" />
               </node>
             </node>
             <node concept="2qgKlT" id="_QrTcSEy4z" role="2OqNvi">
@@ -159,7 +159,7 @@
                 <ref role="1YBMHb" node="_QrTcSEy4O" resolve="operation" />
               </node>
               <node concept="3TrEf2" id="_QrTcSEy4J" role="2OqNvi">
-                <ref role="3Tt5mk" to="tgbt:_QrTcSEy4p" />
+                <ref role="3Tt5mk" to="tgbt:_QrTcSEy4p" resolve="componentDeclaration" />
               </node>
             </node>
             <node concept="2qgKlT" id="_QrTcSEy4K" role="2OqNvi">

@@ -192,7 +192,7 @@
                 <ref role="1YBMHb" node="7Mb2akaesw6" resolve="ird" />
               </node>
               <node concept="3TrEf2" id="7Mb2akaesw5" role="2OqNvi">
-                <ref role="3Tt5mk" to="1oap:7Mb2akaesr1" />
+                <ref role="3Tt5mk" to="1oap:7Mb2akaesr1" resolve="iconExpression" />
               </node>
             </node>
           </node>
