@@ -38,6 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsIntentionApplicableExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LogEvent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MPSActionReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MigrationTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0db).create();
   private final ConceptPresentation props_MockAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MockScopeProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelExpression = new ConceptPresentationBuilder().create();
@@ -61,7 +62,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeUnknownWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeUnreachable = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_NodeWarningCheckOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ac).create();
+  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0bc).create();
   private final ConceptPresentation props_NodesTestMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressKeyStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressMouseStatement = new ConceptPresentationBuilder().create();
@@ -146,6 +147,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LogEvent;
       case LanguageConceptSwitch.MPSActionReference:
         return props_MPSActionReference;
+      case LanguageConceptSwitch.MigrationTestCase:
+        return props_MigrationTestCase;
       case LanguageConceptSwitch.MockAnnotation:
         return props_MockAnnotation;
       case LanguageConceptSwitch.MockScopeProvider:
