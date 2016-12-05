@@ -40,7 +40,7 @@ public final class BuildStringPart__BehaviorDescriptor extends BaseBHDescriptor 
     if (SNodeOperations.getIndexInParent(__thisNode__) == 0) {
       return false;
     }
-    return eq_5tsa61_a0b0m(SNodeOperations.getConceptDeclaration(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConceptDeclaration(__thisNode__));
+    return eq_5tsa61_a0b0m(SNodeOperations.getConcept(SNodeOperations.getPrevSibling(__thisNode__)), SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static boolean isFirstPositionAllowed_idyEtdY40p7m(@NotNull SNode __thisNode__) {
     return true;

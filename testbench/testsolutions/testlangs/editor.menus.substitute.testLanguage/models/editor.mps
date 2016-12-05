@@ -2,8 +2,8 @@
 <model ref="r:d793eea9-8b7b-4c58-a7a2-62336f54dcce(jetbrains.mps.lang.editor.menus.substitute.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -307,6 +307,7 @@
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
+        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -1448,14 +1449,17 @@
                 </node>
                 <node concept="3clFbF" id="ve0pw__uJX" role="3cqZAp">
                   <node concept="yn5Q2" id="ve0pw__uJW" role="3clFbG">
-                    <node concept="2OqwBi" id="ve0pw__uU5" role="yn5Q4">
-                      <node concept="1N_AGu" id="ve0pw__uMY" role="2Oq$k0">
-                        <ref role="1N_AGt" to="33ny:~ComparableTimSort" resolve="ComparableTimSort" />
-                      </node>
-                      <node concept="liA8E" id="ve0pw__vc6" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-                        <node concept="37vLTw" id="ve0pw__zdZ" role="37wK5m">
-                          <ref role="3cqZAo" node="ve0pw__zdV" resolve="repository" />
+                    <node concept="1PxgMI" id="3l92WW0RLDO" role="yn5Q4">
+                      <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                      <node concept="2OqwBi" id="ve0pw__uU5" role="1m5AlR">
+                        <node concept="1N_AGu" id="ve0pw__uMY" role="2Oq$k0">
+                          <ref role="1N_AGt" to="33ny:~ComparableTimSort" resolve="ComparableTimSort" />
+                        </node>
+                        <node concept="liA8E" id="ve0pw__vc6" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                          <node concept="37vLTw" id="ve0pw__zdZ" role="37wK5m">
+                            <ref role="3cqZAo" node="ve0pw__zdV" resolve="repository" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -2865,10 +2869,10 @@
               <node concept="2OqwBi" id="41ZU75Xz7CB" role="3clFbG">
                 <node concept="2OqwBi" id="41ZU75Xz5Yn" role="2Oq$k0">
                   <node concept="1PxgMI" id="41ZU75Xzc0m" role="2Oq$k0">
-                    <node concept="X5bN_" id="41ZU75XzbGp" role="1m5AlR" />
                     <node concept="chp4Y" id="714IaVdH1_2" role="3oSUPX">
                       <ref role="cht4Q" to="wdez:7Nx4mSUrV2X" resolve="TestSubstituteParent" />
                     </node>
+                    <node concept="X5bN_" id="41ZU75XzbGp" role="1m5AlR" />
                   </node>
                   <node concept="3Tsc0h" id="41ZU75Xzcvo" role="2OqNvi">
                     <ref role="3TtcxE" to="wdez:41ZU75Xz30D" resolve="wrapSubstituteFromTransform" />

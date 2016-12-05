@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
@@ -363,21 +364,29 @@
     <property role="EcuMT" value="562388756444790046" />
     <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="ConceptIconResourceExpression" />
-    <property role="34LRSv" value="icon resource for concept" />
+    <property role="34LRSv" value="conceptIcon" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="49FXMLkTOT$" role="1TKVEi">
+      <property role="IQ2ns" value="4786190798786350692" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="concept" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" to="tp25:hzMxujR" resolve="IRefConceptArg" />
+    </node>
     <node concept="1TJgyj" id="ve0pw_$bP8" role="1TKVEi">
       <property role="IQ2ns" value="562388756444790088" />
       <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="1" />
+      <property role="20kJfa" value="concept_old" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      <node concept="asaX9" id="49FXMLkTOTy" role="lGtFl" />
     </node>
   </node>
   <node concept="1TIwiD" id="ve0pw_$_Kq">
     <property role="EcuMT" value="562388756444896282" />
     <property role="3GE5qa" value="icons.instantiation" />
     <property role="TrG5h" value="NodeIconResourceExpression" />
-    <property role="34LRSv" value="icon resource for node" />
+    <property role="34LRSv" value="nodeIcon" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
     <node concept="1TJgyj" id="ve0pw_$_Ks" role="1TKVEi">
       <property role="IQ2ns" value="562388756444896284" />

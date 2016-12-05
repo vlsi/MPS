@@ -13,7 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Circle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Color = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptIconResourceExpression = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept_old")).create();
   private final ConceptPresentation props_FileIcon = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")).create();
   private final ConceptPresentation props_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IconExpression = new ConceptPresentationBuilder().create();

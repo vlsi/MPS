@@ -36,7 +36,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConcept(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConcept(subtype))) {
         return true;
       }
     }
@@ -77,7 +77,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConcept(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConcept(subtype))) {
         {
           SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "8991952304890041665", 0, null);
@@ -109,7 +109,7 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
     for (SNode arg : SLinkOperations.getChildren(supertype, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConceptDeclaration(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConceptDeclaration(subtype))) {
+      if (CoerceUtil.canBeCoerced(subtype, SNodeOperations.getConcept(arg)) && CoerceUtil.canBeCoerced(arg, SNodeOperations.getConcept(subtype))) {
         result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) arg, true);
         break;
       }

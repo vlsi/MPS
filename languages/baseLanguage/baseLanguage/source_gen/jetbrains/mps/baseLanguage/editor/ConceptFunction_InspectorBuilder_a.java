@@ -11,10 +11,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 /*package*/ class ConceptFunction_InspectorBuilder_a extends AbstractEditorBuilder {
@@ -44,8 +45,8 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, myNode);
             collection.addEditorCell(new EditorCell_Constant(context, myNode, "Concept function help:"));
-            if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(myNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription")) != null) {
-              collection.addEditorCell(new EditorCell_Constant(context, myNode, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(myNode), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"))));
+            if (SConceptOperations.shortDescription(SNodeOperations.getConcept(myNode)) != null) {
+              collection.addEditorCell(new EditorCell_Constant(context, myNode, SConceptOperations.shortDescription(SNodeOperations.getConcept(myNode))));
             }
             collection.addEditorCell(new EditorCell_Constant(context, myNode, ""));
             collection.addEditorCell(new EditorCell_Constant(context, myNode, "Parameter help:"));

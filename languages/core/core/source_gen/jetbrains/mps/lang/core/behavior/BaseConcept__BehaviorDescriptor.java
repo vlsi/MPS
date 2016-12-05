@@ -88,7 +88,7 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
       if (name != null) {
         return name;
       }
-      return "<no name>[" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "]";
+      return "<no name>[" + SNodeOperations.getConcept(__thisNode__).getName() + "]";
     }
     // -- 
     String smartRefPresentation = ReferenceConceptUtil.getPresentation(__thisNode__);
@@ -101,7 +101,7 @@ public final class BaseConcept__BehaviorDescriptor extends BaseBHDescriptor {
       return conceptAlias;
     }
     // -- 
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return SNodeOperations.getConcept(__thisNode__).getName();
   }
   /*package*/ static String getDetailedPresentation_id22G2W3WJ92t(@NotNull SNode __thisNode__) {
     return BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(__thisNode__);

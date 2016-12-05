@@ -2,10 +2,10 @@
 <model ref="r:6f930e62-d183-4ca9-a17e-cab70bc506c7(jetbrains.mps.lang.actions.testLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -3127,11 +3127,11 @@
                           <ref role="3TtcxE" to="kxd5:7Y0nKKHP6d3" resolve="child1" />
                         </node>
                         <node concept="1PxgMI" id="1wEcoXjJ1ls" role="2Oq$k0">
-                          <node concept="37vLTw" id="1wEcoXjJ1lt" role="1m5AlR">
-                            <ref role="3cqZAo" node="1wEcoXjJ1lg" resolve="result" />
-                          </node>
                           <node concept="chp4Y" id="714IaVdH0zi" role="3oSUPX">
                             <ref role="cht4Q" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
+                          </node>
+                          <node concept="37vLTw" id="1wEcoXjJ1lt" role="1m5AlR">
+                            <ref role="3cqZAo" node="1wEcoXjJ1lg" resolve="result" />
                           </node>
                         </node>
                       </node>
@@ -3441,10 +3441,10 @@
                               <ref role="3TtcxE" to="kxd5:7Y0nKKHP6d3" resolve="child1" />
                             </node>
                             <node concept="1PxgMI" id="1wEcoXjJ1ob" role="2Oq$k0">
-                              <node concept="uqdCJ" id="1wEcoXjJ1oi" role="1m5AlR" />
                               <node concept="chp4Y" id="714IaVdH0zj" role="3oSUPX">
                                 <ref role="cht4Q" to="kxd5:2d_KkSmsy3T" resolve="ActionTestChild1" />
                               </node>
+                              <node concept="uqdCJ" id="1wEcoXjJ1oi" role="1m5AlR" />
                             </node>
                           </node>
                         </node>

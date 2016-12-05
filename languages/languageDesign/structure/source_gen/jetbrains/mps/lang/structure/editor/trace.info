@@ -6794,7 +6794,7 @@
       <node id="1741258697587094923" at="90,193,91,35" concept="10" />
       <node id="1741258697587094806" at="95,66,96,78" concept="10" />
       <node id="1741258697587094840" at="100,69,101,87" concept="10" />
-      <node id="1741258697587094876" at="105,64,106,117" concept="10" />
+      <node id="4786190798786717454" at="105,64,106,109" concept="10" />
       <node id="1741258697587094758" at="59,0,62,0" concept="8" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587094766" at="63,0,66,0" concept="8" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1741258697587094707" at="70,0,73,0" concept="2" trace="SubstituteMenuPart_Action_3looc_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -6819,7 +6819,7 @@
       <scope id="1741258697587094707" at="76,81,77,178" />
       <scope id="1741258697587094803" at="95,66,96,78" />
       <scope id="1741258697587094837" at="100,69,101,87" />
-      <scope id="1741258697587094873" at="105,64,106,117" />
+      <scope id="1741258697587094873" at="105,64,106,109" />
       <scope id="1741258697587094707" at="81,54,83,31" />
       <scope id="1741258697587094707" at="34,118,37,18">
         <var name="result" id="1741258697587094707" />

@@ -84,7 +84,7 @@ public abstract class SingleRoleCellProvider implements EditorBuilderEnvironment
   private void setDeleteActions(SNode child, boolean isRealChild, EditorCell editorCell, CellActionType actionType) {
     //todo get rid of getDeclarationNode
     if (isRealChild) {
-      editorCell.setAction(actionType, new CellAction_DeleteSmart(getNode(), myContainmentLink.getDeclarationNode(), child));
+      editorCell.setAction(actionType, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
     } else {
       editorCell.setAction(actionType,
           new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD : DeleteDirection.FORWARD));

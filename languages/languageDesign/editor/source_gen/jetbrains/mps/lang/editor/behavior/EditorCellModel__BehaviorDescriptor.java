@@ -18,9 +18,9 @@ import java.awt.Color;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -72,7 +72,7 @@ public final class EditorCellModel__BehaviorDescriptor extends BaseBHDescriptor 
   }
 
   /*package*/ static String getCellModelKind_idhHfCaJf(@NotNull SNode __thisNode__) {
-    String result = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    String result = SNodeOperations.getConcept(__thisNode__).getName();
     if (result.startsWith("CellModel_")) {
       result = result.substring("CellModel_".length());
     }

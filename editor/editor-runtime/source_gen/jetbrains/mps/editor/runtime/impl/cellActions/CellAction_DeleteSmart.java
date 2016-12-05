@@ -4,48 +4,51 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 
 public class CellAction_DeleteSmart extends AbstractCellAction {
   private SNode mySource;
-  private SNode myLink;
+  private SContainmentLink myLink;
   private SNode myTarget;
   private boolean myCanBeNull = true;
   private boolean myEnabled = true;
   private String myRole;
-  public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
+  public CellAction_DeleteSmart(SNode source, SContainmentLink link, SNode target) {
     mySource = source;
     myLink = link;
     myTarget = target;
-    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);
-    myRole = SPropertyOperations.getString(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
-    // This action used only for aggregation links 
-    myEnabled = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1"));
-    myCanBeNull = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1");
-    if (!(myCanBeNull)) {
-      myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
+    myRole = link.getName();
+    myCanBeNull = link.isOptional();
+    if (myCanBeNull) {
+      return;
     }
+
+    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0h0g(SNodeOperations.getConcept(myTarget), myLink.getTargetConcept());
   }
   @Override
   public boolean canExecute(EditorContext context) {
+    if (!(myEnabled)) {
+      return false;
+    }
     EditorCell myTargetCell = context.getEditorComponent().findNodeCell(myTarget);
-    return myEnabled && !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(context.getEditorComponent(), myTargetCell));
+    return !(ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(context.getEditorComponent(), myTargetCell));
   }
   @Override
   public void execute(EditorContext context) {
     SNodeOperations.deleteNode(myTarget);
     if (!(myCanBeNull)) {
-      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")), SNodeOperations.getModel(mySource), true);
+      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(myLink.getTargetConcept(), SNodeOperations.getModel(mySource), null, true);
       SLinkOperations.setTarget(mySource, ((ConceptMetaInfoConverter) mySource.getConcept()).convertAggregation(myRole), defaultTarget);
     }
+  }
+  private static boolean neq_89lc4r_a0a0h0g(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

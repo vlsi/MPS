@@ -103,7 +103,7 @@ public class LinkDeclaration_SubstituteMenu extends SubstituteMenuBase {
           @Nullable
           @Override
           public IconResource getIcon(@NotNull String pattern) {
-            return IconResourceUtil.getIconResourceForNode(SNodeOperations.getConceptDeclaration(myParameterObject));
+            return IconResourceUtil.getIconResourceForConcept(SNodeOperations.getConcept(myParameterObject));
           }
         }
       }
