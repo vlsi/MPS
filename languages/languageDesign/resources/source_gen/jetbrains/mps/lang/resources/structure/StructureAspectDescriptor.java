@@ -123,8 +123,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)/562388756444790046");
-    b.associate("concept_old", 0x7ce01982590bd48L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(false).origin("562388756444790088").done();
-    b.aggregate("concept", 0x426bf72c54e74e64L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L).optional(false).ordered(true).multiple(false).origin("4786190798786350692").done();
+    b.associate("concept_old", 0x7ce01982590bd48L).target(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL).optional(true).origin("562388756444790088").done();
+    b.aggregate("concept", 0x426bf72c54e74e64L).target(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x118f285e4f7L).optional(true).ordered(true).multiple(false).origin("4786190798786350692").done();
     b.alias("conceptIcon");
     return b.create();
   }

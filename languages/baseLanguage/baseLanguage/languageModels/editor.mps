@@ -52,7 +52,7 @@
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="562388756444790046" name="jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression" flags="ng" index="ynFM6">
-        <reference id="562388756444790088" name="concept" index="ynFNg" />
+        <reference id="562388756444790088" name="concept_old" index="ynFNg" />
       </concept>
     </language>
     <language id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts">

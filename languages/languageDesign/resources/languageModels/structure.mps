@@ -370,14 +370,14 @@
       <property role="IQ2ns" value="4786190798786350692" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="concept" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tp25:hzMxujR" resolve="IRefConceptArg" />
     </node>
     <node concept="1TJgyj" id="ve0pw_$bP8" role="1TKVEi">
       <property role="IQ2ns" value="562388756444790088" />
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="concept_old" />
-      <property role="20lbJX" value="1" />
+      <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
       <node concept="asaX9" id="49FXMLkTOTy" role="lGtFl" />
     </node>
