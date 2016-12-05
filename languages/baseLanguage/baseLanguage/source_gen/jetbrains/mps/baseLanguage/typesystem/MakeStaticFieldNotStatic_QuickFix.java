@@ -28,7 +28,7 @@ public class MakeStaticFieldNotStatic_QuickFix extends QuickFix_Runtime {
     ListSequence.fromList(SLinkOperations.getChildren(fieldDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))));
     SLinkOperations.setTarget(fieldDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), SLinkOperations.getTarget(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")));
     ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(fieldDeclaration);
-    SNodeOperations.detachNode(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]));
+    SNodeOperations.deleteNode(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]));
   }
 }

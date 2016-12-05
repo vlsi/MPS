@@ -35,7 +35,7 @@ public class AnnotationUtil {
       }
     });
     if ((foundAnnotation != null)) {
-      SNodeOperations.detachNode(foundAnnotation);
+      SNodeOperations.deleteNode(foundAnnotation);
     }
   }
 

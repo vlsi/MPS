@@ -28,7 +28,7 @@ public class EditorParenthesisUtil {
     SNode sidemost = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), toRight);
     SNode leaf = findRightmostOrLeftmostLeafExpression((toRight ? SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) : SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"))), !(toRight));
     SNode backsideSubtree = (toRight ? SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) : SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
-    SNodeOperations.detachNode(backsideSubtree);
+    SNodeOperations.deleteNode(backsideSubtree);
     SNodeOperations.replaceWithAnother(binOp, backsideSubtree);
     SNodeOperations.replaceWithAnother(sidemost, binOp);
     if (toRight) {
@@ -37,7 +37,7 @@ public class EditorParenthesisUtil {
       SLinkOperations.setTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), sidemost);
     }
     SNode sideSubtree = (toRight ? SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) : SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
-    SNodeOperations.detachNode(leaf);
+    SNodeOperations.deleteNode(leaf);
     if (toRight) {
       SLinkOperations.setTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), leaf);
     } else {
@@ -77,7 +77,7 @@ public class EditorParenthesisUtil {
     SNode sidemost = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(expr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, 0xfb4ed32b80L, "expression")), !(toRight));
     SNode binOp = SNodeOperations.cast(SNodeOperations.getParent(sidemost), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
     SNode sideExpr = (toRight ? SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")) : SLinkOperations.getTarget(binOp, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")));
-    SNodeOperations.detachNode(sideExpr);
+    SNodeOperations.deleteNode(sideExpr);
     SNodeOperations.replaceWithAnother(binOp, sideExpr);
     SNodeOperations.replaceWithAnother(expr, binOp);
     if (toRight) {

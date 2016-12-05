@@ -27,7 +27,7 @@ public class LatticeUtil {
             final SNode childJoinType = child;
             if (SNodeOperations.isInstanceOf(childJoinType, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType"))) {
               for (SNode grandChild : SLinkOperations.getChildren(childJoinType, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))) {
-                SNodeOperations.detachNode(grandChild);
+                SNodeOperations.deleteNode(grandChild);
                 ListSequence.fromList(SLinkOperations.getChildren(joinType, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, 0x1129e73a76aL, "argument"))).addElement(grandChild);
               }
               SNodeOperations.deleteNode(child);
@@ -45,7 +45,7 @@ public class LatticeUtil {
             final SNode childMeetType = child;
             if (SNodeOperations.isInstanceOf(childMeetType, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType"))) {
               for (SNode grandChild : SLinkOperations.getChildren(childMeetType, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"))) {
-                SNodeOperations.detachNode(grandChild);
+                SNodeOperations.deleteNode(grandChild);
                 ListSequence.fromList(SLinkOperations.getChildren(meetType, MetaAdapterFactory.getContainmentLink(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, 0x114b68b040bL, "argument"))).addElement(grandChild);
               }
               SNodeOperations.deleteNode(child);

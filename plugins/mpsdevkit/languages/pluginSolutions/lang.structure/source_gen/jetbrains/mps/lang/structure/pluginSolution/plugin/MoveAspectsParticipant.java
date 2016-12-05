@@ -179,7 +179,7 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
 
                   List<SNode> copied = NodeCopyTracker.get(refactoringSession).copyAndTrack(ListSequence.fromListAndArray(new ArrayList<SNode>(), aspect));
                   if (needsToPreserveOldNode() == RefactoringParticipant.KeepOldNodes.REMOVE && SNodeOperations.getModel(sourceConcept) == null) {
-                    SNodeOperations.detachNode(aspect);
+                    SNodeOperations.deleteNode(aspect);
                   }
 
                   final Map<SNode, SNode> copyMap = NodeCopyTracker.get(refactoringSession).getCopyMap();
@@ -191,7 +191,7 @@ public class MoveAspectsParticipant extends RefactoringParticipantBase<SNodeRefe
                   });
 
                   if (needsToPreserveOldNode() == RefactoringParticipant.KeepOldNodes.POSTPONE_REMOVE && SNodeOperations.getModel(sourceConcept) == null) {
-                    SNodeOperations.detachNode(aspect);
+                    SNodeOperations.deleteNode(aspect);
                   }
                 }
               };

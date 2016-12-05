@@ -125,11 +125,11 @@ public abstract class MigrationScriptBase implements MigrationScript {
   }
 
   public static SNode detachNodePatternVariable(SNode node) {
-    return SNodeOperations.detachNode(node);
+    return SNodeOperations.deleteNode(node);
   }
   public static List<SNode> detachListPatternVariable(List<SNode> nodes) {
     for (SNode node : ListSequence.fromList(nodes)) {
-      SNodeOperations.detachNode(node);
+      SNodeOperations.deleteNode(node);
     }
     return nodes;
   }

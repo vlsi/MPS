@@ -398,7 +398,7 @@ public class FullASTConverter extends ASTConverterWithExpressions {
     if (!(incr.isEmpty())) {
       for (SNode expressionStatement : incr) {
         SNode expression = SLinkOperations.getTarget(expressionStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression"));
-        SNodeOperations.detachNode(expression);
+        SNodeOperations.deleteNode(expression);
         ListSequence.fromList(SLinkOperations.getChildren(forStatement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10a698082feL, 0x10a6981b2c5L, "iteration"))).addElement(expression);
       }
     }

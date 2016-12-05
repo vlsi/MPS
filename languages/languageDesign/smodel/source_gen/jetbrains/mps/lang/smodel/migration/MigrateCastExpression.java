@@ -117,7 +117,7 @@ public class MigrateCastExpression extends MigrationScriptBase {
     });
     Sequence.fromIterable(attributes).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SNodeOperations.detachNode(it);
+        SNodeOperations.deleteNode(it);
         LinkAttribute__BehaviorDescriptor.setLink_id6Gg5KlvuxxF.invoke(it, targetLink);
         ListSequence.fromList(SLinkOperations.getChildren(targetNode, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"))).addElement(it);
       }

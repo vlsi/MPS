@@ -14,25 +14,25 @@ public class CollectionTypeCreationUtil {
   public static void extractSequenceElementType(SNode newNode, SNode sampleNode) {
     SNode maybeElementType = extractElementType(sampleNode);
     if ((maybeElementType != null)) {
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"), SNodeOperations.detachNode(maybeElementType));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, 0x10c260ee40eL, "elementType"), SNodeOperations.deleteNode(maybeElementType));
     }
   }
   public static void extractCollectionElementType(SNode newNode, SNode sampleNode) {
     SNode maybeElementType = extractElementType(sampleNode);
     if ((maybeElementType != null)) {
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, 0x4eec26fcbaf8c39cL, "elementType"), SNodeOperations.detachNode(maybeElementType));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x4eec26fcbaf8c39bL, 0x4eec26fcbaf8c39cL, "elementType"), SNodeOperations.deleteNode(maybeElementType));
     }
   }
   public static void extractListElementType(SNode newNode, SNode sampleNode) {
     SNode maybeElementType = extractElementType(sampleNode);
     if ((maybeElementType != null)) {
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, 0x10c25fe95c5L, "elementType"), SNodeOperations.detachNode(maybeElementType));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, 0x10c25fe95c5L, "elementType"), SNodeOperations.deleteNode(maybeElementType));
     }
   }
   public static void extractSetElementType(SNode newNode, SNode sampleNode) {
     SNode maybeElementType = extractElementType(sampleNode);
     if ((maybeElementType != null)) {
-      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, 0x11d91cc51e3L, "elementType"), SNodeOperations.detachNode(maybeElementType));
+      SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, 0x11d91cc51e3L, "elementType"), SNodeOperations.deleteNode(maybeElementType));
     }
   }
   private static SNode extractElementType(SNode sampleNode) {

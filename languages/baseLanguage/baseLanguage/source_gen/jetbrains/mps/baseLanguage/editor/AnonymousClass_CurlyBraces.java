@@ -53,7 +53,7 @@ public class AnonymousClass_CurlyBraces {
           });
         }
       } else {
-        SNodeOperations.detachNode(node);
+        SNodeOperations.deleteNode(node);
       }
     }
   }
@@ -91,7 +91,7 @@ public class AnonymousClass_CurlyBraces {
           });
         }
       } else {
-        SNodeOperations.detachNode(node);
+        SNodeOperations.deleteNode(node);
       }
     }
   }

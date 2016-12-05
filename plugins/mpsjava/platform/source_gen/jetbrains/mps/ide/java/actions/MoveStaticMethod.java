@@ -82,7 +82,7 @@ public class MoveStaticMethod implements MoveNodesAction {
               MoveStaticMethodRefactoring.replaceFields(newNode, originalClass);
               MoveStaticMethodRefactoring.replaceMethods(newNode, originalClass);
               if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
-                SNodeOperations.detachNode(oldNode);
+                SNodeOperations.deleteNode(oldNode);
               }
               myNodeLocation.insertNode(myProject.getRepository(), newNode);
             }

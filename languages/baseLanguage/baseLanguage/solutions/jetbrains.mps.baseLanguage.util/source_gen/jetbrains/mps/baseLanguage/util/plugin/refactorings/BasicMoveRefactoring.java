@@ -49,7 +49,7 @@ public class BasicMoveRefactoring {
     MoveRefactoringUtils.addNodeAtLink(this.myDestination, this.myReplacing);
   }
   protected void deleteOld() {
-    SNodeOperations.detachNode(this.myMoving);
+    SNodeOperations.deleteNode(this.myMoving);
   }
   protected void correctMoving() {
   }

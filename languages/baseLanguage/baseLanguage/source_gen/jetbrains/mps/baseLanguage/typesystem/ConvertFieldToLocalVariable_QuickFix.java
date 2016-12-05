@@ -35,6 +35,6 @@ public class ConvertFieldToLocalVariable_QuickFix extends QuickFix_Runtime {
         SLinkOperations.setTarget(ref, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), var);
       }
     });
-    SNodeOperations.detachNode(node);
+    SNodeOperations.deleteNode(node);
   }
 }

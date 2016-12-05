@@ -156,7 +156,7 @@ public class ConvertAnonymousRefactoring {
         continue;
       }
       for (SNode child : Sequence.fromIterable(from.getChildren(role))) {
-        to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
+        to.addChild(role, SNodeOperations.deleteNode(((SNode) child)));
       }
     }
   }

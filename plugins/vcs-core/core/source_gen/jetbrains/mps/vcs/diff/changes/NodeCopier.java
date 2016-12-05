@@ -68,7 +68,7 @@ public class NodeCopier {
   private void setId(SNode node, SNodeId id) {
     SModel model = SNodeOperations.getModel(node);
     if (SNodeOperations.getParent(node) == null) {
-      SNodeOperations.detachNode(node);
+      SNodeOperations.deleteNode(node);
       ((jetbrains.mps.smodel.SNode) node).setId(id);
       SModelOperations.addRootNode(model, node);
     } else {

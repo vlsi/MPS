@@ -141,7 +141,7 @@ public class ResolveUnknownUtil {
           SNode defaultConsCreator = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"));
           SLinkOperations.setTarget(defaultConsCreator, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0ac833a6L, "classifier"), typ);
           for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(x, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument")))) {
-            SNodeOperations.detachNode(arg);
+            SNodeOperations.deleteNode(arg);
             ListSequence.fromList(SLinkOperations.getChildren(defaultConsCreator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter"))).addElement(arg);
           }
 
@@ -153,7 +153,7 @@ public class ResolveUnknownUtil {
 
           reattachMethodArguments(x, classCreator);
           for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(x, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument")))) {
-            SNodeOperations.detachNode(arg);
+            SNodeOperations.deleteNode(arg);
             ListSequence.fromList(SLinkOperations.getChildren(classCreator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a59b0fbceL, 0x11a59c8ffe0L, "typeParameter"))).addElement(arg);
           }
 
@@ -399,13 +399,13 @@ public class ResolveUnknownUtil {
   }
   public static void reattachMethodArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(from, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument")))) {
-      SNodeOperations.detachNode(arg);
+      SNodeOperations.deleteNode(arg);
       ListSequence.fromList(SLinkOperations.getChildren(to, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).addElement(arg);
     }
   }
   public static void reattachTypeArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getChildren(from, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument")))) {
-      SNodeOperations.detachNode(arg);
+      SNodeOperations.deleteNode(arg);
       ListSequence.fromList(SLinkOperations.getChildren(to, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))).addElement(arg);
     }
   }
