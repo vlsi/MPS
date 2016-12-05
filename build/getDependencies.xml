@@ -142,9 +142,15 @@
     <ant antfile="${basedir}/../mps-platform/build/gant.xml" target="build" usenativebasedir="true" inheritall="true"/>
   </target>
 
-  <target name="install-platform" depends="check-platform,build-platform" if="${do.platform.local.build.install}"
+  <target name="copy-platform" depends="check-platform" if="${do.platform.local.build.install}"
           description="Start script to copy libraries from local MPS platform build">
     <ant antfile="${basedir}/../mps-platform/build/gant.xml" target="install" usenativebasedir="true"/>
+  </target>
+
+  <target name="install-platform" if="${idea.platform.local.build}"
+          description="Run scripts from inner project to build and copy local MPS platform build">
+    <antcall target="build-platform" inheritall="true"/>
+    <antcall target="copy-platform" inheritall="true"/>
   </target>
 
   <!-- ===================================================== -->
