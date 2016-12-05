@@ -3846,17 +3846,17 @@
     <node concept="3aamgX" id="hRYSX0H" role="3acgRq">
       <ref role="30HIoZ" to="tp25:hRYRAV0" resolve="Node_DetachOperation" />
       <node concept="gft3U" id="hRYSX0I" role="1lVwrX">
-        <node concept="2YIFZM" id="2rFDOywrsw" role="gfFT$">
-          <ref role="37wK5l" to="i8bi:5IkW5anFevM" resolve="detachNode" />
+        <node concept="2YIFZM" id="64YAEuf$510" role="gfFT$">
+          <ref role="37wK5l" to="i8bi:5IkW5anFevu" resolve="deleteNode" />
           <ref role="1Pybhc" to="i8bi:5IkW5anFcyt" resolve="SNodeOperations" />
-          <node concept="10Nm6u" id="2rFDOywrsx" role="37wK5m">
-            <node concept="29HgVG" id="2rFDOywrsy" role="lGtFl">
-              <node concept="3NFfHV" id="2rFDOywrsz" role="3NFExx">
-                <node concept="3clFbS" id="2rFDOywrs$" role="2VODD2">
-                  <node concept="3clFbF" id="2rFDOywrs_" role="3cqZAp">
-                    <node concept="2OqwBi" id="2rFDOywrsA" role="3clFbG">
-                      <node concept="30H73N" id="2rFDOywrsB" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="2rFDOywrsC" role="2OqNvi">
+          <node concept="10Nm6u" id="64YAEuf$511" role="37wK5m">
+            <node concept="29HgVG" id="64YAEuf$512" role="lGtFl">
+              <node concept="3NFfHV" id="64YAEuf$513" role="3NFExx">
+                <node concept="3clFbS" id="64YAEuf$514" role="2VODD2">
+                  <node concept="3clFbF" id="64YAEuf$515" role="3cqZAp">
+                    <node concept="2OqwBi" id="64YAEuf$516" role="3clFbG">
+                      <node concept="30H73N" id="64YAEuf$517" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="64YAEuf$518" role="2OqNvi">
                         <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
                       </node>
                     </node>
