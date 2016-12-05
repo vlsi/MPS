@@ -33,6 +33,7 @@ public class LightweightDsl_Styles_StyleSheet {
     public void apply(Style style, EditorCell editorCell) {
       style.set(StyleAttributes.SELECTABLE, 1, true);
       style.set(StyleAttributes.READ_ONLY, 1, true);
+      style.set(StyleAttributes.EDITABLE, 1, false);
       style.set(StyleAttributes.TEXT_COLOR, 1, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       style.set(StyleAttributes.FONT_STYLE, 1, MPSFonts.PLAIN);
     }
