@@ -16,6 +16,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import java.util.Set;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -46,15 +47,15 @@ public class genericArrayCreatorsWithInitializerAreIllegal_NonTypesystemRule ext
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(componentType, "generic array creation is illegal", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6709363801298845752", null, errorTarget);
       }
     } else {
-      Set<SNode> bannedArrayTypes = SetSequence.fromSet(new HashSet<SNode>());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a890137e9L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4067207L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120cf0ddd15L, "jetbrains.mps.baseLanguage.collections.structure.MappingType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType").getDeclarationNode());
-      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType").getDeclarationNode());
-      if (SetSequence.fromSet(bannedArrayTypes).contains(SNodeOperations.getConceptDeclaration(componentType))) {
+      Set<SConcept> bannedArrayTypes = SetSequence.fromSet(new HashSet<SConcept>());
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL, "jetbrains.mps.baseLanguage.collections.structure.ListType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x116db7e6bcbL, "jetbrains.mps.baseLanguage.collections.structure.MapType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x2e9a0b9a890137e9L, "jetbrains.mps.baseLanguage.collections.structure.LinkedListType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c4067207L, "jetbrains.mps.baseLanguage.collections.structure.SortedMapType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120cf0ddd15L, "jetbrains.mps.baseLanguage.collections.structure.MappingType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11d91cbbcd0L, "jetbrains.mps.baseLanguage.collections.structure.SetType"));
+      SetSequence.fromSet(bannedArrayTypes).addElement(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x120c482dd1aL, "jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
+      if (SetSequence.fromSet(bannedArrayTypes).contains(SNodeOperations.getConcept(componentType))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(componentType, "generic array creation is illegal", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6709363801298845812", null, errorTarget);

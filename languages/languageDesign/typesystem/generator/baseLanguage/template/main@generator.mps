@@ -13285,23 +13285,8 @@
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
       <node concept="3zFVjK" id="hv5wn1_" role="3zH0cK">
         <node concept="3clFbS" id="hv5wn1A" role="2VODD2">
-          <node concept="3cpWs8" id="hv5wn1B" role="3cqZAp">
-            <node concept="3cpWsn" id="hv5wn1C" role="3cpWs9">
-              <property role="TrG5h" value="ruleConcept" />
-              <node concept="3Tqbb2" id="hv5wn1D" role="1tU5fm">
-                <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-              </node>
-              <node concept="2OqwBi" id="hxx_2$x" role="33vP2m">
-                <node concept="30H73N" id="hv5wn1F" role="2Oq$k0" />
-                <node concept="3NT_Vc" id="hv5wn1G" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="hv5wn1H" role="3cqZAp">
             <node concept="3cpWs3" id="hv5wn1J" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagT_rK" role="3uHU7w">
-                <ref role="3cqZAo" node="hv5wn1C" resolve="ruleConcept" />
-              </node>
               <node concept="3cpWs3" id="hv5wn1I" role="3uHU7B">
                 <node concept="2OqwBi" id="hxx_6rc" role="3uHU7B">
                   <node concept="30H73N" id="hv5wn1N" role="2Oq$k0" />
@@ -13311,6 +13296,15 @@
                 </node>
                 <node concept="Xl_RD" id="hv5wn1L" role="3uHU7w">
                   <property role="Xl_RC" value="_" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="6k6KMvd_YZL" role="3uHU7w">
+                <node concept="2OqwBi" id="hxx_2$x" role="2Oq$k0">
+                  <node concept="30H73N" id="hv5wn1F" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="6k6KMvd_WRQ" role="2OqNvi" />
+                </node>
+                <node concept="liA8E" id="6k6KMvd_ZNM" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>
