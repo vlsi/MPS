@@ -24,6 +24,7 @@ import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.editor.menus.substitute.WrapperSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemWrapper;
@@ -239,7 +240,7 @@ public class TestSubstituteChild_SubstituteMenu extends SubstituteMenuBase {
           @Override
           public IconResource getIcon(@NotNull String pattern) {
             SRepository repository = _context.getEditorContext().getRepository();
-            return IconResourceUtil.getIconResourceForNode(new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)", "~ComparableTimSort").resolve(repository));
+            return IconResourceUtil.getIconResourceForNode(SNodeOperations.cast(new SNodePointer("6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)", "~ComparableTimSort").resolve(repository), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")));
           }
           @Nullable
           @Override

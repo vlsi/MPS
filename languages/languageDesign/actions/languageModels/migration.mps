@@ -40,7 +40,7 @@
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
       <concept id="562388756444896282" name="jetbrains.mps.lang.resources.structure.NodeIconResourceExpression" flags="ng" index="yn5Q2" />
       <concept id="562388756444790046" name="jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression" flags="ng" index="ynFM6">
-        <reference id="562388756444790088" name="concept" index="ynFNg" />
+        <child id="4786190798786350692" name="concept" index="mzb_8" />
       </concept>
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -287,6 +287,7 @@
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
       <concept id="1196350785110" name="jetbrains.mps.lang.quotation.structure.AbstractAntiquotation" flags="ng" index="2c44t0">
+        <property id="6489343236075007666" name="label" index="3hQQBS" />
         <child id="1196350785111" name="expression" index="2c44t1" />
       </concept>
       <concept id="1196350785117" name="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" flags="ng" index="2c44tb" />
@@ -16762,13 +16763,16 @@
                       <node concept="3clFbF" id="ve0pw_B2kH" role="3cqZAp">
                         <node concept="37vLTI" id="ve0pw_B3f$" role="3clFbG">
                           <node concept="2c44tf" id="ve0pw_B3v$" role="37vLTx">
-                            <node concept="ynFM6" id="ve0pw_B3H7" role="2c44tc">
-                              <ref role="ynFNg" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                              <node concept="2c44tb" id="ve0pw_B45n" role="lGtFl">
-                                <property role="P3scX" value="982eb8df-2c96-4bd7-9963-11712ea622e5/562388756444790046/562388756444790088" />
-                                <property role="2qtEX8" value="concept" />
-                                <node concept="37vLTw" id="1JgwF5auswc" role="2c44t1">
-                                  <ref role="3cqZAo" node="1JgwF5ausat" resolve="conceptDeclaration" />
+                            <node concept="ynFM6" id="3l92WW0QEJo" role="2c44tc">
+                              <node concept="chp4Y" id="3l92WW0QF12" role="mzb_8">
+                                <ref role="cht4Q" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                <node concept="2c44tb" id="3l92WW0QFnK" role="lGtFl">
+                                  <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" />
+                                  <property role="2qtEX8" value="conceptDeclaration" />
+                                  <property role="3hQQBS" value="RefConcept_Reference" />
+                                  <node concept="37vLTw" id="3l92WW0QFEG" role="2c44t1">
+                                    <ref role="3cqZAo" node="1JgwF5ausat" resolve="conceptDeclaration" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

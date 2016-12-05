@@ -21,7 +21,7 @@
         <child id="562388756444896284" name="node" index="yn5Q4" />
       </concept>
       <concept id="562388756444790046" name="jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression" flags="ng" index="ynFM6">
-        <reference id="562388756444790088" name="concept" index="ynFNg" />
+        <reference id="562388756444790088" name="concept_old" index="ynFNg" />
       </concept>
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -1445,14 +1445,17 @@
                 </node>
                 <node concept="3clFbF" id="ve0pw__uJX" role="3cqZAp">
                   <node concept="yn5Q2" id="ve0pw__uJW" role="3clFbG">
-                    <node concept="2OqwBi" id="ve0pw__uU5" role="yn5Q4">
-                      <node concept="1N_AGu" id="ve0pw__uMY" role="2Oq$k0">
-                        <ref role="1N_AGt" to="33ny:~ComparableTimSort" resolve="ComparableTimSort" />
-                      </node>
-                      <node concept="liA8E" id="ve0pw__vc6" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-                        <node concept="37vLTw" id="ve0pw__zdZ" role="37wK5m">
-                          <ref role="3cqZAo" node="ve0pw__zdV" resolve="repository" />
+                    <node concept="1PxgMI" id="3l92WW0RLDO" role="yn5Q4">
+                      <ref role="1m5ApE" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                      <node concept="2OqwBi" id="ve0pw__uU5" role="1m5AlR">
+                        <node concept="1N_AGu" id="ve0pw__uMY" role="2Oq$k0">
+                          <ref role="1N_AGt" to="33ny:~ComparableTimSort" resolve="ComparableTimSort" />
+                        </node>
+                        <node concept="liA8E" id="ve0pw__vc6" role="2OqNvi">
+                          <ref role="37wK5l" to="mhbf:~SNodeReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
+                          <node concept="37vLTw" id="ve0pw__zdZ" role="37wK5m">
+                            <ref role="3cqZAo" node="ve0pw__zdV" resolve="repository" />
+                          </node>
                         </node>
                       </node>
                     </node>
