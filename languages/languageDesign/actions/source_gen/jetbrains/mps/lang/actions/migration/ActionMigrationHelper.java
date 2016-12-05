@@ -269,7 +269,7 @@ public class ActionMigrationHelper {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, "jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression"), null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept"), (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7ce01982590bd1eL, 0x7ce01982590bd48L, "concept_old"), (SNode) parameter_1);
     return quotedNode_2;
   }
   private static SNode _quotation_createNode_qgr84z_a0a0a1a0a0b0o() {
