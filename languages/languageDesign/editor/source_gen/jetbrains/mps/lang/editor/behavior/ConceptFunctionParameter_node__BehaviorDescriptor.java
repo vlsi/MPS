@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -34,7 +34,9 @@ public final class ConceptFunctionParameter_node__BehaviorDescriptor extends Bas
   }
 
   /*package*/ static boolean useGenericAccessor_id6E2BWlDjAuB(@NotNull SNode __thisNode__) {
-    return (boolean) IContextNodeAccessQualifier__BehaviorDescriptor.useNodeGetter_id6E2BWlDjMQu.invoke(SNodeOperations.as(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a829fc5694f1ebcL, "jetbrains.mps.lang.editor.structure.IContextNodeAccessQualifier")));
+    SNode conceptFunction = ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__);
+    // TODO: remove conceptFunction != null check. It is here only for the compatibility with mbeddr generator 
+    return conceptFunction != null && (boolean) IContextNodeAccessQualifier__BehaviorDescriptor.useNodeGetter_id6E2BWlDjMQu.invoke(SNodeOperations.as(conceptFunction, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a829fc5694f1ebcL, "jetbrains.mps.lang.editor.structure.IContextNodeAccessQualifier")));
   }
 
   /*package*/ ConceptFunctionParameter_node__BehaviorDescriptor() {
