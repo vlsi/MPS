@@ -519,7 +519,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -3363,22 +3362,16 @@
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
       <node concept="3zFVjK" id="h5YdGbC" role="3zH0cK">
         <node concept="3clFbS" id="h5YdGbD" role="2VODD2">
-          <node concept="3cpWs8" id="h5YIQVZ" role="3cqZAp">
-            <node concept="3cpWsn" id="h5YIQW0" role="3cpWs9">
-              <property role="TrG5h" value="ruleConcept" />
-              <node concept="3Tqbb2" id="h5YIQW1" role="1tU5fm">
-                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-              </node>
-              <node concept="2OqwBi" id="hxx$GFt" role="33vP2m">
-                <node concept="30H73N" id="h5YJAHT" role="2Oq$k0" />
-                <node concept="3NT_Vc" id="h5YJCFT" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="h5Ye3Xp" role="3cqZAp">
             <node concept="3cpWs3" id="h5YIqSa" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagTsEZ" role="3uHU7w">
-                <ref role="3cqZAo" node="h5YIQW0" resolve="ruleConcept" />
+              <node concept="2OqwBi" id="6k6KMvdHFW6" role="3uHU7w">
+                <node concept="2OqwBi" id="6k6KMvdHDIi" role="2Oq$k0">
+                  <node concept="30H73N" id="6k6KMvdHDsh" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="6k6KMvdHFmJ" role="2OqNvi" />
+                </node>
+                <node concept="liA8E" id="6k6KMvdHGBU" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                </node>
               </node>
               <node concept="3cpWs3" id="h5Ye5Qz" role="3uHU7B">
                 <node concept="2OqwBi" id="hxx_3Bi" role="3uHU7B">
@@ -11623,23 +11616,8 @@
       <property role="P4ACc" value="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" />
       <node concept="3zFVjK" id="hjg_XmP" role="3zH0cK">
         <node concept="3clFbS" id="hjg_XmQ" role="2VODD2">
-          <node concept="3cpWs8" id="hjgA4Yr" role="3cqZAp">
-            <node concept="3cpWsn" id="hjgA4Ys" role="3cpWs9">
-              <property role="TrG5h" value="ruleConcept" />
-              <node concept="3Tqbb2" id="hjgA4Yt" role="1tU5fm">
-                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-              </node>
-              <node concept="2OqwBi" id="hxx_0r$" role="33vP2m">
-                <node concept="30H73N" id="hjgA7RV" role="2Oq$k0" />
-                <node concept="3NT_Vc" id="hjgA4Yw" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="3clFbF" id="hjgA4Yx" role="3cqZAp">
             <node concept="3cpWs3" id="hjgA4Yz" role="3clFbG">
-              <node concept="37vLTw" id="3GM_nagT$b4" role="3uHU7w">
-                <ref role="3cqZAo" node="hjgA4Ys" resolve="ruleConcept" />
-              </node>
               <node concept="3cpWs3" id="hjgA4Yy" role="3uHU7B">
                 <node concept="2OqwBi" id="hxx$V0O" role="3uHU7B">
                   <node concept="30H73N" id="hjgA4YB" role="2Oq$k0" />
@@ -11649,6 +11627,15 @@
                 </node>
                 <node concept="Xl_RD" id="hjgA4Y_" role="3uHU7w">
                   <property role="Xl_RC" value="_" />
+                </node>
+              </node>
+              <node concept="2OqwBi" id="6k6KMvdHaYK" role="3uHU7w">
+                <node concept="2OqwBi" id="6k6KMvdH9sP" role="2Oq$k0">
+                  <node concept="30H73N" id="6k6KMvdH96T" role="2Oq$k0" />
+                  <node concept="2yIwOk" id="6k6KMvdHafr" role="2OqNvi" />
+                </node>
+                <node concept="liA8E" id="6k6KMvdHbNo" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                 </node>
               </node>
             </node>
