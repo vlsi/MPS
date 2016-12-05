@@ -117,8 +117,8 @@
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/4786190798786384202">
     <file name="typeof_ConceptIconResourceExpression_InferenceRule.java">
-      <node id="4786190798786384204" at="22,7,23,201" concept="7" />
-      <node id="4786190798786384204" at="23,201,24,207" concept="7" />
+      <node id="4786190798786384204" at="22,7,23,205" concept="7" />
+      <node id="4786190798786384204" at="23,205,24,207" concept="7" />
       <node id="4786190798786384204" at="24,207,25,307" concept="3" />
       <node id="4786190798786384202" at="29,50,30,175" concept="8" />
       <node id="4786190798786384202" at="32,68,33,102" concept="8" />
