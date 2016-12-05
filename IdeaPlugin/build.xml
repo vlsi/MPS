@@ -113,7 +113,7 @@
 
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
     <property name="buildCoreProcessed" value="true" />
-    <ant antfile="${base_dir}/build/getIdeaPlatform.xml" target="install" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="${base_dir}/build/getDependencies.xml" target="install" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>

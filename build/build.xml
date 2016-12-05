@@ -3,7 +3,7 @@
   <property name="resources" location="${basedir}/resources"/>
 
   <target name="platform">
-    <ant antfile="getIdeaPlatform.xml" target="install" inheritAll="true" useNativeBasedir="true"/>
+    <ant antfile="getDependencies.xml" target="install" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
   <target name="getResourcesAndBuildAll">

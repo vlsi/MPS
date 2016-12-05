@@ -5,7 +5,7 @@
       <maximumHeapSize value="256" />
     </buildFile>
     <buildFile url="file://$PROJECT_DIR$/build/cleanGit.xml" />
-    <buildFile url="file://$PROJECT_DIR$/build/getIdeaPlatform.xml">
+    <buildFile url="file://$PROJECT_DIR$/build/getDependencies.xml">
       <maximumHeapSize value="1024" />
       <maximumStackSize value="8" />
       <executeOn event="beforeCompilation" target="install" />

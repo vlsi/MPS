@@ -1,8 +1,8 @@
 <project name="Get MPS dependencies" default="default">
 
-  <!-- TODO: Remove in 3.5 after change Template build step to use getIdeaPlatform.xml -->
+  <!-- TODO: Remove in 3.5 after change Template build step to use getDependencies.xml -->
   <target name="default" description="Download all needed libraries">
-    <ant antfile="getIdeaPlatform.xml" target="download-3rd-party" inheritall="false"/>
+    <ant antfile="getDependencies.xml" target="download-3rd-party" inheritall="false"/>
   </target>
 
 </project>
