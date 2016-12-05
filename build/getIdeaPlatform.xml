@@ -1,11 +1,31 @@
-<project name="Get Idea Platform" default="install" xmlns:ivy="antlib:org.apache.ivy.ant">
+<project name="Get MPS dependencies" default="install" basedir="."
+         xmlns:ivy="antlib:org.apache.ivy.ant">
+
+  <!-- ===================================================== -->
+  <!-- Initialize and load properties                        -->
+  <!-- ===================================================== -->
 
   <property name="mps.ivy.home" value="${user.home}" description="Property used to set custom path on TeamCity"/>
-  <property name="idea.platform.version" value="163.7743.44"/>
-  <property name="idea.platform.snapshot" value="163-SNAPSHOT"/>
-  <property name="jetpad.version" value="1.0.0" />
+  <property name="idea.platform.local.build" value="false" description="Set to true if use local platform build"/>
   <property name="ivy.jar.dir" value="${basedir}/ivy"/>
   <property name="ivy.cache.ttl.default" value="eternal"/>
+
+  <loadproperties srcfile="version.properties" description="Load versions of dependencies to download"/>
+  <loadproperties srcfile="lib.properties" description="Load destination paths to 3rd party libraries"/>
+
+  <!-- ===================================================== -->
+  <!-- Help and ivy load                        -->
+  <!-- ===================================================== -->
+
+  <target name="usage" description="Shows help">
+    <echo message="  Execute 'ant -projecthelp' for build file help."/>
+    <echo message="  Execute 'ant -help' for Ant help."/>
+    <echo message="${line.separator}"/>
+    <echo message="  Use default target 'install' to get all required dependencies for build MPS"/>
+    <echo message="${line.separator}"/>
+    <echo message="  If you need to build platform for MPS (based on IDEA Community), than set 'idea.platform.local.build' property to true"/>
+    <echo message="  You can set required platform branch/commit/tag with property 'idea.commit'. By default it set to 'mps.idea.platform.number' from version.properties"/>
+  </target>
 
   <target name="install-ivy">
     <path id="ivy.lib.path">
@@ -15,23 +35,54 @@
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
   </target>
 
-  <target name="check" depends="version" description="Check version of currently downloaded platform">
-    <condition property="platform.need.update" value="true" else="false">
+  <!-- ===================================================== -->
+  <!-- Check 3rd party libraries download requirement        -->
+  <!-- ===================================================== -->
+
+  <target name="check-diffutils" description="Check diffutils libraries availability">
+    <condition property="difutill.missing" value="true" else="false">
       <not>
-        <equals arg1="${idea.platform.version}" arg2="${current.version}"/>
+        <and>
+          <available file="${diffutils.lib}"/>
+          <available file="${diffutils.src}"/>
+          <available file="${diffutils.javadoc}"/>
+        </and>
       </not>
     </condition>
-    <echo message="Platform is need to be updated: ${platform.need.update}"/>
   </target>
+
+  <target name="check-testlib" description="Check testlib libraries availability">
+    <condition property="testlib.missing" value="true" else="false">
+      <not>
+        <and>
+          <available file="${testlib.lib}"/>
+        </and>
+      </not>
+    </condition>
+  </target>
+
+  <target name="check-jetpad" description="Check testlib libraries availability">
+    <condition property="jetpad.missing" value="true" else="false">
+      <not>
+        <and>
+          <available file="${jetpad.lib}"/>
+        </and>
+      </not>
+    </condition>
+  </target>
+
+  <!-- ===================================================== -->
+  <!-- Check platform libraries download requirement         -->
+  <!-- ===================================================== -->
 
   <target name="version-file" description="Util task to check if build.txt exists">
     <condition property="build.txt.exists" value="true" else="false">
-      <available file="../lib/build.txt"/>
+      <available file="${basedir}/../lib/build.txt"/>
     </condition>
   </target>
 
   <target name="version" depends="version-file" description="Load platform version from build.txt to property" if="${build.txt.exists}">
-    <loadfile property="current.version" srcfile="../lib/build.txt">
+    <loadfile property="current.version" srcfile="${basedir}/../lib/build.txt">
       <filterchain>
         <replacestring from="MPS-" to=""/>
         <striplinebreaks/>
@@ -40,52 +91,82 @@
     <echo message="File build.txt contains build number: ${current.version}"/>
   </target>
 
-  <!--TODO: investigate ivy behaviour and remove if not needed-->
-  <target name="snapshot" depends="version" description="Compare current platform version with snapshot">
-    <condition property="is.snapshot" value="true" else="false">
-      <equals arg1="${idea.platform.snapshot}" arg2="${idea.platform.version}"/>
+  <target name="check-platform" depends="version" description="Check version of currently downloaded platform">
+    <!-- If property does not match version in build.txt - assume platform is outdated -->
+    <condition property="platform.outdated" value="true" else="false">
+      <not>
+        <equals arg1="${idea.platform.version}" arg2="${current.version}"/>
+      </not>
+    </condition>
+
+    <!-- If platform is not need to be build locally and is outdated - platform with idea.platform.version will be downloaded -->
+    <condition property="do.platform.download" value="true" else="false">
+      <and>
+        <isfalse value="${idea.platform.local.build}"/>
+        <istrue value="${platform.outdated}"/>
+      </and>
+    </condition>
+
+    <!-- Check that locally build platform has already been build by checking availability of output folders -->
+    <condition property="platform.out.missing" value="true" else="false">
+      <not>
+        <and>
+          <available file="${basedir}/../mps-platform/out/intellij idea/dist.all"/>
+          <available file="${basedir}/../mps-platform/out/intellij idea/artifacts"/>
+        </and>
+      </not>
+    </condition>
+
+    <!-- Check if we need copy local platform build -->
+    <condition property="do.platform.local.build.install" value="true" else="false">
+      <and>
+        <istrue value="${idea.platform.local.build}"/>
+        <or>
+          <not>
+            <!-- If build.txt contains snapshot version, we can assume that local platform has already been build and copied, so need to do nothing -->
+            <equals arg1="${current.version}" arg2="${idea.platform.snapshot}"/>
+          </not>
+          <isfalse value="${build.txt.exists}"/>
+          <!-- If there is no platform build artifacts, we force to update platform libs -->
+          <istrue value="${platform.out.missing}"/>
+        </or>
+      </and>
     </condition>
   </target>
 
-  <target name="invalidate" depends="snapshot" if="${is.snapshot}" description="Cleans local ivy cache. Can dramatically increase build time!">
-    <ivy:cleancache/>
+  <!-- ===================================================== -->
+  <!-- Check and call scripts for local platform build       -->
+  <!-- ===================================================== -->
+
+  <target name="build-platform" depends="check-platform" if="${platform.out.missing}" description="Start script to build local MPS platform">
+    <ant antfile="${basedir}/../mps-platform/build/gant.xml" target="build" usenativebasedir="true" inheritall="true"/>
   </target>
 
-  <target name="download" description="Download all platform libs and sources">
-    <antcall target="download-platform"/>
-    <antcall target="download-3rd-party"/>
+  <target name="install-platform" depends="check-platform,build-platform" if="${do.platform.local.build.install}"
+          description="Start script to copy libraries from local MPS platform build">
+    <ant antfile="${basedir}/../mps-platform/build/gant.xml" target="install" usenativebasedir="true"/>
   </target>
 
-  <target name="download-platform" depends="install-ivy, invalidate" description="Download platform based on IDEA Community from TeamCity">
+  <!-- ===================================================== -->
+  <!-- Default target                                        -->
+  <!-- Download platform or build local platform if          -->
+  <!-- idea.platform.local.build property set to true.       -->
+  <!-- Download 3rd party libraries                          -->
+  <!-- ===================================================== -->
+
+  <target name="install" depends="download-platform,install-platform,download-3rd-party" description="Download all platform libs and sources"/>
+
+  <!-- ===================================================== -->
+  <!-- Download libraries with ivy                           -->
+  <!-- ===================================================== -->
+
+  <target name="download-platform" depends="check-platform,install-ivy" if="${do.platform.download}"
+          description="Download platform based on IDEA Community from TeamCity">
+    <antcall target="clean-platform"/>
     <ivy:resolve file="ivy.xml" showprogress="true"/>
-    <ivy:retrieve pattern="../[artifact].[ext]" overwritemode="different"/>
-  </target>
+    <ivy:retrieve pattern="${basedir}/../[artifact].[ext]" overwritemode="different"/>
 
-  <target name="download-diffutils" depends="install-ivy" description="Download com.googlecode.java-diff-utils-diffutils library">
-    <ivy:resolve file="ivyDiffUtils.xml" showprogress="true"/>
-    <ivy:retrieve pattern="../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
-  </target>
-
-  <target name="download-testlib" depends="install-ivy" description="Download jmock and hamcrest libraries">
-    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar" showprogress="true"/>
-    <ivy:retrieve pattern="../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
-  </target>
-
-  <target name="download-jetpad" depends="install-ivy" description="Download JetPad framework libraries">
-    <ivy:resolve file="./ivyJetPad.xml" validate="false" showprogress="true"/>
-    <ivy:retrieve pattern="../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
-  </target>
-
-  <target name="download-3rd-party" description="Download all non platform related libs">
-    <antcall target="download-diffutils"/>
-    <antcall target="download-testlib"/>
-    <antcall target="download-jetpad"/>
-  </target>
-
-  <target name="install" depends="check" description="Download and install MPS platform" if="${platform.need.update}">
-    <antcall target="clean"/>
-    <antcall target="download"/>
-    <unzip src="../mps-platform.zip" dest="../" overwrite="true">
+    <unzip src="${basedir}/../mps-platform.zip" dest="${basedir}/../" overwrite="true">
       <!--TODO use license files from IDEA Community-->
       <patternset>
         <exclude name="license/*"/>
@@ -93,18 +174,59 @@
     </unzip>
   </target>
 
-  <target name="clean" description="Delete platform files and downloaded libraries">
-    <delete dir="../lib" includeemptydirs="true"/>
-    <delete dir="../plugins/cvsIntegration/lib"/>
-    <delete dir="../plugins/git4idea/lib"/>
-    <delete dir="../plugins/svn4idea/lib"/>
-    <delete dir="../plugins/terminal"/>
-
-    <delete dir="../plugins/jetpad/lib"/>
-
-    <delete dir="../languages/baseLanguage/unitTest/lib">
-      <exclude name=".gitignore"/>
-    </delete>
+  <target name="download-diffutils" depends="check-diffutils,install-ivy" if="${difutill.missing}"
+          description="Download com.googlecode.java-diff-utils-diffutils library">
+    <echo message="DiffUtil library is missing. Downloading..."/>
+    <ivy:resolve file="ivyDiffUtils.xml" showprogress="true"/>
+    <ivy:retrieve pattern="${basedir}/../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
+
+  <target name="download-testlib" depends="check-testlib,install-ivy" if="${testlib.missing}"
+          description="Download jmock and hamcrest libraries">
+    <echo message="Test libraries (hamcrest, jmock and jmock-junit) are missing. Downloading..."/>
+    <ivy:resolve file="ivyUnitTestLibs.xml" transitive="false" type="source,jar" showprogress="true"/>
+    <ivy:retrieve pattern="${basedir}/../languages/baseLanguage/unitTest/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-jetpad" depends="check-jetpad,install-ivy" if="${jetpad.missing}"
+          description="Download JetPad framework libraries">
+    <echo message="JetPad libraries are missing. Downloading..."/>
+    <ivy:resolve file="./ivyJetPad.xml" validate="false" showprogress="true"/>
+    <ivy:retrieve pattern="${basedir}/../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-3rd-party" depends="download-diffutils,download-testlib,download-jetpad"
+          description="Download all non platform related libs"/>
+
+  <!-- ===================================================== -->
+  <!-- Clean libraries tasks                                 -->
+  <!-- ===================================================== -->
+
+  <target name="clean-platform" description="Delete platform libraries">
+    <delete dir="${basedir}/../lib" includeemptydirs="true" failonerror="false"/>
+
+    <delete dir="${basedir}/../plugins/cvsIntegration/lib" failonerror="false"/>
+    <delete dir="${basedir}/../plugins/git4idea/lib" failonerror="false"/>
+    <delete dir="${basedir}/../plugins/svn4idea/lib" failonerror="false"/>
+    <delete dir="${basedir}/../plugins/terminal" failonerror="false"/>
+  </target>
+
+  <target name="clean-diffutils">
+    <delete file="${diffutils.lib}" failonerror="false"/>
+    <delete file="${diffutils.src}" failonerror="false"/>
+    <delete file="${diffutils.javadoc}" failonerror="false"/>
+  </target>
+
+  <target name="clean-testlib">
+    <delete dir="${testlib.lib}" includeemptydirs="true" failonerror="false"/>
+  </target>
+
+  <target name="clean-jetpad">
+    <delete dir="${jetpad.lib}" includeemptydirs="true" failonerror="false"/>
+  </target>
+
+  <target name="clean-3rd-party" depends="clean-diffutils,clean-testlib,clean-jetpad" description="Delete 3rd party libraries"/>
+
+  <target name="clean" depends="clean-3rd-party,clean-platform" description="Delete platform files and 3rd party libraries"/>
 
 </project>
