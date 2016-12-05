@@ -11896,7 +11896,7 @@
                 <node concept="2ShNRf" id="4lIfGX81Ipv" role="37vLTx">
                   <node concept="3zrR0B" id="4lIfGX81InH" role="2ShVmc">
                     <node concept="3Tqbb2" id="4lIfGX81InI" role="3zrR0E">
-                      <ref role="ehGHo" to="tp25:g_PgBxf" resolve="Node_DeleteOperation" />
+                      <ref role="ehGHo" to="tp25:hRYRAV0" resolve="Node_DetachOperation" />
                     </node>
                   </node>
                 </node>

@@ -1038,6 +1038,9 @@
     <ref role="1XX52x" to="tp25:g_PgBxf" resolve="Node_DeleteOperation" />
     <node concept="3F0ifn" id="g_PgVuy" role="2wV5jI">
       <property role="3F0ifm" value="delete" />
+      <node concept="3nxI2P" id="64YAEuhj$l6" role="3F10Kt">
+        <property role="VOm3f" value="true" />
+      </node>
       <node concept="VPxyj" id="hEZKQwP" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>

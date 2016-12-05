@@ -39,6 +39,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
+    style.set(StyleAttributes.STRIKE_OUT, true);
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
