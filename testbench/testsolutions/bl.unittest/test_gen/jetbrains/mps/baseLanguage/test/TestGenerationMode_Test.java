@@ -22,7 +22,7 @@ public class TestGenerationMode_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_GenerationMode() throws Exception {
       addNodeById("7187651930235347759");
-      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(getNodeById("7187651930235347762"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")));
+      TypeSystemCheckUtil.checkGenerationMode(SNodeOperations.cast(getNodeById("7187651930235347762"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))));
     }
 
 

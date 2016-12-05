@@ -33,7 +33,7 @@ public class ContextAssistant_HiddenWhenNoMenu_Test extends BaseTransformationTe
           Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
           Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
 
-          getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("6183626235528683202"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa4dL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Parent")));
+          getEditorComponent().getSelectionManager().setSelection(SNodeOperations.cast(getNodeById("6183626235528683202"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x4d6a8b533e60aa4dL, "Parent"))));
 
           contextAssistantManager.updateImmediately();
 

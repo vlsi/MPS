@@ -22,7 +22,7 @@ public class ClosureLiteralDataFlow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_ClosureLiteralDataFlow() throws Exception {
       addNodeById("1227886714784");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1227886714787"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1227886714787"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))), false, false, false);
     }
 
 

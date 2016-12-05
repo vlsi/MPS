@@ -45,7 +45,7 @@ public class Include_MenuAndTargetNodeCorrespondence_Test extends BaseTransforma
       addNodeById("6903010549536712693");
       {
         List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), createSNodeType_sxmjox_a0a0a0c0a4());
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(SNodeOperations.cast(getNodeById("2705676212747008292"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_TargetNode"))));
+        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(SNodeOperations.cast(getNodeById("2705676212747008292"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, "jetbrains.mps.lang.editor"), 0xae2d2fe1c9d6e2eL, "QueryFunction_TransformationMenu_TargetNode")))));
         Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
       }
     }

@@ -46,7 +46,7 @@ public class SelectPortQuery_Test extends BaseTransformationTest {
           EditorCell selectedCell = getEditorComponent().getSelectedCell();
           Assert.assertTrue(selectedCell != null);
           DiagramCell diagramCell = CellFinderUtil.findChildByClass(getEditorComponent().getRootCell(), DiagramCell.class, true);
-          descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(SPropertyOperations.getString(SNodeOperations.cast(getNodeById("2278461409092334466"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f722aL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+          descendantMapper.value = diagramCell.getRootMapper().getDescendantMapper(SPropertyOperations.getString(SNodeOperations.cast(getNodeById("2278461409092334466"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f722aL, "OutputPort"))), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
         }
       });
       Assert.assertTrue(descendantMapper.value != null && descendantMapper.value.getTarget() != null);

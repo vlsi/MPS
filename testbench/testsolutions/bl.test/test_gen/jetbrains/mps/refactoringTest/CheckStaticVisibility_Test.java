@@ -25,9 +25,9 @@ public class CheckStaticVisibility_Test extends BaseTransformationTest {
       addNodeById("1230053114802");
       addNodeById("1230053114815");
       addNodeById("1230053114829");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114810"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114810"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114813"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114813"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf09L, "StaticMethodCall"))));
       Assert.assertTrue(ref.getProblems().length() > 0);
     }
 

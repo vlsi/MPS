@@ -34,7 +34,7 @@ public class AnonymousClass_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_AnonymousClass() throws Exception {
       addNodeById("1217271587076");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444376214"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444376214"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))), false, false, false);
     }
 
     public void test_NodeVariableInitializerIsRedundantWarningCheck6923385624927142051() throws Exception {

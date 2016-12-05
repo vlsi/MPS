@@ -29,7 +29,7 @@ public class IfStatementDataFlow_Test extends BaseTransformationTest {
   public static class TestBody extends BaseTestBody {
     public void test_IfStatementDataFlow() throws Exception {
       addNodeById("1217271587920");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444237453"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b204L, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1215444237453"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b204L, "ConstructorDeclaration"))), false, false, false);
     }
 
     public void test_NodeVariableHasNotBeenInitializedErrorCheck6923385624928604755() throws Exception {

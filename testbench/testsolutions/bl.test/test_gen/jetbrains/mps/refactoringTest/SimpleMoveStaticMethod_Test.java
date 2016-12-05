@@ -28,9 +28,9 @@ public class SimpleMoveStaticMethod_Test extends BaseTransformationTest {
       addNodeById("3014415391767789149");
       addNodeById("3014415391767789154");
       addNodeById("3014415391767789181");
-      MoveStaticMethodRefactoring refactoring = new MoveStaticMethodRefactoring(SNodeOperations.cast(getNodeById("3014415391767789137"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), SNodeOperations.cast(getNodeById("3014415391767789150"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      MoveStaticMethodRefactoring refactoring = new MoveStaticMethodRefactoring(SNodeOperations.cast(getNodeById("3014415391767789137"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfbbebabf0aL, "StaticMethodDeclaration"))), SNodeOperations.cast(getNodeById("3014415391767789150"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
       SearchResults<SNode> results = new SearchResults();
-      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(getNodeById("3014415391767789131"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall")), "usage"));
+      results.getSearchResults().add(new SearchResult(SNodeOperations.cast(getNodeById("3014415391767789131"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x6c6b6a1e379f9404L, "LocalMethodCall"))), "usage"));
       refactoring.setUsages(results);
       refactoring.doRefactoring();
     }
