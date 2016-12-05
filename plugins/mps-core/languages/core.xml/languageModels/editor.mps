@@ -450,7 +450,6 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -469,6 +468,7 @@
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -2369,7 +2369,7 @@
           <node concept="3clFbF" id="5M4a$b5jBbt" role="3cqZAp">
             <node concept="2OqwBi" id="5M4a$b5jBbv" role="3clFbG">
               <node concept="0IXxy" id="5M4a$b5jBbu" role="2Oq$k0" />
-              <node concept="1PgB_6" id="5M4a$b5jBbz" role="2OqNvi" />
+              <node concept="3YRAZt" id="5M4a$b5jBbz" role="2OqNvi" />
             </node>
           </node>
           <node concept="3clFbF" id="5M4a$b5jBg6" role="3cqZAp">

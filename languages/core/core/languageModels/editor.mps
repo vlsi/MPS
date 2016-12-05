@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -460,12 +460,12 @@
             <node concept="3clFbS" id="2ZnZLV$dMjz" role="2VODD2">
               <node concept="3clFbF" id="2ZnZLV$dN1y" role="3cqZAp">
                 <node concept="2OqwBi" id="2ZnZLV$dXyn" role="3clFbG">
+                  <node concept="liA8E" id="66vxhH6hqhA" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
+                  </node>
                   <node concept="2OqwBi" id="66vxhH6hqh$" role="2Oq$k0">
                     <node concept="2yIwOk" id="66vxhH6hqh_" role="2OqNvi" />
                     <node concept="pncrf" id="2ZnZLV$dN1x" role="2Oq$k0" />
-                  </node>
-                  <node concept="liA8E" id="66vxhH6hqhA" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
               </node>

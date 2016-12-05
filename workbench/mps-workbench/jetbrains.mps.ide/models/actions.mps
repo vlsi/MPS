@@ -16,7 +16,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.baseLanguage.lightweightdsl" version="-1" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
@@ -818,7 +818,6 @@
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
         <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -835,6 +834,7 @@
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -9669,7 +9669,7 @@
                 <node concept="2GrUjf" id="4npc6Q0o$p4" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="4npc6Q0o$nX" resolve="node" />
                 </node>
-                <node concept="1PgB_6" id="4npc6Q0o$pb" role="2OqNvi" />
+                <node concept="3YRAZt" id="4npc6Q0o$pb" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -28919,7 +28919,7 @@
           <node concept="3clFbS" id="1$X$vL9L39r" role="3clFbx">
             <node concept="3clFbF" id="1$X$vL9L39s" role="3cqZAp">
               <node concept="2OqwBi" id="1$X$vL9L39t" role="3clFbG">
-                <node concept="1PgB_6" id="1$X$vL9L39v" role="2OqNvi" />
+                <node concept="3YRAZt" id="1$X$vL9L39v" role="2OqNvi" />
                 <node concept="37vLTw" id="2BHiRxgheGR" role="2Oq$k0">
                   <ref role="3cqZAo" node="1$X$vL9L39G" resolve="node" />
                 </node>

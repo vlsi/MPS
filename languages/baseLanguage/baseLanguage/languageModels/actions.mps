@@ -681,7 +681,6 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -2898,7 +2897,7 @@
                         <node concept="3clFbF" id="6shhATQFSk4" role="3cqZAp">
                           <node concept="2OqwBi" id="6shhATQFSk6" role="3clFbG">
                             <node concept="1r4N5L" id="6shhATQFSk5" role="2Oq$k0" />
-                            <node concept="1PgB_6" id="6shhATQFSka" role="2OqNvi" />
+                            <node concept="3YRAZt" id="6shhATQFSka" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
@@ -2921,7 +2920,7 @@
                         <node concept="37vLTw" id="3GM_nagTwaH" role="2Oq$k0">
                           <ref role="3cqZAo" node="1o0c5yoEUc$" resolve="expression" />
                         </node>
-                        <node concept="1PgB_6" id="1o0c5yoEUuZ" role="2OqNvi" />
+                        <node concept="3YRAZt" id="1o0c5yoEUuZ" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -30578,7 +30577,7 @@
                     </node>
                     <node concept="3clFbF" id="24Gc9XdxrAc" role="3cqZAp">
                       <node concept="2OqwBi" id="24Gc9Xdxs8i" role="3clFbG">
-                        <node concept="1PgB_6" id="24Gc9Xdxtoj" role="2OqNvi" />
+                        <node concept="3YRAZt" id="24Gc9Xdxtoj" role="2OqNvi" />
                         <node concept="37vLTw" id="24Gc9XdxrAb" role="2Oq$k0">
                           <ref role="3cqZAo" node="24Gc9Xdxo6o" resolve="toBeRemoved" />
                         </node>

@@ -234,7 +234,6 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -244,6 +243,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -523,7 +523,7 @@
                   <ref role="3Tt5mk" to="3xdn:3J6h25Q5Il8" resolve="parameter" />
                 </node>
               </node>
-              <node concept="1PgB_6" id="72nsGSZbUl2" role="2OqNvi" />
+              <node concept="3YRAZt" id="72nsGSZbUl2" role="2OqNvi" />
             </node>
           </node>
           <node concept="3clFbF" id="6D0CP__dNXA" role="3cqZAp">
@@ -746,7 +746,7 @@
           <node concept="3clFbF" id="qdYczXcLwz" role="3cqZAp">
             <node concept="2OqwBi" id="qdYczXcLw$" role="3clFbG">
               <node concept="0IXxy" id="qdYczXcLw_" role="2Oq$k0" />
-              <node concept="1PgB_6" id="qdYczXcLwA" role="2OqNvi" />
+              <node concept="3YRAZt" id="qdYczXcLwA" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -944,7 +944,7 @@
           <node concept="3clFbF" id="72nsGSZcKgx" role="3cqZAp">
             <node concept="2OqwBi" id="72nsGSZcKgy" role="3clFbG">
               <node concept="0IXxy" id="72nsGSZcKg$" role="2Oq$k0" />
-              <node concept="1PgB_6" id="72nsGSZcKgA" role="2OqNvi" />
+              <node concept="3YRAZt" id="72nsGSZcKgA" role="2OqNvi" />
             </node>
           </node>
           <node concept="3clFbJ" id="72nsGSZcL$o" role="3cqZAp">

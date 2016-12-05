@@ -8,7 +8,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -357,7 +357,6 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -4772,7 +4771,7 @@
                     <node concept="2GrUjf" id="6cRWaT_CqsM" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="6cRWaT_Cqrl" resolve="thisAnnoInst" />
                     </node>
-                    <node concept="1PgB_6" id="6cRWaT_CqsN" role="2OqNvi" />
+                    <node concept="3YRAZt" id="6cRWaT_CqsN" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -4953,7 +4952,7 @@
             </node>
             <node concept="3clFbF" id="2hBqE0qEYmq" role="3cqZAp">
               <node concept="2OqwBi" id="2hBqE0qEYSG" role="3clFbG">
-                <node concept="1PgB_6" id="2hBqE0qEZ3y" role="2OqNvi" />
+                <node concept="3YRAZt" id="2hBqE0qEZ3y" role="2OqNvi" />
                 <node concept="2GrUjf" id="2hBqE0qEYmp" role="2Oq$k0">
                   <ref role="2Gs0qQ" node="2hBqE0qEX6v" resolve="attr" />
                 </node>

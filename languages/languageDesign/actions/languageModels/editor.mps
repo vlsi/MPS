@@ -4,7 +4,7 @@
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="6" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -194,7 +194,6 @@
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -204,6 +203,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -2984,7 +2984,7 @@
           <node concept="3clFbF" id="2GhHZlI4wJM" role="3cqZAp">
             <node concept="2OqwBi" id="2GhHZlI4wNC" role="3clFbG">
               <node concept="0IXxy" id="2GhHZlI4wJL" role="2Oq$k0" />
-              <node concept="1PgB_6" id="2GhHZlI4wVr" role="2OqNvi" />
+              <node concept="3YRAZt" id="2GhHZlI4wVr" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -3002,7 +3002,7 @@
           <node concept="3clFbF" id="2GhHZlI4T9X" role="3cqZAp">
             <node concept="2OqwBi" id="2GhHZlI4T9Y" role="3clFbG">
               <node concept="0IXxy" id="2GhHZlI4T9Z" role="2Oq$k0" />
-              <node concept="1PgB_6" id="2GhHZlI4Ta0" role="2OqNvi" />
+              <node concept="3YRAZt" id="2GhHZlI4Ta0" role="2OqNvi" />
             </node>
           </node>
         </node>
