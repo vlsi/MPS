@@ -150,7 +150,7 @@ public class DebugInfo {
   }
 
   /**
-   * @see
+   * @see #getTracedNodesForPosition(String, int, Consumer)
    */
   @NotNull
   public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line) {
