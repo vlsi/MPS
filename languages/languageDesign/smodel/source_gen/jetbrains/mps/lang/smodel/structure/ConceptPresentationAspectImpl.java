@@ -95,7 +95,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Node_ConceptMethodCall = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, 0x27990abcdcff2f1dL, "directCall")).create();
   private final ConceptPresentation props_Node_ContainingLinkOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_CopyOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_DeleteOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Node_DeleteOperation = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_Node_DetachOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetAllSiblingsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetAncestorOperation = new ConceptPresentationBuilder().create();
