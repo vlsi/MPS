@@ -217,6 +217,18 @@
     <echo message="Eclipse compiler library is missing. Downloading..."/>
     <ivy:resolve file="./ivyEclipseCompiler.xml" validate="false" showprogress="true"/>
     <ivy:retrieve pattern="${basedir}/../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+
+    <!-- TODO: remove hack for plugin build -->
+    <antcall target="plugin-copy" inheritall="true"/>
+  </target>
+
+  <target name="plugin-check">
+    <condition property="IDEA.exists">
+      <available file="${basedir}/../IDEA/lib"/>
+    </condition>
+  </target>
+  <target name="plugin-copy" depends="plugin-check" if="${IDEA.exists}">
+    <copy file="${basedir}/../lib/ecj-4.6.2RC3.jar" todir="${basedir}/../IDEA/lib" includeemptydirs="false"/>
   </target>
 
   <target name="download-3rd-party" depends="download-diffutils,download-testlib,download-jetpad,download-ecj"
