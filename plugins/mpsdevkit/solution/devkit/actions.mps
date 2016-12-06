@@ -10,7 +10,7 @@
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
@@ -56,7 +56,6 @@
     <import index="o6ex" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.generator(MPS.Workbench/)" />
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="l7us" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.icons(MPS.Platform/)" />
-    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="jys" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.findusages.findalgorithm.finders.specific(MPS.Workbench/)" />
     <import index="b9kz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.wm.ex(MPS.IDEA/)" />
@@ -127,7 +126,6 @@
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
-    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="bmn6" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench.actions.module(MPS.Workbench/)" />
   </imports>
   <registry>
@@ -14655,12 +14653,61 @@
             <node concept="3uibUv" id="6gJrPYfVXeK" role="1tU5fm">
               <ref role="3uigEE" to="9erk:~IResultProvider" resolve="IResultProvider" />
             </node>
-            <node concept="2YIFZM" id="6gJrPYfVYU$" role="33vP2m">
-              <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
-              <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-              <node concept="2ShNRf" id="6gJrPYfVYU_" role="37wK5m">
-                <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
-                  <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
+          </node>
+        </node>
+        <node concept="3clFbJ" id="5m8mBG1j42a" role="3cqZAp">
+          <node concept="3clFbS" id="5m8mBG1j42c" role="3clFbx">
+            <node concept="3SKdUt" id="5m8mBG1jFTJ" role="3cqZAp">
+              <node concept="3SKdUq" id="5m8mBG1jFTL" role="3SKWNk">
+                <property role="3SKdUp" value="Given language context module, we are not certain whether intention is to look up module uses or its uses as a language, hence include both" />
+              </node>
+            </node>
+            <node concept="3clFbF" id="5m8mBG1j5iy" role="3cqZAp">
+              <node concept="37vLTI" id="5m8mBG1j5$M" role="3clFbG">
+                <node concept="37vLTw" id="5m8mBG1j5iw" role="37vLTJ">
+                  <ref role="3cqZAo" node="6gJrPYfVXeG" resolve="provider" />
+                </node>
+                <node concept="2YIFZM" id="5m8mBG1j6g2" role="37vLTx">
+                  <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
+                  <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
+                  <node concept="2ShNRf" id="5m8mBG1j6g3" role="37wK5m">
+                    <node concept="1pGfFk" id="5m8mBG1j6g4" role="2ShVmc">
+                      <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
+                    </node>
+                  </node>
+                  <node concept="2ShNRf" id="5m8mBG1j6wf" role="37wK5m">
+                    <node concept="1pGfFk" id="5m8mBG1jFlc" role="2ShVmc">
+                      <ref role="37wK5l" to="kkd6:ZVS8OJmVFy" resolve="LanguageImportFinder" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="5m8mBG1j4PJ" role="3clFbw">
+            <node concept="3uibUv" id="5m8mBG1j5cS" role="2ZW6by">
+              <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+            </node>
+            <node concept="37vLTw" id="5m8mBG1j4k8" role="2ZW6bz">
+              <ref role="3cqZAo" node="6gJrPYfVXev" resolve="module" />
+            </node>
+          </node>
+          <node concept="9aQIb" id="5m8mBG1j5Nc" role="9aQIa">
+            <node concept="3clFbS" id="5m8mBG1j5Nd" role="9aQI4">
+              <node concept="3clFbF" id="5m8mBG1iS89" role="3cqZAp">
+                <node concept="37vLTI" id="5m8mBG1iS8b" role="3clFbG">
+                  <node concept="2YIFZM" id="6gJrPYfVYU$" role="37vLTx">
+                    <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
+                    <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
+                    <node concept="2ShNRf" id="6gJrPYfVYU_" role="37wK5m">
+                      <node concept="1pGfFk" id="6gJrPYfVYUA" role="2ShVmc">
+                        <ref role="37wK5l" to="kkd6:3_o1C0wGpEX" resolve="ModuleUsagesFinder" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="37vLTw" id="5m8mBG1iS8f" role="37vLTJ">
+                    <ref role="3cqZAo" node="6gJrPYfVXeG" resolve="provider" />
+                  </node>
                 </node>
               </node>
             </node>

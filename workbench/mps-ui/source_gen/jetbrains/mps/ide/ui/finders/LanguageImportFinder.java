@@ -13,6 +13,11 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelOperations;
 
 /**
  * Look up language uses in scope module's imports and their models. 
@@ -29,6 +34,9 @@ import jetbrains.mps.project.DevKit;
  * shall respect scope's models here (not only/in addition to models of scope modules). Note, LUF looks up nodes, while this shall stop at model's level.
  */
 public class LanguageImportFinder extends BaseFinder {
+  private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
+  private static final String EXPORTED_BY = "exported by";
+
   public LanguageImportFinder() {
   }
   @Override
@@ -41,25 +49,71 @@ public class LanguageImportFinder extends BaseFinder {
     for (SLanguage lang : LanguageUsagesFinder.getLanguageToLookUp(query)) {
       searchResults.getSearchedNodes().add(lang);
       SearchScope scope = query.getScope();
-      ModuleUsagesFinder moduleFinder = new ModuleUsagesFinder();
       for (SModule module : scope.getModules()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
         if (module instanceof Solution) {
-          moduleFinder.collectUsagesInSolution(lang, (Solution) module, searchResults);
+          collectUsagesInSolution(lang, (Solution) module, searchResults);
         }
         if (module instanceof Language) {
-          moduleFinder.collectUsagesInLanguage(lang, (Language) module, searchResults);
+          collectUsagesInLanguage(lang, (Language) module, searchResults);
           for (Generator g : ((Language) module).getGenerators()) {
-            moduleFinder.collectUsagesInGenerator(lang, g, searchResults);
+            collectUsagesInGenerator(lang, g, searchResults);
           }
         }
         if (module instanceof DevKit) {
-          moduleFinder.collectUsagesInDevKit(lang, (DevKit) module, searchResults);
+          collectUsagesInDevKit(lang, (DevKit) module, searchResults);
         }
       }
     }
     return searchResults;
   }
+
+  /*package*/ void collectUsagesInSolution(SLanguage searchLanguage, Solution solution, SearchResults searchResults) {
+    if (solution.getUsedLanguages().contains(searchLanguage)) {
+      searchResults.add(new SearchResult<Solution>(solution, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchLanguage, solution, searchResults);
+    }
+  }
+
+  /*package*/ void collectUsagesInLanguage(SLanguage searchedLanguage, Language language, SearchResults searchResults) {
+    if (language.getUsedLanguages().contains(searchedLanguage)) {
+      searchResults.add(new SearchResult<Language>(language, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchedLanguage, language, searchResults);
+    }
+  }
+
+  /*package*/ void collectUsagesInGenerator(SLanguage searchedLanguage, Generator generator, SearchResults searchResults) {
+    if (generator.getUsedLanguages().contains(searchedLanguage)) {
+      searchResults.add(new SearchResult<Generator>(generator, ModuleUsagesFinder.USED_BY));
+      collectUsagesInModels(searchedLanguage, generator, searchResults);
+    }
+  }
+
+  /*package*/ void collectUsagesInDevKit(SLanguage searchLanguage, DevKit devKit, SearchResults searchResults) {
+    if (searchLanguage == null) {
+      return;
+    }
+    for (Language l : devKit.getExportedLanguages()) {
+      if (searchLanguage.equals(MetaAdapterByDeclaration.getLanguage(l))) {
+        searchResults.add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
+        break;
+      }
+    }
+  }
+
+  /*package*/ void collectUsagesInModels(SLanguage searchedLanguage, SModule owner, SearchResults searchResults) {
+    for (SModel model : owner.getModels()) {
+      if (!(SModelStereotype.isUserModel(model))) {
+        continue;
+      }
+      // FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports, 
+      // perhaps, shall revert to SModel.getUsedLanguages() here as well? 
+      if (SModelOperations.getAllLanguageImports(model).contains(searchedLanguage)) {
+        searchResults.add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
+      }
+    }
+  }
+
 }

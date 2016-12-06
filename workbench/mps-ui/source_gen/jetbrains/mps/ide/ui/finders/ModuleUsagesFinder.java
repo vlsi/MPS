@@ -10,33 +10,32 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.language.SLanguage;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Collection;
 import jetbrains.mps.util.IterableUtil;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelOperations;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelInternal;
 
+/**
+ * In fact, ModuleDependencyFinder, looks up given module as a dependency in other modules and their models.
+ */
 public class ModuleUsagesFinder extends BaseFinder {
-  private static final String USED_BY = "used by";
+  /*package*/ static final String USED_BY = "used by";
   private static final String DEPENDENT_MODULES = "dependent modules";
   private static final String RUNTIME_MODULES = "runtime modules";
   private static final String EXTENDING_LANGUAGES = "extending languages";
   private static final String EXTENDING_GENERATORS = "extending generators";
-  private static final String EXPORTED_BY = "exported by";
-  private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
 
   /**
    * valid during find() only
@@ -49,13 +48,13 @@ public class ModuleUsagesFinder extends BaseFinder {
   public String getDescription() {
     return "Module Usages";
   }
+
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
     Object value = query.getObjectHolder().getObject();
     SModule searchedModule = null;
     SModuleReference searchedModuleRef = null;
-    SLanguage searchLanguage = null;
     if (value instanceof SModule) {
       searchedModule = ((SModule) value);
       searchedModuleRef = searchedModule.getModuleReference();
@@ -63,16 +62,10 @@ public class ModuleUsagesFinder extends BaseFinder {
       searchedModuleRef = (SModuleReference) value;
       searchedModule = query.getScope().resolve(searchedModuleRef);
     }
-    if (searchedModule instanceof Language) {
-      searchLanguage = MetaAdapterByDeclaration.getLanguage(((Language) searchedModule));
-    }
     if (searchedModuleRef == null) {
       return searchResults;
     }
     searchResults.getSearchedNodes().add(searchedModuleRef);
-    if (searchLanguage != null) {
-      searchResults.getSearchedNodes().add(searchLanguage);
-    }
     Collection<SModule> modules = IterableUtil.asCollection(query.getScope().getModules());
     myModels2Visit = new HashSet<SModel>(IterableUtil.asCollection(query.getScope().getModels()));
     monitor.start("", 2);
@@ -85,16 +78,12 @@ public class ModuleUsagesFinder extends BaseFinder {
 
       if (module instanceof Solution) {
         collectUsagesInSolution(searchedModuleRef, (Solution) module, searchResults);
-        collectUsagesInSolution(searchLanguage, (Solution) module, searchResults);
       } else if (module instanceof Language) {
         collectUsagesInLanguage(searchedModuleRef, (Language) module, searchResults);
-        collectUsagesInLanguage(searchLanguage, (Language) module, searchResults);
       } else if (module instanceof DevKit) {
         collectUsagesInDevKit(searchedModuleRef, (DevKit) module, searchResults);
-        collectUsagesInDevKit(searchLanguage, (DevKit) module, searchResults);
       } else if (module instanceof Generator) {
         collectUsagesInGenerator(searchedModuleRef, (Generator) module, searchResults);
-        collectUsagesInGenerator(searchLanguage, (Generator) module, searchResults);
       }
       subTask.advance(1);
     }
@@ -132,12 +121,6 @@ public class ModuleUsagesFinder extends BaseFinder {
       collectUsagesInModels(solution);
     }
   }
-  /*package*/ void collectUsagesInSolution(SLanguage searchLanguage, Solution solution, SearchResults searchResults) {
-    if (solution.getUsedLanguages().contains(searchLanguage)) {
-      searchResults.add(new SearchResult<Solution>(solution, USED_BY));
-      collectUsagesInModels(searchLanguage, solution, searchResults);
-    }
-  }
   /*package*/ void collectUsagesInLanguage(SModuleReference searchModuleRef, Language language, SearchResults searchResults) {
     boolean used = false;
     if (language.getExtendedLanguageRefs().contains(searchModuleRef)) {
@@ -154,12 +137,6 @@ public class ModuleUsagesFinder extends BaseFinder {
     }
     if (used) {
       collectUsagesInModels(language);
-    }
-  }
-  /*package*/ void collectUsagesInLanguage(SLanguage searchedLanguage, Language language, SearchResults searchResults) {
-    if (language.getUsedLanguages().contains(searchedLanguage)) {
-      searchResults.add(new SearchResult<Language>(language, USED_BY));
-      collectUsagesInModels(searchedLanguage, language, searchResults);
     }
   }
   /*package*/ void collectUsagesInGenerator(SModuleReference searchModuleRef, Generator generator, SearchResults searchResults) {
@@ -188,38 +165,9 @@ public class ModuleUsagesFinder extends BaseFinder {
       collectUsagesInModels(generator);
     }
   }
-  /*package*/ void collectUsagesInGenerator(SLanguage searchedLanguage, Generator generator, SearchResults searchResults) {
-    if (generator.getUsedLanguages().contains(searchedLanguage)) {
-      searchResults.add(new SearchResult<Generator>(generator, USED_BY));
-      collectUsagesInModels(searchedLanguage, generator, searchResults);
-    }
-  }
   /*package*/ void collectUsagesInDevKit(SModuleReference searchModuleRef, DevKit devKit, SearchResults searchResults) {
     if (getDeclaredDependenciesTargets(devKit).contains(searchModuleRef)) {
       searchResults.add(new SearchResult<DevKit>(devKit, DEPENDENT_MODULES));
-    }
-  }
-  /*package*/ void collectUsagesInDevKit(SLanguage searchLanguage, DevKit devKit, SearchResults searchResults) {
-    if (searchLanguage == null) {
-      return;
-    }
-    for (Language l : devKit.getExportedLanguages()) {
-      if (searchLanguage.equals(MetaAdapterByDeclaration.getLanguage(l))) {
-        searchResults.add(new SearchResult<DevKit>(devKit, EXPORTED_BY));
-        break;
-      }
-    }
-  }
-  /*package*/ void collectUsagesInModels(SLanguage searchedLanguage, SModule owner, SearchResults searchResults) {
-    for (SModel model : owner.getModels()) {
-      if (!(SModelStereotype.isUserModel(model))) {
-        continue;
-      }
-      // FIXME rest of the class relies on plain (no unwraped devkits and extended languages) imports, 
-      // perhaps, shall revert to SModel.getUsedLanguages() here as well? 
-      if (SModelOperations.getAllLanguageImports(model).contains(searchedLanguage)) {
-        searchResults.add(new SearchResult<SModel>(model, MODELS_WRITTEN_IN_LANGUAGE));
-      }
     }
   }
   /*package*/ static Set<SModuleReference> getDeclaredDependenciesTargets(SModule module) {
@@ -238,7 +186,6 @@ public class ModuleUsagesFinder extends BaseFinder {
       myModels2Visit.add(model);
     }
   }
-
 
   private static Set<SDependency> findDependencies(SModule from, SModuleReference to) {
     // FIXME nice candidate to move into SModule (along with findDependencies(SDependencyKind) 
