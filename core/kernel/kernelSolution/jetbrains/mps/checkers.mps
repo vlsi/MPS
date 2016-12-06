@@ -347,6 +347,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1180028149140" name="jetbrains.mps.lang.smodel.structure.Concept_IsSuperConceptOfOperation" flags="nn" index="2Za9M6">
@@ -5566,7 +5567,7 @@
                                         <node concept="2GrUjf" id="6qi2OtU3tWd" role="2Oq$k0">
                                           <ref role="2Gs0qQ" node="6qi2OtU3tVs" resolve="child" />
                                         </node>
-                                        <node concept="13GOg" id="6qi2OtU3tWe" role="2OqNvi" />
+                                        <node concept="2NL2c5" id="775sqVSKo_" role="2OqNvi" />
                                       </node>
                                       <node concept="Xl_RD" id="6qi2OtU3tWf" role="3uHU7B">
                                         <property role="Xl_RC" value="incompatible target concept in role \&quot;" />
@@ -5593,7 +5594,7 @@
                                 <node concept="2GrUjf" id="6xhfW11LQvi" role="2Oq$k0">
                                   <ref role="2Gs0qQ" node="6qi2OtU3tVs" resolve="child" />
                                 </node>
-                                <node concept="3NT_Vc" id="6xhfW11LRvH" role="2OqNvi" />
+                                <node concept="2yIwOk" id="775sqVSKPo" role="2OqNvi" />
                               </node>
                             </node>
                           </node>
@@ -5742,11 +5743,25 @@
                             <node concept="3cpWs3" id="6xhfW11NrOX" role="3uHU7B">
                               <node concept="3cpWs3" id="6qi2OtU3tX7" role="3uHU7B">
                                 <node concept="3cpWs3" id="6qi2OtU3tX8" role="3uHU7B">
-                                  <node concept="2OqwBi" id="6qi2OtU3tX9" role="3uHU7w">
-                                    <node concept="2GrUjf" id="6qi2OtU3tXa" role="2Oq$k0">
-                                      <ref role="2Gs0qQ" node="6qi2OtU3tWu" resolve="reference" />
+                                  <node concept="2OqwBi" id="775sqVST$n" role="3uHU7w">
+                                    <node concept="2OqwBi" id="775sqVSRZR" role="2Oq$k0">
+                                      <node concept="1eOMI4" id="775sqVSLjN" role="2Oq$k0">
+                                        <node concept="10QFUN" id="775sqVSLjO" role="1eOMHV">
+                                          <node concept="2GrUjf" id="775sqVSLjM" role="10QFUP">
+                                            <ref role="2Gs0qQ" node="6qi2OtU3tWu" resolve="reference" />
+                                          </node>
+                                          <node concept="3uibUv" id="775sqVSM6E" role="10QFUM">
+                                            <ref role="3uigEE" to="mhbf:~SReference" resolve="SReference" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                      <node concept="liA8E" id="775sqVSSzt" role="2OqNvi">
+                                        <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+                                      </node>
                                     </node>
-                                    <node concept="90r25" id="6qi2OtU3tXb" role="2OqNvi" />
+                                    <node concept="liA8E" id="775sqVSV7X" role="2OqNvi">
+                                      <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
+                                    </node>
                                   </node>
                                   <node concept="Xl_RD" id="6qi2OtU3tXc" role="3uHU7B">
                                     <property role="Xl_RC" value="incompatible target concept in role \&quot;" />
@@ -5773,7 +5788,7 @@
                             <node concept="37vLTw" id="6xhfW11NwDP" role="2Oq$k0">
                               <ref role="3cqZAo" node="6qi2OtU3tWQ" resolve="target" />
                             </node>
-                            <node concept="3NT_Vc" id="6xhfW11ND3B" role="2OqNvi" />
+                            <node concept="2yIwOk" id="775sqVSW40" role="2OqNvi" />
                           </node>
                         </node>
                       </node>
