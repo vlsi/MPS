@@ -15694,7 +15694,7 @@
       <node concept="13uQ2_" id="5w9VucA$Mg7" role="39821P">
         <node concept="3_J27D" id="5w9VucA$Mg9" role="13uQ07">
           <node concept="3Mxwew" id="4vNfevbfZxr" role="3MwsjC">
-            <property role="3MwjfP" value="ecj-4.6.1.jar" />
+            <property role="3MwjfP" value="ecj-4.6.2RC3.jar" />
           </node>
         </node>
       </node>

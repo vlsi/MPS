@@ -46,7 +46,7 @@
   </path>
   
   <path id="path.java.library.ecj">
-    <fileset file="${artifacts.IDEA}/lib/ecj-4.6.1.jar" />
+    <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
   </path>
   
   <path id="path.java.library.log4j-lib">
