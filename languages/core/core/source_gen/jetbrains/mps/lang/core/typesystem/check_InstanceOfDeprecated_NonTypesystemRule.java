@@ -7,24 +7,40 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class check_InstanceOfDeprecated_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_InstanceOfDeprecated_NonTypesystemRule() {
   }
-  public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((AttributeOperations.getAttribute(SNodeOperations.getConceptDeclaration(nodeToCheck), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d0a70ae54L, "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation"))) != null)) {
+  public void applyRule(final SNode n, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    SRepository repo = check_gxjt90_a0a0a1(check_gxjt90_a0a0a0b(n)).getRepository();
+    if (repo == null) {
+      return;
+    }
+
+    LanguageRuntime lang = LanguageRegistry.getInstance(repo).getLanguage(SNodeOperations.getConcept(n).getLanguage());
+    ConceptPresentation conceptPres = check_gxjt90_a0e0b(lang.getAspect(ConceptPresentationAspect.class), n);
+    if (conceptPres == null) {
+      return;
+    }
+
+    if (conceptPres.isDeprecated()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(nodeToCheck, "'" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(nodeToCheck) + "' is instance of deprecated concept", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8524227390952646895", null, errorTarget);
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(n, "'" + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(n) + "' is instance of deprecated concept", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "8524227390952646895", null, errorTarget);
       }
     }
   }
@@ -36,5 +52,23 @@ public class check_InstanceOfDeprecated_NonTypesystemRule extends AbstractNonTyp
   }
   public boolean overrides() {
     return false;
+  }
+  private static SModule check_gxjt90_a0a0a1(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModel check_gxjt90_a0a0a0b(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
+  private static ConceptPresentation check_gxjt90_a0e0b(ConceptPresentationAspect checkedDotOperand, SNode n) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDescriptor(SNodeOperations.getConcept(n));
+    }
+    return null;
   }
 }
