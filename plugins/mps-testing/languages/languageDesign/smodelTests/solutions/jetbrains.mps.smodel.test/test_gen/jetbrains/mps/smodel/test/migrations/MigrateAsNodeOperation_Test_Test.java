@@ -5,49 +5,38 @@ package jetbrains.mps.smodel.test.migrations;
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
-import jetbrains.mps.lang.test.runtime.BaseTestBody;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
-import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.lang.test.runtime.BaseMigrationTestBody;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.lang.smodel.migration.MigrateAsNodeOperation;
-import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import junit.framework.Assert;
-import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import jetbrains.mps.lang.migration.runtime.base.Problem;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 @MPSLaunch
 public class MigrateAsNodeOperation_Test_Test extends BaseTransformationTest {
   @Test
   public void test_MigrateAsNodeOperation_Test() throws Throwable {
     initTest("${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
-    runTest("jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test$TestBody", "test_MigrateAsNodeOperation_Test", true);
+    runTest("jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test$TestBody", "testMethod", true);
   }
 
   @MPSLaunch
-  public static class TestBody extends BaseTestBody {
-    public void test_MigrateAsNodeOperation_Test() throws Exception {
-      SModel model = TemporaryModels.getInstance().create(false, false, TempModuleOptions.forDefaultModule());
-      SModelOperations.addRootNode(model, SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("5476670926299714765"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));
-      MigrationScript script = new MigrateAsNodeOperation();
-      script.execute(model.getModule());
-      {
-        List<SNode> nodesBefore = ListSequence.fromListAndArray(new ArrayList<SNode>(), ListSequence.fromList(SModelOperations.roots(model, null)).getElement(0));
-        List<SNode> nodesAfter = ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("5476670926300154676"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));
-        Assert.assertNull("The nodes '" + nodesBefore + "' and '" + nodesAfter + "' do not match!", new NodesMatcher().match(nodesBefore, nodesAfter));
-      }
-      for (Problem problem : Sequence.fromIterable(script.check(model.getModule()))) {
-        org.junit.Assert.fail(problem.toString());
-      }
+  public static class TestBody extends BaseMigrationTestBody {
+    @Override
+    public Collection<SNode> getInputNodes() {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("5476670926299714765"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));
     }
-
+    @Override
+    public Collection<SNode> getOutputNodes() {
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(getRealNodeById("8951526261574690178"), MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, "jetbrains.mps.lang.test.structure.TestNode")), MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b5a38fc01L, 0x11b5a397b92L, "nodeToCheck")));
+    }
+    @Override
+    public MigrationScript getMigrationScript() {
+      return new MigrateAsNodeOperation();
+    }
   }
 }

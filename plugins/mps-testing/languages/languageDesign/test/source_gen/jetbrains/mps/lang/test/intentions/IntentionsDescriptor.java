@@ -54,6 +54,13 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         break;
       case 2:
         if (true) {
+          // Concept: MigrationTestCase 
+          intentions = new IntentionFactory[1];
+          intentions[0] = new GenerateOuput_Intention();
+        }
+        break;
+      case 3:
+        if (true) {
           // Concept: ScopesTest 
           intentions = new IntentionFactory[1];
           intentions[0] = new AddScopeExpectedNodes_Intention();
@@ -68,7 +75,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[10];
+    IntentionFactory[] rv = new IntentionFactory[11];
     rv[0] = new AddTestAnnotation_Intention();
     rv[1] = new AddOperationsAnnotation_Intention();
     rv[2] = new AddCellAnnotation_Intention();
@@ -79,7 +86,8 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[7] = new AddNodeHasWarningAnnotation_Intention();
     rv[8] = new AddMessageAnnotation_Intention();
     rv[9] = new SpecifyRuleReferences_Intention();
+    rv[10] = new GenerateOuput_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L)).seal();
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11db4aad802L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x4c010b30d9be4be7L), MetaIdFactory.conceptId(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x7181d929c720809L)).seal();
 }

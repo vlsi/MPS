@@ -1,43 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095:jetbrains.mps.baseLanguage.structure.BlockStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539:jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)/5476670926299714032">
     <file name="MigrateAsNodeOperation_Test_Test.java">
-      <node id="5476670926299714032" at="30,67,31,121" concept="1" />
-      <node id="5476670926299714032" at="31,121,32,136" concept="1" />
-      <node id="5476670926299714032" at="37,69,38,110" concept="4" />
-      <node id="5476670926299714032" at="38,110,39,394" concept="1" />
-      <node id="5476670926299714032" at="39,394,40,60" concept="4" />
-      <node id="5476670926299714032" at="40,60,41,40" concept="1" />
-      <node id="5476670926299714032" at="42,7,43,162" concept="4" />
-      <node id="5476670926299714032" at="43,162,44,439" concept="4" />
-      <node id="5476670926299714032" at="44,439,45,151" concept="1" />
-      <node id="5476670926299714032" at="47,86,48,50" concept="1" />
-      <node id="5476670926299714032" at="46,7,49,7" concept="2" />
-      <node id="5476670926299714032" at="29,0,34,0" concept="3" trace="test_MigrateAsNodeOperation_Test#()V" />
-      <node id="5476670926299714032" at="41,40,46,7" concept="0" />
-      <node id="5476670926299714032" at="37,0,51,0" concept="3" trace="test_MigrateAsNodeOperation_Test#()V" />
-      <scope id="5476670926299714032" at="47,86,48,50" />
-      <scope id="5476670926299714032" at="30,67,32,136" />
-      <scope id="5476670926299714032" at="42,7,45,151">
-        <var name="nodesAfter" id="5476670926299714032" />
-        <var name="nodesBefore" id="5476670926299714032" />
-      </scope>
-      <scope id="5476670926299714032" at="46,7,49,7">
-        <var name="problem" id="5476670926299714032" />
-      </scope>
-      <scope id="5476670926299714032" at="29,0,34,0" />
-      <scope id="5476670926299714032" at="37,69,49,7">
-        <var name="model" id="5476670926299714032" />
-        <var name="script" id="5476670926299714032" />
-      </scope>
-      <scope id="5476670926299714032" at="37,0,51,0" />
-      <unit id="5476670926299714032" at="35,0,53,0" name="jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test$TestBody" />
-      <unit id="5476670926299714032" at="27,0,54,0" name="jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test" />
+      <node id="5476670926299714032" at="22,67,23,121" concept="0" />
+      <node id="5476670926299714032" at="23,121,24,114" concept="0" />
+      <node id="5476670926299714032" at="30,46,31,419" concept="2" />
+      <node id="5476670926299714032" at="34,47,35,419" concept="2" />
+      <node id="5476670926299714032" at="38,49,39,42" concept="2" />
+      <node id="5476670926299714032" at="29,0,33,0" concept="1" trace="getInputNodes#()Ljava/util/Collection;" />
+      <node id="5476670926299714032" at="33,0,37,0" concept="1" trace="getOutputNodes#()Ljava/util/Collection;" />
+      <node id="5476670926299714032" at="37,0,41,0" concept="1" trace="getMigrationScript#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
+      <node id="5476670926299714032" at="21,0,26,0" concept="1" trace="test_MigrateAsNodeOperation_Test#()V" />
+      <scope id="5476670926299714032" at="30,46,31,419" />
+      <scope id="5476670926299714032" at="34,47,35,419" />
+      <scope id="5476670926299714032" at="38,49,39,42" />
+      <scope id="5476670926299714032" at="22,67,24,114" />
+      <scope id="5476670926299714032" at="29,0,33,0" />
+      <scope id="5476670926299714032" at="33,0,37,0" />
+      <scope id="5476670926299714032" at="37,0,41,0" />
+      <scope id="5476670926299714032" at="21,0,26,0" />
+      <unit id="5476670926299714032" at="27,0,42,0" name="jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test$TestBody" />
+      <unit id="5476670926299714032" at="19,0,43,0" name="jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test" />
     </file>
   </root>
 </debug-info>

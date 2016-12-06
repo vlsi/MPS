@@ -77,6 +77,7 @@
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
     <import index="1xvu" ref="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)" />
+    <import index="62xu" ref="r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -991,6 +992,9 @@
     </node>
     <node concept="lpD6D" id="2m_lP2P61F3" role="lpD6w">
       <ref role="lpD7u" to="e7z4:1YIxz0TA89S" resolve="SLinkListAccess_ListModifyingOperaions" />
+    </node>
+    <node concept="lpD6D" id="7KUdrkEJoZV" role="lpD6w">
+      <ref role="lpD7u" to="62xu:4K12N3pNt7K" resolve="MigrateAsNodeOperation_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61F4">
