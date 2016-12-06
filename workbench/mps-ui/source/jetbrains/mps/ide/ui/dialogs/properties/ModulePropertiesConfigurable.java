@@ -543,6 +543,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
+      // FIXME would be great to share LanguageValidator knowledge about module errors here and tell various warnings/errors
+      //       right along a module dependency in addition to 'missing module'.
       final SRepository repo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
       class MissingModuleCondition implements Condition<SModule> {
         public MissingModuleCondition() {
