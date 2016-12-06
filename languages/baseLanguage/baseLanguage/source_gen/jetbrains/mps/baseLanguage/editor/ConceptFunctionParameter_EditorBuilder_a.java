@@ -13,8 +13,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 
 /*package*/ class ConceptFunctionParameter_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -51,6 +51,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     return editorCell;
   }
   private boolean _StyleParameter_QueryFunction_q0ga01_a1a() {
-    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(getNode())));
+    ConceptPresentation pres = ConceptAspectsHelper.getPresentationAspect(getNode());
+    return (pres == null ? false : pres.isDeprecated());
   }
 }
