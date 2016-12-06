@@ -71,6 +71,17 @@
     </condition>
   </target>
 
+  <target name="check-ecj" description="Check Eclipse compiler library availability">
+    <condition property="ecj.missing" value="true" else="false">
+      <not>
+        <and>
+          <available file="${ecj.lib}"/>
+          <available file="${ecj.src}"/>
+        </and>
+      </not>
+    </condition>
+  </target>
+
   <!-- ===================================================== -->
   <!-- Check platform libraries download requirement         -->
   <!-- ===================================================== -->
@@ -201,7 +212,14 @@
     <ivy:retrieve pattern="${basedir}/../plugins/jetpad/lib/[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
   </target>
 
-  <target name="download-3rd-party" depends="download-diffutils,download-testlib,download-jetpad"
+  <target name="download-ecj" depends="check-ecj,install-ivy" if="${ecj.missing}"
+          description="Download Eclipse compiler library">
+    <echo message="Eclipse compiler library is missing. Downloading..."/>
+    <ivy:resolve file="./ivyEclipseCompiler.xml" validate="false" showprogress="true"/>
+    <ivy:retrieve pattern="${basedir}/../lib/([classifier]/)[artifact]-[revision](-[classifier]).[ext]" overwritemode="different"/>
+  </target>
+
+  <target name="download-3rd-party" depends="download-diffutils,download-testlib,download-jetpad,download-ecj"
           description="Download all non platform related libs"/>
 
   <!-- ===================================================== -->
@@ -231,7 +249,12 @@
     <delete dir="${jetpad.lib}" includeemptydirs="true" failonerror="false"/>
   </target>
 
-  <target name="clean-3rd-party" depends="clean-diffutils,clean-testlib,clean-jetpad" description="Delete 3rd party libraries"/>
+  <target name="clean-ecj">
+    <delete file="${ecj.lib}" failonerror="false"/>
+    <delete file="${ecj.src}" failonerror="false"/>
+  </target>
+
+  <target name="clean-3rd-party" depends="clean-diffutils,clean-testlib,clean-jetpad,clean-ecj" description="Delete 3rd party libraries"/>
 
   <target name="clean" depends="clean-3rd-party,clean-platform" description="Delete platform files and 3rd party libraries"/>
 
