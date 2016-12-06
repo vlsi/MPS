@@ -8,11 +8,11 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +27,7 @@ public final class TemplateDeclarationReference__BehaviorDescriptor extends Base
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getTemplateType_id6SoPMa83EEL = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTemplateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6SoPMa83EEL").registry(REGISTRY).build();
+  public static final SMethod<SAbstractConcept> getTemplateType_id6SoPMa83EEL = new SMethodBuilder<SAbstractConcept>(new SJavaCompoundTypeImpl((Class<SAbstractConcept>) ((Class) Object.class))).name("getTemplateType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6SoPMa83EEL").registry(REGISTRY).build();
   public static final SMethod<SNode> getTemplate_idQzR6ThtRo7 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getTemplate").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("QzR6ThtRo7").registry(REGISTRY).build();
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTemplateType_id6SoPMa83EEL, getTemplate_idQzR6ThtRo7);
@@ -35,12 +35,12 @@ public final class TemplateDeclarationReference__BehaviorDescriptor extends Base
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static SNode getTemplateType_id6SoPMa83EEL(@NotNull SNode __thisNode__) {
+  /*package*/ static SAbstractConcept getTemplateType_id6SoPMa83EEL(@NotNull SNode __thisNode__) {
     SNode contentNode = SLinkOperations.getTarget(TemplateDeclarationReference__BehaviorDescriptor.getTemplate_idQzR6ThtRo7.invoke(__thisNode__), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfe43cb41d0L, 0xfe43de823bL, "contentNode"));
     if ((contentNode != null)) {
       List<SNode> fragments = SNodeOperations.getNodeDescendants(contentNode, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff1b29b76cL, "jetbrains.mps.lang.generator.structure.TemplateFragment"), false, new SAbstractConcept[]{});
       if ((ListSequence.fromList(fragments).first() != null) && (SNodeOperations.getParent(ListSequence.fromList(fragments).first()) != null)) {
-        return SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(ListSequence.fromList(fragments).first()));
+        return SNodeOperations.getConcept(SNodeOperations.getParent(ListSequence.fromList(fragments).first()));
       }
     }
     return null;
@@ -66,7 +66,7 @@ public final class TemplateDeclarationReference__BehaviorDescriptor extends Base
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((SNode) getTemplateType_id6SoPMa83EEL(node));
+        return (T) ((SAbstractConcept) getTemplateType_id6SoPMa83EEL(node));
       case 1:
         return (T) ((SNode) getTemplate_idQzR6ThtRo7(node));
       default:
