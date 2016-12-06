@@ -114,14 +114,25 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childrenListHandler_o1wjm3_c2a extends RefNodeListHandler {
+  private static class childrenListHandler_o1wjm3_c2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childrenListHandler_o1wjm3_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return nodeFactory(getNode(), editorContext);
+      return nodeFactory();
     }
-    public SNode nodeFactory(SNode node, EditorContext editorContext) {
+    public SNode nodeFactory() {
       SNode ch = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"));
       SPropertyOperations.set(ch, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, 0x617705b269dc8252L, "flag"), "" + (true));
       return ch;
@@ -203,10 +214,21 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childrenListHandler_o1wjm3_c3a extends RefNodeListHandler {
+  private static class childrenListHandler_o1wjm3_c3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childrenListHandler_o1wjm3_c3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

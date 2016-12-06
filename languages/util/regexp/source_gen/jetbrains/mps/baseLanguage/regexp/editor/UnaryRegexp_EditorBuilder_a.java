@@ -8,11 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.LeftRegexpBraceStyleClass;
-import jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp__BehaviorDescriptor;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -56,15 +56,21 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     RegexpSequenceByEnter.setCellActions(editorCell, myNode, getEditorContext());
-    if (renderingCondition_xoe8gq_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_xoe8gq_a0a()) {
       editorCell.addEditorCell(createConstant_xoe8gq_a0());
     }
     editorCell.addEditorCell(createRefNode_xoe8gq_b0());
-    if (renderingCondition_xoe8gq_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_xoe8gq_a2a()) {
       editorCell.addEditorCell(createConstant_xoe8gq_c0());
     }
     editorCell.addEditorCell(createComponent_xoe8gq_d0());
     return editorCell;
+  }
+  private boolean nodeCondition_xoe8gq_a0a() {
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(myNode);
+  }
+  private boolean nodeCondition_xoe8gq_a2a() {
+    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(myNode);
   }
   private EditorCell createConstant_xoe8gq_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
@@ -75,17 +81,25 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_xoe8gq_a0a(SNode node, EditorContext editorContext) {
-    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
-  }
   private EditorCell createRefNode_xoe8gq_b0() {
     SingleRoleCellProvider provider = new UnaryRegexp_EditorBuilder_a.regexpSingleRoleHandler_xoe8gq_b0(myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), getEditorContext());
     return provider.createCell();
   }
-  private class regexpSingleRoleHandler_xoe8gq_b0 extends SingleRoleCellProvider {
+  private static class regexpSingleRoleHandler_xoe8gq_b0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public regexpSingleRoleHandler_xoe8gq_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -93,7 +107,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("regexp");
@@ -119,9 +133,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_xoe8gq_a2a(SNode node, EditorContext editorContext) {
-    return (boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(node);
   }
   private EditorCell createComponent_xoe8gq_d0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.core.editor.alias");

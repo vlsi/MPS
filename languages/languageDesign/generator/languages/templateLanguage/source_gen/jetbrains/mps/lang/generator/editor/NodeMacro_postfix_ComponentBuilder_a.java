@@ -14,6 +14,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
@@ -28,7 +29,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingLabelReferenceStyleClass;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyleClass;
 
@@ -58,14 +58,20 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     style.set(StyleAttributes.SELECTABLE, false);
     style.set(StyleAttributes.HORIZONTAL_GAP, new Padding(3, Measure.PIXELS));
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_crgygw_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_crgygw_a0a()) {
       editorCell.addEditorCell(createCollection_crgygw_a0());
     }
-    if (renderingCondition_crgygw_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_crgygw_a1a()) {
       editorCell.addEditorCell(createRefCell_crgygw_b0());
     }
     editorCell.addEditorCell(createAttributedNodeCell_crgygw_c0());
     return editorCell;
+  }
+  private boolean nodeCondition_crgygw_a0a() {
+    return neq_f3owzj_a0a0j(myNode.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+  }
+  private boolean nodeCondition_crgygw_a1a() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
   }
   private EditorCell createCollection_crgygw_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -73,9 +79,6 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.addEditorCell(createConstant_crgygw_a0a());
     editorCell.addEditorCell(createReadOnlyModelAccessor_crgygw_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_crgygw_a0a(SNode node, EditorContext editorContext) {
-    return neq_f3owzj_a0a0k(node.getContainmentLink(), MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
   }
   private EditorCell createConstant_crgygw_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "bad role:");
@@ -174,9 +177,6 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
       return editorCell;
     }
   }
-  private static boolean renderingCondition_crgygw_a1a(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
-  }
   private EditorCell createAttributedNodeCell_crgygw_c0() {
     EditorManager manager = EditorManager.getInstanceFromContext(getEditorContext());
     EditorCell editorCell = getUpdateSession().getAttributedCell(AttributeKind.NODE, myNode);
@@ -185,7 +185,7 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean neq_f3owzj_a0a0k(Object a, Object b) {
+  private static boolean neq_f3owzj_a0a0j(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }

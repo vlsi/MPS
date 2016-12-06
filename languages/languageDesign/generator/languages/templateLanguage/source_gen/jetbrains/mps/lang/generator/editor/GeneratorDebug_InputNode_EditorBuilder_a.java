@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -15,8 +17,6 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class GeneratorDebug_InputNode_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -43,10 +43,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createProperty_6u0t67_a0());
-    if (renderingCondition_6u0t67_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_6u0t67_a1a()) {
       editorCell.addEditorCell(createRefCell_6u0t67_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_6u0t67_a1a() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr")) != null);
   }
   private EditorCell createProperty_6u0t67_a0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -120,8 +123,5 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       editorCell.setCellId("ReferencePresentation_6u0t67_a0b0");
       return editorCell;
     }
-  }
-  private static boolean renderingCondition_6u0t67_a1a(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr")) != null);
   }
 }

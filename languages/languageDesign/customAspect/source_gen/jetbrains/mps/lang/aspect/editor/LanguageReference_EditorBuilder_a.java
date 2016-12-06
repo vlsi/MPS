@@ -59,10 +59,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     SingleRoleCellProvider provider = new LanguageReference_EditorBuilder_a.languageIdSingleRoleHandler_uxcxn0_a0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), getEditorContext());
     return provider.createCell();
   }
-  private class languageIdSingleRoleHandler_uxcxn0_a0 extends SingleRoleCellProvider {
+  private static class languageIdSingleRoleHandler_uxcxn0_a0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public languageIdSingleRoleHandler_uxcxn0_a0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -70,7 +81,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new LanguageReference_EditorBuilder_a.LanguageReference_generic_cellMenu_uxcxn0_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new LanguageReference_EditorBuilder_a.languageIdSingleRoleHandler_uxcxn0_a0.LanguageReference_generic_cellMenu_uxcxn0_a0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("languageId");
@@ -87,24 +98,24 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
     protected String getNoTargetText() {
       return "";
     }
-  }
-  public static class LanguageReference_generic_cellMenu_uxcxn0_a0a0 extends AbstractCellMenuPart_Generic_Group {
-    public LanguageReference_generic_cellMenu_uxcxn0_a0a0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
-      return new ArrayList<SLanguage>(allLanguages);
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SLanguage) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SLanguage parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode lid = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
-      LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), lid);
-    }
-    public boolean isReferentPresentation() {
-      return false;
+    public static class LanguageReference_generic_cellMenu_uxcxn0_a0a0 extends AbstractCellMenuPart_Generic_Group {
+      public LanguageReference_generic_cellMenu_uxcxn0_a0a0() {
+      }
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        Collection<SLanguage> allLanguages = LanguageRegistry.getInstance().getAllLanguages();
+        return new ArrayList<SLanguage>(allLanguages);
+      }
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((SLanguage) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(SLanguage parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        SNode lid = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, "jetbrains.mps.lang.smodel.structure.LanguageId"));
+        LanguageIdentity__BehaviorDescriptor.setLanguage_id34EJa6aIcyw.invoke(lid, parameterObject);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3e6a40ba27dd70f3L, 0x312abca18ab995e2L, "languageId"), lid);
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
     }
   }
 }

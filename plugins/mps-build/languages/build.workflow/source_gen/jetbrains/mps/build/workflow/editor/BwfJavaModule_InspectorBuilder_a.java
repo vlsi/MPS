@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -24,8 +26,6 @@ import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.build.workflow.behavior.BwfJavaModule__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Arrays;
 
 /*package*/ class BwfJavaModule_InspectorBuilder_a extends AbstractEditorBuilder {
@@ -60,10 +60,10 @@ import java.util.Arrays;
     editorCell.addEditorCell(createProperty_y27sly_f0());
     editorCell.addEditorCell(createConstant_y27sly_g0());
     editorCell.addEditorCell(createProperty_y27sly_h0());
-    if (renderingCondition_y27sly_a8a(myNode, getEditorContext())) {
+    if (nodeCondition_y27sly_a8a()) {
       editorCell.addEditorCell(createConstant_y27sly_i0());
     }
-    if (renderingCondition_y27sly_a9a(myNode, getEditorContext())) {
+    if (nodeCondition_y27sly_a9a()) {
       editorCell.addEditorCell(createProperty_y27sly_j0());
     }
     editorCell.addEditorCell(createConstant_y27sly_k0());
@@ -73,6 +73,12 @@ import java.util.Arrays;
     editorCell.addEditorCell(createConstant_y27sly_o0());
     editorCell.addEditorCell(createProperty_y27sly_p0());
     return editorCell;
+  }
+  private boolean nodeCondition_y27sly_a8a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"));
+  }
+  private boolean nodeCondition_y27sly_a9a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"));
   }
   private EditorCell createConstant_y27sly_a0_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "generate debug info");
@@ -200,9 +206,6 @@ import java.util.Arrays;
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_y27sly_a8a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"));
-  }
   private EditorCell createProperty_y27sly_j0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
     provider.setRole("heapSize");
@@ -221,9 +224,6 @@ import java.util.Arrays;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private static boolean renderingCondition_y27sly_a9a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x41fde5e4adce38bbL, 0x3d4a6c597112f405L, "fork"));
   }
   private EditorCell createConstant_y27sly_k0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "java compliance source");

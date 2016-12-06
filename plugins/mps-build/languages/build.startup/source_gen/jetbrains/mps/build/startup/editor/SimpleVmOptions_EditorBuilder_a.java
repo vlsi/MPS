@@ -8,9 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
@@ -39,20 +39,20 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setCellId("Collection_6n3yp7_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_6n3yp7_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_6n3yp7_a0a()) {
       editorCell.addEditorCell(createConstant_6n3yp7_a0());
     }
     editorCell.addEditorCell(createProperty_6n3yp7_b0());
     return editorCell;
+  }
+  private boolean nodeCondition_6n3yp7_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented"));
   }
   private EditorCell createConstant_6n3yp7_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "#");
     editorCell.setCellId("Constant_6n3yp7_a0");
     editorCell.setDefaultText("");
     return editorCell;
-  }
-  private static boolean renderingCondition_6n3yp7_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented"));
   }
   private EditorCell createProperty_6n3yp7_b0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

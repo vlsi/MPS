@@ -97,10 +97,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class participantsListHandler_h5gehg_d0 extends RefNodeListHandler {
+  private static class participantsListHandler_h5gehg_d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public participantsListHandler_h5gehg_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -156,10 +167,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class smallTalkListHandler_h5gehg_f0 extends RefNodeListHandler {
+  private static class smallTalkListHandler_h5gehg_f0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public smallTalkListHandler_h5gehg_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

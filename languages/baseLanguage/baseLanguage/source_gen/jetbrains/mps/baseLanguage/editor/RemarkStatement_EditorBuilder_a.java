@@ -67,8 +67,8 @@ import java.awt.Color;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("property_value");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_2kc2ry_a0b0(getEditorContext(), getNode()));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2kc2ry_a1b0(getEditorContext(), getNode())));
+    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_2kc2ry_a0b0());
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_2kc2ry_a1b0()));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -78,15 +78,15 @@ import java.awt.Color;
     } else
     return editorCell;
   }
-  private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(EditorContext editorContext, SNode node) {
-    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
+  private int _StyleParameter_QueryFunction_2kc2ry_a0b0() {
+    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(getNode())) {
       return MPSFonts.BOLD_ITALIC;
     } else {
       return MPSFonts.ITALIC;
     }
   }
-  private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(EditorContext editorContext, SNode node) {
-    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(node)) {
+  private Color _StyleParameter_QueryFunction_2kc2ry_a1b0() {
+    if ((boolean) RemarkStatement__BehaviorDescriptor.isTodo_idhEwITPs.invoke(getNode())) {
       return Color.BLUE;
     } else {
       return Color.GRAY;

@@ -130,10 +130,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class styleKeyListHandler_cs4e9u_b1a extends RefNodeListHandler {
+  private static class styleKeyListHandler_cs4e9u_b1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public styleKeyListHandler_cs4e9u_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

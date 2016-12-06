@@ -63,10 +63,21 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class testMethodListHandler_bc5hcd_a0 extends RefNodeListHandler {
+  private static class testMethodListHandler_bc5hcd_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public testMethodListHandler_bc5hcd_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

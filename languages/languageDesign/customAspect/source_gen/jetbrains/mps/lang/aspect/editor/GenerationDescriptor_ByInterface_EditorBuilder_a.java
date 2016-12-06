@@ -162,10 +162,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class methodsListHandler_laxs8h_b1a extends RefNodeListHandler {
+  private static class methodsListHandler_laxs8h_b1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public methodsListHandler_laxs8h_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

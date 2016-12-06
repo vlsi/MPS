@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -15,8 +17,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class AnonymousCellAnnotation_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -48,10 +48,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createProperty_ql48ef_d0());
     editorCell.addEditorCell(createConstant_ql48ef_e0());
     editorCell.addEditorCell(createAlternation_ql48ef_f0());
-    if (renderingCondition_ql48ef_a6a(myNode, getEditorContext())) {
+    if (nodeCondition_ql48ef_a6a()) {
       editorCell.addEditorCell(createCollection_ql48ef_g0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_ql48ef_a6a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e251146L, "useLabelSelection"));
   }
   private EditorCell createConstant_ql48ef_a0_0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "is in inspector");
@@ -109,7 +112,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
   }
   private EditorCell createAlternation_ql48ef_f0() {
     boolean alternationCondition = true;
-    alternationCondition = AnonymousCellAnnotation_InspectorBuilder_a.renderingCondition_ql48ef_a5a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_ql48ef_a5a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_ql48ef_a5a();
@@ -121,8 +124,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean renderingCondition_ql48ef_a5a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e3fde6f41L, "isLastPosition"));
+  private boolean nodeCondition_ql48ef_a5a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x11e3fde6f41L, "isLastPosition"));
   }
   private EditorCell createConstant_ql48ef_a5a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "last");
@@ -158,9 +161,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_ql48ef_c6a());
     editorCell.addEditorCell(createProperty_ql48ef_d6a());
     return editorCell;
-  }
-  private static boolean renderingCondition_ql48ef_a6a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11e31babe12L, 0x1ad0cd452e251146L, "useLabelSelection"));
   }
   private EditorCell createConstant_ql48ef_a6a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "selection start:");

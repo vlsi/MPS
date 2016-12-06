@@ -113,10 +113,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class defaultChildrenListHandler_x68k3l_c2a extends RefNodeListHandler {
+  private static class defaultChildrenListHandler_x68k3l_c2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public defaultChildrenListHandler_x68k3l_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -167,7 +178,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       editorCell.addEditorCell(createRefNodeList_x68k3l_c4c0());
       editorCell.addEditorCell(createConstant_x68k3l_d4c0());
       editorCell.addEditorCell(createCollection_x68k3l_e4c0());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -201,10 +212,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class richChildrenListHandler_x68k3l_c4c0 extends RefNodeListHandler {
+  private static class richChildrenListHandler_x68k3l_c4c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public richChildrenListHandler_x68k3l_c4c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -253,7 +275,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       editorCell.addEditorCell(createConstant_x68k3l_a4e2a());
       editorCell.addEditorCell(createConstant_x68k3l_b4e2a());
       editorCell.addEditorCell(createRefNodeList_x68k3l_c4e2a());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -287,10 +309,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class richCompactChildrenListHandler_x68k3l_c4e2a extends RefNodeListHandler {
+  private static class richCompactChildrenListHandler_x68k3l_c4e2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public richCompactChildrenListHandler_x68k3l_c4e2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -366,10 +399,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childSubconceptsListHandler_x68k3l_c6c0 extends RefNodeListHandler {
+  private static class childSubconceptsListHandler_x68k3l_c6c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childSubconceptsListHandler_x68k3l_c6c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

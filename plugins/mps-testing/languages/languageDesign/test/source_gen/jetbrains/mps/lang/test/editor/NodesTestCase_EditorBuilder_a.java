@@ -135,10 +135,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class nodesToCheckListHandler_58c6e4_b2a extends RefNodeListHandler {
+  private static class nodesToCheckListHandler_58c6e4_b2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public nodesToCheckListHandler_58c6e4_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -205,14 +216,25 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class testMethodsListHandler_58c6e4_b5a extends RefNodeListHandler {
+  private static class testMethodsListHandler_58c6e4_b5a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public testMethodsListHandler_58c6e4_b5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
-    private String getSeparatorText(EditorContext context, SNode node) {
+    private String getSeparatorText() {
       return "";
     }
     public EditorCell createNodeCell(SNode elementNode) {
@@ -240,7 +262,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     }
     @Override
     public EditorCell createSeparatorCell(SNode prevNode, SNode nextNode) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), testMethodsListHandler_58c6e4_b5a.this.getSeparatorText(getEditorContext(), prevNode));
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), getNode(), testMethodsListHandler_58c6e4_b5a.this.getSeparatorText());
       editorCell.setSelectable(false);
       Style style = new StyleImpl();
       style.set(StyleAttributes.LAYOUT_CONSTRAINT, "");
@@ -290,10 +312,21 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class methodsListHandler_58c6e4_b8a extends RefNodeListHandler {
+  private static class methodsListHandler_58c6e4_b8a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public methodsListHandler_58c6e4_b8a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

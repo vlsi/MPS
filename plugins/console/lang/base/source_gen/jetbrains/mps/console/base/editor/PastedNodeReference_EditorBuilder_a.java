@@ -44,7 +44,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
   private EditorCell createAlternation_7k9x8q_a() {
     boolean alternationCondition = true;
-    alternationCondition = PastedNodeReference_EditorBuilder_a.renderingCondition_7k9x8q_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_7k9x8q_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createReadOnlyModelAccessor_7k9x8q_a0();
@@ -61,8 +61,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean renderingCondition_7k9x8q_a0(SNode node, EditorContext editorContext) {
-    return !((boolean) INodeWithReference__BehaviorDescriptor.isBroken_id7m$hACyVN2F.invoke(node));
+  private boolean nodeCondition_7k9x8q_a0() {
+    return !((boolean) INodeWithReference__BehaviorDescriptor.isBroken_id7m$hACyVN2F.invoke(myNode));
   }
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {
@@ -82,13 +82,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.UNDERLINED, true);
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_7k9x8q_a3a0(getEditorContext(), getNode()));
+    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_7k9x8q_a3a0());
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "target");
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static SNode _StyleParameter_QueryFunction_7k9x8q_a3a0(EditorContext editorContext, SNode node) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
+  private SNode _StyleParameter_QueryFunction_7k9x8q_a3a0() {
+    return SLinkOperations.getTarget(getNode(), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target"));
   }
   private EditorCell createReadOnlyModelAccessor_7k9x8q_a0_0() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {

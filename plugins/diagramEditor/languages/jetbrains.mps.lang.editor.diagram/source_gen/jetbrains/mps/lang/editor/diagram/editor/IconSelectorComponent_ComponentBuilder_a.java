@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
   }
   private EditorCell createAlternation_6g738i_a0() {
     boolean alternationCondition = true;
-    alternationCondition = IconSelectorComponent_ComponentBuilder_a.renderingCondition_6g738i_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_6g738i_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createImage_6g738i_a0a();
@@ -66,12 +66,12 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_6g738i_a0a(SNode node, EditorContext editorContext) {
-    SModule module = SNodeOperations.getModel(node).getModule();
+  private boolean nodeCondition_6g738i_a0a() {
+    SModule module = SNodeOperations.getModel(myNode).getModule();
     if (!(module instanceof AbstractModule)) {
       return false;
     }
-    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath")));
+    String s = MacrosFactory.forModule(((AbstractModule) module)).expandPath(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath")));
     if (s == null) {
       return false;
     }
@@ -134,11 +134,11 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     return editorCell;
   }
   private EditorCell createJComponent_6g738i_c1a() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, IconSelectorComponent_ComponentBuilder_a._QueryFunction_JComponent_6g738i_a2b0(myNode, getEditorContext()), "_6g738i_c1a");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_6g738i_a2b0(), "_6g738i_c1a");
     editorCell.setCellId("JComponent_6g738i_c1a");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_6g738i_a2b0(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, editorContext);
+  private JComponent _QueryFunction_JComponent_6g738i_a2b0() {
+    return EditorUtil.createSelectIconButton(myNode, getEditorContext());
   }
 }

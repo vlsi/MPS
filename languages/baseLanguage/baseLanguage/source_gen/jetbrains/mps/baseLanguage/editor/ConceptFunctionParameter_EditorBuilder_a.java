@@ -45,12 +45,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_q0ga01_a1a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_q0ga01_a1a());
     style.set(StyleAttributes.AUTO_DELETABLE, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean _StyleParameter_QueryFunction_q0ga01_a1a(EditorContext editorContext, SNode node) {
-    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(node)));
+  private boolean _StyleParameter_QueryFunction_q0ga01_a1a() {
+    return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(getNode())));
   }
 }

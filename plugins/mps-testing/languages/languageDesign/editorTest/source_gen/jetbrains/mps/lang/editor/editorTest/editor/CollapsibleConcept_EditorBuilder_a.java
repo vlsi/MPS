@@ -121,11 +121,11 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.addEditorCell(createConstant_diczxj_a5a());
     editorCell.addEditorCell(createCollection_diczxj_b5a());
     editorCell.addEditorCell(createConstant_diczxj_c5a());
-    editorCell.setInitiallyCollapsed(renderingCondition_diczxj_a5a(myNode, getEditorContext()));
+    editorCell.setInitiallyCollapsed(nodeCondition_diczxj_a5a());
     return editorCell;
   }
-  private static boolean renderingCondition_diczxj_a5a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, 0x671b139f12ae35f2L, "collapsedByDefault"));
+  private boolean nodeCondition_diczxj_a5a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, 0x671b139f12ae35f2L, "collapsedByDefault"));
   }
   private EditorCell createConstant_diczxj_a5a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "{");
@@ -177,10 +177,21 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class childrenListHandler_diczxj_c1f0 extends RefNodeListHandler {
+  private static class childrenListHandler_diczxj_c1f0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public childrenListHandler_diczxj_c1f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

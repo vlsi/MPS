@@ -13,13 +13,13 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfoPartEx;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.IOperationContext;
@@ -27,8 +27,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -83,13 +83,19 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createIndentCell_2konf7_a1a());
-    if (renderingCondition_2konf7_a1b0(myNode, getEditorContext())) {
+    if (nodeCondition_2konf7_a1b0()) {
       editorCell.addEditorCell(createConstant_2konf7_b1a());
     }
-    if (renderingCondition_2konf7_a2b0(myNode, getEditorContext())) {
+    if (nodeCondition_2konf7_a2b0()) {
       editorCell.addEditorCell(createConstant_2konf7_c1a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_2konf7_a1b0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"));
+  }
+  private boolean nodeCondition_2konf7_a2b0() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun")));
   }
   private EditorCell createIndentCell_2konf7_a1a() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
@@ -104,9 +110,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug_ComponentBuilder_a.RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
-  }
-  private static boolean renderingCondition_2konf7_a1b0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun"));
   }
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0b1a() {
@@ -128,9 +131,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug_ComponentBuilder_a.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  private static boolean renderingCondition_2konf7_a2b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x523a1a6c9706408bL, "canRun")));
-  }
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0c1a() {
     }
@@ -148,13 +148,19 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createIndentCell_2konf7_a2a());
-    if (renderingCondition_2konf7_a1c0(myNode, getEditorContext())) {
+    if (nodeCondition_2konf7_a1c0()) {
       editorCell.addEditorCell(createCollection_2konf7_b2a());
     }
-    if (renderingCondition_2konf7_a2c0(myNode, getEditorContext())) {
+    if (nodeCondition_2konf7_a2c0()) {
       editorCell.addEditorCell(createConstant_2konf7_c2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_2konf7_a1c0() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"))).isNotEmpty();
+  }
+  private boolean nodeCondition_2konf7_a2c0() {
+    return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   private EditorCell createIndentCell_2konf7_a2a() {
     EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
@@ -169,9 +175,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.addEditorCell(createConstant_2konf7_a1c0());
     editorCell.addEditorCell(createRefNode_2konf7_b1c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_2konf7_a1c0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"))).isNotEmpty();
   }
   private EditorCell createConstant_2konf7_a1c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "debug under");
@@ -197,10 +200,21 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     SingleRoleCellProvider provider = new ComplexCanRunAndDebug_ComponentBuilder_a.debuggerConfigurationSingleRoleHandler_2konf7_b1c0(myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), getEditorContext());
     return provider.createCell();
   }
-  private class debuggerConfigurationSingleRoleHandler_2konf7_b1c0 extends SingleRoleCellProvider {
+  private static class debuggerConfigurationSingleRoleHandler_2konf7_b1c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public debuggerConfigurationSingleRoleHandler_2konf7_b1c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -208,7 +222,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("debuggerConfiguration");
@@ -235,9 +249,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
     editorCell.setDefaultText("");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ComplexCanRunAndDebug_ComponentBuilder_a.RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
-  }
-  private static boolean renderingCondition_2konf7_a2c0(SNode node, EditorContext editorContext) {
-    return (SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL, 0x5d457621242d8208L, "debuggerConfiguration")) == null);
   }
   public static class RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_2konf7_a0c2a() {

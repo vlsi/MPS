@@ -44,7 +44,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
   private EditorCell createAlternation_h1yxkn_a() {
     boolean alternationCondition = true;
-    alternationCondition = TransformationLocation_EditorBuilder_a.renderingCondition_h1yxkn_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_h1yxkn_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createError_h1yxkn_a0();
@@ -58,8 +58,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_h1yxkn_a0(SNode node, EditorContext editorContext) {
-    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"));
+  private boolean nodeCondition_h1yxkn_a0() {
+    return SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(myNode)), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"));
   }
   private EditorCell createError_h1yxkn_a0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<choose location>");

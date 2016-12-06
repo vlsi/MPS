@@ -44,7 +44,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private boolean myIsReverseOrder = false;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    super(ownerNode, childRole, editorContext);
+    super(childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
@@ -147,10 +147,6 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   }
 
   protected void setInnerCellsContext() {
-    for (EditorCell cell : myListEditorCell_Collection) {
-      if (cell.getCellContext() == null) {
-        cell.setCellContext(getCellFactory().getCellContext());
-      }
-    }
+    setInnerCellsContext(myListEditorCell_Collection);
   }
 }

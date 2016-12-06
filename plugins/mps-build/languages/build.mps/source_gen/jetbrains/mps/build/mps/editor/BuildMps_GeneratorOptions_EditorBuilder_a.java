@@ -16,9 +16,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 
 /*package*/ class BuildMps_GeneratorOptions_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -89,7 +89,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createProperty_aauy4y_b2a());
     editorCell.addEditorCell(createConstant_aauy4y_c2a());
     editorCell.addEditorCell(createProperty_aauy4y_d2a());
-    if (renderingCondition_aauy4y_a4c0(myNode, getEditorContext())) {
+    if (nodeCondition_aauy4y_a4c0()) {
       editorCell.addEditorCell(createCollection_aauy4y_e2a());
     }
     editorCell.addEditorCell(createConstant_aauy4y_f2a());
@@ -99,6 +99,9 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_aauy4y_j2a());
     editorCell.addEditorCell(createProperty_aauy4y_k2a());
     return editorCell;
+  }
+  private boolean nodeCondition_aauy4y_a4c0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3ba296405b6f3b1bL, 0x3ba296405b6f720eL, "parallel"));
   }
   private EditorCell createConstant_aauy4y_a2a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "strict mode");
@@ -163,9 +166,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     editorCell.addEditorCell(createConstant_aauy4y_a4c0());
     editorCell.addEditorCell(createProperty_aauy4y_b4c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x3ba296405b6f3b1bL, 0x3ba296405b6f720eL, "parallel"));
   }
   private EditorCell createConstant_aauy4y_a4c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "number of threads");

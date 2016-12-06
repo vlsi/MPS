@@ -56,7 +56,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
   private EditorCell createAlternation_dsthrr_a0() {
     boolean alternationCondition = true;
-    alternationCondition = XmlExternalId_EditorBuilder_a.renderingCondition_dsthrr_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_dsthrr_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_dsthrr_a0a();
@@ -65,8 +65,8 @@ import jetbrains.mps.nodeEditor.EditorManager;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"));
+  private boolean nodeCondition_dsthrr_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f6033fL, 0x1d9c27c394f60345L, "isPublic"));
   }
   private EditorCell createCollection_dsthrr_a0a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);

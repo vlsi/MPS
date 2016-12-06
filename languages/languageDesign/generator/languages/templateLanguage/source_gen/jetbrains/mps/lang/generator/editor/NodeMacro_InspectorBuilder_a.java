@@ -72,10 +72,13 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
   private EditorCell createCollection_e7cx8x_c0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
     editorCell.setCellId("Collection_e7cx8x_c0");
-    if (renderingCondition_e7cx8x_a0c0(myNode, getEditorContext())) {
+    if (nodeCondition_e7cx8x_a0c0()) {
       editorCell.addEditorCell(createCollection_e7cx8x_a2a());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_e7cx8x_a0c0() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
   }
   private EditorCell createCollection_e7cx8x_a2a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -87,9 +90,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     editorCell.addEditorCell(createConstant_e7cx8x_b0c0());
     editorCell.addEditorCell(createRefCell_e7cx8x_c0c0());
     return editorCell;
-  }
-  private static boolean renderingCondition_e7cx8x_a0c0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xfd47ed6742L, 0x1179bf24befL, "mappingLabel")) != null;
   }
   private EditorCell createConstant_e7cx8x_a0c0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "mapping label");

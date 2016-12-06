@@ -224,10 +224,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class mappingLabelListHandler_g6pxeq_b1d0 extends RefNodeListHandler {
+  private static class mappingLabelListHandler_g6pxeq_b1d0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public mappingLabelListHandler_g6pxeq_b1d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -307,10 +318,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class exportsListHandler_g6pxeq_b1f0 extends RefNodeListHandler {
+  private static class exportsListHandler_g6pxeq_b1f0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public exportsListHandler_g6pxeq_b1f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -396,10 +418,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class generationParametersListHandler_g6pxeq_b1h0 extends RefNodeListHandler {
+  private static class generationParametersListHandler_g6pxeq_b1h0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public generationParametersListHandler_g6pxeq_b1h0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -472,10 +505,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     SingleRoleCellProvider provider = new MappingConfiguration_EditorBuilder_a.conditionSingleRoleHandler_g6pxeq_b1j0(myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x6cab949e66d5b3bbL, "condition"), getEditorContext());
     return provider.createCell();
   }
-  private class conditionSingleRoleHandler_g6pxeq_b1j0 extends SingleRoleCellProvider {
+  private static class conditionSingleRoleHandler_g6pxeq_b1j0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public conditionSingleRoleHandler_g6pxeq_b1j0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -483,7 +527,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, getNode(), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x6cab949e66d5b3bbL, "condition"), child), new DefaultChildSubstituteInfo(getNode(), myContainmentLink.getDeclarationNode(), getEditorContext())));
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, 0x6cab949e66d5b3bbL, "condition"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("condition");
@@ -554,10 +598,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class createRootRuleListHandler_g6pxeq_b1l0 extends RefNodeListHandler {
+  private static class createRootRuleListHandler_g6pxeq_b1l0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public createRootRuleListHandler_g6pxeq_b1l0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -640,10 +695,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class rootMappingRuleListHandler_g6pxeq_b1n0 extends RefNodeListHandler {
+  private static class rootMappingRuleListHandler_g6pxeq_b1n0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public rootMappingRuleListHandler_g6pxeq_b1n0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -726,10 +792,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class weavingMappingRuleListHandler_g6pxeq_b1p0 extends RefNodeListHandler {
+  private static class weavingMappingRuleListHandler_g6pxeq_b1p0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public weavingMappingRuleListHandler_g6pxeq_b1p0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -812,10 +889,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class reductionMappingRuleListHandler_g6pxeq_b1r0 extends RefNodeListHandler {
+  private static class reductionMappingRuleListHandler_g6pxeq_b1r0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public reductionMappingRuleListHandler_g6pxeq_b1r0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -898,10 +986,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class patternReductionRuleListHandler_g6pxeq_b1t0 extends RefNodeListHandler {
+  private static class patternReductionRuleListHandler_g6pxeq_b1t0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public patternReductionRuleListHandler_g6pxeq_b1t0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -985,10 +1084,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class dropRootRuleListHandler_g6pxeq_b1v0 extends RefNodeListHandler {
+  private static class dropRootRuleListHandler_g6pxeq_b1v0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public dropRootRuleListHandler_g6pxeq_b1v0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -1073,10 +1183,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class dropAttrubuteRuleListHandler_g6pxeq_b1x0 extends RefNodeListHandler {
+  private static class dropAttrubuteRuleListHandler_g6pxeq_b1x0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public dropAttrubuteRuleListHandler_g6pxeq_b1x0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -1157,10 +1278,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class preMappingScriptListHandler_g6pxeq_b1z0 extends RefNodeListHandler {
+  private static class preMappingScriptListHandler_g6pxeq_b1z0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public preMappingScriptListHandler_g6pxeq_b1z0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -1244,10 +1376,21 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class postMappingScriptListHandler_g6pxeq_b1bb0 extends RefNodeListHandler {
+  private static class postMappingScriptListHandler_g6pxeq_b1bb0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public postMappingScriptListHandler_g6pxeq_b1bb0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

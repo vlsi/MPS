@@ -35,7 +35,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
 
   private EditorCell createAlternation_a1nfgp_a() {
     boolean alternationCondition = true;
-    alternationCondition = Type_EditorBuilder_a.renderingCondition_a1nfgp_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_a1nfgp_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createError_a1nfgp_a0();
@@ -49,8 +49,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
     }
     return editorCell;
   }
-  private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getConcept(node).isAbstract();
+  private boolean nodeCondition_a1nfgp_a0() {
+    return SNodeOperations.getConcept(myNode).isAbstract();
   }
   private EditorCell createError_a1nfgp_a0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "<type>");

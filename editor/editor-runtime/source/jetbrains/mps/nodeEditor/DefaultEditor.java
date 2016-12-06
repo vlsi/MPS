@@ -126,7 +126,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
       setIndent(editorCell);
       addCell(editorCell);
     } else {
-      SingleRoleCellProvider provider = new SingleRoleCellProvider(getNode(), link, getEditorContext()) {
+      SingleRoleCellProvider provider = new SingleRoleCellProvider(link, getEditorContext()) {
         @Override
         protected String getNoTargetText() {
           return link.getName();
@@ -149,6 +149,12 @@ public class DefaultEditor extends AbstractDefaultEditor {
             cell.setRole(link.getName());
           }
           return cell;
+        }
+
+        @NotNull
+        @Override
+        public SNode getNode() {
+          return DefaultEditor.this.getNode();
         }
       };
       EditorCell cell = provider.createCell();

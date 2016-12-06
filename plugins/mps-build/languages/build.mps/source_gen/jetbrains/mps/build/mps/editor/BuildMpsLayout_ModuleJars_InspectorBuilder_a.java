@@ -81,10 +81,21 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class jarLocationsListHandler_aqxvre_b0 extends RefNodeListHandler {
+  private static class jarLocationsListHandler_aqxvre_b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public jarLocationsListHandler_aqxvre_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

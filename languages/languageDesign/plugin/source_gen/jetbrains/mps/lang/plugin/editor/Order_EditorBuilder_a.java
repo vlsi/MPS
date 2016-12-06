@@ -52,7 +52,7 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 
   private EditorCell createAlternation_yh3zz3_a() {
     boolean alternationCondition = true;
-    alternationCondition = Order_EditorBuilder_a.renderingCondition_yh3zz3_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_yh3zz3_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_yh3zz3_a0();
@@ -66,8 +66,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_yh3zz3_a0(SNode node, EditorContext editorContext) {
-    return (SNodeOperations.getParent(node) != null);
+  private boolean nodeCondition_yh3zz3_a0() {
+    return (SNodeOperations.getParent(myNode) != null);
   }
   private EditorCell createCollection_yh3zz3_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -90,10 +90,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class tabListHandler_yh3zz3_b0a extends RefNodeListHandler {
+  private static class tabListHandler_yh3zz3_b0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public tabListHandler_yh3zz3_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -199,10 +210,21 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class tabListHandler_yh3zz3_d0a extends RefNodeListHandler {
+  private static class tabListHandler_yh3zz3_d0a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public tabListHandler_yh3zz3_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

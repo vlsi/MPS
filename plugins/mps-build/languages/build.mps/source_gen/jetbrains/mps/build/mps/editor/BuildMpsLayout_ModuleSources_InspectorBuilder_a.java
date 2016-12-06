@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -16,8 +18,6 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class BuildMpsLayout_ModuleSources_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -44,10 +44,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createCollection_gp4zyx_a0());
-    if (renderingCondition_gp4zyx_a1a(myNode, getEditorContext())) {
+    if (nodeCondition_gp4zyx_a1a()) {
       editorCell.addEditorCell(createCollection_gp4zyx_b0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_gp4zyx_a1a() {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(myNode));
   }
   private EditorCell createCollection_gp4zyx_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
@@ -89,9 +92,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     editorCell.addEditorCell(createConstant_gp4zyx_a1a());
     editorCell.addEditorCell(createProperty_gp4zyx_b1a());
     return editorCell;
-  }
-  private static boolean renderingCondition_gp4zyx_a1a(SNode node, EditorContext editorContext) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
   private EditorCell createConstant_gp4zyx_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "models only:");

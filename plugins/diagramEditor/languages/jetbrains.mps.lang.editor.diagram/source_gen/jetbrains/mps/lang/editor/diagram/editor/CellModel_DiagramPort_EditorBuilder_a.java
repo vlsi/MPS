@@ -58,7 +58,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
   private EditorCell createAlternation_inwiug_a0() {
     boolean alternationCondition = true;
-    alternationCondition = CellModel_DiagramPort_EditorBuilder_a.renderingCondition_inwiug_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_inwiug_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_inwiug_a0a();
@@ -68,8 +68,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new CellModel_DiagramPort_EditorBuilder_a.CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0(), new CellModel_DiagramPort_EditorBuilder_a.CellModel_DiagramPort_generic_cellMenu_inwiug_b0a0(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  private static boolean renderingCondition_inwiug_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, 0x3f6e840fd12753fL, "input"));
+  private boolean nodeCondition_inwiug_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd120282L, 0x3f6e840fd12753fL, "input"));
   }
   public static class CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0 extends AbstractCellMenuPart_Generic_Item {
     public CellModel_DiagramPort_generic_cellMenu_inwiug_a0a0() {

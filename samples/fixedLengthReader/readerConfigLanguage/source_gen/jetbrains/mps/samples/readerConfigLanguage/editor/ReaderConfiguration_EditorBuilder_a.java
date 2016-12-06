@@ -120,10 +120,21 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class mappingListHandler_vfprw_b2a extends RefNodeListHandler {
+  private static class mappingListHandler_vfprw_b2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public mappingListHandler_vfprw_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

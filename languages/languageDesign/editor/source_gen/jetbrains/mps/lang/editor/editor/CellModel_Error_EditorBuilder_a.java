@@ -64,7 +64,7 @@ import java.awt.Color;
     editorCell.setCellId("property_text");
     Style style = new StyleImpl();
     style.set(StyleAttributes.DRAW_BORDER, true);
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_xkqo7y_a1b0(getEditorContext(), getNode())));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_xkqo7y_a1b0()));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.pink));
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.magenta));
     editorCell.getStyle().putAll(style);
@@ -76,8 +76,8 @@ import java.awt.Color;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_xkqo7y_a1b0(EditorContext editorContext, SNode node) {
-    return _EditorUtil.grayIfNotSelectable(node);
+  private Color _StyleParameter_QueryFunction_xkqo7y_a1b0() {
+    return _EditorUtil.grayIfNotSelectable(getNode());
   }
   private EditorCell createComponent_xkqo7y_c0() {
     EditorCell editorCell = getCellFactory().createEditorComponentCell(myNode, "jetbrains.mps.lang.editor.editor._CloseTag");

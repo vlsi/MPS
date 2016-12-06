@@ -89,6 +89,11 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
           public EditorCell createEditorCell(EditorContext editorContext) {
             RefNodeListHandler handler = new RefNodeListHandler(myNode, "element", editorContext) {
               @Override
+              @NotNull
+              public SNode getNode() {
+                return myNode;
+              }
+              @Override
               public SNode createNodeToInsert(EditorContext p0) {
                 return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")), null);
               }

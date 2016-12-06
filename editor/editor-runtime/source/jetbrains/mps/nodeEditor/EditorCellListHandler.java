@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -35,11 +36,13 @@ import java.util.List;
  */
 @Deprecated
 public abstract class EditorCellListHandler extends AbstractCellListHandler {
+  private final SNode myNode;
   private SNode myChildConcept;
   private SNode myLinkDeclaration;
 
   public EditorCellListHandler(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    super(ownerNode, childRole, editorContext);
+    super(childRole, editorContext);
+    myNode = ownerNode;
     myLinkDeclaration = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
     myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
@@ -47,6 +50,12 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }
     myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
+  }
+
+  @NotNull
+  @Override
+  public SNode getNode() {
+    return myNode;
   }
 
   public SNode getLinkDeclaration() {

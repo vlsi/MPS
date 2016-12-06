@@ -43,10 +43,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_lnae77_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_lnae77_a0a()) {
       editorCell.addEditorCell(createCollection_lnae77_a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_lnae77_a0a() {
+    return !(IdEditorHelper.shownInEditor(myNode));
   }
   private EditorCell createCollection_lnae77_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -57,9 +60,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
     editorCell.addEditorCell(createConstant_lnae77_a0a());
     editorCell.addEditorCell(createProperty_lnae77_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_lnae77_a0a(SNode node, EditorContext editorContext) {
-    return !(IdEditorHelper.shownInEditor(node));
   }
   private EditorCell createConstant_lnae77_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ID: ");

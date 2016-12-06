@@ -96,10 +96,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class stateMachinesListHandler_hd4pfy_b1a extends RefNodeListHandler {
+  private static class stateMachinesListHandler_hd4pfy_b1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public stateMachinesListHandler_hd4pfy_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -147,10 +158,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class tablesListHandler_hd4pfy_d1a extends RefNodeListHandler {
+  private static class tablesListHandler_hd4pfy_d1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public tablesListHandler_hd4pfy_d1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -198,10 +220,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class matrixesListHandler_hd4pfy_f1a extends RefNodeListHandler {
+  private static class matrixesListHandler_hd4pfy_f1a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public matrixesListHandler_hd4pfy_f1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

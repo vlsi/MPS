@@ -100,10 +100,21 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class partListHandler_wznzt8_c0 extends RefNodeListHandler {
+  private static class partListHandler_wznzt8_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public partListHandler_wznzt8_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

@@ -132,10 +132,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class inMetaPortsListHandler_liyxwi_c3a extends RefNodeListHandler {
+  private static class inMetaPortsListHandler_liyxwi_c3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public inMetaPortsListHandler_liyxwi_c3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -200,10 +211,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class outMetaPortsListHandler_liyxwi_g3a extends RefNodeListHandler {
+  private static class outMetaPortsListHandler_liyxwi_g3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public outMetaPortsListHandler_liyxwi_g3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

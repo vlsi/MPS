@@ -43,7 +43,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
   private EditorCell createAlternation_c4zoug_a0() {
     boolean alternationCondition = true;
-    alternationCondition = UsesTextCheckbox_EditorBuilder_a.renderingCondition_c4zoug_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_c4zoug_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_c4zoug_a0a();
@@ -52,8 +52,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_c4zoug_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, 0x4a35f271d9f26e95L, "property"));
+  private boolean nodeCondition_c4zoug_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x4a35f271d9f26e94L, 0x4a35f271d9f26e95L, "property"));
   }
   private EditorCell createConstant_c4zoug_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "x");

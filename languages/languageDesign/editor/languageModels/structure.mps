@@ -993,6 +993,9 @@
     <property role="3GE5qa" value="CellKeyMap" />
     <property role="EcuMT" value="1136917155755" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaM3I" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gyPz7Uf">
     <property role="R5$K7" value="false" />
@@ -1294,6 +1297,9 @@
     <property role="34LRSv" value="execute block" />
     <property role="EcuMT" value="1139535439104" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaLN3" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="AxPO7" id="g_u47wb">
     <property role="TrG5h" value="_ImageAlignment_Enum" />
@@ -1621,6 +1627,9 @@
     <property role="34LRSv" value="get objects" />
     <property role="EcuMT" value="1163613035599" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaMrx" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gVGJPiB">
     <property role="R5$K7" value="false" />
@@ -1631,6 +1640,9 @@
     <property role="34LRSv" value="create replacement node" />
     <property role="EcuMT" value="1163613131943" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaNm0" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gVGLrfY">
     <property role="R5$K7" value="false" />
@@ -1944,6 +1956,9 @@
     <property role="34LRSv" value="generic handler" />
     <property role="EcuMT" value="1165420626554" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaML3" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gXoHunQ">
     <property role="R5$K7" value="false" />
@@ -1972,6 +1987,9 @@
     <property role="3GE5qa" value="CellMenu" />
     <property role="EcuMT" value="1165424657443" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaN2I" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gXXs21o">
     <property role="R5$K7" value="false" />
@@ -2950,6 +2968,9 @@
     <property role="3GE5qa" value="QueryFunction.Style" />
     <property role="EcuMT" value="1221059528506" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="6E2BWlDqZ2F" role="PzmwI">
+      <ref role="PrY4T" node="6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hLd0yJJ">
     <property role="R5$K7" value="false" />
@@ -3214,6 +3235,9 @@
     <property role="3GE5qa" value="QueryFunction" />
     <property role="EcuMT" value="1236443640684" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="6E2BWlDjLVl" role="PzmwI">
+      <ref role="PrY4T" node="6E2BWlDjLUW" resolve="IContextNodeAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="i0l2Vh1">
     <property role="R5$K7" value="false" />
@@ -3385,6 +3409,9 @@
     <property role="3GE5qa" value="MethodParameters" />
     <property role="EcuMT" value="7667276221847612943" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaQg5" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="_gTQar9Xtu">
     <property role="TrG5h" value="QueryFunction_MethodPresentation" />
@@ -3392,6 +3419,9 @@
     <property role="3GE5qa" value="MethodParameters" />
     <property role="EcuMT" value="671290755174094686" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaOrO" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="_gTQar9Xtz">
     <property role="R5$K7" value="false" />
@@ -3412,6 +3442,9 @@
     <property role="3GE5qa" value="MethodParameters" />
     <property role="EcuMT" value="6419604448124516209" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaNDx" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="3Vg7jtwzY2J">
     <property role="R5$K7" value="false" />
@@ -4497,6 +4530,9 @@
     <property role="34LRSv" value="can execute block" />
     <property role="EcuMT" value="3459162043708467089" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="1PvcgmUaLA_" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="2RDuzOVyaJU">
     <property role="3GE5qa" value="QueryFunction.Style" />
@@ -4556,6 +4592,9 @@
     <property role="R5$K2" value="false" />
     <property role="EcuMT" value="784421273959504534" />
     <ref role="1TJDcQ" node="1quYWAD0TKW" resolve="QueryFunction_Menu" />
+    <node concept="PrWs8" id="1PvcgmUaZne" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="6tuXwJZljC_">
     <property role="3GE5qa" value="CellModel" />
@@ -5248,6 +5287,9 @@
     <property role="3GE5qa" value="Menu.Substitute.QueryFunction" />
     <property role="TrG5h" value="QueryFunction_SubstituteMenu" />
     <ref role="1TJDcQ" node="1quYWAD0TKW" resolve="QueryFunction_Menu" />
+    <node concept="PrWs8" id="1PvcgmUaZ9G" role="PzmwI">
+      <ref role="PrY4T" node="1PvcgmUaKhb" resolve="IEditorContextAccessQualifier" />
+    </node>
   </node>
   <node concept="1TIwiD" id="7mC_uHFK4WE">
     <property role="TrG5h" value="QueryFunction_SubstituteMenu_Select" />
@@ -6234,6 +6276,16 @@
     <property role="TrG5h" value="SubstituteMenuPart_Placeholder" />
     <property role="EcuMT" value="2722384699544370949" />
     <ref role="1TJDcQ" node="1qY_lWSjJZY" resolve="TransformationMenuPart" />
+  </node>
+  <node concept="PlHQZ" id="6E2BWlDjLUW">
+    <property role="EcuMT" value="7674872385216913084" />
+    <property role="3GE5qa" value="QueryFunction" />
+    <property role="TrG5h" value="IContextNodeAccessQualifier" />
+  </node>
+  <node concept="PlHQZ" id="1PvcgmUaKhb">
+    <property role="EcuMT" value="2116464250555401291" />
+    <property role="3GE5qa" value="QueryFunction" />
+    <property role="TrG5h" value="IEditorContextAccessQualifier" />
   </node>
 </model>
 

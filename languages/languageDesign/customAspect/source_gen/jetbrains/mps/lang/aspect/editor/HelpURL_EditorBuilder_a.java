@@ -66,18 +66,18 @@ import java.awt.Dimension;
     return editorCell;
   }
   private EditorCell createJComponent_k4pbv3_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, HelpURL_EditorBuilder_a._QueryFunction_JComponent_k4pbv3_a1a(myNode, getEditorContext()), "_k4pbv3_b0");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_k4pbv3_a1a(), "_k4pbv3_b0");
     editorCell.setCellId("JComponent_k4pbv3_b0");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_k4pbv3_a1a(final SNode node, final EditorContext editorContext) {
+  private JComponent _QueryFunction_JComponent_k4pbv3_a1a() {
     final JButton button = new JButton();
     button.setAction(new AbstractAction("Test") {
       @Override
       public void actionPerformed(ActionEvent e) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            BrowserUtil.browse(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
+            BrowserUtil.browse(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")));
           }
         });
       }

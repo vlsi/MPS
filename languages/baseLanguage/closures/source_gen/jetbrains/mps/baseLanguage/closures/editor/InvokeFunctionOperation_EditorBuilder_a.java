@@ -83,16 +83,27 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     AbstractCellListHandler handler = new InvokeFunctionOperation_EditorBuilder_a.parameterListHandler_9wclje_c0(myNode, "parameter", getEditorContext());
     EditorCell_Collection editorCell = handler.createCells(new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_parameter");
-    if (renderingCondition_9wclje_a2a(myNode, getEditorContext())) {
+    if (nodeCondition_9wclje_a2a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.FIRST_EDITABLE_CELL);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class parameterListHandler_9wclje_c0 extends RefNodeListHandler {
+  private static class parameterListHandler_9wclje_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public parameterListHandler_9wclje_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -143,7 +154,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
       return editorCell;
     }
   }
-  private static boolean renderingCondition_9wclje_a2a(SNode node, EditorContext editorContext) {
+  private boolean nodeCondition_9wclje_a2a() {
     return false;
   }
   private EditorCell createConstant_9wclje_d0() {
@@ -152,13 +163,13 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     Style style = new StyleImpl();
     new RightParenStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_9wclje_a3a(myNode, getEditorContext())) {
+    if (nodeCondition_9wclje_a3a()) {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private static boolean renderingCondition_9wclje_a3a(SNode node, EditorContext editorContext) {
+  private boolean nodeCondition_9wclje_a3a() {
     return false;
   }
 }

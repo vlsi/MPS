@@ -48,7 +48,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
 
   private EditorCell createAlternation_85xxz0_a() {
     boolean alternationCondition = true;
-    alternationCondition = HasAnnotation_AnnotationComponent_ComponentBuilder_a.renderingCondition_85xxz0_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_85xxz0_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createRefNodeList_85xxz0_a0();
@@ -57,8 +57,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
     }
     return editorCell;
   }
-  private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext) {
-    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).isNotEmpty();
+  private boolean nodeCondition_85xxz0_a0() {
+    return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).isNotEmpty();
   }
   private EditorCell createRefNodeList_85xxz0_a0() {
     AbstractCellListHandler handler = new HasAnnotation_AnnotationComponent_ComponentBuilder_a.annotationListHandler_85xxz0_a0(myNode, "annotation", getEditorContext());
@@ -73,10 +73,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FoldedCell
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {
+  private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public annotationListHandler_85xxz0_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

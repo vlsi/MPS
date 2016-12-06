@@ -62,7 +62,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
   private EditorCell createAlternation_d77dl_b0() {
     boolean alternationCondition = true;
-    alternationCondition = CharConstant_EditorBuilder_a.renderingCondition_d77dl_a1a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_d77dl_a1a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createProperty_d77dl_a1a();
@@ -74,8 +74,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.hasValue(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant"), null) || !(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")).startsWith("\\"));
+  private boolean nodeCondition_d77dl_a1a() {
+    return SPropertyOperations.hasValue(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant"), null) || !(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1177d44b21bL, 0x1177d44ddefL, "charConstant")).startsWith("\\"));
   }
   private EditorCell createProperty_d77dl_a1a() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());

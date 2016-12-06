@@ -41,11 +41,14 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     editorCell.setCellId("Collection_6h6dhy_a_0");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
-    if (renderingCondition_6h6dhy_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_6h6dhy_a0a()) {
       editorCell.addEditorCell(createCollection_6h6dhy_a0());
     }
     editorCell.addEditorCell(createCollection_6h6dhy_b0());
     return editorCell;
+  }
+  private boolean nodeCondition_6h6dhy_a0a() {
+    return !(IdEditorHelper.shownInEditor(myNode));
   }
   private EditorCell createCollection_6h6dhy_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -56,9 +59,6 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     editorCell.addEditorCell(createConstant_6h6dhy_a0a());
     editorCell.addEditorCell(createProperty_6h6dhy_b0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_6h6dhy_a0a(SNode node, EditorContext editorContext) {
-    return !(IdEditorHelper.shownInEditor(node));
   }
   private EditorCell createConstant_6h6dhy_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "ID: ");

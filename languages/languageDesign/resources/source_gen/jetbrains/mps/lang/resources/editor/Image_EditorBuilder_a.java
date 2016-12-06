@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
   }
   private EditorCell createAlternation_w2956w_a0() {
     boolean alternationCondition = true;
-    alternationCondition = Image_EditorBuilder_a.renderingCondition_w2956w_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_w2956w_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_w2956w_a0a();
@@ -66,8 +66,8 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_w2956w_a0a(SNode node, EditorContext editorContext) {
-    return isEmptyString(SPropertyOperations.getString(node, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file")));
+  private boolean nodeCondition_w2956w_a0a() {
+    return isEmptyString(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file")));
   }
   private EditorCell createConstant_w2956w_a0a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "<no icon>");
@@ -80,7 +80,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
   }
   private EditorCell createAlternation_w2956w_a0a() {
     boolean alternationCondition = true;
-    alternationCondition = Image_EditorBuilder_a.renderingCondition_w2956w_a0a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_w2956w_a0a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_w2956w_a0a0();
@@ -89,8 +89,8 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_w2956w_a0a0(SNode node, EditorContext editorContext) {
-    return (boolean) Image__BehaviorDescriptor.isValid_idIb_Fk7zRKP.invoke(node);
+  private boolean nodeCondition_w2956w_a0a0() {
+    return (boolean) Image__BehaviorDescriptor.isValid_idIb_Fk7zRKP.invoke(myNode);
   }
   private EditorCell createCollection_w2956w_a0a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -125,12 +125,12 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     return editorCell;
   }
   private EditorCell createJComponent_w2956w_b0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Image_EditorBuilder_a._QueryFunction_JComponent_w2956w_a1a(myNode, getEditorContext()), "_w2956w_b0");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_w2956w_a1a(), "_w2956w_b0");
     editorCell.setCellId("JComponent_w2956w_b0");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_w2956w_a1a(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, "file", editorContext);
+  private JComponent _QueryFunction_JComponent_w2956w_a1a() {
+    return EditorUtil.createSelectIconButton(myNode, "file", getEditorContext());
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

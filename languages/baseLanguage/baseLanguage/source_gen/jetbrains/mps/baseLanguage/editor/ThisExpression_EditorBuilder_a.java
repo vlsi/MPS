@@ -46,7 +46,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
 
   private EditorCell createAlternation_xaaxob_a() {
     boolean alternationCondition = true;
-    alternationCondition = ThisExpression_EditorBuilder_a.renderingCondition_xaaxob_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_xaaxob_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_xaaxob_a0();
@@ -60,8 +60,8 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_xaaxob_a0(SNode node, EditorContext editorContext) {
-    return SNodeOperations.getReference(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")) != null;
+  private boolean nodeCondition_xaaxob_a0() {
+    return SNodeOperations.getReference(myNode, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")) != null;
   }
   private EditorCell createCollection_xaaxob_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);

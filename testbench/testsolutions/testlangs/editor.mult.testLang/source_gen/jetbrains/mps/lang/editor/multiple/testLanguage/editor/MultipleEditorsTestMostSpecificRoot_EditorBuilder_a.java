@@ -82,7 +82,7 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       editorCell.addEditorCell(createConstant_4wex7q_a2a());
       editorCell.addEditorCell(createConstant_4wex7q_b2a());
       editorCell.addEditorCell(createRefNodeList_4wex7q_c2a());
-      setCellContext(editorCell);
+      setInnerCellsContext(editorCell);
     } finally {
       getCellFactory().popCellContext();
     }
@@ -116,10 +116,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class mostSpecificChildrenListHandler_4wex7q_c2a extends RefNodeListHandler {
+  private static class mostSpecificChildrenListHandler_4wex7q_c2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public mostSpecificChildrenListHandler_4wex7q_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

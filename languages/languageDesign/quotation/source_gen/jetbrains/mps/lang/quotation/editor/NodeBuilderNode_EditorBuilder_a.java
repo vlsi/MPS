@@ -147,7 +147,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
   }
   private EditorCell createAlternation_3jn7ig_b0() {
     boolean alternationCondition = true;
-    alternationCondition = NodeBuilderNode_EditorBuilder_a.renderingCondition_3jn7ig_a1a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_3jn7ig_a1a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createConstant_3jn7ig_a1a();
@@ -156,8 +156,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     }
     return editorCell;
   }
-  private static boolean renderingCondition_3jn7ig_a1a(SNode node, EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, 0x4bb51009d20b033bL, "values"))).count() > 1;
+  private boolean nodeCondition_3jn7ig_a1a() {
+    return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4aa0L, 0x4bb51009d20b033bL, "values"))).count() > 1;
   }
   private EditorCell createConstant_3jn7ig_a1a() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(");
@@ -191,10 +191,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class valuesListHandler_3jn7ig_c0 extends RefNodeListHandler {
+  private static class valuesListHandler_3jn7ig_c0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public valuesListHandler_3jn7ig_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

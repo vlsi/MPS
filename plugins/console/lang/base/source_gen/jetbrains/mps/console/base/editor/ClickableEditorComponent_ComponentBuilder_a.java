@@ -45,8 +45,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     editorCell = provider.createEditorCell(getEditorContext());
     editorCell.setCellId("CEC_property_text");
     Style style = new StyleImpl();
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_k1kh9z_a0a(getEditorContext(), getNode())));
-    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_k1kh9z_a1a(getEditorContext(), getNode()));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_k1kh9z_a0a()));
+    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_k1kh9z_a1a());
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -56,14 +56,14 @@ import jetbrains.mps.nodeEditor.MPSColors;
     } else
     return editorCell;
   }
-  private static Color _StyleParameter_QueryFunction_k1kh9z_a0a(EditorContext editorContext, SNode node) {
-    if ((boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node)) {
+  private Color _StyleParameter_QueryFunction_k1kh9z_a0a() {
+    if ((boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(getNode())) {
       return MPSColors.DARK_BLUE;
     } else {
       return MPSColors.GRAY;
     }
   }
-  private static boolean _StyleParameter_QueryFunction_k1kh9z_a1a(EditorContext editorContext, SNode node) {
-    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
+  private boolean _StyleParameter_QueryFunction_k1kh9z_a1a() {
+    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(getNode());
   }
 }

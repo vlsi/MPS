@@ -119,10 +119,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class categoriesListHandler_uldp7_b3a extends RefNodeListHandler {
+  private static class categoriesListHandler_uldp7_b3a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public categoriesListHandler_uldp7_b3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -184,10 +195,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class prioritiesListHandler_uldp7_b5a extends RefNodeListHandler {
+  private static class prioritiesListHandler_uldp7_b5a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public prioritiesListHandler_uldp7_b5a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -249,10 +271,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class statusesListHandler_uldp7_b7a extends RefNodeListHandler {
+  private static class statusesListHandler_uldp7_b7a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public statusesListHandler_uldp7_b7a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

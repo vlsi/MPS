@@ -124,10 +124,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class staticFieldsListHandler_kgfzrc_a4a extends RefNodeListHandler {
+  private static class staticFieldsListHandler_kgfzrc_a4a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public staticFieldsListHandler_kgfzrc_a4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -181,10 +192,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class methodsListHandler_kgfzrc_c4a extends RefNodeListHandler {
+  private static class methodsListHandler_kgfzrc_c4a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public methodsListHandler_kgfzrc_c4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

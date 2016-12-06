@@ -37,7 +37,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
 
   private EditorCell createAlternation_1ltshm_a() {
     boolean alternationCondition = true;
-    alternationCondition = Expression_EditorBuilder_a.renderingCondition_1ltshm_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_1ltshm_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCustom_1ltshm_a0();
@@ -51,8 +51,8 @@ import jetbrains.mps.editor.runtime.style.Padding;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext) {
-    return isEmptyString(SConceptOperations.conceptAlias(SNodeOperations.getConcept(node)));
+  private boolean nodeCondition_1ltshm_a0() {
+    return isEmptyString(SConceptOperations.conceptAlias(SNodeOperations.getConcept(myNode)));
   }
   private EditorCell createCustom_1ltshm_a0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {

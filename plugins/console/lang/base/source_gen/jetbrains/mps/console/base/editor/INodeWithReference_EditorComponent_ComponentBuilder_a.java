@@ -46,7 +46,7 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
   private EditorCell createAlternation_clzyhh_a() {
     boolean alternationCondition = true;
-    alternationCondition = INodeWithReference_EditorComponent_ComponentBuilder_a.renderingCondition_clzyhh_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_clzyhh_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createRefCell_clzyhh_a0();
@@ -55,8 +55,8 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext) {
-    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(node);
+  private boolean nodeCondition_clzyhh_a0() {
+    return (boolean) IActionHolder__BehaviorDescriptor.canExecute_id2QdC0h7dh1h.invoke(myNode);
   }
   private EditorCell createRefCell_clzyhh_a0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());

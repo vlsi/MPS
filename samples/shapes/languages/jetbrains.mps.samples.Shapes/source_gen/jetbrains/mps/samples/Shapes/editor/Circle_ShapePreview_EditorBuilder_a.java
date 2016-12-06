@@ -137,20 +137,20 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
     return editorCell;
   }
   private EditorCell createJComponent_347ksb_i0() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, Circle_ShapePreview_EditorBuilder_a._QueryFunction_JComponent_347ksb_a8a(myNode, getEditorContext()), "_347ksb_i0");
+    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_347ksb_a8a(), "_347ksb_i0");
     editorCell.setCellId("JComponent_347ksb_i0");
     return editorCell;
   }
-  private static JComponent _QueryFunction_JComponent_347ksb_a8a(final SNode node, final EditorContext editorContext) {
+  private JComponent _QueryFunction_JComponent_347ksb_a8a() {
     return new JPanel() {
 
       @Override
       protected void paintComponent(final Graphics graphics) {
         setOpaque(false);
         super.paintComponent(graphics);
-        SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
+        SNodeOperations.getModel(myNode).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(node, graphics, ((int) 10), ((int) 10));
+            Shape__BehaviorDescriptor.drawShapeAt_id3u6SZi0POQS.invoke(myNode, graphics, ((int) 10), ((int) 10));
           }
         });
       }
@@ -159,10 +159,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
       public Dimension getPreferredSize() {
         final Dimension dimension = new Dimension();
 
-        SNodeOperations.getModel(node).getRepository().getModelAccess().runReadAction(new Runnable() {
+        SNodeOperations.getModel(myNode).getRepository().getModelAccess().runReadAction(new Runnable() {
           public void run() {
-            dimension.width = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
-            dimension.height = 20 + SPropertyOperations.getInteger(node, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
+            dimension.width = 20 + SPropertyOperations.getInteger(myNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
+            dimension.height = 20 + SPropertyOperations.getInteger(myNode, MetaAdapterFactory.getProperty(0x16bafbb4c6cd4cc5L, 0x83327c6de8729b3fL, 0x51dcaa29974fc198L, 0x51dcaa29974fc19eL, "radius"));
           }
         });
         return dimension;

@@ -11,11 +11,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 /*package*/ class ReplacementRuleReference_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -44,10 +44,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_lotkev_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_lotkev_a0a()) {
       editorCell.addEditorCell(createProperty_lotkev_a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_lotkev_a0a() {
+    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(myNode));
   }
   private EditorCell createProperty_lotkev_a0() {
     CellProviderWithRole provider = new PropertyCellProvider(myNode, getEditorContext());
@@ -63,8 +66,5 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private static boolean renderingCondition_lotkev_a0a(SNode node, EditorContext editorContext) {
-    return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node));
   }
 }

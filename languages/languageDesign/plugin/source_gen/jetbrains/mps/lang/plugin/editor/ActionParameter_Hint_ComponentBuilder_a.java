@@ -53,10 +53,13 @@ import jetbrains.mps.smodel.SReference;
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
-    if (renderingCondition_xpsq7t_a0a(myNode, getEditorContext())) {
+    if (nodeCondition_xpsq7t_a0a()) {
       editorCell.addEditorCell(createCollection_xpsq7t_a0());
     }
     return editorCell;
+  }
+  private boolean nodeCondition_xpsq7t_a0a() {
+    return ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(myNode) != null;
   }
   private EditorCell createCollection_xpsq7t_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(getEditorContext(), myNode);
@@ -65,9 +68,6 @@ import jetbrains.mps.smodel.SReference;
     editorCell.addEditorCell(createConstant_xpsq7t_b0a());
     editorCell.addEditorCell(createReadOnlyModelAccessor_xpsq7t_c0a());
     return editorCell;
-  }
-  private static boolean renderingCondition_xpsq7t_a0a(SNode node, EditorContext editorContext) {
-    return ActionParameter__BehaviorDescriptor.getFieldDeclaration_id112RIkgil0h.invoke(node) != null;
   }
   private EditorCell createReadOnlyModelAccessor_xpsq7t_a0a() {
     EditorCell_Property editorCell = EditorCell_Property.create(getEditorContext(), new ModelAccessor() {

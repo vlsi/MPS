@@ -47,7 +47,7 @@ import jetbrains.mps.editor.runtime.style.Measure;
 
   private EditorCell createAlternation_kpqhey_a() {
     boolean alternationCondition = true;
-    alternationCondition = ThisClassifierExpression_EditorBuilder_a.renderingCondition_kpqhey_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_kpqhey_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createCollection_kpqhey_a0();
@@ -61,8 +61,8 @@ import jetbrains.mps.editor.runtime.style.Measure;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier")) != null;
+  private boolean nodeCondition_kpqhey_a0() {
+    return SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier")) != null;
   }
   private EditorCell createCollection_kpqhey_a0() {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.cellProviders;
 
+import jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder;
 import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_InsertIntoCollection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
@@ -24,14 +25,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
-import jetbrains.mps.openapi.editor.update.UpdateSession;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
 import java.util.List;
 
-public abstract class AbstractCellListHandler implements EditorBuilderEnvironment {
+public abstract class AbstractCellListHandler extends AbstractEditorBuilder implements EditorBuilderEnvironment {
   public static final String ELEMENT_CELL_ACTIONS_SET = "element-cell-actions-set";
 
   /**
@@ -47,14 +46,19 @@ public abstract class AbstractCellListHandler implements EditorBuilderEnvironmen
   protected EditorCell_Collection myListEditorCell_Collection;
   protected String myElementRole;
 
-  public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
-    myOwnerNode = ownerNode;
+  public AbstractCellListHandler(String elementRole, EditorContext editorContext) {
+    super(editorContext);
     myElementRole = elementRole;
     myEditorContext = editorContext;
   }
 
-  public EditorContext getEditorContext() {
-    return myEditorContext;
+  /**
+   * @deprecated since MPS 3.5 use {@link #AbstractCellListHandler(String, EditorContext)}
+   */
+  @Deprecated
+  public AbstractCellListHandler(SNode ownerNode, String elementRole, EditorContext editorContext) {
+    this(elementRole, editorContext);
+    myOwnerNode = ownerNode;
   }
 
   /**
@@ -63,20 +67,6 @@ public abstract class AbstractCellListHandler implements EditorBuilderEnvironmen
   @Deprecated
   public SNode getOwner() {
     return myOwnerNode;
-  }
-
-  public SNode getNode() {
-    return myOwnerNode;
-  }
-
-  @Override
-  public EditorCellFactory getCellFactory() {
-    return getUpdateSession().getCellFactory();
-  }
-
-  @Override
-  public UpdateSession getUpdateSession() {
-    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 
   public String getElementRole() {

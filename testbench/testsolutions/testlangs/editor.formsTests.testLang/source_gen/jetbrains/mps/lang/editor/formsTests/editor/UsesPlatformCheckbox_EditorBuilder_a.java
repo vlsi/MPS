@@ -51,7 +51,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
   private EditorCell createAlternation_7xa7wl_a0() {
     boolean alternationCondition = true;
-    alternationCondition = UsesPlatformCheckbox_EditorBuilder_a.renderingCondition_7xa7wl_a0a(myNode, getEditorContext());
+    alternationCondition = nodeCondition_7xa7wl_a0a();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createImage_7xa7wl_a0a();
@@ -60,8 +60,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     }
     return editorCell;
   }
-  private static boolean renderingCondition_7xa7wl_a0a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, 0x61552ecc953bf2aaL, "property"));
+  private boolean nodeCondition_7xa7wl_a0a() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xafb9a5fdbc5d4169L, 0xa22542d8823d623aL, 0x61552ecc953bf2a9L, 0x61552ecc953bf2aaL, "property"));
   }
   private EditorCell createImage_7xa7wl_a0a() {
     SModule imageModule;

@@ -87,10 +87,21 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     SingleRoleCellProvider provider = new ModuleRefExpression_EditorBuilder_a.moduleIdSingleRoleHandler_mwn25y_c0(myNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"), getEditorContext());
     return provider.createCell();
   }
-  private class moduleIdSingleRoleHandler_mwn25y_c0 extends SingleRoleCellProvider {
+  private static class moduleIdSingleRoleHandler_mwn25y_c0 extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
     public moduleIdSingleRoleHandler_mwn25y_c0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
+      super(containmentLink, context);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     protected EditorCell createChildCell(SNode child) {
       EditorCell editorCell = super.createChildCell(child);
       installCellInfo(child, editorCell);
@@ -98,7 +109,7 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     }
     private void installCellInfo(SNode child, EditorCell editorCell) {
       if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(getNode(), child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new ModuleRefExpression_EditorBuilder_a.ModuleRefExpression_generic_cellMenu_mwn25y_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+        editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new AggregationCellContext(myNode, child, myContainmentLink.getDeclarationNode()), new SubstituteInfoPartExt[]{new ModuleRefExpression_EditorBuilder_a.moduleIdSingleRoleHandler_mwn25y_c0.ModuleRefExpression_generic_cellMenu_mwn25y_a0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
       }
       if (editorCell.getRole() == null) {
         editorCell.setRole("moduleId");
@@ -115,33 +126,33 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     protected String getNoTargetText() {
       return "<no moduleId>";
     }
-  }
-  public static class ModuleRefExpression_generic_cellMenu_mwn25y_a0c0 extends AbstractCellMenuPart_Generic_Group {
-    public ModuleRefExpression_generic_cellMenu_mwn25y_a0c0() {
-    }
-    public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
-      for (SModule m : editorContext.getRepository().getModules()) {
-        rv.add(m.getModuleReference());
+    public static class ModuleRefExpression_generic_cellMenu_mwn25y_a0c0 extends AbstractCellMenuPart_Generic_Group {
+      public ModuleRefExpression_generic_cellMenu_mwn25y_a0c0() {
       }
-      return rv;
-    }
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((SModuleReference) parameterObject, node, model, operationContext, editorContext);
-    }
-    public void handleAction_impl(SModuleReference parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      SNode v = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"));
-      ModuleIdentity__BehaviorDescriptor.setModuleReference_idnJmxU5cSTj.invoke(v, parameterObject);
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"), v);
-    }
-    public boolean isReferentPresentation() {
-      return false;
-    }
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SModuleReference) parameterObject);
-    }
-    public String getMatchingText_internal(SModuleReference parameterObject) {
-      return parameterObject.getModuleName();
+      public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
+        ArrayList<SModuleReference> rv = new ArrayList<SModuleReference>();
+        for (SModule m : editorContext.getRepository().getModules()) {
+          rv.add(m.getModuleReference());
+        }
+        return rv;
+      }
+      protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        this.handleAction_impl((SModuleReference) parameterObject, node, model, operationContext, editorContext);
+      }
+      public void handleAction_impl(SModuleReference parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+        SNode v = SModelOperations.createNewNode(model, null, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5ef5a1e853388b3L, "jetbrains.mps.lang.smodel.structure.ModulePointer"));
+        ModuleIdentity__BehaviorDescriptor.setModuleReference_idnJmxU5cSTj.invoke(v, parameterObject);
+        SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1749acf3d038bbe2L, 0x1749acf3d038bbe5L, "moduleId"), v);
+      }
+      public boolean isReferentPresentation() {
+        return false;
+      }
+      public String getMatchingText(Object parameterObject) {
+        return this.getMatchingText_internal((SModuleReference) parameterObject);
+      }
+      public String getMatchingText_internal(SModuleReference parameterObject) {
+        return parameterObject.getModuleName();
+      }
     }
   }
   private EditorCell createConstant_mwn25y_d0() {

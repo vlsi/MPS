@@ -99,10 +99,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class weaveListHandler_aw3qer_b2a extends RefNodeListHandler {
+  private static class weaveListHandler_aw3qer_b2a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public weaveListHandler_aw3qer_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -154,10 +165,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class weaveEachListHandler_aw3qer_b4a extends RefNodeListHandler {
+  private static class weaveEachListHandler_aw3qer_b4a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public weaveEachListHandler_aw3qer_b4a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -209,10 +231,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class weaveManyListHandler_aw3qer_b6a extends RefNodeListHandler {
+  private static class weaveManyListHandler_aw3qer_b6a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public weaveManyListHandler_aw3qer_b6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
@@ -264,10 +297,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class weaveEachManyListHandler_aw3qer_b8a extends RefNodeListHandler {
+  private static class weaveEachManyListHandler_aw3qer_b8a extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public weaveEachManyListHandler_aw3qer_b8a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }

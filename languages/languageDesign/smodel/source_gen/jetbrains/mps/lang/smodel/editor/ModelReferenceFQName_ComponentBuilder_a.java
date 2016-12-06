@@ -46,7 +46,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 
   private EditorCell createAlternation_ho2vdo_a() {
     boolean alternationCondition = true;
-    alternationCondition = ModelReferenceFQName_ComponentBuilder_a.renderingCondition_ho2vdo_a0(myNode, getEditorContext());
+    alternationCondition = nodeCondition_ho2vdo_a0();
     EditorCell editorCell = null;
     if (alternationCondition) {
       editorCell = createReadOnlyModelAccessor_ho2vdo_a0();
@@ -56,8 +56,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(getEditorContext(), new BasicCellContext(myNode), new SubstituteInfoPartExt[]{new ModelReferenceFQName_ComponentBuilder_a.ModelReferenceExpression_component_cellMenu_ho2vdo_a0a(), new SChildSubstituteInfoPartEx(editorCell)}));
     return editorCell;
   }
-  private static boolean renderingCondition_ho2vdo_a0(SNode node, EditorContext editorContext) {
-    return ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(node) != null;
+  private boolean nodeCondition_ho2vdo_a0() {
+    return ModelReferenceExpression__BehaviorDescriptor.getFQName_id7K4mn_BeEzv.invoke(myNode) != null;
   }
   public static class ModelReferenceExpression_component_cellMenu_ho2vdo_a0a implements SubstituteInfoPartExt {
     private ModelReferenceCompletion myComponent;

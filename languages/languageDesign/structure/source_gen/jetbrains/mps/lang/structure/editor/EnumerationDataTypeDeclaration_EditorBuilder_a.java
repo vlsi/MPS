@@ -16,10 +16,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
@@ -141,14 +141,20 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setGridLayout(true);
     editorCell.addEditorCell(createCollection_tm8wum_a1b1a());
     editorCell.addEditorCell(createCollection_tm8wum_b1b1a());
-    if (renderingCondition_tm8wum_a2b1b0(myNode, getEditorContext())) {
+    if (nodeCondition_tm8wum_a2b1b0()) {
       editorCell.addEditorCell(createCollection_tm8wum_c1b1a());
     }
-    if (renderingCondition_tm8wum_a3b1b0(myNode, getEditorContext())) {
+    if (nodeCondition_tm8wum_a3b1b0()) {
       editorCell.addEditorCell(createCollection_tm8wum_d1b1a());
     }
     editorCell.addEditorCell(createCollection_tm8wum_e1b1a());
     return editorCell;
+  }
+  private boolean nodeCondition_tm8wum_a2b1b0() {
+    return SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"));
+  }
+  private boolean nodeCondition_tm8wum_a3b1b0() {
+    return !(SPropertyOperations.getBoolean(myNode, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember")));
   }
   private EditorCell createCollection_tm8wum_a1b1a() {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
@@ -303,9 +309,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.addEditorCell(createProperty_tm8wum_c2b1b0());
     return editorCell;
   }
-  private static boolean renderingCondition_tm8wum_a2b1b0(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember"));
-  }
   private EditorCell createConstant_tm8wum_a2b1b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "null text");
     editorCell.setCellId("Constant_tm8wum_a2b1b0");
@@ -353,9 +356,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.addEditorCell(createConstant_tm8wum_b3b1b0());
     editorCell.addEditorCell(createRefCell_tm8wum_c3b1b0());
     return editorCell;
-  }
-  private static boolean renderingCondition_tm8wum_a3b1b0(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0x11a35a5efdaL, "hasNoDefaultMember")));
   }
   private EditorCell createConstant_tm8wum_a3b1b0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "default");
@@ -525,10 +525,21 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private class memberListHandler_tm8wum_e1b0 extends RefNodeListHandler {
+  private static class memberListHandler_tm8wum_e1b0 extends RefNodeListHandler {
+    @NotNull
+    private SNode myNode;
+
     public memberListHandler_tm8wum_e1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
+      myNode = ownerNode;
     }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
     public SNode createNodeToInsert(EditorContext editorContext) {
       return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
     }
