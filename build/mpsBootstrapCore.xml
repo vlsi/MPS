@@ -161,9 +161,6 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models">
       <fileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/core-generator-solutions-traceInfo-util-models">
-      <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-kernel-dataFlowRuntime-jetbrains">
       <fileset dir="${mps_home}/core/kernel/dataFlowRuntime/jetbrains" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -231,9 +228,6 @@
       <zipfileset file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-patternRuntime-models" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
-      <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
-      <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo.cache" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-generator-solutions-traceInfo-util-models" prefix="modules/jetbrains.mps.traceInfo.cache/models" />
       <zipfileset file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/dataFlowRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.dataFlow.runtime" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/core-kernel-dataFlowRuntime-jetbrains" prefix="modules/jetbrains.mps.dataFlow.runtime/jetbrains" />
@@ -4340,7 +4334,6 @@
         <module file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" />
         <module file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" />
         <module file="${mps_home}/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" />
-        <module file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" />
         <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
       </chunk>
       <chunk />
@@ -4586,7 +4579,6 @@
         <pathelement path="${mps_home}/core/refactoring-runtime/source_gen" />
         <pathelement path="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
         <pathelement path="${mps_home}/core/scripts-runtime/source" />
-        <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
         <pathelement path="${mps_home}/core/project/source" />
@@ -4980,7 +4972,6 @@
     <javac2 destdir="${build.tmp}/java/out/mps-generator" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
         <pathelement path="${mps_home}/core/generator/source" />
         <pathelement path="${mps_home}/core/generator/source_gen" />
       </src>
@@ -5007,7 +4998,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-generator">
-      <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

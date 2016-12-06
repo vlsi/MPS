@@ -12,7 +12,6 @@
       <modulePath path="$PROJECT_DIR$/core/devkits/jetbrains.mps.devkit.templates.devkit" folder="core.devkits" />
       <modulePath path="$PROJECT_DIR$/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" folder="core.aspects.findUsages" />
       <modulePath path="$PROJECT_DIR$/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" folder="platform.traceInfo" />
       <modulePath path="$PROJECT_DIR$/core/java-stub/jetbrains.mps.java.stub.msd" folder="core.kernel" />
       <modulePath path="$PROJECT_DIR$/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.aspects.dataflow" />
       <modulePath path="$PROJECT_DIR$/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" folder="core.kernel" />
