@@ -290,13 +290,21 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           getTemplatePresentation().setIcon(MPSIcons.General.ModelChecker);
           getTemplatePresentation().setText("Remove unused model imports");
         }
+
+        @Override
+        public boolean isEnabled() {
+          return super.isEnabled() && anyModelNotUsed();
+        }
+
+        private boolean anyModelNotUsed() {
+          return myImportedModels.getItemsStream().anyMatch(mr -> !actualCrossModelRefs.contains(mr));
+        }
+
         @Override
         public void actionPerformed(AnActionEvent e) {
-          final Set<SModelReference> xmodelRefs = getActualCrossModelReferences();
-
           boolean anyRemoved = false;
           for(int row = myImportedModels.getRowCount()-1; row >= 0; row--) {
-            if (!xmodelRefs.contains(myImportedModels.getValueAt(row))) {
+            if (!actualCrossModelRefs.contains(myImportedModels.getValueAt(row))) {
               myImportedModels.removeRow(row);
               anyRemoved = true;
             }
