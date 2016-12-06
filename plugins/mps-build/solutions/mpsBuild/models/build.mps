@@ -1286,20 +1286,11 @@
           <property role="3LZaj6" value="source" />
         </node>
       </node>
-      <node concept="nCB5N" id="4cunt6Y$WD6" role="nCB5Z">
-        <ref role="nCB5Y" node="6S1jmf0xEsA" resolve="mps-collections" />
-      </node>
-      <node concept="nCB5N" id="4cunt6Y$X7m" role="nCB5Z">
-        <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />
-      </node>
       <node concept="nCB5N" id="GPBWiitcIN" role="nCB5Z">
         <ref role="nCB5Y" node="1H905DlDRAI" resolve="mps-openapi" />
       </node>
       <node concept="nCB5N" id="3vjn6$4roxx" role="nCB5Z">
         <ref role="nCB5Y" node="42Iv58Wf3Ei" resolve="mps-smodel" />
-      </node>
-      <node concept="2sjeV3" id="7FonrDkmPhH" role="nCB5Z">
-        <ref role="2sjeV2" node="6NgXkpBjPcZ" resolve="jdom-lib" />
       </node>
     </node>
     <node concept="398b33" id="75RBgxKm6HY" role="3989C9">

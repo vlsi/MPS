@@ -4941,14 +4941,12 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-debuginfo-api" depends="java.compile.mps-collections, java.compile.mps-closures, java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel">
+  <target name="java.compile.mps-debuginfo-api" depends="java.compile.mps-annotations, java.compile.mps-openapi, java.compile.mps-core-components, java.compile.mps-logging, java.compile.vfs, java.compile.util-core, java.compile.mps-smodel">
     <mkdir dir="${build.tmp}/java/out/mps-debuginfo-api" />
     <javac2 destdir="${build.tmp}/java/out/mps-debuginfo-api" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source" />
       <classpath>
-        <pathelement path="${build.tmp}/java/out/mps-collections" />
-        <pathelement path="${build.tmp}/java/out/mps-closures" />
         <pathelement path="${build.tmp}/java/out/mps-annotations" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
         <pathelement path="${build.tmp}/java/out/mps-core-components" />
@@ -4958,7 +4956,6 @@
         <pathelement path="${build.tmp}/java/out/mps-smodel" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.log4j-lib" />
-        <path refid="path.java.library.jdom-lib" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
