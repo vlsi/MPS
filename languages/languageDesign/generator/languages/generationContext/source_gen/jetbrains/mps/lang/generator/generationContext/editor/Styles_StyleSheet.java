@@ -11,8 +11,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.lang.core.behavior.IDeprecatable__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 
 public class Styles_StyleSheet {
   /**
@@ -52,7 +52,8 @@ public class Styles_StyleSheet {
     }
 
     private boolean _StyleParameter_QueryFunction_kkd5s1_a3a() {
-      return (boolean) IDeprecatable__BehaviorDescriptor.isDeprecated_idhOwoPtR.invoke(SNodeOperations.getConceptDeclaration(getNode()));
+      ConceptPresentation pres = ConceptAspectsHelper.getPresentationAspect(getNode());
+      return (pres == null ? false : pres.isDeprecated());
     }
   }
   public static class deprecatedStyleClass extends AbstractStyleClass {

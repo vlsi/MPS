@@ -1435,22 +1435,25 @@
       <node id="1218067348270" at="46,48,47,59" concept="1" />
       <node id="1218067348270" at="47,59,48,108" concept="1" />
       <node id="1218067348270" at="49,55,50,89" concept="1" />
-      <node id="4494787219697908811" at="54,64,55,137" concept="6" />
-      <node id="1218067348270" at="59,74,60,33" concept="10" />
-      <node id="1218067348270" at="64,59,65,50" concept="1" />
+      <node id="128095057704339187" at="54,64,55,87" concept="5" />
+      <node id="128095057704343807" at="55,87,56,58" concept="6" />
+      <node id="1218067348270" at="60,74,61,33" concept="10" />
+      <node id="1218067348270" at="65,59,66,50" concept="1" />
       <node id="1218067348270" at="40,0,43,0" concept="0" trace="genContext_operationStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1218067348270" at="48,108,51,7" concept="3" />
-      <node id="4494787219697908287" at="54,0,57,0" concept="4" trace="_StyleParameter_QueryFunction_kkd5s1_a3a#()Z" />
-      <node id="1218067348270" at="59,0,62,0" concept="0" trace="deprecatedStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1218067348270" at="63,0,67,0" concept="4" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1218067348270" at="60,0,63,0" concept="0" trace="deprecatedStyleClass#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4494787219697908287" at="54,0,58,0" concept="4" trace="_StyleParameter_QueryFunction_kkd5s1_a3a#()Z" />
+      <node id="1218067348270" at="64,0,68,0" concept="4" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1218067348270" at="22,0,28,0" concept="9" trace="apply_genContext_operation#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1218067348270" at="32,0,38,0" concept="9" trace="apply_deprecated#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <node id="1218067348270" at="44,0,53,0" concept="4" trace="apply#(Ljetbrains/mps/openapi/editor/style/Style;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
       <scope id="1218067348270" at="40,84,41,33" />
       <scope id="1218067348270" at="49,55,50,89" />
-      <scope id="4494787219697908289" at="54,64,55,137" />
-      <scope id="1218067348270" at="59,74,60,33" />
-      <scope id="1218067348270" at="64,59,65,50" />
+      <scope id="1218067348270" at="60,74,61,33" />
+      <scope id="1218067348270" at="65,59,66,50" />
+      <scope id="4494787219697908289" at="54,64,56,58">
+        <var name="pres" id="128095057704339188" />
+      </scope>
       <scope id="1218067348270" at="23,85,26,103">
         <var name="editorContext" id="1218067348270" />
         <var name="node" id="1218067348270" />
@@ -1463,12 +1466,12 @@
         <var name="editorContext" id="1218067348270" />
         <var name="node" id="1218067348270" />
       </scope>
-      <scope id="4494787219697908287" at="54,0,57,0" />
-      <scope id="1218067348270" at="59,0,62,0">
+      <scope id="1218067348270" at="60,0,63,0">
         <var name="editorContext" id="1218067348270" />
         <var name="node" id="1218067348270" />
       </scope>
-      <scope id="1218067348270" at="63,0,67,0">
+      <scope id="4494787219697908287" at="54,0,58,0" />
+      <scope id="1218067348270" at="64,0,68,0">
         <var name="editorCell" id="1218067348270" />
         <var name="style" id="1218067348270" />
       </scope>
@@ -1485,9 +1488,9 @@
         <var name="editorCell" id="1218067348270" />
         <var name="style" id="1218067348270" />
       </scope>
-      <unit id="1218067348270" at="58,0,69,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet$deprecatedStyleClass" />
-      <unit id="1218067348270" at="39,0,58,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet$genContext_operationStyleClass" />
-      <unit id="1218067348270" at="17,0,70,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet" />
+      <unit id="1218067348270" at="59,0,70,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet$deprecatedStyleClass" />
+      <unit id="1218067348270" at="39,0,59,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet$genContext_operationStyleClass" />
+      <unit id="1218067348270" at="17,0,71,0" name="jetbrains.mps.lang.generator.generationContext.editor.Styles_StyleSheet" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f0(jetbrains.mps.lang.generator.generationContext.editor)/1221156644527">
