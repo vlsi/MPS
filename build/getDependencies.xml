@@ -189,6 +189,9 @@
         <exclude name="license/*"/>
       </patternset>
     </unzip>
+
+    <!-- TODO: remove hack after fixed version of ecj will be in platform -->
+    <delete file="${basedir}/../lib/ecj-4.6.1.jar" failonerror="false"/>
   </target>
 
   <target name="download-diffutils" depends="check-diffutils,install-ivy" if="${difutill.missing}"
