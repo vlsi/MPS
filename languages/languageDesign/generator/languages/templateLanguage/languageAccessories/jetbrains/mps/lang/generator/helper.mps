@@ -155,6 +155,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
@@ -1778,18 +1779,21 @@
           </node>
           <node concept="3clFbS" id="15RmSSdWLx7" role="3clFbx">
             <node concept="3cpWs6" id="15RmSSdWLxj" role="3cqZAp">
-              <node concept="2OqwBi" id="15RmSSdWLxo" role="3cqZAk">
-                <node concept="2qgKlT" id="15RmSSdWLxs" role="2OqNvi">
-                  <ref role="37wK5l" to="tpfh:1$dcvTE6OGV" resolve="getConcept" />
-                </node>
-                <node concept="1PxgMI" id="15RmSSdWLxm" role="2Oq$k0">
-                  <node concept="37vLTw" id="3GM_nagT_iq" role="1m5AlR">
-                    <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+              <node concept="2OqwBi" id="775sqVWgTj" role="3cqZAk">
+                <node concept="2OqwBi" id="15RmSSdWLxo" role="2Oq$k0">
+                  <node concept="2qgKlT" id="15RmSSdWLxs" role="2OqNvi">
+                    <ref role="37wK5l" to="tpfh:1$dcvTE6OGV" resolve="getConcept" />
                   </node>
-                  <node concept="chp4Y" id="714IaVdGYtX" role="3oSUPX">
-                    <ref role="cht4Q" to="tpf8:1$dcvTE4IIO" resolve="PatternReduction_MappingRule" />
+                  <node concept="1PxgMI" id="15RmSSdWLxm" role="2Oq$k0">
+                    <node concept="37vLTw" id="3GM_nagT_iq" role="1m5AlR">
+                      <ref role="3cqZAo" node="h9Iem$x" resolve="ancestor" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYtX" role="3oSUPX">
+                      <ref role="cht4Q" to="tpf8:1$dcvTE4IIO" resolve="PatternReduction_MappingRule" />
+                    </node>
                   </node>
                 </node>
+                <node concept="FGMqu" id="775sqVWhqw" role="2OqNvi" />
               </node>
             </node>
           </node>
