@@ -26,33 +26,40 @@ import java.io.IOException;
 /**
  * evgeny, 2/27/13
  */
-public class ModuleFacetDescriptor {
+public final class ModuleFacetDescriptor implements Copyable<ModuleFacetDescriptor> {
   private static final int START_MARKER = 0x53;
-
-  private String type;
-  private Memento memento;
+  private final String myType;
+  private final Memento myMemento;
 
   public ModuleFacetDescriptor(@NotNull String type, @NotNull Memento memento) {
-    this.type = type;
-    this.memento = memento;
+    myType = type;
+    myMemento = memento;
   }
 
   public String getType() {
-    return type;
+    return myType;
   }
 
   public Memento getMemento() {
-    return memento;
+    return myMemento;
   }
 
   public void save(ModelOutputStream stream) throws IOException {
     stream.writeByte(START_MARKER);
-    stream.writeString(type);
-    MementoStreamUtil.writeMemento(null, memento, stream);
+    stream.writeString(myType);
+    MementoStreamUtil.writeMemento(null, myMemento, stream);
   }
 
   public static ModuleFacetDescriptor load(ModelInputStream stream) throws IOException {
-    if (stream.readByte() != START_MARKER) throw new IOException("bad stream: no module facet descriptor start marker");
+    if (stream.readByte() != START_MARKER) {
+      throw new IOException("bad stream: no module facet descriptor start marker");
+    }
     return new ModuleFacetDescriptor(stream.readString(), MementoStreamUtil.readMemento(null, stream));
+  }
+
+  @NotNull
+  @Override
+  public ModuleFacetDescriptor copy() {
+    return new ModuleFacetDescriptor(myType, myMemento);
   }
 }

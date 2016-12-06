@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -27,12 +28,17 @@ import java.io.IOException;
 /**
  * Persistence and editing of SDependency
  */
-public class Dependency {
+public final class Dependency implements Copyable<Dependency> {
   @NotNull
   private SModuleReference myModuleRef;
   private SDependencyScope myScope = SDependencyScope.DEFAULT;
   private boolean myReexport;
 
+  /**
+   * @deprecated use the other constructors instead
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public Dependency() {
   }
 
@@ -76,13 +82,12 @@ public class Dependency {
     myScope = scope;
   }
 
-
-  public Dependency getCopy() {
+  @NotNull
+  public Dependency copy() {
     Dependency result = new Dependency();
     result.myModuleRef = myModuleRef;
     result.myReexport = myReexport;
     result.myScope = myScope;
-
     return result;
   }
 
@@ -91,12 +96,12 @@ public class Dependency {
     if(!(obj instanceof Dependency))
       return false;
     Dependency dependency = (Dependency)obj;
-    return myReexport == dependency.myReexport && myScope == dependency.myScope&& myModuleRef.equals(dependency.myModuleRef);
+    return myReexport == dependency.myReexport && myScope == dependency.myScope && myModuleRef.equals(dependency.myModuleRef);
   }
 
   @Override
   public int hashCode() {
-    return (new Pair<SModuleReference,Boolean>(myModuleRef, myReexport)).hashCode();
+    return (new Pair<>(myModuleRef, myReexport)).hashCode();
   }
 
   public void save(ModelOutputStream stream) throws IOException {

@@ -17,38 +17,33 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * FIXME слишком сложно для меня
  * Created by Radimir.Sorokin on 7/26/2016.
  */
 public final class PathConverters {
-
   private PathConverters() {
   }
 
-  public static PathConverter forModules(SModule destination, SModule source) {
-    return forMacroHelpers(MacrosFactory.forModule(((AbstractModule) destination)), MacrosFactory.forModule(((AbstractModule) source)));
+  public static ModulePathConverter forModules(@NotNull SModule source, @NotNull SModule target) {
+    return forMacroHelpers(MacrosFactory.forModule(((AbstractModule) source)), MacrosFactory.forModule(((AbstractModule) target)));
   }
 
-  public static PathConverter forDescriptorFiles(IFile destination, IFile source) {
-    return forMacroHelpers(MacrosFactory.forModuleFile(destination), MacrosFactory.forModuleFile(source));
+  public static ModulePathConverter forDescriptorFiles(@NotNull IFile source, @NotNull IFile target) {
+    return forMacroHelpers(MacrosFactory.forModuleFile(source), MacrosFactory.forModuleFile(target));
   }
 
-  public static PathConverter forMacroHelpers(final MacroHelper destination, final MacroHelper source) {
-    return new PathConverter() {
-      public boolean canConvertToSource(String path) {
-        return destination.shrinkPath(path).contains(MacrosFactory.MODULE);
+  public static ModulePathConverter forMacroHelpers(@NotNull MacroHelper source, @NotNull MacroHelper target) {
+    return new ModulePathConverter() {
+      @NotNull
+      public String target2Source(@NotNull String path) {
+        return source.expandPath(target.shrinkPath(path));
       }
-      public boolean canConvertToDestination(String path) {
-        return source.shrinkPath(path).contains(MacrosFactory.MODULE);
-      }
-      public String destinationToSource(String path) {
-        return source.expandPath(destination.shrinkPath(path));
-      }
-      public String sourceToDestination(String path) {
-        return destination.expandPath(source.shrinkPath(path));
+      @NotNull
+      public String source2Target(@NotNull String path) {
+        return target.expandPath(source.shrinkPath(path));
       }
     };
   }

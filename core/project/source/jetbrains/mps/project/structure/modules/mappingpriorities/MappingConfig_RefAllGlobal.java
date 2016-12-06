@@ -15,14 +15,15 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public class MappingConfig_RefAllGlobal extends MappingConfig_AbstractRef {
-
   public static final int PERSISTENCE_ID = 0x55550005;
 
+  @NotNull
   @Override
-  public MappingConfig_RefAllGlobal getCopy() {
+  public MappingConfig_RefAllGlobal copy() {
     return new MappingConfig_RefAllGlobal();
   }
 

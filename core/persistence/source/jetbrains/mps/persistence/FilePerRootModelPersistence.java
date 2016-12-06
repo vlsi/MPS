@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -210,6 +211,21 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     return Collections.<DataSource>singleton(new FilePerRootDataSource(folder, root));
   }
 
+  /**
+   * @deprecated naming convention is plain wrong way to tell whether source root keeps aspect models
+   * Besides, String is awful contract for something like path - it's unclear where its root is,
+   * nor whether we can resolve it to IFile at all.
+   * The only client of the method left, FilePerRootModelPersistence, shall demand relative path
+   * specification rather than try to guess proper root for a new model. It's also unclear why
+   * can't I save aspect models in a per-root persistence
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
+  public static boolean isLanguageAspectsSourceRoot(String sourceRoot) {
+    final String rootName = FileSystem.getInstance().getFile(sourceRoot).getName();
+    return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
+  }
+
   @Override
   public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, Map<String, String> options) throws IOException {
     options.put(ModelFactory.OPTION_MODELNAME, modelName);
@@ -225,7 +241,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
       sourceRoot = null;
       for (String sr : sourceRoots) {
-        if (isModelRootInLanguage && DefaultModelRoot.isLanguageAspectsSourceRoot(sr)) {
+        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
         sourceRoot = sr;

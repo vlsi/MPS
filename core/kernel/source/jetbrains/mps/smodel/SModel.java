@@ -59,6 +59,10 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * An internal model implementation which (!) does not implement the {@link org.jetbrains.mps.openapi.model.SModel}.
+ * Instead the SModel implementations such as {@link}
+ */
 public class SModel implements SModelData, UpdateModeSupport {
   private static final Logger LOG = LogManager.getLogger(SModel.class);
   private static AtomicLong ourCounter = new AtomicLong();
@@ -882,6 +886,7 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   public void copyPropertiesTo(SModel to) {
+
     if (myLegacyImplicitImports != null) {
       for (ImportElement ie : myLegacyImplicitImports.getAdditionalModelVersions()) {
         to.getImplicitImportsSupport().addAdditionalModelVersion(ie.copy());

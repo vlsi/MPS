@@ -17,38 +17,38 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MementoWithFS;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ReferenceUpdater;
+import jetbrains.mps.util.ModulePathConverter;
+import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.path.UniPath;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import sun.misc.IOUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
+ * Kinds are obviously ought to be enums not string
+ * Paths represented by string either must have clear contract (absolute, relative) or (better)
+ * replaced with some Path entities.
+ * AP
+ *
  * evgeny, 12/11/12
  */
-public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener, CloneableModelRoot {
+public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
   public static final String SOURCE_ROOTS = "sourceRoot";
   public static final String EXCLUDED = "excluded";
-
   public static final String CONTENT_PATH = "contentPath";
   public static final String LOCATION = "location";
   public static final String PATH = "path";
@@ -82,6 +82,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return new ArrayList<>(myFilesForKind.keySet());
   }
 
+  @NotNull
   public final Collection<String> getFiles(String kind) {
     List<String> strings = myFilesForKind.get(kind);
     return strings == null ? Collections.emptyList() : new ArrayList<>(strings);
@@ -132,10 +133,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Override
   public String getPresentation() {
     return getContentRoot() != null ? getContentRoot() : "no path";
-  }
-
-  public boolean supportsFiles(String kind) {
-    return false;
   }
 
   public String getKindText(String kind) {
@@ -198,13 +195,13 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     super.attach();
 
     for (String kind : getSupportedFileKinds()) {
-      if (EXCLUDED.equals(kind)) continue;
-
-      for (String path : myFilesForKind.get(kind)) {
-        IFile file = myFileSystem.getFile(path);
-        PathListener listener = new PathListener(file);
-        myListeners.add(listener);
-        myFileSystem.addListener(listener);
+      if (!EXCLUDED.equals(kind)) {
+        for (String path : myFilesForKind.get(kind)) {
+          IFile file = myFileSystem.getFile(path);
+          PathListener listener = new PathListener(file);
+          myListeners.add(listener);
+          myFileSystem.addListener(listener);
+        }
       }
     }
   }
@@ -236,101 +233,33 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     update();
   }
 
-  protected  boolean isInModuleDirectory() {
-    AbstractModule module = (AbstractModule) getModule();
-    Path modelRootPath = pathFrom(getContentRoot());
-    return module != null && modelRootPath.startsWith(getModuleDirPath(module));
-  }
-
-  @NotNull
-  @Override
-  public CloneCapabilities getCloneCapabilities() {
-    return new CloneCapabilities(true, null);
-  }
-
-  @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot) {
-    assert targetModelRoot instanceof FileBasedModelRoot;
-    FileBasedModelRoot target = ((FileBasedModelRoot) targetModelRoot);
-
-    AbstractModule tModule = ((AbstractModule) target.getModule());
-    AbstractModule sModule = ((AbstractModule) getModule());
-
-    assertNotNullModulesForCloning(target);
-
-    cloneDescriptionTo(target);
-
+  /**
+   * Sets the same content root to the target model root
+   * Adds the corresponding files to the target model root
+   * If the content root is out of the module directory location then
+   * its value is preserved in the target model root of the copying procedure.
+   *
+   * @see #setContentRoot(String)
+   * @see #addFile
+   */
+  protected final void copyContentRootAndFiles(@NotNull FileBasedModelRoot target) throws CopyNotSupportedException {
+    AbstractModule sourceModule = (AbstractModule) getModule();
+    AbstractModule targetModule = (AbstractModule) target.getModule();
+    if (sourceModule == null) {
+      throw new CopyNotSupportedException("The module of the source model root is null " + this);
+    }
+    if (targetModule == null) {
+      throw new CopyNotSupportedException("The module of the target model root is null " + target);
+    }
+    if (!isInsideModuleDir()) {
+      throw new CopyNotSupportedException("The model root's content path must be inside module directory " + this + " " + getModule());
+    }
+    ModulePathConverter modulePathConverter = PathConverters.forModules(sourceModule, targetModule);
+    target.setContentRoot(modulePathConverter.source2Target(getContentRoot()));
     for (String kind : getSupportedFileKinds()) {
-      Collection<String> sourceFiles = getFiles(kind);
-      Collection<String> targetFiles = target.getFiles(kind);
-
-      assert sourceFiles.size() ==  targetFiles.size();
-
-      Iterator<String> sfi = sourceFiles.iterator();
-      for (String targetFile : targetFiles) {
-        IFileUtils.copyDirectoryContent(
-            sModule.getFileSystem().getFile(sfi.next()),
-            tModule.getFileSystem().getFile(targetFile)
-        );
-      }
+      List<String> targetFiles = getFiles(kind).stream().map(modulePathConverter::source2Target).collect(Collectors.toList());
+      target.addFiles(kind, targetFiles);
     }
-  }
-
-  protected void assertNotNullModulesForCloning(@NotNull FileBasedModelRoot target) {
-    if (getModule() == null) {
-      throw new IllegalArgumentException("Can't clone content from model root (" + this + ") without module attached");
-    }
-    if (target.getModule() == null) {
-      throw new IllegalArgumentException("Can't clone content to model root (" + target + ") without module attached");
-    }
-  }
-
-  protected void cloneDescriptionTo(FileBasedModelRoot target) {
-    AbstractModule tModule = ((AbstractModule) target.getModule());
-    AbstractModule sModule = ((AbstractModule) getModule());
-
-    assert sModule != null;
-    assert tModule != null;
-
-    Path sourcePath = pathFrom(getContentRoot());
-    Path targetPath = evaluateTargetPath(sourcePath, getModuleDirPath(sModule), getModuleDirPath(tModule));
-
-    target.setContentRoot(targetPath.toString());
-
-    for (String kind : getSupportedFileKinds()) {
-      List<String> files = new ArrayList<>();
-      for (String file : getFiles(kind)) {
-        Path sourceFilePath = pathFrom(file);
-
-        //FIXME use targetPath.resolve(sourcePath.relativize(sourceFilePath)) instead
-        String relativePath = sourceFilePath.toString().substring(sourcePath.toString().length()).replace(Path.UNIX_SEPARATOR_CHAR, Path.SYSTEM_SEPARATOR_CHAR);
-        Path targetFilePath = pathFrom(targetPath.toString() + relativePath);
-
-        files.add(targetFilePath.toString());
-      }
-      target.addFiles(kind, files);
-    }
-  }
-
-  @NotNull
-  private static UniPath getModuleDirPath(AbstractModule module) {
-    return module.getModuleSourceDir().toPath().toAbsolute().toNormal().toSystemPath();
-  }
-
-  @NotNull
-  private static UniPath pathFrom(String contentRoot) {
-    return UniPath.fromString(contentRoot).toAbsolute().toNormal().toSystemPath();
-  }
-
-
-  private static Path evaluateTargetPath(Path sourcePath, Path sourceModulePath, Path targetModulePath) {
-    if (sourcePath.startsWith(sourceModulePath)) {
-      //FIXME use targetModulePath.resolve(sourceModulePath.relativize(sourcePath)) instead
-      String relativePath = sourcePath.toString().substring(sourceModulePath.toString().length()).replace(Path.UNIX_SEPARATOR_CHAR, Path.SYSTEM_SEPARATOR_CHAR);
-      return UniPath.fromString(targetModulePath.toString() + relativePath);
-    }
-    // RS : where target model root should be located in this case?
-    return sourcePath;
   }
 
   @Override
@@ -340,7 +269,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
     FileBasedModelRoot that = (FileBasedModelRoot) o;
 
-    return EqualUtil.equals(myContentRoot, that.myContentRoot) && EqualUtil.equals(myFilesForKind, that.myFilesForKind);
+    return Objects.equals(myContentRoot, that.myContentRoot) && Objects.equals(myFilesForKind, that.myFilesForKind);
   }
 
   @Override
@@ -350,18 +279,25 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return result;
   }
 
-  private final class PathListener implements FileSystemListener {
+  public boolean isInsideModuleDir() {
+    final SModule module = getModule();
+    if (module instanceof AbstractModule) {
+      return ((AbstractModule) module).getModuleSourceDir().toPath().startsWith(getContentRoot());
+    }
+    return false;
+  }
 
-    private IFile path;
+  private final class PathListener implements FileSystemListener {
+    private final IFile myPath;
 
     private PathListener(@NotNull IFile path) {
-      this.path = path;
+      myPath = path;
     }
 
     @NotNull
     @Override
     public IFile getFileToListen() {
-      return path;
+      return myPath;
     }
 
     @Override
@@ -376,7 +312,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
     @Override
     public String toString() {
-      return "[PathListener: path: " + path + "; modelRoot: " + FileBasedModelRoot.this + "]";
+      return "[PathListener: path: " + myPath + "; modelRoot: " + FileBasedModelRoot.this + "]";
     }
   }
 }

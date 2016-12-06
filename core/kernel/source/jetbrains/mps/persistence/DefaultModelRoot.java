@@ -18,6 +18,8 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CloneCapabilities;
+import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
+import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
@@ -40,7 +42,6 @@ import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
@@ -50,7 +51,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -60,7 +60,11 @@ import java.util.Set;
 /**
  * evgeny, 11/9/12
  */
-public class DefaultModelRoot extends FileBasedModelRoot {
+public class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
+  /**
+   * FIXME must be made package-local
+   * FIXME one must have either factory creation or a public constructor not both [AP]
+   */
   public DefaultModelRoot() {
     super(new String[]{SOURCE_ROOTS});
   }
@@ -90,19 +94,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
       collectModels(myFileSystem.getFile(path), "", relativePath, options, result);
     }
     return result;
-  }
-
-  protected static String makeRelative(String contentHome, String fullPath) {
-    if ((fullPath == null || fullPath.length() == 0 || fullPath.equals(contentHome))) {
-      return "";
-    }
-    String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
-    String normalizedContentHome = FileUtil.getAbsolutePath(contentHome).replace("\\", "/");
-    try {
-      return FileUtil.getRelativePath(normalized, normalizedContentHome, "/");
-    } catch (Exception ex) {
-      return null;
-    }
   }
 
   @Override
@@ -265,21 +256,6 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return new FileDataSource(file, this);
   }
 
-  /**
-   * @deprecated naming convention is plain wrong way to tell whether source root keeps aspect models
-   * Besides, String is awful contract for something like path - it's unclear where its root is,
-   * nor whether we can resolve it to IFile at all.
-   * The only client of the method left, FilePerRootModelPersistence, shall demand relative path
-   * specification rather than try to guess proper root for a new model. It's also unclear why
-   * can't I save aspect models in a per-root persistence
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean isLanguageAspectsSourceRoot(String sourceRoot) {
-    final String rootName = FileSystem.getInstance().getFile(sourceRoot).getName();
-    return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
-  }
-
   private boolean isGeneratorTemplateModel(String modelName) {
     return getModule() instanceof Generator && modelName.endsWith("@" + SModelStereotype.GENERATOR);
   }
@@ -291,49 +267,32 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     return result;
   }
 
-  @NotNull
   @Override
-  public CloneCapabilities getCloneCapabilities() {
-    boolean canBeCloned = isInModuleDirectory();
-    return new CloneCapabilities(canBeCloned, canBeCloned ? null : "This model root outside module directory");
-  }
-
-  @Override
-  public void cloneTo(@NotNull ModelRoot targetModelRoot) {
-    assert targetModelRoot instanceof DefaultModelRoot;
-    DefaultModelRoot target = ((DefaultModelRoot) targetModelRoot);
-
-    AbstractModule sModule = ((AbstractModule) getModule());
-    AbstractModule tModule = ((AbstractModule) target.getModule());
-
-    assertNotNullModulesForCloning(target);
-    cloneDescriptionTo(target);
-
+  public void copyTo(@NotNull DefaultModelRoot target) throws CopyNotSupportedException {
+    copyContentRootAndFiles(target);
+    AbstractModule sourceModule = ((AbstractModule) getModule());
+    AbstractModule targetModule = ((AbstractModule) target.getModule());
+    final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
     Collection<String> sourceFiles = getFiles(SOURCE_ROOTS);
     Collection<String> targetFiles = target.getFiles(SOURCE_ROOTS);
-
     assert sourceFiles.size() ==  targetFiles.size();
+    for (Iterator<String> sIterator = sourceFiles.iterator(), tIterator = targetFiles.iterator(); sIterator.hasNext();) {
+      String sourceRoot = sIterator.next();
+      String targetRoot = tIterator.next();
 
-    Iterator<String> sfi = sourceFiles.iterator();
-    for (String targetFile : targetFiles) {
-      String sourceRoot = sfi.next();
-
-      tModule.getFileSystem().getFile(targetFile).mkdirs();
-
+      fileSystem.getFile(targetRoot).mkdirs();
       walkModelRootData(
-          tModule.getFileSystem().getFile(sourceRoot),
+          fileSystem.getFile(sourceRoot),
           "",
           makeRelative(getContentRoot(), sourceRoot),
           new HashMap<>(),
           (factory, dataSource, options) -> {
             try {
-              options.put(ModelFactory.OPTION_MODULEREF, sModule.getModuleReference().toString());
+              options.put(ModelFactory.OPTION_MODULEREF, sourceModule.getModuleReference().toString());
               SModel sourceModel = factory.load(dataSource, options);
-
-              options.put(ModelFactory.OPTION_MODULEREF, sModule.getModuleReference().toString());
               EditableSModelBase targetModel = (EditableSModelBase) target.createModelImpl(sourceModel.getName().getValue(), sourceRoot, options, factory);
               targetModel.setModelRoot(target);
-              targetModel.setModule(tModule);
+              targetModel.setModule(targetModule);
 
               CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
               ((SModelBase) sourceModel).getSModel().copyPropertiesTo(targetModel.getSModel());
@@ -349,8 +308,24 @@ public class DefaultModelRoot extends FileBasedModelRoot {
     }
   }
 
-  protected interface ModelRootWalkListener{
+  private static class ModelRootDirWalker {
 
+  }
+
+  interface ModelRootWalkListener {
     void onDataSourceVisited(ModelFactory factory, DataSource dataSource, Map<String, String> options);
+  }
+
+  public static String makeRelative(String contentHome, String fullPath) {
+    if ((fullPath == null || fullPath.length() == 0 || fullPath.equals(contentHome))) {
+      return "";
+    }
+    String normalized = FileUtil.getAbsolutePath(fullPath).replace("\\", "/");
+    String normalizedContentHome = FileUtil.getAbsolutePath(contentHome).replace("\\", "/");
+    try {
+      return FileUtil.getRelativePath(normalized, normalizedContentHome, "/");
+    } catch (Exception ex) {
+      return null;
+    }
   }
 }

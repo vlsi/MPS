@@ -48,6 +48,7 @@ import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
 
@@ -62,6 +63,9 @@ import java.awt.BorderLayout;
 import java.awt.LayoutManager;
 import java.util.Collection;
 import java.util.Comparator;
+
+import static jetbrains.mps.extapi.persistence.FileBasedModelRoot.EXCLUDED;
+import static jetbrains.mps.extapi.persistence.FileBasedModelRoot.SOURCE_ROOTS;
 
 public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected Tree myTree;
@@ -92,6 +96,16 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myDescriptor.setShowFileSystemRoots(false);
   }
 
+  @Nullable
+  static String getKindText(@NotNull String kind) {
+    if (kind.equals(EXCLUDED)) {
+      return "Excluded";
+    } else if (kind.equals(SOURCE_ROOTS)) {
+      return "Models";
+    }
+    return null;
+  }
+
   protected void createEditingActions() {
     myEditingActionsGroup.removeAll();
 
@@ -100,7 +114,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
 
     for (final String kind : kinds) {
       AnAction modelRootAnAction =
-          new ToggleFBModelRootKindAction(myTree, this, fileBasedModelRoot.getKindText(kind), null, myFileBasedModelRootEntry.getKindIcon(kind)) {
+          new ToggleFBModelRootKindAction(myTree, this, getKindText(kind), null, myFileBasedModelRootEntry.getKindIcon(kind)) {
             @Override
             protected String getKind() {
               return kind;

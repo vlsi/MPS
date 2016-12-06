@@ -173,7 +173,7 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
       // FIXME        to single Dependency presentation. Meanwhile (as there no scopes but EXTENDS and DEFAULT in legacy descriptors)
       // FIXME        this code simply leaves EXTENDS processing as it was, but saves all other dependencies with Dependency object
       if (tableItem.getItem().getScope() != SDependencyScope.EXTENDS) {
-        dependencies.add(tableItem.getItem().getCopy()); // XXX not sure copy is needed here
+        dependencies.add(tableItem.getItem().copy()); // XXX not sure copy is needed here
       }
     }
     return dependencies;

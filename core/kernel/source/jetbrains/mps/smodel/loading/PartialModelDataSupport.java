@@ -45,6 +45,10 @@ public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupp
     myLoader = loader;
   }
 
+  /**
+   * getModelData is the right name here
+   * this method loads the model data up to the given state and return
+   */
   //null in parameter means "give me the current model, don't attempt to load"
   //with null parameter, no synch should occur
   public T getModel(@Nullable ModelLoadingState state) {

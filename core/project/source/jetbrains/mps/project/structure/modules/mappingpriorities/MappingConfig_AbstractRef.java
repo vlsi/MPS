@@ -16,21 +16,18 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.generator.runtime.TemplateMappingConfigRef;
+import jetbrains.mps.project.structure.modules.Copyable;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 import java.util.List;
 
-public class MappingConfig_AbstractRef implements TemplateMappingConfigRef {
-
+public class MappingConfig_AbstractRef implements TemplateMappingConfigRef, Copyable<MappingConfig_AbstractRef> {
   public static final int PERSISTENCE_ID = 0x55550000;
-
-  public MappingConfig_AbstractRef getCopy() {
-    return new MappingConfig_AbstractRef();
-  }
 
   public boolean isIncomplete() {
     return true;
@@ -118,5 +115,11 @@ public class MappingConfig_AbstractRef implements TemplateMappingConfigRef {
     }
 
     throw new IOException("bad stream");
+  }
+
+  @NotNull
+  @Override
+  public MappingConfig_AbstractRef copy() {
+    return new MappingConfig_AbstractRef();
   }
 }

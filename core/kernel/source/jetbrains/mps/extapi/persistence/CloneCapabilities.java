@@ -24,7 +24,7 @@ import org.jetbrains.annotations.Nullable;
  * {@code modelRoot.getCloneCapabilities().isCloneable()} must return true, if
  * {@code modelRoot.cloneTo(target)} should successfully clone model root content to target.
  *
- * @see CloneableModelRoot#getCloneCapabilities()
+ * @see CopyableModelRoot#getCloneCapabilities()
  *
  * @author Radimir.Sorokin
  */
@@ -35,7 +35,7 @@ public class CloneCapabilities {
   @Nullable
   private final String myErrorMessage;
 
-  public CloneCapabilities(boolean cloneable,@Nullable String errorMessage) {
+  public CloneCapabilities(boolean cloneable, @Nullable String errorMessage) {
     myCloneable = cloneable;
     myErrorMessage = errorMessage;
   }

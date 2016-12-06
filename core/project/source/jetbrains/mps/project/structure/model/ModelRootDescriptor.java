@@ -18,10 +18,13 @@ package jetbrains.mps.project.structure.model;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.structure.modules.Copyable;
 import jetbrains.mps.util.io.MementoStreamUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.io.IOException;
@@ -31,53 +34,63 @@ import java.util.Collections;
 /**
  * evgeny, 10/24/12
  */
-
-public final class ModelRootDescriptor {
-  private String type;
-  private Memento memento;
+@Immutable
+public final class ModelRootDescriptor implements Copyable<ModelRootDescriptor> {
+  private static final int MODEL_ROOT_START_MARKER = 0x6a;
+  private final String myType;
+  private final Memento myMemento;
 
   public ModelRootDescriptor() {
-    this.type = null;
-    this.memento = new MementoImpl();
+    myType = null;
+    myMemento = new MementoImpl();
   }
 
   public ModelRootDescriptor(String type, Memento memento) {
-    this.type = type;
-    this.memento = memento;
+    myType = type;
+    myMemento = memento;
   }
 
   public String getType() {
-    if (type == null) {
+    if (myType == null) {
       return getMemento().getChild("manager") != null ? PersistenceRegistry.OBSOLETE_MODEL_ROOT : PersistenceRegistry.DEFAULT_MODEL_ROOT;
     }
-    return type;
+    return myType;
   }
 
   public Memento getMemento() {
-    return memento;
+    return myMemento;
   }
 
-  public void save(ModelOutputStream stream) throws IOException {
-    stream.writeByte(0x6a);
-    stream.writeString(type);
-    MementoStreamUtil.writeMemento(null, memento, stream);
+  public void save(@NotNull ModelOutputStream stream) throws IOException {
+    stream.writeByte(MODEL_ROOT_START_MARKER);
+    stream.writeString(myType);
+    MementoStreamUtil.writeMemento(null, myMemento, stream);
   }
 
-  public static ModelRootDescriptor load(ModelInputStream stream) throws IOException {
-    if (stream.readByte() != 0x6a) throw new IOException("bad stream: no model root descriptor start marker");
+  @NotNull
+  public static ModelRootDescriptor load(@NotNull ModelInputStream stream) throws IOException {
+    if (stream.readByte() != MODEL_ROOT_START_MARKER) {
+      throw new IOException("bad stream: no model root descriptor start marker");
+    }
     return new ModelRootDescriptor(stream.readString(), MementoStreamUtil.readMemento(null, stream));
   }
 
+  @NotNull
+  @Override
+  public ModelRootDescriptor copy() {
+    return new ModelRootDescriptor(myType, myMemento);
+  }
+
   public static ModelRootDescriptor getJavaStubsModelRoot(IFile file) {
-    return getJavaStubsModelRoot(file, Collections.EMPTY_LIST);
+    return getJavaStubsModelRoot(file, Collections.emptyList());
   }
 
   public static ModelRootDescriptor getJavaStubsModelRoot(IFile file, final Collection<ModelRootDescriptor> modelRootDescriptors) {
     String path = file.getParent().getPath();
 
     for (ModelRootDescriptor descriptor : modelRootDescriptors) {
-      if (descriptor.memento.get(FileBasedModelRoot.CONTENT_PATH).equals(path)) {
-        Memento child = descriptor.memento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
+      if (descriptor.myMemento.get(FileBasedModelRoot.CONTENT_PATH).equals(path)) {
+        Memento child = descriptor.myMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
         child.put(FileBasedModelRoot.LOCATION, file.getName());
         return null;
       }

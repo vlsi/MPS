@@ -16,9 +16,9 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -35,31 +35,53 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.stream.Collectors;
+import java.util.function.Supplier;
 
 /**
  * This class captures persistence and editing aspects of SModule. Client code shall not use this class
  * unless its purpose is to edit or persist module properties. Use SModule API (or Language/Generator/Solution/DevKit subclasses)
  * to read module dependencies and identity information.
+ *
+ * -----------------------------------------------------------------------------------------------------------------------------------
+ * FIXME This class mixes up the persistence and editing aspects of the {@link AbstractModule} class.
+ * FIXME in order to edit facets/model roots in the module a client needs to access such entities as {@link ModuleFacetDescriptor}, {@link ModelRootDescriptor} directly,
+ * FIXME when he has just an {@link AbstractModule} (which leads to a low-level module#getModuleDescriptor.getFacetDescriptors().add...)
+ * FIXME obviously it is wrong: a client should rather work with {@link SModuleFacet} entities in the case of editing an {@link AbstractModule}, not descriptors.
+ * FIXME OTOH it cannot be a plain persistence descriptor since in order to update (more or less) any properties of an {@link AbstractModule}
+ * FIXME we use such pattern in the {@code AbstractModule} as:
+ * <code>
+ *   AbstractModule module;
+ *   var descriptor = module.getDescriptor();
+ *   <change descriptor freely as we wish>
+ *   module.setDescriptor(descriptor); // commit descriptor
+ * </code>
+ * which is needed in order to guarantee a consistency of the {@link AbstractModule} operations.
+ *
+ * TODO Also I would rather use in the ModuleDescriptor hierarchy composition instead of inheritance. The {@link #myDeploymentDescriptor} reference is especially repelling here.
+ *
+ * Road map:
+ * We separate the persistence descriptor from the special editing 'handle'.
+ * We ensure that the persistence descriptor reflects all the properties we find in our module persistence.
+ *
+ * AP
  */
-public class ModuleDescriptor {
-
+public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
   private ModuleId myId;
   private String myNamespace;
   private String myTimestamp;
 
   private int myModuleVersion;
 
-  private Collection<ModelRootDescriptor> myModelRoots;
-  private Collection<ModuleFacetDescriptor> myFacets;
-  private Collection<Dependency> myDependencies;
-  private Collection<SModuleReference> myUsedLanguages;
-  private Collection<SModuleReference> myUsedDevkits;
-  private final Map<SLanguage, Integer> myLanguageVersions;
-  private final Map<SModuleReference, Integer> myDependencyVersions;
-  private Collection<String> myAdditionalJavaStubPaths;
-  private Collection<String> mySourcePaths;
-  private DeploymentDescriptor myDeploymentDescriptor;
+  private final Collection<ModelRootDescriptor> myModelRoots = new LinkedHashSet<>();
+  private final Collection<ModuleFacetDescriptor> myFacets = new LinkedHashSet<>();
+  private final Collection<Dependency> myDependencies = new LinkedHashSet<>();
+  private final Collection<SModuleReference> myUsedLanguages = new LinkedHashSet<>();
+  private final Collection<SModuleReference> myUsedDevkits = new LinkedHashSet<>();
+  private final Map<SLanguage, Integer> myLanguageVersions = new LinkedHashMap<>();
+  private final Map<SModuleReference, Integer> myDependencyVersions = new LinkedHashMap<>();
+  private final Collection<String> myAdditionalJavaStubPaths = new LinkedHashSet<>();
+  private final Collection<String> mySourcePaths = new LinkedHashSet<>();
+  private DeploymentDescriptor myDeploymentDescriptor; // FIXME must be removed
 
   private Throwable myLoadException;
   private boolean myUseTransientOutput;
@@ -67,42 +89,33 @@ public class ModuleDescriptor {
   private boolean myHasDependencyVersions = true;
 
   public ModuleDescriptor() {
-    myModelRoots = new LinkedHashSet<ModelRootDescriptor>();
-    myFacets = new LinkedHashSet<ModuleFacetDescriptor>();
-    myDependencies = new LinkedHashSet<Dependency>();
-    myUsedLanguages = new LinkedHashSet<SModuleReference>();
-    myUsedDevkits = new LinkedHashSet<SModuleReference>();
-    myLanguageVersions = new LinkedHashMap<SLanguage, Integer>();
-    myDependencyVersions = new LinkedHashMap<SModuleReference, Integer>();
-    myAdditionalJavaStubPaths = new LinkedHashSet<String>();
-    mySourcePaths = new LinkedHashSet<String>();
   }
 
-  public ModuleId getId() {
+  public final ModuleId getId() {
     return myId;
   }
 
-  public void setId(ModuleId id) {
+  public final void setId(ModuleId id) {
     myId = id;
   }
 
-  public String getNamespace() {
+  public final String getNamespace() {
     return myNamespace;
   }
 
-  public void setNamespace(String namespace) {
+  public final void setNamespace(String namespace) {
     myNamespace = namespace;
   }
 
-  public SModuleReference getModuleReference() {
+  public final SModuleReference getModuleReference() {
     return new jetbrains.mps.project.structure.modules.ModuleReference(getNamespace(), myId);
   }
 
-  public String getTimestamp() {
+  public final String getTimestamp() {
     return myTimestamp;
   }
 
-  public void setTimestamp(String timestamp) {
+  public final void setTimestamp(String timestamp) {
     myTimestamp = timestamp;
   }
 
@@ -110,11 +123,11 @@ public class ModuleDescriptor {
     throw new UnsupportedOperationException();
   }
 
-  public Collection<ModelRootDescriptor> getModelRootDescriptors() {
+  public final Collection<ModelRootDescriptor> getModelRootDescriptors() {
     return myModelRoots;
   }
 
-  public Collection<ModuleFacetDescriptor> getModuleFacetDescriptors() {
+  public final Collection<ModuleFacetDescriptor> getModuleFacetDescriptors() {
     return myFacets;
   }
 
@@ -125,7 +138,7 @@ public class ModuleDescriptor {
    * With this methods, we keep facet persistence management in a single place (rather than
    * <code>facet.save(new Memento())</code> scattered around)
    */
-  public void addFacetDescriptor(@NotNull SModuleFacet facet) {
+  public final void addFacetDescriptor(@NotNull SModuleFacet facet) {
     removeFacetDescriptor(facet);
     myFacets.add(new ModuleFacetDescriptor(facet.getFacetType(), new MementoImpl()));
   }
@@ -134,7 +147,7 @@ public class ModuleDescriptor {
    * PROVISIONAL API, DO NOT USE OUTSIDE OF MPS
    * Forget persistence information for the given facet
    */
-  public void removeFacetDescriptor(@NotNull SModuleFacet facet) {
+  public final void removeFacetDescriptor(@NotNull SModuleFacet facet) {
     final String facetType = facet.getFacetType();
     for (Iterator<ModuleFacetDescriptor> it = myFacets.iterator(); it.hasNext(); ) {
       ModuleFacetDescriptor facetDescriptor = it.next();
@@ -160,7 +173,7 @@ public class ModuleDescriptor {
    * for editing of module settings) - it's sort of changes snapshot, applied with a single setModuleDescriptor operation, rather than sequence
    * of SModule changes.
    */
-  public void updateFacetDescriptor(@NotNull SModuleFacet facet) {
+  public final void updateFacetDescriptor(@NotNull SModuleFacet facet) {
     for (ModuleFacetDescriptor facetDescriptor : myFacets) {
       if (facetDescriptor.getType().equals(facet.getFacetType())) {
         facet.save(facetDescriptor.getMemento());
@@ -169,7 +182,7 @@ public class ModuleDescriptor {
     }
   }
 
-  public Collection<Dependency> getDependencies() {
+  public final Collection<Dependency> getDependencies() {
     return myDependencies;
   }
 
@@ -180,36 +193,36 @@ public class ModuleDescriptor {
    */
   @Deprecated
   @ToRemove(version = 3.3)
-  public Collection<SModuleReference> getUsedLanguages() {
+  public final Collection<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
 
-  public Map<SLanguage, Integer> getLanguageVersions() {
+  public final Map<SLanguage, Integer> getLanguageVersions() {
     return myLanguageVersions;
   }
 
-  public Map<SModuleReference, Integer> getDependencyVersions() {
+  public final Map<SModuleReference, Integer> getDependencyVersions() {
     return myDependencyVersions;
   }
 
-  public Collection<SModuleReference> getUsedDevkits() {
+  public final Collection<SModuleReference> getUsedDevkits() {
     return myUsedDevkits;
   }
 
-  public Collection<String> getAdditionalJavaStubPaths() {
+  public final Collection<String> getAdditionalJavaStubPaths() {
     return myAdditionalJavaStubPaths;
   }
 
-  public Collection<String> getSourcePaths() {
+  public final Collection<String> getSourcePaths() {
     return mySourcePaths;
   }
 
   @Nullable
-  public DeploymentDescriptor getDeploymentDescriptor() {
+  public final DeploymentDescriptor getDeploymentDescriptor() {
     return myDeploymentDescriptor;
   }
 
-  public void setDeploymentDescriptor(DeploymentDescriptor deploymentDescriptor) {
+  public final void setDeploymentDescriptor(DeploymentDescriptor deploymentDescriptor) {
     myDeploymentDescriptor = deploymentDescriptor;
   }
 
@@ -346,63 +359,12 @@ public class ModuleDescriptor {
     if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
   }
 
-
-  public void cloneTo(ModuleDescriptor target, PathConverter converter) {
-    target.setModuleVersion(getModuleVersion());
-    target.setUseTransientOutput(isUseTransientOutput());
-
-    Collection<Dependency> sourceDependencies = getDependencies();
-    Collection<Dependency> targetDependencies = target.getDependencies();
-
-    Map<SModuleReference, Integer> sourceDependencyVersions = getDependencyVersions();
-    Map<SModuleReference, Integer> targetDependencyVersions = target.getDependencyVersions();
-
-    targetDependencies.clear();
-    targetDependencyVersions.clear();
-
-    for (Dependency dependency : sourceDependencies) {
-      SModuleReference moduleRef = dependency.getModuleRef();
-      targetDependencies.add(dependency.getCopy());
-      targetDependencyVersions.put(moduleRef, sourceDependencyVersions.get(moduleRef));
-    }
-
-    target.getLanguageVersions().clear();
-    target.getLanguageVersions().putAll(getLanguageVersions());
-
-    target.getUsedDevkits().clear();
-    target.getUsedDevkits().addAll(getUsedDevkits());
-
-    target.getSourcePaths().clear();
-    target.getSourcePaths().addAll(
-        getSourcePaths()
-            .stream()
-            .map(converter::sourceToDestination)
-            .collect(Collectors.toList())
-    );
-
-    target.getAdditionalJavaStubPaths().clear();
-    target.getAdditionalJavaStubPaths().addAll(
-        getAdditionalJavaStubPaths()
-            .stream()
-            .map(converter::sourceToDestination)
-            .collect(Collectors.toList())
-    );
-
-    target.getModuleFacetDescriptors().clear();
-    target.getModuleFacetDescriptors().addAll(
-        getModuleFacetDescriptors()
-            .stream()
-            .map(source -> new ModuleFacetDescriptor(source.getType(), source.getMemento().copy()))
-            .collect(Collectors.toList())
-    );
-  }
-
   /**
    * @deprecated needed it for migration (3.1->3.2)
    */
   @ToRemove(version = 3.4)
   @Deprecated
-  public void setHasLanguageVersions(boolean hasLanguageVersions) {
+  public final void setHasLanguageVersions(boolean hasLanguageVersions) {
     myHasLanguageVersions = hasLanguageVersions;
   }
 
@@ -411,27 +373,68 @@ public class ModuleDescriptor {
    */
   @ToRemove(version = 3.4)
   @Deprecated
-  public void setHasDependencyVersions(boolean hasDependencyVersions) {
+  public final void setHasDependencyVersions(boolean hasDependencyVersions) {
     myHasDependencyVersions = hasDependencyVersions;
   }
 
   @Deprecated
-  public boolean hasLanguageVersions() {
+  public final boolean hasLanguageVersions() {
     return myHasLanguageVersions;
   }
 
   @ToRemove(version = 3.4)
   @Deprecated
-  public boolean hasDependencyVersions() {
+  public final boolean hasDependencyVersions() {
     return myHasDependencyVersions;
   }
 
-  public int getModuleVersion() {
+  public final int getModuleVersion() {
     return myModuleVersion;
   }
 
-  public void setModuleVersion(int version) {
+  public final void setModuleVersion(int version) {
     myModuleVersion = version;
   }
 
+  /**
+   * utility method to help subclasses implementing the {@link #copy()} method
+   *
+   * @param concreteConstructor the module descriptor constructor to put the copy inside
+   */
+  protected final <T extends ModuleDescriptor> T copy0(@NotNull Supplier<T> concreteConstructor) {
+    T descriptorCopy = concreteConstructor.get();
+    descriptorCopy.setId(getId());
+    descriptorCopy.setNamespace(getNamespace());
+    descriptorCopy.setTimestamp(getTimestamp());
+    descriptorCopy.setModuleVersion(getModuleVersion());
+    Copyable.deepCopy(getModelRootDescriptors(), descriptorCopy.getModelRootDescriptors());
+    Copyable.deepCopy(getModuleFacetDescriptors(), descriptorCopy.getModuleFacetDescriptors());
+    Copyable.deepCopy(getDependencies(), descriptorCopy.getDependencies());
+    descriptorCopy.getUsedLanguages().addAll(getUsedLanguages());
+    descriptorCopy.getUsedDevkits().addAll(getUsedDevkits());
+    descriptorCopy.getLanguageVersions().putAll(getLanguageVersions());
+    descriptorCopy.getDependencyVersions().putAll(getDependencyVersions());
+    descriptorCopy.getAdditionalJavaStubPaths().addAll(getAdditionalJavaStubPaths());
+    descriptorCopy.getSourcePaths().addAll(getSourcePaths());
+    copyDeploymentDescriptor(descriptorCopy);
+    descriptorCopy.setLoadException(getLoadException());
+    descriptorCopy.setUseTransientOutput(isUseTransientOutput());
+    descriptorCopy.setHasDependencyVersions(hasDependencyVersions());
+    descriptorCopy.setHasLanguageVersions(hasLanguageVersions());
+    return descriptorCopy;
+  }
+
+  private <T extends ModuleDescriptor> void copyDeploymentDescriptor(T descriptorCopy) {
+    DeploymentDescriptor deploymentDescriptor = getDeploymentDescriptor();
+    if (deploymentDescriptor != null) {
+      deploymentDescriptor = deploymentDescriptor.copy();
+    }
+    descriptorCopy.setDeploymentDescriptor(deploymentDescriptor);
+  }
+
+  @NotNull
+  @Override
+  public ModuleDescriptor copy() {
+    return copy0(ModuleDescriptor::new);
+  }
 }

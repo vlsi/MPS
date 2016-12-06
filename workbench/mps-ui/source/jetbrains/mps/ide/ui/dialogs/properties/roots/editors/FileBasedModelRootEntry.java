@@ -61,8 +61,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
 
-public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryExt {
+import static jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEditor.getKindText;
 
+public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryExt {
   private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
   private FileBasedModelRootEditor myFileBasedModelRootEditor;
   protected FileBasedModelRoot myFileBasedModelRoot;
@@ -70,8 +71,9 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   private final Map<JComponent, Color> myComponentToForegroundMap = new HashMap<JComponent, Color>();
 
   public FileBasedModelRootEntry(ModelRoot modelRoot) {
-    if(!(modelRoot instanceof FileBasedModelRoot))
+    if (!(modelRoot instanceof FileBasedModelRoot)) {
       throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + FileBasedModelRoot.class.getCanonicalName());
+    }
     myFileBasedModelRoot = (FileBasedModelRoot)modelRoot;
   }
 
@@ -93,8 +95,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
       Collection<String> files = myFileBasedModelRoot.getFiles(kind);
 
       if(files.size() > 0){
-        final JComponent kindComponent = createKindGroupComponent(
-          myFileBasedModelRoot.getKindText(kind), files, getKindColor(kind), kind
+        final JComponent kindComponent = createKindGroupComponent(getKindText(kind), files, getKindColor(kind), kind
         );
         panel.add(kindComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0, 0, 10, 0), 0, 0));
       }

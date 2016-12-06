@@ -96,6 +96,27 @@ import java.util.Set;
 
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
+/**
+ * First of all, this class serves as a file-based module. Obviously it requires a file which contains a persisted
+ * module descriptor (see constructor).
+ * Secondly, this class provides a common implementation of the module editing. Not only the implementation of
+ * simple interface {@link EditableSModule} is here but also a special editing mechanism is suggested below.
+ * Nonetheless there are several flaws.
+ *
+ * 1. We need to separate FileBasedModule from the AbstractModule in order to make the AbstractModule truly abstract.
+ * 2. We need to enforce a special committing mechanism (for the module editing) which is only sketched in this class.
+ * The {@link #getModuleDescriptor()} method in fact is just a public property which discloses all the internals of the module.
+ * It is undoubtedly ought to be fixed.
+ * Moreover the implementations of this method return the original descriptor (copy they must return!). [not the problem of the abstract module per se]
+ * Suggestion [to be done]:
+ * Rather the {@link AbstractModule} must possess a special {@code #getEditingHandle} which returns a class which in turn is able to accumulate
+ * all the changes user desire to accomplish and when user is finished with editing commit all the changes with one invocation of {@code handle.commit()}.
+ * [or something like this]
+ *
+ * AP
+ *
+ * @see ModuleDescriptor for the details
+ */
 public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
@@ -103,6 +124,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public static final String CLASSES_GEN = "classes_gen";
   public static final String CLASSES = "classes";
 
+  /**
+   * All paths concerning a module must be either absolute or relative to this 'anchor' file.
+   * This is a rational idea since keeping the same information twice does not make sense.
+   * Moreover moving or renaming a module gets just simpler
+   */
   @Nullable protected final IFile myDescriptorFile;
   @NotNull private final FileSystem myFileSystem;
   private SModuleReference myModuleReference;
@@ -644,14 +670,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void renameModels(String oldName, String newName, boolean moveModels) {
     //if module name is a prefix of it's model's name - rename the model, too
     for (SModel m : getModels()) {
-      if (m.isReadOnly()) continue;
-      if (!m.getName().getNamespace().startsWith(oldName)) continue;
-      if (!(m instanceof EditableSModel)) continue;
-
-      SModelName newModelName = new SModelName(
-          newName + m.getName().getNamespace().substring(oldName.length()),
-          m.getName().getSimpleName(), m.getName().getStereotype());
-      ((EditableSModel) m).rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
+      if (!m.isReadOnly()) {
+        SModelName oldModelName = m.getName();
+        if (oldModelName.getNamespace().startsWith(oldName)) {
+          if (m instanceof EditableSModel) {
+            SModelName newModelName = new SModelName(
+                newName + oldModelName.getNamespace().substring(oldName.length()),
+                oldModelName.getSimpleName(), oldModelName.getStereotype());
+            ((EditableSModel) m).rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
+          }
+        }
+      }
     }
   }
 
@@ -864,7 +893,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Override
   public Iterable<SModuleFacet> getFacets() {
-    return Collections.<SModuleFacet>unmodifiableSet(myFacets);
+    return Collections.unmodifiableSet(myFacets);
   }
 
   public class ModuleScope extends DefaultScope {

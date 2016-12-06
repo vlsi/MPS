@@ -128,7 +128,6 @@ public abstract class AbstractModuleCreationSettings extends JPanel {
     if (myProjectPath != null) {
       setModuleLocation(getDefaultModulePath() + getDefaultModuleName());
     }
-
   }
 
   public JComponent getPreferredFocusedComponent() {

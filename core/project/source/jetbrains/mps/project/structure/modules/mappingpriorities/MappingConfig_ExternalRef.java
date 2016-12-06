@@ -17,13 +17,13 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
-
   public static final int PERSISTENCE_ID = 0x55550004;
 
   private SModuleReference myGenerator;
@@ -49,11 +49,12 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
     myMappingConfig = ref;
   }
 
+  @NotNull
   @Override
-  public MappingConfig_ExternalRef getCopy() {
+  public MappingConfig_ExternalRef copy() {
     MappingConfig_ExternalRef result = new MappingConfig_ExternalRef();
     result.myGenerator = myGenerator;
-    result.myMappingConfig = myMappingConfig != null ? myMappingConfig.getCopy() : null;
+    result.myMappingConfig = myMappingConfig != null ? myMappingConfig.copy() : null;
     return result;
   }
 

@@ -13,15 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.util;
+package jetbrains.mps.extapi.persistence;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
- * FIXME
- * Created by Radimir.Sorokin on 7/26/2016.
+ * The exception which might be thrown during copying.
+ * Means that there are some problems which make the operation impossible to accomplish.
+ *
+ * Created by apyshkin on 12/2/16.
  */
-public interface PathConverter {
-  boolean canConvertToSource(String path);
-  boolean canConvertToDestination(String path);
-  String sourceToDestination(String path);
-  String destinationToSource(String path);
+public class CopyNotSupportedException extends Exception {
+  private final String myErrorMessage;
+
+  public CopyNotSupportedException(@NotNull String errorMessage) {
+    myErrorMessage = errorMessage;
+  }
+
+  public String getErrorMessage() {
+    return myErrorMessage;
+  }
 }

@@ -16,13 +16,15 @@
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.project.structure.modules.Copyable;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
 
-public class MappingPriorityRule implements TemplateMappingPriorityRule {
+public class MappingPriorityRule implements TemplateMappingPriorityRule, Copyable<MappingPriorityRule> {
   public static final String LEFT = "left";
   public static final String TYPE = "type";
   public static final String RIGHT = "right";
@@ -60,16 +62,6 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     myRight = right;
   }
 
-  public MappingPriorityRule getCopy() {
-    MappingPriorityRule result = new MappingPriorityRule();
-
-    result.myLeft = myLeft != null ? myLeft.getCopy() : null;
-    result.myRight = myRight != null ? myRight.getCopy() : null;
-    result.myType = myType;
-
-    return result;
-  }
-
   /**
    *
    * @param repository FIXME in fact, MPR is sort of RT API, and as such doesn't need SRepository (SRepository would be vital for
@@ -96,5 +88,19 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
     myType = RuleType.valueOf(stream.readString());
     myLeft = MappingConfig_AbstractRef.load(stream);
     myRight = MappingConfig_AbstractRef.load(stream);
+  }
+
+  @NotNull
+  @Override
+  public MappingPriorityRule copy() {
+    MappingPriorityRule copy = new MappingPriorityRule();
+    copy.setType(myType);
+    if (myLeft != null) {
+      copy.setLeft(myLeft.copy());
+    }
+    if (myRight != null) {
+      copy.setRight(myRight.copy());
+    }
+    return copy;
   }
 }

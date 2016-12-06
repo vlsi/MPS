@@ -89,10 +89,9 @@ public interface IFile {
    *
    * @see File#getCanonicalPath()
    * @see Path
-   * @deprecated use {@link #toPath()} instead
    */
   @ToRemove(version = 3.5)
-  @Deprecated
+  /*@Deprecated*/
   @NotNull String getPath();
 
   /**

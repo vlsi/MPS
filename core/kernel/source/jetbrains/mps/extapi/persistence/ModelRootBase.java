@@ -36,6 +36,7 @@ import java.util.Set;
 
 /**
  * Base model root implementation which relies on module. Note that the model root might be not attached to module.
+ * FIXME a module ought to be passed in constructor
  *
  * evgeny, 10/23/12
  */
@@ -54,7 +55,9 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void setModule(@NotNull SModule module) {
-    assert myModule == null;
+    if (myModule != null) {
+      throw new IllegalStateException("Already attached to the module " + myModule);
+    }
     checkNotRegistered();
     myModule = module;
   }
@@ -73,6 +76,7 @@ public abstract class ModelRootBase implements ModelRoot {
     }
   }
 
+  @NotNull
   @Override
   public final Iterable<SModel> getModels() {
     assertCanRead();

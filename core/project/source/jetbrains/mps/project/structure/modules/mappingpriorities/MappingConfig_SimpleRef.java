@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
-
   public static final int PERSISTENCE_ID = 0x55550002;
 
   private String myModelUID;
@@ -46,7 +46,8 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   }
 
   @Override
-  public MappingConfig_SimpleRef getCopy() {
+  @NotNull
+  public MappingConfig_SimpleRef copy() {
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.myModelUID = myModelUID;
     result.myNodeID = myNodeID;

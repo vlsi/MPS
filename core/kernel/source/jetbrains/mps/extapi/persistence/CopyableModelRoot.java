@@ -13,27 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.project.structure.modules.mappingpriorities;
+package jetbrains.mps.extapi.persistence;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
-  public static final int PERSISTENCE_ID = 0x55550001;
-
-  @NotNull
-  @Override
-  public MappingConfig_AbstractRef copy() {
-    return new MappingConfig_RefAllLocal();
-  }
-
-  @Override
-  public boolean isIncomplete() {
-    return false;
-  }
-
-  @Override
-  public String asString(SRepository repository) {
-    return "*";
-  }
+/**
+ * Represents that {@link ModelRoot} can be cloned.
+ * @param <T> -- is the type of the model root which one wants to copy
+ *
+ * @author Radimir.Sorokin
+ */
+public interface CopyableModelRoot<T extends CopyableModelRoot & ModelRoot> {
+  /**
+   * Copies this model root contents to the <t>targetModelRoot</t>.
+   * the resulting model root must be equal to the prototype
+   */
+  void copyTo(@NotNull T targetModelRoot) throws CopyNotSupportedException;
 }

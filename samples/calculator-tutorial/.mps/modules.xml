@@ -3,7 +3,9 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="$PROJECT_DIR$/languages/calculator/jetbrains.mps.calculator.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/NewSolution/NewSolution.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/jetbrains.mps.calculator.sandbox_clone.msd" folder="" />
     </projectModules>
   </component>
 </project>

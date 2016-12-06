@@ -13,30 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package jetbrains.mps.project.structure.modules;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+
+import java.util.Collection;
+import java.util.stream.Collectors;
 
 /**
- * Represents that {@link ModelRoot} can be cloned.
+ * Prototype pattern
  *
- * @author Radimir.Sorokin
+ * @author apyshkin on 02/12/16.
  */
-public interface CloneableModelRoot extends ModelRoot {
+public interface Copyable<T> {
 
   /**
-   * Provides clone capabilities of <t>this</t> instance.
-   *
-   * @return instance clone capabilities
+   * @return full deep-copy of the <em>T</em> instance
    */
-  @NotNull
-  CloneCapabilities getCloneCapabilities();
+  @NotNull T copy();
 
   /**
-   * Clones this model root content to <t>targetModelRoot</t>.
-   *
-   * @param targetModelRoot target model root
+   * full deep copy from one collection to another
    */
-  void cloneTo(@NotNull ModelRoot targetModelRoot);
+  static <T extends Copyable<T>> void deepCopy(@NotNull Collection<T> source, @NotNull Collection<T> target) {
+    target.addAll(source.stream().map(Copyable::copy).collect(Collectors.toList()));
+  }
 }

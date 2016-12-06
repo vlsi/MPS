@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project.structure.modules.mappingpriorities;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -23,24 +24,24 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
-
   public static final int PERSISTENCE_ID = 0x55550003;
 
   private List<MappingConfig_AbstractRef> myRefs;
 
   public MappingConfig_RefSet() {
-    myRefs = new ArrayList<MappingConfig_AbstractRef>();
+    myRefs = new ArrayList<>();
   }
 
   public List<MappingConfig_AbstractRef> getMappingConfigs() {
     return myRefs;
   }
 
+  @NotNull
   @Override
-  public MappingConfig_RefSet getCopy() {
+  public MappingConfig_RefSet copy() {
     MappingConfig_RefSet result = new MappingConfig_RefSet();
     for (MappingConfig_AbstractRef ref : myRefs) {
-      result.myRefs.add(ref != null ? ref.getCopy() : null);
+      result.myRefs.add(ref != null ? ref.copy() : null);
     }
     return result;
   }

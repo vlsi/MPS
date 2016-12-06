@@ -412,7 +412,7 @@ public final class ModulesMiner {
     private final IFile file;
     private final ModuleDescriptor descriptor;
 
-    public ModuleHandle(IFile file, ModuleDescriptor descriptor) {
+    public ModuleHandle(@NotNull IFile file, @NotNull ModuleDescriptor descriptor) {
       this.file = file;
       this.descriptor = descriptor;
     }
@@ -435,6 +435,6 @@ public final class ModulesMiner {
 
   private enum Location {
     INSIDE_THE_JAR,
-    OUTSIDE_THE_JAR;
+    OUTSIDE_THE_JAR
   }
 }

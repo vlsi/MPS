@@ -15,40 +15,39 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
 public class SolutionDescriptor extends ModuleDescriptor {
-
   private String myOutputPath;
   private SolutionKind myKind = SolutionKind.NONE;
   private boolean myCompileInMPS = true;
 
-  public String getOutputPath() {
+  public final String getOutputPath() {
     return myOutputPath;
   }
 
-  public void setOutputPath(String outputPath) {
+  public final void setOutputPath(String outputPath) {
     myOutputPath = outputPath;
   }
 
-  public SolutionKind getKind() {
+  public final SolutionKind getKind() {
     return myKind;
   }
 
-  public void setKind(SolutionKind kind) {
+  public final void setKind(@NotNull SolutionKind kind) {
     myKind = kind;
   }
 
   @Override
-  public boolean getCompileInMPS() {
+  public final boolean getCompileInMPS() {
     return myCompileInMPS;
   }
 
-  public void setCompileInMPS(boolean compileInMPS) {
+  public final void setCompileInMPS(boolean compileInMPS) {
     myCompileInMPS = compileInMPS;
   }
 
@@ -74,13 +73,12 @@ public class SolutionDescriptor extends ModuleDescriptor {
   }
 
   @Override
-  public void cloneTo(ModuleDescriptor t, PathConverter converter) {
-    assert t instanceof SolutionDescriptor;
-    SolutionDescriptor target = (SolutionDescriptor) t;
-    super.cloneTo(target, converter);
-
-    target.setKind(getKind());
-    target.setCompileInMPS(getCompileInMPS());
-    target.setOutputPath(converter.sourceToDestination(getOutputPath()));
+  @NotNull
+  public SolutionDescriptor copy() {
+    SolutionDescriptor copy = copy0(SolutionDescriptor::new);
+    copy.setKind(getKind());
+    copy.setCompileInMPS(getCompileInMPS());
+    copy.setOutputPath(getOutputPath());
+    return copy;
   }
 }

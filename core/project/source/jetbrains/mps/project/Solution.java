@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.extapi.module.CloneableSModule;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.ClassType;
 import jetbrains.mps.classloading.CustomClassLoadingFacet;
 import jetbrains.mps.java.stub.PackageScopeControl;
@@ -31,17 +29,12 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.ModelRootCloneUtil;
-import jetbrains.mps.util.PathConverters;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
-import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,7 +44,7 @@ import java.util.Set;
  * Igor Alshannikov
  * Aug 26, 2005
  */
-public class Solution extends ReloadableModuleBase implements CloneableSModule<Solution> {
+public class Solution extends ReloadableModuleBase {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
   // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
@@ -236,24 +229,5 @@ public class Solution extends ReloadableModuleBase implements CloneableSModule<S
   public boolean willLoad() {
     // TODO mps facet from this [like IDEA plugin facet]
     return getKind() != SolutionKind.NONE || getFacet(CustomClassLoadingFacet.class) != null;
-  }
-
-  @Nullable
-  @Override
-  public Solution clone(String targetRoot, String targetNamespace) {
-    SolutionDescriptor targetDescriptor = new SolutionDescriptor();
-    IFile targetDescriptorFile = getFileSystem().getFile(targetRoot + File.separator + targetNamespace + MPSExtentions.DOT_SOLUTION);
-
-    targetDescriptor.setId(ModuleId.regular());
-    targetDescriptor.setNamespace(targetNamespace);
-    getModuleDescriptor().cloneTo(targetDescriptor, PathConverters.forDescriptorFiles(targetDescriptorFile, getDescriptorFile()));
-    SolutionDescriptorPersistence.saveSolutionDescriptor(targetDescriptorFile, targetDescriptor, MacrosFactory.forModuleFile(targetDescriptorFile));
-
-    final Solution targetSolution = new Solution(targetDescriptor, targetDescriptorFile);
-    ModelRootCloneUtil.cloneModelRootsTo(getModelRoots(), targetSolution);
-
-    //FIXME renames models here
-
-    return targetSolution;
   }
 }

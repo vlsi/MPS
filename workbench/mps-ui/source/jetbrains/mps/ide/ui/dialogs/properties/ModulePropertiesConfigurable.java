@@ -1194,15 +1194,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   private static class GenPrioritiesTableModel extends AbstractTableModel implements ItemRemovable {
-
     private final GeneratorDescriptor myModuleDescriptor;
-    private List<MappingPriorityRule> myMappingPriorityRules = new LinkedList<MappingPriorityRule>();
+    private final List<MappingPriorityRule> myMappingPriorityRules = new LinkedList<>();
 
     public GenPrioritiesTableModel(GeneratorDescriptor moduleDescriptor) {
       super();
       myModuleDescriptor = moduleDescriptor;
       for (MappingPriorityRule rule : myModuleDescriptor.getPriorityRules())
-        myMappingPriorityRules.add(rule.getCopy());
+        myMappingPriorityRules.add(rule.copy());
     }
 
     @Override

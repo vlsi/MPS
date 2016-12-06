@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,11 +15,17 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- * @see java.util.function.Supplier
- * Evgeny Gryaznov, 9/27/11
+ * Created by Radimir.Sorokin on 7/26/2016.
  */
-@FunctionalInterface
-public interface Computable<T> {
-  T compute();
+public interface ModulePathConverter {
+  /**
+   * The paths are supposed to be absolute and contain module path
+   * this an internal feature for cloning mps module, models etc.
+   * fixme move to the clone module package
+   */
+  @NotNull String source2Target(@NotNull String path);
+  @NotNull String target2Source(@NotNull String path);
 }

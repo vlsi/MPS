@@ -15,10 +15,9 @@
  */
 package jetbrains.mps.project.structure.modules;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.util.PathConverter;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -42,10 +41,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public LanguageDescriptor() {
     super();
-    myAccessoryModels = new LinkedHashSet<SModelReference>();
-    myGenerators = new ArrayList<GeneratorDescriptor>();
-    myExtendedLanguages = new LinkedHashSet<SModuleReference>();
-    myRuntimeModules = new LinkedHashSet<SModuleReference>();
+    myAccessoryModels = new LinkedHashSet<>();
+    myGenerators = new ArrayList<>();
+    myExtendedLanguages = new LinkedHashSet<>();
+    myRuntimeModules = new LinkedHashSet<>();
   }
 
   public String getGenPath() {
@@ -160,38 +159,18 @@ public class LanguageDescriptor extends ModuleDescriptor {
     if (stream.readByte() != 0x1e) throw new IOException("bad stream");
   }
 
-
-
   @Override
-  public void cloneTo(ModuleDescriptor t, PathConverter converter) {
-    assert t instanceof LanguageDescriptor;
-    LanguageDescriptor target = (LanguageDescriptor) t;
-    super.cloneTo(target, converter);
+  @NotNull
+  public LanguageDescriptor copy() {
+    LanguageDescriptor target = super.copy0(LanguageDescriptor::new);
 
+    target.setGenPath(getGenPath());
     target.setLanguageVersion(getLanguageVersion());
-    target.setGenPath(converter.sourceToDestination(getGenPath()));
-
-    target.getAccessoryModels().clear();
     target.getAccessoryModels().addAll(getAccessoryModels());
-
-    target.getRuntimeModules().clear();
-    target.getRuntimeModules().addAll(getRuntimeModules());
-
-    target.getExtendedLanguages().clear();
+    target.getGenerators().addAll(getGenerators().stream().map(GeneratorDescriptor::copy).collect(Collectors.toList()));
     target.getExtendedLanguages().addAll(getExtendedLanguages());
-
-    target.getGenerators().clear();
-    target.getGenerators().addAll(
-        getGenerators()
-            .stream()
-            .map(sourceGenerator -> {
-              GeneratorDescriptor targetGenerator = new GeneratorDescriptor();
-              targetGenerator.setGeneratorUID(target.getNamespace() + "#" + SModel.generateUniqueId());
-              sourceGenerator.cloneTo(targetGenerator, converter);
-              return targetGenerator;
-            })
-            .collect(Collectors.toList())
-    );
+    target.getRuntimeModules().addAll(getRuntimeModules());
+    return target;
   }
 
   public int getLanguageVersion() {

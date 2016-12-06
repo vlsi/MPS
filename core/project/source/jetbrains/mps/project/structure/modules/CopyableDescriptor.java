@@ -13,18 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.module;
-
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
+package jetbrains.mps.project.structure.modules;
 
 /**
- * Represents that module can be cloned.
+ * In spite of the complex signature this interface suggests all extending subclasses
+ * to look like this:
+ * <code>
+ *   public class ExampleDescriptor implements CopyableDescriptor<ExampleDescriptor> {
+ *     <members>
  *
- * @author Radimir.Sorokin
+ *     ExampleDescriptor copy() {
+ *       <implementation>
+ *     }
+ *
+ *     <members>
+ *   }
+ * </code>
+ *
+ * Created by apyshkin on 02/12/16.
  */
-public interface CloneableSModule<M extends SModule> extends SModule {
-
-  @Nullable
-  M clone(String targetRoot, String targetNamespace);
+public interface CopyableDescriptor<T extends CopyableDescriptor<?>> extends Copyable<T> {
 }

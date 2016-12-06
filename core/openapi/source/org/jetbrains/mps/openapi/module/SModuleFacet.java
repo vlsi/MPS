@@ -39,7 +39,10 @@ public interface SModuleFacet {
 
   /**
    * The owning module
+   * TODO @deprecated facet is supposed to be a simple primitive flags storage. To extend module functionality one has two more ways:
+   * TODO extend from one of the SModule subclasses or implement a custom aspect
    */
+  /*@Deprecated*/
   @NotNull
   SModule getModule();
 

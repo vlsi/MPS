@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
@@ -24,7 +25,12 @@ import org.jetbrains.mps.openapi.persistence.Memento;
  * It obviously delegates to the memento it receives on construction.
  *
  * Created by apyshkin on 22/06/16.
+ *
+ * @deprecated model root factory will pass module to the constructor of any model root
+ * @see org.jetbrains.mps.openapi.persistence.ModelRoot
  */
+@Deprecated
+@ToRemove(version = 0)
 public final class MementoWithFS implements Memento {
   @NotNull
   private final Memento myDelegate;

@@ -25,7 +25,9 @@ import java.util.Collection;
 /**
  * evgeny, 2/27/13
  */
-public class MementoStreamUtil {
+public final class MementoStreamUtil {
+  private MementoStreamUtil() {
+  }
 
   public static void writeMemento(Memento parent, Memento mem, ModelOutputStream stream) throws IOException {
     if (mem == null) {
@@ -56,7 +58,9 @@ public class MementoStreamUtil {
     if (header == 0x70) {
       return null;
     }
-    if (header != 0x55) throw new IOException("bad stream: no memento start marker");
+    if (header != 0x55) {
+      throw new IOException("bad stream: no memento start marker");
+    }
 
     Memento mem = parent != null ? parent.createChild(stream.readString()) : new MementoImpl();
 
