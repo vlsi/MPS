@@ -12,6 +12,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ConceptAspectsHelper {
   public static SNode attachNewConceptAspect(SNode conceptNode, SNode aspectNode, SModel aspectModel) {
@@ -35,5 +42,32 @@ public class ConceptAspectsHelper {
     attachNewConceptAspect(conceptNode, aspectNode, md);
     return aspectNode;
   }
+  public static ConceptPresentation getPresentationAspect(SNode n) {
+    SRepository repo = check_b9zw68_a0a0a3(check_b9zw68_a0a0a0d(n)).getRepository();
+    if (repo == null) {
+      return null;
+    }
 
+    LanguageRuntime lang = LanguageRegistry.getInstance(repo).getLanguage(SNodeOperations.getConcept(n).getLanguage());
+    return check_b9zw68_a4a3(lang.getAspect(ConceptPresentationAspect.class), n);
+  }
+
+  private static SModule check_b9zw68_a0a0a3(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static SModel check_b9zw68_a0a0a0d(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
+  private static ConceptPresentation check_b9zw68_a4a3(ConceptPresentationAspect checkedDotOperand, SNode n) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getDescriptor(SNodeOperations.getConcept(n));
+    }
+    return null;
+  }
 }

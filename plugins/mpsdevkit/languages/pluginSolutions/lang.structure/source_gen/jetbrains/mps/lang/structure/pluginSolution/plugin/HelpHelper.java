@@ -11,11 +11,8 @@ import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.smodel.LanguageAspect;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.smodel.language.LanguageRuntime;
-import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
-import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 
 public class HelpHelper {
   public static HelpHelper.HelpType getDefaultHelpFor(SModule contextModule, SModel contextModel, SNode node) {
@@ -78,17 +75,10 @@ public class HelpHelper {
     BrowserUtil.browse(getHelpURL(node));
   }
   public static String getHelpURL(SNode n) {
-    SRepository repo = check_nv0oxj_a0a0a8(check_nv0oxj_a0a0a0i(n)).getRepository();
-    if (repo == null) {
-      return null;
-    }
-
-    LanguageRuntime lang = LanguageRegistry.getInstance(repo).getLanguage(SNodeOperations.getConcept(n).getLanguage());
-    ConceptPresentation conceptPres = check_nv0oxj_a0e0i(lang.getAspect(ConceptPresentationAspect.class), n);
+    ConceptPresentation conceptPres = ConceptAspectsHelper.getPresentationAspect(n);
     if (conceptPres == null) {
       return null;
     }
-
     return conceptPres.getHelpUrl();
   }
   public enum HelpType {
@@ -103,24 +93,6 @@ public class HelpHelper {
     public String getName() {
       return this.myName;
     }
-  }
-  private static SModule check_nv0oxj_a0a0a8(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static SModel check_nv0oxj_a0a0a0i(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
-    }
-    return null;
-  }
-  private static ConceptPresentation check_nv0oxj_a0e0i(ConceptPresentationAspect checkedDotOperand, SNode n) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getDescriptor(SNodeOperations.getConcept(n));
-    }
-    return null;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
