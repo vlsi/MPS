@@ -24,7 +24,6 @@ import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Mapper;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -34,8 +33,8 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * FIXME rewrite into several classes instead of this with Object field
@@ -51,12 +50,7 @@ public class MPSPsiElement extends FakePsiElement {
   }
 
   public MPSPsiElement(List<SNode> nodes, MPSProject project) {
-    this(project, map(nodes, new Mapper<SNode, SNodeReference>() {
-      @Override
-      public SNodeReference value(SNode key) {
-        return key.getReference();
-      }
-    }), false);
+    this(project, nodes.stream().map(key -> key.getReference()).collect(Collectors.toList()), false);
   }
 
   public MPSPsiElement(SModel model, MPSProject project) {
@@ -89,12 +83,7 @@ public class MPSPsiElement extends FakePsiElement {
     if (myItem instanceof SNodeReference) {
       return ((SNodeReference) myItem).resolve(myRepository);
     } else if (myItem instanceof List) {
-      return map((List<SNodeReference>) myItem, new Mapper<SNodeReference, SNode>() {
-        @Override
-        public SNode value(SNodeReference key) {
-          return key.resolve(myRepository);
-        }
-      });
+      return ((List<SNodeReference>) myItem).stream().map(key -> key.resolve(myRepository)).collect(Collectors.toList());
     } else if (myItem instanceof SModelReference) {
       return ((SModelReference) myItem).resolve(myRepository);
     } else if (myItem instanceof SModuleReference) {
@@ -153,14 +142,6 @@ public class MPSPsiElement extends FakePsiElement {
         return new MPSPsiElement(parent, myMPSProject);
       }
     });
-  }
-
-  private static <K, V> List<V> map(List<K> list, Mapper<K, V> mapper) {
-    List<V> result = new ArrayList<V>();
-    for (K k : list) {
-      result.add(mapper.value(k));
-    }
-    return result;
   }
 
   public static MPSPsiElement createFor(Object o, MPSProject mpsProject) {
