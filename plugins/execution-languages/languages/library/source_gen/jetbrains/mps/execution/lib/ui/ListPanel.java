@@ -43,7 +43,7 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemo
  * TODO: refactor
  */
 public abstract class ListPanel<T> extends JPanel {
-  protected final Object myLock = new Object();
+  private final Object myLock = new Object();
   private final JList myListComponent;
   protected final List<T> myValues = ListSequence.fromList(new ArrayList<T>());
   protected final List<T> myCandidates = ListSequence.fromList(new ArrayList<T>());
@@ -84,7 +84,7 @@ public abstract class ListPanel<T> extends JPanel {
 
   protected abstract String getFqName(T element);
 
-  protected abstract void collectCandidates(ProgressMonitor progress);
+  protected abstract List<T> collectCandidates(ProgressMonitor progress);
 
   public void addItem(T item) {
     ListSequence.fromList(myValues).addElement(item);
@@ -120,7 +120,11 @@ public abstract class ListPanel<T> extends JPanel {
       ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
         @Override
         public void run() {
-          collectCandidates(new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
+          List<T> candidates = collectCandidates(new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()));
+          synchronized (myLock) {
+            ListSequence.fromList(myCandidates).clear();
+            ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(candidates));
+          }
         }
       }, "Searching for nodes", false, myProject);
     }

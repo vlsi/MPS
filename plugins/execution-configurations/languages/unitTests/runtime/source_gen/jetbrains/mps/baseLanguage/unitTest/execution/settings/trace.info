@@ -20,7 +20,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1163670490218:jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1170075670744:jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164991038168:jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025:jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
@@ -423,116 +422,99 @@
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/1895567659270719476">
     <file name="TestListPanel.java">
-      <node id="6062668769034854248" at="30,0,31,0" concept="7" trace="myIsTestMethods" />
-      <node id="1895567659271112922" at="34,47,35,50" concept="13" />
-      <node id="1895567659271793774" at="39,61,40,36" concept="13" />
-      <node id="1895567659271112937" at="44,56,45,37" concept="13" />
-      <node id="1895567659271608032" at="49,68,50,57" concept="12" />
-      <node id="1423104411234681944" at="50,57,51,86" concept="12" />
-      <node id="4356586461277686266" at="53,25,54,105" concept="12" />
-      <node id="4356586461277718763" at="54,105,55,92" concept="6" />
-      <node id="1895567659271608056" at="56,79,57,183" concept="12" />
-      <node id="1895567659271608072" at="57,183,58,84" concept="6" />
-      <node id="4356586461277814819" at="59,9,60,24" concept="6" />
-      <node id="1895567659271608077" at="62,7,63,0" concept="15" />
-      <node id="1895567659271608126" at="64,26,65,106" concept="12" />
-      <node id="1895567659271608144" at="68,44,69,82" concept="12" />
-      <node id="1895567659271608151" at="70,34,71,23" concept="4" />
-      <node id="1895567659271608155" at="72,13,73,108" concept="6" />
-      <node id="1895567659271608165" at="77,29,78,52" concept="6" />
-      <node id="1895567659271608171" at="78,52,79,92" concept="6" />
-      <node id="1895567659271608089" at="84,33,85,56" concept="6" />
-      <node id="1895567659271608118" at="87,56,88,32" concept="13" />
-      <node id="1895567659271608107" at="91,58,92,34" concept="13" />
-      <node id="1706452255240089002" at="101,64,102,28" concept="18" />
-      <node id="5143559811151471025" at="102,28,103,36" concept="6" />
-      <node id="5143559811151476245" at="103,36,104,76" concept="6" />
-      <node id="1895567659271608149" at="69,82,72,13" concept="10" />
-      <node id="1895567659271608114" at="87,0,90,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-      <node id="1895567659271608103" at="91,0,94,0" concept="11" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
-      <node id="1895567659271793239" at="38,0,42,0" concept="11" trace="unwrap#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1895567659271112935" at="43,0,47,0" concept="11" trace="getFqName#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
-      <node id="1895567659271608044" at="55,92,59,9" concept="9" />
-      <node id="1895567659271608162" at="76,9,80,7" concept="20" />
-      <node id="1895567659271112920" at="32,0,37,0" concept="11" trace="wrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
-      <node id="1706452255240088996" at="101,0,106,0" concept="3" trace="TestListPanel#(Lcom/intellij/openapi/project/Project;Z)V" />
-      <node id="1895567659271608139" at="67,27,74,11" concept="9" />
-      <node id="8928180329700464602" at="53,0,62,0" concept="11" trace="run#()V" />
-      <node id="8928180329700473126" at="67,0,76,0" concept="11" trace="run#()V" />
-      <node id="1895567659271608095" at="85,56,94,16" concept="6" />
-      <node id="8928180329700464600" at="51,86,62,7" concept="6" />
-      <node id="8928180329700473124" at="65,106,76,9" concept="6" />
-      <node id="1895567659271608087" at="83,27,95,11" concept="20" />
-      <node id="1423104411234692401" at="83,0,97,0" concept="11" trace="run#()V" />
-      <node id="1423104411234692399" at="81,12,97,9" concept="6" />
-      <node id="1895567659271608079" at="81,10,98,5" concept="1" />
-      <node id="1895567659271608078" at="63,0,98,5" concept="10" />
-      <node id="1895567659271608028" at="48,0,100,0" concept="11" trace="collectCandidates#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-      <scope id="1895567659271112921" at="34,47,35,50" />
-      <scope id="1895567659271793246" at="39,61,40,36" />
-      <scope id="1895567659271112936" at="44,56,45,37" />
-      <scope id="1895567659271608150" at="70,34,71,23" />
-      <scope id="1895567659271608117" at="87,56,88,32" />
-      <scope id="1895567659271608106" at="91,58,92,34" />
-      <scope id="1895567659271608047" at="56,79,58,84">
+      <node id="6062668769034854248" at="32,0,33,0" concept="7" trace="myIsTestMethods" />
+      <node id="1895567659271112922" at="36,47,37,50" concept="13" />
+      <node id="1895567659271793774" at="41,61,42,36" concept="13" />
+      <node id="1895567659271112937" at="46,56,47,37" concept="13" />
+      <node id="1423104411234681944" at="51,86,52,86" concept="12" />
+      <node id="1895567659271608032" at="54,47,55,55" concept="12" />
+      <node id="4356586461277686266" at="55,55,56,105" concept="12" />
+      <node id="4356586461277718763" at="56,105,57,92" concept="6" />
+      <node id="1895567659271608056" at="58,79,59,183" concept="12" />
+      <node id="1895567659271608072" at="59,183,60,84" concept="6" />
+      <node id="4356586461277814819" at="61,9,62,24" concept="6" />
+      <node id="1895567659271608126" at="63,30,64,104" concept="12" />
+      <node id="1895567659271608144" at="65,44,66,82" concept="12" />
+      <node id="1895567659271608151" at="67,34,68,23" concept="4" />
+      <node id="1895567659271608155" at="69,13,70,108" concept="6" />
+      <node id="3855706930656036264" at="71,11,72,29" concept="13" />
+      <node id="1895567659271608118" at="75,54,76,30" concept="13" />
+      <node id="1895567659271608107" at="79,56,80,32" concept="13" />
+      <node id="1706452255240089002" at="88,64,89,28" concept="18" />
+      <node id="5143559811151471025" at="89,28,90,36" concept="6" />
+      <node id="5143559811151476245" at="90,36,91,76" concept="6" />
+      <node id="1895567659271608149" at="66,82,69,13" concept="10" />
+      <node id="1895567659271608114" at="75,0,78,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="1895567659271608103" at="79,0,82,0" concept="11" trace="accept#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Z" />
+      <node id="1895567659271793239" at="40,0,44,0" concept="11" trace="unwrap#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1895567659271112935" at="45,0,49,0" concept="11" trace="getFqName#(Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;)Ljava/lang/String;" />
+      <node id="1895567659271608044" at="57,92,61,9" concept="9" />
+      <node id="1895567659271112920" at="34,0,39,0" concept="11" trace="wrap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/baseLanguage/unitTest/execution/client/ITestNodeWrapper;" />
+      <node id="1706452255240088996" at="88,0,93,0" concept="3" trace="TestListPanel#(Lcom/intellij/openapi/project/Project;Z)V" />
+      <node id="1895567659271608139" at="64,104,71,11" concept="9" />
+      <node id="3855706930656119730" at="73,16,82,30" concept="13" />
+      <node id="1895567659271608079" at="73,14,83,9" concept="1" />
+      <node id="1895567659271608078" at="62,24,83,9" concept="10" />
+      <node id="3855706930656188998" at="54,0,85,0" concept="11" trace="compute#()Ljava/util/List;" />
+      <node id="3855706930656158734" at="52,86,85,7" concept="13" />
+      <node id="1895567659271608028" at="50,0,87,0" concept="11" trace="collectCandidates#(Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/List;" />
+      <scope id="1895567659271112921" at="36,47,37,50" />
+      <scope id="1895567659271793246" at="41,61,42,36" />
+      <scope id="1895567659271112936" at="46,56,47,37" />
+      <scope id="1895567659271608150" at="67,34,68,23" />
+      <scope id="1895567659271608117" at="75,54,76,30" />
+      <scope id="1895567659271608106" at="79,56,80,32" />
+      <scope id="1895567659271608047" at="58,79,60,84">
         <var name="usages" id="1895567659271608057" />
       </scope>
-      <scope id="1895567659271608164" at="77,29,79,92" />
-      <scope id="1895567659271608114" at="87,0,90,0">
+      <scope id="1895567659271608114" at="75,0,78,0">
         <var name="it" id="1895567659271608114" />
       </scope>
-      <scope id="1895567659271608103" at="91,0,94,0">
+      <scope id="1895567659271608103" at="79,0,82,0">
         <var name="it" id="1895567659271608103" />
       </scope>
-      <scope id="1706452255240089000" at="101,64,104,76" />
-      <scope id="1895567659271793239" at="38,0,42,0">
+      <scope id="1706452255240089000" at="88,64,91,76" />
+      <scope id="1895567659271793239" at="40,0,44,0">
         <var name="element" id="1895567659271793240" />
       </scope>
-      <scope id="1895567659271112935" at="43,0,47,0">
+      <scope id="1895567659271112935" at="45,0,49,0">
         <var name="element" id="1895567659271112943" />
       </scope>
-      <scope id="1895567659271608044" at="55,92,59,9">
+      <scope id="1895567659271608044" at="57,92,61,9">
         <var name="c" id="1895567659271608045" />
       </scope>
-      <scope id="1895567659271112920" at="32,0,37,0">
+      <scope id="1895567659271112920" at="34,0,39,0">
         <var name="node" id="1895567659271112933" />
       </scope>
-      <scope id="1895567659271608143" at="68,44,73,108">
+      <scope id="1895567659271608143" at="65,44,70,108">
         <var name="wrapper" id="1895567659271608145" />
       </scope>
-      <scope id="1706452255240088996" at="101,0,106,0">
+      <scope id="1706452255240088996" at="88,0,93,0">
         <var name="isTestMethods" id="5143559811151470645" />
         <var name="project" id="5143559811151466873" />
       </scope>
-      <scope id="8928180329700464604" at="53,25,60,24">
-        <var name="wrappedRootConcepts" id="4356586461277686267" />
-      </scope>
-      <scope id="1895567659271608139" at="67,27,74,11">
+      <scope id="1895567659271608139" at="64,104,71,11">
         <var name="testCase" id="1895567659271608141" />
       </scope>
-      <scope id="8928180329700473128" at="67,27,74,11" />
-      <scope id="8928180329700464602" at="53,0,62,0" />
-      <scope id="8928180329700473126" at="67,0,76,0" />
-      <scope id="1895567659271608088" at="84,33,94,16" />
-      <scope id="1423104411234692403" at="83,27,95,11" />
-      <scope id="1423104411234692401" at="83,0,97,0" />
-      <scope id="1895567659271608125" at="64,26,80,7">
+      <scope id="1895567659271608125" at="63,30,72,29">
         <var name="methodsList" id="1895567659271608127" />
       </scope>
-      <scope id="1895567659271608080" at="81,12,97,9" />
-      <scope id="1895567659271608031" at="49,68,98,5">
+      <scope id="1895567659271608080" at="73,16,82,30" />
+      <scope id="3855706930656188999" at="54,47,83,9">
         <var name="nodesList" id="1895567659271608033" />
+        <var name="wrappedRootConcepts" id="4356586461277686267" />
+      </scope>
+      <scope id="3855706930656188998" at="54,0,85,0" />
+      <scope id="1895567659271608031" at="51,86,85,7">
         <var name="repo" id="1423104411234681945" />
       </scope>
-      <scope id="1895567659271608028" at="48,0,100,0">
+      <scope id="1895567659271608028" at="50,0,87,0">
         <var name="progress" id="8273686447602169236" />
       </scope>
-      <unit id="1895567659271608114" at="86,104,90,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2$1" />
-      <unit id="1895567659271608103" at="90,25,94,13" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2$2" />
-      <unit id="8928180329700464602" at="52,44,62,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1" />
-      <unit id="8928180329700473126" at="66,46,76,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$3" />
-      <unit id="1423104411234692401" at="82,46,97,7" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$2" />
-      <unit id="1895567659270719476" at="29,0,107,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" />
+      <unit id="1895567659271608114" at="74,61,78,11" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1$1" />
+      <unit id="1895567659271608103" at="78,23,82,11" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1$2" />
+      <unit id="3855706930656188998" at="53,57,85,5" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel$1" />
+      <unit id="1895567659270719476" at="31,0,94,0" name="jetbrains.mps.baseLanguage.unitTest.execution.settings.TestListPanel" />
     </file>
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/3211742604627632145">
@@ -587,7 +569,7 @@
       <node id="4875410293292998128" at="14,36,15,37" concept="12" />
       <node id="2481116735933475345" at="15,37,16,68" concept="12" />
       <node id="4875410293292986304" at="17,33,18,44" concept="13" />
-      <node id="4875410293293014898" at="20,5,21,73" concept="21" />
+      <node id="4875410293293014898" at="20,5,21,73" concept="20" />
       <node id="4875410293293031354" at="24,38,25,89" concept="13" />
       <node id="4875410293293011192" at="16,68,19,7" concept="10" />
       <node id="4875410293293027643" at="24,0,27,0" concept="11" trace="checkDir#(Ljava/io/File;)Z" />
@@ -649,7 +631,7 @@
       <node id="5740494279799530190" at="22,0,26,0" concept="3" trace="ModelTestCollector#(Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Z)V" />
       <node id="8652009603352397000" at="38,78,44,9" concept="10" />
       <node id="8652009603352308950" at="33,9,46,7" concept="9" />
-      <node id="8652009603352327995" at="32,64,49,5" concept="23" />
+      <node id="8652009603352327995" at="32,64,49,5" concept="22" />
       <node id="5740494279799528705" at="27,0,52,0" concept="11" trace="collect#()Ljava/util/List;" />
       <scope id="8652009603352348070" at="35,37,36,74" />
       <scope id="8652009603352936712" at="41,36,42,26" />
@@ -697,7 +679,7 @@
       <node id="4023783813282858811" at="39,29,42,9" concept="10" />
       <node id="5740494279799537421" at="19,0,23,0" concept="3" trace="ProjectTestCollector#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Z)V" />
       <node id="4023783813282810431" at="32,9,43,7" concept="9" />
-      <node id="4023783813282810429" at="31,0,46,5" concept="23" />
+      <node id="4023783813282810429" at="31,0,46,5" concept="22" />
       <node id="5740494279799537443" at="24,0,49,0" concept="11" trace="collect#()Ljava/util/List;" />
       <scope id="2853743909049279479" at="34,37,35,74" />
       <scope id="4023783813282858814" at="40,85,41,24" />
@@ -743,7 +725,7 @@
       <node id="5740494279799537661" at="21,0,25,0" concept="3" trace="ModuleTestCollector#(Lorg/jetbrains/mps/openapi/module/SModule;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;Z)V" />
       <node id="4023783813282660971" at="33,58,43,9" concept="10" />
       <node id="4023783813282659682" at="32,9,45,7" concept="9" />
-      <node id="4023783813282776865" at="31,120,48,5" concept="23" />
+      <node id="4023783813282776865" at="31,120,48,5" concept="22" />
       <node id="5740494279799537683" at="26,0,51,0" concept="11" trace="collect#()Ljava/util/List;" />
       <scope id="2853743909049261612" at="35,39,36,76" />
       <scope id="4023783813282878841" at="40,86,41,26" />
@@ -885,7 +867,7 @@
   </root>
   <root nodeRef="r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)/6062668769034854986">
     <file name="JUnitSettings_Configuration.java">
-      <node id="6062668769034855239" at="39,87,40,74" concept="21" />
+      <node id="6062668769034855239" at="39,87,40,74" concept="20" />
       <node id="6062668769034855248" at="41,7,42,112" concept="14" />
       <node id="6062668769034855250" at="42,112,43,72" concept="14" />
       <node id="5740494279799452455" at="43,72,44,71" concept="12" />
@@ -893,7 +875,7 @@
       <node id="5740494279801226121" at="45,35,46,34" concept="6" />
       <node id="5740494279801128787" at="47,89,48,26" concept="6" />
       <node id="6062668769034854986" at="53,76,54,57" concept="6" />
-      <node id="6062668769034854986" at="58,26,59,81" concept="21" />
+      <node id="6062668769034854986" at="58,26,59,81" concept="20" />
       <node id="6062668769034854986" at="60,5,61,83" concept="6" />
       <node id="6062668769034854986" at="63,28,64,27" concept="13" />
       <node id="6062668769034854986" at="66,29,67,28" concept="13" />
@@ -922,9 +904,9 @@
       <node id="2339934328871895885" at="135,85,136,54" concept="12" />
       <node id="7356943059533617327" at="138,31,139,53" concept="12" />
       <node id="7356943059533617333" at="139,53,140,51" concept="13" />
-      <node id="5740494279801129727" at="143,54,144,52" concept="21" />
-      <node id="4619512488957322259" at="148,97,149,153" concept="21" />
-      <node id="7129989849308545052" at="153,84,154,134" concept="21" />
+      <node id="5740494279801129727" at="143,54,144,52" concept="20" />
+      <node id="4619512488957322259" at="148,97,149,153" concept="20" />
+      <node id="7129989849308545052" at="153,84,154,134" concept="20" />
       <node id="270189043069297240" at="157,81,158,73" concept="13" />
       <node id="5740494279800864311" at="160,72,161,93" concept="12" />
       <node id="5740494279800874970" at="163,25,164,51" concept="6" />
@@ -1013,7 +995,7 @@
       <node id="6062668769034855168" at="166,32,171,24" concept="13" />
       <node id="7356943059533617316" at="136,54,142,7" concept="12" />
       <node id="6062668769034854986" at="56,0,63,0" concept="11" trace="readExternal#(Lorg/jdom/Element;)V" />
-      <node id="6062668769034854986" at="179,45,188,5" concept="22" />
+      <node id="6062668769034854986" at="179,45,188,5" concept="21" />
       <node id="6062668769034854986" at="135,0,147,0" concept="11" trace="check#(Ljetbrains/mps/project/MPSProject;)V" />
       <node id="6062668769034854986" at="37,73,50,5" concept="1" />
       <node id="6062668769034854986" at="160,0,173,0" concept="11" trace="getTestsToMake#(Ljetbrains/mps/project/MPSProject;)Ljava/util/List;" />

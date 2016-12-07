@@ -268,7 +268,7 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
    * Configure chooser. Invoke this method prior to use of the model.
    * Perhaps, need an alternative constructor that would take scope as well.
    * <p/>
-   * The choice of {@code Iterable} for scope is not a sure thing. I don't see a poing for a custom interface here; {@code Supplier<Iterable<T>>}
+   * The choice of {@code Iterable} for scope is not a sure thing. I don't see a point for a custom interface here; {@code Supplier<Iterable<T>>}
    * looks bit too much, and {@code Iterable} seems quite handy with streams.
    * @param localScope default set of elements, available without extras/global staff made available with {@linkplain #getCheckBoxName() checkbox}
    * @param globalScope extended set of elements, available on explicit request from user. {@code null} indicates same scope as local shall be used.
