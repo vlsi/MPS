@@ -90,7 +90,7 @@ public class ShowMembers_Action extends BaseAction {
       public void run() {
         SNode container = SNodeOperations.getNodeAncestor(((SNode) MapSequence.fromMap(_params).get("node")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11638b31955L, "jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
         title.value = (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")) ? ((String) BHReflection.invoke(SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))), SMethodTrimmedId.create("getPresentation", null, "hEwIMiw"))) : container.getPresentation());
-        model[0] = new MemberContainerStructureModel(container);
+        model[0] = new MemberContainerStructureModel(((MPSProject) MapSequence.fromMap(_params).get("project")), container);
       }
     });
 

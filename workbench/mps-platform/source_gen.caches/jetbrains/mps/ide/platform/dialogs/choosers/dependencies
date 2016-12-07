@@ -25,29 +25,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel" file="NodeTreeModel.java">
-    <classNode dependClassName="com.intellij.ide.DataManager" />
-    <classNode dependClassName="com.intellij.ide.structureView.StructureViewTreeElement" />
-    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Filter" />
-    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Grouper" />
-    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />
-    <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.TreeElement" />
-    <classNode dependClassName="com.intellij.navigation.ItemPresentation" />
-    <classNode dependClassName="com.intellij.openapi.actionSystem.DataContext" />
-    <classNode dependClassName="com.intellij.util.Consumer" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
-    <classNode dependClassName="jetbrains.mps.openapi.navigation.EditorNavigator" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.NodePointerPresentation" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="com.intellij.ide.util.treeView.smartTree.TreeModel" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.platform.dialogs.choosers.TreeStructureActionsOwner" file="TreeStructureActionsOwner.java">
     <classNode dependClassName="com.intellij.ide.structureView.StructureViewModel" />
     <classNode dependClassName="com.intellij.ide.util.treeView.smartTree.Sorter" />

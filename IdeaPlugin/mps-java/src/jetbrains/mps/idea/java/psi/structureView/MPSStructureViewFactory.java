@@ -47,7 +47,7 @@ public class MPSStructureViewFactory implements NodeStructureViewProvider {
   public StructureViewBuilder getStructureViewBuilder(@NotNull MPSNodeVirtualFile file, @NotNull Project project) {
     SNode node = file.getNode();
     SNode container = SNodeOperations.getNodeAncestor(node, MetaAdapterFactoryByName.getInterfaceConcept("jetbrains.mps.baseLanguage.structure.IMemberContainer"), true, false);
-    final MemberContainerStructureModel model = new MemberContainerStructureModel(container);
+    final MemberContainerStructureModel model = new MemberContainerStructureModel(ProjectHelper.fromIdeaProject(project), container);
     return new StructureViewBuilder() {
       @NotNull
       @Override
