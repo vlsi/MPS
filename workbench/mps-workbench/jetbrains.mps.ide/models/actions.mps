@@ -51,7 +51,6 @@
     <import index="tp3f" ref="r:00000000-0000-4000-0000-011c89590357(jetbrains.mps.lang.findUsages.behavior)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="9oh" ref="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)" />
-    <import index="dixw" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.pom(MPS.IDEA/)" />
     <import index="k3nr" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.ide.editor(MPS.Editor/)" />
     <import index="4f51" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.plugins.cl(MPS.IDEA/)" />
     <import index="qzxn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.datatransfer(MPS.Core/)" />
@@ -87,7 +86,6 @@
     <import index="5ueo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.style(MPS.Editor/)" />
     <import index="rhcb" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.findusages.view.optionseditor(MPS.Workbench/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
-    <import index="qwe6" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.navigation(MPS.IDEA/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="lu5d" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.projectPane.fileSystem.actions(MPS.Workbench/)" />
@@ -127,7 +125,6 @@
     <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="rvbb" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.projectPane(MPS.Workbench/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="nx22" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.goTo.navigation(MPS.Platform/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="2sud" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.treeStructure(MPS.IDEA/)" />
     <import index="bnjk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.projectView(MPS.IDEA/)" />
@@ -15074,6 +15071,7 @@
         <node concept="3cpWs8" id="4EpMpIF2t1M" role="3cqZAp">
           <node concept="3cpWsn" id="4EpMpIF2t1N" role="3cpWs9">
             <property role="TrG5h" value="mpsProject" />
+            <property role="3TUv4t" value="true" />
             <node concept="3uibUv" id="4EpMpIF2t1L" role="1tU5fm">
               <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
             </node>
@@ -15098,18 +15096,150 @@
           </node>
         </node>
         <node concept="3clFbH" id="1w2KiIHQgtW" role="3cqZAp" />
-        <node concept="3cpWs8" id="5mI2DYCrp9h" role="3cqZAp">
-          <node concept="3cpWsn" id="5mI2DYCrp9g" role="3cpWs9">
-            <property role="TrG5h" value="chooseSNodeResult" />
-            <property role="3TUv4t" value="false" />
-            <node concept="3uibUv" id="3l8GlOJ5aoS" role="1tU5fm">
-              <ref role="3uigEE" to="nx22:~RootChooseModel" resolve="RootChooseModel" />
+        <node concept="3cpWs8" id="5U5wfVL$$TJ" role="3cqZAp">
+          <node concept="3cpWsn" id="5U5wfVL$$TK" role="3cpWs9">
+            <property role="TrG5h" value="gotoData" />
+            <node concept="3uibUv" id="5U5wfVL$$TH" role="1tU5fm">
+              <ref role="3uigEE" to="yha4:~ChooseByNameData" resolve="ChooseByNameData" />
+              <node concept="3uibUv" id="5U5wfVL_Mpw" role="11_B2D">
+                <ref role="3uigEE" to="dush:~NavigationParticipant$NavigationTarget" resolve="NavigationParticipant.NavigationTarget" />
+              </node>
             </node>
-            <node concept="2ShNRf" id="3l8GlOJ514l" role="33vP2m">
-              <node concept="1pGfFk" id="3l8GlOJ5bdu" role="2ShVmc">
-                <ref role="37wK5l" to="nx22:~RootChooseModel.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="RootChooseModel" />
-                <node concept="37vLTw" id="3l8GlOJ5bdN" role="37wK5m">
-                  <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
+            <node concept="2ShNRf" id="5U5wfVL$_lR" role="33vP2m">
+              <node concept="1pGfFk" id="5U5wfVL_lS9" role="2ShVmc">
+                <ref role="37wK5l" to="yha4:~ChooseByNameData.&lt;init&gt;(jetbrains.mps.workbench.choose.ElementPresentation)" resolve="ChooseByNameData" />
+                <node concept="2ShNRf" id="5U5wfVL_lSL" role="37wK5m">
+                  <node concept="1pGfFk" id="5U5wfVL_oa9" role="2ShVmc">
+                    <ref role="37wK5l" to="yha4:~NavigationTargetPresentation.&lt;init&gt;()" resolve="NavigationTargetPresentation" />
+                  </node>
+                </node>
+                <node concept="3uibUv" id="5U5wfVL_O3w" role="1pMfVU">
+                  <ref role="3uigEE" to="dush:~NavigationParticipant$NavigationTarget" resolve="NavigationParticipant.NavigationTarget" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5U5wfVL_oRM" role="3cqZAp">
+          <node concept="2OqwBi" id="5U5wfVL_qVc" role="3clFbG">
+            <node concept="2OqwBi" id="5U5wfVL_pg8" role="2Oq$k0">
+              <node concept="37vLTw" id="5U5wfVL_oRK" role="2Oq$k0">
+                <ref role="3cqZAo" node="5U5wfVL$$TK" resolve="gotoData" />
+              </node>
+              <node concept="liA8E" id="5U5wfVL_qyo" role="2OqNvi">
+                <ref role="37wK5l" to="yha4:~ChooseByNameData.derivePrompts(java.lang.String):jetbrains.mps.workbench.choose.ChooseByNameData" resolve="derivePrompts" />
+                <node concept="Xl_RD" id="5U5wfVL_qD8" role="37wK5m">
+                  <property role="Xl_RC" value="node" />
+                </node>
+              </node>
+            </node>
+            <node concept="liA8E" id="5U5wfVL_rVK" role="2OqNvi">
+              <ref role="37wK5l" to="yha4:~ChooseByNameData.setCheckBoxName(java.lang.String):jetbrains.mps.workbench.choose.ChooseByNameData" resolve="setCheckBoxName" />
+              <node concept="Xl_RD" id="5U5wfVL_s4T" role="37wK5m">
+                <property role="Xl_RC" value="Include stub and non-project models" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5U5wfVL_vb9" role="3cqZAp">
+          <node concept="3cpWsn" id="5U5wfVL_vba" role="3cpWs9">
+            <property role="TrG5h" value="localScope" />
+            <node concept="3uibUv" id="5U5wfVL_vbb" role="1tU5fm">
+              <ref role="3uigEE" to="35tq:~ConditionalScope" resolve="ConditionalScope" />
+            </node>
+            <node concept="2ShNRf" id="5U5wfVL_vrq" role="33vP2m">
+              <node concept="1pGfFk" id="5U5wfVL_xGe" role="2ShVmc">
+                <ref role="37wK5l" to="35tq:~ConditionalScope.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope,org.jetbrains.mps.util.Condition,org.jetbrains.mps.util.Condition)" resolve="ConditionalScope" />
+                <node concept="2OqwBi" id="5U5wfVL_y8b" role="37wK5m">
+                  <node concept="37vLTw" id="5U5wfVL_xGM" role="2Oq$k0">
+                    <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
+                  </node>
+                  <node concept="liA8E" id="5U5wfVL_zmm" role="2OqNvi">
+                    <ref role="37wK5l" to="z1c3:~Project.getScope():jetbrains.mps.project.Project$ProjectScope" resolve="getScope" />
+                  </node>
+                </node>
+                <node concept="10Nm6u" id="5U5wfVL_zvX" role="37wK5m" />
+                <node concept="1bVj0M" id="5U5wfVL_zSQ" role="37wK5m">
+                  <node concept="37vLTG" id="5U5wfVL_$lj" role="1bW2Oz">
+                    <property role="TrG5h" value="m" />
+                    <node concept="3uibUv" id="5U5wfVL_$Aq" role="1tU5fm">
+                      <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="5U5wfVL_zSR" role="1bW5cS">
+                    <node concept="3clFbF" id="5U5wfVL_$7Y" role="3cqZAp">
+                      <node concept="3fqX7Q" id="5U5wfVL__su" role="3clFbG">
+                        <node concept="2YIFZM" id="5U5wfVL__sw" role="3fr31v">
+                          <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
+                          <ref role="37wK5l" to="w1kc:~SModelStereotype.isStubModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isStubModel" />
+                          <node concept="37vLTw" id="5U5wfVL__sx" role="37wK5m">
+                            <ref role="3cqZAo" node="5U5wfVL_$lj" resolve="m" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5U5wfVL_Ao2" role="3cqZAp">
+          <node concept="3cpWsn" id="5U5wfVL_Ao3" role="3cpWs9">
+            <property role="TrG5h" value="globalScope" />
+            <node concept="3uibUv" id="5U5wfVL_Ao4" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SearchScope" resolve="SearchScope" />
+            </node>
+            <node concept="2YIFZM" id="5U5wfVL_AIv" role="33vP2m">
+              <ref role="37wK5l" to="z1c3:~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolve="getInstance" />
+              <ref role="1Pybhc" to="z1c3:~GlobalScope" resolve="GlobalScope" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="5U5wfVL_Hvk" role="3cqZAp">
+          <node concept="3cpWsn" id="5U5wfVL_Hvl" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="5U5wfVL_Hvi" role="1tU5fm">
+              <ref role="3uigEE" to="lui2:~SRepository" resolve="SRepository" />
+            </node>
+            <node concept="2OqwBi" id="5U5wfVL_Hvm" role="33vP2m">
+              <node concept="37vLTw" id="5U5wfVL_Hvn" role="2Oq$k0">
+                <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
+              </node>
+              <node concept="liA8E" id="5U5wfVL_Hvo" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="5U5wfVL_sO7" role="3cqZAp">
+          <node concept="2OqwBi" id="5U5wfVL_tdA" role="3clFbG">
+            <node concept="37vLTw" id="5U5wfVL_sO5" role="2Oq$k0">
+              <ref role="3cqZAo" node="5U5wfVL$$TK" resolve="gotoData" />
+            </node>
+            <node concept="liA8E" id="5U5wfVL_tT6" role="2OqNvi">
+              <ref role="37wK5l" to="yha4:~ChooseByNameData.setScope(java.lang.Iterable,java.lang.Iterable):jetbrains.mps.workbench.choose.ChooseByNameData" resolve="setScope" />
+              <node concept="2ShNRf" id="5U5wfVL_AL_" role="37wK5m">
+                <node concept="1pGfFk" id="5U5wfVL_Dea" role="2ShVmc">
+                  <ref role="37wK5l" to="yha4:~NavigationTargetScopeIterable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope,org.jetbrains.mps.openapi.module.SRepository)" resolve="NavigationTargetScopeIterable" />
+                  <node concept="37vLTw" id="5U5wfVL_Dk6" role="37wK5m">
+                    <ref role="3cqZAo" node="5U5wfVL_vba" resolve="localScope" />
+                  </node>
+                  <node concept="37vLTw" id="5U5wfVL_IGn" role="37wK5m">
+                    <ref role="3cqZAo" node="5U5wfVL_Hvl" resolve="repo" />
+                  </node>
+                </node>
+              </node>
+              <node concept="2ShNRf" id="5U5wfVL_IRg" role="37wK5m">
+                <node concept="1pGfFk" id="5U5wfVL_LtL" role="2ShVmc">
+                  <ref role="37wK5l" to="yha4:~NavigationTargetScopeIterable.&lt;init&gt;(org.jetbrains.mps.openapi.module.SearchScope,org.jetbrains.mps.openapi.module.SRepository)" resolve="NavigationTargetScopeIterable" />
+                  <node concept="37vLTw" id="5U5wfVL_LCd" role="37wK5m">
+                    <ref role="3cqZAo" node="5U5wfVL_Ao3" resolve="globalScope" />
+                  </node>
+                  <node concept="37vLTw" id="5U5wfVL_LWv" role="37wK5m">
+                    <ref role="3cqZAo" node="5U5wfVL_Hvl" resolve="repo" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -15130,8 +15260,8 @@
                   <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                 </node>
               </node>
-              <node concept="37vLTw" id="79_fceV1Jaj" role="37wK5m">
-                <ref role="3cqZAo" node="5mI2DYCrp9g" resolve="chooseSNodeResult" />
+              <node concept="37vLTw" id="5U5wfVL_PlP" role="37wK5m">
+                <ref role="3cqZAo" node="5U5wfVL$$TK" resolve="gotoData" />
               </node>
               <node concept="2OqwBi" id="79_fceV1Jak" role="37wK5m">
                 <node concept="2WthIp" id="79_fceV1Jal" role="2Oq$k0" />
@@ -15198,23 +15328,67 @@
                       <property role="TrG5h" value="elementChosen" />
                       <property role="DiZV1" value="false" />
                       <node concept="3clFbS" id="6w88OgACey9" role="3clF47">
-                        <node concept="3clFbF" id="6w88OgACeya" role="3cqZAp">
-                          <node concept="2OqwBi" id="6w88OgACeyb" role="3clFbG">
-                            <node concept="1eOMI4" id="6w88OgACeyc" role="2Oq$k0">
-                              <node concept="10QFUN" id="6w88OgACeyd" role="1eOMHV">
-                                <node concept="37vLTw" id="2BHiRxgm6Mf" role="10QFUP">
-                                  <ref role="3cqZAo" node="6w88OgACey7" resolve="element" />
+                        <node concept="3clFbJ" id="5U5wfVL_VV9" role="3cqZAp">
+                          <node concept="3clFbS" id="5U5wfVL_VVb" role="3clFbx">
+                            <node concept="3cpWs8" id="5U5wfVL_YNA" role="3cqZAp">
+                              <node concept="3cpWsn" id="5U5wfVL_YNB" role="3cpWs9">
+                                <property role="TrG5h" value="nt" />
+                                <node concept="3uibUv" id="5U5wfVL_YN_" role="1tU5fm">
+                                  <ref role="3uigEE" to="dush:~NavigationParticipant$NavigationTarget" resolve="NavigationParticipant.NavigationTarget" />
                                 </node>
-                                <node concept="3uibUv" id="6w88OgACeyf" role="10QFUM">
-                                  <ref role="3uigEE" to="qwe6:~NavigationItem" resolve="NavigationItem" />
+                                <node concept="10QFUN" id="5U5wfVL_YNC" role="33vP2m">
+                                  <node concept="3uibUv" id="5U5wfVL_YND" role="10QFUM">
+                                    <ref role="3uigEE" to="dush:~NavigationParticipant$NavigationTarget" resolve="NavigationParticipant.NavigationTarget" />
+                                  </node>
+                                  <node concept="37vLTw" id="5U5wfVL_YNE" role="10QFUP">
+                                    <ref role="3cqZAo" node="6w88OgACey7" resolve="element" />
+                                  </node>
                                 </node>
                               </node>
                             </node>
-                            <node concept="liA8E" id="6w88OgACeyg" role="2OqNvi">
-                              <ref role="37wK5l" to="dixw:~Navigatable.navigate(boolean):void" resolve="navigate" />
-                              <node concept="3clFbT" id="6w88OgACeyh" role="37wK5m">
-                                <property role="3clFbU" value="true" />
+                            <node concept="3clFbF" id="5U5wfVL_PKb" role="3cqZAp">
+                              <node concept="2OqwBi" id="5U5wfVL_UwD" role="3clFbG">
+                                <node concept="2OqwBi" id="5U5wfVL_Tuo" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="5U5wfVL_SI8" role="2Oq$k0">
+                                    <node concept="2ShNRf" id="5U5wfVL_PK7" role="2Oq$k0">
+                                      <node concept="1pGfFk" id="5U5wfVL_Slx" role="2ShVmc">
+                                        <ref role="37wK5l" to="kz9k:~EditorNavigator.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="EditorNavigator" />
+                                        <node concept="37vLTw" id="5U5wfVL_S_y" role="37wK5m">
+                                          <ref role="3cqZAo" node="4EpMpIF2t1N" resolve="mpsProject" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="5U5wfVL_T0V" role="2OqNvi">
+                                      <ref role="37wK5l" to="kz9k:~EditorNavigator.shallFocus(boolean):jetbrains.mps.openapi.navigation.EditorNavigator" resolve="shallFocus" />
+                                      <node concept="3clFbT" id="5U5wfVL_TgO" role="37wK5m">
+                                        <property role="3clFbU" value="true" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="liA8E" id="5U5wfVL_UfB" role="2OqNvi">
+                                    <ref role="37wK5l" to="kz9k:~EditorNavigator.selectIfChild():jetbrains.mps.openapi.navigation.EditorNavigator" resolve="selectIfChild" />
+                                  </node>
+                                </node>
+                                <node concept="liA8E" id="5U5wfVL_VrY" role="2OqNvi">
+                                  <ref role="37wK5l" to="kz9k:~EditorNavigator.open(org.jetbrains.mps.openapi.model.SNodeReference):void" resolve="open" />
+                                  <node concept="2OqwBi" id="5U5wfVL_ZwB" role="37wK5m">
+                                    <node concept="37vLTw" id="5U5wfVL_YNF" role="2Oq$k0">
+                                      <ref role="3cqZAo" node="5U5wfVL_YNB" resolve="nt" />
+                                    </node>
+                                    <node concept="liA8E" id="5U5wfVL_ZYm" role="2OqNvi">
+                                      <ref role="37wK5l" to="dush:~NavigationParticipant$NavigationTarget.getNodeReference():org.jetbrains.mps.openapi.model.SNodeReference" resolve="getNodeReference" />
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
+                            </node>
+                          </node>
+                          <node concept="2ZW3vV" id="5U5wfVL_WpA" role="3clFbw">
+                            <node concept="3uibUv" id="5U5wfVL_WWc" role="2ZW6by">
+                              <ref role="3uigEE" to="dush:~NavigationParticipant$NavigationTarget" resolve="NavigationParticipant.NavigationTarget" />
+                            </node>
+                            <node concept="37vLTw" id="5U5wfVL_W7B" role="2ZW6bz">
+                              <ref role="3cqZAo" node="6w88OgACey7" resolve="element" />
                             </node>
                           </node>
                         </node>

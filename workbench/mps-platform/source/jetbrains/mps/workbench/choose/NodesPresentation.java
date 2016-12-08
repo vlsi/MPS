@@ -27,7 +27,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.function.BiConsumer;
 import java.util.function.Function;
-import java.util.stream.StreamSupport;
 
 /**
  * Tells {@link ChooseByNameData} how to represent {@linkplain org.jetbrains.mps.openapi.model.SNode nodes}
@@ -64,7 +63,7 @@ public class NodesPresentation implements ElementPresentation<SNodeReference> {
     myRepo.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        StreamSupport.stream(elements.spliterator(), false).forEach(np -> {
+        elements.forEach(np -> {
           SNode node = np.resolve(myRepo);
           if (node != null) {
             nameConsumer.accept(np, renderName(node));

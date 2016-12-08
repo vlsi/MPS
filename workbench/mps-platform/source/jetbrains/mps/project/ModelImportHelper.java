@@ -24,16 +24,19 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.scope.ConditionalScope;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Callback;
+import jetbrains.mps.util.NotCondition;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import jetbrains.mps.workbench.choose.ModelScopeIterable;
 import jetbrains.mps.workbench.choose.ModelsPresentation;
-import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.workbench.choose.NavigationTargetPresentation;
+import jetbrains.mps.workbench.choose.NavigationTargetScopeIterable;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
@@ -112,10 +115,15 @@ public class ModelImportHelper {
   }
 
   public void addImportByRoot(@NotNull SModel model, final Callback<String> importedRootCallback) {
-    final RootChooseModel goToNodeModel = new RootChooseModel(myProject);
-    goToNodeModel.setPromptText("Import model that contains root:");
+    ChooseByNameData<NavigationTarget> gotoData = new ChooseByNameData<>(new NavigationTargetPresentation());
+    gotoData.derivePrompts("node").setPrompts("Import model that contains root:", gotoData.getNotFoundMessage(), gotoData.getNotInMessage());
+    gotoData.setCheckBoxName("Include stub and non-project models");
+    ConditionalScope localScope = new ConditionalScope(myProject.getScope(), null, NotCondition.negate(SModelStereotype::isStubModel));
+    SearchScope globalScope = GlobalScope.getInstance();
+    final SRepository repo = myProject.getRepository();
+    gotoData.setScope(new NavigationTargetScopeIterable(localScope, repo), new NavigationTargetScopeIterable(globalScope, repo));
 
-    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(myProject.getProject(), goToNodeModel, myInitialText, null);
+    ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(myProject.getProject(), gotoData, myInitialText, null);
     if (myShortcut != null) {
       popup.setCheckBoxShortcut(myShortcut);
     }
@@ -124,10 +132,12 @@ public class ModelImportHelper {
       private String myRootName;
       @Override
       public void elementChosen(Object element) {
-        NavigationTarget object = goToNodeModel.getModelObject(element);
-        myRootName = object.getPresentation();
-        doImport(object.getNodeReference().getModelReference());
-        importedRootCallback.call(myRootName);
+        if (element instanceof NavigationTarget) {
+          NavigationTarget object = (NavigationTarget) element;
+          myRootName = object.getPresentation();
+          doImport(object.getNodeReference().getModelReference());
+          importedRootCallback.call(myRootName);
+        }
       }
     }, ModalityState.current(), false);
 

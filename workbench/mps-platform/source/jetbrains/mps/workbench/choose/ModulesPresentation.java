@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.function.BiConsumer;
-import java.util.stream.StreamSupport;
 
 /**
  * Knows how to represent modules for {@link ChooseByNameData}
@@ -38,13 +37,13 @@ public class ModulesPresentation implements ElementPresentation<SModuleReference
   /**
    * @param repo repository capable to resolve module references from both local and global scope of corresponding {@linkplain ChooseByNameData chooser model}
    */
-  public ModulesPresentation(@NotNull  SRepository repo) {
+  public ModulesPresentation(@NotNull SRepository repo) {
     myRepo = repo;
   }
 
   @Override
   public void names(@NotNull Iterable<SModuleReference> elements, @NotNull BiConsumer<SModuleReference, String> nameConsumer) {
-    StreamSupport.stream(elements.spliterator(), false).forEach(mr -> nameConsumer.accept(mr, mr.getModuleName()));
+    elements.forEach(mr -> nameConsumer.accept(mr, mr.getModuleName()));
   }
 
   @Override
