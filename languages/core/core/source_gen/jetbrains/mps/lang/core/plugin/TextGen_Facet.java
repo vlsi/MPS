@@ -241,6 +241,11 @@ public class TextGen_Facet extends IFacet.Stub {
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(3, TimeUnit.MINUTES);
 
+                  if (tgr == null) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Timeout while waiting for model text outcome, model skipped")));
+                    continue;
+                  }
+
                   for (TextUnit tu : tgr.getUnits()) {
                     if (tu.getState() == TextUnit.Status.Failed) {
                       monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Failed to generate text for " + tu.getFileName())));
@@ -458,6 +463,12 @@ public class TextGen_Facet extends IFacet.Stub {
                 }
                 while (modelsCount-- > 0) {
                   final TextGenResult tgr = resultQueue.poll(1, TimeUnit.MINUTES);
+
+                  if (tgr == null) {
+                    monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("Timeout while waiting for model text outcome, model skipped")));
+                    continue;
+                  }
+
                   Map<String, Object> texts = MapSequence.fromMap(new HashMap<String, Object>());
                   Map<SNodeReference, String> rootNodeToFileName = MapSequence.fromMap(new HashMap<SNodeReference, String>());
 
