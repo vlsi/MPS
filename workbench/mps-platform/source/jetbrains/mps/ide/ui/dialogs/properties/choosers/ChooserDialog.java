@@ -21,7 +21,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
@@ -89,13 +88,9 @@ final class ChooserDialog<T> extends DialogWrapper {
     }
     List<T> result = new ArrayList<T>();
     for (Object item : mySelectedElements) {
-      T v;
-      if (myData instanceof BaseMPSChooseModel) {
-        v = ((BaseMPSChooseModel<T>) myData).getModelObject(item);
-      } else {
-        v = (T) item;
-      }
-      if (v != null) {
+      if (item != null) {
+        @SuppressWarnings("unchecked")
+        T v = (T) item;
         result.add(v);
       }
     }

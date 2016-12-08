@@ -22,7 +22,6 @@ import jetbrains.mps.ide.IdeBundle;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -189,7 +188,7 @@ public final class ChooseByNameData<T> implements ChooseByNameModel {
   @NotNull
   @Override
   public String[] getSeparators() {
-    return new String[]{BaseMPSChooseModel.SEPARATOR};
+    return new String[]{"."};
   }
 
   @Nullable
