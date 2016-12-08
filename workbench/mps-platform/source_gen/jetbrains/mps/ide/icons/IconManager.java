@@ -160,7 +160,7 @@ public final class IconManager {
       return IdeIcons.GENERATOR_ICON;
     }
     if (module instanceof Language) {
-      return IdeIcons.PROJECT_LANGUAGE_ICON;
+      return IdeIcons.LANGUAGE_ICON;
     }
     if (module instanceof Solution) {
       return IdeIcons.SOLUTION_ICON;

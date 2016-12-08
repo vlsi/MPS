@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.workbench.choose;
 
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -45,6 +45,6 @@ public class LanguagesPresentation implements ElementPresentation<SLanguage> {
   @Override
   public void render(@NotNull SLanguage element, @NotNull ElementDescriptor presentation) {
     presentation.name = element.getQualifiedName();
-    presentation.icon = IdeIcons.LANGUAGE_ICON;
+    presentation.icon = MPSIcons.LanguageRuntime;
   }
 }

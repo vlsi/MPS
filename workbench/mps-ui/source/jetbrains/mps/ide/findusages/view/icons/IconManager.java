@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.icons;
 
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
@@ -65,7 +66,7 @@ public class IconManager {
       return IdeIcons.MODEL_ICON;
     }
     if (value instanceof SLanguage) {
-      return IdeIcons.LANGUAGE_ICON;
+      return MPSIcons.LanguageRuntime;
     }
     if (value instanceof SModuleReference) {
       return IdeIcons.DEFAULT_ICON;

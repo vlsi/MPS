@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree;
 
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
@@ -258,7 +259,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
 
             @Override
             public Icon getIcon() {
-              return IdeIcons.LANGUAGE_ICON;
+              return MPSIcons.LanguageRuntime;
             }
 
             @Override
