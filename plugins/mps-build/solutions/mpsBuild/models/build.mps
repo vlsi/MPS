@@ -29029,6 +29029,23 @@
             </node>
           </node>
         </node>
+        <node concept="398223" id="7NGz2TYsond" role="39821P">
+          <node concept="3_J27D" id="7NGz2TYsonf" role="Nbhlr">
+            <node concept="3Mxwew" id="7NGz2TYsonF" role="3MwsjC">
+              <property role="3MwjfP" value="terminal" />
+            </node>
+          </node>
+          <node concept="2HvfSZ" id="7NGz2TYsonH" role="39821P">
+            <node concept="55IIr" id="7NGz2TYsonI" role="2HvfZ0">
+              <node concept="2Ry0Ak" id="7NGz2TYsonO" role="iGT6I">
+                <property role="2Ry0Am" value="plugins" />
+                <node concept="2Ry0Ak" id="7NGz2TYsonT" role="2Ry0An">
+                  <property role="2Ry0Am" value="terminal" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node concept="10PD9b" id="1diLdO26mQa" role="10PD9s" />
