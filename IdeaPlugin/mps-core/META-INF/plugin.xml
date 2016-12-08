@@ -172,7 +172,6 @@
     <vetoRenameCondition implementation="jetbrains.mps.idea.core.refactoring.MPSVetoRenameCondition"/>
     <refactoring.moveHandler implementation="jetbrains.mps.idea.core.refactoring.MPSMoveHandlerDelegate"
                              order="first"/> <!-- isn't first a bit too much -->
-    <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
     <!-- FIXME: mps-editor-api.jar doesn't look good in jps classpath -->
     <!-- FIXME: added mps-platform.jar to avoid NoClassDefFound for VisibilityUtil from baseLanguage.search
     2 things should happen
