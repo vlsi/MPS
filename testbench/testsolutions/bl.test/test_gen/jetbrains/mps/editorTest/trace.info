@@ -10859,6 +10859,22 @@
       <unit id="7737741562085730774" at="11,0,28,0" name="jetbrains.mps.editorTest.TestNotApplicableConvertToTernaryOperatorIntention_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7803854675609827855">
+    <file name="DefaultEditor_DelOnChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="7803854675609827855" at="13,88,14,102" concept="3" />
+      <node id="7803854675609827855" at="14,102,15,124" concept="3" />
+      <node id="7803854675609827855" at="21,51,22,72" concept="3" />
+      <node id="7803854675610518852" at="22,72,23,69" concept="3" />
+      <node id="7803854675609827855" at="12,0,17,0" concept="6" trace="test_DefaultEditor_DelOnChild1ReplaceItWithLinkTarget#()V" />
+      <node id="7803854675609827855" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="7803854675609827855" at="13,88,15,124" />
+      <scope id="7803854675609827855" at="21,51,23,69" />
+      <scope id="7803854675609827855" at="12,0,17,0" />
+      <scope id="7803854675609827855" at="20,0,25,0" />
+      <unit id="7803854675609827855" at="18,0,26,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="7803854675609827855" at="10,0,27,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnChild1ReplaceItWithLinkTarget_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7862343484843564017">
     <file name="CreateCast_Test.java">
       <node id="7862343484843564017" at="13,50,14,102" concept="3" />
@@ -12377,6 +12393,22 @@
       <scope id="8576042073329608959" at="20,0,25,0" />
       <unit id="8576042073329608959" at="18,0,26,0" name="jetbrains.mps.editorTest.DuplicateStatement_Test$TestBody" />
       <unit id="8576042073329608959" at="10,0,27,0" name="jetbrains.mps.editorTest.DuplicateStatement_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8629363476785543551">
+    <file name="DefaultEditor_DelOnChild1DeleteParent_Test.java">
+      <node id="8629363476785543551" at="13,77,14,102" concept="3" />
+      <node id="8629363476785543551" at="14,102,15,113" concept="3" />
+      <node id="8629363476785543551" at="21,51,22,72" concept="3" />
+      <node id="8629363476785543555" at="22,72,23,69" concept="3" />
+      <node id="8629363476785543551" at="12,0,17,0" concept="6" trace="test_DefaultEditor_DelOnChild1DeleteParent#()V" />
+      <node id="8629363476785543551" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="8629363476785543551" at="13,77,15,113" />
+      <scope id="8629363476785543551" at="21,51,23,69" />
+      <scope id="8629363476785543551" at="12,0,17,0" />
+      <scope id="8629363476785543551" at="20,0,25,0" />
+      <unit id="8629363476785543551" at="18,0,26,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnChild1DeleteParent_Test$TestBody" />
+      <unit id="8629363476785543551" at="10,0,27,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnChild1DeleteParent_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8630667313531347630">

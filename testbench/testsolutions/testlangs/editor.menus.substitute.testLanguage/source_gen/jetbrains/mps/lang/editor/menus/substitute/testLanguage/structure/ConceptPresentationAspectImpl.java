@@ -13,10 +13,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TestSubstituteChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildBrother = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteChildSuper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteChildToSpecialize = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptChildToReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptToWrap = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParentToReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteSpecialChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteSpecialChildAttribute = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteSpecialParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteSpecialSubChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSubChild1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSubChild2 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteSubChildSmartReference = new ConceptPresentationBuilder().create();
@@ -36,20 +41,30 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 3:
         return props_TestSubstituteChildSuper;
       case 4:
-        return props_TestSubstituteConceptChildToReference;
+        return props_TestSubstituteChildToSpecialize;
       case 5:
-        return props_TestSubstituteConceptToWrap;
+        return props_TestSubstituteConceptChildToReference;
       case 6:
-        return props_TestSubstituteParent;
+        return props_TestSubstituteConceptToWrap;
       case 7:
-        return props_TestSubstituteParentToReference;
+        return props_TestSubstituteParent;
       case 8:
-        return props_TestSubstituteSubChild1;
+        return props_TestSubstituteParentToReference;
       case 9:
-        return props_TestSubstituteSubChild2;
+        return props_TestSubstituteSpecialChild;
       case 10:
-        return props_TestSubstituteSubChildSmartReference;
+        return props_TestSubstituteSpecialChildAttribute;
       case 11:
+        return props_TestSubstituteSpecialParent;
+      case 12:
+        return props_TestSubstituteSpecialSubChild;
+      case 13:
+        return props_TestSubstituteSubChild1;
+      case 14:
+        return props_TestSubstituteSubChild2;
+      case 15:
+        return props_TestSubstituteSubChildSmartReference;
+      case 16:
         return props_TestSubstituteSubConceptToWrap;
     }
     throw new IllegalStateException("Unknown concept " + c);

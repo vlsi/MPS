@@ -90,7 +90,19 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildSpecialContainer_BehaviorDescriptor" file="DelTestChildSpecialContainer_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.DelTestRoot_BehaviorDescriptor" file="DelTestRoot_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialAbstractChild_BehaviorDescriptor" file="DelTestSpecialAbstractChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialChild1_BehaviorDescriptor" file="DelTestSpecialChild1_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

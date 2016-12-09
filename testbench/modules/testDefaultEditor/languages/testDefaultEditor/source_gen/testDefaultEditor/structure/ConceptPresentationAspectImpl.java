@@ -9,9 +9,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_AbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractDeveloper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Canvas = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Company = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Container = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultNodeAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultPropertyAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultReferenceAttribute = new ConceptPresentationBuilder().create();
@@ -19,6 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DummyMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Friend = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotSubstitutableDeveloper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Team = new ConceptPresentationBuilder().create();
 
@@ -28,28 +32,36 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
       case 0:
-        return props_AbstractDeveloper;
+        return props_AbstractChild;
       case 1:
-        return props_Canvas;
+        return props_AbstractDeveloper;
       case 2:
-        return props_Company;
+        return props_Canvas;
       case 3:
-        return props_DefaultNodeAttribute;
+        return props_Company;
       case 4:
-        return props_DefaultPropertyAttribute;
+        return props_ConcreteChild;
       case 5:
-        return props_DefaultReferenceAttribute;
+        return props_Container;
       case 6:
-        return props_Developer;
+        return props_DefaultNodeAttribute;
       case 7:
-        return props_DummyMethod;
+        return props_DefaultPropertyAttribute;
       case 8:
-        return props_Friend;
+        return props_DefaultReferenceAttribute;
       case 9:
-        return props_NotSubstitutableDeveloper;
+        return props_Developer;
       case 10:
-        return props_Shape;
+        return props_DummyMethod;
       case 11:
+        return props_Friend;
+      case 12:
+        return props_NotSubstitutableDeveloper;
+      case 13:
+        return props_Parent;
+      case 14:
+        return props_Shape;
+      case 15:
         return props_Team;
     }
     throw new IllegalStateException("Unknown concept " + c);

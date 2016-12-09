@@ -60,8 +60,17 @@
     <file name="DelTestChildContainer_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildContainer_BehaviorDescriptor" />
     </file>
+    <file name="DelTestChildSpecialContainer_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildSpecialContainer_BehaviorDescriptor" />
+    </file>
     <file name="DelTestRoot_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestRoot_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestSpecialAbstractChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialAbstractChild_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestSpecialChild1_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialChild1_BehaviorDescriptor" />
     </file>
     <file name="FoldingContainer_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.FoldingContainer_BehaviorDescriptor" />

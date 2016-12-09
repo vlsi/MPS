@@ -2341,5 +2341,94 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="4EQk8IqQDms">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:4EQk8IqQDme" resolve="DelTestChildSpecialContainer" />
+    <node concept="3EZMnI" id="4EQk8IqQDmu" role="2wV5jI">
+      <node concept="l2Vlx" id="4EQk8IqQDmv" role="2iSdaV" />
+      <node concept="3F0ifn" id="4EQk8IqQDmw" role="3EZMnx">
+        <property role="3F0ifm" value="del test child special container" />
+      </node>
+      <node concept="3F0ifn" id="4EQk8IqQDmx" role="3EZMnx">
+        <property role="3F0ifm" value="{" />
+        <node concept="3mYdg7" id="4EQk8IqQDmy" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="ljvvj" id="4EQk8IqQDmz" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="4EQk8IqQDm$" role="3EZMnx">
+        <node concept="l2Vlx" id="4EQk8IqQDm_" role="2iSdaV" />
+        <node concept="lj46D" id="4EQk8IqQDmA" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="3F0ifn" id="4EQk8IqQDmB" role="3EZMnx">
+          <property role="3F0ifm" value="spacial child" />
+        </node>
+        <node concept="3F0ifn" id="4EQk8IqQDmC" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="4EQk8IqQDmD" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="4EQk8IqQDmE" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="4EQk8IqQDmF" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:4EQk8IqQDmf" resolve="specialChild" />
+          <node concept="lj46D" id="4EQk8IqQDmG" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="4EQk8IqQDmH" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="4EQk8IqQDmI" role="3EZMnx">
+        <property role="3F0ifm" value="}" />
+        <node concept="3mYdg7" id="4EQk8IqQDmJ" role="3F10Kt">
+          <property role="1413C4" value="body-brace" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="4EQk8IqQF6a">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:4EQk8IqQDmd" resolve="DelTestSpecialAbstractChild" />
+    <node concept="3F0ifn" id="4EQk8IqQF6c" role="2wV5jI">
+      <property role="3F0ifm" value="special abstract child" />
+    </node>
+  </node>
+  <node concept="24kQdi" id="4EQk8IqQNvq">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:4EQk8IqQNv7" resolve="DelTestSpecialChild1" />
+    <node concept="3EZMnI" id="4EQk8IqQNvs" role="2wV5jI">
+      <node concept="l2Vlx" id="4EQk8IqQNvt" role="2iSdaV" />
+      <node concept="3F0ifn" id="4EQk8IqQNvu" role="3EZMnx">
+        <property role="3F0ifm" value="del test special child1" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7v1E5Mvy5fV">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:6LcR7Gqxci0" resolve="DelTestChild1" />
+    <node concept="3EZMnI" id="7v1E5Mvy5fX" role="2wV5jI">
+      <node concept="l2Vlx" id="7v1E5Mvy5fY" role="2iSdaV" />
+      <node concept="3F0ifn" id="7v1E5Mvy5fZ" role="3EZMnx">
+        <property role="3F0ifm" value="del test child1" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="7v1E5Mvy5gT">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:6LcR7Gqxch7" resolve="DelTestAbstractChild" />
+    <node concept="3EZMnI" id="7v1E5Mvy5gV" role="2wV5jI">
+      <node concept="l2Vlx" id="7v1E5Mvy5gW" role="2iSdaV" />
+      <node concept="3F0ifn" id="7v1E5Mvy5gX" role="3EZMnx">
+        <property role="3F0ifm" value="del test abstract child" />
+      </node>
+    </node>
+  </node>
 </model>
 

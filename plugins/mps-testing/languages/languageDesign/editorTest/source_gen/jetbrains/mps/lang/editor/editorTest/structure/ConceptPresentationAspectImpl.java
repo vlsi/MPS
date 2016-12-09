@@ -24,7 +24,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DelTestAbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DelTestChild1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DelTestChildContainer = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DelTestChildSpecialContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DelTestRoot = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DelTestSpecialAbstractChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DelTestSpecialChild1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FoldingContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IBaseTestBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitAbstractChild = new ConceptPresentationBuilder().create();
@@ -100,82 +103,88 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 14:
         return props_DelTestChildContainer;
       case 15:
-        return props_DelTestRoot;
+        return props_DelTestChildSpecialContainer;
       case 16:
-        return props_FoldingContainer;
+        return props_DelTestRoot;
       case 17:
-        return props_IBaseTestBlock;
+        return props_DelTestSpecialAbstractChild;
       case 18:
-        return props_InitAbstractChild;
+        return props_DelTestSpecialChild1;
       case 19:
-        return props_InitChildWithDirectCycle_card1;
+        return props_FoldingContainer;
       case 20:
-        return props_InitChildWithDirectCycle_card1n;
+        return props_IBaseTestBlock;
       case 21:
-        return props_InitChildWithIndirectCycle_card1;
+        return props_InitAbstractChild;
       case 22:
-        return props_InitChildWithIndirectCycle_card1n;
+        return props_InitChildWithDirectCycle_card1;
       case 23:
-        return props_InitChildWithTwoSameConceptChildren;
+        return props_InitChildWithDirectCycle_card1n;
       case 24:
-        return props_InitContainer;
+        return props_InitChildWithIndirectCycle_card1;
       case 25:
-        return props_InitGrandChild;
+        return props_InitChildWithIndirectCycle_card1n;
       case 26:
-        return props_InitGrandChildWithIndirectCycle_card1;
+        return props_InitChildWithTwoSameConceptChildren;
       case 27:
-        return props_InitGrandChildWithIndirectCycle_card1n;
+        return props_InitContainer;
       case 28:
-        return props_InspectorBlock;
+        return props_InitGrandChild;
       case 29:
-        return props_IntegerLiteral;
+        return props_InitGrandChildWithIndirectCycle_card1;
       case 30:
-        return props_NonEmptyProperty;
+        return props_InitGrandChildWithIndirectCycle_card1n;
       case 31:
-        return props_NotEditableVaraileReference;
+        return props_InspectorBlock;
       case 32:
-        return props_PlusExpression;
+        return props_IntegerLiteral;
       case 33:
-        return props_ReferenceAnnotataion;
+        return props_NonEmptyProperty;
       case 34:
-        return props_SelectionChild;
+        return props_NotEditableVaraileReference;
       case 35:
-        return props_SelectionContainer;
+        return props_PlusExpression;
       case 36:
-        return props_SideTranformWrapper;
+        return props_ReferenceAnnotataion;
       case 37:
-        return props_SimpleNode;
+        return props_SelectionChild;
       case 38:
-        return props_SimpleNodeHidingAttribute;
+        return props_SelectionContainer;
       case 39:
-        return props_SimpleNodesContainer;
+        return props_SideTranformWrapper;
       case 40:
-        return props_SimplePropertyAttribute;
+        return props_SimpleNode;
       case 41:
-        return props_SimplePropertyContainer;
+        return props_SimpleNodeHidingAttribute;
       case 42:
-        return props_StubBlock;
+        return props_SimpleNodesContainer;
       case 43:
-        return props_StyleChild;
+        return props_SimplePropertyAttribute;
       case 44:
-        return props_StyleParent;
+        return props_SimplePropertyContainer;
       case 45:
-        return props_SubstMiddlewareChild;
+        return props_StubBlock;
       case 46:
-        return props_SubstTestAbstractChild;
+        return props_StyleChild;
       case 47:
-        return props_SubstTestBooleanPropertyChild;
+        return props_StyleParent;
       case 48:
-        return props_SubstTestEnumPropertyChild;
+        return props_SubstMiddlewareChild;
       case 49:
-        return props_SubstTestRoot;
+        return props_SubstTestAbstractChild;
       case 50:
-        return props_TestBlockList;
+        return props_SubstTestBooleanPropertyChild;
       case 51:
-        return props_VariableDeclarationBlock;
+        return props_SubstTestEnumPropertyChild;
       case 52:
-        return props_VariableDeclarationReference;
+        return props_SubstTestRoot;
       case 53:
+        return props_TestBlockList;
+      case 54:
+        return props_VariableDeclarationBlock;
+      case 55:
+        return props_VariableDeclarationReference;
+      case 56:
         return props_VerticalLayoutBlockList;
     }
     throw new IllegalStateException("Unknown concept " + c);

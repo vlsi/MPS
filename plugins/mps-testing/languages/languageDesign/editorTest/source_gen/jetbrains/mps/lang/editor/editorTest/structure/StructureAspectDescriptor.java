@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
-  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(54);
+  private final Map<SConceptId, Integer> myIndexMap = new HashMap<SConceptId, Integer>(57);
   /*package*/ final ConceptDescriptor myConceptAttractsFocusBlock = createDescriptorForAttractsFocusBlock();
   /*package*/ final ConceptDescriptor myConceptAttributeChild = createDescriptorForAttributeChild();
   /*package*/ final ConceptDescriptor myConceptAttributeWithChildren = createDescriptorForAttributeWithChildren();
@@ -34,7 +34,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDelTestAbstractChild = createDescriptorForDelTestAbstractChild();
   /*package*/ final ConceptDescriptor myConceptDelTestChild1 = createDescriptorForDelTestChild1();
   /*package*/ final ConceptDescriptor myConceptDelTestChildContainer = createDescriptorForDelTestChildContainer();
+  /*package*/ final ConceptDescriptor myConceptDelTestChildSpecialContainer = createDescriptorForDelTestChildSpecialContainer();
   /*package*/ final ConceptDescriptor myConceptDelTestRoot = createDescriptorForDelTestRoot();
+  /*package*/ final ConceptDescriptor myConceptDelTestSpecialAbstractChild = createDescriptorForDelTestSpecialAbstractChild();
+  /*package*/ final ConceptDescriptor myConceptDelTestSpecialChild1 = createDescriptorForDelTestSpecialChild1();
   /*package*/ final ConceptDescriptor myConceptFoldingContainer = createDescriptorForFoldingContainer();
   /*package*/ final ConceptDescriptor myConceptIBaseTestBlock = createDescriptorForIBaseTestBlock();
   /*package*/ final ConceptDescriptor myConceptInitAbstractChild = createDescriptorForInitAbstractChild();
@@ -90,50 +93,53 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     myIndexMap.put(myConceptDelTestAbstractChild.getId(), 12);
     myIndexMap.put(myConceptDelTestChild1.getId(), 13);
     myIndexMap.put(myConceptDelTestChildContainer.getId(), 14);
-    myIndexMap.put(myConceptDelTestRoot.getId(), 15);
-    myIndexMap.put(myConceptFoldingContainer.getId(), 16);
-    myIndexMap.put(myConceptIBaseTestBlock.getId(), 17);
-    myIndexMap.put(myConceptInitAbstractChild.getId(), 18);
-    myIndexMap.put(myConceptInitChildWithDirectCycle_card1.getId(), 19);
-    myIndexMap.put(myConceptInitChildWithDirectCycle_card1n.getId(), 20);
-    myIndexMap.put(myConceptInitChildWithIndirectCycle_card1.getId(), 21);
-    myIndexMap.put(myConceptInitChildWithIndirectCycle_card1n.getId(), 22);
-    myIndexMap.put(myConceptInitChildWithTwoSameConceptChildren.getId(), 23);
-    myIndexMap.put(myConceptInitContainer.getId(), 24);
-    myIndexMap.put(myConceptInitGrandChild.getId(), 25);
-    myIndexMap.put(myConceptInitGrandChildWithIndirectCycle_card1.getId(), 26);
-    myIndexMap.put(myConceptInitGrandChildWithIndirectCycle_card1n.getId(), 27);
-    myIndexMap.put(myConceptInspectorBlock.getId(), 28);
-    myIndexMap.put(myConceptIntegerLiteral.getId(), 29);
-    myIndexMap.put(myConceptNonEmptyProperty.getId(), 30);
-    myIndexMap.put(myConceptNotEditableVaraileReference.getId(), 31);
-    myIndexMap.put(myConceptPlusExpression.getId(), 32);
-    myIndexMap.put(myConceptReferenceAnnotataion.getId(), 33);
-    myIndexMap.put(myConceptSelectionChild.getId(), 34);
-    myIndexMap.put(myConceptSelectionContainer.getId(), 35);
-    myIndexMap.put(myConceptSideTranformWrapper.getId(), 36);
-    myIndexMap.put(myConceptSimpleNode.getId(), 37);
-    myIndexMap.put(myConceptSimpleNodeHidingAttribute.getId(), 38);
-    myIndexMap.put(myConceptSimpleNodesContainer.getId(), 39);
-    myIndexMap.put(myConceptSimplePropertyAttribute.getId(), 40);
-    myIndexMap.put(myConceptSimplePropertyContainer.getId(), 41);
-    myIndexMap.put(myConceptStubBlock.getId(), 42);
-    myIndexMap.put(myConceptStyleChild.getId(), 43);
-    myIndexMap.put(myConceptStyleParent.getId(), 44);
-    myIndexMap.put(myConceptSubstMiddlewareChild.getId(), 45);
-    myIndexMap.put(myConceptSubstTestAbstractChild.getId(), 46);
-    myIndexMap.put(myConceptSubstTestBooleanPropertyChild.getId(), 47);
-    myIndexMap.put(myConceptSubstTestEnumPropertyChild.getId(), 48);
-    myIndexMap.put(myConceptSubstTestRoot.getId(), 49);
-    myIndexMap.put(myConceptTestBlockList.getId(), 50);
-    myIndexMap.put(myConceptVariableDeclarationBlock.getId(), 51);
-    myIndexMap.put(myConceptVariableDeclarationReference.getId(), 52);
-    myIndexMap.put(myConceptVerticalLayoutBlockList.getId(), 53);
+    myIndexMap.put(myConceptDelTestChildSpecialContainer.getId(), 15);
+    myIndexMap.put(myConceptDelTestRoot.getId(), 16);
+    myIndexMap.put(myConceptDelTestSpecialAbstractChild.getId(), 17);
+    myIndexMap.put(myConceptDelTestSpecialChild1.getId(), 18);
+    myIndexMap.put(myConceptFoldingContainer.getId(), 19);
+    myIndexMap.put(myConceptIBaseTestBlock.getId(), 20);
+    myIndexMap.put(myConceptInitAbstractChild.getId(), 21);
+    myIndexMap.put(myConceptInitChildWithDirectCycle_card1.getId(), 22);
+    myIndexMap.put(myConceptInitChildWithDirectCycle_card1n.getId(), 23);
+    myIndexMap.put(myConceptInitChildWithIndirectCycle_card1.getId(), 24);
+    myIndexMap.put(myConceptInitChildWithIndirectCycle_card1n.getId(), 25);
+    myIndexMap.put(myConceptInitChildWithTwoSameConceptChildren.getId(), 26);
+    myIndexMap.put(myConceptInitContainer.getId(), 27);
+    myIndexMap.put(myConceptInitGrandChild.getId(), 28);
+    myIndexMap.put(myConceptInitGrandChildWithIndirectCycle_card1.getId(), 29);
+    myIndexMap.put(myConceptInitGrandChildWithIndirectCycle_card1n.getId(), 30);
+    myIndexMap.put(myConceptInspectorBlock.getId(), 31);
+    myIndexMap.put(myConceptIntegerLiteral.getId(), 32);
+    myIndexMap.put(myConceptNonEmptyProperty.getId(), 33);
+    myIndexMap.put(myConceptNotEditableVaraileReference.getId(), 34);
+    myIndexMap.put(myConceptPlusExpression.getId(), 35);
+    myIndexMap.put(myConceptReferenceAnnotataion.getId(), 36);
+    myIndexMap.put(myConceptSelectionChild.getId(), 37);
+    myIndexMap.put(myConceptSelectionContainer.getId(), 38);
+    myIndexMap.put(myConceptSideTranformWrapper.getId(), 39);
+    myIndexMap.put(myConceptSimpleNode.getId(), 40);
+    myIndexMap.put(myConceptSimpleNodeHidingAttribute.getId(), 41);
+    myIndexMap.put(myConceptSimpleNodesContainer.getId(), 42);
+    myIndexMap.put(myConceptSimplePropertyAttribute.getId(), 43);
+    myIndexMap.put(myConceptSimplePropertyContainer.getId(), 44);
+    myIndexMap.put(myConceptStubBlock.getId(), 45);
+    myIndexMap.put(myConceptStyleChild.getId(), 46);
+    myIndexMap.put(myConceptStyleParent.getId(), 47);
+    myIndexMap.put(myConceptSubstMiddlewareChild.getId(), 48);
+    myIndexMap.put(myConceptSubstTestAbstractChild.getId(), 49);
+    myIndexMap.put(myConceptSubstTestBooleanPropertyChild.getId(), 50);
+    myIndexMap.put(myConceptSubstTestEnumPropertyChild.getId(), 51);
+    myIndexMap.put(myConceptSubstTestRoot.getId(), 52);
+    myIndexMap.put(myConceptTestBlockList.getId(), 53);
+    myIndexMap.put(myConceptVariableDeclarationBlock.getId(), 54);
+    myIndexMap.put(myConceptVariableDeclarationReference.getId(), 55);
+    myIndexMap.put(myConceptVerticalLayoutBlockList.getId(), 56);
   }
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestRoot, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
+    return Arrays.asList(myConceptAttractsFocusBlock, myConceptAttributeChild, myConceptAttributeWithChildren, myConceptAttributedConcept, myConceptBinaryExpression, myConceptBracesBlock, myConceptBracesStubBlock, myConceptClassReference, myConceptCollapsedByDefault, myConceptCollapsedConditionally, myConceptCollapsibleConcept, myConceptComposition, myConceptDelTestAbstractChild, myConceptDelTestChild1, myConceptDelTestChildContainer, myConceptDelTestChildSpecialContainer, myConceptDelTestRoot, myConceptDelTestSpecialAbstractChild, myConceptDelTestSpecialChild1, myConceptFoldingContainer, myConceptIBaseTestBlock, myConceptInitAbstractChild, myConceptInitChildWithDirectCycle_card1, myConceptInitChildWithDirectCycle_card1n, myConceptInitChildWithIndirectCycle_card1, myConceptInitChildWithIndirectCycle_card1n, myConceptInitChildWithTwoSameConceptChildren, myConceptInitContainer, myConceptInitGrandChild, myConceptInitGrandChildWithIndirectCycle_card1, myConceptInitGrandChildWithIndirectCycle_card1n, myConceptInspectorBlock, myConceptIntegerLiteral, myConceptNonEmptyProperty, myConceptNotEditableVaraileReference, myConceptPlusExpression, myConceptReferenceAnnotataion, myConceptSelectionChild, myConceptSelectionContainer, myConceptSideTranformWrapper, myConceptSimpleNode, myConceptSimpleNodeHidingAttribute, myConceptSimpleNodesContainer, myConceptSimplePropertyAttribute, myConceptSimplePropertyContainer, myConceptStubBlock, myConceptStyleChild, myConceptStyleParent, myConceptSubstMiddlewareChild, myConceptSubstTestAbstractChild, myConceptSubstTestBooleanPropertyChild, myConceptSubstTestEnumPropertyChild, myConceptSubstTestRoot, myConceptTestBlockList, myConceptVariableDeclarationBlock, myConceptVariableDeclarationReference, myConceptVerticalLayoutBlockList);
   }
 
   @Override
@@ -175,82 +181,88 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
       case 14:
         return myConceptDelTestChildContainer;
       case 15:
-        return myConceptDelTestRoot;
+        return myConceptDelTestChildSpecialContainer;
       case 16:
-        return myConceptFoldingContainer;
+        return myConceptDelTestRoot;
       case 17:
-        return myConceptIBaseTestBlock;
+        return myConceptDelTestSpecialAbstractChild;
       case 18:
-        return myConceptInitAbstractChild;
+        return myConceptDelTestSpecialChild1;
       case 19:
-        return myConceptInitChildWithDirectCycle_card1;
+        return myConceptFoldingContainer;
       case 20:
-        return myConceptInitChildWithDirectCycle_card1n;
+        return myConceptIBaseTestBlock;
       case 21:
-        return myConceptInitChildWithIndirectCycle_card1;
+        return myConceptInitAbstractChild;
       case 22:
-        return myConceptInitChildWithIndirectCycle_card1n;
+        return myConceptInitChildWithDirectCycle_card1;
       case 23:
-        return myConceptInitChildWithTwoSameConceptChildren;
+        return myConceptInitChildWithDirectCycle_card1n;
       case 24:
-        return myConceptInitContainer;
+        return myConceptInitChildWithIndirectCycle_card1;
       case 25:
-        return myConceptInitGrandChild;
+        return myConceptInitChildWithIndirectCycle_card1n;
       case 26:
-        return myConceptInitGrandChildWithIndirectCycle_card1;
+        return myConceptInitChildWithTwoSameConceptChildren;
       case 27:
-        return myConceptInitGrandChildWithIndirectCycle_card1n;
+        return myConceptInitContainer;
       case 28:
-        return myConceptInspectorBlock;
+        return myConceptInitGrandChild;
       case 29:
-        return myConceptIntegerLiteral;
+        return myConceptInitGrandChildWithIndirectCycle_card1;
       case 30:
-        return myConceptNonEmptyProperty;
+        return myConceptInitGrandChildWithIndirectCycle_card1n;
       case 31:
-        return myConceptNotEditableVaraileReference;
+        return myConceptInspectorBlock;
       case 32:
-        return myConceptPlusExpression;
+        return myConceptIntegerLiteral;
       case 33:
-        return myConceptReferenceAnnotataion;
+        return myConceptNonEmptyProperty;
       case 34:
-        return myConceptSelectionChild;
+        return myConceptNotEditableVaraileReference;
       case 35:
-        return myConceptSelectionContainer;
+        return myConceptPlusExpression;
       case 36:
-        return myConceptSideTranformWrapper;
+        return myConceptReferenceAnnotataion;
       case 37:
-        return myConceptSimpleNode;
+        return myConceptSelectionChild;
       case 38:
-        return myConceptSimpleNodeHidingAttribute;
+        return myConceptSelectionContainer;
       case 39:
-        return myConceptSimpleNodesContainer;
+        return myConceptSideTranformWrapper;
       case 40:
-        return myConceptSimplePropertyAttribute;
+        return myConceptSimpleNode;
       case 41:
-        return myConceptSimplePropertyContainer;
+        return myConceptSimpleNodeHidingAttribute;
       case 42:
-        return myConceptStubBlock;
+        return myConceptSimpleNodesContainer;
       case 43:
-        return myConceptStyleChild;
+        return myConceptSimplePropertyAttribute;
       case 44:
-        return myConceptStyleParent;
+        return myConceptSimplePropertyContainer;
       case 45:
-        return myConceptSubstMiddlewareChild;
+        return myConceptStubBlock;
       case 46:
-        return myConceptSubstTestAbstractChild;
+        return myConceptStyleChild;
       case 47:
-        return myConceptSubstTestBooleanPropertyChild;
+        return myConceptStyleParent;
       case 48:
-        return myConceptSubstTestEnumPropertyChild;
+        return myConceptSubstMiddlewareChild;
       case 49:
-        return myConceptSubstTestRoot;
+        return myConceptSubstTestAbstractChild;
       case 50:
-        return myConceptTestBlockList;
+        return myConceptSubstTestBooleanPropertyChild;
       case 51:
-        return myConceptVariableDeclarationBlock;
+        return myConceptSubstTestEnumPropertyChild;
       case 52:
-        return myConceptVariableDeclarationReference;
+        return myConceptSubstTestRoot;
       case 53:
+        return myConceptTestBlockList;
+      case 54:
+        return myConceptVariableDeclarationBlock;
+      case 55:
+        return myConceptVariableDeclarationReference;
+      case 56:
         return myConceptVerticalLayoutBlockList;
       default:
         throw new IllegalStateException();
@@ -312,8 +324,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForDelTestChildContainer() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6c4cdc7b1a84c4f3L, "child", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L), false, false, false, new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "7803854675610223859"))).children(new String[]{"child"}, new boolean[]{false}).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "7803854675610223138")).create();
   }
+  private static ConceptDescriptor createDescriptorForDelTestChildSpecialContainer() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestChildSpecialContainer", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958eL)).super_("jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer").version(1).super_(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L)).parents("jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer").parentIds(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L)).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "5383578965096699278")).create();
+  }
   private static ConceptDescriptor createDescriptorForDelTestRoot() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestRoot", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a8839faL)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).childDescriptors(new ConceptDescriptorBuilder.Link(0x6c4cdc7b1a883a36L, "container", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L), true, false, false, new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "7803854675610450486"))).children(new String[]{"container"}, new boolean[]{false}).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "7803854675610450426")).create();
+  }
+  private static ConceptDescriptor createDescriptorForDelTestSpecialAbstractChild() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958dL)).super_("jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild").version(1).super_(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L)).parents("jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild").parentIds(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L)).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "5383578965096699277")).create();
+  }
+  private static ConceptDescriptor createDescriptorForDelTestSpecialChild1() {
+    return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialChild1", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9adb37c7L)).super_("jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild").version(1).super_(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958dL)).parents("jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild").parentIds(MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958dL)).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "5383578965096740807")).create();
   }
   private static ConceptDescriptor createDescriptorForFoldingContainer() {
     return new ConceptDescriptorBuilder("jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L)).super_("jetbrains.mps.lang.core.structure.BaseConcept").version(1).super_(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).parents("jetbrains.mps.lang.core.structure.BaseConcept").parentIds(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL)).propertyDescriptors(new ConceptDescriptorBuilder.Prop(0xc06e5dab971f717L, "collapsed", new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "866632705892284183"))).properties("collapsed").childDescriptors(new ConceptDescriptorBuilder.Link(0x569b712fbc6572f1L, "collapsedByDefault", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L), true, false, false, new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "6240706158490120945")), new ConceptDescriptorBuilder.Link(0xc06e5dab9716356L, "collapsedConditionally", MetaIdFactory.conceptId(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L), true, false, false, new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "866632705892246358"))).children(new String[]{"collapsedByDefault", "collapsedConditionally"}, new boolean[]{false, false}).sourceNode(new SNodePointer("r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)", "6240706158490120944")).create();
