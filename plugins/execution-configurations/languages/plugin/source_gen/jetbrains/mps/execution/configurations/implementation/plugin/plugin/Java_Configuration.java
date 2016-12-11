@@ -28,6 +28,10 @@ import com.intellij.util.xmlb.XmlSerializer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.execution.actions.ConfigurationContext;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.util.Objects;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +44,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -120,6 +123,14 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   }
   public JavaRunParameters_Configuration getRunParameters() {
     return myRunParameters;
+  }
+  public boolean isFromContext(@NotNull ConfigurationContext context) {
+    if (context.getPsiLocation() instanceof MPSPsiElement) {
+      MPSPsiElement mpsElement = (MPSPsiElement) context.getPsiLocation();
+      SNodeReference unresolvedItem = mpsElement.getUnresolvedItem(SNodeReference.class);
+      return Objects.equals(unresolvedItem, this.getNode().getNodePointer());
+    }
+    return false;
   }
   @Override
   public Java_Configuration clone() {

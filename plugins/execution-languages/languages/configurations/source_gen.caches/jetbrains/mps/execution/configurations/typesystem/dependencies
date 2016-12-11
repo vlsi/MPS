@@ -18,7 +18,9 @@
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.check_StartProcessHandlerStatement_NonTypesystemRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_BeforeTaskCall_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_ConfigurationFromExecutorReference_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_Configuration_Parameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_ConsoleCreator_InferenceRule" />
+    <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_ContextConfiguration_Parameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_ContextExpression_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_DebuggerSettings_Parameter_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.typesystem.typeof_EnvironmentExpression_InferenceRule" />
@@ -98,8 +100,33 @@
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.typesystem.typeof_Configuration_Parameter_InferenceRule" file="typeof_Configuration_Parameter_InferenceRule.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
   <dependency className="jetbrains.mps.execution.configurations.typesystem.typeof_ConsoleCreator_InferenceRule" file="typeof_ConsoleCreator_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
+  </dependency>
+  <dependency className="jetbrains.mps.execution.configurations.typesystem.typeof_ContextConfiguration_Parameter_InferenceRule" file="typeof_ContextConfiguration_Parameter_InferenceRule.java">
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />

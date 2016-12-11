@@ -15,8 +15,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BeforeTaskParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BeforeTaskParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConfigurationFromExecutorReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Configuration_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ContextConfiguration_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Create_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DebuggerSettings_Parameter = new ConceptPresentationBuilder().create();
@@ -25,13 +27,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExecuteConfiguration_Function = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Executor_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetProjectOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IsConfigurationFromContext_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelSource = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ModuleSource = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_NodeListSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Project_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0w).create();
+  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0z).create();
   private final ConceptPresentation props_RunConfigurationCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationExecutor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationKind = new ConceptPresentationBuilder().create();
@@ -61,58 +64,64 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 5:
         return props_ConfigurationFromExecutorReference;
       case 6:
-        return props_ConsoleCreator;
+        return props_Configuration_Parameter;
       case 7:
-        return props_ConsoleType;
+        return props_ConsoleCreator;
       case 8:
-        return props_ContextExpression;
+        return props_ConsoleType;
       case 9:
-        return props_Create_ConceptFunction;
+        return props_ContextConfiguration_Parameter;
       case 10:
-        return props_DebuggerSettings_Parameter;
+        return props_ContextExpression;
       case 11:
-        return props_EnvironmentExpression;
+        return props_Create_ConceptFunction;
       case 12:
-        return props_ExecuteBeforeTask_ConceptFunction;
+        return props_DebuggerSettings_Parameter;
       case 13:
-        return props_ExecuteConfiguration_Function;
+        return props_EnvironmentExpression;
       case 14:
-        return props_Executor_Parameter;
+        return props_ExecuteBeforeTask_ConceptFunction;
       case 15:
-        return props_GetProjectOperation;
+        return props_ExecuteConfiguration_Function;
       case 16:
-        return props_ModelSource;
+        return props_Executor_Parameter;
       case 17:
-        return props_ModuleSource;
+        return props_GetProjectOperation;
       case 18:
-        return props_NodeListSource;
+        return props_IsConfigurationFromContext_ConceptFunction;
       case 19:
-        return props_NodeSource;
+        return props_ModelSource;
       case 20:
-        return props_ProjectSource;
+        return props_ModuleSource;
       case 21:
-        return props_Project_Parameter;
+        return props_NodeListSource;
       case 22:
-        return props_RunConfiguration;
+        return props_NodeSource;
       case 23:
-        return props_RunConfigurationCreator;
+        return props_ProjectSource;
       case 24:
-        return props_RunConfigurationExecutor;
+        return props_Project_Parameter;
       case 25:
-        return props_RunConfigurationKind;
+        return props_RunConfiguration;
       case 26:
-        return props_RunConfigurationProducer;
+        return props_RunConfigurationCreator;
       case 27:
-        return props_RunConfigurationProducerPart;
+        return props_RunConfigurationExecutor;
       case 28:
-        return props_RunConfigurationSource;
+        return props_RunConfigurationKind;
       case 29:
-        return props_SModelSource;
+        return props_RunConfigurationProducer;
       case 30:
-        return props_SModuleSource;
+        return props_RunConfigurationProducerPart;
       case 31:
-        return props_Source_ConceptFunctionParameter;
+        return props_RunConfigurationSource;
       case 32:
+        return props_SModelSource;
+      case 33:
+        return props_SModuleSource;
+      case 34:
+        return props_Source_ConceptFunctionParameter;
+      case 35:
         return props_StartProcessHandlerStatement;
     }
     throw new IllegalStateException("Unknown concept " + c);

@@ -5,8 +5,6 @@ package jetbrains.mps.execution.lib;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,24 +29,7 @@ public final class PointerUtils {
     if ((pointerString == null || pointerString.length() == 0)) {
       return null;
     }
-
-    SNodeReference rv = tryLegacyFormat(pointerString);
-    if (rv != null) {
-      return rv;
-    }
     return PersistenceFacade.getInstance().createNodeReference(pointerString);
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.3)
-  private static SNodeReference tryLegacyFormat(String pointerString) {
-    // this is compatibility code, to read run configurations serialized with previous MPS versions 
-    // remove this code after 3.3 is out, use PersistenceFacade only 
-    if (pointerString.indexOf(POINTER_SEPARATOR) > 0) {
-      String[] split = pointerString.split(POINTER_SEPARATOR);
-      return new SNodePointer(split[0], split[1]);
-    }
-    return null;
   }
 
   public static String pointerToString(@NotNull SNodeReference pointer) {
