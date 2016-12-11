@@ -210,5 +210,6 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
 
   @Override
   public void copyTo(@NotNull JavaClassStubsModelRoot targetModelRoot) throws CopyNotSupportedException {
+    super.copyContentRootAndFiles(targetModelRoot);
   }
 }

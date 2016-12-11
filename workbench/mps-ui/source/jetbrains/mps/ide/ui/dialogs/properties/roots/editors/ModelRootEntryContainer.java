@@ -26,6 +26,7 @@ import com.intellij.ui.roots.ResizingWrapper;
 import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry.ModelRootEntryListener;
@@ -46,30 +47,32 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.EventListener;
 
-public class ModelRootEntryContainer implements ModelRootEntryListener {
+/**
+ * A container for a single model root entry
+ */
+public final class ModelRootEntryContainer implements ModelRootEntryListener {
+  static final Color SOURCES_COLOR = new JBColor(new Color(0x0A50A1), DarculaColors.BLUE);
+  static final Color TESTS_COLOR = new Color(0x008C2E);
+  static final Color EXCLUDED_COLOR = new JBColor(new Color(0x992E00), DarculaColors.RED);
+  static final Color SELECTED_CONTENT_COLOR = new Color(0xF0F9FF);
+  private static final Color SELECTED_HEADER_COLOR = new JBColor(new Color(0xDEF2FF), UIUtil.getPanelBackground().darker());
+  private static final Color HEADER_COLOR = new JBColor(new Color(0xF5F5F5), Gray._82);
+  private static final Color CONTENT_COLOR = new JBColor(Color.WHITE, UIUtil.getPanelBackground());
+  private static final Color UNSELECTED_TEXT_COLOR = Gray._51;
 
-  public static final Color SOURCES_COLOR = new JBColor(new Color(0x0A50A1), DarculaColors.BLUE);
-  public static final Color TESTS_COLOR = new Color(0x008C2E);
-  public static final Color EXCLUDED_COLOR = new JBColor(new Color(0x992E00), DarculaColors.RED);
-  public static final Color SELECTED_HEADER_COLOR = new JBColor(new Color(0xDEF2FF), UIUtil.getPanelBackground().darker());
-  public static final Color HEADER_COLOR = new JBColor(new Color(0xF5F5F5), Gray._82);
-  public static final Color SELECTED_CONTENT_COLOR = new Color(0xF0F9FF);
-  public static final Color CONTENT_COLOR = new JBColor(Color.WHITE, UIUtil.getPanelBackground());
-  public static final Color UNSELECTED_TEXT_COLOR = Gray._51;
-
-  private ModelRootEntry myModelRootEntry;
+  private final ModelRootEntry myModelRootEntry;
   protected ModelRootEntryEditor myEditor;
-  protected EventDispatcher<ContentEntryEditorListener> myEventDispatcher;
-  protected boolean myIsSelected = false;
+  private EventDispatcher<ContentEntryEditorListener> myEventDispatcher;
+  private boolean myIsSelected = false;
 
   protected JPanel myMainPanel;
-  protected JComponent myHeader;
-  protected JComponent myDetailsComponent;
-  protected JComponent myBottom;
+  private JComponent myHeader;
+  private JComponent myDetailsComponent;
+  private JComponent myBottom;
   private JLabel myHeaderLabel;
   private JBLabel myDetailsLabel;
 
-  public ModelRootEntryContainer(ModelRootEntry modelRootEntry) {
+  public ModelRootEntryContainer(@NotNull ModelRootEntry modelRootEntry) {
     myModelRootEntry = modelRootEntry;
     myModelRootEntry.addModelRootEntryListener(this);
     myEventDispatcher = EventDispatcher.create(ContentEntryEditorListener.class);

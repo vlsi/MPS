@@ -41,11 +41,13 @@ public final class ModuleReference implements SModuleReference {
     myModuleId = moduleId;
   }
 
+  @NotNull
   @Override
   public SModuleId getModuleId() {
     return myModuleId;
   }
 
+  @NotNull
   @Override
   public String getModuleName() {
     return myModuleName;

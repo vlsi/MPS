@@ -39,5 +39,6 @@
     <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="module" module-name="vfs" />
     <orderEntry type="module" module-name="baseLanguage-search" />
+    <orderEntry type="module" module-name="mps-ui" />
   </component>
 </module>

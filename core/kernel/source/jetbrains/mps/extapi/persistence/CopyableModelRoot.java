@@ -24,7 +24,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  *
  * @author Radimir.Sorokin
  */
-public interface CopyableModelRoot<T extends CopyableModelRoot & ModelRoot> {
+public interface CopyableModelRoot<T extends CopyableModelRoot<T> & ModelRoot> {
   /**
    * Copies this model root contents to the <t>targetModelRoot</t>.
    * the resulting model root must be equal to the prototype

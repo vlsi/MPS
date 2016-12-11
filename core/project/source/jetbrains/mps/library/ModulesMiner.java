@@ -44,6 +44,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -377,17 +378,18 @@ public final class ModulesMiner {
 
   public void saveHandle(@NotNull ModuleHandle handle, ModelOutputStream stream) throws IOException {
     stream.writeShort(0x1be0);
-    stream.writeString(handle.file.getPath());
-    if (handle.descriptor instanceof LanguageDescriptor) {
+    stream.writeString(handle.getFile().getPath());
+    ModuleDescriptor descriptor = handle.getDescriptor();
+    if (descriptor instanceof LanguageDescriptor) {
       stream.writeByte(1);
-    } else if (handle.descriptor instanceof SolutionDescriptor) {
+    } else if (descriptor instanceof SolutionDescriptor) {
       stream.writeByte(2);
-    } else if (handle.descriptor instanceof DevkitDescriptor) {
+    } else if (descriptor instanceof DevkitDescriptor) {
       stream.writeByte(3);
     } else {
       throw new IllegalArgumentException("unknown module!");
     }
-    handle.descriptor.save(stream);
+    descriptor.save(stream);
   }
 
   public ModuleHandle loadHandle(ModelInputStream stream) throws IOException {
@@ -408,28 +410,29 @@ public final class ModulesMiner {
     return new ModuleHandle(getFileSystem().getFile(file), descriptor);
   }
 
-  public static class ModuleHandle {
-    private final IFile file;
-    private final ModuleDescriptor descriptor;
+  @Immutable
+  public static final class ModuleHandle {
+    private final IFile myFile;
+    private final ModuleDescriptor myDescriptor;
 
-    public ModuleHandle(@NotNull IFile file, @NotNull ModuleDescriptor descriptor) {
-      this.file = file;
-      this.descriptor = descriptor;
+    public ModuleHandle(@NotNull IFile file, @Nullable ModuleDescriptor descriptor) {
+      myFile = file;
+      myDescriptor = descriptor;
     }
 
     @NotNull
     public IFile getFile() {
-      return file;
+      return myFile;
     }
 
     @Nullable
     public ModuleDescriptor getDescriptor() {
-      return descriptor;
+      return myDescriptor;
     }
 
     @Override
     public String toString() {
-      return descriptor.getNamespace();
+      return myDescriptor == null ? "[null descriptor]" : myDescriptor.getNamespace();
     }
   }
 

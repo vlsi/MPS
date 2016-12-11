@@ -68,7 +68,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.DependencyCellState;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModuleTableCellRender;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootContentEntriesEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem.ModuleType;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
@@ -260,7 +260,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   public class ModuleCommonTab extends CommonTab {
 
     private ModuleDependenciesTab myModuleDependenciesTab;
-    private ContentEntriesEditor myEntriesEditor;
+    private ModelRootContentEntriesEditor myEntriesEditor;
     private JTextField myGenOut;
     private JSpinner myLanguageVersion;
     private JSpinner myModuleVersion;
@@ -288,7 +288,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         myModuleDependenciesTab.init(); // init to avoid myModuleDependenciesTab.getTabComponent() == null
         return myModuleDependenciesTab.getTabComponent();
       } else {
-        myEntriesEditor = new ContentEntriesEditor(myModuleDescriptor, myProject.getRepository());
+        myEntriesEditor = new ModelRootContentEntriesEditor(myModuleDescriptor, myProject.getRepository());
         Disposer.register(ModulePropertiesConfigurable.this, myEntriesEditor);
         return myEntriesEditor.getComponent();
       }

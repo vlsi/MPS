@@ -236,7 +236,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     if (!changeFile) {
       save();
     } else {
-      if (changeFile && !(getSource() instanceof FileDataSource)) {
+      if (!(getSource() instanceof FileDataSource)) {
         throw new UnsupportedOperationException("cannot change model file on non-file data source");
       }
 
@@ -253,8 +253,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           }
         }
         try {
-          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot,
-              new HashMap<String, String>()).getFile();
+          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot, new HashMap<>()).getFile();
           newFile.getParent().mkdirs();
           newFile.createNewFile();
           changeModelFile(newFile);

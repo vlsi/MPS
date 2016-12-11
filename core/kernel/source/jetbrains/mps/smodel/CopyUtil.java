@@ -51,7 +51,7 @@ public final class CopyUtil {
     }
   }
 
-  private static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
+  public static void copyModelProperties(jetbrains.mps.smodel.SModel from, jetbrains.mps.smodel.SModel to) {
     from.copyPropertiesTo(to);
   }
 

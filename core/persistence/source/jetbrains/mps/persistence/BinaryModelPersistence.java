@@ -96,8 +96,8 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    String modulRef = options.get(OPTION_MODULEREF);
-    if (modulRef == null) {
+    String moduleRef = options.get(OPTION_MODULEREF);
+    if (moduleRef == null) {
       throw new IOException("moduleRef is not provided");
     }
 

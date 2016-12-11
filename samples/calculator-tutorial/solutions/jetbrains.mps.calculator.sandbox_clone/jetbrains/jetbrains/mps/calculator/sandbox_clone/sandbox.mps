@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:e654201f-0525-4c8e-ba1d-6cf022a88f1d(jetbrains.mps.calculator.sandbox_clone.sandbox)">
+<model ref="r:5b2cba41-8064-45a0-ad46-7e4d65e52222(jetbrains.mps.calculator.sandbox_clone.sandbox)">
   <persistence version="9" />
   <languages>
     <use id="26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1" name="jetbrains.mps.calculator" version="0" />

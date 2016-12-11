@@ -60,6 +60,6 @@ public final class ModuleFacetDescriptor implements Copyable<ModuleFacetDescript
   @NotNull
   @Override
   public ModuleFacetDescriptor copy() {
-    return new ModuleFacetDescriptor(myType, myMemento);
+    return new ModuleFacetDescriptor(myType, myMemento.copy());
   }
 }

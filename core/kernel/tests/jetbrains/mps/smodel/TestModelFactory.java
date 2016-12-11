@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -256,15 +257,17 @@ final class TestModelFactory {
       myModelAccess = ma;
     }
     @Override
-    public SModule getModule(SModuleId ref) {
+    public SModule getModule(@NotNull SModuleId ref) {
       return null;
     }
 
+    @NotNull
     @Override
     public Iterable<SModule> getModules() {
       return null;
     }
 
+    @NotNull
     @Override
     public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
       return myModelAccess;

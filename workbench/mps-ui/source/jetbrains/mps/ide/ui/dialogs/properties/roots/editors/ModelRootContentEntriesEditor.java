@@ -32,17 +32,20 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
+import com.intellij.util.Consumer;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
@@ -50,6 +53,8 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vfs.FileSystemExtPoint;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -76,23 +81,26 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-public class ContentEntriesEditor implements Disposable {
-
+/**
+ * UIComponent which contains all the module roots.
+ * It is located in the module properties dialog.
+ */
+public class ModelRootContentEntriesEditor implements Disposable {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private final ModuleDescriptor myModuleDescriptor;
   private final SRepository myRepository;
   private final ModelRootEntryPersistence myRootEntryPersistence;
-  private List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<ModelRootEntryContainer>();
-  private ModelRootEntryContainer myFocucedModelRootEntryContainer;
-  private MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
+  private final List<ModelRootEntryContainer> myModelRootEntries = new ArrayList<>();
+  private ModelRootEntryContainer myFocusedModelRootEntryContainer;
+  private final MyContentEntryEditorListener myEditorListener = new MyContentEntryEditorListener();
 
-  protected JPanel myEditorsListPanel;
-  protected JBPanel myEditorPanel;
+  private JPanel myEditorsListPanel;
+  private JBPanel myEditorPanel;
   private JBPanel myMainPanel;
-  private String myDefaultFolder;
+  private IFile myDefaultFolder;
 
-  public ContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
+  public ModelRootContentEntriesEditor(ModuleDescriptor moduleDescriptor, SRepository repository) {
     myModuleDescriptor = moduleDescriptor;
     myRepository = repository;
     myRootEntryPersistence = new ModelRootEntryPersistence().initFromEP();
@@ -118,7 +126,7 @@ public class ContentEntriesEditor implements Disposable {
         Modules.AddContentEntry) {
       @Override
       public void actionPerformed(final AnActionEvent e) {
-        if(list.size() == 1) {
+        if (list.size() == 1) {
           myRepository.getModelAccess().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -208,14 +216,16 @@ public class ContentEntriesEditor implements Disposable {
 
   private void selectEntry(ModelRootEntryContainer entry) {
     try {
-      if (entry != null && entry.equals(myFocucedModelRootEntryContainer))
+      if (entry != null && entry.equals(myFocusedModelRootEntryContainer)) {
         return;
+      }
 
-      if (myFocucedModelRootEntryContainer != null)
-        myFocucedModelRootEntryContainer.setFocuced(false);
+      if (myFocusedModelRootEntryContainer != null) {
+        myFocusedModelRootEntryContainer.setFocuced(false);
+      }
 
       if (entry == null) {
-        myFocucedModelRootEntryContainer = null;
+        myFocusedModelRootEntryContainer = null;
         myEditorPanel.removeAll();
         return;
       }
@@ -223,30 +233,31 @@ public class ContentEntriesEditor implements Disposable {
       entry.setFocuced(true);
       myEditorPanel.removeAll();
       myEditorPanel.add(entry.getEditor().createComponent(), BorderLayout.CENTER);
-      myFocucedModelRootEntryContainer = entry;
+      myFocusedModelRootEntryContainer = entry;
     } finally {
       myMainPanel.updateUI();
     }
   }
 
   private void deleteEntry(ModelRootEntryContainer entry) {
-    if (!myModelRootEntries.contains(entry))
-      return;
-
-    myEditorsListPanel.remove(entry.getComponent());
-    int idx = myModelRootEntries.indexOf(entry);
-    myModelRootEntries.remove(entry);
-    if (myFocucedModelRootEntryContainer.equals(entry))
-      selectEntry(myModelRootEntries.size() > 0 ?
-          myModelRootEntries.get(Math.max(idx - 1, 0))
-          : null);
-    else
-      myMainPanel.updateUI();
+    if (myModelRootEntries.contains(entry)) {
+      myEditorsListPanel.remove(entry.getComponent());
+      int idx = myModelRootEntries.indexOf(entry);
+      myModelRootEntries.remove(entry);
+      if (myFocusedModelRootEntryContainer.equals(entry)) {
+        selectEntry(myModelRootEntries.size() > 0 ?
+            myModelRootEntries.get(Math.max(idx - 1, 0))
+            : null);
+      } else {
+        myMainPanel.updateUI();
+      }
+    }
   }
 
   public boolean isModified() {
     List<ModelRootDescriptor> newSet = getDescriptors();
-    return !(myModuleDescriptor.getModelRootDescriptors().containsAll(newSet) && newSet.containsAll(myModuleDescriptor.getModelRootDescriptors()));
+    Collection<ModelRootDescriptor> modelRootDescriptors = myModuleDescriptor.getModelRootDescriptors();
+    return !(modelRootDescriptors.containsAll(newSet) && newSet.containsAll(modelRootDescriptors));
   }
 
   public void apply() {
@@ -285,14 +296,14 @@ public class ContentEntriesEditor implements Disposable {
   }
 
   /** Set default folder for FileBasedModel root content dir if module is not in repository yet */
-  public final void setDefaultFolder(String defaultFolder) {
+  public final void setDefaultFolder(IFile defaultFolder) {
     myDefaultFolder = defaultFolder;
   }
 
   private class AddContentEntryAction extends IconWithTextAction implements DumbAware {
     private String myType;
 
-    public AddContentEntryAction(@NotNull String type) {
+    AddContentEntryAction(@NotNull String type) {
       super(type);
       myType = type;
     }
@@ -301,7 +312,7 @@ public class ContentEntriesEditor implements Disposable {
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(modelRoot);
-      Disposer.register(ContentEntriesEditor.this, entry);
+      Disposer.register(ModelRootContentEntriesEditor.this, entry);
       if (entry instanceof FileBasedModelRootEntry) {
         if (!checkAndAddFBModelRoot(entry)) {
           return;
@@ -317,56 +328,49 @@ public class ContentEntriesEditor implements Disposable {
     }
 
     private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
-      String contentRoot = myDefaultFolder != null ? myDefaultFolder : "";
-      final SModule module = new ModelAccessHelper(myRepository).runReadAction(new Computable<SModule>() {
-        @Override
-        public SModule compute() {
-          return myRepository.getModule(myModuleDescriptor.getId());
-        }
-      });
+      IFile contentRoot = myDefaultFolder != null ? myDefaultFolder : FileSystemExtPoint.getFS().getFile("");
+      final SModule module = new ModelAccessHelper(myRepository).runReadAction(() -> myRepository.getModule(myModuleDescriptor.getId()));
       if (module instanceof AbstractModule) {
         contentRoot = ((AbstractModule) module).getModuleSourceDir() == null
-            ? ((AbstractModule) module).getDescriptorFile().getParent().getPath()
-            : ((AbstractModule) module).getModuleSourceDir().getPath();
+            ? ((AbstractModule) module).getDescriptorFile().getParent()
+            : ((AbstractModule) module).getModuleSourceDir();
       }
 
-      Set<String> strings = new HashSet<String>();
-      for (ModelRootEntryContainer entryContainer : myModelRootEntries) {
-        if (entry.getClass().equals(entryContainer.getModelRootEntry().getClass())) {
-          strings.add(((FileBasedModelRoot) entryContainer.getModelRootEntry().getModelRoot()).getContentRoot());
+      Set<VirtualFile> candidatesForIntersection = new HashSet<>();
+      for (ModelRootEntryContainer existingEntryContainer : myModelRootEntries) {
+        if (entry.getClass().equals(existingEntryContainer.getModelRootEntry().getClass())) {
+          FileBasedModelRoot existingModelRoot = (FileBasedModelRoot) existingEntryContainer.getModelRootEntry().getModelRoot();
+          candidatesForIntersection.add(VirtualFileUtils.getProjectVirtualFile(existingModelRoot.getContentRoot()));
         }
       }
+      FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
+      fileChooserDescriptor.setTitle("Choose root folder for new model root");
 
-      if (!strings.isEmpty()) {
-        FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
-        fileChooserDescriptor.setTitle("Choose root folder for new model root");
-
-        VirtualFile[] files = null;
-        while (files == null) {
-          files = FileChooser.chooseFiles(fileChooserDescriptor, null, null,
-              VirtualFileManager.getInstance().findFileByUrl(
-                  VirtualFileManager.constructUrl("file", contentRoot)
-              )
-          );
-          if (files.length != 0) {
-            for (String s : strings) {
-              if (files[0].getPath().contains(s) || s.contains(files[0].getPath())) {
-                StringBuilder builder = new StringBuilder("Can't create new model root ");
-                builder.append(files[0].getPath().contains(s) ? "under" : "over");
-                builder.append(" existing model root!\nChoose another folder");
-                JOptionPane.showMessageDialog(myMainPanel, builder.toString());
-                files = null;
-                break;
-              }
+      VirtualFile[] files = null;
+      while (true) {
+        VirtualFile contentRootVFile = VirtualFileUtils.getProjectVirtualFile(contentRoot);
+        files = FileChooser.chooseFiles(fileChooserDescriptor, null, null, contentRootVFile);
+        if (files.length == 0) {
+          JOptionPane.showMessageDialog(myMainPanel, "Please choose the content root path");
+        } else if (files.length > 0) {
+          assert files.length == 1;
+          VirtualFile chosen = files[0];
+          for (String s : candidatesForIntersection) {
+            if () {
+              JOptionPane.showMessageDialog(myMainPanel, "Can't create new model root " + (files[0].getPath().contains(s) ? "under" : "over") +
+                  " existing model root!\nChoose another folder");
+              files = null;
+              break;
             }
           }
         }
-
-        if (files.length != 1)
-          return false;
-
-        contentRoot = files[0].getPath();
       }
+
+      if (files.length != 1) {
+        return false;
+      }
+
+      contentRoot = files[0].getPath();
 
       ((FileBasedModelRoot) entry.getModelRoot()).setContentRoot(contentRoot);
       return true;

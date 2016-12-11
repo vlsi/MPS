@@ -54,8 +54,9 @@ final class ModelRootEntryPersistence {
   }
 
   public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
-    if(!myModelRootEntries.containsKey(modelRoot.getType()))
+    if (!myModelRootEntries.containsKey(modelRoot.getType())) {
       return null;
+    }
 
     ModelRootEntryFactory factory = myModelRootEntries.get(modelRoot.getType());
     return factory.getModelRootEntry(modelRoot);

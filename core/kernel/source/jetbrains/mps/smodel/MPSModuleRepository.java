@@ -230,6 +230,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   //---------------get by-----------------------------
 
+  @NotNull
   @Override
   public org.jetbrains.mps.openapi.module.ModelAccess getModelAccess() {
     return myGlobalModelAccess;
@@ -265,7 +266,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   @Override
-  public SModule getModule(SModuleId id) {
+  public SModule getModule(@NotNull SModuleId id) {
     getModelAccess().checkReadAccess();
 
     if (id == null) {
@@ -274,6 +275,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return myIdToModuleMap.get(id);
   }
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
     getModelAccess().checkReadAccess();

@@ -78,7 +78,7 @@ public final class ModelRootDescriptor implements Copyable<ModelRootDescriptor> 
   @NotNull
   @Override
   public ModelRootDescriptor copy() {
-    return new ModelRootDescriptor(myType, myMemento);
+    return new ModelRootDescriptor(myType, myMemento.copy());
   }
 
   public static ModelRootDescriptor getJavaStubsModelRoot(IFile file) {

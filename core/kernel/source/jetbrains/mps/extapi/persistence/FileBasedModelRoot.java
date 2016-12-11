@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
 /**
  * Kinds are obviously ought to be enums not string
  * Paths represented by string either must have clear contract (absolute, relative) or (better)
- * replaced with some Path entities.
+ * replaced with some <code>Path</code> entities.
  * AP
  *
  * evgeny, 12/11/12
@@ -53,9 +53,9 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String LOCATION = "location";
   public static final String PATH = "path";
 
-  protected FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
-  private String myContentRoot;
-  protected Map<String, List<String>> myFilesForKind = new LinkedHashMap<>();
+  protected final FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
+  private String myContentRoot; // fixme relative/absolute/macros [typical path issue in the mps project]
+  private final Map<String, List<String>> myFilesForKind = new LinkedHashMap<>(); // fixme relative/absolute/macros [typical path issue in the mps project]
   private final List<PathListener> myListeners = new ArrayList<>();
 
   protected FileBasedModelRoot() {

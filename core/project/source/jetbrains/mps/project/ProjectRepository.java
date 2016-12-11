@@ -66,15 +66,17 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   }
 
   @Override
-  public SModule getModule(SModuleId ref) {
+  public SModule getModule(@NotNull SModuleId ref) {
     return getRootRepository().getModule(ref);
   }
 
+  @NotNull
   @Override
   public Iterable<SModule> getModules() {
     return getRootRepository().getModules();
   }
 
+  @NotNull
   @Override
   public ModelAccess getModelAccess() {
     return myProjectModelAccess;
@@ -101,7 +103,7 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   }
 
   @Override
-  public void addRepositoryListener(SRepositoryListener listener) {
+  public void addRepositoryListener(@NotNull SRepositoryListener listener) {
     /*
      * Provisional code to deal with transition scenario, when project repository mimics global MPSModuleRepository.
      * Al long as modules are manipulated through the global repository, it's the one to send out notifications about modules added/removed.
@@ -121,7 +123,7 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   }
 
   @Override
-  public void removeRepositoryListener(SRepositoryListener listener) {
+  public void removeRepositoryListener(@NotNull SRepositoryListener listener) {
     getRootRepository().removeRepositoryListener(listener);
   }
 }

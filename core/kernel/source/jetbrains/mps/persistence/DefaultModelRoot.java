@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.extapi.persistence.CloneCapabilities;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -32,7 +31,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -268,14 +266,14 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   }
 
   @Override
-  public void copyTo(@NotNull DefaultModelRoot target) throws CopyNotSupportedException {
-    copyContentRootAndFiles(target);
+  public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
+    copyContentRootAndFiles(targetModelRoot);
     AbstractModule sourceModule = ((AbstractModule) getModule());
-    AbstractModule targetModule = ((AbstractModule) target.getModule());
+    AbstractModule targetModule = ((AbstractModule) targetModelRoot.getModule());
     final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
     Collection<String> sourceFiles = getFiles(SOURCE_ROOTS);
-    Collection<String> targetFiles = target.getFiles(SOURCE_ROOTS);
-    assert sourceFiles.size() ==  targetFiles.size();
+    Collection<String> targetFiles = targetModelRoot.getFiles(SOURCE_ROOTS);
+    assert sourceFiles.size() == targetFiles.size();
     for (Iterator<String> sIterator = sourceFiles.iterator(), tIterator = targetFiles.iterator(); sIterator.hasNext();) {
       String sourceRoot = sIterator.next();
       String targetRoot = tIterator.next();
@@ -289,13 +287,14 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
           (factory, dataSource, options) -> {
             try {
               options.put(ModelFactory.OPTION_MODULEREF, sourceModule.getModuleReference().toString());
-              SModel sourceModel = factory.load(dataSource, options);
-              EditableSModelBase targetModel = (EditableSModelBase) target.createModelImpl(sourceModel.getName().getValue(), sourceRoot, options, factory);
-              targetModel.setModelRoot(target);
+              SModelBase sourceModel = (SModelBase) factory.load(dataSource, options);
+              options.put(ModelFactory.OPTION_MODULEREF, sourceModule.getModuleReference().toString()); // fixme RADIMIR
+              EditableSModelBase targetModel = (EditableSModelBase) targetModelRoot.createModelImpl(sourceModel.getName().getValue(), targetRoot, options, factory);
+              targetModel.setModelRoot(targetModelRoot);
               targetModel.setModule(targetModule);
 
               CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
-              ((SModelBase) sourceModel).getSModel().copyPropertiesTo(targetModel.getSModel());
+              CopyUtil.copyModelProperties(sourceModel.getSModel(), targetModel.getSModel());
 
               // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save();
               targetModel.setChanged(true);
@@ -308,6 +307,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     }
   }
 
+  // TODO rewrite this hell
   private static class ModelRootDirWalker {
 
   }

@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.repository.CommandListener;
 import org.jetbrains.mps.openapi.repository.WriteActionListener;
 
 /**
- * Grants access to objects in the repository (e.g., models)
+ * Grants access to objects in the repository (for example to models)
  */
 public interface ModelAccess {
   /**

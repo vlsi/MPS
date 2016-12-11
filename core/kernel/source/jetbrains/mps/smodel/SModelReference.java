@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 // FIXME move to [smodel] once dependencies from MPSModuleRepository and SModelRepository are gone
 @Immutable
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
-
   private static Logger LOG = Logger.getLogger(SModelReference.class);
 
   @NotNull

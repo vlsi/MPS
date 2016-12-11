@@ -22,10 +22,12 @@ import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.SourceFolder;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ContentEntriesEditor;
+import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootContentEntriesEditor;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer;
+import jetbrains.mps.ide.vfs.IdeaFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.ui.SModuleConfigurationTab;
@@ -43,7 +45,7 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
   private FacetEditorContext myContext;
   private Disposable myParentDisposable;
 
-  private ContentEntriesEditor myContentEntriesEditor;
+  private ModelRootContentEntriesEditor myContentEntriesEditor;
 
   public MPSFacetSourcesTab(FacetEditorContext context, Disposable parentDisposable) {
     myContext = context;
@@ -65,11 +67,12 @@ public class MPSFacetSourcesTab implements SModuleConfigurationTab {
       Disposer.dispose(myContentEntriesEditor);
       myContentEntriesEditor = null;
     }
-    myContentEntriesEditor = new ContentEntriesEditor(data.getSolutionDescriptor(), ProjectHelper.getProjectRepository(myContext.getProject()));
+    myContentEntriesEditor = new ModelRootContentEntriesEditor(data.getSolutionDescriptor(), ProjectHelper.getProjectRepository(myContext.getProject()));
     Disposer.register(myParentDisposable, myContentEntriesEditor);
-    myContentEntriesEditor.setDefaultFolder(myContext.getModule().getModuleFile() != null
-      ? myContext.getModule().getModuleFile().getParent().getCanonicalPath()
-      : myContext.getProject().getBasePath());
+    VirtualFile defaultFolder = myContext.getModule().getModuleFile() != null
+      ? myContext.getModule().getModuleFile().getParent()
+      : myContext.getProject().getBaseDir();
+    myContentEntriesEditor.setDefaultFolder(VirtualFileUtils.toIFile(defaultFolder));
     myRootPanel.removeAll();
     myRootPanel.add(myContentEntriesEditor.getComponent(), BorderLayout.CENTER);
 
