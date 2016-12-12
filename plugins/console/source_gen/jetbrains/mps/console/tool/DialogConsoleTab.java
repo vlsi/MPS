@@ -4,16 +4,15 @@ package jetbrains.mps.console.tool;
 
 import com.intellij.openapi.actionSystem.DataProvider;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -30,6 +29,7 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -37,19 +37,20 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
 
   private SNode myNewCommand = null;
-  private SNode myCursor;
   private void setCommandCursor(SNode commandHolder) {
-    if (commandHolder == null && myCursor != null) {
-      SNodeOperations.deleteNode(myCursor);
-      myCursor = null;
+    if (commandHolder == null) {
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
     }
-    if (commandHolder != null && myCursor == null) {
-      myCursor = SModelOperations.createNewRootNode(getConsoleModel(), MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, "jetbrains.mps.console.base.structure.CommandHolderRef"));
-      SLinkOperations.setTarget(myCursor, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"), commandHolder);
+    if (commandHolder != null) {
+      SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"), commandHolder);
     }
   }
   private SNode getCommandCursor() {
-    return SLinkOperations.getTarget(myCursor, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"));
+    if (SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target")) == SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"))) {
+      return null;
+    } else {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"));
+    }
   }
 
 
@@ -122,10 +123,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     execute(null, new Runnable() {
       public void run() {
-        if ((myNewCommand != null)) {
-          SNodeOperations.deleteNode(myNewCommand);
-          myNewCommand = null;
-        }
+        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x3c5a21a481abf26dL, "hiddenCommand"), null);
       }
     }, new Runnable() {
       public void run() {
@@ -167,8 +165,7 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
       SNode newCursor;
       if (getCommandCursor() == null) {
         newCursor = lastCmd;
-        myNewCommand = SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
-        SModelOperations.addRootNode(getConsoleModel(), myNewCommand);
+        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x3c5a21a481abf26dL, "hiddenCommand"), SNodeOperations.copyNode(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"))));
       } else {
         newCursor = getPrevCmd(getCommandCursor());
         if ((newCursor == null)) {
@@ -210,7 +207,8 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
         SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(getCommandCursor(), SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
       } else {
         setCommandCursor(null);
-        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(((SNode) BHReflection.invoke(myNewCommand, SMethodTrimmedId.create("getCommandToEdit", null, "ApbqR6U7je")))));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"), SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x3c5a21a481abf26dL, "hiddenCommand")), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, 0x4e27160acb44924L, "command"))));
+        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x3c5a21a481abf26dL, "hiddenCommand"), null);
       }
       setSelection();
     }
@@ -233,6 +231,8 @@ public class DialogConsoleTab extends BaseConsoleTab implements DataProvider {
           SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history"), SNodeOperations.copyNode(SLinkOperations.getTarget(ListSequence.fromList(SModelOperations.roots(loadedModel, MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, "jetbrains.mps.console.base.structure.ConsoleRoot"))).first(), MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bafL, "history"))));
         }
         SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL, "jetbrains.mps.console.base.structure.CommandHolder")));
+        SLinkOperations.setTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, "jetbrains.mps.console.base.structure.CommandHolderRef")));
+        SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x7d401fa40806ebe7L, "cursor")), MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L, 0x4fe9275cea077232L, "target"), SLinkOperations.getTarget(myRoot, MetaAdapterFactory.getContainmentLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL, 0x15fb34051f725bb1L, "commandHolder")));
         TemporaryModels.getInstance().addMissingImports(getConsoleModel());
       }
     });

@@ -189,7 +189,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "CommandHolderRef", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L);
     b.class_(false, false, false);
     b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/5758176878586720817");
-    b.associate("target", 0x4fe9275cea077232L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(true).origin("5758176878586720818").done();
+    b.associate("target", 0x4fe9275cea077232L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(false).origin("5758176878586720818").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForConsoleRoot() {
@@ -198,6 +198,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/1583916890557930028");
     b.aggregate("history", 0x15fb34051f725bafL).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL).optional(false).ordered(true).multiple(false).origin("1583916890557930415").done();
     b.aggregate("commandHolder", 0x15fb34051f725bb1L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(false).ordered(true).multiple(false).origin("1583916890557930417").done();
+    b.aggregate("cursor", 0x7d401fa40806ebe7L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L).optional(false).ordered(true).multiple(false).origin("9025248442620242919").done();
+    b.aggregate("hiddenCommand", 0x3c5a21a481abf26dL).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(true).ordered(true).multiple(false).origin("4348825380613517933").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExceptionHolder() {
