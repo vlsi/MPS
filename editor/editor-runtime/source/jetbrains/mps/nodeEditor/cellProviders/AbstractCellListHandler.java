@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -100,13 +101,33 @@ public abstract class AbstractCellListHandler {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    createInnerCells(myOwnerNode, editorContext);
+    createInnerCellsWithEditorCellContext(myOwnerNode, editorContext);
 
     // add insert/insert-before actions
     myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
     myListEditorCell_Collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_InsertIntoCollection(this, true));
 
     return myListEditorCell_Collection;
+  }
+
+  @ToRemove(version = 3.5)
+  protected boolean isCompatibilityMode() {
+    return true;
+  }
+
+
+  protected void createInnerCellsWithEditorCellContext(SNode node, EditorContext editorContext) {
+    if (isCompatibilityMode()) {
+      getEditorContext().getCellFactory().pushCellContext();
+      getEditorContext().getCellFactory().setNodeLocation(null);
+      try {
+        createInnerCells(node, editorContext);
+      } finally {
+        getEditorContext().getCellFactory().popCellContext();
+      }
+    } else {
+      createInnerCells(node, editorContext);
+    }
   }
 
   protected void createInnerCells(SNode node, EditorContext editorContext) {

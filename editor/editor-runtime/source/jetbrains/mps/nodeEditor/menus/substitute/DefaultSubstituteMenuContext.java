@@ -54,17 +54,25 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   private MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> myMenuItemFactory;
   private Predicate<SAbstractConcept> myInUsedLanguagesPredicate;
   private Predicate<SAbstractConcept> mySuitableForConstraintsPredicate;
+  private SAbstractConcept myTargetConcept;
 
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
-      SContainmentLink containmentLink, SNode parentNode,
+      SContainmentLink containmentLink, SAbstractConcept targetConcept, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
     myMenuItemFactory = menuItemFactory;
     myContainmentLink = containmentLink;
+    myTargetConcept = targetConcept;
     myParentNode = parentNode;
     myCurrentChild = currentChild;
     myEditorContext = editorContext;
     myInUsedLanguagesPredicate = createInUsedLanguagesPredicate();
     mySuitableForConstraintsPredicate = createSuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository());
+  }
+
+  private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
+      SContainmentLink containmentLink, SNode parentNode,
+      SNode currentChild, EditorContext editorContext) {
+    this(menuItemFactory, containmentLink, null, parentNode, currentChild, editorContext);
   }
 
   private DefaultSubstituteMenuContext(MenuItemFactory<SubstituteMenuItem, SubstituteMenuContext, SubstituteMenuLookup> menuItemFactory,
@@ -115,6 +123,15 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     return myContainmentLink;
   }
 
+  @Nullable
+  @Override
+  public SAbstractConcept getTargetConcept() {
+    if (myTargetConcept != null) {
+      return myTargetConcept;
+    }
+    return SubstituteMenuContext.super.getTargetConcept();
+  }
+
   @Override
   @Nullable
   public SNode getCurrentTargetNode() {
@@ -128,7 +145,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
       if (myContainmentLink == null) {
         return Collections.emptyList();
       }
-      menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), myContainmentLink.getTargetConcept());
+      assert getTargetConcept() != null;
+      menuLookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(myEditorContext.getRepository()), getTargetConcept());
     }
     final CachingPredicate<SAbstractConcept> cachingPredicate = createCachingPredicate();
     return myMenuItemFactory.createItems(this, menuLookup).stream()
@@ -150,13 +168,19 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @NotNull
   public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SNode parentNode,
       SNode currentChild, EditorContext editorContext) {
+    return createInitialContextForNode(containmentLink, null, parentNode, currentChild, editorContext);
+  }
+
+  @NotNull
+  public static DefaultSubstituteMenuContext createInitialContextForNode(SContainmentLink containmentLink, SAbstractConcept targetConcept, SNode parentNode,
+      SNode currentChild, EditorContext editorContext) {
     return new DefaultSubstituteMenuContext(new RecursionSafeMenuItemFactory<>(new DefaultSubstituteMenuItemFactory(MenuUtil.getUsedLanguages(parentNode))),
-        containmentLink, parentNode, currentChild, editorContext);
+        containmentLink, targetConcept, parentNode, currentChild, editorContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(getParentNode(), getEditorContext(), getCurrentTargetNode(), getLink());
+    return Objects.hash(getParentNode(), getEditorContext(), getCurrentTargetNode(), getLink(), getTargetConcept());
   }
 
   @Override
@@ -171,6 +195,6 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
     DefaultSubstituteMenuContext that = (DefaultSubstituteMenuContext) o;
 
     return getParentNode().equals(that.getParentNode()) && getEditorContext().equals(that.getEditorContext()) &&
-        Objects.equals(getCurrentTargetNode(), that.getCurrentTargetNode()) && Objects.equals(getLink(), that.getLink());
+        Objects.equals(getCurrentTargetNode(), that.getCurrentTargetNode()) && Objects.equals(getLink(), that.getLink()) && Objects.equals(getTargetConcept(), that.getTargetConcept());
   }
 }

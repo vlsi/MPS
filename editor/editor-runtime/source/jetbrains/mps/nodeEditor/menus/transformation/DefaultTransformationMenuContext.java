@@ -69,6 +69,11 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   private static SNodeLocation nodeLocationFromCell(@NotNull EditorCell cell) {
+    final SNodeLocation cellNodeLocation = cell.getCellContext().getNodeLocation();
+    if(cellNodeLocation != null) {
+      return cellNodeLocation;
+    }
+
     SNode cellNode = cell.getSNode();
     if (cellNode == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);

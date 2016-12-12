@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.editor.menus.transformation;
 
+import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -29,7 +31,7 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   @NotNull
   @Override
   public List<TransformationMenuItem> createItems(TransformationMenuContext context) {
-    SNodeLocation newNodeLocation = toNodeLocation(getNode(context));
+    SNodeLocation newNodeLocation = toNodeLocation(getNode(context), context.getEditorContext());
     String newMenuLocation = getLocation(context);
 
     TransformationMenuContext newContext = context.with(newNodeLocation, newMenuLocation);
@@ -37,8 +39,16 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
   }
 
   @Nullable
-  private static SNodeLocation toNodeLocation(@Nullable SNode node) {
-    return node == null ? null : new SNodeLocation.FromNode(node);
+  private static SNodeLocation toNodeLocation(@Nullable SNode node, EditorContext editorContext) {
+    if (node == null) {
+      return null;
+    }
+    SNodeLocation nodeLocation = null;
+    final EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
+    if (nodeCell != null) {
+      nodeLocation = nodeCell.getCellContext().getNodeLocation();
+    }
+    return nodeLocation != null ? nodeLocation : new SNodeLocation.FromNode(node);
   }
 
   @Nullable

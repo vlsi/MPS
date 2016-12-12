@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.SNodeOperations;
@@ -184,6 +185,13 @@ public class EditorCellFactoryImpl implements EditorCellFactory {
       throw new IllegalStateException("There is no CellContext in the stack");
     }
     myCellContextStack.getLast().removeHints(hints);
+  }
+
+  public void setNodeLocation(SNodeLocation location) {
+    if (myCellContextStack == null) {
+      throw new IllegalStateException("There is no CellContext in the stack");
+    }
+    myCellContextStack.getLast().setNodeLocation(location);
   }
 
   private ConceptEditorComponent loadEditorComponent(SNode node, String editorComponentId) {

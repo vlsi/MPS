@@ -67,7 +67,8 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
           editorContext.getOperationContext());
     } else {
       SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
-      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, editorContext, null).collect();
+      final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+      List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget), editorContext, null).collect();
       return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
     }
   }

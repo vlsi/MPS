@@ -48,7 +48,7 @@ public class MenuUtil {
 
   public static Collection<SLanguage> getUsedLanguages(SNode node) {
     SModel model = node.getModel();
-    if (model == null) {
+    if (model == null || model.getRepository() == null) {
       return Collections.emptySet();
     }
     return getUsedLanguages(model);

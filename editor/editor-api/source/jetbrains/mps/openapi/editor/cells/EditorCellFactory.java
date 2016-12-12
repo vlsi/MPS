@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -84,4 +85,14 @@ public interface EditorCellFactory {
    * @throws IllegalStateException if pushCellContext() was not called before.
    */
   void removeCellContextHints(String... hints);
+
+  /**
+   * Set node location to the current EditorCellContext
+   *
+   * @param location to set
+   * @throws IllegalStateException if pushCellContext() was not called before.
+   */
+  default void setNodeLocation(SNodeLocation location) {
+
+  }
 }

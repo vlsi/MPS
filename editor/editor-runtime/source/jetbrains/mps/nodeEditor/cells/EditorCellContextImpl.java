@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.cells.EditorCellContext;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 
 import java.util.Collection;
 import java.util.Collections;
@@ -28,9 +29,11 @@ import java.util.Set;
  */
 public class EditorCellContextImpl implements EditorCellContext {
   private Set<String> myHints = new HashSet<String>();
+  private SNodeLocation myNodeLocation;
 
   public EditorCellContextImpl(EditorCellContext parentContext) {
     myHints.addAll(parentContext.getHints());
+    myNodeLocation = parentContext.getNodeLocation();
   }
 
   @Override
@@ -43,6 +46,11 @@ public class EditorCellContextImpl implements EditorCellContext {
     return myHints.contains(hint);
   }
 
+  @Override
+  public SNodeLocation getNodeLocation() {
+    return myNodeLocation;
+  }
+
   public void addHints(String... hints) {
     for (String hint : hints) {
       myHints.add(hint);
@@ -53,5 +61,9 @@ public class EditorCellContextImpl implements EditorCellContext {
     for (String hint : hints) {
       myHints.remove(hint);
     }
+  }
+
+  public void setNodeLocation(SNodeLocation location) {
+    myNodeLocation = location;
   }
 }

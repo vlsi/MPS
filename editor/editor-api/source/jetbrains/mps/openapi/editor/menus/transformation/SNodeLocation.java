@@ -17,10 +17,9 @@ package jetbrains.mps.openapi.editor.menus.transformation;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import java.util.Iterator;
 
 /**
  * A node location in the tree. Used to specify location for both transformations and substitutions. Usually the same node is transformed and substituted, but
@@ -51,11 +50,16 @@ public interface SNodeLocation {
   @Nullable
   SNode getChild();
 
+  @Nullable
+  default SAbstractConcept getTargetConcept() {
+    return getContainmentLink() != null ? getContainmentLink().getTargetConcept() : null;
+  }
+
   /**
    * A location specified by a parent node and a containment link. The child is assumed to be absent. Transformations act on the parent, substitutions create
    * a new child node for the link.
    */
-  class FromParentAndLink implements SNodeLocation {
+  class FromParentAndLink extends SNodeLocationWithTargetConcept {
     @NotNull
     private final SNode myParentNode;
 
@@ -63,6 +67,12 @@ public interface SNodeLocation {
     private final SContainmentLink myContainmentLink;
 
     public FromParentAndLink(@NotNull SNode parentNode, @NotNull SContainmentLink containmentLink) {
+      myParentNode = parentNode;
+      myContainmentLink = containmentLink;
+    }
+
+    public FromParentAndLink(@NotNull SNode parentNode, @NotNull SContainmentLink containmentLink, @NotNull SAbstractConcept targetConcept) {
+      super(targetConcept);
       myParentNode = parentNode;
       myContainmentLink = containmentLink;
     }
@@ -98,11 +108,16 @@ public interface SNodeLocation {
   /**
    * A location specified by an existing node. The node is both transformed and substituted.
    */
-  class FromNode implements SNodeLocation {
+  class FromNode extends SNodeLocationWithTargetConcept {
     @NotNull
     private final SNode myNode;
 
     public FromNode(@NotNull SNode node) {
+      myNode = node;
+    }
+
+    public FromNode(@NotNull SNode node, @NotNull SAbstractConcept targetConcept) {
+      super(targetConcept);
       myNode = node;
     }
 
@@ -128,6 +143,24 @@ public interface SNodeLocation {
     @Override
     public SNode getChild() {
       return myNode;
+    }
+  }
+
+  abstract class SNodeLocationWithTargetConcept implements SNodeLocation {
+    @Nullable
+    private SAbstractConcept myTargetConcept;
+
+    SNodeLocationWithTargetConcept(@NotNull SAbstractConcept targetConcept) {
+      myTargetConcept = targetConcept;
+    }
+
+    SNodeLocationWithTargetConcept() {
+    }
+
+    @Nullable
+    @Override
+    public SAbstractConcept getTargetConcept() {
+      return myTargetConcept != null ? myTargetConcept : SNodeLocation.super.getTargetConcept();
     }
   }
 }
