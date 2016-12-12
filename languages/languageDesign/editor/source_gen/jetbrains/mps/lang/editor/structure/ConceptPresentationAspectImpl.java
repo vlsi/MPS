@@ -84,7 +84,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_CustomNodeConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group_Create = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, 0x116e805ff79L, "defaultCaretPosition")).create();
   private final ConceptPresentation props_CellModel_Alternation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_AttributedLinkCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_AttributedNodeCell = new ConceptPresentationBuilder().create();

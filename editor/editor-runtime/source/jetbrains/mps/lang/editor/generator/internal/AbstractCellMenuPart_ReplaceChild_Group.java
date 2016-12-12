@@ -46,7 +46,9 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     IChildNodeSetter setter = new DefaultChildNodeSetter(linkDeclaration);
     final SNode defaultConceptOfChild = CellUtil.getLinkDeclarationTarget(linkDeclaration);
-    if (defaultConceptOfChild == null) return Collections.emptyList();
+    if (defaultConceptOfChild == null) {
+      return Collections.emptyList();
+    }
     final SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
 
     final IOperationContext context = editorContext.getOperationContext();
@@ -88,8 +90,10 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
     return false;
   }
 
-  protected abstract SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
-      IOperationContext context, EditorContext editorContext);
+  protected SNode customCreateChildNode(Object parameterObject, SNode node, SNode currentChild, SNode defaultConceptOfChild, SModel model,
+      IOperationContext context, EditorContext editorContext) {
+    return null;
+  }
 
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {

@@ -22,6 +22,7 @@
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
@@ -554,6 +555,10 @@
       <property role="TrG5h" value="defaultCaretPosition" />
       <property role="IQ2nx" value="1197893615481" />
       <ref role="AX2Wp" node="hrC158_" resolve="_CaretPosition_Enum" />
+      <node concept="asaX9" id="2XU9kLxRcf" role="lGtFl">
+        <property role="YLPcu" value="MPS 3.5" />
+        <property role="YLQ7P" value="Not used anymore since MPS 3.5" />
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="fIwURLg">
