@@ -6285,16 +6285,5 @@
     <property role="3GE5qa" value="QueryFunction" />
     <property role="TrG5h" value="IEditorContextAccessQualifier" />
   </node>
-  <node concept="1TIwiD" id="hH7jTdE">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="CellLayout_Indent_Old" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="CellLayout" />
-    <property role="34LRSv" value="indent_old" />
-    <property role="EcuMT" value="1216672142186" />
-    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
-    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
-  </node>
 </model>
 
