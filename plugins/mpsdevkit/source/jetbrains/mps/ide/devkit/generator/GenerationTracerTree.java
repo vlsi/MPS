@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 final class GenerationTracerTree extends MPSTree {
   private final GenerationTracerView myView;
@@ -48,15 +49,19 @@ final class GenerationTracerTree extends MPSTree {
     return create(myRootTracerNode);
   }
 
+  // expects model read
   private MPSTreeNode create(TraceNodeUI n) {
     MPSTreeNode treeNode = new MPSTreeNode(n);
     treeNode.setNodeIdentifier(n.getNodeIdentifier());
-    treeNode.setText(n.getText(myProject.getRepository()));
+    // XXX once/if transient models move out of project repository, would need a mechanism to pass proper repository down here
+    SRepository repository = myProject.getRepository();
+    // if there are too many node resolves,, getText+getIcon may get inverted to populate smth like workbench.choose.ElementDescriptor
+    treeNode.setText(n.getText(repository));
     final SNodeReference target = n.getNavigateTarget();
     if (target != null && target.getModelReference() != null) {
       treeNode.setAdditionalText(target.getModelReference().getModelName());
     }
-    treeNode.setIcon(n.getIcon());
+    treeNode.setIcon(n.getIcon(repository));
     for (TraceNodeUI ch : n.getChildren()) {
       treeNode.add(create(ch));
     }

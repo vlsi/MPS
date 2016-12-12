@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,7 +32,6 @@ import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.jetbrains.annotations.NotNull;
@@ -61,7 +60,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
 
   public GenerationTracerViewTool(Project project, TransientModelsComponent transientModels) {
-    super(project, "Generation Tracer", -1, jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Generation Tracer", null, jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, false, true);
     myTransientModelsOwner = transientModels;
     myNoTabsComponent = new NoTabsComponent(this);
   }
@@ -230,7 +229,9 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       return null;
     }
     TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", Icons.COLLECTION, node.getReference());
-    for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node)) {
+    // XXX for now, we assume template source models reside in the same repository as the transient/origin node, this in
+    // not generally true. Likely shall be project repository (if different than that of transient modules) or the one with deployed languages
+    for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node, node.getModel().getRepository())) {
       newTrace.addChild(n);
     }
     return newTrace;
@@ -241,7 +242,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
       return null;
     }
     TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", Icons.COLLECTION, node.getReference());
-    for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node)) {
+    for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node, node.getModel().getRepository())) {
       newTrace.addChild(n);
     }
     return newTrace;

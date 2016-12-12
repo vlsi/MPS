@@ -19,15 +19,16 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,8 +37,8 @@ import java.util.Set;
 
 /**
  * Visitor to compose trace tree. Either resort to
- * {@link #buildBackTrace(jetbrains.mps.generator.GenerationTrace, org.jetbrains.mps.openapi.model.SNode)} and
- * {@link #buildTrace(jetbrains.mps.generator.GenerationTrace, org.jetbrains.mps.openapi.model.SNode)} default builders, or use directly:
+ * {@link #buildBackTrace(GenerationTrace, SNode, SRepository)} and
+ * {@link #buildTrace(GenerationTrace, SNode, SRepository)} default builders, or use directly:
  * <pre>
  *   GenerationTrace trace = ...;
  *   TraceBuilderUI builder = new TraceBulderUI();
@@ -58,10 +59,17 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   private boolean myExcludeEmptySteps = true;
   private boolean myCompactTemplates = false;
   private boolean myGroupByStep = true;
+  private final SRepository myTemplateSources;
+
   private enum NodeGrouping { Change, Input, Output }
   private NodeGrouping myChangeGrouping = NodeGrouping.Change;
 
-  public TraceBuilderUI() {
+  /**
+   * @param templateSources repository with source models for templates that produced trace being visualized.
+   *                        Not necessarily the same as the one transient nodes come from.
+   */
+  public TraceBuilderUI(@Nullable SRepository templateSources) {
+    myTemplateSources = templateSources;
     myResult = new ArrayList<TraceNodeUI>();
   }
 
@@ -70,6 +78,10 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
     return this;
   }
 
+  /**
+   * @param compactTemplates {@code true} make sense only if there are source models for templates are available (and repository they reside in was
+   *                         an argument in {@link #TraceBuilderUI(SRepository)}.
+   */
   public TraceBuilderUI compactTemplates(boolean compactTemplates) {
     myCompactTemplates = compactTemplates;
     return this;
@@ -196,7 +208,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
 
   private Collection<TraceNodeUI> compactTemplates(Collection<SNodeReference> templateNodes) {
     ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
-    if (!myCompactTemplates) {
+    if (!myCompactTemplates || myTemplateSources == null) {
       for (SNodeReference r : templateNodes) {
         rv.add(new TraceNodeUI(Kind.TEMPLATE, r));
       }
@@ -205,7 +217,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
     // compactByNavigateTarget();
     LinkedHashSet<SNode> mostSpecificTemplates = new LinkedHashSet<SNode>();
 L1:   for (SNodeReference t : templateNodes) {
-      SNode templateNode = t == null ? null : t.resolve(MPSModuleRepository.getInstance());
+      SNode templateNode = t == null ? null : t.resolve(myTemplateSources);
       if (templateNode == null) {
         rv.add(new TraceNodeUI(Kind.TEMPLATE, t));
         continue;
@@ -236,8 +248,8 @@ L1:   for (SNodeReference t : templateNodes) {
   /**
    * Handy default forward trace composer.
    */
-  public static Collection<TraceNodeUI> buildTrace(@NotNull GenerationTrace trace, @NotNull SNode node) {
-    final TraceBuilderUI v = defaults();
+  public static Collection<TraceNodeUI> buildTrace(@NotNull GenerationTrace trace, @NotNull SNode node, @Nullable SRepository templateSources) {
+    final TraceBuilderUI v = defaults(new TraceBuilderUI(templateSources));
     if (!GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings().isGroupByChange()) {
       v.groupByInputNode();
     }
@@ -245,17 +257,23 @@ L1:   for (SNodeReference t : templateNodes) {
     return v.getResult();
   }
 
-  public static Collection<TraceNodeUI> buildBackTrace(@NotNull GenerationTrace trace, @NotNull final SNode node) {
-    final TraceBuilderUI v = defaults();
+  public static Collection<TraceNodeUI> buildBackTrace(@NotNull GenerationTrace trace, @NotNull final SNode node, @Nullable SRepository templateSources) {
+    final TraceBuilderUI v = defaults(new TraceBuilderUI(templateSources));
     if (!GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings().isGroupByChange()) {
       v.groupByOutputNode();
     }
     trace.walkBackward(node, v);
     return v.getResult();
   }
-  public static TraceBuilderUI defaults() {
+
+  /**
+   * populate builder with settings from {@link GenerationSettingsProvider}
+   * @param builder
+   * @return
+   */
+  public static TraceBuilderUI defaults(TraceBuilderUI builder) {
     GenTraceSettings s = GenerationSettingsProvider.getInstance().getGenerationSettings().getTraceSettings();
-    return new TraceBuilderUI().excludeEmptySteps(!s.isShowEmptySteps()).compactTemplates(s.isCompactTemplates()).groupByStep(s.isGroupByStep());
+    return builder.excludeEmptySteps(!s.isShowEmptySteps()).compactTemplates(s.isCompactTemplates()).groupByStep(s.isGroupByStep());
   }
 
   private static class StepChanges {
@@ -263,13 +281,13 @@ L1:   for (SNodeReference t : templateNodes) {
     private final Set<SNodeReference> myInputs, myOutputs;
 
     public StepChanges() {
-      myGroupedChanges = new MultiMap<Pair<SNodeReference, SNodeReference>, SNodeReference>();
-      myInputs = new LinkedHashSet<SNodeReference>();
-      myOutputs = new LinkedHashSet<SNodeReference>();
+      myGroupedChanges = new MultiMap<>();
+      myInputs = new LinkedHashSet<>();
+      myOutputs = new LinkedHashSet<>();
     }
 
     public void record(@NotNull SNodeReference input, @NotNull SNodeReference output, @NotNull SNodeReference template) {
-      myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), template);
+      myGroupedChanges.putValue(new Pair<>(input, output), template);
       myInputs.add(input);
       myOutputs.add(output);
     }
