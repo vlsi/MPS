@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -15,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -51,7 +53,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
   }
 
   private EditorCell createCollection_f5bzsg_a() {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_f5bzsg_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
@@ -124,7 +126,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
 
     private EditorCell createCollection_f5bzsg_a0a0() {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_f5bzsg_a0a0");
       editorCell.addEditorCell(createRefNode_f5bzsg_a0a0a());
       return editorCell;
@@ -190,7 +192,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createCollection_f5bzsg_c0() {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());
     editorCell.setCellId("Collection_f5bzsg_c0");
     editorCell.addEditorCell(createConstant_f5bzsg_a2a());
     editorCell.addEditorCell(createRefCell_f5bzsg_b2a());
@@ -260,7 +262,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
     }
 
     private EditorCell createCollection_f5bzsg_a0b2a() {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_f5bzsg_a0b2a");
       editorCell.addEditorCell(createRefNode_f5bzsg_a0a1c0());
       return editorCell;

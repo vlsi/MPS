@@ -8,6 +8,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
@@ -53,7 +54,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
   }
 
   private EditorCell createCollection_imlbz9_a() {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
     editorCell.setCellId("Collection_imlbz9_a");
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
@@ -144,7 +145,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
       return editorCell;
     }
     private EditorCell createCollection_imlbz9_a0a() {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_imlbz9_a0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, false);
@@ -258,7 +259,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
       return editorCell;
     }
     private EditorCell createCollection_imlbz9_a8a() {
-      EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(getEditorContext(), myNode);
+      EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
       editorCell.setCellId("Collection_imlbz9_a8a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.SELECTABLE, false);
