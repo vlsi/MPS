@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -66,10 +65,7 @@ public class PathProvider {
     if (o instanceof SModelReference) {
       SModelReference model = (SModelReference) o;
       res.add(new PathItem(PathItemRole.ROLE_MODEL, model));
-      SModuleReference moduleReference = model.getModuleReference();
-      if (moduleReference != null) {
-        o = MPSModuleRepository.getInstance().getModule(moduleReference.getModuleId());
-      }
+      o = model.getModuleReference();
     }
 
     if (o instanceof SModule) {
