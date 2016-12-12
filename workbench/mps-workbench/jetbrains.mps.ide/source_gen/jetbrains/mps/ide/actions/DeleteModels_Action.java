@@ -16,8 +16,8 @@ import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.refactoring.RefactoringSettings;
 import jetbrains.mps.workbench.dialogs.DeleteDialog;
-import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.save.SaveRepositoryCommand;
 import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 
 public class DeleteModels_Action extends BaseAction {
@@ -83,11 +83,11 @@ public class DeleteModels_Action extends BaseAction {
     }
     RefactoringSettings.getInstance().SAFE_DELETE = safeOption.selected;
 
-    ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
-    modelAccess.executeCommandInEDT(new Runnable() {
+    final SRepository repository = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository();
+    repository.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         // see MPS-18743 
-        MPSModuleRepository.getInstance().saveAll();
+        new SaveRepositoryCommand(repository).execute();
         for (SModel model : ListSequence.fromList(((List<SModel>) MapSequence.fromMap(_params).get("models")))) {
           if (SModelStereotype.isStubModel(model) || SModelStereotype.isDescriptorModel(model)) {
             continue;

@@ -7408,9 +7408,9 @@
       <node id="3575273646046443869" at="81,27,82,13" concept="13" />
       <node id="3877293089208015636" at="83,5,84,72" concept="6" />
       <node id="944342063932953790" at="84,72,85,0" concept="15" />
-      <node id="944342063932984452" at="85,0,86,122" concept="12" />
+      <node id="4709256811789818675" at="85,0,86,110" concept="12" />
       <node id="711809809631510784" at="88,25,89,25" concept="14" />
-      <node id="711809809631505018" at="89,25,90,52" concept="6" />
+      <node id="711809809631505018" at="89,25,90,56" concept="6" />
       <node id="3575273646046443955" at="92,97,93,21" concept="5" />
       <node id="3575273646046443883" at="94,11,95,197" concept="6" />
       <node id="3575273646046443826" at="48,95,51,5" concept="10" />
@@ -7423,13 +7423,13 @@
       <node id="2617792328185272747" at="39,105,43,7" concept="10" />
       <node id="3575273646046443826" at="26,0,31,0" concept="4" trace="DeleteModels_Action#()V" />
       <node id="2617792328185262975" at="38,31,44,5" concept="9" />
-      <node id="3575273646046443877" at="90,52,96,9" concept="9" />
+      <node id="3575273646046443877" at="90,56,96,9" concept="9" />
       <node id="3575273646046443826" at="51,5,58,5" concept="2" />
       <node id="3575273646046443826" at="58,5,65,5" concept="2" />
       <node id="3575273646046443826" at="65,5,72,5" concept="2" />
       <node id="944342063932994044" at="88,0,98,0" concept="11" trace="run#()V" />
       <node id="3575273646046443826" at="35,0,47,0" concept="11" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="944342063932956549" at="86,122,98,7" concept="6" />
+      <node id="944342063932956549" at="86,110,98,7" concept="6" />
       <node id="3575273646046443826" at="75,0,100,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="3575273646046443826" at="47,0,75,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="3575273646046443826" at="32,32,33,16" />
@@ -7457,7 +7457,7 @@
       <scope id="2617792328185262975" at="38,31,44,5">
         <var name="m" id="2617792328185262977" />
       </scope>
-      <scope id="3575273646046443877" at="90,52,96,9">
+      <scope id="3575273646046443877" at="90,56,96,9">
         <var name="model" id="3575273646046443878" />
       </scope>
       <scope id="944342063932994045" at="88,25,96,9" />
@@ -7471,7 +7471,7 @@
       </scope>
       <scope id="3575273646046443826" at="76,96,98,7">
         <var name="dialog" id="3575273646046443840" />
-        <var name="modelAccess" id="944342063932984453" />
+        <var name="repository" id="4709256811789818676" />
         <var name="safeDelete" id="3796017720718106321" />
         <var name="safeOption" id="9024276490549192684" />
       </scope>
@@ -7484,7 +7484,7 @@
         <var name="_params" id="3575273646046443826" />
         <var name="event" id="3575273646046443826" />
       </scope>
-      <unit id="944342063932994044" at="87,40,98,5" name="jetbrains.mps.ide.actions.DeleteModels_Action$1" />
+      <unit id="944342063932994044" at="87,56,98,5" name="jetbrains.mps.ide.actions.DeleteModels_Action$1" />
       <unit id="3575273646046443826" at="23,0,101,0" name="jetbrains.mps.ide.actions.DeleteModels_Action" />
     </file>
   </root>
