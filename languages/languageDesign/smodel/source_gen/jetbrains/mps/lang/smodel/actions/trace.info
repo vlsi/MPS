@@ -8,8 +8,6 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
-  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ActionAspectDescriptorImpl.java">
       <unit at="13,0,64,0" name="jetbrains.mps.lang.smodel.actions.ActionAspectDescriptorImpl" />
@@ -319,20 +317,6 @@
       <unit id="2356801005208152816" at="13,0,20,0" name="jetbrains.mps.lang.smodel.actions.ConceptRefFactories$NodeFactory_2356801005208152816" />
       <unit id="3634671212091137140" at="20,0,27,0" name="jetbrains.mps.lang.smodel.actions.ConceptRefFactories$NodeFactory_3634671212091137140" />
       <unit id="3634671212091137139" at="12,0,28,0" name="jetbrains.mps.lang.smodel.actions.ConceptRefFactories" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)/4111132606517369241">
-    <file name="Pattern_15hxz2eci6spe.java">
-      <node id="5462094956390267090" at="10,51,11,30" concept="9" />
-      <node id="5462094956390267090" at="11,30,12,0" concept="8" />
-      <node id="5462094956390267090" at="12,0,13,0" concept="8" />
-      <node id="5462094956390267090" at="13,0,14,302" concept="1" />
-      <node id="5462094956390267090" at="10,0,16,0" concept="0" trace="Pattern_15hxz2eci6spe#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="5462094956390267090" at="10,51,14,302" />
-      <scope id="5462094956390267090" at="10,0,16,0">
-        <var name="patternNode" id="5462094956390267090" />
-      </scope>
-      <unit id="5462094956390267090" at="9,0,18,0" name="jetbrains.mps.lang.smodel.actions.Pattern_15hxz2eci6spe" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902f9(jetbrains.mps.lang.smodel.actions)/7457491784609238793">
