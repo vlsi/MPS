@@ -37,7 +37,7 @@ public class GeneratorsRunner {
     System.out.println("Analyzing MPS modules...");
     f.prepare();
     System.out.println("Building gensources module 1/2...");
-    f.updateGenSourcesIml(Utils.files("core", "languages", "samples", "workbench"));
+    f.updateGenSourcesIml(Utils.files("core", "languages", "languages.test", "samples", "workbench"));
     System.out.println("Building gensources module 2/2...");
     f.updateGenSourcesImlNoIntersections(Utils.files("workbench", "plugins", "testbench"));
     System.out.println("Saving...");
