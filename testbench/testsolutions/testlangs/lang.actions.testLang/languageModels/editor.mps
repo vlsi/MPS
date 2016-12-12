@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -1439,6 +1439,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJ12D">
+    <property role="3GE5qa" value="sidetransform" />
     <ref role="aqKnT" to="kxd5:2KPNJVWDkQm" resolve="ActionTestSidetransformAnotherAbstractChild" />
     <node concept="1Qtc8_" id="1wEcoXjJ12E" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJ12F" role="1Qtc8$">
@@ -1675,6 +1676,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJ14H">
+    <property role="3GE5qa" value="sidetransform" />
     <ref role="aqKnT" to="kxd5:4fhGlP1nCQ0" resolve="ActionTestSidetransformAddConceptAbstractChild" />
     <node concept="1Qtc8_" id="1wEcoXjJ14I" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJ14J" role="1Qtc8$">
@@ -1765,6 +1767,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJ15B">
+    <property role="3GE5qa" value="sidetransform" />
     <ref role="aqKnT" to="kxd5:1uvaauHT77N" resolve="ActionTestSidetransformAbstractChild" />
     <node concept="1Qtc8_" id="1wEcoXjJ15C" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJ15D" role="1Qtc8$">
@@ -1881,6 +1884,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ18A">
     <property role="TrG5h" value="AddMenuPart_WrapperSubstituteDefaultSelection" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:4uH7WCILjXL" resolve="ActionTestAbstractChildWrapper" />
     <node concept="3ft6gV" id="1wEcoXjJ18C" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ18D" role="3ft5RY">
@@ -2123,6 +2127,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ1b8">
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:2MpI$RlZMkN" resolve="ActionTestChild1SubConcept" />
     <node concept="3ft6gV" id="1wEcoXjJ1ba" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1bb" role="3ft5RY">
@@ -3485,6 +3490,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1pb">
     <property role="TrG5h" value="AddMenuPart_ConceptSubstitute" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:2d_KkSmsqBa" resolve="ActionTestAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1pd" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1pe" role="3ft5RY">
@@ -3697,6 +3703,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1rs">
     <property role="TrG5h" value="AddMenuPart_SimpleItemSubstitute" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:2d_KkSmsqBa" resolve="ActionTestAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1sI" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1sJ" role="3ft5RY">
@@ -5254,6 +5261,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1Fv">
     <property role="TrG5h" value="RemoveByConditionPart" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:7fvSfK_kkId" resolve="ActionTestDefaultAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1Fx" role="3ft7WO">
       <node concept="2VfDsV" id="3PLPHlN5Apo" role="3ft5RZ">
@@ -5317,6 +5325,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1G9">
     <property role="TrG5h" value="ConceptSubstitutePartTest" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:2d_KkSmsqBa" resolve="ActionTestAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1Gb" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1Gc" role="3ft5RY">
@@ -5504,6 +5513,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1HQ">
     <property role="TrG5h" value="RemoveDefaultsPart" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:7fvSfK_kkId" resolve="ActionTestDefaultAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1Iu" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1Iv" role="3ft5RY">
@@ -5552,6 +5562,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ1J5">
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:4uH7WCITLIH" resolve="ActionTestChildToWrap1" />
     <node concept="2F$Pav" id="1wEcoXjJ1J7" role="3ft7WO">
       <node concept="3bZ5Sz" id="1wEcoXjJ1J8" role="2ZBHrp">
@@ -5714,6 +5725,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1LC">
     <property role="TrG5h" value="AddMenuPart_WrapperSubstitute" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:4uH7WCILjXL" resolve="ActionTestAbstractChildWrapper" />
     <node concept="3ft6gV" id="1wEcoXjJ1LE" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJ1LF" role="3ft5RY">
@@ -6257,6 +6269,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJ1QC">
     <property role="TrG5h" value="RemovePart" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="kxd5:7fvSfK_kkId" resolve="ActionTestDefaultAbstractChild" />
     <node concept="3ft6gV" id="1wEcoXjJ1QE" role="3ft7WO">
       <node concept="2VfDsV" id="3PLPHlN5DnB" role="3ft5RZ">

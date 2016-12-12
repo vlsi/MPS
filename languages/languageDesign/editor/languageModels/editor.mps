@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
@@ -21156,6 +21156,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJsH0">
     <property role="TrG5h" value="addExtendedClass_StyleClass" />
+    <property role="3GE5qa" value="Stylesheet" />
     <ref role="aqKnT" to="tpc2:2VNGR_E4AW$" resolve="StyleClass" />
     <node concept="yp4Wq" id="1wEcoXjJsH1" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />
@@ -21213,6 +21214,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJsHU">
     <property role="TrG5h" value="addCondition" />
+    <property role="3GE5qa" value="Stylesheet" />
     <ref role="aqKnT" to="tpc2:7Ur4aGwilo0" resolve="ApplyStyleClassCondition" />
     <node concept="yp4Wq" id="1wEcoXjJsHV" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />
@@ -21265,6 +21267,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJsIm">
+    <property role="3GE5qa" value="SNode.select" />
     <ref role="aqKnT" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
     <node concept="1Qtc8_" id="1wEcoXjJsIn" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJsIo" role="1Qtc8$">
@@ -21914,6 +21917,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJsSJ">
+    <property role="3GE5qa" value="CellModel" />
     <ref role="aqKnT" to="tpc2:3K0abI4q_wn" resolve="EditorCellId" />
     <node concept="3ft6gV" id="1wEcoXjJsSL" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJsSM" role="3ft5RY">
@@ -23757,6 +23761,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJtzR">
+    <property role="3GE5qa" value="Stylesheet" />
     <ref role="aqKnT" to="tpc2:7Ur4aGsHrro" resolve="StyleClassReferenceList" />
     <node concept="3N5dw7" id="1wEcoXjJtzT" role="3ft7WO">
       <node concept="2kknPJ" id="1wEcoXjJtzU" role="2klrvf">
@@ -23992,6 +23997,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJtAT">
+    <property role="3GE5qa" value="EditorContextHints" />
     <ref role="aqKnT" to="tpc2:42lfqf__buC" resolve="ContextHintsSpecification" />
     <node concept="2F$Pav" id="1wEcoXjJtAV" role="3ft7WO">
       <node concept="3Tqbb2" id="1wEcoXjJtAW" role="2ZBHrp">
@@ -24325,6 +24331,7 @@
     <node concept="2VfDsV" id="1wEcoXjJtN$" role="3ft7WO" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJtFt">
+    <property role="3GE5qa" value="SNode.select" />
     <ref role="aqKnT" to="tpc2:1GaASKeIesA" resolve="AbstractCellSelector" />
     <node concept="3ft5Ry" id="1wEcoXjJtFv" role="3ft7WO">
       <ref role="4PJHt" to="tpc2:3K0abI5lJox" resolve="CellIdReferenceSelector" />
@@ -24884,6 +24891,7 @@
   </node>
   <node concept="3INDKC" id="1wEcoXjJNdQ">
     <property role="TrG5h" value="SelectInEditorOperationSideTransforms_Contribution" />
+    <property role="3GE5qa" value="SNode.select" />
     <node concept="A1WHr" id="1wEcoXjJNdR" role="AmTjC">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>

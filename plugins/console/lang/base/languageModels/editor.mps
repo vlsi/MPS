@@ -5,7 +5,7 @@
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1148,6 +1148,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIDmU">
+    <property role="3GE5qa" value="expression" />
     <ref role="aqKnT" to="eynw:5WvH$QO98uv" resolve="Command" />
     <node concept="3N5dw7" id="1wEcoXjIDmW" role="3ft7WO">
       <ref role="3EoQqy" to="eynw:6D0CP__oaBp" resolve="BLExpression" />

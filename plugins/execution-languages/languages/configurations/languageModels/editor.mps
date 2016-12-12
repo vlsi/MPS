@@ -2,7 +2,7 @@
 <model ref="r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -1501,6 +1501,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIDp3">
+    <property role="3GE5qa" value="execution" />
     <ref role="aqKnT" to="uhxm:6LlKjXrMGoJ" resolve="ConfigurationFromExecutorReference" />
     <node concept="3ft6gV" id="1wEcoXjIDp5" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjIDp6" role="3ft5RY">

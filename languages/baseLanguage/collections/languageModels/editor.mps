@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
@@ -5446,6 +5446,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIBAW">
+    <property role="3GE5qa" value="set" />
     <ref role="aqKnT" to="tp2q:hQmGkF$" resolve="RemoveAllSetElementsOperation" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjIBB0">
@@ -5516,6 +5517,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIBCi">
+    <property role="3GE5qa" value="set" />
     <ref role="aqKnT" to="tp2q:hQmzaSM" resolve="RemoveSetElementOperation" />
   </node>
   <node concept="3p309x" id="1wEcoXjIBCm">
@@ -6462,9 +6464,11 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIBSr">
+    <property role="3GE5qa" value="set" />
     <ref role="aqKnT" to="tp2q:hQl5eJo" resolve="AddSetElementOperation" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjIBSv">
+    <property role="3GE5qa" value="set" />
     <ref role="aqKnT" to="tp2q:hQmBsE7" resolve="AddAllSetElementsOperation" />
   </node>
   <node concept="Q6S24" id="1wEcoXjIBSz">

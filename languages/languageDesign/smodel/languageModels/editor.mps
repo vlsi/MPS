@@ -4,7 +4,7 @@
   <languages>
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -5894,6 +5894,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJglC">
+    <property role="3GE5qa" value="attributes" />
     <ref role="aqKnT" to="tp25:5zEkxuKhrAF" resolve="AttributeQualifier" />
     <node concept="1Qtc8_" id="1wEcoXjJglD" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJglE" role="1Qtc8$">
@@ -5927,6 +5928,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJglW">
+    <property role="3GE5qa" value="rightTransform" />
     <ref role="aqKnT" to="tp25:36vPRrqnoSW" resolve="AbstractNodeRefExpression" />
     <node concept="1Qtc8_" id="1wEcoXjJglX" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJglY" role="1Qtc8$">
@@ -6039,6 +6041,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJgmQ">
+    <property role="3GE5qa" value="rightTransform" />
     <ref role="aqKnT" to="tp25:i3HdMsX" resolve="SEnumOperation" />
     <node concept="1Qtc8_" id="1wEcoXjJgmR" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJgmS" role="1Qtc8$">
@@ -6072,6 +6075,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJgna">
+    <property role="3GE5qa" value="rightTransform" />
     <ref role="aqKnT" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="1Qtc8_" id="1wEcoXjJgnb" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJgnc" role="1Qtc8$">
@@ -6257,6 +6261,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJgpd">
+    <property role="3GE5qa" value="operation" />
     <ref role="aqKnT" to="tp25:5XpkEY8gZFT" resolve="SConceptOperation" />
     <node concept="3ft6gV" id="1wEcoXjJgpf" role="3ft7WO">
       <node concept="3ft6gV" id="2jHvEnOz5pF" role="3ft5RZ">
@@ -6362,6 +6367,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJgpP">
     <property role="TrG5h" value="snodeOperation" />
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="3ft6gV" id="1wEcoXjJgsc" role="3ft7WO">
       <node concept="2VfDsV" id="38TrnUppx3S" role="3ft5RZ">
@@ -7228,6 +7234,7 @@
   </node>
   <node concept="Q6S24" id="1wEcoXjJgsO">
     <property role="TrG5h" value="SNodeOperation_SubstituteMenu_Additional" />
+    <property role="3GE5qa" value="operation" />
     <ref role="aqKnT" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="3ft6gV" id="1wEcoXjJgsQ" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJgsR" role="3ft5RY">
@@ -7247,6 +7254,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJgtt">
+    <property role="3GE5qa" value="substitute" />
     <ref role="aqKnT" to="tp25:gDxHYCE" resolve="AbstractOperationParameter" />
     <node concept="3ft6gV" id="1wEcoXjJgtv" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJgtw" role="3ft5RY">
@@ -7321,6 +7329,7 @@
     <node concept="2VfDsV" id="1wEcoXjJgv1" role="3ft7WO" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJguU">
+    <property role="3GE5qa" value="sequence" />
     <ref role="aqKnT" to="tp25:44$dP9uanu0" resolve="OfConceptOperation" />
     <node concept="3ft6gV" id="2jHvEnOzaQd" role="3ft7WO">
       <node concept="3ft6gW" id="2jHvEnOzaQj" role="3ft5RY">
@@ -7451,6 +7460,7 @@
   </node>
   <node concept="3INDKC" id="1wEcoXjJMZj">
     <property role="TrG5h" value="expression_Contribution" />
+    <property role="3GE5qa" value="rightTransform" />
     <node concept="A1WHr" id="1wEcoXjJMZk" role="AmTjC">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>

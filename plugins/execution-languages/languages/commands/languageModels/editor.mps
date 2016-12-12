@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -1215,6 +1215,7 @@
   </node>
   <node concept="3p309x" id="1wEcoXjJhyd">
     <property role="TrG5h" value="reportExecutionError_Contribution" />
+    <property role="3GE5qa" value="error" />
     <node concept="2kknPJ" id="1wEcoXjJhye" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fzclF8l" resolve="Statement" />
     </node>
@@ -1247,6 +1248,7 @@
   </node>
   <node concept="3p309x" id="1wEcoXjJhyR">
     <property role="TrG5h" value="Expression_Contribution" />
+    <property role="3GE5qa" value="execution" />
     <node concept="2kknPJ" id="1wEcoXjJhyS" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
@@ -1561,6 +1563,7 @@
   </node>
   <node concept="3INDKC" id="1wEcoXjJ_D5">
     <property role="TrG5h" value="AddRedirect_Contribution" />
+    <property role="3GE5qa" value="execution" />
     <node concept="A1WHr" id="1wEcoXjJ_D6" role="AmTjC">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>

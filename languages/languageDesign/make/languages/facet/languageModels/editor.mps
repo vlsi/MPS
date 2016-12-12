@@ -8,7 +8,7 @@
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -1867,6 +1867,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJiCK">
     <property role="TrG5h" value="TargetDeclaration_makeOptional" />
+    <property role="3GE5qa" value="target" />
     <ref role="aqKnT" to="vvvw:5$iCEGsO$KX" resolve="TargetDeclaration" />
     <node concept="yp4Wq" id="1wEcoXjJiCL" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />
@@ -1938,6 +1939,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJiD_">
+    <property role="3GE5qa" value="target" />
     <ref role="aqKnT" to="vvvw:6AQAnCFE2O" resolve="ResourceClassifierType" />
     <node concept="3ft6gV" id="1wEcoXjJiDB" role="3ft7WO">
       <node concept="3ft6gW" id="1wEcoXjJiDC" role="3ft5RY">

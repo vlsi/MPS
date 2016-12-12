@@ -1901,6 +1901,7 @@
   </node>
   <node concept="3p309x" id="1wEcoXjIATC">
     <property role="TrG5h" value="ClassLikeMembers_Contribution" />
+    <property role="3GE5qa" value="instances" />
     <node concept="2kknPJ" id="1wEcoXjIATD" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:h9ngReX" resolve="ClassifierMember" />
     </node>
@@ -2220,6 +2221,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjIAT$">
+    <property role="3GE5qa" value="member" />
     <ref role="aqKnT" to="oubp:2WSWNq1TGnY" resolve="MemberModifier" />
     <node concept="2VfDsV" id="1wEcoXjIB0H" role="3ft7WO">
       <node concept="1GpqWn" id="2jHvEnO_Pfp" role="1Go12V">
