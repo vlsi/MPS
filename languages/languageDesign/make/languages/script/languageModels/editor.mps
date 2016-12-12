@@ -2,13 +2,13 @@
 <model ref="r:997bd332-957d-4e59-bb10-bc8a630d5568(jetbrains.mps.make.script.editor)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1574,10 +1574,10 @@
             <node concept="3clFbS" id="1wEcoXjJhU4" role="2VODD2">
               <node concept="3clFbF" id="1wEcoXjJhU5" role="3cqZAp">
                 <node concept="2OqwBi" id="1wEcoXjJhU6" role="3clFbG">
-                  <node concept="3n3YKJ" id="7Ift4HfX6fM" role="2OqNvi" />
                   <node concept="35c_gC" id="7Ift4HfX6fN" role="2Oq$k0">
                     <ref role="35c_gD" to="q9ra:apaq_sBAA2" resolve="BeginWorkStatement" />
                   </node>
+                  <node concept="3n3YKJ" id="7Ift4HfX6fM" role="2OqNvi" />
                 </node>
               </node>
             </node>
@@ -1651,10 +1651,10 @@
                     </node>
                     <node concept="3cpWs3" id="1wEcoXjJhVX" role="3uHU7B">
                       <node concept="2OqwBi" id="1wEcoXjJhVY" role="3uHU7B">
-                        <node concept="3n3YKJ" id="7Ift4HfX6fG" role="2OqNvi" />
                         <node concept="35c_gC" id="7Ift4HfX6fH" role="2Oq$k0">
                           <ref role="35c_gD" to="q9ra:apaq_sBAA4" resolve="AdvanceWorkStatement" />
                         </node>
+                        <node concept="3n3YKJ" id="7Ift4HfX6fG" role="2OqNvi" />
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJhW1" role="3uHU7w">
                         <property role="Xl_RC" value=" &lt;amount&gt; of " />
@@ -1726,10 +1726,10 @@
                   <node concept="3cpWs3" id="1wEcoXjJhXL" role="3clFbG">
                     <node concept="3cpWs3" id="1wEcoXjJhXM" role="3uHU7B">
                       <node concept="2OqwBi" id="1wEcoXjJhXN" role="3uHU7B">
-                        <node concept="3n3YKJ" id="7Ift4HfX6fJ" role="2OqNvi" />
                         <node concept="35c_gC" id="7Ift4HfX6fK" role="2Oq$k0">
                           <ref role="35c_gD" to="q9ra:apaq_sBAA7" resolve="FinishWorkStatement" />
                         </node>
+                        <node concept="3n3YKJ" id="7Ift4HfX6fJ" role="2OqNvi" />
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJhXQ" role="3uHU7w">
                         <property role="Xl_RC" value=" " />

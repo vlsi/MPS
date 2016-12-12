@@ -2,7 +2,7 @@
 <model ref="r:aed1d11b-73e5-474f-a263-22833310a33f(jetbrains.mps.testbench.suite.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -431,6 +431,9 @@
         <node concept="3clFbS" id="1wEcoXjJjXH" role="2VODD2">
           <node concept="3clFbF" id="1wEcoXjJjXI" role="3cqZAp">
             <node concept="2OqwBi" id="1wEcoXjJjXJ" role="3clFbG">
+              <node concept="35c_gC" id="7Ift4Hg3xR8" role="2Oq$k0">
+                <ref role="35c_gD" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
+              </node>
               <node concept="2qgKlT" id="1wEcoXjJjXL" role="2OqNvi">
                 <ref role="37wK5l" to="5rc7:1k5vvhzzWoK" resolve="getTestClassesForModule" />
                 <node concept="2OqwBi" id="1wEcoXjJjXM" role="37wK5m">
@@ -444,9 +447,6 @@
                     <node concept="1xIGOp" id="1wEcoXjJjXR" role="1xVPHs" />
                   </node>
                 </node>
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3xR8" role="2Oq$k0">
-                <ref role="35c_gD" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
               </node>
             </node>
           </node>
@@ -593,6 +593,9 @@
         <node concept="3clFbS" id="1wEcoXjJk0e" role="2VODD2">
           <node concept="3clFbF" id="1wEcoXjJk0f" role="3cqZAp">
             <node concept="2OqwBi" id="1wEcoXjJk0g" role="3clFbG">
+              <node concept="35c_gC" id="7Ift4Hg3xR9" role="2Oq$k0">
+                <ref role="35c_gD" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
+              </node>
               <node concept="2qgKlT" id="1wEcoXjJk0i" role="2OqNvi">
                 <ref role="37wK5l" to="5rc7:1k5vvhzzWoK" resolve="getTestClassesForModule" />
                 <node concept="2OqwBi" id="1wEcoXjJk0j" role="37wK5m">
@@ -606,9 +609,6 @@
                     <node concept="1xIGOp" id="1wEcoXjJk0o" role="1xVPHs" />
                   </node>
                 </node>
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3xR9" role="2Oq$k0">
-                <ref role="35c_gD" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
               </node>
             </node>
           </node>

@@ -5,7 +5,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -44,7 +44,6 @@
         <child id="7429591467341004877" name="condition" index="aenpu" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -489,7 +488,6 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F2HdR" id="hyXtntJ" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="1cu_pB" value="2" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tp4f:hyXxRup" resolve="actualArgument" />
@@ -606,7 +604,6 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F2HdR" id="hLrKZ7l" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpee:fzclF7Y" resolve="parameter" />
         <node concept="3F0ifn" id="hLrKZ7m" role="2czzBI">
@@ -687,7 +684,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="hLrL4hz" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <ref role="1NtTu8" to="tpee:hiAJF2X" resolve="annotation" />
         <node concept="ljvvj" id="i0IaoyA" role="3F10Kt">
           <property role="VOm3f" value="true" />

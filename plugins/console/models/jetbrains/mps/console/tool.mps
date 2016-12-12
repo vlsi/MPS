@@ -10,7 +10,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
   </languages>
@@ -2846,6 +2846,12 @@
       <node concept="3Tm6S6" id="4ZD9PNE24ja" role="1B3o_S" />
       <node concept="3clFbS" id="4ZD9PNE21H$" role="3clF47">
         <node concept="3clFbJ" id="4ZD9PNE5q5P" role="3cqZAp">
+          <node concept="3clFbC" id="4ZD9PNE5Bf9" role="3clFbw">
+            <node concept="37vLTw" id="4ZD9PNE5x2P" role="3uHU7B">
+              <ref role="3cqZAo" node="4ZD9PNE2e2H" resolve="commandHolder" />
+            </node>
+            <node concept="10Nm6u" id="4ZD9PNE5HaC" role="3uHU7w" />
+          </node>
           <node concept="3clFbS" id="4ZD9PNE5q5R" role="3clFbx">
             <node concept="3clFbF" id="7P07Ug81W5s" role="3cqZAp">
               <node concept="37vLTI" id="7P07Ug81Y$4" role="3clFbG">
@@ -2872,12 +2878,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3clFbC" id="4ZD9PNE5Bf9" role="3clFbw">
-            <node concept="37vLTw" id="4ZD9PNE5x2P" role="3uHU7B">
-              <ref role="3cqZAo" node="4ZD9PNE2e2H" resolve="commandHolder" />
-            </node>
-            <node concept="10Nm6u" id="4ZD9PNE5HaC" role="3uHU7w" />
           </node>
         </node>
         <node concept="3clFbJ" id="4ZD9PNE389_" role="3cqZAp">
@@ -4300,19 +4300,6 @@
                 </node>
                 <node concept="3clFbF" id="6ysF3v1j_vm" role="3cqZAp">
                   <node concept="37vLTI" id="6ysF3v1j_vn" role="3clFbG">
-                    <node concept="2OqwBi" id="6ysF3v1j_vo" role="37vLTJ">
-                      <node concept="2OqwBi" id="6ysF3v1j_vp" role="2Oq$k0">
-                        <node concept="37vLTw" id="6ysF3v1j_vq" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6ysF3v1j_8y" resolve="myRoot" />
-                        </node>
-                        <node concept="3TrEf2" id="6ysF3v1j_vr" role="2OqNvi">
-                          <ref role="3Tt5mk" to="eynw:1nVd0kvs_IL" resolve="commandHolder" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="6ysF3v1j_vs" role="2OqNvi">
-                        <ref role="3Tt5mk" to="eynw:jysm2GH4$$" resolve="command" />
-                      </node>
-                    </node>
                     <node concept="2OqwBi" id="52vemjEJkOv" role="37vLTx">
                       <node concept="2OqwBi" id="6ysF3v1j_vt" role="2Oq$k0">
                         <node concept="2OqwBi" id="7P07Ug83LmA" role="2Oq$k0">
@@ -4328,6 +4315,19 @@
                         </node>
                       </node>
                       <node concept="1$rogu" id="52vemjEJleI" role="2OqNvi" />
+                    </node>
+                    <node concept="2OqwBi" id="6ysF3v1j_vo" role="37vLTJ">
+                      <node concept="2OqwBi" id="6ysF3v1j_vp" role="2Oq$k0">
+                        <node concept="37vLTw" id="6ysF3v1j_vq" role="2Oq$k0">
+                          <ref role="3cqZAo" node="6ysF3v1j_8y" resolve="myRoot" />
+                        </node>
+                        <node concept="3TrEf2" id="6ysF3v1j_vr" role="2OqNvi">
+                          <ref role="3Tt5mk" to="eynw:1nVd0kvs_IL" resolve="commandHolder" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="6ysF3v1j_vs" role="2OqNvi">
+                        <ref role="3Tt5mk" to="eynw:jysm2GH4$$" resolve="command" />
+                      </node>
                     </node>
                   </node>
                 </node>

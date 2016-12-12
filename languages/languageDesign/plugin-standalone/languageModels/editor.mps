@@ -2,9 +2,9 @@
 <model ref="r:dbd42a0c-01d0-4585-adc3-78799d2c649b(jetbrains.mps.lang.plugin.standalone.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
   </languages>
   <imports>
     <import index="tgbt" ref="r:c70ee934-afb1-4c02-b6a9-1c4d1908a792(jetbrains.mps.lang.plugin.standalone.structure)" />
@@ -28,7 +28,6 @@
         <child id="1198489993734" name="body" index="b$wch" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
@@ -195,7 +194,6 @@
       <node concept="3EZMnI" id="qKmr2orM1T" role="b$wch">
         <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM1U" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tgbt:qKmr2orM1m" resolve="fieldDeclaration" />
           <node concept="2iRkQZ" id="qKmr2orM1V" role="2czzBx" />
         </node>
@@ -330,7 +328,6 @@
       <node concept="3EZMnI" id="qKmr2orM2A" role="b$wch">
         <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM2B" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tgbt:qKmr2orM1s" resolve="fieldDeclaration" />
           <node concept="2iRkQZ" id="qKmr2orM2C" role="2czzBx" />
         </node>
@@ -520,12 +517,12 @@
             <node concept="3clFbS" id="1wEcoXjJlYN" role="2VODD2">
               <node concept="3clFbF" id="1wEcoXjJlYO" role="3cqZAp">
                 <node concept="2OqwBi" id="1wEcoXjJlYP" role="3clFbG">
+                  <node concept="35c_gC" id="7Ift4Hg3rOX" role="2Oq$k0">
+                    <ref role="35c_gD" to="tp4k:hHDS2nw" resolve="ActionDataParameterDeclaration" />
+                  </node>
                   <node concept="2qgKlT" id="1wEcoXjJlYQ" role="2OqNvi">
                     <ref role="37wK5l" to="tp4s:2DsqYJxu5P" resolve="getDescription" />
                     <node concept="2ZBlsa" id="1wEcoXjJlYT" role="37wK5m" />
-                  </node>
-                  <node concept="35c_gC" id="7Ift4Hg3rOX" role="2Oq$k0">
-                    <ref role="35c_gD" to="tp4k:hHDS2nw" resolve="ActionDataParameterDeclaration" />
                   </node>
                 </node>
               </node>

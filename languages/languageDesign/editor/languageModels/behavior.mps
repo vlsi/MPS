@@ -6,7 +6,7 @@
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="-1" />
     <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -7081,37 +7081,16 @@
       <node concept="3Tm1VV" id="i2IdWzH" role="1B3o_S" />
       <node concept="3clFbS" id="i2IdWzJ" role="3clF47">
         <node concept="3cpWs6" id="i2IfoWZ" role="3cqZAp">
-          <node concept="22lmx$" id="i2IfoX0" role="3cqZAk">
-            <node concept="2OqwBi" id="i2IfoX1" role="3uHU7w">
-              <node concept="2OqwBi" id="i2IfoX2" role="2Oq$k0">
-                <node concept="13iPFW" id="i2IfoX3" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i2Ifqke" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i2IfoX5" role="2OqNvi">
-                <node concept="chp4Y" id="i2IfoX6" role="cj9EA">
-                  <ref role="cht4Q" to="tpc2:g6iRkMY" resolve="CellLayout_Vertical" />
-                </node>
+          <node concept="2OqwBi" id="i2IfoX1" role="3cqZAk">
+            <node concept="2OqwBi" id="i2IfoX2" role="2Oq$k0">
+              <node concept="13iPFW" id="i2IfoX3" role="2Oq$k0" />
+              <node concept="3TrEf2" id="i2Ifqke" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
               </node>
             </node>
-            <node concept="1eOMI4" id="i2IfoX7" role="3uHU7B">
-              <node concept="1Wc70l" id="i2IfoX8" role="1eOMHV">
-                <node concept="2OqwBi" id="i2IfoX9" role="3uHU7B">
-                  <node concept="13iPFW" id="i2IfoXa" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="i2IfoXb" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpc2:gAczwbU" resolve="vertical" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="i2IfoXc" role="3uHU7w">
-                  <node concept="2OqwBi" id="i2IfoXd" role="2Oq$k0">
-                    <node concept="13iPFW" id="i2IfoXe" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="i2IfpHe" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                    </node>
-                  </node>
-                  <node concept="3w_OXm" id="i2IfoXg" role="2OqNvi" />
-                </node>
+            <node concept="1mIQ4w" id="i2IfoX5" role="2OqNvi">
+              <node concept="chp4Y" id="i2IfoX6" role="cj9EA">
+                <ref role="cht4Q" to="tpc2:g6iRkMY" resolve="CellLayout_Vertical" />
               </node>
             </node>
           </node>
@@ -7123,37 +7102,16 @@
       <property role="TrG5h" value="isVerticalGrid" />
       <node concept="3clFbS" id="i2IfsZ2" role="3clF47">
         <node concept="3cpWs6" id="i2IfsZ3" role="3cqZAp">
-          <node concept="22lmx$" id="i2IfsZ4" role="3cqZAk">
-            <node concept="2OqwBi" id="i2IfsZ5" role="3uHU7w">
-              <node concept="2OqwBi" id="i2IfsZ6" role="2Oq$k0">
-                <node concept="13iPFW" id="i2IfsZ7" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i2Ifw5s" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                </node>
-              </node>
-              <node concept="1mIQ4w" id="i2IfsZ9" role="2OqNvi">
-                <node concept="chp4Y" id="i2IfsZa" role="cj9EA">
-                  <ref role="cht4Q" to="tpc2:i2EHxdK" resolve="CellLayout_VerticalGrid" />
-                </node>
+          <node concept="2OqwBi" id="i2IfsZ5" role="3cqZAk">
+            <node concept="2OqwBi" id="i2IfsZ6" role="2Oq$k0">
+              <node concept="13iPFW" id="i2IfsZ7" role="2Oq$k0" />
+              <node concept="3TrEf2" id="i2Ifw5s" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
               </node>
             </node>
-            <node concept="1eOMI4" id="i2IfsZb" role="3uHU7B">
-              <node concept="1Wc70l" id="i2IfsZc" role="1eOMHV">
-                <node concept="2OqwBi" id="i2IfsZd" role="3uHU7B">
-                  <node concept="13iPFW" id="i2IfsZe" role="2Oq$k0" />
-                  <node concept="3TrcHB" id="i2IfsZf" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpc2:gAczwbV" resolve="gridLayout" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="i2IfsZg" role="3uHU7w">
-                  <node concept="2OqwBi" id="i2IfsZh" role="2Oq$k0">
-                    <node concept="13iPFW" id="i2IfsZi" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="i2Ifur2" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                    </node>
-                  </node>
-                  <node concept="3w_OXm" id="i2IfsZk" role="2OqNvi" />
-                </node>
+            <node concept="1mIQ4w" id="i2IfsZ9" role="2OqNvi">
+              <node concept="chp4Y" id="i2IfsZa" role="cj9EA">
+                <ref role="cht4Q" to="tpc2:i2EHxdK" resolve="CellLayout_VerticalGrid" />
               </node>
             </node>
           </node>
@@ -7168,26 +7126,14 @@
       <node concept="3clFbS" id="i2IfsZq" role="3clF47">
         <node concept="3cpWs6" id="i2IfsZr" role="3cqZAp">
           <node concept="22lmx$" id="i2IfsZs" role="3cqZAk">
-            <node concept="1eOMI4" id="i2IfsZt" role="3uHU7B">
-              <node concept="1Wc70l" id="i2IfsZu" role="1eOMHV">
-                <node concept="3fqX7Q" id="i2IfsZv" role="3uHU7B">
-                  <node concept="2OqwBi" id="i2IfsZw" role="3fr31v">
-                    <node concept="13iPFW" id="i2IfsZx" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="i2IfsZy" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpc2:gAczwbU" resolve="vertical" />
-                    </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="i2IfsZz" role="3uHU7w">
-                  <node concept="2OqwBi" id="i2IfsZ$" role="2Oq$k0">
-                    <node concept="13iPFW" id="i2IfsZ_" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="i2IfuU1" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                    </node>
-                  </node>
-                  <node concept="3w_OXm" id="i2IfsZB" role="2OqNvi" />
+            <node concept="2OqwBi" id="i2IfsZz" role="3uHU7B">
+              <node concept="2OqwBi" id="i2IfsZ$" role="2Oq$k0">
+                <node concept="13iPFW" id="i2IfsZ_" role="2Oq$k0" />
+                <node concept="3TrEf2" id="i2IfuU1" role="2OqNvi">
+                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
                 </node>
               </node>
+              <node concept="3w_OXm" id="i2IfsZB" role="2OqNvi" />
             </node>
             <node concept="2OqwBi" id="i2IfsZC" role="3uHU7w">
               <node concept="2OqwBi" id="i2IfsZD" role="2Oq$k0">

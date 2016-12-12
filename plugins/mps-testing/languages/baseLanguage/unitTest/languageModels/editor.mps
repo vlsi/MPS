@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -22,7 +22,6 @@
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1176897764478" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory" flags="in" index="4$FPG" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1176897874615" name="nodeFactory" index="4_6I_" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -369,7 +368,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hO$l2nK" role="3EZMnx">
-            <property role="2czwfN" value="false" />
             <ref role="1NtTu8" to="tpee:gr3b4el" resolve="staticField" />
             <node concept="3F0ifn" id="hO$l2nL" role="2czzBI">
               <property role="3F0ifm" value="&lt;&lt;static fields&gt;&gt;" />
@@ -405,7 +403,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="4_2NxM$h2cd" role="3EZMnx">
-            <property role="2czwfN" value="false" />
             <ref role="1NtTu8" to="tpee:fz12cDB" resolve="field" />
             <node concept="3F0ifn" id="4_2NxM$h2ce" role="2czzBI">
               <property role="ilYzB" value="&lt;&lt;fields&gt;&gt;" />
@@ -447,7 +444,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hO$l2nR" role="3EZMnx">
-            <property role="2czwfN" value="false" />
             <ref role="1NtTu8" to="tpee:g7MN44b" resolve="method" />
             <node concept="3F0ifn" id="hO$l2nS" role="2czzBI">
               <property role="3F0ifm" value="&lt;&lt;methods&gt;&gt;" />
@@ -514,7 +510,6 @@
   <node concept="24kQdi" id="h3s_gwj">
     <ref role="1XX52x" to="tpe3:h3s_got" resolve="TestMethodList" />
     <node concept="3F2HdR" id="h3s_gwk" role="2wV5jI">
-      <property role="2czwfN" value="false" />
       <ref role="1NtTu8" to="tpe3:h3s_gou" resolve="testMethod" />
       <node concept="3F0ifn" id="h3s_gwl" role="2czzBI">
         <property role="ilYzB" value="&lt;&lt;test methods&gt;&gt;" />

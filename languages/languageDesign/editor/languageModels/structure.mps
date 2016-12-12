@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
@@ -1396,6 +1396,22 @@
     <property role="3GE5qa" value="CellModel" />
     <property role="EcuMT" value="1140524381322" />
     <ref role="1TJDcQ" node="g_$h64z" resolve="CellModel_WithRole" />
+    <node concept="1TJgyi" id="gAczwbU" role="1TKVEl">
+      <property role="TrG5h" value="vertical" />
+      <property role="IQ2nx" value="1140524450554" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="asaX9" id="i2IfObc" role="lGtFl">
+        <property role="YLQ7P" value="Not used, will be removed after MPS 3.5" />
+      </node>
+    </node>
+    <node concept="1TJgyi" id="gAczwbV" role="1TKVEl">
+      <property role="TrG5h" value="gridLayout" />
+      <property role="IQ2nx" value="1140524450555" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+      <node concept="asaX9" id="i2IfOII" role="lGtFl">
+        <property role="YLQ7P" value="Not used, will be removed after MPS 3.5" />
+      </node>
+    </node>
     <node concept="1TJgyj" id="h84_6ER" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="nodeFactory" />
@@ -1439,18 +1455,6 @@
       <property role="20kJfa" value="usesFoldingCondition" />
       <property role="IQ2ns" value="4601216887035799527" />
       <ref role="20lvS9" node="gCpkWun" resolve="QueryFunction_NodeCondition" />
-    </node>
-    <node concept="1TJgyi" id="gAczwbU" role="1TKVEl">
-      <property role="TrG5h" value="vertical" />
-      <property role="IQ2nx" value="1140524450554" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="i2IfObc" role="lGtFl" />
-    </node>
-    <node concept="1TJgyi" id="gAczwbV" role="1TKVEl">
-      <property role="TrG5h" value="gridLayout" />
-      <property role="IQ2nx" value="1140524450555" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-      <node concept="asaX9" id="i2IfOII" role="lGtFl" />
     </node>
     <node concept="1TJgyi" id="gAczwbW" role="1TKVEl">
       <property role="TrG5h" value="usesBraces" />
@@ -5962,17 +5966,6 @@
       <ref role="PrY4T" node="1quYWAD18L7" resolve="IMenu_Default" />
     </node>
   </node>
-  <node concept="1TIwiD" id="hH7jTdE">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="CellLayout_Indent_Old" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="CellLayout" />
-    <property role="34LRSv" value="indent_old" />
-    <property role="EcuMT" value="1216672142186" />
-    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
-    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
-  </node>
   <node concept="1TIwiD" id="20vEJZ2AULf">
     <property role="EcuMT" value="2314756748950088783" />
     <property role="3GE5qa" value="Menu.Transformation.Variables" />
@@ -6291,6 +6284,17 @@
     <property role="EcuMT" value="2116464250555401291" />
     <property role="3GE5qa" value="QueryFunction" />
     <property role="TrG5h" value="IEditorContextAccessQualifier" />
+  </node>
+  <node concept="1TIwiD" id="hH7jTdE">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="CellLayout_Indent_Old" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="CellLayout" />
+    <property role="34LRSv" value="indent_old" />
+    <property role="EcuMT" value="1216672142186" />
+    <ref role="1TJDcQ" node="g6iR17a" resolve="CellLayout" />
+    <node concept="asaX9" id="6T2BklgjkBD" role="lGtFl" />
   </node>
 </model>
 

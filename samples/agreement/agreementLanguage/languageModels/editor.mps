@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -19,8 +19,6 @@
       </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450555" name="gridLayout" index="2czwfM" />
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -241,7 +239,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="gbsbQLf" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpna:gbrUltt" resolve="value" />
           <node concept="3F0ifn" id="gbsbQLg" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Value" />
@@ -276,7 +273,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="gbsbTSz" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpna:gbrUqcH" resolve="event" />
           <node concept="3F0ifn" id="gbsbTS$" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Event" />
@@ -357,7 +353,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="gbscEGv" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpna:gbs7ZuR" resolve="postingRule" />
           <node concept="3F0ifn" id="gbscEGw" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Posting Rule" />
@@ -414,7 +409,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="gbsd$oz" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpna:gbrXfpY" resolve="quantity" />
           <node concept="3F0ifn" id="gbsd$o$" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add Quantity" />
@@ -594,7 +588,6 @@
       </node>
       <node concept="3F2HdR" id="gbVgIr0" role="3EZMnx">
         <property role="2czwfO" value="," />
-        <property role="2czwfN" value="false" />
         <ref role="1NtTu8" to="tpna:gbs4wHY" resolve="variable" />
         <node concept="3F0ifn" id="gbVgIr1" role="2czzBI">
           <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to declare variable" />
@@ -785,7 +778,6 @@
         </node>
         <node concept="3F2HdR" id="gbVbE9T" role="3EZMnx">
           <property role="2czwfO" value="," />
-          <property role="2czwfN" value="false" />
           <ref role="1NtTu8" to="tpna:gbUUhDS" resolve="accountType" />
           <node concept="3F0ifn" id="gbVbE9U" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add account type" />
@@ -823,8 +815,6 @@
           <property role="3F0ifm" value="    event types:" />
         </node>
         <node concept="3F2HdR" id="gbVccxX" role="3EZMnx">
-          <property role="2czwfN" value="true" />
-          <property role="2czwfM" value="true" />
           <ref role="1NtTu8" to="tpna:gbUTQX7" resolve="eventType" />
           <node concept="3F0ifn" id="gbVccxY" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;+&lt;Enter&gt; to add event type" />

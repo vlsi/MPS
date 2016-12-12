@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -39,7 +39,6 @@
       </concept>
       <concept id="1164052439493" name="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText" flags="in" index="6VE3a" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -1483,7 +1482,6 @@
         </node>
         <node concept="3XFhqQ" id="hHTIaJl" role="3EZMnx" />
         <node concept="3F2HdR" id="hHTIc8d" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp5g:hHSKRN6" resolve="nodesToCheck" />
           <node concept="2iRkQZ" id="i2ICqHQ" role="2czzBx" />
         </node>
@@ -1518,7 +1516,6 @@
         </node>
         <node concept="3XFhqQ" id="hHTFXFq" role="3EZMnx" />
         <node concept="3F2HdR" id="hHTFYEb" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp5g:hHSL9AP" resolve="testMethods" />
           <node concept="2o9xnK" id="2_AUN5Gs50o" role="2gpyvW">
             <node concept="3clFbS" id="2_AUN5Gs50p" role="2VODD2">
@@ -1562,7 +1559,6 @@
         </node>
         <node concept="3XFhqQ" id="hHTG0G7" role="3EZMnx" />
         <node concept="3F2HdR" id="hHTG2o2" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <property role="2czwfO" value=" " />
           <ref role="1NtTu8" to="tp5g:hHqtyUn" resolve="methods" />
           <node concept="2iRkQZ" id="i2ICqHS" role="2czzBx" />
@@ -3549,7 +3545,6 @@
         </node>
         <node concept="3XFhqQ" id="4K12N3pJCcL" role="3EZMnx" />
         <node concept="3F2HdR" id="4K12N3pJCcM" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp5g:4K12N3pJ$JC" resolve="inputNodes" />
           <node concept="2iRkQZ" id="4K12N3pJCcN" role="2czzBx" />
         </node>
@@ -3583,7 +3578,6 @@
         </node>
         <node concept="3XFhqQ" id="4K12N3pJIFC" role="3EZMnx" />
         <node concept="3F2HdR" id="4K12N3pJIFD" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp5g:4K12N3pJ_ik" resolve="outputNodes" />
           <node concept="2iRkQZ" id="4K12N3pJIFE" role="2czzBx" />
         </node>

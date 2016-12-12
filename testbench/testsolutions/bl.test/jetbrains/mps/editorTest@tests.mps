@@ -17,7 +17,7 @@
     <use id="4dd3c558-f0fc-4807-bade-5d6bcad6b3f1" name="testSpaceCompletion" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
@@ -7414,6 +7414,9 @@
         <node concept="3clFbS" id="68M3I5dEMQ4" role="3clF47">
           <node concept="3clFbF" id="7RhRNdO5gfi" role="3cqZAp">
             <node concept="2OqwBi" id="L_Hr3kExIH" role="3clFbG">
+              <node concept="35c_gC" id="7Ift4Hg3u3l" role="2Oq$k0">
+                <ref role="35c_gD" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+              </node>
               <node concept="2qgKlT" id="5XB$uk$qP7w" role="2OqNvi">
                 <ref role="37wK5l" to="tpeu:hEwJdFJ" resolve="getLeftNodeConcept" />
                 <node concept="LIFWc" id="5XB$uk$qP9h" role="lGtFl">
@@ -7423,9 +7426,6 @@
                   <property role="p6zMs" value="18" />
                   <property role="LIFWd" value="property_name" />
                 </node>
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3u3l" role="2Oq$k0">
-                <ref role="35c_gD" to="tp25:g$eCIIG" resolve="SNodeOperation" />
               </node>
             </node>
           </node>
@@ -7451,6 +7451,9 @@
         <node concept="3clFbS" id="68M3I5dEMQj" role="3clF47">
           <node concept="3clFbF" id="7RhRNdO5egA" role="3cqZAp">
             <node concept="2OqwBi" id="L_Hr3kEs4Q" role="3clFbG">
+              <node concept="35c_gC" id="7Ift4Hg3u3m" role="2Oq$k0">
+                <ref role="35c_gD" to="tp25:g$eCIIG" resolve="SNodeOperation" />
+              </node>
               <node concept="2qgKlT" id="5XB$uk$6XRx" role="2OqNvi">
                 <ref role="37wK5l" to="tpeu:hEwJdFJ" resolve="getLeftNodeConcept" />
                 <node concept="LIFWc" id="5XB$uk$qPda" role="lGtFl">
@@ -7460,9 +7463,6 @@
                   <property role="p6zMs" value="0" />
                   <property role="LIFWd" value="Constant_arlg9k_a1a" />
                 </node>
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3u3m" role="2Oq$k0">
-                <ref role="35c_gD" to="tp25:g$eCIIG" resolve="SNodeOperation" />
               </node>
             </node>
           </node>

@@ -126,9 +126,6 @@
     <file name="CellLayout_Indent_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellLayout_Indent_BehaviorDescriptor" />
     </file>
-    <file name="CellLayout_Indent_Old_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellLayout_Indent_Old_BehaviorDescriptor" />
-    </file>
     <file name="CellLayout_Superscript_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.behavior.CellLayout_Superscript_BehaviorDescriptor" />
     </file>
@@ -6210,9 +6207,9 @@
       <node id="1239873372471" at="36,0,37,0" concept="15" trace="isFoldingEnabled_id3ZqNA5Aj2vG" />
       <node id="1239873372471" at="37,0,38,0" concept="15" trace="getScope_id3fifI_xCJOQ" />
       <node id="1239873372471" at="39,0,40,0" concept="15" trace="BH_METHODS" />
-      <node id="1239873851199" at="44,80,45,704" concept="12" />
-      <node id="1239873867715" at="47,84,48,710" concept="12" />
-      <node id="1239873867739" at="50,82,51,709" concept="12" />
+      <node id="1239873851199" at="44,80,45,356" concept="12" />
+      <node id="1239873867715" at="47,84,48,360" concept="12" />
+      <node id="1239873867739" at="50,82,51,538" concept="12" />
       <node id="4601216887035799536" at="53,90,54,372" concept="12" />
       <node id="4202667662395160903" at="57,414,58,111" concept="13" />
       <node id="4202667662395160905" at="58,111,59,90" concept="13" />
@@ -6252,9 +6249,9 @@
       <node id="1239873372471" at="80,5,94,5" concept="18" />
       <node id="1239873372471" at="75,0,96,0" concept="10" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="1239873372471" at="41,63,41,63" />
-      <scope id="1239873472751" at="44,80,45,704" />
-      <scope id="1239873867714" at="47,84,48,710" />
-      <scope id="1239873867738" at="50,82,51,709" />
+      <scope id="1239873472751" at="44,80,45,356" />
+      <scope id="1239873867714" at="47,84,48,360" />
+      <scope id="1239873867738" at="50,82,51,538" />
       <scope id="4601216887035799535" at="53,90,54,372" />
       <scope id="1239873372471" at="66,60,67,20" />
       <scope id="1239873372471" at="71,114,72,21" />

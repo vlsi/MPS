@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
@@ -54,7 +54,6 @@
         <child id="7429591467341004877" name="condition" index="aenpu" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -712,7 +711,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="i3jDppO" role="3EZMnx">
-          <property role="2czwfN" value="false" />
           <property role="2czwfO" value="," />
           <ref role="1NtTu8" to="tpee:g96eVAe" resolve="typeVariableDeclaration" />
           <node concept="l2Vlx" id="i3jDppP" role="2czzBx" />
@@ -805,7 +803,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="i2pHX_P" role="3EZMnx">
-          <property role="2czwfN" value="false" />
           <ref role="1NtTu8" to="cx9y:i2pHZMD" resolve="component" />
           <node concept="3F0ifn" id="i2pHX_Q" role="2czzBI">
             <property role="ilYzB" value="&lt;&lt;components&gt;&gt;" />
@@ -831,7 +828,6 @@
           <node concept="l2Vlx" id="i2pHX_X" role="2czzBx" />
         </node>
         <node concept="3F2HdR" id="1jh4_kGsI3d" role="3EZMnx">
-          <property role="2czwfN" value="false" />
           <ref role="1NtTu8" to="cx9y:1jh4_kGsGW4" resolve="method" />
           <node concept="3F0ifn" id="1jh4_kGsI3e" role="2czzBI">
             <property role="ilYzB" value="&lt;&lt;methods&gt;&gt;" />
@@ -888,7 +884,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="i2pJgep" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <ref role="1NtTu8" to="tpee:hiAJF2X" resolve="annotation" />
         <node concept="ljvvj" id="i2pJgeq" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -1328,7 +1323,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="i2IFnhX" role="3EZMnx">
-          <property role="2czwfN" value="false" />
           <property role="2czwfO" value="," />
           <ref role="1NtTu8" to="cx9y:i2qQwSF" resolve="parameterType" />
           <node concept="l2Vlx" id="i2IFnhY" role="2czzBx" />
@@ -1656,7 +1650,6 @@
           <ref role="1NtTu8" to="cx9y:i2ryb5m" resolve="tupleDeclaration" />
           <node concept="1sVBvm" id="i2rZUUr" role="1sWHZn">
             <node concept="3F2HdR" id="i2rZUUs" role="2wV5jI">
-              <property role="2czwfN" value="true" />
               <ref role="1NtTu8" to="cx9y:i2pHZMD" resolve="component" />
               <node concept="l2Vlx" id="KRIhzHxkV6" role="2czzBx" />
               <node concept="pj6Ft" id="KRIhzHxkZo" role="3F10Kt">

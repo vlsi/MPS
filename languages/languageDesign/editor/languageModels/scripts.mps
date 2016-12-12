@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" name="jetbrains.mps.lang.script" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -40,10 +40,6 @@
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
-      <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
-        <reference id="1144433194310" name="classConcept" index="1Pybhc" />
-      </concept>
-      <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -75,9 +71,6 @@
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
-      <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
-        <child id="1081516765348" name="expression" index="3fr31v" />
-      </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
@@ -732,170 +725,6 @@
           <node concept="3cpWs6" id="hXZDMJv" role="3cqZAp">
             <node concept="3clFbT" id="hXZDN5M" role="3cqZAk">
               <property role="3clFbU" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="_UgoZ" id="i0Ihen_">
-    <property role="3izfiF" value="editor language" />
-    <property role="_Wzho" value="Migration to Indent Layout" />
-    <property role="TrG5h" value="MigrationToIndentLayout" />
-    <node concept="_XfAh" id="i0Ihlvi" role="_YvDr">
-      <property role="_XH9r" value="MoveEditor to indent Layout" />
-      <ref role="_XDHR" to="tpc2:fBEZMkn" resolve="CellModel_Collection" />
-      <node concept="_ZGcI" id="i0Ihlvj" role="_XPhp">
-        <node concept="3clFbS" id="i0Ihlvk" role="2VODD2">
-          <node concept="3clFbF" id="i0IjWLc" role="3cqZAp">
-            <node concept="2YIFZM" id="i0IjWLd" role="3clFbG">
-              <ref role="1Pybhc" to="tpc7:i0vVbrl" resolve="IndentLayoutUtil" />
-              <ref role="37wK5l" to="tpc7:i0vWnhL" resolve="moveToIndentLayout" />
-              <node concept="_YI3z" id="i0IjWLg" role="37wK5m" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="_Y34e" id="i0IiqG5" role="_XDHO">
-        <node concept="3clFbS" id="i0IiqG6" role="2VODD2">
-          <node concept="3clFbF" id="i0Iirrn" role="3cqZAp">
-            <node concept="1Wc70l" id="i0IAk4M" role="3clFbG">
-              <node concept="3fqX7Q" id="i0IAMDI" role="3uHU7w">
-                <node concept="2OqwBi" id="i0IAMDJ" role="3fr31v">
-                  <node concept="2OqwBi" id="i0IAMDK" role="2Oq$k0">
-                    <node concept="_YI3z" id="i0IAMDL" role="2Oq$k0" />
-                    <node concept="3TrEf2" id="i0IAMDM" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpc2:g6iSdeU" resolve="cellLayout" />
-                    </node>
-                  </node>
-                  <node concept="1mIQ4w" id="i0IAMDN" role="2OqNvi">
-                    <node concept="chp4Y" id="i0IAMDO" role="cj9EA">
-                      <ref role="cht4Q" to="tpc2:i0l2Vh1" resolve="CellLayout_Indent" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3fqX7Q" id="i0IkeGa" role="3uHU7B">
-                <node concept="2OqwBi" id="i0IkeGb" role="3fr31v">
-                  <node concept="2OqwBi" id="i0IkeGc" role="2Oq$k0">
-                    <node concept="_YI3z" id="i0IkeGd" role="2Oq$k0" />
-                    <node concept="1mfA1w" id="i0IkeGe" role="2OqNvi" />
-                  </node>
-                  <node concept="1mIQ4w" id="i0IkeGf" role="2OqNvi">
-                    <node concept="chp4Y" id="i0IkeGg" role="cj9EA">
-                      <ref role="cht4Q" to="tpc2:fBEZMkn" resolve="CellModel_Collection" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="_XfAh" id="i0NGbsk" role="_YvDr">
-      <property role="_XH9r" value="CellModel_RefNodeList migration" />
-      <ref role="_XDHR" to="tpc2:fBF2Hee" resolve="CellModel_RefNodeList" />
-      <node concept="_ZGcI" id="i0NGbsl" role="_XPhp">
-        <node concept="3clFbS" id="i0NGbsm" role="2VODD2">
-          <node concept="3clFbF" id="i0NJpOK" role="3cqZAp">
-            <node concept="37vLTI" id="i0NJqQI" role="3clFbG">
-              <node concept="2ShNRf" id="i0NJqTo" role="37vLTx">
-                <node concept="3zrR0B" id="i0NJrRI" role="2ShVmc">
-                  <node concept="3Tqbb2" id="i0NJrRJ" role="3zrR0E">
-                    <ref role="ehGHo" to="tpc2:i0l2Vh1" resolve="CellLayout_Indent" />
-                  </node>
-                </node>
-              </node>
-              <node concept="2OqwBi" id="i0NJpZz" role="37vLTJ">
-                <node concept="_YI3z" id="i0NJpOL" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i0NJqvn" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="3clFbJ" id="i0NIc4k" role="3cqZAp">
-            <node concept="3clFbS" id="i0NIc4l" role="3clFbx">
-              <node concept="3clFbF" id="i0NJn0c" role="3cqZAp">
-                <node concept="37vLTI" id="i0NJnGk" role="3clFbG">
-                  <node concept="3clFbT" id="i0NJosv" role="37vLTx">
-                    <property role="3clFbU" value="false" />
-                  </node>
-                  <node concept="2OqwBi" id="i0NJn7V" role="37vLTJ">
-                    <node concept="_YI3z" id="i0NJn0d" role="2Oq$k0" />
-                    <node concept="3TrcHB" id="i0NJntE" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpc2:gAczwbU" resolve="vertical" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3cpWs8" id="i0NJ63n" role="3cqZAp">
-                <node concept="3cpWsn" id="i0NJ63o" role="3cpWs9">
-                  <property role="TrG5h" value="indentStyle" />
-                  <node concept="3Tqbb2" id="i0NJ63p" role="1tU5fm">
-                    <ref role="ehGHo" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
-                  </node>
-                  <node concept="2ShNRf" id="i0NJ99j" role="33vP2m">
-                    <node concept="3zrR0B" id="i0NJa4e" role="2ShVmc">
-                      <node concept="3Tqbb2" id="i0NJa4f" role="3zrR0E">
-                        <ref role="ehGHo" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="i0Tc_ti" role="3cqZAp">
-                <node concept="37vLTI" id="i0TcAoa" role="3clFbG">
-                  <node concept="3clFbT" id="i0TcAv9" role="37vLTx">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                  <node concept="2OqwBi" id="i0Tc_GH" role="37vLTJ">
-                    <node concept="37vLTw" id="3GM_nagTxRs" role="2Oq$k0">
-                      <ref role="3cqZAo" node="i0NJ63o" resolve="indentStyle" />
-                    </node>
-                    <node concept="3TrcHB" id="i0Tc_ZT" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpc2:hgVOm7r" resolve="flag" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbF" id="i0NImvR" role="3cqZAp">
-                <node concept="2OqwBi" id="i0NInUC" role="3clFbG">
-                  <node concept="2OqwBi" id="i0NImCz" role="2Oq$k0">
-                    <node concept="_YI3z" id="i0NImvS" role="2Oq$k0" />
-                    <node concept="3Tsc0h" id="i0NInII" role="2OqNvi">
-                      <ref role="3TtcxE" to="tpc2:hJF10O6" resolve="styleItem" />
-                    </node>
-                  </node>
-                  <node concept="TSZUe" id="1$wX9nnL0Ld" role="2OqNvi">
-                    <node concept="37vLTw" id="3GM_nagTyg5" role="25WWJ7">
-                      <ref role="3cqZAo" node="i0NJ63o" resolve="indentStyle" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="2OqwBi" id="i0NIehW" role="3clFbw">
-              <node concept="_YI3z" id="i0NIdOL" role="2Oq$k0" />
-              <node concept="3TrcHB" id="i0NIj$9" role="2OqNvi">
-                <ref role="3TsBF5" to="tpc2:gAczwbU" resolve="vertical" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="_Y34e" id="i0NGTyF" role="_XDHO">
-        <node concept="3clFbS" id="i0NGTyG" role="2VODD2">
-          <node concept="3clFbF" id="i0NGUVV" role="3cqZAp">
-            <node concept="3clFbC" id="i0NH1$D" role="3clFbG">
-              <node concept="10Nm6u" id="i0NH1TI" role="3uHU7w" />
-              <node concept="2OqwBi" id="i0NGV6R" role="3uHU7B">
-                <node concept="_YI3z" id="i0NGUVW" role="2Oq$k0" />
-                <node concept="3TrEf2" id="i0NH1nk" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:gAczzzC" resolve="cellLayout" />
-                </node>
-              </node>
             </node>
           </node>
         </node>

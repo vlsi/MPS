@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -19,7 +19,6 @@
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
@@ -1216,7 +1215,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="1P_b4lPRMjc" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp1t:hDMhHKX" resolve="property" />
           <node concept="3F0ifn" id="1P_b4lPRMjd" role="2czzBI">
             <property role="3F0ifm" value="&lt;&lt;property constraints&gt;&gt;" />
@@ -1241,7 +1239,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="1P_b4lPRMjl" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tp1t:hDMr90r" resolve="referent" />
           <node concept="3F0ifn" id="1P_b4lPRMjm" role="2czzBI">
             <property role="3F0ifm" value="&lt;&lt;referent constraints&gt;&gt;" />

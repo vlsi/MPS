@@ -1344,5 +1344,60 @@
       <unit id="7363351619057170612" at="8,0,17,0" name="jetbrains.mps.lang.editor.migration.MigrateManuallyProblem" />
     </file>
   </root>
+  <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/8031857714602312808">
+    <file name="RemoveDeprecated_CellModelListWithRole_Properties.java">
+      <node id="8031857714602312808" at="21,30,22,63" concept="10" />
+      <node id="8031857714602312808" at="25,33,26,16" concept="10" />
+      <node id="8031857714602312808" at="28,41,29,17" concept="4" />
+      <node id="8031857714602312808" at="29,17,30,16" concept="10" />
+      <node id="8031857714602641587" at="33,5,34,59" concept="9" />
+      <node id="8031857714602641587" at="36,52,37,23" concept="10" />
+      <node id="5346528965468779491" at="42,39,43,164" concept="4" />
+      <node id="5346528965468768945" at="43,164,44,166" concept="4" />
+      <node id="8031857714602312808" at="50,51,51,146" concept="10" />
+      <node id="8031857714602312808" at="21,0,24,0" concept="8" trace="getCaption#()Ljava/lang/String;" />
+      <node id="8031857714602641587" at="36,0,39,0" concept="8" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="8031857714602312808" at="50,0,53,0" concept="8" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="8031857714602312808" at="24,0,28,0" concept="8" trace="isRerunnable#()Z" />
+      <node id="8031857714602312808" at="28,0,32,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8031857714602415118" at="42,0,46,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8031857714602641587" at="34,59,39,8" concept="9" />
+      <node id="8031857714602331452" at="40,124,46,11" concept="4" />
+      <node id="8031857714602330734" at="39,8,47,7" concept="6" />
+      <node id="8031857714602641587" at="32,42,48,5" concept="1" />
+      <node id="8031857714602312808" at="32,0,50,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="8031857714602312808" at="21,30,22,63" />
+      <scope id="8031857714602312808" at="25,33,26,16" />
+      <scope id="8031857714602641587" at="36,52,37,23" />
+      <scope id="8031857714602312808" at="50,51,51,146" />
+      <scope id="8031857714602312808" at="28,41,30,16" />
+      <scope id="8031857714602415119" at="42,39,44,166" />
+      <scope id="8031857714602312808" at="21,0,24,0" />
+      <scope id="8031857714602641587" at="36,0,39,0" />
+      <scope id="8031857714602312808" at="50,0,53,0" />
+      <scope id="8031857714602312808" at="24,0,28,0" />
+      <scope id="8031857714602312808" at="28,0,32,0">
+        <var name="m" id="8031857714602312808" />
+      </scope>
+      <scope id="8031857714602415118" at="42,0,46,0">
+        <var name="it" id="8031857714602415118" />
+      </scope>
+      <scope id="8031857714602330740" at="40,124,46,11" />
+      <scope id="8031857714602330734" at="39,8,47,7">
+        <var name="model" id="8031857714602330736" />
+      </scope>
+      <scope id="8031857714602641587" at="33,5,47,7">
+        <var name="context" id="8031857714602641587" />
+        <var name="scope" id="8031857714602641587" />
+      </scope>
+      <scope id="8031857714602312808" at="32,42,48,5" />
+      <scope id="8031857714602312808" at="32,0,50,0">
+        <var name="m" id="8031857714602312808" />
+      </scope>
+      <unit id="8031857714602641587" at="35,42,39,7" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelListWithRole_Properties$1" />
+      <unit id="8031857714602415118" at="41,225,46,9" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelListWithRole_Properties$2" />
+      <unit id="8031857714602312808" at="20,0,55,0" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelListWithRole_Properties" />
+    </file>
+  </root>
 </debug-info>
 

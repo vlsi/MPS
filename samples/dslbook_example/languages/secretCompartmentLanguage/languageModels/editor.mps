@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
   </languages>
   <imports>
     <import index="tpo2" ref="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" />
@@ -11,7 +11,6 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
       <concept id="1106270549637" name="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" flags="nn" index="2iRfu4" />
@@ -79,7 +78,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="hqWRC$Z" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpo2:hqWRrc6" resolve="event" />
           <node concept="2iRkQZ" id="i2IQKCV" role="2czzBx" />
         </node>
@@ -110,7 +108,6 @@
       </node>
       <node concept="3F0ifn" id="hr125iN" role="3EZMnx" />
       <node concept="3F2HdR" id="hr03MLH" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpo2:hr03EUJ" resolve="state" />
         <node concept="2iRkQZ" id="i2IQKCY" role="2czzBx" />
       </node>
@@ -156,7 +153,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="hr166bf" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpo2:hr15Sar" resolve="transition" />
           <node concept="2iRkQZ" id="i2IQKCW" role="2czzBx" />
         </node>
@@ -222,7 +218,6 @@
       </node>
       <node concept="3F0ifn" id="hr1PBRv" role="3EZMnx" />
       <node concept="3F2HdR" id="hr1PD85" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpo2:hr1P$7t" resolve="testMethod" />
         <node concept="2iRkQZ" id="i2IQKCS" role="2czzBx" />
       </node>
@@ -257,7 +252,6 @@
         <node concept="3EZMnI" id="hr1Ykp6" role="3EZMnx">
           <property role="3EZMnw" value="true" />
           <node concept="3F2HdR" id="hr20$di" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpo2:hr20vOZ" resolve="handleEvent" />
             <node concept="2iRkQZ" id="i2IQKCT" role="2czzBx" />
           </node>

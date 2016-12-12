@@ -2,7 +2,7 @@
 <model ref="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
@@ -12,7 +12,6 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
@@ -182,7 +181,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="hP5Yl5J" role="3EZMnx">
-          <property role="2czwfN" value="false" />
           <ref role="1NtTu8" to="dghb:hP5YayU" resolve="attribute" />
           <node concept="3F0ifn" id="hP5Yl5K" role="2czzBI">
             <property role="ilYzB" value="..." />
@@ -205,7 +203,6 @@
         <property role="3EZMnw" value="false" />
         <node concept="3XFhqQ" id="hP5Yl5Q" role="3EZMnx" />
         <node concept="3F2HdR" id="hP5Yl5R" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="dghb:hP5YayV" resolve="content" />
           <node concept="3F0ifn" id="hP5Yl5S" role="2czzBI">
             <property role="ilYzB" value="..." />

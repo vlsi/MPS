@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590435(jetbrains.mps.samples.readerConfigLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
   </languages>
   <imports>
     <import index="tpnu" ref="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" />
@@ -12,8 +12,6 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450555" name="gridLayout" index="2czwfM" />
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -87,8 +85,6 @@
         </node>
         <node concept="3F2HdR" id="gfQFJmM" role="3EZMnx">
           <property role="2czwfO" value="-------" />
-          <property role="2czwfN" value="true" />
-          <property role="2czwfM" value="true" />
           <ref role="1NtTu8" to="tpnu:gfQFMcV" resolve="mapping" />
           <node concept="3F0ifn" id="gfQGkja" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add mapping" />
@@ -137,8 +133,6 @@
           </node>
         </node>
         <node concept="3F2HdR" id="gfQHjVs" role="3EZMnx">
-          <property role="2czwfN" value="true" />
-          <property role="2czwfM" value="true" />
           <ref role="1NtTu8" to="tpnu:gfQHmRd" resolve="field" />
           <node concept="3F0ifn" id="gfQHya7" role="2czzBI">
             <property role="3F0ifm" value="press &lt;Ctrl&gt;-&lt;Enter&gt; to add field" />

@@ -5,7 +5,7 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
@@ -72,8 +72,6 @@
         <child id="7429591467341004877" name="condition" index="aenpu" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450555" name="gridLayout" index="2czwfM" />
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1176897874615" name="nodeFactory" index="4_6I_" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -1343,8 +1341,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="gUJhHae" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpce:fKM5hVY" resolve="member" />
             <node concept="VPM3Z" id="hEU$Q0B" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -2174,7 +2170,6 @@
               <node concept="VPM3Z" id="hG921Nu" role="3F10Kt" />
             </node>
             <node concept="3F2HdR" id="hG8YOD1" role="3EZMnx">
-              <property role="2czwfN" value="true" />
               <ref role="1k5W1q" to="tpen:2adVrWyBK$Y" resolve="ConceptName" />
               <ref role="1NtTu8" to="tpce:h0Pzm$Y" resolve="implements" />
               <node concept="3F0ifn" id="hG90U1L" role="2czzBI">
@@ -2294,8 +2289,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="g5NcwXs" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="APP_o" node="16BE8Zl8tqG" resolve="PropertyDeclarationDeleteActions" />
             <ref role="1NtTu8" to="tpce:f_TKVDG" resolve="propertyDeclaration" />
             <node concept="3F0ifn" id="16BE8Zl$cte" role="2czzBI">
@@ -2357,8 +2350,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hd2D4Ww" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="APP_o" node="6LnHxz$z9uF" resolve="LinkDeclarationDeleteActions" />
             <ref role="1NtTu8" to="tpce:f_TKVDF" resolve="linkDeclaration" />
             <node concept="2EHx9g" id="1KBnK_bsqag" role="2czzBx" />
@@ -2484,8 +2475,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hd2EUNy" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="APP_o" node="6LnHxz$z9uF" resolve="LinkDeclarationDeleteActions" />
             <ref role="1NtTu8" to="tpce:f_TKVDF" resolve="linkDeclaration" />
             <node concept="2EHx9g" id="1KBnK_bwIA2" role="2czzBx" />
@@ -2927,7 +2916,6 @@
             <node concept="VPM3Z" id="hG97ELi" role="3F10Kt" />
           </node>
           <node concept="3F2HdR" id="hG95MWR" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpce:h0PrDRO" resolve="extends" />
             <node concept="3F0ifn" id="hG95S1P" role="2czzBI">
               <property role="ilYzB" value="&lt;none&gt;" />
@@ -2974,8 +2962,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="h0PlMxz" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpce:f_TKVDG" resolve="propertyDeclaration" />
             <node concept="3F0ifn" id="16BE8Zl$iEj" role="2czzBI">
               <property role="3F0ifm" value="" />
@@ -3036,8 +3022,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hn8am1V" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpce:f_TKVDF" resolve="linkDeclaration" />
             <node concept="3F0ifn" id="4pmFEms0_An" role="2czzBI">
               <property role="ilYzB" value="&lt;&lt; ... &gt;&gt;" />
@@ -3161,8 +3145,6 @@
             </node>
           </node>
           <node concept="3F2HdR" id="hn8am2N" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpce:f_TKVDF" resolve="linkDeclaration" />
             <node concept="3F0ifn" id="4pmFEms0Hn6" role="2czzBI">
               <property role="ilYzB" value="&lt;&lt; ... &gt;&gt;" />

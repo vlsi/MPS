@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <engage id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
@@ -39,7 +39,6 @@
         <child id="7429591467341004877" name="condition" index="aenpu" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -805,7 +804,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="hXbwJ3D" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="2omo:hXbwxZ5" resolve="operation" />
         <node concept="lj46D" id="i0Navxw" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -821,7 +819,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="hXJycAm" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="2omo:hXJy62X" resolve="function" />
         <node concept="VPM3Z" id="hXJycAn" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -840,7 +837,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3tQ$H_xF99R" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="2omo:3tQ$H_xEZSE" resolve="contextObjects" />
         <node concept="VPM3Z" id="3tQ$H_xF99S" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -906,7 +902,6 @@
         <node concept="VPM3Z" id="hZKDzLQ" role="3F10Kt" />
       </node>
       <node concept="3F2HdR" id="hXvItVO" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpee:fzclF7Y" resolve="parameter" />
         <node concept="3F0ifn" id="hXvItVP" role="2czzBI">
@@ -952,7 +947,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="hXr$eiH" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="1cu_pB" value="2" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="2omo:hXryh8L" resolve="parameter" />
@@ -1116,7 +1110,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="hXJtYHY" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpee:fzclF7Y" resolve="parameter" />
         <node concept="3F0ifn" id="hXJtYHZ" role="2czzBI">
@@ -1169,7 +1162,6 @@
         <node concept="VPM3Z" id="hZKDChY" role="3F10Kt" />
       </node>
       <node concept="3F2HdR" id="hXJR_xQ" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="1cu_pB" value="2" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="2omo:hXJF4m5" resolve="parameter" />

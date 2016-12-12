@@ -2,8 +2,8 @@
 <model ref="r:00000000-0000-4000-0000-011c89590299(jetbrains.mps.lang.editor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
@@ -77,8 +77,6 @@
         <child id="7429591467341004877" name="condition" index="aenpu" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450555" name="gridLayout" index="2czwfM" />
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <property id="1140524450556" name="usesBraces" index="2czwfP" />
         <child id="1176897874615" name="nodeFactory" index="4_6I_" />
@@ -1401,7 +1399,6 @@
               </node>
             </node>
             <node concept="3F2HdR" id="i0vcESb" role="3EZMnx">
-              <property role="2czwfN" value="true" />
               <ref role="1NtTu8" to="tpc2:fBEZMko" resolve="childCellModel" />
               <node concept="VPXOz" id="i0vcESc" role="3F10Kt">
                 <property role="VOm3f" value="true" />
@@ -1481,7 +1478,6 @@
             <ref role="PMmxG" node="h7TMiuR" resolve="_OpenTag" />
           </node>
           <node concept="3F2HdR" id="3VHu_U8KYQy" role="3EZMnx">
-            <property role="2czwfN" value="false" />
             <ref role="1NtTu8" to="tpc2:fBEZMko" resolve="childCellModel" />
             <node concept="15ARfc" id="3VHu_U8KYQz" role="3F10Kt">
               <property role="3$6WeP" value="0.0" />
@@ -3272,7 +3268,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="gyQnl1_" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpc2:gyQnntA" resolve="item" />
         <node concept="2iRkQZ" id="i2IxuV9" role="2czzBx" />
       </node>
@@ -4107,8 +4102,6 @@
               </node>
             </node>
             <node concept="3F2HdR" id="hGCG0n2" role="3EZMnx">
-              <property role="2czwfN" value="true" />
-              <property role="2czwfM" value="true" />
               <ref role="1NtTu8" to="tpc2:gyPyayW" resolve="keystroke" />
               <node concept="VPM3Z" id="hGCG0n3" role="3F10Kt">
                 <property role="VOm3f" value="false" />
@@ -4514,7 +4507,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="g_ht9QI" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpc2:g_h_SO1" resolve="item" />
         <node concept="2iRkQZ" id="i2IxuV2" role="2czzBx" />
       </node>
@@ -4781,7 +4773,6 @@
         <property role="3F0ifm" value="menu parts:" />
       </node>
       <node concept="3F2HdR" id="gWP3Ver" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpc2:gWOY2$g" resolve="cellMenuPart" />
         <node concept="3F0ifn" id="gWP3Zts" role="2czzBI">
           <property role="ilYzB" value="&lt;choose menu part&gt;" />
@@ -6505,23 +6496,6 @@
         <ref role="PMmxG" node="h7TMiuR" resolve="_OpenTag" />
         <ref role="1k5W1q" node="i12920y" resolve="tag" />
       </node>
-      <node concept="3F0A7n" id="hdHfl3D" role="3EZMnx">
-        <ref role="1NtTu8" to="tpc2:gAczwbU" resolve="vertical" />
-        <node concept="pkWqt" id="hdHfmp0" role="pqm2j">
-          <node concept="3clFbS" id="hdHfmp1" role="2VODD2">
-            <node concept="3clFbF" id="hI$H6pP" role="3cqZAp">
-              <node concept="2YIFZM" id="hI$H9yM" role="3clFbG">
-                <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-                <ref role="37wK5l" to="w1kc:~SModelStereotype.isGeneratorModel(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="isGeneratorModel" />
-                <node concept="2OqwBi" id="hI$HaQk" role="37wK5m">
-                  <node concept="pncrf" id="hI$HaqH" role="2Oq$k0" />
-                  <node concept="I4A8Y" id="hI$HaYE" role="2OqNvi" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="3EZMnI" id="hd05McO" role="3EZMnx">
         <property role="3EZMnw" value="true" />
         <node concept="3EZMnI" id="hd05McP" role="3EZMnx">
@@ -7391,7 +7365,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3AsHGqdnHBg" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tpc2:hgV6056" resolve="styleClass" />
         <node concept="lj46D" id="3AsHGqdnJhz" role="3F10Kt">
           <property role="VOm3f" value="true" />
@@ -13027,7 +13000,6 @@
         </node>
         <node concept="l2Vlx" id="2VNGR_E4CZJ" role="2iSdaV" />
         <node concept="3F2HdR" id="2VNGR_E4CZK" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpc2:hJF10O6" resolve="styleItem" />
           <node concept="lj46D" id="2VNGR_E4CZL" role="3F10Kt">
             <property role="VOm3f" value="true" />
@@ -13158,7 +13130,6 @@
         <property role="3EZMnw" value="false" />
         <node concept="3XFhqQ" id="1cEk0X7pP3f" role="3EZMnx" />
         <node concept="3F2HdR" id="1cEk0X7pP3g" role="3EZMnx">
-          <property role="2czwfN" value="true" />
           <ref role="1NtTu8" to="tpc2:hJF10O6" resolve="styleItem" />
           <node concept="2iRkQZ" id="1cEk0X7pP3h" role="2czzBx" />
         </node>

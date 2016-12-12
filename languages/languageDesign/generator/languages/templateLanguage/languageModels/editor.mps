@@ -4,7 +4,7 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -42,8 +42,6 @@
         <property id="1226504838901" name="measure" index="2hoDZC" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450555" name="gridLayout" index="2czwfM" />
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <property id="1160590307797" name="usesFolding" index="S$F3r" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
@@ -1069,8 +1067,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTJ7A" role="3EZMnx" />
           <node concept="3F2HdR" id="hurTJKa" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:hurTMnT" resolve="mappingLabel" />
             <node concept="2EHx9g" id="i2IBXXY" role="2czzBx" />
           </node>
@@ -1107,8 +1103,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="6Grr_rb8Z0V" role="3EZMnx" />
           <node concept="3F2HdR" id="6Grr_rb8Z0W" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:2EwDY2In5dB" resolve="exports" />
             <node concept="2EHx9g" id="6Grr_rb8Z0X" role="2czzBx" />
             <node concept="3F0ifn" id="6FKagLNT$Dg" role="2czzBI">
@@ -1145,8 +1139,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="28lK$1mBjJa" role="3EZMnx" />
           <node concept="3F2HdR" id="28lK$1mBjJb" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:28lK$1mBjJ2" resolve="generationParameters" />
             <node concept="2EHx9g" id="28lK$1mBjJc" role="2czzBx" />
           </node>
@@ -1214,8 +1206,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTAf6" role="3EZMnx" />
           <node concept="3F2HdR" id="hppvUqJ" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:gYVS0kp" resolve="createRootRule" />
             <node concept="VPM3Z" id="hEU$Pvd" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1258,7 +1248,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTCcn" role="3EZMnx" />
           <node concept="3F2HdR" id="hppw0sN" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpf8:gZlj3fB" resolve="rootMappingRule" />
             <node concept="VPM3Z" id="hEU$PF4" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1301,7 +1290,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTCWu" role="3EZMnx" />
           <node concept="3F2HdR" id="hppw4Kh" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpf8:gZ0SoFM" resolve="weavingMappingRule" />
             <node concept="VPM3Z" id="hEU$PQk" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1344,7 +1332,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTDK0" role="3EZMnx" />
           <node concept="3F2HdR" id="hppw8pg" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpf8:gZacgNl" resolve="reductionMappingRule" />
             <node concept="VPM3Z" id="hEU$PAT" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1387,7 +1374,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="1$dcvTE5RhX" role="3EZMnx" />
           <node concept="3F2HdR" id="1$dcvTE5RhY" role="3EZMnx">
-            <property role="2czwfN" value="true" />
             <ref role="1NtTu8" to="tpf8:1$dcvTE5RhN" resolve="patternReductionRule" />
             <node concept="VPM3Z" id="1$dcvTE5RhZ" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1430,8 +1416,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hKaR6Z0" role="3EZMnx" />
           <node concept="3F2HdR" id="hKaR6Z1" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:hKaQY93" resolve="dropRootRule" />
             <node concept="VPM3Z" id="hKaR6Z2" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1474,8 +1458,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="6uPxrhfjwvU" role="3EZMnx" />
           <node concept="3F2HdR" id="6uPxrhfjwvV" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <property role="S$F3r" value="true" />
             <ref role="1NtTu8" to="tpf8:6uPxrhfjwrr" resolve="dropAttrubuteRule" />
             <node concept="VPM3Z" id="6uPxrhfjwvW" role="3F10Kt">
@@ -1515,8 +1497,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTFBb" role="3EZMnx" />
           <node concept="3F2HdR" id="hppwgAN" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:hppuA4d" resolve="preMappingScript" />
             <node concept="VPM3Z" id="hEU$P9k" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1559,8 +1539,6 @@
           <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hurTG_t" role="3EZMnx" />
           <node concept="3F2HdR" id="hppwuqd" role="3EZMnx">
-            <property role="2czwfN" value="true" />
-            <property role="2czwfM" value="true" />
             <ref role="1NtTu8" to="tpf8:hppvy2_" resolve="postMappingScript" />
             <node concept="VPM3Z" id="hEU$P40" role="3F10Kt">
               <property role="VOm3f" value="false" />
@@ -1798,7 +1776,6 @@
               </node>
             </node>
             <node concept="3F2HdR" id="gZaVPtO" role="3EZMnx">
-              <property role="2czwfN" value="true" />
               <ref role="1NtTu8" to="tpf8:gZaUrV0" resolve="reductionMappingRule" />
               <node concept="VPM3Z" id="hEU$Q20" role="3F10Kt">
                 <property role="VOm3f" value="false" />
@@ -4542,8 +4519,6 @@
     <node concept="3EZMnI" id="hp51_cF" role="2wV5jI">
       <property role="3EZMnw" value="true" />
       <node concept="3F2HdR" id="hp9YKHH" role="3EZMnx">
-        <property role="2czwfN" value="true" />
-        <property role="2czwfM" value="true" />
         <ref role="1NtTu8" to="tpf8:hp4ZwS6" resolve="case" />
         <node concept="2EHx9g" id="i2IBXXx" role="2czzBx" />
       </node>
@@ -5050,7 +5025,6 @@
         <ref role="1k5W1q" node="hFCSAw$" resolve="LeftParen" />
       </node>
       <node concept="3F2HdR" id="1vDgt48Nz57" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="1cu_pB" value="2" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpf8:1vDgt48Nz4_" resolve="actualArgument" />

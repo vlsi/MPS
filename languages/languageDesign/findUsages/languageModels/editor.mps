@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590359(jetbrains.mps.lang.findUsages.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
   </languages>
   <imports>
     <import index="tp3b" ref="r:00000000-0000-4000-0000-011c8959035b(jetbrains.mps.lang.findUsages.structure)" />
@@ -18,7 +18,6 @@
         <child id="1198489993734" name="body" index="b$wch" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
       </concept>
@@ -367,7 +366,6 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F2HdR" id="5xq1uvO4jtF" role="3EZMnx">
-        <property role="2czwfN" value="true" />
         <ref role="1NtTu8" to="tp3b:74sqJOp2t9T" resolve="finder" />
         <node concept="2iRkQZ" id="5xq1uvO4jtG" role="2czzBx" />
       </node>

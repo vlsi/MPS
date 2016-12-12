@@ -2,7 +2,7 @@
 <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -38,7 +38,6 @@
         <child id="1078153129734" name="inspectedCellModel" index="6VMZX" />
       </concept>
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -515,7 +514,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="g$abzDm" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="oubp:3geGFOI0X5C" resolve="param" />
         <node concept="3F0ifn" id="g$abzDn" role="2czzBI">
@@ -758,7 +756,6 @@
         </node>
       </node>
       <node concept="3F2HdR" id="3geGFOI14vj" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpee:fzclF7Y" resolve="parameter" />
         <node concept="3F0ifn" id="3geGFOI14vk" role="2czzBI">

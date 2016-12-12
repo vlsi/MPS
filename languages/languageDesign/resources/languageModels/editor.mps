@@ -2,8 +2,8 @@
 <model ref="r:dc468d7c-ca2d-45f7-ace9-6f81e4694f66(jetbrains.mps.lang.resources.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1049,10 +1049,10 @@
                   <node concept="3cpWs3" id="1wEcoXjJlDB" role="3uHU7B">
                     <node concept="3cpWs3" id="1wEcoXjJlDC" role="3uHU7B">
                       <node concept="2OqwBi" id="1wEcoXjJlDD" role="3uHU7B">
-                        <node concept="3n3YKJ" id="7Ift4HfWCjj" role="2OqNvi" />
                         <node concept="35c_gC" id="7Ift4HfWCjk" role="2Oq$k0">
                           <ref role="35c_gD" to="1oap:7Mb2akaesr7" resolve="OldIconReference" />
                         </node>
+                        <node concept="3n3YKJ" id="7Ift4HfWCjj" role="2OqNvi" />
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJlDG" role="3uHU7w">
                         <property role="Xl_RC" value="&lt;" />
