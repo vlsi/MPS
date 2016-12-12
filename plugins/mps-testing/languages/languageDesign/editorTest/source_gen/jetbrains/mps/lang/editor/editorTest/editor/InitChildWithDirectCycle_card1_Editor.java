@@ -90,16 +90,15 @@ public class InitChildWithDirectCycle_card1_Editor extends DefaultNodeEditor {
     protected EditorCell createChildCell(SNode child) {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
+        EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, 0x1b00debf2d3601a9L, "subChild"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, 0x1b00debf2d3601a9L, "subChild"), child));
+        installCellInfo(child, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
 
     @Override
@@ -125,15 +124,14 @@ public class InitChildWithDirectCycle_card1_Editor extends DefaultNodeEditor {
     protected EditorCell createEmptyCell() {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, 0x1b00debf2d3601a9L, "subChild")));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createEmptyCell();
+        EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_subChild");
         installCellInfo(null, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
     protected String getNoTargetText() {
       return "<no subChild>";

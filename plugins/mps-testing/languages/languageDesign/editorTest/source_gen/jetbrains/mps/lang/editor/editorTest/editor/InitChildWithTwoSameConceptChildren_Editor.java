@@ -94,16 +94,15 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
     protected EditorCell createChildCell(SNode child) {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
+        EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a404dL, "ch1"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a404dL, "ch1"), child));
+        installCellInfo(child, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
 
     @Override
@@ -129,15 +128,14 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
     protected EditorCell createEmptyCell() {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a404dL, "ch1")));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createEmptyCell();
+        EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_ch1");
         installCellInfo(null, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
     protected String getNoTargetText() {
       return "<no ch1>";
@@ -179,16 +177,15 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
     protected EditorCell createChildCell(SNode child) {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
+        EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a4055L, "ch2"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a4055L, "ch2"), child));
+        installCellInfo(child, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
 
     @Override
@@ -214,15 +211,14 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
     protected EditorCell createEmptyCell() {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, 0x67739d157f7a4055L, "ch2")));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createEmptyCell();
+        EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_ch2");
         installCellInfo(null, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
     protected String getNoTargetText() {
       return "<no ch2>";

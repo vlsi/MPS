@@ -104,17 +104,14 @@ public class InitChildWithDirectCycle_card1n_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-      EditorCell elementCell = null;
       try {
-        elementCell = super.createNodeCell(editorContext, elementNode);
+        EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
         this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+        return elementCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return elementCell;
     }
-
-
     @Override
     protected boolean isCompatibilityMode() {
       return false;
@@ -122,17 +119,15 @@ public class InitChildWithDirectCycle_card1n_Editor extends DefaultNodeEditor {
     public EditorCell createEmptyCell(EditorContext editorContext) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(subChildListHandler_ursnvp_c2a.this.getOwner(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, 0x78d10d0e00c2593bL, "subChild")));
-      EditorCell emptyCell = null;
       try {
+        EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell(editorContext);
         this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+        return emptyCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return emptyCell;
     }
-
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);

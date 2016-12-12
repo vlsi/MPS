@@ -88,16 +88,15 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     protected EditorCell createChildCell(SNode child) {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
+        EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b03c35efL, "singleChild"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b03c35efL, "singleChild"), child));
+        installCellInfo(child, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
 
     @Override
@@ -117,15 +116,14 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     protected EditorCell createEmptyCell() {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b03c35efL, "singleChild")));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createEmptyCell();
+        EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_singleChild");
         installCellInfo(null, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
     protected String getNoTargetText() {
       return "<no singleChild>";
@@ -160,16 +158,15 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     protected EditorCell createChildCell(SNode child) {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      EditorCell editorCell = null;
       try {
-        editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
+        EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x281d4238bc38995bL, "singleChildWithNonEmptyCell"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x281d4238bc38995bL, "singleChildWithNonEmptyCell"), child));
+        installCellInfo(child, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
 
     @Override
@@ -189,14 +186,13 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     protected EditorCell createEmptyCell() {
       myEditorContext.getCellFactory().pushCellContext();
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(myOwnerNode, MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x281d4238bc38995bL, "singleChildWithNonEmptyCell")));
-      EditorCell editorCell = null;
       try {
-        editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
+        EditorCell editorCell = createEmptyCell_internal(myEditorContext, myOwnerNode);
         installCellInfo(null, editorCell);
+        return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
       }
-      return editorCell;
     }
     private EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createCollection_3mh94b_a1c0(editorContext, node);
@@ -268,17 +264,14 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-      EditorCell elementCell = null;
       try {
-        elementCell = super.createNodeCell(editorContext, elementNode);
+        EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
         this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+        return elementCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return elementCell;
     }
-
-
     @Override
     protected boolean isCompatibilityMode() {
       return false;
@@ -286,17 +279,15 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     public EditorCell createEmptyCell(EditorContext editorContext) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(separatorChildListHandler_3mh94b_b3a.this.getOwner(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0x7ebf3747d08ca4f6L, "separatorChild")));
-      EditorCell emptyCell = null;
       try {
+        EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell(editorContext);
         this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+        return emptyCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return emptyCell;
     }
-
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -402,17 +393,14 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
         editorContext.getCellFactory().pushCellContext();
         editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-        EditorCell elementCell = null;
         try {
-          elementCell = super.createNodeCell(editorContext, elementNode);
+          EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
           this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+          return elementCell;
         } finally {
           editorContext.getCellFactory().popCellContext();
         }
-        return elementCell;
       }
-
-
       @Override
       protected boolean isCompatibilityMode() {
         return false;
@@ -420,17 +408,15 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
       public EditorCell createEmptyCell(EditorContext editorContext) {
         editorContext.getCellFactory().pushCellContext();
         editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(childListHandler_3mh94b_a0a1a4a.this.getOwner(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x7ebf3747d08cab96L, 0x7ebf3747d08cabf6L, "child")));
-        EditorCell emptyCell = null;
         try {
+          EditorCell emptyCell = null;
           emptyCell = super.createEmptyCell(editorContext);
           this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+          return emptyCell;
         } finally {
           editorContext.getCellFactory().popCellContext();
         }
-        return emptyCell;
       }
-
-
       public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
         if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
           elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -502,17 +488,14 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-      EditorCell elementCell = null;
       try {
-        elementCell = super.createNodeCell(editorContext, elementNode);
+        EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
         this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+        return elementCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return elementCell;
     }
-
-
     @Override
     protected boolean isCompatibilityMode() {
       return false;
@@ -520,17 +503,15 @@ public class SubstTestRoot_Editor extends DefaultNodeEditor {
     public EditorCell createEmptyCell(EditorContext editorContext) {
       editorContext.getCellFactory().pushCellContext();
       editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(multiChildListHandler_3mh94b_b5a.this.getOwner(), MetaAdapterFactory.getContainmentLink(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, 0xd4944c0b0434672L, "multiChild")));
-      EditorCell emptyCell = null;
       try {
+        EditorCell emptyCell = null;
         emptyCell = super.createEmptyCell(editorContext);
         this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
+        return emptyCell;
       } finally {
         editorContext.getCellFactory().popCellContext();
       }
-      return emptyCell;
     }
-
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);

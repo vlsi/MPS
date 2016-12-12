@@ -61,9 +61,9 @@ public class TestSubstituteSpecialChild_Editor extends DefaultNodeEditor {
       myEditorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
       try {
         EditorCell editorCell = super.createChildCell(child);
-        installCellInfo(child, editorCell);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L, 0x77c1a85c9f90b761L, "subChild"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L, 0x77c1a85c9f90b761L, "subChild"), child));
+        installCellInfo(child, editorCell);
         return editorCell;
       } finally {
         myEditorContext.getCellFactory().popCellContext();
