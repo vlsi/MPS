@@ -19,6 +19,8 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
+    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
+    <import index="9z78" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.border(JDK/)" />
     <import index="hfbu" ref="r:2ea71bfd-fe13-4525-9346-023b05757b39(jetbrains.mps.lang.aspect.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
@@ -186,8 +188,8 @@
       <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
-      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
-        <property id="1068580320021" name="value" index="3cmrfH" />
+      <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
+        <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -1036,29 +1038,21 @@
                 </node>
               </node>
             </node>
-            <node concept="3clFbF" id="1CsuQTaREIw" role="3cqZAp">
-              <node concept="2OqwBi" id="1CsuQTaRGKr" role="3clFbG">
-                <node concept="37vLTw" id="1CsuQTaREIv" role="2Oq$k0">
+            <node concept="3clFbF" id="7Ift4HgcbWV" role="3cqZAp">
+              <node concept="2OqwBi" id="7Ift4HgccEC" role="3clFbG">
+                <node concept="37vLTw" id="7Ift4HgclJ5" role="2Oq$k0">
                   <ref role="3cqZAo" node="1nhYb0FOxH9" resolve="button" />
                 </node>
-                <node concept="liA8E" id="1CsuQTaROEb" role="2OqNvi">
-                  <ref role="37wK5l" to="dxuu:~JComponent.setPreferredSize(java.awt.Dimension):void" resolve="setPreferredSize" />
-                  <node concept="2ShNRf" id="1CsuQTaRPXM" role="37wK5m">
-                    <node concept="1pGfFk" id="1CsuQTaS2Hb" role="2ShVmc">
-                      <ref role="37wK5l" to="z60i:~Dimension.&lt;init&gt;(int,int)" resolve="Dimension" />
-                      <node concept="3cmrfG" id="4voYo4ruybd" role="37wK5m">
-                        <property role="3cmrfH" value="40" />
-                      </node>
-                      <node concept="3cmrfG" id="4voYo4ruJxy" role="37wK5m">
-                        <property role="3cmrfH" value="20" />
-                      </node>
-                    </node>
+                <node concept="liA8E" id="7Ift4HgceIk" role="2OqNvi">
+                  <ref role="37wK5l" to="dxuu:~JComponent.setOpaque(boolean):void" resolve="setOpaque" />
+                  <node concept="3clFbT" id="7Ift4Hgcfwp" role="37wK5m">
+                    <property role="3clFbU" value="false" />
                   </node>
                 </node>
               </node>
             </node>
             <node concept="3cpWs6" id="1nhYb0FOxJ6" role="3cqZAp">
-              <node concept="37vLTw" id="3GM_nagTuKx" role="3cqZAk">
+              <node concept="37vLTw" id="7Ift4Hgcm4z" role="3cqZAk">
                 <ref role="3cqZAo" node="1nhYb0FOxH9" resolve="button" />
               </node>
             </node>
