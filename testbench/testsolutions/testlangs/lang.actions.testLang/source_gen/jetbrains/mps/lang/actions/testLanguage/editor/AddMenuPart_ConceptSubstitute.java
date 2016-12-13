@@ -17,9 +17,8 @@ import java.util.Arrays;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 
 public class AddMenuPart_ConceptSubstitute extends SubstituteMenuBase {
@@ -50,13 +49,7 @@ public class AddMenuPart_ConceptSubstitute extends SubstituteMenuBase {
         tmpVar = tmpVar && conceptNode != null;
         tmpVar = tmpVar && _context.getModel() != null;
 
-        List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-        ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept").getDeclarationNode());
-        return ListSequence.fromList(result).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
-          }
-        }).toListSequence();
+        return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
       }
       @Override
       protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {
