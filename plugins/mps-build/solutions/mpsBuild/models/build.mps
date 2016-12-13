@@ -24629,6 +24629,12 @@
             <ref role="3bR37D" node="4LDuh$Ud1LG" resolve="jetbrains.mps.debugger.api.lang" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6wOYoT0vjjC" role="3bR37C">
+          <node concept="3bR9La" id="6wOYoT0vjjD" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtA" id="5xa9wY2vh9z" role="2G$12L">
         <property role="BnDLt" value="true" />
