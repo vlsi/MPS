@@ -251,7 +251,7 @@
       <property role="IQ2nx" value="1073389446425" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="i2I0itR" role="lGtFl">
-        <property role="YLQ7P" value="Use isVertical()" />
+        <property role="YLQ7P" value="Use isVertical(), remove after MPS3.5" />
       </node>
     </node>
     <node concept="1TJgyi" id="fBEZMkq" role="1TKVEl">
@@ -259,7 +259,7 @@
       <property role="IQ2nx" value="1073389446426" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
       <node concept="asaX9" id="i2I0j49" role="lGtFl">
-        <property role="YLQ7P" value="Use isVerticalGrid()" />
+        <property role="YLQ7P" value="Use isVerticalGrid(), remove after MPS3.5" />
       </node>
     </node>
     <node concept="1TJgyi" id="g_ayjLd" role="1TKVEl">

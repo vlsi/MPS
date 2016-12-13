@@ -627,6 +627,67 @@
       <unit id="306079339724313756" at="19,0,56,0" name="jetbrains.mps.lang.editor.migration.Migrate_SetNullActionIdToRightTransform" />
     </file>
   </root>
+  <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/3564773582599019702">
+    <file name="RemoveDeprecated_CellModelCollection_Properties.java">
+      <node id="3564773582599019702" at="23,30,24,61" concept="10" />
+      <node id="3564773582599019702" at="27,33,28,16" concept="10" />
+      <node id="3564773582599019702" at="30,41,31,17" concept="4" />
+      <node id="3564773582599019702" at="31,17,32,16" concept="10" />
+      <node id="3564773582599020832" at="35,5,36,59" concept="9" />
+      <node id="3564773582599020832" at="38,52,39,23" concept="10" />
+      <node id="3564773582603063419" at="45,336,46,352" concept="4" />
+      <node id="3564773582599020847" at="47,13,48,162" concept="4" />
+      <node id="3564773582603092153" at="49,338,50,356" concept="4" />
+      <node id="3564773582599020853" at="51,13,52,164" concept="4" />
+      <node id="3564773582599019702" at="58,51,59,146" concept="10" />
+      <node id="3564773582599019702" at="23,0,26,0" concept="8" trace="getCaption#()Ljava/lang/String;" />
+      <node id="3564773582599020832" at="38,0,41,0" concept="8" trace="getDefaultSearchScope#()Lorg/jetbrains/mps/openapi/module/SearchScope;" />
+      <node id="3564773582603046962" at="44,39,47,13" concept="7" />
+      <node id="3564773582603078063" at="48,162,51,13" concept="7" />
+      <node id="3564773582599019702" at="58,0,61,0" concept="8" trace="getDescriptor#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScriptReference;" />
+      <node id="3564773582599019702" at="26,0,30,0" concept="8" trace="isRerunnable#()Z" />
+      <node id="3564773582599019702" at="30,0,34,0" concept="8" trace="execute#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3564773582599020832" at="36,59,41,8" concept="9" />
+      <node id="3564773582599020845" at="44,0,54,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3564773582599020838" at="42,124,54,11" concept="4" />
+      <node id="3564773582599020834" at="41,8,55,7" concept="6" />
+      <node id="3564773582599020832" at="34,42,56,5" concept="1" />
+      <node id="3564773582599019702" at="34,0,58,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <scope id="3564773582599019702" at="23,30,24,61" />
+      <scope id="3564773582599019702" at="27,33,28,16" />
+      <scope id="3564773582599020832" at="38,52,39,23" />
+      <scope id="3564773582603046964" at="45,336,46,352" />
+      <scope id="3564773582603078065" at="49,338,50,356" />
+      <scope id="3564773582599019702" at="58,51,59,146" />
+      <scope id="3564773582599019702" at="30,41,32,16" />
+      <scope id="3564773582599019702" at="23,0,26,0" />
+      <scope id="3564773582599020832" at="38,0,41,0" />
+      <scope id="3564773582599019702" at="58,0,61,0" />
+      <scope id="3564773582599019702" at="26,0,30,0" />
+      <scope id="3564773582599019702" at="30,0,34,0">
+        <var name="m" id="3564773582599019702" />
+      </scope>
+      <scope id="3564773582599020846" at="44,39,52,164" />
+      <scope id="3564773582599020845" at="44,0,54,0">
+        <var name="it" id="3564773582599020845" />
+      </scope>
+      <scope id="3564773582599020837" at="42,124,54,11" />
+      <scope id="3564773582599020834" at="41,8,55,7">
+        <var name="model" id="3564773582599020835" />
+      </scope>
+      <scope id="3564773582599020832" at="35,5,55,7">
+        <var name="context" id="3564773582599020832" />
+        <var name="scope" id="3564773582599020832" />
+      </scope>
+      <scope id="3564773582599019702" at="34,42,56,5" />
+      <scope id="3564773582599019702" at="34,0,58,0">
+        <var name="m" id="3564773582599019702" />
+      </scope>
+      <unit id="3564773582599020832" at="37,42,41,7" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelCollection_Properties$1" />
+      <unit id="3564773582599020845" at="43,222,54,9" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelCollection_Properties$2" />
+      <unit id="3564773582599019702" at="22,0,63,0" name="jetbrains.mps.lang.editor.migration.RemoveDeprecated_CellModelCollection_Properties" />
+    </file>
+  </root>
   <root nodeRef="r:85a46d2f-efef-4783-8e02-3976663ecd73(jetbrains.mps.lang.editor.migration)/3841328616808513432">
     <file name="MigrateCellsWithSideTransforms.java">
       <node id="3841328616808513432" at="24,30,25,44" concept="10" />
