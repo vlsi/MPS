@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.event.ModelEventDispatch;
 import jetbrains.mps.smodel.event.ModelListenerDispatch;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -54,6 +56,8 @@ import java.util.Collections;
  * TODO relocate to [smodel]
  */
 public abstract class SModelBase extends SModelDescriptorStub implements SModel {
+  private static final Logger LOG = LogManager.getLogger(SModelBase.class);
+
   private final ModelEventDispatch myNodeEventDispatch;
   // XXX when necessary, shall get exposed with protected accessor. fire* methods kept for now as some of them do delegation to legacy
   // listeners as well, could get removed once smodel.SModelListener gone. Besides, I'm not yet sure multi-cast approach of
@@ -107,7 +111,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
 
   public void attach(@NotNull SRepository repo) {
     if (myRepository == repo) {
-      // warn? why it's ok to attach model several times, isn't it an error?
+      LOG.warn("The model " + this + " is already attached to the repository " + repo);
       return;
     }
     if (myRepository != null) {
