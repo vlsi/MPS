@@ -12019,7 +12019,7 @@
       <node id="1741258697586932200" at="53,56,54,268" concept="6" />
       <node id="1741258697586932206" at="54,268,55,355" concept="2" />
       <node id="1741258697586932212" at="55,355,56,23" concept="7" />
-      <node id="1741258697586932166" at="60,62,61,358" concept="7" />
+      <node id="1741258697586932166" at="60,62,61,212" concept="7" />
       <node id="1741258697586932160" at="66,76,67,231" concept="7" />
       <node id="1741258697586932160" at="70,125,71,149" concept="7" />
       <node id="1741258697586932160" at="66,0,69,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
@@ -12030,7 +12030,7 @@
       <node id="1741258697586932160" at="51,0,58,0" concept="5" trace="createNode#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697586932160" at="28,0,37,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <scope id="1741258697586932160" at="41,77,42,100" />
-      <scope id="1741258697586932163" at="60,62,61,358" />
+      <scope id="1741258697586932163" at="60,62,61,212" />
       <scope id="1741258697586932160" at="66,76,67,231" />
       <scope id="1741258697586932160" at="70,125,71,149" />
       <scope id="1741258697586932160" at="46,50,48,27" />
