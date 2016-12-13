@@ -828,9 +828,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -32749,8 +32746,8 @@
                                         <node concept="zAVLb" id="4lvnFqUUXRi" role="1C5ry4">
                                           <ref role="2$JaeB" to="tpci:hroutJm" resolve="ConceptInstances" />
                                         </node>
-                                        <node concept="3TUQnm" id="4lvnFqUUXRj" role="2GiN3p">
-                                          <ref role="3TV0OU" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                                        <node concept="3B5_sB" id="7Ift4HfKG0J" role="2GiN3p">
+                                          <ref role="3B5MYn" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                                         </node>
                                       </node>
                                       <node concept="37vLTw" id="3GM_nagTBeB" role="37vLTJ">
@@ -36306,8 +36303,8 @@
                                           <node concept="zAVLb" id="UiMTdyv$dy" role="1C5ry4">
                                             <ref role="2$JaeB" to="tpci:hroutJm" resolve="ConceptInstances" />
                                           </node>
-                                          <node concept="3TUQnm" id="UiMTdyv$dz" role="2GiN3p">
-                                            <ref role="3TV0OU" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+                                          <node concept="3B5_sB" id="7Ift4HfKL8d" role="2GiN3p">
+                                            <ref role="3B5MYn" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
                                           </node>
                                         </node>
                                         <node concept="liA8E" id="UiMTdyv$d$" role="2OqNvi">
