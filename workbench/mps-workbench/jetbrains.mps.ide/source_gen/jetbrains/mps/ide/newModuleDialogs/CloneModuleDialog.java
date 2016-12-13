@@ -33,8 +33,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class CloneModuleDialog extends AbstractModuleCreationDialog {
-
+/**
+ * Clone Module Action Dialog
+ * @author Radimir.Sorokin, apyshkin
+ */
+public final class CloneModuleDialog extends AbstractModuleCreationDialog {
   private final AbstractModule myModuleOriginal;
 
   public CloneModuleDialog(MPSProject project, @Nullable String virtualFolder, AbstractModule moduleOrginal) {
@@ -69,15 +72,16 @@ public class CloneModuleDialog extends AbstractModuleCreationDialog {
       copyModelRoots(myModuleOriginal, myResult);
       copyFacets(myModuleOriginal, myResult);
     } catch (CopyNotSupportedException e) {
-      LOG.error(e);
+      LOG.error("", e);
       new ModuleRepositoryFacade(myProject).unregisterModule(myResult);
       myResult = null;
       return;
     }
+    myResult.updateModelsSet();
     myProject.addModule(myResult);
-    // FIXME RADIMIR RENAMES MODELS HERE already done?
-
-    ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
+    if (myProject instanceof StandaloneMPSProject) {
+      ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
+    }
     adjustReferences();
     myResult.renameModels(myModuleOriginal.getModuleName(), myResult.getModuleName(), true);
     myResult.save();
@@ -85,7 +89,7 @@ public class CloneModuleDialog extends AbstractModuleCreationDialog {
 
   private void adjustReferences() {
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    referenceUpdater.addModuleToAdjust(myModuleOriginal, myResult, true);
+    referenceUpdater.addModuleToAdjust(myModuleOriginal, myResult, true); // FIXME RADIMIR do we need this flag
     referenceUpdater.adjust();
   }
 

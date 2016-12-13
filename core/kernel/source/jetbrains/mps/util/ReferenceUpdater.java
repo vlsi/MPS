@@ -40,7 +40,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
@@ -56,15 +55,15 @@ import java.util.stream.StreamSupport;
  *
  * TODO supports languages updating (runtime modules, accessory models, etc.)
  */
-public class ReferenceUpdater {
-  protected final List<SModule> myModules = new ArrayList<>();
-  protected final List<SModel> myModels = new ArrayList<>();
+public final class ReferenceUpdater {
+  private final List<SModule> myModules = new ArrayList<>();
+  private final List<SModel> myModels = new ArrayList<>();
 
-  protected final Map<SModuleReference, SModuleReference> myModuleReferenceMap = new HashMap<>();
-  protected final Map<SModelReference, SModelReference> myModelReferenceMap = new HashMap<>();
-  protected final Map<SLanguage, SLanguage> myUsedLanguagesMap = new HashMap<>();
+  private final Map<SModuleReference, SModuleReference> myModuleReferenceMap = new HashMap<>();
+  private final Map<SModelReference, SModelReference> myModelReferenceMap = new HashMap<>();
+  private final Map<SLanguage, SLanguage> myUsedLanguagesMap = new HashMap<>();
 
-  private boolean adjusted = false;
+  private boolean myAdjusted = false;
 
   /**
    * Add {@code newModule} to adjust.
@@ -83,7 +82,7 @@ public class ReferenceUpdater {
     }
   }
 
-  protected void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
+  private void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
     myModules.add(newModule);
     myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
 
@@ -100,7 +99,7 @@ public class ReferenceUpdater {
     }
   }
 
-  protected void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage, boolean updateModels) {
+  private void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage, boolean updateModels) {
     myUsedLanguagesMap.put(
         MetaAdapterByDeclaration.getLanguage(oldLanguage),
         MetaAdapterByDeclaration.getLanguage(newLanguage)
@@ -172,10 +171,12 @@ public class ReferenceUpdater {
       model.getRootNodes().forEach(this::updateReferences);
     });
     myModels.forEach((model -> {
-      ((EditableSModel) model).setChanged(true);
-      ((EditableSModel) model).save();
+      if (model instanceof EditableSModel) {
+        ((EditableSModel) model).setChanged(true);
+        ((EditableSModel) model).save();
+      }
     }));
-    adjusted = true;
+    myAdjusted = true;
   }
 
   public List<SModule> getModules() {
@@ -186,7 +187,7 @@ public class ReferenceUpdater {
     return Collections.unmodifiableList(myModels);
   }
 
-  protected void addModelToAdjustImpl(@NotNull SModel oldModel, @NotNull SModel newModel) {
+  private void addModelToAdjustImpl(@NotNull SModel oldModel, @NotNull SModel newModel) {
     if (!newModel.isReadOnly()) {
       myModels.add(newModel);
     }
@@ -194,25 +195,24 @@ public class ReferenceUpdater {
   }
 
   private void assertNotAdjusted() {
-    assert !adjusted : "ReferenceUpdater instances can't be reused";
+    assert !myAdjusted : "ReferenceUpdater instances can't be reused";
   }
 
   private void updateReferences(SNode node){
     node.getReferences().forEach(ref -> {
-      if (!(ref instanceof StaticReference)) {
-        return;
-      }
+      if (ref instanceof StaticReference) {
       StaticReference reference = (StaticReference) ref;
-      SModelReference targetSModelReference = reference.getTargetSModelReference();
-      if (myModelReferenceMap.containsKey(targetSModelReference)) {
-        StaticReference newReference = new StaticReference(
-            reference.getLink(),
-            node,
-            myModelReferenceMap.get(targetSModelReference),
-            reference.getTargetNodeId(),
-            reference.getResolveInfo()
-        );
-        node.setReference(newReference.getLink(), newReference);
+        SModelReference targetSModelReference = reference.getTargetSModelReference();
+        if (myModelReferenceMap.containsKey(targetSModelReference)) {
+          StaticReference newReference = new StaticReference(
+              reference.getLink(),
+              node,
+              myModelReferenceMap.get(targetSModelReference),
+              reference.getTargetNodeId(),
+              reference.getResolveInfo()
+          );
+          node.setReference(newReference.getLink(), newReference);
+        }
       }
     });
     node.getChildren().forEach(this::updateReferences);

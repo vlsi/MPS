@@ -24,6 +24,8 @@ import org.jetbrains.mps.openapi.module.SModule;
  * Created by Radimir.Sorokin on 7/26/2016.
  */
 public final class PathConverters {
+  public static final ModulePathConverter ID_CONVERTER = new IDModulePathConverter();
+
   private PathConverters() {
   }
 

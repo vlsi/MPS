@@ -267,6 +267,9 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
 
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
+    if (!isInsideModuleDir()) {
+      throw new CopyNotSupportedException("The model root's content path must be inside module directory " + this + " " + getModule());
+    }
     copyContentRootAndFiles(targetModelRoot);
     AbstractModule sourceModule = ((AbstractModule) getModule());
     AbstractModule targetModule = ((AbstractModule) targetModelRoot.getModule());

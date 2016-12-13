@@ -111,6 +111,7 @@ public interface SModule {
 
   /**
    * Retrieves all module's models
+   * Contract: if the module was not changed the order of the models which this method returns stays the same.
    */
   Iterable<SModel> getModels();
 

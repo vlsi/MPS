@@ -64,7 +64,7 @@ public class JavaSourceStubModelDescriptor extends RegularModelDescriptor implem
   }
 
   @Override
-  public void attach(SRepository repository) {
+  public void attach(@NotNull SRepository repository) {
     getSource().addListener(this);
     super.attach(repository);
   }

@@ -136,7 +136,6 @@ public interface SModel {
    */
   void unload();
 
-
   void addModelListener(SModelListener l);
 
   void removeModelListener(SModelListener l);

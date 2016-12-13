@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   private static final Logger LOG = Logger.getLogger(JavaSourceStubModelRoot.class);
+  private final String PATH_KEY = "path";
 
   public JavaSourceStubModelRoot() {
     super(new String[]{SOURCE_ROOTS});
@@ -45,18 +46,17 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   @Override
   public void load(Memento memento) {
     super.load(memento);
-    if (memento.get("path") == null) {
+    if (memento.get(PATH_KEY) == null) {
       return;
     }
-    String path = FileUtil.stripLastSlashes(memento.get("path"));
+    String path = FileUtil.stripLastSlashes(memento.get(PATH_KEY));
     assert path != null;
     IFile file = myFileSystem.getFile(path);
     if (file.getParent() != null) {
       path = file.getParent().getPath();
     }
     setContentRoot(path);
-    List<String> files = myFilesForKind.get(SOURCE_ROOTS);
-    files.add(memento.get("path"));
+    addFile(SOURCE_ROOTS, memento.get(PATH_KEY));
   }
 
   @Override
