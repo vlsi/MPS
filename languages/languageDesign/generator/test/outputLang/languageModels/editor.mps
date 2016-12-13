@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590604(jetbrains.mps.transformation.test.outputLang.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="tq1l" ref="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" />
@@ -37,7 +37,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -58,9 +57,7 @@
   <node concept="24kQdi" id="hp5tmnR">
     <ref role="1XX52x" to="tq1l:hp5np8J" resolve="OutputRoot" />
     <node concept="3EZMnI" id="hp5tqzX" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hp5uAg0" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hp5uCtb" role="3EZMnx">
           <property role="3F0ifm" value="output root:" />
         </node>
@@ -102,12 +99,10 @@
   <node concept="24kQdi" id="hp5HnWt">
     <ref role="1XX52x" to="tq1l:hp5pakA" resolve="OutputNode" />
     <node concept="3EZMnI" id="hp5IS34" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hp5IVPj" role="3EZMnx">
         <property role="3F0ifm" value="output node:" />
       </node>
       <node concept="3EZMnI" id="hp5J126" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hp5J2pi" role="3EZMnx">
           <property role="3F0ifm" value="text" />
         </node>
@@ -125,7 +120,6 @@
         <node concept="2iRfu4" id="i2IQW0a" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hvKhZNo" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hvKhZNp" role="3EZMnx">
           <property role="3F0ifm" value="children" />
         </node>

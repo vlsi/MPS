@@ -141,7 +141,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -792,7 +791,6 @@
     <property role="3GE5qa" value="properties" />
     <ref role="1XX52x" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
     <node concept="3EZMnI" id="O$iR4J$g66" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="O$iR4J$g67" role="3EZMnx">
         <ref role="1NtTu8" to="tpee:4VkOLwjf83e" resolve="type" />
       </node>
@@ -801,7 +799,6 @@
         <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="3EZMnI" id="O$iR4J$g69" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="pkWqt" id="O$iR4J$g6a" role="pqm2j">
           <node concept="3clFbS" id="O$iR4J$g6b" role="2VODD2">
             <node concept="3clFbF" id="O$iR4J$g6c" role="3cqZAp">
@@ -846,7 +843,6 @@
     <property role="3GE5qa" value="template" />
     <ref role="1XX52x" to="fb9u:O$iR4J$g4q" resolve="TemplateParameter" />
     <node concept="3EZMnI" id="O$iR4J$g6q" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="O$iR4J$g6r" role="3EZMnx">
         <ref role="1NtTu8" to="tpee:4VkOLwjf83e" resolve="type" />
       </node>
@@ -855,7 +851,6 @@
         <ref role="1k5W1q" to="jfm4:O$iR4JBsQ$" resolve="constructorParameter" />
       </node>
       <node concept="3EZMnI" id="O$iR4J$g6t" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="pkWqt" id="O$iR4J$g6u" role="pqm2j">
           <node concept="3clFbS" id="O$iR4J$g6v" role="2VODD2">
             <node concept="3clFbF" id="O$iR4J$g6w" role="3cqZAp">
@@ -924,7 +919,6 @@
     <property role="3GE5qa" value="properties" />
     <ref role="1XX52x" to="fb9u:O$iR4J$g4v" resolve="CheckProperitesOperation" />
     <node concept="3EZMnI" id="O$iR4J$g6P" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="O$iR4J$g6T" role="3EZMnx">
         <property role="3F0ifm" value="check" />
         <ref role="1k5W1q" to="jfm4:O$iR4JBsQo" resolve="operation" />
@@ -1041,7 +1035,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="fb9u:O$iR4J$g4M" resolve="EditorPropertyDeclaration" />
     <node concept="3EZMnI" id="O$iR4J$g78" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="O$iR4J$g79" role="3EZMnx">
         <ref role="1NtTu8" to="tpee:4VkOLwjf83e" resolve="type" />
       </node>
@@ -1050,7 +1043,6 @@
         <ref role="1k5W1q" to="tpen:hshQ_OE" resolve="Field" />
       </node>
       <node concept="3EZMnI" id="O$iR4J$g7b" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="pkWqt" id="O$iR4J$g7c" role="pqm2j">
           <node concept="3clFbS" id="O$iR4J$g7d" role="2VODD2">
             <node concept="3clFbF" id="O$iR4J$g7e" role="3cqZAp">

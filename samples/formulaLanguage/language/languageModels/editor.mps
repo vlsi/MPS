@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
   </languages>
@@ -110,7 +110,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -304,7 +303,6 @@
   <node concept="24kQdi" id="gbr_Cpi">
     <ref role="1XX52x" to="tpnk:gbrzkao" resolve="IfFunction" />
     <node concept="3EZMnI" id="gbr_EMB" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gbr_VxV" role="3EZMnx">
         <property role="3F0ifm" value="IF(" />
       </node>
@@ -348,7 +346,6 @@
   <node concept="24kQdi" id="gbrArrk">
     <ref role="1XX52x" to="tpnk:gbrxy3r" resolve="Operation" />
     <node concept="3EZMnI" id="gcSxIg4" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gcSxRG$" role="3EZMnx">
         <property role="1$x2rV" value="&lt;expression&gt;" />
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
@@ -369,7 +366,6 @@
   <node concept="24kQdi" id="gbrCfaV">
     <ref role="1XX52x" to="tpnk:gbrCaqt" resolve="PlusOperation" />
     <node concept="3EZMnI" id="gbrCon4" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbrCx79" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -396,7 +392,6 @@
   <node concept="24kQdi" id="gbrCBnm">
     <ref role="1XX52x" to="tpnk:gbrCyha" resolve="MinusOperation" />
     <node concept="3EZMnI" id="gbrCF1g" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbrCF1h" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -423,7 +418,6 @@
   <node concept="24kQdi" id="gbEAYic">
     <ref role="1XX52x" to="tpnk:gbE_QIp" resolve="LessThanOperation" />
     <node concept="3EZMnI" id="gbEBdp0" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEBjkb" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -450,7 +444,6 @@
   <node concept="24kQdi" id="gbZhrwQ">
     <ref role="1XX52x" to="tpnk:gbZh47t" resolve="MultOperation" />
     <node concept="3EZMnI" id="gbZhvTp" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbZhvTq" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -477,7 +470,6 @@
   <node concept="24kQdi" id="gc0BGii">
     <ref role="1XX52x" to="tpnk:gc0B_Vw" resolve="GreaterThanOperation" />
     <node concept="3EZMnI" id="gc0BJsH" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gc0BJsI" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -504,7 +496,6 @@
   <node concept="24kQdi" id="gw4XWbR">
     <ref role="1XX52x" to="tpnk:gw4XJs2" resolve="StringConstant" />
     <node concept="3EZMnI" id="gw4XXJv" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gw4XYhB" role="3EZMnx">
         <property role="3F0ifm" value="\&quot;" />
         <node concept="VechU" id="hF4QVQI" role="3F10Kt">
@@ -529,7 +520,6 @@
   <node concept="24kQdi" id="gw52RC3">
     <ref role="1XX52x" to="tpnk:gw52_wm" resolve="AndOperation" />
     <node concept="3EZMnI" id="gw52Soc" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw52Sod" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -556,7 +546,6 @@
   <node concept="24kQdi" id="gw52U5A">
     <ref role="1XX52x" to="tpnk:gw52Ft6" resolve="OrOperation" />
     <node concept="3EZMnI" id="gw52Vzh" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw52Vzi" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -583,7 +572,6 @@
   <node concept="24kQdi" id="gw9LHvF">
     <ref role="1XX52x" to="tpnk:gw9LkxK" resolve="EqualsOperation" />
     <node concept="3EZMnI" id="gw9LJCt" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gw9LJCu" role="3EZMnx">
         <ref role="1NtTu8" to="tpnk:gbrxImN" resolve="leftOperand" />
         <ref role="1ERwB7" node="gNaKFyW" resolve="Operation_leftOperand_Actions" />
@@ -610,7 +598,6 @@
   <node concept="24kQdi" id="gw9Ox9U">
     <ref role="1XX52x" to="tpnk:gw9O3aU" resolve="ParenthisizedExpression" />
     <node concept="3EZMnI" id="gw9Oymt" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="gw9Ozn4" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -204,7 +204,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -612,7 +611,6 @@
       </node>
     </node>
     <node concept="3EZMnI" id="2IYlHYhBDmt" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="2IYlHYhBDmu" role="3EZMnx">
         <ref role="PMmxG" to="tpc5:hF4ssnw" resolve="_CellModel_Common" />
       </node>
@@ -683,7 +681,6 @@
       <node concept="l2Vlx" id="7rLMM2Utoh$" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="5u6$4zsyDgf" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="5u6$4zsyDgg" role="3EZMnx">
         <ref role="PMmxG" to="tpc5:hF4ssnw" resolve="_CellModel_Common" />
       </node>
@@ -1251,7 +1248,6 @@
       <node concept="l2Vlx" id="5yk3CzNVUmr" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="53wrLxGoz_d" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="53wrLxGoz_e" role="3EZMnx">
         <ref role="PMmxG" to="tpc5:hF4ssnw" resolve="_CellModel_Common" />
       </node>
@@ -1673,7 +1669,6 @@
     <property role="TrG5h" value="IconSelectorComponent" />
     <ref role="1XX52x" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
     <node concept="3EZMnI" id="4ttM7y2aZKb" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="1QoScp" id="4ttM7y2aZKc" role="3EZMnx">
         <node concept="pkWqt" id="4ttM7y2aZKd" role="3e4ffs">
           <node concept="3clFbS" id="4ttM7y2aZKe" role="2VODD2">

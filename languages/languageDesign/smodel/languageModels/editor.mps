@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -249,8 +249,6 @@
         <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
-        <property id="1073389446426" name="gridLayout" index="3EZMnz" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -2096,7 +2094,6 @@
     <property role="3GE5qa" value="operation.node" />
     <ref role="1XX52x" to="tp25:h2Xjw1B" resolve="Node_GetAncestorOperation" />
     <node concept="3EZMnI" id="h2XlaZ$" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h2XlaZ_" role="3EZMnx">
         <property role="3F0ifm" value="The 'ancestor' operation" />
         <node concept="VechU" id="hEZR8CM" role="3F10Kt">
@@ -2138,8 +2135,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="h2XlaZE" role="3EZMnx">
-        <property role="3EZMnw" value="true" />
-        <property role="3EZMnz" value="true" />
         <node concept="VPM3Z" id="hEU$P1e" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -2479,7 +2474,6 @@
     <property role="3GE5qa" value="operation.concept" />
     <ref role="1XX52x" to="tp25:hamJodO" resolve="Concept_GetDirectSuperConcepts" />
     <node concept="3EZMnI" id="h$6wNMY" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="h$6wNMZ" role="3EZMnx">
         <ref role="PMmxG" node="h$6uJpB" resolve="ReplaceableAliasAndParms_Comp" />
       </node>
@@ -2490,7 +2484,6 @@
     <property role="3GE5qa" value="operation.node" />
     <ref role="1XX52x" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
     <node concept="3EZMnI" id="haqhzWB" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="haqh$Hf" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:haqh4HH" resolve="conceptMethodDeclaration" />
         <node concept="1sVBvm" id="haqh$Hg" role="1sWHZn">
@@ -2563,7 +2556,6 @@
     <property role="3GE5qa" value="operation.concept" />
     <ref role="1XX52x" to="tp25:hboJPO3" resolve="Concept_GetAllSuperConcepts" />
     <node concept="3EZMnI" id="h$6_kjM" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="h$6_kjN" role="3EZMnx">
         <ref role="PMmxG" node="h$6uJpB" resolve="ReplaceableAliasAndParms_Comp" />
       </node>
@@ -2586,7 +2578,6 @@
   <node concept="24kQdi" id="hbzs4oH">
     <ref role="1XX52x" to="tp25:hbzrR4P" resolve="SNodeCreator" />
     <node concept="3EZMnI" id="hcKXBZw" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="hcKXBZx" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:hbzrR4S" resolve="createdType" />
       </node>
@@ -2615,7 +2606,6 @@
     <property role="3GE5qa" value="operation.concept" />
     <ref role="1XX52x" to="tp25:hcLFhWE" resolve="Concept_NewInstance" />
     <node concept="3EZMnI" id="hzCbHhP" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="hzCbHhQ" role="3EZMnx">
         <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
       </node>
@@ -2644,7 +2634,6 @@
     <property role="3GE5qa" value="operation.concept" />
     <ref role="1XX52x" to="tp25:hcLSoNs" resolve="Concept_GetAllSubConcepts" />
     <node concept="3EZMnI" id="hdiT$8q" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="hzCb5B5" role="3EZMnx">
         <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
       </node>
@@ -2667,7 +2656,6 @@
     <property role="3GE5qa" value="operation.node" />
     <ref role="1XX52x" to="tp25:hLj1KqM" resolve="Node_GetReferentSearchScopeOperation" />
     <node concept="3EZMnI" id="hd5nx6Y" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="hzCaNnu" role="3EZMnx">
         <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
       </node>
@@ -2703,7 +2691,6 @@
     <property role="3GE5qa" value="operation.model" />
     <ref role="1XX52x" to="tp25:hdj9C4s" resolve="Model_NodesIncludingImportedOperation" />
     <node concept="3EZMnI" id="hdj9N5D" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="hzCdbEV" role="3EZMnx">
         <ref role="PMmxG" node="hzBPeWP" resolve="ReplaceableAlias_Comp" />
       </node>
@@ -2864,7 +2851,6 @@
     <property role="TrG5h" value="ReplaceableAliasAndParms_Comp" />
     <ref role="1XX52x" to="tp25:g$eCIIG" resolve="SNodeOperation" />
     <node concept="3EZMnI" id="h$6$4Ou" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY76" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -2878,7 +2864,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="h$6$c1u" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="h$6$c1v" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <ref role="1k5W1q" node="hQPGMvM" resolve="operationParameter" />
@@ -3017,7 +3002,6 @@
     <property role="3GE5qa" value="operation" />
     <ref role="1XX52x" to="tp25:hLjrik3" resolve="SearchScope_ContainsOperation" />
     <node concept="3EZMnI" id="hLjs4sE" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hLjs5vm" role="3EZMnx">
         <property role="3F0ifm" value="contains" />
         <node concept="3$7jql" id="hLjvMKe" role="3F10Kt">
@@ -3042,7 +3026,6 @@
     <property role="3GE5qa" value="reference" />
     <ref role="1XX52x" to="tp25:hQ8GBOl" resolve="LinkRefExpression" />
     <node concept="3EZMnI" id="hQ8Haf4" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hQ8HaRS" role="3EZMnx">
         <property role="3F0ifm" value="linkNode" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -3959,7 +3942,6 @@
     <property role="3GE5qa" value="reference" />
     <ref role="1XX52x" to="tp25:4zASA_hyumq" resolve="LinkNameRefExpression" />
     <node concept="3EZMnI" id="4zASA_hyumt" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="4zASA_hyumu" role="3EZMnx">
         <property role="3F0ifm" value="linkName" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -4022,7 +4004,6 @@
     <property role="3GE5qa" value="reference" />
     <ref role="1XX52x" to="tp25:4zASA_hz8BR" resolve="PropertyNameRefExpression" />
     <node concept="3EZMnI" id="4zASA_hz8BY" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="4zASA_hz8BZ" role="3EZMnx">
         <property role="3F0ifm" value="propertyName" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -4085,7 +4066,6 @@
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tp25:5zEkxuKhqeM" resolve="AttributeAccess" />
     <node concept="3EZMnI" id="5zEkxuKhyP4" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="5zEkxuKhyP5" role="3EZMnx">
         <property role="3F0ifm" value="@" />
         <node concept="Vb9p2" id="5zEkxuKhyP6" role="3F10Kt">
@@ -4116,7 +4096,6 @@
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tp25:5zEkxuKhrAR" resolve="LinkAttributeQualifier" />
     <node concept="3EZMnI" id="5zEkxuKhyPl" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="5zEkxuKhyPm" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:5zEkxuKhrAS" resolve="attributeConcept" />
         <node concept="1sVBvm" id="5zEkxuKhyPn" role="1sWHZn">
@@ -4162,7 +4141,6 @@
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tp25:5zEkxuKhsAT" resolve="PropertyAttributeQualifier" />
     <node concept="3EZMnI" id="5zEkxuKhyPC" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="5zEkxuKhyPD" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:5zEkxuKhsAU" resolve="attributeConcept" />
         <node concept="1sVBvm" id="5zEkxuKhyPE" role="1sWHZn">
@@ -4445,7 +4423,6 @@
     <property role="3GE5qa" value="conceptSwitch" />
     <ref role="1XX52x" to="tp25:59YAasRsvgM" resolve="SubconceptCase" />
     <node concept="3EZMnI" id="gVKbuIo" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="7dJaARMO_mc" role="3EZMnx">
         <property role="3F0ifm" value="subconcept of" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -4480,7 +4457,6 @@
     <property role="3GE5qa" value="conceptSwitch" />
     <ref role="1XX52x" to="tp25:59YAasRsvgH" resolve="ConceptSwitchStatement" />
     <node concept="3EZMnI" id="gVKbLUG" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="gVKbNAF" role="3EZMnx">
         <property role="3F0ifm" value="concept switch" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -4522,7 +4498,6 @@
         <node concept="l2Vlx" id="i0NJYBq" role="2czzBx" />
       </node>
       <node concept="3EZMnI" id="5ffMBkaCczn" role="3EZMnx">
-        <property role="3EZMnw" value="true" />
         <node concept="lj46D" id="5ffMBkaCczO" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
@@ -4808,7 +4783,6 @@
     <property role="3GE5qa" value="reference" />
     <ref role="1XX52x" to="tp25:2iMJRNx_nol" resolve="LinkIdRefExpression" />
     <node concept="3EZMnI" id="2iMJRNx_nuf" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="2epClk4x_8a" role="3EZMnx">
         <property role="3F0ifm" value="bootstrap" />
         <ref role="1ERwB7" node="2epClk4xg_Q" resolve="BootstrapToken" />
@@ -4891,7 +4865,6 @@
     <property role="3GE5qa" value="reference" />
     <ref role="1XX52x" to="tp25:2iMJRNxD2Yw" resolve="PropertyIdRefExpression" />
     <node concept="3EZMnI" id="2iMJRNxD34t" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="2epClk4xzqC" role="3EZMnx">
         <property role="3F0ifm" value="bootstrap" />
         <ref role="1ERwB7" node="2epClk4xg_Q" resolve="BootstrapToken" />
@@ -5469,7 +5442,6 @@
     <property role="3GE5qa" value="attributes" />
     <ref role="1XX52x" to="tp25:BpxLfMiwTr" resolve="ChildAttributeQualifier" />
     <node concept="3EZMnI" id="BpxLfMiy7a" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="BpxLfMiy7b" role="3EZMnx">
         <ref role="1NtTu8" to="tp25:BpxLfMiwTt" resolve="attributeConcept" />
         <node concept="1sVBvm" id="BpxLfMiy7c" role="1sWHZn">
@@ -5515,7 +5487,6 @@
     <property role="3GE5qa" value="conceptSwitch" />
     <ref role="1XX52x" to="tp25:5ffMBka$9L$" resolve="ExactConceptCase" />
     <node concept="3EZMnI" id="5ffMBka$a2J" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="5ffMBka$a2K" role="3EZMnx">
         <property role="3F0ifm" value="exactly" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />

@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -82,7 +82,6 @@
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <property id="1160590353935" name="usesFolding" index="S$Qs1" />
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="8709572687796959088" name="usesFoldingCondition" index="2xiA_6" />
         <child id="7723470090030138869" name="foldedCellModel" index="AHCbl" />
@@ -183,7 +182,6 @@
   <node concept="24kQdi" id="h3s$Buf">
     <ref role="1XX52x" to="tpe3:h3s$Bie" resolve="TestMethod" />
     <node concept="3EZMnI" id="h3s$Bug" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="hWoAWW6" role="3EZMnx">
         <ref role="PMmxG" to="tpen:hNAtxlY" resolve="_DeprecatedPart" />
         <node concept="ljvvj" id="i0MG18x" role="3F10Kt">
@@ -242,7 +240,6 @@
   <node concept="24kQdi" id="h3s_eJ_">
     <ref role="1XX52x" to="tpe3:h3s_e$z" resolve="BTestCase" />
     <node concept="3EZMnI" id="h3s_eJA" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiIP6y" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -291,7 +288,6 @@
           </node>
         </node>
         <node concept="3EZMnI" id="hO$l2fQ" role="3EZMnx">
-          <property role="3EZMnw" value="true" />
           <node concept="3F2HdR" id="3Z61ZaMckgw" role="3EZMnx">
             <ref role="1NtTu8" to="tpee:4EqhHTp4Mw3" resolve="member" />
             <node concept="3F0ifn" id="53WsQmnjCxk" role="2czzBI">
@@ -827,7 +823,6 @@
   <node concept="24kQdi" id="79C96s2bXIW">
     <ref role="1XX52x" to="tpe3:79C96s2bXIU" resolve="PrepareMethod" />
     <node concept="3EZMnI" id="79C96s2bXIY" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="2wdLO7KhYaJ" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />

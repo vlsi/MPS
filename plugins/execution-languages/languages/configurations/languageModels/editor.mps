@@ -114,7 +114,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -337,7 +336,6 @@
     <property role="3GE5qa" value="execution" />
     <ref role="1XX52x" to="uhxm:5kMNzMX$g0G" resolve="ExecuteConfiguration_Function" />
     <node concept="3EZMnI" id="2v69eKc7bbu" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1HlG4h" id="2v69eKc7bbz" role="3EZMnx">
         <node concept="1HfYo3" id="2v69eKc7bb$" role="1HlULh">
           <node concept="3TQlhw" id="2v69eKc7bb_" role="1Hhtcw">
@@ -658,7 +656,6 @@
         <ref role="PMmxG" to="tpen:hcE9nLY" resolve="VariableDeclaration_NameCellComponent" />
       </node>
       <node concept="3EZMnI" id="5FAUXTS7Tql" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="pkWqt" id="5FAUXTS7Tqm" role="pqm2j">
           <node concept="3clFbS" id="5FAUXTS7Tqn" role="2VODD2">
             <node concept="3clFbF" id="5FAUXTS7Tqo" role="3cqZAp">

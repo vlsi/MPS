@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959042d(jetbrains.mps.samples.secretCompartmentLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="tpo2" ref="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)" />
@@ -31,7 +31,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -51,9 +50,7 @@
   <node concept="24kQdi" id="hqVFg9R">
     <ref role="1XX52x" to="tpo2:hqVFaSW" resolve="StateMachine" />
     <node concept="3EZMnI" id="hqVFhny" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hqVFi14" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0A7n" id="hqWG4WU" role="3EZMnx">
           <ref role="1NtTu8" to="tpo2:hqWFZvw" resolve="stateMachineName" />
         </node>
@@ -70,7 +67,6 @@
         <property role="3F0ifm" value="Events" />
       </node>
       <node concept="3EZMnI" id="hqWR$9c" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hqWR$9d" role="3EZMnx">
           <property role="3F0ifm" value="  " />
           <node concept="VPM3Z" id="hF4QVFj" role="3F10Kt">
@@ -88,7 +84,6 @@
       </node>
       <node concept="3F0ifn" id="hr05xdT" role="3EZMnx" />
       <node concept="3EZMnI" id="hr11Ywm" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hr11Zn4" role="3EZMnx">
           <property role="3F0ifm" value="Start state:" />
         </node>
@@ -117,7 +112,6 @@
   <node concept="24kQdi" id="hqWQUQO">
     <ref role="1XX52x" to="tpo2:hqWQG$u" resolve="Event" />
     <node concept="3EZMnI" id="hqWQVy4" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hqWQW9p" role="3EZMnx">
         <ref role="1NtTu8" to="tpo2:hqWQMWG" resolve="eventName" />
       </node>
@@ -130,9 +124,7 @@
   <node concept="24kQdi" id="hqWVpHd">
     <ref role="1XX52x" to="tpo2:hqWVo8n" resolve="State" />
     <node concept="3EZMnI" id="hqWVqx0" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hqWVv_v" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hqWVvXd" role="3EZMnx">
           <property role="3F0ifm" value="State" />
         </node>
@@ -145,7 +137,6 @@
         <node concept="2iRfu4" id="i2IQKCu" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hr1643W" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hr1643X" role="3EZMnx">
           <property role="3F0ifm" value="  " />
           <node concept="VPM3Z" id="hF4QVIB" role="3F10Kt">
@@ -168,7 +159,6 @@
   <node concept="24kQdi" id="hr14UWI">
     <ref role="1XX52x" to="tpo2:hr14JSE" resolve="Transition" />
     <node concept="3EZMnI" id="hr14Vw9" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="hr14XXD" role="3EZMnx">
         <ref role="1NtTu8" to="tpo2:hr14QoW" resolve="trigger" />
         <node concept="1sVBvm" id="hr14XXE" role="1sWHZn">
@@ -196,9 +186,7 @@
   <node concept="24kQdi" id="hr1u$_a">
     <ref role="1XX52x" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
     <node concept="3EZMnI" id="hr1u_jl" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hr1uBbI" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="1iCGBv" id="hr1y1Mq" role="3EZMnx">
           <ref role="1NtTu8" to="tpo2:hr1xS$3" resolve="stateMachine" />
           <node concept="1sVBvm" id="hr1y1Mr" role="1sWHZn">
@@ -227,9 +215,7 @@
   <node concept="24kQdi" id="hr1OHRX">
     <ref role="1XX52x" to="tpo2:hr1OEYa" resolve="StateMachineTestMethod" />
     <node concept="3EZMnI" id="hr1OIxg" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hr1OMXe" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hr1ONOb" role="3EZMnx">
           <property role="3F0ifm" value="test" />
         </node>
@@ -242,7 +228,6 @@
         <node concept="2iRfu4" id="i2IQKCD" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hr1YhV_" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hr1YhVA" role="3EZMnx">
           <property role="3F0ifm" value="  " />
           <node concept="VPM3Z" id="hF4QVHv" role="3F10Kt">
@@ -250,13 +235,11 @@
           </node>
         </node>
         <node concept="3EZMnI" id="hr1Ykp6" role="3EZMnx">
-          <property role="3EZMnw" value="true" />
           <node concept="3F2HdR" id="hr20$di" role="3EZMnx">
             <ref role="1NtTu8" to="tpo2:hr20vOZ" resolve="handleEvent" />
             <node concept="2iRkQZ" id="i2IQKCT" role="2czzBx" />
           </node>
           <node concept="3EZMnI" id="hr1Ym8W" role="3EZMnx">
-            <property role="3EZMnw" value="false" />
             <node concept="3F0ifn" id="hr1Ymy8" role="3EZMnx">
               <property role="3F0ifm" value="final state:" />
             </node>
@@ -290,7 +273,6 @@
   <node concept="24kQdi" id="hr20pcx">
     <ref role="1XX52x" to="tpo2:hr20l$N" resolve="HandleEvent" />
     <node concept="3EZMnI" id="hr20qj6" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hr20qSv" role="3EZMnx">
         <property role="3F0ifm" value="handle" />
       </node>

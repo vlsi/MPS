@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
@@ -195,7 +195,6 @@
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="8709572687796959088" name="usesFoldingCondition" index="2xiA_6" />
         <child id="7723470090030138869" name="foldedCellModel" index="AHCbl" />
@@ -496,7 +495,6 @@
   <node concept="24kQdi" id="i1LmbF7">
     <ref role="1XX52x" to="cx9y:i1LlUzs" resolve="IndexedTupleType" />
     <node concept="3EZMnI" id="i1Lnd11" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1HlG4h" id="1653mnvCjbP" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="1k5W1q" to="tpen:hXb$RYA" resolve="LeftBracket" />
@@ -565,7 +563,6 @@
   <node concept="24kQdi" id="i1LsreS">
     <ref role="1XX52x" to="cx9y:i1Ls8Kj" resolve="IndexedTupleLiteral" />
     <node concept="3EZMnI" id="i1LsvCr" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1HlG4h" id="1653mnvCj9P" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="1k5W1q" to="tpen:hXb$RYA" resolve="LeftBracket" />
@@ -628,7 +625,6 @@
   <node concept="24kQdi" id="i1LFsBw">
     <ref role="1XX52x" to="cx9y:i1LFfHg" resolve="IndexedTupleMemberAccessExpression" />
     <node concept="3EZMnI" id="i1LFusQ" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="i1LFy5g" role="3EZMnx">
         <ref role="1NtTu8" to="cx9y:i1LFl1m" resolve="tuple" />
       </node>
@@ -649,7 +645,6 @@
   <node concept="24kQdi" id="i2gFd8j">
     <ref role="1XX52x" to="cx9y:i2fD8E_" resolve="NamedTupleDeclaration" />
     <node concept="3EZMnI" id="i2lzin7" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiIQ2q" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -699,7 +694,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="i3jDppK" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="i3jDppL" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -876,7 +870,6 @@
       <node concept="l2Vlx" id="i2l$eAY" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="i2pJ4Gp" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="i2pJgen" role="3EZMnx">
         <property role="3F0ifm" value="annotations:" />
         <node concept="ljvvj" id="i2pJgeo" role="3F10Kt">
@@ -900,7 +893,6 @@
   <node concept="24kQdi" id="i2lKYKj">
     <ref role="1XX52x" to="cx9y:i2lGYlf" resolve="NamedTupleComponentDeclaration" />
     <node concept="3EZMnI" id="i2lLUTU" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiJDPe" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -1064,7 +1056,6 @@
   <node concept="24kQdi" id="i2qJKx5">
     <ref role="1XX52x" to="cx9y:i2pR1d_" resolve="NamedTupleType" />
     <node concept="3EZMnI" id="i2qJLb6" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3EZMnI" id="hTULY9sf5e" role="3EZMnx">
         <node concept="1HlG4h" id="1653mnvCj69" role="3EZMnx">
           <property role="1cu_pB" value="0" />
@@ -1311,7 +1302,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="i2IFnhS" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="i2IFnhT" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <ref role="1k5W1q" to="tpen:i18cmFm" resolve="BaseAngleBracket" />
@@ -1364,7 +1354,6 @@
       <node concept="l2Vlx" id="KRIhzHxntb" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="i2qLtO9" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="l2Vlx" id="i2qLtOa" role="2iSdaV" />
       <node concept="3EZMnI" id="i2qL_Ai" role="3EZMnx">
         <node concept="l2Vlx" id="i2qL_Aj" role="2iSdaV" />
@@ -1542,7 +1531,6 @@
   <node concept="24kQdi" id="i2r_psT">
     <ref role="1XX52x" to="cx9y:i2r$n51" resolve="NamedTupleComponentReference" />
     <node concept="3EZMnI" id="i2r_q2f" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="i2r_v_M" role="3EZMnx">
         <ref role="1NtTu8" to="cx9y:i2r$qtA" resolve="componentDeclaration" />
         <node concept="1sVBvm" id="i2r_v_N" role="1sWHZn">
@@ -1619,7 +1607,6 @@
       <node concept="l2Vlx" id="i2r_Gwy" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="i2rZUUe" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="l2Vlx" id="i2rZUUf" role="2iSdaV" />
       <node concept="3EZMnI" id="i2rZUUg" role="3EZMnx">
         <node concept="l2Vlx" id="i2rZUUh" role="2iSdaV" />

@@ -213,7 +213,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -569,7 +568,6 @@
   <node concept="24kQdi" id="h5ODBXs">
     <ref role="1XX52x" to="tpfo:h5OD$ld" resolve="RegexpDeclaration" />
     <node concept="3EZMnI" id="h5Zl7it" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5Zl7tE" role="3EZMnx">
         <property role="3F0ifm" value="regexp" />
         <node concept="VechU" id="hEZR8Dg" role="3F10Kt">
@@ -911,7 +909,6 @@
       <node concept="l2Vlx" id="i0MCu6c" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="h6sVxpl" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h6sVxMg" role="3EZMnx">
         <property role="3F0ifm" value="Options:" />
         <node concept="ljvvj" id="i0MCu6W" role="3F10Kt">
@@ -1062,7 +1059,6 @@
     <property role="3GE5qa" value="Statements" />
     <ref role="1XX52x" to="tpfo:h5QpiWk" resolve="MatchRegexpStatement" />
     <node concept="3EZMnI" id="h5Qpuhk" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5QpuLn" role="3EZMnx">
         <property role="3F0ifm" value="if" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -1114,7 +1110,6 @@
   <node concept="24kQdi" id="h5ST_P9">
     <ref role="1XX52x" to="tpfo:h5STuZ7" resolve="PredefinedSymbolClasses" />
     <node concept="3EZMnI" id="h5STAmR" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5STDQE" role="3EZMnx">
         <property role="3F0ifm" value="predefined symbol classes" />
         <node concept="VechU" id="hEZR8Av" role="3F10Kt">
@@ -1148,7 +1143,6 @@
   <node concept="24kQdi" id="h5SU14C">
     <ref role="1XX52x" to="tpfo:h5STpZg" resolve="PredefinedSymbolClassDeclaration" />
     <node concept="3EZMnI" id="h5SU1U8" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5SU2LR" role="3EZMnx">
         <property role="3F0ifm" value="symbol class" />
         <node concept="VechU" id="hEZR8qM" role="3F10Kt">
@@ -1575,7 +1569,6 @@
     <property role="3GE5qa" value="Expressions" />
     <ref role="1XX52x" to="tpfo:h5YWZsH" resolve="ReplaceWithRegexpExpression" />
     <node concept="3EZMnI" id="h5YZbTC" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5YZc2M" role="3EZMnx">
         <property role="3F0ifm" value="replaceAll" />
         <node concept="VechU" id="hEZR8$4" role="3F10Kt">
@@ -1636,7 +1629,6 @@
   <node concept="24kQdi" id="h5Zln1A">
     <ref role="1XX52x" to="tpfo:h5ZlgHH" resolve="Regexps" />
     <node concept="3EZMnI" id="h5ZlnwD" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h5ZlocT" role="3EZMnx">
         <property role="3F0ifm" value="regexps" />
         <node concept="VechU" id="hEZR8o9" role="3F10Kt">
@@ -2348,7 +2340,6 @@
     <property role="3GE5qa" value="Statements" />
     <ref role="1XX52x" to="tpfo:h6sFZsI" resolve="ForEachMatchStatement" />
     <node concept="3EZMnI" id="h6sGc7o" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h6sGduo" role="3EZMnx">
         <property role="3F0ifm" value="while" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -2446,7 +2437,6 @@
     <property role="3GE5qa" value="Statements" />
     <ref role="1XX52x" to="tpfo:h6ty0uz" resolve="FindMatchStatement" />
     <node concept="3EZMnI" id="h6ty76t" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h6ty7TM" role="3EZMnx">
         <property role="3F0ifm" value="if" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -2499,7 +2489,6 @@
     <property role="3GE5qa" value="Expressions" />
     <ref role="1XX52x" to="tpfo:hanawKM" resolve="MatchRegexpExpression" />
     <node concept="3EZMnI" id="hanbfaj" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="hanbh7l" role="3EZMnx">
         <ref role="1NtTu8" to="tpfo:hanb17M" resolve="inputExpression" />
       </node>
@@ -2524,7 +2513,6 @@
     <property role="3GE5qa" value="Regexps" />
     <ref role="1XX52x" to="tpfo:hwL9wso" resolve="UnicodeCharacterRegexp" />
     <node concept="3EZMnI" id="hwLac6n" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <ref role="1ERwB7" node="1eaRHy5sj$D" resolve="RegexpSequenceByEnter" />
       <node concept="3F0ifn" id="hwLacCD" role="3EZMnx">
         <property role="3F0ifm" value="\u" />
@@ -2545,7 +2533,6 @@
     <property role="3GE5qa" value="SymbolClassParts" />
     <ref role="1XX52x" to="tpfo:hKeXZgD" resolve="IntersectionSymbolClassPart" />
     <node concept="3EZMnI" id="hKf2pA3" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="hKyVPRh" role="3EZMnx">
         <ref role="1NtTu8" to="tpfo:hKySOQe" resolve="left" />
         <ref role="1ERwB7" node="hKzghHk" resolve="IntersectionSymbolClassPart_Left_Actions" />
@@ -2621,7 +2608,6 @@
     <property role="3GE5qa" value="Operations" />
     <ref role="1XX52x" to="tpfo:hMkaFxF" resolve="SplitOperation" />
     <node concept="3EZMnI" id="hMkbsLV" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hMkbty$" role="3EZMnx">
         <property role="3F0ifm" value="split with" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -2636,7 +2622,6 @@
     <property role="3GE5qa" value="Operations" />
     <ref role="1XX52x" to="tpfo:hMkq05M" resolve="ReplaceWithRegexpOperation" />
     <node concept="3EZMnI" id="hMks2n3" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hMks2n5" role="3EZMnx">
         <property role="3F0ifm" value="replaceAll" />
         <node concept="VechU" id="hMks2n6" role="3F10Kt">
@@ -2674,7 +2659,6 @@
     <property role="3GE5qa" value="Operations" />
     <ref role="1XX52x" to="tpfo:hMkpEUl" resolve="MatchRegexpOperation" />
     <node concept="3EZMnI" id="hMktX5W" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hMktX5Y" role="3EZMnx">
         <property role="3F0ifm" value="matches" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -3278,7 +3262,6 @@
       <node concept="l2Vlx" id="3iI_KKp9eT_" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="3iI_KKp9pDs" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="3iI_KKp9pDt" role="3EZMnx">
         <property role="3F0ifm" value="Options:" />
         <node concept="ljvvj" id="3iI_KKp9pDu" role="3F10Kt">

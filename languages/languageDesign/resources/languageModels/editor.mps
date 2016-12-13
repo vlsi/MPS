@@ -116,7 +116,6 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -297,7 +296,6 @@
               </node>
             </node>
             <node concept="3EZMnI" id="7Mb2akaesrw" role="1QoS34">
-              <property role="3EZMnw" value="false" />
               <node concept="1u4HXA" id="7Mb2akaesrx" role="3EZMnx">
                 <node concept="4EIwk" id="7Mb2akaesry" role="4GRq3">
                   <node concept="3clFbS" id="7Mb2akaesrz" role="2VODD2">
@@ -802,7 +800,6 @@
             </node>
           </node>
           <node concept="3EZMnI" id="Ib_Fk7zNfI" role="1QoS34">
-            <property role="3EZMnw" value="false" />
             <node concept="1u4HXA" id="Ib_Fk7zNfJ" role="3EZMnx">
               <node concept="4EIwk" id="Ib_Fk7zNfK" role="4GRq3">
                 <node concept="3clFbS" id="Ib_Fk7zNfL" role="2VODD2">

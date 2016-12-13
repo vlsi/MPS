@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590435(jetbrains.mps.samples.readerConfigLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="tpnu" ref="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)" />
@@ -38,7 +38,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -58,9 +57,7 @@
   <node concept="24kQdi" id="gfQFgCX">
     <ref role="1XX52x" to="tpnu:gfQEx6R" resolve="ReaderConfiguration" />
     <node concept="3EZMnI" id="gfQFiF7" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gfQFkbm" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gfQFlb_" role="3EZMnx">
           <property role="3F0ifm" value="reader configuration" />
         </node>
@@ -79,7 +76,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="gfQFGuD" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gfQFHdj" role="3EZMnx">
           <property role="3F0ifm" value="    " />
         </node>
@@ -105,9 +101,7 @@
   <node concept="24kQdi" id="gfQGwMY">
     <ref role="1XX52x" to="tpnu:gfQEFKK" resolve="Mapping" />
     <node concept="3EZMnI" id="gfQG_FZ" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gfQGBUA" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gfQGCD1" role="3EZMnx">
           <property role="3F0ifm" value="mapping" />
         </node>
@@ -125,7 +119,6 @@
         <node concept="2iRfu4" id="i2IQHve" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="gfQHb4f" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gfQHgcD" role="3EZMnx">
           <property role="3F0ifm" value="    " />
           <node concept="VPM3Z" id="hF4QVGC" role="3F10Kt">
@@ -156,7 +149,6 @@
   <node concept="24kQdi" id="gfQHOyp">
     <ref role="1XX52x" to="tpnu:gfQER$9" resolve="Field" />
     <node concept="3EZMnI" id="gfQIbzl" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gfQIhi4" role="3EZMnx">
         <property role="1$x2rV" value="?start?" />
         <ref role="1NtTu8" to="tpnu:gfQF7sz" resolve="start" />

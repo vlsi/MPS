@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c8959031f(jetbrains.mps.lang.script.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -70,8 +70,6 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
-        <property id="1073389446426" name="gridLayout" index="3EZMnz" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -134,7 +132,6 @@
   <node concept="24kQdi" id="h8A5Ic3">
     <ref role="1XX52x" to="tp33:h8_UgsH" resolve="MigrationScript" />
     <node concept="3EZMnI" id="h8A61bU" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="h8A629e" role="3EZMnx">
         <node concept="3F0A7n" id="4AbjR7I21kb" role="3EZMnx">
           <ref role="1NtTu8" to="tp33:4AbjR7I215j" resolve="type" />
@@ -183,7 +180,6 @@
         <node concept="2iRfu4" id="i2ICnI1" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hzizI_R" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="4AbjR7I2ivn" role="3EZMnx">
           <property role="3F0ifm" value="title:" />
         </node>
@@ -243,11 +239,7 @@
   <node concept="24kQdi" id="h8A8wdi">
     <ref role="1XX52x" to="tp33:h8_Xfy3" resolve="MigrationScriptPart_Instance" />
     <node concept="3EZMnI" id="h8A8DW7" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
-      <property role="3EZMnz" value="true" />
       <node concept="3EZMnI" id="h8Fyc86" role="3EZMnx">
-        <property role="3EZMnw" value="true" />
-        <property role="3EZMnz" value="true" />
         <node concept="3EZMnI" id="h8Fyc87" role="3EZMnx">
           <node concept="3F0ifn" id="h8Fyc88" role="3EZMnx">
             <property role="3F0ifm" value="description" />

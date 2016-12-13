@@ -89,7 +89,6 @@
         <reference id="7991336459489872009" name="outputConcept" index="3EoQqy" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -192,7 +191,6 @@
     <ref role="1XX52x" to="tgbt:qKmr2orM1i" resolve="ProjectPluginDeclaration" />
     <node concept="b$f91" id="qKmr2orM1S" role="2wV5jI">
       <node concept="3EZMnI" id="qKmr2orM1T" role="b$wch">
-        <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM1U" role="3EZMnx">
           <ref role="1NtTu8" to="tgbt:qKmr2orM1m" resolve="fieldDeclaration" />
           <node concept="2iRkQZ" id="qKmr2orM1V" role="2czzBx" />
@@ -218,7 +216,6 @@
         <node concept="2iRkQZ" id="qKmr2orM22" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="qKmr2orM23" role="b$u42">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="qKmr2orM24" role="3EZMnx">
           <property role="3F0ifm" value="project plugin" />
         </node>
@@ -237,7 +234,6 @@
     <property role="3GE5qa" value="Custom.ProjectPlugin" />
     <ref role="1XX52x" to="tgbt:qKmr2orM1C" resolve="ProjectPluginType" />
     <node concept="3EZMnI" id="qKmr2orM29" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="qKmr2orM2a" role="3EZMnx">
         <property role="3F0ifm" value="project plugin" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -281,7 +277,6 @@
     <property role="3GE5qa" value="Custom.ApplicationPlugin" />
     <ref role="1XX52x" to="tgbt:qKmr2orM1f" resolve="ApplicationPluginType" />
     <node concept="3EZMnI" id="qKmr2orM2n" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="qKmr2orM2o" role="3EZMnx">
         <property role="3F0ifm" value="application plugin" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -326,7 +321,6 @@
     <ref role="1XX52x" to="tgbt:qKmr2orM1o" resolve="ApplicationPluginDeclaration" />
     <node concept="b$f91" id="qKmr2orM2_" role="2wV5jI">
       <node concept="3EZMnI" id="qKmr2orM2A" role="b$wch">
-        <property role="3EZMnw" value="true" />
         <node concept="3F2HdR" id="qKmr2orM2B" role="3EZMnx">
           <ref role="1NtTu8" to="tgbt:qKmr2orM1s" resolve="fieldDeclaration" />
           <node concept="2iRkQZ" id="qKmr2orM2C" role="2czzBx" />
@@ -352,7 +346,6 @@
         <node concept="2iRkQZ" id="qKmr2orM2J" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="qKmr2orM2K" role="b$u42">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="qKmr2orM2L" role="3EZMnx">
           <property role="3F0ifm" value="application plugin" />
         </node>
@@ -371,7 +364,6 @@
     <property role="3GE5qa" value="Tool" />
     <ref role="1XX52x" to="tgbt:_QrTcSEy4l" resolve="GetToolInProjectOperation" />
     <node concept="3EZMnI" id="_QrTcSEy4Q" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="_QrTcSEy4R" role="3EZMnx">
         <property role="3F0ifm" value="tool" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -403,7 +395,6 @@
     <property role="3GE5qa" value="Preference" />
     <ref role="1XX52x" to="tgbt:_QrTcSEy4o" resolve="GetPreferencesComponentInProjectOperation" />
     <node concept="3EZMnI" id="_QrTcSEy50" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="_QrTcSEy51" role="3EZMnx">
         <property role="3F0ifm" value="preferenceComponent" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />

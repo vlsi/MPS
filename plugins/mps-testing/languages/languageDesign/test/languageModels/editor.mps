@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="-1" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -166,7 +166,6 @@
         <child id="4323500428121274054" name="id" index="2SqHTX" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -389,7 +388,6 @@
   <node concept="24kQdi" id="hBxLYGT">
     <ref role="1XX52x" to="tp5g:hBxLA2s" resolve="TestNodeAnnotation" />
     <node concept="3EZMnI" id="hBxLZJn" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hBxM0Xm" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
         <ref role="1k5W1q" to="tpen:hFCSAw$" resolve="LeftParen" />
@@ -426,7 +424,6 @@
     <property role="3GE5qa" value="asserts" />
     <ref role="1XX52x" to="tp5g:hCJA54K" resolve="AssertMatch" />
     <node concept="3EZMnI" id="hCJAPqN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hCJAQsK" role="3EZMnx">
         <property role="3F0ifm" value="assert" />
         <ref role="1k5W1q" node="hFqhsME" resolve="AssertStyle" />
@@ -594,7 +591,6 @@
       <node concept="l2Vlx" id="3fN3Qov$nEF" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hFCbniE" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hFCboFx" role="3EZMnx">
         <property role="3F0ifm" value="check" />
         <ref role="1k5W1q" node="hGdEPg1" resolve="NodeOperation" />
@@ -839,7 +835,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:hG1TgHj" resolve="NodePropertiesContainer" />
     <node concept="3EZMnI" id="hG1UMMd" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <ref role="1ERwB7" node="hG2S5d1" resolve="Annotation_Actions" />
       <node concept="3F0ifn" id="hG1UNQW" role="3EZMnx">
         <property role="3F0ifm" value="&lt;node" />
@@ -1142,7 +1137,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:hG30Oi4" resolve="NodeTypeCheckOperation" />
     <node concept="3EZMnI" id="hG31kVI" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY5I" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -1181,7 +1175,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:hG7CXiP" resolve="NodeOperationsContainer" />
     <node concept="3EZMnI" id="hG7EZ9K" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="7uNrZ$pqtAm" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
         <ref role="1k5W1q" to="tpen:hFCSAw$" resolve="LeftParen" />
@@ -1359,7 +1352,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:hG8gU8P" resolve="VariableInitialized" />
     <node concept="3EZMnI" id="hG8haC2" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hG8hbnr" role="3EZMnx">
         <property role="3F0ifm" value="init" />
         <ref role="1k5W1q" node="hGdEPg1" resolve="NodeOperation" />
@@ -1397,7 +1389,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:hG8qOxM" resolve="VariableAlive" />
     <node concept="3EZMnI" id="hG8qXLV" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hG8qYTv" role="3EZMnx">
         <property role="3F0ifm" value="alive" />
         <ref role="1k5W1q" node="hGdEPg1" resolve="NodeOperation" />
@@ -1434,9 +1425,7 @@
   <node concept="24kQdi" id="hHlHjiu">
     <ref role="1XX52x" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
     <node concept="3EZMnI" id="hHlIOwQ" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hHlIQzw" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hHlIQzx" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1470,7 +1459,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hHTI9Sm" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hHTI9Sn" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1504,7 +1492,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hHTFX1B" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hHTFX1C" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1547,7 +1534,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hHTG0aQ" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hHTG0aR" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1883,7 +1869,6 @@
   <node concept="24kQdi" id="hHqerh7">
     <ref role="1XX52x" to="tp5g:hHqefK1" resolve="TestNode" />
     <node concept="3EZMnI" id="hHqoeRd" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="nfIF2FIRjb" role="3EZMnx">
         <property role="3F0ifm" value="(" />
       </node>
@@ -1903,7 +1888,6 @@
     <property role="3GE5qa" value="asserts" />
     <ref role="1XX52x" to="tp5g:hHOf0Uc" resolve="CheckNodeDataflow" />
     <node concept="3EZMnI" id="hHOfkUN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hHOfmje" role="3EZMnx">
         <property role="3F0ifm" value="check" />
         <ref role="1k5W1q" node="hFqhsME" resolve="AssertStyle" />
@@ -1943,7 +1927,6 @@
   <node concept="24kQdi" id="hPLZoFV">
     <ref role="1XX52x" to="tp5g:hPLZb6h" resolve="SimpleNodeTest" />
     <node concept="3EZMnI" id="hPLZpbd" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="hWoAMEI" role="3EZMnx">
         <ref role="PMmxG" to="tpen:hNAtxlY" resolve="_DeprecatedPart" />
       </node>
@@ -1951,7 +1934,6 @@
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
       <node concept="3EZMnI" id="hPLZpbe" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hPLZpbf" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1996,7 +1978,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hPMFPyi" resolve="InvokeIntentionStatement" />
     <node concept="3EZMnI" id="hPMGsRQ" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hPMGtNG" role="3EZMnx">
         <property role="3F0ifm" value="invoke intention" />
       </node>
@@ -2049,7 +2030,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hQTK7X3" resolve="TypeKeyStatement" />
     <node concept="3EZMnI" id="hQTKuqT" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY6O" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -2080,7 +2060,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hSyd1fI" resolve="PressKeyStatement" />
     <node concept="3EZMnI" id="hSydeS1" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="41csb_keekm" role="3EZMnx">
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
         <ref role="1k5W1q" node="hQUhkJ8" resolve="EditorOperation" />
@@ -2101,7 +2080,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hSLiM3w" resolve="EditorTestCase" />
     <node concept="3EZMnI" id="hSLjOx7" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hSLjUBS" role="3EZMnx">
         <property role="3F0ifm" value="Editor test case" />
       </node>
@@ -2344,7 +2322,6 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1XX52x" to="tp5g:hSLIFSi" resolve="AnonymousCellAnnotation" />
     <node concept="3EZMnI" id="hSLIS0i" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hSLITcJ" role="3EZMnx">
         <property role="3F0ifm" value="&lt;" />
         <node concept="11LMrY" id="hXJhAmX" role="3F10Kt">
@@ -2366,7 +2343,6 @@
       <node concept="l2Vlx" id="1HNcKYLagtn" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hSQECpS" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="1HNcKYLa3T5" role="3EZMnx">
         <property role="3F0ifm" value="is in inspector" />
       </node>
@@ -2458,7 +2434,6 @@
     <property role="3GE5qa" value="mock" />
     <ref role="1XX52x" to="tp5g:hTJ5cZc" resolve="MockAnnotation" />
     <node concept="3EZMnI" id="hTJ7rDP" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hTJ7u2s" role="3EZMnx">
         <property role="3F0ifm" value="&lt;mock" />
       </node>
@@ -2473,7 +2448,6 @@
     <property role="3GE5qa" value="nodeOperation" />
     <ref role="1XX52x" to="tp5g:5k1cI6h4in" resolve="NodeTypeSetCheckOperation" />
     <node concept="3EZMnI" id="5k1cI6h4Kc" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhYbd" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -3491,9 +3465,7 @@
   <node concept="24kQdi" id="4K12N3pJCcu">
     <ref role="1XX52x" to="tp5g:4K12N3pJ$JB" resolve="MigrationTestCase" />
     <node concept="3EZMnI" id="4K12N3pJCcw" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="4K12N3pJCcx" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="4K12N3pJCcy" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -3533,7 +3505,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="4K12N3pJCcH" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="4K12N3pJCcI" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -3566,7 +3537,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="4K12N3pJIF$" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="4K12N3pJIF_" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>

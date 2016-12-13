@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -225,7 +225,6 @@
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -501,7 +500,6 @@
   <node concept="24kQdi" id="htajzAI">
     <ref role="1XX52x" to="tp2c:htajhBZ" resolve="FunctionType" />
     <node concept="3EZMnI" id="htaj$bT" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="htak6Za" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -538,7 +536,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hFpBxVL" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hFpBxVM" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -644,7 +641,6 @@
   <node concept="24kQdi" id="htaCb89">
     <ref role="1XX52x" to="tp2c:hta_$ul" resolve="InvokeFunctionExpression" />
     <node concept="3EZMnI" id="htaCbIJ" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="htaCcCp" role="3EZMnx">
         <ref role="1NtTu8" to="tp2c:hta_Fzp" resolve="function" />
       </node>
@@ -685,7 +681,6 @@
   <node concept="24kQdi" id="htbWaED">
     <ref role="1XX52x" to="tp2c:htbVj4_" resolve="ClosureLiteral" />
     <node concept="3EZMnI" id="htbWbt0" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="htbWche" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -752,7 +747,6 @@
   <node concept="24kQdi" id="htknCfR">
     <ref role="1XX52x" to="tp2c:htknjxq" resolve="InvokeExpression" />
     <node concept="3EZMnI" id="htknCJP" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="htknCJS" role="3EZMnx">
         <property role="3F0ifm" value="invoke" />
       </node>
@@ -776,7 +770,6 @@
   <node concept="24kQdi" id="hun6xgD">
     <ref role="1XX52x" to="tp2c:hun63U2" resolve="YieldStatement" />
     <node concept="3EZMnI" id="hun6xSN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY1z" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -795,7 +788,6 @@
   <node concept="24kQdi" id="hwBr$mJ">
     <ref role="1XX52x" to="tp2c:hwBqR26" resolve="UnboundClosureParameterDeclaration" />
     <node concept="3EZMnI" id="hwBr$WN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hwBrA1V" role="3EZMnx">
         <property role="3F0ifm" value="?" />
       </node>
@@ -808,7 +800,6 @@
   <node concept="24kQdi" id="hPBeD20">
     <ref role="1XX52x" to="tp2c:hPBd92j" resolve="InvokeFunctionOperation" />
     <node concept="3EZMnI" id="hPBeDlM" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY2O" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -866,7 +857,6 @@
   <node concept="24kQdi" id="hSAf5wO">
     <ref role="1XX52x" to="tp2c:hS_Z6Lz" resolve="YieldAllStatement" />
     <node concept="3EZMnI" id="hSAf9fo" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY6G" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -885,7 +875,6 @@
   <node concept="24kQdi" id="hTa0wbv">
     <ref role="1XX52x" to="tp2c:hT9R82n" resolve="ControlAbstractionDeclaration" />
     <node concept="3EZMnI" id="hTa0FdR" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiJ_Ow" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -897,7 +886,6 @@
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
       </node>
       <node concept="3EZMnI" id="hTacZhu" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hTacZhv" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1020,7 +1008,6 @@
       <node concept="l2Vlx" id="i0Ib$19" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hTa7DBo" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hTa7DBq" role="3EZMnx">
         <property role="3F0ifm" value="annotations:" />
         <node concept="ljvvj" id="i0Ib_7r" role="3F10Kt">
@@ -1040,7 +1027,6 @@
   <node concept="24kQdi" id="hTa7JsJ">
     <ref role="1XX52x" to="tp2c:hT9QNxK" resolve="ControlAbstractionContainer" />
     <node concept="3EZMnI" id="hTa7KYz" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiIP6G" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -1109,7 +1095,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hTacDLO" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hTacDLP" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1210,7 +1195,6 @@
   <node concept="24kQdi" id="hTbDL57">
     <ref role="1XX52x" to="tp2c:hT9NYQp" resolve="ClosureControlStatement" />
     <node concept="3EZMnI" id="hTbDM3h" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="1iCGBv" id="hZQ3gt4" role="3EZMnx">
         <ref role="1NtTu8" to="tp2c:hTbD_z8" resolve="controlMethod" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -1225,7 +1209,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="hZQ3gt8" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hZQ3gt9" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1303,7 +1286,6 @@
           </node>
         </node>
         <node concept="3EZMnI" id="hZQ3gtd" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="VPM3Z" id="hZQ3gte" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -1397,7 +1379,6 @@
   <node concept="24kQdi" id="hTgOv4G">
     <ref role="1XX52x" to="tp2c:hTgmTQ3" resolve="UnrestrictedFunctionType" />
     <node concept="3EZMnI" id="hTgOvq9" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hTgOvqa" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -1423,7 +1404,6 @@
         <ref role="1NtTu8" to="tp2c:hVqaMsf" resolve="terminateType" />
       </node>
       <node concept="3EZMnI" id="hTgOvqh" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hTgOvqi" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1467,7 +1447,6 @@
       <node concept="l2Vlx" id="i0IbUmV" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hVw8VSY" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hVw92kw" role="3EZMnx">
         <property role="3F0ifm" value="return:" />
       </node>
@@ -1483,7 +1462,6 @@
   <node concept="24kQdi" id="hTgVNfC">
     <ref role="1XX52x" to="tp2c:hT9Nvvb" resolve="UnrestrictedClosureLiteral" />
     <node concept="3EZMnI" id="i0zaYL1" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="i0zaYL2" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -1547,7 +1525,6 @@
   <node concept="24kQdi" id="hYSh3Ys">
     <ref role="1XX52x" to="tp2c:hYSg_EC" resolve="CompactInvokeFunctionExpression" />
     <node concept="3EZMnI" id="hYSh4t6" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="hYSh6bu" role="3EZMnx">
         <ref role="1NtTu8" to="tp2c:hYSgG6H" resolve="function" />
       </node>
@@ -1643,7 +1620,6 @@
   <node concept="24kQdi" id="i005GTI">
     <ref role="1XX52x" to="tp2c:hT9Oogt" resolve="ControlClosureLiteral" />
     <node concept="3EZMnI" id="i005Hw_" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="i005IZt" role="3EZMnx">
         <ref role="1NtTu8" to="tp2c:htbW58J" resolve="body" />
         <node concept="lj46D" id="i0IbBMv" role="3F10Kt">
@@ -1656,7 +1632,6 @@
   <node concept="24kQdi" id="4bnBAeByBu7">
     <ref role="1XX52x" to="tp2c:4bnBAeByBu4" resolve="FunctionMethodDeclaration" />
     <node concept="3EZMnI" id="4bnBAeByBu9" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="VPM3Z" id="4bnBAeByBua" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
@@ -1667,7 +1642,6 @@
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
       <node concept="3EZMnI" id="4bnBAeByBuu" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="4bnBAeByBuv" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -1882,7 +1856,6 @@
       <node concept="l2Vlx" id="4bnBAeByBwu" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="4bnBAeByBwv" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="4bnBAeByBww" role="3EZMnx">
         <property role="3F0ifm" value="annotations:" />
         <node concept="ljvvj" id="4bnBAeByBwx" role="3F10Kt">
@@ -2100,7 +2073,6 @@
   <node concept="24kQdi" id="U7sbC7HDqZ">
     <ref role="1XX52x" to="tp2c:U7sbC7HC1h" resolve="ClosureLiteralType" />
     <node concept="3EZMnI" id="U7sbC7HDr1" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="U7sbC7HDr2" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" to="tpen:hFD5onb" resolve="LeftBrace" />
@@ -2137,7 +2109,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="U7sbC7HDrc" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="U7sbC7HDrd" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>

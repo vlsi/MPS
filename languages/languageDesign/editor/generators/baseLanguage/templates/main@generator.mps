@@ -145,7 +145,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -1202,6 +1201,9 @@
           <node concept="3cpWs8" id="fXlobId" role="3cqZAp">
             <node concept="3cpWsn" id="fXlnoS2" role="3cpWs9">
               <property role="TrG5h" value="editorCell" />
+              <node concept="3uibUv" id="fXlnoS1" role="1tU5fm">
+                <ref role="3uigEE" to="g51k:~EditorCell_Collection" resolve="EditorCell_Collection" />
+              </node>
               <node concept="2ShNRf" id="35SBEYRfrnU" role="33vP2m">
                 <node concept="1pGfFk" id="35SBEYRfrnV" role="2ShVmc">
                   <ref role="37wK5l" to="g51k:~EditorCell_Collection.&lt;init&gt;(jetbrains.mps.openapi.editor.EditorContext,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.nodeEditor.cellLayout.CellLayout)" resolve="EditorCell_Collection" />
@@ -1232,9 +1234,6 @@
                     </node>
                   </node>
                 </node>
-              </node>
-              <node concept="3uibUv" id="fXlnoS1" role="1tU5fm">
-                <ref role="3uigEE" to="g51k:~EditorCell_Collection" resolve="EditorCell_Collection" />
               </node>
             </node>
           </node>
@@ -14020,7 +14019,6 @@
     <property role="3GE5qa" value="sugar" />
     <ref role="3gUMe" to="tpc2:hrXI7r6" resolve="CellModel_BlockStart" />
     <node concept="3EZMnI" id="hrXKqNm" role="13RCb5">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hrXKqNn" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <node concept="VPM3Z" id="6xJrZo0FL9p" role="3F10Kt">
@@ -14553,7 +14551,6 @@
     <property role="3GE5qa" value="sugar" />
     <ref role="3gUMe" to="tpc2:hrXIzvd" resolve="CellModel_BlockEnd" />
     <node concept="3EZMnI" id="hsc$Nvc" role="13RCb5">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hsc$Nvd" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <node concept="VPM3Z" id="6xJrZo0FL9N" role="3F10Kt">
@@ -14708,13 +14705,10 @@
     <property role="3GE5qa" value="sugar" />
     <ref role="3gUMe" to="tpc2:hsb$fdm" resolve="CellModel_Block" />
     <node concept="3EZMnI" id="hsbBfu2" role="13RCb5">
-      <property role="3EZMnw" value="true" />
       <property role="1cu_pB" value="0" />
       <node concept="3EZMnI" id="hsbBhJT" role="3EZMnx">
-        <property role="3EZMnw" value="true" />
         <node concept="raruj" id="hsbBi4r" role="lGtFl" />
         <node concept="3EZMnI" id="hsbBmfk" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3F0ifn" id="hsbBmfl" role="3EZMnx">
             <property role="3F0ifm" value="header" />
             <node concept="29HgVG" id="hsbBq8L" role="lGtFl">
@@ -14766,7 +14760,6 @@
           <node concept="2iRfu4" id="i2IxuR2" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="hsbBnrN" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hsbBnPt" role="3EZMnx" />
           <node concept="3F0ifn" id="hsbBoh$" role="3EZMnx">
             <property role="3F0ifm" value="body" />
@@ -15548,9 +15541,7 @@
     <property role="3GE5qa" value="sugar" />
     <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="3EZMnI" id="hxAmhpx" role="13RCb5">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hxAmoz_" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hxAmq52" role="3EZMnx">
           <property role="3F0ifm" value="abcdef" />
           <node concept="29HgVG" id="hxAmBs7" role="lGtFl" />

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -138,7 +138,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -476,7 +475,6 @@
       <node concept="l2Vlx" id="i0N7jAv" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hqc4$eH" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hqc4$eI" role="3EZMnx">
         <property role="3F0ifm" value="node antiquotation " />
         <node concept="ljvvj" id="i0N7jAB" role="3F10Kt">
@@ -655,7 +653,6 @@
       <node concept="l2Vlx" id="i0N7jAO" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hqc4$g1" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hqc4$g2" role="3EZMnx">
         <property role="3F0ifm" value="list antiquotation" />
         <node concept="ljvvj" id="i0N7jAH" role="3F10Kt">
@@ -1020,7 +1017,6 @@
       <node concept="l2Vlx" id="i0N7jA_" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hqc4$hA" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hqc4$hC" role="3EZMnx">
         <property role="3F0ifm" value="reference antiquotation" />
         <node concept="ljvvj" id="i0N7j_K" role="3F10Kt">
@@ -2166,7 +2162,6 @@
       <node concept="l2Vlx" id="i0N7jAx" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hqEOjEJ" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hqEOjEL" role="3EZMnx">
         <property role="3F0ifm" value="property antiquotation" />
         <node concept="ljvvj" id="i0N7jAP" role="3F10Kt">

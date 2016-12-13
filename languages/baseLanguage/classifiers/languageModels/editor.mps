@@ -5,7 +5,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -167,7 +167,6 @@
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -426,7 +425,6 @@
     <property role="3GE5qa" value="Types" />
     <ref role="1XX52x" to="tp4f:hyWukbY" resolve="DefaultClassifierType" />
     <node concept="3EZMnI" id="hyWup5K" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hyWuph1" role="3EZMnx">
         <property role="3F0ifm" value="classifier" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -470,7 +468,6 @@
     <property role="3GE5qa" value="Methods" />
     <ref role="1XX52x" to="tp4f:hyXshSD" resolve="DefaultClassifierMethodCallOperation" />
     <node concept="3EZMnI" id="hyXtdnH" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="hyXtdZ3" role="3EZMnx">
         <ref role="1NtTu8" to="tp4f:hyXtfQh" resolve="method" />
         <node concept="1sVBvm" id="hyXtdZ4" role="1sWHZn">
@@ -556,7 +553,6 @@
     <property role="3GE5qa" value="Methods" />
     <ref role="1XX52x" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
     <node concept="3EZMnI" id="hLrKZ6N" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="VPM3Z" id="hLrKZ7R" role="3F10Kt">
         <property role="VOm3f" value="true" />
       </node>
@@ -676,7 +672,6 @@
       <node concept="l2Vlx" id="i0IanGZ" role="2iSdaV" />
     </node>
     <node concept="3EZMnI" id="hLrL4bB" role="6VMZX">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hLrL4hx" role="3EZMnx">
         <property role="3F0ifm" value="annotations:" />
         <node concept="ljvvj" id="i0Iaoy_" role="3F10Kt">
@@ -725,7 +720,6 @@
     <node concept="1QoScp" id="hJ2onl8" role="2wV5jI">
       <property role="1QpmdY" value="true" />
       <node concept="3EZMnI" id="hJ2op9U" role="1QoS34">
-        <property role="3EZMnw" value="false" />
         <node concept="1iCGBv" id="hJ2orQk" role="3EZMnx">
           <ref role="1NtTu8" to="tp4f:hJ2nkJ3" resolve="classifier" />
           <node concept="1sVBvm" id="hJ2orQl" role="1sWHZn">

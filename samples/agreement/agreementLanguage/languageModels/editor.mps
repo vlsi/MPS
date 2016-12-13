@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -89,8 +89,6 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
-        <property id="1073389446426" name="gridLayout" index="3EZMnz" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -204,9 +202,7 @@
   <node concept="24kQdi" id="gbsbkuN">
     <ref role="1XX52x" to="tpna:gbrTTJY" resolve="Plan" />
     <node concept="3EZMnI" id="gbsbuzB" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbsbvn9" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbsbQUj" role="3EZMnx">
           <property role="3F0ifm" value="plan" />
         </node>
@@ -231,7 +227,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="gbsbzId" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbsbQLe" role="3EZMnx">
           <property role="3F0ifm" value="    " />
           <node concept="VPM3Z" id="hF4QVGV" role="3F10Kt">
@@ -265,7 +260,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="gbsbTSx" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbsbTSy" role="3EZMnx">
           <property role="3F0ifm" value="    " />
           <node concept="VPM3Z" id="hF4QVFh" role="3F10Kt">
@@ -299,9 +293,7 @@
   <node concept="24kQdi" id="gbsbZV3">
     <ref role="1XX52x" to="tpna:gbrUf2k" resolve="Event" />
     <node concept="3EZMnI" id="gbsc9xk" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbscaAc" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbscEGr" role="3EZMnx">
           <property role="3F0ifm" value="event" />
         </node>
@@ -345,7 +337,6 @@
         <node concept="2iRfu4" id="i2IQv9K" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="gbscrfD" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbscEGu" role="3EZMnx">
           <property role="3F0ifm" value="    " />
           <node concept="VPM3Z" id="hF4QVHt" role="3F10Kt">
@@ -373,9 +364,7 @@
   <node concept="24kQdi" id="gbscJAv">
     <ref role="1XX52x" to="tpna:gbrUaGe" resolve="Value" />
     <node concept="3EZMnI" id="gbscM0N" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="gbscN1h" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbsd$ov" role="3EZMnx">
           <property role="3F0ifm" value="value" />
         </node>
@@ -401,7 +390,6 @@
         <node concept="2iRfu4" id="i2IQvdy" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="gbsdkTJ" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbsd$oy" role="3EZMnx">
           <property role="3F0ifm" value="    " />
           <node concept="VPM3Z" id="hF4QVJ7" role="3F10Kt">
@@ -435,7 +423,6 @@
   <node concept="24kQdi" id="gbEdbyQ">
     <ref role="1XX52x" to="tpna:gbrZSPH" resolve="QuantityTemporalProperty" />
     <node concept="3EZMnI" id="gbEdeAq" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEdngC" role="3EZMnx">
         <ref role="1NtTu8" to="tpna:gbrZkDb" resolve="date" />
       </node>
@@ -454,7 +441,6 @@
   <node concept="24kQdi" id="gbEdzRN">
     <ref role="1XX52x" to="tpna:gbrZoRd" resolve="Date" />
     <node concept="3EZMnI" id="gbEdA1x" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbEe2s9" role="3EZMnx">
         <property role="1$x2rV" value="yyyy" />
         <ref role="1NtTu8" to="tpna:gbrZtCD" resolve="year" />
@@ -500,7 +486,6 @@
   <node concept="24kQdi" id="gbEe8Lf">
     <ref role="1XX52x" to="tpna:gbrYiHC" resolve="Quantity" />
     <node concept="3EZMnI" id="gbEeaLc" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbECvtu" role="3EZMnx">
         <ref role="1NtTu8" to="tpna:gbs35k3" resolve="unit" />
         <node concept="pkWqt" id="gFVAxSD" role="pqm2j">
@@ -568,8 +553,6 @@
   <node concept="24kQdi" id="gbEgGnj">
     <ref role="1XX52x" to="tpna:gbs4on3" resolve="EventType" />
     <node concept="3EZMnI" id="gbVelNf" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
-      <property role="3EZMnz" value="true" />
       <node concept="3F0A7n" id="gbVgIqY" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no name&gt;" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -612,7 +595,6 @@
   <node concept="24kQdi" id="gbEk3Ej">
     <ref role="1XX52x" to="tpna:gbs4AgY" resolve="EventVariable" />
     <node concept="3EZMnI" id="gbEk6e8" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="gbEkmiX" role="3EZMnx">
         <ref role="1NtTu8" to="tpna:gbs4N3m" resolve="type" />
         <node concept="Vb9p2" id="hF4QVNR" role="3F10Kt">
@@ -638,7 +620,6 @@
   <node concept="24kQdi" id="gbEmaqQ">
     <ref role="1XX52x" to="tpna:gbs8ljn" resolve="PostingRuleTemporalProperty" />
     <node concept="3EZMnI" id="gbEmdeN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F1sOY" id="gbEmqDW" role="3EZMnx">
         <ref role="1NtTu8" to="tpna:gbrZkDb" resolve="date" />
       </node>
@@ -657,10 +638,7 @@
   <node concept="24kQdi" id="gbEmD7q">
     <ref role="1XX52x" to="tpna:gbs8V3q" resolve="PostingRule" />
     <node concept="3EZMnI" id="gbEmM_R" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
-      <property role="3EZMnz" value="false" />
       <node concept="3EZMnI" id="gbEmOeR" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbEmXCs" role="3EZMnx">
           <property role="3F0ifm" value="amount  :" />
           <node concept="VPM3Z" id="hF4QVIv" role="3F10Kt">
@@ -676,7 +654,6 @@
         <node concept="2iRfu4" id="i2IQvdG" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="gbEn1Fw" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbEn1Fx" role="3EZMnx">
           <property role="3F0ifm" value="account :" />
           <node concept="VPM3Z" id="hF4QVHP" role="3F10Kt">
@@ -762,7 +739,6 @@
   <node concept="24kQdi" id="gbUUv6J">
     <ref role="1XX52x" to="tpna:gbUTxgb" resolve="AgreementDeclarations" />
     <node concept="3EZMnI" id="gbUUyqb" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="gbUV5x4" role="3EZMnx">
         <property role="3F0ifm" value="agreement declarations" />
       </node>
@@ -772,7 +748,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="gbUUKrq" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbUV5x6" role="3EZMnx">
           <property role="3F0ifm" value="    account types: {" />
         </node>
@@ -810,7 +785,6 @@
         </node>
       </node>
       <node concept="3EZMnI" id="gbVccxV" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="gbVccxW" role="3EZMnx">
           <property role="3F0ifm" value="    event types:" />
         </node>

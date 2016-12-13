@@ -4,7 +4,7 @@
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -114,7 +114,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -240,7 +239,6 @@
   <node concept="24kQdi" id="hz_zu$2">
     <ref role="1XX52x" to="tp41:hz_zdoP" resolve="DataFlowBuilderDeclaration" />
     <node concept="3EZMnI" id="hz_zvhI" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hz_A8Xq" role="3EZMnx">
         <property role="3F0ifm" value="data flow builder for" />
       </node>
@@ -387,7 +385,6 @@
     <property role="3GE5qa" value="Instructions.Variable" />
     <ref role="1XX52x" to="tp41:hz_H088" resolve="BaseEmitVariableStatement" />
     <node concept="3EZMnI" id="hz_HgjR" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY6b" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -403,7 +400,6 @@
     <property role="3GE5qa" value="Positions" />
     <ref role="1XX52x" to="tp41:hz_I6pB" resolve="RelativePosition" />
     <node concept="3EZMnI" id="hz_IchF" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY1m" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -452,7 +448,6 @@
     <property role="3GE5qa" value="Instructions.Jump" />
     <ref role="1XX52x" to="tp41:hz_J8Ep" resolve="BaseEmitJumpStatement" />
     <node concept="3EZMnI" id="hz_JfyE" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="1efL_eBUpz2" role="3EZMnx">
         <property role="3F0ifm" value="insert" />
         <ref role="1k5W1q" node="7n7cA7JTupR" resolve="InsertPosition" />
@@ -502,7 +497,6 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1XX52x" to="tp41:hzAgYvJ" resolve="EmitCodeForStatement" />
     <node concept="3EZMnI" id="hzAh7oU" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hzAh7_9" role="3EZMnx">
         <property role="3F0ifm" value="code" />
         <ref role="1k5W1q" node="hz_DuTG" resolve="Instruction" />
@@ -529,7 +523,6 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1XX52x" to="tp41:hzF2QpO" resolve="EmitMayBeUnreachable" />
     <node concept="3EZMnI" id="hzF2VXm" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hzF38QG" role="3EZMnx">
         <property role="3F0ifm" value="{" />
         <ref role="1k5W1q" node="hzF3cYD" resolve="MayBeUnreachable" />
@@ -556,7 +549,6 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1XX52x" to="tp41:h$4dLjP" resolve="EmitTryFinallyStatement" />
     <node concept="3EZMnI" id="h$4dYtC" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="h$4dYG5" role="3EZMnx">
         <property role="3F0ifm" value="try" />
         <ref role="1k5W1q" node="hz_DuTG" resolve="Instruction" />
@@ -603,7 +595,6 @@
     <property role="3GE5qa" value="Instructions" />
     <ref role="1XX52x" to="tp41:h$axUQH" resolve="EmitLabelStatement" />
     <node concept="3EZMnI" id="h$axZq3" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="h$axZq4" role="3EZMnx">
         <property role="3F0ifm" value="label" />
         <ref role="1k5W1q" node="h$ay11B" resolve="Label" />
@@ -618,7 +609,6 @@
     <property role="3GE5qa" value="Positions" />
     <ref role="1XX52x" to="tp41:h$ayLkA" resolve="LabelPosition" />
     <node concept="3EZMnI" id="h$ayR0b" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="h$ayR0c" role="3EZMnx">
         <property role="3F0ifm" value="after label" />
         <ref role="1k5W1q" node="hz_IdTY" resolve="Position" />
@@ -663,7 +653,6 @@
     <property role="3GE5qa" value="Instructions.Variable" />
     <ref role="1XX52x" to="tp41:hz_FXzu" resolve="EmitWriteStatement" />
     <node concept="3EZMnI" id="hTXCdmn" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY1c" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />

@@ -2,7 +2,7 @@
 <model ref="r:e4c3371f-743b-4590-b521-03a11e9bad7f(jetbrains.mps.samples.theSimplestLanguage.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="jfvl" ref="r:7621c011-92d8-4afe-81d5-6da125ff596f(jetbrains.mps.samples.theSimplestLanguage.structure)" />
@@ -24,7 +24,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -43,9 +42,7 @@
   <node concept="24kQdi" id="hMXMUME">
     <ref role="1XX52x" to="jfvl:hMXMQOs" resolve="TheSimplestConcept" />
     <node concept="3EZMnI" id="hMXMVln" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hMXMX6t" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hMXMX6u" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
@@ -64,7 +61,6 @@
         <node concept="VPM3Z" id="hMXN08G" role="3F10Kt" />
       </node>
       <node concept="3EZMnI" id="hMXN2MK" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="VPM3Z" id="hMXN2ML" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>

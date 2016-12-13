@@ -4,7 +4,7 @@
   <languages>
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -81,7 +81,6 @@
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -268,7 +267,6 @@
     <property role="3GE5qa" value="RefActions" />
     <ref role="1XX52x" to="tp1h:hteSWhS" resolve="AbstractMoveExpression" />
     <node concept="3EZMnI" id="hteVxza" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhY1q" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -291,7 +289,6 @@
     <property role="3GE5qa" value="RefActions" />
     <ref role="1XX52x" to="tp1h:hteXot9" resolve="MoveNodeToNodeExpression" />
     <node concept="3EZMnI" id="hteX_bY" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hteX_bZ" role="3EZMnx">
         <property role="3F0ifm" value="moveNode" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -320,7 +317,6 @@
     <property role="3GE5qa" value="RefActions" />
     <ref role="1XX52x" to="tp1h:hteYDmx" resolve="MoveNodesToNodeExpression" />
     <node concept="3EZMnI" id="hteYWbN" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hteYWbO" role="3EZMnx">
         <property role="3F0ifm" value="moveNodes" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
@@ -349,9 +345,7 @@
     <property role="3GE5qa" value="RefDecl" />
     <ref role="1XX52x" to="tp1h:5YKiRiBue95" resolve="Refactoring" />
     <node concept="3EZMnI" id="4Lb$w0YjnxY" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="4Lb$w0YjnxZ" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="4Lb$w0Yjny0" role="3EZMnx">
           <property role="3F0ifm" value="refactoring" />
         </node>
@@ -395,7 +389,6 @@
         <node concept="2iRfu4" id="4Lb$w0Yjnyb" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="4Lb$w0Yjnyc" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="4Lb$w0Yjnyd" role="3EZMnx">
           <property role="3F0ifm" value="target:" />
         </node>
@@ -482,7 +475,6 @@
     <property role="3GE5qa" value="RefDecl.Arg.Parameters" />
     <ref role="1XX52x" to="tp1h:5YKiRiBuwp$" resolve="RefactoringParameter" />
     <node concept="3EZMnI" id="4Lb$w0YkhmX" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="4Lb$w0YkhmY" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
         <node concept="VechU" id="4Lb$w0YkhmZ" role="3F10Kt">

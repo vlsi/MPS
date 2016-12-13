@@ -122,7 +122,6 @@
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <property id="1160590353935" name="usesFolding" index="S$Qs1" />
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="7723470090030138869" name="foldedCellModel" index="AHCbl" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
@@ -619,9 +618,7 @@
     <ref role="1XX52x" to="tp3j:i3dkpKH" resolve="ParameterizedIntentionDeclaration" />
     <node concept="b$f91" id="i3dlAyP" role="2wV5jI">
       <node concept="3EZMnI" id="i3dlAyQ" role="b$wch">
-        <property role="3EZMnw" value="true" />
         <node concept="3EZMnI" id="i3dlAyR" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3F0ifn" id="i3dlAyS" role="3EZMnx">
             <property role="3F0ifm" value="error intention :" />
           </node>
@@ -634,7 +631,6 @@
           <node concept="2iRfu4" id="i3dlAyV" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="i3dlAyW" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="VPM3Z" id="i3dlAyX" role="3F10Kt">
             <property role="VOm3f" value="false" />
           </node>
@@ -681,7 +677,6 @@
         <node concept="2iRkQZ" id="i3dlAzc" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="i3dlAzd" role="b$u42">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="i3dlD41" role="3EZMnx">
           <property role="3F0ifm" value="parameterized" />
         </node>
@@ -734,9 +729,7 @@
     <ref role="1XX52x" to="tp3j:2c3oNEsfcpP" resolve="BaseIntentionDeclaration" />
     <node concept="b$f91" id="5rGvd38Dc3W" role="2wV5jI">
       <node concept="3EZMnI" id="5rGvd38Dc3X" role="b$wch">
-        <property role="3EZMnw" value="true" />
         <node concept="3EZMnI" id="5rGvd38Dc3Y" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3F0ifn" id="5rGvd38Dc3Z" role="3EZMnx">
             <property role="3F0ifm" value="error intention :" />
           </node>
@@ -751,7 +744,6 @@
         <node concept="3EZMnI" id="5rGvd38Dc43" role="3EZMnx">
           <node concept="2iRkQZ" id="5rGvd38Dc44" role="2iSdaV" />
           <node concept="3EZMnI" id="5rGvd38Dc45" role="3EZMnx">
-            <property role="3EZMnw" value="false" />
             <node concept="VPM3Z" id="5rGvd38Dc46" role="3F10Kt">
               <property role="VOm3f" value="false" />
             </node>
@@ -813,7 +805,6 @@
         <node concept="2iRkQZ" id="5rGvd38Dc4s" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="5rGvd38Dc4t" role="b$u42">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="5rGvd38Dc4u" role="3EZMnx">
           <property role="3F0ifm" value="intention" />
         </node>
@@ -890,7 +881,6 @@
     <property role="3GE5qa" value="new.parameter" />
     <ref role="1XX52x" to="tp3j:6q8H2OTpOHU" resolve="Parameter" />
     <node concept="3EZMnI" id="3geGFOI14vc" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <property role="S$Qs1" value="false" />
       <node concept="3EZMnI" id="4L3eaLFn19Y" role="3EZMnx">
         <node concept="l2Vlx" id="4L3eaLFn19Z" role="2iSdaV" />

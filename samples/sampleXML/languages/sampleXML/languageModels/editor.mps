@@ -2,7 +2,7 @@
 <model ref="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
@@ -43,7 +43,6 @@
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -66,7 +65,6 @@
   <node concept="24kQdi" id="hP5Yl59">
     <ref role="1XX52x" to="dghb:hP5Yayx" resolve="Attribute" />
     <node concept="3EZMnI" id="hP5Yl5a" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hP5Yl5b" role="3EZMnx">
         <property role="1cu_pB" value="1" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -113,9 +111,7 @@
   <node concept="24kQdi" id="hP5Yl5o">
     <ref role="1XX52x" to="dghb:hP5YayQ" resolve="Document" />
     <node concept="3EZMnI" id="hP5Yl5p" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5q" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5r" role="3EZMnx">
           <property role="3F0ifm" value="document" />
           <node concept="Vb9p2" id="hP5Yl5s" role="3F10Kt">
@@ -161,9 +157,7 @@
   <node concept="24kQdi" id="hP5Yl5B">
     <ref role="1XX52x" to="dghb:hP5YayT" resolve="Element" />
     <node concept="3EZMnI" id="hP5Yl5C" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5D" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5E" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <node concept="Vb9p2" id="hP5Yl5F" role="3F10Kt">
@@ -200,7 +194,6 @@
         <node concept="2iRfu4" id="i2IQmI0" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hP5Yl5P" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3XFhqQ" id="hP5Yl5Q" role="3EZMnx" />
         <node concept="3F2HdR" id="hP5Yl5R" role="3EZMnx">
           <ref role="1NtTu8" to="dghb:hP5YayV" resolve="content" />
@@ -216,7 +209,6 @@
         <node concept="2iRfu4" id="i2IQmI4" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hP5Yl5V" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5W" role="3EZMnx">
           <property role="3F0ifm" value="&lt;/" />
           <node concept="Vb9p2" id="hP5Yl5X" role="3F10Kt">

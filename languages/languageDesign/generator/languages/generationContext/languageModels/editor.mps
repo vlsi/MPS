@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="5" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
@@ -121,7 +121,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -295,7 +294,6 @@
   <node concept="24kQdi" id="hHix4Ey">
     <ref role="1XX52x" to="tpf3:hHiwH3r" resolve="GenerationContextOp_GetOutputByLabelAndInput" />
     <node concept="3EZMnI" id="hHix4Ez" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hHix4E$" role="3EZMnx">
         <property role="3F0ifm" value="get output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -334,7 +332,6 @@
   <node concept="24kQdi" id="hHix4EE">
     <ref role="1XX52x" to="tpf3:hHiwH3m" resolve="GenerationContextOp_GetOutputByLabel" />
     <node concept="3EZMnI" id="hHix4EF" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hHix4EG" role="3EZMnx">
         <property role="3F0ifm" value="get output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -375,7 +372,6 @@
   <node concept="24kQdi" id="hIfryy2">
     <ref role="1XX52x" to="tpf3:hIfr3z2" resolve="GenerationContextOp_GetPrevInputByLabel" />
     <node concept="3EZMnI" id="hIfr$5V" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hIfr$5W" role="3EZMnx">
         <property role="3F0ifm" value="get prev input" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -397,7 +393,6 @@
   <node concept="24kQdi" id="hIfA2Ov">
     <ref role="1XX52x" to="tpf3:hIf_y3d" resolve="GenerationContextOp_GetCopiedOutputByInput" />
     <node concept="3EZMnI" id="hIfA3hk" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hIfA3hl" role="3EZMnx">
         <property role="3F0ifm" value="get copied output for" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -420,7 +415,6 @@
   <node concept="24kQdi" id="hIfTT9Z">
     <ref role="1XX52x" to="tpf3:hIfTwd8" resolve="GenerationContextOp_UserObjectAccessBase" />
     <node concept="3EZMnI" id="hIfTU2b" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhYbO" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -449,7 +443,6 @@
   <node concept="24kQdi" id="hIk6m4X">
     <ref role="1XX52x" to="tpf3:hIk5Spb" resolve="GenerationContextOp_ShowMessageBase" />
     <node concept="3EZMnI" id="hIk6na5" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="PMmxH" id="2wdLO7KhYd3" role="3EZMnx">
         <property role="1cu_pB" value="0" />
         <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
@@ -479,7 +472,6 @@
   <node concept="24kQdi" id="hIpkcfJ">
     <ref role="1XX52x" to="tpf3:hIpiZCf" resolve="GenerationContextOp_CreateUniqueName" />
     <node concept="3EZMnI" id="hIpkdir" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hIpkeNR" role="3EZMnx">
         <property role="3F0ifm" value="unique name from" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -582,7 +574,6 @@
   <node concept="24kQdi" id="hLiAUqJ">
     <ref role="1XX52x" to="tpf3:hLiAAM3" resolve="GenerationContextOp_GetOutputListByLabelAndInput" />
     <node concept="3EZMnI" id="hLiAW7D" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hLiAW7E" role="3EZMnx">
         <property role="3F0ifm" value="get output list" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -621,7 +612,6 @@
   <node concept="24kQdi" id="hLmmINi">
     <ref role="1XX52x" to="tpf3:hLmkIjl" resolve="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope" />
     <node concept="3EZMnI" id="hLmmKM5" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hLmmKM6" role="3EZMnx">
         <property role="3F0ifm" value="pick output" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -660,7 +650,6 @@
   <node concept="24kQdi" id="hT2_bcl">
     <ref role="1XX52x" to="tpf3:hT2$i9n" resolve="GenerationContextOp_GetOriginalCopiedInputByOutput" />
     <node concept="3EZMnI" id="hT2_fzT" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="hT2_fzU" role="3EZMnx">
         <property role="3F0ifm" value="get original copied input for" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -821,7 +810,6 @@
   <node concept="24kQdi" id="rrptlDYVOD">
     <ref role="1XX52x" to="tpf3:rrptlDYMkB" resolve="GenerationContextOp_GetExport" />
     <node concept="3EZMnI" id="1yjqjC7KErF" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="1yjqjC7KErG" role="3EZMnx">
         <property role="3F0ifm" value="getExported" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
@@ -872,7 +860,6 @@
   <node concept="24kQdi" id="4RJ0ilaVRw8">
     <ref role="1XX52x" to="tpf3:4RJ0ilaVNjd" resolve="GenerationContextOp_RegisterLabel" />
     <node concept="3EZMnI" id="4RJ0ilaVRzm" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="4RJ0ilaVRzn" role="3EZMnx">
         <property role="3F0ifm" value="label" />
         <ref role="1k5W1q" node="hIqudHa" resolve="genContext_operation" />
