@@ -108,6 +108,11 @@
     <property role="34LRSv" value="custom viewer" />
     <property role="EcuMT" value="680105146889009728" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7Ift4HfqN0B" role="1TKVEl">
+      <property role="IQ2nx" value="8903462855138553895" />
+      <property role="TrG5h" value="caption" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="2q5hg4fVKq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="valueType" />
