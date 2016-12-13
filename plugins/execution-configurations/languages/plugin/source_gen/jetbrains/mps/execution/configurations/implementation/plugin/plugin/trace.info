@@ -838,7 +838,7 @@
   <root nodeRef="r:8aafee6a-4721-443e-8020-e8986ed3f25a(jetbrains.mps.execution.configurations.implementation.plugin.plugin)/4283566179238991813">
     <file name="MakeDeployScripts_BeforeTask.java">
       <node id="4283566179238991813" at="18,0,19,0" concept="14" trace="KEY" />
-      <node id="4283566179238991813" at="19,41,20,33" concept="16" />
+      <node id="4283566179238991813" at="19,41,20,56" concept="16" />
       <node id="4283566179238991813" at="22,96,23,83" concept="11" />
       <node id="4283566179238991813" at="25,89,26,15" concept="11" />
       <node id="4283566179238991813" at="29,0,30,0" concept="6" trace="myPlugins" />
@@ -871,7 +871,7 @@
       <node id="4283566179239140772" at="46,0,53,0" concept="9" trace="run#()V" />
       <node id="4283566179239140768" at="44,0,53,34" concept="5" />
       <node id="4283566179238991813" at="37,0,65,0" concept="9" trace="execute#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/runners/ExecutionEnvironment;)Z" />
-      <scope id="4283566179238991813" at="19,41,20,33" />
+      <scope id="4283566179238991813" at="19,41,20,56" />
       <scope id="4283566179238991813" at="22,96,23,83" />
       <scope id="4283566179238991813" at="25,89,26,15" />
       <scope id="4283566179238991813" at="30,51,31,17" />
