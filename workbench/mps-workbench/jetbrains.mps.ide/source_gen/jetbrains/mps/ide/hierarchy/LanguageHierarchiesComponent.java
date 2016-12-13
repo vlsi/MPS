@@ -33,9 +33,9 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.util.Map;
 import java.util.HashMap;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.awt.Dimension;
 import java.awt.Container;
@@ -209,7 +209,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     List<LanguageHierarchiesComponent.ConceptContainer> result = new ArrayList<LanguageHierarchiesComponent.ConceptContainer>();
     Map<SNode, LanguageHierarchiesComponent.ConceptContainer> processed = new HashMap<SNode, LanguageHierarchiesComponent.ConceptContainer>();
     SModel structureModel = myLanguage.getStructureModelDescriptor();
-    SNode baseConcept = MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode();
+    SNode baseConcept = SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
 outer:
     for (SNode concept : SModelOperations.roots(structureModel, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode parentConcept = concept;

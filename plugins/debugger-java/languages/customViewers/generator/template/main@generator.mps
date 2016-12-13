@@ -4,7 +4,7 @@
   <languages>
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="df345b11-b8c7-4213-ac66-48d2a9b75d88" name="jetbrains.mps.baseLanguageInternal" version="0" />
-    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="0" />
+    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="1" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
@@ -1588,8 +1588,8 @@
                       <node concept="3cpWs6" id="45l905tEVNQ" role="3cqZAp">
                         <node concept="2OqwBi" id="45l905tEVUA" role="3cqZAk">
                           <node concept="30H73N" id="45l905tEVO0" role="2Oq$k0" />
-                          <node concept="3TrcHB" id="45l905tEZOP" role="2OqNvi">
-                            <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                          <node concept="3TrcHB" id="7Ift4Hfrmqb" role="2OqNvi">
+                            <ref role="3TsBF5" to="kisg:7Ift4HfqN0B" resolve="caption" />
                           </node>
                         </node>
                       </node>
@@ -1597,8 +1597,8 @@
                     <node concept="2OqwBi" id="45l905tER1y" role="3clFbw">
                       <node concept="2OqwBi" id="45l905tENV9" role="2Oq$k0">
                         <node concept="30H73N" id="45l905tENNX" role="2Oq$k0" />
-                        <node concept="3TrcHB" id="45l905tEPKS" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                        <node concept="3TrcHB" id="7Ift4HfrlZI" role="2OqNvi">
+                          <ref role="3TsBF5" to="kisg:7Ift4HfqN0B" resolve="caption" />
                         </node>
                       </node>
                       <node concept="17RvpY" id="45l905tEVKF" role="2OqNvi" />

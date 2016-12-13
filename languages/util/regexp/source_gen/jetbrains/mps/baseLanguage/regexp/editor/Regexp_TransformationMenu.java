@@ -35,14 +35,14 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.editor.menus.transformation.WrapSubstituteMenuTransformationMenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -250,23 +250,23 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
         }
       }
     }
-    private class TransformationMenuPart_Parameterized_luzgqn_d0b extends ParameterizedMenuPart<SNode, TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Parameterized_luzgqn_d0b extends ParameterizedMenuPart<SConcept, TransformationMenuItem, TransformationMenuContext> {
 
       @NotNull
       @Override
-      protected List<TransformationMenuItem> createItems(SNode parameter, TransformationMenuContext context) {
+      protected List<TransformationMenuItem> createItems(SConcept parameter, TransformationMenuContext context) {
         return new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Parameterized_luzgqn_d0b.TransformationMenuPart_Action_luzgqn_a3a1(parameter).createItems(context);
       }
 
       @Nullable
       @Override
-      protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
-        return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a16ffaL, "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a15de8L, "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178c4e1e0L, "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f38e076L, "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f394b67L, "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp").getDeclarationNode(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f383367L, "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp").getDeclarationNode());
+      protected Iterable<? extends SConcept> getParameters(TransformationMenuContext _context) {
+        return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a16ffaL, "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174a15de8L, "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178c4e1e0L, "jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f38e076L, "jetbrains.mps.baseLanguage.regexp.structure.LazyPlusRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f394b67L, "jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp"), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f383367L, "jetbrains.mps.baseLanguage.regexp.structure.LazyStarRegexp"));
       }
 
       private class TransformationMenuPart_Action_luzgqn_a3a1 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
-        private final SNode myParameterObject;
-        public TransformationMenuPart_Action_luzgqn_a3a1(SNode parameterObject) {
+        private final SConcept myParameterObject;
+        public TransformationMenuPart_Action_luzgqn_a3a1(SConcept parameterObject) {
           myParameterObject = parameterObject;
         }
         @Nullable
@@ -284,7 +284,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
           @Nullable
           @Override
           public String getLabelText(String pattern) {
-            return SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+            return SConceptOperations.conceptAlias(myParameterObject);
           }
 
           @Override

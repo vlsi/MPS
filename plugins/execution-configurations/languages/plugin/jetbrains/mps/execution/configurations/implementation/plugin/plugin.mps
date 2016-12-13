@@ -17,7 +17,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -500,6 +500,7 @@
         <child id="5475888311765521408" name="parameter" index="1ZwhtC" />
       </concept>
       <concept id="7037083547576022975" name="jetbrains.mps.execution.configurations.structure.BeforeTask" flags="ng" index="2PEKAc">
+        <property id="8903462855138769388" name="caption" index="OSgQB" />
         <child id="6550182048787568298" name="parameter" index="yYnPO" />
         <child id="2454261876037700497" name="execute" index="1D3o6X" />
       </concept>
@@ -700,7 +701,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1156235010670" name="alias" index="OYydz" />
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
@@ -3949,24 +3949,24 @@
       <node concept="3clFbS" id="5gyVhZ18bmE" role="2VODD2">
         <node concept="3clFbF" id="q00jVsPIMb" role="3cqZAp">
           <node concept="2OqwBi" id="q00jVsPLcK" role="3clFbG">
+            <node concept="yHkDI" id="qCQmZS5UZO" role="2OqNvi" />
             <node concept="2OqwBi" id="q00jVsPIRr" role="2Oq$k0">
               <node concept="2WthIp" id="q00jVsPIM9" role="2Oq$k0" />
               <node concept="yHkDZ" id="q00jVsPKw5" role="2OqNvi">
                 <ref role="yHkDY" node="q00jVsP9$_" resolve="myMpsSettings" />
               </node>
             </node>
-            <node concept="yHkDI" id="qCQmZS5UZO" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbF" id="5Y5HnE728Ax" role="3cqZAp">
           <node concept="2OqwBi" id="5Y5HnE72abT" role="3clFbG">
+            <node concept="yHkDI" id="qCQmZS5VAF" role="2OqNvi" />
             <node concept="2OqwBi" id="5Y5HnE728Fh" role="2Oq$k0">
               <node concept="2WthIp" id="5Y5HnE728Av" role="2Oq$k0" />
               <node concept="yHkDZ" id="5Y5HnE729vf" role="2OqNvi">
                 <ref role="yHkDY" node="5Y5HnE726_L" resolve="myPluginsSettings" />
               </node>
             </node>
-            <node concept="yHkDI" id="qCQmZS5VAF" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -8813,7 +8813,7 @@
   <node concept="2PEKAc" id="1QpbsTfWh5">
     <property role="3GE5qa" value="mps.deployPlugins" />
     <property role="TrG5h" value="DeployPlugins" />
-    <property role="OYydz" value="Deploy plugins" />
+    <property role="OSgQB" value="Deploy plugins" />
     <node concept="1CW0x$" id="1QpbsTfWh6" role="1D3o6X">
       <node concept="3clFbS" id="1QpbsTfWh7" role="2VODD2">
         <node concept="3clFbJ" id="6bBAl1hWL41" role="3cqZAp">

@@ -55,8 +55,8 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "Wrapper";
   }
   public static Object propertyMacro_GetPropertyValue_110763052829785268(final PropertyMacroContext _context) {
-    if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias")))) {
-      return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34fa226eL, "alias"));
+    if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x7b8f744b4f6b3027L, "caption")))) {
+      return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x97038071a3bfa40L, 0x7b8f744b4f6b3027L, "caption"));
     }
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }

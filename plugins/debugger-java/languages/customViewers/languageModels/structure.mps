@@ -2,7 +2,7 @@
 <model ref="r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -107,6 +107,11 @@
     <property role="34LRSv" value="custom viewer" />
     <property role="EcuMT" value="680105146889009728" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7Ift4HfqN0B" role="1TKVEl">
+      <property role="IQ2nx" value="8903462855138553895" />
+      <property role="TrG5h" value="caption" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="2q5hg4fVKq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="valueType" />

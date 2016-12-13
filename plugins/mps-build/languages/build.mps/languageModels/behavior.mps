@@ -4984,8 +4984,8 @@
                 <node concept="2qgKlT" id="L_Hr3kExIC" role="2OqNvi">
                   <ref role="37wK5l" node="3zFnP6MM9ge" resolve="getMpsLibrary" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kExID" role="2Oq$k0">
-                  <ref role="3TV0OU" to="kdzh:KbRDZ75DBp" resolve="BuildMPSPlugin" />
+                <node concept="35c_gC" id="7Ift4Hg3grs" role="2Oq$k0">
+                  <ref role="35c_gD" to="kdzh:KbRDZ75DBp" resolve="BuildMPSPlugin" />
                 </node>
               </node>
               <node concept="3Tqbb2" id="3zFnP6MyJwp" role="2HTBi0">

@@ -460,10 +460,10 @@ public class QueriesGenerated extends QueryProviderBase {
     return _context.createUniqueName("_QueryFunction_JComponent_", _context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6448709298572216479(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SConceptOperations.conceptAlias(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae9f2L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_prevNode"));
   }
   public static Object propertyMacro_GetPropertyValue_6448709298572216495(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SConceptOperations.conceptAlias(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee8c7d6704ae262L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode"));
   }
   public static Object propertyMacro_GetPropertyValue_6448709298572216504(final PropertyMacroContext _context) {
     return _context.createUniqueName("_StyleParameter_QueryFunction_", _context.getNode());

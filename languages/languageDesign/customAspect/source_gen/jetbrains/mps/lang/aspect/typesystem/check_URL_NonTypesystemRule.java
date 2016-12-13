@@ -21,6 +21,9 @@ public class check_URL_NonTypesystemRule extends AbstractNonTypesystemRule_Runti
   public check_URL_NonTypesystemRule() {
   }
   public void applyRule(final SNode url, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (isEmptyString(SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")))) {
+      return;
+    }
     if (!((SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")).startsWith("http://") || SPropertyOperations.getString(url, MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x47d8f9811b73d397L, 0x47d8f9811b73d398L, "url")).startsWith("https://")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
@@ -47,5 +50,8 @@ public class check_URL_NonTypesystemRule extends AbstractNonTypesystemRule_Runti
   }
   public boolean overrides() {
     return false;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
   }
 }

@@ -58,7 +58,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   /*package*/ static SNode getContainer_idhEwIBCW(@NotNull SNode __thisNode__) {
-    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
+    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), __thisNode__);
   }
   /*package*/ static boolean canBeReferent_id762MQfghnJQ(@NotNull SNode __thisNode__, SNode referentConcept) {
     return true;

@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import java.awt.Dimension;
 
 /*package*/ class HelpURL_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -82,7 +81,7 @@ import java.awt.Dimension;
         });
       }
     });
-    button.setPreferredSize(new Dimension(40, 20));
+    button.setOpaque(false);
     return button;
   }
 }

@@ -93,7 +93,7 @@ public class AddWorkbenchToActionParameters_Contribution extends SubstituteMenuB
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return (String) ActionDataParameterDeclaration__BehaviorDescriptor.getDescription_id2DsqYJxu5P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration").getDeclarationNode()), myParameterObject);
+          return (String) ActionDataParameterDeclaration__BehaviorDescriptor.getDescription_id2DsqYJxu5P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), myParameterObject);
         }
       }
     }

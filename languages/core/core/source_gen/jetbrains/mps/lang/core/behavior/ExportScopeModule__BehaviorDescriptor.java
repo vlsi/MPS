@@ -33,7 +33,7 @@ public final class ExportScopeModule__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static boolean checkExport_id2erkSmBSC_o(@NotNull SNode __thisNode__, String sourceNamespace, SNode targetNode) {
-    return sourceNamespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope").getDeclarationNode()), targetNode));
+    return sourceNamespace.equals(ExportScope__BehaviorDescriptor.getNamespace_id2erkSmBSCAp.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x4b498c7787b32cebL, "jetbrains.mps.lang.core.structure.ExportScope")), targetNode));
   }
 
   /*package*/ ExportScopeModule__BehaviorDescriptor() {

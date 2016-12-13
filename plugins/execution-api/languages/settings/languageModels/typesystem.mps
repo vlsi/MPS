@@ -963,14 +963,14 @@
       <node concept="1Z5TYs" id="63yBSeEXAqQ" role="3cqZAp">
         <node concept="mw_s8" id="63yBSeEXAqR" role="1ZfhKB">
           <node concept="2OqwBi" id="L_Hr3kEs0r" role="mwGJk">
+            <node concept="35c_gC" id="qCQmZSb6Om" role="2Oq$k0">
+              <ref role="35c_gD" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
+            </node>
             <node concept="2qgKlT" id="L_Hr3kEs0s" role="2OqNvi">
               <ref role="37wK5l" to="hilv:O$iR4J$g1l" resolve="getContextPersistentConfigurationType" />
               <node concept="1YBJjd" id="L_Hr3kEs0t" role="37wK5m">
                 <ref role="1YBMHb" node="63yBSeEXAqX" resolve="configurationParameter" />
               </node>
-            </node>
-            <node concept="35c_gC" id="qCQmZSb6Om" role="2Oq$k0">
-              <ref role="35c_gD" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
             </node>
           </node>
         </node>

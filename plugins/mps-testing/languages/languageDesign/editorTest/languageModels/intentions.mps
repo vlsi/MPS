@@ -111,6 +111,9 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
@@ -127,9 +130,6 @@
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -258,8 +258,8 @@
               <ref role="37wK5l" to="tp5o:hHDM9no" resolve="isIntentionApplicable" />
               <node concept="2Sf5sV" id="L_Hr3kEsgJ" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEsgK" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
+            <node concept="35c_gC" id="7Ift4Hg3pkF" role="2Oq$k0">
+              <ref role="35c_gD" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
             </node>
           </node>
         </node>

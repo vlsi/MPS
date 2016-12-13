@@ -1205,7 +1205,7 @@
     <file name="typeOf_thisExpr_InferenceRule.java">
       <node id="1210158472910" at="20,121,21,21" concept="12" />
       <node id="1210158508409" at="22,182,23,181" concept="6" />
-      <node id="1210158547786" at="24,12,25,291" concept="6" />
+      <node id="1210158547786" at="24,12,25,270" concept="6" />
       <node id="5338502249698244514" at="27,5,28,50" concept="12" />
       <node id="5338502249698244514" at="28,50,29,203" concept="12" />
       <node id="5338502249698244514" at="29,203,30,319" concept="6" />
@@ -1222,7 +1222,7 @@
       <node id="1176543441267" at="20,0,33,0" concept="11" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="1176543441267" at="18,42,18,42" />
       <scope id="1182985647801" at="22,182,23,181" />
-      <scope id="1182985709567" at="24,12,25,291" />
+      <scope id="1182985709567" at="24,12,25,270" />
       <scope id="1176543441267" at="33,50,34,153" />
       <scope id="1176543441267" at="36,68,37,102" />
       <scope id="1176543441267" at="39,30,40,17" />
@@ -1386,7 +1386,7 @@
       <node id="2573549641316780141" at="29,351,30,363" concept="12" />
       <node id="2573549641316780150" at="31,32,32,15" concept="13" />
       <node id="2573549641316780154" at="33,7,34,0" concept="15" />
-      <node id="580901458078887514" at="34,0,35,302" concept="12" />
+      <node id="580901458078887514" at="34,0,35,281" concept="12" />
       <node id="7723500225999995923" at="36,38,37,66" concept="14" />
       <node id="5772973668496456400" at="37,66,38,99" concept="14" />
       <node id="5772973668496456431" at="38,99,39,87" concept="14" />
@@ -1458,7 +1458,7 @@
       <node id="2573549641317146390" at="110,0,117,0" concept="17" trace="_quotation_createNode_fse81k_a0k0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1219923151018" at="86,9,97,9" concept="10" />
       <node id="1219923269828" at="117,0,128,0" concept="17" trace="_quotation_createNode_fse81k_a0a0a0c0b0e0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="580901458078891047" at="35,302,49,7" concept="10" />
+      <node id="580901458078891047" at="35,281,49,7" concept="10" />
       <node id="1219923151018" at="78,214,98,7" concept="1" />
       <node id="1219923151016" at="76,198,99,5" concept="1" />
       <node id="583966111002868558" at="28,119,73,5" concept="10" />
@@ -17394,7 +17394,7 @@
       <node id="6902868426313178470" at="39,71,40,367" concept="12" />
       <node id="4940013265625385413" at="41,24,42,13" concept="13" />
       <node id="6902868426313178468" at="43,5,44,0" concept="15" />
-      <node id="6902868426313178478" at="44,0,45,304" concept="12" />
+      <node id="6902868426313178478" at="44,0,45,283" concept="12" />
       <node id="6902868426313178485" at="46,36,47,13" concept="13" />
       <node id="6902868426313178555" at="48,5,49,0" concept="15" />
       <node id="6902868426313178491" at="49,0,50,104" concept="12" />
@@ -17456,7 +17456,7 @@
       <node id="5977092449943072989" at="159,435,160,24" concept="13" />
       <node id="4940013265625385407" at="31,0,33,0" concept="3" trace="typeof_LocalMethodCall_InferenceRule#()V" />
       <node id="4940013265625385411" at="40,367,43,5" concept="10" />
-      <node id="6902868426313178483" at="45,304,48,5" concept="10" />
+      <node id="6902868426313178483" at="45,283,48,5" concept="10" />
       <node id="4837286298389068283" at="88,59,91,11" concept="10" />
       <node id="6902868426313178666" at="95,0,98,5" concept="10" />
       <node id="6902868426313178698" at="101,53,104,7" concept="10" />
@@ -18564,7 +18564,7 @@
       <node id="4837286298389139177" at="35,123,36,197" concept="12" />
       <node id="5569019188765049985" at="37,24,38,13" concept="13" />
       <node id="4837286298389138884" at="39,5,40,0" concept="15" />
-      <node id="4837286298389138864" at="40,0,41,304" concept="12" />
+      <node id="4837286298389138864" at="40,0,41,283" concept="12" />
       <node id="4837286298389138871" at="42,36,43,13" concept="13" />
       <node id="4837286298389138875" at="44,5,45,0" concept="15" />
       <node id="4837286298389138876" at="45,0,46,104" concept="12" />
@@ -18624,7 +18624,7 @@
       <node id="4837286298389139283" at="164,435,165,24" concept="13" />
       <node id="5569019188765049975" at="33,0,35,0" concept="3" trace="typeof_SuperMethodCall_InferenceRule#()V" />
       <node id="5569019188765049983" at="36,197,39,5" concept="10" />
-      <node id="4837286298389138869" at="41,304,44,5" concept="10" />
+      <node id="4837286298389138869" at="41,283,44,5" concept="10" />
       <node id="4837286298389139211" at="52,0,55,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4837286298389139220" at="56,0,59,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="4837286298389139242" at="61,0,64,0" concept="11" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />

@@ -340,6 +340,9 @@
         <child id="1758937410080001570" name="conceptArgument" index="1dBWTz" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -373,9 +376,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
@@ -504,8 +504,8 @@
                 <node concept="2qgKlT" id="L_Hr3kExHA" role="2OqNvi">
                   <ref role="37wK5l" to="mdoc:JzCdmU6yOK" resolve="getGetDebuggerMethodName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kExHB" role="2Oq$k0">
-                  <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3sJe" role="2Oq$k0">
+                  <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                 </node>
               </node>
             </node>
@@ -1044,8 +1044,8 @@
                 <node concept="2qgKlT" id="L_Hr3kEsCn" role="2OqNvi">
                   <ref role="37wK5l" to="mdoc:JzCdmU6yOE" resolve="getCreateProcessMethodName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kEsCo" role="2Oq$k0">
-                  <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3sJf" role="2Oq$k0">
+                  <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                 </node>
               </node>
             </node>
@@ -1101,8 +1101,8 @@
                 <node concept="2qgKlT" id="L_Hr3kExEA" role="2OqNvi">
                   <ref role="37wK5l" to="mdoc:JzCdmU6yOK" resolve="getGetDebuggerMethodName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kExEC" role="2Oq$k0">
-                  <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3sJg" role="2Oq$k0">
+                  <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                 </node>
               </node>
             </node>
@@ -1295,8 +1295,8 @@
                 <node concept="2qgKlT" id="L_Hr3kErZu" role="2OqNvi">
                   <ref role="37wK5l" to="mdoc:5pE1_aqZc7s" resolve="getGetDebuggerConfidurationMethodName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kErZv" role="2Oq$k0">
-                  <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3sJh" role="2Oq$k0">
+                  <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                 </node>
               </node>
             </node>
@@ -1907,8 +1907,8 @@
                                             <node concept="2qgKlT" id="L_Hr3kEsiY" role="2OqNvi">
                                               <ref role="37wK5l" to="mdoc:JzCdmU6yOK" resolve="getGetDebuggerMethodName" />
                                             </node>
-                                            <node concept="3TUQnm" id="L_Hr3kEsiZ" role="2Oq$k0">
-                                              <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                                            <node concept="35c_gC" id="7Ift4Hg3sJc" role="2Oq$k0">
+                                              <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                                             </node>
                                           </node>
                                         </node>
@@ -2119,8 +2119,8 @@
                       <node concept="2qgKlT" id="L_Hr3kEsiI" role="2OqNvi">
                         <ref role="37wK5l" to="mdoc:JzCdmU6yOE" resolve="getCreateProcessMethodName" />
                       </node>
-                      <node concept="3TUQnm" id="L_Hr3kEsiJ" role="2Oq$k0">
-                        <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                      <node concept="35c_gC" id="7Ift4Hg3sJd" role="2Oq$k0">
+                        <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                       </node>
                     </node>
                   </node>

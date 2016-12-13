@@ -3621,11 +3621,11 @@
                         <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
                       </node>
                       <node concept="2OqwBi" id="MsDpdTh8Q3" role="3tpDZA">
-                        <node concept="3TUQnm" id="MsDpdTh8So" role="2Oq$k0">
-                          <ref role="3TV0OU" to="n871:5mnatV0hAOW" resolve="A" />
-                        </node>
                         <node concept="2qgKlT" id="MsDpdTh963" role="2OqNvi">
                           <ref role="37wK5l" to="5a2:5mnatV0hAQH" resolve="staticMethod" />
+                        </node>
+                        <node concept="35c_gC" id="7Ift4Hg3ftM" role="2Oq$k0">
+                          <ref role="35c_gD" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                       </node>
                     </node>

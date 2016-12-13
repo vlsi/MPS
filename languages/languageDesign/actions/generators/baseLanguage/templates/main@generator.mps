@@ -457,10 +457,14 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
@@ -7818,11 +7822,9 @@
                         <node concept="3clFbS" id="1KBnK_bFHRa" role="2VODD2">
                           <node concept="3clFbF" id="1KBnK_bFWTI" role="3cqZAp">
                             <node concept="2OqwBi" id="3Jh9EXPiLDa" role="3clFbG">
-                              <node concept="3TrcHB" id="3Jh9EXPiOhn" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
-                              <node concept="3TUQnm" id="3Jh9EXPiC0Z" role="2Oq$k0">
-                                <ref role="3TV0OU" to="tpdg:hYf4wkz" resolve="ConceptFunctionParameter_EditorCell" />
+                              <node concept="3n3YKJ" id="7Ift4HfWHwu" role="2OqNvi" />
+                              <node concept="35c_gC" id="7Ift4HfWHwv" role="2Oq$k0">
+                                <ref role="35c_gD" to="tpdg:hYf4wkz" resolve="ConceptFunctionParameter_EditorCell" />
                               </node>
                             </node>
                           </node>
@@ -8007,11 +8009,9 @@
                         <node concept="3clFbS" id="1KBnK_bG3Ff" role="2VODD2">
                           <node concept="3clFbF" id="1KBnK_bG4ek" role="3cqZAp">
                             <node concept="2OqwBi" id="1KBnK_bG4el" role="3clFbG">
-                              <node concept="3TrcHB" id="1KBnK_bG4em" role="2OqNvi">
-                                <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                              </node>
-                              <node concept="3TUQnm" id="1KBnK_bG4en" role="2Oq$k0">
-                                <ref role="3TV0OU" to="tpdg:hYf4wkz" resolve="ConceptFunctionParameter_EditorCell" />
+                              <node concept="3n3YKJ" id="7Ift4HfWHwx" role="2OqNvi" />
+                              <node concept="35c_gC" id="7Ift4HfWHwy" role="2Oq$k0">
+                                <ref role="35c_gD" to="tpdg:hYf4wkz" resolve="ConceptFunctionParameter_EditorCell" />
                               </node>
                             </node>
                           </node>
@@ -8499,11 +8499,9 @@
             <node concept="3clFbS" id="4IXs4YU_y3N" role="2VODD2">
               <node concept="3clFbF" id="4IXs4YU_y3O" role="3cqZAp">
                 <node concept="2OqwBi" id="2wdLO7Kg4ks" role="3clFbG">
-                  <node concept="3TrcHB" id="2wdLO7Kg4kt" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                  </node>
-                  <node concept="3TUQnm" id="2wdLO7Kg4ku" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tpdg:5eziI4W3ixV" resolve="ConceptFunctionParameter_nodeToPastePostProcess" />
+                  <node concept="3n3YKJ" id="7Ift4HfWHw$" role="2OqNvi" />
+                  <node concept="35c_gC" id="7Ift4HfWHw_" role="2Oq$k0">
+                    <ref role="35c_gD" to="tpdg:5eziI4W3ixV" resolve="ConceptFunctionParameter_nodeToPastePostProcess" />
                   </node>
                 </node>
               </node>
@@ -8600,11 +8598,9 @@
             <node concept="3clFbS" id="5abCRRjcWFL" role="2VODD2">
               <node concept="3clFbF" id="5abCRRjcWFM" role="3cqZAp">
                 <node concept="2OqwBi" id="2wdLO7Keg_O" role="3clFbG">
-                  <node concept="3TUQnm" id="2wdLO7Keg_Q" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tpdg:5abCRRjcA0O" resolve="ConceptFunctionParameter_nodeToCopyPreProcess" />
-                  </node>
-                  <node concept="3TrcHB" id="2wdLO7Keg_P" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
+                  <node concept="3n3YKJ" id="7Ift4HfWHwB" role="2OqNvi" />
+                  <node concept="35c_gC" id="7Ift4HfWHwC" role="2Oq$k0">
+                    <ref role="35c_gD" to="tpdg:5abCRRjcA0O" resolve="ConceptFunctionParameter_nodeToCopyPreProcess" />
                   </node>
                 </node>
               </node>
@@ -8662,11 +8658,9 @@
             <node concept="3clFbS" id="5abCRRjcWGm" role="2VODD2">
               <node concept="3clFbF" id="5abCRRjcWGn" role="3cqZAp">
                 <node concept="2OqwBi" id="2wdLO7Kez9V" role="3clFbG">
-                  <node concept="3TUQnm" id="2wdLO7Kez9X" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tpdg:5abCRRjcA1C" resolve="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
-                  </node>
-                  <node concept="3TrcHB" id="2wdLO7Kez9W" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
+                  <node concept="3n3YKJ" id="7Ift4HfWHwE" role="2OqNvi" />
+                  <node concept="35c_gC" id="7Ift4HfWHwF" role="2Oq$k0">
+                    <ref role="35c_gD" to="tpdg:5abCRRjcA1C" resolve="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
                   </node>
                 </node>
               </node>

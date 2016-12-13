@@ -2,8 +2,8 @@
 <model ref="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="fb9u" ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
@@ -433,6 +433,11 @@
     <property role="34LRSv" value="before task" />
     <property role="EcuMT" value="7037083547576022975" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="7Ift4HfrBBG" role="1TKVEl">
+      <property role="IQ2nx" value="8903462855138769388" />
+      <property role="TrG5h" value="caption" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="PrWs8" id="4nJlMvOBz_T" role="PzmwI">
       <ref role="PrY4T" to="tpce:hOIDzy1" resolve="IStructureDeprecatable" />
     </node>

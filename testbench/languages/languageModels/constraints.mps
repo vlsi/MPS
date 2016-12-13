@@ -79,15 +79,15 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
   </registry>
@@ -99,9 +99,6 @@
         <node concept="3clFbS" id="3U1VhSFTRN5" role="2VODD2">
           <node concept="3clFbF" id="1k5vvhz$UlD" role="3cqZAp">
             <node concept="2OqwBi" id="1k5vvhz$W2Q" role="3clFbG">
-              <node concept="3TUQnm" id="1k5vvhz$UlB" role="2Oq$k0">
-                <ref role="3TV0OU" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
-              </node>
               <node concept="2qgKlT" id="1k5vvhz$Xzu" role="2OqNvi">
                 <ref role="37wK5l" to="5rc7:1k5vvhz$GBa" resolve="getTestClassesForModule" />
                 <node concept="2OqwBi" id="7A48iti$Xzj" role="37wK5m">
@@ -115,6 +112,9 @@
                     <node concept="1xIGOp" id="7A48iti$Xzo" role="1xVPHs" />
                   </node>
                 </node>
+              </node>
+              <node concept="35c_gC" id="7Ift4Hg3xRa" role="2Oq$k0">
+                <ref role="35c_gD" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
               </node>
             </node>
           </node>
@@ -130,9 +130,6 @@
         <node concept="3clFbS" id="173Z5qAOgJ2" role="2VODD2">
           <node concept="3clFbF" id="1k5vvhz$P5y" role="3cqZAp">
             <node concept="2OqwBi" id="1k5vvhz$Qnb" role="3clFbG">
-              <node concept="3TUQnm" id="1k5vvhz$P5w" role="2Oq$k0">
-                <ref role="3TV0OU" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
-              </node>
               <node concept="2qgKlT" id="1k5vvhz$RC5" role="2OqNvi">
                 <ref role="37wK5l" to="5rc7:1k5vvhzzWoK" resolve="getTestClassesForModule" />
                 <node concept="2OqwBi" id="7A48iti$hwn" role="37wK5m">
@@ -146,6 +143,9 @@
                     <node concept="1xIGOp" id="7A48iti$hws" role="1xVPHs" />
                   </node>
                 </node>
+              </node>
+              <node concept="35c_gC" id="7Ift4Hg3xRb" role="2Oq$k0">
+                <ref role="35c_gD" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
               </node>
             </node>
           </node>

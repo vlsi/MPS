@@ -52,7 +52,7 @@ public class JUnit4TestCaseRef_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return (Iterable<SNode>) JUnit3TestCaseRef__BehaviorDescriptor.getTestClassesForModule_id1k5vvhzzWoK.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef").getDeclarationNode()), SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
+      return (Iterable<SNode>) JUnit3TestCaseRef__BehaviorDescriptor.getTestClassesForModule_id1k5vvhzzWoK.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb9L, "jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef")), SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb5L, "jetbrains.mps.testbench.suite.structure.ModuleSuite"), true, false));
     }
     private class SubstituteMenuPart_Action_ojczeu_a0 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;

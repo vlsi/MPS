@@ -16,6 +16,7 @@
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
@@ -105,13 +106,19 @@
       <property role="TrG5h" value="shortDescription" />
       <property role="IQ2nx" value="1156234966388" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="66vxhH65cCn" role="lGtFl" />
+      <node concept="asaX9" id="66vxhH65cCn" role="lGtFl">
+        <property role="YLPcu" value="3.5" />
+        <property role="YLQ7P" value="This property should not be used. Use conceptShortDescription for concepts or create a custom property if needed for another type of nodes" />
+      </node>
     </node>
     <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
       <property role="TrG5h" value="alias" />
       <property role="IQ2nx" value="1156235010670" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
-      <node concept="asaX9" id="66vxhH65cCs" role="lGtFl" />
+      <node concept="asaX9" id="66vxhH65cCs" role="lGtFl">
+        <property role="YLPcu" value="3.5" />
+        <property role="YLQ7P" value="This property should not be used. Use conceptAlias for concepts or create a custom alias property if alias is needed for a node of some other concept" />
+      </node>
     </node>
     <node concept="1TJgyi" id="hnGE5uv" role="1TKVEl">
       <property role="TrG5h" value="virtualPackage" />
