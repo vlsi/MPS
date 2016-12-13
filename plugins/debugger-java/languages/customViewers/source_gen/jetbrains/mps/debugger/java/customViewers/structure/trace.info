@@ -8,7 +8,7 @@
       <unit at="10,0,50,0" name="jetbrains.mps.debugger.java.customViewers.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,188,0" name="jetbrains.mps.debugger.java.customViewers.structure.StructureAspectDescriptor" />
+      <unit at="16,0,189,0" name="jetbrains.mps.debugger.java.customViewers.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>

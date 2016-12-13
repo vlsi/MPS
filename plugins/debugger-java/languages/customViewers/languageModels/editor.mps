@@ -447,9 +447,10 @@
           <property role="VOm3f" value="false" />
         </node>
         <node concept="3F0ifn" id="7Ift4HfqNa$" role="3EZMnx">
-          <property role="3F0ifm" value="caption:" />
+          <property role="3F0ifm" value="show as:" />
         </node>
         <node concept="3F0A7n" id="7Ift4HfqNM2" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;use name&gt;" />
           <ref role="1NtTu8" to="kisg:7Ift4HfqN0B" resolve="caption" />
         </node>
         <node concept="2iRfu4" id="7Ift4HfqNa_" role="2iSdaV" />
