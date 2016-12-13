@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Pattern_1t65lf1906gwr" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Pattern_1vn7269vfl5jd" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Pattern_1vn7269vfla3y" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Pattern_1vn7269vgit91" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.migration.Pattern_c8knpzlblt99" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.CommandUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
@@ -312,6 +313,11 @@
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_1vn7269vfla3y" file="Pattern_1vn7269vfla3y.java">
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.migration.Pattern_1vn7269vgit91" file="Pattern_1vn7269vgit91.java">
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatcher" />
