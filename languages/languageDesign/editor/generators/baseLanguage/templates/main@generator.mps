@@ -754,9 +754,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -8361,11 +8358,9 @@
               <node concept="3clFbS" id="5_YqJ2T9Wyw" role="2VODD2">
                 <node concept="3clFbF" id="5_YqJ2T9Wyx" role="3cqZAp">
                   <node concept="2OqwBi" id="5_YqJ2T9Wyy" role="3clFbG">
-                    <node concept="3TrcHB" id="5_YqJ2T9Wyz" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                    </node>
-                    <node concept="3TUQnm" id="5_YqJ2T9Wy$" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpc2:6VCLXpKiIBM" resolve="ConceptFunctionParameter_prevNode" />
+                    <node concept="3n3YKJ" id="7Ift4HfW0Gj" role="2OqNvi" />
+                    <node concept="35c_gC" id="7Ift4HfW0Gk" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpc2:6VCLXpKiIBM" resolve="ConceptFunctionParameter_prevNode" />
                     </node>
                   </node>
                 </node>
@@ -8397,11 +8392,9 @@
               <node concept="3clFbS" id="5_YqJ2T9WyK" role="2VODD2">
                 <node concept="3clFbF" id="5_YqJ2T9WyL" role="3cqZAp">
                   <node concept="2OqwBi" id="5_YqJ2T9WyM" role="3clFbG">
-                    <node concept="3TrcHB" id="5_YqJ2T9WyN" role="2OqNvi">
-                      <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                    </node>
-                    <node concept="3TUQnm" id="5_YqJ2T9WyO" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpc2:6VCLXpKiI9y" resolve="ConceptFunctionParameter_nextNode" />
+                    <node concept="3n3YKJ" id="7Ift4HfW0Gm" role="2OqNvi" />
+                    <node concept="35c_gC" id="7Ift4HfW0Gn" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpc2:6VCLXpKiI9y" resolve="ConceptFunctionParameter_nextNode" />
                     </node>
                   </node>
                 </node>
