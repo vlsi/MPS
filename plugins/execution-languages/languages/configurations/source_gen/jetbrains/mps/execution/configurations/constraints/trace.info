@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,53,0" name="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,55,0" name="jetbrains.mps.execution.configurations.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/1048802521465134864">
@@ -290,6 +290,49 @@
         <var name="parentNode" id="5453800039284219777" />
       </scope>
       <unit id="5453800039284219777" at="17,0,48,0" name="jetbrains.mps.execution.configurations.constraints.GetProjectOperation_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/5960730365808425356">
+    <file name="IsConfigurationFromContext_ConceptFunction_Constraints.java">
+      <node id="5960730365808425356" at="15,67,16,199" concept="9" />
+      <node id="5960730365808425356" at="20,43,21,16" concept="5" />
+      <node id="5960730365808425356" at="24,200,25,96" concept="4" />
+      <node id="5960730365808425356" at="25,96,26,0" concept="6" />
+      <node id="5960730365808425356" at="27,51,28,67" concept="1" />
+      <node id="5960730365808425356" at="29,5,30,0" concept="6" />
+      <node id="5960730365808425356" at="30,0,31,18" concept="5" />
+      <node id="5960730365808425368" at="33,148,34,258" concept="5" />
+      <node id="5960730365808425356" at="36,0,37,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="5960730365808425356" at="15,0,18,0" concept="0" trace="IsConfigurationFromContext_ConceptFunction_Constraints#()V" />
+      <node id="5960730365808425356" at="26,0,29,5" concept="2" />
+      <node id="5960730365808425356" at="33,0,36,0" concept="8" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="5960730365808425356" at="19,0,23,0" concept="3" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="5960730365808425356" at="23,0,33,0" concept="3" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="5960730365808425356" at="15,67,16,199" />
+      <scope id="5960730365808425356" at="20,43,21,16" />
+      <scope id="5960730365808425356" at="27,51,28,67" />
+      <scope id="5960730365808425361" at="33,148,34,258" />
+      <scope id="5960730365808425356" at="15,0,18,0" />
+      <scope id="5960730365808425356" at="33,0,36,0">
+        <var name="childConcept" id="5960730365808425356" />
+        <var name="link" id="5960730365808425356" />
+        <var name="node" id="5960730365808425356" />
+        <var name="operationContext" id="5960730365808425356" />
+        <var name="parentNode" id="5960730365808425356" />
+      </scope>
+      <scope id="5960730365808425356" at="19,0,23,0" />
+      <scope id="5960730365808425356" at="24,200,31,18">
+        <var name="result" id="5960730365808425356" />
+      </scope>
+      <scope id="5960730365808425356" at="23,0,33,0">
+        <var name="checkingNodeContext" id="5960730365808425356" />
+        <var name="childConcept" id="5960730365808425356" />
+        <var name="link" id="5960730365808425356" />
+        <var name="node" id="5960730365808425356" />
+        <var name="operationContext" id="5960730365808425356" />
+        <var name="parentNode" id="5960730365808425356" />
+      </scope>
+      <unit id="5960730365808425356" at="14,0,38,0" name="jetbrains.mps.execution.configurations.constraints.IsConfigurationFromContext_ConceptFunction_Constraints" />
     </file>
   </root>
   <root nodeRef="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)/7667828742972475445">

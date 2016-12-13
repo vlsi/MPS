@@ -21,6 +21,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myRunConfigurationProducer__BehaviorDescriptor = new RunConfigurationProducer__BehaviorDescriptor();
   private final BHDescriptor myRunConfigurationProducerPart__BehaviorDescriptor = new RunConfigurationProducerPart__BehaviorDescriptor();
   private final BHDescriptor myCreate_ConceptFunction__BehaviorDescriptor = new Create_ConceptFunction__BehaviorDescriptor();
+  private final BHDescriptor myIsConfigurationFromContext_ConceptFunction__BehaviorDescriptor = new IsConfigurationFromContext_ConceptFunction__BehaviorDescriptor();
   private final BHDescriptor myExecuteConfiguration_Function__BehaviorDescriptor = new ExecuteConfiguration_Function__BehaviorDescriptor();
   private final BHDescriptor myBeforeTaskParameter__BehaviorDescriptor = new BeforeTaskParameter__BehaviorDescriptor();
   private final BHDescriptor myBeforeTaskParameterReference__BehaviorDescriptor = new BeforeTaskParameterReference__BehaviorDescriptor();
@@ -34,7 +35,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   @Nullable
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     SAbstractConcept cncpt = concept;
-    switch (index_846f5o_a0s.index(cncpt)) {
+    switch (index_846f5o_a0t.index(cncpt)) {
       case 0:
         return myAbstractRunConfigurationExecutor__BehaviorDescriptor;
       case 1:
@@ -54,20 +55,22 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
       case 8:
         return myExecuteConfiguration_Function__BehaviorDescriptor;
       case 9:
-        return myRunConfiguration__BehaviorDescriptor;
+        return myIsConfigurationFromContext_ConceptFunction__BehaviorDescriptor;
       case 10:
-        return myRunConfigurationExecutor__BehaviorDescriptor;
+        return myRunConfiguration__BehaviorDescriptor;
       case 11:
-        return myRunConfigurationKind__BehaviorDescriptor;
+        return myRunConfigurationExecutor__BehaviorDescriptor;
       case 12:
-        return myRunConfigurationProducer__BehaviorDescriptor;
+        return myRunConfigurationKind__BehaviorDescriptor;
       case 13:
-        return myRunConfigurationProducerPart__BehaviorDescriptor;
+        return myRunConfigurationProducer__BehaviorDescriptor;
       case 14:
+        return myRunConfigurationProducerPart__BehaviorDescriptor;
+      case 15:
         return myStartProcessHandlerStatement__BehaviorDescriptor;
       default:
     }
     return null;
   }
-  private static final ConceptSwitchIndex index_846f5o_a0s = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x61a8be33d403b7bfL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f8014L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd1ac93L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x220f4a2c4aff4248L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5532ce3cbd91002cL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L)).seal();
+  private static final ConceptSwitchIndex index_846f5o_a0t = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x61a8be33d403b7bfL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f8014L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781fd3c0L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd1ac93L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x220f4a2c4aff4248L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5532ce3cbd91002cL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x490c79b029c39076L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e49L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bc8e1ecL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f46e4aL), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c842305L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L), MetaIdFactory.conceptId(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0xd244b712f9d44d1L)).seal();
 }

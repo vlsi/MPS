@@ -20,8 +20,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBeforeTaskParameter = createDescriptorForBeforeTaskParameter();
   /*package*/ final ConceptDescriptor myConceptBeforeTaskParameterReference = createDescriptorForBeforeTaskParameterReference();
   /*package*/ final ConceptDescriptor myConceptConfigurationFromExecutorReference = createDescriptorForConfigurationFromExecutorReference();
+  /*package*/ final ConceptDescriptor myConceptConfiguration_Parameter = createDescriptorForConfiguration_Parameter();
   /*package*/ final ConceptDescriptor myConceptConsoleCreator = createDescriptorForConsoleCreator();
   /*package*/ final ConceptDescriptor myConceptConsoleType = createDescriptorForConsoleType();
+  /*package*/ final ConceptDescriptor myConceptContextConfiguration_Parameter = createDescriptorForContextConfiguration_Parameter();
   /*package*/ final ConceptDescriptor myConceptContextExpression = createDescriptorForContextExpression();
   /*package*/ final ConceptDescriptor myConceptCreate_ConceptFunction = createDescriptorForCreate_ConceptFunction();
   /*package*/ final ConceptDescriptor myConceptDebuggerSettings_Parameter = createDescriptorForDebuggerSettings_Parameter();
@@ -30,6 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptExecuteConfiguration_Function = createDescriptorForExecuteConfiguration_Function();
   /*package*/ final ConceptDescriptor myConceptExecutor_Parameter = createDescriptorForExecutor_Parameter();
   /*package*/ final ConceptDescriptor myConceptGetProjectOperation = createDescriptorForGetProjectOperation();
+  /*package*/ final ConceptDescriptor myConceptIsConfigurationFromContext_ConceptFunction = createDescriptorForIsConfigurationFromContext_ConceptFunction();
   /*package*/ final ConceptDescriptor myConceptModelSource = createDescriptorForModelSource();
   /*package*/ final ConceptDescriptor myConceptModuleSource = createDescriptorForModuleSource();
   /*package*/ final ConceptDescriptor myConceptNodeListSource = createDescriptorForNodeListSource();
@@ -55,7 +58,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractRunConfigurationExecutor, myConceptBeforeTask, myConceptBeforeTaskCall, myConceptBeforeTaskParameter, myConceptBeforeTaskParameterReference, myConceptConfigurationFromExecutorReference, myConceptConsoleCreator, myConceptConsoleType, myConceptContextExpression, myConceptCreate_ConceptFunction, myConceptDebuggerSettings_Parameter, myConceptEnvironmentExpression, myConceptExecuteBeforeTask_ConceptFunction, myConceptExecuteConfiguration_Function, myConceptExecutor_Parameter, myConceptGetProjectOperation, myConceptModelSource, myConceptModuleSource, myConceptNodeListSource, myConceptNodeSource, myConceptProjectSource, myConceptProject_Parameter, myConceptRunConfiguration, myConceptRunConfigurationCreator, myConceptRunConfigurationExecutor, myConceptRunConfigurationKind, myConceptRunConfigurationProducer, myConceptRunConfigurationProducerPart, myConceptRunConfigurationSource, myConceptSModelSource, myConceptSModuleSource, myConceptSource_ConceptFunctionParameter, myConceptStartProcessHandlerStatement);
+    return Arrays.asList(myConceptAbstractRunConfigurationExecutor, myConceptBeforeTask, myConceptBeforeTaskCall, myConceptBeforeTaskParameter, myConceptBeforeTaskParameterReference, myConceptConfigurationFromExecutorReference, myConceptConfiguration_Parameter, myConceptConsoleCreator, myConceptConsoleType, myConceptContextConfiguration_Parameter, myConceptContextExpression, myConceptCreate_ConceptFunction, myConceptDebuggerSettings_Parameter, myConceptEnvironmentExpression, myConceptExecuteBeforeTask_ConceptFunction, myConceptExecuteConfiguration_Function, myConceptExecutor_Parameter, myConceptGetProjectOperation, myConceptIsConfigurationFromContext_ConceptFunction, myConceptModelSource, myConceptModuleSource, myConceptNodeListSource, myConceptNodeSource, myConceptProjectSource, myConceptProject_Parameter, myConceptRunConfiguration, myConceptRunConfigurationCreator, myConceptRunConfigurationExecutor, myConceptRunConfigurationKind, myConceptRunConfigurationProducer, myConceptRunConfigurationProducerPart, myConceptRunConfigurationSource, myConceptSModelSource, myConceptSModuleSource, myConceptSource_ConceptFunctionParameter, myConceptStartProcessHandlerStatement);
   }
 
   @Override
@@ -74,10 +77,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptBeforeTaskParameterReference;
       case LanguageConceptSwitch.ConfigurationFromExecutorReference:
         return myConceptConfigurationFromExecutorReference;
+      case LanguageConceptSwitch.Configuration_Parameter:
+        return myConceptConfiguration_Parameter;
       case LanguageConceptSwitch.ConsoleCreator:
         return myConceptConsoleCreator;
       case LanguageConceptSwitch.ConsoleType:
         return myConceptConsoleType;
+      case LanguageConceptSwitch.ContextConfiguration_Parameter:
+        return myConceptContextConfiguration_Parameter;
       case LanguageConceptSwitch.ContextExpression:
         return myConceptContextExpression;
       case LanguageConceptSwitch.Create_ConceptFunction:
@@ -94,6 +101,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptExecutor_Parameter;
       case LanguageConceptSwitch.GetProjectOperation:
         return myConceptGetProjectOperation;
+      case LanguageConceptSwitch.IsConfigurationFromContext_ConceptFunction:
+        return myConceptIsConfigurationFromContext_ConceptFunction;
       case LanguageConceptSwitch.ModelSource:
         return myConceptModelSource;
       case LanguageConceptSwitch.ModuleSource:
@@ -194,6 +203,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForConfiguration_Parameter() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.configurations", "Configuration_Parameter", 0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x42b01609553bb8d3L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/4805365031744813267");
+    b.alias("configuration");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForConsoleCreator() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.configurations", "ConsoleCreator", 0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x161fc6929dd24a8aL);
     b.class_(false, false, false);
@@ -212,6 +229,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/1594211126127733907");
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("console");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForContextConfiguration_Parameter() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.configurations", "ContextConfiguration_Parameter", 0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x42b01609553ff07fL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
+    b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/4805365031745089663");
+    b.alias("context");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForContextExpression() {
@@ -283,6 +308,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/5453800039284219178");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("project");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForIsConfigurationFromContext_ConceptFunction() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.configurations", "IsConfigurationFromContext_ConceptFunction", 0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x490c79b029c39076L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
+    b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/5263715862011154550");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    b.alias("isConfigurationFromContext");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForModelSource() {
@@ -392,8 +426,9 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.parent(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL);
     b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/4366236229294149030");
-    b.aggregate("create", 0x328e81d9f2097e86L).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L).optional(false).ordered(true).multiple(false).origin("3642991921657904774").done();
     b.aggregate("source", 0x6552f0adf298f24fL).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84af96L).optional(false).ordered(true).multiple(false).origin("7301162575811113551").done();
+    b.aggregate("create", 0x328e81d9f2097e86L).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L).optional(false).ordered(true).multiple(false).origin("3642991921657904774").done();
+    b.aggregate("isConfigurationFromContext", 0x567cd4252ad2e9d7L).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x490c79b029c39076L).optional(true).ordered(true).multiple(false).origin("6232089240471267799").done();
     b.alias("produce");
     return b.create();
   }

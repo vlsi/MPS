@@ -2,10 +2,10 @@
 <model ref="r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -424,10 +424,10 @@
                   <node concept="2OqwBi" id="6XbUjjjDaUt" role="1Ub_4B">
                     <node concept="2OqwBi" id="4IJMzQ1z1Yx" role="2Oq$k0">
                       <node concept="1PxgMI" id="4IJMzQ1z1Yy" role="2Oq$k0">
-                        <node concept="nLn13" id="4IJMzQ1z1Yz" role="1m5AlR" />
                         <node concept="chp4Y" id="714IaVdGZ8f" role="3oSUPX">
                           <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                         </node>
+                        <node concept="nLn13" id="4IJMzQ1z1Yz" role="1m5AlR" />
                       </node>
                       <node concept="3TrEf2" id="4IJMzQ1z1Y$" role="2OqNvi">
                         <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
@@ -569,6 +569,27 @@
               </node>
             </node>
             <node concept="3x8VRR" id="6DDApQBql0v" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5aSLaYRTjAc">
+    <property role="3GE5qa" value="producer" />
+    <ref role="1M2myG" to="uhxm:4$cur0DKT1Q" resolve="IsConfigurationFromContext_ConceptFunction" />
+    <node concept="nKS2y" id="5aSLaYRTjAg" role="1MLUbF">
+      <node concept="3clFbS" id="5aSLaYRTjAh" role="2VODD2">
+        <node concept="3clFbF" id="5aSLaYRTjAo" role="3cqZAp">
+          <node concept="2OqwBi" id="5aSLaYRTken" role="3clFbG">
+            <node concept="2OqwBi" id="5aSLaYRTjLN" role="2Oq$k0">
+              <node concept="nLn13" id="5aSLaYRTjAn" role="2Oq$k0" />
+              <node concept="2Rxl7S" id="5aSLaYRTjYu" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="5aSLaYRTkrf" role="2OqNvi">
+              <node concept="chp4Y" id="5aSLaYRTkyB" role="cj9EA">
+                <ref role="cht4Q" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

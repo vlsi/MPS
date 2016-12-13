@@ -490,7 +490,9 @@
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Producer" file="JUnitTests_Producer.java">
+    <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -499,9 +501,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsProducer" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration" />
@@ -514,11 +518,13 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
-    <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelName" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JavaApplication_Kind" file="JavaApplication_Kind.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
@@ -538,6 +544,7 @@
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration" file="Java_Configuration.java">
     <classNode dependClassName="com.intellij.execution.ExecutionException" />
     <classNode dependClassName="com.intellij.execution.Executor" />
+    <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
@@ -557,6 +564,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Objects" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
@@ -572,6 +580,7 @@
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.plugins.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -642,7 +651,9 @@
     <classNode extendsClassName="jetbrains.mps.debug.api.run.DebuggerRunProfileState" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Producer" file="Java_Producer.java">
+    <classNode dependClassName="com.intellij.execution.actions.ConfigurationContext" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
+    <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />
     <classNode dependClassName="com.intellij.execution.impl.RunManagerImpl" />
     <classNode dependClassName="com.intellij.execution.junit.RuntimeConfigurationProducer" />
     <classNode dependClassName="java.lang.Boolean" />
@@ -661,6 +672,7 @@
     <classNode dependClassName="jetbrains.mps.plugins.runconfigs.MPSPsiElement" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JvmArgs" file="JvmArgs.java">

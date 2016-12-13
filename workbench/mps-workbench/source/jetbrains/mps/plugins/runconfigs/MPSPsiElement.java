@@ -25,6 +25,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -79,6 +80,9 @@ public class MPSPsiElement extends FakePsiElement {
     return myIsTransientElement;
   }
 
+  /**
+   * @return always resolved item
+   */
   public Object getMPSItem() {
     if (myItem instanceof SNodeReference) {
       return ((SNodeReference) myItem).resolve(myRepository);
@@ -101,6 +105,11 @@ public class MPSPsiElement extends FakePsiElement {
   @Override
   public Project getProject() {
     return myMPSProject.getProject();
+  }
+
+  @NotNull
+  public MPSProject getMPSProject() {
+    return myMPSProject;
   }
 
   @Override
@@ -176,5 +185,17 @@ public class MPSPsiElement extends FakePsiElement {
       }
     }
     return true;
+  }
+
+  /**
+   * returns the typed UNRESOLVED item if it is of a given type
+   * as opposed to the {@link #getMPSItem()} the reference types are not resolved
+   */
+  @Nullable
+  public <T> T getUnresolvedItem(Class<T> itemType) {
+    if (itemType.isInstance(myItem)) {
+      return itemType.cast(myItem);
+    }
+    return null;
   }
 }

@@ -2,8 +2,8 @@
 <model ref="r:7d438dd6-fddd-4f98-b0ae-eed9d2bebdce(jetbrains.mps.execution.configurations.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -221,6 +221,7 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
+      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -231,7 +232,6 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -631,6 +631,14 @@
         <node concept="2iRfu4" id="3aewtBM3oXt" role="2iSdaV" />
         <node concept="3F1sOY" id="3aewtBM2ZIJ" role="3EZMnx">
           <ref role="1NtTu8" to="uhxm:3aewtBM2nU6" resolve="create" />
+        </node>
+      </node>
+      <node concept="3F0ifn" id="5BgI1pECpul" role="3EZMnx" />
+      <node concept="3EZMnI" id="5pWP2kEOO20" role="3EZMnx">
+        <node concept="3XFhqQ" id="5pWP2kEOO21" role="3EZMnx" />
+        <node concept="2iRfu4" id="5pWP2kEOO22" role="2iSdaV" />
+        <node concept="3F1sOY" id="5pWP2kEOO23" role="3EZMnx">
+          <ref role="1NtTu8" to="uhxm:5pWP2kEOIBn" resolve="isConfigurationFromContext" />
         </node>
       </node>
       <node concept="2iRkQZ" id="3MnZbusxcQP" role="2iSdaV" />
@@ -1345,7 +1353,7 @@
                           </node>
                           <node concept="3GMtW1" id="5pE1_aqYtxU" role="2Oq$k0" />
                         </node>
-                        <node concept="3YRAZt" id="5pE1_aqYtxV" role="2OqNvi" />
+                        <node concept="1PgB_6" id="5pE1_aqYtxV" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -1531,12 +1539,12 @@
                   <node concept="17QB3L" id="1wEcoXjIDpL" role="HW$YZ" />
                   <node concept="2OqwBi" id="1wEcoXjIDpM" role="HW$Y0">
                     <node concept="1PxgMI" id="1wEcoXjIDpN" role="2Oq$k0">
+                      <node concept="chp4Y" id="714IaVdGZ8g" role="3oSUPX">
+                        <ref role="cht4Q" to="uhxm:25jQf71XihT" resolve="AbstractRunConfigurationExecutor" />
+                      </node>
                       <node concept="2OqwBi" id="1wEcoXjIDpO" role="1m5AlR">
                         <node concept="3bvxqY" id="1wEcoXjIDpS" role="2Oq$k0" />
                         <node concept="2Rxl7S" id="1wEcoXjIDpQ" role="2OqNvi" />
-                      </node>
-                      <node concept="chp4Y" id="714IaVdGZ8g" role="3oSUPX">
-                        <ref role="cht4Q" to="uhxm:25jQf71XihT" resolve="AbstractRunConfigurationExecutor" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1wEcoXjIDpR" role="2OqNvi">

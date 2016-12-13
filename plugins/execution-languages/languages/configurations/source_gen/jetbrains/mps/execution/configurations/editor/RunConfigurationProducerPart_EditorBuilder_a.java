@@ -48,6 +48,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createCollection_cuaozy_a0());
     editorCell.addEditorCell(createCollection_cuaozy_b0());
+    editorCell.addEditorCell(createConstant_cuaozy_c0());
+    editorCell.addEditorCell(createCollection_cuaozy_d0());
     return editorCell;
   }
   private EditorCell createCollection_cuaozy_a0() {
@@ -174,6 +176,67 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
     }
     protected String getNoTargetText() {
       return "<no create>";
+    }
+  }
+  private EditorCell createConstant_cuaozy_c0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+    editorCell.setCellId("Constant_cuaozy_c0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createCollection_cuaozy_d0() {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(getEditorContext(), myNode);
+    editorCell.setCellId("Collection_cuaozy_d0");
+    editorCell.addEditorCell(createIndentCell_cuaozy_a3a());
+    editorCell.addEditorCell(createRefNode_cuaozy_b3a());
+    return editorCell;
+  }
+  private EditorCell createIndentCell_cuaozy_a3a() {
+    EditorCell_Indent editorCell = new EditorCell_Indent(getEditorContext(), myNode);
+    return editorCell;
+  }
+  private EditorCell createRefNode_cuaozy_b3a() {
+    SingleRoleCellProvider provider = new RunConfigurationProducerPart_EditorBuilder_a.isConfigurationFromContextSingleRoleHandler_cuaozy_b3a(myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, 0x567cd4252ad2e9d7L, "isConfigurationFromContext"), getEditorContext());
+    return provider.createCell();
+  }
+  private static class isConfigurationFromContextSingleRoleHandler_cuaozy_b3a extends SingleRoleCellProvider {
+    @NotNull
+    private SNode myNode;
+
+    public isConfigurationFromContextSingleRoleHandler_cuaozy_b3a(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
+      super(containmentLink, context);
+      myNode = ownerNode;
+    }
+
+    @Override
+    @NotNull
+    public SNode getNode() {
+      return myNode;
+    }
+
+    protected EditorCell createChildCell(SNode child) {
+      EditorCell editorCell = super.createChildCell(child);
+      installCellInfo(child, editorCell);
+      return editorCell;
+    }
+    private void installCellInfo(SNode child, EditorCell editorCell) {
+      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
+        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(getEditorContext(), new SChildSubstituteInfo(editorCell, myNode, MetaAdapterFactory.getContainmentLink(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cda6L, 0x567cd4252ad2e9d7L, "isConfigurationFromContext"), child), new DefaultChildSubstituteInfo(myNode, myContainmentLink.getDeclarationNode(), getEditorContext())));
+      }
+      if (editorCell.getRole() == null) {
+        editorCell.setRole("isConfigurationFromContext");
+      }
+    }
+    @Override
+    protected EditorCell createEmptyCell() {
+      EditorCell editorCell = super.createEmptyCell();
+      editorCell.setCellId("empty_isConfigurationFromContext");
+
+      installCellInfo(null, editorCell);
+      return editorCell;
+    }
+    protected String getNoTargetText() {
+      return "<no isConfigurationFromContext>";
     }
   }
 }

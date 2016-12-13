@@ -13,8 +13,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.debug.api.DebugSessionManagerComponent;
 import jetbrains.mps.debug.api.AbstractDebugSession;
 import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.extapi.module.SRepositoryExt;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule;
+import jetbrains.mps.extapi.module.SRepositoryExt;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,10 +60,9 @@ public class EvaluationProvider implements IEvaluationProvider {
 
   private synchronized void init() {
     final SRepository repository = myDebugSession.getProject().getRepository();
-    assert repository instanceof SRepositoryExt;
     repository.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
-        EvaluationModule module = new EvaluationModule(repository);
+        EvaluationModule module = new EvaluationModule();
         ((SRepositoryExt) repository).registerModule(module, myDebugSession.getProject());
         myContainerModuleRef = module.getModuleReference();
       }

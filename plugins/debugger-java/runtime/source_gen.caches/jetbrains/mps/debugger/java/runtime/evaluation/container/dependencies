@@ -80,6 +80,7 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.concurrent.atomic.AtomicInteger" />
     <classNode dependClassName="jetbrains.mps.extapi.module.TransientSModule" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -95,13 +96,12 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependency" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependencyScope" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.project.AbstractModule" />

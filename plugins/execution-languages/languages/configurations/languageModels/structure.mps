@@ -2,8 +2,8 @@
 <model ref="r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="fb9u" ref="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" />
@@ -306,6 +306,13 @@
     <property role="34LRSv" value="produce" />
     <property role="EcuMT" value="4366236229294149030" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6liWaRMAf9f" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="source" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="7301162575811113551" />
+      <ref role="20lvS9" node="3MnZbusxaYm" resolve="RunConfigurationSource" />
+    </node>
     <node concept="1TJgyj" id="3aewtBM2nU6" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="create" />
@@ -313,12 +320,11 @@
       <property role="IQ2ns" value="3642991921657904774" />
       <ref role="20lvS9" node="3MnZbusxcR3" resolve="Create_ConceptFunction" />
     </node>
-    <node concept="1TJgyj" id="6liWaRMAf9f" role="1TKVEi">
+    <node concept="1TJgyj" id="5pWP2kEOIBn" role="1TKVEi">
+      <property role="IQ2ns" value="6232089240471267799" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="source" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="7301162575811113551" />
-      <ref role="20lvS9" node="3MnZbusxaYm" resolve="RunConfigurationSource" />
+      <property role="20kJfa" value="isConfigurationFromContext" />
+      <ref role="20lvS9" node="4$cur0DKT1Q" resolve="IsConfigurationFromContext_ConceptFunction" />
     </node>
     <node concept="PrWs8" id="toP3SpHxpB" role="PzmwI">
       <ref role="PrY4T" to="id7i:O$iR4JBsQF" resolve="IGeneratedToClass" />
@@ -500,8 +506,8 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="parameterDeclaration" />
       <property role="IQ2ns" value="6550182048787583937" />
-      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="5FAUXTS7S0k" resolve="BeforeTaskParameter" />
+      <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="1ovLDatOqMj">
@@ -590,6 +596,27 @@
     <property role="34LRSv" value="context" />
     <property role="EcuMT" value="7667828742972385551" />
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
+  <node concept="1TIwiD" id="4$cur0DKT1Q">
+    <property role="EcuMT" value="5263715862011154550" />
+    <property role="3GE5qa" value="producer" />
+    <property role="TrG5h" value="IsConfigurationFromContext_ConceptFunction" />
+    <property role="34LRSv" value="isConfigurationFromContext" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="4aK5w_leVzj">
+    <property role="EcuMT" value="4805365031744813267" />
+    <property role="3GE5qa" value="producer" />
+    <property role="TrG5h" value="Configuration_Parameter" />
+    <property role="34LRSv" value="configuration" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="4aK5w_lfZ1Z">
+    <property role="EcuMT" value="4805365031745089663" />
+    <property role="3GE5qa" value="producer" />
+    <property role="TrG5h" value="ContextConfiguration_Parameter" />
+    <property role="34LRSv" value="context" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 

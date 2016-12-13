@@ -15,8 +15,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BeforeTaskParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BeforeTaskParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConfigurationFromExecutorReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Configuration_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ContextConfiguration_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Create_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DebuggerSettings_Parameter = new ConceptPresentationBuilder().create();
@@ -25,13 +27,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExecuteConfiguration_Function = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Executor_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetProjectOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IsConfigurationFromContext_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelSource = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ModuleSource = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_NodeListSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Project_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0w).create();
+  private final ConceptPresentation props_RunConfiguration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0z).create();
   private final ConceptPresentation props_RunConfigurationCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationExecutor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RunConfigurationKind = new ConceptPresentationBuilder().create();
@@ -60,10 +63,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_BeforeTaskParameterReference;
       case LanguageConceptSwitch.ConfigurationFromExecutorReference:
         return props_ConfigurationFromExecutorReference;
+      case LanguageConceptSwitch.Configuration_Parameter:
+        return props_Configuration_Parameter;
       case LanguageConceptSwitch.ConsoleCreator:
         return props_ConsoleCreator;
       case LanguageConceptSwitch.ConsoleType:
         return props_ConsoleType;
+      case LanguageConceptSwitch.ContextConfiguration_Parameter:
+        return props_ContextConfiguration_Parameter;
       case LanguageConceptSwitch.ContextExpression:
         return props_ContextExpression;
       case LanguageConceptSwitch.Create_ConceptFunction:
@@ -80,6 +87,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Executor_Parameter;
       case LanguageConceptSwitch.GetProjectOperation:
         return props_GetProjectOperation;
+      case LanguageConceptSwitch.IsConfigurationFromContext_ConceptFunction:
+        return props_IsConfigurationFromContext_ConceptFunction;
       case LanguageConceptSwitch.ModelSource:
         return props_ModelSource;
       case LanguageConceptSwitch.ModuleSource:
