@@ -15,8 +15,14 @@
  */
 package jetbrains.mps.datatransfer;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
+/**
+ * @deprecated used only by {@link PasteWrapper}
+ */
+@Deprecated
+@ToRemove(version = 3.5)
 public class PasteWrapperContext {
   private SNode mySourceNode;
 

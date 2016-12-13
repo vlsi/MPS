@@ -19,6 +19,7 @@ import jetbrains.mps.classloading.MPSClassesListener;
 import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.module.ReloadableModuleBase;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
@@ -36,6 +37,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ *
+ * @deprecated use <t>jetbrains.mps.datatransfer.DataTransferManager</t> instead
+ */
+@Deprecated
+@ToRemove(version = 3.5)
 public class PasteWrappersManager implements CoreComponent {
 
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
@@ -79,11 +86,21 @@ public class PasteWrappersManager implements CoreComponent {
     INSTANCE = null;
   }
 
+  /**
+   *
+   * @deprecated use <t>jetbrains.mps.datatransfer.DataTransferManager#canWrapInto(SNode, SAbstractConcept)</t> instead
+   */
+  @Deprecated()
   public boolean canWrapInto(SNode node, SNode targetConcept) {
     checkLoaded();
     return getWrapperFor(node, targetConcept) != null;
   }
 
+  /**
+   *
+   * @deprecated use <t>jetbrains.mps.datatransfer.DataTransferManager#wrapInto(SNode, SAbstractConcept)</t> instead
+   */
+  @Deprecated()
   public SNode wrapInto(SNode node, SNode targetConcept) {
     checkLoaded();
     PasteWrapper wrapper = getWrapperFor(node, targetConcept);

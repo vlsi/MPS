@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,24 +15,14 @@
  */
 package jetbrains.mps.openapi.actions.descriptor;
 
-import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-
-import java.util.Collection;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
- * User: shatalin
- * Date: 29/01/15
+ * @author Radimir.Sorokin
  */
-public interface ActionAspectDescriptor extends ILanguageAspect {
+public interface PastePostProcessor {
+  SAbstractConcept getApplicableConcept();
 
-  Collection<NodeFactory> getFactories(SAbstractConcept concept);
-
-  boolean hasBuilders();
-
-  Collection<CopyPreProcessor> getCopyPreProcessors();
-
-  Collection<PastePostProcessor> getPastePostProcessors();
-
-  Collection<PasteWrapper> getPasteWrappers();
+  void postProcessNode(SNode node);
 }
