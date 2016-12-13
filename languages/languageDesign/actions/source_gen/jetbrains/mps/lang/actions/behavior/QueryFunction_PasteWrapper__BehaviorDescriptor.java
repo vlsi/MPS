@@ -34,10 +34,9 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
 
   public static final SMethod<SNode> getWrapper_idhLhtXcj = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getWrapper").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLhtXcj").registry(REGISTRY).build();
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
-  public static final SMethod<Boolean> usesParameterObject_id1653mnvAgq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq0").registry(REGISTRY).build();
   public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getWrapper_idhLhtXcj, getExpectedReturnType_idhEwIGRD, usesParameterObject_id1653mnvAgq0, getParameterConcepts_id2xELmDxyi2v);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getWrapper_idhLhtXcj, getExpectedReturnType_idhEwIGRD, getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -47,9 +46,6 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return _quotation_createNode_cqz97t_a0a1(SLinkOperations.getTarget(QueryFunction_PasteWrapper__BehaviorDescriptor.getWrapper_idhLhtXcj.invoke(__thisNode__), MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51563250L, 0x11c517238bfL, "targetConcept")));
-  }
-  /*package*/ static boolean usesParameterObject_id1653mnvAgq0(@NotNull SAbstractConcept __thisConcept__) {
-    return true;
   }
   /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
     List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
@@ -77,7 +73,7 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
         return (T) ((SNode) getWrapper_idhLhtXcj(node));
       case 1:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
-      case 3:
+      case 2:
         return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -91,8 +87,6 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 2:
-        return (T) ((Boolean) usesParameterObject_id1653mnvAgq0(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -7,7 +7,6 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.datatransfer.PasteWrappersManager" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.CreateRootRuleContext" />
@@ -26,6 +25,7 @@
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.CopyPreProcessor__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.NodeSubstituteActionsBuilder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.PastePostProcessor__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.actions.behavior.PasteWrapper__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.RemoveSTByConditionPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.actions.behavior.SideTransformHintSubstituteActionsBuilder__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor" />
