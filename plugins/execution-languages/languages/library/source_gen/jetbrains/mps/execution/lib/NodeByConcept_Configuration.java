@@ -4,6 +4,7 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
@@ -25,24 +26,22 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class NodeByConcept_Configuration implements IPersistentConfiguration {
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      String errorText = null;
-      if (this.getNodePointer() == null) {
-        errorText = "Node is not specified.";
-      } else {
-        try {
-          PersistenceFacade.getInstance().createNodeReference(this.getNodePointer());
-        } catch (IllegalArgumentException ex) {
-          errorText = "Node reference is not valid";
-          if (ex.getMessage() != null) {
-            errorText = String.format("%s: %s", errorText, ex.getMessage());
-          }
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    String errorText = null;
+    if (this.getNodePointer() == null) {
+      errorText = "Node is not specified.";
+    } else {
+      try {
+        PersistenceFacade.getInstance().createNodeReference(this.getNodePointer());
+      } catch (IllegalArgumentException ex) {
+        errorText = "Node reference is not valid";
+        if (ex.getMessage() != null) {
+          errorText = String.format("%s: %s", errorText, ex.getMessage());
         }
       }
-      if ((errorText != null && errorText.length() > 0)) {
-        throw new RuntimeConfigurationError(errorText);
-      }
+    }
+    if ((errorText != null && errorText.length() > 0)) {
+      throw new RuntimeConfigurationError(errorText);
     }
   }
   @Override

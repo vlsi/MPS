@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -25,11 +26,12 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private Remote_Configuration.MyState myState = new Remote_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
@@ -98,6 +100,15 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new Remote_Configuration_Editor();
+  }
+  @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
   }
   @Override
   public boolean canExecute(String executorId) {

@@ -10,6 +10,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.ant.execution.AntSettings_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />

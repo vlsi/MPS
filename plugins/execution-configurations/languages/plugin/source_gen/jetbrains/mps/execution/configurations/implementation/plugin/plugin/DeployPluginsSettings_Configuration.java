@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -21,7 +22,7 @@ import com.intellij.openapi.project.Project;
 public class DeployPluginsSettings_Configuration implements IPersistentConfiguration {
   @NotNull
   private DeployPluginsSettings_Configuration.MyState myState = new DeployPluginsSettings_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {

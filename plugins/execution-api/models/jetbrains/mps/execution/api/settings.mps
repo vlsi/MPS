@@ -17,6 +17,7 @@
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -125,6 +126,9 @@
       <concept id="1171903916106" name="jetbrains.mps.baseLanguage.structure.UpperBoundType" flags="in" index="3qUE_q">
         <child id="1171903916107" name="bound" index="3qUE_r" />
       </concept>
+      <concept id="7812454656619025416" name="jetbrains.mps.baseLanguage.structure.MethodDeclaration" flags="ng" index="1rXfSm">
+        <property id="8355037393041754995" name="isNative" index="2aFKle" />
+      </concept>
       <concept id="7812454656619025412" name="jetbrains.mps.baseLanguage.structure.LocalMethodCall" flags="nn" index="1rXfSq" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -153,14 +157,31 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
+        <property id="5858074156537516431" name="text" index="x79VB" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
+      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
+        <child id="5858074156537516440" name="return" index="x79VK" />
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -190,6 +211,12 @@
       <node concept="3clFbS" id="3oW7HLfqDr0" role="3clF47" />
       <node concept="3uibUv" id="3oW7HLfqDr1" role="Sfmx6">
         <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
+      </node>
+      <node concept="37vLTG" id="qCQmZRTc$2" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="qCQmZRTc$1" role="1tU5fm">
+          <ref role="3uigEE" node="qCQmZRT2wq" resolve="PersistentConfigurationContext" />
+        </node>
       </node>
     </node>
     <node concept="3clFb_" id="3oW7HLfqDr2" role="jymVt">
@@ -561,6 +588,43 @@
         <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
         <node concept="3b6qkQ" id="4aB4InNThdx" role="2B70Vg">
           <property role="$nhwW" value="3.5" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="3HP615" id="qCQmZRT2wq">
+    <property role="TrG5h" value="PersistentConfigurationContext" />
+    <node concept="3clFb_" id="qCQmZRTcql" role="jymVt">
+      <property role="1EzhhJ" value="true" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="getProject" />
+      <node concept="3clFbS" id="qCQmZRTcqo" role="3clF47" />
+      <node concept="3Tm1VV" id="qCQmZRTcqp" role="1B3o_S" />
+      <node concept="3uibUv" id="qCQmZRTcqb" role="3clF45">
+        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      </node>
+      <node concept="P$JXv" id="qCQmZRTcs8" role="lGtFl">
+        <node concept="x79VA" id="qCQmZRTcsb" role="x79VK">
+          <property role="x79VB" value="context project, not {@code null}" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="qCQmZRT2wr" role="1B3o_S" />
+    <node concept="3UR2Jj" id="qCQmZRT2xF" role="lGtFl">
+      <node concept="TZ5HA" id="qCQmZRT2xG" role="TZ5H$">
+        <node concept="1dT_AC" id="qCQmZRT2xH" role="1dT_Ay">
+          <property role="1dT_AB" value="What " />
+        </node>
+        <node concept="1dT_AA" id="qCQmZRT2xT" role="1dT_Ay">
+          <node concept="92FcH" id="qCQmZRT2xZ" role="qph3F">
+            <node concept="TZ5HA" id="qCQmZRT2y1" role="2XjZqd" />
+            <node concept="VXe08" id="qCQmZRT8Ee" role="92FcQ">
+              <ref role="VXe09" node="3oW7HLfqDqW" resolve="IPersistentConfiguration" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="qCQmZRT2xS" role="1dT_Ay">
+          <property role="1dT_AB" value=" knows about outer world" />
         </node>
       </node>
     </node>

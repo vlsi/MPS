@@ -38,7 +38,6 @@
     <import index="44uo" ref="r:40062e7d-2d40-4964-a55f-255e1fee23d7(jetbrains.mps.debugger.java.runtime.configurations.remote)" />
     <import index="eva" ref="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <import index="ic0f" ref="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
@@ -599,6 +598,7 @@
       <concept id="946964771156066588" name="jetbrains.mps.execution.settings.structure.EditorExpression" flags="nn" index="yHkDH">
         <reference id="946964771156066589" name="persistentPropertyDeclaration" index="yHkDG" />
       </concept>
+      <concept id="946964771156066591" name="jetbrains.mps.execution.settings.structure.CheckProperitesOperation" flags="nn" index="yHkDI" />
       <concept id="946964771156066561" name="jetbrains.mps.execution.settings.structure.TemplateParameterReference" flags="nn" index="yHkDK" />
       <concept id="946964771156066563" name="jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement" flags="nn" index="yHkDM">
         <child id="946964771156066565" name="expression" index="yHkDO" />
@@ -1177,16 +1177,14 @@
     <node concept="yHkDk" id="5gyVhZ17Jlv" role="yHkHj">
       <node concept="3clFbS" id="5gyVhZ17Jlw" role="2VODD2">
         <node concept="3clFbF" id="5gyVhZ17Jlx" role="3cqZAp">
-          <node concept="2OqwBi" id="5gyVhZ17Jly" role="3clFbG">
+          <node concept="2OqwBi" id="qCQmZS53r7" role="3clFbG">
             <node concept="2OqwBi" id="5gyVhZ17Jlz" role="2Oq$k0">
               <node concept="2WthIp" id="5gyVhZ17Jl$" role="2Oq$k0" />
               <node concept="yHkDZ" id="5gyVhZ17Jl_" role="2OqNvi">
                 <ref role="yHkDY" node="5gyVhZ17JkL" resolve="myNode" />
               </node>
             </node>
-            <node concept="liA8E" id="5gyVhZ17JlA" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS543C" role="2OqNvi" />
           </node>
         </node>
         <node concept="3cpWs8" id="5gyVhZ17JlD" role="3cqZAp">
@@ -1933,9 +1931,7 @@
       <node concept="3clFbS" id="5gyVhZ1882o" role="2VODD2">
         <node concept="3clFbF" id="1X8FusBaf$Q" role="3cqZAp">
           <node concept="2OqwBi" id="1X8FusBagcu" role="3clFbG">
-            <node concept="liA8E" id="1X8FusBah1n" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS5Ifb" role="2OqNvi" />
             <node concept="2OqwBi" id="1X8FusBafDI" role="2Oq$k0">
               <node concept="yHkDZ" id="1X8FusBafOB" role="2OqNvi">
                 <ref role="yHkDY" node="5gyVhZ1ayaO" resolve="myJUnitSettings" />
@@ -3959,9 +3955,7 @@
                 <ref role="yHkDY" node="q00jVsP9$_" resolve="myMpsSettings" />
               </node>
             </node>
-            <node concept="liA8E" id="q00jVsPOy9" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS5UZO" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbF" id="5Y5HnE728Ax" role="3cqZAp">
@@ -3972,9 +3966,7 @@
                 <ref role="yHkDY" node="5Y5HnE726_L" resolve="myPluginsSettings" />
               </node>
             </node>
-            <node concept="liA8E" id="5Y5HnE72bU9" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS5VAF" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -10863,16 +10855,14 @@
     <node concept="yHkDk" id="1Kl1LtkdZVv" role="yHkHj">
       <node concept="3clFbS" id="1Kl1LtkdZVw" role="2VODD2">
         <node concept="3clFbF" id="1Kl1Ltke06s" role="3cqZAp">
-          <node concept="2OqwBi" id="1Kl1Ltke1K8" role="3clFbG">
+          <node concept="2OqwBi" id="qCQmZS56IY" role="3clFbG">
             <node concept="2OqwBi" id="1Kl1Ltke0fJ" role="2Oq$k0">
               <node concept="2WthIp" id="1Kl1Ltke06r" role="2Oq$k0" />
               <node concept="yHkDZ" id="1Kl1Ltke13u" role="2OqNvi">
                 <ref role="yHkDY" node="1Kl1LtkdZRH" resolve="myPluginsSettings" />
               </node>
             </node>
-            <node concept="liA8E" id="1Kl1Ltke53h" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS572K" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbJ" id="5UUV8nCs1QH" role="3cqZAp">

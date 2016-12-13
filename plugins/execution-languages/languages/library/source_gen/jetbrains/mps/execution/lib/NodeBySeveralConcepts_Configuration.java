@@ -4,6 +4,7 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -31,22 +32,20 @@ import java.util.List;
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration {
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode node = getNodeResolved();
-          if (node == null) {
-            errorText.value = "Node is not specified.";
-          } else if (!(isValid(node))) {
-            errorText.value = "Node is not valid.";
-          }
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = getNodeResolved();
+        if (node == null) {
+          errorText.value = "Node is not specified.";
+        } else if (!(isValid(node))) {
+          errorText.value = "Node is not valid.";
         }
-      });
-      if (isNotEmptyString(errorText.value)) {
-        throw new RuntimeConfigurationError(errorText.value);
       }
+    });
+    if (isNotEmptyString(errorText.value)) {
+      throw new RuntimeConfigurationError(errorText.value);
     }
   }
   @Override

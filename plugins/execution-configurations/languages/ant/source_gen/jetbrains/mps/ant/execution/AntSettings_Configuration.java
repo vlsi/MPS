@@ -4,6 +4,7 @@ package jetbrains.mps.ant.execution;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -16,7 +17,7 @@ import org.apache.log4j.Level;
 public class AntSettings_Configuration implements IPersistentConfiguration {
   @NotNull
   private AntSettings_Configuration.MyState myState = new AntSettings_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {

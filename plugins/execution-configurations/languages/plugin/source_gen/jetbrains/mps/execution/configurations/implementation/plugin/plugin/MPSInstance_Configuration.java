@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -25,15 +26,16 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class MPSInstance_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private MPSInstance_Configuration.MyState myState = new MPSInstance_Configuration.MyState();
   private MpsStartupSettings_Configuration myMpsSettings = new MpsStartupSettings_Configuration();
   private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    this.getMpsSettings().checkConfiguration();
-    this.getPluginsSettings().checkConfiguration();
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getMpsSettings().checkConfiguration(context);
+    this.getPluginsSettings().checkConfiguration(context);
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
@@ -133,6 +135,15 @@ public class MPSInstance_Configuration extends BaseMpsRunConfiguration implement
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new MPSInstance_Configuration_Editor(myMpsSettings.getEditor(), myPluginsSettings.getEditor());
+  }
+  @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
   }
   @Override
   public boolean canExecute(String executorId) {

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.execution.api;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -16,7 +17,7 @@ import org.apache.log4j.Level;
 public class JavaRunParameters_Configuration implements IPersistentConfiguration {
   @NotNull
   private JavaRunParameters_Configuration.MyState myState = new JavaRunParameters_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {

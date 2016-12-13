@@ -62,6 +62,7 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
   </imports>
   <registry>
     <language id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin">
@@ -97,6 +98,7 @@
       </concept>
       <concept id="4836112446988635817" name="jetbrains.mps.baseLanguage.structure.UndefinedType" flags="in" index="2jxLKc" />
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
+      <concept id="1465982738277781862" name="jetbrains.mps.baseLanguage.structure.PlaceholderMember" flags="ng" index="2tJIrI" />
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
       </concept>
@@ -132,6 +134,9 @@
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
+      </concept>
+      <concept id="1182160077978" name="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" flags="nn" index="YeOm9">
+        <child id="1182160096073" name="cls" index="YeSDq" />
       </concept>
       <concept id="1081236700938" name="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" flags="ig" index="2YIFZL" />
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
@@ -276,6 +281,9 @@
         <reference id="1116615189566" name="classifier" index="3VsUkX" />
       </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
+      <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
+        <reference id="1170346070688" name="classifier" index="1Y3XeK" />
+      </concept>
     </language>
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
       <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
@@ -2659,6 +2667,7 @@
         </node>
         <node concept="raruj" id="_0hjroSWS3" role="lGtFl" />
       </node>
+      <node concept="2tJIrI" id="qCQmZRUvvh" role="jymVt" />
       <node concept="3clFb_" id="_0hjroTa2C" role="jymVt">
         <property role="TrG5h" value="getRunnerSettingsEditor" />
         <node concept="3Tm1VV" id="_0hjroTa2D" role="1B3o_S" />
@@ -2684,6 +2693,7 @@
         </node>
         <node concept="raruj" id="_0hjroTa2M" role="lGtFl" />
       </node>
+      <node concept="2tJIrI" id="qCQmZRUt7F" role="jymVt" />
       <node concept="3clFb_" id="_0hjroTa2Y" role="jymVt">
         <property role="TrG5h" value="createRunnerSettings" />
         <node concept="3Tm1VV" id="_0hjroTa2Z" role="1B3o_S" />
@@ -2703,6 +2713,7 @@
         </node>
         <node concept="raruj" id="_0hjroTa36" role="lGtFl" />
       </node>
+      <node concept="2tJIrI" id="qCQmZRUqK6" role="jymVt" />
       <node concept="3clFb_" id="_0hjroTa3i" role="jymVt">
         <property role="TrG5h" value="getConfigurationEditor" />
         <node concept="3Tm1VV" id="_0hjroTa3j" role="1B3o_S" />
@@ -2763,6 +2774,7 @@
         </node>
         <node concept="raruj" id="_0hjroTa3B" role="lGtFl" />
       </node>
+      <node concept="2tJIrI" id="qCQmZRUooy" role="jymVt" />
       <node concept="3clFb_" id="7WkE0gr9Ct" role="jymVt">
         <property role="TrG5h" value="createCloneTemplate" />
         <node concept="3Tm1VV" id="7WkE0gr9Cw" role="1B3o_S" />
@@ -2817,6 +2829,7 @@
           </node>
         </node>
       </node>
+      <node concept="2tJIrI" id="qCQmZRUm0Z" role="jymVt" />
       <node concept="3clFb_" id="7WkE0grlgl" role="jymVt">
         <property role="TrG5h" value="getEditor" />
         <node concept="3uibUv" id="7WkE0grlgm" role="3clF45">
@@ -2925,6 +2938,72 @@
         <node concept="3Tm1VV" id="7WkE0grlhm" role="1B3o_S" />
         <node concept="raruj" id="7WkE0grlho" role="lGtFl" />
       </node>
+      <node concept="2tJIrI" id="qCQmZRU7A3" role="jymVt" />
+      <node concept="3clFb_" id="qCQmZRUeJB" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="checkConfiguration" />
+        <property role="DiZV1" value="false" />
+        <property role="od$2w" value="false" />
+        <node concept="3Tm1VV" id="qCQmZRUeJC" role="1B3o_S" />
+        <node concept="3cqZAl" id="qCQmZRUeJE" role="3clF45" />
+        <node concept="3uibUv" id="qCQmZRUeJF" role="Sfmx6">
+          <ref role="3uigEE" to="dj99:~RuntimeConfigurationException" resolve="RuntimeConfigurationException" />
+        </node>
+        <node concept="3clFbS" id="qCQmZRUeJQ" role="3clF47">
+          <node concept="3cpWs8" id="qCQmZRUJNx" role="3cqZAp">
+            <node concept="3cpWsn" id="qCQmZRUJNy" role="3cpWs9">
+              <property role="TrG5h" value="mpsProject" />
+              <property role="3TUv4t" value="true" />
+              <node concept="3uibUv" id="qCQmZRUJNz" role="1tU5fm">
+                <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+              </node>
+              <node concept="2YIFZM" id="qCQmZRUG01" role="33vP2m">
+                <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
+                <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
+                <node concept="1rXfSq" id="qCQmZRUNG7" role="37wK5m">
+                  <ref role="37wK5l" to="dj99:~RunConfigurationBase.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="qCQmZRUyMM" role="3cqZAp">
+            <node concept="1rXfSq" id="qCQmZRUyML" role="3clFbG">
+              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
+              <node concept="2ShNRf" id="qCQmZRU$in" role="37wK5m">
+                <node concept="YeOm9" id="qCQmZRUCXv" role="2ShVmc">
+                  <node concept="1Y3b0j" id="qCQmZRUCXy" role="YeSDq">
+                    <property role="2bfB8j" value="true" />
+                    <ref role="1Y3XeK" to="ic0f:qCQmZRT2wq" resolve="PersistentConfigurationContext" />
+                    <ref role="37wK5l" to="wyt6:~Object.&lt;init&gt;()" resolve="Object" />
+                    <node concept="3Tm1VV" id="qCQmZRUCXz" role="1B3o_S" />
+                    <node concept="3clFb_" id="qCQmZRUCX$" role="jymVt">
+                      <property role="1EzhhJ" value="false" />
+                      <property role="2aFKle" value="false" />
+                      <property role="TrG5h" value="getProject" />
+                      <node concept="3Tm1VV" id="qCQmZRUCXA" role="1B3o_S" />
+                      <node concept="3uibUv" id="qCQmZRUCXB" role="3clF45">
+                        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+                      </node>
+                      <node concept="3clFbS" id="qCQmZRUCXE" role="3clF47">
+                        <node concept="3cpWs6" id="qCQmZRUEob" role="3cqZAp">
+                          <node concept="37vLTw" id="qCQmZRUPmP" role="3cqZAk">
+                            <ref role="3cqZAo" node="qCQmZRUJNy" resolve="mpsProject" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2AHcQZ" id="qCQmZRUeJR" role="2AJF6D">
+          <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+        </node>
+        <node concept="raruj" id="qCQmZRUjGw" role="lGtFl" />
+      </node>
+      <node concept="2tJIrI" id="qCQmZRU9Sa" role="jymVt" />
       <node concept="3clFb_" id="1xo$tfixEFS" role="jymVt">
         <property role="TrG5h" value="getIcon" />
         <node concept="3uibUv" id="1xo$tfixEGw" role="3clF45">

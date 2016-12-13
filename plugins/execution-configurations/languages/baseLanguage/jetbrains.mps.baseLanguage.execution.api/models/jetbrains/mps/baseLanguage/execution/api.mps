@@ -355,7 +355,6 @@
       <concept id="946964771156066594" name="jetbrains.mps.execution.settings.structure.IPersistentPropertyHolder" flags="ng" index="yHkDj">
         <child id="946964771156066595" name="persistentProperty" index="yHkDi" />
       </concept>
-      <concept id="946964771156066597" name="jetbrains.mps.execution.settings.structure.CheckProperties_Function" flags="ig" index="yHkDk" />
       <concept id="946964771156066601" name="jetbrains.mps.execution.settings.structure.ApplyTo_Function" flags="ig" index="yHkDo" />
       <concept id="946964771156066579" name="jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate" flags="ng" index="yHkDy" />
       <concept id="946964771156066585" name="jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration" flags="ng" index="yHkDC" />
@@ -366,7 +365,6 @@
       </concept>
       <concept id="946964771156066336" name="jetbrains.mps.execution.settings.structure.PersistentConfiguration" flags="ng" index="yHkHh">
         <child id="946964771156066337" name="editor" index="yHkHg" />
-        <child id="946964771156066338" name="checkProperties" index="yHkHj" />
       </concept>
       <concept id="2722628536111969416" name="jetbrains.mps.execution.settings.structure.GridBagConstraints" flags="nn" index="1rwKMM">
         <property id="2722628536111969418" name="constraintsKind" index="1rwKMK" />
@@ -2661,9 +2659,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="yHkDk" id="4YEli8eJ5CZ" role="yHkHj">
-      <node concept="3clFbS" id="4YEli8eJ5D0" role="2VODD2" />
     </node>
   </node>
   <node concept="2fD8I5" id="14R2qyOCsUf">

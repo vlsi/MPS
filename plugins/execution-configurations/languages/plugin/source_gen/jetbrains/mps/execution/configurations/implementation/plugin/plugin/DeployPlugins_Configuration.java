@@ -5,6 +5,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
@@ -31,13 +32,14 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 
 public class DeployPlugins_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
   private DeployPlugins_Configuration.MyState myState = new DeployPlugins_Configuration.MyState();
   private DeployPluginsSettings_Configuration myPluginsSettings = new DeployPluginsSettings_Configuration(this.getProject());
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    this.getPluginsSettings().checkConfiguration();
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getPluginsSettings().checkConfiguration(context);
     if (ListSequence.fromList(this.getPluginsSettings().getPluginsListToDeploy()).isEmpty()) {
       throw new RuntimeConfigurationError("No plugins to deploy selected");
     }
@@ -158,6 +160,15 @@ public class DeployPlugins_Configuration extends BaseMpsRunConfiguration impleme
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new DeployPlugins_Configuration_Editor(myPluginsSettings.getEditor());
+  }
+  @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
   }
   @Override
   public boolean canExecute(String executorId) {

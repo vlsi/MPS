@@ -140,9 +140,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForCheckProperitesOperation() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.settings", "CheckProperitesOperation", 0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL);
     b.class_(false, false, false);
-    b.parent(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/946964771156066591");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("check configuration");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCheckProperties_Function() {

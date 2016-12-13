@@ -28,10 +28,13 @@
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory" />
     <classNode dependClassName="jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_RunProfileState" />
+    <classNode dependClassName="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" />
     <classNode dependClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />
     <classNode dependClassName="jetbrains.mps.execution.lib.NodeByConcept_Configuration" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />

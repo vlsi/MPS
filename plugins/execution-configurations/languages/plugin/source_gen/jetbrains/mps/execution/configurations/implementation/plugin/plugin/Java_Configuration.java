@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
@@ -55,23 +56,21 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   })));
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      this.getNode().checkConfiguration();
-      final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
-      final MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
-      mpsProject.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          SNode node = Java_Configuration.this.getNode().getNode().resolve(mpsProject.getRepository());
-          if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-            hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
-          }
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getNode().checkConfiguration(context);
+    final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = Java_Configuration.this.getNode().getNode().resolve(mpsProject.getRepository());
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+          hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
         }
-      });
-
-      if (hasMainMethod.value) {
-        throw new RuntimeConfigurationError("Selected class does not have main method.");
       }
+    });
+
+    if (hasMainMethod.value) {
+      throw new RuntimeConfigurationError("Selected class does not have main method.");
     }
   }
   @Override
@@ -169,6 +168,15 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new Java_Configuration_Editor(myNode.getEditor(), myRunParameters.getEditor());
+  }
+  @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
   }
   @Override
   public boolean canExecute(String executorId) {

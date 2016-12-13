@@ -26,7 +26,6 @@
     <import index="mcvh" ref="r:4032b78d-911f-4395-b88c-ccb50cb24300(jetbrains.mps.debugger.java.api.settings)" />
     <import index="eva" ref="r:a1b1112d-dd34-4046-a6a3-811fd290d232(jetbrains.mps.execution.configurations.pluginSolution.plugin)" />
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
-    <import index="ic0f" ref="r:76273c4a-4818-4f7c-8673-bfc2aeb6debb(jetbrains.mps.execution.api.settings)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
   </imports>
@@ -223,6 +222,7 @@
       <concept id="946964771156066588" name="jetbrains.mps.execution.settings.structure.EditorExpression" flags="nn" index="yHkDH">
         <reference id="946964771156066589" name="persistentPropertyDeclaration" index="yHkDG" />
       </concept>
+      <concept id="946964771156066591" name="jetbrains.mps.execution.settings.structure.CheckProperitesOperation" flags="nn" index="yHkDI" />
       <concept id="946964771156066566" name="jetbrains.mps.execution.settings.structure.CreateEditor_Function" flags="ig" index="yHkDR" />
       <concept id="946964771156066574" name="jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation" flags="nn" index="yHkDZ">
         <reference id="946964771156066575" name="variableDeclaration" index="yHkDY" />
@@ -541,9 +541,7 @@
       <node concept="3clFbS" id="Q7FI0Q1SLx" role="2VODD2">
         <node concept="3clFbF" id="1gqKYqdGzZL" role="3cqZAp">
           <node concept="2OqwBi" id="4AWjvCLCD7I" role="3clFbG">
-            <node concept="liA8E" id="5TtnsqKVH73" role="2OqNvi">
-              <ref role="37wK5l" to="ic0f:3oW7HLfqDqX" resolve="checkConfiguration" />
-            </node>
+            <node concept="yHkDI" id="qCQmZS5Y8L" role="2OqNvi" />
             <node concept="2OqwBi" id="1gqKYqdGzZN" role="2Oq$k0">
               <node concept="2WthIp" id="1gqKYqdGzZM" role="2Oq$k0" />
               <node concept="yHkDZ" id="1gqKYqdG$cx" role="2OqNvi">

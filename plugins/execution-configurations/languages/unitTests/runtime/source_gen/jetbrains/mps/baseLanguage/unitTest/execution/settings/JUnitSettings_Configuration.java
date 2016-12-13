@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.execution.settings;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.project.MPSProject;
@@ -34,19 +35,17 @@ import com.intellij.openapi.project.Project;
 public class JUnitSettings_Configuration implements IPersistentConfiguration {
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      if (this.getRunType() < 0 || this.getRunType() > JUnitRunTypes.values().length) {
-        throw new RuntimeConfigurationError("Type of test not selected.");
-      }
-      // We do not validate, only check if there is something to test, since validating everything be very slow 
-      // see MPS-8781 JUnit run configuration check method performance. 
-      MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
-      checkCachesDirIsFreeToLock();
-      checkInProcessRunIsSingle();
-      if (!((eq_jtq3ac_a0a0g0a0b(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
-        check(mpsProject);
-      }
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    if (this.getRunType() < 0 || this.getRunType() > JUnitRunTypes.values().length) {
+      throw new RuntimeConfigurationError("Type of test not selected.");
+    }
+    // We do not validate, only check if there is something to test, since validating everything be very slow 
+    // see MPS-8781 JUnit run configuration check method performance. 
+    MPSProject mpsProject = ProjectHelper.fromIdeaProject(myProject);
+    checkCachesDirIsFreeToLock();
+    checkInProcessRunIsSingle();
+    if (!((eq_jtq3ac_a0a0g0b(this.getRunType(), JUnitRunTypes.PROJECT.ordinal())))) {
+      check(mpsProject);
     }
   }
   @Override
@@ -229,7 +228,7 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration {
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
   }
-  private static boolean eq_jtq3ac_a0a0g0a0b(Object a, Object b) {
+  private static boolean eq_jtq3ac_a0a0g0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -292,17 +292,10 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="properties" />
     <property role="EcuMT" value="946964771156066591" />
+    <property role="34LRSv" value="check configuration" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
-    <node concept="PrWs8" id="O$iR4J$g4w" role="PzmwI">
-      <ref role="PrY4T" to="tp4f:hyWEnem" resolve="IMemberOperation" />
-    </node>
-    <node concept="1TJgyj" id="O$iR4J$g4x" role="1TKVEi">
-      <property role="20lmBu" value="reference" />
-      <property role="20kJfa" value="checkProperties" />
-      <property role="20lbJX" value="1" />
-      <property role="IQ2ns" value="946964771156066593" />
-      <ref role="20lvS9" node="O$iR4J$g4_" resolve="CheckProperties_Function" />
-      <ref role="20ksaX" to="tp4f:hyWH_vG" resolve="member" />
+    <node concept="PrWs8" id="qCQmZS4HbD" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hqOqG0K" resolve="IOperation" />
     </node>
   </node>
   <node concept="PlHQZ" id="O$iR4J$g4y">

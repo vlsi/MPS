@@ -7,6 +7,7 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -42,8 +43,8 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration(this.getProject());
   private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    this.getJUnitSettings().checkConfiguration();
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getJUnitSettings().checkConfiguration(context);
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
@@ -154,6 +155,15 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new JUnitTests_Configuration_Editor(myJUnitSettings.getEditor(), myJavaRunParameters.getEditor());
+  }
+  @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
   }
   @Override
   public boolean canExecute(String executorId) {

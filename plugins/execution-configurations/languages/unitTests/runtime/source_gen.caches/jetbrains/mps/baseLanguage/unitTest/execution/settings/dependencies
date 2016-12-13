@@ -119,6 +119,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.DefaultCachesPathChooser" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" />
+    <classNode dependClassName="jetbrains.mps.execution.api.settings.PersistentConfigurationContext" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitInProcessExecutor" />
     <classNode dependClassName="jetbrains.mps.execution.lib.ClonableList" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

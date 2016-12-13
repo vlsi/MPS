@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
@@ -29,7 +30,7 @@ import org.apache.log4j.Level;
 public class MpsStartupSettings_Configuration implements IPersistentConfiguration {
   @NotNull
   private MpsStartupSettings_Configuration.MyState myState = new MpsStartupSettings_Configuration.MyState();
-  public void checkConfiguration() throws RuntimeConfigurationException {
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     if (isEmptyString(this.getConfigurationPath())) {
       throw new RuntimeConfigurationError("Configuration path is empty.");
     }
