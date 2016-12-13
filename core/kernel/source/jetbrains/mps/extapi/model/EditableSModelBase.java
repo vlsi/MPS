@@ -128,6 +128,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     LOG.assertLog(!needsReloading());
   }
 
+  @SuppressWarnings("WeakerAccess")
   /*package*/ void doReloadFromDiskSafe() {
     assertCanChange();
     if (isChanged()) {
@@ -153,8 +154,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
     // FIXME!!!!!!!!!!!!!
     // Paranoid check to avoid saving model during update (hack for MPS-6772)
-    if (needsReloading()) return false;
-    return true;
+    return !needsReloading();
   }
 
   public void changeModelFile(IFile newModelFile) {
@@ -258,7 +258,10 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           newFile.createNewFile();
           changeModelFile(newFile);
           save();
-          oldFile.delete();
+          while (oldFile != null && oldFile.isDirectory() && oldFile.getChildren().isEmpty()) {
+            oldFile.delete();
+            oldFile = oldFile.getParent();
+          }
         } catch (IOException e) {
           LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
           save();
