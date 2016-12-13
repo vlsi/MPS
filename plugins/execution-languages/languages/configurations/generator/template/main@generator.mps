@@ -484,6 +484,9 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1154546950173" name="jetbrains.mps.lang.smodel.structure.ConceptReference" flags="ng" index="3gn64h">
         <reference id="1154546997487" name="concept" index="3gnhBz" />
       </concept>
@@ -509,9 +512,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1187,8 +1187,8 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kExHM" role="2Oq$k0">
-                      <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                    <node concept="35c_gC" id="7Ift4Hg3mBY" role="2Oq$k0">
+                      <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -1799,8 +1799,8 @@
                     <node concept="30H73N" id="L_Hr3kErYn" role="2Oq$k0" />
                   </node>
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kErYo" role="2Oq$k0">
-                  <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3mC2" role="2Oq$k0">
+                  <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                 </node>
               </node>
             </node>
@@ -2064,8 +2064,8 @@
                             <node concept="2qgKlT" id="L_Hr3kEst8" role="2OqNvi">
                               <ref role="37wK5l" to="mdoc:5pE1_aqZc7s" resolve="getGetDebuggerConfidurationMethodName" />
                             </node>
-                            <node concept="3TUQnm" id="L_Hr3kEst9" role="2Oq$k0">
-                              <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                            <node concept="35c_gC" id="7Ift4Hg3mBW" role="2Oq$k0">
+                              <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                             </node>
                           </node>
                         </node>
@@ -2120,8 +2120,8 @@
                 <node concept="2qgKlT" id="L_Hr3kEsgQ" role="2OqNvi">
                   <ref role="37wK5l" to="mdoc:5pE1_aqZc7s" resolve="getGetDebuggerConfidurationMethodName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kEsgR" role="2Oq$k0">
-                  <ref role="3TV0OU" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
+                <node concept="35c_gC" id="7Ift4Hg3mC3" role="2Oq$k0">
+                  <ref role="35c_gD" to="rzqf:JzCdmU6yJC" resolve="CommandDeclaration" />
                 </node>
               </node>
             </node>
@@ -3428,8 +3428,8 @@
                         <node concept="30H73N" id="L_Hr3kEskT" role="2Oq$k0" />
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kEskU" role="2Oq$k0">
-                      <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                    <node concept="35c_gC" id="7Ift4Hg3mBZ" role="2Oq$k0">
+                      <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -6288,8 +6288,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3TUQnm" id="L_Hr3kExGH" role="2Oq$k0">
-                    <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                  <node concept="35c_gC" id="7Ift4Hg3mC1" role="2Oq$k0">
+                    <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                   </node>
                 </node>
               </node>
@@ -6376,8 +6376,8 @@
                         </node>
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kEs8W" role="2Oq$k0">
-                      <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                    <node concept="35c_gC" id="7Ift4Hg3mC0" role="2Oq$k0">
+                      <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -6445,8 +6445,8 @@
                               </node>
                             </node>
                           </node>
-                          <node concept="3TUQnm" id="L_Hr3kEv$j" role="2Oq$k0">
-                            <ref role="3TV0OU" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
+                          <node concept="35c_gC" id="7Ift4Hg3mBX" role="2Oq$k0">
+                            <ref role="35c_gD" to="fb9u:O$iR4J$g4p" resolve="PersistentPropertyDeclaration" />
                           </node>
                         </node>
                       </node>

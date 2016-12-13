@@ -180,6 +180,9 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -193,9 +196,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -740,8 +740,8 @@
                             <ref role="37wK5l" to="j8l:67LR$5LPv$c" resolve="getContextBuilder" />
                             <node concept="30H73N" id="L_Hr3kEsi9" role="37wK5m" />
                           </node>
-                          <node concept="3TUQnm" id="L_Hr3kEsia" role="2Oq$k0">
-                            <ref role="3TV0OU" to="pmg0:67LR$5LOFWb" resolve="Builder" />
+                          <node concept="35c_gC" id="7Ift4Hg3gFA" role="2Oq$k0">
+                            <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
                           </node>
                         </node>
                       </node>

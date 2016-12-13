@@ -235,6 +235,9 @@
       </concept>
       <concept id="1212008292747" name="jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation" flags="nn" index="LkI2h" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -263,9 +266,6 @@
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -973,8 +973,8 @@
                   <ref role="3cqZAo" node="2erkSmBSDM2" resolve="node" />
                 </node>
               </node>
-              <node concept="3TUQnm" id="L_Hr3kErYy" role="2Oq$k0">
-                <ref role="3TV0OU" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
+              <node concept="35c_gC" id="7Ift4Hg3sy1" role="2Oq$k0">
+                <ref role="35c_gD" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
               </node>
             </node>
           </node>
@@ -996,8 +996,8 @@
                       <ref role="3cqZAo" node="2erkSmBSDLW" resolve="namespace" />
                     </node>
                   </node>
-                  <node concept="3TUQnm" id="L_Hr3kExIS" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
+                  <node concept="35c_gC" id="7Ift4Hg3sxY" role="2Oq$k0">
+                    <ref role="35c_gD" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="7auzIIk9gfG" role="3K4Cdx">
@@ -1073,8 +1073,8 @@
                         <ref role="3cqZAo" node="7auzIIk9ggg" resolve="node" />
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kErYY" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
+                    <node concept="35c_gC" id="7Ift4Hg3sxX" role="2Oq$k0">
+                      <ref role="35c_gD" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
                     </node>
                   </node>
                 </node>
@@ -1096,8 +1096,8 @@
                   <ref role="3cqZAo" node="7auzIIk9ggg" resolve="node" />
                 </node>
               </node>
-              <node concept="3TUQnm" id="L_Hr3kExIe" role="2Oq$k0">
-                <ref role="3TV0OU" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
+              <node concept="35c_gC" id="7Ift4Hg3sy2" role="2Oq$k0">
+                <ref role="35c_gD" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
               </node>
             </node>
           </node>
@@ -1458,8 +1458,8 @@
                     <ref role="3cqZAo" node="7auzIIk9ba0" resolve="targetNode" />
                   </node>
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kErXE" role="2Oq$k0">
-                  <ref role="3TV0OU" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
+                <node concept="35c_gC" id="7Ift4Hg3sxZ" role="2Oq$k0">
+                  <ref role="35c_gD" to="tpck:4H9z7u7GMNF" resolve="ExportScope" />
                 </node>
               </node>
             </node>

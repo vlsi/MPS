@@ -190,6 +190,9 @@
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -215,9 +218,6 @@
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -537,8 +537,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kExIl" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kExIm" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYP" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>
@@ -777,8 +777,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kEs0l" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEs0m" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYQ" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>
@@ -1118,8 +1118,8 @@
                         <ref role="3cqZAo" node="hEwJioU" resolve="contextNode" />
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kEsj6" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+                    <node concept="35c_gC" id="7Ift4Hg3wYN" role="2Oq$k0">
+                      <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
                     </node>
                   </node>
                 </node>
@@ -1155,8 +1155,8 @@
                           <ref role="3cqZAo" node="hEwJioU" resolve="contextNode" />
                         </node>
                       </node>
-                      <node concept="3TUQnm" id="L_Hr3kEtME" role="2Oq$k0">
-                        <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+                      <node concept="35c_gC" id="7Ift4Hg3wYM" role="2Oq$k0">
+                        <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
                       </node>
                     </node>
                   </node>
@@ -1697,8 +1697,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kEw6L" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEw6N" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYR" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>

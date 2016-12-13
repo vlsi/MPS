@@ -372,9 +372,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -2880,8 +2877,8 @@
                 <node concept="2qgKlT" id="L_Hr3kEulp" role="2OqNvi">
                   <ref role="37wK5l" to="tp5o:hOw0ICJ" resolve="getTestBodyName" />
                 </node>
-                <node concept="3TUQnm" id="L_Hr3kEulr" role="2Oq$k0">
-                  <ref role="3TV0OU" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
+                <node concept="35c_gC" id="7Ift4Hg3qkn" role="2Oq$k0">
+                  <ref role="35c_gD" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
                 </node>
               </node>
             </node>
@@ -3822,8 +3819,8 @@
                 <node concept="2qgKlT" id="4K12N3pKbLw" role="2OqNvi">
                   <ref role="37wK5l" to="tp5o:hOw0ICJ" resolve="getTestBodyName" />
                 </node>
-                <node concept="3TUQnm" id="4K12N3pKbLx" role="2Oq$k0">
-                  <ref role="3TV0OU" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
+                <node concept="35c_gC" id="7Ift4Hg3qko" role="2Oq$k0">
+                  <ref role="35c_gD" to="tp5g:hHlH9T6" resolve="NodesTestCase" />
                 </node>
               </node>
             </node>
