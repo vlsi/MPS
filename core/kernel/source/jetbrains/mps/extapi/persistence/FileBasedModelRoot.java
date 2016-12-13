@@ -53,7 +53,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String LOCATION = "location";
   public static final String PATH = "path";
 
-  protected final FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
+  protected FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
   private String myContentRoot; // fixme relative/absolute/macros [typical path issue in the mps project]
   private final Map<String, List<String>> myFilesForKind = new LinkedHashMap<>(); // fixme relative/absolute/macros [typical path issue in the mps project]
   private final List<PathListener> myListeners = new ArrayList<>();
@@ -72,7 +72,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return myContentRoot;
   }
 
-  public final void setContentRoot(String path) {
+  public final void setContentRoot(@NotNull String path) {
     checkNotRegistered();
 
     myContentRoot = path;
@@ -251,10 +251,10 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     if (targetModule == null) {
       throw new CopyNotSupportedException("The module of the target model root is null " + target);
     }
-    if (!isInsideModuleDir()) {
-      throw new CopyNotSupportedException("The model root's content path must be inside module directory " + this + " " + getModule());
-    }
-    ModulePathConverter modulePathConverter = PathConverters.forModules(sourceModule, targetModule);
+
+    ModulePathConverter modulePathConverter =
+        isInsideModuleDir() ? PathConverters.forModules(sourceModule, targetModule) : PathConverters.ID_CONVERTER;
+
     target.setContentRoot(modulePathConverter.source2Target(getContentRoot()));
     for (String kind : getSupportedFileKinds()) {
       List<String> targetFiles = getFiles(kind).stream().map(modulePathConverter::source2Target).collect(Collectors.toList());
