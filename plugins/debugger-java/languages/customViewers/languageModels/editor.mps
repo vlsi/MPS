@@ -62,6 +62,7 @@
       </concept>
       <concept id="1073389214265" name="jetbrains.mps.lang.editor.structure.EditorCellModel" flags="ng" index="3EYTF0">
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
+        <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
         <property id="1073389446425" name="vertical" index="3EZMnw" />
@@ -119,6 +120,7 @@
       </concept>
       <concept id="1068498886294" name="jetbrains.mps.baseLanguage.structure.AssignmentExpression" flags="nn" index="37vLTI" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -421,6 +423,21 @@
             <ref role="1NtTu8" to="tpck:gOOYy9I" resolve="alias" />
           </node>
           <node concept="2iRfu4" id="45l905tF0wh" role="2iSdaV" />
+          <node concept="pkWqt" id="7Ift4HfoUFK" role="pqm2j">
+            <node concept="3clFbS" id="7Ift4HfoUFL" role="2VODD2">
+              <node concept="3clFbF" id="7Ift4HfoW6b" role="3cqZAp">
+                <node concept="2OqwBi" id="7Ift4HfoXmj" role="3clFbG">
+                  <node concept="2OqwBi" id="7Ift4HfoWj8" role="2Oq$k0">
+                    <node concept="pncrf" id="7Ift4HfoW6a" role="2Oq$k0" />
+                    <node concept="3TrcHB" id="7Ift4HfoWJy" role="2OqNvi">
+                      <ref role="3TsBF5" to="tpck:gOOYy9I" resolve="alias" />
+                    </node>
+                  </node>
+                  <node concept="17RvpY" id="7Ift4HfoY6b" role="2OqNvi" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node concept="2iRfu4" id="2q5hg4gckc" role="2iSdaV" />
       </node>
