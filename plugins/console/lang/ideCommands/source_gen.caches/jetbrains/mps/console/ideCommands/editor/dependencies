@@ -190,7 +190,6 @@
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.CommandHolder_Empty_Snippets" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.GlobalStatisticTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelProperties_Editor" />
-    <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelProperties_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelReference_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModelStatisticsTarget_Editor" />
     <classNode dependClassName="jetbrains.mps.console.ideCommands.editor.ModuleProperties_Editor" />
@@ -265,16 +264,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.console.ideCommands.editor.ModelProperties_SubstituteMenu" file="ModelProperties_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
   </dependency>
   <dependency className="jetbrains.mps.console.ideCommands.editor.ModelReference_Actions" file="ModelReference_Actions.java">
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
