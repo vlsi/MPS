@@ -16,20 +16,26 @@
 package org.jetbrains.mps.openapi.ui.persistence;
 
 import com.intellij.openapi.Disposable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.EventListener;
 
-public interface ModelRootEntry extends Disposable {
-  ModelRoot getModelRoot();
+/**
+ * UI entry in the module properties dialog corresponding to the specific model root
+ */
+public interface ModelRootEntry<T extends ModelRoot> extends Disposable {
+  @NotNull T getModelRoot();
 
-  String getDetailsText();
+  @NotNull String getDetailsText();
 
   boolean isValid();
 
-  ModelRootEntryEditor getEditor();
+  @NotNull ModelRootEntryEditor getEditor();
 
-  void addModelRootEntryListener(ModelRootEntryListener listener);
+  void addModelRootEntryListener(@NotNull ModelRootEntryListener listener);
+
+  void removeModelRootEntryListener(@NotNull ModelRootEntryListener listener);
 
   interface ModelRootEntryListener extends EventListener {
     void fireDataChanged();

@@ -32,14 +32,11 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Disposer;
-import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
-import com.intellij.util.Consumer;
 import com.intellij.util.ui.JBUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -52,7 +49,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.ModelAccessHelper;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.FileSystemExtPoint;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -74,12 +70,15 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Point;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+
+import static com.intellij.openapi.vfs.VfsUtilCore.isAncestor;
 
 /**
  * UIComponent which contains all the module roots.
@@ -115,24 +114,19 @@ public class ModelRootContentEntriesEditor implements Disposable {
   }
 
   private AnAction getContentEntryActions() {
-    final List<AddContentEntryAction> list = new ArrayList<AddContentEntryAction>();
+    final List<AddContentEntryAction> list = new ArrayList<>();
     for (String type : myRootEntryPersistence.getModelRootTypes()) {
       list.add(new AddContentEntryAction(type));
     }
 
-    AnAction action = new IconWithTextAction(
+    return new IconWithTextAction(
         PropertiesBundle.message("module.common.roots.add.title"),
         PropertiesBundle.message("module.common.roots.add.tip"),
         Modules.AddContentEntry) {
       @Override
       public void actionPerformed(final AnActionEvent e) {
         if (list.size() == 1) {
-          myRepository.getModelAccess().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              list.get(0).actionPerformed(e);
-            }
-          });
+          myRepository.getModelAccess().runReadAction(() -> list.get(0).actionPerformed(e));
           return;
         }
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
@@ -154,12 +148,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
               @Override
               public PopupStep onChosen(final AddContentEntryAction selectedValue, final boolean finalChoice) {
-                return doFinalStep(new Runnable() {
-                  @Override
-                  public void run() {
-                    selectedValue.actionPerformed(e);
-                  }
-                });
+                return doFinalStep(() -> selectedValue.actionPerformed(e));
               }
 
               @Override
@@ -171,7 +160,6 @@ public class ModelRootContentEntriesEditor implements Disposable {
         popup.show(new RelativePoint(myEditorsListPanel, new Point(0, 0)));
       }
     };
-    return action;
   }
 
   public void initUI() {
@@ -208,10 +196,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
       myEditorsListPanel.add(entry.getComponent());
     }
 
-    if (myModelRootEntries.size() > 0)
-      selectEntry(myModelRootEntries.get(0));
-    else
-      selectEntry(null);
+    selectEntry(myModelRootEntries.size() > 0 ? myModelRootEntries.get(0) : null);
   }
 
   private void selectEntry(ModelRootEntryContainer entry) {
@@ -340,40 +325,40 @@ public class ModelRootContentEntriesEditor implements Disposable {
       for (ModelRootEntryContainer existingEntryContainer : myModelRootEntries) {
         if (entry.getClass().equals(existingEntryContainer.getModelRootEntry().getClass())) {
           FileBasedModelRoot existingModelRoot = (FileBasedModelRoot) existingEntryContainer.getModelRootEntry().getModelRoot();
-          candidatesForIntersection.add(VirtualFileUtils.getProjectVirtualFile(existingModelRoot.getContentRoot()));
+          candidatesForIntersection.add(VirtualFileUtils.getVirtualFile(existingModelRoot.getContentRoot()));
         }
       }
       FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
       fileChooserDescriptor.setTitle("Choose root folder for new model root");
 
-      VirtualFile[] files = null;
-      while (true) {
+      VirtualFile chosen = null;
+      while (chosen == null) {
         VirtualFile contentRootVFile = VirtualFileUtils.getProjectVirtualFile(contentRoot);
-        files = FileChooser.chooseFiles(fileChooserDescriptor, null, null, contentRootVFile);
+        VirtualFile[] files = FileChooser.chooseFiles(fileChooserDescriptor, null, null, contentRootVFile);
         if (files.length == 0) {
-          JOptionPane.showMessageDialog(myMainPanel, "Please choose the content root path");
+          return false;
         } else if (files.length > 0) {
-          assert files.length == 1;
-          VirtualFile chosen = files[0];
-          for (String s : candidatesForIntersection) {
-            if () {
-              JOptionPane.showMessageDialog(myMainPanel, "Can't create new model root " + (files[0].getPath().contains(s) ? "under" : "over") +
-                  " existing model root!\nChoose another folder");
-              files = null;
+          assert files.length == 1; // internal contract of the <code>FileChooser</code>
+          chosen = files[0];
+          for (VirtualFile candidate : candidatesForIntersection) {
+            if (doIntersect(chosen, candidate)) {
+              JOptionPane.showMessageDialog(myMainPanel,
+                  MessageFormat.format("Can''t create new model root, it intersects with the existing model root: '{0}'! \nChoose another folder", candidate));
+              chosen = null;
               break;
             }
           }
         }
       }
 
-      if (files.length != 1) {
-        return false;
-      }
-
-      contentRoot = files[0].getPath();
-
-      ((FileBasedModelRoot) entry.getModelRoot()).setContentRoot(contentRoot);
+      contentRoot = VirtualFileUtils.toIFile(chosen);
+      assert contentRoot != null; // : #toIFile method contract
+      ((FileBasedModelRoot) entry.getModelRoot()).setContentRoot(contentRoot.getPath());
       return true;
+    }
+
+    private boolean doIntersect(VirtualFile chosen, VirtualFile candidate) {
+      return isAncestor(candidate, chosen, true) || isAncestor(candidate, chosen, false);
     }
   }
 

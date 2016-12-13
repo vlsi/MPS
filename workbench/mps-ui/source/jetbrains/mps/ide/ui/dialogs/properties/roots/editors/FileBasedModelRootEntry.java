@@ -32,6 +32,7 @@ import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -63,28 +64,27 @@ import java.util.regex.Matcher;
 
 import static jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEditor.getKindText;
 
-public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryExt {
-  private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
+public final class FileBasedModelRootEntry implements ModelRootEntry<FileBasedModelRoot>, ModelRootEntryExt {
+  private final EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
+  private final FileBasedModelRoot myFileBasedModelRoot;
+  private final Map<JComponent, Color> myComponentToForegroundMap = new HashMap<>();
+
   private FileBasedModelRootEditor myFileBasedModelRootEditor;
-  protected FileBasedModelRoot myFileBasedModelRoot;
 
-  private final Map<JComponent, Color> myComponentToForegroundMap = new HashMap<JComponent, Color>();
-
-  public FileBasedModelRootEntry(ModelRoot modelRoot) {
-    if (!(modelRoot instanceof FileBasedModelRoot)) {
-      throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + FileBasedModelRoot.class.getCanonicalName());
-    }
-    myFileBasedModelRoot = (FileBasedModelRoot)modelRoot;
+  public FileBasedModelRootEntry(@NotNull FileBasedModelRoot modelRoot) {
+    myFileBasedModelRoot = modelRoot;
   }
 
+  @NotNull
   @Override
-  public ModelRoot getModelRoot() {
+  public FileBasedModelRoot getModelRoot() {
     return myFileBasedModelRoot;
   }
 
+  @NotNull
   @Override
   public String getDetailsText() {
-    return null;
+    return "";
   }
 
   @Nullable
@@ -94,9 +94,8 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     for (String kind : myFileBasedModelRoot.getSupportedFileKinds()) {
       Collection<String> files = myFileBasedModelRoot.getFiles(kind);
 
-      if(files.size() > 0){
-        final JComponent kindComponent = createKindGroupComponent(getKindText(kind), files, getKindColor(kind), kind
-        );
+      if (files.isEmpty()) {
+        final JComponent kindComponent = createKindGroupComponent(getKindText(kind), files, getKindColor(kind), kind);
         panel.add(kindComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0, 0, 10, 0), 0, 0));
       }
     }
@@ -139,12 +138,15 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   }
 
   protected JComponent createKindGroupComponent(String title, Collection<String> files, Color foregroundColor, String kind)   {
-    final JBPanel panel = new JBPanel(new GridLayoutManager(files.size(), 3, new JBInsets(1, 17, 0, 2), 0, 1));
+    if (files.isEmpty()) {
+      return new JBPanel<>();
+    }
+    final JBPanel<JBPanel> panel = new JBPanel<>(new GridLayoutManager(files.size(), 3, new JBInsets(1, 17, 0, 2), 0, 1));
     panel.setOpaque(false);
 
     int idx = 0;
-    for(String file : files) {
-      final int verticalPolicy = idx == files.size() - 1? GridConstraints.SIZEPOLICY_CAN_GROW : GridConstraints.SIZEPOLICY_FIXED;
+    for (String file : files) {
+      int verticalPolicy = (idx == files.size() - 1) ? GridConstraints.SIZEPOLICY_CAN_GROW : GridConstraints.SIZEPOLICY_FIXED;
       panel.add(createKindFileComponent(file, foregroundColor), new GridConstraints(idx, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, verticalPolicy, null, null, null));
       int column = 1;
       int colspan = 2;
@@ -220,9 +222,10 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     }
   }
 
+  @NotNull
   @Override
-  public ModelRootEntryEditor getEditor() {
-    if(myFileBasedModelRootEditor == null) {
+  public FileBasedModelRootEditor getEditor() {
+    if (myFileBasedModelRootEditor == null) {
       myFileBasedModelRootEditor = new FileBasedModelRootEditor();
       myFileBasedModelRootEditor.setFileBasedModelRootEntry(this);
     }
@@ -231,8 +234,13 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   }
 
   @Override
-  public void addModelRootEntryListener(ModelRootEntryListener listener) {
+  public void addModelRootEntryListener(@NotNull ModelRootEntryListener listener) {
     myEventDispatcher.addListener(listener);
+  }
+
+  @Override
+  public void removeModelRootEntryListener(@NotNull ModelRootEntryListener listener) {
+    myEventDispatcher.removeListener(listener);
   }
 
   public void updateUI() {
@@ -242,7 +250,6 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   @Override
   public void dispose() {
   }
-
 
   private static class UnderlinedPathLabel extends ResizingWrapper {
     private static final float[] DASH = {0, 2, 0, 2};

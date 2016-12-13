@@ -161,19 +161,22 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
 //      myMainPanel.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
       myDetailsComponent.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
       myBottom.setBackground(SELECTED_HEADER_COLOR);
-      if(myModelRootEntry instanceof ModelRootEntryExt)
-        ((ModelRootEntryExt)myModelRootEntry).resetForegroundColor();
+      if (myModelRootEntry instanceof ModelRootEntryExt) {
+        ((ModelRootEntryExt) myModelRootEntry).resetForegroundColor();
+      }
     }
     else {
       myHeader.setBackground(HEADER_COLOR);
 //      myMainPanel.setBackground(CONTENT_COLOR);
       myDetailsComponent.setBackground(CONTENT_COLOR);
       myBottom.setBackground(HEADER_COLOR);
-      if(myModelRootEntry instanceof ModelRootEntryExt)
-        ((ModelRootEntryExt)myModelRootEntry).setForegroundColor(UNSELECTED_TEXT_COLOR);
+      if (myModelRootEntry instanceof ModelRootEntryExt) {
+        ((ModelRootEntryExt) myModelRootEntry).setForegroundColor(UNSELECTED_TEXT_COLOR);
+      }
     }
-    if(!myModelRootEntry.isValid())
+    if (!myModelRootEntry.isValid()) {
       myHeader.setBackground(Color.PINK);
+    }
   }
 
   public void addContentEntryEditorListener(ContentEntryEditorListener listener) {
@@ -190,12 +193,13 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
 
   public void updateUI() {
     myHeaderLabel.setText(myModelRootEntry.getModelRoot().toString());
-    if(myDetailsLabel != null)
+    if (myDetailsLabel != null) {
       myDetailsLabel.setText(myModelRootEntry.getDetailsText());
-    else {
+    } else {
       myMainPanel.remove(myDetailsComponent);
-      if(myModelRootEntry instanceof ModelRootEntryExt)
-        myDetailsComponent = ((ModelRootEntryExt)myModelRootEntry).getDetailsComponent();
+      if (myModelRootEntry instanceof ModelRootEntryExt) {
+        myDetailsComponent = ((ModelRootEntryExt) myModelRootEntry).getDetailsComponent();
+      }
       myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
       myMainPanel.revalidate();
     }
@@ -205,14 +209,14 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
     JBPanel panel = new JBPanel(new GridBagLayout());
 
     JComponent configurableComponent = null;
-    if(myModelRootEntry instanceof ModelRootEntryExt)
-      configurableComponent = ((ModelRootEntryExt)myModelRootEntry).getDetailsComponent();
-    if(configurableComponent == null) {
+    if (myModelRootEntry instanceof ModelRootEntryExt) {
+      configurableComponent = ((ModelRootEntryExt) myModelRootEntry).getDetailsComponent();
+    }
+    if (configurableComponent == null) {
       myDetailsLabel = new JBLabel(myModelRootEntry.getDetailsText());
       myDetailsLabel.setOpaque(false);
       panel.add(myDetailsLabel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
-    }
-    else {
+    } else {
       panel.add(configurableComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
     }
 

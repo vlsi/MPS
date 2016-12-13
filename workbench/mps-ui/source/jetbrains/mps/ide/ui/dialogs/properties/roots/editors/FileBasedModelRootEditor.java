@@ -47,6 +47,7 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -101,7 +102,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     if (kind.equals(EXCLUDED)) {
       return "Excluded";
     } else if (kind.equals(SOURCE_ROOTS)) {
-      return "Models";
+      return "Sources";
     }
     return null;
   }
@@ -109,7 +110,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected void createEditingActions() {
     myEditingActionsGroup.removeAll();
 
-    FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) myFileBasedModelRootEntry.getModelRoot();
+    FileBasedModelRoot fileBasedModelRoot = myFileBasedModelRootEntry.getModelRoot();
     Collection<String> kinds = fileBasedModelRoot.getSupportedFileKinds();
 
     for (final String kind : kinds) {
@@ -128,6 +129,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected TreeCellRenderer getModelRootEntryCellRenderer() {
     return new FileBasedModelRootEntryTreeCellRender(this);
   }
+
 
   public void setFileBasedModelRootEntry(final FileBasedModelRootEntry fileBasedModelRootEntry) {
     if (myFileBasedModelRootEntry != null && myFileBasedModelRootEntry.equals(fileBasedModelRootEntry)) {
@@ -151,28 +153,23 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myTreePanel.setVisible(true);
     myFileBasedModelRootEntry = fileBasedModelRootEntry;
 
-    String path = ((FileBasedModelRoot) myFileBasedModelRootEntry.getModelRoot()).getContentRoot();
+    String path = myFileBasedModelRootEntry.getModelRoot().getContentRoot();
 
-    VirtualFile file = VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", path)
-    );
+
+    VirtualFile file = path == null ? null : VirtualFileUtils.getVirtualFile(path);
     setRoot(file);
 
-    final VirtualFile file2Runnable = file;
-    final Runnable init = new Runnable() {
-      @Override
-      public void run() {
-        //noinspection ConstantConditions
-        myFileSystemTree.updateTree();
-        myFileSystemTree.select(file2Runnable, null);
+    final Runnable init = () -> {
+      myFileSystemTree.updateTree();
+      if (file != null) {
+        myFileSystemTree.select(file, null);
       }
     };
 
     myFileSystemTree = new FileSystemTreeImpl(null, myDescriptor, myTree, getModelRootEntryCellRenderer(), init, null) {
       @Override
       protected AbstractTreeBuilder createTreeBuilder(JTree tree, DefaultTreeModel treeModel, AbstractTreeStructure treeStructure,
-          Comparator<NodeDescriptor> comparator, FileChooserDescriptor descriptor,
-          final Runnable onInitialized) {
+          Comparator<NodeDescriptor> comparator, FileChooserDescriptor descriptor, final Runnable onInitialized) {
         return new MyFileTreeBuilder(tree, treeModel, treeStructure, comparator, descriptor, onInitialized);
       }
     };
@@ -294,7 +291,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     public void actionPerformed(AnActionEvent e) {
       VirtualFile[] files = FileChooser.chooseFiles(myDescriptor, null, null,
           VirtualFileManager.getInstance().findFileByUrl(
-              VirtualFileManager.constructUrl("file", ((FileBasedModelRoot) myFileBasedModelRootEntry.getModelRoot()).getContentRoot())
+              VirtualFileManager.constructUrl("file", myFileBasedModelRootEntry.getModelRoot().getContentRoot())
           )
       );
 
@@ -303,7 +300,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
       }
 
       FileBasedModelRootEntry fileBasedModelRootEntry = FileBasedModelRootEditor.this.myFileBasedModelRootEntry;
-      ((FileBasedModelRoot) fileBasedModelRootEntry.getModelRoot()).setContentRoot(files[0].getPath());
+      fileBasedModelRootEntry.getModelRoot().setContentRoot(files[0].getPath());
       FileBasedModelRootEditor.this.myFileBasedModelRootEntry = null;
       FileBasedModelRootEditor.this.setFileBasedModelRootEntry(fileBasedModelRootEntry);
       FileBasedModelRootEditor.this.myFileBasedModelRootEntry.updateUI();

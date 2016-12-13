@@ -15,8 +15,9 @@
  */
 package org.jetbrains.mps.openapi.ui.persistence;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public interface ModelRootEntryFactory {
-  ModelRootEntry getModelRootEntry(ModelRoot modelRoot);
+public interface ModelRootEntryFactory<T extends ModelRoot> {
+  @NotNull ModelRootEntry<T> getModelRootEntry(@NotNull T modelRoot);
 }

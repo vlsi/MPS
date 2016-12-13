@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
-public class FileBasedModelRootEntryFactory implements ModelRootEntryFactory {
+public final class FileBasedModelRootEntryFactory implements ModelRootEntryFactory<FileBasedModelRoot> {
+  @NotNull
   @Override
-  public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
+  public ModelRootEntry<FileBasedModelRoot> getModelRootEntry(@NotNull FileBasedModelRoot modelRoot) {
     return new FileBasedModelRootEntry(modelRoot);
   }
 }

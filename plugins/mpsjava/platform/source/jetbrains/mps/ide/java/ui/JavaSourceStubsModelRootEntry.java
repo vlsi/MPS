@@ -16,11 +16,76 @@
 package jetbrains.mps.ide.java.ui;
 
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntry;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt;
 
-public class JavaSourceStubsModelRootEntry extends FileBasedModelRootEntry {
+import javax.swing.JComponent;
+import java.awt.Color;
 
-  public JavaSourceStubsModelRootEntry(ModelRoot root) {
-    super(root);
+public final class JavaSourceStubsModelRootEntry implements ModelRootEntry<JavaSourceStubModelRoot>, ModelRootEntryExt {
+  @NotNull private final FileBasedModelRootEntry myModelRootData;
+  @NotNull private final JavaSourceStubModelRoot myRoot;
+
+  public JavaSourceStubsModelRootEntry(@NotNull JavaSourceStubModelRoot root) {
+    myModelRootData = new FileBasedModelRootEntry(root);
+    myRoot = root;
+  }
+
+  @Override
+  @NotNull
+  public ModelRootEntryEditor getEditor() {
+    return myModelRootData.getEditor();
+  }
+
+  @Override
+  @NotNull
+  public JavaSourceStubModelRoot getModelRoot() {
+    return myRoot;
+  }
+
+  @NotNull
+  @Override
+  public String getDetailsText() {
+    return myModelRootData.getDetailsText();
+  }
+
+  @Override
+  public boolean isValid() {
+    return myModelRootData.isValid();
+  }
+
+  @Override
+  public void addModelRootEntryListener(@NotNull ModelRootEntryListener listener) {
+    myModelRootData.addModelRootEntryListener(listener);
+  }
+
+  @Override
+  public void removeModelRootEntryListener(@NotNull ModelRootEntryListener listener) {
+    myModelRootData.removeModelRootEntryListener(listener);
+  }
+
+  @Override
+  public void dispose() {
+    myModelRootData.dispose();
+  }
+
+  @Nullable
+  @Override
+  public JComponent getDetailsComponent() {
+    return myModelRootData.getDetailsComponent();
+  }
+
+  @Override
+  public void setForegroundColor(Color foregroundColor) {
+    myModelRootData.setForegroundColor(foregroundColor);
+  }
+
+  @Override
+  public void resetForegroundColor() {
+    myModelRootData.resetForegroundColor();
   }
 }

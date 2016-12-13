@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.ide.java.ui;
 
+import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory;
 
-public class JavaClassStubsModelRootEntryFactory implements ModelRootEntryFactory {
+public final class JavaClassStubsModelRootEntryFactory implements ModelRootEntryFactory<JavaClassStubsModelRoot> {
+  @NotNull
   @Override
-  public ModelRootEntry getModelRootEntry(ModelRoot modelRoot) {
+  public ModelRootEntry<JavaClassStubsModelRoot> getModelRootEntry(@NotNull JavaClassStubsModelRoot modelRoot) {
     return new JavaClassStubsModelRootEntry(modelRoot);
   }
 }
