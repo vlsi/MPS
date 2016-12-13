@@ -129,6 +129,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor mySubstituteMenuPart__BehaviorDescriptor = new SubstituteMenuPart__BehaviorDescriptor();
   private final BHDescriptor mySubstituteMenuPart_Group__BehaviorDescriptor = new SubstituteMenuPart_Group__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_SubstituteMenu_Condition__BehaviorDescriptor = new QueryFunction_SubstituteMenu_Condition__BehaviorDescriptor();
+  private final BHDescriptor mySubstituteMenuPart_AddConcept__BehaviorDescriptor = new SubstituteMenuPart_AddConcept__BehaviorDescriptor();
   private final BHDescriptor mySubstituteMenuVariableReference__BehaviorDescriptor = new SubstituteMenuVariableReference__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor = new QueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor = new QueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor();
@@ -170,8 +171,10 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myStyleClass__BehaviorDescriptor = new StyleClass__BehaviorDescriptor();
   private final BHDescriptor myCellActionMap_CanExecuteFunction__BehaviorDescriptor = new CellActionMap_CanExecuteFunction__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_Style__BehaviorDescriptor = new QueryFunction_Style__BehaviorDescriptor();
+  private final BHDescriptor myAbstractOutputConceptContainerSubstituteMenuPart__BehaviorDescriptor = new AbstractOutputConceptContainerSubstituteMenuPart__BehaviorDescriptor();
   private final BHDescriptor mySelectInEditorOperation__BehaviorDescriptor = new SelectInEditorOperation__BehaviorDescriptor();
   private final BHDescriptor myCellModel_URL__BehaviorDescriptor = new CellModel_URL__BehaviorDescriptor();
+  private final BHDescriptor myIMenuPartWithOutputConcept__BehaviorDescriptor = new IMenuPartWithOutputConcept__BehaviorDescriptor();
   private final BHDescriptor myIIncludeSubstituteMenuPart__BehaviorDescriptor = new IIncludeSubstituteMenuPart__BehaviorDescriptor();
   private final BHDescriptor myStyleAttributeDeclaration__BehaviorDescriptor = new StyleAttributeDeclaration__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_AttributeStyleParameter__BehaviorDescriptor = new QueryFunction_AttributeStyleParameter__BehaviorDescriptor();
@@ -194,6 +197,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myQueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor = new QueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_TransformationMenu_Condition__BehaviorDescriptor = new QueryFunction_TransformationMenu_Condition__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_SubstituteMenuPart__BehaviorDescriptor = new QueryFunction_SubstituteMenuPart__BehaviorDescriptor();
+  private final BHDescriptor myAbstractOutputConceptContainerTransformationMenuPart__BehaviorDescriptor = new AbstractOutputConceptContainerTransformationMenuPart__BehaviorDescriptor();
   private final BHDescriptor mySubstituteMenuPart_Wrapper__BehaviorDescriptor = new SubstituteMenuPart_Wrapper__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor = new QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor();
   private final BHDescriptor myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor = new QueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor();
@@ -212,6 +216,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   private final BHDescriptor myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor = new IndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor();
   private final BHDescriptor myTransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor = new TransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor();
+  private final BHDescriptor myIOutputConceptSubstituteMenuPart__BehaviorDescriptor = new IOutputConceptSubstituteMenuPart__BehaviorDescriptor();
   private final BHDescriptor mySubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor = new SubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor();
   private final BHDescriptor myQueryFunction_SubstituteMenu_Concept__BehaviorDescriptor = new QueryFunction_SubstituteMenu_Concept__BehaviorDescriptor();
   private final BHDescriptor myScriptKindClassItem__BehaviorDescriptor = new ScriptKindClassItem__BehaviorDescriptor();
@@ -239,7 +244,7 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
   public BHDescriptor getDescriptor(@NotNull SAbstractConcept concept) {
     {
       SAbstractConcept cncpt = concept;
-      Integer preIndex = indices_846f5o_a0oi.get(cncpt);
+      Integer preIndex = indices_846f5o_a0ti.get(cncpt);
       int switchIndex = (preIndex == null ? -1 : preIndex);
       switch (switchIndex) {
         case 0:
@@ -249,1090 +254,1115 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
           break;
         case 1:
           if (true) {
-            return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
+            return myAbstractOutputConceptContainerSubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 2:
           if (true) {
-            return myAbstractStyledTextOperation__BehaviorDescriptor;
+            return myAbstractOutputConceptContainerTransformationMenuPart__BehaviorDescriptor;
           }
           break;
         case 3:
           if (true) {
-            return myAppendTextOperation__BehaviorDescriptor;
+            return myAbstractPaddingStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 4:
           if (true) {
-            return myAutoDeletableStyleClassItem__BehaviorDescriptor;
+            return myAbstractStyledTextOperation__BehaviorDescriptor;
           }
           break;
         case 5:
           if (true) {
-            return myBaseEditorComponent__BehaviorDescriptor;
+            return myAppendTextOperation__BehaviorDescriptor;
           }
           break;
         case 6:
           if (true) {
-            return myBaseLineCell__BehaviorDescriptor;
+            return myAutoDeletableStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 7:
           if (true) {
-            return myBooleanStyleSheetItem__BehaviorDescriptor;
+            return myBaseEditorComponent__BehaviorDescriptor;
           }
           break;
         case 8:
           if (true) {
-            return myCellActionMapDeclaration__BehaviorDescriptor;
+            return myBaseLineCell__BehaviorDescriptor;
           }
           break;
         case 9:
           if (true) {
-            return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
+            return myBooleanStyleSheetItem__BehaviorDescriptor;
           }
           break;
         case 10:
           if (true) {
-            return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
+            return myCellActionMapDeclaration__BehaviorDescriptor;
           }
           break;
         case 11:
           if (true) {
-            return myCellKeyMapDeclaration__BehaviorDescriptor;
+            return myCellActionMap_CanExecuteFunction__BehaviorDescriptor;
           }
           break;
         case 12:
           if (true) {
-            return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
+            return myCellActionMap_ExecuteFunction__BehaviorDescriptor;
           }
           break;
         case 13:
           if (true) {
-            return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
+            return myCellKeyMapDeclaration__BehaviorDescriptor;
           }
           break;
         case 14:
           if (true) {
-            return myCellMenuComponent__BehaviorDescriptor;
+            return myCellKeyMap_AbstractFunction__BehaviorDescriptor;
           }
           break;
         case 15:
           if (true) {
-            return myCellMenuComponentFeature_Link__BehaviorDescriptor;
+            return myCellKeyMap_IsApplicableFunction__BehaviorDescriptor;
           }
           break;
         case 16:
           if (true) {
-            return myCellMenuComponentFeature_Property__BehaviorDescriptor;
+            return myCellMenuComponent__BehaviorDescriptor;
           }
           break;
         case 17:
           if (true) {
-            return myCellMenuDescriptor__BehaviorDescriptor;
+            return myCellMenuComponentFeature_Link__BehaviorDescriptor;
           }
           break;
         case 18:
           if (true) {
-            return myCellMenuPart_Abstract__BehaviorDescriptor;
+            return myCellMenuComponentFeature_Property__BehaviorDescriptor;
           }
           break;
         case 19:
           if (true) {
-            return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
+            return myCellMenuDescriptor__BehaviorDescriptor;
           }
           break;
         case 20:
           if (true) {
-            return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
+            return myCellMenuPart_Abstract__BehaviorDescriptor;
           }
           break;
         case 21:
           if (true) {
-            return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
+            return myCellMenuPart_AbstractGroup_DescriptionText__BehaviorDescriptor;
           }
           break;
         case 22:
           if (true) {
-            return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
+            return myCellMenuPart_AbstractGroup_MatchingText__BehaviorDescriptor;
           }
           break;
         case 23:
           if (true) {
-            return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
+            return myCellMenuPart_AbstractGroup_Query__BehaviorDescriptor;
           }
           break;
         case 24:
           if (true) {
-            return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
+            return myCellMenuPart_Generic_Group_Handler__BehaviorDescriptor;
           }
           break;
         case 25:
           if (true) {
-            return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
+            return myCellMenuPart_Generic_Item_Handler__BehaviorDescriptor;
           }
           break;
         case 26:
           if (true) {
-            return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
+            return myCellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor;
           }
           break;
         case 27:
           if (true) {
-            return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
+            return myCellMenuPart_PropertyValues_GetValues__BehaviorDescriptor;
           }
           break;
         case 28:
           if (true) {
-            return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor;
           }
           break;
         case 29:
           if (true) {
-            return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor;
           }
           break;
         case 30:
           if (true) {
-            return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor;
           }
           break;
         case 31:
           if (true) {
-            return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceChild_Item_Create__BehaviorDescriptor;
           }
           break;
         case 32:
           if (true) {
-            return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceChild_defaultConceptOfChild__BehaviorDescriptor;
           }
           break;
         case 33:
           if (true) {
-            return myCellModel_Alternation__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceNode_CustomNodeConcept__BehaviorDescriptor;
           }
           break;
         case 34:
           if (true) {
-            return myCellModel_AttributedLinkCell__BehaviorDescriptor;
+            return myCellMenuPart_ReplaceNode_Group_Create__BehaviorDescriptor;
           }
           break;
         case 35:
           if (true) {
-            return myCellModel_AttributedNodeCell__BehaviorDescriptor;
+            return myCellModel_Alternation__BehaviorDescriptor;
           }
           break;
         case 36:
           if (true) {
-            return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
+            return myCellModel_AttributedLinkCell__BehaviorDescriptor;
           }
           break;
         case 37:
           if (true) {
-            return myCellModel_Block__BehaviorDescriptor;
+            return myCellModel_AttributedNodeCell__BehaviorDescriptor;
           }
           break;
         case 38:
           if (true) {
-            return myCellModel_BlockEnd__BehaviorDescriptor;
+            return myCellModel_AttributedPropertyCell__BehaviorDescriptor;
           }
           break;
         case 39:
           if (true) {
-            return myCellModel_BlockStart__BehaviorDescriptor;
+            return myCellModel_Block__BehaviorDescriptor;
           }
           break;
         case 40:
           if (true) {
-            return myCellModel_Collection__BehaviorDescriptor;
+            return myCellModel_BlockEnd__BehaviorDescriptor;
           }
           break;
         case 41:
           if (true) {
-            return myCellModel_Component__BehaviorDescriptor;
+            return myCellModel_BlockStart__BehaviorDescriptor;
           }
           break;
         case 42:
           if (true) {
-            return myCellModel_Constant__BehaviorDescriptor;
+            return myCellModel_Collection__BehaviorDescriptor;
           }
           break;
         case 43:
           if (true) {
-            return myCellModel_Custom__BehaviorDescriptor;
+            return myCellModel_Component__BehaviorDescriptor;
           }
           break;
         case 44:
           if (true) {
-            return myCellModel_Empty__BehaviorDescriptor;
+            return myCellModel_Constant__BehaviorDescriptor;
           }
           break;
         case 45:
           if (true) {
-            return myCellModel_Error__BehaviorDescriptor;
+            return myCellModel_Custom__BehaviorDescriptor;
           }
           break;
         case 46:
           if (true) {
-            return myCellModel_Indent__BehaviorDescriptor;
+            return myCellModel_Empty__BehaviorDescriptor;
           }
           break;
         case 47:
           if (true) {
-            return myCellModel_ListWithRole__BehaviorDescriptor;
+            return myCellModel_Error__BehaviorDescriptor;
           }
           break;
         case 48:
           if (true) {
-            return myCellModel_ModelAccess__BehaviorDescriptor;
+            return myCellModel_Indent__BehaviorDescriptor;
           }
           break;
         case 49:
           if (true) {
-            return myCellModel_NextEditor__BehaviorDescriptor;
+            return myCellModel_ListWithRole__BehaviorDescriptor;
           }
           break;
         case 50:
           if (true) {
-            return myCellModel_NonEmptyProperty__BehaviorDescriptor;
+            return myCellModel_ModelAccess__BehaviorDescriptor;
           }
           break;
         case 51:
           if (true) {
-            return myCellModel_Property__BehaviorDescriptor;
+            return myCellModel_NextEditor__BehaviorDescriptor;
           }
           break;
         case 52:
           if (true) {
-            return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
+            return myCellModel_NonEmptyProperty__BehaviorDescriptor;
           }
           break;
         case 53:
           if (true) {
-            return myCellModel_RefCell__BehaviorDescriptor;
+            return myCellModel_Property__BehaviorDescriptor;
           }
           break;
         case 54:
           if (true) {
-            return myCellModel_RefNode__BehaviorDescriptor;
+            return myCellModel_ReadOnlyModelAccessor__BehaviorDescriptor;
           }
           break;
         case 55:
           if (true) {
-            return myCellModel_RefNodeList__BehaviorDescriptor;
+            return myCellModel_RefCell__BehaviorDescriptor;
           }
           break;
         case 56:
           if (true) {
-            return myCellModel_TransactionalProperty__BehaviorDescriptor;
+            return myCellModel_RefNode__BehaviorDescriptor;
           }
           break;
         case 57:
           if (true) {
-            return myCellModel_URL__BehaviorDescriptor;
+            return myCellModel_RefNodeList__BehaviorDescriptor;
           }
           break;
         case 58:
           if (true) {
-            return myCellModel_WithRole__BehaviorDescriptor;
+            return myCellModel_TransactionalProperty__BehaviorDescriptor;
           }
           break;
         case 59:
           if (true) {
-            return myConceptEditorDeclaration__BehaviorDescriptor;
+            return myCellModel_URL__BehaviorDescriptor;
           }
           break;
         case 60:
           if (true) {
-            return myConceptEditorHintDeclaration__BehaviorDescriptor;
+            return myCellModel_WithRole__BehaviorDescriptor;
           }
           break;
         case 61:
           if (true) {
-            return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
+            return myConceptEditorDeclaration__BehaviorDescriptor;
           }
           break;
         case 62:
           if (true) {
-            return myConceptFunctionParameter_model__BehaviorDescriptor;
+            return myConceptEditorHintDeclaration__BehaviorDescriptor;
           }
           break;
         case 63:
           if (true) {
-            return myConceptFunctionParameter_oldText__BehaviorDescriptor;
+            return myConceptFunctionParameter_StyledText__BehaviorDescriptor;
           }
           break;
         case 64:
           if (true) {
-            return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
+            return myConceptFunctionParameter_model__BehaviorDescriptor;
           }
           break;
         case 65:
           if (true) {
-            return myConceptFunctionParameter_text__BehaviorDescriptor;
+            return myConceptFunctionParameter_oldText__BehaviorDescriptor;
           }
           break;
         case 66:
           if (true) {
-            return myContextVariable__BehaviorDescriptor;
+            return myConceptFunctionParameter_parameterObject__BehaviorDescriptor;
           }
           break;
         case 67:
           if (true) {
-            return myContextVariable_EditorContext__BehaviorDescriptor;
+            return myConceptFunctionParameter_text__BehaviorDescriptor;
           }
           break;
         case 68:
           if (true) {
-            return myContextVariable_Node__BehaviorDescriptor;
+            return myContextVariable__BehaviorDescriptor;
           }
           break;
         case 69:
           if (true) {
-            return myDefaultBaseLine__BehaviorDescriptor;
+            return myContextVariable_EditorContext__BehaviorDescriptor;
           }
           break;
         case 70:
           if (true) {
-            return myDrawBorderStyleClassItem__BehaviorDescriptor;
+            return myContextVariable_Node__BehaviorDescriptor;
           }
           break;
         case 71:
           if (true) {
-            return myDrawBracketsStyleClassItem__BehaviorDescriptor;
+            return myDefaultBaseLine__BehaviorDescriptor;
           }
           break;
         case 72:
           if (true) {
-            return myEditableStyleClassItem__BehaviorDescriptor;
+            return myDrawBorderStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 73:
           if (true) {
-            return myEditorCellModel__BehaviorDescriptor;
+            return myDrawBracketsStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 74:
           if (true) {
-            return myEditorComponentDeclaration__BehaviorDescriptor;
+            return myEditableStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 75:
           if (true) {
-            return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
+            return myEditorCellModel__BehaviorDescriptor;
           }
           break;
         case 76:
           if (true) {
-            return myForegroundColorStyleClassItem__BehaviorDescriptor;
+            return myEditorComponentDeclaration__BehaviorDescriptor;
           }
           break;
         case 77:
           if (true) {
-            return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
+            return myFirstPositionAllowedStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 78:
           if (true) {
-            return myIContextVariableProvider__BehaviorDescriptor;
+            return myForegroundColorStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 79:
           if (true) {
-            return myIExtensibleSubstituteMenuPart__BehaviorDescriptor;
+            return myForegroundNullColorStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 80:
           if (true) {
-            return myIExtensibleTransformationMenuPart__BehaviorDescriptor;
+            return myIContextVariableProvider__BehaviorDescriptor;
           }
           break;
         case 81:
           if (true) {
-            return myIIncludeSubstituteMenuPart__BehaviorDescriptor;
+            return myIExtensibleSubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 82:
           if (true) {
-            return myIMenu__BehaviorDescriptor;
+            return myIExtensibleTransformationMenuPart__BehaviorDescriptor;
           }
           break;
         case 83:
           if (true) {
-            return myIMenuPartParameterized__BehaviorDescriptor;
+            return myIIncludeSubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 84:
           if (true) {
-            return myIMenuReference__BehaviorDescriptor;
+            return myIMenu__BehaviorDescriptor;
           }
           break;
         case 85:
           if (true) {
-            return myIMenuReference_Default__BehaviorDescriptor;
+            return myIMenuPartParameterized__BehaviorDescriptor;
           }
           break;
         case 86:
           if (true) {
-            return myIMenuReference_Named__BehaviorDescriptor;
+            return myIMenuPartWithOutputConcept__BehaviorDescriptor;
           }
           break;
         case 87:
           if (true) {
-            return myIMenu_Concept__BehaviorDescriptor;
+            return myIMenuReference__BehaviorDescriptor;
           }
           break;
         case 88:
           if (true) {
-            return myIMenu_Contribution__BehaviorDescriptor;
+            return myIMenuReference_Default__BehaviorDescriptor;
           }
           break;
         case 89:
           if (true) {
-            return myINodeProvider__BehaviorDescriptor;
+            return myIMenuReference_Named__BehaviorDescriptor;
           }
           break;
         case 90:
           if (true) {
-            return myIParameterizableMenuPart__BehaviorDescriptor;
+            return myIMenu_Concept__BehaviorDescriptor;
           }
           break;
         case 91:
           if (true) {
-            return myIQueryFunction_Color__BehaviorDescriptor;
+            return myIMenu_Contribution__BehaviorDescriptor;
           }
           break;
         case 92:
           if (true) {
-            return myIStyleContainer__BehaviorDescriptor;
+            return myINodeProvider__BehaviorDescriptor;
           }
           break;
         case 93:
           if (true) {
-            return myIStyleSheetMember__BehaviorDescriptor;
+            return myIOutputConceptSubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 94:
           if (true) {
-            return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
+            return myIParameterizableMenuPart__BehaviorDescriptor;
           }
           break;
         case 95:
           if (true) {
-            return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
+            return myIQueryFunction_Color__BehaviorDescriptor;
           }
           break;
         case 96:
           if (true) {
-            return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
+            return myIStyleContainer__BehaviorDescriptor;
           }
           break;
         case 97:
           if (true) {
-            return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
+            return myIStyleSheetMember__BehaviorDescriptor;
           }
           break;
         case 98:
           if (true) {
-            return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
+            return myIndentLayoutIndentAnchorStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 99:
           if (true) {
-            return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
+            return myIndentLayoutIndentStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 100:
           if (true) {
-            return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
+            return myIndentLayoutNewLineChildrenStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 101:
           if (true) {
-            return myInlineEditorComponent__BehaviorDescriptor;
+            return myIndentLayoutNewLineStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 102:
           if (true) {
-            return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
+            return myIndentLayoutNoWrapClassItem__BehaviorDescriptor;
           }
           break;
         case 103:
           if (true) {
-            return myPaddingBottomStyleClassItem__BehaviorDescriptor;
+            return myIndentLayoutOnNewLineStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 104:
           if (true) {
-            return myPaddingLeftStyleClassItem__BehaviorDescriptor;
+            return myIndentLayoutWrapAnchorStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 105:
           if (true) {
-            return myPaddingRightStyleClassItem__BehaviorDescriptor;
+            return myInlineEditorComponent__BehaviorDescriptor;
           }
           break;
         case 106:
           if (true) {
-            return myPaddingTopStyleClassItem__BehaviorDescriptor;
+            return myLastPositionAllowedStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 107:
           if (true) {
-            return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
+            return myPaddingBottomStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 108:
           if (true) {
-            return myPunctuationRightStyleClassItem__BehaviorDescriptor;
+            return myPaddingLeftStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 109:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Concept__BehaviorDescriptor;
+            return myPaddingRightStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 110:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDescriptor;
+            return myPaddingTopStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 111:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_CurrentTargetNode__BehaviorDescriptor;
+            return myPunctuationLeftStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 112:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Link__BehaviorDescriptor;
+            return myPunctuationRightStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 113:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_Concept__BehaviorDescriptor;
           }
           break;
         case 114:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_ParentNode__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_CreatedNode__BehaviorDescriptor;
           }
           break;
         case 115:
           if (true) {
-            return myQueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_CurrentTargetNode__BehaviorDescriptor;
           }
           break;
         case 116:
           if (true) {
-            return myQueryFunctionParameter_TransformationMenu_CreatedNode__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_Link__BehaviorDescriptor;
           }
           break;
         case 117:
           if (true) {
-            return myQueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_NodeToWrap__BehaviorDescriptor;
           }
           break;
         case 118:
           if (true) {
-            return myQueryFunctionParameter_parameterObject__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_ParentNode__BehaviorDescriptor;
           }
           break;
         case 119:
           if (true) {
-            return myQueryFunctionParameter_pattern__BehaviorDescriptor;
+            return myQueryFunctionParameter_SubstituteMenu_Strictly__BehaviorDescriptor;
           }
           break;
         case 120:
           if (true) {
-            return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
+            return myQueryFunctionParameter_TransformationMenu_CreatedNode__BehaviorDescriptor;
           }
           break;
         case 121:
           if (true) {
-            return myQueryFunction_Boolean__BehaviorDescriptor;
+            return myQueryFunctionParameter_TransformationMenu_targetNode__BehaviorDescriptor;
           }
           break;
         case 122:
           if (true) {
-            return myQueryFunction_CellProvider__BehaviorDescriptor;
+            return myQueryFunctionParameter_parameterObject__BehaviorDescriptor;
           }
           break;
         case 123:
           if (true) {
-            return myQueryFunction_Color__BehaviorDescriptor;
+            return myQueryFunctionParameter_pattern__BehaviorDescriptor;
           }
           break;
         case 124:
           if (true) {
-            return myQueryFunction_ColorComposit__BehaviorDescriptor;
+            return myQueryFunction_AttributeStyleParameter__BehaviorDescriptor;
           }
           break;
         case 125:
           if (true) {
-            return myQueryFunction_FontStyle__BehaviorDescriptor;
+            return myQueryFunction_Boolean__BehaviorDescriptor;
           }
           break;
         case 126:
           if (true) {
-            return myQueryFunction_ImagePath__BehaviorDescriptor;
+            return myQueryFunction_CellProvider__BehaviorDescriptor;
           }
           break;
         case 127:
           if (true) {
-            return myQueryFunction_Integer__BehaviorDescriptor;
+            return myQueryFunction_Color__BehaviorDescriptor;
           }
           break;
         case 128:
           if (true) {
-            return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
+            return myQueryFunction_ColorComposit__BehaviorDescriptor;
           }
           break;
         case 129:
           if (true) {
-            return myQueryFunction_JComponent__BehaviorDescriptor;
+            return myQueryFunction_FontStyle__BehaviorDescriptor;
           }
           break;
         case 130:
           if (true) {
-            return myQueryFunction_Menu__BehaviorDescriptor;
+            return myQueryFunction_ImagePath__BehaviorDescriptor;
           }
           break;
         case 131:
           if (true) {
-            return myQueryFunction_MethodPresentation__BehaviorDescriptor;
+            return myQueryFunction_Integer__BehaviorDescriptor;
           }
           break;
         case 132:
           if (true) {
-            return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
+            return myQueryFunction_IsMethodCurrent__BehaviorDescriptor;
           }
           break;
         case 133:
           if (true) {
-            return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
+            return myQueryFunction_JComponent__BehaviorDescriptor;
           }
           break;
         case 134:
           if (true) {
-            return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
+            return myQueryFunction_Menu__BehaviorDescriptor;
           }
           break;
         case 135:
           if (true) {
-            return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
+            return myQueryFunction_MethodPresentation__BehaviorDescriptor;
           }
           break;
         case 136:
           if (true) {
-            return myQueryFunction_NodeCondition__BehaviorDescriptor;
+            return myQueryFunction_ModelAccess_Getter__BehaviorDescriptor;
           }
           break;
         case 137:
           if (true) {
-            return myQueryFunction_NodeFactory__BehaviorDescriptor;
+            return myQueryFunction_ModelAccess_Setter__BehaviorDescriptor;
           }
           break;
         case 138:
           if (true) {
-            return myQueryFunction_NodeListFilter__BehaviorDescriptor;
+            return myQueryFunction_ModelAccess_Validator__BehaviorDescriptor;
           }
           break;
         case 139:
           if (true) {
-            return myQueryFunction_ParametersList__BehaviorDescriptor;
+            return myQueryFunction_ModuleAndPath__BehaviorDescriptor;
           }
           break;
         case 140:
           if (true) {
-            return myQueryFunction_SNode__BehaviorDescriptor;
+            return myQueryFunction_NodeCondition__BehaviorDescriptor;
           }
           break;
         case 141:
           if (true) {
-            return myQueryFunction_SeparatorText__BehaviorDescriptor;
+            return myQueryFunction_NodeFactory__BehaviorDescriptor;
           }
           break;
         case 142:
           if (true) {
-            return myQueryFunction_String__BehaviorDescriptor;
+            return myQueryFunction_NodeListFilter__BehaviorDescriptor;
           }
           break;
         case 143:
           if (true) {
-            return myQueryFunction_Style__BehaviorDescriptor;
+            return myQueryFunction_ParametersList__BehaviorDescriptor;
           }
           break;
         case 144:
           if (true) {
-            return myQueryFunction_StyleParameter__BehaviorDescriptor;
+            return myQueryFunction_SNode__BehaviorDescriptor;
           }
           break;
         case 145:
           if (true) {
-            return myQueryFunction_SubstituteMenu__BehaviorDescriptor;
+            return myQueryFunction_SeparatorText__BehaviorDescriptor;
           }
           break;
         case 146:
           if (true) {
-            return myQueryFunction_SubstituteMenuPart__BehaviorDescriptor;
+            return myQueryFunction_String__BehaviorDescriptor;
           }
           break;
         case 147:
           if (true) {
-            return myQueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor;
+            return myQueryFunction_Style__BehaviorDescriptor;
           }
           break;
         case 148:
           if (true) {
-            return myQueryFunction_SubstituteMenu_ActionType__BehaviorDescriptor;
+            return myQueryFunction_StyleParameter__BehaviorDescriptor;
           }
           break;
         case 149:
           if (true) {
-            return myQueryFunction_SubstituteMenu_CanSubstitute__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu__BehaviorDescriptor;
           }
           break;
         case 150:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Concept__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 151:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Concepts__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenuVariable_Initializer__BehaviorDescriptor;
           }
           break;
         case 152:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Condition__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_ActionType__BehaviorDescriptor;
           }
           break;
         case 153:
           if (true) {
-            return myQueryFunction_SubstituteMenu_FilterConcepts__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_CanSubstitute__BehaviorDescriptor;
           }
           break;
         case 154:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Icon__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Concept__BehaviorDescriptor;
           }
           break;
         case 155:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Parameter__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Concepts__BehaviorDescriptor;
           }
           break;
         case 156:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Select__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Condition__BehaviorDescriptor;
           }
           break;
         case 157:
           if (true) {
-            return myQueryFunction_SubstituteMenu_Substitute__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_FilterConcepts__BehaviorDescriptor;
           }
           break;
         case 158:
           if (true) {
-            return myQueryFunction_SubstituteMenu_SubstituteString__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Icon__BehaviorDescriptor;
           }
           break;
         case 159:
           if (true) {
-            return myQueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Parameter__BehaviorDescriptor;
           }
           break;
         case 160:
           if (true) {
-            return myQueryFunction_TransformationMenu__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Select__BehaviorDescriptor;
           }
           break;
         case 161:
           if (true) {
-            return myQueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_Substitute__BehaviorDescriptor;
           }
           break;
         case 162:
           if (true) {
-            return myQueryFunction_TransformationMenu_ActionLabelText__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_SubstituteString__BehaviorDescriptor;
           }
           break;
         case 163:
           if (true) {
-            return myQueryFunction_TransformationMenu_Condition__BehaviorDescriptor;
+            return myQueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescriptor;
           }
           break;
         case 164:
           if (true) {
-            return myQueryFunction_TransformationMenu_DescriptionText__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu__BehaviorDescriptor;
           }
           break;
         case 165:
           if (true) {
-            return myQueryFunction_TransformationMenu_Execute__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenuVariable_Initializer__BehaviorDescriptor;
           }
           break;
         case 166:
           if (true) {
-            return myQueryFunction_TransformationMenu_Extensible__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_ActionLabelText__BehaviorDescriptor;
           }
           break;
         case 167:
           if (true) {
-            return myQueryFunction_TransformationMenu_Icon__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Condition__BehaviorDescriptor;
           }
           break;
         case 168:
           if (true) {
-            return myQueryFunction_TransformationMenu_Node__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_DescriptionText__BehaviorDescriptor;
           }
           break;
         case 169:
           if (true) {
-            return myQueryFunction_TransformationMenu_Parameter__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Execute__BehaviorDescriptor;
           }
           break;
         case 170:
           if (true) {
-            return myQueryFunction_TransformationMenu_TargetNode__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Extensible__BehaviorDescriptor;
           }
           break;
         case 171:
           if (true) {
-            return myQueryFunction_TransformationMenu_Text__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Icon__BehaviorDescriptor;
           }
           break;
         case 172:
           if (true) {
-            return myQueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Node__BehaviorDescriptor;
           }
           break;
         case 173:
           if (true) {
-            return myQueryFunction_Underlined__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Parameter__BehaviorDescriptor;
           }
           break;
         case 174:
           if (true) {
-            return myQueryHintsSpecification__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_TargetNode__BehaviorDescriptor;
           }
           break;
         case 175:
           if (true) {
-            return myRGBColor__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_Text__BehaviorDescriptor;
           }
           break;
         case 176:
           if (true) {
-            return myReadOnlyStyleClassItem__BehaviorDescriptor;
+            return myQueryFunction_TransformationMenu_WrapperHandler__BehaviorDescriptor;
           }
           break;
         case 177:
           if (true) {
-            return myScriptKindClassItem__BehaviorDescriptor;
+            return myQueryFunction_Underlined__BehaviorDescriptor;
           }
           break;
         case 178:
           if (true) {
-            return mySelectInEditorOperation__BehaviorDescriptor;
+            return myQueryHintsSpecification__BehaviorDescriptor;
           }
           break;
         case 179:
           if (true) {
-            return mySelectableStyleSheetItem__BehaviorDescriptor;
+            return myRGBColor__BehaviorDescriptor;
           }
           break;
         case 180:
           if (true) {
-            return mySetBoldOperation__BehaviorDescriptor;
+            return myReadOnlyStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 181:
           if (true) {
-            return myStrikeOutStyleSheet__BehaviorDescriptor;
+            return myScriptKindClassItem__BehaviorDescriptor;
           }
           break;
         case 182:
           if (true) {
-            return myStyleAttributeDeclaration__BehaviorDescriptor;
+            return mySelectInEditorOperation__BehaviorDescriptor;
           }
           break;
         case 183:
           if (true) {
-            return myStyleClass__BehaviorDescriptor;
+            return mySelectableStyleSheetItem__BehaviorDescriptor;
           }
           break;
         case 184:
           if (true) {
-            return myStyleClassItem__BehaviorDescriptor;
+            return mySetBoldOperation__BehaviorDescriptor;
           }
           break;
         case 185:
           if (true) {
-            return myStyleKey__BehaviorDescriptor;
+            return myStrikeOutStyleSheet__BehaviorDescriptor;
           }
           break;
         case 186:
           if (true) {
-            return myStyleSheet__BehaviorDescriptor;
+            return myStyleAttributeDeclaration__BehaviorDescriptor;
           }
           break;
         case 187:
           if (true) {
-            return myStyleSheetClass__BehaviorDescriptor;
+            return myStyleClass__BehaviorDescriptor;
           }
           break;
         case 188:
           if (true) {
-            return mySubstituteMenu__BehaviorDescriptor;
+            return myStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 189:
           if (true) {
-            return mySubstituteMenuPart__BehaviorDescriptor;
+            return myStyleKey__BehaviorDescriptor;
           }
           break;
         case 190:
           if (true) {
-            return mySubstituteMenuPart_Action__BehaviorDescriptor;
+            return myStyleSheet__BehaviorDescriptor;
           }
           break;
         case 191:
           if (true) {
-            return mySubstituteMenuPart_Concepts__BehaviorDescriptor;
+            return myStyleSheetClass__BehaviorDescriptor;
           }
           break;
         case 192:
           if (true) {
-            return mySubstituteMenuPart_Group__BehaviorDescriptor;
+            return mySubstituteMenu__BehaviorDescriptor;
           }
           break;
         case 193:
           if (true) {
-            return mySubstituteMenuPart_IncludeMenu__BehaviorDescriptor;
+            return mySubstituteMenuPart__BehaviorDescriptor;
           }
           break;
         case 194:
           if (true) {
-            return mySubstituteMenuPart_Parameterized__BehaviorDescriptor;
+            return mySubstituteMenuPart_Action__BehaviorDescriptor;
           }
           break;
         case 195:
           if (true) {
-            return mySubstituteMenuPart_Wrapper__BehaviorDescriptor;
+            return mySubstituteMenuPart_AddConcept__BehaviorDescriptor;
           }
           break;
         case 196:
           if (true) {
-            return mySubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor;
+            return mySubstituteMenuPart_Concepts__BehaviorDescriptor;
           }
           break;
         case 197:
           if (true) {
-            return mySubstituteMenuReference_Named__BehaviorDescriptor;
+            return mySubstituteMenuPart_Group__BehaviorDescriptor;
           }
           break;
         case 198:
           if (true) {
-            return mySubstituteMenuVariableReference__BehaviorDescriptor;
+            return mySubstituteMenuPart_IncludeMenu__BehaviorDescriptor;
           }
           break;
         case 199:
           if (true) {
-            return mySubstituteMenu_Contribution__BehaviorDescriptor;
+            return mySubstituteMenuPart_Parameterized__BehaviorDescriptor;
           }
           break;
         case 200:
           if (true) {
-            return mySubstituteMenu_Default__BehaviorDescriptor;
+            return mySubstituteMenuPart_Wrapper__BehaviorDescriptor;
           }
           break;
         case 201:
           if (true) {
-            return mySynchronizeable__BehaviorDescriptor;
+            return mySubstituteMenuReference_DefaultWithFunction__BehaviorDescriptor;
           }
           break;
         case 202:
           if (true) {
-            return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
+            return mySubstituteMenuReference_Named__BehaviorDescriptor;
           }
           break;
         case 203:
           if (true) {
-            return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
+            return mySubstituteMenuVariableReference__BehaviorDescriptor;
           }
           break;
         case 204:
           if (true) {
-            return myTransactionalPropertyHandler__BehaviorDescriptor;
+            return mySubstituteMenu_Contribution__BehaviorDescriptor;
           }
           break;
         case 205:
           if (true) {
-            return myTransformationLocation__BehaviorDescriptor;
+            return mySubstituteMenu_Default__BehaviorDescriptor;
           }
           break;
         case 206:
           if (true) {
-            return myTransformationLocation_Completion__BehaviorDescriptor;
+            return mySynchronizeable__BehaviorDescriptor;
           }
           break;
         case 207:
           if (true) {
-            return myTransformationLocation_SideTransform__BehaviorDescriptor;
+            return myTextBackgroundColorSelectedStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 208:
           if (true) {
-            return myTransformationMenu__BehaviorDescriptor;
+            return myTextBackgroundColorStyleClassItem__BehaviorDescriptor;
           }
           break;
         case 209:
           if (true) {
-            return myTransformationMenuContribution__BehaviorDescriptor;
+            return myTransactionalPropertyHandler__BehaviorDescriptor;
           }
           break;
         case 210:
           if (true) {
-            return myTransformationMenuPart_Action__BehaviorDescriptor;
+            return myTransformationLocation__BehaviorDescriptor;
           }
           break;
         case 211:
           if (true) {
-            return myTransformationMenuPart_Group__BehaviorDescriptor;
+            return myTransformationLocation_Completion__BehaviorDescriptor;
           }
           break;
         case 212:
           if (true) {
-            return myTransformationMenuPart_IncludeMenu__BehaviorDescriptor;
+            return myTransformationLocation_SideTransform__BehaviorDescriptor;
           }
           break;
         case 213:
           if (true) {
-            return myTransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor;
+            return myTransformationMenu__BehaviorDescriptor;
           }
           break;
         case 214:
           if (true) {
-            return myTransformationMenuPart_Parameterized__BehaviorDescriptor;
+            return myTransformationMenuContribution__BehaviorDescriptor;
           }
           break;
         case 215:
           if (true) {
-            return myTransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor;
+            return myTransformationMenuPart_Action__BehaviorDescriptor;
           }
           break;
         case 216:
           if (true) {
-            return myTransformationMenuReference_Named__BehaviorDescriptor;
+            return myTransformationMenuPart_Group__BehaviorDescriptor;
           }
           break;
         case 217:
           if (true) {
-            return myTransformationMenuVariableReference__BehaviorDescriptor;
+            return myTransformationMenuPart_IncludeMenu__BehaviorDescriptor;
           }
           break;
         case 218:
+          if (true) {
+            return myTransformationMenuPart_IncludeSubstituteMenu__BehaviorDescriptor;
+          }
+          break;
+        case 219:
+          if (true) {
+            return myTransformationMenuPart_Parameterized__BehaviorDescriptor;
+          }
+          break;
+        case 220:
+          if (true) {
+            return myTransformationMenuPart_WrapSubstituteMenu__BehaviorDescriptor;
+          }
+          break;
+        case 221:
+          if (true) {
+            return myTransformationMenuReference_Named__BehaviorDescriptor;
+          }
+          break;
+        case 222:
+          if (true) {
+            return myTransformationMenuVariableReference__BehaviorDescriptor;
+          }
+          break;
+        case 223:
           if (true) {
             return myTransformationMenu_Default__BehaviorDescriptor;
           }
@@ -1351,5 +1381,5 @@ public final class BehaviorAspectDescriptor extends BaseBehaviorAspectDescriptor
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0oi = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, "jetbrains.mps.lang.editor.structure.AbstractComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3001698d23c1e791L, "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519ae500L, "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58b0fabL, "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06f0e8a4L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06eea1c5L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbddc4fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f587b827aL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b90423L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e23362bdL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e32c7f49dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5026c90dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f906349L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f8b3f0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbf54a7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d5L, "jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f4L, "jetbrains.mps.lang.editor.structure.ContextVariable_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11bdf8bf6bbL, "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd61987L, "jetbrains.mps.lang.editor.structure.EditableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b76d40L, "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1146e20cfb3L, "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2a184f1d9310d4eL, "jetbrains.mps.lang.editor.structure.IContextVariableProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cd0d956L, "jetbrains.mps.lang.editor.structure.IIncludeSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, "jetbrains.mps.lang.editor.structure.IMenuPartParameterized"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b3L, "jetbrains.mps.lang.editor.structure.IMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, "jetbrains.mps.lang.editor.structure.IMenuReference_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b6L, "jetbrains.mps.lang.editor.structure.IMenuReference_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, "jetbrains.mps.lang.editor.structure.IMenu_Concept"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a5d62L, "jetbrains.mps.lang.editor.structure.IMenu_Contribution"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L, "jetbrains.mps.lang.editor.structure.INodeProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1b09d8L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120c4d9abaeL, "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1d584eL, "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878c87bcL, "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41d378fL, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2d8L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04fc4L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c6f1d424dL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10ccb7e17b2L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x59f39dd19d1526cdL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Strictly"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x407fe8717d6b5494L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_targetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eb0a02a3L, "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd78e1636L, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111fbbfae55L, "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de97a3d3b88abfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11204aae906L, "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4caca3eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5917043ba8fab771L, "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111eb58c684L, "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d75eL, "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d95571L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d9c896L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9da0bacL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d287d9dL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a1953c797L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1120492bc7eL, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113401f5070L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06ae0fL, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c142bL, "jetbrains.mps.lang.editor.structure.QueryFunction_SNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fe1c8b36cL, "jetbrains.mps.lang.editor.structure.QueryFunction_String"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30eb862d8702cebfL, "jetbrains.mps.lang.editor.structure.QueryFunction_Style"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a8bc23a16218182L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11e73a269d4L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2db1e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546cL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2ccL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_FilterConcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c035dfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x742ef6b4d0cca0d1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04f2aL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Select"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e310c5dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Substitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1c001L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d9a96L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403df05L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a6f546add818550L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1cbc2f4b8390563bL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defbb1acaL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8c5e3L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_TargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2241a13dab4fb50cL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6706a40L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4d022befL, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x555cb285f801e1a1L, "jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56010bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa22200b56b57990L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4467282afd5201dL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f5eefdL, "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56011cL, "jetbrains.mps.lang.editor.structure.TransformationLocation_Completion"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d670600cL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_WrapSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x201faaffc29bac4fL, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
+  private static final Map<SAbstractConcept, Integer> indices_846f5o_a0ti = buildConceptIndices(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, "jetbrains.mps.lang.editor.structure.AbstractComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x326f55034e5c1baaL, "jetbrains.mps.lang.editor.structure.AbstractOutputConceptContainerSubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5adb3efdecdaf4d9L, "jetbrains.mps.lang.editor.structure.AbstractOutputConceptContainerTransformationMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878e7095L, "jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0ad5587L, "jetbrains.mps.lang.editor.structure.AppendTextOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd774e0L, "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfba0eb7c50L, "jetbrains.mps.lang.editor.structure.BaseEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fb7279917L, "jetbrains.mps.lang.editor.structure.BaseLineCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10951978cfeL, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3001698d23c1e791L, "jetbrains.mps.lang.editor.structure.CellActionMap_CanExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x109519ae500L, "jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfbc216b31bL, "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58b0fabL, "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108b58c7e8fL, "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d702058L, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d811428L, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f6aaacL, "jetbrains.mps.lang.editor.structure.CellMenuDescriptor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06f0e8a4L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f06eea1c5L, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_MatchingText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbddc4fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f587b827aL, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f58b90423L, "jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x112e23362bdL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10e32c7f49dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f5026c90dL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f906349L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f4f8b3f0fL, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f53a2ada9L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eaa4bf8b2L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_defaultConceptOfChild"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f3a50ec74L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10eecbf54a7L, "jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L, "jetbrains.mps.lang.editor.structure.CellModel_Alternation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x108a0861503L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10bb871ad98L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1081e457de7L, "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1170b90f356L, "jetbrains.mps.lang.editor.structure.CellModel_Block"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdba37cdL, "jetbrains.mps.lang.editor.structure.CellModel_BlockEnd"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdb876c6L, "jetbrains.mps.lang.editor.structure.CellModel_BlockStart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, "jetbrains.mps.lang.editor.structure.CellModel_Collection"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c96896L, "jetbrains.mps.lang.editor.structure.CellModel_Component"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL, "jetbrains.mps.lang.editor.structure.CellModel_Constant"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb103073dcL, "jetbrains.mps.lang.editor.structure.CellModel_Custom"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x73604585b6d5c973L, "jetbrains.mps.lang.editor.structure.CellModel_Empty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa61615ec3L, "jetbrains.mps.lang.editor.structure.CellModel_Error"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x116fdad17a0L, "jetbrains.mps.lang.editor.structure.CellModel_Indent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, "jetbrains.mps.lang.editor.structure.CellModel_ModelAccess"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7456aec153c7f5a2L, "jetbrains.mps.lang.editor.structure.CellModel_NextEditor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L, "jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL, "jetbrains.mps.lang.editor.structure.CellModel_Property"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d6d56c00cL, "jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd52a2c922L, "jetbrains.mps.lang.editor.structure.CellModel_RefCell"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb05cdc7L, "jetbrains.mps.lang.editor.structure.CellModel_RefNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL, "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x334adf8cb15f3fdeL, "jetbrains.mps.lang.editor.structure.CellModel_URL"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, "jetbrains.mps.lang.editor.structure.CellModel_WithRole"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x527faacef50d095eL, "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ed01d37608fe0afL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69333c273254322aL, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_model"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111faaffcc5L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d763L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d863e4L, "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e119f99L, "jetbrains.mps.lang.editor.structure.ContextVariable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1160d5L, "jetbrains.mps.lang.editor.structure.ContextVariable_EditorContext"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f4L, "jetbrains.mps.lang.editor.structure.ContextVariable_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x69c06896a0e42a51L, "jetbrains.mps.lang.editor.structure.DefaultBaseLine"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd7dc37L, "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11bdf8bf6bbL, "jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd61987L, "jetbrains.mps.lang.editor.structure.EditableStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L, "jetbrains.mps.lang.editor.structure.EditorCellModel"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb35c2bb47L, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b76d40L, "jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b38c56eL, "jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1146e20cfb3L, "jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2a184f1d9310d4eL, "jetbrains.mps.lang.editor.structure.IContextVariableProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bcee99dL, "jetbrains.mps.lang.editor.structure.IExtensibleSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x36f88ebb7cd0d956L, "jetbrains.mps.lang.editor.structure.IIncludeSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048846L, "jetbrains.mps.lang.editor.structure.IMenu"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0fL, "jetbrains.mps.lang.editor.structure.IMenuPartParameterized"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x35978129ee23fa76L, "jetbrains.mps.lang.editor.structure.IMenuPartWithOutputConcept"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b3L, "jetbrains.mps.lang.editor.structure.IMenuReference"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, "jetbrains.mps.lang.editor.structure.IMenuReference_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41b6L, "jetbrains.mps.lang.editor.structure.IMenuReference_Named"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9048c53L, "jetbrains.mps.lang.editor.structure.IMenu_Concept"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a5d62L, "jetbrains.mps.lang.editor.structure.IMenu_Contribution"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x794cf8ea9e1140f3L, "jetbrains.mps.lang.editor.structure.INodeProvider"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ee6ee2b8485887fL, "jetbrains.mps.lang.editor.structure.IOutputConceptSubstituteMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9002d0dL, "jetbrains.mps.lang.editor.structure.IParameterizableMenuPart"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e019f6L, "jetbrains.mps.lang.editor.structure.IQueryFunction_Color"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, "jetbrains.mps.lang.editor.structure.IStyleContainer"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a0b8287L, "jetbrains.mps.lang.editor.structure.IStyleSheetMember"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1b09d8L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154c4089L, "jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120194c6bfdL, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120154df6f3L, "jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x120c4d9abaeL, "jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x12019ed89beL, "jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a692c170d1d584eL, "jetbrains.mps.lang.editor.structure.IndentLayoutWrapAnchorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd5cee772bL, "jetbrains.mps.lang.editor.structure.InlineEditorComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae8b8b7d7L, "jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878c87bcL, "jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41cffc4L, "jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ae41d378fL, "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d878b980aL, "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c44bf7L, "jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11f41c727e1L, "jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2d8L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04fc4L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4b4c9b482992dc34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_CurrentTargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c6f1d424dL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Link"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd4fe34L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_NodeToWrap"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10ccb7e17b2L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x59f39dd19d1526cdL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_Strictly"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6709f7aL, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_CreatedNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x407fe8717d6b5494L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_TransformationMenu_targetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a903acc3L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_parameterObject"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e2c89d1L, "jetbrains.mps.lang.editor.structure.QueryFunctionParameter_pattern"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9eb0a02a3L, "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd78e1636L, "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111fbbfae55L, "jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111ff56f066L, "jetbrains.mps.lang.editor.structure.QueryFunction_Color"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de97a3d3b88abfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_ColorComposit"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c47c26987L, "jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11204aae906L, "jetbrains.mps.lang.editor.structure.QueryFunction_ImagePath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4caca3eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_Integer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5917043ba8fab771L, "jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111eb58c684L, "jetbrains.mps.lang.editor.structure.QueryFunction_JComponent"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a9039c3cL, "jetbrains.mps.lang.editor.structure.QueryFunction_Menu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x950e7629b27d75eL, "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d95571L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9d9c896L, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x111f9da0bacL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x511249404d287d9dL, "jetbrains.mps.lang.editor.structure.QueryFunction_ModuleAndPath"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10a1953c797L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1120492bc7eL, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113401f5070L, "jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a67a319ce06ae0fL, "jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x696ed29ebd7c142bL, "jetbrains.mps.lang.editor.structure.QueryFunction_SNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x9da6a4591fc7fb5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SeparatorText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11fe1c8b36cL, "jetbrains.mps.lang.editor.structure.QueryFunction_String"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x30eb862d8702cebfL, "jetbrains.mps.lang.editor.structure.QueryFunction_Style"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4cd1c73aL, "jetbrains.mps.lang.editor.structure.QueryFunction_StyleParameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x77859491bd4702f5L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a8bc23a16218182L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e672842435c6L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11e73a269d4L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_ActionType"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce1116e3a2db1e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_CanSubstitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95deecL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x27a7ea2e015982b3L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546cL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x68666ddb0403c2ccL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_FilterConcepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6c035dfaL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x742ef6b4d0cca0d1L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x75a895eb6bc04f2aL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Select"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121e310c5dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Substitute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1121eb0d54dL, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_SubstituteString"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1c001L, "jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d9a96L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403df05L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenuVariable_Initializer"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4eff4d8b1f5ceed1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_ActionLabelText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5a6f546add818550L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Condition"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x198452f4d5eea7e1L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_DescriptionText"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f95eeL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Execute"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1cbc2f4b8390563bL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Icon"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defbb1acaL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Node"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8c5e3L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Parameter"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6e2eL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_TargetNode"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2241a13dab4fb50cL, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Text"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d6706a40L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_WrapperHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11c4d022befL, "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x555cb285f801e1a1L, "jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11d52e2b1a0L, "jetbrains.mps.lang.editor.structure.RGBColor"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xb09275c2ae83bcdL, "jetbrains.mps.lang.editor.structure.ReadOnlyStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x72908ac6c78618c8L, "jetbrains.mps.lang.editor.structure.ScriptKindClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x329d4406465c63a0L, "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd721ebL, "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e34c38c0b28cacL, "jetbrains.mps.lang.editor.structure.SetBoldOperation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11cd786e1a9L, "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3744c0f9ea5367ebL, "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L, "jetbrains.mps.lang.editor.structure.StyleClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x399cb6c68aa9aeaaL, "jetbrains.mps.lang.editor.structure.StyleKey"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b151743L, "jetbrains.mps.lang.editor.structure.StyleSheet"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL, "jetbrains.mps.lang.editor.structure.StyleSheetClass"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a0078L, "jetbrains.mps.lang.editor.structure.SubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56010bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab46db2L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x49f6d25f12102816L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Concepts"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xa22200b56b57990L, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4467282afd5201dL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x71f19593ac95dee9L, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_DefaultWithFunction"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5480a271c0d1df1fL, "jetbrains.mps.lang.editor.structure.SubstituteMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x780e6728403987eL, "jetbrains.mps.lang.editor.structure.SubstituteMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5cb53L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Contribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2de9c932f4e5ab84L, "jetbrains.mps.lang.editor.structure.SubstituteMenu_Default"), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x79b75ced2c4a134dL, "jetbrains.mps.lang.editor.structure.Synchronizeable"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac0441c7eL, "jetbrains.mps.lang.editor.structure.TextBackgroundColorSelectedStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11ac043ee66L, "jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f5eefdL, "jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7c45559defb64aa6L, "jetbrains.mps.lang.editor.structure.TransformationLocation"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x65e54712ab56011cL, "jetbrains.mps.lang.editor.structure.TransformationLocation_Completion"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x28336854e4c19a06L, "jetbrains.mps.lang.editor.structure.TransformationLocation_SideTransform"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0ac3ebaL, "jetbrains.mps.lang.editor.structure.TransformationMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c10ff0L, "jetbrains.mps.lang.editor.structure.TransformationMenuContribution"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Action"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Group"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6a77f9c87420a6caL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3abfebf456f8ad25L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Parameterized"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1a533160d670600cL, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_WrapSubstituteMenu"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5d3b34577b3cff09L, "jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x201faaffc29bac4fL, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableReference"), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384efce1L, "jetbrains.mps.lang.editor.structure.TransformationMenu_Default"));
 }

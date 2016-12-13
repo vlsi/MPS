@@ -13,33 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.lang.editor.menus.transformation;
+package jetbrains.mps.nodeEditor.menus;
 
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.function.Predicate;
 
 /**
  * @author simon
  */
-public class CachingPredicate<T> implements Predicate<T> {
-  private final Map<T, Boolean> myResults = new HashMap<>();
-  private final Predicate<T> myPredicate;
+public class IsSubconceptOfPredicate implements Predicate<SAbstractConcept> {
+  @Nullable
+  private final SAbstractConcept myTargetConcept;
 
-  public CachingPredicate(@NotNull Predicate<T> predicate) {
-    myPredicate = predicate;
+  public IsSubconceptOfPredicate(@Nullable SAbstractConcept concept) {
+    myTargetConcept = concept;
   }
-
   @Override
-  public boolean test(T t) {
-    Boolean result = myResults.get(t);
-    if (result != null) {
-      return result;
-    }
-    result = myPredicate.test(t);
-    myResults.put(t, result);
-    return result;
+  public boolean test(SAbstractConcept concept) {
+    return myTargetConcept == null || concept.isSubConceptOf(myTargetConcept);
   }
 }

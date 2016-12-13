@@ -21135,13 +21135,6 @@
       </node>
     </node>
   </node>
-  <node concept="24kQdi" id="IMWLlwvtcy">
-    <property role="3GE5qa" value="Menu.Transformation" />
-    <ref role="1XX52x" to="tpc2:IMWLlwvs8k" resolve="IOutputConceptTransformationMenuPart" />
-    <node concept="3F1sOY" id="IMWLlwvtc$" role="2wV5jI">
-      <ref role="1NtTu8" to="tpc2:IMWLlwvt20" resolve="outputConceptReference" />
-    </node>
-  </node>
   <node concept="1h_SRR" id="IMWLlwDqGe">
     <property role="3GE5qa" value="SNode.select" />
     <property role="TrG5h" value="OrCellSelector_Left_Actions" />

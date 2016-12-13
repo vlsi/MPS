@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author simon
@@ -58,4 +59,8 @@ public interface SubstituteMenuContext {
   List<SubstituteMenuItem> createItems(@Nullable SubstituteMenuLookup menuLookup);
 
   SubstituteMenuContext withLink(SContainmentLink link);
+
+  default Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
+    return (concept -> true);
+  }
 }

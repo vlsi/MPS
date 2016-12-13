@@ -16,28 +16,23 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
 
-public final class SubstituteMenuPart__BehaviorDescriptor extends BaseBHDescriptor {
-  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5c03050cab4546aL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart");
+public final class IMenuPartWithOutputConcept__BehaviorDescriptor extends BaseBHDescriptor {
+  private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x35978129ee23fa76L, "jetbrains.mps.lang.editor.structure.IMenuPartWithOutputConcept");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<SNode> getOutputConcept_id7mC_uHFK7Hn = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOutputConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7mC_uHFK7Hn").registry(REGISTRY).build();
+  public static final SMethod<SNode> getOutputConcept_id3mnwiBI8ZE2 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getOutputConcept").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3mnwiBI8ZE2").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOutputConcept_id7mC_uHFK7Hn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOutputConcept_id3mnwiBI8ZE2);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  @Deprecated
-  /*package*/ static SNode getOutputConcept_id7mC_uHFK7Hn(@NotNull SNode __thisNode__) {
-    return (SNode) IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L, "jetbrains.mps.lang.editor.structure.ISubstituteMenu"), false, false));
-  }
 
-  /*package*/ SubstituteMenuPart__BehaviorDescriptor() {
+  /*package*/ IMenuPartWithOutputConcept__BehaviorDescriptor() {
     super(REGISTRY);
   }
 
@@ -53,8 +48,6 @@ public final class SubstituteMenuPart__BehaviorDescriptor extends BaseBHDescript
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 0:
-        return (T) ((SNode) getOutputConcept_id7mC_uHFK7Hn(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
