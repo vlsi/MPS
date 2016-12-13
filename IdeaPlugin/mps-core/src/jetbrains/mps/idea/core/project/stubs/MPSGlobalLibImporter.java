@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,17 +24,17 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MPSGlobalLibImporter extends BaseLibImporter implements ApplicationComponent {
-  private ApplicationLibraryTable myTable;
+  private final ApplicationLibraryTable myTable;
+  private final MPSCoreComponents myCoreComponents;
 
-  @SuppressWarnings("UnusedParameters") //creation time dependency
   public MPSGlobalLibImporter(MPSCoreComponents core, ApplicationLibraryTable table) {
+    myCoreComponents = core;
     myTable = table;
   }
 
   @Override
   protected SRepositoryExt getRepository() {
-    // fixme what repository should I provide here?
-    return MPSModuleRepository.getInstance();
+    return myCoreComponents.getPlatform().findComponent(MPSModuleRepository.class);
   }
 
   protected LibraryTable getLibTable() {
