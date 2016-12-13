@@ -66,18 +66,18 @@ public final class BuildRelativePath__BehaviorDescriptor extends BaseBHDescripto
     return ((SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")) != null) ? BuildCompositePath__BehaviorDescriptor.getLastSegment_id1bWeed$oUbg.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")), helper) : null);
   }
   /*package*/ static SNode getParent_id7wpYgMyTXsR(@NotNull SNode __thisNode__) {
-    if ((boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")))) {
+    if ((boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart")))) {
       return null;
     }
     SNode copy = SNodeOperations.copyNode(__thisNode__);
     SNode cp = SLinkOperations.getTarget(copy, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"));
-    if ((boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")))) {
+    if ((boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")))) {
       SLinkOperations.setTarget(copy, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, 0x65997a65772aebcbL, "compositePart"), null);
     } else {
       SNode prev = cp;
-      cp = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), cp);
+      cp = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), cp);
       while (cp != null) {
-        SNode next = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), cp);
+        SNode next = BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), cp);
         if (next != null) {
           prev = cp;
           cp = next;
@@ -90,14 +90,14 @@ public final class BuildRelativePath__BehaviorDescriptor extends BaseBHDescripto
     return copy;
   }
   /*package*/ static boolean isEmptyTail_id7wpYgMyU0sQ(@NotNull SAbstractConcept __thisConcept__, SNode cp) {
-    return cp == null || isEmptyString(SPropertyOperations.getString(cp, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"))) && (boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")));
+    return cp == null || isEmptyString(SPropertyOperations.getString(cp, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head"))) && (boolean) BuildRelativePath__BehaviorDescriptor.isEmptyTail_id7wpYgMyU0sQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")));
   }
   /*package*/ static SNode next_id7wpYgMyU0gZ(@NotNull SAbstractConcept __thisConcept__, SNode cp) {
     if ((SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")) == null)) {
       return null;
     }
     if (isEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f3L, "head")))) {
-      return BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath").getDeclarationNode()), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")));
+      return BuildRelativePath__BehaviorDescriptor.next_id7wpYgMyU0gZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x65997a657729f6fbL, "jetbrains.mps.build.structure.BuildRelativePath")), SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail")));
     }
     return SLinkOperations.getTarget(cp, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x779c6e65c01467f1L, 0x779c6e65c01467f2L, "tail"));
   }

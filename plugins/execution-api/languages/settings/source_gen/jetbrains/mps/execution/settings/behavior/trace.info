@@ -757,7 +757,7 @@
       <node id="946964771156066407" at="98,32,99,256" concept="6" />
       <node id="946964771156066417" at="100,29,101,196" concept="3" />
       <node id="946964771156066429" at="103,5,104,72" concept="7" />
-      <node id="946964771156066440" at="106,133,107,350" concept="6" />
+      <node id="946964771156066440" at="106,133,107,329" concept="6" />
       <node id="946964771156066447" at="108,242,109,36" concept="7" />
       <node id="946964771156066460" at="110,5,111,374" concept="7" />
       <node id="946964771156066470" at="113,104,114,32" concept="7" />
@@ -799,7 +799,7 @@
       <node id="946964771156066386" at="82,0,85,0" concept="9" trace="getEditorSuffix_idO$iR4J$g3R#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2508378883219590419" at="89,0,92,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="946964771156066415" at="99,256,102,7" concept="4" />
-      <node id="946964771156066445" at="107,350,110,5" concept="4" />
+      <node id="946964771156066445" at="107,329,110,5" concept="4" />
       <node id="946964771156066386" at="113,0,116,0" concept="9" trace="getCheckMethodName_idO$iR4J$g2y#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <node id="946964771156066386" at="117,0,120,0" concept="2" trace="PersistentConfiguration__BehaviorDescriptor#()V" />
       <node id="946964771156066386" at="128,49,131,5" concept="4" />
@@ -1267,8 +1267,8 @@
       <node id="946964771156066835" at="43,0,44,0" concept="8" trace="removeMyPrefix_idO$iR4J$g8k" />
       <node id="946964771156066835" at="45,0,46,0" concept="8" trace="BH_METHODS" />
       <node id="946964771156066864" at="50,83,51,300" concept="7" />
-      <node id="946964771156066875" at="53,87,54,488" concept="6" />
-      <node id="946964771156066882" at="54,488,55,66" concept="7" />
+      <node id="946964771156066875" at="53,87,54,467" concept="6" />
+      <node id="946964771156066882" at="54,467,55,66" concept="7" />
       <node id="946964771156066900" at="57,85,58,16" concept="7" />
       <node id="946964771156066907" at="60,85,61,117" concept="6" />
       <node id="946964771156066913" at="61,117,62,100" concept="7" />
@@ -1283,8 +1283,8 @@
       <node id="946964771156066937" at="83,121,84,25" concept="6" />
       <node id="946964771156066953" at="85,55,86,45" concept="3" />
       <node id="946964771156066962" at="87,5,88,16" concept="7" />
-      <node id="946964771156066842" at="90,113,91,328" concept="3" />
-      <node id="946964771156066847" at="91,328,92,66" concept="7" />
+      <node id="946964771156066842" at="90,113,91,307" concept="3" />
+      <node id="946964771156066847" at="91,307,92,66" concept="7" />
       <node id="946964771156066835" at="95,67,96,20" concept="10" />
       <node id="946964771156066835" at="100,114,101,21" concept="3" />
       <node id="946964771156066835" at="105,114,106,49" concept="6" />

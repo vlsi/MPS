@@ -95,7 +95,7 @@ public class QueriesGenerated {
     return (String) IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")));
   }
   public static Object propertyMacro_GetPropertyValue_6550182048787667298(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_7024026323278183387(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -107,16 +107,16 @@ public class QueriesGenerated {
     return (String) IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_7806358006983709820(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x1acdeec3ca0ad49cL, "configurationName")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x2153d8f1c1f52479L, 0x1acdeec3ca0ad49cL, "configurationName")));
   }
   public static Object propertyMacro_GetPropertyValue_6226796386650472774(final PropertyMacroContext _context) {
     return (String) IGeneratedToClass__BehaviorDescriptor.getFullName_idO$iR4JBsSv.invoke(RunConfigurationExecutor__BehaviorDescriptor.getCommand_id5pE1_aqZ2LK.invoke(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_6226796386650472784(final PropertyMacroContext _context) {
-    return (String) CommandDeclaration__BehaviorDescriptor.getGetDebuggerConfidurationMethodName_id5pE1_aqZc7s.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
+    return (String) CommandDeclaration__BehaviorDescriptor.getGetDebuggerConfidurationMethodName_id5pE1_aqZc7s.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration")));
   }
   public static Object propertyMacro_GetPropertyValue_6226796386650491266(final PropertyMacroContext _context) {
-    return (String) CommandDeclaration__BehaviorDescriptor.getGetDebuggerConfidurationMethodName_id5pE1_aqZc7s.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration").getDeclarationNode()));
+    return (String) CommandDeclaration__BehaviorDescriptor.getGetDebuggerConfidurationMethodName_id5pE1_aqZc7s.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be8L, "jetbrains.mps.execution.commands.structure.CommandDeclaration")));
   }
   public static Object propertyMacro_GetPropertyValue_7806358006983618075(final PropertyMacroContext _context) {
     return (String) AbstractRunConfigurationExecutor__BehaviorDescriptor.getCanExecuteMethodName_id6LlKjXrMerG.invoke(_context.getNode());
@@ -146,7 +146,7 @@ public class QueriesGenerated {
     return (String) PersistentPropertyDeclaration__BehaviorDescriptor.getTypeEditorFqName_idO$iR4J$g9_.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_7684700299064368403(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_7684700299064368420(final PropertyMacroContext _context) {
     return (String) PersistentConfiguration__BehaviorDescriptor.getGeneratedEditorName_idO$iR4J$g2J.invoke(_context.getNode());
@@ -196,13 +196,13 @@ public class QueriesGenerated {
     return IGeneratedToClass__BehaviorDescriptor.getGeneratedClassName_idO$iR4JBsSg.invoke(_context.getNode()) + "_RunTask";
   }
   public static Object propertyMacro_GetPropertyValue_6550182048787659839(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.addMyPrefix_id5uxO0H8rOhC.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_2137130439060046356(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_2137130439060046387(final PropertyMacroContext _context) {
-    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration").getDeclarationNode()), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    return (String) PersistentPropertyDeclaration__BehaviorDescriptor.removeMyPrefix_idO$iR4J$g8k.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L, "jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration")), SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
   }
   public static Object propertyMacro_GetPropertyValue_2137130439060060173(final PropertyMacroContext _context) {
     return BaseMpsBeforeTaskProvider.getConfigureMethodName();

@@ -11,8 +11,8 @@
   </root>
   <root nodeRef="r:4b167889-df24-4961-8154-58229bf745a9(jetbrains.mps.baseLanguage.builders.generator.template.main@generator)/1301175864894266972">
     <file name="QueriesGenerated.java">
-      <node id="1301175864894276288" at="35,109,36,307" concept="1" />
-      <node id="1301175864894276295" at="36,307,37,83" concept="2" />
+      <node id="1301175864894276288" at="35,109,36,286" concept="1" />
+      <node id="1301175864894276295" at="36,286,37,83" concept="2" />
       <scope id="1301175864894276287" at="35,109,37,83">
         <var name="builder" id="1301175864894276289" />
       </scope>

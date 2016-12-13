@@ -40,7 +40,7 @@ public final class ThisClassifierExpression__BehaviorDescriptor extends BaseBHDe
     if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier")) != null) {
       return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc751a81L, 0x11bc25d4bc3L, "classifier"));
     }
-    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
+    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), __thisNode__);
   }
   /*package*/ static List<SNode> getPossibleClassifiers_idhJm8WEN(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();

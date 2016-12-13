@@ -145,7 +145,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   /*package*/ static Iterable<SNode> getImportedLibraries_id3zFnP6MwWdL(@NotNull SNode __thisNode__) {
-    return Sequence.<SNode>singleton(BuildMPSPlugin__BehaviorDescriptor.getMpsLibrary_id3zFnP6MM9ge.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin").getDeclarationNode())));
+    return Sequence.<SNode>singleton(BuildMPSPlugin__BehaviorDescriptor.getMpsLibrary_id3zFnP6MM9ge.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin"))));
   }
   /*package*/ static SNode getMpsLibrary_id3zFnP6MM9ge(@NotNull SAbstractConcept __thisConcept__) {
     return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target"));

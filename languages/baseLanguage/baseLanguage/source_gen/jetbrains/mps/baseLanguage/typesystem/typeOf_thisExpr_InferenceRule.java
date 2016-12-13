@@ -22,7 +22,7 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     if ((SLinkOperations.getTarget(thisExpr, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept")) != null)) {
       classifier = SLinkOperations.getTarget(thisExpr, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, 0x1136d9d21b3L, "classConcept"));
     } else {
-      classifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier").getDeclarationNode()), thisExpr);
+      classifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), thisExpr);
     }
     {
       SNode _nodeToCheck_1029348928467 = thisExpr;

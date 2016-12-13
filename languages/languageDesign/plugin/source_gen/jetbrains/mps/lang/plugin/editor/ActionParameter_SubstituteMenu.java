@@ -119,7 +119,7 @@ public class ActionParameter_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      return (Iterable<SNode>) ActionDataParameterDeclaration__BehaviorDescriptor.getDataKeys_id1BC2tkUXZ6F.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration").getDeclarationNode()), _context.getModel());
+      return (Iterable<SNode>) ActionDataParameterDeclaration__BehaviorDescriptor.getDataKeys_id1BC2tkUXZ6F.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), _context.getModel());
     }
     private class SubstituteMenuPart_Action_z80bk2_a1 extends SingleItemSubstituteMenuPart {
       private final SNode myParameterObject;
@@ -165,7 +165,7 @@ public class ActionParameter_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          return (String) ActionDataParameterDeclaration__BehaviorDescriptor.getDescription_id2DsqYJxu5P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration").getDeclarationNode()), myParameterObject);
+          return (String) ActionDataParameterDeclaration__BehaviorDescriptor.getDescription_id2DsqYJxu5P.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration")), myParameterObject);
         }
       }
     }
