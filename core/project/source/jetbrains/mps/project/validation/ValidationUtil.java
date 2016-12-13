@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.persistence.PersistenceVersionAware;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
@@ -34,6 +35,7 @@ import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
@@ -330,6 +332,10 @@ public class ValidationUtil {
           }
         }
       }
+    }
+
+    if (LanguageAspect.STRUCTURE.is(model)) {
+      new StructureAspectCheck(model, processor::process).check(new EmptyProgressMonitor());
     }
 
     if (SModelStereotype.isGeneratorModel(model)) {

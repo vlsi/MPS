@@ -22,7 +22,7 @@ public class SModuleOperations {
     List<SModel> models = ((Language) m).getModels();
     return ListSequence.fromList(models).findFirst(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it.getModelName().endsWith("." + name);
+        return it.getName().getSimpleName().equals(name);
       }
     });
   }
@@ -31,6 +31,6 @@ public class SModuleOperations {
     if (!((m.getModule() instanceof Language))) {
       return false;
     }
-    return m.getModelName().endsWith("." + name);
+    return m.getName().getSimpleName().equals(name);
   }
 }

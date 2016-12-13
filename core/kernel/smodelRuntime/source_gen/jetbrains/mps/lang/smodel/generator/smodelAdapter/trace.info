@@ -108,9 +108,9 @@
     <file name="SModuleOperations.java">
       <node id="2030416617761235936" at="19,37,20,18" concept="11" />
       <node id="2030416617761235943" at="21,5,22,53" concept="10" />
-      <node id="2030416617761235959" at="24,40,25,54" concept="11" />
+      <node id="2030416617761235959" at="24,40,25,57" concept="11" />
       <node id="6171083915388378072" at="31,49,32,19" concept="11" />
-      <node id="2030416617761250381" at="33,5,34,49" concept="11" />
+      <node id="2030416617761250381" at="33,5,34,52" concept="11" />
       <node id="2030416617761235934" at="18,64,21,5" concept="8" />
       <node id="2030416617761235957" at="24,0,27,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
       <node id="6171083915388377750" at="30,57,33,5" concept="8" />
@@ -118,12 +118,12 @@
       <node id="6171083915388377518" at="30,0,36,0" concept="15" trace="isAspect#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Z" />
       <node id="2030416617761235930" at="18,0,29,0" concept="15" trace="getAspect#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <scope id="2030416617761235935" at="19,37,20,18" />
-      <scope id="2030416617761235958" at="24,40,25,54" />
+      <scope id="2030416617761235958" at="24,40,25,57" />
       <scope id="6171083915388377751" at="31,49,32,19" />
       <scope id="2030416617761235957" at="24,0,27,0">
         <var name="it" id="2030416617761235957" />
       </scope>
-      <scope id="6171083915388377524" at="30,57,34,49" />
+      <scope id="6171083915388377524" at="30,57,34,52" />
       <scope id="6171083915388377518" at="30,0,36,0">
         <var name="m" id="6171083915388377613" />
         <var name="name" id="6171083915388377625" />

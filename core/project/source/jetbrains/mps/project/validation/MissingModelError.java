@@ -20,6 +20,10 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
+/**
+ * Tells there's an import for a model but target model could get resolved and likely is missing.
+ * For a model actually used while not imported, see {@link MissingModelImport}
+ */
 public class MissingModelError extends ValidationProblem {
   private final SModel myModel;
   private final SModelReference myReference;
