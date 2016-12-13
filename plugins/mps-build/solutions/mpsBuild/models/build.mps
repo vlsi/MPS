@@ -23623,6 +23623,18 @@
         <node concept="1E0d5M" id="6G6RsahJhAW" role="1E1XAP">
           <ref role="1E0d5P" node="3405ypXZilV" resolve="JDK-tools" />
         </node>
+        <node concept="1SiIV0" id="7Ift4Hgc_RL" role="3bR37C">
+          <node concept="3bR9La" id="7Ift4Hgc_RM" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1H905DlDUSw" resolve="MPS.OpenAPI" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7Ift4Hgc_RN" role="3bR37C">
+          <node concept="3bR9La" id="7Ift4Hgc_RO" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="4LDuh$Ud1MP" role="2G$12L">
         <property role="BnDLt" value="true" />
@@ -24631,6 +24643,12 @@
           <node concept="3bR9La" id="6IZ_b08qDGH" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="1ia2VB5guYy" resolve="MPS.IDEA" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="7Ift4HgcSv5" role="3bR37C">
+          <node concept="3bR9La" id="7Ift4HgcSv6" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
           </node>
         </node>
       </node>
