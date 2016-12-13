@@ -10,11 +10,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.datatransfer.CopyPasteManager;
+import jetbrains.mps.datatransfer.DataTransferManager;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -64,30 +68,28 @@ public final class CopyPasteUtil {
     }
   }
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
-    if (sourceNodes.isEmpty()) {
+    if (ListSequence.fromList(sourceNodes).isEmpty()) {
       return PasteNodeData.emptyPasteNodeData(null);
     }
-    SModel model = sourceNodes.get(0).getModel();
-    List<SNode> result = new ArrayList<SNode>();
-    Map<SNode, SNode> sourceNodesToNewNodes = new HashMap<SNode, SNode>();
-    Set<SReference> allReferences = new HashSet<SReference>();
-    for (SNode sourceNode : sourceNodes) {
+    SModel model = ListSequence.fromList(sourceNodes).first().getModel();
+    final Map<SNode, SNode> sourceNodesToNewNodes = MapSequence.fromMap(new HashMap<SNode, SNode>());
+    Set<SReference> allReferences = SetSequence.fromSet(new HashSet<SReference>());
+    for (SNode sourceNode : ListSequence.fromList(sourceNodes)) {
       assert sourceNode.getModel() == model;
-      SNode targetNode = CopyPasteUtil.copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences);
-      result.add(targetNode);
+      CopyPasteUtil.copyNode_internal(sourceNode, sourceNodesAndAttributes, sourceNodesToNewNodes, allReferences);
     }
-    HashSet<SModelReference> necessaryModels = new HashSet<SModelReference>();
-    HashSet<SLanguage> necessaryLanguages = new HashSet<SLanguage>();
+    Set<SModelReference> necessaryModels = SetSequence.fromSet(new HashSet<SModelReference>());
+    Set<SLanguage> necessaryLanguages = SetSequence.fromSet(new HashSet<SLanguage>());
     CopyPasteUtil.processImportsAndLanguages(necessaryModels, necessaryLanguages, sourceNodesToNewNodes, allReferences);
     CopyPasteUtil.processReferencesIn(sourceNodesToNewNodes, allReferences);
-    Map<SNode, SNode> newNodesToSourceNodes = new HashMap<SNode, SNode>();
-    for (Map.Entry<SNode, SNode> entry : sourceNodesToNewNodes.entrySet()) {
-      newNodesToSourceNodes.put(entry.getValue(), entry.getKey());
+    for (SNode source : ListSequence.fromList(sourceNodes)) {
+      DataTransferManager.getInstance().preProcessNode(MapSequence.fromMap(sourceNodesToNewNodes).get(source), source);
     }
-    for (SNode newNode : result) {
-      CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
-    }
-    return new PasteNodeData(result, null, check_lwiaog_c0a31a2(model), necessaryLanguages, necessaryModels);
+    return new PasteNodeData(ListSequence.fromList(sourceNodes).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return MapSequence.fromMap(sourceNodesToNewNodes).get(it);
+      }
+    }).toListSequence(), null, check_lwiaog_c0a01a2(model), necessaryLanguages, necessaryModels);
   }
   public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, SModelReference sourceModel, Set<SLanguage> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
@@ -398,7 +400,7 @@ public final class CopyPasteUtil {
     }
     return false;
   }
-  private static SModelReference check_lwiaog_c0a31a2(SModel checkedDotOperand) {
+  private static SModelReference check_lwiaog_c0a01a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
