@@ -6,8 +6,10 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
@@ -15,8 +17,6 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.lib.ui.NodeChooser;
@@ -33,19 +33,28 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
-    final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        SNode node = getNodeResolved();
-        if (node == null) {
-          errorText.value = "Node is not specified.";
-        } else if (!(isValid(node))) {
-          errorText.value = "Node is not valid.";
+    final SRepository repo = context.getProject().getRepository();
+    String errorText = new ModelAccessHelper(repo).runReadAction(new Computable<String>() {
+      public String compute() {
+        try {
+          final SNodeReference ptr = getNode();
+          if (ptr == null) {
+            return "Node is not specified.";
+          }
+          SNode resolved = ptr.resolve(repo);
+          if (resolved == null) {
+            return "Failed to resolve node reference";
+          }
+          return (isValid(resolved) ? null : "Node didn't pass validation");
+        } catch (IllegalArgumentException ex) {
+          String m = "Node reference is not valid";
+          return (ex.getMessage() != null ? String.format("%s: %s", m, ex.getMessage()) : m);
         }
       }
     });
-    if (isNotEmptyString(errorText.value)) {
-      throw new RuntimeConfigurationError(errorText.value);
+
+    if ((errorText != null && errorText.length() > 0)) {
+      throw new RuntimeConfigurationError(errorText);
     }
   }
   @Override
@@ -70,15 +79,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
   }
   public void setNodeText(String value) {
     myState.myNodeText = value;
-  }
-  @Nullable
-  @Deprecated
-  /*package*/ SNode getNodeResolved() {
-    SNodeReference reference = getNode();
-    if (reference == null) {
-      return null;
-    }
-    return reference.resolve(MPSModuleRepository.getInstance());
   }
   @Nullable
   public SNodeReference getNode() {
@@ -152,8 +152,5 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
   }
   public NodeBySeveralConcepts_Configuration_Editor getEditor() {
     return new NodeBySeveralConcepts_Configuration_Editor(myTargets);
-  }
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

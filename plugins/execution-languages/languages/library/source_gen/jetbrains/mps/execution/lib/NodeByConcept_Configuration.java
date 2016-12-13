@@ -6,15 +6,18 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.execution.lib.ui.NodeChooser;
 import org.apache.log4j.Logger;
@@ -27,19 +30,25 @@ public class NodeByConcept_Configuration implements IPersistentConfiguration {
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
-    String errorText = null;
-    if (this.getNodePointer() == null) {
-      errorText = "Node is not specified.";
-    } else {
-      try {
-        PersistenceFacade.getInstance().createNodeReference(this.getNodePointer());
-      } catch (IllegalArgumentException ex) {
-        errorText = "Node reference is not valid";
-        if (ex.getMessage() != null) {
-          errorText = String.format("%s: %s", errorText, ex.getMessage());
+    final SRepository repo = context.getProject().getRepository();
+    String errorText = new ModelAccessHelper(repo).runReadAction(new Computable<String>() {
+      public String compute() {
+        try {
+          final SNodeReference ptr = getNode();
+          if (ptr == null) {
+            return "Node is not specified.";
+          }
+          SNode resolved = ptr.resolve(repo);
+          if (resolved == null) {
+            return "Failed to resolve node reference";
+          }
+          return (myIsValid.invoke(resolved) ? null : "Node didn't pass validation");
+        } catch (IllegalArgumentException ex) {
+          String m = "Node reference is not valid";
+          return (ex.getMessage() != null ? String.format("%s: %s", m, ex.getMessage()) : m);
         }
       }
-    }
+    });
     if ((errorText != null && errorText.length() > 0)) {
       throw new RuntimeConfigurationError(errorText);
     }

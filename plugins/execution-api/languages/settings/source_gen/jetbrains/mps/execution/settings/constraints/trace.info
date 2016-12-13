@@ -12,7 +12,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="13,0,43,0" name="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
+      <unit at="13,0,45,0" name="jetbrains.mps.execution.settings.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)/203908296139530389">
@@ -22,6 +22,49 @@
       <scope id="203908296139530389" at="9,51,10,176" />
       <scope id="203908296139530389" at="9,0,12,0" />
       <unit id="203908296139530389" at="8,0,14,0" name="jetbrains.mps.execution.settings.constraints.EditorOperationDeclaration_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)/479872435243123503">
+    <file name="ProjectAccessExpression_Constraints.java">
+      <node id="479872435243123503" at="15,48,16,173" concept="9" />
+      <node id="479872435243123503" at="20,43,21,16" concept="5" />
+      <node id="479872435243123503" at="24,200,25,96" concept="4" />
+      <node id="479872435243123503" at="25,96,26,0" concept="6" />
+      <node id="479872435243123503" at="27,51,28,67" concept="1" />
+      <node id="479872435243123503" at="29,5,30,0" concept="6" />
+      <node id="479872435243123503" at="30,0,31,18" concept="5" />
+      <node id="479872435243123962" at="33,148,34,243" concept="5" />
+      <node id="479872435243123503" at="36,0,37,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="479872435243123503" at="15,0,18,0" concept="0" trace="ProjectAccessExpression_Constraints#()V" />
+      <node id="479872435243123503" at="26,0,29,5" concept="2" />
+      <node id="479872435243123503" at="33,0,36,0" concept="8" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="479872435243123503" at="19,0,23,0" concept="3" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="479872435243123503" at="23,0,33,0" concept="3" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="479872435243123503" at="15,48,16,173" />
+      <scope id="479872435243123503" at="20,43,21,16" />
+      <scope id="479872435243123503" at="27,51,28,67" />
+      <scope id="479872435243123505" at="33,148,34,243" />
+      <scope id="479872435243123503" at="15,0,18,0" />
+      <scope id="479872435243123503" at="33,0,36,0">
+        <var name="childConcept" id="479872435243123503" />
+        <var name="link" id="479872435243123503" />
+        <var name="node" id="479872435243123503" />
+        <var name="operationContext" id="479872435243123503" />
+        <var name="parentNode" id="479872435243123503" />
+      </scope>
+      <scope id="479872435243123503" at="19,0,23,0" />
+      <scope id="479872435243123503" at="24,200,31,18">
+        <var name="result" id="479872435243123503" />
+      </scope>
+      <scope id="479872435243123503" at="23,0,33,0">
+        <var name="checkingNodeContext" id="479872435243123503" />
+        <var name="childConcept" id="479872435243123503" />
+        <var name="link" id="479872435243123503" />
+        <var name="node" id="479872435243123503" />
+        <var name="operationContext" id="479872435243123503" />
+        <var name="parentNode" id="479872435243123503" />
+      </scope>
+      <unit id="479872435243123503" at="14,0,38,0" name="jetbrains.mps.execution.settings.constraints.ProjectAccessExpression_Constraints" />
     </file>
   </root>
   <root nodeRef="r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)/5365453833390705323">

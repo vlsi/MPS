@@ -534,5 +534,12 @@
       </node>
     </node>
   </node>
+  <node concept="1TIwiD" id="qCQmZSaKbS">
+    <property role="EcuMT" value="479872435243123448" />
+    <property role="3GE5qa" value="properties" />
+    <property role="TrG5h" value="ProjectAccessExpression" />
+    <property role="34LRSv" value="project" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+  </node>
 </model>
 

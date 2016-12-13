@@ -13,8 +13,7 @@ import jetbrains.mps.ant.execution.AntSettings_Configuration;
 import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
@@ -51,9 +50,10 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
   public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
     final Wrappers._boolean isPackaged = new Wrappers._boolean();
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final SRepository repo = context.getProject().getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = BuildScript_Configuration.this.getNode().getNode().resolve(MPSModuleRepository.getInstance());
+        SNode node = BuildScript_Configuration.this.getNode().getNode().resolve(repo);
         isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
       }
     });

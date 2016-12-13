@@ -32,13 +32,14 @@ public final class LanguageConceptSwitch {
   public static final int PersistentConfigurationType = 20;
   public static final int PersistentPropertyDeclaration = 21;
   public static final int PersistentPropertyReferenceOperation = 22;
-  public static final int ReportConfigurationErrorStatement = 23;
-  public static final int ResetFrom_Function = 24;
-  public static final int SettingsEditor = 25;
-  public static final int SettingsEditorType = 26;
-  public static final int TemplateParameter = 27;
-  public static final int TemplateParameterReference = 28;
-  public static final int TemplatePersistentConfigurationType = 29;
+  public static final int ProjectAccessExpression = 23;
+  public static final int ReportConfigurationErrorStatement = 24;
+  public static final int ResetFrom_Function = 25;
+  public static final int SettingsEditor = 26;
+  public static final int SettingsEditorType = 27;
+  public static final int TemplateParameter = 28;
+  public static final int TemplateParameterReference = 29;
+  public static final int TemplatePersistentConfigurationType = 30;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL);
@@ -65,6 +66,7 @@ public final class LanguageConceptSwitch {
     builder.put(0xd244b712f91001cL, PersistentConfigurationType);
     builder.put(0xd244b712f910119L, PersistentPropertyDeclaration);
     builder.put(0xd244b712f91010eL, PersistentPropertyReferenceOperation);
+    builder.put(0x6a8d96ff82b02f8L, ProjectAccessExpression);
     builder.put(0xd244b712f910103L, ReportConfigurationErrorStatement);
     builder.put(0xd244b712f910136L, ResetFrom_Function);
     builder.put(0xd244b712f91013dL, SettingsEditor);

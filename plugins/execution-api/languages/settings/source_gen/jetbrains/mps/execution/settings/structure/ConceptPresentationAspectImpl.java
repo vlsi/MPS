@@ -32,6 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PersistentConfigurationType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PersistentPropertyDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PersistentPropertyReferenceOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ProjectAccessExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReportConfigurationErrorStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResetFrom_Function = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SettingsEditor = new ConceptPresentationBuilder().create();
@@ -91,6 +92,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PersistentPropertyDeclaration;
       case LanguageConceptSwitch.PersistentPropertyReferenceOperation:
         return props_PersistentPropertyReferenceOperation;
+      case LanguageConceptSwitch.ProjectAccessExpression:
+        return props_ProjectAccessExpression;
       case LanguageConceptSwitch.ReportConfigurationErrorStatement:
         return props_ReportConfigurationErrorStatement;
       case LanguageConceptSwitch.ResetFrom_Function:

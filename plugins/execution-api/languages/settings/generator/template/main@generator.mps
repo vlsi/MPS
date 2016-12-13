@@ -1143,6 +1143,12 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="qCQmZSaOcn" role="3acgRq">
+      <ref role="30HIoZ" to="fb9u:qCQmZSaKbS" resolve="ProjectAccessExpression" />
+      <node concept="j$656" id="qCQmZSaOco" role="1lVwrX">
+        <ref role="v9R2y" node="qCQmZSaOcl" resolve="reduce_ProjectAccessExpression" />
+      </node>
+    </node>
   </node>
   <node concept="312cEu" id="4nPCR7KFT$1">
     <property role="TrG5h" value="PersistentEditor_Template" />
@@ -5429,6 +5435,38 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="13MO4I" id="qCQmZSaOcl">
+    <property role="TrG5h" value="reduce_ProjectAccessExpression" />
+    <property role="3GE5qa" value="properties" />
+    <ref role="3gUMe" to="fb9u:qCQmZSaKbS" resolve="ProjectAccessExpression" />
+    <node concept="3clFb_" id="qCQmZSaR2L" role="13RCb5">
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="check" />
+      <node concept="3Tm1VV" id="qCQmZSaR2O" role="1B3o_S" />
+      <node concept="3cqZAl" id="qCQmZSaR35" role="3clF45" />
+      <node concept="3clFbS" id="qCQmZSaR2R" role="3clF47">
+        <node concept="3clFbF" id="qCQmZSaR44" role="3cqZAp">
+          <node concept="2OqwBi" id="qCQmZSaR9B" role="3clFbG">
+            <node concept="37vLTw" id="qCQmZSaR43" role="2Oq$k0">
+              <ref role="3cqZAo" node="qCQmZSaR3x" resolve="context" />
+            </node>
+            <node concept="liA8E" id="qCQmZSaRk1" role="2OqNvi">
+              <ref role="37wK5l" to="ic0f:qCQmZRTcql" resolve="getProject" />
+            </node>
+            <node concept="raruj" id="qCQmZSaRC2" role="lGtFl" />
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="qCQmZSaR3x" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="qCQmZSaR3w" role="1tU5fm">
+          <ref role="3uigEE" to="ic0f:qCQmZRT2wq" resolve="PersistentConfigurationContext" />
         </node>
       </node>
     </node>

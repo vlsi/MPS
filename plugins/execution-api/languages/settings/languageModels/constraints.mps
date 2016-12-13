@@ -699,5 +699,28 @@
     <property role="3GE5qa" value="editor" />
     <ref role="1M2myG" to="fb9u:O$iR4J$g4H" resolve="EditorOperationDeclaration" />
   </node>
+  <node concept="1M2fIO" id="qCQmZSaKcJ">
+    <property role="3GE5qa" value="properties" />
+    <ref role="1M2myG" to="fb9u:qCQmZSaKbS" resolve="ProjectAccessExpression" />
+    <node concept="nKS2y" id="qCQmZSaKcK" role="1MLUbF">
+      <node concept="3clFbS" id="qCQmZSaKcL" role="2VODD2">
+        <node concept="3clFbF" id="qCQmZSaKjU" role="3cqZAp">
+          <node concept="2OqwBi" id="qCQmZSaMU3" role="3clFbG">
+            <node concept="2OqwBi" id="qCQmZSaKyW" role="2Oq$k0">
+              <node concept="nLn13" id="qCQmZSaKjT" role="2Oq$k0" />
+              <node concept="2Xjw5R" id="qCQmZSaKIN" role="2OqNvi">
+                <node concept="1xMEDy" id="qCQmZSaKIP" role="1xVPHs">
+                  <node concept="chp4Y" id="qCQmZSaLbT" role="ri$Ld">
+                    <ref role="cht4Q" to="fb9u:O$iR4J$g4_" resolve="CheckProperties_Function" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3x8VRR" id="qCQmZSaN$k" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

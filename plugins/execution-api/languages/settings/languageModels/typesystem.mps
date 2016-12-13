@@ -15,6 +15,7 @@
     <import index="hilv" ref="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)" />
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -181,6 +182,9 @@
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
@@ -191,9 +195,6 @@
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -968,8 +969,8 @@
                 <ref role="1YBMHb" node="63yBSeEXAqX" resolve="configurationParameter" />
               </node>
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEs0u" role="2Oq$k0">
-              <ref role="3TV0OU" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
+            <node concept="35c_gC" id="qCQmZSb6Om" role="2Oq$k0">
+              <ref role="35c_gD" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
             </node>
           </node>
         </node>
@@ -1093,6 +1094,38 @@
     <node concept="1YaCAy" id="4e6Nb7Lohru" role="1YuTPh">
       <property role="TrG5h" value="tpct" />
       <ref role="1YaFvo" to="fb9u:O$iR4J$g3X" resolve="TemplatePersistentConfigurationType" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="1MVY3kFAiYY">
+    <property role="TrG5h" value="typeof_ProjectAccessExpression" />
+    <property role="3GE5qa" value="properties" />
+    <node concept="3clFbS" id="1MVY3kFAiYZ" role="18ibNy">
+      <node concept="1Z5TYs" id="1MVY3kFAjgE" role="3cqZAp">
+        <node concept="mw_s8" id="1MVY3kFAjgH" role="1ZfhK$">
+          <node concept="1Z2H0r" id="1MVY3kFAj2i" role="mwGJk">
+            <node concept="1YBJjd" id="1MVY3kFAj2$" role="1Z2MuG">
+              <ref role="1YBMHb" node="1MVY3kFAiZ1" resolve="expr" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="1MVY3kFAjmn" role="1ZfhKB">
+          <node concept="2pJPEk" id="1MVY3kFAjmj" role="mwGJk">
+            <node concept="2pJPED" id="qCQmZSaRnd" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="qCQmZSaRpU" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
+                <node concept="36bGnv" id="qCQmZSaRuY" role="2pJxcZ">
+                  <ref role="36bGnp" to="z1c3:~Project" resolve="Project" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="1MVY3kFAiZ1" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="fb9u:qCQmZSaKbS" resolve="ProjectAccessExpression" />
     </node>
   </node>
 </model>
