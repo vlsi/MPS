@@ -12,12 +12,12 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3197190366568000187">
     <file name="mpsBuild.xml">
-      <unit id="3197190366568000187" at="1,0,583,10" name="jetbrains.mps.ide.build.tests.mpsBuild" />
+      <unit id="3197190366568000187" at="1,0,564,10" name="jetbrains.mps.ide.build.tests.mpsBuild" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3474133302908391407">
     <file name="mpsExecution.xml">
-      <unit id="3474133302908391407" at="1,0,710,10" name="jetbrains.mps.ide.build.tests.mpsExecution" />
+      <unit id="3474133302908391407" at="1,0,701,10" name="jetbrains.mps.ide.build.tests.mpsExecution" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/3856853424911912638">

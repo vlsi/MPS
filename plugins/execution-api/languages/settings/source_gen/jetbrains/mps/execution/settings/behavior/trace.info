@@ -86,6 +86,9 @@
     <file name="PersistentPropertyReferenceOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.PersistentPropertyReferenceOperation_BehaviorDescriptor" />
     </file>
+    <file name="ProjectAccessExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.ProjectAccessExpression_BehaviorDescriptor" />
+    </file>
     <file name="ReportConfigurationErrorStatement_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.execution.settings.behavior.ReportConfigurationErrorStatement_BehaviorDescriptor" />
     </file>

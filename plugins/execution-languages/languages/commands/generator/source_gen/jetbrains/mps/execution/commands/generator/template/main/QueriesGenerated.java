@@ -414,6 +414,9 @@ public class QueriesGenerated {
       }
     }
   }
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0w(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_x583g4_b0a0a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -508,9 +511,6 @@ public class QueriesGenerated {
       quotedNode_3.addChild(MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2be4L, 0xbe3a0d5ba1a2be6L, "value"), HUtil.copyIfNecessary(quotedNode_4));
     }
     return quotedNode_3;
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0w(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a88(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
