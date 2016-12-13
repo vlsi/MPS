@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="fbc14279-5e2a-4c87-a5d1-5f7061e6c456" name="jetbrains.mps.debugger.api.lang" version="-1" />
-    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="-1" />
+    <use id="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" name="jetbrains.mps.debugger.java.customViewers" version="1" />
     <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="-1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="-1" />
@@ -180,6 +180,7 @@
       <concept id="1842653058274900915" name="jetbrains.mps.debugger.java.customViewers.structure.WatchableListType" flags="in" index="2fkl22" />
       <concept id="1842653058274900914" name="jetbrains.mps.debugger.java.customViewers.structure.WatchablesListCreator" flags="nn" index="2fkl23" />
       <concept id="680105146889009728" name="jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer" flags="ng" index="jiW97">
+        <property id="8903462855138553895" name="caption" index="OT4hG" />
         <child id="43370322128194610" name="getPresentation" index="4Dd$A" />
         <child id="43370322128194611" name="getWatchables" index="4Dd$B" />
         <child id="43370322128256026" name="valueType" index="4Dq$e" />
@@ -221,7 +222,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1156235010670" name="alias" index="OYydz" />
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -730,7 +730,7 @@
   <node concept="jiW97" id="2yCvSeNKOMR">
     <property role="TrG5h" value="IndexedTupleViewer" />
     <property role="3GE5qa" value="tuples" />
-    <property role="OYydz" value="IndexedTuple" />
+    <property role="OT4hG" value="IndexedTuple" />
     <node concept="3uibUv" id="2yCvSeNKOMS" role="4Dq$e">
       <ref role="3uigEE" to="upz5:i1Qa0Fe" resolve="MultiTuple" />
     </node>
