@@ -20,7 +20,6 @@
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior">
@@ -204,6 +203,9 @@
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1509,24 +1511,19 @@
       </node>
     </node>
     <node concept="13i0hz" id="2D1PBM_bzhy" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
+      <property role="2Ki8OM" value="false" />
       <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="TrG5h" value="getParameterConcepts" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <ref role="13i0hy" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
       <node concept="3Tm1VV" id="2D1PBM_bzhz" role="1B3o_S" />
-      <node concept="_YKpA" id="2D1PBM_bzhw" role="3clF45">
-        <node concept="3Tqbb2" id="2D1PBM_bzhx" role="_ZDj9">
-          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-        </node>
-      </node>
       <node concept="3clFbS" id="2D1PBM_bzh$" role="3clF47">
         <node concept="3cpWs8" id="2D1PBM_bzh_" role="3cqZAp">
           <node concept="3cpWsn" id="2D1PBM_bzhA" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="_YKpA" id="2D1PBM_bzhE" role="1tU5fm">
-              <node concept="3Tqbb2" id="2D1PBM_bzhF" role="_ZDj9">
-                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              <node concept="3bZ5Sz" id="2xELmDxRnE0" role="_ZDj9">
+                <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
               </node>
             </node>
             <node concept="2OqwBi" id="2D1PBM_bzhM" role="33vP2m">
@@ -1534,7 +1531,7 @@
                 <ref role="3eA5LN" to="fb9u:O$iR4J$g4H" resolve="EditorOperationDeclaration" />
               </node>
               <node concept="2qgKlT" id="2D1PBM_bzhH" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+                <ref role="37wK5l" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
               </node>
             </node>
           </node>
@@ -1545,8 +1542,8 @@
               <ref role="3cqZAo" node="2D1PBM_bzhA" resolve="result" />
             </node>
             <node concept="TSZUe" id="2D1PBM_bzhR" role="2OqNvi">
-              <node concept="3B5_sB" id="2D1PBM_bzhN" role="25WWJ7">
-                <ref role="3B5MYn" to="fb9u:O$iR4J$geg" resolve="Configuration_Parameter" />
+              <node concept="35c_gC" id="2xELmDxRnDZ" role="25WWJ7">
+                <ref role="35c_gD" to="fb9u:O$iR4J$geg" resolve="Configuration_Parameter" />
               </node>
             </node>
           </node>
@@ -1555,6 +1552,11 @@
           <node concept="37vLTw" id="2D1PBM_bzhT" role="3cqZAk">
             <ref role="3cqZAo" node="2D1PBM_bzhA" resolve="result" />
           </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="2xELmDxRnDX" role="3clF45">
+        <node concept="3bZ5Sz" id="2xELmDxRnDY" role="_ZDj9">
+          <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
         </node>
       </node>
     </node>
@@ -1712,24 +1714,19 @@
       </node>
     </node>
     <node concept="13i0hz" id="2D1PBM_bynB" role="13h7CS">
-      <property role="2Ki8OM" value="true" />
+      <property role="2Ki8OM" value="false" />
       <property role="13i0is" value="false" />
-      <property role="TrG5h" value="getApplicableConceptFunctionParameter" />
+      <property role="TrG5h" value="getParameterConcepts" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+      <ref role="13i0hy" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
       <node concept="3Tm1VV" id="2D1PBM_bynC" role="1B3o_S" />
-      <node concept="_YKpA" id="2D1PBM_byn_" role="3clF45">
-        <node concept="3Tqbb2" id="2D1PBM_bynA" role="_ZDj9">
-          <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
-        </node>
-      </node>
       <node concept="3clFbS" id="2D1PBM_bynD" role="3clF47">
         <node concept="3cpWs8" id="2D1PBM_bynE" role="3cqZAp">
           <node concept="3cpWsn" id="2D1PBM_bynF" role="3cpWs9">
             <property role="TrG5h" value="result" />
             <node concept="_YKpA" id="2D1PBM_bynJ" role="1tU5fm">
-              <node concept="3Tqbb2" id="2D1PBM_bynK" role="_ZDj9">
-                <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+              <node concept="3bZ5Sz" id="2xELmDxRnZH" role="_ZDj9">
+                <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
               </node>
             </node>
             <node concept="2OqwBi" id="2D1PBM_bynR" role="33vP2m">
@@ -1737,7 +1734,7 @@
                 <ref role="3eA5LN" to="fb9u:O$iR4J$g4H" resolve="EditorOperationDeclaration" />
               </node>
               <node concept="2qgKlT" id="2D1PBM_bynM" role="2OqNvi">
-                <ref role="37wK5l" to="tpek:2D1PBM_bxJg" resolve="getApplicableConceptFunctionParameter" />
+                <ref role="37wK5l" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
               </node>
             </node>
           </node>
@@ -1748,8 +1745,8 @@
               <ref role="3cqZAo" node="2D1PBM_bynF" resolve="result" />
             </node>
             <node concept="TSZUe" id="2D1PBM_bynW" role="2OqNvi">
-              <node concept="3B5_sB" id="2D1PBM_bynS" role="25WWJ7">
-                <ref role="3B5MYn" to="fb9u:O$iR4J$geg" resolve="Configuration_Parameter" />
+              <node concept="35c_gC" id="2xELmDxRnZG" role="25WWJ7">
+                <ref role="35c_gD" to="fb9u:O$iR4J$geg" resolve="Configuration_Parameter" />
               </node>
             </node>
           </node>
@@ -1758,6 +1755,11 @@
           <node concept="37vLTw" id="2D1PBM_bynY" role="3cqZAk">
             <ref role="3cqZAo" node="2D1PBM_bynF" resolve="result" />
           </node>
+        </node>
+      </node>
+      <node concept="_YKpA" id="2xELmDxRnZE" role="3clF45">
+        <node concept="3bZ5Sz" id="2xELmDxRnZF" role="_ZDj9">
+          <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
         </node>
       </node>
     </node>
