@@ -49,6 +49,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.renders.LanguageTableCellRenderer
 import jetbrains.mps.ide.ui.dialogs.properties.renders.ModelTableCellRender;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelImportedModelsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel.ValidImportCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.ide.ui.finders.LanguageUsagesFinder;
 import jetbrains.mps.ide.ui.finders.ModelUsagesFinder;
@@ -78,6 +79,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.util.Condition;
@@ -358,9 +360,11 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
+      SRepository contextRepo = myProject.getRepository();
       Set<SLanguage> inUse = new ModelAccessHelper(myProject.getModelAccess()).runReadAction(new ComputeUsedLanguages(myModelDescriptor));
       myInUseCondition = new IsLanguageInUse(inUse, myModelProperties.getUsedLanguages());
-      LanguageTableCellRenderer usedInModel = new LanguageTableCellRenderer(myProject.getRepository());
+      LanguageTableCellRenderer usedInModel = new LanguageTableCellRenderer(contextRepo);
+      usedInModel.addCellState(NotCondition.negate(new ValidImportCondition(contextRepo)), DependencyCellState.NOT_AVAILABLE);
       usedInModel.addCellState(NotCondition.negate(myInUseCondition), DependencyCellState.UNUSED);
       return usedInModel;
     }

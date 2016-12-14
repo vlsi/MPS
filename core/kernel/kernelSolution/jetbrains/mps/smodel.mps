@@ -3166,6 +3166,27 @@
         </node>
       </node>
     </node>
+    <node concept="312cEg" id="2iPx5T$9NXn" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myExtendedModules" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2iPx5T$9NXo" role="1B3o_S" />
+      <node concept="3uibUv" id="2iPx5T$9NXp" role="1tU5fm">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="2iPx5T$9Pzt" role="11_B2D">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="2ShNRf" id="2iPx5T$9NXr" role="33vP2m">
+        <node concept="1pGfFk" id="2iPx5T$9NXs" role="2ShVmc">
+          <ref role="37wK5l" to="33ny:~HashSet.&lt;init&gt;()" resolve="HashSet" />
+          <node concept="3uibUv" id="2iPx5T$9Q0G" role="1pMfVU">
+            <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="57J37wzeloa" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -3281,16 +3302,29 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="2iPx5T$9GvY" role="3cqZAp">
+              <node concept="3SKdUq" id="2iPx5T$9Gw0" role="3SKWNk">
+                <property role="3SKdUp" value="ex could be null if no explicit BaseConcept in super" />
+              </node>
+            </node>
             <node concept="3clFbJ" id="6rh3OXF7Nsl" role="3cqZAp">
-              <node concept="3y3z36" id="6rh3OXF7O8_" role="3clFbw">
-                <node concept="37vLTw" id="6rh3OXF7Obp" role="3uHU7w">
-                  <ref role="3cqZAo" node="6rh3OXF7pA_" resolve="m" />
-                </node>
-                <node concept="2OqwBi" id="6rh3OXF7NCc" role="3uHU7B">
-                  <node concept="37vLTw" id="6rh3OXF7RHG" role="2Oq$k0">
+              <node concept="1Wc70l" id="2iPx5T$9FP4" role="3clFbw">
+                <node concept="3y3z36" id="2iPx5T$9GbK" role="3uHU7B">
+                  <node concept="10Nm6u" id="2iPx5T$9Gec" role="3uHU7w" />
+                  <node concept="37vLTw" id="2iPx5T$9FZ1" role="3uHU7B">
                     <ref role="3cqZAo" node="6rh3OXF7RHC" resolve="ex" />
                   </node>
-                  <node concept="I4A8Y" id="6rh3OXF7NOp" role="2OqNvi" />
+                </node>
+                <node concept="3y3z36" id="6rh3OXF7O8_" role="3uHU7w">
+                  <node concept="37vLTw" id="6rh3OXF7Obp" role="3uHU7w">
+                    <ref role="3cqZAo" node="6rh3OXF7pA_" resolve="m" />
+                  </node>
+                  <node concept="2OqwBi" id="6rh3OXF7NCc" role="3uHU7B">
+                    <node concept="37vLTw" id="6rh3OXF7RHG" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6rh3OXF7RHC" resolve="ex" />
+                    </node>
+                    <node concept="I4A8Y" id="6rh3OXF7NOp" role="2OqNvi" />
+                  </node>
                 </node>
               </node>
               <node concept="3clFbS" id="6rh3OXF7Nsn" role="3clFbx">
@@ -3589,6 +3623,37 @@
             <ref role="3cqZAo" node="57J37wzeloa" resolve="myExcludeLangCore" />
           </node>
         </node>
+        <node concept="1DcWWT" id="2iPx5T$9Y1d" role="3cqZAp">
+          <node concept="3clFbS" id="2iPx5T$9Y1j" role="2LFqv$">
+            <node concept="3clFbF" id="2iPx5T$9Rvq" role="3cqZAp">
+              <node concept="2OqwBi" id="2iPx5T$9Tmw" role="3clFbG">
+                <node concept="37vLTw" id="2iPx5T$9Rvo" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2iPx5T$9NXn" resolve="myExtendedModules" />
+                </node>
+                <node concept="liA8E" id="2iPx5T$9ULL" role="2OqNvi">
+                  <ref role="37wK5l" to="33ny:~Set.add(java.lang.Object):boolean" resolve="add" />
+                  <node concept="2OqwBi" id="2iPx5T$a5HU" role="37wK5m">
+                    <node concept="2JrnkZ" id="2iPx5T$a5aW" role="2Oq$k0">
+                      <node concept="37vLTw" id="2iPx5T$a3DQ" role="2JrQYb">
+                        <ref role="3cqZAo" node="2iPx5T$9Y1k" resolve="em" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="2iPx5T$a6lj" role="2OqNvi">
+                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3cpWsn" id="2iPx5T$9Y1k" role="1Duv9x">
+            <property role="TrG5h" value="em" />
+            <node concept="H_c77" id="2iPx5T$9ZCd" role="1tU5fm" />
+          </node>
+          <node concept="37vLTw" id="2iPx5T$a0BE" role="1DdaDG">
+            <ref role="3cqZAo" node="6rh3OXF8g6J" resolve="myExtendedModels" />
+          </node>
+        </node>
         <node concept="3clFbF" id="6rh3OXF7qsg" role="3cqZAp">
           <node concept="Xjq3P" id="6rh3OXF7qse" role="3clFbG" />
         </node>
@@ -3613,6 +3678,28 @@
             <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
             <node concept="37vLTw" id="6rh3OXF99VW" role="37wK5m">
               <ref role="3cqZAo" node="6rh3OXF8g6J" resolve="myExtendedModels" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2iPx5T$a8ur" role="jymVt" />
+    <node concept="3clFb_" id="2iPx5T$a6so" role="jymVt">
+      <property role="TrG5h" value="getDependencyModules" />
+      <node concept="3uibUv" id="2iPx5T$a6sp" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Set" resolve="Set" />
+        <node concept="3uibUv" id="2iPx5T$aauG" role="11_B2D">
+          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="2iPx5T$a6sr" role="1B3o_S" />
+      <node concept="3clFbS" id="2iPx5T$a6ss" role="3clF47">
+        <node concept="3cpWs6" id="2iPx5T$a6st" role="3cqZAp">
+          <node concept="2YIFZM" id="2iPx5T$a6su" role="3cqZAk">
+            <ref role="37wK5l" to="33ny:~Collections.unmodifiableSet(java.util.Set):java.util.Set" resolve="unmodifiableSet" />
+            <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />
+            <node concept="37vLTw" id="2iPx5T$agv6" role="37wK5m">
+              <ref role="3cqZAo" node="2iPx5T$9NXn" resolve="myExtendedModules" />
             </node>
           </node>
         </node>

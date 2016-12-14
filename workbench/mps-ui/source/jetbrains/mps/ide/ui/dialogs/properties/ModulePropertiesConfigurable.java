@@ -94,11 +94,13 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_E
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
+import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.ConditionalIterable;
@@ -112,6 +114,7 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -119,9 +122,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
-import org.jetbrains.mps.util.Condition;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -160,18 +163,31 @@ import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
 
 public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
   private final ModuleDescriptor myModuleDescriptor;
   private AbstractModule myModule;
+  /*
+   * Generally module's repository would be the same as the project's.
+   * However, one of possible repository story evolution scenario suggests deployed modules could
+   * belong to a different repository than the project's, hence it's better to record actual one.
+   * XXX is it possible that module comes here not attached to a repo?
+   */
+  private final SRepository myModuleRepository;
   private final List<FacetCheckBox> myCheckBoxes = new ArrayList<FacetCheckBox>();
   private final FacetTabsPersistence myFacetTabsPersistence;
 
   // We are tightly coupled with IDEA IDE here, no reason to be shy about project kind.
   public ModulePropertiesConfigurable(SModule module, MPSProject project) {
     super(project);
+    // XXX for whatever reason, it looks like we are not inside read although passing SModule here (e.g. ModuleProperties_Action doesn't bother to get one). Why?
+    //     Same for ModelPropertiesConfigurable, btw.
+    //     For scenario when module comes not from the project's repo, use of GetModuleRepo looks odd as we lock project repo
+    //     to get data of a module from a different repository (although one can pretend that locking project repo locks all dependency repositories as well).
+    myModuleRepository = new ModelComputeRunnable<>(new GetModuleRepo(module)).runRead(project.getModelAccess());
     myModule = (AbstractModule) module;
     myModuleDescriptor = myModule.getModuleDescriptor();
     myFacetTabsPersistence = new FacetTabsPersistence(project).initFromEP();
@@ -543,21 +559,48 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     protected TableCellRenderer getTableCellRender() {
-      // FIXME would be great to share LanguageValidator knowledge about module errors here and tell various warnings/errors
-      //       right along a module dependency in addition to 'missing module'.
-      final SRepository repo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
-      class MissingModuleCondition implements Condition<SModule> {
-        public MissingModuleCondition() {
-        }
-
+      final ModuleTableCellRender mtcr = new ModuleTableCellRender(myModuleRepository);
+      // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
+      ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
+      final HashSet<SModuleReference> extendsSet = new HashSet<>();
+      final HashSet<SModuleReference> xModuleSet = new HashSet<>();
+      myModuleRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
-        public boolean met(SModule module) {
-          return module == null;
+        public void run() {
+          if (myModule instanceof Language) {
+            SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
+            if (structureAspect != null) {
+              // we keep lang.core.structure reference, if any, just not to warn about superfluous lang.core import
+              ConceptDeclarationScanner cds = new ConceptDeclarationScanner();
+              cds.scan(structureAspect);
+              cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
+            }
+          }
+          // collect target modules of cross-model references
+          myModule.getModels().forEach(mds::walk);
+          SearchScope moduleScope = myModule.getScope();
+          for (SModelReference xRef : mds.getCrossModelReferences()) {
+            SModel xModel = moduleScope.resolve(xRef);
+            if (xModel != null) {
+              xModuleSet.add(xModel.getModule().getModuleReference());
+            } else if (xRef.getModuleReference() != null) {
+              xModuleSet.add(xRef.getModuleReference());
+            }
+            // bad luck, reference to a model from unknown module, no idea what to do
+          }
         }
-      }
-      final ModuleTableCellRender missing = new ModuleTableCellRender(repo);
-      missing.addCellState(new MissingModuleCondition(), DependencyCellState.NOT_AVAILABLE);
-      return missing;
+      });
+      mtcr.addCellState(Objects::isNull, DependencyCellState.NOT_AVAILABLE);
+      mtcr.addCellState(moduleImport -> {
+        SModuleReference importRef = moduleImport.getModuleReference();
+        // XXX not quite nice as the same module may be imported twice, as a regular dependency as well as 'extends',
+        // here we don't tell one from another and warn both. Would be better to refactor StateTableCellRenderer to give more
+        // info about table row (access to underlying table value?)
+        boolean isExtendsDep = ((ModuleDependTableModel) myDependTableModel).getExtendedModules().contains(importRef);
+        return isExtendsDep && !extendsSet.contains(moduleImport.getModuleReference());
+      }, DependencyCellState.SUPERFLUOUS_EXTENDS);
+      mtcr.addCellState(moduleImport -> !xModuleSet.contains(moduleImport.getModuleReference()), DependencyCellState.UNUSED);
+      return mtcr;
     }
 
     @Nullable
@@ -668,8 +711,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myRuntimeTableModel.init();
       runtimeTable.setModel(myRuntimeTableModel);
 
-      final SRepository contextRepo = new ModelComputeRunnable<SRepository>(new GetModuleRepo(myModule)).runRead(myProject.getModelAccess());
-      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(contextRepo));
+      runtimeTable.setDefaultRenderer(SModuleReference.class, new ModuleTableCellRender(myModuleRepository));
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(runtimeTable);
       decorator.setAddAction(new AnActionButtonRunnable() {

@@ -19,9 +19,9 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModelImports;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -165,7 +165,8 @@ public class LanguageValidator {
       return Collections.emptyList();
     }
     // find structure models, their modules is what we truly need to extend
-    return new ModelImports(structureModel).getImportedModels().stream().map(mr -> mr.resolve(myRepository)).
-        filter(m -> m != null && LanguageAspect.STRUCTURE.is(m)).map(m -> m.getModule().getModuleReference()).collect(Collectors.toList());
+    // except for lang.core, which is extended by default.
+    ConceptDeclarationScanner cds = new ConceptDeclarationScanner().omitLangCore();
+    return cds.scan(structureModel).getDependencyModules().stream().map(SModule::getModuleReference).collect(Collectors.toList());
   }
 }

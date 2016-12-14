@@ -6,6 +6,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -26,6 +27,7 @@ public class ConceptDeclarationScanner {
   private final Set<SNode> myExternalConcepts = new HashSet<SNode>();
   private final Set<SNode> myExternalIfaces = new HashSet<SNode>();
   private final Set<SModel> myExtendedModels = new HashSet<SModel>();
+  private final Set<SModule> myExtendedModules = new HashSet<SModule>();
   private boolean myExcludeLangCore = false;
 
   public ConceptDeclarationScanner() {
@@ -48,7 +50,8 @@ public class ConceptDeclarationScanner {
     List<SNode> roots = SModelOperations.roots(m, null);
     for (SNode cd : SNodeOperations.ofConcept(roots, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"))) {
       SNode ex = SLinkOperations.getTarget(cd, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
-      if (SNodeOperations.getModel(ex) != m) {
+      // ex could be null if no explicit BaseConcept in super 
+      if (ex != null && SNodeOperations.getModel(ex) != m) {
         myExternalConcepts.add(ex);
       }
       for (SNode icd : ListSequence.fromList(SLinkOperations.getChildren(cd, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0x110358d693eL, "implements"))).where(new IWhereFilter<SNode>() {
@@ -99,11 +102,18 @@ public class ConceptDeclarationScanner {
         }
       });
     }
+    for (SModel em : myExtendedModels) {
+      myExtendedModules.add(em.getModule());
+    }
     return this;
   }
 
   public Set<SModel> getDependencyModels() {
     return Collections.unmodifiableSet(myExtendedModels);
+  }
+
+  public Set<SModule> getDependencyModules() {
+    return Collections.unmodifiableSet(myExtendedModules);
   }
 
   public Set<SNode> getExternalConcepts() {

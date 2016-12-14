@@ -21,11 +21,14 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
@@ -174,6 +177,24 @@ public class UsedLangsTableModel extends AbstractTableModel implements ItemRemov
     @Override
     public String toString() {
       return myLanguage != null ? myLanguage.getQualifiedName() : myDevKit.getModuleName();
+    }
+  }
+
+  public static final class ValidImportCondition implements Condition<Import> {
+    private final SRepository myContextRepo;
+    private final LanguageRegistry myLanguageRegistry;
+
+    public ValidImportCondition(@NotNull SRepository contextRepo) {
+      myContextRepo = contextRepo;
+      myLanguageRegistry = LanguageRegistry.getInstance(contextRepo);
+    }
+
+    @Override
+    public boolean met(Import anImport) {
+      if (anImport.myLanguage != null) {
+        return myLanguageRegistry.getLanguage(anImport.myLanguage) != null;
+      }
+      return anImport.myDevKit.resolve(myContextRepo) != null;
     }
   }
 }
