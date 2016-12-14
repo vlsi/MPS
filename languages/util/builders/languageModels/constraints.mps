@@ -2,22 +2,19 @@
 <model ref="r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)">
   <persistence version="9" />
   <languages>
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="pmg0" ref="r:77052501-5144-48a7-be50-7535fc6d1073(jetbrains.mps.baseLanguage.builders.structure)" />
-    <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
     <import index="j8l" ref="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
     <import index="fnmy" ref="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
-    <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
   </imports>
   <registry>
@@ -237,12 +234,12 @@
           <node concept="3y3z36" id="6k$kQGI6j2_" role="3clFbG">
             <node concept="10Nm6u" id="6k$kQGI6j2C" role="3uHU7w" />
             <node concept="2OqwBi" id="L_Hr3kExI3" role="3uHU7B">
+              <node concept="35c_gC" id="7Ift4Hg3gCA" role="2Oq$k0">
+                <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
+              </node>
               <node concept="2qgKlT" id="L_Hr3kExI4" role="2OqNvi">
                 <ref role="37wK5l" to="j8l:67LR$5LPv$c" resolve="getContextBuilder" />
                 <node concept="nLn13" id="L_Hr3kExI5" role="37wK5m" />
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3gCA" role="2Oq$k0">
-                <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
               </node>
             </node>
           </node>
@@ -298,6 +295,9 @@
                     <ref role="3cqZAo" node="6k$kQGI9Fjx" resolve="contextBuilder" />
                   </node>
                   <node concept="2OqwBi" id="L_Hr3kEwaz" role="37vLTx">
+                    <node concept="35c_gC" id="7Ift4Hg3gCz" role="2Oq$k0">
+                      <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
+                    </node>
                     <node concept="2qgKlT" id="L_Hr3kEwa$" role="2OqNvi">
                       <ref role="37wK5l" to="j8l:67LR$5LPv$c" resolve="getContextBuilder" />
                       <node concept="3K4zz7" id="L_Hr3kEwaB" role="37wK5m">
@@ -315,9 +315,6 @@
                           </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="35c_gC" id="7Ift4Hg3gCz" role="2Oq$k0">
-                      <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
                     </node>
                   </node>
                 </node>
@@ -592,12 +589,12 @@
                 <ref role="ehGHo" to="pmg0:67LR$5LOFWb" resolve="Builder" />
               </node>
               <node concept="2OqwBi" id="L_Hr3kErZJ" role="33vP2m">
+                <node concept="35c_gC" id="7Ift4Hg3gC_" role="2Oq$k0">
+                  <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
+                </node>
                 <node concept="2qgKlT" id="L_Hr3kErZK" role="2OqNvi">
                   <ref role="37wK5l" to="j8l:67LR$5LPv$c" resolve="getContextBuilder" />
                   <node concept="21POm0" id="L_Hr3kErZL" role="37wK5m" />
-                </node>
-                <node concept="35c_gC" id="7Ift4Hg3gC_" role="2Oq$k0">
-                  <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
                 </node>
               </node>
             </node>
@@ -695,6 +692,9 @@
                   <node concept="3y3z36" id="2kIZjjSEAii" role="3uHU7w">
                     <node concept="10Nm6u" id="2kIZjjSEAim" role="3uHU7w" />
                     <node concept="2OqwBi" id="L_Hr3kEsCa" role="3uHU7B">
+                      <node concept="35c_gC" id="7Ift4Hg3gCy" role="2Oq$k0">
+                        <ref role="35c_gD" to="pmg0:2kIZjjSDoV7" resolve="BeanPropertyBuilder" />
+                      </node>
                       <node concept="2qgKlT" id="L_Hr3kEsCb" role="2OqNvi">
                         <ref role="37wK5l" to="j8l:2kIZjjSEvS7" resolve="getPropertyName" />
                         <node concept="2OqwBi" id="L_Hr3kEsCc" role="37wK5m">
@@ -705,9 +705,6 @@
                             <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                           </node>
                         </node>
-                      </node>
-                      <node concept="35c_gC" id="7Ift4Hg3gCy" role="2Oq$k0">
-                        <ref role="35c_gD" to="pmg0:2kIZjjSDoV7" resolve="BeanPropertyBuilder" />
                       </node>
                     </node>
                   </node>
@@ -740,6 +737,9 @@
         <node concept="3clFbS" id="2kIZjjSEeuj" role="2VODD2">
           <node concept="3clFbF" id="2kIZjjSEAio" role="3cqZAp">
             <node concept="2OqwBi" id="L_Hr3kEuYX" role="3clFbG">
+              <node concept="35c_gC" id="7Ift4Hg3gCB" role="2Oq$k0">
+                <ref role="35c_gD" to="pmg0:2kIZjjSDoV7" resolve="BeanPropertyBuilder" />
+              </node>
               <node concept="2qgKlT" id="L_Hr3kEuYY" role="2OqNvi">
                 <ref role="37wK5l" to="j8l:2kIZjjSEvS7" resolve="getPropertyName" />
                 <node concept="2OqwBi" id="L_Hr3kEuZ1" role="37wK5m">
@@ -748,9 +748,6 @@
                     <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
                   </node>
                 </node>
-              </node>
-              <node concept="35c_gC" id="7Ift4Hg3gCB" role="2Oq$k0">
-                <ref role="35c_gD" to="pmg0:2kIZjjSDoV7" resolve="BeanPropertyBuilder" />
               </node>
             </node>
           </node>
@@ -840,12 +837,12 @@
               <node concept="1PxgMI" id="2YLfMN6tcdV" role="33vP2m">
                 <property role="1BlNFB" value="true" />
                 <node concept="2OqwBi" id="L_Hr3kEs0F" role="1m5AlR">
+                  <node concept="35c_gC" id="7Ift4Hg3gC$" role="2Oq$k0">
+                    <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
+                  </node>
                   <node concept="2qgKlT" id="L_Hr3kEs0G" role="2OqNvi">
                     <ref role="37wK5l" to="j8l:67LR$5LPv$c" resolve="getContextBuilder" />
                     <node concept="21POm0" id="L_Hr3kEs0H" role="37wK5m" />
-                  </node>
-                  <node concept="35c_gC" id="7Ift4Hg3gC$" role="2Oq$k0">
-                    <ref role="35c_gD" to="pmg0:67LR$5LOFWb" resolve="Builder" />
                   </node>
                 </node>
                 <node concept="chp4Y" id="714IaVdH0Lc" role="3oSUPX">

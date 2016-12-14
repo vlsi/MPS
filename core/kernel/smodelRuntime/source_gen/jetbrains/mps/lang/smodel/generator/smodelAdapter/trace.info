@@ -106,37 +106,40 @@
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6171083915388368126">
     <file name="SModuleOperations.java">
-      <node id="2030416617761235936" at="19,37,20,18" concept="11" />
-      <node id="2030416617761235943" at="21,5,22,53" concept="10" />
-      <node id="2030416617761235959" at="24,40,25,57" concept="11" />
-      <node id="6171083915388378072" at="31,49,32,19" concept="11" />
-      <node id="2030416617761250381" at="33,5,34,52" concept="11" />
-      <node id="2030416617761235934" at="18,64,21,5" concept="8" />
-      <node id="2030416617761235957" at="24,0,27,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
-      <node id="6171083915388377750" at="30,57,33,5" concept="8" />
-      <node id="2030416617761235953" at="22,53,27,7" concept="11" />
-      <node id="6171083915388377518" at="30,0,36,0" concept="15" trace="isAspect#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Z" />
-      <node id="2030416617761235930" at="18,0,29,0" concept="15" trace="getAspect#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-      <scope id="2030416617761235935" at="19,37,20,18" />
-      <scope id="2030416617761235958" at="24,40,25,57" />
-      <scope id="6171083915388377751" at="31,49,32,19" />
-      <scope id="2030416617761235957" at="24,0,27,0">
+      <node id="2030416617761235936" at="20,37,21,18" concept="11" />
+      <node id="2030416617761235943" at="22,5,23,53" concept="10" />
+      <node id="2030416617761235959" at="25,40,26,92" concept="11" />
+      <node id="6171083915388378072" at="32,49,33,19" concept="11" />
+      <node id="4021570774004376872" at="34,5,35,32" concept="10" />
+      <node id="2030416617761250381" at="35,32,36,68" concept="11" />
+      <node id="2030416617761235934" at="19,64,22,5" concept="8" />
+      <node id="2030416617761235957" at="25,0,28,0" concept="9" trace="accept#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
+      <node id="6171083915388377750" at="31,57,34,5" concept="8" />
+      <node id="2030416617761235953" at="23,53,28,7" concept="11" />
+      <node id="6171083915388377518" at="31,0,38,0" concept="15" trace="isAspect#(Lorg/jetbrains/mps/openapi/model/SModel;Ljava/lang/String;)Z" />
+      <node id="2030416617761235930" at="19,0,30,0" concept="15" trace="getAspect#(Lorg/jetbrains/mps/openapi/module/SModule;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <scope id="2030416617761235935" at="20,37,21,18" />
+      <scope id="2030416617761235958" at="25,40,26,92" />
+      <scope id="6171083915388377751" at="32,49,33,19" />
+      <scope id="2030416617761235957" at="25,0,28,0">
         <var name="it" id="2030416617761235957" />
       </scope>
-      <scope id="6171083915388377524" at="30,57,34,52" />
-      <scope id="6171083915388377518" at="30,0,36,0">
+      <scope id="6171083915388377524" at="31,57,36,68">
+        <var name="mn" id="4021570774004376873" />
+      </scope>
+      <scope id="6171083915388377518" at="31,0,38,0">
         <var name="m" id="6171083915388377613" />
         <var name="name" id="6171083915388377625" />
       </scope>
-      <scope id="2030416617761235933" at="18,64,27,7">
+      <scope id="2030416617761235933" at="19,64,28,7">
         <var name="models" id="2030416617761235944" />
       </scope>
-      <scope id="2030416617761235930" at="18,0,29,0">
+      <scope id="2030416617761235930" at="19,0,30,0">
         <var name="m" id="2030416617761235970" />
         <var name="name" id="2030416617761235972" />
       </scope>
-      <unit id="2030416617761235957" at="23,55,27,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations$1" />
-      <unit id="6171083915388368126" at="12,0,37,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
+      <unit id="2030416617761235957" at="24,55,28,5" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations$1" />
+      <unit id="6171083915388368126" at="13,0,39,0" name="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
     </file>
   </root>
   <root nodeRef="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)/6407023681582958584">

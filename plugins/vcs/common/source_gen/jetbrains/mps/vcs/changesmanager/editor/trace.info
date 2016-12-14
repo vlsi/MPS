@@ -109,9 +109,9 @@
       <node id="6883096464919730880" at="256,5,257,0" concept="14" />
       <node id="6214954779304826196" at="260,36,261,47" concept="12" />
       <node id="6214954779304826196" at="262,5,263,16" concept="12" />
-      <node id="5525460315804374109" at="266,36,267,48" concept="5" />
-      <node id="5525460315804374109" at="268,5,269,0" concept="14" />
-      <node id="6663507428710602356" at="271,72,272,46" concept="12" />
+      <node id="6663507428710602356" at="265,72,266,46" concept="12" />
+      <node id="5525460315804374109" at="269,36,270,48" concept="5" />
+      <node id="5525460315804374109" at="271,5,272,0" concept="14" />
       <node id="2052504288806109974" at="36,0,38,0" concept="3" trace="ChangesStripActionsHelper#()V" />
       <node id="4953964883742113001" at="129,14,131,9" concept="1" />
       <node id="2052504288806114023" at="42,0,45,0" concept="16" trace="isNeighbourGroupAvailable#(Ljetbrains/mps/openapi/editor/EditorContext;Z)Z" />
@@ -141,8 +141,8 @@
       <node id="5525460315804373583" at="247,85,250,5" concept="9" />
       <node id="6883096464919730880" at="253,80,256,5" concept="9" />
       <node id="6214954779304826196" at="259,74,262,5" concept="9" />
-      <node id="5525460315804374109" at="265,82,268,5" concept="9" />
-      <node id="6663507428710602356" at="271,0,274,0" concept="16" trace="eq_ikrecr_a0a0a0a0a0d0u0l#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6663507428710602356" at="265,0,268,0" concept="16" trace="eq_ikrecr_a0a0a0a0a0d0u0l#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="5525460315804374109" at="268,82,271,5" concept="9" />
       <node id="2052504288806114019" at="38,0,42,0" concept="16" trace="getNeighbourChangeGroup#(Ljetbrains/mps/openapi/editor/EditorContext;Z)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
       <node id="5525460315804373559" at="66,0,70,0" concept="16" trace="getPainter#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;" />
       <node id="1108966977729618977" at="70,0,74,0" concept="16" trace="getCurrentChangeGroup#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;" />
@@ -171,7 +171,7 @@
       <node id="5525460315804373583" at="247,0,253,0" concept="16" trace="check_ikrecr_a6a0a0c0i#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
       <node id="6883096464919730880" at="253,0,259,0" concept="16" trace="check_ikrecr_a1a9#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
       <node id="6214954779304826196" at="259,0,265,0" concept="16" trace="check_ikrecr_a2a9#(Ljetbrains/mps/vcs/diff/ui/common/ChangeGroup;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_0;" />
-      <node id="5525460315804374109" at="265,0,271,0" concept="16" trace="check_ikrecr_a32a11#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
+      <node id="5525460315804374109" at="268,0,274,0" concept="16" trace="check_ikrecr_a32a11#(Ljetbrains/mps/vcs/changesmanager/editor/ChangeStripsPainter;)V" />
       <node id="4953964883742112947" at="122,56,131,9" concept="9" />
       <node id="2052504288806114027" at="45,0,55,0" concept="16" trace="goToNeighbourGroup#(Ljetbrains/mps/openapi/editor/EditorContext;Z)V" />
       <node id="4953964883742112945" at="122,0,133,0" concept="10" trace="translate#(Ljetbrains/mps/vcs/diff/changes/ModelChange;)Ljava/lang/Iterable;" />
@@ -216,8 +216,8 @@
       <scope id="5525460315804373583" at="248,36,249,48" />
       <scope id="6883096464919730880" at="254,36,255,48" />
       <scope id="6214954779304826196" at="260,36,261,47" />
-      <scope id="5525460315804374109" at="266,36,267,48" />
-      <scope id="6663507428710602356" at="271,72,272,46" />
+      <scope id="6663507428710602356" at="265,72,266,46" />
+      <scope id="5525460315804374109" at="269,36,270,48" />
       <scope id="2052504288806109974" at="36,0,38,0" />
       <scope id="5525460315804363467" at="62,80,64,128">
         <var name="editorComponent" id="5525460315804363460" />
@@ -273,7 +273,7 @@
       <scope id="1108966977729720515" at="195,51,198,9">
         <var name="i" id="1108966977729720518" />
       </scope>
-      <scope id="6663507428710602356" at="271,0,274,0">
+      <scope id="6663507428710602356" at="265,0,268,0">
         <var name="a" id="6663507428710602356" />
         <var name="b" id="6663507428710602356" />
       </scope>
@@ -304,7 +304,7 @@
       <scope id="5525460315804373583" at="247,85,251,0" />
       <scope id="6883096464919730880" at="253,80,257,0" />
       <scope id="6214954779304826196" at="259,74,263,16" />
-      <scope id="5525460315804374109" at="265,82,269,0" />
+      <scope id="5525460315804374109" at="268,82,272,0" />
       <scope id="5525460315804363463" at="61,0,66,0">
         <var name="editorContext" id="5525460315804363462" />
       </scope>
@@ -355,7 +355,7 @@
       <scope id="6214954779304826196" at="259,0,265,0">
         <var name="checkedDotOperand" id="6214954779304826196" />
       </scope>
-      <scope id="5525460315804374109" at="265,0,271,0">
+      <scope id="5525460315804374109" at="268,0,274,0">
         <var name="checkedDotOperand" id="5525460315804374109" />
       </scope>
       <scope id="2052504288806111774" at="45,93,53,56">

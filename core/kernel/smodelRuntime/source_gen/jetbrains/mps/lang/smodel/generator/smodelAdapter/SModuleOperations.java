@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SModelName;
 
 public class SModuleOperations {
   /**
@@ -22,7 +23,7 @@ public class SModuleOperations {
     List<SModel> models = ((Language) m).getModels();
     return ListSequence.fromList(models).findFirst(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it.getName().getSimpleName().equals(name);
+        return !(it.getName().hasStereotype()) && it.getName().getSimpleName().equals(name);
       }
     });
   }
@@ -31,6 +32,7 @@ public class SModuleOperations {
     if (!((m.getModule() instanceof Language))) {
       return false;
     }
-    return m.getName().getSimpleName().equals(name);
+    SModelName mn = m.getName();
+    return !(mn.hasStereotype()) && mn.getSimpleName().equals(name);
   }
 }

@@ -178,11 +178,20 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
   public MoveNodeRefactoringParticipant.MoveNodeRefactoringDataCollector<Tuples._2<NamedNodeReference, WriteSubconceptMigrationParticipant.MigrationScriptRef>, Void> getDataCollector() {
     return myDataCollector;
   }
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a3a2a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNodeReference check_8k3jue_a0a0a0a0a0b0c0k(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
+  }
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a01(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode createIncludeMigrationPart_8k3jue_a0a1a1a0a0a0a0a0a5a2a01(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -203,14 +212,5 @@ public class WriteSubconceptMigrationParticipant extends RefactoringParticipantB
       }
     }
     return n1;
-  }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a3a2a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a4a2a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_8k3jue_a0a0a0a0a0a0a0a0a0a0a5a2a01(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

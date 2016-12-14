@@ -7,7 +7,7 @@
   </root>
   <root nodeRef="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)/2304492758936981542">
     <file name="test4.xml">
-      <unit id="2304492758936981542" at="1,0,341,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test4" />
+      <unit id="2304492758936981542" at="1,0,340,10" name="jetbrains.mps.build.mps.runner.test.buildscript.test4" />
     </file>
   </root>
   <root nodeRef="r:1df60b02-4b01-4931-9ed0-efa7ab133a2f(jetbrains.mps.build.mps.runner.test.buildscript)/5712055271175299542">

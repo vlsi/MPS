@@ -65,6 +65,12 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     };
   }
 
+  private static boolean eq_m5uax2_a0a0a5(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_m5uax2_a0a0a5_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SModule check_m5uax2_a0a0b0h(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
@@ -83,22 +89,16 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
     }
     return null;
   }
-  private static SModule check_m5uax2_a0a0a0a0a0b0j(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static boolean eq_m5uax2_a0a0a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_m5uax2_a0a0a5_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_m5uax2_a0a1a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_m5uax2_a0a1a7_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
+  }
+  private static SModule check_m5uax2_a0a0a0a0a0b0j(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }
