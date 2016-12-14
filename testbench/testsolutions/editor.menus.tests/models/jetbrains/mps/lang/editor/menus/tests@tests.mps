@@ -421,7 +421,6 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1156235010670" name="alias" index="OYydz" />
         <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
@@ -1726,7 +1725,6 @@
     <node concept="1qefOq" id="1RxYXnVXz$e" role="1SKRRt">
       <node concept="3A5Wbc" id="1RxYXnVYpoz" role="1qenE9">
         <node concept="3A5S4R" id="1RxYXnVYpo$" role="3A5S36">
-          <property role="OYydz" value="AbsConcDec" />
           <ref role="3A66Ph" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
           <node concept="3A63B4" id="1RxYXnVZ8u2" role="3A5S4K">
             <ref role="3A63B7" to="wtc3:1RxYXnVXyhK" resolve="ConceptWithoutDefaultMenu" />

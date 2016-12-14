@@ -2,11 +2,11 @@
 <model ref="r:49e72ff8-8ace-42fd-8f9f-5961eed9792e(jetbrains.mps.execution.api.configurations)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
@@ -32,6 +32,7 @@
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
+    <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="z1c4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -50,9 +51,14 @@
       </concept>
       <concept id="1188207840427" name="jetbrains.mps.baseLanguage.structure.AnnotationInstance" flags="nn" index="2AHcQZ">
         <reference id="1188208074048" name="annotation" index="2AI5Lk" />
+        <child id="1188214630783" name="value" index="2B76xF" />
       </concept>
       <concept id="1188208481402" name="jetbrains.mps.baseLanguage.structure.HasAnnotation" flags="ng" index="2AJDlI">
         <child id="1188208488637" name="annotation" index="2AJF6D" />
+      </concept>
+      <concept id="1188214545140" name="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue" flags="ng" index="2B6LJw">
+        <reference id="1188214555875" name="key" index="2B6OnR" />
+        <child id="1188214607812" name="value" index="2B70Vg" />
       </concept>
       <concept id="1224848483129" name="jetbrains.mps.baseLanguage.structure.IBLDeprecatable" flags="ng" index="IEa8$">
         <property id="1224848525476" name="isDeprecated" index="IEkAT" />
@@ -143,6 +149,9 @@
       <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
+      </concept>
+      <concept id="1111509017652" name="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" flags="nn" index="3b6qkQ">
+        <property id="1113006610751" name="value" index="$nhwW" />
       </concept>
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
@@ -279,6 +288,9 @@
       </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
+        <child id="2667874559098216723" name="text" index="3HnX3l" />
       </concept>
       <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
         <reference id="2217234381367530213" name="classifier" index="VXe09" />
@@ -927,12 +939,33 @@
       <node concept="17QB3L" id="66CJzfk0VqA" role="1tU5fm" />
     </node>
     <node concept="312cEg" id="5z4Y2AE1aoW" role="jymVt">
-      <property role="TrG5h" value="myAlias" />
+      <property role="TrG5h" value="myCaption" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tm6S6" id="5z4Y2AE1aoX" role="1B3o_S" />
       <node concept="17QB3L" id="5z4Y2AE1aoY" role="1tU5fm" />
     </node>
     <node concept="3clFbW" id="66CJzfk0NG2" role="jymVt">
+      <node concept="2AHcQZ" id="7Ift4HfrKH5" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="7Ift4HfrKSa" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="7Ift4HfrN8B" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="7Ift4HfrNc1" role="2B70Vg">
+            <property role="$nhwW" value="3.5" />
+          </node>
+        </node>
+      </node>
+      <node concept="P$JXv" id="7Ift4HfrKH2" role="lGtFl">
+        <node concept="TZ5HI" id="7Ift4HfrKH3" role="3nqlJM">
+          <node concept="TZ5HA" id="7Ift4HfrKH4" role="3HnX3l">
+            <node concept="1dT_AC" id="7Ift4HfrKS8" role="1dT_Ay">
+              <property role="1dT_AB" value="moved to language level. Use constructor with 2 parameters" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="37vLTG" id="66CJzfk0Vqr" role="3clF46">
         <property role="TrG5h" value="name" />
         <node concept="17QB3L" id="66CJzfk0Vqt" role="1tU5fm" />
@@ -957,7 +990,7 @@
         <node concept="17QB3L" id="5z4Y2AE1aoL" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5z4Y2AE1aoT" role="3clF46">
-        <property role="TrG5h" value="alias" />
+        <property role="TrG5h" value="caption" />
         <node concept="17QB3L" id="5z4Y2AE1aoV" role="1tU5fm" />
       </node>
       <node concept="3Tm1VV" id="5z4Y2AE1aoM" role="1B3o_S" />
@@ -976,10 +1009,10 @@
         <node concept="3clFbF" id="5z4Y2AE1ap4" role="3cqZAp">
           <node concept="37vLTI" id="5z4Y2AE1ap6" role="3clFbG">
             <node concept="37vLTw" id="2BHiRxgm711" role="37vLTx">
-              <ref role="3cqZAo" node="5z4Y2AE1aoT" resolve="alias" />
+              <ref role="3cqZAo" node="5z4Y2AE1aoT" resolve="caption" />
             </node>
             <node concept="37vLTw" id="2BHiRxeuqPR" role="37vLTJ">
-              <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myAlias" />
+              <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myCaption" />
             </node>
           </node>
         </node>
@@ -1004,7 +1037,7 @@
       <node concept="3clFbS" id="1hahyPavQ4j" role="3clF47">
         <node concept="3cpWs6" id="1hahyPavRfL" role="3cqZAp">
           <node concept="37vLTw" id="1hahyPavRCc" role="3cqZAk">
-            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myAlias" />
+            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myCaption" />
           </node>
         </node>
       </node>
@@ -1025,7 +1058,7 @@
       <node concept="3clFbS" id="66CJzfk0NGl" role="3clF47">
         <node concept="3cpWs6" id="66CJzfk0NGm" role="3cqZAp">
           <node concept="37vLTw" id="2BHiRxeuOaB" role="3cqZAk">
-            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myAlias" />
+            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myCaption" />
           </node>
         </node>
       </node>
@@ -1224,7 +1257,7 @@
                         </node>
                         <node concept="3cpWs3" id="5z4Y2AE1aNq" role="3uHU7B">
                           <node concept="37vLTw" id="2BHiRxeujZ4" role="3uHU7B">
-                            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myAlias" />
+                            <ref role="3cqZAo" node="5z4Y2AE1aoW" resolve="myCaption" />
                           </node>
                           <node concept="Xl_RD" id="5z4Y2AE1aNt" role="3uHU7w">
                             <property role="Xl_RC" value="(" />
@@ -1790,6 +1823,35 @@
     <property role="TrG5h" value="BaseMpsProducer" />
     <property role="1sVAO0" value="true" />
     <property role="1EXbeo" value="false" />
+    <node concept="3UR2Jj" id="5BgI1pEBdgI" role="lGtFl">
+      <node concept="TUZQ0" id="5BgI1pEBdgL" role="3nqlJM">
+        <property role="TUZQ4" value="denotes the MpsPsiElement's item which is the 'key' of the subclassing producer" />
+        <node concept="zr_56" id="5BgI1pEBdgN" role="zr_5Q">
+          <ref role="zr_51" node="7pREJKpbIlw" resolve="T" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5BgI1pEBdhs" role="TZ5H$">
+        <node concept="1dT_AC" id="5BgI1pEBdht" role="1dT_Ay">
+          <property role="1dT_AB" value="Currently extends the deprecated RuntimeConfigurationProducer" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5BgI1pEBhte" role="TZ5H$">
+        <node concept="1dT_AC" id="5BgI1pEBhtf" role="1dT_Ay">
+          <property role="1dT_AB" value="To be migrated in 3.5 to the " />
+        </node>
+        <node concept="1dT_AA" id="5BgI1pEB_mc" role="1dT_Ay">
+          <node concept="92FcH" id="5BgI1pEB_mi" role="qph3F">
+            <node concept="TZ5HA" id="5BgI1pEB_mk" role="2XjZqd" />
+            <node concept="VXe08" id="5BgI1pEBJP3" role="92FcQ">
+              <ref role="VXe09" to="feyl:~RunConfigurationProducer" resolve="RunConfigurationProducer" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5BgI1pEB_mb" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+    </node>
     <node concept="312cEg" id="7pREJKpbIgS" role="jymVt">
       <property role="TrG5h" value="mySourceElement" />
       <property role="34CwA1" value="false" />
@@ -2013,6 +2075,26 @@
         <node concept="1DcWWT" id="224UGqZHsvg" role="3cqZAp">
           <node concept="3clFbS" id="224UGqZHsvi" role="2LFqv$">
             <node concept="3clFbJ" id="224UGqZHtdM" role="3cqZAp">
+              <node concept="2YIFZM" id="224UGqZHu0f" role="3clFbw">
+                <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
+                <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="224UGqZHuce" role="37wK5m">
+                  <node concept="37vLTw" id="224UGqZHu7U" role="2Oq$k0">
+                    <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
+                  </node>
+                  <node concept="liA8E" id="224UGqZHue5" role="2OqNvi">
+                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="224UGqZHusv" role="37wK5m">
+                  <node concept="37vLTw" id="224UGqZHunN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="224UGqZHs3$" resolve="given" />
+                  </node>
+                  <node concept="liA8E" id="224UGqZHuuG" role="2OqNvi">
+                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
+                  </node>
+                </node>
+              </node>
               <node concept="3clFbS" id="224UGqZHtdO" role="3clFbx">
                 <node concept="3clFbJ" id="5BgI1pEBpoV" role="3cqZAp">
                   <node concept="3clFbS" id="5BgI1pEBpoX" role="3clFbx">
@@ -2035,26 +2117,6 @@
                     <node concept="37vLTw" id="5BgI1pEBq9r" role="37wK5m">
                       <ref role="3cqZAo" node="224UGqZH_qd" resolve="context" />
                     </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="2YIFZM" id="224UGqZHu0f" role="3clFbw">
-                <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
-                <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
-                <node concept="2OqwBi" id="224UGqZHuce" role="37wK5m">
-                  <node concept="37vLTw" id="224UGqZHu7U" role="2Oq$k0">
-                    <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
-                  </node>
-                  <node concept="liA8E" id="224UGqZHue5" role="2OqNvi">
-                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="224UGqZHusv" role="37wK5m">
-                  <node concept="37vLTw" id="224UGqZHunN" role="2Oq$k0">
-                    <ref role="3cqZAo" node="224UGqZHs3$" resolve="given" />
-                  </node>
-                  <node concept="liA8E" id="224UGqZHuuG" role="2OqNvi">
-                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
                   </node>
                 </node>
               </node>
@@ -2934,35 +2996,6 @@
     </node>
     <node concept="3uibUv" id="7pREJKpbIlx" role="1zkMxy">
       <ref role="3uigEE" to="uycu:~RuntimeConfigurationProducer" resolve="RuntimeConfigurationProducer" />
-    </node>
-    <node concept="3UR2Jj" id="5BgI1pEBdgI" role="lGtFl">
-      <node concept="TUZQ0" id="5BgI1pEBdgL" role="3nqlJM">
-        <property role="TUZQ4" value="denotes the MpsPsiElement's item which is the 'key' of the subclassing producer" />
-        <node concept="zr_56" id="5BgI1pEBdgN" role="zr_5Q">
-          <ref role="zr_51" node="7pREJKpbIlw" resolve="T" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="5BgI1pEBdhs" role="TZ5H$">
-        <node concept="1dT_AC" id="5BgI1pEBdht" role="1dT_Ay">
-          <property role="1dT_AB" value="Currently extends the deprecated RuntimeConfigurationProducer" />
-        </node>
-      </node>
-      <node concept="TZ5HA" id="5BgI1pEBhte" role="TZ5H$">
-        <node concept="1dT_AC" id="5BgI1pEBhtf" role="1dT_Ay">
-          <property role="1dT_AB" value="To be migrated in 3.5 to the " />
-        </node>
-        <node concept="1dT_AA" id="5BgI1pEB_mc" role="1dT_Ay">
-          <node concept="92FcH" id="5BgI1pEB_mi" role="qph3F">
-            <node concept="TZ5HA" id="5BgI1pEB_mk" role="2XjZqd" />
-            <node concept="VXe08" id="5BgI1pEBJP3" role="92FcQ">
-              <ref role="VXe09" to="feyl:~RunConfigurationProducer" resolve="RunConfigurationProducer" />
-            </node>
-          </node>
-        </node>
-        <node concept="1dT_AC" id="5BgI1pEB_mb" role="1dT_Ay">
-          <property role="1dT_AB" value="" />
-        </node>
-      </node>
     </node>
   </node>
 </model>

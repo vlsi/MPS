@@ -33,11 +33,11 @@ import org.jetbrains.mps.util.DepthFirstConceptIterator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.scopes.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -124,7 +124,7 @@ public class FindUnusedAndDeprecatedConcepts_Action extends BaseAction {
             monitor.advance(totalWork / 8);
 
             monitor.step("Look up concept declarations...");
-            Iterable<SearchResult<Object>> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration").getDeclarationNode(), new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults();
+            Iterable<SearchResult<Object>> searchResults = FindUtils.getSearchResults(new EmptyProgressMonitor(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1071489090640"), new GlobalScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder").getSearchResults();
             if (monitor.isCanceled()) {
               return null;
             }

@@ -502,6 +502,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart" />
     <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

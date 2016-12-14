@@ -94,18 +94,18 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
     public MatchParensRegexp_customReplace_cellMenu_cqz3y2_b0a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de1f935L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp").getDeclarationNode());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6e3f6L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp").getDeclarationNode());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ddfb973L, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp").getDeclarationNode());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6742fL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp").getDeclarationNode());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp").getDeclarationNode());
+      List<SAbstractConcept> res = ListSequence.fromList(new LinkedList<SAbstractConcept>());
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de1f935L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6e3f6L, "jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp"));
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118ddfb973L, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp"));
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118de6742fL, "jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp"));
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
       return res;
     }
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      return createReplacementNode_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
     }
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode createReplacementNode_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
     }
     public boolean isReferentPresentation() {

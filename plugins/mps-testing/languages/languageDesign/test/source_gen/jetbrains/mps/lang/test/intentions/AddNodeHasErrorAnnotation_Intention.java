@@ -42,7 +42,7 @@ public final class AddNodeHasErrorAnnotation_Intention extends IntentionDescript
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (boolean) NodesTestCase__BehaviorDescriptor.isIntentionApplicable_idhHDM9no.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase").getDeclarationNode()), node);
+    return (boolean) NodesTestCase__BehaviorDescriptor.isIntentionApplicable_idhHDM9no.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x11b55b49e46L, "jetbrains.mps.lang.test.structure.NodesTestCase")), node);
   }
   @Override
   public boolean isSurroundWith() {

@@ -1019,7 +1019,7 @@
       <node id="5797068448049412327" at="208,86,209,128" concept="10" />
       <node id="5797068448049412334" at="209,128,210,142" concept="10" />
       <node id="5797068448049412343" at="210,142,211,69" concept="10" />
-      <node id="5797068448049412351" at="211,69,212,182" concept="10" />
+      <node id="5797068448049412351" at="211,69,212,142" concept="10" />
       <node id="5797068448049412366" at="214,215,215,36" concept="10" />
       <node id="5797068448049412370" at="215,36,216,80" concept="10" />
       <node id="5797068448049412393" at="217,154,218,105" concept="10" />
@@ -1338,7 +1338,7 @@
       <node id="5797068448049411993" at="600,0,617,0" concept="9" trace="checkMouseEvent#(Ljava/awt/event/MouseEvent;)Z" />
       <node id="5797068448049412086" at="85,24,105,7" concept="4" />
       <node id="5797068448049412205" at="160,0,180,0" concept="9" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="5797068448049412358" at="212,182,233,5" concept="7" />
+      <node id="5797068448049412358" at="212,142,233,5" concept="7" />
       <node id="5797068448049412198" at="158,48,180,7" concept="4" />
       <node id="5797068448049412322" at="208,0,236,0" concept="9" trace="createHierarchyForest#()Ljava/util/List;" />
       <node id="5797068448049411880" at="350,0,378,0" concept="2" trace="ConceptContainer#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/hierarchy/LanguageHierarchiesComponent;Z)V" />
@@ -1694,7 +1694,7 @@
       <scope id="5797068448049412205" at="160,0,180,0">
         <var name="e" id="5797068448049412208" />
       </scope>
-      <scope id="5797068448049412358" at="212,182,233,5">
+      <scope id="5797068448049412358" at="212,142,233,5">
         <var name="concept" id="5797068448049412363" />
       </scope>
       <scope id="5797068448049412326" at="208,86,234,18">

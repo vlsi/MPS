@@ -166,6 +166,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x11d2ea63881L);
     b.parent(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL);
     b.origin("r:f3383ae6-205a-4e7c-8dd9-c29966e29e49(jetbrains.mps.execution.configurations.structure)/7037083547576022975");
+    b.prop("caption", 0x7b8f744b4f6e79ecL, "8903462855138769388");
     b.aggregate("execute", 0x220f4a2c4b02cb91L).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x220f4a2c4aff4248L).optional(false).ordered(true).multiple(false).origin("2454261876037700497").done();
     b.aggregate("parameter", 0x5ae6ebde781f96aaL).target(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x5ae6ebde781f8014L).optional(true).ordered(true).multiple(true).origin("6550182048787568298").done();
     b.alias("before task");

@@ -104,6 +104,7 @@
       <concept id="3308396621974580100" name="jetbrains.mps.lang.editor.structure.SubstituteMenu_Default" flags="ng" index="3p36aQ" />
       <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
+        <property id="1139852716018" name="noTargetText" index="1$x2rV" />
         <property id="1140017977771" name="readOnly" index="1Intyy" />
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
@@ -221,7 +222,6 @@
       <concept id="6407023681583031218" name="jetbrains.mps.lang.smodel.structure.AttributeAccess" flags="nn" index="3CFZ6_">
         <child id="6407023681583036852" name="qualifier" index="3CFYIz" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -232,6 +232,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -772,6 +773,19 @@
             </node>
           </node>
         </node>
+      </node>
+      <node concept="3EZMnI" id="7Ift4HfrBLV" role="3EZMnx">
+        <node concept="VPM3Z" id="7Ift4HfrBLX" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="7Ift4HfrBLZ" role="3EZMnx">
+          <property role="3F0ifm" value="show as:" />
+        </node>
+        <node concept="3F0A7n" id="7Ift4HfrBWg" role="3EZMnx">
+          <property role="1$x2rV" value="&lt;use name&gt;" />
+          <ref role="1NtTu8" to="uhxm:7Ift4HfrBBG" resolve="caption" />
+        </node>
+        <node concept="2iRfu4" id="7Ift4HfrBM0" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="66CJzfk0XGH" role="3EZMnx">
         <node concept="VPM3Z" id="66CJzfk0XGI" role="3F10Kt">
@@ -1353,7 +1367,7 @@
                           </node>
                           <node concept="3GMtW1" id="5pE1_aqYtxU" role="2Oq$k0" />
                         </node>
-                        <node concept="1PgB_6" id="5pE1_aqYtxV" role="2OqNvi" />
+                        <node concept="3YRAZt" id="5pE1_aqYtxV" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -1539,12 +1553,12 @@
                   <node concept="17QB3L" id="1wEcoXjIDpL" role="HW$YZ" />
                   <node concept="2OqwBi" id="1wEcoXjIDpM" role="HW$Y0">
                     <node concept="1PxgMI" id="1wEcoXjIDpN" role="2Oq$k0">
-                      <node concept="chp4Y" id="714IaVdGZ8g" role="3oSUPX">
-                        <ref role="cht4Q" to="uhxm:25jQf71XihT" resolve="AbstractRunConfigurationExecutor" />
-                      </node>
                       <node concept="2OqwBi" id="1wEcoXjIDpO" role="1m5AlR">
                         <node concept="3bvxqY" id="1wEcoXjIDpS" role="2Oq$k0" />
                         <node concept="2Rxl7S" id="1wEcoXjIDpQ" role="2OqNvi" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdGZ8g" role="3oSUPX">
+                        <ref role="cht4Q" to="uhxm:25jQf71XihT" resolve="AbstractRunConfigurationExecutor" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="1wEcoXjIDpR" role="2OqNvi">

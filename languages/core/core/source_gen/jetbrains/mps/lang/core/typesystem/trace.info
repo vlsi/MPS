@@ -310,8 +310,8 @@
     <file name="check_Export_NonTypesystemRule.java">
       <node id="5239544140134882821" at="27,117,28,96" concept="7" />
       <node id="526633399526794615" at="29,51,30,13" concept="8" />
-      <node id="5425021671150235563" at="31,5,32,287" concept="7" />
-      <node id="402007580867616321" at="32,287,33,62" concept="9" />
+      <node id="5425021671150235563" at="31,5,32,266" concept="7" />
+      <node id="402007580867616321" at="32,266,33,62" concept="9" />
       <node id="2565736246230032421" at="34,28,35,13" concept="8" />
       <node id="376024488709664748" at="36,5,37,33" concept="9" />
       <node id="8935196238174954469" at="39,7,40,60" concept="7" />
@@ -329,8 +329,8 @@
       <node id="376024488709664742" at="55,0,58,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="376024488709664742" at="58,0,61,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="376024488709664742" at="61,0,64,0" concept="6" trace="overrides#()Z" />
-      <node id="8935196238174954469" at="38,354,42,7" concept="1" />
-      <node id="8935196238174954475" at="46,348,51,9" concept="1" />
+      <node id="8935196238174954469" at="38,333,42,7" concept="1" />
+      <node id="8935196238174954475" at="46,327,51,9" concept="1" />
       <node id="5425021671150237299" at="37,33,43,5" concept="5" />
       <node id="402007580867616253" at="45,87,52,7" concept="5" />
       <node id="376024488709665189" at="44,24,53,5" concept="4" />
@@ -355,8 +355,8 @@
         <var name="argument" id="376024488709664742" />
       </scope>
       <scope id="376024488709664742" at="61,0,64,0" />
-      <scope id="5425021671150237300" at="38,354,42,7" />
-      <scope id="402007580867616260" at="46,348,51,9" />
+      <scope id="5425021671150237300" at="38,333,42,7" />
+      <scope id="402007580867616260" at="46,327,51,9" />
       <scope id="376024488709665192" at="45,87,52,7" />
       <scope id="376024488709665189" at="44,24,53,5">
         <var name="ref" id="376024488709665190" />

@@ -32,7 +32,7 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
         return;
       }
 
-      SNode contextClassifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier").getDeclarationNode()), varRef);
+      SNode contextClassifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), varRef);
       if (contextClassifier == null) {
         // referencing the field from an unknown non-java context 
         // todo Should expandGenerics to something general like Object in case it's a generic type 

@@ -22,7 +22,6 @@
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tp2z" ref="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -549,9 +548,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -5458,11 +5454,9 @@
             <node concept="3clFbF" id="1wEcoXjIBB6" role="3cqZAp">
               <node concept="3cpWs3" id="1wEcoXjIBB7" role="3clFbG">
                 <node concept="2OqwBi" id="1wEcoXjIBB8" role="3uHU7B">
-                  <node concept="3TrcHB" id="1wEcoXjIBB9" role="2OqNvi">
-                    <ref role="3TsBF5" to="tpce:4qF2Hm2r7ja" resolve="conceptAlias" />
-                  </node>
-                  <node concept="3TUQnm" id="1wEcoXjIBBa" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tp2q:hQJqq4S" resolve="LinkedListCreator" />
+                  <node concept="3n3YKJ" id="7Ift4HfWlND" role="2OqNvi" />
+                  <node concept="35c_gC" id="7Ift4HfWlNE" role="2Oq$k0">
+                    <ref role="35c_gD" to="tp2q:hQJqq4S" resolve="LinkedListCreator" />
                   </node>
                 </node>
                 <node concept="Xl_RD" id="1wEcoXjIBBb" role="3uHU7w">

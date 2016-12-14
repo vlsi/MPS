@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="0" />
+    <use id="22e72e4c-0f69-46ce-8403-6750153aa615" name="jetbrains.mps.execution.configurations" version="1" />
     <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
@@ -207,6 +207,7 @@
       <concept id="6550182048787583936" name="jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference" flags="nn" index="yYjwu" />
       <concept id="6550182048787562516" name="jetbrains.mps.execution.configurations.structure.BeforeTaskParameter" flags="ng" index="yYmJa" />
       <concept id="7037083547576022975" name="jetbrains.mps.execution.configurations.structure.BeforeTask" flags="ng" index="2PEKAc">
+        <property id="8903462855138769388" name="caption" index="OSgQB" />
         <child id="6550182048787568298" name="parameter" index="yYnPO" />
         <child id="2454261876037700497" name="execute" index="1D3o6X" />
       </concept>
@@ -284,9 +285,6 @@
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
-      <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
-        <property id="1156235010670" name="alias" index="OYydz" />
-      </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
       </concept>
@@ -509,8 +507,8 @@
     </node>
   </node>
   <node concept="2PEKAc" id="4KDfkUwMkVJ">
-    <property role="OYydz" value="Make" />
     <property role="TrG5h" value="MakeNodePointers" />
+    <property role="OSgQB" value="Make" />
     <node concept="1CW0x$" id="4KDfkUwMkVK" role="1D3o6X">
       <node concept="3clFbS" id="4KDfkUwMkVL" role="2VODD2">
         <node concept="3cpWs8" id="7JDtVAB8xQR" role="3cqZAp">

@@ -85,15 +85,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     public LookRegexp_customReplace_cellMenu_vwuy6a_b0a0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
-      List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp").getDeclarationNode());
-      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp").getDeclarationNode());
+      List<SAbstractConcept> res = ListSequence.fromList(new LinkedList<SAbstractConcept>());
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp"));
+      ListSequence.fromList(res).addElement(MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111797946c7L, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
       return res;
     }
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      return createReplacementNode_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
     }
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode createReplacementNode_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
     }
     public boolean isReferentPresentation() {

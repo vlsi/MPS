@@ -19,6 +19,7 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -88,7 +89,7 @@ public class IconResourceReference_subs_Contribution extends SubstituteMenuBase 
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + "<" + SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ">";
+          return SConceptOperations.conceptAlias(MetaAdapterFactory.getConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6c7L, "jetbrains.mps.lang.resources.structure.OldIconReference")) + "<" + SPropertyOperations.getString(myParameterObject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ">";
         }
       }
     }

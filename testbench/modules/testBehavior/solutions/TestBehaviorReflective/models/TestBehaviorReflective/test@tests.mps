@@ -3588,11 +3588,11 @@
                         <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
                       </node>
                       <node concept="2OqwBi" id="7DwYn_xfHFx" role="3tpDZA">
-                        <node concept="3TUQnm" id="7DwYn_xfHFy" role="2Oq$k0">
-                          <ref role="3TV0OU" to="n871:5mnatV0hAOW" resolve="A" />
-                        </node>
                         <node concept="2qgKlT" id="7DwYn_xfHFz" role="2OqNvi">
                           <ref role="37wK5l" to="5a2:5mnatV0hAQH" resolve="staticMethod" />
+                        </node>
+                        <node concept="35c_gC" id="7Ift4Hg3n1l" role="2Oq$k0">
+                          <ref role="35c_gD" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                       </node>
                     </node>

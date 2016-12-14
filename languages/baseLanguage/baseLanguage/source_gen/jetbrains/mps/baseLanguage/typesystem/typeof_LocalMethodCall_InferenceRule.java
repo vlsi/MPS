@@ -42,7 +42,7 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
       return;
     }
 
-    SNode contextClassifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier").getDeclarationNode()), methodCall);
+    SNode contextClassifier = Classifier__BehaviorDescriptor.getContextClassifier_id5mDmeD1aaq0.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), methodCall);
     if (contextClassifier == null) {
       return;
     }

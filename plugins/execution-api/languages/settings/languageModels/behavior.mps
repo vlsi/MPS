@@ -2,8 +2,8 @@
 <model ref="r:afd0247c-5ce3-4424-8951-51083e421123(jetbrains.mps.execution.settings.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -227,9 +227,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -730,14 +727,14 @@
               <ref role="ehGHo" to="fb9u:O$iR4J$g0s" resolve="PersistentConfigurationType" />
             </node>
             <node concept="2OqwBi" id="L_Hr3kEshn" role="33vP2m">
+              <node concept="35c_gC" id="7Ift4Hg3oy_" role="2Oq$k0">
+                <ref role="35c_gD" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
+              </node>
               <node concept="2qgKlT" id="L_Hr3kEsho" role="2OqNvi">
                 <ref role="37wK5l" node="O$iR4J$g1l" resolve="getContextPersistentConfigurationType" />
                 <node concept="37vLTw" id="L_Hr3kEshp" role="37wK5m">
                   <ref role="3cqZAo" node="O$iR4J$g23" resolve="node" />
                 </node>
-              </node>
-              <node concept="3TUQnm" id="L_Hr3kEshq" role="2Oq$k0">
-                <ref role="3TV0OU" to="fb9u:O$iR4J$g0w" resolve="PersistentConfiguration" />
               </node>
             </node>
           </node>

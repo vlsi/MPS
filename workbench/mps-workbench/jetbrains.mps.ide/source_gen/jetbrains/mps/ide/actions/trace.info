@@ -8467,7 +8467,7 @@
       <node id="1050125497003819854" at="123,13,124,43" concept="6" />
       <node id="1050125497003819861" at="124,43,125,0" concept="15" />
       <node id="1050125497003819862" at="125,0,126,60" concept="6" />
-      <node id="1050125497003819867" at="126,60,127,389" concept="12" />
+      <node id="1050125497003819867" at="126,60,127,343" concept="12" />
       <node id="6839192162862226758" at="128,39,129,26" concept="13" />
       <node id="1050125497003819877" at="130,13,131,43" concept="6" />
       <node id="1050125497003819884" at="131,43,132,0" concept="15" />
@@ -8497,7 +8497,7 @@
       <node id="6839192162862148232" at="105,51,108,17" concept="10" />
       <node id="1050125497003819835" at="116,116,119,15" concept="9" />
       <node id="6839192162862220992" at="119,15,122,15" concept="10" />
-      <node id="6839192162862226756" at="127,389,130,13" concept="10" />
+      <node id="6839192162862226756" at="127,343,130,13" concept="10" />
       <node id="1050125497003819901" at="136,0,139,0" concept="11" trace="select#(Ljetbrains/mps/ide/findusages/model/SearchResult;)Ljava/lang/Object;" />
       <node id="1050125497003819922" at="141,0,144,0" concept="11" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1050125497003819938" at="145,0,148,0" concept="11" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
@@ -9136,104 +9136,104 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/4998818250317603956">
     <file name="FindRootableConceptsWithoutIcons_Action.java">
-      <node id="4998818250317603956" at="37,0,38,0" concept="16" trace="ICON" />
-      <node id="4998818250317603956" at="39,52,40,60" concept="18" />
-      <node id="4998818250317603956" at="40,60,41,35" concept="6" />
-      <node id="4998818250317603956" at="41,35,42,40" concept="6" />
-      <node id="4998818250317603956" at="45,32,46,16" concept="13" />
-      <node id="4998818250317603956" at="50,53,51,19" concept="13" />
-      <node id="4998818250317603956" at="53,5,54,56" concept="12" />
-      <node id="4998818250317603956" at="54,56,55,57" concept="6" />
-      <node id="4998818250317603956" at="56,22,57,21" concept="13" />
-      <node id="4998818250317603956" at="60,5,61,66" concept="12" />
-      <node id="4998818250317603956" at="61,66,62,53" concept="6" />
-      <node id="4998818250317603956" at="63,22,64,21" concept="13" />
-      <node id="4998818250317603956" at="66,5,67,16" concept="13" />
-      <node id="5938312768539857836" at="70,96,71,128" concept="12" />
-      <node id="5938312768539855354" at="71,128,72,0" concept="15" />
-      <node id="4998818250317618638" at="75,54,76,99" concept="12" />
-      <node id="4998818250317617739" at="76,99,77,108" concept="12" />
-      <node id="4998818250317618649" at="77,108,78,0" concept="15" />
-      <node id="4998818250317625958" at="80,29,81,340" concept="6" />
-      <node id="4998818250317626000" at="83,61,84,52" concept="12" />
-      <node id="2574746063622359007" at="84,52,85,346" concept="13" />
-      <node id="4998818250317610835" at="89,11,90,0" concept="15" />
-      <node id="4998818250317610838" at="91,30,92,17" concept="13" />
-      <node id="4998818250317625922" at="93,9,94,0" concept="15" />
-      <node id="4998818250317610941" at="99,82,100,44" concept="6" />
-      <node id="4998818250317603956" at="49,95,52,5" concept="10" />
-      <node id="4998818250317603956" at="55,57,58,7" concept="10" />
-      <node id="4998818250317603956" at="62,53,65,7" concept="10" />
-      <node id="4998818250317610836" at="90,0,93,9" concept="10" />
-      <node id="4998818250317603956" at="44,0,48,0" concept="11" trace="isDumbAware#()Z" />
-      <node id="4998818250317625998" at="83,0,87,0" concept="11" trace="accept#(Ljetbrains/mps/ide/findusages/model/SearchResult;)Z" />
-      <node id="4998818250317610929" at="98,0,102,0" concept="11" trace="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
-      <node id="4998818250317603956" at="39,0,44,0" concept="4" trace="FindRootableConceptsWithoutIcons_Action#()V" />
-      <node id="4998818250317618646" at="81,340,87,32" concept="6" />
-      <node id="4998818250317610920" at="96,29,102,113" concept="6" />
-      <node id="4998818250317603956" at="52,5,59,5" concept="2" />
-      <node id="4998818250317603956" at="59,5,66,5" concept="2" />
-      <node id="4998818250317610918" at="96,0,104,0" concept="11" trace="run#()V" />
-      <node id="5938312768539888954" at="80,0,89,0" concept="11" trace="run#()V" />
-      <node id="1092784201482637975" at="94,0,104,11" concept="6" />
-      <node id="5938312768539884973" at="78,0,89,11" concept="6" />
-      <node id="4998818250317603956" at="48,0,69,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="4998818250317610758" at="74,0,106,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
-      <node id="4998818250317610750" at="72,0,106,7" concept="6" />
-      <node id="4998818250317603956" at="69,0,108,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <scope id="4998818250317603956" at="45,32,46,16" />
-      <scope id="4998818250317603956" at="50,53,51,19" />
-      <scope id="4998818250317603956" at="56,22,57,21" />
-      <scope id="4998818250317603956" at="63,22,64,21" />
-      <scope id="4998818250317610837" at="91,30,92,17" />
-      <scope id="4998818250317610934" at="99,82,100,44" />
-      <scope id="4998818250317625999" at="83,61,85,346">
+      <node id="4998818250317603956" at="38,0,39,0" concept="16" trace="ICON" />
+      <node id="4998818250317603956" at="40,52,41,60" concept="18" />
+      <node id="4998818250317603956" at="41,60,42,35" concept="6" />
+      <node id="4998818250317603956" at="42,35,43,40" concept="6" />
+      <node id="4998818250317603956" at="46,32,47,16" concept="13" />
+      <node id="4998818250317603956" at="51,53,52,19" concept="13" />
+      <node id="4998818250317603956" at="54,5,55,56" concept="12" />
+      <node id="4998818250317603956" at="55,56,56,57" concept="6" />
+      <node id="4998818250317603956" at="57,22,58,21" concept="13" />
+      <node id="4998818250317603956" at="61,5,62,66" concept="12" />
+      <node id="4998818250317603956" at="62,66,63,53" concept="6" />
+      <node id="4998818250317603956" at="64,22,65,21" concept="13" />
+      <node id="4998818250317603956" at="67,5,68,16" concept="13" />
+      <node id="5938312768539857836" at="71,96,72,128" concept="12" />
+      <node id="5938312768539855354" at="72,128,73,0" concept="15" />
+      <node id="4998818250317618638" at="76,54,77,99" concept="12" />
+      <node id="4998818250317617739" at="77,99,78,108" concept="12" />
+      <node id="4998818250317618649" at="78,108,79,0" concept="15" />
+      <node id="4998818250317625958" at="81,29,82,294" concept="6" />
+      <node id="4998818250317626000" at="84,61,85,52" concept="12" />
+      <node id="2574746063622359007" at="85,52,86,346" concept="13" />
+      <node id="4998818250317610835" at="90,11,91,0" concept="15" />
+      <node id="4998818250317610838" at="92,30,93,17" concept="13" />
+      <node id="4998818250317625922" at="94,9,95,0" concept="15" />
+      <node id="4998818250317610941" at="100,82,101,44" concept="6" />
+      <node id="4998818250317603956" at="50,95,53,5" concept="10" />
+      <node id="4998818250317603956" at="56,57,59,7" concept="10" />
+      <node id="4998818250317603956" at="63,53,66,7" concept="10" />
+      <node id="4998818250317610836" at="91,0,94,9" concept="10" />
+      <node id="4998818250317603956" at="45,0,49,0" concept="11" trace="isDumbAware#()Z" />
+      <node id="4998818250317625998" at="84,0,88,0" concept="11" trace="accept#(Ljetbrains/mps/ide/findusages/model/SearchResult;)Z" />
+      <node id="4998818250317610929" at="99,0,103,0" concept="11" trace="performAction#(Ljetbrains/mps/ide/platform/refactoring/RefactoringViewItem;)V" />
+      <node id="4998818250317603956" at="40,0,45,0" concept="4" trace="FindRootableConceptsWithoutIcons_Action#()V" />
+      <node id="4998818250317618646" at="82,294,88,32" concept="6" />
+      <node id="4998818250317610920" at="97,29,103,113" concept="6" />
+      <node id="4998818250317603956" at="53,5,60,5" concept="2" />
+      <node id="4998818250317603956" at="60,5,67,5" concept="2" />
+      <node id="4998818250317610918" at="97,0,105,0" concept="11" trace="run#()V" />
+      <node id="5938312768539888954" at="81,0,90,0" concept="11" trace="run#()V" />
+      <node id="1092784201482637975" at="95,0,105,11" concept="6" />
+      <node id="5938312768539884973" at="79,0,90,11" concept="6" />
+      <node id="4998818250317603956" at="49,0,70,0" concept="11" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="4998818250317610758" at="75,0,107,0" concept="11" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
+      <node id="4998818250317610750" at="73,0,107,7" concept="6" />
+      <node id="4998818250317603956" at="70,0,109,0" concept="11" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <scope id="4998818250317603956" at="46,32,47,16" />
+      <scope id="4998818250317603956" at="51,53,52,19" />
+      <scope id="4998818250317603956" at="57,22,58,21" />
+      <scope id="4998818250317603956" at="64,22,65,21" />
+      <scope id="4998818250317610837" at="92,30,93,17" />
+      <scope id="4998818250317610934" at="100,82,101,44" />
+      <scope id="4998818250317625999" at="84,61,86,346">
         <var name="node" id="4998818250317626001" />
       </scope>
-      <scope id="4998818250317603956" at="39,52,42,40" />
-      <scope id="4998818250317603956" at="44,0,48,0" />
-      <scope id="4998818250317625998" at="83,0,87,0">
+      <scope id="4998818250317603956" at="40,52,43,40" />
+      <scope id="4998818250317603956" at="45,0,49,0" />
+      <scope id="4998818250317625998" at="84,0,88,0">
         <var name="it" id="4998818250317625998" />
       </scope>
-      <scope id="4998818250317610929" at="98,0,102,0">
+      <scope id="4998818250317610929" at="99,0,103,0">
         <var name="refactoringViewItem" id="4998818250317610932" />
       </scope>
-      <scope id="4998818250317603956" at="39,0,44,0" />
-      <scope id="4998818250317603956" at="53,5,58,7">
+      <scope id="4998818250317603956" at="40,0,45,0" />
+      <scope id="4998818250317603956" at="54,5,59,7">
         <var name="p" id="4998818250317603956" />
       </scope>
-      <scope id="4998818250317603956" at="60,5,65,7">
+      <scope id="4998818250317603956" at="61,5,66,7">
         <var name="p" id="4998818250317603956" />
       </scope>
-      <scope id="4998818250317610919" at="96,29,102,113" />
-      <scope id="5938312768539888955" at="80,29,87,32" />
-      <scope id="4998818250317610918" at="96,0,104,0" />
-      <scope id="5938312768539888954" at="80,0,89,0" />
-      <scope id="4998818250317603956" at="49,95,67,16" />
-      <scope id="4998818250317603956" at="48,0,69,0">
+      <scope id="4998818250317610919" at="97,29,103,113" />
+      <scope id="5938312768539888955" at="81,29,88,32" />
+      <scope id="4998818250317610918" at="97,0,105,0" />
+      <scope id="5938312768539888954" at="81,0,90,0" />
+      <scope id="4998818250317603956" at="50,95,68,16" />
+      <scope id="4998818250317603956" at="49,0,70,0">
         <var name="_params" id="4998818250317603956" />
         <var name="event" id="4998818250317603956" />
       </scope>
-      <scope id="4998818250317610764" at="75,54,104,11">
+      <scope id="4998818250317610764" at="76,54,105,11">
         <var name="concepts" id="4998818250317618639" />
         <var name="results" id="4998818250317617740" />
       </scope>
-      <scope id="4998818250317610758" at="74,0,106,0">
+      <scope id="4998818250317610758" at="75,0,107,0">
         <var name="p0" id="4998818250317610761" />
       </scope>
-      <scope id="4998818250317603956" at="70,96,106,7">
+      <scope id="4998818250317603956" at="71,96,107,7">
         <var name="modelAccess" id="5938312768539857837" />
       </scope>
-      <scope id="4998818250317603956" at="69,0,108,0">
+      <scope id="4998818250317603956" at="70,0,109,0">
         <var name="_params" id="4998818250317603956" />
         <var name="event" id="4998818250317603956" />
       </scope>
-      <unit id="4998818250317625998" at="82,125,87,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1$1" />
-      <unit id="4998818250317610927" at="97,131,102,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2$1" />
-      <unit id="4998818250317610918" at="95,60,104,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2" />
-      <unit id="5938312768539888954" at="79,38,89,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1" />
-      <unit id="4998818250317610756" at="73,42,106,5" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1" />
-      <unit id="4998818250317603956" at="36,0,109,0" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action" />
+      <unit id="4998818250317625998" at="83,125,88,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1$1" />
+      <unit id="4998818250317610927" at="98,131,103,13" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2$1" />
+      <unit id="4998818250317610918" at="96,60,105,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$2" />
+      <unit id="5938312768539888954" at="80,38,90,9" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1$1" />
+      <unit id="4998818250317610756" at="74,42,107,5" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action$1" />
+      <unit id="4998818250317603956" at="37,0,110,0" name="jetbrains.mps.ide.actions.FindRootableConceptsWithoutIcons_Action" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/5014390439885403930">

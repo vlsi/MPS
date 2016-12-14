@@ -391,12 +391,12 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -14713,8 +14713,8 @@
               <ref role="37wK5l" to="w1kc:~Language.getLanguageFor(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.smodel.Language" resolve="getLanguageFor" />
               <node concept="2JrnkZ" id="36vIONTtRk8" role="37wK5m">
                 <node concept="2OqwBi" id="36vIONTtRk9" role="2JrQYb">
-                  <node concept="3TUQnm" id="36vIONTtRka" role="2Oq$k0">
-                    <ref role="3TV0OU" to="tpe3:hGB2rPm" resolve="ITestCase" />
+                  <node concept="3B5_sB" id="7Ift4HfJSeZ" role="2Oq$k0">
+                    <ref role="3B5MYn" to="tpe3:hGB2rPm" resolve="ITestCase" />
                   </node>
                   <node concept="I4A8Y" id="36vIONTtRkb" role="2OqNvi" />
                 </node>

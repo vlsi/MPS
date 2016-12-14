@@ -37,7 +37,7 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     if (!(inClassifier)) {
       return false;
     }
-    SNode classifier = IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), parentNode);
+    SNode classifier = IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), parentNode);
     if (classifier == null) {
       return false;
     }

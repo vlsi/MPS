@@ -142,7 +142,6 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.aspect.editor.HelpURL_EditorBuilder_a" file="HelpURL_EditorBuilder_a.java">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
-    <classNode dependClassName="java.awt.Dimension" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

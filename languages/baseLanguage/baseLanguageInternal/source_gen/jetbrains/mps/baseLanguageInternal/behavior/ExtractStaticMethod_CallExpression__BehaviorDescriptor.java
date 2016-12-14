@@ -41,7 +41,7 @@ public final class ExtractStaticMethod_CallExpression__BehaviorDescriptor extend
 
   /*package*/ static Iterable<SNode> getAvailableMethodDeclarations_id50EF2fWdwEN(@NotNull SNode __thisNode__, String methodName) {
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode bmd : ExtractStaticMethod_CallExpression__BehaviorDescriptor.getMethods_id55buE1DVoKQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression").getDeclarationNode()), __thisNode__)) {
+    for (SNode bmd : ExtractStaticMethod_CallExpression__BehaviorDescriptor.getMethods_id55buE1DVoKQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression")), __thisNode__)) {
       String name = SPropertyOperations.getString(SNodeOperations.cast(bmd, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
       if (name != null && name.equals(methodName)) {
         ListSequence.fromList(result).addElement(SNodeOperations.cast(bmd, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")));

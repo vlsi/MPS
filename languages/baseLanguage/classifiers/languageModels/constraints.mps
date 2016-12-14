@@ -146,6 +146,9 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
       </concept>
@@ -172,9 +175,6 @@
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -495,8 +495,8 @@
                 <ref role="37wK5l" to="tp4h:hEwJim4" resolve="getContextClassifier" />
                 <node concept="nLn13" id="L_Hr3kErZn" role="37wK5m" />
               </node>
-              <node concept="3TUQnm" id="L_Hr3kErZo" role="2Oq$k0">
-                <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+              <node concept="35c_gC" id="7Ift4Hg3wYO" role="2Oq$k0">
+                <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
               </node>
             </node>
           </node>

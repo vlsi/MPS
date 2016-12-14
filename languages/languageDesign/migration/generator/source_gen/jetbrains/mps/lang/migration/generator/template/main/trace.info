@@ -235,7 +235,7 @@
       <node id="4546754412408612262" at="108,112,109,66" concept="4" />
       <node id="1987432259747992382" at="109,66,110,96" concept="4" />
       <node id="2895173168663463366" at="114,43,115,58" concept="1" />
-      <node id="8648538385394128485" at="119,7,120,291" concept="5" />
+      <node id="8648538385394128485" at="119,7,120,270" concept="5" />
       <node id="5198027307802095472" at="499,39,500,181" concept="5" />
       <node id="1987432259748160070" at="114,0,117,0" concept="3" trace="visit#(Ljava/lang/String;)V" />
       <node id="5198027307802093397" at="499,0,502,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Integer;" />
@@ -258,7 +258,7 @@
       <scope id="1987432259748021993" at="112,0,119,0">
         <var name="entry" id="1987432259748021993" />
       </scope>
-      <scope id="6547769411407089661" at="108,112,120,291">
+      <scope id="6547769411407089661" at="108,112,120,270">
         <var name="errors" id="1987432259747992383" />
         <var name="module" id="4546754412408612263" />
       </scope>

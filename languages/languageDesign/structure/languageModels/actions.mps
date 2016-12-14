@@ -123,6 +123,9 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
+      </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -134,9 +137,6 @@
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -161,8 +161,8 @@
                 </node>
               </node>
               <node concept="2oxUTD" id="gVePx2O" role="2OqNvi">
-                <node concept="3TUQnm" id="hoxuZbe" role="2oxUTC">
-                  <ref role="3TV0OU" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                <node concept="3B5_sB" id="7Ift4HfNGHF" role="2oxUTC">
+                  <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
                 </node>
               </node>
             </node>
