@@ -18,6 +18,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import java.util.concurrent.atomic.AtomicInteger;
 import jetbrains.mps.RuntimeFlags;
 import com.intellij.openapi.startup.StartupManager;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import jetbrains.mps.ide.migration.wizard.MigrationErrorWizardStep;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -45,9 +46,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import com.intellij.util.WaitForProgressToShow;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.util.WaitForProgressToShow;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -134,7 +135,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
-              syncRefresh();
+              syncRefresh(new EmptyProgressMonitor());
             }
           });
           ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -326,17 +327,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
             if (resave) {
               ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Resaving Module Descriptors", false) {
                 public void run(@NotNull ProgressIndicator progressIndicator) {
-                  progressIndicator.setIndeterminate(true);
-                  WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
-                    public void run() {
-                      syncRefresh();
-                    }
-                  });
-                  progressIndicator.setIndeterminate(false);
                   ProgressMonitor progressMonitor = new ProgressMonitorAdapter(progressIndicator);
-                  progressMonitor.start("Saving...", Sequence.fromIterable(allModules).count());
+                  progressMonitor.start("Resaving module descriptors", 10);
+                  ProgressMonitor refreshing = progressMonitor.subTask(9);
+                  syncRefresh(refreshing);
+                  ProgressMonitor saving = progressMonitor.subTask(1);
+                  saving.start("Saving...", Sequence.fromIterable(allModules).count());
                   for (final SModule module : Sequence.fromIterable(allModules)) {
-                    progressMonitor.advance(1);
+                    saving.advance(1);
                     WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
                       public void run() {
                         myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
@@ -358,7 +356,7 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
               // be executed when save session already passed, see MPS-22045 
               myState.migrationRequired = true;
 
-              syncRefresh();
+              syncRefresh(new EmptyProgressMonitor());
               if (!(myMigrationManager.isMigrationRequired())) {
                 MigrationDialogUtil.showNoMigrationMessage(myProject);
                 return;
@@ -386,15 +384,23 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     });
   }
 
-  private void syncRefresh() {
-    Application application = ApplicationManager.getApplication();
-    application.saveAll();
-    VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir());
-    // fixme remove in 3.4 
-    // TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far 
-    // AP: I sense the author rather meant just refreshing the project directory 
-    VirtualFileManager.getInstance().syncRefresh();
-    application.getComponent(ReloadManager.class).flush();
+  private void syncRefresh(ProgressMonitor progressMonitor) {
+    final Application application = ApplicationManager.getApplication();
+    WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+      public void run() {
+        application.saveAll();
+      }
+    });
+    VirtualFileUtils.refreshSynchronouslyRecursively(myProject.getBaseDir(), progressMonitor);
+    WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+      public void run() {
+        // fixme remove in 3.4 
+        // TODO AP: these are essentially those files which have been requested from IDEA vfs at least once so far 
+        // AP: I sense the author rather meant just refreshing the project directory 
+        VirtualFileManager.getInstance().syncRefresh();
+        application.getComponent(ReloadManager.class).flush();
+      }
+    });
   }
 
   private class MyReloadListener implements ReloadListener {
