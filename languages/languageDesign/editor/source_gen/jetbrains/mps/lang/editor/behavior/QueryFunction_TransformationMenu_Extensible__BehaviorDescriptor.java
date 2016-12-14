@@ -41,7 +41,7 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
     if ((extensibleMenuPart != null)) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)).select(new ISelector<SConcept, SNode>() {
         public SNode select(SConcept it) {
-          return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1107135704075");
+          return ((SNode) SNodeOperations.asNode(it));
         }
       }));
     }
