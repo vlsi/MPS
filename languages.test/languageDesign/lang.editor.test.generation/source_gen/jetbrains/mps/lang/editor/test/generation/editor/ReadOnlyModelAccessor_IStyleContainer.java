@@ -10,12 +10,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ReadOnlyModelAccessot_IStyleContainer implements ConceptEditorComponent {
+public class ReadOnlyModelAccessor_IStyleContainer implements ConceptEditorComponent {
   @NotNull
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return new ReadOnlyModelAccessot_IStyleContainer_ComponentBuilder_a(editorContext, node).createCell();
+    return new ReadOnlyModelAccessor_IStyleContainer_ComponentBuilder_a(editorContext, node).createCell();
   }
 }

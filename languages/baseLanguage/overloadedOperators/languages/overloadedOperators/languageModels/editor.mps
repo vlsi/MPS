@@ -219,7 +219,6 @@
       </node>
       <node concept="3F0A7n" id="qQXsgj0h8i" role="3EZMnx">
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-        <node concept="pj6Ft" id="qQXsgj0hdx" role="3F10Kt" />
       </node>
       <node concept="3F0ifn" id="qQXsgj1tUI" role="3EZMnx">
         <property role="3F0ifm" value="{" />

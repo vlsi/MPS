@@ -2082,9 +2082,6 @@
           <node concept="3F1sOY" id="2T92ovrfw1d" role="3EZMnx">
             <property role="1$x2rV" value="no extra stuff" />
             <ref role="1NtTu8" to="kdzh:2T92ovrfst9" resolve="deployedJar" />
-            <node concept="pj6Ft" id="2T92ovrfw3_" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
             <node concept="lj46D" id="2T92ovrmkXe" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -2108,9 +2105,6 @@
           <node concept="3F1sOY" id="2T92ovrfw1P" role="3EZMnx">
             <property role="1$x2rV" value="no extra stuff" />
             <ref role="1NtTu8" to="kdzh:2T92ovrftgg" resolve="sourceJar" />
-            <node concept="pj6Ft" id="2T92ovrfw3v" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
             <node concept="lj46D" id="2T92ovrmkX4" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>

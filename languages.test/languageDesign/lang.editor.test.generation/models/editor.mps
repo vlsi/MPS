@@ -5193,7 +5193,8 @@
   </node>
   <node concept="PKFIW" id="2XU9kLEa2I">
     <property role="3GE5qa" value="abstractLabels" />
-    <property role="TrG5h" value="ReadOnlyModelAccessot_IStyleContainer" />
+    <property role="TrG5h" value="ReadOnlyModelAccessor_IStyleContainer" />
+    <ref role="1XX52x" to="ytt5:2XU9kLDKKz" resolve="ReadOnlyModelAccessor" />
     <node concept="1HlG4h" id="2XU9kLEa2K" role="2wV5jI">
       <node concept="3Xmtl4" id="2XU9kLEaof" role="3F10Kt">
         <node concept="1wgc9g" id="2XU9kLEaog" role="3XvnJa">

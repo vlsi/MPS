@@ -98,6 +98,8 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
               return Collections.<ConceptEditorComponent>singletonList(new ReadOnlyModelAccessor_EditorCellModel());
             case 1:
               return Collections.<ConceptEditorComponent>singletonList(new ReadOnlyModelAccessor_ICellStyle());
+            case 2:
+              return Collections.<ConceptEditorComponent>singletonList(new ReadOnlyModelAccessor_IStyleContainer());
             default:
               return Collections.<ConceptEditorComponent>emptyList();
           }
@@ -176,7 +178,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Constant_Default", "jetbrains.mps.lang.editor.test.generation.editor.Constant_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Constant_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Constant_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Error_Default", "jetbrains.mps.lang.editor.test.generation.editor.Error_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Error_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Error_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_Default", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_IStyleContainer"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_ICellStyle"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_Default", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ICelllStyle", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_IStyleContainer", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ListWithRole"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a2 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_Default", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0e = new String[]{"testStringAttribute"};

@@ -225,7 +225,6 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
         editorCell.setRole("deployedJar");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       editorCell.getStyle().putAll(style);
     }
@@ -293,7 +292,6 @@ import jetbrains.mps.build.editor.buildStyles_StyleSheet.commentStyleClass;
         editorCell.setRole("sourceJar");
       }
       Style style = new StyleImpl();
-      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
       style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
       editorCell.getStyle().putAll(style);
     }
