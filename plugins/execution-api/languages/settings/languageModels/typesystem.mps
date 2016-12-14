@@ -179,11 +179,15 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
@@ -192,9 +196,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -796,8 +797,8 @@
         <node concept="3cpWsn" id="63yBSeEXxIr" role="3cpWs9">
           <property role="TrG5h" value="parameters" />
           <node concept="_YKpA" id="63yBSeEXxIs" role="1tU5fm">
-            <node concept="3THzug" id="63yBSeEXxIt" role="_ZDj9">
-              <ref role="3qa414" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+            <node concept="3bZ5Sz" id="2xELmDx$_gB" role="_ZDj9">
+              <ref role="3bZ5Sy" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
             </node>
           </node>
           <node concept="2OqwBi" id="63yBSeEXxIu" role="33vP2m">
@@ -809,8 +810,8 @@
                 <ref role="3Tt5mk" to="fb9u:O$iR4J$g4L" resolve="editorOperationDeclaration" />
               </node>
             </node>
-            <node concept="2qgKlT" id="63yBSeEXxIy" role="2OqNvi">
-              <ref role="37wK5l" to="tpek:hEwIGRM" resolve="getParameters" />
+            <node concept="2qgKlT" id="2xELmDx$zYQ" role="2OqNvi">
+              <ref role="37wK5l" to="tpek:2xELmDxyi2v" resolve="getParameterConcepts" />
             </node>
           </node>
         </node>
@@ -852,6 +853,11 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="2xELmDx$CDF" role="3cqZAp">
+            <node concept="3SKdUq" id="2xELmDx$CDH" role="3SKWNk">
+              <property role="3SKdUp" value="todo [MM] isn't it wrong? Why type of a concept node?" />
+            </node>
+          </node>
           <node concept="1ZobV4" id="4AWjvCLCF3H" role="3cqZAp">
             <property role="Ob790" value="0" />
             <node concept="mw_s8" id="4AWjvCLCF3I" role="1ZfhK$">
@@ -876,15 +882,18 @@
             </node>
             <node concept="mw_s8" id="4AWjvCLCF3Q" role="1ZfhKB">
               <node concept="1Z2H0r" id="4AWjvCLCF3R" role="mwGJk">
-                <node concept="2OqwBi" id="4AWjvCLCF3S" role="1Z2MuG">
-                  <node concept="37vLTw" id="3GM_nagTrXk" role="2Oq$k0">
-                    <ref role="3cqZAo" node="63yBSeEXxIr" resolve="parameters" />
-                  </node>
-                  <node concept="34jXtK" id="4AWjvCLCF3U" role="2OqNvi">
-                    <node concept="37vLTw" id="3GM_nagTBOj" role="25WWJ7">
-                      <ref role="3cqZAo" node="63yBSeEXxJ2" resolve="i" />
+                <node concept="2OqwBi" id="2xELmDx$EY6" role="1Z2MuG">
+                  <node concept="2OqwBi" id="4AWjvCLCF3S" role="2Oq$k0">
+                    <node concept="37vLTw" id="3GM_nagTrXk" role="2Oq$k0">
+                      <ref role="3cqZAo" node="63yBSeEXxIr" resolve="parameters" />
+                    </node>
+                    <node concept="34jXtK" id="4AWjvCLCF3U" role="2OqNvi">
+                      <node concept="37vLTw" id="3GM_nagTBOj" role="25WWJ7">
+                        <ref role="3cqZAo" node="63yBSeEXxJ2" resolve="i" />
+                      </node>
                     </node>
                   </node>
+                  <node concept="FGMqu" id="2xELmDx$Fds" role="2OqNvi" />
                 </node>
               </node>
             </node>

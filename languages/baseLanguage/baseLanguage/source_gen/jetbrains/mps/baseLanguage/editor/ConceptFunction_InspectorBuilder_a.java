@@ -13,9 +13,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.editor.runtime.cells.BigCellUtil;
 
 /*package*/ class ConceptFunction_InspectorBuilder_a extends AbstractEditorBuilder {
@@ -50,9 +49,9 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
             }
             collection.addEditorCell(new EditorCell_Constant(context, myNode, ""));
             collection.addEditorCell(new EditorCell_Constant(context, myNode, "Parameter help:"));
-            for (SNode cfp : ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(myNode)) {
-              String alias = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
-              String description = SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
+            for (SConcept cfp : ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(myNode)) {
+              String alias = SConceptOperations.conceptAlias(cfp);
+              String description = SConceptOperations.shortDescription(cfp);
               if (description == null) {
                 description = "<no help. use conceptShortDescription concept function property to create one>";
               }
