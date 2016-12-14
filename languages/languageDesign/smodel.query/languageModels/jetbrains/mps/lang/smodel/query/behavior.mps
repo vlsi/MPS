@@ -112,11 +112,14 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
-      </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
@@ -160,22 +163,22 @@
         <node concept="3cpWs6" id="30Cvt28KrLy" role="3cqZAp">
           <node concept="2ShNRf" id="30Cvt28KrLz" role="3cqZAk">
             <node concept="Tc6Ow" id="30Cvt28KrL$" role="2ShVmc">
-              <node concept="3THzug" id="30Cvt28KrL_" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx89k" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="30Cvt28KrLA" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx8fL" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="30Cvt28KrLB" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx8lc" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXOdk" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXOdl" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx7Rw" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -241,8 +244,8 @@
       <property role="13i0iv" value="true" />
       <node concept="3Tm1VV" id="3J6h25QXCDX" role="1B3o_S" />
       <node concept="A3Dl8" id="3J6h25QXEXe" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXEXj" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx3Dq" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
       <node concept="3clFbS" id="3J6h25QXCDZ" role="3clF47" />
@@ -459,22 +462,22 @@
         <node concept="3cpWs6" id="4c815Y1hI8U" role="3cqZAp">
           <node concept="2ShNRf" id="4c815Y1hI8V" role="3cqZAk">
             <node concept="Tc6Ow" id="4c815Y1hI8W" role="2ShVmc">
-              <node concept="3THzug" id="4c815Y1hI8X" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx6MC" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hI8Y" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx6T5" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hI8Z" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx6Yw" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXEYD" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXEYE" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx6xw" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -493,22 +496,22 @@
         <node concept="3cpWs6" id="4c815Y1hFhh" role="3cqZAp">
           <node concept="2ShNRf" id="4c815Y1hFhi" role="3cqZAk">
             <node concept="Tc6Ow" id="4c815Y1hFhj" role="2ShVmc">
-              <node concept="3THzug" id="4c815Y1hFhk" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx6ck" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hFhl" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx6iL" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hFhm" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx6oc" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXH$2" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXH$3" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx5T8" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -530,22 +533,22 @@
         <node concept="3cpWs6" id="4c815Y1hwEC" role="3cqZAp">
           <node concept="2ShNRf" id="4c815Y1hywy" role="3cqZAk">
             <node concept="Tc6Ow" id="4c815Y1hzFz" role="2ShVmc">
-              <node concept="3THzug" id="4c815Y1h_U6" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx5zW" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="3J6h25QXJdn" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx5Ep" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="3J6h25QXJdp" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx5JO" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXJdq" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXJdr" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx5hs" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -567,25 +570,25 @@
         <node concept="3cpWs6" id="30Cvt28KorI" role="3cqZAp">
           <node concept="2ShNRf" id="30Cvt28KorJ" role="3cqZAk">
             <node concept="Tc6Ow" id="30Cvt28KorK" role="2ShVmc">
-              <node concept="3THzug" id="30Cvt28KorL" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx4J0" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="30Cvt28KorM" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx4RV" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="30Cvt28KorN" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx56G" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
-              <node concept="3TUQnm" id="_BZ6vQWa0f" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:_BZ6vQW9PK" resolve="QueryParameterExact" />
+              <node concept="35c_gC" id="2xELmDxx4ZP" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:_BZ6vQW9PK" resolve="QueryParameterExact" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXKRh" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXKRi" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx4pO" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>
@@ -655,22 +658,22 @@
         <node concept="3cpWs6" id="4c815Y1hLXz" role="3cqZAp">
           <node concept="2ShNRf" id="4c815Y1hLX$" role="3cqZAk">
             <node concept="Tc6Ow" id="4c815Y1hLX_" role="2ShVmc">
-              <node concept="3THzug" id="4c815Y1hLXA" role="HW$YZ">
-                <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+              <node concept="3bZ5Sz" id="2xELmDxx7qk" role="HW$YZ">
+                <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hLXB" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
+              <node concept="35c_gC" id="2xELmDxx7wL" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
               </node>
-              <node concept="3TUQnm" id="4c815Y1hLXC" role="HW$Y0">
-                <ref role="3TV0OU" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
+              <node concept="35c_gC" id="2xELmDxx7Ac" role="HW$Y0">
+                <ref role="35c_gD" to="3xdn:3J6h25Q6eM6" resolve="QueryParameterIncludeReadOnly" />
               </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="A3Dl8" id="3J6h25QXMzZ" role="3clF45">
-        <node concept="3THzug" id="3J6h25QXM$0" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx77O" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>

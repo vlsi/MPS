@@ -18,10 +18,6 @@
       <concept id="1137021947720" name="jetbrains.mps.baseLanguage.structure.ConceptFunction" flags="in" index="2VMwT0">
         <child id="1137022507850" name="body" index="2VODD2" />
       </concept>
-      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
-        <child id="1070534934091" name="type" index="10QFUM" />
-        <child id="1070534934092" name="expression" index="10QFUP" />
-      </concept>
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
@@ -72,10 +68,8 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -141,11 +135,9 @@
               </node>
             </node>
             <node concept="3JPx81" id="5YxQmqOAScr" role="2OqNvi">
-              <node concept="10QFUN" id="5YxQmqOATHM" role="25WWJ7">
-                <node concept="3THzug" id="5YxQmqOATYL" role="10QFUM">
-                  <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
-                </node>
-                <node concept="otxO1" id="5YxQmqOASN2" role="10QFUP" />
+              <node concept="2OqwBi" id="2xELmDxxfIO" role="25WWJ7">
+                <node concept="otxO1" id="5YxQmqOASN2" role="2Oq$k0" />
+                <node concept="1rGIog" id="2xELmDxxgb8" role="2OqNvi" />
               </node>
             </node>
           </node>
