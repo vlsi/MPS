@@ -45,6 +45,7 @@ import com.intellij.util.ui.ItemRemovable;
 import com.intellij.util.ui.JBUI;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
 import jetbrains.mps.findUsages.CompositeFinder;
+import jetbrains.mps.generator.impl.plan.ModelScanner;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -83,6 +84,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleInstanceCondition;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.VisibleModuleCondition;
+import jetbrains.mps.project.dependency.GeneratorModuleScanner;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -563,6 +565,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
       ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
       final HashSet<SModuleReference> extendsSet = new HashSet<>();
+      final HashSet<SModuleReference> generationTargets = new HashSet<>();
       final HashSet<SModuleReference> xModuleSet = new HashSet<>();
       myModuleRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
@@ -575,6 +578,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
               cds.scan(structureAspect);
               cds.getDependencyModules().forEach(m -> extendsSet.add(m.getModuleReference()));
             }
+            ModelScanner tms = new ModelScanner();
+            for (Generator g : ((Language) myModule).getGenerators()) {
+              g.getOwnTemplateModels().forEach(tms::scan);
+            }
+            tms.getTargetLanguages().forEach(l -> generationTargets.add(l.getSourceModuleReference()));
           }
           // collect target modules of cross-model references
           myModule.getModels().forEach(mds::walk);
@@ -588,18 +596,28 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             }
             // bad luck, reference to a model from unknown module, no idea what to do
           }
+          if (myModule instanceof Generator) {
+            GeneratorModuleScanner gms = new GeneratorModuleScanner();
+            gms.walkPriorityRules((Generator) myModule);
+            xModuleSet.addAll(gms.getReferencedGenerators());
+          }
         }
       });
       mtcr.addCellState(Objects::isNull, DependencyCellState.NOT_AVAILABLE);
-      mtcr.addCellState(moduleImport -> {
-        SModuleReference importRef = moduleImport.getModuleReference();
-        // XXX not quite nice as the same module may be imported twice, as a regular dependency as well as 'extends',
-        // here we don't tell one from another and warn both. Would be better to refactor StateTableCellRenderer to give more
-        // info about table row (access to underlying table value?)
-        boolean isExtendsDep = ((ModuleDependTableModel) myDependTableModel).getExtendedModules().contains(importRef);
-        return isExtendsDep && !extendsSet.contains(moduleImport.getModuleReference());
-      }, DependencyCellState.SUPERFLUOUS_EXTENDS);
-      mtcr.addCellState(moduleImport -> !xModuleSet.contains(moduleImport.getModuleReference()), DependencyCellState.UNUSED);
+      if (myModule instanceof Language) {
+        // XXX would be great to report superfluous extends for generators as well (populate extendSet from template model scanner
+        //     that knows what constitutes 'extends' between generators. The main problem is nobody knows how to tell generators are truly
+        //     in 'extends' relation.
+        mtcr.addCellState(moduleImport -> {
+          SModuleReference importRef = moduleImport.getModuleReference();
+          // XXX not quite nice as the same module may be imported twice, as a regular dependency as well as 'extends',
+          // here we don't tell one from another and warn both. Would be better to refactor StateTableCellRenderer to give more
+          // info about table row (access to underlying table value?)
+          boolean isExtendsDep = ((ModuleDependTableModel) myDependTableModel).getExtendedModules().contains(importRef);
+          return isExtendsDep && !extendsSet.contains(moduleImport.getModuleReference());
+        }, DependencyCellState.SUPERFLUOUS_EXTENDS);
+      }
+      mtcr.addCellState(moduleImport -> !generationTargets.contains(moduleImport.getModuleReference()) && !xModuleSet.contains(moduleImport.getModuleReference()), DependencyCellState.UNUSED);
       return mtcr;
     }
 

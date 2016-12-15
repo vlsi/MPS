@@ -16,11 +16,8 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.project.dependency.GeneratorModuleScanner;
 import jetbrains.mps.project.structure.modules.Dependency;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelDependencyScanner;
@@ -42,7 +39,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -166,24 +162,9 @@ public class OptimizeImportsHelper {
     Result result = optimizeModelsImports_internal(modelsToOptimize, new EmptyProgressMonitor());
     myRepository.saveAll();
     for (Generator g : language.getGenerators()) {
-      HashSet<SModuleReference> referencedGenerators = new HashSet<SModuleReference>();
-      // ArrayDeque doesn't tolerate null, unfortunately
-      LinkedList<MappingConfig_AbstractRef> mcRefs = new LinkedList<MappingConfig_AbstractRef>();
-      for (MappingPriorityRule rule : g.getModuleDescriptor().getPriorityRules()) {
-        mcRefs.add(rule.getLeft());
-        mcRefs.add(rule.getRight());
-      }
-      while (!mcRefs.isEmpty()) {
-        MappingConfig_AbstractRef ref = mcRefs.removeFirst();
-        if (ref instanceof MappingConfig_RefSet) {
-          mcRefs.addAll(((MappingConfig_RefSet) ref).getMappingConfigs());
-          continue;
-        }
-        if (ref instanceof MappingConfig_ExternalRef) {
-          referencedGenerators.add(((MappingConfig_ExternalRef) ref).getGenerator());
-        }
-      }
-      result.myReport = optimizeModuleImports(g, result, referencedGenerators) + "\n\n" + result.myReport;
+      GeneratorModuleScanner gms = new GeneratorModuleScanner();
+      gms.walkPriorityRules(g);
+      result.myReport = optimizeModuleImports(g, result, gms.getReferencedGenerators()) + "\n\n" + result.myReport;
     }
     result.myReport = optimizeModuleImports(language, result, Collections.<SModuleReference>emptySet()) + "\n\n" + result.myReport;
 
