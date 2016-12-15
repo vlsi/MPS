@@ -49,6 +49,7 @@ public class FileUtil {
   public static final String DEFAULT_CHARSET_NAME = "UTF-8";
   public static final Charset DEFAULT_CHARSET = Charset.forName(DEFAULT_CHARSET_NAME);
   private static final String MPSTEMP = "mpstemp";
+  private static final char DOT = '.';
 
   public static File createTmpDir() {
     File tmp = getTempDir();
@@ -376,7 +377,6 @@ public class FileUtil {
     }
   }
 
-
   public static boolean isParent(File parent, File child) {
     if (!parent.isDirectory()) {
       return false;
@@ -525,7 +525,7 @@ public class FileUtil {
     return f.canWrite();
   }
 
-  static class PathResolutionException extends RuntimeException {
+  public final static class PathResolutionException extends RuntimeException {
     PathResolutionException(String msg) {
       super(msg);
     }
@@ -539,7 +539,7 @@ public class FileUtil {
 
   @NotNull
   public static String getNameWithoutExtension(@NotNull String name) {
-    int i = name.lastIndexOf('.');
+    int i = name.lastIndexOf(DOT);
     if (i != -1) {
       name = name.substring(0, i);
     }
@@ -548,7 +548,7 @@ public class FileUtil {
 
   @Nullable
   public static String getExtension(@NotNull String name) {
-    int i = name.lastIndexOf('.');
+    int i = name.lastIndexOf(DOT);
     if (i != -1) {
       return name.substring(i + 1);
     }

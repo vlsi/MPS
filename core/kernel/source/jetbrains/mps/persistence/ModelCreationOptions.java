@@ -17,6 +17,7 @@ package jetbrains.mps.persistence;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -26,19 +27,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Supposed to be a cosier version of the <code>Map<String,String></code> parameters in the
+ * OPTIONAL parameters for the {@link ModelFactory} methods.
+ *
+ * Supposed to be a cosier version of the <code>Map<String, String></code> parameters in the
  * {@link ModelFactory#create(DataSource, Map)} methods group.
  *
  * Currently I suggest that the set of these parameters is not extended on the client side
  * though this can easily be changed.
  *
- * Use {@link #builder()} to construct.
+ * Use static {@link #startBuilding()} to start construction via Builder pattern.
+ * Finish construction with the {@link Builder#finishBuilding()} invocation.
+ *
+ * Use non-static {@link #prototype()} if you would like to construct
+ * a new instance of parameters based on the COPY of the existing version of parameters.
  *
  * Created by apyshkin on 12/14/16.
  */
 @Immutable
-public final class ModelCreationOptionalParameters {
-  public static final ModelCreationOptionalParameters DEFAULT = builder().build();
+public final class ModelCreationOptions {
+  public static final ModelCreationOptions DEFAULT = startBuilding().finishBuilding();
 
   private final String myJavaPackage;
   private final boolean myContentOnly;
@@ -46,7 +53,7 @@ public final class ModelCreationOptionalParameters {
   private final SModuleReference myModuleReference;
   private final String myRelativePath;
 
-  private ModelCreationOptionalParameters(@NotNull Builder builder) {
+  private ModelCreationOptions(@NotNull Builder builder) {
     myJavaPackage = builder.myJavaPackage;
     myContentOnly = builder.myContentOnly;
     myModelName = builder.myModelName;
@@ -96,10 +103,22 @@ public final class ModelCreationOptionalParameters {
   }
 
   @NotNull
-  public static Builder builder() {
+  public static Builder startBuilding() {
     return new Builder();
   }
 
+  @NotNull
+  public Builder prototype() {
+    return new Builder(this);
+  }
+
+  /**
+   * Create via static {@link #startBuilding()} if you want to construct a new instance of parameters.
+   *
+   * Create via non-static {@link #prototype()} if you would like to construct
+   * a new instance of parameters based on the copy of the existing version of parameters.
+   */
+  @Mutable
   public static final class Builder {
     private String myJavaPackage;
     private boolean myContentOnly;
@@ -109,17 +128,25 @@ public final class ModelCreationOptionalParameters {
 
     private Builder() {}
 
-    public Builder setPackage(@NotNull String javaPackage) {
+    private Builder(@NotNull ModelCreationOptions parameters) {
+      myJavaPackage = parameters.getJavaPackage();
+      myContentOnly = parameters.isContentOnly();
+      myModelName = parameters.getModelName();
+      myModuleReference = parameters.getModuleReference();
+      myRelativePath = parameters.getRelativePath();
+    }
+
+    public Builder setPackage(String javaPackage) {
       myJavaPackage = javaPackage;
       return this;
     }
 
-    public Builder setRelativePath(@NotNull String relPath) {
+    public Builder setRelativePath(String relPath) {
       myRelativePath = relPath;
       return this;
     }
 
-    public Builder setModelName(@NotNull String modelName) {
+    public Builder setModelName(String modelName) {
       myModelName = modelName;
       return this;
     }
@@ -129,14 +156,14 @@ public final class ModelCreationOptionalParameters {
       return this;
     }
 
-    public Builder setModuleReference(@NotNull SModuleReference moduleRef) {
+    public Builder setModuleReference(SModuleReference moduleRef) {
       myModuleReference = moduleRef;
       return this;
     }
 
     @NotNull
-    public ModelCreationOptionalParameters build() {
-      return new ModelCreationOptionalParameters(this);
+    public ModelCreationOptions finishBuilding() {
+      return new ModelCreationOptions(this);
     }
   }
 }

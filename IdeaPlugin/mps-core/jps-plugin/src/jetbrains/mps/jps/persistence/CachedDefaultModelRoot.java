@@ -74,7 +74,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     options.put(ModelFactory.OPTION_MODULEREF, module.getModuleReference().toString());
 
     for (CachedModelData mdata : models) {
-      IFile file = myFileSystem.getFile(mdata.getFile());
+      IFile file = getFileSystem().getFile(mdata.getFile());
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
       if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {
@@ -115,7 +115,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       }
     }
 
-    options.put(ModelFactory.OPTION_RELPATH, makeRelative(getContentRoot(), filePath));
+    options.put(ModelFactory.OPTION_RELPATH, relativize(getContentDirectory(), filePath));
     options.remove(ModelFactory.OPTION_PACKAGE);
     options.remove(ModelFactory.OPTION_MODELNAME);
     if (relPath != null) {

@@ -21,20 +21,24 @@ import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileKind;
+import jetbrains.mps.extapi.persistence.SourceFileKind;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.persistence.FileDataSourceCreator.CreationResult;
-import jetbrains.mps.persistence.ModelRootDirWalker.State;
+import jetbrains.mps.persistence.ModelSourceRootWalker.ModelRootFileTreeLocus;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -43,19 +47,26 @@ import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * evgeny, 11/9/12
  */
 public class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
+  private static final Logger LOG = LogManager.getLogger(DefaultModelRoot.class);
+
   /**
    * FIXME must be made package-local
    * FIXME one must have either factory creation or a public constructor not both [AP]
    */
   public DefaultModelRoot() {
-    super(new String[]{SOURCE_ROOTS});
+  }
+
+  @NotNull
+  @Override
+  public List<FileKind> getSupportedFileKinds1() {
+    return Collections.singletonList(SourceFileKind.INSTANCE);
   }
 
   @Override
@@ -72,18 +83,36 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<>();
-    String contentHome = getContentRoot();
-    for (String sourcePath : getFiles(SOURCE_ROOTS)) {
-      String relativePath = contentHome != null ? relativize(contentHome, sourcePath) : null;
-      IFile file = getFileSystem().getFile(sourcePath);
-      collectModels(file, relativePath, result);
+    for (SourceRoot sourceRoot : getSourceRoots(SourceFileKind.INSTANCE)) {
+//      String relativePath = relativize(contentHome, sourceRoot.getPath());
+      result.addAll(collectModels(sourceRoot));
     }
+    return result;
+  }
+
+  @NotNull
+  private Collection<SModel> collectModels(@NotNull SourceRoot sourceRoot) {
+    Collection<SModel> result = new ArrayList<>();
+    ParametersCalculator parametersCalculator = new ParametersCalculator(this, sourceRoot);
+    ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, (factory, dataSource, file) -> {
+      try {
+        ModelCreationOptions options = parametersCalculator.calculate(file);
+        SModel model = new ModelFactoryFacade(factory).load(dataSource, options);
+        ((SModelBase) model).setModelRoot(DefaultModelRoot.this);
+        result.add(model);
+      } catch (UnsupportedDataSourceException ex) {
+      /* model factory registration problem: ignore */
+      } catch (IOException ex) {
+        LOG.error("Caught exception while collecting models in the '" + file + "'", ex);
+      }
+    });
+    modelSourceRootWalker.traverse(sourceRoot);
     return result;
   }
 
   @Override
   public boolean canCreateModels() {
-    return super.canCreateModels() && !getFiles(SOURCE_ROOTS).isEmpty();
+    return super.canCreateModels() && !getSourceRoots(SourceFileKind.INSTANCE).isEmpty();
   }
 
   @Override
@@ -91,10 +120,12 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     if (!canCreateModels()) {
       return false;
     }
-    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    ModelFactory modelFactory = defaultModelFactory();
     FileDataSource source;
     try {
-      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, MPSExtentions.MODEL, null);
+      String fileExtension = modelFactory.getFileExtension();
+
+      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, fileExtension != null ? fileExtension : "", defaultSourceRoot());
       source = result.getSource();
       return new ModelFactoryFacade(modelFactory).canCreate(source, result.getParameters());
     } catch (IOException e) {
@@ -102,60 +133,86 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     }
   }
 
+  @NotNull
+  private static ModelFactory defaultModelFactory() {
+    return PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+  }
+
+  /**
+   * @return first source root as a default one
+   * @throws NoSourceRootsInModelRootException if there are no source roots here
+   */
+  @NotNull
+  private SourceRoot defaultSourceRoot() {
+    List<SourceRoot> sourceRoots = getSourceRoots(SourceFileKind.INSTANCE);
+    if (sourceRoots.isEmpty()) {
+      throw new NoSourceRootsInModelRootException(this);
+    }
+    return sourceRoots.get(0);
+  }
+
   @Override
+  @Nullable
   public SModel createModel(@NotNull String modelName) {
-    ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
+    return createModel(defaultModelFactory(), modelName);
+  }
+
+  /**
+   * @return null if there was IOException
+   */
+  @Nullable
+  public SModel createModel(@NotNull ModelFactory modelFactory, @NotNull String modelName) {
+    return createModel(modelFactory, defaultSourceRoot(), modelName);
+  }
+
+//  public SModel createModel(@NotNull SourceRoot sourceRoot, @NotNull String modelName) {
+//    return createModel(defaultModelFactory(), sourceRoot, modelName);
+//  }
+
+  /**
+   * Creates a model via given factory with given name and under the provided sourceRoot in this ModelRoot.
+   *
+   * @param factory -- the factory which is used to create model
+   *                   @see ModelFactory#create
+   * @param modelName -- the name of the newly created model
+   */
+  @Nullable
+  private SModel createModel(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) {
     try {
-      return createModel(modelFactory, modelName, null);
+      SModel model = createModelImpl(factory, modelName, sourceRoot);
+      ((SModelBase) model).setModelRoot(this);
+      // TODO fix
+      register(model);
+      return model;
     } catch (IOException e) {
+      LOG.error("Caught when creating a model " + modelName, e);
       return null;
     }
   }
 
-  /**
-   *
-   * @param factory
-   * @param modelName
-   * @param sourceRoot --- TODO
-   */
   @NotNull
-  private SModel createModel(@NotNull ModelFactory factory, @NotNull String modelName, @Nullable String sourceRoot) throws IOException {
-    SModel model = createModelImpl(factory, modelName, sourceRoot, ModelCreationOptionalParameters.DEFAULT);
-    ((SModelBase) model).setModelRoot(this);
-    // TODO fix
-    register(model);
-    return model;
-  }
-
-  @NotNull
-  private SModel createModelImpl(@NotNull ModelFactory factory, @NotNull String modelName, @Nullable String sourceRoot, @NotNull ModelCreationOptionalParameters parameters) throws IOException {
+  private SModel createModelImpl(@NotNull ModelFactory factory,
+                                 @NotNull String modelName,
+                                 @NotNull SourceRoot sourceRoot) throws IOException {
+    ModelCreationOptions options = defaultModelCreationOptions(modelName);
     DataSource source;
     if (factory instanceof FolderModelFactory) {
-      source = ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, parameters);
+      source = ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, options);
     } else {
-      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, factory.getFileExtension(), sourceRoot);
+      @Nullable String fileExtension = factory.getFileExtension();
+      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, fileExtension != null ? fileExtension : "", sourceRoot);
       source = result.getSource();
     }
-    return new ModelFactoryFacade(factory).create(source, parameters);
+    return new ModelFactoryFacade(factory).create(source, options);
   }
 
-  /**
-   * @param directory -- the directory to look into
-   * @param relativePath
-   * @param models
-   */
-  private void collectModels(IFile directory, String relativePath, Collection<SModel> models) {
-    new ModelRootDirWalker(this).walk(new State(directory, relativePath), (factory, dataSource, parameters) -> {
-      try {
-        SModel model = new ModelFactoryFacade(factory).load(dataSource, parameters);
-        ((SModelBase) model).setModelRoot(this);
-        models.add(model);
-      } catch (UnsupportedDataSourceException ex) {
-        /* model factory registration problem: ignore */
-      } catch (IOException ex) {
-        // TODO report?
-      }
-    });
+  @NotNull
+  private ModelCreationOptions defaultModelCreationOptions(@NotNull String modelName) {
+    SModuleReference moduleReference = getModule() != null ? getModule().getModuleReference() : null;
+    return ModelCreationOptions.startBuilding()
+                               .setModelName(modelName)
+                               .setModuleReference(moduleReference)
+                               .finishBuilding();
   }
 
   @Override
@@ -167,42 +224,41 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     AbstractModule sourceModule = ((AbstractModule) getModule());
     AbstractModule targetModule = ((AbstractModule) targetModelRoot.getModule());
     final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
-    Collection<String> sourceFiles = getFiles(SOURCE_ROOTS);
-    Collection<String> targetFiles = targetModelRoot.getFiles(SOURCE_ROOTS);
+    List<SourceRoot> sourceFiles = getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> targetFiles = targetModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
     assert sourceFiles.size() == targetFiles.size();
-    for (Iterator<String> sIterator = sourceFiles.iterator(), tIterator = targetFiles.iterator(); sIterator.hasNext();) {
-      String sourceRoot = sIterator.next();
-      String targetRoot = tIterator.next();
-
-      fileSystem.getFile(targetRoot).mkdirs();
-      ModelRootDirWalker modelRootDirWalker = new ModelRootDirWalker(this);
-      String relPath = relativize(getContentRoot(), sourceRoot);
-      IFile sourceRootFile = fileSystem.getFile(sourceRoot);
-      modelRootDirWalker.walk(new State(sourceRootFile, relPath), (factory, dataSource, parameters) -> {
-            try {
-              parameters.builder().setModuleReference(sourceModule.getModuleReference()).build(); // TODO RADIMIR REVIEW
-              SModelBase sourceModel = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, parameters);
-              createModelCopy(targetModelRoot, targetModule, targetRoot, factory, parameters, sourceModel);
-            } catch (IOException e) {
-              // TODO
-            }
-          });
-    }
+//    for (int cnt = 0; cnt < sourceFiles.size(); ++cnt) {
+//      SourceRoot sourceRoot = sourceFiles.get(cnt);
+//      SourceRoot targetRoot = targetFiles.get(cnt);
+//
+//      fileSystem.getFile(targetRoot.getPath()).mkdirs();
+//      ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, new File);
+//      String relPath = relativize(getContentDirectory(), sourceRoot.getPath());
+//      IFile sourceRootFile = fileSystem.getFile(sourceRoot.getPath());
+//      modelSourceRootWalker.walk(sourceRootFile);
+//      try {
+//         TODO RADIMIR REVIEW
+//        SModelBase sourceModel = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, parameters);
+//        createModelCopy(targetModelRoot, targetModule, targetRoot, factory, parameters, sourceModel);
+//      } catch (IOException e) {
+//         TODO
+//      }
+//    }
   }
 
-  private static class CopyModelHelper {
+//  private static class CopyModelHelper {
+//    DefaultModelRoot myModelRoot;
+//    String myTargetModelRootName;
+//    AbstractModule myTargetModule;
+//    ModelFactory myModelFactory;
+//  };
 
-    DefaultModelRoot myModelRoot;
-    String myTargetModelRootName;
-    AbstractModule myTargetModule;
-    ModelFactory myModelFactory;
-  }
-
-
-  private void createModelCopy(@NotNull DefaultModelRoot targetModelRoot, AbstractModule targetModule, String targetRoot,
-      ModelFactory factory,
-      ModelCreationOptionalParameters parameters, SModelBase sourceModel) throws IOException {
-    EditableSModelBase targetModel = (EditableSModelBase) targetModelRoot.createModelImpl(factory, sourceModel.getName().getValue(), targetRoot, parameters);
+  private void createModelCopy(@NotNull DefaultModelRoot targetModelRoot,
+                               AbstractModule targetModule,
+                               SourceRoot targetSourceRoot,
+                               ModelFactory factory,
+                               SModelBase sourceModel) throws IOException {
+    EditableSModelBase targetModel = (EditableSModelBase) targetModelRoot.createModelImpl(factory, sourceModel.getName().getValue(), targetSourceRoot);
 //              SModelName oldModelName = m.getName();
 //              if (oldModelName.getNamespace().startsWith(oldName)) {
 //                if (m instanceof EditableSModel) {
@@ -238,23 +294,14 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     targetModel.save();
   }
 
-  private static String relativize(String contentHome, String fullPath) {
-    if ((fullPath == null || fullPath.isEmpty() || fullPath.equals(contentHome))) {
-      return "";
-    }
-    try {
-      return FileUtil.getRelativePath(independentAndAbsolute(fullPath), independentAndAbsolute(contentHome), Path.UNIX_SEPARATOR);
-    } catch (Exception ex) { // fixme why just <code>Exception</code>?
-      return null;
-    }
+  interface FileTreeWalkListener {
+    void onFileVisited(@NotNull ModelRootFileTreeLocus state);
+
+    void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state);
   }
 
-  @NotNull
-  private static String independentAndAbsolute(@NotNull String path) {
-    return FileUtil.getUnixPath(FileUtil.getAbsolutePath(path));
+  public static interface ModelRootWalkListener {
+    void onDataSourceVisited(@NotNull ModelFactory factory, @NotNull DataSource dataSource, IFile file);
   }
 
-  interface ModelRootWalkListener {
-    void onDataSourceVisited(ModelFactory factory, DataSource dataSource, ModelCreationOptionalParameters parameters);
-  }
 }

@@ -32,6 +32,7 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.persistence.FolderModelFactory;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.LanguageImportHelper;
 import jetbrains.mps.project.MPSProject;
@@ -142,12 +143,12 @@ public class MakeDirAModel extends NewModelActionBase {
             }
           }
 
-          Map<String, String> options = new HashMap<String, String>();
+          Map<String, String> options = new HashMap<>();
           if (relPath != null) {
             options.put(ModelFactory.OPTION_RELPATH, relPath);
           }
-          model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, options,
-            PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root"));
+          FolderModelFactory folderModelFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+          model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, options, folderModelFactory);
         } catch (IOException ioException) {
           LOG.error("Can't create per-root model " + modelName + " under " + myRootForModel, ioException);
         }

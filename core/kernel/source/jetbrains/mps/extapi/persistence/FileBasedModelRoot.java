@@ -16,28 +16,37 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.MementoWithFS;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModulePathConverter;
-import jetbrains.mps.util.PathConverters;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
+import static java.util.Collections.unmodifiableList;
+import static jetbrains.mps.util.FileUtil.getAbsolutePath;
+import static jetbrains.mps.util.FileUtil.getUnixPath;
 import static jetbrains.mps.util.PathConverters.ID_CONVERTER;
 import static jetbrains.mps.util.PathConverters.forModules;
 
@@ -47,38 +56,82 @@ import static jetbrains.mps.util.PathConverters.forModules;
  * replaced with some <code>Path</code> entities.
  * AP
  *
- * evgeny, 12/11/12
+ * @author evgeny, 12/11/12
+ *         apyshkin, 15/12/16
  */
 public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
+  /**
+   * @deprecated use {@link SourceFileKind} instead
+   */
+  @Deprecated
   public static final String SOURCE_ROOTS = "sourceRoot";
+  /**
+   * @deprecated use {@link ExcludedFileKind} instead
+   */
+  @Deprecated
   public static final String EXCLUDED = "excluded";
-  public static final String CONTENT_PATH = "contentPath";
-  public static final String LOCATION = "location";
-  public static final String PATH = "path";
 
   private /*final*/ FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // TODO not read from memento
-  private String myContentRoot; // fixme relative/absolute/macros [typical path issue in the mps project]
-  private final Map<String, List<String>> myFilesForKind = new LinkedHashMap<>(); // fixme relative/absolute/macros [typical path issue in the mps project]
+  @Internal public static final String CONTENT_PATH = "contentPath";
+  @Internal public static final String LOCATION = "location";
+  private static final String PATH = "path";
+
+  @Immutable private final List<String> mySupportedFileKinds;
+
+  /**
+   * Ancestor for all the source paths
+   * Commonly it is a module root folder and 'models' directory is its default source root
+   * @see SourceRoot
+   */
+  private IFile myContentDir;
+
+  private final SourcePaths mySourcePathStorage;
   private final List<PathListener> myListeners = new ArrayList<>();
 
   protected FileBasedModelRoot() {
-    this(new String[]{SOURCE_ROOTS, EXCLUDED});
+    mySupportedFileKinds = unmodifiableList(Arrays.asList(SOURCE_ROOTS, EXCLUDED));
+    mySourcePathStorage = new SourcePaths();
   }
 
+  /**
+   * @deprecated use {@link #FileBasedModelRoot()} instead and
+   *             define your own {@link #getSupportedFileKinds()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected FileBasedModelRoot(String[] supportedFileKinds) {
-    for (String kind : supportedFileKinds) {
-      myFilesForKind.put(kind, new ArrayList<>());
-    }
+    mySupportedFileKinds = supportedFileKinds != null ?
+                           unmodifiableList(asList(supportedFileKinds)) : emptyList();
+    mySourcePathStorage = new SourcePaths(mySupportedFileKinds::contains);
   }
 
+  /**
+   * @deprecated use {@link #getContentDirectory()} instead
+   */
+  @Deprecated
+  @NotNull
   public final String getContentRoot() {
-    return myContentRoot;
+    return myContentDir.getPath();
   }
 
+  /**
+   * @deprecated use {@link #setContentDirectory(IFile)} instead
+   */
+  @Deprecated
   public final void setContentRoot(@NotNull String path) {
     checkNotRegistered();
 
-    myContentRoot = path;
+    myContentDir = myFileSystem.getFile(path);
+  }
+
+  @NotNull
+  public final IFile getContentDirectory() {
+    return myContentDir;
+  }
+
+  public final void setContentDirectory(@NotNull IFile contentDir) {
+    checkNotRegistered();
+    myContentDir = contentDir;
   }
 
   @NotNull
@@ -86,87 +139,122 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return myFileSystem;
   }
 
-  public final Collection<String> getSupportedFileKinds() {
-    return new ArrayList<>(myFilesForKind.keySet());
+  /**
+   * To become abstract in the 3.5
+   */
+  @NotNull
+  @Immutable
+  public /*abstract*/ List<FileKind> getSupportedFileKinds1() {
+    return unmodifiableList(asList(SourceFileKind.INSTANCE, ExcludedFileKind.INSTANCE));
   }
 
   @NotNull
-  public final Collection<String> getFiles(String kind) {
-    List<String> strings = myFilesForKind.get(kind);
-    return strings == null ? Collections.emptyList() : new ArrayList<>(strings);
+  @Immutable
+  public final List<SourceRoot> getSourceRoots(@NotNull FileKind kind) {
+    return mySourcePathStorage.getByKind(kind);
   }
 
+  public final void addSourceRoot(@NotNull FileKind kind, @NotNull SourceRoot root) {
+    mySourcePathStorage.addSourceRoot(kind, root);
+  }
+
+  /**
+   * @return the <code>FileKind</code> of the removed <code>SourceRoot</code> if it was successfully removed.
+   */
+  @Nullable
+  public final FileKind removeSourceRoot(@NotNull SourceRoot root) {
+    return mySourcePathStorage.removeSourceRoot(root);
+  }
+
+  /**
+   * helper method (for legacy resolve)
+   */
+  @NotNull
+  private FileKind resolveKindByName(@NotNull String kindName) {
+    for (FileKind kind : getSupportedFileKinds1()) {
+      if (kind.getName().equals(kindName)) {
+        return kind;
+      }
+    }
+    throw new FileKindIsNotAllowedException(kindName);
+  }
+
+  /**
+   * @deprecated <code>String</code> is not the best choice. Consider using {@link #getSupportedFileKinds1()}
+   * @see SourcePaths
+   */
+  @Deprecated
+  @Immutable
+  public final Collection<String> getSupportedFileKinds() {
+    return mySupportedFileKinds;
+  }
+
+  /**
+   * @deprecated use {@link #getSourceRoots(FileKind)} instead
+   */
+  @NotNull
+  @Deprecated
+  public final Collection<String> getFiles(@NotNull String kind) {
+    List<SourceRoot> roots = getSourceRoots(resolveKindByName(kind));
+    return unmodifiableList(roots.stream()
+                                 .map(SourceRoot::getPath)
+                                 .collect(Collectors.toList()));
+  }
+
+  /**
+   * @deprecated use one-line {@link #getSourceRoots(FileKind)} + {@link List#contains}.
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public final boolean containsFile(String kind, String file) {
-    List<String> strings = myFilesForKind.get(kind);
-    return strings != null && strings.contains(file);
+    Collection<String> sourceRoots = getFiles(kind);
+    return sourceRoots.contains(file);
   }
 
-  public final void addFiles(@NotNull String kind, @NotNull Collection<String> files) {
-    checkNotRegistered();
-
-    if (!myFilesForKind.containsKey(kind)) {
-      throw new IllegalArgumentException("unknown kind");
-    }
-    if (files.isEmpty()) {
-      return;
-    }
-
-    myFilesForKind.get(kind).addAll(files);
+  /**
+   * @deprecated use {@link #addSourceRoot(FileKind, SourceRoot)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public final void addFile(String kind, String filePath) {
+    FileKind fileKind = resolveKindByName(kind);
+    addSourceRoot(fileKind, new DefaultSourceRoot(getUnixPath(getAbsolutePath(filePath))));
   }
 
-  public final void addFile(String kind, String file) {
-    addFiles(kind, Collections.singletonList(file));
-  }
-
+  /**
+   * @deprecated use {@link #addSourceRoot(FileKind, SourceRoot)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public final void deleteFile(String kind, String file) {
     checkNotRegistered();
 
-    if (!myFilesForKind.containsKey(kind)) {
-      throw new IllegalArgumentException("unknown kind");
+    if (!containsFile(kind, file)) {
+      throw new FileKindIsNotAllowedException(kind, file);
     }
 
-    myFilesForKind.get(kind).remove(file);
-  }
 
-  public final void clearFiles(String kind) {
-    checkNotRegistered();
-
-    if (!myFilesForKind.containsKey(kind)) {
-      throw new IllegalArgumentException("unknown kind");
-    }
-
-    myFilesForKind.get(kind).clear();
+    removeSourceRoot(new DefaultSourceRoot(file));
   }
 
   @Override
-  public String getPresentation() {
-    return getContentRoot() != null ? getContentRoot() : "no path";
-  }
-
-  public String getKindText(String kind) {
-    if (kind.equals(EXCLUDED)) {
-      return "Excluded";
-    } else if (kind.equals(SOURCE_ROOTS)) {
-      return "Models";
-    }
-    return null;
+  public final String getPresentation() {
+    return getContentDirectory().getPath();
   }
 
   @Override
   public void save(@NotNull Memento memento) {
-    memento.put(CONTENT_PATH, myContentRoot);
+    memento.put(CONTENT_PATH, myContentDir.getPath());
     memento.put("type", getType());
-    for (String kind : getSupportedFileKinds()) {
-      List<String> files = myFilesForKind.get(kind);
-
-      for (String s : files) {
-        Memento modelRoot = memento.createChild(kind);
-        if (s.equals(myContentRoot)) {
-          modelRoot.put(LOCATION, ".");
-        } else if (s.startsWith(myContentRoot + "/")) { // todo get rid of
-          modelRoot.put(LOCATION, s.substring(myContentRoot.length() + 1));
+    for (FileKind kind : getSupportedFileKinds1()) {
+      for (SourceRoot root : getSourceRoots(kind)) {
+        Memento modelRootMemento = memento.createChild(kind.getName());
+        String contentRootPath = root.getPath();
+        if (FileUtil.isAncestor(myContentDir.getPath(), contentRootPath)) {
+          String relPath = relativize(myContentDir, contentRootPath);
+          modelRootMemento.put(LOCATION, relPath);
         } else {
-          modelRoot.put(PATH, s);
+          modelRootMemento.put(PATH, contentRootPath);
         }
       }
     }
@@ -176,24 +264,23 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public void load(@NotNull Memento memento) {
     checkNotRegistered();
 
+    mySourcePathStorage.clearAll(); // AP: I'd rather force single invocation the of #load method
+
     if (memento instanceof MementoWithFS) {
       myFileSystem = ((MementoWithFS) memento).getFileSystem();
     }
-    myContentRoot = FileUtil.stripLastSlashes(memento.get(CONTENT_PATH));
-    for (String kind : getSupportedFileKinds()) {
-      List<String> files = myFilesForKind.get(kind);
-      files.clear();
-      for (Memento root : memento.getChildren(kind)) {
+    myContentDir = myFileSystem.getFile(memento.get(CONTENT_PATH));
+    for (FileKind kind : getSupportedFileKinds1()) {
+      for (Memento root : memento.getChildren(kind.getName())) {
         String relPath = root.get(LOCATION);
+        String sourceRootAbsolutePath;
         if (relPath != null) {
-          if (relPath.equals(".")) {
-            files.add(myContentRoot);
-          } else {
-            files.add(myContentRoot + "/" + relPath);
-          }
+          IFile sourceRootFile = myContentDir.getDescendant(relPath);
+          sourceRootAbsolutePath = sourceRootFile.getPath();
         } else {
-          files.add(root.get(PATH));
+          sourceRootAbsolutePath = root.get(PATH);
         }
+        addSourceRoot(kind, new DefaultSourceRoot(sourceRootAbsolutePath));
       }
     }
   }
@@ -201,17 +288,18 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Override
   public void attach() {
     super.attach();
+    attachPathListenerForEachSourceRoot();
+  }
 
-    for (String kind : getSupportedFileKinds()) {
-      if (!EXCLUDED.equals(kind)) {
-        for (String path : myFilesForKind.get(kind)) {
-          IFile file = myFileSystem.getFile(path);
-          PathListener listener = new PathListener(file);
-          myListeners.add(listener);
-          myFileSystem.addListener(listener);
-        }
+  private void attachPathListenerForEachSourceRoot() { // fixme extract class
+    getSupportedFileKinds1().stream().filter(kind -> !kind.isExcluded()).forEach(kind -> {
+      for (SourceRoot sourceRoot : getSourceRoots(kind)) {
+        IFile file = myFileSystem.getFile(sourceRoot.getPath());
+        PathListener listener = new PathListener(file);
+        myListeners.add(listener);
+        myFileSystem.addListener(listener);
       }
-    }
+    });
   }
 
   @Override
@@ -260,38 +348,63 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       throw new CopyNotSupportedException("The module of the target model root is null " + targetModelRoot);
     }
 
-    ModulePathConverter modulePathConverter = isInsideModuleDir() ? forModules(source, target) : ID_CONVERTER;
+    ModulePathConverter converter = isInsideModuleDir() ? forModules(source, target) : ID_CONVERTER;
 
-    targetModelRoot.setContentRoot(modulePathConverter.source2Target(getContentRoot()));
-    for (String kind : getSupportedFileKinds()) {
-      List<String> targetFiles = getFiles(kind).stream().map(modulePathConverter::source2Target).collect(Collectors.toList());
-      targetModelRoot.addFiles(kind, targetFiles);
+    IFile targetContentDir = myFileSystem.getFile(converter.source2Target(getContentDirectory().getPath()));
+    targetModelRoot.setContentDirectory(targetContentDir);
+    for (FileKind kind : getSupportedFileKinds1()) {
+      for (SourceRoot sourceRoot : getSourceRoots(kind)) {
+        String targetSourceRoot = converter.source2Target(sourceRoot.getPath());
+        targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot));
+      }
     }
   }
 
   @Override
   public final boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
 
     FileBasedModelRoot that = (FileBasedModelRoot) o;
 
-    return Objects.equals(myContentRoot, that.myContentRoot) && Objects.equals(myFilesForKind, that.myFilesForKind);
+    return Objects.equals(myContentDir, that.myContentDir)
+           && Objects.equals(mySourcePathStorage, that.mySourcePathStorage)
+           && Objects.equals(myFileSystem, that.myFileSystem);
   }
 
   @Override
   public final int hashCode() {
-    int result = myContentRoot != null ? myContentRoot.hashCode() : 0;
-    result = 31 * result + (myFilesForKind != null ? myFilesForKind.hashCode() : 0);
-    return result;
+    return Objects.hash(myContentDir, mySourcePathStorage);
   }
 
   protected final boolean isInsideModuleDir() {
     final SModule module = getModule();
     if (module instanceof AbstractModule) {
-      return ((AbstractModule) module).getModuleSourceDir().toPath().startsWith(getContentRoot());
+      return ((AbstractModule) module).getModuleSourceDir().toPath().startsWith(getContentDirectory().toPath());
     }
     return false;
+  }
+
+  @NotNull
+  public static String relativize(@NotNull IFile contentHome, @NotNull String fullPath) {
+    if (fullPath.isEmpty()) {
+      return MPSExtentions.DOT;
+    }
+    String contentHomePath = independentAndAbsolute(contentHome.getPath());
+    fullPath = independentAndAbsolute(fullPath);
+    if (fullPath.equals(contentHomePath)) {
+      return MPSExtentions.DOT;
+    }
+    return FileUtil.getRelativePath(fullPath, contentHomePath, Path.UNIX_SEPARATOR);
+  }
+
+  @NotNull
+  private static String independentAndAbsolute(@NotNull String path) {
+    return getUnixPath(getAbsolutePath(path));
   }
 
   private final class PathListener implements FileSystemListener {

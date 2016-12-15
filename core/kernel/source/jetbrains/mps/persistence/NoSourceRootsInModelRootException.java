@@ -15,12 +15,21 @@
  */
 package jetbrains.mps.persistence;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
- *
- * Created by apyshkin on 12/14/16.
+ * Created by apyshkin on 12/15/16.
  */
-public class ModelCreationMandatoryParameters {
-  private final String myModelName;
-  private final String myRelativePath;
-  private final String myContentPath;
+public class NoSourceRootsInModelRootException extends RuntimeException {
+  @NotNull
+  private final DefaultModelRoot myModelRoot;
+
+  public NoSourceRootsInModelRootException(@NotNull DefaultModelRoot modelRoot) {
+    myModelRoot = modelRoot;
+  }
+
+  @Override
+  public String getMessage() {
+    return String.format("Source roots are absent in the provided model root [%s], operation is impossible", myModelRoot);
+  }
 }

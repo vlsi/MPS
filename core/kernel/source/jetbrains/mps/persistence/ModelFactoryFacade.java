@@ -27,7 +27,7 @@ import java.util.Map;
 
 /**
  * Cosy facade which effectively replaces the <code>map<string, string></code> parameter in the create methods
- * with the {@link ModelCreationOptionalParameters} instances.
+ * with the {@link ModelCreationOptions} instances.
  *
  * TODO Might be transferred to api whenever we are able to create ModelCreationParameters in API (path, files are not in API yet)
  *
@@ -45,7 +45,7 @@ public final class ModelFactoryFacade {
    * @see ModelFactory#load(DataSource, Map)
    */
   @NotNull
-  SModel load(@NotNull DataSource dataSource, @NotNull ModelCreationOptionalParameters parameters) throws IOException {
+  SModel load(@NotNull DataSource dataSource, @NotNull ModelCreationOptions parameters) throws IOException {
     return myDelegatingFactory.load(dataSource, parameters.convertToMap());
   }
 
@@ -53,14 +53,14 @@ public final class ModelFactoryFacade {
    * @see ModelFactory#create(DataSource, Map)
    */
   @NotNull
-  SModel create(DataSource dataSource, @NotNull ModelCreationOptionalParameters parameters) throws IOException {
+  SModel create(DataSource dataSource, @NotNull ModelCreationOptions parameters) throws IOException {
     return myDelegatingFactory.create(dataSource, parameters.convertToMap());
   }
 
   /**
    * @see ModelFactory#canCreate(DataSource, Map)
    */
-  boolean canCreate(DataSource dataSource, @NotNull ModelCreationOptionalParameters parameters) {
+  boolean canCreate(DataSource dataSource, @NotNull ModelCreationOptions parameters) {
     return myDelegatingFactory.canCreate(dataSource, parameters.convertToMap());
   }
 

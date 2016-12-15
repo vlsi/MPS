@@ -20,9 +20,12 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
+import jetbrains.mps.extapi.persistence.SourceFileKind;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.FileDataSourceCreator;
+import jetbrains.mps.persistence.NoSourceRootsInModelRootException;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
@@ -40,6 +43,7 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -228,8 +232,8 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     // TODO update SModelId (if it contains modelName)
     //if(getReference().getModelId().getModelName() != null) { }
     SModelReference newModelReference = PersistenceFacade.getInstance().createModelReference(getReference().getModuleReference(),
-        getReference().getModelId(), newModelName);
-
+                                                                                             getReference().getModelId(),
+                                                                                             newModelName);
     fireBeforeModelRenamed(newModelReference);
     changeModelReference(newModelReference);
 
@@ -240,20 +244,13 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
         throw new UnsupportedOperationException("cannot change model file on non-file data source");
       }
 
-      IFile oldFile = ((FileDataSource) getSource()).getFile();
       ModelRoot root = getModelRoot();
       if (root instanceof DefaultModelRoot) {
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-        String sourceRoot = null;
-        for (String sr : defaultModelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
-          if (oldFile.getPath().startsWith(sr)) {
-            // using the same sourceRoot
-            sourceRoot = sr;
-            break;
-          }
-        }
+        IFile oldFile = ((FileDataSource) getSource()).getFile();
+        SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
         try {
-          String extension = FileUtil.getExtension(oldFile.getName());
+          String extension = getExtension(oldFile);
           FileDataSource source = new FileDataSourceCreator(defaultModelRoot).createSource(newModelName, extension, sourceRoot).getSource();
           IFile newFile = source.getFile();
           newFile.getParent().mkdirs();
@@ -273,6 +270,28 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
     fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
     fireModelRenamed(oldName);
+  }
+
+  private SourceRoot findSourceRootOfMyself(IFile oldFile, DefaultModelRoot defaultModelRoot) {
+    List<SourceRoot> sourceRoots = defaultModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    SourceRoot sourceRoot = sourceRoots.get(0); // first one by default
+    for (SourceRoot sourceRoot0 : sourceRoots) {
+      if (oldFile.getPath().startsWith(sourceRoot0.getPath())) {
+        // using the same sourceRoot
+        sourceRoot = sourceRoot0;
+        break;
+      }
+    }
+    return sourceRoot;
+  }
+
+  @NotNull
+  private String getExtension(IFile oldFile) {
+    String extension = FileUtil.getExtension(oldFile.getName());
+    if (extension == null) {
+      extension = "";
+    }
+    return extension;
   }
 
   @Override

@@ -89,8 +89,10 @@ public final class ReferenceUpdater {
     if (updateModels) {
       // FIXME SModule#getModels() doesn't guarantee any order
       // FIXME So I assume that original models and cloned have same names
-      Iterable<SModel> newModels = getSortedModels(newModule.getModels());
-      Iterator<SModel> oldModels = getSortedModels(oldModule.getModels()).iterator();
+
+      // AP let us assume that the models are in the same order (it is rational since we are _cloning_ modules)
+      Iterable<SModel> newModels = newModule.getModels();
+      Iterator<SModel> oldModels = oldModule.getModels().iterator();
       for (SModel newModel : newModels) {
         SModel oldModel = oldModels.next();
 

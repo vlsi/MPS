@@ -16,6 +16,8 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.SourceFileKind;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -24,57 +26,48 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import static jetbrains.mps.persistence.FileDataSourceCreator.CreationResult.of;
+import static jetbrains.mps.persistence.FileDataSourceCreator.CreationResult.build;
 
-public class FileDataSourceCreator {
+@Immutable
+public final class FileDataSourceCreator {
   private final DefaultModelRoot myDefaultModelRoot;
 
-  public FileDataSourceCreator(DefaultModelRoot myDefaultModelRoot) {
-    this.myDefaultModelRoot = myDefaultModelRoot;
+  public FileDataSourceCreator(@NotNull DefaultModelRoot defaultModelRoot) {
+    this.myDefaultModelRoot = defaultModelRoot;
   }
 
-  public CreationResult createSource(new ModelCreationMandatoryParameters(modelName))
-
-  /**
-   * @param sourceRoot -- if null then the first available source root will be chosen
-   */
   @NotNull
-  public CreationResult createSource(String modelName, String extension, @Nullable String sourceRoot) throws IOException {
-    ModelCreationOptionalParameters parameters = new ModelCreationOptionalParameters();
-    parameters.setModelName(modelName);
-    SModule module = myDefaultModelRoot.getModule();
-    if (module != null) {
-      parameters.setModuleReference(module.getModuleReference());
-    }
-    parameters.setPackage(packageFromModelName(modelName));
-
-    List<String> existingSourceRoots = new ArrayList<>(myDefaultModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS));
-    if (existingSourceRoots.isEmpty()) {
-      throw new IOException("empty list of source roots");
-    }
-    if (sourceRoot == null) {
-      //todo this should be changed later. The point is that at first the user
-      //todo chooses a root to create the model and then he can edit additional settings
-      //todo provided by this root, not the root automatically choosing some options
-      sourceRoot = existingSourceRoots.get(0);
-    } else if (!existingSourceRoots.contains(sourceRoot)) {
-      throw new IllegalArgumentException("")
-    }
-
-    if (sourceRoot == null || !existingSourceRoots.contains(sourceRoot)) {
-    }
-
+  public CreationResult createSource(@NotNull String modelName, @NotNull String extension, @NotNull SourceRoot sourceRoot) throws IOException {
+    checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     String relPath = calcRelativePath(modelName, extension);
-    parameters.setRelativePath(relPath);
-    IFile sourceRootFile = myDefaultModelRoot.getFileSystem().getFile(sourceRoot);
+    IFile sourceRootFile = myDefaultModelRoot.getFileSystem().getFile(sourceRoot.getPath());
     IFile modelDataSourceFile = sourceRootFile.getDescendant(relPath);
-    return of(new FileDataSource(modelDataSourceFile, myDefaultModelRoot), parameters);
+    ModelCreationOptions parameters = calcNewParameters(modelName, relPath, myDefaultModelRoot.getModule().getModuleReference());
+    return build(new FileDataSource(modelDataSourceFile, myDefaultModelRoot), parameters);
+  }
+
+  private void checkSourceRootIsAttachedToTheModelRoot(@NotNull SourceRoot sourceRoot) {
+    List<SourceRoot> existingSourceRoots = myDefaultModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    if (existingSourceRoots.isEmpty()) {
+      throw new NoSourceRootsInModelRootException(myDefaultModelRoot);
+    }
+    if (!existingSourceRoots.contains(sourceRoot)) {
+      throw new IllegalArgumentException("The source root " + sourceRoot + " does not exist in the model root"); // todo throw proper
+    }
+  }
+
+  @NotNull
+  private ModelCreationOptions calcNewParameters(String modelName, String relPath, @Nullable SModuleReference moduleReference) {
+    return ModelCreationOptions.startBuilding().setModelName(modelName)
+                               .setPackage(packageFromModelName(modelName))
+                               .setRelativePath(relPath)
+                               .setModuleReference(moduleReference)
+                               .finishBuilding();
   }
 
   @NotNull
@@ -110,15 +103,15 @@ public class FileDataSourceCreator {
   @Immutable
   public static final class CreationResult {
     private final FileDataSource source;
-    private final ModelCreationOptionalParameters parameters;
+    private final ModelCreationOptions parameters;
 
-    private CreationResult(FileDataSource source, ModelCreationOptionalParameters parameters) {
-      this.source = source;
-      this.parameters = parameters;
+    private CreationResult(FileDataSource source0, ModelCreationOptions parameters0) {
+      this.source = source0;
+      this.parameters = parameters0;
     }
 
     @NotNull
-    public static CreationResult of(@NotNull FileDataSource source, @NotNull ModelCreationOptionalParameters parameters) {
+    public static CreationResult build(@NotNull FileDataSource source, @NotNull ModelCreationOptions parameters) {
       return new CreationResult(source, parameters);
     }
 
@@ -128,7 +121,7 @@ public class FileDataSourceCreator {
     }
 
     @NotNull
-    public ModelCreationOptionalParameters getParameters() {
+    public ModelCreationOptions getParameters() {
       return parameters;
     }
   }

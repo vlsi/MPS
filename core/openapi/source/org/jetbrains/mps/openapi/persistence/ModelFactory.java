@@ -27,6 +27,9 @@ import java.util.Map;
  */
 public interface ModelFactory {
   String OPTION_MODULEREF = "moduleReference";
+  /**
+   * @deprecated not used for now
+   */
   String OPTION_PACKAGE = "package";
   String OPTION_RELPATH = "relativePath";
   String OPTION_MODELNAME = "modelName";
@@ -44,9 +47,16 @@ public interface ModelFactory {
    * like stream encoding (usually, the default is utf-8), package name, containing module reference
    * or module relative path of the source.
    *
+   * It will be deprecated as soon as I grant alternative.
+   * --Why?
+   * --Because of the Map<String,String>.
+   *
+   * Right now consider using <code>jetbrains.mps.persistence.ModelFactoryFacade</code>
+   *
    * @return The loaded model
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
+  /*@Deprecated*/
   @NotNull
   SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
   // FIXME odd to have #save with ModelSaveException, and no ModelLoadException for #load. There's ModelReadException, which is not openapi yet.
@@ -57,12 +67,14 @@ public interface ModelFactory {
    * @throws UnsupportedDataSourceException if the data source is not supported
    * @throws IOException if the model cannot be created
    */
+  /*@Deprecated*/
   @NotNull
   SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
+  /*@Deprecated*/
   boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
 
   /**

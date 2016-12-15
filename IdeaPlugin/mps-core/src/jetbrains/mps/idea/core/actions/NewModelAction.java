@@ -78,7 +78,7 @@ public class NewModelAction extends NewModelActionBase {
 
             EditableSModel model = null;
             try {
-              model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, null, PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL));
+              model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel);
               model.setChanged(true);
               model.save();
             } catch (IOException e) {

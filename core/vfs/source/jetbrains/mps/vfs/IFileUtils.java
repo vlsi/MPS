@@ -155,7 +155,6 @@ public class IFileUtils {
         result.add(child);
       }
     }
-
   }
 }
 

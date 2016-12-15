@@ -46,6 +46,7 @@ public interface ModelRoot {
    * TODO very ambiguous in API: is it to be used in UI? somewhere else? if in UI why is it a part of the API?
    * TODO one needs to clarify or replace it with a prosy #getName
    */
+  /*@Deprecated*/
   String getPresentation();
 
   /**
@@ -74,6 +75,7 @@ public interface ModelRoot {
    *
    * @return whether this model root is read-only in the way described above
    */
+  /*@Deprecated*/
   boolean canCreateModels();
 
   /**

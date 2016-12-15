@@ -21,6 +21,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.extapi.persistence.SourceFileKind;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -33,10 +35,12 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -52,10 +56,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -228,40 +231,50 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @Override
   @NotNull
-  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, @NotNull ModelCreationOptionalParameters parameters) throws IOException {
-    Collection<String> sourceRoots = new LinkedHashSet<>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
-    if (sourceRoots.isEmpty()) {
-      throw new IOException("empty list of source roots");
-    }
-
+  public DataSource createNewSource(FileBasedModelRoot modelRoot, SourceRoot sourceRoot, String modelName, @NotNull ModelCreationOptions parameters) throws IOException {
     jetbrains.mps.vfs.openapi.FileSystem fileSystem = modelRoot.getFileSystem();
-    final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
-    if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
-      sourceRoot = null;
-      for (String sr : sourceRoots) {
-        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(fileSystem.getFile(sr))) {
-          continue;
-        }
-        sourceRoot = sr;
-        break;
-      }
-      if (sourceRoot == null) {
-        throw new IOException("no suitable source root found");
-      }
-    }
+    sourceRoot = defaultSourceRoot(modelRoot, sourceRoot);
 
     IFile folder;
     if (parameters.getRelativePath() != null) {
-      String path = sourceRoot + Path.UNIX_SEPARATOR + parameters.getRelativePath();
+      String path = sourceRoot.getPath() + Path.UNIX_SEPARATOR + parameters.getRelativePath();
       folder = fileSystem.getFile(path);
     } else {
-      folder = fileSystem.getFile(sourceRoot).getDescendant(modelName);
+      folder = fileSystem.getFile(sourceRoot.getPath()).getDescendant(modelName);
     }
 
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
       throw new IOException("model already exists");
     }
     return new FilePerRootDataSource(folder, modelRoot);
+  }
+
+  /**
+   * if the given source root is not in the source roots or it is null we choose default
+   */
+  @NotNull
+  private SourceRoot defaultSourceRoot(FileBasedModelRoot modelRoot, @Nullable SourceRoot passedSourceRoot) throws IOException {
+    FileSystem fileSystem = modelRoot.getFileSystem();
+    List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    if (sourceRoots.isEmpty()) {
+      throw new IOException("empty list of source roots");
+    }
+
+    final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
+    if (passedSourceRoot == null || !sourceRoots.contains(passedSourceRoot)) {
+      passedSourceRoot = null;
+      for (SourceRoot sourceRoot : sourceRoots) {
+        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(fileSystem.getFile(sourceRoot.getPath()))) {
+          continue;
+        }
+        passedSourceRoot = sourceRoot;
+        break;
+      }
+    }
+    if (passedSourceRoot == null) {
+      throw new IOException("no suitable source root found");
+    }
+    return passedSourceRoot;
   }
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {
