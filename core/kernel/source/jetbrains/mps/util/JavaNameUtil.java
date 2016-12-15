@@ -91,7 +91,7 @@ public final class JavaNameUtil {
   }
 
   public static String nestedClassName(String packageName, String fqClassName) {
-    return fqClassName.substring(packageName.length() + 1);
+    return packageName.isEmpty() ? fqClassName : fqClassName.substring(packageName.length() + 1);
   }
 
   public static boolean isJavaIdentifier(@NotNull String text) {
