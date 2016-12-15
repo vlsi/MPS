@@ -21,13 +21,16 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks classes/enums which do not change their state.
- * Marks methods which do not change the state of the enclosing class.
- * Marks fields/parameters/locals which state can not be changed.
+ * Denotes classes/enums/methods/fields which need to be treated carefully,
+ * possibly it is better to keep away from using this API at all.
  *
- * If an interface bears this annotation all subclasses must be immutable as well.
+ * This annotation is to be applied when there is a intention to warn user but
+ * a deprecation is not an option [for example it is not feasible to give out
+ * an alternative API right in the moment].
+ *
+ * @author apyshkin
  */
 @Retention(RetentionPolicy.SOURCE)
-@Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE})
-public @interface Immutable {
+@Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD})
+public @interface Internal {
 }

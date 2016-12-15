@@ -42,6 +42,7 @@ public interface ModelRoot {
 
   /**
    * A textual representation of the model root
+   * TODO what is the difference with the {@link Object#toString()}??
    * TODO very ambiguous in API: is it to be used in UI? somewhere else? if in UI why is it a part of the API?
    * TODO one needs to clarify or replace it with a prosy #getName
    */

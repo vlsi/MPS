@@ -21,13 +21,13 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marks classes/enums which do not change their state.
- * Marks methods which do not change the state of the enclosing class.
- * Marks fields/parameters/locals which state can not be changed.
+ * Marks classes/enums which might change their state.
+ * Marks methods which might change the state of the enclosing class.
+ * Marks fields/parameters/locals which state can be changed.
  *
- * If an interface bears this annotation all subclasses must be immutable as well.
+ * @author apyshkin
  */
 @Retention(RetentionPolicy.SOURCE)
 @Target({ElementType.TYPE, ElementType.METHOD, ElementType.FIELD, ElementType.PARAMETER, ElementType.LOCAL_VARIABLE})
-public @interface Immutable {
+public @interface Mutable {
 }
