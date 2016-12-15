@@ -15,23 +15,42 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.io.File;
+import java.io.IOException;
+import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.ZipFile;
 
-class JarFileDataCache {
+/**
+ * A container for <code>JarFileData</code> instances.
+ * Stores a mapping from paths to jar file data, clears it up exploiting the
+ * <code>WeakReference</code> + <code>ReferenceQueue</code>mechanism.
+ *
+ * @author danilla, apyshkin
+ * @see WeakReference#WeakReference(Object, ReferenceQueue)
+ * @see #removeGCedReferences()
+ * <p>
+ * Also we use this mechanism to clean up the <code>JarFileData</code> resources,
+ * namely we close the <code>ZipFile</code> associated with the JarFileData instance.
+ */
+final class JarFileDataCache {
+  private static final Logger LOG = LogManager.getLogger(JarFileDataCache.class);
 
-  private static JarFileDataCache ourInstance = new JarFileDataCache();
+  private static final JarFileDataCache ourInstance = new JarFileDataCache();
 
   public static JarFileDataCache instance() {
     return ourInstance;
   }
 
-  private ReferenceQueue<JarFileData> myQueue = new ReferenceQueue<JarFileData>();
-  private Map<String, WeakReference<JarFileData>> myPathToRef = new HashMap<String, WeakReference<JarFileData>>();
-  private Map<WeakReference<JarFileData>, String> myRefToPath = new HashMap<WeakReference<JarFileData>, String>();
+  private final ReferenceQueue<JarFileData> myQueue = new ReferenceQueue<>();
+  private final Map<String, JarFileDataWeakReference> myPathToRef = new HashMap<>();
+  private final Map<Reference<? extends JarFileData>, String> myRefToPath = new HashMap<>();
 
   private final Object myLock = new Object();
 
@@ -45,15 +64,21 @@ class JarFileDataCache {
       String path = file.getAbsolutePath();
 
       if (myPathToRef.containsKey(path)) {
-        WeakReference<JarFileData> ref = myPathToRef.get(path);
+        JarFileDataWeakReference ref = myPathToRef.get(path);
         JarFileData data = ref.get();
         if (data != null) {
           return data;
+        } else {
+          // 1) must clean myRefToPath before putting new data,
+          // otherwise stale ref keeps pointing to path, which points to another live ref (via myPathToRef)
+          // and removeRef() when called after enqueueing will cleanup the wrong (yet live) reference
+          // 2) it's nice to close ZipFile sooner rather than later
+          removeRef(ref);
         }
       }
 
       JarFileData data = new JarFileData(new File(path));
-      WeakReference<JarFileData> ref = new WeakReference<JarFileData>(data, myQueue);
+      JarFileDataWeakReference ref = new JarFileDataWeakReference(data);
       myPathToRef.put(path, ref);
       myRefToPath.put(ref, path);
 
@@ -62,12 +87,47 @@ class JarFileDataCache {
   }
 
   private void removeGCedReferences() {
-    while (true) {
-      WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.poll();
-      if (ref == null) break;
+    Reference<? extends JarFileData> ref;
+    while ((ref = myQueue.poll()) != null) {
+      removeRef(ref);
+    }
+  }
 
-      String path = myRefToPath.remove(ref);
-      myPathToRef.remove(path);
+  private void removeRef(Reference<? extends JarFileData> ref) {
+    String path = myRefToPath.remove(ref);
+    if (path == null) {
+      // already removed.
+      // we might be called twice, first by us when we see ref.get() == null, second when the ref is enqueued (it may happen later)
+      return;
+    }
+    JarFileDataWeakReference weakRef = myPathToRef.remove(path);
+    weakRef.cleanup();
+  }
+
+
+  /**
+   * Standard idiom to free resources associated with a weakly referenced data.
+   */
+  private class JarFileDataWeakReference extends WeakReference<JarFileData> {
+    private final ZipFileContainer myZipFileContainer;
+
+    public JarFileDataWeakReference(JarFileData data) {
+      super(data, myQueue);
+      myZipFileContainer = data.getZipFileContainer();
+    }
+
+    public void cleanup() {
+      ZipFile zip = myZipFileContainer.zipFile;
+      if (zip == null) {
+        // zip file hasn't ever been opened in JarFileData
+        return;
+      }
+      try {
+        LOG.trace("GC triggered closing zip file " + zip.getName());
+        zip.close();
+      } catch (IOException e) {
+        LOG.error("Failed to close zip file " + zip.getName(), e);
+      }
     }
   }
 }
