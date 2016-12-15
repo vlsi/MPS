@@ -67,6 +67,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="1761385620274348152" name="jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression" flags="nn" index="2CBFar" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
@@ -135,9 +136,14 @@
               </node>
             </node>
             <node concept="3JPx81" id="5YxQmqOAScr" role="2OqNvi">
-              <node concept="2OqwBi" id="2xELmDxxfIO" role="25WWJ7">
-                <node concept="otxO1" id="5YxQmqOASN2" role="2Oq$k0" />
-                <node concept="1rGIog" id="2xELmDxxgb8" role="2OqNvi" />
+              <node concept="2CBFar" id="5vtvfuzM9sc" role="25WWJ7">
+                <node concept="chp4Y" id="5vtvfuzM9HG" role="3oSUPX">
+                  <ref role="cht4Q" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+                </node>
+                <node concept="2OqwBi" id="2xELmDxxfIO" role="1m5AlR">
+                  <node concept="otxO1" id="5YxQmqOASN2" role="2Oq$k0" />
+                  <node concept="1rGIog" id="2xELmDxxgb8" role="2OqNvi" />
+                </node>
               </node>
             </node>
           </node>
