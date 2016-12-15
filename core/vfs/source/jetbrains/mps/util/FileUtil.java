@@ -447,8 +447,16 @@ public class FileUtil {
     return path.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);
   }
 
+  public static boolean isAncestor(@NotNull String ancestorPath, @NotNull String path) {
+    ancestorPath = getUnixPath(ancestorPath);
+    path = getUnixPath(path);
+    return path.startsWith(ancestorPath);
+  }
 
-  public static String getRelativePath(String targetPath, String basePath, String pathSeparator) {
+  /**
+   * @throws PathResolutionException if the paths do not intersect
+   */
+  public static String getRelativePath(@NotNull String targetPath, @NotNull String basePath, @NotNull String pathSeparator) {
     String[] base = basePath.split(Pattern.quote(pathSeparator));
     String[] target = targetPath.split(Pattern.quote(pathSeparator));
 
