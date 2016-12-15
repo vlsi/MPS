@@ -88,30 +88,65 @@ public class CellTraversalUtil {
     if (firstCell.equals(secondCell)) {
       return 0;
     }
-    EditorCell parent = getCommonParent(firstCell, secondCell);
 
-    if (parent == null) {
+    List<EditorCell> firstCellAndParents = new ArrayList<>();
+    EditorCell parent = firstCell;
+
+    while (parent != null) {
+      if (parent.equals(secondCell)) {
+        return 1;
+      }
+      firstCellAndParents.add(parent);
+      parent = parent.getParent();
+    }
+
+    EditorCell_Collection commonParent = secondCell.getParent();
+    EditorCell secondChild = secondCell;
+    while (commonParent != null && !firstCellAndParents.contains(commonParent)) {
+      secondChild = commonParent;
+      commonParent = commonParent.getParent();
+    }
+
+    if (commonParent == null) {
       throw new IllegalArgumentException(firstCell.toString() + " and " + secondCell.toString() + " don't have common parent");
     }
-    assert parent instanceof EditorCell_Collection;
 
-    if (parent.equals(firstCell)) {
+    if (commonParent.equals(firstCell)) {
       return -1;
     }
-    if (parent.equals(secondCell)) {
+
+    EditorCell firstChild = firstCellAndParents.get(firstCellAndParents.indexOf(commonParent) - 1);
+
+    if (findInNextSiblings(firstChild, secondChild)) {
+      return -1;
+    }
+
+    if (findInNextSiblings(secondChild, firstChild)){
       return 1;
     }
-    for (EditorCell cell : ((EditorCell_Collection) parent)) {
-      if (isAncestorOrEquals(cell, firstCell)) {
+
+
+    for (EditorCell cell : commonParent) {
+      if (cell == firstChild) {
         return -1;
       }
-
-      if (isAncestorOrEquals(cell, secondCell)) {
+      if (cell == secondChild) {
         return 1;
       }
     }
-    assert false; //this line should not be reached
+
     return 0;
+  }
+
+  private static boolean findInNextSiblings(EditorCell firstChild, EditorCell secondChild) {
+    EditorCell sibling = firstChild.getNextSibling();
+    while (sibling != null) {
+      if (sibling.equals(secondChild)) {
+        return true;
+      }
+      sibling = sibling.getNextSibling();
+    }
+    return false;
   }
 
   public static EditorCell getNextLeaf(@NotNull EditorCell cell, @NotNull Condition<EditorCell> condition) {
@@ -180,7 +215,7 @@ public class CellTraversalUtil {
   }
 
   public static List<EditorCell> getParents(@NotNull EditorCell cell, boolean includeThis) {
-    List<EditorCell> parents = new ArrayList<EditorCell>();
+    List<EditorCell> parents = new ArrayList<>();
     EditorCell tempCell = includeThis ? cell : cell.getParent();
     while (tempCell != null) {
       parents.add(tempCell);
