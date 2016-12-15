@@ -21,9 +21,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IconResourceExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Image = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeIconResourceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated().icon(IconContainer.RESOURCE_a0a0l).create();
-  private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_OldIconBundle = new ConceptPresentationBuilder().deprecated(true).icon(IconContainer.RESOURCE_a0a0l).create();
+  private final ConceptPresentation props_OldIconDeclaration = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_OldIconReference = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Primitive = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Rect = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Resource = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, 0x7c8b08a50a39c6cbL, "path")).create();

@@ -28,8 +28,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Executor_Parameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GetProjectOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsConfigurationFromContext_ConceptFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModelSource = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_ModuleSource = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ModelSource = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_ModuleSource = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_NodeListSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeSource = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ProjectSource = new ConceptPresentationBuilder().create();

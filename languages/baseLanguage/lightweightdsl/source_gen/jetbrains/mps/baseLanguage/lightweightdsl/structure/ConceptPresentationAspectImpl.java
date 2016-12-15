@@ -18,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DependentTypeDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DependentTypeInstance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmptyMemberDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerateModifier = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_GenerateModifier = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_IntegerPropertyInstance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MemberInstance = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MemberModifier = new ConceptPresentationBuilder().create();

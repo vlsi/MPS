@@ -23,8 +23,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IDeprecatable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IDontApplyTypesystemRules = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IDontSubstituteByDefault = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_IMetaLevelChanger = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_IDontSubstituteByDefault = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_IMetaLevelChanger = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_INamedConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IOldCommentAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IOldCommentContainer = new ConceptPresentationBuilder().create();

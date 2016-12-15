@@ -21,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AndExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Annotation = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0j).create();
   private final ConceptPresentation props_AnnotationInstance = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AnnotationInstanceExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_AnnotationInstanceExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_AnnotationInstanceValue = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnnotationMethodDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnonymousClass = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e0fd2a0L, "classifier")).icon(IconContainer.RESOURCE_a0a0o).create();
@@ -71,8 +71,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ClosureParameterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Closureoid = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommentPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CommentedStatement = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_CommentedStatementsBlock = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_CommentedStatement = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_CommentedStatementsBlock = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mc).create();
   private final ConceptPresentation props_ConstructorDeclaration = new ConceptPresentationBuilder().create();
@@ -174,11 +174,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LessThanExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LessThanOrEqualsExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalInstanceFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LocalInstanceMethodCall = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_LocalInstanceMethodCall = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_LocalMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalPropertyReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalStaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LocalStaticMethodCall = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_LocalStaticMethodCall = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_LocalToMethodKind = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalVariableDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0og).create();
   private final ConceptPresentation props_LocalVariableDeclarationStatement = new ConceptPresentationBuilder().create();
@@ -227,7 +227,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QualifiedSuperMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RemAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RemExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RemarkStatement = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_RemarkStatement = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ReturnStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RightShiftAssignmentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SetAccessor = new ConceptPresentationBuilder().create();
@@ -237,7 +237,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ShortType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SingleLineComment = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Statement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StatementCommentPart = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_StatementCommentPart = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_StatementList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StaticFieldDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vi).create();
   private final ConceptPresentation props_StaticFieldReference = new ConceptPresentationBuilder().create();

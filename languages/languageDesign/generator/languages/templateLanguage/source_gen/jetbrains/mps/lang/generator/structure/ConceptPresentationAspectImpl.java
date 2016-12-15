@@ -25,11 +25,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DropRootRule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DropRootRule_Condition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportEntry = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExportLabel = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ExportLabel = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ExportLabelParameter_inputNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportLabelParameter_keeper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExportLabelParameter_outputNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExportMacro = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ExportMacro = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_GeneratorDebug_InputNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratorDebug_LabelEntry = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratorDebug_Mappings = new ConceptPresentationBuilder().create();
@@ -65,7 +65,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_MappingScript = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0bc).create();
   private final ConceptPresentation props_MappingScriptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MappingScript_CodeBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MarshalFunction = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_MarshalFunction = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ModelIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeMacro = new ConceptPresentationBuilder().create();
@@ -108,7 +108,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TraceMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TrivialModelId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TrivialNodeId = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnmarshalFunction = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_UnmarshalFunction = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_VarMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_VarMacro_ValueQuery = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_WeaveEach_RuleConsequence = new ConceptPresentationBuilder().create();

@@ -30,7 +30,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ActionPlaceSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AddElementStatement = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_AddElementStatement = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_AddKeystrokeStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AddStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AddTabOperation = new ConceptPresentationBuilder().create();
@@ -95,8 +95,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodesBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NonDumbAwareActions = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NumberToolShortcut = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldConceptsBlock = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_OldCreateBlock = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_OldConceptsBlock = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_OldCreateBlock = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_OnAfterReadBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OnBeforeWriteBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Order = new ConceptPresentationBuilder().create();

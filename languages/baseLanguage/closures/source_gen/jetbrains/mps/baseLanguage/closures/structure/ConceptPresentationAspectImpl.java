@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ClosureArgReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ClosureControlStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ClosureLiteral = new ConceptPresentationBuilder().create();
@@ -21,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_FunctionMethodDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FunctionType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InvokeExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InvokeFunctionExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_InvokeFunctionExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_InvokeFunctionOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PairOfInts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StringPropertyHolder = new ConceptPresentationBuilder().create();
