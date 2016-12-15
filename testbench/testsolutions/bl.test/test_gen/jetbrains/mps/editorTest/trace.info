@@ -9,6 +9,8 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1086097794003843976">
     <file name="ReplacePlusWithMinus_Test.java">
       <node id="1086097794003843976" at="13,60,14,102" concept="3" />
@@ -12185,6 +12187,50 @@
       <scope id="8350369201053315001" at="20,0,32,0" />
       <unit id="8350369201053315001" at="18,0,33,0" name="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test$TestBody" />
       <unit id="8350369201053315001" at="10,0,34,0" name="jetbrains.mps.editorTest.Post_StaticFieldToLocalStaticFieldReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8475715909118777274">
+    <file name="StaticMethodCall_Complete_Test.java">
+      <node id="8475715909118777274" at="15,65,16,102" concept="3" />
+      <node id="8475715909118777274" at="16,102,17,101" concept="3" />
+      <node id="8475715909118777274" at="23,51,24,72" concept="3" />
+      <node id="8475715909119629912" at="24,72,25,71" concept="3" />
+      <node id="8475715909119630499" at="25,71,26,150" concept="0" />
+      <node id="8475715909119664747" at="26,150,27,82" concept="3" />
+      <node id="8475715909118777274" at="14,0,19,0" concept="6" trace="test_StaticMethodCall_Complete#()V" />
+      <node id="8475715909118777274" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="8475715909118777274" at="15,65,17,101" />
+      <scope id="8475715909118777274" at="23,51,27,82" />
+      <scope id="8475715909118777274" at="14,0,19,0" />
+      <scope id="8475715909118777274" at="22,0,29,0" />
+      <unit id="8475715909118777274" at="20,0,30,0" name="jetbrains.mps.editorTest.StaticMethodCall_Complete_Test$TestBody" />
+      <unit id="8475715909118777274" at="12,0,31,0" name="jetbrains.mps.editorTest.StaticMethodCall_Complete_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8475715909118777380">
+    <file name="TestStaticMethodCall.java">
+      <node id="8475715909118841301" at="7,0,8,0" concept="9" trace="field" />
+      <node id="8475715909118787579" at="8,0,10,0" concept="10" trace="method#()V" />
+      <scope id="8475715909118787585" at="8,36,8,36" />
+      <scope id="8475715909118787579" at="8,0,10,0" />
+      <unit id="8475715909118777380" at="6,0,11,0" name="jetbrains.mps.editorTest.TestStaticMethodCall" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8475715909119664865">
+    <file name="StaticMethodCall_LeftTransform_Test.java">
+      <node id="8475715909119664865" at="15,70,16,102" concept="3" />
+      <node id="8475715909119664865" at="16,102,17,106" concept="3" />
+      <node id="8475715909119664865" at="23,51,24,72" concept="3" />
+      <node id="8475715909119672838" at="24,72,25,22" concept="3" />
+      <node id="8475715909119664901" at="25,22,26,82" concept="3" />
+      <node id="8475715909119664865" at="14,0,19,0" concept="6" trace="test_StaticMethodCall_LeftTransform#()V" />
+      <node id="8475715909119664865" at="22,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="8475715909119664865" at="15,70,17,106" />
+      <scope id="8475715909119664865" at="23,51,26,82" />
+      <scope id="8475715909119664865" at="14,0,19,0" />
+      <scope id="8475715909119664865" at="22,0,28,0" />
+      <unit id="8475715909119664865" at="20,0,29,0" name="jetbrains.mps.editorTest.StaticMethodCall_LeftTransform_Test$TestBody" />
+      <unit id="8475715909119664865" at="12,0,30,0" name="jetbrains.mps.editorTest.StaticMethodCall_LeftTransform_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8547191361977403062">

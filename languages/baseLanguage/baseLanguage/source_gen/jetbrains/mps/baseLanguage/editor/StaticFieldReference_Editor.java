@@ -31,7 +31,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 
@@ -106,7 +105,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setRole("variableDeclaration");
     }
     StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPartExt[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu_ji2wba_a0c0(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0(), new SChildSubstituteInfoPartEx(editorCell)}));
     SNode attributeConcept = provider.getRoleAttribute();
     if (attributeConcept != null) {
       EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
@@ -160,12 +159,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       return "class";
     }
   }
-  public static class StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0 extends PrimaryReferentMenuCellMenuPart {
-    public StaticFieldReference_staticFieldDeclaration_cellMenu_ji2wba_b0c0() {
-    }
-  }
-  public static class StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
-    public StaticFieldReference_customReplace_cellMenu_ji2wba_c0c0() {
+  public static class StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
+    public StaticFieldReference_customReplace_cellMenu_ji2wba_b0c0() {
     }
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier")), node);

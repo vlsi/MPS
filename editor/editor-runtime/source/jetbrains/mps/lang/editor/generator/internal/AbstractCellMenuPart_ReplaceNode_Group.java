@@ -54,7 +54,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>(parameterObjects.size());
     for (final Object parameterObject : parameterObjects) {
-      actions.add(new AbstractNodeSubstituteAction(null, null, node) {
+      actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 
         @Override
         public String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
