@@ -576,6 +576,9 @@
       <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="fzcpWvJ" resolve="LocalVariableDeclaration" />
     </node>
+    <node concept="asaX9" id="6UEb_pTscCz" role="lGtFl">
+      <property role="YLQ7P" value="Use VariableReference instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvN">
     <property role="TrG5h" value="LongType" />
@@ -609,6 +612,9 @@
       <property role="IQ2ns" value="1070567982819" />
       <ref role="20lvS9" node="fz7vLUk" resolve="ParameterDeclaration" />
       <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
+    </node>
+    <node concept="asaX9" id="6UEb_pTscC_" role="lGtFl">
+      <property role="YLQ7P" value="Use VariableReference instead" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvV">
@@ -3820,6 +3826,9 @@
       <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
+    <node concept="asaX9" id="6UEb_pTscCx" role="lGtFl">
+      <property role="YLQ7P" value="Use VariableReference instead" />
+    </node>
   </node>
   <node concept="PlHQZ" id="hiAJDhU">
     <property role="TrG5h" value="HasAnnotation" />
@@ -3917,6 +3926,9 @@
       <property role="IQ2ns" value="7785501532031731645" />
       <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="fz12cDC" resolve="FieldDeclaration" />
+    </node>
+    <node concept="asaX9" id="6UEb_pTscCv" role="lGtFl">
+      <property role="YLQ7P" value="Use VariableReference instead" />
     </node>
   </node>
   <node concept="1TIwiD" id="hPGRDYT">

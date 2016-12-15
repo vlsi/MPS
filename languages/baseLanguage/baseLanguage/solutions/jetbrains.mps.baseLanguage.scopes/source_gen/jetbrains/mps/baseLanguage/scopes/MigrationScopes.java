@@ -13,7 +13,14 @@ import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
+/**
+ * Used by deprecated concepts only
+ * 
+ * @deprecated 
+ */
+@Deprecated
 public class MigrationScopes {
+  @Deprecated
   private MigrationScopes() {
   }
   public static Scope forVariables(SConcept declarationConcept, SNode contextNode, String contextRole, int position) {

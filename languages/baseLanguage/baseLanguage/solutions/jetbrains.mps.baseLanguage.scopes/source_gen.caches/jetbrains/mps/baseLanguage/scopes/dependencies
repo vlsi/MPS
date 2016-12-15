@@ -281,6 +281,7 @@
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.scopes.MigrationScopes" file="MigrationScopes.java">
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
