@@ -14,13 +14,14 @@ import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
 import jetbrains.mps.nodeEditor.cellMenu.SideTransformCompletionActionItem;
 import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
@@ -36,9 +37,9 @@ public class TestSubstituteChildWithConstraints2_TransformationMenu extends Tran
   protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts(TransformationMenuContext _context) {
     List<MenuPart<TransformationMenuItem, TransformationMenuContext>> result = new ArrayList<MenuPart<TransformationMenuItem, TransformationMenuContext>>();
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_a0());
-      result.add(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_b0());
-      result.add(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_c0());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_a0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints2")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_b0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints1")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new TestSubstituteChildWithConstraints2_TransformationMenu.TransformationMenuPart_Action_pma3ru_c0(), MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints3")));
     }
     return result;
   }

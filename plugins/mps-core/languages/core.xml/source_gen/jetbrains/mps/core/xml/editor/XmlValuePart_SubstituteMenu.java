@@ -9,10 +9,11 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -29,9 +30,9 @@ public class XmlValuePart_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_a());
-    result.add(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_b());
-    result.add(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_a(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_b(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Action_rajt6d_c(), MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c54cfd1cL, "jetbrains.mps.core.xml.structure.XmlValuePart")));
     result.add(new XmlValuePart_SubstituteMenu.SubstituteMenuPart_Subconcepts_rajt6d_d());
     return result;
   }

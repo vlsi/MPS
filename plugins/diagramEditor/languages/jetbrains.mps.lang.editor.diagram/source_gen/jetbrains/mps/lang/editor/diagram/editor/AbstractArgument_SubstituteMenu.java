@@ -9,11 +9,12 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -34,9 +35,9 @@ public class AbstractArgument_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_a());
-    result.add(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_b());
-    result.add(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Action_eitulo_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_a(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f9b7L, "jetbrains.mps.lang.editor.diagram.structure.LinkArgument")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Parameterized_eitulo_b(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractArgument_SubstituteMenu.SubstituteMenuPart_Action_eitulo_c(), MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fd86f8f7L, "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument")));
     return result;
   }
   private class SubstituteMenuPart_Parameterized_eitulo_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {

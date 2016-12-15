@@ -9,6 +9,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
@@ -26,11 +27,11 @@ public class AbstractCellSelector_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")));
-    result.add(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_b());
-    result.add(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Parameterized_1rdeze_c());
-    result.add(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_d());
-    result.add(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_e());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3c0028bb8556f621L, "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_b(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1e02662c4b880750L, "jetbrains.mps.lang.editor.structure.IdSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Parameterized_1rdeze_c(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x313a48d996236c93L, "jetbrains.mps.lang.editor.structure.PredefinedSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_d(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc3009e3a3L, "jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractCellSelector_SubstituteMenu.SubstituteMenuPart_Action_1rdeze_e(), MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3e970bbc30443a0aL, "jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector")));
     return result;
   }
   private class SubstituteMenuPart_Action_1rdeze_b extends SingleItemSubstituteMenuPart {

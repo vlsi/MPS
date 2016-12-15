@@ -45,6 +45,9 @@
     <file name="TestSubstituteChildSuper_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildSuper_BehaviorDescriptor" />
     </file>
+    <file name="TestSubstituteChildToSpecialize_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildToSpecialize_BehaviorDescriptor" />
+    </file>
     <file name="TestSubstituteChildWithConstraints1_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteChildWithConstraints1_BehaviorDescriptor" />
     </file>
@@ -95,6 +98,18 @@
     </file>
     <file name="TestSubstituteParent_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteParent_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSpecialChildAttribute_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSpecialChildAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSpecialChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSpecialChild_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSpecialParent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSpecialParent_BehaviorDescriptor" />
+    </file>
+    <file name="TestSubstituteSpecialSubChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSpecialSubChild_BehaviorDescriptor" />
     </file>
     <file name="TestSubstituteSubChild1_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteSubChild1_BehaviorDescriptor" />

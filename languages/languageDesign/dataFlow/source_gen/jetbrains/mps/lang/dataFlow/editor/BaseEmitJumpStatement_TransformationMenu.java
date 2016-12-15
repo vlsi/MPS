@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -42,8 +43,8 @@ public class BaseEmitJumpStatement_TransformationMenu extends TransformationMenu
       result.add(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5bc8a99L, "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement"))));
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.LEFT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
-      result.add(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_a1());
-      result.add(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_b1());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_a1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be47c5L, "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new BaseEmitJumpStatement_TransformationMenu.TransformationMenuPart_Action_dkv885_b1(), MetaAdapterFactory.getConcept(0x7fa12e9cb9494976L, 0xb4fa19accbc320b4L, 0x118e5be8165L, "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement")));
     }
     return result;
   }

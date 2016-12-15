@@ -126,32 +126,32 @@
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063813">
     <file name="OfAspectOperation_SubstituteMenu.java">
-      <node id="1741258697587063813" at="24,118,25,140" concept="6" />
-      <node id="1741258697587063813" at="25,140,26,94" concept="2" />
-      <node id="1741258697587063813" at="26,94,27,211" concept="2" />
-      <node id="1741258697587063813" at="27,211,28,18" concept="7" />
-      <node id="1741258697587063813" at="31,76,32,231" concept="7" />
-      <node id="1741258697587063813" at="35,125,36,149" concept="7" />
-      <node id="1741258697587063813" at="31,0,34,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
-      <node id="1741258697587063813" at="34,0,38,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
-      <node id="1741258697587063813" at="22,0,30,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587063813" at="31,76,32,231" />
-      <scope id="1741258697587063813" at="35,125,36,149" />
-      <scope id="1741258697587063813" at="31,0,34,0">
+      <node id="1741258697587063813" at="25,118,26,140" concept="6" />
+      <node id="1741258697587063813" at="26,140,27,94" concept="2" />
+      <node id="1741258697587063813" at="27,94,28,423" concept="2" />
+      <node id="1741258697587063813" at="28,423,29,18" concept="7" />
+      <node id="1741258697587063813" at="32,76,33,231" concept="7" />
+      <node id="1741258697587063813" at="36,125,37,149" concept="7" />
+      <node id="1741258697587063813" at="32,0,35,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
+      <node id="1741258697587063813" at="35,0,39,0" concept="5" trace="createItemsForConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/Collection;" />
+      <node id="1741258697587063813" at="23,0,31,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587063813" at="32,76,33,231" />
+      <scope id="1741258697587063813" at="36,125,37,149" />
+      <scope id="1741258697587063813" at="32,0,35,0">
         <var name="_context" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="24,118,28,18">
+      <scope id="1741258697587063813" at="25,118,29,18">
         <var name="result" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="34,0,38,0">
+      <scope id="1741258697587063813" at="35,0,39,0">
         <var name="concept" id="1741258697587063813" />
         <var name="context" id="1741258697587063813" />
       </scope>
-      <scope id="1741258697587063813" at="22,0,30,0">
+      <scope id="1741258697587063813" at="23,0,31,0">
         <var name="_context" id="1741258697587063813" />
       </scope>
-      <unit id="1741258697587063813" at="30,0,39,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SubstituteMenuPart_Subconcepts_xdr5c_a" />
-      <unit id="1741258697587063813" at="21,0,40,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu" />
+      <unit id="1741258697587063813" at="31,0,40,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu$SubstituteMenuPart_Subconcepts_xdr5c_a" />
+      <unit id="1741258697587063813" at="22,0,41,0" name="jetbrains.mps.console.ideCommands.editor.OfAspectOperation_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)/1741258697587063819">

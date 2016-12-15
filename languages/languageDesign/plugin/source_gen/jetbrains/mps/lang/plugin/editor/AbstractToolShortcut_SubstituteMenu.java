@@ -9,10 +9,11 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.function.Predicate;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.stream.Collectors;
@@ -36,7 +37,7 @@ public class AbstractToolShortcut_SubstituteMenu extends SubstituteMenuBase {
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new AbstractToolShortcut_SubstituteMenu.SubstituteMenuPart_Subconcepts_7ty2v0_a());
-    result.add(new AbstractToolShortcut_SubstituteMenu.SubstituteMenuPart_Wrapper_7ty2v0_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new AbstractToolShortcut_SubstituteMenu.SubstituteMenuPart_Wrapper_7ty2v0_b(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L, "jetbrains.mps.lang.plugin.structure.CustomToolShortcut")));
     return result;
   }
   public class SubstituteMenuPart_Subconcepts_7ty2v0_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -65,7 +66,7 @@ public class AbstractToolShortcut_SubstituteMenu extends SubstituteMenuBase {
         @Nullable
         @Override
         public SAbstractConcept getOutputConcept() {
-          return item.getOutputConcept();
+          return MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L, "jetbrains.mps.lang.plugin.structure.CustomToolShortcut");
         }
         @Nullable
         @Override

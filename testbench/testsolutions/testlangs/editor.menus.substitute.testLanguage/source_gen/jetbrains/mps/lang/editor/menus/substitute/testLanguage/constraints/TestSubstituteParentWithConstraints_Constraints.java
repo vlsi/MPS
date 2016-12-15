@@ -34,8 +34,8 @@ public class TestSubstituteParentWithConstraints_Constraints extends BaseConstra
     return true;
   }
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAnAncestor(node, childNode, childConcept, parentNode, link, context);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeAncesctorBreakingPoint);
@@ -52,7 +52,7 @@ public class TestSubstituteParentWithConstraints_Constraints extends BaseConstra
     }
     return true;
   }
-  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, SNode parentNode, SNode link, final IOperationContext operationContext) {
     return neq_sxfanc_a0a0a0h(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraints3").getDeclarationNode()) && neq_sxfanc_a0a0a0h_0(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsWrapper3").getDeclarationNode()) && neq_sxfanc_a0a0a7(childConcept, MetaAdapterFactory.getConcept(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x73096e13d1e2b4e1L, "jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent").getDeclarationNode());
   }
   private static boolean eq_sxfanc_a0a0a0g(Object a, Object b) {

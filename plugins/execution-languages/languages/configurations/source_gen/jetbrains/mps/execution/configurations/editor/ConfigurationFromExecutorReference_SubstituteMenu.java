@@ -9,6 +9,7 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
@@ -37,7 +38,7 @@ public class ConfigurationFromExecutorReference_SubstituteMenu extends Substitut
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
     result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a());
     result.add(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Subconcepts_nhkpww_b());
-    result.add(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
     return result;
   }
   public class SubstituteMenuPart_Group_nhkpww_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
@@ -48,7 +49,7 @@ public class ConfigurationFromExecutorReference_SubstituteMenu extends Substitut
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a.SubstituteMenuPart_Parameterized_nhkpww_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ConfigurationFromExecutorReference_SubstituteMenu.SubstituteMenuPart_Group_nhkpww_a.SubstituteMenuPart_Parameterized_nhkpww_a0(), MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x6c55c13f5bcac62fL, "jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference")));
     }
     private class SubstituteMenuPart_Parameterized_nhkpww_a0 extends ParameterizedMenuPart<String, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull

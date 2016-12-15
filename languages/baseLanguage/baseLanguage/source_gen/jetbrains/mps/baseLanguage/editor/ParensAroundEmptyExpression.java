@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
@@ -38,7 +39,7 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_a.SubstituteMenuPart_Action_z82rnb_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_a.SubstituteMenuPart_Action_z82rnb_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
     }
     private class SubstituteMenuPart_Action_z82rnb_a0 extends SingleItemSubstituteMenuPart {
 
@@ -99,7 +100,7 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_b.SubstituteMenuPart_Action_z82rnb_a1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_b.SubstituteMenuPart_Action_z82rnb_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression")));
     }
     private class SubstituteMenuPart_Action_z82rnb_a1 extends SingleItemSubstituteMenuPart {
 

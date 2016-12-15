@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -60,7 +61,7 @@ public class InstanceMethodDeclaration_TransformationMenu extends Transformation
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_a0b(), new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_b0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_a0b(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")), new InstanceMethodDeclaration_TransformationMenu.TransformationMenuPart_Group_s1zz2p_a1.TransformationMenuPart_Action_s1zz2p_b0b());
     }
     private class TransformationMenuPart_Action_s1zz2p_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
