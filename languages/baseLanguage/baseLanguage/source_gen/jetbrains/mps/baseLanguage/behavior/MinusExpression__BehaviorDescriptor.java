@@ -26,8 +26,9 @@ public final class MinusExpression__BehaviorDescriptor extends BaseBHDescriptor 
 
   public static final SMethod<Integer> getPriority_id1653mnvAgo2 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getPriority").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgo2").registry(REGISTRY).build();
   public static final SMethod<Object> calculateCompileTimeConstantValue_id1o8Ht9sN5Hn = new SMethodBuilder<Object>(new SJavaCompoundTypeImpl(Object.class)).name("calculateCompileTimeConstantValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1o8Ht9sN5Hn").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Object.class, ""), SMethodBuilder.createJavaParameter(Object.class, ""));
+  public static final SMethod<Boolean> flipChangesSemantics_id14Lzlw0RrBK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("flipChangesSemantics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("14Lzlw0RrBK").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2, calculateCompileTimeConstantValue_id1o8Ht9sN5Hn);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2, calculateCompileTimeConstantValue_id1o8Ht9sN5Hn, flipChangesSemantics_id14Lzlw0RrBK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -54,6 +55,9 @@ public final class MinusExpression__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return null;
   }
+  /*package*/ static boolean flipChangesSemantics_id14Lzlw0RrBK(@NotNull SNode __thisNode__) {
+    return true;
+  }
 
   /*package*/ MinusExpression__BehaviorDescriptor() {
     super(REGISTRY);
@@ -73,6 +77,8 @@ public final class MinusExpression__BehaviorDescriptor extends BaseBHDescriptor 
     switch (methodIndex) {
       case 1:
         return (T) ((Object) calculateCompileTimeConstantValue_id1o8Ht9sN5Hn(node, (Object) parameters[0], (Object) parameters[1]));
+      case 2:
+        return (T) ((Boolean) flipChangesSemantics_id14Lzlw0RrBK(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

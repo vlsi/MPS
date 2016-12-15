@@ -33,6 +33,7 @@
         <property id="5864038008284099149" name="isStatic" index="2Ki8OM" />
         <property id="1225194472833" name="isPrivate" index="13i0is" />
         <property id="1225194472832" name="isVirtual" index="13i0it" />
+        <property id="1225194472834" name="isAbstract" index="13i0iv" />
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
       <concept id="1225194628440" name="jetbrains.mps.lang.behavior.structure.SuperNodeExpression" flags="nn" index="13iAh5">
@@ -2124,6 +2125,21 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="lwK_zRBqer" role="13h7CS">
+      <property role="TrG5h" value="flipChangesSemantics" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:14Lzlw0RrBK" resolve="flipChangesSemantics" />
+      <node concept="3Tm1VV" id="lwK_zRBqes" role="1B3o_S" />
+      <node concept="3clFbS" id="lwK_zRBqex" role="3clF47">
+        <node concept="3clFbF" id="lwK_zRBqnd" role="3cqZAp">
+          <node concept="3clFbT" id="lwK_zRBqnc" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="lwK_zRBqey" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="1653mnvANKf">
     <ref role="13h7C2" to="39kg:hZwSiEw" resolve="BigProdExpression" />
@@ -2234,6 +2250,21 @@
         </node>
       </node>
     </node>
+    <node concept="13i0hz" id="lwK_zRBqBv" role="13h7CS">
+      <property role="TrG5h" value="flipChangesSemantics" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:14Lzlw0RrBK" resolve="flipChangesSemantics" />
+      <node concept="3Tm1VV" id="lwK_zRBqBw" role="1B3o_S" />
+      <node concept="3clFbS" id="lwK_zRBqB_" role="3clF47">
+        <node concept="3clFbF" id="lwK_zRBqK5" role="3cqZAp">
+          <node concept="3clFbT" id="lwK_zRBqK4" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="lwK_zRBqBA" role="3clF45" />
+    </node>
   </node>
   <node concept="13h7C7" id="1653mnvB2E4">
     <ref role="13h7C2" to="39kg:hYSi3_C" resolve="IntervalContainsExpression" />
@@ -2255,6 +2286,21 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="13i0hz" id="lwK_zRBqNK" role="13h7CS">
+      <property role="TrG5h" value="flipChangesSemantics" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:14Lzlw0RrBK" resolve="flipChangesSemantics" />
+      <node concept="3Tm1VV" id="lwK_zRBqNL" role="1B3o_S" />
+      <node concept="3clFbS" id="lwK_zRBqNQ" role="3clF47">
+        <node concept="3clFbF" id="lwK_zRBqWm" role="3cqZAp">
+          <node concept="3clFbT" id="lwK_zRBqWl" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="lwK_zRBqNR" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="1653mnvB2FH">
@@ -2343,6 +2389,21 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="13i0hz" id="lwK_zRBqr2" role="13h7CS">
+      <property role="TrG5h" value="flipChangesSemantics" />
+      <property role="13i0it" value="false" />
+      <property role="13i0iv" value="false" />
+      <ref role="13i0hy" to="tpek:14Lzlw0RrBK" resolve="flipChangesSemantics" />
+      <node concept="3Tm1VV" id="lwK_zRBqr3" role="1B3o_S" />
+      <node concept="3clFbS" id="lwK_zRBqr8" role="3clF47">
+        <node concept="3clFbF" id="lwK_zRBqzO" role="3cqZAp">
+          <node concept="3clFbT" id="lwK_zRBqzN" role="3clFbG">
+            <property role="3clFbU" value="true" />
+          </node>
+        </node>
+      </node>
+      <node concept="10P_77" id="lwK_zRBqr9" role="3clF45" />
     </node>
   </node>
   <node concept="13h7C7" id="1653mnvB6dJ">

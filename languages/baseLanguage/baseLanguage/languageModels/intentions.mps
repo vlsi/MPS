@@ -59,6 +59,9 @@
       <concept id="4323500428136740385" name="jetbrains.mps.lang.editor.structure.CellIdReferenceSelector" flags="ng" index="2TlHUq">
         <reference id="4323500428136742952" name="id" index="2TlMyj" />
       </concept>
+      <concept id="2162403111523059536" name="jetbrains.mps.lang.editor.structure.IdSelector" flags="ng" index="1lyA5W">
+        <property id="2162403111529391190" name="cellId" index="1lUG9U" />
+      </concept>
       <concept id="3647146066980922272" name="jetbrains.mps.lang.editor.structure.SelectInEditorOperation" flags="nn" index="1OKiuA">
         <child id="1948540814633499358" name="editorContext" index="lBI5i" />
         <child id="1948540814635895774" name="cellSelector" index="lGT1i" />
@@ -1296,8 +1299,26 @@
     <node concept="2S6ZIM" id="hpy8Bzu" role="2ZfVej">
       <node concept="3clFbS" id="hpy8Bzv" role="2VODD2">
         <node concept="3cpWs6" id="hpy8Bzw" role="3cqZAp">
-          <node concept="Xl_RD" id="hpy8Bzx" role="3cqZAk">
-            <property role="Xl_RC" value="Flip Binary Operation" />
+          <node concept="3cpWs3" id="14Lzlw0RsPo" role="3cqZAk">
+            <node concept="1eOMI4" id="14Lzlw0RsTL" role="3uHU7w">
+              <node concept="3K4zz7" id="14Lzlw0Rusv" role="1eOMHV">
+                <node concept="Xl_RD" id="14Lzlw0Ruxf" role="3K4E3e">
+                  <property role="Xl_RC" value=" (changes semantics)" />
+                </node>
+                <node concept="Xl_RD" id="14Lzlw0RuAm" role="3K4GZi">
+                  <property role="Xl_RC" value="" />
+                </node>
+                <node concept="2OqwBi" id="14Lzlw0RteS" role="3K4Cdx">
+                  <node concept="2Sf5sV" id="14Lzlw0RsY9" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="14Lzlw0RtQH" role="2OqNvi">
+                    <ref role="37wK5l" to="tpek:14Lzlw0RrBK" resolve="flipChangesSemantics" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="Xl_RD" id="hpy8Bzx" role="3uHU7B">
+              <property role="Xl_RC" value="Flip Binary Operation" />
+            </node>
           </node>
         </node>
       </node>
@@ -1341,10 +1362,26 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="lwK_zRAYi5" role="3cqZAp">
+          <node concept="3cpWsn" id="lwK_zRAYi6" role="3cpWs9">
+            <property role="TrG5h" value="flippedOperator" />
+            <node concept="3Tqbb2" id="lwK_zRAYi2" role="1tU5fm">
+              <ref role="ehGHo" to="tpee:fJuHJVf" resolve="BinaryOperation" />
+            </node>
+            <node concept="2OqwBi" id="lwK_zRAYi7" role="33vP2m">
+              <node concept="2Sf5sV" id="lwK_zRAYi8" role="2Oq$k0" />
+              <node concept="2qgKlT" id="lwK_zRAYi9" role="2OqNvi">
+                <ref role="37wK5l" to="tpek:14Lzlw0K236" resolve="getFlippedOperator" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="hpy8B$k" role="3cqZAp">
           <node concept="2OqwBi" id="hxiFqMY" role="3clFbG">
             <node concept="2OqwBi" id="hxiFqJh" role="2Oq$k0">
-              <node concept="2Sf5sV" id="hpy8B$n" role="2Oq$k0" />
+              <node concept="37vLTw" id="lwK_zRB0Tk" role="2Oq$k0">
+                <ref role="3cqZAo" node="lwK_zRAYi6" resolve="flippedOperator" />
+              </node>
               <node concept="3TrEf2" id="hpy8B$o" role="2OqNvi">
                 <ref role="3Tt5mk" to="tpee:fJuHU4s" resolve="leftExpression" />
               </node>
@@ -1362,7 +1399,9 @@
         <node concept="3clFbF" id="hpy8B$t" role="3cqZAp">
           <node concept="2OqwBi" id="hxiFqGA" role="3clFbG">
             <node concept="2OqwBi" id="hxiFq$0" role="2Oq$k0">
-              <node concept="2Sf5sV" id="hpy8B$w" role="2Oq$k0" />
+              <node concept="37vLTw" id="lwK_zRB0ZM" role="2Oq$k0">
+                <ref role="3cqZAo" node="lwK_zRAYi6" resolve="flippedOperator" />
+              </node>
               <node concept="3TrEf2" id="hpy8B$x" role="2OqNvi">
                 <ref role="3Tt5mk" to="tpee:fJuHU4r" resolve="rightExpression" />
               </node>
@@ -1375,6 +1414,39 @@
                 <node concept="1$rogu" id="hpy8B$_" role="2OqNvi" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="lwK_zRB1lS" role="3cqZAp">
+          <node concept="3clFbS" id="lwK_zRB1lU" role="3clFbx">
+            <node concept="3clFbF" id="lwK_zRB1W7" role="3cqZAp">
+              <node concept="2OqwBi" id="lwK_zRB24r" role="3clFbG">
+                <node concept="2Sf5sV" id="lwK_zRB1W5" role="2Oq$k0" />
+                <node concept="1P9Npp" id="lwK_zRB2oY" role="2OqNvi">
+                  <node concept="37vLTw" id="lwK_zRB2qP" role="1P9ThW">
+                    <ref role="3cqZAo" node="lwK_zRAYi6" resolve="flippedOperator" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbF" id="lwK_zRMQuC" role="3cqZAp">
+              <node concept="2OqwBi" id="lwK_zRMQE0" role="3clFbG">
+                <node concept="37vLTw" id="lwK_zRMQuA" role="2Oq$k0">
+                  <ref role="3cqZAo" node="lwK_zRAYi6" resolve="flippedOperator" />
+                </node>
+                <node concept="1OKiuA" id="lwK_zRMQYE" role="2OqNvi">
+                  <node concept="1XNTG" id="lwK_zRMR0D" role="lBI5i" />
+                  <node concept="1lyA5W" id="lwK_zRMRRC" role="lGT1i">
+                    <property role="1lUG9U" value="ALIAS_EDITOR_COMPONENT" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="17QLQc" id="lwK_zRB1Po" role="3clFbw">
+            <node concept="37vLTw" id="lwK_zRB1Vy" role="3uHU7w">
+              <ref role="3cqZAo" node="lwK_zRAYi6" resolve="flippedOperator" />
+            </node>
+            <node concept="2Sf5sV" id="lwK_zRB1sT" role="3uHU7B" />
           </node>
         </node>
       </node>

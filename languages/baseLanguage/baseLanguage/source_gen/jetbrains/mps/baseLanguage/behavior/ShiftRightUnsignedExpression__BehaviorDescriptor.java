@@ -25,14 +25,18 @@ public final class ShiftRightUnsignedExpression__BehaviorDescriptor extends Base
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Integer> getPriority_id1653mnvAgo2 = new SMethodBuilder<Integer>(new SJavaCompoundTypeImpl(Integer.TYPE)).name("getPriority").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgo2").registry(REGISTRY).build();
+  public static final SMethod<Boolean> flipChangesSemantics_id14Lzlw0RrBK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("flipChangesSemantics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("14Lzlw0RrBK").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPriority_id1653mnvAgo2, flipChangesSemantics_id14Lzlw0RrBK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static int getPriority_id1653mnvAgo2(@NotNull SAbstractConcept __thisConcept__) {
     return 9;
+  }
+  /*package*/ static boolean flipChangesSemantics_id14Lzlw0RrBK(@NotNull SNode __thisNode__) {
+    return true;
   }
 
   /*package*/ ShiftRightUnsignedExpression__BehaviorDescriptor() {
@@ -51,6 +55,8 @@ public final class ShiftRightUnsignedExpression__BehaviorDescriptor extends Base
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 1:
+        return (T) ((Boolean) flipChangesSemantics_id14Lzlw0RrBK(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
