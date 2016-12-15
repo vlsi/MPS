@@ -4575,7 +4575,7 @@
                     </node>
                   </node>
                   <node concept="liA8E" id="1yvR2BJXGgH" role="2OqNvi">
-                    <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.deprecated(org.jetbrains.mps.openapi.language.SConceptFeature...):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
+                    <ref role="37wK5l" to="ze1i:~ConceptPresentationBuilder.deprecated(boolean):jetbrains.mps.smodel.runtime.ConceptPresentationBuilder" resolve="deprecated" />
                     <node concept="1W57fq" id="1yvR2BJXLcU" role="lGtFl">
                       <node concept="3IZrLx" id="1yvR2BJXLcW" role="3IZSJc">
                         <node concept="3clFbS" id="1yvR2BJXLcY" role="2VODD2">
@@ -4589,6 +4589,9 @@
                           </node>
                         </node>
                       </node>
+                    </node>
+                    <node concept="3clFbT" id="5vtvfuzJIBJ" role="37wK5m">
+                      <property role="3clFbU" value="true" />
                     </node>
                   </node>
                 </node>
