@@ -38,18 +38,19 @@ public class MPSExtentions {
   @Deprecated
   public static final String RUNTIME_ARCH = "runtime.jar";
 
-  public static final String DOT_MPS_PROJECT = "." + MPS_PROJECT;
-  public static final String DOT_LANGUAGE = "." + LANGUAGE;
-  public static final String DOT_SOLUTION = "." + SOLUTION;
-  public static final String DOT_DEVKIT = "." + DEVKIT;
-  public static final String DOT_MODEL = "." + MODEL;
-  public static final String DOT_MODEL_ROOT = "." + MODEL_ROOT;
-  public static final String DOT_MODEL_HEADER = "." + MODEL_HEADER;
-  public static final String DOT_REFACTORINGS = "." + REFACTORINGS;
-  public static final String DOT_JAVAFILE = "." + JAVAFILE;
-  public static final String DOT_CLASSFILE = "." + CLASSFILE;
-  public static final String DOT_IDEAWORKSPACE = "." + IDEAWORKSPACE;
-  public static final String DOT_WORKSPACE = "." + WORKSPACE;
-  public static final String DOT_IDEMODULE = "." + IDEAMODULE;
-  public static final String DOT_LIBRARY = "." + LIBRARY;
+  public static final String DOT = ".";
+  public static final String DOT_MPS_PROJECT = DOT + MPS_PROJECT;
+  public static final String DOT_LANGUAGE = DOT + LANGUAGE;
+  public static final String DOT_SOLUTION = DOT + SOLUTION;
+  public static final String DOT_DEVKIT = DOT + DEVKIT;
+  public static final String DOT_MODEL = DOT + MODEL;
+  public static final String DOT_MODEL_ROOT = DOT + MODEL_ROOT;
+  public static final String DOT_MODEL_HEADER = DOT + MODEL_HEADER;
+  public static final String DOT_REFACTORINGS = DOT + REFACTORINGS;
+  public static final String DOT_JAVAFILE = DOT + JAVAFILE;
+  public static final String DOT_CLASSFILE = DOT + CLASSFILE;
+  public static final String DOT_IDEAWORKSPACE = DOT + IDEAWORKSPACE;
+  public static final String DOT_WORKSPACE = DOT + WORKSPACE;
+  public static final String DOT_IDEMODULE = DOT + IDEAMODULE;
+  public static final String DOT_LIBRARY = DOT + LIBRARY;
 }
