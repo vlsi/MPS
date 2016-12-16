@@ -58,7 +58,7 @@ public interface ModelRoot {
    * @return the model with a given id
    * one-to-one relation is assumed
    */
-  @Nullable SModel getModel(SModelId id);
+  @Nullable SModel getModel(@NotNull SModelId id);
 
   /**
    * @return a sequence of the models under this model root.
@@ -68,6 +68,9 @@ public interface ModelRoot {
 
   /**
    * There are model roots which are read-only and fix the result of {@link #getModels} right away from the construction
+   *
+   * FIXME it is strange to have two similar methods: we are better to merge this method into the method {@link #canCreateModel(String)}.
+   *
    * @return whether this model root is read-only in the way described above
    */
   boolean canCreateModels();
@@ -77,16 +80,21 @@ public interface ModelRoot {
    */
   boolean canCreateModel(String modelName);
 
-  SModel createModel(String modelName);
+  /**
+   * Creates a new model with the given name.
+   * The new model will be contained in this model root (methods #getModel, #getModels).
+   * @return null if failed, for instance {@link #canCreateModel(String)} returned false.
+   */
+  @Nullable SModel createModel(@NotNull String modelName);
 
   /**
    * Gives the model root the opportunity to persist into the supplied memento whatever configuration information
    * may be needed to restore the models in the future.
    */
-  void save(Memento memento);
+  void save(@NotNull Memento memento);
 
   /**
    * Allows the model root to read its previously saved configuration information
    */
-  void load(Memento memento);
+  void load(@NotNull Memento memento);
 }

@@ -302,7 +302,7 @@ public class NameUtil {
   public static List<String> splitByCamels(String source) {
     if (source == null) return null;
     List<String> result = new ArrayList<String>();
-    StringBuffer current = new StringBuffer();
+    StringBuilder current = new StringBuilder();
     for (int i = source.length() - 1; i >= 0; i--) {
       char c = source.charAt(i);
       current.insert(0, c);
@@ -318,7 +318,10 @@ public class NameUtil {
   }
 
   public static String shortNameFromLongName(String fqName) {
-    if (fqName == null) return fqName;
+    if (fqName == null) {
+      return null;
+    }
+
     int offset = fqName.lastIndexOf('.');
     if (offset < 0) return fqName;
 
@@ -327,7 +330,7 @@ public class NameUtil {
 
   public static String namespaceFromLongName(String fqName) {
     if (fqName == null) {
-      return fqName;
+      return null;
     }
     int offset = fqName.lastIndexOf('.');
     if (offset < 0) {

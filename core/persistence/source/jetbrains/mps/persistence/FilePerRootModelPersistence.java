@@ -32,8 +32,8 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +48,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.xml.sax.InputSource;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -110,7 +109,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @NotNull
   @Override
-  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
+  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -131,12 +130,12 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
+  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof MultiStreamDataSource;
   }
 
   @Override
-  public boolean needsUpgrade(DataSource dataSource) throws IOException {
+  public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -157,7 +156,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public void upgrade(DataSource dataSource) throws IOException {
+  public void upgrade(@NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -172,7 +171,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
-  public void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException {
+  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException {
     if (!(dataSource instanceof MultiStreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -192,6 +191,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     return null;
   }
 
+  @NotNull
   @Override
   public String getFormatTitle() {
     return "Universal XML-based file-per-root format";
@@ -221,27 +221,25 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
    */
   @Deprecated
   @ToRemove(version = 3.3)
-  public static boolean isLanguageAspectsSourceRoot(String sourceRoot) {
-    final String rootName = FileSystem.getInstance().getFile(sourceRoot).getName();
+  public static boolean isLanguageAspectsSourceRoot(IFile sourceRoot) {
+    final String rootName = sourceRoot.getName();
     return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
   }
 
   @Override
-  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, Map<String, String> options) throws IOException {
-    options.put(ModelFactory.OPTION_MODELNAME, modelName);
-    options.put(ModelFactory.OPTION_MODULEREF, modelRoot.getModule().getModuleReference().toString());
-
-    Collection<String> sourceRoots = new LinkedHashSet<String>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
+  @NotNull
+  public DataSource createNewSource(FileBasedModelRoot modelRoot, String sourceRoot, String modelName, @NotNull ModelCreationOptionalParameters parameters) throws IOException {
+    Collection<String> sourceRoots = new LinkedHashSet<>(modelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS));
     if (sourceRoots.isEmpty()) {
       throw new IOException("empty list of source roots");
     }
 
+    jetbrains.mps.vfs.openapi.FileSystem fileSystem = modelRoot.getFileSystem();
     final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
-
     if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
       sourceRoot = null;
       for (String sr : sourceRoots) {
-        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(sr)) {
+        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(fileSystem.getFile(sr))) {
           continue;
         }
         sourceRoot = sr;
@@ -253,11 +251,11 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     IFile folder;
-    if (options.containsKey(ModelFactory.OPTION_RELPATH)) {
-      String path = sourceRoot + File.separatorChar + options.get(ModelFactory.OPTION_RELPATH);
-      folder = FileSystem.getInstance().getFileByPath(path);
+    if (parameters.getRelativePath() != null) {
+      String path = sourceRoot + Path.UNIX_SEPARATOR + parameters.getRelativePath();
+      folder = fileSystem.getFile(path);
     } else {
-      folder = FileSystem.getInstance().getFileByPath(sourceRoot).getDescendant(modelName);
+      folder = fileSystem.getFile(sourceRoot).getDescendant(modelName);
     }
 
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {

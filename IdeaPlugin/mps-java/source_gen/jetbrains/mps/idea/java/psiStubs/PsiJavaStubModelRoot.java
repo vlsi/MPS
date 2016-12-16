@@ -63,7 +63,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     return "Java PSI stubs";
   }
   @Override
-  public SModel getModel(SModelId id) {
+  public SModel getModel(@NotNull SModelId id) {
     // TODO 
     return null;
   }
@@ -81,6 +81,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     PsiChangesWatcher w = myIdeaModule.getProject().getComponent(PsiChangesWatcher.class);
     w.removeListener(this);
   }
+  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     Map<SModelReference, List<PsiDirectory>> packageToDirs = MapSequence.fromMap(new HashMap<SModelReference, List<PsiDirectory>>());
@@ -155,15 +156,15 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     return false;
   }
   @Override
-  public SModel createModel(String modelName) {
+  public SModel createModel(@NotNull String modelName) {
     return null;
   }
   @Override
-  public void save(Memento memento) {
+  public void save(@NotNull Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
   @Override
-  public void load(Memento memento) {
+  public void load(@NotNull Memento memento) {
     throw new UnsupportedOperationException("JavaPsiStubs: unsupported for now");
   }
 

@@ -24,6 +24,7 @@ import jetbrains.mps.idea.core.module.JavaStubModelHeader;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -43,6 +44,7 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
     myCachedRepository = repo;
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     SModule module = getModule();

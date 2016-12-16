@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,7 +51,7 @@ public final class JavaNameUtil {
    */
   public static String fqClassName(@NotNull SModel model, @NotNull String shortClassName) {
     String packageName = packageName(model);
-    if (packageName == null || packageName.length() == 0) {
+    if (packageName.isEmpty()) {
       return shortClassName;
     }
     return packageName + '.' + shortClassName;
@@ -68,9 +69,10 @@ public final class JavaNameUtil {
     return model.getName().getLongName();
   }
 
+  @Contract(value = "null -> null; !null -> !null")
   public static String packageName(@Nullable String fqName) {
     if (fqName == null) {
-      return fqName;
+      return null;
     }
     int offset = fqName.lastIndexOf('.');
     if (offset < 0) {
@@ -79,9 +81,10 @@ public final class JavaNameUtil {
     return fqName.substring(0, offset);
   }
 
+  @Contract(value = "null -> null; !null -> !null")
   public static String shortName(@Nullable String fqName) {
     if (fqName == null) {
-      return fqName;
+      return null;
     }
     int offset = fqName.lastIndexOf('.');
     if (offset < 0) {
@@ -95,19 +98,20 @@ public final class JavaNameUtil {
   }
 
   public static boolean isJavaIdentifier(@NotNull String text) {
-    int len = text.length();
-    if (len == 0) return false;
+    if (text.isEmpty()) {
+      return false;
+    }
 
     if (!Character.isJavaIdentifierStart(text.charAt(0))) {
       return false;
     }
 
-    for (int i = 1; i < len; i++) {
+    for (int i = 1; i < text.length(); i++) {
       if (!Character.isJavaIdentifierPart(text.charAt(i))) {
         return false;
       }
     }
 
-    return !(JAVA_KEYWORDS.contains(text));
+    return !JAVA_KEYWORDS.contains(text);
   }
 }

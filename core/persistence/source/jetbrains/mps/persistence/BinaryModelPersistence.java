@@ -86,7 +86,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
 
   @NotNull
   @Override
-  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
+  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -107,22 +107,22 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
   }
 
   @Override
-  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
+  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof StreamDataSource;
   }
 
   @Override
-  public boolean needsUpgrade(DataSource dataSource) throws IOException {
+  public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
     return false;
   }
 
   @Override
-  public void upgrade(DataSource dataSource) throws IOException {
+  public void upgrade(@NotNull DataSource dataSource) throws IOException {
     // no-op
   }
 
   @Override
-  public void save(SModel model, DataSource dataSource) throws IOException {
+  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -139,6 +139,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
     return MPSExtentions.MODEL_BINARY;
   }
 
+  @NotNull
   @Override
   public String getFormatTitle() {
     return "Universal binary format";

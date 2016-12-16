@@ -39,13 +39,13 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
   }
 
   @Override
-  public SModel getModel(SModelId id) {
+  public SModel getModel(@NotNull SModelId id) {
     // todo implement 
     return null;
   }
 
   @Override
-  public void load(Memento memento) {
+  public void load(@NotNull Memento memento) {
     super.load(memento);
     // Perhaps, shall support multiple scope configurations per root 
     Memento packScope = memento.getChild("PackageScope");
@@ -56,13 +56,14 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save(@NotNull Memento memento) {
     super.save(memento);
     if (myPackageScope != null) {
       myPackageScope.save(memento.createChild("PackageScope"));
     }
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     final List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
@@ -74,7 +75,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
 
     for (IFile file : CollectionSequence.fromCollection(files).select(new ISelector<String, IFile>() {
       public IFile select(String it) {
-        return myFileSystem.getFile(it);
+        return getFileSystem().getFile(it);
       }
     })) {
       collectJarFiles(file, excludedFiles, jarsToLoad);
@@ -90,7 +91,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
 
     SetSequence.fromSet(jarsToLoad).select(new ISelector<IFile, IFile>() {
       public IFile select(IFile it) {
-        return myFileSystem.getFile(it.getPath() + Path.ARCHIVE_SEPARATOR);
+        return getFileSystem().getFile(it.getPath() + Path.ARCHIVE_SEPARATOR);
       }
     }).visitAll(new IVisitor<IFile>() {
       public void visit(IFile it) {
@@ -133,7 +134,7 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot implements Copya
   }
 
   @Override
-  public SModel createModel(String string) {
+  public SModel createModel(@NotNull String string) {
     return null;
   }
 

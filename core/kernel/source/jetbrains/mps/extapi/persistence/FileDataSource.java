@@ -19,6 +19,7 @@ import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -36,13 +37,11 @@ import java.util.List;
  * evgeny, 11/2/12
  */
 public class FileDataSource extends DataSourceBase implements StreamDataSource, FileSystemListener, FileSystemBasedDataSource {
-
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
 
-  @NotNull
-  private IFile myFile;
-  protected final ModelRoot myModelRoot;
+  @NotNull private IFile myFile;
+  final ModelRoot myModelRoot; // fixme is needed only for the file system dependencies, to be removed
 
   public FileDataSource(@NotNull IFile file) {
     this(file, null);
@@ -51,7 +50,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  public FileDataSource(@NotNull IFile file, ModelRoot modelRoot) {
+  public FileDataSource(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
     myFile = file;
     myModelRoot = modelRoot;
   }
@@ -153,7 +152,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     return null;
   }
 
-  protected FileSystemListener getParentListener() {
+  FileSystemListener getParentListener() {
     if (myModelRoot instanceof FileSystemListener) {
       return (FileSystemListener) myModelRoot;
     }

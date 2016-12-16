@@ -29,6 +29,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getCachesDir;
+import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getCachesPath;
+import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getDefaultOutputDir;
+
 /**
  * Utility to perform various aspects of expelling a model:
  *  - Model may produce generated files that need to be removed
@@ -59,28 +63,28 @@ public class ModelDeleteHelper {
     deleteDataSource();
   }
 
-  public void removeGeneratedArtifacts() {
-    String moduleOutputPath = SModuleOperations.getOutputPathFor(myModel);
-    IFile classesGenDir = null;
-    SModule module = myModel.getModule();
-    JavaModuleFacet javaFacet = module.getFacet(JavaModuleFacet.class);
-    if (javaFacet != null)
-      classesGenDir = javaFacet.getClassesGen();
-
-    if (moduleOutputPath == null) {
+  private void removeGeneratedArtifacts() {
+    IFile moduleOutput = SModuleOperations.getOutputRoot(myModel);
+    if (moduleOutput == null) {
       return;
     }
-    IFile moduleOutput = FileSystem.getInstance().getFileByPath(moduleOutputPath);
-    FileGenerationUtil.getDefaultOutputDir(myModel, moduleOutput).delete();
-    FileGenerationUtil.getDefaultOutputDir(myModel, FileGenerationUtil.getCachesDir(moduleOutput)).delete();
+    SModule module = myModel.getModule();
+    JavaModuleFacet javaFacet = module.getFacet(JavaModuleFacet.class);
+    IFile classesGenDir = null;
+    if (javaFacet != null) {
+      classesGenDir = javaFacet.getClassesGen();
+    }
+
+    getDefaultOutputDir(myModel, moduleOutput).delete();
+    getDefaultOutputDir(myModel, getCachesDir(moduleOutput)).delete();
     if (classesGenDir != null) {
-      FileGenerationUtil.getDefaultOutputDir(myModel, classesGenDir).delete();
+      getDefaultOutputDir(myModel, classesGenDir).delete();
     }
 
     if (moduleOutput.getChildren().isEmpty()) {
       moduleOutput.delete();
     }
-    final IFile sourceGenCaches = FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(moduleOutputPath));
+    final IFile sourceGenCaches = getCachesDir(moduleOutput);
     if (sourceGenCaches.getChildren().isEmpty()) {
       sourceGenCaches.delete();
     }
@@ -89,7 +93,7 @@ public class ModelDeleteHelper {
     }
   }
 
-  public void detachFromModule() {
+  private void detachFromModule() {
     SModule module = myModel.getModule();
     if (module == null) {
       return;
@@ -97,9 +101,9 @@ public class ModelDeleteHelper {
     ((SModuleBase) module).unregisterModel((SModelBase) myModel);
   }
 
-  public void deleteDataSource() {
+  private void deleteDataSource() {
     DataSource source = myModel.getSource();
-    String modelName = myModel.getModelName();
+    String modelName = myModel.getName().getSimpleName();
     if (source instanceof DisposableDataSource) {
       ((DisposableDataSource) source).delete();
     } else {

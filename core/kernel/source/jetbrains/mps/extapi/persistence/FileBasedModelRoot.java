@@ -38,6 +38,9 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+import static jetbrains.mps.util.PathConverters.ID_CONVERTER;
+import static jetbrains.mps.util.PathConverters.forModules;
+
 /**
  * Kinds are obviously ought to be enums not string
  * Paths represented by string either must have clear contract (absolute, relative) or (better)
@@ -53,7 +56,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String LOCATION = "location";
   public static final String PATH = "path";
 
-  protected FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // also read from memento
+  private /*final*/ FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // TODO not read from memento
   private String myContentRoot; // fixme relative/absolute/macros [typical path issue in the mps project]
   private final Map<String, List<String>> myFilesForKind = new LinkedHashMap<>(); // fixme relative/absolute/macros [typical path issue in the mps project]
   private final List<PathListener> myListeners = new ArrayList<>();
@@ -78,6 +81,11 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     myContentRoot = path;
   }
 
+  @NotNull
+  public final FileSystem getFileSystem() {
+    return myFileSystem;
+  }
+
   public final Collection<String> getSupportedFileKinds() {
     return new ArrayList<>(myFilesForKind.keySet());
   }
@@ -93,13 +101,13 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return strings != null && strings.contains(file);
   }
 
-  public final void addFiles(String kind, Collection<String> files) {
+  public final void addFiles(@NotNull String kind, @NotNull Collection<String> files) {
     checkNotRegistered();
 
     if (!myFilesForKind.containsKey(kind)) {
       throw new IllegalArgumentException("unknown kind");
     }
-    if (files == null || files.isEmpty()) {
+    if (files.isEmpty()) {
       return;
     }
 
@@ -145,7 +153,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save(@NotNull Memento memento) {
     memento.put(CONTENT_PATH, myContentRoot);
     memento.put("type", getType());
     for (String kind : getSupportedFileKinds()) {
@@ -165,7 +173,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   }
 
   @Override
-  public void load(Memento memento) {
+  public void load(@NotNull Memento memento) {
     checkNotRegistered();
 
     if (memento instanceof MementoWithFS) {
@@ -242,23 +250,22 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
    * @see #setContentRoot(String)
    * @see #addFile
    */
-  protected final void copyContentRootAndFiles(@NotNull FileBasedModelRoot target) throws CopyNotSupportedException {
-    AbstractModule sourceModule = (AbstractModule) getModule();
-    AbstractModule targetModule = (AbstractModule) target.getModule();
-    if (sourceModule == null) {
+  protected final void copyContentRootAndFiles(@NotNull FileBasedModelRoot targetModelRoot) throws CopyNotSupportedException {
+    AbstractModule source = (AbstractModule) getModule();
+    AbstractModule target = (AbstractModule) targetModelRoot.getModule();
+    if (source == null) {
       throw new CopyNotSupportedException("The module of the source model root is null " + this);
     }
-    if (targetModule == null) {
-      throw new CopyNotSupportedException("The module of the target model root is null " + target);
+    if (target == null) {
+      throw new CopyNotSupportedException("The module of the target model root is null " + targetModelRoot);
     }
 
-    ModulePathConverter modulePathConverter =
-        isInsideModuleDir() ? PathConverters.forModules(sourceModule, targetModule) : PathConverters.ID_CONVERTER;
+    ModulePathConverter modulePathConverter = isInsideModuleDir() ? forModules(source, target) : ID_CONVERTER;
 
-    target.setContentRoot(modulePathConverter.source2Target(getContentRoot()));
+    targetModelRoot.setContentRoot(modulePathConverter.source2Target(getContentRoot()));
     for (String kind : getSupportedFileKinds()) {
       List<String> targetFiles = getFiles(kind).stream().map(modulePathConverter::source2Target).collect(Collectors.toList());
-      target.addFiles(kind, targetFiles);
+      targetModelRoot.addFiles(kind, targetFiles);
     }
   }
 
@@ -279,7 +286,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return result;
   }
 
-  public boolean isInsideModuleDir() {
+  protected final boolean isInsideModuleDir() {
     final SModule module = getModule();
     if (module instanceof AbstractModule) {
       return ((AbstractModule) module).getModuleSourceDir().toPath().startsWith(getContentRoot());

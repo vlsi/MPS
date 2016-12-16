@@ -17,12 +17,12 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
-import java.util.Map;
 
 public interface FolderModelFactory extends ModelFactory {
 
@@ -37,9 +37,10 @@ public interface FolderModelFactory extends ModelFactory {
   Iterable<DataSource> createDataSources(ModelRoot root, IFile folder);
 
   /**
-   * Creates a new data source and fills out the given options map (if required).
+   * Creates a new data source with the given parameters
    *
    * @throws java.io.IOException if new data source cannot be created
    */
-  DataSource createNewSource(FileBasedModelRoot root, String sourceRoot, String modelName, Map<String, String> options) throws IOException;
+  @NotNull
+  DataSource createNewSource(FileBasedModelRoot root, String sourceRoot, String modelName, ModelCreationOptionalParameters parameters) throws IOException;
 }

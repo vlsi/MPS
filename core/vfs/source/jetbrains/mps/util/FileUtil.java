@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -242,7 +243,7 @@ public class FileUtil {
     if (file.exists()) {
       try {
         String existingContents = FileUtil.read(file);
-        if (existingContents != null && existingContents.equals(content)) {
+        if (existingContents.equals(content)) {
           return;
         }
       } catch (RuntimeException ex) {
@@ -441,13 +442,17 @@ public class FileUtil {
     return false;
   }
 
+  @NotNull
+  public static String getUnixPath(@NotNull String path) {
+    return path.replace(Path.WIN_SEPARATOR, Path.UNIX_SEPARATOR);
+  }
+
 
   public static String getRelativePath(String targetPath, String basePath, String pathSeparator) {
     String[] base = basePath.split(Pattern.quote(pathSeparator));
     String[] target = targetPath.split(Pattern.quote(pathSeparator));
 
-    StringBuffer common = new StringBuffer();
-
+    StringBuilder common = new StringBuilder();
     int commonIndex = 0;
     while (commonIndex < target.length && commonIndex < base.length
         && target[commonIndex].equals(base[commonIndex])) {
@@ -456,8 +461,7 @@ public class FileUtil {
     }
 
     if (commonIndex == 0) {
-      throw new PathResolutionException("No common path element found for '" + targetPath + "' and '" + basePath
-          + "'");
+      throw new PathResolutionException("No common path element found for '" + targetPath + "' and '" + basePath + "'");
     }
 
     if (target.length == commonIndex && base.length == target.length) {

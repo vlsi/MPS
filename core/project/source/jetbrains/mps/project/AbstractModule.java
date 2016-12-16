@@ -112,6 +112,8 @@ import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  * Rather the {@link AbstractModule} must possess a special {@code #getEditingHandle} which returns a class which in turn is able to accumulate
  * all the changes user desire to accomplish and when user is finished with editing commit all the changes with one invocation of {@code handle.commit()}.
  * [or something like this]
+ * 3. Also this subclass serves another purpose: it introduces model roots and module facets into module.
+ * I guess this logic might migrate to <code>SModuleBase</code>.
  *
  * AP
  *

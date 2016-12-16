@@ -4,6 +4,7 @@ package jetbrains.mps.ide.java.sourceStubs;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.vfs.IFile;
@@ -34,7 +35,7 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public SModel getModel(SModelId id) {
+  public SModel getModel(@NotNull SModelId id) {
     // TODO 
     return null;
   }
@@ -44,14 +45,14 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public void load(Memento memento) {
+  public void load(@NotNull Memento memento) {
     super.load(memento);
     if (memento.get(PATH_KEY) == null) {
       return;
     }
     String path = FileUtil.stripLastSlashes(memento.get(PATH_KEY));
     assert path != null;
-    IFile file = myFileSystem.getFile(path);
+    IFile file = getFileSystem().getFile(path);
     if (file.getParent() != null) {
       path = file.getParent().getPath();
     }
@@ -59,12 +60,13 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
     addFile(SOURCE_ROOTS, memento.get(PATH_KEY));
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     final Collection<String> files = getFiles(SOURCE_ROOTS);
     for (String file : files) {
-      ListSequence.fromList(result).addSequence(SetSequence.fromSet(getModels(myFileSystem.getFile(file))));
+      ListSequence.fromList(result).addSequence(SetSequence.fromSet(getModels(getFileSystem().getFile(file))));
     }
     return result;
   }
@@ -112,7 +114,7 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public SModel createModel(String string) {
+  public SModel createModel(@NotNull String string) {
     return null;
   }
 }

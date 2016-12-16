@@ -126,7 +126,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
 
   @NotNull
   @Override
-  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
+  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -161,12 +161,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   }
 
   @Override
-  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
+  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof StreamDataSource;
   }
 
   @Override
-  public boolean needsUpgrade(DataSource dataSource) throws IOException {
+  public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -180,7 +180,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   }
 
   @Override
-  public void upgrade(DataSource dataSource) throws IOException {
+  public void upgrade(@NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -195,7 +195,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   }
 
   @Override
-  public void save(SModel model, DataSource dataSource) throws IOException {
+  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws IOException {
     if (!(dataSource instanceof StreamDataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
@@ -220,6 +220,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
     return MPSExtentions.MODEL;
   }
 
+  @NotNull
   @Override
   public String getFormatTitle() {
     return "Universal XML-based format";

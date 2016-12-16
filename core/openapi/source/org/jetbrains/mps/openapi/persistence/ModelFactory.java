@@ -16,6 +16,7 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.IOException;
@@ -57,33 +58,33 @@ public interface ModelFactory {
    * @throws IOException if the model cannot be created
    */
   @NotNull
-  SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
+  SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
-  boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options);
+  boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
 
   /**
    * Checks if the source content is outdated and needs to be upgraded.
    *
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  boolean needsUpgrade(DataSource dataSource) throws IOException;
+  boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException;
 
   /**
    * Loads the model content, and saves it back in the up-to-date format.
    *
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void upgrade(DataSource dataSource) throws IOException;
+  void upgrade(@NotNull DataSource dataSource) throws IOException;
 
   /**
    * Saves the model in the factory-specific format (including conversion when needed).
    *
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException;
+  void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException;
 
   /**
    * returns true if plain text is not enough to represent stored data.
@@ -92,11 +93,12 @@ public interface ModelFactory {
 
   /**
    * returns the file extension this factory is registered on
+   * null if for instance model factory is associated rather with a group of files than one file.
    */
-  String getFileExtension();
+  @Nullable String getFileExtension();
 
   /**
    * User-readable title of the storage format.
    */
-  String getFormatTitle();
+  @NotNull String getFormatTitle();
 }

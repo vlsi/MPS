@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -47,6 +48,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     myCachedRepository = repo;
   }
 
+  @NotNull
   @Override
   public Iterable<SModel> loadModels() {
     SModule module = getModule();

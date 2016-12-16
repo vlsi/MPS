@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystemEvent;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -29,7 +31,6 @@ import java.util.Collections;
  * evgeny, 11/9/12
  */
 public abstract class FolderModelRootBase extends ModelRootBase implements FileSystemListener {
-
   private String path;
 
   protected FolderModelRootBase() {
@@ -51,12 +52,12 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   }
 
   @Override
-  public void save(Memento memento) {
+  public void save(@NotNull Memento memento) {
     memento.put("path", path);
   }
 
   @Override
-  public void load(Memento memento) {
+  public void load(@NotNull Memento memento) {
     checkNotRegistered();
 
     path = memento.get("path");
@@ -65,12 +66,18 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   @Override
   public void attach() {
     super.attach();
-    FileSystem.getInstance().addListener(this);
+    SModule module = getModule();
+    if (module instanceof AbstractModule) {
+      ((AbstractModule) module).getFileSystem().addListener(this);
+    }
   }
 
   @Override
   public void dispose() {
-    FileSystem.getInstance().removeListener(this);
+    SModule module = getModule();
+    if (module instanceof AbstractModule) {
+      ((AbstractModule) module).getFileSystem().removeListener(this);
+    }
     super.dispose();
   }
 
