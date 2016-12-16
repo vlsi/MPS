@@ -19,6 +19,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Default source root which lives until the path api appears
@@ -29,9 +30,21 @@ import org.jetbrains.annotations.NotNull;
 @ToRemove(version = 3.6)
 final class DefaultSourceRoot implements SourceRoot {
   private final String myPath;
+  private final IFile myAbsolutePath;
 
-  public DefaultSourceRoot(@NotNull String path) {
+  public DefaultSourceRoot(@NotNull String path, @NotNull IFile contentRootDirectory) {
     myPath = FileUtil.getUnixPath(path);
+    if (FileUtil.isAbsolute(myPath)) {
+      myAbsolutePath = contentRootDirectory.getFileSystem().getFile(myPath);
+    } else {
+      myAbsolutePath = contentRootDirectory.getDescendant(myPath);
+    }
+  }
+
+  @NotNull
+  @Override
+  public IFile getAbsolutePath() {
+    return myAbsolutePath;
   }
 
   @NotNull

@@ -502,6 +502,10 @@ public class FileUtil {
     return relative.toString();
   }
 
+  public static boolean isAbsolute(@NotNull String path) {
+    return new File(path).isAbsolute();
+  }
+
   public static String getAbsolutePath(String path) {
     return new File(path).getAbsolutePath();
   }

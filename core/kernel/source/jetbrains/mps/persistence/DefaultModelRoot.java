@@ -84,7 +84,6 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<>();
     for (SourceRoot sourceRoot : getSourceRoots(SourceFileKind.INSTANCE)) {
-//      String relativePath = relativize(contentHome, sourceRoot.getPath());
       result.addAll(collectModels(sourceRoot));
     }
     return result;
@@ -300,8 +299,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state);
   }
 
-  public static interface ModelRootWalkListener {
+  public interface ModelRootWalkListener {
     void onDataSourceVisited(@NotNull ModelFactory factory, @NotNull DataSource dataSource, IFile file);
   }
-
 }

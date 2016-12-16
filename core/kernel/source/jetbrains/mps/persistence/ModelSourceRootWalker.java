@@ -20,11 +20,9 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.persistence.DefaultModelRoot.FileTreeWalkListener;
 import jetbrains.mps.persistence.DefaultModelRoot.ModelRootWalkListener;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -32,8 +30,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
 import java.util.Set;
-
-import static jetbrains.mps.project.MPSExtentions.DOT;
 
 /**
  * Walks recursively default model roots (alongside the filesystem tree)
@@ -51,9 +47,9 @@ final class ModelSourceRootWalker {
   }
 
   public void traverse(@NotNull SourceRoot sourceRoot) {
-    IFile file = myModelRoot.getFileSystem().getFile(sourceRoot.getPath());
-    if (file.isDirectory()) {
-      walk(new ModelRootFileTreeLocus(file, ""));
+    IFile root = sourceRoot.getAbsolutePath();
+    if (root.isDirectory()) {
+      walk(new ModelRootFileTreeLocus(root));
     }
   }
 
@@ -86,22 +82,10 @@ final class ModelSourceRootWalker {
       return myFile;
     }
 
-    @Nullable
-    public String getJavaPackage() {
-      return myJavaPackage;
-    }
-
     private final IFile myFile;
-    private final String myJavaPackage;
-
-    public ModelRootFileTreeLocus(@NotNull IFile directory0, @Nullable String javaPackage0) {
-      myFile = directory0;
-      myJavaPackage = javaPackage0;
-    }
 
     public ModelRootFileTreeLocus(@NotNull IFile directory0) {
       myFile = directory0;
-      myJavaPackage = "";
     }
 
     /**
@@ -110,23 +94,12 @@ final class ModelSourceRootWalker {
      */
     @NotNull
     public ModelRootFileTreeLocus nextState(@NotNull IFile file) {
-//      String innerPackage = calcNewPackage(myJavaPackage, file.getName());
-      return new ModelRootFileTreeLocus(file, null);
+      return new ModelRootFileTreeLocus(file);
     }
-
-//    @Nullable
-//    private String calcNewPackage(@NotNull String aPackage, String fileName) {
-//      if (JavaNameUtil.isJavaIdentifier(fileName)) {
-//        return aPackage.isEmpty() ? fileName
-//                                  : aPackage + DOT + fileName;
-//      } else {
-//        return null;
-//      }
-//    }
 
     @Override
     public String toString() {
-      return "FileTreeLocation " + getFile() + " : " + getJavaPackage();
+      return "FileTreeLocation " + getFile();
     }
   }
 

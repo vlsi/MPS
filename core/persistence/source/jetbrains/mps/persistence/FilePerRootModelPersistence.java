@@ -232,15 +232,13 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   @Override
   @NotNull
   public DataSource createNewSource(FileBasedModelRoot modelRoot, SourceRoot sourceRoot, String modelName, @NotNull ModelCreationOptions parameters) throws IOException {
-    jetbrains.mps.vfs.openapi.FileSystem fileSystem = modelRoot.getFileSystem();
     sourceRoot = defaultSourceRoot(modelRoot, sourceRoot);
 
     IFile folder;
     if (parameters.getRelativePath() != null) {
-      String path = sourceRoot.getPath() + Path.UNIX_SEPARATOR + parameters.getRelativePath();
-      folder = fileSystem.getFile(path);
+      folder = sourceRoot.getAbsolutePath().getDescendant(parameters.getRelativePath());
     } else {
-      folder = fileSystem.getFile(sourceRoot.getPath()).getDescendant(modelName);
+      folder = sourceRoot.getAbsolutePath().getDescendant(modelName);
     }
 
     if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
@@ -254,7 +252,6 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
    */
   @NotNull
   private SourceRoot defaultSourceRoot(FileBasedModelRoot modelRoot, @Nullable SourceRoot passedSourceRoot) throws IOException {
-    FileSystem fileSystem = modelRoot.getFileSystem();
     List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceFileKind.INSTANCE);
     if (sourceRoots.isEmpty()) {
       throw new IOException("empty list of source roots");
@@ -264,7 +261,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     if (passedSourceRoot == null || !sourceRoots.contains(passedSourceRoot)) {
       passedSourceRoot = null;
       for (SourceRoot sourceRoot : sourceRoots) {
-        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(fileSystem.getFile(sourceRoot.getPath()))) {
+        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(sourceRoot.getAbsolutePath())) {
           continue;
         }
         passedSourceRoot = sourceRoot;

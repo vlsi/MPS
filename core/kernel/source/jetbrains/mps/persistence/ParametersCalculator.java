@@ -63,7 +63,7 @@ class ParametersCalculator {
 
   private String calcJavaPackage(IFile modelFile) {
     String pathToModelDir = modelFile.getParent().getPath();
-    String pathFromSourceRoot = FileUtil.getRelativePath(pathToModelDir, mySourceRoot.getPath(), Path.UNIX_SEPARATOR);
+    String pathFromSourceRoot = FileUtil.getRelativePath(pathToModelDir, mySourceRoot.getAbsolutePath().getPath(), Path.UNIX_SEPARATOR);
     return NameUtil.namespaceFromPath(pathFromSourceRoot);
   }
 

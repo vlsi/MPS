@@ -76,7 +76,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Internal public static final String LOCATION = "location";
   private static final String PATH = "path";
 
-  @Immutable private final List<String> mySupportedFileKinds;
+  @Nullable
+  @Immutable private final List<String> mySupportedFileKinds; // null <=> default constructor is used
 
   /**
    * Ancestor for all the source paths
@@ -89,7 +90,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   private final List<PathListener> myListeners = new ArrayList<>();
 
   protected FileBasedModelRoot() {
-    mySupportedFileKinds = unmodifiableList(Arrays.asList(SOURCE_ROOTS, EXCLUDED));
+    mySupportedFileKinds = null;
     mySourcePathStorage = new SourcePaths();
   }
 
@@ -148,6 +149,16 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return unmodifiableList(asList(SourceFileKind.INSTANCE, ExcludedFileKind.INSTANCE));
   }
 
+  /**
+   * @return <code>SourceRoot</code>s of the specified kind
+   *         They might contain relative paths (unlike the legacy counterpart method!!).
+   *         FBModelRoot is going to store relative path, all we need is
+   *         some api to provide relative path instances.
+   *         Now we do not have such abstraction since <code>IFile</code>
+   *         is effectively absolute (just since the idea's <code>VirtualFile</code> is absolute as well).
+   *
+   *         AP
+   */
   @NotNull
   @Immutable
   public final List<SourceRoot> getSourceRoots(@NotNull FileKind kind) {
@@ -186,7 +197,14 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @Deprecated
   @Immutable
   public final Collection<String> getSupportedFileKinds() {
-    return mySupportedFileKinds;
+    List<String> legacyFileKinds = mySupportedFileKinds;
+    if (legacyFileKinds != null) {
+      return legacyFileKinds;
+    } else {
+      return getSupportedFileKinds1().stream()
+                                     .map(FileKind::getName)
+                                     .collect(Collectors.toList());
+    }
   }
 
   /**
@@ -197,7 +215,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public final Collection<String> getFiles(@NotNull String kind) {
     List<SourceRoot> roots = getSourceRoots(resolveKindByName(kind));
     return unmodifiableList(roots.stream()
-                                 .map(SourceRoot::getPath)
+                                 .map(SourceRoot::getAbsolutePath) // unfortunately I am sure that plenty clients rely on the absolute path here.
+                                 .map(IFile::getPath)
                                  .collect(Collectors.toList()));
   }
 
@@ -218,7 +237,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   @ToRemove(version = 3.5)
   public final void addFile(String kind, String filePath) {
     FileKind fileKind = resolveKindByName(kind);
-    addSourceRoot(fileKind, new DefaultSourceRoot(getUnixPath(getAbsolutePath(filePath))));
+    addSourceRoot(fileKind, new DefaultSourceRoot(filePath, myContentDir));
   }
 
   /**
@@ -234,7 +253,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
 
 
-    removeSourceRoot(new DefaultSourceRoot(file));
+    removeSourceRoot(new DefaultSourceRoot(file, myContentDir));
   }
 
   @Override
@@ -249,7 +268,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     for (FileKind kind : getSupportedFileKinds1()) {
       for (SourceRoot root : getSourceRoots(kind)) {
         Memento modelRootMemento = memento.createChild(kind.getName());
-        String contentRootPath = root.getPath();
+        String contentRootPath = root.getAbsolutePath().getPath(); // must go away as soon as we allow relative paths
         if (FileUtil.isAncestor(myContentDir.getPath(), contentRootPath)) {
           String relPath = relativize(myContentDir, contentRootPath);
           modelRootMemento.put(LOCATION, relPath);
@@ -273,14 +292,11 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     for (FileKind kind : getSupportedFileKinds1()) {
       for (Memento root : memento.getChildren(kind.getName())) {
         String relPath = root.get(LOCATION);
-        String sourceRootAbsolutePath;
         if (relPath != null) {
-          IFile sourceRootFile = myContentDir.getDescendant(relPath);
-          sourceRootAbsolutePath = sourceRootFile.getPath();
+          addSourceRoot(kind, new DefaultSourceRoot(relPath, myContentDir)); // relative
         } else {
-          sourceRootAbsolutePath = root.get(PATH);
+          addSourceRoot(kind, new DefaultSourceRoot(root.get(PATH), myContentDir)); // absolute
         }
-        addSourceRoot(kind, new DefaultSourceRoot(sourceRootAbsolutePath));
       }
     }
   }
@@ -294,7 +310,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   private void attachPathListenerForEachSourceRoot() { // fixme extract class
     getSupportedFileKinds1().stream().filter(kind -> !kind.isExcluded()).forEach(kind -> {
       for (SourceRoot sourceRoot : getSourceRoots(kind)) {
-        IFile file = myFileSystem.getFile(sourceRoot.getPath());
+        IFile file = sourceRoot.getAbsolutePath();
         PathListener listener = new PathListener(file);
         myListeners.add(listener);
         myFileSystem.addListener(listener);
@@ -354,8 +370,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     targetModelRoot.setContentDirectory(targetContentDir);
     for (FileKind kind : getSupportedFileKinds1()) {
       for (SourceRoot sourceRoot : getSourceRoots(kind)) {
-        String targetSourceRoot = converter.source2Target(sourceRoot.getPath());
-        targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot));
+        String targetSourceRoot = targetContentDir.getDescendant(sourceRoot.getPath()).getPath();
+        targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot, myContentDir));
       }
     }
   }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -30,11 +32,20 @@ import org.jetbrains.annotations.NotNull;
 public interface SourceRoot {
   /**
    * Returns a path to the source root it is linked to.
-   * Path can be relative or absolute.
+   * Path can be absolute or relative to the {@link FileBasedModelRoot#getContentDirectory()}
    * Currently the type is <code>String</code> since we do not have relative path classes in the API. [But soon enough it will be replaced FIXME AP]
    * Until then the contract is to return a system-independent (UNIX separators) path.
    *
    * @return a system-independent (UNIX separators) path where the models sources lie
    */
-  @NotNull String getPath();
+  @NotNull /*Path*/ String getPath();
+
+  /**
+   * Now it is hard to resolve a path against {@link FileBasedModelRoot#getContentDirectory()}
+   * because we still do not have a proper API.
+   * Temporarily this method will replace the api.
+   * Afterwards there will be only {@link #getPath} method which will return some "Path" entity
+   */
+  @ToRemove(version = 3.5)
+  @NotNull IFile getAbsolutePath();
 }

@@ -276,7 +276,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     List<SourceRoot> sourceRoots = defaultModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
     SourceRoot sourceRoot = sourceRoots.get(0); // first one by default
     for (SourceRoot sourceRoot0 : sourceRoots) {
-      if (oldFile.getPath().startsWith(sourceRoot0.getPath())) {
+      if (oldFile.getPath().startsWith(sourceRoot0.getAbsolutePath().getPath())) {
         // using the same sourceRoot
         sourceRoot = sourceRoot0;
         break;

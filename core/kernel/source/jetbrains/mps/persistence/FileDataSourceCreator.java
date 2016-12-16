@@ -45,7 +45,7 @@ public final class FileDataSourceCreator {
   public CreationResult createSource(@NotNull String modelName, @NotNull String extension, @NotNull SourceRoot sourceRoot) throws IOException {
     checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     String relPath = calcRelativePath(modelName, extension);
-    IFile sourceRootFile = myDefaultModelRoot.getFileSystem().getFile(sourceRoot.getPath());
+    IFile sourceRootFile = sourceRoot.getAbsolutePath();
     IFile modelDataSourceFile = sourceRootFile.getDescendant(relPath);
     ModelCreationOptions parameters = calcNewParameters(modelName, relPath, myDefaultModelRoot.getModule().getModuleReference());
     return build(new FileDataSource(modelDataSourceFile, myDefaultModelRoot), parameters);
