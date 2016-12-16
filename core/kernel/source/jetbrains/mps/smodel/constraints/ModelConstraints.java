@@ -159,23 +159,12 @@ public class ModelConstraints {
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
-    return new OkReferenceDescriptor(reference, reference.getLink().getTargetConcept());
-  }
-
-  @NotNull
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference, @NotNull SAbstractConcept targetConcept) {
-    return new OkReferenceDescriptor(reference, targetConcept);
+    return new OkReferenceDescriptor(reference);
   }
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association) {
-    return new OkReferenceDescriptor(association, sourceNode, association.getTargetConcept());
-  }
-
-  @NotNull
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association,
-      @NotNull SAbstractConcept targetConcept) {
-    return new OkReferenceDescriptor(association, sourceNode, targetConcept);
+    return new OkReferenceDescriptor(association, sourceNode);
   }
 
   /**
@@ -191,18 +180,13 @@ public class ModelConstraints {
     if (referenceLink instanceof InvalidReferenceLink) {
       return new ErrorReferenceDescriptor("can't find reference link for role '" + role + "' in '" + concept + "'");
     }
-    return new OkReferenceDescriptor(referenceLink, referenceNode, referenceLink.getTargetConcept());
+    return new OkReferenceDescriptor(referenceLink, referenceNode);
   }
 
 
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
       int position, @NotNull SReferenceLink association) {
-    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position, association.getTargetConcept());
-  }
-
-  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
-      int position, @NotNull SReferenceLink association, @NotNull SAbstractConcept targetConcept) {
-    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position, targetConcept);
+    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position);
   }
 
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
@@ -212,22 +196,11 @@ public class ModelConstraints {
     if (smartReferenceLink == null) {
       return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
     }
-    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position, smartReferenceLink.getTargetConcept());
-  }
-
-  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
-      /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
-      @NotNull SAbstractConcept smartConcept, @NotNull SAbstractConcept targetConcept) {
-    SReferenceLink smartReferenceLink = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    if (smartReferenceLink == null) {
-      return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
-    }
-    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position, targetConcept);
+    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position);
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} or
-   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept, SAbstractConcept)} instead.
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
    * It doesn't work for specialized links.
    */
   @NotNull
@@ -243,8 +216,7 @@ public class ModelConstraints {
   }
 
   /**
-   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} or
-   * {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept, SAbstractConcept)} instead.
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
    */
   @NotNull
   @Deprecated

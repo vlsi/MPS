@@ -15,15 +15,19 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -101,37 +105,37 @@ public abstract class ReferenceDescriptor {
     private final ReferenceScopeProvider myScopeProvider;
 
     OkReferenceDescriptor(@NotNull SAbstractConcept nodeConcept, @NotNull SReferenceLink referenceLink, @NotNull SNode contextNode,
-        /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position, @NotNull SAbstractConcept linkTarget) {
+        /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position) {
       myReference = null;
       myReferenceNode = null;
       myNodeConcept = nodeConcept;
       myReferenceLink = referenceLink;
       myContextNode = contextNode;
-      myLinkTarget = linkTarget;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
       myContainmentLink = containmentLink;
       myPosition = position;
       myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
     }
 
-    OkReferenceDescriptor(@NotNull SReferenceLink referenceLink, @NotNull SNode referenceNode, @NotNull SAbstractConcept linkTarget) {
+    OkReferenceDescriptor(@NotNull SReferenceLink referenceLink, @NotNull SNode referenceNode) {
       myReference = null;
       myReferenceNode = referenceNode;
       myNodeConcept = myReferenceNode.getConcept();
       myReferenceLink = referenceLink;
       myContextNode = myReferenceNode;
-      myLinkTarget = linkTarget;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
       myContainmentLink = null;
       myPosition = 0;
       myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
     }
 
-    OkReferenceDescriptor(@NotNull SReference reference, @NotNull SAbstractConcept linkTarget) {
+    OkReferenceDescriptor(@NotNull SReference reference) {
       myReference = reference;
       myReferenceNode = myReference.getSourceNode();
       myNodeConcept = myReferenceNode.getConcept();
       myReferenceLink = myReference.getLink();
       myContextNode = myReferenceNode;
-      myLinkTarget = linkTarget;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
       myContainmentLink = null;
       myPosition = 0;
       myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
@@ -193,6 +197,14 @@ public abstract class ReferenceDescriptor {
       }
       SAbstractConcept conceptForDefaultSearchScope = associationLink.getTargetConcept();
       return ConceptRegistryUtil.getConstraintsDescriptor(conceptForDefaultSearchScope).getDefaultScopeProvider();
+    }
+
+    private static SAbstractConcept getLinkTarget(@NotNull SReferenceLink genuineLink, @NotNull SAbstractConcept concreteConcept) {
+      // TODO for now, link target is calculated using language sources.
+      //      it will be possible to do it without sources when information about link specialization will be generated.
+      SNode conceptDeclaration = concreteConcept.getDeclarationNode();
+      SNode linkDeclaration = new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
+      return MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(linkDeclaration));
     }
 
     private SModel getModel() {
