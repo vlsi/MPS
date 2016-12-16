@@ -16,12 +16,11 @@
 package jetbrains.mps.nodeEditor.menus.transformation;
 
 import jetbrains.mps.editor.runtime.impl.CellUtil;
+import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.lang.editor.menus.transformation.InUsedLanguagesPredicate;
 import jetbrains.mps.nodeEditor.menus.CachingPredicate;
 import jetbrains.mps.nodeEditor.menus.CanBeChildPredicate;
 import jetbrains.mps.nodeEditor.menus.CanBeParentPredicate;
-import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
-import jetbrains.mps.nodeEditor.menus.IsSubconceptOfPredicate;
 import jetbrains.mps.nodeEditor.menus.MenuItemFactory;
 import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
@@ -110,7 +109,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
     final SContainmentLink containmentLink = nodeLocation.getContainmentLink();
     Predicate<SAbstractConcept> predicate = new CanBeParentPredicate(nodeLocation.getParent(), containmentLink, repository);
     if (nodeLocation.getParent() != null) {
-      predicate = predicate.and(new CanBeChildPredicate(nodeLocation.getParent(), containmentLink, nodeLocation.getChild()));
+      predicate = predicate.and(new CanBeChildPredicate(nodeLocation.getParent(), containmentLink));
     }
     predicate = predicate.and(new InUsedLanguagesPredicate(getModel()));
     return predicate;

@@ -41,7 +41,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 /**
  * @author simon
@@ -74,9 +73,8 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   }
 
   @NotNull
-  private Predicate<SAbstractConcept> createSuitableForConstraintsPredicate(SNode parentNode, SContainmentLink containmentLink, SRepository repository,
-      SNode currentChild) {
-    Predicate<SAbstractConcept> predicate = new CanBeChildPredicate(parentNode, containmentLink, currentChild).
+  private Predicate<SAbstractConcept> createSuitableForConstraintsPredicate(SNode parentNode, SContainmentLink containmentLink, SRepository repository) {
+    Predicate<SAbstractConcept> predicate = new CanBeChildPredicate(parentNode, containmentLink).
         and(new CanBeParentPredicate(parentNode, containmentLink, repository));
     if (myContainmentLink != null) {
       predicate = predicate.and(new IsSubconceptOfPredicate(getTargetConcept()));
@@ -144,7 +142,7 @@ public class DefaultSubstituteMenuContext implements SubstituteMenuContext {
   @Override
   public Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
     if (mySuitableForConstraintsPredicate == null) {
-      mySuitableForConstraintsPredicate = new CachingPredicate<>(createSuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository(), myCurrentChild));
+      mySuitableForConstraintsPredicate = new CachingPredicate<>(createSuitableForConstraintsPredicate(myParentNode, myContainmentLink, myEditorContext.getRepository()));
     }
     return mySuitableForConstraintsPredicate;
   }
