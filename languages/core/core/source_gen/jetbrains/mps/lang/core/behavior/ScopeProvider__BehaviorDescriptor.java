@@ -46,7 +46,7 @@ public final class ScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   @ToRemove(version = 3.5)
   /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, kind, null);
+    return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(__thisNode__, SNodeOperations.asSConcept(kind), null);
   }
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, SNodeOperations.asNode(kind), child);
