@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.lang.editor.menus.substitute;
 
+import jetbrains.mps.actions.runtime.impl.ActionsUtil;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -25,7 +27,10 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.IconResourceUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.PatternUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -36,6 +41,8 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
+
+  private static final Logger LOG = LogManager.getLogger(DefaultSubstituteMenuItem.class);
 
   @NotNull
   private SAbstractConcept myConcept;
@@ -65,7 +72,22 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   @Nullable
   @Override
   public SNode getType(@NotNull String pattern) {
-    return null;
+    SNode node = createNode(pattern);
+    if (node == null) return null;
+    if (node.getParent() != null) {
+      LOG.warn("Node, created by " + this.getClass() + " action already has parent node.", new Throwable());
+    }
+
+    if (ActionsUtil.isInstanceOfIType(node)) return node;
+
+    //the following is for smart-type completion
+
+    AbstractNodeSubstituteInfo.getModelForTypechecking().addRootNode(node);
+    try {
+      return TypeChecker.getInstance().getTypeOf(node);
+    } finally {
+      AbstractNodeSubstituteInfo.getModelForTypechecking().removeRootNode(node);
+    }
   }
 
   @Nullable
