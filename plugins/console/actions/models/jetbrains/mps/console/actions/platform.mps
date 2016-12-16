@@ -27,6 +27,8 @@
     <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
+    <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
+    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="z1c3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
@@ -305,12 +307,12 @@
           </node>
         </node>
         <node concept="3clFbF" id="5eawdd7Z1XQ" role="3cqZAp">
-          <node concept="2YIFZM" id="5eawdd7Z2_T" role="3clFbG">
-            <ref role="37wK5l" to="unno:54ElNE$imKq" resolve="isGeneratable" />
-            <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-            <node concept="2OqwBi" id="5eawdd7Z2Uv" role="37wK5m">
-              <node concept="2WthIp" id="5eawdd7Z2Uy" role="2Oq$k0" />
-              <node concept="1DTwFV" id="5eawdd7Z2U$" role="2OqNvi">
+          <node concept="2YIFZM" id="4FXPPIUeIRl" role="3clFbG">
+            <ref role="37wK5l" to="ap4t:~GenerationFacade.canGenerate(org.jetbrains.mps.openapi.model.SModel):boolean" resolve="canGenerate" />
+            <ref role="1Pybhc" to="ap4t:~GenerationFacade" resolve="GenerationFacade" />
+            <node concept="2OqwBi" id="4FXPPIUeIRm" role="37wK5m">
+              <node concept="2WthIp" id="4FXPPIUeIRn" role="2Oq$k0" />
+              <node concept="1DTwFV" id="4FXPPIUeIRo" role="2OqNvi">
                 <ref role="2WH_rO" node="v9c3szVGRY" resolve="model" />
               </node>
             </node>
@@ -471,6 +473,25 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4FXPPIUeESg" role="3cqZAp">
+          <node concept="3cpWsn" id="4FXPPIUeESh" role="3cpWs9">
+            <property role="TrG5h" value="name" />
+            <node concept="3uibUv" id="4FXPPIUeGNi" role="1tU5fm">
+              <ref role="3uigEE" to="mhbf:~SModelName" resolve="SModelName" />
+            </node>
+            <node concept="2OqwBi" id="4FXPPIUeFXF" role="33vP2m">
+              <node concept="2OqwBi" id="4FXPPIUeESi" role="2Oq$k0">
+                <node concept="2WthIp" id="4FXPPIUeESj" role="2Oq$k0" />
+                <node concept="1DTwFV" id="4FXPPIUeESk" role="2OqNvi">
+                  <ref role="2WH_rO" node="v9c3szVGRY" resolve="model" />
+                </node>
+              </node>
+              <node concept="liA8E" id="4FXPPIUeGCn" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="v9c3szWaLJ" role="3cqZAp">
           <node concept="37vLTI" id="v9c3szWATO" role="3clFbG">
             <node concept="2OqwBi" id="v9c3szWyGh" role="37vLTJ">
@@ -486,14 +507,12 @@
                 <ref role="3TsBF5" to="tp25:v3WHCwUiHA" resolve="name" />
               </node>
             </node>
-            <node concept="2YIFZM" id="791rit5f63$" role="37vLTx">
-              <ref role="1Pybhc" to="18ew:~NameUtil" resolve="NameUtil" />
-              <ref role="37wK5l" to="18ew:~NameUtil.getModelLongName(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getModelLongName" />
-              <node concept="2OqwBi" id="v9c3szWOyC" role="37wK5m">
-                <node concept="2WthIp" id="v9c3szWOyF" role="2Oq$k0" />
-                <node concept="1DTwFV" id="v9c3szWOyH" role="2OqNvi">
-                  <ref role="2WH_rO" node="v9c3szVGRY" resolve="model" />
-                </node>
+            <node concept="2OqwBi" id="4FXPPIUeHpE" role="37vLTx">
+              <node concept="37vLTw" id="4FXPPIUeHi$" role="2Oq$k0">
+                <ref role="3cqZAo" node="4FXPPIUeESh" resolve="name" />
+              </node>
+              <node concept="liA8E" id="4FXPPIUeHGm" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModelName.getLongName():java.lang.String" resolve="getLongName" />
               </node>
             </node>
           </node>
@@ -513,14 +532,12 @@
                 <ref role="3TsBF5" to="tp25:v3WHCwUjHJ" resolve="stereotype" />
               </node>
             </node>
-            <node concept="2YIFZM" id="791rit5f66L" role="37vLTx">
-              <ref role="37wK5l" to="w1kc:~SModelStereotype.getStereotype(org.jetbrains.mps.openapi.model.SModel):java.lang.String" resolve="getStereotype" />
-              <ref role="1Pybhc" to="w1kc:~SModelStereotype" resolve="SModelStereotype" />
-              <node concept="2OqwBi" id="v9c3szWZb$" role="37wK5m">
-                <node concept="2WthIp" id="v9c3szWZbB" role="2Oq$k0" />
-                <node concept="1DTwFV" id="v9c3szWZbD" role="2OqNvi">
-                  <ref role="2WH_rO" node="v9c3szVGRY" resolve="model" />
-                </node>
+            <node concept="2OqwBi" id="4FXPPIUeIgu" role="37vLTx">
+              <node concept="37vLTw" id="4FXPPIUeI7d" role="2Oq$k0">
+                <ref role="3cqZAo" node="4FXPPIUeESh" resolve="name" />
+              </node>
+              <node concept="liA8E" id="4FXPPIUeIza" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SModelName.getStereotype():java.lang.String" resolve="getStereotype" />
               </node>
             </node>
           </node>

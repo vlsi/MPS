@@ -2,13 +2,7 @@
 <model ref="r:18b0a31c-6c8b-45fd-b098-332c1656d60c(jetbrains.mps.console.ideCommands.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="-1" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -16,14 +10,10 @@
     <import index="caxt" ref="r:135a606f-0376-4c5c-9ab8-4030f051a062(jetbrains.mps.console.ideCommands.structure)" />
     <import index="zyb2" ref="r:1754cb33-73c2-441d-96bc-93a7824726e7(jetbrains.mps.console.base.behavior)" />
     <import index="qgo0" ref="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" />
-    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="2r67" ref="r:12b75774-ad08-4482-bae3-756b26633092(jetbrains.mps.console.ideCommands.util)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" />
     <import index="eynw" ref="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
-    <import index="alof" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.project(MPS.Platform/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
-    <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="qxsb" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.options.ex(MPS.IDEA/)" />
     <import index="gsnq" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties(MPS.Platform/)" />
     <import index="3fr7" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:org.jetbrains.mps.openapi.ui.persistence(MPS.Platform/)" />
@@ -186,7 +176,9 @@
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
         <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
-      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk" />
+      <concept id="1212685548494" name="jetbrains.mps.baseLanguage.structure.ClassCreator" flags="nn" index="1pGfFk">
+        <child id="1212687122400" name="typeParameter" index="1pMfVU" />
+      </concept>
       <concept id="1107461130800" name="jetbrains.mps.baseLanguage.structure.Classifier" flags="ng" index="3pOWGL">
         <property id="521412098689998745" name="nonStatic" index="2bfB8j" />
         <child id="5375687026011219971" name="member" index="jymVt" unordered="true" />
@@ -196,6 +188,7 @@
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+        <child id="1109201940907" name="parameter" index="11_B2D" />
       </concept>
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
@@ -2179,6 +2172,114 @@
               <ref role="37wK5l" to="2r67:4dzOCary_4K" resolve="show" />
               <node concept="37vLTw" id="2DNBjvGkB_" role="37wK5m">
                 <ref role="3cqZAo" node="2DNBjvG1cn" resolve="gp" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4FXPPIUfiHq" role="3cqZAp">
+          <node concept="3cpWsn" id="4FXPPIUfiHr" role="3cpWs9">
+            <property role="TrG5h" value="egc" />
+            <node concept="3uibUv" id="4FXPPIUfiH8" role="1tU5fm">
+              <ref role="3uigEE" to="tft2:~EngagedGeneratorCollector" resolve="EngagedGeneratorCollector" />
+            </node>
+            <node concept="2ShNRf" id="4FXPPIUfiHs" role="33vP2m">
+              <node concept="1pGfFk" id="4FXPPIUfiHt" role="2ShVmc">
+                <ref role="37wK5l" to="tft2:~EngagedGeneratorCollector.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModel,java.util.Collection)" resolve="EngagedGeneratorCollector" />
+                <node concept="37vLTw" id="4FXPPIUfiHu" role="37wK5m">
+                  <ref role="3cqZAo" node="bxo68MxMqU" resolve="model" />
+                </node>
+                <node concept="10Nm6u" id="4FXPPIUfiHv" role="37wK5m" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="2UyC_XCVgcN" role="3cqZAp">
+          <node concept="2OqwBi" id="2UyC_XCVgNF" role="3clFbG">
+            <node concept="37vLTw" id="2UyC_XCVgcL" role="2Oq$k0">
+              <ref role="3cqZAo" node="4FXPPIUfiHr" resolve="egc" />
+            </node>
+            <node concept="liA8E" id="2UyC_XCVhv3" role="2OqNvi">
+              <ref role="37wK5l" to="tft2:~EngagedGeneratorCollector.getGenerators():java.util.Collection" resolve="getGenerators" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4FXPPIUfunO" role="3cqZAp">
+          <node concept="2OqwBi" id="4FXPPIUfuAQ" role="3clFbG">
+            <node concept="37vLTw" id="4FXPPIUfunM" role="2Oq$k0">
+              <ref role="3cqZAo" node="7vhSOKo2qMo" resolve="helper" />
+            </node>
+            <node concept="liA8E" id="4FXPPIUfuVC" role="2OqNvi">
+              <ref role="37wK5l" to="2r67:4FXPPIUfq8B" resolve="printLanguages" />
+              <node concept="2OqwBi" id="4FXPPIUfmMs" role="37wK5m">
+                <node concept="37vLTw" id="4FXPPIUfmta" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4FXPPIUfiHr" resolve="egc" />
+                </node>
+                <node concept="liA8E" id="4FXPPIUfncf" role="2OqNvi">
+                  <ref role="37wK5l" to="tft2:~EngagedGeneratorCollector.getDirectlyUsedLanguages():java.util.Collection" resolve="getDirectlyUsedLanguages" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4FXPPIUgJky" role="3cqZAp">
+          <node concept="3cpWsn" id="4FXPPIUgJkw" role="3cpWs9">
+            <property role="3TUv4t" value="true" />
+            <property role="TrG5h" value="trace" />
+            <node concept="3uibUv" id="4FXPPIUgJDt" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~ArrayList" resolve="ArrayList" />
+              <node concept="17QB3L" id="4FXPPIUgJJP" role="11_B2D" />
+            </node>
+            <node concept="2ShNRf" id="4FXPPIUgJLf" role="33vP2m">
+              <node concept="1pGfFk" id="4FXPPIUgKm2" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
+                <node concept="17QB3L" id="4FXPPIUgKLk" role="1pMfVU" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4FXPPIUgIjw" role="3cqZAp">
+          <node concept="2OqwBi" id="4FXPPIUgIz1" role="3clFbG">
+            <node concept="37vLTw" id="4FXPPIUgIju" role="2Oq$k0">
+              <ref role="3cqZAo" node="4FXPPIUfiHr" resolve="egc" />
+            </node>
+            <node concept="liA8E" id="4FXPPIUgIRN" role="2OqNvi">
+              <ref role="37wK5l" to="tft2:~EngagedGeneratorCollector.dump(java.util.function.Consumer):void" resolve="dump" />
+              <node concept="1bVj0M" id="4FXPPIUgIUK" role="37wK5m">
+                <node concept="37vLTG" id="4FXPPIUgKO5" role="1bW2Oz">
+                  <property role="TrG5h" value="s" />
+                  <node concept="17QB3L" id="4FXPPIUgKWo" role="1tU5fm" />
+                </node>
+                <node concept="3clFbS" id="4FXPPIUgIUL" role="1bW5cS">
+                  <node concept="3clFbF" id="4FXPPIUgLef" role="3cqZAp">
+                    <node concept="2OqwBi" id="4FXPPIUgMhT" role="3clFbG">
+                      <node concept="37vLTw" id="4FXPPIUgLee" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4FXPPIUgJkw" resolve="trace" />
+                      </node>
+                      <node concept="liA8E" id="4FXPPIUgP6a" role="2OqNvi">
+                        <ref role="37wK5l" to="33ny:~ArrayList.add(java.lang.Object):boolean" resolve="add" />
+                        <node concept="37vLTw" id="4FXPPIUgPll" role="37wK5m">
+                          <ref role="3cqZAo" node="4FXPPIUgKO5" resolve="s" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="4FXPPIUgQ33" role="3cqZAp">
+          <node concept="2OqwBi" id="4FXPPIUgQpA" role="3clFbG">
+            <node concept="37vLTw" id="4FXPPIUgQ31" role="2Oq$k0">
+              <ref role="3cqZAo" node="7vhSOKo2qMo" resolve="helper" />
+            </node>
+            <node concept="liA8E" id="4FXPPIUgQWd" role="2OqNvi">
+              <ref role="37wK5l" to="2r67:4FXPPIUftvN" resolve="printToConsole" />
+              <node concept="Xl_RD" id="4FXPPIUgQZx" role="37wK5m">
+                <property role="Xl_RC" value="Engaged generators with trace:" />
+              </node>
+              <node concept="37vLTw" id="4FXPPIUgRhX" role="37wK5m">
+                <ref role="3cqZAo" node="4FXPPIUgJkw" resolve="trace" />
               </node>
             </node>
           </node>

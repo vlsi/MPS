@@ -5,11 +5,11 @@ package jetbrains.mps.console.ideCommands.util;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.console.tool.ConsoleStream;
 import jetbrains.mps.generator.ModelGenerationPlan;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import java.util.List;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
@@ -23,11 +23,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.generator.impl.plan.Conflict;
 
 public class PartitioningHelper {
   private final MessagesViewTool messagesView;
   private final ConsoleStream console;
+  private String delimiter = "=================================";
 
   public PartitioningHelper(MessagesViewTool viewTool, ConsoleStream console) {
     this.messagesView = viewTool;
@@ -36,7 +38,7 @@ public class PartitioningHelper {
 
   public void show(ModelGenerationPlan plan) {
     // print all rules 
-    messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
+    messageViewDelimiter();
     for (TemplateModule generator : plan.getGenerators()) {
       Collection<TemplateMappingPriorityRule> rules = generator.getPriorities();
       if (rules == null) {
@@ -48,7 +50,7 @@ public class PartitioningHelper {
         messagesView.add(msg);
       }
     }
-    messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
+    messageViewDelimiter();
     if (plan instanceof GenerationPlan) {
       GenerationPlan planImpl = (GenerationPlan) plan;
       if (planImpl.hasIgnoredPriorityRules()) {
@@ -120,6 +122,25 @@ public class PartitioningHelper {
     // } 
   }
 
+  public void printLanguages(Collection<SLanguage> languagesInUse) {
+    console.addText("Model directly uses next languages (including explicitly engaged, if any):\n");
+    for (SLanguage l : languagesInUse) {
+      console.addText("  ");
+      console.addText(String.format("%s\n", l.getQualifiedName()));
+    }
+    consoleDelimiter();
+  }
+
+  public void printToConsole(String header, Collection<String> lines) {
+    console.addText(header);
+    console.addText("\n");
+    for (String s : lines) {
+      console.addText(s);
+      console.addText("\n");
+    }
+    consoleDelimiter();
+  }
+
   private void printPlanConflicts(List<Conflict> conflicts, String header) {
     messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, header));
     console.addText(header);
@@ -130,9 +151,16 @@ public class PartitioningHelper {
       messagesView.add(msg);
       console.addText(String.format("%s\n", c.getText()));
     }
-    String footer = "=================================";
-    console.addText(footer);
+    consoleDelimiter();
+    messageViewDelimiter();
+  }
+
+  private void consoleDelimiter() {
+    console.addText(delimiter);
     console.addText("\n");
-    messagesView.add(new Message(MessageKind.INFORMATION, footer));
+  }
+
+  private void messageViewDelimiter() {
+    messagesView.add(new Message(MessageKind.INFORMATION, delimiter));
   }
 }
