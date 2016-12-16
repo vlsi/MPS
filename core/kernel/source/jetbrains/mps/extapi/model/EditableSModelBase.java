@@ -22,6 +22,7 @@ import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.FileDataSourceCreator;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
@@ -39,7 +40,6 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
-import java.util.HashMap;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -253,7 +253,9 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           }
         }
         try {
-          IFile newFile = defaultModelRoot.createSource(newModelName, FileUtil.getExtension(oldFile.getName()), sourceRoot, new HashMap<>()).getFile();
+          String extension = FileUtil.getExtension(oldFile.getName());
+          FileDataSource source = new FileDataSourceCreator(defaultModelRoot).createSource(newModelName, extension, sourceRoot).getSource();
+          IFile newFile = source.getFile();
           newFile.getParent().mkdirs();
           newFile.createNewFile();
           changeModelFile(newFile);

@@ -18,7 +18,6 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.util.ReferenceUpdater;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,8 +29,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -45,10 +46,10 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @Nullable private SModule myModule;
   @Nullable private volatile SRepository myRepository;
-  private final Set<SModel> myModels = new LinkedHashSet<SModel>();
-  private ModuleListener myModuleListener;
+  private final Set<SModel> myModels = new LinkedHashSet<>();
+  private final SyncModuleListener myModuleListener = new SyncModuleListener();
 
-  @Nullable
+  /*@NotNull*/
   @Override
   public SModule getModule() {
     return myModule;
@@ -78,13 +79,17 @@ public abstract class ModelRootBase implements ModelRoot {
 
   @NotNull
   @Override
-  public final Iterable<SModel> getModels() {
+  public final List<SModel> getModels() {
     assertCanRead();
-    return new ArrayList<>(myModels);
+    return Collections.unmodifiableList(new ArrayList<>(myModels));
   }
 
-  //returns all models under the model root
-  //if some model is already loaded and registered, it is recommended to return the loaded one instead of loading another time
+  /**
+   * returns all models under the model root
+   * if some model is already loaded and registered, it is recommended to return the loaded one instead of loading another time
+   * @return a sequence of models
+   */
+  @NotNull
   public abstract Iterable<SModel> loadModels();
 
   @Override
@@ -94,10 +99,11 @@ public abstract class ModelRootBase implements ModelRoot {
   }
 
   public void attach() {
-    assert myModule != null;
-    assert myModuleListener == null;
+    if (myModule == null) {
+      throw new IllegalStateException("Module is null");
+    }
     myRepository = myModule.getRepository();
-    myModule.addModuleListener(myModuleListener = new ModuleListener());
+    myModule.addModuleListener(myModuleListener);
     update();
   }
 
@@ -105,7 +111,7 @@ public abstract class ModelRootBase implements ModelRoot {
     for (SModel model : getModels()) {
       unregister(model);
     }
-    if (myModuleListener != null) {
+    if (isRegistered()) {
       assert myModule != null;
       myModule.removeModuleListener(myModuleListener);
     }
@@ -123,7 +129,10 @@ public abstract class ModelRootBase implements ModelRoot {
     return myRepository != null;
   }
 
-  protected void register(SModel model) {
+  /**
+   * @param model is the model to be registered here as well as in the enclosing module.
+   */
+  protected final void register(@NotNull SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
     assert module.getModel(model.getModelId()) == null;
@@ -132,7 +141,13 @@ public abstract class ModelRootBase implements ModelRoot {
     myModels.add(model);
   }
 
-  protected void unregister(SModel model) {
+  /**
+   * note that the model will be removed from our models collection eventually
+   * since we subscribed to our model removing events via {@link SyncModuleListener}.
+   *
+   * FIXME Faulty code is written here, we must not listen to the module events rather invoke this method right in the module class
+   */
+  protected final void unregister(@NotNull SModel model) {
     SModuleBase module = (SModuleBase) getModule();
     assert module != null;
     assert module.getModel(model.getModelId()) != null;
@@ -141,6 +156,19 @@ public abstract class ModelRootBase implements ModelRoot {
     module.unregisterModel((SModelBase) model);
   }
 
+  /**
+   * IMPORTANT API METHOD
+   *
+   * Tricky logic which is forced onto all of subclasses.
+   * This method represents a caching mechanism which does not reload the models which are already loaded
+   * but looks only at the difference between what we had and what we get now
+   *
+   * Strangely enough this logic is not in API (not added to the API #loadModels implementation) so
+   * the client of this class (and its subclasses) has to cast his <code>ModelRoot</code> to <code>ModelRootBase</code>
+   * every time he wants to reload the models from their data sources.
+   *
+   * TODO the right
+   */
   public void update() {
     assertCanChange();
     SModuleBase module = (SModuleBase) getModule();
@@ -178,9 +206,9 @@ public abstract class ModelRootBase implements ModelRoot {
     return "(" + getType() + ") " + getPresentation();
   }
 
-  private class ModuleListener extends SModuleListenerBase {
+  private final class SyncModuleListener extends SModuleListenerBase {
     @Override
-    public void beforeModelRemoved(SModule module, SModel model) {
+    public void beforeModelRemoved(@NotNull SModule module, @NotNull SModel model) {
       assert myModule == module;
       myModels.remove(model);
     }
