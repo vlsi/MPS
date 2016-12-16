@@ -84,7 +84,7 @@ public interface IFile {
   /**
    * @return the whole path to the abstract location.
    * The current contract:
-   * the resulting path will be canonical,
+   * the resulting path will be canonical, absolute
    * and the folders are separated with {@link Path#UNIX_SEPARATOR_CHAR} // todo explain more
    *
    * @see File#getCanonicalPath()
