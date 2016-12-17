@@ -26,6 +26,7 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xd3c5a46fb8c247dbL, 0xad0a30b8f19c2055L, 0x3e81ed1e2be77cb8L, "jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -44,12 +45,12 @@ public class JUnit4TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "4504141816188599492");
+  private static SNodePointer breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "4504141816188599492");
 }

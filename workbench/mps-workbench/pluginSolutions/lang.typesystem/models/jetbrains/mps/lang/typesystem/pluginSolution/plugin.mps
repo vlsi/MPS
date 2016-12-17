@@ -507,7 +507,7 @@
                                 <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeMessageDontCheck(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.errors.IErrorReporter" resolve="getTypeMessageDontCheck" />
                                 <node concept="2OqwBi" id="1KUoCiqb5F_" role="37wK5m">
                                   <node concept="2WthIp" id="1KUoCiqb5FA" role="2Oq$k0" />
-                                  <node concept="1DTwFV" id="1KUoCiqb5FB" role="2OqNvi">
+                                  <node concept="3gHZIF" id="4Ng3MJZbFOI" role="2OqNvi">
                                     <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
                                   </node>
                                 </node>

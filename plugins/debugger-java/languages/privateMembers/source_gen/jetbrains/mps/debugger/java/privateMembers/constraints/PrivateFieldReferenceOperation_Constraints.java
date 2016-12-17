@@ -35,6 +35,7 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
     super(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x5eb820f649bb5379L, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -49,7 +50,7 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cgwyr9_a0a0a0a0a1a0b0a1a2;
+            return breakingNode_cgwyr9_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -82,5 +83,5 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
     });
     return references;
   }
-  private static SNodePointer breakingNode_cgwyr9_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206789337616");
+  private static SNodePointer breakingNode_cgwyr9_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206789337616");
 }

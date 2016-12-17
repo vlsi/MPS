@@ -42,7 +42,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -50,6 +50,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -64,7 +65,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_yrz94z_a0a0a0a0a1a0b0a1a4;
+            return breakingNode_yrz94z_a0a0a0a0a1a0b0a1a5;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -85,7 +86,7 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
                 }
               }).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0e(it, enclosingProperty);
+                  return eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0f(it, enclosingProperty);
                 }
               }));
             }
@@ -95,7 +96,8 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b744dafeL, "jetbrains.mps.baseLanguage.structure.Property"), false, false) != null;
   }
   private static SNode _quotation_createNode_yrz94z_a0d0a0(Object parameter_1) {
@@ -105,9 +107,9 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static boolean eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0e(Object a, Object b) {
+  private static boolean eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5139199381138640472");
-  private static SNodePointer breakingNode_yrz94z_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6799807267502118362");
+  private static SNodePointer breakingNode_yrz94z_a0a0a0a0a1a0b0a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6799807267502118362");
 }

@@ -21,10 +21,13 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import jetbrains.mps.smodel.adapter.structure.link.InvalidContainmentLink;
+import jetbrains.mps.smodel.adapter.structure.ref.InvalidReferenceLink;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.ErrorReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor.OkReferenceDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
+import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
@@ -63,7 +66,8 @@ public class ModelConstraints {
   // todo: make ModelConstraints project component? Concept and Language registry too?
 
   // canBe* section
-  public static boolean canBeAncestor(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SNode childConcept, SNode containmentLink,
+  public static boolean canBeAncestor(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept,
+      /*TODO @NotNull*/ SContainmentLink containmentLink,
       @Nullable CheckingNodeContext checkingNodeContext) {
     // TODO: make containmentLink @NotNull and expose this parameter inside canBeAncestor constraint in MPS DSL.
     // TODO: For now I did not expose it because editor is calling this method with null containmentLink from time
@@ -85,23 +89,23 @@ public class ModelConstraints {
     return true;
   }
 
-  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept, @NotNull SNode parent,
-      @NotNull SNode containmentLink, @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SAbstractConcept childConcept, @NotNull SNode parent,
+      /*TODO @NotNull*/ SContainmentLink containmentLink, @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(ancestor.getConcept());
     return descriptor.canBeAncestor(ancestor, descendant, childConcept, parent, containmentLink, getOperationContext(getModule(ancestor)), checkingNodeContext);
   }
 
-  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeParent(@NotNull SNode parentNode, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept,
+      /*TODO @NotNull*/ SContainmentLink link, @Nullable CheckingNodeContext checkingNodeContext) {
     ConstraintsDescriptor descriptor = ConceptRegistryUtil.getConstraintsDescriptor(parentNode.getConcept());
     return descriptor.canBeParent(parentNode, childNode, childConcept, link, getOperationContext(getModule(parentNode)), checkingNodeContext);
   }
 
-  public static boolean canBeChild(SAbstractConcept concept, SNode parentNode, SNode link, @Nullable SNode childNode,
-      @Nullable CheckingNodeContext checkingNodeContext) {
+  public static boolean canBeChild(@Nullable SNode childNode, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept,
+      /*TODO @NotNull*/ SContainmentLink link, @Nullable CheckingNodeContext checkingNodeContext) {
     SModule module = getModule(parentNode);
-    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(concept);
-    return descriptor.canBeChild(childNode, parentNode, link, concept.getDeclarationNode(), getOperationContext(module), checkingNodeContext);
+    ConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(childConcept);
+    return descriptor.canBeChild(childNode, parentNode, childConcept, link, getOperationContext(module), checkingNodeContext);
   }
 
   public static boolean canBeRoot(@NotNull SAbstractConcept concept, @NotNull SModel model) {
@@ -118,6 +122,39 @@ public class ModelConstraints {
     return descriptor.canBeRoot(model, getOperationContext(getModule(model)), null);
   }
 
+  //deprecated canBe*
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, SNode containmentLink,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeAncestor(node, childNode, MetaAdapterByDeclaration.getConcept(childConcept),
+        containmentLink == null ? null : MetaAdapterByDeclaration.getContainmentLink(containmentLink),
+        checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept, SNode parent,
+      SNode containmentLink, @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeAncestorDirect(ancestor, descendant, MetaAdapterByDeclaration.getConcept(childConcept), parent,
+        containmentLink == null ? null : MetaAdapterByDeclaration.getContainmentLink(containmentLink), checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeParent(parentNode, childNode, MetaAdapterByDeclaration.getConcept(childConcept), MetaAdapterByDeclaration.getContainmentLink(link),
+        checkingNodeContext);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static boolean canBeChild(SAbstractConcept childConcept, SNode parentNode, SNode link, @Nullable SNode childNode,
+      @Nullable CheckingNodeContext checkingNodeContext) {
+    return canBeChild(childNode, parentNode, childConcept, link == null ? null : MetaAdapterByDeclaration.getContainmentLink(link), checkingNodeContext);
+  }
+
   // scopes part
   @NotNull
   public static Scope getScope(@NotNull SReference reference) {
@@ -126,80 +163,71 @@ public class ModelConstraints {
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SReference reference) {
-    return getReferenceDescriptorForReferenceNode(reference, reference.getSourceNode(), reference.getLink().getRoleName());
+    return new OkReferenceDescriptor(reference);
   }
 
   @NotNull
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode sourceNode, @NotNull SReferenceLink association) {
-    return getReferenceDescriptorForReferenceNode(null, sourceNode, association.getRoleName());
+    return new OkReferenceDescriptor(association, sourceNode);
   }
 
   /**
-   * @deprecated shall use {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SReference)} or
-   * {@link #getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode, org.jetbrains.mps.openapi.language.SReferenceLink)}
-   * instead.
+   * @deprecated shall use {@link #getReferenceDescriptor(SReference)} or {@link #getReferenceDescriptor(SNode, SReferenceLink)} instead.
    */
   @NotNull
   @Deprecated
   @ToRemove(version = 3.3)
   public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode referenceNode, @NotNull String role) {
     // TODO: this method first argument before is enclosingNode, it's wrong - it's referenceNode. check usages of method
-    return getReferenceDescriptorForReferenceNode(null, referenceNode, role);
-  }
-
-  @NotNull
-  private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode,
-      @NotNull String role) {
     SConcept concept = referenceNode.getConcept();
-    SNode scopeReference = SModelSearchUtil.findLinkDeclaration(concept.getDeclarationNode(), role);
-    if (scopeReference == null) {
-      return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + concept + "'");
+    SReferenceLink referenceLink = ((ConceptMetaInfoConverter) concept).convertAssociation(role);
+    if (referenceLink instanceof InvalidReferenceLink) {
+      return new ErrorReferenceDescriptor("can't find reference link for role '" + role + "' in '" + concept + "'");
     }
-
-    return new OkReferenceDescriptor(
-        concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
-        reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(),
-        new SNodeLegacy(referenceNode).getRoleLink(), // parameters
-        reference // reference
-    );
+    return new OkReferenceDescriptor(referenceLink, referenceNode);
   }
 
+
+  public static ReferenceDescriptor getReferenceDescriptor(@NotNull SNode contextNode, /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink,
+      int position, @NotNull SReferenceLink association) {
+    return new OkReferenceDescriptor(association.getOwner(), association, contextNode, containmentLink, position);
+  }
+
+  public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode contextNode,
+      /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position,
+      @NotNull SAbstractConcept smartConcept) {
+    SReferenceLink smartReferenceLink = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
+    if (smartReferenceLink == null) {
+      return new ErrorReferenceDescriptor("smart concept '" + smartConcept.getName() + "' has no characteristic reference");
+    }
+    return new OkReferenceDescriptor(smartConcept, smartReferenceLink, contextNode, containmentLink, position);
+  }
+
+  /**
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
+   * It doesn't work for specialized links.
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable String role, int index, @NotNull SNode smartConcept) {
-    SNode smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    if (smartReference == null) {
-      return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
+    SConcept concept = enclosingNode.getConcept();
+    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) concept).convertAggregation(role);
+    if (containmentLink instanceof InvalidContainmentLink) {
+      return new ErrorReferenceDescriptor("can't find containment link for role '" + role + "' in '" + concept + "'");
     }
-    SNode linkDeclaration = role != null ? new SNodeLegacy(enclosingNode).getLinkDeclaration(role) : null;
-    if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
-      return new ErrorReferenceDescriptor("for reference role smartConcept should be null");
-    }
-
-    return new OkReferenceDescriptor(
-        MetaAdapterByDeclaration.getInstanceConcept(smartConcept), SModelUtil.getGenuineLinkRole(smartReference), // sourceNodeConcept, genuineRole
-        false, role, index, null, SModelUtil.getLinkDeclarationTarget(smartReference), enclosingNode, linkDeclaration, // parameters
-        null // reference
-    );
+    return getSmartReferenceDescriptor(enclosingNode, containmentLink, index, MetaAdapterByDeclaration.getConcept(smartConcept));
   }
 
+  /**
+   * @deprecated Use {@link #getSmartReferenceDescriptor(SNode, SContainmentLink, int, SAbstractConcept)} instead.
+   */
   @NotNull
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static ReferenceDescriptor getSmartReferenceDescriptor(@NotNull SNode enclosingNode, @Nullable SContainmentLink link, int index,
       @NotNull SConcept smartConcept, SRepository repository) {
-    SReferenceLink smartReference = ReferenceConceptUtil.getCharacteristicReference(smartConcept);
-    if (smartReference == null) {
-      return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
-    }
-    SNodeReference sourceNode = smartReference.getTargetConcept().getSourceNode();
-    if (sourceNode == null) {
-      return new ErrorReferenceDescriptor("smartConcept has no source node: " + smartConcept.getName());
-    }
-    SNode linkDeclaration = link == null ? null : link.getDeclarationNode();
-    String role = link == null ? null : link.getName();
-    return new OkReferenceDescriptor(
-        smartConcept, smartReference.getName(), // sourceNodeConcept, genuineRole
-        false, role, index, null, sourceNode.resolve(repository), enclosingNode, linkDeclaration, // parameters
-        null // reference
-    );
+    return getSmartReferenceDescriptor(enclosingNode, link, index, smartConcept);
   }
 
   public static SConcept getDefaultConcreteConcept(SAbstractConcept concept) {

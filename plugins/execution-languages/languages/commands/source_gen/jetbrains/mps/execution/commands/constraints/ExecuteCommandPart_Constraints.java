@@ -53,6 +53,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -64,7 +65,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
-        return check_kwfdao_a0a1a1a0b0a1a4(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(node));
+        return check_kwfdao_a0a1a1a0b0a1a5(ExecuteCommandPart__BehaviorDescriptor.getCommandDeclaration_id5keEkmeCqIg.invoke(node));
       }
     });
     properties.put(MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"), new BasePropertyConstraintsDescriptor(MetaIdFactory.propId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L), this) {
@@ -91,7 +92,7 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-  private static String check_kwfdao_a0a1a1a0b0a1a4(SNode checkedDotOperand) {
+  private static String check_kwfdao_a0a1a1a0b0a1a5(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SPropertyOperations.getString(checkedDotOperand, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }

@@ -27,6 +27,7 @@ public class EventVariableReference_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getConcept(0x144f7012c2d543beL, 0xbe2b4bfb7dff6503L, 0x102ea8a3c37L, "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,12 +47,12 @@ public class EventVariableReference_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_lcwlw6_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_lcwlw6_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_lcwlw6_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253610429");
+  private static SNodePointer breakingNode_lcwlw6_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253610429");
 }

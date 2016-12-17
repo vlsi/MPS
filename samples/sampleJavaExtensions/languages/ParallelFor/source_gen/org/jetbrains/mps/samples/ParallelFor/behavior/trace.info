@@ -177,7 +177,7 @@
       <node id="4120418308311043819" at="51,0,52,0" concept="7" trace="findPoolDeclaration_id6FH9fp$mItT" />
       <node id="4120418308311043819" at="53,0,54,0" concept="7" trace="BH_METHODS" />
       <node id="2832018561209150769" at="59,221,60,53" concept="4" />
-      <node id="2832018561209150778" at="61,72,62,232" concept="1" />
+      <node id="2832018561209150778" at="61,195,62,232" concept="1" />
       <node id="7497677991177984042" at="63,7,64,98" concept="5" />
       <node id="4120418308311047376" at="65,5,66,0" concept="6" />
       <node id="7362994916699057920" at="66,0,67,127" concept="5" />
@@ -241,7 +241,7 @@
       <node id="4120418308311043819" at="107,0,135,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4120418308311043819" at="55,63,55,63" />
       <scope id="5337045848190663579" at="69,156,69,156" />
-      <scope id="2832018561209150777" at="61,72,62,232" />
+      <scope id="2832018561209150777" at="61,195,62,232" />
       <scope id="5337045848190935672" at="75,95,76,34" />
       <scope id="5337045848190935668" at="78,75,79,172" />
       <scope id="5337045848190935664" at="81,86,82,16" />

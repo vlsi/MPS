@@ -29,6 +29,7 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x118bd0e07f1L, "jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -55,12 +56,12 @@ public class WhenConcreteVariableReference_Constraints extends BaseConstraintsDe
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_acirdv_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_acirdv_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_acirdv_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104837477");
+  private static SNodePointer breakingNode_acirdv_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104837477");
 }

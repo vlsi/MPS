@@ -24,6 +24,7 @@ public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1aa1f6c694329f95L, "jetbrains.mps.make.facet.structure.NamedFacetReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,12 +43,12 @@ public class NamedFacetReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "1919086248986845084");
+  private static SNodePointer breakingNode_n4zw7m_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "1919086248986845084");
 }

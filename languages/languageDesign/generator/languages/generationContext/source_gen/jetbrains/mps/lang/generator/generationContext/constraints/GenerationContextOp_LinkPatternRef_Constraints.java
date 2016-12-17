@@ -30,6 +30,7 @@ public class GenerationContextOp_LinkPatternRef_Constraints extends BaseConstrai
     super(MetaAdapterFactory.getConcept(0xd7706f639be2479cL, 0xa3daae92af1e64d5L, 0x186874d40ed9c757L, "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -53,12 +54,12 @@ public class GenerationContextOp_LinkPatternRef_Constraints extends BaseConstrai
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ij7vb1_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_ij7vb1_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_ij7vb1_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "1758784108619297718");
+  private static SNodePointer breakingNode_ij7vb1_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "1758784108619297718");
 }

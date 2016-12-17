@@ -10,4 +10,5 @@ public class BaseVariableDeclaration_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration"));
   }
 
+
 }

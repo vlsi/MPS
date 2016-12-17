@@ -10,4 +10,5 @@ public class InternalAnonymousClass_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x2f7b79225e746809L, "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"));
   }
 
+
 }

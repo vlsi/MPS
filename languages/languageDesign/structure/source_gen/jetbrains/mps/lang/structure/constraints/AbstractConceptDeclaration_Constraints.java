@@ -43,6 +43,7 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
       }
     };
   }
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

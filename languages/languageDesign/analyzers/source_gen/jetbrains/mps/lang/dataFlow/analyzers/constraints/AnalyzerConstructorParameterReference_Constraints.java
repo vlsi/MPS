@@ -27,6 +27,7 @@ public class AnalyzerConstructorParameterReference_Constraints extends BaseConst
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x376a4d52f8c421f8L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerConstructorParameterReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -41,7 +42,7 @@ public class AnalyzerConstructorParameterReference_Constraints extends BaseConst
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_fsdjue_a0a0a0a0a1a0b0a1a2;
+            return breakingNode_fsdjue_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -52,5 +53,5 @@ public class AnalyzerConstructorParameterReference_Constraints extends BaseConst
     });
     return references;
   }
-  private static SNodePointer breakingNode_fsdjue_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "3993089038373650770");
+  private static SNodePointer breakingNode_fsdjue_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "3993089038373650770");
 }

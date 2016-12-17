@@ -10,4 +10,5 @@ public class CellModel_Diagram_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x57869048dc89fbf7L, "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram"));
   }
 
+
 }

@@ -10,4 +10,5 @@ public class PrimitiveTypeDescriptor_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0xed6d7656532c4bc2L, 0x81d1af945aeb8280L, 0x10de9cae1d1L, "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor"));
   }
 
+
 }

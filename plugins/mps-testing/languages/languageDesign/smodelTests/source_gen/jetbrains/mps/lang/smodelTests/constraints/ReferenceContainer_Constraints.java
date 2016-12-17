@@ -26,6 +26,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, "jetbrains.mps.lang.smodelTests.structure.ReferenceContainer"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -52,7 +53,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a1a2;
+            return breakingNode_5tia2e_a0a3a0a0a1a0b0a1a3;
           }
         };
       }
@@ -80,7 +81,7 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a2a2;
+            return breakingNode_5tia2e_a0a3a0a0a1a0b0a2a3;
           }
         };
       }
@@ -108,14 +109,14 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5tia2e_a0a3a0a0a1a0b0a3a2;
+            return breakingNode_5tia2e_a0a3a0a0a1a0b0a3a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a1a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029091796");
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a2a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029225986");
-  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a3a2 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029226005");
+  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a1a3 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029091796");
+  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a2a3 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029225986");
+  private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a3a3 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029226005");
 }

@@ -10,4 +10,5 @@ public class BaseSimpleBuilderDeclaration_Constraints extends BaseConstraintsDes
     super(MetaAdapterFactory.getConcept(0x132aa4d8a3f7441cL, 0xa7eb3fce23492c6aL, 0x56cd40dfa78d35b1L, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"));
   }
 
+
 }

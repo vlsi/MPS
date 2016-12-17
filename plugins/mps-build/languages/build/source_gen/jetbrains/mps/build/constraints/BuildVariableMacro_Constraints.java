@@ -19,6 +19,7 @@ public class BuildVariableMacro_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3449288aa0d560e2L, "jetbrains.mps.build.structure.BuildVariableMacro"));
   }
 
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -30,10 +31,10 @@ public class BuildVariableMacro_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
-        return REGEXP_xr7ei4_a0a0a1a1a0b0a1a2.matcher((SPropertyOperations.getString(propertyValue))).matches();
+        return REGEXP_xr7ei4_a0a0a1a1a0b0a1a3.matcher((SPropertyOperations.getString(propertyValue))).matches();
       }
     });
     return properties;
   }
-  private static Pattern REGEXP_xr7ei4_a0a0a1a1a0b0a1a2 = Pattern.compile("[^=\\$/]*", 0);
+  private static Pattern REGEXP_xr7ei4_a0a0a1a1a0b0a1a3 = Pattern.compile("[^=\\$/]*", 0);
 }

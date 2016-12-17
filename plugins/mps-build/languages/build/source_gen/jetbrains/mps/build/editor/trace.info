@@ -2628,7 +2628,7 @@
       <node id="1741258697587202349" at="45,88,46,93" concept="3" />
       <node id="1741258697587202349" at="46,93,47,18" concept="8" />
       <node id="1741258697587202349" at="52,100,53,158" concept="8" />
-      <node id="1741258697587202355" at="57,87,58,306" concept="7" />
+      <node id="1741258697587202355" at="57,87,58,285" concept="7" />
       <node id="1741258697587202369" at="59,26,60,20" concept="8" />
       <node id="1741258697587202385" at="63,41,64,196" concept="8" />
       <node id="1741258697587202395" at="67,39,68,188" concept="8" />
@@ -2664,7 +2664,7 @@
       <node id="1741258697587202349" at="169,76,170,215" concept="8" />
       <node id="1741258697587202349" at="173,125,174,149" concept="8" />
       <node id="1741258697587202524" at="177,0,178,0" concept="11" trace="REGEXP_fvo6kj_a0a0b0e2c" />
-      <node id="1741258697587202367" at="58,306,61,7" concept="5" />
+      <node id="1741258697587202367" at="58,285,61,7" concept="5" />
       <node id="1741258697587202383" at="63,0,66,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <node id="1741258697587202393" at="67,0,70,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1741258697587202349" at="74,0,77,0" concept="2" trace="SubstituteMenuPart_Action_fvo6kj_a0#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />

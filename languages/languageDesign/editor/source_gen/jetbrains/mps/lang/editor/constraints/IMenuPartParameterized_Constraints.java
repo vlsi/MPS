@@ -25,7 +25,7 @@ public class IMenuPartParameterized_Constraints extends BaseConstraintsDescripto
   }
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+    boolean result = staticCanBeAParent_Old(node, childNode, childConcept, link, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
@@ -33,7 +33,9 @@ public class IMenuPartParameterized_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+
+  @Deprecated
+  private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (IMenuPartParameterized__BehaviorDescriptor.getLinkNodeOfParameterizedPart_id1quYWAD03b2.invoke(node).getDeclarationNode() == link) {
       // Only allow parameterizable or abstract menu parts as children 
       // (allow abstract menu parts to avoid showing 'TransformationMenuPart cannot be child of parameterized' and 

@@ -10,4 +10,5 @@ public class Constant_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x14be6cdec1861419L, "org.jetbrains.mps.samples.Constants.structure.Constant"));
   }
 
+
 }

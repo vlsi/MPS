@@ -41,7 +41,7 @@ public final class MockScopeProvider__BehaviorDescriptor extends BaseBHDescripto
   }
 
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, final SNode kind, SNode child) {
-    if (!(ScopeUtils.comeFrom("node", __thisNode__, child))) {
+    if (!(ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0x8585453e6bfb4d80L, 0x98deb16074f1d86cL, 0x1de1fbd5fbf63919L, 0x1de1fbd5fbfc8785L, "node"), __thisNode__, child))) {
       return ScopeUtils.lazyParentScope(__thisNode__, kind);
     }
 

@@ -29,6 +29,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
     super(MetaAdapterFactory.getConcept(0x3304fc6e7c6b401eL, 0xa016b944934bb21fL, 0x5650ac0d4240f252L, "jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -79,12 +80,12 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_5upoaw_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_5upoaw_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_5upoaw_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "6219660258344759923");
+  private static SNodePointer breakingNode_5upoaw_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "6219660258344759923");
 }

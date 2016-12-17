@@ -10,4 +10,5 @@ public class MigrationScriptPart_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0x60bdd7da75343e05L, "jetbrains.mps.lang.script.structure.MigrationScriptPart"));
   }
 
+
 }

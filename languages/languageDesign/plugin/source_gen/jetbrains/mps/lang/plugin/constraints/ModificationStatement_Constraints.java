@@ -32,6 +32,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
     super(MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181de4920dL, "jetbrains.mps.lang.plugin.structure.ModificationStatement"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -58,7 +59,7 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_184bjp_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_184bjp_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
@@ -86,13 +87,13 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_184bjp_a0a1a0a0a1a0b0a2a2;
+            return breakingNode_184bjp_a0a1a0a0a1a0b0a2a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
-  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a2a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
+  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
+  private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a2a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
 }

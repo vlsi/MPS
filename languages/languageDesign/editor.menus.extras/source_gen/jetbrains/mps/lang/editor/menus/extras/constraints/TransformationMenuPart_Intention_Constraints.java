@@ -31,6 +31,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
     super(MetaAdapterFactory.getConcept(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x289dadfa24b57a51L, "jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Intention"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -45,7 +46,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_qffvkf_a0a0a0a0a1a0b0a1a2;
+            return breakingNode_qffvkf_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -58,7 +59,7 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
                 }
 
                 SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), false, false);
-                return !(check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(menu), intentionConcept));
+                return !(check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0d(check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a3(menu), intentionConcept));
               }
             };
           }
@@ -67,17 +68,17 @@ public class TransformationMenuPart_Intention_Constraints extends BaseConstraint
     });
     return references;
   }
-  private static boolean check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode intentionConcept) {
+  private static boolean check_qffvkf_a0e0a0a0a0a0b0a0a0b0a1a0b0d(SNode checkedDotOperand, SNode intentionConcept) {
     if (null != checkedDotOperand) {
       return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(checkedDotOperand, intentionConcept);
     }
     return false;
   }
-  private static SNode check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
+  private static SNode check_qffvkf_a0a4a0a0a0a0a1a0a0a1a0b0a1a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }
     return null;
   }
-  private static SNodePointer breakingNode_qffvkf_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "4736696158596338905");
+  private static SNodePointer breakingNode_qffvkf_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "4736696158596338905");
 }

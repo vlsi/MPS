@@ -15,16 +15,19 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.DynamicReference;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.ConceptRegistryUtil;
-import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.ISearchScope.Adapter;
 import jetbrains.mps.smodel.search.ISearchScope.RefAdapter;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -33,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -64,110 +68,125 @@ public abstract class ReferenceDescriptor {
   @Nullable
   abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor);
 
-  @Nullable
   /**
    * @deprecated this class shall not expose its implementation detail, otherwise there's no point in its presence.
    * refactor the single use and remove this method, it's our internal api.
    * Perhaps, we need a distinct validator object?
    */
-  @ToRemove(version = 0)
+  @Nullable
   @Deprecated
-  abstract public ReferenceScopeProvider getScopeProvider();
+  @ToRemove(version = 3.5)
+  public ReferenceScopeProvider getScopeProvider() {
+    return null;
+  }
 
   static class OkReferenceDescriptor extends ReferenceDescriptor {
     // main parameters for ScopeProvider calculating
-    private final SConcept sourceNodeConcept;
-    private final String genuineRole;
+    @NotNull
+    private final SAbstractConcept myNodeConcept;
+    @NotNull
+    private final SReferenceLink myReferenceLink;
 
-    // parameters from scope concept method
-    // model: from contextNode
-    private final boolean exists;
-    // contextNode: from enclosingNode and referenceNode
-    private final String contextRole;
-    private final int position;
-    // scope: from module of model
-    private final SNode referenceNode;
-    private final SNode linkTarget;
-    private final SNode enclosingNode;
-    private final SNode containingLink;
+    private final SReference myReference;
+    private final SNode myReferenceNode;
 
-    // other parameters
-    @Nullable
-    private final SReference reference; // for old reference resolver
+    // parameters that used for describing context when myReferenceNode is null
+    @NotNull
+    private final SNode myContextNode;
+    private final SContainmentLink myContainmentLink;
+    private final int myPosition;
+
+    //for specialized links
+    @NotNull
+    private final SAbstractConcept myLinkTarget;
 
     // calculated scope provider
     @Nullable
-    private final ReferenceScopeProvider scopeProvider;
+    private final ReferenceScopeProvider myScopeProvider;
 
-    OkReferenceDescriptor(
-        SConcept sourceNodeConcept, String genuineRole,
-        boolean exists, String contextRole, int position, SNode referenceNode, SNode linkTarget, SNode enclosingNode, SNode containingLink,
-        @Nullable SReference reference
-    ) {
-      this.sourceNodeConcept = sourceNodeConcept;
-      this.genuineRole = genuineRole;
+    OkReferenceDescriptor(@NotNull SAbstractConcept nodeConcept, @NotNull SReferenceLink referenceLink, @NotNull SNode contextNode,
+        /*TODO should be @NotNull*/ @Nullable SContainmentLink containmentLink, int position) {
+      myReference = null;
+      myReferenceNode = null;
+      myNodeConcept = nodeConcept;
+      myReferenceLink = referenceLink;
+      myContextNode = contextNode;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
+      myContainmentLink = containmentLink;
+      myPosition = position;
+      myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
+    }
 
-      this.exists = exists;
-      this.contextRole = contextRole;
-      this.position = position;
-      this.referenceNode = referenceNode;
-      this.linkTarget = linkTarget;
-      this.enclosingNode = enclosingNode;
-      this.containingLink = containingLink;
+    OkReferenceDescriptor(@NotNull SReferenceLink referenceLink, @NotNull SNode referenceNode) {
+      myReference = null;
+      myReferenceNode = referenceNode;
+      myNodeConcept = myReferenceNode.getConcept();
+      myReferenceLink = referenceLink;
+      myContextNode = myReferenceNode;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
+      myContainmentLink = null;
+      myPosition = 0;
+      myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
+    }
 
-      this.reference = reference;
-
-      scopeProvider = getScopeProvider(sourceNodeConcept, genuineRole);
+    OkReferenceDescriptor(@NotNull SReference reference) {
+      myReference = reference;
+      myReferenceNode = myReference.getSourceNode();
+      myNodeConcept = myReferenceNode.getConcept();
+      myReferenceLink = myReference.getLink();
+      myContextNode = myReferenceNode;
+      myLinkTarget = getLinkTarget(myReferenceLink, myNodeConcept);
+      myContainmentLink = null;
+      myPosition = 0;
+      myScopeProvider = getScopeProvider(myNodeConcept, myReferenceLink);
     }
 
     @Override
     @NotNull
     public Scope getScope() {
-      final ReferentConstraintContext context =
-          new ReferentConstraintContext(getModel(), exists, getContextNode(), contextRole, position, enclosingNode, referenceNode, linkTarget, containingLink);
+      final ReferentConstraintsContextImpl context =
+          new ReferentConstraintsContextImpl(myContextNode, myContainmentLink, myPosition, myReferenceNode, myReference != null, myLinkTarget);
 
       try {
-        if (scopeProvider != null) {
-          Scope searchScope = scopeProvider.createScope(getOperationContext(getModule()), context);
+        if (myScopeProvider != null) {
+          Scope searchScope = myScopeProvider.createScope(getOperationContext(getModule()), context);
           if (searchScope != null) {
-            if (reference != null && searchScope instanceof Adapter) {
-              return new RefAdapter(((Adapter) searchScope).getSearchScope(), reference);
+            if (myReference != null && searchScope instanceof Adapter) {
+              return new RefAdapter(((Adapter) searchScope).getSearchScope(), myReference);
             }
             return searchScope;
           }
         }
         // global search scope
-        return new ModelPlusImportedScope(getModel(), false, MetaAdapterByDeclaration.getConcept(linkTarget));
+        return new ModelPlusImportedScope(getModel(), false, myLinkTarget);
       } catch (Exception t) {
-        LOG.error(t, getContextNode());
-        return new ErrorScope("can't create search scope for role `" + genuineRole + "' in '" + sourceNodeConcept.getName() + "'");
+        LOG.error(t, myContextNode);
+        return new ErrorScope("can't create search scope for link `" + myReferenceLink + "' in '" + myNodeConcept.getName() + "'");
       }
     }
 
     @Override
     @Nullable
     public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
-      if (scopeProvider == null || !scopeProvider.hasPresentation()) {
+      if (myScopeProvider == null || !myScopeProvider.hasPresentation()) {
         return null;
       }
 
-      return scopeProvider.getPresentation(
+      return myScopeProvider.getPresentation(
           getOperationContext(getModule()),
-          new PresentationReferentConstraintContext(getModel(), enclosingNode, referenceNode, linkTarget, targetNode, containingLink, visible, smartRef,
-              inEditor)
+          new PresentationReferentConstraintsContextImpl(myContextNode, myContainmentLink, myPosition, myReferenceNode, myReference != null, myLinkTarget,
+              targetNode, visible, smartRef, inEditor)
       );
     }
 
     @Override
     @Nullable
     public ReferenceScopeProvider getScopeProvider() {
-      return scopeProvider;
+      return myScopeProvider;
     }
 
     @Nullable
-    static ReferenceScopeProvider getScopeProvider(SConcept nodeConcept, String referentRole) {
-      SReferenceLink associationLink = ((ConceptMetaInfoConverter) nodeConcept).convertAssociation(referentRole);
-      // todo: should be private
+    private static ReferenceScopeProvider getScopeProvider(SAbstractConcept nodeConcept, SReferenceLink associationLink) {
       ReferenceConstraintsDescriptor refConstraintsDescriptor =
           ConceptRegistryUtil.getConstraintsDescriptor(nodeConcept).getReference(associationLink);
       if (refConstraintsDescriptor != null) {
@@ -180,13 +199,16 @@ public abstract class ReferenceDescriptor {
       return ConceptRegistryUtil.getConstraintsDescriptor(conceptForDefaultSearchScope).getDefaultScopeProvider();
     }
 
-    private SNode getContextNode() {
-      return referenceNode != null ? referenceNode : enclosingNode;
+    private static SAbstractConcept getLinkTarget(@NotNull SReferenceLink genuineLink, @NotNull SAbstractConcept concreteConcept) {
+      // TODO for now, link target is calculated using language sources.
+      //      it will be possible to do it without sources when information about link specialization will be generated.
+      SNode conceptDeclaration = concreteConcept.getDeclarationNode();
+      SNode linkDeclaration = new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(genuineLink.getName());
+      return MetaAdapterByDeclaration.getConcept(SModelUtil.getLinkDeclarationTarget(linkDeclaration));
     }
 
     private SModel getModel() {
-      SNode contextNode = getContextNode();
-      return contextNode != null ? contextNode.getModel() : null;
+      return myContextNode.getModel();
     }
 
     private SModule getModule() {

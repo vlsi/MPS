@@ -27,6 +27,7 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
     super(MetaAdapterFactory.getConcept(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3b2f5e7b070d317cL, "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,7 +47,7 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_8aolto_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_8aolto_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
@@ -59,5 +60,5 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
     }
     return null;
   }
-  private static SNodePointer breakingNode_8aolto_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
+  private static SNodePointer breakingNode_8aolto_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
 }

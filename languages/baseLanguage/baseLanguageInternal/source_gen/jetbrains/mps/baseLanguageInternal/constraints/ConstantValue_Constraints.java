@@ -35,6 +35,7 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x16007da97856bd8aL, "jetbrains.mps.baseLanguageInternal.structure.ConstantValue"));
   }
 
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -81,12 +82,12 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a3;
+            return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a4;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
+  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a4 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
 }

@@ -32,6 +32,7 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -65,7 +66,7 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_u5rckp_a0a2a0a0a1a0b0a1a2;
+            return breakingNode_u5rckp_a0a2a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -82,5 +83,5 @@ public class BuildSource_JavaExternalJarRef_Constraints extends BaseConstraintsD
     });
     return references;
   }
-  private static SNodePointer breakingNode_u5rckp_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014309456");
+  private static SNodePointer breakingNode_u5rckp_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "5610619299014309456");
 }

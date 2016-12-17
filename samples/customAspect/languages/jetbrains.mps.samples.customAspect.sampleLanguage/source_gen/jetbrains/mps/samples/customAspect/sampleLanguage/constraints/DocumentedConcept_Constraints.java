@@ -17,6 +17,7 @@ public class DocumentedConcept_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x4ac0b19e3e884e61L, 0xbab3507ba2cceae8L, 0x28360eb22c3ac6f9L, "jetbrains.mps.samples.customAspect.sampleLanguage.structure.DocumentedConcept"));
   }
 
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

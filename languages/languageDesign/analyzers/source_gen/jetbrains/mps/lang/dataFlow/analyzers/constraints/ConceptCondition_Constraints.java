@@ -10,4 +10,5 @@ public class ConceptCondition_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x449938e788e9b9deL, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"));
   }
 
+
 }

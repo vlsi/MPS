@@ -34,6 +34,7 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x15e2150d4bff8a67L, "jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator"));
   }
 
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -69,12 +70,12 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_rduypo_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_rduypo_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
+  private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
 }

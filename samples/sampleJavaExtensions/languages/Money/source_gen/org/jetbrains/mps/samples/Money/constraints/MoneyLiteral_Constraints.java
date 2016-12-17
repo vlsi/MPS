@@ -10,4 +10,5 @@ public class MoneyLiteral_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x662a9f2b58024d16L, 0x955872c65c7a681eL, 0x4b9a2fe559135132L, "org.jetbrains.mps.samples.Money.structure.MoneyLiteral"));
   }
 
+
 }

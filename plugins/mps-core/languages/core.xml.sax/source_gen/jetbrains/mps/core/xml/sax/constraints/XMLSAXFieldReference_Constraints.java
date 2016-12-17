@@ -27,6 +27,7 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
     super(MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2e0L, "jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -49,12 +50,12 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ar46fh_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_ar46fh_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_ar46fh_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140741");
+  private static SNodePointer breakingNode_ar46fh_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140741");
 }

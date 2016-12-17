@@ -30,6 +30,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
     super(MetaAdapterFactory.getConcept(0x272d3b44cc8481eL, 0x9e2f07793fbfcb41L, 0x1f44bcab4ea21b62L, "jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable"));
   }
 
+
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -52,7 +53,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a2;
+            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
@@ -76,7 +77,7 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a2;
+            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a3;
           }
         };
       }
@@ -103,14 +104,14 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a2;
+            return breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a3;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941639");
-  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a2 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941680");
-  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a2 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544946224");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941639");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a3 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941680");
+  private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a3 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544946224");
 }

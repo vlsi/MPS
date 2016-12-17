@@ -10,4 +10,5 @@ public class PortProvider_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x6f2759b713980586L, "jetbrains.mps.ide.httpsupport.structure.PortProvider"));
   }
 
+
 }

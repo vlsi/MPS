@@ -31,6 +31,7 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x10dc7f1f421L, "jetbrains.mps.lang.actions.structure.NodeFactory"));
   }
 
+
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -68,12 +69,12 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_i503fz_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_i503fz_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_i503fz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
+  private static SNodePointer breakingNode_i503fz_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
 }

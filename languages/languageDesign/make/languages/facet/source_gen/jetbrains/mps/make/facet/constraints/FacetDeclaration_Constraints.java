@@ -34,5 +34,6 @@ public class FacetDeclaration_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
+
   private static SNodePointer breakingNode_dgpkt9_a0a0a0a0a3 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "6311899720715927837");
 }

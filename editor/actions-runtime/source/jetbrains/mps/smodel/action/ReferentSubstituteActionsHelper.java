@@ -37,18 +37,14 @@ import java.util.List;
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration) {
     // search scope
-    SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(linkDeclaration);
+    // ModelConstraints works with valid links that should be taken from genuine link declaration
+    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
+    SReferenceLink association = MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
     ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, association);
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
       return Collections.emptyList();
-    }
-    // XXX not quite sure this is the right approach, to take specialized link, if any, use its scope, and then find genuine link
-    // but this is most close to the original code.
-    final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    if (linkDeclaration != genuineLinkDeclaration) {
-      association = MetaAdapterByDeclaration.getReferenceLink(genuineLinkDeclaration);
     }
     return createActions(referenceNode, currentReferent, association, refDescriptor);
   }

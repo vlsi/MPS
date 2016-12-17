@@ -10,4 +10,5 @@ public class TargetReferenceExpression_Constraints extends BaseConstraintsDescri
     super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x78c916bd7aecaff7L, "jetbrains.mps.make.facet.structure.TargetReferenceExpression"));
   }
 
+
 }

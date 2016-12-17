@@ -15,52 +15,52 @@
   <root nodeRef="r:de912216-b4aa-4118-a243-c861c965b4d9(jetbrains.mps.lang.editor.forms.constraints)/7569401714696478829">
     <file name="CellModel_Checkbox_Constraints.java">
       <node id="7569401714696478829" at="30,43,31,167" concept="6" />
-      <node id="7569401714696478829" at="35,90,36,131" concept="3" />
-      <node id="7569401714696478829" at="39,44,40,20" concept="4" />
-      <node id="1213104846629" at="47,142,48,257" concept="3" />
-      <node id="1213104846638" at="48,257,49,132" concept="3" />
-      <node id="7569401714696498723" at="51,47,52,258" concept="4" />
-      <node id="7569401714696478829" at="57,63,58,58" concept="4" />
-      <node id="7569401714696478829" at="62,7,63,22" concept="4" />
-      <node id="7569401714696478829" at="65,0,66,0" concept="5" trace="breakingNode_glszdl_a0a1a0a0a1a0b0a1a2" />
+      <node id="7569401714696478829" at="36,90,37,131" concept="3" />
+      <node id="7569401714696478829" at="40,44,41,20" concept="4" />
+      <node id="1213104846629" at="48,142,49,257" concept="3" />
+      <node id="1213104846638" at="49,257,50,132" concept="3" />
+      <node id="7569401714696498723" at="52,47,53,258" concept="4" />
+      <node id="7569401714696478829" at="58,63,59,58" concept="4" />
+      <node id="7569401714696478829" at="63,7,64,22" concept="4" />
+      <node id="7569401714696478829" at="66,0,67,0" concept="5" trace="breakingNode_glszdl_a0a1a0a0a1a0b0a1a3" />
       <node id="7569401714696478829" at="30,0,33,0" concept="0" trace="CellModel_Checkbox_Constraints#()V" />
-      <node id="7569401714696498260" at="51,0,54,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7569401714696478829" at="38,0,42,0" concept="2" trace="hasOwnScopeProvider#()Z" />
-      <node id="7569401714696478829" at="56,0,60,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-      <node id="1213104846644" at="49,132,54,15" concept="4" />
-      <node id="7569401714696478829" at="46,0,56,0" concept="2" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-      <node id="7569401714696478829" at="44,56,60,10" concept="4" />
-      <node id="7569401714696478829" at="42,0,62,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-      <node id="7569401714696478829" at="36,131,62,7" concept="1" />
-      <node id="7569401714696478829" at="34,0,65,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
+      <node id="7569401714696498260" at="52,0,55,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7569401714696478829" at="39,0,43,0" concept="2" trace="hasOwnScopeProvider#()Z" />
+      <node id="7569401714696478829" at="57,0,61,0" concept="2" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1213104846644" at="50,132,55,15" concept="4" />
+      <node id="7569401714696478829" at="47,0,57,0" concept="2" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="7569401714696478829" at="45,56,61,10" concept="4" />
+      <node id="7569401714696478829" at="43,0,63,0" concept="2" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="7569401714696478829" at="37,131,63,7" concept="1" />
+      <node id="7569401714696478829" at="35,0,66,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="7569401714696478829" at="30,43,31,167" />
-      <scope id="7569401714696478829" at="39,44,40,20" />
-      <scope id="7569401714696498261" at="51,47,52,258" />
-      <scope id="7569401714696478829" at="57,63,58,58" />
+      <scope id="7569401714696478829" at="40,44,41,20" />
+      <scope id="7569401714696498261" at="52,47,53,258" />
+      <scope id="7569401714696478829" at="58,63,59,58" />
       <scope id="7569401714696478829" at="30,0,33,0" />
-      <scope id="7569401714696498260" at="51,0,54,0">
+      <scope id="7569401714696498260" at="52,0,55,0">
         <var name="it" id="7569401714696498260" />
       </scope>
-      <scope id="7569401714696478829" at="38,0,42,0" />
-      <scope id="7569401714696478829" at="56,0,60,0" />
-      <scope id="7569401714696485318" at="47,142,54,15">
+      <scope id="7569401714696478829" at="39,0,43,0" />
+      <scope id="7569401714696478829" at="57,0,61,0" />
+      <scope id="7569401714696485318" at="48,142,55,15">
         <var name="editedConcept" id="1213104846639" />
         <var name="editorComponent" id="1213104846630" />
       </scope>
-      <scope id="7569401714696478829" at="46,0,56,0">
+      <scope id="7569401714696478829" at="47,0,57,0">
         <var name="_context" id="7569401714696478829" />
         <var name="operationContext" id="7569401714696478829" />
       </scope>
-      <scope id="7569401714696478829" at="44,56,60,10" />
-      <scope id="7569401714696478829" at="42,0,62,0" />
-      <scope id="7569401714696478829" at="35,90,63,22">
+      <scope id="7569401714696478829" at="45,56,61,10" />
+      <scope id="7569401714696478829" at="43,0,63,0" />
+      <scope id="7569401714696478829" at="36,90,64,22">
         <var name="references" id="7569401714696478829" />
       </scope>
-      <scope id="7569401714696478829" at="34,0,65,0" />
-      <unit id="7569401714696498260" at="50,155,54,13" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1$1$1" />
-      <unit id="7569401714696478829" at="45,19,60,9" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1$1" />
-      <unit id="7569401714696478829" at="37,166,62,5" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1" />
-      <unit id="7569401714696478829" at="29,0,67,0" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints" />
+      <scope id="7569401714696478829" at="35,0,66,0" />
+      <unit id="7569401714696498260" at="51,155,55,13" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1$1$1" />
+      <unit id="7569401714696478829" at="46,19,61,9" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1$1" />
+      <unit id="7569401714696478829" at="38,166,63,5" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints$1" />
+      <unit id="7569401714696478829" at="29,0,68,0" name="jetbrains.mps.lang.editor.forms.constraints.CellModel_Checkbox_Constraints" />
     </file>
   </root>
 </debug-info>

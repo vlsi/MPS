@@ -15,19 +15,25 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
 
-public class PresentationReferentConstraintContext extends ReferentConstraintContext implements ReferencePresentationContext {
+public class PresentationReferentConstraintsContextImpl extends ReferentConstraintsContextImpl implements ReferencePresentationContext {
   private SNode myParameterNode;
   private boolean myVisible;
   private boolean mySmartReference;
   private boolean myInEditor;
 
-  public PresentationReferentConstraintContext(SModel model, SNode enclosingNode,
-                                               SNode referenceNode, SNode linkTarget, SNode parameterNode, SNode containingLink, boolean visible, boolean smartRef, boolean inEditor) {
-    super(model, enclosingNode, referenceNode, linkTarget, containingLink);
+  public PresentationReferentConstraintsContextImpl(@NotNull SNode contextNode, @Nullable SContainmentLink containmentLink, int position,
+      @Nullable SNode referenceNode, boolean exists, @NotNull SAbstractConcept targetConcept, SNode parameterNode, boolean visible, boolean smartRef,
+      boolean inEditor) {
+    super(contextNode, containmentLink, position, referenceNode, exists, targetConcept);
     myParameterNode = parameterNode;
     myVisible = visible;
     mySmartReference = smartRef;

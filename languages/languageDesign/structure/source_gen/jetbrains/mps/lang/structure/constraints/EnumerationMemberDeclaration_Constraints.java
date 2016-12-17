@@ -10,4 +10,5 @@ public class EnumerationMemberDeclaration_Constraints extends BaseConstraintsDes
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration"));
   }
 
+
 }

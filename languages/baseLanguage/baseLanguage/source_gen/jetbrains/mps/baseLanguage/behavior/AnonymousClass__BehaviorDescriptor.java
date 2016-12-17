@@ -146,7 +146,7 @@ public final class AnonymousClass__BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
-    if (ScopeUtils.comeFrom("actualArgument", __thisNode__, child)) {
+    if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), __thisNode__, child)) {
       return ScopeUtils.lazyParentScope(__thisNode__, kind);
     }
     return ((Scope) ClassConcept__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child));
