@@ -8,8 +8,6 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import jetbrains.mps.project.Project;
 import javax.swing.JComponent;
 import com.intellij.ui.components.JBRadioButton;
-import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.annotations.NotNull;
 import java.awt.GridBagLayout;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -31,6 +29,8 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.lib.ClonableList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.execution.lib.PointerUtils;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class JUnitConfigurationEditorComponent extends JBPanel {
   private final InProcessJBCheckBox myInProcessCheckBox = new InProcessJBCheckBox("Execute in the same process ", true);
@@ -46,8 +46,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   private final JBRadioButton[] myButtons = new JBRadioButton[JUnitRunTypes.values().length];
 
   private JUnitRunTypes myRunKind = JUnitRunTypes.PROJECT;
-  private SModule myModule;
-  private SModel myModel;
 
   public JUnitConfigurationEditorComponent(@NotNull com.intellij.openapi.project.Project project) {
     super(new GridBagLayout());
@@ -122,21 +120,11 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     JBPanel modulePanel = new JBPanel(new GridBagLayout());
     modulePanel.add(new JBLabel("Module:"), LayoutUtil.createLabelConstraints(0));
     myModuleChooser = new ModuleChooser(myProject);
-    myModuleChooser.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        setModuleValue(myModuleChooser.getText());
-      }
-    });
     modulePanel.add(myModuleChooser, LayoutUtil.createPanelConstraints(1));
 
     JBPanel modelPanel = new JBPanel(new GridBagLayout());
     modelPanel.add(new JBLabel("Model:"), LayoutUtil.createLabelConstraints(0));
     myModelChooser = new ModelChooser(myProject);
-    myModelChooser.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        setModelValue(myModelChooser.getText());
-      }
-    });
     modelPanel.add(myModelChooser, LayoutUtil.createPanelConstraints(1));
 
     myClassesList = new TestListPanel(project, false);
@@ -160,22 +148,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     add(myInProcessCheckBox, LayoutUtil.createFieldConstraints(2));
     add(myReuseCachesCheckBox, LayoutUtil.createFieldConstraints(3));
     add(saveCachesPanel, LayoutUtil.createPanelConstraints(4));
-  }
-
-  private void setModuleValue(final String moduleName) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        myModule = TestUtils.getModule(myProject, moduleName);
-      }
-    });
-  }
-
-  private void setModelValue(final String modelName) {
-    myProject.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        myModel = TestUtils.getModel(myProject, modelName);
-      }
-    });
   }
 
   public void attachJavaComponent(final JavaConfigurationEditorComponent javaEditorComponent) {
@@ -204,7 +176,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     final Wrappers._T<String> model = new Wrappers._T<String>();
     final Wrappers._T<String> module = new Wrappers._T<String>();
 
-    // we have to do all processing in read action 
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testMethod : methods) {
@@ -215,11 +186,13 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
           testCases.add(PointerUtils.pointerToString(testCase.getNodePointer()));
         }
 
-        if (myModel != null) {
-          model.value = myModel.getModelName();
+        SModelReference modelRef = myModelChooser.getReference();
+        if (modelRef != null) {
+          model.value = modelRef.getName().getValue();
         }
-        if (myModule != null) {
-          module.value = myModule.getModuleName();
+        SModuleReference moduleRef = myModuleChooser.getReference();
+        if (moduleRef != null) {
+          module.value = moduleRef.getModuleName();
         }
       }
     });
@@ -269,30 +242,13 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
     myMethodsList.setData(methods);
 
-    // models 
     if (settings.getModel() != null) {
-      resetEditorModelWith(settings.getModel());
-    } else {
-      // if model is null, it is convenient to take model from the first node 
-      final Wrappers._T<ITestNodeWrapper> wrapperToTakeModelFrom = new Wrappers._T<ITestNodeWrapper>(null);
-      if (ListSequence.fromList(myClassesList.getItems()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.fromList(myClassesList.getItems()).first();
-      } else if (ListSequence.fromList(myMethodsList.getItems()).isNotEmpty()) {
-        wrapperToTakeModelFrom.value = ListSequence.fromList(myMethodsList.getItems()).first();
-      }
-      if (wrapperToTakeModelFrom.value != null) {
-        myProject.getModelAccess().runReadAction(new Runnable() {
-          public void run() {
-            resetEditorModelWith(wrapperToTakeModelFrom.value.getNodePointer().getModelReference().getModelName());
-          }
-        });
-      }
+      String modelName = settings.getModel();
+      myModelChooser.setModel(modelName);
     }
 
-    // modules 
     if (settings.getModule() != null) {
-      setModuleValue(settings.getModule());
-      myModuleChooser.setText(settings.getModule());
+      myModuleChooser.setModule(settings.getModule());
     }
 
     updateCheckBoxes(settings);
@@ -306,19 +262,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     myInProcessCheckBox.update();
   }
 
-  public void resetEditorModelWith(final String modelName) {
-    setModelValue(modelName);
-    if (myModel != null && myModel.getModule() != null) {
-      myProject.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          myModelChooser.setText(modelName);
-          String moduleName = myModel.getModule().getModuleName();
-          setModuleValue(moduleName);
-          myModuleChooser.setText(moduleName);
-        }
-      });
-    }
-  }
 
   public void dispose() {
     myModuleChooser.dispose();

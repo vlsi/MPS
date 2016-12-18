@@ -184,7 +184,7 @@
                     <node concept="2OqwBi" id="5HAZRDA9XgU" role="2Oq$k0">
                       <node concept="EsrRn" id="5HAZRDA9XgV" role="2Oq$k0" />
                       <node concept="3TrEf2" id="5HAZRDA9XgW" role="2OqNvi">
-                        <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" />
+                        <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" resolve="runConfiguration" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="5HAZRDA9XgX" role="2OqNvi">
@@ -199,7 +199,7 @@
               <node concept="2OqwBi" id="5HAZRDA9Xh0" role="3uHU7B">
                 <node concept="EsrRn" id="5HAZRDA9Xh1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="5HAZRDA9Xh2" role="2OqNvi">
-                  <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" />
+                  <ref role="3Tt5mk" to="uhxm:Ue65ozt$TX" resolve="runConfiguration" />
                 </node>
               </node>
             </node>
@@ -357,7 +357,7 @@
     <property role="3GE5qa" value="before" />
     <ref role="1M2myG" to="uhxm:5FAUXTS7Xf0" resolve="BeforeTaskParameterReference" />
     <node concept="1N5Pfh" id="2ggmC1WsS0p" role="1Mr941">
-      <ref role="1N5Vy1" to="uhxm:5FAUXTS7Xf1" />
+      <ref role="1N5Vy1" to="uhxm:5FAUXTS7Xf1" resolve="parameterDeclaration" />
       <node concept="13QW63" id="2ggmC1WsS0s" role="1N6uqs">
         <node concept="3clFbS" id="2ggmC1WsS0t" role="2VODD2">
           <node concept="3cpWs6" id="2ggmC1WsS0u" role="3cqZAp">
@@ -428,7 +428,7 @@
                         <node concept="nLn13" id="4IJMzQ1z1Yz" role="1m5AlR" />
                       </node>
                       <node concept="3TrEf2" id="4IJMzQ1z1Y$" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                        <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                       </node>
                     </node>
                     <node concept="3JvlWi" id="6XbUjjjDaUx" role="2OqNvi" />
@@ -458,7 +458,7 @@
                     <ref role="3cqZAo" node="4IJMzQ1z1Yt" resolve="configurationType" />
                   </node>
                   <node concept="3TrEf2" id="4IJMzQ1z1Z7" role="2OqNvi">
-                    <ref role="3Tt5mk" to="fb9u:O$iR4J$g0t" />
+                    <ref role="3Tt5mk" to="fb9u:O$iR4J$g0t" resolve="persistentConfiguration" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="4IJMzQ1z1Zc" role="2OqNvi">
@@ -567,6 +567,27 @@
               </node>
             </node>
             <node concept="3x8VRR" id="6DDApQBql0v" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="1M2fIO" id="5aSLaYRTjAc">
+    <property role="3GE5qa" value="producer" />
+    <ref role="1M2myG" to="uhxm:4$cur0DKT1Q" resolve="IsConfigurationFromContext_ConceptFunction" />
+    <node concept="nKS2y" id="5aSLaYRTjAg" role="1MLUbF">
+      <node concept="3clFbS" id="5aSLaYRTjAh" role="2VODD2">
+        <node concept="3clFbF" id="5aSLaYRTjAo" role="3cqZAp">
+          <node concept="2OqwBi" id="5aSLaYRTken" role="3clFbG">
+            <node concept="2OqwBi" id="5aSLaYRTjLN" role="2Oq$k0">
+              <node concept="nLn13" id="5aSLaYRTjAn" role="2Oq$k0" />
+              <node concept="2Rxl7S" id="5aSLaYRTjYu" role="2OqNvi" />
+            </node>
+            <node concept="1mIQ4w" id="5aSLaYRTkrf" role="2OqNvi">
+              <node concept="chp4Y" id="5aSLaYRTkyB" role="cj9EA">
+                <ref role="cht4Q" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

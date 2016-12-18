@@ -16,6 +16,7 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
   public EvaluationDialog(@NotNull Project ideaProject, @NotNull EvaluationProvider provider, IEvaluationContainer container) {
     super(ideaProject, provider, container, "Evaluate");
   }
+
   @Override
   @NotNull
   protected Action[] createActions() {
@@ -37,6 +38,7 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
       }
     }};
   }
+
   @Nullable
   @NonNls
   @Override

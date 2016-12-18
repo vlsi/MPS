@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.workbench.dataExtraction.runConfig;
 
-import com.intellij.ide.DataManager;
 import com.intellij.ide.impl.dataRules.GetDataRule;
 import com.intellij.openapi.actionSystem.DataProvider;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.runconfigs.MPSLocation;

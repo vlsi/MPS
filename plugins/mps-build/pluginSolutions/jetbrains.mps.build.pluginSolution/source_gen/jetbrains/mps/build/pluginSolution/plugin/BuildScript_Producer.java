@@ -16,21 +16,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
 
 public class BuildScript_Producer {
-  private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory";
+  private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.build.pluginSolution.plugin.BuildScript_Configuration_Factory";
+
   public BuildScript_Producer() {
   }
+
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new BuildScript_Producer.ProducerPart_Node_3e34ca_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-  public static class ProducerPart_Node_3e34ca_a extends BaseMpsProducer<SNode> {
+
+  public static final class ProducerPart_Node_3e34ca_a extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_3e34ca_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
+
+    @Override
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
+
+    @Override
     protected BuildScript_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       SNode containingRoot = SNodeOperations.getContainingRoot(source);
@@ -45,6 +52,8 @@ public class BuildScript_Producer {
       }
       return null;
     }
+
+
     @Override
     public BuildScript_Producer.ProducerPart_Node_3e34ca_a clone() {
       return (BuildScript_Producer.ProducerPart_Node_3e34ca_a) super.clone();

@@ -16,10 +16,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.execution.lib.PointerUtils;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.annotations.Nls;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
@@ -106,21 +102,6 @@ __switch__:
     })).toListSequence();
   }
 
-  @Nullable
-  public static SModel getModel(Project mpsProject, @Nls String modelName) {
-    if ((modelName == null || modelName.length() == 0)) {
-      return null;
-    }
-    return new ModuleRepositoryFacade(mpsProject).getModelByName(modelName);
-  }
-
-  @Nullable
-  public static SModule getModule(Project mpsProject, @Nls String moduleName) {
-    if ((moduleName == null || moduleName.length() == 0)) {
-      return null;
-    }
-    return new ModuleRepositoryFacade(mpsProject).getModuleByName(moduleName);
-  }
   private static SNode check_6qi07j_a0a0a0a0a0b0a(SNodeReference checkedDotOperand, Project mpsProject) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(mpsProject.getRepository());

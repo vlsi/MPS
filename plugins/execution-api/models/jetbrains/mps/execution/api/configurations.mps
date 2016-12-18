@@ -260,16 +260,36 @@
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
+      <concept id="6832197706140518107" name="jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference" flags="ng" index="zr_56" />
+      <concept id="6832197706140518103" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference" flags="ng" index="zr_5a">
+        <reference id="6832197706140518108" name="param" index="zr_51" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
+        <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690881930" name="jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag" flags="ng" index="TUZQ0">
+        <property id="8465538089690881934" name="text" index="TUZQ4" />
+        <child id="6832197706140518123" name="parameter" index="zr_5Q" />
+      </concept>
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
       </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -1994,52 +2014,47 @@
           <node concept="3clFbS" id="224UGqZHsvi" role="2LFqv$">
             <node concept="3clFbJ" id="224UGqZHtdM" role="3cqZAp">
               <node concept="3clFbS" id="224UGqZHtdO" role="3clFbx">
-                <node concept="3cpWs6" id="224UGqZHvtE" role="3cqZAp">
-                  <node concept="37vLTw" id="224UGqZHvOQ" role="3cqZAk">
-                    <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
+                <node concept="3clFbJ" id="5BgI1pEBpoV" role="3cqZAp">
+                  <node concept="3clFbS" id="5BgI1pEBpoX" role="3clFbx">
+                    <node concept="3cpWs6" id="5BgI1pEBqiz" role="3cqZAp">
+                      <node concept="37vLTw" id="5BgI1pEBqpb" role="3cqZAk">
+                        <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="1rXfSq" id="5BgI1pEBpAa" role="3clFbw">
+                    <ref role="37wK5l" node="5BgI1pEBkMr" resolve="isConfigurationFromContext" />
+                    <node concept="2OqwBi" id="5BgI1pEBpXW" role="37wK5m">
+                      <node concept="37vLTw" id="5BgI1pEBpNQ" role="2Oq$k0">
+                        <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
+                      </node>
+                      <node concept="liA8E" id="5BgI1pEBq2J" role="2OqNvi">
+                        <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getConfiguration():com.intellij.execution.configurations.RunConfiguration" resolve="getConfiguration" />
+                      </node>
+                    </node>
+                    <node concept="37vLTw" id="5BgI1pEBq9r" role="37wK5m">
+                      <ref role="3cqZAo" node="224UGqZH_qd" resolve="context" />
+                    </node>
                   </node>
                 </node>
               </node>
-              <node concept="1Wc70l" id="224UGqZHux1" role="3clFbw">
-                <node concept="2OqwBi" id="224UGqZHuPl" role="3uHU7w">
-                  <node concept="2OqwBi" id="224UGqZHuJM" role="2Oq$k0">
-                    <node concept="37vLTw" id="224UGqZHuER" role="2Oq$k0">
-                      <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
-                    </node>
-                    <node concept="liA8E" id="224UGqZHuLA" role="2OqNvi">
-                      <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getName():java.lang.String" resolve="getName" />
-                    </node>
+              <node concept="2YIFZM" id="224UGqZHu0f" role="3clFbw">
+                <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
+                <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
+                <node concept="2OqwBi" id="224UGqZHuce" role="37wK5m">
+                  <node concept="37vLTw" id="224UGqZHu7U" role="2Oq$k0">
+                    <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
                   </node>
-                  <node concept="liA8E" id="224UGqZHuXi" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                    <node concept="2OqwBi" id="224UGqZHvcw" role="37wK5m">
-                      <node concept="37vLTw" id="224UGqZHv6y" role="2Oq$k0">
-                        <ref role="3cqZAo" node="224UGqZHs3$" resolve="given" />
-                      </node>
-                      <node concept="liA8E" id="224UGqZHveO" role="2OqNvi">
-                        <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getName():java.lang.String" resolve="getName" />
-                      </node>
-                    </node>
+                  <node concept="liA8E" id="224UGqZHue5" role="2OqNvi">
+                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
                   </node>
                 </node>
-                <node concept="2YIFZM" id="224UGqZHu0f" role="3uHU7B">
-                  <ref role="37wK5l" to="18ew:~EqualUtil.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
-                  <ref role="1Pybhc" to="18ew:~EqualUtil" resolve="EqualUtil" />
-                  <node concept="2OqwBi" id="224UGqZHuce" role="37wK5m">
-                    <node concept="37vLTw" id="224UGqZHu7U" role="2Oq$k0">
-                      <ref role="3cqZAo" node="224UGqZHsvj" resolve="existing" />
-                    </node>
-                    <node concept="liA8E" id="224UGqZHue5" role="2OqNvi">
-                      <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
-                    </node>
+                <node concept="2OqwBi" id="224UGqZHusv" role="37wK5m">
+                  <node concept="37vLTw" id="224UGqZHunN" role="2Oq$k0">
+                    <ref role="3cqZAo" node="224UGqZHs3$" resolve="given" />
                   </node>
-                  <node concept="2OqwBi" id="224UGqZHusv" role="37wK5m">
-                    <node concept="37vLTw" id="224UGqZHunN" role="2Oq$k0">
-                      <ref role="3cqZAo" node="224UGqZHs3$" resolve="given" />
-                    </node>
-                    <node concept="liA8E" id="224UGqZHuuG" role="2OqNvi">
-                      <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
-                    </node>
+                  <node concept="liA8E" id="224UGqZHuuG" role="2OqNvi">
+                    <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getType():com.intellij.execution.configurations.ConfigurationType" resolve="getType" />
                   </node>
                 </node>
               </node>
@@ -2127,6 +2142,102 @@
       </node>
     </node>
     <node concept="2tJIrI" id="224UGqZGQzz" role="jymVt" />
+    <node concept="3clFb_" id="5BgI1pEBkMr" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="isConfigurationFromContext" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5BgI1pEBkMu" role="3clF47">
+        <node concept="3cpWs8" id="7cw_F6odWOa" role="3cqZAp">
+          <node concept="3cpWsn" id="7cw_F6odWOb" role="3cpWs9">
+            <property role="TrG5h" value="given" />
+            <node concept="3uibUv" id="7cw_F6odWO9" role="1tU5fm">
+              <ref role="3uigEE" to="3v5a:~RunnerAndConfigurationSettings" resolve="RunnerAndConfigurationSettings" />
+            </node>
+            <node concept="1rXfSq" id="7cw_F6odWOc" role="33vP2m">
+              <ref role="37wK5l" to="uycu:~RuntimeConfigurationProducer.getConfiguration():com.intellij.execution.RunnerAndConfigurationSettings" resolve="getConfiguration" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5BgI1pEBleM" role="3cqZAp">
+          <node concept="2YIFZM" id="7cw_F6odUDr" role="3cqZAk">
+            <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
+            <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
+            <node concept="2OqwBi" id="7cw_F6odWuP" role="37wK5m">
+              <node concept="37vLTw" id="7cw_F6odV3H" role="2Oq$k0">
+                <ref role="3cqZAo" node="5BgI1pEBl0z" resolve="configuration" />
+              </node>
+              <node concept="liA8E" id="7cw_F6odW$7" role="2OqNvi">
+                <ref role="37wK5l" to="dj99:~RunProfile.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="7cw_F6odWIu" role="37wK5m">
+              <node concept="37vLTw" id="7cw_F6odWOd" role="2Oq$k0">
+                <ref role="3cqZAo" node="7cw_F6odWOb" resolve="given" />
+              </node>
+              <node concept="liA8E" id="7cw_F6odWMh" role="2OqNvi">
+                <ref role="37wK5l" to="3v5a:~RunnerAndConfigurationSettings.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tmbuc" id="5BgI1pEBkDl" role="1B3o_S" />
+      <node concept="10P_77" id="5BgI1pEBkMp" role="3clF45" />
+      <node concept="37vLTG" id="5BgI1pEBl0z" role="3clF46">
+        <property role="TrG5h" value="configuration" />
+        <node concept="3uibUv" id="5BgI1pEBl0y" role="1tU5fm">
+          <ref role="3uigEE" to="dj99:~RunConfiguration" resolve="RunConfiguration" />
+        </node>
+        <node concept="2AHcQZ" id="7cw_F6odS7W" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="5BgI1pEBl0B" role="3clF46">
+        <property role="TrG5h" value="context" />
+        <node concept="3uibUv" id="5BgI1pEBl3d" role="1tU5fm">
+          <ref role="3uigEE" to="feyl:~ConfigurationContext" resolve="ConfigurationContext" />
+        </node>
+        <node concept="2AHcQZ" id="7cw_F6odS81" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="5BgI1pEBls9" role="lGtFl">
+        <node concept="TZ5HA" id="5BgI1pEBlsa" role="TZ5H$">
+          <node concept="1dT_AC" id="5BgI1pEBlsb" role="1dT_Ay">
+            <property role="1dT_AB" value="Supposed to return whether the given location is created from the given context" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7cw_F6odXb0" role="TZ5H$">
+          <node concept="1dT_AC" id="7cw_F6odXb1" role="1dT_Ay">
+            <property role="1dT_AB" value="By default compares by names" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="7cw_F6odXbd" role="TZ5H$">
+          <node concept="1dT_AC" id="7cw_F6odXbe" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5BgI1pEBqpn" role="TZ5H$">
+          <node concept="1dT_AC" id="5BgI1pEBqpo" role="1dT_Ay">
+            <property role="1dT_AB" value="TODO keep it after migration to the " />
+          </node>
+          <node concept="1dT_AA" id="5BgI1pEBqpu" role="1dT_Ay">
+            <node concept="92FcH" id="5BgI1pEBqp$" role="qph3F">
+              <node concept="TZ5HA" id="5BgI1pEBqpA" role="2XjZqd" />
+              <node concept="VXe08" id="5BgI1pEB$Sl" role="92FcQ">
+                <ref role="VXe09" to="feyl:~RunConfigurationProducer" resolve="RunConfigurationProducer" />
+              </node>
+            </node>
+          </node>
+          <node concept="1dT_AC" id="5BgI1pEBqpt" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="5BgI1pEBllr" role="jymVt" />
     <node concept="3clFb_" id="7pREJKpbIhF" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="createConfigurationByElement" />
@@ -2823,6 +2934,35 @@
     </node>
     <node concept="3uibUv" id="7pREJKpbIlx" role="1zkMxy">
       <ref role="3uigEE" to="uycu:~RuntimeConfigurationProducer" resolve="RuntimeConfigurationProducer" />
+    </node>
+    <node concept="3UR2Jj" id="5BgI1pEBdgI" role="lGtFl">
+      <node concept="TUZQ0" id="5BgI1pEBdgL" role="3nqlJM">
+        <property role="TUZQ4" value="denotes the MpsPsiElement's item which is the 'key' of the subclassing producer" />
+        <node concept="zr_56" id="5BgI1pEBdgN" role="zr_5Q">
+          <ref role="zr_51" node="7pREJKpbIlw" resolve="T" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5BgI1pEBdhs" role="TZ5H$">
+        <node concept="1dT_AC" id="5BgI1pEBdht" role="1dT_Ay">
+          <property role="1dT_AB" value="Currently extends the deprecated RuntimeConfigurationProducer" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5BgI1pEBhte" role="TZ5H$">
+        <node concept="1dT_AC" id="5BgI1pEBhtf" role="1dT_Ay">
+          <property role="1dT_AB" value="To be migrated in 3.5 to the " />
+        </node>
+        <node concept="1dT_AA" id="5BgI1pEB_mc" role="1dT_Ay">
+          <node concept="92FcH" id="5BgI1pEB_mi" role="qph3F">
+            <node concept="TZ5HA" id="5BgI1pEB_mk" role="2XjZqd" />
+            <node concept="VXe08" id="5BgI1pEBJP3" role="92FcQ">
+              <ref role="VXe09" to="feyl:~RunConfigurationProducer" resolve="RunConfigurationProducer" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5BgI1pEB_mb" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
     </node>
   </node>
 </model>
