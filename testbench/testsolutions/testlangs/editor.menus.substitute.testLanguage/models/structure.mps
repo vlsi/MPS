@@ -160,6 +160,13 @@
       <property role="20lbJX" value="0..1" />
       <ref role="20lvS9" node="3yMlUTkQ5En" resolve="TestSubstituteChildToSpecialize" />
     </node>
+    <node concept="1TJgyj" id="6ENlkV9Ut3K" role="1TKVEi">
+      <property role="IQ2ns" value="7688582785734922480" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleChildToSpecializeWithPrimaryReplaceGroup" />
+      <property role="20lbJX" value="0..1" />
+      <ref role="20lvS9" node="3yMlUTkQ5En" resolve="TestSubstituteChildToSpecialize" />
+    </node>
     <node concept="1TJgyj" id="3oa4cxd_EW0" role="1TKVEi">
       <property role="IQ2ns" value="3893943280296439552" />
       <property role="20lmBu" value="aggregation" />
@@ -171,6 +178,13 @@
       <property role="IQ2ns" value="3021388189909835330" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="multipleChildToSpecializeInCustomEmptyCell" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="3yMlUTkQ5En" resolve="TestSubstituteChildToSpecialize" />
+    </node>
+    <node concept="1TJgyj" id="6ENlkV9Ut48" role="1TKVEi">
+      <property role="IQ2ns" value="7688582785734922504" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multipleChildToSpecializeWithPrimaryReplaceGroup" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="3yMlUTkQ5En" resolve="TestSubstituteChildToSpecialize" />
     </node>
@@ -431,6 +445,20 @@
       <property role="20kJfa" value="multipleSpecialChildInCustomEmptyCellWithCustomMenu" />
       <ref role="20lvS9" node="3yMlUTkQ5Eo" resolve="TestSubstituteSpecialChild" />
       <ref role="20ksaX" node="3oa4cxd_EW0" resolve="multipleChildToSpecializeInCustomEmptyCellWithCustomMenu" />
+    </node>
+    <node concept="1TJgyj" id="6ENlkV9Ut4x" role="1TKVEi">
+      <property role="IQ2ns" value="7688582785734922529" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="singleSpecialChildWithPrimaryReplaceGroup" />
+      <ref role="20ksaX" node="6ENlkV9Ut3K" resolve="singleChildToSpecializeWithPrimaryReplaceGroup" />
+      <ref role="20lvS9" node="3yMlUTkQ5Eo" resolve="TestSubstituteSpecialChild" />
+    </node>
+    <node concept="1TJgyj" id="6ENlkV9Ut4F" role="1TKVEi">
+      <property role="IQ2ns" value="7688582785734922539" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="multipleSpecialChildWithPrimaryReplaceGroup" />
+      <ref role="20lvS9" node="3yMlUTkQ5Eo" resolve="TestSubstituteSpecialChild" />
+      <ref role="20ksaX" node="6ENlkV9Ut48" resolve="multipleChildToSpecializeWithPrimaryReplaceGroup" />
     </node>
   </node>
   <node concept="1TIwiD" id="7XjOxAidyWy">

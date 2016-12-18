@@ -48,7 +48,8 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
     SNode linkDeclaration = (SNode) cellContext.get(AggregationCellContext.LINK_DECLARATION);
     final String role = CellUtil.getLinkDeclarationRole(linkDeclaration);
     SNode currentChild = (SNode) cellContext.getOpt(AggregationCellContext.CURRENT_CHILD_NODE);
-    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(SModelUtil.getLinkDeclarationTarget(linkDeclaration), editorContext.getRepository())) {
+    final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+    if (OldNewSubstituteUtil.areOldActionsApplicableToConcept(linkDeclarationTarget, editorContext.getRepository())) {
       return ModelActions.createChildNodeSubstituteActions(
           parentNode,
           currentChild,
@@ -66,8 +67,7 @@ public class PrimaryReplaceChildMenuCellMenuPart implements SubstituteInfoPartEx
           },
           editorContext.getOperationContext());
     } else {
-      SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(linkDeclaration);
-      final SNode linkDeclarationTarget = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
+      SContainmentLink containmentLink = MetaAdapterByDeclaration.getContainmentLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
       List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, containmentLink, MetaAdapterByDeclaration.getConcept(linkDeclarationTarget), editorContext, null).collect();
       return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
     }
