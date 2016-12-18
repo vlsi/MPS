@@ -76,7 +76,6 @@ public class GenerationContextOp_DirtyNode_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

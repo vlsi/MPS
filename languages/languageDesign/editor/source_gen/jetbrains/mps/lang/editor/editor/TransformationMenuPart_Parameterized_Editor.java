@@ -95,7 +95,6 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -170,7 +169,6 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -255,7 +253,6 @@ public class TransformationMenuPart_Parameterized_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

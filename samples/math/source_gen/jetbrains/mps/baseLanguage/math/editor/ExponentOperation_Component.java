@@ -86,7 +86,6 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

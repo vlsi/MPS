@@ -73,7 +73,6 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

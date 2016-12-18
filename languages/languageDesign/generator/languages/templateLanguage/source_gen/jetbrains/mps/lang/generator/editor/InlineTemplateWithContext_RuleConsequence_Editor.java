@@ -66,7 +66,6 @@ public class InlineTemplateWithContext_RuleConsequence_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

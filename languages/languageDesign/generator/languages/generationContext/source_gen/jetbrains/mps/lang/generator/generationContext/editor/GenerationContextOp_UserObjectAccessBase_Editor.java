@@ -89,7 +89,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -85,7 +85,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -157,7 +156,6 @@ public class SingletonSequenceCreator_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

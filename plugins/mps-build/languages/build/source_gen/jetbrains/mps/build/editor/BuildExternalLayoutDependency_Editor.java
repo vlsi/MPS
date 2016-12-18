@@ -147,7 +147,6 @@ public class BuildExternalLayoutDependency_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -88,7 +88,6 @@ public class ElementListContents_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

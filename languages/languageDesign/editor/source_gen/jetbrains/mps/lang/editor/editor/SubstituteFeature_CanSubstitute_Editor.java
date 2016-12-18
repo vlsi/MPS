@@ -56,7 +56,6 @@ public class SubstituteFeature_CanSubstitute_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

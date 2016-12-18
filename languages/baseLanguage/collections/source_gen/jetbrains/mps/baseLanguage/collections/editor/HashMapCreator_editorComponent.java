@@ -142,7 +142,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -203,7 +202,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -267,7 +265,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -349,7 +346,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

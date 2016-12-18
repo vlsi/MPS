@@ -138,7 +138,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -223,7 +222,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

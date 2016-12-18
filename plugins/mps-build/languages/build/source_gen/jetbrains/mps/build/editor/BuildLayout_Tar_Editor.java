@@ -89,7 +89,6 @@ public class BuildLayout_Tar_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

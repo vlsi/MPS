@@ -70,7 +70,6 @@ public class TransformationMenu_Sections_Component implements ConceptEditorCompo
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

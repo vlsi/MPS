@@ -171,7 +171,6 @@ public class Reduction_MappingRule_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

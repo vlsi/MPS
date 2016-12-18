@@ -117,7 +117,6 @@ public class QueryExpression_EditorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

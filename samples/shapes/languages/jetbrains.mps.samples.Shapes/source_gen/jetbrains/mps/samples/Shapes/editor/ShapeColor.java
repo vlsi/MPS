@@ -65,7 +65,6 @@ public class ShapeColor implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -77,7 +77,6 @@ public class NList_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

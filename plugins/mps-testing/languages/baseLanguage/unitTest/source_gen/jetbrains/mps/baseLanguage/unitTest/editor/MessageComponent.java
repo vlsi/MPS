@@ -76,7 +76,6 @@ public class MessageComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

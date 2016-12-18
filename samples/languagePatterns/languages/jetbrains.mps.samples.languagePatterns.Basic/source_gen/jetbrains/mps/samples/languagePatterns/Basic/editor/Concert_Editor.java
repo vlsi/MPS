@@ -108,7 +108,6 @@ public class Concert_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -185,7 +184,6 @@ public class Concert_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

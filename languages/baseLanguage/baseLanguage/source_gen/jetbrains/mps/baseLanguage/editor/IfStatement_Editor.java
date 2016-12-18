@@ -135,7 +135,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -240,7 +239,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -309,7 +307,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -407,7 +404,6 @@ public class IfStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

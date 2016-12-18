@@ -105,7 +105,6 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -163,7 +162,6 @@ public class CellModel_DiagramConnector_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -57,7 +57,6 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

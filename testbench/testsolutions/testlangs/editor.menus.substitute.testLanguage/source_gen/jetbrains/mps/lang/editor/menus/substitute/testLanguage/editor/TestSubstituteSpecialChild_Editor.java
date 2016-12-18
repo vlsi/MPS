@@ -70,7 +70,6 @@ public class TestSubstituteSpecialChild_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

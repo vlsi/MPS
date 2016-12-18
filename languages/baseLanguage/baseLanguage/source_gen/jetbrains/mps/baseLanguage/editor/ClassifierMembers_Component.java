@@ -76,7 +76,6 @@ public class ClassifierMembers_Component implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

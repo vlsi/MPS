@@ -65,7 +65,6 @@ public class BuildMps_ModuleModelRoot_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

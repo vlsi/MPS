@@ -96,7 +96,6 @@ public class ModificationsEditor implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

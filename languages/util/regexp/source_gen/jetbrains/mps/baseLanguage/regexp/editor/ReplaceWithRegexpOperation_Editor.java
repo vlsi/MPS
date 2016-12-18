@@ -70,7 +70,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -145,7 +144,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

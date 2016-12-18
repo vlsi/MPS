@@ -116,7 +116,6 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Editor extends Default
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

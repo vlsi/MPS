@@ -140,7 +140,6 @@ public class DefaultClassifierMethodCallOperation_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

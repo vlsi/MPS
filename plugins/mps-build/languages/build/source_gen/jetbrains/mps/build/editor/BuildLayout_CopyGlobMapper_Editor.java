@@ -119,7 +119,6 @@ public class BuildLayout_CopyGlobMapper_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

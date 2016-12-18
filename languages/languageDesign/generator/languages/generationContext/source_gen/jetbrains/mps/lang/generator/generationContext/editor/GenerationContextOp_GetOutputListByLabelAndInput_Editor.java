@@ -143,7 +143,6 @@ public class GenerationContextOp_GetOutputListByLabelAndInput_Editor extends Def
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

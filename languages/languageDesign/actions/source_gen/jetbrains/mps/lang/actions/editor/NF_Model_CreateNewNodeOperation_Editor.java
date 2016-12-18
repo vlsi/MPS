@@ -142,7 +142,6 @@ public class NF_Model_CreateNewNodeOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

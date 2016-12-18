@@ -78,7 +78,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -149,7 +148,6 @@ public class BuildLayout_JarManifest_Attribute_Editor extends DefaultNodeEditor 
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

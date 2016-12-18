@@ -95,7 +95,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -147,7 +146,6 @@ public class KeyValueCommandPart_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -125,7 +125,6 @@ public class TransformationMenuPart_PluginAction_Editor extends DefaultNodeEdito
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

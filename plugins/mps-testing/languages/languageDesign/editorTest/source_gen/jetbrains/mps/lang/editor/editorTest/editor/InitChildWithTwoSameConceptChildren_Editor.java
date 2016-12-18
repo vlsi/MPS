@@ -105,7 +105,6 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -188,7 +187,6 @@ public class InitChildWithTwoSameConceptChildren_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

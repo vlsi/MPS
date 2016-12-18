@@ -63,7 +63,6 @@ public class _Component_Visibility implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

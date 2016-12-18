@@ -79,7 +79,6 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

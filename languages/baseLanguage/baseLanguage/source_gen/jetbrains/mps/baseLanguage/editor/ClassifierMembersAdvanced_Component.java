@@ -76,7 +76,6 @@ public class ClassifierMembersAdvanced_Component implements ConceptEditorCompone
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

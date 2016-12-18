@@ -318,7 +318,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -403,7 +402,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

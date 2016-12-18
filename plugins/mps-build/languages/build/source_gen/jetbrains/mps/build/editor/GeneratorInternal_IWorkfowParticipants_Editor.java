@@ -117,7 +117,6 @@ public class GeneratorInternal_IWorkfowParticipants_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

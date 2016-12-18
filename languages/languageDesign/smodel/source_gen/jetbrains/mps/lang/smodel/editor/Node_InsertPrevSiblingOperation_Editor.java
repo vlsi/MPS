@@ -71,7 +71,6 @@ public class Node_InsertPrevSiblingOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -118,7 +118,6 @@ public class MultipleEditorsTestMostSpecificRoot_Editor extends DefaultNodeEdito
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

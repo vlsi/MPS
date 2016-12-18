@@ -136,7 +136,6 @@ public class BaseToolDeclaration_Header implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -316,7 +315,6 @@ public class BaseToolDeclaration_Header implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

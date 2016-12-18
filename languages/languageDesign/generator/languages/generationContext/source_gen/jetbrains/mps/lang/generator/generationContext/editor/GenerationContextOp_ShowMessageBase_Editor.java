@@ -79,7 +79,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -141,7 +140,6 @@ public class GenerationContextOp_ShowMessageBase_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

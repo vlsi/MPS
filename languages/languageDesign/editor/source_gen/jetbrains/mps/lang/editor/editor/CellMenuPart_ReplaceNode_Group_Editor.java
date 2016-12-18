@@ -146,7 +146,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -224,7 +223,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -346,7 +344,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -427,7 +424,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -505,7 +501,6 @@ public class CellMenuPart_ReplaceNode_Group_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

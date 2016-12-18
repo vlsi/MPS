@@ -195,7 +195,6 @@ public class PersistentConfigurationTemplateInitializer_Editor extends DefaultNo
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

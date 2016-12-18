@@ -96,7 +96,6 @@ public class RefactoringTarget implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

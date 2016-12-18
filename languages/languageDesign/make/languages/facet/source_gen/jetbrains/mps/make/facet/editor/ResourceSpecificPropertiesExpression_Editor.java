@@ -58,7 +58,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -121,7 +120,6 @@ public class ResourceSpecificPropertiesExpression_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

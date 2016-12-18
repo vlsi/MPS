@@ -143,7 +143,6 @@ public class GenerationContextOp_GetOutputByLabelAndInput_Editor extends Default
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -103,7 +103,6 @@ public class PropertyExpressionCellSelector_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

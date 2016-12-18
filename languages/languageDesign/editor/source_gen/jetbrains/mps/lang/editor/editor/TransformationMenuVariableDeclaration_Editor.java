@@ -55,7 +55,6 @@ public class TransformationMenuVariableDeclaration_Editor extends DefaultNodeEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -117,7 +116,6 @@ public class TransformationMenuVariableDeclaration_Editor extends DefaultNodeEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

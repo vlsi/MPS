@@ -114,7 +114,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

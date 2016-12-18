@@ -80,7 +80,6 @@ public class CellModel_JComponent_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

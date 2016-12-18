@@ -104,7 +104,6 @@ public class EditorComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

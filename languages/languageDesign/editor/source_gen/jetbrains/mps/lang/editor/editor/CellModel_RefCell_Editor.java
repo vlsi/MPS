@@ -155,7 +155,6 @@ public class CellModel_RefCell_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

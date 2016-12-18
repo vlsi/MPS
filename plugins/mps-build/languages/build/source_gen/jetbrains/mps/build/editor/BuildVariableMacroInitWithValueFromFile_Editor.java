@@ -93,7 +93,6 @@ public class BuildVariableMacroInitWithValueFromFile_Editor extends DefaultNodeE
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

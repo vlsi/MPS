@@ -71,7 +71,6 @@ public class DiagramElementCreationHandlers_EditoComponent implements ConceptEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

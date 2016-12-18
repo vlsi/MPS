@@ -195,7 +195,6 @@ __switch__:
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

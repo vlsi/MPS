@@ -64,7 +64,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -128,7 +127,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -204,7 +202,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

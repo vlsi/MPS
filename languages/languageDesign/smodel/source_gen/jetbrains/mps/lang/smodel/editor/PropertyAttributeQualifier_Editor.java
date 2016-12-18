@@ -117,7 +117,6 @@ public class PropertyAttributeQualifier_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

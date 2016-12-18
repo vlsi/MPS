@@ -77,7 +77,6 @@ public class TransformationLocation_SideTransform_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

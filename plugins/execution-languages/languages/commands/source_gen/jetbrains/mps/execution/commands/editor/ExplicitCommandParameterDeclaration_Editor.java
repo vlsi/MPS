@@ -74,7 +74,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -152,7 +151,6 @@ public class ExplicitCommandParameterDeclaration_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

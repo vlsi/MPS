@@ -53,7 +53,6 @@ public class VariableArityType_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

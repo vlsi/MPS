@@ -76,7 +76,6 @@ public class GenerationContextOp_GetCopiedOutputByInput_Editor extends DefaultNo
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

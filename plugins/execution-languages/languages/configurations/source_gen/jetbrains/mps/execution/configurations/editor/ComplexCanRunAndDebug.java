@@ -209,7 +209,6 @@ public class ComplexCanRunAndDebug implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

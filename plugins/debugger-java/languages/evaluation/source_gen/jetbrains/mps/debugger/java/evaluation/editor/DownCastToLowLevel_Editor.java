@@ -57,7 +57,6 @@ public class DownCastToLowLevel_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

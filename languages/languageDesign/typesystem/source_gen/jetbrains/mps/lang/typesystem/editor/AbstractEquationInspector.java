@@ -88,7 +88,6 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -153,7 +152,6 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -274,7 +272,6 @@ public class AbstractEquationInspector implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

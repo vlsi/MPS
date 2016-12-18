@@ -277,7 +277,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -371,7 +370,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -472,7 +470,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -566,7 +563,6 @@ public class SideTransformHintSubstituteActionsBuilder_Editor extends DefaultNod
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

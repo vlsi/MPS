@@ -93,7 +93,6 @@ public class IMethodCall_actualArguments implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

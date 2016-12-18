@@ -139,7 +139,6 @@ public class CellModel_Custom_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -64,7 +64,6 @@ public class BuildSource_JavaLibraryExternalJarFolder_Editor extends DefaultNode
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

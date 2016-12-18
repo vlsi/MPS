@@ -112,7 +112,6 @@ public class ConceptFunctionAliased_Component implements ConceptEditorComponent 
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

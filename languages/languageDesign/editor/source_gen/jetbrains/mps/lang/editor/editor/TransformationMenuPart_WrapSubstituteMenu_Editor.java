@@ -76,7 +76,6 @@ public class TransformationMenuPart_WrapSubstituteMenu_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -144,7 +143,6 @@ public class TransformationMenuPart_WrapSubstituteMenu_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -216,7 +214,6 @@ public class TransformationMenuPart_WrapSubstituteMenu_Editor extends DefaultNod
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

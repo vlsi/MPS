@@ -95,7 +95,6 @@ public class _FocusPolicy_Applicable implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -71,7 +71,6 @@ public class Property_HasValue_Simple_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

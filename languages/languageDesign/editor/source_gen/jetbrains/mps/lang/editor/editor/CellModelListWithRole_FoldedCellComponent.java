@@ -73,7 +73,6 @@ public class CellModelListWithRole_FoldedCellComponent implements ConceptEditorC
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

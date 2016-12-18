@@ -99,7 +99,6 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -161,7 +160,6 @@ public class ExtractStaticMethodExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

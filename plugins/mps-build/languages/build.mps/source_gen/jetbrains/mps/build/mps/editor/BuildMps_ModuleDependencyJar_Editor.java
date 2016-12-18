@@ -71,7 +71,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -145,7 +144,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

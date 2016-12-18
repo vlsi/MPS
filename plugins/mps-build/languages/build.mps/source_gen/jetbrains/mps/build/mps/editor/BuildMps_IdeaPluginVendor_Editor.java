@@ -129,7 +129,6 @@ public class BuildMps_IdeaPluginVendor_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

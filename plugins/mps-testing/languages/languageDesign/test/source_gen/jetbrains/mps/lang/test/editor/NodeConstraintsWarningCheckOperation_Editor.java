@@ -75,7 +75,6 @@ public class NodeConstraintsWarningCheckOperation_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

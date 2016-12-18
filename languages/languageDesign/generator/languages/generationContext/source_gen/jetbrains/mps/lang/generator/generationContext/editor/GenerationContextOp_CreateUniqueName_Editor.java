@@ -80,7 +80,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -159,7 +158,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -121,7 +121,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -204,7 +203,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -287,7 +285,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -370,7 +367,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -453,7 +449,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -536,7 +531,6 @@ public class TestSubstituteParentWithConstraints_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -65,7 +65,6 @@ public class DominatesRecord_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

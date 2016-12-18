@@ -100,7 +100,6 @@ public class BuildSource_JavaDependencyExternalJarInFolder_Editor extends Defaul
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

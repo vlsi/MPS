@@ -65,7 +65,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -150,7 +149,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

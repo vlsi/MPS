@@ -149,7 +149,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -216,7 +215,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -283,7 +281,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -365,7 +362,6 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

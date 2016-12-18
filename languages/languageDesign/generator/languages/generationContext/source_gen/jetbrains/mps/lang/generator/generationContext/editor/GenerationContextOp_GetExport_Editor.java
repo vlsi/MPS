@@ -143,7 +143,6 @@ public class GenerationContextOp_GetExport_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

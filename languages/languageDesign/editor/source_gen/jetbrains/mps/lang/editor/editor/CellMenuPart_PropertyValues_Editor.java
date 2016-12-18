@@ -116,7 +116,6 @@ public class CellMenuPart_PropertyValues_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

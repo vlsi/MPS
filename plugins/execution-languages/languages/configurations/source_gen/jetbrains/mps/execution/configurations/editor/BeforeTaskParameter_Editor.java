@@ -62,7 +62,6 @@ public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -143,7 +142,6 @@ public class BeforeTaskParameter_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

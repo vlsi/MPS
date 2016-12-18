@@ -134,7 +134,6 @@ public class Node_GetReferentSearchScopeOperation_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

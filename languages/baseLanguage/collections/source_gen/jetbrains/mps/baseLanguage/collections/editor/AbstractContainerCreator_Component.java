@@ -154,7 +154,6 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -250,7 +249,6 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -374,7 +372,6 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -458,7 +455,6 @@ public class AbstractContainerCreator_Component implements ConceptEditorComponen
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

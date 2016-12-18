@@ -78,7 +78,6 @@ public class MathSymbolIndex_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

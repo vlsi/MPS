@@ -181,7 +181,6 @@ public class CellMenuPart_Generic_Item_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

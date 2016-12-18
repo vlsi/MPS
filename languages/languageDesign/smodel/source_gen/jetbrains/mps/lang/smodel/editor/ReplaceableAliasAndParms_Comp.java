@@ -127,7 +127,6 @@ public class ReplaceableAliasAndParms_Comp implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

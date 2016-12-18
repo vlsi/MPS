@@ -126,7 +126,6 @@ public class GenerationContextOp_GetOutputByLabel_Editor extends DefaultNodeEdit
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

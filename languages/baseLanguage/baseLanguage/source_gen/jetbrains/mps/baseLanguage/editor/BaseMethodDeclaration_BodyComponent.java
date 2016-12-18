@@ -87,7 +87,6 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

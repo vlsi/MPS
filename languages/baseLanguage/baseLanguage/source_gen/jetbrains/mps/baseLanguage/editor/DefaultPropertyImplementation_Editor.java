@@ -52,7 +52,6 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -105,7 +104,6 @@ public class DefaultPropertyImplementation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

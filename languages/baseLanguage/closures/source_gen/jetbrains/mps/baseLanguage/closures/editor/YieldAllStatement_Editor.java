@@ -64,7 +64,6 @@ public class YieldAllStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

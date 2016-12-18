@@ -79,7 +79,6 @@ public class BitwiseNotExpression_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

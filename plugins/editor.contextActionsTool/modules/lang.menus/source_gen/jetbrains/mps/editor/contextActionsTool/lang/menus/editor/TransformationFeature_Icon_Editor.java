@@ -56,7 +56,6 @@ public class TransformationFeature_Icon_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

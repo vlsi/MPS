@@ -59,7 +59,6 @@ public class SubstituteMenuReference_DefaultWithFunction_Editor extends DefaultN
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

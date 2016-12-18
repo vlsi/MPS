@@ -88,7 +88,6 @@ public class UnconditionalOverrideAnnotation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -150,7 +149,6 @@ public class UnconditionalOverrideAnnotation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

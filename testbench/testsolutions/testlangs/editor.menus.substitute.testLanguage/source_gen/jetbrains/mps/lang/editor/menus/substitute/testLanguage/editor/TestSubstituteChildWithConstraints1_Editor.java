@@ -120,7 +120,6 @@ public class TestSubstituteChildWithConstraints1_Editor extends DefaultNodeEdito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

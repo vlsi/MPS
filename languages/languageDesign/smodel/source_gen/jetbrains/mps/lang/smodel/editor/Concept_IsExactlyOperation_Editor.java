@@ -71,7 +71,6 @@ public class Concept_IsExactlyOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

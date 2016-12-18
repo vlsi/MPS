@@ -109,7 +109,6 @@ public class CellModel_Checkbox_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -255,7 +254,6 @@ public class CellModel_Checkbox_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

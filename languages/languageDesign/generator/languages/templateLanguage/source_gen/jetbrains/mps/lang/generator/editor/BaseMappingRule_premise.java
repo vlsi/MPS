@@ -204,7 +204,6 @@ public class BaseMappingRule_premise implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

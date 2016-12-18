@@ -67,7 +67,6 @@ public class ResultStatement_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

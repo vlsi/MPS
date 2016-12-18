@@ -152,7 +152,6 @@ public class BuildLayout_CopyFilterReplaceRegex_Editor extends DefaultNodeEditor
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

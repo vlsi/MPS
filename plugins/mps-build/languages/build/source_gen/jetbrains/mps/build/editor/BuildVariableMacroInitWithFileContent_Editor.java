@@ -65,7 +65,6 @@ public class BuildVariableMacroInitWithFileContent_Editor extends DefaultNodeEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

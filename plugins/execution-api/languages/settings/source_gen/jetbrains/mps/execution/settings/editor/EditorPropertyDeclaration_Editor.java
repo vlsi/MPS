@@ -63,7 +63,6 @@ public class EditorPropertyDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -144,7 +143,6 @@ public class EditorPropertyDeclaration_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -160,7 +160,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

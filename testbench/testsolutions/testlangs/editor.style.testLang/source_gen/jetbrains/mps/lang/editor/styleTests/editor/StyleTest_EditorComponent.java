@@ -109,7 +109,6 @@ public class StyleTest_EditorComponent implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

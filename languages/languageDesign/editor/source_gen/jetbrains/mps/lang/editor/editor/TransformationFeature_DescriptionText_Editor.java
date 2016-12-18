@@ -56,7 +56,6 @@ public class TransformationFeature_DescriptionText_Editor extends DefaultNodeEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

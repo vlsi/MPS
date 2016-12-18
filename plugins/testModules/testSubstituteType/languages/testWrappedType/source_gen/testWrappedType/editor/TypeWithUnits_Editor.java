@@ -61,7 +61,6 @@ public class TypeWithUnits_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

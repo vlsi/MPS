@@ -51,7 +51,6 @@ public class BuildSource_JavaLibraryCP_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

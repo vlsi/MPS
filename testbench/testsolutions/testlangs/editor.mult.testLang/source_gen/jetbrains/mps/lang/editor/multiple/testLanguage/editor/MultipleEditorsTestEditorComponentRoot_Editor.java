@@ -116,7 +116,6 @@ public class MultipleEditorsTestEditorComponentRoot_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -220,7 +219,6 @@ public class MultipleEditorsTestEditorComponentRoot_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -322,7 +320,6 @@ public class MultipleEditorsTestEditorComponentRoot_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -418,7 +415,6 @@ public class MultipleEditorsTestEditorComponentRoot_Editor extends DefaultNodeEd
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

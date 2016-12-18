@@ -143,7 +143,6 @@ public class GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Edito
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

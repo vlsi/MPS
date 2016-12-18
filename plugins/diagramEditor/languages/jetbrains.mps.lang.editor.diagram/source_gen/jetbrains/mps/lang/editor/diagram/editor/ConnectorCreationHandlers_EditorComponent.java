@@ -73,7 +73,6 @@ public class ConnectorCreationHandlers_EditorComponent implements ConceptEditorC
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -134,7 +133,6 @@ public class ConnectorCreationHandlers_EditorComponent implements ConceptEditorC
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

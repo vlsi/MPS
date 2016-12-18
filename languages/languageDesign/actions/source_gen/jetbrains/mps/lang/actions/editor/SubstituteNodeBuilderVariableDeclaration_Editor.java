@@ -63,7 +63,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -146,7 +145,6 @@ public class SubstituteNodeBuilderVariableDeclaration_Editor extends DefaultNode
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

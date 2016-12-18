@@ -98,7 +98,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -324,7 +323,6 @@ public class NamedTupleLiteral_Editor extends DefaultNodeEditor {
           editorContext.getCellFactory().popCellContext();
         }
       }
-      @Override
       protected boolean isCompatibilityMode() {
         return false;
       }

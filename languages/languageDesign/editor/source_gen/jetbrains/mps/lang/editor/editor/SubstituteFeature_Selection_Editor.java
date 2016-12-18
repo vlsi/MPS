@@ -56,7 +56,6 @@ public class SubstituteFeature_Selection_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

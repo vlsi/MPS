@@ -74,7 +74,6 @@ public class GenerationContextOp_RegisterLabel_Editor extends DefaultNodeEditor 
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -136,7 +135,6 @@ public class GenerationContextOp_RegisterLabel_Editor extends DefaultNodeEditor 
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -227,7 +227,6 @@ public class CellMenuPart_ReplaceChild_Item_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

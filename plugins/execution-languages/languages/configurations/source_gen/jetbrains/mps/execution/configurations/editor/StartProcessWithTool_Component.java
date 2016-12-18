@@ -75,7 +75,6 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -85,7 +85,6 @@ public class _GenericDeclaration_TypeVariables_Component implements ConceptEdito
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -74,7 +74,6 @@ public class BuildSource_JavaDependencyExternalJar_Editor extends DefaultNodeEdi
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

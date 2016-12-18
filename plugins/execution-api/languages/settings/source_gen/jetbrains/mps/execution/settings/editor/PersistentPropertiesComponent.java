@@ -118,7 +118,6 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -192,7 +191,6 @@ public class PersistentPropertiesComponent implements ConceptEditorComponent {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

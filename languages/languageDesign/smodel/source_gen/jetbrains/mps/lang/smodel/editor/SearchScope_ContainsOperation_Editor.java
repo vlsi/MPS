@@ -79,7 +79,6 @@ public class SearchScope_ContainsOperation_Editor extends DefaultNodeEditor {
       }
     }
 
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }

@@ -128,7 +128,6 @@ public class ActionTestSidetransformTestContainer_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -213,7 +212,6 @@ public class ActionTestSidetransformTestContainer_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -298,7 +296,6 @@ public class ActionTestSidetransformTestContainer_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -383,7 +380,6 @@ public class ActionTestSidetransformTestContainer_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
@@ -468,7 +464,6 @@ public class ActionTestSidetransformTestContainer_Editor extends DefaultNodeEdit
         editorContext.getCellFactory().popCellContext();
       }
     }
-    @Override
     protected boolean isCompatibilityMode() {
       return false;
     }
