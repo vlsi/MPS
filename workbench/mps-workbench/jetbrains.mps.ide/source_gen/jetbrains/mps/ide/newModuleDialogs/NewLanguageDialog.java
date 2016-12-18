@@ -25,20 +25,6 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
     init();
   }
 
-  @Nullable
-  protected JComponent createCenterPanel() {
-    if (myLanguageSettings == null) {
-      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((!(ProjectKt.isDirectoryBased(myProject.getProject())) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
-      myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
-        @Override
-        public void changed() {
-          NewLanguageDialog.this.check();
-        }
-      });
-    }
-    return myLanguageSettings;
-  }
-
   protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
   @Override
   protected void runCreation() {
@@ -76,10 +62,6 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
     return new NewLanguageSettings(getProjectPath());
   }
 
-  private boolean check() {
-    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
-    setErrorText(myError);
-    return myError == null;
   private static <T> T as_xpx6i8_a0a0a5a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

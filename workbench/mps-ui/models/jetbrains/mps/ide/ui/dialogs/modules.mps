@@ -1738,15 +1738,14 @@
   <node concept="312cEu" id="3rnI4tGssj4">
     <property role="1sVAO0" value="false" />
     <property role="TrG5h" value="CloneModuleSettings" />
-    <node concept="2tJIrI" id="2RhVBj9xi5n" role="jymVt" />
     <node concept="312cEg" id="3rnI4tGswAq" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myModuleOriginal" />
       <property role="3TUv4t" value="true" />
       <node concept="3Tmbuc" id="3rnI4tGswL6" role="1B3o_S" />
-      <node concept="3uibUv" id="4udloDWjnkr" role="1tU5fm">
-        <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
+      <node concept="3uibUv" id="6CFNGGpiIMW" role="1tU5fm">
+        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
       </node>
     </node>
     <node concept="2tJIrI" id="6$$uXBqk8II" role="jymVt" />
@@ -1808,8 +1807,8 @@
       </node>
       <node concept="37vLTG" id="3rnI4tGsAIu" role="3clF46">
         <property role="TrG5h" value="moduleOriginal" />
-        <node concept="3uibUv" id="4udloDWjnPD" role="1tU5fm">
-          <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
+        <node concept="3uibUv" id="6CFNGGpiILR" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
         </node>
       </node>
     </node>
@@ -1891,8 +1890,8 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3rnI4tGsQdS" role="1B3o_S" />
-      <node concept="3uibUv" id="4udloDWjo9w" role="3clF45">
-        <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
+      <node concept="3uibUv" id="6CFNGGpiJ9l" role="3clF45">
+        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
       </node>
     </node>
     <node concept="3Tm1VV" id="3rnI4tGssj5" role="1B3o_S" />

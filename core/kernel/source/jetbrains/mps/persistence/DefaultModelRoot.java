@@ -181,7 +181,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
       SModel model = createModelImpl(factory, modelName, sourceRoot);
       ((SModelBase) model).setModelRoot(this);
       // TODO fix
-      register(model);
+      registerModel(model);
       return model;
     } catch (IOException e) {
       LOG.error("Caught when creating a model " + modelName, e);

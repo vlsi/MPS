@@ -22,20 +22,6 @@ public class NewSolutionDialog extends AbstractModuleCreationDialog<Solution> {
     init();
   }
 
-  @Nullable
-  public JComponent createCenterPanel() {
-    if (mySolutionSettings == null) {
-      mySolutionSettings = new NewSolutionSettings((myProject != null ? ((!(ProjectKt.isDirectoryBased(myProject.getProject())) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
-      mySolutionSettings.setListener(new NewSolutionSettings.SolutionSettingsChangedListener() {
-        @Override
-        public void changed() {
-          NewSolutionDialog.this.check();
-        }
-      });
-    }
-    return mySolutionSettings;
-  }
-
   @Override
   protected void runCreation() {
     String solutionName = mySettings.getModuleName();
@@ -52,18 +38,5 @@ public class NewSolutionDialog extends AbstractModuleCreationDialog<Solution> {
   @Override
   protected NewSolutionSettings createSettingsInstance() {
     return new NewSolutionSettings(getProjectPath());
-  public Solution getSolution() {
-    return myResult;
-  }
-
-  @Nullable
-  public String getError() {
-    return myError;
-  }
-
-  private boolean check() {
-    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_SOLUTION, mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation());
-    setErrorText(myError);
-    return myError == null;
   }
 }

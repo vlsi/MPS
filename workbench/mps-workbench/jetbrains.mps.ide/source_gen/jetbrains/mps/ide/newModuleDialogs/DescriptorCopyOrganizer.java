@@ -30,6 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -95,11 +96,21 @@ class DescriptorCopyOrganizer {
    * moreover these paths will move to the java module facet implementation
    */
   private void hackJavaFacetProperties(@NotNull ModuleDescriptor copyDescriptor) {
-    List<String> newStubPaths = copyDescriptor.getAdditionalJavaStubPaths().stream().map(myModulePathConverter::source2Target).collect(Collectors.toList());
+    List<String> newStubPaths = copyDescriptor.getAdditionalJavaStubPaths().stream().map(new Function<String, String>() {
+      @Override
+      public String apply(String path) {
+        return myModulePathConverter.source2Target(path);
+      }
+    }).collect(Collectors.toList());
     copyDescriptor.getAdditionalJavaStubPaths().clear();
     copyDescriptor.getAdditionalJavaStubPaths().addAll(newStubPaths);
 
-    List<String> newSourcePaths = copyDescriptor.getSourcePaths().stream().map(myModulePathConverter::source2Target).collect(Collectors.toList());
+    List<String> newSourcePaths = copyDescriptor.getSourcePaths().stream().map(new Function<String, String>() {
+      @Override
+      public String apply(String path) {
+        return myModulePathConverter.source2Target(path);
+      }
+    }).collect(Collectors.toList());
     copyDescriptor.getSourcePaths().clear();
     copyDescriptor.getSourcePaths().addAll(newSourcePaths);
   }
