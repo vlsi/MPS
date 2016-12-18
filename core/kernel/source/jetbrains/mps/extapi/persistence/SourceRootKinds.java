@@ -20,25 +20,46 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
 
 /**
- * Denotes the usual source roots kind (up to this time we have only this kind and `excluded' kind).
+ * Default Source Roots Types
  *
  * @author apyshkin on 12/15/16.
  */
 @Singleton
 @Immutable
-public enum SourceFileKind implements FileKind {
-  INSTANCE;
+public enum SourceRootKinds implements SourceRootKind {
+  /**
+   * Denotes the usual source roots kind (up to this time we have only this kind and `excluded' kind).
+   */
+  SOURCES() {
+    @NotNull
+    @Override
+    public String getName() {
+      return FileBasedModelRoot.SOURCE_ROOTS;
+    }
 
-  @NotNull
-  @Override
-  public String getName() {
-    return FileBasedModelRoot.SOURCE_ROOTS;
-  }
+    @Override
+    public boolean isExcluded() {
+      return false;
+    }
+  },
 
-  @Override
-  public boolean isExcluded() {
-    return false;
-  }
+  /**
+   * Denotes excluded source root kind
+   * @see SourceRootKind#isExcluded()
+   *
+   */
+  EXCLUDED() {
+    @NotNull
+    @Override
+    public String getName() {
+      return FileBasedModelRoot.EXCLUDED;
+    }
+
+    @Override
+    public boolean isExcluded() {
+      return true;
+    }
+  };
 
   @Override
   public String toString() {

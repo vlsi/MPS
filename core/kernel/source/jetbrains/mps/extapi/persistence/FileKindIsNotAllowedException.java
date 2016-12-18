@@ -30,13 +30,13 @@ import java.text.MessageFormat;
  */
 @Immutable
 public final class FileKindIsNotAllowedException extends IllegalArgumentException {
-  private final FileKind myDisallowedKind;
+  private final SourceRootKind myDisallowedKind;
   private final SourceRoot myRoot;
 
   private final String myKindName;
   private final String myRootPath;
 
-  public FileKindIsNotAllowedException(@NotNull FileKind disallowedKind, SourceRoot root) {
+  public FileKindIsNotAllowedException(@NotNull SourceRootKind disallowedKind, SourceRoot root) {
     myDisallowedKind = disallowedKind;
     myRoot = root;
     myKindName = null;

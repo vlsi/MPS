@@ -26,7 +26,11 @@ import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.fileChooser.ex.FileNodeDescriptor;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,11 +41,12 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 import java.lang.Override;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
 
 public abstract class ToggleFBModelRootKindAction extends ToggleAction implements CustomComponentAction, DumbAware {
-
   protected final JTree myTree;
   protected FileBasedModelRootEditor myModelRootEditor;
 
@@ -52,20 +57,18 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
     getTemplatePresentation().setEnabled(true);
   }
 
-  protected abstract String getKind();
+  @NotNull
+  protected abstract SourceRootKind getKind();
 
   @Override
   public boolean isSelected(AnActionEvent e) {
-    final VirtualFile[] selectedFiles = getSelectedFiles();
-    if (selectedFiles.length == 0) return false;
+    final List<IFile> selectedFiles = getSelectedFiles();
+    if (selectedFiles.isEmpty()) {
+      return false;
+    }
 
-    final FileBasedModelRoot modelRoot = (FileBasedModelRoot) myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
-
-    if(selectedFiles.length == 1)
-      return modelRoot.containsFile(getKind(), selectedFiles[0].getPath());
-
-    for (VirtualFile file : selectedFiles) {
-      if(!modelRoot.containsFile(getKind(), file.getPath())) {
+    for (IFile selectedFile : selectedFiles) {
+      if (!pathIsAmongModelRoots(selectedFile)) {
         return false;
       }
     }
@@ -73,31 +76,27 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
     return true;
   }
 
+  private boolean pathIsAmongModelRoots(@NotNull IFile path) {
+    final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
+    return modelRoot.getSourceRoots(getKind()).stream().anyMatch(sourceRoot -> sourceRoot.getAbsolutePath().equals(path));
+  }
+
   @Override
   public void setSelected(AnActionEvent e, boolean state) {
-    final VirtualFile[] selectedFiles = getSelectedFiles();
-    assert selectedFiles.length != 0;
+    final List<IFile> selectedFiles = getSelectedFiles();
+    assert !selectedFiles.isEmpty();
 
-    final FileBasedModelRoot modelRoot = (FileBasedModelRoot) myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
+    final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
 
-    for (VirtualFile selectedFile : selectedFiles) {
-      String path = selectedFile.getPath();
-
+    for (IFile selectedFile : selectedFiles) {
       if (state) {
-        if(!modelRoot.containsFile(getKind(), path)) {
-          modelRoot.addFile(getKind(), path);
-
-          Collection<String> kinds = modelRoot.getSupportedFileKinds();
-          for (String kind : kinds) {
-            if(kind.equals(getKind())) continue;
-            if(modelRoot.containsFile(kind, path)) {
-              modelRoot.deleteFile(kind, path);
-            }
-          }
+        if (!pathIsAmongModelRoots(selectedFile)) {
+          assert modelRoot.getContentDirectory() != null;
+          modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
         }
       }
       else {
-        modelRoot.deleteFile(getKind(), path);
+        modelRoot.deleteFile(getKind().getName(), selectedFile.getPath());
       }
     }
 
@@ -106,37 +105,36 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
   }
 
   @Override
-  public void update(AnActionEvent e) {
+  public void update(@NotNull AnActionEvent e) {
     super.update(e);
     final Presentation presentation = e.getPresentation();
     presentation.setEnabled(true);
-    final VirtualFile[] files = getSelectedFiles();
-    if (files.length == 0) {
+    final List<IFile> files = getSelectedFiles();
+    if (files.isEmpty()) {
       presentation.setEnabled(false);
-      return;
     }
   }
 
   @NotNull
-  protected final VirtualFile[] getSelectedFiles() {
+  protected final List<IFile> getSelectedFiles() {
     final TreePath[] selectionPaths = myTree.getSelectionPaths();
     if (selectionPaths == null) {
-      return VirtualFile.EMPTY_ARRAY;
+      return Collections.emptyList();
     }
-    final List<VirtualFile> selected = new ArrayList<VirtualFile>();
+    final List<VirtualFile> selected = new ArrayList<>();
     for (TreePath treePath : selectionPaths) {
-      final DefaultMutableTreeNode node = (DefaultMutableTreeNode)treePath.getLastPathComponent();
+      final DefaultMutableTreeNode node = (DefaultMutableTreeNode) treePath.getLastPathComponent();
       final Object nodeDescriptor = node.getUserObject();
       if (!(nodeDescriptor instanceof FileNodeDescriptor)) {
-        return VirtualFile.EMPTY_ARRAY;
+        return Collections.emptyList();
       }
-      final FileElement fileElement = ((FileNodeDescriptor)nodeDescriptor).getElement();
+      final FileElement fileElement = ((FileNodeDescriptor) nodeDescriptor).getElement();
       final VirtualFile file = fileElement.getFile();
       if (file != null) {
         selected.add(file);
       }
     }
-    return selected.toArray(new VirtualFile[selected.size()]);
+    return selected.stream().map(VirtualFileUtils::toIFile).filter(Objects::nonNull).collect(Collectors.toList());
   }
 
   @Override

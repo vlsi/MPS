@@ -16,16 +16,14 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.extapi.module.SModuleBase;
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker;
 import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
-import jetbrains.mps.extapi.persistence.SourceFileKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.FileDataSourceCreator;
-import jetbrains.mps.persistence.NoSourceRootsInModelRootException;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
@@ -44,10 +42,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Collections;
-import java.util.HashMap;
-
-import static java.util.Collections.emptyMap;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -278,7 +272,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
   }
 
   private SourceRoot findSourceRootOfMyself(IFile oldFile, DefaultModelRoot defaultModelRoot) {
-    List<SourceRoot> sourceRoots = defaultModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> sourceRoots = defaultModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     SourceRoot sourceRoot = sourceRoots.get(0); // first one by default
     for (SourceRoot sourceRoot0 : sourceRoots) {
       if (oldFile.getPath().startsWith(sourceRoot0.getAbsolutePath().getPath())) {

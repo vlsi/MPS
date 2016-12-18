@@ -38,6 +38,7 @@ public interface ModelRoot {
   /**
    * A customizable categorization identifier, such as JavaStubs
    */
+  /*@Deprecated*/
   String getType();
 
   /**

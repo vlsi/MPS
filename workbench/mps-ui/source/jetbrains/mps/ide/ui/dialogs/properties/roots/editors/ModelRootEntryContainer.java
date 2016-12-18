@@ -47,13 +47,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.EventListener;
 
+import static java.awt.GridBagConstraints.EAST;
+import static java.awt.GridBagConstraints.HORIZONTAL;
+import static java.awt.GridBagConstraints.NONE;
+import static java.awt.GridBagConstraints.NORTHWEST;
+import static java.awt.GridBagConstraints.RELATIVE;
+
 /**
  * A container for a single model root entry
  */
 public final class ModelRootEntryContainer implements ModelRootEntryListener {
   static final Color SOURCES_COLOR = new JBColor(new Color(0x0A50A1), DarculaColors.BLUE);
-  static final Color TESTS_COLOR = new Color(0x008C2E);
   static final Color EXCLUDED_COLOR = new JBColor(new Color(0x992E00), DarculaColors.RED);
+  static final Color TESTS_COLOR = new Color(0x008C2E);
   static final Color SELECTED_CONTENT_COLOR = new Color(0xF0F9FF);
   private static final Color SELECTED_HEADER_COLOR = new JBColor(new Color(0xDEF2FF), UIUtil.getPanelBackground().darker());
   private static final Color HEADER_COLOR = new JBColor(new Color(0xF5F5F5), Gray._82);
@@ -90,7 +96,6 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
     myMainPanel = new JPanel(new GridBagLayout());
     myMainPanel.setOpaque(false);
     myMainPanel.addMouseListener(new MouseAdapter() {
-
       @Override
       public void mouseClicked(MouseEvent e) {
         myIsSelected = true;
@@ -99,28 +104,30 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
 
       @Override
       public void mouseEntered(MouseEvent e) {
-        if(!myIsSelected)
+        if (!myIsSelected) {
           setSelected(true);
+        }
       }
 
       @Override
       public void mouseExited(MouseEvent e) {
-        if(!myIsSelected)
+        if (!myIsSelected) {
           setSelected(false);
+        }
       }
     });
 
     myHeader = createHeader();
-    myMainPanel.add(myHeader, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new JBInsets(2,2,0,2), 0, 0));
+    myMainPanel.add(myHeader, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 0.0, NORTHWEST, HORIZONTAL, new JBInsets(2,2,0,2), 0, 0));
 
     myDetailsComponent = createDetailsComponent();
-    myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
+    myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
 
     myBottom = new JPanel(new BorderLayout());
     myBottom.add(Box.createVerticalStrut(3), BorderLayout.NORTH);
-    myMainPanel.add(myBottom, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
+    myMainPanel.add(myBottom, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTH, HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
 
-    setFocuced(false);
+    setFocused(false);
   }
 
   protected JComponent createHeader() {
@@ -130,29 +137,25 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
     myHeaderLabel.setFont(myHeaderLabel.getFont().deriveFont(Font.BOLD));
     myHeaderLabel.setOpaque(false);
     final IconActionComponent deleteIconComponent = new IconActionComponent(Modules.DeleteContentRoot,
-      Modules.DeleteContentRootRollover,
-      "Delete Model Root", new Runnable() {
-      @Override
-      public void run() {
-        myEventDispatcher.getMulticaster().delete(ModelRootEntryContainer.this);
-      }
-    });
-    final ResizingWrapper wrapper = new ResizingWrapper(myHeaderLabel);
-    panel.add(myHeaderLabel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 2, 0, 0), 0, 0));
-    panel.add(deleteIconComponent, new GridBagConstraints(1, GridBagConstraints.RELATIVE, 1, 1, 0.0, 1.0, GridBagConstraints.EAST, GridBagConstraints.NONE, new Insets(0, 0, 0, 2), 0, 0));
+                                                                            Modules.DeleteContentRootRollover,
+                                                                            "Delete Model Root",
+                                                                            () -> myEventDispatcher.getMulticaster().delete(ModelRootEntryContainer.this));
+    panel.add(myHeaderLabel, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 1.0, NORTHWEST, HORIZONTAL, new Insets(0, 2, 0, 0), 0, 0));
+    panel.add(deleteIconComponent, new GridBagConstraints(1, RELATIVE, 1, 1, 0.0, 1.0, EAST, NONE, new Insets(0, 0, 0, 2), 0, 0));
 //    FilePathClipper.install(myHeaderLabel, wrapper);
     return panel;
   }
 
   public JComponent getComponent() {
-    if(myMainPanel == null)
+    if (myMainPanel == null) {
       initUI();
+    }
     return myMainPanel;
   }
 
-  public void setFocuced(boolean isFocuced) {
-    myIsSelected = isFocuced;
-    setSelected(isFocuced);
+  public void setFocused(boolean isFocused) {
+    myIsSelected = isFocused;
+    setSelected(isFocused);
   }
 
   protected void setSelected(boolean selected) {
@@ -200,7 +203,7 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
       if (myModelRootEntry instanceof ModelRootEntryExt) {
         myDetailsComponent = ((ModelRootEntryExt) myModelRootEntry).getDetailsComponent();
       }
-      myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
+      myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
       myMainPanel.revalidate();
     }
   }
@@ -215,9 +218,9 @@ public final class ModelRootEntryContainer implements ModelRootEntryListener {
     if (configurableComponent == null) {
       myDetailsLabel = new JBLabel(myModelRootEntry.getDetailsText());
       myDetailsLabel.setOpaque(false);
-      panel.add(myDetailsLabel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
+      panel.add(myDetailsLabel, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 1.0, NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
     } else {
-      panel.add(configurableComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
+      panel.add(configurableComponent, new GridBagConstraints(0, RELATIVE, 1, 1, 1.0, 1.0, NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
     }
 
     return panel;

@@ -21,6 +21,7 @@ import com.intellij.ide.util.treeView.NodeRenderer;
 import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.Icon;
@@ -43,20 +44,19 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
 
     ModelRootEntry entry = myModelRootEditor.getFileBasedModelRootEntry();
     if (entry != null) {
-      final Object userObject = ((DefaultMutableTreeNode)value).getUserObject();
+      final Object userObject = ((DefaultMutableTreeNode) value).getUserObject();
       if (userObject instanceof NodeDescriptor) {
-        final Object element = ((NodeDescriptor)userObject).getElement();
+        final Object element = ((NodeDescriptor) userObject).getElement();
         if (element instanceof FileElement) {
-          final VirtualFile file = ((FileElement)element).getFile();
-          if(file != null) {
-            final FileBasedModelRoot modelRoot = (FileBasedModelRoot)entry.getModelRoot();
-            if (modelRoot != null) {
-              if (file.isDirectory()) {
-                setIcon(updateIcon(modelRoot, file, getIcon()));
-              } else if(file != null && !file.isDirectory()) {
-                final Color colorForFile = getColorForFile(modelRoot, file);
-                if(colorForFile != null)
-                  setForeground(colorForFile);
+          final VirtualFile file = ((FileElement) element).getFile();
+          if (file != null) {
+            final FileBasedModelRoot modelRoot = (FileBasedModelRoot) entry.getModelRoot();
+            if (file.isDirectory()) {
+              setIcon(updateIcon(modelRoot, file, getIcon()));
+            } else if (!file.isDirectory()) {
+              final Color colorForFile = getColorForFile(modelRoot, file);
+              if (colorForFile != null) {
+                setForeground(colorForFile);
               }
             }
           }
@@ -66,32 +66,34 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
   }
 
   private Icon updateIcon(FileBasedModelRoot modelRoot, VirtualFile file, Icon originalIcon) {
-    Collection<String> kinds = modelRoot.getSupportedFileKinds();
-    for (String kind : kinds) {
-      if(modelRoot.containsFile(kind, file.getPath())) {
+    Collection<SourceRootKind> kinds = modelRoot.getSupportedFileKinds1();
+    for (SourceRootKind kind : kinds) {
+      if (modelRoot.containsFile(kind.getName(), file.getPath())) {
         return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
       }
-      Collection<String> kindFiles = modelRoot.getFiles(kind);
-      for(String kindFile : kindFiles) {
-        if(file.getPath().startsWith(kindFile + "/"))
+      Collection<String> kindFiles = modelRoot.getFiles(kind.getName());
+      for (String kindFile : kindFiles) {
+        if (file.getPath().startsWith(kindFile + "/")) {
           return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
+        }
       }
     }
-    if(file.getPath().equals(modelRoot.getContentRoot()))
+    if (file.getPath().equals(modelRoot.getContentRoot())) {
       return Nodes.HomeFolder;
+    }
     return originalIcon;
   }
 
   private Color getColorForFile(FileBasedModelRoot modelRoot, VirtualFile file) {
-    Collection<String> kinds = modelRoot.getSupportedFileKinds();
-    for (String kind : kinds) {
-      if(modelRoot.containsFile(kind, file.getPath())) {
+    for (SourceRootKind kind : modelRoot.getSupportedFileKinds1()) {
+      Collection<String> files = modelRoot.getFiles(kind.getName());
+      if (files.contains(file.getPath())) {
         return myModelRootEditor.getFileBasedModelRootEntry().getKindColor(kind);
       }
-      Collection<String> kindFiles = modelRoot.getFiles(kind);
-      for(String kindFile : kindFiles) {
-        if(file.getPath().startsWith(kindFile + "/"))
+      for (String kindFile : files) {
+        if (file.getPath().startsWith(kindFile + "/")) {
           return myModelRootEditor.getFileBasedModelRootEntry().getKindColor(kind);
+        }
       }
     }
     return null;

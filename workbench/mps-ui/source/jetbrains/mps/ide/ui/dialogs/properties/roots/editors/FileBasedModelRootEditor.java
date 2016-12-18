@@ -47,7 +47,10 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -64,9 +67,6 @@ import java.awt.BorderLayout;
 import java.awt.LayoutManager;
 import java.util.Collection;
 import java.util.Comparator;
-
-import static jetbrains.mps.extapi.persistence.FileBasedModelRoot.EXCLUDED;
-import static jetbrains.mps.extapi.persistence.FileBasedModelRoot.SOURCE_ROOTS;
 
 public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected Tree myTree;
@@ -97,27 +97,28 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myDescriptor.setShowFileSystemRoots(false);
   }
 
-  @Nullable
-  static String getKindText(@NotNull String kind) {
-    if (kind.equals(EXCLUDED)) {
+  @NotNull
+  static String getKindText(@NotNull SourceRootKind kind) {
+    if (kind == SourceRootKinds.EXCLUDED) {
       return "Excluded";
-    } else if (kind.equals(SOURCE_ROOTS)) {
+    } else if (kind == SourceRootKinds.SOURCES) {
       return "Sources";
     }
-    return null;
+    return "Unknown";
   }
 
   protected void createEditingActions() {
     myEditingActionsGroup.removeAll();
 
     FileBasedModelRoot fileBasedModelRoot = myFileBasedModelRootEntry.getModelRoot();
-    Collection<String> kinds = fileBasedModelRoot.getSupportedFileKinds();
+    Collection<SourceRootKind> kinds = fileBasedModelRoot.getSupportedFileKinds1();
 
-    for (final String kind : kinds) {
+    for (final SourceRootKind kind : kinds) {
       AnAction modelRootAnAction =
           new ToggleFBModelRootKindAction(myTree, this, getKindText(kind), null, myFileBasedModelRootEntry.getKindIcon(kind)) {
+            @NotNull
             @Override
-            protected String getKind() {
+            protected SourceRootKind getKind() {
               return kind;
             }
           };
@@ -129,7 +130,6 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
   protected TreeCellRenderer getModelRootEntryCellRenderer() {
     return new FileBasedModelRootEntryTreeCellRender(this);
   }
-
 
   public void setFileBasedModelRootEntry(final FileBasedModelRootEntry fileBasedModelRootEntry) {
     if (myFileBasedModelRootEntry != null && myFileBasedModelRootEntry.equals(fileBasedModelRootEntry)) {
@@ -153,10 +153,9 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myTreePanel.setVisible(true);
     myFileBasedModelRootEntry = fileBasedModelRootEntry;
 
-    String path = myFileBasedModelRootEntry.getModelRoot().getContentRoot();
+    IFile path = myFileBasedModelRootEntry.getModelRoot().getContentDirectory();
 
-
-    VirtualFile file = path == null ? null : VirtualFileUtils.getVirtualFile(path);
+    VirtualFile file = path == null ? null : VirtualFileUtils.getProjectVirtualFile(path);
     setRoot(file);
 
     final Runnable init = () -> {
@@ -194,10 +193,8 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     }
   }
 
-  public void selectFile(String file) {
-    VirtualFile file2Select = VirtualFileManager.getInstance().findFileByUrl(
-        VirtualFileManager.constructUrl("file", file)
-    );
+  public void selectFile(@NotNull IFile file) {
+    VirtualFile file2Select = VirtualFileUtils.getProjectVirtualFile(file);
     if (file2Select == null) {
       return;
     }

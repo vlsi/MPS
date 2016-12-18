@@ -16,8 +16,8 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.SourceFileKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -52,7 +52,7 @@ public final class FileDataSourceCreator {
   }
 
   private void checkSourceRootIsAttachedToTheModelRoot(@NotNull SourceRoot sourceRoot) {
-    List<SourceRoot> existingSourceRoots = myDefaultModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> existingSourceRoots = myDefaultModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     if (existingSourceRoots.isEmpty()) {
       throw new NoSourceRootsInModelRootException(myDefaultModelRoot);
     }

@@ -206,7 +206,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
       }
 
       if (myFocusedModelRootEntryContainer != null) {
-        myFocusedModelRootEntryContainer.setFocuced(false);
+        myFocusedModelRootEntryContainer.setFocused(false);
       }
 
       if (entry == null) {
@@ -215,7 +215,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
         return;
       }
 
-      entry.setFocuced(true);
+      entry.setFocused(true);
       myEditorPanel.removeAll();
       myEditorPanel.add(entry.getEditor().createComponent(), BorderLayout.CENTER);
       myFocusedModelRootEntryContainer = entry;
@@ -251,7 +251,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
   }
 
   private List<ModelRootDescriptor> getDescriptors() {
-    List<ModelRootDescriptor> descriptors = new LinkedList<ModelRootDescriptor>();
+    List<ModelRootDescriptor> descriptors = new LinkedList<>();
     for (ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
       container.getModelRoot().save(memento);
@@ -261,7 +261,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
   }
 
   public Collection<ModelRoot> getModelRoots() {
-    List<ModelRoot> modelRoots = new LinkedList<ModelRoot>();
+    List<ModelRoot> modelRoots = new LinkedList<>();
     for (ModelRootEntryContainer container : myModelRootEntries) {
       modelRoots.add(container.getModelRoot());
     }
@@ -298,7 +298,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = myRootEntryPersistence.getModelRootEntry(modelRoot);
       Disposer.register(ModelRootContentEntriesEditor.this, entry);
-      if (entry instanceof FileBasedModelRootEntry) {
+      if (entry.getModelRoot() instanceof FileBasedModelRoot) {
         if (!checkAndAddFBModelRoot(entry)) {
           return;
         }
@@ -375,7 +375,6 @@ public class ModelRootContentEntriesEditor implements Disposable {
 
     @Override
     public void dataChanged(ModelRootEntryContainer entry) {
-      int i = myModelRootEntries.indexOf(entry);
     }
   }
 }

@@ -21,8 +21,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.extapi.persistence.SourceFileKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -35,8 +35,6 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -252,7 +250,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
    */
   @NotNull
   private SourceRoot defaultSourceRoot(FileBasedModelRoot modelRoot, @Nullable SourceRoot passedSourceRoot) throws IOException {
-    List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     if (sourceRoots.isEmpty()) {
       throw new IOException("empty list of source roots");
     }

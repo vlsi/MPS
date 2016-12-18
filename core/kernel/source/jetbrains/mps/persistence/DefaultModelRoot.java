@@ -21,9 +21,9 @@ import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FileKind;
-import jetbrains.mps.extapi.persistence.SourceFileKind;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.persistence.FileDataSourceCreator.CreationResult;
 import jetbrains.mps.persistence.ModelSourceRootWalker.ModelRootFileTreeLocus;
 import jetbrains.mps.project.AbstractModule;
@@ -65,8 +65,8 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
 
   @NotNull
   @Override
-  public List<FileKind> getSupportedFileKinds1() {
-    return Collections.singletonList(SourceFileKind.INSTANCE);
+  public List<SourceRootKind> getSupportedFileKinds1() {
+    return Collections.singletonList(SourceRootKinds.SOURCES);
   }
 
   @Override
@@ -83,7 +83,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<>();
-    for (SourceRoot sourceRoot : getSourceRoots(SourceFileKind.INSTANCE)) {
+    for (SourceRoot sourceRoot : getSourceRoots(SourceRootKinds.SOURCES)) {
       result.addAll(collectModels(sourceRoot));
     }
     return result;
@@ -111,7 +111,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
 
   @Override
   public boolean canCreateModels() {
-    return super.canCreateModels() && !getSourceRoots(SourceFileKind.INSTANCE).isEmpty();
+    return super.canCreateModels() && !getSourceRoots(SourceRootKinds.SOURCES).isEmpty();
   }
 
   @Override
@@ -143,7 +143,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
    */
   @NotNull
   private SourceRoot defaultSourceRoot() {
-    List<SourceRoot> sourceRoots = getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> sourceRoots = getSourceRoots(SourceRootKinds.SOURCES);
     if (sourceRoots.isEmpty()) {
       throw new NoSourceRootsInModelRootException(this);
     }
@@ -223,8 +223,8 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     AbstractModule sourceModule = ((AbstractModule) getModule());
     AbstractModule targetModule = ((AbstractModule) targetModelRoot.getModule());
     final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
-    List<SourceRoot> sourceFiles = getSourceRoots(SourceFileKind.INSTANCE);
-    List<SourceRoot> targetFiles = targetModelRoot.getSourceRoots(SourceFileKind.INSTANCE);
+    List<SourceRoot> sourceFiles = getSourceRoots(SourceRootKinds.SOURCES);
+    List<SourceRoot> targetFiles = targetModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     assert sourceFiles.size() == targetFiles.size();
 //    for (int cnt = 0; cnt < sourceFiles.size(); ++cnt) {
 //      SourceRoot sourceRoot = sourceFiles.get(cnt);

@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
  * @since 3.5
  */
 @ToRemove(version = 3.6)
-final class DefaultSourceRoot implements SourceRoot {
+public final class DefaultSourceRoot implements SourceRoot {
   private final String myPath;
   private final IFile myAbsolutePath;
 

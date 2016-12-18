@@ -21,8 +21,6 @@ import org.jetbrains.mps.annotations.Immutable;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,22 +28,21 @@ import java.util.Objects;
 import java.util.function.Predicate;
 
 import static java.util.Collections.emptyList;
-import static java.util.Collections.singletonList;
 import static java.util.Collections.unmodifiableList;
 
 /**
- * Maps {@link FileKind} to {@link SourceRoot}.
+ * Maps {@link SourceRootKind} to {@link SourceRoot}.
  * Preserves the order of the <code>SourcePath</code>s.
  */
 final class SourcePaths {
-  private final Map<FileKind, List<SourceRoot>> myFileKind2SourcePaths = new LinkedHashMap<>();
-  @NotNull private final Predicate<FileKind> isFileKindAllowed;
+  private final Map<SourceRootKind, List<SourceRoot>> myFileKind2SourcePaths = new LinkedHashMap<>();
+  @NotNull private final Predicate<SourceRootKind> isFileKindAllowed;
 
   public SourcePaths() {
     this((kind) -> true); // always allows
   }
 
-  public SourcePaths(@NotNull Predicate<FileKind> isFileKindAllowed0) {
+  public SourcePaths(@NotNull Predicate<SourceRootKind> isFileKindAllowed0) {
     isFileKindAllowed = isFileKindAllowed0;
   }
 
@@ -54,7 +51,7 @@ final class SourcePaths {
    */
   @NotNull
   @Immutable
-  public synchronized List<SourceRoot> getByKind(@NotNull FileKind kind) {
+  public synchronized List<SourceRoot> getByKind(@NotNull SourceRootKind kind) {
     List<SourceRoot> list = myFileKind2SourcePaths.get(kind);
     return list != null ? unmodifiableList(list) : emptyList();
   }
@@ -65,11 +62,11 @@ final class SourcePaths {
    * @throws FileKindIsNotAllowedException if provided file kind is not allowed
    * @throws SourceRootAlreadyExistsException if such source path already exists
    */
-  public synchronized void addSourceRoot(@NotNull FileKind kind, @NotNull SourceRoot root) {
+  public synchronized void addSourceRoot(@NotNull SourceRootKind kind, @NotNull SourceRoot root) {
     if (!isKindAllowed(kind)) {
       throw new FileKindIsNotAllowedException(kind, root);
     }
-    FileKind existingRootKind = getKind(root);
+    SourceRootKind existingRootKind = getKind(root);
     if (existingRootKind != null) {
       throw new SourceRootAlreadyExistsException(root, kind, root, existingRootKind);
     }
@@ -77,13 +74,13 @@ final class SourcePaths {
     myFileKind2SourcePaths.get(kind).add(root);
   }
 
-  private boolean isKindAllowed(@NotNull FileKind kind) {
+  private boolean isKindAllowed(@NotNull SourceRootKind kind) {
     return isFileKindAllowed.test(kind);
   }
 
   @Nullable
-  private FileKind getKind(@NotNull SourceRoot root) {
-    for (FileKind kind : myFileKind2SourcePaths.keySet()) {
+  private SourceRootKind getKind(@NotNull SourceRoot root) {
+    for (SourceRootKind kind : myFileKind2SourcePaths.keySet()) {
       List<SourceRoot> sourceRoots = myFileKind2SourcePaths.get(kind);
       if (sourceRoots.contains(root)) {
         return kind;
@@ -93,8 +90,8 @@ final class SourcePaths {
   }
 
   @Nullable
-  public FileKind removeSourceRoot(SourceRoot root) {
-    for (FileKind kind : myFileKind2SourcePaths.keySet()) {
+  public SourceRootKind removeSourceRoot(SourceRoot root) {
+    for (SourceRootKind kind : myFileKind2SourcePaths.keySet()) {
       List<SourceRoot> sourceRoots = myFileKind2SourcePaths.get(kind);
       if (sourceRoots.contains(root)) {
         sourceRoots.remove(root);
@@ -128,12 +125,12 @@ final class SourcePaths {
 
   public static final class SourceRootAlreadyExistsException extends IllegalStateException {
     private final SourceRoot myRoot;
-    private final FileKind myPathKind;
+    private final SourceRootKind myPathKind;
     private final SourceRoot myExistingRoot;
-    private final FileKind myExistingRootKind;
+    private final SourceRootKind myExistingRootKind;
 
-    public SourceRootAlreadyExistsException(SourceRoot root, FileKind pathKind,
-                                            SourceRoot existingRoot, FileKind existingPathKind) {
+    public SourceRootAlreadyExistsException(SourceRoot root, SourceRootKind pathKind,
+                                            SourceRoot existingRoot, SourceRootKind existingPathKind) {
       myRoot = root;
       myPathKind = pathKind;
       myExistingRoot = existingRoot;

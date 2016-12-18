@@ -19,19 +19,19 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
- * Every {@link SourceRoot} has a <code>FileKind</code> assigned to it.
+ * Every {@link SourceRoot} has a <code>SourceRootKind</code> assigned to it.
  *
  * @see SourcePaths
+ * @see SourceRootKinds for default kinds we have
  * @author apyshkin
  * @since 3.5
  */
 @Immutable
-public interface FileKind {
+public interface SourceRootKind {
   /**
    * @return a presentable name which will be persisted in the module descriptor.
    */
-  @NotNull
-  String getName();
+  @NotNull String getName();
 
   /**
    * Tells if the models under source paths mark with this <code>FileKind</code>

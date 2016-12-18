@@ -37,6 +37,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Internal;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -63,6 +64,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   private String myPath;
   private VirtualFile myVirtualFile = null;
 
+  @Internal
   public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFileSystem = fileSystem;
 
@@ -70,6 +72,7 @@ public class IdeaFile implements IFileEx, CachingFile {
     myPath = path.replace("//", "/").replace("\\\\", "\\");
   }
 
+  @Internal
   public IdeaFile(IdeaFileSystem fileSystem, @NotNull VirtualFile virtualFile) {
     myFileSystem = fileSystem;
     myVirtualFile = virtualFile;
