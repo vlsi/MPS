@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -202,8 +202,8 @@
       <concept id="5045161044515397667" name="jetbrains.mps.lang.smodel.structure.Node_PointerOperation" flags="ng" index="iZEcu" />
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
@@ -814,7 +814,7 @@
                   <ref role="3cqZAo" node="4cg0dYPIxFK" resolve="rule" />
                 </node>
                 <node concept="3TrEf2" id="3_kHiPlqRQE" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpd4:h5YuTL0" />
+                  <ref role="3Tt5mk" to="tpd4:h5YuTL0" resolve="applicableNode" />
                 </node>
               </node>
             </node>
@@ -888,9 +888,11 @@
               <node concept="3cpWs6" id="3_kHiPlqRPH" role="3cqZAp">
                 <node concept="2OqwBi" id="4vXWNHn1XrS" role="3cqZAk">
                   <node concept="1PxgMI" id="3_kHiPlqRPK" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpd4:h5Yb3TC" resolve="PatternCondition" />
                     <node concept="37vLTw" id="2BHiRxgls_y" role="1m5AlR">
                       <ref role="3cqZAo" node="4cg0dYPIxGK" resolve="applicableNode" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYrN" role="3oSUPX">
+                      <ref role="cht4Q" to="tpd4:h5Yb3TC" resolve="PatternCondition" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="4vXWNHn1Ymc" role="2OqNvi">
@@ -914,13 +916,15 @@
             <node concept="3cpWs6" id="4cg0dYPIxHv" role="3cqZAp">
               <node concept="2OqwBi" id="3_kHiPlqLgT" role="3cqZAk">
                 <node concept="1PxgMI" id="3_kHiPlqLgR" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpd4:h5YaCyN" resolve="ConceptReference" />
                   <node concept="37vLTw" id="2BHiRxgm8Xm" role="1m5AlR">
                     <ref role="3cqZAo" node="4cg0dYPIxGK" resolve="applicableNode" />
                   </node>
+                  <node concept="chp4Y" id="714IaVdGYs0" role="3oSUPX">
+                    <ref role="cht4Q" to="tpd4:h5YaCyN" resolve="ConceptReference" />
+                  </node>
                 </node>
                 <node concept="3TrEf2" id="3_kHiPlqLgX" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpd4:h5YaFr9" />
+                  <ref role="3Tt5mk" to="tpd4:h5YaFr9" resolve="concept" />
                 </node>
               </node>
             </node>

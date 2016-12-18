@@ -6,77 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
-import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class BuildSource_JavaDependencyFileset_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_pemq4k_a(editorContext, node);
-  }
-  private EditorCell createCollection_pemq4k_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_pemq4k_a");
-    editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_pemq4k_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_pemq4k_b0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_pemq4k_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classpath");
-    editorCell.setCellId("Constant_pemq4k_a0");
-    Style style = new StyleImpl();
-    buildStyles_StyleSheet.apply_keyword(style, editorCell);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, true);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_pemq4k_b0(EditorContext editorContext, SNode node) {
-    SingleRoleCellProvider provider = new BuildSource_JavaDependencyFileset_Editor.classpathSingleRoleHandler_pemq4k_b0(node, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6fcf41976cfa6175L, 0x6e014d63c0847621L, "classpath"), editorContext);
-    return provider.createCell();
-  }
-  private class classpathSingleRoleHandler_pemq4k_b0 extends SingleRoleCellProvider {
-    public classpathSingleRoleHandler_pemq4k_b0(SNode ownerNode, SContainmentLink containmentLink, EditorContext context) {
-      super(ownerNode, containmentLink, context);
-    }
-    protected EditorCell createChildCell(SNode child) {
-      EditorCell editorCell = super.createChildCell(child);
-      installCellInfo(child, editorCell);
-      return editorCell;
-    }
-    private void installCellInfo(SNode child, EditorCell editorCell) {
-      if (editorCell.getSubstituteInfo() == null || editorCell.getSubstituteInfo() instanceof DefaultSubstituteInfo) {
-        editorCell.setSubstituteInfo(new OldNewCompositeSubstituteInfo(myEditorContext, new SChildSubstituteInfo(editorCell, myOwnerNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x6fcf41976cfa6175L, 0x6e014d63c0847621L, "classpath"), child), new DefaultChildSubstituteInfo(myOwnerNode, myContainmentLink.getDeclarationNode(), myEditorContext)));
-      }
-      if (editorCell.getRole() == null) {
-        editorCell.setRole("classpath");
-      }
-      Style style = new StyleImpl();
-      SNode node = myOwnerNode;
-      EditorContext editorContext = myEditorContext;
-      style.set(StyleAttributes.INDENT_LAYOUT_INDENT, 0, true);
-      editorCell.getStyle().putAll(style);
-    }
-    @Override
-    protected EditorCell createEmptyCell() {
-      EditorCell editorCell = super.createEmptyCell();
-      editorCell.setCellId("empty_classpath");
-
-      installCellInfo(null, editorCell);
-      return editorCell;
-    }
-    protected String getNoTargetText() {
-      return "<no classpath>";
-    }
+    return new BuildSource_JavaDependencyFileset_EditorBuilder_a(editorContext, node).createCell();
   }
 }

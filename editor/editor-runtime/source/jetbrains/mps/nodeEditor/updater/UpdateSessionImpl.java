@@ -20,13 +20,14 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.ReferencedNodeContext;
 import jetbrains.mps.nodeEditor.SModelModificationsCollector;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent;
 import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent.HintsState;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Computable;
@@ -39,8 +40,10 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.lang.ref.WeakReference;
 import java.util.Collection;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -68,6 +71,9 @@ public class UpdateSessionImpl implements UpdateSession {
 
   private UpdateInfoIndex myUpdateInfoIndex;
   private UpdateInfoNode myCurrentUpdateInfo;
+  private EditorCellFactory myCellFactory;
+
+  private Map<AttributeKind, Deque<EditorCell>> myAttributeKind2Cell = new HashMap<>();
 
   protected UpdateSessionImpl(@NotNull SNode node, List<SModelEvent> events, @NotNull UpdaterImpl updater, Map<SNode, WeakReference<EditorCell>> bigCellsMap,
       Map<EditorCell, Set<SNode>> relatedNodes, Map<EditorCell, Set<SNodeReference>> relatedRefTargets,
@@ -136,20 +142,19 @@ public class UpdateSessionImpl implements UpdateSession {
   Pair<EditorCell, UpdateInfoIndex> performUpdate() {
     myCurrentUpdateInfo = new UpdateInfoNode(ReferencedNodeContext.createNodeContext(getNode()));
     EditorContext editorContext = getUpdater().getEditorContext();
-    editorContext.getCellFactory().pushCellContext();
+    getCellFactory().pushCellContext();
 
     Pair<EditorCell, UpdateInfoIndex> result = new Pair<EditorCell, UpdateInfoIndex>(null, null);
     try {
-      editorContext.getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
+      getCellFactory().addCellContextHints(getInitialEditorHints(editorContext));
       String[] explicitHintsForNode = getExplicitHintsForNode(getNode());
       if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+        getCellFactory().addCellContextHints(explicitHintsForNode);
       }
-      result.o1 =
-          EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), getCurrentContext(),
-              editorContext.isInspector());
+      result.o1 = EditorManager.getInstanceFromContext(editorContext).createRootCell(getNode(), getModelModifications(), getCurrentContext(),
+          editorContext.isInspector());
     } finally {
-      editorContext.getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
       result.o2 = new UpdateInfoIndex(myCurrentUpdateInfo);
       myCurrentUpdateInfo = null;
     }
@@ -204,21 +209,19 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   @Override
-  public EditorCell updateRoleAttributeCell(final Class attributeKind, final EditorCell cellWithRole, final SNode roleAttribute) {
-    if (attributeKind != AttributeKind.Reference.class && getCurrentContext().hasRoles()) {
+  public EditorCell updateAttributeCell(AttributeKind attributeKind, EditorCell attributedCell, SNode attribute) {
+    if (attributeKind != AttributeKind.REFERENCE && getCurrentContext().hasRoles()) {
       //Suppressing role attribute cell creation upon reference cells.
-      return cellWithRole;
+      return attributedCell;
     }
 
     final EditorContext editorContext = getUpdater().getEditorContext();
-    editorContext.getCellFactory().pushCellContext();
-    editorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    getCellFactory().pushCellContext();
+    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
 
-    final boolean isNodeAttribute = attributeKind == Node.class;
+    final boolean isNodeAttribute = attributeKind == AttributeKind.NODE;
     if (isNodeAttribute) {
-      // Special case:
-      // - replacing currentUpdateInfo with new one for node attribute
-      // - attaching currentUpdateInfo as child for new UpdateInfo for node attribute
+      // Special case: replacing currentUpdateInfo with new one for node attribute
       //
       // This is necessary to correctly reflect cell structure in UpdateInfo tree: node attribute cell is a parent cell of node cell.
       //
@@ -226,25 +229,49 @@ public class UpdateSessionImpl implements UpdateSession {
       // for the node itself and then handle attribute cell creation. Better approach: first create new cell for node attribute & handle node
       // cell creation only at the moment we process [>attributed cell<] cell in attribute's editor. In this case such hack will not
       // be necessary: UpdateInfo, representing attributed node, will be created as a part of child cell creation for attribute's cell (UpdateInfo).
-      myCurrentUpdateInfo = myCurrentUpdateInfo.insertNewParent(new UpdateInfoNode(ReferencedNodeContext.createNodeAttributeContext(roleAttribute)));
+      myCurrentUpdateInfo = myCurrentUpdateInfo.replaceByNodeAttributeInfo(ReferencedNodeContext.createNodeAttributeContext(attribute));
     } else {
-      myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(roleAttribute), myCurrentUpdateInfo);
+      myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(attribute), myCurrentUpdateInfo);
     }
 
     try {
-      return runWithExplicitEditorHints(editorContext, roleAttribute, new Computable<EditorCell>() {
-        @Override
-        public EditorCell compute() {
-          return EditorManager.getInstanceFromContext(editorContext).doCreateRoleAttributeCell(attributeKind, cellWithRole, getCurrentContext(),
-              myModelModifications);
-        }
-      });
+      return runWithExplicitEditorHints(editorContext, attribute, () -> doCreateRoleAttributeCell(attributeKind, attributedCell, getCurrentContext()));
     } finally {
-      editorContext.getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
       if (!isNodeAttribute) {
         myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
       }
     }
+  }
+
+  private EditorCell doCreateRoleAttributeCell(AttributeKind attributeKind, EditorCell cellWithRole, ReferencedNodeContext refContext) {
+    myAttributeKind2Cell.computeIfAbsent(attributeKind, k -> new LinkedList<>()).addFirst(cellWithRole);
+
+    // For the compatibility with Attribute concept editor.
+    // If the editor for sub-concept of Attribute was not specified then default one will be used, so
+    // providing the possibility to always call getCurrentAttributedCellWithRole() with AttributeKind.Node.class
+    // specified as a parameter.
+    if (attributeKind != AttributeKind.NODE) {
+      myAttributeKind2Cell.computeIfAbsent(AttributeKind.NODE, k -> new LinkedList<>()).addFirst(cellWithRole);
+    }
+    try {
+      return EditorManager.getInstanceFromContext(getUpdater().getEditorContext()).createEditorCell(getModelModifications(), refContext);
+    } finally {
+      assert myAttributeKind2Cell.get(attributeKind).removeFirst() == cellWithRole;
+      if (attributeKind != AttributeKind.NODE) {
+        assert myAttributeKind2Cell.get(AttributeKind.NODE).removeFirst() == cellWithRole;
+      }
+    }
+  }
+
+  @NotNull
+  @Override
+  public EditorCell getAttributedCell(AttributeKind attributeKind, SNode attribute) {
+    // Marking UpdateInfoNode of the attributed cell as "used". UpdateInfoNode will be attached as a child
+    // of the current UpdateInfoNode on first keepAttributedInfo() call.
+    myCurrentUpdateInfo.keepAttributedInfo();
+    return myAttributeKind2Cell.computeIfAbsent(attributeKind, k -> new LinkedList<>()).stream().findFirst().orElseGet(
+        () -> new EditorCell_Error(getUpdater().getEditorContext(), attribute, "<attributed cell not found>"));
   }
 
   @Override
@@ -256,6 +283,15 @@ public class UpdateSessionImpl implements UpdateSession {
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
     }
+  }
+
+  @NotNull
+  @Override
+  public EditorCellFactory getCellFactory() {
+    if (myCellFactory == null) {
+      myCellFactory = new EditorCellFactoryImpl(getUpdater().getEditorContext());
+    }
+    return myCellFactory;
   }
 
   private ReferencedNodeContext getCurrentContext() {
@@ -284,14 +320,14 @@ public class UpdateSessionImpl implements UpdateSession {
   private <T> T runWithExplicitEditorHints(EditorContext editorContext, SNode node, Computable<T> cellCreator) {
     String[] explicitHintsForNode = getExplicitHintsForNode(node);
     if (explicitHintsForNode != null) {
-      editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().addCellContextHints(explicitHintsForNode);
+      getCellFactory().pushCellContext();
+      getCellFactory().addCellContextHints(explicitHintsForNode);
     }
     try {
       return cellCreator.compute();
     } finally {
       if (explicitHintsForNode != null) {
-        editorContext.getCellFactory().popCellContext();
+        getCellFactory().popCellContext();
       }
     }
   }

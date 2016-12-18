@@ -1479,9 +1479,9 @@
         <var name="needParamNames" id="9220825835531161261" />
         <var name="reader" id="7241381882860009456" />
       </scope>
-      <unit id="7241381882860010111" at="41,21,47,11" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
-      <unit id="7241381882860010119" at="51,21,57,11" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$2" />
-      <unit id="7241381882860009999" at="161,17,181,7" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
+      <unit id="7241381882860010111" at="41,21,47,11" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1$1" />
+      <unit id="7241381882860010119" at="51,21,57,11" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1$2" />
+      <unit id="7241381882860009999" at="161,17,181,7" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$ClassifierSignatureVisitor$1" />
       <unit id="7241381882860009553" at="38,28,59,7" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$1" />
       <unit id="7241381882860002145" at="150,0,188,0" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass$ClassifierSignatureVisitor" />
       <unit id="7241381882860009362" at="19,0,189,0" name="jetbrains.mps.baseLanguage.javastub.asm.ASMClass" />

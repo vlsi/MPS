@@ -23,8 +23,8 @@
     <file name="AssertFalse_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertFalse_BehaviorDescriptor" />
     </file>
-    <file name="AssertInNotNull_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertInNotNull_BehaviorDescriptor" />
+    <file name="AssertIsNotNull_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNotNull_BehaviorDescriptor" />
     </file>
     <file name="AssertIsNull_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.AssertIsNull_BehaviorDescriptor" />
@@ -375,7 +375,7 @@
         <var name="node" id="1213877487741" />
         <var name="parameters" id="1213877487741" />
       </scope>
-      <unit id="8084800926155112057" at="57,216,61,9" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase__BehaviorDescriptor$2" />
+      <unit id="8084800926155112057" at="57,216,61,9" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase__BehaviorDescriptor$1$1" />
       <unit id="8084800926155112048" at="55,399,63,5" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase__BehaviorDescriptor$1" />
       <unit id="1213877487741" at="31,0,165,0" name="jetbrains.mps.baseLanguage.unitTest.behavior.BTestCase__BehaviorDescriptor" />
     </file>

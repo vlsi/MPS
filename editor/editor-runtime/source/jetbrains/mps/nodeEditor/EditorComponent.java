@@ -2834,7 +2834,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean isNodeDisposed() {
     SNode node = getEditedNode();
-    return node != null && !SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance());
+    return node != null && !SNodeUtil.isAccessible(node, myEditorContext.getRepository());
   }
 
   public CellTracker getCellTracker() {

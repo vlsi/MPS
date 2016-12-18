@@ -17,10 +17,20 @@ package jetbrains.mps.plugins.tool;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.Icon;
+import javax.swing.KeyStroke;
+import java.util.Map;
 
 public abstract class GeneratedTool extends BaseGeneratedTool {
+
+  protected GeneratedTool(Project project, String id, Map<String, KeyStroke> shortcutsByKeymap, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
+    super(project, id, shortcutsByKeymap, icon, anchor, canCloseContent);
+  }
+
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected GeneratedTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     super(project, id, number, icon, anchor, canCloseContent);
   }

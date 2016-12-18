@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.ide.findusages.view.icons;
 
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModuleHolder;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -36,16 +34,11 @@ import java.util.Collection;
 public class IconManager {
   public static Icon getIconForIHolder(IHolder holder) {
     if (holder instanceof NodeHolder) {
-      SNode node = ((NodeHolder) holder).getObject();
-      return node == null ? null : jetbrains.mps.ide.icons.IconManager.getIconFor(node);
+      return IdeIcons.DEFAULT_NODE_ICON;
     } else if (holder instanceof ModelHolder) {
       return IdeIcons.MODEL_ICON;
     } else if (holder instanceof ModelsHolder) {
       return IdeIcons.MODEL_ICON;
-    } else if (holder instanceof ModuleHolder) {
-      return jetbrains.mps.ide.icons.IconManager.getIconFor(((ModuleHolder) holder).getObject());
-    } else if (holder instanceof ModulesHolder) {
-      return IdeIcons.SOLUTION_ICON;
     } else if (holder instanceof VoidHolder) {
       return ((VoidHolder) holder).getIcon();
     }
@@ -73,7 +66,7 @@ public class IconManager {
       return IdeIcons.MODEL_ICON;
     }
     if (value instanceof SLanguage) {
-      return IdeIcons.LANGUAGE_ICON;
+      return MPSIcons.LanguageRuntime;
     }
     if (value instanceof SModuleReference) {
       return IdeIcons.DEFAULT_ICON;

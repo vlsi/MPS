@@ -19,7 +19,6 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
-    <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" name="Idea-vcs" level="project" />
     <orderEntry type="module" module-name="platform" />
   </component>

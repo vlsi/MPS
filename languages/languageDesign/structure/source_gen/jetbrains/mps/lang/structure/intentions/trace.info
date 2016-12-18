@@ -178,7 +178,7 @@
         <var name="editorContext" id="1957700446084421329" />
         <var name="node" id="1957700446084421329" />
       </scope>
-      <unit id="1957700446084633525" at="68,93,72,7" name="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$1" />
+      <unit id="1957700446084633525" at="68,93,72,7" name="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$IntentionImplementation$1" />
       <unit id="1957700446084421329" at="58,0,88,0" name="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention$IntentionImplementation" />
       <unit id="1957700446084421329" at="28,0,89,0" name="jetbrains.mps.lang.structure.intentions.ForbidIncomingReferencesInSubconcepts_Intention" />
     </file>

@@ -2,10 +2,10 @@
 <model ref="r:ba4ce2b4-b708-4183-95e3-2753aef5bf29(jetbrains.mps.baseLanguage.extensionMethods.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -25,7 +25,6 @@
       </concept>
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <property id="1140524450557" name="separatorText" index="2czwfO" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
@@ -133,7 +132,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -230,8 +228,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
@@ -462,7 +460,6 @@
         <ref role="1k5W1q" to="tpen:hY9fg1G" resolve="LeftParenAfterName" />
       </node>
       <node concept="3F2HdR" id="6obdqWnhPAc" role="3EZMnx">
-        <property role="2czwfN" value="false" />
         <property role="1cu_pB" value="0" />
         <property role="2czwfO" value="," />
         <ref role="1NtTu8" to="tpee:fzclF7Y" resolve="parameter" />
@@ -711,7 +708,6 @@
   <node concept="24kQdi" id="1HybphbKONv">
     <ref role="1XX52x" to="uigu:1HybphbKaZR" resolve="ExtensionStaticFieldDeclaration" />
     <node concept="3EZMnI" id="1v5QYNckINP" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="PMmxH" id="7FDT6FiKb76" role="3EZMnx">
         <ref role="PMmxG" to="tpen:6aS1KHf_xVK" resolve="HasAnnotation_AnnotationComponent" />
       </node>
@@ -903,8 +899,10 @@
                   </node>
                   <node concept="2oxUTD" id="1wEcoXjJllH" role="2OqNvi">
                     <node concept="1PxgMI" id="1wEcoXjJllI" role="2oxUTC">
-                      <ref role="1m5ApE" to="uigu:1m3OroNpuvT" resolve="ExtensionMethodDeclaration" />
                       <node concept="2ZBlsa" id="1wEcoXjJllV" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGYsJ" role="3oSUPX">
+                        <ref role="cht4Q" to="uigu:1m3OroNpuvT" resolve="ExtensionMethodDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1072,8 +1070,10 @@
                   </node>
                   <node concept="2oxUTD" id="1wEcoXjJlog" role="2OqNvi">
                     <node concept="1PxgMI" id="1wEcoXjJloh" role="2oxUTC">
-                      <ref role="1m5ApE" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                       <node concept="2ZBlsa" id="1wEcoXjJlov" role="1m5AlR" />
+                      <node concept="chp4Y" id="714IaVdGYsw" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
+                      </node>
                     </node>
                   </node>
                 </node>

@@ -51,7 +51,7 @@ public class JavaCommand_Test extends BaseTransformationTest {
           pointer.value = new SNodePointer(mainNode);
         }
       });
-      this.checkProcess(new Java_Command().createProcess(pointer.value), Main.MESSAGE + "\n");
+      this.checkProcess(new Java_Command().createProcess(pointer.value, myProject.getRepository()), Main.MESSAGE + "\n");
     }
 
 

@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,12 +60,12 @@ public class XmlPrologElement_SubstituteMenu extends SubstituteMenuBase {
       @Nullable
       @Override
       public String getMatchingText(@NotNull String pattern) {
-        return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+        return SConceptOperations.conceptAlias(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration"));
       }
       @Nullable
       @Override
       public String getDescriptionText(@NotNull String pattern) {
-        return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration").getDeclarationNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"));
+        return SConceptOperations.shortDescription(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x4890619bb401ef6eL, "jetbrains.mps.core.xml.structure.XmlDeclaration"));
       }
       @Override
       public boolean canExecute(@NotNull String pattern) {
@@ -102,12 +102,12 @@ public class XmlPrologElement_SubstituteMenu extends SubstituteMenuBase {
       @Nullable
       @Override
       public String getMatchingText(@NotNull String pattern) {
-        return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration").getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+        return SConceptOperations.conceptAlias(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"));
       }
       @Nullable
       @Override
       public String getDescriptionText(@NotNull String pattern) {
-        return SPropertyOperations.getString(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration").getDeclarationNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x10d34f97574L, "shortDescription"));
+        return SConceptOperations.shortDescription(MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394f4069bL, "jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration"));
       }
       @Override
       public boolean canExecute(@NotNull String pattern) {

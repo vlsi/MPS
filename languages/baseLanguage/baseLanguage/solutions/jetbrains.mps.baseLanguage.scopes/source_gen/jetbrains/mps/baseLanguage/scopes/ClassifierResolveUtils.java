@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -93,7 +93,7 @@ public class ClassifierResolveUtils {
     }), classifierName);
     return (Sequence.fromIterable(result).count() == 1 ? Sequence.fromIterable(result).first() : null);
   }
-  public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
+  private static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
     Iterable<SNode> sameModelResult = resolveClassifierByFqName(sourceModel, classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
       return (Sequence.fromIterable(sameModelResult).count() == 1 ? Sequence.fromIterable(sameModelResult).first() : null);
@@ -106,10 +106,14 @@ public class ClassifierResolveUtils {
       if (Sequence.fromIterable(resolved).isNotEmpty()) {
         return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
       }
-    }
 
-    Iterable<SNode> resolved = resolveInScope(targetModelName, classifierFqName, MPSModuleRepository.getInstance().getModules());
-    return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
+      SRepository contextRepository = module.getRepository();
+      if (contextRepository != null) {
+        resolved = resolveInScope(targetModelName, classifierFqName, contextRepository.getModules());
+        return (Sequence.fromIterable(resolved).count() == 1 ? Sequence.fromIterable(resolved).first() : null);
+      }
+    }
+    return null;
   }
   private static Iterable<SNode> resolveInScope(@NotNull final String targetModelName, @NotNull String classifierFqName, Iterable<SModule> modules) {
     // todo: go through all stereotypes and resolve by long name and stereotype 
@@ -119,7 +123,7 @@ public class ClassifierResolveUtils {
       }
     }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return eq_8z6r2b_a0a0a0a0a0a0b0e(jetbrains.mps.util.SNodeOperations.getModelLongName(it), targetModelName);
+        return eq_8z6r2b_a0a0a0a0a0a0b0e(targetModelName, it.getName().getLongName());
       }
     }).toListSequence();
     return resolveClassifierByFqNameWithNonStubPriority(models, classifierFqName);
@@ -160,16 +164,16 @@ public class ClassifierResolveUtils {
   private static Iterable<SNode> resolveClassifierByFqName(SModel modelDescriptor, String classifierFqName) {
     assert !(classifierFqName.contains("$"));
 
-    if (!(classifierFqName.startsWith(jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor)))) {
+    if (!(classifierFqName.startsWith(modelDescriptor.getName().getLongName()))) {
       return Collections.<SNode>emptyList();
     }
 
-    String modelName = jetbrains.mps.util.SNodeOperations.getModelLongName(modelDescriptor);
-    if (1 + modelName.length() > classifierFqName.length()) {
+    String modelNameNoStereotype = modelDescriptor.getName().getLongName();
+    if (1 + modelNameNoStereotype.length() > classifierFqName.length()) {
       return Collections.<SNode>emptyList();
     }
 
-    String classifierNestedName = classifierFqName.substring(modelName.length() + 1);
+    String classifierNestedName = classifierFqName.substring(modelNameNoStereotype.length() + 1);
     return resolveClassifierByNestedName(modelDescriptor, classifierNestedName);
   }
   private static Iterable<SNode> resolveClassifierByNestedName(SModel modelDescriptor, String classifierNestedName) {
@@ -391,7 +395,7 @@ public class ClassifierResolveUtils {
     // TODO are there other deprecated member roles 
     return ListSequence.fromList(SLinkOperations.getChildren(clas, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+        return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {

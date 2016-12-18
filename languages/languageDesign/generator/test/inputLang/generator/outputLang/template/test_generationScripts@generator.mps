@@ -6,7 +6,7 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="157a9668-bf58-417b-893e-53d86388dc56" name="jetbrains.mps.transformation.test.outputLang" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -179,6 +179,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
@@ -190,8 +193,8 @@
       </concept>
       <concept id="1166648550386" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation" flags="nn" index="2xF2bX" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -291,12 +294,14 @@
                   </node>
                   <node concept="1PxgMI" id="hzAGYbD" role="2Oq$k0">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
                     <node concept="2OqwBi" id="hzAGYbE" role="1m5AlR">
                       <node concept="2Xjw5R" id="hzAGYbF" role="2OqNvi">
                         <node concept="1xLf8o" id="hzAGYbG" role="1xVPHs" />
                       </node>
                       <node concept="30H73N" id="hzAGYbH" role="2Oq$k0" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYVa" role="3oSUPX">
+                      <ref role="cht4Q" to="tpm0:hp5_jEN" resolve="InputRoot" />
                     </node>
                   </node>
                 </node>
@@ -348,12 +353,14 @@
                     <ref role="3TsBF5" to="tpm0:hvFifRP" resolve="useInTest" />
                   </node>
                   <node concept="1PxgMI" id="hzAGZX6" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpm0:hp5_jEN" resolve="InputRoot" />
                     <node concept="2OqwBi" id="hzAGZX7" role="1m5AlR">
                       <node concept="2Xjw5R" id="hzAGZX8" role="2OqNvi">
                         <node concept="1xLf8o" id="hzAGZX9" role="1xVPHs" />
                       </node>
                       <node concept="30H73N" id="hzAGZXa" role="2Oq$k0" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYVc" role="3oSUPX">
+                      <ref role="cht4Q" to="tpm0:hp5_jEN" resolve="InputRoot" />
                     </node>
                   </node>
                 </node>
@@ -445,7 +452,7 @@
               <node concept="2OqwBi" id="hxx$Upc" role="3clFbG">
                 <node concept="30H73N" id="hp5HYwS" role="2Oq$k0" />
                 <node concept="3Tsc0h" id="hp5I9b5" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpm0:hp5EZkO" />
+                  <ref role="3TtcxE" to="tpm0:hp5EZkO" resolve="inputChild" />
                 </node>
               </node>
             </node>

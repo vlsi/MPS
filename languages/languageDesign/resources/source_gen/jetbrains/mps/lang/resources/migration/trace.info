@@ -105,7 +105,7 @@
       <unit id="2756621024541467075" at="41,279,45,7" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$2" />
       <unit id="8301168591512459811" at="57,42,61,7" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$4" />
       <unit id="8301168591512459820" at="62,286,66,7" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$5" />
-      <unit id="5701536975737564163" at="68,21,72,11" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$7" />
+      <unit id="5701536975737564163" at="68,21,72,11" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$6$1" />
       <unit id="2756621024541458267" at="45,22,50,7" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$3" />
       <unit id="5701536975737770743" at="66,20,74,7" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile$6" />
       <unit id="2756621024541449830" at="21,0,85,0" name="jetbrains.mps.lang.resources.migration.MoveResourcePathToIconFile" />
@@ -199,7 +199,7 @@
       <unit id="5701536975737671206" at="46,22,50,7" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$3" />
       <unit id="5701536975737741476" at="57,42,61,7" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$4" />
       <unit id="5701536975737676385" at="62,292,66,7" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$5" />
-      <unit id="5701536975737678843" at="68,21,72,11" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$7" />
+      <unit id="5701536975737678843" at="68,21,72,11" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$6$1" />
       <unit id="5701536975737685117" at="66,20,74,7" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions$6" />
       <unit id="5148573020831035378" at="22,0,82,0" name="jetbrains.mps.lang.resources.migration.InlineIconExpressions" />
     </file>

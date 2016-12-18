@@ -79,12 +79,11 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
       </concept>
-      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
-        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
+        <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -174,11 +173,8 @@
                 <node concept="10QFUN" id="KwT0zcldsR" role="33vP2m">
                   <node concept="3mZe$p" id="KwT0zcl3dk" role="10QFUP">
                     <ref role="3mZe$g" to="tpci:hroutJm" resolve="ConceptInstances" />
-                    <node concept="2OqwBi" id="KwT0zcl3dl" role="3mZe$s">
-                      <node concept="35c_gC" id="KwT0zcl3dm" role="2Oq$k0">
-                        <ref role="35c_gD" to="tpc2:5OVd5tVffWc" resolve="TransformationMenuReference_Default" />
-                      </node>
-                      <node concept="FGMqu" id="KwT0zcl3dn" role="2OqNvi" />
+                    <node concept="3B5_sB" id="4YXTt1AIwth" role="3mZe$s">
+                      <ref role="3B5MYn" to="tpc2:5OVd5tVffWc" resolve="TransformationMenuReference_Default" />
                     </node>
                     <node concept="2OqwBi" id="KwT0zcl3Pi" role="3JOdhr">
                       <node concept="24CIHX" id="KwT0zcl3Jx" role="2Oq$k0" />

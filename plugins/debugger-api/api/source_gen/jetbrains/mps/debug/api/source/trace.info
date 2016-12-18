@@ -23,43 +23,43 @@
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926012">
     <file name="NodeSourcePosition.java">
-      <node id="4701043456212926013" at="11,0,12,0" concept="2" trace="myNode" />
-      <node id="4701043456212926021" at="12,50,13,18" concept="1" />
-      <node id="4701043456212926032" at="16,25,17,46" concept="8" />
-      <node id="4701043456212926053" at="21,68,22,19" concept="8" />
-      <node id="4701043456212926055" at="23,5,24,0" concept="10" />
-      <node id="4701043456212926056" at="24,0,25,68" concept="7" />
-      <node id="4701043456212926063" at="25,68,26,0" concept="10" />
-      <node id="4701043456212926064" at="26,0,27,56" concept="8" />
-      <node id="7048882195103648385" at="29,26,30,78" concept="8" />
-      <node id="4701043456212926065" at="32,62,33,46" concept="8" />
-      <node id="4701043456212926017" at="12,0,15,0" concept="0" trace="NodeSourcePosition#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
-      <node id="4701043456212926043" at="20,40,23,5" concept="5" />
-      <node id="7048882195103614407" at="29,0,32,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4701043456212926065" at="32,0,35,0" concept="11" trace="eq_1z1n6b_a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="4701043456212926028" at="15,0,19,0" concept="6" trace="hashCode#()I" />
-      <node id="4701043456212926037" at="19,0,29,0" concept="6" trace="equals#(Ljava/lang/Object;)Z" />
-      <scope id="4701043456212926020" at="12,50,13,18" />
-      <scope id="4701043456212926031" at="16,25,17,46" />
-      <scope id="4701043456212926052" at="21,68,22,19" />
-      <scope id="7048882195103614410" at="29,26,30,78" />
-      <scope id="4701043456212926065" at="32,62,33,46" />
-      <scope id="4701043456212926017" at="12,0,15,0">
+      <node id="4701043456212926013" at="8,0,9,0" concept="2" trace="myNode" />
+      <node id="4701043456212926021" at="9,50,10,18" concept="1" />
+      <node id="4701043456212926032" at="13,25,14,29" concept="8" />
+      <node id="4701043456212926053" at="18,68,19,19" concept="8" />
+      <node id="4701043456212926055" at="20,5,21,0" concept="10" />
+      <node id="4701043456212926056" at="21,0,22,68" concept="7" />
+      <node id="4701043456212926063" at="22,68,23,0" concept="10" />
+      <node id="4701043456212926064" at="23,0,24,56" concept="8" />
+      <node id="3331580568335779596" at="26,35,27,18" concept="8" />
+      <node id="4701043456212926065" at="29,62,30,46" concept="8" />
+      <node id="4701043456212926017" at="9,0,12,0" concept="0" trace="NodeSourcePosition#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)V" />
+      <node id="4701043456212926043" at="17,40,20,5" concept="5" />
+      <node id="7048882195103614407" at="26,0,29,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4701043456212926065" at="29,0,32,0" concept="11" trace="eq_1z1n6b_a0e0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="4701043456212926028" at="12,0,16,0" concept="6" trace="hashCode#()I" />
+      <node id="4701043456212926037" at="16,0,26,0" concept="6" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="4701043456212926020" at="9,50,10,18" />
+      <scope id="4701043456212926031" at="13,25,14,29" />
+      <scope id="4701043456212926052" at="18,68,19,19" />
+      <scope id="7048882195103614410" at="26,35,27,18" />
+      <scope id="4701043456212926065" at="29,62,30,46" />
+      <scope id="4701043456212926017" at="9,0,12,0">
         <var name="node" id="4701043456212926025" />
       </scope>
-      <scope id="7048882195103614407" at="29,0,32,0" />
-      <scope id="4701043456212926065" at="32,0,35,0">
+      <scope id="7048882195103614407" at="26,0,29,0" />
+      <scope id="4701043456212926065" at="29,0,32,0">
         <var name="a" id="4701043456212926065" />
         <var name="b" id="4701043456212926065" />
       </scope>
-      <scope id="4701043456212926028" at="15,0,19,0" />
-      <scope id="4701043456212926042" at="20,40,27,56">
+      <scope id="4701043456212926028" at="12,0,16,0" />
+      <scope id="4701043456212926042" at="17,40,24,56">
         <var name="nodePosition" id="4701043456212926057" />
       </scope>
-      <scope id="4701043456212926037" at="19,0,29,0">
+      <scope id="4701043456212926037" at="16,0,26,0">
         <var name="object" id="4701043456212926040" />
       </scope>
-      <unit id="4701043456212926012" at="10,0,36,0" name="jetbrains.mps.debug.api.source.NodeSourcePosition" />
+      <unit id="4701043456212926012" at="7,0,33,0" name="jetbrains.mps.debug.api.source.NodeSourcePosition" />
     </file>
   </root>
   <root nodeRef="r:7e184eff-8349-496f-875b-1e3646bb06f3(jetbrains.mps.debug.api.source)/4701043456212926071">

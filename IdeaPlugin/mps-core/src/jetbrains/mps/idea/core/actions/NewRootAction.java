@@ -30,8 +30,9 @@ import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -42,8 +43,6 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -53,6 +52,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
+import javax.swing.Icon;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
@@ -61,8 +61,6 @@ public class NewRootAction extends AnAction {
   private EditableSModel myModel;
   private Project myProject;
   private Map<String, SAbstractConcept> myConceptFqNameToNodePointerMap = new LinkedHashMap<>();
-
-  private static Logger LOG = LogManager.getLogger(NewRootAction.class);
 
   public NewRootAction() {
     super(MPSBundle.message("new.root.action"), null, IdeIcons.DEFAULT_ROOT_ICON);
@@ -86,16 +84,13 @@ public class NewRootAction extends AnAction {
 
     Ref<SNodeReference> createdNode = new Ref<>();
 
-    ProjectHelper.getModelAccess(myProject).executeCommand(new Runnable() {
-      @Override
-      public void run() {
-        SNode newNode = NodeFactoryManager.createNode(concept, null, null, myModel);
-        SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, name);
-        myModel.addRootNode(newNode);
-        myModel.save();
+    ProjectHelper.getModelAccess(myProject).executeCommand(() -> {
+      SNode newNode = NodeFactoryManager.createNode(concept, null, null, myModel);
+      SNodeAccessUtil.setProperty(newNode, SNodeUtil.property_INamedConcept_name, name);
+      myModel.addRootNode(newNode);
+      myModel.save();
 
-        createdNode.set(newNode.getReference());
-      }
+      createdNode.set(newNode.getReference());
     });
 
     if (!createdNode.isNull() && !ApplicationManager.getApplication().isUnitTestMode()) {
@@ -136,7 +131,7 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
     if (mpsProject == null) {
       return;
     }
@@ -159,15 +154,12 @@ public class NewRootAction extends AnAction {
       return;
     }
 
-    mpsProject.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        Set<SLanguage> modelLanguages = SModelOperations.getAllLanguageImports(model);
-        for (SLanguage language : modelLanguages) {
-          for (SAbstractConcept concept : language.getConcepts()) {
-            if (ModelConstraints.canBeRoot(concept, model)) {
-              myConceptFqNameToNodePointerMap.put(concept.getQualifiedName(), concept);
-            }
+    mpsProject.getModelAccess().runReadAction(() -> {
+      Set<SLanguage> modelLanguages = SModelOperations.getAllLanguageImports(model);
+      for (SLanguage language : modelLanguages) {
+        for (SAbstractConcept concept : language.getConcepts()) {
+          if (ModelConstraints.canBeRoot(concept, model)) {
+            myConceptFqNameToNodePointerMap.put(concept.getQualifiedName(), concept);
           }
         }
       }
@@ -180,15 +172,14 @@ public class NewRootAction extends AnAction {
       MyCreateFromTemplateDialog dialog = new MyCreateFromTemplateDialog(myProject, concepts);
       dialog.setTitle(MPSBundle.message("create.new.root.dialog.title"));
 
-      ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (Map.Entry<String, SAbstractConcept> entry : concepts.entrySet()) {
-            String conceptFqName = entry.getKey();
-            SAbstractConcept concept = entry.getValue();
-            dialog.getKindCombo().addItem(concept.getConceptAlias(), IconManager.getIcon(concept), conceptFqName);
-            dialog.setTemplateKindComponentsVisible(true);
-          }
+      ProjectHelper.getModelAccess(myProject).runReadAction(() -> {
+        for (Map.Entry<String, SAbstractConcept> entry : concepts.entrySet()) {
+          String conceptFqName = entry.getKey();
+          SAbstractConcept concept = entry.getValue();
+          final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+          final Icon conceptIcon = globalIconManager == null ? Nodes.RootNode : globalIconManager.getIconFor(concept);
+          dialog.getKindCombo().addItem(concept.getConceptAlias(), conceptIcon, conceptFqName);
+          dialog.setTemplateKindComponentsVisible(true);
         }
       });
 

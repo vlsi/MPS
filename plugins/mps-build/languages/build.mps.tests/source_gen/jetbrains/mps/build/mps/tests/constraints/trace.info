@@ -160,8 +160,8 @@
         <var name="references" id="8574011380719962596" />
       </scope>
       <scope id="8574011380719962596" at="46,0,76,0" />
-      <unit id="8574011380720244694" at="64,23,69,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$3" />
-      <unit id="8574011380719962596" at="57,19,71,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$2" />
+      <unit id="8574011380720244694" at="64,23,69,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$1$1$1" />
+      <unit id="8574011380719962596" at="57,19,71,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$1$1" />
       <unit id="8574011380719962596" at="49,154,73,5" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$1" />
       <unit id="8574011380719962596" at="27,0,82,0" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints" />
     </file>
@@ -246,9 +246,9 @@
         <var name="references" id="8574011380873424207" />
       </scope>
       <scope id="8574011380873424207" at="49,0,83,0" />
-      <unit id="4005526075816234804" at="70,394,74,17" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$4" />
-      <unit id="4005526075816140285" at="67,23,76,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$3" />
-      <unit id="8574011380873424207" at="60,19,78,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$2" />
+      <unit id="4005526075816234804" at="70,394,74,17" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1$1$1$1" />
+      <unit id="4005526075816140285" at="67,23,76,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1$1$1" />
+      <unit id="8574011380873424207" at="60,19,78,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1$1" />
       <unit id="8574011380873424207" at="52,153,80,5" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1" />
       <unit id="8574011380873424207" at="30,0,89,0" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints" />
     </file>

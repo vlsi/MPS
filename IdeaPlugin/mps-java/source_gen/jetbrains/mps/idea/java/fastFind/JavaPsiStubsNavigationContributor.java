@@ -14,7 +14,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.idea.java.psiStubs.JavaForeignIdBuilder;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -62,10 +62,10 @@ public class JavaPsiStubsNavigationContributor implements NavigationParticipant,
     }
   }
   public void initComponent() {
-    PersistenceFacade.getInstance().addNavigationParticipant(this);
+    PersistenceRegistry.getInstance().addNavigationParticipant(this);
   }
   public void disposeComponent() {
-    PersistenceFacade.getInstance().removeNavigationParticipant(this);
+    PersistenceRegistry.getInstance().removeNavigationParticipant(this);
   }
   @NonNls
   @NotNull

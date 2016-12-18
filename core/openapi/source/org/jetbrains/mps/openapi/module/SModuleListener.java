@@ -52,7 +52,7 @@ public interface SModuleListener {
   void languageRemoved(SModule module, SLanguage lang);
 
   /**
-   * Any change that doesn't affect the dependencies and used languages.
+   * Any change including module dependencies and descriptor reload from disk
    */
   void moduleChanged(SModule module);
 }

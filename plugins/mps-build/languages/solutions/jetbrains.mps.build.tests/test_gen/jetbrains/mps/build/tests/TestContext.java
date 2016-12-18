@@ -4,11 +4,10 @@ package jetbrains.mps.build.tests;
 
 import jetbrains.mps.build.util.Context;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import java.util.HashMap;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
@@ -22,10 +21,7 @@ public class TestContext extends Context {
   public TestContext(SModel currentModel) {
     super(new TestContext.TestGenContext(currentModel));
   }
-  @Override
-  public String getBasePath_Local(SNode node) {
-    return CommonPaths.getBaseMPSPath();
-  }
+
   public static class TestGenContext extends TemplateQueryContext {
     private Map<Object, Object> map = new HashMap<Object, Object>();
     private SModel model;

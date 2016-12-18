@@ -5,8 +5,11 @@ package jetbrains.mps.ide.newModuleDialogs;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
+import javax.swing.JComponent;
+import com.intellij.project.ProjectKt;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
 
@@ -17,6 +20,20 @@ public class NewSolutionDialog extends AbstractModuleCreationDialog<Solution> {
     setTitle("New Solution");
 
     init();
+  }
+
+  @Nullable
+  public JComponent createCenterPanel() {
+    if (mySolutionSettings == null) {
+      mySolutionSettings = new NewSolutionSettings((myProject != null ? ((!(ProjectKt.isDirectoryBased(myProject.getProject())) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
+      mySolutionSettings.setListener(new NewSolutionSettings.SolutionSettingsChangedListener() {
+        @Override
+        public void changed() {
+          NewSolutionDialog.this.check();
+        }
+      });
+    }
+    return mySolutionSettings;
   }
 
   @Override
@@ -35,5 +52,18 @@ public class NewSolutionDialog extends AbstractModuleCreationDialog<Solution> {
   @Override
   protected NewSolutionSettings createSettingsInstance() {
     return new NewSolutionSettings(getProjectPath());
+  public Solution getSolution() {
+    return myResult;
+  }
+
+  @Nullable
+  public String getError() {
+    return myError;
+  }
+
+  private boolean check() {
+    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_SOLUTION, mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation());
+    setErrorText(myError);
+    return myError == null;
   }
 }

@@ -6,71 +6,171 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.style.AbstractStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.FieldStyleClass;
 
 public class RunConfigurations_StyleSheet {
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_lessThen(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
+    new RunConfigurations_StyleSheet.lessThenStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_greaterThen(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
+    new RunConfigurations_StyleSheet.greaterThenStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_operation(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    new RunConfigurations_StyleSheet.operationStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_leftOperationBrace(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
-    style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
+    new RunConfigurations_StyleSheet.leftOperationBraceStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_rightOperationBrace(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      RunConfigurations_StyleSheet.apply_operation(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
+    new RunConfigurations_StyleSheet.rightOperationBraceStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_constructorParameter(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_Field(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
+    new RunConfigurations_StyleSheet.constructorParameterStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_conceptFunctionHeader(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
+    new RunConfigurations_StyleSheet.conceptFunctionHeaderStyleClass(editorContext, node).apply(style, editorCell);
   }
 
+  public static class lessThenStyleClass extends AbstractStyleClass {
+    public lessThenStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
+    }
+
+  }
+  public static class greaterThenStyleClass extends AbstractStyleClass {
+    public greaterThenStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "type.brace");
+    }
+
+  }
+  public static class operationStyleClass extends AbstractStyleClass {
+    public operationStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+    }
+
+  }
+  public static class leftOperationBraceStyleClass extends AbstractStyleClass {
+    public leftOperationBraceStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new operationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
+    }
+
+  }
+  public static class rightOperationBraceStyleClass extends AbstractStyleClass {
+    public rightOperationBraceStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new operationStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.MATCHING_LABEL, "operation.brace");
+    }
+
+  }
+  public static class constructorParameterStyleClass extends AbstractStyleClass {
+    public constructorParameterStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new FieldStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+    }
+
+  }
+  public static class conceptFunctionHeaderStyleClass extends AbstractStyleClass {
+    public conceptFunctionHeaderStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+    }
+
+  }
 }

@@ -286,8 +286,8 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)/735072980478804624">
     <file name="QueriesGenerated.java">
-      <node id="8324812022359559403" at="82,112,83,153" concept="1" />
-      <scope id="8324812022359558849" at="82,112,83,153" />
+      <node id="8324812022359559403" at="82,112,83,77" concept="1" />
+      <scope id="8324812022359558849" at="82,112,83,77" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037e(jetbrains.mps.lang.dataFlow.generator.baseLanguage.template.main@generator)/8754905177066994423">

@@ -488,21 +488,18 @@ public class SNodeOperations {
     assert node != null : "can't replace node. node is NULL";
     return ((SNode) SNodeUtil.replaceWithAnother(node, anotherNode));
   }
-  public static void deleteNode(SNode node) {
+  public static SNode deleteNode(SNode node) {
     if (node != null) {
       node.delete();
     }
+    return node;
   }
   public static SNode detachNode(SNode node) {
-    if (node != null && node.getModel() != null) {
-      SNode parent = node.getParent();
-      if (parent != null) {
-        parent.removeChild(node);
-      } else {
-        node.getModel().removeRootNode(node);
-      }
+    if (node != null && node.getParent() != null && node.getModel() == null) {
+      // this case is the only difference between detachNode and deleteNode 
+      return node;
     }
-    return node;
+    return deleteNode(node);
   }
   public static boolean hasRole(SNode node, SContainmentLink role) {
     if (node == null || node.getParent() == null || role == null) {

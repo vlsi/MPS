@@ -9,17 +9,16 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,22 +27,18 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a36971630L, "jetbrains.mps.lang.editor.structure.QueryFunction_TransformationMenu_Extensible");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getParameters_idhEwIGRM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRM").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
-    List<SNode> result = QueryFunction_TransformationMenu__BehaviorDescriptor.getParameters_idhEwIGRM.invokeSpecial(__thisNode__);
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    List<SConcept> result = QueryFunction_TransformationMenu__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
     SNode extensibleMenuPart = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x652f322a364c9a28L, "jetbrains.mps.lang.editor.structure.IExtensibleTransformationMenuPart"), false, false);
     if ((extensibleMenuPart != null)) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)).select(new ISelector<SConcept, SNode>() {
-        public SNode select(SConcept it) {
-          return (SNode) SNodeOperations.asNode(it);
-        }
-      }));
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(IExtensibleTransformationMenuPart__BehaviorDescriptor.getAdditionalFeatureParameters_id6kJcyCQ_bk0.invoke(extensibleMenuPart)));
     }
     return result;
 
@@ -66,7 +61,7 @@ public final class QueryFunction_TransformationMenu_Extensible__BehaviorDescript
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((List<SNode>) getParameters_idhEwIGRM(node));
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

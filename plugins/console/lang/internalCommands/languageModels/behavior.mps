@@ -87,8 +87,8 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -268,8 +268,8 @@
         </node>
       </node>
       <node concept="A3Dl8" id="4PRmqZeE57T" role="3clF45">
-        <node concept="3THzug" id="4PRmqZeE57U" role="A3Ik2">
-          <ref role="3qa414" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
+        <node concept="3bZ5Sz" id="2xELmDxx4cm" role="A3Ik2">
+          <ref role="3bZ5Sy" to="3xdn:3J6h25Q2URP" resolve="QueryParameter" />
         </node>
       </node>
     </node>

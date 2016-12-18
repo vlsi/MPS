@@ -204,7 +204,7 @@
                   <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
                 </node>
                 <node concept="3TrEf2" id="6rDosczM1nw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" />
+                  <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
                 </node>
               </node>
               <node concept="2qgKlT" id="6rDosczM1nx" role="2OqNvi">
@@ -323,7 +323,7 @@
                                         <ref role="3cqZAo" node="1aYLt$9c3Mi" resolve="it" />
                                       </node>
                                       <node concept="3Tsc0h" id="1aYLt$9c3M3" role="2OqNvi">
-                                        <ref role="3TtcxE" to="tpee:fzclF7Y" />
+                                        <ref role="3TtcxE" to="tpee:fzclF7Y" resolve="parameter" />
                                       </node>
                                     </node>
                                     <node concept="1v1jN8" id="1aYLt$9c3M4" role="2OqNvi" />
@@ -351,7 +351,7 @@
                                           <ref role="3cqZAo" node="1aYLt$9c3Mi" resolve="it" />
                                         </node>
                                         <node concept="3TrEf2" id="1aYLt$9c3Mf" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                                          <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
                                         </node>
                                       </node>
                                       <node concept="1mIQ4w" id="1aYLt$9c3Mg" role="2OqNvi">
@@ -438,7 +438,7 @@
                 <ref role="1YBMHb" node="6rDosczLWA$" resolve="buildSolutionRunner" />
               </node>
               <node concept="3TrEf2" id="6rDosczM7_k" role="2OqNvi">
-                <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" />
+                <ref role="3Tt5mk" to="as3y:5iKxrmkn6qh" resolve="solution" />
               </node>
             </node>
             <node concept="3TrcHB" id="6rDosczM8_n" role="2OqNvi">
@@ -470,7 +470,7 @@
           </node>
         </node>
         <node concept="2OE7Q9" id="6rDosczM8Qn" role="2OEWyd">
-          <ref role="2OEe5H" to="as3y:5iKxrmkn6qh" />
+          <ref role="2OEe5H" to="as3y:5iKxrmkn6qh" resolve="solution" />
         </node>
       </node>
     </node>

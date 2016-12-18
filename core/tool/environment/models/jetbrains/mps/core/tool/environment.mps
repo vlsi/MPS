@@ -2,7 +2,7 @@
 <model ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)">
   <persistence version="9" />
   <languages>
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -271,9 +271,7 @@
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
       <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
         <child id="8970989240999019149" name="part" index="1dT_Ay" />
       </concept>
@@ -630,7 +628,7 @@
       <node concept="3Tm1VV" id="8PnvxglocC" role="1B3o_S" />
       <node concept="3clFbS" id="8PnvxglocD" role="3clF47" />
       <node concept="P$JXv" id="8Pnvxglp3V" role="lGtFl">
-        <node concept="x79VA" id="8Pnvxglp3Y" role="x79VK">
+        <node concept="x79VA" id="8Pnvxglp3Y" role="3nqlJM">
           <property role="x79VB" value="MPS (its platform aspect) of this tooling environment, not null when initialized." />
         </node>
       </node>
@@ -820,7 +818,7 @@
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
       <node concept="P$JXv" id="2$4oShLamFQ" role="lGtFl">
-        <node concept="x79VA" id="2$4oShLamFT" role="x79VK">
+        <node concept="x79VA" id="2$4oShLamFT" role="3nqlJM">
           <property role="x79VB" value="null if we do not want to specify plugins to the platform" />
         </node>
       </node>
@@ -1427,7 +1425,7 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
       <node concept="P$JXv" id="2$4oShLa_j5" role="lGtFl">
-        <node concept="x79VA" id="2$4oShLa_j8" role="x79VK">
+        <node concept="x79VA" id="2$4oShLa_j8" role="3nqlJM">
           <property role="x79VB" value="EnvironmentConfig with no specified plugins. At the time of writing it meant that the platform will load all the plugins. Note that one needs to provide a proper class path." />
         </node>
       </node>
@@ -6110,6 +6108,23 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="5A5jZrz4jY6" role="3clF47">
+        <node concept="3cpWs8" id="7vEL9Rt9CXX" role="3cqZAp">
+          <node concept="3cpWsn" id="7vEL9Rt9CXY" role="3cpWs9">
+            <property role="TrG5h" value="rf" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7vEL9Rt9CXZ" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
+            </node>
+            <node concept="2ShNRf" id="7vEL9Rt9Ddj" role="33vP2m">
+              <node concept="1pGfFk" id="7vEL9Rt9EMC" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="7vEL9Rt9ENQ" role="37wK5m">
+                  <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3clFbF" id="5A5jZrz7bXy" role="3cqZAp">
           <node concept="2OqwBi" id="5A5jZrz7bXz" role="3clFbG">
             <node concept="2OqwBi" id="5A5jZrz7bY7" role="2Oq$k0">
@@ -6152,18 +6167,22 @@
                               <node concept="3cpWsn" id="5A5jZrz7bXJ" role="3cpWs9">
                                 <property role="3TUv4t" value="false" />
                                 <property role="TrG5h" value="module" />
+                                <node concept="2OqwBi" id="7vEL9Rt9F30" role="33vP2m">
+                                  <node concept="37vLTw" id="7vEL9Rt9ESq" role="2Oq$k0">
+                                    <ref role="3cqZAo" node="7vEL9Rt9CXY" resolve="rf" />
+                                  </node>
+                                  <node concept="liA8E" id="7vEL9Rt9Fko" role="2OqNvi">
+                                    <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.instantiateModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="instantiateModule" />
+                                    <node concept="37vLTw" id="7vEL9Rt9FpW" role="37wK5m">
+                                      <ref role="3cqZAo" node="5A5jZrz7bXS" resolve="moduleHandle" />
+                                    </node>
+                                    <node concept="37vLTw" id="7vEL9Rt9Fz_" role="37wK5m">
+                                      <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
+                                    </node>
+                                  </node>
+                                </node>
                                 <node concept="3uibUv" id="5A5jZrz7bXL" role="1tU5fm">
                                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                                </node>
-                                <node concept="2YIFZM" id="5A5jZrz7bYj" role="33vP2m">
-                                  <ref role="1Pybhc" to="w1kc:~ModuleRepositoryFacade" resolve="ModuleRepositoryFacade" />
-                                  <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.createModule(jetbrains.mps.library.ModulesMiner$ModuleHandle,jetbrains.mps.smodel.MPSModuleOwner):org.jetbrains.mps.openapi.module.SModule" resolve="createModule" />
-                                  <node concept="37vLTw" id="5A5jZrz7bXN" role="37wK5m">
-                                    <ref role="3cqZAo" node="5A5jZrz7bXS" resolve="moduleHandle" />
-                                  </node>
-                                  <node concept="37vLTw" id="2BGPXkEwzI5" role="37wK5m">
-                                    <ref role="3cqZAo" node="5A5jZrz4k43" resolve="myProject" />
-                                  </node>
                                 </node>
                               </node>
                             </node>

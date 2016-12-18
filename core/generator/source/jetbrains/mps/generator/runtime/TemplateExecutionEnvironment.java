@@ -135,16 +135,6 @@ public interface TemplateExecutionEnvironment extends GeneratorQueryProvider.Sou
   void resolve(@NotNull ReferenceResolver resolver);
 
   /**
-   * ReferenceMacro support
-   * @deprecated switch to {@link #resolve(ReferenceResolver)}
-   *             WHEN REMOVING THE METHOD, update reduce_TemplateNode template not to cast to (ReferenceResolver) any more in resolve() call
-   * @since 3.3
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  void resolve(@NotNull ReferenceResolver2 resolver);
-
-  /**
    * Support for $MAP-SRC$ macro, to substitute and/or process nodes in output model once transformation step is over and output model is <em>almost</em> ready.
    * As MPS documentation put it, "MAP-SRC macro is executed in the end of generator micro-step - after all node- and property-macro but before reference-macro."
    * @since 3.3

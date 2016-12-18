@@ -18,7 +18,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IDEAPlatformPortProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IParameterConverter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MPSPortProvider = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MPSIntegrationPortProvider = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MPSInternalPortProvider = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Node_getURLOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterConverterDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
@@ -59,8 +61,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IDEAPlatformPortProvider;
       case LanguageConceptSwitch.IParameterConverter:
         return props_IParameterConverter;
-      case LanguageConceptSwitch.MPSPortProvider:
-        return props_MPSPortProvider;
+      case LanguageConceptSwitch.MPSIntegrationPortProvider:
+        return props_MPSIntegrationPortProvider;
+      case LanguageConceptSwitch.MPSInternalPortProvider:
+        return props_MPSInternalPortProvider;
+      case LanguageConceptSwitch.Node_getURLOperation:
+        return props_Node_getURLOperation;
       case LanguageConceptSwitch.ParameterConverterDeclaration:
         return props_ParameterConverterDeclaration;
       case LanguageConceptSwitch.ParameterConverterReference:

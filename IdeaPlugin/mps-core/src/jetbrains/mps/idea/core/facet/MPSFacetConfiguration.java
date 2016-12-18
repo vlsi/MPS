@@ -24,12 +24,15 @@ import com.intellij.facet.ui.FacetValidatorsManager;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.PathUtil;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean.State;
 import jetbrains.mps.idea.core.facet.ui.MPSFacetCommonTabUI;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.BootstrapLanguages;
@@ -38,8 +41,10 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.JComponent;
+import java.util.Collection;
 
 /**
  * evgeny, 10/26/11
@@ -51,10 +56,12 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
   private MPSConfigurationBean myConfigurationBean = new MPSConfigurationBean();
   private MPSFacet myMpsFacet;
 
+  @Override
   public void readExternal(Element element) throws InvalidDataException {
     // ignore
   }
 
+  @Override
   public void writeExternal(Element element) throws WriteExternalException {
     // ignore
   }
@@ -69,10 +76,12 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     return myConfigurationBean.toState();
   }
 
+  @Override
   public void loadState(State state) {
     myConfigurationBean.loadFrom(state);
   }
 
+  @Override
   public FacetEditorTab[] createEditorTabs(FacetEditorContext facetEditorContext, FacetValidatorsManager facetValidatorsManager) {
     return new FacetEditorTab[]{new MPSFacetCommonTab(facetEditorContext)};
   }
@@ -97,14 +106,27 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     }
     if (myConfigurationBean.getGeneratorOutputPath() == null) {
       String moduleDirPath = PathUtil.getParentPath(myMpsFacet.getModule().getModuleFilePath());
-      if (moduleDirPath != null) {
-        myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
-        myConfigurationBean.setUseTransientOutputFolder(false);
-        myConfigurationBean.setUseModuleSourceFolder(false);
-      }
+      myConfigurationBean.setGeneratorOutputPath(moduleDirPath + FILE_SEPARATOR + SOURCE_GEN);
+      myConfigurationBean.setUseTransientOutputFolder(false);
+      myConfigurationBean.setUseModuleSourceFolder(false);
     }
     if (myConfigurationBean.getUsedLanguages() == null) {
       myConfigurationBean.setUsedLanguages(new String[]{BootstrapLanguages.baseLanguageRef().toString()});
+    }
+
+    if (myConfigurationBean.getModelRoots().isEmpty()) {
+      // Create default model root pointing to source root
+      DefaultModelRoot mr = new DefaultModelRoot();
+      final VirtualFile moduleFile = myMpsFacet.getModule().getModuleFile();
+      if (moduleFile != null) {
+        mr.setContentRoot(moduleFile.getParent().getPath());
+        for (VirtualFile sRoot : ModuleRootManager.getInstance(myMpsFacet.getModule()).getSourceRoots()) {
+          mr.addFile(DefaultModelRoot.SOURCE_ROOTS, sRoot.getPath());
+        }
+        Collection<ModelRoot> modelRoots = myConfigurationBean.getModelRoots();
+        modelRoots.add(mr);
+        myConfigurationBean.setModelRoots(modelRoots);
+      }
     }
   }
 
@@ -121,11 +143,14 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
       myContext = context;
     }
 
+    @Override
     @Nls
     public String getDisplayName() {
       return "Common";
     }
 
+    @NotNull
+    @Override
     public JComponent createComponent() {
       if (myForm == null) {
         myForm = new MPSFacetCommonTabUI(myContext, this);
@@ -133,6 +158,7 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
       return myForm.getRootPanel();
     }
 
+    @Override
     public boolean isModified() {
       return myForm != null && myForm.isModified(myConfigurationBean);
     }
@@ -144,12 +170,14 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
       }
     }
 
+    @Override
     public void reset() {
       if (myForm != null) {
         myForm.reset(myConfigurationBean);
       }
     }
 
+    @Override
     public void disposeUIResources() {
       Disposer.dispose(this);
       myForm = null;

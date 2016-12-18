@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.facet;
 
-import com.intellij.util.PathUtil;
 import com.intellij.util.xmlb.annotations.AbstractCollection;
 import com.intellij.util.xmlb.annotations.Attribute;
 import com.intellij.util.xmlb.annotations.Tag;
@@ -24,24 +23,21 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.classloading.IdeaPluginModuleFacet;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-import java.lang.CloneNotSupportedException;
-import java.lang.Cloneable;
-import java.lang.Override;
-import java.lang.RuntimeException;
-import java.util.*;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * evgeny, 10/26/11
@@ -58,8 +54,8 @@ public class MPSConfigurationBean {
 
   /**
    * You can invoke this method only once MPS is initialized
-   *
-   * Populate solution descriptor accroding to current state of the bean. Unless the state changes, this method
+   * <p>
+   * Populate solution descriptor according to current state of the bean. Unless the state changes, this method
    * returns the same instance of SolutionDescriptor.
    * Bean class shall not serve as proxy to populate descriptor, if you'd need to modify SolutionDescriptor, do it directly:
    * <pre>
@@ -85,7 +81,7 @@ public class MPSConfigurationBean {
           usedLanguageReferences.add(PersistenceFacade.getInstance().createModuleReference(usedLanguage));
         }
       }
-      List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
+      List<ModelRootDescriptor> roots = new ArrayList<>();
       fromPersistableState(roots);
       myDescriptor.getModelRootDescriptors().addAll(roots);
     }
@@ -140,19 +136,16 @@ public class MPSConfigurationBean {
    */
   @Transient
   public Collection<ModelRoot> getModelRoots() {
-    List<ModelRootDescriptor> mrd = new ArrayList<ModelRootDescriptor>();
+    List<ModelRootDescriptor> mrd = new ArrayList<>();
     fromPersistableState(mrd);
 
-    List<ModelRoot> rv = new ArrayList<ModelRoot>();
+    List<ModelRoot> rv = new ArrayList<>();
     for (ModelRootDescriptor modelRootDescriptor : mrd) {
       ModelRootFactory factory = PersistenceFacade.getInstance().getModelRootFactory(modelRootDescriptor.getType());
-      ModelRoot root;
-      if (factory == null || (root = factory.create()) == null) {
+      if (factory == null) {
         continue;
       }
-      if (root == null) {
-        continue;
-      }
+      ModelRoot root = factory.create();
       root.load(modelRootDescriptor.getMemento());
       rv.add(root);
     }
@@ -162,7 +155,7 @@ public class MPSConfigurationBean {
 
   @Transient
   public void setModelRoots(Collection<ModelRoot> roots) {
-    ArrayList<ModelRootDescriptor> mrd = new ArrayList<ModelRootDescriptor>(roots.size());
+    ArrayList<ModelRootDescriptor> mrd = new ArrayList<>(roots.size());
     for (ModelRoot path : roots) {
       ModelRootDescriptor descr = new ModelRootDescriptor();
       path.save(descr.getMemento());

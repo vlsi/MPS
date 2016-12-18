@@ -85,11 +85,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myConcept;
   }
 
-  public void setConcept(@NotNull SConcept concept) {
-    //remove method after 3.2
-    myConcept = concept;
-  }
-
   @Override
   public boolean isInstanceOfConcept(@NotNull SAbstractConcept c) {
     return getConcept().isSubConceptOf(c);
@@ -579,10 +574,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     node.parent = null;
   }
 
-  public void setRoleInParent(SContainmentLink newRole) {//todo add undo
-    myRoleInParent = newRole;
-  }
-
   @Override
   public SContainmentLink getContainmentLink() {
     return myRoleInParent;
@@ -839,11 +830,6 @@ public class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SContainmentLink cl = getContainmentLink();
     if (cl == null) return null;
     return cl.getRoleName();
-  }
-
-  @Deprecated
-  public void setRoleInParent(String newRole) {
-    setRoleInParent(convertToLink(newRole));
   }
 
   @Deprecated

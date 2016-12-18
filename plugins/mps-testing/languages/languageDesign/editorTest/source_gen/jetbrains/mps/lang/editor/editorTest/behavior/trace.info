@@ -126,6 +126,15 @@
     <file name="SideTranformWrapper_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
     </file>
+    <file name="SimpleNodeHidingAttribute_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNodeHidingAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleNode_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNode_BehaviorDescriptor" />
+    </file>
+    <file name="SimpleNodesContainer_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimpleNodesContainer_BehaviorDescriptor" />
+    </file>
     <file name="SimplePropertyAttribute_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" />
     </file>

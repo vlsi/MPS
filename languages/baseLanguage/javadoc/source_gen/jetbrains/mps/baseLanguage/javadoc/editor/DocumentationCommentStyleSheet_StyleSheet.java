@@ -6,38 +6,78 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.style.AbstractStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.JavaDocTagStyleClass;
 
 public class DocumentationCommentStyleSheet_StyleSheet {
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_Comment(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
-    style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    new DocumentationCommentStyleSheet_StyleSheet.CommentStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_CommentTag(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_JavaDocTag(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
+    new DocumentationCommentStyleSheet_StyleSheet.CommentTagStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_CommentHTMLTag(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      DocumentationCommentStyleSheet_StyleSheet.apply_Comment(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD_ITALIC);
+    new DocumentationCommentStyleSheet_StyleSheet.CommentHTMLTagStyleClass(editorContext, node).apply(style, editorCell);
   }
 
+  public static class CommentStyleClass extends AbstractStyleClass {
+    public CommentStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.ITALIC);
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
+    }
+
+  }
+  public static class CommentTagStyleClass extends AbstractStyleClass {
+    public CommentTagStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new JavaDocTagStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    }
+
+  }
+  public static class CommentHTMLTagStyleClass extends AbstractStyleClass {
+    public CommentHTMLTagStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new CommentStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
+    }
+
+  }
 }

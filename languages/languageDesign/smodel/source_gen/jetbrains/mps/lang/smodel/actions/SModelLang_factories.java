@@ -11,7 +11,6 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SModelLang_factories {
   public static class NodeFactory_1171415364777 implements NodeFactory {
@@ -152,20 +151,6 @@ public class SModelLang_factories {
         for (SNode parm : ListSequence.fromList(parms)) {
           ListSequence.fromList(SLinkOperations.getChildren(newNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).addElement(parm);
         }
-      }
-    }
-  }
-  public static class NodeFactory_6955116391923836025 implements NodeFactory {
-    public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, "jetbrains.mps.lang.smodel.structure.CheckedModuleReference"))) {
-        SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, 0x6085898237feb225L, "moduleId"), SPropertyOperations.getString(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, "jetbrains.mps.lang.smodel.structure.CheckedModuleReference")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L, "moduleId")));
-      }
-    }
-  }
-  public static class NodeFactory_6955116391923862678 implements NodeFactory {
-    public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-      if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName"))) {
-        SPropertyOperations.set(newNode, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L, 0x3c7a9d8c8d63d4f4L, "moduleId"), SPropertyOperations.getString(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x6085898237feae86L, 0x6085898237feb225L, "moduleId")));
       }
     }
   }

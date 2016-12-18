@@ -4,14 +4,12 @@
   <languages>
     <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
     <use id="696c1165-4a59-463b-bc5d-902caab85dd0" name="jetbrains.mps.make.facet" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="tpcc" ref="r:00000000-0000-4000-0000-011c89590290(jetbrains.mps.lang.structure.plugin)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -27,6 +25,12 @@
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
+        <child id="2343319097654255233" name="order" index="3F_NFc" />
+      </concept>
+    </language>
+    <language id="c9d137c4-3259-44f8-80ff-33ab2b506ee4" name="jetbrains.mps.lang.util.order">
+      <concept id="2450897840534688273" name="jetbrains.mps.lang.util.order.structure.OrderReference" flags="ng" index="2vPci8">
+        <reference id="2450897840534688274" name="order" index="2vPcib" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -52,6 +56,9 @@
     <node concept="2V$Bhx" id="qmfyRQNbk0" role="QG$2i">
       <property role="2V$B1T" value="af65afd8-f0dd-4942-87d9-63a55f2a9db1" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.behavior" />
+    </node>
+    <node concept="2vPci8" id="264$spPfZhg" role="3F_NFc">
+      <ref role="2vPcib" to="tpcc:264$spPfYX1" resolve="MPSAspects" />
     </node>
   </node>
 </model>

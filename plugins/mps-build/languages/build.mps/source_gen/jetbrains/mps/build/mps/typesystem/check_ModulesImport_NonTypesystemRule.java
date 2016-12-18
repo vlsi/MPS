@@ -8,12 +8,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.PathConverter;
-import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
-import jetbrains.mps.build.util.Context;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -30,7 +28,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
   public check_ModulesImport_NonTypesystemRule() {
   }
   public void applyRule(final SNode buildProject, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (SNodeOperations.getModel(buildProject).getModule() instanceof TransientModelsModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(buildProject)))) {
+    if (SNodeOperations.getModel(buildProject).getModule() instanceof TransientSModule || SModelStereotype.isGeneratorModel(SNodeOperations.getModel(buildProject)) || !(jetbrains.mps.util.SNodeOperations.isGeneratable(SNodeOperations.getModel(buildProject)))) {
       return;
     }
 
@@ -39,7 +37,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
 
     PathConverter pathConverter = new PathConverter(buildProject);
 
-    String workingDir = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(buildProject, Context.defaultContext());
+    String workingDir = pathConverter.getWorkingDir();
     if ((workingDir == null || workingDir.length() == 0)) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

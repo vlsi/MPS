@@ -8,7 +8,7 @@ import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import javax.swing.JTextField;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
-import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
 import java.awt.Dimension;
@@ -23,12 +23,9 @@ import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.vfs.VfsUtil;
 import java.io.IOException;
 import org.apache.log4j.Level;
@@ -37,6 +34,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -47,13 +45,16 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NewGeneratorDialog extends DialogWrapper {
-  private JPanel myContenetPane;
+  private final JPanel myContenetPane;
   private TextFieldWithBrowseButton myTemplateModelsDir;
   private JTextField myGeneratorName;
-  private Language mySourceLanguage;
+  private final Language mySourceLanguage;
   private Generator myResult;
-  public NewGeneratorDialog(Project project, Language sourceLanguage) throws HeadlessException {
-    super(project);
+  private final MPSProject myProject;
+
+  public NewGeneratorDialog(MPSProject project, Language sourceLanguage) throws HeadlessException {
+    super(project.getProject());
+    myProject = project;
     setTitle("New Generator");
     mySourceLanguage = sourceLanguage;
     myContenetPane = new JPanel(new GridLayout(4, 1));
@@ -130,14 +131,12 @@ public class NewGeneratorDialog extends DialogWrapper {
       return;
     }
     dispose();
-    jetbrains.mps.project.Project project = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-    assert project != null;
     final Wrappers._T<Generator> newGenerator = new Wrappers._T<Generator>(null);
-    NewModuleUtil.runModuleCreation(project, new _FunctionTypes._void_P0_E0() {
+    NewModuleUtil.runModuleCreation(myProject, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         try {
           // see MPS-18743 
-          MPSModuleRepository.getInstance().saveAll();
+          myProject.getRepository().saveAll();
           VfsUtil.createDirectories(templateModelsPath);
           newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
           adjustTemplateModel(mySourceLanguage, newGenerator.value);
@@ -153,12 +152,15 @@ public class NewGeneratorDialog extends DialogWrapper {
     myResult = newGenerator.value;
     super.doOKAction();
   }
+
   @Override
   protected void dispose() {
     super.dispose();
     Disposer.dispose(myTemplateModelsDir);
   }
+
   protected Generator createNewGenerator(final Language language, String templateModelsDir, String name) {
+    //  FIXME similar to NewModuleUtil.createNewLanguage 
     final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
     final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
@@ -172,11 +174,13 @@ public class NewGeneratorDialog extends DialogWrapper {
     language.setModuleDescriptor(languageDescriptor);
     language.save();
 
-    return (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
+    return new ModuleRepositoryFacade(myProject).getModule(generatorDescriptor.getModuleReference(), Generator.class);
   }
+
   private String getTemplateModelPrefix(Language sourceLanguage) {
     return sourceLanguage.getModuleName() + ".generator.template";
   }
+
   private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {

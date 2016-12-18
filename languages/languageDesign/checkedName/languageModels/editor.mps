@@ -2,7 +2,7 @@
 <model ref="r:745da36c-6731-41a7-aad3-c0bff6ba51dd(jetbrains.mps.lang.checkedName.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
@@ -38,7 +38,6 @@
         <reference id="1140103550593" name="relationDeclaration" index="1NtTu8" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -64,7 +63,6 @@
     <property role="3GE5qa" value="CheckedName" />
     <ref role="1XX52x" to="4j10:4cWf37B8oWT" resolve="PropertyRefExpression" />
     <node concept="3EZMnI" id="4cWf37B8oX1" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0ifn" id="4cWf37B8oX2" role="3EZMnx">
         <property role="3F0ifm" value="property" />
         <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />

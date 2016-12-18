@@ -940,7 +940,7 @@
       <node id="7754459869734176322" at="194,58,195,56" concept="4" />
       <node id="7754459869734175581" at="196,5,197,0" concept="11" />
       <node id="7754459869734175547" at="197,0,198,18" concept="9" />
-      <node id="2450081617266859306" at="200,88,201,525" concept="9" />
+      <node id="2450081617266859306" at="200,88,201,535" concept="9" />
       <node id="1213877394207" at="203,115,204,49" concept="8" />
       <node id="1213877394215" at="205,31,206,21" concept="9" />
       <node id="1213877394220" at="207,5,208,229" concept="8" />
@@ -1044,6 +1044,7 @@
       <node id="1213877394026" at="454,14,455,58" concept="16" />
       <node id="1213877394026" at="461,48,462,22" concept="9" />
       <node id="1213877394026" at="467,40,468,19" concept="9" />
+      <node id="6360794824234536787" at="470,55,471,43" concept="9" />
       <node id="1213877394026" at="84,0,86,0" concept="13" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="8360039740498072804" at="91,70,94,5" concept="6" />
       <node id="8360039740498072818" at="95,37,98,5" concept="6" />
@@ -1083,6 +1084,7 @@
       <node id="1213877394026" at="373,0,376,0" concept="2" trace="AbstractConceptDeclaration__BehaviorDescriptor#()V" />
       <node id="1213877394026" at="384,49,387,5" concept="6" />
       <node id="1213877394026" at="449,49,452,5" concept="6" />
+      <node id="6360794824234536787" at="470,0,473,0" concept="13" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
       <node id="1213877394026" at="294,0,298,0" concept="13" trace="getPropertyDeclarations_idhEwILLM#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
       <node id="1213877394026" at="298,0,302,0" concept="13" trace="findPropertyDeclaration_idhK3S4A1#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877394026" at="377,0,381,0" concept="7" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
@@ -1154,7 +1156,7 @@
       <scope id="1871493518332862910" at="185,59,186,156" />
       <scope id="6209197929189771646" at="189,37,190,53" />
       <scope id="7754459869734176308" at="194,58,195,56" />
-      <scope id="2450081617266859259" at="200,88,201,525" />
+      <scope id="2450081617266859259" at="200,88,201,535" />
       <scope id="1213877394214" at="205,31,206,21" />
       <scope id="1213877394261" at="213,189,214,21" />
       <scope id="1219155304349" at="217,97,218,64" />
@@ -1206,6 +1208,7 @@
       <scope id="1213877394026" at="454,14,455,58" />
       <scope id="1213877394026" at="461,48,462,22" />
       <scope id="1213877394026" at="467,40,468,19" />
+      <scope id="6360794824234536787" at="470,55,471,43" />
       <scope id="1213877394026" at="84,0,86,0">
         <var name="__thisNode__" id="1213877394026" />
       </scope>
@@ -1265,6 +1268,9 @@
         <var name="it" id="5887345403727457880" />
       </scope>
       <scope id="1213877394026" at="373,0,376,0" />
+      <scope id="6360794824234536787" at="470,0,473,0">
+        <var name="str" id="6360794824234536787" />
+      </scope>
       <scope id="1213877394026" at="294,0,298,0">
         <var name="__thisNode__" id="1213877394026" />
       </scope>
@@ -1494,7 +1500,7 @@
       <unit id="1227876798185" at="280,50,284,5" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor$3" />
       <unit id="1227876804099" at="288,50,292,5" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor$4" />
       <unit id="5887345403727457880" at="337,167,341,5" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor$5" />
-      <unit id="1213877394026" at="51,0,471,0" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
+      <unit id="1213877394026" at="51,0,474,0" name="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)/1213877397771">
@@ -2185,7 +2191,7 @@
       <node id="7588821453558531993" at="34,37,35,189" concept="9" />
       <node id="7588821453558563196" at="38,39,39,81" concept="9" />
       <node id="7588821453559904611" at="42,39,43,43" concept="10" />
-      <node id="1597470200015365710" at="45,43,46,153" concept="9" />
+      <node id="1597470200015365710" at="45,43,46,129" concept="9" />
       <node id="7588821453557833183" at="52,74,53,203" concept="9" />
       <node id="7588821453550331063" at="56,58,57,19" concept="9" />
       <node id="7588821453551149984" at="60,39,61,414" concept="9" />
@@ -2231,7 +2237,7 @@
       <scope id="7588821453558998809" at="29,32,30,18" />
       <scope id="7588821453558531476" at="34,37,35,189" />
       <scope id="7588821453558562200" at="38,39,39,81" />
-      <scope id="7588821453558759189" at="45,43,46,153" />
+      <scope id="7588821453558759189" at="45,43,46,129" />
       <scope id="7588428831943411770" at="52,74,53,203" />
       <scope id="7588821453550324265" at="56,58,57,19" />
       <scope id="7588821453551149653" at="60,39,61,414" />
@@ -2309,11 +2315,11 @@
       </scope>
       <unit id="7588821453558531475" at="33,86,37,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$1" />
       <unit id="7588821453558562199" at="37,17,41,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$2" />
-      <unit id="7588821453558759188" at="44,475,48,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
+      <unit id="7588821453558759188" at="44,475,48,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3$1" />
       <unit id="7588821453551149652" at="59,175,63,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$4" />
       <unit id="7588821453551287963" at="70,148,74,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$5" />
-      <unit id="7588821453551424502" at="82,441,86,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
-      <unit id="7588821453551424502" at="86,22,90,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
+      <unit id="7588821453551424502" at="82,441,86,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6$1" />
+      <unit id="7588821453551424502" at="86,22,90,9" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6$2" />
       <unit id="7588821453551539161" at="92,28,96,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$7" />
       <unit id="7588821453558611214" at="41,17,50,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$3" />
       <unit id="7588821453551370266" at="80,85,92,5" name="jetbrains.mps.lang.structure.behavior.AttributeDesignTimeOperations$6" />

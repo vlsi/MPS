@@ -751,5 +751,41 @@
     <property role="34LRSv" value="child" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
   </node>
+  <node concept="1TIwiD" id="3r66m91DWO2">
+    <property role="EcuMT" value="3946870033235823874" />
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="SimpleNode" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="3r66m91DWO3">
+    <property role="EcuMT" value="3946870033235823875" />
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="SimpleNodeHidingAttribute" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="M6xJ_" id="3r66m91Etiz" role="lGtFl">
+      <property role="Hh88m" value="hidingAttribute" />
+      <node concept="trNpa" id="3r66m91Eti_" role="EQaZv">
+        <ref role="trN6q" node="3r66m91DWO2" resolve="SimpleNode" />
+      </node>
+    </node>
+  </node>
+  <node concept="1TIwiD" id="3r66m91DWOs">
+    <property role="EcuMT" value="3946870033235823900" />
+    <property role="3GE5qa" value="attributes" />
+    <property role="TrG5h" value="SimpleNodesContainer" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="3r66m91DZ8d" role="1TKVEi">
+      <property role="IQ2ns" value="3946870033235833357" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="simpleNode" />
+      <ref role="20lvS9" node="3r66m91DWO2" resolve="SimpleNode" />
+    </node>
+    <node concept="1TJgyj" id="3r66m91DZ8f" role="1TKVEi">
+      <property role="IQ2ns" value="3946870033235833359" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="anotherNode" />
+      <ref role="20lvS9" node="3r66m91DWO2" resolve="SimpleNode" />
+    </node>
+  </node>
 </model>
 

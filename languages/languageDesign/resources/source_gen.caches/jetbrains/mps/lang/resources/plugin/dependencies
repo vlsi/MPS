@@ -26,7 +26,6 @@
     <classNode dependClassName="jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
-    <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode dependClassName="jetbrains.mps.make.facets.Make_Facet.Target_make" />
@@ -51,7 +50,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
+    <classNode extendsClassName="jetbrains.mps.make.facet.IFacet" />
   </dependency>
   <dependency className="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

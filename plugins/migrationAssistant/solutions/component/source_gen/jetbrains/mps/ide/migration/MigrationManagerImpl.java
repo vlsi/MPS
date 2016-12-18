@@ -8,19 +8,34 @@ import jetbrains.mps.migration.global.ProjectMigration;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.migration.global.ProjectMigrationsRegistry;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import java.util.Map;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import java.util.Collections;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import java.util.Set;
+import java.util.HashMap;
+import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import java.util.LinkedHashSet;
+import java.util.Collection;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.migration.global.CleanupProjectMigration;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import java.util.Map;
 import jetbrains.mps.migration.global.ProjectMigrationWithOptions;
-import org.apache.log4j.Level;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -42,24 +57,17 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
 
   public boolean isMigrationRequired() {
     final Wrappers._boolean result = new Wrappers._boolean(false);
-    myMpsMproject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+    myMpsMproject.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
         Iterable<SModule> modules = MigrationsUtil.getMigrateableModulesFromProject(myMpsMproject);
-        result.value = isMigrationRequired(myMpsMproject, modules);
+        result.value = isMigrationRequired(modules);
       }
     });
     return result.value;
   }
 
-  public static boolean isMigrationRequired(final Project p, Iterable<SModule> modules) {
-    List<ProjectMigration> pMig = ProjectMigrationsRegistry.getInstance().getMigrations();
-    boolean projectMig = ListSequence.fromList(pMig).any(new IWhereFilter<ProjectMigration>() {
-      public boolean accept(ProjectMigration it) {
-        return it.shouldBeExecuted(p);
-      }
-    });
-    boolean moduleMig = isModuleMigrationRequired(modules);
-    return projectMig || moduleMig;
+  public boolean isMigrationRequired(Iterable<SModule> modules) {
+    return Sequence.fromIterable(getProjectMigrationsToApply()).isNotEmpty() || ListSequence.fromList(getModuleMigrationsToApply(modules)).isNotEmpty();
   }
 
   public Iterable<ProjectMigration> getProjectMigrationsToApply() {
@@ -71,7 +79,123 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     }).toListSequence();
   }
 
+  public boolean importVersionsUpdateRequired(Iterable<SModule> modules) {
+    myMpsMproject.getModelAccess().checkReadAccess();
 
+    for (SModule module : Sequence.fromIterable(modules)) {
+      AbstractModule abstractModule = (AbstractModule) module;
+      ModuleDescriptor md = abstractModule.getModuleDescriptor();
+      if (md == null) {
+        throw new IllegalStateException("Module " + modules + " has not module descriptor.");
+      }
+
+      Map<SModuleReference, Integer> oldDepVersions = Collections.unmodifiableMap(md.getDependencyVersions());
+      Map<SModuleReference, Integer> newDepVersions = collectDependencyVersions(abstractModule, oldDepVersions);
+      if (!(oldDepVersions.keySet().equals(newDepVersions.keySet()))) {
+        return true;
+      }
+
+      Map<SLanguage, Integer> oldLangVersions = Collections.unmodifiableMap(md.getLanguageVersions());
+      Map<SLanguage, Integer> newLangVersions = collectLanguageVersions(abstractModule, oldLangVersions);
+      checkModelVersionsAreValid(module, newLangVersions);
+      if (!(oldLangVersions.equals(newLangVersions))) {
+        return true;
+      }
+
+      Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
+      if (!(md.getUsedDevkits().equals(devkits))) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  public void doUpdateImportVersions(SModule module) {
+    module.getRepository().getModelAccess().checkWriteAccess();
+
+    AbstractModule abstractModule = (AbstractModule) module;
+    ModuleDescriptor md = abstractModule.getModuleDescriptor();
+    if (md == null) {
+      throw new IllegalStateException("Module " + module + " has not module descriptor.");
+    }
+
+    Map<SModuleReference, Integer> depVersions = md.getDependencyVersions();
+    Map<SModuleReference, Integer> newDepVersions = collectDependencyVersions(abstractModule, depVersions);
+    if (!(depVersions.equals(newDepVersions))) {
+      abstractModule.setChanged();
+      depVersions.clear();
+      depVersions.putAll(newDepVersions);
+    }
+
+    Map<SLanguage, Integer> langVersions = md.getLanguageVersions();
+    Map<SLanguage, Integer> newLangVersions = collectLanguageVersions(abstractModule, langVersions);
+    if (!(langVersions.equals(newLangVersions))) {
+      abstractModule.setChanged();
+      langVersions.clear();
+      langVersions.putAll(newLangVersions);
+    }
+
+    Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
+    if (!(md.getUsedDevkits().equals(devkits))) {
+      abstractModule.setChanged();
+      md.getUsedDevkits().clear();
+      md.getUsedDevkits().addAll(devkits);
+    }
+  }
+
+  public Map<SLanguage, Integer> collectLanguageVersions(SModule module, Map<SLanguage, Integer> oldLangVersions) {
+    module.getRepository().getModelAccess().checkReadAccess();
+    Map<SLanguage, Integer> newLangVersions = new HashMap<SLanguage, Integer>();
+    Set<SLanguage> usedLanguages = module.getUsedLanguages();
+    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(LanguageRegistry.getInstance(myMpsMproject.getRepository()), usedLanguages);
+    Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtended();
+    for (SLanguage lang : extendingLangsClosure) {
+      if (oldLangVersions.containsKey(lang)) {
+        newLangVersions.put(lang, oldLangVersions.get(lang));
+      } else {
+        newLangVersions.put(lang, lang.getLanguageVersion());
+      }
+    }
+    return newLangVersions;
+  }
+
+  public Map<SModuleReference, Integer> collectDependencyVersions(SModule module, Map<SModuleReference, Integer> oldDepVersions) {
+    module.getRepository().getModelAccess().checkReadAccess();
+
+    Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
+    Set<SModule> visible = new LinkedHashSet<SModule>();
+    visible.add(module);
+    Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
+    visible.addAll(dependentModules);
+    for (SModule dep : visible) {
+      if (oldDepVersions.containsKey(dep.getModuleReference())) {
+        newDepVersions.put(dep.getModuleReference(), oldDepVersions.get(dep.getModuleReference()));
+      } else {
+        newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
+      }
+    }
+    return newDepVersions;
+  }
+
+  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
+  public void checkModelVersionsAreValid(SModule module, Map<SLanguage, Integer> langVersions) {
+    module.getRepository().getModelAccess().checkReadAccess();
+    for (SModel m : module.getModels()) {
+      SModelInternal modelInternal = (SModelInternal) m;
+      for (SLanguage lang : CollectionSequence.fromCollection(modelInternal.importedLanguageIds())) {
+        int currentVersion = langVersions.get(lang);
+        int modelVer = modelInternal.getLanguageImportVersion(lang);
+        if (modelVer != -1) {
+          if (modelVer != currentVersion) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Migration assistant detected inconsistecy in language versions. Module " + module + " uses language " + lang + " with version " + currentVersion + " while its model " + m.getName() + " uses this language with version " + modelVer);
+            }
+          }
+        }
+      }
+    }
+  }
 
   public List<ScriptApplied.ScriptAppliedReference> getModuleMigrationsToApply(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, ScriptApplied.ScriptAppliedReference>() {
@@ -95,21 +219,12 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
     return result.value;
   }
 
-  public static boolean isModuleMigrationRequired(Iterable<SModule> modules) {
-    return Sequence.fromIterable(modules).any(new IWhereFilter<SModule>() {
-      public boolean accept(SModule module) {
-        return Sequence.fromIterable(MigrationsUtil.getAllSteps(module)).isNotEmpty();
-      }
-    });
-  }
-
   public int projectStepsCount(boolean isCleanup) {
     List<ProjectMigration> migrations = ProjectMigrationsRegistry.getInstance().getMigrations();
     int cleanupSize = ListSequence.fromList(migrations).ofType(CleanupProjectMigration.class).count();
     return (isCleanup ? cleanupSize : ListSequence.fromList(migrations).count() - cleanupSize);
   }
 
-  protected static Logger LOG = LogManager.getLogger(MigrationManagerImpl.class);
   public MigrationManager.MigrationStep nextProjectStep(Map<ProjectMigrationWithOptions.Option, Object> options, boolean cleanup) {
     ProjectMigration current = next(lastProjectMigration, cleanup);
 

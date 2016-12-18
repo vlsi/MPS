@@ -17,7 +17,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -37,7 +37,7 @@ public final class UnaryRegexp__BehaviorDescriptor extends BaseBHDescriptor {
 
   /*package*/ static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
     String s = Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")), vars);
-    return ((((boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(__thisNode__)) ? Regexp__BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return ((((boolean) UnaryRegexp__BehaviorDescriptor.inParentheses_id1b8uQvZyDW8.invoke(__thisNode__)) ? Regexp__BehaviorDescriptor.par_idhMuIPHY.invoke(__thisNode__, s) : s)) + SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static boolean inParentheses_id1b8uQvZyDW8(@NotNull SNode __thisNode__) {
     return (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp")) != null ? (boolean) Regexp__BehaviorDescriptor.needParentheses_id1b8uQvZynii.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, 0x11174c6961aL, "regexp"))) : true);

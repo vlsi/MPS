@@ -14,7 +14,7 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.smodel.ModelImports;
 
 public class SpecifyUtil {
   public static SNode getOperationsContainer(SNode node) {
@@ -32,7 +32,7 @@ public class SpecifyUtil {
     NodeOperationsContainer__BehaviorDescriptor.detachAllErrorOperations_id4QaU5oI0Q4j.invoke(operationsContainer);
     Iterable<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
     for (IErrorReporter reporter : reporters) {
-      SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter);
+      SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter, SNodeOperations.getModel(node).getRepository());
       NodeOperationsContainer__BehaviorDescriptor.createNodeAndAttachReference_idnMEi6H8iBO.invoke(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);
     }
@@ -46,6 +46,6 @@ public class SpecifyUtil {
 
   private static void addModelImports(SNode container, SNode ruleNode) {
     SModelReference ruleModelRef = SNodeOperations.getModel(ruleNode).getReference();
-    ((SModelBase) SNodeOperations.getModel(container)).addModelImport(ruleModelRef, false);
+    new ModelImports(SNodeOperations.getModel(container)).addModelImport(ruleModelRef);
   }
 }

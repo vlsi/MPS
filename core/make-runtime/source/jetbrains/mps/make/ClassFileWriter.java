@@ -195,7 +195,8 @@ public class ClassFileWriter {
   private byte[] instrumentNotNull(@NotNull byte[] classContent) throws MalformedURLException {
     FailSafeClassReader reader = new FailSafeClassReader(classContent, 0, classContent.length);
     ClassWriter writer = new InstrumenterClassWriter(reader, ClassWriter.COMPUTE_FRAMES, myFinder);
-    NotNullVerifyingInstrumenter.processClassFile(reader, writer);
+    // To understand why last parameter was added - see commits 250331a & 490d4e6 in IDEA Community
+    NotNullVerifyingInstrumenter.processClassFile(reader, writer, new String[]{NotNull.class.getName()});
     return writer.toByteArray();
 //    return classContent;
   }

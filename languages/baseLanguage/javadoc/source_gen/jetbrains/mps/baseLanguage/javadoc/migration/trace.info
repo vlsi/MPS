@@ -516,11 +516,11 @@
       <unit id="4787009421625782762" at="55,19,59,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$3" />
       <unit id="4787009421625791249" at="59,19,63,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$4" />
       <unit id="4787009421625782762" at="63,18,67,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$5" />
-      <unit id="4787009421625782762" at="70,52,74,11" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$7" />
+      <unit id="4787009421625782762" at="70,52,74,11" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$6$1" />
       <unit id="5462094956390110264" at="83,42,87,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$7" />
       <unit id="6948371848611517378" at="88,305,92,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$8" />
       <unit id="5462094956390111943" at="92,19,96,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$9" />
-      <unit id="7680625225105900350" at="98,32,102,11" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$11" />
+      <unit id="7680625225105900350" at="98,32,102,11" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$10$1" />
       <unit id="5462094956390116025" at="96,20,104,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$10" />
       <unit id="4787009421625782762" at="67,29,76,7" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags$6" />
       <unit id="4787009421625779235" at="32,0,127,0" name="jetbrains.mps.baseLanguage.javadoc.migration.UpdateDeprecatedBlockDocTags" />

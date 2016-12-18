@@ -66,8 +66,8 @@
         <var name="references" id="3803436373353551295" />
       </scope>
       <scope id="3803436373353551295" at="33,0,69,0" />
-      <unit id="3803436373353789071" at="57,25,61,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints$3" />
-      <unit id="3803436373353551295" at="44,19,64,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints$2" />
+      <unit id="3803436373353789071" at="57,25,61,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints$1$1$1" />
+      <unit id="3803436373353551295" at="44,19,64,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints$1$1" />
       <unit id="3803436373353551295" at="36,154,66,5" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints$1" />
       <unit id="3803436373353551295" at="28,0,71,0" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Performance_Constraints" />
     </file>
@@ -201,12 +201,12 @@
         <var name="references" id="3803436373354067654" />
       </scope>
       <scope id="3803436373354067654" at="37,0,94,0" />
-      <unit id="3803436373354789788" at="62,284,66,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$3" />
-      <unit id="3803436373353918583" at="66,28,70,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$3" />
-      <unit id="3803436373354805028" at="74,89,78,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$4" />
-      <unit id="3803436373354046370" at="82,25,86,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$3" />
-      <unit id="3803436373354805022" at="72,87,80,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$3" />
-      <unit id="3803436373354067654" at="48,19,89,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$2" />
+      <unit id="3803436373354789788" at="62,284,66,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1$1" />
+      <unit id="3803436373353918583" at="66,28,70,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1$2" />
+      <unit id="3803436373354805028" at="74,89,78,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1$3$1" />
+      <unit id="3803436373354046370" at="82,25,86,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1$4" />
+      <unit id="3803436373354805022" at="72,87,80,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1$3" />
+      <unit id="3803436373354067654" at="48,19,89,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1$1" />
       <unit id="3803436373354067654" at="40,154,91,5" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints$1" />
       <unit id="3803436373354067654" at="32,0,102,0" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.Participant_Constraints" />
     </file>
@@ -342,11 +342,11 @@
         <var name="references" id="5681697064999370163" />
       </scope>
       <scope id="5681697064999370163" at="37,0,89,0" />
-      <unit id="5681697064999518073" at="66,269,70,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$4" />
-      <unit id="5681697064999518082" at="70,29,74,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$4" />
-      <unit id="5681697064999525376" at="77,25,81,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$3" />
-      <unit id="5681697064999518064" at="64,288,76,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$3" />
-      <unit id="5681697064999370163" at="48,19,84,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$2" />
+      <unit id="5681697064999518073" at="66,269,70,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1$1$1$1" />
+      <unit id="5681697064999518082" at="70,29,74,19" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1$1$1$2" />
+      <unit id="5681697064999525376" at="77,25,81,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1$1$2" />
+      <unit id="5681697064999518064" at="64,288,76,15" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1$1$1" />
+      <unit id="5681697064999370163" at="48,19,84,9" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1$1" />
       <unit id="5681697064999370163" at="40,161,86,5" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints$1" />
       <unit id="5681697064999370163" at="32,0,97,0" name="jetbrains.mps.samples.languagePatterns.Basic.constraints.ComponentUsage_Constraints" />
     </file>

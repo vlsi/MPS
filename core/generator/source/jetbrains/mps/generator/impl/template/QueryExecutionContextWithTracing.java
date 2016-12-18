@@ -184,16 +184,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
-    try {
-      tracer.push(taskName("referent target", refMacro), true);
-      return wrapped.getReferentTarget(node, outputNode, refMacro, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull CallArgumentQuery query, @NotNull TemplateArgumentContext context) throws GenerationFailureException {

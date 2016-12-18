@@ -28,7 +28,7 @@ public class DeleteVarArityType {
       if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")) != null)) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")));
       } else {
-        SNodeOperations.detachNode(node);
+        SNodeOperations.deleteNode(node);
       }
     }
   }
@@ -44,7 +44,7 @@ public class DeleteVarArityType {
       if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")) != null)) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11c08f42e7bL, 0x11c08f5f38cL, "componentType")));
       } else {
-        SNodeOperations.detachNode(node);
+        SNodeOperations.deleteNode(node);
       }
     }
   }

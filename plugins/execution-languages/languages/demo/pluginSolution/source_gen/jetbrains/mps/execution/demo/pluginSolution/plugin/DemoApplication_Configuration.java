@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -30,6 +31,7 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -42,8 +44,8 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
       return SPropertyOperations.getBoolean(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept")), MetaAdapterFactory.getProperty(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, 0x446739e63be7cbc4L, "valid"));
     }
   });
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    this.getNode().checkConfiguration();
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getNode().checkConfiguration(context);
   }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
@@ -123,10 +125,19 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return new DemoApplication_Configuration_Editor(myNode.getEditor());
   }
   @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
+  }
+  @Override
   public boolean canExecute(String executorId) {
     return DemoApplication_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
   }
 }

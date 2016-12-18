@@ -118,10 +118,10 @@
         <var name="references" id="3308300503039784470" />
       </scope>
       <scope id="3308300503039784470" at="38,0,80,0" />
-      <unit id="5359429653078458891" at="57,1416,61,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$4" />
-      <unit id="4394627182934757755" at="67,474,71,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$3" />
-      <unit id="5359429653078454229" at="57,839,65,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$3" />
-      <unit id="3308300503039784470" at="49,19,75,9" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$2" />
+      <unit id="5359429653078458891" at="57,1416,61,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$1$1$1$1" />
+      <unit id="4394627182934757755" at="67,474,71,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$1$1$2" />
+      <unit id="5359429653078454229" at="57,839,65,15" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$1$1$1" />
+      <unit id="3308300503039784470" at="49,19,75,9" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$1$1" />
       <unit id="3308300503039784470" at="41,157,77,5" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints$1" />
       <unit id="3308300503039784470" at="33,0,82,0" name="jetbrains.mps.samples.Kaja.constraints.RoutineCall_Constraints" />
     </file>
@@ -229,12 +229,12 @@
         <var name="references" id="4394627182934757713" />
       </scope>
       <scope id="4394627182934757713" at="52,0,100,0" />
-      <unit id="4394627182935254044" at="73,482,77,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$4" />
-      <unit id="4394627182935254053" at="77,32,81,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$4" />
-      <unit id="4394627182935254062" at="81,29,85,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$4" />
-      <unit id="5359429653078379651" at="88,25,92,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$3" />
-      <unit id="4394627182935254027" at="71,266,87,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$3" />
-      <unit id="4394627182934757713" at="63,19,95,9" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$2" />
+      <unit id="4394627182935254044" at="73,482,77,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1$1$1" />
+      <unit id="4394627182935254053" at="77,32,81,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1$1$2" />
+      <unit id="4394627182935254062" at="81,29,85,19" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1$1$3" />
+      <unit id="5359429653078379651" at="88,25,92,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1$2" />
+      <unit id="4394627182935254027" at="71,266,87,15" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1$1" />
+      <unit id="4394627182934757713" at="63,19,95,9" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1$1" />
       <unit id="4394627182934757713" at="55,154,97,5" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints$1" />
       <unit id="4394627182934757713" at="33,0,106,0" name="jetbrains.mps.samples.Kaja.constraints.Require_Constraints" />
     </file>

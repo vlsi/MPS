@@ -171,32 +171,29 @@ public class ModelMergeViewer implements MergeTool.MergeViewer {
   @Nullable
   public Action getResolveAction(@NotNull final MergeResult result) {
     String caption = MergeUtil.getResolveActionTitle(result, myMergeRequest, myMergeContext);
-    return new AbstractAction(caption) {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        if (result == MergeResult.CANCEL) {
-          if (!(allowCancel())) {
-            return;
-          }
-          myMergeContext.finishMerge(MergeResult.CANCEL);
-        } else {
-          if (result == MergeResult.RESOLVED) {
-            if (!((myPanel.saveResults()))) {
-              return;
+    switch (result) {
+      case CANCEL:
+        return new AbstractAction(caption) {
+          public void actionPerformed(ActionEvent e) {
+            if (allowCancel()) {
+              myMergeContext.finishMerge(MergeResult.CANCEL);
             }
-          } else {
-            // accept LEFT or RIGHT 
           }
-          // can't call finishMerge(LEFT/RIGHT) directly, as we want MergeRequest to keep final result untouched. 
-          // we can't just accept old byte[] content, because this could break model 
-          myMergeContext.finishMerge(MergeResult.RESOLVED);
-        }
-      }
-      @Override
-      public boolean isEnabled() {
-        return result == MergeResult.CANCEL || result == MergeResult.RESOLVED;
-      }
-    };
+        };
+      case RESOLVED:
+        return new AbstractAction(caption) {
+          public void actionPerformed(ActionEvent e) {
+            if (myPanel.saveResults()) {
+              myMergeContext.finishMerge(MergeResult.RESOLVED);
+            }
+          }
+        };
+      default:
+        // Accept LEFT or Accept RIGHT 
+        // can't call finishMerge(LEFT/RIGHT) directly, as we probably want accept only one root 
+        // we can't just accept old byte[] content, because this could break model 
+        return null;
+    }
   }
   public void dispose() {
     myPanel.dispose();

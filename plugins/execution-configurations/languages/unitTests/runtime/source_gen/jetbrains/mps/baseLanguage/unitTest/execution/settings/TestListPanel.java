@@ -8,11 +8,13 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.List;
-import java.util.ArrayList;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Set;
@@ -46,11 +48,11 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   }
 
   @Override
-  protected void collectCandidates(final ProgressMonitor progress) {
-    final List<SNode> nodesList = new ArrayList<SNode>();
+  protected List<ITestNodeWrapper> collectCandidates(final ProgressMonitor progress) {
     final SRepository repo = ProjectHelper.fromIdeaProject(myProject).getRepository();
-    repo.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
+    return new ModelAccessHelper(repo).runReadAction(new Computable<List<ITestNodeWrapper>>() {
+      public List<ITestNodeWrapper> compute() {
+        List<SNode> nodesList = new ArrayList<SNode>();
         Iterable<SAbstractConcept> wrappedRootConcepts = TestNodeWrapperFactory.getWrappedRootConcepts();
         progress.start("Looking up...", Sequence.fromIterable(wrappedRootConcepts).count());
         for (SAbstractConcept c : Sequence.fromIterable(wrappedRootConcepts)) {
@@ -58,13 +60,8 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
           ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
         }
         progress.done();
-      }
-    });
-
-    if (myIsTestMethods) {
-      final List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-      repo.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
+        if (myIsTestMethods) {
+          List<ITestNodeWrapper> methodsList = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
           for (SNode testCase : nodesList) {
             ITestNodeWrapper wrapper = TestNodeWrapperFactory.tryToWrap(testCase);
             if (wrapper == null) {
@@ -72,30 +69,20 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
             }
             ListSequence.fromList(methodsList).addSequence(Sequence.fromIterable(wrapper.getTestMethods()));
           }
+          return methodsList;
+        } else {
+          return ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
+            public ITestNodeWrapper select(SNode it) {
+              return wrap(it);
+            }
+          }).where(new IWhereFilter<ITestNodeWrapper>() {
+            public boolean accept(ITestNodeWrapper it) {
+              return it != null;
+            }
+          }).toListSequence();
         }
-      });
-      synchronized (myLock) {
-        ListSequence.fromList(myCandidates).clear();
-        ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(methodsList));
       }
-    } else {
-      repo.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          synchronized (myLock) {
-            ListSequence.fromList(myCandidates).clear();
-            ListSequence.fromList(myCandidates).addSequence(ListSequence.fromList(nodesList).select(new ISelector<SNode, ITestNodeWrapper>() {
-              public ITestNodeWrapper select(SNode it) {
-                return wrap(it);
-              }
-            }).where(new IWhereFilter<ITestNodeWrapper>() {
-              public boolean accept(ITestNodeWrapper it) {
-                return it != null;
-              }
-            }));
-          }
-        }
-      });
-    }
+    });
   }
 
   public TestListPanel(Project project, boolean isTestMethods) {

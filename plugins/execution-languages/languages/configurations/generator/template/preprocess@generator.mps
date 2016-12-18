@@ -8,7 +8,7 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -311,7 +311,7 @@
                             <ref role="3cqZAo" node="58t8pDAowLI" resolve="debuggerSettings" />
                           </node>
                           <node concept="3TrEf2" id="2rjnNcUazRc" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                           </node>
                         </node>
                         <node concept="zfrQC" id="2rjnNcUazRh" role="2OqNvi">
@@ -340,7 +340,7 @@
                                       <ref role="2Gs0qQ" node="58t8pDAovd5" resolve="builder" />
                                     </node>
                                     <node concept="3TrEf2" id="2rjnNcUanm$" role="2OqNvi">
-                                      <ref role="3Tt5mk" to="rzqf:5keEkmeCqKh" />
+                                      <ref role="3Tt5mk" to="rzqf:5keEkmeCqKh" resolve="commandPart" />
                                     </node>
                                   </node>
                                   <node concept="2qgKlT" id="2rjnNcUanm_" role="2OqNvi">
@@ -348,7 +348,7 @@
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="2rjnNcUanmA" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="rzqf:7mEQKPeoyeU" />
+                                  <ref role="3Tt5mk" to="rzqf:7mEQKPeoyeU" resolve="debuggerParameter" />
                                 </node>
                               </node>
                             </node>
@@ -363,7 +363,7 @@
                             <ref role="2Gs0qQ" node="58t8pDAovd5" resolve="builder" />
                           </node>
                           <node concept="3Tsc0h" id="58t8pDAovel" role="2OqNvi">
-                            <ref role="3TtcxE" to="rzqf:JzCdmU6yJP" />
+                            <ref role="3TtcxE" to="rzqf:JzCdmU6yJP" resolve="argument" />
                           </node>
                         </node>
                         <node concept="TSZUe" id="58t8pDAoveq" role="2OqNvi">
@@ -380,7 +380,7 @@
                             <ref role="3cqZAo" node="2rjnNcUanmq" resolve="debuggerAssignment" />
                           </node>
                           <node concept="3TrEf2" id="2rjnNcUanmI" role="2OqNvi">
-                            <ref role="3Tt5mk" to="rzqf:JzCdmU6yJA" />
+                            <ref role="3Tt5mk" to="rzqf:JzCdmU6yJA" resolve="value" />
                           </node>
                         </node>
                         <node concept="2oxUTD" id="2rjnNcUanmN" role="2OqNvi">
@@ -398,7 +398,7 @@
                           <ref role="2Gs0qQ" node="58t8pDAovd5" resolve="builder" />
                         </node>
                         <node concept="3TrEf2" id="58t8pDAove4" role="2OqNvi">
-                          <ref role="3Tt5mk" to="rzqf:5keEkmeCqKh" />
+                          <ref role="3Tt5mk" to="rzqf:5keEkmeCqKh" resolve="commandPart" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="58t8pDAove5" role="2OqNvi">
@@ -418,7 +418,7 @@
                       <ref role="2Gs0qQ" node="58t8pDAovbn" resolve="executor" />
                     </node>
                     <node concept="3TrEf2" id="58t8pDAovde" role="2OqNvi">
-                      <ref role="3Tt5mk" to="uhxm:6T2kBqFeaUx" />
+                      <ref role="3Tt5mk" to="uhxm:6T2kBqFeaUx" resolve="execute" />
                     </node>
                   </node>
                   <node concept="2Rf3mk" id="58t8pDAovdf" role="2OqNvi">
@@ -440,7 +440,7 @@
                                 <ref role="3cqZAo" node="58t8pDAovdC" resolve="commandBuilder" />
                               </node>
                               <node concept="3Tsc0h" id="58t8pDAovdq" role="2OqNvi">
-                                <ref role="3TtcxE" to="rzqf:JzCdmU6yJP" />
+                                <ref role="3TtcxE" to="rzqf:JzCdmU6yJP" resolve="argument" />
                               </node>
                             </node>
                             <node concept="1z4cxt" id="58t8pDAovdr" role="2OqNvi">
@@ -453,7 +453,7 @@
                                           <ref role="3cqZAo" node="58t8pDAovd_" resolve="arg" />
                                         </node>
                                         <node concept="3TrEf2" id="58t8pDAovdy" role="2OqNvi">
-                                          <ref role="3Tt5mk" to="rzqf:JzCdmU6yJ_" />
+                                          <ref role="3Tt5mk" to="rzqf:JzCdmU6yJ_" resolve="parameterDeclaration" />
                                         </node>
                                       </node>
                                       <node concept="1mIQ4w" id="58t8pDAovdz" role="2OqNvi">

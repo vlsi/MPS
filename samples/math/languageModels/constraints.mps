@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -124,8 +124,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -168,7 +168,7 @@
     <property role="3GE5qa" value="matrix" />
     <ref role="1M2myG" to="39kg:5pgF0P2gf9i" resolve="MatrixInitializerIndexReference" />
     <node concept="1N5Pfh" id="5pgF0P2gf9M" role="1Mr941">
-      <ref role="1N5Vy1" to="39kg:5pgF0P2gf9P" />
+      <ref role="1N5Vy1" to="39kg:5pgF0P2gf9P" resolve="index" />
       <node concept="1MUpDS" id="5pgF0P2gf9N" role="1N6uqs">
         <node concept="3clFbS" id="5pgF0P2gf9O" role="2VODD2">
           <node concept="3cpWs8" id="5pgF0P2gi_h" role="3cqZAp">
@@ -234,7 +234,7 @@
                               <ref role="1YBMHb" node="5pgF0P2jldl" resolve="mi" />
                             </node>
                             <node concept="3TrEf2" id="5pgF0P2jldw" role="2OqNvi">
-                              <ref role="3Tt5mk" to="39kg:5pgF0P2gf9s" />
+                              <ref role="3Tt5mk" to="39kg:5pgF0P2gf9s" resolve="colIndex" />
                             </node>
                           </node>
                         </node>
@@ -251,7 +251,7 @@
                               <ref role="1YBMHb" node="5pgF0P2jldl" resolve="mi" />
                             </node>
                             <node concept="3TrEf2" id="5pgF0P2jldB" role="2OqNvi">
-                              <ref role="3Tt5mk" to="39kg:5pgF0P2gf9r" />
+                              <ref role="3Tt5mk" to="39kg:5pgF0P2gf9r" resolve="rowIndex" />
                             </node>
                           </node>
                         </node>
@@ -276,7 +276,7 @@
                               <ref role="1YBMHb" node="5pgF0P2jldp" resolve="vi" />
                             </node>
                             <node concept="3TrEf2" id="5pgF0P2jldY" role="2OqNvi">
-                              <ref role="3Tt5mk" to="39kg:5pgF0P2jgYR" />
+                              <ref role="3Tt5mk" to="39kg:5pgF0P2jgYR" resolve="rowIndex" />
                             </node>
                           </node>
                         </node>
@@ -318,7 +318,7 @@
   <node concept="1M2fIO" id="hZx0D9e">
     <ref role="1M2myG" to="39kg:hZwQhih" resolve="MathSymbolIndexReference" />
     <node concept="1N5Pfh" id="i0O8r$E" role="1Mr941">
-      <ref role="1N5Vy1" to="39kg:hZwQlJv" />
+      <ref role="1N5Vy1" to="39kg:hZwQlJv" resolve="indexRef" />
       <node concept="1MUpDS" id="i0OawKz" role="1N6uqs">
         <node concept="3clFbS" id="i0OawK$" role="2VODD2">
           <node concept="3cpWs8" id="i0OkNri" role="3cqZAp">
@@ -411,8 +411,10 @@
                     <ref role="ehGHo" to="39kg:5yEI9AszOcE" resolve="MatrixElementAccessExpression" />
                   </node>
                   <node concept="1PxgMI" id="PzG_d7KJN8" role="33vP2m">
-                    <ref role="1m5ApE" to="39kg:5yEI9AszOcE" resolve="MatrixElementAccessExpression" />
                     <node concept="nLn13" id="PzG_d7KJN3" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdGZ0O" role="3oSUPX">
+                      <ref role="cht4Q" to="39kg:5yEI9AszOcE" resolve="MatrixElementAccessExpression" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -425,7 +427,7 @@
                           <ref role="3cqZAo" node="PzG_d7KJMZ" resolve="expr" />
                         </node>
                         <node concept="3TrEf2" id="5P9njw0DaY2" role="2OqNvi">
-                          <ref role="3Tt5mk" to="39kg:5yEI9AszOcW" />
+                          <ref role="3Tt5mk" to="39kg:5yEI9AszOcW" resolve="expression" />
                         </node>
                       </node>
                       <node concept="3JvlWi" id="PzG_d7KK5l" role="2OqNvi" />

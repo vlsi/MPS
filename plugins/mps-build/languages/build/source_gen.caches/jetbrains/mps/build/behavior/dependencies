@@ -168,7 +168,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildExternalLayoutDependency__BehaviorDescriptor" file="BuildExternalLayoutDependency__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -202,7 +201,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildExternalLayout__BehaviorDescriptor" file="BuildExternalLayout__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -459,7 +457,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_AbstractCopy__BehaviorDescriptor" file="BuildLayout_AbstractCopy__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -836,7 +833,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_FileStub__BehaviorDescriptor" file="BuildLayout_FileStub__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -871,7 +867,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_File__BehaviorDescriptor" file="BuildLayout_File__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1167,7 +1162,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Jar__BehaviorDescriptor" file="BuildLayout_Jar__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1244,7 +1238,6 @@
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Node__BehaviorDescriptor" file="BuildLayout_Node__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1263,8 +1256,8 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
@@ -1278,6 +1271,7 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor" file="BuildLayout_PathElement__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -1285,6 +1279,7 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Void" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
     <classNode dependClassName="jetbrains.mps.build.util.UnpackHelper" />
@@ -1313,7 +1308,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Tar__BehaviorDescriptor" file="BuildLayout_Tar__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1349,7 +1343,6 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_TransparentContainer__BehaviorDescriptor" file="BuildLayout_TransparentContainer__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1408,7 +1401,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout_Zip__BehaviorDescriptor" file="BuildLayout_Zip__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1441,7 +1433,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildLayout__BehaviorDescriptor" file="BuildLayout__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1499,7 +1490,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildNamedLayout__BehaviorDescriptor" file="BuildNamedLayout__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1565,7 +1555,6 @@
   </dependency>
   <dependency className="jetbrains.mps.build.behavior.BuildProjectDependency__BehaviorDescriptor" file="BuildProjectDependency__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -1805,6 +1794,7 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.behavior.BuildRelativePath__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
@@ -1815,6 +1805,7 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

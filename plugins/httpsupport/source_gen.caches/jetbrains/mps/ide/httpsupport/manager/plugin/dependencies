@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" file="HttpRequest.java">
     <classNode dependClassName="com.intellij.openapi.util.text.StringUtil" />
     <classNode dependClassName="com.intellij.util.ExceptionUtil" />
+    <classNode dependClassName="com.intellij.util.io.NettyKt" />
     <classNode dependClassName="io.netty.buffer.ByteBuf" />
     <classNode dependClassName="io.netty.buffer.Unpooled" />
     <classNode dependClassName="io.netty.channel.Channel" />
@@ -18,7 +19,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.io.NettyKt" />
     <classNode dependClassName="org.jetbrains.io.Responses" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" file="IHttpRequestHandler.java">
@@ -29,6 +29,22 @@
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.HttpRequest" />
     <classNode dependClassName="jetbrains.mps.ide.httpsupport.manager.plugin.IHttpRequestHandler" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSIntegrationPortManager" file="MPSIntegrationPortManager.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSInternalPortManager" file="MPSInternalPortManager.java">
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
   </dependency>
   <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestManager" file="MPSRequestManager.java">
     <classNode dependClassName="io.netty.channel.ChannelHandlerContext" />
@@ -51,15 +67,6 @@
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="org.jetbrains.ide.HttpRequestHandler" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.httpsupport.manager.plugin.MPSRequestPortManager" file="MPSRequestPortManager.java">
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.ide.CustomPortServerManager" />
-    <classNode extendsClassName="org.jetbrains.io.CustomPortServerManagerBase" />
   </dependency>
 </dependenciesRoot>
 

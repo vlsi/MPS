@@ -111,8 +111,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -196,7 +196,7 @@
                     <ref role="3cqZAo" node="mfnC6nPrzS" resolve="caseElement" />
                   </node>
                   <node concept="3TrEf2" id="mfnC6nPr$1" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:gVKbmvf" />
+                    <ref role="3Tt5mk" to="tpee:gVKbmvf" resolve="expression" />
                   </node>
                 </node>
               </node>
@@ -208,7 +208,7 @@
                     <ref role="3cqZAo" node="mfnC6nPrzS" resolve="caseElement" />
                   </node>
                   <node concept="3TrEf2" id="mfnC6nPr$6" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:gVKbmvf" />
+                    <ref role="3Tt5mk" to="tpee:gVKbmvf" resolve="expression" />
                   </node>
                 </node>
                 <node concept="1mIQ4w" id="mfnC6nPr$7" role="2OqNvi">
@@ -226,14 +226,16 @@
                     <node concept="17QB3L" id="2ZjgnoxPE8G" role="1tU5fm" />
                     <node concept="2OqwBi" id="2ZjgnoxPE8H" role="33vP2m">
                       <node concept="1PxgMI" id="2ZjgnoxPE8I" role="2Oq$k0">
-                        <ref role="1m5ApE" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                         <node concept="2OqwBi" id="2ZjgnoxPE8J" role="1m5AlR">
                           <node concept="37vLTw" id="3GM_nagTwJ5" role="2Oq$k0">
                             <ref role="3cqZAo" node="mfnC6nPrzS" resolve="caseElement" />
                           </node>
                           <node concept="3TrEf2" id="2ZjgnoxPE8L" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:gVKbmvf" />
+                            <ref role="3Tt5mk" to="tpee:gVKbmvf" resolve="expression" />
                           </node>
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYr5" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:f$Xl_Og" resolve="StringLiteral" />
                         </node>
                       </node>
                       <node concept="3TrcHB" id="2ZjgnoxPE8M" role="2OqNvi">
@@ -253,7 +255,7 @@
                           <ref role="3cqZAo" node="mfnC6nPrzS" resolve="caseElement" />
                         </node>
                         <node concept="3TrEf2" id="2ZjgnoxPE8T" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:gVKbmvf" />
+                          <ref role="3Tt5mk" to="tpee:gVKbmvf" resolve="expression" />
                         </node>
                       </node>
                     </node>
@@ -290,7 +292,7 @@
             <ref role="1YBMHb" node="mfnC6nPrzN" resolve="switchStatement" />
           </node>
           <node concept="3Tsc0h" id="mfnC6nPr$b" role="2OqNvi">
-            <ref role="3TtcxE" to="tpee:gVKbHMJ" />
+            <ref role="3TtcxE" to="tpee:gVKbHMJ" resolve="case" />
           </node>
         </node>
       </node>
@@ -315,7 +317,7 @@
               <ref role="1YBMHb" node="mfnC6nPrzM" resolve="switchStatement" />
             </node>
             <node concept="3TrEf2" id="mfnC6nPrys" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:gVKbG91" />
+              <ref role="3Tt5mk" to="tpee:gVKbG91" resolve="expression" />
             </node>
           </node>
         </node>
@@ -359,16 +361,18 @@
             <node concept="2OqwBi" id="mfnC6nPryM" role="3clFbw">
               <node concept="2OqwBi" id="mfnC6nPryN" role="2Oq$k0">
                 <node concept="1PxgMI" id="mfnC6nPryO" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpee:g7uibYu" resolve="ClassifierType" />
                   <node concept="2OqwBi" id="mfnC6nPryP" role="1m5AlR">
                     <node concept="37vLTw" id="3GM_nagT$E5" role="2Oq$k0">
                       <ref role="3cqZAo" node="mfnC6nPryo" resolve="arg" />
                     </node>
                     <node concept="3JvlWi" id="mfnC6nPryR" role="2OqNvi" />
                   </node>
+                  <node concept="chp4Y" id="714IaVdGYr6" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
+                  </node>
                 </node>
                 <node concept="3TrEf2" id="mfnC6nPryS" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                  <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                 </node>
               </node>
               <node concept="2qgKlT" id="mfnC6nPryT" role="2OqNvi">
@@ -401,12 +405,14 @@
             <node concept="2OqwBi" id="mfnC6nPrz5" role="3clFbw">
               <node concept="2OqwBi" id="mfnC6nPrz6" role="2Oq$k0">
                 <node concept="1PxgMI" id="mfnC6nPrz7" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpee:3ZSHU3pg$bx" resolve="IWillBeClassifier" />
                   <node concept="2OqwBi" id="mfnC6nPrz8" role="1m5AlR">
                     <node concept="37vLTw" id="3GM_nagTrrv" role="2Oq$k0">
                       <ref role="3cqZAo" node="mfnC6nPryo" resolve="arg" />
                     </node>
                     <node concept="3JvlWi" id="mfnC6nPrza" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYr4" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:3ZSHU3pg$bx" resolve="IWillBeClassifier" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="mfnC6nPrzb" role="2OqNvi">

@@ -22,7 +22,7 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     return _quotation_createNode_34hpo3_a0a2();
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    return MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {

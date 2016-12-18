@@ -8,7 +8,7 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <use id="69b8a993-9b87-4d96-bf0c-3559f4bb0c63" name="jetbrains.mps.lang.slanguage" version="0" />
     <use id="96ee7a94-411d-4cf8-9b94-96cad7e52411" name="jetbrains.mps.baseLanguage.jdk7" version="0" />
@@ -316,7 +316,6 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -3157,15 +3156,12 @@
                   <node concept="3clFbS" id="7e7F6PQD8F1" role="2VODD2">
                     <node concept="3clFbF" id="7e7F6PQD8NF" role="3cqZAp">
                       <node concept="2OqwBi" id="7e7F6PQDdG9" role="3clFbG">
-                        <node concept="2OqwBi" id="7e7F6PQD9Tf" role="2Oq$k0">
-                          <node concept="2OqwBi" id="7e7F6PQD8Zy" role="2Oq$k0">
-                            <node concept="30H73N" id="7e7F6PQD8NE" role="2Oq$k0" />
-                            <node concept="2yIwOk" id="7e7F6PQD9pA" role="2OqNvi" />
-                          </node>
-                          <node concept="FGMqu" id="7e7F6PQDd4$" role="2OqNvi" />
+                        <node concept="2OqwBi" id="7e7F6PQD8Zy" role="2Oq$k0">
+                          <node concept="30H73N" id="7e7F6PQD8NE" role="2Oq$k0" />
+                          <node concept="2yIwOk" id="7e7F6PQD9pA" role="2OqNvi" />
                         </node>
-                        <node concept="2qgKlT" id="7e7F6PQDe6N" role="2OqNvi">
-                          <ref role="37wK5l" to="tpcu:hEwIO9y" resolve="getFqName" />
+                        <node concept="liA8E" id="XfBUhN$QQo" role="2OqNvi">
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
                         </node>
                       </node>
                     </node>

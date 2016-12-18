@@ -21,7 +21,6 @@ import jetbrains.mps.ide.projectPane.logicalview.SimpleModelListener;
 import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
@@ -85,7 +84,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     final PresentationUpdater<SNodeTreeNode> updater = new PresentationUpdater<SNodeTreeNode>(this) {
       @Override
       protected boolean isValid(SNodeTreeNode treeNode) {
-        return super.isValid(treeNode) && SNodeUtil.isAccessible(treeNode.getSNode(), MPSModuleRepository.getInstance());
+        return super.isValid(treeNode) && SNodeUtil.isAccessible(treeNode.getSNode(), myProject.getRepository());
       }
     };
     mySNodeModelListener = new SimpleModelListener(updater);

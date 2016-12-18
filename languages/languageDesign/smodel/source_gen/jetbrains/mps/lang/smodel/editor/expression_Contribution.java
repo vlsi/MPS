@@ -50,6 +50,7 @@ public class expression_Contribution extends TransformationMenuBase {
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_a0());
       result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0());
+      result.add(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0());
     }
     return result;
   }
@@ -147,6 +148,56 @@ public class expression_Contribution extends TransformationMenuBase {
   public class TransformationMenuPart_Group_2hw6rf_b0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
     @Override
     protected boolean isApplicable(TransformationMenuContext _context) {
+      SNode conceptType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5cab42cd97571ceeL, "jetbrains.mps.lang.smodel.structure.SConceptType")), true);
+      return conceptType != null;
+    }
+
+    @Override
+    protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a());
+    }
+    private class TransformationMenuPart_Action_2hw6rf_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+      @Nullable
+      protected TransformationMenuItem createItem(TransformationMenuContext context) {
+        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a.Item(context);
+      }
+
+      private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {
+        private final TransformationMenuContext _context;
+
+        private Item(TransformationMenuContext context) {
+          _context = context;
+        }
+
+        @Nullable
+        @Override
+        public String getLabelText(String pattern) {
+          return ":";
+        }
+
+        @Override
+        public void execute(@NotNull String pattern) {
+          SNode newNode = SNodeFactoryOperations.replaceWithNewChild(_context.getNode(), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression")));
+          SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression"), _context.getNode());
+          SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), newNode, SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
+        }
+
+
+        @Nullable
+        @Override
+        public SAbstractConcept getOutputConcept() {
+          return MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1871b2e3b0ef0078L, "jetbrains.mps.lang.smodel.structure.SConceptTypeCastExpression");
+        }
+        @Override
+        public String getShortDescriptionText(@NotNull String pattern) {
+          return "concept type cast";
+        }
+      }
+    }
+  }
+  public class TransformationMenuPart_Group_2hw6rf_c0 extends GroupMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    @Override
+    protected boolean isApplicable(TransformationMenuContext _context) {
       SNode expressionType = TypeChecker.getInstance().getTypeOf(_context.getNode());
       if (SNodeOperations.isInstanceOf(expressionType, MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
         return true;
@@ -168,12 +219,12 @@ public class expression_Contribution extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0.TransformationMenuPart_Action_2hw6rf_a2a());
     }
-    private class TransformationMenuPart_Action_2hw6rf_a1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
+    private class TransformationMenuPart_Action_2hw6rf_a2a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
       protected TransformationMenuItem createItem(TransformationMenuContext context) {
-        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_b0.TransformationMenuPart_Action_2hw6rf_a1a.Item(context);
+        return new expression_Contribution.TransformationMenuPart_Group_2hw6rf_c0.TransformationMenuPart_Action_2hw6rf_a2a.Item(context);
       }
 
       private class Item extends ActionItemBase implements SideTransformCompletionActionItem, ConstraintsVerifiableActionItem {

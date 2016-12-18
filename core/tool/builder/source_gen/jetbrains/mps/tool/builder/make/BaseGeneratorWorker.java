@@ -22,13 +22,6 @@ import java.util.concurrent.Future;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.concurrent.ExecutionException;
-import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -131,21 +124,6 @@ public abstract class BaseGeneratorWorker extends MpsWorker {
       myErrors.add(e.toString());
     }
     myEnvironment.flushAllEvents();
-  }
-
-  protected void makeProject() {
-    final MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
-      public MPSCompilationResult compute() {
-        return new ModuleMaker().make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), myJavaCompilerOptions);
-      }
-    });
-    if (mpsCompilationResult.isReloadingNeeded()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
-        }
-      });
-    }
   }
 
   private Iterable<SModule> withGenerators(Iterable<SModule> modules) {

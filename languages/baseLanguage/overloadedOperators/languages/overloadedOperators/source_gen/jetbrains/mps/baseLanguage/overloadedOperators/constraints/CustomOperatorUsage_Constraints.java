@@ -41,7 +41,7 @@ public class CustomOperatorUsage_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return (List<SNode>) CustomOperatorUsage__BehaviorDescriptor.getVisibleCustomOperators_idZogSShiOAT.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage").getDeclarationNode()), _context.getModel());
+            return (List<SNode>) CustomOperatorUsage__BehaviorDescriptor.getVisibleCustomOperators_idZogSShiOAT.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xfc8d557e5de64dd8L, 0xb749aab2fb23aefcL, 0x15c86fdc6084766fL, "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage")), _context.getModel());
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {

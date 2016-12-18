@@ -20,8 +20,8 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
     return true;
   }
   @Override
-  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
+  public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAnAncestor(node, childNode, childConcept, parentNode, link, context);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeAncesctorBreakingPoint);
@@ -29,7 +29,7 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
+  public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, SNode parentNode, SNode link, final IOperationContext operationContext) {
     return childConcept != MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression").getDeclarationNode();
   }
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "7820875636625783497");

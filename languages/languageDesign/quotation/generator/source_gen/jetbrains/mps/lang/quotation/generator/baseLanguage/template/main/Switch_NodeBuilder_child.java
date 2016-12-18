@@ -18,7 +18,6 @@ import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 import jetbrains.mps.generator.runtime.ReductionRuleBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -40,7 +39,10 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
     return rules;
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Illegal child initializer in NodeBuilder");
+    DismissTopMappingRuleException ex_a_0 = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.error, "Illegal child initializer in NodeBuilder");
+    ex_a_0.setTemplateContext(context);
+    ex_a_0.setTemplateModelLocation(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101744853"));
+    throw ex_a_0;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
@@ -73,7 +75,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
                         {
                           final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                           try {
-                            environment.resolve((ReferenceResolver) new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context5, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101517905"), "_node_") {
+                            environment.resolve(new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context5, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101517905"), "_node_") {
                               @Override
                               public Object resolve() {
                                 return QueriesGenerated.referenceMacro_GetReferent_5756354288101517906(createQueryContext());
@@ -129,7 +131,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
                             {
                               final SNode tnode12 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                               try {
-                                environment.resolve((ReferenceResolver) new RefResolver(tnode12, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context8, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101517933"), "param") {
+                                environment.resolve(new RefResolver(tnode12, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context8, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101517933"), "param") {
                                   @Override
                                   public Object resolve() {
                                     return QueriesGenerated.referenceMacro_GetReferent_5756354288101517934(createQueryContext());
@@ -180,7 +182,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
             {
               final SNode tnode15 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
               try {
-                environment.resolve((ReferenceResolver) new RefResolver(tnode15, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context9, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4703473591638853464"), "param") {
+                environment.resolve(new RefResolver(tnode15, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context9, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "4703473591638853464"), "param") {
                   @Override
                   public Object resolve() {
                     return QueriesGenerated.referenceMacro_GetReferent_4703473591638853465(createQueryContext());
@@ -225,7 +227,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
                 {
                   final SNode tnode5 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                   try {
-                    environment.resolve((ReferenceResolver) new RefResolver(tnode5, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context3, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101684808"), "_node_") {
+                    environment.resolve(new RefResolver(tnode5, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context3, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101684808"), "_node_") {
                       @Override
                       public Object resolve() {
                         return QueriesGenerated.referenceMacro_GetReferent_5756354288101684809(createQueryContext());
@@ -269,7 +271,7 @@ public class Switch_NodeBuilder_child extends TemplateSwitchBase implements Temp
                 {
                   final SNode tnode9 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
                   try {
-                    environment.resolve((ReferenceResolver) new RefResolver(tnode9, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context4, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101684834"), "_node_") {
+                    environment.resolve(new RefResolver(tnode9, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), context4, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "5756354288101684834"), "_node_") {
                       @Override
                       public Object resolve() {
                         return QueriesGenerated.referenceMacro_GetReferent_5756354288101684835(createQueryContext());

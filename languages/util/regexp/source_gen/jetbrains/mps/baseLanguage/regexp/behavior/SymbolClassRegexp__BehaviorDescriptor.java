@@ -16,7 +16,7 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -40,7 +40,7 @@ public final class SymbolClassRegexp__BehaviorDescriptor extends BaseBHDescripto
     return ((String) SymbolClassRegexpAndPart__BehaviorDescriptor.getRepresentation_id75Jea4IEZbM.invoke(__thisNode__));
   }
   /*package*/ static String getRepresentation_id75Jea4IEZbM(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) + SymbolClassRegexp__BehaviorDescriptor.partsToString_idhMS0769.invoke(__thisNode__, SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, 0x11179171739L, "part"))) + "]";
+    return SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__)) + SymbolClassRegexp__BehaviorDescriptor.partsToString_idhMS0769.invoke(__thisNode__, SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178e2916aL, 0x11179171739L, "part"))) + "]";
   }
   /*package*/ static String partsToString_idhMS0769(@NotNull SNode __thisNode__, List<SNode> parts) {
     StringBuilder result = new StringBuilder();

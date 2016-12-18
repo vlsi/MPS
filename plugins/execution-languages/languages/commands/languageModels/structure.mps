@@ -2,7 +2,7 @@
 <model ref="r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -79,7 +79,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="856705193941281751" />
       <ref role="20lvS9" node="JzCdmU6yJC" resolve="CommandDeclaration" />
-      <ref role="20ksaX" to="tp4f:hyWumMg" />
+      <ref role="20ksaX" to="tp4f:hyWumMg" resolve="classifier" />
     </node>
   </node>
   <node concept="1TIwiD" id="JzCdmU6yJp">
@@ -116,6 +116,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="856705193941281758" />
       <ref role="20lvS9" node="6mJVBGGsi5o" resolve="CommandParameterDeclaration" />
+    </node>
+    <node concept="PrWs8" id="1CVOLqOQ4V1" role="PzmwI">
+      <ref role="PrY4T" to="tpee:SORzhOp6jM" resolve="IVariableReference" />
     </node>
   </node>
   <node concept="1TIwiD" id="JzCdmU6yJy">

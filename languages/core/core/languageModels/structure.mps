@@ -4,18 +4,19 @@
   <languages>
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports />
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.Icon" flags="ng" index="1QGGSu">
+      <concept id="8974276187400029883" name="jetbrains.mps.lang.resources.structure.FileIcon" flags="ng" index="1QGGSu">
         <property id="2756621024541341363" name="file" index="1iqoE4" />
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
@@ -105,11 +106,19 @@
       <property role="TrG5h" value="shortDescription" />
       <property role="IQ2nx" value="1156234966388" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="66vxhH65cCn" role="lGtFl">
+        <property role="YLPcu" value="3.5" />
+        <property role="YLQ7P" value="This property should not be used. Use conceptShortDescription for concepts or create a custom property if needed for another type of nodes" />
+      </node>
     </node>
     <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
       <property role="TrG5h" value="alias" />
       <property role="IQ2nx" value="1156235010670" />
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
+      <node concept="asaX9" id="66vxhH65cCs" role="lGtFl">
+        <property role="YLPcu" value="3.5" />
+        <property role="YLQ7P" value="This property should not be used. Use conceptAlias for concepts or create a custom alias property if alias is needed for a node of some other concept" />
+      </node>
     </node>
     <node concept="1TJgyi" id="hnGE5uv" role="1TKVEl">
       <property role="TrG5h" value="virtualPackage" />
@@ -331,6 +340,9 @@
   <node concept="PlHQZ" id="1_TrU5E6oyb">
     <property role="TrG5h" value="IDontSubstituteByDefault" />
     <property role="EcuMT" value="1835621062190663819" />
+    <node concept="asaX9" id="7pLHo_31Wuo" role="lGtFl">
+      <property role="YLQ7P" value="Create empty default substitute menu for the concept instead of implementing this interface concept" />
+    </node>
   </node>
   <node concept="PlHQZ" id="2UAn0GTuXmY">
     <property role="TrG5h" value="ScopeFacade" />

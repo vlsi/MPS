@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.psi;
 
+import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.impl.DocumentImpl;
 import com.intellij.openapi.util.Computable;
@@ -43,6 +44,10 @@ public class NullPsiDocumentManager extends PsiDocumentManager {
 
   @Override
   public void performLaterWhenAllCommitted(@NotNull Runnable runnable) {
+  }
+
+  @Override
+  public void performLaterWhenAllCommitted(@NotNull Runnable runnable, ModalityState modalityState) {
   }
 
   @Override

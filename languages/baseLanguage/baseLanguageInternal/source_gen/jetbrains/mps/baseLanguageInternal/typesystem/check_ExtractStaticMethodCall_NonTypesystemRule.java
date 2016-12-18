@@ -22,7 +22,7 @@ public class check_ExtractStaticMethodCall_NonTypesystemRule extends AbstractNon
   public check_ExtractStaticMethodCall_NonTypesystemRule() {
   }
   public void applyRule(final SNode callStatic, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> available = ExtractStaticMethod_CallExpression__BehaviorDescriptor.getMethods_id55buE1DVoKQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression").getDeclarationNode()), callStatic);
+    List<SNode> available = ExtractStaticMethod_CallExpression__BehaviorDescriptor.getMethods_id55buE1DVoKQ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression")), callStatic);
     if (!(ListSequence.fromList(available).contains(SLinkOperations.getTarget(callStatic, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

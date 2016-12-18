@@ -118,7 +118,7 @@
         <var name="title" id="4577525712681046221" />
       </scope>
       <unit id="4577525712681046275" at="32,47,37,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$1" />
-      <unit id="4577525712681046303" at="42,60,47,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$3" />
+      <unit id="4577525712681046303" at="42,60,47,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$2$1" />
       <unit id="4577525712681046291" at="39,32,49,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog$2" />
       <unit id="4577525712681046198" at="18,0,73,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.AbstractEvaluationDialog" />
     </file>
@@ -203,10 +203,10 @@
       <scope id="5600062460044309387" at="19,0,72,0">
         <var name="provider" id="5600062460044309390" />
       </scope>
-      <unit id="5600062460044309452" at="37,60,42,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
-      <unit id="5600062460044309506" at="58,60,63,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$3" />
-      <unit id="5600062460044309474" at="46,60,52,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
-      <unit id="5600062460044309421" at="26,60,33,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
+      <unit id="5600062460044309452" at="37,60,42,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$2" />
+      <unit id="5600062460044309506" at="58,60,63,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2$1" />
+      <unit id="5600062460044309474" at="46,60,52,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$3" />
+      <unit id="5600062460044309421" at="26,60,33,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1$1" />
       <unit id="5600062460044309495" at="55,32,65,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$2" />
       <unit id="5600062460044309408" at="23,36,54,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel$1" />
       <unit id="5600062460044309378" at="16,0,85,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" />
@@ -215,44 +215,44 @@
   <root nodeRef="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)/5849716370568348282">
     <file name="EvaluationDialog.java">
       <node id="5849716370568348356" at="16,127,17,56" concept="14" />
-      <node id="2656624718522778469" at="24,47,25,37" concept="2" />
-      <node id="2656624718522778497" at="29,47,30,72" concept="2" />
-      <node id="2656624718522778505" at="30,72,31,21" concept="2" />
-      <node id="2656624718522778531" at="35,47,36,21" concept="2" />
-      <node id="1568068832543932926" at="43,45,44,44" concept="9" />
+      <node id="2656624718522778469" at="25,47,26,37" concept="2" />
+      <node id="2656624718522778497" at="30,47,31,72" concept="2" />
+      <node id="2656624718522778505" at="31,72,32,21" concept="2" />
+      <node id="2656624718522778531" at="36,47,37,21" concept="2" />
+      <node id="1568068832543932926" at="45,45,46,44" concept="9" />
       <node id="5849716370568348349" at="16,0,19,0" concept="1" trace="EvaluationDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="2656624718522778461" at="23,0,27,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="2656624718522778524" at="34,0,38,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="2656624718522778489" at="28,0,33,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="1568068832543932916" at="40,0,46,0" concept="7" trace="getDimensionServiceKey#()Ljava/lang/String;" />
-      <node id="2656624718522764997" at="21,38,38,7" concept="9" />
-      <node id="2656624718522764989" at="19,0,40,0" concept="7" trace="createActions#()[Ljavax/swing/Action;" />
+      <node id="2656624718522778461" at="24,0,28,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="2656624718522778524" at="35,0,39,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="2656624718522778489" at="29,0,34,0" concept="7" trace="doAction#(Ljava/awt/event/ActionEvent;)V" />
+      <node id="1568068832543932916" at="42,0,48,0" concept="7" trace="getDimensionServiceKey#()Ljava/lang/String;" />
+      <node id="2656624718522764997" at="22,38,39,7" concept="9" />
+      <node id="2656624718522764989" at="20,0,41,0" concept="7" trace="createActions#()[Ljavax/swing/Action;" />
       <scope id="5849716370568348355" at="16,127,17,56" />
-      <scope id="2656624718522778466" at="24,47,25,37" />
-      <scope id="2656624718522778529" at="35,47,36,21" />
-      <scope id="1568068832543932921" at="43,45,44,44" />
-      <scope id="2656624718522778494" at="29,47,31,21" />
+      <scope id="2656624718522778466" at="25,47,26,37" />
+      <scope id="2656624718522778529" at="36,47,37,21" />
+      <scope id="1568068832543932921" at="45,45,46,44" />
+      <scope id="2656624718522778494" at="30,47,32,21" />
       <scope id="5849716370568348349" at="16,0,19,0">
         <var name="container" id="2814952292830127447" />
         <var name="ideaProject" id="5069373260571633081" />
         <var name="provider" id="2814952292830128614" />
       </scope>
-      <scope id="2656624718522778461" at="23,0,27,0">
+      <scope id="2656624718522778461" at="24,0,28,0">
         <var name="p0" id="2656624718522778464" />
       </scope>
-      <scope id="2656624718522778524" at="34,0,38,0">
+      <scope id="2656624718522778524" at="35,0,39,0">
         <var name="p0" id="2656624718522778527" />
       </scope>
-      <scope id="2656624718522778489" at="28,0,33,0">
+      <scope id="2656624718522778489" at="29,0,34,0">
         <var name="p0" id="2656624718522778492" />
       </scope>
-      <scope id="1568068832543932916" at="40,0,46,0" />
-      <scope id="2656624718522764993" at="21,38,38,7" />
-      <scope id="2656624718522764989" at="19,0,40,0" />
-      <unit id="2656624718522778459" at="22,28,27,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$1" />
-      <unit id="2656624718522778522" at="33,11,38,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$3" />
-      <unit id="2656624718522778487" at="27,11,33,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$2" />
-      <unit id="5849716370568348282" at="15,0,47,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />
+      <scope id="1568068832543932916" at="42,0,48,0" />
+      <scope id="2656624718522764993" at="22,38,39,7" />
+      <scope id="2656624718522764989" at="20,0,41,0" />
+      <unit id="2656624718522778459" at="23,28,28,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$1" />
+      <unit id="2656624718522778522" at="34,11,39,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$3" />
+      <unit id="2656624718522778487" at="28,11,34,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog$2" />
+      <unit id="5849716370568348282" at="15,0,49,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationDialog" />
     </file>
   </root>
   <root nodeRef="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)/7406771907178597948">
@@ -642,9 +642,9 @@
       <unit id="7704359791231500630" at="164,0,167,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationModelNode" />
       <unit id="2034046503361607150" at="93,47,97,7" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
       <unit id="7406771907178598564" at="159,0,164,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationState" />
-      <unit id="7406771907178599489" at="280,32,285,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
+      <unit id="7406771907178599489" at="280,32,285,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ErrorTreeNode$1" />
       <unit id="7406771907178598591" at="176,0,184,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$EvaluationInProgressState" />
-      <unit id="6647443673251181321" at="202,42,210,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$1" />
+      <unit id="6647443673251181321" at="202,42,210,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ResultState$1" />
       <unit id="7406771907178598576" at="167,0,176,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$InitializedState" />
       <unit id="4120145653580383632" at="319,0,329,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$InitialTreeNode" />
       <unit id="7704359791231501369" at="216,0,227,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationTree$ResultState$MyWatchableNode" />
@@ -898,13 +898,13 @@
         <var name="model" id="7406771907178600268" />
       </scope>
       <unit id="7406771907178600438" at="140,0,143,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$IErrorTextListener" />
-      <unit id="3196684409400996682" at="169,60,174,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
-      <unit id="612015978684721007" at="180,60,185,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$3" />
+      <unit id="3196684409400996682" at="169,60,174,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$2" />
+      <unit id="612015978684721007" at="180,60,185,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$3" />
       <unit id="7406771907178600278" at="95,28,101,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
       <unit id="7406771907178600309" at="104,28,110,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$3" />
-      <unit id="3196684409400996596" at="154,60,163,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
+      <unit id="3196684409400996596" at="154,60,163,9" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter$1" />
       <unit id="7406771907178600340" at="113,28,123,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$4" />
-      <unit id="8197435796639340602" at="65,69,84,11" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$2" />
+      <unit id="8197435796639340602" at="65,69,84,11" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1$1" />
       <unit id="1520732075331891376" at="58,8,92,5" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$1" />
       <unit id="3196684409401005392" at="143,0,189,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi$MySessionChangeAdapter" />
       <unit id="7406771907178600108" at="30,0,208,0" name="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />

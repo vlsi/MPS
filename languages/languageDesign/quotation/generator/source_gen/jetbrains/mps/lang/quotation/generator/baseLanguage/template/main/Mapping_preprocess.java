@@ -21,11 +21,10 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
-import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.impl.reference.RefResolver;
 
 @Generated
 public class Mapping_preprocess extends MapConfigBase implements TemplateMappingConfiguration {
@@ -59,12 +58,6 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
         {
           final SNode tnode2 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"));
           try {
-            environment.resolve((ReferenceResolver) new RefResolver(tnode2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67ce04L, "concept"), context1, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891"), "Attribute") {
-              @Override
-              public Object resolve() {
-                return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(createQueryContext());
-              }
-            });
             TemplateContext context2 = context1.subContext();
             {
               final SNode tnode3 = environment.createOutputNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
@@ -74,8 +67,8 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
                 TemplateContext context3 = context2.subContext();
                 {
                   Collection<SNode> tlist4 = null;
-                  final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ymvzv2_b0a0c0d0b0c0b0b0c0c4));
-                  tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_ymvzv2_b0a0c0d0b0c0b0b0c0c4, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", context3);
+                  final SNode copySrcInput4 = QueriesGenerated.sourceNodeQuery_7838325468139287103(new SourceSubstituteMacroNodeContext(context3, copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4));
+                  tlist4 = environment.copyNodes(TemplateUtil.singletonList(copySrcInput4), copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4, "tpl/r:00000000-0000-4000-0000-011c8959034c/7838325468139286808", context3);
                   for (SNode child5 : TemplateUtil.asNotNull(tlist4)) {
                     tnode3.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"), child5);
                   }
@@ -84,6 +77,20 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
               } finally {
               }
               tnode2.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67cd19L, "leftExpression"), tnode3);
+              // TODO validate child 
+            }
+            {
+              final SNode tnode6 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"));
+              try {
+                environment.resolve(new RefResolver(tnode6, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1120c45902cL, 0x1120c45d024L, "conceptDeclaration"), context2, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891"), "Attribute") {
+                  @Override
+                  public Object resolve() {
+                    return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(createQueryContext());
+                  }
+                });
+              } finally {
+              }
+              tnode2.addChild(MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x3636a984eed504f9L, "conceptArgument"), tnode6);
               // TODO validate child 
             }
           } finally {
@@ -96,5 +103,5 @@ public class Mapping_preprocess extends MapConfigBase implements TemplateMapping
       return TemplateUtil.singletonList(tnode1);
     }
   }
-  private static SNodePointer copySrcMacro_ymvzv2_b0a0c0d0b0c0b0b0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468139287102");
+  private static SNodePointer copySrcMacro_ymvzv2_b0a0c0d0b0b0b0b0c0c4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468139287102");
 }

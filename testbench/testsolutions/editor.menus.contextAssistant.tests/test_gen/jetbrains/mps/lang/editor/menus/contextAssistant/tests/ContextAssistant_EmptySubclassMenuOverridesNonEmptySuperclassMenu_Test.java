@@ -31,12 +31,12 @@ public class ContextAssistant_EmptySubclassMenuOverridesNonEmptySuperclassMenu_T
         public void run() {
           ContextAssistantManager contextAssistantManager = editorContext.getContextAssistantManager();
 
-          getEditorComponent().getSelectionManager().setSelection(((SNode) SNodeOperations.cast(getNodeById("1966322953445270119"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"))));
+          getEditorComponent().getSelectionManager().setSelection(((SNode) SNodeOperations.cast(getNodeById("1966322953445270119"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x4d6a8b533e60aa32L, "Child")))));
           contextAssistantManager.updateImmediately();
           Assert.assertNotNull(contextAssistantManager.getActiveAssistant());
           Assert.assertNotNull(contextAssistantManager.getActiveMenuItems());
 
-          getEditorComponent().getSelectionManager().setSelection(((SNode) SNodeOperations.cast(getNodeById("1966322953445270119"), MetaAdapterFactory.getConcept(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, 0x4d6a8b533e60aa32L, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.structure.Child"))));
+          getEditorComponent().getSelectionManager().setSelection(((SNode) SNodeOperations.cast(getNodeById("1966322953445270119"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x9a629f9aabc94c29L, 0xb1b8db7f349f7fbcL, "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"), 0x4d6a8b533e60aa32L, "Child")))));
           contextAssistantManager.updateImmediately();
           Assert.assertNull(contextAssistantManager.getActiveAssistant());
           Assert.assertNull(contextAssistantManager.getActiveMenuItems());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,6 @@ package jetbrains.mps.findUsages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
@@ -35,15 +34,15 @@ import java.util.Collection;
  * @author Artem Tikhomirov
  */
 public class CompositeFinder extends BaseFinder {
-  private final IFinder myDelegate;
+  private final Finder myDelegate;
 
-  public CompositeFinder(@NotNull IFinder delegate) {
+  public CompositeFinder(@NotNull Finder delegate) {
     myDelegate = delegate;
   }
 
   @Override
   public String getDescription() {
-    return myDelegate instanceof Finder ? ((Finder) myDelegate).getDescription() : myDelegate.getClass().getSimpleName();
+    return myDelegate.getDescription();
   }
 
   @Override

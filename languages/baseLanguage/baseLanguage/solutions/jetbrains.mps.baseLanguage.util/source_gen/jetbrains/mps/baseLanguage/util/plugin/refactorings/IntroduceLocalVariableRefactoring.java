@@ -87,7 +87,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
         }
       }
       if (firstAncestor != declaration) {
-        SNodeOperations.insertPrevSiblingChild(firstAncestor, SNodeOperations.detachNode(declaration));
+        SNodeOperations.insertPrevSiblingChild(firstAncestor, SNodeOperations.deleteNode(declaration));
       }
     }
   }

@@ -43,12 +43,11 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellLayout_Flow = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellLayout_Horizontal = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellLayout_Indent = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellLayout_Indent_Old = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_CellLayout_Superscript = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellLayout_Table = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellLayout_Vertical = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellLayout_VerticalGrid = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellMenuComponent = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mb).create();
+  private final ConceptPresentation props_CellMenuComponent = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0lb).create();
   private final ConceptPresentation props_CellMenuComponentFeature = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuComponentFeature_Link = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuComponentFeature_Property = new ConceptPresentationBuilder().create();
@@ -84,7 +83,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_CustomNodeConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_ReplaceNode_Group_Create = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CellModel_AbstractLabel = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfb4e7c3a4cL, 0x116e805ff79L, "defaultCaretPosition")).create();
   private final ConceptPresentation props_CellModel_Alternation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_AttributedLinkCell = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_AttributedNodeCell = new ConceptPresentationBuilder().create();
@@ -116,8 +115,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellModel_URL = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellModel_WithRole = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ColorStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptEditorContextHints = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ce).create();
-  private final ConceptPresentation props_ConceptEditorDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0de).create();
+  private final ConceptPresentation props_ConceptEditorContextHints = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0be).create();
+  private final ConceptPresentation props_ConceptEditorDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ce).create();
   private final ConceptPresentation props_ConceptEditorHintDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptEditorHintDeclarationReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptEditorHintDeclarationReferenceExpression = new ConceptPresentationBuilder().create();
@@ -144,7 +143,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EditableStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorCellId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorCellModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ef).create();
+  private final ConceptPresentation props_EditorComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0df).create();
   private final ConceptPresentation props_EditorComponentDeclarationReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExplicitHintsSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FirstPositionAllowedStyleClassItem = new ConceptPresentationBuilder().create();
@@ -156,8 +155,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HorizontalAlign = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HorizontalGapStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ICellStyle = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IContextNodeAccessQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IContextProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IContextVariableProvider = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IEditorContextAccessQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IEditorContextProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IExtensibleSubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IExtensibleTransformationMenuPart = new ConceptPresentationBuilder().create();
@@ -179,7 +180,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStyleContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStyleSheetItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IStyleSheetMember = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ISubstituteMenu = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ISubstituteMenuReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ISubstituteMenu_String = new ConceptPresentationBuilder().create();
@@ -216,7 +216,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ParametersInformationStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionChildrenStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PreDefinedStyleClassItem = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_PredefinedSelector = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PropertyDeclarationCellSelector = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PropertyExpressionCellSelector = new ConceptPresentationBuilder().create();
@@ -331,11 +330,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_StyleClassReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleClassReferenceList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleKey = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jm).create();
+  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0im).create();
   private final ConceptPresentation props_StyleReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0lm).create();
-  private final ConceptPresentation props_StyleSheetClass = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_StyleSheetClassReference = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0km).create();
   private final ConceptPresentation props_StyledTextType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_ActionType = new ConceptPresentationBuilder().create();
@@ -344,7 +341,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteFeature_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_MatchingText = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_Selection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wm).create();
+  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0tm).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_AddConcept = new ConceptPresentationBuilder().create();
@@ -361,9 +358,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuReference_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0nn).create();
-  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0on).create();
-  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pn).create();
+  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0kn).create();
+  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ln).create();
+  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mn).create();
   private final ConceptPresentation props_SubstituteMenu_SimpleString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Synchronizeable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TableComponentStyleClassItem = new ConceptPresentationBuilder().create();
@@ -381,8 +378,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ho).create();
-  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0io).create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0eo).create();
+  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0fo).create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Group = new ConceptPresentationBuilder().create();
@@ -398,8 +395,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationMenuSection = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0yo).create();
-  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zo).create();
+  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0vo).create();
+  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wo).create();
   private final ConceptPresentation props_UnapplyStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UnderlinedStyleClassItem = new ConceptPresentationBuilder().create();
 
@@ -474,8 +471,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_CellLayout_Horizontal;
       case LanguageConceptSwitch.CellLayout_Indent:
         return props_CellLayout_Indent;
-      case LanguageConceptSwitch.CellLayout_Indent_Old:
-        return props_CellLayout_Indent_Old;
       case LanguageConceptSwitch.CellLayout_Superscript:
         return props_CellLayout_Superscript;
       case LanguageConceptSwitch.CellLayout_Table:
@@ -700,10 +695,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_HorizontalGapStyleClassItem;
       case LanguageConceptSwitch.ICellStyle:
         return props_ICellStyle;
+      case LanguageConceptSwitch.IContextNodeAccessQualifier:
+        return props_IContextNodeAccessQualifier;
       case LanguageConceptSwitch.IContextProvider:
         return props_IContextProvider;
       case LanguageConceptSwitch.IContextVariableProvider:
         return props_IContextVariableProvider;
+      case LanguageConceptSwitch.IEditorContextAccessQualifier:
+        return props_IEditorContextAccessQualifier;
       case LanguageConceptSwitch.IEditorContextProvider:
         return props_IEditorContextProvider;
       case LanguageConceptSwitch.IExtensibleSubstituteMenuPart:
@@ -746,8 +745,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IStyleContainer;
       case LanguageConceptSwitch.IStyleSheetItem:
         return props_IStyleSheetItem;
-      case LanguageConceptSwitch.IStyleSheetMember:
-        return props_IStyleSheetMember;
       case LanguageConceptSwitch.ISubstituteMenu:
         return props_ISubstituteMenu;
       case LanguageConceptSwitch.ISubstituteMenuReference:
@@ -820,8 +817,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_PositionChildrenStyleClassItem;
       case LanguageConceptSwitch.PositionStyleClassItem:
         return props_PositionStyleClassItem;
-      case LanguageConceptSwitch.PreDefinedStyleClassItem:
-        return props_PreDefinedStyleClassItem;
       case LanguageConceptSwitch.PredefinedSelector:
         return props_PredefinedSelector;
       case LanguageConceptSwitch.PropertyDeclarationCellSelector:
@@ -1056,10 +1051,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_StyleReference;
       case LanguageConceptSwitch.StyleSheet:
         return props_StyleSheet;
-      case LanguageConceptSwitch.StyleSheetClass:
-        return props_StyleSheetClass;
-      case LanguageConceptSwitch.StyleSheetClassReference:
-        return props_StyleSheetClassReference;
       case LanguageConceptSwitch.StyledTextType:
         return props_StyledTextType;
       case LanguageConceptSwitch.SubstituteFeature:

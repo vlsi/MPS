@@ -29,7 +29,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -113,12 +112,13 @@ public enum LanguageAspect {
     return builder.toString();
   }
 
-  public boolean is(SModel sm) {
+  public boolean is(@NotNull SModel sm) {
     SModule module = sm.getModule();
     if (!(module instanceof Language)) return false;
     return get(((Language) module)) == sm;
   }
 
+  @Nullable
   public SModel get(Language l) {
     return get_internal(l, false);
   }

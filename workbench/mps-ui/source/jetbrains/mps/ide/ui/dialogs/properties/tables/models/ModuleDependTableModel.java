@@ -179,7 +179,12 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
     return dependencies;
   }
 
-  private Set<SModuleReference> getExtendedModules() {
+  /**
+   * Public solely for use from condition of ModulePropertiesConfigurable.ModuleDependenciesTab that needs
+   * to tell actual state of modules picked as 'extends'
+   * @return
+   */
+  public Set<SModuleReference> getExtendedModules() {
     Set<SModuleReference> set = new LinkedHashSet<SModuleReference>();
     for(DependenciesTableItem tableItem : myTableItems)
       if(tableItem.getItem().getScope() == SDependencyScope.EXTENDS) // XXX see getDependencies() above

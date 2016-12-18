@@ -16,16 +16,10 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.IVariableReference__BehaviorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,12 +29,11 @@ public final class RequestURLBuilderExpression__BehaviorDescriptor extends BaseB
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Iterable<SNode>> getInitializedParameters_id40BYgt09_iZ = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getInitializedParameters").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("40BYgt09_iZ").registry(REGISTRY).build();
-  public static final SMethod<Boolean> hasLocalContextInside_id3bYdGv2TyNM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasLocalContextInside").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3bYdGv2TyNM").registry(REGISTRY).build();
-  public static final SMethod<Iterable<SNode>> getUniqueLocalContextReferencesInside_id6frl3mWeCpM = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getUniqueLocalContextReferencesInside").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6frl3mWeCpM").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInitializedParameters_id40BYgt09_iZ, hasLocalContextInside_id3bYdGv2TyNM, getUniqueLocalContextReferencesInside_id6frl3mWeCpM);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getInitializedParameters_id40BYgt09_iZ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
+    SLinkOperations.setTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, 0x6f2759b71399b650L, "port"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x3d72d05b47f59025L, "jetbrains.mps.ide.httpsupport.structure.MPSInternalPortProvider")));
   }
 
   /*package*/ static Iterable<SNode> getInitializedParameters_id40BYgt09_iZ(@NotNull SNode __thisNode__) {
@@ -49,41 +42,6 @@ public final class RequestURLBuilderExpression__BehaviorDescriptor extends BaseB
         return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf18L, "parameter"));
       }
     });
-  }
-  /*package*/ static boolean hasLocalContextInside_id3bYdGv2TyNM(@NotNull SNode __thisNode__) {
-    if (ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11d206f8d91L, "jetbrains.mps.baseLanguage.structure.IThisExpression"), false, new SAbstractConcept[]{})).isNotEmpty()) {
-      return true;
-    }
-    if (ListSequence.fromList(SNodeOperations.getNodeDescendants(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      }
-    }).isNotEmpty()) {
-      return true;
-    }
-    return false;
-  }
-  /*package*/ static Iterable<SNode> getUniqueLocalContextReferencesInside_id6frl3mWeCpM(@NotNull SNode __thisNode__) {
-    Iterable<SNode> localContextReferences = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5ce93L, 0x4027f9073ff652f7L, "initializer"))).translate(new ITranslator2<SNode, SNode>() {
-      public Iterable<SNode> translate(SNode it) {
-        return ListSequence.fromList(SNodeOperations.getNodeDescendants(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x4027f9073ff5cf17L, 0x4027f9073ff5cf1aL, "value")), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L, "jetbrains.mps.baseLanguage.structure.IVariableReference"), false, new SAbstractConcept[]{})).removeWhere(new IWhereFilter<SNode>() {
-          public boolean accept(SNode it) {
-            return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
-          }
-        });
-      }
-    });
-    List<SNode> unique = ListSequence.fromList(new ArrayList<SNode>());
-    for (final SNode ref : Sequence.fromIterable(localContextReferences)) {
-      if (ListSequence.fromList(unique).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(it).equals(IVariableReference__BehaviorDescriptor.getVariable_idSORzhOpB6t.invoke(ref));
-        }
-      }) == null) {
-        ListSequence.fromList(unique).addElement(ref);
-      }
-    }
-    return unique;
   }
 
   /*package*/ RequestURLBuilderExpression__BehaviorDescriptor() {
@@ -104,10 +62,6 @@ public final class RequestURLBuilderExpression__BehaviorDescriptor extends BaseB
     switch (methodIndex) {
       case 0:
         return (T) ((Iterable<SNode>) getInitializedParameters_id40BYgt09_iZ(node));
-      case 1:
-        return (T) ((Boolean) hasLocalContextInside_id3bYdGv2TyNM(node));
-      case 2:
-        return (T) ((Iterable<SNode>) getUniqueLocalContextReferencesInside_id6frl3mWeCpM(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

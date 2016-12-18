@@ -51,7 +51,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage.blTypes", "jetbrains.mps.lang.core", "jetbrains.mps.lang.traceable"};
+    return new String[]{"jetbrains.mps.lang.core", "jetbrains.mps.lang.traceable"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {

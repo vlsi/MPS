@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -49,19 +49,18 @@ public final class ConceptFunctionParameter__BehaviorDescriptor extends BaseBHDe
     return (boolean) ConceptFunction__BehaviorDescriptor.usesParameterObjectFor_idhEwIGRw.invoke(ConceptFunctionParameter__BehaviorDescriptor.findConceptFunction_idhEwJh7Q.invoke(__thisNode__), __thisNode__);
   }
   /*package*/ static boolean isParameterObjectUsed_idhEwJh7I(@NotNull SNode __thisNode__) {
-    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+    return !((boolean) ConceptFunctionParameter__BehaviorDescriptor.dontUseParameterObject_id1653mnvAgv$.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__))));
   }
-  /*package*/ static SNode findConceptFunction_idhEwJh7Q(@NotNull SNode __thisNode__) {
+  /*package*/ static SNode findConceptFunction_idhEwJh7Q(@NotNull final SNode __thisNode__) {
     List<SNode> functions = SNodeOperations.getNodeAncestors(__thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), false);
-    final SNode ourConcept = SNodeOperations.getConceptDeclaration(__thisNode__);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(it)).contains(ourConcept);
+        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(it)).contains(SNodeOperations.getConcept(__thisNode__));
       }
     }).first();
   }
   /*package*/ static String getParameterName_idhP8qAbK(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static SNode getDeclaration_idhP8xjWn(@NotNull SNode __thisNode__) {
     return SNodeOperations.getConceptDeclaration(__thisNode__);

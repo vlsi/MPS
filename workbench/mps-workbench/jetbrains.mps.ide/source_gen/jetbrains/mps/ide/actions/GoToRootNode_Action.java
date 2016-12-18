@@ -9,11 +9,21 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
+import jetbrains.mps.workbench.choose.NavigationTargetPresentation;
+import jetbrains.mps.scope.ConditionalScope;
+import org.jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.workbench.choose.NavigationTargetScopeIterable;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
-import com.intellij.navigation.NavigationItem;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import com.intellij.openapi.application.ModalityState;
 
 public class GoToRootNode_Action extends BaseAction {
@@ -34,11 +44,20 @@ public class GoToRootNode_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
 
-    MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
+    final MPSProject mpsProject = event.getData(MPSCommonDataKeys.MPS_PROJECT);
     assert mpsProject != null;
 
-    RootChooseModel chooseSNodeResult = new RootChooseModel(mpsProject);
-    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
+    ChooseByNameData<NavigationParticipant.NavigationTarget> gotoData = new ChooseByNameData<NavigationParticipant.NavigationTarget>(new NavigationTargetPresentation());
+    gotoData.derivePrompts("node").setCheckBoxName("Include stub and non-project models");
+    ConditionalScope localScope = new ConditionalScope(mpsProject.getScope(), null, new Condition<SModel>() {
+      public boolean met(SModel m) {
+        return !(SModelStereotype.isStubModel(m));
+      }
+    });
+    SearchScope globalScope = GlobalScope.getInstance();
+    final SRepository repo = mpsProject.getRepository();
+    gotoData.setScope(new NavigationTargetScopeIterable(localScope, repo), new NavigationTargetScopeIterable(globalScope, repo));
+    final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(mpsProject.getProject(), gotoData, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
@@ -47,7 +66,10 @@ public class GoToRootNode_Action extends BaseAction {
       }
       @Override
       public void elementChosen(Object element) {
-        ((NavigationItem) element).navigate(true);
+        if (element instanceof NavigationParticipant.NavigationTarget) {
+          NavigationParticipant.NavigationTarget nt = (NavigationParticipant.NavigationTarget) element;
+          new EditorNavigator(mpsProject).shallFocus(true).selectIfChild().open(nt.getNodeReference());
+        }
       }
     }, ModalityState.current(), true);
   }

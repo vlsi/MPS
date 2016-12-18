@@ -47,7 +47,6 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import junit.framework.Assert;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
@@ -73,12 +72,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     assert SwingUtilities.isEventDispatchThread();
     final boolean[] flag = new boolean[]{false};
     // fixme use ApplicationManager.getApplication().invokeLater() ?
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      @Override
-      public void run() {
-        flag[0] = true;
-      }
-    });
+    ModelAccess.instance().runReadInEDT(() -> flag[0] = true);
     while (!flag[0]) {
       PlatformTestUtil.dispatchAllInvocationEventsInIdeEventQueue();
     }
@@ -107,7 +101,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
       UIUtil.invokeAndWaitIfNeeded(new ThrowableRunnable() {
         @Override
         public void run() throws Throwable {
-         flushEDT();
+          flushEDT();
         }
       });
     } catch (Throwable throwable) {
@@ -154,7 +148,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
   protected MPSFacet addMPSFacet(Module module) {
     final FacetManager facetManager = FacetManager.getInstance(module);
     FacetType<MPSFacet, MPSFacetConfiguration> facetType = FacetTypeRegistry.getInstance().findFacetType(MPSFacetType.ID);
-    Assert.assertNotNull("MPS facet type is not found", facetType);
+    assertNotNull("MPS facet type is not found", facetType);
     final MPSFacet facet = facetManager.createFacet(facetType, "MPS", null);
     final MPSFacetConfiguration configuration = facet.getConfiguration();
 
@@ -166,12 +160,7 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
         preConfigureFacet(configuration);
         final ModifiableFacetModel facetModel = facetManager.createModifiableModel();
         facetModel.addFacet(facet);
-        ApplicationManager.getApplication().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            facetModel.commit();
-          }
-        });
+        ApplicationManager.getApplication().runWriteAction(facetModel::commit);
       }
     });
 
@@ -199,11 +188,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
 
     public CustomJavaModuleFixtureBuilder(TestFixtureBuilder<? extends IdeaProjectTestFixture> testFixtureBuilder) {
       super(testFixtureBuilder);
-    }
-
-    @Override
-    protected void initModule(Module module) {
-      super.initModule(module);
     }
 
     protected Module createModule() {

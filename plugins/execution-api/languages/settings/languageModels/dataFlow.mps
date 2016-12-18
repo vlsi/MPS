@@ -47,7 +47,7 @@
           <node concept="2OqwBi" id="O$iR4J$gec" role="3Ah4Yx">
             <node concept="3__QtB" id="O$iR4J$ged" role="2Oq$k0" />
             <node concept="3TrEf2" id="O$iR4J$gee" role="2OqNvi">
-              <ref role="3Tt5mk" to="fb9u:O$iR4J$g45" />
+              <ref role="3Tt5mk" to="fb9u:O$iR4J$g45" resolve="expression" />
             </node>
           </node>
         </node>

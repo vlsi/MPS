@@ -2,7 +2,7 @@
 <model ref="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -43,7 +43,7 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallynnotation" flags="ng" index="xG$WE" />
+      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -108,7 +108,6 @@
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -220,8 +219,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -264,7 +263,6 @@
   <node concept="24kQdi" id="7Joh5Ouy0bG">
     <ref role="1XX52x" to="cgfx:7Joh5OuxR2F" resolve="ParallelLoopVariable" />
     <node concept="3EZMnI" id="hiAXQQr" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3F0ifn" id="hiAXQQt" role="3EZMnx">
         <property role="3F0ifm" value="final" />
         <ref role="1ERwB7" to="tpen:hLFf3xM" resolve="VariableDeclaration_RemoveFinalOnDelete" />
@@ -891,12 +889,14 @@
                             <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                           </node>
                           <node concept="1PxgMI" id="1wEcoXjJjH8" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
                             <node concept="2OqwBi" id="1wEcoXjJjH9" role="1m5AlR">
                               <node concept="3TrEf2" id="1wEcoXjJjHa" role="2OqNvi">
                                 <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                               </node>
                               <node concept="7Obwk" id="1wEcoXjJjHj" role="2Oq$k0" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZ7d" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fz7vLUo" resolve="VariableReference" />
                             </node>
                           </node>
                         </node>
@@ -1036,12 +1036,14 @@
                             <ref role="3Tt5mk" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                           </node>
                           <node concept="1PxgMI" id="1wEcoXjJjIn" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fz7vLUo" resolve="VariableReference" />
                             <node concept="2OqwBi" id="1wEcoXjJjIo" role="1m5AlR">
                               <node concept="3TrEf2" id="1wEcoXjJjIp" role="2OqNvi">
                                 <ref role="3Tt5mk" to="cgfx:42COxuQQ87Y" resolve="threadPool" />
                               </node>
                               <node concept="7Obwk" id="1wEcoXjJjIy" role="2Oq$k0" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdGZ79" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fz7vLUo" resolve="VariableReference" />
                             </node>
                           </node>
                         </node>

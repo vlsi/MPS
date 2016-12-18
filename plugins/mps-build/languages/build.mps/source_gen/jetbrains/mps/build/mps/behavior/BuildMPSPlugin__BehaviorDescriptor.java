@@ -28,14 +28,12 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
-import jetbrains.mps.build.util.ScopeUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.mps.util.VisibleModules;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.scope.CompositeScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -69,7 +67,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     final SNode project = artifacts.getProject();
 
     // fetch required plugins 
-    RequiredPlugins plugins = new RequiredPlugins(project, artifacts.getGenContext());
+    RequiredPlugins plugins = new RequiredPlugins(project, builder.getGenContext());
     plugins.collectDependencies();
     for (SNode plugin : Sequence.fromIterable(plugins.getDependency()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -78,38 +76,39 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     })) {
       SNode pluginArtifact = SNodeOperations.as(artifacts.findArtifact(plugin), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (pluginArtifact != null) {
-        builder.add(pluginArtifact, plugin);
+        builder.add(pluginArtifact);
       }
     }
 
     // fetch stuff for ant task classpath 
-    DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
-    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
+    DependenciesHelper helper = new DependenciesHelper(builder.getGenContext(), project);
+    SNode originalProject = project;
     SNode antMpsModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", ((int) 0)).resolve(originalProject, "ant-mps"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((antMpsModule != null)) {
       SNode antMpsJar = SNodeOperations.as(artifacts.findArtifact(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((antMpsJar != null)) {
-        helper.artifacts().put("ant-mps", antMpsJar);
-        builder.add(antMpsJar, antMpsModule);
+        helper.putArtifact("ant-mps", antMpsJar);
+        builder.add(antMpsJar);
       }
-
-      SNode mpsCore = SNodeOperations.as(SNodeOperations.getContainingRoot(antMpsModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-      Scope visibleJarsScope = ScopeUtil.getVisibleJarsScope(mpsCore);
-      SNode jdom = visibleJarsScope.resolve(mpsCore, "IDEA::lib/jdom.jar");
-      if ((jdom != null)) {
-        SNode jdomJar = SNodeOperations.as(artifacts.findArtifact(jdom), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-        if ((jdomJar != null)) {
-          helper.artifacts().put("jdom", jdomJar);
-          builder.add(jdomJar, jdom);
-        }
+    }
+    // FIXME consider JavaExternalLibraryHelper re-use  
+    // XXX isn't it odd to populate DependenciesHelper here, and not in unpack? 
+    SNode jdomLib = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "jdom-lib"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
+    if (jdomLib != null) {
+      SNode jdomJarRef = SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(jdomLib, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"))).first(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, 0x3395e884b61d4cbdL, "classpath")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar"));
+      SNode jdomArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(jdomJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      if (jdomArtifact != null) {
+        helper.putArtifact("jdom", jdomArtifact);
+        builder.add(jdomArtifact);
       }
-      SNode log4j = visibleJarsScope.resolve(mpsCore, "IDEA::lib/log4j.jar");
-      if ((log4j != null)) {
-        SNode log4jJar = SNodeOperations.as(artifacts.findArtifact(log4j), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
-        if ((log4jJar != null)) {
-          helper.artifacts().put("log4j", log4jJar);
-          builder.add(log4jJar, log4j);
-        }
+    }
+    SNode log4jLib = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "log4j-lib"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
+    if (log4jLib != null) {
+      SNode log4jJarRef = SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(log4jLib, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, 0x540febaa6144e311L, "elements")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, "jetbrains.mps.build.structure.BuildSource_JavaLibraryCP"))).first(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61d4cbbL, 0x3395e884b61d4cbdL, "classpath")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar"));
+      SNode log4jArtifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(log4jJarRef, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      if (log4jArtifact != null) {
+        helper.putArtifact("log4j", log4jArtifact);
+        builder.add(log4jArtifact);
       }
     }
 
@@ -126,8 +125,8 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
         for (SNode gentestDep : Sequence.fromIterable(gentestDeps)) {
           SNode depLayoutNode = SNodeOperations.as(artifacts.findArtifact(gentestDep), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
           if (depLayoutNode != null) {
-            helper.artifacts().put(SPropertyOperations.getString(gentestDep, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid")), depLayoutNode);
-            builder.add(depLayoutNode, gentestDep);
+            // FIXME what's the purpose of uuid string to node mapping here? I didn't find any use 
+            builder.add(depLayoutNode);
           }
         }
       }
@@ -146,7 +145,7 @@ public final class BuildMPSPlugin__BehaviorDescriptor extends BaseBHDescriptor {
     return null;
   }
   /*package*/ static Iterable<SNode> getImportedLibraries_id3zFnP6MwWdL(@NotNull SNode __thisNode__) {
-    return Sequence.<SNode>singleton(BuildMPSPlugin__BehaviorDescriptor.getMpsLibrary_id3zFnP6MM9ge.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin").getDeclarationNode())));
+    return Sequence.<SNode>singleton(BuildMPSPlugin__BehaviorDescriptor.getMpsLibrary_id3zFnP6MM9ge.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0xc0bde9fc71699d9L, "jetbrains.mps.build.mps.structure.BuildMPSPlugin"))));
   }
   /*package*/ static SNode getMpsLibrary_id3zFnP6MM9ge(@NotNull SAbstractConcept __thisConcept__) {
     return SLinkOperations.getTarget(createBwfTaskLibraryDependency_6x52oe_a0a0e(), MetaAdapterFactory.getReferenceLink(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x6565da1147260537L, 0x6565da1147260538L, "target"));

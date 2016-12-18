@@ -4,10 +4,14 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.refactoring.RenameModuleDialog;
@@ -25,12 +29,22 @@ public class RenameModule_Action extends BaseAction {
     return true;
   }
   @Override
-  public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && !(event.getData(MPSCommonDataKeys.MODULE).isPackaged()) && !(event.getData(MPSCommonDataKeys.MODULE).isReadOnly());
-  }
-  @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
-    this.setEnabledState(event.getPresentation(), this.isApplicable(event, _params));
+    boolean isApplicable = event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && !(event.getData(MPSCommonDataKeys.MODULE).isPackaged()) && !(event.getData(MPSCommonDataKeys.MODULE).isReadOnly());
+    if (isApplicable) {
+      if (event.getData(MPSCommonDataKeys.MODULE) instanceof Solution) {
+        event.getPresentation().setText("Rename Solution");
+      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof Language) {
+        event.getPresentation().setText("Rename Language");
+      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof DevKit) {
+        event.getPresentation().setText("Rename DevKit");
+      } else if (event.getData(MPSCommonDataKeys.MODULE) instanceof Generator) {
+        event.getPresentation().setText("Rename Generator");
+      } else {
+        event.getPresentation().setText("Rename Module");
+      }
+    }
+    event.getPresentation().setEnabledAndVisible(isApplicable);
   }
   @Override
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {

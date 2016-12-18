@@ -31,7 +31,7 @@ public class MakeStaticMethodNotStatic_QuickFix extends QuickFix_Runtime {
     ListSequence.fromList(SLinkOperations.getChildren(methodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))));
     SLinkOperations.setTarget(methodDeclaration, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"), SLinkOperations.getTarget(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")));
     ListSequence.fromList(SLinkOperations.getChildren(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("containingClass")[0]), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(methodDeclaration);
-    SNodeOperations.detachNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
+    SNodeOperations.deleteNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
     SNodeOperations.deleteNode(((SNode) MakeStaticMethodNotStatic_QuickFix.this.getField("staticMethod")[0]));
   }
 }

@@ -32,10 +32,13 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
+import jetbrains.mps.ide.findusages.model.holders.GenericHolder;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.findUsages.CompositeFinder;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -159,7 +162,12 @@ public class ModelCheckerViewer extends JPanel {
 
   }
   /*package*/ void checkModules(List<SModule> modules, String taskTargetTitle) {
-    runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence()), GlobalScope.getInstance()), taskTargetTitle);
+    SearchQuery query = new SearchQuery(new GenericHolder<Collection<SModuleReference>>(ListSequence.fromList(modules).select(new ISelector<SModule, SModuleReference>() {
+      public SModuleReference select(SModule it) {
+        return it.getModuleReference();
+      }
+    }).toListSequence()), GlobalScope.getInstance());
+    runCheck(FindUtils.makeProvider(new CompositeFinder(newModelChecker())), query, taskTargetTitle);
   }
   /*package*/ void checkModels(List<SModel> models, String taskTargetTitle) {
     runCheck(FindUtils.makeProvider(newModelChecker()), new SearchQuery(new ModelsHolder(ListSequence.fromList(models).select(new ISelector<SModel, SModelReference>() {

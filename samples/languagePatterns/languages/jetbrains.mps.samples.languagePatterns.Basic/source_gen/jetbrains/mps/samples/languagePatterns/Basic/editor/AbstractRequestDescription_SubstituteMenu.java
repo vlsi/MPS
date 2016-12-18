@@ -22,12 +22,6 @@ import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
@@ -81,17 +75,8 @@ public class AbstractRequestDescription_SubstituteMenu extends SubstituteMenuBas
       public boolean canExecuteStrictly(@NotNull String pattern) {
         return canExecute_internal(pattern, true);
       }
-      public boolean canExecute_internal(@NotNull final String pattern, boolean strictly) {
-        Iterable<SConcept> concreteSubConcepts = ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x1a2a793c4db2238aL, "jetbrains.mps.samples.languagePatterns.Basic.structure.AbstractRequestDescription"), SNodeOperations.getModel(_context.getParentNode()))).where(new IWhereFilter<SConcept>() {
-          public boolean accept(SConcept it) {
-            return !(it.isAbstract());
-          }
-        });
-        return (pattern != null && pattern.length() > 0) && Sequence.fromIterable(concreteSubConcepts).all(new IWhereFilter<SConcept>() {
-          public boolean accept(SConcept concept) {
-            return !(SConceptOperations.conceptAlias(concept).startsWith(pattern));
-          }
-        });
+      public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
+        return (pattern != null && pattern.length() > 0);
       }
       @Nullable
       @Override

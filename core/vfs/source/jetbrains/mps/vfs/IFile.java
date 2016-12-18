@@ -100,10 +100,6 @@ public interface IFile {
   @NotNull
   UniPath toPath();
 
-  /**
-   * @deprecated TODO REMOVE ONLY ONE USAGE
-   */
-  @Deprecated
   @ToRemove(version = 3.4)
   URL getUrl() throws MalformedURLException;
 

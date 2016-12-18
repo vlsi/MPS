@@ -53,7 +53,6 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRealNode;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRootNode;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -175,7 +174,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
 
                 @Override
                 public void navigate(boolean requestFocus) {
-                  MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.toMPSProject(myProject), true);
+                  MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(perRootModel, ProjectHelper.fromIdeaProject(myProject), true);
                   final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
                   configurable.setParentForCallBack(dialog);
                   ApplicationManager.getApplication().invokeLater(dialog::show, ModalityState.current());
@@ -271,7 +270,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       }
 
     }
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
     return createProvider.create(selectedNodePointers, modelDescriptor, modelDescriptor, mpsProject);
@@ -299,7 +298,7 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     Project project = treeNode.getProject();
     EditableSModel modelDescriptor = getModel(treeNode);
 
-    jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(project);
     if (mpsProject == null || modelDescriptor == null) return null;
 
     return createProvider.create(modelDescriptor, modelDescriptor, mpsProject);
@@ -425,13 +424,13 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
     T create(@NotNull EditableSModel modelDescriptor, SModel sModel, @NotNull jetbrains.mps.project.Project project);
   }
 
-  private static ProviderFactory<SNodeCutCopyProvider> CUT_COPY_PROVIDER_FACTORY =
-      (selectedNodes, modelDescriptor, sModel, project) -> new SNodeCutCopyProvider(selectedNodes, modelDescriptor, project);
+  private static final ProviderFactory<SNodeCutCopyProvider> CUT_COPY_PROVIDER_FACTORY =
+    (selectedNodes, modelDescriptor, sModel, project) -> new SNodeCutCopyProvider(selectedNodes, modelDescriptor, project);
 
-  private static ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY =
-      (selectedNodes, modelDescriptor, sModel, project) -> new SNodeDeleteProvider(selectedNodes, project);
+  private static final ProviderFactory<SNodeDeleteProvider> DELETE_PROVIDER_FACTORY =
+    (selectedNodes, modelDescriptor, sModel, project) -> new SNodeDeleteProvider(selectedNodes, project);
 
-  private static ModelProviderFactory<SNodePasteProvider> PASTE_PROVIDER_FACTORY =
-      (modelDescriptor, sModel, project) -> new SNodePasteProvider(sModel, project, modelDescriptor);
+  private static final ModelProviderFactory<SNodePasteProvider> PASTE_PROVIDER_FACTORY =
+    (modelDescriptor, sModel, project) -> new SNodePasteProvider(sModel, project, modelDescriptor);
 
 }

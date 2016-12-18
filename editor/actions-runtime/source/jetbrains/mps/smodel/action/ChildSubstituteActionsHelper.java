@@ -109,7 +109,7 @@ public class ChildSubstituteActionsHelper {
       }
 
       // pretend we are going to substitute more concrete concept
-      SNode refinedChildConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild);
+      SNode refinedChildConcept = ChildSubstituteActionsUtil.getRefinedChildConcept(currentChild).getDeclarationNode();
       if (refinedChildConcept != null) {
         childConcept = refinedChildConcept;
       }
@@ -147,7 +147,7 @@ public class ChildSubstituteActionsHelper {
       }
 
       if (linkDeclaration != null && !ModelConstraints.canBeParent(parentNode, conceptNode, linkDeclaration, null, null) ||
-          !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, null)) {
+          !ModelConstraints.canBeAncestor(parentNode, null, conceptNode, linkDeclaration, null)) {
         it.remove();
       }
     }

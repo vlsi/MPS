@@ -39,20 +39,20 @@ public final class HelpProvider__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getShortHelp_idqgIopNa9Hb(@NotNull SAbstractConcept __thisConcept__) {
-    return SPropertyOperations.getString(SNodeOperations.asNode(__thisConcept__.getDeclarationNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
+    return SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
   }
   /*package*/ static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
     return null;
   }
   /*package*/ static String getGroup_id60B$833p9Uj(@NotNull SAbstractConcept __thisConcept__) {
-    return SNodeOperations.getModel(SNodeOperations.asNode(__thisConcept__.getDeclarationNode())).getModule().getModuleName();
+    return SNodeOperations.getModel(__thisConcept__.getDeclarationNode()).getModule().getModuleName();
   }
   /*package*/ static String getShortDisplayString_id64VftqEenfn(@NotNull SAbstractConcept __thisConcept__) {
-    String alias = SPropertyOperations.getString(SNodeOperations.asNode(__thisConcept__.getDeclarationNode()), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
     if ((alias != null && alias.length() > 0)) {
       return alias;
     } else {
-      return SPropertyOperations.getString(SNodeOperations.asNode(__thisConcept__.getDeclarationNode()), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      return SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
   }
   /*package*/ static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {

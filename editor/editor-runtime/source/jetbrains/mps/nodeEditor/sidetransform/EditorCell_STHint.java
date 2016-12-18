@@ -34,6 +34,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.CellInfo;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -185,6 +186,9 @@ public class EditorCell_STHint extends EditorCell_Constant {
           jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createHorizontal(getContext(), getSNode());
       wrapperCell.setSelectable(false);
       wrapperCell.setBig(true);
+      EditorCellContext cellContext = myBigCell.getCellContext();
+      assert cellContext != null;
+      wrapperCell.setCellContext(cellContext);
       wrapperCell.setCanBeSynchronized(myBigCell instanceof SynchronizeableEditorCell && ((SynchronizeableEditorCell) myBigCell).canBeSynchronized());
       myBigCell.setBig(false);
       if (myOldSide == CellSide.LEFT) {

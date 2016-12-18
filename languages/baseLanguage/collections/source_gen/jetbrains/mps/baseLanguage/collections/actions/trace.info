@@ -938,10 +938,10 @@
         <var name="newNode" id="8656797459614949039" />
         <var name="sampleNode" id="8656797459614949039" />
       </scope>
-      <unit id="8656797459614519016" at="29,432,33,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$1" />
-      <unit id="8656797459614519033" at="33,24,37,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$2" />
-      <unit id="8656797459614338975" at="54,442,58,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$1" />
-      <unit id="8656797459614372623" at="58,24,62,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$2" />
+      <unit id="8656797459614519016" at="29,432,33,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614949039$1" />
+      <unit id="8656797459614519033" at="33,24,37,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614949039$2" />
+      <unit id="8656797459614338975" at="54,442,58,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614853042$1" />
+      <unit id="8656797459614372623" at="58,24,62,9" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614853042$2" />
       <unit id="8656797459614853042" at="47,0,72,0" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614853042" />
       <unit id="8656797459614949039" at="21,0,47,0" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_$NodeFactory_8656797459614949039" />
       <unit id="8656797459614853041" at="20,0,73,0" name="jetbrains.mps.baseLanguage.collections.actions.DefaultNodeFactory_" />

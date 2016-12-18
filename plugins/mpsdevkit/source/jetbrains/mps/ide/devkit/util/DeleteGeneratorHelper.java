@@ -15,21 +15,29 @@
  */
 package jetbrains.mps.ide.devkit.util;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.Status;
-import org.apache.log4j.LogManager;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
+/**
+ * Will be replaced with {@link jetbrains.mps.workbench.actions.module.DeleteModuleHelper}.
+ * Instead of {@link #delete(Generator)} method {@link jetbrains.mps.workbench.actions.module.DeleteModuleHelper#deleteModules(List, boolean, boolean)} can be used.
+ * Method {@link #canDelete(Generator)} will be implemented either in {@link jetbrains.mps.workbench.actions.module.DeleteModuleHelper} or in some extension.
+ */
+@Deprecated
+@ToRemove(version = 3.4)
 public class DeleteGeneratorHelper {
   private final Project myProject;
   private boolean myDeleteFiles;
@@ -52,21 +60,20 @@ public class DeleteGeneratorHelper {
   public IStatus canDelete(Generator generator) {
     if (mySafeDelete) {
       final SModuleReference generatorModule = generator.getModuleReference();
-      List<Generator> dependant = new ArrayList<Generator>();
+      List<Generator> dependant = new ArrayList<>();
+      final Collection<Generator> allModules = new ModuleRepositoryFacade(myProject).getAllModules(Generator.class);
+
       // FIXME basically, need to find any module that depends on generatorModule, can live without Generator instances here
       // Besides, would nice to benefit from a generic find usages code here
-      for (Generator gen : ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
-        if (gen.getReferencedGeneratorUIDs().contains(generatorModule)) {
-          dependant.add(gen);
-        }
-      }
+      dependant.addAll(allModules.stream().filter(gen -> gen.getReferencedGeneratorUIDs().contains(generatorModule)).collect(Collectors.toList()));
       if (!dependant.isEmpty()) {
-        final StringBuilder report = new StringBuilder();
-        report.append("Can't delete generator ").append(generator.getModuleName()).append(".\n");
-        report.append("The following generators depend on it:\n\n");
+        final StringBuilder report = new StringBuilder("<html>");
+        report.append("Can't delete generator ").append(generator.getModuleName()).append("<br>");
+        report.append("The following generators depend on it:<br><br>");
         for (Generator gen : dependant) {
-          report.append(gen.getModuleName()).append("\n");
+          report.append(gen.getModuleName()).append("<br>");
         }
+        report.append("</html>");
         return new Status.ERROR(report.toString());
       }
     }
@@ -78,20 +85,8 @@ public class DeleteGeneratorHelper {
     if (!canDelete.isOk()) {
       return canDelete;
     }
-    delete(generator.getSourceLanguage(), generator.getModuleDescriptor());
+    new DeleteModuleHelper((MPSProject) myProject).deleteModules(Arrays.asList(generator), false, myDeleteFiles);
     return new Status.OK();
-  }
-
-  private void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
-    languageDescriptor.getGenerators().remove(generatorDescriptor);
-    sourceLanguage.setLanguageDescriptor(languageDescriptor);
-    ClassLoaderManager.getInstance().reloadModule(sourceLanguage);
-    sourceLanguage.save();
-    if (myDeleteFiles) {
-      LogManager.getLogger(DeleteGeneratorHelper.class).error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());
-      //todo
-    }
   }
 }
 

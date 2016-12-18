@@ -1069,35 +1069,35 @@
       <scope id="6781485246382123108" at="198,0,388,0">
         <var name="progress" id="8570387127138567024" />
       </scope>
-      <unit id="4355467922915043702" at="126,62,130,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$3" />
-      <unit id="699020670023506831" at="244,100,248,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6" />
-      <unit id="699020670023631228" at="252,113,256,13" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$7" />
-      <unit id="7772642625669735229" at="274,83,278,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$7" />
-      <unit id="4355467922916066654" at="279,112,283,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$7" />
-      <unit id="2362450690533750054" at="328,73,332,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$8" />
-      <unit id="6298283517260507299" at="416,73,420,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$12" />
-      <unit id="2081036672960022685" at="439,76,443,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$13" />
-      <unit id="8054806207102080969" at="556,77,560,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$1" />
-      <unit id="8054806207102046015" at="561,123,565,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$2" />
-      <unit id="8054806207102116622" at="567,82,571,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$4" />
-      <unit id="8054806207102135669" at="572,154,576,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$4" />
-      <unit id="8054806207102362703" at="578,124,582,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$4" />
-      <unit id="8054806207102362723" at="584,82,588,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6" />
-      <unit id="8054806207102362746" at="589,153,593,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6" />
-      <unit id="699020670023249244" at="610,52,614,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$1" />
-      <unit id="8570387127138396901" at="166,57,171,13" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$5" />
-      <unit id="6413859341759027899" at="354,99,359,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$9" />
-      <unit id="8810737966314781654" at="369,138,374,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$10" />
+      <unit id="4355467922915043702" at="126,62,130,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$2$1" />
+      <unit id="699020670023506831" at="244,100,248,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$5$1" />
+      <unit id="699020670023631228" at="252,113,256,13" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$5$2$1" />
+      <unit id="7772642625669735229" at="274,83,278,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6$2" />
+      <unit id="4355467922916066654" at="279,112,283,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6$1" />
+      <unit id="2362450690533750054" at="328,73,332,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$7$1" />
+      <unit id="6298283517260507299" at="416,73,420,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$11$1" />
+      <unit id="2081036672960022685" at="439,76,443,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$12$1" />
+      <unit id="8054806207102080969" at="556,77,560,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$1" />
+      <unit id="8054806207102046015" at="561,123,565,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$2" />
+      <unit id="8054806207102116622" at="567,82,571,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$3$1" />
+      <unit id="8054806207102135669" at="572,154,576,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$3$2" />
+      <unit id="8054806207102362703" at="578,124,582,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$4" />
+      <unit id="8054806207102362723" at="584,82,588,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$5$1" />
+      <unit id="8054806207102362746" at="589,153,593,11" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$5$2" />
+      <unit id="699020670023249244" at="610,52,614,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$NotMigratedLibsError$1" />
+      <unit id="8570387127138396901" at="166,57,171,13" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$3$1$1" />
+      <unit id="6413859341759027899" at="354,99,359,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$8$1" />
+      <unit id="8810737966314781654" at="369,138,374,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$9$1" />
       <unit id="5783745319707887853" at="395,58,401,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$10" />
-      <unit id="699020670023541148" at="250,63,258,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6" />
+      <unit id="699020670023541148" at="250,63,258,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$5$2" />
       <unit id="2362450690533750047" at="326,60,334,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$7" />
       <unit id="7282863325874758921" at="182,41,191,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$4" />
       <unit id="6298283517260249362" at="413,60,422,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$11" />
-      <unit id="8570387127138391454" at="164,70,174,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$4" />
+      <unit id="8570387127138391454" at="164,70,174,9" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$3$1" />
       <unit id="7935677192555664995" at="349,66,361,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$8" />
       <unit id="2620437876316469478" at="531,0,544,0" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationExceptionError" />
-      <unit id="8054806207102060283" at="565,31,578,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$3" />
-      <unit id="8054806207102362713" at="582,31,595,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$5" />
+      <unit id="8054806207102060283" at="565,31,578,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$3" />
+      <unit id="8054806207102362713" at="582,31,595,7" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$MigrationsMissingError$5" />
       <unit id="8570387127138376766" at="162,56,177,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$3" />
       <unit id="5783745319707780363" at="430,58,445,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$12" />
       <unit id="7935677192558470381" at="271,66,287,5" name="jetbrains.mps.ide.migration.wizard.MigrationsProgressWizardStep$6" />

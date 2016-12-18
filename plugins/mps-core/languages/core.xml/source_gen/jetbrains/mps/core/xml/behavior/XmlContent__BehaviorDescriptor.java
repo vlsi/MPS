@@ -40,7 +40,7 @@ public final class XmlContent__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static boolean isOneLineBlock_id1Qs9WekVZ7e(@NotNull SNode __thisNode__) {
-    return (boolean) XmlContent__BehaviorDescriptor.oneLineBlock_id1653mnvAgno.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return (boolean) XmlContent__BehaviorDescriptor.oneLineBlock_id1653mnvAgno.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
   }
   /*package*/ static boolean isFirstPositionAllowed_id1Qs9WekVZ7m(@NotNull SNode __thisNode__) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(__thisNode__), MetaAdapterFactory.getInterfaceConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x1d9c27c394eff13eL, "jetbrains.mps.core.xml.structure.XmlPart"))) {
@@ -75,7 +75,7 @@ public final class XmlContent__BehaviorDescriptor extends BaseBHDescriptor {
     return false;
   }
   /*package*/ static boolean isTextLike_id1Qs9WekVZ9O(@NotNull SNode __thisNode__) {
-    return (boolean) XmlContent__BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return (boolean) XmlContent__BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
   }
   /*package*/ static boolean oneLineBlock_id1653mnvAgno(@NotNull SAbstractConcept __thisConcept__) {
     return false;

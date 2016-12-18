@@ -15,8 +15,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.ui.finders.ModuleUsagesFinder;
+import jetbrains.mps.ide.ui.finders.LanguageImportFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
@@ -55,7 +57,13 @@ public class FindModuleUsage_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     final SModule module = event.getData(MPSCommonDataKeys.MODULE);
     final SearchQuery query = new SearchQuery(module, GlobalScope.getInstance());
-    final IResultProvider provider = FindUtils.makeProvider(new ModuleUsagesFinder());
+    final IResultProvider provider;
+    if (module instanceof Language) {
+      // Given language context module, we are not certain whether intention is to look up module uses or its uses as a language, hence include both 
+      provider = FindUtils.makeProvider(new ModuleUsagesFinder(), new LanguageImportFinder());
+    } else {
+      provider = FindUtils.makeProvider(new ModuleUsagesFinder());
+    }
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(true).forceNewTab(false).navigateIfSingle(false).notFoundMessage(String.format("No usages found for %s", module.getModuleName()));
     UsagesViewTool.showUsages(event.getData(CommonDataKeys.PROJECT), provider, query, opt);
   }

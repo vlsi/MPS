@@ -30,7 +30,10 @@ public class Switch_better_switch3 extends TemplateSwitchBase implements Templat
     return Collections.emptySet();
   }
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info, "WARNING!");
+    DismissTopMappingRuleException ex_a = new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info, "WARNING!");
+    ex_a.setTemplateContext(context);
+    ex_a.setTemplateModelLocation(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075905"));
+    throw ex_a;
   }
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }

@@ -108,7 +108,7 @@
         <var name="executor" id="5916922432461075159" />
       </scope>
       <unit id="5916922432461075186" at="28,274,32,5" name="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated$2" />
-      <unit id="5916922432461075292" at="35,232,39,11" name="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated$2" />
+      <unit id="5916922432461075292" at="35,232,39,11" name="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated$1$1" />
       <unit id="5916922432461075283" at="33,463,41,7" name="jetbrains.mps.execution.configurations.generator.template.preprocess.QueriesGenerated$1" />
     </file>
   </root>

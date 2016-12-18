@@ -44,7 +44,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage"};
+    return new String[]{};
   }
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {

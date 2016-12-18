@@ -72,7 +72,7 @@ public class RulesUtil {
         isGood = (boolean) ILinkAccess__BehaviorDescriptor.isSingularCardinality_id3vpu_siOTrf.invoke(linkAccess);
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept 
-          if ((boolean) SNodeOperation__BehaviorDescriptor.applicableToConcept_id1653mnvAgvQ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(op))) && !((boolean) SNodeOperation__BehaviorDescriptor.applicableToNode_id1653mnvAgrs.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(op))))) {
+          if ((boolean) SNodeOperation__BehaviorDescriptor.applicableToConcept_id1653mnvAgvQ.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(op))) && !((boolean) SNodeOperation__BehaviorDescriptor.applicableToNode_id1653mnvAgrs.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(op))))) {
             isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a0b0b0b0k0a());
           }
         }

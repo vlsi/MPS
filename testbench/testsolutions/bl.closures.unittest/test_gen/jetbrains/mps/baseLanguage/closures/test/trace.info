@@ -7,11 +7,11 @@
       <node id="1227886714745" at="16,55,17,125" concept="0" />
       <node id="1227886714745" at="17,125,18,116" concept="0" />
       <node id="1227886714778" at="23,57,24,35" concept="0" />
-      <node id="1227886714781" at="24,35,25,272" concept="0" />
+      <node id="1227886714781" at="24,35,25,325" concept="0" />
       <node id="1227886714778" at="23,0,27,0" concept="1" trace="test_ClosureDataFlow#()V" />
       <node id="1227886714745" at="15,0,20,0" concept="1" trace="test_ClosureDataFlow#()V" />
       <scope id="1227886714745" at="16,55,18,116" />
-      <scope id="1227886714778" at="23,57,25,272" />
+      <scope id="1227886714778" at="23,57,25,325" />
       <scope id="1227886714778" at="23,0,27,0" />
       <scope id="1227886714745" at="15,0,20,0" />
       <unit id="1227886714745" at="21,0,30,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody" />
@@ -23,11 +23,11 @@
       <node id="1227886714783" at="16,62,17,125" concept="0" />
       <node id="1227886714783" at="17,125,18,130" concept="0" />
       <node id="1227886714803" at="23,64,24,35" concept="0" />
-      <node id="1227886714806" at="24,35,25,272" concept="0" />
+      <node id="1227886714806" at="24,35,25,325" concept="0" />
       <node id="1227886714803" at="23,0,27,0" concept="1" trace="test_ClosureLiteralDataFlow#()V" />
       <node id="1227886714783" at="15,0,20,0" concept="1" trace="test_ClosureLiteralDataFlow#()V" />
       <scope id="1227886714783" at="16,62,18,130" />
-      <scope id="1227886714803" at="23,64,25,272" />
+      <scope id="1227886714803" at="23,64,25,325" />
       <scope id="1227886714803" at="23,0,27,0" />
       <scope id="1227886714783" at="15,0,20,0" />
       <unit id="1227886714783" at="21,0,30,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test$TestBody" />

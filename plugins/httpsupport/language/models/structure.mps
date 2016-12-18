@@ -3,9 +3,11 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="v54s" ref="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" implicit="true" />
   </imports>
@@ -413,9 +415,9 @@
   <node concept="1TIwiD" id="6WBmrsjAqQr">
     <property role="EcuMT" value="8009469105144442267" />
     <property role="3GE5qa" value="request" />
-    <property role="TrG5h" value="MPSPortProvider" />
-    <property role="34LRSv" value="MPS port" />
-    <property role="R4oN_" value="current bound port by MPS" />
+    <property role="TrG5h" value="MPSIntegrationPortProvider" />
+    <property role="34LRSv" value="MPS Integration port" />
+    <property role="R4oN_" value="current bound port by MPS to integrate with YouTrack/TeamCity" />
     <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
   </node>
   <node concept="1TIwiD" id="6WBmrsjB3b2">
@@ -430,6 +432,21 @@
       <property role="TrG5h" value="portNumber" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="3PMO5H7Xp0_">
+    <property role="EcuMT" value="4427830474126495781" />
+    <property role="3GE5qa" value="request" />
+    <property role="TrG5h" value="MPSInternalPortProvider" />
+    <property role="34LRSv" value="MPS Internal Port" />
+    <property role="R4oN_" value="current bound port by MPS for internal features" />
+    <ref role="1TJDcQ" node="6WBmrsjA0m6" resolve="PortProvider" />
+  </node>
+  <node concept="1TIwiD" id="1_yOWEXej4M">
+    <property role="EcuMT" value="1829257266377339186" />
+    <property role="TrG5h" value="Node_getURLOperation" />
+    <property role="34LRSv" value="getURL" />
+    <property role="R4oN_" value="provides URL to this node" />
+    <ref role="1TJDcQ" to="tp25:g$eCIIG" resolve="SNodeOperation" />
   </node>
 </model>
 

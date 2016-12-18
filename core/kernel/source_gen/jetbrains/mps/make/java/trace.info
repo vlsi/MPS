@@ -322,8 +322,8 @@
         <var name="uri" id="757342313568246027" />
       </scope>
       <unit id="757342313568246027" at="83,0,86,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ChildHandler" />
-      <unit id="757342313568246027" at="124,38,129,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
-      <unit id="757342313568246027" at="164,38,169,9" name="jetbrains.mps.make.java.BLDependenciesHandler$1" />
+      <unit id="757342313568246027" at="124,38,129,9" name="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler$1" />
+      <unit id="757342313568246027" at="164,38,169,9" name="jetbrains.mps.make.java.BLDependenciesHandler$DependencyElementHandler$1" />
       <unit id="757342313568246027" at="188,0,211,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ClassNodeElementHandler" />
       <unit id="757342313568246027" at="114,0,140,0" name="jetbrains.mps.make.java.BLDependenciesHandler$DependenciesRootElementHandler" />
       <unit id="757342313568246027" at="86,0,114,0" name="jetbrains.mps.make.java.BLDependenciesHandler$ElementHandler" />

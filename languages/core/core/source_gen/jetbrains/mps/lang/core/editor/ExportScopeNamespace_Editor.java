@@ -6,70 +6,9 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 
 public class ExportScopeNamespace_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_p7dwc8_a(editorContext, node);
-  }
-  private EditorCell createCollection_p7dwc8_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_p7dwc8_a");
-    editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_p7dwc8_a0(editorContext, node));
-    editorCell.addEditorCell(this.createProperty_p7dwc8_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_p7dwc8_c0(editorContext, node));
-    editorCell.addEditorCell(this.createAttributedNodeCell_p7dwc8_d0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_p7dwc8_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@export(namespace =");
-    editorCell.setCellId("Constant_p7dwc8_a0");
-    DeleteExportScope.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createProperty_p7dwc8_b0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-    provider.setRole("namespace");
-    provider.setNoTargetText("<no namespace>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("property_namespace");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-      return manager.createNodeRoleAttributeCell(attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-  private EditorCell createConstant_p7dwc8_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_p7dwc8_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, 0, ExportScopeNamespace_Editor._StyleParameter_QueryFunction_p7dwc8_a1c0(editorContext, node));
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private static boolean _StyleParameter_QueryFunction_p7dwc8_a1c0(EditorContext editorContext, SNode node) {
-    return (SNodeOperations.getParent(node) != null) && jetbrains.mps.util.SNodeOperations.isRoot(SNodeOperations.getParent(node));
-  }
-  private EditorCell createAttributedNodeCell_p7dwc8_d0(EditorContext editorContext, SNode node) {
-    EditorManager manager = EditorManager.getInstanceFromContext(editorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class, node);
-    return editorCell;
+    return new ExportScopeNamespace_EditorBuilder_a(editorContext, node).createCell();
   }
 }

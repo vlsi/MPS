@@ -550,17 +550,17 @@
         <var name="context" id="6460341978864585324" />
         <var name="event" id="6460341978864585326" />
       </scope>
-      <unit id="3070226725409672211" at="378,63,382,9" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$2" />
+      <unit id="3070226725409672211" at="378,63,382,9" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$EventProcessorRunnable$2" />
       <unit id="613652663728244002" at="102,52,107,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$2" />
       <unit id="7255550618273842454" at="250,29,255,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$7" />
       <unit id="613652663728244188" at="110,52,116,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$3" />
       <unit id="613652663728232508" at="92,52,99,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$1" />
       <unit id="3070226725409672081" at="230,66,239,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$6" />
-      <unit id="7255550618273619580" at="259,55,268,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$9" />
+      <unit id="7255550618273619580" at="259,55,268,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$8$1" />
       <unit id="2891782949125146472" at="392,0,405,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$StepKind" />
       <unit id="613652663728244205" at="119,52,135,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$4" />
       <unit id="5447665676660713120" at="256,66,276,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$8" />
-      <unit id="3070226725409667447" at="352,65,375,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$1" />
+      <unit id="3070226725409667447" at="352,65,375,11" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$EventProcessorRunnable$1" />
       <unit id="6676843613964893806" at="203,27,227,5" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$5" />
       <unit id="6460341978864584380" at="342,0,392,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor$EventProcessorRunnable" />
       <unit id="6460341978864584371" at="45,0,406,0" name="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />

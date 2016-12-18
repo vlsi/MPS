@@ -42,7 +42,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.Change;
-import com.intellij.openapi.vcs.FilePathImpl;
 import java.util.List;
 import com.intellij.openapi.vcs.VcsException;
 import java.util.ArrayList;
@@ -211,7 +210,7 @@ public abstract class ChangesTestBase {
 
   protected void revertDiskChangesAndWait(VirtualFile modelFile) {
     myChangeListManager.ensureUpToDate(false);
-    Change modelFileChange = myChangeListManager.getChange(new FilePathImpl(modelFile));
+    Change modelFileChange = myChangeListManager.getChange(modelFile);
     List<VcsException> exceptions = ListSequence.fromList(new ArrayList<VcsException>());
     myGitVcs.getRollbackEnvironment().rollbackChanges(Arrays.asList(modelFileChange), exceptions, RollbackProgressListener.EMPTY);
     Assert.assertTrue(ListSequence.fromList(exceptions).isEmpty());

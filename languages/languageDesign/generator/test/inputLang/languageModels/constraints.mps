@@ -31,7 +31,7 @@
     <property role="3GE5qa" value="RefTest" />
     <ref role="1M2myG" to="tpm0:2S48fJgAlS7" resolve="RefTestParamRef" />
     <node concept="1N5Pfh" id="2S48fJgAQiU" role="1Mr941">
-      <ref role="1N5Vy1" to="tpm0:2S48fJgAlS8" />
+      <ref role="1N5Vy1" to="tpm0:2S48fJgAlS8" resolve="declaration" />
       <node concept="1dDu$B" id="2S48fJgAQiV" role="1N6uqs">
         <ref role="1dDu$A" to="tpm0:2S48fJgAlS0" resolve="RefTestParam" />
       </node>
@@ -41,7 +41,7 @@
     <property role="3GE5qa" value="RefTest" />
     <ref role="1M2myG" to="tpm0:2S48fJgAlS9" resolve="RefTestMethodCall" />
     <node concept="1N5Pfh" id="59r$iG980Nz" role="1Mr941">
-      <ref role="1N5Vy1" to="tpm0:2S48fJgAlSa" />
+      <ref role="1N5Vy1" to="tpm0:2S48fJgAlSa" resolve="method" />
       <node concept="1dDu$B" id="59r$iG980N$" role="1N6uqs">
         <ref role="1dDu$A" to="tpm0:2S48fJgAlRY" resolve="RefTestMethod" />
       </node>

@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
@@ -246,9 +246,7 @@
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
-      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv">
-        <child id="5858074156537516440" name="return" index="x79VK" />
-      </concept>
+      <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -406,7 +404,7 @@
         <property role="1EzhhJ" value="true" />
         <property role="TrG5h" value="afterMove" />
         <node concept="P$JXv" id="1FSMaHel_pl" role="lGtFl">
-          <node concept="x79VA" id="1FSMaHel_pr" role="x79VK">
+          <node concept="x79VA" id="1FSMaHel_pr" role="3nqlJM">
             <property role="x79VB" value="null if there is no data to save" />
           </node>
         </node>
@@ -3798,6 +3796,32 @@
         </node>
       </node>
     </node>
+    <node concept="3clFb_" id="7m$hACyZuPg" role="jymVt">
+      <property role="TrG5h" value="putInCopyMap" />
+      <node concept="37vLTG" id="7m$hACyZvWp" role="3clF46">
+        <property role="TrG5h" value="addition" />
+        <node concept="3rvAFt" id="7m$hACyZuPh" role="1tU5fm">
+          <node concept="3Tqbb2" id="7m$hACyZuPi" role="3rvSg0" />
+          <node concept="3Tqbb2" id="7m$hACyZuPj" role="3rvQeY" />
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7m$hACyZuPk" role="1B3o_S" />
+      <node concept="3clFbS" id="7m$hACyZuPl" role="3clF47">
+        <node concept="3clFbF" id="7m$hACyZzuw" role="3cqZAp">
+          <node concept="2OqwBi" id="7m$hACyZzJB" role="3clFbG">
+            <node concept="37vLTw" id="7m$hACyZzuv" role="2Oq$k0">
+              <ref role="3cqZAo" node="44mXFSxhkEF" resolve="copyMap" />
+            </node>
+            <node concept="3FNE7p" id="7m$hACyZ$5V" role="2OqNvi">
+              <node concept="37vLTw" id="7m$hACyZ$cF" role="3FOfgg">
+                <ref role="3cqZAo" node="7m$hACyZvWp" resolve="addition" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3cqZAl" id="7m$hACyZwj4" role="3clF45" />
+    </node>
     <node concept="3clFb_" id="5sZ4VOA2LeY" role="jymVt">
       <property role="TrG5h" value="copyAndTrack" />
       <property role="DiZV1" value="false" />
@@ -3840,15 +3864,11 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="5sZ4VOA2Lfs" role="3cqZAp">
-          <node concept="2OqwBi" id="5sZ4VOA2Lft" role="3clFbG">
-            <node concept="37vLTw" id="5sZ4VOA2Lfu" role="2Oq$k0">
-              <ref role="3cqZAo" node="44mXFSxhkEF" resolve="copyMap" />
-            </node>
-            <node concept="3FNE7p" id="5sZ4VOA2Lfv" role="2OqNvi">
-              <node concept="37vLTw" id="5sZ4VOA2Lfw" role="3FOfgg">
-                <ref role="3cqZAo" node="5sZ4VOA2Lfd" resolve="localCopyMap" />
-              </node>
+        <node concept="3clFbF" id="7m$hACyZ$FC" role="3cqZAp">
+          <node concept="1rXfSq" id="7m$hACyZ$FA" role="3clFbG">
+            <ref role="37wK5l" node="7m$hACyZuPg" resolve="putInCopyMap" />
+            <node concept="37vLTw" id="7m$hACyZ_7E" role="37wK5m">
+              <ref role="3cqZAo" node="5sZ4VOA2Lfd" resolve="localCopyMap" />
             </node>
           </node>
         </node>

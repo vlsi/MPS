@@ -196,7 +196,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1111792541964" />
       <ref role="20lvS9" node="gbrYiHC" resolve="Quantity" />
-      <ref role="20ksaX" node="gbrZEVx" />
+      <ref role="20ksaX" node="gbrZEVx" resolve="value" />
     </node>
   </node>
   <node concept="AxPO7" id="gbs1dxE">
@@ -269,7 +269,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1111794782624" />
       <ref role="20lvS9" node="gbs8V3q" resolve="PostingRule" />
-      <ref role="20ksaX" node="gbrZEVx" />
+      <ref role="20ksaX" node="gbrZEVx" resolve="value" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbs8V3q">

@@ -9,13 +9,14 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -26,18 +27,18 @@ public final class UnmarshalFunction__BehaviorDescriptor extends BaseBHDescripto
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41ba9L, "jetbrains.mps.lang.generator.structure.UnmarshalFunction");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41bdeL, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_inputNode").getDeclarationNode());
-    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499a77cc2L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_keeper").getDeclarationNode());
-    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f4e964L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_outputNode").getDeclarationNode());
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    List<SConcept> list = ListSequence.fromList(new ArrayList<SConcept>());
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f41bdeL, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_inputNode"));
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x7bb9ef7499a77cc2L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_keeper"));
+    ListSequence.fromList(list).addElement(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x65a7fcfba8f4e964L, "jetbrains.mps.lang.generator.structure.ExportLabelParameter_outputNode"));
     return list;
   }
 
@@ -57,6 +58,8 @@ public final class UnmarshalFunction__BehaviorDescriptor extends BaseBHDescripto
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 0:
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -69,8 +72,6 @@ public final class UnmarshalFunction__BehaviorDescriptor extends BaseBHDescripto
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 0:
-        return (T) ((List<SNode>) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

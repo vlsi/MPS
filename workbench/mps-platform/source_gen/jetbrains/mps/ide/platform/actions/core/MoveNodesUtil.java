@@ -165,7 +165,7 @@ public class MoveNodesUtil {
     public void removeAfterRefactoring(Map<SNode, RefactoringParticipant.KeepOldNodes> ifKeepOldNodes, RefactoringSession refactoringSession) {
       for (SNode oldNode : SetSequence.fromSet(MapSequence.fromMap(ifKeepOldNodes).keySet())) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) != RefactoringParticipant.KeepOldNodes.KEEP) {
-          SNodeOperations.detachNode(oldNode);
+          SNodeOperations.deleteNode(oldNode);
         }
       }
     }
@@ -197,7 +197,7 @@ public class MoveNodesUtil {
       copyMap.copyAndTrack(nodeRoots);
       for (SNode oldNode : ListSequence.fromList(nodeRoots)) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
-          SNodeOperations.detachNode(oldNode);
+          SNodeOperations.deleteNode(oldNode);
         }
         myNodeLocation.insertNode(myProject.getRepository(), MapSequence.fromMap(copyMap.getCopyMap()).get(oldNode));
       }
@@ -229,10 +229,10 @@ public class MoveNodesUtil {
         throw new IllegalArgumentException();
       }
       NodeCopyTracker copyMap = NodeCopyTracker.get(refactoringSession);
-      MapSequence.fromMap(copyMap.getCopyMap()).put(ListSequence.fromList(nodesToMove).first(), myTarget.resolve(myProject.getRepository()));
+      copyMap.putInCopyMap(MapSequence.<SNode, SNode>fromMapAndKeysArray(new HashMap<SNode, SNode>(), ListSequence.fromList(nodesToMove).first()).withValues(myTarget.resolve(myProject.getRepository())));
       for (SNode oldNode : SetSequence.fromSet(MapSequence.fromMap(ifKeepOldNodes).keySet())) {
         if (MapSequence.fromMap(ifKeepOldNodes).get(oldNode) == RefactoringParticipant.KeepOldNodes.REMOVE) {
-          SNodeOperations.detachNode(oldNode);
+          SNodeOperations.deleteNode(oldNode);
         }
       }
     }

@@ -553,7 +553,7 @@
         <var name="event" id="3207605520775490246" />
       </scope>
       <unit id="3207605520775490308" at="126,172,130,5" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$2" />
-      <unit id="4961254963656093498" at="137,110,142,11" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$4" />
+      <unit id="4961254963656093498" at="137,110,142,11" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$3$1" />
       <unit id="3753992646593393406" at="153,321,158,5" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$4" />
       <unit id="4424432534314501" at="96,123,104,5" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$1" />
       <unit id="3207605520775490343" at="134,26,144,7" name="jetbrains.mps.ide.editor.actions.ShowSurroundWithIntentions_Action$3" />
@@ -964,9 +964,9 @@
       <node id="1875480895988524592" at="169,5,170,17" concept="10" />
       <node id="1875480895989193719" at="173,36,174,49" concept="10" />
       <node id="1875480895989193719" at="175,5,176,16" concept="10" />
-      <node id="6726690416034419025" at="179,36,180,46" concept="10" />
-      <node id="6726690416034419025" at="181,5,182,17" concept="10" />
-      <node id="1875480895988610370" at="184,52,185,44" concept="10" />
+      <node id="1875480895988610370" at="178,52,179,44" concept="10" />
+      <node id="6726690416034419025" at="182,36,183,46" concept="10" />
+      <node id="6726690416034419025" at="184,5,185,17" concept="10" />
       <node id="3467203700125709807" at="47,95,50,5" concept="7" />
       <node id="3467203700125709807" at="53,53,56,7" concept="7" />
       <node id="3467203700125709807" at="60,51,63,7" concept="7" />
@@ -983,8 +983,8 @@
       <node id="5092236983269113961" at="160,74,163,5" concept="7" />
       <node id="1875480895988524592" at="166,87,169,5" concept="7" />
       <node id="1875480895989193719" at="172,84,175,5" concept="7" />
-      <node id="6726690416034419025" at="178,80,181,5" concept="7" />
-      <node id="1875480895988610370" at="184,0,187,0" concept="14" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="1875480895988610370" at="178,0,181,0" concept="14" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="6726690416034419025" at="181,80,184,5" concept="7" />
       <node id="3467203700125709807" at="42,0,46,0" concept="8" trace="isDumbAware#()Z" />
       <node id="3467203700125709807" at="67,5,71,5" concept="1" />
       <node id="3467203700125709807" at="78,5,82,5" concept="1" />
@@ -995,7 +995,7 @@
       <node id="5092236983269113961" at="160,0,166,0" concept="14" trace="check_a68f4j_a1a3a4a0#(Ljava/lang/String;)Z" />
       <node id="1875480895988524592" at="166,0,172,0" concept="14" trace="check_a68f4j_a3a4a0#(Ljetbrains/mps/nodeEditor/cellMenu/NodeSubstituteChooser;)Z" />
       <node id="1875480895989193719" at="172,0,178,0" concept="14" trace="check_a68f4j_a0b0e0e0a#(Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)Ljava/lang/String;" />
-      <node id="6726690416034419025" at="178,0,184,0" concept="14" trace="check_a68f4j_a1a0#(Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)Z" />
+      <node id="6726690416034419025" at="181,0,187,0" concept="14" trace="check_a68f4j_a1a0#(Ljetbrains/mps/nodeEditor/cells/EditorCell_Label;)Z" />
       <node id="3467203700125709807" at="50,5,57,5" concept="1" />
       <node id="3467203700125709807" at="71,5,78,5" concept="1" />
       <node id="1875480895988595334" at="100,7,107,7" concept="7" />
@@ -1028,8 +1028,8 @@
       <scope id="5092236983269113961" at="161,36,162,75" />
       <scope id="1875480895988524592" at="167,36,168,43" />
       <scope id="1875480895989193719" at="173,36,174,49" />
-      <scope id="6726690416034419025" at="179,36,180,46" />
-      <scope id="1875480895988610370" at="184,52,185,44" />
+      <scope id="1875480895988610370" at="178,52,179,44" />
+      <scope id="6726690416034419025" at="182,36,183,46" />
       <scope id="3467203700125709807" at="68,5,70,50">
         <var name="p" id="3467203700125709807" />
       </scope>
@@ -1038,7 +1038,7 @@
       </scope>
       <scope id="4958753532934746799" at="128,134,130,60" />
       <scope id="3467203700125709807" at="37,40,40,41" />
-      <scope id="1875480895988610370" at="184,0,187,0">
+      <scope id="1875480895988610370" at="178,0,181,0">
         <var name="str" id="1875480895988610370" />
       </scope>
       <scope id="3467203700125709807" at="42,0,46,0" />
@@ -1048,7 +1048,7 @@
       <scope id="5092236983269113961" at="160,74,164,17" />
       <scope id="1875480895988524592" at="166,87,170,17" />
       <scope id="1875480895989193719" at="172,84,176,16" />
-      <scope id="6726690416034419025" at="178,80,182,17" />
+      <scope id="6726690416034419025" at="181,80,185,17" />
       <scope id="3467203700125709807" at="37,0,42,0" />
       <scope id="3467203700125709807" at="51,5,56,7">
         <var name="p" id="3467203700125709807" />
@@ -1073,7 +1073,7 @@
       <scope id="1875480895989193719" at="172,0,178,0">
         <var name="checkedDotOperand" id="1875480895989193719" />
       </scope>
-      <scope id="6726690416034419025" at="178,0,184,0">
+      <scope id="6726690416034419025" at="181,0,187,0">
         <var name="checkedDotOperand" id="6726690416034419025" />
       </scope>
       <scope id="3467203700125709808" at="143,0,150,0">
@@ -2409,7 +2409,7 @@
         <var name="_params" id="5238877291854194705" />
         <var name="event" id="5238877291854194705" />
       </scope>
-      <unit id="699163291708879686" at="48,661,52,9" name="jetbrains.mps.ide.editor.actions.Comment_Action$2" />
+      <unit id="699163291708879686" at="48,661,52,9" name="jetbrains.mps.ide.editor.actions.Comment_Action$1$1" />
       <unit id="548229885685660107" at="46,168,54,5" name="jetbrains.mps.ide.editor.actions.Comment_Action$1" />
       <unit id="5238877291854194705" at="25,0,84,0" name="jetbrains.mps.ide.editor.actions.Comment_Action" />
     </file>

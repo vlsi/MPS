@@ -152,8 +152,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -215,7 +215,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="7rX0uLRY4Dj" role="1Mr941">
-      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" />
+      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" resolve="module" />
       <node concept="13QW63" id="7rX0uLRYOZE" role="1N6uqs">
         <node concept="3clFbS" id="7rX0uLRYOZG" role="2VODD2">
           <node concept="3clFbF" id="7rX0uLRZ9a7" role="3cqZAp">
@@ -254,9 +254,11 @@
                                 <ref role="37wK5l" to="2txq:6ogfLD6evrW" resolve="hasTestsSources" />
                               </node>
                               <node concept="1PxgMI" id="6ogfLD6sgc4" role="2Oq$k0">
-                                <ref role="1m5ApE" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                                 <node concept="37vLTw" id="6ogfLD6sgc5" role="1m5AlR">
                                   <ref role="3cqZAo" node="7rX0uLRZ9M7" resolve="node" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH1GH" role="3oSUPX">
+                                  <ref role="cht4Q" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                                 </node>
                               </node>
                             </node>
@@ -306,7 +308,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="3umvbTB_ti4" role="1Mr941">
-      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdG" />
+      <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdG" resolve="group" />
       <node concept="13QW63" id="3umvbTB_tiO" role="1N6uqs">
         <node concept="3clFbS" id="3umvbTB_tiQ" role="2VODD2">
           <node concept="3clFbF" id="3umvbTB_tRT" role="3cqZAp">
@@ -351,9 +353,11 @@
                                           <ref role="37wK5l" to="2txq:6ogfLD6evrW" resolve="hasTestsSources" />
                                         </node>
                                         <node concept="1PxgMI" id="6ogfLD6slNu" role="2Oq$k0">
-                                          <ref role="1m5ApE" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                                           <node concept="37vLTw" id="6ogfLD6skOV" role="1m5AlR">
                                             <ref role="3cqZAo" node="3umvbTB_OWQ" resolve="it" />
+                                          </node>
+                                          <node concept="chp4Y" id="714IaVdH1Gz" role="3oSUPX">
+                                            <ref role="cht4Q" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
                                           </node>
                                         </node>
                                       </node>
@@ -378,12 +382,14 @@
                             </node>
                             <node concept="2OqwBi" id="3umvbTB_xPk" role="2Oq$k0">
                               <node concept="3Tsc0h" id="3umvbTB_zUa" role="2OqNvi">
-                                <ref role="3TtcxE" to="kdzh:1jjYQYSgYJu" />
+                                <ref role="3TtcxE" to="kdzh:1jjYQYSgYJu" resolve="modules" />
                               </node>
                               <node concept="1PxgMI" id="3umvbTB_tSg" role="2Oq$k0">
-                                <ref role="1m5ApE" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
                                 <node concept="37vLTw" id="3umvbTB_tSh" role="1m5AlR">
                                   <ref role="3cqZAo" node="3umvbTB_tS7" resolve="node" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdH1GC" role="3oSUPX">
+                                  <ref role="cht4Q" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
                                 </node>
                               </node>
                             </node>
@@ -530,11 +536,13 @@
             <node concept="2OqwBi" id="5D0zVz8102w" role="3uHU7w">
               <node concept="2OqwBi" id="5D0zVz8102x" role="2Oq$k0">
                 <node concept="1PxgMI" id="5D0zVz8102y" role="2Oq$k0">
-                  <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                   <node concept="nLn13" id="5D0zVz8102O" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH1GB" role="3oSUPX">
+                    <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                  </node>
                 </node>
                 <node concept="3Tsc0h" id="5D0zVz8102$" role="2OqNvi">
-                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                  <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                 </node>
               </node>
               <node concept="2HwmR7" id="5D0zVz8102_" role="2OqNvi">

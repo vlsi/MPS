@@ -6,7 +6,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModelStereotype;
 
 public class ClassUtil {
 
@@ -24,7 +23,7 @@ public class ClassUtil {
       curr = SNodeOperations.cast(parent, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
     } while (curr != null);
 
-    String pkgName = SModelStereotype.withoutStereotype(claz.getModel().getModelName());
+    String pkgName = claz.getModel().getName().getLongName();
     sb.insert(0, pkgName);
     return sb.toString();
 

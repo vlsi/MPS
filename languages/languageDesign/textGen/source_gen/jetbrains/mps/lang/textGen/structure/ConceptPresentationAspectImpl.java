@@ -14,13 +14,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractTextGenParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AppendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributedNodePart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_BufferParameter = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ClassConceptUnitContext = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CollectionAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptTextGenDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0i).create();
   private final ConceptPresentation props_ConstantStringAppendPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextInstanceSpecification = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ContextParameter = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_DecreaseDepthOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EncodingDeclarationBase = new ConceptPresentationBuilder().create();
@@ -40,7 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OperationCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OperationDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ReferenceAppendPart = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ReferenceAppendPart = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_SimpleTextGenOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubOperationDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextUnitLayout = new ConceptPresentationBuilder().create();

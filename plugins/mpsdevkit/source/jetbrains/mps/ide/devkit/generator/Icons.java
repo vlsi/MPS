@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,7 @@ import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Generator;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
@@ -38,23 +35,15 @@ import java.awt.Graphics;
 
   public static final Icon COLLECTION = Nodes.Folder;
 
-  /*package*/ static Icon getIcon(@Nullable Kind kind, @Nullable SNodeReference nodeRef) {
-    Icon mainIcon = getMainIcon(nodeRef);
-    Icon kindIcon = kind == null ? null : getKindIcon(kind);
-    return new CompositeIcon(mainIcon, kindIcon);
-  }
-
-  /*package*/ static Icon getIcon(@Nullable Kind kind, @NotNull SNode node) {
+  /**
+   * @return never {@code null}, default icon image if neither node nor kind are specified
+   */
+  /*package*/ static Icon getIcon(@Nullable Kind kind, @Nullable SNode node) {
     Icon mainIcon = getNodeIcon(node);
     if (kind == null) {
       return mainIcon;
     }
     return new CompositeIcon(mainIcon, getKindIcon(kind));
-  }
-
-  private static Icon getMainIcon(@Nullable SNodeReference nodePointer) {
-    SNode node = nodePointer == null ? null : nodePointer.resolve(MPSModuleRepository.getInstance());
-    return getNodeIcon(node);
   }
 
   private static Icon getNodeIcon(@Nullable SNode node) {

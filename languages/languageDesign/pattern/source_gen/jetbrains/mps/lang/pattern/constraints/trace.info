@@ -203,7 +203,7 @@
         <var name="references" id="2248628811136079927" />
       </scope>
       <scope id="2248628811136079927" at="48,0,79,0" />
-      <unit id="2248628811136079927" at="59,19,74,9" name="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints$2" />
+      <unit id="2248628811136079927" at="59,19,74,9" name="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints$1$1" />
       <unit id="2248628811136079927" at="51,156,76,5" name="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints$1" />
       <unit id="2248628811136079927" at="29,0,85,0" name="jetbrains.mps.lang.pattern.constraints.PatternVariableReference_Constraints" />
     </file>
@@ -312,7 +312,7 @@
         <var name="references" id="5642650895629225737" />
       </scope>
       <scope id="5642650895629225737" at="30,0,56,0" />
-      <unit id="5642650895629225737" at="41,19,51,9" name="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints$2" />
+      <unit id="5642650895629225737" at="41,19,51,9" name="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints$1$1" />
       <unit id="5642650895629225737" at="33,159,53,5" name="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints$1" />
       <unit id="5642650895629225737" at="25,0,64,0" name="jetbrains.mps.lang.pattern.constraints.OrPatternVariableReference_Constraints" />
     </file>

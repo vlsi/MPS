@@ -78,13 +78,13 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.HelpHelper" file="HelpHelper.java">
     <classNode dependClassName="com.intellij.ide.BrowserUtil" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.kernel.language.ConceptAspectsHelper" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageAspectSupport" />
+    <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptPresentation" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
@@ -125,7 +125,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -215,7 +214,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.ExtensionPoint" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
@@ -262,7 +260,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesUtil" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.NodeLocation" />
-    <classNode dependClassName="jetbrains.mps.ide.refactoring.SModelReferenceDialog" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -274,7 +272,6 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
@@ -334,7 +331,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.actions.core.MoveNodesAction" />
@@ -402,9 +398,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.CommitUtil" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.smodel.structure.Default" />
+    <classNode extendsClassName="jetbrains.mps.smodel.structure.Extension" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.PluginSolution_ApplicationPlugin" file="PluginSolution_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
@@ -589,25 +584,23 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringDataCollector" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" file="StructureSpecializationBase.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
     <classNode extendsClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringDataCollector" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup" file="Structure_ActionGroup.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ex.ActionManagerEx" />
@@ -621,14 +614,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
-    <classNode dependClassName="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase.NodeData" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SReferenceLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
@@ -636,9 +626,9 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipant" />
+    <classNode extendsClassName="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.participant.PersistentRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.UpdateLocalInstancesParticipant" file="UpdateLocalInstancesParticipant.java">
     <classNode dependClassName="java.lang.Runnable" />
@@ -660,7 +650,6 @@
     <classNode dependClassName="jetbrains.mps.refactoring.participant.NodeCopyTracker" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
@@ -702,13 +691,11 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
-    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.structure.Default" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.Extension" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
@@ -719,7 +706,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant" />
-    <classNode extendsClassName="jetbrains.mps.refactoring.participant.PersistentRefactoringParticipant" />
+    <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode extendsClassName="jetbrains.mps.refactoring.participant.RefactoringParticipantBase" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin._Adapters" file="_Adapters.java">

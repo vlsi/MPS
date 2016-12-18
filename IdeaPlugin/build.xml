@@ -33,6 +33,8 @@
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
   <!--<property name="junit.debug.arg" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=y,address=5011"/>-->
   <property name="junit.debug.arg" value="-D"/> <!--Value for JUnit test JVM launcher. Use -D as empty jvmarg value is treated as classname to run-->
+  <property name="mps.plugin.dependencies.target" value="install"
+            description="Allows to modify getDependencies.xml target to download only 3rd party libraries without IDEA platform on Team City build"/>
 
   <property environment="env"/>
 
@@ -68,6 +70,9 @@
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsWorkbench/lib/mps-resources_en.jar"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
@@ -109,8 +114,8 @@
   </target>
 
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
-    <property name="buildCoreProcessed" value="true" />
-    <ant antfile="${base_dir}/build/getIdeaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
+    <property name="buildCoreProcessed" value="true"/>
+    <ant antfile="${base_dir}/build/getDependencies.xml" target="${mps.plugin.dependencies.target}" inheritAll="true" useNativeBasedir="true"/>
     <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
@@ -132,6 +137,10 @@
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
     <ant antfile="${base_dir}/build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+    <ant antfile="${base_dir}/build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>

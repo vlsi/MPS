@@ -5,9 +5,9 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -29,23 +29,17 @@
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
     <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
-    <import index="u78q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.typesystem.inference(MPS.Core/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
-    <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" />
     <import index="1m72" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.components(MPS.IDEA/)" />
     <import index="3a50" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide(MPS.Platform/)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
-    <import index="cj4x" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor(MPS.Editor/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="z2i8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.icons(MPS.IDEA/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="kpve" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.message(MPS.Editor/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
-    <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" />
-    <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="4fnz" ref="r:4133014c-7275-4ce9-a7b8-ec59b3bf11b3(jetbrains.mps.ide.java.platform.highlighters.methodcallsfixer)" />
@@ -295,8 +289,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -426,7 +420,7 @@
             <property role="3TUv4t" value="true" />
             <node concept="2OqwBi" id="7k6J8c3tihm" role="33vP2m">
               <node concept="3TrEf2" id="7k6J8c3tiho" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fzclF7X" />
+                <ref role="3Tt5mk" to="tpee:fzclF7X" resolve="returnType" />
               </node>
               <node concept="37vLTw" id="2BHiRxgm5E9" role="2Oq$k0">
                 <ref role="3cqZAo" node="7k6J8c3tih6" resolve="node" />
@@ -1443,13 +1437,15 @@
                       <node concept="2Gpval" id="7k6J8c3tinC" role="3cqZAp">
                         <node concept="2OqwBi" id="7k6J8c3tinE" role="2GsD0m">
                           <node concept="1PxgMI" id="7k6J8c3tinF" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fKQs72_" resolve="EnumClass" />
                             <node concept="2GrUjf" id="7k6J8c3tinG" role="1m5AlR">
                               <ref role="2Gs0qQ" node="7k6J8c3tino" resolve="subClassifier" />
                             </node>
+                            <node concept="chp4Y" id="714IaVdGYOz" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fKQs72_" resolve="EnumClass" />
+                            </node>
                           </node>
                           <node concept="3Tsc0h" id="7k6J8c3tinH" role="2OqNvi">
-                            <ref role="3TtcxE" to="tpee:fKQtgeG" />
+                            <ref role="3TtcxE" to="tpee:fKQtgeG" resolve="enumConstant" />
                           </node>
                         </node>
                         <node concept="2GrKxI" id="7k6J8c3tinD" role="2Gsz3X">
@@ -2492,7 +2488,7 @@
                                     <node concept="2OqwBi" id="7k6J8c3tiu9" role="2Oq$k0">
                                       <node concept="359W_D" id="13$TqNLKU4N" role="2Oq$k0">
                                         <ref role="359W_E" to="tpee:fz12cDA" resolve="ClassConcept" />
-                                        <ref role="359W_F" to="tpee:fWEKbgp" />
+                                        <ref role="359W_F" to="tpee:fWEKbgp" resolve="implementedInterface" />
                                       </node>
                                       <node concept="liA8E" id="13$TqNLKUgo" role="2OqNvi">
                                         <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
@@ -2509,7 +2505,7 @@
                                     <node concept="2OqwBi" id="7k6J8c3tiuf" role="3uHU7B">
                                       <node concept="2OqwBi" id="7k6J8c3tiug" role="2Oq$k0">
                                         <node concept="359W_D" id="13$TqNLKTkZ" role="2Oq$k0">
-                                          <ref role="359W_F" to="tpee:g7HQHFn" />
+                                          <ref role="359W_F" to="tpee:g7HQHFn" resolve="extendedInterface" />
                                           <ref role="359W_E" to="tpee:g7HP654" resolve="Interface" />
                                         </node>
                                         <node concept="liA8E" id="13$TqNLKTqV" role="2OqNvi">
@@ -2526,7 +2522,7 @@
                                     <node concept="2OqwBi" id="7k6J8c3tiul" role="3uHU7w">
                                       <node concept="2OqwBi" id="7k6J8c3tium" role="2Oq$k0">
                                         <node concept="359W_D" id="13$TqNLKTST" role="2Oq$k0">
-                                          <ref role="359W_F" to="tpee:gXzkM_H" />
+                                          <ref role="359W_F" to="tpee:gXzkM_H" resolve="superclass" />
                                           <ref role="359W_E" to="tpee:fz12cDA" resolve="ClassConcept" />
                                         </node>
                                         <node concept="liA8E" id="13$TqNLKU1f" role="2OqNvi">
@@ -2575,7 +2571,7 @@
                                     <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
                                   </node>
                                   <node concept="359W_D" id="13$TqNLKUk2" role="2Oq$k0">
-                                    <ref role="359W_F" to="tpee:fzclF7Y" />
+                                    <ref role="359W_F" to="tpee:fzclF7Y" resolve="parameter" />
                                     <ref role="359W_E" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
                                   </node>
                                 </node>
@@ -2705,7 +2701,7 @@
                                 <node concept="2OqwBi" id="7k6J8c3tiv_" role="3uHU7B">
                                   <node concept="359W_D" id="13$TqNLKM_x" role="2Oq$k0">
                                     <ref role="359W_E" to="tpee:g7uibYu" resolve="ClassifierType" />
-                                    <ref role="359W_F" to="tpee:g7uigIF" />
+                                    <ref role="359W_F" to="tpee:g7uigIF" resolve="classifier" />
                                   </node>
                                   <node concept="liA8E" id="7k6J8c3tivD" role="2OqNvi">
                                     <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
@@ -2769,7 +2765,7 @@
                                   </node>
                                 </node>
                                 <node concept="359W_D" id="13$TqNLKME8" role="2Oq$k0">
-                                  <ref role="359W_F" to="tpee:h1Y3Xaw" />
+                                  <ref role="359W_F" to="tpee:h1Y3Xaw" resolve="classifier" />
                                   <ref role="359W_E" to="tpee:h1Y3b43" resolve="AnonymousClass" />
                                 </node>
                               </node>
@@ -2930,9 +2926,11 @@
               <node concept="1rXfSq" id="4hiugqyzhsP" role="3cqZAk">
                 <ref role="37wK5l" node="7k6J8c3tix6" resolve="getClassifierPresentation" />
                 <node concept="1PxgMI" id="7k6J8c3tiwO" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                   <node concept="37vLTw" id="2BHiRxgm6TD" role="1m5AlR">
                     <ref role="3cqZAo" node="7k6J8c3tix4" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYPn" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                   </node>
                 </node>
               </node>
@@ -2945,9 +2943,11 @@
               <node concept="1rXfSq" id="4hiugqyzgkG" role="3cqZAk">
                 <ref role="37wK5l" node="7k6J8c3tixg" resolve="getEnumConstantPresentation" />
                 <node concept="1PxgMI" id="7k6J8c3tiwU" role="37wK5m">
-                  <ref role="1m5ApE" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
                   <node concept="37vLTw" id="2BHiRxgm60F" role="1m5AlR">
                     <ref role="3cqZAo" node="7k6J8c3tix4" resolve="node" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYPA" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:fKQsSyN" resolve="EnumConstantDeclaration" />
                   </node>
                 </node>
               </node>

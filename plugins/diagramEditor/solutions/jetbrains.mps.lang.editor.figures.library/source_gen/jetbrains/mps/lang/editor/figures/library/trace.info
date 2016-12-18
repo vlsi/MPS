@@ -139,8 +139,8 @@
       <scope id="2303280755023412912" at="27,0,68,0">
         <var name="context" id="2303280755023412916" />
       </scope>
-      <unit id="2303280755023313200" at="98,79,102,7" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$1" />
-      <unit id="2303280755023313230" at="103,80,107,7" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$2" />
+      <unit id="2303280755023313200" at="98,79,102,7" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$AbstractVerticalLayoutFigureMapper$1" />
+      <unit id="2303280755023313230" at="103,80,107,7" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$AbstractVerticalLayoutFigureMapper$2" />
       <unit id="2303280755023576543" at="74,0,91,0" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$Insets" />
       <unit id="2303280755023313165" at="91,0,110,0" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure$AbstractVerticalLayoutFigureMapper" />
       <unit id="2303280755023212324" at="17,0,111,0" name="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure" />
@@ -208,7 +208,7 @@
         <var name="configuration" id="2303280755026421536" />
       </scope>
       <unit id="2303280755026383295" at="39,0,44,0" name="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure$NamedBoxFigureMapperFactory" />
-      <unit id="2303280755027149137" at="51,76,62,7" name="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure$1" />
+      <unit id="2303280755027149137" at="51,76,62,7" name="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure$NamedBoxFigureMapper$1" />
       <unit id="2303280755026389985" at="44,0,65,0" name="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure$NamedBoxFigureMapper" />
       <unit id="822550549815197670" at="17,0,66,0" name="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure" />
     </file>
@@ -297,9 +297,9 @@
       <scope id="2303280755021452114" at="57,0,78,0">
         <var name="configuration" id="2303280755021452118" />
       </scope>
-      <unit id="2303280755021464651" at="61,74,65,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$1" />
-      <unit id="2303280755021464691" at="66,75,70,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$2" />
-      <unit id="2303280755021464725" at="71,72,75,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$3" />
+      <unit id="2303280755021464651" at="61,74,65,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$BoxFigureMapper$1" />
+      <unit id="2303280755021464691" at="66,75,70,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$BoxFigureMapper$2" />
+      <unit id="2303280755021464725" at="71,72,75,7" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$BoxFigureMapper$3" />
       <unit id="2303280755025348865" at="48,0,53,0" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$BoxFigureMapperFactory" />
       <unit id="2303280755021427314" at="53,0,79,0" name="jetbrains.mps.lang.editor.figures.library.BoxFigure$BoxFigureMapper" />
       <unit id="8794120090375424916" at="15,0,80,0" name="jetbrains.mps.lang.editor.figures.library.BoxFigure" />

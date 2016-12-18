@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
 public abstract class AbstractMultipleSelection extends AbstractSelection implements MultipleSelection {
@@ -80,11 +81,13 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
   @NotNull
   @Override
   public List<SNode> getSelectedNodes() {
-    List<SNode> resultList = new ArrayList<SNode>();
+    LinkedHashSet<SNode> result = new LinkedHashSet<>();
     for (EditorCell nextCell : getSelectedCells()) {
-      resultList.add(nextCell.getSNode());
+      SNode snode = nextCell.getSNode();
+      if (snode == null) continue;
+      result.add(snode);
     }
-    return resultList;
+    return new ArrayList<>(result);
   }
 
   @NotNull

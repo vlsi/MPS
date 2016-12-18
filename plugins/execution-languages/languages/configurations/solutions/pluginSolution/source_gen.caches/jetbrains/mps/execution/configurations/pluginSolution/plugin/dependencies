@@ -90,7 +90,6 @@
     <classNode dependClassName="java.util.concurrent.CancellationException" />
     <classNode dependClassName="java.util.concurrent.ExecutionException" />
     <classNode dependClassName="java.util.concurrent.Future" />
-    <classNode dependClassName="jetbrains.mps.execution.api.configurations.BaseMpsBeforeRunTask" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
     <classNode dependClassName="jetbrains.mps.ide.make.DefaultMakeMessageHandler" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />

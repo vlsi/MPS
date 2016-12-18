@@ -12,6 +12,7 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_make = ID + "make";
   public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_analyze = ID + "analyze";
+  public static final String LABEL_ID_delete = ID + "delete";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
   public static final String LABEL_ID_scripts = ID + "scripts";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
@@ -49,6 +50,12 @@ public class CommonModuleActions_ActionGroup extends GeneratedActionGroup {
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddModuleToProject_Action");
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveModuleFromProject_Action");
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action");
+    {
+      LabelledAnchor action = new LabelledAnchor(CommonModuleActions_ActionGroup.LABEL_ID_delete);
+      ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+      manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.ide"));
+      CommonModuleActions_ActionGroup.this.addAction(action);
+    }
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action");
     CommonModuleActions_ActionGroup.this.addSeparator();
     CommonModuleActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SetModuleFolder_Action");

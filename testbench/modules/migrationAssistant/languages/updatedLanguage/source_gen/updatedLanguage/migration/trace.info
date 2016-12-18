@@ -120,8 +120,8 @@
       <unit id="297352798234583014" at="49,19,53,7" name="updatedLanguage.migration.TestMigration$3" />
       <unit id="297352798234583014" at="53,19,57,7" name="updatedLanguage.migration.TestMigration$4" />
       <unit id="297352798234583014" at="57,18,61,7" name="updatedLanguage.migration.TestMigration$5" />
-      <unit id="297352798234824301" at="66,25,71,15" name="updatedLanguage.migration.TestMigration$8" />
-      <unit id="297352798234583014" at="64,52,73,11" name="updatedLanguage.migration.TestMigration$7" />
+      <unit id="297352798234824301" at="66,25,71,15" name="updatedLanguage.migration.TestMigration$6$1$1" />
+      <unit id="297352798234583014" at="64,52,73,11" name="updatedLanguage.migration.TestMigration$6$1" />
       <unit id="297352798234583014" at="61,29,75,7" name="updatedLanguage.migration.TestMigration$6" />
       <unit id="297352798234498242" at="26,0,89,0" name="updatedLanguage.migration.TestMigration" />
     </file>

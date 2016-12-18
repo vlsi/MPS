@@ -377,8 +377,8 @@
       <scope id="3751911615136910609" at="58,0,89,0">
         <var name="change" id="3751911615136910623" />
       </scope>
-      <unit id="2717926124490472944" at="106,117,110,7" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$2" />
-      <unit id="2034046503361596816" at="94,64,102,7" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$1" />
+      <unit id="2717926124490472944" at="106,117,110,7" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$MyListener$2" />
+      <unit id="2034046503361596816" at="94,64,102,7" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$MyListener$1" />
       <unit id="5060092229902857476" at="89,0,114,0" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport$MyListener" />
       <unit id="3751911615136892572" at="36,0,115,0" name="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMapSupport" />
     </file>
@@ -1069,8 +1069,8 @@
         <var name="node" id="4653713283496926003" />
       </scope>
       <unit id="5463596285346260170" at="222,61,226,5" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$4" />
-      <unit id="2034046503361581187" at="257,117,261,11" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$6" />
-      <unit id="2105471615617493107" at="421,60,425,7" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
+      <unit id="2034046503361581187" at="257,117,261,11" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$5$1" />
+      <unit id="2105471615617493107" at="421,60,425,7" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyModelDisposeListener$1" />
       <unit id="4653713283496907218" at="99,61,106,5" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$1" />
       <unit id="9200516641177032594" at="375,0,383,0" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$MyFeatureForestMapListener" />
       <unit id="4653713283496948114" at="141,33,152,7" name="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter$2" />

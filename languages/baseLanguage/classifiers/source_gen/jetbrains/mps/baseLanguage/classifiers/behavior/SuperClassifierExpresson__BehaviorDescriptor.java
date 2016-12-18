@@ -33,7 +33,7 @@ public final class SuperClassifierExpresson__BehaviorDescriptor extends BaseBHDe
   }
 
   /*package*/ static SNode getClassifier_idhHOIkvz(@NotNull SNode __thisNode__) {
-    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
+    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), __thisNode__);
   }
 
   /*package*/ SuperClassifierExpresson__BehaviorDescriptor() {

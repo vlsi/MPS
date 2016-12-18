@@ -13,12 +13,12 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,9 +28,9 @@ public final class NodeSetupFunction__BehaviorDescriptor extends BaseBHDescripto
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<Boolean> usesParameterObject_id1653mnvAgq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq0").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObject_id1653mnvAgq0, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObject_id1653mnvAgq0, getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -38,12 +38,12 @@ public final class NodeSetupFunction__BehaviorDescriptor extends BaseBHDescripto
   /*package*/ static boolean usesParameterObject_id1653mnvAgq0(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
-  /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "5584396657084912703"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "5584396657084920413"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "5584396657084920670"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622665029"));
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cd43fL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf25dL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x4d7fc32c166cf35eL, "jetbrains.mps.lang.actions.structure.NodeSetupFunction_EnclosingNode"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x13744753c81f424aL, 0x9c1bcf8943bf4e86L, 0x10e761b3745L, "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model"));
     return result;
   }
 
@@ -63,6 +63,8 @@ public final class NodeSetupFunction__BehaviorDescriptor extends BaseBHDescripto
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 1:
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -77,8 +79,6 @@ public final class NodeSetupFunction__BehaviorDescriptor extends BaseBHDescripto
     switch (methodIndex) {
       case 0:
         return (T) ((Boolean) usesParameterObject_id1653mnvAgq0(concept));
-      case 1:
-        return (T) ((List<SNode>) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

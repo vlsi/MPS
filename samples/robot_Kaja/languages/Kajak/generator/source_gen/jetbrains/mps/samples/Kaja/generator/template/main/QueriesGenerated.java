@@ -130,7 +130,7 @@ public class QueriesGenerated {
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
         SNode script = SNodeOperations.getNodeAncestor(it, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, "jetbrains.mps.samples.Kaja.structure.Script"), false, false);
-        SNodeOperations.detachNode(it);
+        SNodeOperations.deleteNode(it);
         ListSequence.fromList(SLinkOperations.getChildren(script, MetaAdapterFactory.getContainmentLink(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2d523c5e4cc45746L, 0x2de971c785ed6f78L, "definitions"))).addElement(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0x49a08c51fe543ccL, 0xbd998b46d641d7f5L, 0x2de971c785ed6f79L, "jetbrains.mps.samples.Kaja.structure.RoutineDefinition")));
       }
     });

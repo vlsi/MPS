@@ -95,8 +95,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.ui.Icons" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationModelNode" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />

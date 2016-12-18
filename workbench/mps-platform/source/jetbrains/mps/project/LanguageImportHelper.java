@@ -27,12 +27,10 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.workbench.choose.ChooseByNameData;
 import jetbrains.mps.workbench.choose.LanguagesPresentation;
@@ -59,6 +57,7 @@ import java.util.Set;
  * <p/>
  * Configure the helper first ({@link #setOnCloseActivity(Runnable)}, {@link #setShortcut(ShortcutSet)}, then perform
  * actual selection and modification with {@link #addUsedLanguage(SModel)} or {@link #addExportedLanguage(DevKit)}
+ *
  * @author Artem Tikhomirov
  * @since 3.4
  */
@@ -75,6 +74,7 @@ public final class LanguageImportHelper {
 
   /**
    * Construct import helper with a custom interaction, typically non-ui, which is the default. Used for testing.
+   *
    * @param interaction Custom interaction object
    */
   public LanguageImportHelper(@NotNull MPSProject project, @NotNull Interaction interaction) {
@@ -87,10 +87,11 @@ public final class LanguageImportHelper {
    * a mechanism to perform an action only once dialog to pick a language closes.
    * <p/>
    * NOTE, this is configuration method and shall be invoked prior to {@link #addExportedLanguage(DevKit)} or {@link #addUsedLanguage(SModel)} calls
+   *
    * @param runnable code to execute once language to import has been picked or selection dialog has been closed
-   * @return <code>this</code> for convenience
+   * @return {@code this} for convenience
    */
-  @SuppressWarnings("unused") // in use from iadea plugin, MakeDirAModel.
+  @SuppressWarnings("unused") // in use from idea plugin, MakeDirAModel.
   public LanguageImportHelper setOnCloseActivity(@Nullable Runnable runnable) {
     myOnCloseActivity = runnable;
     return this;
@@ -101,7 +102,8 @@ public final class LanguageImportHelper {
    * to switch between global and package scope (e.g. to match that of invoking action).
    * <p/>
    * NOTE, this is configuration method and shall be invoked prior to {@link #addExportedLanguage(DevKit)} or {@link #addUsedLanguage(SModel)} calls
-   * @return <code>this</code> for convenience
+   *
+   * @return {@code this} for convenience
    */
   public LanguageImportHelper setShortcut(@Nullable ShortcutSet shortcut) {
     myShortcut = shortcut;
@@ -110,27 +112,25 @@ public final class LanguageImportHelper {
 
   /**
    * Use this method to add a language to set of languages exposed by the devkit.
+   *
    * @param devkit affected devkit, the one to add new export
    */
   public void addExportedLanguage(@NotNull final DevKit devkit) {
     chooseLanguage(new jetbrains.mps.util.Callback<SLanguage>() {
       @Override
       public void call(final SLanguage param) {
-        final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<Set<SLanguage>>() {
-          @Override
-          public Set<SLanguage> compute() {
-            Set<SLanguage> langs = getExtendedLanguages(param);
+        final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(() -> {
+          Set<SLanguage> langs = getExtendedLanguages(param);
 
-            final Collection<SLanguage> alreadyImported = new HashSet<SLanguage>();
-            for (Language language : devkit.getAllExportedLanguages()) {
-              alreadyImported.add(MetaAdapterByDeclaration.getLanguage(language));
-            }
-            langs.removeAll(alreadyImported);
-            return langs;
+          final Collection<SLanguage> alreadyImported = new HashSet<>();
+          for (SLanguage language : devkit.getAllExportedLanguageIds()) {
+            alreadyImported.add(language);
           }
+          langs.removeAll(alreadyImported);
+          return langs;
         });
 
-        final Set<SLanguage> toImport = new HashSet<SLanguage>();
+        final Set<SLanguage> toImport = new HashSet<>();
 
         if (!importCandidates.isEmpty()) {
           toImport.addAll(chooseModulesToImport(importCandidates));
@@ -156,7 +156,7 @@ public final class LanguageImportHelper {
           }
 
           // FIXME copied from SModelDescriptorStub#moduleRefForLanguage as there's no way to go backwards from newer concepts
-          private  SModuleReference moduleRefForLanguage(SLanguage lang) {
+          private SModuleReference moduleRefForLanguage(SLanguage lang) {
             String name = lang.getQualifiedName();
             SLanguageId id = MetaIdHelper.getLanguage(lang);
             ModuleId moduleId = ModuleId.regular(id.getIdValue());
@@ -170,26 +170,24 @@ public final class LanguageImportHelper {
 
   /**
    * Use this method to record new used language in a model.
+   *
    * @param model affected model, the one to get another language to use
    */
   public void addUsedLanguage(@NotNull final SModel model) {
     chooseLanguage(new jetbrains.mps.util.Callback<SLanguage>() {
       @Override
       public void call(final SLanguage param) {
-        final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(new Computable<Set<SLanguage>>() {
-          @Override
-          public Set<SLanguage> compute() {
-            Set<SLanguage> langs = getExtendedLanguages(param);
+        final Set<SLanguage> importCandidates = new ModelAccessHelper(myProject.getModelAccess()).runWriteAction(() -> {
+          Set<SLanguage> langs = getExtendedLanguages(param);
 
-            // XXX likely, all imported + all visible (i.e. those extended) shall be considered -
-            // there's no need to import otherwise visible language
-            final Set<SLanguage> alreadyImported = SModelOperations.getAllLanguageImports(model);
-            langs.removeAll(alreadyImported);
-            return langs;
-          }
+          // XXX likely, all imported + all visible (i.e. those extended) shall be considered -
+          // there's no need to import otherwise visible language
+          final Set<SLanguage> alreadyImported = SModelOperations.getAllLanguageImports(model);
+          langs.removeAll(alreadyImported);
+          return langs;
         });
 
-        final Set<SLanguage> toImport = new HashSet<SLanguage>();
+        final Set<SLanguage> toImport = new HashSet<>();
 
         if (!importCandidates.isEmpty()) {
           toImport.addAll(chooseModulesToImport(importCandidates));
@@ -201,22 +199,19 @@ public final class LanguageImportHelper {
       * */
         toImport.add(param);
 
-        myProject.getModelAccess().executeCommand(new Runnable() {
-          @Override
-          public void run() {
-            boolean reload = false;
-            final boolean reloadableModule = model.getModule() instanceof ReloadableModule;
-            Set<SLanguage> existingUsedLanguages = reloadableModule ? model.getModule().getUsedLanguages() : Collections.<SLanguage>emptySet();
-            for (SLanguage rtLanguage : toImport) {
-              if (!existingUsedLanguages.contains(rtLanguage)) {
-                // If model gets the new import, then its module would get new dependency
-                reload = true;
-              }
-              ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(rtLanguage);
+        myProject.getModelAccess().executeCommand(() -> {
+          boolean reload = false;
+          final boolean reloadableModule = model.getModule() instanceof ReloadableModule;
+          Set<SLanguage> existingUsedLanguages = reloadableModule ? model.getModule().getUsedLanguages() : Collections.<SLanguage>emptySet();
+          for (SLanguage rtLanguage : toImport) {
+            if (!existingUsedLanguages.contains(rtLanguage)) {
+              // If model gets the new import, then its module would get new dependency
+              reload = true;
             }
-            if (reloadableModule && reload) {
-              ((ReloadableModule) model.getModule()).reload();
-            }
+            ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(rtLanguage);
+          }
+          if (reloadableModule && reload) {
+            ((ReloadableModule) model.getModule()).reload();
           }
         });
       }
@@ -245,17 +240,14 @@ public final class LanguageImportHelper {
     final Reference<Collection<SLanguage>> projectScope = new Reference<>();
     final Reference<Collection<SLanguage>> globalScope = new Reference<>();
 
-    repo.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        ArrayList<SLanguage> projectLanguages = new ArrayList<SLanguage>(20);
-        for (SModule m : new ConditionalScope(myProject.getScope(), new ModuleInstanceCondition(Language.class), null).getModules()) {
-          assert m instanceof Language;
-          projectLanguages.add(MetaAdapterFactory.getLanguage(m.getModuleReference()));
-        }
-        projectScope.set(projectLanguages);
-        globalScope.set(LanguageRegistry.getInstance(repo).getAllLanguages());
+    repo.getModelAccess().runReadAction(() -> {
+      ArrayList<SLanguage> projectLanguages = new ArrayList<>(20);
+      for (SModule m : new ConditionalScope(myProject.getScope(), new ModuleInstanceCondition(Language.class), null).getModules()) {
+        assert m instanceof Language;
+        projectLanguages.add(MetaAdapterFactory.getLanguage(m.getModuleReference()));
       }
+      projectScope.set(projectLanguages);
+      globalScope.set(LanguageRegistry.getInstance(repo).getAllLanguages());
     });
 
     ChooseByNameData<SLanguage> gotoData = new ChooseByNameData<>(new LanguagesPresentation());
@@ -265,17 +257,35 @@ public final class LanguageImportHelper {
     // we used to allow multiple selection, but didn't handle it in any special way
     // (each selected language would trigger own extra dialog to import extended, which is odd)
     myInteraction.chooseLanguage(gotoData, new Callback() {
+      private SLanguage myLanguage;
+
+      /**
+       * Just save chosen element here.
+       * <br>
+       * Language will be added late in {@link #onClose()}.
+       * */
       @Override
       public void elementChosen(Object element) {
         if (element instanceof SLanguage) {
-          addLanguageAction.call((SLanguage) element);
+          myLanguage = (SLanguage) element;
         }
+      }
+
+      /**
+       * Clients expect {@code myOnCloseActivity.run()} will be executed regardless of selection (i.e. when user canceled a dialog).
+       * <br>
+       * This works because of methods call order contract in {@link com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback}:
+       * {@link Callback#elementChosen(Object)} called before {@link Callback#onClose()}
+       * <p/>
+       * For more information see <a href="https://youtrack.jetbrains.com/issue/IDEA-155319">IDEA-155319</a>
+       * */
+      @Override
+      public void onClose() {
+        if (myLanguage != null) {
+          addLanguageAction.call(myLanguage);
+        }
+
         if (myOnCloseActivity != null) {
-          // FIXME clients expect this code to run regardless of selection (i.e. when user canceled a dialog).
-          // Since there's no way to figure out popup cancelation now (https://youtrack.jetbrains.com/issue/IDEA-155319)
-          // For the time being, I decided to invoke it here instead of onClose(), which would be useless anyway provided MakeDirAModel use case
-          // (it relies on changes made in elementChosen() which won't be invoked yet at the time of onClose())
-          // We shall fix either MakeDirAModel or use a dialog (likely, one of CommonChoosers) here instead of popup, so that we've got selection state
           myOnCloseActivity.run();
         }
       }
@@ -290,6 +300,7 @@ public final class LanguageImportHelper {
    */
   public interface Interaction {
     void chooseLanguage(ChooseByNameData<SLanguage> model, Callback addLanguageAction);
+
     Set<SLanguage> chooseAdditionalLanguages(Set<SLanguage> candidates);
   }
 

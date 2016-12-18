@@ -1160,23 +1160,23 @@
         <var name="tr" id="357462540816291590" />
       </scope>
       <scope id="357462540816291478" at="311,0,415,0" />
-      <unit id="4634869729621025154" at="66,73,70,9" name="jetbrains.mps.make.unittest.Execute_Test$2" />
-      <unit id="4634869729621025186" at="147,73,151,9" name="jetbrains.mps.make.unittest.Execute_Test$4" />
-      <unit id="4634869729621025228" at="206,73,210,9" name="jetbrains.mps.make.unittest.Execute_Test$5" />
-      <unit id="4634869729621025286" at="231,74,235,9" name="jetbrains.mps.make.unittest.Execute_Test$5" />
-      <unit id="4634869729621025299" at="279,73,283,9" name="jetbrains.mps.make.unittest.Execute_Test$6" />
-      <unit id="4634869729621025333" at="368,73,372,9" name="jetbrains.mps.make.unittest.Execute_Test$7" />
-      <unit id="8057264969877303204" at="75,27,80,9" name="jetbrains.mps.make.unittest.Execute_Test$2" />
-      <unit id="1253487822935825160" at="110,27,115,9" name="jetbrains.mps.make.unittest.Execute_Test$3" />
-      <unit id="8057264969877325345" at="163,27,168,9" name="jetbrains.mps.make.unittest.Execute_Test$4" />
-      <unit id="7831273901269569138" at="240,27,245,9" name="jetbrains.mps.make.unittest.Execute_Test$5" />
-      <unit id="8057264969877331809" at="381,26,386,9" name="jetbrains.mps.make.unittest.Execute_Test$7" />
-      <unit id="6872280991287273649" at="426,22,432,9" name="jetbrains.mps.make.unittest.Execute_Test$8" />
-      <unit id="6872280991287192818" at="438,22,445,9" name="jetbrains.mps.make.unittest.Execute_Test$8" />
-      <unit id="5434802673308782366" at="326,105,335,9" name="jetbrains.mps.make.unittest.Execute_Test$7" />
-      <unit id="5434802673308782393" at="336,17,345,9" name="jetbrains.mps.make.unittest.Execute_Test$7" />
+      <unit id="4634869729621025154" at="66,73,70,9" name="jetbrains.mps.make.unittest.Execute_Test$1$1" />
+      <unit id="4634869729621025186" at="147,73,151,9" name="jetbrains.mps.make.unittest.Execute_Test$3$1" />
+      <unit id="4634869729621025228" at="206,73,210,9" name="jetbrains.mps.make.unittest.Execute_Test$4$1" />
+      <unit id="4634869729621025286" at="231,74,235,9" name="jetbrains.mps.make.unittest.Execute_Test$4$2" />
+      <unit id="4634869729621025299" at="279,73,283,9" name="jetbrains.mps.make.unittest.Execute_Test$5$1" />
+      <unit id="4634869729621025333" at="368,73,372,9" name="jetbrains.mps.make.unittest.Execute_Test$6$4" />
+      <unit id="8057264969877303204" at="75,27,80,9" name="jetbrains.mps.make.unittest.Execute_Test$1$2" />
+      <unit id="1253487822935825160" at="110,27,115,9" name="jetbrains.mps.make.unittest.Execute_Test$2$1" />
+      <unit id="8057264969877325345" at="163,27,168,9" name="jetbrains.mps.make.unittest.Execute_Test$3$2" />
+      <unit id="7831273901269569138" at="240,27,245,9" name="jetbrains.mps.make.unittest.Execute_Test$4$3" />
+      <unit id="8057264969877331809" at="381,26,386,9" name="jetbrains.mps.make.unittest.Execute_Test$6$5" />
+      <unit id="6872280991287273649" at="426,22,432,9" name="jetbrains.mps.make.unittest.Execute_Test$7$1" />
+      <unit id="6872280991287192818" at="438,22,445,9" name="jetbrains.mps.make.unittest.Execute_Test$7$2" />
+      <unit id="5434802673308782366" at="326,105,335,9" name="jetbrains.mps.make.unittest.Execute_Test$6$1" />
+      <unit id="5434802673308782393" at="336,17,345,9" name="jetbrains.mps.make.unittest.Execute_Test$6$2" />
       <unit id="1253487822935825064" at="107,25,118,5" name="jetbrains.mps.make.unittest.Execute_Test$2" />
-      <unit id="5434802673308782453" at="348,52,360,9" name="jetbrains.mps.make.unittest.Execute_Test$7" />
+      <unit id="5434802673308782453" at="348,52,360,9" name="jetbrains.mps.make.unittest.Execute_Test$6$3" />
       <unit id="3555997563935472017" at="276,25,293,5" name="jetbrains.mps.make.unittest.Execute_Test$5" />
       <unit id="5039072078349926872" at="59,25,83,5" name="jetbrains.mps.make.unittest.Execute_Test$1" />
       <unit id="6872280991287191748" at="421,25,448,5" name="jetbrains.mps.make.unittest.Execute_Test$7" />

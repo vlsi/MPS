@@ -2,15 +2,15 @@
 <model ref="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
-    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
+    <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -127,7 +127,7 @@
     <property role="3GE5qa" value="old.parameterized" />
     <property role="34LRSv" value="parameter" />
     <property role="EcuMT" value="1240322627579" />
-    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB5X4" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -150,14 +150,14 @@
       <property role="20kJfa" value="descriptionBlock" />
       <property role="IQ2ns" value="1812109616120819788" />
       <ref role="20lvS9" node="1$_U1xaW3xx" resolve="ParameterizedDescriptionBlock" />
-      <ref role="20ksaX" node="2c3oNEsfd2D" />
+      <ref role="20ksaX" node="2c3oNEsfd2D" resolve="descriptionFunction" />
     </node>
     <node concept="1TJgyj" id="1$_U1xaWR1f" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="executeBlock" />
       <property role="IQ2ns" value="1812109616120819791" />
       <ref role="20lvS9" node="1$_U1xaWL3H" resolve="ParameterizedExecuteBlock" />
-      <ref role="20ksaX" node="2c3oNEsfAwj" />
+      <ref role="20ksaX" node="2c3oNEsfAwj" resolve="executeFunction" />
     </node>
   </node>
   <node concept="PlHQZ" id="38RcvkhOs6o">

@@ -16,8 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Collections;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 
@@ -38,19 +38,10 @@ public class conceptFunctionParameters extends SubstituteMenuBase {
           return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10c63f4f3f3L, "jetbrains.mps.baseLanguage.structure.Closure")));
         }
       }).first();
-      if (parentFunction != null) {
-        return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(parentFunction)).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
-          }
-        }).toListSequence();
-      } else {
-        return ListSequence.fromList(ListSequence.fromList(new ArrayList<SNode>())).select(new ISelector<SNode, SAbstractConcept>() {
-          public SAbstractConcept select(SNode it) {
-            return SNodeOperations.asSConcept(it);
-          }
-        }).toListSequence();
+      if (parentFunction == null) {
+        return Collections.emptyList();
       }
+      return ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(parentFunction);
     }
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {

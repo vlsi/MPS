@@ -386,9 +386,9 @@
         <var name="rightAligned" id="2625933072718665279" />
         <var name="toolTipData" id="1657638272963062312" />
       </scope>
-      <unit id="5522183980949037036" at="63,53,68,5" name="jetbrains.mps.ide.tooltips.ToolTip$2" />
-      <unit id="1657638272963061113" at="69,49,74,5" name="jetbrains.mps.ide.tooltips.ToolTip$3" />
-      <unit id="5522183980949037014" at="56,53,62,5" name="jetbrains.mps.ide.tooltips.ToolTip$1" />
+      <unit id="5522183980949037036" at="63,53,68,5" name="jetbrains.mps.ide.tooltips.ToolTip$MyDialog$2" />
+      <unit id="1657638272963061113" at="69,49,74,5" name="jetbrains.mps.ide.tooltips.ToolTip$MyDialog$3" />
+      <unit id="5522183980949037014" at="56,53,62,5" name="jetbrains.mps.ide.tooltips.ToolTip$MyDialog$1" />
       <unit id="5522183980949036976" at="54,0,117,0" name="jetbrains.mps.ide.tooltips.ToolTip$MyDialog" />
       <unit id="5522183980949036968" at="26,0,118,0" name="jetbrains.mps.ide.tooltips.ToolTip" />
     </file>

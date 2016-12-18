@@ -146,8 +146,8 @@
         <var name="references" id="6036237525966325224" />
       </scope>
       <scope id="6036237525966325224" at="52,0,89,0" />
-      <unit id="6405552206795323524" at="75,274,79,15" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$3" />
-      <unit id="6036237525966325224" at="63,19,84,9" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$2" />
+      <unit id="6405552206795323524" at="75,274,79,15" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$1$1$1" />
+      <unit id="6036237525966325224" at="63,19,84,9" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$1$1" />
       <unit id="6036237525966325224" at="55,158,86,5" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints$1" />
       <unit id="6036237525966325224" at="33,0,95,0" name="jetbrains.mps.debugger.java.evaluation.constraints.EvaluatorsSuperMethodCall_Constraints" />
     </file>
@@ -211,9 +211,9 @@
         <var name="references" id="6146091894852365519" />
       </scope>
       <scope id="6146091894852365519" at="34,0,75,0" />
-      <unit id="6146091894852366842" at="52,227,56,13" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
-      <unit id="6146091894852365519" at="60,23,64,13" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$3" />
-      <unit id="6146091894852365519" at="45,19,70,9" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$2" />
+      <unit id="6146091894852366842" at="52,227,56,13" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1$1$1" />
+      <unit id="6146091894852365519" at="60,23,64,13" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1$1$2" />
+      <unit id="6146091894852365519" at="45,19,70,9" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1$1" />
       <unit id="6146091894852365519" at="37,171,72,5" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints$1" />
       <unit id="6146091894852365519" at="29,0,77,0" name="jetbrains.mps.debugger.java.evaluation.constraints.LowLevelVariableReference_Constraints" />
     </file>

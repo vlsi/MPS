@@ -21,7 +21,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
@@ -44,10 +43,11 @@ final class ChooserDialog<T> extends DialogWrapper {
     super(project);
     myProject = project;
     myData = data;
+    // I have no idea why we call addNotify() here
     getContentPane().addNotify();
     setModal(true);
 
-    myChooser = MpsPopupFactory.createPanelForPackage(myProject, data, hasExtraScope);
+    myChooser = MpsPopupFactory.createPanelForPackage(project, data, hasExtraScope);
     // Although it's odd to have invoke() in the cons, we shall invoke it prior to super.init() otherwise there's no panel in the dialog
     myChooser.invoke(new MultiElementsCallback() {
       @Override
@@ -64,7 +64,7 @@ final class ChooserDialog<T> extends DialogWrapper {
           ChooserDialog.this.close(OK_EXIT_CODE);
         }
       }
-    }, ModalityState.current(), multiSelection);
+    }, ModalityState.stateForComponent(getWindow()), multiSelection);
     Disposer.register(getDisposable(), myChooser);
     init();
   }
@@ -88,13 +88,9 @@ final class ChooserDialog<T> extends DialogWrapper {
     }
     List<T> result = new ArrayList<T>();
     for (Object item : mySelectedElements) {
-      T v;
-      if (myData instanceof BaseMPSChooseModel) {
-        v = ((BaseMPSChooseModel<T>) myData).getModelObject(item);
-      } else {
-        v = (T) item;
-      }
-      if (v != null) {
+      if (item != null) {
+        @SuppressWarnings("unchecked")
+        T v = (T) item;
         result.add(v);
       }
     }
@@ -113,6 +109,7 @@ final class ChooserDialog<T> extends DialogWrapper {
 
   @Override
   protected void dispose() {
+    // I have no idea why we call dispose() here
     getContentPane().removeNotify();
     super.dispose();
   }

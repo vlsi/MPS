@@ -2,8 +2,8 @@
 <model ref="r:18c202d7-badd-41dd-bd9e-9d42a045e4f4(jetbrains.mps.samples.Kaja.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1868,6 +1868,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJyo$">
     <property role="TrG5h" value="NegateAndAlter" />
+    <property role="3GE5qa" value="Logical" />
     <ref role="aqKnT" to="c2kz:2RDssu5V9Z1" resolve="LogicalExpression" />
     <node concept="yp4Wq" id="1wEcoXjJyo_" role="lGtFl">
       <property role="yp4Ub" value="ext_2_RTransform" />
@@ -2190,6 +2191,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJyr7">
     <property role="TrG5h" value="While_to_if" />
+    <property role="3GE5qa" value="command" />
     <ref role="aqKnT" to="c2kz:2RDssu5VeNw" resolve="While" />
     <node concept="yp4Wq" id="1wEcoXjJyr8" role="lGtFl">
       <property role="yp4Ub" value="ext_3_RTransform" />
@@ -2256,6 +2258,7 @@
     </node>
   </node>
   <node concept="IW6AY" id="1wEcoXjJyrC">
+    <property role="3GE5qa" value="Logical" />
     <ref role="aqKnT" to="c2kz:2RDssu5VgOT" resolve="Direction" />
     <node concept="1Qtc8_" id="1wEcoXjJyrD" role="IW6Ez">
       <node concept="3cWJ9i" id="1wEcoXjJyrE" role="1Qtc8$">
@@ -2290,6 +2293,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJyrW">
     <property role="TrG5h" value="IfElse_ext_1" />
+    <property role="3GE5qa" value="command" />
     <ref role="aqKnT" to="c2kz:2RDssu5V9YY" resolve="IfStatement" />
     <node concept="yp4Wq" id="1wEcoXjJyrX" role="lGtFl">
       <property role="yp4Ub" value="ext_1_RTransform" />
@@ -2389,6 +2393,7 @@
   </node>
   <node concept="3ICXOK" id="1wEcoXjJysK">
     <property role="TrG5h" value="IfElse" />
+    <property role="3GE5qa" value="command" />
     <ref role="aqKnT" to="c2kz:2RDssu5V9YY" resolve="IfStatement" />
     <node concept="yp4Wq" id="1wEcoXjJysL" role="lGtFl">
       <property role="yp4Ub" value="ext_3_RTransform" />
@@ -2477,6 +2482,7 @@
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJytt">
+    <property role="3GE5qa" value="Logical" />
     <ref role="aqKnT" to="c2kz:2RDssu5VwCm" resolve="EmptyLine" />
     <node concept="3N5dw7" id="1wEcoXjJytv" role="3ft7WO">
       <ref role="3EoQqy" to="c2kz:2RDssu5V9YY" resolve="IfStatement" />

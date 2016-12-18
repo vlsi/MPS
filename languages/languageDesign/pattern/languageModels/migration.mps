@@ -199,7 +199,7 @@
                                   <ref role="3cqZAo" node="24Vo$dbdcDa" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="24Vo$dbdbkJ" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                                  <ref role="3Tt5mk" to="tp3t:gyDMOui" resolve="patternNode" />
                                 </node>
                               </node>
                             </node>
@@ -209,7 +209,7 @@
                                   <ref role="3cqZAo" node="24Vo$dbdcDa" resolve="it" />
                                 </node>
                                 <node concept="3TrEf2" id="24Vo$dbdaH4" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                                  <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                                 </node>
                               </node>
                               <node concept="10Nm6u" id="24Vo$dbdaV5" role="3uHU7w" />
@@ -234,7 +234,7 @@
                               <ref role="3cqZAo" node="24Vo$dbddSk" resolve="pe" />
                             </node>
                             <node concept="3TrEf2" id="6wyfy1abUex" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                              <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                             </node>
                           </node>
                           <node concept="zfrQC" id="6wyfy1abUs4" role="2OqNvi">
@@ -246,7 +246,7 @@
                         <node concept="37vLTI" id="6wyfy1abVPM" role="3clFbG">
                           <node concept="2OqwBi" id="6wyfy1abVSZ" role="37vLTx">
                             <node concept="3TrEf2" id="6wyfy1abW5w" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp3t:gyDMOui" />
+                              <ref role="3Tt5mk" to="tp3t:gyDMOui" resolve="patternNode" />
                             </node>
                             <node concept="37vLTw" id="2lnc$wDYJWo" role="2Oq$k0">
                               <ref role="3cqZAo" node="24Vo$dbddSk" resolve="pe" />
@@ -258,11 +258,11 @@
                                 <ref role="3cqZAo" node="24Vo$dbddSk" resolve="pe" />
                               </node>
                               <node concept="3TrEf2" id="6wyfy1abVyX" role="2OqNvi">
-                                <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" />
+                                <ref role="3Tt5mk" to="tp3t:7Qbh0xggLjd" resolve="pattern" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6wyfy1abVJK" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp3r:hqc44pq" />
+                              <ref role="3Tt5mk" to="tp3r:hqc44pq" resolve="quotedNode" />
                             </node>
                           </node>
                         </node>

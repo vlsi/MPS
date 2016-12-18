@@ -54,10 +54,12 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel.Import;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel.ValidImportCondition;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.NotCondition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -65,6 +67,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import org.jetbrains.mps.openapi.ui.persistence.Tab;
 
@@ -481,6 +484,13 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     protected abstract UsedLangsTableModel getUsedLangsTableModel();
 
+    protected TableCellRenderer getTableCellRender() {
+      SRepository contextRepo = myProject.getRepository();
+      LanguageTableCellRenderer tcr = new LanguageTableCellRenderer(contextRepo);
+      tcr.addCellState(NotCondition.negate(new ValidImportCondition(contextRepo)), DependencyCellState.NOT_AVAILABLE);
+      return tcr;
+    }
+
     @Override
     public void init() {
       JPanel usedLangsTab = new JPanel();
@@ -498,10 +508,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
       myUsedLangsTable = usedLangsTable;
 
       final TableCellRenderer tableCellRender = getTableCellRender();
-      if (tableCellRender instanceof LanguageTableCellRenderer) {
-        ((LanguageTableCellRenderer) tableCellRender).addCellState(anImport -> (anImport.myLanguage == null && anImport.myDevKit == null)
-            || (anImport.myLanguage != null && !anImport.myLanguage.isValid()), DependencyCellState.NOT_AVAILABLE);
-      }
       usedLangsTable.setDefaultRenderer(UsedLangsTableModel.Import.class, tableCellRender);
 
       ToolbarDecorator decorator = createToolbar(usedLangsTable);
@@ -521,11 +527,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
     protected ToolbarDecorator createToolbar(JBTable usedLangsTable) {
       return ToolbarDecorator.createDecorator(usedLangsTable);
-    }
-
-
-    protected TableCellRenderer getTableCellRender() {
-      return new LanguageTableCellRenderer(myProject.getRepository());
     }
 
     @Override

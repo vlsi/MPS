@@ -9,7 +9,6 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdEncoder" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdInfoReadHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
@@ -39,7 +38,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.SLanguageId" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdEncoder" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.IdInfoReadHelper" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v9.ImportsHelper" />

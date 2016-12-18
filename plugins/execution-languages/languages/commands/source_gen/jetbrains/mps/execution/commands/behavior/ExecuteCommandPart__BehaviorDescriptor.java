@@ -78,7 +78,7 @@ public final class ExecuteCommandPart__BehaviorDescriptor extends BaseBHDescript
     return createJoinType_qal9w4_a0a5();
   }
   /*package*/ static String getSuffix_id3gpm$NHlLhJ(@NotNull SNode __thisNode__) {
-    return "_" + IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass").getDeclarationNode()), __thisNode__.getNodeId().toString());
+    return "_" + IGeneratedToClass__BehaviorDescriptor.getValidClassName_id3gpm$NHlLi1.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x73c1a49099fa4d0dL, 0x8292b8985697c74bL, 0xd244b712f9dcdabL, "jetbrains.mps.execution.common.structure.IGeneratedToClass")), __thisNode__.getNodeId().toString());
   }
 
   /*package*/ ExecuteCommandPart__BehaviorDescriptor() {

@@ -1112,16 +1112,16 @@
       </scope>
       <unit id="4515621863031846283" at="290,0,293,0" name="jetbrains.mps.vcs.diff.merge.MergeSession$ChangesInvalidateHandler" />
       <unit id="5550698181361791438" at="123,93,127,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$1" />
-      <unit id="5550698181361791558" at="132,91,136,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$3" />
-      <unit id="5550698181361791578" at="137,61,141,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$3" />
+      <unit id="5550698181361791558" at="132,91,136,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$2$1" />
+      <unit id="5550698181361791578" at="137,61,141,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$2$2" />
       <unit id="4124845871897265653" at="162,98,166,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$3" />
       <unit id="4743311727820084717" at="180,45,184,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$4" />
       <unit id="4743311727820084733" at="184,20,188,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$5" />
-      <unit id="4515621863031846379" at="311,102,315,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$1" />
-      <unit id="4415110399252644478" at="329,66,333,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$2" />
-      <unit id="4415110399252659751" at="352,76,356,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$3" />
-      <unit id="4415110399252656876" at="368,73,372,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$4" />
-      <unit id="4515621863031846394" at="395,101,399,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$5" />
+      <unit id="4515621863031846379" at="311,102,315,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener$1" />
+      <unit id="4415110399252644478" at="329,66,333,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener$2" />
+      <unit id="4415110399252659751" at="352,76,356,9" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener$3" />
+      <unit id="4415110399252656876" at="368,73,372,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener$4" />
+      <unit id="4515621863031846394" at="395,101,399,7" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener$5" />
       <unit id="3835411362155355717" at="189,65,197,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$6" />
       <unit id="5550698181361791546" at="130,183,147,5" name="jetbrains.mps.vcs.diff.merge.MergeSession$2" />
       <unit id="4515621863031787883" at="293,0,408,0" name="jetbrains.mps.vcs.diff.merge.MergeSession$MyResultModelListener" />

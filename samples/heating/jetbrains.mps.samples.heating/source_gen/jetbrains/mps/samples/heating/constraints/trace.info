@@ -126,7 +126,7 @@
         <var name="properties" id="5726447348463760016" />
       </scope>
       <scope id="5726447348463760016" at="25,0,45,0" />
-      <unit id="5726447348463760812" at="36,519,40,9" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$2" />
+      <unit id="5726447348463760812" at="36,519,40,9" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$1$1" />
       <unit id="5726447348463760016" at="28,148,42,5" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints$1" />
       <unit id="5726447348463760016" at="20,0,49,0" name="jetbrains.mps.samples.heating.constraints.Slot_Constraints" />
     </file>
@@ -195,9 +195,9 @@
         <var name="references" id="935069066463107114" />
       </scope>
       <scope id="935069066463107114" at="36,0,77,0" />
-      <unit id="935069066463245362" at="62,454,66,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$4" />
-      <unit id="935069066463194503" at="62,23,70,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$3" />
-      <unit id="935069066463107114" at="47,19,72,9" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$2" />
+      <unit id="935069066463245362" at="62,454,66,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1$1$1$1" />
+      <unit id="935069066463194503" at="62,23,70,13" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1$1$1" />
+      <unit id="935069066463107114" at="47,19,72,9" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1$1" />
       <unit id="935069066463107114" at="39,152,74,5" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints$1" />
       <unit id="935069066463107114" at="31,0,82,0" name="jetbrains.mps.samples.heating.constraints.DailyPlanReference_Constraints" />
     </file>

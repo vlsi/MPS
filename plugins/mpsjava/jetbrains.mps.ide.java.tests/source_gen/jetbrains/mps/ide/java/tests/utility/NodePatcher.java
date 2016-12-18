@@ -114,7 +114,7 @@ public class NodePatcher {
       if (SConceptOperations.isExactly(SNodeOperations.asSConcept(SNodeOperations.getConcept(attr)), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x53f7c33f069862f2L, "jetbrains.mps.baseLanguage.structure.JavaImports"))) {
         continue;
       }
-      SNodeOperations.detachNode(attr);
+      SNodeOperations.deleteNode(attr);
       SNodeOperations.deleteNode(attr);
     }
   }

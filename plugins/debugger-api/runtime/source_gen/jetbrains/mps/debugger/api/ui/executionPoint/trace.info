@@ -24,7 +24,7 @@
       <node id="1482618131069247245" at="48,72,49,20" concept="1" />
       <node id="1482618131069247252" at="52,54,53,100" concept="6" />
       <node id="3256127538400651826" at="55,73,56,89" concept="6" />
-      <node id="1482618131069247262" at="59,54,60,66" concept="5" />
+      <node id="1482618131069247262" at="59,63,60,66" concept="5" />
       <node id="1482618131069247275" at="61,29,62,52" concept="5" />
       <node id="7048882195103614261" at="62,52,63,103" concept="5" />
       <node id="1482618131069247281" at="63,103,64,105" concept="6" />
@@ -53,7 +53,7 @@
       <node id="1482618131069247119" at="79,0,84,0" concept="4" trace="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
       <node id="1482618131069247210" at="39,0,45,0" concept="4" trace="initComponent#()V" />
       <node id="1482618131069247229" at="45,0,51,0" concept="4" trace="disposeComponent#()V" />
-      <node id="1482618131069247259" at="58,0,68,0" concept="4" trace="getNode#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1482618131069247259" at="58,0,68,0" concept="4" trace="getNode#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <scope id="1482618131069247195" at="29,31,29,31" />
       <scope id="1482618131069247200" at="32,31,32,31" />
       <scope id="1482618131069247094" at="69,45,69,45" />
@@ -109,7 +109,7 @@
       </scope>
       <scope id="1482618131069247210" at="39,0,45,0" />
       <scope id="1482618131069247229" at="45,0,51,0" />
-      <scope id="1482618131069247261" at="59,54,66,16">
+      <scope id="1482618131069247261" at="59,63,66,16">
         <var name="stackFrame" id="1482618131069247263" />
       </scope>
       <scope id="1482618131069247259" at="58,0,68,0">

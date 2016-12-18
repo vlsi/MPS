@@ -71,7 +71,7 @@
             <node concept="2OqwBi" id="hI08bGI" role="2Oq$k0">
               <node concept="13iPFW" id="hr1JeHI" role="2Oq$k0" />
               <node concept="3TrEf2" id="hr1Jfpv" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpo2:hr1xS$3" />
+                <ref role="3Tt5mk" to="tpo2:hr1xS$3" resolve="stateMachine" />
               </node>
             </node>
             <node concept="3TrcHB" id="hr1Jghd" role="2OqNvi">

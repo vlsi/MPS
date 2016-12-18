@@ -95,10 +95,13 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
@@ -133,8 +136,10 @@
           <node concept="3cpWs6" id="5zzawu2JLD3" role="3cqZAp">
             <node concept="2OqwBi" id="1hDKT6wB61M" role="3cqZAk">
               <node concept="1PxgMI" id="1hDKT6wB61N" role="2Oq$k0">
-                <ref role="1m5ApE" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
                 <node concept="G0znd" id="6mxDMAOl6_h" role="1m5AlR" />
+                <node concept="chp4Y" id="714IaVdH06y" role="3oSUPX">
+                  <ref role="cht4Q" to="tp5x:5zzawu2JF6W" resolve="PrimType" />
+                </node>
               </node>
               <node concept="2qgKlT" id="1hDKT6wB61P" role="2OqNvi">
                 <ref role="37wK5l" to="5myg:1hDKT6wB3pH" resolve="substituteWith" />
@@ -143,7 +148,7 @@
                     <ref role="1YBMHb" node="5zzawu2JKvb" resolve="substituteAnnotation" />
                   </node>
                   <node concept="3TrEf2" id="1hDKT6wB61S" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp5x:5zzawu2JF6U" />
+                    <ref role="3Tt5mk" to="tp5x:5zzawu2JF6U" resolve="substitute" />
                   </node>
                 </node>
               </node>
@@ -156,7 +161,7 @@
               <ref role="1YBMHb" node="5zzawu2JKvb" resolve="substituteAnnotation" />
             </node>
             <node concept="3TrEf2" id="5zzawu2JKF8" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp5x:5zzawu2JF74" />
+              <ref role="3Tt5mk" to="tp5x:5zzawu2JF74" resolve="condition" />
             </node>
           </node>
           <node concept="2qgKlT" id="5zzawu2JLD0" role="2OqNvi">

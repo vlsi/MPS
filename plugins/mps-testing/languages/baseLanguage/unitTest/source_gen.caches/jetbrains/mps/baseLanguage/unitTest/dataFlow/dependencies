@@ -14,7 +14,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertInNotNull_DataFlow" file="AssertInNotNull_DataFlow.java">
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertIsNotNull_DataFlow" file="AssertIsNotNull_DataFlow.java">
     <classNode dependClassName="jetbrains.mps.lang.dataFlow.DataFlowBuilderContext" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -55,7 +55,7 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertEquals_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertFalse_DataFlow" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertInNotNull_DataFlow" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertIsNotNull_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertIsNull_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertSame_DataFlow" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.dataFlow.AssertThrows_DataFlow" />

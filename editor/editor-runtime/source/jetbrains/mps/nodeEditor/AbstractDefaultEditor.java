@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind;
-import jetbrains.mps.nodeEditor.attribute.AttributeKind.Node;
 import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -28,8 +27,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.openapi.editor.update.UpdateSession;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.NotNull;
@@ -48,7 +50,7 @@ import java.util.Deque;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 
-public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
+public abstract class AbstractDefaultEditor extends DefaultNodeEditor implements EditorBuilderEnvironment {
   private static final String NAME_NAME = "name";
   private static final int NAME_PRIORITY = 10000;
   private static final String IDENTIFIER_NAME = "identifier";
@@ -84,6 +86,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     SProperty nameProperty = getNameProperty();
     EditorCell_Collection mainCellCollection = pushCollection();
     mainCellCollection.setBig(true);
+    mainCellCollection.setCellContext(getCellFactory().getCellContext());
     addLabel(camelToLabel(myConcept.getName()));
     addStyle(StyleAttributes.TEXT_BACKGROUND_COLOR, FIRST_LABEL_BACKGROUND_COLOR);
     if (nameProperty != null) {
@@ -179,12 +182,12 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     addProperties();
     addLabel("");
     addNewLine();
-    myEditorContext.getCellFactory().pushCellContext();
-    myEditorContext.getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
+    getCellFactory().pushCellContext();
+    getCellFactory().removeCellContextHints(EditorCellFactoryImpl.BASE_REFLECTIVE_EDITOR_HINT);
     try {
       addChildren();
     } finally {
-      myEditorContext.getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
     }
     addAttributedEntity();
     popCollection();
@@ -236,19 +239,18 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   private void addAttributedEntity() {
     if (AttributeOperations.isNodeAttribute(mySNode)) {
-      addAttributedCell("attributed node:", Node.class);
+      addAttributedCell("attributed node:", AttributeKind.NODE);
     } else if (AttributeOperations.isPropertyAttribute(mySNode)) {
-      addAttributedCell("attributed property:", AttributeKind.Property.class);
+      addAttributedCell("attributed property:", AttributeKind.PROPERTY);
     } else if (AttributeOperations.isLinkAttribute(mySNode)) {
-      addAttributedCell("attributed reference:", AttributeKind.Reference.class);
+      addAttributedCell("attributed reference:", AttributeKind.REFERENCE);
     }
   }
 
-  private void addAttributedCell(String label, Class attributeKind) {
+  private void addAttributedCell(String label, AttributeKind attributeKind) {
     addLabel(label);
     addNewLine();
-    EditorManager manager = EditorManager.getInstanceFromContext(myEditorContext);
-    EditorCell editorCell = manager.getCurrentAttributedCellWithRole(attributeKind, mySNode);
+    EditorCell editorCell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().getAttributedCell(attributeKind, mySNode);
     addCell(editorCell);
     addNewLine();
   }
@@ -271,7 +273,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
   protected void addLabel(String label, boolean editable) {
     EditorCell_Collection cellCollection = collectionStack.peek();
-    EditorCell_Constant childLabel = new EditorCell_Constant(myEditorContext, mySNode, label, editable);
+    EditorCell_Constant childLabel = new EditorCell_Constant(getEditorContext(), mySNode, label, editable);
     childLabel.setCellId("constant_" + currentConstantIdNumber);
     cellCollection.addEditorCell(childLabel);
     currentConstantIdNumber++;
@@ -343,7 +345,7 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
 
 
   private EditorCell_Collection pushCollection() {
-    EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(myEditorContext, mySNode);
+    EditorCell_Collection newCollection = EditorCell_Collection.createIndent2(getEditorContext(), mySNode);
     collectionStack.push(newCollection);
     return newCollection;
   }
@@ -397,6 +399,10 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return concept.isValid() ? new DefaultEditor(concept) : new ReadOnlyDefaultEditor(concept);
   }
 
+  /**
+   * @deprecated since MPS 3.5 use {{@link #getNode()}
+   */
+  @Deprecated
   protected SNode getSNode() {
     return mySNode;
   }
@@ -405,7 +411,22 @@ public abstract class AbstractDefaultEditor extends DefaultNodeEditor {
     return myConcept;
   }
 
-  protected EditorContext getEditorContext() {
+  public EditorContext getEditorContext() {
     return myEditorContext;
+  }
+
+  @Override
+  public SNode getNode() {
+    return mySNode;
+  }
+
+  @Override
+  public EditorCellFactory getCellFactory() {
+    return getUpdateSession().getCellFactory();
+  }
+
+  @Override
+  public UpdateSession getUpdateSession() {
+    return getEditorContext().getEditorComponent().getUpdater().getCurrentUpdateSession();
   }
 }

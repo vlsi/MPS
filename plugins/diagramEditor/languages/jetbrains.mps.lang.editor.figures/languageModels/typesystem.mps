@@ -188,7 +188,7 @@
                 </node>
               </node>
               <node concept="3TrEf2" id="7P3RaqS9DsV" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+                <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
               </node>
             </node>
             <node concept="1mIQ4w" id="7P3RaqS9DsW" role="2OqNvi">
@@ -342,7 +342,7 @@
                     <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3Tsc0h" id="iZqVFYvHCI" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:g91_B6F" />
+                    <ref role="3TtcxE" to="tpee:g91_B6F" resolve="parameter" />
                   </node>
                 </node>
                 <node concept="1uHKPH" id="7XqW7v9JcMy" role="2OqNvi" />
@@ -363,7 +363,7 @@
                     <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYvGPg" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="7XqW7v9J73d" role="3uHU7w" />
@@ -379,7 +379,7 @@
                     <ref role="3cqZAo" node="7XqW7v9J6bs" resolve="classifierType" />
                   </node>
                   <node concept="3Tsc0h" id="iZqVFYvHeE" role="2OqNvi">
-                    <ref role="3TtcxE" to="tpee:g91_B6F" />
+                    <ref role="3TtcxE" to="tpee:g91_B6F" resolve="parameter" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="7XqW7v9J73s" role="2OqNvi" />
@@ -413,7 +413,7 @@
                     <ref role="3cqZAo" node="iZqVFYrHYG" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYs55S" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                   </node>
                 </node>
                 <node concept="10Nm6u" id="iZqVFYs55T" role="3uHU7w" />
@@ -426,7 +426,7 @@
                     <ref role="3cqZAo" node="iZqVFYrHYG" resolve="classifierType" />
                   </node>
                   <node concept="3TrEf2" id="iZqVFYs55H" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpee:g7uigIF" />
+                    <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="iZqVFYs55I" role="2OqNvi">

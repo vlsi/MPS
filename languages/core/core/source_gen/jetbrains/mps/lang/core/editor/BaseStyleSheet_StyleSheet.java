@@ -6,20 +6,30 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.AbstractStyleClass;
+import jetbrains.mps.lang.core.editor.BaseKeyPack_KeyPack.LINE_COMMENT_StyleKey;
 
 public class BaseStyleSheet_StyleSheet {
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_Comment(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = StyleRegistry.getInstance().getStyle("LINE_COMMENT");
-      if (styleToPut == null) {
-        styleToPut = new StyleImpl();
-      }
-      style.putAll(styleToPut, 1);
-    }
+    new BaseStyleSheet_StyleSheet.CommentStyleClass(editorContext, node).apply(style, editorCell);
   }
 
+  public static class CommentStyleClass extends AbstractStyleClass {
+    public CommentStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new LINE_COMMENT_StyleKey(1).apply(style);
+    }
+
+  }
 }

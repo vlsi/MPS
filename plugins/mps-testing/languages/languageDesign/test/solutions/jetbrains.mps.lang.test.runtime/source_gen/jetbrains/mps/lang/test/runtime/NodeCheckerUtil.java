@@ -6,8 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 public class NodeCheckerUtil {
 
@@ -20,22 +19,11 @@ public class NodeCheckerUtil {
     Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
   }
 
-  public static SNode getRuleNodeFromReporter(IErrorReporter reporter) {
-    if (reporter.getRuleNode() == null) {
+  public static SNode getRuleNodeFromReporter(IErrorReporter reporter, SRepository contextRepository) {
+    if (reporter.getRuleNode() == null || contextRepository == null) {
       return null;
     }
-    return reporter.getRuleNode().resolve(MPSModuleRepository.getInstance());
-  }
-
-  /**
-   * 
-   * @deprecated use {@link jetbrains.mps.lang.test.runtime.NodeCheckerUtil#checkNodeForErrorMessages(SNode, boolean, boolean, boolean) }
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings) {
-    Runnable checkErrorsAction = new CheckErrorMessagesAction(node, allowWarnings, allowErrors);
-    checkErrorsAction.run();
+    return reporter.getRuleNode().resolve(contextRepository);
   }
 
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings, boolean includeSelf) {

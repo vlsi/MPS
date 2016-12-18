@@ -17,7 +17,7 @@
       <node id="1280144168199457725" at="25,42,26,165" concept="6" />
       <node id="1280144168199457725" at="30,90,31,131" concept="3" />
       <node id="1280144168199457725" at="34,44,35,20" concept="4" />
-      <node id="1514755338276131170" at="42,142,43,548" concept="4" />
+      <node id="1514755338276131170" at="42,142,43,527" concept="4" />
       <node id="1280144168199457725" at="46,63,47,58" concept="4" />
       <node id="1280144168199457725" at="51,7,52,22" concept="4" />
       <node id="1280144168199457725" at="54,0,55,0" concept="5" trace="breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a2" />
@@ -31,7 +31,7 @@
       <node id="1280144168199457725" at="29,0,54,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="1280144168199457725" at="25,42,26,165" />
       <scope id="1280144168199457725" at="34,44,35,20" />
-      <scope id="1280144168199457730" at="42,142,43,548" />
+      <scope id="1280144168199457730" at="42,142,43,527" />
       <scope id="1280144168199457725" at="46,63,47,58" />
       <scope id="1280144168199457725" at="25,0,28,0" />
       <scope id="1280144168199457725" at="33,0,37,0" />
@@ -46,7 +46,7 @@
         <var name="references" id="1280144168199457725" />
       </scope>
       <scope id="1280144168199457725" at="29,0,54,0" />
-      <unit id="1280144168199457725" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$2" />
+      <unit id="1280144168199457725" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1$1" />
       <unit id="1280144168199457725" at="32,153,51,5" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints$1" />
       <unit id="1280144168199457725" at="24,0,56,0" name="jetbrains.mps.testbench.suite.constraints.JUnit3TestCaseRef_Constraints" />
     </file>
@@ -85,7 +85,7 @@
         <var name="references" id="1280144168199519457" />
       </scope>
       <scope id="1280144168199519457" at="27,0,52,0" />
-      <unit id="1280144168199519457" at="38,19,47,9" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$2" />
+      <unit id="1280144168199519457" at="38,19,47,9" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1$1" />
       <unit id="1280144168199519457" at="30,156,49,5" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints$1" />
       <unit id="1280144168199519457" at="22,0,54,0" name="jetbrains.mps.testbench.suite.constraints.TestCaseRef_Constraints" />
     </file>
@@ -126,7 +126,7 @@
       <node id="4504141816188599490" at="25,42,26,165" concept="6" />
       <node id="4504141816188599490" at="30,90,31,131" concept="3" />
       <node id="4504141816188599490" at="34,44,35,20" concept="4" />
-      <node id="1514755338276152681" at="42,142,43,548" concept="4" />
+      <node id="1514755338276152681" at="42,142,43,527" concept="4" />
       <node id="4504141816188599490" at="46,63,47,58" concept="4" />
       <node id="4504141816188599490" at="51,7,52,22" concept="4" />
       <node id="4504141816188599490" at="54,0,55,0" concept="5" trace="breakingNode_qd3c0x_a0a1a0a0a1a0b0a1a2" />
@@ -140,7 +140,7 @@
       <node id="4504141816188599490" at="29,0,54,0" concept="2" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="4504141816188599490" at="25,42,26,165" />
       <scope id="4504141816188599490" at="34,44,35,20" />
-      <scope id="4504141816188599493" at="42,142,43,548" />
+      <scope id="4504141816188599493" at="42,142,43,527" />
       <scope id="4504141816188599490" at="46,63,47,58" />
       <scope id="4504141816188599490" at="25,0,28,0" />
       <scope id="4504141816188599490" at="33,0,37,0" />
@@ -155,7 +155,7 @@
         <var name="references" id="4504141816188599490" />
       </scope>
       <scope id="4504141816188599490" at="29,0,54,0" />
-      <unit id="4504141816188599490" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$2" />
+      <unit id="4504141816188599490" at="40,19,49,9" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1$1" />
       <unit id="4504141816188599490" at="32,153,51,5" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints$1" />
       <unit id="4504141816188599490" at="24,0,56,0" name="jetbrains.mps.testbench.suite.constraints.JUnit4TestCaseRef_Constraints" />
     </file>

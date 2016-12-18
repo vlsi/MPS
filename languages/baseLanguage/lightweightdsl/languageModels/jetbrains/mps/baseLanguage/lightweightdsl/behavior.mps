@@ -2,7 +2,7 @@
 <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
@@ -227,8 +227,8 @@
       </concept>
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -251,7 +251,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
@@ -906,8 +905,10 @@
             <node concept="3cpWs6" id="2nUiI4k7wfb" role="3cqZAp">
               <node concept="2OqwBi" id="2nUiI4k7wlS" role="3cqZAk">
                 <node concept="1PxgMI" id="2nUiI4k7wie" role="2Oq$k0">
-                  <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                   <node concept="13iPFW" id="2nUiI4k7wg7" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdH06T" role="3oSUPX">
+                    <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                  </node>
                 </node>
                 <node concept="3TrcHB" id="2nUiI4k7wvg" role="2OqNvi">
                   <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
@@ -1071,9 +1072,11 @@
               </node>
               <node concept="2OqwBi" id="2h59CdJpog1" role="3K4E3e">
                 <node concept="1PxgMI" id="2h59CdJpo9m" role="2Oq$k0">
-                  <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                   <node concept="BsUDl" id="2h59CdJp_Wm" role="1m5AlR">
                     <ref role="37wK5l" node="3m06Jgso0l8" resolve="getReturnType" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH06R" role="3oSUPX">
+                    <ref role="cht4Q" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="2h59CdJpoCj" role="2OqNvi">
@@ -2189,12 +2192,14 @@
                   <ref role="ehGHo" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                 </node>
                 <node concept="1PxgMI" id="3yKhys4JTKN" role="33vP2m">
-                  <ref role="1m5ApE" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                   <node concept="2OqwBi" id="3yKhys4JTKO" role="1m5AlR">
                     <node concept="13iPFW" id="3yKhys4JTKP" role="2Oq$k0" />
                     <node concept="3TrEf2" id="3yKhys4JTKQ" role="2OqNvi">
                       <ref role="3Tt5mk" to="tpee:fzclF7X" resolve="returnType" />
                     </node>
+                  </node>
+                  <node concept="chp4Y" id="714IaVdH06M" role="3oSUPX">
+                    <ref role="cht4Q" to="oubp:3geGFOI0X5F" resolve="DependentTypeInstance" />
                   </node>
                 </node>
               </node>
@@ -2226,7 +2231,7 @@
                   <node concept="37vLTw" id="1DzJCFIu_Ix" role="2Oq$k0">
                     <ref role="3cqZAo" node="1DzJCFIu_4H" resolve="myType" />
                   </node>
-                  <node concept="3NT_Vc" id="1DzJCFIuA6x" role="2OqNvi" />
+                  <node concept="2yIwOk" id="2eXSyKpuE0R" role="2OqNvi" />
                 </node>
                 <node concept="3O6GUB" id="1DzJCFIuAxj" role="2OqNvi">
                   <node concept="chp4Y" id="1DzJCFIuAyW" role="3QVz_e">
@@ -2659,12 +2664,14 @@
                     </node>
                     <node concept="2OqwBi" id="2h59CdJpd7J" role="3K4E3e">
                       <node concept="1PxgMI" id="2h59CdJpcZl" role="2Oq$k0">
-                        <ref role="1m5ApE" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                         <node concept="2OqwBi" id="2h59CdJpcux" role="1m5AlR">
                           <node concept="13iPFW" id="2h59CdJpclW" role="2Oq$k0" />
                           <node concept="3TrEf2" id="2h59CdJpcNa" role="2OqNvi">
                             <ref role="3Tt5mk" to="oubp:3geGFOI0X5A" resolve="type" />
                           </node>
+                        </node>
+                        <node concept="chp4Y" id="714IaVdH06P" role="3oSUPX">
+                          <ref role="cht4Q" to="oubp:3geGFOI0X5s" resolve="DependentTypeDescriptor" />
                         </node>
                       </node>
                       <node concept="2qgKlT" id="2h59CdJpdlP" role="2OqNvi">

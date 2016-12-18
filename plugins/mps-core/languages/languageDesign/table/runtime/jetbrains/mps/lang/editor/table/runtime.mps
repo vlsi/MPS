@@ -2,11 +2,11 @@
 <model ref="r:b60215f1-3d3e-41cc-8321-723ef8eb59dd(jetbrains.mps.lang.editor.table.runtime)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="7a0s" ref="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" />
@@ -271,6 +271,10 @@
       <concept id="7776141288922801652" name="jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance" flags="nn" index="q_SaT" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="427659576753752243" name="jetbrains.mps.lang.smodel.structure.ModulePointer" flags="ng" index="20RdaH">
+        <property id="427659576753753627" name="moduleId" index="20Rdg5" />
+        <property id="427659576753753625" name="moduleName" index="20Rdg7" />
+      </concept>
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
@@ -286,13 +290,13 @@
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
+        <child id="1678062499342629861" name="moduleId" index="37shsm" />
+      </concept>
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
-      <concept id="6955116391921790598" name="jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName" flags="nn" index="1nuMs4">
-        <property id="6955116391921791525" name="moduleId" index="1nuNIB" />
-      </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -6755,7 +6759,7 @@
             </node>
             <node concept="2ShNRf" id="1tYCy_FFNR2" role="33vP2m">
               <node concept="1pGfFk" id="1tYCy_FFNR4" role="2ShVmc">
-                <ref role="37wK5l" to="b8lf:~SelectionInfoImpl.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="SelectionInfoImpl" />
+                <ref role="37wK5l" to="b8lf:~SelectionInfoImpl.&lt;init&gt;(java.lang.String,org.jetbrains.mps.openapi.module.SModuleReference)" resolve="SelectionInfoImpl" />
                 <node concept="2OqwBi" id="1tYCy_FFOeX" role="37wK5m">
                   <node concept="2OqwBi" id="1tYCy_FFNR6" role="2Oq$k0">
                     <node concept="liA8E" id="1tYCy_FFNRa" role="2OqNvi">
@@ -6767,8 +6771,11 @@
                     <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
                   </node>
                 </node>
-                <node concept="1nuMs4" id="5QySkSuSVDm" role="37wK5m">
-                  <property role="1nuNIB" value="258bd2f6-0d02-411d-86b2-5a5ea083e6d2(jetbrains.mps.lang.editor.table.runtime)" />
+                <node concept="37shsh" id="7I1aJvxvTvL" role="37wK5m">
+                  <node concept="20RdaH" id="7I1aJvxvTHw" role="37shsm">
+                    <property role="20Rdg5" value="258bd2f6-0d02-411d-86b2-5a5ea083e6d2" />
+                    <property role="20Rdg7" value="jetbrains.mps.lang.editor.table.runtime" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -7236,29 +7243,6 @@
       <ref role="3uigEE" to="b8lf:~AbstractMultipleSelection" resolve="AbstractMultipleSelection" />
     </node>
   </node>
-  <node concept="3HP615" id="42Cv_c9rHCQ">
-    <property role="TrG5h" value="TableModelFactory" />
-    <node concept="3Tm1VV" id="42Cv_c9rHCR" role="1B3o_S" />
-    <node concept="3clFb_" id="42Cv_c9rHCS" role="jymVt">
-      <property role="1EzhhJ" value="true" />
-      <property role="TrG5h" value="createTableModel" />
-      <node concept="37vLTG" id="42Cv_c9rHCT" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="42Cv_c9rHCU" role="1tU5fm" />
-      </node>
-      <node concept="37vLTG" id="42Cv_c9rHCV" role="3clF46">
-        <property role="TrG5h" value="editorContext" />
-        <node concept="3uibUv" id="42Cv_c9rHD0" role="1tU5fm">
-          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
-        </node>
-      </node>
-      <node concept="3uibUv" id="42Cv_c9rHCX" role="3clF45">
-        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
-      </node>
-      <node concept="3Tm1VV" id="42Cv_c9rHCY" role="1B3o_S" />
-      <node concept="3clFbS" id="42Cv_c9rHCZ" role="3clF47" />
-    </node>
-  </node>
   <node concept="312cEu" id="6XSzU5vH9q_">
     <property role="TrG5h" value="ColumnNotFoundException" />
     <node concept="312cEg" id="6XSzU5vHOlN" role="jymVt">
@@ -7309,6 +7293,61 @@
     <node concept="3uibUv" id="6XSzU5vHbGO" role="1zkMxy">
       <ref role="3uigEE" to="wyt6:~Exception" resolve="Exception" />
     </node>
+  </node>
+  <node concept="312cEu" id="6E2BWlD7mOx">
+    <property role="TrG5h" value="TableModelFactory" />
+    <property role="1sVAO0" value="true" />
+    <node concept="3clFb_" id="6E2BWlD7mQd" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createTableModel" />
+      <node concept="37vLTG" id="6E2BWlD7mQe" role="3clF46">
+        <property role="TrG5h" value="node" />
+        <node concept="3Tqbb2" id="6E2BWlD7mQf" role="1tU5fm" />
+      </node>
+      <node concept="37vLTG" id="6E2BWlD7mQg" role="3clF46">
+        <property role="TrG5h" value="editorContext" />
+        <node concept="3uibUv" id="6E2BWlD7mQh" role="1tU5fm">
+          <ref role="3uigEE" to="cj4x:~EditorContext" resolve="EditorContext" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="6E2BWlD7mQi" role="3clF45">
+        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
+      </node>
+      <node concept="3Tm1VV" id="6E2BWlD7mQj" role="1B3o_S" />
+      <node concept="3clFbS" id="6E2BWlD7mQk" role="3clF47">
+        <node concept="3SKdUt" id="6E2BWlD7oT3" role="3cqZAp">
+          <node concept="3SKdUq" id="6E2BWlD7oT5" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: not used anymore, remove after MPS 3.5 release" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6E2BWlD7oNE" role="3cqZAp">
+          <node concept="10Nm6u" id="6E2BWlD7oPw" role="3cqZAk" />
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6E2BWlD7oQr" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="6E2BWlD7pth" role="jymVt" />
+    <node concept="3clFb_" id="6E2BWlD7pur" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="createTableModel" />
+      <node concept="3uibUv" id="6E2BWlD7puw" role="3clF45">
+        <ref role="3uigEE" node="3ThmjU3UlMw" resolve="TableModel" />
+      </node>
+      <node concept="3Tm1VV" id="6E2BWlD7pux" role="1B3o_S" />
+      <node concept="3clFbS" id="6E2BWlD7puy" role="3clF47">
+        <node concept="3SKdUt" id="6E2BWlD7puz" role="3cqZAp">
+          <node concept="3SKdUq" id="6E2BWlD7pu$" role="3SKWNk">
+            <property role="3SKdUp" value="TODO: make abstract after MPS 3.5 release" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="6E2BWlD7pu_" role="3cqZAp">
+          <node concept="10Nm6u" id="6E2BWlD7puA" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
+    <node concept="3Tm1VV" id="6E2BWlD7mOy" role="1B3o_S" />
   </node>
 </model>
 

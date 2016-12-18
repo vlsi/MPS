@@ -38,7 +38,7 @@ public final class XmlProlog__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static boolean isInValidPosition_id1Qs9WekWY$K(@NotNull SNode __thisNode__, SNode element) {
     SNode declaration = ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c5494871L, 0x6988ccb84e3bd0e6L, "elements"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (boolean) XmlPrologElement__BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(it)));
+        return (boolean) XmlPrologElement__BehaviorDescriptor.isFirst_id1653mnvAgw8.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(it)));
       }
     });
     if (declaration == null) {

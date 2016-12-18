@@ -237,6 +237,7 @@ public interface EditorCell {
 
   @Nullable
   TransformationMenuLookup getTransformationMenuLookup();
+
   void setTransformationMenuLookup(@Nullable TransformationMenuLookup transformationMenuLookup);
 
   /**
@@ -246,12 +247,26 @@ public interface EditorCell {
    */
   TextBuilder renderText();
 
+  /**
+   * Marking current cell as "big" cell - the top-most cell available in the editor for associated node.
+   * Note: all big cells are expected to hold non-null {@link EditorCellContext} see {@link #getCellContext()}
+   *
+   * @param big true if this cell is "big" one
+   */
   void setBig(boolean big);
 
   boolean isBig();
 
   void setCellContext(EditorCellContext cellContext);
 
+  /**
+   * Return non-null value for:
+   * - any "big" cell
+   * - "non-big" cell if the context was changed by it's parent (e.g. parent collection cell
+   * pushes down some additional hints)
+   *
+   * @return cellContext or null if no exact context was specified
+   */
   EditorCellContext getCellContext();
 
   void setReferenceCell(boolean isReference);

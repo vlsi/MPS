@@ -49,7 +49,7 @@ final class TraceNodeUI {
   /*package*/ TraceNodeUI(@Nullable Kind kind, @Nullable SNodeReference targetNode) {
     myKind = kind;
     myTargetNode = targetNode;
-    myIcon = Icons.getIcon(kind, targetNode);
+    myIcon = null;
     myText = null;
   }
 
@@ -85,8 +85,11 @@ final class TraceNodeUI {
       return text;
     }
   }
-  public Icon getIcon() {
-    return myIcon;
+  public Icon getIcon(SRepository contextRepo) {
+    if (myIcon != null) {
+      return myIcon;
+    }
+    return Icons.getIcon(myKind, myTargetNode.resolve(contextRepo));
   }
 
   public boolean hasChildren() {

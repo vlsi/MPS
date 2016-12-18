@@ -110,7 +110,7 @@
             <node concept="2OqwBi" id="5YNybgUCxke" role="lbANJ">
               <node concept="117lpO" id="5YNybgUCxkb" role="2Oq$k0" />
               <node concept="3Tsc0h" id="5YNybgUCxkk" role="2OqNvi">
-                <ref role="3TtcxE" to="911s:3rV3sBXezF3" />
+                <ref role="3TtcxE" to="911s:3rV3sBXezF3" resolve="lines" />
               </node>
             </node>
           </node>

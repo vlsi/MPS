@@ -10,10 +10,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import org.jetbrains.mps.openapi.module.SRepository;
-import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.annotations.NotNull;
+import java.util.concurrent.atomic.AtomicInteger;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -34,26 +32,25 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 
-public class EvaluationModule extends AbstractModule implements SModule {
+/**
+ * This module contains a necessary information for the 'evaluate expression'
+ * action during a debug session.
+ * Currently extends AbstractModule though it is obviously not one.
+ */
+public final class EvaluationModule extends AbstractModule implements SModule {
   private static final Logger LOG = LogManager.getLogger(EvaluationModule.class);
 
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
-  private final SRepository myRepository;
+  private static final AtomicInteger ourCounter = new AtomicInteger();
 
-  /**
-   * 
-   * @deprecated please provide a repository at the constructioni
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public EvaluationModule() {
-    this(MPSModuleRepository.getInstance());
+  private static int incCounter() {
+    return ourCounter.incrementAndGet();
   }
 
-  public EvaluationModule(@NotNull SRepository repo) {
-    setModuleReference(new ModuleReference("Evaluation Container Module ", ModuleId.regular()));
-    myRepository = repo;
+  public EvaluationModule() {
+    super((IFile) null);
+    setModuleReference(new ModuleReference("Evaluation Container Module " + incCounter(), ModuleId.regular()));
     myDescriptor = new ModuleDescriptor();
   }
 
@@ -96,7 +93,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    Iterable<SModule> modules = myRepository.getModules();
+    Iterable<SModule> modules = getRepository().getModules();
     return Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
         return it != EvaluationModule.this && !(it instanceof TransientSModule);
@@ -110,7 +107,7 @@ public class EvaluationModule extends AbstractModule implements SModule {
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
-    Collection<Language> languages = new ModuleRepositoryFacade(myRepository).getAllModules(Language.class);
+    Collection<Language> languages = new ModuleRepositoryFacade(getRepository()).getAllModules(Language.class);
     return SetSequence.fromSetWithValues(new HashSet<SLanguage>(), CollectionSequence.fromCollection(languages).select(new ISelector<Language, SLanguage>() {
       public SLanguage select(Language it) {
         return MetaAdapterByDeclaration.getLanguage(it);

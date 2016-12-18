@@ -20,7 +20,7 @@ import io.netty.buffer.Unpooled;
 
 public class NodeOpener_RequestHandler extends HttpRequestHandlerBase {
 
-  private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "node_ref");
+  private static final List<String> QUERY_PREFIX = ListSequence.fromListAndArray(new ArrayList<String>(), "node");
 
   private final boolean myCorrectRequest;
   private final SNodeReference ref;

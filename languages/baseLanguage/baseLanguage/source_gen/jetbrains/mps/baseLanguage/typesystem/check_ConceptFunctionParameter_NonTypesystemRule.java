@@ -13,6 +13,7 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -32,8 +33,8 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       }
     } else {
       final SAbstractConcept parameterConcept = SNodeOperations.getConcept(parameter);
-      Iterable<SNode> seq = ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(conceptFunction)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
+      Iterable<SConcept> seq = ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(conceptFunction)).where(new IWhereFilter<SConcept>() {
+        public boolean accept(SConcept it) {
           return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)));
         }
       });

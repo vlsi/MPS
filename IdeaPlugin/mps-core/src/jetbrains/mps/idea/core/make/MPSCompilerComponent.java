@@ -19,9 +19,7 @@ package jetbrains.mps.idea.core.make;
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
-import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileScope;
-import com.intellij.openapi.compiler.CompileTask;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.compiler.CompilerMessageCategory;
 import com.intellij.openapi.compiler.CompilerPaths;
@@ -29,6 +27,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -46,7 +45,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * evgeny, 11/21/11
  */
 public class MPSCompilerComponent implements ProjectComponent {
-  private Project myProject;
+  private final Project myProject;
 
   public MPSCompilerComponent(Project project) {
     myProject = project;
@@ -56,7 +55,7 @@ public class MPSCompilerComponent implements ProjectComponent {
   public void projectOpened() {
     CompilerManager compilerManager = CompilerManager.getInstance(myProject);
 
-    final List<String> errorMessages = new ArrayList<String>();
+    final List<String> errorMessages = new ArrayList<>();
 
     myProject.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
     myProject.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
@@ -64,50 +63,41 @@ public class MPSCompilerComponent implements ProjectComponent {
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE);
 
-    compilerManager.addBeforeTask(new CompileTask() {
-      @Override
-      public boolean execute(final CompileContext context) {
-        final CompileScope compileScope = context.getCompileScope();
-        if (compileScope == null) return true;
+    compilerManager.addBeforeTask(context -> {
+      final CompileScope compileScope = context.getCompileScope();
+      if (compileScope == null) return true;
 
-        final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
-        final long start = System.nanoTime();
-        ProjectHelper.toMPSProject(myProject).getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            CachedRepositoryData cachedRepositoryData = MPSRepositoryUtil.buildData(LibraryInitializer.getInstance().getModuleHandles());
-            ModelOutputStream mos = null;
-            try {
-              mos = new ModelOutputStream(new FileOutputStream(repositoryCache));
-              cachedRepositoryData.save(mos);
-              compileScope.putUserData(MPSMakeConstants.MPS_REPOSITORY, repositoryCache.getPath());
-            } catch (IOException e) {
-              context.addMessage(CompilerMessageCategory.INFORMATION, "cannot save cache for MPS, generation may be slow", null, 0, 0);
-            } finally {
-              jetbrains.mps.util.FileUtil.closeFileSafe(mos);
-            }
-          }
-        });
-        long result = (System.nanoTime() - start) / 1000000;
-
-        if (CompilerWorkspaceConfiguration.getInstance(myProject).COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS.contains("-Dmps.jps.debug=true")) {
-          context.addMessage(CompilerMessageCategory.INFORMATION, "repository cache saved in " + result + " ms", null, 0, 0);
+      final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(myProject), "mps_repository.dat");
+      final long start = System.nanoTime();
+      ProjectHelper.fromIdeaProject(myProject).getModelAccess().runReadAction(() -> {
+        CachedRepositoryData cachedRepositoryData = MPSRepositoryUtil.buildData(LibraryInitializer.getInstance().getModuleHandles());
+        ModelOutputStream mos = null;
+        try {
+          mos = new ModelOutputStream(new FileOutputStream(repositoryCache));
+          cachedRepositoryData.save(mos);
+          compileScope.putUserData(MPSMakeConstants.MPS_REPOSITORY, repositoryCache.getPath());
+        } catch (IOException e) {
+          context.addMessage(CompilerMessageCategory.INFORMATION, MPSBundle.message("mps.compiler.component.message.slow"), null, 0, 0);
+        } finally {
+          jetbrains.mps.util.FileUtil.closeFileSafe(mos);
         }
-        return true;
+      });
+      long result = (System.nanoTime() - start) / 1000000;
+
+      if (CompilerWorkspaceConfiguration.getInstance(myProject).COMPILER_PROCESS_ADDITIONAL_VM_OPTIONS.contains(MPSBundle.message("mps.compiler.component.debug.flag"))) {
+        context.addMessage(CompilerMessageCategory.INFORMATION, String.format(MPSBundle.message("mps.compiler.component.message.cache.saved"), result), null, 0, 0);
       }
+      return true;
     });
 
-    compilerManager.addAfterTask(new CompileTask() {
-      @Override
-      public boolean execute(CompileContext context) {
-        for (String errmsg : errorMessages) {
-          ModelNodeNavigatable navigatable = ModelNodeNavigatable.extractNavigatable(errmsg, context.getProject(), null);
-          context.addMessage(CompilerMessageCategory.ERROR, errmsg, null, -1, -1, navigatable);
-        }
-        boolean noErrors = errorMessages.isEmpty();
-        errorMessages.clear();
-        return noErrors;
+    compilerManager.addAfterTask(context -> {
+      for (String errorMessage : errorMessages) {
+        ModelNodeNavigatable navigatable = ModelNodeNavigatable.extractNavigatable(errorMessage, context.getProject(), null);
+        context.addMessage(CompilerMessageCategory.ERROR, errorMessage, null, -1, -1, navigatable);
       }
+      boolean noErrors = errorMessages.isEmpty();
+      errorMessages.clear();
+      return noErrors;
     });
   }
 
@@ -131,7 +121,7 @@ public class MPSCompilerComponent implements ProjectComponent {
 
   private class RefreshFilesCompilationStatusListener implements CustomBuilderMessageHandler {
     private final AtomicReference<List<File>>
-        myAffectedFiles = new AtomicReference<List<File>>(new ArrayList<File>());
+      myAffectedFiles = new AtomicReference<>(new ArrayList<>());
 
     @Override
     public void messageReceived(String builderId, String messageType, String messageText) {
@@ -141,7 +131,7 @@ public class MPSCompilerComponent implements ProjectComponent {
           myAffectedFiles.get().add(new File(messageText));
 
         } else if (messageType.equals(MPSCustomMessages.MSG_REFRESH)) {
-          final List<File> generatedFiles = myAffectedFiles.getAndSet(new ArrayList<File>());
+          final List<File> generatedFiles = myAffectedFiles.getAndSet(new ArrayList<>());
           if (myProject.isDisposed() || generatedFiles.isEmpty()) {
             return;
           }
@@ -154,7 +144,7 @@ public class MPSCompilerComponent implements ProjectComponent {
   }
 
   private class NavigateToNodesWithErrors implements CustomBuilderMessageHandler {
-    private List<String> myErrorMessages;
+    private final List<String> myErrorMessages;
 
     public NavigateToNodesWithErrors(List<String> errorMessages) {
       myErrorMessages = errorMessages;

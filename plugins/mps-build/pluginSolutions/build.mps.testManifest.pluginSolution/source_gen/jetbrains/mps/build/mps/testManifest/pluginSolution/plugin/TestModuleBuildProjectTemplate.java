@@ -12,11 +12,12 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import java.io.File;
 import org.apache.log4j.Level;
+import jetbrains.mps.build.util.RelativePathHelper;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.build.mps.util.PathConverter;
+import jetbrains.mps.build.mps.util.PathBuilder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -57,6 +58,7 @@ public class TestModuleBuildProjectTemplate {
       }
       return null;
     }
+    final RelativePathHelper relativePathHelper = new RelativePathHelper(projectFile.getPath());
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
@@ -66,14 +68,14 @@ public class TestModuleBuildProjectTemplate {
         SNode la = SModelOperations.createNewNode(target, null, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
         SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), t._0());
         try {
-          SNode path = PathConverter.createRelative(projectFile.getPath(), t._1(), target);
+          SNode path = new PathBuilder(target).buildRelative(relativePathHelper.makeRelative(t._1()));
           SLinkOperations.setTarget(la, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), path);
           SPropertyOperations.set(la, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d3868bL, "uuid"), t._2());
 
           ListSequence.fromList(result).addElement(la);
-        } catch (PathConverter.PathConvertException ex) {
+        } catch (RelativePathHelper.PathException ex) {
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("path converter threw exception", ex);
+            LOG.error("Failed to build project-relative path", ex);
           }
           return null;
         }
@@ -91,6 +93,8 @@ public class TestModuleBuildProjectTemplate {
       }
       return null;
     }
+    // XXX getProjectFile in fact gives project directory, what a surprise 
+    final RelativePathHelper relativePathHelper = new RelativePathHelper(projectFile.getPath());
     List<SNode> result = new ArrayList<SNode>();
 
     for (SNode testManifest : tmms) {
@@ -102,12 +106,12 @@ public class TestModuleBuildProjectTemplate {
 
         SPropertyOperations.set(sol, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, 0x3be316509dccb82L, "sourcesKind"), "sources and tests");
         try {
-          SNode path = PathConverter.createRelative(projectFile.getPath(), t._1(), target);
+          SNode path = new PathBuilder(target).buildRelative(relativePathHelper.makeRelative(t._1()));
           SLinkOperations.setTarget(sol, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"), path);
           ListSequence.fromList(result).addElement(sol);
-        } catch (PathConverter.PathConvertException ex) {
+        } catch (RelativePathHelper.PathException ex) {
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("path converter threw exception", ex);
+            LOG.error("Failed to build project-relative path", ex);
           }
           return null;
         }

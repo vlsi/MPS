@@ -53,7 +53,7 @@
         <var name="references" id="1213104837507" />
       </scope>
       <scope id="1213104837507" at="26,0,51,0" />
-      <unit id="1213104837507" at="37,19,46,9" name="jetbrains.mps.lang.generator.constraints.Root_MappingRule_Constraints$2" />
+      <unit id="1213104837507" at="37,19,46,9" name="jetbrains.mps.lang.generator.constraints.Root_MappingRule_Constraints$1$1" />
       <unit id="1213104837507" at="29,146,48,5" name="jetbrains.mps.lang.generator.constraints.Root_MappingRule_Constraints$1" />
       <unit id="1213104837507" at="21,0,53,0" name="jetbrains.mps.lang.generator.constraints.Root_MappingRule_Constraints" />
     </file>
@@ -92,7 +92,7 @@
         <var name="references" id="1213104840277" />
       </scope>
       <scope id="1213104840277" at="26,0,51,0" />
-      <unit id="1213104840277" at="37,19,46,9" name="jetbrains.mps.lang.generator.constraints.CreateRootRule_Constraints$2" />
+      <unit id="1213104840277" at="37,19,46,9" name="jetbrains.mps.lang.generator.constraints.CreateRootRule_Constraints$1$1" />
       <unit id="1213104840277" at="29,150,48,5" name="jetbrains.mps.lang.generator.constraints.CreateRootRule_Constraints$1" />
       <unit id="1213104840277" at="21,0,53,0" name="jetbrains.mps.lang.generator.constraints.CreateRootRule_Constraints" />
     </file>
@@ -190,7 +190,7 @@
         <var name="references" id="4426797670061486210" />
       </scope>
       <scope id="4426797670061486210" at="31,0,67,0" />
-      <unit id="4426797670061486210" at="42,19,62,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentVariableRefExpression_Constraints$2" />
+      <unit id="4426797670061486210" at="42,19,62,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentVariableRefExpression_Constraints$1$1" />
       <unit id="4426797670061486210" at="34,156,64,5" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentVariableRefExpression_Constraints$1" />
       <unit id="4426797670061486210" at="26,0,69,0" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentVariableRefExpression_Constraints" />
     </file>
@@ -271,7 +271,7 @@
         <var name="references" id="4665309944889434722" />
       </scope>
       <scope id="4665309944889434722" at="48,0,78,0" />
-      <unit id="4665309944889434722" at="59,19,73,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints$2" />
+      <unit id="4665309944889434722" at="59,19,73,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints$1$1" />
       <unit id="4665309944889434722" at="51,162,75,5" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints$1" />
       <unit id="4665309944889434722" at="29,0,84,0" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPatternVarRefExpression_Constraints" />
     </file>
@@ -318,7 +318,7 @@
         <var name="references" id="4816349095291149808" />
       </scope>
       <scope id="4816349095291149808" at="33,0,63,0" />
-      <unit id="4816349095291149808" at="44,19,58,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_Constraints$2" />
+      <unit id="4816349095291149808" at="44,19,58,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_Constraints$1$1" />
       <unit id="4816349095291149808" at="36,163,60,5" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_Constraints$1" />
       <unit id="4816349095291149808" at="28,0,65,0" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentPropertyPatternRefExpression_Constraints" />
     </file>
@@ -365,7 +365,7 @@
         <var name="references" id="4816349095291149869" />
       </scope>
       <scope id="4816349095291149869" at="33,0,63,0" />
-      <unit id="4816349095291149869" at="44,19,58,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_Constraints$2" />
+      <unit id="4816349095291149869" at="44,19,58,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_Constraints$1$1" />
       <unit id="4816349095291149869" at="36,158,60,5" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_Constraints$1" />
       <unit id="4816349095291149869" at="28,0,65,0" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentLinkPatternRefExpression_Constraints" />
     </file>
@@ -407,7 +407,7 @@
         <var name="references" id="5005282049925940094" />
       </scope>
       <scope id="5005282049925940094" at="30,0,58,0" />
-      <unit id="5005282049925940094" at="41,19,53,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_Constraints$2" />
+      <unit id="5005282049925940094" at="41,19,53,9" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_Constraints$1$1" />
       <unit id="5005282049925940094" at="33,157,55,5" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_Constraints$1" />
       <unit id="5005282049925940094" at="25,0,60,0" name="jetbrains.mps.lang.generator.constraints.TemplateArgumentParameterExpression_Constraints" />
     </file>
@@ -509,7 +509,7 @@
         <var name="references" id="5858775738865267759" />
       </scope>
       <scope id="5858775738865267759" at="28,0,53,0" />
-      <unit id="5858775738865267759" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$2" />
+      <unit id="5858775738865267759" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$1$1" />
       <unit id="5858775738865267759" at="31,152,50,5" name="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints$1" />
       <unit id="5858775738865267759" at="23,0,55,0" name="jetbrains.mps.lang.generator.constraints.TemplateSwitch_Constraints" />
     </file>
@@ -543,7 +543,7 @@
         <var name="references" id="7941504602772991213" />
       </scope>
       <scope id="7941504602772991213" at="26,0,47,0" />
-      <unit id="7941504602772991213" at="33,19,42,9" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints$2" />
+      <unit id="7941504602772991213" at="33,19,42,9" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints$1$1" />
       <unit id="7941504602772991213" at="29,157,44,5" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints$1" />
       <unit id="7941504602772991213" at="21,0,48,0" name="jetbrains.mps.lang.generator.constraints.GeneratorParameterReference_Constraints" />
     </file>
@@ -582,7 +582,7 @@
         <var name="references" id="982871510068000160" />
       </scope>
       <scope id="982871510068000160" at="28,0,53,0" />
-      <unit id="982871510068000160" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateSwitchMacro_Constraints$2" />
+      <unit id="982871510068000160" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateSwitchMacro_Constraints$1$1" />
       <unit id="982871510068000160" at="31,156,50,5" name="jetbrains.mps.lang.generator.constraints.TemplateSwitchMacro_Constraints$1" />
       <unit id="982871510068000160" at="23,0,55,0" name="jetbrains.mps.lang.generator.constraints.TemplateSwitchMacro_Constraints" />
     </file>
@@ -621,7 +621,7 @@
         <var name="references" id="982871510068191901" />
       </scope>
       <scope id="982871510068191901" at="28,0,53,0" />
-      <unit id="982871510068191901" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateCallMacro_Constraints$2" />
+      <unit id="982871510068191901" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateCallMacro_Constraints$1$1" />
       <unit id="982871510068191901" at="31,156,50,5" name="jetbrains.mps.lang.generator.constraints.TemplateCallMacro_Constraints$1" />
       <unit id="982871510068191901" at="23,0,55,0" name="jetbrains.mps.lang.generator.constraints.TemplateCallMacro_Constraints" />
     </file>
@@ -660,7 +660,7 @@
         <var name="references" id="982871510068195081" />
       </scope>
       <scope id="982871510068195081" at="28,0,53,0" />
-      <unit id="982871510068195081" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints$2" />
+      <unit id="982871510068195081" at="39,19,48,9" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints$1$1" />
       <unit id="982871510068195081" at="31,156,50,5" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints$1" />
       <unit id="982871510068195081" at="23,0,55,0" name="jetbrains.mps.lang.generator.constraints.TemplateDeclarationReference_Constraints" />
     </file>

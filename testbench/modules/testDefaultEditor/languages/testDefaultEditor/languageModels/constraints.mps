@@ -129,8 +129,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -173,7 +173,7 @@
   <node concept="1M2fIO" id="5dui9YbrsqC">
     <ref role="1M2myG" to="j0bb:O7qdvf4M$T" resolve="Developer" />
     <node concept="1N5Pfh" id="5dui9YbsxIt" role="1Mr941">
-      <ref role="1N5Vy1" to="j0bb:O7qdvf4M_j" />
+      <ref role="1N5Vy1" to="j0bb:O7qdvf4M_j" resolve="bestFriend" />
       <node concept="13QW63" id="5dui9Ybt4jE" role="1N6uqs">
         <node concept="3clFbS" id="5dui9Ybt4jG" role="2VODD2">
           <node concept="3cpWs6" id="5dui9Ybt4k2" role="3cqZAp">
@@ -259,9 +259,11 @@
                                 <ref role="ehGHo" to="j0bb:O7qdvf4M$T" resolve="Developer" />
                               </node>
                               <node concept="1PxgMI" id="5dui9YbtQBT" role="33vP2m">
-                                <ref role="1m5ApE" to="j0bb:O7qdvf4M$T" resolve="Developer" />
                                 <node concept="37vLTw" id="5dui9YbtQBU" role="1m5AlR">
                                   <ref role="3cqZAo" node="5dui9YbtjUp" resolve="developer" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGYAQ" role="3oSUPX">
+                                  <ref role="cht4Q" to="j0bb:O7qdvf4M$T" resolve="Developer" />
                                 </node>
                               </node>
                             </node>
@@ -294,9 +296,11 @@
                                 <node concept="3cpWsn" id="5dui9YbtS0I" role="3cpWs9">
                                   <property role="TrG5h" value="teamNode" />
                                   <node concept="1PxgMI" id="5dui9YbtVOt" role="33vP2m">
-                                    <ref role="1m5ApE" to="j0bb:O7qdvf4Jui" resolve="Team" />
                                     <node concept="37vLTw" id="5dui9YbtVwZ" role="1m5AlR">
                                       <ref role="3cqZAo" node="5dui9YbtPhy" resolve="team" />
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdGYAR" role="3oSUPX">
+                                      <ref role="cht4Q" to="j0bb:O7qdvf4Jui" resolve="Team" />
                                     </node>
                                   </node>
                                   <node concept="3Tqbb2" id="5dui9YbtS0D" role="1tU5fm">
@@ -309,7 +313,7 @@
                                   <node concept="X8dFx" id="5dui9Ybudmg" role="2OqNvi">
                                     <node concept="2OqwBi" id="5dui9YbufWQ" role="25WWJ7">
                                       <node concept="3Tsc0h" id="5dui9YbuhDU" role="2OqNvi">
-                                        <ref role="3TtcxE" to="j0bb:O7qdvf4M$R" />
+                                        <ref role="3TtcxE" to="j0bb:O7qdvf4M$R" resolve="developer" />
                                       </node>
                                       <node concept="37vLTw" id="5dui9Ybufvm" role="2Oq$k0">
                                         <ref role="3cqZAo" node="5dui9YbtS0I" resolve="teamNode" />

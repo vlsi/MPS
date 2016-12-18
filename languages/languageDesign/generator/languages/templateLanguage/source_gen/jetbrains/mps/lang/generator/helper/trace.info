@@ -274,7 +274,7 @@
     <file name="QueriesUtil.java">
       <node id="1178670295328" at="15,72,16,875" concept="5" />
       <node id="1178670323505" at="17,199,18,352" concept="6" />
-      <node id="1258575286550861907" at="20,214,21,291" concept="6" />
+      <node id="1258575286550861907" at="20,214,21,315" concept="6" />
       <node id="1178670348235" at="23,196,24,350" concept="6" />
       <node id="8634115665348814232" at="26,193,27,347" concept="6" />
       <node id="8634115665348818178" at="29,203,30,367" concept="6" />
@@ -309,7 +309,7 @@
       <node id="1178670165537" at="15,0,36,0" concept="9" trace="getApplicableConcept_fromEnvironment#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1178667968416" at="36,0,67,0" concept="9" trace="getQueryFunction_fromSourceSubstituteMacro#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1178670301352" at="17,199,18,352" />
-      <scope id="1258575286550861895" at="20,214,21,291" />
+      <scope id="1258575286550861895" at="20,214,21,315" />
       <scope id="1178670348234" at="23,196,24,350" />
       <scope id="8634115665348809082" at="26,193,27,347" />
       <scope id="8634115665348816839" at="29,203,30,367" />

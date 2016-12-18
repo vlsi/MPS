@@ -46,20 +46,23 @@ public final class LanguageConceptSwitch {
   public static final int SelectionChild = 34;
   public static final int SelectionContainer = 35;
   public static final int SideTranformWrapper = 36;
-  public static final int SimplePropertyAttribute = 37;
-  public static final int SimplePropertyContainer = 38;
-  public static final int StubBlock = 39;
-  public static final int StyleChild = 40;
-  public static final int StyleParent = 41;
-  public static final int SubstMiddlewareChild = 42;
-  public static final int SubstTestAbstractChild = 43;
-  public static final int SubstTestBooleanPropertyChild = 44;
-  public static final int SubstTestEnumPropertyChild = 45;
-  public static final int SubstTestRoot = 46;
-  public static final int TestBlockList = 47;
-  public static final int VariableDeclarationBlock = 48;
-  public static final int VariableDeclarationReference = 49;
-  public static final int VerticalLayoutBlockList = 50;
+  public static final int SimpleNode = 37;
+  public static final int SimpleNodeHidingAttribute = 38;
+  public static final int SimpleNodesContainer = 39;
+  public static final int SimplePropertyAttribute = 40;
+  public static final int SimplePropertyContainer = 41;
+  public static final int StubBlock = 42;
+  public static final int StyleChild = 43;
+  public static final int StyleParent = 44;
+  public static final int SubstMiddlewareChild = 45;
+  public static final int SubstTestAbstractChild = 46;
+  public static final int SubstTestBooleanPropertyChild = 47;
+  public static final int SubstTestEnumPropertyChild = 48;
+  public static final int SubstTestRoot = 49;
+  public static final int TestBlockList = 50;
+  public static final int VariableDeclarationBlock = 51;
+  public static final int VariableDeclarationReference = 52;
+  public static final int VerticalLayoutBlockList = 53;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L);
@@ -100,6 +103,9 @@ public final class LanguageConceptSwitch {
     builder.put(0x617705b269dc8251L, SelectionChild);
     builder.put(0x617705b269dc6674L, SelectionContainer);
     builder.put(0x46eb259b12ef5172L, SideTranformWrapper);
+    builder.put(0x36c6196241a7cd02L, SimpleNode);
+    builder.put(0x36c6196241a7cd03L, SimpleNodeHidingAttribute);
+    builder.put(0x36c6196241a7cd1cL, SimpleNodesContainer);
     builder.put(0x2c59702023f915adL, SimplePropertyAttribute);
     builder.put(0x2c59702023f8181eL, SimplePropertyContainer);
     builder.put(0x3361ce1b17d9420cL, StubBlock);

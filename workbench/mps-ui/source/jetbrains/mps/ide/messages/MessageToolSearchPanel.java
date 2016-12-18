@@ -19,8 +19,6 @@ import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.search.AbstractSearchPanel;
 import jetbrains.mps.ide.search.SearchHistoryStorage;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -38,15 +36,11 @@ import java.util.regex.Pattern;
 
 class MessageToolSearchPanel extends AbstractSearchPanel {
 
-  private static final Logger LOG = LogManager.getLogger(MessageToolSearchPanel.class);
-
-  private final Color myHighlightColor = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.SEARCH_RESULT_ATTRIBUTES).getBackgroundColor();
-
-  private JList myList;
-  private SearchHistoryStorage myHistory;
+  private final JList myList;
+  private final SearchHistoryStorage myHistory;
   private int myCountResult = 0;
-  private List<Integer> myResults = new ArrayList<Integer>();
-  private MyCellRenderer myRenderer = new MyCellRenderer();
+  private final List<Integer> myResults = new ArrayList<>();
+  private final MyCellRenderer myRenderer = new MyCellRenderer();
   private ListCellRenderer myOriginalCellRenderer;
 
   public MessageToolSearchPanel(JList list, SearchHistoryStorage history) {
@@ -78,7 +72,9 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
   @Override
   public void goToPrevious() {
-    if (myResults.isEmpty()) return;
+    if (myResults.isEmpty()) {
+      return;
+    }
     addToHistory();
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
@@ -94,7 +90,9 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
   @Override
   public void goToNext() {
-    if (myResults.isEmpty()) return;
+    if (myResults.isEmpty()) {
+      return;
+    }
     addToHistory();
     int selected = myList.getSelectedIndex();
     if (selected != -1) {
@@ -143,7 +141,7 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
 
   private class MyCellRenderer extends MessagesListCellRenderer {
     private int myIndex = -1;
-    private List<Integer> myColumnResults = new ArrayList<Integer>();
+    private final List<Integer> myColumnResults = new ArrayList<>();
 
     private void updateView() {
       updateSearchReport(myCountResult);
@@ -197,7 +195,9 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
     public void paintComponent(Graphics g) {
       super.paintComponent(g);
       if (myResults.contains(myIndex)) {
-        List<Integer> columns = new ArrayList<Integer>();
+        final Color highlightColor =
+            EditorColorsManager.getInstance().getGlobalScheme().getAttributes(EditorColors.SEARCH_RESULT_ATTRIBUTES).getBackgroundColor();
+        List<Integer> columns = new ArrayList<>();
         for (int i = 0; i < myResults.size(); i++) {
           int value = myResults.get(i);
           if (value == myIndex) {
@@ -207,23 +207,22 @@ class MessageToolSearchPanel extends AbstractSearchPanel {
         for (Integer column : columns) {
           final int endIndex = column + myText.getText().length();
           if (getText().length() <= endIndex) {
-            LOG.warn(String.format("Results are out of date. Index %d is out of range for text:\n%s\n", endIndex, getText()));
-            return; // Avoid IndexOutOfBoundsException to prevent painting problems.
+            continue; // just skip this outdated result to avoid IndexOutOfBoundsException (prevent painting problems).
           }
-          final String findedText = getText().substring(column, endIndex);
+          final String foundText = getText().substring(column, endIndex);
 
           Graphics2D g2 = (Graphics2D) g;
           FontMetrics fontMetrics = g2.getFontMetrics();
           Color color = g2.getColor();
-          g2.setColor(myHighlightColor);
+          g2.setColor(highlightColor);
           int startTextX = getInsets().left + getIcon().getIconWidth()
               + getIconTextGap()
               + fontMetrics.stringWidth(getText().substring(0, column));
           g2.fillRect(startTextX, 1,
-              fontMetrics.stringWidth(findedText),
+              fontMetrics.stringWidth(foundText),
               fontMetrics.getHeight() - 1);
           g2.setColor(color);
-          g2.drawString(findedText, startTextX, fontMetrics.getHeight() - fontMetrics.getLeading() - 1);
+          g2.drawString(foundText, startTextX, fontMetrics.getHeight() - fontMetrics.getLeading() - 1);
         }
       }
     }

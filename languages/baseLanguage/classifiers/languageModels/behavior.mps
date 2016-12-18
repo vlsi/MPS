@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -171,10 +171,11 @@
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -189,6 +190,9 @@
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1171500988903" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" flags="nn" index="32TBzR" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -202,7 +206,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -215,9 +218,6 @@
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -312,9 +312,11 @@
                     </node>
                     <node concept="TSZUe" id="hEwIfOu" role="2OqNvi">
                       <node concept="1PxgMI" id="hEwIfOv" role="25WWJ7">
-                        <ref role="1m5ApE" to="tp4f:hyWqYN0" resolve="IMember" />
                         <node concept="37vLTw" id="3GM_nagTAdr" role="1m5AlR">
                           <ref role="3cqZAo" node="hEwIfOx" resolve="child" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYqc" role="3oSUPX">
+                          <ref role="cht4Q" to="tp4f:hyWqYN0" resolve="IMember" />
                         </node>
                       </node>
                     </node>
@@ -353,7 +355,7 @@
             <node concept="2OqwBi" id="hEwIk_W" role="2Oq$k0">
               <node concept="13iPFW" id="hEwIk_X" role="2Oq$k0" />
               <node concept="3TrEf2" id="hEwIk_Y" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp4f:hyWumMg" />
+                <ref role="3Tt5mk" to="tp4f:hyWumMg" resolve="classifier" />
               </node>
             </node>
             <node concept="2qgKlT" id="hEwIk_Z" role="2OqNvi">
@@ -420,7 +422,7 @@
                   <node concept="2OqwBi" id="2D1PBM_b_Dq" role="2Oq$k0">
                     <node concept="2OqwBi" id="2D1PBM_b_Dr" role="2Oq$k0">
                       <node concept="13iPFW" id="2D1PBM_b_Ds" role="2Oq$k0" />
-                      <node concept="3NT_Vc" id="2D1PBM_b_Dt" role="2OqNvi" />
+                      <node concept="2yIwOk" id="2eXSyKpuEkK" role="2OqNvi" />
                     </node>
                     <node concept="2qgKlT" id="2D1PBM_b_Du" role="2OqNvi">
                       <ref role="37wK5l" node="2D1PBM_bxJ5" resolve="getOperationConcept" />
@@ -451,7 +453,7 @@
                       </node>
                       <node concept="2OqwBi" id="hEwIBCv" role="3uHU7w">
                         <node concept="13iPFW" id="hEwIBCw" role="2Oq$k0" />
-                        <node concept="3NT_Vc" id="hEwIBCx" role="2OqNvi" />
+                        <node concept="2yIwOk" id="6rh9tzlKp7b" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -506,7 +508,7 @@
                 <ref role="3cqZAo" node="hEwIBCG" resolve="result" />
               </node>
               <node concept="3TrEf2" id="hEwIBCR" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp4f:hyWH_vG" />
+                <ref role="3Tt5mk" to="tp4f:hyWH_vG" resolve="member" />
               </node>
             </node>
             <node concept="2oxUTD" id="hEwIBCS" role="2OqNvi">
@@ -535,8 +537,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kExIl" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kExIm" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYP" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>
@@ -644,7 +646,7 @@
           <node concept="2OqwBi" id="hEwJ6LJ" role="3cqZAk">
             <node concept="13iPFW" id="hEwJ6LK" role="2Oq$k0" />
             <node concept="3TrEf2" id="hJvKVkl" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+              <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
             </node>
           </node>
         </node>
@@ -754,7 +756,7 @@
               <node concept="2OqwBi" id="hJ2$gzO" role="3cqZAk">
                 <node concept="13iPFW" id="hJ2$gup" role="2Oq$k0" />
                 <node concept="3TrEf2" id="hJ2$gPw" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp4f:hJ2nkJ3" />
+                  <ref role="3Tt5mk" to="tp4f:hJ2nkJ3" resolve="classifier" />
                 </node>
               </node>
             </node>
@@ -764,7 +766,7 @@
             <node concept="2OqwBi" id="hJ2$eQV" role="3uHU7B">
               <node concept="13iPFW" id="hJ2$eAK" role="2Oq$k0" />
               <node concept="3TrEf2" id="hJ2$f5U" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp4f:hJ2nkJ3" />
+                <ref role="3Tt5mk" to="tp4f:hJ2nkJ3" resolve="classifier" />
               </node>
             </node>
           </node>
@@ -775,8 +777,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kEs0l" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEs0m" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYQ" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>
@@ -878,7 +880,7 @@
                 <ref role="3cqZAo" node="hEwJimA" resolve="result" />
               </node>
               <node concept="3TrEf2" id="hEwJimJ" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp4f:hyWumMg" />
+                <ref role="3Tt5mk" to="tp4f:hyWumMg" resolve="classifier" />
               </node>
             </node>
             <node concept="2oxUTD" id="hEwJimK" role="2OqNvi">
@@ -1116,8 +1118,8 @@
                         <ref role="3cqZAo" node="hEwJioU" resolve="contextNode" />
                       </node>
                     </node>
-                    <node concept="3TUQnm" id="L_Hr3kEsj6" role="2Oq$k0">
-                      <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+                    <node concept="35c_gC" id="7Ift4Hg3wYN" role="2Oq$k0">
+                      <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
                     </node>
                   </node>
                 </node>
@@ -1153,8 +1155,8 @@
                           <ref role="3cqZAo" node="hEwJioU" resolve="contextNode" />
                         </node>
                       </node>
-                      <node concept="3TUQnm" id="L_Hr3kEtME" role="2Oq$k0">
-                        <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+                      <node concept="35c_gC" id="7Ift4Hg3wYM" role="2Oq$k0">
+                        <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
                       </node>
                     </node>
                   </node>
@@ -1276,9 +1278,11 @@
                     </node>
                     <node concept="TSZUe" id="hEwJipc" role="2OqNvi">
                       <node concept="1PxgMI" id="hEwJipd" role="25WWJ7">
-                        <ref role="1m5ApE" to="tp4f:hyWqYN0" resolve="IMember" />
                         <node concept="37vLTw" id="3GM_nagTwAe" role="1m5AlR">
                           <ref role="3cqZAo" node="hEwJipm" resolve="child" />
+                        </node>
+                        <node concept="chp4Y" id="714IaVdGYql" role="3oSUPX">
+                          <ref role="cht4Q" to="tp4f:hyWqYN0" resolve="IMember" />
                         </node>
                       </node>
                     </node>
@@ -1407,9 +1411,11 @@
                     <node concept="3clFbF" id="hLKIQ9f" role="3cqZAp">
                       <node concept="37vLTI" id="hLKIXFl" role="3clFbG">
                         <node concept="1PxgMI" id="i2npI7I" role="37vLTx">
-                          <ref role="1m5ApE" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
                           <node concept="37vLTw" id="2BHiRxglqI0" role="1m5AlR">
                             <ref role="3cqZAo" node="hLKIjgF" resolve="methodDeclaration" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdGYqe" role="3oSUPX">
+                            <ref role="cht4Q" to="tp4f:hyXrIf3" resolve="DefaultClassifierMethodDeclaration" />
                           </node>
                         </node>
                         <node concept="2OqwBi" id="hLKIQrn" role="37vLTJ">
@@ -1417,7 +1423,7 @@
                             <ref role="3cqZAo" node="hLKIMqg" resolve="call" />
                           </node>
                           <node concept="3TrEf2" id="hLKIVT2" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tp4f:hyXtfQh" />
+                            <ref role="3Tt5mk" to="tp4f:hyXtfQh" resolve="method" />
                           </node>
                         </node>
                       </node>
@@ -1429,7 +1435,7 @@
                             <ref role="3cqZAo" node="hLKIMqg" resolve="call" />
                           </node>
                           <node concept="3Tsc0h" id="hLKJ5ns" role="2OqNvi">
-                            <ref role="3TtcxE" to="tp4f:hyXxRup" />
+                            <ref role="3TtcxE" to="tp4f:hyXxRup" resolve="actualArgument" />
                           </node>
                         </node>
                         <node concept="X8dFx" id="2fLCP33KztD" role="2OqNvi">
@@ -1461,7 +1467,7 @@
                             <ref role="3cqZAo" node="hLKJaxS" resolve="result" />
                           </node>
                           <node concept="3TrEf2" id="hLKJhOx" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+                            <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
                           </node>
                         </node>
                         <node concept="2ShNRf" id="hLKJiDC" role="37vLTx">
@@ -1483,7 +1489,7 @@
                             <ref role="3cqZAo" node="hLKJaxS" resolve="result" />
                           </node>
                           <node concept="3TrEf2" id="hLKJouJ" role="2OqNvi">
-                            <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                            <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                           </node>
                         </node>
                       </node>
@@ -1612,7 +1618,7 @@
           <node concept="2OqwBi" id="hEERLbv" role="3cqZAk">
             <node concept="13iPFW" id="hEERLbw" role="2Oq$k0" />
             <node concept="3TrEf2" id="hEERU7E" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:h9B3oxE" />
+              <ref role="3Tt5mk" to="tpee:h9B3oxE" resolve="visibility" />
             </node>
           </node>
         </node>
@@ -1691,8 +1697,8 @@
               <ref role="37wK5l" node="hEwJim4" resolve="getContextClassifier" />
               <node concept="13iPFW" id="L_Hr3kEw6L" role="37wK5m" />
             </node>
-            <node concept="3TUQnm" id="L_Hr3kEw6N" role="2Oq$k0">
-              <ref role="3TV0OU" to="tp4f:hyWqMFP" resolve="IClassifier" />
+            <node concept="35c_gC" id="7Ift4Hg3wYR" role="2Oq$k0">
+              <ref role="35c_gD" to="tp4f:hyWqMFP" resolve="IClassifier" />
             </node>
           </node>
         </node>

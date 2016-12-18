@@ -185,7 +185,7 @@
       <unit id="1077540970775395298" at="48,74,52,5" name="jetbrains.mps.make.dependencies.ModulesClusterizer$1" />
       <unit id="2974980382112430466" at="52,18,56,5" name="jetbrains.mps.make.dependencies.ModulesClusterizer$2" />
       <unit id="1077540970775395205" at="57,68,61,5" name="jetbrains.mps.make.dependencies.ModulesClusterizer$3" />
-      <unit id="4107886699326415865" at="68,53,72,9" name="jetbrains.mps.make.dependencies.ModulesClusterizer$5" />
+      <unit id="4107886699326415865" at="68,53,72,9" name="jetbrains.mps.make.dependencies.ModulesClusterizer$4$1" />
       <unit id="5584387755566347716" at="87,67,91,5" name="jetbrains.mps.make.dependencies.ModulesClusterizer$5" />
       <unit id="5584387755566339500" at="104,71,108,9" name="jetbrains.mps.make.dependencies.ModulesClusterizer$6" />
       <unit id="5584387755566339508" at="112,94,116,7" name="jetbrains.mps.make.dependencies.ModulesClusterizer$7" />
@@ -657,19 +657,19 @@
         <var name="order" id="7959437477381204281" />
       </scope>
       <unit id="7902446790715915749" at="53,178,57,5" name="jetbrains.mps.make.dependencies.ModulesCluster$1" />
-      <unit id="6329960826076769420" at="83,55,87,9" name="jetbrains.mps.make.dependencies.ModulesCluster$3" />
-      <unit id="7959437477381204337" at="118,69,122,23" name="jetbrains.mps.make.dependencies.ModulesCluster$6" />
-      <unit id="7959437477381204350" at="122,83,126,23" name="jetbrains.mps.make.dependencies.ModulesCluster$6" />
+      <unit id="6329960826076769420" at="83,55,87,9" name="jetbrains.mps.make.dependencies.ModulesCluster$2$1" />
+      <unit id="7959437477381204337" at="118,69,122,23" name="jetbrains.mps.make.dependencies.ModulesCluster$3$1$1$1" />
+      <unit id="7959437477381204350" at="122,83,126,23" name="jetbrains.mps.make.dependencies.ModulesCluster$3$1$1$2" />
       <unit id="5350554324078471185" at="213,88,217,5" name="jetbrains.mps.make.dependencies.ModulesCluster$4" />
       <unit id="5350554324078490427" at="219,133,223,5" name="jetbrains.mps.make.dependencies.ModulesCluster$5" />
       <unit id="7902446790715915288" at="226,78,230,5" name="jetbrains.mps.make.dependencies.ModulesCluster$6" />
-      <unit id="7902446790715915238" at="252,92,256,7" name="jetbrains.mps.make.dependencies.ModulesCluster$1" />
-      <unit id="7902446790715915214" at="260,91,264,7" name="jetbrains.mps.make.dependencies.ModulesCluster$2" />
+      <unit id="7902446790715915238" at="252,92,256,7" name="jetbrains.mps.make.dependencies.ModulesCluster$ModulesGraph$1" />
+      <unit id="7902446790715915214" at="260,91,264,7" name="jetbrains.mps.make.dependencies.ModulesCluster$ModulesGraph$2" />
       <unit id="6329960826076776719" at="81,55,89,5" name="jetbrains.mps.make.dependencies.ModulesCluster$2" />
       <unit id="7902446790715915110" at="239,0,247,0" name="jetbrains.mps.make.dependencies.ModulesCluster$ModuleDeps" />
       <unit id="7902446790715915141" at="247,0,271,0" name="jetbrains.mps.make.dependencies.ModulesCluster$ModulesGraph" />
-      <unit id="7959437477381204309" at="97,23,174,13" name="jetbrains.mps.make.dependencies.ModulesCluster$5" />
-      <unit id="7959437477381204309" at="95,19,176,9" name="jetbrains.mps.make.dependencies.ModulesCluster$4" />
+      <unit id="7959437477381204309" at="97,23,174,13" name="jetbrains.mps.make.dependencies.ModulesCluster$3$1$1" />
+      <unit id="7959437477381204309" at="95,19,176,9" name="jetbrains.mps.make.dependencies.ModulesCluster$3$1" />
       <unit id="7959437477381204309" at="93,134,178,5" name="jetbrains.mps.make.dependencies.ModulesCluster$3" />
       <unit id="5888262800849895741" at="35,0,272,0" name="jetbrains.mps.make.dependencies.ModulesCluster" />
     </file>

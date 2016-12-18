@@ -11,11 +11,10 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.ConceptMenusPart;
 import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 
@@ -32,18 +31,14 @@ public class parameter_Contribution extends SubstituteMenuBase {
   }
   public class SubstituteMenuPart_Concepts_bxx1tv_a extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
     protected Collection getConcepts(SubstituteMenuContext _context) {
-      List<SNode> parameters = ListSequence.fromList(new ArrayList<SNode>());
+      List<SConcept> parameters = ListSequence.fromList(new ArrayList<SConcept>());
       boolean inParInt = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120cd519c2dL, "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), false, false) != null;
       boolean notInApplicable = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x115b82b10f5L, "jetbrains.mps.lang.intentions.structure.IsApplicableBlock"), false, false) == null;
       boolean notInChildFilterBlock = SNodeOperations.getNodeAncestor(_context.getParentNode(), MetaAdapterFactory.getInterfaceConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x323731f511d1c198L, "jetbrains.mps.lang.intentions.structure.ChildFilterBlock"), false, false) == null;
       if (inParInt && notInApplicable && notInChildFilterBlock) {
-        ListSequence.fromList(parameters).addElement(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c8fd57fbL, "jetbrains.mps.lang.intentions.structure.IntentionParameter").getDeclarationNode());
+        ListSequence.fromList(parameters).addElement(MetaAdapterFactory.getConcept(0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c8fd57fbL, "jetbrains.mps.lang.intentions.structure.IntentionParameter"));
       }
-      return ListSequence.fromList(parameters).select(new ISelector<SNode, SAbstractConcept>() {
-        public SAbstractConcept select(SNode it) {
-          return SNodeOperations.asSConcept(it);
-        }
-      }).toListSequence();
+      return parameters;
     }
     @Override
     protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {

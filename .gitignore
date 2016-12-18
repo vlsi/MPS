@@ -4,6 +4,7 @@
 **/.idea/workspace.xml
 **/.idea/shelf
 **/.mps/workspace.xml
+**/.mps/shelf
 /build/solution/.idea/workspace.xml
 /MPSPlugin/.idea/workspace.xml
 /MPSPlugin/apiclasses
@@ -35,4 +36,6 @@ teamcity-info.xml
 /plugins/git4idea/lib
 /plugins/svn4idea/lib
 /plugins/mps-testing/lib
+/plugins/terminal
 /lib/
+/mps-platform.zip

@@ -39,7 +39,7 @@
       <node id="1225195203269" at="59,0,62,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1225195203269" at="62,0,65,0" concept="7" trace="overrides#()Z" />
       <node id="1225195203323" at="40,34,44,9" concept="0" />
-      <node id="1225195203345" at="48,210,52,9" concept="0" />
+      <node id="1225195203345" at="48,57,52,9" concept="0" />
       <node id="1225195203303" at="34,44,39,7" concept="5" />
       <node id="1225195203321" at="39,7,45,7" concept="6" />
       <node id="1225195203343" at="47,187,53,7" concept="6" />
@@ -69,7 +69,7 @@
       </scope>
       <scope id="1225195203269" at="62,0,65,0" />
       <scope id="1225195203322" at="40,34,44,9" />
-      <scope id="1225195203344" at="48,210,52,9" />
+      <scope id="1225195203344" at="48,57,52,9" />
       <scope id="1225195203303" at="34,44,39,7">
         <var name="cm" id="1225195203305" />
       </scope>

@@ -566,8 +566,8 @@
       </scope>
       <unit id="3608835296802635779" at="26,48,30,5" name="jetbrains.mps.smodel.resources.ModelsToResources$1" />
       <unit id="3608835296802640805" at="136,18,140,5" name="jetbrains.mps.smodel.resources.ModelsToResources$3" />
-      <unit id="3608835296802640727" at="42,23,132,13" name="jetbrains.mps.smodel.resources.ModelsToResources$4" />
-      <unit id="3608835296802640727" at="40,19,134,9" name="jetbrains.mps.smodel.resources.ModelsToResources$3" />
+      <unit id="3608835296802640727" at="42,23,132,13" name="jetbrains.mps.smodel.resources.ModelsToResources$2$1$1" />
+      <unit id="3608835296802640727" at="40,19,134,9" name="jetbrains.mps.smodel.resources.ModelsToResources$2$1" />
       <unit id="3608835296802640727" at="38,139,136,5" name="jetbrains.mps.smodel.resources.ModelsToResources$2" />
       <unit id="7219626660275504879" at="19,0,143,0" name="jetbrains.mps.smodel.resources.ModelsToResources" />
     </file>

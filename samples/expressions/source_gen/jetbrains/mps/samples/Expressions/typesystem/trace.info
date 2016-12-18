@@ -459,8 +459,8 @@
         <var name="status" id="2073504467208952445" />
         <var name="typeCheckingContext" id="2073504467208952445" />
       </scope>
-      <unit id="1387988544209571103" at="50,189,55,17" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule$3" />
-      <unit id="1387988544209571098" at="48,60,69,13" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule$2" />
+      <unit id="1387988544209571103" at="50,189,55,17" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule$1$1$1" />
+      <unit id="1387988544209571098" at="48,60,69,13" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule$1$1" />
       <unit id="1387988544209571096" at="44,53,72,7" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule$1" />
       <unit id="2073504467208952445" at="22,0,101,0" name="jetbrains.mps.samples.Expressions.typesystem.typeof_ArithmeticSimpleMathExpression_InferenceRule" />
     </file>

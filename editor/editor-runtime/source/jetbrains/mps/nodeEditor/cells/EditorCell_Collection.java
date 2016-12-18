@@ -101,12 +101,20 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
   private MouseListener myUnfoldCollectionMouseListener;
   private boolean myCanBeSynchronized;
 
+  /**
+   * @deprecated since MPS 3.5 not used
+   */
   @SuppressWarnings({"UnusedDeclaration"})
+  @Deprecated
   public static EditorCell_Collection createVertical(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Vertical(), handler);
   }
 
+  /**
+   * @deprecated since MPS 3.5 not used
+   */
   @SuppressWarnings({"UnusedDeclaration"})
+  @Deprecated
   public static EditorCell_Collection createHorizontal(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Horizontal(), handler);
   }
@@ -131,7 +139,11 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return new EditorCell_Collection(editorContext, node, new CellLayout_Table(), null);
   }
 
+  /**
+   * @deprecated since MPS 3.5 not used
+   */
   @SuppressWarnings({"UnusedDeclaration"})
+  @Deprecated
   public static EditorCell_Collection createFlow(EditorContext editorContext, SNode node, EditorCellListHandler handler) {
     return new EditorCell_Collection(editorContext, node, new CellLayout_Flow(), handler);
   }
@@ -284,12 +296,16 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     return Math.max(myArtificialBracesIndent, naturalIndent);
   }
 
-  public EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout, AbstractCellListHandler handler) {
+  public EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout) {
     super(editorContext, node);
     myCellLayout = cellLayout;
-    myCellListHandler = handler;
     this.setAction(CellActionType.LOCAL_HOME, new SelectFirstChild());
     this.setAction(CellActionType.LOCAL_END, new SelectLastChild());
+  }
+
+  public EditorCell_Collection(EditorContext editorContext, SNode node, @NotNull CellLayout cellLayout, AbstractCellListHandler handler) {
+    this(editorContext, node, cellLayout);
+    myCellListHandler = handler;
   }
 
   private void addBraces() {

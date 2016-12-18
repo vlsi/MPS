@@ -137,7 +137,7 @@
             <node concept="2OqwBi" id="6vG$pauOZna" role="2Oq$k0">
               <node concept="13iPFW" id="6vG$pauOZmP" role="2Oq$k0" />
               <node concept="3TrEf2" id="6vG$pauOZng" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOxapj" />
+                <ref role="3Tt5mk" to="tpee:hqOxapj" resolve="fieldDeclaration" />
               </node>
             </node>
             <node concept="3w_OXm" id="6vG$pauOZnJ" role="2OqNvi" />
@@ -148,7 +148,7 @@
             <node concept="2OqwBi" id="6vG$pauOZoA" role="2Oq$k0">
               <node concept="13iPFW" id="6vG$pauOZoh" role="2Oq$k0" />
               <node concept="3TrEf2" id="6vG$pauOZoF" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:hqOxapj" />
+                <ref role="3Tt5mk" to="tpee:hqOxapj" resolve="fieldDeclaration" />
               </node>
             </node>
             <node concept="3TrcHB" id="6vG$pauOZp7" role="2OqNvi">
@@ -202,7 +202,7 @@
             <node concept="2OqwBi" id="6vG$pauP05q" role="2Oq$k0">
               <node concept="13iPFW" id="6vG$pauP05r" role="2Oq$k0" />
               <node concept="3TrEf2" id="6vG$pauP05B" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:f_2Pw7K" />
+                <ref role="3Tt5mk" to="tpee:f_2Pw7K" resolve="staticFieldDeclaration" />
               </node>
             </node>
             <node concept="3w_OXm" id="6vG$pauP05t" role="2OqNvi" />
@@ -226,7 +226,7 @@
                     <node concept="2OqwBi" id="6vG$pauP0ce" role="2Oq$k0">
                       <node concept="13iPFW" id="6vG$pauP0cf" role="2Oq$k0" />
                       <node concept="3TrEf2" id="6vG$pauP0cg" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:gDPxDYr" />
+                        <ref role="3Tt5mk" to="tpee:gDPxDYr" resolve="classifier" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="6vG$pauP0ch" role="2OqNvi">
@@ -247,7 +247,7 @@
             <node concept="2OqwBi" id="6vG$pauP0d8" role="2Oq$k0">
               <node concept="13iPFW" id="6vG$pauP0cN" role="2Oq$k0" />
               <node concept="3TrEf2" id="6vG$pauP0dh" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:gDPxDYr" />
+                <ref role="3Tt5mk" to="tpee:gDPxDYr" resolve="classifier" />
               </node>
             </node>
             <node concept="3x8VRR" id="6vG$pauP0dK" role="2OqNvi" />
@@ -262,7 +262,7 @@
               <node concept="2OqwBi" id="6vG$pauP05w" role="2Oq$k0">
                 <node concept="13iPFW" id="6vG$pauP05x" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6vG$pauP05E" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:f_2Pw7K" />
+                  <ref role="3Tt5mk" to="tpee:f_2Pw7K" resolve="staticFieldDeclaration" />
                 </node>
               </node>
               <node concept="3TrcHB" id="6vG$pauP05z" role="2OqNvi">

@@ -92,10 +92,10 @@
         <var name="references" id="1585405235656310170" />
       </scope>
       <scope id="1585405235656310170" at="54,0,91,0" />
-      <unit id="3189559528229799703" at="68,264,72,13" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
-      <unit id="1585405235656310170" at="76,23,80,13" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$4" />
+      <unit id="3189559528229799703" at="68,264,72,13" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2$1$1" />
+      <unit id="1585405235656310170" at="76,23,80,13" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2$1$2" />
       <unit id="1585405235656310170" at="41,152,51,5" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$1" />
-      <unit id="1585405235656310170" at="65,19,86,9" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$3" />
+      <unit id="1585405235656310170" at="65,19,86,9" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2$1" />
       <unit id="1585405235656310170" at="57,156,88,5" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints$2" />
       <unit id="1585405235656310170" at="33,0,93,0" name="jetbrains.mps.baseLanguageInternal.constraints.ConstantValue_Constraints" />
     </file>
@@ -187,7 +187,7 @@
         <var name="references" id="3928209435773827186" />
       </scope>
       <scope id="3928209435773827186" at="27,0,52,0" />
-      <unit id="3928209435773827186" at="38,19,47,9" name="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$2" />
+      <unit id="3928209435773827186" at="38,19,47,9" name="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$1$1" />
       <unit id="3928209435773827186" at="30,158,49,5" name="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints$1" />
       <unit id="3928209435773827186" at="22,0,54,0" name="jetbrains.mps.baseLanguageInternal.constraints.WeakClassReference_Constraints" />
     </file>
@@ -258,7 +258,7 @@
         <var name="references" id="5822086619725599106" />
       </scope>
       <scope id="5822086619725599106" at="38,0,85,0" />
-      <unit id="5822086619725599106" at="49,19,80,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$2" />
+      <unit id="5822086619725599106" at="49,19,80,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$1$1" />
       <unit id="5822086619725599106" at="41,158,82,5" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints$1" />
       <unit id="5822086619725599106" at="33,0,87,0" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticInnerClassCreator_Constraints" />
     </file>
@@ -268,7 +268,7 @@
       <node id="5857910569715972120" at="26,59,27,187" concept="12" />
       <node id="5857910569715972120" at="31,90,32,131" concept="6" />
       <node id="5857910569715972120" at="35,44,36,20" concept="7" />
-      <node id="5857910569715993769" at="43,142,44,447" concept="7" />
+      <node id="5857910569715993769" at="43,142,44,426" concept="7" />
       <node id="5857910569715972120" at="47,63,48,58" concept="7" />
       <node id="5857910569715972120" at="52,7,53,22" concept="7" />
       <node id="5857910569715972120" at="55,0,56,0" concept="10" trace="breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a2" />
@@ -282,7 +282,7 @@
       <node id="5857910569715972120" at="30,0,55,0" concept="5" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="5857910569715972120" at="26,59,27,187" />
       <scope id="5857910569715972120" at="35,44,36,20" />
-      <scope id="5857910569715972165" at="43,142,44,447" />
+      <scope id="5857910569715972165" at="43,142,44,426" />
       <scope id="5857910569715972120" at="47,63,48,58" />
       <scope id="5857910569715972120" at="26,0,29,0" />
       <scope id="5857910569715972120" at="34,0,38,0" />
@@ -297,7 +297,7 @@
         <var name="references" id="5857910569715972120" />
       </scope>
       <scope id="5857910569715972120" at="30,0,55,0" />
-      <unit id="5857910569715972120" at="41,19,50,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$2" />
+      <unit id="5857910569715972120" at="41,19,50,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$1$1" />
       <unit id="5857910569715972120" at="33,158,52,5" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints$1" />
       <unit id="5857910569715972120" at="25,0,57,0" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractStaticMethod_CallExpression_Constraints" />
     </file>
@@ -465,7 +465,7 @@
         <var name="references" id="99767819676012236" />
       </scope>
       <scope id="99767819676012236" at="30,0,63,0" />
-      <unit id="99767819676012236" at="41,19,58,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$2" />
+      <unit id="99767819676012236" at="41,19,58,9" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$1$1" />
       <unit id="99767819676012236" at="33,154,60,5" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints$1" />
       <unit id="99767819676012236" at="25,0,65,0" name="jetbrains.mps.baseLanguageInternal.constraints.ExtractToConstantRefExpression_Constraints" />
     </file>

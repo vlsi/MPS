@@ -2,7 +2,7 @@
 <model ref="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -313,7 +313,7 @@
       <property role="20kJfa" value="isApplicableBlock" />
       <property role="IQ2ns" value="6895093993902310765" />
       <ref role="20lvS9" node="hAvlFdS" resolve="IsApplicableToModelClause" />
-      <ref role="20ksaX" node="4Lb$w0Yjnwn" />
+      <ref role="20ksaX" node="4Lb$w0Yjnwn" resolve="isApplicableBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="5YKiRiBuwlF">
@@ -336,7 +336,7 @@
       <property role="20kJfa" value="isApplicableBlock" />
       <property role="IQ2ns" value="6895093993902310768" />
       <ref role="20lvS9" node="5YKiRiBuwlL" resolve="IsApplicableToModuleClause" />
-      <ref role="20ksaX" node="4Lb$w0Yjnwn" />
+      <ref role="20ksaX" node="4Lb$w0Yjnwn" resolve="isApplicableBlock" />
     </node>
   </node>
   <node concept="1TIwiD" id="5YKiRiBuwlG">
@@ -352,7 +352,7 @@
       <property role="20kJfa" value="isApplicableBlock" />
       <property role="IQ2ns" value="5497648299878742040" />
       <ref role="20lvS9" node="5YKiRiBuwmo" resolve="IsApplicableToNodeClause" />
-      <ref role="20ksaX" node="4Lb$w0Yjnwn" />
+      <ref role="20ksaX" node="4Lb$w0Yjnwn" resolve="isApplicableBlock" />
     </node>
     <node concept="1TJgyj" id="5YKiRiBuwmm" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -449,7 +449,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5497648299878398635" />
       <ref role="20lvS9" node="5YKiRiBuwpy" resolve="RefactoringField" />
-      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" />
+      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" resolve="baseVariableDeclaration" />
     </node>
     <node concept="PrWs8" id="q$PMBgcCet" role="PzmwI">
       <ref role="PrY4T" node="q$PMBgcBR4" resolve="RefactoringArgumentReference" />

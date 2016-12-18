@@ -8,7 +8,7 @@
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -2468,7 +2468,7 @@
           <node concept="2OqwBi" id="1nctWZUYPM3" role="3clFbG">
             <node concept="2ShNRf" id="1nctWZUYGBH" role="2Oq$k0">
               <node concept="1pGfFk" id="1nctWZUYNti" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryListener)" resolve="RepoListenerRegistrar" />
                 <node concept="2OqwBi" id="1nctWZUYOgv" role="37wK5m">
                   <node concept="37vLTw" id="1nctWZUYNvk" role="2Oq$k0">
                     <ref role="3cqZAo" node="6y_kxB1UvQg" resolve="myMpsProject" />
@@ -2514,7 +2514,7 @@
           <node concept="2OqwBi" id="1nctWZUYTAl" role="3clFbG">
             <node concept="2ShNRf" id="1nctWZUYQxQ" role="2Oq$k0">
               <node concept="1pGfFk" id="1nctWZUYRBe" role="2ShVmc">
-                <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryContentAdapter)" resolve="RepoListenerRegistrar" />
+                <ref role="37wK5l" to="w1kc:~RepoListenerRegistrar.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository,org.jetbrains.mps.openapi.module.SRepositoryListener)" resolve="RepoListenerRegistrar" />
                 <node concept="2OqwBi" id="1nctWZUYS4x" role="37wK5m">
                   <node concept="37vLTw" id="1nctWZUYRDp" role="2Oq$k0">
                     <ref role="3cqZAo" node="6y_kxB1UvQg" resolve="myMpsProject" />

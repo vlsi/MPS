@@ -70,7 +70,7 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
   }
 
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    StringBuilder sb = new StringBuilder(NamedTupleDeclaration__BehaviorDescriptor.getLeftBracket_id1653mnvAgnc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+    StringBuilder sb = new StringBuilder(NamedTupleDeclaration__BehaviorDescriptor.getLeftBracket_id1653mnvAgnc.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__))));
     String sep = "";
     for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(__thisNode__)).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
@@ -80,7 +80,7 @@ public final class NamedTupleDeclaration__BehaviorDescriptor extends BaseBHDescr
       sb.append(sep).append(SPropertyOperations.getString(cmp, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       sep = ", ";
     }
-    return sb.append(NamedTupleDeclaration__BehaviorDescriptor.getRightBracket_id1653mnvAgs3.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).append(" ").append(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))).toString();
+    return sb.append(NamedTupleDeclaration__BehaviorDescriptor.getRightBracket_id1653mnvAgs3.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).append(" ").append(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName"))).toString();
   }
   /*package*/ static List<SNode> allExtends_id2ItBWjOSZqc(@NotNull SNode __thisNode__) {
     List<SNode> result = new ArrayList<SNode>();

@@ -9,10 +9,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="module" module-name="closures-runtime" />
     <orderEntry type="module" module-name="openapi" />
-    <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="util-core" />
     <orderEntry type="module" module-name="mps-annotations" />
     <orderEntry type="module" module-name="logging" />

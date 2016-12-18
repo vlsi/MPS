@@ -17,25 +17,35 @@ import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import com.intellij.execution.impl.RunManagerImpl;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.execution.configurations.RunConfiguration;
+import com.intellij.execution.actions.ConfigurationContext;
 
 public class Java_Producer {
-  private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory";
+  private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.Java_Configuration_Factory";
+
   public Java_Producer() {
   }
+
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
-    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
+    ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_Node_d1i8dk_b(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     ListSequence.fromList(creators).addElement(new Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-  public static class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseMpsProducer<SNode> {
+
+  public static final class ProducerPart_NodeClassConcept_d1i8dk_a extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeClassConcept_d1i8dk_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
+
+    @Override
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
+
+    @Override
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if ((((SNode) BHReflection.invoke(source, SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null)) {
@@ -48,43 +58,78 @@ public class Java_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
+
+    @Override
+    protected boolean isConfigurationFromContext(@NotNull RunConfiguration configuration0, @NotNull ConfigurationContext context) {
+      if (!(configuration0 instanceof Java_Configuration)) {
+        return false;
+      }
+      Java_Configuration configuration = (Java_Configuration) configuration0;
+      return configuration.isFromContext(context);
+    }
+
     @Override
     public Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a clone() {
       return (Java_Producer.ProducerPart_NodeClassConcept_d1i8dk_a) super.clone();
     }
   }
-  public static class ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b extends BaseMpsProducer<SNode> {
-    public ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b(ConfigurationType configurationType, String factoryName) {
+  public static final class ProducerPart_Node_d1i8dk_b extends BaseMpsProducer<SNode> {
+    public ProducerPart_Node_d1i8dk_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
+
+    @Override
     protected boolean isApplicable(Object source) {
-      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+      return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
     }
+
+    @Override
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
-      if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
+      SNode mainMethodCandidate = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), true, false);
+      if (mainMethodCandidate == null) {
         return null;
       }
-      SNode classifier = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+      if (!(((boolean) (Boolean) BHReflection.invoke(mainMethodCandidate, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu"))))) {
+        return null;
+      }
+      SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
       if ((classifier == null)) {
+        return null;
+      }
+      if (!(SPropertyOperations.getBoolean(SModelOperations.getModuleStub(SNodeOperations.getModel(classifier)), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe24L, "compileInMPS")))) {
         return null;
       }
       Java_Configuration configuration = ((Java_Configuration) getConfigurationFactory().createConfiguration("" + "Class " + SPropertyOperations.getString(classifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), (Java_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getNode().setNode(classifier);
       return configuration;
     }
+
     @Override
-    public Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b clone() {
-      return (Java_Producer.ProducerPart_NodeStaticMethodDeclaration_d1i8dk_b) super.clone();
+    protected boolean isConfigurationFromContext(@NotNull RunConfiguration configuration0, @NotNull ConfigurationContext context) {
+      if (!(configuration0 instanceof Java_Configuration)) {
+        return false;
+      }
+      Java_Configuration configuration = (Java_Configuration) configuration0;
+      return configuration.isFromContext(context);
+    }
+
+    @Override
+    public Java_Producer.ProducerPart_Node_d1i8dk_b clone() {
+      return (Java_Producer.ProducerPart_Node_d1i8dk_b) super.clone();
     }
   }
-  public static class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseMpsProducer<SNode> {
+  public static final class ProducerPart_NodeIMainClass_d1i8dk_c extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeIMainClass_d1i8dk_c(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
+
+    @Override
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getInterfaceConcept(0x4caf0310491e41f5L, 0x8a9b2006b3a94898L, 0x40c1a7cb987d20d5L, "jetbrains.mps.execution.util.structure.IMainClass"));
     }
+
+    @Override
     protected Java_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if (!(((boolean) (Boolean) BHReflection.invoke(source, SMethodTrimmedId.create("isNodeRunnable", null, "431DWIovi3C"))))) {
@@ -98,6 +143,16 @@ public class Java_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
+
+    @Override
+    protected boolean isConfigurationFromContext(@NotNull RunConfiguration configuration0, @NotNull ConfigurationContext context) {
+      if (!(configuration0 instanceof Java_Configuration)) {
+        return false;
+      }
+      Java_Configuration configuration = (Java_Configuration) configuration0;
+      return configuration.isFromContext(context);
+    }
+
     @Override
     public Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c clone() {
       return (Java_Producer.ProducerPart_NodeIMainClass_d1i8dk_c) super.clone();

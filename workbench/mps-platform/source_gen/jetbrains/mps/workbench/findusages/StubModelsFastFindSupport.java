@@ -18,7 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.containers.MultiMap;
-import jetbrains.mps.util.Mapper;
+import java.util.function.Function;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Map;
@@ -78,9 +78,8 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         return it.getNodeId() instanceof SNodeId.Foreign;
       }
     }));
-    MultiMap<SModel, SNode> candidates = findCandidates(models, nodes, processedConsumer, new Mapper<SNode, String>() {
-      @Override
-      public String value(SNode key) {
+    MultiMap<SModel, SNode> candidates = findCandidates(models, nodes, processedConsumer, new Function<SNode, String>() {
+      public String apply(SNode key) {
         return key.getNodeId().toString();
       }
     });
@@ -119,9 +118,8 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
         return SModelStereotype.JAVA_STUB.equals(it.getName().getStereotype());
       }
     }));
-    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, String>() {
-      @Override
-      public String value(SModelReference key) {
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Function<SModelReference, String>() {
+      public String apply(SModelReference key) {
         return key.getModelName();
       }
     });
@@ -133,7 +131,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
   }
 
   protected static Logger LOG = LogManager.getLogger(StubModelsFastFindSupport.class);
-  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Mapper<T, String> id) {
+  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedConsumer, @Nullable Function<T, String> id) {
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     if (elems.isEmpty()) {
       for (SModel sm : models) {
@@ -191,7 +189,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FindUsag
     }
 
     for (T elem : elems) {
-      String nodeId = (id == null ? elem.toString() : id.value(elem));
+      String nodeId = (id == null ? elem.toString() : id.apply(elem));
       // filter files with usages 
       ConcreteFilesGlobalSearchScope allFiles = new ConcreteFilesGlobalSearchScope(scopeFiles.getSecond());
 

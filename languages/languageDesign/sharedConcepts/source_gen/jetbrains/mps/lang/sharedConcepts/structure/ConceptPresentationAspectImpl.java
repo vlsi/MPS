@@ -12,7 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptFunctionParameter_editorContext = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_model = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_node = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_operationContext = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ConceptFunctionParameter_operationContext = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ConceptFunctionParameter_progressMonitor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_scope = new ConceptPresentationBuilder().create();
 

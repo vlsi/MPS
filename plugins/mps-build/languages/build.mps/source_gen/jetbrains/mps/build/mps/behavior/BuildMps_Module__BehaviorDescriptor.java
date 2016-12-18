@@ -58,7 +58,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__) && (boolean) BuildMps_Module__BehaviorDescriptor.isCompilable_id6tOCIA6_7jg.invoke(m)) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if (artifact != null) {
-          builder.add(artifact, m);
+          builder.add(artifact);
           needsFetch = true;
         }
       }
@@ -89,7 +89,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
     }
 
     for (SNode path : ListSequence.fromList(requiredJars)) {
-      Tuples._2<SNode, String> resource = artifacts.getResource(SNodeOperations.cast(artifacts.toOriginalNode(path), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc3eL, "jetbrains.mps.build.structure.BuildSourcePath")));
+      Tuples._2<SNode, String> resource = artifacts.getResource(path);
       SNode artifact = SNodeOperations.as(resource._0(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if (artifact != null) {
         if (isNotEmptyString(resource._1())) {
@@ -120,7 +120,7 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
         SNode artifact = SNodeOperations.as(artifacts.findArtifact(jm), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if (artifact != null) {
           needsFetch = true;
-          builder.add(artifact, jm);
+          builder.add(artifact);
         }
       }
     }
@@ -132,18 +132,18 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__)) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
         if (artifact != null) {
-          builder.add(artifact, m);
+          builder.add(artifact);
         } else if (SNodeOperations.isInstanceOf(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"))) {
           artifact = SNodeOperations.as(artifacts.findArtifact(SLinkOperations.getTarget(SNodeOperations.cast(m, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, 0x4780308f5d47f25L, "path"))), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
           if (artifact != null) {
-            builder.add(artifact, m);
+            builder.add(artifact);
           }
         }
       }
     }
 
     if (needsFetch) {
-      artifacts.needsFetch(__thisNode__);
+      builder.needsFetch(__thisNode__);
     }
   }
 

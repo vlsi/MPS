@@ -264,6 +264,20 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.DefaultForGNOME_KeymapChanges" file="DefaultForGNOME_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.DefaultForKDE_KeymapChanges" file="DefaultForKDE_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" file="Default_KeymapChanges.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
@@ -273,21 +287,23 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" file="DeleteGenerator_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
-    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.util.IStatus" />
+    <classNode dependClassName="jetbrains.mps.util.Status" />
+    <classNode dependClassName="jetbrains.mps.workbench.actions.module.DeleteModuleHelper" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.DeleteDialog" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
@@ -383,8 +399,10 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.FindUtils" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsageToolOptions" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesViewTool" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.finders.LanguageImportFinder" />
     <classNode dependClassName="jetbrains.mps.ide.ui.finders.ModuleUsagesFinder" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
@@ -442,8 +460,6 @@
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Generator_TabDescriptor" file="Generator_TabDescriptor.java">
     <classNode dependClassName="com.intellij.ide.DataManager" />
-    <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.wm.WindowManager" />
     <classNode dependClassName="java.lang.Character" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -453,16 +469,15 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="javax.swing.JFrame" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MappingDialog" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ConceptEditorOpenHelper" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Generator_Order" />
     <classNode dependClassName="jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.kernel.language.ConceptAspectsHelper" />
@@ -474,7 +489,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
@@ -483,7 +498,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BHReflection" />
-    <classNode dependClassName="jetbrains.mps.workbench.MPSDataKeys" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -491,7 +505,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.EditableSModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.ModelAccess" />
     <classNode extendsClassName="jetbrains.mps.plugins.relations.RelationDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action" file="GoToConceptDeclaration_Action.java">
@@ -816,11 +829,19 @@
     <classNode dependClassName="java.lang.String" />
     <classNode extendsClassName="jetbrains.mps.plugins.actions.GeneratedActionGroup" />
   </dependency>
+  <dependency className="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" file="MacOSX105_KeymapChanges.java">
+    <classNode dependClassName="com.intellij.openapi.actionSystem.KeyboardShortcut" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.Shortcut" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.KeyStroke" />
+    <classNode extendsClassName="jetbrains.mps.plugins.actions.BaseKeymapChanges" />
+  </dependency>
   <dependency className="jetbrains.mps.ide.devkit.actions.Mpsdevkit_ApplicationPlugin" file="Mpsdevkit_ApplicationPlugin.java">
     <classNode dependClassName="com.intellij.openapi.extensions.PluginId" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.CommonModuleActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DebugActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.DevkitActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GeneratorActions_ActionGroup" />
@@ -839,6 +860,8 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CellProperties_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.ContributeModuleUsage_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.CreateDefaultEditor_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DefaultForGNOME_KeymapChanges" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DefaultForKDE_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.Default_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DeleteGenerator_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup" />
@@ -864,6 +887,7 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.LanguageNewGenerator_ActionGroup" />
+    <classNode dependClassName="jetbrains.mps.ide.devkit.actions.MacOSX105_KeymapChanges" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NamespaceNewActionsEx_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action" />
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.NewAccessoryModel_Action" />
@@ -1376,6 +1400,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
+    <classNode dependClassName="jetbrains.mps.ide.tools.BaseTool" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener" />

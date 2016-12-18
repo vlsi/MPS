@@ -7,7 +7,7 @@
     <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
@@ -108,7 +108,7 @@
                 <ref role="1YBMHb" node="5WpmwkrQrZn" resolve="printNodeReferenceExpression" />
               </node>
               <node concept="3TrEf2" id="6M9lfhDFVhT" role="2OqNvi">
-                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
               </node>
             </node>
           </node>
@@ -138,7 +138,7 @@
                 <ref role="1YBMHb" node="4LU9FcrO4k5" resolve="printNodeExpression" />
               </node>
               <node concept="3TrEf2" id="6M9lfhDFWW6" role="2OqNvi">
-                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
               </node>
             </node>
           </node>
@@ -186,7 +186,7 @@
                 <ref role="1YBMHb" node="6_TW7xVaM$i" resolve="printExpression" />
               </node>
               <node concept="3TrEf2" id="6_TW7xVqlb2" role="2OqNvi">
-                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
               </node>
             </node>
           </node>
@@ -220,7 +220,7 @@
                 <ref role="1YBMHb" node="6_TW7xVaPWN" resolve="printTextExpression" />
               </node>
               <node concept="3TrEf2" id="6_TW7xVqlkl" role="2OqNvi">
-                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
               </node>
             </node>
           </node>
@@ -251,7 +251,7 @@
                 <ref role="1YBMHb" node="6_TW7xVvrr8" resolve="printSequenceExpression" />
               </node>
               <node concept="3TrEf2" id="3m3GNuUbcCP" role="2OqNvi">
-                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" />
+                <ref role="3Tt5mk" to="eynw:7gnNafF7Ztx" resolve="object" />
               </node>
             </node>
           </node>

@@ -106,7 +106,7 @@
         <var name="references" id="2264311582634140674" />
       </scope>
       <scope id="2264311582634140674" at="47,0,87,0" />
-      <unit id="2264311582634140674" at="58,19,82,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXAttributeReference_Constraints$2" />
+      <unit id="2264311582634140674" at="58,19,82,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXAttributeReference_Constraints$1$1" />
       <unit id="2264311582634140674" at="50,157,84,5" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXAttributeReference_Constraints$1" />
       <unit id="2264311582634140674" at="28,0,93,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXAttributeReference_Constraints" />
     </file>
@@ -151,7 +151,7 @@
         <var name="references" id="2264311582634140739" />
       </scope>
       <scope id="2264311582634140739" at="30,0,59,0" />
-      <unit id="2264311582634140739" at="41,19,54,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXFieldReference_Constraints$2" />
+      <unit id="2264311582634140739" at="41,19,54,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXFieldReference_Constraints$1$1" />
       <unit id="2264311582634140739" at="33,159,56,5" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXFieldReference_Constraints$1" />
       <unit id="2264311582634140739" at="25,0,61,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXFieldReference_Constraints" />
     </file>
@@ -276,7 +276,7 @@
         <var name="references" id="2264311582634140791" />
       </scope>
       <scope id="2264311582634140791" at="28,0,53,0" />
-      <unit id="2264311582634140791" at="39,19,48,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXChildRule_Constraints$2" />
+      <unit id="2264311582634140791" at="39,19,48,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXChildRule_Constraints$1$1" />
       <unit id="2264311582634140791" at="31,152,50,5" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXChildRule_Constraints$1" />
       <unit id="2264311582634140791" at="23,0,55,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXChildRule_Constraints" />
     </file>
@@ -354,7 +354,7 @@
         <var name="references" id="4720003541456853028" />
       </scope>
       <scope id="4720003541456853028" at="45,0,73,0" />
-      <unit id="4720003541456853028" at="56,19,68,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXNodeRuleParamRef_Constraints$2" />
+      <unit id="4720003541456853028" at="56,19,68,9" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXNodeRuleParamRef_Constraints$1$1" />
       <unit id="4720003541456853028" at="48,153,70,5" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXNodeRuleParamRef_Constraints$1" />
       <unit id="4720003541456853028" at="26,0,79,0" name="jetbrains.mps.core.xml.sax.constraints.XMLSAXNodeRuleParamRef_Constraints" />
     </file>

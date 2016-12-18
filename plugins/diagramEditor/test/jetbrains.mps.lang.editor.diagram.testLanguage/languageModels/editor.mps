@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="6106f611-7a74-42d1-80de-edc5c602bfd1" name="jetbrains.mps.lang.editor.diagram" version="0" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -174,8 +174,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -360,8 +360,10 @@
               <node concept="3clFbF" id="4N$3GFO5BVJ" role="3cqZAp">
                 <node concept="37vLTI" id="4N$3GFO5CoA" role="3clFbG">
                   <node concept="1PxgMI" id="4N$3GFO5D6b" role="37vLTx">
-                    <ref role="1m5ApE" to="g85x:4N$3GFO7R8E" resolve="OutputPort" />
                     <node concept="3Iumb4" id="4N$3GFO5Crn" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdH06v" role="3oSUPX">
+                      <ref role="cht4Q" to="g85x:4N$3GFO7R8E" resolve="OutputPort" />
+                    </node>
                   </node>
                   <node concept="2OqwBi" id="4N$3GFO5BWV" role="37vLTJ">
                     <node concept="3cyWnY" id="4N$3GFO5BVI" role="2Oq$k0" />
@@ -374,8 +376,10 @@
               <node concept="3clFbF" id="4N$3GFO5CuU" role="3cqZAp">
                 <node concept="37vLTI" id="4N$3GFO5CYt" role="3clFbG">
                   <node concept="1PxgMI" id="4N$3GFO5Ddm" role="37vLTx">
-                    <ref role="1m5ApE" to="g85x:4N$3GFO7R7M" resolve="InputPort" />
                     <node concept="3Iumb3" id="4N$3GFO5D1e" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdH06u" role="3oSUPX">
+                      <ref role="cht4Q" to="g85x:4N$3GFO7R7M" resolve="InputPort" />
+                    </node>
                   </node>
                   <node concept="2OqwBi" id="4N$3GFO5Cww" role="37vLTJ">
                     <node concept="3cyWnY" id="4N$3GFO5CuS" role="2Oq$k0" />

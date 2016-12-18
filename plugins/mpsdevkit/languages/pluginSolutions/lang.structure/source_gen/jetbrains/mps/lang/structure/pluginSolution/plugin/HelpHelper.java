@@ -5,14 +5,14 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
 import jetbrains.mps.smodel.Generator;
 import com.intellij.ide.BrowserUtil;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 
 public class HelpHelper {
   public static HelpHelper.HelpType getDefaultHelpFor(SModule contextModule, SModel contextModel, SNode node) {
@@ -41,13 +41,13 @@ public class HelpHelper {
     if ((node == null)) {
       return false;
     }
-    return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    return isNotEmptyString(getHelpURL(node));
   }
   public static boolean helpForRootIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
-    return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    return isNotEmptyString(getHelpURL(SNodeOperations.getContainingRoot(node)));
   }
   public static boolean helpForAspectIsAvailable(SModule module, SModel model) {
     if (model == null || module == null) {
@@ -69,10 +69,17 @@ public class HelpHelper {
     }
   }
   public static void showHelpForRoot(SNode node) {
-    BrowserUtil.browse(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    BrowserUtil.browse(getHelpURL(SNodeOperations.getContainingRoot(node)));
   }
   public static void showHelpForNode(SNode node) {
-    BrowserUtil.browse(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x2237c3bc85b3755cL, "helpURL")));
+    BrowserUtil.browse(getHelpURL(node));
+  }
+  public static String getHelpURL(SNode n) {
+    ConceptPresentation conceptPres = ConceptAspectsHelper.getPresentationAspect(n);
+    if (conceptPres == null) {
+      return null;
+    }
+    return conceptPres.getHelpUrl();
   }
   public enum HelpType {
     NODE("node"),

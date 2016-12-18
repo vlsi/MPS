@@ -573,7 +573,7 @@
     <node concept="1TJgyj" id="f_2PX25" role="1TKVEi">
       <property role="20kJfa" value="localVariableDeclaration" />
       <property role="IQ2ns" value="1070568296581" />
-      <ref role="20ksaX" node="fzcqZ_w" />
+      <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="fzcpWvJ" resolve="LocalVariableDeclaration" />
     </node>
   </node>
@@ -608,7 +608,7 @@
       <property role="20kJfa" value="parameterDeclaration" />
       <property role="IQ2ns" value="1070567982819" />
       <ref role="20lvS9" node="fz7vLUk" resolve="ParameterDeclaration" />
-      <ref role="20ksaX" node="fzcqZ_w" />
+      <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="fzcpWvV">
@@ -735,7 +735,7 @@
       <property role="20kJfa" value="staticFieldDeclaration" />
       <property role="IQ2ns" value="1070568178160" />
       <ref role="20lvS9" node="f$Wx3kv" resolve="StaticFieldDeclaration" />
-      <ref role="20ksaX" node="fzcqZ_w" />
+      <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="f_0N3wd">
@@ -862,7 +862,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1073063089579" />
       <ref role="20lvS9" node="fzclF8t" resolve="InstanceMethodDeclaration" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="fBy3z0Z">
@@ -953,7 +953,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1081236769987" />
       <ref role="20lvS9" node="fIYIFWa" resolve="StaticMethodDeclaration" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="fIYIFWa">
@@ -991,6 +991,9 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1081256993305" />
       <ref role="20lvS9" node="fz3vP1H" resolve="Type" />
+    </node>
+    <node concept="PrWs8" id="7plk_f0weUh" role="PzmwI">
+      <ref role="PrY4T" node="1wHCnsn58oY" resolve="IBinaryLike" />
     </node>
   </node>
   <node concept="1TIwiD" id="fJfqX4d">
@@ -1144,7 +1147,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1236880967992" />
       <ref role="20lvS9" node="fzclF84" resolve="ConstructorDeclaration" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
     <node concept="PrWs8" id="hCUZOPY" role="PzmwI">
       <ref role="PrY4T" node="hCUYCKd" resolve="IValidIdentifier" />
@@ -2016,7 +2019,7 @@
       <property role="20kJfa" value="constructorDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2925336694746234972" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="1TJgyj" id="h1Y44E9" role="1TKVEi">
@@ -2033,7 +2036,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="2925336694746234974" />
       <ref role="20lvS9" node="fz3vP1J" resolve="Expression" />
-      <ref role="20ksaX" node="fz7wK6I" />
+      <ref role="20ksaX" node="fz7wK6I" resolve="actualArgument" />
     </node>
     <node concept="1TJgyj" id="huGhqqj" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -2124,7 +2127,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1172058436957" />
       <ref role="20lvS9" node="fIYIFWa" resolve="StaticMethodDeclaration" />
-      <ref role="20ksaX" node="6LFqxSRBTg7" />
+      <ref role="20ksaX" node="6LFqxSRBTg7" resolve="method" />
     </node>
     <node concept="asaX9" id="7cdZoO_Memd" role="lGtFl">
       <property role="YLQ7P" value="use LocalMethodCall" />
@@ -2313,7 +2316,7 @@
       <property role="20kJfa" value="annotationMethod" />
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1188206594042" />
-      <ref role="20ksaX" node="g7MN44b" />
+      <ref role="20ksaX" node="g7MN44b" resolve="method" />
       <ref role="20lvS9" node="hiACnCB" resolve="AnnotationMethodDeclaration" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRT" role="rwd14">
@@ -2663,7 +2666,7 @@
       <property role="20kJfa" value="instanceMethodDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1202948736718" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="fzclF8t" resolve="InstanceMethodDeclaration" />
     </node>
   </node>
@@ -2807,7 +2810,7 @@
     <node concept="1TJgyj" id="hDpISCB" role="1TKVEi">
       <property role="20kJfa" value="constructorDeclaration" />
       <property role="IQ2ns" value="1212686240295" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="fzclF84" resolve="ConstructorDeclaration" />
     </node>
     <node concept="1TJgyj" id="hDpMfZw" role="1TKVEi">
@@ -3325,7 +3328,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1241540960362" />
       <ref role="20lvS9" node="fzclF84" resolve="ConstructorDeclaration" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
     <node concept="PrWs8" id="i4hANfy" role="PzmwI">
       <ref role="PrY4T" node="hxndl_i" resolve="IMethodCall" />
@@ -3548,7 +3551,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3066917033203112509" />
       <ref role="20lvS9" node="fzclF8t" resolve="InstanceMethodDeclaration" />
-      <ref role="20ksaX" node="6LFqxSRBTg7" />
+      <ref role="20ksaX" node="6LFqxSRBTg7" resolve="method" />
     </node>
     <node concept="asaX9" id="7cdZoO_Memb" role="lGtFl">
       <property role="YLQ7P" value="use LocalMethodCall" />
@@ -3814,7 +3817,7 @@
     <node concept="1TJgyj" id="h3xboM2" role="1TKVEi">
       <property role="20kJfa" value="staticFieldDeclaration" />
       <property role="IQ2ns" value="1172008963202" />
-      <ref role="20ksaX" node="fzcqZ_w" />
+      <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="f$Wx3kv" resolve="StaticFieldDeclaration" />
     </node>
   </node>
@@ -3912,7 +3915,7 @@
       <property role="20kJfa" value="fieldDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7785501532031731645" />
-      <ref role="20ksaX" node="fzcqZ_w" />
+      <ref role="20ksaX" node="fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="fz12cDC" resolve="FieldDeclaration" />
     </node>
   </node>
@@ -4184,7 +4187,7 @@
       <property role="20kJfa" value="method" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7812454656619025415" />
-      <ref role="20ksaX" node="fz7wK6H" />
+      <ref role="20ksaX" node="fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" node="6LFqxSRBTg8" resolve="MethodDeclaration" />
     </node>
   </node>

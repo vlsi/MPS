@@ -115,7 +115,7 @@
       <scope id="5932019537937718577" at="21,0,78,0">
         <var name="file" id="5932019537937719002" />
       </scope>
-      <unit id="5932019537937807365" at="43,64,52,15" name="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$2" />
+      <unit id="5932019537937807365" at="43,64,52,15" name="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$1$1" />
       <unit id="5932019537937718608" at="28,23,70,7" name="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence$1" />
       <unit id="1986682148700850462" at="18,0,79,0" name="jetbrains.mps.project.persistence.DeploymentDescriptorPersistence" />
     </file>
@@ -325,11 +325,11 @@
         <var name="descriptor" id="842994667883030494" />
         <var name="file" id="842994667883030496" />
       </scope>
-      <unit id="2184872129966415591" at="84,47,90,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$3" />
-      <unit id="2184872129966423584" at="98,61,104,17" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$4" />
-      <unit id="2184872129966425017" at="116,61,122,17" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$4" />
-      <unit id="2184872129966423529" at="94,47,108,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$3" />
-      <unit id="2184872129966425004" at="112,47,126,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$3" />
+      <unit id="2184872129966415591" at="84,47,90,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2$1" />
+      <unit id="2184872129966423584" at="98,61,104,17" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2$2$1" />
+      <unit id="2184872129966425017" at="116,61,122,17" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2$3$1" />
+      <unit id="2184872129966423529" at="94,47,108,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2$2" />
+      <unit id="2184872129966425004" at="112,47,126,11" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2$3" />
       <unit id="842994667883030175" at="30,40,64,7" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$1" />
       <unit id="2184872129966158937" at="75,23,137,5" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence$2" />
       <unit id="842994667883030151" at="23,0,152,0" name="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
@@ -1502,7 +1502,7 @@
       <unit id="702807520180545461" at="276,105,280,5" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$9" />
       <unit id="5221322343053250282" at="280,17,284,5" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$10" />
       <unit id="7363351619055803321" at="88,110,93,5" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$4" />
-      <unit id="2709156219364650659" at="176,19,188,9" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$9" />
+      <unit id="2709156219364650659" at="176,19,188,9" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$8$1" />
       <unit id="3226072627551309853" at="72,110,86,5" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$3" />
       <unit id="842994667883031999" at="174,88,190,5" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence$8" />
       <unit id="842994667883031742" at="50,0,371,0" name="jetbrains.mps.project.persistence.ModuleDescriptorPersistence" />

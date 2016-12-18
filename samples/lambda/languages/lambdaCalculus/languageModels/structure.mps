@@ -157,7 +157,7 @@
       <property role="20kJfa" value="variable" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8981808925914862845" />
-      <ref role="20ksaX" node="4zrttnsinFO" />
+      <ref role="20ksaX" node="4zrttnsinFO" resolve="variable" />
       <ref role="20lvS9" node="3vh6UvnVcY1" resolve="AbstractionVariable" />
     </node>
   </node>
@@ -347,7 +347,7 @@
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="variable" />
       <property role="IQ2ns" value="8981808925914862844" />
-      <ref role="20ksaX" node="4zrttnsinFO" />
+      <ref role="20ksaX" node="4zrttnsinFO" resolve="variable" />
       <ref role="20lvS9" node="7g7qneGHiTC" resolve="LetVariable" />
     </node>
   </node>

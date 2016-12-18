@@ -12,7 +12,7 @@ public final class LanguageConceptSwitch {
   public static final int AfterTest = 0;
   public static final int AssertEquals = 1;
   public static final int AssertFalse = 2;
-  public static final int AssertInNotNull = 3;
+  public static final int AssertIsNotNull = 3;
   public static final int AssertIsNull = 4;
   public static final int AssertSame = 5;
   public static final int AssertThrows = 6;
@@ -35,7 +35,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x72682467022fd3ddL, AfterTest);
     builder.put(0x110df569442L, AssertEquals);
     builder.put(0x110dfae1d08L, AssertFalse);
-    builder.put(0x624233a5cf1ae0f7L, AssertInNotNull);
+    builder.put(0x624233a5cf1ae0f7L, AssertIsNotNull);
     builder.put(0x110e252ba91L, AssertIsNull);
     builder.put(0x110dfcb1f43L, AssertSame);
     builder.put(0x110e4cee82cL, AssertThrows);

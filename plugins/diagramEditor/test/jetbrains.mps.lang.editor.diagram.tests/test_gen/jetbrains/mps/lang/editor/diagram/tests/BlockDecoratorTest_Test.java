@@ -38,7 +38,7 @@ public class BlockDecoratorTest_Test extends BaseTransformationTest {
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          node.value = SNodeOperations.cast(getNodeById("141381309807688263"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0xb6a495df3833bdeL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName"));
+          node.value = SNodeOperations.cast(getNodeById("141381309807688263"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0xb6a495df3833bdeL, "NodeWithName")));
         }
       });
       descendantMapper = DecoratorTestRunner.prepareAndGetMapper(node.value, getEditorComponent(), BlockCell.class);

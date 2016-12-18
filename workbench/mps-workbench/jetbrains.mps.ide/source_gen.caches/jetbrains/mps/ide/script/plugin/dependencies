@@ -95,7 +95,6 @@
     <classNode dependClassName="javax.swing.table.JTableHeader" />
     <classNode dependClassName="javax.swing.table.TableCellRenderer" />
     <classNode dependClassName="javax.swing.table.TableColumnModel" />
-    <classNode dependClassName="jetbrains.mps.ide.script.plugin.MyTableModel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />

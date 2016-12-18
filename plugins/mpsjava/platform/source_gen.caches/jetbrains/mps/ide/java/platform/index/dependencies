@@ -6,7 +6,6 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="com.intellij.psi.search.GlobalSearchScope" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
-    <classNode dependClassName="com.intellij.util.indexing.ValueProcessor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -17,7 +16,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Queue" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.MPSCoreComponents" />
     <classNode dependClassName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
@@ -43,7 +41,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.search.Finder" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.search.ClassifierSuccessors" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -52,7 +50,6 @@
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
     <classNode dependClassName="com.intellij.util.indexing.FileContent" />
     <classNode dependClassName="com.intellij.util.indexing.ID" />
-    <classNode dependClassName="com.intellij.util.indexing.InputFilter" />
     <classNode dependClassName="com.intellij.util.io.DataExternalizer" />
     <classNode dependClassName="com.intellij.util.io.KeyDescriptor" />
     <classNode dependClassName="java.io.DataInput" />

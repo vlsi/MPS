@@ -16,10 +16,7 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.ide.findusages.model.holders.ModulesHolder;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.util.SubProgressKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.checkers.ErrorReportUtil;
@@ -51,12 +48,19 @@ public class ModelCheckerIssueFinder extends BaseFinder {
           ListSequence.fromList(models).addElement(resolved);
         }
       }
-    } else if (objectHolder instanceof ModulesHolder) {
-      ModulesHolder modulesHolder = (ModulesHolder) objectHolder;
-      Set<SModule> visibleModules = new HashSet<SModule>(IterableUtil.asCollection(scope.getModules()));
-      visibleModules.retainAll(modulesHolder.getObject());
-      ListSequence.fromList(models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(visibleModules)));
-      ListSequence.fromList(modules).addSequence(ListSequence.fromList(modulesHolder.getObject()));
+    } else if (objectHolder.getObject() instanceof SModuleReference) {
+      SModuleReference mr = (SModuleReference) objectHolder.getObject();
+      SModule resolved = scope.resolve(mr);
+      if (resolved != null) {
+        ListSequence.fromList(modules).addElement(resolved);
+        ListSequence.fromList(models).addSequence(ListSequence.fromList(ModelCheckerUtils.getModelDescriptors(resolved)));
+      }
+    } else if (objectHolder.getObject() instanceof SModelReference) {
+      SModelReference mr = (SModelReference) objectHolder.getObject();
+      SModel resolved = scope.resolve(mr);
+      if (resolved != null) {
+        ListSequence.fromList(models).addElement(resolved);
+      }
     } else {
       throw new IllegalArgumentException();
     }

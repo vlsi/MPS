@@ -19,9 +19,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -34,28 +34,26 @@ public final class ModuleReferenceExpression__BehaviorDescriptor extends BaseBHD
 
   public static final SMethod<SModule> getModule_id3wj3sjzQUV1 = new SMethodBuilder<SModule>(new SJavaCompoundTypeImpl(SModule.class)).name("getModule").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wj3sjzQUV1").registry(REGISTRY).build();
   public static final SMethod<List<SModule>> getVisibleModules_id3wj3sjzSgF$ = new SMethodBuilder<List<SModule>>(new SJavaCompoundTypeImpl((Class<List<SModule>>) ((Class) Object.class))).name("getVisibleModules").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wj3sjzSgF$").registry(REGISTRY).build();
-  public static final SMethod<List<SModule>> getVisibleModules_id3wj3sjzSgFZ = new SMethodBuilder<List<SModule>>(new SJavaCompoundTypeImpl((Class<List<SModule>>) ((Class) Object.class))).name("getVisibleModules").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wj3sjzSgFZ").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModule_id3wj3sjzQUV1, getVisibleModules_id3wj3sjzSgF$, getVisibleModules_id3wj3sjzSgFZ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getModule_id3wj3sjzQUV1, getVisibleModules_id3wj3sjzSgF$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   @Nullable
   /*package*/ static SModule getModule_id3wj3sjzQUV1(@NotNull SNode __thisNode__) {
-    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId")) == null) {
+    if (SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId")) == null || SNodeOperations.getModel(__thisNode__) == null || SNodeOperations.getModel(__thisNode__).getRepository() == null) {
       return null;
     }
-    return MPSModuleRepository.getInstance().getModule(ModuleId.fromString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId"))));
+    SModuleId mid = PersistenceFacade.getInstance().createModuleId(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, 0x38130dc4e3db5af3L, "moduleId")));
+    return SNodeOperations.getModel(__thisNode__).getRepository().getModule(mid);
   }
   @NotNull
   /*package*/ static List<SModule> getVisibleModules_id3wj3sjzSgF$(@NotNull SNode __thisNode__) {
-    return (List<SModule>) ModuleReferenceExpression__BehaviorDescriptor.getVisibleModules_id3wj3sjzSgFZ.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x38130dc4e3db5af1L, "jetbrains.mps.lang.smodel.structure.ModuleReferenceExpression")));
-  }
-  @NotNull
-  /*package*/ static List<SModule> getVisibleModules_id3wj3sjzSgFZ(@NotNull SAbstractConcept __thisConcept__) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());
-    ListSequence.fromList(result).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
+    if (SNodeOperations.getModel(__thisNode__) != null && SNodeOperations.getModel(__thisNode__).getRepository() != null) {
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(SNodeOperations.getModel(__thisNode__).getRepository().getModules()));
+    }
     return result;
   }
 
@@ -91,8 +89,6 @@ public final class ModuleReferenceExpression__BehaviorDescriptor extends BaseBHD
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 2:
-        return (T) ((List<SModule>) getVisibleModules_id3wj3sjzSgFZ(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

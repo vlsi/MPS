@@ -74,7 +74,7 @@
               <ref role="3cqzBQ" node="1eGlc3_lXXg" resolve="dotExpression" />
             </node>
             <node concept="3TrEf2" id="1eGlc3_lYgI" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:hqOq$gm" />
+              <ref role="3Tt5mk" to="tpee:hqOq$gm" resolve="operand" />
             </node>
           </node>
         </node>

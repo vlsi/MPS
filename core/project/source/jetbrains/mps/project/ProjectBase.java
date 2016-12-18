@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -68,8 +69,16 @@ public abstract class ProjectBase extends Project {
     return myModuleToPathMap.get(module);
   }
 
-  @Override
-  public final void addModule(@NotNull SModule module) {
+  final boolean containsPath(@NotNull ModulePath modulePath) {
+    return myModuleToPathMap.containsValue(modulePath);
+  }
+
+  /**
+   * @deprecated there is an intention to deduce virtual folders from the file system directly
+   */
+  @ToRemove(version = 3.5)
+  @Deprecated
+  final void addModule(@NotNull SModule module, @NotNull String virtualFolder) {
     if (myModuleToPathMap.containsKey(module)) {
 //      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
       LOG.warn(module + " is already in " + this);
@@ -77,11 +86,16 @@ public abstract class ProjectBase extends Project {
     }
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile.toPath().toString());
+      ModulePath path = new ModulePath(descriptorFile.toPath().toString(), virtualFolder);
       myModuleToPathMap.put(module, path);
       myProjectDescriptor.addModulePath(path);
       addRenameListener(module);
     }
+  }
+
+  @Override
+  public final void addModule(@NotNull SModule module) {
+    addModule(module, "");
   }
 
   private void addRenameListener(@NotNull SModule module) {
@@ -138,7 +152,7 @@ public abstract class ProjectBase extends Project {
    */
   private void loadModules() {
     getModelAccess().checkWriteAccess();
-    myModuleLoader.updateModule2PathMap(myModuleToPathMap, myProjectDescriptor.getModulePaths());
+    myModuleLoader.updatePathsInProject(myProjectDescriptor.getModulePaths());
   }
 
   private void fireModulesLoaded() {
@@ -172,7 +186,6 @@ public abstract class ProjectBase extends Project {
     return ProjectManager.getInstance().getOpenedProjects().contains(this);
   }
 
-
   @NotNull
   public String toString() {
     return "MPS Project [" + myProjectDescriptor + (isDisposed() ? ", disposed]" : "]");
@@ -201,9 +214,13 @@ public abstract class ProjectBase extends Project {
     public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
       ModulePath oldModulePath = myModuleToPathMap.remove(module);
       String virtualFolder = myProjectDescriptor.removeModulePath(oldModulePath);
-      assert module instanceof AbstractModule;
+      if (!(module instanceof AbstractModule)) {
+        throw new IllegalArgumentException("Support only abstract module here " + module);
+      }
       IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
-      assert descriptorFile != null;
+      if (descriptorFile == null) {
+        throw new IllegalArgumentException("The descriptor file is null " + module);
+      }
       String path = descriptorFile.toPath().toString();
       ModulePath modulePath = new ModulePath(path, virtualFolder);
       myProjectDescriptor.addModulePath(modulePath);

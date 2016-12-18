@@ -115,7 +115,7 @@
       <property role="20kJfa" value="specializedGranChild_0_1" />
       <property role="IQ2ns" value="34342663958604622" />
       <ref role="20lvS9" node="ftl0ImzDZ4" resolve="GrandChild" />
-      <ref role="20ksaX" node="ftl0ImzDZ0" />
+      <ref role="20ksaX" node="ftl0ImzDZ0" resolve="grandChild_0_1" />
     </node>
   </node>
   <node concept="1TIwiD" id="7Ac3mvq__F6">
@@ -154,7 +154,7 @@
       <property role="20kJfa" value="specializedRightChild" />
       <property role="IQ2ns" value="2854075155748534272" />
       <ref role="20lvS9" node="1U0BydTaHd" resolve="ChildSubConcept" />
-      <ref role="20ksaX" node="7Ac3mvq__F9" />
+      <ref role="20ksaX" node="7Ac3mvq__F9" resolve="rightChild" />
     </node>
   </node>
 </model>

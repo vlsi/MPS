@@ -3,8 +3,7 @@
   <property name="resources" location="${basedir}/resources"/>
 
   <target name="platform">
-    <ant antfile="getIdeaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true"/>
-    <ant antfile="./jetpad/build.xml" target="resolve" inheritAll="true" useNativeBasedir="true"/>
+    <ant antfile="getDependencies.xml" target="install" inheritAll="true" useNativeBasedir="true"/>
   </target>
 
   <target name="getResourcesAndBuildAll">

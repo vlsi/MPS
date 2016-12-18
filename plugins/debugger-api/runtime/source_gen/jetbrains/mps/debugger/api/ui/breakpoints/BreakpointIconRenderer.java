@@ -11,6 +11,9 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import javax.swing.JPopupMenu;
 import javax.swing.AbstractAction;
@@ -39,7 +42,13 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
   }
   @Override
   public SNode getNode() {
-    return myBreakpoint.getLocation().getSNode();
+    SRepository repo = ProjectHelper.getProjectRepository(myBreakpoint.getProject());
+    if (repo == null) {
+      // XXX friendly reminder to refactor EditorMessageIconProvider not to require SNode but SNodeReference 
+      // Usually, we've got smth to resolve ptr against in LeftEditorHighligher (or just need to match a renderer, ptr would suffice). 
+      repo = MPSModuleRepository.getInstance();
+    }
+    return myBreakpoint.getLocation().getNodePointer().resolve(repo);
   }
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {

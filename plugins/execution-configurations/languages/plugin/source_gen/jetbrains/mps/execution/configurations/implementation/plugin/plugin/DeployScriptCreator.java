@@ -14,7 +14,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.FileUtil;
@@ -23,7 +22,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DeployScriptCreator {
-  public static SNode createDeployScript(Project project, List<SNodeReference> plugins, File baseDir) {
+  public static SNode createDeployScript(final Project project, List<SNodeReference> plugins, File baseDir) {
     SNode deployProject = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
     SPropertyOperations.set(deployProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "deploy");
     SPropertyOperations.set(deployProject, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4438b4de59410ebcL, "fileName"), "deploy.xml");
@@ -35,7 +34,7 @@ public class DeployScriptCreator {
 
     Iterable<SNode> pluginNodes = ListSequence.fromList(plugins).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return it.resolve(MPSModuleRepository.getInstance());
+        return it.resolve(project.getRepository());
       }
     }).ofType(SNode.class);
     Iterable<SNode> projects = Sequence.fromIterable(pluginNodes).select(new ISelector<SNode, SNode>() {

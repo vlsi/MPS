@@ -434,11 +434,11 @@
       <scope id="4774203567224549458" at="166,0,210,0" />
       <scope id="4774203567224191033" at="160,37,210,7" />
       <scope id="4774203567224191030" at="160,0,212,0" />
-      <unit id="6758423346044602731" at="188,54,192,13" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$4" />
+      <unit id="6758423346044602731" at="188,54,192,13" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2$1$1" />
       <unit id="6758423346044640713" at="148,46,153,5" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$1" />
-      <unit id="7598204471243049176" at="184,62,194,9" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$3" />
+      <unit id="7598204471243049176" at="184,62,194,9" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2$1" />
       <unit id="8593695948618891906" at="260,0,271,0" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$NotReloadingOnMakeListener" />
-      <unit id="4774203567224911995" at="196,46,208,9" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$3" />
+      <unit id="4774203567224911995" at="196,46,208,9" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2$2" />
       <unit id="4774203567224549456" at="165,26,210,5" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$2" />
       <unit id="4774203567225906524" at="213,0,259,0" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent$ReloadSessionBroker" />
       <unit id="4774203567222173397" at="36,0,272,0" name="jetbrains.mps.ide.platform.watching.ReloadManagerComponent" />
@@ -1372,11 +1372,11 @@
         <var name="event" id="8474613039627891251" />
         <var name="processor" id="4774203567241927380" />
       </scope>
-      <unit id="1041878539048419608" at="102,48,106,7" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
-      <unit id="4774203567241489995" at="111,50,115,11" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
-      <unit id="4774203567241490004" at="115,26,122,11" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$3" />
+      <unit id="1041878539048419608" at="102,48,106,7" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener$1" />
+      <unit id="4774203567241489995" at="111,50,115,11" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener$2$1" />
+      <unit id="4774203567241490004" at="115,26,122,11" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener$2$2" />
       <unit id="8474613039627891348" at="34,78,43,3" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$1" />
-      <unit id="4774203567241165508" at="109,57,124,7" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$2" />
+      <unit id="4774203567241165508" at="109,57,124,7" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener$2" />
       <unit id="8474613039627890961" at="88,0,158,0" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher$BulkFileChangesListener" />
       <unit id="8474613039627890958" at="31,0,159,0" name="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     </file>

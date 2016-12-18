@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.build.util.DependenciesHelper;
 
 public class RequiredPlugins {
   private static final String KEY = "pluginDependency";
@@ -70,18 +69,14 @@ public class RequiredPlugins {
     SetSequence.fromSet(visited).addElement(plugin);
     for (SNode dependency : ListSequence.fromList(SLinkOperations.getChildren(plugin, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, 0x5b7be37b4de9bbd4L, "dependencies")))) {
       SNode dependencyPlugin = SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bbd3L, 0x5b7be37b4de9bbfaL, "target"));
-      if (SNodeOperations.getContainingRoot(dependencyPlugin) != myRoot) {
-        dependencyPlugin = SNodeOperations.as(DependenciesHelper.getOriginalNode(dependencyPlugin, myContext), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb74L, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin"));
-        if (dependencyPlugin == null) {
-          continue;
-        }
-      }
-      if (!(SetSequence.fromSet(visited).contains(dependencyPlugin))) {
+      if (dependencyPlugin != null && !(SetSequence.fromSet(visited).contains(dependencyPlugin))) {
         collectDependencies(dependencyPlugin, visited);
       }
     }
   }
+
   public Iterable<SNode> getDependency() {
+    // Usages suggest myDependencies are to come from original (non-transient) model - they used to get passed to DependenciesHelper.artifacts().get() directly 
     return myDependency;
   }
   public Iterable<SNode> getDependencyInsideCurrent() {

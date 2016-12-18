@@ -84,7 +84,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
   }
   /*package*/ static SNode expectedOperandType_id5xvLnyYzY1Q(@NotNull SNode __thisNode__, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1129e737f02L, "jetbrains.mps.lang.typesystem.structure.JoinType"));
-    for (SNode et : IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
+    for (SNode et : IApplicableToNothing__BehaviorDescriptor.getAllApplicableTypes_id5cL0w3DYWgB.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         if (ListSequence.fromList(SNodeOperations.getChildren(rt)).isNotEmpty()) {

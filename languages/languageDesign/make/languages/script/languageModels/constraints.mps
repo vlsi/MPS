@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -189,7 +189,7 @@
     <property role="3GE5qa" value="job.progress" />
     <ref role="1M2myG" to="q9ra:apaq_sBAA4" resolve="AdvanceWorkStatement" />
     <node concept="1N5Pfh" id="_U7e4ooFXs" role="1Mr941">
-      <ref role="1N5Vy1" to="q9ra:_U7e4ooFXq" />
+      <ref role="1N5Vy1" to="q9ra:_U7e4ooFXq" resolve="workStatement" />
       <node concept="1MUpDS" id="_U7e4ooFXt" role="1N6uqs">
         <node concept="3clFbS" id="_U7e4ooFXu" role="2VODD2">
           <node concept="3clFbF" id="_U7e4ooG9J" role="3cqZAp">
@@ -206,7 +206,7 @@
                   </node>
                 </node>
                 <node concept="3TrEf2" id="_U7e4ooG9R" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                  <ref role="3Tt5mk" to="tpee:gyVODHa" resolve="body" />
                 </node>
               </node>
               <node concept="2Rf3mk" id="_U7e4ooG9S" role="2OqNvi">
@@ -238,7 +238,7 @@
     <property role="3GE5qa" value="job.progress" />
     <ref role="1M2myG" to="q9ra:apaq_sBAA7" resolve="FinishWorkStatement" />
     <node concept="1N5Pfh" id="_U7e4ooGrw" role="1Mr941">
-      <ref role="1N5Vy1" to="q9ra:_U7e4ooGrt" />
+      <ref role="1N5Vy1" to="q9ra:_U7e4ooGrt" resolve="workStatement" />
       <node concept="1MUpDS" id="_U7e4ooGrx" role="1N6uqs">
         <node concept="3clFbS" id="_U7e4ooGry" role="2VODD2">
           <node concept="3clFbF" id="_U7e4ooGrz" role="3cqZAp">
@@ -255,7 +255,7 @@
                   <node concept="21POm0" id="_U7e4ooGrJ" role="2Oq$k0" />
                 </node>
                 <node concept="3TrEf2" id="_U7e4ooGrF" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpee:gyVODHa" />
+                  <ref role="3Tt5mk" to="tpee:gyVODHa" resolve="body" />
                 </node>
               </node>
               <node concept="2Rf3mk" id="_U7e4ooGrG" role="2OqNvi">

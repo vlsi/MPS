@@ -4,7 +4,7 @@
   <languages>
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -138,8 +138,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -503,9 +503,11 @@
                   <ref role="ehGHo" to="tpee:hqOqwz4" resolve="DotExpression" />
                 </node>
                 <node concept="1PxgMI" id="2ZjKcnca_0Y" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                   <node concept="37vLTw" id="2ZjKcnca$Uh" role="1m5AlR">
                     <ref role="3cqZAo" node="2ZjKcncazfD" resolve="expression" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYIm" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                   </node>
                 </node>
               </node>
@@ -534,7 +536,7 @@
                         <ref role="3cqZAo" node="2ZjKcncb81i" resolve="dotExpr" />
                       </node>
                       <node concept="3TrEf2" id="2ZjKcncaZMA" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                        <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                       </node>
                     </node>
                     <node concept="1mIQ4w" id="2ZjKcncaZMB" role="2OqNvi">
@@ -550,7 +552,7 @@
                       <ref role="3cqZAo" node="2ZjKcncb81i" resolve="dotExpr" />
                     </node>
                     <node concept="3TrEf2" id="2ZjKcncaMDE" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:hqOqNr4" />
+                      <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="2ZjKcncaNj5" role="2OqNvi">
@@ -620,9 +622,11 @@
                   <ref role="ehGHo" to="tpee:4jccBOGDsG8" resolve="OperationAssignmentExpression" />
                 </node>
                 <node concept="1PxgMI" id="2ZjKcncaF2K" role="33vP2m">
-                  <ref role="1m5ApE" to="tpee:4jccBOGDsG8" resolve="OperationAssignmentExpression" />
                   <node concept="37vLTw" id="2ZjKcncaF0Q" role="1m5AlR">
                     <ref role="3cqZAo" node="2ZjKcncazfD" resolve="expression" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYH2" role="3oSUPX">
+                    <ref role="cht4Q" to="tpee:4jccBOGDsG8" resolve="OperationAssignmentExpression" />
                   </node>
                 </node>
               </node>
@@ -635,7 +639,7 @@
                       <ref role="3cqZAo" node="2ZjKcncaEZ_" resolve="oae" />
                     </node>
                     <node concept="3TrEf2" id="2ZjKcncaHLq" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:fz7vLUn" />
+                      <ref role="3Tt5mk" to="tpee:fz7vLUn" resolve="lValue" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="2ZjKcncaItJ" role="2OqNvi">
@@ -650,7 +654,7 @@
                       <ref role="3cqZAo" node="2ZjKcncaEZ_" resolve="oae" />
                     </node>
                     <node concept="3TrEf2" id="2ZjKcncaFRg" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpee:fz7vLUn" />
+                      <ref role="3Tt5mk" to="tpee:fz7vLUn" resolve="lValue" />
                     </node>
                   </node>
                   <node concept="1mIQ4w" id="2ZjKcncaGyN" role="2OqNvi">

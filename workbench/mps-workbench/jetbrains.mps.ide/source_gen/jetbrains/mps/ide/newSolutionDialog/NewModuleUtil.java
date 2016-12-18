@@ -13,25 +13,28 @@ import jetbrains.mps.smodel.SModelInternal;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.SLanguageHierarchy;
+import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collections;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.ApplicationManager;
 import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.library.ModulesMiner;
 import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -42,12 +45,7 @@ import jetbrains.mps.project.SModuleOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -74,7 +72,7 @@ public class NewModuleUtil {
     SModelInternal sandboxModel = (SModelInternal) createModel(sandbox, namespace);
     SLanguage l = MetaAdapterFactory.getLanguage(language.getModuleReference());
     sandboxModel.addLanguage(l);
-    for (SLanguage extendedLanguage : new SLanguageHierarchy(Collections.singleton(l)).getExtended()) {
+    for (SLanguage extendedLanguage : new SLanguageHierarchy(LanguageRegistry.getInstance(project.getRepository()), Collections.singleton(l)).getExtended()) {
       sandboxModel.addLanguage(extendedLanguage);
     }
 
@@ -83,28 +81,43 @@ public class NewModuleUtil {
     return sandbox;
   }
 
+  /**
+   * create new solution module and register it with the project
+   */
   public static Solution createSolution(String namespace, String rootPath, Project project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_SOLUTION, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Solution, String, IFile, Project>() {
-      public Solution invoke(String s, IFile f, Project p) {
-        return createNewSolution(s, f, p);
-      }
-    });
+    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_SOLUTION);
+    assert !(descriptorFile.exists());
+    SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
+    Solution module = (Solution) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
+    project.addModule(module);
+    module.save();
+    return module;
   }
 
+  /**
+   * create new language module and register it with the project
+   */
   public static Language createLanguage(String namespace, String rootPath, Project project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_LANGUAGE, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<Language, String, IFile, Project>() {
-      public Language invoke(String s, IFile f, Project p) {
-        return createNewLanguage(s, f, true, true, p);
-      }
-    });
+    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_LANGUAGE);
+    Language module = createNewLanguage(namespace, descriptorFile, true, true, project);
+    project.addModule(module);
+    module.save();
+    return module;
   }
 
+  /**
+   * create new devkit module and register it with the project
+   */
   public static DevKit createDevKit(String namespace, String rootPath, Project project) {
-    return NewModuleUtil.createModule(MPSExtentions.DOT_DEVKIT, namespace, rootPath, project, new _FunctionTypes._return_P3_E0<DevKit, String, IFile, Project>() {
-      public DevKit invoke(String s, IFile f, Project p) {
-        return createNewDevkit(s, f, p);
-      }
-    });
+    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_DEVKIT);
+    assert !(descriptorFile.exists());
+    DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
+    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
+    DevKit module = (DevKit) new ModuleRepositoryFacade(project).instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
+    project.addModule(module);
+    module.save();
+    return module;
   }
 
   public static void runModuleCreation(Project p, final _FunctionTypes._void_P0_E0 r) {
@@ -116,7 +129,7 @@ public class NewModuleUtil {
     });
   }
 
-  public static String check(String extension, String namespace, String rootPath) {
+  public static String check(ModuleRepositoryFacade repo, String extension, String namespace, String rootPath) {
     if (MPSExtentions.DOT_LANGUAGE.equals(extension) && !(SourceVersion.isName(namespace))) {
       return "Language namespace should be valid Java package";
     }
@@ -130,7 +143,7 @@ public class NewModuleUtil {
     if (namespace.length() == 0) {
       return "Namespace should be specified";
     }
-    if (MPSModuleRepository.getInstance().getModuleByFqName(namespace) != null) {
+    if (repo.getModuleByName(namespace) != null) {
       return "Module namespace already exists";
     }
     if (NameUtil.shortNameFromLongName(namespace).length() == 0) {
@@ -147,7 +160,7 @@ public class NewModuleUtil {
   }
 
   @Deprecated
-  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, MPSModuleOwner moduleOwner) {
+  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, Project project) {
     if (descriptorFile.exists()) {
       throw new IllegalArgumentException("Descriptor file " + descriptorFile + " already exists");
     }
@@ -159,7 +172,8 @@ public class NewModuleUtil {
     }
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    Language language = (Language) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
+    ModuleRepositoryFacade projectRepoFacade = new ModuleRepositoryFacade(project);
+    Language language = (Language) projectRepoFacade.instantiateModule(new ModulesMiner().loadModuleHandle(descriptorFile), project);
     descriptor = language.getModuleDescriptor();
 
     if (createMainAspectModels) {
@@ -191,7 +205,7 @@ public class NewModuleUtil {
     language.setLanguageDescriptor(descriptor);
     language.save();
 
-    final Generator newGenerator = (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
+    final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);
 
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {
@@ -211,22 +225,6 @@ public class NewModuleUtil {
     return language;
   }
 
-  @Deprecated
-  private static Solution createNewSolution(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !(descriptorFile.exists());
-    SolutionDescriptor descriptor = createNewSolutionDescriptor(namespace, descriptorFile);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
-    return (Solution) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
-  }
-
-  @Deprecated
-  private static DevKit createNewDevkit(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    assert !(descriptorFile.exists());
-    DevkitDescriptor descriptor = createNewDevkitDescriptor(namespace);
-    DevkitDescriptorPersistence.saveDevKitDescriptor(descriptorFile, descriptor);
-    return (DevKit) ModuleRepositoryFacade.createModule(new ModulesMiner().loadModuleHandle(descriptorFile), moduleOwner);
-  }
-
   public static void createMainLanguageAspects(Language language) throws IOException {
     assert language.getModelRoots().iterator().hasNext();
     ((EditableSModel) LanguageAspect.STRUCTURE.createNew(language)).save();
@@ -235,20 +233,6 @@ public class NewModuleUtil {
     ((EditableSModel) LanguageAspect.BEHAVIOR.createNew(language)).save();
     ((EditableSModel) LanguageAspect.TYPESYSTEM.createNew(language)).save();
   }
-
-  @Deprecated
-  public static Language createNewLanguage(String namespace, IFile descriptorFile, MPSModuleOwner moduleOwner) {
-    return createNewLanguage(namespace, descriptorFile, false, false, moduleOwner);
-  }
-
-  /*package*/ static <T extends AbstractModule> T createModule(String extension, String namespace, String rootPath, Project project, _FunctionTypes._return_P3_E0<? extends T, ? super String, ? super IFile, ? super Project> creator) {
-    IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, extension);
-    T module = creator.invoke(namespace, descriptorFile, project);
-    project.addModule(module);
-    module.save();
-    return module;
-  }
-
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
     String path = rootPath + File.separator + namespace + extension;

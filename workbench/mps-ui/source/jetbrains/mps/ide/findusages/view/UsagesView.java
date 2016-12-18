@@ -40,7 +40,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchTask;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.VoidHolder;
-import jetbrains.mps.ide.findusages.view.icons.IconManager;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTreeChangesNotifier;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTreeComponent;
@@ -352,14 +351,6 @@ public class UsagesView implements IExternalizeable {
     public SearchTaskImpl(@NotNull IResultProvider resultProvider, @NotNull SearchQuery searchQuery) {
       myResultProvider = resultProvider;
       mySearchQuery = searchQuery;
-    }
-
-    public String getCaption() {
-      return mySearchQuery.getCaption();
-    }
-
-    public Icon getIcon() {
-      return IconManager.getIconForIHolder(mySearchQuery.getObjectHolder());
     }
 
     public boolean canExecute() {

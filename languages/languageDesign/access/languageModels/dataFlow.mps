@@ -102,7 +102,7 @@
               <node concept="2OqwBi" id="7Mb2akafE9K" role="3Ah4Yx">
                 <node concept="3__QtB" id="7Mb2akafE9L" role="2Oq$k0" />
                 <node concept="3TrEf2" id="7Mb2akafE9M" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tp2c:htbW58J" />
+                  <ref role="3Tt5mk" to="tp2c:htbW58J" resolve="body" />
                 </node>
               </node>
             </node>
@@ -133,7 +133,7 @@
                   <node concept="2OqwBi" id="7Mb2akafE9Z" role="2Oq$k0">
                     <node concept="3__QtB" id="7Mb2akafEa0" role="2Oq$k0" />
                     <node concept="3TrEf2" id="7Mb2akafEa1" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tp2c:htbW58J" />
+                      <ref role="3Tt5mk" to="tp2c:htbW58J" resolve="body" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="7Mb2akafEa2" role="2OqNvi">
@@ -157,11 +157,11 @@
             <node concept="2OqwBi" id="7Mb2akafEa8" role="2Oq$k0">
               <node concept="3__QtB" id="7Mb2akafEa9" role="2Oq$k0" />
               <node concept="3TrEf2" id="7Mb2akafEaa" role="2OqNvi">
-                <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" />
+                <ref role="3Tt5mk" to="qff7:7Mb2akafE8b" resolve="commandClosureLiteral" />
               </node>
             </node>
             <node concept="3TrEf2" id="7Mb2akafEab" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp2c:htbW58J" />
+              <ref role="3Tt5mk" to="tp2c:htbW58J" resolve="body" />
             </node>
           </node>
         </node>

@@ -113,8 +113,8 @@
       </concept>
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -161,7 +161,7 @@
   <node concept="1M2fIO" id="3g73hQq2Oli">
     <ref role="1M2myG" to="gbdf:fQU43XL8M5" resolve="PropertyArgument" />
     <node concept="1N5Pfh" id="3g73hQq2Oqg" role="1Mr941">
-      <ref role="1N5Vy1" to="gbdf:fQU43XLcUk" />
+      <ref role="1N5Vy1" to="gbdf:fQU43XLcUk" resolve="property" />
       <node concept="1dDu$B" id="3g73hQq2Sfx" role="1N6uqs">
         <ref role="1dDu$A" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
       </node>
@@ -170,7 +170,7 @@
   <node concept="1M2fIO" id="3g73hQq2SfR">
     <ref role="1M2myG" to="gbdf:fQU43XxJAR" resolve="LinkArgument" />
     <node concept="1N5Pfh" id="3g73hQq2SfS" role="1Mr941">
-      <ref role="1N5Vy1" to="gbdf:fQU43XLauB" />
+      <ref role="1N5Vy1" to="gbdf:fQU43XLauB" resolve="link" />
       <node concept="1dDu$B" id="3g73hQq2SfU" role="1N6uqs">
         <ref role="1dDu$A" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
       </node>
@@ -233,7 +233,7 @@
     <property role="3GE5qa" value="Palette" />
     <ref role="1M2myG" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
     <node concept="1N5Pfh" id="5nQpa4t0iY8" role="1Mr941">
-      <ref role="1N5Vy1" to="gbdf:5JruEV1fJfO" />
+      <ref role="1N5Vy1" to="gbdf:5JruEV1fJfO" resolve="elementsCreation" />
       <node concept="13QW63" id="5nQpa4t0NA4" role="1N6uqs">
         <node concept="3clFbS" id="5nQpa4t0NA5" role="2VODD2">
           <node concept="3cpWs8" id="5nQpa4t16kV" role="3cqZAp">
@@ -257,13 +257,15 @@
               <node concept="X8dFx" id="5nQpa4t1a8w" role="2OqNvi">
                 <node concept="2OqwBi" id="5nQpa4t14En" role="25WWJ7">
                   <node concept="3Tsc0h" id="5nQpa4t15fw" role="2OqNvi">
-                    <ref role="3TtcxE" to="gbdf:7rLMM2UuxKP" />
+                    <ref role="3TtcxE" to="gbdf:7rLMM2UuxKP" resolve="elementsCreation" />
                   </node>
                   <node concept="1PxgMI" id="5nQpa4t14pi" role="2Oq$k0">
-                    <ref role="1m5ApE" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
                     <node concept="2OqwBi" id="5nQpa4t140M" role="1m5AlR">
                       <node concept="21POm0" id="5nQpa4t13OK" role="2Oq$k0" />
                       <node concept="1mfA1w" id="5nQpa4t14cf" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYyO" role="3oSUPX">
+                      <ref role="cht4Q" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
                     </node>
                   </node>
                 </node>
@@ -278,14 +280,16 @@
               <node concept="X8dFx" id="5nQpa4t1aAK" role="2OqNvi">
                 <node concept="2OqwBi" id="5nQpa4t1aAL" role="25WWJ7">
                   <node concept="1PxgMI" id="5nQpa4t1aAM" role="2Oq$k0">
-                    <ref role="1m5ApE" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
                     <node concept="2OqwBi" id="5nQpa4t1aAN" role="1m5AlR">
                       <node concept="21POm0" id="5nQpa4t1aAO" role="2Oq$k0" />
                       <node concept="1mfA1w" id="5nQpa4t1aAP" role="2OqNvi" />
                     </node>
+                    <node concept="chp4Y" id="714IaVdGYyV" role="3oSUPX">
+                      <ref role="cht4Q" to="gbdf:5u6$4zsyvJR" resolve="CellModel_Diagram" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="5nQpa4t1bg0" role="2OqNvi">
-                    <ref role="3TtcxE" to="gbdf:ObbTRzsnlh" />
+                    <ref role="3TtcxE" to="gbdf:ObbTRzsnlh" resolve="connectorCreation" />
                   </node>
                 </node>
               </node>

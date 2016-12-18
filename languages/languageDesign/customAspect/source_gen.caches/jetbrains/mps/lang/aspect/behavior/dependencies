@@ -110,6 +110,10 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.aspect.behavior.SimpleAspectOrderRef_BehaviorDescriptor" file="SimpleAspectOrderRef_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.aspect.behavior.SimpleLanguageAspectDescriptor_BehaviorDescriptor" file="SimpleLanguageAspectDescriptor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

@@ -15,6 +15,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import jetbrains.mps.ide.project.ProjectHelper;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.SModelFileTracker;
 import java.util.Collection;
 import java.io.File;
@@ -22,10 +23,16 @@ import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.vfs.FileSystem;
+import com.intellij.openapi.progress.Task;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
+import com.intellij.util.WaitForProgressToShow;
 import jetbrains.mps.project.OptimizeImportsHelper;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.changes.CommitContext;
 
 public class OptimizeImportsCheckinHandler extends CheckinHandler {
@@ -64,33 +71,66 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
   }
   @Override
   public CheckinHandler.ReturnResult beforeCheckin() {
-    final jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(myProject);
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(myProject);
     if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT && mpsProject != null) {
-      SModelFileTracker modelFileTracker = SModelFileTracker.getInstance(mpsProject.getRepository());
+      final SRepository repository = mpsProject.getRepository();
+      SModelFileTracker modelFileTracker = SModelFileTracker.getInstance(repository);
       Collection<File> affectedFiles = myPanel.getFiles();
       final List<SModel> affectedModels = new ArrayList<SModel>();
       for (File file : affectedFiles) {
-        SModel model = modelFileTracker.findModel(FileSystem.getInstance().getFileByPath(file.getAbsolutePath()));
+        SModel model = modelFileTracker.findModel(FileSystem.getInstance().getFile(file.getAbsolutePath()));
         if (model == null) {
           continue;
         }
         affectedModels.add(model);
       }
       ThreadUtils.assertEDT();
-      try {
-        // here used to be delayed executeInEDT, which looked odd after explicit assertEDT check 
-        // it seems the right way is to have imports optimized before the method returns. 
-        mpsProject.getModelAccess().executeCommand(new Runnable() {
-          public void run() {
-            new OptimizeImportsHelper().optimizeModelsImports(affectedModels);
-            for (SModel affectedModel : affectedModels) {
-              ((EditableSModel) affectedModel).save();
+      // TODO: extract common code from OptimizeModelImports 
+      Task.Modal task = new Task.Modal(this.myProject, "Optimizing model imports", true) {
+        public void run(@NotNull ProgressIndicator indicator) {
+          final ProgressMonitorAdapter monitor = new ProgressMonitorAdapter(indicator);
+          try {
+            final int modelsNumber = affectedModels.size();
+            monitor.start("Optimizing imports of " + modelsNumber + " models", modelsNumber);
+            WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+              public void run() {
+              }
+            });
+
+            final OptimizeImportsHelper helper = new OptimizeImportsHelper(repository);
+            ApplicationManager.getApplication().invokeAndWait(new Runnable() {
+              public void run() {
+                repository.getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    helper.optimizeModelsImports(affectedModels, monitor.subTask(modelsNumber));
+                  }
+                });
+              }
+            }, ModalityState.current());
+            if (monitor.isCanceled()) {
+              return;
             }
+            monitor.step("Saving...");
+            WaitForProgressToShow.runOrInvokeAndWaitAboveProgress(new Runnable() {
+              public void run() {
+                repository.getModelAccess().executeCommand(new Runnable() {
+                  public void run() {
+                    for (SModel affectedModel : affectedModels) {
+                      ((EditableSModel) affectedModel).save();
+                    }
+                  }
+                });
+              }
+            });
+            monitor.advance(1);
+
+          } catch (Throwable e) {
+            LOG.error("Couldn't optimize imports before commit", e);
+          } finally {
+            monitor.done();
           }
-        });
-      } catch (Throwable e) {
-        LOG.error("Couldn't optimize imports before commit", e);
-      }
+        }
+      };
     }
     return CheckinHandler.ReturnResult.COMMIT;
   }

@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.ModelsAutoImportsManager.AutoImportsContributor;
 import jetbrains.mps.project.ModuleId;
@@ -29,7 +28,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -38,7 +36,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -256,14 +253,6 @@ public class Generator extends ReloadableModuleBase {
     @Override
     public Collection<SModuleReference> getDevKits(Generator contextModule, SModel forModel) {
       return Collections.singleton(BootstrapLanguages.getGeneratorTemplatesDevKit());
-    }
-
-    @Override
-    @ToRemove(version = 3.4)
-    public Set<DevKit> getAutoImportedDevKits(Generator contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      // left just in case anyone uses MAIM.getAutoImportedDevKits(). Contemporary code relies on #getDevKits().
-      SModule dk = BootstrapLanguages.getGeneratorTemplatesDevKit().resolve(contextModule.getRepository());
-      return dk instanceof DevKit ? Collections.singleton((DevKit) dk) : super.getAutoImportedDevKits(contextModule, model);
     }
   }
 

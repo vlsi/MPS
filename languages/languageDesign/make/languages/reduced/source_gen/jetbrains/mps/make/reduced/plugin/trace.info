@@ -246,7 +246,7 @@
       <scope id="10342590403667041" at="62,29,86,8" />
       <scope id="10342590403667041" at="62,0,88,0" />
       <unit id="10342590403670681" at="139,0,153,0" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet$Target_collect$Parameters" />
-      <unit id="10342590403667043" at="63,17,86,7" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet$1" />
+      <unit id="10342590403667043" at="63,17,86,7" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet$Target_collect$1" />
       <unit id="10342590403667037" at="154,0,179,0" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet$TargetProperties" />
       <unit id="10342590403667041" at="58,0,154,0" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet$Target_collect" />
       <unit id="10342590403667037" at="34,0,180,0" name="jetbrains.mps.make.reduced.plugin.CollectHashes_Facet" />
@@ -531,11 +531,11 @@
       </scope>
       <scope id="8795824097439267911" at="61,29,101,8" />
       <scope id="8795824097439267911" at="61,0,103,0" />
-      <unit id="8795824097439402281" at="73,66,92,21" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$3" />
-      <unit id="8795824097439268859" at="69,54,95,15" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$2" />
+      <unit id="8795824097439402281" at="73,66,92,21" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$Target_report$1$1$1" />
+      <unit id="8795824097439268859" at="69,54,95,15" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$Target_report$1$1" />
       <unit id="8795824097439402293" at="154,0,186,0" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$Target_report$Parameters" />
       <unit id="8795824097439267909" at="187,0,224,0" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$TargetProperties" />
-      <unit id="8795824097439267913" at="62,17,101,7" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$1" />
+      <unit id="8795824097439267913" at="62,17,101,7" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$Target_report$1" />
       <unit id="8795824097439267911" at="57,0,187,0" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet$Target_report" />
       <unit id="8795824097439267909" at="33,0,225,0" name="jetbrains.mps.make.reduced.plugin.ReportFiles_Facet" />
     </file>

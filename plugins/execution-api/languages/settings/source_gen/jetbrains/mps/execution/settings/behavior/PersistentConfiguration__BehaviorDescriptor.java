@@ -104,7 +104,7 @@ public final class PersistentConfiguration__BehaviorDescriptor extends BaseBHDes
     return createPersistentConfigurationType_4ves9l_a2a8(configuration);
   }
   /*package*/ static List<SNode> getContextPersistentProperties_idO$iR4J$g22(@NotNull SAbstractConcept __thisConcept__, SNode node) {
-    SNode configurationType = PersistentConfiguration__BehaviorDescriptor.getContextPersistentConfigurationType_idO$iR4J$g1l.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration").getDeclarationNode()), node);
+    SNode configurationType = PersistentConfiguration__BehaviorDescriptor.getContextPersistentConfigurationType_idO$iR4J$g1l.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910020L, "jetbrains.mps.execution.settings.structure.PersistentConfiguration")), node);
     if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")) == null)) {
       return new ArrayList<SNode>();
     }

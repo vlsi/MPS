@@ -5,8 +5,8 @@ package jetbrains.mps.tool.environment;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.library.ModulesMiner;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * Allows to fill an empty project with given modules at runtime
@@ -21,10 +21,11 @@ public final class ProjectModulesFiller {
   }
 
   public Project load() {
+    final ModuleRepositoryFacade rf = new ModuleRepositoryFacade(myProject);
     myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         for (ModulesMiner.ModuleHandle moduleHandle : myHandlesToLoad) {
-          SModule module = ModuleRepositoryFacade.createModule(moduleHandle, myProject);
+          SModule module = rf.instantiateModule(moduleHandle, myProject);
           myProject.addModule(module);
         }
       }

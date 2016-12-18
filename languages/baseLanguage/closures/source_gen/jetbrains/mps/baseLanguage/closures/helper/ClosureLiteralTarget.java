@@ -31,7 +31,7 @@ public class ClosureLiteralTarget {
     this.genContext = genContext;
   }
   public void setTarget(SNode literal, SNode targetIface) {
-    SNode targetIfaceErase = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SNodeOperations.getConceptDeclaration(targetIface)));
+    SNode targetIfaceErase = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(SNodeOperations.getConcept(targetIface)));
     SLinkOperations.setTarget(targetIfaceErase, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"), SLinkOperations.getTarget(targetIface, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")));
     matchTypeParameters(literal, targetIfaceErase, SLinkOperations.getChildren(targetIface, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter")));
     Values.LITERAL.set(genContext, targetIfaceErase, literal);

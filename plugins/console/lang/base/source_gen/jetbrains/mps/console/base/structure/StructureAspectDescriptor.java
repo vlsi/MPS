@@ -17,6 +17,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptBLExpression = createDescriptorForBLExpression();
   /*package*/ final ConceptDescriptor myConceptCommand = createDescriptorForCommand();
   /*package*/ final ConceptDescriptor myConceptCommandHolder = createDescriptorForCommandHolder();
+  /*package*/ final ConceptDescriptor myConceptCommandHolderRef = createDescriptorForCommandHolderRef();
   /*package*/ final ConceptDescriptor myConceptConsoleRoot = createDescriptorForConsoleRoot();
   /*package*/ final ConceptDescriptor myConceptExceptionHolder = createDescriptorForExceptionHolder();
   /*package*/ final ConceptDescriptor myConceptGeneratedCommand = createDescriptorForGeneratedCommand();
@@ -54,7 +55,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
+    return Arrays.asList(myConceptAbstractPrintExpression, myConceptBLCommand, myConceptBLExpression, myConceptCommand, myConceptCommandHolder, myConceptCommandHolderRef, myConceptConsoleRoot, myConceptExceptionHolder, myConceptGeneratedCommand, myConceptHelpCommand, myConceptHelpConceptReference, myConceptHistory, myConceptHistoryItem, myConceptIActionHolder, myConceptIClickable, myConceptINodeWithReference, myConceptInterpretedCommand, myConceptModifiedCommandHistoryItem, myConceptNewLineResponseItem, myConceptNodeReferencePresentation, myConceptNodeReferenceString, myConceptNodeResponseItem, myConceptNodeWithClosure, myConceptOutputConsoleRoot, myConceptPastedNodeReference, myConceptPrintExpression, myConceptPrintNodeExpression, myConceptPrintNodeReferenceExpression, myConceptPrintSequenceExpression, myConceptPrintTextExpression, myConceptProjectExpression, myConceptProjectScope, myConceptResponse, myConceptResponseItem, myConceptTextResponseItem);
   }
 
   @Override
@@ -71,6 +72,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCommand;
       case LanguageConceptSwitch.CommandHolder:
         return myConceptCommandHolder;
+      case LanguageConceptSwitch.CommandHolderRef:
+        return myConceptCommandHolderRef;
       case LanguageConceptSwitch.ConsoleRoot:
         return myConceptConsoleRoot;
       case LanguageConceptSwitch.ExceptionHolder:
@@ -182,12 +185,21 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("command", 0x4e27160acb44924L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x5f1fb64db424879fL).optional(true).ordered(true).multiple(false).origin("351968380916615460").done();
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForCommandHolderRef() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "CommandHolderRef", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L);
+    b.class_(false, false, false);
+    b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/5758176878586720817");
+    b.associate("target", 0x4fe9275cea077232L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(false).origin("5758176878586720818").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForConsoleRoot() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.console.base", "ConsoleRoot", 0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x15fb34051f725a2cL);
     b.class_(false, false, true);
     b.origin("r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)/1583916890557930028");
     b.aggregate("history", 0x15fb34051f725bafL).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0xa835f28c1aa02beL).optional(false).ordered(true).multiple(false).origin("1583916890557930415").done();
     b.aggregate("commandHolder", 0x15fb34051f725bb1L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(false).ordered(true).multiple(false).origin("1583916890557930417").done();
+    b.aggregate("cursor", 0x7d401fa40806ebe7L).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4fe9275cea077231L).optional(false).ordered(true).multiple(false).origin("9025248442620242919").done();
+    b.aggregate("hiddenCommand", 0x3c5a21a481abf26dL).target(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x4e27160acb4484bL).optional(true).ordered(true).multiple(false).origin("4348825380613517933").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForExceptionHolder() {

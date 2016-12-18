@@ -44,7 +44,6 @@
     <import index="rq2b" ref="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)" />
     <import index="msle" ref="r:361d93bd-9223-4768-9e37-bcd7b8db1f40(jetbrains.mps.build.tests@tests)" />
     <import index="537h" ref="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)" />
-    <import index="v569" ref="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)" />
     <import index="b9cx" ref="r:43a3062d-cf3d-40ad-9c9d-c7da54cc927b(jetbrains.mps.testActions.test@tests)" />
     <import index="tild" ref="r:ee85802d-3f17-4cb5-b08b-75e01c861019(jetbrains.mps.testRead.SNodeReadTest@tests)" />
     <import index="5ivf" ref="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)" />
@@ -78,6 +77,7 @@
     <import index="ma4t" ref="r:5c887230-cdf3-4722-bd6c-5a7e20ee92a1(analyzers.test.tests@tests)" />
     <import index="ya75" ref="r:9dd38274-05d8-45ba-a41e-44ac52909443(jetbrains.mps.lang.editor.forms.test@tests)" />
     <import index="1xvu" ref="r:5bc8da8a-ff96-4203-940f-04ea622e05a9(jetbrains.mps.lang.editor.init.test)" />
+    <import index="62xu" ref="r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)" />
     <import index="j5ir" ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)" implicit="true" />
   </imports>
   <registry>
@@ -564,6 +564,9 @@
     <node concept="lpD6D" id="7BzI3N6F9zF" role="lpD6w">
       <ref role="lpD7u" to="h8fw:2ZnZLV$g_aR" resolve="RightTransformForAttributedProperty" />
     </node>
+    <node concept="lpD6D" id="2Qo2SnTiIGN" role="lpD6w">
+      <ref role="lpD7u" to="h8fw:3r66m91Ev0$" resolve="UpdateHidingAttribute" />
+    </node>
     <node concept="lpD6D" id="4IrZ8JbCd9V" role="lpD6w">
       <ref role="lpD7u" to="e6od:5fIuys0cK74" resolve="Comment_BetweenTwoComments" />
     </node>
@@ -990,6 +993,9 @@
     <node concept="lpD6D" id="2m_lP2P61F3" role="lpD6w">
       <ref role="lpD7u" to="e7z4:1YIxz0TA89S" resolve="SLinkListAccess_ListModifyingOperaions" />
     </node>
+    <node concept="lpD6D" id="7KUdrkEJoZV" role="lpD6w">
+      <ref role="lpD7u" to="62xu:4K12N3pNt7K" resolve="MigrateAsNodeOperation_Test" />
+    </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61F4">
     <node concept="2R4zua" id="2m_lP2P61F5" role="2R4z3u">
@@ -1175,15 +1181,6 @@
       <ref role="2R4JvD" to="fw8r:5E$kzZSw9_K" resolve="BitemporalCollectionSuperclassTester" />
     </node>
   </node>
-  <node concept="lpD6F" id="6mKaYA2xL5P">
-    <node concept="2R4zua" id="6mKaYA2xL5R" role="2R4z3u">
-      <property role="2R4zu8" value="f5b70e84-5208-49eb-a417-d53c9f82bdf2" />
-      <property role="2R4zub" value="jetbrains.mps.lang.traceable.operations.test" />
-    </node>
-    <node concept="lpD6D" id="6mKaYA2xMFk" role="lpD6w">
-      <ref role="lpD7u" to="v569:6mKaYA2xCGo" resolve="CopyWithTrace" />
-    </node>
-  </node>
   <node concept="lpD6F" id="3FJ0r$qO2Hu">
     <node concept="2R4zua" id="3FJ0r$qO2Hv" role="2R4z3u">
       <property role="2R4zu8" value="e60b351d-8d80-4c13-8ad4-3e4759e2a3ea" />
@@ -1305,6 +1302,9 @@
     </node>
     <node concept="lpD6D" id="2TdQhrRQmmk" role="lpD6w">
       <ref role="lpD7u" to="tpej:fNOVZ7NMpi" resolve="AbstractPrivateMethod" />
+    </node>
+    <node concept="lpD6D" id="5L7DT9mgG7G" role="lpD6w">
+      <ref role="lpD7u" to="tpej:5L7DT9mffhM" resolve="AnonymousClassJavaName" />
     </node>
     <node concept="lpD6D" id="2TdQhrRQmvc" role="lpD6w">
       <ref role="lpD7u" to="tpej:X70sDCE7IU" resolve="ArrayCreatorTest" />
@@ -4390,15 +4390,6 @@
     <node concept="lpD6D" id="3ofMfJ4Yh7G" role="lpD6w">
       <property role="1wBEbI" value="true" />
       <ref role="lpD7u" to="i6g3:7arzIt9wySn" resolve="TestPackagedLanguage_Test" />
-    </node>
-  </node>
-  <node concept="lpD6F" id="3ofMfJ4Yh7N">
-    <node concept="2R4zua" id="3ofMfJ4Yh7O" role="2R4z3u">
-      <property role="2R4zub" value="tests.testPersistence" />
-      <property role="2R4zu8" value="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6" />
-    </node>
-    <node concept="lpD6D" id="3ofMfJ4Yh7P" role="lpD6w">
-      <ref role="lpD7u" to="cpet:3ofMfJ4Xdf_" resolve="TestPersistence_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="7ez5JvPiiEK">

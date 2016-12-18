@@ -486,7 +486,7 @@
         <var name="anchor" id="7712479415687810845" />
         <var name="refText" id="7712479415687810847" />
       </scope>
-      <unit id="8401916545537506435" at="41,38,50,7" name="jetbrains.mps.smodel.search.ISearchScope$1" />
+      <unit id="8401916545537506435" at="41,38,50,7" name="jetbrains.mps.smodel.search.ISearchScope$Adapter$1" />
       <unit id="7712479415687789291" at="68,0,93,0" name="jetbrains.mps.smodel.search.ISearchScope$RefAdapter" />
       <unit id="8401916545537503513" at="27,0,68,0" name="jetbrains.mps.smodel.search.ISearchScope$Adapter" />
       <unit id="4642948870877889221" at="19,0,94,0" name="jetbrains.mps.smodel.search.ISearchScope" />

@@ -980,10 +980,10 @@
         <var name="monitor" id="4671800353872691474" />
       </scope>
       <unit id="173672751428924447" at="169,127,173,5" name="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-      <unit id="173672751428923581" at="313,48,322,9" name="jetbrains.mps.ide.make.WorkbenchMakeService$1" />
-      <unit id="173672751428923820" at="369,25,378,7" name="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
-      <unit id="4634869729622984721" at="248,62,258,11" name="jetbrains.mps.ide.make.WorkbenchMakeService$4" />
-      <unit id="173672751428923869" at="379,24,392,7" name="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
+      <unit id="173672751428923581" at="313,48,322,9" name="jetbrains.mps.ide.make.WorkbenchMakeService$Controller$1" />
+      <unit id="173672751428923820" at="369,25,378,7" name="jetbrains.mps.ide.make.WorkbenchMakeService$Controller$2" />
+      <unit id="4634869729622984721" at="248,62,258,11" name="jetbrains.mps.ide.make.WorkbenchMakeService$3$1" />
+      <unit id="173672751428923869" at="379,24,392,7" name="jetbrains.mps.ide.make.WorkbenchMakeService$Controller$3" />
       <unit id="4634869729622984717" at="246,33,260,7" name="jetbrains.mps.ide.make.WorkbenchMakeService$3" />
       <unit id="4634869729622984599" at="227,30,242,5" name="jetbrains.mps.ide.make.WorkbenchMakeService$2" />
       <unit id="173672751428923520" at="295,0,395,0" name="jetbrains.mps.ide.make.WorkbenchMakeService$Controller" />

@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.psi.impl;
 
 import com.intellij.lang.FileASTNode;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -32,7 +33,8 @@ import com.intellij.psi.search.PsiElementProcessor;
 import com.intellij.util.IncorrectOperationException;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.ide.icons.GlobalIconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
@@ -41,7 +43,6 @@ import jetbrains.mps.nodefs.NodeVirtualFileSystem;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -63,11 +64,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
 
   private final FileViewProvider myViewProvider;
   private final SNodeId myNodeId;
-  private String myName;
-  private MPSPsiModel myModel;
+  private final String myName;
+  private final MPSPsiModel myModel;
   private VirtualFile mySeparateFile;
 
-  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager) {
+  public MPSPsiRootNode(SNodeId nodeId, @NotNull String name, MPSPsiModel containingModel, PsiManager manager) {
     super(manager);
     myNodeId = nodeId;
     myModel = containingModel;
@@ -75,7 +76,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     myViewProvider = new SingleRootFileViewProvider(manager, NodeVirtualFileSystem.getInstance().getFileFor(getProjectRepository(), getSNodeReference()), false);
   }
 
-  public MPSPsiRootNode(SNodeId nodeId, String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
+  public MPSPsiRootNode(SNodeId nodeId, @NotNull String name, MPSPsiModel containingModel, PsiManager manager, @NotNull VirtualFile virtualFile) {
     this(nodeId, name, containingModel, manager);
     mySeparateFile = virtualFile;
   }
@@ -83,13 +84,11 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Override
   protected Icon getBaseIcon() {
     SRepository repository = ProjectHelper.getProjectRepository(getProject());
-    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<Icon>() {
-      @Override
-      public Icon compute() {
-        final SNode node = getSNodeReference().resolve(repository);
-        if (node == null) return IdeIcons.UNKNOWN_ICON;
-        return IconManager.getIconFor(node);
-      }
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
+      final SNode node = getSNodeReference().resolve(repository);
+      if (node == null) return IdeIcons.UNKNOWN_ICON;
+      final GlobalIconManager globalIconManager = ApplicationManager.getApplication().getComponent(GlobalIconManager.class);
+      return globalIconManager == null ? Nodes.Node : globalIconManager.getIconFor(node);
     });
   }
 
@@ -103,16 +102,13 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   public boolean isValid() {
     if (!myModel.isValid() || mySeparateFile != null && !mySeparateFile.isValid()) return false;
     final SRepository repository = getProjectRepository();
-    final Ref<Boolean> result = new Ref<Boolean>(false);
+    final Ref<Boolean> result = new Ref<>(false);
     final SNodeReference nodeRef = getSNodeReference();
     if (nodeRef == null) return false;
 
-    repository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        SNode node = nodeRef.resolve(repository);
-        result.set(node != null);
-      }
+    repository.getModelAccess().runReadAction(() -> {
+      SNode node = nodeRef.resolve(repository);
+      result.set(node != null);
     });
 
     return result.get();
@@ -126,16 +122,13 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
       return mySeparateFile;
     }
     final SRepository repository = getProjectRepository();
-    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(new Computable<VirtualFile>() {
-      @Override
-      public VirtualFile compute() {
-        SModel sModel = myModel.getSModelReference().resolve(repository);
-        DataSource dataSource = sModel.getSource();
-        if (dataSource instanceof FileDataSource) {
-          return VirtualFileUtils.getVirtualFile(((FileDataSource) dataSource).getFile());
-        }
-        return null;
+    return new ModelAccessHelper(repository.getModelAccess()).runReadAction(() -> {
+      SModel sModel = myModel.getSModelReference().resolve(repository);
+      DataSource dataSource = sModel.getSource();
+      if (dataSource instanceof FileDataSource) {
+        return VirtualFileUtils.getProjectVirtualFile(((FileDataSource) dataSource).getFile());
       }
+      return null;
     });
   }
 
@@ -199,6 +192,7 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
     return MPSFileTypeFactory.MPS_NODE_FILE_TYPE;
   }
 
+  @NotNull
   @Override
   public String getName() {
     return myName;
@@ -224,17 +218,14 @@ public class MPSPsiRootNode extends MPSPsiNodeBase implements PsiFile, PsiBinary
   @Override
   public void navigate(final boolean requestFocus) {
     final SRepository repository = getProjectRepository();
-    repository.getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        SModel model = myModel.getSModelReference().resolve(repository);
-        if (model == null) return;
+    repository.getModelAccess().runWriteInEDT(() -> {
+      SModel model = myModel.getSModelReference().resolve(repository);
+      if (model == null) return;
 
-        SNode node = model.getNode(myNodeId);
-        if (node == null) return;
+      SNode node = model.getNode(myNodeId);
+      if (node == null) return;
 
-        NavigationSupport.getInstance().openNode(ProjectHelper.fromIdeaProject(getProject()), node, requestFocus, false);
-      }
+      NavigationSupport.getInstance().openNode(ProjectHelper.fromIdeaProject(getProject()), node, requestFocus, false);
     });
   }
 

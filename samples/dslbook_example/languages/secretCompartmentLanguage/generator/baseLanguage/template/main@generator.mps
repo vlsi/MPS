@@ -6,7 +6,7 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
@@ -182,8 +182,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -758,10 +758,12 @@
                                     <ref role="1iwH77" node="572jgSUxnTI" resolve="StateMachineFactory" />
                                     <node concept="2OqwBi" id="572jgSUxnU4" role="1iwH7V">
                                       <node concept="1PxgMI" id="572jgSUxnU0" role="2Oq$k0">
-                                        <ref role="1m5ApE" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
                                         <node concept="2OqwBi" id="572jgSUxnTR" role="1m5AlR">
                                           <node concept="30H73N" id="572jgSUxnTN" role="2Oq$k0" />
                                           <node concept="1mfA1w" id="572jgSUxnTW" role="2OqNvi" />
+                                        </node>
+                                        <node concept="chp4Y" id="714IaVdGZ3j" role="3oSUPX">
+                                          <ref role="cht4Q" to="tpo2:hr1uxx_" resolve="StateMachineTest" />
                                         </node>
                                       </node>
                                       <node concept="3TrEf2" id="572jgSUxnUa" role="2OqNvi">

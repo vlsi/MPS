@@ -172,8 +172,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -818,12 +818,14 @@
               <ref role="37wK5l" to="5jto:2xiZ7_1zE2V" resolve="hasIncludeCycles" />
               <ref role="1Pybhc" to="5jto:3WpkgLwxyX3" resolve="MigrationsCheckUtil" />
               <node concept="1PxgMI" id="2xiZ7_1z_YM" role="37wK5m">
-                <ref role="1m5ApE" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
                 <node concept="2OqwBi" id="2xiZ7_1zyTg" role="1m5AlR">
                   <node concept="1YBJjd" id="2xiZ7_1zyKD" role="2Oq$k0">
                     <ref role="1YBMHb" node="2xiZ7_1yvah" resolve="includeMigrationPart" />
                   </node>
                   <node concept="1mfA1w" id="2xiZ7_1z$cg" role="2OqNvi" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH0xA" role="3oSUPX">
+                  <ref role="cht4Q" to="53vh:6szrkDodGEV" resolve="PureMigrationScript" />
                 </node>
               </node>
             </node>

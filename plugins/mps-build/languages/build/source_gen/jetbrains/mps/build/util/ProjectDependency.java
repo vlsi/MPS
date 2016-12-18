@@ -20,6 +20,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class ProjectDependency {
   private final TemplateQueryContext myGenContext;
@@ -77,7 +79,7 @@ public class ProjectDependency {
   }
   private void dfs(SNode project, List<SNode> result, Set<SNode> visited) {
     SetSequence.fromSet(visited).addElement(project);
-    for (SNode dependency : Sequence.fromIterable(getImmediateDependencies(project))) {
+    for (SNode dependency : Sequence.fromIterable(getLocalDependencies(project))) {
       if (SetSequence.fromSet(visited).contains(SLinkOperations.getTarget(dependency, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")))) {
         continue;
       }
@@ -85,11 +87,44 @@ public class ProjectDependency {
       ListSequence.fromList(result).addElement(dependency);
     }
   }
-  private Iterable<SNode> getImmediateDependencies(SNode project) {
+  private Iterable<SNode> getLocalDependencies(SNode project) {
     return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) == null) && !((boolean) BuildProject__BehaviorDescriptor.isPackaged_id3_glsEmok8d.invoke(SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), myContext));
+        return (SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) == null) && isProjectLocal(it);
       }
     });
+  }
+
+  /**
+   * Tell whether dependency points to a BP inside local MPS project, so that one
+   * could expect generated build scripts present here, and invoke them as part of myProject build.
+   * 
+   * XXX I got doubts why whole MPS project is treated as a scope. On one hand, we might have
+   * scope limited to the model/module of myProject (and take anything else as 'external' dependency),
+   * OTOH, with absence of project module deployment story, it's not clear whether scenario of
+   * two dependant build solutions inside single MPS project won't get broken. 
+   * According to BuildProject.isPackaged(), any BuildProject from non-packaged module is ok,
+   * as well as any BuildProject from transient module, provided we're inside generation (always true
+   * for this particular class). This assumption doesn't seem to work well with
+   * checkpoint models of deployed build solutions, as they might get copied into transients,
+   * depending on Generator runtime implementation, which is constantly changing.
+   */
+  private boolean isProjectLocal(SNode dep) {
+    SModel targetScriptModel = SNodeOperations.getModel(SLinkOperations.getTarget(dep, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")));
+    if (targetScriptModel == null || SNodeOperations.getModel(myProject) == null) {
+      // "local" doesn't make sense unless there's location (i.e. my BP's model) to check againts 
+      return false;
+    }
+    if (targetScriptModel == SNodeOperations.getModel(myProject)) {
+      // XXX what if we introduce per-root transformation, when one root (BuildProject) comes from transient model, while 
+      // target comes from source? Guess, would need to rely on module.isPackaged check below 
+      return true;
+    }
+    SModule targetScriptModule = targetScriptModel.getModule();
+    if (targetScriptModule == SNodeOperations.getModel(myProject).getModule()) {
+      return true;
+    }
+    // FIXME add an option Module.isPackaged (to access it like node.model.module.isPackaged) 
+    return !(targetScriptModule.isPackaged());
   }
 }

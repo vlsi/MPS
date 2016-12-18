@@ -14,6 +14,8 @@ import jetbrains.mps.smodel.runtime.ConceptKind;
 import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptAbstractToolKeystroke = createDescriptorForAbstractToolKeystroke();
+  /*package*/ final ConceptDescriptor myConceptAbstractToolShortcut = createDescriptorForAbstractToolShortcut();
   /*package*/ final ConceptDescriptor myConceptActionAccessOperation = createDescriptorForActionAccessOperation();
   /*package*/ final ConceptDescriptor myConceptActionConstructionParameterDeclaration = createDescriptorForActionConstructionParameterDeclaration();
   /*package*/ final ConceptDescriptor myConceptActionConstructorParameterReferenceOperation = createDescriptorForActionConstructorParameterReferenceOperation();
@@ -59,6 +61,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCreateNodeAspectBlock = createDescriptorForCreateNodeAspectBlock();
   /*package*/ final ConceptDescriptor myConceptCreateTabBlock = createDescriptorForCreateTabBlock();
   /*package*/ final ConceptDescriptor myConceptCustomCondition = createDescriptorForCustomCondition();
+  /*package*/ final ConceptDescriptor myConceptCustomToolShortcut = createDescriptorForCustomToolShortcut();
   /*package*/ final ConceptDescriptor myConceptDisposeBlock = createDescriptorForDisposeBlock();
   /*package*/ final ConceptDescriptor myConceptDoUpdateBlock = createDescriptorForDoUpdateBlock();
   /*package*/ final ConceptDescriptor myConceptEditableModel = createDescriptorForEditableModel();
@@ -95,6 +98,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptModificationStatement = createDescriptorForModificationStatement();
   /*package*/ final ConceptDescriptor myConceptNodesBlock = createDescriptorForNodesBlock();
   /*package*/ final ConceptDescriptor myConceptNonDumbAwareActions = createDescriptorForNonDumbAwareActions();
+  /*package*/ final ConceptDescriptor myConceptNumberToolShortcut = createDescriptorForNumberToolShortcut();
   /*package*/ final ConceptDescriptor myConceptOldConceptsBlock = createDescriptorForOldConceptsBlock();
   /*package*/ final ConceptDescriptor myConceptOldCreateBlock = createDescriptorForOldCreateBlock();
   /*package*/ final ConceptDescriptor myConceptOnAfterReadBlock = createDescriptorForOnAfterReadBlock();
@@ -128,6 +132,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptToolActionPlace = createDescriptorForToolActionPlace();
   /*package*/ final ConceptDescriptor myConceptToolDeclaration = createDescriptorForToolDeclaration();
   /*package*/ final ConceptDescriptor myConceptToolInstanceExpression = createDescriptorForToolInstanceExpression();
+  /*package*/ final ConceptDescriptor myConceptToolKeystroke = createDescriptorForToolKeystroke();
   /*package*/ final ConceptDescriptor myConceptToolTab = createDescriptorForToolTab();
   /*package*/ final ConceptDescriptor myConceptToolType = createDescriptorForToolType();
   /*package*/ final ConceptDescriptor myConceptToolbarCreator = createDescriptorForToolbarCreator();
@@ -143,13 +148,17 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_Concept, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptOldConceptsBlock, myConceptOldCreateBlock, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
+    return Arrays.asList(myConceptAbstractToolKeystroke, myConceptAbstractToolShortcut, myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_Concept, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptCustomToolShortcut, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptNumberToolShortcut, myConceptOldConceptsBlock, myConceptOldCreateBlock, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolKeystroke, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.AbstractToolKeystroke:
+        return myConceptAbstractToolKeystroke;
+      case LanguageConceptSwitch.AbstractToolShortcut:
+        return myConceptAbstractToolShortcut;
       case LanguageConceptSwitch.ActionAccessOperation:
         return myConceptActionAccessOperation;
       case LanguageConceptSwitch.ActionConstructionParameterDeclaration:
@@ -240,6 +249,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptCreateTabBlock;
       case LanguageConceptSwitch.CustomCondition:
         return myConceptCustomCondition;
+      case LanguageConceptSwitch.CustomToolShortcut:
+        return myConceptCustomToolShortcut;
       case LanguageConceptSwitch.DisposeBlock:
         return myConceptDisposeBlock;
       case LanguageConceptSwitch.DoUpdateBlock:
@@ -312,6 +323,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNodesBlock;
       case LanguageConceptSwitch.NonDumbAwareActions:
         return myConceptNonDumbAwareActions;
+      case LanguageConceptSwitch.NumberToolShortcut:
+        return myConceptNumberToolShortcut;
       case LanguageConceptSwitch.OldConceptsBlock:
         return myConceptOldConceptsBlock;
       case LanguageConceptSwitch.OldCreateBlock:
@@ -378,6 +391,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptToolDeclaration;
       case LanguageConceptSwitch.ToolInstanceExpression:
         return myConceptToolInstanceExpression;
+      case LanguageConceptSwitch.ToolKeystroke:
+        return myConceptToolKeystroke;
       case LanguageConceptSwitch.ToolTab:
         return myConceptToolTab;
       case LanguageConceptSwitch.ToolType:
@@ -401,6 +416,18 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForAbstractToolKeystroke() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "AbstractToolKeystroke", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL);
+    b.class_(false, true, false);
+    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927506494666");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAbstractToolShortcut() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "AbstractToolShortcut", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L);
+    b.class_(false, true, false);
+    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927503509889");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForActionAccessOperation() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "ActionAccessOperation", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x2c7cd89ac8d0060cL);
     b.class_(false, false, false);
@@ -654,6 +681,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("toolInitBlock", 0x705d0a376e81592eL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa166ea48L).optional(true).ordered(true).multiple(false).origin("8096638938275469614").done();
     b.aggregate("toolDisposeBlock", 0x705d0a376e81592fL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11aa167474fL).optional(true).ordered(true).multiple(false).origin("8096638938275469615").done();
     b.aggregate("toolIcon", 0x5e40e1c309ae6459L).target(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x26417c3774289eeeL).optional(true).ordered(true).multiple(false).origin("6791676465872004185").done();
+    b.aggregate("shortcut", 0x68b8d4843b815aeL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L).optional(true).ordered(true).multiple(false).origin("471625927503648174").done();
     b.alias("Base Tool");
     return b.create();
   }
@@ -848,6 +876,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/5538333046911298739");
     b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
     b.alias("custom precondition");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForCustomToolShortcut() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "CustomToolShortcut", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76125L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L);
+    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927503601957");
+    b.aggregate("changes", 0x68b8d4843b765b8L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL).optional(false).ordered(true).multiple(true).origin("471625927503603128").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDisposeBlock() {
@@ -1124,6 +1160,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1207318242772");
     b.prop("modifiers", 0x11919c665d5L, "1207318242773");
     b.prop("keycode", 0x11919c665d6L, "1207318242774");
+    b.prop("change", 0x5e2b603c8f03ab4dL, "6785623076777470797");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForKeyStrokeType() {
@@ -1193,6 +1230,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11a3afa8c0dL);
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1512255007353869532");
     b.aggregate("actions", 0x14fc9beabb2214ddL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x14fc9beabb2214dfL).optional(true).ordered(true).multiple(true).origin("1512255007353869533").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForNumberToolShortcut() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "NumberToolShortcut", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b76107L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.plugin.structure.AbstractToolShortcut", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b5f981L);
+    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927503601927");
+    b.prop("number", 0x68b8d4843b76123L, "471625927503601955");
+    b.alias("number");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOldConceptsBlock() {
@@ -1493,6 +1539,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1204471433283");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
     b.alias("instance");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForToolKeystroke() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "ToolKeystroke", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843b765b0L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.plugin.structure.AbstractToolKeystroke", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x68b8d4843e384caL);
+    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927503603120");
+    b.prop("keymap", 0x68b8d4843b765b6L, "471625927503603126");
+    b.aggregate("keystroke", 0x68b8d4843b76126L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11919c665d4L).optional(false).ordered(true).multiple(false).origin("471625927503601958").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForToolTab() {

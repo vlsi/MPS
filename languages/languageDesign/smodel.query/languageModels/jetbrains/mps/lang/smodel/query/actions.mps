@@ -2,7 +2,7 @@
 <model ref="r:9cef28f0-1d60-4407-a18b-c9fc83b30f67(jetbrains.mps.lang.smodel.query.actions)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -65,8 +65,8 @@
         <reference id="1139880128956" name="concept" index="1A9B2P" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -105,8 +105,10 @@
                   <node concept="2oxUTD" id="3J6h25QCMin" role="2OqNvi">
                     <node concept="2OqwBi" id="3J6h25QCNJ5" role="2oxUTC">
                       <node concept="1PxgMI" id="3J6h25QCNuO" role="2Oq$k0">
-                        <ref role="1m5ApE" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
                         <node concept="1r4N5L" id="3J6h25QCMkZ" role="1m5AlR" />
+                        <node concept="chp4Y" id="714IaVdGZk2" role="3oSUPX">
+                          <ref role="cht4Q" to="3xdn:3J6h25Q2UNX" resolve="QueryExpression" />
+                        </node>
                       </node>
                       <node concept="3TrEf2" id="3J6h25QCPoo" role="2OqNvi">
                         <ref role="3Tt5mk" to="3xdn:3J6h25Q5Il8" resolve="parameter" />

@@ -14,7 +14,7 @@ import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,10 +39,10 @@ public class EmptyJavaStubsFindUsages implements FindUsagesParticipant, Applicat
     // let's not skip this, it's not going to slow down anything 
   }
   public void initComponent() {
-    PersistenceFacade.getInstance().addFindUsagesParticipant(this);
+    PersistenceRegistry.getInstance().addFindUsagesParticipant(this);
   }
   public void disposeComponent() {
-    PersistenceFacade.getInstance().removeFindUsagesParticipant(this);
+    PersistenceRegistry.getInstance().removeFindUsagesParticipant(this);
   }
   @NonNls
   @NotNull

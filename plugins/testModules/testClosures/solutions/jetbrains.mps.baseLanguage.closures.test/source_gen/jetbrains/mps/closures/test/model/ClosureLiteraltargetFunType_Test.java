@@ -39,8 +39,8 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
       addNodeById("6374750171056867594");
       addNodeById("6374750171056867606");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(getNodeById("6374750171056867612"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
-      SNode funtype = SNodeOperations.cast(getNodeById("6374750171056867639"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174a4d19ffL, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
+      SNode literal = SNodeOperations.cast(getNodeById("6374750171056867612"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
+      SNode funtype = SNodeOperations.cast(getNodeById("6374750171056867639"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174a4d19ffL, "FunctionType")));
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType__BehaviorDescriptor.getDeclarationRuntimeType_idhTOKQzf.invoke(funtype));
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_7325qm_c0a6a0d());
     }

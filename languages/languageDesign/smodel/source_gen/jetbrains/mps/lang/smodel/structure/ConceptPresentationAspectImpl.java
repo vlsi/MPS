@@ -12,7 +12,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractNodeRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractOperationParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_AbstractTypeCastExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AbstractTypeCastExpression = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x2143399c0554e687L, 0x5d71a86e0b67ce04L, "concept")).create();
   private final ConceptPresentation props_AggregationIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AllAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AsNodeOperation = new ConceptPresentationBuilder().create();
@@ -21,8 +21,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AttributeAccess = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BootstrapAwareMetaObject = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckedModuleQualifiedName = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckedModuleReference = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ChildAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ChildNodeRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptAliasOperation = new ConceptPresentationBuilder().create();
@@ -31,15 +29,15 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptIdRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptMemberIdentity = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptNodeType = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_ConceptRefExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ConceptNodeType = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_ConceptRefExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ConceptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptShortDescriptionOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptSwitchStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_GetAllSubConcepts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_GetAllSuperConcepts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_GetDirectSuperConcepts = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Concept_GetHierarchy = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_Concept_GetHierarchy = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Concept_IsExactlyOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_IsSubConceptOfOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_IsSuperConceptOfOperation = new ConceptPresentationBuilder().create();
@@ -67,7 +65,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LanguageId = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd7L, "namespace"), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd8L, "languageId"), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x312abca18ab8c8c0L, 0x312abca18ab8ccd9L, "version")).create();
   private final ConceptPresentation props_LanguageIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageRefExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageReferenceExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_LanguageReferenceExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_LinkAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkIdRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkList_AddNewChildOperation = new ConceptPresentationBuilder().create();
@@ -90,22 +88,23 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModuleIdentity = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModulePointer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModuleRefExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleReferenceExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ModuleReferenceExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_NodeAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodePointerExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeRefExpression = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_NodeRefExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Node_ConceptMethodCall = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1129a43046bL, 0x27990abcdcff2f1dL, "directCall")).create();
+  private final ConceptPresentation props_Node_ContainingLinkOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_CopyOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_DeleteOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Node_DeleteOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Node_DetachOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetAllSiblingsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetAncestorOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetAncestorsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetChildrenAndChildAttributesOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetChildrenOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_GetConceptOperation = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_Node_GetContainingLinkOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_GetContainingRoleOperation = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_Node_GetConceptOperation = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_Node_GetContainingLinkOperation = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_Node_GetContainingRoleOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Node_GetContainingRootOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetDescendantsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetIndexInParentOperation = new ConceptPresentationBuilder().create();
@@ -117,7 +116,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Node_GetPrevSiblingsOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetReferenceOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_GetReferencesOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_GetReferentSearchScopeOperation = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_Node_GetReferentSearchScopeOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Node_GetSConceptOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_InsertNewNextSiblingOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_InsertNewPrevSiblingOperation = new ConceptPresentationBuilder().create();
@@ -154,7 +153,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ReferenceLinkId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetLinkDeclarationOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetResolveInfo = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Reference_GetRoleOperation = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_Reference_GetRoleOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Reference_GetTargetOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SConceptOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SConceptType = new ConceptPresentationBuilder().create();
@@ -212,10 +211,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AttributeQualifier;
       case LanguageConceptSwitch.BootstrapAwareMetaObject:
         return props_BootstrapAwareMetaObject;
-      case LanguageConceptSwitch.CheckedModuleQualifiedName:
-        return props_CheckedModuleQualifiedName;
-      case LanguageConceptSwitch.CheckedModuleReference:
-        return props_CheckedModuleReference;
       case LanguageConceptSwitch.ChildAttributeQualifier:
         return props_ChildAttributeQualifier;
       case LanguageConceptSwitch.ChildNodeRefExpression:
@@ -360,6 +355,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NodeRefExpression;
       case LanguageConceptSwitch.Node_ConceptMethodCall:
         return props_Node_ConceptMethodCall;
+      case LanguageConceptSwitch.Node_ContainingLinkOperation:
+        return props_Node_ContainingLinkOperation;
       case LanguageConceptSwitch.Node_CopyOperation:
         return props_Node_CopyOperation;
       case LanguageConceptSwitch.Node_DeleteOperation:

@@ -2,10 +2,10 @@
 <model ref="r:60ad1897-dab7-4d3f-88a6-223e75141d15(jetbrains.mps.debugger.java.privateMembers.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -110,7 +110,6 @@
         <child id="4202667662392416064" name="transformationMenu" index="3vIgyS" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -249,8 +248,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
@@ -310,7 +309,6 @@
   <node concept="24kQdi" id="4RXh7QRr0Ge">
     <ref role="1XX52x" to="wch2:3$0WX3VmNr9" resolve="PrivateStaticFieldReference" />
     <node concept="3EZMnI" id="4RXh7QRr0Gh" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="1iCGBv" id="4RXh7QRr0Gi" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no classifier&gt;" />
         <ref role="1NtTu8" to="tpee:gDPxDYr" resolve="classifier" />
@@ -540,8 +538,10 @@
                         <ref role="37wK5l" to="fnmy:2Jvt1sWfuvb" resolve="isVisible" />
                         <node concept="3GMtW1" id="4RXh7QRr0Jh" role="37wK5m" />
                         <node concept="1PxgMI" id="4RXh7QRr0Jj" role="37wK5m">
-                          <ref role="1m5ApE" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
                           <node concept="3GLrbK" id="4RXh7QRr0Jk" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdH03h" role="3oSUPX">
+                            <ref role="cht4Q" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -610,8 +610,10 @@
                         <node concept="1rpKSd" id="1wEcoXjJF58" role="37wK5m" />
                         <node concept="1PxgMI" id="1wEcoXjJF4q" role="37wK5m">
                           <property role="1BlNFB" value="true" />
-                          <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                           <node concept="3bvxqY" id="1wEcoXjJF56" role="1m5AlR" />
+                          <node concept="chp4Y" id="714IaVdH03e" role="3oSUPX">
+                            <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
+                          </node>
                         </node>
                         <node concept="35c_gC" id="1wEcoXjJF4s" role="37wK5m">
                           <ref role="35c_gD" to="tpee:g7pOWCK" resolve="Classifier" />
@@ -640,9 +642,11 @@
                                 <node concept="3bvxqY" id="1wEcoXjJF57" role="37wK5m" />
                                 <node concept="1PxgMI" id="1wEcoXjJF4D" role="37wK5m">
                                   <property role="1BlNFB" value="true" />
-                                  <ref role="1m5ApE" to="tpee:h9B3isZ" resolve="IVisible" />
                                   <node concept="37vLTw" id="1wEcoXjJF4E" role="1m5AlR">
                                     <ref role="3cqZAo" node="1wEcoXjJF4x" resolve="node" />
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdH03m" role="3oSUPX">
+                                    <ref role="cht4Q" to="tpee:h9B3isZ" resolve="IVisible" />
                                   </node>
                                 </node>
                               </node>
@@ -701,9 +705,11 @@
                     <node concept="3clFbS" id="1wEcoXjJF4Y" role="1bW5cS">
                       <node concept="3clFbF" id="1wEcoXjJF4Z" role="3cqZAp">
                         <node concept="1PxgMI" id="1wEcoXjJF50" role="3clFbG">
-                          <ref role="1m5ApE" to="tpee:g7pOWCK" resolve="Classifier" />
                           <node concept="37vLTw" id="1wEcoXjJF51" role="1m5AlR">
                             <ref role="3cqZAo" node="1wEcoXjJF52" resolve="it" />
+                          </node>
+                          <node concept="chp4Y" id="714IaVdH03n" role="3oSUPX">
+                            <ref role="cht4Q" to="tpee:g7pOWCK" resolve="Classifier" />
                           </node>
                         </node>
                       </node>

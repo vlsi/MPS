@@ -158,8 +158,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -213,7 +213,7 @@
     <property role="3GE5qa" value="Project.Deps" />
     <ref role="1M2myG" to="kdzh:3HwLahs6gcI" resolve="BuildMps_ModuleDependencyExtendLanguage" />
     <node concept="1N5Pfh" id="13YBgBBSg3j" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:3HwLahs6gcK" />
+      <ref role="1N5Vy1" to="kdzh:3HwLahs6gcK" resolve="language" />
       <node concept="1dDu$B" id="13YBgBBSg3k" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
       </node>
@@ -268,7 +268,7 @@
               <node concept="2OqwBi" id="6Iq8148fFqf" role="2Oq$k0">
                 <node concept="EsrRn" id="6Iq8148fFpU" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6Iq8148fN6X" role="2OqNvi">
-                  <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" />
+                  <ref role="3Tt5mk" to="kdzh:5j4USBYGz2J" resolve="shortName" />
                 </node>
               </node>
               <node concept="2qgKlT" id="6Iq8148fN7p" role="2OqNvi">
@@ -313,11 +313,13 @@
               <node concept="2OqwBi" id="6DMiG0xr7gk" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xqV89" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xqV7L" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="nLn13" id="6DMiG0xqV6Y" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdGYWL" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xr7fW" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xr7gp" role="2OqNvi">
@@ -412,13 +414,15 @@
               <node concept="2OqwBi" id="6DMiG0xrePh" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xrePi" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xrePj" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="37vLTw" id="3GM_nagTtdy" role="1m5AlR">
                       <ref role="3cqZAo" node="6DMiG0xreOW" resolve="pnode" />
                     </node>
+                    <node concept="chp4Y" id="714IaVdGYWt" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xrePl" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xrePm" role="2OqNvi">
@@ -515,13 +519,15 @@
               <node concept="2OqwBi" id="6DMiG0xraoY" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xraoZ" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xrap0" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="37vLTw" id="3GM_nagTvhD" role="1m5AlR">
                       <ref role="3cqZAo" node="6DMiG0xreMR" resolve="pnode" />
                     </node>
+                    <node concept="chp4Y" id="714IaVdGYWs" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xrap2" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xrap3" role="2OqNvi">
@@ -618,13 +624,15 @@
               <node concept="2OqwBi" id="6DMiG0xreOC" role="3uHU7w">
                 <node concept="2OqwBi" id="6DMiG0xreOD" role="2Oq$k0">
                   <node concept="1PxgMI" id="6DMiG0xreOE" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="37vLTw" id="3GM_nagTv$F" role="1m5AlR">
                       <ref role="3cqZAo" node="6DMiG0xreOj" resolve="pnode" />
                     </node>
+                    <node concept="chp4Y" id="714IaVdGYXz" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="6DMiG0xreOG" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="6DMiG0xreOH" role="2OqNvi">
@@ -704,7 +712,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="13YBgBBSiJp" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:5HVSRHdV_$p" />
+      <ref role="1N5Vy1" to="kdzh:5HVSRHdV_$p" resolve="plugin" />
       <node concept="1dDu$B" id="13YBgBBSiJq" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
       </node>
@@ -714,7 +722,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="kdzh:16hzwWwASfB" resolve="BuildMpsLayout_ModuleJars" />
     <node concept="1N5Pfh" id="13YBgBBScH2" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:16hzwWwASfD" />
+      <ref role="1N5Vy1" to="kdzh:16hzwWwASfD" resolve="module" />
       <node concept="13QW63" id="7fR23ZqrkQg" role="1N6uqs">
         <node concept="3clFbS" id="7fR23ZqrkQh" role="2VODD2">
           <node concept="3cpWs8" id="2S0O1lEr245" role="3cqZAp">
@@ -797,7 +805,7 @@
     <property role="3GE5qa" value="Project.Runtime" />
     <ref role="1M2myG" to="kdzh:2L4pT56hbrz" resolve="BuildMps_ModuleSolutionRuntime" />
     <node concept="1N5Pfh" id="13YBgBBSg3h" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:2L4pT56hbr$" />
+      <ref role="1N5Vy1" to="kdzh:2L4pT56hbr$" resolve="solution" />
       <node concept="1dDu$B" id="13YBgBBSg3i" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
       </node>
@@ -807,7 +815,7 @@
     <property role="3GE5qa" value="Project.Deps" />
     <ref role="1M2myG" to="kdzh:hS0KzPPrL9" resolve="BuildMps_ModuleDependencyOnDevKit" />
     <node concept="1N5Pfh" id="13YBgBBSg3m" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:hS0KzPPrLa" />
+      <ref role="1N5Vy1" to="kdzh:hS0KzPPrLa" resolve="devkit" />
       <node concept="1dDu$B" id="13YBgBBSg3n" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
       </node>
@@ -817,7 +825,7 @@
     <property role="3GE5qa" value="Project.Deps" />
     <ref role="1M2myG" to="kdzh:2L4pT56gYzV" resolve="BuildMps_ModuleDependencyOnJavaModule" />
     <node concept="1N5Pfh" id="13YBgBBSg3p" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:2L4pT56gYzX" />
+      <ref role="1N5Vy1" to="kdzh:2L4pT56gYzX" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSg3q" role="1N6uqs">
         <ref role="1dDu$A" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
       </node>
@@ -827,7 +835,7 @@
     <property role="3GE5qa" value="Project.Deps" />
     <ref role="1M2myG" to="kdzh:4zCbl23db4q" resolve="BuildMps_ModuleDependencyOnModule" />
     <node concept="1N5Pfh" id="13YBgBBSg3s" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:4zCbl23d1MT" />
+      <ref role="1N5Vy1" to="kdzh:4zCbl23d1MT" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSg3t" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
       </node>
@@ -837,7 +845,7 @@
     <property role="3GE5qa" value="Project.Deps" />
     <ref role="1M2myG" to="kdzh:2L4pT56gXbi" resolve="BuildMps_ModuleDependencyUseLanguage" />
     <node concept="1N5Pfh" id="13YBgBBSiJd" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:2L4pT56gXbj" />
+      <ref role="1N5Vy1" to="kdzh:2L4pT56gXbj" resolve="language" />
       <node concept="1dDu$B" id="13YBgBBSiJf" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
       </node>
@@ -847,7 +855,7 @@
     <property role="3GE5qa" value="Project.DevKit" />
     <ref role="1M2myG" to="kdzh:hS0KzPOz4U" resolve="BuildMps_DevKitRef" />
     <node concept="1N5Pfh" id="13YBgBBSiJh" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:hS0KzPOz4V" />
+      <ref role="1N5Vy1" to="kdzh:hS0KzPOz4V" resolve="devkit" />
       <node concept="1dDu$B" id="13YBgBBSiJi" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:hS0KzPOwoe" resolve="BuildMps_DevKit" />
       </node>
@@ -857,7 +865,7 @@
     <property role="3GE5qa" value="Project.DevKit" />
     <ref role="1M2myG" to="kdzh:hS0KzPODPE" resolve="BuildMps_DevKitExportLanguage" />
     <node concept="1N5Pfh" id="13YBgBBSiJk" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:hS0KzPODPN" />
+      <ref role="1N5Vy1" to="kdzh:hS0KzPODPN" resolve="language" />
       <node concept="1dDu$B" id="13YBgBBSiJl" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
       </node>
@@ -867,7 +875,7 @@
     <property role="3GE5qa" value="Project.DevKit" />
     <ref role="1M2myG" to="kdzh:hS0KzPODPU" resolve="BuildMps_DevKitExportSolution" />
     <node concept="1N5Pfh" id="13YBgBBSiJn" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:hS0KzPODPV" />
+      <ref role="1N5Vy1" to="kdzh:hS0KzPODPV" resolve="solution" />
       <node concept="1dDu$B" id="13YBgBBSiJo" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:2L4pT56gD3R" resolve="BuildMps_Solution" />
       </node>
@@ -877,7 +885,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="kdzh:1tWbYFNhzsg" resolve="BuildMpsLayout_ModuleSources" />
     <node concept="1N5Pfh" id="13YBgBBSiJs" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:1tWbYFNhzsh" />
+      <ref role="1N5Vy1" to="kdzh:1tWbYFNhzsh" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSiJw" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
       </node>
@@ -887,7 +895,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
     <node concept="1N5Pfh" id="13YBgBBSiJy" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:6CY5wCYZA9P" />
+      <ref role="1N5Vy1" to="kdzh:6CY5wCYZA9P" resolve="module" />
       <node concept="1dDu$B" id="13YBgBBSiJz" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
       </node>
@@ -897,7 +905,7 @@
     <property role="3GE5qa" value="Layout" />
     <ref role="1M2myG" to="kdzh:5HVSRHdV$dW" resolve="BuildMpsLayout_PluginDescriptor" />
     <node concept="1N5Pfh" id="13YBgBBSiJ_" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:5HVSRHdV$dX" />
+      <ref role="1N5Vy1" to="kdzh:5HVSRHdV$dX" resolve="plugin" />
       <node concept="1dDu$B" id="13YBgBBSiJA" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
       </node>
@@ -907,7 +915,7 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <ref role="1M2myG" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
     <node concept="1N5Pfh" id="13YBgBBSiJC" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:5HVSRHdUL82" />
+      <ref role="1N5Vy1" to="kdzh:5HVSRHdUL82" resolve="group" />
       <node concept="1dDu$B" id="13YBgBBSiJD" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
       </node>
@@ -923,10 +931,12 @@
                   </node>
                   <node concept="1PxgMI" id="4k71ibbKVtQ" role="33vP2m">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="2OqwBi" id="4k71ibbKVtR" role="1m5AlR">
                       <node concept="Bn53e" id="4k71ibbKVtS" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="4k71ibbKVtT" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYVQ" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     </node>
                   </node>
                 </node>
@@ -992,7 +1002,7 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <ref role="1M2myG" to="kdzh:5HVSRHdUrJs" resolve="BuildMps_IdeaPluginModule" />
     <node concept="1N5Pfh" id="13YBgBBSiJF" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:5HVSRHdUrJt" />
+      <ref role="1N5Vy1" to="kdzh:5HVSRHdUrJt" resolve="target" />
       <node concept="1dDu$B" id="13YBgBBSiJG" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
       </node>
@@ -1008,10 +1018,12 @@
                   </node>
                   <node concept="1PxgMI" id="4k71ibbL6mW" role="33vP2m">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="2OqwBi" id="4k71ibbL6mX" role="1m5AlR">
                       <node concept="Bn53e" id="4k71ibbL6mY" role="2Oq$k0" />
                       <node concept="2Rxl7S" id="4k71ibbL6mZ" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGYWo" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     </node>
                   </node>
                 </node>
@@ -1077,7 +1089,7 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <ref role="1M2myG" to="kdzh:5HVSRHdUrJj" resolve="BuildMps_IdeaPluginDependency" />
     <node concept="1N5Pfh" id="13YBgBBSiJI" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:5HVSRHdUrJU" />
+      <ref role="1N5Vy1" to="kdzh:5HVSRHdUrJU" resolve="target" />
       <node concept="1dDu$B" id="13YBgBBSiJJ" role="1N6uqs">
         <ref role="1dDu$A" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
       </node>
@@ -1087,7 +1099,7 @@
     <property role="3GE5qa" value="Project.Plugin" />
     <ref role="1M2myG" to="kdzh:3vXGXT8byGB" resolve="BuildMps_IdeaPluginGroupCustomModule" />
     <node concept="1N5Pfh" id="3vXGXT8byJd" role="1Mr941">
-      <ref role="1N5Vy1" to="kdzh:3vXGXT8byGC" />
+      <ref role="1N5Vy1" to="kdzh:3vXGXT8byGC" resolve="target" />
       <node concept="13QW63" id="3vXGXT8byJe" role="1N6uqs">
         <node concept="3clFbS" id="3vXGXT8byJf" role="2VODD2">
           <node concept="3cpWs8" id="3vXGXT8byJH" role="3cqZAp">
@@ -1098,15 +1110,19 @@
               </node>
               <node concept="3K4zz7" id="3vXGXT8byKy" role="33vP2m">
                 <node concept="1PxgMI" id="3vXGXT8byKV" role="3K4E3e">
-                  <ref role="1m5ApE" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
                   <node concept="2rP1CM" id="3vXGXT8byKA" role="1m5AlR" />
+                  <node concept="chp4Y" id="714IaVdGYW6" role="3oSUPX">
+                    <ref role="cht4Q" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
+                  </node>
                 </node>
                 <node concept="1PxgMI" id="3vXGXT8byLI" role="3K4GZi">
                   <property role="1BlNFB" value="true" />
-                  <ref role="1m5ApE" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
                   <node concept="2OqwBi" id="3vXGXT8byLC" role="1m5AlR">
                     <node concept="2rP1CM" id="3vXGXT8byKX" role="2Oq$k0" />
                     <node concept="1mfA1w" id="3vXGXT8byLH" role="2OqNvi" />
+                  </node>
+                  <node concept="chp4Y" id="714IaVdGYVR" role="3oSUPX">
+                    <ref role="cht4Q" to="kdzh:5HVSRHdUL81" resolve="BuildMps_IdeaPluginGroup" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="3vXGXT8byK6" role="3K4Cdx">
@@ -1146,12 +1162,12 @@
                   <ref role="3cqZAo" node="3vXGXT8byJI" resolve="group" />
                 </node>
                 <node concept="3TrEf2" id="3vXGXT8byNo" role="2OqNvi">
-                  <ref role="3Tt5mk" to="kdzh:5HVSRHdUL82" />
+                  <ref role="3Tt5mk" to="kdzh:5HVSRHdUL82" resolve="group" />
                 </node>
               </node>
               <node concept="359W_D" id="6t3ylNOzKIU" role="37wK5m">
                 <ref role="359W_E" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
-                <ref role="359W_F" to="kdzh:1jjYQYSgYJu" />
+                <ref role="359W_F" to="kdzh:1jjYQYSgYJu" resolve="modules" />
               </node>
             </node>
           </node>
@@ -1191,11 +1207,13 @@
               <node concept="2OqwBi" id="5D0zVz8102w" role="3uHU7w">
                 <node concept="2OqwBi" id="5D0zVz8102x" role="2Oq$k0">
                   <node concept="1PxgMI" id="5D0zVz8102y" role="2Oq$k0">
-                    <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                     <node concept="nLn13" id="5D0zVz8102O" role="1m5AlR" />
+                    <node concept="chp4Y" id="714IaVdGYVM" role="3oSUPX">
+                      <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    </node>
                   </node>
                   <node concept="3Tsc0h" id="5D0zVz8102$" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                    <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                   </node>
                 </node>
                 <node concept="2HwmR7" id="5D0zVz8102_" role="2OqNvi">
@@ -1302,13 +1320,15 @@
                   <node concept="2OqwBi" id="7YI57w6CFMq" role="3uHU7w">
                     <node concept="2OqwBi" id="7YI57w6CFMr" role="2Oq$k0">
                       <node concept="1PxgMI" id="7YI57w6CFMs" role="2Oq$k0">
-                        <ref role="1m5ApE" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
                         <node concept="37vLTw" id="3GM_nagTzrD" role="1m5AlR">
                           <ref role="3cqZAo" node="4LHG7OImfFq" resolve="pnode" />
                         </node>
+                        <node concept="chp4Y" id="714IaVdGYWj" role="3oSUPX">
+                          <ref role="cht4Q" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                        </node>
                       </node>
                       <node concept="3Tsc0h" id="7YI57w6CFMu" role="2OqNvi">
-                        <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" />
+                        <ref role="3TtcxE" to="3ior:5KZfyKsUqLK" resolve="plugins" />
                       </node>
                     </node>
                     <node concept="2HwmR7" id="7YI57w6CFMv" role="2OqNvi">

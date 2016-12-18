@@ -349,7 +349,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="6666322667909540800" />
       <ref role="20lvS9" to="tpee:fzclF84" resolve="ConstructorDeclaration" />
-      <ref role="20ksaX" to="tpee:fz7wK6H" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
     </node>
     <node concept="PrWs8" id="5M3yimiSPC2" role="PzmwI">
       <ref role="PrY4T" to="tpee:hxndl_i" resolve="IMethodCall" />

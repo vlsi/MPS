@@ -100,8 +100,8 @@
       <scope id="1152305253646" at="13,0,95,0">
         <var name="max" id="1152828713003" />
       </scope>
-      <unit id="1224754223518" at="18,23,89,13" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$3" />
-      <unit id="1224754223518" at="16,19,91,9" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$2" />
+      <unit id="1224754223518" at="18,23,89,13" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1$1$1" />
+      <unit id="1224754223518" at="16,19,91,9" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1$1" />
       <unit id="1224754223518" at="14,36,93,5" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
       <unit id="1152305201679" at="10,0,96,0" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
     </file>

@@ -2,7 +2,6 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.AskDialog" file="AskDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapperAction" />
     <classNode dependClassName="java.awt.event.ActionEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
@@ -142,7 +141,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode dependClassName="com.intellij.openapi.ui.DialogWrapperAction" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Component" />
     <classNode dependClassName="java.awt.event.ActionEvent" />

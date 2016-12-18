@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="140c4818-bfbc-4850-bf7c-e3d80739a03c" name="jetbrains.mps.traceInfo.tracemacro.testlang" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -219,7 +219,7 @@
       <concept id="1225797177491" name="jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation" flags="nn" index="1Bd96e" />
     </language>
     <language id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest">
-      <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" flags="nn" index="2Hmddi">
+      <concept id="7080278351417106679" name="jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNotNull" flags="nn" index="2Hmddi">
         <child id="7080278351417106681" name="expression" index="2Hmdds" />
       </concept>
       <concept id="8427750732757990717" name="jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert" flags="nn" index="3tpDYu">
@@ -247,8 +247,8 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
@@ -1671,7 +1671,6 @@
                       <ref role="ehGHo" to="tpee:fz12cDA" resolve="ClassConcept" />
                     </node>
                     <node concept="1PxgMI" id="6k4GBOylv3M" role="33vP2m">
-                      <ref role="1m5ApE" to="tpee:fz12cDA" resolve="ClassConcept" />
                       <node concept="2OqwBi" id="6k4GBOylrQJ" role="1m5AlR">
                         <node concept="1N_AGu" id="6k4GBOylrQK" role="2Oq$k0">
                           <ref role="1N_AGt" node="7ptIPrQgQIU" resolve="TestClass" />
@@ -1688,6 +1687,9 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="chp4Y" id="714IaVdGZla" role="3oSUPX">
+                        <ref role="cht4Q" to="tpee:fz12cDA" resolve="ClassConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1701,11 +1703,11 @@
                       <node concept="1uHKPH" id="1PhAakM9uJk" role="2OqNvi" />
                       <node concept="2OqwBi" id="1PhAakM9uJl" role="2Oq$k0">
                         <node concept="13MTOL" id="1PhAakM9uJm" role="2OqNvi">
-                          <ref role="13MTZf" to="tpee:fzcqZ_x" />
+                          <ref role="13MTZf" to="tpee:fzcqZ_x" resolve="statement" />
                         </node>
                         <node concept="2OqwBi" id="1PhAakM9uJn" role="2Oq$k0">
                           <node concept="13MTOL" id="1PhAakM9uJo" role="2OqNvi">
-                            <ref role="13MTZf" to="tpee:fzclF7Z" />
+                            <ref role="13MTZf" to="tpee:fzclF7Z" resolve="body" />
                           </node>
                           <node concept="2OqwBi" id="1PhAakM9uJp" role="2Oq$k0">
                             <node concept="3zZkjj" id="1PhAakM9uJq" role="2OqNvi">

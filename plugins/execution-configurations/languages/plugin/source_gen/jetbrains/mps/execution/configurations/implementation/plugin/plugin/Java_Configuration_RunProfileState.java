@@ -17,9 +17,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -47,13 +48,13 @@ public class Java_Configuration_RunProfileState extends DebuggerRunProfileState 
     Project project = myEnvironment.getProject();
     ConsoleView console = ConsoleCreator.createConsoleView(project, false);
     console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
-    SNodePointer pointer = myRunConfiguration.getNode().getNodePointer();
+    SNodeReference pointer = myRunConfiguration.getNode().getNode();
     if (pointer == null) {
       console.dispose();
       throw new ExecutionException("No node selected.");
     }
     {
-      ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), pointer);
+      ProcessHandler _processHandler = new Java_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(myRunConfiguration.getRunParameters().getJavaRunParameters(), pointer, ProjectHelper.getProjectRepository(project));
       final ConsoleView _consoleView = console;
       _consoleView.attachToProcess(_processHandler);
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

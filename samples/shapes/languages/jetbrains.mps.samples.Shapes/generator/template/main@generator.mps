@@ -95,7 +95,7 @@
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
       <concept id="1068580123157" name="jetbrains.mps.baseLanguage.structure.Statement" flags="nn" index="3clFbH" />
-      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" index="3clFbS">
+      <concept id="1068580123136" name="jetbrains.mps.baseLanguage.structure.StatementList" flags="sn" stub="5293379017992965193" index="3clFbS">
         <child id="1068581517665" name="statement" index="3cqZAp" />
       </concept>
       <concept id="1068580123137" name="jetbrains.mps.baseLanguage.structure.BooleanConstant" flags="nn" index="3clFbT">
@@ -503,7 +503,7 @@
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4vSAr3EDn10" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="color" />
+                                  <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="target" />
                                 </node>
                               </node>
                             </node>
@@ -650,7 +650,7 @@
                                   </node>
                                 </node>
                                 <node concept="3TrEf2" id="4vSAr3EDmfr" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="color" />
+                                  <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="target" />
                                 </node>
                               </node>
                             </node>

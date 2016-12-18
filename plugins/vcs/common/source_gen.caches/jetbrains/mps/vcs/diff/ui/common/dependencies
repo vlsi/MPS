@@ -16,8 +16,7 @@
   <dependency className="jetbrains.mps.vcs.diff.ui.common.Bounds" file="Bounds.java">
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Math" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" file="ButtonsPainter.java">
     <classNode dependClassName="java.awt.Cursor" />
@@ -370,8 +369,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.RootTreeNode" />
-    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.TreeNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.ActionUtils" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />

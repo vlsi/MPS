@@ -2,8 +2,8 @@
 <model ref="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -174,7 +174,6 @@
         <child id="1142887637401" name="renderingCondition" index="pqm2j" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -401,7 +400,6 @@
         <ref role="PMmxG" to="tpen:hcE9nLY" resolve="VariableDeclaration_NameCellComponent" />
       </node>
       <node concept="3EZMnI" id="JzCdmU6yKQ" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="pkWqt" id="JzCdmU6yKR" role="pqm2j">
           <node concept="3clFbS" id="JzCdmU6yKS" role="2VODD2">
             <node concept="3clFbF" id="JzCdmU6yKT" role="3cqZAp">
@@ -1215,6 +1213,7 @@
   </node>
   <node concept="3p309x" id="1wEcoXjJhyd">
     <property role="TrG5h" value="reportExecutionError_Contribution" />
+    <property role="3GE5qa" value="error" />
     <node concept="2kknPJ" id="1wEcoXjJhye" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fzclF8l" resolve="Statement" />
     </node>
@@ -1247,6 +1246,7 @@
   </node>
   <node concept="3p309x" id="1wEcoXjJhyR">
     <property role="TrG5h" value="Expression_Contribution" />
+    <property role="3GE5qa" value="execution" />
     <node concept="2kknPJ" id="1wEcoXjJhyS" role="1IG6uw">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
@@ -1561,6 +1561,7 @@
   </node>
   <node concept="3INDKC" id="1wEcoXjJ_D5">
     <property role="TrG5h" value="AddRedirect_Contribution" />
+    <property role="3GE5qa" value="execution" />
     <node concept="A1WHr" id="1wEcoXjJ_D6" role="AmTjC">
       <ref role="2ZyFGn" to="tpee:fz3vP1J" resolve="Expression" />
     </node>

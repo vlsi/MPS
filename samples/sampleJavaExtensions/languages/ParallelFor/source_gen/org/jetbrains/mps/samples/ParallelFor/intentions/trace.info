@@ -1095,9 +1095,9 @@
         <var name="editorContext" id="5384012304952504715" />
         <var name="node" id="5384012304952504715" />
       </scope>
-      <unit id="701359002710699857" at="63,407,67,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$1" />
-      <unit id="5384012304952506653" at="67,36,71,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$2" />
-      <unit id="5384012304952506742" at="71,22,77,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$3" />
+      <unit id="701359002710699857" at="63,407,67,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$IntentionImplementation$1" />
+      <unit id="5384012304952506653" at="67,36,71,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$IntentionImplementation$2" />
+      <unit id="5384012304952506742" at="71,22,77,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$IntentionImplementation$3" />
       <unit id="5384012304952504715" at="49,0,87,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention$IntentionImplementation" />
       <unit id="5384012304952504715" at="26,0,88,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToForEachStatement_Intention" />
     </file>
@@ -1200,8 +1200,8 @@
         <var name="editorContext" id="5384012304952529816" />
         <var name="node" id="5384012304952529816" />
       </scope>
-      <unit id="5384012304952529870" at="71,427,75,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$1" />
-      <unit id="5384012304952529883" at="75,22,81,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$2" />
+      <unit id="5384012304952529870" at="71,427,75,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$IntentionImplementation$1" />
+      <unit id="5384012304952529883" at="75,22,81,7" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$IntentionImplementation$2" />
       <unit id="5384012304952529816" at="56,0,91,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention$IntentionImplementation" />
       <unit id="5384012304952529816" at="27,0,95,0" name="org.jetbrains.mps.samples.ParallelFor.intentions.TurnToParallelForEachStatement_Intention" />
     </file>

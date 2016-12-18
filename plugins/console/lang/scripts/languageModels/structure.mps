@@ -95,7 +95,7 @@
       <property role="20kJfa" value="refactoring" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="2377091791517030782" />
-      <ref role="20ksaX" to="tp2q:hy3t8hi" />
+      <ref role="20ksaX" to="tp2q:hy3t8hi" resolve="closure" />
       <ref role="20lvS9" to="tpee:fz3vP1J" resolve="Expression" />
     </node>
     <node concept="PrWs8" id="59iQg8ryZaF" role="PzmwI">

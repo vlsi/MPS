@@ -637,8 +637,8 @@
       <unit id="1240933105391" at="94,39,98,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$1" />
       <unit id="1241009587748" at="178,91,182,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$2" />
       <unit id="1241009714386" at="185,91,189,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$3" />
-      <unit id="1239720100328" at="199,23,226,13" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$6" />
-      <unit id="1239720100328" at="197,19,228,9" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$5" />
+      <unit id="1239720100328" at="199,23,226,13" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1$1" />
+      <unit id="1239720100328" at="197,19,228,9" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4$1" />
       <unit id="1239720100328" at="195,36,230,5" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test$4" />
       <unit id="1239714501613" at="22,0,233,0" name="jetbrains.mps.baseLanguage.tuples.test.NamedTuples_Test" />
     </file>

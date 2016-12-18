@@ -4,7 +4,7 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -131,8 +131,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -388,9 +388,11 @@
                                 <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
                                 <node concept="2OqwBi" id="2lOCDx$azXJ" role="37wK5m">
                                   <node concept="1PxgMI" id="2lOCDx$azY5" role="2Oq$k0">
-                                    <ref role="1m5ApE" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
                                     <node concept="37vLTw" id="2BHiRxgmztZ" role="1m5AlR">
                                       <ref role="3cqZAo" node="2lOCDx$azWB" resolve="it" />
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdH0$a" role="3oSUPX">
+                                      <ref role="cht4Q" to="tpee:fz3uBXI" resolve="VariableDeclaration" />
                                     </node>
                                   </node>
                                   <node concept="3TrcHB" id="2lOCDx$azY9" role="2OqNvi">

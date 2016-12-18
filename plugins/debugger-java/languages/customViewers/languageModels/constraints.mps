@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -168,7 +168,7 @@
     <property role="3GE5qa" value="highLevel" />
     <ref role="1M2myG" to="kisg:2q5hg4g33e" resolve="HighLevelWatchableCreator" />
     <node concept="1N5Pfh" id="2q5hg4g98$" role="1Mr941">
-      <ref role="1N5Vy1" to="kisg:2q5hg4g98_" />
+      <ref role="1N5Vy1" to="kisg:2q5hg4g98_" resolve="watchable" />
       <node concept="1MUpDS" id="2q5hg4g9dW" role="1N6uqs">
         <node concept="3clFbS" id="2q5hg4g9dX" role="2VODD2">
           <node concept="3cpWs8" id="2q5hg4g9e0" role="3cqZAp">
@@ -199,7 +199,7 @@
                         <ref role="3cqZAo" node="2q5hg4g9ef" resolve="container" />
                       </node>
                       <node concept="3Tsc0h" id="2q5hg4g9ee" role="2OqNvi">
-                        <ref role="3TtcxE" to="kisg:4s4uRp_lDgY" />
+                        <ref role="3TtcxE" to="kisg:4s4uRp_lDgY" resolve="watchable" />
                       </node>
                     </node>
                   </node>

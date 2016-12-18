@@ -4,8 +4,8 @@ package jetbrains.mps.actions.runtime.impl;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -43,16 +43,14 @@ public class ChildSubstituteActionsUtil {
   private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsUtil.class);
   public ChildSubstituteActionsUtil() {
   }
-  public static SNode getRefinedChildConcept(SNode currentChild) {
+  public static SAbstractConcept getRefinedChildConcept(SNode currentChild) {
     SAbstractConcept childConcept = SNodeOperations.getConcept(currentChild);
-    if (childConcept instanceof SConcept) {
-      SConcept sconcept = ((SConcept) childConcept);
-      while (sconcept.getSuperConcept() != null && !(sconcept.getSuperConcept().equals(SNodeUtil.concept_BaseConcept))) {
-        sconcept = sconcept.getSuperConcept();
-      }
-      childConcept = sconcept;
+    SConcept sconcept = ((SConcept) childConcept);
+    while (sconcept.getSuperConcept() != null && !(sconcept.getSuperConcept().equals(SNodeUtil.concept_BaseConcept))) {
+      sconcept = sconcept.getSuperConcept();
     }
-    return SNodeOperations.asNode(((SAbstractConcept) childConcept));
+    childConcept = sconcept;
+    return childConcept;
   }
   public static List<SNode> getActionsBuilders(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     SNode link = null;

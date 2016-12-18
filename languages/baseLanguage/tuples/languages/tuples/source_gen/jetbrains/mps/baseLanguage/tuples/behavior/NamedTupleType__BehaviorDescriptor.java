@@ -50,7 +50,7 @@ public final class NamedTupleType__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getPresentation_idhEwIMiw(@NotNull SNode __thisNode__) {
-    StringBuilder sb = new StringBuilder(NamedTupleType__BehaviorDescriptor.getLeftBracket_id1653mnvAgn0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__))));
+    StringBuilder sb = new StringBuilder(NamedTupleType__BehaviorDescriptor.getLeftBracket_id1653mnvAgn0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__))));
     String sep = "";
     for (SNode ntcd : ListSequence.fromList(NamedTupleDeclaration__BehaviorDescriptor.allExtends_id2ItBWjOSZqc.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")))).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
@@ -60,7 +60,7 @@ public final class NamedTupleType__BehaviorDescriptor extends BaseBHDescriptor {
       sb.append(sep).append(BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(ntcd, MetaAdapterFactory.getContainmentLink(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, 0x12095c0134fL, "type")))).append(" ").append(SPropertyOperations.getString(ntcd, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       sep = ", ";
     }
-    sb.append(NamedTupleType__BehaviorDescriptor.getRightBracket_id1653mnvAgq6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+    sb.append(NamedTupleType__BehaviorDescriptor.getRightBracket_id1653mnvAgq6.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
     sep = "<";
     String suffix = "";
     for (SNode t : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x102419671abL, "parameter"))) {

@@ -115,7 +115,7 @@ public class SideTransformUtil {
     if ((cellSide == CellSide.LEFT ? SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), null, null) : SPropertyOperations.hasValue(actionsBuilder, MetaAdapterFactory.getProperty(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x11b07b83602L, "side"), "left", null))) {
       return false;
     }
-    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")))))) {
+    if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(SNodeOperations.getConcept(node)), SNodeOperations.asSConcept(SLinkOperations.getTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept")))))) {
       return false;
     }
 

@@ -58,6 +58,7 @@ import java.util.LinkedHashMap;
 import jetbrains.mps.build.behavior.IWorkflowParticipant__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
+import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.util.CopyFacetUtil;
 import jetbrains.mps.build.util.FetchDependenciesProcessor;
@@ -501,16 +502,16 @@ public class QueriesGenerated {
     return "${build.dir}/artifacts/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_4129895186893528655(final PropertyMacroContext _context) {
-    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_4129895186893528776(final PropertyMacroContext _context) {
-    if ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) != null)) {
-      return BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")), Context.defaultContext(_context));
+    if ((SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")) != null)) {
+      return BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts")), Context.defaultContext(_context));
     }
     if (((String) _context.getVariable("var:basePath")) == null) {
       return ".";
     }
-    SNode script = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"));
+    SNode script = SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"));
     String filePath = BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(script, Context.defaultContext(_context));
     if (filePath == null) {
       _context.showErrorMessage(script, "no base path for required script " + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
@@ -524,6 +525,8 @@ public class QueriesGenerated {
       if (!(relative.endsWith("/"))) {
         relative += "/";
       }
+      // XXX 'build' here traces back to import of common library, which 
+      // defines location macro build.dir = build. I don't like this sort of implicit knowledge. 
       return relative + "build/artifacts/" + SPropertyOperations.getString(script, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     } catch (RelativePathHelper.PathException ex) {
       _context.showErrorMessage(_context.getNode(), "cannot calculate relative path: " + ex.getMessage());
@@ -531,10 +534,10 @@ public class QueriesGenerated {
     }
   }
   public static Object propertyMacro_GetPropertyValue_7181125477683419235(final PropertyMacroContext _context) {
-    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a7L, "layout")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    return "artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a7L, "layout")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_7181125477683419247(final PropertyMacroContext _context) {
-    return BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a6L, "artifacts")), Context.defaultContext(_context));
+    return BuildSourcePath__BehaviorDescriptor.getAntPath_id7ro1ZztyOh5.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, 0x63a87b9320d3d0a6L, "artifacts")), Context.defaultContext(_context));
   }
   public static Object propertyMacro_GetPropertyValue_6520682027041002227(final PropertyMacroContext _context) {
     return "${artifacts." + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "}/build.properties";
@@ -664,13 +667,15 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode artifact = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("module")), _context), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
-    SNode layoutNode = helper.artifacts().get(artifact);
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("module")));
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
       return "???";
     }
-    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, artifact);
+    // it's the only use of helper.getOriginalNode outside of j.m.build.util package, and is somewhat legal, 
+    // as we still expect artifactId to come from original model (though do the translation ourselves in DH.getArtifact()) 
+    // Just don't want to deal with this code right now, need to return to artifactId concept anyway. 
+    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, helper.getOriginalNode(((SNode) _context.getVariable("module"))));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       return "???";
@@ -687,12 +692,12 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path")), _context));
+    SNode layoutNode = helper.getArtifact(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path")));
     if (layoutNode == null) {
       _context.showErrorMessage(_context.getNode(), "file " + BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))) + " was not found in the layout");
       return "???";
     }
-    String val = helper.locations().get(layoutNode);
+    String val = helper.getLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(SLinkOperations.getTarget(((SNode) _context.getVariable("jar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x11779a1dbcff551aL, 0x3395e884b61c23e2L, "path"))));
       return "???";
@@ -700,6 +705,8 @@ public class QueriesGenerated {
     return val;
   }
   public static Object propertyMacro_GetPropertyValue_6859736767834590113(final PropertyMacroContext _context) {
+    // XXX in fact, targetFile is not necessarily BuildSource_SingleFile. It could be 
+    // BuildLayout_Copy at generation time due to syntax sugar(?) processing in aliases MC. 
     SNode targetFile = ((SNode) _context.getVariable("jar"));
     SNode project = SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false);
     if (project == null) {
@@ -709,16 +716,16 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode;
     if (SNodeOperations.isInstanceOf(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"))) {
-      layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFile, _context), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
+      layoutNode = SNodeOperations.as(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
     } else {
       SNode sfile = SNodeOperations.as(targetFile, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, "jetbrains.mps.build.structure.BuildInputSingleFile"));
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")) : targetFile), _context));
+      layoutNode = helper.getArtifact((sfile != null ? SLinkOperations.getTarget(sfile, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db9224596L, 0x48d5d03db922459aL, "path")) : targetFile));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "file " + BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(targetFile) + " was not found in the layout");
         return "???";
       }
     }
-    String val = helper.locations().get(layoutNode);
+    String val = helper.getLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for jar " + BuildSource_SingleFile__BehaviorDescriptor.getApproximateName_id4RsV8qJDnFm.invoke(targetFile));
       return "???";
@@ -735,16 +742,16 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode;
     if (SNodeOperations.isInstanceOf(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"))) {
-      layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFolder, _context), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+      layoutNode = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"));
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder), _context));
+      layoutNode = helper.getArtifact((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder) + " was not found in the layout");
         return "???";
       }
     }
-    String val = helper.contentLocations().get(layoutNode);
+    String val = helper.getContentLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder));
       return "???";
@@ -758,7 +765,7 @@ public class QueriesGenerated {
       return "";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")), _context));
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
       return "";
@@ -783,16 +790,16 @@ public class QueriesGenerated {
     DependenciesHelper helper = new DependenciesHelper(_context, project);
     SNode layoutNode;
     if (SNodeOperations.isInstanceOf(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"))) {
-      layoutNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(targetFolder, _context), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
+      layoutNode = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafabcf0cL, "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
     } else {
       SNode sfolder = SNodeOperations.as(targetFolder, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, "jetbrains.mps.build.structure.BuildInputSingleFolder"));
-      layoutNode = helper.artifacts().get(DependenciesHelper.getOriginalNode((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder), _context));
+      layoutNode = helper.getArtifact((sfolder != null ? SLinkOperations.getTarget(sfolder, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1ff930b22643b0ffL, 0x1ff930b22643b100L, "path")) : targetFolder));
       if (layoutNode == null) {
         _context.showErrorMessage(_context.getNode(), "folder " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder) + " was not found in the layout");
         return "???";
       }
     }
-    String val = helper.contentLocations().get(layoutNode);
+    String val = helper.getContentLocation(layoutNode);
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BuildSource_SingleFolder__BehaviorDescriptor.getApproximateName_id4RsV8qJH_Br.invoke(targetFolder));
       return "???";
@@ -1067,7 +1074,7 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container")) && BuildLayout_Container__BehaviorDescriptor.getAssembleSubTaskId_id450ejGzh8bO.invoke(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"))) != null;
   }
   public static boolean ifMacro_Condition_6520682027041189779(final IfMacroContext _context) {
-    return new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(_context.getNode()));
+    return new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).requiresFetch(_context.getOriginalCopiedInputNode(_context.getNode()));
   }
   public static boolean ifMacro_Condition_8055294676438891194(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(((SNode) _context.getVariable("var:javaOpts")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xcdff0e1a96739c2L, 0xcdff0e1a96739c7L, "resourceSelectors"))).isEmpty();
@@ -1092,7 +1099,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(s).isNotEmpty();
   }
   public static boolean ifMacro_Condition_6520682027041156330(final IfMacroContext _context) {
-    return new DependenciesHelper(_context, _context.getNode()).requiresFetch().containsKey(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"))));
+    return new DependenciesHelper(_context, _context.getNode()).requiresFetch(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a1cL, "layout"))));
   }
   public static boolean ifMacro_Condition_6520682027041201801(final IfMacroContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:dependency"))).isNotEmpty();
@@ -1250,29 +1257,29 @@ public class QueriesGenerated {
   public static Object templateArgumentQuery_144710003695561027(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x44e5dd192e7c0e6fL, 0x44e5dd192e7c0e70L, "targetLibrary"));
   }
-  public static Object templateArgumentQuery_4821808014881175180(final TemplateArgumentContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x454b730dd9079dcfL, "library"));
-  }
-  public static Object templateArgumentQuery_4821808014881207678(final TemplateArgumentContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x263ae7d4319896aaL, "module"));
-  }
-  public static Object templateArgumentQuery_8169228734285538410(final TemplateArgumentContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x3395e884b6185c41L, "jar"));
-  }
-  public static Object templateArgumentQuery_6859736767834590236(final TemplateArgumentContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, 0x4ddcec86afb2f72aL, "extJar")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
-  }
-  public static Object templateArgumentQuery_342830306171239709(final TemplateArgumentContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9932901L, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
-  }
-  public static Object templateArgumentQuery_342830306171239896(final TemplateArgumentContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9933cacL, "suffix"));
-  }
   public static Object templateArgumentQuery_5610619299014495886(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb50da7L, 0x4ddcec86afb50da8L, "extJar")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
   }
   public static Object templateArgumentQuery_5610619299014531918(final TemplateArgumentContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65af8L, 0x4ddcec86afb65afaL, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
+  }
+  public static Object templateArgumentQuery_4821808014881175200(final TemplateArgumentContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd9079dceL, 0x454b730dd9079dcfL, "library"));
+  }
+  public static Object templateArgumentQuery_4821808014881207698(final TemplateArgumentContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x263ae7d4319896a7L, 0x263ae7d4319896aaL, "module"));
+  }
+  public static Object templateArgumentQuery_8169228734285538428(final TemplateArgumentContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b6185c40L, 0x3395e884b6185c41L, "jar"));
+  }
+  public static Object templateArgumentQuery_5610619299014362371(final TemplateArgumentContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5f32ae3ef3770dd4L, 0x4ddcec86afb2f72aL, "extJar")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb2f64cL, 0x4ddcec86afb2f64dL, "jar"));
+  }
+  public static Object templateArgumentQuery_342830306171239712(final TemplateArgumentContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9932901L, "extFolder")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder"));
+  }
+  public static Object templateArgumentQuery_342830306171239922(final TemplateArgumentContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c1fa58d992addeL, 0x4c1fa58d9933cacL, "suffix"));
   }
   public static Iterable<SNode> sourceNodesQuery_1117643560963351248(final SourceSubstituteMacroNodesContext _context) {
     return FileSetUtil.getImplicitFilesets(_context.getNode());
@@ -1502,18 +1509,10 @@ public class QueriesGenerated {
     return SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a22L, "macros"));
   }
   public static Iterable<SNode> sourceNodesQuery_4129895186893528610(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
-      }
-    });
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency"));
   }
   public static Iterable<SNode> sourceNodesQuery_7181125477683419217(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies"))).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"));
-      }
-    });
+    return SNodeOperations.ofConcept(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x4df58c6f18f84a25L, "dependencies")), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x63a87b9320d3d0a4L, "jetbrains.mps.build.structure.BuildExternalLayoutDependency"));
   }
   public static Iterable<SNode> sourceNodesQuery_6520682027041002163(final SourceSubstituteMacroNodesContext _context) {
     return (Iterable<SNode>) ((MacroHelper) _context.getVariable("var:macroHelper")).getVarsContainers();
@@ -1604,9 +1603,7 @@ public class QueriesGenerated {
       return Collections.emptyList();
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode originalNode = SNodeOperations.as(DependenciesHelper.getOriginalNode(((SNode) _context.getVariable("library")), _context), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x540febaa6144b873L, "jetbrains.mps.build.structure.BuildSource_JavaLibrary"));
-
-    return new JavaExternalLibraryHelper(helper, originalNode, _context).artifacts();
+    return new JavaExternalLibraryHelper(helper, ((SNode) _context.getVariable("library")), _context).artifacts();
   }
   public static Iterable<SNode> sourceNodesQuery_2750015747481207044(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c126L, "parameters"))).where(new IWhereFilter<SNode>() {
@@ -1646,6 +1643,16 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_6083230236994919188(final SourceSubstituteMacroNodesContext _context) {
     return SNodeOperations.getNodeDescendants(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"), false, new SAbstractConcept[]{});
   }
+  public static void mapSrcMacro_post_mapper_7476146282362436190(final MapSrcMacroPostProcContext _context) {
+    // HACK. At the moment, DependenciesHelper is populated with locations, with  
+    // inputNode (BuildLayout_File) serving as a key. Here, the file gets replaced with 
+    // BuildLayout_Copy, and incoming references (like BuildLayout_Import in another project)  
+    // get re-routed to this node. However, once that import is processed, there's nothing in DH.locations() 
+    // that match its target (it's outputNode, BL_Copy at the time). To workaround, I record original location 
+    // key here with the new target node, and use it from main.BuildLayout_Import template. 
+    // Prior to the removal of transient models this used to work as every lookup was done using origin node. 
+    new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(_context.getNode(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false)).preserveLocations(_context.getNode(), _context.getOutputNode());
+  }
   public static void mappingScript_CodeBlock_809559803149973643(final MappingScriptContext _context) {
     for (SNode buildProject : ListSequence.fromList(SModelOperations.roots(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject")))) {
       String scriptsPath = BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(buildProject, Context.defaultContext(_context));
@@ -1669,7 +1676,7 @@ public class QueriesGenerated {
     ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, "jetbrains.mps.build.structure.BuildSourceArchiveRelativePath"))).visitAll(new IVisitor<SNode>() {
       public void visit(SNode path) {
         DependenciesHelper helper = new DependenciesHelper(_context, SNodeOperations.getNodeAncestor(path, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false));
-        helper.contentLocations().put(DependenciesHelper.getOriginalNode(path, _context), BuildSourceArchiveRelativePath__BehaviorDescriptor.calculateUnpackPath_idBHdWlMbKE2.invoke(path, Context.defaultContext(_context)));
+        helper.putContentLocation(path, BuildSourceArchiveRelativePath__BehaviorDescriptor.calculateUnpackPath_idBHdWlMbKE2.invoke(path, Context.defaultContext(_context)));
       }
     });
   }
@@ -1695,7 +1702,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")), _context));
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
     }
@@ -1708,14 +1715,14 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")), _context));
+    String val = helper.getContentLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"))));
     }
     return val;
   }
   public static Object insertMacro_varValue_5979287180587467220(final TemplateVarContext _context) {
-    return new JavaModulesClosure(_context, _context.getNode()).closure(false);
+    return new JavaModulesClosure(_context.getNode()).closure(false);
   }
   public static Object insertMacro_varValue_1659807394254873141(final TemplateVarContext _context) {
     SNode options = SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, 0x1708d207f21880faL, "options")), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x1708d207f2178b52L, 0x1708d207f214252bL, "compileOptions"));
@@ -1739,7 +1746,7 @@ public class QueriesGenerated {
     List<Tuples._2<SNode, String>> dependencies = new ProjectDependency(_context, _context.getNode()).collectDependencies().getDependencies();
     return ListSequence.fromList(dependencies).select(new ISelector<Tuples._2<SNode, String>, SNode>() {
       public SNode select(Tuples._2<SNode, String> it) {
-        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a993(it._1(), it._0());
+        return createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a004(it._1(), it._0());
       }
     }).toListSequence();
   }
@@ -1764,7 +1771,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.locations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")), _context));
+    String val = helper.getLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target"))));
     } else if ((boolean) BuildLayout_Node__BehaviorDescriptor.isFolder_id1bWeed$oPYW.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")))) {
@@ -1790,7 +1797,7 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    String val = helper.contentLocations().get(DependenciesHelper.getOriginalNode(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")), _context));
+    String val = helper.getContentLocation(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target")));
     if (val == null) {
       _context.showErrorMessage(_context.getNode(), "no content location for " + BaseConcept__BehaviorDescriptor.getPresentation_idhEwIMiw.invoke(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86af9fdb53L, 0x4ddcec86af9fdb55L, "target"))));
     }
@@ -1845,7 +1852,7 @@ public class QueriesGenerated {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a993(Object p0, Object p1) {
+  private static SNode createGeneratorInternal_ProjectDependency_x583g4_a0a0a0a1a004(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, "jetbrains.mps.build.structure.GeneratorInternal_ProjectDependency"), null, null, false);
     n1.setProperty(MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x5830b38e16a0164cL, 0x5830b38e16a017bdL, "path"), p0 + "");

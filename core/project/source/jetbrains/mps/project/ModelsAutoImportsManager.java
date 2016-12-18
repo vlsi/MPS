@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,7 +25,6 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class ModelsAutoImportsManager {
   // todo: should be application component ?
@@ -35,6 +33,10 @@ public class ModelsAutoImportsManager {
 
   public static void registerContributor(AutoImportsContributor contributor) {
     contributors.add(contributor);
+  }
+
+  public static void unregisterContributor(AutoImportsContributor contributor) {
+    contributors.remove(contributor);
   }
 
   public static Set<SModel> getAutoImportedModels(SModule contextModule, SModel model) {
@@ -52,21 +54,6 @@ public class ModelsAutoImportsManager {
     for (AutoImportsContributor contributor : contributors) {
       if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
         result.addAll(contributor.getLanguages(contextModule, model));
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @return use {@link #getDevKits(SModule, SModel)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static Set<DevKit> getAutoImportedDevKits(SModule contextModule, SModel model) {
-    Set<DevKit> result = new HashSet<DevKit>();
-    for (AutoImportsContributor contributor : contributors) {
-      if (contributor.getApplicableSModuleClass().isInstance(contextModule)) {
-        result.addAll(contributor.getAutoImportedDevKits(contextModule, model));
       }
     }
     return result;
@@ -111,17 +98,7 @@ public class ModelsAutoImportsManager {
     public abstract Collection<SLanguage> getLanguages(ModuleType contextModule, SModel model);
 
     public Collection<SModuleReference> getDevKits(ModuleType contextModule, SModel forModel) {
-      // replace with empty collection once delegate is history
-      return getAutoImportedDevKits(contextModule, forModel).stream().map(SModule::getModuleReference).collect(Collectors.toList());
-    }
-
-    /**
-     * @deprecated replaced with {@link #getDevKits(SModule, SModel)}, override that one instead.
-     */
-    @Deprecated
-    @ToRemove(version = 3.4)
-    public Set<DevKit> getAutoImportedDevKits(ModuleType contextModule, SModel model) {
-      return Collections.emptySet();
+      return Collections.emptyList();
     }
   }
 }

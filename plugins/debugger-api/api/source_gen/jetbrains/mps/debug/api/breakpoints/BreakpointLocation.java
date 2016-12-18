@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
@@ -33,18 +32,9 @@ public class BreakpointLocation {
     myTargetCodeLocation = new NodeTraceInfo(node, TraceInfoCache.getInstance().get(node.getModel()));
   }
 
+  @NotNull
   public SNodeReference getNodePointer() {
     return myTargetCodeLocation.getNode();
-  }
-
-  /**
-   * 
-   * @deprecated to resolve a node, one needs a repository. We are not going to pass repo here, as it's not location's task to update itself. Instead, breakpoint shall manage location's data
-   */
-  @Nullable
-  @Deprecated
-  public SNode getSNode() {
-    return myTargetCodeLocation.getNode().resolve(MPSModuleRepository.getInstance());
   }
 
   @Nullable

@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -260,7 +260,7 @@
             <node concept="2OqwBi" id="2rlufiQSZ5k" role="2Oq$k0">
               <node concept="2Sf5sV" id="2rlufiQSZ53" role="2Oq$k0" />
               <node concept="3TrEf2" id="2rlufiQSZ5r" role="2OqNvi">
-                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" resolve="customLocation" />
               </node>
             </node>
             <node concept="zfrQC" id="2rlufiQSZ5N" role="2OqNvi" />
@@ -275,7 +275,7 @@
             <node concept="2OqwBi" id="2rlufiQSZ4z" role="2Oq$k0">
               <node concept="2Sf5sV" id="2rlufiQSZ4i" role="2Oq$k0" />
               <node concept="3TrEf2" id="2rlufiQSZ4D" role="2OqNvi">
-                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" />
+                <ref role="3Tt5mk" to="kdzh:2rlufiQSRlZ" resolve="customLocation" />
               </node>
             </node>
             <node concept="3w_OXm" id="2rlufiQSZ51" role="2OqNvi" />
@@ -303,7 +303,7 @@
             <node concept="2OqwBi" id="3vXGXT8byIP" role="2Oq$k0">
               <node concept="2Sf5sV" id="3vXGXT8byIG" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3vXGXT8byIU" role="2OqNvi">
-                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
+                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" resolve="customPackaging" />
               </node>
             </node>
             <node concept="WFELt" id="3vXGXT8byJa" role="2OqNvi" />
@@ -318,7 +318,7 @@
             <node concept="2OqwBi" id="3vXGXT8byIk" role="2Oq$k0">
               <node concept="2Sf5sV" id="3vXGXT8byIb" role="2Oq$k0" />
               <node concept="3Tsc0h" id="3vXGXT8byIr" role="2OqNvi">
-                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" />
+                <ref role="3TtcxE" to="kdzh:3vXGXT8byGJ" resolve="customPackaging" />
               </node>
             </node>
             <node concept="liA8E" id="3vXGXT8byIE" role="2OqNvi">

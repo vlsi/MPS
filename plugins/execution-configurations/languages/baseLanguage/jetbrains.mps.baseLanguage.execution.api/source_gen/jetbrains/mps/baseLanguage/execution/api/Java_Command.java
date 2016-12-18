@@ -15,11 +15,12 @@ import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import java.io.FileNotFoundException;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.debug.api.IDebugger;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.debug.api.IDebugger;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,17 +30,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.apache.log4j.Level;
 import jetbrains.mps.textgen.trace.TraceInfo;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.textgen.trace.TraceablePositionInfo;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import java.util.Set;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.facets.JavaModuleOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.util.SystemInfo;
@@ -135,6 +135,7 @@ public class Java_Command {
             return it.getAbsolutePath();
           }
         }));
+        // afaiu, next is an approach to deal with very long cp. Need to refactor to get rid of global registry use in getClassRunnerClassPath() 
         List<File> classRunnerClassPath = ListSequence.fromList(Java_Command.getClassRunnerClassPath()).select(new ISelector<String, File>() {
           public File select(String it) {
             return new File(it);
@@ -149,27 +150,32 @@ public class Java_Command {
       return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(classPathPart).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
-  public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
+  public ProcessHandler createProcess(final SNodeReference nodePointer, final SRepository repository) throws ExecutionException {
     final Wrappers._T<SModule> module = new Wrappers._T<SModule>(null);
-    final Wrappers._T<String> text = new Wrappers._T<String>();
-    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    repo.getModelAccess().runReadAction(new Runnable() {
+    final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
+    final Wrappers._T<List<String>> cp = new Wrappers._T<List<String>>();
+    final Wrappers._T<String> cn = new Wrappers._T<String>();
+    repository.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        module.value = check_yvpt_a0a0a3a0d(check_yvpt_a0a0a0d0a3(check_yvpt_a0a0a0a3a0d(nodePointer, repo)));
+        SNode resolved = check_yvpt_a0a0a4a0d(nodePointer, repository);
+        module.value = check_yvpt_a0b0a4a0d(check_yvpt_a0a1a0e0a3(resolved));
         if (module.value == null) {
-          text.value = "Can't find module for node " + nodePointer;
+          errorText.value = "Can't find module for node " + nodePointer;
+        } else {
+          cp.value = Java_Command.getClasspath(Sequence.<SModule>singleton(module.value));
+          cn.value = Java_Command.getClassName(resolved);
         }
       }
     });
 
-    if (module.value == null) {
-      throw new ExecutionException(text.value);
+    if (errorText.value != null) {
+      throw new ExecutionException(errorText.value);
     }
 
-    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module.value)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
+    return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(cp.value).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(cn.value);
   }
-  public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
-    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0e0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
+  public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer, SRepository repository) throws ExecutionException {
+    return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a3a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a4a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a5a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0f0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer, repository);
   }
 
   public static IDebugger getDebugger() {
@@ -214,49 +220,21 @@ public class Java_Command {
       }
     }
   }
-  private static String getClassName(final SNodeReference node) {
-    final Wrappers._T<String> className = new Wrappers._T<String>(null);
-    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
-    repo.getModelAccess().runReadAction(new Runnable() {
-      public void run() {
-        SNode resolve = node.resolve(repo);
-        if (resolve != null) {
-          className.value = Java_Command.getClassName(resolve);
-        }
-      }
-    });
-    return className.value;
-  }
   private static int getMaxCommandLine() {
     // the command line limit on win is 32767 characters 
     // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-  private static List<String> getClasspath(final SModule module) {
-    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        classpath.value = JavaModuleOperations.collectExecuteClasspath(module);
-        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
-      }
-    });
-    return new ArrayList<String>(classpath.value);
-  }
-  public static List<String> getClasspath(final SModule... modules) {
-    final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        classpath.value = JavaModuleOperations.collectExecuteClasspath(modules);
-        classpath.value.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
-      }
-    });
-    return new ArrayList<String>(classpath.value);
+  public static List<String> getClasspath(Iterable<SModule> modules) {
+    Set<String> classpath = JavaModuleOperations.collectExecuteClasspath(Sequence.fromIterable(modules).toListSequence().toGenericArray(SModule.class));
+    classpath.removeAll(((AbstractModule) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"))).getModuleDescriptor().getAdditionalJavaStubPaths());
+    return new ArrayList<String>(classpath);
   }
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return Java_Command.getClasspath(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)")));
+        return Java_Command.getClasspath(Sequence.<SModule>singleton(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("5b247b59-8fd0-4475-a767-9e9ff6a9d01c(jetbrains.mps.baseLanguage.execution.startup)"))));
       }
     });
   }
@@ -345,21 +323,21 @@ public class Java_Command {
     }
     return 0;
   }
-  private static SModule check_yvpt_a0a0a3a0d(SModel checkedDotOperand) {
+  private static SNode check_yvpt_a0a0a4a0d(SNodeReference checkedDotOperand, SRepository repository) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.resolve(repository);
+    }
+    return null;
+  }
+  private static SModule check_yvpt_a0b0a4a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-  private static SModel check_yvpt_a0a0a0d0a3(SNode checkedDotOperand) {
+  private static SModel check_yvpt_a0a1a0e0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
-    }
-    return null;
-  }
-  private static SNode check_yvpt_a0a0a0a3a0d(SNodeReference checkedDotOperand, MPSModuleRepository repo) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.resolve(repo);
     }
     return null;
   }
@@ -369,25 +347,25 @@ public class Java_Command {
     }
     return null;
   }
-  private static String check_yvpt_a2a0a0e(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a3a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.programParameters();
     }
     return null;
   }
-  private static String check_yvpt_a3a0a0e(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a4a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-  private static String check_yvpt_a0a0e0a0a4(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a0f0a0a4(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
-  private static String check_yvpt_a0a4a0a0e(JavaRunParameters checkedDotOperand) {
+  private static String check_yvpt_a0a5a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }

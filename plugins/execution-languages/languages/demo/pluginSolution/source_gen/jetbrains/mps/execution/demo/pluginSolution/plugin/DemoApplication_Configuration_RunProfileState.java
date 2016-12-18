@@ -16,6 +16,7 @@ import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.execution.ui.ConsoleView;
 import jetbrains.mps.execution.api.configurations.ConsoleCreator;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
@@ -48,7 +49,7 @@ public class DemoApplication_Configuration_RunProfileState extends DebuggerRunPr
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
     {
-      ProcessHandler _processHandler = new Java_Command().setProgramParameter_String("Julia").setVirtualMachineParameter_String(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNodePointer());
+      ProcessHandler _processHandler = new Java_Command().setProgramParameter_String("Julia").setVirtualMachineParameter_String(myDebuggerSettings.getCommandLine(true)).createProcess(myConfiguration.getNode().getNode(), ProjectHelper.getProjectRepository(project));
       final ConsoleView _consoleView = ConsoleCreator.createConsoleView(project, false);
       _consoleView.attachToProcess(_processHandler);
       return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(_consoleView.getComponent(), new _FunctionTypes._void_P0_E0() {

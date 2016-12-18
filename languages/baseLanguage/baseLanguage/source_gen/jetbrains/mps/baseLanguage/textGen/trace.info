@@ -1350,16 +1350,16 @@
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892777974">
     <file name="ConceptFunctionParameter_TextGen.java">
-      <node id="1234892777974" at="14,54,15,55" concept="10" />
-      <node id="1237463992427" at="15,55,16,235" concept="4" />
-      <node id="1234892777974" at="13,0,18,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
-      <scope id="1234892777974" at="14,54,16,235">
+      <node id="1234892777974" at="13,54,14,55" concept="10" />
+      <node id="1237463992427" at="14,55,15,99" concept="4" />
+      <node id="1234892777974" at="12,0,17,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
+      <scope id="1234892777974" at="13,54,15,99">
         <var name="tgs" id="1234892777974" />
       </scope>
-      <scope id="1234892777974" at="13,0,18,0">
+      <scope id="1234892777974" at="12,0,17,0">
         <var name="ctx" id="1234892777974" />
       </scope>
-      <unit id="1234892777974" at="12,0,19,0" name="jetbrains.mps.baseLanguage.textGen.ConceptFunctionParameter_TextGen" />
+      <unit id="1234892777974" at="11,0,18,0" name="jetbrains.mps.baseLanguage.textGen.ConceptFunctionParameter_TextGen" />
     </file>
   </root>
   <root nodeRef="r:c6eeedda-084d-4659-9c4d-80b7768f2bb2(jetbrains.mps.baseLanguage.textGen)/1234892820096">
@@ -4302,8 +4302,8 @@
       <node id="7024111702304495342" at="15,54,16,55" concept="10" />
       <node id="7024111702304495342" at="16,55,17,191" concept="4" />
       <node id="7024111702304495342" at="17,191,18,20" concept="4" />
-      <node id="7024111702304495342" at="18,20,19,235" concept="4" />
-      <node id="7024111702304495342" at="19,235,20,20" concept="4" />
+      <node id="7024111702304495342" at="18,20,19,99" concept="4" />
+      <node id="7024111702304495342" at="19,99,20,20" concept="4" />
       <node id="7024111702304495342" at="20,20,21,191" concept="4" />
       <node id="7024111702304495342" at="14,0,23,0" concept="9" trace="generateText#(Ljetbrains/mps/text/rt/TextGenContext;)V" />
       <scope id="7024111702304495342" at="15,54,21,191">

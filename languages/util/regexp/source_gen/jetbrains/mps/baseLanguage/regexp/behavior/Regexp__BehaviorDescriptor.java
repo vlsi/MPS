@@ -18,7 +18,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.regex.Pattern;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -54,7 +54,7 @@ public final class Regexp__BehaviorDescriptor extends BaseBHDescriptor {
     return Regexp__BehaviorDescriptor.escape_id1b8uQvZ_lG7.invoke(__thisNode__, Regexp__BehaviorDescriptor.getString_idhMuDF1A.invoke(__thisNode__, new ArrayList<SNode>()));
   }
   /*package*/ static String getString_idhMuDF1A(@NotNull SNode __thisNode__, List<SNode> vars) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static String par_idhMuIPHY(@NotNull SNode __thisNode__, String s) {
     return "(?:" + s + ")";

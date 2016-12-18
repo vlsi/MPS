@@ -10,9 +10,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ant.execution.AntSettings_Configuration;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
@@ -33,6 +34,7 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -46,18 +48,17 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     }
   });
   private AntSettings_Configuration mySettings = new AntSettings_Configuration();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      final Wrappers._boolean isPackaged = new Wrappers._boolean();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          SNode node = BuildScript_Configuration.this.getNode().getNode();
-          isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
-        }
-      });
-      if (isPackaged.value) {
-        throw new RuntimeConfigurationError("Can not execute packaged build script.");
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    final Wrappers._boolean isPackaged = new Wrappers._boolean();
+    final SRepository repo = context.getProject().getRepository();
+    repo.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = BuildScript_Configuration.this.getNode().getNode().resolve(repo);
+        isPackaged.value = node != null && SNodeOperations.getModel(node).getModule().isPackaged();
       }
+    });
+    if (isPackaged.value) {
+      throw new RuntimeConfigurationError("Can not execute packaged build script.");
     }
   }
   @Override
@@ -157,10 +158,19 @@ public class BuildScript_Configuration extends BaseMpsRunConfiguration implement
     return new BuildScript_Configuration_Editor(myNode.getEditor(), mySettings.getEditor());
   }
   @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
+  }
+  @Override
   public boolean canExecute(String executorId) {
     return BuildScript_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
   }
 }

@@ -27,7 +27,6 @@ import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.ErrorHandler;
 import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -219,7 +218,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   // fills collections with of imported languages and devkits.
   // Languages include directly imported and coming immediately through devkits; listed devkits are imported directly, without those they extend (why?).
-  private LangAndDevkits collectLanguagesAndDevkits() {
+  public LangAndDevkits collectLanguagesAndDevkits() {
     Set<SLanguage> usedLanguages = new LinkedHashSet<>();
     Set<SModuleReference> devkits = new LinkedHashSet<>();
 
@@ -245,7 +244,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return new LangAndDevkits(usedLanguages, devkits);
   }
 
-  private static class LangAndDevkits {
+  public static class LangAndDevkits {
     public final Set<SLanguage> languages;
     public final Set<SModuleReference> devkits;
 
@@ -321,8 +320,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void save() {
     assertCanChange();
-    validateLanguageVersions();
-    validateDependencyVersions();
     myChanged = false;
   }
 
@@ -335,13 +332,18 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public Dependency addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return null;
+    if (descriptor == null) {
+      return null;
+    }
     for (Dependency dep : descriptor.getDependencies()) {
-      if (!EqualUtil.equals(dep.getModuleRef(), moduleRef)) continue;
+      if (!EqualUtil.equals(dep.getModuleRef(), moduleRef)) {
+        continue;
+      }
 
       if (reexport && !dep.isReexport()) {
         dep.setReexport(true);
         dependenciesChanged();
+        fireChanged();
         setChanged();
       }
       return dep;
@@ -353,6 +355,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     descriptor.getDependencies().add(dep);
 
     dependenciesChanged();
+    fireChanged();
     setChanged();
     return dep;
   }
@@ -360,12 +363,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void removeDependency(@NotNull Dependency dependency) {
     assertCanChange();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
-    if (!descriptor.getDependencies().contains(dependency)) return;
+    if (descriptor == null) {
+      return;
+    }
+    if (!descriptor.getDependencies().contains(dependency)) {
+      return;
+    }
 
     descriptor.getDependencies().remove(dependency);
 
     dependenciesChanged();
+    fireChanged();
     setChanged();
   }
 
@@ -375,10 +383,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * @deprecated shall be removed once tests in MPS plugin got fixed (FacetTests.testAddRemoveUsedLanguage(), testFacetInitialized()
    */
   @Deprecated
+  @ToRemove(version = 3.4)
   public final Collection<SModuleReference> getUsedLanguagesReferences() {
     assertCanRead();
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
+    if (descriptor == null) {
+      return Collections.emptySet();
+    }
     return Collections.unmodifiableCollection(descriptor.getUsedLanguages());
   }
 
@@ -397,18 +408,28 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     // 2) with deployment descriptor, without sources (to do: 3)
     // 3) with deployment descriptor, with sources (to do: 1,2,3)
 
-    if (!isPackaged()) return;
+    if (!isPackaged()) {
+      return;
+    }
 
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
+    if (descriptor == null) {
+      return;
+    }
     DeploymentDescriptor deplDescriptor = descriptor.getDeploymentDescriptor();
-    if (deplDescriptor == null) return;
+    if (deplDescriptor == null) {
+      return;
+    }
 
     final IFile bundleHomeFile = getDescriptorFile().getBundleHome();
-    if (bundleHomeFile == null) return;
+    if (bundleHomeFile == null) {
+      return;
+    }
 
     IFile bundleParent = bundleHomeFile.getParent();
-    if (bundleParent == null || !bundleParent.exists()) return;
+    if (bundleParent == null || !bundleParent.exists()) {
+      return;
+    }
 
     IFile sourcesDescriptorFile = ModulesMiner.getSourceDescriptorFile(getDescriptorFile(), deplDescriptor);
     if (sourcesDescriptorFile == null) {
@@ -460,7 +481,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
               }
             }
           }
-          if (update) toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
+          if (update) {
+            toAdd.add(new ModelRootDescriptor(rootDescriptorType, newMemento));
+          }
           toRemove.add(rootDescriptor);
         }
       }
@@ -941,14 +964,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public IFile getOutputPath() {
     return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
   }
+
   /**
    * AP
    * the contract is not clear: when should this method be called?
    * it seems to be our internal mechanism which is exposed to the client
    * it must be done on the fs update (actually it is #update method here)
    * Nobody must recount the module dependency versions from the outside
-   *
+   * <p>
    * Currently happens only during migration;
+   *
    * @deprecated please do not use
    */
   @Deprecated
@@ -1030,8 +1055,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
    * it must be done on the fs update (actually it is #update method here)
    * Nobody must recount the module dependency versions from the outside
    * AP
-   *
+   * <p>
    * Currently happens only during migration;
+   *
    * @deprecated please do not use
    */
   @Deprecated
@@ -1081,6 +1107,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   /**
    * has a fallback if the usedLanguage is absent in the module descriptor. if it happens then returns simply the current usedLanguage version
+   *
    * @param check is whether to show error for not found version
    * @deprecated hack for migration, will be gone after 3.4
    */
@@ -1112,6 +1139,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   /**
    * has a fallback if the dependency is absent in the module descriptor. if it happens then returns simply the current dep. module version
+   *
    * @param check is whether to show error for not found version
    */
   public int getDependencyVersion(@NotNull SModule dependency, boolean check) {

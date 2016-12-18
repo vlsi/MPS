@@ -22,25 +22,25 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008522555(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), null);
+    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533408(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533417(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), null);
+    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533449(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533458(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), null);
+    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533482(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_6186432342008533491(final PropertyMacroContext _context) {
-    return _context.createUniqueName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), null);
+    return _context.createUniqueName(SNodeOperations.getConcept(_context.getNode()).getName(), null);
   }
   public static Iterable<SNode> sourceNodesQuery_6186432342008490342(final SourceSubstituteMacroNodesContext _context) {
     return Sequence.<SNode>singleton(_context.getNode());

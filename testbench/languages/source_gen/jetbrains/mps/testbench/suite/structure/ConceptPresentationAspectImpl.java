@@ -13,7 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ITestRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_JUnit3TestCaseRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_JUnit4TestCaseRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ModuleSuite = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ModuleSuite = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_SolutionRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestCaseRef = new ConceptPresentationBuilder().create();
 

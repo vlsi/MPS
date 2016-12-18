@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import org.apache.log4j.Level;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 
 public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
@@ -22,6 +23,20 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
     setTitle("New Language");
 
     init();
+  }
+
+  @Nullable
+  protected JComponent createCenterPanel() {
+    if (myLanguageSettings == null) {
+      myLanguageSettings = new NewLanguageSettings((myProject != null ? ((!(ProjectKt.isDirectoryBased(myProject.getProject())) ? myProject.getProjectFile().getParentFile().getAbsolutePath() : myProject.getProjectFile().getAbsolutePath())) : null));
+      myLanguageSettings.setListener(new NewLanguageSettings.LangSettingsChangedListener() {
+        @Override
+        public void changed() {
+          NewLanguageDialog.this.check();
+        }
+      });
+    }
+    return myLanguageSettings;
   }
 
   protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
@@ -43,7 +58,7 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
         ((StandaloneMPSProject) myProject).setFolderFor(sandboxSolution, myVirtualFolder);
       }
     } catch (IOException e) {
-      // todo: ! 
+      // todo: !
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cannot create runtime / sandbox module", e);
       }
@@ -60,6 +75,11 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
   protected NewLanguageSettings createSettingsInstance() {
     return new NewLanguageSettings(getProjectPath());
   }
+
+  private boolean check() {
+    myError = NewModuleUtil.check(new ModuleRepositoryFacade(myProject), MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
+    setErrorText(myError);
+    return myError == null;
   private static <T> T as_xpx6i8_a0a0a5a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

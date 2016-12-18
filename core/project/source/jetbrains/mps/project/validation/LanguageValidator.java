@@ -18,6 +18,8 @@ package jetbrains.mps.project.validation;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.ConceptDeclarationScanner;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import org.jetbrains.annotations.NotNull;
@@ -29,7 +31,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayDeque;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.stream.Collectors;
 
 /**
  * Checks for Language (source) module.
@@ -59,7 +64,16 @@ public class LanguageValidator {
     }
 
     ArrayDeque<Language> extendedLanguages = new ArrayDeque<>();
+    Collection<SModuleReference> extendedLanguagesFromStructure = getActuallyExtendedLanguagesFromStructure();
     for (SModuleReference el : myLanguage.getExtendedLanguageRefs()) {
+      if (!extendedLanguagesFromStructure.contains(el) && !BootstrapLanguages.coreLanguageRef().equals(el)) {
+        // Language.getExtendedLanguageRefs() adds implicitly extended lang.core, we don't need to warn about it.
+        // Perhaps, lang.core has not be part of getExtendedLanguageRefs(), but added at RT only? Do we need to manifest it at source level? To reference
+        // core stuff without direct import?
+        if (!myProcessor.process(new ValidationProblem(Severity.WARNING, String.format("Superficial extended module %s, not referenced from structure aspect", el.getModuleName())))) {
+          return;
+        }
+      }
       final SModule resolved = el.resolve(myRepository);
       if (resolved instanceof Language) {
         extendedLanguages.add((Language) resolved);
@@ -139,5 +153,20 @@ public class LanguageValidator {
         return;
       }
     }
+  }
+
+  /**
+   * TODO For the time being, we just look at structure model dependencies from other structure models.
+   *      However, we shall look into actual references to tell e.g. aggregation of foreign concept from extension
+   */
+  private Collection<SModuleReference> getActuallyExtendedLanguagesFromStructure() {
+    SModel structureModel = LanguageAspect.STRUCTURE.get(myLanguage);
+    if (structureModel == null) {
+      return Collections.emptyList();
+    }
+    // find structure models, their modules is what we truly need to extend
+    // except for lang.core, which is extended by default.
+    ConceptDeclarationScanner cds = new ConceptDeclarationScanner().omitLangCore();
+    return cds.scan(structureModel).getDependencyModules().stream().map(SModule::getModuleReference).collect(Collectors.toList());
   }
 }

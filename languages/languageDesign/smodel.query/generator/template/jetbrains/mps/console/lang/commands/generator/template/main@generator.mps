@@ -4,7 +4,7 @@
   <languages>
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -193,8 +193,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -1251,9 +1251,11 @@
                                     <node concept="3clFbS" id="72nsGSZeYrd" role="1bW5cS">
                                       <node concept="3clFbF" id="72nsGSZeYre" role="3cqZAp">
                                         <node concept="1PxgMI" id="72nsGSZeYrf" role="3clFbG">
-                                          <ref role="1m5ApE" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
                                           <node concept="37vLTw" id="72nsGSZeYrg" role="1m5AlR">
                                             <ref role="3cqZAo" node="72nsGSZeYrh" resolve="it" />
+                                          </node>
+                                          <node concept="chp4Y" id="714IaVdGZkc" role="3oSUPX">
+                                            <ref role="cht4Q" to="3xdn:3J6h25Q6eOJ" resolve="QueryParameterScope" />
                                           </node>
                                         </node>
                                       </node>

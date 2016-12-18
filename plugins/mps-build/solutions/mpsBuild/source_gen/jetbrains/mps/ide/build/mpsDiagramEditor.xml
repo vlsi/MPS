@@ -65,11 +65,8 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
-          <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
-          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.diagram-src.jar" descriptor="jetbrains.mps.lang.editor.diagram.mpl" />
@@ -118,8 +115,6 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" />
-          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
-          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
@@ -160,11 +155,9 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
-          <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
           <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
-          <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
         <sources jar="jetbrains.mps.lang.editor.figures-src.jar" descriptor="jetbrains.mps.lang.editor.figures.mpl" />
@@ -280,6 +273,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
@@ -328,6 +322,7 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.facet.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.reduced.jar" />
@@ -406,41 +401,18 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
@@ -448,6 +420,23 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -483,33 +472,30 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -547,34 +533,13 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -588,6 +553,23 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -626,34 +608,13 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.diagram.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
@@ -668,6 +629,23 @@
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -702,38 +680,34 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -769,34 +743,31 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.editor.figures" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/base-projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/cell-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/completion-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/diagram-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/domUtil-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/event-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/geometry-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/grammar-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/gwt-util-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/json-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/mapper-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/model-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/projectional-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/test-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/values-1.0.0-jvm6.jar" />
-        <fileset file="${artifacts.jetpad}/jetpad/lib/view-1.0.0-jvm6.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.8.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm-all.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.5.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="base-projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="cell-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="completion-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="diagram-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="domUtil-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="event-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="geometry-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="grammar-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="gwt-util-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="json-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="mapper-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="model-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="projectional-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="test-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="values-1.0.0-jvm6.jar" />
+        <fileset dir="${artifacts.jetpad}/jetpad/lib" includes="view-1.0.0-jvm6.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

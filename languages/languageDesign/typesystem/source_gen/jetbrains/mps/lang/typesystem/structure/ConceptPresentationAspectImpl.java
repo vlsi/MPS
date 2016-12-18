@@ -26,7 +26,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CoerceStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CoerceStrongExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ComparisonRule = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
-  private final ConceptPresentation props_ConceptClauseLinkInfo = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_ConceptClauseLinkInfo = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ConceptFunctionParameter_ContextNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_EditorContext = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_Role = new ConceptPresentationBuilder().create();
@@ -68,8 +68,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_MessageStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MessageStatementAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MessageTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MultipleForeachLoop = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_MultipleForeachLoopVariable = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_MultipleForeachLoop = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_MultipleForeachLoopVariable = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_NodeInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_InferTypeOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Node_TypeOperation = new ConceptPresentationBuilder().create();

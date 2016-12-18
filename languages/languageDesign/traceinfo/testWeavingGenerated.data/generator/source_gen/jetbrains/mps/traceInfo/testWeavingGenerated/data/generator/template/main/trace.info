@@ -386,9 +386,9 @@
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008522510">
     <file name="QueriesGenerated.java">
       <node id="6186432342008526322" at="21,112,22,175" concept="9" />
-      <node id="6186432342008526290" at="24,112,25,247" concept="9" />
+      <node id="6186432342008526290" at="24,112,25,101" concept="9" />
       <scope id="6186432342008526321" at="21,112,22,175" />
-      <scope id="6186432342008522556" at="24,112,25,247" />
+      <scope id="6186432342008522556" at="24,112,25,101" />
     </file>
     <file name="Template_weave_ChildConceptWeave.java">
       <node id="6186432342008522510" at="33,43,34,178" concept="9" />
@@ -617,17 +617,17 @@
   <root nodeRef="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)/6186432342008533395">
     <file name="QueriesGenerated.java">
       <node id="6186432342008533410" at="27,112,28,175" concept="9" />
-      <node id="6186432342008533419" at="30,112,31,247" concept="9" />
+      <node id="6186432342008533419" at="30,112,31,101" concept="9" />
       <node id="6186432342008533451" at="33,112,34,175" concept="9" />
-      <node id="6186432342008533460" at="36,112,37,247" concept="9" />
+      <node id="6186432342008533460" at="36,112,37,101" concept="9" />
       <node id="6186432342008533484" at="39,112,40,175" concept="9" />
-      <node id="6186432342008533493" at="42,112,43,247" concept="9" />
+      <node id="6186432342008533493" at="42,112,43,101" concept="9" />
       <scope id="6186432342008533409" at="27,112,28,175" />
-      <scope id="6186432342008533418" at="30,112,31,247" />
+      <scope id="6186432342008533418" at="30,112,31,101" />
       <scope id="6186432342008533450" at="33,112,34,175" />
-      <scope id="6186432342008533459" at="36,112,37,247" />
+      <scope id="6186432342008533459" at="36,112,37,101" />
       <scope id="6186432342008533483" at="39,112,40,175" />
-      <scope id="6186432342008533492" at="42,112,43,247" />
+      <scope id="6186432342008533492" at="42,112,43,101" />
     </file>
     <file name="Template_weave_ChildConceptWeaveMany.java">
       <node id="6186432342008533395" at="33,43,34,178" concept="9" />

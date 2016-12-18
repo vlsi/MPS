@@ -19,9 +19,11 @@ import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.PartialModelDataSupport;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
  * Model with data that could get gradually loaded in subsequent steps.
@@ -75,8 +77,9 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
    */
   protected abstract ModelLoadResult loadSModel(ModelLoadingState state);
 
-  protected void replaceModel(final SModel newModel, final ModelLoadingState state) {
-    if (newModel == getCurrentModelInternal()) {
+  void replaceModel(final SModel newModel, final ModelLoadingState state) {
+    final boolean needToChangeReference = needToChangeReference(getReference(), newModel.getReference());
+    if (newModel == getCurrentModelInternal() && !needToChangeReference) {
       return;
     }
     setChanged(false);
@@ -84,6 +87,16 @@ public abstract class LazyEditableSModelBase extends EditableSModelBase {
     myModel.replaceWith(newModel, state);
     // newModel to get modelDescriptor along with event firing
     replaceModelAndFireEvent(oldModel, newModel);
+
+    // fixme AP since we have reference separately from the model data; will go away once the name as well as id is stored inside model data
+    if (needToChangeReference) {
+      changeModelReference(newModel.getReference());
+    }
+  }
+
+  @ToRemove(version = 0)
+  private boolean needToChangeReference(SModelReference oldRef, SModelReference newRef) {
+    return !(oldRef.getModelId().equals(newRef.getModelId()) && oldRef.getName().equals(newRef.getName()));
   }
 
   @Override

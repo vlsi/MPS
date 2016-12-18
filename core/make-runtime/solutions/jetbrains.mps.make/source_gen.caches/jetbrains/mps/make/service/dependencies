@@ -14,7 +14,6 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.make.script.IScript" />
     <classNode dependClassName="jetbrains.mps.make.script.IScriptController" />
-    <classNode dependClassName="jetbrains.mps.make.script.Stub" />
     <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.make.IMakeService" />
   </dependency>

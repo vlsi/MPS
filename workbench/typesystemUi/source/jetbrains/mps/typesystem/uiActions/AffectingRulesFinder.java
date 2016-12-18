@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.typesystem.uiActions;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
@@ -33,7 +29,9 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,7 +44,15 @@ public class AffectingRulesFinder extends BaseFinder {
   }
 
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    SNode term = (SNode) query.getObjectHolder().getObject();
+    Object target = query.getObjectHolder().getObject();
+    if (!(target instanceof SNodeReference)) {
+      return new SearchResults();
+    }
+    // here's sort of workaround for missing SearchScope.resolve(SNodeReference)
+    SNode term = query.getScope().resolve((SNodeReference) target);
+    if (term == null) {
+      return new SearchResults();
+    }
     SNode root = term.getContainingRoot();
 
     ITypeContextOwner owner = new MyTypeContextOwner();

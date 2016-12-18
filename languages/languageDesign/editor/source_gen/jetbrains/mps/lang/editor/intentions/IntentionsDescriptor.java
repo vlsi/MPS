@@ -159,19 +159,12 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         break;
       case 16:
         if (true) {
-          // Concept: StyleSheetClass 
-          intentions = new IntentionFactory[1];
-          intentions[0] = new AddExtendsClause_Intention();
-        }
-        break;
-      case 17:
-        if (true) {
           // Concept: TransformationMenuPart_Action 
           intentions = new IntentionFactory[1];
           intentions[0] = new SpecifyOutputConcept_Intention();
         }
         break;
-      case 18:
+      case 17:
         if (true) {
           // Concept: TransformationMenuPart_IncludeMenu 
           intentions = new IntentionFactory[1];
@@ -187,7 +180,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[33];
+    IntentionFactory[] rv = new IntentionFactory[32];
     rv[0] = new SurroundWithVerticalCollection_Intention();
     rv[1] = new SurroundWithHorizontalCollection_Intention();
     rv[2] = new ColorQuery_Intention();
@@ -209,19 +202,18 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[18] = new RemoveNewLine_Intention();
     rv[19] = new RemoveOnNewLine_Intention();
     rv[20] = new MigrateToIndentLayout_Intention();
-    rv[21] = new AddExtendsClause_Intention();
-    rv[22] = new AddRemoveNewLineForChildren_Intention();
-    rv[23] = new SurroundWithIndentCollection_Intention();
-    rv[24] = new ChangePropertyWithNonEmpty_Intention();
-    rv[25] = new ChangeNonEmptyProperty_Intention();
-    rv[26] = new GenerateMultiLineDefaultEditor_Intention();
-    rv[27] = new GenerateSingleLineDefaultEditor_Intention();
-    rv[28] = new AddDominance_Intention();
-    rv[29] = new ConvertTransformationMenu_Intention();
-    rv[30] = new SpecifyLocation_Intention();
-    rv[31] = new SpecifyOutputConcept_Intention();
-    rv[32] = new ConvertSubstituteMenu_Intention();
+    rv[21] = new AddRemoveNewLineForChildren_Intention();
+    rv[22] = new SurroundWithIndentCollection_Intention();
+    rv[23] = new ChangePropertyWithNonEmpty_Intention();
+    rv[24] = new ChangeNonEmptyProperty_Intention();
+    rv[25] = new GenerateMultiLineDefaultEditor_Intention();
+    rv[26] = new GenerateSingleLineDefaultEditor_Intention();
+    rv[27] = new AddDominance_Intention();
+    rv[28] = new ConvertTransformationMenu_Intention();
+    rv[29] = new SpecifyLocation_Intention();
+    rv[30] = new SpecifyOutputConcept_Intention();
+    rv[31] = new ConvertSubstituteMenu_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b178f1fL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L)).seal();
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143bd1283bL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfd766383e4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb01232eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x113bef3a464L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb02612eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eb0ad38eL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11b35f4f515L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2bb8c4L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9845363abL), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b2c9756L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1bc2c2df999a7727L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x2ef3b3796a126f24L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x16be955f384f93e6L), MetaIdFactory.conceptId(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xae2d2fe1c9d6be2L)).seal();
 }

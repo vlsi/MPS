@@ -5,8 +5,8 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="43359135-f67c-4a3d-9fdd-a3d7dba50995" name="BHL1" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
@@ -3621,11 +3621,11 @@
                         <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
                       </node>
                       <node concept="2OqwBi" id="MsDpdTh8Q3" role="3tpDZA">
-                        <node concept="3TUQnm" id="MsDpdTh8So" role="2Oq$k0">
-                          <ref role="3TV0OU" to="n871:5mnatV0hAOW" resolve="A" />
-                        </node>
                         <node concept="2qgKlT" id="MsDpdTh963" role="2OqNvi">
                           <ref role="37wK5l" to="5a2:5mnatV0hAQH" resolve="staticMethod" />
+                        </node>
+                        <node concept="35c_gC" id="7Ift4Hg3ftM" role="2Oq$k0">
+                          <ref role="35c_gD" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                       </node>
                     </node>

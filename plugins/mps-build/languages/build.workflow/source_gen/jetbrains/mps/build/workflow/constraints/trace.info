@@ -223,7 +223,7 @@
         <var name="references" id="2769948622284605888" />
       </scope>
       <scope id="2769948622284605888" at="29,0,57,0" />
-      <unit id="2769948622284605888" at="40,19,52,9" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$2" />
+      <unit id="2769948622284605888" at="40,19,52,9" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$1$1" />
       <unit id="2769948622284605888" at="32,154,54,5" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$1" />
       <unit id="2769948622284605888" at="24,0,59,0" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints" />
     </file>

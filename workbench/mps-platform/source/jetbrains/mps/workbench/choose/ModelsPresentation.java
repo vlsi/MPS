@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.function.BiConsumer;
-import java.util.stream.StreamSupport;
 
 /**
  * Knows how to represent models for {@link ChooseByNameData}
@@ -44,7 +43,7 @@ public class ModelsPresentation implements ElementPresentation<SModelReference> 
 
   @Override
   public void names(@NotNull Iterable<SModelReference> elements, @NotNull BiConsumer<SModelReference, String> nameConsumer) {
-    StreamSupport.stream(elements.spliterator(), false).forEach(mr -> nameConsumer.accept(mr, mr.getName().getValue()));
+    elements.forEach(mr -> nameConsumer.accept(mr, mr.getName().getValue()));
   }
 
   @Override

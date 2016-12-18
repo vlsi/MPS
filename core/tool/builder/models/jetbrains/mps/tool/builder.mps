@@ -13,16 +13,13 @@
     <import index="79ha" ref="r:2876f1ee-0b45-4db5-8c09-0682cdee5c67(jetbrains.mps.tool.environment)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="ends" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.persistence(MPS.Core/)" />
     <import index="mk8z" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.progress(MPS.Core/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="vqh0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make(MPS.Core/)" />
-    <import index="5fzo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.persistence.def(MPS.Core/)" />
     <import index="32g5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.library(MPS.Core/)" />
     <import index="3qmy" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.classloading(MPS.Core/)" />
     <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -34,6 +31,7 @@
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
+    <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -245,6 +243,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
         <property id="1200397540847" name="charConstant" index="1XhdNS" />
@@ -874,6 +875,36 @@
       <node concept="3Tmbuc" id="KL8Aqlj5oD" role="1B3o_S" />
       <node concept="3cqZAl" id="KL8Aqlj5oE" role="3clF45" />
       <node concept="3clFbS" id="KL8Aqlj5oF" role="3clF47">
+        <node concept="3SKdUt" id="7$AKZZXbWuH" role="3cqZAp">
+          <node concept="3SKdUq" id="7$AKZZXbWuJ" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME why do I care to make these modules?" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="7$AKZZXbVTn" role="3cqZAp">
+          <node concept="3cpWsn" id="7$AKZZXbVTo" role="3cpWs9">
+            <property role="TrG5h" value="repo" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="7$AKZZXbVTj" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+            </node>
+            <node concept="2OqwBi" id="7$AKZZXbVTp" role="33vP2m">
+              <node concept="2OqwBi" id="7$AKZZXbVTq" role="2Oq$k0">
+                <node concept="37vLTw" id="7$AKZZXbVTr" role="2Oq$k0">
+                  <ref role="3cqZAo" node="KL8Aqlj5lM" resolve="myEnvironment" />
+                </node>
+                <node concept="liA8E" id="7$AKZZXbVTs" role="2OqNvi">
+                  <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+                </node>
+              </node>
+              <node concept="liA8E" id="7$AKZZXbVTt" role="2OqNvi">
+                <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                <node concept="3VsKOn" id="7$AKZZXbVTu" role="37wK5m">
+                  <ref role="3VsUkX" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="3IZXeSR$VQu" role="3cqZAp">
           <node concept="3cpWsn" id="3IZXeSR$VQv" role="3cpWs9">
             <property role="TrG5h" value="mpsCompilationResult" />
@@ -881,12 +912,16 @@
               <ref role="3uigEE" to="vqh0:~MPSCompilationResult" resolve="MPSCompilationResult" />
             </node>
             <node concept="2OqwBi" id="KL8Aqlj5oH" role="33vP2m">
-              <node concept="2YIFZM" id="KL8Aqlj5oI" role="2Oq$k0">
-                <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
+              <node concept="2ShNRf" id="7$AKZZXbX$c" role="2Oq$k0">
+                <node concept="1pGfFk" id="7$AKZZXc4xz" role="2ShVmc">
+                  <ref role="37wK5l" to="w1kc:~ModelAccessHelper.&lt;init&gt;(org.jetbrains.mps.openapi.module.SRepository)" resolve="ModelAccessHelper" />
+                  <node concept="37vLTw" id="7$AKZZXc4C$" role="37wK5m">
+                    <ref role="3cqZAo" node="7$AKZZXbVTo" resolve="repo" />
+                  </node>
+                </node>
               </node>
               <node concept="liA8E" id="KL8Aqlj5oJ" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
+                <ref role="37wK5l" to="w1kc:~ModelAccessHelper.runReadAction(jetbrains.mps.util.Computable):java.lang.Object" resolve="runReadAction" />
                 <node concept="1bVj0M" id="3IZXeSR_u8l" role="37wK5m">
                   <node concept="3clFbS" id="3IZXeSR_u8m" role="1bW5cS">
                     <node concept="3cpWs8" id="KL8Aqlj5oV" role="3cqZAp">
@@ -914,9 +949,8 @@
                             <ref role="37wK5l" to="18ew:~IterableUtil.asCollection(java.lang.Iterable):java.util.Collection" resolve="asCollection" />
                             <ref role="1Pybhc" to="18ew:~IterableUtil" resolve="IterableUtil" />
                             <node concept="2OqwBi" id="KL8Aqll4tX" role="37wK5m">
-                              <node concept="2YIFZM" id="KL8Aqll4tY" role="2Oq$k0">
-                                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                              <node concept="37vLTw" id="7$AKZZXc5BX" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7$AKZZXbVTo" resolve="repo" />
                               </node>
                               <node concept="liA8E" id="KL8Aqll4tZ" role="2OqNvi">
                                 <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModules():java.lang.Iterable" resolve="getModules" />
@@ -968,12 +1002,8 @@
           <node concept="3clFbS" id="3IZXeSR_4EV" role="3clFbx">
             <node concept="3clFbF" id="KL8Aqlj5pf" role="3cqZAp">
               <node concept="2OqwBi" id="KL8Aqlj5pg" role="3clFbG">
-                <node concept="2YIFZM" id="KL8Aqlj5ph" role="2Oq$k0">
-                  <ref role="1Pybhc" to="w1kc:~ModelAccess" resolve="ModelAccess" />
-                  <ref role="37wK5l" to="w1kc:~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolve="instance" />
-                </node>
                 <node concept="liA8E" id="KL8Aqlj5pi" role="2OqNvi">
-                  <ref role="37wK5l" to="w1kc:~ModelCommandExecutor.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
+                  <ref role="37wK5l" to="lui2:~ModelAccess.runWriteAction(java.lang.Runnable):void" resolve="runWriteAction" />
                   <node concept="1bVj0M" id="3IZXeSR_zS5" role="37wK5m">
                     <node concept="3clFbS" id="3IZXeSR_zS6" role="1bW5cS">
                       <node concept="3clFbF" id="KL8Aqlj5pq" role="3cqZAp">
@@ -996,6 +1026,27 @@
                         </node>
                       </node>
                     </node>
+                  </node>
+                </node>
+                <node concept="2OqwBi" id="7$AKZZXc637" role="2Oq$k0">
+                  <node concept="2OqwBi" id="7$AKZZXc5OQ" role="2Oq$k0">
+                    <node concept="2OqwBi" id="7$AKZZXc5OR" role="2Oq$k0">
+                      <node concept="37vLTw" id="7$AKZZXc5OS" role="2Oq$k0">
+                        <ref role="3cqZAo" node="KL8Aqlj5lM" resolve="myEnvironment" />
+                      </node>
+                      <node concept="liA8E" id="7$AKZZXc5OT" role="2OqNvi">
+                        <ref role="37wK5l" to="79ha:8Pnvxgloc_" resolve="getPlatform" />
+                      </node>
+                    </node>
+                    <node concept="liA8E" id="7$AKZZXc5OU" role="2OqNvi">
+                      <ref role="37wK5l" to="wyuk:~ComponentHost.findComponent(java.lang.Class):jetbrains.mps.components.CoreComponent" resolve="findComponent" />
+                      <node concept="3VsKOn" id="7$AKZZXc5OV" role="37wK5m">
+                        <ref role="3VsUkX" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="7$AKZZXc6_H" role="2OqNvi">
+                    <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
                   </node>
                 </node>
               </node>
@@ -1325,7 +1376,7 @@
               <ref role="3cqZAo" node="KL8Aqlj5sF" resolve="project" />
             </node>
             <node concept="liA8E" id="KL8Aqlj5sL" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~Project.getModulesWithGenerators():java.lang.Iterable" resolve="getModulesWithGenerators" />
+              <ref role="37wK5l" to="z1c3:~Project.getProjectModulesWithGenerators():java.util.List" resolve="getProjectModulesWithGenerators" />
             </node>
           </node>
           <node concept="3cpWsn" id="KL8Aqlj5sM" role="1Duv9x">

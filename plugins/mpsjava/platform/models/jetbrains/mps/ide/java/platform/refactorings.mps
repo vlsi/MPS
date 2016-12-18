@@ -6,7 +6,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -345,8 +345,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -372,7 +372,6 @@
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -380,6 +379,7 @@
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -4212,7 +4212,6 @@
                                                   <node concept="2OqwBi" id="1KUoCipvs0W" role="37wK5m">
                                                     <node concept="1eOMI4" id="1KUoCipvs0X" role="2Oq$k0">
                                                       <node concept="1PxgMI" id="1KUoCipvs0Y" role="1eOMHV">
-                                                        <ref role="1m5ApE" to="tpck:h0TrEE$" resolve="INamedConcept" />
                                                         <node concept="2OqwBi" id="1KUoCipvs0Z" role="1m5AlR">
                                                           <node concept="Xjq3P" id="1KUoCipvs10" role="2Oq$k0">
                                                             <ref role="1HBi2w" node="3UdhnxHunhs" resolve="ExtractMethodDialog" />
@@ -4220,6 +4219,9 @@
                                                           <node concept="2OwXpG" id="1KUoCipvs11" role="2OqNvi">
                                                             <ref role="2Oxat5" node="3UdhnxHunmG" resolve="myStaticTarget" />
                                                           </node>
+                                                        </node>
+                                                        <node concept="chp4Y" id="714IaVdGYPo" role="3oSUPX">
+                                                          <ref role="cht4Q" to="tpck:h0TrEE$" resolve="INamedConcept" />
                                                         </node>
                                                       </node>
                                                     </node>
@@ -6921,9 +6923,7 @@
       <property role="DiZV1" value="false" />
       <property role="IEkAT" value="false" />
       <node concept="3Tmbuc" id="5$tYEQLkTgJ" role="1B3o_S" />
-      <node concept="3uibUv" id="5$tYEQLkTgL" role="3clF45">
-        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-      </node>
+      <node concept="17QB3L" id="6IL1Wh7vLjm" role="3clF45" />
       <node concept="2AHcQZ" id="5$tYEQLkTgM" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
       </node>
@@ -7753,10 +7753,10 @@
                                         <ref role="1Pybhc" to="89o2:7nrhK3uHecP" resolve="MethodRefactoringUtils" />
                                         <ref role="37wK5l" to="89o2:7nrhK3uHefw" resolve="findMethodUsages" />
                                         <node concept="2OqwBi" id="psC2_anow6" role="37wK5m">
-                                          <node concept="2YIFZM" id="psC2_annsu" role="2Oq$k0">
-                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                          <node concept="2YIFZM" id="6IL1Wh7vCK0" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                                             <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                            <node concept="1rXfSq" id="psC2_ano5N" role="37wK5m">
+                                            <node concept="1rXfSq" id="6IL1Wh7vCK1" role="37wK5m">
                                               <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                             </node>
                                           </node>
@@ -7987,10 +7987,10 @@
                                       <node concept="liA8E" id="3JD6rrJwcZY" role="2OqNvi">
                                         <ref role="37wK5l" node="3UdhnxHuoDA" resolve="appendProblems" />
                                         <node concept="2OqwBi" id="6o1U_cwzbnU" role="37wK5m">
-                                          <node concept="2YIFZM" id="6o1U_cwz9xA" role="2Oq$k0">
-                                            <ref role="37wK5l" to="alof:~ProjectHelper.toMPSProject(com.intellij.openapi.project.Project):jetbrains.mps.project.Project" resolve="toMPSProject" />
+                                          <node concept="2YIFZM" id="6IL1Wh7vDz_" role="2Oq$k0">
+                                            <ref role="37wK5l" to="alof:~ProjectHelper.fromIdeaProject(com.intellij.openapi.project.Project):jetbrains.mps.project.MPSProject" resolve="fromIdeaProject" />
                                             <ref role="1Pybhc" to="alof:~ProjectHelper" resolve="ProjectHelper" />
-                                            <node concept="1rXfSq" id="6o1U_cwz50I" role="37wK5m">
+                                            <node concept="1rXfSq" id="6IL1Wh7vDzA" role="37wK5m">
                                               <ref role="37wK5l" to="xygl:~Task.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
                                             </node>
                                           </node>
@@ -8184,7 +8184,7 @@
                               <ref role="37wK5l" to="89o2:3JD6rrJwjLC" resolve="getMethod" />
                             </node>
                           </node>
-                          <node concept="1PgB_6" id="1KUoCiqb6MJ" role="2OqNvi" />
+                          <node concept="3YRAZt" id="1KUoCiqb6MJ" role="2OqNvi" />
                         </node>
                       </node>
                     </node>

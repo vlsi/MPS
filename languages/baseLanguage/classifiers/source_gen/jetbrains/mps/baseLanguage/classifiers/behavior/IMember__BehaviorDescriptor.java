@@ -46,9 +46,9 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
     return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10af9581ff1L, "jetbrains.mps.baseLanguage.structure.PublicVisibility"));
   }
   /*package*/ static SNode getOperationConcept_idhEwIBCc(@NotNull SNode __thisNode__) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first());
     if (memberOperationConcept == null) {
-      throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(__thisNode__) + " concept");
+      throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConcept(__thisNode__) + " concept");
     }
     return memberOperationConcept;
   }
@@ -58,7 +58,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
     return result;
   }
   /*package*/ static SNode getContainer_idhEwIBCW(@NotNull SNode __thisNode__) {
-    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier").getDeclarationNode()), __thisNode__);
+    return IClassifier__BehaviorDescriptor.getContextClassifier_idhEwJim4.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getInterfaceConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bc6b2af5L, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier")), __thisNode__);
   }
   /*package*/ static boolean canBeReferent_id762MQfghnJQ(@NotNull SNode __thisNode__, SNode referentConcept) {
     return true;

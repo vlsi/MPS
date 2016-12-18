@@ -178,7 +178,7 @@ public final class ClassConcept__BehaviorDescriptor extends BaseBHDescriptor {
       boolean isOverridden = false;
       List<SNode> overridenMethods = helper.getOverriddenMethods(method);
       for (SNode overridingMethod : overridenMethods) {
-        isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract")));
+        isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) && SNodeOperations.getConcept(SNodeOperations.cast(overridingMethod, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))).isAbstract());
       }
       if (isOverridden) {
         continue;

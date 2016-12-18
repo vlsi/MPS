@@ -280,7 +280,7 @@
             <node concept="3clFbF" id="6w9IlZTR94y" role="3cqZAp">
               <node concept="2OqwBi" id="6w9IlZTR94t" role="3clFbG">
                 <node concept="3Tsc0h" id="6w9IlZTR94w" role="2OqNvi">
-                  <ref role="3TtcxE" to="tpm0:hp5EZkO" />
+                  <ref role="3TtcxE" to="tpm0:hp5EZkO" resolve="inputChild" />
                 </node>
                 <node concept="30H73N" id="6w9IlZTR94x" role="2Oq$k0" />
               </node>

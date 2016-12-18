@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -26,8 +25,14 @@ public class FetchDependenciesProcessor {
     this.project = project;
   }
   public void process() {
-    VisibleArtifacts artifacts = new VisibleArtifacts(project, genContext);
-    artifacts.collect();
+    VisibleArtifacts artifacts = new VisibleArtifacts(project) {
+
+      @Override
+      protected ArtifactLookup createLookup() {
+        return new ArtifactLookup(this, new DependenciesHelper(FetchDependenciesProcessor.this.genContext, project));
+      }
+    };
+    artifacts.collect(false);
     UnpackHelper helper = new UnpackHelper(artifacts, genContext);
     for (SNode dep : SNodeOperations.getNodeDescendants(project, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L, "jetbrains.mps.build.structure.BuildExternalDependency"), false, new SAbstractConcept[]{})) {
       BuildExternalDependency__BehaviorDescriptor.fetchDependencies_id57YmpYyL8F1.invoke(dep, artifacts, new FetchDependenciesProcessor.RequiredDependenciesBuilderImpl(artifacts, dep, helper));
@@ -56,45 +61,50 @@ public class FetchDependenciesProcessor {
       this.dep = dep;
       this.helper = helper;
     }
+
+    @Override
+    public TemplateQueryContext getGenContext() {
+      return helper.getGenContext();
+    }
+
     @Override
     public void add(SNode node) {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, false, null);
+      helper.add(node, false);
     }
     @Override
     public void add(SNode node, Object artifactId) {
-      if (!(check(node))) {
-        return;
-      }
-      if (!(checkArtifactId(artifactId))) {
-        // false is possible only when artifactId is SNode from transient model 
-        artifactId = artifacts.toOriginalNode((SNode) artifactId);
-      }
-      helper.add(node, false, artifactId);
+      genContext.showWarningMessage(dep, "FIXME stop using RequiredDependenciesBuilder.add(node<>,Object)");
+      add(node);
     }
     @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
         return;
       }
-      helper.add(node, true, null);
+      helper.add(node, true);
     }
-    private boolean check(SNode node) {
-      if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
-        genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
-        return false;
+
+    @Override
+    public void needsFetch(SNode node) {
+      // copied as is from VisibleArtifacts.needsFetch. VA has to become 'initialize once' container, 
+      // while this builder is intended for composing fetch state. 
+      if ((node == null)) {
+        return;
       }
+      // helper.requiresFetch() is invoked with gc.getOriginaInput, hence need originalNode here. 
+      node = helper.getOriginalNode(node);
+      if ((node == null)) {
+        return;
+      }
+      helper.doFetch(node);
+    }
+
+    private boolean check(SNode node) {
       if (!(artifacts.contains(node))) {
         genContext.showErrorMessage(dep, "returned node which is not available in dependencies: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
-        return false;
-      }
-      return true;
-    }
-    private boolean checkArtifactId(Object artifactId) {
-      if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
-        genContext.showWarningMessage(dep, "FIXME registering artifact from transient model");
         return false;
       }
       return true;

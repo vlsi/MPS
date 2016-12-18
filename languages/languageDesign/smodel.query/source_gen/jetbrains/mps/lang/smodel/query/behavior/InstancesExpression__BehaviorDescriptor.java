@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
@@ -16,6 +16,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -26,7 +27,7 @@ public final class InstancesExpression__BehaviorDescriptor extends BaseBHDescrip
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Iterable<SNode>> getSupportedParameters_id3J6h25QXCDW = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getSupportedParameters").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3J6h25QXCDW").registry(REGISTRY).build();
+  public static final SMethod<Iterable<SConcept>> getSupportedParameters_id3J6h25QXCDW = new SMethodBuilder<Iterable<SConcept>>(new SJavaCompoundTypeImpl((Class<Iterable<SConcept>>) ((Class) Object.class))).name("getSupportedParameters").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3J6h25QXCDW").registry(REGISTRY).build();
   public static final SMethod<String> getHelpPage_id64VftqEen2L = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHelpPage").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("64VftqEen2L").registry(REGISTRY).build();
   public static final SMethod<String> getDisplayString_id5YxQmqOFZEf = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDisplayString").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5YxQmqOFZEf").registry(REGISTRY).build();
 
@@ -35,8 +36,8 @@ public final class InstancesExpression__BehaviorDescriptor extends BaseBHDescrip
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static Iterable<SNode> getSupportedParameters_id3J6h25QXCDW(@NotNull SAbstractConcept __thisConcept__) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope").getDeclarationNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly").getDeclarationNode(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x967fc67f6f09d70L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterExact").getDeclarationNode());
+  /*package*/ static Iterable<SConcept> getSupportedParameters_id3J6h25QXCDW(@NotNull SAbstractConcept __thisConcept__) {
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ed2fL, "jetbrains.mps.lang.smodel.query.structure.QueryParameterScope"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc644217618ec86L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterIncludeReadOnly"), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x967fc67f6f09d70L, "jetbrains.mps.lang.smodel.query.structure.QueryParameterExact"));
   }
   /*package*/ static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
     return QueryExpression__BehaviorDescriptor.getHelpPage_id64VftqEen2L.invokeSpecial(__thisConcept__) + "\nImplementation of this command uses the IDE indexes to speed up execution";
@@ -74,7 +75,7 @@ public final class InstancesExpression__BehaviorDescriptor extends BaseBHDescrip
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Iterable<SNode>) getSupportedParameters_id3J6h25QXCDW(concept));
+        return (T) ((Iterable<SConcept>) getSupportedParameters_id3J6h25QXCDW(concept));
       case 1:
         return (T) ((String) getHelpPage_id64VftqEen2L(concept));
       case 2:

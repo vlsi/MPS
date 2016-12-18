@@ -351,8 +351,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
@@ -3377,12 +3377,14 @@
                                     <ref role="3TsBF5" to="tp33:7IU6uRvyZEw" resolve="snodeId" />
                                   </node>
                                   <node concept="1PxgMI" id="20m38kqQw6Y" role="2Oq$k0">
-                                    <ref role="1m5ApE" to="tp33:4HFrnGEoSRr" resolve="FQNameClassifierSpecification" />
                                     <node concept="2OqwBi" id="20m38kqPNb4" role="1m5AlR">
                                       <node concept="3TrEf2" id="20m38kqPNb5" role="2OqNvi">
                                         <ref role="3Tt5mk" to="tp33:4HFrnGEow_Z" resolve="oldClassifier" />
                                       </node>
                                       <node concept="30H73N" id="20m38kqPNb6" role="2Oq$k0" />
+                                    </node>
+                                    <node concept="chp4Y" id="714IaVdGZmF" role="3oSUPX">
+                                      <ref role="cht4Q" to="tp33:4HFrnGEoSRr" resolve="FQNameClassifierSpecification" />
                                     </node>
                                   </node>
                                 </node>
@@ -4158,12 +4160,14 @@
                               <ref role="3Tt5mk" to="tp33:1ZdZFkoL3Lp" resolve="methodDeclaration" />
                             </node>
                             <node concept="1PxgMI" id="1L7BggXk3ug" role="2Oq$k0">
-                              <ref role="1m5ApE" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                               <node concept="2OqwBi" id="1L7BggXjZIa" role="1m5AlR">
                                 <node concept="3TrEf2" id="1L7BggXk21F" role="2OqNvi">
                                   <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
                                 </node>
                                 <node concept="30H73N" id="1L7BggXjI4d" role="2Oq$k0" />
+                              </node>
+                              <node concept="chp4Y" id="714IaVdGZmD" role="3oSUPX">
+                                <ref role="cht4Q" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                               </node>
                             </node>
                           </node>
@@ -4284,12 +4288,14 @@
                               <node concept="3cpWsn" id="1L7BggXkgB0" role="3cpWs9">
                                 <property role="TrG5h" value="directMethodSpecification" />
                                 <node concept="1PxgMI" id="1L7BggXkjpF" role="33vP2m">
-                                  <ref role="1m5ApE" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                                   <node concept="2OqwBi" id="1L7BggXkgB3" role="1m5AlR">
                                     <node concept="3TrEf2" id="1L7BggXkgB4" role="2OqNvi">
                                       <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
                                     </node>
                                     <node concept="30H73N" id="1L7BggXkgB5" role="2Oq$k0" />
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdGZmG" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                                   </node>
                                 </node>
                                 <node concept="3Tqbb2" id="1L7BggXkgB1" role="1tU5fm">
@@ -4663,12 +4669,14 @@
                                 <ref role="3TsBF5" to="tp33:1ZdZFkoOJSD" resolve="snodeId" />
                               </node>
                               <node concept="1PxgMI" id="1L7BggXkRC$" role="2Oq$k0">
-                                <ref role="1m5ApE" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
                                 <node concept="2OqwBi" id="1L7BggXkNlH" role="1m5AlR">
                                   <node concept="3TrEf2" id="1L7BggXkQ1o" role="2OqNvi">
                                     <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
                                   </node>
                                   <node concept="30H73N" id="1L7BggXkmUY" role="2Oq$k0" />
+                                </node>
+                                <node concept="chp4Y" id="714IaVdGZmE" role="3oSUPX">
+                                  <ref role="cht4Q" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
                                 </node>
                               </node>
                             </node>
@@ -4868,7 +4876,6 @@
                             <node concept="3clFbS" id="1L7BggXhJ1_" role="1bW5cS">
                               <node concept="3clFbF" id="1L7BggXhJ1A" role="3cqZAp">
                                 <node concept="1PxgMI" id="1L7BggXhJ1B" role="3clFbG">
-                                  <ref role="1m5ApE" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                                   <node concept="2OqwBi" id="1L7BggXhJ1C" role="1m5AlR">
                                     <node concept="3TrEf2" id="1L7BggXhJ1D" role="2OqNvi">
                                       <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
@@ -4876,6 +4883,9 @@
                                     <node concept="37vLTw" id="1L7BggXhJ1E" role="2Oq$k0">
                                       <ref role="3cqZAo" node="1L7BggXhJ1F" resolve="it" />
                                     </node>
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdGZmH" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp33:1ZdZFkoL3m3" resolve="DirectMethodSpecification" />
                                   </node>
                                 </node>
                               </node>
@@ -5259,7 +5269,6 @@
                             <node concept="3clFbS" id="1L7BggXiOkl" role="1bW5cS">
                               <node concept="3clFbF" id="1L7BggXiOkm" role="3cqZAp">
                                 <node concept="1PxgMI" id="1L7BggXiOkn" role="3clFbG">
-                                  <ref role="1m5ApE" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
                                   <node concept="2OqwBi" id="1L7BggXiOko" role="1m5AlR">
                                     <node concept="3TrEf2" id="1L7BggXiOkp" role="2OqNvi">
                                       <ref role="3Tt5mk" to="tp33:49356IxH1a1" resolve="oldMethodSpecification" />
@@ -5267,6 +5276,9 @@
                                     <node concept="37vLTw" id="1L7BggXiOkq" role="2Oq$k0">
                                       <ref role="3cqZAo" node="1L7BggXiOkr" resolve="it" />
                                     </node>
+                                  </node>
+                                  <node concept="chp4Y" id="714IaVdGZmC" role="3oSUPX">
+                                    <ref role="cht4Q" to="tp33:49356IxH1bz" resolve="FQNameMethodSpecification" />
                                   </node>
                                 </node>
                               </node>

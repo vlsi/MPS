@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.openapi.editor.update.AttributeKind;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class CellProviderWithRole extends AbstractCellProvider {
@@ -63,9 +64,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   public abstract Iterable<SNode> getRoleAttributes();
 
   // gets a kind of attributes possibly hanging on this provider's role.
-  //todo replace with AttributeKind
-  public abstract Class getRoleAttributeClass();
-
+  public abstract AttributeKind getRoleAttributeKind();
 
   public abstract SubstituteInfo createDefaultSubstituteInfo();
 

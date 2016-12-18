@@ -40,7 +40,7 @@ public final class BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor exte
       return null;
     }
 
-    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")), __thisNode__);
+    return JavaExportUtil.requireJarFolder(artifacts, SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL, 0x4ddcec86afb65a40L, "folder")));
   }
 
   /*package*/ BuildSource_JavaExternalJarFolderRef__BehaviorDescriptor() {

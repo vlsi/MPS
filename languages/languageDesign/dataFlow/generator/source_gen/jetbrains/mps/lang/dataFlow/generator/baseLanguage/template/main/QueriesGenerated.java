@@ -80,7 +80,7 @@ public class QueriesGenerated {
     return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_8324812022359558848(final PropertyMacroContext _context) {
-    return (String) INamedConcept__BehaviorDescriptor.getFqName_idhEwIO9y.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(_context.getNode())));
+    return SNodeOperations.getConcept(_context.getNode()).getQualifiedName();
   }
   public static Object referenceMacro_GetReferent_6673335989323240696(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(Sequence.fromIterable(((Iterable<SNode>) _context.getVariable("var:rules"))).first(), "ruleClass");

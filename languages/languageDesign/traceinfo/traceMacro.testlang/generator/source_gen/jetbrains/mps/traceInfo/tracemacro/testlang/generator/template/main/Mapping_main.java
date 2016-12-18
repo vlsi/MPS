@@ -24,7 +24,6 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.template.ReductionRuleQueryContext;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 
 @Generated
@@ -108,7 +107,7 @@ public class Mapping_main extends MapConfigBase implements TemplateMappingConfig
       final TemplateExecutionEnvironment environment = context.getEnvironment();
       final SNode tnode1 = environment.createOutputNode(MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"));
       try {
-        environment.resolve((ReferenceResolver) new RefResolver(tnode1, MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), context, new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587793725"), "") {
+        environment.resolve(new RefResolver(tnode1, MetaAdapterFactory.getReferenceLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10cac6fa5c3L, 0x10cac7007baL, "variable"), context, new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587793725"), "") {
           @Override
           public Object resolve() {
             return QueriesGenerated.referenceMacro_GetReferent_7980748436587793726(createQueryContext());

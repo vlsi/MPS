@@ -6,13 +6,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,9 +28,10 @@ public abstract class BaseLanguagesImportHelper {
   public BaseLanguagesImportHelper() {
   }
   public void tryToImport(SNode container, List<SNodeReference> nodesToImport) {
+    final SRepository repository = SNodeOperations.getModel(container).getRepository();
     List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
-        return (SNode) ((SNodePointer) it).resolve(MPSModuleRepository.getInstance());
+        return (SNode) it.resolve(repository);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -43,7 +43,7 @@ public abstract class BaseLanguagesImportHelper {
         continue;
       }
       if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"))) {
-        SNode clone = _quotation_createNode_5vd2f2_a0a0b0b0d(node);
+        SNode clone = _quotation_createNode_5vd2f2_a0a0b0c0d(node);
         transformNode(clone, SNodeOperations.getModel(container));
         ListSequence.fromList(SLinkOperations.getChildren(container, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).addElement(clone);
       } else if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b215L, "jetbrains.mps.baseLanguage.structure.Statement"))) {
@@ -56,13 +56,16 @@ public abstract class BaseLanguagesImportHelper {
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
       if (neq_5vd2f2_a0b0a0e(targetModel, containerModel)) {
-        SModel scopeModel = targetModel.getReference().resolve(MPSModuleRepository.getInstance());
-        if (scopeModel != null && neq_5vd2f2_a0a1a1a0a4(scopeModel, targetModel)) {
+        SModel scopeModel = targetModel.getReference().resolve(containerModel.getRepository());
+        // XXX I don't understand this code, and not sure it ever worked (how come model != model.reference.resolve(global repo) 
+        // just refactored it a bit, with a guess that intention is to replace references pointing outside of debugger repository 
+        // with dynamics that would get resolved with proper debugger node later on. 
+        if (scopeModel != null && neq_5vd2f2_a0a4a1a0a4(scopeModel, targetModel)) {
           String resolveInfo = SLinkOperations.getResolveInfo(reference);
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
           }
-          node.setReference(SLinkOperations.getRole(reference), new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getReference(), resolveInfo));
+          node.setReference(reference.getLink(), new DynamicReference(reference.getLink(), node, scopeModel.getReference(), resolveInfo));
         }
       }
     }
@@ -94,7 +97,7 @@ public abstract class BaseLanguagesImportHelper {
       replaceStubReferences(d, containerModel);
     }
   }
-  private static SNode _quotation_createNode_5vd2f2_a0a0b0b0d(Object parameter_1) {
+  private static SNode _quotation_createNode_5vd2f2_a0a0b0c0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -108,7 +111,7 @@ public abstract class BaseLanguagesImportHelper {
   private static boolean neq_5vd2f2_a0b0a0e(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_5vd2f2_a0a1a1a0a4(Object a, Object b) {
+  private static boolean neq_5vd2f2_a0a4a1a0a4(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_5vd2f2_a0a1a0a5(Object a, Object b) {

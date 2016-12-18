@@ -43,7 +43,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeTarget = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodesOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OperationContextOperation = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_OperationContextOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ProjectOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Refactoring = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0kb).create();
   private final ConceptPresentation props_RefactoringAction = new ConceptPresentationBuilder().create();

@@ -67,7 +67,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.build.mps.testManifest.behavior.TestModuleManifest__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.build.mps.util.PathConverter" />
+    <classNode dependClassName="jetbrains.mps.build.mps.util.PathBuilder" />
+    <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

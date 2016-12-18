@@ -30,7 +30,6 @@
     <classNode dependClassName="jetbrains.jetpad.projectional.view.PolyLineView" />
     <classNode dependClassName="jetbrains.jetpad.projectional.view.View" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigureMapper" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.figures.library.AbstractVerticalLayoutFigure" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.figures.library.NamedBoxFigure" file="NamedBoxFigure.java">
@@ -48,7 +47,6 @@
     <classNode dependClassName="jetbrains.jetpad.model.property.ValueProperty" />
     <classNode dependClassName="jetbrains.jetpad.model.property.WritableProperty" />
     <classNode dependClassName="jetbrains.jetpad.values.Color" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.figures.library.BoxFigureMapper" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.figures.library.BoxFigure" />
   </dependency>
 </dependenciesRoot>

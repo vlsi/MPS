@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.editor.actions.TransformationMenuActionsUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
@@ -83,15 +82,7 @@ public class TransformationFeature_SubstituteMenu extends SubstituteMenuBase {
               }
             });
           }
-          return Sequence.fromIterable((Iterable<SNode>) Sequence.fromIterable(concepts).select(new ISelector<SAbstractConcept, SNode>() {
-            public SNode select(SAbstractConcept it) {
-              return SNodeOperations.asNode(it);
-            }
-          })).select(new ISelector<SNode, SAbstractConcept>() {
-            public SAbstractConcept select(SNode it) {
-              return SNodeOperations.asSConcept(it);
-            }
-          }).toListSequence();
+          return Sequence.fromIterable(concepts).toListSequence();
         }
         @Override
         protected Collection<SubstituteMenuItem> createItemsForConcept(SubstituteMenuContext context, SAbstractConcept concept) {

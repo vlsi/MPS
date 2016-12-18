@@ -69,7 +69,6 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.DataCollector" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference" />
     <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
-    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.SNodePlacePointer" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

@@ -5,7 +5,7 @@
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -1311,7 +1311,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.getChildren(org.jetbrains.mps.openapi.language.SContainmentLink):java.lang.Iterable" resolve="getChildren" />
               <node concept="359W_D" id="332ZZ5m3_vU" role="37wK5m">
                 <ref role="359W_E" to="tpee:fK9aQHR" resolve="BlockStatement" />
-                <ref role="359W_F" to="tpee:fK9aQHS" />
+                <ref role="359W_F" to="tpee:fK9aQHS" resolve="statements" />
               </node>
             </node>
           </node>
@@ -1496,7 +1496,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.getReference(org.jetbrains.mps.openapi.language.SReferenceLink):org.jetbrains.mps.openapi.model.SReference" resolve="getReference" />
               <node concept="359W_D" id="332ZZ5m3J4f" role="37wK5m">
                 <ref role="359W_E" to="tpee:fz7vLUo" resolve="VariableReference" />
-                <ref role="359W_F" to="tpee:fzcqZ_w" />
+                <ref role="359W_F" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
             </node>
           </node>
@@ -1580,7 +1580,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.getReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink):org.jetbrains.mps.openapi.model.SNode" resolve="getReferenceTarget" />
               <node concept="359W_D" id="332ZZ5m3JFF" role="37wK5m">
                 <ref role="359W_E" to="tpee:fz7vLUo" resolve="VariableReference" />
-                <ref role="359W_F" to="tpee:fzcqZ_w" />
+                <ref role="359W_F" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
             </node>
           </node>
@@ -1858,7 +1858,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.insertChildBefore(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="insertChildBefore" />
               <node concept="359W_D" id="332ZZ5m3IH5" role="37wK5m">
                 <ref role="359W_E" to="tpee:fK9aQHR" resolve="BlockStatement" />
-                <ref role="359W_F" to="tpee:fK9aQHS" />
+                <ref role="359W_F" to="tpee:fK9aQHS" resolve="statements" />
               </node>
               <node concept="37vLTw" id="3GM_nagTBKs" role="37wK5m">
                 <ref role="3cqZAo" node="2YDyY6b2opc" resolve="child" />
@@ -2034,7 +2034,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.addChild(org.jetbrains.mps.openapi.language.SContainmentLink,org.jetbrains.mps.openapi.model.SNode):void" resolve="addChild" />
               <node concept="359W_D" id="332ZZ5m3Ez7" role="37wK5m">
                 <ref role="359W_E" to="tpee:fK9aQHR" resolve="BlockStatement" />
-                <ref role="359W_F" to="tpee:fK9aQHS" />
+                <ref role="359W_F" to="tpee:fK9aQHS" resolve="statements" />
               </node>
               <node concept="37vLTw" id="3GM_nagTr7q" role="37wK5m">
                 <ref role="3cqZAo" node="2YDyY6b2oq_" resolve="child" />
@@ -2248,7 +2248,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.setReference(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SReference):void" resolve="setReference" />
               <node concept="359W_D" id="332ZZ5m3Em$" role="37wK5m">
                 <ref role="359W_E" to="tpee:fz7vLUo" resolve="VariableReference" />
-                <ref role="359W_F" to="tpee:fzcqZ_w" />
+                <ref role="359W_F" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
               <node concept="2OqwBi" id="3CUax9JhUam" role="37wK5m">
                 <node concept="3xONca" id="3CUax9JhUab" role="2Oq$k0">
@@ -2257,7 +2257,7 @@
                 <node concept="37Cfm0" id="3CUax9JhUas" role="2OqNvi">
                   <node concept="1aIX9F" id="3CUax9JhUat" role="37CeNk">
                     <node concept="26LbJo" id="_OliKXUNFw" role="1aIX9E">
-                      <ref role="26LbJp" to="tpee:fzcqZ_w" />
+                      <ref role="26LbJp" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
                     </node>
                   </node>
                 </node>
@@ -2344,7 +2344,7 @@
               <ref role="37wK5l" to="mhbf:~SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
               <node concept="359W_D" id="332ZZ5m3E1t" role="37wK5m">
                 <ref role="359W_E" to="tpee:fz7vLUo" resolve="VariableReference" />
-                <ref role="359W_F" to="tpee:fzcqZ_w" />
+                <ref role="359W_F" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
               </node>
               <node concept="3xONca" id="332ZZ5m3E5O" role="37wK5m">
                 <ref role="3xOPvv" node="3CUax9JhVqW" resolve="decl" />

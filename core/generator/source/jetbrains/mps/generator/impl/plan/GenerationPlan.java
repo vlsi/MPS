@@ -36,7 +36,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Evgeny Gryaznov, Jan 18, 2010
+ * Default/regular/legacy plan to generate a model based solely on a languaes
+ *
+ * To get extra information about picked generators, update bin/log.xml like that:
+ * <pre>
+ *    <category name="jetbrains.mps.generator.impl.plan" additivity="false">
+ *      <priority value="DEBUG"/>
+ *      <appender-ref ref="CONSOLE-DEBUG"/>
+ *    </category>
+ * </pre>
+ * @author Evgeny Gryaznov, Jan 18, 2010
+ * @author Artem Tikhomirov
  */
 public class GenerationPlan implements ModelGenerationPlan {
 
@@ -56,6 +66,11 @@ public class GenerationPlan implements ModelGenerationPlan {
   public GenerationPlan(@NotNull SModel inputModel, @Nullable Collection<SLanguage> additionalLanguages) {
     try {
       EngagedGeneratorCollector c = new EngagedGeneratorCollector(inputModel, additionalLanguages);
+      if (LOG.isDebugEnabled()) {
+        LOG.debug(">>>");
+        c.dump(LOG::debug);
+        LOG.debug("<<<");
+      }
 
       GenerationPartitioner partitioner = new GenerationPartitioner(c.getGenerators());
       myGenerators = c.getGenerators();

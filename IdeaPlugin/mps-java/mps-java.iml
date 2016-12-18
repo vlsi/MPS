@@ -36,10 +36,10 @@
       <sourceFolder url="file://$MODULE_DIR$/debugger/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/scopes/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sourceStubs/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/resources" type="java-resource" />
     </content>
     <content url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/basePlatform/source_gen" isTestSource="false" />

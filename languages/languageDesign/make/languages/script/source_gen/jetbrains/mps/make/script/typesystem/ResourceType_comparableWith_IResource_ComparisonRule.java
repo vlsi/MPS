@@ -39,7 +39,7 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
     return MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType");
   }
   public SAbstractConcept getApplicableConcept2() {
-    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    return MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x101de48bf9eL, "ClassifierType");
   }
   private static SNode _quotation_createNode_v5k8je_a0a0a0a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

@@ -181,7 +181,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   @Override
   public List<SNode> getSelectedNodes() {
     SNode sNode = getEditorCell().getSNode();
-    return Collections.singletonList(sNode);
+    return sNode == null ? Collections.EMPTY_LIST : Collections.singletonList(sNode);
   }
 
   @Override

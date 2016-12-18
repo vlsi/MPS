@@ -65,11 +65,11 @@ public final class SpecifyClass_Intention extends IntentionDescriptorBase implem
       SLinkOperations.setTarget(smc, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), method);
       List<SNode> args = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
       for (SNode arg : args) {
-        ListSequence.fromList(SLinkOperations.getChildren(smc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).addElement(SNodeOperations.detachNode(arg));
+        ListSequence.fromList(SLinkOperations.getChildren(smc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).addElement(SNodeOperations.deleteNode(arg));
       }
       List<SNode> typeArgs = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"));
       for (SNode arg : typeArgs) {
-        ListSequence.fromList(SLinkOperations.getChildren(smc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))).addElement(SNodeOperations.detachNode(arg));
+        ListSequence.fromList(SLinkOperations.getChildren(smc, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))).addElement(SNodeOperations.deleteNode(arg));
       }
       editorContext.selectWRTFocusPolicy(smc);
     }

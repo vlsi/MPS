@@ -57,7 +57,7 @@
         <var name="references" id="1236430656078" />
       </scope>
       <scope id="1236430656078" at="30,0,58,0" />
-      <unit id="1236430656078" at="41,19,53,9" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$2" />
+      <unit id="1236430656078" at="41,19,53,9" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1$1" />
       <unit id="1236430656078" at="33,146,55,5" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints$1" />
       <unit id="1236430656078" at="25,0,60,0" name="jetbrains.mps.baseLanguage.math.constraints.MathSymbolIndexReference_Constraints" />
     </file>
@@ -142,7 +142,7 @@
         <var name="references" id="6219660258344759919" />
       </scope>
       <scope id="6219660258344759919" at="32,0,89,0" />
-      <unit id="6219660258344759919" at="43,19,84,9" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$2" />
+      <unit id="6219660258344759919" at="43,19,84,9" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1$1" />
       <unit id="6219660258344759919" at="35,153,86,5" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints$1" />
       <unit id="6219660258344759919" at="27,0,91,0" name="jetbrains.mps.baseLanguage.math.constraints.MatrixInitializerIndexReference_Constraints" />
     </file>

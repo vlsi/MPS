@@ -627,12 +627,12 @@
         <var name="searchScope" id="3947813777274815871" />
         <var name="selectedOptions" id="972152238150665267" />
       </scope>
-      <unit id="3628660716137440819" at="68,250,72,7" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$1" />
-      <unit id="3947813777275489564" at="147,172,151,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
-      <unit id="3947813777275489573" at="151,24,155,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
-      <unit id="5042723591540116172" at="165,103,169,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
-      <unit id="5042723591540116180" at="169,23,173,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
-      <unit id="1817798995039477934" at="198,390,202,9" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
+      <unit id="3628660716137440819" at="68,250,72,7" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$MoveNodeParticipants$1" />
+      <unit id="3947813777275489564" at="147,172,151,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$1$1" />
+      <unit id="3947813777275489573" at="151,24,155,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$1$2" />
+      <unit id="5042723591540116172" at="165,103,169,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$1$3" />
+      <unit id="5042723591540116180" at="169,23,173,11" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$1$4" />
+      <unit id="1817798995039477934" at="198,390,202,9" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$2" />
       <unit id="149909493390933102" at="260,61,264,7" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$2" />
       <unit id="3947813777275227004" at="272,271,276,5" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$3" />
       <unit id="3947813777276242411" at="276,17,280,5" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$4" />
@@ -642,7 +642,7 @@
       <unit id="3628660716136490620" at="63,0,75,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$MoveNodeParticipants" />
       <unit id="3567210265429227848" at="295,79,318,5" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$6" />
       <unit id="1171652495568792968" at="76,0,107,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$SerializingParticipantState" />
-      <unit id="3947813777275487886" at="143,33,185,7" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$1" />
+      <unit id="3947813777275487886" at="143,33,185,7" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder$1" />
       <unit id="3947813777275364330" at="123,0,235,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant$LogBuilder" />
       <unit id="3947813777274799377" at="52,0,337,0" name="jetbrains.mps.lang.migration.pluginSolution.plugin.MoveNodeRefactoringLogParticipant" />
     </file>

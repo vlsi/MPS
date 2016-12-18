@@ -4,7 +4,7 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
   </languages>
@@ -352,18 +352,11 @@
       <node concept="3clFbS" id="44XtxR1fJTf" role="3clF47">
         <node concept="3clFbF" id="44XtxR1fJTg" role="3cqZAp">
           <node concept="2OqwBi" id="44XtxR1fJTh" role="3clFbG">
-            <node concept="1eOMI4" id="2q2JH_NuTtJ" role="2Oq$k0">
-              <node concept="10QFUN" id="2q2JH_NuTtK" role="1eOMHV">
-                <node concept="3uibUv" id="2q2JH_NuTtL" role="10QFUM">
-                  <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuu57" role="10QFUP">
-                  <ref role="3cqZAo" node="44XtxR1fJSX" resolve="myNode" />
-                </node>
-              </node>
+            <node concept="37vLTw" id="2BHiRxeuu57" role="2Oq$k0">
+              <ref role="3cqZAo" node="44XtxR1fJSX" resolve="myNode" />
             </node>
             <node concept="liA8E" id="44XtxR1fJTj" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SNodePointer.hashCode():int" resolve="hashCode" />
+              <ref role="37wK5l" to="wyt6:~Object.hashCode():int" resolve="hashCode" />
             </node>
           </node>
         </node>
@@ -457,29 +450,15 @@
       <property role="TrG5h" value="getNode" />
       <node concept="3Tm1VV" id="67iEga6Iwn9" role="1B3o_S" />
       <node concept="3clFbS" id="67iEga6Iwna" role="3clF47">
-        <node concept="3clFbF" id="67iEga6ICE1" role="3cqZAp">
-          <node concept="2OqwBi" id="67iEga6ICEl" role="3clFbG">
-            <node concept="liA8E" id="6SyhPqtSbRm" role="2OqNvi">
-              <ref role="37wK5l" to="w1kc:~SNodePointer.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.model.SNode" resolve="resolve" />
-              <node concept="2YIFZM" id="6SyhPqtSbRn" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-              </node>
-            </node>
-            <node concept="1eOMI4" id="2q2JH_NuQ_J" role="2Oq$k0">
-              <node concept="10QFUN" id="2q2JH_NuQ_K" role="1eOMHV">
-                <node concept="3uibUv" id="2q2JH_NuQ_L" role="10QFUM">
-                  <ref role="3uigEE" to="w1kc:~SNodePointer" resolve="SNodePointer" />
-                </node>
-                <node concept="37vLTw" id="2BHiRxeuxSc" role="10QFUP">
-                  <ref role="3cqZAo" node="44XtxR1fJSX" resolve="myNode" />
-                </node>
-              </node>
-            </node>
+        <node concept="3cpWs6" id="2SW9I0sfSsc" role="3cqZAp">
+          <node concept="37vLTw" id="2SW9I0sfSHm" role="3cqZAk">
+            <ref role="3cqZAo" node="44XtxR1fJSX" resolve="myNode" />
           </node>
         </node>
       </node>
-      <node concept="3Tqbb2" id="67iEga6Iwnb" role="3clF45" />
+      <node concept="3uibUv" id="2SW9I0sfSfP" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
     </node>
   </node>
   <node concept="312cEu" id="44XtxR1fJTR">

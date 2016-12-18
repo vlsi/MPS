@@ -22,6 +22,9 @@ public final class PathBuilder {
   }
 
 
+  /**
+   * Gives project-relative path.
+   */
   @NotNull
   public SNode buildRelative(String path) {
     SNode relPath = SModelOperations.createNewNode(myNodeFactory, null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath"));

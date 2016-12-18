@@ -27,7 +27,8 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.ide.icons.IdeIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -41,7 +42,6 @@ import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.ide.project.ProjectHelper;
 
 public class MergeRootsPane {
   private static final String PARAM_SHOW_INSPECTOR = MergeRootsPane.class.getName() + "ShowInspector";
@@ -96,9 +96,10 @@ public class MergeRootsPane {
     linkEditors(true, true);
     linkEditors(false, true);
 
+    final ModelAccess modelAccess = ProjectHelper.fromIdeaProject(myProject).getRepository().getModelAccess();
     myMergeSession.setChangesInvalidateHandler(new MergeSession.ChangesInvalidateHandler() {
       public void someChangesInvalidated() {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        modelAccess.runWriteInEDT(new Runnable() {
           public void run() {
             rehighlight();
           }
@@ -275,7 +276,7 @@ public class MergeRootsPane {
   private DiffEditor addEditor(int index, SModel model) {
     SNodeId rootId = getRootNodeId(model);
     SNode root = (rootId == null ? null : model.getNode(rootId));
-    final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject), root, myTitles[index], index == 0);
+    final DiffEditor result = new DiffEditor(ProjectHelper.fromIdeaProject(myProject), root, myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ? 5 : 0), 5, (index == 2 ? 5 : 0)), 0, 0);
     myTopPanel.add(result.getTopComponent(), gbc);

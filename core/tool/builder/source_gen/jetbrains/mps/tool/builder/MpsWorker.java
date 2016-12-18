@@ -16,12 +16,12 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.io.File;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.make.MPSCompilationResult;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.IterableUtil;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import java.util.Set;
@@ -123,17 +123,19 @@ public abstract class MpsWorker {
   }
 
   protected void make() {
-    MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
+    // FIXME why do I care to make these modules? 
+    final MPSModuleRepository repo = myEnvironment.getPlatform().findComponent(MPSModuleRepository.class);
+    MPSCompilationResult mpsCompilationResult = new ModelAccessHelper(repo).runReadAction(new Computable<MPSCompilationResult>() {
       public MPSCompilationResult compute() {
         ModuleMaker maker = new ModuleMaker();
-        return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), new EmptyProgressMonitor(), myJavaCompilerOptions);
+        return maker.make(IterableUtil.asCollection(repo.getModules()), new EmptyProgressMonitor(), myJavaCompilerOptions);
       }
     });
     reload(mpsCompilationResult);
   }
   protected void reload(final MPSCompilationResult mpsCompilationResult) {
     if (mpsCompilationResult.isReloadingNeeded()) {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      myEnvironment.getPlatform().findComponent(MPSModuleRepository.class).getModelAccess().runWriteAction(new Runnable() {
         public void run() {
           ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
         }
@@ -166,7 +168,7 @@ public abstract class MpsWorker {
   }
 
   protected void extractModels(Set<SModel> result, Project project) {
-    for (SModule module : project.getModulesWithGenerators()) {
+    for (SModule module : project.getProjectModulesWithGenerators()) {
       for (SModel model : module.getModels()) {
         if (includeModel(model)) {
           result.add(model);

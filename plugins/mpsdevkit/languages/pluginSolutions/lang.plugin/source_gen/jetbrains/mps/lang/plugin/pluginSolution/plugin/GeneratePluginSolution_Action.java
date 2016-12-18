@@ -19,7 +19,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -76,7 +75,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
         SModelOperations.addRootNode(newModel, _quotation_createNode_ljjiw0_a0a9a0a0a0a5a0());
 
         s.getModuleDescriptor().setKind(SolutionKind.PLUGIN_OTHER);
-        MPSModuleRepository.getInstance().saveAll();
+        event.getData(MPSCommonDataKeys.MPS_PROJECT).getRepository().saveAll();
       }
     });
 

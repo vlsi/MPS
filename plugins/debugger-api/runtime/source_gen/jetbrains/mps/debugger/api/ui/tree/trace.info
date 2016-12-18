@@ -524,7 +524,7 @@
         <var name="callback" id="3766037951090037050" />
       </scope>
       <unit id="3766037951090046174" at="64,13,67,5" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$1" />
-      <unit id="3766037951090037557" at="81,66,107,15" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$3" />
+      <unit id="3766037951090037557" at="81,66,107,15" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2$1" />
       <unit id="3766037951090037544" at="77,37,112,9" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode$2" />
       <unit id="4474271214083120082" at="21,0,120,0" name="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
     </file>

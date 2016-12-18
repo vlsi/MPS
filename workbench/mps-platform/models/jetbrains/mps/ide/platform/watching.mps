@@ -6475,8 +6475,8 @@
                                 <node concept="YeOm9" id="491od_XPZxU" role="2ShVmc">
                                   <node concept="1Y3b0j" id="491od_XPZxV" role="YeSDq">
                                     <property role="TrG5h" value="" />
-                                    <ref role="37wK5l" to="xygl:~Task$Modal.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Modal" />
                                     <ref role="1Y3XeK" to="xygl:~Task$Backgroundable" resolve="Task.Backgroundable" />
+                                    <ref role="37wK5l" to="xygl:~Task$Backgroundable.&lt;init&gt;(com.intellij.openapi.project.Project,java.lang.String,boolean)" resolve="Task.Backgroundable" />
                                     <node concept="10Nm6u" id="491od_XPZxW" role="37wK5m" />
                                     <node concept="Xl_RD" id="491od_XPZxX" role="37wK5m">
                                       <property role="Xl_RC" value="Reloading Files" />

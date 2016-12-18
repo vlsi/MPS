@@ -522,8 +522,8 @@
       <scope id="4001135958239008500" at="19,0,46,0">
         <var name="thisCanvas" id="4001135958239013358" />
       </scope>
-      <unit id="4001135958239205266" at="26,221,30,13" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$3" />
-      <unit id="4001135958239205258" at="24,96,32,9" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$2" />
+      <unit id="4001135958239205266" at="26,221,30,13" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$1$1$1" />
+      <unit id="4001135958239205258" at="24,96,32,9" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$1$1" />
       <unit id="4001135958239205236" at="20,15,44,5" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory$1" />
       <unit id="4001135958239008473" at="17,0,47,0" name="jetbrains.mps.samples.Shapes.behavior.PreviewFactory" />
     </file>

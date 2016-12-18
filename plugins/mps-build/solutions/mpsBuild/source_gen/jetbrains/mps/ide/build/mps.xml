@@ -74,7 +74,7 @@
         <support url="https://www.jetbrains.com/support/mps/index.html" />
         <feedback eap-url="https://www.jetbrains.com/feedback/feedback.jsp?product=mps" />
         <whatsnew url="https://www.jetbrains.com/mps/whatsnew/index.html" />
-        <keymap win="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD34/Default+Keymap+Reference" />
+        <keymap win="https://confluence.jetbrains.com/display/MPSD35/Default+Keymap+Reference" mac="https://confluence.jetbrains.com/display/MPSD35/Default+Keymap+Reference" />
         <third-party url="http://www.jetbrains.org/" />
         <jetbrains-tv url="http://www.youtube.com/user/JetBrainsTV/search?query=MPS" />
         
@@ -110,10 +110,6 @@
     <mkdir dir="${build.layout}/license" />
     <copy todir="${build.layout}/license">
       <fileset dir="${artifacts.mpsStandalone}/license" />
-    </copy>
-    <mkdir dir="${build.layout}/plugin" />
-    <copy todir="${build.layout}/plugin">
-      <fileset file="${basedir}/plugin/MPSPlugin.jar" />
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-build" />

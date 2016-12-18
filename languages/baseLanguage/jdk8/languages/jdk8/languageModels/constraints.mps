@@ -128,13 +128,13 @@
   <node concept="1M2fIO" id="1vrGgVFtiyT">
     <ref role="1M2myG" to="jqf9:1vrGgVFsInp" resolve="SuperInterfaceMethodCall" />
     <node concept="1N5Pfh" id="4zV8CAtqn4W" role="1Mr941">
-      <ref role="1N5Vy1" to="jqf9:1vrGgVFtizu" />
+      <ref role="1N5Vy1" to="jqf9:1vrGgVFtizu" resolve="classifier" />
       <node concept="1dDu$B" id="7c4zijkcF6B" role="1N6uqs">
         <ref role="1dDu$A" to="tpee:7c4zijk9vdu" resolve="SuperInerfaceKind" />
       </node>
     </node>
     <node concept="1N5Pfh" id="5_bM9M5zlFd" role="1Mr941">
-      <ref role="1N5Vy1" to="tpee:fBnyPmF" />
+      <ref role="1N5Vy1" to="tpee:fBnyPmF" resolve="instanceMethodDeclaration" />
       <node concept="13QW63" id="5_bM9M5A48Z" role="1N6uqs">
         <node concept="3clFbS" id="5_bM9M5A490" role="2VODD2">
           <node concept="3cpWs8" id="5_bM9M5A4RL" role="3cqZAp">
@@ -146,7 +146,7 @@
               <node concept="2OqwBi" id="5_bM9M5A77S" role="33vP2m">
                 <node concept="3kakTB" id="5_bM9M5A57r" role="2Oq$k0" />
                 <node concept="3TrEf2" id="5_bM9M5A8UG" role="2OqNvi">
-                  <ref role="3Tt5mk" to="jqf9:1vrGgVFtizu" />
+                  <ref role="3Tt5mk" to="jqf9:1vrGgVFtizu" resolve="classifier" />
                 </node>
               </node>
             </node>

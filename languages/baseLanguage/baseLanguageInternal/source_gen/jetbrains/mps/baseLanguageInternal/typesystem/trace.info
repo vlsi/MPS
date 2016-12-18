@@ -932,7 +932,7 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903ab(jetbrains.mps.baseLanguageInternal.typesystem)/8881995820265138570">
     <file name="check_ExtractStaticMethodCall_NonTypesystemRule.java">
-      <node id="8881995820265138612" at="24,123,25,353" concept="7" />
+      <node id="8881995820265138612" at="24,123,25,332" concept="7" />
       <node id="8881995820265138588" at="27,7,28,60" concept="7" />
       <node id="8881995820265138588" at="28,60,29,281" concept="7" />
       <node id="8881995820265138570" at="33,50,34,187" concept="8" />
@@ -943,7 +943,7 @@
       <node id="8881995820265138570" at="36,0,39,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="8881995820265138570" at="39,0,42,0" concept="6" trace="overrides#()Z" />
       <node id="8881995820265138588" at="26,229,30,7" concept="0" />
-      <node id="8881995820265138586" at="25,353,31,5" concept="5" />
+      <node id="8881995820265138586" at="25,332,31,5" concept="5" />
       <node id="8881995820265138570" at="24,0,33,0" concept="6" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="8881995820265138570" at="22,60,22,60" />
       <scope id="8881995820265138570" at="33,50,34,187" />

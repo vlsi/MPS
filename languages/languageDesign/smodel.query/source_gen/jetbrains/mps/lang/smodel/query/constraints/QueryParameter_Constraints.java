@@ -37,7 +37,7 @@ public class QueryParameter_Constraints extends BaseConstraintsDescriptor {
     if (neq_2bkn6k_a0a0e(SNodeOperations.getContainingLinkDeclaration(parentNode), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, 0x3bc644217616e548L, "parameter")))) {
       return false;
     }
-    return Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression")))))).contains((SNode) childConcept);
+    return Sequence.fromIterable(QueryExpression__BehaviorDescriptor.getSupportedParameters_id3J6h25QXCDW.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(SNodeOperations.cast(SNodeOperations.getParent(parentNode), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760bacfdL, "jetbrains.mps.lang.smodel.query.structure.QueryExpression")))))).contains(SNodeOperations.castConcept(SNodeOperations.asSConcept(childConcept), MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x3bc64421760badf5L, "jetbrains.mps.lang.smodel.query.structure.QueryParameter")));
   }
   private static boolean neq_2bkn6k_a0a0e(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

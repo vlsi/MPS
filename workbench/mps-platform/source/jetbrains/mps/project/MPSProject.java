@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,6 @@ import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.vfs.ProjectRootListenerComponent;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -41,8 +39,6 @@ import java.util.List;
  * TODO find what are the actual differences between it and a standalone mps project
  */
 public class MPSProject extends ProjectBase implements FileBasedProject, ProjectComponent {
-  private static final Logger LOG = LogManager.getLogger(MPSProject.class);
-
   private com.intellij.openapi.project.Project myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new ArrayList<>();
 

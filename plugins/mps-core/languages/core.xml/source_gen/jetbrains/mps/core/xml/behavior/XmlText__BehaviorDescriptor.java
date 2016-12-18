@@ -53,7 +53,7 @@ public final class XmlText__BehaviorDescriptor extends BaseBHDescriptor {
     SNode left = SNodeOperations.getPrevSibling(__thisNode__);
     if (SNodeOperations.isInstanceOf(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"))) {
       SNode leftContent = SNodeOperations.cast(left, MetaAdapterFactory.getConcept(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x5c842a42c549486bL, "jetbrains.mps.core.xml.structure.XmlContent"));
-      return (boolean) XmlContent__BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(leftContent))) || isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) == null);
+      return (boolean) XmlContent__BehaviorDescriptor.textLike_id1653mnvAgu_.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(leftContent))) || isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x479c7a8c02f943b5L, 0x9139d910cb22f298L, 0x16838b3fce9aa513L, 0x16838b3fce9aaa68L, "value"))) && (SNodeOperations.getNextSibling(__thisNode__) == null);
     }
     return false;
   }

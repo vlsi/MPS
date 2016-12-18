@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -2001,7 +2001,7 @@
                               <ref role="3cqZAo" node="6mz0KzMG769" resolve="langNode" />
                             </node>
                             <node concept="3Tsc0h" id="6mz0KzMFkUO" role="2OqNvi">
-                              <ref role="3TtcxE" to="hypd:5xDtKQA7vSR" />
+                              <ref role="3TtcxE" to="hypd:5xDtKQA7vSR" resolve="generator" />
                             </node>
                           </node>
                           <node concept="TSZUe" id="6mz0KzMFnfW" role="2OqNvi">

@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
-import org.jetbrains.mps.openapi.repository.CommandListener;
 
 /**
  * Repository with modules visible in MPS {@link Project project}.
@@ -48,7 +47,6 @@ public class ProjectRepository extends SRepositoryBase implements SRepositoryExt
   public ProjectRepository(@NotNull Project project) {
     myProject = project;
     myProjectModelAccess = new ProjectModelAccess(project);
-    init();
   }
 
   @Override

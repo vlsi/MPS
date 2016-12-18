@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,9 +41,7 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.workbench.action.ActionUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -51,6 +49,7 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.JComponent;
 import javax.swing.JPopupMenu;
@@ -380,13 +379,10 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     // additional check - during editor dispose process some Folding area painters can be removed calling relayout()..
     if (myEditorComponent.isDisposed()) return;
     if (editedNode != null) {
-      boolean disposed = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return !SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance());
-        }
-      });
-      if (disposed) return;
+      SRepository repository = myEditorComponent.getEditorContext().getRepository();
+      if (new ModelAccessHelper(repository).runReadAction(() -> !SNodeUtil.isAccessible(editedNode, repository))) {
+        return;
+      }
     }
     if (myRightToLeft) {
       recalculateFoldingAreaWidth();
@@ -472,6 +468,8 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     boolean wasModified = false;
     for (Iterator<EditorMessageIconRenderer> it = myIconRenderers.iterator(); it.hasNext(); ) {
       EditorMessageIconRenderer renderer = it.next();
+      // XXX I would prefer removeIconRenderer that takes SNodeReference instead of an SNode (e.g. BreakpointsUiComponentEx won't need to record
+      // renderer instances then).
       if (renderer.getNode() == snode && (type == null || renderer.getType() == type)) {
         it.remove();
         wasModified = true;
@@ -482,7 +480,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     }
   }
 
-  public void removeAllIconRenderers(Collection<EditorMessageIconRenderer> renderers) {
+  public void removeAllIconRenderers(Collection<? extends EditorMessageIconRenderer> renderers) {
     assert SwingUtilities.isEventDispatchThread() : "LeftEditorHighlighter.removeAllIconRenderers() should be called in eventDispatchThread";
     if (myIconRenderers.removeAll(renderers)) {
       relayoutOnIconRendererChanges();
@@ -595,7 +593,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
 
   private jetbrains.mps.openapi.editor.cells.EditorCell getAnchorCell(final EditorMessageIconRenderer renderer) {
     final jetbrains.mps.openapi.editor.cells.EditorCell[] cell = new jetbrains.mps.openapi.editor.cells.EditorCell[1];
-    MPSModuleRepository.getInstance().getModelAccess().runReadAction(new Runnable() {
+    myEditorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
         SNode rendererNode = renderer.getNode();

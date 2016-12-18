@@ -36,7 +36,7 @@ public class SelectAnotherNodeFromCode_Test extends BaseTransformationTest {
         public void run() {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8041297453110598748"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x7a0afda102e202aaL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize")));
+              getEditorComponent().selectNode(SNodeOperations.cast(getNodeById("8041297453110598748"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x7a0afda102e202aaL, "NodeWithSize"))));
             }
           });
         }

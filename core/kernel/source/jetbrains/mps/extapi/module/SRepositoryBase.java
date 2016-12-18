@@ -36,7 +36,7 @@ public abstract class SRepositoryBase implements SRepository {
     return null;
   }
 
-  protected void init() {
+  public void init() {
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
     SRepositoryRegistry.getInstance().addRepository(this);
   }

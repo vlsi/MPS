@@ -16,9 +16,10 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -61,7 +62,7 @@ public class TestCollector {
   private boolean hasJUnit38TestMethods(final SNode maybetest) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
-        return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"))) && SPropertyOperations.getString(meth, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("test");
+        return "public".equals(SConceptOperations.conceptAlias(SNodeOperations.getConcept(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))))) && SPropertyOperations.getString(meth, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")).startsWith("test");
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
@@ -75,7 +76,7 @@ public class TestCollector {
   private boolean hasJUnit4TestMethods(final SNode maybetest) {
     return Sequence.fromIterable(Classifier__BehaviorDescriptor.methods_id4_LVZ3pBKCn.invoke(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
-        return "public".equals(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"))) && hasAnnotation(meth, getTestAnnotation(maybetest));
+        return "public".equals(SConceptOperations.conceptAlias(SNodeOperations.getConcept(SLinkOperations.getTarget(meth, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))))) && hasAnnotation(meth, getTestAnnotation(maybetest));
       }
     }).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {

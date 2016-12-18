@@ -45,7 +45,7 @@ public class check_ConceptBehavior_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
     for (SNode cmd : SLinkOperations.getChildren(nodeToCheck, MetaAdapterFactory.getContainmentLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b25L, "method"))) {
-      if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(cmd), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772c7ec2L, "abstract"))) {
+      if (SNodeOperations.getConcept(cmd).isAbstract()) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(cmd, "Abstract method in non abstract concept", "r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)", "1198949983025", null, errorTarget);

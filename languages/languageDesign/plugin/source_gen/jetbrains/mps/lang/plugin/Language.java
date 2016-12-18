@@ -42,7 +42,7 @@ public class Language extends LanguageRuntime {
 
   @Override
   public int getVersion() {
-    return 1;
+    return 2;
   }
 
   public SLanguageId getId() {
@@ -50,7 +50,7 @@ public class Language extends LanguageRuntime {
   }
   @Override
   protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage.logging", "jetbrains.mps.baseLanguage.classifiers", "jetbrains.mps.lang.smodel", "jetbrains.mps.lang.checkedName", "jetbrains.mps.baseLanguage.closures", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.tuples", "jetbrains.mps.baseLanguage.collections"};
+    return new String[]{"jetbrains.mps.baseLanguage.classifiers", "jetbrains.mps.lang.checkedName", "jetbrains.mps.baseLanguage.closures", "jetbrains.mps.baseLanguage"};
   }
   @Override
   public Collection<TemplateModule> getGenerators() {

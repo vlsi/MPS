@@ -6,7 +6,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.MPSProject;
@@ -16,8 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.model.SModelName;
 import jetbrains.mps.console.tool.ConsoleTool;
 import java.awt.event.InputEvent;
 
@@ -38,7 +37,7 @@ public class ShowGenerationPlan_Action extends BaseAction {
     // I'd love to update presentation to reflect alternative action with keyboard modifier, but IDEA 
     // doesn't update action on key pressed once menu is visible, and doesn't pass initial modifiers, 
     // see com.intellij.openapi.actionSystem.impl.Util#expandActionGroup:135 (always 0). 
-    return SNodeOperations.isGeneratable(event.getData(MPSCommonDataKeys.MODEL));
+    return GenerationFacade.canGenerate(event.getData(MPSCommonDataKeys.MODEL));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,8 +68,9 @@ public class ShowGenerationPlan_Action extends BaseAction {
     SNode command = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, "jetbrains.mps.console.ideCommands.structure.ShowGenPlan"));
     SPropertyOperations.set(command, MetaAdapterFactory.getProperty(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x2c510b378f8ce5ddL, "ignoreExternalPlan"), "" + (alternative));
     SLinkOperations.setTarget(command, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x6c8954f469900928L, "jetbrains.mps.console.ideCommands.structure.ModelReference")));
-    SPropertyOperations.set(SLinkOperations.getTarget(command, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name"), NameUtil.getModelLongName(event.getData(MPSCommonDataKeys.MODEL)));
-    SPropertyOperations.set(SLinkOperations.getTarget(command, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"), SModelStereotype.getStereotype(event.getData(MPSCommonDataKeys.MODEL)));
+    SModelName name = event.getData(MPSCommonDataKeys.MODEL).getName();
+    SPropertyOperations.set(SLinkOperations.getTarget(command, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e92b66L, "name"), name.getLongName());
+    SPropertyOperations.set(SLinkOperations.getTarget(command, MetaAdapterFactory.getContainmentLink(0xa5e4de5346a344daL, 0xaab368fdf1c34ed0L, 0x61f2dd6de47f85e4L, 0x61f2dd6de47f867aL, "targetModel")), MetaAdapterFactory.getProperty(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x7c3f2da20e92b62L, 0x7c3f2da20e93b6fL, "stereotype"), name.getStereotype());
     event.getData(MPSCommonDataKeys.MPS_PROJECT).getProject().getComponent(ConsoleTool.class).executeCommand(command);
   }
   /*package*/ boolean isIgnoreExternalPlan(AnActionEvent evt, final AnActionEvent event) {

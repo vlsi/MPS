@@ -51,16 +51,15 @@ public final class BuildModuleTestsPlugin__BehaviorDescriptor extends BaseBHDesc
     SNode project = artifacts.getProject();
 
     // find mps-test.jar 
-    DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), project);
-    SNode originalProject = SNodeOperations.as(DependenciesHelper.getOriginalNode(project, artifacts.getGenContext()), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
-    SNode mpsTestModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(originalProject, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", ((int) 0)).resolve(originalProject, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
+    DependenciesHelper helper = new DependenciesHelper(builder.getGenContext(), project);
+    SNode mpsTestModule = SNodeOperations.as(ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(project, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule").getDeclarationNode(), "parts", ((int) 0)).resolve(project, "mps-test"), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafacdc38L, "jetbrains.mps.build.structure.BuildSource_JavaModule"));
     if ((mpsTestModule != null)) {
       SNode mpsTestJar = SNodeOperations.as(artifacts.findArtifact(mpsTestModule), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c85L, "jetbrains.mps.build.structure.BuildLayout_Node"));
       if ((mpsTestJar != null)) {
         // specify explicitly what we need maybe? 
-        helper.artifacts().put("mps-test-folder", SNodeOperations.getParent(mpsTestJar));
-        helper.artifacts().put("mps-test", mpsTestJar);
-        builder.add(mpsTestJar, mpsTestModule);
+        helper.putArtifact("mps-test-folder", SNodeOperations.as(SNodeOperations.getParent(mpsTestJar), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x668c6cfbafac4c78L, "jetbrains.mps.build.structure.BuildLayout_Folder")));
+        helper.putArtifact("mps-test", mpsTestJar);
+        builder.add(mpsTestJar);
       }
     }
   }

@@ -191,7 +191,7 @@
         <var name="editorContext" id="393299394024667052" />
         <var name="node" id="393299394024667052" />
       </scope>
-      <unit id="917166302016112143" at="72,358,77,9" name="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention$1" />
+      <unit id="917166302016112143" at="72,358,77,9" name="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention$IntentionImplementation$1" />
       <unit id="393299394024667052" at="59,0,89,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention$IntentionImplementation" />
       <unit id="393299394024667052" at="24,0,93,0" name="org.jetbrains.mps.samples.IfAndUnless.intentions.UnwrapUnlessBlock_Intention" />
     </file>

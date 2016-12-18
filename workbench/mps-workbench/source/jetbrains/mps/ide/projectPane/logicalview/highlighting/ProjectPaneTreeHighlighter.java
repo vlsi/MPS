@@ -30,6 +30,7 @@ import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -46,12 +47,15 @@ public class ProjectPaneTreeHighlighter {
 
   private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
   private final ProjectPaneTree myTree;
+  // although could access one with myTree.getProject().getRepository, it seems safe to record the instance I listen to
+  private final SRepository myProjectRepository;
   // containers that control listeners of module and model respectively
   private ModuleNodeListeners myModuleListeners;
   private SModelNodeListeners myModelListeners;
 
   public ProjectPaneTreeHighlighter(ProjectPaneTree tree, Project mpsProject) {
     myTree = tree;
+    myProjectRepository = mpsProject.getRepository();
     myUpdater = new TreeNodeUpdater(mpsProject);
     myGenStatusVisitor = new GenStatusUpdater(mpsProject);
     myErrorVisitor = new ErrorChecker(mpsProject);
@@ -73,7 +77,7 @@ public class ProjectPaneTreeHighlighter {
       myModuleListeners = null;
     }
     if (myModelListeners != null) {
-      myModelListeners.stopListening();
+      myModelListeners.stopListening(myProjectRepository);
       myModelListeners = null;
     }
     myExecutor.shutdownNow();
@@ -85,7 +89,7 @@ public class ProjectPaneTreeHighlighter {
   private SModelNodeListeners getModelListeners() {
     if (myModelListeners == null) {
       myModelListeners = new SModelNodeListeners(myGenStatusVisitor, myErrorVisitor, myModifiedMarker);
-      myModelListeners.startListening();
+      myModelListeners.startListening(myProjectRepository);
     }
     return myModelListeners;
   }

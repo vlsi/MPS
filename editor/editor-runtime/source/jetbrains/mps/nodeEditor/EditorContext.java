@@ -19,7 +19,6 @@ import com.intellij.openapi.wm.IdeFocusManager;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.nodeEditor.assist.DisabledContextAssistantManager;
-import jetbrains.mps.nodeEditor.cells.EditorCellFactoryImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.configuration.EditorConfiguration;
 import jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder;
@@ -63,8 +62,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   private EditorCell myContextCell;
   private IPerformanceTracer myPerformanceTracer = null;
-
-  private EditorCellFactory myCellFactory;
 
   @NotNull
   private final ContextAssistantManager myContextAssistantManager;
@@ -340,10 +337,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public EditorCellFactory getCellFactory() {
-    if (myCellFactory == null) {
-      myCellFactory = new EditorCellFactoryImpl(this);
-    }
-    return myCellFactory;
+    return getEditorComponent().getUpdater().getCurrentUpdateSession().getCellFactory();
   }
 
   @Override

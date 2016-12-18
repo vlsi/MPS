@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -38,7 +39,7 @@ public final class BuildSourceProjectRelativePath__BehaviorDescriptor extends Ba
     return ((tail == null || tail.length() == 0) ? "${basedir}" : "${basedir}/" + tail);
   }
   /*package*/ static String getBasePath_id4jjtc7WZMYz(@NotNull SNode __thisNode__, Context context) {
-    return context.getBasePath_Local(__thisNode__);
+    return (String) BuildProject__BehaviorDescriptor.getBasePath_id4jjtc7WZOyG.invoke(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false), context);
   }
 
   /*package*/ BuildSourceProjectRelativePath__BehaviorDescriptor() {

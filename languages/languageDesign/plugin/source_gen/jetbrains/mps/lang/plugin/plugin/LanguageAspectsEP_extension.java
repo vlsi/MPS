@@ -4,6 +4,7 @@ package jetbrains.mps.lang.plugin.plugin;
 
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.smodel.language.LanguageAspectDescriptor;
+import jetbrains.mps.aspects.OrderParticipant;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -19,6 +20,8 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.language.LanguageAspectGenerator;
 import jetbrains.mps.smodel.runtime.IconResource;
+import jetbrains.mps.aspects.OrderDescriptor;
+import jetbrains.mps.lang.structure.plugin.MPSAspects_Order;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.project.SModuleOperations;
@@ -32,6 +35,14 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       public String getPresentableAspectName() {
         return "plugin";
       }
+      @Override
+      public String getId() {
+        return getPresentableAspectName();
+      }
+      @Override
+      public int compareTo(OrderParticipant<String> other) {
+        return myOrderConstraints.compare(this.getId(), other.getId());
+      }
       @NotNull
       public Collection<SModel> getAspectModels(final SModule language) {
         if (!((language instanceof Language))) {
@@ -41,13 +52,13 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
         return Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             String fullName = it.getModelName();
-            return eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
+            return eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b(fullName, language.getModuleName() + "." + getPresentableAspectName());
           }
         }).ofType(SModel.class).toListSequence();
       }
       @NotNull
       public Collection<SLanguage> getMainLanguages() {
-        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, "jetbrains.mps.lang.aspect"));
+        return ListSequence.fromListAndArray(new ArrayList<SLanguage>(), MetaAdapterFactory.getLanguage(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, "jetbrains.mps.lang.plugin"), MetaAdapterFactory.getLanguage(0x696c11654a59463bL, 0xbc5d902caab85dd0L, "jetbrains.mps.make.facet"), MetaAdapterFactory.getLanguage(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, "jetbrains.mps.lang.aspect"), MetaAdapterFactory.getLanguage(0xc9d137c4325944f8L, 0x80ff33ab2b506ee4L, "jetbrains.mps.lang.util.order"));
       }
       @Nullable
       public LanguageAspectGenerator getGenerator() {
@@ -55,13 +66,15 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
       }
       @Nullable
       public IconResource getIconResource() {
-        return IconContainer.RESOURCE_a0a4a0a0a1;
+        return IconContainer.RESOURCE_a0a6a0a0a1;
       }
       @Nullable
       public String getHelpUrl() {
         return "http://confluence.jetbrains.com/display/MPSD34/Plugin";
       }
 
+
+      private OrderDescriptor myOrderConstraints = new MPSAspects_Order();
 
 
 
@@ -86,7 +99,7 @@ public class LanguageAspectsEP_extension extends Extension.Default<LanguageAspec
 
     };
   }
-  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0b0a0a0b(Object a, Object b) {
+  private static boolean eq_ecu8yf_a0b0a0a0a0a0c0d0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

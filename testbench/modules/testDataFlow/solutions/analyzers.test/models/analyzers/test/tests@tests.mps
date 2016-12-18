@@ -370,7 +370,7 @@
                     <ref role="3xOPvv" node="2$3McZ0VSd8" resolve="root" />
                   </node>
                   <node concept="3Tsc0h" id="2$3McZ0XnVK" role="2OqNvi">
-                    <ref role="3TtcxE" to="9cnx:7ez5JvPhCVm" />
+                    <ref role="3TtcxE" to="9cnx:7ez5JvPhCVm" resolve="child" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="2$3McZ0Xupi" role="2OqNvi" />
@@ -473,7 +473,7 @@
                       <ref role="3xOPvv" node="2$3McZ0VSd8" resolve="root" />
                     </node>
                     <node concept="3Tsc0h" id="3Nk3eRztp5m" role="2OqNvi">
-                      <ref role="3TtcxE" to="9cnx:7ez5JvPhCVm" />
+                      <ref role="3TtcxE" to="9cnx:7ez5JvPhCVm" resolve="child" />
                     </node>
                   </node>
                   <node concept="34oBXx" id="3Nk3eRztp5n" role="2OqNvi" />
@@ -729,7 +729,7 @@
                     <ref role="3xOPvv" node="68XlVg40oYD" resolve="root" />
                   </node>
                   <node concept="3Tsc0h" id="68XlVg40qkd" role="2OqNvi">
-                    <ref role="3TtcxE" to="9cnx:68XlVg40dqX" />
+                    <ref role="3TtcxE" to="9cnx:68XlVg40dqX" resolve="child" />
                   </node>
                 </node>
                 <node concept="34oBXx" id="68XlVg3ZETr" role="2OqNvi" />
@@ -833,11 +833,11 @@
                         <ref role="3xOPvv" node="68XlVg40oYD" resolve="root" />
                       </node>
                       <node concept="3Tsc0h" id="68XlVg40_TZ" role="2OqNvi">
-                        <ref role="3TtcxE" to="9cnx:68XlVg40dqX" />
+                        <ref role="3TtcxE" to="9cnx:68XlVg40dqX" resolve="child" />
                       </node>
                     </node>
                     <node concept="13MTOL" id="68XlVg417Er" role="2OqNvi">
-                      <ref role="13MTZf" to="9cnx:68XlVg40drU" />
+                      <ref role="13MTZf" to="9cnx:68XlVg40drU" resolve="child" />
                     </node>
                   </node>
                   <node concept="34oBXx" id="68XlVg40H6g" role="2OqNvi" />
@@ -848,7 +848,7 @@
                       <ref role="3xOPvv" node="68XlVg40oYD" resolve="root" />
                     </node>
                     <node concept="3Tsc0h" id="68XlVg40qGv" role="2OqNvi">
-                      <ref role="3TtcxE" to="9cnx:68XlVg40dqX" />
+                      <ref role="3TtcxE" to="9cnx:68XlVg40dqX" resolve="child" />
                     </node>
                   </node>
                   <node concept="34oBXx" id="68XlVg40qGw" role="2OqNvi" />

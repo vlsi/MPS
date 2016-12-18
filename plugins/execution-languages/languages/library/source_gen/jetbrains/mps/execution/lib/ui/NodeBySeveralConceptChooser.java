@@ -22,10 +22,6 @@ import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.ScopeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeBySeveralConceptChooser extends NodeChooser {
   @NotNull
@@ -64,31 +60,5 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
         }
       }
     }).toListSequence());
-  }
-
-  @Override
-  protected Iterable<SModel> getModels(String model) {
-    return ScopeOperations.getModelsByName(myScope, model);
-  }
-
-  @Override
-  protected Iterable<SNode> findNodes(SModel model, final String fqName) {
-    return ListSequence.fromList(SModelOperations.nodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {
-      public boolean accept(final SNode node) {
-        return ListSequence.fromList(myTargetConcepts).findFirst(new IWhereFilter<NodesDescriptor>() {
-          public boolean accept(NodesDescriptor it) {
-            _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it.filter();
-            if (!(SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(it.concept())))) {
-              return false;
-            }
-            if (function == null) {
-              return getFqName(node).equals(fqName);
-            } else {
-              return function.invoke(node) && getFqName(node).equals(fqName);
-            }
-          }
-        }) != null;
-      }
-    });
   }
 }

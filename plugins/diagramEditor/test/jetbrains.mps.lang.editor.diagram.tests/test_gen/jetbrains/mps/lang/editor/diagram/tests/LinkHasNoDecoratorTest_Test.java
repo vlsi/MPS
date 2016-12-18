@@ -30,7 +30,7 @@ public class LinkHasNoDecoratorTest_Test extends BaseTransformationTest {
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(getNodeById("1560508619093671384"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf4106a9bL, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector")), getEditorComponent());
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(getNodeById("1560508619093671384"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf4106a9bL, "OutputToInputPortConnector"))), getEditorComponent());
         }
       });
       Assert.assertTrue(descendantMapper.value != null);

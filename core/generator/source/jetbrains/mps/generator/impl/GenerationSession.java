@@ -24,6 +24,7 @@ import jetbrains.mps.generator.GenerationParametersProviderEx;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GenerationTrace;
+import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.ModelGenerationPlan;
 import jetbrains.mps.generator.ModelGenerationPlan.Checkpoint;
 import jetbrains.mps.generator.ModelGenerationPlan.Step;
@@ -289,6 +290,19 @@ class GenerationSession {
         return generationStatus;
       } catch (GenerationCanceledException gce) {
         throw gce;
+      } catch (TemplateQueryException tqe) {
+        // XXX although it's tqe.getCause which is of interest, it might be reasonable to report
+        // tqe to the logger, as it might get configured outside and decide whether to report a TQE to end user or not
+        myLogger.handleException(tqe.getCause());
+        String msg = String.format("Generation failed for model '%s', unexpected error in generator query: %s", myOriginalInputModel.getName(), tqe.getMessage());
+        ProblemDescription pd;
+        if (tqe.getQueryContext() != null) {
+          pd = GeneratorUtil.describeIfExists(tqe.getQueryContext().getInputNode(), "input node");
+        } else {
+          pd = GeneratorUtil.describeInput(tqe.getTemplateContext());
+        }
+        myLogger.error(tqe.getTemplateModelLocation(), msg, pd);
+        return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (GenerationFailureException gfe) {
         final String nestedException;
         if (gfe.getCause() != null) {

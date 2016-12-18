@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -30,13 +31,18 @@ import java.util.List;
 /**
  * Author: Sergey Dmitriev.
  * Time: Oct 21, 2003 5:12:16 PM
+ *
+ * @deprecated since MPS 3.5 not used
  */
+@Deprecated
 public abstract class EditorCellListHandler extends AbstractCellListHandler {
+  private final SNode myNode;
   private SNode myChildConcept;
   private SNode myLinkDeclaration;
 
   public EditorCellListHandler(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    super(ownerNode, childRole, editorContext);
+    super(childRole, editorContext);
+    myNode = ownerNode;
     myLinkDeclaration = new SNodeLegacy(ownerNode).getLinkDeclaration(childRole);
     myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
@@ -44,6 +50,12 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
       throw new RuntimeException("Only Aggregation links can be used in list");
     }
     myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
+  }
+
+  @NotNull
+  @Override
+  public SNode getNode() {
+    return myNode;
   }
 
   public SNode getLinkDeclaration() {
@@ -61,10 +73,10 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   protected EditorCell createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
+    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
+    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getNode(), null, getLinkDeclaration(), editorContext));
     emptyCell.setRole(getElementRole());
     return emptyCell;
   }
@@ -74,7 +86,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      List<? extends SNode> listElements = IterableUtil.asList(getOwner().getChildren(getElementRole()));
+      List<? extends SNode> listElements = IterableUtil.asList(getNode().getChildren(getElementRole()));
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -85,12 +97,12 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
-    SNode realAnchor = insertBefore ? anchorNode : anchorNode == null ? getOwner().getFirstChild() : anchorNode.getNextSibling();
-    getOwner().insertChildBefore(getElementRole(), nodeToInsert, realAnchor);
+    SNode realAnchor = insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling();
+    getNode().insertChildBefore(getElementRole(), nodeToInsert, realAnchor);
   }
 
   @Override
   protected List<? extends SNode> getNodesForList() {
-    return IterableUtil.asList(myOwnerNode.getChildren(getElementRole()));
+    return IterableUtil.asList(getNode().getChildren(getElementRole()));
   }
 }

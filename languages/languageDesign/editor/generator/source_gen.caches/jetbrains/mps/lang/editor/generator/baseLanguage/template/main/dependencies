@@ -14,15 +14,16 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.InsertMacroQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.MapRootRuleCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.QueryKey" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
@@ -39,6 +40,7 @@
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.InlineSwitchCaseContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.InsertMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.MapRootRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReductionRuleQueryContext" />
@@ -63,6 +65,8 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellModel_WithRole__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptEditorHintDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_editorContext__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_node__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.ContextVariable__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.EditorCellModel__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IExtensibleTransformationMenuPart__BehaviorDescriptor" />
@@ -70,10 +74,11 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IMenu__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IParameterizableMenuPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.IStyleSheetMember__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleAttributeDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleClass__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleKeyPack__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleKey__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.StyleSheet__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.SubstituteMenuPart__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.Synchronizeable__BehaviorDescriptor" />

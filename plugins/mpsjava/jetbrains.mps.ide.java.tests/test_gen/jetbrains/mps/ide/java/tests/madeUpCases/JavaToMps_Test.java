@@ -69,14 +69,14 @@ public class JavaToMps_Test extends BaseTransformationTest {
       addNodeById("4795297196607520929");
       addNodeById("1218582063869484737");
       addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/selfref", SNodeOperations.cast(getNodeById("4795297196607521155"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/selfref", SNodeOperations.cast(getNodeById("4795297196607521155"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
 
     }
     public void test_ClassWInnerInterace() throws Exception {
       addNodeById("4795297196607520929");
       addNodeById("1218582063869484737");
       addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/classwiface", SNodeOperations.cast(getNodeById("1218582063869484741"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/classwiface", SNodeOperations.cast(getNodeById("1218582063869484741"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
     }
     public void test_Imports1() throws Exception {
       addNodeById("4795297196607520929");
@@ -106,7 +106,7 @@ public class JavaToMps_Test extends BaseTransformationTest {
       addNodeById("4795297196607520929");
       addNodeById("1218582063869484737");
       addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/nestcontainer", SNodeOperations.cast(getNodeById("8083368042256419834"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/nestcontainer", SNodeOperations.cast(getNodeById("8083368042256419834"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8c108ca66L, "ClassConcept"))));
     }
     public void test_FullSource() throws Exception {
       addNodeById("4795297196607520929");

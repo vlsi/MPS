@@ -9,12 +9,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractPrintExpression_old = new ConceptPresentationBuilder().deprecated().deprecated().create();
-  private final ConceptPresentation props_BLCommand_old = new ConceptPresentationBuilder().deprecated().deprecated().create();
-  private final ConceptPresentation props_BLExpression_old = new ConceptPresentationBuilder().deprecated().deprecated().create();
+  private final ConceptPresentation props_AbstractPrintExpression_old = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
+  private final ConceptPresentation props_BLCommand_old = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
+  private final ConceptPresentation props_BLExpression_old = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
   private final ConceptPresentation props_CustomScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExpressionHelpProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GlobalScope_old = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_GlobalScope_old = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_HelpProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InstancesExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelScope = new ConceptPresentationBuilder().create();
@@ -23,13 +23,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModulesScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodesExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OperationHelpProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_PrintNodeExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_PrintNodeReferenceExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_PrintSequenceExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_PrintTextExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_ProjectExpression_old = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_ProjectScope_old = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_PrintExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_PrintNodeExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_PrintNodeReferenceExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_PrintSequenceExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_PrintTextExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_ProjectExpression_old = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_ProjectScope_old = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_QueryExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryParameterExact = new ConceptPresentationBuilder().create();
@@ -38,7 +38,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QueryParameterScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReferencesExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ScopeParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ShowExpression_old = new ConceptPresentationBuilder().deprecated().deprecated().create();
+  private final ConceptPresentation props_ShowExpression_old = new ConceptPresentationBuilder().deprecated(true).deprecated().create();
   private final ConceptPresentation props_UsagesExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_WithStatement = new ConceptPresentationBuilder().create();
 

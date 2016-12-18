@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -72,7 +73,7 @@ public final class ModuleReference implements SModuleReference {
     if (myModuleId == null && p.getModuleId() == null) {
       return myModuleName.equals(p.getModuleName());
     }
-    return EqualUtil.equals(myModuleId, p.getModuleId());
+    return Objects.equals(myModuleId, p.getModuleId());
   }
 
   public String toString() {

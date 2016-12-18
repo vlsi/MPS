@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,7 +42,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -50,6 +49,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -68,7 +68,11 @@ public class CellAction_PasteNode extends AbstractCellAction {
   @Override
   public boolean canExecute(EditorContext context) {
     Selection selection = context.getSelectionManager().getSelection();
-    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selection.getSelectedNodes().get(0).getModel());
+    List<SNode> selectedNodes = selection.getSelectedNodes();
+    if (selectedNodes.isEmpty()) {
+      return false;
+    }
+    List<SNode> pasteNodes = CopyPasteUtil.getNodesFromClipboard(selectedNodes.get(0).getModel());
 
     if (pasteNodes == null || pasteNodes.isEmpty()) {
       // it used to be ok because conversion would be invoked in this case
@@ -76,14 +80,14 @@ public class CellAction_PasteNode extends AbstractCellAction {
     }
 
     boolean disposed = false;
-    for (SNode node : selection.getSelectedNodes()) {
-      if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
+    for (SNode node : selectedNodes) {
+      if (!SNodeUtil.isAccessible(node, context.getRepository())) {
         disposed = true;
         break;
       }
     }
 
-    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
+    boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selectedNodes, pasteNodes);
     if (selection instanceof SingularSelection &&
         (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
             (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
@@ -92,7 +96,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
         return false;
       }
       SNode selectedNode = selectedCell.getSNode();
-      if (selectedNode == null || !(SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance()))) {
+      if (selectedNode == null || !(SNodeUtil.isAccessible(selectedNode, context.getRepository()))) {
         return false;
       }
 
@@ -187,13 +191,13 @@ public class CellAction_PasteNode extends AbstractCellAction {
           } else {
             currentSelectedNodes = new ArrayList<>();
             for (SNodeReference ref : selectedReferences) {
-              currentSelectedNodes.add(ref.resolve(MPSModuleRepository.getInstance()));
+              currentSelectedNodes.add(ref.resolve(context.getRepository()));
             }
           }
 
 
           NodePaster nodePaster = new NodePaster(pasteNodes);
-          boolean disposed = CellAction_PasteNode.this.checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
+          boolean disposed = CellAction_PasteNode.this.checkDisposedSelectedNodes(context.getRepository(), currentSelectedNodes, selectedReferences);
           boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
           if (selection instanceof SingularSelection &&
               (selection instanceof EditorCellLabelSelection && !CellAction_PasteNode.this.isCompletelySelected((EditorCellLabelSelection) selection) ||
@@ -203,8 +207,8 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
 
             if (CellAction_PasteNode.this.canPasteBefore(selectedCell, pasteNodes)) {
-              SNode selectedNode = inRepository ? selectedCellReference.resolve(MPSModuleRepository.getInstance()) : cellNodeSelected;
-              if (CellAction_PasteNode.this.checkDisposed(selectedCellReference, cellNodeSelected)) {
+              SNode selectedNode = inRepository ? selectedCellReference.resolve(context.getRepository()) : cellNodeSelected;
+              if (CellAction_PasteNode.this.checkDisposed(context.getRepository(), selectedCellReference, cellNodeSelected)) {
                 return;
               }
               new NodePaster(pasteNodes).pasteRelative(selectedNode, PastePlaceHint.BEFORE_ANCHOR);
@@ -237,22 +241,20 @@ public class CellAction_PasteNode extends AbstractCellAction {
     });
   }
 
-  private boolean checkDisposedSelectedNodes(List<SNode> currentSelectedNodes, List<SNodeReference> selectedReferences) {
+  private boolean checkDisposedSelectedNodes(SRepository repository, List<SNode> currentSelectedNodes, List<SNodeReference> selectedReferences) {
     Iterator<SNodeReference> referenceIterator = selectedReferences.iterator();
     for (SNode node : currentSelectedNodes) {
       SNodeReference reference = referenceIterator.next();
-      if (checkDisposed(reference, node)) {
+      if (checkDisposed(repository, reference, node)) {
         return true;
       }
     }
     return false;
   }
 
-  private boolean checkDisposed(SNodeReference currentSelectedReference, SNode selectedNode) {
-    if (!SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance())) {
-      LOG.error(
-          "Selected node is disposed: node = " + selectedNode.toString() + " ; node pointer = (" + currentSelectedReference.toString() +
-              ")");
+  private boolean checkDisposed(SRepository repository, SNodeReference currentSelectedReference, SNode selectedNode) {
+    if (!SNodeUtil.isAccessible(selectedNode, repository)) {
+      LOG.error(String.format("Selected node is disposed: node = %s ; node pointer = (%s)", selectedNode, currentSelectedReference));
       return true;
     }
     return false;

@@ -2,7 +2,7 @@
 <model ref="r:de44096e-4e5d-49b5-9935-e04d24a272d2(jetbrains.mps.build.mps.testManifest.pluginSolution.plugin)">
   <persistence version="9" />
   <languages>
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
     <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
@@ -11,7 +11,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -39,6 +39,7 @@
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
+    <import index="o3n2" ref="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" />
     <import index="tpeu" ref="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" implicit="true" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
   </imports>
@@ -147,6 +148,7 @@
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg" />
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
+        <property id="1176718929932" name="isFinal" index="3TUv4t" />
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
       <concept id="1068498886296" name="jetbrains.mps.baseLanguage.structure.VariableReference" flags="nn" index="37vLTw">
@@ -533,7 +535,7 @@
                       </node>
                     </node>
                     <node concept="3TrEf2" id="6DW_AMA$l8G" role="2OqNvi">
-                      <ref role="3Tt5mk" to="jjwj:6DW_AMA$3Cx" />
+                      <ref role="3Tt5mk" to="jjwj:6DW_AMA$3Cx" resolve="target" />
                     </node>
                   </node>
                 </node>
@@ -666,7 +668,7 @@
                           <ref role="3cqZAo" node="7vU6U507lJm" resolve="mref" />
                         </node>
                         <node concept="3TrEf2" id="7vU6U507tPG" role="2OqNvi">
-                          <ref role="3Tt5mk" to="jjwj:2R6x4Anyc75" />
+                          <ref role="3Tt5mk" to="jjwj:2R6x4Anyc75" resolve="manifest" />
                         </node>
                       </node>
                     </node>
@@ -699,7 +701,7 @@
                     </node>
                   </node>
                   <node concept="3Tsc0h" id="7vU6U507lJv" role="2OqNvi">
-                    <ref role="3TtcxE" to="jjwj:2R6x4AnydJ4" />
+                    <ref role="3TtcxE" to="jjwj:2R6x4AnydJ4" resolve="manifest" />
                   </node>
                 </node>
               </node>
@@ -1696,6 +1698,28 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="4WwUR8huXSC" role="3cqZAp">
+          <node concept="3cpWsn" id="4WwUR8huXSD" role="3cpWs9">
+            <property role="TrG5h" value="relativePathHelper" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="4WwUR8huXSE" role="1tU5fm">
+              <ref role="3uigEE" to="o3n2:5iAPpylXsc4" resolve="RelativePathHelper" />
+            </node>
+            <node concept="2ShNRf" id="4WwUR8huXSF" role="33vP2m">
+              <node concept="1pGfFk" id="4WwUR8huXSG" role="2ShVmc">
+                <ref role="37wK5l" to="o3n2:1AfwOXhIBBI" resolve="RelativePathHelper" />
+                <node concept="2OqwBi" id="4WwUR8huXSH" role="37wK5m">
+                  <node concept="37vLTw" id="4WwUR8huXSI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="1w$c60CMRJd" resolve="projectFile" />
+                  </node>
+                  <node concept="liA8E" id="4WwUR8huXSJ" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="7vU6U504NKQ" role="3cqZAp">
           <node concept="3cpWsn" id="7vU6U504NKT" role="3cpWs9">
             <property role="TrG5h" value="result" />
@@ -1786,27 +1810,33 @@
                         <node concept="3Tqbb2" id="1w$c60CMTfu" role="1tU5fm">
                           <ref role="ehGHo" to="3ior:6mpuAlRavrV" resolve="BuildRelativePath" />
                         </node>
-                        <node concept="2YIFZM" id="1w$c60CMPGj" role="33vP2m">
-                          <ref role="37wK5l" to="tken:1w$c60CLQYU" resolve="createRelative" />
-                          <ref role="1Pybhc" to="tken:2hkCNA7Z0MW" resolve="PathConverter" />
-                          <node concept="2OqwBi" id="1w$c60CMSfT" role="37wK5m">
-                            <node concept="37vLTw" id="1w$c60CMS3H" role="2Oq$k0">
-                              <ref role="3cqZAo" node="1w$c60CMRJd" resolve="projectFile" />
-                            </node>
-                            <node concept="liA8E" id="1w$c60CMSO1" role="2OqNvi">
-                              <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                        <node concept="2OqwBi" id="4WwUR8hv2WE" role="33vP2m">
+                          <node concept="2ShNRf" id="4WwUR8hv2WF" role="2Oq$k0">
+                            <node concept="1pGfFk" id="4WwUR8hv2WG" role="2ShVmc">
+                              <ref role="37wK5l" to="tken:16ApZ_p$vlx" resolve="PathBuilder" />
+                              <node concept="37vLTw" id="4WwUR8hv3nh" role="37wK5m">
+                                <ref role="3cqZAo" node="7vU6U507DC0" resolve="target" />
+                              </node>
                             </node>
                           </node>
-                          <node concept="1LFfDK" id="1w$c60CMQOJ" role="37wK5m">
-                            <node concept="3cmrfG" id="1w$c60CMQOU" role="1LF_Uc">
-                              <property role="3cmrfH" value="1" />
+                          <node concept="liA8E" id="4WwUR8hv2WI" role="2OqNvi">
+                            <ref role="37wK5l" to="tken:16ApZ_p$KV5" resolve="buildRelative" />
+                            <node concept="2OqwBi" id="4WwUR8hv2WJ" role="37wK5m">
+                              <node concept="37vLTw" id="4WwUR8hv2WK" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4WwUR8huXSD" resolve="relativePathHelper" />
+                              </node>
+                              <node concept="liA8E" id="4WwUR8hv2WL" role="2OqNvi">
+                                <ref role="37wK5l" to="o3n2:5iAPpylXscy" resolve="makeRelative" />
+                                <node concept="1LFfDK" id="4WwUR8hv2WM" role="37wK5m">
+                                  <node concept="3cmrfG" id="4WwUR8hv2WN" role="1LF_Uc">
+                                    <property role="3cmrfH" value="1" />
+                                  </node>
+                                  <node concept="37vLTw" id="4WwUR8hv2WO" role="1LFl5Q">
+                                    <ref role="3cqZAo" node="7vU6U504OPn" resolve="t" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
-                            <node concept="37vLTw" id="1w$c60CMQDs" role="1LFl5Q">
-                              <ref role="3cqZAo" node="7vU6U504OPn" resolve="t" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="7vU6U507KW7" role="37wK5m">
-                            <ref role="3cqZAo" node="7vU6U507DC0" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -1818,7 +1848,7 @@
                             <ref role="3cqZAo" node="7vU6U504Ot5" resolve="la" />
                           </node>
                           <node concept="3TrEf2" id="2R6x4An$flt" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
+                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
                           </node>
                         </node>
                         <node concept="2oxUTD" id="2R6x4An$gf3" role="2OqNvi">
@@ -1867,8 +1897,8 @@
                   <node concept="TDmWw" id="1w$c60CEqV7" role="TEbGg">
                     <node concept="3cpWsn" id="1w$c60CEqV9" role="TDEfY">
                       <property role="TrG5h" value="ex" />
-                      <node concept="3uibUv" id="1w$c60CErjE" role="1tU5fm">
-                        <ref role="3uigEE" to="tken:2hkCNA7Z0QY" resolve="PathConverter.PathConvertException" />
+                      <node concept="3uibUv" id="4WwUR8hvcrX" role="1tU5fm">
+                        <ref role="3uigEE" to="o3n2:1AfwOXhIPFt" resolve="RelativePathHelper.PathException" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="1w$c60CEqVd" role="TDEfX">
@@ -1878,8 +1908,8 @@
                         <node concept="37vLTw" id="7vU6U505so0" role="34bMjA">
                           <ref role="3cqZAo" node="1w$c60CEqV9" resolve="ex" />
                         </node>
-                        <node concept="Xl_RD" id="7vU6U505sph" role="34bqiv">
-                          <property role="Xl_RC" value="path converter threw exception" />
+                        <node concept="Xl_RD" id="4WwUR8hvcxY" role="34bqiv">
+                          <property role="Xl_RC" value="Failed to build project-relative path" />
                         </node>
                       </node>
                       <node concept="3cpWs6" id="7vU6U505suF" role="3cqZAp">
@@ -1972,6 +2002,33 @@
             <node concept="10Nm6u" id="7vU6U505wtL" role="3uHU7w" />
             <node concept="37vLTw" id="7vU6U505wtM" role="3uHU7B">
               <ref role="3cqZAo" node="7vU6U505wt_" resolve="projectFile" />
+            </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4WwUR8huNH3" role="3cqZAp">
+          <node concept="3SKdUq" id="4WwUR8huNH5" role="3SKWNk">
+            <property role="3SKdUp" value="XXX getProjectFile in fact gives project directory, what a surprise" />
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4WwUR8hutVe" role="3cqZAp">
+          <node concept="3cpWsn" id="4WwUR8hutVf" role="3cpWs9">
+            <property role="TrG5h" value="relativePathHelper" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="4WwUR8hutVg" role="1tU5fm">
+              <ref role="3uigEE" to="o3n2:5iAPpylXsc4" resolve="RelativePathHelper" />
+            </node>
+            <node concept="2ShNRf" id="4WwUR8huw_R" role="33vP2m">
+              <node concept="1pGfFk" id="4WwUR8huJHc" role="2ShVmc">
+                <ref role="37wK5l" to="o3n2:1AfwOXhIBBI" resolve="RelativePathHelper" />
+                <node concept="2OqwBi" id="4WwUR8huKoH" role="37wK5m">
+                  <node concept="37vLTw" id="4WwUR8huJXx" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7vU6U505wt_" resolve="projectFile" />
+                  </node>
+                  <node concept="liA8E" id="4WwUR8huKXR" role="2OqNvi">
+                    <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -2104,27 +2161,33 @@
                         <node concept="3Tqbb2" id="7vU6U505wup" role="1tU5fm">
                           <ref role="ehGHo" to="3ior:6mpuAlRavrV" resolve="BuildRelativePath" />
                         </node>
-                        <node concept="2YIFZM" id="7vU6U505wuq" role="33vP2m">
-                          <ref role="37wK5l" to="tken:1w$c60CLQYU" resolve="createRelative" />
-                          <ref role="1Pybhc" to="tken:2hkCNA7Z0MW" resolve="PathConverter" />
-                          <node concept="2OqwBi" id="7vU6U505wur" role="37wK5m">
-                            <node concept="37vLTw" id="7vU6U505wus" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7vU6U505wt_" resolve="projectFile" />
-                            </node>
-                            <node concept="liA8E" id="7vU6U505wut" role="2OqNvi">
-                              <ref role="37wK5l" to="guwi:~File.getPath():java.lang.String" resolve="getPath" />
+                        <node concept="2OqwBi" id="4WwUR8huRjl" role="33vP2m">
+                          <node concept="2ShNRf" id="4WwUR8huQsY" role="2Oq$k0">
+                            <node concept="1pGfFk" id="4WwUR8huR4c" role="2ShVmc">
+                              <ref role="37wK5l" to="tken:16ApZ_p$vlx" resolve="PathBuilder" />
+                              <node concept="37vLTw" id="4WwUR8huR9o" role="37wK5m">
+                                <ref role="3cqZAo" node="7vU6U507DC0" resolve="target" />
+                              </node>
                             </node>
                           </node>
-                          <node concept="1LFfDK" id="7vU6U505wuu" role="37wK5m">
-                            <node concept="3cmrfG" id="7vU6U505wuv" role="1LF_Uc">
-                              <property role="3cmrfH" value="1" />
+                          <node concept="liA8E" id="4WwUR8huRuS" role="2OqNvi">
+                            <ref role="37wK5l" to="tken:16ApZ_p$KV5" resolve="buildRelative" />
+                            <node concept="2OqwBi" id="4WwUR8huS7D" role="37wK5m">
+                              <node concept="37vLTw" id="4WwUR8huRVT" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4WwUR8hutVf" resolve="relativePathHelper" />
+                              </node>
+                              <node concept="liA8E" id="4WwUR8huSmV" role="2OqNvi">
+                                <ref role="37wK5l" to="o3n2:5iAPpylXscy" resolve="makeRelative" />
+                                <node concept="1LFfDK" id="4WwUR8huT5y" role="37wK5m">
+                                  <node concept="3cmrfG" id="4WwUR8huT9y" role="1LF_Uc">
+                                    <property role="3cmrfH" value="1" />
+                                  </node>
+                                  <node concept="37vLTw" id="4WwUR8huSBm" role="1LFl5Q">
+                                    <ref role="3cqZAo" node="7vU6U505wuN" resolve="t" />
+                                  </node>
+                                </node>
+                              </node>
                             </node>
-                            <node concept="37vLTw" id="7vU6U505wuw" role="1LFl5Q">
-                              <ref role="3cqZAo" node="7vU6U505wuN" resolve="t" />
-                            </node>
-                          </node>
-                          <node concept="37vLTw" id="7vU6U507PFu" role="37wK5m">
-                            <ref role="3cqZAo" node="7vU6U507DC0" resolve="target" />
                           </node>
                         </node>
                       </node>
@@ -2136,7 +2199,7 @@
                             <ref role="3cqZAo" node="7vU6U505wu7" resolve="sol" />
                           </node>
                           <node concept="3TrEf2" id="7vU6U505wuA" role="2OqNvi">
-                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" />
+                            <ref role="3Tt5mk" to="kdzh:hS0KzPP7W_" resolve="path" />
                           </node>
                         </node>
                         <node concept="2oxUTD" id="7vU6U505wuB" role="2OqNvi">
@@ -2162,8 +2225,8 @@
                   <node concept="TDmWw" id="7vU6U505wuE" role="TEbGg">
                     <node concept="3cpWsn" id="7vU6U505wuF" role="TDEfY">
                       <property role="TrG5h" value="ex" />
-                      <node concept="3uibUv" id="7vU6U505wuG" role="1tU5fm">
-                        <ref role="3uigEE" to="tken:2hkCNA7Z0QY" resolve="PathConverter.PathConvertException" />
+                      <node concept="3uibUv" id="4WwUR8huU7g" role="1tU5fm">
+                        <ref role="3uigEE" to="o3n2:1AfwOXhIPFt" resolve="RelativePathHelper.PathException" />
                       </node>
                     </node>
                     <node concept="3clFbS" id="7vU6U505wuH" role="TDEfX">
@@ -2174,7 +2237,7 @@
                           <ref role="3cqZAo" node="7vU6U505wuF" resolve="ex" />
                         </node>
                         <node concept="Xl_RD" id="7vU6U505wuK" role="34bqiv">
-                          <property role="Xl_RC" value="path converter threw exception" />
+                          <property role="Xl_RC" value="Failed to build project-relative path" />
                         </node>
                       </node>
                       <node concept="3cpWs6" id="7vU6U505wuL" role="3cqZAp">
@@ -2258,7 +2321,7 @@
                     <ref role="3cqZAo" node="7vU6U505W7I" resolve="jars" />
                   </node>
                   <node concept="3TrEf2" id="7vU6U5021UQ" role="2OqNvi">
-                    <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" />
+                    <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" resolve="module" />
                   </node>
                 </node>
                 <node concept="2oxUTD" id="7vU6U5021UR" role="2OqNvi">
@@ -2348,7 +2411,7 @@
                     <ref role="3cqZAo" node="7vU6U5067tM" resolve="jars" />
                   </node>
                   <node concept="3TrEf2" id="7vU6U5067tV" role="2OqNvi">
-                    <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" />
+                    <ref role="3Tt5mk" to="kdzh:16hzwWwASfD" resolve="module" />
                   </node>
                 </node>
                 <node concept="2oxUTD" id="7vU6U5067tW" role="2OqNvi">
@@ -2492,7 +2555,7 @@
                 <ref role="3cqZAo" node="7vU6U506u85" resolve="testGroup" />
               </node>
               <node concept="3TrEf2" id="7vU6U506u80" role="2OqNvi">
-                <ref role="3Tt5mk" to="5tjl:3X9rC2XzJdG" />
+                <ref role="3Tt5mk" to="5tjl:3X9rC2XzJdG" resolve="group" />
               </node>
             </node>
             <node concept="2oxUTD" id="7vU6U506u81" role="2OqNvi">

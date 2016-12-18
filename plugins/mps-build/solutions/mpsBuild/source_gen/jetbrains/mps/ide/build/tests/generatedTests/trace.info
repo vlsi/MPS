@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info version="2">
-  <root nodeRef="r:12897c41-1d23-444a-8c3d-8a254e74f9b6(jetbrains.mps.ide.build.tests.generatedTests)/7419002214784261623">
-    <file name="mpsTestModules.xml">
-      <unit id="7419002214784261623" at="1,0,1422,10" name="jetbrains.mps.ide.build.tests.generatedTests.mpsTestModules" />
-    </file>
-  </root>
-</debug-info>
-

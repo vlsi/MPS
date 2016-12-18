@@ -9,11 +9,12 @@ import jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.core.aspects.behaviour.api.SMethod;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.core.aspects.behaviour.SMethodBuilder;
 import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,19 +29,19 @@ public final class DiagramElementCreationHandler__BehaviorDescriptor extends Bas
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7726f7L, "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<List<SNode>> getParameters_idhEwIGRM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRM").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameters_idhEwIGRM, getExpectedReturnType_idhEwIGRD);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParameterConcepts_id2xELmDxyi2v, getExpectedReturnType_idhEwIGRD);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL, "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter").getDeclarationNode());
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L, "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter").getDeclarationNode());
-    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L, "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter").getDeclarationNode());
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    List<SConcept> result = ListSequence.fromList(new ArrayList<SConcept>());
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0edeL, "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ee2L, "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter"));
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x76f1cb20ba7a0ed7L, "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"));
     return result;
 
   }
@@ -65,7 +66,7 @@ public final class DiagramElementCreationHandler__BehaviorDescriptor extends Bas
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((List<SNode>) getParameters_idhEwIGRM(node));
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       case 1:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
       default:

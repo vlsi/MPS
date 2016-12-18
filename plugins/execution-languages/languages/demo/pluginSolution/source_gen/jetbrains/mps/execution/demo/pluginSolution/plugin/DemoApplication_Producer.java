@@ -16,21 +16,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import com.intellij.execution.impl.RunManagerImpl;
 
 public class DemoApplication_Producer {
-  private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Factory";
+  private static final String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.demo.pluginSolution.plugin.DemoApplication_Configuration_Factory";
+
   public DemoApplication_Producer() {
   }
+
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-  public static class ProducerPart_NodeSomeConcept_rh22bz_a extends BaseMpsProducer<SNode> {
+
+  public static final class ProducerPart_NodeSomeConcept_rh22bz_a extends BaseMpsProducer<SNode> {
     public ProducerPart_NodeSomeConcept_rh22bz_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
+
+    @Override
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), MetaAdapterFactory.getConcept(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, "jetbrains.mps.execution.demo.structure.SomeConcept"));
     }
+
+    @Override
     protected DemoApplication_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(MPSPsiElement.createFor(source, getMpsProject()));
       if (!(SPropertyOperations.getBoolean(source, MetaAdapterFactory.getProperty(0xe6081818930c4926L, 0xbdef3537bcc59087L, 0x446739e63be33684L, 0x446739e63be7cbc4L, "valid")))) {
@@ -40,6 +47,8 @@ public class DemoApplication_Producer {
       configuration.getNode().setNode(source);
       return configuration;
     }
+
+
     @Override
     public DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a clone() {
       return (DemoApplication_Producer.ProducerPart_NodeSomeConcept_rh22bz_a) super.clone();

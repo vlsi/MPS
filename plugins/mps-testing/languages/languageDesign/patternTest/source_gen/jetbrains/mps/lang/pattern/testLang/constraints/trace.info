@@ -48,7 +48,7 @@
         <var name="references" id="1563914226484898755" />
       </scope>
       <scope id="1563914226484898755" at="28,0,53,0" />
-      <unit id="1563914226484898755" at="39,19,48,9" name="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints$2" />
+      <unit id="1563914226484898755" at="39,19,48,9" name="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints$1$1" />
       <unit id="1563914226484898755" at="31,159,50,5" name="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints$1" />
       <unit id="1563914226484898755" at="23,0,55,0" name="jetbrains.mps.lang.pattern.testLang.constraints.TestPropertyVariableReference_Constraints" />
     </file>
@@ -103,7 +103,7 @@
         <var name="references" id="8707387027762047794" />
       </scope>
       <scope id="8707387027762047794" at="35,0,69,0" />
-      <unit id="8707387027762047794" at="46,19,64,9" name="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints$2" />
+      <unit id="8707387027762047794" at="46,19,64,9" name="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints$1$1" />
       <unit id="8707387027762047794" at="38,159,66,5" name="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints$1" />
       <unit id="8707387027762047794" at="30,0,71,0" name="jetbrains.mps.lang.pattern.testLang.constraints.TestVariableReference_Constraints" />
     </file>

@@ -59,7 +59,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
     return BuildSourcePath__BehaviorDescriptor.getLocalPath_id4Kip2_918Y$.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x233d92f9e348d768L, 0x233d92f9e34a784cL, "archivePath")), context) + "!";
   }
   /*package*/ static void fetchDependencies_id57YmpYyL8F1(@NotNull SNode __thisNode__, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    artifacts.needsFetch(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), false, false));
+    builder.needsFetch(SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a14L, "jetbrains.mps.build.structure.BuildLayout"), false, false));
     // and still, ???? 
   }
   /*package*/ static String getRelativePath_id4Kip2_918YF(@NotNull SNode __thisNode__) {
@@ -82,7 +82,7 @@ public final class BuildSourceArchiveRelativePath__BehaviorDescriptor extends Ba
       return null;
     }
     DependenciesHelper helper = new DependenciesHelper(generationContext, SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"), false, false));
-    String unpackPath = helper.contentLocations().get(DependenciesHelper.getOriginalNode(__thisNode__, generationContext));
+    String unpackPath = helper.getContentLocation(__thisNode__);
     if ((unpackPath == null || unpackPath.length() == 0)) {
       generationContext.showErrorMessage(__thisNode__, "Empty unpack path for an archive relative path.");
       return null;

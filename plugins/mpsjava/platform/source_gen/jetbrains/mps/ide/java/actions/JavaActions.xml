@@ -22,6 +22,7 @@
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethod_Action" class="jetbrains.mps.ide.java.actions.ImplementMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl I" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl I" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.ImplementMethodsAsIntention_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.InlineField_Action" class="jetbrains.mps.ide.java.actions.InlineField_Action">
@@ -47,6 +48,7 @@
     <action id="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action" class="jetbrains.mps.ide.java.actions.MigrateSourcesToMPS_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.OverrideMethod_Action" class="jetbrains.mps.ide.java.actions.OverrideMethod_Action">
       <keyboard-shortcut first-keystroke="ctrl O" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl O" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.OverrideMethodsAsIntention_Action" class="jetbrains.mps.ide.java.actions.OverrideMethodsAsIntention_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action" class="jetbrains.mps.ide.java.actions.PasteAsJavaClass_Action"></action>
@@ -61,6 +63,7 @@
     <action id="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" class="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"></action>
     <action id="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action" class="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action">
       <keyboard-shortcut first-keystroke="alt DELETE" keymap="$default" />
+      <keyboard-shortcut first-keystroke="meta DELETE" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ShowMembers_Action" class="jetbrains.mps.ide.java.actions.ShowMembers_Action">
       <keyboard-shortcut first-keystroke="ctrl F12" keymap="$default" />

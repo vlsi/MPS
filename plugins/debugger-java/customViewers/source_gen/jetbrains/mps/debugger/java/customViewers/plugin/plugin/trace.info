@@ -305,7 +305,7 @@
       <scope id="2929731761237869240" at="27,0,42,0">
         <var name="proxy" id="2929731761237869240" />
       </scope>
-      <unit id="2929731761237869240" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory$1" />
+      <unit id="2929731761237869240" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory$ListWrapper$1" />
       <unit id="2929731761237869240" at="29,58,40,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory$1" />
       <unit id="2929731761237869240" at="46,0,70,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory$ListWrapper" />
       <unit id="2929731761237869240" at="21,0,76,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.List_WrapperFactory" />
@@ -405,8 +405,8 @@
       <scope id="2929731761237869279" at="27,0,42,0">
         <var name="proxy" id="2929731761237869279" />
       </scope>
-      <unit id="2929731761237869279" at="53,60,57,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$1" />
-      <unit id="2929731761237869279" at="68,60,72,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$2" />
+      <unit id="2929731761237869279" at="53,60,57,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$MapEntryWrapper$1" />
+      <unit id="2929731761237869279" at="68,60,72,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$MapEntryWrapper$2" />
       <unit id="2929731761237869279" at="29,58,40,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$1" />
       <unit id="2929731761237869279" at="46,0,83,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory$MapEntryWrapper" />
       <unit id="2929731761237869279" at="21,0,89,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.MapEntry_WrapperFactory" />
@@ -489,7 +489,7 @@
       <scope id="2929731761237869354" at="27,0,42,0">
         <var name="proxy" id="2929731761237869354" />
       </scope>
-      <unit id="2929731761237869354" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory$1" />
+      <unit id="2929731761237869354" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory$MapWrapper$1" />
       <unit id="2929731761237869354" at="29,58,40,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory$1" />
       <unit id="2929731761237869354" at="46,0,71,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory$MapWrapper" />
       <unit id="2929731761237869354" at="21,0,77,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Map_WrapperFactory" />
@@ -571,7 +571,7 @@
       <scope id="2929731761237869400" at="27,0,42,0">
         <var name="proxy" id="2929731761237869400" />
       </scope>
-      <unit id="2929731761237869400" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory$1" />
+      <unit id="2929731761237869400" at="51,60,55,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory$SetWrapper$1" />
       <unit id="2929731761237869400" at="29,58,40,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory$1" />
       <unit id="2929731761237869400" at="46,0,71,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory$SetWrapper" />
       <unit id="2929731761237869400" at="21,0,77,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.Set_WrapperFactory" />
@@ -668,8 +668,8 @@
       <scope id="2929731761237871799" at="27,0,42,0">
         <var name="proxy" id="2929731761237871799" />
       </scope>
-      <unit id="2929731761237871799" at="53,60,57,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$1" />
-      <unit id="2929731761237871799" at="68,60,72,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$2" />
+      <unit id="2929731761237871799" at="53,60,57,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper$1" />
+      <unit id="2929731761237871799" at="68,60,72,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper$2" />
       <unit id="2929731761237871799" at="29,58,40,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$1" />
       <unit id="2929731761237871799" at="46,0,81,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory$IndexedTupleViewerWrapper" />
       <unit id="2929731761237871799" at="21,0,87,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.IndexedTupleViewer_WrapperFactory" />
@@ -835,8 +835,8 @@
       <scope id="2929731761237871848" at="61,0,96,0">
         <var name="value" id="2929731761237871848" />
       </scope>
-      <unit id="2929731761237871848" at="55,60,59,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$1" />
-      <unit id="2929731761237871848" at="97,60,101,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$2" />
+      <unit id="2929731761237871848" at="55,60,59,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$SNodeViewerWrapper$1" />
+      <unit id="2929731761237871848" at="97,60,101,7" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$SNodeViewerWrapper$2" />
       <unit id="2929731761237871848" at="31,58,42,5" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$1" />
       <unit id="2929731761237871848" at="48,0,121,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory$SNodeViewerWrapper" />
       <unit id="2929731761237871848" at="23,0,127,0" name="jetbrains.mps.debugger.java.customViewers.plugin.plugin.SNodeViewer_WrapperFactory" />

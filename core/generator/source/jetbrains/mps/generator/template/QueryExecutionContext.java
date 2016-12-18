@@ -26,7 +26,6 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -49,10 +48,6 @@ public interface QueryExecutionContext extends QueryExecutor {
    * will be generated from the same thread.
    */
   boolean isMultithreaded();
-
-  @Deprecated
-  @ToRemove(version = 0)
-  Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context);
 
   Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException;
 

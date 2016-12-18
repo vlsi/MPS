@@ -134,7 +134,7 @@ public class TextCommentPartUtil {
 
     while (ListSequence.fromList(SLinkOperations.getChildren(thisLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).count() > indexInParent + 1) {
       SNode linePart = ListSequence.fromList(SLinkOperations.getChildren(thisLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).getElement(indexInParent + 1);
-      SNodeOperations.detachNode(linePart);
+      SNodeOperations.deleteNode(linePart);
       ListSequence.fromList(SLinkOperations.getChildren(nextLine, MetaAdapterFactory.getContainmentLink(0xf280165065d5424eL, 0xbb1b463a8781b786L, 0x757ba20a4c87f96cL, 0x7c7f5b2f3199028dL, "part"))).addElement(linePart);
     }
 

@@ -16,6 +16,7 @@ import jetbrains.mps.ide.migration.MigrationTrigger;
 import jetbrains.mps.ide.migration.IStartupMigrationExecutor;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.ide.migration.MigrationDialogUtil;
 
 public class ExecuteMigrationAssistant_Action extends BaseAction {
@@ -56,10 +57,10 @@ public class ExecuteMigrationAssistant_Action extends BaseAction {
     MigrationTrigger mt = ((MigrationTrigger) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IStartupMigrationExecutor.class));
 
     final Wrappers._boolean migrationRequired = new Wrappers._boolean();
-
-    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runWriteAction(new Runnable() {
+    final MigrationManager component = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationManager.class);
+    ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        migrationRequired.value = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MigrationManager.class).isMigrationRequired();
+        migrationRequired.value = component.isMigrationRequired() || component.importVersionsUpdateRequired(MigrationsUtil.getMigrateableModulesFromProject(((MPSProject) MapSequence.fromMap(_params).get("mpsProject"))));
       }
     });
     if (!(migrationRequired.value)) {

@@ -211,7 +211,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForIntentionParameter() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.intentions", "IntentionParameter", 0xd7a92d38f7db40d0L, 0x8431763b0c3c9f20L, 0x120c8fd57fbL);
     b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)/1240322627579");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);

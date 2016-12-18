@@ -141,7 +141,7 @@
         <var name="references" id="3748979635598869842" />
       </scope>
       <scope id="3748979635598869842" at="29,0,57,0" />
-      <unit id="3748979635598869842" at="40,19,52,9" name="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints$2" />
+      <unit id="3748979635598869842" at="40,19,52,9" name="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints$1$1" />
       <unit id="3748979635598869842" at="32,154,54,5" name="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints$1" />
       <unit id="3748979635598869842" at="24,0,59,0" name="jetbrains.mps.lang.editor.diagram.constraints.PropertyArgument_Constraints" />
     </file>
@@ -185,7 +185,7 @@
         <var name="references" id="3748979635598885879" />
       </scope>
       <scope id="3748979635598885879" at="29,0,57,0" />
-      <unit id="3748979635598885879" at="40,19,52,9" name="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints$2" />
+      <unit id="3748979635598885879" at="40,19,52,9" name="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints$1$1" />
       <unit id="3748979635598885879" at="32,150,54,5" name="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints$1" />
       <unit id="3748979635598885879" at="24,0,59,0" name="jetbrains.mps.lang.editor.diagram.constraints.LinkArgument_Constraints" />
     </file>
@@ -260,8 +260,8 @@
         <var name="references" id="6194248980633825077" />
       </scope>
       <scope id="6194248980633825077" at="35,0,70,0" />
-      <unit id="6194248980634024738" at="57,25,62,15" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints$3" />
-      <unit id="6194248980633825077" at="46,19,65,9" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints$2" />
+      <unit id="6194248980634024738" at="57,25,62,15" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints$1$1$1" />
+      <unit id="6194248980633825077" at="46,19,65,9" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints$1$1" />
       <unit id="6194248980633825077" at="38,164,67,5" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints$1" />
       <unit id="6194248980633825077" at="30,0,72,0" name="jetbrains.mps.lang.editor.diagram.constraints.CreationActionReference_Constraints" />
     </file>

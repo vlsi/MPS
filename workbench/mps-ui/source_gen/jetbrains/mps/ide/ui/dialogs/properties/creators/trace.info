@@ -40,7 +40,7 @@
         <var name="models" id="3995997045458364486" />
       </scope>
       <scope id="3995997045458364480" at="23,0,38,0" />
-      <unit id="3995997045458364515" at="29,61,33,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$2" />
+      <unit id="3995997045458364515" at="29,61,33,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1$1" />
       <unit id="3995997045458364494" at="25,103,35,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1" />
       <unit id="3995997045458364472" at="17,0,39,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" />
     </file>

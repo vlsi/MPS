@@ -44,6 +44,10 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Collections;
+import java.util.HashMap;
+
+import static java.util.Collections.emptyMap;
 
 /**
  * Editable model (generally) backed up by file. Implicitly bound to files due to
@@ -148,7 +152,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     fireConflictDetected();
   }
 
-  public boolean checkAndResolveConflictOnSave() {
+  private boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getReference().getModelName() + " was modified externally! " +
           "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
@@ -161,7 +165,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     return !needsReloading();
   }
 
-  public void changeModelFile(IFile newModelFile) {
+  private void changeModelFile(IFile newModelFile) {
     assertCanChange();
     if (!(getSource() instanceof FileDataSource)) {
       throw new UnsupportedOperationException("cannot change model file on non-file data source");
@@ -253,18 +257,19 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           String extension = getExtension(oldFile);
           FileDataSource source = new FileDataSourceCreator(defaultModelRoot).createSource(newModelName, extension, sourceRoot).getSource();
           IFile newFile = source.getFile();
-          newFile.getParent().mkdirs();
-          newFile.createNewFile();
-          changeModelFile(newFile);
-          save();
-          while (oldFile != null && oldFile.isDirectory() && oldFile.getChildren().isEmpty()) {
-            oldFile.delete();
-            oldFile = oldFile.getParent();
+          if (!newFile.equals(oldFile)) {
+            newFile.getParent().mkdirs();
+            newFile.createNewFile();
+            changeModelFile(newFile);
+            while (oldFile != null && oldFile.isDirectory() && oldFile.getChildren().isEmpty()) {
+              oldFile.delete();
+              oldFile = oldFile.getParent();
+            }
           }
         } catch (IOException e) {
           LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
-          save();
         }
+        save();
       }
     }
 

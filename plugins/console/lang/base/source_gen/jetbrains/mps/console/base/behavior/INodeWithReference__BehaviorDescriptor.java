@@ -21,9 +21,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
+import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getInterfaceConcept(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, "jetbrains.mps.console.base.structure.INodeWithReference");
@@ -32,8 +35,9 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   public static final SMethod<Void> execute_id7oNS25df64x = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("execute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7oNS25df64x").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(MPSProject.class, ""));
   public static final SMethod<Boolean> canExecute_id2QdC0h7dh1h = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canExecute").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2QdC0h7dh1h").registry(REGISTRY).build();
   public static final SMethod<String> getTextWhenBroken_idigjXyuNrou = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTextWhenBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("igjXyuNrou").registry(REGISTRY).build();
+  public static final SMethod<Boolean> isBroken_id7m$hACyVN2F = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isBroken").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7m$hACyVN2F").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h, getTextWhenBroken_idigjXyuNrou);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(execute_id7oNS25df64x, canExecute_id2QdC0h7dh1h, getTextWhenBroken_idigjXyuNrou, isBroken_id7m$hACyVN2F);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -43,10 +47,16 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
     NavigationSupport.getInstance().openNode(project, targetNode, true, (SNodeOperations.getParent(targetNode) != null));
   }
   /*package*/ static boolean canExecute_id2QdC0h7dh1h(@NotNull SNode __thisNode__) {
-    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) != null;
+    return !(((boolean) INodeWithReference__BehaviorDescriptor.isBroken_id7m$hACyVN2F.invoke(__thisNode__)));
   }
   /*package*/ static String getTextWhenBroken_idigjXyuNrou(@NotNull SNode __thisNode__) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e75e1c4L, "referencePresentation")) + " (deleted node)";
+  }
+  /*package*/ static boolean isBroken_id7m$hACyVN2F(@NotNull SNode __thisNode__) {
+    if (SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")) == null || (check_rmj4zv_a0a0a0d(SNodeOperations.getModel(__thisNode__)) == null)) {
+      return true;
+    }
+    return !(SNodeUtil.isAccessible(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xde1ad86d6e504a02L, 0xb306d4d17f64c375L, 0x36ac6f29ae8c1fb5L, 0x4904fd89e74fc6fL, "target")), SNodeOperations.getModel(__thisNode__).getRepository()));
   }
 
   /*package*/ INodeWithReference__BehaviorDescriptor() {
@@ -72,6 +82,8 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
         return (T) ((Boolean) canExecute_id2QdC0h7dh1h(node));
       case 2:
         return (T) ((String) getTextWhenBroken_idigjXyuNrou(node));
+      case 3:
+        return (T) ((Boolean) isBroken_id7m$hACyVN2F(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -99,5 +111,11 @@ public final class INodeWithReference__BehaviorDescriptor extends BaseBHDescript
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static SRepository check_rmj4zv_a0a0a0d(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRepository();
+    }
+    return null;
   }
 }

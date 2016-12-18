@@ -131,8 +131,8 @@
       <scope id="3316697760692356693" at="36,0,111,0">
         <var name="frameStateManager" id="3316697760692356845" />
       </scope>
-      <unit id="3316697760692356717" at="83,60,107,9" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
-      <unit id="2449566706986685280" at="51,55,77,11" name="jetbrains.mps.watching.ModelFocusSynchronizer$2" />
+      <unit id="3316697760692356717" at="83,60,107,9" name="jetbrains.mps.watching.ModelFocusSynchronizer$1$2" />
+      <unit id="2449566706986685280" at="51,55,77,11" name="jetbrains.mps.watching.ModelFocusSynchronizer$1$1" />
       <unit id="3316697760692356703" at="37,38,109,5" name="jetbrains.mps.watching.ModelFocusSynchronizer$1" />
       <unit id="3316697760692356691" at="34,0,127,0" name="jetbrains.mps.watching.ModelFocusSynchronizer" />
     </file>

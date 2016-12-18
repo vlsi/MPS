@@ -40,103 +40,96 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
         break;
       case 1:
         if (true) {
-          // Concept: CheckedModuleReference 
-          intentions = new IntentionFactory[1];
-          intentions[0] = new ReplaceWithUncheckedRef_Intention();
-        }
-        break;
-      case 2:
-        if (true) {
           // Concept: ConceptFqNameRefExpression 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConceptName2Concept_Intention();
         }
         break;
-      case 3:
+      case 2:
         if (true) {
           // Concept: ConceptNodeType 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConceptNodeType2SConceptType_Intention();
         }
         break;
-      case 4:
+      case 3:
         if (true) {
           // Concept: ConceptRefExpression 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConceptRef2Concept_Intention();
         }
         break;
-      case 5:
+      case 4:
         if (true) {
           // Concept: IfStatement 
           intentions = new IntentionFactory[1];
           intentions[0] = new AddSNodeCastStatement_Intention();
         }
         break;
-      case 6:
+      case 5:
         if (true) {
           // Concept: InstanceOfExpression 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConvertInstanceofToNodeInstanceof_Intention();
         }
         break;
-      case 7:
+      case 6:
         if (true) {
           // Concept: LinkNameRefExpression 
           intentions = new IntentionFactory[1];
           intentions[0] = new LinkName2Link_Intention();
         }
         break;
-      case 8:
+      case 7:
         if (true) {
           // Concept: LinkRefExpression 
           intentions = new IntentionFactory[1];
           intentions[0] = new LinkRef2Link_Intention();
         }
         break;
-      case 9:
+      case 8:
         if (true) {
           // Concept: Link_SetTargetOperation 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConvertLinkSetToAssignment_Intention();
         }
         break;
-      case 10:
+      case 9:
         if (true) {
           // Concept: ListType 
           intentions = new IntentionFactory[1];
           intentions[0] = new Replace_ListType_withNodeListType_Intention();
         }
         break;
-      case 11:
+      case 10:
         if (true) {
           // Concept: Node_GetConceptOperation 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConvertConceptNodeToSCOncept_Intention();
         }
         break;
-      case 12:
+      case 11:
         if (true) {
           // Concept: OperationParm_Concept 
           intentions = new IntentionFactory[1];
           intentions[0] = new ReplaceConceptIsWithConceptEquals_Intention();
         }
         break;
-      case 13:
+      case 12:
         if (true) {
           // Concept: Property_SetOperation 
           intentions = new IntentionFactory[1];
           intentions[0] = new ConvertPropertySetToAssignment_Intention();
         }
         break;
-      case 14:
+      case 13:
         if (true) {
           // Concept: SNodeOperation 
           intentions = new IntentionFactory[1];
           intentions[0] = new AddOperationParameter_Intention();
         }
         break;
-      case 15:
+      case 14:
         if (true) {
           // Concept: SNodeTypeCastExpression 
           intentions = new IntentionFactory[2];
@@ -153,7 +146,7 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
   @NotNull
   @Override
   public Collection<IntentionFactory> getAllIntentions() {
-    IntentionFactory[] rv = new IntentionFactory[17];
+    IntentionFactory[] rv = new IntentionFactory[16];
     rv[0] = new AddSNodeCastStatement_Intention();
     rv[1] = new ReplaceConceptIsWithConceptEquals_Intention();
     rv[2] = new Replace_ListType_withNodeListType_Intention();
@@ -168,10 +161,9 @@ public final class IntentionsDescriptor extends IntentionAspectBase {
     rv[11] = new ConceptRef2Concept_Intention();
     rv[12] = new ConceptName2Concept_Intention();
     rv[13] = new ConceptNodeType2SConceptType_Intention();
-    rv[14] = new ReplaceWithUncheckedRef_Intention();
-    rv[15] = new ConvertCastToSConceptType_Intention();
-    rv[16] = new ConvertConceptNodeToSCOncept_Intention();
+    rv[14] = new ConvertCastToSConceptType_Intention();
+    rv[15] = new ConvertConceptNodeToSCOncept_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x3c7a9d8c8d63d4f3L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e2695189e59aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11d88b27d15L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L)).seal();
+  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940dabe4aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x73bd24cca4f91254L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9b63680L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f9eb64c6L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b217L), MetaIdFactory.conceptId(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbff03700L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x48e6e2695189e59aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11d88b27d15L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1099887af60L), MetaIdFactory.conceptId(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c25fb076aL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x110f3e65fdcL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1091d8a1d53L), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL), MetaIdFactory.conceptId(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10975850da7L)).seal();
 }

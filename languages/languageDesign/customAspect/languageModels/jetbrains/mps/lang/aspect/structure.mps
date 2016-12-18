@@ -3,12 +3,13 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
+    <import index="1po2" ref="r:e2f5b4d9-8319-4ef0-b685-6c50fa28ea4b(jetbrains.mps.lang.util.order.structure)" />
     <import index="oubp" ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.baseLanguage.lightweightdsl.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
@@ -52,6 +53,7 @@
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
         <property id="241647608299431140" name="linkId" index="IQ2ns" />
+        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -121,6 +123,12 @@
       <property role="IQ2ns" value="5177162104569174921" />
       <ref role="20lvS9" node="4voYo4rsXen" resolve="HelpURL" />
     </node>
+    <node concept="1TJgyj" id="22594Rb4xU1" role="1TKVEi">
+      <property role="IQ2ns" value="2343319097654255233" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="order" />
+      <ref role="20lvS9" to="1po2:283lDAXPS55" resolve="Order" />
+    </node>
     <node concept="1TJgyi" id="2Y$EcRKMr2p" role="1TKVEl">
       <property role="TrG5h" value="helpUrl" />
       <property role="IQ2nx" value="3433054418424672409" />
@@ -131,6 +139,9 @@
     </node>
     <node concept="PrWs8" id="1LJzqOWhe8r" role="PzmwI">
       <ref role="PrY4T" to="tpee:hCUYCKd" resolve="IValidIdentifier" />
+    </node>
+    <node concept="PrWs8" id="22594Rb8hjh" role="PzmwI">
+      <ref role="PrY4T" to="1po2:22594Rb8c7s" resolve="OrderParticipant" />
     </node>
     <node concept="1QGGSu" id="3RsnzA_S3ob" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/aspect.png" />
@@ -228,6 +239,19 @@
       <property role="TrG5h" value="url" />
       <property role="IQ2nx" value="5177162104569058200" />
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="9GrxDU8dzJ">
+    <property role="EcuMT" value="174635545557784815" />
+    <property role="3GE5qa" value="simple" />
+    <property role="TrG5h" value="SimpleAspectOrderRef" />
+    <ref role="1TJDcQ" to="1po2:283lDAXPS5b" resolve="OrderParticipantReference" />
+    <node concept="1TJgyj" id="9GrxDU8dJ1" role="1TKVEi">
+      <property role="IQ2ns" value="174635545557785537" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <ref role="20lvS9" node="2Y$EcRKMr1Q" resolve="SimpleLanguageAspectDescriptor" />
+      <ref role="20ksaX" to="1po2:283lDAXPS5c" resolve="target" />
     </node>
   </node>
 </model>

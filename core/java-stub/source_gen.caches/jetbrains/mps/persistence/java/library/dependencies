@@ -13,7 +13,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />
     <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelSourceChangeTracker" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
@@ -26,7 +25,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
-    <classNode extendsClassName="jetbrains.mps.extapi.persistence.ReloadCallback" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelSourceChangeTracker" />
     <classNode extendsClassName="jetbrains.mps.smodel.RegularModelDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">

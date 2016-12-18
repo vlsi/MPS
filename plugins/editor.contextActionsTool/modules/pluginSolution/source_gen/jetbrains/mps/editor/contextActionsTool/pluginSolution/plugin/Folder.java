@@ -76,7 +76,6 @@ public class Folder {
       });
     }
 
-    // <node> 
     myItemContainer.setBorder(BorderFactory.createEmptyBorder(6, 3, 12, 3));
     myComponent.add(myItemContainer, BorderLayout.WEST);
 

@@ -2,16 +2,13 @@
 <model ref="r:589e3942-2f2d-42a2-9312-986a1d3e2f7f(jetbrains.mps.build.mps.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="kdzh" ref="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" />
-    <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
-    <import index="exr9" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor(MPS.Editor/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="f4zo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.cells(MPS.Editor/)" />
     <import index="2txq" ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" />
     <import index="o2va" ref="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
@@ -2085,9 +2082,6 @@
           <node concept="3F1sOY" id="2T92ovrfw1d" role="3EZMnx">
             <property role="1$x2rV" value="no extra stuff" />
             <ref role="1NtTu8" to="kdzh:2T92ovrfst9" resolve="deployedJar" />
-            <node concept="pj6Ft" id="2T92ovrfw3_" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
             <node concept="lj46D" id="2T92ovrmkXe" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>
@@ -2111,9 +2105,6 @@
           <node concept="3F1sOY" id="2T92ovrfw1P" role="3EZMnx">
             <property role="1$x2rV" value="no extra stuff" />
             <ref role="1NtTu8" to="kdzh:2T92ovrftgg" resolve="sourceJar" />
-            <node concept="pj6Ft" id="2T92ovrfw3v" role="3F10Kt">
-              <property role="VOm3f" value="true" />
-            </node>
             <node concept="lj46D" id="2T92ovrmkX4" role="3F10Kt">
               <property role="VOm3f" value="true" />
             </node>

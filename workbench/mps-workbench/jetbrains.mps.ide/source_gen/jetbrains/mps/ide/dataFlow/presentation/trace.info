@@ -1053,9 +1053,9 @@
         <var name="project" id="4282822416100099543" />
         <var name="title" id="5130572135177357897" />
       </scope>
-      <unit id="2937623487936733226" at="59,41,63,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
-      <unit id="1752256779112961945" at="64,41,68,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$2" />
-      <unit id="4282822416100099672" at="98,32,103,7" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
+      <unit id="2937623487936733226" at="59,41,63,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1$1" />
+      <unit id="1752256779112961945" at="64,41,68,11" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1$2" />
+      <unit id="4282822416100099672" at="98,32,103,7" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent$1" />
       <unit id="4282822416100099635" at="44,49,73,5" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$1" />
       <unit id="4282822416100099483" at="95,0,140,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog$MyComponent" />
       <unit id="4282822416100099480" at="29,0,141,0" name="jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog" />

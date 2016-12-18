@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -34,9 +35,9 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
   public static final SMethod<SNode> getWrapper_idhLhtXcj = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getWrapper").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hLhtXcj").registry(REGISTRY).build();
   public static final SMethod<SNode> getExpectedReturnType_idhEwIGRD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedReturnType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRD").registry(REGISTRY).build();
   public static final SMethod<Boolean> usesParameterObject_id1653mnvAgq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq0").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getWrapper_idhLhtXcj, getExpectedReturnType_idhEwIGRD, usesParameterObject_id1653mnvAgq0, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getWrapper_idhLhtXcj, getExpectedReturnType_idhEwIGRD, usesParameterObject_id1653mnvAgq0, getParameterConcepts_id2xELmDxyi2v);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -50,9 +51,9 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
   /*package*/ static boolean usesParameterObject_id1653mnvAgq0(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
-  /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1221137268788"));
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    List<SConcept> result = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invokeSpecial(__thisNode__);
+    ListSequence.fromList(result).addElement(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11c51740034L, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap"));
     return result;
   }
 
@@ -76,6 +77,8 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
         return (T) ((SNode) getWrapper_idhLhtXcj(node));
       case 1:
         return (T) ((SNode) getExpectedReturnType_idhEwIGRD(node));
+      case 3:
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -90,8 +93,6 @@ public final class QueryFunction_PasteWrapper__BehaviorDescriptor extends BaseBH
     switch (methodIndex) {
       case 2:
         return (T) ((Boolean) usesParameterObject_id1653mnvAgq0(concept));
-      case 3:
-        return (T) ((List<SNode>) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

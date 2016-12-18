@@ -37,7 +37,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       addNodeById("7178287329507546170");
       addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
+      SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a0d());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a0d());
     }
@@ -45,7 +45,7 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       addNodeById("7178287329507546170");
       addNodeById("7178287329507578878");
       TemplateQueryContext genContext = this.getContext();
-      SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"));
+      SNode literal = SNodeOperations.cast(getNodeById("7178287329507578897"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xfd3920347849419dL, 0x907112563d152375L, "jetbrains.mps.baseLanguage.closures"), 0x1174bed3125L, "ClosureLiteral")));
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_u745oo_b0a4a1d());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_u745oo_c0a5a1d());
     }

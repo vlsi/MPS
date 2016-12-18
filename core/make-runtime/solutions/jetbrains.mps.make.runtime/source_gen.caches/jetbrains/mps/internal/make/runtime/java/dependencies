@@ -28,7 +28,6 @@
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationStatusManager" />
-    <classNode dependClassName="jetbrains.mps.internal.make.runtime.java.FileContent" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />

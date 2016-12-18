@@ -44,7 +44,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private boolean myIsReverseOrder = false;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
-    super(ownerNode, childRole, editorContext);
+    super(childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       @Override
       public void run() {
@@ -77,15 +77,17 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
+    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
     return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
   }
 
   @Override
   protected EditorCell createEmptyCell(EditorContext editorContext) {
-    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
+    // TODO: after MPS 3.5 remove editorContext parameter & delete overridden deprecated method
+    EditorCell_Constant emptyCell = new EditorCell_Constant(getEditorContext(), getNode(), null);
     emptyCell.setDefaultText("<< ... >>");
     emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
+    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getNode(), null, getLinkDeclaration(), getEditorContext()));
     emptyCell.setRole(getElementRole());
     emptyCell.setCellId("empty_" + getElementRole());
     return emptyCell;
@@ -96,7 +98,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
       Collection<? extends SNode> listElements = IterableUtil.asCollection(
-          AttributeOperations.getChildNodesAndAttributes(myOwnerNode, ((ConceptMetaInfoConverter) myOwnerNode.getConcept()).convertAggregation(myElementRole)));
+          AttributeOperations.getChildNodesAndAttributes(getNode(), ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole)));
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -108,16 +110,16 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   @Override
   protected void doInsertNode(SNode nodeToInsert, SNode anchorNode, boolean insertBefore) {
     insertBefore = insertBefore != myIsReverseOrder;
-    getOwner().insertChildBefore(getElementRole(), nodeToInsert,
-        insertBefore ? anchorNode : anchorNode == null ? getOwner().getFirstChild() : anchorNode.getNextSibling());
+    getNode().insertChildBefore(getElementRole(), nodeToInsert,
+        insertBefore ? anchorNode : anchorNode == null ? getNode().getFirstChild() : anchorNode.getNextSibling());
   }
 
   @Override
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
-    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) myOwnerNode.getConcept()).convertAggregation(myElementRole);
+    SContainmentLink containmentLink = ((ConceptMetaInfoConverter) getNode().getConcept()).convertAggregation(myElementRole);
     Iterable<SNode> nodesAndComments =
-        AttributeOperations.getChildNodesAndAttributes(myOwnerNode, containmentLink);
+        AttributeOperations.getChildNodesAndAttributes(getNode(), containmentLink);
     if (!myIsReverseOrder) {
       resultList.addAll(IterableUtil.asCollection(nodesAndComments));
     } else {
@@ -142,5 +144,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected boolean filter(SNode childNode) {
     return true;
+  }
+
+  protected void setInnerCellsContext() {
+    setInnerCellsContext(myListEditorCell_Collection);
   }
 }

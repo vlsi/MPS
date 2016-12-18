@@ -45,16 +45,16 @@
       <node id="2955426575105884966" at="37,105,38,132" concept="0" />
       <node id="2955426575105885002" at="43,83,44,41" concept="0" />
       <node id="2955426575105885097" at="44,41,45,242" concept="2" />
-      <node id="2955426575105978243" at="45,242,46,234" concept="2" />
-      <node id="2955426575105981464" at="46,234,47,445" concept="0" />
+      <node id="2955426575105978243" at="45,242,46,287" concept="2" />
+      <node id="2955426575105981464" at="46,287,47,498" concept="0" />
       <node id="4383142553201250610" at="49,95,50,41" concept="0" />
       <node id="4383142553201250613" at="50,41,51,339" concept="2" />
-      <node id="4383142553201250627" at="51,339,52,234" concept="2" />
-      <node id="4383142553201250634" at="52,234,53,449" concept="0" />
+      <node id="4383142553201250627" at="51,339,52,287" concept="2" />
+      <node id="4383142553201250634" at="52,287,53,502" concept="0" />
       <node id="2955426575105885032" at="55,80,56,41" concept="0" />
       <node id="2955426575106005456" at="56,41,57,161" concept="2" />
-      <node id="2955426575106005468" at="57,161,58,234" concept="2" />
-      <node id="2955426575106005475" at="58,234,59,137" concept="0" />
+      <node id="2955426575106005468" at="57,161,58,287" concept="2" />
+      <node id="2955426575106005475" at="58,287,59,137" concept="0" />
       <node id="2955426575106042550" at="63,67,64,48" concept="3" />
       <node id="2955426575106042550" at="63,0,66,0" concept="4" trace="eq_3f7mjy_a0a0d0c4#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="2955426575105884966" at="25,0,30,0" concept="1" trace="test_testNonEmptyInstructionsWithModeSpecified#()V" />
@@ -71,11 +71,11 @@
         <var name="a" id="2955426575106042550" />
         <var name="b" id="2955426575106042550" />
       </scope>
-      <scope id="2955426575105885002" at="43,83,47,445">
+      <scope id="2955426575105885002" at="43,83,47,498">
         <var name="builder" id="2955426575105885098" />
         <var name="program" id="2955426575105978244" />
       </scope>
-      <scope id="4383142553201250610" at="49,95,53,449">
+      <scope id="4383142553201250610" at="49,95,53,502">
         <var name="builder" id="4383142553201250614" />
         <var name="program" id="4383142553201250628" />
       </scope>
@@ -131,11 +131,11 @@
       <node id="7078910619969039925" at="34,105,35,117" concept="0" />
       <node id="7078910619969039926" at="40,62,41,41" concept="0" />
       <node id="7078910619969039929" at="41,41,42,242" concept="2" />
-      <node id="7078910619969039943" at="42,242,43,239" concept="2" />
-      <node id="7078910619969039950" at="43,239,44,450" concept="0" />
+      <node id="7078910619969039943" at="42,242,43,292" concept="2" />
+      <node id="7078910619969039950" at="43,292,44,503" concept="0" />
       <node id="7078910619969235707" at="46,62,47,41" concept="0" />
       <node id="7078910619969235710" at="47,41,48,339" concept="2" />
-      <node id="7078910619969235724" at="48,339,49,239" concept="2" />
+      <node id="7078910619969235724" at="48,339,49,292" concept="2" />
       <node id="7078910619969309686" at="51,41,52,189" concept="3" />
       <node id="7078910619969309686" at="55,39,56,179" concept="3" />
       <node id="7078910619969309686" at="51,0,54,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -143,7 +143,7 @@
       <node id="7078910619969039925" at="27,0,32,0" concept="1" trace="test_testLessSpecificMode#()V" />
       <node id="7078910619969039925" at="32,0,37,0" concept="1" trace="test_testMoreSpecificMode#()V" />
       <node id="7078910619969039926" at="40,0,46,0" concept="1" trace="test_testLessSpecificMode#()V" />
-      <node id="7078910619969235731" at="49,239,58,22" concept="0" />
+      <node id="7078910619969235731" at="49,292,58,22" concept="0" />
       <node id="7078910619969235707" at="46,0,60,0" concept="1" trace="test_testMoreSpecificMode#()V" />
       <scope id="7078910619969309686" at="51,41,52,189" />
       <scope id="7078910619969309686" at="55,39,56,179" />
@@ -155,7 +155,7 @@
       <scope id="7078910619969309686" at="55,0,58,0">
         <var name="it" id="7078910619969309686" />
       </scope>
-      <scope id="7078910619969039926" at="40,62,44,450">
+      <scope id="7078910619969039926" at="40,62,44,503">
         <var name="builder" id="7078910619969039930" />
         <var name="program" id="7078910619969039944" />
       </scope>
@@ -167,8 +167,8 @@
         <var name="program" id="7078910619969235725" />
       </scope>
       <scope id="7078910619969235707" at="46,0,60,0" />
-      <unit id="7078910619969309686" at="50,834,54,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$1" />
-      <unit id="7078910619969309686" at="54,20,58,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$2" />
+      <unit id="7078910619969309686" at="50,940,54,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody$1" />
+      <unit id="7078910619969309686" at="54,20,58,7" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody$2" />
       <unit id="7078910619969039925" at="38,0,63,0" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test$TestBody" />
       <unit id="7078910619969039925" at="25,0,64,0" name="analyzers.test.tests.TestProgramWithMoreSpecificMode_Test" />
     </file>

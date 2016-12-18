@@ -4,7 +4,7 @@
   <languages>
     <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
     <use id="d8f591ec-4d86-4af2-9f92-a9e93c803ffa" name="jetbrains.mps.lang.scopes" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -125,14 +125,14 @@
                 <node concept="13iPFW" id="3ASi0WxiFnI" role="37wK5m" />
                 <node concept="359W_D" id="6t3ylNOzPXh" role="37wK5m">
                   <ref role="359W_E" to="64en:i46Ymgg" resolve="Calculator" />
-                  <ref role="359W_F" to="64en:i46YMrC" />
+                  <ref role="359W_F" to="64en:i46YMrC" resolve="inputField" />
                 </node>
               </node>
             </node>
           </node>
           <node concept="1Wc70l" id="3apFoV2wNly" role="3clFbw">
             <node concept="iy1fb" id="3apFoV2xd1P" role="3uHU7w">
-              <ref role="iy1sa" to="64en:i46ZtXh" />
+              <ref role="iy1sa" to="64en:i46ZtXh" resolve="outputField" />
             </node>
             <node concept="2OqwBi" id="3ASi0WxiFnt" role="3uHU7B">
               <node concept="37vLTw" id="2BHiRxgha4Y" role="2Oq$k0">

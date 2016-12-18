@@ -96,7 +96,7 @@
         <var name="_params" id="2017614408232613007" />
         <var name="event" id="2017614408232613007" />
       </scope>
-      <unit id="2034046503361587337" at="63,88,68,9" name="jetbrains.mps.ide.make.actions.CleanProject_Action$2" />
+      <unit id="2034046503361587337" at="63,88,68,9" name="jetbrains.mps.ide.make.actions.CleanProject_Action$1$1" />
       <unit id="2017614408232613050" at="60,42,70,5" name="jetbrains.mps.ide.make.actions.CleanProject_Action$1" />
       <unit id="2017614408232613007" at="25,0,73,0" name="jetbrains.mps.ide.make.actions.CleanProject_Action" />
     </file>
@@ -262,7 +262,7 @@
         <var name="_params" id="2355088855588242208" />
         <var name="event" id="2355088855588242208" />
       </scope>
-      <unit id="2696244552125075605" at="53,151,57,9" name="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action$2" />
+      <unit id="2696244552125075605" at="53,151,57,9" name="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action$1$1" />
       <unit id="2034046503361586018" at="50,84,59,5" name="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action$1" />
       <unit id="2355088855588242208" at="22,0,63,0" name="jetbrains.mps.ide.make.actions.BuildAllGenerators_Action" />
     </file>
@@ -334,9 +334,9 @@
         <var name="_params" id="2355088855588242250" />
         <var name="event" id="2355088855588242250" />
       </scope>
-      <unit id="2696244552125286325" at="58,92,62,13" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$3" />
-      <unit id="2696244552125118204" at="64,21,68,9" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$2" />
-      <unit id="2696244552125118192" at="56,152,64,9" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$2" />
+      <unit id="2696244552125286325" at="58,92,62,13" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$1$1$1" />
+      <unit id="2696244552125118204" at="64,21,68,9" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$1$2" />
+      <unit id="2696244552125118192" at="56,152,64,9" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$1$1" />
       <unit id="2034046503361583923" at="53,84,70,5" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action$1" />
       <unit id="2355088855588242250" at="25,0,74,0" name="jetbrains.mps.ide.make.actions.BuildAllLanguageDescriptors_Action" />
     </file>
@@ -432,8 +432,8 @@
         <var name="_params" id="2355088855588242385" />
         <var name="event" id="2355088855588242385" />
       </scope>
-      <unit id="2696244552125393946" at="55,132,59,9" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action$2" />
-      <unit id="2696244552125695944" at="59,21,63,9" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action$2" />
+      <unit id="2696244552125393946" at="55,132,59,9" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action$1$1" />
+      <unit id="2696244552125695944" at="59,21,63,9" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action$1$2" />
       <unit id="2034046503361623609" at="51,84,65,5" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action$1" />
       <unit id="2355088855588242385" at="23,0,69,0" name="jetbrains.mps.ide.make.actions.RebuildRequiredModels_Action" />
     </file>
@@ -698,7 +698,7 @@
         <var name="_params" id="4753172061859438783" />
         <var name="event" id="4753172061859438783" />
       </scope>
-      <unit id="2034046503361582667" at="67,49,72,9" name="jetbrains.mps.ide.make.actions.CleanModule_Action$2" />
+      <unit id="2034046503361582667" at="67,49,72,9" name="jetbrains.mps.ide.make.actions.CleanModule_Action$1$1" />
       <unit id="4753172061859438800" at="64,42,74,5" name="jetbrains.mps.ide.make.actions.CleanModule_Action$1" />
       <unit id="4753172061859438783" at="23,0,77,0" name="jetbrains.mps.ide.make.actions.CleanModule_Action" />
     </file>
@@ -1070,8 +1070,8 @@
         <var name="_params" id="5880068183762873970" />
         <var name="event" id="5880068183762873970" />
       </scope>
-      <unit id="5880068183762874012" at="54,151,58,9" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action$2" />
-      <unit id="5880068183762979555" at="58,21,62,9" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action$2" />
+      <unit id="5880068183762874012" at="54,151,58,9" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action$1$1" />
+      <unit id="5880068183762979555" at="58,21,62,9" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action$1$2" />
       <unit id="5880068183762873989" at="51,84,64,5" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action$1" />
       <unit id="5880068183762873970" at="23,0,68,0" name="jetbrains.mps.ide.make.actions.BuildAllGeneratableGenerators_Action" />
     </file>
@@ -1993,7 +1993,7 @@
         <var name="session" id="1841925426083408131" />
       </scope>
       <scope id="8610665572788515238" at="33,0,84,0" />
-      <unit id="7526186345427808659" at="56,66,60,13" name="jetbrains.mps.ide.make.actions.MakeActionImpl$2" />
+      <unit id="7526186345427808659" at="56,66,60,13" name="jetbrains.mps.ide.make.actions.MakeActionImpl$1$1" />
       <unit id="2361823221845763727" at="53,85,63,9" name="jetbrains.mps.ide.make.actions.MakeActionImpl$1" />
       <unit id="8610665572788515237" at="23,0,85,0" name="jetbrains.mps.ide.make.actions.MakeActionImpl" />
     </file>
@@ -2795,8 +2795,8 @@
         <var name="_params" id="8610665572788515769" />
         <var name="event" id="8610665572788515769" />
       </scope>
-      <unit id="8865414013148924386" at="120,124,141,13" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$2" />
-      <unit id="8865414013148980755" at="143,64,172,13" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$2" />
+      <unit id="8865414013148924386" at="120,124,141,13" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$1$1" />
+      <unit id="8865414013148980755" at="143,64,172,13" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$1$2" />
       <unit id="8865414013148446312" at="116,68,179,7" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action$1" />
       <unit id="8610665572788515769" at="49,0,192,0" name="jetbrains.mps.ide.make.actions.TextPreviewModel_Action" />
     </file>
@@ -3038,8 +3038,8 @@
         <var name="_params" id="8654290870484358908" />
         <var name="event" id="8654290870484358908" />
       </scope>
-      <unit id="8654290870484829075" at="61,75,65,9" name="jetbrains.mps.ide.make.actions.BuildAspect_Action$2" />
-      <unit id="8654290870484358951" at="65,21,69,9" name="jetbrains.mps.ide.make.actions.BuildAspect_Action$2" />
+      <unit id="8654290870484829075" at="61,75,65,9" name="jetbrains.mps.ide.make.actions.BuildAspect_Action$1$1" />
+      <unit id="8654290870484358951" at="65,21,69,9" name="jetbrains.mps.ide.make.actions.BuildAspect_Action$1$2" />
       <unit id="8654290870484358920" at="58,84,71,5" name="jetbrains.mps.ide.make.actions.BuildAspect_Action$1" />
       <unit id="8654290870484358908" at="24,0,87,0" name="jetbrains.mps.ide.make.actions.BuildAspect_Action" />
     </file>

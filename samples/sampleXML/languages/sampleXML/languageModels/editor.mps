@@ -2,7 +2,7 @@
 <model ref="r:947a2b3f-3d1a-4e17-8fcb-13d001da9172(jetbrains.mps.sampleXML.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="3" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
   </languages>
   <imports>
     <import index="dghb" ref="r:ec0ffc91-3a14-4002-ac57-dd36c5dcf10a(jetbrains.mps.sampleXML.structure)" />
@@ -12,7 +12,6 @@
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="1071666914219" name="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" flags="ig" index="24kQdi" />
       <concept id="1140524381322" name="jetbrains.mps.lang.editor.structure.CellModel_ListWithRole" flags="ng" index="2czfm3">
-        <property id="1140524450554" name="vertical" index="2czwfN" />
         <child id="1140524464360" name="cellLayout" index="2czzBx" />
         <child id="1140524464359" name="emptyCellModel" index="2czzBI" />
       </concept>
@@ -44,7 +43,6 @@
         <property id="1130859485024" name="attractsFocus" index="1cu_pB" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -67,7 +65,6 @@
   <node concept="24kQdi" id="hP5Yl59">
     <ref role="1XX52x" to="dghb:hP5Yayx" resolve="Attribute" />
     <node concept="3EZMnI" id="hP5Yl5a" role="2wV5jI">
-      <property role="3EZMnw" value="false" />
       <node concept="3F0A7n" id="hP5Yl5b" role="3EZMnx">
         <property role="1cu_pB" value="1" />
         <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
@@ -114,9 +111,7 @@
   <node concept="24kQdi" id="hP5Yl5o">
     <ref role="1XX52x" to="dghb:hP5YayQ" resolve="Document" />
     <node concept="3EZMnI" id="hP5Yl5p" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5q" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5r" role="3EZMnx">
           <property role="3F0ifm" value="document" />
           <node concept="Vb9p2" id="hP5Yl5s" role="3F10Kt">
@@ -148,7 +143,7 @@
       </node>
       <node concept="3F1sOY" id="hP5Yl5$" role="3EZMnx">
         <property role="1$x2rV" value="&lt;no root element&gt;" />
-        <ref role="1NtTu8" to="dghb:hP5YayS" />
+        <ref role="1NtTu8" to="dghb:hP5YayS" resolve="rootElement" />
       </node>
       <node concept="2iRkQZ" id="i2IQmIb" role="2iSdaV" />
     </node>
@@ -162,9 +157,7 @@
   <node concept="24kQdi" id="hP5Yl5B">
     <ref role="1XX52x" to="dghb:hP5YayT" resolve="Element" />
     <node concept="3EZMnI" id="hP5Yl5C" role="2wV5jI">
-      <property role="3EZMnw" value="true" />
       <node concept="3EZMnI" id="hP5Yl5D" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5E" role="3EZMnx">
           <property role="3F0ifm" value="&lt;" />
           <node concept="Vb9p2" id="hP5Yl5F" role="3F10Kt">
@@ -182,8 +175,7 @@
           </node>
         </node>
         <node concept="3F2HdR" id="hP5Yl5J" role="3EZMnx">
-          <property role="2czwfN" value="false" />
-          <ref role="1NtTu8" to="dghb:hP5YayU" />
+          <ref role="1NtTu8" to="dghb:hP5YayU" resolve="attribute" />
           <node concept="3F0ifn" id="hP5Yl5K" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5L" role="3F10Kt">
@@ -202,11 +194,9 @@
         <node concept="2iRfu4" id="i2IQmI0" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hP5Yl5P" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3XFhqQ" id="hP5Yl5Q" role="3EZMnx" />
         <node concept="3F2HdR" id="hP5Yl5R" role="3EZMnx">
-          <property role="2czwfN" value="true" />
-          <ref role="1NtTu8" to="dghb:hP5YayV" />
+          <ref role="1NtTu8" to="dghb:hP5YayV" resolve="content" />
           <node concept="3F0ifn" id="hP5Yl5S" role="2czzBI">
             <property role="ilYzB" value="..." />
             <node concept="VPxyj" id="hP5Yl5T" role="3F10Kt">
@@ -219,7 +209,6 @@
         <node concept="2iRfu4" id="i2IQmI4" role="2iSdaV" />
       </node>
       <node concept="3EZMnI" id="hP5Yl5V" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hP5Yl5W" role="3EZMnx">
           <property role="3F0ifm" value="&lt;/" />
           <node concept="Vb9p2" id="hP5Yl5X" role="3F10Kt">

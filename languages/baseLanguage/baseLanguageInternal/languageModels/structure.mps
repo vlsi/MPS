@@ -411,7 +411,7 @@
       <property role="20kJfa" value="staticMethodDeclaration" />
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="8881995820265138548" />
-      <ref role="20ksaX" to="tpee:fz7wK6H" />
+      <ref role="20ksaX" to="tpee:fz7wK6H" resolve="baseMethodDeclaration" />
       <ref role="20lvS9" to="tpee:fIYIFWa" resolve="StaticMethodDeclaration" />
     </node>
   </node>

@@ -191,20 +191,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Object getReferentTarget(SNode node, SNode outputNode, SNode refMacro, TemplateContext context) {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      Object target = wrapped.getReferentTarget(node, outputNode, refMacro, context);
-      if (target instanceof SNode) {
-        listener.readNode((SNode) target);
-      }
-      return target;
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public Collection<SNode> applyRule(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       final DependenciesReadListener l;

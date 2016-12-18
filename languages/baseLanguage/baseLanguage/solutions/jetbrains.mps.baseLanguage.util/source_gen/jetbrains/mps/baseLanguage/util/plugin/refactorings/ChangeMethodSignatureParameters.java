@@ -29,9 +29,12 @@ public class ChangeMethodSignatureParameters {
     return this.myParametersIds;
   }
   public boolean isVisibilityChanged() {
-    return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))) != SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility")));
+    return neq_viavx4_a0a0g(SNodeOperations.getConcept(SLinkOperations.getTarget(SNodeOperations.cast(this.myMethod, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))), SNodeOperations.getConcept(SLinkOperations.getTarget(SNodeOperations.cast(this.myOldMethod, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, "jetbrains.mps.baseLanguage.structure.IVisible")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"))));
   }
   public boolean isReturnValueChanged() {
     return !((MatchingUtil.matchNodes(SLinkOperations.getTarget(this.myMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")), SLinkOperations.getTarget(this.myOldMethod, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1fdL, "returnType")))));
+  }
+  private static boolean neq_viavx4_a0a0g(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

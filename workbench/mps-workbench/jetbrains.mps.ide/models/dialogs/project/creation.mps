@@ -17,14 +17,11 @@
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
-    <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
     <import index="hyam" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.event(JDK/)" />
     <import index="etl3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.filechoosers.treefilechooser(MPS.Platform/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
-    <import index="qq03" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.actions(MPS.Platform/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="ddhc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide(MPS.IDEA/)" />
     <import index="jlff" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vfs(MPS.IDEA/)" />
     <import index="w0gx" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.structure.modules(MPS.Core/)" />
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
@@ -44,11 +41,10 @@
     <import index="emwx" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.lang.model(JDK/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="r791" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.text(JDK/)" implicit="true" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
-    <import index="qkt" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.actionSystem(MPS.IDEA/)" implicit="true" />
     <import index="31cb" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.module(MPS.Core/)" implicit="true" />
   </imports>
   <registry>
@@ -252,6 +248,9 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1116615150612" name="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" flags="nn" index="3VsKOn">
+        <reference id="1116615189566" name="classifier" index="3VsUkX" />
+      </concept>
       <concept id="1178893518978" name="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" flags="nn" index="1VxSAg" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1200397529627" name="jetbrains.mps.baseLanguage.structure.CharConstant" flags="nn" index="1Xhbcc">
@@ -2814,12 +2813,16 @@
                   </node>
                   <node concept="3clFbF" id="BwQO0yFnuD" role="3cqZAp">
                     <node concept="2OqwBi" id="BwQO0yFnLW" role="3clFbG">
-                      <node concept="2YIFZM" id="BwQO0yFnEO" role="2Oq$k0">
-                        <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                        <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                      <node concept="2OqwBi" id="7vEL9Rtf7ba" role="2Oq$k0">
+                        <node concept="37vLTw" id="7vEL9Rtf6GU" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oi2Bf2qJ6M" resolve="myProject" />
+                        </node>
+                        <node concept="liA8E" id="7vEL9Rtf7HH" role="2OqNvi">
+                          <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                        </node>
                       </node>
                       <node concept="liA8E" id="BwQO0yFofv" role="2OqNvi">
-                        <ref role="37wK5l" to="w1kc:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                        <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
                       </node>
                     </node>
                   </node>
@@ -3897,6 +3900,7 @@
     <property role="TrG5h" value="NewGeneratorDialog" />
     <node concept="312cEg" id="1pyYjDPRajH" role="jymVt">
       <property role="TrG5h" value="myContenetPane" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1pyYjDPRajI" role="1tU5fm">
         <ref role="3uigEE" to="dxuu:~JPanel" resolve="JPanel" />
       </node>
@@ -3918,6 +3922,7 @@
     </node>
     <node concept="312cEg" id="1pyYjDPRajQ" role="jymVt">
       <property role="TrG5h" value="mySourceLanguage" />
+      <property role="3TUv4t" value="true" />
       <node concept="3uibUv" id="1pyYjDPRajR" role="1tU5fm">
         <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
       </node>
@@ -3930,13 +3935,24 @@
       </node>
       <node concept="3Tm6S6" id="1pyYjDPRajV" role="1B3o_S" />
     </node>
+    <node concept="312cEg" id="7vEL9RtbpOb" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myProject" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7vEL9Rtboek" role="1B3o_S" />
+      <node concept="3uibUv" id="7vEL9RtbpLo" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7vEL9RtbhRx" role="jymVt" />
     <node concept="3clFbW" id="1pyYjDPRajW" role="jymVt">
       <node concept="3Tm1VV" id="1pyYjDPRajX" role="1B3o_S" />
       <node concept="3cqZAl" id="1pyYjDPRajY" role="3clF45" />
       <node concept="37vLTG" id="1pyYjDPRajZ" role="3clF46">
         <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="5Kh0XTSx8US" role="1tU5fm">
-          <ref role="3uigEE" to="4nm9:~Project" resolve="Project" />
+        <node concept="3uibUv" id="7vEL9Rtbjmp" role="1tU5fm">
+          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
         </node>
       </node>
       <node concept="37vLTG" id="1pyYjDPRak1" role="3clF46">
@@ -3948,8 +3964,23 @@
       <node concept="3clFbS" id="1pyYjDPRak3" role="3clF47">
         <node concept="XkiVB" id="5Kh0XTSxgRW" role="3cqZAp">
           <ref role="37wK5l" to="jkm4:~DialogWrapper.&lt;init&gt;(com.intellij.openapi.project.Project)" resolve="DialogWrapper" />
-          <node concept="37vLTw" id="2BHiRxgm8Jp" role="37wK5m">
-            <ref role="3cqZAo" node="1pyYjDPRajZ" resolve="project" />
+          <node concept="2OqwBi" id="7vEL9RtbjNP" role="37wK5m">
+            <node concept="37vLTw" id="2BHiRxgm8Jp" role="2Oq$k0">
+              <ref role="3cqZAo" node="1pyYjDPRajZ" resolve="project" />
+            </node>
+            <node concept="liA8E" id="7vEL9RtbkII" role="2OqNvi">
+              <ref role="37wK5l" to="z1c4:~MPSProject.getProject():com.intellij.openapi.project.Project" resolve="getProject" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7vEL9RtbrCq" role="3cqZAp">
+          <node concept="37vLTI" id="7vEL9RtbsgV" role="3clFbG">
+            <node concept="37vLTw" id="7vEL9Rtbs_K" role="37vLTx">
+              <ref role="3cqZAo" node="1pyYjDPRajZ" resolve="project" />
+            </node>
+            <node concept="37vLTw" id="7vEL9RtbrCo" role="37vLTJ">
+              <ref role="3cqZAo" node="7vEL9RtbpOb" resolve="myProject" />
+            </node>
           </node>
         </node>
         <node concept="3clFbF" id="2gv6qMzHOn3" role="3cqZAp">
@@ -4620,40 +4651,6 @@
             <ref role="37wK5l" node="1pyYjDPRaqC" resolve="dispose" />
           </node>
         </node>
-        <node concept="3cpWs8" id="1pyYjDPRapu" role="3cqZAp">
-          <node concept="3cpWsn" id="1pyYjDPRapv" role="3cpWs9">
-            <property role="TrG5h" value="project" />
-            <node concept="3uibUv" id="6YUTkiyR4fp" role="1tU5fm">
-              <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
-            </node>
-            <node concept="2OqwBi" id="1pyYjDPRapx" role="33vP2m">
-              <node concept="10M0yZ" id="1pyYjDPRapy" role="2Oq$k0">
-                <ref role="3cqZAo" to="qq03:~MPSCommonDataKeys.MPS_PROJECT" resolve="MPS_PROJECT" />
-                <ref role="1PxDUh" to="qq03:~MPSCommonDataKeys" resolve="MPSCommonDataKeys" />
-              </node>
-              <node concept="liA8E" id="1pyYjDPRapz" role="2OqNvi">
-                <ref role="37wK5l" to="qkt:~DataKey.getData(com.intellij.openapi.actionSystem.DataContext):java.lang.Object" resolve="getData" />
-                <node concept="2OqwBi" id="1pyYjDPRap$" role="37wK5m">
-                  <node concept="2YIFZM" id="1pyYjDPRap_" role="2Oq$k0">
-                    <ref role="37wK5l" to="ddhc:~DataManager.getInstance():com.intellij.ide.DataManager" resolve="getInstance" />
-                    <ref role="1Pybhc" to="ddhc:~DataManager" resolve="DataManager" />
-                  </node>
-                  <node concept="liA8E" id="1pyYjDPRapA" role="2OqNvi">
-                    <ref role="37wK5l" to="ddhc:~DataManager.getDataContext():com.intellij.openapi.actionSystem.DataContext" resolve="getDataContext" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1gVbGN" id="1pyYjDPRapB" role="3cqZAp">
-          <node concept="3y3z36" id="1pyYjDPRapC" role="1gVkn0">
-            <node concept="37vLTw" id="3GM_nagTv26" role="3uHU7B">
-              <ref role="3cqZAo" node="1pyYjDPRapv" resolve="project" />
-            </node>
-            <node concept="10Nm6u" id="1pyYjDPRapE" role="3uHU7w" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="1pyYjDPRapF" role="3cqZAp">
           <node concept="3cpWsn" id="1pyYjDPRapG" role="3cpWs9">
             <property role="TrG5h" value="newGenerator" />
@@ -4668,8 +4665,8 @@
           <node concept="2YIFZM" id="4okGtcfGOx2" role="3clFbG">
             <ref role="1Pybhc" to="tprr:56Y$nab_bZy" resolve="NewModuleUtil" />
             <ref role="37wK5l" to="tprr:4okGtcfGMgq" resolve="runModuleCreation" />
-            <node concept="37vLTw" id="3GM_nagTAtb" role="37wK5m">
-              <ref role="3cqZAo" node="1pyYjDPRapv" resolve="project" />
+            <node concept="37vLTw" id="7vEL9Rtbu9t" role="37wK5m">
+              <ref role="3cqZAo" node="7vEL9RtbpOb" resolve="myProject" />
             </node>
             <node concept="1bVj0M" id="4okGtcfGOxd" role="37wK5m">
               <node concept="3clFbS" id="4okGtcfGOxe" role="1bW5cS">
@@ -4682,12 +4679,16 @@
                     </node>
                     <node concept="3clFbF" id="BwQO0yHyvr" role="3cqZAp">
                       <node concept="2OqwBi" id="BwQO0yHy_2" role="3clFbG">
-                        <node concept="2YIFZM" id="BwQO0yHyyl" role="2Oq$k0">
-                          <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                          <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+                        <node concept="2OqwBi" id="7vEL9RtbvW2" role="2Oq$k0">
+                          <node concept="37vLTw" id="7vEL9Rtbvfw" role="2Oq$k0">
+                            <ref role="3cqZAo" node="7vEL9RtbpOb" resolve="myProject" />
+                          </node>
+                          <node concept="liA8E" id="7vEL9RtbwXP" role="2OqNvi">
+                            <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                          </node>
                         </node>
                         <node concept="liA8E" id="BwQO0yHyXa" role="2OqNvi">
-                          <ref role="37wK5l" to="w1kc:~MPSModuleRepository.saveAll():void" resolve="saveAll" />
+                          <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
                         </node>
                       </node>
                     </node>
@@ -4783,6 +4784,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7vEL9RtbUwy" role="jymVt" />
     <node concept="3clFb_" id="1pyYjDPRaqC" role="jymVt">
       <property role="TrG5h" value="dispose" />
       <node concept="3Tmbuc" id="2gv6qMzI0DF" role="1B3o_S" />
@@ -4807,6 +4809,7 @@
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
     </node>
+    <node concept="2tJIrI" id="7vEL9RtbSO0" role="jymVt" />
     <node concept="3clFb_" id="1pyYjDPRaqL" role="jymVt">
       <property role="TrG5h" value="createNewGenerator" />
       <node concept="3Tmbuc" id="1pyYjDPRaqM" role="1B3o_S" />
@@ -4829,6 +4832,11 @@
         <node concept="17QB3L" id="5$SHav7gZt9" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="1pyYjDPRaqU" role="3clF47">
+        <node concept="3SKdUt" id="7vEL9Rtc1by" role="3cqZAp">
+          <node concept="3SKdUq" id="7vEL9Rtc1b$" role="3SKWNk">
+            <property role="3SKdUp" value=" FIXME similar to NewModuleUtil.createNewLanguage" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="1pyYjDPRaqV" role="3cqZAp">
           <node concept="3cpWsn" id="1pyYjDPRaqW" role="3cpWs9">
             <property role="TrG5h" value="languageDescriptor" />
@@ -5020,31 +5028,34 @@
         </node>
         <node concept="3clFbH" id="1Yd98ZZnqEj" role="3cqZAp" />
         <node concept="3cpWs6" id="1Yd98ZZnqEk" role="3cqZAp">
-          <node concept="10QFUN" id="1Yd98ZZnqEl" role="3cqZAk">
-            <node concept="2OqwBi" id="1Yd98ZZnqEm" role="10QFUP">
-              <node concept="2YIFZM" id="1Yd98ZZnqEn" role="2Oq$k0">
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-              </node>
-              <node concept="liA8E" id="1Yd98ZZnqEo" role="2OqNvi">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getModule(org.jetbrains.mps.openapi.module.SModuleId):org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                <node concept="2OqwBi" id="1Yd98ZZnqEp" role="37wK5m">
-                  <node concept="37vLTw" id="3GM_nagTBz6" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
-                  </node>
-                  <node concept="liA8E" id="1Yd98ZZnqEr" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getId():jetbrains.mps.project.ModuleId" resolve="getId" />
-                  </node>
+          <node concept="2OqwBi" id="1Yd98ZZnqEm" role="3cqZAk">
+            <node concept="2ShNRf" id="7vEL9Rtbzez" role="2Oq$k0">
+              <node concept="1pGfFk" id="7vEL9RtbA_P" role="2ShVmc">
+                <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
+                <node concept="37vLTw" id="7vEL9RtbCaU" role="37wK5m">
+                  <ref role="3cqZAo" node="7vEL9RtbpOb" resolve="myProject" />
                 </node>
               </node>
             </node>
-            <node concept="3uibUv" id="1Yd98ZZnqEs" role="10QFUM">
-              <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+            <node concept="liA8E" id="1Yd98ZZnqEo" role="2OqNvi">
+              <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModule(org.jetbrains.mps.openapi.module.SModuleReference,java.lang.Class):org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+              <node concept="2OqwBi" id="1Yd98ZZnqEp" role="37wK5m">
+                <node concept="37vLTw" id="3GM_nagTBz6" role="2Oq$k0">
+                  <ref role="3cqZAo" node="1pyYjDPRar2" resolve="generatorDescriptor" />
+                </node>
+                <node concept="liA8E" id="1Yd98ZZnqEr" role="2OqNvi">
+                  <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                </node>
+              </node>
+              <node concept="3VsKOn" id="7vEL9RtbJp5" role="37wK5m">
+                <ref role="3VsUkX" to="w1kc:~Generator" resolve="Generator" />
+              </node>
             </node>
           </node>
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7vEL9RtbWd5" role="jymVt" />
     <node concept="3clFb_" id="1pyYjDPRass" role="jymVt">
       <property role="TrG5h" value="getTemplateModelPrefix" />
       <node concept="17QB3L" id="5$SHav7gZzf" role="3clF45" />
@@ -5073,6 +5084,7 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7vEL9RtbXTD" role="jymVt" />
     <node concept="3clFb_" id="1pyYjDPRasC" role="jymVt">
       <property role="TrG5h" value="adjustTemplateModel" />
       <node concept="3Tm6S6" id="1pyYjDPRasD" role="1B3o_S" />

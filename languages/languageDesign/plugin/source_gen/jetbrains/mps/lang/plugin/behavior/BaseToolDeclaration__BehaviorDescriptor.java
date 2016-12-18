@@ -20,6 +20,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.MacrosFactory;
@@ -54,6 +55,8 @@ public final class BaseToolDeclaration__BehaviorDescriptor extends BaseBHDescrip
   /*package*/ static String getGeneratedClassFQName_id5FstybB4d8e(@NotNull SNode __thisNode__) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(__thisNode__)) + "." + BaseToolDeclaration__BehaviorDescriptor.getGeneratedName_id5FstybB4d83.invoke(__thisNode__);
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static boolean hasNumber_id5FstybB4d8v(@NotNull SNode __thisNode__) {
     return !(SPropertyOperations.hasValue(__thisNode__, MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x5adc7622e710bddcL, 0x5adc7622e710cf2dL, "number"), null));
   }

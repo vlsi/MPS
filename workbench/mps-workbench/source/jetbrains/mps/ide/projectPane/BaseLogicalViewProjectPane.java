@@ -60,9 +60,7 @@ import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.RepoListenerRegistrar;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.ActionPlace;
@@ -73,8 +71,8 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.repository.CommandListener;
 
@@ -335,12 +333,15 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   public List<Pair<SModel,String>> getSelectedPackages() {
     List<Pair<SModel,String>> result = new ArrayList<Pair<SModel,String>>();
     TreePath[] paths = getTree().getSelectionPaths();
-    if (paths == null) return result;
+    SRepository projectRepo = ProjectHelper.getProjectRepository(getProject());
+    if (paths == null || projectRepo == null) {
+      return result;
+    }
     for (TreePath path : paths) {
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       if (node instanceof PackageNode) {
         PackageNode pn = (PackageNode) node;
-        result.add(new Pair<SModel, String>(pn.getModelReference().resolve(MPSModuleRepository.getInstance()),pn.getFullPackage()));
+        result.add(new Pair<SModel, String>(pn.getModelReference().resolve(projectRepo),pn.getFullPackage()));
       }
     }
     return result;

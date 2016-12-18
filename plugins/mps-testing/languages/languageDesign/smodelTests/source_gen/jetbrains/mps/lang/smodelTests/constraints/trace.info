@@ -121,9 +121,9 @@
         <var name="references" id="8758390115029091794" />
       </scope>
       <scope id="8758390115029091794" at="29,0,118,0" />
-      <unit id="8758390115029091794" at="40,19,57,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2" />
-      <unit id="8758390115029091794" at="68,19,85,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3" />
-      <unit id="8758390115029091794" at="96,19,113,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$4" />
+      <unit id="8758390115029091794" at="40,19,57,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1$1" />
+      <unit id="8758390115029091794" at="68,19,85,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2$1" />
+      <unit id="8758390115029091794" at="96,19,113,9" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3$1" />
       <unit id="8758390115029091794" at="32,152,59,5" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$1" />
       <unit id="8758390115029091794" at="60,158,87,5" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$2" />
       <unit id="8758390115029091794" at="88,157,115,5" name="jetbrains.mps.lang.smodelTests.constraints.ReferenceContainer_Constraints$3" />

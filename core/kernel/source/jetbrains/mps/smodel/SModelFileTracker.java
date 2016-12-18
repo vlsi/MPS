@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ModelComputeRunnable;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -57,15 +56,6 @@ public class SModelFileTracker {
 
   private SModelFileTracker(SRepository repository) {
     myRepository = repository;
-  }
-
-  /**
-   * @deprecated use {@link #getInstance(SRepository)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static SModelFileTracker getInstance() {
-    return getInstance(MPSModuleRepository.getInstance());
   }
 
   @NotNull

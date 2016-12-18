@@ -177,8 +177,8 @@
       <node id="3402736933910478500" at="39,35,40,41" concept="2" />
       <node id="3402736933910478500" at="43,32,44,16" concept="8" />
       <node id="4601407620868345076" at="47,89,48,376" concept="7" />
-      <node id="3402736933911092789" at="48,376,49,239" concept="2" />
-      <node id="6327362524873711307" at="49,239,50,14" concept="7" />
+      <node id="3402736933911092789" at="48,376,49,264" concept="2" />
+      <node id="6327362524873711307" at="49,264,50,14" concept="7" />
       <node id="6305381134221606040" at="50,14,51,214" concept="7" />
       <node id="6327362524873728757" at="52,21,53,33" concept="9" />
       <node id="6327362524873720357" at="53,33,54,65" concept="2" />
@@ -448,13 +448,13 @@
       <scope id="4636688088951516986" at="40,0,77,0">
         <var name="c" id="4636688088951516989" />
       </scope>
-      <unit id="4636688088951797435" at="43,117,47,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951797444" at="47,21,51,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951797453" at="51,25,55,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951797465" at="55,22,59,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951797474" at="59,21,63,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951843250" at="63,22,67,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
-      <unit id="4636688088951532890" at="71,115,75,7" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$3" />
+      <unit id="4636688088951797435" at="43,117,47,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$1" />
+      <unit id="4636688088951797444" at="47,21,51,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$2" />
+      <unit id="4636688088951797453" at="51,25,55,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$3" />
+      <unit id="4636688088951797465" at="55,22,59,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$4" />
+      <unit id="4636688088951797474" at="59,21,63,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$5" />
+      <unit id="4636688088951843250" at="63,22,67,9" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$6" />
+      <unit id="4636688088951532890" at="71,115,75,7" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2$7" />
       <unit id="9084267520848705648" at="31,52,38,3" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$1" />
       <unit id="4636688088951516984" at="39,56,77,3" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin$2" />
       <unit id="4636688088951482428" at="30,0,93,0" name="jetbrains.mps.baseLanguage.lightweightdsl.pluginSolution.plugin.ClassLikeMenuAdjustment_CustomApplicationPlugin" />

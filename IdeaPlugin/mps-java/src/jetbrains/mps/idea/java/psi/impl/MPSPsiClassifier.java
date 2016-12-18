@@ -49,7 +49,7 @@ import java.util.List;
  * evgeny, 1/28/13
  */
 public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
-  private static Object LOG = new Object();
+  private static final Object LOG = new Object();
   private String myFQName;
 
   public MPSPsiClassifier(SNodeId id, String concept, String containingRole, PsiManager manager) {
@@ -63,13 +63,10 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
     synchronized (LOG) {
 
       if (myFQName == null) {
-        final SRepository repository = ProjectHelper.toMPSProject(getProject()).getRepository();
-        repository.getModelAccess().runReadAction(new Runnable() {
-          @Override
-          public void run() {
-            SNode node = getSNodeReference().resolve(repository);
-            myFQName = ClassUtil.getClassFQName(node);
-          }
+        final SRepository repository = ProjectHelper.fromIdeaProject(getProject()).getRepository();
+        repository.getModelAccess().runReadAction(() -> {
+          SNode node = getSNodeReference().resolve(repository);
+          myFQName = ClassUtil.getClassFQName(node);
         });
 
       }
@@ -245,7 +242,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
   @Override
   public PsiClass findInnerClassByName(@NonNls String name, boolean checkBases) {
     PsiClass[] innerClasses = getInnerClasses();
-    if (innerClasses == null || innerClasses.length == 0) {
+    if (innerClasses.length == 0) {
       return null;
     }
     for (PsiClass claz : innerClasses) {
@@ -355,7 +352,7 @@ public abstract class MPSPsiClassifier extends MPSPsiNode implements PsiClass {
     final MPSPsiClassifierType[] classes = getChildrenOfType(role, MPSPsiClassifierType.class);
     if (classes == null || classes.length == 0) return PsiClassType.EMPTY_ARRAY;
 
-    List<PsiClassType> result = new ArrayList<PsiClassType>(classes.length);
+    List<PsiClassType> result = new ArrayList<>(classes.length);
     for (MPSPsiClassifierType ct : classes) {
       final PsiClassType classType = ct.getPsiType();
       if (classType != null) {

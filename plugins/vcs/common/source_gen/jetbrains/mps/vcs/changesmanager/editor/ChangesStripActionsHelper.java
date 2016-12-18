@@ -262,13 +262,13 @@ public class ChangesStripActionsHelper {
     }
     return null;
   }
+  private static boolean eq_ikrecr_a0a0a0a0a0d0u0l(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static void check_ikrecr_a32a11(ChangeStripsPainter checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.showPopupForGroup(null);
     }
 
-  }
-  private static boolean eq_ikrecr_a0a0a0a0a0d0u0l(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.language;
 
+import jetbrains.mps.aspects.InOrderSorter;
+import jetbrains.mps.aspects.OrderParticipant;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
@@ -31,6 +33,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -68,19 +71,9 @@ public class LanguageAspectSupport {
   }
 
   public static Collection<LanguageAspectDescriptor> collectAspects() {
-    //todo order on new aspects must be set and be stable
     Collection<LanguageAspectDescriptor> newAspects =
         IterableUtil.asCollection(new ExtensionPoint<LanguageAspectDescriptor>("jetbrains.mps.lang.aspect.LanguageAspectsEP").getObjects());
-    LinkedHashSet<LanguageAspectDescriptor> result = new LinkedHashSet<>();
-    for (LanguageAspect la : LanguageAspect.values()) {
-      Optional<LanguageAspectDescriptor> correspondingNew =
-          newAspects.stream().filter(languageAspectDescriptor -> languageAspectDescriptor.getPresentableAspectName().equals(la.getName())).findFirst();
-      if (correspondingNew.isPresent()) {
-        result.add(correspondingNew.get());
-      }
-    }
-    result.addAll(newAspects);
-    return result;
+    return new InOrderSorter<>(newAspects).sort();
   }
 
   @Nullable

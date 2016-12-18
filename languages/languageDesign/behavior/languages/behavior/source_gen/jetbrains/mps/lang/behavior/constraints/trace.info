@@ -167,8 +167,8 @@
         <var name="references" id="1225194475678" />
       </scope>
       <scope id="1225194475678" at="34,0,86,0" />
-      <unit id="7448639082793552059" at="71,60,75,13" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$3" />
-      <unit id="1225194475678" at="66,19,81,9" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$2" />
+      <unit id="7448639082793552059" at="71,60,75,13" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$1$1$1" />
+      <unit id="1225194475678" at="66,19,81,9" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$1$1" />
       <unit id="1225194475678" at="37,154,83,5" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints$1" />
       <unit id="1225194475678" at="29,0,88,0" name="jetbrains.mps.lang.behavior.constraints.ConceptMethodDeclaration_Constraints" />
     </file>
@@ -340,7 +340,7 @@
         <var name="references" id="2043122710974691049" />
       </scope>
       <scope id="2043122710974691049" at="47,0,90,0" />
-      <unit id="2043122710974691049" at="58,19,85,9" name="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$2" />
+      <unit id="2043122710974691049" at="58,19,85,9" name="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$1$1" />
       <unit id="2043122710974691049" at="50,155,87,5" name="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints$1" />
       <unit id="2043122710974691049" at="28,0,96,0" name="jetbrains.mps.lang.behavior.constraints.SuperNodeExpression_Constraints" />
     </file>
@@ -425,7 +425,7 @@
         <var name="references" id="6496299201655529040" />
       </scope>
       <scope id="6496299201655529040" at="45,0,77,0" />
-      <unit id="6496299201655529040" at="56,19,72,9" name="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$2" />
+      <unit id="6496299201655529040" at="56,19,72,9" name="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$1$1" />
       <unit id="6496299201655529040" at="48,158,74,5" name="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints$1" />
       <unit id="6496299201655529040" at="26,0,83,0" name="jetbrains.mps.lang.behavior.constraints.LocalBehaviorMethodCall_Constraints" />
     </file>

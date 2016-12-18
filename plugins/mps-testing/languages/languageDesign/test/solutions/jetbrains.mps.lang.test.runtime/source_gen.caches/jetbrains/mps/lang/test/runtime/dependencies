@@ -70,6 +70,29 @@
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.runtime.BaseMigrationTestBody" file="BaseMigrationTestBody.java">
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.MigrationScript" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.runtime.base.Problem" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TempModuleOptions" />
+    <classNode dependClassName="jetbrains.mps.smodel.tempmodel.TemporaryModels" />
+    <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.junit.Assert" />
+    <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.BaseTestBody" file="BaseTestBody.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -257,16 +280,14 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" file="NodeCheckerUtil.java">
-    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.CheckErrorMessagesAction" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.runtime.NodeDataFlowCheckerUtil" file="NodeDataFlowCheckerUtil.java">
     <classNode dependClassName="java.lang.Object" />

@@ -25,7 +25,6 @@
   <dependency className="jetbrains.mps.lang.test.scripts.SpecifyUtil" file="SpecifyUtil.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="jetbrains.mps.errors.IErrorReporter" />
-    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
     <classNode dependClassName="jetbrains.mps.kernel.model.MissingDependenciesFixer" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
@@ -34,6 +33,7 @@
     <classNode dependClassName="jetbrains.mps.lang.test.behavior.NodeOperationsContainer__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.NodeCheckerUtil" />
     <classNode dependClassName="jetbrains.mps.lang.test.runtime.TestsErrorsChecker" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelImports" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />

@@ -26,33 +26,34 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
  * Extracted project modules loading logic. Currently used in the project only.
  * Supposed to be merged with the SLibraries modules loading logic (it is essentially the same thing)
+ * TODO the code structure is a shame, rewrite
  *
  * Created by apyshkin on 11/5/15.
  */
-public final class ModuleLoader {
+final class ModuleLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleLoader.class);
   private static final FileSystem FS = FileSystem.getInstance();
-  @NotNull private final Project myProject;
+  @NotNull private final ProjectBase myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<ProjectModuleLoadingListener>();
   private final StringBuilder myErrors = new StringBuilder();
 
-  public ModuleLoader(@NotNull Project project) {
+  public ModuleLoader(@NotNull ProjectBase project) {
     myProject = project;
   }
 
-  private Set<SModule> getRemovedModules(Map<SModule, ModulePath> moduleToPathMap, List<ModulePath> newModulePaths) {
+  private Set<SModule> getRemovedModules(List<ModulePath> newModulePaths) {
     Set<SModule> removedModules = new HashSet<SModule>();
-    for (SModule oldModule : moduleToPathMap.keySet()) {
-      ModulePath oldModulePath = moduleToPathMap.get(oldModule);
+    for (SModule oldModule : myProject.getProjectModulesWithGenerators()) {
+      ModulePath oldModulePath = myProject.getPath(oldModule);
       if (!newModulePaths.contains(oldModulePath)) {
         removedModules.add(oldModule);
       }
@@ -60,10 +61,10 @@ public final class ModuleLoader {
     return removedModules;
   }
 
-  private Set<ModulePath> getPathsToLoad(Map<SModule, ModulePath> moduleToPathMap, List<ModulePath> newModulePaths) {
-    Set<ModulePath> pathsToLoad = new HashSet<ModulePath>();
+  private List<ModulePath> getPathsToLoad(List<ModulePath> newModulePaths) {
+    List<ModulePath> pathsToLoad = new ArrayList<>();
     for (ModulePath newModulePath : newModulePaths) {
-      if (!moduleToPathMap.containsValue(newModulePath)) {
+      if (!myProject.containsPath(newModulePath)) {
         pathsToLoad.add(newModulePath);
       }
     }
@@ -76,27 +77,28 @@ public final class ModuleLoader {
   }
 
   /**
-   * updates the module-to-path map
-   * @param moduleToPathMap is the map to be updated after loading the new modules paths
+   * updates module paths in the project.
    */
-  public void updateModule2PathMap(Map<SModule, ModulePath> moduleToPathMap, final List<ModulePath> newModulePaths) {
+  public void updatePathsInProject(final List<ModulePath> newModulePaths) {
     LOG.info("Loading modules...");
     clearErrorsBuffer();
 
-    final Set<ModulePath> pathsToLoad = getPathsToLoad(moduleToPathMap, newModulePaths);
-    int loadedModules = loadNewPaths(moduleToPathMap, pathsToLoad);
+    // Note the order which matters (the case is when the modules.xml is updated from the FS directly --
+    // one of the modules might change its virtual folder but not the location
+    // in this case we need to remove that module from project and insert it again
+    final Set<SModule> removedModules = getRemovedModules(newModulePaths);
+    removeAbsentModules(removedModules);
 
-    final Set<SModule> removedModules = getRemovedModules(moduleToPathMap, newModulePaths);
-    removeAbsentModules(moduleToPathMap, removedModules);
+    final List<ModulePath> pathsToLoad = getPathsToLoad(newModulePaths);
+    int loadedModules = loadNewPaths(pathsToLoad);
 
     LOG.info(String.format("Modules are loaded: %d new; %d removed", loadedModules, removedModules.size()));
   }
 
   /**
-   * @param newModuleToPathMap is the updated module-to-path map
    * @return the number of successfully loaded modules
    */
-  private int loadNewPaths(Map<SModule, ModulePath> newModuleToPathMap, final Set<ModulePath> pathsToLoad) {
+  private int loadNewPaths(final List<ModulePath> pathsToLoad) {
     int loadedModules = 0;
     for (ModulePath modulePath : pathsToLoad) {
       String path = modulePath.getPath();
@@ -106,7 +108,7 @@ public final class ModuleLoader {
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
         if (handle.getDescriptor() != null) {
           SModule module = ModuleRepositoryFacade.createModule(handle, myProject);
-          newModuleToPathMap.put(module, modulePath);
+          myProject.addModule(module, modulePath.getVirtualFolder());
           ++loadedModules;
           fireModuleLoaded(module);
         } else {
@@ -124,13 +126,10 @@ public final class ModuleLoader {
     return loadedModules;
   }
 
-  /**
-   * @param newModuleToPathMap is the updated module-to-path map
-   */
-  private void removeAbsentModules(Map<SModule, ModulePath> newModuleToPathMap, final Set<SModule> removedModules) {
+  private void removeAbsentModules(final Set<SModule> removedModules) {
     for (SModule module : removedModules) {
-      newModuleToPathMap.remove(module);
       fireModuleRemoved(module);
+      myProject.removeModule(module);
       new ModuleRepositoryFacade(myProject).unregisterModule(module);
     }
   }

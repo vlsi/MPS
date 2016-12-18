@@ -195,6 +195,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.commands", "CommandParameterReference", 0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0xbe3a0d5ba1a2bdcL);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xe34de34746464f2L);
     b.origin("r:d78df0bb-be4f-4e0d-8142-c0b2df70a5a3(jetbrains.mps.execution.commands.structure)/856705193941281756");
     b.prop("resolveInfo", 0xbe3a0d5ba1a2bddL, "856705193941281757");
     b.associate("parameter", 0xbe3a0d5ba1a2bdeL).target(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x65afee7b2c712158L).optional(false).origin("856705193941281758").done();

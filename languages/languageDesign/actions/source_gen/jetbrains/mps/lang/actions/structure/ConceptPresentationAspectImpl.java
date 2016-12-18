@@ -81,7 +81,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Handler = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_ParameterizedSideTransform_Query = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Handler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Icon = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Icon = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_Query = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_ParameterizedSubstitute_String = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_PasteWrapper = new ConceptPresentationBuilder().create();
@@ -92,10 +92,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QueryFunction_ST_RemoveBy_Condition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SideTransform_ConceptHandler = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SideTransform_Handler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryFunction_SideTransform_Icon = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_QueryFunction_SideTransform_Icon = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_QueryFunction_SideTransform_NodeQuery = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SideTransform_String = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryFunction_SubstituteIcon = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_QueryFunction_SubstituteIcon = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_QueryFunction_SubstituteString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SubstituteVariableInitializer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SubstituteWrapper = new ConceptPresentationBuilder().create();

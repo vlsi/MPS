@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.scope.Scope;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -21,9 +22,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept__BehaviorDescriptor;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -42,6 +44,7 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<SNode> getExpectedRetType_idi2fhBNC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getExpectedRetType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2fhBNC").registry(REGISTRY).build();
   public static final SMethod<SNode> getBody_idi2fhZ_m = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getBody").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2fhZ_m").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getParameters_idhEwIGRM = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIGRM").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id2xELmDxyi2v = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2xELmDxyi2v").registry(REGISTRY).build();
   public static final SMethod<Boolean> isReturnOnly_id3fUxpI1uWGM = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isReturnOnly").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fUxpI1uWGM").registry(REGISTRY).build();
   public static final SMethod<String> getName_idhGVcmek = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hGVcmek").registry(REGISTRY).build();
   public static final SMethod<String> getHeader_id2v69eKc6GlE = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHeader").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2v69eKc6GlE").registry(REGISTRY).build();
@@ -52,13 +55,13 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<Boolean> showName_id1653mnvAgry = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("showName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgry").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObjectFor_idhEwIGRw, getExpectedReturnType_idhEwIGRD, supportsCheckedExceptions_id7orZYjMoFMH, getThrowableTypes_id5op8ooRkkc7, isImplementation_id19gBtYEvixA, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getParameters_idhEwIGRM, isReturnOnly_id3fUxpI1uWGM, getName_idhGVcmek, getHeader_id2v69eKc6GlE, getHeaderForAliasedEditor_id2v69eKc6I0x, appendHeader_id2v69eKc6I52, getScope_id3fifI_xCJOQ, usesParameterObject_id1653mnvAgq0, showName_id1653mnvAgry, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObjectFor_idhEwIGRw, getExpectedReturnType_idhEwIGRD, supportsCheckedExceptions_id7orZYjMoFMH, getThrowableTypes_id5op8ooRkkc7, isImplementation_id19gBtYEvixA, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getParameters_idhEwIGRM, getParameterConcepts_id2xELmDxyi2v, isReturnOnly_id3fUxpI1uWGM, getName_idhGVcmek, getHeader_id2v69eKc6GlE, getHeaderForAliasedEditor_id2v69eKc6I0x, appendHeader_id2v69eKc6I52, getScope_id3fifI_xCJOQ, usesParameterObject_id1653mnvAgq0, showName_id1653mnvAgry, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static boolean usesParameterObjectFor_idhEwIGRw(@NotNull SNode __thisNode__, SNode parameter) {
-    return (boolean) ConceptFunction__BehaviorDescriptor.usesParameterObject_id1653mnvAgq0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)));
+    return (boolean) ConceptFunction__BehaviorDescriptor.usesParameterObject_id1653mnvAgq0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)));
   }
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     return null;
@@ -80,13 +83,23 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static SNode getBody_idi2fhZ_m(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"));
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static List<SNode> getParameters_idhEwIGRM(@NotNull SNode __thisNode__) {
     if (__thisNode__ == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getApplicableConceptFunctionParameter_id2D1PBM_bxJg.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))));
     return (List<SNode>) result;
+  }
+  /*package*/ static List<SConcept> getParameterConcepts_id2xELmDxyi2v(@NotNull SNode __thisNode__) {
+    // todo remove after 3.5, compatibility code 
+    return ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(__thisNode__)).select(new ISelector<SNode, SConcept>() {
+      public SConcept select(SNode it) {
+        return ((SConcept) SNodeOperations.castConcept(SNodeOperations.asSConcept(it), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter")));
+      }
+    }).toListSequence();
   }
   /*package*/ static boolean isReturnOnly_id3fUxpI1uWGM(@NotNull SNode __thisNode__) {
     if (!((boolean) StatementList__BehaviorDescriptor.isOneLiner_idi0z3USV.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L, 0x108bbd29b4aL, "body"))))) {
@@ -96,14 +109,14 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
     return SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) || SNodeOperations.isInstanceOf(stmt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7feL, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
   }
   /*package*/ static String getName_idhGVcmek(@NotNull SNode __thisNode__) {
-    return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(__thisNode__), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    return SConceptOperations.conceptAlias(SNodeOperations.getConcept(__thisNode__));
   }
   /*package*/ static String getHeader_id2v69eKc6GlE(@NotNull SNode __thisNode__) {
     StringBuilder result = new StringBuilder();
     // by default 'alias' is not shown. 
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
-    if ((boolean) ConceptFunction__BehaviorDescriptor.showName_id1653mnvAgry.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(__thisNode__)))) {
+    if ((boolean) ConceptFunction__BehaviorDescriptor.showName_id1653mnvAgry.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))) {
       result.append(ConceptFunction__BehaviorDescriptor.getName_idhGVcmek.invoke(__thisNode__));
     }
     return ((String) ConceptFunction__BehaviorDescriptor.appendHeader_id2v69eKc6I52.invoke(__thisNode__, result));
@@ -114,14 +127,14 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   }
   /*package*/ static String appendHeader_id2v69eKc6I52(@NotNull SNode __thisNode__, StringBuilder result) {
     result.append("(");
-    List<SNode> parameters = ConceptFunction__BehaviorDescriptor.getParameters_idhEwIGRM.invoke(__thisNode__);
+    List<SConcept> parameters = ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(__thisNode__);
     boolean isFirst = true;
-    for (SNode cfp : parameters) {
+    for (SAbstractConcept cfp : parameters) {
       if (!(isFirst)) {
         result.append(", ");
       }
       isFirst = false;
-      result.append(SPropertyOperations.getString(cfp, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
+      result.append(SConceptOperations.conceptAlias(cfp));
     }
     result.append(")->");
     SNode expectedReturnType = ConceptFunction__BehaviorDescriptor.getExpectedReturnType_idhEwIGRD.invoke(__thisNode__);
@@ -160,6 +173,8 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static boolean showName_id1653mnvAgry(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static List<SNode> getApplicableConceptFunctionParameter_id2D1PBM_bxJg(@NotNull SAbstractConcept __thisConcept__) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }
@@ -197,16 +212,18 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
       case 7:
         return (T) ((List<SNode>) getParameters_idhEwIGRM(node));
       case 8:
-        return (T) ((Boolean) isReturnOnly_id3fUxpI1uWGM(node));
+        return (T) ((List<SConcept>) getParameterConcepts_id2xELmDxyi2v(node));
       case 9:
-        return (T) ((String) getName_idhGVcmek(node));
+        return (T) ((Boolean) isReturnOnly_id3fUxpI1uWGM(node));
       case 10:
-        return (T) ((String) getHeader_id2v69eKc6GlE(node));
+        return (T) ((String) getName_idhGVcmek(node));
       case 11:
-        return (T) ((String) getHeaderForAliasedEditor_id2v69eKc6I0x(node));
+        return (T) ((String) getHeader_id2v69eKc6GlE(node));
       case 12:
-        return (T) ((String) appendHeader_id2v69eKc6I52(node, (StringBuilder) parameters[0]));
+        return (T) ((String) getHeaderForAliasedEditor_id2v69eKc6I0x(node));
       case 13:
+        return (T) ((String) appendHeader_id2v69eKc6I52(node, (StringBuilder) parameters[0]));
+      case 14:
         return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -220,11 +237,11 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
-      case 14:
-        return (T) ((Boolean) usesParameterObject_id1653mnvAgq0(concept));
       case 15:
-        return (T) ((Boolean) showName_id1653mnvAgry(concept));
+        return (T) ((Boolean) usesParameterObject_id1653mnvAgq0(concept));
       case 16:
+        return (T) ((Boolean) showName_id1653mnvAgry(concept));
+      case 17:
         return (T) ((List<SNode>) getApplicableConceptFunctionParameter_id2D1PBM_bxJg(concept));
       default:
         throw new BHMethodNotFoundException(this, method);

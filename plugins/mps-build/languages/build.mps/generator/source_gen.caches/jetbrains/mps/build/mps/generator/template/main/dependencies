@@ -32,14 +32,15 @@
     <classNode dependClassName="jetbrains.mps.build.mps.util.VisibleModules" />
     <classNode dependClassName="jetbrains.mps.build.util.Context" />
     <classNode dependClassName="jetbrains.mps.build.util.DependenciesHelper" />
-    <classNode dependClassName="jetbrains.mps.build.util.LocalArtifacts" />
     <classNode dependClassName="jetbrains.mps.build.util.LocalSourcePathArtifact" />
     <classNode dependClassName="jetbrains.mps.build.util.ProjectDependency" />
     <classNode dependClassName="jetbrains.mps.build.util.RelativePathHelper" />
+    <classNode dependClassName="jetbrains.mps.build.util.VisibleArtifacts" />
     <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
+    <classNode dependClassName="jetbrains.mps.generator.template.MapSrcMacroPostProcContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.MappingScriptContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.PropertyMacroContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.ReferenceMacroContext" />

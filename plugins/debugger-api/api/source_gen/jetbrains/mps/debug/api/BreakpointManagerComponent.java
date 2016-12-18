@@ -11,7 +11,7 @@ import org.jdom.Element;
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
 import java.util.Map;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import java.util.Set;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import java.util.HashMap;
@@ -20,13 +20,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.ModelAccess;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.ListIterator;
-import jetbrains.mps.util.Computable;
+import java.util.Collections;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 
@@ -36,7 +34,10 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(BreakpointManagerComponent.class));
   private static final String BREAKPOINTS_LIST_ELEMENT = "breakpointsList";
   private static final BreakpointManagerComponent.DummyIO DUMMY_IO = new BreakpointManagerComponent.DummyIO();
-  private final Map<SNodeReference, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SNodeReference, Set<ILocationBreakpoint>>();
+  /**
+   * Map implementation shall tolerate null keys (HashMap does).
+   */
+  private final Map<SModelReference, Set<ILocationBreakpoint>> myRootsToBreakpointsMap = new HashMap<SModelReference, Set<ILocationBreakpoint>>();
   private boolean myBreakpointsForRootInitialized = false;
   private final Set<IBreakpoint> myBreakpoints = new HashSet<IBreakpoint>();
   private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
@@ -68,64 +69,46 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     reReadState();
   }
   public void addBreakpoint(@NotNull final IBreakpoint breakpoint) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        synchronized (myBreakpoints) {
-          if (breakpoint instanceof ILocationBreakpoint && myBreakpointsForRootInitialized) {
-            addLocationBreakpoint((ILocationBreakpoint) breakpoint);
-          }
-          breakpoint.setCreationTime(System.currentTimeMillis());
-          myBreakpoints.add(breakpoint);
-          breakpoint.addToRunningSessions();
-        }
+    synchronized (myBreakpoints) {
+      if (breakpoint instanceof ILocationBreakpoint && myBreakpointsForRootInitialized) {
+        addLocationBreakpoint((ILocationBreakpoint) breakpoint);
       }
-    });
+      breakpoint.setCreationTime(System.currentTimeMillis());
+      myBreakpoints.add(breakpoint);
+      breakpoint.addToRunningSessions();
+    }
     fireBreakpointAdded(breakpoint);
   }
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getLocation().getSNode();
-    if (node != null) {
-      SNodeReference rootPointer = new SNodePointer(node.getContainingRoot());
-      Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-      if (breakpointsForRoot == null) {
-        breakpointsForRoot = new HashSet<ILocationBreakpoint>();
-        myRootsToBreakpointsMap.put(rootPointer, breakpointsForRoot);
-      }
-      //  check the following assumption: one breakpoint for one node 
-      for (ILocationBreakpoint breakpointForRoot : breakpointsForRoot) {
-        if (breakpointForRoot.getLocation().equals(breakpoint.getLocation())) {
-          LOG.error("Trying to add a second breakpoint for node", breakpointForRoot.getLocation().getPresentation());
-          break;
-        }
-      }
-      breakpointsForRoot.add(breakpoint);
+    SNodeReference node = breakpoint.getLocation().getNodePointer();
+    Set<ILocationBreakpoint> breakpointsForModel = myRootsToBreakpointsMap.get(node.getModelReference());
+    if (breakpointsForModel == null) {
+      myRootsToBreakpointsMap.put(node.getModelReference(), breakpointsForModel = new HashSet<ILocationBreakpoint>());
     }
+    //  check the following assumption: one breakpoint for one node 
+    for (ILocationBreakpoint bp : breakpointsForModel) {
+      if (bp.getLocation().equals(breakpoint.getLocation())) {
+        LOG.error("Trying to add a second breakpoint for node", bp.getLocation().getPresentation());
+        break;
+      }
+    }
+    breakpointsForModel.add(breakpoint);
   }
   public void removeBreakpoint(@NotNull final IBreakpoint breakpoint) {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        synchronized (myBreakpoints) {
-          if (breakpoint instanceof ILocationBreakpoint) {
-            removeLocationBreakpoint((ILocationBreakpoint) breakpoint);
-          }
-          myBreakpoints.remove(breakpoint);
-          breakpoint.removeFromRunningSessions();
-        }
+    synchronized (myBreakpoints) {
+      if (breakpoint instanceof ILocationBreakpoint) {
+        removeLocationBreakpoint((ILocationBreakpoint) breakpoint);
       }
-    });
+      myBreakpoints.remove(breakpoint);
+      breakpoint.removeFromRunningSessions();
+    }
     fireBreakpointRemoved(breakpoint);
   }
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
-    SNode node = breakpoint.getLocation().getSNode();
-    if (node != null) {
-      SNode root = node.getContainingRoot();
-      SNodeReference rootPointer = new SNodePointer(root);
-      Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
-      if (breakpointsForRoot != null) {
-        breakpointsForRoot.remove(breakpoint);
-      }
+    SNodeReference node = breakpoint.getLocation().getNodePointer();
+    Set<ILocationBreakpoint> breakpointsForModel = myRootsToBreakpointsMap.get(node.getModelReference());
+    if (breakpointsForModel != null) {
+      breakpointsForModel.remove(breakpoint);
     }
   }
   private void clear() {
@@ -246,23 +229,30 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       listener.breakpointAdded(breakpoint);
     }
   }
+  /**
+   * Tell subset of breakpoints 'close' to supplied ancor node.
+   * Here, 'close' means they are at a node from the same model, and perhaps are from descendants.
+   * 
+   * IMPORTANT: contract of the method has been changed. It used to return breakpoints within given root, now the set is wider and
+   * gives breakpoints from the same model. Sticking to root doesn't bring any noticeable benefit (we need to match breakpoints anyway), but
+   * brings a lot of complications as we need to go from node reference to node to containing root.
+   * 
+   * @param rootPointer narrows scope where to look for breakpoints, e.g. root node
+   * @return breakpoints 'close' to the specified anchor, or empty set if none found
+   */
   public Set<ILocationBreakpoint> getBreakpoints(final SNodeReference rootPointer) {
-    return ModelAccess.instance().runReadAction(new Computable<Set<ILocationBreakpoint>>() {
-      @Override
-      public Set<ILocationBreakpoint> compute() {
-        synchronized (myBreakpoints) {
-          if (!(myBreakpointsForRootInitialized)) {
-            myBreakpointsForRootInitialized = true;
-            for (IBreakpoint breakpoint : myBreakpoints) {
-              if (breakpoint instanceof ILocationBreakpoint) {
-                addLocationBreakpoint((ILocationBreakpoint) breakpoint);
-              }
-            }
+    synchronized (myBreakpoints) {
+      if (!(myBreakpointsForRootInitialized)) {
+        myBreakpointsForRootInitialized = true;
+        for (IBreakpoint breakpoint : myBreakpoints) {
+          if (breakpoint instanceof ILocationBreakpoint) {
+            addLocationBreakpoint((ILocationBreakpoint) breakpoint);
           }
-          return myRootsToBreakpointsMap.get(rootPointer);
         }
       }
-    });
+      Set<ILocationBreakpoint> rv = myRootsToBreakpointsMap.get(rootPointer.getModelReference());
+      return (rv == null ? Collections.emptySet() : rv);
+    }
   }
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);

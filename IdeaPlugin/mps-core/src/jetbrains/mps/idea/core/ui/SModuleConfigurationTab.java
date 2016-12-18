@@ -21,9 +21,9 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import javax.swing.JComponent;
 
 public interface SModuleConfigurationTab {
-  public void reset(MPSConfigurationBean data);
-  public void apply(MPSConfigurationBean data);
-  public boolean isModified(MPSConfigurationBean data);
-  public JComponent getRootPanel();
-  public void onTabEntering();
+  void reset(MPSConfigurationBean data);
+  void apply(MPSConfigurationBean data);
+  boolean isModified(MPSConfigurationBean data);
+  JComponent getRootPanel();
+  void onTabEntering();
 }

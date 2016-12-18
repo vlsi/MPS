@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -94,7 +94,7 @@
   <node concept="1M2fIO" id="5p3TFWLvDOc">
     <ref role="1M2myG" to="ohyq:1X4JaHeCxHy" resolve="CellModel_HierarchycalTable" />
     <node concept="1N5Pfh" id="5p3TFWLvDOd" role="1Mr941">
-      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOh" />
+      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOh" resolve="headerRowLinkDeclaration" />
       <node concept="1MUpDS" id="5p3TFWLvEh7" role="1N6uqs">
         <node concept="3clFbS" id="5p3TFWLvEh8" role="2VODD2">
           <node concept="3clFbF" id="5p3TFWLvEUp" role="3cqZAp">
@@ -141,7 +141,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="5p3TFWLvEhJ" role="1Mr941">
-      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOi" />
+      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOi" resolve="rowsLinkDeclaration" />
       <node concept="1MUpDS" id="5p3TFWLvEhK" role="1N6uqs">
         <node concept="3clFbS" id="5p3TFWLvEhL" role="2VODD2">
           <node concept="3clFbF" id="5p3TFWLvEUr" role="3cqZAp">
@@ -185,7 +185,7 @@
       </node>
     </node>
     <node concept="1N5Pfh" id="5p3TFWLvEUT" role="1Mr941">
-      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOj" />
+      <ref role="1N5Vy1" to="ohyq:5p3TFWLvDOj" resolve="cellsInRowLinkDeclaration" />
       <node concept="1MUpDS" id="5p3TFWLvFoK" role="1N6uqs">
         <node concept="3clFbS" id="5p3TFWLvFoL" role="2VODD2">
           <node concept="3clFbJ" id="5p3TFWLvFoM" role="3cqZAp">
@@ -198,7 +198,7 @@
               <node concept="2OqwBi" id="5p3TFWLvFoQ" role="2Oq$k0">
                 <node concept="3kakTB" id="5p3TFWLvFoP" role="2Oq$k0" />
                 <node concept="3TrEf2" id="5p3TFWLvFoU" role="2OqNvi">
-                  <ref role="3Tt5mk" to="ohyq:5p3TFWLvDOi" />
+                  <ref role="3Tt5mk" to="ohyq:5p3TFWLvDOi" resolve="rowsLinkDeclaration" />
                 </node>
               </node>
               <node concept="3w_OXm" id="5p3TFWLvFoZ" role="2OqNvi" />
@@ -211,11 +211,11 @@
                   <node concept="2OqwBi" id="5p3TFWLvFp6" role="2Oq$k0">
                     <node concept="3kakTB" id="5p3TFWLvFp5" role="2Oq$k0" />
                     <node concept="3TrEf2" id="5p3TFWLvFpa" role="2OqNvi">
-                      <ref role="3Tt5mk" to="ohyq:5p3TFWLvDOi" />
+                      <ref role="3Tt5mk" to="ohyq:5p3TFWLvDOi" resolve="rowsLinkDeclaration" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="5p3TFWLvFpf" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                    <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                   </node>
                 </node>
                 <node concept="2qgKlT" id="5p3TFWLvFpl" role="2OqNvi">

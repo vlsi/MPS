@@ -148,7 +148,6 @@
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -158,6 +157,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -272,14 +272,14 @@
                       <ref role="3cqZAo" node="1uUMibxO6sQ" resolve="linkNode" />
                     </node>
                     <node concept="3TrEf2" id="2wBnf4toVoG" role="2OqNvi">
-                      <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                      <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                     </node>
                   </node>
                   <node concept="2qgKlT" id="73yVtVm1pfx" role="2OqNvi">
                     <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
                     <node concept="2OqwBi" id="2wBnf4toVnQ" role="37wK5m">
                       <node concept="3TrEf2" id="2wBnf4toVou" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpce:fA0lvVK" />
+                        <ref role="3Tt5mk" to="tpce:fA0lvVK" resolve="target" />
                       </node>
                       <node concept="2GrUjf" id="2wBnf4toVnP" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="1uUMibxO6sU" resolve="linkDecl" />
@@ -474,7 +474,7 @@
           <node concept="3clFbF" id="5gLR1OH$bKB" role="3cqZAp">
             <node concept="2OqwBi" id="5gLR1OH$bKD" role="3clFbG">
               <node concept="_YI3z" id="5gLR1OH$bKC" role="2Oq$k0" />
-              <node concept="1PgB_6" id="5gLR1OH$bKH" role="2OqNvi" />
+              <node concept="3YRAZt" id="5gLR1OH$bKH" role="2OqNvi" />
             </node>
           </node>
         </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -122,6 +122,8 @@ public class MPSIcons {
       public static final Icon AccessoryModel = IconLoader.getIcon("/nodes/models/accessoryModel.png");
     }
   }
+
+  public static final Icon LanguageRuntime = IconLoader.getIcon("/nodes/lang-rt.png");
 
   public static class ProjectPane {
     public static final Icon LogicalView = IconLoader.getIcon("/projectPane/logicalView.png");

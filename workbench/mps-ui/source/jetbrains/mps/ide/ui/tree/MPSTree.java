@@ -473,6 +473,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           }
         };
       }
+      // debugger.GroupedTree assumes read action for rebuild() call
       ModelAccess.instance().runReadAction(rebuildAction);
       if (restoreExpansion != null) {
         runWithoutExpansion(restoreExpansion);

@@ -41,11 +41,14 @@ import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -107,6 +110,21 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     });
     return result;
   }
+
+  @Override
+  @NotNull
+  protected List<EditorComponent> getComponentsForBreakpoint(@NotNull final BreakpointWithHighlighter breakpoint) {
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).runReadAction(new Computable<List<EditorComponent>>() {
+      public List<EditorComponent> compute() {
+        SNode node = BreakpointPainter.getNodeForBreakpoint(breakpoint);
+        if (node != null) {
+          return EditorComponentUtil.findComponentForNode(node, myFileEditorManager);
+        }
+        return Collections.emptyList();
+      }
+    });
+  }
+
 
   @Override
   protected BreakpointPainter createPainter(BreakpointWithHighlighter breakpoint) {
@@ -194,24 +212,17 @@ public class IdeaBreakpointsUiComponent extends BreakpointsUiComponentEx<Breakpo
     }
 
     @Override
-    public void breakpointChanged(@NotNull XBreakpoint breakpoint) {
+    public void breakpointChanged(@NotNull XBreakpoint breakpointNoUse) {
       clearAllEditors();
 
+      // XXX why do we remove/re-add all BPs here instead of managing them individually like BreakpointsUiComponent does?
       final List<Breakpoint> breakpoints = myDebuggerManager.getBreakpointManager().getBreakpoints();
-      ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          for (Breakpoint breakpoint : breakpoints) {
-            if (breakpoint instanceof BreakpointWithHighlighter) {
-              BreakpointWithHighlighter breakpointWithHighlighter = (BreakpointWithHighlighter) breakpoint;
-              SNode node = BreakpointPainter.getNodeForBreakpoint(breakpointWithHighlighter);
-              if (node != null) {
-                addLocationBreakpoint(breakpointWithHighlighter, node);
-              }
-            }
-          }
+      for (Breakpoint breakpoint : breakpoints) {
+        if (breakpoint instanceof BreakpointWithHighlighter) {
+          BreakpointWithHighlighter breakpointWithHighlighter = (BreakpointWithHighlighter) breakpoint;
+          addLocationBreakpoint(breakpointWithHighlighter);
         }
-      });
+      }
 
       repaintBreakpoints();
       ApplicationManager.getApplication().invokeLater(new Runnable() {

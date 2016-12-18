@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,12 @@ package jetbrains.mps.classloading;
 
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.After;
+import org.junit.Before;
 
 import static org.junit.Assert.assertTrue;
 
@@ -53,15 +52,13 @@ public class ModulesReloadTestStress extends ModulesReloadTest {
     }
   };
 
-  @BeforeClass
-  public static void setUp() {
-    ModulesReloadTest.setUp();
-    MPSModuleRepository.getInstance().addRepositoryListener(CRAZY_LISTENER);
+  @Before
+  public void attachCrazyListener() {
+    getTestRepository().addRepositoryListener(CRAZY_LISTENER);
   }
 
-  @AfterClass
-  public static void tearDown() {
-    MPSModuleRepository.getInstance().removeRepositoryListener(CRAZY_LISTENER);
-    ModulesReloadTest.tearDown();
+  @After
+  public void detachCrazyListener() {
+    getTestRepository().removeRepositoryListener(CRAZY_LISTENER);
   }
 }

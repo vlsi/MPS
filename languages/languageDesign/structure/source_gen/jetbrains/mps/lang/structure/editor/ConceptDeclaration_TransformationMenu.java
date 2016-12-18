@@ -299,7 +299,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
 
           @Override
           public boolean canExecute(@NotNull String pattern) {
-            if (SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null) {
+            if (isNotEmptyString(SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")))) {
               return false;
             }
 
@@ -310,7 +310,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
             //    this means: the node will be available in the list of competion menu items 
             return SetSequence.fromSet(superContepts).any(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")) != null;
+                return isNotEmptyString(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias")));
               }
             }) || ListSequence.fromList(SModelOperations.roots(SNodeOperations.getModel(_context.getNode()), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))).translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode it) {
@@ -368,6 +368,9 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
         }
       }
     }
+  }
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
   }
   private static SNode _quotation_createNode_dubn3u_a0a0a0b2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

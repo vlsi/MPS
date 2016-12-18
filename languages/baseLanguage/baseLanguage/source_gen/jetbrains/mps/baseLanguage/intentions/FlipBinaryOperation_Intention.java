@@ -13,8 +13,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.Collections;
 import jetbrains.mps.intentions.IntentionExecutableBase;
+import jetbrains.mps.baseLanguage.behavior.BinaryOperation__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public final class FlipBinaryOperation_Intention extends IntentionDescriptorBase implements IntentionFactory {
@@ -51,18 +53,26 @@ public final class FlipBinaryOperation_Intention extends IntentionDescriptorBase
     }
     @Override
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Flip Binary Operation";
+      return "Flip Binary Operation" + (((boolean) BinaryOperation__BehaviorDescriptor.flipChangesSemantics_id14Lzlw0RrBK.invoke(node) ? " (changes semantics)" : ""));
     }
     @Override
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode leftExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"));
       SNode rightExpression = SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"));
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), SNodeOperations.copyNode(rightExpression));
-      SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeOperations.copyNode(leftExpression));
+      SNode flippedOperator = BinaryOperation__BehaviorDescriptor.getFlippedOperator_id14Lzlw0K236.invoke(node);
+      SLinkOperations.setTarget(flippedOperator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression"), SNodeOperations.copyNode(rightExpression));
+      SLinkOperations.setTarget(flippedOperator, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression"), SNodeOperations.copyNode(leftExpression));
+      if (neq_3om1sj_a0f0c7(node, flippedOperator)) {
+        SNodeOperations.replaceWithAnother(node, flippedOperator);
+        SelectionUtil.selectCell(editorContext, flippedOperator, "ALIAS_EDITOR_COMPONENT");
+      }
     }
     @Override
     public IntentionDescriptor getDescriptor() {
       return FlipBinaryOperation_Intention.this;
     }
+  }
+  private static boolean neq_3om1sj_a0f0c7(Object a, Object b) {
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

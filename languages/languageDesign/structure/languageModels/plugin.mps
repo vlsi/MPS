@@ -5,6 +5,7 @@
     <use id="c0080a47-7e37-4558-bee9-9ae18e690549" name="jetbrains.mps.lang.extension" version="2" />
     <use id="f159adf4-3c93-40f9-9c5a-1f245a8697af" name="jetbrains.mps.lang.aspect" version="1" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c9d137c4-3259-44f8-80ff-33ab2b506ee4" name="jetbrains.mps.lang.util.order" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -14,7 +15,19 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
-    <import index="xnls" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.icons(MPS.Platform/)" />
+    <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
+    <import index="bgxn" ref="r:01d327ba-040c-402c-a2b6-8832116588df(jetbrains.mps.lang.plugin.plugin)" />
+    <import index="hgrf" ref="r:01b252f4-57dd-45b0-b193-1c0cf81e6653(jetbrains.mps.lang.dataFlow.plugin)" />
+    <import index="mg3u" ref="r:0799ed23-f21a-4dba-ac61-5b80d66bec13(jetbrains.mps.lang.behavior.plugin)" />
+    <import index="8okf" ref="r:dbde341a-c09d-4dfc-8b0a-5ed08f460369(jetbrains.mps.lang.intentions.plugin)" />
+    <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
+    <import index="che4" ref="r:e5186c75-12ba-46bf-934f-f0e026ef8c26(jetbrains.mps.lang.migration.plugin)" />
+    <import index="n1pe" ref="r:db7af0ad-3d1a-4f64-a9bf-f3dc73570877(jetbrains.mps.lang.script.plugin)" />
+    <import index="xg48" ref="r:7be9d1d9-acb4-4fe3-8096-96178feee8f5(jetbrains.mps.lang.findUsages.plugin)" />
+    <import index="sla8" ref="r:e9b03271-b52a-47ee-a82c-3d061109bb59(jetbrains.mps.lang.actions.plugin)" />
+    <import index="9anm" ref="r:6f374023-1b4e-4a80-8bf6-2cc3148faa52(jetbrains.mps.lang.editor.plugin)" />
+    <import index="h8lr" ref="r:60e7ad77-a9db-453a-a2df-fed6c145c654(jetbrains.mps.lang.textGen.plugin)" />
+    <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -32,7 +45,9 @@
         <child id="6106419185511570295" name="mainLanguages" index="QG$2i" />
         <child id="5177162104569174921" name="httpHelpUrl" index="1sFm88" />
         <child id="3433054418425083029" name="icon" index="3vqPLo" />
+        <child id="2343319097654255233" name="order" index="3F_NFc" />
       </concept>
+      <concept id="174635545557784815" name="jetbrains.mps.lang.aspect.structure.SimpleAspectOrderRef" flags="ng" index="1SjbrP" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1224071154655" name="jetbrains.mps.baseLanguage.structure.AsExpression" flags="nn" index="0kSF2">
@@ -154,6 +169,17 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="c9d137c4-3259-44f8-80ff-33ab2b506ee4" name="jetbrains.mps.lang.util.order">
+      <concept id="2450897840534688273" name="jetbrains.mps.lang.util.order.structure.OrderReference" flags="ng" index="2vPci8">
+        <reference id="2450897840534688274" name="order" index="2vPcib" />
+      </concept>
+      <concept id="2450897840534683979" name="jetbrains.mps.lang.util.order.structure.OrderParticipantReference" flags="nn" index="2vPdvi">
+        <reference id="2450897840534683980" name="target" index="2vPdvl" />
+      </concept>
+      <concept id="2450897840534683975" name="jetbrains.mps.lang.util.order.structure.OrderDeclaration" flags="ng" index="2vPdvu">
+        <child id="2450897840534683977" name="seq" index="2vPdvg" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -1326,6 +1352,54 @@
     <node concept="2V$Bhx" id="5cAnPGmok3c" role="QG$2i">
       <property role="2V$B1T" value="c72da2b9-7cce-4447-8389-f407dc1158b7" />
       <property role="2V$B1Q" value="jetbrains.mps.lang.structure" />
+    </node>
+    <node concept="2vPci8" id="264$spPfZhv" role="3F_NFc">
+      <ref role="2vPcib" node="264$spPfYX1" resolve="MPSAspects" />
+    </node>
+  </node>
+  <node concept="2vPdvu" id="264$spPfYX1">
+    <property role="TrG5h" value="MPSAspects" />
+    <node concept="1SjbrP" id="6I43d0FgF1a" role="2vPdvg">
+      <ref role="2vPdvl" node="2LiUEk8oQ$g" resolve="structure" />
+    </node>
+    <node concept="1SjbrP" id="6S7pXgv_JTh" role="2vPdvg">
+      <ref role="2vPdvl" to="9anm:2LiUEk8oQ$g" resolve="editor" />
+    </node>
+    <node concept="1SjbrP" id="6S7pXgv_JTt" role="2vPdvg">
+      <ref role="2vPdvl" to="sla8:2LiUEk8oQ$g" resolve="actions" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfC8J" role="2vPdvg">
+      <ref role="2vPdvl" to="beg:2LiUEk8oQ$g" resolve="constraints" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfC9h" role="2vPdvg">
+      <ref role="2vPdvl" to="mg3u:2LiUEk8oQ$g" resolve="behavior" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfC9z" role="2vPdvg">
+      <ref role="2vPdvl" to="f7uj:2LiUEk8oQ$g" resolve="typesystem" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfC9P" role="2vPdvg">
+      <ref role="2vPdvl" to="6sb4:2LiUEk8oQ$g" resolve="refactorings" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfCa7" role="2vPdvg">
+      <ref role="2vPdvl" to="n1pe:2LiUEk8oQ$g" resolve="scripts" />
+    </node>
+    <node concept="1SjbrP" id="6S7pXgv_L49" role="2vPdvg">
+      <ref role="2vPdvl" to="8okf:2LiUEk8oQ$g" resolve="intentions" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfCaF" role="2vPdvg">
+      <ref role="2vPdvl" to="xg48:2LiUEk8oQ$g" resolve="findUsages" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfCbh" role="2vPdvg">
+      <ref role="2vPdvl" to="bgxn:2LiUEk8oQ$g" resolve="plugin" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfCco" role="2vPdvg">
+      <ref role="2vPdvl" to="hgrf:2LiUEk8oQ$g" resolve="dataFlow" />
+    </node>
+    <node concept="1SjbrP" id="264$spPfYJw" role="2vPdvg">
+      <ref role="2vPdvl" to="h8lr:2LiUEk8oQ$g" resolve="textGen" />
+    </node>
+    <node concept="1SjbrP" id="6S7pXgv_Lh5" role="2vPdvg">
+      <ref role="2vPdvl" to="che4:2LiUEk8oQ$g" resolve="migration" />
     </node>
   </node>
 </model>

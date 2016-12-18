@@ -52,7 +52,7 @@
             <node concept="2OqwBi" id="7jH_x$qzszX" role="2Oq$k0">
               <node concept="13iPFW" id="7jH_x$qzszU" role="2Oq$k0" />
               <node concept="3TrEf2" id="7jH_x$qzs$3" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" />
+                <ref role="3Tt5mk" to="tpee:4VkOLwjf83e" resolve="type" />
               </node>
             </node>
             <node concept="zfrQC" id="7jH_x$qzs$F" role="2OqNvi">

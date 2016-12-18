@@ -20,7 +20,7 @@ public class ContextActionsTool_Tool extends GeneratedTool {
   private ToolComponent myComponent;
   private ToolController myController;
   public ContextActionsTool_Tool(Project project) {
-    super(project, "Context Actions", -1, ICON, ToolWindowAnchor.RIGHT, false);
+    super(project, "Context Actions", null, ICON, ToolWindowAnchor.RIGHT, false);
   }
   public void init(Project project) {
     super.init(project);

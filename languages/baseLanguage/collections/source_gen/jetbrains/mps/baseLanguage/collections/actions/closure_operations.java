@@ -15,7 +15,7 @@ public class closure_operations {
   public static class NodeFactory_1225118817881 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode sel = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((sel == null)) {
@@ -29,7 +29,7 @@ public class closure_operations {
   public static class NodeFactory_1225119174306 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode sel = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((sel == null)) {
@@ -43,7 +43,7 @@ public class closure_operations {
   public static class NodeFactory_1225119188770 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode sel = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((sel == null)) {
@@ -57,7 +57,7 @@ public class closure_operations {
   public static class NodeFactory_1225119083460 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode sel = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((sel == null)) {
@@ -71,7 +71,7 @@ public class closure_operations {
   public static class NodeFactory_1225119114838 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode sel = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((sel == null)) {
@@ -97,7 +97,7 @@ public class closure_operations {
   public static class NodeFactory_1225728791327 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode filter = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((filter == null)) {
@@ -111,7 +111,7 @@ public class closure_operations {
   public static class NodeFactory_1225730740847 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode filter = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((filter == null)) {
@@ -125,7 +125,7 @@ public class closure_operations {
   public static class NodeFactory_1235567398001 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode filter = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((filter == null)) {
@@ -139,7 +139,7 @@ public class closure_operations {
   public static class NodeFactory_1235567424420 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode filter = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((filter == null)) {
@@ -153,7 +153,7 @@ public class closure_operations {
   public static class NodeFactory_3055999550620994085 implements NodeFactory {
     public void setup(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
       if (SNodeOperations.isInstanceOf(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation"))) {
-        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
+        SLinkOperations.setTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"), SNodeOperations.deleteNode(SLinkOperations.getTarget(SNodeOperations.cast(sampleNode, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, "jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"))));
       } else {
         SNode filter = SLinkOperations.getTarget(newNode, MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1188372895aL, 0x11883748452L, "closure"));
         if ((filter == null)) {

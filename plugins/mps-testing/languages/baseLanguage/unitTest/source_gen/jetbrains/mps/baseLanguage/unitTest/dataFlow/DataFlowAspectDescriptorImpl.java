@@ -24,7 +24,7 @@ public class DataFlowAspectDescriptorImpl extends DataFlowAspectDescriptorBase {
       case 1:
         return Collections.<IDataFlowBuilder>singletonList(new AssertFalse_DataFlow());
       case 2:
-        return Collections.<IDataFlowBuilder>singletonList(new AssertInNotNull_DataFlow());
+        return Collections.<IDataFlowBuilder>singletonList(new AssertIsNotNull_DataFlow());
       case 3:
         return Collections.<IDataFlowBuilder>singletonList(new AssertIsNull_DataFlow());
       case 4:

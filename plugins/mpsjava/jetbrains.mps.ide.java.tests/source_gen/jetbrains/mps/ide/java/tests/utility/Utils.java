@@ -29,6 +29,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
+import jetbrains.mps.extapi.module.SModuleBase;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
@@ -110,7 +111,7 @@ public class Utils {
 
   public static void checkFile(String path, SNode expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(getModule());
+    mr.setModule((SModuleBase) getModule());
     mr.setContentRoot(path);
     mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, path);
 
@@ -144,7 +145,7 @@ public class Utils {
 
   public static void checkStubModels(String dirPath, List<SModel> expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
-    mr.setModule(getModule());
+    mr.setModule((SModuleBase) getModule());
     mr.setContentRoot(dirPath);
     mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, dirPath);
     mr.attach();
@@ -214,7 +215,7 @@ public class Utils {
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
     JavaClassStubsModelRoot binSRoot = new JavaClassStubsModelRoot();
-    binSRoot.setModule(mod1);
+    binSRoot.setModule((SModuleBase) mod1);
     binSRoot.setContentRoot(binPath);
     binSRoot.addFile(JavaClassStubsModelRoot.SOURCE_ROOTS, binPath);
     Iterable<SModel> binStubModels = binSRoot.loadModels();
@@ -238,7 +239,7 @@ public class Utils {
     Iterable<SModel> srcModels;
     List<SModel> srcModelsX = ListSequence.fromList(new ArrayList<SModel>());
 
-    src2.setModule(mod2);
+    src2.setModule((SModuleBase) mod2);
     src2.setContentRoot(sourcePath);
     src2.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, sourcePath);
     srcModels = src2.loadModels();

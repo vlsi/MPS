@@ -327,8 +327,8 @@
       </scope>
       <scope id="6066872190921237633" at="22,63,120,7" />
       <scope id="6066872190921237633" at="22,0,122,0" />
-      <unit id="6066872190921396125" at="100,84,104,9" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$4" />
-      <unit id="6066872190921392904" at="108,99,112,9" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$4" />
+      <unit id="6066872190921396125" at="100,84,104,9" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$3$1" />
+      <unit id="6066872190921392904" at="108,99,112,9" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$3$2" />
       <unit id="6066872190921237633" at="59,28,84,5" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$2" />
       <unit id="6066872190921237633" at="24,28,58,5" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$1" />
       <unit id="6066872190921237633" at="85,28,120,5" name="jetbrains.mps.lang.structure.scripts.DeleteUndeclaredLinksAndProperties_MigrationScript$3" />

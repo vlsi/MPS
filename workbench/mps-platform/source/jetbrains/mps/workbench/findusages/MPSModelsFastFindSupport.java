@@ -27,7 +27,6 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdHelper;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
@@ -52,6 +51,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.function.Function;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsagesParticipant {
   @Override
@@ -72,12 +72,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   @Override
   public void findUsages(Collection<SModel> scope, Set<SNode> nodes, Consumer<SReference> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SNode> candidates = findCandidates(scope, nodes, processedConsumer, new Mapper<SNode, UsageEntry>() {
-      @Override
-      public UsageEntry value(SNode key) {
-        return new NodeUse(key.getNodeId());
-      }
-    });
+    MultiMap<SModel, SNode> candidates = findCandidates(scope, nodes, processedConsumer, key -> new NodeUse(key.getNodeId()));
     for (Entry<SModel, Collection<SNode>> candidate : candidates.entrySet()) {
       new NodeUsageFinder(candidate.getValue(), consumer).collectUsages(candidate.getKey());
     }
@@ -85,12 +80,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   @Override
   public void findInstances(Collection<SModel> scope, Set<SAbstractConcept> concepts, Consumer<SNode> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, new Mapper<SAbstractConcept, UsageEntry>() {
-      @Override
-      public UsageEntry value(SAbstractConcept key) {
-        return new ConceptInstance(MetaIdHelper.getConcept(key));
-      }
-    });
+    MultiMap<SModel, SAbstractConcept> candidates = findCandidates(scope, concepts, processedConsumer, key -> new ConceptInstance(MetaIdHelper.getConcept(key)));
     for (Entry<SModel, Collection<SAbstractConcept>> candidate : candidates.entrySet()) {
       FindUsagesUtil.collectInstances(candidate.getKey(), candidate.getValue(), consumer);
     }
@@ -98,12 +88,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
 
   @Override
   public void findModelUsages(Collection<SModel> scope, Set<SModelReference> modelReferences, Consumer<SModel> consumer, Consumer<SModel> processedConsumer) {
-    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, new Mapper<SModelReference, UsageEntry>() {
-      @Override
-      public UsageEntry value(SModelReference key) {
-        return new ModelUse(key);
-      }
-    });
+    MultiMap<SModel, SModelReference> candidates = findCandidates(scope, modelReferences, processedConsumer, key -> new ModelUse(key));
     for (Entry<SModel, Collection<SModelReference>> candidate : candidates.entrySet()) {
       if (FindUsagesUtil.hasModelUsages(candidate.getKey(), candidate.getValue())) {
         consumer.consume(candidate.getKey());
@@ -111,7 +96,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     }
   }
 
-  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, Mapper<T, UsageEntry> id) {
+  private <T> MultiMap<SModel, T> findCandidates(Collection<SModel> models, Set<T> elems, Consumer<SModel> processedModels, Function<T, UsageEntry> id) {
     // get all files in scope
     final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
     for (final SModel sm : models) {
@@ -155,7 +140,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     // process indexes
     MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     for (T elem : elems) {
-      UsageEntry entry = id.value(elem);
+      UsageEntry entry = id.apply(elem);
 
       Collection<VirtualFile> matchingFiles;
 

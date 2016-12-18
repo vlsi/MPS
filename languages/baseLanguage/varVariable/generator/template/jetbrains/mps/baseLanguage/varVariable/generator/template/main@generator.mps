@@ -119,7 +119,7 @@
                     <node concept="3clFbF" id="7jH_x$qzhen" role="3cqZAp">
                       <node concept="2OqwBi" id="7jH_x$qzheo" role="3clFbG">
                         <node concept="3TrEf2" id="7jH_x$qzhep" role="2OqNvi">
-                          <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                          <ref role="3Tt5mk" to="tpee:fz3vP1I" resolve="initializer" />
                         </node>
                         <node concept="30H73N" id="7jH_x$qzheq" role="2Oq$k0" />
                       </node>

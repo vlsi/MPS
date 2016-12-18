@@ -80,6 +80,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="java.util.function.Function" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.findUsages.FindUsagesUtil" />
     <classNode dependClassName="jetbrains.mps.findUsages.NodeUsageFinder" />
@@ -93,7 +94,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
-    <classNode dependClassName="jetbrains.mps.util.Mapper" />
     <classNode dependClassName="jetbrains.mps.util.containers.ManyToManyMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.MultiMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.SetBasedMultiMap" />

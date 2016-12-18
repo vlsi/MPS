@@ -99,7 +99,7 @@
       </scope>
       <scope id="1802459475176587699" at="36,43,57,8" />
       <scope id="1802459475176587696" at="35,0,59,0" />
-      <unit id="1802459475176587764" at="37,17,57,7" name="typesystemIntegration.languageChecker.RefScopeCheckerInEditor$1" />
+      <unit id="1802459475176587764" at="37,17,57,7" name="typesystemIntegration.languageChecker.RefScopeCheckerInEditor$ResolveReferenceEditorBasedQuickFix$1" />
       <unit id="1802459475176587689" at="28,0,72,0" name="typesystemIntegration.languageChecker.RefScopeCheckerInEditor$ResolveReferenceEditorBasedQuickFix" />
       <unit id="2855655749838535756" at="18,0,73,0" name="typesystemIntegration.languageChecker.RefScopeCheckerInEditor" />
     </file>
@@ -201,7 +201,7 @@
         <var name="level" id="4498927700296444811" />
         <var name="parentReported" id="4498927700296444815" />
       </scope>
-      <unit id="4498927700296444836" at="69,17,78,7" name="typesystemIntegration.languageChecker.UsedLanguagesChecker$1" />
+      <unit id="4498927700296444836" at="69,17,78,7" name="typesystemIntegration.languageChecker.UsedLanguagesChecker$LangImportQFixProvider$1" />
       <unit id="4498927700296444823" at="65,0,89,0" name="typesystemIntegration.languageChecker.UsedLanguagesChecker$LangImportQFixProvider" />
       <unit id="4498927700296444643" at="25,0,90,0" name="typesystemIntegration.languageChecker.UsedLanguagesChecker" />
     </file>
@@ -446,7 +446,7 @@
         <var name="badReferences" id="8201985028522699604" />
         <var name="editorContext" id="8201985028522598059" />
       </scope>
-      <unit id="5245431967226361765" at="79,69,143,9" name="typesystemIntegration.languageChecker.AutoResolver$2" />
+      <unit id="5245431967226361765" at="79,69,143,9" name="typesystemIntegration.languageChecker.AutoResolver$1$1" />
       <unit id="5236817883989791702" at="76,49,145,5" name="typesystemIntegration.languageChecker.AutoResolver$1" />
       <unit id="5031859272495377247" at="36,0,182,0" name="typesystemIntegration.languageChecker.AutoResolver" />
     </file>
@@ -755,7 +755,7 @@
         <var name="inspector" id="2864426673675277368" />
       </scope>
       <unit id="2864426673675277862" at="91,153,96,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$1" />
-      <unit id="2864426673675277542" at="199,63,211,11" name="typesystemIntegration.languageChecker.LanguageEditorChecker$3" />
+      <unit id="2864426673675277542" at="199,63,211,11" name="typesystemIntegration.languageChecker.LanguageEditorChecker$2$1" />
       <unit id="2864426673675277536" at="197,58,213,7" name="typesystemIntegration.languageChecker.LanguageEditorChecker$2" />
       <unit id="7390982340086719450" at="54,0,235,0" name="typesystemIntegration.languageChecker.LanguageEditorChecker" />
     </file>

@@ -39,6 +39,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
+    <classNode dependClassName="jetbrains.mps.extapi.module.SModuleBase" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.FeatureKind" />

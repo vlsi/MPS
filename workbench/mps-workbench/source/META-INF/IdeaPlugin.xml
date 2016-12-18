@@ -22,7 +22,8 @@
     <extensionPoint name="mps.NavigationProvider" interface="jetbrains.mps.ide.navigation.NavigationProvider"/>
     <extensionPoint name="mps.ModelValidator" interface="jetbrains.mps.ide.generator.ModelValidator"/>
     <extensionPoint name="mps.TabColorProvider" area="IDEA_PROJECT" interface="jetbrains.mps.ide.editorTabs.TabColorProvider"/>
-    <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" area="IDEA_PROJECT"/>
+    <extensionPoint name="mps.projectPrefsPanel" interface="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel"
+                    area="IDEA_PROJECT"/>
     <extensionPoint name="mps.projectGroupTemplateEP" interface="jetbrains.mps.workbench.dialogs.project.newproject.ProjectTemplatesGroup"/>
     <extensionPoint name="mps.languageProjectTemplateEP" interface="jetbrains.mps.workbench.dialogs.project.newproject.LanguageProjectTemplate"/>
     <extensionPoint name="mps.solutionProjectTemplateEP" interface="jetbrains.mps.workbench.dialogs.project.newproject.SolutionProjectTemplate"/>
@@ -65,7 +66,7 @@
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
 
     <applicationService serviceInterface="com.intellij.profile.codeInspection.InspectionProfileManager"
-                        serviceImplementation="com.intellij.codeInspection.ex.InspectionProfileManagerImpl"/>
+                        serviceImplementation="com.intellij.codeInspection.ex.ApplicationInspectionProfileManager"/>
   </extensions>
 
 </idea-plugin>

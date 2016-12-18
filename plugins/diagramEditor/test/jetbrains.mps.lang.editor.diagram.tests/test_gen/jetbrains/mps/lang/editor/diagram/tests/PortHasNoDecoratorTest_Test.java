@@ -30,7 +30,7 @@ public class PortHasNoDecoratorTest_Test extends BaseTransformationTest {
       final Wrappers._T<Mapper> descendantMapper = new Wrappers._T<Mapper>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(getNodeById("1560508619094462938"), MetaAdapterFactory.getConcept(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, 0x4ce40ecaf41f71f2L, "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort")), getEditorComponent());
+          descendantMapper.value = DecoratorTestRunner.getMapper(SNodeOperations.cast(getNodeById("1560508619094462938"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x50560c9658e49c5L, 0xb8e79e4db4c7e97fL, "jetbrains.mps.lang.editor.diagram.testLanguage"), 0x4ce40ecaf41f71f2L, "InputPort"))), getEditorComponent());
         }
       });
       Assert.assertTrue(descendantMapper.value != null);

@@ -59,7 +59,7 @@
             <ref role="1YBMHb" node="15xlXKdz74A" resolve="wrapperType" />
           </node>
           <node concept="3TrEf2" id="15xlXKdz7k0" role="2OqNvi">
-            <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" />
+            <ref role="3Tt5mk" to="jwoj:15xlXKdz5aX" resolve="wrapped" />
           </node>
         </node>
       </node>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.ColoredTableCellRenderer;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -24,6 +25,8 @@ import org.jetbrains.mps.util.Condition;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JTable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -35,23 +38,27 @@ import java.util.TreeMap;
  * @author Artem Tikhomirov
  */
 /*package*/ abstract class StateTableCellRenderer<C, T> extends ColoredTableCellRenderer {
-  protected final Map<DependencyCellState, Condition<T>> myCellStates;
+  protected final List<Pair<Condition<T>, DependencyCellState>> myCellStates;
   protected final SRepository myRepository;
 
   StateTableCellRenderer(@NotNull SRepository repository) {
-    myCellStates = new TreeMap<>(); // use Enum.ordinal of DependencyCellState values
+    myCellStates = new ArrayList<>(4);
     myRepository = repository;
   }
 
+  /**
+   * Register a condition that activates given cell presentation options.
+   * Conditions are evaluated in order they were added, first satisfied condition cancels evaluation of the rest.
+   */
   public void addCellState(@NotNull Condition<T> condition, @NotNull DependencyCellState cellState) {
-    myCellStates.put(cellState, condition);
+    myCellStates.add(new Pair<>(condition, cellState));
   }
 
   @NotNull
   protected DependencyCellState getDependencyCellState(@Nullable T cellElement) {
-    for (DependencyCellState cellState : myCellStates.keySet()) {
-      if (myCellStates.get(cellState).met(cellElement)) {
-        return cellState;
+    for (Pair<Condition<T>, DependencyCellState> cellState : myCellStates) {
+      if (cellState.o1.met(cellElement)) {
+        return cellState.o2;
       }
     }
     return DependencyCellState.NORMAL;
@@ -76,6 +83,7 @@ import java.util.TreeMap;
         cellState[0] = getDependencyCellState(ce);
       }
     });
+    // XXX it's odd getIcon and getText, which deal with repository objects, are outside of model read. WHY?
     final T ce = (T) cellElement[0];
     setIcon(getIcon(cellValue, ce));
     append(getText(cellValue, ce), cellState[0].getTextAttributes());

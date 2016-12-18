@@ -24,11 +24,11 @@ public class CheckVisibility_Test extends BaseTransformationTest {
     public void test_CheckVisibility() throws Exception {
       addNodeById("1230053114874");
       addNodeById("1230053114900");
-      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114888"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      InlineMethodRefactoring ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114888"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x118154a6332L, "InstanceMethodCallOperation"))));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114893"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114893"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x118154a6332L, "InstanceMethodCallOperation"))));
       Assert.assertTrue(ref.getProblems().length() > 0);
-      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114898"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")));
+      ref = new InlineMethodRefactoring(SNodeOperations.cast(getNodeById("1230053114898"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x118154a6332L, "InstanceMethodCallOperation"))));
       Assert.assertTrue(ref.getProblems().length() == 0);
     }
 

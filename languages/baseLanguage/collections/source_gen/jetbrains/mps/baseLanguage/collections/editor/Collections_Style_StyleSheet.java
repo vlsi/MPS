@@ -6,42 +6,98 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.editor.runtime.style.AbstractStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
 
 public class Collections_Style_StyleSheet {
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_Operation(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
+    new Collections_Style_StyleSheet.OperationStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_AngleBracket(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
+    new Collections_Style_StyleSheet.AngleBracketStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
+    new Collections_Style_StyleSheet.LeftAngleBracketStyleClass(editorContext, node).apply(style, editorCell);
   }
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = new StyleImpl();
-      Collections_Style_StyleSheet.apply_AngleBracket(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-    style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
+    new Collections_Style_StyleSheet.RightAngleBracketStyleClass(editorContext, node).apply(style, editorCell);
   }
 
+  public static class OperationStyleClass extends AbstractStyleClass {
+    public OperationStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    }
+
+  }
+  public static class AngleBracketStyleClass extends AbstractStyleClass {
+    public AngleBracketStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      style.set(StyleAttributes.MATCHING_LABEL, "AngleBracket");
+      style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
+    }
+
+  }
+  public static class LeftAngleBracketStyleClass extends AbstractStyleClass {
+    public LeftAngleBracketStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new AngleBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+
+  }
+  public static class RightAngleBracketStyleClass extends AbstractStyleClass {
+    public RightAngleBracketStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new AngleBracketStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+
+  }
 }

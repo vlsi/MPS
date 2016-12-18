@@ -82,7 +82,7 @@
                 <node concept="2OqwBi" id="5q_ktuflEaV" role="2Oq$k0">
                   <node concept="_YI3z" id="5q_ktuflEaU" role="2Oq$k0" />
                   <node concept="3TrEf2" id="5q_ktuflHLW" role="2OqNvi">
-                    <ref role="3Tt5mk" to="tp1t:gGEom_V" />
+                    <ref role="3Tt5mk" to="tp1t:gGEom_V" resolve="applicableProperty" />
                   </node>
                 </node>
                 <node concept="3TrcHB" id="5q_ktuflHM1" role="2OqNvi">

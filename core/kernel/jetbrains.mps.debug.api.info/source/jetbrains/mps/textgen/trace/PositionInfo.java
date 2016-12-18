@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 public abstract class PositionInfo implements Comparable<PositionInfo> {
   private String myFileName;
@@ -50,7 +50,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
    * @return <code>true</code> iff is the same as the one associated with this position.
    */
   public boolean matches(@Nullable SNodeId nodeId) {
-    return EqualUtil.equals(myNodeId, nodeId == null ? null : nodeId.toString());
+    return Objects.equals(myNodeId, nodeId == null ? null : nodeId.toString());
   }
 
   public int getStartLine() {
@@ -150,7 +150,7 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public boolean contains(String file, int line) {
-    return EqualUtil.equals(myFileName, file) && myStartLine <= line && line <= myEndLine;
+    return Objects.equals(myFileName, file) && myStartLine <= line && line <= myEndLine;
   }
 
   public boolean contains(PositionInfo position) {

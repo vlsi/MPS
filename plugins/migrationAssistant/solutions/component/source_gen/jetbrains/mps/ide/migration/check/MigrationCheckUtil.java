@@ -154,23 +154,20 @@ __switch__:
     return CollectionSequence.fromCollection(getProblems(modules, includeBrokenReferences, progressCallback, 1)).isNotEmpty();
   }
 
-  public static Collection<Problem> getProblems(Iterable<SModule> modules, final boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, int maxErrors) {
-    final Wrappers._int _maxErrors = new Wrappers._int(maxErrors);
+  public static Collection<Problem> getProblems(Iterable<SModule> modules, final boolean includeBrokenReferences, @Nullable _FunctionTypes._void_P1_E0<? super Double> progressCallback, final int maxErrors) {
     final List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
 
-    Collection<DependencyProblem> badModuleProblems = findBadModules(modules, _maxErrors.value);
+    Collection<DependencyProblem> badModuleProblems = findBadModules(modules, maxErrors);
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModuleProblems));
 
-    _maxErrors.value -= CollectionSequence.fromCollection(badModuleProblems).count();
-    if (_maxErrors.value == 0) {
+    if (ListSequence.fromList(result).count() >= maxErrors) {
       return result;
     }
 
-    Collection<BinaryModelProblem> badModelProblems = findBinaryModels(modules, _maxErrors.value);
+    Collection<BinaryModelProblem> badModelProblems = findBinaryModels(modules, maxErrors);
     ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(badModelProblems));
 
-    _maxErrors.value -= CollectionSequence.fromCollection(badModelProblems).count();
-    if (_maxErrors.value == 0) {
+    if (ListSequence.fromList(result).count() >= maxErrors) {
       return result;
     }
 
@@ -230,11 +227,10 @@ __switch__:
             return true;
           }
 
-          _maxErrors.value--;
-          return _maxErrors.value > 0;
+          return ListSequence.fromList(result).count() < maxErrors;
         }
       });
-      if (_maxErrors.value == 0) {
+      if (ListSequence.fromList(result).count() >= maxErrors) {
         return result;
       }
 

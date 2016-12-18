@@ -511,7 +511,7 @@
         <var name="_params" id="8230098746512809006" />
         <var name="event" id="8230098746512809006" />
       </scope>
-      <unit id="8230098746512809046" at="64,60,68,9" name="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action$2" />
+      <unit id="8230098746512809046" at="64,60,68,9" name="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action$1$1" />
       <unit id="8230098746512809034" at="60,44,70,5" name="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action$1" />
       <unit id="8230098746512809006" at="24,0,73,0" name="jetbrains.mps.vcs.platform.actions.ShowDiffFromChanges_Action" />
     </file>
@@ -761,8 +761,8 @@
       <unit id="5864860390572693857" at="63,67,67,9" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$1" />
       <unit id="8230098746512809317" at="191,55,195,5" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$4" />
       <unit id="2034046503361616735" at="81,47,87,7" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$2" />
-      <unit id="8230098746512809233" at="108,23,175,13" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$5" />
-      <unit id="8230098746512809233" at="106,19,177,9" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$4" />
+      <unit id="8230098746512809233" at="108,23,175,13" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$3$1$1" />
+      <unit id="8230098746512809233" at="106,19,177,9" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$3$1" />
       <unit id="8230098746512809233" at="104,15,179,5" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil$3" />
       <unit id="8230098746512809101" at="52,0,198,0" name="jetbrains.mps.vcs.platform.actions.VcsActionsUtil" />
     </file>

@@ -15,12 +15,7 @@
  */
 package jetbrains.mps.textgen.trace;
 
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -31,7 +26,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -111,46 +105,17 @@ public class DebugInfo {
     final SNodeId id = node.getNodeId();
     DebugInfoRoot debugInfoRoot = myRoots.get(getRef(node.getContainingRoot()));
     if (debugInfoRoot != null) {
-      return SetSequence.fromSet(debugInfoRoot.getUnitPositions()).sort(new ISelector<UnitPositionInfo, Integer>() {
-        public Integer select(UnitPositionInfo position) {
-          return position.getStartLine();
-        }
-      }, false).where(new IWhereFilter<UnitPositionInfo>() {
-        public boolean accept(UnitPositionInfo it) {
-          return it.matches(id);
-        }
-      }).toListSequence();
+      ArrayList<UnitPositionInfo> unitPositions = new ArrayList<>(debugInfoRoot.getUnitPositions());
+      // FIXME StartLineComparator is always wrapped with reverseOrder, no need to have it that way
+      Collections.sort(unitPositions, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
+      unitPositions.removeIf(pi -> !pi.matches(id));
+      return unitPositions;
     }
     return Collections.emptyList();
   }
 
   /**
-   * @deprecated cumbersome contract
-   */
-  @Deprecated
-  @NotNull
-  @ToRemove(version = 0)
-  public <T extends PositionInfo> Map<DebugInfoRoot, List<T>> getRootToInfoForPosition(final String file, int line, _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> getAllPositionsForRoot) {
-    Map<DebugInfoRoot, List<T>> result = new LinkedHashMap<DebugInfoRoot, List<T>>(16, (float) 0.75, false);
-    for (DebugInfoRoot root : getRootsForFile(file)) {
-      List<T> list = result.get(root);
-      for (T element : getAllPositionsForRoot.invoke(root)) {
-        if (element.contains(file, line)) {
-          if (list == null) {
-            result.put(root, list = new ArrayList<T>());
-          }
-          list.add(element);
-        }
-      }
-      if (list != null) {
-        Collections.sort(list, Collections.reverseOrder(new PositionInfo.StartLineComparator()));
-      }
-    }
-    return result;
-  }
-
-  /**
-   * @see
+   * @see #getTracedNodesForPosition(String, int, Consumer)
    */
   @NotNull
   public List<SNodeReference> getTracedNodesForPosition(@NotNull String fileName, int line) {
@@ -189,6 +154,7 @@ public class DebugInfo {
         extraProcessing.accept(infosForLine);
       }
       for (TraceablePositionInfo tpi : infosForLine) {
+        // FIXME new SNodePointer here seems to be the only reason we depend from [smodel]
         traceNode.add(new SNodePointer(dr.getNodeRef().getModelReference(), persFacade.createNodeId(tpi.getNodeId())));
       }
     }

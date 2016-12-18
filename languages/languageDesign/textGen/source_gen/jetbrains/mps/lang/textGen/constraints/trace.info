@@ -356,8 +356,8 @@
         <var name="references" id="3996543181682101352" />
       </scope>
       <scope id="3996543181682101352" at="47,0,76,0" />
-      <unit id="3996543181682131388" at="65,23,69,13" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints$3" />
-      <unit id="3996543181682101352" at="58,19,71,9" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints$2" />
+      <unit id="3996543181682131388" at="65,23,69,13" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints$1$1$1" />
+      <unit id="3996543181682101352" at="58,19,71,9" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints$1$1" />
       <unit id="3996543181682101352" at="50,155,73,5" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints$1" />
       <unit id="3996543181682101352" at="28,0,82,0" name="jetbrains.mps.lang.textGen.constraints.UnitContextReference_Constraints" />
     </file>
@@ -500,7 +500,7 @@
         <var name="references" id="998325320688548830" />
       </scope>
       <scope id="998325320688548830" at="28,0,53,0" />
-      <unit id="998325320688548830" at="39,19,48,9" name="jetbrains.mps.lang.textGen.constraints.TextUnitLayout_Constraints$2" />
+      <unit id="998325320688548830" at="39,19,48,9" name="jetbrains.mps.lang.textGen.constraints.TextUnitLayout_Constraints$1$1" />
       <unit id="998325320688548830" at="31,154,50,5" name="jetbrains.mps.lang.textGen.constraints.TextUnitLayout_Constraints$1" />
       <unit id="998325320688548830" at="23,0,55,0" name="jetbrains.mps.lang.textGen.constraints.TextUnitLayout_Constraints" />
     </file>

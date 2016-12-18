@@ -24,12 +24,12 @@
       <node id="2679357232283750109" at="42,90,43,131" concept="7" />
       <node id="2679357232283750109" at="46,44,47,20" concept="8" />
       <node id="2679357232283750109" at="54,44,55,24" concept="8" />
-      <node id="2679357232284066968" at="58,128,59,491" concept="8" />
-      <node id="2679357232283837725" at="62,142,63,331" concept="7" />
-      <node id="2679357232283837714" at="63,331,64,358" concept="7" />
+      <node id="2679357232284066968" at="58,128,59,470" concept="8" />
+      <node id="2679357232283837725" at="62,142,63,310" concept="7" />
+      <node id="2679357232283837714" at="63,310,64,358" concept="7" />
       <node id="2679357232283837747" at="65,41,66,75" concept="8" />
       <node id="2679357232283876010" at="67,13,68,57" concept="7" />
-      <node id="2679357232283880484" at="70,669,71,66" concept="2" />
+      <node id="2679357232283880484" at="70,648,71,66" concept="2" />
       <node id="2679357232283880400" at="73,13,74,27" concept="8" />
       <node id="2679357232283750109" at="77,63,78,58" concept="8" />
       <node id="2679357232283750109" at="82,7,83,22" concept="8" />
@@ -50,9 +50,9 @@
       <scope id="2679357232283750109" at="37,44,38,173" />
       <scope id="2679357232283750109" at="46,44,47,20" />
       <scope id="2679357232283750109" at="54,44,55,24" />
-      <scope id="2679357232283969427" at="58,128,59,491" />
+      <scope id="2679357232283969427" at="58,128,59,470" />
       <scope id="2679357232283837739" at="65,41,66,75" />
-      <scope id="2679357232283880404" at="70,669,71,66" />
+      <scope id="2679357232283880404" at="70,648,71,66" />
       <scope id="2679357232283750109" at="77,63,78,58" />
       <scope id="2679357232283750109" at="37,0,40,0" />
       <scope id="2679357232283880353" at="69,110,72,15" />
@@ -81,7 +81,7 @@
         <var name="references" id="2679357232283750109" />
       </scope>
       <scope id="2679357232283750109" at="41,0,85,0" />
-      <unit id="2679357232283750109" at="52,19,80,9" name="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints$2" />
+      <unit id="2679357232283750109" at="52,19,80,9" name="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints$1$1" />
       <unit id="2679357232283750109" at="44,154,82,5" name="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints$1" />
       <unit id="2679357232283750109" at="36,0,87,0" name="jetbrains.mps.baseLanguage.builders.constraints.BeanPropertyBuilder_Constraints" />
     </file>
@@ -153,7 +153,7 @@
       <node id="5389689214217448670" at="35,90,36,131" concept="7" />
       <node id="5389689214217448670" at="39,44,40,20" concept="8" />
       <node id="3436597452201038329" at="47,142,48,56" concept="7" />
-      <node id="5389689214217476120" at="48,56,49,508" concept="7" />
+      <node id="5389689214217476120" at="48,56,49,487" concept="7" />
       <node id="3436597452201051196" at="50,394,51,248" concept="2" />
       <node id="3436597452201051238" at="53,235,54,240" concept="7" />
       <node id="3436597452201051279" at="55,199,56,258" concept="2" />
@@ -167,7 +167,7 @@
       <node id="5389689214217448670" at="63,0,67,0" concept="6" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="3436597452201051221" at="52,280,58,17" concept="4" />
       <node id="3436597452201051211" at="51,248,59,15" concept="4" />
-      <node id="3436597452201051168" at="49,508,60,13" concept="3" />
+      <node id="3436597452201051168" at="49,487,60,13" concept="3" />
       <node id="5389689214217448670" at="46,0,63,0" concept="6" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
       <node id="5389689214217448670" at="44,56,67,10" concept="8" />
       <node id="5389689214217448670" at="42,0,69,0" concept="6" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
@@ -191,7 +191,7 @@
         <var name="builders" id="3436597452201051212" />
       </scope>
       <scope id="3436597452201051169" at="50,394,59,15" />
-      <scope id="3436597452201051168" at="49,508,60,13">
+      <scope id="3436597452201051168" at="49,487,60,13">
         <var name="dcl" id="3436597452201051171" />
       </scope>
       <scope id="5389689214217448673" at="47,142,61,26">
@@ -208,7 +208,7 @@
         <var name="references" id="5389689214217448670" />
       </scope>
       <scope id="5389689214217448670" at="34,0,72,0" />
-      <unit id="5389689214217448670" at="45,19,67,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints$2" />
+      <unit id="5389689214217448670" at="45,19,67,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints$1$1" />
       <unit id="5389689214217448670" at="37,159,69,5" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints$1" />
       <unit id="5389689214217448670" at="29,0,74,0" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderPropertyBuilder_Constraints" />
     </file>
@@ -247,7 +247,7 @@
         <var name="references" id="5425713840853785836" />
       </scope>
       <scope id="5425713840853785836" at="29,0,54,0" />
-      <unit id="5425713840853785836" at="40,19,49,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints$2" />
+      <unit id="5425713840853785836" at="40,19,49,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints$1$1" />
       <unit id="5425713840853785836" at="32,157,51,5" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints$1" />
       <unit id="5425713840853785836" at="24,0,56,0" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderParameterReference_Constraints" />
     </file>
@@ -304,7 +304,7 @@
         <var name="references" id="6211769134875412271" />
       </scope>
       <scope id="6211769134875412271" at="33,0,67,0" />
-      <unit id="6211769134875412271" at="44,19,62,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints$2" />
+      <unit id="6211769134875412271" at="44,19,62,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints$1$1" />
       <unit id="6211769134875412271" at="36,155,64,5" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints$1" />
       <unit id="6211769134875412271" at="28,0,69,0" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilderDeclaration_Constraints" />
     </file>
@@ -352,7 +352,7 @@
         <var name="references" id="6666322667909634552" />
       </scope>
       <scope id="6666322667909634552" at="28,0,53,0" />
-      <unit id="6666322667909634552" at="39,19,48,9" name="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints$2" />
+      <unit id="6666322667909634552" at="39,19,48,9" name="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints$1$1" />
       <unit id="6666322667909634552" at="31,158,50,5" name="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints$1" />
       <unit id="6666322667909634552" at="23,0,55,0" name="jetbrains.mps.baseLanguage.builders.constraints.BeanBuilder_Constraints" />
     </file>
@@ -366,7 +366,7 @@
       <node id="7288041816792309049" at="28,51,29,67" concept="2" />
       <node id="7288041816792309049" at="30,5,31,0" concept="9" />
       <node id="7288041816792309049" at="31,0,32,18" concept="8" />
-      <node id="7288041816792314018" at="34,148,35,298" concept="8" />
+      <node id="7288041816792314018" at="34,148,35,277" concept="8" />
       <node id="7288041816792309049" at="37,0,38,0" concept="10" trace="canBeChildBreakingPoint" />
       <node id="7288041816792309049" at="16,0,19,0" concept="1" trace="ResultExpression_Constraints#()V" />
       <node id="7288041816792309049" at="27,0,30,5" concept="5" />
@@ -376,7 +376,7 @@
       <scope id="7288041816792309049" at="16,41,17,170" />
       <scope id="7288041816792309049" at="21,43,22,16" />
       <scope id="7288041816792309049" at="28,51,29,67" />
-      <scope id="7288041816792309051" at="34,148,35,298" />
+      <scope id="7288041816792309051" at="34,148,35,277" />
       <scope id="7288041816792309049" at="16,0,19,0" />
       <scope id="7288041816792309049" at="34,0,37,0">
         <var name="childConcept" id="7288041816792309049" />
@@ -449,7 +449,7 @@
       <node id="7288041816793179319" at="38,90,39,131" concept="7" />
       <node id="7288041816793179319" at="42,44,43,20" concept="8" />
       <node id="7288041816793199840" at="50,142,51,40" concept="7" />
-      <node id="6979051026020805493" at="52,853,53,597" concept="2" />
+      <node id="6979051026020805493" at="52,853,53,576" concept="2" />
       <node id="8969040284892333264" at="55,220,56,312" concept="8" />
       <node id="7782956297805865643" at="57,703,58,0" concept="9" />
       <node id="7782956297805865655" at="58,0,59,58" concept="7" />
@@ -478,7 +478,7 @@
       <node id="7288041816793179319" at="37,0,85,0" concept="6" trace="getSpecifiedReferences#()Ljava/util/Map;" />
       <scope id="7288041816793179319" at="33,38,34,167" />
       <scope id="7288041816793179319" at="42,44,43,20" />
-      <scope id="6979051026020805111" at="52,853,53,597" />
+      <scope id="6979051026020805111" at="52,853,53,576" />
       <scope id="8969040284892333193" at="55,220,56,312" />
       <scope id="7782956297805865810" at="62,60,63,191" />
       <scope id="7782956297805865829" at="66,505,67,254" />
@@ -510,8 +510,8 @@
         <var name="references" id="7288041816793179319" />
       </scope>
       <scope id="7288041816793179319" at="37,0,85,0" />
-      <unit id="7782956297805865810" at="61,287,65,15" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$3" />
-      <unit id="7288041816793179319" at="48,19,80,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$2" />
+      <unit id="7782956297805865810" at="61,287,65,15" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$1$1$1" />
+      <unit id="7288041816793179319" at="48,19,80,9" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$1$1" />
       <unit id="7288041816793179319" at="40,159,82,5" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints$1" />
       <unit id="7288041816793179319" at="32,0,87,0" name="jetbrains.mps.baseLanguage.builders.constraints.SimpleBuilder_Constraints" />
     </file>

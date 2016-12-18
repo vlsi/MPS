@@ -38,6 +38,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.util.Objects;
+
 // FIXME move to [smodel] once dependencies from MPSModuleRepository and SModelRepository are gone
 @Immutable
 public final class SModelReference implements org.jetbrains.mps.openapi.model.SModelReference {
@@ -138,19 +140,27 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    SModelReference that = (SModelReference) o;
-
-    if (!myModelId.equals(that.myModelId)) return false;
-    if (myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique()) return true;
-    return getModuleReference().equals(that.getModuleReference());
+    if (o == null) return false;
+    if (o instanceof SModelReference) {
+      SModelReference that = (SModelReference) o;
+      if (myModelId.equals(that.myModelId)) {
+        if (myModelId.isGloballyUnique() && that.myModelId.isGloballyUnique()) {
+          return true;
+        }
+        return Objects.equals(getModuleReference(), that.getModuleReference());
+      }
+    }
+    return false;
   }
 
   @Override
   public int hashCode() {
     int result = myModelId.hashCode();
-    result = 31 * result + (myModelId.isGloballyUnique() ? 0 : getModuleReference().hashCode());
+    // It's vital not to take module reference into account for models with globally unique ids as we need to match (e.g. in map keys)
+    // model references in both formats (with and without module identity part).
+    if (!myModelId.isGloballyUnique()) {
+      result += 31 * getModuleReference().hashCode();
+    }
     return result;
   }
 

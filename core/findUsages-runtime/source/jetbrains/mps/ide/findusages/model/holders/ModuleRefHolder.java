@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
- * Replacement for {@link jetbrains.mps.ide.findusages.model.holders.ModuleHolder} that doesn't force SModule resolution
+ * Replacement for {@code jetbrains.mps.ide.findusages.model.holders.ModuleHolder} that doesn't force SModule resolution
  * @author Artem Tikhomirov
  */
 public class ModuleRefHolder implements IHolder<SModuleReference> {

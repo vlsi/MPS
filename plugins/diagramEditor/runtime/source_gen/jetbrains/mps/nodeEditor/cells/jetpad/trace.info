@@ -44,7 +44,7 @@
       <scope id="1755573558917160140" at="17,0,24,0" />
       <scope id="1755573558916998137" at="15,41,24,7" />
       <scope id="1755573558916998133" at="15,0,26,0" />
-      <unit id="1755573558917160144" at="18,77,22,9" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$2" />
+      <unit id="1755573558917160144" at="18,77,22,9" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1$1" />
       <unit id="1755573558917160140" at="16,52,24,5" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty$1" />
       <unit id="1755573558911655916" at="10,0,31,0" name="jetbrains.mps.nodeEditor.cells.jetpad.ReadableModelProperty" />
     </file>
@@ -1070,21 +1070,21 @@
       <scope id="7494254745216516014" at="189,0,251,0" />
       <unit id="7492671827826733386" at="270,68,274,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$7" />
       <unit id="6780054776343852114" at="278,69,282,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$8" />
-      <unit id="8041297453107217001" at="422,75,426,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$13" />
-      <unit id="4883868441281583117" at="440,122,444,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$14" />
+      <unit id="8041297453107217001" at="422,75,426,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$12$1" />
+      <unit id="4883868441281583117" at="440,122,444,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$13$1" />
       <unit id="639949279721536038" at="503,0,508,0" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$DiagramSubstituteActionWraper" />
       <unit id="2346751616334326746" at="121,39,128,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$1" />
       <unit id="639949279726829857" at="216,38,224,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$4" />
       <unit id="828763237677149342" at="456,43,464,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$14" />
       <unit id="718530200790693796" at="238,43,247,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$6" />
       <unit id="4883868441281039004" at="436,35,446,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$13" />
-      <unit id="320213057866729592" at="294,25,305,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$10" />
+      <unit id="320213057866729592" at="294,25,305,11" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$9$1" />
       <unit id="639949279726829813" at="204,40,216,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$3" />
       <unit id="639949279726829754" at="191,85,204,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$2" />
       <unit id="615329258651110247" at="416,25,429,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$12" />
       <unit id="718530200790693737" at="224,42,238,7" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$5" />
       <unit id="7019996899471849827" at="347,15,361,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$11" />
-      <unit id="639949279732119570" at="317,50,335,9" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$11" />
+      <unit id="639949279732119570" at="317,50,335,9" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$10$1" />
       <unit id="639949279720498699" at="290,15,309,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$9" />
       <unit id="639949279720498801" at="315,15,338,5" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$10" />
       <unit id="5204867329711318576" at="509,0,559,0" name="jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell$ConnectionInfo" />

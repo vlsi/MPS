@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.lang.editor.cellProviders;
 
+import jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder;
+import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -38,14 +40,36 @@ import java.util.Iterator;
 /**
  * @author simon
  */
-public abstract class SingleRoleCellProvider {
+public abstract class SingleRoleCellProvider extends AbstractEditorBuilder implements EditorBuilderEnvironment {
 
   protected final SContainmentLink myContainmentLink;
+
+  /**
+   * @deprecated since MPS 3.5 use {@link #getNode()} method, this field will be removed in the next release
+   */
+  @Deprecated
   protected final SNode myOwnerNode;
+
+  /**
+   * @deprecated since MPS 3.5 use {@link #getEditorContext()} method, this field will be removed in the next release
+   */
+  @Deprecated
   protected final EditorContext myEditorContext;
 
+  /**
+   * @deprecated since MPS 3.5 use {@link #SingleRoleCellProvider(SContainmentLink, EditorContext)} constructor
+   */
+  @Deprecated
   public SingleRoleCellProvider(final SNode ownerNode, final SContainmentLink containmentLink, EditorContext editorContext) {
+    super(editorContext);
     myOwnerNode = ownerNode;
+    myContainmentLink = containmentLink;
+    myEditorContext = editorContext;
+  }
+
+  public SingleRoleCellProvider(final SContainmentLink containmentLink, EditorContext editorContext) {
+    super(editorContext);
+    myOwnerNode = null;
     myContainmentLink = containmentLink;
     myEditorContext = editorContext;
   }
@@ -55,16 +79,16 @@ public abstract class SingleRoleCellProvider {
    */
   @Deprecated
   protected EditorCell createChildCell(EditorContext editorContext, SNode child) {
-    return createChildCell_internal(editorContext, child, true);
+    return createChildCell_internal(child, true);
   }
 
   protected EditorCell createChildCell(SNode child) {
-    return createChildCell(myEditorContext, child);
+    return createChildCell(getEditorContext(), child);
   }
 
   @NotNull
-  private EditorCell createChildCell_internal(EditorContext editorContext, SNode child, boolean isRealChild) {
-    EditorCell editorCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
+  private EditorCell createChildCell_internal(SNode child, boolean isRealChild) {
+    EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
     setDeleteActions(child, isRealChild, editorCell, CellActionType.DELETE);
     setDeleteActions(child, isRealChild, editorCell, CellActionType.BACKSPACE);
     return editorCell;
@@ -73,9 +97,10 @@ public abstract class SingleRoleCellProvider {
   private void setDeleteActions(SNode child, boolean isRealChild, EditorCell editorCell, CellActionType actionType) {
     //todo get rid of getDeclarationNode
     if (isRealChild) {
-      editorCell.setAction(actionType, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink.getDeclarationNode(), child));
+      editorCell.setAction(actionType, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
     } else {
-      editorCell.setAction(actionType, new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD: DeleteDirection.FORWARD));
+      editorCell.setAction(actionType,
+          new CellAction_DeleteSimple(child, actionType.equals(CellActionType.BACKSPACE) ? DeleteDirection.BACKWARD : DeleteDirection.FORWARD));
     }
   }
 
@@ -88,7 +113,7 @@ public abstract class SingleRoleCellProvider {
   }
 
   private EditorCell_Collection createManyCells() {
-    EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
+    EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(getEditorContext(), getNode());
 
     SNode realChild = getRealChild();
     for (SNode node : getNodesToPresent()) {
@@ -96,7 +121,7 @@ public abstract class SingleRoleCellProvider {
       if (node == realChild) {
         cell = createChildCell(node);
       } else {
-        cell = createChildCell_internal(myEditorContext, node, false);
+        cell = createChildCell_internal(node, false);
       }
       resultCell.addEditorCell(cell);
     }
@@ -108,7 +133,7 @@ public abstract class SingleRoleCellProvider {
 
   @Nullable
   private SNode getRealChild() {
-    Iterator<? extends SNode> childIterator = myOwnerNode.getChildren(myContainmentLink).iterator();
+    Iterator<? extends SNode> childIterator = getNode().getChildren(myContainmentLink).iterator();
     return childIterator.hasNext() ? childIterator.next() : null;
   }
 
@@ -122,23 +147,22 @@ public abstract class SingleRoleCellProvider {
   }
 
   private boolean areAttributesEmpty() {
-    return !AttributeOperations.getChildAttributes(myOwnerNode, myContainmentLink).iterator().hasNext();
+    return !AttributeOperations.getChildAttributes(getNode(), myContainmentLink).iterator().hasNext();
   }
 
   private EditorCell createEmptyCellCollection() {
-    EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(myEditorContext, myOwnerNode);
+    EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(getEditorContext(), getNode());
     collection.setSelectable(false);
     collection.addEditorCell(createEmptyCell());
 
-    collection.setAction(CellActionType.INSERT, new CellAction_Insert(myOwnerNode, myContainmentLink));
-    collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(myOwnerNode, myContainmentLink));
+    collection.setAction(CellActionType.INSERT, new CellAction_Insert(getNode(), myContainmentLink));
+    collection.setAction(CellActionType.INSERT_BEFORE, new CellAction_Insert(getNode(), myContainmentLink));
     return collection;
   }
 
   protected EditorCell createEmptyCell() {
-    EditorCell_Label result = myContainmentLink.isOptional() ?
-        new EditorCell_Constant(myEditorContext, myOwnerNode, "") :
-        new EditorCell_Error(myEditorContext, myOwnerNode, getNoTargetText());
+    EditorCell_Label result = myContainmentLink.isOptional() ? new EditorCell_Constant(getEditorContext(), getNode(), "") :
+        new EditorCell_Error(getEditorContext(), getNode(), getNoTargetText());
     result.setDefaultText(getNoTargetText());
     result.setEditable(true);
     return result;
@@ -149,7 +173,7 @@ public abstract class SingleRoleCellProvider {
   }
 
   protected Iterable<SNode> getNodesToPresent() {
-    return AttributeOperations.getChildNodesAndAttributes(myOwnerNode, myContainmentLink);
+    return AttributeOperations.getChildNodesAndAttributes(getNode(), myContainmentLink);
   }
 }
 

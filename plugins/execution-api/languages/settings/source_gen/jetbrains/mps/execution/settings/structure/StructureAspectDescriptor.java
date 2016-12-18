@@ -37,6 +37,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptPersistentConfigurationType = createDescriptorForPersistentConfigurationType();
   /*package*/ final ConceptDescriptor myConceptPersistentPropertyDeclaration = createDescriptorForPersistentPropertyDeclaration();
   /*package*/ final ConceptDescriptor myConceptPersistentPropertyReferenceOperation = createDescriptorForPersistentPropertyReferenceOperation();
+  /*package*/ final ConceptDescriptor myConceptProjectAccessExpression = createDescriptorForProjectAccessExpression();
   /*package*/ final ConceptDescriptor myConceptReportConfigurationErrorStatement = createDescriptorForReportConfigurationErrorStatement();
   /*package*/ final ConceptDescriptor myConceptResetFrom_Function = createDescriptorForResetFrom_Function();
   /*package*/ final ConceptDescriptor myConceptSettingsEditor = createDescriptorForSettingsEditor();
@@ -52,7 +53,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptApplyTo_Function, myConceptCheckProperitesOperation, myConceptCheckProperties_Function, myConceptConfiguration_Parameter, myConceptCreateEditor_Function, myConceptDeprecatedAnnotation, myConceptDispose_Function, myConceptEditorExpression, myConceptEditorOperationCall, myConceptEditorOperationDeclaration, myConceptEditorPropertyDeclaration, myConceptEditorPropertyReference, myConceptGetEditorOperation, myConceptGridBagConstraints, myConceptIPersistentPropertyHolder, myConceptPersistentConfiguration, myConceptPersistentConfigurationAssistent, myConceptPersistentConfigurationMethod, myConceptPersistentConfigurationTemplate, myConceptPersistentConfigurationTemplateInitializer, myConceptPersistentConfigurationType, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReferenceOperation, myConceptReportConfigurationErrorStatement, myConceptResetFrom_Function, myConceptSettingsEditor, myConceptSettingsEditorType, myConceptTemplateParameter, myConceptTemplateParameterReference, myConceptTemplatePersistentConfigurationType);
+    return Arrays.asList(myConceptApplyTo_Function, myConceptCheckProperitesOperation, myConceptCheckProperties_Function, myConceptConfiguration_Parameter, myConceptCreateEditor_Function, myConceptDeprecatedAnnotation, myConceptDispose_Function, myConceptEditorExpression, myConceptEditorOperationCall, myConceptEditorOperationDeclaration, myConceptEditorPropertyDeclaration, myConceptEditorPropertyReference, myConceptGetEditorOperation, myConceptGridBagConstraints, myConceptIPersistentPropertyHolder, myConceptPersistentConfiguration, myConceptPersistentConfigurationAssistent, myConceptPersistentConfigurationMethod, myConceptPersistentConfigurationTemplate, myConceptPersistentConfigurationTemplateInitializer, myConceptPersistentConfigurationType, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReferenceOperation, myConceptProjectAccessExpression, myConceptReportConfigurationErrorStatement, myConceptResetFrom_Function, myConceptSettingsEditor, myConceptSettingsEditorType, myConceptTemplateParameter, myConceptTemplateParameterReference, myConceptTemplatePersistentConfigurationType);
   }
 
   @Override
@@ -105,6 +106,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptPersistentPropertyDeclaration;
       case LanguageConceptSwitch.PersistentPropertyReferenceOperation:
         return myConceptPersistentPropertyReferenceOperation;
+      case LanguageConceptSwitch.ProjectAccessExpression:
+        return myConceptProjectAccessExpression;
       case LanguageConceptSwitch.ReportConfigurationErrorStatement:
         return myConceptReportConfigurationErrorStatement;
       case LanguageConceptSwitch.ResetFrom_Function:
@@ -140,9 +143,10 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   private static ConceptDescriptor createDescriptorForCheckProperitesOperation() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.settings", "CheckProperitesOperation", 0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91011fL);
     b.class_(false, false, false);
-    b.parent(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L);
+    b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46ac030L);
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/946964771156066591");
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    b.alias("check configuration");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCheckProperties_Function() {
@@ -332,6 +336,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/946964771156066574");
     b.associate("variableDeclaration", 0xd244b712f91010fL).target(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910119L).optional(false).origin("946964771156066575").done();
     b.kind(ConceptKind.NORMAL, StaticScope.NONE);
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProjectAccessExpression() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.execution.settings", "ProjectAccessExpression", 0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x6a8d96ff82b02f8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
+    b.origin("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/479872435243123448");
+    b.alias("project");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReportConfigurationErrorStatement() {

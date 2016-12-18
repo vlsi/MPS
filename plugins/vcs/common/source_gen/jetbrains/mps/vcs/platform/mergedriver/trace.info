@@ -318,13 +318,13 @@
       <scope id="8298649587588677761" at="53,0,89,0">
         <var name="project" id="4172912343887910708" />
       </scope>
-      <unit id="4166013692425290778" at="65,92,69,13" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$3" />
-      <unit id="2746700844679861516" at="74,74,78,15" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$3" />
+      <unit id="4166013692425290778" at="65,92,69,13" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$1$1$1" />
+      <unit id="2746700844679861516" at="74,74,78,15" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$1$1$2" />
       <unit id="3532702333854217750" at="134,55,138,7" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$2" />
       <unit id="8688150419538752866" at="156,99,160,7" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$3" />
       <unit id="4416609728987298289" at="161,99,165,7" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$4" />
       <unit id="8688150419538752799" at="169,98,173,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$5" />
-      <unit id="4166013692425290729" at="56,46,85,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$2" />
+      <unit id="4166013692425290729" at="56,46,85,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$1$1" />
       <unit id="4166013692425290718" at="54,41,87,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker$1" />
       <unit id="287989868854455048" at="36,0,190,0" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" />
     </file>
@@ -406,7 +406,7 @@
         <var name="allVcses" id="4355241322422981821" />
         <var name="project" id="4355241322422981819" />
       </scope>
-      <unit id="4355241322422981868" at="28,66,32,11" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller$2" />
+      <unit id="4355241322422981868" at="28,66,32,11" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller$1$1" />
       <unit id="4355241322422981889" at="36,50,40,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller$2" />
       <unit id="4355241322422981920" at="42,57,46,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller$3" />
       <unit id="1020872462282430791" at="49,50,53,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverInstaller$4" />
@@ -996,8 +996,8 @@
       <unit id="1400826623542832160" at="66,59,70,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$4" />
       <unit id="1400826623542832182" at="70,17,74,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$5" />
       <unit id="1400826623542832129" at="78,73,82,5" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$6" />
-      <unit id="8704175735092973567" at="128,54,132,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$9" />
-      <unit id="8704175735092973541" at="136,54,140,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$8" />
+      <unit id="8704175735092973567" at="128,54,132,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$8$1" />
+      <unit id="8704175735092973541" at="136,54,140,11" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$7$1" />
       <unit id="8704175735092973561" at="126,78,134,7" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$8" />
       <unit id="8704175735092973535" at="134,79,142,7" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller$7" />
       <unit id="572687202609933800" at="23,0,200,0" name="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller" />
@@ -1498,8 +1498,8 @@
       <scope id="6989360587248012822" at="62,0,104,0" />
       <unit id="1190974551626681719" at="63,219,67,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$1" />
       <unit id="4495307634210966568" at="67,17,71,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$2" />
-      <unit id="1190974551626681729" at="74,88,78,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$4" />
-      <unit id="6989360587248026804" at="80,114,99,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$4" />
+      <unit id="1190974551626681729" at="74,88,78,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$3$1" />
+      <unit id="6989360587248026804" at="80,114,99,9" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$3$2" />
       <unit id="6989360587248025276" at="72,40,102,5" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification$3" />
       <unit id="6989360587247930283" at="29,0,108,0" name="jetbrains.mps.vcs.platform.mergedriver.MergeDriverNotification" />
     </file>

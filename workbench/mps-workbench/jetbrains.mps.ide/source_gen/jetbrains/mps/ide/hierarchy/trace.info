@@ -1019,7 +1019,7 @@
       <node id="5797068448049412327" at="208,86,209,128" concept="10" />
       <node id="5797068448049412334" at="209,128,210,142" concept="10" />
       <node id="5797068448049412343" at="210,142,211,69" concept="10" />
-      <node id="5797068448049412351" at="211,69,212,182" concept="10" />
+      <node id="5797068448049412351" at="211,69,212,142" concept="10" />
       <node id="5797068448049412366" at="214,215,215,36" concept="10" />
       <node id="5797068448049412370" at="215,36,216,80" concept="10" />
       <node id="5797068448049412393" at="217,154,218,105" concept="10" />
@@ -1338,7 +1338,7 @@
       <node id="5797068448049411993" at="600,0,617,0" concept="9" trace="checkMouseEvent#(Ljava/awt/event/MouseEvent;)Z" />
       <node id="5797068448049412086" at="85,24,105,7" concept="4" />
       <node id="5797068448049412205" at="160,0,180,0" concept="9" trace="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
-      <node id="5797068448049412358" at="212,182,233,5" concept="7" />
+      <node id="5797068448049412358" at="212,142,233,5" concept="7" />
       <node id="5797068448049412198" at="158,48,180,7" concept="4" />
       <node id="5797068448049412322" at="208,0,236,0" concept="9" trace="createHierarchyForest#()Ljava/util/List;" />
       <node id="5797068448049411880" at="350,0,378,0" concept="2" trace="ConceptContainer#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/ide/hierarchy/LanguageHierarchiesComponent;Z)V" />
@@ -1694,7 +1694,7 @@
       <scope id="5797068448049412205" at="160,0,180,0">
         <var name="e" id="5797068448049412208" />
       </scope>
-      <scope id="5797068448049412358" at="212,182,233,5">
+      <scope id="5797068448049412358" at="212,142,233,5">
         <var name="concept" id="5797068448049412363" />
       </scope>
       <scope id="5797068448049412326" at="208,86,234,18">
@@ -1746,13 +1746,13 @@
         <var name="language" id="5797068448049412068" />
         <var name="project" id="5797068448049412070" />
       </scope>
-      <unit id="5797068448049413152" at="438,39,443,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$3" />
+      <unit id="5797068448049413152" at="438,39,443,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$ConceptContainer$3" />
       <unit id="5797068448049412613" at="268,49,275,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$6" />
-      <unit id="5797068448049413113" at="412,93,422,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$2" />
+      <unit id="5797068448049413113" at="412,93,422,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$ConceptContainer$2" />
       <unit id="5797068448049412185" at="145,34,157,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$4" />
       <unit id="5797068448049412153" at="113,34,128,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$2" />
       <unit id="5797068448049412169" at="129,34,144,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$3" />
-      <unit id="5797068448049412875" at="360,27,376,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$1" />
+      <unit id="5797068448049412875" at="360,27,376,7" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$ConceptContainer$1" />
       <unit id="5797068448049412090" at="86,25,105,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$1" />
       <unit id="5797068448049412204" at="159,28,180,5" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$5" />
       <unit id="5797068448049410626" at="333,0,627,0" name="jetbrains.mps.ide.hierarchy.LanguageHierarchiesComponent$ConceptContainer" />
@@ -1876,7 +1876,7 @@
       <unit id="5200543944415564183" at="85,78,89,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$1" />
       <unit id="5200543944415564193" at="89,17,93,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$2" />
       <unit id="5200543944415608128" at="94,79,98,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$3" />
-      <unit id="4565282503346013543" at="102,54,111,9" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$5" />
+      <unit id="4565282503346013543" at="102,54,111,9" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$4$1" />
       <unit id="4565282503345986527" at="99,49,113,5" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree$4" />
       <unit id="5797068448049414443" at="36,0,116,0" name="jetbrains.mps.ide.hierarchy.ConceptHierarchyTree" />
     </file>

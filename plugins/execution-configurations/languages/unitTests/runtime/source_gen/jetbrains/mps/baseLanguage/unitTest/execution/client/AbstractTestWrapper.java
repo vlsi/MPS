@@ -90,7 +90,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
   @NotNull
   @Override
   public TestParameters getTestRunParameters() {
-    return TestParameters.DEFAULT;
+    return TestParameters.calcDefault(myRepo);
   }
 
   @Override

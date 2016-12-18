@@ -3,7 +3,7 @@
   <persistence version="9" />
   <languages>
     <use id="7fa12e9c-b949-4976-b4fa-19accbc320b4" name="jetbrains.mps.lang.dataFlow" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -92,7 +92,7 @@
           <node concept="2OqwBi" id="h$llo4s" role="3Ah4Yx">
             <node concept="3__QtB" id="h$llnSe" role="2Oq$k0" />
             <node concept="3TrEf2" id="h$llonL" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3r:hqc44pn" />
+              <ref role="3Tt5mk" to="tp3r:hqc44pn" resolve="expression" />
             </node>
           </node>
         </node>
@@ -130,7 +130,7 @@
         <node concept="3AgYrR" id="2KyHUfrwc68" role="3cqZAp">
           <node concept="2OqwBi" id="2KyHUfrwc6B" role="3Ah4Yx">
             <node concept="3TrEf2" id="2KyHUfrwc6X" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3r:hqc44pr" />
+              <ref role="3Tt5mk" to="tp3r:hqc44pr" resolve="modelToCreate" />
             </node>
             <node concept="3__QtB" id="2KyHUfrwc6c" role="2Oq$k0" />
           </node>
@@ -138,7 +138,7 @@
         <node concept="3AgYrR" id="2KyHUfrwc73" role="3cqZAp">
           <node concept="2OqwBi" id="2KyHUfrwc7$" role="3Ah4Yx">
             <node concept="3TrEf2" id="2KyHUfrwc7U" role="2OqNvi">
-              <ref role="3Tt5mk" to="tp3r:2KyHUfrw9K5" />
+              <ref role="3Tt5mk" to="tp3r:2KyHUfrw9K5" resolve="nodeId" />
             </node>
             <node concept="3__QtB" id="2KyHUfrwc79" role="2Oq$k0" />
           </node>
@@ -156,7 +156,7 @@
             <node concept="2OqwBi" id="nQfYv_fRmG" role="2Oq$k0">
               <node concept="3__QtB" id="RRzwLnBtkx" role="2Oq$k0" />
               <node concept="3TrEf2" id="nQfYv_fZ3q" role="2OqNvi">
-                <ref role="3Tt5mk" to="tp3r:4IP40Bi2$Eu" />
+                <ref role="3Tt5mk" to="tp3r:4IP40Bi2$Eu" resolve="quotedNode" />
               </node>
             </node>
             <node concept="2qgKlT" id="nQfYv_g00j" role="2OqNvi">

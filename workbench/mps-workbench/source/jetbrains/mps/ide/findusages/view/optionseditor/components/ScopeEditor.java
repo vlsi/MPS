@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,6 @@ import com.intellij.ui.IdeBorderFactory;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions.ScopeType;
 import jetbrains.mps.ide.ui.DefaultCompletionTextField;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.NameUtil;
@@ -98,7 +97,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myButtonGroup.add(myModuleScopeButton);
     myButtonGroup.add(myModelScopeButton);
 
-    Iterable<SModule> moduleList = MPSModuleRepository.getInstance().getModules();
+    Iterable<SModule> moduleList = repository.getModules();
     List<String> moduleNameList = new ArrayList<String>();
 
     for (SModule iModule : moduleList) {

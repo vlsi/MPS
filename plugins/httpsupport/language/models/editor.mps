@@ -2,7 +2,7 @@
 <model ref="r:3ad7ed19-3b79-47de-a735-e4bd1f1d2f78(jetbrains.mps.ide.httpsupport.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="4" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -190,8 +190,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143224066846" name="jetbrains.mps.lang.smodel.structure.Node_InsertNextSiblingOperation" flags="nn" index="HtI8k">
         <child id="1143224066849" name="insertedNode" index="HtI8F" />
@@ -577,7 +577,7 @@
   </node>
   <node concept="24kQdi" id="40BYgsZXsUJ">
     <property role="3GE5qa" value="request" />
-    <ref role="1XX52x" to="ndib:40BYgsZXsUj" resolve="RequestURIBuilderExpression" />
+    <ref role="1XX52x" to="ndib:40BYgsZXsUj" resolve="RequestURLBuilderExpression" />
     <node concept="3EZMnI" id="40BYgsZXsUL" role="2wV5jI">
       <node concept="3F0ifn" id="40BYgsZXsUS" role="3EZMnx">
         <property role="3F0ifm" value="request URI for" />
@@ -792,10 +792,12 @@
                 </node>
                 <node concept="2OqwBi" id="blMEiIaqD7" role="37vLTJ">
                   <node concept="1PxgMI" id="4gmiY0rsAFD" role="2Oq$k0">
-                    <ref role="1m5ApE" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                     <node concept="2OqwBi" id="4gmiY0rsAbn" role="1m5AlR">
                       <node concept="7Obwk" id="blMEiIaqy7" role="2Oq$k0" />
                       <node concept="1mfA1w" id="4gmiY0rsAtu" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH07B" role="3oSUPX">
+                      <ref role="cht4Q" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                     </node>
                   </node>
                   <node concept="3TrcHB" id="blMEiIar10" role="2OqNvi">
@@ -813,10 +815,12 @@
                 <node concept="3fqX7Q" id="4gmiY0rsyM5" role="3uHU7w">
                   <node concept="2OqwBi" id="4gmiY0rs$RB" role="3fr31v">
                     <node concept="1PxgMI" id="4gmiY0rs$h8" role="2Oq$k0">
-                      <ref role="1m5ApE" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                       <node concept="2OqwBi" id="4gmiY0rszr2" role="1m5AlR">
                         <node concept="7Obwk" id="4gmiY0rsz3b" role="2Oq$k0" />
                         <node concept="1mfA1w" id="4gmiY0rszUn" role="2OqNvi" />
+                      </node>
+                      <node concept="chp4Y" id="714IaVdH07x" role="3oSUPX">
+                        <ref role="cht4Q" to="ndib:21vgRr5xrgT" resolve="QueryParameter" />
                       </node>
                     </node>
                     <node concept="3TrcHB" id="4gmiY0rs_wM" role="2OqNvi">

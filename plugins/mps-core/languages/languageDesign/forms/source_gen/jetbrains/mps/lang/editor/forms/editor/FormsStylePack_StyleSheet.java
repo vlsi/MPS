@@ -6,20 +6,30 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.style.StyleRegistry;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.AbstractStyleClass;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.KEYWORD_StyleKey;
 
 public class FormsStylePack_StyleSheet {
+  /**
+   * 
+   * @deprecated Since MPS 3.5 use generated StyleClass
+   */
+  @Deprecated
   public static void apply_KeyWord(Style style, EditorCell editorCell) {
     SNode node = (editorCell == null ? null : editorCell.getSNode());
     EditorContext editorContext = (editorCell == null ? null : editorCell.getContext());
-    {
-      Style styleToPut = StyleRegistry.getInstance().getStyle("KEYWORD");
-      if (styleToPut == null) {
-        styleToPut = new StyleImpl();
-      }
-      style.putAll(styleToPut, 0);
-    }
+    new FormsStylePack_StyleSheet.KeyWordStyleClass(editorContext, node).apply(style, editorCell);
   }
 
+  public static class KeyWordStyleClass extends AbstractStyleClass {
+    public KeyWordStyleClass(EditorContext editorContext, SNode node) {
+      super(editorContext, node);
+    }
+
+    @Override
+    public void apply(Style style, EditorCell editorCell) {
+      new KEYWORD_StyleKey().apply(style);
+    }
+
+  }
 }

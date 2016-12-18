@@ -128,9 +128,9 @@
         <var name="references" id="1719162360409958585" />
       </scope>
       <scope id="1719162360409958585" at="53,0,113,0" />
-      <unit id="4913172127246345704" at="100,175,104,15" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$4" />
-      <unit id="1719162360409958585" at="64,19,76,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$2" />
-      <unit id="1719162360409958585" at="87,19,108,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$3" />
+      <unit id="4913172127246345704" at="100,175,104,15" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$2$1$1" />
+      <unit id="1719162360409958585" at="64,19,76,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$1$1" />
+      <unit id="1719162360409958585" at="87,19,108,9" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$2$1" />
       <unit id="1719162360409958585" at="56,158,78,5" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$1" />
       <unit id="1719162360409958585" at="79,158,110,5" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints$2" />
       <unit id="1719162360409958585" at="34,0,120,0" name="jetbrains.mps.baseLanguage.jdk8.constraints.SuperInterfaceMethodCall_Constraints" />

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.lang.dataFlow.framework.Program;
@@ -41,7 +42,8 @@ public class DataFlowUtil {
     if (statementList == null) {
       return;
     }
-    if (SNodeOperations.getModel(statementList).getModule() instanceof TransientModelsModule) {
+    SModel m = SNodeOperations.getModel(statementList);
+    if (m != null && (m.getModule() instanceof TransientModelsModule)) {
       return;
     }
     try {

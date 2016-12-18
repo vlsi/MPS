@@ -21,7 +21,6 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.LineContentAccumulator" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v8.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.xml.sax.Attributes" />
@@ -75,7 +74,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.SNodeFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.ReadHelper" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v8.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ConceptKind" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StaticScope" />
     <classNode dependClassName="jetbrains.mps.util.Pair" />

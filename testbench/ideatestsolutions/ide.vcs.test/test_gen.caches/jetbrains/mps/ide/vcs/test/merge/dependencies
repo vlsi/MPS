@@ -87,7 +87,6 @@
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.util.registry.Registry" />
     <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
-    <classNode dependClassName="com.intellij.openapi.vcs.FilePathImpl" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatusManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
@@ -207,15 +206,11 @@
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsException" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsShowConfirmationOption" />
-    <classNode dependClassName="com.intellij.openapi.vcs.changes.Change" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
-    <classNode dependClassName="git4idea.commands.GitCommand" />
-    <classNode dependClassName="git4idea.commands.GitSimpleHandler" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
@@ -223,7 +218,6 @@
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.persistence.PersistenceUtil" />
     <classNode dependClassName="jetbrains.mps.project.SModuleOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
@@ -302,8 +296,7 @@
   <dependency className="jetbrains.mps.ide.vcs.test.merge.RootStatusItem" file="RootStatusItem.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
   </dependency>
   <dependency className="jetbrains.mps.ide.vcs.test.merge.RootStatusTest" file="RootStatusTest.java">
     <classNode dependClassName="com.intellij.openapi.vcs.FileStatus" />

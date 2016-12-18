@@ -23,7 +23,6 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="org.xml.sax.Attributes" />
@@ -73,7 +72,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.SAXVisibleModelElements" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v4.VersionUtil" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />

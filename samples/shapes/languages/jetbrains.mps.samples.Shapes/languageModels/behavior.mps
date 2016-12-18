@@ -216,7 +216,7 @@
             <node concept="2OqwBi" id="1Os2kBLurrf" role="33vP2m">
               <node concept="13iPFW" id="1Os2kBLurrg" role="2Oq$k0" />
               <node concept="3TrEf2" id="1Os2kBLurrh" role="2OqNvi">
-                <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="color" />
+                <ref role="3Tt5mk" to="lpry:3CF0obv8waq" resolve="target" />
               </node>
             </node>
             <node concept="3Tqbb2" id="6ckZSPrZ1CP" role="1tU5fm">

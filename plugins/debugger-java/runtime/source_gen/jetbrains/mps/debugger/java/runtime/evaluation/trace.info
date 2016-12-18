@@ -565,307 +565,306 @@
       <node id="671562190169411304" at="53,45,54,20" concept="5" />
       <node id="671562190169411306" at="54,20,55,117" concept="5" />
       <node id="4586384769575447434" at="61,36,62,79" concept="11" />
-      <node id="4586384769575453178" at="62,79,63,48" concept="0" />
-      <node id="2034046503373004795" at="65,25,66,57" concept="11" />
-      <node id="2034046503373004800" at="66,57,67,90" concept="5" />
-      <node id="2034046503373004808" at="67,90,68,59" concept="5" />
-      <node id="4586384769576107275" at="73,39,74,79" concept="11" />
-      <node id="6417547869565069874" at="74,79,75,40" concept="0" />
-      <node id="4586384769576110550" at="77,25,78,68" concept="11" />
-      <node id="2034046503373003409" at="79,31,80,96" concept="5" />
-      <node id="2034046503373003422" at="81,9,82,36" concept="5" />
-      <node id="671562190169411354" at="88,32,89,42" concept="12" />
-      <node id="7239101982553512158" at="93,56,94,93" concept="5" />
-      <node id="671562190169411376" at="98,104,99,58" concept="11" />
-      <node id="6658728357875282951" at="104,64,105,75" concept="5" />
-      <node id="671562190169411403" at="105,75,106,148" concept="11" />
-      <node id="671562190169411411" at="106,148,107,38" concept="5" />
-      <node id="671562190169411426" at="115,128,116,65" concept="5" />
-      <node id="671562190169411430" at="116,65,117,90" concept="11" />
-      <node id="671562190169411451" at="120,47,121,32" concept="5" />
-      <node id="671562190169411455" at="123,7,124,27" concept="5" />
-      <node id="671562190169411463" at="128,42,129,34" concept="12" />
-      <node id="8197435796639315665" at="137,38,138,39" concept="5" />
-      <node id="8197435796639315670" at="139,13,140,38" concept="5" />
-      <node id="6658728357875255954" at="149,28,150,0" concept="14" />
-      <node id="6658728357875256714" at="152,68,153,73" concept="5" />
-      <node id="671562190169411553" at="155,36,156,36" concept="5" />
-      <node id="671562190169411557" at="158,15,159,35" concept="5" />
-      <node id="671562190169411572" at="167,30,168,30" concept="5" />
-      <node id="671562190169411577" at="169,5,170,28" concept="5" />
-      <node id="671562190169411584" at="173,41,174,26" concept="12" />
-      <node id="6401692984888995461" at="179,39,180,18" concept="12" />
-      <node id="846214144118742705" at="181,5,182,191" concept="12" />
-      <node id="6401692984888995980" at="187,39,188,18" concept="12" />
-      <node id="846214144118733729" at="189,5,190,150" concept="12" />
-      <node id="671562190169411611" at="193,50,194,83" concept="11" />
-      <node id="671562190169411621" at="195,30,196,36" concept="5" />
-      <node id="671562190169411626" at="197,5,198,23" concept="12" />
-      <node id="671562190169411633" at="201,66,202,107" concept="11" />
-      <node id="671562190169411643" at="203,37,204,41" concept="5" />
-      <node id="671562190169411648" at="205,5,206,21" concept="12" />
-      <node id="671562190169411661" at="210,71,211,33" concept="5" />
-      <node id="671562190169411677" at="216,71,217,35" concept="5" />
-      <node id="671562190169411693" at="222,71,223,35" concept="5" />
-      <node id="671562190169411708" at="228,37,229,37" concept="5" />
-      <node id="671562190169411723" at="234,37,235,40" concept="5" />
-      <node id="671562190169411203" at="239,0,240,0" concept="10" trace="watchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411209" at="240,0,241,0" concept="10" trace="watchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411215" at="241,0,242,0" concept="10" trace="watchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="2034046503373004795" at="64,25,65,57" concept="11" />
+      <node id="2034046503373004800" at="65,57,66,90" concept="5" />
+      <node id="2034046503373004808" at="66,90,67,59" concept="5" />
+      <node id="4586384769576107275" at="72,39,73,79" concept="11" />
+      <node id="6417547869565069874" at="73,79,74,40" concept="0" />
+      <node id="4586384769576110550" at="76,25,77,68" concept="11" />
+      <node id="2034046503373003409" at="78,31,79,96" concept="5" />
+      <node id="2034046503373003422" at="80,9,81,36" concept="5" />
+      <node id="671562190169411354" at="87,32,88,42" concept="12" />
+      <node id="7239101982553512158" at="92,56,93,93" concept="5" />
+      <node id="671562190169411376" at="97,104,98,58" concept="11" />
+      <node id="6658728357875282951" at="103,64,104,75" concept="5" />
+      <node id="671562190169411403" at="104,75,105,148" concept="11" />
+      <node id="671562190169411411" at="105,148,106,38" concept="5" />
+      <node id="671562190169411426" at="114,128,115,65" concept="5" />
+      <node id="671562190169411430" at="115,65,116,90" concept="11" />
+      <node id="671562190169411451" at="119,47,120,32" concept="5" />
+      <node id="671562190169411455" at="122,7,123,27" concept="5" />
+      <node id="671562190169411463" at="127,42,128,34" concept="12" />
+      <node id="8197435796639315665" at="136,38,137,39" concept="5" />
+      <node id="8197435796639315670" at="138,13,139,38" concept="5" />
+      <node id="6658728357875255954" at="148,28,149,0" concept="14" />
+      <node id="6658728357875256714" at="151,68,152,73" concept="5" />
+      <node id="671562190169411553" at="154,36,155,36" concept="5" />
+      <node id="671562190169411557" at="157,15,158,35" concept="5" />
+      <node id="671562190169411572" at="166,30,167,30" concept="5" />
+      <node id="671562190169411577" at="168,5,169,28" concept="5" />
+      <node id="671562190169411584" at="172,41,173,26" concept="12" />
+      <node id="6401692984888995461" at="178,39,179,18" concept="12" />
+      <node id="846214144118742705" at="180,5,181,191" concept="12" />
+      <node id="6401692984888995980" at="186,39,187,18" concept="12" />
+      <node id="846214144118733729" at="188,5,189,150" concept="12" />
+      <node id="671562190169411611" at="192,50,193,83" concept="11" />
+      <node id="671562190169411621" at="194,30,195,36" concept="5" />
+      <node id="671562190169411626" at="196,5,197,23" concept="12" />
+      <node id="671562190169411633" at="200,66,201,107" concept="11" />
+      <node id="671562190169411643" at="202,37,203,41" concept="5" />
+      <node id="671562190169411648" at="204,5,205,21" concept="12" />
+      <node id="671562190169411661" at="209,71,210,33" concept="5" />
+      <node id="671562190169411677" at="215,71,216,35" concept="5" />
+      <node id="671562190169411693" at="221,71,222,35" concept="5" />
+      <node id="671562190169411708" at="227,37,228,37" concept="5" />
+      <node id="671562190169411723" at="233,37,234,40" concept="5" />
+      <node id="671562190169411203" at="238,0,239,0" concept="10" trace="watchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411209" at="239,0,240,0" concept="10" trace="watchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411215" at="240,0,241,0" concept="10" trace="watchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
       <node id="671562190169411252" at="37,0,39,0" concept="6" trace="myContainerModuleRef" />
-      <node id="671562190169411224" at="244,0,246,0" concept="3" trace="WatchAdapter#()V" />
+      <node id="671562190169411224" at="243,0,245,0" concept="3" trace="WatchAdapter#()V" />
       <node id="7011101414730287427" at="46,60,49,9" concept="9" />
-      <node id="6417547869565073800" at="78,68,81,9" concept="9" />
-      <node id="8197435796639315662" at="136,62,139,13" concept="16" />
-      <node id="1137554513386390794" at="155,0,158,0" concept="10" trace="invoke#()V" />
-      <node id="671562190169411569" at="166,55,169,5" concept="16" />
-      <node id="671562190169411580" at="173,0,176,0" concept="10" trace="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
-      <node id="6401692984888993550" at="178,158,181,5" concept="9" />
-      <node id="6401692984888995978" at="186,194,189,5" concept="9" />
-      <node id="671562190169411618" at="194,83,197,5" concept="16" />
-      <node id="671562190169411640" at="202,107,205,5" concept="16" />
-      <node id="671562190169411656" at="209,59,212,5" concept="8" />
-      <node id="671562190169411672" at="215,61,218,5" concept="8" />
-      <node id="671562190169411688" at="221,61,224,5" concept="8" />
-      <node id="671562190169411705" at="227,85,230,5" concept="16" />
-      <node id="671562190169411720" at="233,88,236,5" concept="16" />
-      <node id="671562190169411228" at="246,0,249,0" concept="10" trace="watchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411235" at="249,0,252,0" concept="10" trace="watchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411242" at="252,0,255,0" concept="10" trace="watchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="6417547869565073800" at="77,68,80,9" concept="9" />
+      <node id="8197435796639315662" at="135,62,138,13" concept="16" />
+      <node id="1137554513386390794" at="154,0,157,0" concept="10" trace="invoke#()V" />
+      <node id="671562190169411569" at="165,55,168,5" concept="16" />
+      <node id="671562190169411580" at="172,0,175,0" concept="10" trace="getDebugSession#()Ljetbrains/mps/debugger/java/runtime/state/DebugSession;" />
+      <node id="6401692984888993550" at="177,158,180,5" concept="9" />
+      <node id="6401692984888995978" at="185,194,188,5" concept="9" />
+      <node id="671562190169411618" at="193,83,196,5" concept="16" />
+      <node id="671562190169411640" at="201,107,204,5" concept="16" />
+      <node id="671562190169411656" at="208,59,211,5" concept="8" />
+      <node id="671562190169411672" at="214,61,217,5" concept="8" />
+      <node id="671562190169411688" at="220,61,223,5" concept="8" />
+      <node id="671562190169411705" at="226,85,229,5" concept="16" />
+      <node id="671562190169411720" at="232,88,235,5" concept="16" />
+      <node id="671562190169411228" at="245,0,248,0" concept="10" trace="watchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411235" at="248,0,251,0" concept="10" trace="watchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411242" at="251,0,254,0" concept="10" trace="watchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
       <node id="7011101414730292081" at="52,58,56,9" concept="9" />
-      <node id="671562190169411350" at="87,0,91,0" concept="10" trace="canEvaluate#()Z" />
-      <node id="7239101982553512148" at="92,0,96,0" concept="10" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;)V" />
-      <node id="671562190169411445" at="119,0,123,0" concept="10" trace="windowClosed#(Ljava/awt/event/WindowEvent;)V" />
-      <node id="671562190169411459" at="127,0,131,0" concept="10" trace="createWatchesPanel#()Ljavax/swing/JComponent;" />
-      <node id="2034046503373004793" at="65,0,70,0" concept="10" trace="run#()V" />
-      <node id="6658728357875280000" at="104,0,109,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411535" at="153,73,158,15" concept="11" />
-      <node id="671562190169411650" at="209,0,214,0" concept="10" trace="fireWatchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411666" at="215,0,220,0" concept="10" trace="fireWatchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411682" at="221,0,226,0" concept="10" trace="fireWatchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411698" at="227,0,232,0" concept="10" trace="addWatchListener#(Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider/IWatchListener;)V" />
-      <node id="671562190169411713" at="233,0,238,0" concept="10" trace="removeWatchListener#(Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider/IWatchListener;)V" />
+      <node id="671562190169411350" at="86,0,90,0" concept="10" trace="canEvaluate#()Z" />
+      <node id="7239101982553512148" at="91,0,95,0" concept="10" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;)V" />
+      <node id="671562190169411445" at="118,0,122,0" concept="10" trace="windowClosed#(Ljava/awt/event/WindowEvent;)V" />
+      <node id="671562190169411459" at="126,0,130,0" concept="10" trace="createWatchesPanel#()Ljavax/swing/JComponent;" />
+      <node id="2034046503373004793" at="64,0,69,0" concept="10" trace="run#()V" />
+      <node id="6658728357875280000" at="103,0,108,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411535" at="152,73,157,15" concept="11" />
+      <node id="671562190169411650" at="208,0,213,0" concept="10" trace="fireWatchAdded#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411666" at="214,0,219,0" concept="10" trace="fireWatchUpdated#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411682" at="220,0,225,0" concept="10" trace="fireWatchRemoved#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411698" at="226,0,231,0" concept="10" trace="addWatchListener#(Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider/IWatchListener;)V" />
+      <node id="671562190169411713" at="232,0,237,0" concept="10" trace="removeWatchListener#(Ljetbrains/mps/debugger/java/runtime/evaluation/EvaluationProvider/IWatchListener;)V" />
       <node id="671562190169411289" at="45,0,51,0" concept="10" trace="registered#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-      <node id="671562190169411438" at="117,90,123,7" concept="5" />
-      <node id="6658728357877099370" at="136,0,142,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="671562190169411563" at="166,0,172,0" concept="10" trace="removeWatch#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411438" at="116,90,122,7" concept="5" />
+      <node id="6658728357877099370" at="135,0,141,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411563" at="165,0,171,0" concept="10" trace="removeWatch#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
       <node id="671562190169411298" at="51,0,58,0" concept="10" trace="detached#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-      <node id="2034046503373004789" at="63,48,70,7" concept="5" />
-      <node id="2034046503373003407" at="77,0,84,0" concept="10" trace="run#()V" />
-      <node id="6658728357875281025" at="102,43,109,13" concept="5" />
-      <node id="671562190169411592" at="177,0,184,0" concept="10" trace="createEvaluationContainer#(ZLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
-      <node id="7239101982553469416" at="185,0,192,0" concept="10" trace="createEvaluationContainer#(ZLjava/util/List;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
-      <node id="671562190169411606" at="193,0,200,0" concept="10" trace="getWatches#()Ljava/util/List;" />
-      <node id="671562190169411628" at="201,0,208,0" concept="10" trace="getListeners#()Ljava/util/List;" />
-      <node id="6658728357877101774" at="134,28,142,11" concept="5" />
-      <node id="2034046503373003403" at="75,40,84,7" concept="5" />
-      <node id="671562190169411382" at="101,28,110,9" concept="9" />
-      <node id="6658728357875239980" at="152,0,161,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="8197435796639315649" at="134,0,144,0" concept="10" trace="invoke#()V" />
-      <node id="671562190169411315" at="61,0,72,0" concept="10" trace="init#()V" />
-      <node id="8197435796639315542" at="101,0,112,0" concept="10" trace="invoke#()V" />
-      <node id="671562190169411418" at="115,0,126,0" concept="10" trace="showEditWatchDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="6658728357875253789" at="150,0,161,11" concept="5" />
-      <node id="8197435796639315597" at="132,68,144,7" concept="5" />
-      <node id="671562190169411338" at="73,0,86,0" concept="10" trace="dispose#()V" />
-      <node id="1137554513386371635" at="99,58,112,38" concept="5" />
-      <node id="671562190169411468" at="132,0,146,0" concept="10" trace="addWatch#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
-      <node id="1137554513386372373" at="149,0,163,0" concept="10" trace="invoke#()V" />
+      <node id="2034046503373004789" at="62,79,69,7" concept="5" />
+      <node id="2034046503373003407" at="76,0,83,0" concept="10" trace="run#()V" />
+      <node id="6658728357875281025" at="101,43,108,13" concept="5" />
+      <node id="671562190169411592" at="176,0,183,0" concept="10" trace="createEvaluationContainer#(ZLjetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
+      <node id="7239101982553469416" at="184,0,191,0" concept="10" trace="createEvaluationContainer#(ZLjava/util/List;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;" />
+      <node id="671562190169411606" at="192,0,199,0" concept="10" trace="getWatches#()Ljava/util/List;" />
+      <node id="671562190169411628" at="200,0,207,0" concept="10" trace="getListeners#()Ljava/util/List;" />
+      <node id="6658728357877101774" at="133,28,141,11" concept="5" />
+      <node id="2034046503373003403" at="74,40,83,7" concept="5" />
+      <node id="671562190169411382" at="100,28,109,9" concept="9" />
+      <node id="6658728357875239980" at="151,0,160,0" concept="10" trace="invoke#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="671562190169411315" at="61,0,71,0" concept="10" trace="init#()V" />
+      <node id="8197435796639315649" at="133,0,143,0" concept="10" trace="invoke#()V" />
+      <node id="8197435796639315542" at="100,0,111,0" concept="10" trace="invoke#()V" />
+      <node id="671562190169411418" at="114,0,125,0" concept="10" trace="showEditWatchDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="6658728357875253789" at="149,0,160,11" concept="5" />
+      <node id="8197435796639315597" at="131,68,143,7" concept="5" />
+      <node id="671562190169411338" at="72,0,85,0" concept="10" trace="dispose#()V" />
+      <node id="1137554513386371635" at="98,58,111,38" concept="5" />
+      <node id="671562190169411468" at="131,0,145,0" concept="10" trace="addWatch#(Ljetbrains/mps/debugger/java/runtime/evaluation/container/IEvaluationContainer;)V" />
+      <node id="1137554513386372373" at="148,0,162,0" concept="10" trace="invoke#()V" />
       <node id="671562190169411279" at="43,34,58,7" concept="5" />
-      <node id="1137554513386372322" at="147,29,163,7" concept="5" />
-      <node id="671562190169411359" at="97,0,114,0" concept="10" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;Ljava/util/List;)V" />
+      <node id="1137554513386372322" at="146,29,162,7" concept="5" />
+      <node id="671562190169411359" at="96,0,113,0" concept="10" trace="showEvaluationDialog#(Ljetbrains/mps/project/Project;Ljava/util/List;)V" />
       <node id="671562190169411269" at="42,0,60,0" concept="3" trace="EvaluationProvider#(Ljetbrains/mps/debugger/java/runtime/state/DebugSession;)V" />
-      <node id="671562190169411504" at="147,0,165,0" concept="10" trace="createWatch#()V" />
-      <scope id="671562190169411227" at="244,27,244,27" />
-      <scope id="671562190169411233" at="247,56,247,56" />
-      <scope id="671562190169411240" at="250,58,250,58" />
-      <scope id="671562190169411247" at="253,58,253,58" />
+      <node id="671562190169411504" at="146,0,164,0" concept="10" trace="createWatch#()V" />
+      <scope id="671562190169411227" at="243,27,243,27" />
+      <scope id="671562190169411233" at="246,56,246,56" />
+      <scope id="671562190169411240" at="249,58,249,58" />
+      <scope id="671562190169411247" at="252,58,252,58" />
       <scope id="7011101414730287430" at="47,45,48,17" />
-      <scope id="6417547869565073802" at="79,31,80,96" />
-      <scope id="671562190169411353" at="88,32,89,42" />
-      <scope id="7239101982553512151" at="93,56,94,93" />
-      <scope id="671562190169411450" at="120,47,121,32" />
-      <scope id="671562190169411462" at="128,42,129,34" />
-      <scope id="8197435796639315664" at="137,38,138,39" />
-      <scope id="1137554513386390795" at="155,36,156,36" />
-      <scope id="671562190169411571" at="167,30,168,30" />
-      <scope id="671562190169411583" at="173,41,174,26" />
-      <scope id="6401692984888993553" at="179,39,180,18" />
-      <scope id="6401692984888995979" at="187,39,188,18" />
-      <scope id="671562190169411620" at="195,30,196,36" />
-      <scope id="671562190169411642" at="203,37,204,41" />
-      <scope id="671562190169411660" at="210,71,211,33" />
-      <scope id="671562190169411676" at="216,71,217,35" />
-      <scope id="671562190169411692" at="222,71,223,35" />
-      <scope id="671562190169411707" at="228,37,229,37" />
-      <scope id="671562190169411722" at="234,37,235,40" />
-      <scope id="671562190169411203" at="239,0,240,0">
+      <scope id="6417547869565073802" at="78,31,79,96" />
+      <scope id="671562190169411353" at="87,32,88,42" />
+      <scope id="7239101982553512151" at="92,56,93,93" />
+      <scope id="671562190169411450" at="119,47,120,32" />
+      <scope id="671562190169411462" at="127,42,128,34" />
+      <scope id="8197435796639315664" at="136,38,137,39" />
+      <scope id="1137554513386390795" at="154,36,155,36" />
+      <scope id="671562190169411571" at="166,30,167,30" />
+      <scope id="671562190169411583" at="172,41,173,26" />
+      <scope id="6401692984888993553" at="178,39,179,18" />
+      <scope id="6401692984888995979" at="186,39,187,18" />
+      <scope id="671562190169411620" at="194,30,195,36" />
+      <scope id="671562190169411642" at="202,37,203,41" />
+      <scope id="671562190169411660" at="209,71,210,33" />
+      <scope id="671562190169411676" at="215,71,216,35" />
+      <scope id="671562190169411692" at="221,71,222,35" />
+      <scope id="671562190169411707" at="227,37,228,37" />
+      <scope id="671562190169411722" at="233,37,234,40" />
+      <scope id="671562190169411203" at="238,0,239,0">
         <var name="model" id="671562190169411206" />
       </scope>
-      <scope id="671562190169411209" at="240,0,241,0">
+      <scope id="671562190169411209" at="239,0,240,0">
         <var name="model" id="671562190169411212" />
       </scope>
-      <scope id="671562190169411215" at="241,0,242,0">
+      <scope id="671562190169411215" at="240,0,241,0">
         <var name="model" id="671562190169411218" />
       </scope>
       <scope id="7011101414730292082" at="53,45,55,117" />
-      <scope id="671562190169411224" at="244,0,246,0" />
+      <scope id="671562190169411224" at="243,0,245,0" />
       <scope id="671562190169411294" at="46,60,49,9" />
-      <scope id="2034046503373004794" at="65,25,68,59">
+      <scope id="2034046503373004794" at="64,25,67,59">
         <var name="module" id="2034046503373004796" />
       </scope>
-      <scope id="6658728357875280002" at="104,64,107,38">
+      <scope id="6658728357875280002" at="103,64,106,38">
         <var name="evaluationDialog" id="671562190169411404" />
       </scope>
-      <scope id="1137554513386390794" at="155,0,158,0" />
-      <scope id="671562190169411580" at="173,0,176,0" />
-      <scope id="671562190169411655" at="209,59,212,5" />
-      <scope id="671562190169411656" at="209,59,212,5">
+      <scope id="1137554513386390794" at="154,0,157,0" />
+      <scope id="671562190169411580" at="172,0,175,0" />
+      <scope id="671562190169411655" at="208,59,211,5" />
+      <scope id="671562190169411656" at="208,59,211,5">
         <var name="listener" id="671562190169411658" />
       </scope>
-      <scope id="671562190169411671" at="215,61,218,5" />
-      <scope id="671562190169411672" at="215,61,218,5">
+      <scope id="671562190169411671" at="214,61,217,5" />
+      <scope id="671562190169411672" at="214,61,217,5">
         <var name="listener" id="671562190169411674" />
       </scope>
-      <scope id="671562190169411687" at="221,61,224,5" />
-      <scope id="671562190169411688" at="221,61,224,5">
+      <scope id="671562190169411687" at="220,61,223,5" />
+      <scope id="671562190169411688" at="220,61,223,5">
         <var name="listener" id="671562190169411690" />
       </scope>
-      <scope id="671562190169411704" at="227,85,230,5" />
-      <scope id="671562190169411719" at="233,88,236,5" />
-      <scope id="671562190169411228" at="246,0,249,0">
+      <scope id="671562190169411704" at="226,85,229,5" />
+      <scope id="671562190169411719" at="232,88,235,5" />
+      <scope id="671562190169411228" at="245,0,248,0">
         <var name="model" id="671562190169411231" />
       </scope>
-      <scope id="671562190169411235" at="249,0,252,0">
+      <scope id="671562190169411235" at="248,0,251,0">
         <var name="model" id="671562190169411238" />
       </scope>
-      <scope id="671562190169411242" at="252,0,255,0">
+      <scope id="671562190169411242" at="251,0,254,0">
         <var name="model" id="671562190169411245" />
       </scope>
       <scope id="671562190169411303" at="52,58,56,9" />
-      <scope id="671562190169411350" at="87,0,91,0" />
-      <scope id="7239101982553512148" at="92,0,96,0">
+      <scope id="671562190169411350" at="86,0,90,0" />
+      <scope id="7239101982553512148" at="91,0,95,0">
         <var name="mpsProject" id="4474271214082914182" />
       </scope>
-      <scope id="671562190169411445" at="119,0,123,0">
+      <scope id="671562190169411445" at="118,0,122,0">
         <var name="e" id="671562190169411448" />
       </scope>
-      <scope id="671562190169411459" at="127,0,131,0" />
-      <scope id="6658728357877099372" at="136,62,140,38" />
-      <scope id="671562190169411568" at="166,55,170,28" />
-      <scope id="671562190169411596" at="178,158,182,191" />
-      <scope id="7239101982553469420" at="186,194,190,150" />
-      <scope id="2034046503373004793" at="65,0,70,0" />
-      <scope id="2034046503373003408" at="77,25,82,36">
+      <scope id="671562190169411459" at="126,0,130,0" />
+      <scope id="6658728357877099372" at="135,62,139,38" />
+      <scope id="671562190169411568" at="165,55,169,28" />
+      <scope id="671562190169411596" at="177,158,181,191" />
+      <scope id="7239101982553469420" at="185,194,189,150" />
+      <scope id="2034046503373004793" at="64,0,69,0" />
+      <scope id="2034046503373003408" at="76,25,81,36">
         <var name="resolved" id="4586384769576110551" />
       </scope>
-      <scope id="6658728357875280000" at="104,0,109,0">
+      <scope id="6658728357875280000" at="103,0,108,0">
         <var name="container" id="6658728357875280000" />
       </scope>
-      <scope id="671562190169411610" at="193,50,198,23">
+      <scope id="671562190169411610" at="192,50,197,23">
         <var name="watchesCopy" id="671562190169411612" />
       </scope>
-      <scope id="671562190169411632" at="201,66,206,21">
+      <scope id="671562190169411632" at="200,66,205,21">
         <var name="listeners" id="671562190169411634" />
       </scope>
-      <scope id="671562190169411650" at="209,0,214,0">
+      <scope id="671562190169411650" at="208,0,213,0">
         <var name="model" id="671562190169411653" />
       </scope>
-      <scope id="671562190169411666" at="215,0,220,0">
+      <scope id="671562190169411666" at="214,0,219,0">
         <var name="model" id="671562190169411669" />
       </scope>
-      <scope id="671562190169411682" at="221,0,226,0">
+      <scope id="671562190169411682" at="220,0,225,0">
         <var name="model" id="671562190169411685" />
       </scope>
-      <scope id="671562190169411698" at="227,0,232,0">
+      <scope id="671562190169411698" at="226,0,231,0">
         <var name="listener" id="671562190169411701" />
       </scope>
-      <scope id="671562190169411713" at="233,0,238,0">
+      <scope id="671562190169411713" at="232,0,237,0">
         <var name="listener" id="671562190169411716" />
       </scope>
       <scope id="671562190169411289" at="45,0,51,0">
         <var name="session" id="671562190169411292" />
       </scope>
-      <scope id="6658728357877099370" at="136,0,142,0">
+      <scope id="6658728357877099370" at="135,0,141,0">
         <var name="container" id="6658728357877099370" />
       </scope>
-      <scope id="671562190169411563" at="166,0,172,0">
+      <scope id="671562190169411563" at="165,0,171,0">
         <var name="model" id="671562190169411566" />
       </scope>
       <scope id="671562190169411298" at="51,0,58,0">
         <var name="session" id="671562190169411301" />
       </scope>
-      <scope id="2034046503373003407" at="77,0,84,0" />
-      <scope id="671562190169411386" at="102,43,109,13" />
-      <scope id="6658728357875239982" at="152,68,159,35">
+      <scope id="2034046503373003407" at="76,0,83,0" />
+      <scope id="671562190169411386" at="101,43,108,13" />
+      <scope id="6658728357875239982" at="151,68,158,35">
         <var name="editWatchDialog" id="671562190169411536" />
       </scope>
-      <scope id="671562190169411592" at="177,0,184,0">
+      <scope id="671562190169411592" at="176,0,183,0">
         <var name="isWatch" id="671562190169411594" />
         <var name="onNodeSetUp" id="6658728357875232190" />
       </scope>
-      <scope id="7239101982553469416" at="185,0,192,0">
+      <scope id="7239101982553469416" at="184,0,191,0">
         <var name="isWatch" id="7239101982553469418" />
         <var name="onNodeSetUp" id="6658728357875235491" />
         <var name="selectedNodes" id="7239101982553512180" />
       </scope>
-      <scope id="671562190169411606" at="193,0,200,0" />
-      <scope id="671562190169411628" at="201,0,208,0" />
-      <scope id="8197435796639315650" at="134,28,142,11" />
-      <scope id="671562190169411318" at="61,36,70,7">
+      <scope id="671562190169411606" at="192,0,199,0" />
+      <scope id="671562190169411628" at="200,0,207,0" />
+      <scope id="671562190169411318" at="61,36,69,7">
         <var name="repository" id="4586384769575447435" />
       </scope>
-      <scope id="8197435796639315543" at="101,28,110,9" />
-      <scope id="671562190169411425" at="115,128,124,27">
+      <scope id="8197435796639315650" at="133,28,141,11" />
+      <scope id="8197435796639315543" at="100,28,109,9" />
+      <scope id="671562190169411425" at="114,128,123,27">
         <var name="editWatchDialog" id="671562190169411431" />
       </scope>
-      <scope id="6658728357875239980" at="152,0,161,0">
+      <scope id="6658728357875239980" at="151,0,160,0">
         <var name="container" id="6658728357875239980" />
       </scope>
-      <scope id="8197435796639315649" at="134,0,144,0" />
-      <scope id="671562190169411315" at="61,0,72,0" />
-      <scope id="671562190169411341" at="73,39,84,7">
+      <scope id="671562190169411315" at="61,0,71,0" />
+      <scope id="8197435796639315649" at="133,0,143,0" />
+      <scope id="671562190169411341" at="72,39,83,7">
         <var name="repository" id="4586384769576107276" />
       </scope>
-      <scope id="8197435796639315542" at="101,0,112,0" />
-      <scope id="671562190169411418" at="115,0,126,0">
+      <scope id="8197435796639315542" at="100,0,111,0" />
+      <scope id="671562190169411418" at="114,0,125,0">
         <var name="ideaProject" id="5498026401458099199" />
         <var name="model" id="671562190169411423" />
       </scope>
-      <scope id="671562190169411473" at="132,68,144,7" />
-      <scope id="1137554513386372374" at="149,28,161,11" />
-      <scope id="671562190169411338" at="73,0,86,0" />
-      <scope id="671562190169411364" at="98,104,112,38">
+      <scope id="671562190169411473" at="131,68,143,7" />
+      <scope id="1137554513386372374" at="148,28,160,11" />
+      <scope id="671562190169411338" at="72,0,85,0" />
+      <scope id="671562190169411364" at="97,104,111,38">
         <var name="state" id="671562190169411377" />
       </scope>
-      <scope id="671562190169411468" at="132,0,146,0">
+      <scope id="671562190169411468" at="131,0,145,0">
         <var name="evaluationModel" id="671562190169411471" />
       </scope>
-      <scope id="1137554513386372373" at="149,0,163,0" />
+      <scope id="1137554513386372373" at="148,0,162,0" />
       <scope id="671562190169411274" at="42,65,58,7" />
-      <scope id="671562190169411507" at="147,29,163,7" />
-      <scope id="671562190169411359" at="97,0,114,0">
+      <scope id="671562190169411507" at="146,29,162,7" />
+      <scope id="671562190169411359" at="96,0,113,0">
         <var name="mpsProject" id="5069373260571714679" />
         <var name="selectedNodes" id="7239101982553512168" />
       </scope>
       <scope id="671562190169411269" at="42,0,60,0">
         <var name="debugSession" id="671562190169411272" />
       </scope>
-      <scope id="671562190169411504" at="147,0,165,0" />
-      <unit id="1137554513386390794" at="154,139,158,13" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$9" />
-      <unit id="671562190169411444" at="118,54,123,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$5" />
-      <unit id="671562190169411201" at="238,0,243,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$IWatchListener" />
-      <unit id="2034046503373004793" at="64,51,70,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$2" />
-      <unit id="6658728357875280000" at="103,85,109,11" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$5" />
-      <unit id="6658728357877099370" at="135,39,142,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7" />
-      <unit id="2034046503373003407" at="76,51,84,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$3" />
-      <unit id="6658728357875239980" at="151,44,161,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$8" />
-      <unit id="8197435796639315649" at="133,53,144,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$6" />
-      <unit id="8197435796639315542" at="100,63,112,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$4" />
-      <unit id="671562190169411221" at="243,0,256,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$WatchAdapter" />
+      <scope id="671562190169411504" at="146,0,164,0" />
+      <unit id="1137554513386390794" at="153,139,157,13" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7$1$1" />
+      <unit id="671562190169411444" at="117,54,122,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$5" />
+      <unit id="671562190169411201" at="237,0,242,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$IWatchListener" />
+      <unit id="2034046503373004793" at="63,51,69,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$2" />
+      <unit id="6658728357875280000" at="102,85,108,11" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$4$1" />
+      <unit id="6658728357877099370" at="134,39,141,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$6$1" />
+      <unit id="2034046503373003407" at="75,51,83,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$3" />
+      <unit id="6658728357875239980" at="150,44,160,9" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7$1" />
+      <unit id="8197435796639315649" at="132,53,143,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$6" />
+      <unit id="8197435796639315542" at="99,63,111,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$4" />
+      <unit id="671562190169411221" at="242,0,255,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$WatchAdapter" />
       <unit id="671562190169411288" at="44,106,58,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$1" />
-      <unit id="1137554513386372373" at="148,53,163,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7" />
-      <unit id="671562190169411198" at="35,0,257,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
+      <unit id="1137554513386372373" at="147,53,162,5" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider$7" />
+      <unit id="671562190169411198" at="35,0,256,0" name="jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider" />
     </file>
   </root>
 </debug-info>

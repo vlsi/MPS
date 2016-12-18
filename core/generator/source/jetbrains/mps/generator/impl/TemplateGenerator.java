@@ -687,9 +687,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (ex.isInfo()) {
       getLogger().info(ruleNode, messageText);
     } else if (ex.isWarning()) {
-      getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+      getLogger().warning(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()), GeneratorUtil.describeTemplateLocation(ex));
     } else {
-      getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()));
+      getLogger().error(ruleNode, messageText, GeneratorUtil.describeInput(ex.getTemplateContext()), GeneratorUtil.describeTemplateLocation(ex));
     }
   }
 

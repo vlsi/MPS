@@ -61,7 +61,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
-    <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionAdapter" />
     <classNode dependClassName="jetbrains.mps.debug.api.DebugSessionManagerComponent" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils" />
@@ -132,7 +131,6 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IObjectValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.proxies.IValueProxy" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.ValueWrapper" />
-    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.customViewers.JavaObjectValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.customViewers.ObjectWrapperFactory" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />

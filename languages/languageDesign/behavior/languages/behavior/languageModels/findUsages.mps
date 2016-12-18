@@ -5,7 +5,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -89,8 +89,8 @@
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
@@ -239,13 +239,15 @@
                               </node>
                               <node concept="2OqwBi" id="7kBaCir6MUQ" role="3uHU7B">
                                 <node concept="1PxgMI" id="7kBaCir6MUR" role="2Oq$k0">
-                                  <ref role="1m5ApE" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                                   <node concept="37vLTw" id="7kBaCir6Px0" role="1m5AlR">
                                     <ref role="3cqZAo" node="7kBaCir6Mbg" resolve="it" />
                                   </node>
+                                  <node concept="chp4Y" id="714IaVdH1_h" role="3oSUPX">
+                                    <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+                                  </node>
                                 </node>
                                 <node concept="3TrEf2" id="7kBaCir6MUT" role="2OqNvi">
-                                  <ref role="3Tt5mk" to="1i04:hP3i0lZ" />
+                                  <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
                                 </node>
                               </node>
                             </node>
@@ -329,13 +331,15 @@
                   <node concept="39LhUk" id="hRezWwT" role="3uHU7w" />
                   <node concept="2OqwBi" id="hRezTEF" role="3uHU7B">
                     <node concept="1PxgMI" id="hRezSTM" role="2Oq$k0">
-                      <ref role="1m5ApE" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                       <node concept="2GrUjf" id="hRezS3$" role="1m5AlR">
                         <ref role="2Gs0qQ" node="hReyJt5" resolve="nodeUsage" />
                       </node>
+                      <node concept="chp4Y" id="714IaVdH1_k" role="3oSUPX">
+                        <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+                      </node>
                     </node>
                     <node concept="3TrEf2" id="hRezVx$" role="2OqNvi">
-                      <ref role="3Tt5mk" to="1i04:hP3i0lZ" />
+                      <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
                     </node>
                   </node>
                 </node>

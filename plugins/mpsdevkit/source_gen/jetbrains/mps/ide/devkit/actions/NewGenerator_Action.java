@@ -63,7 +63,7 @@ public class NewGenerator_Action extends BaseAction {
     final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
     ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        dialog[0] = new NewGeneratorDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getProject(), ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
+        dialog[0] = new NewGeneratorDialog(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))));
       }
     });
     dialog[0].show();

@@ -18,7 +18,6 @@ import jetbrains.mps.build.mps.util.ModuleFinder;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.TemplateVarContext;
 import jetbrains.mps.build.mps.util.MPSModulesClosure;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.build.mps.util.ModulePlugins;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -94,11 +93,7 @@ public class QueriesGenerated {
     return ModuleFinder.findModules(Sequence.<SNode>singleton(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))), _context, _context.getNode());
   }
   public static Object insertMacro_varValue_3919210978214839183(final TemplateVarContext _context) {
-    return Sequence.fromIterable(((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules()).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(DependenciesHelper.getOriginalNode(it, _context), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d333ebL, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule"));
-      }
-    });
+    return ((MPSModulesClosure) _context.getVariable("var:closure")).getAllModules();
   }
   public static Object insertMacro_varValue_3919210978213957549(final TemplateVarContext _context) {
     return new MPSModulesClosure(Sequence.<SNode>singleton(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution"))), new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).designtimeClosure();

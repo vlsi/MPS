@@ -67,8 +67,8 @@
         <var name="references" id="3374946611454212812" />
       </scope>
       <scope id="3374946611454212812" at="36,0,73,0" />
-      <unit id="6405552206792773004" at="60,390,64,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints$3" />
-      <unit id="3374946611454212812" at="47,19,68,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints$2" />
+      <unit id="6405552206792773004" at="60,390,64,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints$1$1$1" />
+      <unit id="3374946611454212812" at="47,19,68,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints$1$1" />
       <unit id="3374946611454212812" at="39,158,70,5" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints$1" />
       <unit id="3374946611454212812" at="31,0,75,0" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticMethodCall_Constraints" />
     </file>
@@ -125,8 +125,8 @@
         <var name="references" id="4107550939057700059" />
       </scope>
       <scope id="4107550939057700059" at="36,0,74,0" />
-      <unit id="6405552206789866675" at="60,392,64,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints$3" />
-      <unit id="4107550939057700059" at="47,19,69,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints$2" />
+      <unit id="6405552206789866675" at="60,392,64,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints$1$1$1" />
+      <unit id="4107550939057700059" at="47,19,69,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints$1$1" />
       <unit id="4107550939057700059" at="39,155,71,5" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints$1" />
       <unit id="4107550939057700059" at="31,0,76,0" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateStaticFieldReference_Constraints" />
     </file>
@@ -195,9 +195,9 @@
         <var name="references" id="6825241477451043706" />
       </scope>
       <scope id="6825241477451043706" at="38,0,85,0" />
-      <unit id="6405552206789318039" at="68,181,72,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$3" />
-      <unit id="6405552206789318049" at="72,27,76,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$3" />
-      <unit id="6825241477451043706" at="49,19,80,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$2" />
+      <unit id="6405552206789318039" at="68,181,72,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$1$1$1" />
+      <unit id="6405552206789318049" at="72,27,76,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$1$1$2" />
+      <unit id="6825241477451043706" at="49,19,80,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$1$1" />
       <unit id="6825241477451043706" at="41,154,82,5" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints$1" />
       <unit id="6825241477451043706" at="33,0,87,0" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateFieldReferenceOperation_Constraints" />
     </file>
@@ -265,9 +265,9 @@
         <var name="references" id="6825241477451051015" />
       </scope>
       <scope id="6825241477451051015" at="38,0,84,0" />
-      <unit id="6405552206789453241" at="67,182,71,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$3" />
-      <unit id="6405552206789453251" at="71,27,75,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$3" />
-      <unit id="6825241477451051015" at="49,19,79,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$2" />
+      <unit id="6405552206789453241" at="67,182,71,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$1$1$1" />
+      <unit id="6405552206789453251" at="71,27,75,15" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$1$1$2" />
+      <unit id="6825241477451051015" at="49,19,79,9" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$1$1" />
       <unit id="6825241477451051015" at="41,158,81,5" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints$1" />
       <unit id="6825241477451051015" at="33,0,86,0" name="jetbrains.mps.debugger.java.privateMembers.constraints.PrivateInstanceMethodCallOperation_Constraints" />
     </file>

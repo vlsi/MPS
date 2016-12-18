@@ -12,7 +12,6 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -249,7 +248,7 @@ public class Template_gen_static_method extends TemplateDeclarationBase {
               {
                 final SNode tnode6 = environment.createOutputNode(myConcepts[9]);
                 try {
-                  environment.resolve((ReferenceResolver) new RefResolver(tnode6, myAssociationLinks[1], context3, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362"), "fact") {
+                  environment.resolve(new RefResolver(tnode6, myAssociationLinks[1], context3, new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5955416080080987362"), "fact") {
                     @Override
                     public Object resolve() {
                       return QueriesGenerated.referenceMacro_GetReferent_5955416080080987363(createQueryContext());

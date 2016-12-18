@@ -91,8 +91,8 @@
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
@@ -120,7 +120,7 @@
     <property role="3GE5qa" value="simple.gen.byInterface" />
     <ref role="1M2myG" to="hfbu:4F0TDiuCZaK" resolve="AspectMethodDescriptor" />
     <node concept="1N5Pfh" id="4F0TDiuDP72" role="1Mr941">
-      <ref role="1N5Vy1" to="hfbu:4F0TDiuCZaL" />
+      <ref role="1N5Vy1" to="hfbu:4F0TDiuCZaL" resolve="method" />
       <node concept="13QW63" id="4F0TDiuDRns" role="1N6uqs">
         <node concept="3clFbS" id="4F0TDiuDRnt" role="2VODD2">
           <node concept="3cpWs6" id="4F0TDiuDRnR" role="3cqZAp">
@@ -134,18 +134,20 @@
                     <node concept="2OqwBi" id="4F0TDiuDRWo" role="2Oq$k0">
                       <node concept="2OqwBi" id="4F0TDiuDPLU" role="2Oq$k0">
                         <node concept="1PxgMI" id="4F0TDiuDPHq" role="2Oq$k0">
-                          <ref role="1m5ApE" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
                           <node concept="2OqwBi" id="4F0TDiuDPdj" role="1m5AlR">
                             <node concept="3kakTB" id="4F0TDiuDPb0" role="2Oq$k0" />
                             <node concept="1mfA1w" id="4F0TDiuDPpq" role="2OqNvi" />
                           </node>
+                          <node concept="chp4Y" id="714IaVdH1Gr" role="3oSUPX">
+                            <ref role="cht4Q" to="hfbu:4F0TDiuCZaF" resolve="GenerationDescriptor_ByInterface" />
+                          </node>
                         </node>
                         <node concept="3TrEf2" id="4F0TDiuDPUK" role="2OqNvi">
-                          <ref role="3Tt5mk" to="hfbu:7NyVmB7TXSN" />
+                          <ref role="3Tt5mk" to="hfbu:7NyVmB7TXSN" resolve="mainIntfcClass" />
                         </node>
                       </node>
                       <node concept="3Tsc0h" id="4F0TDiuDSNk" role="2OqNvi">
-                        <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" />
+                        <ref role="3TtcxE" to="tpee:4EqhHTp4Mw3" resolve="member" />
                       </node>
                     </node>
                     <node concept="v3k3i" id="4F0TDiuDWAw" role="2OqNvi">
@@ -174,9 +176,11 @@
                       <node concept="3cpWs6" id="4F0TDiuDXiY" role="3cqZAp">
                         <node concept="2OqwBi" id="4F0TDiuDY0n" role="3cqZAk">
                           <node concept="1PxgMI" id="4F0TDiuDXBr" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                             <node concept="37vLTw" id="4F0TDiuDXtH" role="1m5AlR">
                               <ref role="3cqZAo" node="4F0TDiuDR$u" resolve="target" />
+                            </node>
+                            <node concept="chp4Y" id="714IaVdH1Gq" role="3oSUPX">
+                              <ref role="cht4Q" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
                             </node>
                           </node>
                           <node concept="3TrcHB" id="4F0TDiuDYMV" role="2OqNvi">

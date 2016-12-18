@@ -503,12 +503,12 @@
       </scope>
       <scope id="448727181062170045" at="81,29,214,8" />
       <scope id="448727181062170045" at="81,0,216,0" />
-      <unit id="4902420589286026706" at="94,97,98,17" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$2" />
-      <unit id="3245637733310091884" at="108,108,114,21" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$3" />
+      <unit id="4902420589286026706" at="94,97,98,17" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages$1$1" />
+      <unit id="3245637733310091884" at="108,108,114,21" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages$1$2$1" />
       <unit id="448727181061901862" at="259,0,270,0" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$TargetProperties" />
-      <unit id="4059808464148374547" at="183,73,200,19" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$2" />
-      <unit id="6641743975990233561" at="105,62,146,17" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$2" />
-      <unit id="448727181062170047" at="82,17,214,7" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$1" />
+      <unit id="4059808464148374547" at="183,73,200,19" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages$1$3" />
+      <unit id="6641743975990233561" at="105,62,146,17" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages$1$2" />
+      <unit id="448727181062170047" at="82,17,214,7" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages$1" />
       <unit id="448727181062170045" at="77,0,259,0" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet$Target_generateImages" />
       <unit id="448727181061901862" at="53,0,271,0" name="jetbrains.mps.lang.editor.imageGen.plugin.GenerateImages_Facet" />
     </file>

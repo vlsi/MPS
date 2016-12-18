@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.refactoring.ChooseModuleDialog" file="ChooseModuleDialog.java">
-    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.ModulesPresentation" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
-  </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.ModelOrNodeChooser" file="ModelOrNodeChooser.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
@@ -168,14 +150,13 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.UsagesView" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions" />
     <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewAction" />
-    <classNode dependClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItemEx" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringViewItem" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.RenameModelDialog" file="RenameModelDialog.java">
     <classNode dependClassName="java.awt.HeadlessException" />
@@ -198,24 +179,6 @@
     <classNode dependClassName="jetbrains.mps.refactoring.Renamer" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RenameDialog" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.refactoring.SModelReferenceDialog" file="SModelReferenceDialog.java">
-    <classNode dependClassName="com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent" />
-    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.ChooseByNameData" />
-    <classNode dependClassName="jetbrains.mps.workbench.choose.ModelsPresentation" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" />
-    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
 </dependenciesRoot>
 

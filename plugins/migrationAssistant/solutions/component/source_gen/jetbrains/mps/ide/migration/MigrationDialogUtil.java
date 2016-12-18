@@ -19,9 +19,13 @@ import com.intellij.openapi.project.Project;
 public class MigrationDialogUtil {
   private static final int MIGRATIONS_TO_SHOW_COUNT = 3;
 
-  public static boolean showMigrationConfirmation(final MPSProject project, final Iterable<SModule> modules, final MigrationManager m) {
+  public static boolean showMigrationConfirmation(final MPSProject project, final Iterable<SModule> modules, final MigrationManager m, boolean includeResave) {
     final StringBuilder text = new StringBuilder();
     text.append("This project needs to be migrated.\n");
+
+    if (includeResave) {
+      text.append("  Module descriptors need to be updated. The update will change many files.\n");
+    }
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -97,6 +101,18 @@ public class MigrationDialogUtil {
     int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Migration Required", "Migrate", "Postpone", null);
     return result == Messages.YES;
   }
+
+  public static boolean showResaveConfirmation(MPSProject project) {
+    StringBuilder text = new StringBuilder();
+    text.append("Module descriptors need to be updated. The update will change many files.\n");
+    text.append("\nIf you postpone the update, this notification will not appear until the project is reopened.\n");
+
+    text.append("Would you like to update module descriptors immediately?");
+
+    int result = Messages.showYesNoDialog(project.getProject(), text.toString(), "Modules Update Required", "Resave", "Postpone", null);
+    return result == Messages.YES;
+  }
+
   public static void showNoMigrationMessage(Project p) {
     Messages.showMessageDialog(p, "None of the modules in project require migration.\n" + "Migration assistant will not be started.", "Migration Not Required", null);
   }

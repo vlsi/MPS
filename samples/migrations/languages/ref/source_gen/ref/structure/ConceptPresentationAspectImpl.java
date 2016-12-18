@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_NewComponentRef = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldComponentRef = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_OldComponentRef = new ConceptPresentationBuilder().deprecated(true).create();
 
   @Override
   @Nullable

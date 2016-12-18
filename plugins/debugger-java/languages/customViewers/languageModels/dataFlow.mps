@@ -46,7 +46,7 @@
           <node concept="2OqwBi" id="t4rkO5pbuQ" role="3Ah4Yx">
             <node concept="3__QtB" id="t4rkO5pbuP" role="2Oq$k0" />
             <node concept="3TrEf2" id="t4rkO5pbuU" role="2OqNvi">
-              <ref role="3Tt5mk" to="kisg:2q5hg4g9dV" />
+              <ref role="3Tt5mk" to="kisg:2q5hg4g9dV" resolve="value" />
             </node>
           </node>
         </node>

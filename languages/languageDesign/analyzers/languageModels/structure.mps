@@ -3,8 +3,8 @@
   <persistence version="9" />
   <languages>
     <use id="97a52717-898f-4598-8150-573d9fd03868" name="jetbrains.mps.lang.dataFlow.analyzers" version="0" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="1" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -26,7 +26,6 @@
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
-        <property id="1587916991969465369" name="intConceptId" index="1pbfSe" />
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
       </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
@@ -569,7 +568,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="3993089038373626361" />
       <ref role="20lvS9" node="3tEjlbSL22K" resolve="AnalyzerConstructorParameter" />
-      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" />
+      <ref role="20ksaX" to="tpee:4Lb$w0Yiqs5" resolve="baseVariableDeclaration" />
     </node>
   </node>
   <node concept="1TIwiD" id="7UkgJtnqqHe">
@@ -579,7 +578,6 @@
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Analyzer.AnalyzerFunctions" />
     <property role="34LRSv" value="stateValues" />
-    <property role="1pbfSe" value="704778683" />
     <property role="EcuMT" value="9120988775422995278" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
@@ -591,7 +589,6 @@
     <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
   </node>
   <node concept="1TIwiD" id="7fxZEB1sFyL">
-    <property role="1pbfSe" value="894744410" />
     <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="CustomInstructionsContainer" />
     <property role="19KtqR" value="true" />
@@ -609,7 +606,6 @@
     </node>
   </node>
   <node concept="1TIwiD" id="7fxZEB1sSuo">
-    <property role="1pbfSe" value="894797377" />
     <property role="3GE5qa" value="Instructions" />
     <property role="TrG5h" value="CustomInstructionsContainerReference" />
     <property role="EcuMT" value="8350235189170112408" />

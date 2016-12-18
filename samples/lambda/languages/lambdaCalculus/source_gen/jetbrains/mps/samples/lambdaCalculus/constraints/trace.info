@@ -58,7 +58,7 @@
         <var name="references" id="4022026349915821207" />
       </scope>
       <scope id="4022026349915821207" at="32,0,62,0" />
-      <unit id="4022026349915821207" at="43,19,57,9" name="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$2" />
+      <unit id="4022026349915821207" at="43,19,57,9" name="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$1$1" />
       <unit id="4022026349915821207" at="35,156,59,5" name="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints$1" />
       <unit id="4022026349915821207" at="27,0,64,0" name="jetbrains.mps.samples.lambdaCalculus.constraints.VariableReference_Constraints" />
     </file>

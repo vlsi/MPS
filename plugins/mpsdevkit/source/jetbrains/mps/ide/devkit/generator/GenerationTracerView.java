@@ -28,7 +28,6 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
-import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
@@ -71,7 +70,7 @@ final class GenerationTracerView {
     myInputNode = inputNode;
     myViewToken = viewToken;
     myPanel = new JPanel(new BorderLayout());
-    myProject = ProjectHelper.toMPSProject(tool.getProject());
+    myProject = ProjectHelper.fromIdeaProject(tool.getProject());
     myTree = new GenerationTracerTree(this, tracerNode, myProject, inputNode);
     myTree.setRootVisible(false);
     myPanel.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);

@@ -19,10 +19,11 @@ package jetbrains.mps.idea.core.ui;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -30,6 +31,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * Changing this settings does not affect anything
+ * */
+@Deprecated
+@ToRemove(version = 3.4)
 public class UsedLanguagesTable extends MpsElementsTable<SModuleReference> implements SModuleConfigurationTab {
   public static Comparator<SModuleReference> MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
 

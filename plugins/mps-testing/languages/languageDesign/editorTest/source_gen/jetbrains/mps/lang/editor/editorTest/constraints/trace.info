@@ -64,7 +64,7 @@
         <var name="references" id="4965160547087600886" />
       </scope>
       <scope id="4965160547087600886" at="31,0,64,0" />
-      <unit id="4965160547087600886" at="42,19,59,9" name="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$2" />
+      <unit id="4965160547087600886" at="42,19,59,9" name="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1$1" />
       <unit id="4965160547087600886" at="34,167,61,5" name="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints$1" />
       <unit id="4965160547087600886" at="26,0,66,0" name="jetbrains.mps.lang.editor.editorTest.constraints.NotEditableVaraileReference_Constraints" />
     </file>
@@ -119,7 +119,7 @@
         <var name="references" id="7428162988805013921" />
       </scope>
       <scope id="7428162988805013921" at="31,0,64,0" />
-      <unit id="7428162988805013921" at="42,19,59,9" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$2" />
+      <unit id="7428162988805013921" at="42,19,59,9" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1$1" />
       <unit id="7428162988805013921" at="34,151,61,5" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints$1" />
       <unit id="7428162988805013921" at="26,0,66,0" name="jetbrains.mps.lang.editor.editorTest.constraints.VariableDeclarationReference_Constraints" />
     </file>

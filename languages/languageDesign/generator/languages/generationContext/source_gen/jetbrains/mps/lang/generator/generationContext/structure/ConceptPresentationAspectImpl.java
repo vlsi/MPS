@@ -18,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GenerationContextOp_GetCopiedOutputByInput = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetExport = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetInputModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_GetInvocationContext = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_GenerationContextOp_GetInvocationContext = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_GenerationContextOp_GetOriginalCopiedInputByOutput = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetOriginalInputModel = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetOutputByLabel = new ConceptPresentationBuilder().create();
@@ -27,7 +27,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GenerationContextOp_GetOutputListByLabelAndInput = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetOutputModel = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_GetPrevInputByLabel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GenerationContextOp_GetTemplateNode = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_GenerationContextOp_GetTemplateNode = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_GenerationContextOp_LinkPatternRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_NodePatternRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GenerationContextOp_ParameterRef = new ConceptPresentationBuilder().create();

@@ -12,10 +12,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMFormalTypeParameter;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMType;
+import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMMethod;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -28,13 +31,10 @@ import java.util.List;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClassType;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMPrimitiveType;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMEnumValue;
-import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMArrayType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMParameterizedType;
@@ -130,6 +130,7 @@ public class ClassifierUpdater {
     }
   }
 
+  protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
   private void updateTypeVariables(SNode result) {
     for (ASMTypeVariable tv : myParsedClass.getTypeParameters()) {
       SNode tvd = _quotation_createNode_ol94f8_a0a0a0o(tv.getName());
@@ -140,7 +141,16 @@ public class ClassifierUpdater {
           SLinkOperations.setTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"), getTypeByASMType(tp.getClassBound(), null, result));
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          ListSequence.fromList(SLinkOperations.getChildren(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addElement(SNodeOperations.cast(getTypeByASMType(act, null, result), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+          SNode typeByASMType = getTypeByASMType(act, null, result);
+          if (SNodeOperations.isInstanceOf(typeByASMType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+            ListSequence.fromList(SLinkOperations.getChildren(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addElement(SNodeOperations.cast(typeByASMType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+          } else {
+            // TODO: avoid this quick fix for SchemeProcessor class in scheme.kt from IDEA platform 
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("ClassifierType was expected, but received: " + typeByASMType);
+            }
+          }
+
         }
       }
     }
@@ -160,7 +170,15 @@ public class ClassifierUpdater {
           SLinkOperations.setTarget(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae375bda0L, "bound"), getTypeByASMType(tp.getClassBound(), result, cls));
         }
         for (ASMType act : tp.getInterfaceBounds()) {
-          ListSequence.fromList(SLinkOperations.getChildren(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addElement(SNodeOperations.cast(getTypeByASMType(act, result, cls), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+          SNode typeByASMType = getTypeByASMType(act, result, cls);
+          if (SNodeOperations.isInstanceOf(typeByASMType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
+            ListSequence.fromList(SLinkOperations.getChildren(tvd, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1024639ed74L, 0x11ae913a476L, "auxBounds"))).addElement(SNodeOperations.cast(typeByASMType, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
+          } else {
+            // TODO: avoid this quick fix for SchemeProcessor class in scheme.kt from IDEA platform 
+            if (LOG.isEnabledFor(Level.WARN)) {
+              LOG.warn("ClassifierType was expected, but received: " + typeByASMType);
+            }
+          }
         }
       }
     }
@@ -168,7 +186,7 @@ public class ClassifierUpdater {
   private SNode findTypeVariableDeclaration(SNode genDecl, final String name) {
     return ListSequence.fromList(SLinkOperations.getChildren(genDecl, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102463b447aL, 0x102463bb98eL, "typeVariableDeclaration"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_ol94f8_a0a0a0a0a0a0a61(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
+        return eq_ol94f8_a0a0a0a0a0a0a71(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), name);
       }
     }).first();
   }
@@ -475,7 +493,6 @@ public class ClassifierUpdater {
     }
     return result;
   }
-  protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
   private SNode getAnnotationValue(Object value) {
     if (value instanceof Integer) {
       return _quotation_createNode_ol94f8_a0a0a33(value.toString());
@@ -1144,7 +1161,7 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-  private static boolean eq_ol94f8_a0a0a0a0a0a0a61(Object a, Object b) {
+  private static boolean eq_ol94f8_a0a0a0a0a0a0a71(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

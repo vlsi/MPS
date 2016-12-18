@@ -21,14 +21,12 @@ import jetbrains.mps.persistence.IndexAwareModelFactory.Callback;
 import jetbrains.mps.persistence.xml.XMLPersistence;
 import jetbrains.mps.persistence.xml.XMLPersistence.Indexer;
 import jetbrains.mps.smodel.DefaultSModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.StringUtil;
@@ -104,7 +102,8 @@ public class ModelPersistence {
     }
 
     assert !isSupported(version) : "inconsistent ModelPersistence.isSupported and .getPersistence. Version=" + version;
-    LOG.error("Unknown persistence version requested: " + version, new Throwable());
+    // callers generally handle null return value, no reason to frighten user away with a throwable in the log. Is there need for the message at all?
+    LOG.debug("Unknown persistence version requested: " + version, new Throwable());
     return null;
   }
 
@@ -142,16 +141,15 @@ public class ModelPersistence {
       throw new ModelReadException("Couldn't read model because of unknown persistence version", null);
     }
 
-    IModelPersistence mp = getPersistence(ver);
-    if (mp == null) {
-      String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
-      throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference()));
+    IModelPersistence mp;
+    if (!isSupported(ver) || (mp = getPersistence(ver)) == null) {
+      String m = "Can not find appropriate persistence version for model %s (requested:%d)\n Use newer version of JetBrains MPS to load this model.";
+      throw new PersistenceVersionNotFoundException(String.format(m, ver, header.getModelReference()), header.getModelReference());
     }
 
     XMLSAXHandler<ModelLoadResult> handler = mp.getModelReaderHandler(state, header);
     if (handler == null) {
-      String m = "Can not find appropriate persistence version for model %s\n Use newer version of JetBrains MPS to load this model.";
-      throw new PersistenceVersionNotFoundException(String.format(m, header.getModelReference()));
+      throw new ModelReadException("Can not read model header", null, header.getModelReference());
     }
     try {
       parseAndHandleExceptions(source, handler);
@@ -248,7 +246,7 @@ public class ModelPersistence {
     if (sourceModel instanceof DefaultSModel) {
       persistenceVersion = ((DefaultSModel) sourceModel).getSModelHeader().getPersistenceVersion();
     }
-    if (persistenceVersion == -1 || getPersistence(persistenceVersion) == null) {
+    if (persistenceVersion == -1 || !isSupported(persistenceVersion) || getPersistence(persistenceVersion) == null) {
       persistenceVersion = ModelPersistence.LAST_VERSION;
     }
     return modelToXml(sourceModel, persistenceVersion);

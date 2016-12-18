@@ -70,7 +70,7 @@ public final class ConvertToList_Intention extends IntentionDescriptorBase imple
       List<SNode> items = SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"));
       ListSequence.fromList(items).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNodeOperations.detachNode(it);
+          SNodeOperations.deleteNode(it);
         }
       });
       SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"), _quotation_createNode_mz75hy_a0a2a0(items));

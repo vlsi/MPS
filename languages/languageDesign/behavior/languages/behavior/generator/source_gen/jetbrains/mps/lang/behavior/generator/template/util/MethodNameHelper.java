@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.smodel.persistence.def.v9.IdEncoder;
+import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 
 /**
@@ -32,7 +32,7 @@ public final class MethodNameHelper {
   @NotNull
   public String getGeneratedId() {
     SNode baseMethod = getBaseMethod();
-    return new IdEncoder().toText(baseMethod.getNodeId());
+    return SMethodTrimmedId.toText(baseMethod.getNodeId());
   }
 
   private SNode getBaseMethod() {

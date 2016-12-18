@@ -153,7 +153,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1500000307918327556" />
       <ref role="20lvS9" to="tpee:fzclF8t" resolve="InstanceMethodDeclaration" />
-      <ref role="20ksaX" to="tpee:g7MN44b" />
+      <ref role="20ksaX" to="tpee:g7MN44b" resolve="method" />
     </node>
     <node concept="PrWs8" id="51HoQikMfPS" role="PzmwI">
       <ref role="PrY4T" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
@@ -209,7 +209,7 @@
       <property role="20lbJX" value="0..n" />
       <property role="IQ2ns" value="1239548562987" />
       <ref role="20lvS9" to="tpee:fz3vP1H" resolve="Type" />
-      <ref role="20ksaX" to="tpee:g91_B6F" />
+      <ref role="20ksaX" to="tpee:g91_B6F" resolve="parameter" />
     </node>
     <node concept="1TJgyj" id="i2pR8DE" role="1TKVEi">
       <property role="20lmBu" value="reference" />
@@ -217,7 +217,7 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1239531948650" />
       <ref role="20lvS9" node="i2fD8E_" resolve="NamedTupleDeclaration" />
-      <ref role="20ksaX" to="tpee:g7uigIF" />
+      <ref role="20ksaX" to="tpee:g7uigIF" resolve="classifier" />
     </node>
     <node concept="PrWs8" id="7Wx8nDGj5Iu" role="PzmwI">
       <ref role="PrY4T" to="tpee:3zZky3wF74d" resolve="IGenericType" />

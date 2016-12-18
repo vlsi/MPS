@@ -4,14 +4,16 @@ package jetbrains.mps.ide.platform.dialogs.choosers;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
-import jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.project.Project;
+import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.jetbrains.mps.openapi.module.SearchScope;
+import jetbrains.mps.workbench.choose.ChooseByNameData;
+import jetbrains.mps.workbench.choose.NodesPresentation;
+import jetbrains.mps.ide.project.ProjectHelper;
+import java.util.Collections;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,18 +25,19 @@ import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
   private final ChooseByNamePanel myChooser;
-  private final BaseNodePointerModel myChooseByNameModel;
   private SNodeReference myChosenElement;
 
-  public NodeChooserDialog(Project project, final BaseNodePointerModel chooseByNameModel) {
+  public NodeChooserDialog(Project project, ChooseByNameModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
 
-    myChooseByNameModel = chooseByNameModel;
     myChooser = MpsPopupFactory.createPanelForNode(project, chooseByNameModel, false);
     myChooser.invoke(new ChooseByNamePopupComponent.Callback() {
       @Override
       public void elementChosen(Object element) {
+        if (element instanceof SNodeReference) {
+          myChosenElement = (SNodeReference) element;
+        }
         doOKAction();
       }
     }, ModalityState.stateForComponent(getWindow()), false);
@@ -42,23 +45,8 @@ public class NodeChooserDialog extends DialogWrapper {
     init();
   }
 
-  @Override
-  protected void doOKAction() {
-    myChosenElement = myChooseByNameModel.getModelObject(myChooser.getChosenElement());
-    super.doOKAction();
-  }
-
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
-    this(project, new BaseNodePointerModel(project) {
-      @Override
-      public SNodeReference[] find(boolean checkboxState) {
-        return Sequence.fromIterable(nodes).toGenericArray(SNodeReference.class);
-      }
-      @Override
-      public SNodeReference[] find(SearchScope scope) {
-        throw new UnsupportedOperationException("must not be used");
-      }
-    });
+    this(project, new ChooseByNameData(new NodesPresentation(ProjectHelper.getProjectRepository(project))).derivePrompts("node").setScope(nodes, Collections.<SNodeReference>emptySet()));
   }
 
   public NodeChooserDialog(Project project, final List<SNode> nodes) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,15 +31,12 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.FileRefresh;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.path.Path;
-import jetbrains.mps.vfs.impl.IoFile;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -74,15 +71,6 @@ public final class ModulesMiner {
   // excludes is going to be updated from #processExcludes, ensure it can be changed.
   private final Set<IFile> myExcludes = new HashSet<IFile>();
   private final List<ModuleHandle> myOutcome = new ArrayList<ModuleHandle>();
-
-  /**
-   * @deprecated use {@link #ModulesMiner()} constructor} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static ModulesMiner getInstance() {
-    return new ModulesMiner();
-  }
 
   public ModulesMiner() {
     this(Collections.emptySet());
@@ -235,12 +223,7 @@ public final class ModulesMiner {
     return moduleHandle;
   }
 
-  /**
-   * @deprecated shall become private, clients shall use {@link #loadModuleHandle(IFile)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public ModuleDescriptor loadModuleDescriptor(IFile file) {
+  private ModuleDescriptor loadModuleDescriptor(IFile file) {
     String filePath = file.getPath();
     if (filePath.endsWith(SLASH_META_INF_MODULE_XML)) {
       return loadDeploymentDescriptor(file);
@@ -354,21 +337,33 @@ public final class ModulesMiner {
   }
 
   /**
-   * @param deploymentFile -- the path to deployment descriptor
+   * @param deploymentFile -- the path to deployment descriptor, expected to reside in a jar, and end with {@link #SLASH_META_INF_MODULE_XML}
    */
   @Nullable
   public static IFile getSourceDescriptorFile(@NotNull IFile deploymentFile, @NotNull DeploymentDescriptor deploymentDescriptor) {
-    if (deploymentDescriptor.getSourcesJar() != null) {
+    String sourcesJarPath = deploymentDescriptor.getSourcesJar();
+    if (sourcesJarPath == null || deploymentDescriptor.getDescriptorFile() == null) {
+      return null;
+    }
+    // modules without compiled sources get single jar, packaged similar to regular -src.jar, with addition of META-INF/module.xml
+    // To avoid major refactoring of MM, module content left under module/ as in -src.jar, so here we just need to notice there's no
+    // other jar, and process with original/source descriptor from the same as the one of META-INF/module.xml.
+    if (sourcesJarPath.isEmpty() || sourcesJarPath.equals(".")) {
+      // META-INF/module.xml/../../
+      return deploymentFile.getParent().getParent().getDescendant(SOURCES_MODULE_DIR).getDescendant(deploymentDescriptor.getDescriptorFile());
+    } else {
+      // FIXME any idea why the code below mangles path instead of going up/down with regular FS getParent/getDescendant operations?
+      //       I suspect it's just incomplete refactoring in 4c5b44bc9e1242d4e4399dc816e5caa01855dc00, right?
       jetbrains.mps.vfs.openapi.FileSystem fileSystem = deploymentFile.getFileSystem();
       String deploymentPath = deploymentFile.getPath();
       String moduleJarPath = deploymentPath.substring(0, deploymentPath.length() - SLASH_META_INF_MODULE_XML.length());
       IFile moduleJar = fileSystem.getFile(moduleJarPath);
       IFile sourcesJar = moduleJar.getParent().getDescendant(deploymentDescriptor.getSourcesJar());
-      if (sourcesJar.exists() && deploymentDescriptor.getDescriptorFile() != null) {
+      if (sourcesJar.exists()) {
         return fileSystem.getFile(sourcesJar.getPath() + JAR_SEPARATOR + SOURCES_MODULE_DIR + "/" + deploymentDescriptor.getDescriptorFile());
       }
+      return null;
     }
-    return null;
   }
 
   @NotNull

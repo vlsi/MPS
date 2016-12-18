@@ -534,7 +534,7 @@
                                 <ref role="3cqZAo" node="4SIS$II3ITo" resolve="cc" />
                               </node>
                               <node concept="3Tsc0h" id="4SIS$II3ITn" role="2OqNvi">
-                                <ref role="3TtcxE" to="tp2q:5i_Pov1WWxe" />
+                                <ref role="3TtcxE" to="tp2q:5i_Pov1WWxe" resolve="containerDeclaration" />
                               </node>
                             </node>
                           </node>

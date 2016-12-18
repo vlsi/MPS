@@ -31,7 +31,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.Constants" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.util.RuntimeUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
-    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CallArgumentQuery" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.CreateRootCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />

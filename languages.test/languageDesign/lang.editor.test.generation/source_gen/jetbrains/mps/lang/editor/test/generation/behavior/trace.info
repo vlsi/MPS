@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <root>
+    <file name="AbstractCellTest_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.AbstractCellTest_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="11,0,22,0" name="jetbrains.mps.lang.editor.test.generation.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="Constant_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.Constant_BehaviorDescriptor" />
+    </file>
+    <file name="Error_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.Error_BehaviorDescriptor" />
+    </file>
+    <file name="ModelAccess_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.ModelAccess_BehaviorDescriptor" />
+    </file>
+    <file name="ReadOnlyModelAccessor_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" />
+    </file>
+    <file name="RefNodeList_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.RefNodeList_BehaviorDescriptor" />
+    </file>
+    <file name="TransactionalProperty_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.TransactionalProperty_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

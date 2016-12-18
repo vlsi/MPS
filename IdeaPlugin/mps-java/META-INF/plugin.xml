@@ -21,7 +21,7 @@
   <category>Custom Languages</category>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains MPS</vendor>
-  <idea-version since-build="145.1" until-build="171.1"/>
+  <idea-version since-build="163.1" until-build="171.1"/>
   <depends>jetbrains.mps.core</depends>
 
   <xi:include href="../../../plugins/mpsjava/platform/source_gen/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>

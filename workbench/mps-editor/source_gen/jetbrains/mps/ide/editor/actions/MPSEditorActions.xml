@@ -8,7 +8,7 @@
     <action id="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" class="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action">
       <keyboard-shortcut first-keystroke="ctrl R" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X" />
-      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.AddModelImport_Action" class="jetbrains.mps.ide.editor.actions.AddModelImport_Action">
       <keyboard-shortcut first-keystroke="ctrl M" keymap="$default" />
@@ -47,6 +47,7 @@
     </action>
     <action id="jetbrains.mps.ide.editor.actions.DeleteLine_Action" class="jetbrains.mps.ide.editor.actions.DeleteLine_Action">
       <keyboard-shortcut first-keystroke="ctrl Y" keymap="$default" />
+      <keyboard-shortcut first-keystroke="ctrl BACK_SPACE" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action" class="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl DELETE" keymap="$default" />
@@ -189,8 +190,7 @@
       <keyboard-shortcut first-keystroke="ctrl W" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X" />
-      <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X 10.5+" />
-      <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="alt UP" keymap="Mac OS X 10.5+" replace-all="true" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action" class="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action">
       <keyboard-shortcut first-keystroke="alt INSERT" keymap="$default" />

@@ -247,6 +247,7 @@ public class LanguageDescriptorModelProvider extends DescriptorModelProvider {
           importsToAdd.add(aspectLanguage);
         }
       }
+      importsToAdd.removeAll(m.usedLanguages()); // not adding the same language again
       importsToRemove.forEach(m::deleteLanguage); // applying calculated delta
       importsToAdd.forEach(m::addLanguage);
     }

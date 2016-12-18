@@ -16,9 +16,9 @@
       <node id="1230052406639" at="34,76,35,35" concept="1" />
       <node id="1230052406639" at="35,35,36,35" concept="1" />
       <node id="1230052406644" at="37,7,38,201" concept="5" />
-      <node id="1230052406650" at="38,201,39,378" concept="1" />
-      <node id="1230052406661" at="39,378,40,341" concept="5" />
-      <node id="1230052406670" at="40,341,41,87" concept="1" />
+      <node id="1230052406650" at="38,201,39,431" concept="1" />
+      <node id="1230052406661" at="39,431,40,394" concept="5" />
+      <node id="1230052406670" at="40,394,41,87" concept="1" />
       <node id="1230052406680" at="41,87,42,89" concept="5" />
       <node id="1230052406689" at="42,89,43,89" concept="5" />
       <node id="1230052406698" at="43,89,44,72" concept="1" />
@@ -28,9 +28,9 @@
       <node id="1230052406724" at="47,25,48,30" concept="1" />
       <node id="1230052406729" at="48,30,49,86" concept="5" />
       <node id="1230052406734" at="49,86,50,25" concept="1" />
-      <node id="1230052406738" at="51,9,52,283" concept="5" />
-      <node id="1230052406738" at="52,283,53,282" concept="5" />
-      <node id="1230052406738" at="53,282,54,153" concept="1" />
+      <node id="1230052406738" at="51,9,52,336" concept="5" />
+      <node id="1230052406738" at="52,336,53,335" concept="5" />
+      <node id="1230052406738" at="53,335,54,153" concept="1" />
       <node id="1230052406553" at="26,0,31,0" concept="4" trace="test_changeMethodParametersForStatement#()V" />
       <node id="1230052406738" at="50,25,55,9" concept="0" />
       <node id="1230052406642" at="36,35,56,7" concept="0" />
@@ -59,8 +59,8 @@
       <node id="1230052406741" at="20,67,21,114" concept="1" />
       <node id="1230052406741" at="21,114,22,129" concept="1" />
       <node id="1230052406767" at="27,69,28,35" concept="1" />
-      <node id="1230052406770" at="28,35,29,534" concept="5" />
-      <node id="1230052406780" at="29,534,30,90" concept="1" />
+      <node id="1230052406770" at="28,35,29,640" concept="5" />
+      <node id="1230052406780" at="29,640,30,90" concept="1" />
       <node id="1230052406741" at="19,0,24,0" concept="4" trace="test_ConceptFunctioParameterTest#()V" />
       <node id="1230052406767" at="27,0,32,0" concept="4" trace="test_ConceptFunctioParameterTest#()V" />
       <scope id="1230052406741" at="20,67,22,129" />
@@ -79,13 +79,13 @@
       <node id="1230052406933" at="25,114,26,115" concept="1" />
       <node id="1230052406934" at="31,62,32,35" concept="1" />
       <node id="1230052406934" at="32,35,33,35" concept="1" />
-      <node id="1230052406937" at="33,35,34,563" concept="5" />
-      <node id="1230052406946" at="34,563,35,28" concept="1" />
+      <node id="1230052406937" at="33,35,34,669" concept="5" />
+      <node id="1230052406946" at="34,669,35,28" concept="1" />
       <node id="1230052406951" at="35,28,36,84" concept="5" />
       <node id="1230052406956" at="36,84,37,23" concept="1" />
-      <node id="1230052406960" at="38,7,39,281" concept="5" />
-      <node id="1230052406960" at="39,281,40,280" concept="5" />
-      <node id="1230052406960" at="40,280,41,151" concept="1" />
+      <node id="1230052406960" at="38,7,39,334" concept="5" />
+      <node id="1230052406960" at="39,334,40,333" concept="5" />
+      <node id="1230052406960" at="40,333,41,151" concept="1" />
       <node id="1230052406933" at="23,0,28,0" concept="4" trace="test_ExtractFromAnonymous#()V" />
       <node id="1230052406960" at="37,23,42,7" concept="0" />
       <node id="1230052406934" at="31,0,44,0" concept="4" trace="test_ExtractFromAnonymous#()V" />
@@ -110,13 +110,13 @@
       <node id="1230052407024" at="25,114,26,117" concept="1" />
       <node id="1230052407103" at="31,63,32,35" concept="1" />
       <node id="1230052407103" at="32,35,33,35" concept="1" />
-      <node id="1230052407106" at="33,35,34,743" concept="5" />
-      <node id="1230052407117" at="34,743,35,28" concept="1" />
+      <node id="1230052407106" at="33,35,34,902" concept="5" />
+      <node id="1230052407117" at="34,902,35,28" concept="1" />
       <node id="1230052407122" at="35,28,36,84" concept="5" />
       <node id="1230052407127" at="36,84,37,23" concept="1" />
-      <node id="1230052407131" at="38,7,39,281" concept="5" />
-      <node id="1230052407131" at="39,281,40,280" concept="5" />
-      <node id="1230052407131" at="40,280,41,151" concept="1" />
+      <node id="1230052407131" at="38,7,39,334" concept="5" />
+      <node id="1230052407131" at="39,334,40,333" concept="5" />
+      <node id="1230052407131" at="40,333,41,151" concept="1" />
       <node id="1230052407024" at="23,0,28,0" concept="4" trace="test_extractFromStatements#()V" />
       <node id="1230052407131" at="37,23,42,7" concept="0" />
       <node id="1230052407103" at="31,0,44,0" concept="4" trace="test_extractFromStatements#()V" />
@@ -141,13 +141,13 @@
       <node id="1230052407134" at="25,114,26,131" concept="1" />
       <node id="1230052407164" at="31,70,32,35" concept="1" />
       <node id="1230052407164" at="32,35,33,35" concept="1" />
-      <node id="1230052407167" at="33,35,34,343" concept="5" />
-      <node id="1230052407176" at="34,343,35,28" concept="1" />
+      <node id="1230052407167" at="33,35,34,396" concept="5" />
+      <node id="1230052407176" at="34,396,35,28" concept="1" />
       <node id="1230052407181" at="35,28,36,84" concept="5" />
       <node id="1230052407186" at="36,84,37,23" concept="1" />
-      <node id="1230052407190" at="38,7,39,281" concept="5" />
-      <node id="1230052407190" at="39,281,40,280" concept="5" />
-      <node id="1230052407190" at="40,280,41,151" concept="1" />
+      <node id="1230052407190" at="38,7,39,334" concept="5" />
+      <node id="1230052407190" at="39,334,40,333" concept="5" />
+      <node id="1230052407190" at="40,333,41,151" concept="1" />
       <node id="1230052407134" at="23,0,28,0" concept="4" trace="test_ExtractMethodFromConstructor#()V" />
       <node id="1230052407190" at="37,23,42,7" concept="0" />
       <node id="1230052407164" at="31,0,44,0" concept="4" trace="test_ExtractMethodFromConstructor#()V" />
@@ -171,15 +171,15 @@
       <node id="1230052444309" at="22,58,23,114" concept="1" />
       <node id="1230052444309" at="23,114,24,111" concept="1" />
       <node id="1230052444345" at="29,60,30,35" concept="1" />
-      <node id="1230052444348" at="30,35,31,749" concept="5" />
-      <node id="1230052444359" at="31,749,32,57" concept="5" />
+      <node id="1230052444348" at="30,35,31,908" concept="5" />
+      <node id="1230052444359" at="31,908,32,57" concept="5" />
       <node id="1230052444366" at="32,57,33,66" concept="1" />
-      <node id="1230052444371" at="33,66,34,281" concept="1" />
+      <node id="1230052444371" at="33,66,34,334" concept="1" />
       <node id="1230052444309" at="21,0,26,0" concept="4" trace="test_inputVariablesTest#()V" />
       <node id="1230052444345" at="29,0,36,0" concept="4" trace="test_inputVariablesTest#()V" />
       <scope id="1230052444309" at="22,58,24,111" />
       <scope id="1230052444309" at="21,0,26,0" />
-      <scope id="1230052444345" at="29,60,34,281">
+      <scope id="1230052444345" at="29,60,34,334">
         <var name="a" id="1230052444349" />
         <var name="vars" id="1230052444360" />
       </scope>
@@ -199,13 +199,13 @@
       <node id="1230052480263" at="35,56,36,114" concept="1" />
       <node id="1230052480263" at="36,114,37,105" concept="1" />
       <node id="1230052480293" at="42,50,43,35" concept="1" />
-      <node id="1230052480296" at="43,35,44,306" concept="1" />
+      <node id="1230052480296" at="43,35,44,359" concept="1" />
       <node id="1230052480302" at="46,50,47,35" concept="1" />
-      <node id="1230052480305" at="47,35,48,303" concept="1" />
+      <node id="1230052480305" at="47,35,48,356" concept="1" />
       <node id="1230052480311" at="50,54,51,35" concept="1" />
-      <node id="1230052480314" at="51,35,52,303" concept="1" />
+      <node id="1230052480314" at="51,35,52,356" concept="1" />
       <node id="1230052480320" at="54,58,55,35" concept="1" />
-      <node id="1230052480323" at="55,35,56,503" concept="1" />
+      <node id="1230052480323" at="55,35,56,609" concept="1" />
       <node id="1230052480293" at="42,0,46,0" concept="4" trace="test_noBreaks#()V" />
       <node id="1230052480302" at="46,0,50,0" concept="4" trace="test_oneBreak#()V" />
       <node id="1230052480311" at="50,0,54,0" concept="4" trace="test_oneContionue#()V" />
@@ -218,10 +218,10 @@
       <scope id="1230052480263" at="25,48,27,97" />
       <scope id="1230052480263" at="30,52,32,101" />
       <scope id="1230052480263" at="35,56,37,105" />
-      <scope id="1230052480293" at="42,50,44,306" />
-      <scope id="1230052480302" at="46,50,48,303" />
-      <scope id="1230052480311" at="50,54,52,303" />
-      <scope id="1230052480320" at="54,58,56,503" />
+      <scope id="1230052480293" at="42,50,44,359" />
+      <scope id="1230052480302" at="46,50,48,356" />
+      <scope id="1230052480311" at="50,54,52,356" />
+      <scope id="1230052480320" at="54,58,56,609" />
       <scope id="1230052480293" at="42,0,46,0" />
       <scope id="1230052480302" at="46,0,50,0" />
       <scope id="1230052480311" at="50,0,54,0" />
@@ -240,14 +240,14 @@
       <node id="1230052480332" at="26,114,27,99" concept="1" />
       <node id="1230052480405" at="32,54,33,35" concept="1" />
       <node id="1230052480405" at="33,35,34,35" concept="1" />
-      <node id="1230052480408" at="34,35,35,335" concept="5" />
-      <node id="1230052480417" at="35,335,36,28" concept="1" />
+      <node id="1230052480408" at="34,35,35,388" concept="5" />
+      <node id="1230052480417" at="35,388,36,28" concept="1" />
       <node id="1230052480422" at="36,28,37,84" concept="5" />
       <node id="1230052480427" at="37,84,38,68" concept="1" />
       <node id="1230052480431" at="38,68,39,23" concept="1" />
-      <node id="1230052480435" at="40,7,41,281" concept="5" />
-      <node id="1230052480435" at="41,281,42,280" concept="5" />
-      <node id="1230052480435" at="42,280,43,151" concept="1" />
+      <node id="1230052480435" at="40,7,41,334" concept="5" />
+      <node id="1230052480435" at="41,334,42,333" concept="5" />
+      <node id="1230052480435" at="42,333,43,151" concept="1" />
       <node id="1230052480332" at="24,0,29,0" concept="4" trace="test_ExtractBreak#()V" />
       <node id="1230052480435" at="39,23,44,7" concept="0" />
       <node id="1230052480405" at="32,0,46,0" concept="4" trace="test_ExtractBreak#()V" />
@@ -272,14 +272,14 @@
       <node id="1230052480438" at="26,114,27,105" concept="1" />
       <node id="1230052480494" at="32,57,33,35" concept="1" />
       <node id="1230052480494" at="33,35,34,35" concept="1" />
-      <node id="1230052480497" at="34,35,35,335" concept="5" />
-      <node id="1230052480506" at="35,335,36,28" concept="1" />
+      <node id="1230052480497" at="34,35,35,388" concept="5" />
+      <node id="1230052480506" at="35,388,36,28" concept="1" />
       <node id="1230052480511" at="36,28,37,84" concept="5" />
       <node id="1230052480516" at="37,84,38,68" concept="1" />
       <node id="1230052480520" at="38,68,39,23" concept="1" />
-      <node id="1230052480524" at="40,7,41,281" concept="5" />
-      <node id="1230052480524" at="41,281,42,280" concept="5" />
-      <node id="1230052480524" at="42,280,43,151" concept="1" />
+      <node id="1230052480524" at="40,7,41,334" concept="5" />
+      <node id="1230052480524" at="41,334,42,333" concept="5" />
+      <node id="1230052480524" at="42,333,43,151" concept="1" />
       <node id="1230052480438" at="24,0,29,0" concept="4" trace="test_ExtractContinue#()V" />
       <node id="1230052480524" at="39,23,44,7" concept="0" />
       <node id="1230052480494" at="32,0,46,0" concept="4" trace="test_ExtractContinue#()V" />
@@ -307,23 +307,23 @@
       <node id="1230052509344" at="36,59,37,35" concept="1" />
       <node id="1230052509344" at="37,35,38,35" concept="1" />
       <node id="1230052509344" at="38,35,39,35" concept="1" />
-      <node id="1230052509347" at="39,35,40,563" concept="5" />
-      <node id="1230052509356" at="40,563,41,28" concept="1" />
+      <node id="1230052509347" at="39,35,40,669" concept="5" />
+      <node id="1230052509356" at="40,669,41,28" concept="1" />
       <node id="1230052509361" at="41,28,42,84" concept="5" />
       <node id="1230052509366" at="42,84,43,23" concept="1" />
-      <node id="1230052509370" at="44,7,45,286" concept="5" />
-      <node id="1230052509370" at="45,286,46,285" concept="5" />
-      <node id="1230052509370" at="46,285,47,151" concept="1" />
+      <node id="1230052509370" at="44,7,45,339" concept="5" />
+      <node id="1230052509370" at="45,339,46,338" concept="5" />
+      <node id="1230052509370" at="46,338,47,151" concept="1" />
       <node id="1230052509373" at="50,60,51,35" concept="1" />
       <node id="1230052509373" at="51,35,52,35" concept="1" />
       <node id="1230052509373" at="52,35,53,35" concept="1" />
-      <node id="1230052509376" at="53,35,54,343" concept="5" />
-      <node id="1230052509385" at="54,343,55,28" concept="1" />
+      <node id="1230052509376" at="53,35,54,396" concept="5" />
+      <node id="1230052509385" at="54,396,55,28" concept="1" />
       <node id="1230052509390" at="55,28,56,84" concept="5" />
       <node id="1230052509395" at="56,84,57,23" concept="1" />
-      <node id="1230052509399" at="58,7,59,286" concept="5" />
-      <node id="1230052509399" at="59,286,60,285" concept="5" />
-      <node id="1230052509399" at="60,285,61,151" concept="1" />
+      <node id="1230052509399" at="58,7,59,339" concept="5" />
+      <node id="1230052509399" at="59,339,60,338" concept="5" />
+      <node id="1230052509399" at="60,338,61,151" concept="1" />
       <node id="1230052509258" at="23,0,28,0" concept="4" trace="test_extractFromMethod#()V" />
       <node id="1230052509258" at="28,0,33,0" concept="4" trace="test_extractFromExecute#()V" />
       <node id="1230052509370" at="43,23,48,7" concept="0" />
@@ -362,13 +362,13 @@
       <node id="1230052551970" at="25,114,26,117" concept="1" />
       <node id="1230052552031" at="31,63,32,35" concept="1" />
       <node id="1230052552031" at="32,35,33,35" concept="1" />
-      <node id="1230052552034" at="33,35,34,337" concept="5" />
-      <node id="1230052552043" at="34,337,35,28" concept="1" />
+      <node id="1230052552034" at="33,35,34,390" concept="5" />
+      <node id="1230052552043" at="34,390,35,28" concept="1" />
       <node id="1230052552048" at="35,28,36,84" concept="5" />
       <node id="1230052552053" at="36,84,37,23" concept="1" />
-      <node id="1230052552057" at="38,7,39,281" concept="5" />
-      <node id="1230052552057" at="39,281,40,280" concept="5" />
-      <node id="1230052552057" at="40,280,41,151" concept="1" />
+      <node id="1230052552057" at="38,7,39,334" concept="5" />
+      <node id="1230052552057" at="39,334,40,333" concept="5" />
+      <node id="1230052552057" at="40,333,41,151" concept="1" />
       <node id="1230052551970" at="23,0,28,0" concept="4" trace="test_extractFromExpression#()V" />
       <node id="1230052552057" at="37,23,42,7" concept="0" />
       <node id="1230052552031" at="31,0,44,0" concept="4" trace="test_extractFromExpression#()V" />
@@ -393,13 +393,13 @@
       <node id="1230052552060" at="25,114,26,143" concept="1" />
       <node id="1230052552101" at="31,76,32,35" concept="1" />
       <node id="1230052552101" at="32,35,33,35" concept="1" />
-      <node id="1230052552104" at="33,35,34,338" concept="5" />
-      <node id="1230052552113" at="34,338,35,28" concept="1" />
+      <node id="1230052552104" at="33,35,34,391" concept="5" />
+      <node id="1230052552113" at="34,391,35,28" concept="1" />
       <node id="1230052552118" at="35,28,36,84" concept="5" />
       <node id="1230052552123" at="36,84,37,23" concept="1" />
-      <node id="1230052552127" at="38,7,39,281" concept="5" />
-      <node id="1230052552127" at="39,281,40,280" concept="5" />
-      <node id="1230052552127" at="40,280,41,151" concept="1" />
+      <node id="1230052552127" at="38,7,39,334" concept="5" />
+      <node id="1230052552127" at="39,334,40,333" concept="5" />
+      <node id="1230052552127" at="40,333,41,151" concept="1" />
       <node id="1230052552060" at="23,0,28,0" concept="4" trace="test_extractFromExpressionWithoutReturn#()V" />
       <node id="1230052552127" at="37,23,42,7" concept="0" />
       <node id="1230052552101" at="31,0,44,0" concept="4" trace="test_extractFromExpressionWithoutReturn#()V" />
@@ -424,14 +424,14 @@
       <node id="1230052641811" at="26,114,27,121" concept="1" />
       <node id="1230052641880" at="32,65,33,35" concept="1" />
       <node id="1230052641880" at="33,35,34,35" concept="1" />
-      <node id="1230052641883" at="34,35,35,335" concept="5" />
-      <node id="1230052641892" at="35,335,36,28" concept="1" />
+      <node id="1230052641883" at="34,35,35,388" concept="5" />
+      <node id="1230052641892" at="35,388,36,28" concept="1" />
       <node id="1230052641897" at="36,28,37,84" concept="5" />
       <node id="1230052641902" at="37,84,38,64" concept="1" />
       <node id="1230052641906" at="38,64,39,23" concept="1" />
-      <node id="1230052641910" at="40,7,41,281" concept="5" />
-      <node id="1230052641910" at="41,281,42,280" concept="5" />
-      <node id="1230052641910" at="42,280,43,151" concept="1" />
+      <node id="1230052641910" at="40,7,41,334" concept="5" />
+      <node id="1230052641910" at="41,334,42,333" concept="5" />
+      <node id="1230052641910" at="42,333,43,151" concept="1" />
       <node id="1230052641811" at="24,0,29,0" concept="4" trace="test_extractDifferentReturns#()V" />
       <node id="1230052641910" at="39,23,44,7" concept="0" />
       <node id="1230052641880" at="32,0,46,0" concept="4" trace="test_extractDifferentReturns#()V" />
@@ -456,13 +456,13 @@
       <node id="1230052641913" at="25,114,26,145" concept="1" />
       <node id="1230052642008" at="31,77,32,35" concept="1" />
       <node id="1230052642008" at="32,35,33,35" concept="1" />
-      <node id="1230052642011" at="33,35,34,757" concept="5" />
-      <node id="1230052642022" at="34,757,35,28" concept="1" />
+      <node id="1230052642011" at="33,35,34,916" concept="5" />
+      <node id="1230052642022" at="34,916,35,28" concept="1" />
       <node id="1230052642027" at="35,28,36,84" concept="5" />
       <node id="1230052642032" at="36,84,37,23" concept="1" />
-      <node id="1230052642036" at="38,7,39,281" concept="5" />
-      <node id="1230052642036" at="39,281,40,280" concept="5" />
-      <node id="1230052642036" at="40,280,41,151" concept="1" />
+      <node id="1230052642036" at="38,7,39,334" concept="5" />
+      <node id="1230052642036" at="39,334,40,333" concept="5" />
+      <node id="1230052642036" at="40,333,41,151" concept="1" />
       <node id="1230052641913" at="23,0,28,0" concept="4" trace="test_extractFromStatementWithReturnValue#()V" />
       <node id="1230052642036" at="37,23,42,7" concept="0" />
       <node id="1230052642008" at="31,0,44,0" concept="4" trace="test_extractFromStatementWithReturnValue#()V" />
@@ -487,13 +487,13 @@
       <node id="1230052642039" at="25,114,26,145" concept="1" />
       <node id="1230052642071" at="31,77,32,35" concept="1" />
       <node id="1230052642071" at="32,35,33,35" concept="1" />
-      <node id="1230052642074" at="33,35,34,339" concept="5" />
-      <node id="1230052642083" at="34,339,35,28" concept="1" />
+      <node id="1230052642074" at="33,35,34,392" concept="5" />
+      <node id="1230052642083" at="34,392,35,28" concept="1" />
       <node id="1230052642088" at="35,28,36,84" concept="5" />
       <node id="1230052642093" at="36,84,37,23" concept="1" />
-      <node id="1230052642097" at="38,7,39,281" concept="5" />
-      <node id="1230052642097" at="39,281,40,280" concept="5" />
-      <node id="1230052642097" at="40,280,41,151" concept="1" />
+      <node id="1230052642097" at="38,7,39,334" concept="5" />
+      <node id="1230052642097" at="39,334,40,333" concept="5" />
+      <node id="1230052642097" at="40,333,41,151" concept="1" />
       <node id="1230052642039" at="23,0,28,0" concept="4" trace="test_extractFromStatementsEndsWithReturn#()V" />
       <node id="1230052642097" at="37,23,42,7" concept="0" />
       <node id="1230052642071" at="31,0,44,0" concept="4" trace="test_extractFromStatementsEndsWithReturn#()V" />
@@ -518,13 +518,13 @@
       <node id="1230052642100" at="25,114,26,128" concept="1" />
       <node id="1230052642145" at="31,66,32,35" concept="1" />
       <node id="1230052642145" at="32,35,33,35" concept="1" />
-      <node id="1230052642148" at="33,35,34,343" concept="5" />
-      <node id="1230052642157" at="34,343,35,28" concept="1" />
+      <node id="1230052642148" at="33,35,34,396" concept="5" />
+      <node id="1230052642157" at="34,396,35,28" concept="1" />
       <node id="1230052642162" at="35,28,36,84" concept="5" />
       <node id="1230052642167" at="36,84,37,23" concept="1" />
-      <node id="1230052642171" at="38,7,39,281" concept="5" />
-      <node id="1230052642171" at="39,281,40,280" concept="5" />
-      <node id="1230052642171" at="40,280,41,151" concept="1" />
+      <node id="1230052642171" at="38,7,39,334" concept="5" />
+      <node id="1230052642171" at="39,334,40,333" concept="5" />
+      <node id="1230052642171" at="40,333,41,151" concept="1" />
       <node id="1230052642100" at="23,0,28,0" concept="4" trace="test_checkReturnWithoutReturn#()V" />
       <node id="1230052642171" at="37,23,42,7" concept="0" />
       <node id="1230052642145" at="31,0,44,0" concept="4" trace="test_checkReturnWithoutReturn#()V" />
@@ -550,17 +550,17 @@
       <node id="1230052642174" at="25,60,26,114" concept="1" />
       <node id="1230052642174" at="26,114,27,113" concept="1" />
       <node id="1230052642234" at="32,60,33,35" concept="1" />
-      <node id="1230052642237" at="33,35,34,303" concept="1" />
+      <node id="1230052642237" at="33,35,34,356" concept="1" />
       <node id="1230052642243" at="36,62,37,35" concept="1" />
-      <node id="1230052642246" at="37,35,38,511" concept="1" />
+      <node id="1230052642246" at="37,35,38,617" concept="1" />
       <node id="1230052642234" at="32,0,36,0" concept="4" trace="test_oneReturnStatement#()V" />
       <node id="1230052642243" at="36,0,40,0" concept="4" trace="test_returnAndOutVariable#()V" />
       <node id="1230052642174" at="19,0,24,0" concept="4" trace="test_oneReturnStatement#()V" />
       <node id="1230052642174" at="24,0,29,0" concept="4" trace="test_returnAndOutVariable#()V" />
       <scope id="1230052642174" at="20,58,22,111" />
       <scope id="1230052642174" at="25,60,27,113" />
-      <scope id="1230052642234" at="32,60,34,303" />
-      <scope id="1230052642243" at="36,62,38,511" />
+      <scope id="1230052642234" at="32,60,34,356" />
+      <scope id="1230052642243" at="36,62,38,617" />
       <scope id="1230052642234" at="32,0,36,0" />
       <scope id="1230052642243" at="36,0,40,0" />
       <scope id="1230052642174" at="19,0,24,0" />
@@ -575,13 +575,13 @@
       <node id="1230052642255" at="25,114,26,121" concept="1" />
       <node id="1230052642315" at="31,65,32,35" concept="1" />
       <node id="1230052642315" at="32,35,33,35" concept="1" />
-      <node id="1230052642318" at="33,35,34,335" concept="5" />
-      <node id="1230052642327" at="34,335,35,28" concept="1" />
+      <node id="1230052642318" at="33,35,34,388" concept="5" />
+      <node id="1230052642327" at="34,388,35,28" concept="1" />
       <node id="1230052642332" at="35,28,36,84" concept="5" />
       <node id="1230052642337" at="36,84,37,23" concept="1" />
-      <node id="1230052642341" at="38,7,39,281" concept="5" />
-      <node id="1230052642341" at="39,281,40,280" concept="5" />
-      <node id="1230052642341" at="40,280,41,151" concept="1" />
+      <node id="1230052642341" at="38,7,39,334" concept="5" />
+      <node id="1230052642341" at="39,334,40,333" concept="5" />
+      <node id="1230052642341" at="40,333,41,151" concept="1" />
       <node id="1230052642255" at="23,0,28,0" concept="4" trace="test_oneReturnTransformation#()V" />
       <node id="1230052642341" at="37,23,42,7" concept="0" />
       <node id="1230052642315" at="31,0,44,0" concept="4" trace="test_oneReturnTransformation#()V" />
@@ -609,12 +609,12 @@
       <node id="1230052642344" at="30,55,31,114" concept="1" />
       <node id="1230052642344" at="31,114,32,105" concept="1" />
       <node id="1230052642421" at="37,54,38,35" concept="1" />
-      <node id="1230052642424" at="38,35,39,303" concept="1" />
-      <node id="1230052642430" at="39,303,40,499" concept="1" />
+      <node id="1230052642424" at="38,35,39,356" concept="1" />
+      <node id="1230052642430" at="39,356,40,605" concept="1" />
       <node id="1230052642437" at="42,63,43,35" concept="1" />
-      <node id="1230052642440" at="43,35,44,311" concept="1" />
+      <node id="1230052642440" at="43,35,44,364" concept="1" />
       <node id="1230052642446" at="46,57,47,35" concept="1" />
-      <node id="1230052642449" at="47,35,48,311" concept="1" />
+      <node id="1230052642449" at="47,35,48,364" concept="1" />
       <node id="1230052642437" at="42,0,46,0" concept="4" trace="test_retunInAnonymousClass#()V" />
       <node id="1230052642446" at="46,0,50,0" concept="4" trace="test_notAlwaysReturn#()V" />
       <node id="1230052642344" at="19,0,24,0" concept="4" trace="test_alwaysReturn#()V" />
@@ -624,9 +624,9 @@
       <scope id="1230052642344" at="20,52,22,102" />
       <scope id="1230052642344" at="25,61,27,111" />
       <scope id="1230052642344" at="30,55,32,105" />
-      <scope id="1230052642437" at="42,63,44,311" />
-      <scope id="1230052642446" at="46,57,48,311" />
-      <scope id="1230052642421" at="37,54,40,499" />
+      <scope id="1230052642437" at="42,63,44,364" />
+      <scope id="1230052642446" at="46,57,48,364" />
+      <scope id="1230052642421" at="37,54,40,605" />
       <scope id="1230052642437" at="42,0,46,0" />
       <scope id="1230052642446" at="46,0,50,0" />
       <scope id="1230052642344" at="19,0,24,0" />
@@ -645,17 +645,17 @@
       <node id="1230052684457" at="34,35,35,35" concept="1" />
       <node id="1230052684457" at="35,35,36,35" concept="1" />
       <node id="1230052684457" at="36,35,37,35" concept="1" />
-      <node id="1230052684460" at="37,35,38,548" concept="1" />
-      <node id="1230052684466" at="38,548,39,568" concept="1" />
-      <node id="1230052684472" at="39,568,40,337" concept="5" />
-      <node id="1230052684481" at="40,337,41,28" concept="1" />
+      <node id="1230052684460" at="37,35,38,654" concept="1" />
+      <node id="1230052684466" at="38,654,39,674" concept="1" />
+      <node id="1230052684472" at="39,674,40,390" concept="5" />
+      <node id="1230052684481" at="40,390,41,28" concept="1" />
       <node id="1230052684486" at="41,28,42,56" concept="1" />
       <node id="1230052684491" at="42,56,43,84" concept="5" />
-      <node id="1230052684496" at="43,84,44,222" concept="1" />
-      <node id="1230052684501" at="44,222,45,23" concept="1" />
-      <node id="1230052684505" at="46,7,47,486" concept="5" />
-      <node id="1230052684505" at="47,486,48,485" concept="5" />
-      <node id="1230052684505" at="48,485,49,151" concept="1" />
+      <node id="1230052684496" at="43,84,44,275" concept="1" />
+      <node id="1230052684501" at="44,275,45,23" concept="1" />
+      <node id="1230052684505" at="46,7,47,592" concept="5" />
+      <node id="1230052684505" at="47,592,48,591" concept="5" />
+      <node id="1230052684505" at="48,591,49,151" concept="1" />
       <node id="1230052684456" at="25,0,30,0" concept="4" trace="test_extractExpression#()V" />
       <node id="1230052684505" at="45,23,50,7" concept="0" />
       <node id="1230052684457" at="33,0,52,0" concept="4" trace="test_extractExpression#()V" />
@@ -683,17 +683,17 @@
       <node id="1230052684722" at="35,35,36,35" concept="1" />
       <node id="1230052684722" at="36,35,37,35" concept="1" />
       <node id="1230052684725" at="37,35,38,197" concept="5" />
-      <node id="1230052684731" at="38,197,39,377" concept="1" />
-      <node id="1230052684737" at="39,377,40,357" concept="1" />
-      <node id="1230052684743" at="40,357,41,243" concept="1" />
-      <node id="1230052684748" at="41,243,42,563" concept="5" />
-      <node id="1230052684757" at="42,563,43,28" concept="1" />
+      <node id="1230052684731" at="38,197,39,430" concept="1" />
+      <node id="1230052684737" at="39,430,40,410" concept="1" />
+      <node id="1230052684743" at="40,410,41,296" concept="1" />
+      <node id="1230052684748" at="41,296,42,669" concept="5" />
+      <node id="1230052684757" at="42,669,43,28" concept="1" />
       <node id="1230052684762" at="43,28,44,84" concept="5" />
-      <node id="1230052684767" at="44,84,45,222" concept="1" />
-      <node id="1230052684772" at="45,222,46,23" concept="1" />
-      <node id="1230052684776" at="47,7,48,479" concept="5" />
-      <node id="1230052684776" at="48,479,49,478" concept="5" />
-      <node id="1230052684776" at="49,478,50,151" concept="1" />
+      <node id="1230052684767" at="44,84,45,275" concept="1" />
+      <node id="1230052684772" at="45,275,46,23" concept="1" />
+      <node id="1230052684776" at="47,7,48,585" concept="5" />
+      <node id="1230052684776" at="48,585,49,584" concept="5" />
+      <node id="1230052684776" at="49,584,50,151" concept="1" />
       <node id="1230052684686" at="25,0,30,0" concept="4" trace="test_staticContainerClassTest#()V" />
       <node id="1230052684776" at="46,23,51,7" concept="0" />
       <node id="1230052684722" at="33,0,53,0" concept="4" trace="test_staticContainerClassTest#()V" />
@@ -719,13 +719,13 @@
       <node id="1230052902925" at="28,114,29,113" concept="1" />
       <node id="1230052902944" at="34,61,35,35" concept="1" />
       <node id="1230052902944" at="35,35,36,35" concept="1" />
-      <node id="1230052902947" at="36,35,37,289" concept="5" />
-      <node id="1230052902953" at="37,289,38,259" concept="1" />
-      <node id="1230052902963" at="38,259,39,296" concept="5" />
-      <node id="1230052902970" at="39,296,40,26" concept="1" />
-      <node id="1230052902974" at="41,7,42,281" concept="5" />
-      <node id="1230052902974" at="42,281,43,280" concept="5" />
-      <node id="1230052902974" at="43,280,44,151" concept="1" />
+      <node id="1230052902947" at="36,35,37,342" concept="5" />
+      <node id="1230052902953" at="37,342,38,259" concept="1" />
+      <node id="1230052902963" at="38,259,39,349" concept="5" />
+      <node id="1230052902970" at="39,349,40,26" concept="1" />
+      <node id="1230052902974" at="41,7,42,334" concept="5" />
+      <node id="1230052902974" at="42,334,43,333" concept="5" />
+      <node id="1230052902974" at="43,333,44,151" concept="1" />
       <node id="1230052902961" at="49,65,50,65" concept="5" />
       <node id="1230052902961" at="50,65,51,32" concept="5" />
       <node id="1230052902961" at="51,32,52,229" concept="1" />
@@ -761,13 +761,13 @@
       <node id="1230052902977" at="25,114,26,107" concept="1" />
       <node id="1230052902995" at="31,58,32,35" concept="1" />
       <node id="1230052902995" at="32,35,33,35" concept="1" />
-      <node id="1230052902998" at="33,35,34,289" concept="5" />
-      <node id="1230052903004" at="34,289,35,176" concept="1" />
-      <node id="1230052903012" at="35,176,36,296" concept="5" />
-      <node id="1230052903019" at="36,296,37,26" concept="1" />
-      <node id="1230052903023" at="38,7,39,281" concept="5" />
-      <node id="1230052903023" at="39,281,40,280" concept="5" />
-      <node id="1230052903023" at="40,280,41,151" concept="1" />
+      <node id="1230052902998" at="33,35,34,342" concept="5" />
+      <node id="1230052903004" at="34,342,35,176" concept="1" />
+      <node id="1230052903012" at="35,176,36,349" concept="5" />
+      <node id="1230052903019" at="36,349,37,26" concept="1" />
+      <node id="1230052903023" at="38,7,39,334" concept="5" />
+      <node id="1230052903023" at="39,334,40,333" concept="5" />
+      <node id="1230052903023" at="40,333,41,151" concept="1" />
       <node id="1230052902977" at="23,0,28,0" concept="4" trace="test_ChangeMethodName#()V" />
       <node id="1230052903023" at="37,26,42,7" concept="0" />
       <node id="1230052902995" at="31,0,44,0" concept="4" trace="test_ChangeMethodName#()V" />
@@ -792,13 +792,13 @@
       <node id="1230052903026" at="25,114,26,113" concept="1" />
       <node id="1230052903045" at="31,61,32,35" concept="1" />
       <node id="1230052903045" at="32,35,33,35" concept="1" />
-      <node id="1230052903048" at="33,35,34,289" concept="5" />
-      <node id="1230052903054" at="34,289,35,406" concept="1" />
-      <node id="1230052903064" at="35,406,36,296" concept="5" />
-      <node id="1230052903071" at="36,296,37,26" concept="1" />
-      <node id="1230052903075" at="38,7,39,281" concept="5" />
-      <node id="1230052903075" at="39,281,40,280" concept="5" />
-      <node id="1230052903075" at="40,280,41,151" concept="1" />
+      <node id="1230052903048" at="33,35,34,342" concept="5" />
+      <node id="1230052903054" at="34,342,35,459" concept="1" />
+      <node id="1230052903064" at="35,459,36,349" concept="5" />
+      <node id="1230052903071" at="36,349,37,26" concept="1" />
+      <node id="1230052903075" at="38,7,39,334" concept="5" />
+      <node id="1230052903075" at="39,334,40,333" concept="5" />
+      <node id="1230052903075" at="40,333,41,151" concept="1" />
       <node id="1230052903026" at="23,0,28,0" concept="4" trace="test_ChangeReturningType#()V" />
       <node id="1230052903075" at="37,26,42,7" concept="0" />
       <node id="1230052903045" at="31,0,44,0" concept="4" trace="test_ChangeReturningType#()V" />
@@ -823,21 +823,21 @@
       <node id="1230052903078" at="25,114,26,133" concept="1" />
       <node id="1230052903138" at="31,71,32,35" concept="1" />
       <node id="1230052903138" at="32,35,33,35" concept="1" />
-      <node id="1230052903141" at="33,35,34,287" concept="5" />
-      <node id="1230052903147" at="34,287,35,225" concept="5" />
+      <node id="1230052903141" at="33,35,34,340" concept="5" />
+      <node id="1230052903147" at="34,340,35,225" concept="5" />
       <node id="1230052903158" at="35,225,36,231" concept="5" />
       <node id="1230052903169" at="36,231,37,214" concept="1" />
       <node id="1230052903177" at="37,214,38,221" concept="1" />
       <node id="1230052903186" at="38,221,39,221" concept="1" />
-      <node id="1230052903195" at="39,221,40,294" concept="5" />
-      <node id="1230052903202" at="40,294,41,74" concept="5" />
-      <node id="1230052903209" at="41,74,42,250" concept="1" />
-      <node id="1230052903214" at="42,250,43,245" concept="1" />
-      <node id="1230052903219" at="43,245,44,29" concept="1" />
+      <node id="1230052903195" at="39,221,40,347" concept="5" />
+      <node id="1230052903202" at="40,347,41,74" concept="5" />
+      <node id="1230052903209" at="41,74,42,303" concept="1" />
+      <node id="1230052903214" at="42,303,43,298" concept="1" />
+      <node id="1230052903219" at="43,298,44,29" concept="1" />
       <node id="1230052903224" at="44,29,45,26" concept="1" />
-      <node id="1230052903228" at="46,7,47,281" concept="5" />
-      <node id="1230052903228" at="47,281,48,280" concept="5" />
-      <node id="1230052903228" at="48,280,49,151" concept="1" />
+      <node id="1230052903228" at="46,7,47,334" concept="5" />
+      <node id="1230052903228" at="47,334,48,333" concept="5" />
+      <node id="1230052903228" at="48,333,49,151" concept="1" />
       <node id="1230052903078" at="23,0,28,0" concept="4" trace="test_ChangeSignatureOfStaticMethod#()V" />
       <node id="1230052903228" at="45,26,50,7" concept="0" />
       <node id="1230052903138" at="31,0,52,0" concept="4" trace="test_ChangeSignatureOfStaticMethod#()V" />
@@ -865,13 +865,13 @@
       <node id="1230052943763" at="28,114,29,99" concept="1" />
       <node id="1230052943783" at="34,54,35,35" concept="1" />
       <node id="1230052943783" at="35,35,36,35" concept="1" />
-      <node id="1230052943786" at="36,35,37,289" concept="5" />
-      <node id="1230052943792" at="37,289,38,257" concept="1" />
-      <node id="1230052943803" at="38,257,39,296" concept="5" />
-      <node id="1230052943810" at="39,296,40,26" concept="1" />
-      <node id="1230052943814" at="41,7,42,281" concept="5" />
-      <node id="1230052943814" at="42,281,43,280" concept="5" />
-      <node id="1230052943814" at="43,280,44,151" concept="1" />
+      <node id="1230052943786" at="36,35,37,342" concept="5" />
+      <node id="1230052943792" at="37,342,38,257" concept="1" />
+      <node id="1230052943803" at="38,257,39,349" concept="5" />
+      <node id="1230052943810" at="39,349,40,26" concept="1" />
+      <node id="1230052943814" at="41,7,42,334" concept="5" />
+      <node id="1230052943814" at="42,334,43,333" concept="5" />
+      <node id="1230052943814" at="43,333,44,151" concept="1" />
       <node id="1230052943800" at="49,65,50,65" concept="5" />
       <node id="1230052943800" at="50,65,51,32" concept="5" />
       <node id="1230052943800" at="51,32,52,32" concept="5" />
@@ -911,13 +911,13 @@
       <node id="1230052943817" at="26,114,27,113" concept="1" />
       <node id="1230052943847" at="32,61,33,35" concept="1" />
       <node id="1230052943847" at="33,35,34,35" concept="1" />
-      <node id="1230052943850" at="34,35,35,289" concept="5" />
-      <node id="1230052943856" at="35,289,36,358" concept="1" />
-      <node id="1230052943869" at="36,358,37,296" concept="5" />
-      <node id="1230052943876" at="37,296,38,26" concept="1" />
-      <node id="1230052943880" at="39,7,40,281" concept="5" />
-      <node id="1230052943880" at="40,281,41,280" concept="5" />
-      <node id="1230052943880" at="41,280,42,151" concept="1" />
+      <node id="1230052943850" at="34,35,35,342" concept="5" />
+      <node id="1230052943856" at="35,342,36,358" concept="1" />
+      <node id="1230052943869" at="36,358,37,349" concept="5" />
+      <node id="1230052943876" at="37,349,38,26" concept="1" />
+      <node id="1230052943880" at="39,7,40,334" concept="5" />
+      <node id="1230052943880" at="40,334,41,333" concept="5" />
+      <node id="1230052943880" at="41,333,42,151" concept="1" />
       <node id="1230052943817" at="24,0,29,0" concept="4" trace="test_ChangeParameterName#()V" />
       <node id="1230052943880" at="38,26,43,7" concept="0" />
       <node id="1230052943847" at="32,0,45,0" concept="4" trace="test_ChangeParameterName#()V" />
@@ -942,13 +942,13 @@
       <node id="1230052943883" at="27,114,28,113" concept="1" />
       <node id="1230052943909" at="33,61,34,35" concept="1" />
       <node id="1230052943909" at="34,35,35,35" concept="1" />
-      <node id="1230052943912" at="35,35,36,289" concept="5" />
-      <node id="1230052943918" at="36,289,37,411" concept="1" />
-      <node id="1230052943932" at="37,411,38,296" concept="5" />
-      <node id="1230052943939" at="38,296,39,26" concept="1" />
-      <node id="1230052943943" at="40,7,41,281" concept="5" />
-      <node id="1230052943943" at="41,281,42,280" concept="5" />
-      <node id="1230052943943" at="42,280,43,151" concept="1" />
+      <node id="1230052943912" at="35,35,36,342" concept="5" />
+      <node id="1230052943918" at="36,342,37,411" concept="1" />
+      <node id="1230052943932" at="37,411,38,349" concept="5" />
+      <node id="1230052943939" at="38,349,39,26" concept="1" />
+      <node id="1230052943943" at="40,7,41,334" concept="5" />
+      <node id="1230052943943" at="41,334,42,333" concept="5" />
+      <node id="1230052943943" at="42,333,43,151" concept="1" />
       <node id="1230052943920" at="48,64,49,65" concept="5" />
       <node id="1230052943920" at="49,65,50,32" concept="5" />
       <node id="1230052943920" at="50,32,51,225" concept="1" />
@@ -983,20 +983,20 @@
       <node id="1230052943946" at="25,114,26,117" concept="1" />
       <node id="1230052943993" at="31,63,32,35" concept="1" />
       <node id="1230052943993" at="32,35,33,35" concept="1" />
-      <node id="1230052943996" at="33,35,34,289" concept="5" />
-      <node id="1230052944002" at="34,289,35,225" concept="5" />
+      <node id="1230052943996" at="33,35,34,342" concept="5" />
+      <node id="1230052944002" at="34,342,35,225" concept="5" />
       <node id="1230052944013" at="35,225,36,231" concept="5" />
       <node id="1230052944024" at="36,231,37,214" concept="1" />
       <node id="1230052944032" at="37,214,38,221" concept="1" />
       <node id="1230052944041" at="38,221,39,221" concept="1" />
-      <node id="1230052944050" at="39,221,40,296" concept="5" />
-      <node id="1230052944057" at="40,296,41,74" concept="5" />
-      <node id="1230052944064" at="41,74,42,257" concept="1" />
-      <node id="1230052944069" at="42,257,43,29" concept="1" />
+      <node id="1230052944050" at="39,221,40,349" concept="5" />
+      <node id="1230052944057" at="40,349,41,74" concept="5" />
+      <node id="1230052944064" at="41,74,42,310" concept="1" />
+      <node id="1230052944069" at="42,310,43,29" concept="1" />
       <node id="1230052944074" at="43,29,44,26" concept="1" />
-      <node id="1230052944078" at="45,7,46,281" concept="5" />
-      <node id="1230052944078" at="46,281,47,280" concept="5" />
-      <node id="1230052944078" at="47,280,48,151" concept="1" />
+      <node id="1230052944078" at="45,7,46,334" concept="5" />
+      <node id="1230052944078" at="46,334,47,333" concept="5" />
+      <node id="1230052944078" at="47,333,48,151" concept="1" />
       <node id="1230052943946" at="23,0,28,0" concept="4" trace="test_ChangeParametersOrder#()V" />
       <node id="1230052944078" at="44,26,49,7" concept="0" />
       <node id="1230052943993" at="31,0,51,0" concept="4" trace="test_ChangeParametersOrder#()V" />
@@ -1024,13 +1024,13 @@
       <node id="1230052944081" at="25,114,26,105" concept="1" />
       <node id="1230052944101" at="31,57,32,35" concept="1" />
       <node id="1230052944101" at="32,35,33,35" concept="1" />
-      <node id="1230052944104" at="33,35,34,289" concept="5" />
-      <node id="1230052944110" at="34,289,35,214" concept="1" />
-      <node id="1230052944118" at="35,214,36,296" concept="5" />
-      <node id="1230052944125" at="36,296,37,26" concept="1" />
-      <node id="1230052944129" at="38,7,39,281" concept="5" />
-      <node id="1230052944129" at="39,281,40,280" concept="5" />
-      <node id="1230052944129" at="40,280,41,151" concept="1" />
+      <node id="1230052944104" at="33,35,34,342" concept="5" />
+      <node id="1230052944110" at="34,342,35,214" concept="1" />
+      <node id="1230052944118" at="35,214,36,349" concept="5" />
+      <node id="1230052944125" at="36,349,37,26" concept="1" />
+      <node id="1230052944129" at="38,7,39,334" concept="5" />
+      <node id="1230052944129" at="39,334,40,333" concept="5" />
+      <node id="1230052944129" at="40,333,41,151" concept="1" />
       <node id="1230052944081" at="23,0,28,0" concept="4" trace="test_RemoveParameter#()V" />
       <node id="1230052944129" at="37,26,42,7" concept="0" />
       <node id="1230052944101" at="31,0,44,0" concept="4" trace="test_RemoveParameter#()V" />
@@ -1055,14 +1055,14 @@
       <node id="1230052944132" at="26,114,27,125" concept="1" />
       <node id="1230052944162" at="32,67,33,35" concept="1" />
       <node id="1230052944162" at="33,35,34,35" concept="1" />
-      <node id="1230052944165" at="34,35,35,289" concept="5" />
-      <node id="1230052944171" at="35,289,36,361" concept="1" />
+      <node id="1230052944165" at="34,35,35,342" concept="5" />
+      <node id="1230052944171" at="35,342,36,361" concept="1" />
       <node id="1230052944184" at="36,361,37,367" concept="1" />
-      <node id="1230052944197" at="37,367,38,296" concept="5" />
-      <node id="1230052944204" at="38,296,39,26" concept="1" />
-      <node id="1230052944208" at="40,7,41,281" concept="5" />
-      <node id="1230052944208" at="41,281,42,280" concept="5" />
-      <node id="1230052944208" at="42,280,43,151" concept="1" />
+      <node id="1230052944197" at="37,367,38,349" concept="5" />
+      <node id="1230052944204" at="38,349,39,26" concept="1" />
+      <node id="1230052944208" at="40,7,41,334" concept="5" />
+      <node id="1230052944208" at="41,334,42,333" concept="5" />
+      <node id="1230052944208" at="42,333,43,151" concept="1" />
       <node id="1230052944132" at="24,0,29,0" concept="4" trace="test_TwoParametersWithSameType#()V" />
       <node id="1230052944208" at="39,26,44,7" concept="0" />
       <node id="1230052944162" at="32,0,46,0" concept="4" trace="test_TwoParametersWithSameType#()V" />
@@ -1087,11 +1087,11 @@
       <node id="1230052989007" at="23,114,24,131" concept="1" />
       <node id="1230052989065" at="29,70,30,35" concept="1" />
       <node id="1230052989065" at="30,35,31,35" concept="1" />
-      <node id="1230052989068" at="31,35,32,273" concept="5" />
-      <node id="1230052989074" at="32,273,33,23" concept="1" />
-      <node id="1230052989078" at="34,7,35,281" concept="5" />
-      <node id="1230052989078" at="35,281,36,280" concept="5" />
-      <node id="1230052989078" at="36,280,37,151" concept="1" />
+      <node id="1230052989068" at="31,35,32,326" concept="5" />
+      <node id="1230052989074" at="32,326,33,23" concept="1" />
+      <node id="1230052989078" at="34,7,35,334" concept="5" />
+      <node id="1230052989078" at="35,334,36,333" concept="5" />
+      <node id="1230052989078" at="36,333,37,151" concept="1" />
       <node id="1230052989007" at="21,0,26,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
       <node id="1230052989078" at="33,23,38,7" concept="0" />
       <node id="1230052989065" at="29,0,40,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
@@ -1115,11 +1115,11 @@
       <node id="1230052989081" at="23,114,24,119" concept="1" />
       <node id="1230052989156" at="29,64,30,35" concept="1" />
       <node id="1230052989156" at="30,35,31,35" concept="1" />
-      <node id="1230052989159" at="31,35,32,273" concept="5" />
-      <node id="1230052989165" at="32,273,33,23" concept="1" />
-      <node id="1230052989169" at="34,7,35,281" concept="5" />
-      <node id="1230052989169" at="35,281,36,280" concept="5" />
-      <node id="1230052989169" at="36,280,37,151" concept="1" />
+      <node id="1230052989159" at="31,35,32,326" concept="5" />
+      <node id="1230052989165" at="32,326,33,23" concept="1" />
+      <node id="1230052989169" at="34,7,35,334" concept="5" />
+      <node id="1230052989169" at="35,334,36,333" concept="5" />
+      <node id="1230052989169" at="36,333,37,151" concept="1" />
       <node id="1230052989081" at="21,0,26,0" concept="4" trace="test_InlineFromAnotherClass#()V" />
       <node id="1230052989169" at="33,23,38,7" concept="0" />
       <node id="1230052989156" at="29,0,40,0" concept="4" trace="test_InlineFromAnotherClass#()V" />
@@ -1143,11 +1143,11 @@
       <node id="1230052989172" at="23,114,24,115" concept="1" />
       <node id="1230052989266" at="29,62,30,35" concept="1" />
       <node id="1230052989266" at="30,35,31,35" concept="1" />
-      <node id="1230052989269" at="31,35,32,273" concept="5" />
-      <node id="1230052989275" at="32,273,33,23" concept="1" />
-      <node id="1230052989279" at="34,7,35,281" concept="5" />
-      <node id="1230052989279" at="35,281,36,280" concept="5" />
-      <node id="1230052989279" at="36,280,37,151" concept="1" />
+      <node id="1230052989269" at="31,35,32,326" concept="5" />
+      <node id="1230052989275" at="32,326,33,23" concept="1" />
+      <node id="1230052989279" at="34,7,35,334" concept="5" />
+      <node id="1230052989279" at="35,334,36,333" concept="5" />
+      <node id="1230052989279" at="36,333,37,151" concept="1" />
       <node id="1230052989172" at="21,0,26,0" concept="4" trace="test_InlineFromExpression#()V" />
       <node id="1230052989279" at="33,23,38,7" concept="0" />
       <node id="1230052989266" at="29,0,40,0" concept="4" trace="test_InlineFromExpression#()V" />
@@ -1170,11 +1170,11 @@
       <node id="1230052989282" at="17,61,18,114" concept="1" />
       <node id="1230052989282" at="18,114,19,117" concept="1" />
       <node id="1230052989295" at="24,63,25,35" concept="1" />
-      <node id="1230052989298" at="25,35,26,273" concept="1" />
+      <node id="1230052989298" at="25,35,26,326" concept="1" />
       <node id="1230052989295" at="24,0,28,0" concept="4" trace="test_InlineRecursiveMethod#()V" />
       <node id="1230052989282" at="16,0,21,0" concept="4" trace="test_InlineRecursiveMethod#()V" />
       <scope id="1230052989282" at="17,61,19,117" />
-      <scope id="1230052989295" at="24,63,26,273" />
+      <scope id="1230052989295" at="24,63,26,326" />
       <scope id="1230052989295" at="24,0,28,0" />
       <scope id="1230052989282" at="16,0,21,0" />
       <unit id="1230052989282" at="22,0,31,0" name="jetbrains.mps.refactoringTest.InlineRecursiveMethod_Test$TestBody" />
@@ -1186,11 +1186,11 @@
       <node id="1230052989306" at="17,67,18,114" concept="1" />
       <node id="1230052989306" at="18,114,19,129" concept="1" />
       <node id="1230052989322" at="24,69,25,35" concept="1" />
-      <node id="1230052989325" at="25,35,26,276" concept="1" />
+      <node id="1230052989325" at="25,35,26,329" concept="1" />
       <node id="1230052989322" at="24,0,28,0" concept="4" trace="test_InlineWithNoSourcesAttached#()V" />
       <node id="1230052989306" at="16,0,21,0" concept="4" trace="test_InlineWithNoSourcesAttached#()V" />
       <scope id="1230052989306" at="17,67,19,129" />
-      <scope id="1230052989322" at="24,69,26,276" />
+      <scope id="1230052989322" at="24,69,26,329" />
       <scope id="1230052989322" at="24,0,28,0" />
       <scope id="1230052989306" at="16,0,21,0" />
       <unit id="1230052989306" at="22,0,31,0" name="jetbrains.mps.refactoringTest.InlineWithNoSourcesAttached_Test$TestBody" />
@@ -1203,11 +1203,11 @@
       <node id="1230052989334" at="23,114,24,125" concept="1" />
       <node id="1230052989378" at="29,67,30,35" concept="1" />
       <node id="1230052989378" at="30,35,31,35" concept="1" />
-      <node id="1230052989381" at="31,35,32,273" concept="5" />
-      <node id="1230052989387" at="32,273,33,23" concept="1" />
-      <node id="1230052989391" at="34,7,35,281" concept="5" />
-      <node id="1230052989391" at="35,281,36,280" concept="5" />
-      <node id="1230052989391" at="36,280,37,151" concept="1" />
+      <node id="1230052989381" at="31,35,32,326" concept="5" />
+      <node id="1230052989387" at="32,326,33,23" concept="1" />
+      <node id="1230052989391" at="34,7,35,334" concept="5" />
+      <node id="1230052989391" at="35,334,36,333" concept="5" />
+      <node id="1230052989391" at="36,333,37,151" concept="1" />
       <node id="1230052989334" at="21,0,26,0" concept="4" trace="test_SimpleInlineWithOneReturn#()V" />
       <node id="1230052989391" at="33,23,38,7" concept="0" />
       <node id="1230052989378" at="29,0,40,0" concept="4" trace="test_SimpleInlineWithOneReturn#()V" />
@@ -1231,11 +1231,11 @@
       <node id="1230053040715" at="23,114,24,111" concept="1" />
       <node id="1230053040751" at="29,60,30,35" concept="1" />
       <node id="1230053040751" at="30,35,31,35" concept="1" />
-      <node id="1230053040754" at="31,35,32,267" concept="5" />
-      <node id="1230053040760" at="32,267,33,23" concept="1" />
-      <node id="1230053040764" at="34,7,35,281" concept="5" />
-      <node id="1230053040764" at="35,281,36,280" concept="5" />
-      <node id="1230053040764" at="36,280,37,151" concept="1" />
+      <node id="1230053040754" at="31,35,32,320" concept="5" />
+      <node id="1230053040760" at="32,320,33,23" concept="1" />
+      <node id="1230053040764" at="34,7,35,334" concept="5" />
+      <node id="1230053040764" at="35,334,36,333" concept="5" />
+      <node id="1230053040764" at="36,333,37,151" concept="1" />
       <node id="1230053040715" at="21,0,26,0" concept="4" trace="test_InlineFromBehavior#()V" />
       <node id="1230053040764" at="33,23,38,7" concept="0" />
       <node id="1230053040751" at="29,0,40,0" concept="4" trace="test_InlineFromBehavior#()V" />
@@ -1261,11 +1261,11 @@
       <node id="1230053040872" at="30,35,31,35" concept="1" />
       <node id="1230053040872" at="31,35,32,35" concept="1" />
       <node id="1230053040872" at="32,35,33,35" concept="1" />
-      <node id="1230053040875" at="33,35,34,267" concept="5" />
-      <node id="1230053040881" at="34,267,35,23" concept="1" />
-      <node id="1230053040885" at="36,7,37,286" concept="5" />
-      <node id="1230053040885" at="37,286,38,285" concept="5" />
-      <node id="1230053040885" at="38,285,39,151" concept="1" />
+      <node id="1230053040875" at="33,35,34,320" concept="5" />
+      <node id="1230053040881" at="34,320,35,23" concept="1" />
+      <node id="1230053040885" at="36,7,37,339" concept="5" />
+      <node id="1230053040885" at="37,339,38,338" concept="5" />
+      <node id="1230053040885" at="38,338,39,151" concept="1" />
       <node id="1230053040767" at="21,0,26,0" concept="4" trace="test_InlineFromBehaviorWithMethods#()V" />
       <node id="1230053040885" at="35,23,40,7" concept="0" />
       <node id="1230053040872" at="29,0,42,0" concept="4" trace="test_InlineFromBehaviorWithMethods#()V" />
@@ -1289,11 +1289,11 @@
       <node id="1230053040888" at="23,114,24,123" concept="1" />
       <node id="1230053040922" at="29,66,30,35" concept="1" />
       <node id="1230053040922" at="30,35,31,35" concept="1" />
-      <node id="1230053040925" at="31,35,32,267" concept="5" />
-      <node id="1230053040931" at="32,267,33,23" concept="1" />
-      <node id="1230053040935" at="34,7,35,286" concept="5" />
-      <node id="1230053040935" at="35,286,36,285" concept="5" />
-      <node id="1230053040935" at="36,285,37,151" concept="1" />
+      <node id="1230053040925" at="31,35,32,320" concept="5" />
+      <node id="1230053040931" at="32,320,33,23" concept="1" />
+      <node id="1230053040935" at="34,7,35,339" concept="5" />
+      <node id="1230053040935" at="35,339,36,338" concept="5" />
+      <node id="1230053040935" at="36,338,37,151" concept="1" />
       <node id="1230053040888" at="21,0,26,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
       <node id="1230053040935" at="33,23,38,7" concept="0" />
       <node id="1230053040922" at="29,0,40,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
@@ -1317,11 +1317,11 @@
       <node id="1230053073153" at="23,114,24,141" concept="1" />
       <node id="1230053073230" at="29,75,30,35" concept="1" />
       <node id="1230053073230" at="30,35,31,35" concept="1" />
-      <node id="1230053073233" at="31,35,32,273" concept="5" />
-      <node id="1230053073239" at="32,273,33,23" concept="1" />
-      <node id="1230053073243" at="34,7,35,281" concept="5" />
-      <node id="1230053073243" at="35,281,36,280" concept="5" />
-      <node id="1230053073243" at="36,280,37,151" concept="1" />
+      <node id="1230053073233" at="31,35,32,326" concept="5" />
+      <node id="1230053073239" at="32,326,33,23" concept="1" />
+      <node id="1230053073243" at="34,7,35,334" concept="5" />
+      <node id="1230053073243" at="35,334,36,333" concept="5" />
+      <node id="1230053073243" at="36,333,37,151" concept="1" />
       <node id="1230053073153" at="21,0,26,0" concept="4" trace="test_InlineMethodThatChangesParameters#()V" />
       <node id="1230053073243" at="33,23,38,7" concept="0" />
       <node id="1230053073230" at="29,0,40,0" concept="4" trace="test_InlineMethodThatChangesParameters#()V" />
@@ -1345,11 +1345,11 @@
       <node id="1230053073246" at="23,114,24,123" concept="1" />
       <node id="1230053073320" at="29,66,30,35" concept="1" />
       <node id="1230053073320" at="30,35,31,35" concept="1" />
-      <node id="1230053073323" at="31,35,32,273" concept="5" />
-      <node id="1230053073329" at="32,273,33,23" concept="1" />
-      <node id="1230053073333" at="34,7,35,281" concept="5" />
-      <node id="1230053073333" at="35,281,36,280" concept="5" />
-      <node id="1230053073333" at="36,280,37,151" concept="1" />
+      <node id="1230053073323" at="31,35,32,326" concept="5" />
+      <node id="1230053073329" at="32,326,33,23" concept="1" />
+      <node id="1230053073333" at="34,7,35,334" concept="5" />
+      <node id="1230053073333" at="35,334,36,333" concept="5" />
+      <node id="1230053073333" at="36,333,37,151" concept="1" />
       <node id="1230053073246" at="21,0,26,0" concept="4" trace="test_InlineModelWithConstants#()V" />
       <node id="1230053073333" at="33,23,38,7" concept="0" />
       <node id="1230053073320" at="29,0,40,0" concept="4" trace="test_InlineModelWithConstants#()V" />
@@ -1373,11 +1373,11 @@
       <node id="1230053073336" at="23,114,24,143" concept="1" />
       <node id="1230053073419" at="29,76,30,35" concept="1" />
       <node id="1230053073419" at="30,35,31,35" concept="1" />
-      <node id="1230053073422" at="31,35,32,273" concept="5" />
-      <node id="1230053073428" at="32,273,33,23" concept="1" />
-      <node id="1230053073432" at="34,7,35,281" concept="5" />
-      <node id="1230053073432" at="35,281,36,280" concept="5" />
-      <node id="1230053073432" at="36,280,37,151" concept="1" />
+      <node id="1230053073422" at="31,35,32,326" concept="5" />
+      <node id="1230053073428" at="32,326,33,23" concept="1" />
+      <node id="1230053073432" at="34,7,35,334" concept="5" />
+      <node id="1230053073432" at="35,334,36,333" concept="5" />
+      <node id="1230053073432" at="36,333,37,151" concept="1" />
       <node id="1230053073336" at="21,0,26,0" concept="4" trace="test_OneReturnWithNotVariableParameters#()V" />
       <node id="1230053073432" at="33,23,38,7" concept="0" />
       <node id="1230053073419" at="29,0,40,0" concept="4" trace="test_OneReturnWithNotVariableParameters#()V" />
@@ -1401,11 +1401,11 @@
       <node id="1230053073435" at="23,114,24,123" concept="1" />
       <node id="1230053073498" at="29,66,30,35" concept="1" />
       <node id="1230053073498" at="30,35,31,35" concept="1" />
-      <node id="1230053073501" at="31,35,32,273" concept="5" />
-      <node id="1230053073507" at="32,273,33,23" concept="1" />
-      <node id="1230053073511" at="34,7,35,281" concept="5" />
-      <node id="1230053073511" at="35,281,36,280" concept="5" />
-      <node id="1230053073511" at="36,280,37,151" concept="1" />
+      <node id="1230053073501" at="31,35,32,326" concept="5" />
+      <node id="1230053073507" at="32,326,33,23" concept="1" />
+      <node id="1230053073511" at="34,7,35,334" concept="5" />
+      <node id="1230053073511" at="35,334,36,333" concept="5" />
+      <node id="1230053073511" at="36,333,37,151" concept="1" />
       <node id="1230053073435" at="21,0,26,0" concept="4" trace="test_OneReturnWithParameteres#()V" />
       <node id="1230053073511" at="33,23,38,7" concept="0" />
       <node id="1230053073498" at="29,0,40,0" concept="4" trace="test_OneReturnWithParameteres#()V" />
@@ -1430,10 +1430,10 @@
       <node id="1230053114842" at="24,63,25,35" concept="1" />
       <node id="1230053114842" at="25,35,26,35" concept="1" />
       <node id="1230053114842" at="26,35,27,35" concept="1" />
-      <node id="1230053114845" at="27,35,28,261" concept="5" />
-      <node id="1230053114851" at="28,261,29,56" concept="1" />
-      <node id="1230053114859" at="29,56,30,237" concept="1" />
-      <node id="1230053114865" at="30,237,31,56" concept="1" />
+      <node id="1230053114845" at="27,35,28,314" concept="5" />
+      <node id="1230053114851" at="28,314,29,56" concept="1" />
+      <node id="1230053114859" at="29,56,30,290" concept="1" />
+      <node id="1230053114865" at="30,290,31,56" concept="1" />
       <node id="1230053114801" at="16,0,21,0" concept="4" trace="test_CheckStaticVisibility#()V" />
       <node id="1230053114842" at="24,0,33,0" concept="4" trace="test_CheckStaticVisibility#()V" />
       <scope id="1230053114801" at="17,61,19,117" />
@@ -1452,12 +1452,12 @@
       <node id="1230053114873" at="18,114,19,105" concept="1" />
       <node id="1230053114946" at="24,57,25,35" concept="1" />
       <node id="1230053114946" at="25,35,26,35" concept="1" />
-      <node id="1230053114949" at="26,35,27,273" concept="5" />
-      <node id="1230053114955" at="27,273,28,56" concept="1" />
-      <node id="1230053114963" at="28,56,29,249" concept="1" />
-      <node id="1230053114969" at="29,249,30,56" concept="1" />
-      <node id="1230053114977" at="30,56,31,249" concept="1" />
-      <node id="1230053114983" at="31,249,32,57" concept="1" />
+      <node id="1230053114949" at="26,35,27,326" concept="5" />
+      <node id="1230053114955" at="27,326,28,56" concept="1" />
+      <node id="1230053114963" at="28,56,29,302" concept="1" />
+      <node id="1230053114969" at="29,302,30,56" concept="1" />
+      <node id="1230053114977" at="30,56,31,302" concept="1" />
+      <node id="1230053114983" at="31,302,32,57" concept="1" />
       <node id="1230053114873" at="16,0,21,0" concept="4" trace="test_CheckVisibility#()V" />
       <node id="1230053114946" at="24,0,34,0" concept="4" trace="test_CheckVisibility#()V" />
       <scope id="1230053114873" at="17,55,19,105" />
@@ -1475,17 +1475,17 @@
       <node id="1230053187317" at="17,65,18,114" concept="1" />
       <node id="1230053187317" at="18,114,19,125" concept="1" />
       <node id="1230053187445" at="24,67,25,35" concept="1" />
-      <node id="1230053187448" at="25,35,26,268" concept="1" />
-      <node id="1230053187454" at="26,268,27,276" concept="1" />
-      <node id="1230053187462" at="27,276,28,268" concept="1" />
-      <node id="1230053187468" at="28,268,29,268" concept="1" />
-      <node id="1230053187474" at="29,268,30,276" concept="1" />
-      <node id="1230053187482" at="30,276,31,268" concept="1" />
+      <node id="1230053187448" at="25,35,26,321" concept="1" />
+      <node id="1230053187454" at="26,321,27,329" concept="1" />
+      <node id="1230053187462" at="27,329,28,321" concept="1" />
+      <node id="1230053187468" at="28,321,29,321" concept="1" />
+      <node id="1230053187474" at="29,321,30,329" concept="1" />
+      <node id="1230053187482" at="30,329,31,321" concept="1" />
       <node id="1230053187317" at="16,0,21,0" concept="4" trace="test_CheckInlineCanBePerformed#()V" />
       <node id="1230053187445" at="24,0,33,0" concept="4" trace="test_CheckInlineCanBePerformed#()V" />
       <scope id="1230053187317" at="17,65,19,125" />
       <scope id="1230053187317" at="16,0,21,0" />
-      <scope id="1230053187445" at="24,67,31,268" />
+      <scope id="1230053187445" at="24,67,31,321" />
       <scope id="1230053187445" at="24,0,33,0" />
       <unit id="1230053187317" at="22,0,36,0" name="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test$TestBody" />
       <unit id="1230053187317" at="14,0,37,0" name="jetbrains.mps.refactoringTest.CheckInlineCanBePerformed_Test" />
@@ -1496,11 +1496,11 @@
       <node id="1230053187488" at="17,60,18,114" concept="1" />
       <node id="1230053187488" at="18,114,19,115" concept="1" />
       <node id="1230053187522" at="24,62,25,35" concept="1" />
-      <node id="1230053187525" at="25,35,26,268" concept="1" />
+      <node id="1230053187525" at="25,35,26,321" concept="1" />
       <node id="1230053187522" at="24,0,28,0" concept="4" trace="test_CheckInlineWithThrow#()V" />
       <node id="1230053187488" at="16,0,21,0" concept="4" trace="test_CheckInlineWithThrow#()V" />
       <scope id="1230053187488" at="17,60,19,115" />
-      <scope id="1230053187522" at="24,62,26,268" />
+      <scope id="1230053187522" at="24,62,26,321" />
       <scope id="1230053187522" at="24,0,28,0" />
       <scope id="1230053187488" at="16,0,21,0" />
       <unit id="1230053187488" at="22,0,31,0" name="jetbrains.mps.refactoringTest.CheckInlineWithThrow_Test$TestBody" />
@@ -1513,11 +1513,11 @@
       <node id="1230053187531" at="23,114,24,109" concept="1" />
       <node id="1230053187631" at="29,59,30,35" concept="1" />
       <node id="1230053187631" at="30,35,31,35" concept="1" />
-      <node id="1230053187634" at="31,35,32,273" concept="5" />
-      <node id="1230053187640" at="32,273,33,23" concept="1" />
-      <node id="1230053187644" at="34,7,35,281" concept="5" />
-      <node id="1230053187644" at="35,281,36,280" concept="5" />
-      <node id="1230053187644" at="36,280,37,151" concept="1" />
+      <node id="1230053187634" at="31,35,32,326" concept="5" />
+      <node id="1230053187640" at="32,326,33,23" concept="1" />
+      <node id="1230053187644" at="34,7,35,334" concept="5" />
+      <node id="1230053187644" at="35,334,36,333" concept="5" />
+      <node id="1230053187644" at="36,333,37,151" concept="1" />
       <node id="1230053187531" at="21,0,26,0" concept="4" trace="test_InlineManyReturns#()V" />
       <node id="1230053187644" at="33,23,38,7" concept="0" />
       <node id="1230053187631" at="29,0,40,0" concept="4" trace="test_InlineManyReturns#()V" />
@@ -1541,11 +1541,11 @@
       <node id="1230053187647" at="23,114,24,135" concept="1" />
       <node id="1230053187736" at="29,72,30,35" concept="1" />
       <node id="1230053187736" at="30,35,31,35" concept="1" />
-      <node id="1230053187739" at="31,35,32,273" concept="5" />
-      <node id="1230053187745" at="32,273,33,23" concept="1" />
-      <node id="1230053187749" at="34,7,35,281" concept="5" />
-      <node id="1230053187749" at="35,281,36,280" concept="5" />
-      <node id="1230053187749" at="36,280,37,151" concept="1" />
+      <node id="1230053187739" at="31,35,32,326" concept="5" />
+      <node id="1230053187745" at="32,326,33,23" concept="1" />
+      <node id="1230053187749" at="34,7,35,334" concept="5" />
+      <node id="1230053187749" at="35,334,36,333" concept="5" />
+      <node id="1230053187749" at="36,333,37,151" concept="1" />
       <node id="1230053187647" at="21,0,26,0" concept="4" trace="test_InlineMethodWithReturnAtTheEnd#()V" />
       <node id="1230053187749" at="33,23,38,7" concept="0" />
       <node id="1230053187736" at="29,0,40,0" concept="4" trace="test_InlineMethodWithReturnAtTheEnd#()V" />
@@ -1569,11 +1569,11 @@
       <node id="1230053187752" at="23,114,24,123" concept="1" />
       <node id="1230053187828" at="29,66,30,35" concept="1" />
       <node id="1230053187828" at="30,35,31,35" concept="1" />
-      <node id="1230053187831" at="31,35,32,273" concept="5" />
-      <node id="1230053187837" at="32,273,33,23" concept="1" />
-      <node id="1230053187841" at="34,7,35,281" concept="5" />
-      <node id="1230053187841" at="35,281,36,280" concept="5" />
-      <node id="1230053187841" at="36,280,37,151" concept="1" />
+      <node id="1230053187831" at="31,35,32,326" concept="5" />
+      <node id="1230053187837" at="32,326,33,23" concept="1" />
+      <node id="1230053187841" at="34,7,35,334" concept="5" />
+      <node id="1230053187841" at="35,334,36,333" concept="5" />
+      <node id="1230053187841" at="36,333,37,151" concept="1" />
       <node id="1230053187752" at="21,0,26,0" concept="4" trace="test_InlineMethodWithVoidType#()V" />
       <node id="1230053187841" at="33,23,38,7" concept="0" />
       <node id="1230053187828" at="29,0,40,0" concept="4" trace="test_InlineMethodWithVoidType#()V" />
@@ -1597,11 +1597,11 @@
       <node id="1230053187844" at="23,114,24,123" concept="1" />
       <node id="1230053187884" at="29,66,30,35" concept="1" />
       <node id="1230053187884" at="30,35,31,35" concept="1" />
-      <node id="1230053187887" at="31,35,32,273" concept="5" />
-      <node id="1230053187893" at="32,273,33,23" concept="1" />
-      <node id="1230053187897" at="34,7,35,281" concept="5" />
-      <node id="1230053187897" at="35,281,36,280" concept="5" />
-      <node id="1230053187897" at="36,280,37,151" concept="1" />
+      <node id="1230053187887" at="31,35,32,326" concept="5" />
+      <node id="1230053187893" at="32,326,33,23" concept="1" />
+      <node id="1230053187897" at="34,7,35,334" concept="5" />
+      <node id="1230053187897" at="35,334,36,333" concept="5" />
+      <node id="1230053187897" at="36,333,37,151" concept="1" />
       <node id="1230053187844" at="21,0,26,0" concept="4" trace="test_InlineWithVoidTypeAndBug#()V" />
       <node id="1230053187897" at="33,23,38,7" concept="0" />
       <node id="1230053187884" at="29,0,40,0" concept="4" trace="test_InlineWithVoidTypeAndBug#()V" />
@@ -1625,11 +1625,11 @@
       <node id="1230053187900" at="23,114,24,131" concept="1" />
       <node id="1230053187901" at="29,70,30,35" concept="1" />
       <node id="1230053187901" at="30,35,31,35" concept="1" />
-      <node id="1230053187904" at="31,35,32,273" concept="5" />
-      <node id="1230053187910" at="32,273,33,23" concept="1" />
-      <node id="1230053187914" at="34,7,35,281" concept="5" />
-      <node id="1230053187914" at="35,281,36,280" concept="5" />
-      <node id="1230053187914" at="36,280,37,151" concept="1" />
+      <node id="1230053187904" at="31,35,32,326" concept="5" />
+      <node id="1230053187910" at="32,326,33,23" concept="1" />
+      <node id="1230053187914" at="34,7,35,334" concept="5" />
+      <node id="1230053187914" at="35,334,36,333" concept="5" />
+      <node id="1230053187914" at="36,333,37,151" concept="1" />
       <node id="1230053187900" at="21,0,26,0" concept="4" trace="test_InlineWithoutReturnStatement#()V" />
       <node id="1230053187914" at="33,23,38,7" concept="0" />
       <node id="1230053187901" at="29,0,40,0" concept="4" trace="test_InlineWithoutReturnStatement#()V" />
@@ -1654,11 +1654,11 @@
       <node id="1230053223867" at="29,70,30,35" concept="1" />
       <node id="1230053223867" at="30,35,31,35" concept="1" />
       <node id="1230053223867" at="31,35,32,35" concept="1" />
-      <node id="1230053223870" at="32,35,33,261" concept="5" />
-      <node id="1230053223876" at="33,261,34,23" concept="1" />
-      <node id="1230053223880" at="35,7,36,281" concept="5" />
-      <node id="1230053223880" at="36,281,37,280" concept="5" />
-      <node id="1230053223880" at="37,280,38,151" concept="1" />
+      <node id="1230053223870" at="32,35,33,314" concept="5" />
+      <node id="1230053223876" at="33,314,34,23" concept="1" />
+      <node id="1230053223880" at="35,7,36,334" concept="5" />
+      <node id="1230053223880" at="36,334,37,333" concept="5" />
+      <node id="1230053223880" at="37,333,38,151" concept="1" />
       <node id="1230053223832" at="21,0,26,0" concept="4" trace="test_InlineStaticFromAnotherClass#()V" />
       <node id="1230053223880" at="34,23,39,7" concept="0" />
       <node id="1230053223867" at="29,0,41,0" concept="4" trace="test_InlineStaticFromAnotherClass#()V" />
@@ -1682,11 +1682,11 @@
       <node id="1230053223883" at="23,114,24,99" concept="1" />
       <node id="1230053223936" at="29,54,30,35" concept="1" />
       <node id="1230053223936" at="30,35,31,35" concept="1" />
-      <node id="1230053223939" at="31,35,32,266" concept="5" />
-      <node id="1230053223945" at="32,266,33,23" concept="1" />
-      <node id="1230053223949" at="34,7,35,281" concept="5" />
-      <node id="1230053223949" at="35,281,36,280" concept="5" />
-      <node id="1230053223949" at="36,280,37,151" concept="1" />
+      <node id="1230053223939" at="31,35,32,319" concept="5" />
+      <node id="1230053223945" at="32,319,33,23" concept="1" />
+      <node id="1230053223949" at="34,7,35,334" concept="5" />
+      <node id="1230053223949" at="35,334,36,333" concept="5" />
+      <node id="1230053223949" at="36,333,37,151" concept="1" />
       <node id="1230053223883" at="21,0,26,0" concept="4" trace="test_StaticMethod#()V" />
       <node id="1230053223949" at="33,23,38,7" concept="0" />
       <node id="1230053223936" at="29,0,40,0" concept="4" trace="test_StaticMethod#()V" />
@@ -1712,18 +1712,18 @@
       <node id="1230053266365" at="30,114,31,109" concept="1" />
       <node id="1230053266388" at="36,51,37,35" concept="1" />
       <node id="1230053266388" at="37,35,38,35" concept="1" />
-      <node id="1230053266391" at="38,35,39,283" concept="5" />
-      <node id="1230053266397" at="39,283,40,26" concept="1" />
-      <node id="1230053266401" at="41,7,42,285" concept="5" />
-      <node id="1230053266401" at="42,285,43,284" concept="5" />
-      <node id="1230053266401" at="43,284,44,151" concept="1" />
+      <node id="1230053266391" at="38,35,39,336" concept="5" />
+      <node id="1230053266397" at="39,336,40,26" concept="1" />
+      <node id="1230053266401" at="41,7,42,338" concept="5" />
+      <node id="1230053266401" at="42,338,43,337" concept="5" />
+      <node id="1230053266401" at="43,337,44,151" concept="1" />
       <node id="1230053266404" at="47,51,48,35" concept="1" />
       <node id="1230053266404" at="48,35,49,35" concept="1" />
-      <node id="1230053266407" at="49,35,50,275" concept="5" />
-      <node id="1230053266413" at="50,275,51,26" concept="1" />
-      <node id="1230053266417" at="52,7,53,285" concept="5" />
-      <node id="1230053266417" at="53,285,54,284" concept="5" />
-      <node id="1230053266417" at="54,284,55,151" concept="1" />
+      <node id="1230053266407" at="49,35,50,328" concept="5" />
+      <node id="1230053266413" at="50,328,51,26" concept="1" />
+      <node id="1230053266417" at="52,7,53,338" concept="5" />
+      <node id="1230053266417" at="53,338,54,337" concept="5" />
+      <node id="1230053266417" at="54,337,55,151" concept="1" />
       <node id="1230053266365" at="23,0,28,0" concept="4" trace="test_deinition#()V" />
       <node id="1230053266365" at="28,0,33,0" concept="4" trace="test_reference#()V" />
       <node id="1230053266401" at="40,26,45,7" concept="0" />
@@ -1760,11 +1760,11 @@
       <node id="1230053266420" at="23,114,24,183" concept="1" />
       <node id="1230053266421" at="29,96,30,35" concept="1" />
       <node id="1230053266421" at="30,35,31,35" concept="1" />
-      <node id="1230053266424" at="31,35,32,280" concept="5" />
-      <node id="1230053266429" at="32,280,33,26" concept="1" />
-      <node id="1230053266433" at="34,7,35,281" concept="5" />
-      <node id="1230053266433" at="35,281,36,280" concept="5" />
-      <node id="1230053266433" at="36,280,37,151" concept="1" />
+      <node id="1230053266424" at="31,35,32,333" concept="5" />
+      <node id="1230053266429" at="32,333,33,26" concept="1" />
+      <node id="1230053266433" at="34,7,35,334" concept="5" />
+      <node id="1230053266433" at="35,334,36,333" concept="5" />
+      <node id="1230053266433" at="36,333,37,151" concept="1" />
       <node id="1230053266420" at="21,0,26,0" concept="4" trace="test_InlineLocalVariableReferenceWithoutDeclarationDeleting#()V" />
       <node id="1230053266433" at="33,26,38,7" concept="0" />
       <node id="1230053266421" at="29,0,40,0" concept="4" trace="test_InlineLocalVariableReferenceWithoutDeclarationDeleting#()V" />
@@ -1788,11 +1788,11 @@
       <node id="1230053266477" at="23,114,24,131" concept="1" />
       <node id="1230053266511" at="29,70,30,35" concept="1" />
       <node id="1230053266511" at="30,35,31,35" concept="1" />
-      <node id="1230053266514" at="31,35,32,280" concept="5" />
-      <node id="1230053266519" at="32,280,33,26" concept="1" />
-      <node id="1230053266523" at="34,7,35,281" concept="5" />
-      <node id="1230053266523" at="35,281,36,280" concept="5" />
-      <node id="1230053266523" at="36,280,37,151" concept="1" />
+      <node id="1230053266514" at="31,35,32,333" concept="5" />
+      <node id="1230053266519" at="32,333,33,26" concept="1" />
+      <node id="1230053266523" at="34,7,35,334" concept="5" />
+      <node id="1230053266523" at="35,334,36,333" concept="5" />
+      <node id="1230053266523" at="36,333,37,151" concept="1" />
       <node id="1230053266477" at="21,0,26,0" concept="4" trace="test_InlineLocalVariableReferense#()V" />
       <node id="1230053266523" at="33,26,38,7" concept="0" />
       <node id="1230053266511" at="29,0,40,0" concept="4" trace="test_InlineLocalVariableReferense#()V" />
@@ -1816,11 +1816,11 @@
       <node id="1230053266526" at="23,114,24,133" concept="1" />
       <node id="1230053266527" at="29,71,30,35" concept="1" />
       <node id="1230053266527" at="30,35,31,35" concept="1" />
-      <node id="1230053266530" at="31,35,32,280" concept="5" />
-      <node id="1230053266535" at="32,280,33,26" concept="1" />
-      <node id="1230053266539" at="34,7,35,281" concept="5" />
-      <node id="1230053266539" at="35,281,36,280" concept="5" />
-      <node id="1230053266539" at="36,280,37,151" concept="1" />
+      <node id="1230053266530" at="31,35,32,333" concept="5" />
+      <node id="1230053266535" at="32,333,33,26" concept="1" />
+      <node id="1230053266539" at="34,7,35,334" concept="5" />
+      <node id="1230053266539" at="35,334,36,333" concept="5" />
+      <node id="1230053266539" at="36,333,37,151" concept="1" />
       <node id="1230053266526" at="21,0,26,0" concept="4" trace="test_InlineReferenceWithAssignment#()V" />
       <node id="1230053266539" at="33,26,38,7" concept="0" />
       <node id="1230053266527" at="29,0,40,0" concept="4" trace="test_InlineReferenceWithAssignment#()V" />
@@ -1844,11 +1844,11 @@
       <node id="1230053266582" at="23,114,24,139" concept="1" />
       <node id="1230053266623" at="29,74,30,35" concept="1" />
       <node id="1230053266623" at="30,35,31,35" concept="1" />
-      <node id="1230053266626" at="31,35,32,287" concept="5" />
-      <node id="1230053266631" at="32,287,33,26" concept="1" />
-      <node id="1230053266635" at="34,7,35,281" concept="5" />
-      <node id="1230053266635" at="35,281,36,280" concept="5" />
-      <node id="1230053266635" at="36,280,37,151" concept="1" />
+      <node id="1230053266626" at="31,35,32,340" concept="5" />
+      <node id="1230053266631" at="32,340,33,26" concept="1" />
+      <node id="1230053266635" at="34,7,35,334" concept="5" />
+      <node id="1230053266635" at="35,334,36,333" concept="5" />
+      <node id="1230053266635" at="36,333,37,151" concept="1" />
       <node id="1230053266582" at="21,0,26,0" concept="4" trace="test_inlineWithoutDeclarationDeletion#()V" />
       <node id="1230053266635" at="33,26,38,7" concept="0" />
       <node id="1230053266623" at="29,0,40,0" concept="4" trace="test_inlineWithoutDeclarationDeletion#()V" />
@@ -1872,11 +1872,11 @@
       <node id="1230053266638" at="23,114,24,115" concept="1" />
       <node id="1230053266639" at="29,62,30,35" concept="1" />
       <node id="1230053266639" at="30,35,31,35" concept="1" />
-      <node id="1230053266642" at="31,35,32,287" concept="5" />
-      <node id="1230053266647" at="32,287,33,26" concept="1" />
-      <node id="1230053266651" at="34,7,35,281" concept="5" />
-      <node id="1230053266651" at="35,281,36,280" concept="5" />
-      <node id="1230053266651" at="36,280,37,151" concept="1" />
+      <node id="1230053266642" at="31,35,32,340" concept="5" />
+      <node id="1230053266647" at="32,340,33,26" concept="1" />
+      <node id="1230053266651" at="34,7,35,334" concept="5" />
+      <node id="1230053266651" at="35,334,36,333" concept="5" />
+      <node id="1230053266651" at="36,333,37,151" concept="1" />
       <node id="1230053266638" at="21,0,26,0" concept="4" trace="test_simpleInlineVariable#()V" />
       <node id="1230053266651" at="33,26,38,7" concept="0" />
       <node id="1230053266639" at="29,0,40,0" concept="4" trace="test_simpleInlineVariable#()V" />
@@ -1902,11 +1902,11 @@
       <node id="1230053302506" at="30,35,31,35" concept="1" />
       <node id="1230053302506" at="31,35,32,35" concept="1" />
       <node id="1230053302506" at="32,35,33,35" concept="1" />
-      <node id="1230053302509" at="33,35,34,469" concept="5" />
-      <node id="1230053302516" at="34,469,35,26" concept="1" />
-      <node id="1230053302520" at="36,7,37,474" concept="5" />
-      <node id="1230053302520" at="37,474,38,473" concept="5" />
-      <node id="1230053302520" at="38,473,39,151" concept="1" />
+      <node id="1230053302509" at="33,35,34,575" concept="5" />
+      <node id="1230053302516" at="34,575,35,26" concept="1" />
+      <node id="1230053302520" at="36,7,37,580" concept="5" />
+      <node id="1230053302520" at="37,580,38,579" concept="5" />
+      <node id="1230053302520" at="38,579,39,151" concept="1" />
       <node id="1230053302505" at="21,0,26,0" concept="4" trace="test_MoveMethodWithFields#()V" />
       <node id="1230053302520" at="35,26,40,7" concept="0" />
       <node id="1230053302506" at="29,0,42,0" concept="4" trace="test_MoveMethodWithFields#()V" />
@@ -1932,11 +1932,11 @@
       <node id="1230053302565" at="30,35,31,35" concept="1" />
       <node id="1230053302565" at="31,35,32,35" concept="1" />
       <node id="1230053302565" at="32,35,33,35" concept="1" />
-      <node id="1230053302568" at="33,35,34,469" concept="5" />
-      <node id="1230053302575" at="34,469,35,26" concept="1" />
-      <node id="1230053302579" at="36,7,37,474" concept="5" />
-      <node id="1230053302579" at="37,474,38,473" concept="5" />
-      <node id="1230053302579" at="38,473,39,151" concept="1" />
+      <node id="1230053302568" at="33,35,34,575" concept="5" />
+      <node id="1230053302575" at="34,575,35,26" concept="1" />
+      <node id="1230053302579" at="36,7,37,580" concept="5" />
+      <node id="1230053302579" at="37,580,38,579" concept="5" />
+      <node id="1230053302579" at="38,579,39,151" concept="1" />
       <node id="1230053302564" at="21,0,26,0" concept="4" trace="test_MoveMethodWithMethods#()V" />
       <node id="1230053302579" at="35,26,40,7" concept="0" />
       <node id="1230053302565" at="29,0,42,0" concept="4" trace="test_MoveMethodWithMethods#()V" />
@@ -1962,14 +1962,14 @@
       <node id="1230053302626" at="30,35,31,35" concept="1" />
       <node id="1230053302626" at="31,35,32,35" concept="1" />
       <node id="1230053302626" at="32,35,33,35" concept="1" />
-      <node id="1230053302629" at="33,35,34,469" concept="5" />
-      <node id="1230053302644" at="34,469,35,26" concept="1" />
-      <node id="6745858777349326404" at="35,26,36,226" concept="1" />
-      <node id="1230053302648" at="37,7,38,474" concept="5" />
-      <node id="1230053302648" at="38,474,39,473" concept="5" />
-      <node id="1230053302648" at="39,473,40,151" concept="1" />
+      <node id="1230053302629" at="33,35,34,575" concept="5" />
+      <node id="1230053302644" at="34,575,35,26" concept="1" />
+      <node id="6745858777349326404" at="35,26,36,279" concept="1" />
+      <node id="1230053302648" at="37,7,38,580" concept="5" />
+      <node id="1230053302648" at="38,580,39,579" concept="5" />
+      <node id="1230053302648" at="39,579,40,151" concept="1" />
       <node id="1230053302625" at="21,0,26,0" concept="4" trace="test_check#()V" />
-      <node id="1230053302648" at="36,226,41,7" concept="0" />
+      <node id="1230053302648" at="36,279,41,7" concept="0" />
       <node id="1230053302626" at="29,0,43,0" concept="4" trace="test_check#()V" />
       <scope id="1230053302625" at="22,45,24,101" />
       <scope id="1230053302648" at="37,7,40,151">
@@ -1993,11 +1993,11 @@
       <node id="1230053302692" at="30,35,31,35" concept="1" />
       <node id="1230053302692" at="31,35,32,35" concept="1" />
       <node id="1230053302692" at="32,35,33,35" concept="1" />
-      <node id="1230053302695" at="33,35,34,469" concept="5" />
-      <node id="1230053302702" at="34,469,35,26" concept="1" />
-      <node id="1230053302706" at="36,7,37,474" concept="5" />
-      <node id="1230053302706" at="37,474,38,473" concept="5" />
-      <node id="1230053302706" at="38,473,39,151" concept="1" />
+      <node id="1230053302695" at="33,35,34,575" concept="5" />
+      <node id="1230053302702" at="34,575,35,26" concept="1" />
+      <node id="1230053302706" at="36,7,37,580" concept="5" />
+      <node id="1230053302706" at="37,580,38,579" concept="5" />
+      <node id="1230053302706" at="38,579,39,151" concept="1" />
       <node id="1230053302691" at="21,0,26,0" concept="4" trace="test_check#()V" />
       <node id="1230053302706" at="35,26,40,7" concept="0" />
       <node id="1230053302692" at="29,0,42,0" concept="4" trace="test_check#()V" />
@@ -2021,11 +2021,11 @@
       <node id="1230057984816" at="23,114,24,109" concept="1" />
       <node id="1230057984846" at="29,58,30,35" concept="1" />
       <node id="1230057984846" at="30,35,31,35" concept="1" />
-      <node id="1230057984849" at="31,35,32,294" concept="5" />
-      <node id="1230057984855" at="32,294,33,23" concept="1" />
-      <node id="1230057984859" at="34,7,35,280" concept="5" />
-      <node id="1230057984859" at="35,280,36,279" concept="5" />
-      <node id="1230057984859" at="36,279,37,151" concept="1" />
+      <node id="1230057984849" at="31,35,32,347" concept="5" />
+      <node id="1230057984855" at="32,347,33,23" concept="1" />
+      <node id="1230057984859" at="34,7,35,333" concept="5" />
+      <node id="1230057984859" at="35,333,36,332" concept="5" />
+      <node id="1230057984859" at="36,332,37,151" concept="1" />
       <node id="1230057984816" at="21,0,26,0" concept="4" trace="test_InlineMethodTest#()V" />
       <node id="1230057984859" at="33,23,38,7" concept="0" />
       <node id="1230057984846" at="29,0,40,0" concept="4" trace="test_InlineMethodTest#()V" />
@@ -2049,15 +2049,15 @@
       <node id="1300615610528534002" at="26,114,27,149" concept="1" />
       <node id="1300615610528534093" at="32,81,33,41" concept="1" />
       <node id="1300615610528534093" at="33,41,34,41" concept="1" />
-      <node id="1300615610528534096" at="34,41,35,341" concept="5" />
-      <node id="1300615610528534105" at="35,341,36,28" concept="1" />
+      <node id="1300615610528534096" at="34,41,35,394" concept="5" />
+      <node id="1300615610528534105" at="35,394,36,28" concept="1" />
       <node id="1300615610528534110" at="36,28,37,84" concept="5" />
       <node id="1300615610528534115" at="37,84,38,35" concept="5" />
       <node id="1300615610528534127" at="39,73,40,140" concept="5" />
       <node id="1300615610528534135" at="40,140,41,42" concept="1" />
-      <node id="1300615610528534141" at="43,7,44,287" concept="5" />
-      <node id="1300615610528534141" at="44,287,45,286" concept="5" />
-      <node id="1300615610528534141" at="45,286,46,151" concept="1" />
+      <node id="1300615610528534141" at="43,7,44,340" concept="5" />
+      <node id="1300615610528534141" at="44,340,45,339" concept="5" />
+      <node id="1300615610528534141" at="45,339,46,151" concept="1" />
       <node id="1300615610528534121" at="38,35,42,7" concept="2" />
       <node id="1300615610528534002" at="24,0,29,0" concept="4" trace="test_FindForMethodWithIVariableLikeNodesTest#()V" />
       <node id="1300615610528534141" at="42,7,47,7" concept="0" />
@@ -2090,15 +2090,15 @@
       <node id="1998477585418803771" at="26,114,27,139" concept="1" />
       <node id="1998477585418805710" at="32,76,33,41" concept="1" />
       <node id="1998477585418805710" at="33,41,34,41" concept="1" />
-      <node id="1998477585418805713" at="34,41,35,341" concept="5" />
-      <node id="1998477585418805722" at="35,341,36,28" concept="1" />
+      <node id="1998477585418805713" at="34,41,35,394" concept="5" />
+      <node id="1998477585418805722" at="35,394,36,28" concept="1" />
       <node id="1998477585418805727" at="36,28,37,84" concept="5" />
       <node id="1998477585418805732" at="37,84,38,35" concept="5" />
       <node id="8155843501977582851" at="39,73,40,140" concept="5" />
       <node id="8155843501977582860" at="40,140,41,42" concept="1" />
-      <node id="1998477585418805750" at="43,7,44,287" concept="5" />
-      <node id="1998477585418805750" at="44,287,45,286" concept="5" />
-      <node id="1998477585418805750" at="45,286,46,151" concept="1" />
+      <node id="1998477585418805750" at="43,7,44,340" concept="5" />
+      <node id="1998477585418805750" at="44,340,45,339" concept="5" />
+      <node id="1998477585418805750" at="45,339,46,151" concept="1" />
       <node id="1998477585418805738" at="38,35,42,7" concept="2" />
       <node id="1998477585418803771" at="24,0,29,0" concept="4" trace="test_SimpleFindForExtractWithReturnTest#()V" />
       <node id="1998477585418805750" at="42,7,47,7" concept="0" />
@@ -2131,13 +2131,13 @@
       <node id="2004738378939035560" at="25,114,26,147" concept="1" />
       <node id="2004738378939038667" at="31,80,32,41" concept="1" />
       <node id="2004738378939038667" at="32,41,33,41" concept="1" />
-      <node id="2004738378939038794" at="33,41,34,1009" concept="5" />
-      <node id="2004738378939038819" at="34,1009,35,28" concept="1" />
+      <node id="2004738378939038794" at="33,41,34,1221" concept="5" />
+      <node id="2004738378939038819" at="34,1221,35,28" concept="1" />
       <node id="2004738378939038824" at="35,28,36,84" concept="5" />
       <node id="2004738378939038833" at="36,84,37,23" concept="1" />
-      <node id="2004738378939038837" at="38,7,39,287" concept="5" />
-      <node id="2004738378939038837" at="39,287,40,286" concept="5" />
-      <node id="2004738378939038837" at="40,286,41,151" concept="1" />
+      <node id="2004738378939038837" at="38,7,39,340" concept="5" />
+      <node id="2004738378939038837" at="39,340,40,339" concept="5" />
+      <node id="2004738378939038837" at="40,339,41,151" concept="1" />
       <node id="2004738378939038818" at="42,7,43,0" concept="7" />
       <node id="2004738378939038817" at="43,0,44,0" concept="7" />
       <node id="2004738378939035560" at="23,0,28,0" concept="4" trace="test_ExtractMethodWithUnusedAssignmentsTest#()V" />
@@ -2165,14 +2165,14 @@
       <node id="2163048091639855068" at="30,81,31,41" concept="1" />
       <node id="2163048091639855068" at="31,41,32,41" concept="1" />
       <node id="2163048091639855071" at="32,41,33,84" concept="5" />
-      <node id="2163048091639855076" at="33,84,34,229" concept="1" />
-      <node id="2163048091639855082" at="34,229,35,31" concept="1" />
+      <node id="2163048091639855076" at="33,84,34,282" concept="1" />
+      <node id="2163048091639855082" at="34,282,35,31" concept="1" />
       <node id="2163048091639855087" at="35,31,36,40" concept="1" />
       <node id="2163048091639857381" at="36,40,37,61" concept="1" />
       <node id="2163048091639855092" at="37,61,38,34" concept="1" />
-      <node id="2163048091639855096" at="39,7,40,287" concept="5" />
-      <node id="2163048091639855096" at="40,287,41,286" concept="5" />
-      <node id="2163048091639855096" at="41,286,42,151" concept="1" />
+      <node id="2163048091639855096" at="39,7,40,340" concept="5" />
+      <node id="2163048091639855096" at="40,340,41,339" concept="5" />
+      <node id="2163048091639855096" at="41,339,42,151" concept="1" />
       <node id="2163048091639854868" at="22,0,27,0" concept="4" trace="test_IntroduceConstantFromAnonimousClassTest#()V" />
       <node id="2163048091639855096" at="38,34,43,7" concept="0" />
       <node id="2163048091639855068" at="30,0,45,0" concept="4" trace="test_IntroduceConstantFromAnonimousClassTest#()V" />
@@ -2197,12 +2197,12 @@
       <node id="2230400082817279740" at="29,59,30,41" concept="1" />
       <node id="2230400082817279740" at="30,41,31,41" concept="1" />
       <node id="2230400082817279740" at="31,41,32,41" concept="1" />
-      <node id="637963823611492209" at="32,41,33,264" concept="1" />
-      <node id="637963823611492216" at="34,7,35,287" concept="5" />
-      <node id="637963823611492216" at="35,287,36,286" concept="5" />
-      <node id="637963823611492216" at="36,286,37,151" concept="1" />
+      <node id="637963823611492209" at="32,41,33,317" concept="1" />
+      <node id="637963823611492216" at="34,7,35,340" concept="5" />
+      <node id="637963823611492216" at="35,340,36,339" concept="5" />
+      <node id="637963823611492216" at="36,339,37,151" concept="1" />
       <node id="2230400082817266597" at="21,0,26,0" concept="4" trace="test_TypeVariablesTest#()V" />
-      <node id="637963823611492216" at="33,264,38,7" concept="0" />
+      <node id="637963823611492216" at="33,317,38,7" concept="0" />
       <node id="2230400082817279740" at="29,0,40,0" concept="4" trace="test_TypeVariablesTest#()V" />
       <scope id="2230400082817266597" at="22,57,24,129" />
       <scope id="637963823611492216" at="34,7,37,151">
@@ -2223,12 +2223,12 @@
       <node id="2230400082818041866" at="29,54,30,41" concept="1" />
       <node id="2230400082818041866" at="30,41,31,41" concept="1" />
       <node id="2230400082818041866" at="31,41,32,41" concept="1" />
-      <node id="637963823611492185" at="32,41,33,266" concept="1" />
-      <node id="637963823611492192" at="34,7,35,287" concept="5" />
-      <node id="637963823611492192" at="35,287,36,286" concept="5" />
-      <node id="637963823611492192" at="36,286,37,151" concept="1" />
+      <node id="637963823611492185" at="32,41,33,319" concept="1" />
+      <node id="637963823611492192" at="34,7,35,340" concept="5" />
+      <node id="637963823611492192" at="35,340,36,339" concept="5" />
+      <node id="637963823611492192" at="36,339,37,151" concept="1" />
       <node id="2230400082818031588" at="21,0,26,0" concept="4" trace="test_ToStaticTest#()V" />
-      <node id="637963823611492192" at="33,266,38,7" concept="0" />
+      <node id="637963823611492192" at="33,319,38,7" concept="0" />
       <node id="2230400082818041866" at="29,0,40,0" concept="4" trace="test_ToStaticTest#()V" />
       <scope id="2230400082818031588" at="22,52,24,115" />
       <scope id="637963823611492192" at="34,7,37,151">
@@ -2250,10 +2250,10 @@
       <node id="3014415391767789218" at="27,41,28,41" concept="1" />
       <node id="3014415391767789218" at="28,41,29,41" concept="1" />
       <node id="3014415391767789218" at="29,41,30,41" concept="1" />
-      <node id="3014415391767789223" at="30,41,31,489" concept="5" />
-      <node id="3014415391767834673" at="31,489,32,57" concept="5" />
-      <node id="3014415391767834683" at="32,57,33,272" concept="1" />
-      <node id="3014415391767834947" at="33,272,34,37" concept="1" />
+      <node id="3014415391767789223" at="30,41,31,595" concept="5" />
+      <node id="3014415391767834673" at="31,595,32,57" concept="5" />
+      <node id="3014415391767834683" at="32,57,33,325" concept="1" />
+      <node id="3014415391767834947" at="33,325,34,37" concept="1" />
       <node id="3014415391767804985" at="34,37,35,34" concept="1" />
       <node id="3014415391767789119" at="18,0,23,0" concept="4" trace="test_SimpleMoveStaticMethod#()V" />
       <node id="3014415391767789218" at="26,0,37,0" concept="4" trace="test_SimpleMoveStaticMethod#()V" />
@@ -2274,11 +2274,11 @@
       <node id="30987049746108520" at="23,114,24,133" concept="1" />
       <node id="30987049746108578" at="29,70,30,39" concept="1" />
       <node id="30987049746108578" at="30,39,31,39" concept="1" />
-      <node id="30987049746108581" at="31,39,32,277" concept="5" />
-      <node id="30987049746108587" at="32,277,33,23" concept="1" />
-      <node id="30987049746108591" at="34,7,35,285" concept="5" />
-      <node id="30987049746108591" at="35,285,36,284" concept="5" />
-      <node id="30987049746108591" at="36,284,37,151" concept="1" />
+      <node id="30987049746108581" at="31,39,32,330" concept="5" />
+      <node id="30987049746108587" at="32,330,33,23" concept="1" />
+      <node id="30987049746108591" at="34,7,35,338" concept="5" />
+      <node id="30987049746108591" at="35,338,36,337" concept="5" />
+      <node id="30987049746108591" at="36,337,37,151" concept="1" />
       <node id="30987049746108520" at="21,0,26,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
       <node id="30987049746108591" at="33,23,38,7" concept="0" />
       <node id="30987049746108578" at="29,0,40,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
@@ -2302,11 +2302,11 @@
       <node id="30987049746113412" at="23,114,24,125" concept="1" />
       <node id="30987049746113470" at="29,70,30,39" concept="1" />
       <node id="30987049746113470" at="30,39,31,39" concept="1" />
-      <node id="30987049746113473" at="31,39,32,270" concept="5" />
-      <node id="30987049746113479" at="32,270,33,23" concept="1" />
-      <node id="30987049746113483" at="34,7,35,285" concept="5" />
-      <node id="30987049746113483" at="35,285,36,284" concept="5" />
-      <node id="30987049746113483" at="36,284,37,151" concept="1" />
+      <node id="30987049746113473" at="31,39,32,323" concept="5" />
+      <node id="30987049746113479" at="32,323,33,23" concept="1" />
+      <node id="30987049746113483" at="34,7,35,338" concept="5" />
+      <node id="30987049746113483" at="35,338,36,337" concept="5" />
+      <node id="30987049746113483" at="36,337,37,151" concept="1" />
       <node id="30987049746113412" at="21,0,26,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
       <node id="30987049746113483" at="33,23,38,7" concept="0" />
       <node id="30987049746113470" at="29,0,40,0" concept="4" trace="test_DeclarationVariablesInMethod#()V" />
@@ -2332,13 +2332,13 @@
       <node id="3109730807963545055" at="30,41,31,41" concept="1" />
       <node id="3109730807963545055" at="31,41,32,41" concept="1" />
       <node id="3109730807963545058" at="32,41,33,94" concept="5" />
-      <node id="3109730807963545063" at="33,94,34,237" concept="1" />
-      <node id="3109730807963545069" at="34,237,35,31" concept="1" />
+      <node id="3109730807963545063" at="33,94,34,290" concept="1" />
+      <node id="3109730807963545069" at="34,290,35,31" concept="1" />
       <node id="2163048091639818889" at="35,31,36,40" concept="1" />
       <node id="3109730807963644925" at="36,40,37,34" concept="1" />
-      <node id="3109730807963545092" at="38,7,39,287" concept="5" />
-      <node id="3109730807963545092" at="39,287,40,286" concept="5" />
-      <node id="3109730807963545092" at="40,286,41,151" concept="1" />
+      <node id="3109730807963545092" at="38,7,39,340" concept="5" />
+      <node id="3109730807963545092" at="39,340,40,339" concept="5" />
+      <node id="3109730807963545092" at="40,339,41,151" concept="1" />
       <node id="3109730807963541425" at="21,0,26,0" concept="4" trace="test_IntroduceVariableFromAnonimousClassTest#()V" />
       <node id="3109730807963545092" at="37,34,42,7" concept="0" />
       <node id="3109730807963545055" at="29,0,44,0" concept="4" trace="test_IntroduceVariableFromAnonimousClassTest#()V" />
@@ -2362,12 +2362,12 @@
       <node id="3109730807963748196" at="23,114,24,126" concept="1" />
       <node id="3109730807963748292" at="29,59,30,41" concept="1" />
       <node id="3109730807963748292" at="30,41,31,41" concept="1" />
-      <node id="3109730807963748295" at="31,41,32,269" concept="1" />
-      <node id="3109730807963748302" at="33,7,34,287" concept="5" />
-      <node id="3109730807963748302" at="34,287,35,286" concept="5" />
-      <node id="3109730807963748302" at="35,286,36,151" concept="1" />
+      <node id="3109730807963748295" at="31,41,32,322" concept="1" />
+      <node id="3109730807963748302" at="33,7,34,340" concept="5" />
+      <node id="3109730807963748302" at="34,340,35,339" concept="5" />
+      <node id="3109730807963748302" at="35,339,36,151" concept="1" />
       <node id="3109730807963748196" at="21,0,26,0" concept="4" trace="test_AbstractClassTest#()V" />
-      <node id="3109730807963748302" at="32,269,37,7" concept="0" />
+      <node id="3109730807963748302" at="32,322,37,7" concept="0" />
       <node id="3109730807963748292" at="29,0,39,0" concept="4" trace="test_AbstractClassTest#()V" />
       <scope id="3109730807963748196" at="22,57,24,126" />
       <scope id="3109730807963748302" at="33,7,36,151">
@@ -2388,12 +2388,12 @@
       <node id="3145818413496514603" at="29,64,30,41" concept="1" />
       <node id="3145818413496514603" at="30,41,31,41" concept="1" />
       <node id="3145818413496514603" at="31,41,32,41" concept="1" />
-      <node id="637963823611492195" at="32,41,33,265" concept="1" />
-      <node id="637963823611492202" at="34,7,35,287" concept="5" />
-      <node id="637963823611492202" at="35,287,36,286" concept="5" />
-      <node id="637963823611492202" at="36,286,37,151" concept="1" />
+      <node id="637963823611492195" at="32,41,33,318" concept="1" />
+      <node id="637963823611492202" at="34,7,35,340" concept="5" />
+      <node id="637963823611492202" at="35,340,36,339" concept="5" />
+      <node id="637963823611492202" at="36,339,37,151" concept="1" />
       <node id="3145818413496050321" at="21,0,26,0" concept="4" trace="test_WithLocalVariablesTest#()V" />
-      <node id="637963823611492202" at="33,265,38,7" concept="0" />
+      <node id="637963823611492202" at="33,318,38,7" concept="0" />
       <node id="3145818413496514603" at="29,0,40,0" concept="4" trace="test_WithLocalVariablesTest#()V" />
       <scope id="3145818413496050321" at="22,62,24,135" />
       <scope id="637963823611492202" at="34,7,37,151">
@@ -2414,12 +2414,12 @@
       <node id="3145818413497708745" at="29,74,30,41" concept="1" />
       <node id="3145818413497708745" at="30,41,31,41" concept="1" />
       <node id="3145818413497708745" at="31,41,32,41" concept="1" />
-      <node id="637963823611492165" at="32,41,33,265" concept="1" />
-      <node id="637963823611492172" at="34,7,35,287" concept="5" />
-      <node id="637963823611492172" at="35,287,36,286" concept="5" />
-      <node id="637963823611492172" at="36,286,37,151" concept="1" />
+      <node id="637963823611492165" at="32,41,33,318" concept="1" />
+      <node id="637963823611492172" at="34,7,35,340" concept="5" />
+      <node id="637963823611492172" at="35,340,36,339" concept="5" />
+      <node id="637963823611492172" at="36,339,37,151" concept="1" />
       <node id="3145818413497245718" at="21,0,26,0" concept="4" trace="test_AbstractClassWithConstructorTest#()V" />
-      <node id="637963823611492172" at="33,265,38,7" concept="0" />
+      <node id="637963823611492172" at="33,318,38,7" concept="0" />
       <node id="3145818413497708745" at="29,0,40,0" concept="4" trace="test_AbstractClassWithConstructorTest#()V" />
       <scope id="3145818413497245718" at="22,72,24,155" />
       <scope id="637963823611492172" at="34,7,37,151">
@@ -2439,11 +2439,11 @@
       <node id="3269652460099718077" at="23,114,24,116" concept="1" />
       <node id="3269652460099718078" at="29,67,30,41" concept="1" />
       <node id="3269652460099718078" at="30,41,31,41" concept="1" />
-      <node id="3269652460099718081" at="31,41,32,293" concept="5" />
-      <node id="3269652460099718086" at="32,293,33,26" concept="1" />
-      <node id="3269652460099718090" at="34,7,35,287" concept="5" />
-      <node id="3269652460099718090" at="35,287,36,286" concept="5" />
-      <node id="3269652460099718090" at="36,286,37,151" concept="1" />
+      <node id="3269652460099718081" at="31,41,32,346" concept="5" />
+      <node id="3269652460099718086" at="32,346,33,26" concept="1" />
+      <node id="3269652460099718090" at="34,7,35,340" concept="5" />
+      <node id="3269652460099718090" at="35,340,36,339" concept="5" />
+      <node id="3269652460099718090" at="36,339,37,151" concept="1" />
       <node id="3269652460099718077" at="21,0,26,0" concept="4" trace="test_InlineAssingmentInClosure#()V" />
       <node id="3269652460099718090" at="33,26,38,7" concept="0" />
       <node id="3269652460099718078" at="29,0,40,0" concept="4" trace="test_InlineAssingmentInClosure#()V" />
@@ -2468,13 +2468,13 @@
       <node id="418758558327028827" at="31,68,32,40" concept="1" />
       <node id="418758558327028827" at="32,40,33,40" concept="1" />
       <node id="418758558327028827" at="33,40,34,40" concept="1" />
-      <node id="418758558327028833" at="34,40,35,298" concept="5" />
-      <node id="418758558327028841" at="35,298,36,185" concept="1" />
-      <node id="418758558327047504" at="36,185,37,305" concept="5" />
-      <node id="418758558327166210" at="37,305,38,26" concept="1" />
-      <node id="418758558327166218" at="39,7,40,286" concept="5" />
-      <node id="418758558327166218" at="40,286,41,285" concept="5" />
-      <node id="418758558327166218" at="41,285,42,151" concept="1" />
+      <node id="418758558327028833" at="34,40,35,351" concept="5" />
+      <node id="418758558327028841" at="35,351,36,185" concept="1" />
+      <node id="418758558327047504" at="36,185,37,358" concept="5" />
+      <node id="418758558327166210" at="37,358,38,26" concept="1" />
+      <node id="418758558327166218" at="39,7,40,339" concept="5" />
+      <node id="418758558327166218" at="40,339,41,338" concept="5" />
+      <node id="418758558327166218" at="41,338,42,151" concept="1" />
       <node id="3925159399320841060" at="23,0,28,0" concept="4" trace="test_ChangeSigantureOfInterface#()V" />
       <node id="418758558327166218" at="38,26,43,7" concept="0" />
       <node id="418758558327028827" at="31,0,45,0" concept="4" trace="test_ChangeSigantureOfInterface#()V" />
@@ -2500,13 +2500,13 @@
       <node id="4038232163186978816" at="29,69,30,41" concept="1" />
       <node id="4038232163186978816" at="30,41,31,41" concept="1" />
       <node id="4038232163186978819" at="31,41,32,94" concept="5" />
-      <node id="4038232163186978824" at="32,94,33,230" concept="1" />
-      <node id="4038232163186978830" at="33,230,34,31" concept="1" />
+      <node id="4038232163186978824" at="32,94,33,283" concept="1" />
+      <node id="4038232163186978830" at="33,283,34,31" concept="1" />
       <node id="4038232163186979406" at="34,31,35,35" concept="1" />
       <node id="4038232163186978840" at="35,35,36,34" concept="1" />
-      <node id="4038232163186978844" at="37,7,38,287" concept="5" />
-      <node id="4038232163186978844" at="38,287,39,286" concept="5" />
-      <node id="4038232163186978844" at="39,286,40,151" concept="1" />
+      <node id="4038232163186978844" at="37,7,38,340" concept="5" />
+      <node id="4038232163186978844" at="38,340,39,339" concept="5" />
+      <node id="4038232163186978844" at="39,339,40,151" concept="1" />
       <node id="4038232163186978773" at="21,0,26,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
       <node id="4038232163186978844" at="36,34,41,7" concept="0" />
       <node id="4038232163186978816" at="29,0,43,0" concept="4" trace="test_IntroduceFinalLocalVariable#()V" />
@@ -2531,15 +2531,15 @@
       <node id="4038232163187008791" at="31,61,32,41" concept="1" />
       <node id="4038232163187008791" at="32,41,33,41" concept="1" />
       <node id="4038232163187008794" at="33,41,34,78" concept="5" />
-      <node id="4038232163187008799" at="34,78,35,230" concept="1" />
-      <node id="4038232163187008805" at="35,230,36,31" concept="1" />
+      <node id="4038232163187008799" at="34,78,35,283" concept="1" />
+      <node id="4038232163187008805" at="35,283,36,31" concept="1" />
       <node id="4038232163187008810" at="36,31,37,35" concept="1" />
       <node id="4038232163187009385" at="37,35,38,78" concept="1" />
       <node id="4038232163187038093" at="38,78,39,62" concept="1" />
       <node id="4038232163187008815" at="39,62,40,34" concept="1" />
-      <node id="4038232163187008819" at="41,7,42,287" concept="5" />
-      <node id="4038232163187008819" at="42,287,43,286" concept="5" />
-      <node id="4038232163187008819" at="43,286,44,151" concept="1" />
+      <node id="4038232163187008819" at="41,7,42,340" concept="5" />
+      <node id="4038232163187008819" at="42,340,43,339" concept="5" />
+      <node id="4038232163187008819" at="43,339,44,151" concept="1" />
       <node id="4038232163187008743" at="23,0,28,0" concept="4" trace="test_IntroduceFinalField#()V" />
       <node id="4038232163187008819" at="40,34,45,7" concept="0" />
       <node id="4038232163187008791" at="31,0,47,0" concept="4" trace="test_IntroduceFinalField#()V" />
@@ -2563,11 +2563,11 @@
       <node id="4412735672778824686" at="23,114,24,139" concept="1" />
       <node id="4412735672778826644" at="29,74,30,41" concept="1" />
       <node id="4412735672778826644" at="30,41,31,41" concept="1" />
-      <node id="4412735672778826652" at="31,41,32,272" concept="5" />
-      <node id="4412735672778826658" at="32,272,33,23" concept="1" />
-      <node id="4412735672778826662" at="34,7,35,287" concept="5" />
-      <node id="4412735672778826662" at="35,287,36,286" concept="5" />
-      <node id="4412735672778826662" at="36,286,37,151" concept="1" />
+      <node id="4412735672778826652" at="31,41,32,325" concept="5" />
+      <node id="4412735672778826658" at="32,325,33,23" concept="1" />
+      <node id="4412735672778826662" at="34,7,35,340" concept="5" />
+      <node id="4412735672778826662" at="35,340,36,339" concept="5" />
+      <node id="4412735672778826662" at="36,339,37,151" concept="1" />
       <node id="4412735672778824686" at="21,0,26,0" concept="4" trace="test_InlineMethodWithUnusedParameters#()V" />
       <node id="4412735672778826662" at="33,23,38,7" concept="0" />
       <node id="4412735672778826644" at="29,0,40,0" concept="4" trace="test_InlineMethodWithUnusedParameters#()V" />
@@ -2592,11 +2592,11 @@
       <node id="4412735672780107327" at="29,83,30,41" concept="1" />
       <node id="4412735672780107327" at="30,41,31,41" concept="1" />
       <node id="4412735672780107327" at="31,41,32,41" concept="1" />
-      <node id="4412735672780116661" at="32,41,33,267" concept="5" />
-      <node id="4412735672780116667" at="33,267,34,23" concept="1" />
-      <node id="4412735672780116671" at="35,7,36,295" concept="5" />
-      <node id="4412735672780116671" at="36,295,37,294" concept="5" />
-      <node id="4412735672780116671" at="37,294,38,151" concept="1" />
+      <node id="4412735672780116661" at="32,41,33,320" concept="5" />
+      <node id="4412735672780116667" at="33,320,34,23" concept="1" />
+      <node id="4412735672780116671" at="35,7,36,348" concept="5" />
+      <node id="4412735672780116671" at="36,348,37,347" concept="5" />
+      <node id="4412735672780116671" at="37,347,38,151" concept="1" />
       <node id="4412735672780105517" at="21,0,26,0" concept="4" trace="test_InlineMethodWithConceptFunctionParameters#()V" />
       <node id="4412735672780116671" at="34,23,39,7" concept="0" />
       <node id="4412735672780107327" at="29,0,41,0" concept="4" trace="test_InlineMethodWithConceptFunctionParameters#()V" />
@@ -2622,14 +2622,14 @@
       <node id="5142438244427184232" at="30,41,31,41" concept="1" />
       <node id="5142438244427184232" at="31,41,32,41" concept="1" />
       <node id="5142438244427184232" at="32,41,33,41" concept="1" />
-      <node id="5142438244427184235" at="33,41,34,481" concept="5" />
-      <node id="5142438244427184250" at="34,481,35,26" concept="1" />
-      <node id="6745858777349293248" at="35,26,36,232" concept="1" />
-      <node id="5142438244427184254" at="37,7,38,486" concept="5" />
-      <node id="5142438244427184254" at="38,486,39,485" concept="5" />
-      <node id="5142438244427184254" at="39,485,40,151" concept="1" />
+      <node id="5142438244427184235" at="33,41,34,587" concept="5" />
+      <node id="5142438244427184250" at="34,587,35,26" concept="1" />
+      <node id="6745858777349293248" at="35,26,36,285" concept="1" />
+      <node id="5142438244427184254" at="37,7,38,592" concept="5" />
+      <node id="5142438244427184254" at="38,592,39,591" concept="5" />
+      <node id="5142438244427184254" at="39,591,40,151" concept="1" />
       <node id="5142438244427169026" at="21,0,26,0" concept="4" trace="test_check#()V" />
-      <node id="5142438244427184254" at="36,232,41,7" concept="0" />
+      <node id="5142438244427184254" at="36,285,41,7" concept="0" />
       <node id="5142438244427184232" at="29,0,43,0" concept="4" trace="test_check#()V" />
       <scope id="5142438244427169026" at="22,45,24,104" />
       <scope id="5142438244427184254" at="37,7,40,151">
@@ -2651,17 +2651,17 @@
       <node id="5161277940733600913" at="26,114,27,123" concept="1" />
       <node id="5161277940733601053" at="32,66,33,41" concept="1" />
       <node id="5161277940733601053" at="33,41,34,41" concept="1" />
-      <node id="5161277940733601056" at="34,41,35,569" concept="5" />
-      <node id="5161277940733601064" at="35,569,36,28" concept="1" />
+      <node id="5161277940733601056" at="34,41,35,675" concept="5" />
+      <node id="5161277940733601064" at="35,675,36,28" concept="1" />
       <node id="5604183372188209867" at="36,28,37,87" concept="5" />
       <node id="5604183372188209884" at="37,87,38,87" concept="5" />
       <node id="5604183372188209916" at="39,215,40,72" concept="1" />
       <node id="5604183372188209934" at="40,72,41,72" concept="1" />
       <node id="5161277940733601069" at="42,7,43,84" concept="5" />
       <node id="5161277940733601074" at="43,84,44,23" concept="1" />
-      <node id="5161277940733601078" at="45,7,46,287" concept="5" />
-      <node id="5161277940733601078" at="46,287,47,286" concept="5" />
-      <node id="5161277940733601078" at="47,286,48,151" concept="1" />
+      <node id="5161277940733601078" at="45,7,46,340" concept="5" />
+      <node id="5161277940733601078" at="46,340,47,339" concept="5" />
+      <node id="5161277940733601078" at="47,339,48,151" concept="1" />
       <node id="5604183372188209899" at="38,87,42,7" concept="3" />
       <node id="5161277940733600913" at="24,0,29,0" concept="4" trace="test_ExtractMethodFromClosure#()V" />
       <node id="5161277940733601078" at="44,23,49,7" concept="0" />
@@ -2690,12 +2690,12 @@
       <node id="5907083257159818727" at="23,114,24,125" concept="1" />
       <node id="5907083257159871973" at="29,60,30,41" concept="1" />
       <node id="5907083257159871973" at="30,41,31,41" concept="1" />
-      <node id="5907083257159871976" at="31,41,32,267" concept="1" />
-      <node id="5907083257159871983" at="33,7,34,287" concept="5" />
-      <node id="5907083257159871983" at="34,287,35,286" concept="5" />
-      <node id="5907083257159871983" at="35,286,36,151" concept="1" />
+      <node id="5907083257159871976" at="31,41,32,320" concept="1" />
+      <node id="5907083257159871983" at="33,7,34,340" concept="5" />
+      <node id="5907083257159871983" at="34,340,35,339" concept="5" />
+      <node id="5907083257159871983" at="35,339,36,151" concept="1" />
       <node id="5907083257159818727" at="21,0,26,0" concept="4" trace="test_TypeParametersTest#()V" />
-      <node id="5907083257159871983" at="32,267,37,7" concept="0" />
+      <node id="5907083257159871983" at="32,320,37,7" concept="0" />
       <node id="5907083257159871973" at="29,0,39,0" concept="4" trace="test_TypeParametersTest#()V" />
       <scope id="5907083257159818727" at="22,58,24,125" />
       <scope id="5907083257159871983" at="33,7,36,151">
@@ -2715,13 +2715,13 @@
       <node id="6195342755328023609" at="25,114,26,129" concept="1" />
       <node id="6195342755328023704" at="31,69,32,41" concept="1" />
       <node id="6195342755328023704" at="32,41,33,41" concept="1" />
-      <node id="6195342755328023707" at="33,41,34,555" concept="5" />
-      <node id="6195342755328023716" at="34,555,35,28" concept="1" />
+      <node id="6195342755328023707" at="33,41,34,661" concept="5" />
+      <node id="6195342755328023716" at="34,661,35,28" concept="1" />
       <node id="6195342755328023721" at="35,28,36,84" concept="5" />
       <node id="6195342755328023726" at="36,84,37,23" concept="1" />
-      <node id="6195342755328023730" at="38,7,39,287" concept="5" />
-      <node id="6195342755328023730" at="39,287,40,286" concept="5" />
-      <node id="6195342755328023730" at="40,286,41,151" concept="1" />
+      <node id="6195342755328023730" at="38,7,39,340" concept="5" />
+      <node id="6195342755328023730" at="39,340,40,339" concept="5" />
+      <node id="6195342755328023730" at="40,339,41,151" concept="1" />
       <node id="6195342755328023609" at="23,0,28,0" concept="4" trace="test_ExtractAddingNewDeclaration#()V" />
       <node id="6195342755328023730" at="37,23,42,7" concept="0" />
       <node id="6195342755328023704" at="31,0,44,0" concept="4" trace="test_ExtractAddingNewDeclaration#()V" />
@@ -2746,15 +2746,15 @@
       <node id="6195342755328044201" at="26,114,27,141" concept="1" />
       <node id="6195342755328044297" at="32,77,33,41" concept="1" />
       <node id="6195342755328044297" at="33,41,34,41" concept="1" />
-      <node id="6195342755328044300" at="34,41,35,555" concept="5" />
-      <node id="6195342755328044308" at="35,555,36,28" concept="1" />
+      <node id="6195342755328044300" at="34,41,35,661" concept="5" />
+      <node id="6195342755328044308" at="35,661,36,28" concept="1" />
       <node id="6195342755328044313" at="36,28,37,84" concept="5" />
       <node id="6195342755328044318" at="37,84,38,35" concept="5" />
       <node id="6195342755328044330" at="39,73,40,140" concept="5" />
       <node id="6195342755328044338" at="40,140,41,42" concept="1" />
-      <node id="6195342755328044344" at="43,7,44,287" concept="5" />
-      <node id="6195342755328044344" at="44,287,45,286" concept="5" />
-      <node id="6195342755328044344" at="45,286,46,151" concept="1" />
+      <node id="6195342755328044344" at="43,7,44,340" concept="5" />
+      <node id="6195342755328044344" at="44,340,45,339" concept="5" />
+      <node id="6195342755328044344" at="45,339,46,151" concept="1" />
       <node id="6195342755328044324" at="38,35,42,7" concept="2" />
       <node id="6195342755328044201" at="24,0,29,0" concept="4" trace="test_FindForMethodWithOutputVariableTest#()V" />
       <node id="6195342755328044344" at="42,7,47,7" concept="0" />
@@ -2787,11 +2787,11 @@
       <node id="6351584993764365770" at="23,114,24,125" concept="1" />
       <node id="6351584993764365829" at="29,67,30,41" concept="1" />
       <node id="6351584993764365829" at="30,41,31,41" concept="1" />
-      <node id="6351584993764365832" at="31,41,32,293" concept="5" />
-      <node id="6351584993764365837" at="32,293,33,26" concept="1" />
-      <node id="6351584993764365841" at="34,7,35,287" concept="5" />
-      <node id="6351584993764365841" at="35,287,36,286" concept="5" />
-      <node id="6351584993764365841" at="36,286,37,151" concept="1" />
+      <node id="6351584993764365832" at="31,41,32,346" concept="5" />
+      <node id="6351584993764365837" at="32,346,33,26" concept="1" />
+      <node id="6351584993764365841" at="34,7,35,340" concept="5" />
+      <node id="6351584993764365841" at="35,340,36,339" concept="5" />
+      <node id="6351584993764365841" at="36,339,37,151" concept="1" />
       <node id="6351584993764365770" at="21,0,26,0" concept="4" trace="test_InlineAssingmentInClosure#()V" />
       <node id="6351584993764365841" at="33,26,38,7" concept="0" />
       <node id="6351584993764365829" at="29,0,40,0" concept="4" trace="test_InlineAssingmentInClosure#()V" />
@@ -2815,11 +2815,11 @@
       <node id="668606183334155391" at="23,114,24,124" concept="1" />
       <node id="668606183334155425" at="29,66,30,40" concept="1" />
       <node id="668606183334155425" at="30,40,31,40" concept="1" />
-      <node id="668606183334155428" at="31,40,32,272" concept="5" />
-      <node id="668606183334155434" at="32,272,33,23" concept="1" />
-      <node id="668606183334155438" at="34,7,35,291" concept="5" />
-      <node id="668606183334155438" at="35,291,36,290" concept="5" />
-      <node id="668606183334155438" at="36,290,37,151" concept="1" />
+      <node id="668606183334155428" at="31,40,32,325" concept="5" />
+      <node id="668606183334155434" at="32,325,33,23" concept="1" />
+      <node id="668606183334155438" at="34,7,35,344" concept="5" />
+      <node id="668606183334155438" at="35,344,36,343" concept="5" />
+      <node id="668606183334155438" at="36,343,37,151" concept="1" />
       <node id="668606183334155391" at="21,0,26,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
       <node id="668606183334155438" at="33,23,38,7" concept="0" />
       <node id="668606183334155425" at="29,0,40,0" concept="4" trace="test_InlineInBehaviorWithThis#()V" />
@@ -2844,12 +2844,12 @@
       <node id="6791439617122315497" at="29,55,30,41" concept="1" />
       <node id="6791439617122315497" at="30,41,31,41" concept="1" />
       <node id="6791439617122315497" at="31,41,32,41" concept="1" />
-      <node id="6791439617122315500" at="32,41,33,260" concept="1" />
-      <node id="6791439617122315507" at="34,7,35,287" concept="5" />
-      <node id="6791439617122315507" at="35,287,36,286" concept="5" />
-      <node id="6791439617122315507" at="36,286,37,151" concept="1" />
+      <node id="6791439617122315500" at="32,41,33,313" concept="1" />
+      <node id="6791439617122315507" at="34,7,35,340" concept="5" />
+      <node id="6791439617122315507" at="35,340,36,339" concept="5" />
+      <node id="6791439617122315507" at="36,339,37,151" concept="1" />
       <node id="6791439617122300870" at="21,0,26,0" concept="4" trace="test_InterfaceTest#()V" />
-      <node id="6791439617122315507" at="33,260,38,7" concept="0" />
+      <node id="6791439617122315507" at="33,313,38,7" concept="0" />
       <node id="6791439617122315497" at="29,0,40,0" concept="4" trace="test_InterfaceTest#()V" />
       <scope id="6791439617122300870" at="22,53,24,117" />
       <scope id="6791439617122315507" at="34,7,37,151">
@@ -2870,12 +2870,12 @@
       <node id="6791439617122640167" at="29,59,30,41" concept="1" />
       <node id="6791439617122640167" at="30,41,31,41" concept="1" />
       <node id="6791439617122640167" at="31,41,32,41" concept="1" />
-      <node id="6791439617122640186" at="32,41,33,267" concept="1" />
-      <node id="6791439617122640193" at="34,7,35,287" concept="5" />
-      <node id="6791439617122640193" at="35,287,36,286" concept="5" />
-      <node id="6791439617122640193" at="36,286,37,151" concept="1" />
+      <node id="6791439617122640186" at="32,41,33,320" concept="1" />
+      <node id="6791439617122640193" at="34,7,35,340" concept="5" />
+      <node id="6791439617122640193" at="35,340,36,339" concept="5" />
+      <node id="6791439617122640193" at="36,339,37,151" concept="1" />
       <node id="6791439617122628436" at="21,0,26,0" concept="4" trace="test_AbstractClassTest#()V" />
-      <node id="6791439617122640193" at="33,267,38,7" concept="0" />
+      <node id="6791439617122640193" at="33,320,38,7" concept="0" />
       <node id="6791439617122640167" at="29,0,40,0" concept="4" trace="test_AbstractClassTest#()V" />
       <scope id="6791439617122628436" at="22,57,24,125" />
       <scope id="6791439617122640193" at="34,7,37,151">
@@ -2896,21 +2896,21 @@
       <node id="6974242407276777307" at="29,76,30,41" concept="1" />
       <node id="6974242407276777307" at="30,41,31,41" concept="1" />
       <node id="6974242407276777311" at="31,41,32,94" concept="5" />
-      <node id="6974242407276777316" at="32,94,33,230" concept="1" />
-      <node id="6974242407276777322" at="33,230,34,31" concept="1" />
+      <node id="6974242407276777316" at="32,94,33,283" concept="1" />
+      <node id="6974242407276777322" at="33,283,34,31" concept="1" />
       <node id="6974242407276777327" at="34,31,35,40" concept="1" />
       <node id="6974242407276777332" at="35,40,36,34" concept="1" />
-      <node id="6974242407276777343" at="36,34,37,230" concept="1" />
-      <node id="6974242407276777349" at="37,230,38,31" concept="1" />
+      <node id="6974242407276777343" at="36,34,37,283" concept="1" />
+      <node id="6974242407276777349" at="37,283,38,31" concept="1" />
       <node id="6974242407276777354" at="38,31,39,40" concept="1" />
       <node id="6974242407276777359" at="39,40,40,34" concept="1" />
-      <node id="6974242407276777364" at="40,34,41,230" concept="1" />
-      <node id="6974242407276777370" at="41,230,42,31" concept="1" />
+      <node id="6974242407276777364" at="40,34,41,283" concept="1" />
+      <node id="6974242407276777370" at="41,283,42,31" concept="1" />
       <node id="6974242407276777375" at="42,31,43,40" concept="1" />
       <node id="6974242407276777380" at="43,40,44,34" concept="1" />
-      <node id="6974242407276777336" at="45,7,46,287" concept="5" />
-      <node id="6974242407276777336" at="46,287,47,286" concept="5" />
-      <node id="6974242407276777336" at="47,286,48,151" concept="1" />
+      <node id="6974242407276777336" at="45,7,46,340" concept="5" />
+      <node id="6974242407276777336" at="46,340,47,339" concept="5" />
+      <node id="6974242407276777336" at="47,339,48,151" concept="1" />
       <node id="6974242407276765599" at="21,0,26,0" concept="4" trace="test_IntroduceVariableFromWildcardsTest#()V" />
       <node id="6974242407276777336" at="44,34,49,7" concept="0" />
       <node id="6974242407276777307" at="29,0,51,0" concept="4" trace="test_IntroduceVariableFromWildcardsTest#()V" />
@@ -2934,11 +2934,11 @@
       <node id="7093131866560585661" at="24,114,25,117" concept="1" />
       <node id="7093131866560585733" at="30,65,31,41" concept="1" />
       <node id="7093131866560585733" at="31,41,32,41" concept="1" />
-      <node id="7093131866560585736" at="32,41,33,281" concept="5" />
-      <node id="7093131866560585742" at="33,281,34,26" concept="1" />
-      <node id="7093131866560585746" at="35,7,36,287" concept="5" />
-      <node id="7093131866560585746" at="36,287,37,286" concept="5" />
-      <node id="7093131866560585746" at="37,286,38,151" concept="1" />
+      <node id="7093131866560585736" at="32,41,33,334" concept="5" />
+      <node id="7093131866560585742" at="33,334,34,26" concept="1" />
+      <node id="7093131866560585746" at="35,7,36,340" concept="5" />
+      <node id="7093131866560585746" at="36,340,37,339" concept="5" />
+      <node id="7093131866560585746" at="37,339,38,151" concept="1" />
       <node id="7093131866560585661" at="22,0,27,0" concept="4" trace="test_InlineInsideClosureTest#()V" />
       <node id="7093131866560585746" at="34,26,39,7" concept="0" />
       <node id="7093131866560585733" at="30,0,41,0" concept="4" trace="test_InlineInsideClosureTest#()V" />
@@ -2962,11 +2962,11 @@
       <node id="7093131866560585771" at="24,114,25,151" concept="1" />
       <node id="7093131866560585851" at="30,82,31,41" concept="1" />
       <node id="7093131866560585851" at="31,41,32,41" concept="1" />
-      <node id="7093131866560585854" at="32,41,33,281" concept="5" />
-      <node id="7093131866560585860" at="33,281,34,26" concept="1" />
-      <node id="7093131866560585864" at="35,7,36,287" concept="5" />
-      <node id="7093131866560585864" at="36,287,37,286" concept="5" />
-      <node id="7093131866560585864" at="37,286,38,151" concept="1" />
+      <node id="7093131866560585854" at="32,41,33,334" concept="5" />
+      <node id="7093131866560585860" at="33,334,34,26" concept="1" />
+      <node id="7093131866560585864" at="35,7,36,340" concept="5" />
+      <node id="7093131866560585864" at="36,340,37,339" concept="5" />
+      <node id="7093131866560585864" at="37,339,38,151" concept="1" />
       <node id="7093131866560585771" at="22,0,27,0" concept="4" trace="test_InlineInClosureWithOutsideAssingmentTest#()V" />
       <node id="7093131866560585864" at="34,26,39,7" concept="0" />
       <node id="7093131866560585851" at="30,0,41,0" concept="4" trace="test_InlineInClosureWithOutsideAssingmentTest#()V" />
@@ -2991,13 +2991,13 @@
       <node id="7475692990584612196" at="31,63,32,41" concept="1" />
       <node id="7475692990584612196" at="32,41,33,41" concept="1" />
       <node id="7475692990584612196" at="33,41,34,41" concept="1" />
-      <node id="7475692990584612199" at="34,41,35,363" concept="5" />
-      <node id="7475692990584612209" at="35,363,36,28" concept="1" />
+      <node id="7475692990584612199" at="34,41,35,416" concept="5" />
+      <node id="7475692990584612209" at="35,416,36,28" concept="1" />
       <node id="7475692990584612214" at="36,28,37,84" concept="5" />
       <node id="7475692990584612219" at="37,84,38,23" concept="1" />
-      <node id="7475692990584612223" at="39,7,40,287" concept="5" />
-      <node id="7475692990584612223" at="40,287,41,286" concept="5" />
-      <node id="7475692990584612223" at="41,286,42,151" concept="1" />
+      <node id="7475692990584612223" at="39,7,40,340" concept="5" />
+      <node id="7475692990584612223" at="40,340,41,339" concept="5" />
+      <node id="7475692990584612223" at="41,339,42,151" concept="1" />
       <node id="7475692990584612119" at="23,0,28,0" concept="4" trace="test_extractFromStatements#()V" />
       <node id="7475692990584612223" at="38,23,43,7" concept="0" />
       <node id="7475692990584612196" at="31,0,45,0" concept="4" trace="test_extractFromStatements#()V" />
@@ -3023,13 +3023,13 @@
       <node id="7475692990584681479" at="31,63,32,41" concept="1" />
       <node id="7475692990584681479" at="32,41,33,41" concept="1" />
       <node id="7475692990584681479" at="33,41,34,41" concept="1" />
-      <node id="7475692990584681482" at="34,41,35,363" concept="5" />
-      <node id="7475692990584681490" at="35,363,36,28" concept="1" />
+      <node id="7475692990584681482" at="34,41,35,416" concept="5" />
+      <node id="7475692990584681490" at="35,416,36,28" concept="1" />
       <node id="7475692990584681495" at="36,28,37,84" concept="5" />
       <node id="7475692990584681500" at="37,84,38,23" concept="1" />
-      <node id="7475692990584681504" at="39,7,40,287" concept="5" />
-      <node id="7475692990584681504" at="40,287,41,286" concept="5" />
-      <node id="7475692990584681504" at="41,286,42,151" concept="1" />
+      <node id="7475692990584681504" at="39,7,40,340" concept="5" />
+      <node id="7475692990584681504" at="40,340,41,339" concept="5" />
+      <node id="7475692990584681504" at="41,339,42,151" concept="1" />
       <node id="7475692990584681432" at="23,0,28,0" concept="4" trace="test_extractFromStatements#()V" />
       <node id="7475692990584681504" at="38,23,43,7" concept="0" />
       <node id="7475692990584681479" at="31,0,45,0" concept="4" trace="test_extractFromStatements#()V" />
@@ -3055,13 +3055,13 @@
       <node id="7568753874916167933" at="29,83,30,41" concept="1" />
       <node id="7568753874916167933" at="30,41,31,41" concept="1" />
       <node id="7568753874916167990" at="31,41,32,94" concept="5" />
-      <node id="7568753874916168007" at="32,94,33,230" concept="1" />
-      <node id="7568753874916167997" at="33,230,34,31" concept="1" />
+      <node id="7568753874916168007" at="32,94,33,283" concept="1" />
+      <node id="7568753874916167997" at="33,283,34,31" concept="1" />
       <node id="2163048091639782326" at="34,31,35,40" concept="1" />
       <node id="2163048091639836880" at="35,40,36,34" concept="1" />
-      <node id="7568753874916167980" at="37,7,38,287" concept="5" />
-      <node id="7568753874916167980" at="38,287,39,286" concept="5" />
-      <node id="7568753874916167980" at="39,286,40,151" concept="1" />
+      <node id="7568753874916167980" at="37,7,38,340" concept="5" />
+      <node id="7568753874916167980" at="38,340,39,339" concept="5" />
+      <node id="7568753874916167980" at="39,339,40,151" concept="1" />
       <node id="7568753874916167799" at="21,0,26,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
       <node id="7568753874916167980" at="36,34,41,7" concept="0" />
       <node id="7568753874916167933" at="29,0,43,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
@@ -3086,14 +3086,14 @@
       <node id="7568753874916187418" at="30,76,31,41" concept="1" />
       <node id="7568753874916187418" at="31,41,32,41" concept="1" />
       <node id="7568753874916187421" at="32,41,33,84" concept="5" />
-      <node id="7568753874916187426" at="33,84,34,229" concept="1" />
-      <node id="7568753874916187432" at="34,229,35,31" concept="1" />
+      <node id="7568753874916187426" at="33,84,34,282" concept="1" />
+      <node id="7568753874916187432" at="34,282,35,31" concept="1" />
       <node id="2163048091639782337" at="35,31,36,40" concept="1" />
       <node id="2163048091639782346" at="36,40,37,62" concept="1" />
       <node id="2163048091639836885" at="37,62,38,34" concept="1" />
-      <node id="7568753874916187455" at="39,7,40,287" concept="5" />
-      <node id="7568753874916187455" at="40,287,41,286" concept="5" />
-      <node id="7568753874916187455" at="41,286,42,151" concept="1" />
+      <node id="7568753874916187455" at="39,7,40,340" concept="5" />
+      <node id="7568753874916187455" at="40,340,41,339" concept="5" />
+      <node id="7568753874916187455" at="41,339,42,151" concept="1" />
       <node id="7568753874916187325" at="22,0,27,0" concept="4" trace="test_SimpleFindForIntroduceConstantTest#()V" />
       <node id="7568753874916187455" at="38,34,43,7" concept="0" />
       <node id="7568753874916187418" at="30,0,45,0" concept="4" trace="test_SimpleFindForIntroduceConstantTest#()V" />
@@ -3118,13 +3118,13 @@
       <node id="7568753874916226583" at="29,88,30,41" concept="1" />
       <node id="7568753874916226583" at="30,41,31,41" concept="1" />
       <node id="7568753874916226586" at="31,41,32,94" concept="5" />
-      <node id="7568753874916226591" at="32,94,33,231" concept="1" />
-      <node id="2163048091639782360" at="33,231,34,40" concept="1" />
+      <node id="7568753874916226591" at="32,94,33,284" concept="1" />
+      <node id="2163048091639782360" at="33,284,34,40" concept="1" />
       <node id="7568753874916226597" at="34,40,35,31" concept="1" />
       <node id="2163048091639836890" at="35,31,36,34" concept="1" />
-      <node id="7568753874916226620" at="37,7,38,287" concept="5" />
-      <node id="7568753874916226620" at="38,287,39,286" concept="5" />
-      <node id="7568753874916226620" at="39,286,40,151" concept="1" />
+      <node id="7568753874916226620" at="37,7,38,340" concept="5" />
+      <node id="7568753874916226620" at="38,340,39,339" concept="5" />
+      <node id="7568753874916226620" at="39,339,40,151" concept="1" />
       <node id="7568753874916226562" at="21,0,26,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVariableTest#()V" />
       <node id="7568753874916226620" at="36,34,41,7" concept="0" />
       <node id="7568753874916226583" at="29,0,43,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVariableTest#()V" />
@@ -3149,13 +3149,13 @@
       <node id="7568753874916244267" at="29,83,30,41" concept="1" />
       <node id="7568753874916244267" at="30,41,31,41" concept="1" />
       <node id="7568753874916244270" at="31,41,32,94" concept="5" />
-      <node id="7568753874916244275" at="32,94,33,229" concept="1" />
-      <node id="7568753874916244281" at="33,229,34,31" concept="1" />
+      <node id="7568753874916244275" at="32,94,33,282" concept="1" />
+      <node id="7568753874916244281" at="33,282,34,31" concept="1" />
       <node id="2163048091639782314" at="34,31,35,40" concept="1" />
       <node id="2163048091639836872" at="35,40,36,34" concept="1" />
-      <node id="7568753874916244304" at="37,7,38,287" concept="5" />
-      <node id="7568753874916244304" at="38,287,39,286" concept="5" />
-      <node id="7568753874916244304" at="39,286,40,151" concept="1" />
+      <node id="7568753874916244304" at="37,7,38,340" concept="5" />
+      <node id="7568753874916244304" at="38,340,39,339" concept="5" />
+      <node id="7568753874916244304" at="39,339,40,151" concept="1" />
       <node id="7568753874916244224" at="21,0,26,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
       <node id="7568753874916244304" at="36,34,41,7" concept="0" />
       <node id="7568753874916244267" at="29,0,43,0" concept="4" trace="test_SimpleFindAndMoveForIntroduceLocalVarTest#()V" />
@@ -3179,15 +3179,15 @@
       <node id="7793057097608406463" at="26,114,27,155" concept="1" />
       <node id="7793057097608416373" at="32,84,33,41" concept="1" />
       <node id="7793057097608416373" at="33,41,34,41" concept="1" />
-      <node id="7793057097608416376" at="34,41,35,555" concept="5" />
-      <node id="7793057097608416385" at="35,555,36,33" concept="1" />
+      <node id="7793057097608416376" at="34,41,35,661" concept="5" />
+      <node id="7793057097608416385" at="35,661,36,33" concept="1" />
       <node id="7793057097608416390" at="36,33,37,84" concept="5" />
       <node id="7793057097608416395" at="37,84,38,35" concept="5" />
       <node id="8155843501977582821" at="39,73,40,140" concept="5" />
       <node id="8155843501977582830" at="40,140,41,42" concept="1" />
-      <node id="7793057097608416413" at="43,7,44,287" concept="5" />
-      <node id="7793057097608416413" at="44,287,45,286" concept="5" />
-      <node id="7793057097608416413" at="45,286,46,151" concept="1" />
+      <node id="7793057097608416413" at="43,7,44,340" concept="5" />
+      <node id="7793057097608416413" at="44,340,45,339" concept="5" />
+      <node id="7793057097608416413" at="45,339,46,151" concept="1" />
       <node id="7793057097608416401" at="38,35,42,7" concept="2" />
       <node id="7793057097608406463" at="24,0,29,0" concept="4" trace="test_SimpleFindForExtractFromManyStatementsTest#()V" />
       <node id="7793057097608416413" at="42,7,47,7" concept="0" />
@@ -3220,13 +3220,13 @@
       <node id="8155843501976326915" at="25,114,26,167" concept="1" />
       <node id="8155843501976328851" at="31,90,32,41" concept="1" />
       <node id="8155843501976328851" at="32,41,33,41" concept="1" />
-      <node id="8155843501976328854" at="33,41,34,349" concept="5" />
-      <node id="8155843501976328863" at="34,349,35,28" concept="1" />
+      <node id="8155843501976328854" at="33,41,34,402" concept="5" />
+      <node id="8155843501976328863" at="34,402,35,28" concept="1" />
       <node id="8155843501976328868" at="35,28,36,84" concept="5" />
       <node id="8155843501976328873" at="36,84,37,23" concept="1" />
-      <node id="8155843501976328877" at="38,7,39,287" concept="5" />
-      <node id="8155843501976328877" at="39,287,40,286" concept="5" />
-      <node id="8155843501976328877" at="40,286,41,151" concept="1" />
+      <node id="8155843501976328877" at="38,7,39,340" concept="5" />
+      <node id="8155843501976328877" at="39,340,40,339" concept="5" />
+      <node id="8155843501976328877" at="40,339,41,151" concept="1" />
       <node id="8155843501976326915" at="23,0,28,0" concept="4" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
       <node id="8155843501976328877" at="37,23,42,7" concept="0" />
       <node id="8155843501976328851" at="31,0,44,0" concept="4" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
@@ -3251,15 +3251,15 @@
       <node id="8155843501977546256" at="26,114,27,121" concept="1" />
       <node id="8155843501977560935" at="32,67,33,41" concept="1" />
       <node id="8155843501977560935" at="33,41,34,41" concept="1" />
-      <node id="8155843501977560938" at="34,41,35,349" concept="5" />
-      <node id="8155843501977560947" at="35,349,36,28" concept="1" />
+      <node id="8155843501977560938" at="34,41,35,402" concept="5" />
+      <node id="8155843501977560947" at="35,402,36,28" concept="1" />
       <node id="8155843501977560952" at="36,28,37,84" concept="5" />
       <node id="8155843501977560957" at="37,84,38,35" concept="5" />
       <node id="8155843501977582329" at="39,73,40,140" concept="5" />
       <node id="8155843501977560969" at="40,140,41,42" concept="1" />
-      <node id="8155843501977560975" at="43,7,44,287" concept="5" />
-      <node id="8155843501977560975" at="44,287,45,286" concept="5" />
-      <node id="8155843501977560975" at="45,286,46,151" concept="1" />
+      <node id="8155843501977560975" at="43,7,44,340" concept="5" />
+      <node id="8155843501977560975" at="44,340,45,339" concept="5" />
+      <node id="8155843501977560975" at="45,339,46,151" concept="1" />
       <node id="8155843501977560963" at="38,35,42,7" concept="2" />
       <node id="8155843501977546256" at="24,0,29,0" concept="4" trace="test_ReplaceOutputVaryableTest#()V" />
       <node id="8155843501977560975" at="42,7,47,7" concept="0" />
@@ -3292,13 +3292,13 @@
       <node id="8155843501978460076" at="25,114,26,168" concept="1" />
       <node id="8155843501978461957" at="31,90,32,41" concept="1" />
       <node id="8155843501978461957" at="32,41,33,41" concept="1" />
-      <node id="8155843501978461960" at="33,41,34,350" concept="5" />
-      <node id="8155843501978461969" at="34,350,35,28" concept="1" />
+      <node id="8155843501978461960" at="33,41,34,403" concept="5" />
+      <node id="8155843501978461969" at="34,403,35,28" concept="1" />
       <node id="8155843501978461974" at="35,28,36,84" concept="5" />
       <node id="8155843501978461979" at="36,84,37,23" concept="1" />
-      <node id="8155843501978461983" at="38,7,39,287" concept="5" />
-      <node id="8155843501978461983" at="39,287,40,286" concept="5" />
-      <node id="8155843501978461983" at="40,286,41,151" concept="1" />
+      <node id="8155843501978461983" at="38,7,39,340" concept="5" />
+      <node id="8155843501978461983" at="39,340,40,339" concept="5" />
+      <node id="8155843501978461983" at="40,339,41,151" concept="1" />
       <node id="8155843501978460076" at="23,0,28,0" concept="4" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
       <node id="8155843501978461983" at="37,23,42,7" concept="0" />
       <node id="8155843501978461957" at="31,0,44,0" concept="4" trace="test_ExtractMethodWithOutputVaryableFromStatementTest#()V" />
@@ -3325,11 +3325,11 @@
       <node id="8495840634674645236" at="30,41,31,41" concept="1" />
       <node id="8495840634674645236" at="31,41,32,41" concept="1" />
       <node id="8495840634674645236" at="32,41,33,41" concept="1" />
-      <node id="8495840634674645243" at="33,41,34,486" concept="5" />
-      <node id="8495840634674647656" at="34,486,35,34" concept="1" />
-      <node id="8495840634675216166" at="36,7,37,486" concept="5" />
-      <node id="8495840634675216166" at="37,486,38,485" concept="5" />
-      <node id="8495840634675216166" at="38,485,39,151" concept="1" />
+      <node id="8495840634674645243" at="33,41,34,592" concept="5" />
+      <node id="8495840634674647656" at="34,592,35,34" concept="1" />
+      <node id="8495840634675216166" at="36,7,37,592" concept="5" />
+      <node id="8495840634675216166" at="37,592,38,591" concept="5" />
+      <node id="8495840634675216166" at="38,591,39,151" concept="1" />
       <node id="8495840634674645158" at="21,0,26,0" concept="4" trace="test_SimpleTest#()V" />
       <node id="8495840634675216166" at="35,34,40,7" concept="0" />
       <node id="8495840634674645236" at="29,0,42,0" concept="4" trace="test_SimpleTest#()V" />
@@ -3355,14 +3355,14 @@
       <node id="8495840634675285753" at="30,41,31,41" concept="1" />
       <node id="8495840634675285753" at="31,41,32,41" concept="1" />
       <node id="8495840634675285753" at="32,41,33,41" concept="1" />
-      <node id="8495840634675285756" at="33,41,34,486" concept="5" />
-      <node id="8495840634675285763" at="34,486,35,34" concept="1" />
-      <node id="8495840634675645888" at="35,34,36,244" concept="1" />
-      <node id="8495840634675285767" at="37,7,38,486" concept="5" />
-      <node id="8495840634675285767" at="38,486,39,485" concept="5" />
-      <node id="8495840634675285767" at="39,485,40,151" concept="1" />
+      <node id="8495840634675285756" at="33,41,34,592" concept="5" />
+      <node id="8495840634675285763" at="34,592,35,34" concept="1" />
+      <node id="8495840634675645888" at="35,34,36,297" concept="1" />
+      <node id="8495840634675285767" at="37,7,38,592" concept="5" />
+      <node id="8495840634675285767" at="38,592,39,591" concept="5" />
+      <node id="8495840634675285767" at="39,591,40,151" concept="1" />
       <node id="8495840634675243977" at="21,0,26,0" concept="4" trace="test_UsageTest#()V" />
-      <node id="8495840634675285767" at="36,244,41,7" concept="0" />
+      <node id="8495840634675285767" at="36,297,41,7" concept="0" />
       <node id="8495840634675285753" at="29,0,43,0" concept="4" trace="test_UsageTest#()V" />
       <scope id="8495840634675243977" at="22,49,24,112" />
       <scope id="8495840634675285767" at="37,7,40,151">
@@ -3384,15 +3384,15 @@
       <node id="8556882668095192252" at="26,114,27,147" concept="1" />
       <node id="8556882668095202192" at="32,80,33,41" concept="1" />
       <node id="8556882668095202192" at="33,41,34,41" concept="1" />
-      <node id="8556882668095202197" at="34,41,35,344" concept="5" />
-      <node id="8556882668095202206" at="35,344,36,30" concept="1" />
+      <node id="8556882668095202197" at="34,41,35,397" concept="5" />
+      <node id="8556882668095202206" at="35,397,36,30" concept="1" />
       <node id="8556882668095202211" at="36,30,37,84" concept="5" />
       <node id="8556882668095202709" at="37,84,38,35" concept="5" />
       <node id="8155843501977582805" at="39,73,40,140" concept="5" />
       <node id="8155843501977582814" at="40,140,41,42" concept="1" />
-      <node id="8556882668095202220" at="43,7,44,287" concept="5" />
-      <node id="8556882668095202220" at="44,287,45,286" concept="5" />
-      <node id="8556882668095202220" at="45,286,46,151" concept="1" />
+      <node id="8556882668095202220" at="43,7,44,340" concept="5" />
+      <node id="8556882668095202220" at="44,340,45,339" concept="5" />
+      <node id="8556882668095202220" at="45,339,46,151" concept="1" />
       <node id="8556882668095202232" at="38,35,42,7" concept="2" />
       <node id="8556882668095192252" at="24,0,29,0" concept="4" trace="test_SimpleFindForExtractFromExpressionTest#()V" />
       <node id="8556882668095202220" at="42,7,47,7" concept="0" />
@@ -3425,15 +3425,15 @@
       <node id="8556882668095222061" at="26,114,27,145" concept="1" />
       <node id="8556882668095222213" at="32,79,33,41" concept="1" />
       <node id="8556882668095222213" at="33,41,34,41" concept="1" />
-      <node id="8556882668095222216" at="34,41,35,349" concept="5" />
-      <node id="8556882668095222225" at="35,349,36,30" concept="1" />
+      <node id="8556882668095222216" at="34,41,35,402" concept="5" />
+      <node id="8556882668095222225" at="35,402,36,30" concept="1" />
       <node id="8556882668095222230" at="36,30,37,84" concept="5" />
       <node id="8556882668095222235" at="37,84,38,35" concept="5" />
       <node id="8155843501977582836" at="39,73,40,140" concept="5" />
       <node id="8155843501977582845" at="40,140,41,42" concept="1" />
-      <node id="8556882668095222253" at="43,7,44,287" concept="5" />
-      <node id="8556882668095222253" at="44,287,45,286" concept="5" />
-      <node id="8556882668095222253" at="45,286,46,151" concept="1" />
+      <node id="8556882668095222253" at="43,7,44,340" concept="5" />
+      <node id="8556882668095222253" at="44,340,45,339" concept="5" />
+      <node id="8556882668095222253" at="45,339,46,151" concept="1" />
       <node id="8556882668095222241" at="38,35,42,7" concept="2" />
       <node id="8556882668095222061" at="24,0,29,0" concept="4" trace="test_SimpleFindForExtractFromStatementTest#()V" />
       <node id="8556882668095222253" at="42,7,47,7" concept="0" />
@@ -3466,13 +3466,13 @@
       <node id="8823815475437525602" at="25,114,26,125" concept="1" />
       <node id="8823815475437525729" at="31,69,32,41" concept="1" />
       <node id="8823815475437525729" at="32,41,33,41" concept="1" />
-      <node id="8823815475437525732" at="33,41,34,348" concept="5" />
-      <node id="8823815475437525740" at="34,348,35,28" concept="1" />
+      <node id="8823815475437525732" at="33,41,34,401" concept="5" />
+      <node id="8823815475437525740" at="34,401,35,28" concept="1" />
       <node id="8823815475437525745" at="35,28,36,84" concept="5" />
       <node id="8823815475437525750" at="36,84,37,23" concept="1" />
-      <node id="8823815475437525754" at="38,7,39,287" concept="5" />
-      <node id="8823815475437525754" at="39,287,40,286" concept="5" />
-      <node id="8823815475437525754" at="40,286,41,151" concept="1" />
+      <node id="8823815475437525754" at="38,7,39,340" concept="5" />
+      <node id="8823815475437525754" at="39,340,40,339" concept="5" />
+      <node id="8823815475437525754" at="40,339,41,151" concept="1" />
       <node id="8823815475437525602" at="23,0,28,0" concept="4" trace="test_ExtractMethodWithThrowsTest#()V" />
       <node id="8823815475437525754" at="37,23,42,7" concept="0" />
       <node id="8823815475437525729" at="31,0,44,0" concept="4" trace="test_ExtractMethodWithThrowsTest#()V" />
@@ -3497,11 +3497,11 @@
       <node id="9118878263582083310" at="23,114,24,131" concept="1" />
       <node id="9118878263582085165" at="29,70,30,41" concept="1" />
       <node id="9118878263582085165" at="30,41,31,41" concept="1" />
-      <node id="9118878263582085168" at="31,41,32,293" concept="5" />
-      <node id="9118878263582085173" at="32,293,33,26" concept="1" />
-      <node id="9118878263582085177" at="34,7,35,287" concept="5" />
-      <node id="9118878263582085177" at="35,287,36,286" concept="5" />
-      <node id="9118878263582085177" at="36,286,37,151" concept="1" />
+      <node id="9118878263582085168" at="31,41,32,346" concept="5" />
+      <node id="9118878263582085173" at="32,346,33,26" concept="1" />
+      <node id="9118878263582085177" at="34,7,35,340" concept="5" />
+      <node id="9118878263582085177" at="35,340,36,339" concept="5" />
+      <node id="9118878263582085177" at="36,339,37,151" concept="1" />
       <node id="9118878263582083310" at="21,0,26,0" concept="4" trace="test_InlineAssingmentWithClosures#()V" />
       <node id="9118878263582085177" at="33,26,38,7" concept="0" />
       <node id="9118878263582085165" at="29,0,40,0" concept="4" trace="test_InlineAssingmentWithClosures#()V" />
@@ -3525,12 +3525,12 @@
       <node id="9160497614871931685" at="23,114,24,127" concept="1" />
       <node id="9160497614872188985" at="29,60,30,41" concept="1" />
       <node id="9160497614872188985" at="30,41,31,41" concept="1" />
-      <node id="9160497614872188993" at="31,41,32,267" concept="1" />
-      <node id="9160497614872189001" at="33,7,34,287" concept="5" />
-      <node id="9160497614872189001" at="34,287,35,286" concept="5" />
-      <node id="9160497614872189001" at="35,286,36,151" concept="1" />
+      <node id="9160497614872188993" at="31,41,32,320" concept="1" />
+      <node id="9160497614872189001" at="33,7,34,340" concept="5" />
+      <node id="9160497614872189001" at="34,340,35,339" concept="5" />
+      <node id="9160497614872189001" at="35,339,36,151" concept="1" />
       <node id="9160497614871931685" at="21,0,26,0" concept="4" trace="test_TypeParametersTest#()V" />
-      <node id="9160497614872189001" at="32,267,37,7" concept="0" />
+      <node id="9160497614872189001" at="32,320,37,7" concept="0" />
       <node id="9160497614872188985" at="29,0,39,0" concept="4" trace="test_TypeParametersTest#()V" />
       <scope id="9160497614871931685" at="22,58,24,127" />
       <scope id="9160497614872189001" at="33,7,36,151">
@@ -3550,12 +3550,12 @@
       <node id="995475547969867885" at="23,114,24,139" concept="1" />
       <node id="995475547969868020" at="29,68,30,40" concept="1" />
       <node id="995475547969868020" at="30,40,31,40" concept="1" />
-      <node id="995475547969868023" at="31,40,32,268" concept="1" />
-      <node id="995475547969868030" at="33,7,34,286" concept="5" />
-      <node id="995475547969868030" at="34,286,35,285" concept="5" />
-      <node id="995475547969868030" at="35,285,36,151" concept="1" />
+      <node id="995475547969868023" at="31,40,32,321" concept="1" />
+      <node id="995475547969868030" at="33,7,34,339" concept="5" />
+      <node id="995475547969868030" at="34,339,35,338" concept="5" />
+      <node id="995475547969868030" at="35,338,36,151" concept="1" />
       <node id="995475547969867885" at="21,0,26,0" concept="4" trace="test_WithParameterReferenceTest#()V" />
-      <node id="995475547969868030" at="32,268,37,7" concept="0" />
+      <node id="995475547969868030" at="32,321,37,7" concept="0" />
       <node id="995475547969868020" at="29,0,39,0" concept="4" trace="test_WithParameterReferenceTest#()V" />
       <scope id="995475547969867885" at="22,66,24,139" />
       <scope id="995475547969868030" at="33,7,36,151">

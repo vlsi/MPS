@@ -9,7 +9,7 @@
     <use id="80208897-4572-437d-b50e-8f050cba9566" name="jetbrains.mps.debugger.java.privateMembers" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
   </languages>
   <imports>
@@ -294,12 +294,15 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -709,17 +712,21 @@
             </node>
             <node concept="2OqwBi" id="4NKeWDvIyR7" role="33vP2m">
               <node concept="1PxgMI" id="4NKeWDvIyR8" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
                 <node concept="2OqwBi" id="4NKeWDvIyR9" role="1m5AlR">
                   <node concept="1PxgMI" id="4NKeWDvIyRa" role="2Oq$k0">
-                    <ref role="1m5ApE" to="tpee:hqOqwz4" resolve="DotExpression" />
                     <node concept="3xONca" id="4NKeWDvIyRb" role="1m5AlR">
                       <ref role="3xOPvv" node="4NKeWDvIyTx" resolve="fieldReference" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdH0GB" role="3oSUPX">
+                      <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
                     </node>
                   </node>
                   <node concept="3TrEf2" id="4NKeWDvIyRc" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdH0G_" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hqOwXtU" resolve="FieldReferenceOperation" />
                 </node>
               </node>
               <node concept="3TrEf2" id="4NKeWDvIyRd" role="2OqNvi">
@@ -1141,7 +1148,6 @@
             </node>
             <node concept="2OqwBi" id="xJcAfRvq8M" role="33vP2m">
               <node concept="1PxgMI" id="xJcAfRvq8N" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
                 <node concept="2OqwBi" id="xJcAfRvq8O" role="1m5AlR">
                   <node concept="3xONca" id="xJcAfRvq8P" role="2Oq$k0">
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
@@ -1149,6 +1155,9 @@
                   <node concept="3TrEf2" id="xJcAfRvq8Q" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdH0G$" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
                 </node>
               </node>
               <node concept="3TrEf2" id="xJcAfRvq8R" role="2OqNvi">
@@ -1165,7 +1174,6 @@
             </node>
             <node concept="2OqwBi" id="xJcAfRvsFy" role="33vP2m">
               <node concept="1PxgMI" id="xJcAfRvsFz" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
                 <node concept="2OqwBi" id="xJcAfRvsF$" role="1m5AlR">
                   <node concept="3xONca" id="xJcAfRvsF_" role="2Oq$k0">
                     <ref role="3xOPvv" node="4NKeWDvIyUk" resolve="methodReference" />
@@ -1173,6 +1181,9 @@
                   <node concept="3TrEf2" id="xJcAfRvsFA" role="2OqNvi">
                     <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
                   </node>
+                </node>
+                <node concept="chp4Y" id="714IaVdH0GA" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hwliAcM" resolve="InstanceMethodCallOperation" />
                 </node>
               </node>
               <node concept="3Tsc0h" id="xJcAfRvsFB" role="2OqNvi">

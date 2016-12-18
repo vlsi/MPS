@@ -17,8 +17,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_HelpURL = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IAspectConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LanguageAspectDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LanguageReference = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_SimpleLanguageAspectDescriptor = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")).icon(IconContainer.RESOURCE_a0a0i).create();
+  private final ConceptPresentation props_LanguageReference = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_SimpleAspectOrderRef = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SimpleLanguageAspectDescriptor = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x2fa4a8cdf0c9b076L, 0x2fa4a8cdf0c9b099L, "helpUrl")).icon(IconContainer.RESOURCE_a0a0j).create();
 
   @Override
   @Nullable
@@ -41,6 +42,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LanguageAspectDescriptor;
       case LanguageConceptSwitch.LanguageReference:
         return props_LanguageReference;
+      case LanguageConceptSwitch.SimpleAspectOrderRef:
+        return props_SimpleAspectOrderRef;
       case LanguageConceptSwitch.SimpleLanguageAspectDescriptor:
         return props_SimpleLanguageAspectDescriptor;
     }

@@ -9,12 +9,6 @@ import java.util.Collections;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.openapi.editor.style.Style;
-import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class RequestHandlerDescription implements ConceptEditorComponent {
   @NotNull
@@ -22,61 +16,6 @@ public class RequestHandlerDescription implements ConceptEditorComponent {
     return Collections.emptyList();
   }
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_viba1c_a(editorContext, node);
-  }
-  private EditorCell createCollection_viba1c_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
-    editorCell.setCellId("Collection_viba1c_a");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, 0, false);
-    editorCell.getStyle().putAll(style);
-    editorCell.addEditorCell(this.createConstant_viba1c_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_viba1c_b0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_viba1c_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_viba1c_d0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_viba1c_e0(editorContext, node));
-    return editorCell;
-  }
-  private EditorCell createConstant_viba1c_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Handles Incoming HTTP Requests. Workflow:");
-    editorCell.setCellId("Constant_viba1c_a0");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_viba1c_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "1. Checks that 'query prefix' is a prefix of query path; ");
-    editorCell.setCellId("Constant_viba1c_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_viba1c_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "2. Checks that all required parameters is in query;");
-    editorCell.setCellId("Constant_viba1c_c0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_viba1c_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "3. Invokes canHandle() method and checks that it returns true;");
-    editorCell.setCellId("Constant_viba1c_d0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createConstant_viba1c_e0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "4. If all criteria are satisfied invokes handle() method.");
-    editorCell.setCellId("Constant_viba1c_e0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
-    editorCell.getStyle().putAll(style);
-    editorCell.setDefaultText("");
-    return editorCell;
+    return new RequestHandlerDescription_ComponentBuilder_a(editorContext, node).createCell();
   }
 }

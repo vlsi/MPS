@@ -17,13 +17,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.Set;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import java.util.Collections;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.MPSModuleRepository;
 
 /**
  * Maintains information for incremental updates.
@@ -110,20 +103,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
     } else {
       return SPropertyOperations.getString(baseMethodDeclaration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     }
-  }
-  /*package*/ Iterable<SNode> getMethodCalls(Set<SNodeReference> methodCallPointers) {
-    if (methodCallPointers == null) {
-      return Sequence.fromIterable(Collections.<SNode>emptyList());
-    }
-    return SNodeOperations.ofConcept(SetSequence.fromSet(methodCallPointers).where(new IWhereFilter<SNodeReference>() {
-      public boolean accept(SNodeReference it) {
-        return it != null;
-      }
-    }).select(new ISelector<SNodeReference, SNode>() {
-      public SNode select(SNodeReference it) {
-        return it.resolve(MPSModuleRepository.getInstance());
-      }
-    }), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"));
   }
 
   /**

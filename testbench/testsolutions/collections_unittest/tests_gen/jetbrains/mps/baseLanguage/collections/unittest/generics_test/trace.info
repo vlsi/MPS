@@ -85,8 +85,8 @@
       <scope id="1224596674955" at="15,0,77,0" />
       <scope id="1170878984790" at="13,33,77,7" />
       <scope id="1170878984788" at="13,0,79,0" />
-      <unit id="1224596674955" at="18,23,73,13" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$3" />
-      <unit id="1224596674955" at="16,19,75,9" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$2" />
+      <unit id="1224596674955" at="18,23,73,13" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$1$1$1" />
+      <unit id="1224596674955" at="16,19,75,9" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$1$1" />
       <unit id="1224596674955" at="14,36,77,5" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$1" />
       <unit id="1170878927223" at="10,0,83,0" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
     </file>

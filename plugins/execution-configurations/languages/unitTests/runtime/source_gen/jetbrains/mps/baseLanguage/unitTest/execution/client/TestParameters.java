@@ -7,11 +7,13 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.LinkedList;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.baseLanguage.execution.api.Java_Command;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.DefaultTestExecutor;
 
 @Immutable
@@ -56,13 +58,11 @@ public final class TestParameters {
     return false;
   }
 
-  public static final TestParameters DEFAULT = calcDefault();
-
-  public static TestParameters calcDefault() {
-    final MPSModuleRepository repo = MPSModuleRepository.getInstance();
+  public static TestParameters calcDefault(final SRepository repo) {
     List<String> classPath = new ModelAccessHelper(repo).runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
-        return Java_Command.getClasspath(PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo));
+        SModule m = PersistenceFacade.getInstance().createModuleReference("8b958198-128f-4136-80e5-ca9777caa869(jetbrains.mps.baseLanguage.unitTest.execution.startup)").resolve(repo);
+        return Java_Command.getClasspath(Sequence.<SModule>singleton(m));
       }
     });
     return new TestParameters(DefaultTestExecutor.class, classPath);

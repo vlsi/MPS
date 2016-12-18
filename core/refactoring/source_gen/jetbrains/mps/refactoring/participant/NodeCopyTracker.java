@@ -25,10 +25,13 @@ public class NodeCopyTracker {
   public Map<SNode, SNode> getCopyMap() {
     return Collections.unmodifiableMap(copyMap);
   }
+  public void putInCopyMap(Map<SNode, SNode> addition) {
+    MapSequence.fromMap(copyMap).putAll(addition);
+  }
   public List<SNode> copyAndTrack(List<SNode> oldNodes) {
     Map<SNode, SNode> localCopyMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     List<SNode> result = CopyUtil.copyAndPreserveId(oldNodes, localCopyMap);
-    MapSequence.fromMap(copyMap).putAll(localCopyMap);
+    putInCopyMap(localCopyMap);
     for (IMapping<SNode, SNode> mapping : MapSequence.fromMap(copyMap)) {
       CopyUtil.addReferences(mapping.key(), copyMap, false);
     }

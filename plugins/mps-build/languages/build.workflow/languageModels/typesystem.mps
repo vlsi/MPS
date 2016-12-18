@@ -177,7 +177,7 @@
                     <ref role="3cqZAo" node="Y2EImGHwwW" resolve="tldep" />
                   </node>
                   <node concept="3TrEf2" id="Y2EImGHwxk" role="2OqNvi">
-                    <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" />
+                    <ref role="3Tt5mk" to="8xvf:6l_Qx579wkS" resolve="target" />
                   </node>
                 </node>
               </node>
@@ -195,7 +195,7 @@
             <ref role="1YBMHb" node="Y2EImGHLQK" resolve="lib" />
           </node>
           <node concept="3Tsc0h" id="Y2EImGHLQP" role="2OqNvi">
-            <ref role="3TtcxE" to="8xvf:6l_Qx579sqQ" />
+            <ref role="3TtcxE" to="8xvf:6l_Qx579sqQ" resolve="imports" />
           </node>
         </node>
       </node>

@@ -24,7 +24,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
   public typeof_AbstractOperationArguments_InferenceRule() {
   }
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> argumentTypes = AbstractStyledTextOperation__BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(operation)));
+    List<SNode> argumentTypes = AbstractStyledTextOperation__BehaviorDescriptor.getOperationArgumentType_id5GZRL5t2d36.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(operation)));
     if (ListSequence.fromList(SLinkOperations.getChildren(operation, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x3ee423fc2ad10eceL, 0x3ee423fc2ad10ed0L, "actualArgument"))).count() != ListSequence.fromList(argumentTypes).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.baseLanguage.execution.api.Java_Command;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
+import jetbrains.mps.execution.api.settings.PersistentConfigurationContext;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.MPSProject;
@@ -28,6 +29,10 @@ import com.intellij.util.xmlb.XmlSerializer;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import com.intellij.openapi.util.InvalidDataException;
+import com.intellij.execution.actions.ConfigurationContext;
+import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import java.util.Objects;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -40,7 +45,6 @@ import com.intellij.execution.configurations.ConfigurationPerRunnerSettings;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -55,22 +59,21 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   })));
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
-  public void checkConfiguration() throws RuntimeConfigurationException {
-    {
-      this.getNode().checkConfiguration();
-      final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
-      MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
-      mpsProject.getModelAccess().runReadAction(new Runnable() {
-        public void run() {
-          if (SNodeOperations.isInstanceOf(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-            hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(Java_Configuration.this.getNode().getNode(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
-          }
+  public void checkConfiguration(final PersistentConfigurationContext context) throws RuntimeConfigurationException {
+    this.getNode().checkConfiguration(context);
+    final Wrappers._boolean hasMainMethod = new Wrappers._boolean(false);
+    final MPSProject mpsProject = ProjectHelper.fromIdeaProject(this.getProject());
+    mpsProject.getModelAccess().runReadAction(new Runnable() {
+      public void run() {
+        SNode node = Java_Configuration.this.getNode().getNode().resolve(mpsProject.getRepository());
+        if (SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+          hasMainMethod.value = (((SNode) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")), SMethodTrimmedId.create("getMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "hEwIClG"))) == null);
         }
-      });
-
-      if (hasMainMethod.value) {
-        throw new RuntimeConfigurationError("Selected class does not have main method.");
       }
+    });
+
+    if (hasMainMethod.value) {
+      throw new RuntimeConfigurationError("Selected class does not have main method.");
     }
   }
   @Override
@@ -121,6 +124,14 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   public JavaRunParameters_Configuration getRunParameters() {
     return myRunParameters;
   }
+  public boolean isFromContext(@NotNull ConfigurationContext context) {
+    if (context.getPsiLocation() instanceof MPSPsiElement) {
+      MPSPsiElement mpsElement = (MPSPsiElement) context.getPsiLocation();
+      SNodeReference unresolvedItem = mpsElement.getUnresolvedItem(SNodeReference.class);
+      return Objects.equals(unresolvedItem, this.getNode().getNode());
+    }
+    return false;
+  }
   @Override
   public Java_Configuration clone() {
     Java_Configuration clone = null;
@@ -170,10 +181,19 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     return new Java_Configuration_Editor(myNode.getEditor(), myRunParameters.getEditor());
   }
   @Override
+  public void checkConfiguration() throws RuntimeConfigurationException {
+    final jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    checkConfiguration(new PersistentConfigurationContext() {
+      public jetbrains.mps.project.Project getProject() {
+        return mpsProject;
+      }
+    });
+  }
+  @Override
   public boolean canExecute(String executorId) {
     return Java_Configuration_RunProfileState.canExecute(executorId);
   }
   public Object[] createMakeNodePointersTask() {
-    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
+    return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNode())};
   }
 }

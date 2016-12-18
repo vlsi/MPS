@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,10 +26,8 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.tool.environment.MpsEnvironment;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.impl.IoFile;
 import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -89,13 +87,8 @@ public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
   }
 
   private Iterable<SModule> getAllModules() {
-    final SRepository repo = MPSModuleRepository.getInstance();
-    return new ModelAccessHelper(repo).runReadAction(new Computable<Iterable<SModule>>() {
-      @Override
-      public Iterable<SModule> compute() {
-        return repo.getModules();
-      }
-    });
+    final SRepository repo = ENV.getPlatform().findComponent(MPSModuleRepository.class);
+    return new ModelAccessHelper(repo).runReadAction(() -> repo.getModules());
   }
 
   private Collection<String> getCorePaths() {

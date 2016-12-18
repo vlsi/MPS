@@ -39,7 +39,7 @@
       <scope id="23293207022857582" at="32,0,47,0" />
       <scope id="23293207022857579" at="29,51,47,9" />
       <scope id="23293207022857579" at="28,0,49,0" />
-      <unit id="23293207022857582" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test$1" />
+      <unit id="23293207022857582" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test$TestBody$1" />
       <unit id="23293207022857579" at="26,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test$TestBody" />
       <unit id="23293207022857579" at="18,0,51,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeNonInheritanceTest_Test" />
     </file>
@@ -79,7 +79,7 @@
       <scope id="23293207022980700" at="32,0,47,0" />
       <scope id="23293207022980697" at="29,51,47,9" />
       <scope id="23293207022980697" at="28,0,49,0" />
-      <unit id="23293207022980700" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test$1" />
+      <unit id="23293207022980700" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test$TestBody$1" />
       <unit id="23293207022980697" at="26,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test$TestBody" />
       <unit id="23293207022980697" at="18,0,51,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributePriorityTest_Test" />
     </file>
@@ -119,7 +119,7 @@
       <scope id="23293207023100637" at="32,0,47,0" />
       <scope id="23293207023100634" at="29,51,47,9" />
       <scope id="23293207023100634" at="28,0,49,0" />
-      <unit id="23293207023100637" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test$1" />
+      <unit id="23293207023100637" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test$TestBody$1" />
       <unit id="23293207023100634" at="26,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test$TestBody" />
       <unit id="23293207023100634" at="18,0,51,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeUnapplyTest_Test" />
     </file>
@@ -159,7 +159,7 @@
       <scope id="23293207023146492" at="32,0,47,0" />
       <scope id="23293207023146489" at="29,51,47,9" />
       <scope id="23293207023146489" at="28,0,49,0" />
-      <unit id="23293207023146492" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test$1" />
+      <unit id="23293207023146492" at="31,47,47,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test$TestBody$1" />
       <unit id="23293207023146489" at="26,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test$TestBody" />
       <unit id="23293207023146489" at="18,0,51,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeSetHiddenThenUnhideTest_Test" />
     </file>
@@ -197,7 +197,7 @@
       <scope id="23293207023291589" at="32,0,46,0" />
       <scope id="23293207023291586" at="29,51,46,9" />
       <scope id="23293207023291586" at="28,0,48,0" />
-      <unit id="23293207023291589" at="31,47,46,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test$1" />
+      <unit id="23293207023291589" at="31,47,46,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test$TestBody$1" />
       <unit id="23293207023291586" at="26,0,49,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test$TestBody" />
       <unit id="23293207023291586" at="18,0,50,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeThreeLayerTest_Test" />
     </file>
@@ -247,7 +247,7 @@
       <scope id="23293207022826798" at="32,0,42,0" />
       <scope id="6609104295326585615" at="29,51,42,9" />
       <scope id="6609104295326585615" at="28,0,44,0" />
-      <unit id="23293207022826798" at="31,47,42,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test$1" />
+      <unit id="23293207022826798" at="31,47,42,7" name="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test$TestBody$1" />
       <unit id="6609104295326585615" at="26,0,45,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test$TestBody" />
       <unit id="6609104295326585615" at="18,0,46,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeInheritanceTest_Test" />
     </file>

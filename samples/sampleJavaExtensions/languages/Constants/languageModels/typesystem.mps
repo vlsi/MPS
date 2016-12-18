@@ -66,7 +66,7 @@
                 <ref role="1YBMHb" node="3tw0l3Pal48" resolve="constantReference" />
               </node>
               <node concept="3TrEf2" id="3tw0l3Pal4p" role="2OqNvi">
-                <ref role="3Tt5mk" to="nd9w:3tw0l3PakpA" />
+                <ref role="3Tt5mk" to="nd9w:3tw0l3PakpA" resolve="original" />
               </node>
             </node>
           </node>
@@ -96,7 +96,7 @@
                 <ref role="1YBMHb" node="3tw0l3Pal4s" resolve="constant" />
               </node>
               <node concept="3TrEf2" id="3tw0l3Pal4H" role="2OqNvi">
-                <ref role="3Tt5mk" to="nd9w:1J7HMiRRGnx" />
+                <ref role="3Tt5mk" to="nd9w:1J7HMiRRGnx" resolve="initializer" />
               </node>
             </node>
           </node>

@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import java.util.Collection;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.impl.reference.RefResolver;
 import jetbrains.mps.generator.runtime.NodeWeaveFacility;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -202,7 +201,7 @@ public class Template_NodeBuilder_to_methodCall extends TemplateDeclarationBase 
                   {
                     final SNode tnode23 = environment.createOutputNode(myConcepts[12]);
                     try {
-                      environment.resolve((ReferenceResolver) new RefResolver(tnode23, myAssociationLinks[3], context10, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7091594365016609327"), "result") {
+                      environment.resolve(new RefResolver(tnode23, myAssociationLinks[3], context10, new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7091594365016609327"), "result") {
                         @Override
                         public Object resolve() {
                           return QueriesGenerated.referenceMacro_GetReferent_7091594365016609328(createQueryContext());

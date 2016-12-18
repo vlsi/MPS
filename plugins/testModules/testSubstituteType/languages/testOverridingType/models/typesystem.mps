@@ -187,7 +187,7 @@
               <ref role="1YBMHb" node="5GcBY$qkT5Z" resolve="overrideAnnotation" />
             </node>
             <node concept="3TrEf2" id="25idkGdlL2F" role="2OqNvi">
-              <ref role="3Tt5mk" to="mdms:5zzawu2JF6U" />
+              <ref role="3Tt5mk" to="mdms:5zzawu2JF6U" resolve="substitute" />
             </node>
           </node>
         </node>
@@ -220,7 +220,7 @@
                 <ref role="1YBMHb" node="5GcBY$qkT5Z" resolve="overrideAnnotation" />
               </node>
               <node concept="3TrEf2" id="5jv06NzRLWB" role="2OqNvi">
-                <ref role="3Tt5mk" to="mdms:5zzawu2JF74" />
+                <ref role="3Tt5mk" to="mdms:5zzawu2JF74" resolve="condition" />
               </node>
             </node>
             <node concept="2qgKlT" id="5jv06NzRLWt" role="2OqNvi">
@@ -243,7 +243,7 @@
                   <ref role="1YBMHb" node="1BNF4XJaxET" resolve="overrideAnnotation" />
                 </node>
                 <node concept="3TrEf2" id="1BNF4XJazSW" role="2OqNvi">
-                  <ref role="3Tt5mk" to="mdms:5zzawu2JF6U" />
+                  <ref role="3Tt5mk" to="mdms:5zzawu2JF6U" resolve="substitute" />
                 </node>
               </node>
             </node>
@@ -261,7 +261,7 @@
               <ref role="1YBMHb" node="1BNF4XJaxET" resolve="overrideAnnotation" />
             </node>
             <node concept="3TrEf2" id="1BNF4XJaBtd" role="2OqNvi">
-              <ref role="3Tt5mk" to="mdms:5zzawu2JF74" />
+              <ref role="3Tt5mk" to="mdms:5zzawu2JF74" resolve="condition" />
             </node>
           </node>
           <node concept="2qgKlT" id="1BNF4XJaBNi" role="2OqNvi">

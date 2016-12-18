@@ -18,6 +18,7 @@ package jetbrains.mps.ide.tools;
 import com.intellij.ide.actions.ActivateToolWindowAction;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
+import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.DumbService;
@@ -30,6 +31,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactoryImpl;
 import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
@@ -38,16 +40,23 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
+import java.awt.event.InputEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public abstract class BaseTool {
   private final static Logger LOG = LogManager.getLogger(BaseTool.class);
 
   private final Project myProject;
   private final String myId;
-  private int myNumber;
   private Icon myIcon;
+  private Map<String, KeyStroke> myShortcutsByKeymap;
   private final ToolWindowAnchor myAnchor;
   private final boolean mySideTool;
   private boolean myCanCloseContent;
@@ -56,14 +65,32 @@ public abstract class BaseTool {
 
   private JComponent myComponent = null;
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
     this(project, id, number, icon, anchor, false, canCloseContent);
   }
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public BaseTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean sideTool, boolean canCloseContent) {
+    this(project, id, shortcutsFromNumber(number), icon, anchor, sideTool, canCloseContent);
+  }
+
+  protected static Map<String, KeyStroke> shortcutsFromNumber(int number) {
+    Map<String, KeyStroke> result = new HashMap<>();
+    if (number != -1) {
+      result.put(KeymapManager.DEFAULT_IDEA_KEYMAP, KeyStroke.getKeyStroke("alt " + number));
+      result.put(KeymapManager.MAC_OS_X_KEYMAP, KeyStroke.getKeyStroke("meta " + number));
+    }
+    return result;
+  }
+
+  public BaseTool(Project project, String id, Map<String, KeyStroke> shortcutsByKeymap, Icon icon, ToolWindowAnchor anchor, boolean sideTool,
+      boolean canCloseContent) {
     myAnchor = anchor;
     mySideTool = sideTool;
-    myNumber = number;
+    myShortcutsByKeymap = shortcutsByKeymap;
     myId = id;
     myIcon = icon;
     myCanCloseContent = canCloseContent;
@@ -75,8 +102,21 @@ public abstract class BaseTool {
     return myId;
   }
 
+  @Deprecated
+  @ToRemove(version = 3.5)
   public int getNumber() {
-    return myNumber;
+    if (myShortcutsByKeymap != null) {
+      KeyStroke defaultKeystroke = myShortcutsByKeymap.get(KeymapManager.DEFAULT_IDEA_KEYMAP);
+      if (defaultKeystroke != null) {
+        if (defaultKeystroke.getModifiers() == (InputEvent.ALT_MASK | InputEvent.ALT_DOWN_MASK)) {
+          char keyChar = defaultKeystroke.getKeyChar();
+          if (Character.isDigit(keyChar)) {
+            return Character.digit(keyChar, 10);
+          }
+        }
+      }
+    }
+    return -1;
   }
 
   public Icon getIcon() {
@@ -227,27 +267,41 @@ public abstract class BaseTool {
 
     myWindowManager = ToolWindowManager.getInstance(myProject);
 
-    if (myNumber != -1) {
+    if (myShortcutsByKeymap != null) {
       String actionId = ActivateToolWindowAction.getActionIdForToolWindow(myId);
 
-      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      if (keymap == null) {
-        LOG.error("Default IDEA Keymap cannot be found");
-        return;
-      } else {
-        KeyboardShortcut defShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
+      List<Keymap> keymaps = new ArrayList<>(myShortcutsByKeymap.size());
+      for (Entry<String, KeyStroke> keymapItem : myShortcutsByKeymap.entrySet()) {
+        Keymap keymap = KeymapManager.getInstance().getKeymap(keymapItem.getKey());
+        if (keymap == null) {
+          LOG.warn("Keymap " + keymapItem.getKey() + " cannot be found");
+          return;
+        }
+        keymaps.add(keymap);
+      }
+      // keymaps topsort here is needed because we need to remove inherited shortcuts if they are overwritten
+      Collections.sort(keymaps, new Comparator<Keymap>() {
+        @Override
+        public int compare(Keymap o1, Keymap o2) {
+          for (Keymap parent = o1.getParent(); parent != null; parent = parent.getParent()) {
+            if (parent.equals(o2)) {
+              return 1;
+            }
+          }
+          for (Keymap parent = o2.getParent(); parent != null; parent = parent.getParent()) {
+            if (parent.equals(o1)) {
+              return -1;
+            }
+          }
+          return 0;
+        }
+      });
+
+      for (Keymap keymap : keymaps) {
+        KeyboardShortcut defShortcut = new KeyboardShortcut(myShortcutsByKeymap.get(keymap.getName()), null);
+        keymap.removeAllActionShortcuts(actionId);
         keymap.addShortcut(actionId, defShortcut);
       }
-
-      keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
-      if (keymap == null) {
-        LOG.error("Keymap for MAC OS cannot be found");
-        return;
-      }
-      KeyboardShortcut oldShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("alt " + myNumber), null);
-      keymap.removeShortcut(actionId, oldShortcut);
-      KeyboardShortcut macShortcut = new KeyboardShortcut(KeyStroke.getKeyStroke("meta " + myNumber), null);
-      keymap.addShortcut(actionId, macShortcut);
     }
 
     //if we create a new project, tool windows are created for it automatically
@@ -327,17 +381,12 @@ public abstract class BaseTool {
 
     // see Javadoc for if condition explanation
     final List<Project> openedProjects = Arrays.asList(ProjectManager.getInstance().getOpenProjects());
-    if (myNumber != -1 && (openedProjects.contains(getProject()) || openedProjects.isEmpty())) {
-      Keymap keymap = KeymapManager.getInstance().getKeymap(KeymapManager.DEFAULT_IDEA_KEYMAP);
-      if (keymap != null) {
-        //noinspection ConstantConditions
-        keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
-      }
-
-      keymap = KeymapManager.getInstance().getKeymap(KeymapManager.MAC_OS_X_KEYMAP);
-      if (keymap != null) {
-        //noinspection ConstantConditions
-        keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+    if (myShortcutsByKeymap != null && (openedProjects.contains(getProject()) || openedProjects.isEmpty())) {
+      for (Entry<String, KeyStroke> keymapItem : myShortcutsByKeymap.entrySet()) {
+        Keymap keymap = KeymapManager.getInstance().getKeymap(keymapItem.getKey());
+        if (keymap != null) {
+          keymap.removeAllActionShortcuts(ActivateToolWindowAction.getActionIdForToolWindow(myId));
+        }
       }
     }
 

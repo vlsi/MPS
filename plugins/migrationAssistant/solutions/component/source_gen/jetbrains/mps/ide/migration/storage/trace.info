@@ -32,7 +32,7 @@
       <node id="8801330827093839344" at="42,91,49,13" concept="5" />
       <node id="6781485246382122167" at="56,0,64,0" concept="4" trace="createDir#(Ljava/io/File;)Z" />
       <node id="8801330827093839336" at="40,0,53,0" concept="4" trace="run#()V" />
-      <node id="8801330827093839327" at="38,174,53,9" concept="1" />
+      <node id="8801330827093839327" at="38,172,53,9" concept="1" />
       <node id="8801330827093839311" at="37,83,54,5" concept="3" />
       <node id="6781485246382121957" at="35,0,56,0" concept="4" trace="projectOpened#()V" />
       <scope id="6781485246382121953" at="32,44,33,19" />
@@ -63,13 +63,13 @@
         <var name="actionEvent" id="8801330827093839343" />
       </scope>
       <scope id="8801330827093839336" at="40,0,53,0" />
-      <scope id="8801330827093839326" at="38,174,53,9" />
+      <scope id="8801330827093839326" at="38,172,53,9" />
       <scope id="6781485246382121959" at="36,31,54,5">
         <var name="version" id="6781485246382121960" />
       </scope>
       <scope id="6781485246382121957" at="35,0,56,0" />
       <unit id="6781485246382121928" at="72,0,75,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant$MyState" />
-      <unit id="8801330827093839351" at="43,94,49,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
+      <unit id="8801330827093839351" at="43,94,49,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1$1" />
       <unit id="8801330827093839334" at="39,76,53,7" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1" />
       <unit id="6781485246382121925" at="28,0,76,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
     </file>

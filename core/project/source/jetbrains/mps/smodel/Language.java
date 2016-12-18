@@ -22,7 +22,6 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -345,10 +344,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   @Override
   public void save() {
     super.save();
-    for (Generator gen : getGenerators()) {
-      gen.validateLanguageVersions();
-      gen.validateDependencyVersions();
-    }
     if (isReadOnly()) return;
 
     if (myLanguageDescriptor.getLoadException() != null){
@@ -536,13 +531,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     @Override
     public Collection<SModuleReference> getDevKits(Language contextModule, SModel forModel) {
       return Collections.singleton(BootstrapLanguages.getLanguageDesignDevKit());
-    }
-
-    @Override
-    public Set<DevKit> getAutoImportedDevKits(Language contextModule, org.jetbrains.mps.openapi.model.SModel model) {
-      // left just in case anyone uses MAIM.getAutoImportedDevKits(). Contemporary code relies on #getDevKits().
-      SModule dk = BootstrapLanguages.getLanguageDesignDevKit().resolve(contextModule.getRepository());
-      return dk instanceof DevKit ? Collections.singleton((DevKit) dk) : super.getAutoImportedDevKits(contextModule, model);
     }
   }
 }

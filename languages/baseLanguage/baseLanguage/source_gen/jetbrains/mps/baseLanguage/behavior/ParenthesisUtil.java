@@ -391,7 +391,7 @@ public class ParenthesisUtil {
     if (turn != null && neq_a65dpo_a0a1a72(turn, firstCommonAncestor)) {
       // Accumulate nodes on the path up from the left/right paren 
       accumulator = (left ? IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(turn) : IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(turn));
-      SNodeOperations.detachNode(accumulator);
+      SNodeOperations.deleteNode(accumulator);
       SNode current = SNodeOperations.cast(SNodeOperations.getParent(turn), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x182da1771714863eL, "jetbrains.mps.baseLanguage.structure.IBinaryLike"));
       SNode previous = turn;
       while (neq_a65dpo_a0f0b0bb(current, firstCommonAncestor)) {
@@ -414,7 +414,7 @@ public class ParenthesisUtil {
       SNode firstCommonAncestorChild = (left ? IBinaryLike__BehaviorDescriptor.getSyntacticallyLeftSideExpression_id1wHCnsn590c.invoke(firstCommonAncestor) : IBinaryLike__BehaviorDescriptor.getSyntacticallyRightSideExpression_id1wHCnsn590i.invoke(firstCommonAncestor));
       if (firstCommonAncestorChild != null) {
         accumulator = firstCommonAncestorChild;
-        SNodeOperations.detachNode(accumulator);
+        SNodeOperations.deleteNode(accumulator);
       } else {
         accumulator = null;
       }
@@ -613,7 +613,7 @@ public class ParenthesisUtil {
   }
   public static void rotateTree(SNode child, SNode op, boolean isRight) {
     SNode backsideExpr = (isRight ? SLinkOperations.getTarget(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11cL, "leftExpression")) : SLinkOperations.getTarget(child, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbdeb6fecfL, 0xfbdeb7a11bL, "rightExpression")));
-    SNodeOperations.detachNode(child);
+    SNodeOperations.deleteNode(child);
     SNodeOperations.replaceWithAnother(op, child);
     SNodeOperations.replaceWithAnother(backsideExpr, op);
     if (isRight) {
@@ -623,7 +623,7 @@ public class ParenthesisUtil {
     }
   }
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
-    return (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child))) < (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(parent))) || (isRight && ((int) (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child)))) == ((int) (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(parent)))));
+    return (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(child))) < (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(parent))) || (isRight && ((int) (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(child)))) == ((int) (int) BinaryOperation__BehaviorDescriptor.getPriority_id1653mnvAgo2.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(parent)))));
   }
   private static boolean eq_a65dpo_a0a0a8a5a7(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

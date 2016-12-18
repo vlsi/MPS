@@ -8,7 +8,6 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="org.xml.sax.Attributes" />
@@ -45,7 +44,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadResult" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.SNodeFactory" />
-    <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.ElementHandler" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.def.v6.VersionUtil" />
     <classNode dependClassName="jetbrains.mps.util.xml.BreakParseSAXException" />
     <classNode dependClassName="jetbrains.mps.vcspersistence.VCSPersistenceUtil" />

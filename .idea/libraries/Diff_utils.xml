@@ -3,9 +3,11 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/diffutils-1.2.1.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/javadoc/diffutils-1.2.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/src/diffutils-1.2.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/src/diffutils-1.2.1-src.jar!/" />
     </SOURCES>
   </library>
 </component>

@@ -105,9 +105,12 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
@@ -139,7 +142,7 @@
                 <ref role="1YBMHb" node="hZKR1qC" resolve="varVariableDeclaration" />
               </node>
               <node concept="3TrEf2" id="6ZQeJ8QF88Z" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+                <ref role="3Tt5mk" to="tpee:fz3vP1I" resolve="initializer" />
               </node>
             </node>
           </node>
@@ -159,9 +162,11 @@
                 <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
               </node>
               <node concept="1PxgMI" id="7jH_x$qzxWb" role="33vP2m">
-                <ref role="1m5ApE" to="tpee:fz3vP1H" resolve="Type" />
                 <node concept="2X3wrD" id="7jH_x$qzxW8" role="1m5AlR">
                   <ref role="2X3Bk0" node="7jH_x$qzxVO" resolve="_concreteInitializerType" />
+                </node>
+                <node concept="chp4Y" id="714IaVdGYq9" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:fz3vP1H" resolve="Type" />
                 </node>
               </node>
             </node>
@@ -223,7 +228,7 @@
               <ref role="1YBMHb" node="6ZQeJ8QF892" resolve="declaration" />
             </node>
             <node concept="3TrEf2" id="6ZQeJ8QF8BL" role="2OqNvi">
-              <ref role="3Tt5mk" to="tpee:fz3vP1I" />
+              <ref role="3Tt5mk" to="tpee:fz3vP1I" resolve="initializer" />
             </node>
           </node>
           <node concept="3x8VRR" id="6ZQeJ8QF8BV" role="2OqNvi" />

@@ -48,8 +48,8 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
       addNodeById("1089557578627272135");
       addNodeById("360223900466871399");
       addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1301553664997476018"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false, false);
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("3441689827373215907"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1301553664997476018"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"))), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("3441689827373215907"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement"))), false, false, false);
     }
     public void test_varar_raw() throws Exception {
       addNodeById("1301553664999174765");
@@ -57,7 +57,7 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
       addNodeById("1089557578627272135");
       addNodeById("360223900466871399");
       addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1089557578627275112"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("1089557578627275112"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))), false, false, false);
     }
     public void test_lbt_subtypeof_param() throws Exception {
       addNodeById("1301553664999174765");
@@ -65,7 +65,7 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
       addNodeById("1089557578627272135");
       addNodeById("360223900466871399");
       addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("360223900466887047"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("360223900466887047"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))), false, false, false);
     }
     public void test_meet_with_variable_excluded_from_lcs() throws Exception {
       addNodeById("1301553664999174765");
@@ -73,7 +73,7 @@ public class TypeCheckingErrors_Test extends BaseTransformationTest {
       addNodeById("1089557578627272135");
       addNodeById("360223900466871399");
       addNodeById("5532302989585163343");
-      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("6368058149914761648"), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")), false, false, false);
+      NodeCheckerUtil.checkNodeForErrorMessages(SNodeOperations.cast(getNodeById("6368058149914761648"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b21dL, "InstanceMethodDeclaration"))), false, false, false);
     }
 
     public void test_NodeErrorCheck1089557578630058014() throws Exception {

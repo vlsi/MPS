@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -60,6 +60,8 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -294,7 +296,8 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private UsagesView createUsageView(@Nullable SearchTaskImpl searchTask) {
-    final UsagesView view = new UsagesView(ProjectHelper.toMPSProject(getProject()), myDefaultViewOptions, myChangeTracker);
+    jetbrains.mps.project.Project mpsProject = ProjectHelper.fromIdeaProject(getProject());
+    final UsagesView view = new UsagesView(mpsProject, myDefaultViewOptions, myChangeTracker);
     ArrayList<AnAction> actions = new ArrayList<>();
     if (searchTask != null) {
       final RerunAction rerunAction = new RerunAction(view, "Run again");
@@ -317,7 +320,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     });
     actions.add(new PinActiveTabAction.TW());
     if (ActionManager.getInstance().getAction(MPSActions.FIND_USAGES_WITH_DIALOG_ACTION) != null && searchTask != null) {
-      actions.add(new FindUsagesWithDialogAction(searchTask));
+      actions.add(new FindUsagesWithDialogAction(mpsProject.getRepository(), searchTask));
     }
     view.setActions(actions);
     return view;
@@ -383,10 +386,12 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   }
 
   private static class FindUsagesWithDialogAction extends AnAction {
+    private final SRepository myRepository;
     private final SearchTaskImpl mySearchTask;
 
-    public FindUsagesWithDialogAction(@NotNull SearchTaskImpl searchTask) {
+    public FindUsagesWithDialogAction(@NotNull SRepository repository, @NotNull SearchTaskImpl searchTask) {
       super("Settings...", "Show find usages settings dialog", General.ProjectSettings);
+      myRepository = repository;
       mySearchTask = searchTask;
     }
 
@@ -400,10 +405,10 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
       if (!mySearchTask.canExecute()) {
         return;
       }
-      // FIXME Fix NodeHolder to give SNodeReference, and resolve it with query's scope
-      if (!(mySearchTask.getSearchObject() instanceof SNode)) {
-        return; //object was deleted or of incompatible kind (see #getData() below)
+      if (!(mySearchTask.getSearchObject() instanceof SNodeReference)) {
+        return; //object of an incompatible kind (see #getData() below)
       }
+      final SNodeReference searchedNode = (SNodeReference) mySearchTask.getSearchObject();
 
       DataContext dataContext = new DataContext() {
         private final DataContext myDelegate = e.getDataContext();
@@ -412,10 +417,12 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
         @Override
         public Object getData(@NonNls String dataId) {
           if (MPSCommonDataKeys.CONTEXT_MODEL.is(dataId)) {
-            return ((SNode) mySearchTask.getSearchObject()).getModel();
+            SNode resolved = searchedNode.resolve(myRepository);
+            return resolved == null ? null : resolved.getModel();
           }
+          // if a caller asks for an SNode, I assume it has appropriate model read, otherwise what would be SNode for?
           if (MPSCommonDataKeys.NODE.is(dataId)) {
-            return mySearchTask.getSearchObject();
+            return searchedNode.resolve(myRepository);
           }
           return myDelegate.getData(dataId);
         }

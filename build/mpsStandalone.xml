@@ -68,6 +68,10 @@
         <exclude name="**/*.zip" />
       </fileset>
     </copy>
+    <mkdir dir="${build.layout}/plugins/terminal" />
+    <copy todir="${build.layout}/plugins/terminal">
+      <fileset dir="${basedir}/plugins/terminal" />
+    </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   

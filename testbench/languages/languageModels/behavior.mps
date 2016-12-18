@@ -135,6 +135,12 @@
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
@@ -155,12 +161,16 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
+      <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
@@ -289,6 +299,11 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="6s_qFz8Kdk2" role="3cqZAp">
+          <node concept="3SKdUq" id="6s_qFz8Kdk4" role="3SKWNk">
+            <property role="3SKdUp" value="if repository of this node&lt;ModuleSuite&gt; doesn't match your needs, pass proper SRepository here. There ain't no such thing as global repository" />
+          </node>
+        </node>
         <node concept="3cpWs6" id="7A48itiztug" role="3cqZAp">
           <node concept="2OqwBi" id="7A48itiztuh" role="3cqZAk">
             <node concept="37vLTw" id="7A48itiztui" role="2Oq$k0">
@@ -296,9 +311,16 @@
             </node>
             <node concept="liA8E" id="7A48itiztuj" role="2OqNvi">
               <ref role="37wK5l" to="lui2:~SModuleReference.resolve(org.jetbrains.mps.openapi.module.SRepository):org.jetbrains.mps.openapi.module.SModule" resolve="resolve" />
-              <node concept="2YIFZM" id="7A48itiztuk" role="37wK5m">
-                <ref role="37wK5l" to="w1kc:~MPSModuleRepository.getInstance():jetbrains.mps.smodel.MPSModuleRepository" resolve="getInstance" />
-                <ref role="1Pybhc" to="w1kc:~MPSModuleRepository" resolve="MPSModuleRepository" />
+              <node concept="2OqwBi" id="6s_qFz8KcCT" role="37wK5m">
+                <node concept="2JrnkZ" id="6s_qFz8KcnN" role="2Oq$k0">
+                  <node concept="2OqwBi" id="6s_qFz8KaPE" role="2JrQYb">
+                    <node concept="13iPFW" id="6s_qFz8K8DC" role="2Oq$k0" />
+                    <node concept="I4A8Y" id="6s_qFz8KbeY" role="2OqNvi" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="6s_qFz8KcYG" role="2OqNvi">
+                  <ref role="37wK5l" to="mhbf:~SModel.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
+                </node>
               </node>
             </node>
           </node>
@@ -502,9 +524,11 @@
             <node concept="2OqwBi" id="1ouvi_yvmP" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_yurE" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yupc" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yueR" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wD" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_yvAw" role="2OqNvi">
@@ -673,9 +697,11 @@
             <node concept="2OqwBi" id="1ouvi_yogR" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_yo72" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yo4O" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yneF" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wE" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_yooE" role="2OqNvi">
@@ -1020,9 +1046,11 @@
             <node concept="2OqwBi" id="1ouvi_ysqb" role="3uHU7B">
               <node concept="1PxgMI" id="1ouvi_ysnA" role="2Oq$k0">
                 <property role="1BlNFB" value="true" />
-                <ref role="1m5ApE" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
                 <node concept="37vLTw" id="1ouvi_yslo" role="1m5AlR">
                   <ref role="3cqZAo" node="1ouvi_yrCq" resolve="testRef" />
+                </node>
+                <node concept="chp4Y" id="714IaVdH1wC" role="3oSUPX">
+                  <ref role="cht4Q" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
                 </node>
               </node>
               <node concept="3TrEf2" id="1ouvi_ysDv" role="2OqNvi">

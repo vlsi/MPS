@@ -25,7 +25,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     return Arrays.asList(_quotation_createNode_gqfgxi_a0b0c(), _quotation_createNode_gqfgxi_b0b0c(), _quotation_createNode_gqfgxi_c0b0c());
   }
   public SAbstractConcept getApplicableConcept() {
-    return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType");
+    return MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf940d819f7L, "ArrayType");
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {

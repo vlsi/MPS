@@ -359,11 +359,11 @@
       <scope id="2722286076674338346" at="83,0,127,0">
         <var name="root" id="2722286076674338347" />
       </scope>
-      <unit id="6449175033276592777" at="94,88,98,11" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
-      <unit id="2722286076674338185" at="162,58,166,7" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
+      <unit id="6449175033276592777" at="94,88,98,11" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$3$1" />
+      <unit id="2722286076674338185" at="162,58,166,7" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$MyGlobalListener$1" />
       <unit id="2722286076674338337" at="75,45,81,5" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$2" />
       <unit id="2034046503361611289" at="59,52,68,5" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$1" />
-      <unit id="2034046503361610802" at="132,56,143,9" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$5" />
+      <unit id="2034046503361610802" at="132,56,143,9" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4$1" />
       <unit id="2034046503361610796" at="130,45,145,5" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$4" />
       <unit id="2722286076674338163" at="156,0,183,0" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$MyGlobalListener" />
       <unit id="6449175033276592713" at="84,73,115,5" name="jetbrains.mps.vcs.changesmanager.NodeFileStatusMapping$3" />
@@ -1674,33 +1674,33 @@
       <unit id="5832637535615760974" at="326,58,330,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$9" />
       <unit id="3557624462335397325" at="338,64,342,5" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$10" />
       <unit id="2260496836771376965" at="352,128,356,5" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$11" />
-      <unit id="8473562513973655260" at="362,55,366,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$13" />
+      <unit id="8473562513973655260" at="362,55,366,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$12$1" />
       <unit id="646252522846973801" at="393,63,397,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$13" />
-      <unit id="3285276019551792105" at="470,61,474,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$2" />
-      <unit id="3285276019551792118" at="475,33,479,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$2" />
-      <unit id="3285276019551792301" at="495,62,499,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$3" />
-      <unit id="3285276019551792314" at="500,33,504,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$3" />
-      <unit id="3285276019551792417" at="532,102,536,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$3" />
-      <unit id="3285276019551792450" at="539,61,543,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$5" />
-      <unit id="3285276019551792474" at="545,155,549,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$5" />
-      <unit id="3285276019551793238" at="582,62,586,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$6" />
-      <unit id="3285276019551793246" at="587,35,591,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$6" />
-      <unit id="3285276019551793285" at="593,63,597,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$6" />
-      <unit id="3285276019551793270" at="600,37,604,15" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$6" />
-      <unit id="5653442531631971980" at="619,64,623,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$7" />
-      <unit id="3285276019551793323" at="638,68,642,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$8" />
-      <unit id="5586130217025528069" at="654,65,658,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$9" />
-      <unit id="3285276019551792485" at="550,33,557,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$5" />
-      <unit id="2034046503361617804" at="372,60,380,15" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$13" />
-      <unit id="3285276019551793303" at="636,24,646,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$7" />
-      <unit id="5586130217025528050" at="652,24,662,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$8" />
+      <unit id="3285276019551792105" at="470,61,474,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$1$1" />
+      <unit id="3285276019551792118" at="475,33,479,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$1$2" />
+      <unit id="3285276019551792301" at="495,62,499,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$2$1" />
+      <unit id="3285276019551792314" at="500,33,504,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$2$2" />
+      <unit id="3285276019551792417" at="532,102,536,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$3" />
+      <unit id="3285276019551792450" at="539,61,543,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$4$1" />
+      <unit id="3285276019551792474" at="545,155,549,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$4$2" />
+      <unit id="3285276019551793238" at="582,62,586,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$5$1" />
+      <unit id="3285276019551793246" at="587,35,591,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$5$2" />
+      <unit id="3285276019551793285" at="593,63,597,13" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$5$4" />
+      <unit id="3285276019551793270" at="600,37,604,15" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$5$3" />
+      <unit id="5653442531631971980" at="619,64,623,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$6$1" />
+      <unit id="3285276019551793323" at="638,68,642,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$7$1" />
+      <unit id="5586130217025528069" at="654,65,658,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$8$1" />
+      <unit id="3285276019551792485" at="550,33,557,11" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$4$3" />
+      <unit id="2034046503361617804" at="372,60,380,15" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$12$2" />
+      <unit id="3285276019551793303" at="636,24,646,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$7" />
+      <unit id="5586130217025528050" at="652,24,662,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$8" />
       <unit id="3161776655522687189" at="218,44,229,5" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$5" />
-      <unit id="5653442531631971960" at="615,24,627,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$6" />
-      <unit id="3285276019551792084" at="468,24,481,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$1" />
-      <unit id="3285276019551792274" at="493,24,506,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$2" />
-      <unit id="3285276019551792429" at="537,24,559,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$4" />
+      <unit id="5653442531631971960" at="615,24,627,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$6" />
+      <unit id="3285276019551792084" at="468,24,481,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$1" />
+      <unit id="3285276019551792274" at="493,24,506,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$2" />
+      <unit id="3285276019551792429" at="537,24,559,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$4" />
       <unit id="2260496836771376203" at="357,24,386,5" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$12" />
-      <unit id="3285276019551793222" at="579,24,608,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$5" />
+      <unit id="3285276019551793222" at="579,24,608,7" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector$5" />
       <unit id="3285276019551683346" at="416,0,665,0" name="jetbrains.mps.vcs.changesmanager.ChangesTracking$MyEventsCollector" />
       <unit id="3161776655522682154" at="91,0,681,0" name="jetbrains.mps.vcs.changesmanager.ChangesTracking" />
     </file>

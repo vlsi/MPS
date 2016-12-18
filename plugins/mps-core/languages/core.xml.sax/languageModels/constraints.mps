@@ -94,8 +94,8 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
@@ -138,7 +138,7 @@
     <property role="3GE5qa" value="sax" />
     <ref role="1M2myG" to="nv7r:1XGsQcRHub9" resolve="XMLSAXAttributeReference" />
     <node concept="1N5Pfh" id="1XGsQcRHug3" role="1Mr941">
-      <ref role="1N5Vy1" to="nv7r:1XGsQcRHuba" />
+      <ref role="1N5Vy1" to="nv7r:1XGsQcRHuba" resolve="attribute" />
       <node concept="1dDu$B" id="QrUm5O7ZAt" role="1N6uqs">
         <ref role="1dDu$A" to="nv7r:1XGsQcRHubb" resolve="XMLSAXAttributeRule" />
       </node>
@@ -154,10 +154,12 @@
                   </node>
                   <node concept="1PxgMI" id="460OzqrjtxR" role="33vP2m">
                     <property role="1BlNFB" value="true" />
-                    <ref role="1m5ApE" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
                     <node concept="2OqwBi" id="460OzqrjtxS" role="1m5AlR">
                       <node concept="Bn53e" id="460Ozqrl5S4" role="2Oq$k0" />
                       <node concept="1mfA1w" id="460OzqrjtxT" role="2OqNvi" />
+                    </node>
+                    <node concept="chp4Y" id="714IaVdGZ5m" role="3oSUPX">
+                      <ref role="cht4Q" to="nv7r:1XGsQcRHubM" resolve="XMLSAXNodeRule" />
                     </node>
                   </node>
                 </node>
@@ -253,7 +255,7 @@
     <property role="3GE5qa" value="sax" />
     <ref role="1M2myG" to="nv7r:1XGsQcRHubw" resolve="XMLSAXFieldReference" />
     <node concept="1N5Pfh" id="1XGsQcRHuh4" role="1Mr941">
-      <ref role="1N5Vy1" to="nv7r:1XGsQcRHubx" />
+      <ref role="1N5Vy1" to="nv7r:1XGsQcRHubx" resolve="declaration" />
       <node concept="1MUpDS" id="1XGsQcRHuh5" role="1N6uqs">
         <node concept="3clFbS" id="1XGsQcRHuh6" role="2VODD2">
           <node concept="3cpWs8" id="1XGsQcRHuh7" role="3cqZAp">
@@ -284,7 +286,7 @@
                       <ref role="3cqZAo" node="1XGsQcRHuh8" resolve="n" />
                     </node>
                     <node concept="3Tsc0h" id="1XGsQcRHuhm" role="2OqNvi">
-                      <ref role="3TtcxE" to="nv7r:1XGsQcRHuc5" />
+                      <ref role="3TtcxE" to="nv7r:1XGsQcRHuc5" resolve="fields" />
                     </node>
                   </node>
                   <node concept="3QWeyG" id="1XGsQcRHuhn" role="2OqNvi">
@@ -293,7 +295,7 @@
                         <ref role="3cqZAo" node="1XGsQcRHuh8" resolve="n" />
                       </node>
                       <node concept="3Tsc0h" id="1XGsQcRHuhq" role="2OqNvi">
-                        <ref role="3TtcxE" to="nv7r:1XGsQcRHuc2" />
+                        <ref role="3TtcxE" to="nv7r:1XGsQcRHuc2" resolve="parameters" />
                       </node>
                     </node>
                   </node>
@@ -365,7 +367,7 @@
     <property role="3GE5qa" value="sax" />
     <ref role="1M2myG" to="nv7r:1XGsQcRHubo" resolve="XMLSAXChildRule" />
     <node concept="1N5Pfh" id="1XGsQcRHuhS" role="1Mr941">
-      <ref role="1N5Vy1" to="nv7r:1XGsQcRHubs" />
+      <ref role="1N5Vy1" to="nv7r:1XGsQcRHubs" resolve="rule" />
       <node concept="1MUpDS" id="1XGsQcRHuhT" role="1N6uqs">
         <node concept="3clFbS" id="1XGsQcRHuhU" role="2VODD2">
           <node concept="3clFbF" id="1XGsQcRHuhV" role="3cqZAp">
@@ -391,7 +393,7 @@
     <property role="3GE5qa" value="sax" />
     <ref role="1M2myG" to="nv7r:460Ozqr7Lr6" resolve="XMLSAXNodeRuleParamRef" />
     <node concept="1N5Pfh" id="460Ozqr7Lw_" role="1Mr941">
-      <ref role="1N5Vy1" to="nv7r:460Ozqr7Lvw" />
+      <ref role="1N5Vy1" to="nv7r:460Ozqr7Lvw" resolve="param" />
       <node concept="1dDu$B" id="460Ozqr7LwB" role="1N6uqs">
         <ref role="1dDu$A" to="nv7r:QrUm5N2YfH" resolve="XMLSAXNodeRuleParam" />
       </node>

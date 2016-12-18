@@ -95,7 +95,7 @@
                     <node concept="2OqwBi" id="2E6akI4$sxG" role="2Oq$k0">
                       <node concept="30H73N" id="2E6akI4$sxF" role="2Oq$k0" />
                       <node concept="3TrEf2" id="2E6akI4$sxK" role="2OqNvi">
-                        <ref role="3Tt5mk" to="q5cj:2E6akI4$s33" />
+                        <ref role="3Tt5mk" to="q5cj:2E6akI4$s33" resolve="parameter" />
                       </node>
                     </node>
                     <node concept="2qgKlT" id="2E6akI4$sxQ" role="2OqNvi">

@@ -11,7 +11,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import org.jetbrains.annotations.NotNull;
 import java.util.Collection;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.debug.api.programState.IStackFrame;
 import jetbrains.mps.debug.api.programState.ILocation;
 import jetbrains.mps.debug.api.source.SourcePosition;
@@ -56,7 +56,7 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessions();
   }
   @Override
-  public SNode getNode(AbstractDebugSession session) {
+  public SNodeReference getNode(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
     if (stackFrame != null) {
       ILocation location = stackFrame.getLocation();

@@ -3,12 +3,12 @@
   <persistence version="9" />
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="3" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" name="jetbrains.mps.lang.intentions" version="0" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -214,8 +214,8 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
+        <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="3542851458883438784" name="jetbrains.mps.lang.smodel.structure.LanguageId" flags="ng" index="2V$Bhx">
@@ -2298,10 +2298,12 @@
         <node concept="3clFbF" id="7gdCoen35IX" role="3cqZAp">
           <node concept="2OqwBi" id="7gdCoen35N6" role="3clFbG">
             <node concept="1PxgMI" id="7gdCoen35L0" role="2Oq$k0">
-              <ref role="1m5ApE" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
               <node concept="2OqwBi" id="7gdCoen36FF" role="1m5AlR">
                 <node concept="2Sf5sV" id="7gdCoen36FG" role="2Oq$k0" />
                 <node concept="1mfA1w" id="7gdCoen36FH" role="2OqNvi" />
+              </node>
+              <node concept="chp4Y" id="714IaVdGZo0" role="3oSUPX">
+                <ref role="cht4Q" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
               </node>
             </node>
             <node concept="2qgKlT" id="6Va_BJeTOzq" role="2OqNvi">
@@ -2369,10 +2371,12 @@
             </node>
             <node concept="2OqwBi" id="7gdCoen38dY" role="3uHU7w">
               <node concept="1PxgMI" id="7gdCoen38dZ" role="2Oq$k0">
-                <ref role="1m5ApE" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
                 <node concept="2OqwBi" id="7gdCoen38e0" role="1m5AlR">
                   <node concept="2Sf5sV" id="7gdCoen38e1" role="2Oq$k0" />
                   <node concept="1mfA1w" id="7gdCoen38e2" role="2OqNvi" />
+                </node>
+                <node concept="chp4Y" id="714IaVdGZoL" role="3oSUPX">
+                  <ref role="cht4Q" to="tpee:hOIEacT" resolve="IBLDeprecatable" />
                 </node>
               </node>
               <node concept="2qgKlT" id="3yvWaPHRgjj" role="2OqNvi">
