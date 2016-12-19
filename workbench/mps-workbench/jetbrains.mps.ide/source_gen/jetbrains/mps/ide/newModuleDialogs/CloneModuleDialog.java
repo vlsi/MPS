@@ -77,23 +77,26 @@ public final class CloneModuleDialog extends AbstractModuleCreationDialog {
       myResult = null;
       return;
     }
-    myResult.updateModelsSet();
+    addModuleToProject();
+    adjustReferences();
+    myResult.save();
+  }
+
+  private void addModuleToProject() {
     myProject.addModule(myResult);
     if (myProject instanceof StandaloneMPSProject) {
       ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
     }
-    adjustReferences();
-    myResult.renameModels(myModuleOriginal.getModuleName(), myResult.getModuleName(), true);
-    myResult.save();
   }
 
   private void adjustReferences() {
     ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    referenceUpdater.addModuleToAdjust(myModuleOriginal, myResult, true); // FIXME RADIMIR do we need this flag
+    referenceUpdater.addModuleToAdjust(myModuleOriginal, myResult);
     referenceUpdater.adjust();
   }
 
-  private void hackGeneratorDescriptor(ModulePathConverter module){}
+  private void hackGeneratorDescriptor(ModulePathConverter module) {
+  }
 
   private static void copyModelRoots(AbstractModule source, AbstractModule target) throws CopyNotSupportedException {
     List<ModelRoot> targetModelRoots = new ArrayList<>();

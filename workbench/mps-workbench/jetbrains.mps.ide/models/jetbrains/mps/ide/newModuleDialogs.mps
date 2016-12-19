@@ -1692,16 +1692,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="6CFNGGphPfj" role="3cqZAp">
-          <node concept="2OqwBi" id="6CFNGGphPpV" role="3clFbG">
-            <node concept="37vLTw" id="6CFNGGphPpU" role="2Oq$k0">
-              <ref role="3cqZAo" node="2UnPMOMlF4U" resolve="myResult" />
-            </node>
-            <node concept="liA8E" id="6CFNGGphPpW" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~AbstractModule.updateModelsSet():void" resolve="updateModelsSet" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="6CFNGGphPfl" role="3cqZAp">
           <node concept="2OqwBi" id="6CFNGGphPpZ" role="3clFbG">
             <node concept="37vLTw" id="6CFNGGphPpY" role="2Oq$k0">
@@ -1753,35 +1743,6 @@
         <node concept="3clFbF" id="6CFNGGphPfB" role="3cqZAp">
           <node concept="1rXfSq" id="6CFNGGphPfC" role="3clFbG">
             <ref role="37wK5l" node="6CFNGGphPfM" resolve="adjustReferences" />
-          </node>
-        </node>
-        <node concept="3clFbF" id="6CFNGGphPfD" role="3cqZAp">
-          <node concept="2OqwBi" id="6CFNGGphPq3" role="3clFbG">
-            <node concept="37vLTw" id="6CFNGGphPq2" role="2Oq$k0">
-              <ref role="3cqZAo" node="2UnPMOMlF4U" resolve="myResult" />
-            </node>
-            <node concept="liA8E" id="6CFNGGphPq4" role="2OqNvi">
-              <ref role="37wK5l" to="z1c3:~AbstractModule.renameModels(java.lang.String,java.lang.String,boolean):void" resolve="renameModels" />
-              <node concept="2OqwBi" id="6CFNGGphPq7" role="37wK5m">
-                <node concept="37vLTw" id="6CFNGGphPq6" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2UnPMOMpJvN" resolve="myModuleOriginal" />
-                </node>
-                <node concept="liA8E" id="6CFNGGphPq8" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                </node>
-              </node>
-              <node concept="2OqwBi" id="6CFNGGphPqb" role="37wK5m">
-                <node concept="37vLTw" id="6CFNGGphPqa" role="2Oq$k0">
-                  <ref role="3cqZAo" node="2UnPMOMlF4U" resolve="myResult" />
-                </node>
-                <node concept="liA8E" id="6CFNGGphPqc" role="2OqNvi">
-                  <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                </node>
-              </node>
-              <node concept="3clFbT" id="6CFNGGphPfH" role="37wK5m">
-                <property role="3clFbU" value="true" />
-              </node>
-            </node>
           </node>
         </node>
         <node concept="3clFbF" id="6CFNGGphPfI" role="3cqZAp">

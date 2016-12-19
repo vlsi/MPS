@@ -22,7 +22,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author evgeny, 10/1/12
  */
-public class StringUtil {
+public final class StringUtil {
 
   private final static char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
@@ -53,6 +53,11 @@ public class StringUtil {
 
   public static boolean isEmpty(String s) {
     return s == null || s.length() == 0;
+  }
+
+  @NotNull
+  public static String emptyIfNull(@Nullable String s) {
+    return s == null ? "" : s;
   }
 
   @NonNls

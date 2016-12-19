@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
@@ -26,10 +25,8 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.persistence.FileDataSourceCreator.CreationResult;
 import jetbrains.mps.persistence.ModelSourceRootWalker.ModelRootFileTreeLocus;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -186,7 +183,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   }
 
   @NotNull
-  private SModel createModelImpl(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) throws IOException {
+  /*package*/ SModel createModelImpl(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) throws IOException {
     ModelCreationOptions options = defaultModelCreationOptions(modelName);
     DataSource source;
     if (factory instanceof FolderModelFactory) {
@@ -210,63 +207,8 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
 
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
-    if (!isInsideModuleDir()) {
-      throw new CopyNotSupportedException("The model root's content path must be inside module directory " + this + " " + getModule());
-    }
     copyContentRootAndFiles(targetModelRoot);
-    AbstractModule sourceModule = ((AbstractModule) getModule());
-    AbstractModule targetModule = ((AbstractModule) targetModelRoot.getModule());
-    final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
-    List<SourceRoot> sourceFiles = getSourceRoots(SourceRootKinds.SOURCES);
-    List<SourceRoot> targetFiles = targetModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
-    assert sourceFiles.size() == targetFiles.size();
-//    for (int cnt = 0; cnt < sourceFiles.size(); ++cnt) {
-//      SourceRoot sourceRoot = sourceFiles.get(cnt);
-//      SourceRoot targetRoot = targetFiles.get(cnt);
-//
-//      fileSystem.getFile(targetRoot.getPath()).mkdirs();
-//      ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, new File);
-//      String relPath = relativize(getContentDirectory(), sourceRoot.getPath());
-//      IFile sourceRootFile = fileSystem.getFile(sourceRoot.getPath());
-//      modelSourceRootWalker.walk(sourceRootFile);
-//      try {
-//         TODO RADIMIR REVIEW
-//        SModelBase sourceModel = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, parameters);
-//        createModelCopy(targetModelRoot, targetModule, targetRoot, factory, parameters, sourceModel);
-//      } catch (IOException e) {
-//         TODO
-//      }
-//    }
-  }
-
-//  private static class CopyModelHelper {
-//    DefaultModelRoot myModelRoot;
-//    String myTargetModelRootName;
-//    AbstractModule myTargetModule;
-//    ModelFactory myModelFactory;
-//  };
-
-  private void createModelCopy(@NotNull DefaultModelRoot targetModelRoot,
-                               AbstractModule targetModule,
-                               SourceRoot targetSourceRoot,
-                               ModelFactory factory,
-                               SModelBase sourceModel) throws IOException {
-    EditableSModelBase targetModel = (EditableSModelBase) targetModelRoot.createModelImpl(factory, sourceModel.getName().getValue(), targetSourceRoot);
-//              SModelName oldModelName = m.getName();
-//              if (oldModelName.getNamespace().startsWith(oldName)) {
-//                if (m instanceof EditableSModel) {
-//                  SModelName newModelName = new SModelName(
-//                      newName + oldModelName.getNamespace().substring(oldName.length()),
-//                      oldModelName.getSimpleName(), oldModelName.getStereotype());
-//                  ((EditableSModel) m.rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
-//                }
-//              }
-    targetModel.setModelRoot(targetModelRoot);
-    targetModel.setModule(targetModule);
-
-    CopyUtil.copyModelContentAndPreserveIds(sourceModel, targetModel);
-    CopyUtil.copyModelProperties(sourceModel.getSModel(), targetModel.getSModel());
-    saveModel(targetModel);
+    new CopyDefaultModelRootHelper(this, targetModelRoot).copy();
   }
 
   /**
@@ -279,12 +221,6 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     ModelRootDescriptor result = new ModelRootDescriptor();
     save(result.getMemento());
     return result;
-  }
-
-  // FIXME see MPS-18545
-  private static void saveModel(@NotNull EditableSModelBase targetModel) {
-    targetModel.setChanged(true);
-    targetModel.save();
   }
 
   interface FileTreeWalkListener {

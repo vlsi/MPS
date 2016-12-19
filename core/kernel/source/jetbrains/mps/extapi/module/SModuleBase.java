@@ -236,8 +236,9 @@ public abstract class SModuleBase implements SModule {
   public void registerModel(SModelBase model) {
     assertCanChange();
     if (model.getModule() != null && model.getModule() != this) {
-      throw new IllegalArgumentException("Model `" + model.getModelName() + "' is already registered in "
-          + "module: " + model.getModule() + ", when trying to register it in " + this);
+      throw new IllegalArgumentException(String.format("Model '%s' is already registered in the module: '%s', " +
+                                                       "when trying to register it in '%s'.",
+                                                       model.getModelName(), model.getModule(), this));
     }
 
     synchronized (LOCK) {

@@ -15,20 +15,23 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
 import static jetbrains.mps.project.MPSExtentions.DOT;
 
 /**
+ * Helps to calculates such options as java package, model name for the model creation procedure
+ *
  * Created by apyshkin on 12/16/16.
  */
-class ParametersCalculator {
+@Immutable
+final class ParametersCalculator {
   private final DefaultModelRoot myModelRoot;
   @NotNull
   private final SourceRoot mySourceRoot;

@@ -34,20 +34,17 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 /**
  * Utility class that provides model/module reference updating in a group of models/modules.
  *
  * Expected workflow:
  * You collect models & modules where you want update references
- * by {@link #addModelToAdjust(SModel, SModel)} and {@link #addModuleToAdjust(SModule, SModule, boolean)}.
+ * by {@link #addModelToAdjust(SModel, SModel)} and {@link #addModuleToAdjust(SModule, SModule)}.
  *
  * Than you invoke {@link #adjust()} to replace all old references with new references in collected models & modules.
  *
@@ -68,54 +65,43 @@ public final class ReferenceUpdater {
   /**
    * Add {@code newModule} to adjust.
    * After adjusting, other modules & models will refer to {@code newModule} instead of {@code oldModule}
+   * Updates inner models by default
    *
    * @param oldModule old module - others contain refs to it
    * @param newModule new module - others will contain refs to it
-   * @param updateModels true, if you want to update inner models too.
    */
-  public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
+  public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule) {
     assertNotAdjusted();
-    addModuleToAdjustImpl(oldModule, newModule, updateModels);
+    addModuleToAdjustImpl(oldModule, newModule);
 
     if (oldModule instanceof Language && newModule instanceof Language) {
-      addLanguageToAdjustImpl((Language) oldModule, (Language) newModule, updateModels);
+      addLanguageToAdjustImpl((Language) oldModule, (Language) newModule);
     }
   }
 
-  private void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule, boolean updateModels) {
+  private void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule) {
     myModules.add(newModule);
     myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
 
-    if (updateModels) {
-      // FIXME SModule#getModels() doesn't guarantee any order
-      // FIXME So I assume that original models and cloned have same names
+    // AP let us assume that the models are in the same order (it is rational since we are _cloning_ modules)
+    Iterable<SModel> newModels = newModule.getModels();
+    Iterator<SModel> oldModels = oldModule.getModels().iterator();
+    for (SModel newModel : newModels) {
+      SModel oldModel = oldModels.next();
 
-      // AP let us assume that the models are in the same order (it is rational since we are _cloning_ modules)
-      Iterable<SModel> newModels = newModule.getModels();
-      Iterator<SModel> oldModels = oldModule.getModels().iterator();
-      for (SModel newModel : newModels) {
-        SModel oldModel = oldModels.next();
-
-        addModelToAdjustImpl(oldModel, newModel);
-      }
+      addModelToAdjust(oldModel, newModel);
     }
   }
 
-  private void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage, boolean updateModels) {
+  private void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage) {
     myUsedLanguagesMap.put(
         MetaAdapterByDeclaration.getLanguage(oldLanguage),
         MetaAdapterByDeclaration.getLanguage(newLanguage)
     );
     Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
     for (Generator oldGenerator : oldLanguage.getGenerators()) {
-      addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next(), updateModels);
+      addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next());
     }
-  }
-
-  private static List<SModel> getSortedModels(Iterable<SModel> models) {
-    return StreamSupport.stream(models.spliterator(), false)
-          .sorted(Comparator.comparing(model -> model.getName().getValue()))
-          .collect(Collectors.toList());
   }
 
   /**

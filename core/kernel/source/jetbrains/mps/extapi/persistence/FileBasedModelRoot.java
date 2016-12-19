@@ -273,7 +273,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         Memento modelRootMemento = memento.createChild(kind.getName());
         String contentRootPath = root.getAbsolutePath().getPath(); // must go away as soon as we allow relative paths
         if (FileUtil.isAncestor(myContentDir.getPath(), contentRootPath)) {
-          String relPath = relativize(myContentDir, contentRootPath);
+          String relPath = relativize(contentRootPath, myContentDir);
           modelRootMemento.put(LOCATION, relPath);
         } else {
           modelRootMemento.put(PATH, contentRootPath);
@@ -370,16 +370,28 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
       throw new CopyNotSupportedException("The module of the target model root is null " + targetModelRoot);
     }
 
-    ModulePathConverter converter = isInsideModuleDir() ? forModules(source, target) : ID_CONVERTER;
-
-    IFile targetContentDir = myFileSystem.getFile(converter.source2Target(getContentDirectory().getPath()));
-    targetModelRoot.setContentDirectory(targetContentDir);
-    for (SourceRootKind kind : getSupportedFileKinds1()) {
-      for (SourceRoot sourceRoot : getSourceRoots(kind)) {
-        String targetSourceRoot = targetContentDir.getDescendant(sourceRoot.getPath()).getPath();
-        targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot, myContentDir));
+    if (getContentDirectory() != null) {
+      assert target.getDescriptorFile() != null;
+      IFile targetContentDir;
+      if (isUnderModuleSourceDir(source, getContentDirectory())) {
+        String relFromModuleDirToContentDir = relativize(getContentDirectory().getPath(), source.getModuleSourceDir());
+        targetContentDir = target.getModuleSourceDir().getDescendant(relFromModuleDirToContentDir);
+      } else {
+        targetContentDir = getContentDirectory(); // no changes are needed
+      }
+      targetModelRoot.setContentDirectory(targetContentDir);
+      for (SourceRootKind kind : getSupportedFileKinds1()) {
+        for (SourceRoot sourceRoot : getSourceRoots(kind)) {
+          String targetSourceRoot = targetContentDir.getDescendant(sourceRoot.getPath()).getPath();
+          targetModelRoot.addSourceRoot(kind, new DefaultSourceRoot(targetSourceRoot, targetContentDir));
+        }
       }
     }
+  }
+
+  private static boolean isUnderModuleSourceDir(@NotNull AbstractModule module, @NotNull IFile path) {
+    IFile moduleSourceDir = module.getModuleSourceDir();
+    return moduleSourceDir != null && FileUtil.isAncestor(moduleSourceDir.getPath(), path.getPath());
   }
 
   @Override
@@ -403,16 +415,8 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return Objects.hash(myContentDir, mySourcePathStorage);
   }
 
-  protected final boolean isInsideModuleDir() {
-    final SModule module = getModule();
-    if (module instanceof AbstractModule) {
-      return ((AbstractModule) module).getModuleSourceDir().toPath().startsWith(getContentDirectory().toPath());
-    }
-    return false;
-  }
-
   @NotNull
-  public static String relativize(@NotNull IFile contentHome, @NotNull String fullPath) {
+  public static String relativize(@NotNull String fullPath, @NotNull IFile contentHome) {
     if (fullPath.isEmpty()) {
       return MPSExtentions.DOT;
     }

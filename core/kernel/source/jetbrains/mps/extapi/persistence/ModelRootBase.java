@@ -51,7 +51,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
   /*@NotNull*/
   @Override
-  public SModule getModule() {
+  public final SModule getModule() {
     return myModule;
   }
 

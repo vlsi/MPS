@@ -115,7 +115,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       }
     }
 
-    options.put(ModelFactory.OPTION_RELPATH, relativize(getContentDirectory(), filePath));
+    options.put(ModelFactory.OPTION_RELPATH, relativize(filePath, getContentDirectory()));
     options.remove(ModelFactory.OPTION_PACKAGE);
     options.remove(ModelFactory.OPTION_MODELNAME);
     if (relPath != null) {
