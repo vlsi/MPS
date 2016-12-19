@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="d7722d50-4b93-4c3a-ae06-1903d05f95a7" name="jetbrains.mps.lang.editor.figures" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="8n5u" ref="r:05147575-afa1-4d0f-b2e0-f20b32ad3e33(jetbrains.mps.lang.editor.diagram.runtime.jetpad.views)" />
@@ -129,7 +129,6 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
-      <concept id="1068581242866" name="jetbrains.mps.baseLanguage.structure.LocalVariableReference" flags="nn" index="3cpWsa" />
       <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
@@ -356,7 +355,7 @@
         <node concept="3clFbF" id="1NIE5SZObN4" role="3cqZAp">
           <node concept="2OqwBi" id="1NIE5SZOf74" role="3clFbG">
             <node concept="2OqwBi" id="1NIE5SZOcvd" role="2Oq$k0">
-              <node concept="3cpWsa" id="2kUb22mZ3Qp" role="2Oq$k0">
+              <node concept="37vLTw" id="2kUb22mZ3Qp" role="2Oq$k0">
                 <ref role="3cqZAo" node="2kUb22mZ3Qo" resolve="cellView" />
               </node>
               <node concept="2OwXpG" id="38blp6vTxka" role="2OqNvi">
@@ -378,7 +377,7 @@
             </node>
             <node concept="liA8E" id="5xniKJ5wJUZ" role="2OqNvi">
               <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="3cpWsa" id="2kUb22mZ3Qq" role="37wK5m">
+              <node concept="37vLTw" id="2kUb22mZ3Qq" role="37wK5m">
                 <ref role="3cqZAo" node="2kUb22mZ3Qo" resolve="cellView" />
               </node>
             </node>
