@@ -4,8 +4,8 @@ package jetbrains.mps.generator.test.crossmodel.entity;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -17,9 +17,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.generator.test.crossmodel.entity.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("4d14758c-3ecb-486d-b8c8-ea5beb8ae408");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.generator.test.crossmodel.entity";
@@ -31,12 +34,13 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("4d14758c-3ecb-486d-b8c8-ea5beb8ae408"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "0748f69c-0f19-4fe4-84a5-b51ed82f0548(jetbrains.mps.generator.test.crossmodel.entity#5533782486491461718)"));

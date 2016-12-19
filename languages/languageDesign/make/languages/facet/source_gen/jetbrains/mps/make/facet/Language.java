@@ -4,8 +4,9 @@ package jetbrains.mps.make.facet;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -22,9 +23,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.facet.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "696c1165-4a59-463b-bc5d-902caab85dd0(jetbrains.mps.make.facet)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("696c1165-4a59-463b-bc5d-902caab85dd0");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.make.facet";
@@ -36,12 +40,17 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("696c1165-4a59-463b-bc5d-902caab85dd0"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.make.script", "jetbrains.mps.baseLanguage.closures", "jetbrains.mps.baseLanguage.tuples", "jetbrains.mps.baseLanguage.collections"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("95f8a3e6-f994-4ca0-a65e-763c9bae2d3b"), "jetbrains.mps.make.script"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("fd392034-7849-419d-9071-12563d152375"), "jetbrains.mps.baseLanguage.closures"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("a247e09e-2435-45ba-b8d2-07e93feba96a"), "jetbrains.mps.baseLanguage.tuples"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("83888646-71ce-4f1c-9c53-c54016f6ad4f"), "jetbrains.mps.baseLanguage.collections"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "3349c57b-62f9-4ce2-a22d-d9bd99edc6a6(jetbrains.mps.make.facet#5086995156117116954)"));

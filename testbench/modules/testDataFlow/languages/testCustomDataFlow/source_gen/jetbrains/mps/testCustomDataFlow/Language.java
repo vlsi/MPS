@@ -4,7 +4,9 @@ package jetbrains.mps.testCustomDataFlow;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +19,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.testCustomDataFlow.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "f1af2340-2212-47dd-a65b-2d6ee9427e3e(jetbrains.mps.testCustomDataFlow)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("f1af2340-2212-47dd-a65b-2d6ee9427e3e");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.testCustomDataFlow";
@@ -31,12 +36,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("f1af2340-2212-47dd-a65b-2d6ee9427e3e"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.dataFlow"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("7fa12e9c-b949-4976-b4fa-19accbc320b4"), "jetbrains.mps.lang.dataFlow"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

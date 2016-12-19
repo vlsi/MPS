@@ -4,8 +4,9 @@ package jetbrains.mps.make.outlook;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -20,9 +21,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.make.outlook.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "dc54e1b2-86b3-49d2-9014-a76af17af22a(jetbrains.mps.make.outlook)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("dc54e1b2-86b3-49d2-9014-a76af17af22a");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.make.outlook";
@@ -34,12 +38,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("dc54e1b2-86b3-49d2-9014-a76af17af22a"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.make.facet"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("696c1165-4a59-463b-bc5d-902caab85dd0"), "jetbrains.mps.make.facet"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "f2324f12-b66e-4ff0-82da-267897cc06d8(jetbrains.mps.make.outlook#5608160002100106841)"));
