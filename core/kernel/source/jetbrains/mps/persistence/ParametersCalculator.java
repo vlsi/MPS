@@ -21,6 +21,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 
 import static jetbrains.mps.project.MPSExtentions.DOT;
@@ -41,10 +42,14 @@ final class ParametersCalculator {
     mySourceRoot = sourceRoot;
   }
 
+  /**
+   * @param fileExtension tells which extension the model file has.
+   *                      It can be null which means that there must be no extension at all.
+   */
   @NotNull
-  public ModelCreationOptions calculate(@NotNull IFile modelFile) {
+  public ModelCreationOptions calculate(@NotNull IFile modelFile, @Nullable String fileExtension) {
     String javaPackage = calcJavaPackage(modelFile);
-    String modelName = calcModelName(modelFile, javaPackage);
+    String modelName = calcModelName(modelFile, javaPackage, fileExtension);
     return ModelCreationOptions.startBuilding()
                                .setRelativePath(calcRelativePathFromContentDir(modelFile))
                                .setPackage(javaPackage)
@@ -70,11 +75,8 @@ final class ParametersCalculator {
     return NameUtil.namespaceFromPath(pathFromSourceRoot);
   }
 
-  private String calcModelName(IFile modelFile, String javaPackage) {
-    if (modelFile.isDirectory()) {
-      return null;
-    }
-    String fileNameWE = FileUtil.getNameWithoutExtension(modelFile.getName());
+  private String calcModelName(IFile modelFile, String javaPackage, @Nullable String fileExtension) {
+    String fileNameWE = (fileExtension != null) ? FileUtil.getNameWithoutExtension(modelFile.getName()) : modelFile.getName();
     return javaPackage.isEmpty() ? fileNameWE
                                  : javaPackage + DOT + fileNameWE;
   }

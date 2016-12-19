@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -84,12 +85,23 @@ public final class ReferenceUpdater {
     myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
 
     // AP let us assume that the models are in the same order (it is rational since we are _cloning_ modules)
-    Iterable<SModel> newModels = newModule.getModels();
-    Iterator<SModel> oldModels = oldModule.getModels().iterator();
-    for (SModel newModel : newModels) {
-      SModel oldModel = oldModels.next();
-
-      addModelToAdjust(oldModel, newModel);
+    List<ModelRoot> oldRoots = IterableUtil.asList(oldModule.getModelRoots());
+    List<ModelRoot> newRoots = IterableUtil.asList(newModule.getModelRoots());
+    assert oldRoots.size() == newRoots.size();
+    for (int i = 0; i < oldRoots.size(); ++i) {
+      ModelRoot oldRoot = oldRoots.get(i);
+      ModelRoot newRoot = newRoots.get(i);
+      List<SModel> oldModels = IterableUtil.asList(oldRoot.getModels());
+      List<SModel> newModels = IterableUtil.asList(newRoot.getModels());
+      for (int j = 0; j < oldModels.size(); ++j) {
+        SModel oldModel = oldModels.get(j);
+        SModel newModel = newModels.get(j);
+        if (!oldModel.isReadOnly()) {
+          addModelToAdjust(oldModel, newModel);
+        } else {
+          assert newModel.isReadOnly();
+        }
+      }
     }
   }
 
@@ -113,6 +125,10 @@ public final class ReferenceUpdater {
    */
   public void addModelToAdjust(@NotNull SModel oldModel, @NotNull SModel newModel) {
     assertNotAdjusted();
+    if (newModel.isReadOnly()) {
+      throw new IllegalArgumentException(String.format("The model '%s' is readonly", newModel));
+    }
+
     addModelToAdjustImpl(oldModel, newModel);
   }
 

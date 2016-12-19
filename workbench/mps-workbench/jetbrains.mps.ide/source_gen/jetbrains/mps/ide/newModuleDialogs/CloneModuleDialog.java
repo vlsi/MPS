@@ -11,8 +11,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.StandaloneMPSProject;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.util.ReferenceUpdater;
 import jetbrains.mps.util.ModulePathConverter;
@@ -68,12 +68,12 @@ public final class CloneModuleDialog extends AbstractModuleCreationDialog {
       myResult = null;
       return;
     }
-    addModuleToProject(myProject, myResult);
+    addModuleToProject();
     adjustReferences();
     myResult.save();
   }
 
-  private void addModuleToProject(MPSProject project, SModule module) {
+  private void addModuleToProject() {
     myProject.addModule(myResult);
     if (myProject instanceof StandaloneMPSProject) {
       ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);

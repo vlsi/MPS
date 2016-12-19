@@ -191,21 +191,24 @@ public class PersistenceUtil {
     }
     try {
       SModel model = factory.load(new MultiStreamDataSourceBase() {
+        @NotNull
         @Override
         public Iterable<String> getAvailableStreams() {
           return content.keySet();
         }
+
+        @NotNull
         @Override
         public InputStream openInputStream(String name) throws IOException {
           Object data = content.get(name);
           if (data instanceof String) {
-            return new ByteArrayInputStream(((String)data).getBytes(FileUtil.DEFAULT_CHARSET));
+            return new ByteArrayInputStream(((String) data).getBytes(FileUtil.DEFAULT_CHARSET));
           } else if (data instanceof byte[]) {
-            return new ByteArrayInputStream((byte[])data);
+            return new ByteArrayInputStream((byte[]) data);
           }
           throw new UnsupportedOperationException();
         }
-      }, Collections.<String, String>emptyMap());
+      }, Collections.emptyMap());
       model.load();
       return model;
     } catch (IOException ex) {
@@ -318,11 +321,13 @@ public class PersistenceUtil {
 
   public abstract static class MultiStreamDataSourceBase implements MultiStreamDataSource {
 
+    @NotNull
     @Override
     public InputStream openInputStream(String name) throws IOException {
       throw new UnsupportedOperationException();
     }
 
+    @NotNull
     @Override
     public OutputStream openOutputStream(String name) throws IOException {
       throw new UnsupportedOperationException();
@@ -363,10 +368,12 @@ public class PersistenceUtil {
   public static class InMemoryMultiStreamDataSource extends MultiStreamDataSourceBase {
     private Map<String, ByteArrayOutputStream> myStreams = new LinkedHashMap<String, ByteArrayOutputStream>();
 
+    @NotNull
     @Override
     public Iterable<String> getAvailableStreams() {
       return myStreams.keySet();
     }
+    @NotNull
     @Override
     public OutputStream openOutputStream(String name) throws IOException {
       ByteArrayOutputStream stream = new ByteArrayOutputStream();

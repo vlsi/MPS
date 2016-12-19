@@ -189,7 +189,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
     //we must be in command since model save might change model by adding model/language imports
     //if (!mySModel.isLoading()) LOG.assertInCommand();
 
-    LOG.info("Saving model " + getModelName());
+    LOG.info("Saving model " + getName().getLongName());
 
     if (!checkAndResolveConflictOnSave()) {
       return;

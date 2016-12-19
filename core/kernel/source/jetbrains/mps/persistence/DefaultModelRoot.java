@@ -46,7 +46,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 
 import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
@@ -96,7 +95,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     ParametersCalculator parametersCalculator = new ParametersCalculator(this, sourceRoot);
     ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, (factory, dataSource, file) -> {
       try {
-        ModelCreationOptions options = parametersCalculator.calculate(file);
+        ModelCreationOptions options = parametersCalculator.calculate(file, factory.getFileExtension());
         SModel model = new ModelFactoryFacade(factory).load(dataSource, options);
         ((SModelBase) model).setModelRoot(DefaultModelRoot.this);
         result.add(model);

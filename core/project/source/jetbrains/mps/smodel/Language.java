@@ -212,9 +212,10 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
 
   void revalidateGenerators() {
     ListIterator<Generator> generators = myGenerators.listIterator();
+    List<GeneratorDescriptor> generatorDescriptorsList = getModuleDescriptor().getGenerators();
     Iterator<GeneratorDescriptor> generatorDescriptors =
-        getModuleDescriptor() != null && getModuleDescriptor().getGenerators() != null ? getModuleDescriptor().getGenerators().iterator() :
-            Collections.<GeneratorDescriptor>emptyList().iterator();
+        generatorDescriptorsList != null ? generatorDescriptorsList.iterator() :
+        Collections.<GeneratorDescriptor>emptyList().iterator();
 
     SRepositoryExt moduleRepository = (SRepositoryExt) getRepository();
     while (generatorDescriptors.hasNext()) {
@@ -225,8 +226,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
         // looking for the existing generator with same ID
         Generator nextGeneratorCandidate = generators.next();
         GeneratorDescriptor nextGeneratorCandidateDescriptor = nextGeneratorCandidate.getModuleDescriptor();
-        if (nextGeneratorCandidateDescriptor != null &&
-            EqualUtil.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
+        if (EqualUtil.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
             EqualUtil.equals(nextGeneratorCandidateDescriptor.getId(), nextDescriptor.getId())) {
           nextGenerator = nextGeneratorCandidate;
         } else {

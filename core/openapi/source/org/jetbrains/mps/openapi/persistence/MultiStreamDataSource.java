@@ -27,8 +27,7 @@ import java.io.OutputStream;
  */
 public interface MultiStreamDataSource extends DataSource {
 
-  @NotNull
-  Iterable<String> getAvailableStreams();
+  @NotNull Iterable<String> getAvailableStreams();
 
   /**
    * Access named stream for reading. Caller is responsible to close the stream once done.

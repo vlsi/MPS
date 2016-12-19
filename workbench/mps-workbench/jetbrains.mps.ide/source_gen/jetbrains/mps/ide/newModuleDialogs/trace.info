@@ -115,10 +115,10 @@
       <node id="7650435763716707270" at="66,23,67,71" concept="2" />
       <node id="7650435763716707276" at="67,71,68,22" concept="2" />
       <node id="7650435763716707280" at="68,22,69,13" concept="8" />
-      <node id="7337052304717545197" at="70,5,71,44" concept="2" />
-      <node id="7650435763716707303" at="71,44,72,23" concept="2" />
+      <node id="7337052304717545197" at="70,5,71,25" concept="2" />
+      <node id="7650435763716707303" at="71,25,72,23" concept="2" />
       <node id="7650435763716707310" at="72,23,73,20" concept="2" />
-      <node id="7650435763716707285" at="76,71,77,34" concept="2" />
+      <node id="7650435763716707285" at="76,37,77,34" concept="2" />
       <node id="7650435763716707294" at="78,52,79,81" concept="2" />
       <node id="7650435763716967700" at="90,90,91,74" concept="7" />
       <node id="7650435763717015772" at="91,74,92,116" concept="7" />
@@ -158,7 +158,7 @@
       <node id="7650435763716707480" at="152,0,156,0" concept="6" trace="createSettingsInstance#()Ljetbrains/mps/ide/ui/dialogs/modules/CloneModuleSettings;" />
       <node id="7650435763716959251" at="90,0,95,0" concept="6" trace="createModule#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/ModuleDescriptor;)Ljetbrains/mps/project/AbstractModule;" />
       <node id="7650435763716707424" at="123,104,128,7" concept="4" />
-      <node id="7337052304717540398" at="76,0,82,0" concept="6" trace="addModuleToProject#(Ljetbrains/mps/project/MPSProject;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="7337052304717540398" at="76,0,82,0" concept="6" trace="addModuleToProject#()V" />
       <node id="7650435763716707314" at="96,0,102,0" concept="6" trace="adjustReferences#()V" />
       <node id="7650435763716707489" at="157,0,163,0" concept="6" trace="getDimensionServiceKey#()Ljava/lang/String;" />
       <node id="3357388636347106967" at="44,0,51,0" concept="1" trace="CloneModuleDialog#(Ljetbrains/mps/project/MPSProject;Ljava/lang/String;Ljetbrains/mps/project/AbstractModule;)V" />
@@ -197,7 +197,7 @@
         <var name="e" id="7650435763716707261" />
       </scope>
       <scope id="7650435763716707265" at="65,43,69,13" />
-      <scope id="7337052304717540401" at="76,71,80,5" />
+      <scope id="7337052304717540401" at="76,37,80,5" />
       <scope id="7650435763716707315" at="96,35,100,30">
         <var name="referenceUpdater" id="7650435763716707316" />
       </scope>
@@ -210,10 +210,7 @@
       <scope id="7650435763716707424" at="123,104,128,7">
         <var name="targetModelRoot" id="7650435763716707439" />
       </scope>
-      <scope id="7337052304717540398" at="76,0,82,0">
-        <var name="module" id="7337052304717540830" />
-        <var name="project" id="7337052304717540826" />
-      </scope>
+      <scope id="7337052304717540398" at="76,0,82,0" />
       <scope id="7650435763716707314" at="96,0,102,0" />
       <scope id="7650435763716707489" at="157,0,163,0" />
       <scope id="3357388636347106967" at="44,0,51,0">

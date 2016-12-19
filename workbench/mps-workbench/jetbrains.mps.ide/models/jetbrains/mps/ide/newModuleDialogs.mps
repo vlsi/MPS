@@ -1698,12 +1698,6 @@
         <node concept="3clFbF" id="6niszax9BVH" role="3cqZAp">
           <node concept="1rXfSq" id="6niszax9BVF" role="3clFbG">
             <ref role="37wK5l" node="6niszax9AKI" resolve="addModuleToProject" />
-            <node concept="37vLTw" id="16Fpg60Dhpz" role="37wK5m">
-              <ref role="3cqZAo" node="Ecfd3cMwd2" resolve="myProject" />
-            </node>
-            <node concept="37vLTw" id="16Fpg60DhuA" role="37wK5m">
-              <ref role="3cqZAo" node="2UnPMOMlF4U" resolve="myResult" />
-            </node>
           </node>
         </node>
         <node concept="3clFbF" id="6CFNGGphPfB" role="3cqZAp">
@@ -1784,18 +1778,6 @@
       </node>
       <node concept="3Tm6S6" id="6niszax9AE4" role="1B3o_S" />
       <node concept="3cqZAl" id="6niszax9AKG" role="3clF45" />
-      <node concept="37vLTG" id="6niszax9ARq" role="3clF46">
-        <property role="TrG5h" value="project" />
-        <node concept="3uibUv" id="6niszax9ARp" role="1tU5fm">
-          <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
-        </node>
-      </node>
-      <node concept="37vLTG" id="6niszax9ARu" role="3clF46">
-        <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="6niszax9AR$" role="1tU5fm">
-          <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-        </node>
-      </node>
     </node>
     <node concept="2tJIrI" id="6CFNGGpiMZr" role="jymVt" />
     <node concept="3clFb_" id="6CFNGGpiMKj" role="jymVt">

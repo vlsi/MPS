@@ -86,7 +86,6 @@ final class CopyDefaultModelRootHelper {
       throw new CopyNotSupportedException("The model root's content path must be inside module directory " + mySourceModelRoot + " : " + mySourceModelRoot.getModule());
     }
 
-    List<SModel> result = new ArrayList<>();
     AbstractModule sourceModule = ((AbstractModule) mySourceModelRoot.getModule());
     AbstractModule targetModule = ((AbstractModule) myTargetModelRoot.getModule());
     List<SourceRoot> sourceFiles = mySourceModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
@@ -100,12 +99,11 @@ final class CopyDefaultModelRootHelper {
       ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot, targetSourceRoot);
       ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, file) -> {
         try {
-          IFile targetFile = calculateTargetModelFile(sourceModule, targetModule, sourceRoot, targetSourceRoot, file);
-          ModelCreationOptions options = parametersCalculator.calculate(targetFile);
+          IFile targetModelFile = calculateTargetModelFile(sourceModule, targetModule, sourceRoot, targetSourceRoot, file);
+          ModelCreationOptions options = parametersCalculator.calculate(targetModelFile, factory.getFileExtension());
           try {
             SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
-            SModel modelCopy = createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);
-            result.add(modelCopy);
+            createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);
           } catch (UnsupportedDataSourceException ignored) {
             // FIXME this does not seem to be correct! I'd rather have ModelRootFactory know which DataSource it accepts beforehand
           }
