@@ -78,8 +78,10 @@ public class DeleteModelHelper {
           "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
     }
 
-    if (deleteFiles && deleteIfAsked) {
-      new ModelDeleteHelper(modelDescriptor).delete();
+    if (!modelDescriptor.isReadOnly()) {
+      if (deleteFiles && deleteIfAsked) {
+        new ModelDeleteHelper(modelDescriptor).delete();
+      }
     }
   }
 
