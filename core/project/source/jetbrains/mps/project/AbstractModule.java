@@ -669,7 +669,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return descriptor == null ? 0 : descriptor.getModuleVersion();
   }
 
-  public void rename(@NotNull String newName) {
+  // FIXME rename model roots
+  public void rename(@NotNull String newName) throws DescriptorTargetFileAlreadyExistsException {
     SModuleReference oldRef = getModuleReference();
     renameModels(getModuleName(), newName, true);
 
@@ -677,10 +678,16 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (myDescriptorFile != null) {
+      String newDescriptorName = newName + MPSExtentions.DOT + FileUtil.getExtension(myDescriptorFile.getName());
+      //noinspection ConstantConditions
+      if (myDescriptorFile.getParent().getDescendant(newDescriptorName).exists()) {
+        throw new DescriptorTargetFileAlreadyExistsException(myDescriptorFile, newDescriptorName);
+      }
+
       // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
       // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
       myFileSystem.removeListener(this);
-      myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
+      myDescriptorFile.rename(newDescriptorName);
       myFileSystem.addListener(this);
     }
 
@@ -692,6 +699,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     fireModuleRenamed(oldRef);
   }
 
+  /**
+   * Must be transferred to workbench or elsewhere as
+   * a separate listening mechanism. An induced contract is
+   * not part of the module/model api, it is our desire --
+   * I would rather move it to workbench
+   * [AP]
+   * Please do not use unless absolutely necessary
+   */
+  /*@Deprecated*/
   public void renameModels(String oldName, String newName, boolean moveModels) {
     //if module name is a prefix of it's model's name - rename the model, too
     for (SModel m : getModels()) {
@@ -699,9 +715,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
         SModelName oldModelName = m.getName();
         if (oldModelName.getNamespace().startsWith(oldName)) {
           if (m instanceof EditableSModel) {
-            SModelName newModelName = new SModelName(
-                newName + oldModelName.getNamespace().substring(oldName.length()),
-                oldModelName.getSimpleName(), oldModelName.getStereotype());
+            SModelName newModelName = new SModelName(newName + oldModelName.getNamespace().substring(oldName.length()),
+                                                     oldModelName.getSimpleName(),
+                                                     oldModelName.getStereotype());
             ((EditableSModel) m).rename(newModelName.getValue(), moveModels && m.getSource() instanceof FileDataSource);
           }
         }

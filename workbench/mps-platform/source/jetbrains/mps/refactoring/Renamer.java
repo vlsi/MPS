@@ -17,6 +17,7 @@ package jetbrains.mps.refactoring;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
@@ -30,7 +31,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 @ToRemove(version = 3.5)
 public final class Renamer {
-  public static void renameModule(@NotNull AbstractModule module, String newName) {
+  public static void renameModule(@NotNull AbstractModule module, String newName) throws DescriptorTargetFileAlreadyExistsException {
     module.getRepository().saveAll();
     module.rename(newName);
     updateModelAndModuleReferences(module.getRepository());

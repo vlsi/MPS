@@ -28,6 +28,7 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.IFile;
@@ -44,6 +45,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public abstract class ToggleFBModelRootKindAction extends ToggleAction implements CustomComponentAction, DumbAware {
@@ -68,7 +70,7 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
     }
 
     for (IFile selectedFile : selectedFiles) {
-      if (!pathIsAmongModelRoots(selectedFile)) {
+      if (getSourceRootByPath(selectedFile) == null) {
         return false;
       }
     }
@@ -76,27 +78,29 @@ public abstract class ToggleFBModelRootKindAction extends ToggleAction implement
     return true;
   }
 
-  private boolean pathIsAmongModelRoots(@NotNull IFile path) {
+  @Nullable
+  private SourceRoot getSourceRootByPath(@NotNull IFile path) {
     final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
-    return modelRoot.getSourceRoots(getKind()).stream().anyMatch(sourceRoot -> sourceRoot.getAbsolutePath().equals(path));
+    Optional<SourceRoot> any = modelRoot.getSourceRoots(getKind()).stream().filter(sourceRoot -> sourceRoot.getAbsolutePath().equals(path)).findAny();
+    return any.isPresent() ? any.get() : null;
   }
 
   @Override
-  public void setSelected(AnActionEvent e, boolean state) {
+  public void setSelected(AnActionEvent e, boolean enabled) { // if enabled == false, then the selection was disabled
     final List<IFile> selectedFiles = getSelectedFiles();
     assert !selectedFiles.isEmpty();
 
     final FileBasedModelRoot modelRoot = myModelRootEditor.getFileBasedModelRootEntry().getModelRoot();
 
     for (IFile selectedFile : selectedFiles) {
-      if (state) {
-        if (!pathIsAmongModelRoots(selectedFile)) {
-          assert modelRoot.getContentDirectory() != null;
-          modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
-        }
-      }
-      else {
-        modelRoot.deleteFile(getKind().getName(), selectedFile.getPath());
+      SourceRoot sourceRootByPath = getSourceRootByPath(selectedFile);
+      if (enabled) {
+        assert sourceRootByPath == null;
+        assert modelRoot.getContentDirectory() != null;
+        modelRoot.addSourceRoot(getKind(), new DefaultSourceRoot(selectedFile.getPath(), modelRoot.getContentDirectory()));
+      } else {
+        assert sourceRootByPath != null;
+        modelRoot.removeSourceRoot(sourceRootByPath);
       }
     }
 

@@ -22,6 +22,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.ReloadableModule;
 import jetbrains.mps.module.ReloadableModuleBase;
 import jetbrains.mps.module.SDependencyImpl;
+import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.JavaModuleOperations;
@@ -294,7 +295,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @Override
-  public void rename(@NotNull String newNamespace) {
+  public void rename(@NotNull String newNamespace) throws DescriptorTargetFileAlreadyExistsException {
     for (Generator g : getGenerators()) {
       g.rename(newNamespace);
     }

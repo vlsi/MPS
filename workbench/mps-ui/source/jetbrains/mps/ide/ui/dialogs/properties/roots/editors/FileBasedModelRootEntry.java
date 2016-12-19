@@ -35,6 +35,7 @@ import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -58,6 +59,7 @@ import java.awt.Stroke;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
 
 import static com.intellij.uiDesigner.core.GridConstraints.ANCHOR_EAST;
 import static com.intellij.uiDesigner.core.GridConstraints.ANCHOR_NORTHWEST;
@@ -165,11 +167,14 @@ public final class FileBasedModelRootEntry implements ModelRootEntry<FileBasedMo
   }
 
   private JComponent createKindFileComponent(@NotNull SourceRoot sourceRoot, @NotNull Color foreground) {
-//    String pathPresentation = file.replace(myFileBasedModelRoot.getContentRoot(), "").replaceFirst(Matcher.quoteReplacement(File.separator),"");
     String pathPresentation = sourceRoot.getPath();
-//    if (pathPresentation.equals("")) {
-//      pathPresentation = "./";
-//    }
+    IFile contentDirectory = myFileBasedModelRoot.getContentDirectory();
+    if (contentDirectory != null) {
+      pathPresentation = pathPresentation.replace(contentDirectory.getPath(), "").replaceFirst(Matcher.quoteReplacement(Path.SYSTEM_SEPARATOR), "");
+    }
+    if (pathPresentation.equals("")) {
+      pathPresentation = ".";
+    }
 
     JLabel label2Return = new JLabel(pathPresentation);
 

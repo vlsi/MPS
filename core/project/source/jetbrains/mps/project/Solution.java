@@ -29,6 +29,7 @@ import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -178,28 +179,26 @@ public class Solution extends ReloadableModuleBase {
     super.updateModelsSet();
   }
 
+  @Hack
   private void updateBootstrapSolutionLibraries() {
-    // temp HACK
-
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return;
 
     ClassType classType = bootstrapCP.get(descriptor.getModuleReference());
     if (classType == null) return;
 
     // do it only for first time
-    if (!descriptor.getModelRootDescriptors().isEmpty()) return;
-
-    for (String path : CommonPaths.getMPSPaths(classType)) {
-      final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
-      IFile pathFile = getFileSystem().getFile(path);
-      final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(pathFile, modelRootDescriptors);
-      if (javaStubsModelRoot != null) {
-        modelRootDescriptors.add(javaStubsModelRoot);
-        populateModelRoot(classType, javaStubsModelRoot);
-      }
-      if (classType.hasOwnJavaStubs()) {
-        descriptor.getAdditionalJavaStubPaths().add(path);
+    if (descriptor.getModelRootDescriptors().isEmpty()) {
+      for (String path : CommonPaths.getMPSPaths(classType)) {
+        final Collection<ModelRootDescriptor> modelRootDescriptors = descriptor.getModelRootDescriptors();
+        IFile pathFile = getFileSystem().getFile(path);
+        final ModelRootDescriptor javaStubsModelRoot = ModelRootDescriptor.getJavaStubsModelRoot(pathFile, modelRootDescriptors);
+        if (javaStubsModelRoot != null) {
+          modelRootDescriptors.add(javaStubsModelRoot);
+          populateModelRoot(classType, javaStubsModelRoot);
+        }
+        if (classType.hasOwnJavaStubs()) {
+          descriptor.getAdditionalJavaStubPaths().add(path);
+        }
       }
     }
   }

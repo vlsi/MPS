@@ -21,8 +21,10 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
+
 /**
- * Default source root which lives until the path api appears
+ * Default source root which lives until the <code>Path</code> api appears
  *
  * @author apyshkin
  * @since 3.5
@@ -47,6 +49,19 @@ public final class DefaultSourceRoot implements SourceRoot {
     return myAbsolutePath;
   }
 
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(myPath);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof DefaultSourceRoot) {
+      return Objects.equals(myPath, ((DefaultSourceRoot) obj).getPath());
+    }
+    return false;
+  }
+
   @NotNull
   @Override
   public String getPath() {
@@ -55,6 +70,6 @@ public final class DefaultSourceRoot implements SourceRoot {
 
   @Override
   public String toString() {
-    return "DefaultSourceRoot [" + getPath() + "]";
+    return "Path [" + getPath() + "]";
   }
 }

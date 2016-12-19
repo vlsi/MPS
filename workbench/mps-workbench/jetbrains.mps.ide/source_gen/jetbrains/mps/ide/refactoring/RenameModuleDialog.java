@@ -4,6 +4,7 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -35,7 +36,11 @@ public class RenameModuleDialog extends RenameDialog {
           }
         }
 
-        Renamer.renameModule(myModule, fqName);
+        try {
+          Renamer.renameModule(myModule, fqName);
+        } catch (DescriptorTargetFileAlreadyExistsException e) {
+          // todo show some dialog
+        }
         RenameModuleDialog.super.doRefactoringAction();
       }
     });

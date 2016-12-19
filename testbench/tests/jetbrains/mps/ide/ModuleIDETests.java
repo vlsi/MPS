@@ -18,6 +18,7 @@ package jetbrains.mps.ide;
 import com.intellij.configurationStore.StoreAwareProjectManager;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -106,7 +107,11 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     invokeInCommand(() -> {
       Language lang = langRef.get();
-      Renamer.renameModule(lang, newModuleName);
+      try {
+        Renamer.renameModule(lang, newModuleName);
+      } catch (DescriptorTargetFileAlreadyExistsException e) {
+        throw new RuntimeException(e);
+      }
       Assert.assertEquals(newModuleName, lang.getModuleName());
       IFile descriptorFile = lang.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
@@ -166,7 +171,11 @@ public class ModuleIDETests extends ModuleInProjectTest {
     invokeInCommand(() -> langRef.set(NewModuleUtil.createLanguage(moduleName, createNewDirInProject(), ourProject)));
     invokeInCommand(() -> {
       @NotNull Language lang = langRef.get();
-      Renamer.renameModule(lang, newModuleName);
+      try {
+        Renamer.renameModule(lang, newModuleName);
+      } catch (DescriptorTargetFileAlreadyExistsException e) {
+        throw new RuntimeException(e);
+      }
       deleteModule(lang, deleteFiles);
       CachingFile descriptorFile = (CachingFile) lang.getDescriptorFile();
       Assert.assertNotNull(descriptorFile);
@@ -187,7 +196,11 @@ public class ModuleIDETests extends ModuleInProjectTest {
       @NotNull Language lang = langRef.get();
       saveProjectInTest();
       projectBackup.doBackup();
-      Renamer.renameModule(lang, newModuleName);
+      try {
+        Renamer.renameModule(lang, newModuleName);
+      } catch (DescriptorTargetFileAlreadyExistsException e) {
+        throw new RuntimeException(e);
+      }
       Assert.assertEquals(lang.getModuleName(), newModuleName);
       Assert.assertTrue(ourProject.getProjectModules().contains(lang));
     });

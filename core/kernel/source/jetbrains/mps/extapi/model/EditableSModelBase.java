@@ -243,7 +243,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
       }
 
       ModelRoot root = getModelRoot();
-      if (root instanceof DefaultModelRoot) {
+      if (root instanceof DefaultModelRoot) { // todo only default model root? this code does not belong here but model root
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
         IFile oldFile = ((FileDataSource) getSource()).getFile();
         SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
@@ -255,10 +255,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
             newFile.getParent().mkdirs();
             newFile.createNewFile();
             changeModelFile(newFile);
-            while (oldFile != null && oldFile.isDirectory() && oldFile.getChildren().isEmpty()) {
-              oldFile.delete();
-              oldFile = oldFile.getParent();
-            }
+            deleteOldFile(oldFile);
           }
         } catch (IOException e) {
           LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
@@ -269,6 +266,14 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
     fireModelRenamed(new SModelRenamedEvent(this, oldName.getModelName(), newModelName));
     fireModelRenamed(oldName);
+  }
+
+  @SuppressWarnings("ConstantConditions")
+  private void deleteOldFile(IFile oldFile) {
+    do {
+      oldFile.delete();
+      oldFile = oldFile.getParent();
+    } while (oldFile != null && oldFile.getChildren().isEmpty());
   }
 
   private SourceRoot findSourceRootOfMyself(IFile oldFile, DefaultModelRoot defaultModelRoot) {

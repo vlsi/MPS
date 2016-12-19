@@ -164,10 +164,6 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     return createModel(modelFactory, defaultSourceRoot(), modelName);
   }
 
-//  public SModel createModel(@NotNull SourceRoot sourceRoot, @NotNull String modelName) {
-//    return createModel(defaultModelFactory(), sourceRoot, modelName);
-//  }
-
   /**
    * Creates a model via given factory with given name and under the provided sourceRoot in this ModelRoot.
    *
@@ -178,7 +174,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   @Nullable
   private SModel createModel(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) {
     try {
-      SModel model = createModelImpl(factory, modelName, sourceRoot);
+      SModel model = createModelImpl(factory, sourceRoot, modelName);
       ((SModelBase) model).setModelRoot(this);
       // TODO fix
       registerModel(model);
@@ -190,9 +186,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   }
 
   @NotNull
-  private SModel createModelImpl(@NotNull ModelFactory factory,
-                                 @NotNull String modelName,
-                                 @NotNull SourceRoot sourceRoot) throws IOException {
+  private SModel createModelImpl(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) throws IOException {
     ModelCreationOptions options = defaultModelCreationOptions(modelName);
     DataSource source;
     if (factory instanceof FolderModelFactory) {

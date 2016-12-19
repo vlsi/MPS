@@ -343,7 +343,7 @@ public class ModelRootContentEntriesEditor implements Disposable {
           for (VirtualFile candidate : candidatesForIntersection) {
             if (doIntersect(chosen, candidate)) {
               JOptionPane.showMessageDialog(myMainPanel,
-                  MessageFormat.format("Can''t create new model root, it intersects with the existing model root: '{0}'! \nChoose another folder", candidate));
+                  MessageFormat.format("Can''t create new model root, it intersects with the existing model root: '{1}'! \nChoose another folder", candidate));
               chosen = null;
               break;
             }
