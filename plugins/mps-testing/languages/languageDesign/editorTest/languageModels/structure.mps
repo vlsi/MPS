@@ -52,6 +52,7 @@
         <property id="1071599893252" name="sourceCardinality" index="20lbJX" />
         <property id="1071599937831" name="metaClass" index="20lmBu" />
         <property id="241647608299431140" name="linkId" index="IQ2ns" />
+        <reference id="1071599698500" name="specializedLink" index="20ksaX" />
         <reference id="1071599976176" name="target" index="20lvS9" />
       </concept>
     </language>
@@ -786,6 +787,32 @@
       <property role="20kJfa" value="anotherNode" />
       <ref role="20lvS9" node="3r66m91DWO2" resolve="SimpleNode" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="4EQk8IqQDmd">
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DelTestSpecialAbstractChild" />
+    <property role="EcuMT" value="5383578965096699277" />
+    <ref role="1TJDcQ" node="6LcR7Gqxch7" resolve="DelTestAbstractChild" />
+  </node>
+  <node concept="1TIwiD" id="4EQk8IqQDme">
+    <property role="TrG5h" value="DelTestChildSpecialContainer" />
+    <property role="3GE5qa" value="delete" />
+    <property role="EcuMT" value="5383578965096699278" />
+    <ref role="1TJDcQ" node="6LcR7Gqxc8y" resolve="DelTestChildContainer" />
+    <node concept="1TJgyj" id="4EQk8IqQDmf" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="specialChild" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="5383578965096699279" />
+      <ref role="20lvS9" node="4EQk8IqQDmd" resolve="DelTestSpecialAbstractChild" />
+      <ref role="20ksaX" node="6LcR7GqxcjN" resolve="child" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="4EQk8IqQNv7">
+    <property role="EcuMT" value="5383578965096740807" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="DelTestSpecialChild1" />
+    <ref role="1TJDcQ" node="4EQk8IqQDmd" resolve="DelTestSpecialAbstractChild" />
   </node>
 </model>
 

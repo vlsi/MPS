@@ -23,6 +23,7 @@ import jetbrains.mps.baseLanguage.behavior.AssignmentExpression__BehaviorDescrip
 import java.util.Arrays;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -87,7 +88,7 @@ public class convertVariableAssignmentToVarDeclaration extends TransformationMen
 
       @Override
       protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0());
+        return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new convertVariableAssignmentToVarDeclaration.TransformationMenuPart_Group_lavomd_a0.TransformationMenuPart_Group_lavomd_a0a.TransformationMenuPart_Action_lavomd_a0a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression")));
       }
       private class TransformationMenuPart_Action_lavomd_a0a0 extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
         @Nullable

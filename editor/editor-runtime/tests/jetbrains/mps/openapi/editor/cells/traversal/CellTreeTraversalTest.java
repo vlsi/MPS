@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.openapi.editor.cells.traversal;
 
-import jetbrains.mps.nodeEditor.BaseEditorTest;
-import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.openapi.editor.cells.CellTraversalUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
@@ -32,7 +30,7 @@ import java.util.Iterator;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class CellTreeTraversalTest extends BaseEditorTest {
+public class CellTreeTraversalTest extends CellTreeTest {
   private EditorCell_Collection startA, childB, childF, childI, topX;
   private EditorCell leafD, leafE, lastJ, lastY;
 
@@ -45,7 +43,7 @@ public class CellTreeTraversalTest extends BaseEditorTest {
   }
 
   private static String traverseSubtreeWithFilter(EditorCell start, EditorCell filterSubtree) {
-    return ids(new TreeFilterIterator<EditorCell>(traverserForSubtree(start), new IsSameAs(filterSubtree)));
+    return ids(new TreeFilterIterator<>(traverserForSubtree(start), new IsSameAs(filterSubtree)));
   }
 
   private static String traverseSubtree(EditorCell start) {
@@ -205,17 +203,6 @@ public class CellTreeTraversalTest extends BaseEditorTest {
   @Test
   public void traverseSubtree_fromEnd() {
     assertEquals("E", traverseSubtreeFrom(childB, leafE));
-  }
-
-  private EditorCell_Collection newNode(String name, EditorCell... children) {
-    EditorCell_Collection cell = new jetbrains.mps.nodeEditor.cells.EditorCell_Collection(getEditorContext(), null, new CellLayout_Indent(), null);
-    cell.setCellId(name);
-
-    for (EditorCell child : children) {
-      cell.addEditorCell(child);
-    }
-
-    return cell;
   }
 
   private static class IsSameAs implements Condition<EditorCell> {

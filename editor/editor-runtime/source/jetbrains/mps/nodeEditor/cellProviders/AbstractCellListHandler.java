@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -165,7 +166,7 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     myListEditorCell_Collection = EditorCell_Collection.create(getEditorContext(), getNode(), cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    createInnerCells();
+    createInnerCellsWithEditorCellContext();
 
     // add insert/insert-before actions
     myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
@@ -174,16 +175,37 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     return myListEditorCell_Collection;
   }
 
-  protected void createInnerCells() {
-    //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
-    createInnerCells(getNode(), getEditorContext());
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected boolean isCompatibilityMode() {
+    return true;
   }
+
+
+  private void createInnerCellsWithEditorCellContext() {
+    if (isCompatibilityMode()) {
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(null);
+      try {
+        createInnerCells();
+      } finally {
+        getCellFactory().popCellContext();
+      }
+    } else {
+      createInnerCells();
+    }
+  }
+
 
   /**
    * @deprecated since MPS 3.5 use {@link #createInnerCells()}
    */
-  @Deprecated
   protected void createInnerCells(SNode node, EditorContext editorContext) {
+    //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
+    createInnerCells(getNode(), getEditorContext());
+  }
+
+  protected void createInnerCells() {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell();

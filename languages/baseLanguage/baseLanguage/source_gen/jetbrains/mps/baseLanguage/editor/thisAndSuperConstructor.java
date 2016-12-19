@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -45,7 +46,7 @@ public class thisAndSuperConstructor extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new thisAndSuperConstructor.SubstituteMenuPart_Group_8p1vjw_a.SubstituteMenuPart_Parameterized_8p1vjw_a0(), new thisAndSuperConstructor.SubstituteMenuPart_Group_8p1vjw_a.SubstituteMenuPart_Parameterized_8p1vjw_b0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new thisAndSuperConstructor.SubstituteMenuPart_Group_8p1vjw_a.SubstituteMenuPart_Parameterized_8p1vjw_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1127b878882L, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")), new ConstraintsFilteringSubstituteMenuPartDecorator(new thisAndSuperConstructor.SubstituteMenuPart_Group_8p1vjw_a.SubstituteMenuPart_Parameterized_8p1vjw_b0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d512e1eL, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")));
     }
     private class SubstituteMenuPart_Parameterized_8p1vjw_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull

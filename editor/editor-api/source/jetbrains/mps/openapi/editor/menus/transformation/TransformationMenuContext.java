@@ -16,14 +16,14 @@
 package jetbrains.mps.openapi.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.descriptor.TransformationMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 public interface TransformationMenuContext {
   @NotNull
@@ -65,6 +65,10 @@ public interface TransformationMenuContext {
   @NotNull
   default TransformationMenuContext withLocation(@NotNull String menuLocation) {
     return with(null, menuLocation);
+  }
+
+  default Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
+    return (concept -> true);
   }
 
   /**

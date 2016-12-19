@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteEasily;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSPropertyOrNode;
+import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.editor.runtime.impl.cellMenu.EnumSPropertySubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
@@ -41,6 +42,8 @@ import jetbrains.mps.nodeEditor.cells.SPropertyAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromNode;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromParentAndLink;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
@@ -56,7 +59,6 @@ import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
@@ -94,7 +96,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
   @Override
   protected void addPropertyCell(SProperty property) {
     EditorCell_Property editorCell = new EditorCell_Property(getEditorContext(), new SPropertyAccessor(getNode(), property, false, true), getNode());
-    getUpdateSession().registerCleanDependency(editorCell, new Pair<SNodeReference, String>(new SNodePointer(getNode()), property.getName()));
+    getUpdateSession().registerCleanDependency(editorCell, new Pair<>(new SNodePointer(getNode()), property.getName()));
     editorCell.setDefaultText("<no " + property.getName() + ">");
     if (editorCell.getCellId() == null) {
       editorCell.setCellId("property_" + property);
@@ -134,21 +136,41 @@ public class DefaultEditor extends AbstractDefaultEditor {
 
         @Override
         protected EditorCell createEmptyCell() {
-          EditorCell emptyCell = super.createEmptyCell();
-          emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), link, getEditorContext()));
-          emptyCell.setRole(link.getName());
-          emptyCell.setCellId("empty_" + link.getName());
-          return emptyCell;
+
+          getCellFactory().pushCellContext();
+          getCellFactory().setNodeLocation(new FromParentAndLink(getNode(), myContainmentLink));
+          try {
+            EditorCell emptyCell = super.createEmptyCell();
+            emptyCell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), link, getEditorContext()));
+            emptyCell.setRole(link.getName());
+            emptyCell.setCellId("empty_" + link.getName());
+            return emptyCell;
+          } finally {
+            getCellFactory().popCellContext();
+          }
         }
 
         @Override
         public EditorCell createChildCell(SNode child) {
-          EditorCell cell = super.createChildCell(child);
-          cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), child, link, getEditorContext()));
-          if (cell.getRole() == null) {
-            cell.setRole(link.getName());
+          getCellFactory().pushCellContext();
+          getCellFactory().setNodeLocation(new FromNode(child));
+          try {
+            EditorCell cell = super.createChildCell(child);
+            cell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
+            cell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
+            cell.setSubstituteInfo(new DefaultSChildSubstituteInfo(getNode(), child, link, getEditorContext()));
+            if (cell.getRole() == null) {
+              cell.setRole(link.getName());
+            }
+            return cell;
+          } finally {
+            getCellFactory().popCellContext();
           }
-          return cell;
+        }
+
+        @Override
+        protected boolean isCompatibilityMode() {
+          return false;
         }
 
         @NotNull
@@ -254,7 +276,7 @@ public class DefaultEditor extends AbstractDefaultEditor {
   }
 
   private static class ListHandler extends SChildListHandler {
-    public ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
+    ListHandler(SNode ownerNode, SContainmentLink link, EditorContext context) {
       super(ownerNode, link, context, false);
     }
 
@@ -263,16 +285,35 @@ public class DefaultEditor extends AbstractDefaultEditor {
       return NodeFactoryManager.createNode(myLink.getTargetConcept(), null, listOwner, listOwner.getModel());
     }
 
+
+
+    @Override
+    protected boolean isCompatibilityMode() {
+      return false;
+    }
+
     public EditorCell createNodeCell(SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(elementNode);
-      this.installElementCellActions(getNode(), elementNode, elementCell);
-      return elementCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new FromNode(elementNode));
+      try {
+        EditorCell elementCell = super.createNodeCell(elementNode);
+        this.installElementCellActions(getNode(), elementNode, elementCell);
+        return elementCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
 
     public EditorCell createEmptyCell() {
-      EditorCell emptyCell = super.createEmptyCell();
-      this.installElementCellActions(getNode(), null, emptyCell);
-      return emptyCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new FromParentAndLink(getNode(), myLink));
+      try {
+        EditorCell emptyCell = super.createEmptyCell();
+        this.installElementCellActions(getNode(), null, emptyCell);
+        return emptyCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell) {

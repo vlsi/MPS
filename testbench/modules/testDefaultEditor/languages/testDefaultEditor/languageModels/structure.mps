@@ -48,6 +48,7 @@
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
+        <property id="1193676396447" name="virtualPackage" index="3GE5qa" />
         <child id="5169995583184591170" name="smodelAttribute" index="lGtFl" />
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -256,6 +257,45 @@
       <property role="IQ2nx" value="6519503956373976542" />
       <ref role="AX2Wp" to="tpck:fKAQMTA" resolve="integer" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="7v1E5Mvx5m1">
+    <property role="EcuMT" value="8629363476785288577" />
+    <property role="TrG5h" value="Container" />
+    <property role="19KtqR" value="true" />
+    <property role="3GE5qa" value="specializedLink" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7v1E5Mvxhi1" role="1TKVEi">
+      <property role="IQ2ns" value="8629363476785337473" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="parent" />
+      <ref role="20lvS9" node="7v1E5Mvx5m2" resolve="Parent" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7v1E5Mvx5m2">
+    <property role="EcuMT" value="8629363476785288578" />
+    <property role="3GE5qa" value="specializedLink" />
+    <property role="TrG5h" value="Parent" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7v1E5Mvx5m7" role="1TKVEi">
+      <property role="IQ2ns" value="8629363476785288583" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="7v1E5Mvx5m3" resolve="AbstractChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7v1E5Mvx5m3">
+    <property role="EcuMT" value="8629363476785288579" />
+    <property role="3GE5qa" value="specializedLink" />
+    <property role="TrG5h" value="AbstractChild" />
+    <property role="R5$K7" value="false" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7v1E5Mvxhi7">
+    <property role="EcuMT" value="8629363476785337479" />
+    <property role="3GE5qa" value="specializedLink" />
+    <property role="TrG5h" value="ConcreteChild" />
+    <ref role="1TJDcQ" node="7v1E5Mvx5m3" resolve="AbstractChild" />
   </node>
 </model>
 

@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cells.ContainerTests;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.ActionExecutionTest;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.MenuItemListStepTest;
 import jetbrains.mps.nodeEditor.cells.contextAssistant.OverflowLayoutTest;
+import jetbrains.mps.openapi.editor.cells.traversal.CellCompareTests;
 import jetbrains.mps.openapi.editor.cells.traversal.CellTreeTraversalTest;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -43,6 +44,7 @@ import org.junit.runners.Suite;
     ContainerTests.class,
     EditorSettingsTest.class,
     GetContributionsInLanguagesTest.class,
+    CellCompareTests.class,
     CellTreeTraversalTest.class
 })
 public class EditorTestSuite {

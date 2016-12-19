@@ -9,12 +9,13 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.lightweightdsl.actions.SubstituteUtil;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -35,9 +36,9 @@ public class ClassLikeMembers_Contribution extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_a());
-    result.add(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_b());
-    result.add(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_c());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_a(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x340eb2bd2e03d154L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.MethodInstance")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_b(), MetaAdapterFactory.getConcept(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d9151L, "jetbrains.mps.baseLanguage.lightweightdsl.structure.PropertyInstance")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ClassLikeMembers_Contribution.SubstituteMenuPart_Parameterized_hyz1k2_c(), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112574373bdL, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
     return result;
   }
   private class SubstituteMenuPart_Parameterized_hyz1k2_a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {

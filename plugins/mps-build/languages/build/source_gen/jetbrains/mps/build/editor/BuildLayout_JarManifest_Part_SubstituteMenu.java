@@ -14,6 +14,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
@@ -67,7 +68,7 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_a0.SubstituteMenuPart_Action_aabwkk_a0a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_a0.SubstituteMenuPart_Action_aabwkk_a0a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf47d7bL, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section")));
       }
       private class SubstituteMenuPart_Action_aabwkk_a0a extends SingleItemSubstituteMenuPart {
 
@@ -111,7 +112,7 @@ public class BuildLayout_JarManifest_Part_SubstituteMenu extends SubstituteMenuB
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_b0.SubstituteMenuPart_Action_aabwkk_a1a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildLayout_JarManifest_Part_SubstituteMenu.SubstituteMenuPart_Group_aabwkk_a.SubstituteMenuPart_Group_aabwkk_b0.SubstituteMenuPart_Action_aabwkk_a1a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x115d3b22faf20f30L, "jetbrains.mps.build.structure.BuildLayout_JarManifest_Attribute")));
       }
       private class SubstituteMenuPart_Action_aabwkk_a1a extends SingleItemSubstituteMenuPart {
 

@@ -70,7 +70,7 @@ public class CompletionActionItemAsSubstituteAction implements SubstituteAction 
 
   @Override
   public SNode getOutputConcept() {
-    final SAbstractConcept outputConcept = CompletionActionItemUtil.getOutputConcept(myActionItem);
+    final SAbstractConcept outputConcept = CompletionActionItemUtil.getWrappedOutputConcept(myActionItem);
     final SNodeReference sourceNode = outputConcept == null ? null : outputConcept.getSourceNode();
     if (myRepository != null && sourceNode != null) {
       return sourceNode.resolve(myRepository);

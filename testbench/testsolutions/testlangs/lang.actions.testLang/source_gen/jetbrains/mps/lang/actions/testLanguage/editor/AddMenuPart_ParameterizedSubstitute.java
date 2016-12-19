@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +51,7 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new AddMenuPart_ParameterizedSubstitute.SubstituteMenuPart_Group_qp9nsj_a.SubstituteMenuPart_Parameterized_qp9nsj_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_ParameterizedSubstitute.SubstituteMenuPart_Group_qp9nsj_a.SubstituteMenuPart_Parameterized_qp9nsj_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild")));
     }
     private class SubstituteMenuPart_Parameterized_qp9nsj_a0 extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
