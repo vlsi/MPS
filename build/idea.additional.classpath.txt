@@ -18,9 +18,6 @@ core/mps-annotations/classes
 core/persistence/classes
 core/java-stub/classes
 core/smodel/classes
-core/mps-messaging/classes
-core/mps-annotations/classes
-core/logging/classes
 core/findUsages-runtime/classes
 core/squery-runtime/classes
 core/refactoring/classes
