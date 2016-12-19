@@ -1,83 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" file="AbstractModuleCreationDialog.java">
-    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
+    <classNode dependClassName="com.intellij.project.ProjectKt" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.AbstractModuleCreationSettings" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" file="CloneModuleDialog.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.extapi.module.CloneableSModule" />
-    <classNode dependClassName="jetbrains.mps.extapi.module.SRepositoryExt" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyNotSupportedException" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
+    <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings" />
+    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
+    <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
     <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.util.ModulePathConverter" />
     <classNode dependClassName="jetbrains.mps.util.ReferenceUpdater" />
-    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" file="DescriptorCopyOrganizer.java">
+    <classNode dependClassName="java.lang.Long" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.function.Consumer" />
+    <classNode dependClassName="java.util.function.Function" />
+    <classNode dependClassName="java.util.stream.Collectors" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.DeploymentDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.GeneratorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.LanguageDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.util.ModulePathConverter" />
+    <classNode dependClassName="jetbrains.mps.util.PathConverters" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog" file="NewLanguageDialog.java">
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
-    <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="java.io.IOException" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="com.intellij.project.ProjectKt" />
-    <classNode dependClassName="org.apache.log4j.Logger" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="org.apache.log4j.Level" />
-    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="org.apache.log4j.LogManager" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
-    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.NewSolutionDialog" file="NewSolutionDialog.java">
-    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="com.intellij.project.ProjectKt" />
-    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
-    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
-    <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.ide.newSolutionDialog.NewModuleUtil" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Solution" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
-    <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
 </dependenciesRoot>
 

@@ -5,11 +5,8 @@ package jetbrains.mps.ide.newModuleDialogs;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
-import com.intellij.project.ProjectKt;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.project.StandaloneMPSProject;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings;
 

@@ -26,5 +26,4 @@ public class NewSolutionSettings extends AbstractModuleCreationSettings {
   protected String getDefaultModulePath() {
     return getModuleRootPath("solutions");
   }
-
 }

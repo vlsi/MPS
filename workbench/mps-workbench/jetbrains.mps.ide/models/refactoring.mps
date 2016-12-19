@@ -7,6 +7,8 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="ge2m" ref="r:bd8551c6-e2e3-4499-a261-45b0c886d1d1(jetbrains.mps.refactoring.framework)" />
@@ -98,8 +100,16 @@
       <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
         <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
       </concept>
+      <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
+        <child id="1164879758292" name="body" index="SfCbr" />
+        <child id="1164903496223" name="catchClause" index="TEbGg" />
+      </concept>
       <concept id="1145552977093" name="jetbrains.mps.baseLanguage.structure.GenericNewExpression" flags="nn" index="2ShNRf">
         <child id="1145553007750" name="creator" index="2ShVmc" />
+      </concept>
+      <concept id="1164903280175" name="jetbrains.mps.baseLanguage.structure.CatchClause" flags="nn" index="TDmWw">
+        <child id="1164903359218" name="catchBody" index="TDEfX" />
+        <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
       <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P">
@@ -285,6 +295,14 @@
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
+      </concept>
+    </language>
+    <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
+      <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
+        <property id="1167228628751" name="hasException" index="34fQS0" />
+        <property id="1167245565795" name="severity" index="35gtTG" />
+        <child id="1167227463056" name="logExpression" index="34bqiv" />
+        <child id="1167227561449" name="exception" index="34bMjA" />
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
@@ -2538,16 +2556,37 @@
                   </node>
                 </node>
               </node>
-              <node concept="3clFbH" id="70LWmLwgf2A" role="3cqZAp" />
-              <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
-                <node concept="2YIFZM" id="7$ME23pAQH9" role="3clFbG">
-                  <ref role="37wK5l" to="smoa:~Renamer.renameModule(jetbrains.mps.project.AbstractModule,java.lang.String):void" resolve="renameModule" />
-                  <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
-                  <node concept="37vLTw" id="7$ME23pAQHa" role="37wK5m">
-                    <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+              <node concept="SfApY" id="16Fpg60PyXA" role="3cqZAp">
+                <node concept="3clFbS" id="16Fpg60PyXC" role="SfCbr">
+                  <node concept="3clFbF" id="7msLDqMEkym" role="3cqZAp">
+                    <node concept="2YIFZM" id="7$ME23pAQH9" role="3clFbG">
+                      <ref role="37wK5l" to="smoa:~Renamer.renameModule(jetbrains.mps.project.AbstractModule,java.lang.String):void" resolve="renameModule" />
+                      <ref role="1Pybhc" to="smoa:~Renamer" resolve="Renamer" />
+                      <node concept="37vLTw" id="7$ME23pAQHa" role="37wK5m">
+                        <ref role="3cqZAo" node="29N7xYwTGoV" resolve="myModule" />
+                      </node>
+                      <node concept="37vLTw" id="7$ME23pAQHb" role="37wK5m">
+                        <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
+                      </node>
+                    </node>
                   </node>
-                  <node concept="37vLTw" id="7$ME23pAQHb" role="37wK5m">
-                    <ref role="3cqZAo" node="5_EKmHbXMu" resolve="fqName" />
+                </node>
+                <node concept="TDmWw" id="16Fpg60PyXD" role="TEbGg">
+                  <node concept="3cpWsn" id="16Fpg60PyXF" role="TDEfY">
+                    <property role="TrG5h" value="e" />
+                    <node concept="3uibUv" id="16Fpg60PyZm" role="1tU5fm">
+                      <ref role="3uigEE" to="z1c3:~DescriptorTargetFileAlreadyExistsException" resolve="DescriptorTargetFileAlreadyExistsException" />
+                    </node>
+                  </node>
+                  <node concept="3clFbS" id="16Fpg60PyXJ" role="TDEfX">
+                    <node concept="34ab3g" id="16Fpg60P_cJ" role="3cqZAp">
+                      <property role="35gtTG" value="error" />
+                      <property role="34fQS0" value="true" />
+                      <node concept="Xl_RD" id="16Fpg60P_cL" role="34bqiv" />
+                      <node concept="37vLTw" id="16Fpg60P_cN" role="34bMjA">
+                        <ref role="3cqZAo" node="16Fpg60PyXF" resolve="e" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>

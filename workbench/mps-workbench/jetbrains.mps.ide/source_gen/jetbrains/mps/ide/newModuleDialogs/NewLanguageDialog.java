@@ -13,7 +13,6 @@ import jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings;
 import jetbrains.mps.project.Solution;
 import java.io.IOException;
 import org.apache.log4j.Level;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.project.MPSExtentions;
 
 public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
@@ -44,7 +43,7 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
         ((StandaloneMPSProject) myProject).setFolderFor(sandboxSolution, myVirtualFolder);
       }
     } catch (IOException e) {
-      // todo: !
+      // todo: ! 
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Cannot create runtime / sandbox module", e);
       }
@@ -61,7 +60,6 @@ public class NewLanguageDialog extends AbstractModuleCreationDialog<Language> {
   protected NewLanguageSettings createSettingsInstance() {
     return new NewLanguageSettings(getProjectPath());
   }
-
   private static <T> T as_xpx6i8_a0a0a5a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

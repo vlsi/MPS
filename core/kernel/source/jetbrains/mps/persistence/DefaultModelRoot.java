@@ -152,6 +152,13 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     return sourceRoots.get(0);
   }
 
+  /**
+   * Creates model in the default source root via default factory
+   *
+   * @see #defaultSourceRoot()
+   * @see #defaultModelFactory()
+   * @return null if there was IOException
+   */
   @Override
   @Nullable
   public SModel createModel(@NotNull String modelName) {
@@ -159,6 +166,9 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
   }
 
   /**
+   * Creates model in the default source root.
+   *
+   * @see #defaultSourceRoot()
    * @return null if there was IOException
    */
   @Nullable
@@ -174,7 +184,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
    * @param modelName -- the name of the newly created model
    */
   @Nullable
-  private SModel createModel(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) {
+  public SModel createModel(@NotNull ModelFactory factory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) {
     try {
       SModel model = createModelImpl(factory, sourceRoot, modelName);
       ((SModelBase) model).setModelRoot(this);

@@ -115,6 +115,7 @@
       <concept id="1068580123132" name="jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration" flags="ng" index="3clF44">
         <property id="4276006055363816570" name="isSynchronized" index="od$2w" />
         <property id="1181808852946" name="isFinal" index="DiZV1" />
+        <child id="1164879685961" name="throwsItem" index="Sfmx6" />
         <child id="1068580123133" name="returnType" index="3clF45" />
         <child id="1068580123134" name="parameter" index="3clF46" />
         <child id="1068580123135" name="body" index="3clF47" />
@@ -1279,6 +1280,9 @@
         <node concept="3uibUv" id="5JsnGMj1qjs" role="1tU5fm">
           <ref role="3uigEE" to="mhbf:~SModelId" resolve="SModelId" />
         </node>
+        <node concept="2AHcQZ" id="6sKuV4a30oi" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
       </node>
       <node concept="3clFbS" id="5JsnGMj1qjt" role="3clF47">
         <node concept="3SKdUt" id="5JsnGMj1qju" role="3cqZAp">
@@ -1306,6 +1310,9 @@
         <property role="TrG5h" value="memento" />
         <node concept="3uibUv" id="rP8MxQUY2o" role="1tU5fm">
           <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
+        </node>
+        <node concept="2AHcQZ" id="6sKuV4a30oZ" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="rP8MxQUY2p" role="3clF47">
@@ -1393,6 +1400,9 @@
         <property role="TrG5h" value="memento" />
         <node concept="3uibUv" id="4KlVfHJ29$" role="1tU5fm">
           <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
+        </node>
+        <node concept="2AHcQZ" id="6sKuV4a30pG" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
       </node>
       <node concept="3clFbS" id="4KlVfHJ29_" role="3clF47">
@@ -1556,8 +1566,8 @@
                 <node concept="3clFbS" id="2Dokkv7jPjp" role="1bW5cS">
                   <node concept="3clFbF" id="2Dokkv7jPAR" role="3cqZAp">
                     <node concept="2OqwBi" id="1OabvAsfHij" role="3clFbG">
-                      <node concept="37vLTw" id="1OabvAsfH2I" role="2Oq$k0">
-                        <ref role="3cqZAo" to="ends:~FileBasedModelRoot.myFileSystem" resolve="myFileSystem" />
+                      <node concept="1rXfSq" id="6sKuV4a334_" role="2Oq$k0">
+                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
                       </node>
                       <node concept="liA8E" id="1OabvAsfHDB" role="2OqNvi">
                         <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
@@ -1646,8 +1656,8 @@
                   <node concept="3clFbS" id="2Dokkv7kuAC" role="1bW5cS">
                     <node concept="3clFbF" id="2Dokkv7kuQJ" role="3cqZAp">
                       <node concept="2OqwBi" id="2Dokkv7kviA" role="3clFbG">
-                        <node concept="37vLTw" id="1OabvAsfIhu" role="2Oq$k0">
-                          <ref role="3cqZAo" to="ends:~FileBasedModelRoot.myFileSystem" resolve="myFileSystem" />
+                        <node concept="1rXfSq" id="6sKuV4a32O_" role="2Oq$k0">
+                          <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
                         </node>
                         <node concept="liA8E" id="2Dokkv7kvEb" role="2OqNvi">
                           <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
@@ -1745,6 +1755,9 @@
             <ref role="3cqZAo" node="5JsnGMj1qjC" resolve="result" />
           </node>
         </node>
+      </node>
+      <node concept="2AHcQZ" id="6sKuV4a30rJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
       <node concept="2AHcQZ" id="3tYsUK_sS5c" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
@@ -1930,6 +1943,9 @@
       <node concept="37vLTG" id="5JsnGMj1qk6" role="3clF46">
         <property role="TrG5h" value="string" />
         <node concept="17QB3L" id="7o5OtEM79J0" role="1tU5fm" />
+        <node concept="2AHcQZ" id="6sKuV4a33jX" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
       </node>
       <node concept="3clFbS" id="5JsnGMj1qk8" role="3clF47">
         <node concept="3clFbF" id="5JsnGMj1qk9" role="3cqZAp">
@@ -1953,6 +1969,9 @@
       <node concept="37vLTG" id="5JsnGMj1qke" role="3clF46">
         <property role="TrG5h" value="string" />
         <node concept="17QB3L" id="7o5OtEM79UB" role="1tU5fm" />
+        <node concept="2AHcQZ" id="6sKuV4a33jg" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
       </node>
       <node concept="3clFbS" id="5JsnGMj1qkg" role="3clF47">
         <node concept="3clFbF" id="5JsnGMj1qkh" role="3cqZAp">
@@ -2583,7 +2602,7 @@
         </node>
       </node>
     </node>
-    <node concept="2tJIrI" id="2W0JvGXxSJB" role="jymVt" />
+    <node concept="2tJIrI" id="6sKuV4a33jZ" role="jymVt" />
     <node concept="3clFb_" id="2W0JvGXxR9L" role="jymVt">
       <property role="TrG5h" value="getModelAlreadyRegistered" />
       <node concept="3Tm6S6" id="2W0JvGXxR9M" role="1B3o_S" />
@@ -2661,6 +2680,46 @@
       </node>
       <node concept="2AHcQZ" id="65B_YDCWd$8" role="2AJF6D">
         <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2W0JvGXxSJB" role="jymVt" />
+    <node concept="3clFb_" id="6sKuV4a33uf" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="copyTo" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="6sKuV4a33ug" role="1B3o_S" />
+      <node concept="3cqZAl" id="6sKuV4a33ui" role="3clF45" />
+      <node concept="37vLTG" id="6sKuV4a33uj" role="3clF46">
+        <property role="TrG5h" value="root" />
+        <node concept="3uibUv" id="6sKuV4a33up" role="1tU5fm">
+          <ref role="3uigEE" node="5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
+        </node>
+        <node concept="2AHcQZ" id="6sKuV4a33ul" role="2AJF6D">
+          <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+      </node>
+      <node concept="3uibUv" id="6sKuV4a33um" role="Sfmx6">
+        <ref role="3uigEE" to="ends:~CopyNotSupportedException" resolve="CopyNotSupportedException" />
+      </node>
+      <node concept="3clFbS" id="6sKuV4a33uq" role="3clF47">
+        <node concept="3clFbF" id="6sKuV4a33EM" role="3cqZAp">
+          <node concept="3nyPlj" id="6sKuV4a33EL" role="3clFbG">
+            <ref role="37wK5l" to="ends:~FileBasedModelRoot.copyContentRootAndFiles(jetbrains.mps.extapi.persistence.FileBasedModelRoot):void" resolve="copyContentRootAndFiles" />
+            <node concept="37vLTw" id="6sKuV4a3q2M" role="37wK5m">
+              <ref role="3cqZAo" node="6sKuV4a33uj" resolve="root" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="6sKuV4a33ur" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="3uibUv" id="6sKuV4a30np" role="EKbjA">
+      <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
+      <node concept="3uibUv" id="6sKuV4a30n$" role="11_B2D">
+        <ref role="3uigEE" node="5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
       </node>
     </node>
   </node>

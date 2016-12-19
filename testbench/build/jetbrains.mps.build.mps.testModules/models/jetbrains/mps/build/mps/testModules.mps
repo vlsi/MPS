@@ -52,7 +52,9 @@
     <node concept="2Uj$md" id="6rP_NjK3heH" role="2Uj_Yd">
       <ref role="2Uj$mc" to="2apo:6rP_NjK3fBF" resolve="CloneModule" />
     </node>
-    <node concept="2Uj$md" id="6CFNGGpgJyR" role="2Uj_Yd" />
+    <node concept="2Uj$md" id="6sKuV4a30n3" role="2Uj_Yd">
+      <ref role="2Uj$mc" to="cpet:2cKUqfNXsQu" resolve="Persistence" />
+    </node>
     <node concept="BaHAS" id="6DW_AMA$9QX" role="3cVaLd">
       <property role="BaHAW" value="jetbrains.mps.ide.build.tests.generatedTests" />
       <property role="BaGAP" value="" />

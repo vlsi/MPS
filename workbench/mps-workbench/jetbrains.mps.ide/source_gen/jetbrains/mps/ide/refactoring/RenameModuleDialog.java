@@ -4,11 +4,14 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RenameDialog;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.MPSProject;
 import java.awt.HeadlessException;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.Renamer;
+import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
+import org.apache.log4j.Level;
 
 public class RenameModuleDialog extends RenameDialog {
   private final AbstractModule myModule;
@@ -21,6 +24,7 @@ public class RenameModuleDialog extends RenameDialog {
     setTitle("Rename Module");
   }
 
+  protected static Logger LOG = LogManager.getLogger(RenameModuleDialog.class);
   @Override
   protected void doRefactoringAction() {
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
@@ -35,11 +39,12 @@ public class RenameModuleDialog extends RenameDialog {
             return;
           }
         }
-
         try {
           Renamer.renameModule(myModule, fqName);
         } catch (DescriptorTargetFileAlreadyExistsException e) {
-          // todo show some dialog
+          if (LOG.isEnabledFor(Level.ERROR)) {
+            LOG.error("", e);
+          }
         }
         RenameModuleDialog.super.doRefactoringAction();
       }

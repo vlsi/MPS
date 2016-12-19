@@ -187,7 +187,6 @@
     <import index="yha4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.workbench.choose(MPS.Platform/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="g1qu" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.ui(MPS.IDEA/)" />
-    <import index="w88" ref="r:90fa2771-55a5-4174-b12a-f5413c5a876c(jetbrains.mps.ide.devkit.actions)" />
     <import index="ljzk" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/)" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
@@ -38493,7 +38492,7 @@
                               </node>
                               <node concept="2OqwBi" id="2eic0thf7No" role="33vP2m">
                                 <node concept="liA8E" id="2eic0thf7Np" role="2OqNvi">
-                                  <ref role="37wK5l" to="pa15:~FolderModelFactory.createNewSource(jetbrains.mps.extapi.persistence.FileBasedModelRoot,java.lang.String,java.lang.String,java.util.Map):org.jetbrains.mps.openapi.persistence.DataSource" resolve="createNewSource" />
+                                  <ref role="37wK5l" to="pa15:~FolderModelFactory.createNewSource(jetbrains.mps.extapi.persistence.FileBasedModelRoot,jetbrains.mps.extapi.persistence.SourceRoot,java.lang.String,jetbrains.mps.persistence.ModelCreationOptions):org.jetbrains.mps.openapi.persistence.DataSource" resolve="createNewSource" />
                                   <node concept="10QFUN" id="3vK7u5YFO1u" role="37wK5m">
                                     <node concept="3uibUv" id="3vK7u5YFPKF" role="10QFUM">
                                       <ref role="3uigEE" to="ends:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
@@ -38511,16 +38510,9 @@
                                       <ref role="3cqZAo" node="38LNA6KbjrP" resolve="newModel" />
                                     </node>
                                   </node>
-                                  <node concept="2ShNRf" id="121IHlkn$uw" role="37wK5m">
-                                    <node concept="1pGfFk" id="121IHlkpaaN" role="2ShVmc">
-                                      <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
-                                      <node concept="3uibUv" id="121IHlkpgX2" role="1pMfVU">
-                                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                                      </node>
-                                      <node concept="3uibUv" id="121IHlkplky" role="1pMfVU">
-                                        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
-                                      </node>
-                                    </node>
+                                  <node concept="10M0yZ" id="16Fpg60GWQn" role="37wK5m">
+                                    <ref role="1PxDUh" to="pa15:~ModelCreationOptions" resolve="ModelCreationOptions" />
+                                    <ref role="3cqZAo" to="pa15:~ModelCreationOptions.DEFAULT" resolve="DEFAULT" />
                                   </node>
                                 </node>
                                 <node concept="37vLTw" id="2eic0thf7Nx" role="2Oq$k0">
@@ -43889,6 +43881,100 @@
       </node>
       <node concept="3Tm6S6" id="5HjGCfRjw8G" role="1B3o_S" />
     </node>
+    <node concept="2XrIbr" id="16Fpg60GDNh" role="32lrUH">
+      <property role="TrG5h" value="collectCloneErrorMessages" />
+      <node concept="3uibUv" id="16Fpg60GDYI" role="3clF45">
+        <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+        <node concept="3uibUv" id="16Fpg60GE3U" role="11_B2D">
+          <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
+        </node>
+        <node concept="3uibUv" id="16Fpg60GE90" role="11_B2D">
+          <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="16Fpg60GDNj" role="3clF47">
+        <node concept="3cpWs8" id="16Fpg60GEtB" role="3cqZAp">
+          <node concept="3cpWsn" id="16Fpg60GEtH" role="3cpWs9">
+            <property role="TrG5h" value="result" />
+            <node concept="3uibUv" id="16Fpg60GEtJ" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~Map" resolve="Map" />
+              <node concept="3uibUv" id="16Fpg60GEz0" role="11_B2D">
+                <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
+              </node>
+              <node concept="3uibUv" id="16Fpg60GEC6" role="11_B2D">
+                <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+              </node>
+            </node>
+            <node concept="2ShNRf" id="16Fpg60GECu" role="33vP2m">
+              <node concept="1pGfFk" id="16Fpg60GPov" role="2ShVmc">
+                <ref role="37wK5l" to="33ny:~HashMap.&lt;init&gt;()" resolve="HashMap" />
+                <node concept="3uibUv" id="16Fpg60GQBh" role="1pMfVU">
+                  <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
+                </node>
+                <node concept="3uibUv" id="16Fpg60GQGn" role="1pMfVU">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="2Gpval" id="16Fpg60GR76" role="3cqZAp">
+          <node concept="2GrKxI" id="16Fpg60GR7c" role="2Gsz3X">
+            <property role="TrG5h" value="modelRoot" />
+          </node>
+          <node concept="37vLTw" id="16Fpg60GR7T" role="2GsD0m">
+            <ref role="3cqZAo" node="16Fpg60GEe7" resolve="modelRoots" />
+          </node>
+          <node concept="3clFbS" id="16Fpg60GR7o" role="2LFqv$">
+            <node concept="3clFbJ" id="16Fpg60GRdc" role="3cqZAp">
+              <node concept="3fqX7Q" id="16Fpg60GRdw" role="3clFbw">
+                <node concept="2ZW3vV" id="16Fpg60GTk0" role="3fr31v">
+                  <node concept="3uibUv" id="16Fpg60GTp9" role="2ZW6by">
+                    <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
+                  </node>
+                  <node concept="2GrUjf" id="16Fpg60GRdM" role="2ZW6bz">
+                    <ref role="2Gs0qQ" node="16Fpg60GR7c" resolve="modelRoot" />
+                  </node>
+                </node>
+              </node>
+              <node concept="3clFbS" id="16Fpg60GRde" role="3clFbx">
+                <node concept="3clFbF" id="16Fpg60GTut" role="3cqZAp">
+                  <node concept="2OqwBi" id="16Fpg60GTHv" role="3clFbG">
+                    <node concept="37vLTw" id="16Fpg60GTus" role="2Oq$k0">
+                      <ref role="3cqZAo" node="16Fpg60GEtH" resolve="result" />
+                    </node>
+                    <node concept="liA8E" id="16Fpg60GU6a" role="2OqNvi">
+                      <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+                      <node concept="2GrUjf" id="16Fpg60GUkT" role="37wK5m">
+                        <ref role="2Gs0qQ" node="16Fpg60GR7c" resolve="modelRoot" />
+                      </node>
+                      <node concept="Xl_RD" id="16Fpg60GU_I" role="37wK5m">
+                        <property role="Xl_RC" value="Cloning for this model root is not implemented" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="16Fpg60GUFs" role="3cqZAp">
+          <node concept="37vLTw" id="16Fpg60GUGb" role="3cqZAk">
+            <ref role="3cqZAo" node="16Fpg60GEtH" resolve="result" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="16Fpg60GDTE" role="1B3o_S" />
+      <node concept="37vLTG" id="16Fpg60GEe7" role="3clF46">
+        <property role="TrG5h" value="modelRoots" />
+        <node concept="3uibUv" id="16Fpg60GEe6" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+          <node concept="3uibUv" id="16Fpg60GEoi" role="11_B2D">
+            <ref role="3uigEE" to="dush:~ModelRoot" resolve="ModelRoot" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1DS2jV" id="2IfCauKuWxw" role="1NuT2Z">
       <property role="TrG5h" value="sourceModule" />
       <ref role="1DUlNI" to="qq03:~MPSCommonDataKeys.MODULE" resolve="MODULE" />
@@ -43919,18 +44005,20 @@
                 <ref role="3uigEE" to="wyt6:~String" resolve="String" />
               </node>
             </node>
-            <node concept="2YIFZM" id="4udloDWhXnc" role="33vP2m">
-              <ref role="37wK5l" to="18ew:~ModelRootCloneUtil.collectCloneErrorMessages(java.lang.Iterable):java.util.Map" resolve="collectCloneErrorMessages" />
-              <ref role="1Pybhc" to="18ew:~ModelRootCloneUtil" resolve="ModelRootCloneUtil" />
-              <node concept="2OqwBi" id="4udloDWhXMQ" role="37wK5m">
-                <node concept="2OqwBi" id="4udloDWhXpB" role="2Oq$k0">
-                  <node concept="2WthIp" id="4udloDWhXpE" role="2Oq$k0" />
-                  <node concept="1DTwFV" id="4udloDWhXpG" role="2OqNvi">
-                    <ref role="2WH_rO" node="2IfCauKuWxw" resolve="sourceModule" />
+            <node concept="2OqwBi" id="16Fpg60GUHr" role="33vP2m">
+              <node concept="2WthIp" id="16Fpg60GUHu" role="2Oq$k0" />
+              <node concept="2XshWL" id="16Fpg60GUHw" role="2OqNvi">
+                <ref role="2WH_rO" node="16Fpg60GDNh" resolve="collectCloneErrorMessages" />
+                <node concept="2OqwBi" id="4udloDWhXMQ" role="2XxRq1">
+                  <node concept="2OqwBi" id="4udloDWhXpB" role="2Oq$k0">
+                    <node concept="2WthIp" id="4udloDWhXpE" role="2Oq$k0" />
+                    <node concept="1DTwFV" id="4udloDWhXpG" role="2OqNvi">
+                      <ref role="2WH_rO" node="2IfCauKuWxw" resolve="sourceModule" />
+                    </node>
                   </node>
-                </node>
-                <node concept="liA8E" id="4udloDWhYlD" role="2OqNvi">
-                  <ref role="37wK5l" to="lui2:~SModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                  <node concept="liA8E" id="4udloDWhYlD" role="2OqNvi">
+                    <ref role="37wK5l" to="lui2:~SModule.getModelRoots():java.lang.Iterable" resolve="getModelRoots" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -44019,8 +44107,8 @@
                   <ref role="3cqZAo" node="4B$Z5V0YZya" resolve="virtualFolder" />
                 </node>
                 <node concept="0kSF2" id="MLxNX_6olQ" role="37wK5m">
-                  <node concept="3uibUv" id="3bA8Wn3otE2" role="0kSFW">
-                    <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
+                  <node concept="3uibUv" id="16Fpg60GV5y" role="0kSFW">
+                    <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
                   </node>
                   <node concept="2OqwBi" id="2UnPMOMpUD9" role="0kSFX">
                     <node concept="2WthIp" id="2UnPMOMpUng" role="2Oq$k0" />
@@ -44074,7 +44162,7 @@
         <node concept="3clFbH" id="1WyghFwQU68" role="3cqZAp" />
         <node concept="3SKdUt" id="2_jX3OnDMo0" role="3cqZAp">
           <node concept="3SKdUq" id="2_jX3OnDMo2" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: Sync ProjectPane.rebuildTree() with NewLanguage, NewSolution actions" />
+            <property role="3SKdUp" value="TODO: RADIDMIR Sync ProjectPane.rebuildTree() with NewLanguage, NewSolution actions" />
           </node>
         </node>
         <node concept="3cpWs8" id="56$IWKxenbX" role="3cqZAp">
@@ -44116,8 +44204,8 @@
         <node concept="3cpWs6" id="4bZ4b7J3TKh" role="3cqZAp">
           <node concept="1Wc70l" id="4udloDWhVfl" role="3cqZAk">
             <node concept="2ZW3vV" id="4udloDWhVSZ" role="3uHU7w">
-              <node concept="3uibUv" id="4udloDWhWsq" role="2ZW6by">
-                <ref role="3uigEE" to="31cb:~CloneableSModule" resolve="CloneableSModule" />
+              <node concept="3uibUv" id="16Fpg60GDNb" role="2ZW6by">
+                <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
               </node>
               <node concept="2OqwBi" id="4udloDWhVrG" role="2ZW6bz">
                 <node concept="2WthIp" id="4udloDWhVrJ" role="2Oq$k0" />
