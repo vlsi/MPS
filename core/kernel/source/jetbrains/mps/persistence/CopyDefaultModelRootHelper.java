@@ -34,6 +34,8 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -83,9 +85,10 @@ final class CopyDefaultModelRootHelper {
     if (!isInsideModuleDir()) {
       throw new CopyNotSupportedException("The model root's content path must be inside module directory " + mySourceModelRoot + " : " + mySourceModelRoot.getModule());
     }
+
+    List<SModel> result = new ArrayList<>();
     AbstractModule sourceModule = ((AbstractModule) mySourceModelRoot.getModule());
     AbstractModule targetModule = ((AbstractModule) myTargetModelRoot.getModule());
-    final jetbrains.mps.vfs.openapi.FileSystem fileSystem = sourceModule.getFileSystem();
     List<SourceRoot> sourceFiles = mySourceModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     List<SourceRoot> targetFiles = myTargetModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     assert sourceFiles.size() == targetFiles.size(); // #copyContentRootAndFiles guarantees
@@ -93,7 +96,7 @@ final class CopyDefaultModelRootHelper {
       SourceRoot sourceRoot = sourceFiles.get(cnt);
       SourceRoot targetSourceRoot = targetFiles.get(cnt);
 
-      fileSystem.getFile(targetSourceRoot.getPath()).mkdirs();
+      sourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
       ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot, targetSourceRoot);
       ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, file) -> {
         try {
@@ -101,7 +104,8 @@ final class CopyDefaultModelRootHelper {
           ModelCreationOptions options = parametersCalculator.calculate(targetFile);
           try {
             SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
-            createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);
+            SModel modelCopy = createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);
+            result.add(modelCopy);
           } catch (UnsupportedDataSourceException ignored) {
             // FIXME this does not seem to be correct! I'd rather have ModelRootFactory know which DataSource it accepts beforehand
           }
@@ -127,10 +131,11 @@ final class CopyDefaultModelRootHelper {
     return targetSourceRoot.getAbsolutePath().getDescendant(relPath);
   }
 
-  private void createModelCopy(@NotNull ModelFactory factory,
-                               @NotNull SourceRoot targetSourceRoot,
-                               @NotNull String newModelName,
-                               @NotNull SModelBase modelDataToCopy) throws IOException {
+  @NotNull
+  private SModel createModelCopy(@NotNull ModelFactory factory,
+                                 @NotNull SourceRoot targetSourceRoot,
+                                 @NotNull String newModelName,
+                                 @NotNull SModelBase modelDataToCopy) throws IOException {
     EditableSModelBase targetModel = (EditableSModelBase) myTargetModelRoot.createModelImpl(factory, targetSourceRoot, newModelName);
     targetModel.setModelRoot(myTargetModelRoot);
     targetModel.setModule(myTargetModelRoot.getModule());
@@ -138,6 +143,7 @@ final class CopyDefaultModelRootHelper {
     CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
     CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), targetModel.getSModel());
     saveModel(targetModel);
+    return targetModel;
   }
 
   // FIXME see MPS-18545

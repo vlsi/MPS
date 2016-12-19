@@ -113,12 +113,12 @@ public interface SModule {
    * Retrieves all module's models
    * Contract: if the module was not changed the order of the models which this method returns stays the same.
    */
-  Iterable<SModel> getModels();
+  @NotNull Iterable<SModel> getModels();
 
   /**
    * Retrieves all instantiated facets. (see {@link SModuleFacet})
    */
-  Iterable<SModuleFacet> getFacets();
+  @NotNull Iterable<SModuleFacet> getFacets();
 
   /**
    *  Returns facet of the specified class.

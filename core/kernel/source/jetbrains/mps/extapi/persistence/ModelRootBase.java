@@ -30,10 +30,13 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
+
+import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
 
 /**
  * Base model root implementation which relies on module. Note that the model root might be not attached to module.
@@ -42,11 +45,11 @@ import java.util.Set;
  * evgeny, 10/23/12
  */
 public abstract class ModelRootBase implements ModelRoot {
-  private static Logger LOG = Logger.getLogger(ModelRootBase.class);
+  private static final Logger LOG = Logger.getLogger(ModelRootBase.class);
 
   @Nullable private SModuleBase myModule;
   @Nullable private volatile SRepository myRepository;
-  private final Set<SModel> myModels = new LinkedHashSet<>();
+  private final Set<SModel> myModels = new TreeSet<>(MODEL_BY_NAME_COMPARATOR);
   private final SyncModuleListener myModuleListener = new SyncModuleListener();
 
   /*@NotNull*/

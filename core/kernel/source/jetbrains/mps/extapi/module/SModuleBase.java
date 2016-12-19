@@ -16,8 +16,8 @@
 package jetbrains.mps.extapi.module;
 
 import jetbrains.mps.extapi.model.SModelBase;
-import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -29,23 +29,24 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class SModuleBase implements SModule {
-
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SModuleBase.class));
+  private static final Logger LOG = LogManager.getLogger(SModuleBase.class);
+  public static final Comparator<SModel> MODEL_BY_NAME_COMPARATOR = (m1, m2) -> m1.getName().getValue().compareTo(m2.getName().getValue());
 
   private volatile SRepository myRepository = null;
 
   private List<SModuleListener> myListeners = new CopyOnWriteArrayList<>();
 
   private final Object LOCK = new Object();
-  private final Set<SModelBase> myModels = new LinkedHashSet<>();
+  private final Set<SModelBase> myModels = new TreeSet<>(MODEL_BY_NAME_COMPARATOR);
   private final ConcurrentMap<SModelId, SModel> myIdToModelMap = new ConcurrentHashMap<>();
 
   protected SModuleBase() {
@@ -61,6 +62,7 @@ public abstract class SModuleBase implements SModule {
   }
 
   @Override
+  @NotNull
   public final List<SModel> getModels() {
 //    TODO assertCanRead();
 
@@ -161,7 +163,7 @@ public abstract class SModuleBase implements SModule {
       } catch (VirtualMachineError e) {
         throw e;
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error("", t);
       }
     }
   }

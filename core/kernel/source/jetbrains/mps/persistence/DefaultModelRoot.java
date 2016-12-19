@@ -27,6 +27,7 @@ import jetbrains.mps.persistence.FileDataSourceCreator.CreationResult;
 import jetbrains.mps.persistence.ModelSourceRootWalker.ModelRootFileTreeLocus;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
@@ -45,7 +46,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+
+import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
 
 /**
  * evgeny, 11/9/12
@@ -88,7 +92,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
 
   @NotNull
   private Collection<SModel> collectModels(@NotNull SourceRoot sourceRoot) {
-    Collection<SModel> result = new ArrayList<>();
+    List<SModel> result = new ArrayList<>();
     ParametersCalculator parametersCalculator = new ParametersCalculator(this, sourceRoot);
     ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, (factory, dataSource, file) -> {
       try {
@@ -103,6 +107,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
       }
     });
     modelSourceRootWalker.traverse(sourceRoot);
+    Collections.sort(result, MODEL_BY_NAME_COMPARATOR);
     return result;
   }
 
@@ -173,7 +178,6 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     try {
       SModel model = createModelImpl(factory, sourceRoot, modelName);
       ((SModelBase) model).setModelRoot(this);
-      // TODO fix
       registerModel(model);
       return model;
     } catch (IOException e) {
@@ -190,7 +194,7 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
       source = ((FolderModelFactory) factory).createNewSource(this, sourceRoot, modelName, options);
     } else {
       @Nullable String fileExtension = factory.getFileExtension();
-      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, fileExtension != null ? fileExtension : "", sourceRoot);
+      CreationResult result = new FileDataSourceCreator(this).createSource(modelName, StringUtil.emptyIfNull(fileExtension), sourceRoot);
       source = result.getSource();
     }
     return new ModelFactoryFacade(factory).create(source, options);

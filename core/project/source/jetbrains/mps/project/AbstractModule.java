@@ -932,6 +932,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return null;
   }
 
+  @NotNull
   @Override
   public Iterable<SModuleFacet> getFacets() {
     return Collections.unmodifiableSet(myFacets);

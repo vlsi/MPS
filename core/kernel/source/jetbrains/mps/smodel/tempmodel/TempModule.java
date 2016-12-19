@@ -102,6 +102,7 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     return mySourceGen;
   }
 
+  @NotNull
   @Override
   public Iterable<SModuleFacet> getFacets() {
     return myJavaModuleFacet != null ? Collections.<SModuleFacet>singleton(myJavaModuleFacet) : Collections.<SModuleFacet>emptySet();

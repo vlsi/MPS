@@ -65,7 +65,13 @@ public interface ModelRoot {
 
   /**
    * @return a sequence of the models under this model root.
-   * Note that owning module also returns all the models (module is believed to be a model container) {@link SModule#getModels()}
+   *
+   * Implementors must impose some order on the returned result, such that
+   * two consequent invocations of this method return equal results.
+   *
+   * Note that owning module also returns all the models (module is believed to be a model container)
+   * {@link SModule#getModels()},
+   * however it might contain the models which are not attached to the model roots as well (!)
    */
   @NotNull Iterable<SModel> getModels();
 
