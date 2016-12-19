@@ -6288,6 +6288,12 @@
             <ref role="3bR37D" node="7Kfy9QB6KZ6" resolve="jetbrains.mps.baseLanguage.blTypes" />
           </node>
         </node>
+        <node concept="1SiIV0" id="zGnF5b0miO" role="3bR37C">
+          <node concept="3bR9La" id="zGnF5b0miP" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="1CtrbKI23Wm" resolve="jetbrains.mps.lang.migration" />
+          </node>
+        </node>
       </node>
       <node concept="1E1JtD" id="7Kfy9QB6KZG" role="2G$12L">
         <property role="BnDLt" value="true" />
