@@ -11,8 +11,8 @@
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -60,6 +60,7 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
+        <child id="1068499141038" name="actualArgument" index="37wK5m" />
       </concept>
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
@@ -109,7 +110,14 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
+      <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
+        <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
         <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
@@ -170,17 +178,21 @@
       <node concept="_ZGcI" id="2xELmDxO5nI" role="_XPhp">
         <node concept="3clFbS" id="2xELmDxO5nK" role="2VODD2">
           <node concept="3clFbF" id="2xELmDxPhJz" role="3cqZAp">
-            <node concept="37vLTI" id="2xELmDxPkaI" role="3clFbG">
-              <node concept="2OqwBi" id="2xELmDxPi8e" role="37vLTJ">
-                <node concept="_YI3z" id="2xELmDxPhJx" role="2Oq$k0" />
-                <node concept="3TrEf2" id="2xELmDxPjcz" role="2OqNvi">
-                  <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
-                </node>
+            <node concept="2OqwBi" id="42Bx8Vb$_F4" role="3clFbG">
+              <node concept="2JrnkZ" id="42Bx8Vb$C_R" role="2Oq$k0">
+                <node concept="_YI3z" id="2xELmDxPhJx" role="2JrQYb" />
               </node>
-              <node concept="3fl2lp" id="2xELmDxPkiM" role="37vLTx">
-                <ref role="3fl3PK" to="tpcu:52_Geb4QDV$" resolve="getScope" />
-                <node concept="3B5_sB" id="2xELmDxPkiN" role="3fl3PI">
-                  <ref role="3B5MYn" to="tpcu:3fifI_xCcJO" resolve="ScopeProvider_Behavior" />
+              <node concept="liA8E" id="42Bx8Vb$CN3" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
+                <node concept="359W_D" id="42Bx8Vb$CTk" role="37wK5m">
+                  <ref role="359W_E" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+                  <ref role="359W_F" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                </node>
+                <node concept="3fl2lp" id="2xELmDxPkiM" role="37wK5m">
+                  <ref role="3fl3PK" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="3B5_sB" id="2xELmDxPkiN" role="3fl3PI">
+                    <ref role="3B5MYn" to="tpcu:3fifI_xCcJO" resolve="ScopeProvider_Behavior" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -418,18 +430,22 @@
       <ref role="_XDHR" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
       <node concept="_ZGcI" id="4QZSgBx8hFu" role="_XPhp">
         <node concept="3clFbS" id="4QZSgBx8hFv" role="2VODD2">
-          <node concept="3clFbF" id="4QZSgBx8hFw" role="3cqZAp">
-            <node concept="37vLTI" id="4QZSgBx8hFx" role="3clFbG">
-              <node concept="2OqwBi" id="4QZSgBx8hFy" role="37vLTJ">
-                <node concept="_YI3z" id="4QZSgBx8hFz" role="2Oq$k0" />
-                <node concept="3TrEf2" id="4QZSgBx8hF$" role="2OqNvi">
-                  <ref role="3Tt5mk" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
-                </node>
+          <node concept="3clFbF" id="42Bx8Vb$EyM" role="3cqZAp">
+            <node concept="2OqwBi" id="42Bx8Vb$EyN" role="3clFbG">
+              <node concept="2JrnkZ" id="42Bx8Vb$EyO" role="2Oq$k0">
+                <node concept="_YI3z" id="42Bx8Vb$EyP" role="2JrQYb" />
               </node>
-              <node concept="3fl2lp" id="4QZSgBx8hF_" role="37vLTx">
-                <ref role="3fl3PK" to="tpcu:52_Geb4QFgX" resolve="getScope" />
-                <node concept="3B5_sB" id="4QZSgBx8hFA" role="3fl3PI">
-                  <ref role="3B5MYn" to="tpcu:3fifI_xCcJO" resolve="ScopeProvider_Behavior" />
+              <node concept="liA8E" id="42Bx8Vb$EyQ" role="2OqNvi">
+                <ref role="37wK5l" to="mhbf:~SNode.setReferenceTarget(org.jetbrains.mps.openapi.language.SReferenceLink,org.jetbrains.mps.openapi.model.SNode):void" resolve="setReferenceTarget" />
+                <node concept="359W_D" id="42Bx8Vb$EyR" role="37wK5m">
+                  <ref role="359W_E" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
+                  <ref role="359W_F" to="1i04:hP3i0lZ" resolve="overriddenMethod" />
+                </node>
+                <node concept="3fl2lp" id="4QZSgBx8hF_" role="37wK5m">
+                  <ref role="3fl3PK" to="tpcu:52_Geb4QFgX" resolve="getScope" />
+                  <node concept="3B5_sB" id="4QZSgBx8hFA" role="3fl3PI">
+                    <ref role="3B5MYn" to="tpcu:3fifI_xCcJO" resolve="ScopeProvider_Behavior" />
+                  </node>
                 </node>
               </node>
             </node>

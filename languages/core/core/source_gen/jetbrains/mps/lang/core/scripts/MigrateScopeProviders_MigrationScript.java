@@ -41,7 +41,7 @@ public final class MigrateScopeProviders_MigrationScript extends BaseMigrationSc
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)", "5811245382203252452"));
+        node.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)", "5811245382203252452"));
         final SNode par1 = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(0);
         if ((par1 != null)) {
           SLinkOperations.setTarget(par1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ybgbkc_a0a0c0a0());
@@ -89,7 +89,7 @@ public final class MigrateScopeProviders_MigrationScript extends BaseMigrationSc
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
-        SLinkOperations.setTarget(node, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)", "5811245382203257917"));
+        node.setReferenceTarget(MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, 0x11d4348057fL, "overriddenMethod"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)", "5811245382203257917"));
         final SNode par1 = ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b1fcL, 0xf8cc56b1feL, "parameter"))).getElement(0);
         if ((par1 != null)) {
           SLinkOperations.setTarget(par1, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x450368d90ce15bc3L, 0x4ed4d318133c80ceL, "type"), _quotation_createNode_ybgbkc_a0a0c0a1());
