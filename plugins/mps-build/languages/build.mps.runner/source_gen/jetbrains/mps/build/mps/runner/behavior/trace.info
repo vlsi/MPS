@@ -32,7 +32,7 @@
       <node id="2220861080744370264" at="37,0,38,0" concept="8" trace="getMethodName_id1aYLt$9dX0a" />
       <node id="2220861080744370264" at="38,0,39,0" concept="8" trace="getFQClassName_id1aYLt$9eyUg" />
       <node id="2220861080744370264" at="39,0,40,0" concept="8" trace="fetchDependencies_id57YmpYyL8F1" />
-      <node id="2220861080744370264" at="40,0,41,0" concept="8" trace="getScope_id3fifI_xCJOQ" />
+      <node id="2220861080744370264" at="40,0,41,0" concept="8" trace="getScope_id52_Geb4QDV$" />
       <node id="2220861080744370264" at="42,0,43,0" concept="8" trace="BH_METHODS" />
       <node id="1350734474210954597" at="47,85,48,23" concept="6" />
       <node id="1350734474210956191" at="50,86,51,21" concept="6" />
@@ -44,7 +44,7 @@
       <node id="2887318893670203413" at="62,29,63,30" concept="1" />
       <node id="2887318893670416205" at="64,196,65,529" concept="1" />
       <node id="2887318893670416218" at="66,31,67,196" concept="1" />
-      <node id="1350734474210969986" at="72,105,73,412" concept="6" />
+      <node id="1350734474210969986" at="72,116,73,384" concept="6" />
       <node id="2220861080744370264" at="76,63,77,20" concept="10" />
       <node id="2220861080744370264" at="81,114,82,21" concept="1" />
       <node id="2220861080744370264" at="86,114,87,49" concept="5" />
@@ -54,7 +54,7 @@
       <node id="2220861080744370264" at="96,13,97,65" concept="6" />
       <node id="2220861080744370264" at="98,13,99,125" concept="1" />
       <node id="2220861080744370264" at="99,125,100,20" concept="6" />
-      <node id="2220861080744370264" at="101,13,102,104" concept="6" />
+      <node id="2220861080744370264" at="101,13,102,115" concept="6" />
       <node id="2220861080744370264" at="103,14,104,58" concept="12" />
       <node id="2220861080744370264" at="109,128,110,49" concept="5" />
       <node id="2220861080744370264" at="111,26,112,56" concept="12" />
@@ -66,7 +66,7 @@
       <node id="2220861080744370264" at="50,0,53,0" concept="9" trace="getMethodName_id1aYLt$9dX0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2220861080744370264" at="53,0,56,0" concept="9" trace="getFQClassName_id1aYLt$9eyUg#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="2887318893670416216" at="65,529,68,9" concept="3" />
-      <node id="2220861080744370264" at="72,0,75,0" concept="9" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="2220861080744370264" at="72,0,75,0" concept="9" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <node id="2220861080744370264" at="76,0,79,0" concept="0" trace="BuildSolutionRunnerAspect__BehaviorDescriptor#()V" />
       <node id="2220861080744370264" at="87,49,90,5" concept="3" />
       <node id="2220861080744370264" at="110,49,113,5" concept="3" />
@@ -86,14 +86,14 @@
       <scope id="1350734474211110547" at="53,87,54,431" />
       <scope id="2887318893670203411" at="62,29,63,30" />
       <scope id="2887318893670416217" at="66,31,67,196" />
-      <scope id="1350734474210767365" at="72,105,73,412" />
+      <scope id="1350734474210767365" at="72,116,73,384" />
       <scope id="2220861080744370264" at="76,63,77,20" />
       <scope id="2220861080744370264" at="81,114,82,21" />
       <scope id="2220861080744370264" at="88,26,89,56" />
       <scope id="2220861080744370264" at="92,13,93,63" />
       <scope id="2220861080744370264" at="94,13,95,64" />
       <scope id="2220861080744370264" at="96,13,97,65" />
-      <scope id="2220861080744370264" at="101,13,102,104" />
+      <scope id="2220861080744370264" at="101,13,102,115" />
       <scope id="2220861080744370264" at="103,14,104,58" />
       <scope id="2220861080744370264" at="111,26,112,56" />
       <scope id="2220861080744370264" at="115,14,116,58" />

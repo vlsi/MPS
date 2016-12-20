@@ -35,7 +35,7 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       final SAbstractConcept parameterConcept = SNodeOperations.getConcept(parameter);
       Iterable<SConcept> seq = ListSequence.fromList(ConceptFunction__BehaviorDescriptor.getParameterConcepts_id2xELmDxyi2v.invoke(conceptFunction)).where(new IWhereFilter<SConcept>() {
         public boolean accept(SConcept it) {
-          return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(SNodeOperations.asSConcept(it)));
+          return SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(parameterConcept), SNodeOperations.asSConcept(it));
         }
       });
       if (Sequence.fromIterable(seq).isEmpty() && (boolean) ConceptFunctionParameter__BehaviorDescriptor.needConceptFunction_idhZKliUO.invoke(parameter)) {

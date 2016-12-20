@@ -50,12 +50,12 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
   public static final SMethod<String> getHeader_id2v69eKc6GlE = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHeader").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2v69eKc6GlE").registry(REGISTRY).build();
   public static final SMethod<String> getHeaderForAliasedEditor_id2v69eKc6I0x = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getHeaderForAliasedEditor").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2v69eKc6I0x").registry(REGISTRY).build();
   /*package*/ static final SMethod<String> appendHeader_id2v69eKc6I52 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("appendHeader").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2v69eKc6I52").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(StringBuilder.class, ""));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> usesParameterObject_id1653mnvAgq0 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("usesParameterObject").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgq0").registry(REGISTRY).build();
   public static final SMethod<Boolean> showName_id1653mnvAgry = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("showName").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgry").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getApplicableConceptFunctionParameter_id2D1PBM_bxJg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableConceptFunctionParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJg").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObjectFor_idhEwIGRw, getExpectedReturnType_idhEwIGRD, supportsCheckedExceptions_id7orZYjMoFMH, getThrowableTypes_id5op8ooRkkc7, isImplementation_id19gBtYEvixA, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getParameters_idhEwIGRM, getParameterConcepts_id2xELmDxyi2v, isReturnOnly_id3fUxpI1uWGM, getName_idhGVcmek, getHeader_id2v69eKc6GlE, getHeaderForAliasedEditor_id2v69eKc6I0x, appendHeader_id2v69eKc6I52, getScope_id3fifI_xCJOQ, usesParameterObject_id1653mnvAgq0, showName_id1653mnvAgry, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(usesParameterObjectFor_idhEwIGRw, getExpectedReturnType_idhEwIGRD, supportsCheckedExceptions_id7orZYjMoFMH, getThrowableTypes_id5op8ooRkkc7, isImplementation_id19gBtYEvixA, getExpectedRetType_idi2fhBNC, getBody_idi2fhZ_m, getParameters_idhEwIGRM, getParameterConcepts_id2xELmDxyi2v, isReturnOnly_id3fUxpI1uWGM, getName_idhGVcmek, getHeader_id2v69eKc6GlE, getHeaderForAliasedEditor_id2v69eKc6I0x, appendHeader_id2v69eKc6I52, getScope_id52_Geb4QDV$, usesParameterObject_id1653mnvAgq0, showName_id1653mnvAgry, getApplicableConceptFunctionParameter_id2D1PBM_bxJg);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -156,9 +156,9 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return result.toString();
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     // todo: rewrite using filtering scope 
-    SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
+    SAbstractConcept cncpt = kind;
     if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return new EmptyScope();
     }
@@ -224,7 +224,7 @@ public final class ConceptFunction__BehaviorDescriptor extends BaseBHDescriptor 
       case 13:
         return (T) ((String) appendHeader_id2v69eKc6I52(node, (StringBuilder) parameters[0]));
       case 14:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

@@ -16,6 +16,7 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -45,10 +46,10 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<List<SNode>> getScopeVariables_id4pl5GY7LKmA = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getScopeVariables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4pl5GY7LKmA").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getLocalVariableDeclarations_id3tkxRydYUUs = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3tkxRydYUUs").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<List<SNode>> getLocalVariableDeclarations_id7WLeqcv1izg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7WLeqcv1izg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExternalVariablesDeclarations_idhF5UhAC, isCompact_idi0zxBt8, isOneLiner_idi0z3USV, getLocalVariableElements_idi1I$XiP, uncaughtThrowables_id2SVUfbZ9Qq1, collectUncaughtThrowables_id4Gt7ANIVHca, getFirstStatement_id4GU1DgEHJ2u, getScopeVariables_id4pl5GY7LKmA, getLocalVariableDeclarations_id3tkxRydYUUs, getLocalVariableDeclarations_id7WLeqcv1izg, getScope_id3fifI_xCJOQ, getScope_id6GEzh_Hz_wK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getExternalVariablesDeclarations_idhF5UhAC, isCompact_idi0zxBt8, isOneLiner_idi0z3USV, getLocalVariableElements_idi1I$XiP, uncaughtThrowables_id2SVUfbZ9Qq1, collectUncaughtThrowables_id4Gt7ANIVHca, getFirstStatement_id4GU1DgEHJ2u, getScopeVariables_id4pl5GY7LKmA, getLocalVariableDeclarations_id3tkxRydYUUs, getLocalVariableDeclarations_id7WLeqcv1izg, getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -158,15 +159,15 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
 
     return result;
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id3tkxRydYUUs.invoke(__thisNode__, child), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
     return null;
   }
-  /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
+  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, role, ((int) index)), ScopeUtils.lazyParentScope(__thisNode__, kind));
+      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, role.getName(), ((int) index)), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
     return null;
   }
@@ -209,9 +210,9 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
       case 9:
         return (T) ((List<SNode>) getLocalVariableDeclarations_id7WLeqcv1izg(node, (String) parameters[0], ((int) (Integer) parameters[1])));
       case 10:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 11:
-        return (T) ((Scope) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
+        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

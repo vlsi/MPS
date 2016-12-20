@@ -46,9 +46,9 @@ public final class ClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<List<SNode>> getThrowableTypes_id5op8ooRkkc7 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getThrowableTypes").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5op8ooRkkc7").registry(REGISTRY).build();
   public static final SMethod<Boolean> implicitThrows_id4kX30tnJ9kz = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("implicitThrows").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4kX30tnJ9kz").registry(REGISTRY).build();
   public static final SMethod<Boolean> isClosure_id2P5W1FWMZPJ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isClosure").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2P5W1FWMZPJ").registry(REGISTRY).build();
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getFunctionInterfaceName_idhEwI$6K, getType_idhTgUC0Q, isStatementListCompactable_idi0zvp2S, getBody_idi2fhZ_m, getExpectedRetType_idi2fhBNC, getThrowableTypes_id5op8ooRkkc7, implicitThrows_id4kX30tnJ9kz, isClosure_id2P5W1FWMZPJ, getScope_id3fifI_xCJOQ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getFunctionInterfaceName_idhEwI$6K, getType_idhTgUC0Q, isStatementListCompactable_idi0zvp2S, getBody_idi2fhZ_m, getExpectedRetType_idi2fhBNC, getThrowableTypes_id5op8ooRkkc7, implicitThrows_id4kX30tnJ9kz, isClosure_id2P5W1FWMZPJ, getScope_id52_Geb4QDV$);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -88,7 +88,7 @@ public final class ClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static boolean isClosure_id2P5W1FWMZPJ(@NotNull SNode __thisNode__) {
     return true;
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf0522fL, "body"), __thisNode__, child)) {
         return Scopes.forVariables(kind, SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter")), ScopeUtils.lazyParentScope(__thisNode__, kind));
@@ -132,7 +132,7 @@ public final class ClosureLiteral__BehaviorDescriptor extends BaseBHDescriptor {
       case 8:
         return (T) ((Boolean) isClosure_id2P5W1FWMZPJ(node));
       case 9:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

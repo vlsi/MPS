@@ -30,7 +30,7 @@ public class ConceptRef {
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.getConcept(node)));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.getConcept(concept1)));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept2));
-    SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept2)));
+    SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept2));
   }
 
   public void concept_conceptProperties(SNode exprConcept) {

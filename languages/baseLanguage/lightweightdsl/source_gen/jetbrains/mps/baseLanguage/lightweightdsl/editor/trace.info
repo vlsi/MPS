@@ -23,7 +23,7 @@
       <node id="1741258697586929252" at="29,140,30,92" concept="2" />
       <node id="1741258697586929252" at="30,92,31,18" concept="7" />
       <node id="1741258697586929252" at="36,55,37,50" concept="7" />
-      <node id="6305381134221450767" at="41,93,42,546" concept="7" />
+      <node id="6305381134221450767" at="41,93,42,518" concept="7" />
       <node id="1741258697586929252" at="45,125,46,149" concept="7" />
       <node id="1741258697586929252" at="36,0,39,0" concept="5" trace="test#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <node id="1741258697586929252" at="41,0,44,0" concept="5" trace="filterConcept#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
@@ -32,7 +32,7 @@
       <node id="1741258697586929252" at="26,0,33,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <node id="1741258697586929252" at="34,0,41,0" concept="5" trace="getConcepts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/Collection;" />
       <scope id="1741258697586929252" at="36,55,37,50" />
-      <scope id="2660922206084092890" at="41,93,42,546" />
+      <scope id="2660922206084092890" at="41,93,42,518" />
       <scope id="1741258697586929252" at="45,125,46,149" />
       <scope id="1741258697586929252" at="28,118,31,18">
         <var name="result" id="1741258697586929252" />
