@@ -18,7 +18,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -63,10 +62,7 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
     modelAccess.runReadAction(new Runnable() {
       public void run() {
         scopeEditor.value = new ScopeEditor(options.value.getScopeOptions(), myProject.getRepository());
-        findersEditor.value = new FindersEditor(options.value.getFindersOptions(), node) {
-          public void goToFinder(ReloadableFinder finder) {
-          }
-        };
+        findersEditor.value = new FindersEditor(options.value.getFindersOptions(), node);
         viewOptionsEditor.value = new ViewOptionsEditor(options.value.getViewOptions());
       }
     });

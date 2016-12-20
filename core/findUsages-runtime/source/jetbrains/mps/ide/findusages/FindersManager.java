@@ -82,14 +82,13 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     INSTANCE = null;
   }
 
-  public Set<ReloadableFinder> getAvailableFinders(final SNode node) {
+  public Set<IInterfacedFinder> getAvailableFinders(final SNode node) {
     checkLoaded();
-    final Set<ReloadableFinder> result = new HashSet<ReloadableFinder>();
+    final Set<GeneratedFinder> result = new HashSet<>();
 
     for (LanguageFinders lf : myLanguageFindersMap.values()) {
       try {
-        lf.findersForConcept(node.getConcept()).filter(finder -> finder.isVisible(node) && finder.isApplicable(node)).
-            map(finder -> new ReloadableFinder(getFinderModule(finder), finder)).forEach(result::add);
+        lf.findersForConcept(node.getConcept()).filter(finder -> finder.isVisible(node) && finder.isApplicable(node)).forEach(result::add);
       } catch (Throwable t) {
         LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);
       }

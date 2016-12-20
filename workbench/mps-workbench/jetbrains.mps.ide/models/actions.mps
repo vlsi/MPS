@@ -165,7 +165,6 @@
     <import index="cyln" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.project.facets(MPS.Workbench/)" />
     <import index="89o2" ref="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" />
     <import index="88dm" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.tooltips(MPS.Platform/)" />
-    <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
     <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
     <import index="er15" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.ide.findusages.view.optionseditor.components(MPS.Workbench/)" />
     <import index="fwk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.textgen.trace(MPS.Core/)" />
@@ -24733,38 +24732,18 @@
                         <ref role="3cqZAo" node="5F_WwkyOzML" resolve="findersEditor" />
                       </node>
                       <node concept="2ShNRf" id="5F_WwkyOHnO" role="37vLTx">
-                        <node concept="YeOm9" id="5F_WwkyPdvw" role="2ShVmc">
-                          <node concept="1Y3b0j" id="5F_WwkyPdvz" role="YeSDq">
-                            <property role="2bfB8j" value="true" />
-                            <ref role="1Y3XeK" to="er15:~FindersEditor" resolve="FindersEditor" />
-                            <ref role="37wK5l" to="er15:~FindersEditor.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions,org.jetbrains.mps.openapi.model.SNode)" resolve="FindersEditor" />
-                            <node concept="3Tm1VV" id="5F_WwkyPdv$" role="1B3o_S" />
-                            <node concept="2OqwBi" id="5F_WwkyPlW9" role="37wK5m">
-                              <node concept="37vLTw" id="5F_WwkyP1$V" role="2Oq$k0">
-                                <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
-                              </node>
-                              <node concept="liA8E" id="5F_WwkyPmVg" role="2OqNvi">
-                                <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getFindersOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" resolve="getFindersOptions" />
-                              </node>
+                        <node concept="1pGfFk" id="1vm70nte4dI" role="2ShVmc">
+                          <ref role="37wK5l" to="er15:~FindersEditor.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions,org.jetbrains.mps.openapi.model.SNode)" resolve="FindersEditor" />
+                          <node concept="2OqwBi" id="5F_WwkyPlW9" role="37wK5m">
+                            <node concept="37vLTw" id="5F_WwkyP1$V" role="2Oq$k0">
+                              <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                             </node>
-                            <node concept="37vLTw" id="5F_WwkyOHo2" role="37wK5m">
-                              <ref role="3cqZAo" node="2dWvJ8Rutxq" resolve="node" />
+                            <node concept="liA8E" id="5F_WwkyPmVg" role="2OqNvi">
+                              <ref role="37wK5l" to="rhcb:~FindUsagesOptions.getFindersOptions():jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions" resolve="getFindersOptions" />
                             </node>
-                            <node concept="3clFb_" id="5F_WwkyPek_" role="jymVt">
-                              <property role="1EzhhJ" value="false" />
-                              <property role="TrG5h" value="goToFinder" />
-                              <property role="DiZV1" value="false" />
-                              <property role="IEkAT" value="false" />
-                              <node concept="3Tm1VV" id="5F_WwkyPekA" role="1B3o_S" />
-                              <node concept="3cqZAl" id="5F_WwkyPekC" role="3clF45" />
-                              <node concept="37vLTG" id="5F_WwkyPekD" role="3clF46">
-                                <property role="TrG5h" value="finder" />
-                                <node concept="3uibUv" id="5F_WwkyPekE" role="1tU5fm">
-                                  <ref role="3uigEE" to="k4i4:~ReloadableFinder" resolve="ReloadableFinder" />
-                                </node>
-                              </node>
-                              <node concept="3clFbS" id="5F_WwkyPekG" role="3clF47" />
-                            </node>
+                          </node>
+                          <node concept="37vLTw" id="5F_WwkyOHo2" role="37wK5m">
+                            <ref role="3cqZAo" node="2dWvJ8Rutxq" resolve="node" />
                           </node>
                         </node>
                       </node>
