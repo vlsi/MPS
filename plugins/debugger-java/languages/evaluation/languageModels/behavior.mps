@@ -124,6 +124,7 @@
         <child id="1145567471833" name="createdType" index="2T96Bj" />
       </concept>
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
@@ -140,7 +141,6 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -459,14 +459,14 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getScope" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:52_Geb4QDV$" resolve="getScope" />
       <node concept="3uibUv" id="IYmOvnNcSS" role="3clF45">
         <ref role="3uigEE" to="o8zo:3fifI_xCtN$" resolve="Scope" />
       </node>
       <node concept="3Tm1VV" id="IYmOvnNcN3" role="1B3o_S" />
       <node concept="37vLTG" id="IYmOvnNcN8" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3THzug" id="IYmOvnNcN9" role="1tU5fm" />
+        <node concept="3bZ5Sz" id="42Bx8VbD0zx" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="IYmOvnNcNa" role="3clF46">
         <property role="TrG5h" value="child" />
@@ -479,7 +479,7 @@
               <ref role="3eA5LN" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
             </node>
             <node concept="2qgKlT" id="IYmOvnNcNh" role="2OqNvi">
-              <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+              <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
               <node concept="37vLTw" id="2BHiRxgmaUg" role="37wK5m">
                 <ref role="3cqZAo" node="IYmOvnNcN8" resolve="kind" />
               </node>

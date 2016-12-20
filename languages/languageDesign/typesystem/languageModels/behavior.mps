@@ -294,7 +294,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
@@ -3558,7 +3557,7 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getScope" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:52_Geb4QDV$" resolve="getScope" />
       <node concept="3Tm1VV" id="6oIBdQGT6ST" role="1B3o_S" />
       <node concept="3clFbS" id="6oIBdQGT6SU" role="3clF47">
         <node concept="3clFbJ" id="6oIBdQGT6T9" role="3cqZAp">
@@ -3587,8 +3586,11 @@
             </node>
           </node>
           <node concept="2OqwBi" id="JkfSUHcYmD" role="3clFbw">
-            <node concept="37vLTw" id="2BHiRxgm7Ud" role="2Oq$k0">
-              <ref role="3cqZAo" node="6oIBdQGT6SV" resolve="kind" />
+            <node concept="2OqwBi" id="42Bx8VbD0$A" role="2Oq$k0">
+              <node concept="37vLTw" id="42Bx8VbD0$B" role="2Oq$k0">
+                <ref role="3cqZAo" node="6oIBdQGT6SV" resolve="kind" />
+              </node>
+              <node concept="FGMqu" id="42Bx8VbD0$C" role="2OqNvi" />
             </node>
             <node concept="3O6GUB" id="JkfSUHcYmJ" role="2OqNvi">
               <node concept="chp4Y" id="JkfSUHcYmL" role="3QVz_e">
@@ -3603,7 +3605,7 @@
       </node>
       <node concept="37vLTG" id="6oIBdQGT6SV" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3THzug" id="6oIBdQGT6SW" role="1tU5fm" />
+        <node concept="3bZ5Sz" id="42Bx8VbD0$_" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="6oIBdQGT6SX" role="3clF46">
         <property role="TrG5h" value="child" />
