@@ -468,7 +468,9 @@
                   <node concept="3clFbS" id="2xELmDxQeHb" role="1bW5cS">
                     <node concept="3clFbF" id="2xELmDxQeHc" role="3cqZAp">
                       <node concept="37vLTI" id="2xELmDxQeHd" role="3clFbG">
-                        <node concept="_YI3z" id="42Bx8Vb_yaF" role="37vLTx" />
+                        <node concept="37vLTw" id="42Bx8VbAvnu" role="37vLTx">
+                          <ref role="3cqZAo" node="42Bx8Vb_Ial" resolve="newMethod" />
+                        </node>
                         <node concept="2OqwBi" id="2xELmDxQeHe" role="37vLTJ">
                           <node concept="37vLTw" id="2xELmDxQeHf" role="2Oq$k0">
                             <ref role="3cqZAo" node="2xELmDxQeHj" resolve="it" />
