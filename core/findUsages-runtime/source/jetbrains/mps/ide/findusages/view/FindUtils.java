@@ -26,7 +26,6 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.IllegalModelAccessError;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -45,17 +44,18 @@ public class FindUtils {
 
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
-    List<IFinder> finders = new ArrayList<IFinder>(finderClassNames.length);
+    List<IInterfacedFinder> finders = new ArrayList<>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
-      IFinder finder = getFinderByClassName(finderClassName);
+      IInterfacedFinder finder = FindersManager.getInstance().getFinderByClassName(finderClassName, false);
       if (finder != null) {
         finders.add(finder);
       }
     }
 
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IFinder[finders.size()]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[finders.size()]));
   }
 
+  // XXX seems to be unused, RT for templates, perhaps?
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
     List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClasses.length);
     for (ModuleClassReference<GeneratedFinder> finderClass : finderClasses) {
@@ -71,31 +71,23 @@ public class FindUtils {
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
-    final SearchResults[] results = new SearchResults[1];
-    try {
-      return provider.getResults(query, monitor);
-    } catch (IllegalModelAccessError ex) {
-      // if there's query without model access, we shall never get here
-      // if the query does need model access, then it's caller's responsibility to ensure one. What would it do with
-      // e.g. SNode result returned, unless there's a lock?
-      //
-      // TODO remove once 3.4 is out and we are sure we've never noticed the error (or have fixed all the defects in invocation of the method)
-      LOG.error("SHALL NOT HAPPEN. If your query needs model access, wrap the call with proper model lock.", ex);
-    }
-    return new SearchResults();
+    return provider.getResults(query, monitor);
   }
 
   @Deprecated
   public static List<SNode> executeFinder(String className, SNode node, SearchScope scope, ProgressMonitor monitor) {
-    List<SNode> result = new ArrayList<SNode>();
-    IInterfacedFinder finder = getFinderByClassName(className);
-    if (finder == null) return result;
+    List<SNode> result = new ArrayList<>();
+    IInterfacedFinder finder = FindersManager.getInstance().getFinderByClassName(className, false);
+    if (finder == null) {
+      return result;
+    }
     for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
       result.add(searchResult.getObject());
     }
     return result;
   }
 
+  // XXX seems to be unused, RT for templates, perhaps?
   public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, SearchScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<SNode>();
     IInterfacedFinder finder = getFinderByClass(finderClass);
@@ -106,12 +98,16 @@ public class FindUtils {
     return result;
   }
 
+  /**
+   * @deprecated use of class name to identify finders is unfortunate design decision
+   */
   @Deprecated
   @Nullable
   public static IInterfacedFinder getFinderByClassName(String className) {
-    return FindersManager.getInstance().getFinderByClassName(className);
+    return FindersManager.getInstance().getFinderByClassName(className, true);
   }
 
+  // in use from generated code
   public static GeneratedFinder getFinderByClass(ModuleClassReference<GeneratedFinder> finderClass) {
     try {
       Class<GeneratedFinder> fClass = finderClass.loadClass();
