@@ -145,7 +145,7 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent_BehaviorDescriptor" file="TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent_BehaviorDescriptor.java">
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor" file="TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

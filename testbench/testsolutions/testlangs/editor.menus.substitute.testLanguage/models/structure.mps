@@ -384,7 +384,7 @@
   <node concept="1TIwiD" id="7c9rxfhSFjx">
     <property role="EcuMT" value="8289277620556838113" />
     <property role="3GE5qa" value="constraints" />
-    <property role="TrG5h" value="TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent" />
+    <property role="TrG5h" value="TestSubstituteGrandChildWithConstraintsProhibited" />
     <property role="R4oN_" value="see TestTransform_ChildWithConstraints_CanBeAncestor_GrandChild " />
     <ref role="1TJDcQ" node="2P6wUVR9Dv0" resolve="TestSubstituteGrandChildWithConstraints" />
   </node>

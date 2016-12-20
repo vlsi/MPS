@@ -32,7 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TestSubstituteConceptChildToReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptToWrap = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteGrandChildWithConstraints = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraintsProhibited = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteNotSubconceptOfChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParentToReference = new ConceptPresentationBuilder().create();
@@ -98,7 +98,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 22:
         return props_TestSubstituteGrandChildWithConstraints;
       case 23:
-        return props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent;
+        return props_TestSubstituteGrandChildWithConstraintsProhibited;
       case 24:
         return props_TestSubstituteNotSubconceptOfChild;
       case 25:

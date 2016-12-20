@@ -81,8 +81,8 @@
     <file name="TestSubstituteConceptToWrap_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptToWrap_BehaviorDescriptor" />
     </file>
-    <file name="TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent_BehaviorDescriptor.java">
-      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent_BehaviorDescriptor" />
+    <file name="TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor" />
     </file>
     <file name="TestSubstituteGrandChildWithConstraints_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraints_BehaviorDescriptor" />
