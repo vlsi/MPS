@@ -421,9 +421,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1988,8 +1985,8 @@
             </node>
             <node concept="X8dFx" id="3h9a8EwPwhf" role="2OqNvi">
               <node concept="2YIFZM" id="3h9a8EwPwwR" role="25WWJ7">
-                <ref role="37wK5l" to="o3n2:3h9a8EwPwwp" resolve="imported" />
                 <ref role="1Pybhc" to="o3n2:3h9a8EwPwtb" resolve="ScopeUtil" />
+                <ref role="37wK5l" to="o3n2:42Bx8Vcf9mG" resolve="imported" />
                 <node concept="2OqwBi" id="3ag$5R8RHi0" role="37wK5m">
                   <node concept="2OqwBi" id="3h9a8EwPwwV" role="2Oq$k0">
                     <node concept="13iPFW" id="3h9a8EwPwwS" role="2Oq$k0" />
@@ -2022,8 +2019,8 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3TUQnm" id="3h9a8EwPwx3" role="37wK5m">
-                  <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                <node concept="35c_gC" id="42Bx8VcfiEr" role="37wK5m">
+                  <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                 </node>
                 <node concept="37vLTw" id="2BHiRxglGXo" role="37wK5m">
                   <ref role="3cqZAo" node="3h9a8EwPwcx" resolve="child" />
