@@ -256,8 +256,8 @@
         <child id="1423104411233404408" name="repo" index="up2gk" />
       </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -1750,9 +1750,9 @@
                   <ref role="3xOPvv" node="aJO6qS76hW" resolve="build" />
                 </node>
                 <node concept="2qgKlT" id="Eob996jjpV" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1CD" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8Vcbm9A" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="3DDoTVA57Hl" role="37wK5m">
                     <ref role="3xOPvv" node="Eob996jjjA" resolve="resourcesMacro" />
@@ -1787,9 +1787,9 @@
                   <ref role="3xOPvv" node="aJO6qS76hW" resolve="build" />
                 </node>
                 <node concept="2qgKlT" id="5HZ4e6cVo6s" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1X_" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8VcblHp" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="5HZ4e6cVo6C" role="37wK5m">
                     <ref role="3xOPvv" node="Eob996jjj_" resolve="buildMacro" />
@@ -1824,9 +1824,9 @@
                   <ref role="3xOPvv" node="Eob996jjj$" resolve="build2" />
                 </node>
                 <node concept="2qgKlT" id="Eob996jIt7" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XA" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8Vcblhc" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="Eob996jIt9" role="37wK5m">
                     <ref role="3xOPvv" node="Eob996jjjV" resolve="resources2" />
@@ -1861,9 +1861,9 @@
                   <ref role="3xOPvv" node="Eob996jjj$" resolve="build2" />
                 </node>
                 <node concept="2qgKlT" id="5HZ4e6cVw_7" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XB" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8VcbkOZ" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="5HZ4e6cVw_a" role="37wK5m">
                     <ref role="3xOPvv" node="Eob996jjjV" resolve="resources2" />
@@ -1892,9 +1892,9 @@
                   <ref role="3xOPvv" node="Eob996jjj$" resolve="build2" />
                 </node>
                 <node concept="2qgKlT" id="5HZ4e6cVw_C" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XC" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8VcbkoM" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="5HZ4e6cVw_E" role="37wK5m">
                     <ref role="3xOPvv" node="Eob996jjjV" resolve="resources2" />
@@ -1929,9 +1929,9 @@
                   <ref role="3xOPvv" node="Eob996jjj$" resolve="build2" />
                 </node>
                 <node concept="2qgKlT" id="llfbZqvHOR" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XD" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8VcbjWs" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="llfbZqvHOU" role="37wK5m">
                     <ref role="3xOPvv" node="llfbZqvvqc" resolve="referenceVariable" />
@@ -1966,9 +1966,9 @@
                   <ref role="3xOPvv" node="llfbZqvvqI" resolve="testVarReferences" />
                 </node>
                 <node concept="2qgKlT" id="llfbZqvvrs" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XE" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8Vcbjw6" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="llfbZqvvr$" role="37wK5m">
                     <ref role="3xOPvv" node="llfbZqvvqv" resolve="forwardReference" />
@@ -2003,9 +2003,9 @@
                   <ref role="3xOPvv" node="llfbZqvvqI" resolve="testVarReferences" />
                 </node>
                 <node concept="2qgKlT" id="llfbZqvvqS" role="2OqNvi">
-                  <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                  <node concept="3TUQnm" id="4ZAQAeII1XF" role="37wK5m">
-                    <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                  <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                  <node concept="35c_gC" id="42Bx8VcbiZH" role="37wK5m">
+                    <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                   </node>
                   <node concept="3xONca" id="llfbZqvvqV" role="37wK5m">
                     <ref role="3xOPvv" node="llfbZqvvqz" resolve="backwardReference" />

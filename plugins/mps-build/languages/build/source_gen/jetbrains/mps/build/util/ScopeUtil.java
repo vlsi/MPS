@@ -68,7 +68,7 @@ public class ScopeUtil {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return (Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(it, concept, child);
+        return (Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(it, SNodeOperations.asSConcept(concept), child);
       }
     });
   }

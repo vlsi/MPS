@@ -442,6 +442,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144100932627" name="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" flags="ng" index="1xIGOp" />
@@ -1350,9 +1351,12 @@
                         <ref role="3cqZAo" node="3h9a8EwPwi5" resolve="it" />
                       </node>
                       <node concept="2qgKlT" id="3h9a8EwPwi2" role="2OqNvi">
-                        <ref role="37wK5l" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
-                        <node concept="37vLTw" id="2BHiRxgm6kO" role="37wK5m">
-                          <ref role="3cqZAo" node="3h9a8EwPwwA" resolve="concept" />
+                        <ref role="37wK5l" to="tpcu:52_Geb4QDV$" resolve="getScope" />
+                        <node concept="2OqwBi" id="42Bx8VcbgUy" role="37wK5m">
+                          <node concept="37vLTw" id="2BHiRxgm6kO" role="2Oq$k0">
+                            <ref role="3cqZAo" node="3h9a8EwPwwA" resolve="concept" />
+                          </node>
+                          <node concept="1rGIog" id="42Bx8VcbhiR" role="2OqNvi" />
                         </node>
                         <node concept="37vLTw" id="2BHiRxglw_f" role="37wK5m">
                           <ref role="3cqZAo" node="3h9a8EwPwwD" resolve="child" />
