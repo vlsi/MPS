@@ -24553,9 +24553,6 @@
               <node concept="3cpWs8" id="1wEcoXjJtM9" role="3cqZAp">
                 <node concept="3cpWsn" id="1wEcoXjJtMa" role="3cpWs9">
                   <property role="TrG5h" value="concepts" />
-                  <node concept="A3Dl8" id="1wEcoXjJtMb" role="1tU5fm">
-                    <node concept="3bZ5Sz" id="1wEcoXjJtMc" role="A3Ik2" />
-                  </node>
                   <node concept="2YIFZM" id="1wEcoXjJtMd" role="33vP2m">
                     <ref role="1Pybhc" to="tpca:5qocf8PzXo6" resolve="TransformationMenuActionsUtil" />
                     <ref role="37wK5l" to="tpca:5qocf8PzXrb" resolve="getSubconceptsWithCurrentChildConceptsExcluded" />
@@ -24568,6 +24565,9 @@
                       <ref role="359W_F" to="tpc2:7L5lpRJINkn" resolve="features" />
                     </node>
                     <node concept="1yR$tW" id="1wEcoXjJtMU" role="37wK5m" />
+                  </node>
+                  <node concept="A3Dl8" id="1wEcoXjJtMb" role="1tU5fm">
+                    <node concept="3bZ5Sz" id="1wEcoXjJtMc" role="A3Ik2" />
                   </node>
                 </node>
               </node>

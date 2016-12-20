@@ -86,8 +86,8 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
   protected EditorCell createChildCell(EditorContext editorContext, SNode child) {
     final EditorCell editorCell = createChildCell_internal(child);
     if (isCompatibilityMode()) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(myOwnerNode, myContainmentLink, child));
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
     }
     return editorCell;
   }

@@ -4,34 +4,77 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 
 public class CellAction_DeleteSmart extends AbstractCellAction {
+  private SNode myLegacyLink;
+  private String myLegacyRole;
+
+  @NotNull
   private SNode mySource;
-  private SContainmentLink myLink;
+  @NotNull
   private SNode myTarget;
   private boolean myCanBeNull = true;
   private boolean myEnabled = true;
-  private String myRole;
-  public CellAction_DeleteSmart(SNode source, SContainmentLink link, SNode target) {
+
+  private SContainmentLink myLink;
+  @Nullable
+  private SAbstractConcept mySpecificTargetConcept;
+
+  /**
+   * use {@link jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart#CellAction_DeleteSmart(SNode, SContainmentLink, SNode) }
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
     mySource = source;
-    myLink = link;
+    myLegacyLink = link;
     myTarget = target;
-    myRole = link.getName();
-    myCanBeNull = link.isOptional();
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLegacyLink);
+    myLegacyRole = SPropertyOperations.getString(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"));
+
+    myLink = null;
+    // This action used only for aggregation links 
+    myEnabled = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1"));
+    myCanBeNull = SPropertyOperations.hasValue(genuineLinkDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1", "0..1");
     if (myCanBeNull) {
       return;
     }
-
-    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0h0g(SNodeOperations.getConcept(myTarget), myLink.getTargetConcept());
+    myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLegacyLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
   }
+  public CellAction_DeleteSmart(SNode source, SContainmentLink link, SNode target) {
+    this(source, link, target, null);
+  }
+  public CellAction_DeleteSmart(@NotNull SNode source, @NotNull SContainmentLink link, @NotNull SNode target, @Nullable SAbstractConcept specificTargetConcept) {
+    mySource = source;
+    myLink = link;
+    myTarget = target;
+    mySpecificTargetConcept = specificTargetConcept;
+    myCanBeNull = link.isOptional();
+
+    myLegacyRole = null;
+    myLegacyLink = null;
+
+    if (myCanBeNull) {
+      return;
+    }
+    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0n(SNodeOperations.getConcept(myTarget), getTargetConcept());
+  }
+
   @Override
   public boolean canExecute(EditorContext context) {
     if (!(myEnabled)) {
@@ -44,11 +87,22 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   public void execute(EditorContext context) {
     SNodeOperations.deleteNode(myTarget);
     if (!(myCanBeNull)) {
-      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(myLink.getTargetConcept(), SNodeOperations.getModel(mySource), null, true);
-      SLinkOperations.setTarget(mySource, ((ConceptMetaInfoConverter) mySource.getConcept()).convertAggregation(myRole), defaultTarget);
+      if (myLegacyLink != null) {
+        // old way 
+        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLegacyLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")), SNodeOperations.getModel(mySource), true);
+        SLinkOperations.setTarget(mySource, ((ConceptMetaInfoConverter) mySource.getConcept()).convertAggregation(myLegacyRole), defaultTarget);
+      } else {
+        // new way 
+        assert myLink != null;
+        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(getTargetConcept(), SNodeOperations.getModel(mySource), null, true);
+        SLinkOperations.setTarget(mySource, myLink, defaultTarget);
+      }
     }
   }
-  private static boolean neq_89lc4r_a0a0h0g(Object a, Object b) {
+  private SAbstractConcept getTargetConcept() {
+    return (mySpecificTargetConcept != null ? mySpecificTargetConcept : myLink.getTargetConcept());
+  }
+  private static boolean neq_89lc4r_a0a0k0n(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
 }
