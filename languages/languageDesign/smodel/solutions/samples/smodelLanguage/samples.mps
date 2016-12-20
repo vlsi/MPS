@@ -281,7 +281,6 @@
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1180457458947" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" flags="nn" index="3oJPKh" />
       <concept id="1180458444893" name="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" flags="nn" index="3oNA_f" />
-      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -4746,11 +4745,8 @@
             </node>
             <node concept="1mIQ4w" id="hzMzNqB" role="2OqNvi">
               <node concept="25Kdxt" id="hzMxpC$" role="cj9EA">
-                <node concept="2OqwBi" id="2XA_ayKxdKs" role="25KhWn">
-                  <node concept="37vLTw" id="2BHiRxgmJgx" role="2Oq$k0">
-                    <ref role="3cqZAo" node="h8cHd8W" resolve="concept2" />
-                  </node>
-                  <node concept="1rGIog" id="2XA_ayKxiqY" role="2OqNvi" />
+                <node concept="37vLTw" id="2BHiRxgmJgx" role="25KhWn">
+                  <ref role="3cqZAo" node="h8cHd8W" resolve="concept2" />
                 </node>
               </node>
             </node>

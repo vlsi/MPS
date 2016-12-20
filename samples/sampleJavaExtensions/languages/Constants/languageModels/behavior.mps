@@ -117,7 +117,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1180031783296" name="jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation" flags="nn" index="2Zo12i">
         <child id="1180031783297" name="conceptArgument" index="2Zo12j" />
       </concept>
@@ -160,11 +159,8 @@
       <node concept="3clFbS" id="5aCokQ63xCm" role="3clF47">
         <node concept="3clFbJ" id="5aCokQ63B84" role="3cqZAp">
           <node concept="2OqwBi" id="5aCokQ63DZb" role="3clFbw">
-            <node concept="2OqwBi" id="42Bx8VbD0zm" role="2Oq$k0">
-              <node concept="37vLTw" id="42Bx8VbD0zn" role="2Oq$k0">
-                <ref role="3cqZAo" node="5aCokQ63xCi" resolve="kind" />
-              </node>
-              <node concept="FGMqu" id="42Bx8VbD0zo" role="2OqNvi" />
+            <node concept="37vLTw" id="42Bx8VbD0zn" role="2Oq$k0">
+              <ref role="3cqZAo" node="5aCokQ63xCi" resolve="kind" />
             </node>
             <node concept="2Zo12i" id="5aCokQ63G0X" role="2OqNvi">
               <node concept="chp4Y" id="5aCokQ63G1u" role="2Zo12j">

@@ -361,7 +361,6 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
-      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -397,7 +396,6 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
-      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -1298,14 +1296,8 @@
         <node concept="3clFbF" id="13YBgBBRTui" role="3cqZAp">
           <node concept="BsUDl" id="13YBgBBRTuj" role="3clFbG">
             <ref role="37wK5l" node="13YBgBBRT49" resolve="getScope" />
-            <node concept="2OqwBi" id="1GLgM0B3PNB" role="37wK5m">
-              <node concept="2OqwBi" id="42Bx8VbD0xt" role="2Oq$k0">
-                <node concept="37vLTw" id="42Bx8VbD0xu" role="2Oq$k0">
-                  <ref role="3cqZAo" node="13YBgBBRT3S" resolve="kind" />
-                </node>
-                <node concept="FGMqu" id="42Bx8VbD0xv" role="2OqNvi" />
-              </node>
-              <node concept="1rGIog" id="1GLgM0B3PXZ" role="2OqNvi" />
+            <node concept="37vLTw" id="42Bx8VbD0xu" role="37wK5m">
+              <ref role="3cqZAo" node="13YBgBBRT3S" resolve="kind" />
             </node>
             <node concept="2OqwBi" id="42Bx8VbD0xx" role="37wK5m">
               <node concept="liA8E" id="42Bx8VbD0xy" role="2OqNvi">

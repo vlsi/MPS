@@ -769,11 +769,8 @@
                   <ref role="cht4Q" to="kdzh:1jjYQYSgYJt" resolve="BuildMps_Group" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="42Bx8VbD0xc" role="2Oq$k0">
-                <node concept="37vLTw" id="42Bx8VbD0xd" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3umvbTBIVQE" resolve="kind" />
-                </node>
-                <node concept="FGMqu" id="42Bx8VbD0xe" role="2OqNvi" />
+              <node concept="37vLTw" id="42Bx8VbD0xd" role="2Oq$k0">
+                <ref role="3cqZAo" node="3umvbTBIVQE" resolve="kind" />
               </node>
             </node>
             <node concept="2OqwBi" id="3umvbTBKhj3" role="3uHU7B">
@@ -782,11 +779,8 @@
                   <ref role="cht4Q" to="kdzh:hS0KzPONfF" resolve="BuildMps_AbstractModule" />
                 </node>
               </node>
-              <node concept="2OqwBi" id="42Bx8VbD0xf" role="2Oq$k0">
-                <node concept="37vLTw" id="42Bx8VbD0xg" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3umvbTBIVQE" resolve="kind" />
-                </node>
-                <node concept="FGMqu" id="42Bx8VbD0xh" role="2OqNvi" />
+              <node concept="37vLTw" id="42Bx8VbD0xg" role="2Oq$k0">
+                <ref role="3cqZAo" node="3umvbTBIVQE" resolve="kind" />
               </node>
             </node>
           </node>
