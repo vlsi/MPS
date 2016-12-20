@@ -64,14 +64,8 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
     List<IInterfacedFinder> sortedFinders = new ArrayList<>(availableFinders);
     Collections.sort(sortedFinders, (o1, o2) -> o1.getDescription().compareToIgnoreCase(o2.getDescription()));
 
-    List<String> correctEnabledFinders = new ArrayList<String>();
-
     for (final IInterfacedFinder finder : sortedFinders) {
-      boolean isEnabled = finder.isUsedByDefault(node) || myOptions.getFindersClassNames().contains(finder.getClass().getName());
-
-      if (isEnabled) {
-        correctEnabledFinders.add(finder.getClass().getName());
-      }
+      boolean isEnabled = myOptions.getFindersClassNames().contains(finder.getClass().getName());
 
       final JBCheckBox finderCheckBox = new JBCheckBox(finder.getDescription(), isEnabled);
       finderCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
@@ -134,8 +128,6 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
 
       myPanel.add(finderHolder);
     }
-
-    myOptions.setFindersClassNames(correctEnabledFinders);
   }
 
   protected void findersListChangedByUser() {

@@ -17,8 +17,10 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
@@ -31,13 +33,15 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
-public class FindersOptions extends BaseOptions {
+public final class FindersOptions extends BaseOptions {
   private static final Logger LOG = LogManager.getLogger(FindersOptions.class);
 
   private static final String FINDERS = "finders";
@@ -60,6 +64,21 @@ public class FindersOptions extends BaseOptions {
     FindersOptions result = new FindersOptions();
     result.myFindersClassNames.addAll(myFindersClassNames);
     return result;
+  }
+
+  /**
+   * Makes a copy of finder options and additionally enables default finders for the node
+   * {@link jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder#isUsedByDefault(SNode)}.
+   *
+   * FIXME Due to legacy/transition issues, finders are also consulted for isVisible+isApplicable
+   * ({@code {@link jetbrains.mps.ide.findusages.FindersManager#getAvailableFinders(SNode)}}), although I don't really see a reason for that.
+   * I'd rather add those that answer isUsedByDefault only, and filter isVisible/isApplicable later (in UI).
+   */
+  public FindersOptions cloneWithDefaultForNode(@NotNull SNode node) {
+    FindersOptions rv = clone();
+    Set<IInterfacedFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
+    availableFinders.stream().filter(f -> f.isUsedByDefault(node)).forEach(f -> rv.myFindersClassNames.add(f.getClass().getName()));
+    return rv;
   }
 
   @NotNull
