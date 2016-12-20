@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-
-import static jetbrains.mps.project.MPSExtentions.DOT;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
  * Helps to calculates such options as java package, model name for the model creation procedure
@@ -33,51 +31,38 @@ import static jetbrains.mps.project.MPSExtentions.DOT;
  */
 @Immutable
 final class ParametersCalculator {
-  private final DefaultModelRoot myModelRoot;
-  @NotNull
-  private final SourceRoot mySourceRoot;
+  @NotNull private final FileBasedModelRoot myModelRoot;
+  @NotNull private final SourceRoot mySourceRoot;
 
-  public ParametersCalculator(@NotNull DefaultModelRoot modelRoot, @NotNull SourceRoot sourceRoot) {
+  public ParametersCalculator(@NotNull FileBasedModelRoot modelRoot, @NotNull SourceRoot sourceRoot) {
     myModelRoot = modelRoot;
     mySourceRoot = sourceRoot;
   }
 
-  /**
-   * @param fileExtension tells which extension the model file has.
-   *                      It can be null which means that there must be no extension at all.
-   */
   @NotNull
-  public ModelCreationOptions calculate(@NotNull IFile modelFile, @Nullable String fileExtension) {
-    String javaPackage = calcJavaPackage(modelFile);
-    String modelName = calcModelName(modelFile, javaPackage, fileExtension);
+  public ModelCreationOptions calculate(@NotNull IFile modelFile, @NotNull ModelFactory modelFactory) {
+    String modelName = new ModelNameCalculator(modelFactory, mySourceRoot, modelFile).calcModelName();
+    return calculate(modelName);
+  }
+
+  @NotNull
+  public ModelCreationOptions calculate(@NotNull String modelName) {
     return ModelCreationOptions.startBuilding()
-                               .setRelativePath(calcRelativePathFromContentDir(modelFile))
-                               .setPackage(javaPackage)
+//                               .setRelativePath(calcRelativePathFromContentDir(modelFile))
+//                               .setPackage(javaPackage)
                                .setModelName(modelName)
                                .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();
   }
 
-  @NotNull
-  private String calcRelativePathFromContentDir(IFile modelFile) {
-    String contentDirectory = independentAndAbsolute(myModelRoot.getContentDirectory().getPath());
-    return FileUtil.getRelativePath(modelFile.getPath(), contentDirectory, Path.UNIX_SEPARATOR);
-  }
-
-  @NotNull
-  private String independentAndAbsolute(String path) {
-    return FileUtil.getUnixPath(FileUtil.getAbsolutePath(path));
-  }
-
-  private String calcJavaPackage(IFile modelFile) {
-    String pathToModelDir = modelFile.getParent().getPath();
-    String pathFromSourceRoot = FileUtil.getRelativePath(pathToModelDir, mySourceRoot.getAbsolutePath().getPath(), Path.UNIX_SEPARATOR);
-    return NameUtil.namespaceFromPath(pathFromSourceRoot);
-  }
-
-  private String calcModelName(IFile modelFile, String javaPackage, @Nullable String fileExtension) {
-    String fileNameWE = (fileExtension != null) ? FileUtil.getNameWithoutExtension(modelFile.getName()) : modelFile.getName();
-    return javaPackage.isEmpty() ? fileNameWE
-                                 : javaPackage + DOT + fileNameWE;
-  }
+//  @NotNull
+//  private String calcRelativePathFromContentDir(@NotNull IFile modelFile) {
+//    String contentDirectory = independentAndAbsolute(myModelRoot.getContentDirectory().getPath());
+//    return FileUtil.getRelativePath(modelFile.getPath(), contentDirectory, Path.UNIX_SEPARATOR);
+//  }
+//
+//  @NotNull
+//  private String independentAndAbsolute(String path) {
+//    return FileUtil.getUnixPath(FileUtil.getAbsolutePath(path));
+//  }
 }

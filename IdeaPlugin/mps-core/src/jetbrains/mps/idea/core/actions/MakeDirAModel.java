@@ -21,14 +21,12 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VfsUtilCore;
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -41,16 +39,10 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by danilla on 28/10/15.
@@ -124,37 +116,17 @@ public class MakeDirAModel extends NewModelActionBase {
     return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<EditableSModel>() {
       @Override
       public EditableSModel compute() {
-        Module module = e.getData(LangDataKeys.MODULE);
-        final PsiElement psiElement = e.getData(LangDataKeys.PSI_ELEMENT);
-        final VirtualFile targetDir = ((PsiDirectory) psiElement).getVirtualFile();
-
-        final String modelName = myModelPrefix;
-        EditableSModel model = null;
-        try {
-          String relPath = null;
-          ModuleRootManager rootManager = ModuleRootManager.getInstance(module);
-          ArrayList<VirtualFile> roots = new ArrayList<VirtualFile>();
-          roots.addAll(Arrays.asList(rootManager.getSourceRoots()));
-          roots.addAll(Arrays.asList(rootManager.getContentRoots()));
-          for (VirtualFile sr : roots) {
-            relPath = VfsUtilCore.getRelativePath(targetDir, sr);
-            if (relPath != null) {
-              break;
-            }
-          }
-
-          Map<String, String> options = new HashMap<>();
-          if (relPath != null) {
-            options.put(ModelFactory.OPTION_RELPATH, relPath);
-          }
-          FolderModelFactory folderModelFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
-          model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel, options, folderModelFactory);
-        } catch (IOException ioException) {
-          LOG.error("Can't create per-root model " + modelName + " under " + myRootForModel, ioException);
+        FolderModelFactory folderModelFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
+        SourceRoot sourceRoot = findSourceRootWithAName();
+        if (sourceRoot == null) {
+          throw new IllegalStateException("Source root with the name " + myRootForModel + " could not be found");
         }
+        EditableSModel model = (EditableSModel) myModelRoot.createModel(folderModelFactory, sourceRoot, myModelPrefix);
 
-        model.setChanged(true);
-        model.load();
+        if (model != null) {
+          model.setChanged(true);
+          model.load();
+        }
 
         //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
 //        ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
@@ -163,6 +135,17 @@ public class MakeDirAModel extends NewModelActionBase {
         return model;
       }
     });
+  }
+
+  @Nullable
+  private SourceRoot findSourceRootWithAName() {
+    SourceRoot result = null;
+    for (SourceRoot sourceRoot : myModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
+      if (sourceRoot.getPath().equals(myRootForModel)) {
+        result = sourceRoot;
+      }
+    }
+    return result;
   }
 
   @Override

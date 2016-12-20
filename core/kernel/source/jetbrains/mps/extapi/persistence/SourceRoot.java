@@ -25,6 +25,8 @@ import org.jetbrains.annotations.NotNull;
  * Many models may lie within one <code>SourceRoot</code>
  *
  * [Typically it is a directory which contains models] AP
+ * Currently it does not store a reference to the enclosing <code>ModelRoot</code>
+ * and probably it is for the best.
  *
  * @author apyshkin
  * @since 3.5

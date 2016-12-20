@@ -50,8 +50,14 @@ import static jetbrains.mps.util.PathConverters.ID_CONVERTER;
 import static jetbrains.mps.util.PathConverters.forModules;
 
 /**
- * Kinds are obviously ought to be enums not string
- * Paths represented by string either must have clear contract (absolute, relative) or (better)
+ * <code>FileBasedModelRoot</code> contains several {@link SourceRoot} which contain models.
+ * The source roots might be marked with a {@link SourceRootKind} which determine how do we treat the model files/folders
+ * we discover under those source roots.
+ *
+ * The class is in the state of migration from <code>String</code> source roots to the interface {@link SourceRoot}
+ * that is why it is such a mess.
+ *
+ * Paths represented by string either must have a clear contract (absolute, relative) or (better)
  * replaced with some <code>Path</code> entities.
  * AP
  *
@@ -72,10 +78,16 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public static final String EXCLUDED = "excluded";
 
   private /*final*/ FileSystem myFileSystem = jetbrains.mps.vfs.FileSystem.getInstance(); // TODO not read from memento
-  @Internal public static final String CONTENT_PATH = "contentPath";
-  @Internal public static final String LOCATION = "location";
+
+  /**
+   * This is a private model root persistence notation, ought to be concealed from the general public
+   */
+  @Internal public static final String CONTENT_PATH = "contentPath"; // TODO: 12/20/16 lower visibility
+  @Internal public static final String LOCATION = "location"; // TODO: 12/20/16 lower visibility
   private static final String PATH = "path";
 
+  @ToRemove(version = 3.5)
+  @Deprecated
   @Nullable
   @Immutable private final List<String> mySupportedFileKinds; // null <=> default constructor is used
 

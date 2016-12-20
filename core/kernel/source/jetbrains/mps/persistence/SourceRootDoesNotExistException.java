@@ -16,20 +16,23 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.SourceRoot;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * @author apyshkin
  */
-public final class NoSourceRootsInModelRootException extends RuntimeException {
+public final class SourceRootDoesNotExistException extends RuntimeException {
+  @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final FileBasedModelRoot myModelRoot;
 
-  public NoSourceRootsInModelRootException(@NotNull FileBasedModelRoot modelRoot) {
+  public SourceRootDoesNotExistException(@NotNull SourceRoot sourceRoot, @NotNull FileBasedModelRoot modelRoot) {
+    mySourceRoot = sourceRoot;
     myModelRoot = modelRoot;
   }
 
   @Override
   public String getMessage() {
-    return String.format("Source roots are absent in the provided model root [%s], operation is impossible", myModelRoot);
+    return String.format("Source root '%s' is absent in the provided model root [%s], operation is impossible", mySourceRoot, myModelRoot);
   }
 }

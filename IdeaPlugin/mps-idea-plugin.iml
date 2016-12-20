@@ -40,5 +40,6 @@
     <orderEntry type="module" module-name="vfs" />
     <orderEntry type="module" module-name="baseLanguage-search" />
     <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="basePlatform" />
   </component>
 </module>

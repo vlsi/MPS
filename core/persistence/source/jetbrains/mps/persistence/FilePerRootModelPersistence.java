@@ -119,10 +119,6 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    String modulRef = options.get(OPTION_MODULEREF);
-    if (modulRef == null) {
-      throw new IOException("moduleRef is not provided");
-    }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
@@ -198,78 +194,10 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     return "Universal XML-based file-per-root format";
   }
 
+  @NotNull
   @Override
   public String getFactoryId() {
     return FACTORY_ID;
-  }
-
-  @Override
-  public Iterable<DataSource> createDataSources(ModelRoot root, IFile folder) {
-    if (!(FilePerRootDataSource.isPerRootPersistenceFolder(folder))) {
-      return Collections.emptySet();
-    }
-
-    return Collections.<DataSource>singleton(new FilePerRootDataSource(folder, root));
-  }
-
-  /**
-   * @deprecated naming convention is plain wrong way to tell whether source root keeps aspect models
-   * Besides, String is awful contract for something like path - it's unclear where its root is,
-   * nor whether we can resolve it to IFile at all.
-   * The only client of the method left, FilePerRootModelPersistence, shall demand relative path
-   * specification rather than try to guess proper root for a new model. It's also unclear why
-   * can't I save aspect models in a per-root persistence
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean isLanguageAspectsSourceRoot(IFile sourceRoot) {
-    final String rootName = sourceRoot.getName();
-    return rootName.equals(Language.LANGUAGE_MODELS) || rootName.equals(Language.LEGACY_LANGUAGE_MODELS);
-  }
-
-  @Override
-  @NotNull
-  public DataSource createNewSource(FileBasedModelRoot modelRoot, SourceRoot sourceRoot, String modelName, @NotNull ModelCreationOptions parameters) throws IOException {
-    sourceRoot = defaultSourceRoot(modelRoot, sourceRoot);
-
-    IFile folder;
-    if (parameters.getRelativePath() != null) {
-      folder = sourceRoot.getAbsolutePath().getDescendant(parameters.getRelativePath());
-    } else {
-      folder = sourceRoot.getAbsolutePath().getDescendant(modelName);
-    }
-
-    if (folder.getDescendant(FilePerRootDataSource.HEADER_FILE).exists()) {
-      throw new IOException("model already exists");
-    }
-    return new FilePerRootDataSource(folder, modelRoot);
-  }
-
-  /**
-   * if the given source root is not in the source roots or it is null we choose default
-   */
-  @NotNull
-  private SourceRoot defaultSourceRoot(FileBasedModelRoot modelRoot, @Nullable SourceRoot passedSourceRoot) throws IOException {
-    List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceRootKinds.SOURCES);
-    if (sourceRoots.isEmpty()) {
-      throw new IOException("empty list of source roots");
-    }
-
-    final boolean isModelRootInLanguage = modelRoot.getModule() instanceof Language;
-    if (passedSourceRoot == null || !sourceRoots.contains(passedSourceRoot)) {
-      passedSourceRoot = null;
-      for (SourceRoot sourceRoot : sourceRoots) {
-        if (isModelRootInLanguage && isLanguageAspectsSourceRoot(sourceRoot.getAbsolutePath())) {
-          continue;
-        }
-        passedSourceRoot = sourceRoot;
-        break;
-      }
-    }
-    if (passedSourceRoot == null) {
-      throw new IOException("no suitable source root found");
-    }
-    return passedSourceRoot;
   }
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {

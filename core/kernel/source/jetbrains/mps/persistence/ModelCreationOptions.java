@@ -47,22 +47,22 @@ import java.util.Map;
 public final class ModelCreationOptions {
   public static final ModelCreationOptions DEFAULT = startBuilding().finishBuilding();
 
-  private final String myJavaPackage;
   private final boolean myContentOnly;
   private final String myModelName;
-  private final SModuleReference myModuleReference;
-  private final String myRelativePath;
+
+  /**
+   * @deprecated not in use anymore
+   */
+  @Deprecated private final String myJavaPackage;
+  @Deprecated private final SModuleReference myModuleReference;
+  @Deprecated private final String myRelativePath;
 
   private ModelCreationOptions(@NotNull Builder builder) {
-    myJavaPackage = builder.myJavaPackage;
     myContentOnly = builder.myContentOnly;
     myModelName = builder.myModelName;
+    myJavaPackage = builder.myJavaPackage;
     myRelativePath = builder.myRelativePath;
     myModuleReference = builder.myModuleReference;
-  }
-
-  public String getJavaPackage() {
-    return myJavaPackage;
   }
 
   public boolean isContentOnly() {
@@ -73,10 +73,20 @@ public final class ModelCreationOptions {
     return myModelName;
   }
 
+  @Deprecated
+  public String getJavaPackage() {
+    return myJavaPackage;
+  }
+
+  @Deprecated
   public SModuleReference getModuleReference() {
     return myModuleReference;
   }
 
+  /**
+   * @return the path from the source root to the model file
+   */
+  @Deprecated
   public String getRelativePath() {
     return myRelativePath;
   }

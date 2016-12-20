@@ -161,7 +161,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   @Override
-  public void addListener(DataSourceListener listener) {
+  public void addListener(@NotNull DataSourceListener listener) {
     myLock.writeLock().lock();
     try {
       if (myListeners.isEmpty()) {
@@ -176,7 +176,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   }
 
   @Override
-  public void removeListener(DataSourceListener listener) {
+  public void removeListener(@NotNull DataSourceListener listener) {
     myLock.writeLock().lock();
     try {
       myListeners.remove(listener);

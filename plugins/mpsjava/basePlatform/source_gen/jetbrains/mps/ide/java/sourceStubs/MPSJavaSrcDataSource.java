@@ -20,7 +20,7 @@ public class MPSJavaSrcDataSource extends FolderDataSource {
   }
 
   @Override
-  public boolean isIncluded(IFile file) {
+  public boolean isIncluded(@NotNull IFile file) {
     return super.isIncluded(file) && file.getPath().endsWith(".java");
   }
 

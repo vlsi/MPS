@@ -103,7 +103,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public final void addListener(DataSourceListener listener) {
+  public final void addListener(@NotNull DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
         startListening();
@@ -117,7 +117,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   }
 
   @Override
-  public final void removeListener(DataSourceListener listener) {
+  public final void removeListener(@NotNull DataSourceListener listener) {
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {

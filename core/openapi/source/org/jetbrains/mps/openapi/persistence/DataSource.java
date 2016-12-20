@@ -18,24 +18,25 @@ package org.jetbrains.mps.openapi.persistence;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * Represents a source of data to build models from.
- * For implementation consider extending {@link jetbrains.mps.extapi.persistence.DataSourceBase}.
+ * Represents a location of model data sources to build models.
+ * For example it can be based on files, internet content, database content, etc.
+ *
+ * For implementation consider extending {@code jetbrains.mps.extapi.persistence.DataSourceBase}.
  */
 public interface DataSource {
 
   /**
    * Yields a string representation for the location of the data source (if applicable)
    */
-  @NotNull
-  String getLocation();
+  @NotNull String getLocation();
 
   /**
    * Registers listeners who need to be notified about changes in the underlying data source.
    * It is the responsibility of the DataSource to detect such updates and notify the listeners.
    */
-  void addListener(DataSourceListener listener);
+  void addListener(@NotNull DataSourceListener listener);
 
-  void removeListener(DataSourceListener listener);
+  void removeListener(@NotNull DataSourceListener listener);
 
   /**
    * Retrieves the last modification timestamp.
@@ -44,5 +45,12 @@ public interface DataSource {
    */
   long getTimestamp();
 
+  /**
+   * TODO Makes sense only with API which introduce changes to the <code>DataSource</code>. Currently it is incomplete.
+   * Usually there is a possibility to edit <code>DataSource</code>.
+   * For examples please see {@link StreamDataSource}.
+   *
+   * @return whether this data source can be changed.
+   */
   boolean isReadOnly();
 }

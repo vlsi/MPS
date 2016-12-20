@@ -23,10 +23,11 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.FileDataSourceCreator;
+import jetbrains.mps.persistence.DataSourceFactory;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -36,6 +37,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -247,18 +249,14 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
         IFile oldFile = ((FileDataSource) getSource()).getFile();
         SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
-        try {
-          String extension = getExtension(oldFile);
-          FileDataSource source = new FileDataSourceCreator(defaultModelRoot).createSource(newModelName, extension, sourceRoot).getSource();
-          IFile newFile = source.getFile();
-          if (!newFile.equals(oldFile)) {
-            newFile.getParent().mkdirs();
-            newFile.createNewFile();
-            changeModelFile(newFile);
-            deleteOldFile(oldFile);
-          }
-        } catch (IOException e) {
-          LOG.error("cannot rename " + getModelName() + ": " + e.getMessage());
+        ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(getExtension(oldFile));
+        FileDataSource source = new DataSourceFactory(defaultModelRoot).createFileDataSource(factory, sourceRoot, newModelName).getDataSource();
+        IFile newFile = source.getFile();
+        if (!newFile.equals(oldFile)) {
+          newFile.getParent().mkdirs();
+          newFile.createNewFile();
+          changeModelFile(newFile);
+          deleteOldFile(oldFile);
         }
         save();
       }
@@ -291,11 +289,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
 
   @NotNull
   private String getExtension(IFile oldFile) {
-    String extension = FileUtil.getExtension(oldFile.getName());
-    if (extension == null) {
-      extension = "";
-    }
-    return extension;
+    return StringUtil.emptyIfNull(FileUtil.getExtension(oldFile.getName()));
   }
 
   @Override

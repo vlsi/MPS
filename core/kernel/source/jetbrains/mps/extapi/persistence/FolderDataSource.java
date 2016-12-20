@@ -52,7 +52,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     this.myModelRoot = modelRoot;
   }
 
-  public boolean isIncluded(IFile file) {
+  public boolean isIncluded(@NotNull IFile file) {
     return myFolder.equals(file.getParent());
   }
 
@@ -139,7 +139,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
-  public void addListener(DataSourceListener listener) {
+  public void addListener(@NotNull DataSourceListener listener) {
     synchronized (LOCK) {
       if (myListeners.isEmpty()) {
         myFolder.getFileSystem().addListener(this);
@@ -149,7 +149,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   }
 
   @Override
-  public void removeListener(DataSourceListener listener) {
+  public void removeListener(@NotNull DataSourceListener listener) {
     synchronized (LOCK) {
       myListeners.remove(listener);
       if (myListeners.isEmpty()) {

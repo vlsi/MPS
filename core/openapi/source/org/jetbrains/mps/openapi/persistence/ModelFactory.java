@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -26,12 +27,31 @@ import java.util.Map;
  * Creates models (instances of SModel) from data sources
  */
 public interface ModelFactory {
-  String OPTION_MODULEREF = "moduleReference";
   /**
-   * @deprecated not used for now
+   * @deprecated not used currently
    */
+  @ToRemove(version = 3.5)
+  @Deprecated
+  String OPTION_MODULEREF = "moduleReference";
+
+  /**
+   * @deprecated not used currently
+   */
+  @ToRemove(version = 3.5)
+  @Deprecated
   String OPTION_PACKAGE = "package";
+
+  /**
+   * @deprecated not in use anymore
+   */
+  @ToRemove(version = 3.5)
+  @Deprecated
   String OPTION_RELPATH = "relativePath";
+
+  /**
+   * Denotes a model name, used as a key in the <code>Map<String, String></code> parameter
+   * in the {@link #create(DataSource, Map)} methods.
+   */
   String OPTION_MODELNAME = "modelName";
 
   /**

@@ -114,12 +114,12 @@ public class DeployedStreamManager implements ModelStreamManager {
     }
 
     @Override
-    public void addListener(DataSourceListener listener) {
+    public void addListener(@NotNull DataSourceListener listener) {
       // no-op
     }
 
     @Override
-    public void removeListener(DataSourceListener listener) {
+    public void removeListener(@NotNull DataSourceListener listener) {
       // no-op
     }
 

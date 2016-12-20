@@ -34,8 +34,6 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -97,10 +95,10 @@ final class CopyDefaultModelRootHelper {
 
       sourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
       ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot, targetSourceRoot);
-      ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, file) -> {
+      ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
         try {
           IFile targetModelFile = calculateTargetModelFile(sourceModule, targetModule, sourceRoot, targetSourceRoot, file);
-          ModelCreationOptions options = parametersCalculator.calculate(targetModelFile, factory.getFileExtension());
+          options = parametersCalculator.calculate(targetModelFile, factory); // recalculating based on the target location and target name
           try {
             SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
             createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);

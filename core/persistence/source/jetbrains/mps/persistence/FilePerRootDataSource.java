@@ -20,6 +20,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
@@ -32,24 +33,26 @@ public class FilePerRootDataSource extends FolderDataSource {
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  public FilePerRootDataSource(@NotNull IFile folder, ModelRoot modelRoot) {
+  public FilePerRootDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
     super(folder, modelRoot);
   }
 
   @Override
-  public boolean isIncluded(IFile file) {
+  public boolean isIncluded(@NotNull IFile file) {
     return super.isIncluded(file) && isPerRootPersistenceFile(file);
   }
 
-  public static boolean isPerRootPersistenceFile(IFile file) {
+  public static boolean isPerRootPersistenceFile(@NotNull IFile file) {
     String fileName = file.getName();
-    if (HEADER_FILE.equals(fileName)) return true;
+    if (HEADER_FILE.equals(fileName)) {
+      return true;
+    }
 
     String extension = FileUtil.getExtension(fileName);
     return ROOT_EXTENSION.equals(extension);
   }
 
-  public static boolean isPerRootPersistenceFolder(IFile folder) {
+  public static boolean isPerRootPersistenceFolder(@NotNull IFile folder) {
     return folder.getDescendant(HEADER_FILE).exists();
   }
 }

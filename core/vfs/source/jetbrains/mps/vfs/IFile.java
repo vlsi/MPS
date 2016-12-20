@@ -33,7 +33,7 @@ import java.util.List;
 /**
  * AP:
  * An abstraction of path names similar to the {@link java.io.File}.
- * Represents an abstract path (or location) on disk (might be non-existent).
+ * Represents an abstract absolute path (or location) on disk (might be non-existent).
  * Moreover might represents a path to some archive + path within the archive (unlike the {@link java.io.File}).
  *
  * FIXME

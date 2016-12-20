@@ -277,12 +277,12 @@ public class PersistenceUtil {
     }
 
     @Override
-    public void addListener(DataSourceListener listener) {
+    public void addListener(@NotNull DataSourceListener listener) {
 
     }
 
     @Override
-    public void removeListener(DataSourceListener listener) {
+    public void removeListener(@NotNull DataSourceListener listener) {
 
     }
 
@@ -345,12 +345,12 @@ public class PersistenceUtil {
     }
 
     @Override
-    public void addListener(DataSourceListener listener) {
+    public void addListener(@NotNull DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
 
     @Override
-    public void removeListener(DataSourceListener listener) {
+    public void removeListener(@NotNull DataSourceListener listener) {
       throw new UnsupportedOperationException();
     }
 
