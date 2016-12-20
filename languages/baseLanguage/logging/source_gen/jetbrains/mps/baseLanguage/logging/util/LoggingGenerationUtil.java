@@ -33,7 +33,7 @@ public class LoggingGenerationUtil {
   }
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
     for (SNode logStatement : ListSequence.fromList(SNodeOperations.getNodeDescendants(contextNode, MetaAdapterFactory.getConcept(0x760a0a8ceabb4521L, 0x8bfd65db761a9ba3L, 0x10fc428b1dfL, "jetbrains.mps.baseLanguage.logging.structure.LogStatement"), false, new SAbstractConcept[]{}))) {
-      Scope scope = ScopeUtils.parentScope(logStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration").getDeclarationNode());
+      Scope scope = ScopeUtils.parentScope(logStatement, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
 
       if (Sequence.fromIterable(scope.getAvailableElements(baseName)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
