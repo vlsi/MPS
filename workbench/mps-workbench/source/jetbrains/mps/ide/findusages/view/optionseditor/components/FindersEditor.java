@@ -67,7 +67,7 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
     List<String> correctEnabledFinders = new ArrayList<String>();
 
     for (final IInterfacedFinder finder : sortedFinders) {
-      boolean isEnabled = finder.isUsedByDefault(node) || (!resetToDefaults() && myOptions.getFindersClassNames().contains(finder.getClass().getName()));
+      boolean isEnabled = finder.isUsedByDefault(node) || myOptions.getFindersClassNames().contains(finder.getClass().getName());
 
       if (isEnabled) {
         correctEnabledFinders.add(finder.getClass().getName());

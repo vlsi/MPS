@@ -24844,7 +24844,7 @@
                 </node>
                 <node concept="2ShNRf" id="2dWvJ8Rutsd" role="33vP2m">
                   <node concept="1pGfFk" id="2dWvJ8Rutse" role="2ShVmc">
-                    <ref role="37wK5l" to="rhcb:~FindUsagesDialog.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions,org.jetbrains.mps.openapi.model.SNode,com.intellij.openapi.project.Project,boolean)" resolve="FindUsagesDialog" />
+                    <ref role="37wK5l" to="rhcb:~FindUsagesDialog.&lt;init&gt;(jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions,org.jetbrains.mps.openapi.model.SNode,com.intellij.openapi.project.Project)" resolve="FindUsagesDialog" />
                     <node concept="37vLTw" id="3GM_nagTAl8" role="37wK5m">
                       <ref role="3cqZAo" node="2dWvJ8Ruts3" resolve="options" />
                     </node>
@@ -24853,9 +24853,6 @@
                     </node>
                     <node concept="37vLTw" id="2BHiRxeuMyu" role="37wK5m">
                       <ref role="3cqZAo" node="2dWvJ8RuvHr" resolve="myIdeaProject" />
-                    </node>
-                    <node concept="37vLTw" id="169$xuQe64Y" role="37wK5m">
-                      <ref role="3cqZAo" node="2dWvJ8RuvHS" resolve="myWithDialog" />
                     </node>
                   </node>
                 </node>

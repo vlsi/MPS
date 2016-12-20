@@ -69,7 +69,7 @@ import jetbrains.mps.ide.findusages.view.UsageToolOptions;
     options.value = new FindUsagesOptions(findersEditor.value.getOptions(), scopeEditor.value.getOptions(), viewOptionsEditor.value.getOptions());
 
     if (myWithDialog) {
-      FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myIdeaProject, myWithDialog);
+      FindUsagesDialog dialog = new FindUsagesDialog(options.value, operationNode.value, myIdeaProject);
       dialog.show();
       if (dialog.isCancelled()) {
         return;

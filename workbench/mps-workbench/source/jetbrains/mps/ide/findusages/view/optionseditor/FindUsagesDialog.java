@@ -38,11 +38,9 @@ public class FindUsagesDialog extends DialogWrapper {
   private FindersEditor myFindersEditor;
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
-  private final boolean myWithDialog;
 
-  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project, final boolean withDialog) {
+  public FindUsagesDialog(final FindUsagesOptions defaultOptions, final SNode node, final Project project) {
     super(project);
-    myWithDialog = withDialog;
     setTitle("Find Usages");
     setOKButtonText("&Find");
     setCancelButtonText("Ca&ncel");
@@ -52,7 +50,7 @@ public class FindUsagesDialog extends DialogWrapper {
       @Override
       public void run() {
         myScopeEditor = new ScopeEditor(defaultOptions.getScopeOptions(), mpsProject.getRepository());
-        myFindersEditor = new MyFindersEditor(defaultOptions, node, mpsProject) {
+        myFindersEditor = new FindersEditor(defaultOptions.getFindersOptions(), node, new FinderNavigation(mpsProject)) {
           @Override
           protected void findersListChangedByUser() {
             super.findersListChangedByUser();
@@ -104,18 +102,6 @@ public class FindUsagesDialog extends DialogWrapper {
   @Override
   protected JComponent createCenterPanel() {
     return myPanel;
-  }
-
-  private class MyFindersEditor extends FindersEditor {
-
-    MyFindersEditor(FindUsagesOptions defaultOptions, SNode node, jetbrains.mps.project.Project project) {
-      super(defaultOptions.getFindersOptions(), node, new FinderNavigation(project));
-    }
-
-    @Override
-    protected boolean resetToDefaults() {
-      return !myWithDialog;
-    }
   }
 
   static final class FinderNavigation implements Consumer<IInterfacedFinder> {
