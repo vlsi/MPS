@@ -38,8 +38,7 @@ import java.util.Set;
  */
 final class ModelSourceRootWalker {
   private final FileTreeWalkListener myCallback;
-  @NotNull
-  private final DefaultModelRoot myModelRoot;
+  @NotNull private final DefaultModelRoot myModelRoot;
 
   public ModelSourceRootWalker(@NotNull DefaultModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
     myModelRoot = modelRoot;
@@ -75,6 +74,9 @@ final class ModelSourceRootWalker {
     return ((FileSystem) myModelRoot.getFileSystem()).isFileIgnored(curDirectory.getName());
   }
 
+  /**
+   * Became simply a wrapper around the file.
+   */
   @Immutable
   public static final class ModelRootFileTreeLocus {
     @NotNull

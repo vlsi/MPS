@@ -236,13 +236,26 @@ public class DefaultModelRoot extends FileBasedModelRoot implements CopyableMode
     return result;
   }
 
+  /**
+   * listens to the file tree traversal
+   */
   interface FileTreeWalkListener {
     void onFileVisited(@NotNull ModelRootFileTreeLocus state);
 
     void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state);
   }
 
+  /**
+   * Passed to the {@link ModelSourceRootWalker}
+   */
   public interface ModelRootWalkListener {
+    /**
+     * Called on every file data source which was found during the file tree traversal.
+     *
+     * @param factory -- may be default persistence factory or per root persistence factory
+     * @param dataSource -- is the data source which created from the file by the <code>factory</code>
+     * @param file -- essentially the file which gave out the data source
+     */
     void onDataSourceVisited(@NotNull ModelFactory factory, @NotNull DataSource dataSource, IFile file);
   }
 }
