@@ -34,23 +34,32 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public RefCellCellProvider(SNode node, EditorContext context) {
+  public RefCellCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
 
   @Override
   protected EditorCell createRefCell(final EditorContext context, final SNode effectiveNode, SNode node) {
-    final AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
-    myAuxiliaryCellProvider.setSNode(effectiveNode);
-    if (inlineComponent instanceof InlineCellProvider) {
-      InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
-      inlineComponentProvider.setRefNode(node);
+    InlineCellProvider inlineCellProvider = createInlineCellProvider(effectiveNode);
+    final AbstractCellProvider inlineComponent;
+    if (inlineCellProvider != null) {
+      inlineComponent = inlineCellProvider;
+    } else {
+      // TODO: remove this compatibility code after MPS 3.5
+      inlineComponent = myAuxiliaryCellProvider;
+      inlineComponent.setSNode(effectiveNode);
+      if (inlineComponent instanceof InlineCellProvider) {
+        InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
+        inlineComponentProvider.setRefNode(node);
+      }
     }
+
     EditorCell editorCell;
     if (myIsAggregation) {
       editorCell = inlineComponent.createEditorCell(context);
@@ -85,6 +94,11 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
       }
     }
     return editorCell;
+  }
+
+  // TODO: make abstract after MPS 3.5
+  protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+    return null;
   }
 
   // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell

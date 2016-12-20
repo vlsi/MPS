@@ -44,7 +44,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   private EditorCell createCustom_9j55p5_a() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
+        return new AbstractCellProvider(myNode) {
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Label cell = new EditorCell_Constant(context, myNode, "");
             cell.setDefaultText(SPropertyOperations.getString(myNode, MetaAdapterFactory.getProperty(0xc7d5b9dda05f4be2L, 0xbc73f2e16994cc67L, 0x59e9926e840d7db2L, 0x59e9926e840d7db3L, "caption")));

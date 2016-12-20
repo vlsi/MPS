@@ -36,7 +36,7 @@ import jetbrains.mps.editor.runtime.cells.BigCellUtil;
   private EditorCell createCustom_r67zyn_a() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
+        return new AbstractCellProvider(myNode) {
           @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, myNode, "<no handler>");

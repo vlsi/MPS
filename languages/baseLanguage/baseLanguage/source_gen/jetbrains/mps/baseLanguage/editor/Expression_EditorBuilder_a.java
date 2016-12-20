@@ -57,7 +57,7 @@ import jetbrains.mps.editor.runtime.style.Padding;
   private EditorCell createCustom_1ltshm_a0() {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
+        return new AbstractCellProvider(myNode) {
           @Override
           public EditorCell createEditorCell(EditorContext context) {
             EditorCell_Error result = new EditorCell_Error(context, myNode, "<" + myNode.getRoleInParent() + ">");

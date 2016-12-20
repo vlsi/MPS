@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class CellProviderWithRole extends AbstractCellProvider {
@@ -27,6 +28,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
   protected EditorContext myEditorContext;
 
   // auxiliary cell provider, which may help to create some parts of resulting cell (used in inheritors)
+  @Deprecated
   protected AbstractCellProvider myAuxiliaryCellProvider;
 
   // if the cell to provide "allows" "empty" target of its relation.
@@ -42,7 +44,7 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
 
 
   //it is important for descendants to have a unique constructor and with the same parameters as this one 
-  public CellProviderWithRole(SNode node, EditorContext context) {
+  public CellProviderWithRole(@NotNull SNode node, EditorContext context) {
     super(node);
     myEditorContext = context;
   }
@@ -89,10 +91,18 @@ public abstract class CellProviderWithRole extends AbstractCellProvider {
     myAllowsEmptyTarget = allowsEmptyTarget;
   }
 
+  /**
+   * @deprecated Since MPS 3.5 not used
+   */
+  @Deprecated
   public void setAuxiliaryCellProvider(AbstractCellProvider provider) {
     myAuxiliaryCellProvider = provider;
   }
 
+  /**
+   * @deprecated Since MPS 3.5 not used
+   */
+  @Deprecated
   public AbstractCellProvider getAuxiliaryCellProvider() {
     return myAuxiliaryCellProvider;
   }

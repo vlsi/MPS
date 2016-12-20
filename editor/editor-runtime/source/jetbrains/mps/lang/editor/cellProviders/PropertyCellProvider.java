@@ -38,6 +38,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class PropertyCellProvider extends CellProviderWithRole {
@@ -62,7 +63,7 @@ public class PropertyCellProvider extends CellProviderWithRole {
     }
   }
 
-  public PropertyCellProvider(SNode node, EditorContext context) {
+  public PropertyCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
 

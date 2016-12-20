@@ -32,12 +32,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -58,10 +58,9 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   private String myErrorText = null;
 
   //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public AbstractReferentCellProvider(SNode node, EditorContext context) {
+  public AbstractReferentCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
-
 
 
   @Override
@@ -156,7 +155,9 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   @Override
   public SubstituteInfo createDefaultSubstituteInfo() {
-    if (myIsAggregation) return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
+    if (myIsAggregation) {
+      return new DefaultChildSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
+    }
     return new DefaultReferenceSubstituteInfo(getSNode(), myLinkDeclaration, myEditorContext);
   }
 

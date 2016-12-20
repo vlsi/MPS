@@ -968,8 +968,8 @@
               <node concept="YeOm9" id="klpHT7rnm3" role="2ShVmc">
                 <node concept="1Y3b0j" id="klpHT7rnm6" role="YeSDq">
                   <property role="2bfB8j" value="true" />
-                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;()" resolve="AbstractCellProvider" />
                   <ref role="1Y3XeK" to="exr9:~AbstractCellProvider" resolve="AbstractCellProvider" />
+                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="AbstractCellProvider" />
                   <node concept="3Tm1VV" id="klpHT7rnm7" role="1B3o_S" />
                   <node concept="3clFb_" id="klpHT7rnm8" role="jymVt">
                     <property role="1EzhhJ" value="false" />
@@ -1100,6 +1100,7 @@
                       </node>
                     </node>
                   </node>
+                  <node concept="pncrf" id="1A9ZZarVmNl" role="37wK5m" />
                 </node>
               </node>
             </node>

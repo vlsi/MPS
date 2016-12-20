@@ -15,14 +15,30 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 
 public abstract class InlineCellProvider extends AbstractCellProvider {
 
   private SNode myRefNode;
-  public InlineCellProvider(){}
 
+  /**
+   * @deprecated Since MPS 3.5 use {@link #InlineCellProvider(SNode, SNode)}
+   */
+  @Deprecated
+  public InlineCellProvider() {
+  }
+
+  public InlineCellProvider(@NotNull SNode node, @NotNull SNode refNode) {
+    super(node);
+    myRefNode = refNode;
+  }
+
+  /**
+   * @deprecated Since MPS 3.5 use {@link #InlineCellProvider(SNode, SNode)}
+   */
+  @Deprecated
   public void setRefNode(SNode refNode) {
     myRefNode = refNode;
   }
