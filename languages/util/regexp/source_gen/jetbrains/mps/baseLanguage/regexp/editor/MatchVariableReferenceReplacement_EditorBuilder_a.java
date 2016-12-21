@@ -16,8 +16,8 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Rege
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -62,11 +62,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_u4bs76_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MatchVariableReferenceReplacement_EditorBuilder_a._Inline_u4bs76_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("match");
     provider.setNoTargetText("<no match>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatchVariableReferenceReplacement_EditorBuilder_a._Inline_u4bs76_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -81,8 +85,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   public static class _Inline_u4bs76_a1a extends InlineCellProvider {
-    public _Inline_u4bs76_a1a() {
-      super();
+    public _Inline_u4bs76_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

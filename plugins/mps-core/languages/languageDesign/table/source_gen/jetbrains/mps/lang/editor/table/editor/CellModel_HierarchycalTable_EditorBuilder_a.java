@@ -18,8 +18,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.borderedStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class CellModel_HierarchycalTable_EditorBuilder_a extends AbstractEditorBuilder {
@@ -90,11 +90,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_cqolwn_b1a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1b0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("headerRowLinkDeclaration");
     provider.setNoTargetText("<no headerRowLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1b0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -109,8 +113,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_cqolwn_a1b0a extends InlineCellProvider {
-    public _Inline_cqolwn_a1b0a() {
-      super();
+    public _Inline_cqolwn_a1b0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -200,11 +204,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_cqolwn_b0b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("rowsLinkDeclaration");
     provider.setNoTargetText("<no rowsLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -219,8 +227,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_cqolwn_a1a1a extends InlineCellProvider {
-    public _Inline_cqolwn_a1a1a() {
-      super();
+    public _Inline_cqolwn_a1a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -299,11 +307,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_cqolwn_b1b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1b1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("cellsInRowLinkDeclaration");
     provider.setNoTargetText("<no cellsInRowLinkDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_HierarchycalTable_EditorBuilder_a._Inline_cqolwn_a1b1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -318,8 +330,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_cqolwn_a1b1a extends InlineCellProvider {
-    public _Inline_cqolwn_a1b1a() {
-      super();
+    public _Inline_cqolwn_a1b1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

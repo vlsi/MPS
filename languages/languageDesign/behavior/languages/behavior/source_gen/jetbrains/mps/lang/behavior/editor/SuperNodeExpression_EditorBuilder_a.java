@@ -22,8 +22,8 @@ import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftParenAfterNameStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParenStyleClass;
 
@@ -91,11 +91,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     return editorCell;
   }
   private EditorCell createRefCell_n52m2z_b1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new SuperNodeExpression_EditorBuilder_a._Inline_n52m2z_a1b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("superConcept");
     provider.setNoTargetText("<no superConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SuperNodeExpression_EditorBuilder_a._Inline_n52m2z_a1b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -110,8 +114,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     return editorCell;
   }
   public static class _Inline_n52m2z_a1b0 extends InlineCellProvider {
-    public _Inline_n52m2z_a1b0() {
-      super();
+    public _Inline_n52m2z_a1b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

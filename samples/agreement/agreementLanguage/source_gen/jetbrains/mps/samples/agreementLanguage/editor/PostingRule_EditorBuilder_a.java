@@ -26,8 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
@@ -161,11 +161,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_ncr7br_b1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new PostingRule_EditorBuilder_a._Inline_ncr7br_a1b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("account");
     provider.setNoTargetText("<choose account type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PostingRule_EditorBuilder_a._Inline_ncr7br_a1b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -180,8 +184,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   public static class _Inline_ncr7br_a1b0 extends InlineCellProvider {
-    public _Inline_ncr7br_a1b0() {
-      super();
+    public _Inline_ncr7br_a1b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

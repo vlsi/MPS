@@ -119,11 +119,15 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     return editorCell;
   }
   private EditorCell createRefCell_i2dquw_d0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ExtensionDeclaration_EditorBuilder_a._Inline_i2dquw_a3a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("extensionPoint");
     provider.setNoTargetText("<no extensionPoint>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtensionDeclaration_EditorBuilder_a._Inline_i2dquw_a3a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -138,8 +142,8 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
     return editorCell;
   }
   public static class _Inline_i2dquw_a3a0 extends InlineCellProvider {
-    public _Inline_i2dquw_a3a0() {
-      super();
+    public _Inline_i2dquw_a3a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

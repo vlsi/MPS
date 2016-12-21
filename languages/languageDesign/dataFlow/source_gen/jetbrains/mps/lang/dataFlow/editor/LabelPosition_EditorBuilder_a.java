@@ -15,8 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.dataFlow.editor.DataFlow_StyleSheet.PositionStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class LabelPosition_EditorBuilder_a extends AbstractEditorBuilder {
@@ -57,11 +57,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_xi88on_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new LabelPosition_EditorBuilder_a._Inline_xi88on_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LabelPosition_EditorBuilder_a._Inline_xi88on_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -76,8 +80,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_xi88on_a1a extends InlineCellProvider {
-    public _Inline_xi88on_a1a() {
-      super();
+    public _Inline_xi88on_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

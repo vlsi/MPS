@@ -16,10 +16,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -72,11 +72,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x395055ca96617d32L, "artifacts"))).isNotEmpty() || (SNodeOperations.getModel(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"))) != null && SNodeOperations.getModel(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, 0x4df58c6f18f84a24L, "script"))).getModule().isPackaged());
   }
   private EditorCell createRefCell_jumb3f_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new BuildProjectDependency_EditorBuilder_a._Inline_jumb3f_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("script");
     provider.setNoTargetText("<no script>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildProjectDependency_EditorBuilder_a._Inline_jumb3f_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -92,8 +96,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   public static class _Inline_jumb3f_a0a extends InlineCellProvider {
-    public _Inline_jumb3f_a0a() {
-      super();
+    public _Inline_jumb3f_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

@@ -197,11 +197,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefCell_gmtuod_b3a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ConceptMethodDeclaration_InspectorBuilder_a._Inline_gmtuod_a1d0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("overriddenMethod");
     provider.setNoTargetText("<no overriden method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptMethodDeclaration_InspectorBuilder_a._Inline_gmtuod_a1d0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -216,8 +220,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   public static class _Inline_gmtuod_a1d0 extends InlineCellProvider {
-    public _Inline_gmtuod_a1d0() {
-      super();
+    public _Inline_gmtuod_a1d0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

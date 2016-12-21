@@ -22,8 +22,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.baseLanguage.editor.BinaryOperation_LeftArgument_Actions;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
 
@@ -119,11 +119,15 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
     }
   }
   private EditorCell createRefCell_fe04xc_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CustomOperatorUsage_EditorBuilder_a._Inline_fe04xc_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("operator");
     provider.setNoTargetText("<no operator>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CustomOperatorUsage_EditorBuilder_a._Inline_fe04xc_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -138,8 +142,8 @@ import jetbrains.mps.baseLanguage.editor.BinaryOperation_RightArgument_Actions;
     return editorCell;
   }
   public static class _Inline_fe04xc_a1a extends InlineCellProvider {
-    public _Inline_fe04xc_a1a() {
-      super();
+    public _Inline_fe04xc_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

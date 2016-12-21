@@ -17,10 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass;
@@ -78,11 +78,15 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x2724644c0ac833a5L, 0x2724644c0accfdb3L, "typeParameter"))).isNotEmpty();
   }
   private EditorCell createRefCell_27y5p7_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new DefaultClassCreator_EditorBuilder_a._Inline_27y5p7_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new DefaultClassCreator_EditorBuilder_a._Inline_27y5p7_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -98,8 +102,8 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     return editorCell;
   }
   public static class _Inline_27y5p7_a0a extends InlineCellProvider {
-    public _Inline_27y5p7_a0a() {
-      super();
+    public _Inline_27y5p7_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

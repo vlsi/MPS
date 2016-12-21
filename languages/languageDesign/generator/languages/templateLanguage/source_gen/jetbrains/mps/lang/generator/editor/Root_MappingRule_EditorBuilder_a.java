@@ -22,9 +22,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.GeneratorKeyWordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -110,11 +110,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   private EditorCell createRefCell_pxqe0v_b0a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a1a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("applicableConcept");
     provider.setNoTargetText("<choose applicable concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a1a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -132,8 +136,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   public static class _Inline_pxqe0v_a1a0a extends InlineCellProvider {
-    public _Inline_pxqe0v_a1a0a() {
-      super();
+    public _Inline_pxqe0v_a1a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -355,11 +359,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   private EditorCell createRefCell_pxqe0v_a2a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a0c0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a0c0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -374,8 +382,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   public static class _Inline_pxqe0v_a0c0 extends InlineCellProvider {
-    public _Inline_pxqe0v_a0c0() {
-      super();
+    public _Inline_pxqe0v_a0c0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -433,11 +441,15 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   private EditorCell createRefCell_pxqe0v_d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -452,8 +464,8 @@ import jetbrains.mps.nodeEditor.MPSFonts;
     return editorCell;
   }
   public static class _Inline_pxqe0v_a3a extends InlineCellProvider {
-    public _Inline_pxqe0v_a3a() {
-      super();
+    public _Inline_pxqe0v_a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

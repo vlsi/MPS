@@ -188,11 +188,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefCell_tm8wum_c0b1b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new EnumerationDataTypeDeclaration_EditorBuilder_a._Inline_tm8wum_a2a1b1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("memberDataType");
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_EditorBuilder_a._Inline_tm8wum_a2a1b1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -207,8 +211,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   public static class _Inline_tm8wum_a2a1b1a extends InlineCellProvider {
-    public _Inline_tm8wum_a2a1b1a() {
-      super();
+    public _Inline_tm8wum_a2a1b1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -378,11 +382,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefCell_tm8wum_c3b1b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new EnumerationDataTypeDeclaration_EditorBuilder_a._Inline_tm8wum_a2d1b1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("defaultMember");
     provider.setNoTargetText("<1-st member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EnumerationDataTypeDeclaration_EditorBuilder_a._Inline_tm8wum_a2d1b1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -397,8 +405,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   public static class _Inline_tm8wum_a2d1b1a extends InlineCellProvider {
-    public _Inline_tm8wum_a2d1b1a() {
-      super();
+    public _Inline_tm8wum_a2d1b1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

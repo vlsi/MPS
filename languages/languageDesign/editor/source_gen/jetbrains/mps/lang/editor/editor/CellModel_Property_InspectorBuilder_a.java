@@ -22,8 +22,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.propertyStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -134,11 +134,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_adk1cf_b0d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_Property_InspectorBuilder_a._Inline_adk1cf_a1a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("propertyDeclaration");
     provider.setNoTargetText("<no property>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_Property_InspectorBuilder_a._Inline_adk1cf_a1a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -156,8 +160,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   public static class _Inline_adk1cf_a1a3a extends InlineCellProvider {
-    public _Inline_adk1cf_a1a3a() {
-      super();
+    public _Inline_adk1cf_a1a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

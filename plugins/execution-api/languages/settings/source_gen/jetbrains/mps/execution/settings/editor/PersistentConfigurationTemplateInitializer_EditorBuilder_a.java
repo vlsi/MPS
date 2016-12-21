@@ -15,8 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -82,11 +82,15 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910116L, 0xd244b712f910117L, "template")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
   private EditorCell createRefCell_e5b6m9_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new PersistentConfigurationTemplateInitializer_EditorBuilder_a._Inline_e5b6m9_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentConfigurationTemplateInitializer_EditorBuilder_a._Inline_e5b6m9_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -101,8 +105,8 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     return editorCell;
   }
   public static class _Inline_e5b6m9_a0a extends InlineCellProvider {
-    public _Inline_e5b6m9_a0a() {
-      super();
+    public _Inline_e5b6m9_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -154,11 +158,15 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     }
   }
   private EditorCell createRefCell_e5b6m9_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new PersistentConfigurationTemplateInitializer_EditorBuilder_a._Inline_e5b6m9_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText("<no template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentConfigurationTemplateInitializer_EditorBuilder_a._Inline_e5b6m9_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -173,8 +181,8 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     return editorCell;
   }
   public static class _Inline_e5b6m9_a1a extends InlineCellProvider {
-    public _Inline_e5b6m9_a1a() {
-      super();
+    public _Inline_e5b6m9_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

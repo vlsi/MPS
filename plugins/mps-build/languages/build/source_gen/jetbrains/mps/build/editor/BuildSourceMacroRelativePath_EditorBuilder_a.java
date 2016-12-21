@@ -26,8 +26,8 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -99,11 +99,15 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     }
   }
   private EditorCell createRefCell_3is4rg_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new BuildSourceMacroRelativePath_EditorBuilder_a._Inline_3is4rg_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("macro");
     provider.setNoTargetText("<no macro>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildSourceMacroRelativePath_EditorBuilder_a._Inline_3is4rg_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -121,8 +125,8 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
     return editorCell;
   }
   public static class _Inline_3is4rg_a1a extends InlineCellProvider {
-    public _Inline_3is4rg_a1a() {
-      super();
+    public _Inline_3is4rg_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

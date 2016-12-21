@@ -12,8 +12,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 
 /*package*/ class MatrixInverseOperation_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -50,11 +50,15 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_j4oyiy_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MatrixInverseOperation_InspectorBuilder_a._Inline_j4oyiy_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("context");
     provider.setNoTargetText("<no context>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MatrixInverseOperation_InspectorBuilder_a._Inline_j4oyiy_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -69,8 +73,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   public static class _Inline_j4oyiy_a1a extends InlineCellProvider {
-    public _Inline_j4oyiy_a1a() {
-      super();
+    public _Inline_j4oyiy_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

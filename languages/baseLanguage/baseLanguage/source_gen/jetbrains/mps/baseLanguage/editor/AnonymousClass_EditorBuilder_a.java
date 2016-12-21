@@ -17,11 +17,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -118,11 +118,15 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, 0x1107e104a89L, "parameter"))).isNotEmpty();
   }
   private EditorCell createRefCell_msf9u8_a0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new AnonymousClass_EditorBuilder_a._Inline_msf9u8_a0a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnonymousClass_EditorBuilder_a._Inline_msf9u8_a0a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -141,8 +145,8 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
     return editorCell;
   }
   public static class _Inline_msf9u8_a0a0 extends InlineCellProvider {
-    public _Inline_msf9u8_a0a0() {
-      super();
+    public _Inline_msf9u8_a0a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

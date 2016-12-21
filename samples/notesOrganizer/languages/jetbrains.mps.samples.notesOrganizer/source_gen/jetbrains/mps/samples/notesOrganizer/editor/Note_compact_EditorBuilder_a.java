@@ -14,13 +14,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -79,11 +79,15 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     return ListSequence.fromList(SLinkOperations.getChildren(myNode, MetaAdapterFactory.getContainmentLink(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163df32dL, 0x7ba12f0b163df35dL, "category"))).count() > 1;
   }
   private EditorCell createRefCell_1qvl6j_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new Note_compact_EditorBuilder_a._Inline_1qvl6j_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("status");
     provider.setNoTargetText("<no status>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Note_compact_EditorBuilder_a._Inline_1qvl6j_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -101,8 +105,8 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     return editorCell;
   }
   public static class _Inline_1qvl6j_a0a extends InlineCellProvider {
-    public _Inline_1qvl6j_a0a() {
-      super();
+    public _Inline_1qvl6j_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -151,11 +155,15 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     }
   }
   private EditorCell createRefCell_1qvl6j_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new Note_compact_EditorBuilder_a._Inline_1qvl6j_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("priority");
     provider.setNoTargetText("<no priority>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new Note_compact_EditorBuilder_a._Inline_1qvl6j_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -173,8 +181,8 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     return editorCell;
   }
   public static class _Inline_1qvl6j_a1a extends InlineCellProvider {
-    public _Inline_1qvl6j_a1a() {
-      super();
+    public _Inline_1qvl6j_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

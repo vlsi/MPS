@@ -31,8 +31,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingRuleReferenceStyleClass;
 
@@ -276,11 +276,15 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingRuleReferenc
     return editorCell;
   }
   private EditorCell createRefCell_o2w2pr_a1b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new PatternReduction_MappingRule_EditorBuilder_a._Inline_o2w2pr_a0b1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("labelDeclaration");
     provider.setNoTargetText("<no labelDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PatternReduction_MappingRule_EditorBuilder_a._Inline_o2w2pr_a0b1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -295,8 +299,8 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingRuleReferenc
     return editorCell;
   }
   public static class _Inline_o2w2pr_a0b1a extends InlineCellProvider {
-    public _Inline_o2w2pr_a0b1a() {
-      super();
+    public _Inline_o2w2pr_a0b1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

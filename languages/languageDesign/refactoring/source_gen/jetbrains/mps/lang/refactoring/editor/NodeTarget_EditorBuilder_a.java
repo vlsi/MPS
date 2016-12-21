@@ -18,8 +18,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordSty
 import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet.RightAngleBracketStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleSheet.LeftAngleBracketStyleClass;
 
@@ -83,11 +83,15 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
     return editorCell;
   }
   private EditorCell createRefCell_1i1fuk_c0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new NodeTarget_EditorBuilder_a._Inline_1i1fuk_a2a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("concept");
     provider.setNoTargetText("any");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeTarget_EditorBuilder_a._Inline_1i1fuk_a2a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -102,8 +106,8 @@ import jetbrains.mps.baseLanguage.collections.editor.Collections_Style_StyleShee
     return editorCell;
   }
   public static class _Inline_1i1fuk_a2a0 extends InlineCellProvider {
-    public _Inline_1i1fuk_a2a0() {
-      super();
+    public _Inline_1i1fuk_a2a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

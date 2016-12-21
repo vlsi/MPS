@@ -18,8 +18,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class CellMenuPart_CellMenuComponent_EditorBuilder_a extends AbstractEditorBuilder {
@@ -109,11 +109,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_5txygt_d1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellMenuPart_CellMenuComponent_EditorBuilder_a._Inline_5txygt_a3b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("cellMenuComponent");
     provider.setNoTargetText("<choose menu component>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuPart_CellMenuComponent_EditorBuilder_a._Inline_5txygt_a3b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -128,8 +132,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_5txygt_a3b0 extends InlineCellProvider {
-    public _Inline_5txygt_a3b0() {
-      super();
+    public _Inline_5txygt_a3b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

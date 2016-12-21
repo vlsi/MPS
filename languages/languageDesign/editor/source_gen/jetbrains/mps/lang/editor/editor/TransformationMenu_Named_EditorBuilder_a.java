@@ -17,9 +17,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.ReferenceOnConceptStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 /*package*/ class TransformationMenu_Named_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -86,11 +86,15 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_s529lh_d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new TransformationMenu_Named_EditorBuilder_a._Inline_s529lh_a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TransformationMenu_Named_EditorBuilder_a._Inline_s529lh_a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -109,8 +113,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   public static class _Inline_s529lh_a3a extends InlineCellProvider {
-    public _Inline_s529lh_a3a() {
-      super();
+    public _Inline_s529lh_a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

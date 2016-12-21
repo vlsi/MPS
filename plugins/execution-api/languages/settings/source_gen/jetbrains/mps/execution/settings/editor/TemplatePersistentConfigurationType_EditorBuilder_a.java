@@ -15,8 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -62,11 +62,15 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
   private EditorCell createRefCell_1clvom_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new TemplatePersistentConfigurationType_EditorBuilder_a._Inline_1clvom_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText(" ");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_EditorBuilder_a._Inline_1clvom_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -81,8 +85,8 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     return editorCell;
   }
   public static class _Inline_1clvom_a0a extends InlineCellProvider {
-    public _Inline_1clvom_a0a() {
-      super();
+    public _Inline_1clvom_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -134,11 +138,15 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     }
   }
   private EditorCell createRefCell_1clvom_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new TemplatePersistentConfigurationType_EditorBuilder_a._Inline_1clvom_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText(" ");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TemplatePersistentConfigurationType_EditorBuilder_a._Inline_1clvom_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -153,8 +161,8 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     return editorCell;
   }
   public static class _Inline_1clvom_a1a extends InlineCellProvider {
-    public _Inline_1clvom_a1a() {
-      super();
+    public _Inline_1clvom_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

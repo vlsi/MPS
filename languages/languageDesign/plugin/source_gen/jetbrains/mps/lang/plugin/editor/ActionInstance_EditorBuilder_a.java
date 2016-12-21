@@ -14,8 +14,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -69,11 +69,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     return ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181da2ba57L, 0x1181da2f27fL, "action")), MetaAdapterFactory.getContainmentLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x1181ca87c38L, 0x11daf6ca9baL, "constructionParameter"))).isNotEmpty();
   }
   private EditorCell createRefCell_lu5mzk_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ActionInstance_EditorBuilder_a._Inline_lu5mzk_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ActionInstance_EditorBuilder_a._Inline_lu5mzk_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -88,8 +92,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightParen
     return editorCell;
   }
   public static class _Inline_lu5mzk_a0a extends InlineCellProvider {
-    public _Inline_lu5mzk_a0a() {
-      super();
+    public _Inline_lu5mzk_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

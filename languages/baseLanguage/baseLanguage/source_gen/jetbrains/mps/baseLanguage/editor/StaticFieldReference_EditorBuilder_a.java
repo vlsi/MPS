@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -68,11 +68,15 @@ import java.util.List;
     return editorCell;
   }
   private EditorCell createRefCell_ji2wba_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new StaticFieldReference_EditorBuilder_a._Inline_ji2wba_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("classifier");
     provider.setNoTargetText("<no classifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticFieldReference_EditorBuilder_a._Inline_ji2wba_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -88,8 +92,8 @@ import java.util.List;
     return editorCell;
   }
   public static class _Inline_ji2wba_a0a extends InlineCellProvider {
-    public _Inline_ji2wba_a0a() {
-      super();
+    public _Inline_ji2wba_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -137,11 +141,15 @@ import java.util.List;
     return editorCell;
   }
   private EditorCell createRefCell_ji2wba_c0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new StaticFieldReference_EditorBuilder_a._Inline_ji2wba_a2a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("staticFieldDeclaration");
     provider.setNoTargetText("<no static member>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new StaticFieldReference_EditorBuilder_a._Inline_ji2wba_a2a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -157,8 +165,8 @@ import java.util.List;
     return editorCell;
   }
   public static class _Inline_ji2wba_a2a extends InlineCellProvider {
-    public _Inline_ji2wba_a2a() {
-      super();
+    public _Inline_ji2wba_a2a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

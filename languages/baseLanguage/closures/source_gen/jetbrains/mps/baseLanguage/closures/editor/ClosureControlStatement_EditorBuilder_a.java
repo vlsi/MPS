@@ -15,11 +15,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
@@ -81,11 +81,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11ef552e307L, "controlClosure")), MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x1174bed3125L, 0x1174bf02c34L, "parameter"))).isNotEmpty() || Sequence.fromIterable(AttributeOperations.getChildNodesAndAttributes(myNode, MetaAdapterFactory.getContainmentLink(0xfd3920347849419dL, 0x907112563d152375L, 0x11e49cfed99L, 0x11e4ba7ffe1L, "actualParameter"))).isNotEmpty();
   }
   private EditorCell createRefCell_2saq3j_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ClosureControlStatement_EditorBuilder_a._Inline_2saq3j_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("controlMethod");
     provider.setNoTargetText("<no controlMethod>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_EditorBuilder_a._Inline_2saq3j_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -103,8 +107,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return editorCell;
   }
   public static class _Inline_2saq3j_a0a extends InlineCellProvider {
-    public _Inline_2saq3j_a0a() {
-      super();
+    public _Inline_2saq3j_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -184,11 +188,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return editorCell;
   }
   private EditorCell createRefCell_2saq3j_b1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ClosureControlStatement_EditorBuilder_a._Inline_2saq3j_a1b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("controlClosure");
     provider.setNoTargetText("<no controlClosure>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ClosureControlStatement_EditorBuilder_a._Inline_2saq3j_a1b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -203,8 +211,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return editorCell;
   }
   public static class _Inline_2saq3j_a1b0 extends InlineCellProvider {
-    public _Inline_2saq3j_a1b0() {
-      super();
+    public _Inline_2saq3j_a1b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

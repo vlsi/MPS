@@ -26,8 +26,8 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingLabelReferenceStyleClass;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
@@ -107,11 +107,15 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     return editorCell;
   }
   private EditorCell createRefCell_crgygw_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new NodeMacro_postfix_ComponentBuilder_a._Inline_crgygw_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("mappingLabel");
     provider.setNoTargetText("<no mappingLabel>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new NodeMacro_postfix_ComponentBuilder_a._Inline_crgygw_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -126,8 +130,8 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     return editorCell;
   }
   public static class _Inline_crgygw_a1a extends InlineCellProvider {
-    public _Inline_crgygw_a1a() {
-      super();
+    public _Inline_crgygw_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

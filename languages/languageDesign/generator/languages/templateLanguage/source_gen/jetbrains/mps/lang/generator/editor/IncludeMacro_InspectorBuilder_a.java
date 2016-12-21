@@ -28,9 +28,9 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass;
 
@@ -237,11 +237,15 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass
     return editorCell;
   }
   private EditorCell createRefCell_8okfes_c4c0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new IncludeMacro_InspectorBuilder_a._Inline_8okfes_a2e2a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("includeTemplate");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new IncludeMacro_InspectorBuilder_a._Inline_8okfes_a2e2a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -259,8 +263,8 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass
     return editorCell;
   }
   public static class _Inline_8okfes_a2e2a extends InlineCellProvider {
-    public _Inline_8okfes_a2e2a() {
-      super();
+    public _Inline_8okfes_a2e2a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

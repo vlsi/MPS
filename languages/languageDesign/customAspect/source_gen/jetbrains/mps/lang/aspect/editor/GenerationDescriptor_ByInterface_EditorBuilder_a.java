@@ -13,8 +13,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -75,11 +75,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     return editorCell;
   }
   private EditorCell createRefCell_laxs8h_b0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new GenerationDescriptor_ByInterface_EditorBuilder_a._Inline_laxs8h_a1a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("mainIntfcClass");
     provider.setNoTargetText("<no mainIntfcClass>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationDescriptor_ByInterface_EditorBuilder_a._Inline_laxs8h_a1a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -94,8 +98,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     return editorCell;
   }
   public static class _Inline_laxs8h_a1a0 extends InlineCellProvider {
-    public _Inline_laxs8h_a1a0() {
-      super();
+    public _Inline_laxs8h_a1a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

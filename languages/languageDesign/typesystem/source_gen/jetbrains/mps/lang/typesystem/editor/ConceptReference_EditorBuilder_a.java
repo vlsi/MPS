@@ -15,8 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.KeyWordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.ReferenceOnConceptStyleClass;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -83,11 +83,15 @@ import java.util.ArrayList;
     return editorCell;
   }
   private EditorCell createRefCell_s9fwl0_c0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ConceptReference_EditorBuilder_a._Inline_s9fwl0_a2a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("concept");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptReference_EditorBuilder_a._Inline_s9fwl0_a2a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -102,8 +106,8 @@ import java.util.ArrayList;
     return editorCell;
   }
   public static class _Inline_s9fwl0_a2a extends InlineCellProvider {
-    public _Inline_s9fwl0_a2a() {
-      super();
+    public _Inline_s9fwl0_a2a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

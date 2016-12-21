@@ -15,8 +15,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.LeftBraceStyleClass;
@@ -97,11 +97,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return editorCell;
   }
   private EditorCell createRefCell_ess7oq_e0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ImageGenerator_EditorBuilder_a._Inline_ess7oq_a4a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("node");
     provider.setNoTargetText("<no node>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ImageGenerator_EditorBuilder_a._Inline_ess7oq_a4a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -116,8 +120,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.RightBrace
     return editorCell;
   }
   public static class _Inline_ess7oq_a4a extends InlineCellProvider {
-    public _Inline_ess7oq_a4a() {
-      super();
+    public _Inline_ess7oq_a4a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

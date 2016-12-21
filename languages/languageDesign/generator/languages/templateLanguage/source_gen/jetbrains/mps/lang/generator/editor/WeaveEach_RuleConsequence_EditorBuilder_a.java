@@ -26,8 +26,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass;
 
@@ -180,11 +180,15 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass
     return editorCell;
   }
   private EditorCell createRefCell_hfot0g_c1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new WeaveEach_RuleConsequence_EditorBuilder_a._Inline_hfot0g_a2b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("template");
     provider.setNoTargetText("<choose template>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new WeaveEach_RuleConsequence_EditorBuilder_a._Inline_hfot0g_a2b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -199,8 +203,8 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.referenceStyleClass
     return editorCell;
   }
   public static class _Inline_hfot0g_a2b0 extends InlineCellProvider {
-    public _Inline_hfot0g_a2b0() {
-      super();
+    public _Inline_hfot0g_a2b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

@@ -22,8 +22,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class BuildLayout_CompileOutputOf_EditorBuilder_a extends AbstractEditorBuilder {
@@ -71,11 +71,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     }
   }
   private EditorCell createRefCell_2ot4tw_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new BuildLayout_CompileOutputOf_EditorBuilder_a._Inline_2ot4tw_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("module");
     provider.setNoTargetText("<no module>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildLayout_CompileOutputOf_EditorBuilder_a._Inline_2ot4tw_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -90,8 +94,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_2ot4tw_a1a extends InlineCellProvider {
-    public _Inline_2ot4tw_a1a() {
-      super();
+    public _Inline_2ot4tw_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

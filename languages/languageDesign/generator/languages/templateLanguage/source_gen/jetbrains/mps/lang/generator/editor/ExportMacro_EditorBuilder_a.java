@@ -25,8 +25,8 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingLabelReferenceStyleClass;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
@@ -88,11 +88,15 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     }
   }
   private EditorCell createRefCell_gzv99m_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ExportMacro_EditorBuilder_a._Inline_gzv99m_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("label");
     provider.setNoTargetText("<no label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExportMacro_EditorBuilder_a._Inline_gzv99m_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -107,8 +111,8 @@ import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.nodeUnderMacroStyle
     return editorCell;
   }
   public static class _Inline_gzv99m_a1a extends InlineCellProvider {
-    public _Inline_gzv99m_a1a() {
-      super();
+    public _Inline_gzv99m_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

@@ -140,11 +140,15 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   private EditorCell createRefCell_iz7kpk_b0b1a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellMenuComponent_EditorBuilder_a._Inline_iz7kpk_a1a1b0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<choose concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellMenuComponent_EditorBuilder_a._Inline_iz7kpk_a1a1b0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -159,8 +163,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     return editorCell;
   }
   public static class _Inline_iz7kpk_a1a1b0 extends InlineCellProvider {
-    public _Inline_iz7kpk_a1a1b0() {
-      super();
+    public _Inline_iz7kpk_a1a1b0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

@@ -16,8 +16,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.lessThenStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greaterThenStyleClass;
 
@@ -68,11 +68,15 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
     return editorCell;
   }
   private EditorCell createRefCell_2uesqr_c0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CommandType_EditorBuilder_a._Inline_2uesqr_a2a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("command");
     provider.setNoTargetText("<no command>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CommandType_EditorBuilder_a._Inline_2uesqr_a2a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -87,8 +91,8 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.greate
     return editorCell;
   }
   public static class _Inline_2uesqr_a2a extends InlineCellProvider {
-    public _Inline_2uesqr_a2a() {
-      super();
+    public _Inline_2uesqr_a2a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

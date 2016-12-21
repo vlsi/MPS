@@ -21,9 +21,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class BuildMpsLayout_Plugin_EditorBuilder_a extends AbstractEditorBuilder {
@@ -71,11 +71,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     }
   }
   private EditorCell createRefCell_y1xun7_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new BuildMpsLayout_Plugin_EditorBuilder_a._Inline_y1xun7_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("plugin");
     provider.setNoTargetText("<no plugin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new BuildMpsLayout_Plugin_EditorBuilder_a._Inline_y1xun7_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -93,8 +97,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_y1xun7_a1a extends InlineCellProvider {
-    public _Inline_y1xun7_a1a() {
-      super();
+    public _Inline_y1xun7_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

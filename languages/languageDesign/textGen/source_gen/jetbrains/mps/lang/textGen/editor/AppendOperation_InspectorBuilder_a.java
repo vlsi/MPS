@@ -16,8 +16,8 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClass;
 
@@ -74,11 +74,15 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     return editorCell;
   }
   private EditorCell createRefCell_yuehr3_c0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new AppendOperation_InspectorBuilder_a._Inline_yuehr3_a2a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("textArea");
     provider.setNoTargetText("<actual>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AppendOperation_InspectorBuilder_a._Inline_yuehr3_a2a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -93,8 +97,8 @@ import jetbrains.mps.lang.core.editor.BaseStyleSheet_StyleSheet.CommentStyleClas
     return editorCell;
   }
   public static class _Inline_yuehr3_a2a0 extends InlineCellProvider {
-    public _Inline_yuehr3_a2a0() {
-      super();
+    public _Inline_yuehr3_a2a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

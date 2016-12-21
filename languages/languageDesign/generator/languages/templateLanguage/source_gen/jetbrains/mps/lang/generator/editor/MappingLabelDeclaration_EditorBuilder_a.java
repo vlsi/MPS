@@ -89,11 +89,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_sexq64_d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MappingLabelDeclaration_EditorBuilder_a._Inline_sexq64_a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("sourceConcept");
     provider.setNoTargetText("<no input concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_EditorBuilder_a._Inline_sexq64_a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -108,8 +112,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   public static class _Inline_sexq64_a3a extends InlineCellProvider {
-    public _Inline_sexq64_a3a() {
-      super();
+    public _Inline_sexq64_a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -167,11 +171,15 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   private EditorCell createRefCell_sexq64_f0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MappingLabelDeclaration_EditorBuilder_a._Inline_sexq64_a5a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("targetConcept");
     provider.setNoTargetText("<no output concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MappingLabelDeclaration_EditorBuilder_a._Inline_sexq64_a5a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -186,8 +194,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
     return editorCell;
   }
   public static class _Inline_sexq64_a5a extends InlineCellProvider {
-    public _Inline_sexq64_a5a() {
-      super();
+    public _Inline_sexq64_a5a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

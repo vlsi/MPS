@@ -90,11 +90,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     return editorCell;
   }
   private EditorCell createRefCell_ram8ac_d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new PropertyDescriptor_EditorBuilder_a._Inline_ram8ac_a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PropertyDescriptor_EditorBuilder_a._Inline_ram8ac_a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -109,8 +113,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.CommentSty
     return editorCell;
   }
   public static class _Inline_ram8ac_a3a extends InlineCellProvider {
-    public _Inline_ram8ac_a3a() {
-      super();
+    public _Inline_ram8ac_a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

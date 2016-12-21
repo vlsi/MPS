@@ -25,8 +25,8 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class TransformationMenuPart_IncludeSubstituteMenu_EditorBuilder_a extends AbstractEditorBuilder {
@@ -139,11 +139,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_5av1d3_d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new TransformationMenuPart_IncludeSubstituteMenu_EditorBuilder_a._Inline_5av1d3_a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("link");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new TransformationMenuPart_IncludeSubstituteMenu_EditorBuilder_a._Inline_5av1d3_a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -158,8 +162,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_5av1d3_a3a extends InlineCellProvider {
-    public _Inline_5av1d3_a3a() {
-      super();
+    public _Inline_5av1d3_a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

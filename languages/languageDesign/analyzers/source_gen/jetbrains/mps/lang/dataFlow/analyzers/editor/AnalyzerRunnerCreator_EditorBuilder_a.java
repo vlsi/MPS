@@ -16,8 +16,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -91,11 +91,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     return editorCell;
   }
   private EditorCell createRefCell_u2jyfv_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new AnalyzerRunnerCreator_EditorBuilder_a._Inline_u2jyfv_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("analyzer");
     provider.setNoTargetText("<no analyzer>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new AnalyzerRunnerCreator_EditorBuilder_a._Inline_u2jyfv_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -110,8 +114,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     return editorCell;
   }
   public static class _Inline_u2jyfv_a1a extends InlineCellProvider {
-    public _Inline_u2jyfv_a1a() {
-      super();
+    public _Inline_u2jyfv_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

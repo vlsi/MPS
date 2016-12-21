@@ -23,8 +23,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
@@ -149,11 +149,15 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     return editorCell;
   }
   private EditorCell createRefCell_w25ia2_d0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new GeneratorDebug_NodeMapEntry_EditorBuilder_a._Inline_w25ia2_a3a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("inputOrigin");
     provider.setNoTargetText("<no inputOrigin>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GeneratorDebug_NodeMapEntry_EditorBuilder_a._Inline_w25ia2_a3a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -168,8 +172,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     return editorCell;
   }
   public static class _Inline_w25ia2_a3a0 extends InlineCellProvider {
-    public _Inline_w25ia2_a3a0() {
-      super();
+    public _Inline_w25ia2_a3a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

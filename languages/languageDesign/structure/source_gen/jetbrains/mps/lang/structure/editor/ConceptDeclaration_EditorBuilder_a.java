@@ -218,11 +218,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   private EditorCell createRefCell_ueqr71_b0e0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ConceptDeclaration_EditorBuilder_a._Inline_ueqr71_a1a4a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("extends");
     provider.setNoTargetText("<default>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptDeclaration_EditorBuilder_a._Inline_ueqr71_a1a4a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -237,8 +241,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   public static class _Inline_ueqr71_a1a4a0 extends InlineCellProvider {
-    public _Inline_ueqr71_a1a4a0() {
-      super();
+    public _Inline_ueqr71_a1a4a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -986,11 +990,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   private EditorCell createRefCell_ueqr71_g61b2a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ConceptDeclaration_EditorBuilder_a._Inline_ueqr71_a6q1c0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("sourceNode");
     provider.setNoTargetText("<no sourceNode>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptDeclaration_EditorBuilder_a._Inline_ueqr71_a6q1c0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -1005,8 +1013,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   public static class _Inline_ueqr71_a6q1c0 extends InlineCellProvider {
-    public _Inline_ueqr71_a6q1c0() {
-      super();
+    public _Inline_ueqr71_a6q1c0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

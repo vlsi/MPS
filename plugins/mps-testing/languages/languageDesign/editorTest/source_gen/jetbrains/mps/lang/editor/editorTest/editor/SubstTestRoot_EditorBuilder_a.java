@@ -30,8 +30,8 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 
 /*package*/ class SubstTestRoot_EditorBuilder_a extends AbstractEditorBuilder {
@@ -381,11 +381,15 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     return editorCell;
   }
   private EditorCell createRefCell_3mh94b_b0e0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new SubstTestRoot_EditorBuilder_a._Inline_3mh94b_a1a4a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("middlewareChild");
     provider.setNoTargetText("<no middlewareChild>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new SubstTestRoot_EditorBuilder_a._Inline_3mh94b_a1a4a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -400,8 +404,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
     return editorCell;
   }
   public static class _Inline_3mh94b_a1a4a extends InlineCellProvider {
-    public _Inline_3mh94b_a1a4a() {
-      super();
+    public _Inline_3mh94b_a1a4a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

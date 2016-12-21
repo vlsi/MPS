@@ -11,8 +11,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.operationStyleClass;
@@ -65,11 +65,15 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     return editorCell;
   }
   private EditorCell createRefCell_jn1wx6_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new EditorOperationCall_EditorBuilder_a._Inline_jn1wx6_a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("editorOperationDeclaration");
     provider.setNoTargetText("<no editorOperationDeclaration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new EditorOperationCall_EditorBuilder_a._Inline_jn1wx6_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -84,8 +88,8 @@ import jetbrains.mps.execution.common.editor.RunConfigurations_StyleSheet.rightO
     return editorCell;
   }
   public static class _Inline_jn1wx6_a0a extends InlineCellProvider {
-    public _Inline_jn1wx6_a0a() {
-      super();
+    public _Inline_jn1wx6_a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

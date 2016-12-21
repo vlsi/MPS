@@ -16,8 +16,8 @@ import jetbrains.mps.lang.test.editor.transformationTest_StyleSheet.EditorOperat
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class MPSActionReference_EditorBuilder_a extends AbstractEditorBuilder {
@@ -59,11 +59,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_5z7arn_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MPSActionReference_EditorBuilder_a._Inline_5z7arn_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("action");
     provider.setNoTargetText("<no action>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MPSActionReference_EditorBuilder_a._Inline_5z7arn_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -78,8 +82,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_5z7arn_a1a extends InlineCellProvider {
-    public _Inline_5z7arn_a1a() {
-      super();
+    public _Inline_5z7arn_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

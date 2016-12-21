@@ -14,8 +14,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodCallStyleClass;
 
@@ -59,11 +59,15 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodC
     return editorCell;
   }
   private EditorCell createRefCell_2jlgx_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new LocalMethodCall_EditorBuilder_a._Inline_2jlgx_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("method");
     provider.setNoTargetText("<no method>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LocalMethodCall_EditorBuilder_a._Inline_2jlgx_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -78,8 +82,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodC
     return editorCell;
   }
   public static class _Inline_2jlgx_a1a extends InlineCellProvider {
-    public _Inline_2jlgx_a1a() {
-      super();
+    public _Inline_2jlgx_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

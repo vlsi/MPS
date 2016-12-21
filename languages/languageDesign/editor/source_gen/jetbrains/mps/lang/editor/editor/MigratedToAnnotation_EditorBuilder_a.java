@@ -18,11 +18,11 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
@@ -91,11 +91,15 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     return editorCell;
   }
   private EditorCell createRefCell_9ydd10_b1a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MigratedToAnnotation_EditorBuilder_a._Inline_9ydd10_a1b0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("migratedTo");
     provider.setNoTargetText("<no migratedTo>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MigratedToAnnotation_EditorBuilder_a._Inline_9ydd10_a1b0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -115,8 +119,8 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     return editorCell;
   }
   public static class _Inline_9ydd10_a1b0a extends InlineCellProvider {
-    public _Inline_9ydd10_a1b0a() {
-      super();
+    public _Inline_9ydd10_a1b0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

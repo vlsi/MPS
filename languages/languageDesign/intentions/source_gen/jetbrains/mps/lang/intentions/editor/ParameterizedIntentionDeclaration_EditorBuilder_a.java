@@ -19,9 +19,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.editor.runtime.style.Measure;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.ReferenceOnConceptStyleClass;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
@@ -136,11 +136,15 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   private EditorCell createRefCell_crf3gy_e0a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ParameterizedIntentionDeclaration_EditorBuilder_a._Inline_crf3gy_a4a0a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("forConcept");
     provider.setNoTargetText("<no forConcept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ParameterizedIntentionDeclaration_EditorBuilder_a._Inline_crf3gy_a4a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -158,8 +162,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
     return editorCell;
   }
   public static class _Inline_crf3gy_a4a0a extends InlineCellProvider {
-    public _Inline_crf3gy_a4a0a() {
-      super();
+    public _Inline_crf3gy_a4a0a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

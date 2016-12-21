@@ -21,9 +21,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.propertyStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.ReferenceDecoratedStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -126,11 +126,15 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   private EditorCell createRefCell_lfsepz_b0d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_RefCell_InspectorBuilder_a._Inline_lfsepz_a1a3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("linkDeclaration");
     provider.setNoTargetText("<no link>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_InspectorBuilder_a._Inline_lfsepz_a1a3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -149,8 +153,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   public static class _Inline_lfsepz_a1a3a extends InlineCellProvider {
-    public _Inline_lfsepz_a1a3a() {
-      super();
+    public _Inline_lfsepz_a1a3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -224,11 +228,15 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   private EditorCell createRefCell_lfsepz_b1d0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new CellModel_RefCell_InspectorBuilder_a._Inline_lfsepz_a1b3a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("editorComponent");
     provider.setNoTargetText("error! no editor component");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new CellModel_RefCell_InspectorBuilder_a._Inline_lfsepz_a1b3a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -243,8 +251,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
     return editorCell;
   }
   public static class _Inline_lfsepz_a1b3a extends InlineCellProvider {
-    public _Inline_lfsepz_a1b3a() {
-      super();
+    public _Inline_lfsepz_a1b3a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
@@ -282,11 +290,15 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
       return editorCell;
     }
     private EditorCell createRefCell_lfsepz_a0a1b3a() {
-      CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+      CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+        @Override
+        protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+          return new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0(innerCellNode, myNode);
+        }
+      };
       provider.setRole("conceptDeclaration");
       provider.setNoTargetText("error! no associated concept");
       EditorCell editorCell;
-      provider.setAuxiliaryCellProvider(new CellModel_RefCell_InspectorBuilder_a.Inline_Builder_lfsepz_a1b3a._Inline_lfsepz_a0a0b1d0());
       editorCell = provider.createEditorCell(getEditorContext());
       if (editorCell.getRole() == null) {
         editorCell.setReferenceCell(true);
@@ -301,8 +313,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
       return editorCell;
     }
     public static class _Inline_lfsepz_a0a0b1d0 extends InlineCellProvider {
-      public _Inline_lfsepz_a0a0b1d0() {
-        super();
+      public _Inline_lfsepz_a0a0b1d0(SNode node, SNode refNode) {
+        super(node, refNode);
       }
       public EditorCell createEditorCell(EditorContext editorContext) {
         return createEditorCell(editorContext, getSNode());

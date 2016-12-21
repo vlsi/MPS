@@ -32,8 +32,8 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.editor.runtime.style.CaretPosition;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.sharedConcepts.editor.SharedStyles_StyleSheet.ReferenceOnConceptStyleClass;
 import jetbrains.mps.editor.runtime.style.Padding;
@@ -185,11 +185,15 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   private EditorCell createRefCell_cth9w3_c0a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new ConceptEditorDeclaration_EditorBuilder_a._Inline_cth9w3_a2a0(innerCellNode, myNode);
+      }
+    };
     provider.setRole("conceptDeclaration");
     provider.setNoTargetText("<no concept>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ConceptEditorDeclaration_EditorBuilder_a._Inline_cth9w3_a2a0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -204,8 +208,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_ContextAssistantComponent;
     return editorCell;
   }
   public static class _Inline_cth9w3_a2a0 extends InlineCellProvider {
-    public _Inline_cth9w3_a2a0() {
-      super();
+    public _Inline_cth9w3_a2a0(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

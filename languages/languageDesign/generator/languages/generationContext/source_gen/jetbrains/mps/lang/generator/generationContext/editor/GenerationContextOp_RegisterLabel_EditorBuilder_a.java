@@ -26,9 +26,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingLabelReferenceStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 /*package*/ class GenerationContextOp_RegisterLabel_EditorBuilder_a extends AbstractEditorBuilder {
@@ -215,11 +215,15 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_hi1ek1_f0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new GenerationContextOp_RegisterLabel_EditorBuilder_a._Inline_hi1ek1_a5a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("label");
     provider.setNoTargetText("<choose mapping label>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new GenerationContextOp_RegisterLabel_EditorBuilder_a._Inline_hi1ek1_a5a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -237,8 +241,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
     return editorCell;
   }
   public static class _Inline_hi1ek1_a5a extends InlineCellProvider {
-    public _Inline_hi1ek1_a5a() {
-      super();
+    public _Inline_hi1ek1_a5a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());

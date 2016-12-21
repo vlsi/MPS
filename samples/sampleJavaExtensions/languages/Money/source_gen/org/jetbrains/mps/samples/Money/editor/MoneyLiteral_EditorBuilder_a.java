@@ -13,9 +13,9 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 /*package*/ class MoneyLiteral_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -61,11 +61,15 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_84i1v2_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+      @Override
+      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
+        return new MoneyLiteral_EditorBuilder_a._Inline_84i1v2_a1a(innerCellNode, myNode);
+      }
+    };
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MoneyLiteral_EditorBuilder_a._Inline_84i1v2_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -83,8 +87,8 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   public static class _Inline_84i1v2_a1a extends InlineCellProvider {
-    public _Inline_84i1v2_a1a() {
-      super();
+    public _Inline_84i1v2_a1a(SNode node, SNode refNode) {
+      super(node, refNode);
     }
     public EditorCell createEditorCell(EditorContext editorContext) {
       return createEditorCell(editorContext, getSNode());
