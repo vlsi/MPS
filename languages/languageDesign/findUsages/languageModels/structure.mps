@@ -352,5 +352,20 @@
     <property role="EcuMT" value="100784871586155151" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
+  <node concept="1TIwiD" id="5UvmwWxPpEG">
+    <property role="EcuMT" value="6818267381900876460" />
+    <property role="TrG5h" value="FinderReferenceExpression" />
+    <property role="34LRSv" value="finder" />
+    <property role="3GE5qa" value="Statements" />
+    <property role="R4oN_" value="Access to an instance of linked FinderDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5UvmwWxPpEH" role="1TKVEi">
+      <property role="IQ2ns" value="6818267381900876461" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="finder" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1JlDhgSjx_v" resolve="FinderReference" />
+    </node>
+  </node>
 </model>
 

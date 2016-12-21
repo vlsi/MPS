@@ -39,8 +39,6 @@ import java.util.Collection;
 import java.util.List;
 
 public class FindUtils {
-  private static final Logger LOG = LogManager.getLogger(FindUtils.class);
-
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
     List<IInterfacedFinder> finders = new ArrayList<>(finderClassNames.length);

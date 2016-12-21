@@ -13,6 +13,7 @@
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
   </languages>
   <imports>
     <import index="iwwu" ref="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" />
@@ -127,6 +128,8 @@
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
     <import index="bmn6" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench.actions.module(MPS.Workbench/)" />
+    <import index="tya3" ref="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -679,6 +682,14 @@
         <child id="1174510571016" name="regexp" index="1QigWp" />
       </concept>
       <concept id="1174556813606" name="jetbrains.mps.baseLanguage.regexp.structure.DotRegexp" flags="ng" index="1T2EwR" />
+    </language>
+    <language id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages">
+      <concept id="2005690715325995359" name="jetbrains.mps.lang.findUsages.structure.FinderReference" flags="ng" index="zAVLb">
+        <reference id="7222148688691763792" name="finder" index="2$JaeB" />
+      </concept>
+      <concept id="6818267381900876460" name="jetbrains.mps.lang.findUsages.structure.FinderReferenceExpression" flags="ng" index="1ZiG2z">
+        <child id="6818267381900876461" name="finder" index="1ZiG2y" />
+      </concept>
     </language>
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections">
       <concept id="1204796164442" name="jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation" flags="nn" index="23sCx2">
@@ -11446,18 +11457,6 @@
     <property role="72QZ$" value="true" />
     <property role="3GE5qa" value="Editor" />
     <property role="2uzpH1" value="Go to Overriding Methods" />
-    <node concept="2XrIbr" id="1oCHNhnjllZ" role="32lrUH">
-      <property role="TrG5h" value="getFinderName" />
-      <node concept="17QB3L" id="1oCHNhnjlm0" role="3clF45" />
-      <node concept="3clFbS" id="1oCHNhnjlm1" role="3clF47">
-        <node concept="3clFbF" id="1oCHNhnjlm2" role="3cqZAp">
-          <node concept="Xl_RD" id="1oCHNhnjlm3" role="3clFbG">
-            <property role="Xl_RC" value="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="1oCHNhnjlm4" role="1B3o_S" />
-    </node>
     <node concept="2S4$dB" id="1oCHNhnjlm5" role="1NuT2Z">
       <property role="TrG5h" value="methodNode" />
       <node concept="1oajcY" id="1oCHNhnjlm6" role="1oa70y" />
@@ -11536,10 +11535,9 @@
                 <ref role="2WH_rO" node="3m6U0jmPVG0" resolve="project" />
               </node>
             </node>
-            <node concept="2OqwBi" id="1pHoCUay$Ec" role="37wK5m">
-              <node concept="2WthIp" id="1pHoCUay$Ed" role="2Oq$k0" />
-              <node concept="2XshWL" id="1pHoCUay$Ee" role="2OqNvi">
-                <ref role="2WH_rO" node="1oCHNhnjllZ" resolve="getFinderName" />
+            <node concept="1ZiG2z" id="3$9coUqj3iz" role="37wK5m">
+              <node concept="zAVLb" id="3$9coUqj3i$" role="1ZiG2y">
+                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
               </node>
             </node>
             <node concept="2YIFZM" id="1pHoCUay$Ef" role="37wK5m">
@@ -11558,21 +11556,40 @@
     </node>
     <node concept="2ScWuX" id="1oCHNhnjlmt" role="tmbBb">
       <node concept="3clFbS" id="1oCHNhnjlmu" role="2VODD2">
-        <node concept="3clFbF" id="1oCHNhnjlmv" role="3cqZAp">
-          <node concept="2YIFZM" id="1oCHNhnjlmw" role="3clFbG">
-            <ref role="37wK5l" to="7lvn:2rUHgdX3h2T" resolve="hasApplicableFinder" />
-            <ref role="1Pybhc" to="7lvn:2rUHgdX2_hC" resolve="GoToHelper" />
-            <node concept="2OqwBi" id="1oCHNhnjlmx" role="37wK5m">
-              <node concept="2WthIp" id="1oCHNhnjlmy" role="2Oq$k0" />
-              <node concept="3gHZIF" id="1oCHNhnjlmz" role="2OqNvi">
-                <ref role="2WH_rO" node="1oCHNhnjlm5" resolve="methodNode" />
+        <node concept="3cpWs8" id="5UvmwWxQcEO" role="3cqZAp">
+          <node concept="3cpWsn" id="5UvmwWxQcEP" role="3cpWs9">
+            <property role="TrG5h" value="finder" />
+            <node concept="3uibUv" id="5UvmwWxQcEN" role="1tU5fm">
+              <ref role="3uigEE" to="b2d5:7aWSXuXO6mc" resolve="IInterfacedFinder" />
+            </node>
+            <node concept="1ZiG2z" id="5UvmwWxQcEQ" role="33vP2m">
+              <node concept="zAVLb" id="5UvmwWxQcER" role="1ZiG2y">
+                <ref role="2$JaeB" to="tya3:hReyrfg" resolve="OverridingMethods" />
               </node>
             </node>
-            <node concept="2OqwBi" id="1oCHNhnjlm$" role="37wK5m">
-              <node concept="2WthIp" id="1oCHNhnjlm_" role="2Oq$k0" />
-              <node concept="2XshWL" id="1oCHNhnjlmA" role="2OqNvi">
-                <ref role="2WH_rO" node="1oCHNhnjllZ" resolve="getFinderName" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5UvmwWxQdaH" role="3cqZAp">
+          <node concept="1Wc70l" id="5UvmwWxQekK" role="3cqZAk">
+            <node concept="2OqwBi" id="5UvmwWxQeQh" role="3uHU7w">
+              <node concept="37vLTw" id="5UvmwWxQeyA" role="2Oq$k0">
+                <ref role="3cqZAo" node="5UvmwWxQcEP" resolve="finder" />
               </node>
+              <node concept="liA8E" id="5UvmwWxQfsv" role="2OqNvi">
+                <ref role="37wK5l" to="b2d5:7aWSXuXO6mj" resolve="isApplicable" />
+                <node concept="2OqwBi" id="5UvmwWxQfEF" role="37wK5m">
+                  <node concept="2WthIp" id="5UvmwWxQfEI" role="2Oq$k0" />
+                  <node concept="3gHZIF" id="5UvmwWxQfEK" role="2OqNvi">
+                    <ref role="2WH_rO" node="1oCHNhnjlm5" resolve="methodNode" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3y3z36" id="5UvmwWxQdTw" role="3uHU7B">
+              <node concept="37vLTw" id="5UvmwWxQdaJ" role="3uHU7B">
+                <ref role="3cqZAo" node="5UvmwWxQcEP" resolve="finder" />
+              </node>
+              <node concept="10Nm6u" id="5UvmwWxQe72" role="3uHU7w" />
             </node>
           </node>
         </node>

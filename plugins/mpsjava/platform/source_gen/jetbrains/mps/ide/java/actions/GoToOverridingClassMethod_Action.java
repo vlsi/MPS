@@ -6,7 +6,8 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
+import jetbrains.mps.ide.findusages.view.FindUtils;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
@@ -18,6 +19,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import java.awt.event.InputEvent;
+import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.ide.editor.util.GoToContextMenuUtil;
 
 public class GoToOverridingClassMethod_Action extends BaseAction {
@@ -34,7 +36,8 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return GoToHelper.hasApplicableFinder(((SNode) MapSequence.fromMap(_params).get("methodNode")), GoToOverridingClassMethod_Action.this.getFinderName(_params));
+    IInterfacedFinder finder = FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
+    return finder != null && finder.isApplicable(((SNode) MapSequence.fromMap(_params).get("methodNode")));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -76,9 +79,6 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), GoToOverridingClassMethod_Action.this.getFinderName(_params), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
-  }
-  private String getFinderName(final Map<String, Object> _params) {
-    return "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder";
+    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
 }

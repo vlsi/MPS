@@ -18,6 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_FindBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FinderDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0h).create();
   private final ConceptPresentation props_FinderReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_FinderReferenceExpression = new ConceptPresentationBuilder().shortDesc("Access to an instance of linked FinderDeclaration").create();
   private final ConceptPresentation props_IsApplicableBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsUsedByDefault = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IsVisibleBlock = new ConceptPresentationBuilder().create();
@@ -49,6 +50,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FinderDeclaration;
       case LanguageConceptSwitch.FinderReference:
         return props_FinderReference;
+      case LanguageConceptSwitch.FinderReferenceExpression:
+        return props_FinderReferenceExpression;
       case LanguageConceptSwitch.IsApplicableBlock:
         return props_IsApplicableBlock;
       case LanguageConceptSwitch.IsUsedByDefault:

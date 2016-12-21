@@ -17,6 +17,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="yyf4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.util(MPS.OpenAPI/)" />
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
+    <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -43,6 +44,12 @@
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1107535904670" name="jetbrains.mps.baseLanguage.structure.ClassifierType" flags="in" index="3uibUv">
         <reference id="1107535924139" name="classifier" index="3uigEE" />
+      </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
       </concept>
     </language>
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
@@ -480,6 +487,43 @@
     <node concept="1YaCAy" id="5xq1uvO2yzx" role="1YuTPh">
       <property role="TrG5h" value="expr" />
       <ref role="1YaFvo" to="tp3b:5xq1uvO2yzh" resolve="MakeResultProvider" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="5UvmwWxPqOg">
+    <property role="TrG5h" value="typeof_FinderReferenceExpression" />
+    <property role="3GE5qa" value="Statements" />
+    <node concept="3clFbS" id="5UvmwWxPqOh" role="18ibNy">
+      <node concept="3SKdUt" id="3$9coUqmmIc" role="3cqZAp">
+        <node concept="3SKdUq" id="3$9coUqmmIe" role="3SKWNk">
+          <property role="3SKdUp" value=" we point to FinderDeclaration, not any class that implements IFinder/Finder, hence IInterfacedFinder" />
+        </node>
+      </node>
+      <node concept="1Z5TYs" id="5UvmwWxPr0B" role="3cqZAp">
+        <node concept="mw_s8" id="5UvmwWxPr0V" role="1ZfhKB">
+          <node concept="2pJPEk" id="5UvmwWxPr0R" role="mwGJk">
+            <node concept="2pJPED" id="5UvmwWxPr16" role="2pJPEn">
+              <ref role="2pJxaS" to="tpee:g7uibYu" resolve="ClassifierType" />
+              <node concept="2pIpSj" id="5UvmwWxPr3d" role="2pJxcM">
+                <ref role="2pIpSl" to="tpee:g7uigIF" resolve="classifier" />
+                <node concept="36bGnv" id="5UvmwWxPr7n" role="2pJxcZ">
+                  <ref role="36bGnp" to="b2d5:7aWSXuXO6mc" resolve="IInterfacedFinder" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="5UvmwWxPr0E" role="1ZfhK$">
+          <node concept="1Z2H0r" id="5UvmwWxPqOt" role="mwGJk">
+            <node concept="1YBJjd" id="5UvmwWxPqOH" role="1Z2MuG">
+              <ref role="1YBMHb" node="5UvmwWxPqOj" resolve="expr" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="5UvmwWxPqOj" role="1YuTPh">
+      <property role="TrG5h" value="expr" />
+      <ref role="1YaFvo" to="tp3b:5UvmwWxPpEG" resolve="FinderReferenceExpression" />
     </node>
   </node>
 </model>
