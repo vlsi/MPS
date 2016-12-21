@@ -35,8 +35,9 @@ public final class CellModel_ListWithRole__BehaviorDescriptor extends BaseBHDesc
   public static final SMethod<Boolean> isHorizontal_idi2IfsZo = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isHorizontal").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("i2IfsZo").registry(REGISTRY).build();
   public static final SMethod<Boolean> isFoldingEnabled_id3ZqNA5Aj2vG = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isFoldingEnabled").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3ZqNA5Aj2vG").registry(REGISTRY).build();
   public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getLayout_iditlittTD4U = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLayout").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("itlittTD4U").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isVertical_idi2IdWzG, isVerticalGrid_idi2IfsZ1, isHorizontal_idi2IfsZo, isFoldingEnabled_id3ZqNA5Aj2vG, getScope_id3fifI_xCJOQ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isVertical_idi2IdWzG, isVerticalGrid_idi2IfsZ1, isHorizontal_idi2IfsZo, isFoldingEnabled_id3ZqNA5Aj2vG, getScope_id3fifI_xCJOQ, getLayout_iditlittTD4U);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -61,6 +62,9 @@ public final class CellModel_ListWithRole__BehaviorDescriptor extends BaseBHDesc
       return null;
     }
     return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child));
+  }
+  /*package*/ static SNode getLayout_iditlittTD4U(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0x1098c8e38e8L, "cellLayout"));
   }
 
   /*package*/ CellModel_ListWithRole__BehaviorDescriptor() {
@@ -89,6 +93,8 @@ public final class CellModel_ListWithRole__BehaviorDescriptor extends BaseBHDesc
         return (T) ((Boolean) isFoldingEnabled_id3ZqNA5Aj2vG(node));
       case 4:
         return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+      case 5:
+        return (T) ((SNode) getLayout_iditlittTD4U(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

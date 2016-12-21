@@ -201,6 +201,9 @@
     <node concept="PrWs8" id="4SdtvCaA82$" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>
+    <node concept="PrWs8" id="1EgGg0eQSKM" role="PzmwI">
+      <ref role="PrY4T" node="itlittTD3X" resolve="LayoutContainer" />
+    </node>
     <node concept="1TJgyj" id="fBEZMko" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="childCellModel" />
@@ -1475,6 +1478,9 @@
       <property role="TrG5h" value="separatorLayoutConstraint" />
       <property role="IQ2nx" value="1156252885376" />
       <ref role="AX2Wp" node="g$1Qttv" resolve="_Layout_Constraints_Enum" />
+    </node>
+    <node concept="PrWs8" id="itlittTD5H" role="PzmwI">
+      <ref role="PrY4T" node="itlittTD3X" resolve="LayoutContainer" />
     </node>
   </node>
   <node concept="AxPO7" id="gAtNdpl">
@@ -6312,6 +6318,11 @@
     <node concept="PrWs8" id="3mnwiBI8ZWv" role="PzmwI">
       <ref role="PrY4T" node="3mnwiBI8ZDQ" resolve="IMenuPartWithOutputConcept" />
     </node>
+  </node>
+  <node concept="PlHQZ" id="itlittTD3X">
+    <property role="EcuMT" value="332515575062761725" />
+    <property role="3GE5qa" value="CellLayout" />
+    <property role="TrG5h" value="LayoutContainer" />
   </node>
 </model>
 
