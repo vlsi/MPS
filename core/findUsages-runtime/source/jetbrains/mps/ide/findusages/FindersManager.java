@@ -54,8 +54,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return INSTANCE;
   }
 
-  private final Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<GeneratedFinder, SNodeReference>();
-  private final Map<GeneratedFinder, SModuleReference> myModulesByFinder = new HashMap<GeneratedFinder, SModuleReference>();
+  private final Map<GeneratedFinder, SNodeReference> myNodesByFinder = new HashMap<>();
   // XXX the only place I use SLanguageId map key is compatibility with legacy #addFinder(), to match SModuleReference to LanguageRuntime
   private final Map<SLanguageId, LanguageFinders> myLanguageFindersMap = new HashMap<>();
   private boolean myLoaded = false;
@@ -129,7 +128,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
         continue;
       }
       GeneratedFinder finder = lf.findByMangledName(finderMangledName);
-      return finder == null || !wrapAsReloadable ? finder : new ReloadableFinder(getFinderModule(finder), finder);
+      return finder == null || !wrapAsReloadable ? finder : new ReloadableFinder(finder);
     }
     return null;
   }
@@ -137,10 +136,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   public SNodeReference getDeclarationNode(GeneratedFinder finder) {
     // XXX why not to keep this reference as part of GeneratedFinder? Is a distinct map worth it?
     return myNodesByFinder.get(finder);
-  }
-
-  private SModuleReference getFinderModule(GeneratedFinder finder) {
-    return myModulesByFinder.get(finder);
   }
 
   //-------------reloading stuff----------------
@@ -165,7 +160,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     languageFinders.addLegacy(finder);
 
     myNodesByFinder.put(finder, np);
-    myModulesByFinder.put(finder, moduleRef);
   }
 
   private void load() {
@@ -181,7 +175,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   private void clear() {
     myLanguageFindersMap.clear();
     myNodesByFinder.clear();
-    myModulesByFinder.clear();
     myLoaded = false;
   }
 
