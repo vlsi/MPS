@@ -28596,16 +28596,8 @@
               <node concept="2OqwBi" id="XrrhtvD5EG" role="3clFbG">
                 <node concept="liA8E" id="XrrhtvD5EH" role="2OqNvi">
                   <ref role="37wK5l" to="hox0:~Style.set(jetbrains.mps.openapi.editor.style.StyleAttribute,java.lang.Object):void" resolve="set" />
-                  <node concept="10Nm6u" id="XrrhtvD5EI" role="37wK5m">
-                    <node concept="1sPUBX" id="XrrhtvD5EJ" role="lGtFl">
-                      <ref role="v9R2y" node="5hGzT1$4cwp" resolve="StyleAttribute" />
-                    </node>
-                  </node>
-                  <node concept="10Nm6u" id="XrrhtvD5EK" role="37wK5m">
-                    <node concept="1sPUBX" id="XrrhtvD5EL" role="lGtFl">
-                      <ref role="v9R2y" node="hgVfGhP" resolve="StyleAttributeValue" />
-                    </node>
-                  </node>
+                  <node concept="10Nm6u" id="1EgGg0eTJ0e" role="37wK5m" />
+                  <node concept="10Nm6u" id="1EgGg0eTJE$" role="37wK5m" />
                 </node>
                 <node concept="37vLTw" id="XrrhtvD5EM" role="2Oq$k0">
                   <ref role="3cqZAo" node="XrrhtvD5DG" resolve="style" />
@@ -28628,6 +28620,12 @@
                       </node>
                     </node>
                   </node>
+                </node>
+              </node>
+              <node concept="1sPUBX" id="1EgGg0eVKVF" role="lGtFl">
+                <ref role="v9R2y" node="44T5AkO0UKd" resolve="StyleClassItem" />
+                <node concept="3cmrfG" id="1EgGg0eVSSu" role="v9R3O">
+                  <property role="3cmrfH" value="0" />
                 </node>
               </node>
             </node>
