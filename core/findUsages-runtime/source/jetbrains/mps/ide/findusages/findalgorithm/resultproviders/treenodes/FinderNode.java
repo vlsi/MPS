@@ -15,19 +15,15 @@
  */
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jdom.Element;
@@ -91,10 +87,9 @@ public class FinderNode extends BaseLeaf {
     Element finderXML;
     if (myFinder instanceof ReloadableFinder) {
       finderXML = new Element(GENERATED_FINDER);
-      GeneratedFinder realFinder = ((ReloadableFinder) myFinder).getFinder();
-      if (realFinder != null) {
-        finderXML.setAttribute(CLASS_NAME, realFinder.getClass().getName());
-      }
+      String finderIdentity = ((ReloadableFinder) myFinder).getPersistenceIdentity();
+      finderXML.setAttribute(CLASS_NAME, finderIdentity);
+
     } else {
       finderXML = new Element(FINDER);
       finderXML.setAttribute(CLASS_NAME, myFinder.getClass().getName());
@@ -117,18 +112,7 @@ public class FinderNode extends BaseLeaf {
     } else {
       Element finderXML = element.getChild(GENERATED_FINDER);
       String finderName = finderXML.getAttribute(CLASS_NAME).getValue();
-      try {
-        //todo make it faster by saving language namespace
-        for (Language l : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-          if (ClassLoaderManager.getInstance().getOwnClass(l, finderName) != null) {
-            myFinder = new ReloadableFinder(finderName);
-            return;
-          }
-        }
-        throw new CantLoadSomethingException("Can't find finder " + finderName);
-      } catch (Throwable t) {
-        throw new CantLoadSomethingException("Can't instantiate finder " + finderName, t);
-      }
+      myFinder = new ReloadableFinder(finderName);
     }
   }
 }

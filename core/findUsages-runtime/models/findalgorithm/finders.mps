@@ -208,6 +208,10 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
         <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
@@ -217,6 +221,15 @@
       </concept>
       <concept id="8465538089690331492" name="jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag" flags="ng" index="TZ5HI">
         <child id="2667874559098216723" name="text" index="3HnX3l" />
+      </concept>
+      <concept id="2217234381367530212" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference" flags="ng" index="VXe08">
+        <reference id="2217234381367530213" name="classifier" index="VXe09" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
+      </concept>
+      <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
+        <child id="6962838954693749192" name="tag" index="qph3F" />
       </concept>
       <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
         <property id="8970989240999019144" name="text" index="1dT_AB" />
@@ -289,7 +302,7 @@
   <node concept="312cEu" id="7aWSXuXO65U">
     <property role="TrG5h" value="ReloadableFinder" />
     <property role="1sVAO0" value="false" />
-    <property role="1EXbeo" value="false" />
+    <property role="1EXbeo" value="true" />
     <node concept="312cEg" id="7aWSXuXO662" role="jymVt">
       <property role="TrG5h" value="myFinderIdentity" />
       <property role="34CwA1" value="false" />
@@ -402,6 +415,26 @@
       <node concept="3cqZAl" id="64IBOBGRQlU" role="3clF45" />
       <node concept="3Tm1VV" id="64IBOBGRQlV" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="5UvmwWxHMO_" role="jymVt" />
+    <node concept="3clFb_" id="5UvmwWxHPjw" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getPersistenceIdentity" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="5UvmwWxHPjz" role="3clF47">
+        <node concept="3cpWs6" id="5UvmwWxHPRm" role="3cqZAp">
+          <node concept="37vLTw" id="5UvmwWxHQbp" role="3cqZAk">
+            <ref role="3cqZAo" node="7aWSXuXO662" resolve="myFinderIdentity" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="5UvmwWxHOC3" role="1B3o_S" />
+      <node concept="17QB3L" id="5UvmwWxHPaL" role="3clF45" />
+      <node concept="2AHcQZ" id="5UvmwWxHUj5" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="64IBOBGRPIn" role="jymVt" />
     <node concept="3clFb_" id="7aWSXuXO66N" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -421,6 +454,11 @@
             <node concept="10Nm6u" id="7aWSXuXO66W" role="3uHU7w" />
           </node>
           <node concept="3clFbS" id="7aWSXuXO66X" role="3clFbx">
+            <node concept="3SKdUt" id="5UvmwWxI9p0" role="3cqZAp">
+              <node concept="3SKdUq" id="5UvmwWxI9p2" role="3SKWNk">
+                <property role="3SKdUp" value="never, ever, use myFinderIdentity as a class name to load class, it's merely a serializeable identificaion." />
+              </node>
+            </node>
             <node concept="3cpWs8" id="7aWSXuXO675" role="3cqZAp">
               <node concept="3cpWsn" id="7aWSXuXO676" role="3cpWs9">
                 <property role="TrG5h" value="finder" />
@@ -494,7 +532,7 @@
       <node concept="3uibUv" id="7aWSXuXO66P" role="3clF45">
         <ref role="3uigEE" node="7aWSXuXO6ad" resolve="GeneratedFinder" />
       </node>
-      <node concept="3Tm1VV" id="7aWSXuXO66O" role="1B3o_S" />
+      <node concept="3Tm6S6" id="5UvmwWxI8Nj" role="1B3o_S" />
     </node>
     <node concept="3clFb_" id="7aWSXuXO67B" role="jymVt">
       <property role="1EzhhJ" value="false" />
@@ -1009,7 +1047,70 @@
     <node concept="3UR2Jj" id="3CbAd$ClxBK" role="lGtFl">
       <node concept="TZ5HA" id="3CbAd$ClxBL" role="TZ5H$">
         <node concept="1dT_AC" id="3CbAd$ClxBM" role="1dT_Ay">
-          <property role="1dT_AB" value="FIXME With proper language aspect, there'd be no need in ReloadableFinder. Language Aspect does all the neccessary classloading management" />
+          <property role="1dT_AB" value="Clients need to persist informations about finders active at some point back in time (e.g. Usages View)." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxI9hQ" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxI9hR" role="1dT_Ay">
+          <property role="1dT_AB" value="To accomplish that, we identify finders with a string (finder implementation class fqn, in fact, although we don't load" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxI9i7" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxI9i8" role="1dT_Ay">
+          <property role="1dT_AB" value="classes using it. It's very important to understand the difference). This class knows how to get back to genertated finder from" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxI9iq" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxI9ir" role="1dT_Ay">
+          <property role="1dT_AB" value="this identity string and is a finder proxy, per se." />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxI9FM" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxI9FN" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxI9G9" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxI9Ga" role="1dT_Ay">
+          <property role="1dT_AB" value="FIXME I don't like the idea of weak reference to reuse finder instance. I'd rather make it just " />
+        </node>
+        <node concept="1dT_AA" id="5UvmwWxIabt" role="1dT_Ay">
+          <node concept="92FcH" id="5UvmwWxIabz" role="qph3F">
+            <node concept="TZ5HA" id="5UvmwWxIab_" role="2XjZqd" />
+            <node concept="VXe08" id="5UvmwWxIdIM" role="92FcQ">
+              <ref role="VXe09" node="1Fz6CCoeqPV" resolve="Finder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5UvmwWxIabs" role="1dT_Ay">
+          <property role="1dT_AB" value=", not " />
+        </node>
+        <node concept="1dT_AA" id="5UvmwWxIe1U" role="1dT_Ay">
+          <node concept="92FcH" id="5UvmwWxIe25" role="qph3F">
+            <node concept="TZ5HA" id="5UvmwWxIe27" role="2XjZqd" />
+            <node concept="VXe08" id="5UvmwWxIh_k" role="92FcQ">
+              <ref role="VXe09" node="7aWSXuXO6mc" resolve="IInterfacedFinder" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5UvmwWxIe1T" role="1dT_Ay">
+          <property role="1dT_AB" value="" />
+        </node>
+      </node>
+      <node concept="TZ5HA" id="5UvmwWxIi43" role="TZ5H$">
+        <node concept="1dT_AC" id="5UvmwWxIi44" role="1dT_Ay">
+          <property role="1dT_AB" value="so that we need to get finder instance only for " />
+        </node>
+        <node concept="1dT_AA" id="5UvmwWxIi4D" role="1dT_Ay">
+          <node concept="92FcH" id="5UvmwWxIi4J" role="qph3F">
+            <node concept="TZ5HA" id="5UvmwWxIi4L" role="2XjZqd" />
+            <node concept="VXe0Z" id="5UvmwWxItO7" role="92FcQ">
+              <ref role="VXe0S" node="7aWSXuXO6mU" resolve="find" />
+            </node>
+          </node>
+        </node>
+        <node concept="1dT_AC" id="5UvmwWxIi4C" role="1dT_Ay">
+          <property role="1dT_AB" value=" and do not keep it at all." />
         </node>
       </node>
     </node>
