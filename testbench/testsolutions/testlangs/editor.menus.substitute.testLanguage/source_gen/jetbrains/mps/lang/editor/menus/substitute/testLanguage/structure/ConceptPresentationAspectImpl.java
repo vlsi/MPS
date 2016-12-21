@@ -32,7 +32,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TestSubstituteConceptChildToReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteConceptToWrap = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteGrandChildWithConstraints = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent = new ConceptPresentationBuilder().shortDesc("see TestTransform_ChildWithConstraints_CanBeAncestor_GrandChild ").create();
+  private final ConceptPresentation props_TestSubstituteGrandChildWithConstraintsProhibited = new ConceptPresentationBuilder().shortDesc("see TestTransform_ChildWithConstraints_CanBeAncestor_GrandChild ").create();
   private final ConceptPresentation props_TestSubstituteNotSubconceptOfChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestSubstituteParentToReference = new ConceptPresentationBuilder().create();
@@ -97,8 +97,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_TestSubstituteConceptToWrap;
       case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraints:
         return props_TestSubstituteGrandChildWithConstraints;
-      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent:
-        return props_TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent;
+      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraintsProhibited:
+        return props_TestSubstituteGrandChildWithConstraintsProhibited;
       case LanguageConceptSwitch.TestSubstituteNotSubconceptOfChild:
         return props_TestSubstituteNotSubconceptOfChild;
       case LanguageConceptSwitch.TestSubstituteParent:

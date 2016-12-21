@@ -9,7 +9,7 @@ package jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior;
  * This class is not involved in the actual method invocation
  */
 @Deprecated
-public class TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent_BehaviorDescriptor {
+public class TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor {
   public String getConceptFqName() {
     return null;
   }

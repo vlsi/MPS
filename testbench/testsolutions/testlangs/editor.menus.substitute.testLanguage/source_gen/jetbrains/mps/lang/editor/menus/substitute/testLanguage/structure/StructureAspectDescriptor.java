@@ -35,7 +35,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptChildToReference = createDescriptorForTestSubstituteConceptChildToReference();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptToWrap = createDescriptorForTestSubstituteConceptToWrap();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteGrandChildWithConstraints = createDescriptorForTestSubstituteGrandChildWithConstraints();
-  /*package*/ final ConceptDescriptor myConceptTestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent = createDescriptorForTestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteGrandChildWithConstraintsProhibited = createDescriptorForTestSubstituteGrandChildWithConstraintsProhibited();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteNotSubconceptOfChild = createDescriptorForTestSubstituteNotSubconceptOfChild();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteParent = createDescriptorForTestSubstituteParent();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteParentToReference = createDescriptorForTestSubstituteParentToReference();
@@ -56,7 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstitituteAbstractChildAmbigousPosition, myConceptTestSubstitituteAbstractSubChildAmbigousPosition, myConceptTestSubstitituteChildAmbigousPosition1, myConceptTestSubstitituteChildAmbigousPosition2, myConceptTestSubstitituteSubChildAmbigousPosition1, myConceptTestSubstitituteSubChildAmbigousPosition2, myConceptTestSubstituteAbstractChildWithConstraints, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteChildToSpecialize, myConceptTestSubstituteChildWithConstraints1, myConceptTestSubstituteChildWithConstraints2, myConceptTestSubstituteChildWithConstraints3, myConceptTestSubstituteChildWithConstraintsAbstractWrapper, myConceptTestSubstituteChildWithConstraintsToWrap, myConceptTestSubstituteChildWithConstraintsWrapper1, myConceptTestSubstituteChildWithConstraintsWrapper2, myConceptTestSubstituteChildWithConstraintsWrapper3, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteGrandChildWithConstraints, myConceptTestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent, myConceptTestSubstituteNotSubconceptOfChild, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteParentWithConstraints, myConceptTestSubstituteSpecialChild, myConceptTestSubstituteSpecialChildAttribute, myConceptTestSubstituteSpecialParent, myConceptTestSubstituteSpecialSubChild, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
+    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstitituteAbstractChildAmbigousPosition, myConceptTestSubstitituteAbstractSubChildAmbigousPosition, myConceptTestSubstitituteChildAmbigousPosition1, myConceptTestSubstitituteChildAmbigousPosition2, myConceptTestSubstitituteSubChildAmbigousPosition1, myConceptTestSubstitituteSubChildAmbigousPosition2, myConceptTestSubstituteAbstractChildWithConstraints, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteChildToSpecialize, myConceptTestSubstituteChildWithConstraints1, myConceptTestSubstituteChildWithConstraints2, myConceptTestSubstituteChildWithConstraints3, myConceptTestSubstituteChildWithConstraintsAbstractWrapper, myConceptTestSubstituteChildWithConstraintsToWrap, myConceptTestSubstituteChildWithConstraintsWrapper1, myConceptTestSubstituteChildWithConstraintsWrapper2, myConceptTestSubstituteChildWithConstraintsWrapper3, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteGrandChildWithConstraints, myConceptTestSubstituteGrandChildWithConstraintsProhibited, myConceptTestSubstituteNotSubconceptOfChild, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteParentWithConstraints, myConceptTestSubstituteSpecialChild, myConceptTestSubstituteSpecialChildAttribute, myConceptTestSubstituteSpecialParent, myConceptTestSubstituteSpecialSubChild, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
   }
 
   @Override
@@ -109,8 +109,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptTestSubstituteConceptToWrap;
       case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraints:
         return myConceptTestSubstituteGrandChildWithConstraints;
-      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent:
-        return myConceptTestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent;
+      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraintsProhibited:
+        return myConceptTestSubstituteGrandChildWithConstraintsProhibited;
       case LanguageConceptSwitch.TestSubstituteNotSubconceptOfChild:
         return myConceptTestSubstituteNotSubconceptOfChild;
       case LanguageConceptSwitch.TestSubstituteParent:
@@ -309,8 +309,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/3262439767570552768");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForTestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x73096e13d1e2b4e1L);
+  private static ConceptDescriptor createDescriptorForTestSubstituteGrandChildWithConstraintsProhibited() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteGrandChildWithConstraintsProhibited", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x73096e13d1e2b4e1L);
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8289277620556838113");

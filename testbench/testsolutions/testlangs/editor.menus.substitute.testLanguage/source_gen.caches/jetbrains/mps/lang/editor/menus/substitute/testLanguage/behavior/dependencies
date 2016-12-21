@@ -2,14 +2,18 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.ids.MetaIdFactory" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor" file="TestConceptForMenuParameterizedByPrimitiveType_BehaviorDescriptor.java">
@@ -21,25 +25,25 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor" file="TestSubstitituteAbstractChildAmbigousPosition__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractSubChildAmbigousPosition_BehaviorDescriptor" file="TestSubstitituteAbstractSubChildAmbigousPosition_BehaviorDescriptor.java">
@@ -47,25 +51,25 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor" file="TestSubstitituteAbstractSubChildAmbigousPosition__BehaviorDescriptor.java">
-    <classNode dependClassName="java.lang.Boolean" />
-    <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
-    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
     <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstitituteChildAmbigousPosition1_BehaviorDescriptor" file="TestSubstitituteChildAmbigousPosition1_BehaviorDescriptor.java">
@@ -141,6 +145,10 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteConceptToWrap_BehaviorDescriptor" file="TestSubstituteConceptToWrap_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior.TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor" file="TestSubstituteGrandChildWithConstraintsProhibited_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

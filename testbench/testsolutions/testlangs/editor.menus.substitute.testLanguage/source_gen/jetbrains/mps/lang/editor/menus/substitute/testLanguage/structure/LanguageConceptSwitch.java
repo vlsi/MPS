@@ -32,7 +32,7 @@ public final class LanguageConceptSwitch {
   public static final int TestSubstituteConceptChildToReference = 20;
   public static final int TestSubstituteConceptToWrap = 21;
   public static final int TestSubstituteGrandChildWithConstraints = 22;
-  public static final int TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent = 23;
+  public static final int TestSubstituteGrandChildWithConstraintsProhibited = 23;
   public static final int TestSubstituteNotSubconceptOfChild = 24;
   public static final int TestSubstituteParent = 25;
   public static final int TestSubstituteParentToReference = 26;
@@ -71,7 +71,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x7ce1116e3a6ff2b0L, TestSubstituteConceptChildToReference);
     builder.put(0x7ce1116e3a6ff2aaL, TestSubstituteConceptToWrap);
     builder.put(0x2d4683aef72697c0L, TestSubstituteGrandChildWithConstraints);
-    builder.put(0x73096e13d1e2b4e1L, TestSubstituteGrandChildWithConstraintsWhichCanNotBeUnderParent);
+    builder.put(0x73096e13d1e2b4e1L, TestSubstituteGrandChildWithConstraintsProhibited);
     builder.put(0x7f53d21992314d41L, TestSubstituteNotSubconceptOfChild);
     builder.put(0x7ce1116e3a6fb0bdL, TestSubstituteParent);
     builder.put(0x7ce1116e3aa7c75fL, TestSubstituteParentToReference);
