@@ -4,7 +4,7 @@
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.UUID" />
+    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.constraints.ConstraintsAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.traceable.editor.EditorAspectDescriptorImpl" />
@@ -21,6 +21,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.ILanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.StructureAspectDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SLanguage" />
     <classNode extendsClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
   </dependency>
 </dependenciesRoot>

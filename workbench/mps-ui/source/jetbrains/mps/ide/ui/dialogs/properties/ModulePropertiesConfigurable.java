@@ -562,14 +562,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     protected TableCellRenderer getTableCellRender() {
       final ModuleTableCellRender mtcr = new ModuleTableCellRender(myModuleRepository);
-      // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
-      ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
       final HashSet<SModuleReference> extendsSet = new HashSet<>();
       final HashSet<SModuleReference> generationTargets = new HashSet<>();
       final HashSet<SModuleReference> xModuleSet = new HashSet<>();
       myModuleRepository.getModelAccess().runReadAction(new Runnable() {
         @Override
         public void run() {
+          // XXX perhaps, worth adding ModuleProperties data collection (much like ModelProperties)
           if (myModule instanceof Language) {
             SModel structureAspect = ((Language) myModule).getStructureModelDescriptor();
             if (structureAspect != null) {
@@ -585,6 +584,7 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
             tms.getTargetLanguages().forEach(l -> generationTargets.add(l.getSourceModuleReference()));
           }
           // collect target modules of cross-model references
+          ModelDependencyScanner mds = new ModelDependencyScanner().usedLanguages(false).crossModelReferences(true).usedConcepts(false);
           myModule.getModels().forEach(mds::walk);
           SearchScope moduleScope = myModule.getScope();
           for (SModelReference xRef : mds.getCrossModelReferences()) {

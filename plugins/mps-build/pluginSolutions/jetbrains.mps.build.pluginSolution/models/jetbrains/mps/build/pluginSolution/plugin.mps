@@ -12,7 +12,7 @@
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="awpe" ref="r:5a505993-793e-4b2d-84cf-271f9dde39b3(jetbrains.mps.execution.lib)" />
@@ -119,7 +119,6 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
-      <concept id="1068581242866" name="jetbrains.mps.baseLanguage.structure.LocalVariableReference" flags="nn" index="3cpWsa" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
@@ -1215,7 +1214,7 @@
                   <node concept="17QB3L" id="7l2brEKZk95" role="1tU5fm" />
                   <node concept="2OqwBi" id="7l2brEKZk96" role="33vP2m">
                     <node concept="1PxgMI" id="7l2brEKZk97" role="2Oq$k0">
-                      <node concept="3cpWsa" id="7l2brEKZk98" role="1m5AlR">
+                      <node concept="37vLTw" id="7l2brEKZk98" role="1m5AlR">
                         <ref role="3cqZAo" node="3h9a8EwP6NF" resolve="containingRoot" />
                       </node>
                       <node concept="chp4Y" id="714IaVdGYV4" role="3oSUPX">
@@ -1236,7 +1235,7 @@
                 </node>
                 <node concept="3clFbC" id="7l2brEKZk9_" role="3clFbw">
                   <node concept="10Nm6u" id="7l2brEKZk9C" role="3uHU7w" />
-                  <node concept="3cpWsa" id="7l2brEKZk9g" role="3uHU7B">
+                  <node concept="37vLTw" id="7l2brEKZk9g" role="3uHU7B">
                     <ref role="3cqZAo" node="7l2brEKZk94" resolve="name" />
                   </node>
                 </node>

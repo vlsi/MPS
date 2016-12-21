@@ -4,7 +4,9 @@ package jetbrains.mps.lang.editor.editorTest;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor;
 import jetbrains.mps.lang.editor.editorTest.actions.ActionAspectDescriptorImpl;
@@ -21,9 +23,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.editor.editorTest.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("81f0abb8-d71e-4d13-a0c1-d2291fbb28b7");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.editor.editorTest";
@@ -35,12 +40,15 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("81f0abb8-d71e-4d13-a0c1-d2291fbb28b7"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.core", "jetbrains.mps.baseLanguage"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.lang.core"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816"), "jetbrains.mps.baseLanguage"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.openapi.actions.descriptor.ActionAspectDescriptor")) {

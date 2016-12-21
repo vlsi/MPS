@@ -4,7 +4,8 @@ package jetbrains.mps.lang.descriptor;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +18,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.descriptor.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "f4ad079d-bc71-4ffb-9600-9328705cf998(jetbrains.mps.lang.descriptor)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("f4ad079d-bc71-4ffb-9600-9328705cf998");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.descriptor";
@@ -31,12 +35,13 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("f4ad079d-bc71-4ffb-9600-9328705cf998"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.project", "jetbrains.mps.baseLanguage"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

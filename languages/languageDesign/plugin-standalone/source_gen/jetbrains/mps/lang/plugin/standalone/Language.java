@@ -4,8 +4,9 @@ package jetbrains.mps.lang.plugin.standalone;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -22,9 +23,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.plugin.standalone.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("ef7bf5ac-d06c-4342-b11d-e42104eb9343");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.plugin.standalone";
@@ -36,12 +40,18 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("ef7bf5ac-d06c-4342-b11d-e42104eb9343"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.baseLanguage.classifiers", "jetbrains.mps.lang.core", "jetbrains.mps.lang.plugin", "jetbrains.mps.baseLanguage", "jetbrains.mps.baseLanguage.collections"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("443f4c36-fcf5-4eb6-9500-8d06ed259e3e"), "jetbrains.mps.baseLanguage.classifiers"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c"), "jetbrains.mps.lang.core"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("28f9e497-3b42-4291-aeba-0a1039153ab1"), "jetbrains.mps.lang.plugin"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816"), "jetbrains.mps.baseLanguage"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("83888646-71ce-4f1c-9c53-c54016f6ad4f"), "jetbrains.mps.baseLanguage.collections"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "d4ef9816-d167-4e4e-a083-91ffd61b4c5c(jetbrains.mps.lang.plugin.standalone#481983775135098857)"));

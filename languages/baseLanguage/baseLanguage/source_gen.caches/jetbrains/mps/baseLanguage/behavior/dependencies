@@ -1596,6 +1596,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierResolveUtils" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierScopes" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.ClassifierSignature" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MemberScopes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MethodsScope" />

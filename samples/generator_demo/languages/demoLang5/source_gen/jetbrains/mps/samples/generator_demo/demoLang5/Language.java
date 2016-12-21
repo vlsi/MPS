@@ -4,8 +4,9 @@ package jetbrains.mps.samples.generator_demo.demoLang5;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -20,9 +21,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.generator_demo.demoLang5.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "594bd850-39e3-46a5-9ef2-40c70d782c8c(jetbrains.mps.samples.generator_demo.demoLang5)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("594bd850-39e3-46a5-9ef2-40c70d782c8c");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.generator_demo.demoLang5";
@@ -34,12 +38,15 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("594bd850-39e3-46a5-9ef2-40c70d782c8c"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.sampleXML", "jetbrains.mps.baseLanguage"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("772f6dcd-8c0d-48f7-869c-908e036f7c8e"), "jetbrains.mps.sampleXML"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("f3061a53-9226-4cc5-a443-f952ceaf5816"), "jetbrains.mps.baseLanguage"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "83dcee1d-5200-4734-aa72-fc872db9c947(jetbrains.mps.samples.generator_demo.demoLang5#3978102045101384263)"));

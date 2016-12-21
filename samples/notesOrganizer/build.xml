@@ -147,7 +147,6 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.forms.jar" />
@@ -179,8 +178,6 @@
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.lang.util.order.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/languages/languageDesign/jetbrains.mps.refactoring.participant.jar" />
-      <library file="${artifacts.mpsPlugin}/mps-core/languages/make/jetbrains.mps.make.facet.jar" />
-      <library file="${artifacts.mpsPlugin}/mps-core/languages/make/jetbrains.mps.make.script.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-api.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-behavior-runtime.jar" />
       <library file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />

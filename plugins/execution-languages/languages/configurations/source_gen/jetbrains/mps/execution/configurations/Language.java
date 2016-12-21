@@ -4,8 +4,9 @@ package jetbrains.mps.execution.configurations;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -26,9 +27,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.execution.configurations.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("22e72e4c-0f69-46ce-8403-6750153aa615");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.execution.configurations";
@@ -40,12 +44,16 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.execution.settings", "jetbrains.mps.execution.common", "jetbrains.mps.lang.structure"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("756e911c-3f1f-4a48-bdf5-a2ceb91b723c"), "jetbrains.mps.execution.settings"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("73c1a490-99fa-4d0d-8292-b8985697c74b"), "jetbrains.mps.execution.common"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7"), "jetbrains.mps.lang.structure"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "d84d74f3-ca7f-48ba-ab57-d22a60cad837(jetbrains.mps.execution.configurations#3754890006475631525)"));

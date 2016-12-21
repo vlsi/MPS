@@ -8,7 +8,7 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="756e911c-3f1f-4a48-bdf5-a2ceb91b723c" name="jetbrains.mps.execution.settings" version="-1" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
@@ -2511,7 +2511,7 @@
           <node concept="2OqwBi" id="5gyVhZ1bmiD" role="3clFbw">
             <node concept="17RlXB" id="5gyVhZ1bmiF" role="2OqNvi" />
             <node concept="37vLTw" id="2BHiRxgmKqy" role="2Oq$k0">
-              <ref role="3cqZAo" node="5gyVhZ1bmiZ" />
+              <ref role="3cqZAo" node="5gyVhZ1bmiZ" resolve="modelName" />
             </node>
           </node>
           <node concept="3clFbS" id="5gyVhZ1bmiA" role="3clFbx">
@@ -2526,14 +2526,14 @@
               <node concept="1pGfFk" id="4d72gVMw0MD" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
                 <node concept="37vLTw" id="4d72gVMw0PL" role="37wK5m">
-                  <ref role="3cqZAo" node="4d72gVMw0Np" />
+                  <ref role="3cqZAo" node="4d72gVMw0Np" resolve="mpsProject" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="4d72gVMw0YY" role="2OqNvi">
               <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModelByName(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="getModelByName" />
               <node concept="37vLTw" id="4d72gVMw10w" role="37wK5m">
-                <ref role="3cqZAo" node="5gyVhZ1bmiZ" />
+                <ref role="3cqZAo" node="5gyVhZ1bmiZ" resolve="modelName" />
               </node>
             </node>
           </node>
@@ -2561,7 +2561,7 @@
           <node concept="2OqwBi" id="5gyVhZ1bmjb" role="3clFbw">
             <node concept="17RlXB" id="5gyVhZ1bmjd" role="2OqNvi" />
             <node concept="37vLTw" id="2BHiRxgm8Vo" role="2Oq$k0">
-              <ref role="3cqZAo" node="5gyVhZ1bmjk" />
+              <ref role="3cqZAo" node="5gyVhZ1bmjk" resolve="moduleName" />
             </node>
           </node>
           <node concept="3clFbS" id="5gyVhZ1bmj8" role="3clFbx">
@@ -2576,14 +2576,14 @@
               <node concept="1pGfFk" id="4d72gVMvZ_5" role="2ShVmc">
                 <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleRepositoryFacade" />
                 <node concept="37vLTw" id="4d72gVMvZAf" role="37wK5m">
-                  <ref role="3cqZAo" node="4d72gVMvWAv" />
+                  <ref role="3cqZAo" node="4d72gVMvWAv" resolve="mpsProject" />
                 </node>
               </node>
             </node>
             <node concept="liA8E" id="5gyVhZ1bmjh" role="2OqNvi">
               <ref role="37wK5l" to="w1kc:~ModuleRepositoryFacade.getModuleByName(java.lang.String):org.jetbrains.mps.openapi.module.SModule" resolve="getModuleByName" />
               <node concept="37vLTw" id="2BHiRxgmztM" role="37wK5m">
-                <ref role="3cqZAo" node="5gyVhZ1bmjk" />
+                <ref role="3cqZAo" node="5gyVhZ1bmjk" resolve="moduleName" />
               </node>
             </node>
           </node>

@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.collections.trove;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -15,9 +15,12 @@ import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.baseLanguage.collections.trove.structure.ConceptPresentationAspectImpl;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "73736c50-f124-433b-b789-2828a15a0adc(jetbrains.mps.baseLanguage.collections.trove)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("73736c50-f124-433b-b789-2828a15a0adc");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.baseLanguage.collections.trove";
@@ -29,12 +32,13 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("73736c50-f124-433b-b789-2828a15a0adc"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "025cace2-ef04-4d42-8742-4ee5ffad542f(jetbrains.mps.baseLanguage.collections.trove#5499565529811308574)"));
