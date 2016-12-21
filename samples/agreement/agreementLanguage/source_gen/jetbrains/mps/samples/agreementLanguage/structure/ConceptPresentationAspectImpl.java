@@ -11,9 +11,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AccountType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AgreementDeclarations = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Date = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Date_Future = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Date_Past = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Date = new ConceptPresentationBuilder().shortDesc("exect date").create();
+  private final ConceptPresentation props_Date_Future = new ConceptPresentationBuilder().shortDesc("future time").create();
+  private final ConceptPresentation props_Date_Past = new ConceptPresentationBuilder().shortDesc("past time").create();
   private final ConceptPresentation props_Event = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EventType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EventVariable = new ConceptPresentationBuilder().create();

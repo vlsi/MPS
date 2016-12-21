@@ -22,7 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ContextExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Create_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DebuggerSettings_Parameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnvironmentExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_EnvironmentExpression = new ConceptPresentationBuilder().shortDesc("execution environment").create();
   private final ConceptPresentation props_ExecuteBeforeTask_ConceptFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExecuteConfiguration_Function = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Executor_Parameter = new ConceptPresentationBuilder().create();

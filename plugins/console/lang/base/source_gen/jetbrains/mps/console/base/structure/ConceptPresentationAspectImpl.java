@@ -10,15 +10,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractPrintExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BLCommand = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BLExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BLCommand = new ConceptPresentationBuilder().shortDesc("baseLanguage statements").create();
+  private final ConceptPresentation props_BLExpression = new ConceptPresentationBuilder().shortDesc("baseLanguage expression").create();
   private final ConceptPresentation props_Command = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommandHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommandHolderRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExceptionHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratedCommand = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HelpCommand = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_HelpCommand = new ConceptPresentationBuilder().shortDesc("help").create();
   private final ConceptPresentation props_HelpConceptReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_History = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HistoryItem = new ConceptPresentationBuilder().create();
@@ -34,12 +34,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeWithClosure = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OutputConsoleRoot = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PastedNodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintNodeExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintNodeReferenceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintSequenceExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PrintTextExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ProjectExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PrintExpression = new ConceptPresentationBuilder().shortDesc("smart print depending on content").create();
+  private final ConceptPresentation props_PrintNodeExpression = new ConceptPresentationBuilder().shortDesc("print node copy").create();
+  private final ConceptPresentation props_PrintNodeReferenceExpression = new ConceptPresentationBuilder().shortDesc("print reference to the node").create();
+  private final ConceptPresentation props_PrintSequenceExpression = new ConceptPresentationBuilder().shortDesc("print size with link to usages view").create();
+  private final ConceptPresentation props_PrintTextExpression = new ConceptPresentationBuilder().shortDesc("print as string").create();
+  private final ConceptPresentation props_ProjectExpression = new ConceptPresentationBuilder().shortDesc("the current project").create();
   private final ConceptPresentation props_ProjectScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Response = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResponseItem = new ConceptPresentationBuilder().create();

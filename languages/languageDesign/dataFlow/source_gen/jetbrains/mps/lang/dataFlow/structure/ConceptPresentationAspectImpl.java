@@ -21,7 +21,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EmitIfJumpStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitJumpStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitLabelStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EmitMayBeUnreachable = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_EmitMayBeUnreachable = new ConceptPresentationBuilder().shortDesc("emit maybe unreachable command").create();
   private final ConceptPresentation props_EmitNopStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitReadStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EmitRetStatement = new ConceptPresentationBuilder().create();
@@ -40,7 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_InstructionType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IntraProcedural_BuilderMode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LabelPosition = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NodeParameter = new ConceptPresentationBuilder().shortDesc("node to build DFA for").create();
   private final ConceptPresentation props_Position = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RelativePosition = new ConceptPresentationBuilder().create();
 

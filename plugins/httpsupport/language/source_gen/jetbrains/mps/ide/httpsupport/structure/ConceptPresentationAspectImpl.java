@@ -9,34 +9,34 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_DefaultParameterConverter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CanHandleRequestFunction = new ConceptPresentationBuilder().shortDesc("Checks that handler can handle given HTTP Request").create();
+  private final ConceptPresentation props_DefaultParameterConverter = new ConceptPresentationBuilder().shortDesc("Default Parameter Converter").create();
   private final ConceptPresentation props_DefaultValueFunction = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeserializeFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_HandleRequestFunction = new ConceptPresentationBuilder().shortDesc("Handle given HTTP Request").create();
   private final ConceptPresentation props_HttpRequestOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IDEAPlatformPortProvider = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_HttpRequestParameter = new ConceptPresentationBuilder().shortDesc("Incoming HTTP Request").create();
+  private final ConceptPresentation props_IDEAPlatformPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by IDEA Platform").create();
   private final ConceptPresentation props_IParameterConverter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MPSIntegrationPortProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MPSInternalPortProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Node_getURLOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MPSIntegrationPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by MPS to integrate with YouTrack/TeamCity").create();
+  private final ConceptPresentation props_MPSInternalPortProvider = new ConceptPresentationBuilder().shortDesc("current bound port by MPS for internal features").create();
+  private final ConceptPresentation props_Node_getURLOperation = new ConceptPresentationBuilder().shortDesc("provides URL to this node").create();
   private final ConceptPresentation props_ParameterConverterDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ParameterConverterReference = new ConceptPresentationBuilder().shortDesc("Parameter Converter").create();
   private final ConceptPresentation props_ParameterInitializer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Port = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Port = new ConceptPresentationBuilder().shortDesc("port defined by user").create();
   private final ConceptPresentation props_PortProvider = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryParameter = new ConceptPresentationBuilder().shortDesc("Query Parameter").create();
+  private final ConceptPresentation props_QueryParameterReference = new ConceptPresentationBuilder().shortDesc("reference to query parameter").create();
   private final ConceptPresentation props_QueryPath = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QuerySegment = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QuerySegment = new ConceptPresentationBuilder().shortDesc("query segment").create();
   private final ConceptPresentation props_RequestHandler = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequestURLBuilderExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResponseSendOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SerializeFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SerializedValueParameter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ValueToSerializeParameter = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SerializedValueParameter = new ConceptPresentationBuilder().shortDesc("Serialized Value").create();
+  private final ConceptPresentation props_ValueToSerializeParameter = new ConceptPresentationBuilder().shortDesc("Value to Serialize").create();
 
   @Override
   @Nullable

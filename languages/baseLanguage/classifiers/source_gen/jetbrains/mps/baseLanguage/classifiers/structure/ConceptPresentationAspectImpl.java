@@ -20,8 +20,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IClassifierPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IMember = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IMemberOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SuperClassifierExpresson = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ThisClassifierExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SuperClassifierExpresson = new ConceptPresentationBuilder().shortDesc("super classifier").create();
+  private final ConceptPresentation props_ThisClassifierExpression = new ConceptPresentationBuilder().shortDesc("this classifier").create();
 
   @Override
   @Nullable

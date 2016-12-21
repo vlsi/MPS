@@ -36,7 +36,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_RedirectOutputExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReportErrorStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReportExecutionError = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StartAndWaitOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_StartAndWaitOperation = new ConceptPresentationBuilder().shortDesc("start process and wait while it is finished").create();
 
   @Override
   @Nullable

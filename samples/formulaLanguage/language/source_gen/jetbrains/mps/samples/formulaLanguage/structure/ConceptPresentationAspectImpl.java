@@ -9,28 +9,28 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AndOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AndOperation = new ConceptPresentationBuilder().shortDesc("and operation").create();
   private final ConceptPresentation props_Constant = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EqualsOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_EqualsOperation = new ConceptPresentationBuilder().shortDesc("equals operation").create();
   private final ConceptPresentation props_Expression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FloatingPointConstant = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_FloatingPointConstant = new ConceptPresentationBuilder().shortDesc("floating point constant").create();
   private final ConceptPresentation props_Formula = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Function = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_GreaterThanOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IfFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IntegerConstant = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_GreaterThanOperation = new ConceptPresentationBuilder().shortDesc("greater than operation").create();
+  private final ConceptPresentation props_IfFunction = new ConceptPresentationBuilder().shortDesc("if-function").create();
+  private final ConceptPresentation props_IntegerConstant = new ConceptPresentationBuilder().shortDesc("integer constant").create();
   private final ConceptPresentation props_IsNullOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LessThanOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MinusOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MultOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NotOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NullConstant = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LessThanOperation = new ConceptPresentationBuilder().shortDesc("less than operation").create();
+  private final ConceptPresentation props_MinusOperation = new ConceptPresentationBuilder().shortDesc("minus operation").create();
+  private final ConceptPresentation props_MultOperation = new ConceptPresentationBuilder().shortDesc("multiply operation").create();
+  private final ConceptPresentation props_NotOperation = new ConceptPresentationBuilder().shortDesc("not operation (formula language)").create();
+  private final ConceptPresentation props_NullConstant = new ConceptPresentationBuilder().shortDesc("null expression").create();
   private final ConceptPresentation props_Operation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OrOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParenthisizedExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PlusOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_OrOperation = new ConceptPresentationBuilder().shortDesc("or operation").create();
+  private final ConceptPresentation props_ParenthisizedExpression = new ConceptPresentationBuilder().shortDesc("(expr)").create();
+  private final ConceptPresentation props_PlusOperation = new ConceptPresentationBuilder().shortDesc("plus operation").create();
   private final ConceptPresentation props_Reference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StringConstant = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_StringConstant = new ConceptPresentationBuilder().shortDesc("string constant").create();
 
   @Override
   @Nullable

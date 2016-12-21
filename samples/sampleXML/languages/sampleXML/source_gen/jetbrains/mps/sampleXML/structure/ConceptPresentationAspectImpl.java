@@ -9,11 +9,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_Attribute = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Attribute = new ConceptPresentationBuilder().shortDesc("attribute").create();
   private final ConceptPresentation props_Document = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Element = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Element = new ConceptPresentationBuilder().shortDesc("element").create();
   private final ConceptPresentation props_ElementPart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Text = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Text = new ConceptPresentationBuilder().shortDesc("text").create();
 
   @Override
   @Nullable

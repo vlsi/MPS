@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_CustomRoot = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CustomRoot = new ConceptPresentationBuilder().shortDesc("root for tests").create();
   private final ConceptPresentation props_CustomStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CustomStatementRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OutputNode = new ConceptPresentationBuilder().create();

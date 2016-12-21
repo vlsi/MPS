@@ -29,9 +29,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PersistentConfigurationMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PersistentConfigurationTemplate = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PersistentConfigurationTemplateInitializer = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PersistentConfigurationType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PersistentConfigurationType = new ConceptPresentationBuilder().shortDesc("persistent configuration type").create();
   private final ConceptPresentation props_PersistentPropertyDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PersistentPropertyReferenceOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PersistentPropertyReferenceOperation = new ConceptPresentationBuilder().shortDesc("persistent property reference").create();
   private final ConceptPresentation props_ProjectAccessExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReportConfigurationErrorStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ResetFrom_Function = new ConceptPresentationBuilder().create();
@@ -39,7 +39,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SettingsEditorType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateParameter = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TemplateParameterReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TemplatePersistentConfigurationType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TemplatePersistentConfigurationType = new ConceptPresentationBuilder().shortDesc("template configuration reference").create();
 
   @Override
   @Nullable

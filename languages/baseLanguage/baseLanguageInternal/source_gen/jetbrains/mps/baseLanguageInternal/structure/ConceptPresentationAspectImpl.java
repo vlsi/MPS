@@ -16,25 +16,25 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExtractStaticInnerClassCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtractStaticInnerClassExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtractStaticMethodExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExtractStaticMethod_CallExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ExtractStaticMethod_CallExpression = new ConceptPresentationBuilder().shortDesc("extract static method invocation").create();
   private final ConceptPresentation props_ExtractToConstantExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtractToConstantRefExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalAnonymousClass = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalAnonymousClass = new ConceptPresentationBuilder().shortDesc("_anonymous class").create();
   private final ConceptPresentation props_InternalAnonymousClassCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalClassCreator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalClassExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalClassCreator = new ConceptPresentationBuilder().shortDesc("internal class creator").create();
+  private final ConceptPresentation props_InternalClassExpression = new ConceptPresentationBuilder().shortDesc("internal class expression").create();
   private final ConceptPresentation props_InternalClassifierType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalNewExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalNewExpression = new ConceptPresentationBuilder().shortDesc("internal new expression").create();
   private final ConceptPresentation props_InternalPartialFieldReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InternalPartialInstanceMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalStaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalStaticMethodCall = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalStaticFieldReference = new ConceptPresentationBuilder().shortDesc("internal static field reference").create();
+  private final ConceptPresentation props_InternalStaticMethodCall = new ConceptPresentationBuilder().shortDesc("internal static method call").create();
   private final ConceptPresentation props_InternalSuperMethodCallOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InternalThisExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalTypedStaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InternalVariableReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InternalTypedStaticFieldReference = new ConceptPresentationBuilder().shortDesc("internal typed static field reference").create();
+  private final ConceptPresentation props_InternalVariableReference = new ConceptPresentationBuilder().shortDesc("internal variable/parameter reference").create();
   private final ConceptPresentation props_TypeHintExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_WeakClassReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_WeakClassReference = new ConceptPresentationBuilder().shortDesc("weak reference to a class").create();
 
   @Override
   @Nullable

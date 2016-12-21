@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildSolutionRunnerAspect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildSolutionRunnerPlugin = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BuildSolutionRunnerPlugin = new ConceptPresentationBuilder().shortDesc("adds ability to run MPS code after build").create();
 
   @Override
   @Nullable

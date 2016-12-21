@@ -36,10 +36,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModelsToGenerateClause = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModuleOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModuleTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MoveNodeToModelExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MoveNodeToNodeExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MoveNodesToModelExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MoveNodesToNodeExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MoveNodeToModelExpression = new ConceptPresentationBuilder().shortDesc("move node to model").create();
+  private final ConceptPresentation props_MoveNodeToNodeExpression = new ConceptPresentationBuilder().shortDesc("move node to another node").create();
+  private final ConceptPresentation props_MoveNodesToModelExpression = new ConceptPresentationBuilder().shortDesc("move nodes to model").create();
+  private final ConceptPresentation props_MoveNodesToNodeExpression = new ConceptPresentationBuilder().shortDesc("move nodes to another node").create();
   private final ConceptPresentation props_NodeOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeTarget = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodesOperation = new ConceptPresentationBuilder().create();

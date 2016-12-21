@@ -15,7 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConjugateComplexExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DegreeComplexExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ImExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ImaginaryUnit = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ImaginaryUnit = new ConceptPresentationBuilder().shortDesc("complex imaginary unit").create();
   private final ConceptPresentation props_ReExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SingleComplexExpression = new ConceptPresentationBuilder().create();
 

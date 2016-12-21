@@ -10,30 +10,30 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_XMLSAXAttributeHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXAttributeHandler_value = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXAttributeHandler_value = new ConceptPresentationBuilder().shortDesc("attribute value").create();
   private final ConceptPresentation props_XMLSAXAttributeReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXAttributeRule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXBreakStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXChildHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXChildHandler_childObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXChildHandler_childObject = new ConceptPresentationBuilder().shortDesc("parsed child object").create();
   private final ConceptPresentation props_XMLSAXChildRule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXChildRuleCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXDefaultChildHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXDefaultChildHandler_tagName = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXDefaultChildHandler_tagName = new ConceptPresentationBuilder().shortDesc("tag name").create();
   private final ConceptPresentation props_XMLSAXDefaultChildRule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXFieldDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXFieldReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXHandlerFunction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXHandler_resultObject = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXHandler_resultObject = new ConceptPresentationBuilder().shortDesc("an object").create();
   private final ConceptPresentation props_XMLSAXLocatorExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXNodeCreator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXNodeRule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXNodeRuleParam = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXNodeRuleParam = new ConceptPresentationBuilder().shortDesc("parameter").create();
   private final ConceptPresentation props_XMLSAXNodeRuleParamRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXNodeValidator = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXParser = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_XMLSAXTextHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_XMLSAXTextHandler_value = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_XMLSAXTextHandler_value = new ConceptPresentationBuilder().shortDesc("text value").create();
   private final ConceptPresentation props_XMLSAXTextRule = new ConceptPresentationBuilder().create();
 
   @Override

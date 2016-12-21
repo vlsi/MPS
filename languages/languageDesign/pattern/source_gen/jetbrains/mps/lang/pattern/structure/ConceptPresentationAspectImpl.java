@@ -15,18 +15,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GeneratorInternal_ChildDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratorInternal_PropertyDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_GeneratorInternal_ReferenceDescriptor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InsertAfterPosition = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InsertAfterPosition = new ConceptPresentationBuilder().shortDesc("after").create();
   private final ConceptPresentation props_InsertBeforePosition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InsertPosition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkPatternVariableDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ListPattern = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ListPattern = new ConceptPresentationBuilder().shortDesc("list pattern").create();
   private final ConceptPresentation props_OrPattern = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrPatternClause = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OrPatternVariableReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Pattern = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PatternExpression = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_PatternVariableDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PatternVariableReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PatternVariableReference = new ConceptPresentationBuilder().shortDesc("pattern variable reference").create();
   private final ConceptPresentation props_PropertyPatternVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_WildcardPattern = new ConceptPresentationBuilder().create();
 

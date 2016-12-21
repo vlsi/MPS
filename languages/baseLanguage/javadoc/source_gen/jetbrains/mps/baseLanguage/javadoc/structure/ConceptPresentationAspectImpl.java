@@ -18,7 +18,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BaseVariableDocReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ClassifierDocComment = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_ClassifierDocReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CodeInlineDocTag = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CodeInlineDocTag = new ConceptPresentationBuilder().shortDesc("code piece").create();
   private final ConceptPresentation props_CodeSnippet = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommentLine = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommentLinePart = new ConceptPresentationBuilder().create();
@@ -29,9 +29,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_FieldDocComment = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FieldDocReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_HTMLElement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InheritDocInlineDocTag = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_InheritDocInlineDocTag = new ConceptPresentationBuilder().shortDesc("inherit doc from parent").create();
   private final ConceptPresentation props_InlineTagCommentLinePart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkInlineDocTag = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LinkInlineDocTag = new ConceptPresentationBuilder().shortDesc("link to type or member").create();
   private final ConceptPresentation props_MethodDocComment = new ConceptPresentationBuilder().deprecated().create();
   private final ConceptPresentation props_MethodDocReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ParameterBlockDocTag = new ConceptPresentationBuilder().create();
@@ -41,7 +41,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_StaticFieldDocReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextCommentLinePart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ThrowsBlockDocTag = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ValueInlineDocTag = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ValueInlineDocTag = new ConceptPresentationBuilder().shortDesc("constant value").create();
   private final ConceptPresentation props_VersionBlockDocTag = new ConceptPresentationBuilder().create();
 
   @Override

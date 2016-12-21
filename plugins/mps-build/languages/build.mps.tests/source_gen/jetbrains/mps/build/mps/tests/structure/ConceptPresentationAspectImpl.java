@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_BuildModuleTestsPlugin = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BuildModuleTestsPlugin = new ConceptPresentationBuilder().shortDesc("adds ability to execute module tests to the project").create();
   private final ConceptPresentation props_BuildMpsLayout_TestModule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_TestModuleGroup = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_TestModules = new ConceptPresentationBuilder().create();

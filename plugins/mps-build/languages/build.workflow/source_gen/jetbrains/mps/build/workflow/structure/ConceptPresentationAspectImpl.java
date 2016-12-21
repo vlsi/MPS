@@ -15,7 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BwfCustomMacro = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BwfDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BwfFileSet = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BwfJavaClassPath = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BwfJavaClassPath = new ConceptPresentationBuilder().shortDesc("classpath value").create();
   private final ConceptPresentation props_BwfJavaDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BwfJavaDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BwfJavaLibrary = new ConceptPresentationBuilder().create();

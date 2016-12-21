@@ -16,8 +16,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_InternalConceptDeclarationReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InternalConceptDeclarationsHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalBehaviorMethodCall = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SuperNodeExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ThisNodeExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_SuperNodeExpression = new ConceptPresentationBuilder().shortDesc("super node").create();
+  private final ConceptPresentation props_ThisNodeExpression = new ConceptPresentationBuilder().shortDesc("this node").create();
 
   @Override
   @Nullable

@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_MoneyCreator = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MoneyCreator = new ConceptPresentationBuilder().shortDesc("money type constructor").create();
   private final ConceptPresentation props_MoneyGetAmountMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MoneyGetCurrencyMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MoneyIsZeroMethodCall = new ConceptPresentationBuilder().create();

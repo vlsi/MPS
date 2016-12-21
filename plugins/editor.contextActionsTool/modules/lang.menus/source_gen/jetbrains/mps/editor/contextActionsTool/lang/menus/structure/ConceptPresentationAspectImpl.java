@@ -9,11 +9,11 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_QueryFunction_TransformationMenu_Icon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_QueryFunction_TransformationMenu_Tooltip = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryFunction_TransformationMenu_Icon = new ConceptPresentationBuilder().shortDesc("a block of code").create();
+  private final ConceptPresentation props_QueryFunction_TransformationMenu_Tooltip = new ConceptPresentationBuilder().shortDesc("a block of code").create();
   private final ConceptPresentation props_TransformationFeature_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationFeature_Tooltip = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationLocation_ContextActionsTool = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TransformationLocation_ContextActionsTool = new ConceptPresentationBuilder().shortDesc("context actions tool window").create();
 
   @Override
   @Nullable

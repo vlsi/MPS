@@ -12,7 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractFinderDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CategorizeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CheckCancelledStatusStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_node = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("function parameter").create();
   private final ConceptPresentation props_ExecuteFinderExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExecuteFindersGetSearchResults = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FindBlock = new ConceptPresentationBuilder().create();
