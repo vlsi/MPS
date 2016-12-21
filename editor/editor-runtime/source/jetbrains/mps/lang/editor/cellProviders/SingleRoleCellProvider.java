@@ -77,28 +77,8 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
     myEditorContext = editorContext;
   }
 
-
-  /**
-   * @deprecated use createChildCell(SNode)
-   */
-  @Deprecated
-  @ToRemove(version = 3.5)
-  protected EditorCell createChildCell(EditorContext editorContext, SNode child) {
-    final EditorCell editorCell = createChildCell_internal(child);
-    if (isCompatibilityMode()) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
-      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), myContainmentLink, child));
-    }
-    return editorCell;
-  }
-
   protected EditorCell createChildCell(SNode child) {
-    return createChildCell(getEditorContext(), child);
-  }
-
-  @ToRemove(version = 3.5)
-  protected boolean isCompatibilityMode() {
-    return true;
+    return createChildCell_internal(child);
   }
 
   @NotNull
@@ -108,27 +88,12 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
 
   public EditorCell createCell() {
     if (areAttributesEmpty()) {
-      return createSingleCellWithEditorCellContext();
+      return createSingleCell();
     } else {
-      return createCollectionWithEditorCellContext();
-    }
-  }
-
-  private EditorCell_Collection createCollectionWithEditorCellContext() {
-    EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(getEditorContext(), getNode());
-
-    if (isCompatibilityMode()) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(null);
-      try {
-        addInnerCells(resultCell);
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    } else {
+      EditorCell_Collection resultCell = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createIndent2(getEditorContext(), getNode());
       addInnerCells(resultCell);
+      return resultCell;
     }
-    return resultCell;
   }
 
   private void addInnerCells(EditorCell_Collection parentCell) {
@@ -156,17 +121,7 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
   }
 
   private EditorCell createSingleCellWithEditorCellContext() {
-    if (isCompatibilityMode()) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(null);
-      try {
-        return createSingleCell();
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    } else {
-      return createSingleCell();
-    }
+    return createSingleCell();
   }
 
   private EditorCell createSingleCell() {

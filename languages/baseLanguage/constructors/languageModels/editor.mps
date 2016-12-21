@@ -225,7 +225,6 @@
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
-      <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <child id="1068431790190" name="initializer" index="33vP2m" />
       </concept>
@@ -299,7 +298,6 @@
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
-      <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
@@ -614,24 +612,6 @@
                                     </node>
                                   </node>
                                   <node concept="2tJIrI" id="2BI88NW9cFg" role="jymVt" />
-                                  <node concept="3clFb_" id="2BI88NW9dM1" role="jymVt">
-                                    <property role="1EzhhJ" value="false" />
-                                    <property role="TrG5h" value="isCompatibilityMode" />
-                                    <property role="DiZV1" value="false" />
-                                    <property role="od$2w" value="false" />
-                                    <node concept="3Tmbuc" id="2BI88NW9dM2" role="1B3o_S" />
-                                    <node concept="10P_77" id="2BI88NW9dM7" role="3clF45" />
-                                    <node concept="3clFbS" id="2BI88NW9dMa" role="3clF47">
-                                      <node concept="3clFbF" id="2BI88NW9ftu" role="3cqZAp">
-                                        <node concept="3clFbT" id="2BI88NW9ftt" role="3clFbG">
-                                          <property role="3clFbU" value="false" />
-                                        </node>
-                                      </node>
-                                    </node>
-                                    <node concept="2AHcQZ" id="2BI88NW9dMb" role="2AJF6D">
-                                      <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-                                    </node>
-                                  </node>
                                   <node concept="3clFb_" id="5UC0dNSP17i" role="jymVt">
                                     <property role="TrG5h" value="createNodeCell" />
                                     <node concept="3uibUv" id="4OLXDUeGYeE" role="3clF45">

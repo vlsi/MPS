@@ -168,11 +168,6 @@ public class DefaultEditor extends AbstractDefaultEditor {
           }
         }
 
-        @Override
-        protected boolean isCompatibilityMode() {
-          return false;
-        }
-
         @NotNull
         @Override
         public SNode getNode() {
@@ -283,13 +278,6 @@ public class DefaultEditor extends AbstractDefaultEditor {
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = getNode();
       return NodeFactoryManager.createNode(myLink.getTargetConcept(), null, listOwner, listOwner.getModel());
-    }
-
-
-
-    @Override
-    protected boolean isCompatibilityMode() {
-      return false;
     }
 
     public EditorCell createNodeCell(SNode elementNode) {

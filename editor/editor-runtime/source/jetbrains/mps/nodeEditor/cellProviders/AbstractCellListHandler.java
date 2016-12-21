@@ -166,7 +166,7 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     myListEditorCell_Collection = EditorCell_Collection.create(getEditorContext(), getNode(), cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    createInnerCellsWithEditorCellContext();
+    createInnerCells();
 
     // add insert/insert-before actions
     myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
@@ -174,28 +174,6 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
 
     return myListEditorCell_Collection;
   }
-
-  @Deprecated
-  @ToRemove(version = 3.5)
-  protected boolean isCompatibilityMode() {
-    return true;
-  }
-
-
-  private void createInnerCellsWithEditorCellContext() {
-    if (isCompatibilityMode()) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(null);
-      try {
-        createInnerCells();
-      } finally {
-        getCellFactory().popCellContext();
-      }
-    } else {
-      createInnerCells();
-    }
-  }
-
 
   /**
    * @deprecated since MPS 3.5 use {@link #createInnerCells()}
