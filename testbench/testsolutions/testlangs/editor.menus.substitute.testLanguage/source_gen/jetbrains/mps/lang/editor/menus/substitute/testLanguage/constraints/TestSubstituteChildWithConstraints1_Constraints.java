@@ -21,7 +21,7 @@ public class TestSubstituteChildWithConstraints1_Constraints extends BaseConstra
   }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
-    boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
+    boolean result = staticCanBeAChild_Old(node, parentNode, link, childConcept, operationContext);
 
     if (!(result) && checkingNodeContext != null) {
       checkingNodeContext.setBreakingNode(canBeChildBreakingPoint);
@@ -29,10 +29,12 @@ public class TestSubstituteChildWithConstraints1_Constraints extends BaseConstra
 
     return result;
   }
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return neq_ecjzx0_a0a0e(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild").getDeclarationNode());
+
+  @Deprecated
+  private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+    return neq_ecjzx0_a0a0f(link, MetaAdapterFactory.getContainmentLink(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL, 0x9c8de75f2d0d666L, "childCanBeChild").getDeclarationNode());
   }
-  private static boolean neq_ecjzx0_a0a0e(Object a, Object b) {
+  private static boolean neq_ecjzx0_a0a0f(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:0cba60fc-aa17-42ba-b3ca-69b0d1a86fe9(jetbrains.mps.lang.editor.menus.substitute.testLanguage.constraints)", "705057939849795251");

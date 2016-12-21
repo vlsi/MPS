@@ -12,9 +12,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
+  /*package*/ final ConceptDescriptor myConceptAbstractChild = createDescriptorForAbstractChild();
   /*package*/ final ConceptDescriptor myConceptAbstractDeveloper = createDescriptorForAbstractDeveloper();
   /*package*/ final ConceptDescriptor myConceptCanvas = createDescriptorForCanvas();
   /*package*/ final ConceptDescriptor myConceptCompany = createDescriptorForCompany();
+  /*package*/ final ConceptDescriptor myConceptConcreteChild = createDescriptorForConcreteChild();
+  /*package*/ final ConceptDescriptor myConceptContainer = createDescriptorForContainer();
   /*package*/ final ConceptDescriptor myConceptDefaultNodeAttribute = createDescriptorForDefaultNodeAttribute();
   /*package*/ final ConceptDescriptor myConceptDefaultPropertyAttribute = createDescriptorForDefaultPropertyAttribute();
   /*package*/ final ConceptDescriptor myConceptDefaultReferenceAttribute = createDescriptorForDefaultReferenceAttribute();
@@ -22,6 +25,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptDummyMethod = createDescriptorForDummyMethod();
   /*package*/ final ConceptDescriptor myConceptFriend = createDescriptorForFriend();
   /*package*/ final ConceptDescriptor myConceptNotSubstitutableDeveloper = createDescriptorForNotSubstitutableDeveloper();
+  /*package*/ final ConceptDescriptor myConceptParent = createDescriptorForParent();
   /*package*/ final ConceptDescriptor myConceptShape = createDescriptorForShape();
   /*package*/ final ConceptDescriptor myConceptTeam = createDescriptorForTeam();
   private final LanguageConceptSwitch myConceptIndex;
@@ -32,19 +36,25 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractDeveloper, myConceptCanvas, myConceptCompany, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptNotSubstitutableDeveloper, myConceptShape, myConceptTeam);
+    return Arrays.asList(myConceptAbstractChild, myConceptAbstractDeveloper, myConceptCanvas, myConceptCompany, myConceptConcreteChild, myConceptContainer, myConceptDefaultNodeAttribute, myConceptDefaultPropertyAttribute, myConceptDefaultReferenceAttribute, myConceptDeveloper, myConceptDummyMethod, myConceptFriend, myConceptNotSubstitutableDeveloper, myConceptParent, myConceptShape, myConceptTeam);
   }
 
   @Override
   @Nullable
   public ConceptDescriptor getDescriptor(SConceptId id) {
     switch (myConceptIndex.index(id)) {
+      case LanguageConceptSwitch.AbstractChild:
+        return myConceptAbstractChild;
       case LanguageConceptSwitch.AbstractDeveloper:
         return myConceptAbstractDeveloper;
       case LanguageConceptSwitch.Canvas:
         return myConceptCanvas;
       case LanguageConceptSwitch.Company:
         return myConceptCompany;
+      case LanguageConceptSwitch.ConcreteChild:
+        return myConceptConcreteChild;
+      case LanguageConceptSwitch.Container:
+        return myConceptContainer;
       case LanguageConceptSwitch.DefaultNodeAttribute:
         return myConceptDefaultNodeAttribute;
       case LanguageConceptSwitch.DefaultPropertyAttribute:
@@ -59,6 +69,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptFriend;
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         return myConceptNotSubstitutableDeveloper;
+      case LanguageConceptSwitch.Parent:
+        return myConceptParent;
       case LanguageConceptSwitch.Shape:
         return myConceptShape;
       case LanguageConceptSwitch.Team:
@@ -72,6 +84,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     return myConceptIndex.index(c);
   }
 
+  private static ConceptDescriptor createDescriptorForAbstractChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "AbstractChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
+    b.class_(false, false, false);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288579");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForAbstractDeveloper() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "AbstractDeveloper", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L);
     b.class_(false, true, false);
@@ -92,6 +110,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/938834323431421731");
     b.aggregate("team", 0xd0768d7cf1308bdL).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf12f792L).optional(true).ordered(true).multiple(true).origin("938834323431426237").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForConcreteChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "ConcreteChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f851487L);
+    b.class_(false, false, false);
+    b.super_("testDefaultEditor.structure.AbstractChild", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785337479");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForContainer() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "Container", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845581L);
+    b.class_(false, false, true);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288577");
+    b.aggregate("parent", 0x77c1a85c9f851481L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845582L).optional(true).ordered(true).multiple(false).origin("8629363476785337473").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForDefaultNodeAttribute() {
@@ -151,6 +183,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("testDefaultEditor.structure.AbstractDeveloper", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x6903a6b9852e888L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/472942194665437297");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForParent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("testDefaultEditor", "Parent", 0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845582L);
+    b.class_(false, false, false);
+    b.origin("r:489407ac-4a9d-4295-9ef4-b6cd6edeeea3(testDefaultEditor.structure)/8629363476785288578");
+    b.aggregate("child", 0x77c1a85c9f845587L).target(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0x77c1a85c9f845583L).optional(false).ordered(true).multiple(false).origin("8629363476785288583").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForShape() {
