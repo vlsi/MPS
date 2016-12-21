@@ -17,6 +17,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -46,7 +47,11 @@ public abstract class IncludeTransformationMenuTransformationMenuPart implements
     SNodeLocation nodeLocation = null;
     final EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
     if (nodeCell != null) {
-      nodeLocation = nodeCell.getCellContext().getNodeLocation();
+      final EditorCellContext cellContext = nodeCell.getCellContext();
+      //todo should we assert it is not null here?
+      if (cellContext != null) {
+        nodeLocation = cellContext.getNodeLocation();
+      }
     }
     return nodeLocation != null ? nodeLocation : new SNodeLocation.FromNode(node);
   }

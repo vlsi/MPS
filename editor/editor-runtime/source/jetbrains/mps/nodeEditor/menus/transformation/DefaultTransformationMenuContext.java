@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.menus.MenuUtil;
 import jetbrains.mps.nodeEditor.menus.RecursionSafeMenuItemFactory;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCellContext;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
@@ -69,11 +70,22 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
 
   @NotNull
   private static SNodeLocation nodeLocationFromCell(@NotNull EditorCell cell) {
-    final SNodeLocation cellNodeLocation = cell.getCellContext().getNodeLocation();
-    if(cellNodeLocation != null) {
-      return cellNodeLocation;
+    EditorCell cellWithLocation = cell;
+    while (cellWithLocation != null){
+      final EditorCellContext cellContext = cellWithLocation.getCellContext();
+      if (cellContext != null) {
+        final SNodeLocation cellNodeLocation = cellContext.getNodeLocation();
+        if (cellNodeLocation != null) {
+          return cellNodeLocation;
+        }
+      }
+      if (cellWithLocation.isBig()) {
+        break;
+      }
+      cellWithLocation = cellWithLocation.getParent();
     }
 
+    //todo should we remove this?
     SNode cellNode = cell.getSNode();
     if (cellNode == null) {
       throw new IllegalArgumentException("cell should have a node: " + cell);
