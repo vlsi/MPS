@@ -24,7 +24,7 @@ public class TestTransform_ChildWithConstraints_CanBeChild_Test extends BaseTran
       initEditorComponent("705057939850090904", "705057939850090906");
       typeString(" ");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
+      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2;
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
