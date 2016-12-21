@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
@@ -125,7 +126,7 @@ public class FindUtils {
     }
   }
 
-  public static IResultProvider makeProvider(Collection<IFinder> finders) {
+  public static IResultProvider makeProvider(Collection<? extends IFinder> finders) {
     UnionNode unionNode = new UnionNode();
     for (IFinder finder : finders) {
       unionNode.addChild(new FinderNode(finder));
@@ -135,5 +136,19 @@ public class FindUtils {
 
   public static IResultProvider makeProvider(IFinder... finders) {
     return makeProvider(Arrays.asList(finders));
+  }
+
+  /**
+   * @param finderIdentity at the moment, we use finder implementation class fqn to identify it
+   */
+  public static IResultProvider makeProvider(@NotNull String... finderIdentity) {
+    ArrayList<Finder> finders = new ArrayList<>(finderIdentity.length);
+    for (String fi : finderIdentity) {
+      IInterfacedFinder f = getFinderByClassName(fi);
+      if (f != null) {
+        finders.add(f);
+      }
+    }
+    return makeProvider(finders);
   }
 }

@@ -133,8 +133,4 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
   protected void findersListChangedByUser() {
 
   }
-
-  protected boolean resetToDefaults(){
-    return false;
-  }
 }
