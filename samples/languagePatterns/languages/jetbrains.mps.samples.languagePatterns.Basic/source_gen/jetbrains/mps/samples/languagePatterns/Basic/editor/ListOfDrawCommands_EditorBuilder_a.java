@@ -23,6 +23,7 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -132,15 +133,29 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1a2bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine")), null);
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(elementNode);
-      installElementCellActions(elementNode, elementCell);
-      return elementCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
+
+      try {
+        EditorCell elementCell = super.createNodeCell(elementNode);
+        installElementCellActions(elementNode, elementCell);
+        return elementCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public EditorCell createEmptyCell() {
-      EditorCell emptyCell = null;
-      emptyCell = createConstant_elj39_a3a();
-      installElementCellActions(null, emptyCell);
-      return emptyCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(commandsListHandler_elj39_d0.this.getNode(), MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d07e6L, 0x313e78bb265d1023L, "commands")));
+      try {
+        EditorCell emptyCell = null;
+        emptyCell = createConstant_elj39_a3a();
+        installElementCellActions(null, emptyCell);
+        setCellContext(emptyCell);
+        return emptyCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public void installElementCellActions(SNode elementNode, EditorCell elementCell) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {

@@ -106,7 +106,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, 0x1b1161f6e68dfb1bL, "target"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1b1161f6e68dfae3L, 0x1b1161f6e68dfb1bL, "target"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -131,10 +130,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_target");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }

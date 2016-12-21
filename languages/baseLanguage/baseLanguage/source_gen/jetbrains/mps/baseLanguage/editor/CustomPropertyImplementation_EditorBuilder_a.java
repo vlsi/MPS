@@ -77,7 +77,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117b927a740L, "getAccessor"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117b927a740L, "getAccessor"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -106,10 +105,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_getAccessor");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }
@@ -144,7 +142,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117bd9b26faL, "setAccessor"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117bd9b26faL, "setAccessor"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -171,10 +168,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x117b8f1b18eL, 0x117bd9b26faL, "setAccessor")));
       try {
         EditorCell editorCell = createCollection_mlq0a_a1a();
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }

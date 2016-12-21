@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
 import jetbrains.mps.openapi.editor.cells.DefaultSubstituteInfo;
@@ -192,18 +193,32 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
 
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
+      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341d2fL, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSource"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(elementNode);
-      installElementCellActions(elementNode, elementCell);
-      return elementCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
+
+      try {
+        EditorCell elementCell = super.createNodeCell(elementNode);
+        installElementCellActions(elementNode, elementCell);
+        return elementCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public EditorCell createEmptyCell() {
-      EditorCell emptyCell = null;
-      emptyCell = createConstant_ju7sd7_a3b0a();
-      installElementCellActions(null, emptyCell);
-      return emptyCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(sourcesListHandler_ju7sd7_d1a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341d31L, "sources")));
+      try {
+        EditorCell emptyCell = null;
+        emptyCell = createConstant_ju7sd7_a3b0a();
+        installElementCellActions(null, emptyCell);
+        setCellContext(emptyCell);
+        return emptyCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public void installElementCellActions(SNode elementNode, EditorCell elementCell) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
@@ -264,18 +279,32 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     }
 
     public SNode createNodeToInsert(EditorContext editorContext) {
-      return NodeFactoryManager.createNode(getNode(), editorContext, super.getElementRole());
+      return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d5083341cb7L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependency"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      EditorCell elementCell = super.createNodeCell(elementNode);
-      installElementCellActions(elementNode, elementCell);
-      return elementCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
+
+      try {
+        EditorCell elementCell = super.createNodeCell(elementNode);
+        installElementCellActions(elementNode, elementCell);
+        return elementCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public EditorCell createEmptyCell() {
-      EditorCell emptyCell = null;
-      emptyCell = createConstant_ju7sd7_a5b0a();
-      installElementCellActions(null, emptyCell);
-      return emptyCell;
+      getCellFactory().pushCellContext();
+      getCellFactory().setNodeLocation(new SNodeLocation.FromParentAndLink(dependenciesListHandler_ju7sd7_f1a0.this.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, 0x48e82d5083341cb8L, "dependencies")));
+      try {
+        EditorCell emptyCell = null;
+        emptyCell = createConstant_ju7sd7_a5b0a();
+        installElementCellActions(null, emptyCell);
+        setCellContext(emptyCell);
+        return emptyCell;
+      } finally {
+        getCellFactory().popCellContext();
+      }
     }
     public void installElementCellActions(SNode elementNode, EditorCell elementCell) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {

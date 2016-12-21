@@ -71,7 +71,7 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   @NotNull
   private static SNodeLocation nodeLocationFromCell(@NotNull EditorCell cell) {
     EditorCell cellWithLocation = cell;
-    while (cellWithLocation != null){
+    while (cellWithLocation != null) {
       final EditorCellContext cellContext = cellWithLocation.getCellContext();
       if (cellContext != null) {
         final SNodeLocation cellNodeLocation = cellContext.getNodeLocation();

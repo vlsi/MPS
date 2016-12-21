@@ -92,7 +92,6 @@ import jetbrains.mps.nodeEditor.MPSColors;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, 0x11ef467946eL, "statement"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11ef4675fccL, 0x11ef467946eL, "statement"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -120,10 +119,9 @@ import jetbrains.mps.nodeEditor.MPSColors;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_statement");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }

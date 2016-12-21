@@ -75,7 +75,6 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1133e3b449aL, 0x1133e3b8b49L, "cls"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -103,10 +102,9 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_cls");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }

@@ -146,7 +146,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, 0x111f9de1425L, "modelAcessor"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xfa3d28fe7dL, 0x111f9de1425L, "modelAcessor"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -171,10 +170,9 @@ import jetbrains.mps.nodeEditor.EditorManager;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_modelAcessor");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }

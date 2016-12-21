@@ -103,6 +103,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
         EditorCell emptyCell = null;
         emptyCell = createConstant_eavk2k_a0a();
         installElementCellActions(null, emptyCell);
+        setCellContext(emptyCell);
         return emptyCell;
       } finally {
         getCellFactory().popCellContext();

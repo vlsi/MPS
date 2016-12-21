@@ -102,10 +102,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
               }
 
               @Override
-              protected boolean isCompatibilityMode() {
-                return false;
-              }
-              @Override
               public EditorCell createNodeCell(SNode elementNode) {
                 getCellFactory().pushCellContext();
                 getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));

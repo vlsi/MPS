@@ -80,7 +80,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b040L, "leftSelector"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -106,10 +105,9 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_leftSelector");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }
@@ -153,7 +151,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
         EditorCell editorCell = super.createChildCell(child);
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"), child));
         editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x235af965a76b03fL, 0x235af965a76b042L, "rightSelector"), child));
-
         installCellInfo(child, editorCell);
         return editorCell;
       } finally {
@@ -179,10 +176,9 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       try {
         EditorCell editorCell = super.createEmptyCell();
         editorCell.setCellId("empty_rightSelector");
-
         installCellInfo(null, editorCell);
+        setCellContext(editorCell);
         return editorCell;
-
       } finally {
         getCellFactory().popCellContext();
       }
