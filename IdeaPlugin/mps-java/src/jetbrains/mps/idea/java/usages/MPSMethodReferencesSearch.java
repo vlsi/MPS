@@ -25,11 +25,6 @@ import com.intellij.psi.impl.light.LightMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.searches.MethodReferencesSearch.SearchParameters;
 import com.intellij.util.Processor;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ModuleClassReference;
-import jetbrains.mps.ide.findusages.model.SearchQuery;
-import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiNode;
@@ -37,6 +32,7 @@ import jetbrains.mps.idea.core.psi.impl.MPSPsiNodeBase;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiRef;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactoryByName;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -44,6 +40,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 /**
@@ -70,15 +67,9 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
 
     if (method instanceof MPSPsiNodeBase) return;
 
-    final SModuleReference blModule = PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)");
-    final GeneratedFinder finder = method.isConstructor() ?
-      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(blModule, "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder")) :
-      FindUtils.getFinderByClass(new ModuleClassReference<GeneratedFinder>(blModule, "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
-
-    if (finder == null) {
-      LOG.warning("MPS finder not found; MethodReferenceSearch will not work");
-      return;
-    }
+    final String finder = method.isConstructor() ?
+      "jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder" :
+      "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder";
 
     ProjectHelper.getModelAccess(method.getProject()).runReadAction(new Runnable() {
       @Override
@@ -102,18 +93,15 @@ public class MPSMethodReferencesSearch extends QueryExecutorBase<PsiReference, S
           return;
         }
 
-        SearchQuery query = new SearchQuery(methodNode, new IdeaSearchScope(scope));
-
-        SearchResults<SNode> results;
+        List<SNode> results;
         try {
-          results = FindUtils.makeProvider(finder).getResults(query, null);
+          results = FindUtils.executeFinder(finder, methodNode, new IdeaSearchScope(scope), new EmptyProgressMonitor());
         } catch (IndexNotReadyException e) {
           // DumbService doesn't seem to work
           return;
         }
 
-        for (SearchResult<SNode> result : results.getSearchResults()) {
-          SNode usageNode = result.getObject();
+        for (SNode usageNode : results) {
           // it's a shame we get nodes and not SReferences
           // doing a hack
           for (SReference sref : usageNode.getReferences()) {

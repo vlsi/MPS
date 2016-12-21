@@ -17,10 +17,8 @@ package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ModuleClassReference;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
@@ -56,17 +54,6 @@ public class FindUtils {
     return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[finders.size()]));
   }
 
-  // XXX seems to be unused, RT for templates, perhaps?
-  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
-    List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClasses.length);
-    for (ModuleClassReference<GeneratedFinder> finderClass : finderClasses) {
-      GeneratedFinder finder = getFinderByClass(finderClass);
-      if (finder != null) finders.add(finder);
-    }
-
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
-  }
-
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IFinder... finders) {
     return getSearchResults(monitor, query, makeProvider(finders));
   }
@@ -88,17 +75,6 @@ public class FindUtils {
     return result;
   }
 
-  // XXX seems to be unused, RT for templates, perhaps?
-  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, SearchScope scope, ProgressMonitor monitor) {
-    List<SNode> result = new ArrayList<SNode>();
-    IInterfacedFinder finder = getFinderByClass(finderClass);
-    if (finder == null) return result;
-    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
-      result.add(searchResult.getObject());
-    }
-    return result;
-  }
-
   /**
    * @deprecated use of class name to identify finders is unfortunate design decision
    */
@@ -106,24 +82,6 @@ public class FindUtils {
   @Nullable
   public static IInterfacedFinder getFinderByClassName(String className) {
     return FindersManager.getInstance().getFinderByClassName(className, true);
-  }
-
-  // in use from generated code
-  public static GeneratedFinder getFinderByClass(ModuleClassReference<GeneratedFinder> finderClass) {
-    try {
-      Class<GeneratedFinder> fClass = finderClass.loadClass();
-
-      if (fClass == null) {
-        LOG.error("Class " + finderClass.getClassName() + " not found. Returning empty results.");
-        return null;
-      }
-
-      GeneratedFinder finder = fClass.newInstance();
-      return finder;
-    } catch (Throwable t) {
-      LOG.error("Error instantiating finder \"" + finderClass.getClassName() + "\". Returning empty results.  Message:" + t.getMessage(), t);
-      return null;
-    }
   }
 
   public static IResultProvider makeProvider(Collection<? extends IFinder> finders) {
