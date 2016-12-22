@@ -78,6 +78,18 @@
     <file name="IBaseTestBlock_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
     </file>
+    <file name="IDelTestChild_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestChild_BehaviorDescriptor" />
+    </file>
+    <file name="IDelTestConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestConcreteChild_BehaviorDescriptor" />
+    </file>
+    <file name="ISpecialDelTestChild_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestChild_BehaviorDescriptor" />
+    </file>
+    <file name="ISpecialDelTestConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestConcreteChild_BehaviorDescriptor" />
+    </file>
     <file name="InitAbstractChild_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitAbstractChild_BehaviorDescriptor" />
     </file>

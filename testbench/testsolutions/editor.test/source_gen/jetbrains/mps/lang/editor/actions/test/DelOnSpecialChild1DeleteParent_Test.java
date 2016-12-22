@@ -8,11 +8,11 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class DelOnChild1DeleteParentOnDeletingSpecialChild_Test extends BaseTransformationTest {
+public class DelOnSpecialChild1DeleteParent_Test extends BaseTransformationTest {
   @Test
-  public void test_DelOnChild1DeleteParentOnDeletingSpecialChild() throws Throwable {
+  public void test_DelOnSpecialChild1DeleteParent() throws Throwable {
     initTest("${mps_home}", "r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)");
-    runTest("jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParentOnDeletingSpecialChild_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch

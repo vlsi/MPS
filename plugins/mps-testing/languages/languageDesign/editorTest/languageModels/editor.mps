@@ -831,11 +831,32 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="2znOOs7gLZH" role="3EZMnx">
+          <property role="3F0ifm" value="interface children" />
+        </node>
+        <node concept="3F0ifn" id="2znOOs7gLZE" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="2znOOs7gLZF" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2znOOs7gLZG" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="2znOOs7gM0n" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:2znOOs7gLZ9" resolve="interfaceChild" />
+          <node concept="lj46D" id="2znOOs7gM0_" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="6LcR7GqxcRF" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <node concept="3mYdg7" id="6LcR7GqxcRG" role="3F10Kt">
           <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="pVoyu" id="2znOOs7har9" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
     </node>
@@ -2384,11 +2405,35 @@
             <property role="VOm3f" value="true" />
           </node>
         </node>
+        <node concept="3F0ifn" id="2znOOs7hk7f" role="3EZMnx">
+          <property role="3F0ifm" value="spacial interface child" />
+        </node>
+        <node concept="3F0ifn" id="2znOOs7hk7c" role="3EZMnx">
+          <property role="3F0ifm" value=":" />
+          <node concept="11L4FC" id="2znOOs7hk7d" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2znOOs7hk7e" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="2znOOs7hk79" role="3EZMnx">
+          <ref role="1NtTu8" to="68nn:2znOOs7hk74" resolve="specialInterfaceChild" />
+          <node concept="lj46D" id="2znOOs7hk7a" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+          <node concept="ljvvj" id="2znOOs7hk7b" role="3F10Kt">
+            <property role="VOm3f" value="true" />
+          </node>
+        </node>
       </node>
       <node concept="3F0ifn" id="4EQk8IqQDmI" role="3EZMnx">
         <property role="3F0ifm" value="}" />
         <node concept="3mYdg7" id="4EQk8IqQDmJ" role="3F10Kt">
           <property role="1413C4" value="body-brace" />
+        </node>
+        <node concept="pVoyu" id="2znOOs7hk8e" role="3F10Kt">
+          <property role="VOm3f" value="true" />
         </node>
       </node>
     </node>
@@ -2427,6 +2472,46 @@
       <node concept="l2Vlx" id="7v1E5Mvy5gW" role="2iSdaV" />
       <node concept="3F0ifn" id="7v1E5Mvy5gX" role="3EZMnx">
         <property role="3F0ifm" value="del test abstract child" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2znOOs7gM0J">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:2znOOs7gLZd" resolve="IDelTestChild" />
+    <node concept="3EZMnI" id="2znOOs7gM0L" role="2wV5jI">
+      <node concept="l2Vlx" id="2znOOs7gM0M" role="2iSdaV" />
+      <node concept="3F0ifn" id="2znOOs7gM0N" role="3EZMnx">
+        <property role="3F0ifm" value="del test interface child" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2znOOs7gM1r">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:2znOOs7gLZe" resolve="IDelTestConcreteChild" />
+    <node concept="3EZMnI" id="2znOOs7gM1t" role="2wV5jI">
+      <node concept="l2Vlx" id="2znOOs7gM1u" role="2iSdaV" />
+      <node concept="3F0ifn" id="2znOOs7gM1v" role="3EZMnx">
+        <property role="3F0ifm" value="del test concrete interface child" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2znOOs7hk5O">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:2znOOs7hk5E" resolve="ISpecialDelTestConcreteChild" />
+    <node concept="3EZMnI" id="2znOOs7hk5Q" role="2wV5jI">
+      <node concept="l2Vlx" id="2znOOs7hk5R" role="2iSdaV" />
+      <node concept="3F0ifn" id="2znOOs7hk5S" role="3EZMnx">
+        <property role="3F0ifm" value="special concrete interface del test child" />
+      </node>
+    </node>
+  </node>
+  <node concept="24kQdi" id="2znOOs7hk6w">
+    <property role="3GE5qa" value="delete" />
+    <ref role="1XX52x" to="68nn:2znOOs7hk5B" resolve="ISpecialDelTestChild" />
+    <node concept="3EZMnI" id="2znOOs7hk6y" role="2wV5jI">
+      <node concept="l2Vlx" id="2znOOs7hk6z" role="2iSdaV" />
+      <node concept="3F0ifn" id="2znOOs7hk6$" role="3EZMnx">
+        <property role="3F0ifm" value="special interface del test child" />
       </node>
     </node>
   </node>

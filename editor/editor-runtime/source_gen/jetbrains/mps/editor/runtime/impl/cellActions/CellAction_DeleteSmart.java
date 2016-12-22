@@ -6,13 +6,14 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
@@ -31,9 +32,8 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   private boolean myEnabled = true;
 
   private SContainmentLink myLink;
-  @Nullable
-  private SAbstractConcept mySpecificTargetConcept;
 
+  private SAbstractConcept myLinkTargetConcept;
   /**
    * use {@link jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart#CellAction_DeleteSmart(SNode, SContainmentLink, SNode) }
    * 
@@ -63,7 +63,11 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     mySource = source;
     myLink = link;
     myTarget = target;
-    mySpecificTargetConcept = specificTargetConcept;
+    if (specificTargetConcept != null) {
+      myLinkTargetConcept = MetaAdapterByDeclaration.asInstanceConcept(specificTargetConcept);
+    } else {
+      myLinkTargetConcept = MetaAdapterByDeclaration.asInstanceConcept(myLink.getTargetConcept());
+    }
     myCanBeNull = link.isOptional();
 
     myLegacyRole = null;
@@ -72,7 +76,7 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
     if (myCanBeNull) {
       return;
     }
-    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0n(SNodeOperations.getConcept(myTarget), getTargetConcept());
+    myEnabled = !(link.isMultiple()) && neq_89lc4r_a0a0k0n(SNodeOperations.getConcept(myTarget), myLinkTargetConcept);
   }
 
   @Override
@@ -94,13 +98,10 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
       } else {
         // new way 
         assert myLink != null;
-        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(getTargetConcept(), SNodeOperations.getModel(mySource), null, true);
+        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(myLinkTargetConcept, SNodeOperations.getModel(mySource), null, true);
         SLinkOperations.setTarget(mySource, myLink, defaultTarget);
       }
     }
-  }
-  private SAbstractConcept getTargetConcept() {
-    return (mySpecificTargetConcept != null ? mySpecificTargetConcept : myLink.getTargetConcept());
   }
   private static boolean neq_89lc4r_a0a0k0n(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

@@ -113,6 +113,20 @@
   <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" file="IBaseTestBlock_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestChild_BehaviorDescriptor" file="IDelTestChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestConcreteChild_BehaviorDescriptor" file="IDelTestConcreteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestChild_BehaviorDescriptor" file="ISpecialDelTestChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestConcreteChild_BehaviorDescriptor" file="ISpecialDelTestConcreteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.behavior.InitAbstractChild_BehaviorDescriptor" file="InitAbstractChild_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

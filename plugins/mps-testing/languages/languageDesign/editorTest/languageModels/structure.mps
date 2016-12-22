@@ -34,7 +34,9 @@
         <child id="1071489727083" name="linkDeclaration" index="1TKVEi" />
         <child id="1071489727084" name="propertyDeclaration" index="1TKVEl" />
       </concept>
-      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ" />
+      <concept id="1169125989551" name="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" flags="ig" index="PlHQZ">
+        <child id="1169127546356" name="extends" index="PrDN$" />
+      </concept>
       <concept id="1169127622168" name="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" flags="ig" index="PrWs8">
         <reference id="1169127628841" name="intfc" index="PrY4T" />
       </concept>
@@ -364,6 +366,13 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="7803854675610223859" />
       <ref role="20lvS9" node="6LcR7Gqxch7" resolve="DelTestAbstractChild" />
+    </node>
+    <node concept="1TJgyj" id="2znOOs7gLZ9" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="interfaceChild" />
+      <property role="20lbJX" value="1" />
+      <property role="IQ2ns" value="2943053183527886793" />
+      <ref role="20lvS9" node="2znOOs7gLZd" resolve="IDelTestChild" />
     </node>
   </node>
   <node concept="1TIwiD" id="6LcR7Gqxch7">
@@ -807,12 +816,49 @@
       <ref role="20lvS9" node="4EQk8IqQDmd" resolve="DelTestSpecialAbstractChild" />
       <ref role="20ksaX" node="6LcR7GqxcjN" resolve="child" />
     </node>
+    <node concept="1TJgyj" id="2znOOs7hk74" role="1TKVEi">
+      <property role="IQ2ns" value="2943053183528026564" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="specialInterfaceChild" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="2znOOs7hk5B" resolve="ISpecialDelTestChild" />
+      <ref role="20ksaX" node="2znOOs7gLZ9" resolve="interfaceChild" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4EQk8IqQNv7">
     <property role="EcuMT" value="5383578965096740807" />
     <property role="3GE5qa" value="delete" />
     <property role="TrG5h" value="DelTestSpecialChild1" />
     <ref role="1TJDcQ" node="4EQk8IqQDmd" resolve="DelTestSpecialAbstractChild" />
+  </node>
+  <node concept="PlHQZ" id="2znOOs7gLZd">
+    <property role="EcuMT" value="2943053183527886797" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="IDelTestChild" />
+  </node>
+  <node concept="1TIwiD" id="2znOOs7gLZe">
+    <property role="EcuMT" value="2943053183527886798" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="IDelTestConcreteChild" />
+    <node concept="PrWs8" id="2znOOs7gLZf" role="PzmwI">
+      <ref role="PrY4T" node="2znOOs7gLZd" resolve="IDelTestChild" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="2znOOs7hk5B">
+    <property role="EcuMT" value="2943053183528026471" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="ISpecialDelTestChild" />
+    <node concept="PrWs8" id="2znOOs7hk5C" role="PrDN$">
+      <ref role="PrY4T" node="2znOOs7gLZd" resolve="IDelTestChild" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="2znOOs7hk5E">
+    <property role="EcuMT" value="2943053183528026474" />
+    <property role="3GE5qa" value="delete" />
+    <property role="TrG5h" value="ISpecialDelTestConcreteChild" />
+    <node concept="PrWs8" id="2znOOs7hwQx" role="PzmwI">
+      <ref role="PrY4T" node="2znOOs7hk5B" resolve="ISpecialDelTestChild" />
+    </node>
   </node>
 </model>
 

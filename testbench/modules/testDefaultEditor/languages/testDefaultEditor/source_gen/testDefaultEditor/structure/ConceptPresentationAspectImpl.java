@@ -21,6 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Developer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DummyMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Friend = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotSubstitutableDeveloper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
@@ -56,12 +58,16 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
       case 11:
         return props_Friend;
       case 12:
-        return props_NotSubstitutableDeveloper;
+        return props_IConcreteChild;
       case 13:
-        return props_Parent;
+        return props_IParent;
       case 14:
-        return props_Shape;
+        return props_NotSubstitutableDeveloper;
       case 15:
+        return props_Parent;
+      case 16:
+        return props_Shape;
+      case 17:
         return props_Team;
     }
     throw new IllegalStateException("Unknown concept " + c);

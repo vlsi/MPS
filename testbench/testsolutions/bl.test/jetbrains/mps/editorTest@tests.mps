@@ -485,6 +485,8 @@
         <child id="6519503956373976545" name="shapes" index="H5lIJ" />
       </concept>
       <concept id="6519503956373976539" name="testDefaultEditor.structure.Shape" flags="ng" index="H5lIl" />
+      <concept id="2943053183528182793" name="testDefaultEditor.structure.IConcreteChild" flags="ng" index="J$7te" />
+      <concept id="2943053183528182792" name="testDefaultEditor.structure.IParent" flags="ng" index="J$7tf" />
       <concept id="938834323431434553" name="testDefaultEditor.structure.Developer" flags="ng" index="32547I">
         <property id="938834323431434575" name="lastName" index="32546o" />
         <property id="938834323431434570" name="sex" index="32546t" />
@@ -504,6 +506,7 @@
         <child id="8629363476785337473" name="parent" index="3ChbNt" />
       </concept>
       <concept id="8629363476785288578" name="testDefaultEditor.structure.Parent" flags="ng" index="3ChvRu">
+        <child id="2943053183528185348" name="interfaceChild" index="J$7P3" />
         <child id="8629363476785288583" name="child" index="3ChvRr" />
       </concept>
       <concept id="8629363476785288579" name="testDefaultEditor.structure.AbstractChild" flags="ng" index="3ChvRv" />
@@ -54633,6 +54636,89 @@
       <node concept="yd1bK" id="94BJUEyM8k" role="3cqZAp">
         <node concept="pLAjd" id="94BJUEyM8l" role="yd6KS">
           <property role="pLAjf" value="VK_ENTER" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7hUMi">
+    <property role="TrG5h" value="DefaultEditor_DelOnInterfaceChild1DeleteParent" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 and it is instance of link target concept then pressing &quot;del&quot; by-default should invoke &quot;del&quot; on parent node" />
+    <node concept="3clFbS" id="2znOOs7hUMj" role="LjaKd">
+      <node concept="yd1bK" id="716m9lYkSz4" role="3cqZAp">
+        <node concept="pLAjd" id="716m9lYkSz6" role="yd6KS">
+          <property role="pLAjf" value="VK_TAB" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="2znOOs7hUMk" role="3cqZAp">
+        <node concept="1iFQzN" id="2znOOs7hUMl" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="2znOOs7hUMm" role="LiRBU">
+      <node concept="3ChvRu" id="2znOOs7hXor" role="3ChbNt">
+        <node concept="3ChvRv" id="2znOOs7hXos" role="3ChvRr" />
+        <node concept="J$7tf" id="2znOOs7hXot" role="J$7P3" />
+        <node concept="LIFWc" id="716m9lYl$EI" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="constant_6" />
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="2znOOs7hUMq" role="LiZbd">
+      <node concept="LIFWc" id="2znOOs7hXp3" role="lGtFl">
+        <property role="ZRATv" value="true" />
+        <property role="OXtK3" value="true" />
+        <property role="p6zMq" value="0" />
+        <property role="p6zMs" value="0" />
+        <property role="LIFWd" value="empty_parent" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="2znOOs7hXpl">
+    <property role="TrG5h" value="DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget" />
+    <property role="3GE5qa" value="defaultEditor" />
+    <property role="3YCmrE" value="If child node is contained within a link with cardinality 1 then it should be replaced by link target concept in pressing &quot;del&quot; by-default" />
+    <node concept="3ChvRt" id="2znOOs7hXpm" role="LiRBU">
+      <node concept="3ChvRu" id="2znOOs7hXpn" role="3ChbNt">
+        <node concept="3ChvRv" id="2znOOs7hXq9" role="3ChvRr" />
+        <node concept="J$7te" id="2znOOs7hXq_" role="J$7P3">
+          <node concept="LIFWc" id="2znOOs7hXqS" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="16" />
+            <property role="p6zMs" value="16" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3clFbS" id="2znOOs7hXpq" role="LjaKd">
+      <node concept="2HxZob" id="2znOOs7hXpr" role="3cqZAp">
+        <node concept="1iFQzN" id="2znOOs7hXps" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:7HPyHg84hwg" resolve="Delete" />
+        </node>
+      </node>
+      <node concept="2HxZob" id="716m9lYkSzU" role="3cqZAp">
+        <node concept="1iFQzN" id="716m9lYkSzV" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:R3$tg1aBNT" resolve="MoveLeft" />
+        </node>
+      </node>
+    </node>
+    <node concept="3ChvRt" id="2znOOs7hXpt" role="LiZbd">
+      <node concept="3ChvRu" id="2znOOs7hXpu" role="3ChbNt">
+        <node concept="3ChvRv" id="2znOOs7hXpv" role="3ChvRr" />
+        <node concept="J$7tf" id="2znOOs7hXrk" role="J$7P3" />
+        <node concept="LIFWc" id="716m9lYkSzK" role="lGtFl">
+          <property role="ZRATv" value="true" />
+          <property role="OXtK3" value="true" />
+          <property role="p6zMq" value="1" />
+          <property role="p6zMs" value="1" />
+          <property role="LIFWd" value="constant_6" />
         </node>
       </node>
     </node>

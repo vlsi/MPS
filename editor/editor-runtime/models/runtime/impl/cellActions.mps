@@ -31,6 +31,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="nlpl" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.editor.runtime.commands(MPS.Editor/)" />
+    <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -874,17 +875,17 @@
       </node>
       <node concept="3Tm6S6" id="21bDgbOnpMA" role="1B3o_S" />
     </node>
-    <node concept="312cEg" id="4EQk8IqRigQ" role="jymVt">
-      <property role="TrG5h" value="mySpecificTargetConcept" />
-      <node concept="3Tm6S6" id="4EQk8IqRigO" role="1B3o_S" />
-      <node concept="3uibUv" id="4EQk8IqRigP" role="1tU5fm">
+    <node concept="2tJIrI" id="2znOOs7iKZm" role="jymVt" />
+    <node concept="312cEg" id="2znOOs7j0uF" role="jymVt">
+      <property role="34CwA1" value="false" />
+      <property role="eg7rD" value="false" />
+      <property role="TrG5h" value="myLinkTargetConcept" />
+      <property role="3TUv4t" value="false" />
+      <node concept="3Tm6S6" id="2znOOs7iM2F" role="1B3o_S" />
+      <node concept="3uibUv" id="2znOOs7iM$s" role="1tU5fm">
         <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
       </node>
-      <node concept="2AHcQZ" id="ndSstdj8SJ" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
-      </node>
     </node>
-    <node concept="2tJIrI" id="21bDgbOoAFk" role="jymVt" />
     <node concept="3clFbW" id="4EQk8IqRh8Y" role="jymVt">
       <node concept="3Tm1VV" id="4EQk8IqRh8Z" role="1B3o_S" />
       <node concept="3cqZAl" id="4EQk8IqRh90" role="3clF45" />
@@ -1218,13 +1219,50 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="21bDgbOnHxh" role="3cqZAp">
-          <node concept="37vLTI" id="21bDgbOnIra" role="3clFbG">
-            <node concept="37vLTw" id="21bDgbOnIBL" role="37vLTx">
+        <node concept="3clFbJ" id="2znOOs7j1rv" role="3cqZAp">
+          <node concept="3clFbS" id="2znOOs7j1rx" role="3clFbx">
+            <node concept="3clFbF" id="2znOOs7j2ae" role="3cqZAp">
+              <node concept="37vLTI" id="2znOOs7j2lI" role="3clFbG">
+                <node concept="37vLTw" id="2znOOs7j2ac" role="37vLTJ">
+                  <ref role="3cqZAo" node="2znOOs7j0uF" resolve="myLinkTargetConcept" />
+                </node>
+                <node concept="2YIFZM" id="716m9lYkGDF" role="37vLTx">
+                  <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                  <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.asInstanceConcept(org.jetbrains.mps.openapi.language.SAbstractConcept):org.jetbrains.mps.openapi.language.SConcept" resolve="asInstanceConcept" />
+                  <node concept="37vLTw" id="716m9lYkGZB" role="37wK5m">
+                    <ref role="3cqZAo" node="21bDgbOn_1W" resolve="specificTargetConcept" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="2znOOs7j1Yq" role="3clFbw">
+            <node concept="37vLTw" id="2znOOs7j26j" role="3uHU7B">
               <ref role="3cqZAo" node="21bDgbOn_1W" resolve="specificTargetConcept" />
             </node>
-            <node concept="37vLTw" id="21bDgbOnHxf" role="37vLTJ">
-              <ref role="3cqZAo" node="4EQk8IqRigQ" resolve="mySpecificTargetConcept" />
+            <node concept="10Nm6u" id="2znOOs7j1WD" role="3uHU7w" />
+          </node>
+          <node concept="9aQIb" id="2znOOs7j2uU" role="9aQIa">
+            <node concept="3clFbS" id="2znOOs7j2uV" role="9aQI4">
+              <node concept="3clFbF" id="2znOOs7j2zW" role="3cqZAp">
+                <node concept="37vLTI" id="2znOOs7j2Js" role="3clFbG">
+                  <node concept="37vLTw" id="2znOOs7j2zV" role="37vLTJ">
+                    <ref role="3cqZAo" node="2znOOs7j0uF" resolve="myLinkTargetConcept" />
+                  </node>
+                  <node concept="2YIFZM" id="2znOOs7iYB_" role="37vLTx">
+                    <ref role="1Pybhc" to="pjrh:~MetaAdapterByDeclaration" resolve="MetaAdapterByDeclaration" />
+                    <ref role="37wK5l" to="pjrh:~MetaAdapterByDeclaration.asInstanceConcept(org.jetbrains.mps.openapi.language.SAbstractConcept):org.jetbrains.mps.openapi.language.SConcept" resolve="asInstanceConcept" />
+                    <node concept="2OqwBi" id="2znOOs7iQcM" role="37wK5m">
+                      <node concept="37vLTw" id="2znOOs7iQcN" role="2Oq$k0">
+                        <ref role="3cqZAo" node="21bDgbOnpM_" resolve="myLink" />
+                      </node>
+                      <node concept="liA8E" id="2znOOs7iQcO" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SAbstractLink.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -1292,8 +1330,8 @@
                   </node>
                   <node concept="2yIwOk" id="6vS$oQTHe9s" role="2OqNvi" />
                 </node>
-                <node concept="1rXfSq" id="19zqwGdU1b6" role="3uHU7w">
-                  <ref role="37wK5l" node="4EQk8IqRqLG" resolve="getTargetConcept" />
+                <node concept="37vLTw" id="2znOOs7j56t" role="3uHU7w">
+                  <ref role="3cqZAo" node="2znOOs7j0uF" resolve="myLinkTargetConcept" />
                 </node>
               </node>
             </node>
@@ -1501,8 +1539,8 @@
                       <node concept="2YIFZM" id="4PZEGlYUqWZ" role="33vP2m">
                         <ref role="1Pybhc" to="w1kc:~SModelUtil_new" resolve="SModelUtil_new" />
                         <ref role="37wK5l" to="w1kc:~SModelUtil_new.instantiateConceptDeclaration(org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SModel,org.jetbrains.mps.openapi.model.SNodeId,boolean):jetbrains.mps.smodel.SNode" resolve="instantiateConceptDeclaration" />
-                        <node concept="1rXfSq" id="4EQk8IqRyqS" role="37wK5m">
-                          <ref role="37wK5l" node="4EQk8IqRqLG" resolve="getTargetConcept" />
+                        <node concept="37vLTw" id="2znOOs7j5oW" role="37wK5m">
+                          <ref role="3cqZAo" node="2znOOs7j0uF" resolve="myLinkTargetConcept" />
                         </node>
                         <node concept="2OqwBi" id="4PZEGlYUqX3" role="37wK5m">
                           <node concept="37vLTw" id="4PZEGlYUqX4" role="2Oq$k0">
@@ -1545,36 +1583,6 @@
       </node>
       <node concept="2AHcQZ" id="3tYsUK_t6J$" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3clFb_" id="4EQk8IqRqLG" role="jymVt">
-      <property role="TrG5h" value="getTargetConcept" />
-      <node concept="3Tm6S6" id="4EQk8IqRqLH" role="1B3o_S" />
-      <node concept="3uibUv" id="21bDgbOojmo" role="3clF45">
-        <ref role="3uigEE" to="c17a:~SAbstractConcept" resolve="SAbstractConcept" />
-      </node>
-      <node concept="3clFbS" id="4EQk8IqRqLb" role="3clF47">
-        <node concept="3cpWs6" id="4EQk8IqRseS" role="3cqZAp">
-          <node concept="3K4zz7" id="4EQk8IqRucs" role="3cqZAk">
-            <node concept="37vLTw" id="4EQk8IqRuzb" role="3K4E3e">
-              <ref role="3cqZAo" node="4EQk8IqRigQ" resolve="mySpecificTargetConcept" />
-            </node>
-            <node concept="2OqwBi" id="21bDgbOoogW" role="3K4GZi">
-              <node concept="37vLTw" id="21bDgbOonxn" role="2Oq$k0">
-                <ref role="3cqZAo" node="21bDgbOnpM_" resolve="myLink" />
-              </node>
-              <node concept="liA8E" id="21bDgbOooTm" role="2OqNvi">
-                <ref role="37wK5l" to="c17a:~SAbstractLink.getTargetConcept():org.jetbrains.mps.openapi.language.SAbstractConcept" resolve="getTargetConcept" />
-              </node>
-            </node>
-            <node concept="3y3z36" id="4EQk8IqRqLm" role="3K4Cdx">
-              <node concept="10Nm6u" id="4EQk8IqRqLn" role="3uHU7w" />
-              <node concept="37vLTw" id="4EQk8IqRtMH" role="3uHU7B">
-                <ref role="3cqZAo" node="4EQk8IqRigQ" resolve="mySpecificTargetConcept" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
     <node concept="3Tm1VV" id="1Z_xaSi0xnU" role="1B3o_S" />

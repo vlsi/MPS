@@ -318,6 +318,10 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.FoldingContainer_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.IBaseTestBlock_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.IBaseTestBlock_TransformationMenu" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.IDelTestChild_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.IDelTestConcreteChild_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.ISpecialDelTestChild_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.ISpecialDelTestConcreteChild_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.InitChildWithDirectCycle_card1_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.InitChildWithDirectCycle_card1n_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.editorTest.editor.InitChildWithTwoSameConceptChildren_Editor" />
@@ -420,6 +424,38 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.transformation.TransformationMenuBase" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.IDelTestChild_Editor" file="IDelTestChild_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.IDelTestConcreteChild_Editor" file="IDelTestConcreteChild_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.ISpecialDelTestChild_Editor" file="ISpecialDelTestChild_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.editorTest.editor.ISpecialDelTestConcreteChild_Editor" file="ISpecialDelTestConcreteChild_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.editorTest.editor.InitChildWithDirectCycle_card1_Editor" file="InitChildWithDirectCycle_card1_Editor.java">
     <classNode dependClassName="java.lang.Override" />

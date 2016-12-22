@@ -124,135 +124,155 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
           break;
         case 20:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
+            return Collections.<ConceptEditor>singletonList(new IDelTestChild_Editor());
           }
           break;
         case 21:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
+            return Collections.<ConceptEditor>singletonList(new IDelTestConcreteChild_Editor());
           }
           break;
         case 22:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
+            return Collections.<ConceptEditor>singletonList(new ISpecialDelTestChild_Editor());
           }
           break;
         case 23:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
+            return Collections.<ConceptEditor>singletonList(new ISpecialDelTestConcreteChild_Editor());
           }
           break;
         case 24:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
+            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1_Editor());
           }
           break;
         case 25:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
+            return Collections.<ConceptEditor>singletonList(new InitChildWithDirectCycle_card1n_Editor());
           }
           break;
         case 26:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
+            return Collections.<ConceptEditor>singletonList(new InitChildWithTwoSameConceptChildren_Editor());
           }
           break;
         case 27:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new InitContainer_Editor());
           }
           break;
         case 28:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
+            return Collections.<ConceptEditor>singletonList(new InspectorBlock_Editor());
           }
           break;
         case 29:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
+            return Collections.<ConceptEditor>singletonList(new IntegerLiteral_Editor());
           }
           break;
         case 30:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
+            return Collections.<ConceptEditor>singletonList(new NonEmptyProperty_Editor());
           }
           break;
         case 31:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
+            return Collections.<ConceptEditor>singletonList(new NotEditableVaraileReference_Editor());
           }
           break;
         case 32:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleNode_Editor());
+            return Collections.<ConceptEditor>singletonList(new ReferenceAnnotataion_Editor());
           }
           break;
         case 33:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleNodeHidingAttribute_Editor());
+            return Collections.<ConceptEditor>singletonList(new SelectionChild_Editor());
           }
           break;
         case 34:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimpleNodesContainer_Editor());
+            return Collections.<ConceptEditor>singletonList(new SelectionContainer_Editor());
           }
           break;
         case 35:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
+            return Collections.<ConceptEditor>singletonList(new SideTranformWrapper_Editor());
           }
           break;
         case 36:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimpleNode_Editor());
           }
           break;
         case 37:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimpleNodeHidingAttribute_Editor());
           }
           break;
         case 38:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimpleNodesContainer_Editor());
           }
           break;
         case 39:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimplePropertyAttribute_Editor());
           }
           break;
         case 40:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
+            return Collections.<ConceptEditor>singletonList(new SimplePropertyContainer_Editor());
           }
           break;
         case 41:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
+            return Collections.<ConceptEditor>singletonList(new StubBlock_Editor());
           }
           break;
         case 42:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
+            return Collections.<ConceptEditor>singletonList(new StyleChild_Editor());
           }
           break;
         case 43:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
+            return Collections.<ConceptEditor>singletonList(new StyleParent_Editor());
           }
           break;
         case 44:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
+            return Collections.<ConceptEditor>singletonList(new SubstTestBooleanPropertyChild_Editor());
           }
           break;
         case 45:
           if (true) {
-            return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
+            return Collections.<ConceptEditor>singletonList(new SubstTestEnumPropertyChild_Editor());
           }
           break;
         case 46:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new SubstTestRoot_Editor());
+          }
+          break;
+        case 47:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new TestBlockList_Editor());
+          }
+          break;
+        case 48:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new VariableDeclarationBlock_Editor());
+          }
+          break;
+        case 49:
+          if (true) {
+            return Collections.<ConceptEditor>singletonList(new VariableDeclarationReference_Editor());
+          }
+          break;
+        case 50:
           if (true) {
             return Collections.<ConceptEditor>singletonList(new VerticalLayoutBlockList_Editor());
           }
@@ -324,7 +344,7 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase {
     }
     return res;
   }
-  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, "jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x50d5d1397cfbad50L, "jetbrains.mps.lang.editor.editorTest.structure.AttributeChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5ed256cba0c5b00L, "jetbrains.mps.lang.editor.editorTest.structure.AttributeWithChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5ed256cba0c5c3eL, "jetbrains.mps.lang.editor.editorTest.structure.AttributedConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa8L, "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75ed75ef06861df4L, "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x214b16e1c73042cfL, "jetbrains.mps.lang.editor.editorTest.structure.ClassReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c480L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958eL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildSpecialContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958dL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9adb37c7L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a4L, "jetbrains.mps.lang.editor.editorTest.structure.InitContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L, "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f68107L, "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L, "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc6674L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd02L, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNode"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd03L, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNodeHidingAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd1cL, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNodesContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d9420cL, "jetbrains.mps.lang.editor.editorTest.structure.StubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efcL, "jetbrains.mps.lang.editor.editorTest.structure.StyleChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efbL, "jetbrains.mps.lang.editor.editorTest.structure.StyleParent"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5f322b2c7f2c2abaL, "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"));
+  private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0a = buildConceptIndices(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f8d778L, "jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x50d5d1397cfbad50L, "jetbrains.mps.lang.editor.editorTest.structure.AttributeChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5ed256cba0c5b00L, "jetbrains.mps.lang.editor.editorTest.structure.AttributeWithChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5ed256cba0c5c3eL, "jetbrains.mps.lang.editor.editorTest.structure.AttributedConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f761daL, "jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa8L, "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x75ed75ef06861df4L, "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x214b16e1c73042cfL, "jetbrains.mps.lang.editor.editorTest.structure.ClassReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc626858L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedByDefault"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xc06e5dab9716359L, "jetbrains.mps.lang.editor.editorTest.structure.CollapsedConditionally"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x671b139f12ae357fL, "jetbrains.mps.lang.editor.editorTest.structure.CollapsibleConcept"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2fd7ff1ee43ef592L, "jetbrains.mps.lang.editor.editorTest.structure.Composition"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c447L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c480L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6c4cdc7b1a84c222L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958eL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestChildSpecialContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9ada958dL, "jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4ab6508b9adb37c7L, "jetbrains.mps.lang.editor.editorTest.structure.DelTestSpecialChild1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x569b712fbc6572f0L, "jetbrains.mps.lang.editor.editorTest.structure.FoldingContainer"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x28d7d34707431fcdL, "jetbrains.mps.lang.editor.editorTest.structure.IDelTestChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x28d7d34707431fceL, "jetbrains.mps.lang.editor.editorTest.structure.IDelTestConcreteChild"), MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x28d7d34707454167L, "jetbrains.mps.lang.editor.editorTest.structure.ISpecialDelTestChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x28d7d3470745416aL, "jetbrains.mps.lang.editor.editorTest.structure.ISpecialDelTestConcreteChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a5L, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x78d10d0e00c2593aL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithDirectCycle_card1n"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x67739d157f7a404bL, "jetbrains.mps.lang.editor.editorTest.structure.InitChildWithTwoSameConceptChildren"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x1b00debf2d3601a4L, "jetbrains.mps.lang.editor.editorTest.structure.InitContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x31b7f1691792b1f4L, "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12f68107L, "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x4e2db2c9f6d76026L, "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x44e7cb3605ec4004L, "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x6a48144fa856f460L, "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc8251L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x617705b269dc6674L, "jetbrains.mps.lang.editor.editorTest.structure.SelectionContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x46eb259b12ef5172L, "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd02L, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNode"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd03L, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNodeHidingAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x36c6196241a7cd1cL, "jetbrains.mps.lang.editor.editorTest.structure.SimpleNodesContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f915adL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d9420cL, "jetbrains.mps.lang.editor.editorTest.structure.StubBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efcL, "jetbrains.mps.lang.editor.editorTest.structure.StyleChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5a79ee4e778a5efbL, "jetbrains.mps.lang.editor.editorTest.structure.StyleParent"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c33b7L, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestRoot"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d62dbbL, "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137f90ed1L, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2444dad137fa9b5cL, "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x5f322b2c7f2c2abaL, "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0d = buildConceptIndices(MetaAdapterFactory.getInterfaceConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x3361ce1b17d7eaa9L, "jetbrains.mps.lang.editor.editorTest.structure.IBaseTestBlock"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0x2c59702023f8181eL, "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer"));
   private static final Map<SAbstractConcept, Integer> indices_xbvbvu_a0e = buildConceptIndices(MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c34aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestAbstractChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c352dL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestBooleanPropertyChild"), MetaAdapterFactory.getConcept(0x81f0abb8d71e4d13L, 0xa0c1d2291fbb28b7L, 0xd4944c0b03c35aeL, "jetbrains.mps.lang.editor.editorTest.structure.SubstTestEnumPropertyChild"));
 }
