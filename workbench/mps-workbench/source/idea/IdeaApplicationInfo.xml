@@ -3,7 +3,7 @@
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
-  <logo url="/splash.png" textcolor="002387" progressColor="00E184" progressY="393" progressHeight="3"/>
+  <logo url="/splash.png" textcolor="c2c2c2" progressColor="F97A12" progressX="117" progressY="280" progressHeight="3"/>
   <about url="/mpsAbout.png"/><!-- foreground="7A858F" copyrightForeground="7A858F" linkColor="9b5121" logoX="300" logoY="265" logoW="75" logoH="30"-->
   <icon size32="/MPS_32.png" size16="/MPS_16.png" size128="/MPS_128.png" ico="MPS.ico"/>
   <dialogs-image url="/dialogImage.png"/><!--TODO: remove in 3.4-->
