@@ -20,7 +20,6 @@ import com.intellij.ide.CutProvider;
 import com.intellij.ide.PasteProvider;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -242,7 +241,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   @Override
   public void addToolbarActions(final DefaultActionGroup group) {
-    group.add(new ShowNodeStructureToggleAction());
     group.addAction(new SortByTypeToggleAction()).setAsSecondary(true);
   }
 
@@ -330,8 +328,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     return result;
   }
 
-  public List<Pair<SModel,String>> getSelectedPackages() {
-    List<Pair<SModel,String>> result = new ArrayList<Pair<SModel,String>>();
+  public List<Pair<SModel, String>> getSelectedPackages() {
+    List<Pair<SModel, String>> result = new ArrayList<Pair<SModel, String>>();
     TreePath[] paths = getTree().getSelectionPaths();
     SRepository projectRepo = ProjectHelper.getProjectRepository(getProject());
     if (paths == null || projectRepo == null) {
@@ -341,7 +339,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       if (node instanceof PackageNode) {
         PackageNode pn = (PackageNode) node;
-        result.add(new Pair<SModel, String>(pn.getModelReference().resolve(projectRepo),pn.getFullPackage()));
+        result.add(new Pair<SModel, String>(pn.getModelReference().resolve(projectRepo), pn.getFullPackage()));
       }
     }
     return result;
@@ -582,27 +580,6 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     @Override
     public void afterRefreshFinish(boolean asynchonous) {
       myRepositoryListener.rebuildTreeIfNeeded();
-    }
-  }
-
-  private class ShowNodeStructureToggleAction extends ToggleAction {
-    public ShowNodeStructureToggleAction() {
-      super("Show node structure", "Show node structure", Icons.PROP_AND_REF);
-    }
-
-    @Override
-    public boolean isSelected(@Nullable AnActionEvent e) {
-      return showNodeStructure();
-    }
-
-    @Override
-    public void setSelected(@Nullable AnActionEvent e, boolean state) {
-      if (state != showNodeStructure()) {
-        if (getProjectView() instanceof ProjectViewImpl) {
-          ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
-        }
-        rebuild();
-      }
     }
   }
 

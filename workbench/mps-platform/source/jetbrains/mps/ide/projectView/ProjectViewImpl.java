@@ -89,9 +89,4 @@ public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectVi
     ((ProjectViewPaneOverride) newPane).restoreExpandedPathsOverride();
     return true;
   }
-
-  @Override
-  protected boolean isShowMembersOptionSupported() {
-    return false;
-  }
 }

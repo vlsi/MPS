@@ -301,7 +301,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   @Override
   public void addToolbarActions(DefaultActionGroup group) {
     super.addToolbarActions(group);
-    group.add(myShowDescriptorModelsAction);
+    group.addAction(myShowDescriptorModelsAction).setAsSecondary(true);
   }
 
   @Override
