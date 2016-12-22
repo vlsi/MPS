@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.actions.descriptor.PasteWrapper;
 
 public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor implements ActionAspectDescriptor {
   private static final String LANGUAGE_FQ_NAME = "jetbrains.mps.console.ideCommands";
@@ -30,6 +31,10 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   @Override
   public boolean hasBuilders() {
     return false;
+  }
+  @Override
+  public Collection<PasteWrapper> getPasteWrappers() {
+    return Arrays.asList(new PasteWrapper[]{new PasterNodeRef_wrappers_PasteWrapper_0(), new PasterNodeRef_wrappers_PasteWrapper_1()});
   }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbsractMake", "SubtreeStatisticsTarget"};
 }

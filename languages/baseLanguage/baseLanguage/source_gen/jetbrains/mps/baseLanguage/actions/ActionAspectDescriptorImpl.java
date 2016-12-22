@@ -9,6 +9,9 @@ import jetbrains.mps.openapi.actions.descriptor.NodeFactory;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import java.util.Arrays;
 import java.util.Collections;
+import jetbrains.mps.openapi.actions.descriptor.CopyPreProcessor;
+import jetbrains.mps.openapi.actions.descriptor.PastePostProcessor;
+import jetbrains.mps.openapi.actions.descriptor.PasteWrapper;
 
 public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor implements ActionAspectDescriptor {
   private static final String LANGUAGE_FQ_NAME = "jetbrains.mps.baseLanguage";
@@ -86,6 +89,18 @@ public class ActionAspectDescriptorImpl extends BaseActionAspectDescriptor imple
   @Override
   public boolean hasBuilders() {
     return false;
+  }
+  @Override
+  public Collection<CopyPreProcessor> getCopyPreProcessors() {
+    return Arrays.asList(new CopyPreProcessor[]{new BL_CopyPasteHandlers_CopyPreProcessor_0()});
+  }
+  @Override
+  public Collection<PastePostProcessor> getPastePostProcessors() {
+    return Arrays.asList(new PastePostProcessor[]{new BL_CopyPasteHandlers_PastePostProcessor_0(), new BL_CopyPasteHandlers_PastePostProcessor_1()});
+  }
+  @Override
+  public Collection<PasteWrapper> getPasteWrappers() {
+    return Arrays.asList(new PasteWrapper[]{new wrappers_PasteWrapper_0(), new wrappers_PasteWrapper_1(), new wrappers_PasteWrapper_2(), new wrappers_PasteWrapper_3(), new wrappers_PasteWrapper_4(), new wrappers_PasteWrapper_5(), new wrappers_PasteWrapper_6(), new wrappers_PasteWrapper_7(), new wrappers_PasteWrapper_8(), new wrappers_PasteWrapper_9(), new wrappers_PasteWrapper_10(), new wrappers_PasteWrapper_11(), new wrappers_PasteWrapper_12(), new wrappers_PasteWrapper_13(), new wrappers_PasteWrapper_14(), new wrappers_PasteWrapper_15(), new wrappers_PasteWrapper_16(), new wrappers_PasteWrapper_17()});
   }
   private static String[] stringSwitchCases_tpto26_a0a0a0c = new String[]{"AbstractForStatement", "AdditionalForLoopVariable", "AnnotationMethodDeclaration", "BaseAssignmentExpression", "BinaryOperation", "BitwiseNotExpression", "BlockStatement", "ClassConcept", "ConstructorDeclaration", "DoWhileStatement", "FieldDeclaration", "ForStatement", "ForeachStatement", "GenericNewExpression", "IfStatement", "ImplicitAnnotationInstanceValue", "InstanceMethodDeclaration", "Interface", "LocalVariableDeclaration", "NotExpression", "ParenthesizedExpression", "PrefixDecrementExpression", "PrefixIncrementExpression", "ReturnStatement", "SingleLineComment", "StaticFieldDeclaration", "StaticMethodDeclaration", "TryCatchStatement", "TryStatement", "WhileStatement"};
 }
