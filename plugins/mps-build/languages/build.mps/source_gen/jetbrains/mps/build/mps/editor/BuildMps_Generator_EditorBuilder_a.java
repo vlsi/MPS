@@ -30,7 +30,8 @@ import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLoo
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.workflow.editor.workflowStyles_StyleSheet.keywordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
@@ -188,9 +189,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
   }
   private EditorCell createRefCell_leuqor_b3a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new BuildMps_Generator_EditorBuilder_a._Inline_leuqor_a1d0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new BuildMps_Generator_EditorBuilder_a.Inline_Builder_leuqor_a1d0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "sourceLanguage");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_nullable_reference(cell);
+        return cell;
       }
     };
     provider.setRole("sourceLanguage");
@@ -208,18 +218,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_leuqor_a1d0 extends InlineCellProvider {
-    public _Inline_leuqor_a1d0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new BuildMps_Generator_EditorBuilder_a.Inline_Builder_leuqor_a1d0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_leuqor_a1d0 extends AbstractEditorBuilder {
     @NotNull

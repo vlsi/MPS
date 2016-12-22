@@ -13,7 +13,6 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -71,9 +70,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
   }
   private EditorCell createRefCell_6u0t67_b0_0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new GeneratorDebug_InputNode_InspectorBuilder_a._Inline_6u0t67_a1a_0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+        EditorCell cell = new GeneratorDebug_InputNode_InspectorBuilder_a.Inline_Builder_6u0t67_a1a_0(getEditorContext(), myNode, effectiveNode).createCell();
+        installDeleteActions_nullable_aggregation(cell);
+        return cell;
       }
     };
     provider.setRole("node");
@@ -91,18 +93,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_6u0t67_a1a_0 extends InlineCellProvider {
-    public _Inline_6u0t67_a1a_0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new GeneratorDebug_InputNode_InspectorBuilder_a.Inline_Builder_6u0t67_a1a_0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_6u0t67_a1a_0 extends AbstractEditorBuilder {
     @NotNull

@@ -22,7 +22,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.GeneratorKeyWordStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -111,9 +112,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
   private EditorCell createRefCell_pxqe0v_b0a0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a1a0a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a1a0a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "applicableConcept");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("applicableConcept");
@@ -134,18 +144,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_pxqe0v_a1a0a extends InlineCellProvider {
-    public _Inline_pxqe0v_a1a0a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a1a0a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_pxqe0v_a1a0a extends AbstractEditorBuilder {
     @NotNull
@@ -360,9 +358,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
   private EditorCell createRefCell_pxqe0v_a2a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a0c0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a0c0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "labelDeclaration");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_nullable_reference(cell);
+        return cell;
       }
     };
     provider.setRole("labelDeclaration");
@@ -380,18 +387,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_pxqe0v_a0c0 extends InlineCellProvider {
-    public _Inline_pxqe0v_a0c0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a0c0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_pxqe0v_a0c0 extends AbstractEditorBuilder {
     @NotNull
@@ -442,9 +437,18 @@ import jetbrains.mps.nodeEditor.MPSFonts;
   }
   private EditorCell createRefCell_pxqe0v_d0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Root_MappingRule_EditorBuilder_a._Inline_pxqe0v_a3a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a3a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "template");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("template");
@@ -462,18 +466,6 @@ import jetbrains.mps.nodeEditor.MPSFonts;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_pxqe0v_a3a extends InlineCellProvider {
-    public _Inline_pxqe0v_a3a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Root_MappingRule_EditorBuilder_a.Inline_Builder_pxqe0v_a3a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_pxqe0v_a3a extends AbstractEditorBuilder {
     @NotNull

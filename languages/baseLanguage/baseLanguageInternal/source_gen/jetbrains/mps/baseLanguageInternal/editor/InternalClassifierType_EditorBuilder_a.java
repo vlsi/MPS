@@ -22,7 +22,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet.InternalKeywordStyleClass;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.BaseAngleBracketStyleClass;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -123,9 +124,18 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
   private EditorCell createRefCell_7zoim2_d0a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new InternalClassifierType_EditorBuilder_a._Inline_7zoim2_a3a0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new InternalClassifierType_EditorBuilder_a.Inline_Builder_7zoim2_a3a0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "classifier");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("classifier");
@@ -143,18 +153,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_7zoim2_a3a0 extends InlineCellProvider {
-    public _Inline_7zoim2_a3a0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new InternalClassifierType_EditorBuilder_a.Inline_Builder_7zoim2_a3a0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_7zoim2_a3a0 extends AbstractEditorBuilder {
     @NotNull
@@ -342,9 +340,18 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
   }
   private EditorCell createRefCell_7zoim2_d0a_0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new InternalClassifierType_EditorBuilder_a._Inline_7zoim2_a3a0_0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new InternalClassifierType_EditorBuilder_a.Inline_Builder_7zoim2_a3a0_0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "classifier");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("classifier");
@@ -362,18 +369,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_7zoim2_a3a0_0 extends InlineCellProvider {
-    public _Inline_7zoim2_a3a0_0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new InternalClassifierType_EditorBuilder_a.Inline_Builder_7zoim2_a3a0_0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_7zoim2_a3a0_0 extends AbstractEditorBuilder {
     @NotNull

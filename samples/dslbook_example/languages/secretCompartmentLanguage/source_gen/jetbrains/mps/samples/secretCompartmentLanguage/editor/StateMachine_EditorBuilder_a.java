@@ -29,7 +29,8 @@ import jetbrains.mps.nodeEditor.cellMenu.OldNewCompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 
 /*package*/ class StateMachine_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -214,9 +215,18 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
   }
   private EditorCell createRefCell_qpt50r_b5a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new StateMachine_EditorBuilder_a._Inline_qpt50r_a1f0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new StateMachine_EditorBuilder_a.Inline_Builder_qpt50r_a1f0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "startState");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("startState");
@@ -234,18 +244,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_qpt50r_a1f0 extends InlineCellProvider {
-    public _Inline_qpt50r_a1f0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new StateMachine_EditorBuilder_a.Inline_Builder_qpt50r_a1f0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_qpt50r_a1f0 extends AbstractEditorBuilder {
     @NotNull

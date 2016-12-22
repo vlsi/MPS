@@ -19,7 +19,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.lang.generator.editor.Styles_StyleSheet.mappingRuleDeclarationStyleClass;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.nodeEditor.MPSColors;
@@ -112,9 +113,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
   }
   private EditorCell createRefCell_qk07ti_d0a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new ExportLabel_EditorBuilder_a._Inline_qk07ti_a3a0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a3a0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "inputKind");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("inputKind");
@@ -132,18 +142,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_qk07ti_a3a0 extends InlineCellProvider {
-    public _Inline_qk07ti_a3a0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a3a0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_qk07ti_a3a0 extends AbstractEditorBuilder {
     @NotNull
@@ -194,9 +192,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
   }
   private EditorCell createRefCell_qk07ti_f0a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new ExportLabel_EditorBuilder_a._Inline_qk07ti_a5a0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a5a0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "outputKind");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("outputKind");
@@ -214,18 +221,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_qk07ti_a5a0 extends InlineCellProvider {
-    public _Inline_qk07ti_a5a0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a5a0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_qk07ti_a5a0 extends AbstractEditorBuilder {
     @NotNull
@@ -291,9 +286,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
   }
   private EditorCell createRefCell_qk07ti_c1a() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new ExportLabel_EditorBuilder_a._Inline_qk07ti_a2b0(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a2b0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "dataHolder");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("dataHolder");
@@ -311,18 +315,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_qk07ti_a2b0 extends InlineCellProvider {
-    public _Inline_qk07ti_a2b0(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new ExportLabel_EditorBuilder_a.Inline_Builder_qk07ti_a2b0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_qk07ti_a2b0 extends AbstractEditorBuilder {
     @NotNull

@@ -17,7 +17,8 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -97,9 +98,18 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
   }
   private EditorCell createRefCell_wgg1gc_d0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new SubstituteMenu_Named_EditorBuilder_a._Inline_wgg1gc_a3a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new SubstituteMenu_Named_EditorBuilder_a.Inline_Builder_wgg1gc_a3a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "conceptDeclaration");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("conceptDeclaration");
@@ -117,18 +127,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_wgg1gc_a3a extends InlineCellProvider {
-    public _Inline_wgg1gc_a3a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new SubstituteMenu_Named_EditorBuilder_a.Inline_Builder_wgg1gc_a3a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_wgg1gc_a3a extends AbstractEditorBuilder {
     @NotNull

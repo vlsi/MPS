@@ -14,7 +14,8 @@ import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodCallStyleClass;
@@ -60,9 +61,18 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodC
   }
   private EditorCell createRefCell_2jlgx_b0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new LocalMethodCall_EditorBuilder_a._Inline_2jlgx_a1a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new LocalMethodCall_EditorBuilder_a.Inline_Builder_2jlgx_a1a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "baseMethodDeclaration");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("method");
@@ -80,18 +90,6 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.MPSMethodC
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_2jlgx_a1a extends InlineCellProvider {
-    public _Inline_2jlgx_a1a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new LocalMethodCall_EditorBuilder_a.Inline_Builder_2jlgx_a1a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_2jlgx_a1a extends AbstractEditorBuilder {
     @NotNull

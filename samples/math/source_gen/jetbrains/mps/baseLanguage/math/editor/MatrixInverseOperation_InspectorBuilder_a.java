@@ -12,7 +12,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 
 /*package*/ class MatrixInverseOperation_InspectorBuilder_a extends AbstractEditorBuilder {
@@ -51,9 +50,12 @@ import jetbrains.mps.nodeEditor.EditorManager;
   }
   private EditorCell createRefCell_j4oyiy_b0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new MatrixInverseOperation_InspectorBuilder_a._Inline_j4oyiy_a1a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+        EditorCell cell = new MatrixInverseOperation_InspectorBuilder_a.Inline_Builder_j4oyiy_a1a(getEditorContext(), myNode, effectiveNode).createCell();
+        installDeleteActions_nullable_aggregation(cell);
+        return cell;
       }
     };
     provider.setRole("context");
@@ -71,18 +73,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_j4oyiy_a1a extends InlineCellProvider {
-    public _Inline_j4oyiy_a1a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new MatrixInverseOperation_InspectorBuilder_a.Inline_Builder_j4oyiy_a1a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_j4oyiy_a1a extends AbstractEditorBuilder {
     @NotNull

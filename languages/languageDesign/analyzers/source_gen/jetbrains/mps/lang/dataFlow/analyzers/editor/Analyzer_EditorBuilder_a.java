@@ -34,7 +34,6 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 /*package*/ class Analyzer_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -419,9 +418,12 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
   }
   private EditorCell createRefCell_590xoz_l0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Analyzer_EditorBuilder_a._Inline_590xoz_a11a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a11a(getEditorContext(), myNode, effectiveNode).createCell();
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("initialFunction");
@@ -439,18 +441,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_590xoz_a11a extends InlineCellProvider {
-    public _Inline_590xoz_a11a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a11a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_590xoz_a11a extends AbstractEditorBuilder {
     @NotNull
@@ -554,9 +544,12 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
   }
   private EditorCell createRefCell_590xoz_o0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Analyzer_EditorBuilder_a._Inline_590xoz_a41a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a41a(getEditorContext(), myNode, effectiveNode).createCell();
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("mergeFunction");
@@ -574,18 +567,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_590xoz_a41a extends InlineCellProvider {
-    public _Inline_590xoz_a41a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a41a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_590xoz_a41a extends AbstractEditorBuilder {
     @NotNull
@@ -689,9 +670,12 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
   }
   private EditorCell createRefCell_590xoz_r0() {
     CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
       @Override
-      protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-        return new Analyzer_EditorBuilder_a._Inline_590xoz_a71a(innerCellNode, myNode);
+      protected EditorCell createRefCell(EditorContext context, SNode effectiveNode, SNode node) {
+        EditorCell cell = new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a71a(getEditorContext(), myNode, effectiveNode).createCell();
+        installDeleteActions_atLeastOne(cell);
+        return cell;
       }
     };
     provider.setRole("funFunction");
@@ -709,18 +693,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_590xoz_a71a extends InlineCellProvider {
-    public _Inline_590xoz_a71a(SNode node, SNode refNode) {
-      super(node, refNode);
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new Analyzer_EditorBuilder_a.Inline_Builder_590xoz_a71a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_590xoz_a71a extends AbstractEditorBuilder {
     @NotNull
