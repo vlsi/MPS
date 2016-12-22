@@ -6,6 +6,8 @@
     <excludeFromCompile>
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/core/analyzers/solutions/sandbox/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.test.generation/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages.test/languageDesign/lang.editor.test.generation/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/sandbox/test_gen" includeSubdirectories="true" />
