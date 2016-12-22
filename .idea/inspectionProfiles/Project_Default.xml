@@ -1,7 +1,9 @@
 <component name="InspectionProjectProfileManager">
   <profile version="1.0">
     <option name="myName" value="Project Default" />
-    <option name="myLocal" value="true" />
+    <inspection_tool class="PointlessBooleanExpression" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="m_ignoreExpressionsContainingConstants" value="true" />
+    </inspection_tool>
     <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <searchConfiguration name="SConcept values are compared using '==', not 'equals()'" text="$SConceptLHS$ == $SConceptRHS$" recursive="true" caseInsensitive="true" type="JAVA">
         <constraint name="S" within="" contains="" />
@@ -15,6 +17,11 @@
         <constraint name="SConceptRHS" nameOfExprType="SConcept" exprTypeWithinHierarchy="true" within="" contains="" />
         <constraint name="__context__" target="true" within="" contains="" />
       </searchConfiguration>
+    </inspection_tool>
+    <inspection_tool class="WeakerAccess" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="SUGGEST_PACKAGE_LOCAL_FOR_MEMBERS" value="true" />
+      <option name="SUGGEST_PACKAGE_LOCAL_FOR_TOP_CLASSES" value="true" />
+      <option name="SUGGEST_PRIVATE_FOR_INNERS" value="false" />
     </inspection_tool>
   </profile>
 </component>
