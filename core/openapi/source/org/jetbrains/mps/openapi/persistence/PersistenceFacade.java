@@ -15,7 +15,9 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -61,25 +63,44 @@ public abstract class PersistenceFacade {
 
   /**
    * Retrieves the factory associated with the given file extension.
+   * @deprecated
    */
-  public abstract ModelFactory getModelFactory(String extension);
-
+  @ToRemove(version = 3.6)
+  @Deprecated
+  public abstract ModelFactory getModelFactory(@Nullable String extension);
 
   /**
    * Retrieves the factory for default MPS storage format (xml-based).
+   * @deprecated unclear contract
    */
+  @ToRemove(version = 3.6)
+  @Deprecated
   public abstract ModelFactory getDefaultModelFactory();
 
   /**
    * Registers the factory with the file extension, overwriting potential earlier registration.
    *
    * @param factory The factory to register, null to clear the registration for the given type.
+   * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
+   *             Use {@link #registerModelFactory(ModelFactory)} instead.
    */
-  public abstract void setModelFactory(String extension, ModelFactory factory);
+  @ToRemove(version = 3.6)
+  @Deprecated
+  public abstract void setModelFactory(@Nullable String extension, ModelFactory factory);
+
+  public abstract void registerModelFactory(@NotNull ModelFactory factory);
+
+  public abstract void unregisterModelFactory(@NotNull ModelFactory factory);
 
   /**
    * Retrieves registered storage formats extensions.
-   * */
+   * @deprecated the model factories are separated from the type of location
+   *             (while file extension as a key clearly violates this idea).
+   *             Thus one might to look at the
+   *             <code>jetbrains.mps.extapi.persistence.dataSource.FileBasedDataSourceService</code>
+   *             which can be used to register your one file-based data source factories.
+   */
+  @Deprecated
   public abstract Set<String> getModelFactoryExtensions();
 
   /**

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,25 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package jetbrains.mps.extapi.persistence.dataSource;
 
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-
-import java.util.Collection;
+import jetbrains.mps.extapi.persistence.dataSource.DataSourceService.DataSourceFactory.DataSourceKey;
+import org.jetbrains.mps.openapi.vfs.File;
 
 /**
- * evgeny, 11/4/12
+ * Service-provider interface for creating FileBasedDataSources
+ * Created by apyshkin on 12/22/16.
  */
-public interface FileSystemBasedDataSource extends DataSource, DisposableDataSource {
+public interface FileBasedDataSourceFactory {
+  @NotNull FileSystemBasedDataSource create(@NotNull File file);
 
-  /**
-   * @return collection of files (or folders) which comprise a set of source paths (!) for this DataSource
-   * CONTRACT:
-   * Minimality:
-   * 1. If a 'file' is in the result then 'file.getParent()' could not be among resulting files
-   * 2. All the files in the directory could not be there (the parent directory as a whole would be returned instead)
-   */
-  @NotNull Collection<IFile> getAffectedFiles();
+  @NotNull DataSourceKey getKey();
 }

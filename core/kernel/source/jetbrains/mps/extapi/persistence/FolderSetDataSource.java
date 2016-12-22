@@ -247,6 +247,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
     return max;
   }
 
+  @NotNull
   @Override
   public Collection<IFile> getAffectedFiles() {
     return getFiles();

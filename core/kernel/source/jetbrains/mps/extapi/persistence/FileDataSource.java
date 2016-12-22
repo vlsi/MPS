@@ -189,9 +189,9 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
     }
   }
 
+  @NotNull
   @Override
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFile);
   }
-
 }

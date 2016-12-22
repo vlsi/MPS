@@ -34,7 +34,7 @@ import java.util.*;
 /**
  * evgeny, 11/4/12
  */
-public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
+public abstract class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
 
@@ -47,7 +47,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  public FolderDataSource(@NotNull IFile folder, ModelRoot modelRoot) {
+  protected FolderDataSource(@NotNull IFile folder, ModelRoot modelRoot) {
     this.myFolder = folder;
     this.myModelRoot = modelRoot;
   }
@@ -238,9 +238,9 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
     }
   }
 
+  @NotNull
   @Override
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFolder);
   }
-
 }

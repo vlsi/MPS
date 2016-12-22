@@ -111,13 +111,13 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(dataSource instanceof MultiStreamDataSource)) {
+    if (!canCreate(dataSource, options)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
     String modelName = options.get(OPTION_MODELNAME);
     if (modelName == null) {
-      throw new IOException("modelName is not provided");
+      throw new IOException("Model name is not provided");
     }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
@@ -181,7 +181,6 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   public boolean isBinary() {
     return false;
   }
-
 
   @Override
   public String getFileExtension() {
