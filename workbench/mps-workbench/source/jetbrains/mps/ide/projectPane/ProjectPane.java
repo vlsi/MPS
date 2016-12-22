@@ -98,6 +98,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
       ProjectPane.this.updateFromRoot(true);
     }
   };
+  private final ReloadListener myReloadListener;
 
   private MyScrollPane myScrollPane;
   // FIXME there's update queue in MPSTree, do really we need both?
@@ -107,7 +108,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   private final FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
     @Override
-    public void selectionChanged(FileEditorManagerEvent event) {
+    public void selectionChanged(@NotNull FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
       if (fileEditor instanceof MPSFileNodeEditor) {
         final MPSFileNodeEditor editor = (MPSFileNodeEditor) fileEditor;
@@ -130,23 +131,24 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   public ProjectPane(final Project project, ProjectView projectView) {
     super(project, projectView);
     myUpdateQueue.setRestartTimerOnAdd(true);
-    ReloadManager.getInstance().addReloadListener(new ReloadListener() {
+    myReloadListener = new ReloadListener() {
       @Override
       public void reloadStarted() {
-
       }
 
       @Override
       public void reloadFinished() {
         rebuild();
       }
-    });
+    };
+    ApplicationManager.getApplication().getComponent(ReloadManager.class).addReloadListener(myReloadListener);
     myShowDescriptorModelsAction = new ShowDescriptorModelsAction(this);
   }
 
   @Override
   public void dispose() {
     myUpdateQueue.dispose();
+    ApplicationManager.getApplication().getComponent(ReloadManager.class).removeReloadListener(myReloadListener);
     super.dispose();
   }
 
@@ -396,7 +398,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   }
 
   private List<List<String>> readPaths(Element parentElement, String name) {
-    List<List<String>> result = new ArrayList<List<String>>();
+    List<List<String>> result = new ArrayList<>();
 
     for (Element pathElement : parentElement.getChildren(name)) {
       List<String> path = readPath(pathElement);
@@ -407,7 +409,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   @NotNull
   private List<String> readPath(Element pathElement) {
-    List<String> path = new ArrayList<String>();
+    List<String> path = new ArrayList<>();
     for (Element elm : pathElement.getChildren("PATH_ELEMENT")) {
       String treeNodeId = readNodeId(elm);
       if (treeNodeId != null) {
@@ -476,12 +478,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
 
   private void selectNodeWithoutExpansion(@NotNull SNodeReference nodeRef) {
     final Runnable lookupAndSelect = new LookupAndSelect(nodeRef);
-    myUpdateQueue.queue(createModelReadUpdate(UpdateID.SELECT, new Runnable() {
-      @Override
-      public void run() {
-        getTree().runWithoutExpansion(lookupAndSelect);
-      }
-    }));
+    myUpdateQueue.queue(createModelReadUpdate(UpdateID.SELECT, () -> getTree().runWithoutExpansion(lookupAndSelect)));
   }
 
   /**
@@ -497,25 +494,17 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
   public void selectNextModel(SModel modelDescriptor) {
     final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(modelDescriptor);
     // FIXME selectNextNode does the same, refactor. Check callers if need ThreadUtils at all
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        ProjectTree tree = getTree();
-        if (tree != null) {
-          tree.selectNode(mpsTreeNode);
-        }
+    ThreadUtils.runInUIThreadNoWait(() -> {
+      ProjectTree tree = getTree();
+      if (tree != null) {
+        tree.selectNode(mpsTreeNode);
       }
     });
   }
 
   public void selectNextNode(SNode node) {
     final MPSTreeNode mpsTreeNode = createFindHelper().findNextTreeNode(node);
-    ThreadUtils.runInUIThreadNoWait(new Runnable() {
-      @Override
-      public void run() {
-        getTree().selectNode(mpsTreeNode);
-      }
-    });
+    ThreadUtils.runInUIThreadNoWait(() -> getTree().selectNode(mpsTreeNode));
   }
 
   //----tree node selection queries---
@@ -676,6 +665,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane implements ProjectVi
     /*package*/ boolean isDefaultState() {
       return !isSelected();
     }
+
     /*package*/ void setState(boolean selected) {
       myState = selected;
     }

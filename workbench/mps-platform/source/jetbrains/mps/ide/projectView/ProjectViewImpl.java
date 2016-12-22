@@ -76,17 +76,13 @@ public class ProjectViewImpl extends com.intellij.ide.projectView.impl.ProjectVi
     super.loadState(parentNode);
   }
 
-  private boolean viewSelectionChangedOverride() {
+  private void viewSelectionChangedOverride() {
     // the current view ID is set in the super.showPane(), which must be called before
     final AbstractProjectViewPane newPane = getProjectViewPaneById(getCurrentViewId());
-    if (newPane == null) {
-      return false;
-    }
-    if (!(newPane instanceof ProjectViewPaneOverride)) {
-      return false;
+    if (newPane == null || !(newPane instanceof ProjectViewPaneOverride)) {
+      return;
     }
 
     ((ProjectViewPaneOverride) newPane).restoreExpandedPathsOverride();
-    return true;
   }
 }
