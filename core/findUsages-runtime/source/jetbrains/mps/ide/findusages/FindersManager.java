@@ -96,19 +96,26 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
   }
 
   /**
-   * @deprecated we don't use class names to identify finders any longer
-   *             Left for compatibility with external code (just in case there's some),
-   *             MPS code uses counterpart with boolean argument
+   * Generally, external code shall not care to get reloadable finder directly, it's for specific scenarios like query persistence in Find Usages view.
+   * @deprecated Though we still use finder implementation class fqn as a finder persistable identity, I don't want this exposed in the method name.
+   *             Left for compatibility with external code (just in case there's some). Perhaps, should bear explicit 'Proxy' or 'Reloadable' part.
    */
   @Nullable
   @Deprecated
   @ToRemove(version = 3.5)
   public ReloadableFinder getFinderByClassName(String className) {
-    return (ReloadableFinder) getFinderByClassName(className, true);
+    IInterfacedFinder finder = getFinder(className);
+    return finder == null ? null : new ReloadableFinder(className);
   }
 
-  @ToRemove(version = 3.5)
-  public IInterfacedFinder getFinderByClassName(String className, boolean wrapAsReloadable) {
+  /**
+   * @param finderIdentity at the moment, fqn of finder implementation class. NOTE, it's not used for classloading as is, merely as identifier to find
+   *                       registered implementation
+   * @return {@code null} if no finder with supplied identity found or identity is null.
+   */
+  @Nullable
+  public IInterfacedFinder getFinder(@Nullable String finderIdentity) {
+    final String className = finderIdentity;
     if (className == null) {
       return null;
     }
@@ -127,8 +134,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
       if (!lf.matchesLanguage(declaringLanguageName)) {
         continue;
       }
-      GeneratedFinder finder = lf.findByMangledName(finderMangledName);
-      return finder == null || !wrapAsReloadable ? finder : new ReloadableFinder(finder);
+      return lf.findByMangledName(finderMangledName);
     }
     return null;
   }

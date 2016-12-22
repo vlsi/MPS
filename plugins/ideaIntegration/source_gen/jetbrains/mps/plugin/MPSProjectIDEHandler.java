@@ -142,7 +142,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder")));
+        findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder"));
       }
     });
   }
@@ -173,7 +173,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        IResultProvider provider = FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder"), FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+        IResultProvider provider = FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
         findUsages(method, GlobalScope.getInstance(), provider);
       }
     });

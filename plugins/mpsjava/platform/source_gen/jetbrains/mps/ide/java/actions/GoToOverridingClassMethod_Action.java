@@ -36,7 +36,7 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IInterfacedFinder finder = FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
+    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
     return finder != null && finder.isApplicable(((SNode) MapSequence.fromMap(_params).get("methodNode")));
   }
   @Override
@@ -79,6 +79,6 @@ public class GoToOverridingClassMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell"));
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((MPSProject) MapSequence.fromMap(_params).get("project")), FindUtils.getFinder("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
 }

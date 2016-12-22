@@ -35,7 +35,7 @@ public class GoToOverridingBehaviorMethod_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    IInterfacedFinder finder = FindUtils.getFinderByClassName("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
+    IInterfacedFinder finder = FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     return finder != null && finder.isApplicable(event.getData(MPSCommonDataKeys.NODE));
   }
   @Override
@@ -75,6 +75,6 @@ public class GoToOverridingBehaviorMethod_Action extends BaseAction {
     FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
     EditorCell selectedCell = event.getData(MPSEditorDataKeys.EDITOR_CELL);
     InputEvent inputEvent = event.getInputEvent();
-    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), FindUtils.getFinderByClassName("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
+    GoToHelper.executeFinders(event.getData(MPSCommonDataKeys.NODE), event.getData(MPSCommonDataKeys.MPS_PROJECT), FindUtils.getFinder("jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder"), GoToContextMenuUtil.getRelativePoint(selectedCell, inputEvent));
   }
 }

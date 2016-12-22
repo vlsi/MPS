@@ -176,9 +176,6 @@
       <concept id="1114706874351" name="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" flags="ln" index="29HgVG">
         <child id="1168024447342" name="sourceNodeQuery" index="3NFExx" />
       </concept>
-      <concept id="1114729360583" name="jetbrains.mps.lang.generator.structure.CopySrcListMacro" flags="ln" index="2b32R4">
-        <child id="1168278589236" name="sourceNodesQuery" index="2P8S$" />
-      </concept>
       <concept id="1095416546421" name="jetbrains.mps.lang.generator.structure.MappingConfiguration" flags="ig" index="bUwia">
         <child id="1200911492601" name="mappingLabel" index="2rTMjI" />
         <child id="1167088157977" name="createRootRule" index="2VS0gm" />
@@ -568,27 +565,46 @@
       <ref role="30HIoZ" to="tp3b:5xq1uvO2yzh" resolve="MakeResultProvider" />
       <node concept="gft3U" id="5xq1uvO2yRD" role="1lVwrX">
         <property role="3GE5qa" value="Statements" />
-        <node concept="2YIFZM" id="5xq1uvO2$TA" role="gfFT$">
-          <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
+        <node concept="2YIFZM" id="6xoQp139y92" role="gfFT$">
+          <ref role="37wK5l" to="ngmm:~FindUtils.makeProvider(java.lang.String...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
           <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-          <node concept="2YIFZM" id="5xq1uvO2$Uo" role="37wK5m">
-            <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-            <ref role="37wK5l" to="ngmm:~FindUtils.getFinderByClassName(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" resolve="getFinderByClassName" />
-            <node concept="2b32R4" id="5UvmwWxPntV" role="lGtFl">
-              <node concept="3JmXsc" id="5UvmwWxPntX" role="2P8S$">
-                <node concept="3clFbS" id="5UvmwWxPntY" role="2VODD2">
-                  <node concept="3clFbF" id="5UvmwWxPntZ" role="3cqZAp">
-                    <node concept="2OqwBi" id="5UvmwWxPnu0" role="3clFbG">
-                      <node concept="3Tsc0h" id="5UvmwWxPnu1" role="2OqNvi">
-                        <ref role="3TtcxE" to="tp3b:5xq1uvO2yzi" resolve="finder" />
+          <node concept="Xl_RD" id="6xoQp139y93" role="37wK5m">
+            <property role="Xl_RC" value="" />
+            <node concept="17Uvod" id="6xoQp139y94" role="lGtFl">
+              <property role="2qtEX9" value="value" />
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+              <node concept="3zFVjK" id="6xoQp139y95" role="3zH0cK">
+                <node concept="3clFbS" id="6xoQp139y96" role="2VODD2">
+                  <node concept="3clFbF" id="6xoQp139y97" role="3cqZAp">
+                    <node concept="2OqwBi" id="6xoQp139y98" role="3clFbG">
+                      <node concept="2OqwBi" id="6xoQp139y99" role="2Oq$k0">
+                        <node concept="30H73N" id="6xoQp139y9a" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6xoQp139y9b" role="2OqNvi">
+                          <ref role="3Tt5mk" to="tp3b:6gUevv0xDDg" resolve="finder" />
+                        </node>
                       </node>
-                      <node concept="30H73N" id="5UvmwWxPnu2" role="2Oq$k0" />
+                      <node concept="2qgKlT" id="6xoQp139y9c" role="2OqNvi">
+                        <ref role="37wK5l" to="tp3f:hEwIc4S" resolve="getGeneratedClassLongName" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
-            <node concept="Xl_RD" id="5UvmwWxPpcM" role="37wK5m" />
+            <node concept="1WS0z7" id="6xoQp139y9d" role="lGtFl">
+              <node concept="3JmXsc" id="6xoQp139y9e" role="3Jn$fo">
+                <node concept="3clFbS" id="6xoQp139y9f" role="2VODD2">
+                  <node concept="3clFbF" id="6xoQp139y9g" role="3cqZAp">
+                    <node concept="2OqwBi" id="6xoQp139y9h" role="3clFbG">
+                      <node concept="3Tsc0h" id="6xoQp139y9i" role="2OqNvi">
+                        <ref role="3TtcxE" to="tp3b:5xq1uvO2yzi" resolve="finder" />
+                      </node>
+                      <node concept="30H73N" id="6xoQp139y9j" role="2Oq$k0" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
@@ -597,25 +613,25 @@
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="tp3b:1JlDhgSjx_v" resolve="FinderReference" />
       <node concept="gft3U" id="5UvmwWxPl49" role="1lVwrX">
-        <node concept="2YIFZM" id="5UvmwWxPl4f" role="gfFT$">
-          <ref role="37wK5l" to="ngmm:~FindUtils.getFinderByClassName(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" resolve="getFinderByClassName" />
+        <node concept="2YIFZM" id="6xoQp139rzX" role="gfFT$">
+          <ref role="37wK5l" to="ngmm:~FindUtils.getFinder(java.lang.String):jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder" resolve="getFinder" />
           <ref role="1Pybhc" to="ngmm:~FindUtils" resolve="FindUtils" />
-          <node concept="Xl_RD" id="5UvmwWxPl4g" role="37wK5m">
+          <node concept="Xl_RD" id="6xoQp139rzY" role="37wK5m">
             <property role="Xl_RC" value="" />
-            <node concept="17Uvod" id="5UvmwWxPl4h" role="lGtFl">
+            <node concept="17Uvod" id="6xoQp139rzZ" role="lGtFl">
               <property role="2qtEX9" value="value" />
               <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
-              <node concept="3zFVjK" id="5UvmwWxPl4i" role="3zH0cK">
-                <node concept="3clFbS" id="5UvmwWxPl4j" role="2VODD2">
-                  <node concept="3clFbF" id="5UvmwWxPl4k" role="3cqZAp">
-                    <node concept="2OqwBi" id="5UvmwWxPl4l" role="3clFbG">
-                      <node concept="2OqwBi" id="5UvmwWxPl4m" role="2Oq$k0">
-                        <node concept="30H73N" id="5UvmwWxPl4n" role="2Oq$k0" />
-                        <node concept="3TrEf2" id="5UvmwWxPl4o" role="2OqNvi">
+              <node concept="3zFVjK" id="6xoQp139r$0" role="3zH0cK">
+                <node concept="3clFbS" id="6xoQp139r$1" role="2VODD2">
+                  <node concept="3clFbF" id="6xoQp139r$2" role="3cqZAp">
+                    <node concept="2OqwBi" id="6xoQp139r$3" role="3clFbG">
+                      <node concept="2OqwBi" id="6xoQp139r$4" role="2Oq$k0">
+                        <node concept="30H73N" id="6xoQp139r$5" role="2Oq$k0" />
+                        <node concept="3TrEf2" id="6xoQp139r$6" role="2OqNvi">
                           <ref role="3Tt5mk" to="tp3b:6gUevv0xDDg" resolve="finder" />
                         </node>
                       </node>
-                      <node concept="2qgKlT" id="5UvmwWxPl4p" role="2OqNvi">
+                      <node concept="2qgKlT" id="6xoQp139r$7" role="2OqNvi">
                         <ref role="37wK5l" to="tp3f:hEwIc4S" resolve="getGeneratedClassLongName" />
                       </node>
                     </node>

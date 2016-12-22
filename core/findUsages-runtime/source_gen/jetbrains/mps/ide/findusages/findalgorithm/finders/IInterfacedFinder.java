@@ -11,12 +11,18 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 public interface IInterfacedFinder extends Finder {
+  /**
+   * In fact, with FinderRegistry, the only client of this method would be GeneratedFinder itself, could be exposed from GF instead of this iface.
+   */
   SAbstractConcept getSConcept();
   boolean isApplicable(SNode node);
   boolean isVisible(SNode node);
   boolean isUsedByDefault(SNode node);
   String getDescription();
   String getLongDescription();
+  /**
+   * Is there any meaningful value other than true or getDeclarationNode != null?
+   */
   boolean canNavigate();
   @Nullable
   SNodeReference getDeclarationNode();

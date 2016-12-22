@@ -13881,6 +13881,12 @@
             <ref role="3bR37D" node="7Kfy9QB6Lg8" resolve="jetbrains.mps.runtime" />
           </node>
         </node>
+        <node concept="1SiIV0" id="6Bf1bykAQT0" role="3bR37C">
+          <node concept="3bR9La" id="6Bf1bykAQT1" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2G$12M" id="7KapL9OABnl" role="3989C9">
@@ -29437,6 +29443,12 @@
         <node concept="3bR9La" id="1qokWp1VMra" role="1SiIV1">
           <property role="3bR36h" value="false" />
           <ref role="3bR37D" node="1qokWp1VAAr" resolve="jetbrains.mps.refactoring" />
+        </node>
+      </node>
+      <node concept="1SiIV0" id="6Bf1bykARqA" role="3bR37C">
+        <node concept="3bR9La" id="6Bf1bykARqB" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="7Kfy9QB6Lfd" resolve="jetbrains.mps.findUsages.runtime" />
         </node>
       </node>
     </node>

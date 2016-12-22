@@ -17,16 +17,17 @@ package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,7 +44,7 @@ public class FindUtils {
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
     List<IInterfacedFinder> finders = new ArrayList<>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
-      IInterfacedFinder finder = FindersManager.getInstance().getFinderByClassName(finderClassName, false);
+      IInterfacedFinder finder = FindersManager.getInstance().getFinder(finderClassName);
       if (finder != null) {
         finders.add(finder);
       }
@@ -63,7 +64,7 @@ public class FindUtils {
   @Deprecated
   public static List<SNode> executeFinder(String className, SNode node, SearchScope scope, ProgressMonitor monitor) {
     List<SNode> result = new ArrayList<>();
-    IInterfacedFinder finder = FindersManager.getInstance().getFinderByClassName(className, false);
+    IInterfacedFinder finder = FindersManager.getInstance().getFinder(className);
     if (finder == null) {
       return result;
     }
@@ -74,18 +75,32 @@ public class FindUtils {
   }
 
   /**
-   * @deprecated use of class name to identify finders is unfortunate design decision
+   * @deprecated see {@link FindersManager#getFinderByClassName(String)} for explanation. Replace with {@link #getFinder(String)}
    */
   @Deprecated
   @Nullable
+  @ToRemove(version = 3.5)
   public static IInterfacedFinder getFinderByClassName(String className) {
-    return FindersManager.getInstance().getFinderByClassName(className, true);
+    return FindersManager.getInstance().getFinder(className);
+  }
+
+  public static IInterfacedFinder getFinder(String finderIdentity) {
+    return FindersManager.getInstance().getFinder(finderIdentity);
   }
 
   public static IResultProvider makeProvider(Collection<? extends IFinder> finders) {
     UnionNode unionNode = new UnionNode();
     for (IFinder finder : finders) {
-      unionNode.addChild(new FinderNode(finder));
+      final FinderNode fn;
+      if (finder instanceof GeneratedFinder) {
+        // just in case IResultProvider get serialized later, we give it an indication this one could get reloaded
+        // XXX OTOH, it mught be IResultProvider itself to care about GeneratedFinder on write as it does on read for ReloadableFinders (so that RF
+        // knowledge stays in a single place)?
+        fn = new FinderNode(new ReloadableFinder((GeneratedFinder) finder));
+      } else {
+        fn = new FinderNode(finder);
+      }
+      unionNode.addChild(fn);
     }
     return unionNode;
   }
@@ -100,7 +115,7 @@ public class FindUtils {
   public static IResultProvider makeProvider(@NotNull String... finderIdentity) {
     ArrayList<Finder> finders = new ArrayList<>(finderIdentity.length);
     for (String fi : finderIdentity) {
-      IInterfacedFinder f = getFinderByClassName(fi);
+      IInterfacedFinder f = FindersManager.getInstance().getFinder(fi);
       if (f != null) {
         finders.add(f);
       }
