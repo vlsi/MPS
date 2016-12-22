@@ -123,6 +123,10 @@ public class ModelConstraints {
   }
 
   //deprecated canBe*
+
+  /**
+   * @deprecated use {@link #canBeAncestor(SNode, SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   public static boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SNode childConcept, SNode containmentLink,
@@ -132,6 +136,9 @@ public class ModelConstraints {
         checkingNodeContext);
   }
 
+  /**
+   * @deprecated use {@link #canBeAncestorDirect(SNode, SNode, SAbstractConcept, SNode, SContainmentLink, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   public static boolean canBeAncestorDirect(@NotNull SNode ancestor, @Nullable SNode descendant, @NotNull SNode childConcept, SNode parent,
@@ -140,6 +147,9 @@ public class ModelConstraints {
         containmentLink == null ? null : MetaAdapterByDeclaration.getContainmentLink(containmentLink), checkingNodeContext);
   }
 
+  /**
+   * @deprecated use {@link #canBeParent(SNode, SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)}
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   public static boolean canBeParent(@NotNull SNode parentNode, @NotNull SNode childConcept, @NotNull SNode link, @Nullable SNode childNode,
@@ -148,6 +158,9 @@ public class ModelConstraints {
         checkingNodeContext);
   }
 
+  /**
+   * @deprecated use {@link #canBeChild(SNode, SNode, SAbstractConcept, SContainmentLink, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   public static boolean canBeChild(SAbstractConcept childConcept, SNode parentNode, SNode link, @Nullable SNode childNode,

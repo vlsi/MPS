@@ -200,6 +200,9 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable {
     return canBeRootDescriptor.canBeRoot(model, operationContext, checkingNodeContext);
   }
 
+  /**
+   * @deprecated use {@link #canBeRoot(SModel, IOperationContext, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   public boolean canBeRoot(IOperationContext operationContext, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {

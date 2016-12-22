@@ -41,16 +41,28 @@ public interface ConstraintsDescriptor {
   boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, @NotNull SNode parentNode, /*TODO @NotNull*/
       SContainmentLink link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
+  /**
+   *
+   * @deprecated use {@link #canBeChild(SNode, SNode, SAbstractConcept, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   boolean canBeChild(@Nullable SNode node, SNode parentNode, @Deprecated SNode link, @Deprecated SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
+  /**
+   *
+   * @deprecated use {@link #canBeParent(SNode, SNode, SAbstractConcept, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   boolean canBeParent(SNode node, @Nullable SNode childNode, @Deprecated SNode childConcept, @Deprecated SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
+  /**
+   *
+   * @deprecated use {@link #canBeAncestor(SNode, SNode, SAbstractConcept, SNode, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   */
   @Deprecated
   @ToRemove(version = 3.5)
   boolean canBeAncestor(SNode node, @Nullable SNode childNode, @Deprecated SNode childConcept, SNode parentNode, @Deprecated SNode link,
