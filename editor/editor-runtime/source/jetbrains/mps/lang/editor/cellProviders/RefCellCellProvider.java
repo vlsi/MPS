@@ -46,20 +46,12 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   @Override
   protected EditorCell createRefCell(final EditorContext context, final SNode effectiveNode, SNode node) {
-    InlineCellProvider inlineCellProvider = createInlineCellProvider(effectiveNode);
-    final AbstractCellProvider inlineComponent;
-    if (inlineCellProvider != null) {
-      inlineComponent = inlineCellProvider;
-    } else {
-      // TODO: remove this compatibility code after MPS 3.5
-      inlineComponent = myAuxiliaryCellProvider;
-      inlineComponent.setSNode(effectiveNode);
-      if (inlineComponent instanceof InlineCellProvider) {
-        InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
-        inlineComponentProvider.setRefNode(node);
-      }
+    final AbstractCellProvider inlineComponent = myAuxiliaryCellProvider;
+    myAuxiliaryCellProvider.setSNode(effectiveNode);
+    if (inlineComponent instanceof InlineCellProvider) {
+      InlineCellProvider inlineComponentProvider = (InlineCellProvider) inlineComponent;
+      inlineComponentProvider.setRefNode(node);
     }
-
     EditorCell editorCell;
     if (myIsAggregation) {
       editorCell = inlineComponent.createEditorCell(context);
@@ -77,33 +69,40 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     }
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
-      } else {
-        editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-        editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-      }
+      installDeleteActions_atLeastOne(editorCell);
     } else {
       if (myIsAggregation) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
+        installDeleteActions_nullable_aggregation(editorCell);
       } else {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(node, myGenuineRole));
+        installDeleteActions_nullable_reference(editorCell);
       }
     }
     return editorCell;
   }
 
-  // TODO: make abstract after MPS 3.5
-  protected InlineCellProvider createInlineCellProvider(SNode innerCellNode) {
-    return null;
+  protected void installDeleteActions_atLeastOne(EditorCell editorCell) {
+    if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
+    } else {
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    }
+  }
+
+  protected void installDeleteActions_nullable_aggregation(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
+  }
+
+  protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
   }
 
   // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell
   // TODO: lookup (either empty or top-level cell) & remove this method completely.
-  private void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
+  protected void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
     if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
       return;
     }

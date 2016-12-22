@@ -93,6 +93,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.DataTypeDeclaration__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.PropertyDeclaration__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.keymaps.AWTKeymapHandler" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.KeyMap" />
