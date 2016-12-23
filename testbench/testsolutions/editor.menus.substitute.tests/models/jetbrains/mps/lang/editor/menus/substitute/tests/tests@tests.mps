@@ -21,7 +21,6 @@
         <child id="1101347953350127927" name="actionReference" index="3iKnsn" />
       </concept>
       <concept id="1229187653856" name="jetbrains.mps.lang.test.structure.EditorTestCase" flags="lg" index="LiM7Y">
-        <property id="1883175908513350760" name="description" index="3YCmrE" />
         <child id="1229187676388" name="nodeToEdit" index="LiRBU" />
         <child id="1229187707859" name="result" index="LiZbd" />
         <child id="1229187755283" name="code" index="LjaKd" />
@@ -157,6 +156,11 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
+      </concept>
+      <concept id="779128492853369165" name="jetbrains.mps.lang.core.structure.SideTransformInfo" flags="ng" index="1KehLL">
+        <property id="779128492853935960" name="anchorTag" index="1K8rD$" />
+        <property id="779128492853934523" name="cellId" index="1K8rM7" />
+        <property id="779128492853699361" name="side" index="1Kfyot" />
       </concept>
     </language>
   </registry>
@@ -2367,7 +2371,6 @@
   </node>
   <node concept="LiM7Y" id="2P6wUVR9K1N">
     <property role="TrG5h" value="TestTransform_ChildWithConstraints_DifferentContext_CanBeChild" />
-    <property role="3YCmrE" value="in 3.4 we don't check can be child constraints for transformation actions" />
     <node concept="3V1b3J" id="2P6wUVR9K1O" role="LiRBU">
       <node concept="3V12v6" id="2P6wUVR9K1P" role="3V60wj">
         <node concept="3qo1hI" id="2P6wUVR9K5K" role="3qo1hH">
@@ -2378,17 +2381,25 @@
             <property role="p6zMs" value="0" />
             <property role="LIFWd" value="constant_0" />
           </node>
+          <node concept="1KehLL" id="33Wwu7GvlPC" role="lGtFl">
+            <property role="1K8rM7" value="constant_0" />
+            <property role="1K8rD$" value="default_RTransform" />
+            <property role="1Kfyot" value="left" />
+          </node>
         </node>
       </node>
     </node>
     <node concept="3V1b3J" id="2P6wUVR9K1R" role="LiZbd">
-      <node concept="3V12v1" id="2znOOs7gHZf" role="3V60wj">
-        <node concept="LIFWc" id="2znOOs7gI05" role="lGtFl">
-          <property role="ZRATv" value="true" />
-          <property role="OXtK3" value="true" />
-          <property role="p6zMq" value="0" />
-          <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name" />
+      <node concept="3V12v6" id="2P6wUVR9K1S" role="3V60wj">
+        <property role="TrG5h" value="a" />
+        <node concept="3qo1hI" id="2P6wUVR9K8i" role="3qo1hH">
+          <node concept="LIFWc" id="2P6wUVR9K9a" role="lGtFl">
+            <property role="LIFWa" value="0" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="constant_0" />
+          </node>
         </node>
       </node>
     </node>
@@ -2414,8 +2425,8 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
             </node>
           </node>
-          <node concept="3cmrfG" id="2znOOs7gI09" role="3uHU7w">
-            <property role="3cmrfH" value="2" />
+          <node concept="3cmrfG" id="2P6wUVR9K25" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
           </node>
         </node>
       </node>
@@ -2543,7 +2554,6 @@
   </node>
   <node concept="LiM7Y" id="B8RBnMPlAn">
     <property role="TrG5h" value="TestTransform_ChildWithConstraints_CanBeChild" />
-    <property role="3YCmrE" value="in 3.4 we don't check can be child constraints for transformation actions" />
     <node concept="3V1b3J" id="B8RBnMPlAo" role="LiRBU">
       <node concept="3V12v6" id="B8RBnMPAeb" role="3V60wj">
         <node concept="LIFWc" id="1wbd5eayjpJ" role="lGtFl">
@@ -2556,13 +2566,14 @@
       </node>
     </node>
     <node concept="3V1b3J" id="B8RBnMPlAq" role="LiZbd">
-      <node concept="3V12v1" id="2znOOs7gHL3" role="3V60wj">
-        <node concept="LIFWc" id="2znOOs7gHLW" role="lGtFl">
-          <property role="ZRATv" value="true" />
+      <node concept="3V12v6" id="B8RBnMPAhx" role="3V60wj">
+        <property role="TrG5h" value="a" />
+        <node concept="LIFWc" id="1wbd5eaymgo" role="lGtFl">
+          <property role="LIFWa" value="0" />
           <property role="OXtK3" value="true" />
           <property role="p6zMq" value="0" />
           <property role="p6zMs" value="0" />
-          <property role="LIFWd" value="property_name" />
+          <property role="LIFWd" value="Constant_k8zyml_a0" />
         </node>
       </node>
     </node>
@@ -2588,8 +2599,8 @@
               <ref role="37wK5l" to="6lvu:~NodeSubstituteChooser.getNumberOfActions():int" resolve="getNumberOfActions" />
             </node>
           </node>
-          <node concept="3cmrfG" id="2znOOs7gHM0" role="3uHU7w">
-            <property role="3cmrfH" value="2" />
+          <node concept="3cmrfG" id="B8RBnMPAit" role="3uHU7w">
+            <property role="3cmrfH" value="1" />
           </node>
         </node>
       </node>

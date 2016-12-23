@@ -24,7 +24,7 @@ public class TestTransform_ChildWithConstraints_DifferentContext_CanBeChild_Test
       initEditorComponent("3262439767570579572", "3262439767570579575");
       typeString(" ");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 2;
+      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 1;
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
