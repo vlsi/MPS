@@ -162,8 +162,11 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     load();
   }
 
-  // TODO once BaseFindUsagesDescriptor is refactored to let language aspect manage GeneratedFinder instances and their reload
-  // consider moving SNodeReference of declaration node inside GF itself.
+  /**
+   * @deprecated Aspects generated with MPS 3.4 rely on this method, drop once 3.5 is out.
+   */
+  @Deprecated
+  @ToRemove(version = 3.4)
   public void addFinder(GeneratedFinder finder, SModuleReference moduleRef, SNodeReference np) {
     SLanguageId declaringLanguage = MetaIdByDeclaration.ref2LangId(moduleRef);
     LanguageFinders languageFinders;
@@ -232,11 +235,6 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
 
     LanguageFinders(LanguageRuntime lr) {
       myLanguageRuntime = lr;
-    }
-
-    @Override
-    public void add(@NotNull SAbstractConcept concept, int identityToken) {
-      throw new UnsupportedOperationException("Work in progress");
     }
 
     @Override

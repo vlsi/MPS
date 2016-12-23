@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -34,6 +35,11 @@ public abstract class BaseFindUsagesDescriptor implements FindUsageAspectDescrip
     myModelRef = modelRef;
   }
 
+  /**
+   * @deprecated Aspects generated with MPS 3.4 use this method, drop once 3.5 is out.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   protected void add(GeneratedFinder finder, String nodeId) {
     SNodeReference np = new jetbrains.mps.smodel.SNodePointer(myModelRef, PersistenceFacade.getInstance().createNodeId(nodeId));
     FindersManager.getInstance().addFinder(finder, myModuleRef, np);

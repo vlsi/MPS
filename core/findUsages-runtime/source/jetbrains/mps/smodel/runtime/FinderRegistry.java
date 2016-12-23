@@ -26,6 +26,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public interface FinderRegistry {
   /**
    * Tell there's a finder for the given concept, which is identified by supplied value, and {@link FindUsageAspectDescriptor}
+   * For the time being, we are still using implementation class fqn to identify finders (I may introduce a dedicated FinderIdentity later), therefore
+   * need a name of a finder to match its registration with a token, and this method is just a design reminder (and placeholder for future functionality).
    * <p/>
    * Design note:
    *   (a) there's no proxy/factory object intentionally, we stick to non-reloadable primitives (anonymous proxy/factory class would hold aspect's classloader)
@@ -41,14 +43,17 @@ public interface FinderRegistry {
    *        token and request. It's, however, advised to supply new instance for each query as finder implementation would
    *        need to deal with concurrency issues otherwise.
    */
-  void add(@NotNull SAbstractConcept concept, int identityToken);
+  default void add(@NotNull SAbstractConcept concept, int identityToken) {
+    throw new UnsupportedOperationException("Work in progress. Get back here once FinderIdentity comes to life");
+  }
 
 
   /**
    * See {@link #add(SAbstractConcept, int)}.
    * Transition support to facilitate accessing finders by class fqn (existing code) without need to know any other identity (e.g. {@code identityToken} integer)
    * Once there's better mechanism to identify finders in place, switch to {@link #add(SAbstractConcept, int)}.
-   * OTOH, might be fruitful to keep mangledName as part of finder reference to ease debug or to go extra mile and match by name when token not found
+   * OTOH, might be fruitful to keep mangledName as part of finder reference to ease debug or to go extra mile and match by name when token not found.
+   *   Alternatively, mangled name could be part of FinderIdentity to ease debug but not part of registration sequence, where token matching would do the job.
    */
   void add(@NotNull SAbstractConcept concept, int identityToken, @NotNull String mangledName);
 }

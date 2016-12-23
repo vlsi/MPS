@@ -84,6 +84,10 @@ public class FindUtils {
     return FindersManager.getInstance().getFinder(className);
   }
 
+  /**
+   * There would be another {@code getFinder(FinderIdentity}) later (perhaps, with distinct FinderIdentity implementations, one to take string, another
+   * takes SLanguage + int token + optional? String mangledName)
+   */
   public static IInterfacedFinder getFinder(String finderIdentity) {
     return FindersManager.getInstance().getFinder(finderIdentity);
   }
