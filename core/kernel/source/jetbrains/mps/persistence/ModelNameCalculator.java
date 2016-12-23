@@ -21,42 +21,55 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import static jetbrains.mps.project.MPSExtentions.DOT;
 
 /**
+ * In the case when we have some models on the disk (under a source root)
+ * and try to collect them by traversing a file system tree
+ * we need to be able to construct model name from the path to the model file.
+ *
  * Created by apyshkin on 12/20/16.
  */
+@Immutable
 public final class ModelNameCalculator {
-  @NotNull private final ModelFactory myModelFactory;
   @NotNull private final SourceRoot mySourceRoot;
-  @NotNull private final IFile myModelFile;
+  @NotNull private final IFile myModelFile; // always a file (not directory!)
 
-  public ModelNameCalculator(@NotNull ModelFactory modelFactory, @NotNull SourceRoot sourceRoot, @NotNull IFile modelFile) {
-    myModelFactory = modelFactory;
+  public ModelNameCalculator(@NotNull SourceRoot sourceRoot, @NotNull IFile modelFile) {
     mySourceRoot = sourceRoot;
     myModelFile = modelFile;
   }
 
-  private String calcJavaPackage() {
+  @NotNull
+  private String calcRelPathFromSourceRootToModelFile() {
     String pathToModelDir = myModelFile.getParent().getPath();
-    String relPathFromSourceRoot = FileUtil.getRelativePath(pathToModelDir, mySourceRoot.getAbsolutePath().getPath(), Path.UNIX_SEPARATOR);
-    return NameUtil.namespaceFromPath(relPathFromSourceRoot);
-  }
-
-  public String calcModelName() {
-    String javaPackage = calcJavaPackage();
-    String fileNameWE = modelFileMustBeDirectory() ? myModelFile.getName()
-                                                   : FileUtil.getNameWithoutExtension(myModelFile.getName());
-    return javaPackage.isEmpty() ? fileNameWE
-                                 : javaPackage + DOT + fileNameWE;
+    String sourceRootPath = mySourceRoot.getAbsolutePath().getPath();
+    assert FileUtil.isAncestor(sourceRootPath, pathToModelDir);
+    return FileUtil.getRelativePath(pathToModelDir, sourceRootPath, Path.UNIX_SEPARATOR);
   }
 
   /**
-   * cannot just check the {@link #myModelFile} since it might have not been created yet
+   * For example sometimes the path to the model file is 'models/org/my/package/a.mps' with 'models' as a source root.
+   * Then the model fq name is 'org.my.package.a'.
+   * Sometimes the path (per-root) is 'models/org.my.package.a/.model' with 'models' as a source root
+   * In this case the model fq name is 'org.my.package.a' as well.
    */
-  private boolean modelFileMustBeDirectory() {
-    return myModelFactory.getFileExtension() == null;
+  @NotNull
+  public String calcModelFqName() {
+    String relPathFromSourceRoot = calcRelPathFromSourceRootToModelFile();
+    String fileNameWE = FileUtil.getNameWithoutExtension(myModelFile.getName());
+    String prefixPackage = NameUtil.namespaceFromPath(relPathFromSourceRoot);
+    return join(prefixPackage, fileNameWE);
+  }
+
+  @NotNull
+  private static String join(@NotNull String prefixPackage, @NotNull String suffixPackage) {
+    if (prefixPackage.isEmpty()) {
+      return suffixPackage;
+    }
+    return prefixPackage + DOT + suffixPackage;
   }
 }

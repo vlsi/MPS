@@ -13,35 +13,40 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.dataSource;
+package jetbrains.mps.extapi.persistence.datasource;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Singleton;
 
 import java.util.ServiceLoader;
 
 /**
+ * Service provider to define your own data source factories
+ *
+ * @see FileDataSourceFactory
  * Created by apyshkin on 12/22/16.
  */
-public final class FileBasedDataSourceService {
-  private static FileBasedDataSourceService ourInstance;
-  private static ServiceLoader<FileBasedDataSourceFactory> ourServiceLoader;
+@Singleton
+public final class FileDataSourceService {
+  private static FileDataSourceService ourInstance;
+  private static ServiceLoader<FileDataSourceFactory> ourServiceLoader;
 
-  private FileBasedDataSourceService() {
-    ourServiceLoader = ServiceLoader.load(FileBasedDataSourceFactory.class);
+  private FileDataSourceService() {
+    ourServiceLoader = ServiceLoader.load(FileDataSourceFactory.class);
   }
 
   @NotNull
-  public static synchronized FileBasedDataSourceService getInstance() {
+  public static synchronized FileDataSourceService getInstance() {
     if (ourInstance == null) {
-      ourInstance = new FileBasedDataSourceService();
+      ourInstance = new FileDataSourceService();
     }
     return ourInstance;
   }
 
   @Nullable
-  public FileBasedDataSourceFactory get(@NotNull DataSourceKey key) {
-    for (FileBasedDataSourceFactory factory : ourServiceLoader) {
+  public synchronized FileDataSourceFactory getFactory(@NotNull DataSourceKey key) {
+    for (FileDataSourceFactory factory : ourServiceLoader) {
       if (factory.getKey().equals(key)) {
         return factory;
       }

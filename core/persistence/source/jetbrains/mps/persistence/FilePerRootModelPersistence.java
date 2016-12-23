@@ -19,13 +19,10 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -33,17 +30,14 @@ import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -54,9 +48,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -68,19 +60,24 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   public static final String FACTORY_ID = "file-per-root";
 
   private final PersistenceRegistry myRegistry;
+  @NotNull
+  private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  FilePerRootModelPersistence(@NotNull PersistenceFacade persistenceRegistry) {
+  FilePerRootModelPersistence(@NotNull PersistenceFacade persistenceRegistry, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
     myRegistry = (PersistenceRegistry) persistenceRegistry;
+    myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @Override
   public void init() {
     myRegistry.addFolderModelFactory(this);
     myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, this);
+    myModelFactoryRegistry.register(FilePerRootDataSourceKey.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
+    myModelFactoryRegistry.unregister(FilePerRootDataSourceKey.INSTANCE);
     myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, null);
     myRegistry.removeFolderModelFactory(this);
   }

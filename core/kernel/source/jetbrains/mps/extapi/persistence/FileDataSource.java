@@ -15,6 +15,12 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
+import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -43,13 +49,24 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   @NotNull private IFile myFile;
   final ModelRoot myModelRoot; // fixme is needed only for the file system dependencies, to be removed
 
+  /**
+   * @deprecated see below
+   */
+  @Deprecated
+  @ToRemove(version = 3.5) // will become package-private
   public FileDataSource(@NotNull IFile file) {
     this(file, null);
   }
 
   /**
+   * FIXME remove modelRoot parameter
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
+   *
+   * @deprecated use {@link FileDataSourceService#getFactory} AND
+   *             {@link FileDataSourceFactory#create}
    */
+  @ToRemove(version = 3.5)
+  @Deprecated
   public FileDataSource(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
     myFile = file;
     myModelRoot = modelRoot;
@@ -193,5 +210,11 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   @Override
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFile);
+  }
+
+  @NotNull
+  @Override
+  public DataSourceKey getKey() {
+    return FileDataSourceKey.INSTANCE;
   }
 }

@@ -13,14 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.dataSource;
+package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by apyshkin on 12/22/16.
  */
-public interface FileExtensionDataSourceKey extends DataSourceKey {
+public enum FolderDataSourceKey implements DataSourceKey {
+  INSTANCE;
+
   @NotNull
-  String getFileExtension();
+  @Override
+  public String getName() {
+    return "Folder Data Source Key";
+  }
 }

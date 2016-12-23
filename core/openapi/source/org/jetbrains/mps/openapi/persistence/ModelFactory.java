@@ -67,7 +67,7 @@ public interface ModelFactory {
    * like stream encoding (usually, the default is utf-8), package name, containing module reference
    * or module relative path of the source.
    *
-   * It will be deprecated as soon as I grant alternative.
+   * It will be deprecated as soon as I grant an alternative.
    * --Why?
    * --Because of the Map<String,String>.
    *
@@ -97,7 +97,6 @@ public interface ModelFactory {
    */
   /*@Deprecated*/
   boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
-
 //  /**
 //   * Creates a new model with the supplied <code>modelName</code> on the given <code>DataSource</code>.
 //   * Might consider additional options provided in the <code>options</code> varargs.
@@ -110,8 +109,8 @@ public interface ModelFactory {
 //   * @throws UnsupportedDataSourceException
 //   */
 //  @NotNull
-//  SModel create(@NotNull DataSource dataSource, @NotNull String modelName, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException;
 
+//  SModel create(@NotNull DataSource dataSource, @NotNull String modelName, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException;
 //  /**
 //   * Loads an existing model from the given <code>DataSource</code>.
 //   * Might consider additional options provided in the <code>options</code> varargs.
@@ -124,6 +123,7 @@ public interface ModelFactory {
 //   * @throws UnsupportedDataSourceException
 //   */
 //  @NotNull
+
 //  SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException;
 
   /**
@@ -153,23 +153,13 @@ public interface ModelFactory {
   boolean isBinary();
 
   /**
-   * returns the file extension this factory is registered on
+   * @return the file extension this factory is registered on
    * null if for instance model factory is associated rather with a group of files than one file.
    * @deprecated The location notion is hidden in {@link DataSource} no need to expose it.
    */
   @ToRemove(version = 3.6)
   @Deprecated
   @Nullable String getFileExtension();
-
-  /**
-   * Returns true if the data source is supported.
-   * That means that invocation of the {@link #create(DataSource, Map)} and {@link #load(DataSource, Map)}
-   * methods will not cause an {@link UnsupportedDataSourceException}.
-   *
-   * @return a boolean value which indicates whether the given
-   *         data source is supported by this particular model factory.
-   */
-  boolean supports(@NotNull DataSource source);
 
   /**
    * User-readable title of the storage format.

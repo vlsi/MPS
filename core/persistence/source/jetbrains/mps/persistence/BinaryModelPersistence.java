@@ -19,6 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
@@ -46,18 +47,23 @@ import java.util.Map;
  */
 public class BinaryModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
   private final PersistenceFacade myFacade;
+  @NotNull
+  private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  BinaryModelPersistence(@NotNull PersistenceFacade facade) {
+  BinaryModelPersistence(@NotNull PersistenceFacade facade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
     myFacade = facade;
+    myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @Override
   public void init() {
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    myModelFactoryRegistry.register(BinaryExtDataSourceKey.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
+    myModelFactoryRegistry.unregister(BinaryExtDataSourceKey.INSTANCE);
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 

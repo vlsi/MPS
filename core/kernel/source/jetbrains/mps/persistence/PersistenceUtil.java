@@ -50,7 +50,7 @@ import java.util.Map;
  * evgeny, 3/6/13
  */
 public class PersistenceUtil {
-  private final static String PER_ROOT_PERSISTENCE_FACTORY = "file-per-root";
+  public final static String PER_ROOT_PERSISTENCE_FACTORY = "file-per-root";
 
   protected static org.apache.log4j.Logger LOG = LogManager.getLogger(PersistenceUtil.class);
 
@@ -85,7 +85,7 @@ public class PersistenceUtil {
       return null;
     }
     try {
-      SModel model = factory.load(new ByteArrayInputSource(content), Collections.<String, String>singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
     } catch (IOException ex) {
@@ -101,7 +101,7 @@ public class PersistenceUtil {
     return loadModel(file, FileUtil.getExtension(file.getName()));
   }
 
-  public static SModel loadModel(IFile file, String extension) {
+  private static SModel loadModel(IFile file, String extension) {
     ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
     if (factory == null) {
       return null;
@@ -110,8 +110,8 @@ public class PersistenceUtil {
     try {
       SModel model;
       final Map<String, String> options = Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
-      if(factory instanceof FolderModelFactory) {
-        model = factory.load(new FolderDataSource(file.getParent(), null), options);
+      if (factory instanceof FolderModelFactory) {
+        model = factory.load(new FolderDataSource(file.getParent()), options);
       } else {
         model = factory.load(new FileDataSource(file), options);
       }
@@ -182,38 +182,6 @@ public class PersistenceUtil {
       }
     }
     return new ByteArrayInputStream(new byte[0]);
-  }
-
-  public static SModel loadPerRootModel(final Map<String, Object> content) {
-    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
-    if (factory == null || factory.isBinary()) {
-      return null;
-    }
-    try {
-      SModel model = factory.load(new MultiStreamDataSourceBase() {
-        @NotNull
-        @Override
-        public Iterable<String> getAvailableStreams() {
-          return content.keySet();
-        }
-
-        @NotNull
-        @Override
-        public InputStream openInputStream(String name) throws IOException {
-          Object data = content.get(name);
-          if (data instanceof String) {
-            return new ByteArrayInputStream(((String) data).getBytes(FileUtil.DEFAULT_CHARSET));
-          } else if (data instanceof byte[]) {
-            return new ByteArrayInputStream((byte[]) data);
-          }
-          throw new UnsupportedOperationException();
-        }
-      }, Collections.emptyMap());
-      model.load();
-      return model;
-    } catch (IOException ex) {
-      return null;
-    }
   }
 
   public static String savePerRootModel(final SModel model, String name) {

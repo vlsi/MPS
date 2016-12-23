@@ -23,7 +23,7 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.DataSourceFactory;
+import jetbrains.mps.persistence.DataSourceFactoryBridge;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
@@ -37,7 +37,6 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -249,8 +248,8 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
         IFile oldFile = ((FileDataSource) getSource()).getFile();
         SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
-        ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(getExtension(oldFile));
-        FileDataSource source = new DataSourceFactory(defaultModelRoot).createFileDataSource(factory, sourceRoot, newModelName).getDataSource();
+//        ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(getExtension(oldFile));
+        FileDataSource source = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(sourceRoot, newModelName).getDataSource();
         IFile newFile = source.getFile();
         if (!newFile.equals(oldFile)) {
           newFile.getParent().mkdirs();

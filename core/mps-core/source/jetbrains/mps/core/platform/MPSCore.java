@@ -27,6 +27,7 @@ import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -53,6 +54,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.validation.ValidationSettings;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
@@ -65,10 +67,11 @@ public final class MPSCore extends ComponentPluginBase {
   private PersistenceRegistry myPersistenceFacade;
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
+  private ModelFactoryRegistry myModelFactoryRegistry;
 
   /**
    * made package-private
-   * Please consider using {@link jetbrains.mps.core.platform.Platform} instead
+   * Please consider using {@code jetbrains.mps.core.platform.Platform} instead
    */
   MPSCore() {
   }
@@ -83,6 +86,7 @@ public final class MPSCore extends ComponentPluginBase {
   private void doInit() {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     myPersistenceFacade = init(new PersistenceRegistry());
+    myModelFactoryRegistry = init(ModelFactoryRegistryImpl.getInstance());
     init(new FacetsRegistry());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());
@@ -108,7 +112,9 @@ public final class MPSCore extends ComponentPluginBase {
     init(new ExtensionRegistry(myClassLoaderManager, myModuleRepository));
     init(new ConceptDescendantsCache(myModuleRepository, myLanguageRegistry));
     init(new CachesManager(myClassLoaderManager, modelRepository));
-    init(new DescriptorModelComponent(myModuleRepository, new LanguageDescriptorModelProvider(myClassLoaderManager), new GeneratorDescriptorModelProvider()));
+    init(new DescriptorModelComponent(myModuleRepository,
+                                      new LanguageDescriptorModelProvider(myClassLoaderManager),
+                                      new GeneratorDescriptorModelProvider()));
     init(new ProjectStructureModule(myModuleRepository, myPersistenceFacade));
     init(new CopyPasteManager(myClassLoaderManager));
     init(new PasteWrappersManager(myClassLoaderManager));
@@ -155,6 +161,11 @@ public final class MPSCore extends ComponentPluginBase {
   public MPSModuleRepository getModuleRepository() {
     checkInitialized();
     return myModuleRepository;
+  }
+
+  @NotNull
+  public ModelFactoryRegistry getModelFactoryRegistry() {
+    return myModelFactoryRegistry;
   }
 
   private static class ComponentNotInitializedException extends IllegalStateException {

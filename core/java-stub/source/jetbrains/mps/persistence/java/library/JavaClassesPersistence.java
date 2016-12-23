@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence.java.library;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.java.stub.JavaPackageModelId;
 import jetbrains.mps.smodel.LanguageID;
 import org.jetbrains.annotations.NotNull;
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class JavaClassesPersistence implements CoreComponent {
   private final PersistenceFacade myFacade;
 
-  public JavaClassesPersistence(@NotNull PersistenceFacade persistenceFacade) {
+  public JavaClassesPersistence(@NotNull PersistenceFacade persistenceFacade, ModelFactoryRegistry modelFactoryRegistry) {
     myFacade = persistenceFacade;
   }
   @Override

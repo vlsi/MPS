@@ -30,15 +30,15 @@ public enum PlatformOptionsBuilder {
     myLoadOthers = loadOthers;
   }
 
-  public boolean isLoadCore() {
+  public boolean loadsCore() {
     return myLoadCore;
   }
 
-  public boolean isLoadPersistence() {
+  public boolean loadsPersistence() {
     return myLoadPersistence;
   }
 
-  public boolean isLoadOthers() {
+  public boolean loadsOthers() {
     return myLoadOthers;
   }
 }

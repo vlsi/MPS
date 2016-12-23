@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.*;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -34,4 +35,9 @@ public interface FileSystemBasedDataSource extends DataSource, DisposableDataSou
    * 2. All the files in the directory could not be there (the parent directory as a whole would be returned instead)
    */
   @NotNull Collection<IFile> getAffectedFiles();
+
+  /**
+   * @see jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory
+   */
+  @NotNull DataSourceKey getKey();
 }

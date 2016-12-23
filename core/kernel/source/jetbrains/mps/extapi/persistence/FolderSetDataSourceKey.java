@@ -13,20 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.dataSource;
+package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
-import jetbrains.mps.extapi.persistence.dataSource.DataSourceService.DataSourceFactory.DataSourceKey;
-import org.jetbrains.mps.openapi.vfs.File;
 
 /**
- * Service-provider interface for creating FileBasedDataSources
  * Created by apyshkin on 12/22/16.
  */
-public interface FileBasedDataSourceFactory {
-  @NotNull FileSystemBasedDataSource create(@NotNull File file);
+public enum FolderSetDataSourceKey implements DataSourceKey {
+  INSTANCE;
 
-  @NotNull DataSourceKey getKey();
+  @NotNull
+  @Override
+  public String getName() {
+    return "Folder Set Data Source Key";
+  }
 }

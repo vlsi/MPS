@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
@@ -46,7 +47,6 @@ import java.util.stream.Collectors;
  * evgeny, 11/3/12
  */
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
-
   private final ReadWriteLock myLock = new ReentrantReadWriteLock();
   private final List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>(4);
   private final Map<String, PathListener> myPaths = new LinkedHashMap<String, PathListener>(8);
@@ -251,6 +251,12 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @Override
   public Collection<IFile> getAffectedFiles() {
     return getFiles();
+  }
+
+  @NotNull
+  @Override
+  public DataSourceKey getKey() {
+   return FolderSetDataSourceKey.INSTANCE;
   }
 
   private static class PathListener implements FileSystemListener {

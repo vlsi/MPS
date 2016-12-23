@@ -23,21 +23,11 @@ public class ComponentPluginBase extends ComponentPlugin {
   }
 
   protected <T extends CoreComponent> T init(final T component) {
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ComponentPluginBase.super.init(component);
-      }
-    });
+    getModelAccess().runWriteAction(() -> ComponentPluginBase.super.init(component));
     return component;
   }
 
   public void dispose() {
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        ComponentPluginBase.super.dispose();
-      }
-    });
+    getModelAccess().runWriteAction(ComponentPluginBase.super::dispose);
   }
 }

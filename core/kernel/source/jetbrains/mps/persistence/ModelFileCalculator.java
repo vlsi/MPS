@@ -16,59 +16,55 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
  * Created by apyshkin on 12/20/16.
  */
 @Immutable
 public final class ModelFileCalculator {
-  @NotNull
-  private final ModelFactory myModelFactory;
-  @NotNull
-  private final SourceRoot mySourceRoot;
-  @NotNull
-  private final String myModelName;
+  @NotNull private final String myModelName;
+  @NotNull private final SourceRoot mySourceRoot;
+  @NotNull private final FileExtensionDataSourceKey myDataSourceKey;
 
-  ModelFileCalculator(@NotNull ModelFactory modelFactory, @NotNull SourceRoot sourceRoot, @NotNull String modelName) {
-    myModelFactory = modelFactory;
-    mySourceRoot = sourceRoot;
+  ModelFileCalculator(@NotNull String modelName,
+                      @NotNull SourceRoot sourceRoot,
+                      @NotNull FileExtensionDataSourceKey dataSourceKey) {
     myModelName = modelName;
+    mySourceRoot = sourceRoot;
+    myDataSourceKey = dataSourceKey;
   }
 
   @NotNull
   public IFile modelFile() {
-    String relPath = calcRelativePath();
+    String fileName = calcFileName();
     IFile sourceRootFile = mySourceRoot.getAbsolutePath();
-    return sourceRootFile.getDescendant(relPath);
-  }
-
-  private boolean modelFileMustBeDirectory() {
-    return myModelFactory.getFileExtension() == null;
+    return sourceRootFile.getDescendant(fileName);
   }
 
   @NotNull
-  private String calcRelativePath() { // fixme IT IS A DIFFERENT RELATIVE PATH
+  private String calcFileName() {
     String filenameSuffix = calcFileNameSuffix(myModelName);
-    String extension = myModelFactory.getFileExtension();
-    if (modelFileMustBeDirectory()) {
-      return filenameSuffix;
-    }
+    String extension = getFileExtension();
     return NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT + extension;
+  }
+
+  private String getFileExtension() {
+    return myDataSourceKey.getFileExtension();
   }
 
   @NotNull
   private String calcFileNameSuffix(@NotNull String modelName) {
     String filenameSuffix = modelName;
-//      if (myModelRoot.getModule() instanceof Language) {
     // we assume there are not too many models in a language, and they represent distinct aspects
     // and thus are unique. We don't need to keep folder structure (relative path) then.
-//        String moduleName = myModelRoot.getModule().getModuleName(); // fixme move out of core
+//        String moduleName = myModelRoot.getModule().getModuleName();
 //        if (filenameSuffix.startsWith(moduleName + MPSExtentions.DOT)) {
 //          filenameSuffix = filenameSuffix.substring(moduleName.length() + 1);
 //        }

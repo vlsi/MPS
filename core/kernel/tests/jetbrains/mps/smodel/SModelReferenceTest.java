@@ -39,7 +39,7 @@ public class SModelReferenceTest {
     if (PersistenceFacade.getInstance() == null) {
       myPersistenceRegistry = new PersistenceRegistry();
       myPersistenceRegistry.init();
-      new JavaClassesPersistence(myPersistenceRegistry).init();
+      new JavaClassesPersistence(myPersistenceRegistry, myModelFactoryRegistry).init();
     }
     Assert.assertNotNull(PersistenceFacade.getInstance());
   }

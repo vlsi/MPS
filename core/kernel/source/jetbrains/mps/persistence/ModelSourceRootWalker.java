@@ -16,23 +16,18 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.persistence.DataSourceFactory.ResultWithOptions;
+import jetbrains.mps.persistence.DataSourceFactoryBridge.ResultWithOptions;
 import jetbrains.mps.persistence.DefaultModelRoot.FileTreeWalkListener;
 import jetbrains.mps.persistence.DefaultModelRoot.ModelRootWalkListener;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.List;
-import java.util.Set;
 
 /**
  * Walks recursively default model roots (alongside the filesystem tree)
@@ -50,9 +45,10 @@ final class ModelSourceRootWalker {
 
   public void traverse(@NotNull SourceRoot sourceRoot) {
     IFile root = sourceRoot.getAbsolutePath();
-    if (root.isDirectory()) {
-      walk(new ModelRootFileTreeLocus(sourceRoot));
+    if (!root.isDirectory()) {
+      throw new IllegalArgumentException("Source root " + sourceRoot.getAbsolutePath() + " is not a directory, cannot traverse!");
     }
+    walk(new ModelRootFileTreeLocus(sourceRoot));
   }
 
   private void walk(@NotNull ModelRootFileTreeLocus state) {
@@ -123,10 +119,12 @@ final class ModelSourceRootWalker {
   private final static class ModelRootTreeWalkCallback implements FileTreeWalkListener {
     private final ModelRootWalkListener myCallback;
     private final FileBasedModelRoot myModelRoot;
+    private final DataSourceFactoryBridge myDataSourceFactory;
 
     public ModelRootTreeWalkCallback(@NotNull FileBasedModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
       myCallback = callback;
       myModelRoot = modelRoot;
+      myDataSourceFactory = new DataSourceFactoryBridge(myModelRoot);
     }
 
     @Override
@@ -134,27 +132,27 @@ final class ModelSourceRootWalker {
       IFile file = state.getFile();
       SourceRoot sourceRoot = state.getSourceRoot();
       assert !file.isDirectory();
-      String childName = file.getName();
-      String extension = FileUtil.getExtension(childName);
-      if (extension != null) {
-        ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(extension);
-        if (modelFactory != null) {
-          ResultWithOptions<FileDataSource> result = new DataSourceFactory(myModelRoot).createFileDataSource(modelFactory, sourceRoot, file);
-          myCallback.onDataSourceVisited(modelFactory, result.getDataSource(), result.getOptions(), file);
-        }
+      ResultWithOptions<DataSource> result = myDataSourceFactory.create(file, sourceRoot);
+      if (result != null) {
+        myCallback.onDataSourceVisited(null, result.getDataSource(), result.getOptions(), file);
       }
     }
 
     @Override
     public void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state) {
-      IFile folder = state.getFile();
-      SourceRoot sourceRoot = state.getSourceRoot();
-      assert folder.isDirectory();
-      Set<FolderModelFactory> folderModelFactories = PersistenceRegistry.getInstance().getFolderModelFactories();
-      for (FolderModelFactory modelFactory : folderModelFactories) {
-        ResultWithOptions<FolderDataSource> result = new DataSourceFactory(myModelRoot).createFolderDataSource(modelFactory, sourceRoot, folder);
-        myCallback.onDataSourceVisited(modelFactory, result.getDataSource(), result.getOptions(), folder);
-      }
+//      IFile folder = state.getFile();
+//      SourceRoot sourceRoot = state.getSourceRoot();
+//      if (folder.equals(sourceRoot.getAbsolutePath())) {
+//        return; // we do not consider
+//      }
+//      assert folder.isDirectory();
+//      if (folder.getDescendant(FilePerRootDataSource
+//      for (FolderModelFactory modelFactory : folderModelFactories) {
+//        ResultWithOptions<FolderDataSource> result = myDataSourceFactory.createPerRootDataSource(modelFactory, sourceRoot, folder);
+//        myCallback.onDataSourceVisited(modelFactory, result.getDataSource(), result.getOptions(), folder);
+      // ignore directories;
+      return;
+//      }
     }
   }
 }

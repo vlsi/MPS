@@ -13,14 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.dataSource;
+package jetbrains.mps.extapi.persistence.datasource;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 /**
+ * Serves as a unique identifier between {@link DataSource} instances.
+ * Currently it is used only for the file-based data sources.
+ *
  * Created by apyshkin on 12/22/16.
  */
 public interface DataSourceKey {
-  @NotNull
-  String getName();
+  @NotNull String getName();
 }

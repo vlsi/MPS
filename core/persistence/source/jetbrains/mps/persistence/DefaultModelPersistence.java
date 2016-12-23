@@ -18,6 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
@@ -37,6 +38,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
@@ -66,18 +68,22 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
   private final PersistenceFacade myFacade;
+  private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  DefaultModelPersistence(@NotNull PersistenceFacade persistenceFacade) {
+  DefaultModelPersistence(@NotNull PersistenceFacade persistenceFacade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
     myFacade = persistenceFacade;
+    myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @Override
   public void init() {
     myFacade.setModelFactory(MPSExtentions.MODEL, this);
+    myModelFactoryRegistry.register(FileDataSourceKey.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
+    myModelFactoryRegistry.unregister(FileDataSourceKey.INSTANCE);
     myFacade.setModelFactory(MPSExtentions.MODEL, null);
   }
 

@@ -49,7 +49,6 @@ import java.util.Set;
  * evgeny, 10/23/12
  */
 public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.PersistenceFacade implements CoreComponent {
-
   public static final String DEFAULT_MODEL_ROOT = "default";
   public static final String OBSOLETE_MODEL_ROOT = "obsolete";
   public static final String JAVA_CLASSES_ROOT = "java_classes";
@@ -294,36 +293,11 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     INSTANCE = this;
 
     setModelRootFactory(DEFAULT_MODEL_ROOT, new DefaultModelRootFactory());
-    setNodeIdFactory(jetbrains.mps.smodel.SNodeId.TYPE, new SNodeIdFactory() {
-      @Override
-      public SNodeId create(String text) {
-        return jetbrains.mps.smodel.SNodeId.fromString(text);
-      }
-    });
-    setModelIdFactory(RegularSModelId.TYPE, new SModelIdFactory() {
-      @Override
-      public SModelId create(String text) {
-        return jetbrains.mps.smodel.SModelId.regular(text);
-      }
-    });
-    setModelIdFactory(ForeignSModelId.TYPE, new SModelIdFactory() {
-      @Override
-      public SModelId create(String text) {
-        return jetbrains.mps.smodel.SModelId.foreign(text);
-      }
-    });
-    setModelIdFactory(RelativePathSModelId.TYPE, new SModelIdFactory() {
-      @Override
-      public SModelId create(String text) {
-        return new RelativePathSModelId(text);
-      }
-    });
-    setModelIdFactory(IntegerSModelId.TYPE, new SModelIdFactory() {
-      @Override
-      public SModelId create(String text) {
-        return IntegerSModelId.parse(text);
-      }
-    });
+    setNodeIdFactory(jetbrains.mps.smodel.SNodeId.TYPE, jetbrains.mps.smodel.SNodeId::fromString);
+    setModelIdFactory(RegularSModelId.TYPE, jetbrains.mps.smodel.SModelId::regular);
+    setModelIdFactory(ForeignSModelId.TYPE, jetbrains.mps.smodel.SModelId::foreign);
+    setModelIdFactory(RelativePathSModelId.TYPE, RelativePathSModelId::new);
+    setModelIdFactory(IntegerSModelId.TYPE, IntegerSModelId::parse);
   }
 
   @Override

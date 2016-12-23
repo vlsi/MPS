@@ -29,6 +29,7 @@ import jetbrains.mps.text.impl.MPSTextGenerator;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 class PlatformBase implements Platform {
@@ -41,15 +42,15 @@ class PlatformBase implements Platform {
   private MPSDataFlow myDataFlow;
 
   PlatformBase(PlatformOptionsBuilder options) {
-    if (options.isLoadCore()) {
+    if (options.loadsCore()) {
       myCore = new MPSCore();
       myCore.init();
     }
-    if (options.isLoadPersistence()) {
-      myPersistence = new MPSPersistence(myCore.getPersistenceFacade());
+    if (options.loadsPersistence()) {
+      myPersistence = new MPSPersistence(myCore.getPersistenceFacade(), myCore.getModelFactoryRegistry());
       myPersistence.init();
     }
-    if (options.isLoadOthers()) {
+    if (options.loadsOthers()) {
       myTypesystem = new MPSTypesystem(myCore.getLanguageRegistry(), myCore.getClassLoaderManager());
       myGenerator = new MPSGenerator();
       myFindUsages = new MPSFindUsages(myCore.getLanguageRegistry());
@@ -79,6 +80,9 @@ class PlatformBase implements Platform {
     }
     if (LanguageRegistry.class.isAssignableFrom(componentClass)) {
       return componentClass.cast(myCore.getLanguageRegistry());
+    }
+    if (ModelFactoryRegistry.class.isAssignableFrom(componentClass)) {
+      return componentClass.cast(myCore.getModelFactoryRegistry());
     }
     return null;
   }

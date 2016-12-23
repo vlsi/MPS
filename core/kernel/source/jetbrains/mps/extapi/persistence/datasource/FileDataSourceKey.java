@@ -13,15 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.vfs;
+package jetbrains.mps.extapi.persistence.datasource;
 
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Singleton;
 
-/**
- * Created by apyshkin on 12/22/16.
- */
-public interface File {
-  boolean isDirectory();
+@Singleton
+@Immutable
+public final class FileDataSourceKey extends FileExtDataSourceKey {
+  public final static FileDataSourceKey INSTANCE = new FileDataSourceKey();
 
-  @NotNull File toAbsolute();
+  private FileDataSourceKey() {
+    super(MPSExtentions.DOT_MODEL);
+  }
 }

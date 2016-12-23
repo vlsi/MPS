@@ -17,10 +17,9 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
@@ -40,16 +39,21 @@ final class ParametersCalculator {
   }
 
   @NotNull
-  public ModelCreationOptions calculate(@NotNull IFile modelFile, @NotNull ModelFactory modelFactory) {
-    String modelName = new ModelNameCalculator(modelFactory, mySourceRoot, modelFile).calcModelName();
+  public ModelCreationOptions calculate(@NotNull IFile modelFile) {
+    String modelName = new ModelNameCalculator(mySourceRoot, modelFile).calcModelFqName();
     return calculate(modelName);
+  }
+
+  @NotNull
+  public ModelCreationOptions calculate() {
+    return ModelCreationOptions.startBuilding()
+                               .setModuleReference(myModelRoot.getModule().getModuleReference())
+                               .finishBuilding();
   }
 
   @NotNull
   public ModelCreationOptions calculate(@NotNull String modelName) {
     return ModelCreationOptions.startBuilding()
-//                               .setRelativePath(calcRelativePathFromContentDir(modelFile))
-//                               .setPackage(javaPackage)
                                .setModelName(modelName)
                                .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();

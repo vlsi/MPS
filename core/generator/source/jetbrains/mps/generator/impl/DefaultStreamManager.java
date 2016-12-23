@@ -48,8 +48,8 @@ public class DefaultStreamManager implements ModelStreamManager {
     // expect directories, if exist
     assert !outputDir.exists() || outputDir.isDirectory();
     assert !cachesDir.exists() || cachesDir.isDirectory();
-    myOutputDir = new FolderDataSource(outputDir, null);
-    myCachesDir = new FolderDataSource(cachesDir, null);
+    myOutputDir = new FolderDataSource(outputDir);
+    myCachesDir = new FolderDataSource(cachesDir);
   }
 
   @Override

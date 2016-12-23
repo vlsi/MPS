@@ -13,19 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.dataSource;
+package jetbrains.mps.extapi.persistence.datasource;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
 
-/**
- * Created by apyshkin on 12/22/16.
- */
-public final class FileExtensionDataSourceKeyImpl implements FileExtensionDataSourceKey {
+import java.util.Objects;
+
+@Immutable
+public class FileExtDataSourceKey implements FileExtensionDataSourceKey {
   @NotNull
   private final String myFileExtension;
 
-  public FileExtensionDataSourceKeyImpl(@NotNull String fileExtension) {
+  protected FileExtDataSourceKey(@NotNull String fileExtension) {
     myFileExtension = fileExtension;
+  }
+
+  /**
+   * main factory method
+   */
+  @NotNull
+  public static FileExtDataSourceKey from(@NotNull String fileExtension) {
+    return new FileExtDataSourceKey(fileExtension);
   }
 
   @Override
@@ -39,4 +48,18 @@ public final class FileExtensionDataSourceKeyImpl implements FileExtensionDataSo
   public String getName() {
     return "File Extension Data Source Key";
   }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(myFileExtension);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof FileExtDataSourceKey) {
+      return Objects.equals(myFileExtension, ((FileExtDataSourceKey) obj).myFileExtension);
+    }
+    return false;
+  }
+
 }

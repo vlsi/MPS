@@ -161,24 +161,28 @@ public class SModuleOperations {
       return null;
     }
 
-    EditableSModel model;
-    if (modelFactory != null && root instanceof DefaultModelRoot) {
-      DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-      model = (EditableSModel) defaultModelRoot.createModel(modelFactory, name);
-    } else {
-      model = (EditableSModel) root.createModel(name);
+    try {
+      EditableSModel model;
+      if (modelFactory != null && root instanceof DefaultModelRoot) {
+        DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
+        model = (EditableSModel) defaultModelRoot.createModel(name, null, modelFactory);
+      } else {
+        model = (EditableSModel) root.createModel(name);
+      }
+
+      // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
+      // model.getSModel() ?
+      model.setChanged(true);
+      model.save();
+      // ((ModelRootBase) root).register(model);
+
+      ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
+      new MissingDependenciesFixer(model).fixModuleDependencies();
+      return model;
+    } catch (IOException e) {
+      LOG.error("", e);
+      return null;
     }
-
-    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
-    // model.getSModel() ?
-    model.setChanged(true);
-    model.save();
-    // ((ModelRootBase) root).register(model);
-
-    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
-    new MissingDependenciesFixer(model).fixModuleDependencies();
-
-    return model;
   }
 
   public static boolean needReloading(AbstractModule module) {

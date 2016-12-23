@@ -15,26 +15,34 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.persistence.FolderDataSourceKey;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * evgeny, 11/4/12
  */
-public abstract class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
+public class FolderDataSource extends DataSourceBase implements MultiStreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
   private List<DataSourceListener> myListeners = new ArrayList<DataSourceListener>();
 
@@ -44,14 +52,28 @@ public abstract class FolderDataSource extends DataSourceBase implements MultiSt
 
   private long myLastAddRemove = -1;
 
+  public FolderDataSource(@NotNull IFile folder) {
+    this(folder, null);
+  }
+
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    */
-  protected FolderDataSource(@NotNull IFile folder, ModelRoot modelRoot) {
+  @ToRemove(version = 3.5)
+  @Deprecated
+  protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
+    if (!folder.isDirectory()) {
+      throw new IllegalArgumentException("Could not create FolderDataSource with regular file: " + folder);
+    }
     this.myFolder = folder;
     this.myModelRoot = modelRoot;
   }
 
+  /**
+   * Returns true iff the file potentially contains some model data
+   *
+   * @return whether file is an actual source file
+   */
   public boolean isIncluded(@NotNull IFile file) {
     return myFolder.equals(file.getParent());
   }
@@ -242,5 +264,11 @@ public abstract class FolderDataSource extends DataSourceBase implements MultiSt
   @Override
   public Collection<IFile> getAffectedFiles() {
     return Collections.singleton(myFolder);
+  }
+
+  @NotNull
+  @Override
+  public FolderDataSourceKey getKey() {
+    return FolderDataSourceKey.INSTANCE;
   }
 }
