@@ -55,6 +55,13 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="testDefaultEditor.behavior.IConcreteChild_BehaviorDescriptor" file="IConcreteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.IParent_BehaviorDescriptor" file="IParent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" file="NotSubstitutableDeveloper_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

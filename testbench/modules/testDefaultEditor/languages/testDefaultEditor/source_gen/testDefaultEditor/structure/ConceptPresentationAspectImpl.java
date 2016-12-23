@@ -21,6 +21,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Developer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DummyMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Friend = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotSubstitutableDeveloper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
@@ -55,6 +57,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DummyMethod;
       case LanguageConceptSwitch.Friend:
         return props_Friend;
+      case LanguageConceptSwitch.IConcreteChild:
+        return props_IConcreteChild;
+      case LanguageConceptSwitch.IParent:
+        return props_IParent;
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         return props_NotSubstitutableDeveloper;
       case LanguageConceptSwitch.Parent:

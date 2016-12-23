@@ -30,6 +30,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_DelTestSpecialChild1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FoldingContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IBaseTestBlock = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IDelTestChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IDelTestConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ISpecialDelTestChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ISpecialDelTestConcreteChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitAbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitChildWithDirectCycle_card1 = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitChildWithDirectCycle_card1n = new ConceptPresentationBuilder().create();
@@ -114,6 +118,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_FoldingContainer;
       case LanguageConceptSwitch.IBaseTestBlock:
         return props_IBaseTestBlock;
+      case LanguageConceptSwitch.IDelTestChild:
+        return props_IDelTestChild;
+      case LanguageConceptSwitch.IDelTestConcreteChild:
+        return props_IDelTestConcreteChild;
+      case LanguageConceptSwitch.ISpecialDelTestChild:
+        return props_ISpecialDelTestChild;
+      case LanguageConceptSwitch.ISpecialDelTestConcreteChild:
+        return props_ISpecialDelTestConcreteChild;
       case LanguageConceptSwitch.InitAbstractChild:
         return props_InitAbstractChild;
       case LanguageConceptSwitch.InitChildWithDirectCycle_card1:

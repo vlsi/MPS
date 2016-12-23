@@ -2716,6 +2716,40 @@
       <unit id="2907839077756756657" at="11,0,32,0" name="jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2943053183528184978">
+    <file name="DefaultEditor_DelOnInterfaceChild1DeleteParent_Test.java">
+      <node id="2943053183528184978" at="15,86,16,102" concept="3" />
+      <node id="2943053183528184978" at="16,102,17,122" concept="3" />
+      <node id="2943053183528184978" at="23,51,24,72" concept="3" />
+      <node id="8090251179710449860" at="24,72,25,80" concept="3" />
+      <node id="2943053183528184980" at="25,80,26,69" concept="3" />
+      <node id="2943053183528184978" at="14,0,19,0" concept="6" trace="test_DefaultEditor_DelOnInterfaceChild1DeleteParent#()V" />
+      <node id="2943053183528184978" at="22,0,28,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="2943053183528184978" at="15,86,17,122" />
+      <scope id="2943053183528184978" at="23,51,26,69" />
+      <scope id="2943053183528184978" at="14,0,19,0" />
+      <scope id="2943053183528184978" at="22,0,28,0" />
+      <unit id="2943053183528184978" at="20,0,29,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnInterfaceChild1DeleteParent_Test$TestBody" />
+      <unit id="2943053183528184978" at="12,0,30,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnInterfaceChild1DeleteParent_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2943053183528195669">
+    <file name="DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="2943053183528195669" at="13,97,14,102" concept="3" />
+      <node id="2943053183528195669" at="14,102,15,133" concept="3" />
+      <node id="2943053183528195669" at="21,51,22,72" concept="3" />
+      <node id="2943053183528195675" at="22,72,23,69" concept="3" />
+      <node id="8090251179710449914" at="23,69,24,71" concept="3" />
+      <node id="2943053183528195669" at="12,0,17,0" concept="6" trace="test_DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget#()V" />
+      <node id="2943053183528195669" at="20,0,26,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="2943053183528195669" at="13,97,15,133" />
+      <scope id="2943053183528195669" at="21,51,24,71" />
+      <scope id="2943053183528195669" at="12,0,17,0" />
+      <scope id="2943053183528195669" at="20,0,26,0" />
+      <unit id="2943053183528195669" at="18,0,27,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="2943053183528195669" at="10,0,28,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009684603">
     <file name="AddConstructorInEnumCaret1_Test.java">
       <node id="3009615984009684603" at="13,66,14,102" concept="3" />

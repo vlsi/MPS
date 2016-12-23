@@ -21,10 +21,12 @@ public final class LanguageConceptSwitch {
   public static final int Developer = 9;
   public static final int DummyMethod = 10;
   public static final int Friend = 11;
-  public static final int NotSubstitutableDeveloper = 12;
-  public static final int Parent = 13;
-  public static final int Shape = 14;
-  public static final int Team = 15;
+  public static final int IConcreteChild = 12;
+  public static final int IParent = 13;
+  public static final int NotSubstitutableDeveloper = 14;
+  public static final int Parent = 15;
+  public static final int Shape = 16;
+  public static final int Team = 17;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL);
@@ -40,6 +42,8 @@ public final class LanguageConceptSwitch {
     builder.put(0xd0768d7cf132939L, Developer);
     builder.put(0x535e489f8b62af67L, DummyMethod);
     builder.put(0xd0768d7cf13be7aL, Friend);
+    builder.put(0x28d7d3470747a409L, IConcreteChild);
+    builder.put(0x28d7d3470747a408L, IParent);
     builder.put(0x6903a6b9853b871L, NotSubstitutableDeveloper);
     builder.put(0x77c1a85c9f845582L, Parent);
     builder.put(0x5a79ee4e776cb5dbL, Shape);

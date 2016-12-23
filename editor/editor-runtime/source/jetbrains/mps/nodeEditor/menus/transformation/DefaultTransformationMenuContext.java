@@ -120,9 +120,6 @@ public class DefaultTransformationMenuContext implements TransformationMenuConte
   private Predicate<SAbstractConcept> createSuitableForConstraintsPredicate(@NotNull SNodeLocation nodeLocation, @NotNull SRepository repository) {
     final SContainmentLink containmentLink = nodeLocation.getContainmentLink();
     Predicate<SAbstractConcept> predicate = new CanBeParentPredicate(nodeLocation.getParent(), containmentLink, repository);
-    if (nodeLocation.getParent() != null) {
-      predicate = predicate.and(new CanBeChildPredicate(nodeLocation.getParent(), containmentLink));
-    }
     predicate = predicate.and(new InUsedLanguagesPredicate(getModel()));
     return predicate;
   }

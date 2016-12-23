@@ -40,6 +40,12 @@
     <file name="Friend_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.Friend_BehaviorDescriptor" />
     </file>
+    <file name="IConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.IConcreteChild_BehaviorDescriptor" />
+    </file>
+    <file name="IParent_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="testDefaultEditor.behavior.IParent_BehaviorDescriptor" />
+    </file>
     <file name="NotSubstitutableDeveloper_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" />
     </file>
