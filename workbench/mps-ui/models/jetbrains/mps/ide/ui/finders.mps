@@ -20,6 +20,7 @@
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="yctd" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.findUsages(MPS.Core/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
+    <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -85,6 +86,7 @@
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu">
         <property id="1075300953594" name="abstractClass" index="1sVAO0" />
         <property id="1221565133444" name="isFinal" index="1EXbeo" />
+        <child id="1095933932569" name="implementedInterface" index="EKbjA" />
         <child id="1165602531693" name="superclass" index="1zkMxy" />
       </concept>
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
@@ -2319,6 +2321,9 @@
         </node>
       </node>
     </node>
+    <node concept="3uibUv" id="2MPx6ZV5itK" role="EKbjA">
+      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
+    </node>
   </node>
   <node concept="312cEu" id="3_o1C0wGpM1">
     <property role="TrG5h" value="ModelUsagesFinder" />
@@ -4419,6 +4424,9 @@
     </node>
     <node concept="3uibUv" id="1Fz6CCofGLx" role="1zkMxy">
       <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
+    <node concept="3uibUv" id="2MPx6ZV5daN" role="EKbjA">
+      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
     </node>
   </node>
   <node concept="312cEu" id="pogCqdRFxj">

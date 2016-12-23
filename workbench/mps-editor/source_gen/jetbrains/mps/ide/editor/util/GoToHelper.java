@@ -24,6 +24,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.editor.util.renderer.DefaultMethodRenderer;
 
 public class GoToHelper {
@@ -43,8 +44,9 @@ public class GoToHelper {
             } else {
               caption.value = ((String) BHReflection.invoke(node, SMethodTrimmedId.create("getPresentation", null, "hEwIMiw")));
             }
-
-            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, GlobalScope.getInstance()), finder).getResultObjects()) {
+            // XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures. 
+            // We desperately need a mechanism to match stub classes with their MPS origins. 
+            for (Object sr : FindUtils.getSearchResults(new ProgressMonitorAdapter(p), new SearchQuery(node, GlobalScope.getInstance()), (IFinder) finder).getResultObjects()) {
               if (sr instanceof SNode) {
                 SetSequence.fromSet(nodes).addElement(SNodeOperations.getPointer(((SNode) sr)));
               }

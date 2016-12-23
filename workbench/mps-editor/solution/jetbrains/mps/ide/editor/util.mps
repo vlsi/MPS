@@ -43,6 +43,7 @@
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="9erk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.model(MPS.Core/)" />
+    <import index="k4i4" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.ide.findusages.findalgorithm.finders(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -1447,7 +1448,16 @@
                                   </node>
                                 </node>
                               </node>
-                              <node concept="3clFbH" id="3$9coUqiLnY" role="3cqZAp" />
+                              <node concept="3SKdUt" id="2MPx6ZV5BKf" role="3cqZAp">
+                                <node concept="3SKdUq" id="2MPx6ZV5BKh" role="3SKWNk">
+                                  <property role="3SKdUp" value="XXX I know cast to IFinder is stupid here, but it's the way to deal with checkTypeSystem test failures." />
+                                </node>
+                              </node>
+                              <node concept="3SKdUt" id="2MPx6ZV5ScI" role="3cqZAp">
+                                <node concept="3SKdUq" id="2MPx6ZV5ScK" role="3SKWNk">
+                                  <property role="3SKdUp" value="We desperately need a mechanism to match stub classes with their MPS origins." />
+                                </node>
+                              </node>
                               <node concept="1DcWWT" id="3$9coUqjWGB" role="3cqZAp">
                                 <node concept="3clFbS" id="3$9coUqjWGE" role="2LFqv$">
                                   <node concept="3clFbJ" id="3$9coUqjZr0" role="3cqZAp">
@@ -1511,8 +1521,13 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node concept="37vLTw" id="3$9coUqjWGT" role="37wK5m">
-                                      <ref role="3cqZAo" node="2rUHgdX3ha9" resolve="finder" />
+                                    <node concept="10QFUN" id="2MPx6ZV5$0s" role="37wK5m">
+                                      <node concept="3uibUv" id="2MPx6ZV5ASP" role="10QFUM">
+                                        <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
+                                      </node>
+                                      <node concept="37vLTw" id="3$9coUqjWGT" role="10QFUP">
+                                        <ref role="3cqZAo" node="2rUHgdX3ha9" resolve="finder" />
+                                      </node>
                                     </node>
                                   </node>
                                   <node concept="liA8E" id="3$9coUqjWGU" role="2OqNvi">
