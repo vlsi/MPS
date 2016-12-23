@@ -18,15 +18,27 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+
+import java.util.List;
 
 /**
  * Stores default association between <code>ModelFactory</code> and <code>DataSourceKey</code>
+ * Stores association between data source keys and model factories.
+ * If #register is invoked for the same key twice, then the model factory value gets replaced.
+ *
  *
  * @see DataSourceKey
  * Created by apyshkin on 12/22/16.
  */
 public interface ModelFactoryRegistry {
+
+  /**
+   * @return all registered factories
+   */
+  @Immutable
+  @NotNull List<ModelFactory> getFactories();
 
   /**
    * Returns the first registered factory (order of registration) which correspond to the specified
@@ -47,5 +59,4 @@ public interface ModelFactoryRegistry {
    * @return the previous associated if any
    */
   @Nullable ModelFactory unregister(@NotNull DataSourceKey key);
-
 }

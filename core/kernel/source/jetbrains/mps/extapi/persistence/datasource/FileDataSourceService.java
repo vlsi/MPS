@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.extapi.persistence.datasource;
 
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.ServiceLoader;
 
 /**
@@ -52,5 +56,11 @@ public final class FileDataSourceService {
       }
     }
     return null;
+  }
+
+  @Immutable
+  @NotNull
+  public List<FileDataSourceFactory> getFactories() {
+    return Collections.unmodifiableList(IterableUtil.asList(ourServiceLoader));
   }
 }

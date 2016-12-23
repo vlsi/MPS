@@ -129,16 +129,14 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
   }
   private PsiJavaStubModelDescriptor makeModelDescriptor(SModelReference modelRef, Iterable<PsiDirectory> dirs) {
     MultiplePsiJavaStubDataSource ds = new MultiplePsiJavaStubDataSource(myIdeaModule, dirs);
-    PsiJavaStubModelDescriptor md = new PsiJavaStubModelDescriptor(modelRef, ds);
-    md.setModelRoot(this);
-    return md;
+    return new PsiJavaStubModelDescriptor(modelRef, ds);
   }
   private SModelReference makeModelReference(PsiDirectory sourceRoot, PsiDirectory dir) {
     int skipPrefix = sourceRoot.toString().length();
     String relativeDirName = dir.toString().substring(skipPrefix);
     String packageName = relativeDirName.replace('/', '.').replace('\\', '.');
 
-    if ((packageName == null || packageName.length() == 0)) {
+    if (packageName.length() == 0) {
       return null;
     }
 
@@ -152,7 +150,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements JavaPsiListen
     return true;
   }
   @Override
-  public boolean canCreateModel(String modelName) {
+  public boolean canCreateModel(@NotNull String modelName) {
     return false;
   }
   @Override

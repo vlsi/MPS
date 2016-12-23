@@ -27,6 +27,7 @@ import java.util.Map;
  * Creates models (instances of SModel) from data sources
  */
 public interface ModelFactory {
+  // --- default options ---
   /**
    * @deprecated not used currently
    */
@@ -62,6 +63,8 @@ public interface ModelFactory {
    */
   String OPTION_CONTENT_ONLY = "contentOnly";
 
+  // --- API ---
+
   /**
    * Instantiates a model on a given data source. Options can be used to pass additional parameters
    * like stream encoding (usually, the default is utf-8), package name, containing module reference
@@ -85,18 +88,22 @@ public interface ModelFactory {
    * Creates a new empty model.
    * Implementor must throw <code>UnsupportedDataSourceException</code> if
    * #canCreate returns false.
+   * @param dataSource if null then the default data source is created for the supplied model name
+   * @param options must content {@link #OPTION_MODELNAME} mapping.
+   *
    * @throws UnsupportedDataSourceException if the data source is not supported, in other words {@link #canCreate(DataSource, Map)} returns false
    * @throws IOException if the model cannot be created for some other reasons
    */
   /*@Deprecated*/
   @NotNull
-  SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
+  SModel create(@Nullable DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
   /*@Deprecated*/
-  boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
+  boolean canCreate(@Nullable DataSource dataSource, @NotNull Map<String, String> options);
+
 //  /**
 //   * Creates a new model with the supplied <code>modelName</code> on the given <code>DataSource</code>.
 //   * Might consider additional options provided in the <code>options</code> varargs.

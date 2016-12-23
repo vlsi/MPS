@@ -32,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.List;
@@ -132,14 +133,15 @@ final class CopyDefaultModelRootHelper {
                                  @NotNull SourceRoot targetSourceRoot,
                                  @NotNull String newModelName,
                                  @NotNull SModelBase modelDataToCopy) throws IOException {
-    EditableSModelBase targetModel = (EditableSModelBase) myTargetModelRoot.createModelImpl(factory, targetSourceRoot, newModelName);
-    targetModel.setModelRoot(myTargetModelRoot);
-    targetModel.setModule(myTargetModelRoot.getModule());
-
-    CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
-    CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), targetModel.getSModel());
-    saveModel(targetModel);
-    return targetModel;
+//    EditableSModelBase targetModel = (EditableSModelBase) myTargetModelRoot.createModelWithFactory(factory, targetSourceRoot, newModelName);
+    throw new NotImplementedException();
+//    targetModel.setModelRoot(myTargetModelRoot);
+//    targetModel.setModule(myTargetModelRoot.getModule());
+//
+//    CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
+//    CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), targetModel.getSModel());
+//    saveModel(targetModel);
+//    return targetModel;
   }
 
   // FIXME see MPS-18545

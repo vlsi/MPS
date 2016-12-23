@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -39,7 +40,7 @@ public class SModelReferenceTest {
     if (PersistenceFacade.getInstance() == null) {
       myPersistenceRegistry = new PersistenceRegistry();
       myPersistenceRegistry.init();
-      new JavaClassesPersistence(myPersistenceRegistry, myModelFactoryRegistry).init();
+      new JavaClassesPersistence(myPersistenceRegistry, ModelFactoryRegistryImpl.getInstance()).init();
     }
     Assert.assertNotNull(PersistenceFacade.getInstance());
   }

@@ -109,7 +109,7 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public boolean canCreateModel(String string) {
+  public boolean canCreateModel(@NotNull String string) {
     return false;
   }
 

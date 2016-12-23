@@ -164,9 +164,9 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
     assert ds instanceof FileDataSource || ds instanceof FilePerRootDataSource;
     if (ds instanceof FileDataSource) {
       return Collections.singletonList(((FileDataSource) ds).getFile());
-    } else if (ds instanceof FilePerRootDataSource) {
+    } else {
       FilePerRootDataSource fds = (FilePerRootDataSource) ds;
-      Set<IFile> files = new HashSet<IFile>();
+      Set<IFile> files = new HashSet<>();
       for (String streamName : fds.getAvailableStreams()) {
         IFile file = fds.getFile(streamName);
         if (fds.isIncluded(file)) {
@@ -174,8 +174,6 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FindUsage
         }
       }
       return files;
-    } else {
-      throw new IllegalArgumentException("wrong kind of data source here: " + ds);
     }
   }
 }

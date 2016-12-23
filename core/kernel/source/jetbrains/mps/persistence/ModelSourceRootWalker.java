@@ -16,15 +16,11 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.persistence.DataSourceFactoryBridge.ResultWithOptions;
-import jetbrains.mps.persistence.DefaultModelRoot.FileTreeWalkListener;
-import jetbrains.mps.persistence.DefaultModelRoot.ModelRootWalkListener;
+import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.List;
@@ -73,49 +69,6 @@ final class ModelSourceRootWalker {
     return ((FileSystem) myModelRoot.getFileSystem()).isFileIgnored(curDirectory.getName());
   }
 
-  /**
-   * Became simply a wrapper around the source root and file under the source root file.
-   */
-  @Immutable
-  public static final class ModelRootFileTreeLocus {
-    @NotNull private final SourceRoot mySourceRoot;
-    private final IFile myFile;
-
-    public ModelRootFileTreeLocus(@NotNull SourceRoot sourceRoot) {
-      mySourceRoot = sourceRoot;
-      myFile = sourceRoot.getAbsolutePath();
-    }
-
-    public ModelRootFileTreeLocus(@NotNull SourceRoot sourceRoot, @NotNull IFile directory0) {
-      mySourceRoot = sourceRoot;
-      myFile = directory0;
-    }
-
-    @NotNull
-    public SourceRoot getSourceRoot() {
-      return mySourceRoot;
-    }
-
-    @NotNull
-    public IFile getFile() {
-      return myFile;
-    }
-
-    /**
-     * We are traversing file system tree
-     * Returns new state based on the name of the current file/folder
-     */
-    @NotNull
-    public ModelRootFileTreeLocus nextState(@NotNull IFile file) {
-      return new ModelRootFileTreeLocus(mySourceRoot, file);
-    }
-
-    @Override
-    public String toString() {
-      return "FileTreeLocation " + getFile();
-    }
-  }
-
   private final static class ModelRootTreeWalkCallback implements FileTreeWalkListener {
     private final ModelRootWalkListener myCallback;
     private final FileBasedModelRoot myModelRoot;
@@ -132,7 +85,7 @@ final class ModelSourceRootWalker {
       IFile file = state.getFile();
       SourceRoot sourceRoot = state.getSourceRoot();
       assert !file.isDirectory();
-      ResultWithOptions<DataSource> result = myDataSourceFactory.create(file, sourceRoot);
+      CompositeResult<DataSource> result = myDataSourceFactory.create(file, sourceRoot);
       if (result != null) {
         myCallback.onDataSourceVisited(null, result.getDataSource(), result.getOptions(), file);
       }
@@ -140,19 +93,6 @@ final class ModelSourceRootWalker {
 
     @Override
     public void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state) {
-//      IFile folder = state.getFile();
-//      SourceRoot sourceRoot = state.getSourceRoot();
-//      if (folder.equals(sourceRoot.getAbsolutePath())) {
-//        return; // we do not consider
-//      }
-//      assert folder.isDirectory();
-//      if (folder.getDescendant(FilePerRootDataSource
-//      for (FolderModelFactory modelFactory : folderModelFactories) {
-//        ResultWithOptions<FolderDataSource> result = myDataSourceFactory.createPerRootDataSource(modelFactory, sourceRoot, folder);
-//        myCallback.onDataSourceVisited(modelFactory, result.getDataSource(), result.getOptions(), folder);
-      // ignore directories;
-      return;
-//      }
     }
   }
 }

@@ -20,11 +20,14 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.psi.PsiDirectory;
+import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModelsAutoImportsManager;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -78,10 +81,17 @@ public class NewModelAction extends NewModelActionBase {
 
             EditableSModel model = null;
             try {
-              model = (EditableSModel) myModelRoot.createModel(modelName, myRootForModel);
+              SourceRoot sourceRoot0 = null;
+              for (SourceRoot sourceRoot : myModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
+                if (sourceRoot.getPath().equals(myRootForModel)) {
+                  sourceRoot0 = sourceRoot;
+                }
+              }
+              model = (EditableSModel) myModelRoot.createFileModel(modelName, sourceRoot0);
+              if (
               model.setChanged(true);
               model.save();
-            } catch (IOException e) {
+            } catch (ModelCannotBeCreatedException e) {
               LOG.error("Can't create per-root model " + modelName + " under " + path, e);
               return null;
             }

@@ -19,12 +19,17 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
+ * FIXME restore previous associated value after #unregister is invoked.
  * Created by apyshkin on 12/23/16.
  */
 public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, CoreComponent {
@@ -47,6 +52,13 @@ public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, Cor
   @Override
   public synchronized ModelFactory unregister(@NotNull DataSourceKey key) {
     return myFactories.remove(key);
+  }
+
+  @NotNull
+  @Override
+  @Immutable
+  public List<ModelFactory> getFactories() {
+    return Collections.unmodifiableList(new ArrayList<>(myFactories.values()));
   }
 
   @Nullable

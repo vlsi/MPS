@@ -36,7 +36,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.util.List;
 
-import static jetbrains.mps.persistence.DataSourceFactoryBridge.ResultWithOptions.build;
+import static jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult.build;
 
 /**
  * Creates data sources (folder and file based) for the {@link DefaultModelRoot}.
@@ -62,21 +62,21 @@ public final class DataSourceFactoryBridge {
   }
 
   @NotNull
-  public ResultWithOptions<FileDataSource> createFileDataSource(@NotNull SourceRoot sourceRoot,
-                                                                @NotNull String modelName) {
+  public CompositeResult<FileDataSource> createFileDataSource(@NotNull SourceRoot sourceRoot,
+                                                              @NotNull String modelName) {
     return create(modelName, sourceRoot, FileDataSourceKey.INSTANCE);
   }
 
   @NotNull
-  public ResultWithOptions<FolderDataSource> createPerRootDataSource(@NotNull SourceRoot sourceRoot,
-                                                                     @NotNull String modelName) {
+  public CompositeResult<FolderDataSource> createPerRootDataSource(@NotNull SourceRoot sourceRoot,
+                                                                   @NotNull String modelName) {
     return create(modelName, sourceRoot, FilePerRootDataSourceKey.INSTANCE);
   }
 
   @NotNull
-  <T extends DataSource> ResultWithOptions<T> create(@NotNull String modelName,
-                                                     @NotNull SourceRoot sourceRoot,
-                                                     @NotNull FileExtensionDataSourceKey key) {
+  <T extends DataSource> CompositeResult<T> create(@NotNull String modelName,
+                                                   @NotNull SourceRoot sourceRoot,
+                                                   @NotNull FileExtensionDataSourceKey key) {
     checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     FileDataSourceFactory factory = getDataSourceFactory(key);
     return create(modelName, sourceRoot, factory);
@@ -86,9 +86,9 @@ public final class DataSourceFactoryBridge {
    * Does not throw -- that is the difference with the one above
    */
   @NotNull
-  private <T extends DataSource> ResultWithOptions<T> create(@NotNull String modelName,
-                                                             @NotNull SourceRoot sourceRoot,
-                                                             @NotNull FileDataSourceFactory factory) {
+  private <T extends DataSource> CompositeResult<T> create(@NotNull String modelName,
+                                                           @NotNull SourceRoot sourceRoot,
+                                                           @NotNull FileDataSourceFactory factory) {
     FileExtensionDataSourceKey key = (FileExtensionDataSourceKey) factory.getKey();
     ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, key);
     IFile modelDataSourceFile = modelFileCalculator.modelFile();
@@ -107,11 +107,12 @@ public final class DataSourceFactoryBridge {
   }
 
   /**
-   * Creates data source from a file. No need to calculate model name here -- it must be provided in the
+   * Creates data source from a file.
+   * No need to calculate model name here -- it must be provided in the
    * data source itself.
    */
   @Nullable
-  ResultWithOptions<DataSource> create(@NotNull IFile file, @NotNull SourceRoot sourceRoot) {
+  CompositeResult<DataSource> create(@NotNull IFile file, @NotNull SourceRoot sourceRoot) {
     assert !file.isDirectory();
     String childName = file.getName();
     String extension = FileUtil.getExtension(childName); // keep in mind .model or .mps here (20.12.16)
@@ -131,19 +132,19 @@ public final class DataSourceFactoryBridge {
    * Used as a result in the factory methods of the enclosing {@link DataSourceFactoryBridge}.
    */
   @Immutable
-  public static final class ResultWithOptions<T extends DataSource> {
+  public static final class CompositeResult<T extends DataSource> {
     private final T source;
     private final ModelCreationOptions parameters;
 
-    private ResultWithOptions(T source0, ModelCreationOptions parameters0) {
+    private CompositeResult(T source0, ModelCreationOptions parameters0) {
       this.source = source0;
       this.parameters = parameters0;
     }
 
     @NotNull
-    public static <T extends DataSource> ResultWithOptions<T> build(@NotNull T source,
-                                                                    @NotNull ModelCreationOptions parameters) {
-      return new ResultWithOptions<>(source, parameters);
+    public static <T extends DataSource> CompositeResult<T> build(@NotNull T source,
+                                                                  @NotNull ModelCreationOptions parameters) {
+      return new CompositeResult<>(source, parameters);
     }
 
     @NotNull

@@ -64,12 +64,9 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   // ModelListenerDispatch shall prevail, to limit future changes, let fire* method stay non deprecated for now.
   private final ModelListenerDispatch myModelEventDispatch;
 
-  @NotNull
-  private final DataSource mySource;
-  @NotNull
-  private SModelReference myModelReference;
-
-  private ModelRoot myModelRoot;
+  @NotNull private final DataSource mySource;
+  @NotNull private SModelReference myModelReference;
+  @Nullable private ModelRoot myModelRoot;
 
   private SModule myModule;
   private volatile SRepository myRepository = null;
@@ -202,7 +199,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
     return myModule;
   }
 
-  public void setModelRoot(ModelRoot modelRoot) {
+  public void setModelRoot(@Nullable ModelRoot modelRoot) {
     assertCanChange();
 //    if (myModelRoot != null && modelRoot != null) {
 //      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
@@ -214,6 +211,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
+  @Nullable
   public ModelRoot getModelRoot() {
     assertCanRead();
     return myModelRoot;

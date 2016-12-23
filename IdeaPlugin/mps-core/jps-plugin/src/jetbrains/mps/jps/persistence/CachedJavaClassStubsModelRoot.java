@@ -51,11 +51,11 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
     if (module instanceof Generator) {
       module = ((Generator) module).getSourceLanguage();
     }
-    if (module == null || !(module.getModuleReference() instanceof SModuleReference)) {
+    if (module == null) {
       return super.loadModels();
     }
 
-    CachedModuleData moduleData = myCachedRepository.getModuleData((SModuleReference) module.getModuleReference());
+    CachedModuleData moduleData = myCachedRepository.getModuleData(module.getModuleReference());
     if (moduleData == null) {
       return super.loadModels();
     }
@@ -73,7 +73,6 @@ public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
         source.addPath(getFileSystem().getFile(s), this);
       }
       final JavaClassStubModelDescriptor md = new JavaClassStubModelDescriptor(header.getReference(), source);
-      md.setModelRoot(this);
       result.add(md);
     }
     return result;

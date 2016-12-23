@@ -20,19 +20,21 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.util.xmlb.annotations.Attribute;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ModelFactoryRegister implements ApplicationComponent {
-  private final List<ModelFactory> myRegisteredFactories = new ArrayList<ModelFactory>();
+  private final List<ModelFactory> myRegisteredFactories = new ArrayList<>();
 
-  private PersistenceFacade myPersistenceRegistry;
+  private final PersistenceFacade myPersistenceRegistry;
 
   public ModelFactoryRegister(MPSCoreComponents mpsCoreComponents) {
     myPersistenceRegistry = mpsCoreComponents.getPersistenceFacade();
@@ -54,16 +56,10 @@ public class ModelFactoryRegister implements ApplicationComponent {
 
   @Override
   public void disposeComponent() {
-    for (ModelFactory factory : myRegisteredFactories) {
-      myPersistenceRegistry.setModelFactory(factory.getFileExtension(), null);
+    for (ModelFactory modelFactory : myRegisteredFactories) {
+      myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), null);
     }
     myRegisteredFactories.clear();
-    myPersistenceRegistry = null;
-  }
-
-  // it's preferable to use this method instead of static getInstance()
-  public PersistenceFacade getPersistenceRegistry() {
-    return myPersistenceRegistry;
   }
 
   @NotNull

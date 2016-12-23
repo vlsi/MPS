@@ -142,7 +142,10 @@ public abstract class ModelRootBase implements ModelRoot {
     assert module != null;
     assert module.getModel(model.getModelId()) == null;
 
-    module.registerModel((SModelBase) model);
+    if (model instanceof SModelBase) {
+      module.registerModel((SModelBase) model);
+      ((SModelBase) model).setModelRoot(this);
+    }
     myModels.add(model);
   }
 
@@ -157,10 +160,15 @@ public abstract class ModelRootBase implements ModelRoot {
     assert module != null;
     assert module.getModel(model.getModelId()) != null;
     assert myModels.contains(model);
+    if (model instanceof SModelBase) {
+      ((SModelBase) model).setModelRoot(null);
+    }
     if (model instanceof EditableSModelBase && ((EditableSModelBase) model).isChanged()) {
       ((EditableSModelBase) model).resolveDiskConflict();
     } else {
-      module.unregisterModel((SModelBase) model);
+      if (model instanceof SModelBase) {
+        module.unregisterModel((SModelBase) model);
+      }
     }
   }
 

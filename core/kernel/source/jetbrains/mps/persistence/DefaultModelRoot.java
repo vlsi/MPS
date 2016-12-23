@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
@@ -28,18 +28,18 @@ import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
-import jetbrains.mps.persistence.DataSourceFactoryBridge.ResultWithOptions;
-import jetbrains.mps.persistence.ModelSourceRootWalker.ModelRootFileTreeLocus;
+import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
+import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.smodel.structure.Extension.Default;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -97,7 +97,6 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(this, (factory, dataSource, options, file) -> {
       try {
         SModel model = new ModelFactoryFacade(factory).load(dataSource, options);
-        ((SModelBase) model).setModelRoot(DefaultModelRoot.this);
         result.add(model);
       } catch (IOException ex) {
         LOG.error("Caught exception while collecting models in the '" + file + "'", ex);
@@ -121,7 +120,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
 
     FileDataSourceKey key = Defaults.dataSourceKey();
     DataSourceFactoryBridge dataSourceFactory = new DataSourceFactoryBridge(this);
-    ResultWithOptions<FileDataSource> result = dataSourceFactory.create(modelName, Defaults.sourceRoot(this), key);
+    CompositeResult<FileDataSource> result = dataSourceFactory.create(modelName, Defaults.sourceRoot(this), key);
     ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getDefault(key);
     if (modelFactory == null) {
       return false;
@@ -138,13 +137,12 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
   @Override
   @Nullable
   public SModel createModel(@NotNull String modelName) {
-    throw new NotImplementedException();
-//    try {
-//      return createModel(modelName, Defaults., null);
-//    } catch (IOException e) {
-//      LOG.error("", e);
-//      return null;
-//    }
+    try {
+      return createModel(modelName, null, (FileExtensionDataSourceKey) null);
+    } catch (ModelCannotBeCreatedException e) {
+      LOG.error("", e);
+      return null;
+    }
   }
 
   /**
@@ -154,11 +152,8 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    * @return null if there was IOException
    */
   @Nullable
-  public SModel createPerRootModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) {
-    if (sourceRoot == null) {
-      sourceRoot = Defaults.sourceRoot(this);
-    }
-    return createModel(modelName, Defaults.sourceRoot(this), FilePerRootDataSourceKey.INSTANCE);
+  public SModel createPerRootModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
+    return createModel(modelName, sourceRoot, FilePerRootDataSourceKey.INSTANCE);
   }
   /**
    * Creates model in the default source root.
@@ -167,21 +162,18 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    * @return null if there was IOException
    */
   @Nullable
-  public SModel createFileModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) {
-    if (sourceRoot == null) {
-      sourceRoot = Defaults.sourceRoot(this);
-    }
-    return createModel(modelName, Defaults.sourceRoot(this), FileDataSourceKey.INSTANCE);
+  public SModel createFileModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
+    return createModel(modelName, sourceRoot, FileDataSourceKey.INSTANCE);
   }
 
-  @Nullable
-  public SModel createModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @Nullable DataSource dataSource) throws IOException {
+//  @Nullable
+//  private SModel createModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @Nullable DataSource dataSource) throws IOException {
 //    try {
-      if (sourceRoot == null) {
-        sourceRoot = Defaults.sourceRoot(this);
-      }
-      throw new NotImplementedException();
-//      SModel model = createModelImpl(modelName, sourceRoot, dataSource);
+//      if (sourceRoot == null) {
+//        sourceRoot = Defaults.sourceRoot(this);
+//      }
+//      throw new NotImplementedException();
+//      SModel model = createModelWithFactory(modelName, sourceRoot, dataSource);
 //      ((SModelBase) model).setModelRoot(this);
 //      registerModel(model);
 //      return model;
@@ -189,23 +181,41 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
 //      LOG.error("Caught when creating a model " + modelName, e);
 //      return null;
 //    }
-  }
+//  }
 
   /**
    * Creates a model via given factory with given name and under the provided sourceRoot in this ModelRoot.
    */
-  @Nullable
-  public SModel createModel(@NotNull String modelFqName, @NotNull SourceRoot sourceRoot, @Nullable DataSourceKey dataSourceKey) {
-    throw new NotImplementedException();
-  }
-
-  public SModel createModel(@NotNull DataSource dataSource, @NotNull ModelFactory modelFactory) {
-    throw new NotImplementedException();
+  @NotNull
+  private SModel createModel(@NotNull String modelName,
+                             @Nullable SourceRoot sourceRoot,
+                             @Nullable FileExtensionDataSourceKey dataSourceKey) throws ModelCannotBeCreatedException {
+    if (sourceRoot == null) {
+      sourceRoot = Defaults.sourceRoot(this);
+    }
+    if (dataSourceKey == null) {
+      dataSourceKey = Defaults.dataSourceKey();
+    }
+    ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getDefault(dataSourceKey);
+    if (modelFactory == null) {
+      throw new ModelFactoryNotFoundException(dataSourceKey);
+    }
+    CompositeResult<FileSystemBasedDataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceKey);
+    if (!new ModelFactoryFacade(modelFactory).canCreate(result.getDataSource(), result.getOptions())) {
+      throw new FactoryCannotCreateModelException(result.getDataSource());
+    }
+    try {
+      SModel model = new ModelFactoryFacade(modelFactory).create(result.getDataSource(), result.getOptions());
+      registerModel(model);
+      return model;
+    } catch (IOException e) {
+      throw new ModelCannotBeCreatedException(e);
+    }
   }
 
   @NotNull
-  /*package*/ SModel createModelImpl(@NotNull String modelName, @NotNull SourceRoot sourceRoot, @NotNull ModelFactory modelFactory) throws IOException {
-    ResultWithOptions<? extends DataSource> result;
+  /*package*/ SModel createModelWithFactory(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @Nullable ModelFactory modelFactory) throws IOException {
+    CompositeResult<? extends DataSource> result;
 //    DataSourceFactory dataSourceFactory = new DataSourceFactory(this);
 //    if (factory instanceof FolderModelFactory) {
 //      result = dataSourceFactory.createFolderDataSource(factory, sourceRoot, modelName);
@@ -234,12 +244,22 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     return result;
   }
 
-  /**
-   * listens to the file tree traversal
-   */
-  interface FileTreeWalkListener {
-    void onFileVisited(@NotNull ModelRootFileTreeLocus state);
-    void onDirectoryVisited(@NotNull ModelRootFileTreeLocus state);
+  @Nullable
+  public SModel createModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @NotNull ModelFactory modelFactory) throws ModelCannotBeCreatedException {
+    if (sourceRoot == null) {
+      sourceRoot = Defaults.sourceRoot(this);
+    }
+    ModelCreationOptions parameters = new ParametersCalculator(this, sourceRoot).calculate(modelName);
+    if (!new ModelFactoryFacade(modelFactory).canCreate(null, parameters)) {
+      throw new FactoryCannotCreateModelException(modelName, modelFactory);
+    }
+    try {
+      SModel model = new ModelFactoryFacade(modelFactory).create(null, parameters);
+      registerModel(model);
+      return model;
+    } catch (IOException e) {
+      throw new ModelCannotBeCreatedException(e);
+    }
   }
 
   private static final class Defaults {
@@ -284,18 +304,5 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
 
     private static class DefaultModelFactoryIsNotFoundException extends RuntimeException {
     }
-  }
-
-  /**
-   * Passed to the {@link ModelSourceRootWalker}
-   */
-  public interface ModelRootWalkListener {
-    /**
-     * Called on every file data source which was found during the file tree traversal.
-     * @param dataSource -- is the data source which created from the file by the <code>factory</code>
-     * @param options -- computed options
-     * @param file -- essentially the file/folder which gave out the data source
-     */
-    void onDataSourceVisited(@NotNull ModelFactory factory, @NotNull DataSource dataSource, @NotNull ModelCreationOptions options, @NotNull IFile file);
   }
 }

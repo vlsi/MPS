@@ -87,12 +87,19 @@ public interface ModelRoot {
 
   /**
    * @return whether a model with a name {@code modelName} can be created under this model root.
+   *
+   * @param modelName -- the same as in the
+   * @see #createModel(String)
    */
-  boolean canCreateModel(String modelName);
+  boolean canCreateModel(@NotNull String modelName);
 
   /**
    * Creates a new model with the given name.
    * The new model will be contained in this model root (methods #getModel, #getModels).
+   *
+   * @param modelName -- might fq name or just simple short model name. Up to implemetor
+   *                  @see org.jetbrains.mps.openapi.model.SModelName
+   *
    * @return null if failed, for instance {@link #canCreateModel(String)} returned false.
    */
   @Nullable SModel createModel(@NotNull String modelName);

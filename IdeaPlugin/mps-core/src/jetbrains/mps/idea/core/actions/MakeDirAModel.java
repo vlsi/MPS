@@ -31,6 +31,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.persistence.FolderModelFactory;
+import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.LanguageImportHelper;
 import jetbrains.mps.project.MPSProject;
@@ -113,27 +114,29 @@ public class MakeDirAModel extends NewModelActionBase {
   }
 
   private EditableSModel createModel(final AnActionEvent e) {
-    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<EditableSModel>() {
-      @Override
-      public EditableSModel compute() {
-        FolderModelFactory folderModelFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
-        SourceRoot sourceRoot = findSourceRootWithAName();
-        if (sourceRoot == null) {
-          throw new IllegalStateException("Source root with the name " + myRootForModel + " could not be found");
-        }
-        EditableSModel model = (EditableSModel) myModelRoot.createModel(folderModelFactory, sourceRoot, myModelPrefix);
+    return new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(() -> {
+      SourceRoot sourceRoot = findSourceRootWithAName();
+      if (sourceRoot == null) {
+        throw new IllegalStateException("Source root with the name " + myRootForModel + " could not be found");
+      }
+      EditableSModel model = null;
+      try {
+        model = (EditableSModel) myModelRoot.createPerRootModel(myModelPrefix, sourceRoot);
+      } catch (ModelCannotBeCreatedException ex) {
+        LOG.error("", ex);
+        return null;
+      }
 
-        if (model != null) {
-          model.setChanged(true);
-          model.load();
-        }
+      if (model != null) {
+        model.setChanged(true);
+        model.load();
+      }
 
-        //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
+      //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
 //        ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
 //        new MissingDependenciesFixer(model).fixModuleDependencies();
 
-        return model;
-      }
+      return model;
     });
   }
 

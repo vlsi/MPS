@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
@@ -139,23 +140,13 @@ public class SModuleOperations {
     return paths;
   }
 
-  public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {
+  @Nullable
+  public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root) {
     return createModelWithAdjustments(name, root, null);
   }
 
-  public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root, @Nullable ModelFactory modelFactory) {
-    // todo: review usages of this method: a) i think in most cases we don't need adjustments b) in most cases we got first modelroot from module,
-    // create method like createModel(SModule module, String name) ?
-
-    // move to platform
-    // need for model creation from ui (maybe even workbench)
-
-    // why ModelRoot register model in module? WTF
-    // should be public AbstractModule#addModel method!
-    // ourModelsCreationListeners should be called in addModel method
-
-    // so this goes to SModuleOperation method with createModel from ModelRoot, apply adj and register in module
-    // deprecated
+  @Nullable
+  public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root, @Nullable ModelFactory modelFactory) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root);
       return null;
@@ -179,7 +170,7 @@ public class SModuleOperations {
       ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
       new MissingDependenciesFixer(model).fixModuleDependencies();
       return model;
-    } catch (IOException e) {
+    } catch (ModelCannotBeCreatedException e) {
       LOG.error("", e);
       return null;
     }

@@ -34,6 +34,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.index.ModelRootsData.Entry;
@@ -78,14 +79,14 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         return null;
       }
       if (factory instanceof FolderModelFactory) {
-        model = PersistenceUtil.loadModel(VirtualFileUtils.toIFile(
-                MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
-                    ? inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER) : inputData.getFile())
-        );
+        IFile file = VirtualFileUtils.toIFile(
+            MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
+            ? inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER)
+            : inputData.getFile());
+        model = PersistenceUtil.loadModel(file);
       } else {
-        model = factory.isBinary()
-            ? PersistenceUtil.loadModel(inputData.getContent(), ext)
-            : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
+        model = factory.isBinary() ? PersistenceUtil.loadModel(inputData.getContent(), ext)
+                                   : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
       }
       if (model == null) {
         return null;
