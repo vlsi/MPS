@@ -19,8 +19,6 @@ import jetbrains.mps.lang.migration.runtime.base.MigrationAspectDescriptor;
 import jetbrains.mps.lang.core.migration.MigrationDescriptor;
 import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.lang.core.plugin.FacetAspectDescriptor;
-import jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor;
-import jetbrains.mps.lang.core.scripts.ScriptsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import jetbrains.mps.lang.core.structure.ConceptPresentationAspectImpl;
@@ -86,11 +84,6 @@ public class Language extends LanguageRuntime {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.MakeAspectDescriptor")) {
       if (aspectClass == MakeAspectDescriptor.class) {
         return (T) new FacetAspectDescriptor();
-      }
-    }
-    if (aspectClass.getName().equals("jetbrains.mps.lang.script.runtime.ScriptAspectDescriptor")) {
-      if (aspectClass == ScriptAspectDescriptor.class) {
-        return (T) new ScriptsDescriptor();
       }
     }
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.StructureAspectDescriptor")) {
