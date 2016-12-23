@@ -20,9 +20,12 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import static jetbrains.mps.project.MPSExtentions.DOT;
 
@@ -35,10 +38,16 @@ import static jetbrains.mps.project.MPSExtentions.DOT;
  */
 @Immutable
 public final class ModelNameCalculator {
+  private static final Logger LOG = LogManager.getLogger(ModelNameCalculator.class);
+
+  @NotNull private final ModelRoot myModelRoot;
   @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final IFile myModelFile; // always a file (not directory!)
 
-  public ModelNameCalculator(@NotNull SourceRoot sourceRoot, @NotNull IFile modelFile) {
+  public ModelNameCalculator(@NotNull ModelRoot modelRoot,
+                             @NotNull SourceRoot sourceRoot,
+                             @NotNull IFile modelFile) {
+    myModelRoot = modelRoot;
     mySourceRoot = sourceRoot;
     myModelFile = modelFile;
   }
@@ -62,7 +71,30 @@ public final class ModelNameCalculator {
     String relPathFromSourceRoot = calcRelPathFromSourceRootToModelFile();
     String fileNameWE = FileUtil.getNameWithoutExtension(myModelFile.getName());
     String prefixPackage = NameUtil.namespaceFromPath(relPathFromSourceRoot);
-    return join(prefixPackage, fileNameWE);
+    String result = join(prefixPackage, fileNameWE);
+    return appendModuleFqNameIfNeeded(result);
+  }
+
+  /**
+   * we allow both full fq name expanded into file directories like 'jetbrains.mps.my.own.model' model name
+   * corresponds to the '<<SOURCE_ROOT>>/jetbrains/mps/my/own/model.mps' path in the default model persistence
+   * AND
+   * short-style file system storage where the same model would correspond to the
+   * simple '<<SOURCE_ROOT>>/model.mps' path in the default model persistence
+   *
+   * We force the package prefix to be the same as the module package.
+   */
+  @NotNull
+  private String appendModuleFqNameIfNeeded(@NotNull String modelFqName) {
+    String moduleFqName = myModelRoot.getModule().getModuleName();
+    if (!modelFqName.contains(DOT)) {
+      modelFqName = moduleFqName + DOT + modelFqName;
+    } else {
+      if (!modelFqName.startsWith(moduleFqName + DOT)) {
+        LOG.error(String.format("Model fq namespace '%s' conflicts with the module fq namespace '%s'", modelFqName, moduleFqName));
+      }
+    }
+    return modelFqName;
   }
 
   @NotNull

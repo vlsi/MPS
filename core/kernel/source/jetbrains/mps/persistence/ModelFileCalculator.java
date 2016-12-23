@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
@@ -24,18 +25,18 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
-/**
- * Created by apyshkin on 12/20/16.
- */
 @Immutable
 public final class ModelFileCalculator {
+  @NotNull private final FileBasedModelRoot myModelRoot;
   @NotNull private final String myModelName;
   @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final FileExtensionDataSourceKey myDataSourceKey;
 
-  ModelFileCalculator(@NotNull String modelName,
+  ModelFileCalculator(@NotNull FileBasedModelRoot modelRoot,
+                      @NotNull String modelName,
                       @NotNull SourceRoot sourceRoot,
                       @NotNull FileExtensionDataSourceKey dataSourceKey) {
+    myModelRoot = modelRoot;
     myModelName = modelName;
     mySourceRoot = sourceRoot;
     myDataSourceKey = dataSourceKey;
@@ -62,19 +63,17 @@ public final class ModelFileCalculator {
   @NotNull
   private String calcFileNameSuffix(@NotNull String modelName) {
     String filenameSuffix = modelName;
-    // we assume there are not too many models in a language, and they represent distinct aspects
-    // and thus are unique. We don't need to keep folder structure (relative path) then.
-//        String moduleName = myModelRoot.getModule().getModuleName();
-//        if (filenameSuffix.startsWith(moduleName + MPSExtentions.DOT)) {
-//          filenameSuffix = filenameSuffix.substring(moduleName.length() + 1);
-//        }
-//      } else if (isGeneratorTemplateModel(modelName)) {
-//        filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
-//      }
+    String moduleFqName = myModelRoot.getModule().getModuleName();
+    filenameSuffix = cutRedundantModuleFqNamePrefix(filenameSuffix, moduleFqName);
+    filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     return filenameSuffix;
   }
 
-//    private boolean isGeneratorTemplateModel(String modelName) {
-//      return myModelRoot.getModule() instanceof Generator && modelName.endsWith("@" + SModelStereotype.GENERATOR); // fixme naming convention
-//    }
+  @NotNull
+  private String cutRedundantModuleFqNamePrefix(String filenameSuffix, String moduleFqName) {
+    if (filenameSuffix.startsWith(moduleFqName + MPSExtentions.DOT)) {
+      filenameSuffix = filenameSuffix.substring(moduleFqName.length() + 1);
+    }
+    return filenameSuffix;
+  }
 }

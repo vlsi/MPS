@@ -58,15 +58,4 @@ final class ParametersCalculator {
                                .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();
   }
-
-//  @NotNull
-//  private String calcRelativePathFromContentDir(@NotNull IFile modelFile) {
-//    String contentDirectory = independentAndAbsolute(myModelRoot.getContentDirectory().getPath());
-//    return FileUtil.getRelativePath(modelFile.getPath(), contentDirectory, Path.UNIX_SEPARATOR);
-//  }
-//
-//  @NotNull
-//  private String independentAndAbsolute(String path) {
-//    return FileUtil.getUnixPath(FileUtil.getAbsolutePath(path));
-//  }
 }

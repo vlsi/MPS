@@ -21,18 +21,13 @@ import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
-import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRoot;
+import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.smodel.structure.Extension.Default;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -40,9 +35,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -213,19 +206,6 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     }
   }
 
-  @NotNull
-  /*package*/ SModel createModelWithFactory(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @Nullable ModelFactory modelFactory) throws IOException {
-    CompositeResult<? extends DataSource> result;
-//    DataSourceFactory dataSourceFactory = new DataSourceFactory(this);
-//    if (factory instanceof FolderModelFactory) {
-//      result = dataSourceFactory.createFolderDataSource(factory, sourceRoot, modelName);
-//    } else {
-//      result = dataSourceFactory.createFileDataSource(factory, sourceRoot, modelName);
-//    }
-//    return new ModelFactoryFacade(factory).create(result.getDataSource(), result.getOptions());
-    throw new NotImplementedException();
-  }
-
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
     copyContentRootAndFiles(targetModelRoot);
@@ -271,24 +251,6 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
       return FileDataSourceKey.INSTANCE;
     }
 
-    @Nullable
-    private static ModelFactory modelFactory() {
-      FileDataSourceFactory dataSourceFactory = dataSourceFactory();
-      if (dataSourceFactory == null) {
-        throw new DefaultModelFactoryIsNotFoundException();
-      }
-      return ModelFactoryRegistryImpl.getInstance().getDefault(dataSourceFactory.getKey());
-    }
-
-    /**
-     * default is the {@link jetbrains.mps.extapi.persistence.FileDataSourceFactory} or its alternative
-     */
-    @Nullable
-    private static FileDataSourceFactory dataSourceFactory() {
-      FileDataSourceService service = FileDataSourceService.getInstance();
-      return service.getFactory(dataSourceKey());
-    }
-
     /**
      * @return first source root as a default one
      * @throws NoSourceRootsInModelRootException if there are no source roots here
@@ -300,9 +262,6 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
         throw new NoSourceRootsInModelRootException(modelRoot);
       }
       return sourceRoots.get(0);
-    }
-
-    private static class DefaultModelFactoryIsNotFoundException extends RuntimeException {
     }
   }
 }

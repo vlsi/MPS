@@ -90,7 +90,7 @@ public final class DataSourceFactoryBridge {
                                                            @NotNull SourceRoot sourceRoot,
                                                            @NotNull FileDataSourceFactory factory) {
     FileExtensionDataSourceKey key = (FileExtensionDataSourceKey) factory.getKey();
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, key);
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(myModelRoot, modelName, sourceRoot, key);
     IFile modelDataSourceFile = modelFileCalculator.modelFile();
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot, sourceRoot).calculate(modelName);
     FileSystemBasedDataSource dataSource = factory.create(modelDataSourceFile, myModelRoot);
