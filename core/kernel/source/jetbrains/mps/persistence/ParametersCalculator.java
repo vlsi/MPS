@@ -40,7 +40,7 @@ final class ParametersCalculator {
 
   @NotNull
   public ModelCreationOptions calculate(@NotNull IFile modelFile) {
-    String modelName = new ModelNameCalculator(mySourceRoot, modelFile).calcModelFqName();
+    String modelName = new ModelNameCalculator(myModelRoot, mySourceRoot, modelFile).calcModelFqName();
     return calculate(modelName);
   }
 

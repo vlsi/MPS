@@ -23,10 +23,14 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Deque;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * FIXME restore previous associated value after #unregister is invoked.
@@ -35,7 +39,8 @@ import java.util.Map;
 public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, CoreComponent {
   private static final ModelFactoryRegistryImpl INSTANCE = new ModelFactoryRegistryImpl();
 
-  private final Map<DataSourceKey, ModelFactory> myFactories = new LinkedHashMap<>();
+  // stack as value
+  private final Map<DataSourceKey, Deque<ModelFactory>> myFactories = new LinkedHashMap<>();
 
   private ModelFactoryRegistryImpl() {
   }
@@ -46,25 +51,37 @@ public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, Cor
 
   @Override
   public synchronized void register(@NotNull DataSourceKey key, @NotNull ModelFactory factory) {
-    myFactories.put(key, factory);
+    if (!myFactories.containsKey(key)) {
+      myFactories.put(key, new LinkedList<>());
+    }
+    myFactories.get(key).add(factory);
   }
 
   @Override
   public synchronized ModelFactory unregister(@NotNull DataSourceKey key) {
-    return myFactories.remove(key);
+    Deque<ModelFactory> modelFactories = myFactories.remove(key);
+    return modelFactories.peekLast();
+  }
+
+  @Override
+  public synchronized boolean unregister(@NotNull DataSourceKey key, @NotNull ModelFactory factory) {
+    Deque<ModelFactory> modelFactories = myFactories.get(key);
+    return modelFactories.remove(factory);
   }
 
   @NotNull
   @Override
   @Immutable
   public List<ModelFactory> getFactories() {
-    return Collections.unmodifiableList(new ArrayList<>(myFactories.values()));
+    return Collections.unmodifiableList(myFactories.values().stream()
+                                                   .map(Deque::getLast)
+                                                   .collect(Collectors.toList()));
   }
 
   @Nullable
   @Override
   public synchronized ModelFactory getDefault(@NotNull DataSourceKey key) {
-    return myFactories.get(key);
+    return myFactories.get(key).peekLast();
   }
 
   @Override

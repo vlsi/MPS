@@ -34,6 +34,8 @@ import java.util.List;
  */
 public interface ModelFactoryRegistry {
 
+  boolean unregister(@NotNull DataSourceKey key, @NotNull ModelFactory factory);
+
   /**
    * @return all registered factories
    */

@@ -63,7 +63,7 @@ public abstract class PersistenceFacade {
 
   /**
    * Retrieves the factory associated with the given file extension.
-   * @deprecated use {@link ModelFactoryRegistry#findApplicable(DataSource)}
+   * @deprecated use {@code ModelFactoryRegistry#getDefault(DataSourceKey)}
    */
   @ToRemove(version = 3.6)
   @Deprecated
@@ -71,7 +71,7 @@ public abstract class PersistenceFacade {
 
   /**
    * Retrieves the factory for default MPS storage format (xml-based).
-   * @deprecated unclear contract, use {@link ModelFactoryRegistry#findApplicable(DataSource)}
+   * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceKey)}
    */
   @ToRemove(version = 3.6)
   @Deprecated
@@ -82,7 +82,7 @@ public abstract class PersistenceFacade {
    *
    * @param factory The factory to register, null to clear the registration for the given type.
    * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
-   *             Use {@link ModelFactoryRegistry#registerDefaultModelFactory(ModelFactory)} instead.
+   *             Use {@code ModelFactoryRegistry#register} instead.
    */
   @ToRemove(version = 3.6)
   @Deprecated
