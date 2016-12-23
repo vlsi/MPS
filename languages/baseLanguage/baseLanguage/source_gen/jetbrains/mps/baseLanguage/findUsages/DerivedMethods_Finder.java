@@ -20,6 +20,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DerivedMethods_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder");
@@ -41,6 +43,7 @@ public class DerivedMethods_Finder extends GeneratedFinder {
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, final List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
@@ -74,5 +77,11 @@ public class DerivedMethods_Finder extends GeneratedFinder {
     } finally {
       monitor.done();
     }
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "4151347580001021181");
   }
 }

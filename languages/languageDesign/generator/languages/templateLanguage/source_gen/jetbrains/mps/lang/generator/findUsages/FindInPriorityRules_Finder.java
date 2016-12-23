@@ -21,6 +21,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class FindInPriorityRules_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.generator.findUsages.FindInPriorityRules_Finder");
@@ -42,6 +44,7 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration");
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, final List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
@@ -61,13 +64,13 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
           ListSequence.fromList(SNodeOperations.getNodeDescendants(gn, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f2845954f70fL, "jetbrains.mps.lang.project.structure.MappingConfigRefAllGlobal"), false, new SAbstractConcept[]{})).visitAll(addResultFunc);
           for (SNode mcer : ListSequence.fromList(SNodeOperations.getNodeDescendants(gn, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, "jetbrains.mps.lang.project.structure.MappingConfigExternalRef"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return eq_k8ktns_a0a0a0a0a0b0a0g0b0g(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e3L, "generator")), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid")), SPropertyOperations.getString(moduleOfSelectedMC, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")));
+              return eq_k8ktns_a0a0a0a0a0b0a0g0b0h(SPropertyOperations.getString(SLinkOperations.getTarget(it, MetaAdapterFactory.getContainmentLink(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595727e1L, 0x25c3f284595727e3L, "generator")), MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x19bfb4173fb5210cL, 0x19bfb4173fb5210dL, "uuid")), SPropertyOperations.getString(moduleOfSelectedMC, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe1eL, 0x5869770da61dfe22L, "uuid")));
             }
           })) {
             ListSequence.fromList(SNodeOperations.getNodeDescendants(mcer, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f284595702d4L, "jetbrains.mps.lang.project.structure.MappingConfigRefAllLocal"), false, new SAbstractConcept[]{})).visitAll(addResultFunc);
             ListSequence.fromList(SNodeOperations.getNodeDescendants(mcer, MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, "jetbrains.mps.lang.project.structure.MappingConfigNormalRef"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID"), "*") || (eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0g_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID")), selectedModelReference) && eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0g(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID")), selectedNodeId));
+                return SPropertyOperations.hasValue(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID"), "*") || (eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0h_0(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572778L, "modelUID")), selectedModelReference) && eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0h(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x25c3f28459572777L, 0x25c3f28459572779L, "nodeID")), selectedNodeId));
               }
             }).visitAll(addResultFunc);
           }
@@ -78,13 +81,19 @@ public class FindInPriorityRules_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-  private static boolean eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0g(Object a, Object b) {
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "7868642031296064248");
+  }
+  private static boolean eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0g_0(Object a, Object b) {
+  private static boolean eq_k8ktns_a0a0a0a0a0a0a0b0b0a0g0b0h_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_k8ktns_a0a0a0a0a0b0a0g0b0g(Object a, Object b) {
+  private static boolean eq_k8ktns_a0a0a0a0a0b0a0g0b0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -16,6 +16,8 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ExactConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
@@ -33,6 +35,7 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -48,5 +51,11 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1211301915928");
   }
 }

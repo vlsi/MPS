@@ -16,6 +16,8 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BaseMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
@@ -47,6 +49,7 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
     }
     return true;
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -72,5 +75,11 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Base method usages";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1216385454403");
   }
 }

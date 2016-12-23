@@ -15,6 +15,8 @@ import java.util.List;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
@@ -39,6 +41,7 @@ public class ClassAncestors_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
@@ -60,5 +63,11 @@ public class ClassAncestors_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1200502085335");
   }
 }

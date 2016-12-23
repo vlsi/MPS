@@ -22,6 +22,8 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration__BehaviorDescriptor;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class BaseMethod_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder");
@@ -49,6 +51,7 @@ public class BaseMethod_Finder extends GeneratedFinder {
     }
     return true;
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -97,5 +100,11 @@ public class BaseMethod_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Base methods";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1204898641595");
   }
 }

@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 public class DerivedInterfaces_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
@@ -32,6 +34,7 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface");
   }
+
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -59,5 +62,11 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Derived Interfaces";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1200310287391");
   }
 }
