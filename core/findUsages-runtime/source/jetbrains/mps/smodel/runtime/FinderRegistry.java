@@ -42,4 +42,13 @@ public interface FinderRegistry {
    *        need to deal with concurrency issues otherwise.
    */
   void add(@NotNull SAbstractConcept concept, int identityToken);
+
+
+  /**
+   * See {@link #add(SAbstractConcept, int)}.
+   * Transition support to facilitate accessing finders by class fqn (existing code) without need to know any other identity (e.g. {@code identityToken} integer)
+   * Once there's better mechanism to identify finders in place, switch to {@link #add(SAbstractConcept, int)}.
+   * OTOH, might be fruitful to keep mangledName as part of finder reference to ease debug or to go extra mile and match by name when token not found
+   */
+  void add(@NotNull SAbstractConcept concept, int identityToken, @NotNull String mangledName);
 }

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages;
 
+import gnu.trove.TIntArrayList;
+import gnu.trove.TObjectIntHashMap;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
@@ -37,12 +39,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public final class FindersManager implements CoreComponent, LanguageRegistryListener {
@@ -83,7 +87,7 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
 
   public Set<IInterfacedFinder> getAvailableFinders(final SNode node) {
     checkLoaded();
-    final Set<GeneratedFinder> result = new HashSet<>();
+    final Set<IInterfacedFinder> result = new HashSet<>();
 
     for (LanguageFinders lf : myLanguageFindersMap.values()) {
       try {
@@ -115,7 +119,9 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
    */
   @Nullable
   public IInterfacedFinder getFinder(@Nullable String finderIdentity) {
-    final String className = finderIdentity;
+    // Function.identity magic is to convey the idea finderIdentity is an identity, not a class name.
+    // and to avoid IDEA's warning, too ;)
+    final String className = Function.<String>identity().apply(finderIdentity);
     if (className == null) {
       return null;
     }
@@ -139,8 +145,10 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
     return null;
   }
 
+  // this reference is part of GeneratedFinder now, the map left for compatibility with old code.
+  // New GeneratedFinder classes override respective method and do not rely on GF.getDeclarationNode implementation
+  @ToRemove(version = 3.5)
   public SNodeReference getDeclarationNode(GeneratedFinder finder) {
-    // XXX why not to keep this reference as part of GeneratedFinder? Is a distinct map worth it?
     return myNodesByFinder.get(finder);
   }
 
@@ -205,13 +213,22 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
 
   @Override
   public void beforeLanguagesUnloaded(Iterable<LanguageRuntime> languages) {
+    // FIXME shall drop relevant LanguageFinder instances only!
+    // However myNodesByFinder is global and would either keep stale entries or cleared altogether on any reload.
+    // Perhaps, shall drop it as it's not vital to have getDeclarationNode for legacy (non-migrated) finders.
     clear();
   }
 
+  // XXX doesn't care about threading, although likely should
   private static final class LanguageFinders implements FinderRegistry {
     private final LanguageRuntime myLanguageRuntime;
-    private final Map<SAbstractConcept, Set<GeneratedFinder>> myFinders = new HashMap<SAbstractConcept, Set<GeneratedFinder>>();
+    // XXX maps that keep actual instances would cease once 3.5 is out.
+    // Although LF would still keep reference to LR effectively holding its classloader, it's still better to
+    // use new finder instance for each run (to avoid concurrency management inside finders).
+    private final Map<SAbstractConcept, Set<GeneratedFinder>> myLegacyFinders = new HashMap<>();
     private final Map<String, GeneratedFinder> myNameToFinder = new HashMap<>();
+    private final Map<SAbstractConcept, TIntArrayList> myFinders = new HashMap<>();
+    private final TObjectIntHashMap<String> myNameToFinder2 = new TObjectIntHashMap<>();
 
     LanguageFinders(LanguageRuntime lr) {
       myLanguageRuntime = lr;
@@ -222,11 +239,23 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
       throw new UnsupportedOperationException("Work in progress");
     }
 
+    @Override
+    public void add(@NotNull SAbstractConcept concept, int identityToken, @NotNull String mangledName) {
+      TIntArrayList finderTokens = myFinders.get(concept);
+      if (finderTokens == null) {
+        myFinders.put(concept, finderTokens = new TIntArrayList());
+      }
+      if (!finderTokens.contains(identityToken)) {
+        finderTokens.add(identityToken);
+      }
+      myNameToFinder2.put(mangledName, identityToken);
+    }
+
     void addLegacy(GeneratedFinder finder) {
       SAbstractConcept concept = finder.getSConcept();
       Set<GeneratedFinder> finders;
-      if ((finders = myFinders.get(concept)) == null) {
-        myFinders.put(concept, finders = new HashSet<>());
+      if ((finders = myLegacyFinders.get(concept)) == null) {
+        myLegacyFinders.put(concept, finders = new HashSet<>());
       }
       finders.add(finder);
       String cn = finder.getClass().getSimpleName();
@@ -239,13 +268,30 @@ public final class FindersManager implements CoreComponent, LanguageRegistryList
       return myLanguageRuntime.getNamespace().equals(namespace);
     }
 
-    GeneratedFinder findByMangledName(String finderMangledName) {
+    IInterfacedFinder findByMangledName(String finderMangledName) {
+      if (myNameToFinder2.contains(finderMangledName)) {
+        return instantiate(myNameToFinder2.get(finderMangledName));
+      }
       return myNameToFinder.get(finderMangledName);
     }
 
     // XXX findersForNode(SNode) instead, to perform filtering isVisible+isApplicable here as well?
-    Stream<GeneratedFinder> findersForConcept(SAbstractConcept c) {
-      return myFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> myFinders.get(concept).stream());
+    Stream<IInterfacedFinder> findersForConcept(SAbstractConcept c) {
+      return Stream.concat(myFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> instantiate(myFinders.get(concept))),
+          myLegacyFinders.keySet().stream().filter(c::isSubConceptOf).flatMap(concept -> myLegacyFinders.get(concept).stream()));
+    }
+
+    private IInterfacedFinder instantiate(int token) {
+      FindUsageAspectDescriptor descr = myLanguageRuntime.getAspect(FindUsageAspectDescriptor.class);
+      // could have passed descr instance as cons argument, otoh LR keeps its instance anyway, why bother.
+      assert descr != null;
+      return descr.instantiate(token);
+    }
+
+    private Stream<IInterfacedFinder> instantiate(TIntArrayList tokens) {
+      FindUsageAspectDescriptor descr = myLanguageRuntime.getAspect(FindUsageAspectDescriptor.class);
+      assert descr != null;
+      return Arrays.stream(tokens.toNativeArray()).mapToObj(descr::instantiate);
     }
   }
 }

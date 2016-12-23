@@ -17,22 +17,22 @@ package jetbrains.mps.ide.findusages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public abstract class BaseFindUsagesDescriptor implements FindUsageAspectDescriptor {
   private SModuleReference myModuleRef;
   private SModelReference myModelRef;
 
+  protected BaseFindUsagesDescriptor() {
+  }
+
   protected BaseFindUsagesDescriptor(SModuleReference moduleRef, SModelReference modelRef) {
     myModuleRef = moduleRef;
     myModelRef = modelRef;
   }
-
-  @Override
-  public abstract void init();
 
   protected void add(GeneratedFinder finder, String nodeId) {
     SNodeReference np = new jetbrains.mps.smodel.SNodePointer(myModelRef, PersistenceFacade.getInstance().createNodeId(nodeId));

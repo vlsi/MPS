@@ -18,6 +18,8 @@
     <import index="g4jo" ref="r:d98d04fb-4a60-4106-81cf-6cb40b67de4d(jetbrains.mps.ide.findusages.model)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
+    <import index="dush" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -695,6 +697,53 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="4WgT1ADYG4N" role="jymVt" />
+    <node concept="3clFb_" id="4WgT1ADYH7c" role="jymVt">
+      <property role="TrG5h" value="buildNodePointer" />
+      <node concept="3uibUv" id="4WgT1ADYI1_" role="3clF45">
+        <ref role="3uigEE" to="mhbf:~SNodeReference" resolve="SNodeReference" />
+      </node>
+      <node concept="3Tmbuc" id="4WgT1ADYHBz" role="1B3o_S" />
+      <node concept="3clFbS" id="4WgT1ADYH7g" role="3clF47">
+        <node concept="3SKdUt" id="4WgT1ADYWtx" role="3cqZAp">
+          <node concept="3SKdUq" id="4WgT1ADYWtz" role="3SKWNk">
+            <property role="3SKdUp" value="auxiliary method to help generated code deal with string node id values" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="4WgT1ADYL88" role="3cqZAp">
+          <node concept="2ShNRf" id="4WgT1ADYLyH" role="3cqZAk">
+            <node concept="1pGfFk" id="4WgT1ADYSjO" role="2ShVmc">
+              <ref role="37wK5l" to="w1kc:~SNodePointer.&lt;init&gt;(org.jetbrains.mps.openapi.model.SModelReference,org.jetbrains.mps.openapi.model.SNodeId)" resolve="SNodePointer" />
+              <node concept="37vLTw" id="4WgT1ADYSJL" role="37wK5m">
+                <ref role="3cqZAo" node="4WgT1ADYKcw" resolve="modelRef" />
+              </node>
+              <node concept="2OqwBi" id="4WgT1ADYUAY" role="37wK5m">
+                <node concept="2YIFZM" id="4WgT1ADYU5E" role="2Oq$k0">
+                  <ref role="37wK5l" to="dush:~PersistenceFacade.getInstance():org.jetbrains.mps.openapi.persistence.PersistenceFacade" resolve="getInstance" />
+                  <ref role="1Pybhc" to="dush:~PersistenceFacade" resolve="PersistenceFacade" />
+                </node>
+                <node concept="liA8E" id="4WgT1ADYV8m" role="2OqNvi">
+                  <ref role="37wK5l" to="dush:~PersistenceFacade.createNodeId(java.lang.String):org.jetbrains.mps.openapi.model.SNodeId" resolve="createNodeId" />
+                  <node concept="37vLTw" id="4WgT1ADYV$R" role="37wK5m">
+                    <ref role="3cqZAo" node="4WgT1ADYKCO" resolve="nodeId" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4WgT1ADYKcw" role="3clF46">
+        <property role="TrG5h" value="modelRef" />
+        <node concept="3uibUv" id="4WgT1ADYKcv" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModelReference" resolve="SModelReference" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4WgT1ADYKCO" role="3clF46">
+        <property role="TrG5h" value="nodeId" />
+        <node concept="17QB3L" id="4WgT1ADYL5a" role="1tU5fm" />
       </node>
     </node>
     <node concept="2tJIrI" id="3CbAd$CllDH" role="jymVt" />
