@@ -45,7 +45,7 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getFirstStatement_id4GU1DgEHJ2u = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getFirstStatement").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4GU1DgEHJ2u").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getScopeVariables_id4pl5GY7LKmA = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getScopeVariables").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4pl5GY7LKmA").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getLocalVariableDeclarations_id3tkxRydYUUs = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3tkxRydYUUs").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<List<SNode>> getLocalVariableDeclarations_id7WLeqcv1izg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7WLeqcv1izg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<List<SNode>> getLocalVariableDeclarations_id7WLeqcv1izg = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getLocalVariableDeclarations").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7WLeqcv1izg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
@@ -147,7 +147,7 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
 
     return result;
   }
-  /*package*/ static List<SNode> getLocalVariableDeclarations_id7WLeqcv1izg(@NotNull SNode __thisNode__, String role, int index) {
+  /*package*/ static List<SNode> getLocalVariableDeclarations_id7WLeqcv1izg(@NotNull SNode __thisNode__, int index) {
     assert index == 0 || index < ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement"))).count();
     List<SNode> result = new ArrayList<SNode>();
 
@@ -167,7 +167,7 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
   }
   /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
     if (SConceptOperations.isExactly(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
-      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, role.getName(), ((int) index)), ScopeUtils.lazyParentScope(__thisNode__, kind));
+      return Scopes.forVariables(kind, StatementList__BehaviorDescriptor.getLocalVariableDeclarations_id7WLeqcv1izg.invoke(__thisNode__, ((int) index)), ScopeUtils.lazyParentScope(__thisNode__, kind));
     }
     return null;
   }
@@ -208,7 +208,7 @@ public final class StatementList__BehaviorDescriptor extends BaseBHDescriptor {
       case 8:
         return (T) ((List<SNode>) getLocalVariableDeclarations_id3tkxRydYUUs(node, (SNode) parameters[0]));
       case 9:
-        return (T) ((List<SNode>) getLocalVariableDeclarations_id7WLeqcv1izg(node, (String) parameters[0], ((int) (Integer) parameters[1])));
+        return (T) ((List<SNode>) getLocalVariableDeclarations_id7WLeqcv1izg(node, ((int) (Integer) parameters[0])));
       case 10:
         return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 11:

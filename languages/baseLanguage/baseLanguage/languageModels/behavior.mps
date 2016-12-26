@@ -15087,10 +15087,6 @@
       <node concept="2I9FWS" id="7WLeqcv1i$e" role="3clF45">
         <ref role="2I9WkF" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
       </node>
-      <node concept="37vLTG" id="7WLeqcv1i$f" role="3clF46">
-        <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="7WLeqcv1i$i" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="7WLeqcv1i$j" role="3clF46">
         <property role="TrG5h" value="index" />
         <node concept="10Oyi0" id="7WLeqcv1i$l" role="1tU5fm" />
@@ -15181,14 +15177,6 @@
                 </node>
                 <node concept="BsUDl" id="3A2qfoxXw6s" role="37wK5m">
                   <ref role="37wK5l" node="7WLeqcv1izg" resolve="getLocalVariableDeclarations" />
-                  <node concept="2OqwBi" id="42Bx8VbD0_J" role="37wK5m">
-                    <node concept="liA8E" id="42Bx8VbD0_K" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                    </node>
-                    <node concept="37vLTw" id="42Bx8VbD0_L" role="2Oq$k0">
-                      <ref role="3cqZAo" node="7WLeqcv1iyl" resolve="role" />
-                    </node>
-                  </node>
                   <node concept="37vLTw" id="2BHiRxgmeYB" role="37wK5m">
                     <ref role="3cqZAo" node="7WLeqcv1iyn" resolve="index" />
                   </node>
