@@ -297,7 +297,7 @@
     <file name="ExternalViewFigure__BehaviorDescriptor.java">
       <node id="5422656561918019432" at="36,0,37,0" concept="6" trace="CONCEPT" />
       <node id="5422656561918019432" at="37,0,38,0" concept="6" trace="REGISTRY" />
-      <node id="5422656561918019432" at="39,0,40,0" concept="6" trace="getScope_id3fifI_xCJOQ" />
+      <node id="5422656561918019432" at="39,0,40,0" concept="6" trace="getScope_id52_Geb4QDV$" />
       <node id="5422656561918019432" at="41,0,42,0" concept="6" trace="BH_METHODS" />
       <node id="5422656561923470179" at="49,41,50,195" concept="5" />
       <node id="5422656561923537806" at="53,39,54,187" concept="5" />
@@ -306,7 +306,7 @@
       <node id="5422656561918019432" at="66,114,67,21" concept="1" />
       <node id="5422656561918019432" at="71,114,72,49" concept="4" />
       <node id="5422656561918019432" at="73,26,74,56" concept="10" />
-      <node id="5422656561918019432" at="77,13,78,104" concept="5" />
+      <node id="5422656561918019432" at="77,13,78,115" concept="5" />
       <node id="5422656561918019432" at="79,14,80,58" concept="10" />
       <node id="5422656561918019432" at="85,128,86,49" concept="4" />
       <node id="5422656561918019432" at="87,26,88,56" concept="10" />
@@ -325,17 +325,17 @@
       <node id="5422656561918019432" at="102,0,107,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="5422656561918019432" at="75,5,81,5" concept="9" />
       <node id="5422656561923375260" at="47,404,56,28" concept="5" />
-      <node id="5422656561918019966" at="46,105,57,5" concept="2" />
+      <node id="5422656561918019966" at="46,116,57,5" concept="2" />
       <node id="5422656561918019432" at="84,0,95,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="5422656561918019432" at="70,0,83,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
-      <node id="5422656561918019432" at="46,0,60,0" concept="7" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5422656561918019432" at="46,0,60,0" concept="7" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <scope id="5422656561918019432" at="43,63,43,63" />
       <scope id="5422656561923468239" at="49,41,50,195" />
       <scope id="5422656561923530142" at="53,39,54,187" />
       <scope id="5422656561918019432" at="61,56,62,20" />
       <scope id="5422656561918019432" at="66,114,67,21" />
       <scope id="5422656561918019432" at="73,26,74,56" />
-      <scope id="5422656561918019432" at="77,13,78,104" />
+      <scope id="5422656561918019432" at="77,13,78,115" />
       <scope id="5422656561918019432" at="79,14,80,58" />
       <scope id="5422656561918019432" at="87,26,88,56" />
       <scope id="5422656561918019432" at="91,14,92,58" />
@@ -370,7 +370,7 @@
         <var name="method" id="5422656561918019432" />
         <var name="parameters" id="5422656561918019432" />
       </scope>
-      <scope id="5422656561918019647" at="46,105,58,119" />
+      <scope id="5422656561918019647" at="46,116,58,119" />
       <scope id="5422656561918019432" at="70,0,83,0">
         <var name="method" id="5422656561918019432" />
         <var name="node" id="5422656561918019432" />
@@ -381,7 +381,7 @@
         <var name="child" id="5422656561918019650" />
         <var name="kind" id="5422656561918019648" />
       </scope>
-      <unit id="5422656561923468238" at="48,542,52,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure__BehaviorDescriptor$1" />
+      <unit id="5422656561923468238" at="48,521,52,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure__BehaviorDescriptor$1" />
       <unit id="5422656561923530141" at="52,20,56,7" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure__BehaviorDescriptor$2" />
       <unit id="5422656561918019432" at="35,0,108,0" name="jetbrains.mps.lang.editor.figures.behavior.ExternalViewFigure__BehaviorDescriptor" />
     </file>

@@ -113,13 +113,13 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
+        <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -179,10 +179,10 @@
       <node concept="3clFbS" id="6JLVtGzv266" role="3clF47">
         <node concept="3clFbF" id="6JLVtGzv98G" role="3cqZAp">
           <node concept="2YIFZM" id="6JLVtGzv98I" role="3clFbG">
-            <ref role="37wK5l" to="fnmy:1BAHwnmUZ7c" resolve="forVariables" />
             <ref role="1Pybhc" to="fnmy:3A2qfoxVUBF" resolve="Scopes" />
-            <node concept="3TUQnm" id="6JLVtGzv98J" role="37wK5m">
-              <ref role="3TV0OU" to="tpee:hqOqwz4" resolve="DotExpression" />
+            <ref role="37wK5l" to="fnmy:6Kqn2fZyoXK" resolve="forVariables" />
+            <node concept="35c_gC" id="42Bx8Vcd_2c" role="37wK5m">
+              <ref role="35c_gD" to="tpee:hqOqwz4" resolve="DotExpression" />
             </node>
             <node concept="Xjq3P" id="6JLVtGzvhRc" role="37wK5m" />
             <node concept="10Nm6u" id="6JLVtGzvgQG" role="37wK5m" />

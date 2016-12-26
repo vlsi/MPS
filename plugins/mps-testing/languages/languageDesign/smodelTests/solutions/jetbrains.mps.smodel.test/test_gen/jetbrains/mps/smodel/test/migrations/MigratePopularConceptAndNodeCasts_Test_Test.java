@@ -14,14 +14,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
-import jetbrains.mps.lang.smodel.migration.MigrateAsNodeOperation;
+import jetbrains.mps.lang.smodel.migration.MigratePopularConceptAndNodeCasts;
 
 @MPSLaunch
-public class MigrateAsNodeOperation_Test_Test extends BaseTransformationTest {
+public class MigratePopularConceptAndNodeCasts_Test_Test extends BaseTransformationTest {
   @Test
-  public void test_MigrateAsNodeOperation_Test() throws Throwable {
+  public void test_MigratePopularConceptAndNodeCasts_Test() throws Throwable {
     initTest("${mps_home}", "r:3187e3e8-ddb0-4ff3-a5a8-255ce21a0125(jetbrains.mps.smodel.test.migrations@tests)", false);
-    runTest("jetbrains.mps.smodel.test.migrations.MigrateAsNodeOperation_Test_Test$TestBody", "testMethod", true);
+    runTest("jetbrains.mps.smodel.test.migrations.MigratePopularConceptAndNodeCasts_Test_Test$TestBody", "testMethod", true);
   }
 
   @MPSLaunch
@@ -36,7 +36,7 @@ public class MigrateAsNodeOperation_Test_Test extends BaseTransformationTest {
     }
     @Override
     public MigrationScript getMigrationScript() {
-      return new MigrateAsNodeOperation();
+      return new MigratePopularConceptAndNodeCasts();
     }
   }
 }

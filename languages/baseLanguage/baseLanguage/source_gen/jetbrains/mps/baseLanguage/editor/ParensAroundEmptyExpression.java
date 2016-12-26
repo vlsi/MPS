@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   @NotNull
@@ -95,7 +96,8 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   public class SubstituteMenuPart_Group_z82rnb_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return _context.getCurrentTargetNode() != null && SNodeOperations.getConcept(_context.getCurrentTargetNode()).isAbstract();
+      SConcept c = SNodeOperations.getConcept(_context.getCurrentTargetNode());
+      return c != null && c.isAbstract();
     }
 
     @Override

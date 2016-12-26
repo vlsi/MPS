@@ -447,9 +447,6 @@
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -5374,14 +5371,14 @@
                 <node concept="2OqwBi" id="1wEcoXjJ64o" role="33vP2m">
                   <node concept="2YIFZM" id="1wEcoXjJ64p" role="2Oq$k0">
                     <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                    <ref role="37wK5l" to="ykok:~ModelConstraints.getSmartReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String,int,org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getSmartReferenceDescriptor" />
+                    <ref role="37wK5l" to="ykok:~ModelConstraints.getSmartReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,int,org.jetbrains.mps.openapi.language.SAbstractConcept):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getSmartReferenceDescriptor" />
                     <node concept="7Obwk" id="1wEcoXjJ64C" role="37wK5m" />
                     <node concept="10Nm6u" id="1wEcoXjJ64r" role="37wK5m" />
                     <node concept="3cmrfG" id="1wEcoXjJ64s" role="37wK5m">
                       <property role="3cmrfH" value="0" />
                     </node>
-                    <node concept="3TUQnm" id="1wEcoXjJ64t" role="37wK5m">
-                      <ref role="3TV0OU" to="tpfo:h6e2xLl" resolve="MatchVariableReferenceRegexp" />
+                    <node concept="35c_gC" id="42Bx8VcdqYY" role="37wK5m">
+                      <ref role="35c_gD" to="tpfo:h6e2xLl" resolve="MatchVariableReferenceRegexp" />
                     </node>
                   </node>
                   <node concept="liA8E" id="1wEcoXjJ64u" role="2OqNvi">

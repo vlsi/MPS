@@ -429,7 +429,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
-      Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getNode(), null, 0, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp").getDeclarationNode()).getScope();
+      Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getNode(), null, 0, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")).getScope();
       return (List<SNode>) refScope.getAvailableElements(null);
     }
 

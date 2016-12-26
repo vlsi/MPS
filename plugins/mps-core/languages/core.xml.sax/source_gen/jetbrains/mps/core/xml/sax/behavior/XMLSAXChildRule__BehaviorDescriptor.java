@@ -14,15 +14,16 @@ import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.SimpleRoleScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -33,11 +34,11 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<String> getTagName_id1XGsQcRHuf0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getTagName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1XGsQcRHuf0").registry(REGISTRY).build();
-  public static final SMethod<Scope> getArgumentsScope_id460OzqriLdX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getArgumentsScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("460OzqriLdX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Scope> getArgumentsScope_id460OzqriLdX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getArgumentsScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("460OzqriLdX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTagName_id1XGsQcRHuf0, getArgumentsScope_id460OzqriLdX, getScope_id3fifI_xCJOQ, getScope_id6GEzh_Hz_wK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getTagName_id1XGsQcRHuf0, getArgumentsScope_id460OzqriLdX, getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -48,8 +49,8 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2daL, "tagName"));
   }
-  /*package*/ static Scope getArgumentsScope_id460OzqriLdX(@NotNull SNode __thisNode__, SNode kind) {
-    SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
+  /*package*/ static Scope getArgumentsScope_id460OzqriLdX(@NotNull SNode __thisNode__, SAbstractConcept kind) {
+    SAbstractConcept cncpt = (kind);
     if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       return new EmptyScope();
     }
@@ -58,29 +59,29 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
     }
     return null;
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
-    if (child != null && child.getRoleInParent().equals("actualArgument")) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
+    if (child != null && child.getContainmentLink().equals(MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0xf8c78301aeL, "actualArgument"))) {
       Scope argumentsScope = XMLSAXChildRule__BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
       if (argumentsScope != null) {
         return argumentsScope;
       }
     }
     if (child == SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x4180d2369beda765L, "condition"))) {
-      SAbstractConcept cncpt = SNodeOperations.asSConcept((kind));
+      SAbstractConcept cncpt = kind;
       if (SConceptOperations.isSubConceptOf(cncpt, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2cbL, "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule"))) {
         return SimpleRoleScope.forNamedElements(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0x1f6c736337b5e2dcL, "rule")), MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2f2L, 0x1f6c736337b5e2f4L, "attrs"));
       }
     }
-    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child));
+    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invokeSpecial(__thisNode__, kind, child));
   }
-  /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    if (role.equals("actualArgument")) {
+  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
+    if (role.equals(MetaAdapterFactory.getContainmentLink(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e2d8L, 0xf8c78301aeL, "actualArgument"))) {
       Scope argumentsScope = XMLSAXChildRule__BehaviorDescriptor.getArgumentsScope_id460OzqriLdX.invoke(__thisNode__, kind);
       if (argumentsScope != null) {
         return argumentsScope;
       }
     }
-    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, ((int) index)));
+    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QFgX.invokeSpecial(__thisNode__, kind, role, ((int) index)));
   }
 
   /*package*/ XMLSAXChildRule__BehaviorDescriptor() {
@@ -102,11 +103,11 @@ public final class XMLSAXChildRule__BehaviorDescriptor extends BaseBHDescriptor 
       case 0:
         return (T) ((String) getTagName_id1XGsQcRHuf0(node));
       case 1:
-        return (T) ((Scope) getArgumentsScope_id460OzqriLdX(node, (SNode) parameters[0]));
+        return (T) ((Scope) getArgumentsScope_id460OzqriLdX(node, (SAbstractConcept) parameters[0]));
       case 2:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 3:
-        return (T) ((Scope) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
+        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

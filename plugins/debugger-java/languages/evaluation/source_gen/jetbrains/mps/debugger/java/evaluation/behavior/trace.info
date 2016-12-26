@@ -534,17 +534,17 @@
     <file name="Evaluator__BehaviorDescriptor.java">
       <node id="846214144113560209" at="27,0,28,0" concept="7" trace="CONCEPT" />
       <node id="846214144113560209" at="28,0,29,0" concept="7" trace="REGISTRY" />
-      <node id="846214144113560209" at="30,0,31,0" concept="7" trace="getScope_id3fifI_xCJOQ" />
+      <node id="846214144113560209" at="30,0,31,0" concept="7" trace="getScope_id52_Geb4QDV$" />
       <node id="846214144113560209" at="31,0,32,0" concept="7" trace="getCode_idhASWOEj0jB" />
       <node id="846214144113560209" at="33,0,34,0" concept="7" trace="BH_METHODS" />
-      <node id="846214144113560786" at="38,105,39,119" concept="5" />
+      <node id="846214144113560786" at="38,116,39,119" concept="5" />
       <node id="846214144113562484" at="39,119,40,12" concept="6" />
       <node id="317191294093647341" at="42,78,43,180" concept="5" />
       <node id="846214144113560209" at="46,47,47,20" concept="9" />
       <node id="846214144113560209" at="51,114,52,21" concept="1" />
       <node id="846214144113560209" at="56,114,57,49" concept="4" />
       <node id="846214144113560209" at="58,26,59,56" concept="11" />
-      <node id="846214144113560209" at="62,13,63,104" concept="5" />
+      <node id="846214144113560209" at="62,13,63,115" concept="5" />
       <node id="846214144113560209" at="64,13,65,56" concept="5" />
       <node id="846214144113560209" at="66,14,67,58" concept="11" />
       <node id="846214144113560209" at="72,128,73,49" concept="4" />
@@ -557,7 +557,7 @@
       <node id="846214144113560209" at="46,0,49,0" concept="0" trace="Evaluator__BehaviorDescriptor#()V" />
       <node id="846214144113560209" at="57,49,60,5" concept="2" />
       <node id="846214144113560209" at="73,49,76,5" concept="2" />
-      <node id="846214144113560209" at="38,0,42,0" concept="8" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="846214144113560209" at="38,0,42,0" concept="8" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <node id="846214144113560209" at="50,0,54,0" concept="3" trace="initNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SConstructor;[Ljava/lang/Object;)V" />
       <node id="846214144113560209" at="76,5,80,5" concept="10" />
       <node id="846214144113560209" at="83,0,88,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
@@ -570,7 +570,7 @@
       <scope id="846214144113560209" at="46,47,47,20" />
       <scope id="846214144113560209" at="51,114,52,21" />
       <scope id="846214144113560209" at="58,26,59,56" />
-      <scope id="846214144113560209" at="62,13,63,104" />
+      <scope id="846214144113560209" at="62,13,63,115" />
       <scope id="846214144113560209" at="64,13,65,56" />
       <scope id="846214144113560209" at="66,14,67,58" />
       <scope id="846214144113560209" at="74,26,75,56" />
@@ -580,7 +580,7 @@
       <scope id="846214144113560209" at="35,0,37,0">
         <var name="__thisNode__" id="846214144113560209" />
       </scope>
-      <scope id="846214144113560780" at="38,105,40,12" />
+      <scope id="846214144113560780" at="38,116,40,12" />
       <scope id="846214144113560209" at="42,0,45,0">
         <var name="__thisNode__" id="846214144113560209" />
       </scope>

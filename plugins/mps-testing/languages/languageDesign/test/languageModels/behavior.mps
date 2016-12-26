@@ -323,6 +323,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
@@ -345,6 +346,7 @@
       <concept id="3562215692195599741" name="jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect" flags="nn" index="13MTOL">
         <reference id="3562215692195600259" name="link" index="13MTZf" />
       </concept>
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
       <concept id="1154546920561" name="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" flags="ng" index="3gmYPX">
         <child id="1154546920563" name="concept" index="3gmYPZ" />
       </concept>
@@ -384,7 +386,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -6535,7 +6536,7 @@
       <property role="13i0iv" value="false" />
       <property role="TrG5h" value="getScope" />
       <property role="13i0it" value="false" />
-      <ref role="13i0hy" to="tpcu:3fifI_xCJOQ" resolve="getScope" />
+      <ref role="13i0hy" to="tpcu:52_Geb4QDV$" resolve="getScope" />
       <node concept="3Tm1VV" id="1RxYXnVXBL3" role="1B3o_S" />
       <node concept="3clFbS" id="1RxYXnVXBLc" role="3clF47">
         <node concept="3clFbJ" id="1RxYXnVZceA" role="3cqZAp">
@@ -6573,8 +6574,11 @@
                       <node concept="3clFbS" id="1RxYXnVXLUJ" role="1bW5cS">
                         <node concept="3clFbF" id="1RxYXnVXLUK" role="3cqZAp">
                           <node concept="3clFbC" id="1RxYXnVXLUL" role="3clFbG">
-                            <node concept="37vLTw" id="1RxYXnVXLUM" role="3uHU7w">
-                              <ref role="3cqZAo" node="1RxYXnVXBLd" resolve="kind" />
+                            <node concept="2OqwBi" id="42Bx8VbD0$r" role="3uHU7w">
+                              <node concept="37vLTw" id="42Bx8VbD0$s" role="2Oq$k0">
+                                <ref role="3cqZAo" node="1RxYXnVXBLd" resolve="kind" />
+                              </node>
+                              <node concept="FGMqu" id="42Bx8VbD0$t" role="2OqNvi" />
                             </node>
                             <node concept="2OqwBi" id="1RxYXnVXLUN" role="3uHU7B">
                               <node concept="37vLTw" id="1RxYXnVXLUO" role="2Oq$k0">
@@ -6630,7 +6634,7 @@
       </node>
       <node concept="37vLTG" id="1RxYXnVXBLd" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3THzug" id="1RxYXnVXBLe" role="1tU5fm" />
+        <node concept="3bZ5Sz" id="42Bx8VbD0$q" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="1RxYXnVXBLf" role="3clF46">
         <property role="TrG5h" value="child" />

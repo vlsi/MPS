@@ -15,6 +15,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.scope.Scope;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -43,10 +44,10 @@ public final class LocalVariableDeclaration__BehaviorDescriptor extends BaseBHDe
   public static final SMethod<String> getPrefix_id2Bet8mWh2lw = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPrefix").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2Bet8mWh2lw").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
   public static final SMethod<String> getSuffix_id2Bet8mWh3pg = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getSuffix").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2Bet8mWh3pg").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Project.class, ""));
   public static final SMethod<SNode> getValue_idhOJcizo = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getValue").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hOJcizo").registry(REGISTRY).build();
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isInitializable_idhEwJfMK, createReference_idhEwJfME, isVariableReferencedInClosures_idhSV9vo4, getPrefix_id2Bet8mWh2lw, getSuffix_id2Bet8mWh3pg, getValue_idhOJcizo, getScope_id3fifI_xCJOQ, getScope_id6GEzh_Hz_wK);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isInitializable_idhEwJfMK, createReference_idhEwJfME, isVariableReferencedInClosures_idhSV9vo4, getPrefix_id2Bet8mWh2lw, getSuffix_id2Bet8mWh3pg, getValue_idhOJcizo, getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -98,7 +99,7 @@ public final class LocalVariableDeclaration__BehaviorDescriptor extends BaseBHDe
   /*package*/ static SNode getValue_idhOJcizo(@NotNull SNode __thisNode__) {
     throw new UnsupportedOperationException();
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
       if (ScopeUtils.comeFrom(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37a7f6eL, 0xf8c37f506eL, "initializer"), __thisNode__, child)) {
         return Scopes.forVariables(kind, __thisNode__, ScopeUtils.lazyParentScope(__thisNode__, kind));
@@ -106,18 +107,18 @@ public final class LocalVariableDeclaration__BehaviorDescriptor extends BaseBHDe
         return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
     }
-    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invokeSpecial(__thisNode__, kind, child));
+    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invokeSpecial(__thisNode__, kind, child));
   }
-  /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
+  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x4b64b50fb2fc7720L, "jetbrains.mps.baseLanguage.structure.IVariableDeclaration"))) {
-      if (role.equals("initializer")) {
+      if (role.getName().equals("initializer")) {
         return Scopes.forVariables(kind, __thisNode__, ScopeUtils.lazyParentScope(__thisNode__, kind));
       } else {
         return ScopeUtils.lazyParentScope(__thisNode__, kind);
       }
     }
 
-    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invokeSpecial(__thisNode__, kind, role, ((int) index)));
+    return ((Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QFgX.invokeSpecial(__thisNode__, kind, role, ((int) index)));
   }
 
   /*package*/ LocalVariableDeclaration__BehaviorDescriptor() {
@@ -149,9 +150,9 @@ public final class LocalVariableDeclaration__BehaviorDescriptor extends BaseBHDe
       case 5:
         return (T) ((SNode) getValue_idhOJcizo(node));
       case 6:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 7:
-        return (T) ((Scope) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
+        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

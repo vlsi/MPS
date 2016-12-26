@@ -15,6 +15,7 @@ import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.Set;
 import java.util.List;
 import java.util.Arrays;
@@ -53,14 +54,14 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<String> getOutputFileName_id4gSHdTptyu0 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getOutputFileName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4gSHdTptyu0").registry(REGISTRY).build();
   public static final SMethod<String> getBasePathRelativeToScriptsPath_id4vrYmjR0nBP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getBasePathRelativeToScriptsPath").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4vrYmjR0nBP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Context.class, ""));
   /*package*/ static final SMethod<Scope> getScope_id13YBgBBRT49 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRT49").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""));
-  public static final SMethod<Scope> getScope_id3fifI_xCJOQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3fifI_xCJOQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  public static final SMethod<Scope> getScope_id6GEzh_Hz_wK = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6GEzh_Hz_wK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(String.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<Iterable<SNode>> getVisibleProjects_id13YBgBBRSOL = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("13YBgBBRSOL").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   /*package*/ static final SMethod<Void> collectVisibleProjects_id13YBgBBRSXj = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectVisibleProjects").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("13YBgBBRSXj").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Set.class, ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   /*package*/ static final SMethod<Scope> getBuildMacroScope_id3h9a8EwPwcy = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getBuildMacroScope").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("3h9a8EwPwcy").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> canEditBaseDir_idz2ICeMSPWq = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canEditBaseDir").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("z2ICeMSPWq").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZOyG, getScriptsPath_id4ahc858UcHk, getOutputFileName_id4gSHdTptyu0, getBasePathRelativeToScriptsPath_id4vrYmjR0nBP, getScope_id13YBgBBRT49, getScope_id3fifI_xCJOQ, getScope_id6GEzh_Hz_wK, getVisibleProjects_id13YBgBBRSOL, collectVisibleProjects_id13YBgBBRSXj, getBuildMacroScope_id3h9a8EwPwcy, canEditBaseDir_idz2ICeMSPWq);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBasePath_id4jjtc7WZOyG, getScriptsPath_id4ahc858UcHk, getOutputFileName_id4gSHdTptyu0, getBasePathRelativeToScriptsPath_id4vrYmjR0nBP, getScope_id13YBgBBRT49, getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX, getVisibleProjects_id13YBgBBRSOL, collectVisibleProjects_id13YBgBBRSXj, getBuildMacroScope_id3h9a8EwPwcy, canEditBaseDir_idz2ICeMSPWq);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -140,18 +141,18 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return new EmptyScope();
   }
-  /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, final SNode child) {
+  /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(kind), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"))) {
       return BuildProject__BehaviorDescriptor.getBuildMacroScope_id3h9a8EwPwcy.invoke(__thisNode__, child, SetSequence.fromSet(new HashSet<SNode>()));
     }
 
     if (child != null) {
-      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, SNodeOperations.asSConcept(kind), SNodeOperations.getContainingLinkRole(child));
+      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, SNodeOperations.getContainingLinkRole(child));
     }
     return new EmptyScope();
   }
-  /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, String role, int index) {
-    return ((Scope) BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, SNodeOperations.asSConcept(kind), role));
+  /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
+    return ((Scope) BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, role.getName()));
   }
   /*package*/ static Iterable<SNode> getVisibleProjects_id13YBgBBRSOL(@NotNull final SNode __thisNode__, boolean directDependenciesOnly) {
     if (directDependenciesOnly) {
@@ -233,7 +234,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x454b730dd908c220L, "jetbrains.mps.build.structure.BuildProjectDependency")));
       }
-    }), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode(), child)));
+    }), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"), child)));
 
     return new CompositeScope(ListSequence.fromList(scopes).toGenericArray(Scope.class)) {
       @Override
@@ -273,9 +274,9 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
       case 4:
         return (T) ((Scope) getScope_id13YBgBBRT49(node, (SAbstractConcept) parameters[0], (String) parameters[1]));
       case 5:
-        return (T) ((Scope) getScope_id3fifI_xCJOQ(node, (SNode) parameters[0], (SNode) parameters[1]));
+        return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 6:
-        return (T) ((Scope) getScope_id6GEzh_Hz_wK(node, (SNode) parameters[0], (String) parameters[1], ((int) (Integer) parameters[2])));
+        return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
       case 7:
         return (T) ((Iterable<SNode>) getVisibleProjects_id13YBgBBRSOL(node, ((boolean) (Boolean) parameters[0])));
       case 8:

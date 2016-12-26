@@ -226,10 +226,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -280,9 +276,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -4106,13 +4099,13 @@
                     <ref role="3cqZAo" node="2TqXzNe_JWX" resolve="originalProject" />
                   </node>
                   <node concept="2qgKlT" id="2TqXzNe_6HT" role="2OqNvi">
-                    <ref role="37wK5l" to="tpcu:6GEzh_Hz_wK" resolve="getScope" />
-                    <node concept="3TUQnm" id="2TqXzNe_6HU" role="37wK5m">
-                      <ref role="3TV0OU" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
+                    <ref role="37wK5l" to="tpcu:52_Geb4QFgX" resolve="getScope" />
+                    <node concept="35c_gC" id="42Bx8VcbY1F" role="37wK5m">
+                      <ref role="35c_gD" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
                     </node>
-                    <node concept="prKvN" id="13YBgBBRTDE" role="37wK5m">
-                      <ref role="prhl7" to="3ior:6qcrfIJFfrM" resolve="parts" />
-                      <ref role="prhl4" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                    <node concept="359W_D" id="42Bx8VcbY9H" role="37wK5m">
+                      <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      <ref role="359W_F" to="3ior:6qcrfIJFfrM" resolve="parts" />
                     </node>
                     <node concept="3cmrfG" id="2TqXzNe_HOq" role="37wK5m">
                       <property role="3cmrfH" value="0" />
@@ -4233,13 +4226,13 @@
                     <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                   </node>
                   <node concept="2qgKlT" id="T86AKN1Xzx" role="2OqNvi">
-                    <ref role="37wK5l" to="tpcu:6GEzh_Hz_wK" resolve="getScope" />
-                    <node concept="3TUQnm" id="T86AKN1Xzy" role="37wK5m">
-                      <ref role="3TV0OU" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
+                    <ref role="37wK5l" to="tpcu:52_Geb4QFgX" resolve="getScope" />
+                    <node concept="35c_gC" id="42Bx8VcbYr_" role="37wK5m">
+                      <ref role="35c_gD" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
                     </node>
-                    <node concept="prKvN" id="T86AKN1Xzz" role="37wK5m">
-                      <ref role="prhl4" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                      <ref role="prhl7" to="3ior:6qcrfIJFfrM" resolve="parts" />
+                    <node concept="359W_D" id="42Bx8VcbYzy" role="37wK5m">
+                      <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      <ref role="359W_F" to="3ior:6qcrfIJFfrM" resolve="parts" />
                     </node>
                     <node concept="3cmrfG" id="T86AKN1Xz$" role="37wK5m">
                       <property role="3cmrfH" value="0" />
@@ -4397,13 +4390,13 @@
                     <ref role="3cqZAo" node="2TqXzNe$YQE" resolve="project" />
                   </node>
                   <node concept="2qgKlT" id="T86AKN20AV" role="2OqNvi">
-                    <ref role="37wK5l" to="tpcu:6GEzh_Hz_wK" resolve="getScope" />
-                    <node concept="3TUQnm" id="T86AKN20AW" role="37wK5m">
-                      <ref role="3TV0OU" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
+                    <ref role="37wK5l" to="tpcu:52_Geb4QFgX" resolve="getScope" />
+                    <node concept="35c_gC" id="42Bx8VcbYPg" role="37wK5m">
+                      <ref role="35c_gD" to="3ior:5gfUUDxhbxN" resolve="BuildSource_JavaLibrary" />
                     </node>
-                    <node concept="prKvN" id="T86AKN20AX" role="37wK5m">
-                      <ref role="prhl4" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
-                      <ref role="prhl7" to="3ior:6qcrfIJFfrM" resolve="parts" />
+                    <node concept="359W_D" id="42Bx8VcbYXd" role="37wK5m">
+                      <ref role="359W_E" to="3ior:4RPz6WoY4Cj" resolve="BuildProject" />
+                      <ref role="359W_F" to="3ior:6qcrfIJFfrM" resolve="parts" />
                     </node>
                     <node concept="3cmrfG" id="T86AKN20AY" role="37wK5m">
                       <property role="3cmrfH" value="0" />
