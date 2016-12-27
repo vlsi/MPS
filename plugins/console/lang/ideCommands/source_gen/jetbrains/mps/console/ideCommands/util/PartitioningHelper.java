@@ -41,9 +41,6 @@ public class PartitioningHelper {
     messageViewDelimiter();
     for (TemplateModule generator : plan.getGenerators()) {
       Collection<TemplateMappingPriorityRule> rules = generator.getPriorities();
-      if (rules == null) {
-        continue;
-      }
       for (TemplateMappingPriorityRule r : rules) {
         Message msg = new Message(MessageKind.INFORMATION, r.toString());
         msg.setHintObject(generator.getModuleReference());

@@ -153,7 +153,7 @@ final class PriorityConflicts {
   private SModuleReference getOrigin(Collection<MappingPriorityRule> rules) {
     for (MappingPriorityRule r : rules) {
       for (TemplateModule tm : myGenerators) {
-        if (tm.getPriorities() != null && tm.getPriorities().contains(r)) {
+        if (tm.getPriorities().contains(r)) {
           return tm.getModuleReference();
         }
       }

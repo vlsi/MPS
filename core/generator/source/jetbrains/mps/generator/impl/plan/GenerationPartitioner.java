@@ -144,9 +144,6 @@ public class GenerationPartitioner {
     // read user-defined rules
     for (TemplateModule generator : myGenerators) {
       Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
-      if (priorities == null) {
-        continue;
-      }
       for (TemplateMappingPriorityRule rule : priorities) {
         processRule((MappingPriorityRule) rule, generator);
       }

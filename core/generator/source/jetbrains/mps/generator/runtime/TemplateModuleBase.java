@@ -36,16 +36,8 @@ import java.util.Set;
 public abstract class TemplateModuleBase implements TemplateModule {
   @NotNull
   @Override
-  public SModuleReference getModuleReference() {
-    // FIXME shall become abstract method once getReference() is removed.
-    return getReference();
-  }
+  public abstract SModuleReference getModuleReference();
 
-  @Override
-  @ToRemove(version = 3.4)
-  public SModuleReference getReference() {
-    throw new IllegalStateException("Code generated with MPS 3.3 overrides this method, new code generated with MPS 3.4 shall override getModuleReference");
-  }
 
   @Override
   public Collection<TemplateModel> getModels() {
