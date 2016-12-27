@@ -22,9 +22,8 @@ import java.util.ArrayList;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -123,27 +122,6 @@ public class SModelUtil {
     }
     List<SAbstractConcept> result = new ArrayList<SAbstractConcept>(resultSet);
     return result;
-  }
-  /**
-   * 
-   * @deprecated use SConcept.isSubConceptOf
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  public static boolean isAssignableConcept(SNode from, SNode to) {
-    // not used in MPS 
-    assert SNodeOperations.getModel(from) != null : "working with disposed concept: " + NameUtil.nodeFQName(from);
-    assert SNodeOperations.getModel(to) != null : "working with disposed concept: " + NameUtil.nodeFQName(to);
-    if (from == to) {
-      return true;
-    }
-    if (from == null || to == null) {
-      return false;
-    }
-    if (to == MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode()) {
-      return true;
-    }
-    return MetaAdapterByDeclaration.getConcept(from).isSubConceptOf(MetaAdapterByDeclaration.getConcept(to));
   }
   public static SNode getGenuineLinkSourceCardinality(SNode linkDecl) {
     return SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "Cardinality"), SPropertyOperations.getString_def(getGenuineLinkDeclaration(linkDecl), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "0..1"));

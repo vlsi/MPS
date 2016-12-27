@@ -26,8 +26,11 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -197,7 +200,7 @@ public class NodePaster {
     // unique child?
     if (!SModelUtil.isMultipleLinkDeclaration(link)) {
       assert myPasteNodes.size() == 1 : "cannot paste multiple children for role '" + SModelUtil.getLinkDeclarationRole(link) + "'";
-      SNode node = normalizeForLink(myPasteNodes.get(0), link);
+      SNode node = normalizeForLink(myPasteNodes.get(0), MetaAdapterByDeclaration.getContainmentLink(link));
       SNodeEditorUtil.setSingleChild(pasteTarget, SModelUtil.getLinkDeclarationRole(link), node);
       CopyPasteManager.getInstance().postProcessNode(node);
       return;
@@ -206,7 +209,7 @@ public class NodePaster {
     SNode currentAnchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
-      SNode nodeToPaste = normalizeForLink(pasteNode, link);
+      SNode nodeToPaste = normalizeForLink(pasteNode, MetaAdapterByDeclaration.getContainmentLink(link));
       String r = SModelUtil.getGenuineLinkRole(link);
       SNode realAnchor = insertBefore ? currentAnchorNode : currentAnchorNode == null ? pasteTarget.getFirstChild() : currentAnchorNode.getNextSibling();
       pasteTarget.insertChildBefore(r, nodeToPaste, realAnchor);
@@ -221,13 +224,13 @@ public class NodePaster {
     }
   }
 
-  private SNode normalizeForLink(SNode pasteNode, SNode link) {
+  private SNode normalizeForLink(SNode pasteNode, SContainmentLink link) {
     SNode node;
-    SNode linkTargetConcept = SModelUtil.getLinkDeclarationTarget(link);
-    if (SModelUtil.isAssignableConcept(new SNodeLegacy(pasteNode).getConceptDeclarationNode(), linkTargetConcept)) {
+    SAbstractConcept targetConcept = link.getTargetConcept();
+    if (pasteNode.isInstanceOfConcept(targetConcept)) {
       node = pasteNode;
-    } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, linkTargetConcept)) {
-      node = PasteWrappersManager.getInstance().wrapInto(pasteNode, linkTargetConcept);
+    } else if (PasteWrappersManager.getInstance().canWrapInto(pasteNode, targetConcept.getDeclarationNode())) {
+      node = PasteWrappersManager.getInstance().wrapInto(pasteNode, targetConcept.getDeclarationNode());
     } else {
       throw new RuntimeException();
     }
@@ -287,8 +290,8 @@ public class NodePaster {
     for (SNode link : links) {
       boolean suitable = true;
       for (SNode pasteNode : myPasteNodes) {
-        SNode pasteConcept = new SNodeLegacy(pasteNode).getConceptDeclarationNode();
-        if (!SModelUtil.isAssignableConcept(pasteConcept, SModelUtil.getLinkDeclarationTarget(link)) &&
+        SAbstractConcept targetConcept = MetaAdapterByDeclaration.getContainmentLink(link).getTargetConcept();
+        if (!pasteNode.isInstanceOfConcept(targetConcept) &&
             !PasteWrappersManager.getInstance().canWrapInto(pasteNode, SModelUtil.getLinkDeclarationTarget(link))) {
           suitable = false;
           break;
