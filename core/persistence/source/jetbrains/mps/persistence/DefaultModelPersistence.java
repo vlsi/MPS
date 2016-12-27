@@ -18,7 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
@@ -78,12 +78,12 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   @Override
   public void init() {
     myFacade.setModelFactory(MPSExtentions.MODEL, this);
-    myModelFactoryRegistry.register(FileDataSourceKey.INSTANCE, this);
+    myModelFactoryRegistry.register(FileDataSourceType.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
-    myModelFactoryRegistry.unregister(FileDataSourceKey.INSTANCE);
+    myModelFactoryRegistry.unregister(FileDataSourceType.INSTANCE);
     myFacade.setModelFactory(MPSExtentions.MODEL, null);
   }
 

@@ -16,7 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +38,7 @@ public final class FilePerRootDataSourceFactory implements FileDataSourceFactory
 
   @NotNull
   @Override
-  public DataSourceKey getKey() {
-    return FilePerRootDataSourceKey.INSTANCE;
+  public DataSourceType getType() {
+    return FilePerRootDataSourceType.INSTANCE;
   }
 }

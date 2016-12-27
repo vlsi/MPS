@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
@@ -255,8 +255,8 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
   @NotNull
   @Override
-  public DataSourceKey getKey() {
-   return FolderSetDataSourceKey.INSTANCE;
+  public DataSourceType getType() {
+   return FolderSetDataSourceType.INSTANCE;
   }
 
   private static class PathListener implements FileSystemListener {

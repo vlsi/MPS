@@ -13,27 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.extapi.persistence.datasource;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
-
-import java.io.IOException;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 /**
- * Created by apyshkin on 12/23/16.
+ * Serves as a unique identifier between {@link DataSource} instances.
+ * Currently it is used only for the file-based data sources.
+ *
+ * Created by apyshkin on 12/22/16.
  */
-public class ModelFactoryNotFoundException extends ModelCannotBeCreatedException {
-
-  public ModelFactoryNotFoundException(IOException e) {
-    super(e);
-  }
-
-  public ModelFactoryNotFoundException(FileExtensionDataSourceType dataSourceType) {
-
-  }
-
-  @Override
-  public String getMessage() {
-    return "TODO";
-  }
+public interface DataSourceType {
+  @NotNull String getName();
 }

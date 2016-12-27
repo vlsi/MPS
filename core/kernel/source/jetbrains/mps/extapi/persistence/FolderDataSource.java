@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.persistence.FolderDataSourceKey;
+import jetbrains.mps.persistence.FolderDataSourceType;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -268,7 +268,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
 
   @NotNull
   @Override
-  public FolderDataSourceKey getKey() {
-    return FolderDataSourceKey.INSTANCE;
+  public FolderDataSourceType getType() {
+    return FolderDataSourceType.INSTANCE;
   }
 }

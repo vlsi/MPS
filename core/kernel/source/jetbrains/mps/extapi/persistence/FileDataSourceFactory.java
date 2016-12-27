@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -34,7 +34,7 @@ public final class FileDataSourceFactory implements jetbrains.mps.extapi.persist
 
   @NotNull
   @Override
-  public FileExtensionDataSourceKey getKey() {
-    return FileDataSourceKey.INSTANCE;
+  public FileExtensionDataSourceType getType() {
+    return FileDataSourceType.INSTANCE;
   }
 }

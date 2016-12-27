@@ -70,6 +70,6 @@ public final class DefaultSourceRoot implements SourceRoot {
 
   @Override
   public String toString() {
-    return "Path [" + getPath() + "]";
+    return "Path [" + getAbsolutePath() + "]";
   }
 }

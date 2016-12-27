@@ -44,12 +44,12 @@ public interface FileDataSourceFactory {
    * @return new <code>DataSource</code> which represents the <code>file</code> on the disk
    */
   @NotNull FileSystemBasedDataSource create(@NotNull IFile file,
+
                                             @ToRemove(version = 0)
-                                            @Deprecated
                                             @Nullable ModelRoot modelRoot);
 
   /**
    * @return special key which identifies this factory in the {@link FileDataSourceService}
    */
-  @NotNull DataSourceKey getKey();
+  @NotNull DataSourceType getType();
 }

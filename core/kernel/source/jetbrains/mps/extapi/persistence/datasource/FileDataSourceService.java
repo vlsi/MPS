@@ -49,9 +49,9 @@ public final class FileDataSourceService {
   }
 
   @Nullable
-  public synchronized FileDataSourceFactory getFactory(@NotNull DataSourceKey key) {
+  public synchronized FileDataSourceFactory getFactory(@NotNull DataSourceType key) {
     for (FileDataSourceFactory factory : ourServiceLoader) {
-      if (factory.getKey().equals(key)) {
+      if (factory.getType().equals(key)) {
         return factory;
       }
     }

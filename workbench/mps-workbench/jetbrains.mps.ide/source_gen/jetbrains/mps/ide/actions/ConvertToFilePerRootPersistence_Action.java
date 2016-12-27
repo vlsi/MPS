@@ -33,7 +33,6 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.PersistenceUtil;
 import org.apache.log4j.Level;
-import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -144,7 +143,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
                                                     .createPerRootDataSource(defaultSourceRoot, newModel.getName().getValue())
                                                     .getDataSource();
             SModule module = smodel.getModule();
-            ModelFactory filePerRootFactory = ModelFactoryRegistryImpl.getInstance().getDefault(folderDataSource.getKey());
+            ModelFactory filePerRootFactory = ModelFactoryRegistryImpl.getInstance().getModelFactory(folderDataSource.getType());
             if (filePerRootFactory == null) {
               throw new IOException("Could not find default model factory for per-root persistence");
             }

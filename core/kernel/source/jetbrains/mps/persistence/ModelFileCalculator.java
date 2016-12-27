@@ -17,8 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
@@ -30,16 +29,16 @@ public final class ModelFileCalculator {
   @NotNull private final FileBasedModelRoot myModelRoot;
   @NotNull private final String myModelName;
   @NotNull private final SourceRoot mySourceRoot;
-  @NotNull private final FileExtensionDataSourceKey myDataSourceKey;
+  @NotNull private final FileExtensionDataSourceType myDataSourceType;
 
   ModelFileCalculator(@NotNull FileBasedModelRoot modelRoot,
                       @NotNull String modelName,
                       @NotNull SourceRoot sourceRoot,
-                      @NotNull FileExtensionDataSourceKey dataSourceKey) {
+                      @NotNull FileExtensionDataSourceType dataSourceType) {
     myModelRoot = modelRoot;
     myModelName = modelName;
     mySourceRoot = sourceRoot;
-    myDataSourceKey = dataSourceKey;
+    myDataSourceType = dataSourceType;
   }
 
   @NotNull
@@ -57,7 +56,7 @@ public final class ModelFileCalculator {
   }
 
   private String getFileExtension() {
-    return myDataSourceKey.getFileExtension();
+    return myDataSourceType.getFileExtension();
   }
 
   @NotNull

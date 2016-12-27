@@ -16,20 +16,19 @@
 package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Deque;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
 /**
@@ -40,7 +39,7 @@ public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, Cor
   private static final ModelFactoryRegistryImpl INSTANCE = new ModelFactoryRegistryImpl();
 
   // stack as value
-  private final Map<DataSourceKey, Deque<ModelFactory>> myFactories = new LinkedHashMap<>();
+  private final Map<DataSourceType, Deque<ModelFactory>> myTypes2Factories = new LinkedHashMap<>();
 
   private ModelFactoryRegistryImpl() {
   }
@@ -50,22 +49,22 @@ public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, Cor
   }
 
   @Override
-  public synchronized void register(@NotNull DataSourceKey key, @NotNull ModelFactory factory) {
-    if (!myFactories.containsKey(key)) {
-      myFactories.put(key, new LinkedList<>());
+  public synchronized void register(@NotNull DataSourceType type, @NotNull ModelFactory factory) {
+    if (!myTypes2Factories.containsKey(type)) {
+      myTypes2Factories.put(type, new LinkedList<>());
     }
-    myFactories.get(key).add(factory);
+    myTypes2Factories.get(type).add(factory);
   }
 
   @Override
-  public synchronized ModelFactory unregister(@NotNull DataSourceKey key) {
-    Deque<ModelFactory> modelFactories = myFactories.remove(key);
+  public synchronized ModelFactory unregister(@NotNull DataSourceType type) {
+    Deque<ModelFactory> modelFactories = myTypes2Factories.remove(type);
     return modelFactories.peekLast();
   }
 
   @Override
-  public synchronized boolean unregister(@NotNull DataSourceKey key, @NotNull ModelFactory factory) {
-    Deque<ModelFactory> modelFactories = myFactories.get(key);
+  public synchronized boolean unregister(@NotNull DataSourceType type, @NotNull ModelFactory factory) {
+    Deque<ModelFactory> modelFactories = myTypes2Factories.get(type);
     return modelFactories.remove(factory);
   }
 
@@ -73,15 +72,27 @@ public final class ModelFactoryRegistryImpl implements ModelFactoryRegistry, Cor
   @Override
   @Immutable
   public List<ModelFactory> getFactories() {
-    return Collections.unmodifiableList(myFactories.values().stream()
-                                                   .map(Deque::getLast)
-                                                   .collect(Collectors.toList()));
+    return Collections.unmodifiableList(myTypes2Factories.values().stream()
+                                                         .map(Deque::getLast)
+                                                         .collect(Collectors.toList()));
   }
 
   @Nullable
   @Override
-  public synchronized ModelFactory getDefault(@NotNull DataSourceKey key) {
-    return myFactories.get(key).peekLast();
+  public synchronized ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType) {
+    return myTypes2Factories.get(dataSourceType).peekLast();
+  }
+
+  @Nullable
+  @Override
+  public synchronized DataSourceType getDataSourceType(@NotNull ModelFactory modelFactory) {
+    DataSourceType result = null;
+    for (Entry<DataSourceType, Deque<ModelFactory>> entry : myTypes2Factories.entrySet()) {
+      if (entry.getValue().contains(modelFactory)) {
+        result = entry.getKey();
+      }
+    }
+    return result;
   }
 
   @Override

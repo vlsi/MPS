@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
@@ -24,17 +24,16 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import java.util.List;
 
 /**
- * Stores default association between <code>ModelFactory</code> and <code>DataSourceKey</code>
+ * Stores default association between <code>ModelFactory</code> and <code>DataSourceType</code>
  * Stores association between data source keys and model factories.
  * If #register is invoked for the same key twice, then the model factory value gets replaced.
  *
- *
- * @see DataSourceKey
+ * @see DataSourceType
  * Created by apyshkin on 12/22/16.
  */
 public interface ModelFactoryRegistry {
 
-  boolean unregister(@NotNull DataSourceKey key, @NotNull ModelFactory factory);
+  boolean unregister(@NotNull DataSourceType key, @NotNull ModelFactory factory);
 
   /**
    * @return all registered factories
@@ -43,22 +42,28 @@ public interface ModelFactoryRegistry {
   @NotNull List<ModelFactory> getFactories();
 
   /**
-   * Returns the first registered factory (order of registration) which correspond to the specified
+   * Returns the last registered factory (order of registration) which correspond to the specified
    * <code>key</code>.
    *
    * @return null if there is no model factory which is registered to the specified data source
    */
-  @Nullable ModelFactory getDefault(@NotNull DataSourceKey key);
+  @Nullable ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType);
 
   /**
-   * registers a new default association between data source key and a model factory instance
+   * Returns the last registered data source for the specified factory
+   * @return null if there is no data source type associated with
    */
-  void register(@NotNull DataSourceKey key, @NotNull ModelFactory factory);
+  @Nullable DataSourceType getDataSourceType(@NotNull ModelFactory modelFactory);
+
+  /**
+   * registers a new default association between data source type and a model factory instance
+   */
+  void register(@NotNull DataSourceType type, @NotNull ModelFactory factory);
 
   /**
    * @param key -- the key to clear all associations in which it had been involved.
    *
    * @return the previous associated if any
    */
-  @Nullable ModelFactory unregister(@NotNull DataSourceKey key);
+  @Nullable ModelFactory unregister(@NotNull DataSourceType key);
 }

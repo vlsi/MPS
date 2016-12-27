@@ -16,12 +16,18 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.util.List;
 
@@ -31,6 +37,8 @@ import java.util.List;
  * Created by apyshkin on 12/14/16.
  */
 final class ModelSourceRootWalker {
+  private static final Logger LOG = LogManager.getLogger(ModelSourceRootWalker.class);
+
   private final FileTreeWalkListener myCallback;
   @NotNull private final DefaultModelRoot myModelRoot;
 
@@ -41,16 +49,22 @@ final class ModelSourceRootWalker {
 
   public void traverse(@NotNull SourceRoot sourceRoot) {
     IFile root = sourceRoot.getAbsolutePath();
+    if (!root.exists()) {
+      LOG.warn("Source root '" + sourceRoot + "' does not exist, cannot traverse!");
+      return;
+    }
     if (!root.isDirectory()) {
-      throw new IllegalArgumentException("Source root " + sourceRoot.getAbsolutePath() + " is not a directory, cannot traverse!");
+      LOG.warn("Source root '" + sourceRoot + "' is not a directory, cannot traverse!");
+      return;
     }
     walk(new ModelRootFileTreeLocus(sourceRoot));
   }
 
   private void walk(@NotNull ModelRootFileTreeLocus state) {
     IFile curFile = state.getFile();
+    assert curFile.isDirectory();
+    assert curFile.exists();
     if (!isFileIgnored(curFile)) {
-      assert curFile.isDirectory();
       myCallback.onDirectoryVisited(state);
       List<IFile> children = curFile.getChildren();
       assert children != null;
@@ -85,10 +99,17 @@ final class ModelSourceRootWalker {
       IFile file = state.getFile();
       SourceRoot sourceRoot = state.getSourceRoot();
       assert !file.isDirectory();
-      CompositeResult<DataSource> result = myDataSourceFactory.create(file, sourceRoot);
+      CompositeResult<FileSystemBasedDataSource>result = myDataSourceFactory.create(file, sourceRoot);
       if (result != null) {
-        myCallback.onDataSourceVisited(null, result.getDataSource(), result.getOptions(), file);
+        FileSystemBasedDataSource dataSource = result.getDataSource();
+        ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getModelFactory(dataSource.getType());
+        if (modelFactory == null) {
+          LOG.error("Model factory association is not found for the '" + dataSource.getType() + "'");
+        } else {
+          myCallback.onDataSourceVisited(modelFactory, dataSource, result.getOptions(), file);
+        }
       }
+
     }
 
     @Override

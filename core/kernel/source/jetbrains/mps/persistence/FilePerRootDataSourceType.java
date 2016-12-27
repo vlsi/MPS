@@ -15,17 +15,20 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceType;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
 
+/**
+ * A type associated with the {@link FilePerRootDataSource}
+ */
 @Immutable
 @Singleton
-public final class FilePerRootDataSourceKey extends FileExtDataSourceKey {
-  public final static FilePerRootDataSourceKey INSTANCE = new FilePerRootDataSourceKey();
+public final class FilePerRootDataSourceType extends FileExtDataSourceType {
+  public final static FilePerRootDataSourceType INSTANCE = new FilePerRootDataSourceType();
 
-  public FilePerRootDataSourceKey() {
+  public FilePerRootDataSourceType() {
     super(MPSExtentions.DOT_MODEL_HEADER);
   }
 }

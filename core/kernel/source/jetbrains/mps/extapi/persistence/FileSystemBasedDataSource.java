@@ -39,5 +39,5 @@ public interface FileSystemBasedDataSource extends DataSource, DisposableDataSou
   /**
    * @see jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory
    */
-  @NotNull DataSourceKey getKey();
+  @NotNull DataSourceType getType();
 }

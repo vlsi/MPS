@@ -58,12 +58,12 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
   @Override
   public void init() {
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
-    myModelFactoryRegistry.register(BinaryExtDataSourceKey.INSTANCE, this);
+    myModelFactoryRegistry.register(BinaryExtDataSourceType.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
-    myModelFactoryRegistry.unregister(BinaryExtDataSourceKey.INSTANCE);
+    myModelFactoryRegistry.unregister(BinaryExtDataSourceType.INSTANCE);
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 

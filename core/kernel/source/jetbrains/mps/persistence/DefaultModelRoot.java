@@ -24,8 +24,9 @@ import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -35,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
@@ -111,10 +113,10 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
       return false;
     }
 
-    FileDataSourceKey key = Defaults.dataSourceKey();
+    FileDataSourceType dataSourceType = Defaults.dataSourceType();
     DataSourceFactoryBridge dataSourceFactory = new DataSourceFactoryBridge(this);
-    CompositeResult<FileDataSource> result = dataSourceFactory.create(modelName, Defaults.sourceRoot(this), key);
-    ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getDefault(key);
+    CompositeResult<FileDataSource> result = dataSourceFactory.create(modelName, Defaults.sourceRoot(this), dataSourceType);
+    ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getModelFactory(dataSourceType);
     if (modelFactory == null) {
       return false;
     }
@@ -131,7 +133,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
   @Nullable
   public SModel createModel(@NotNull String modelName) {
     try {
-      return createModel(modelName, null, (FileExtensionDataSourceKey) null);
+      return createModel(modelName, null, (FileExtensionDataSourceType) null);
     } catch (ModelCannotBeCreatedException e) {
       LOG.error("", e);
       return null;
@@ -139,72 +141,90 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
   }
 
   /**
-   * Creates model in the default source root.
+   * Creates a new folder-based (per-root by default) model in the default source root.
    *
+   * @see FilePerRootDataSourceType
    * @see Defaults
    * @return null if there was IOException
    */
   @Nullable
   public SModel createPerRootModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
-    return createModel(modelName, sourceRoot, FilePerRootDataSourceKey.INSTANCE);
+    return createModel(modelName, sourceRoot, FilePerRootDataSourceType.INSTANCE);
   }
   /**
-   * Creates model in the default source root.
+   * Creates a new file based model in the default source root.
    *
+   * @see FileDataSourceType
    * @see Defaults
    * @return null if there was IOException
    */
   @Nullable
   public SModel createFileModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
-    return createModel(modelName, sourceRoot, FileDataSourceKey.INSTANCE);
+    return createModel(modelName, sourceRoot, FileDataSourceType.INSTANCE);
   }
 
-//  @Nullable
-//  private SModel createModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @Nullable DataSource dataSource) throws IOException {
-//    try {
-//      if (sourceRoot == null) {
-//        sourceRoot = Defaults.sourceRoot(this);
-//      }
-//      throw new NotImplementedException();
-//      SModel model = createModelWithFactory(modelName, sourceRoot, dataSource);
-//      ((SModelBase) model).setModelRoot(this);
-//      registerModel(model);
-//      return model;
-//    } catch (IOException e) {
-//      LOG.error("Caught when creating a model " + modelName, e);
-//      return null;
-//    }
-//  }
-
   /**
-   * Creates a model via given factory with given name and under the provided sourceRoot in this ModelRoot.
+   * Creates a new model via given factory with given name and under the provided sourceRoot in this ModelRoot.
+   * Whenever the parameter is null the default one is used.
+   *
+   * @see Defaults
    */
   @NotNull
   private SModel createModel(@NotNull String modelName,
                              @Nullable SourceRoot sourceRoot,
-                             @Nullable FileExtensionDataSourceKey dataSourceKey) throws ModelCannotBeCreatedException {
+                             @Nullable FileExtensionDataSourceType dataSourceType) throws ModelCannotBeCreatedException {
     if (sourceRoot == null) {
       sourceRoot = Defaults.sourceRoot(this);
     }
-    if (dataSourceKey == null) {
-      dataSourceKey = Defaults.dataSourceKey();
+    if (dataSourceType == null) {
+      dataSourceType = Defaults.dataSourceType();
     }
-    ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getDefault(dataSourceKey);
+    ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getModelFactory(dataSourceType);
     if (modelFactory == null) {
-      throw new ModelFactoryNotFoundException(dataSourceKey);
+      throw new ModelFactoryNotFoundException(dataSourceType);
     }
-    CompositeResult<FileSystemBasedDataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceKey);
-    if (!new ModelFactoryFacade(modelFactory).canCreate(result.getDataSource(), result.getOptions())) {
-      throw new FactoryCannotCreateModelException(result.getDataSource());
+    CompositeResult<FileSystemBasedDataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
+    FileSystemBasedDataSource dataSource = result.getDataSource();
+    ModelCreationOptions parameters = result.getOptions();
+    if (!new ModelFactoryFacade(modelFactory).canCreate(dataSource, parameters)) {
+      throw new FactoryCannotCreateModelException(dataSource);
     }
+    return createModel0(modelFactory, dataSource, parameters);
+  }
+
+  @NotNull
+  private SModel createModel0(@NotNull ModelFactory modelFactory,
+                              @NotNull DataSource dataSource,
+                              @NotNull ModelCreationOptions parameters) throws ModelCannotBeCreatedException {
     try {
-      SModel model = new ModelFactoryFacade(modelFactory).create(result.getDataSource(), result.getOptions());
+      SModel model = new ModelFactoryFacade(modelFactory).create(dataSource, parameters);
       registerModel(model);
       return model;
     } catch (IOException e) {
       throw new ModelCannotBeCreatedException(e);
     }
   }
+
+  /**
+   * @return a new model with a given name which is created via the specified factory
+   * @throws ModelCannotBeCreatedException iff the factory #canCreate method returns false or
+   *                                       if the factory #create method threw an IOException.
+   */
+  @Nullable
+  public SModel createModel(@NotNull String modelName,
+                            @Nullable SourceRoot sourceRoot,
+                            @NotNull ModelFactory modelFactory) throws ModelCannotBeCreatedException {
+    if (sourceRoot == null) {
+      sourceRoot = Defaults.sourceRoot(this);
+    }
+    FileExtensionDataSourceType dataSourceType = Defaults.defaultDataSourceType(modelFactory);
+    CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
+    if (!new ModelFactoryFacade(modelFactory).canCreate(result.getDataSource(), result.getOptions())) {
+      throw new FactoryCannotCreateModelException(modelName, modelFactory);
+    }
+    return createModel0(modelFactory, result.getDataSource(), result.getOptions());
+  }
+
 
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
@@ -224,31 +244,13 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     return result;
   }
 
-  @Nullable
-  public SModel createModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot, @NotNull ModelFactory modelFactory) throws ModelCannotBeCreatedException {
-    if (sourceRoot == null) {
-      sourceRoot = Defaults.sourceRoot(this);
-    }
-    ModelCreationOptions parameters = new ParametersCalculator(this, sourceRoot).calculate(modelName);
-    if (!new ModelFactoryFacade(modelFactory).canCreate(null, parameters)) {
-      throw new FactoryCannotCreateModelException(modelName, modelFactory);
-    }
-    try {
-      SModel model = new ModelFactoryFacade(modelFactory).create(null, parameters);
-      registerModel(model);
-      return model;
-    } catch (IOException e) {
-      throw new ModelCannotBeCreatedException(e);
-    }
-  }
-
   private static final class Defaults {
     /**
-     * default data source key to create in this model root
+     * default data source type to create in this model root
      */
     @NotNull
-    private static FileDataSourceKey dataSourceKey() {
-      return FileDataSourceKey.INSTANCE;
+    private static FileDataSourceType dataSourceType() {
+      return FileDataSourceType.INSTANCE;
     }
 
     /**
@@ -262,6 +264,20 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
         throw new NoSourceRootsInModelRootException(modelRoot);
       }
       return sourceRoots.get(0);
+    }
+
+    @NotNull
+    private static FileExtensionDataSourceType defaultDataSourceType(@NotNull ModelFactory modelFactory) throws
+                                                                                                         DataSourceTypeForModelFactoryNotFoundException {
+      DataSourceType dataSourceType = ModelFactoryRegistryImpl.getInstance().getDataSourceType(modelFactory);
+      if (dataSourceType == null) {
+        throw new DataSourceTypeForModelFactoryNotFoundException();
+      }
+      if (!(dataSourceType instanceof FileExtensionDataSourceType)) {
+        throw new IllegalArgumentException(String.format("Unsupported data source type (%s) is found for the model factory '%s'",
+                                           dataSourceType, modelFactory));
+      }
+      return (FileExtensionDataSourceType) dataSourceType;
     }
   }
 }

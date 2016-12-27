@@ -21,12 +21,12 @@ import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -53,10 +53,10 @@ public final class DataSourceFactoryBridge {
   }
 
   @NotNull
-  private static FileDataSourceFactory getDataSourceFactory(@NotNull DataSourceKey key) {
-    FileDataSourceFactory factory = FileDataSourceService.getInstance().getFactory(key);
+  private static FileDataSourceFactory getDataSourceFactory(@NotNull DataSourceType dataSourceType) {
+    FileDataSourceFactory factory = FileDataSourceService.getInstance().getFactory(dataSourceType);
     if (factory == null) {
-      throw new DataSourceFactoryNotFoundException(key);
+      throw new DataSourceFactoryNotFoundException(dataSourceType);
     }
     return factory;
   }
@@ -64,21 +64,21 @@ public final class DataSourceFactoryBridge {
   @NotNull
   public CompositeResult<FileDataSource> createFileDataSource(@NotNull SourceRoot sourceRoot,
                                                               @NotNull String modelName) {
-    return create(modelName, sourceRoot, FileDataSourceKey.INSTANCE);
+    return create(modelName, sourceRoot, FileDataSourceType.INSTANCE);
   }
 
   @NotNull
   public CompositeResult<FolderDataSource> createPerRootDataSource(@NotNull SourceRoot sourceRoot,
                                                                    @NotNull String modelName) {
-    return create(modelName, sourceRoot, FilePerRootDataSourceKey.INSTANCE);
+    return create(modelName, sourceRoot, FilePerRootDataSourceType.INSTANCE);
   }
 
   @NotNull
   <T extends DataSource> CompositeResult<T> create(@NotNull String modelName,
                                                    @NotNull SourceRoot sourceRoot,
-                                                   @NotNull FileExtensionDataSourceKey key) {
+                                                   @NotNull FileExtensionDataSourceType dataSourceType) {
     checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
-    FileDataSourceFactory factory = getDataSourceFactory(key);
+    FileDataSourceFactory factory = getDataSourceFactory(dataSourceType);
     return create(modelName, sourceRoot, factory);
   }
 
@@ -89,8 +89,8 @@ public final class DataSourceFactoryBridge {
   private <T extends DataSource> CompositeResult<T> create(@NotNull String modelName,
                                                            @NotNull SourceRoot sourceRoot,
                                                            @NotNull FileDataSourceFactory factory) {
-    FileExtensionDataSourceKey key = (FileExtensionDataSourceKey) factory.getKey();
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(myModelRoot, modelName, sourceRoot, key);
+    FileExtensionDataSourceType type = (FileExtensionDataSourceType) factory.getType();
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(myModelRoot, modelName, sourceRoot, type);
     IFile modelDataSourceFile = modelFileCalculator.modelFile();
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot, sourceRoot).calculate(modelName);
     FileSystemBasedDataSource dataSource = factory.create(modelDataSourceFile, myModelRoot);
@@ -112,12 +112,12 @@ public final class DataSourceFactoryBridge {
    * data source itself.
    */
   @Nullable
-  CompositeResult<DataSource> create(@NotNull IFile file, @NotNull SourceRoot sourceRoot) {
+  CompositeResult<FileSystemBasedDataSource> create(@NotNull IFile file, @NotNull SourceRoot sourceRoot) {
     assert !file.isDirectory();
     String childName = file.getName();
     String extension = FileUtil.getExtension(childName); // keep in mind .model or .mps here (20.12.16)
     if (extension != null) {
-      FileDataSourceFactory factory = FileDataSourceService.getInstance().getFactory(FileExtDataSourceKey.from(extension));
+      FileDataSourceFactory factory = FileDataSourceService.getInstance().getFactory(FileExtDataSourceType.from(extension));
       if (factory != null) {
         FileSystemBasedDataSource dataSource = factory.create(file, myModelRoot);
         ModelCreationOptions parameters = new ParametersCalculator(myModelRoot, sourceRoot).calculate();
@@ -159,15 +159,15 @@ public final class DataSourceFactoryBridge {
   }
 
   public final static class DataSourceFactoryNotFoundException extends RuntimeException {
-    private final DataSourceKey myKey;
+    private final DataSourceType myDataSourceType;
 
-    public DataSourceFactoryNotFoundException(@NotNull DataSourceKey key) {
-      myKey = key;
+    public DataSourceFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
+      myDataSourceType = dataSourceType;
     }
 
     @Override
     public String getMessage() {
-      return "Could not find default mapping for particular Data Source Key: " + myKey;
+      return "Could not find default mapping for particular Data Source Key: " + myDataSourceType;
     }
   }
 }

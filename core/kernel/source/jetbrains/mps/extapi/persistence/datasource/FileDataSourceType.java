@@ -13,20 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package jetbrains.mps.extapi.persistence.datasource;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Singleton;
 
 /**
- * Created by apyshkin on 12/22/16.
+ * A type associated with {@link jetbrains.mps.extapi.persistence.FileDataSource}
  */
-public enum FolderSetDataSourceKey implements DataSourceKey {
-  INSTANCE;
+@Singleton
+@Immutable
+public final class FileDataSourceType extends FileExtDataSourceType {
+  public final static FileDataSourceType INSTANCE = new FileDataSourceType();
 
-  @NotNull
-  @Override
-  public String getName() {
-    return "Folder Set Data Source Key";
+  private FileDataSourceType() {
+    super(MPSExtentions.DOT_MODEL);
   }
 }

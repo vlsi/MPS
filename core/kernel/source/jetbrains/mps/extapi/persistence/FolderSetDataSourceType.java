@@ -13,19 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Singleton;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
+import org.jetbrains.annotations.NotNull;
 
-@Singleton
-@Immutable
-public final class BinaryExtDataSourceKey extends FileExtDataSourceKey {
-  public final static BinaryExtDataSourceKey INSTANCE = new BinaryExtDataSourceKey();
+/**
+ * Created by apyshkin on 12/22/16.
+ */
+public enum FolderSetDataSourceType implements DataSourceType {
+  INSTANCE;
 
-  private BinaryExtDataSourceKey() {
-    super(MPSExtentions.MODEL_BINARY);
+  @NotNull
+  @Override
+  public String getName() {
+    return "Folder Set Data Source Key";
   }
 }

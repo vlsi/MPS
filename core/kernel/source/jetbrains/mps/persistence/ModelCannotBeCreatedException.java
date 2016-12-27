@@ -27,7 +27,6 @@ public class ModelCannotBeCreatedException extends Exception {
   }
 
   public ModelCannotBeCreatedException() {
-
   }
 
 }

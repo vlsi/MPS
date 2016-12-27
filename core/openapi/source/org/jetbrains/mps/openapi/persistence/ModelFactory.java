@@ -94,14 +94,14 @@ public interface ModelFactory {
    * @throws UnsupportedDataSourceException if the data source is not supported, in other words {@link #canCreate(DataSource, Map)} returns false
    * @throws IOException if the model cannot be created for some other reasons
    */
-  /*@Deprecated*/
+//  @Deprecated
   @NotNull
   SModel create(@Nullable DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
-  /*@Deprecated*/
+//  @Deprecated
   boolean canCreate(@Nullable DataSource dataSource, @NotNull Map<String, String> options);
 
 //  /**

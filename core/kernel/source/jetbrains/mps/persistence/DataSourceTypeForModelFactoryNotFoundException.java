@@ -13,15 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
-
-import org.jetbrains.annotations.NotNull;
+package jetbrains.mps.persistence;
 
 /**
- * Data Source Key based on the model file extension
- *
- * Created by apyshkin on 12/22/16.
+ * Created by apyshkin on 12/27/16.
  */
-public interface FileExtensionDataSourceKey extends DataSourceKey {
-  @NotNull String getFileExtension();
+public class DataSourceTypeForModelFactoryNotFoundException extends ModelCannotBeCreatedException {
 }

@@ -72,12 +72,12 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   public void init() {
     myRegistry.addFolderModelFactory(this);
     myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, this);
-    myModelFactoryRegistry.register(FilePerRootDataSourceKey.INSTANCE, this);
+    myModelFactoryRegistry.register(FilePerRootDataSourceType.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
-    myModelFactoryRegistry.unregister(FilePerRootDataSourceKey.INSTANCE);
+    myModelFactoryRegistry.unregister(FilePerRootDataSourceType.INSTANCE);
     myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, null);
     myRegistry.removeFolderModelFactory(this);
   }

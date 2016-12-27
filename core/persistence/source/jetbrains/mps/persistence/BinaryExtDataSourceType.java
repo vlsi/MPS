@@ -13,17 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
+package jetbrains.mps.persistence;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceType;
+import jetbrains.mps.project.MPSExtentions;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Singleton;
 
-/**
- * Serves as a unique identifier between {@link DataSource} instances.
- * Currently it is used only for the file-based data sources.
- *
- * Created by apyshkin on 12/22/16.
- */
-public interface DataSourceKey {
-  @NotNull String getName();
+@Singleton
+@Immutable
+public final class BinaryExtDataSourceType extends FileExtDataSourceType {
+  public final static BinaryExtDataSourceType INSTANCE = new BinaryExtDataSourceType();
+
+  private BinaryExtDataSourceType() {
+    super(MPSExtentions.MODEL_BINARY);
+  }
 }

@@ -21,11 +21,11 @@ import org.jetbrains.mps.annotations.Immutable;
 import java.util.Objects;
 
 @Immutable
-public class FileExtDataSourceKey implements FileExtensionDataSourceKey {
+public class FileExtDataSourceType implements FileExtensionDataSourceType {
   @NotNull
   private final String myFileExtension;
 
-  protected FileExtDataSourceKey(@NotNull String fileExtension) {
+  protected FileExtDataSourceType(@NotNull String fileExtension) {
     myFileExtension = fileExtension;
   }
 
@@ -33,8 +33,8 @@ public class FileExtDataSourceKey implements FileExtensionDataSourceKey {
    * main factory method
    */
   @NotNull
-  public static FileExtDataSourceKey from(@NotNull String fileExtension) {
-    return new FileExtDataSourceKey(fileExtension);
+  public static FileExtDataSourceType from(@NotNull String fileExtension) {
+    return new FileExtDataSourceType(fileExtension);
   }
 
   @Override
@@ -56,8 +56,8 @@ public class FileExtDataSourceKey implements FileExtensionDataSourceKey {
 
   @Override
   public boolean equals(Object obj) {
-    if (obj instanceof FileExtDataSourceKey) {
-      return Objects.equals(myFileExtension, ((FileExtDataSourceKey) obj).myFileExtension);
+    if (obj instanceof FileExtDataSourceType) {
+      return Objects.equals(myFileExtension, ((FileExtDataSourceType) obj).myFileExtension);
     }
     return false;
   }

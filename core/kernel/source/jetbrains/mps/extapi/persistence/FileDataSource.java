@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceKey;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceKey;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceKey;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -214,7 +212,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
 
   @NotNull
   @Override
-  public DataSourceKey getKey() {
-    return FileDataSourceKey.INSTANCE;
+  public DataSourceType getType() {
+    return FileDataSourceType.INSTANCE;
   }
 }
