@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
 
@@ -84,13 +85,11 @@ public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
 
   @Override
   public String asString(SRepository repository) {
-    String s = "{";
-    int count = myRefs.size();
-    for (MappingConfig_AbstractRef mappingSimpleRef : myRefs) {
-      count--;
-      s = s + mappingSimpleRef.asString(repository);
-      if (count > 0) s += ", ";
-    }
-    return s + "}";
+    return myRefs.stream().map(r -> r.asString(repository)).collect(Collectors.joining(", ", "{", "}"));
+  }
+
+  @Override
+  public String asString() {
+    return myRefs.stream().map(MappingConfig_AbstractRef::asString).collect(Collectors.joining(", ", "{", "}"));
   }
 }

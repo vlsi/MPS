@@ -35,4 +35,9 @@ public class MappingConfig_RefAllLocal extends MappingConfig_AbstractRef {
   public String asString(SRepository repository) {
     return "*";
   }
+
+  @Override
+  public String asString() {
+    return "*";
+  }
 }

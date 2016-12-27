@@ -724,12 +724,7 @@ class GenerationSession {
 
   private void printUsedLanguages(SModel inputModel) {
     List<SLanguage> references = new ArrayList<SLanguage>(ModelContentUtil.getUsedLanguages(inputModel));
-    Collections.sort(references, new Comparator<SLanguage>() {
-      @Override
-      public int compare(SLanguage l1, SLanguage l2) {
-        return l1.getQualifiedName().compareTo(l2.getQualifiedName());
-      }
-    });
+    Collections.sort(references, Comparator.comparing(SLanguage::getQualifiedName));
     myLogger.info("languages used:");
     for (SLanguage lang : references) {
       myLogger.info("    " + lang);

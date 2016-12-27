@@ -44,7 +44,17 @@ public class MappingConfig_AbstractRef implements TemplateMappingConfigRef {
     return false;
   }
 
+  /**
+   * Design-time {@code toString()}
+   */
   public String asString(SRepository repository) {
+    return getClass().getName();
+  }
+
+  /**
+   * Deployment-time {@code toString()}
+   */
+  public String asString() {
     return getClass().getName();
   }
 

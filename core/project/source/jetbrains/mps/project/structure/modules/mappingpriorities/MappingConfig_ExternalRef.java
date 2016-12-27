@@ -98,4 +98,9 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
     String alias = ((Generator) generator).getAlias();
     return '[' + alias + ':' + myMappingConfig.asString(repository) + ']';
   }
+
+  @Override
+  public String asString() {
+    return '[' + myGenerator.getModuleName() + ':' + myMappingConfig.asString() + ']';
+  }
 }
