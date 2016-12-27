@@ -69,8 +69,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean isIncomplete() {
-    // FIXME myModelUID can't be '*', perhaps, it's some legacy leftovers?
-    return myModelUID == null || !myModelUID.equals("*") || myNodeID == null;
+    return myModelUID == null || myNodeID == null;
   }
 
   @Override

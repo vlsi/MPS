@@ -87,6 +87,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   /**
    * We need to translate 'design' MPR into 'deployed' MPR (we need different behavior in RT and DT, alas, we use the same class).
    * Here we populate simple reference with actual MC name not to depend from SRepository (see {@link MappingConfig_AbstractRef#asString(SRepository)}.
+   * FIXME I don't really like this approach as we compute values we are unlikely to need. Proper solution is to get rid of TemplateModuleInterpreted altogether.
    */
   private MappingPriorityRule fixup(MappingPriorityRule r) {
     MappingPriorityRule rv = r.getCopy();

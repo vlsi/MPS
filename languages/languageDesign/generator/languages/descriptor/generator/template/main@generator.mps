@@ -1557,8 +1557,8 @@
       <ref role="30HIoZ" to="hypd:2n3WChplMtR" resolve="MappingConfigNormalRef" />
       <node concept="gft3U" id="1_4jpH9o4Ft" role="1lVwrX">
         <node concept="2YIFZM" id="1_4jpH9o4FC" role="gfFT$">
-          <ref role="37wK5l" to="r99j:~TemplateUtil.createRefNormal(java.lang.String,java.lang.String):jetbrains.mps.generator.runtime.TemplateMappingConfigRef" resolve="createRefNormal" />
           <ref role="1Pybhc" to="r99j:~TemplateUtil" resolve="TemplateUtil" />
+          <ref role="37wK5l" to="r99j:~TemplateUtil.createRefNormal(java.lang.String,java.lang.String,java.lang.String):jetbrains.mps.generator.runtime.TemplateMappingConfigRef" resolve="createRefNormal" />
           <node concept="Xl_RD" id="1_4jpH9o4G2" role="37wK5m">
             <property role="Xl_RC" value="" />
             <node concept="17Uvod" id="1_4jpH9o4G5" role="lGtFl">
@@ -1590,6 +1590,25 @@
                       <node concept="30H73N" id="1_4jpH9o4Gc" role="2Oq$k0" />
                       <node concept="3TrcHB" id="1_4jpH9o4Gh" role="2OqNvi">
                         <ref role="3TsBF5" to="hypd:2n3WChplMtT" resolve="nodeID" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="Xl_RD" id="60dE$2CD0E5" role="37wK5m">
+            <property role="Xl_RC" value="" />
+            <node concept="17Uvod" id="60dE$2CD1cz" role="lGtFl">
+              <property role="P4ACc" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" />
+              <property role="2qtEX9" value="value" />
+              <node concept="3zFVjK" id="60dE$2CD1c$" role="3zH0cK">
+                <node concept="3clFbS" id="60dE$2CD1c_" role="2VODD2">
+                  <node concept="3clFbF" id="60dE$2CE3An" role="3cqZAp">
+                    <node concept="2OqwBi" id="60dE$2CE3NW" role="3clFbG">
+                      <node concept="30H73N" id="60dE$2CE3Am" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="60dE$2CE43A" role="2OqNvi">
+                        <ref role="3TsBF5" to="hypd:60dE$2CDkBp" resolve="mcName" />
                       </node>
                     </node>
                   </node>
