@@ -175,7 +175,7 @@ public class GeneratorPrioritiesTree {
       CheckedTreeNodeEx child = (CheckedTreeNodeEx) children.nextElement();
 
       if (child.getUserObject().equals(modRef)) {
-        if (mapping.getNodeID().equals("*")) {
+        if (mapping.includesAll()) {
           child.setChecked(true);
         } else {
           setCheckedStateForNode(child, mapping);

@@ -30,7 +30,7 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
   private String myNodeID;
   /*
    * hint for MC name (if myNodeId points to specific MC), to avoid dependency from sources
-   * when we need to report an issue with deployed priority rule/
+   * when we need to report an issue with deployed priority rule.
    */
   private String myConfigName;
 
@@ -50,12 +50,12 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     myNodeID = nodeID;
   }
 
-  public void setMapConfigName(String mcName) {
-    myConfigName = mcName;
+  public boolean includesAll() {
+    return "*".equals(myNodeID);
   }
 
-  public String getMapConfigName() {
-    return myConfigName;
+  public void setMapConfigName(String mcName) {
+    myConfigName = mcName;
   }
 
   @Override
