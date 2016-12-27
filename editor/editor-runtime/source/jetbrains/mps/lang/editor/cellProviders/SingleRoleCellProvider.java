@@ -19,7 +19,6 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder;
 import jetbrains.mps.editor.runtime.descriptor.EditorBuilderEnvironment;
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSimple;
-import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode.DeleteDirection;
@@ -31,7 +30,6 @@ import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -118,10 +116,6 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
   private SNode getRealChild() {
     Iterator<? extends SNode> childIterator = getNode().getChildren(myContainmentLink).iterator();
     return childIterator.hasNext() ? childIterator.next() : null;
-  }
-
-  private EditorCell createSingleCellWithEditorCellContext() {
-    return createSingleCell();
   }
 
   private EditorCell createSingleCell() {
