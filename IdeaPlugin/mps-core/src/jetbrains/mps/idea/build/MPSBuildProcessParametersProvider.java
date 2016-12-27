@@ -19,16 +19,30 @@ package jetbrains.mps.idea.build;
 import com.intellij.compiler.server.BuildProcessParametersProvider;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.jps.builders.impl.java.EclipseCompilerTool;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MPSBuildProcessParametersProvider extends BuildProcessParametersProvider {
   @NotNull
   @Override
+  public List<String> getClassPath() {
+    // Add Eclipse compiler (bundled with IDEA) to classpath because it is used for compilation
+    final List<String> classPath = new ArrayList<>();
+    File file = EclipseCompilerTool.findEcjJarFile();
+    if (file != null) {
+      classPath.add(file.getAbsolutePath());
+    }
+    return classPath;
+  }
+
+  @NotNull
+  @Override
   public List<String> getLauncherClassPath() {
     List<String> launcherClassPath = new ArrayList<String>(1);
-    launcherClassPath.add(PathManager.getIdeaPath()+"/lib/asm4-all.jar");
+    launcherClassPath.add(PathManager.getIdeaPath() + "/lib/asm4-all.jar");
     return launcherClassPath;
   }
 }
