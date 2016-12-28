@@ -23,6 +23,7 @@ import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -32,9 +33,12 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -57,12 +61,14 @@ public class GenPlanTest {
   private PriorityConflicts myConflicts;
   private PartitioningSolver mySolver;
   private MockTemplateModel myTemplateModel;
+  private MockTemplateModule myTemplateModule;
 
   @Before
   public void setup() {
-    myConflicts = new PriorityConflicts(Collections.<TemplateModule>emptyList());
+    myConflicts = new PriorityConflicts(Collections.emptyList());
     mySolver = new PartitioningSolver(myConflicts);
-    myTemplateModel = new MockTemplateModel("MockTemplateModel");
+    myTemplateModule = new MockTemplateModule();
+    myTemplateModel = new MockTemplateModel(myTemplateModule, "MockTemplateModel");
   }
 
 
@@ -137,12 +143,12 @@ public class GenPlanTest {
     assertEquals(1, groupsPhase2.size());
     assertEquals(1, groupsPhase3.size());
     assertEquals(2, groupsPhase4.size());
-    assertEquals(asSet(tmcX, tmcY), new HashSet<Group>(groupsPhase1));
+    assertEquals(asSet(tmcX, tmcY), new HashSet<>(groupsPhase1));
     //
     assertEquals(new Group(tmcA), groupsPhase2.get(0));
     assertEquals(new Group(tmcB), groupsPhase3.get(0));
     //
-    assertEquals(asSet(tmcC, tmcD), new HashSet<Group>(groupsPhase4));
+    assertEquals(asSet(tmcC, tmcD), new HashSet<>(groupsPhase4));
   }
 
   /**
@@ -177,7 +183,7 @@ public class GenPlanTest {
     List<Group> groupsPhase2 = phases.get(1).getGroups();
     assertEquals(1, groupsPhase1.size());
     assertEquals(1, groupsPhase2.size());
-    ArrayList<Group> allGroups = new ArrayList<Group>();
+    ArrayList<Group> allGroups = new ArrayList<>();
     for (TemplateMappingConfiguration mc : allConfigs) {
       allGroups.add(new Group(mc));
     }
@@ -318,7 +324,7 @@ public class GenPlanTest {
     assertEquals(2, groupsPhase1.size());
     assertEquals(1, groupsPhase2.size());
     assertEquals(1, groupsPhase3.size());
-    assertEquals(asSet(tmcA, tmcB), new HashSet<Group>(groupsPhase1));
+    assertEquals(asSet(tmcA, tmcB), new HashSet<>(groupsPhase1));
     assertEquals(new Group(tmcC), groupsPhase2.get(0));
     assertEquals(new Group(tmcD), groupsPhase3.get(0));
   }
@@ -461,7 +467,7 @@ public class GenPlanTest {
     assertEquals(1, groupsPhase2.size());
     final Set<Group> expectedPhase1 = asSet(tmcA, tmcC);
     expectedPhase1.add(new Group(tmcB).union(new Group(tmcE)));
-    assertEquals(expectedPhase1, new HashSet<Group>(groupsPhase1));
+    assertEquals(expectedPhase1, new HashSet<>(groupsPhase1));
     assertEquals(new Group(tmcD), groupsPhase2.get(0));
   }
 
@@ -567,9 +573,9 @@ public class GenPlanTest {
    */
   @Test
   public void testImplicitPriorities() {
-    MockTemplateModel g1 = new MockTemplateModel("G1");
-    MockTemplateModel g2 = new MockTemplateModel("G2");
-    MockTemplateModel g3 = new MockTemplateModel("G3");
+    MockTemplateModel g1 = new MockTemplateModel(myTemplateModule, "G1");
+    MockTemplateModel g2 = new MockTemplateModel(myTemplateModule, "G2");
+    MockTemplateModel g3 = new MockTemplateModel(myTemplateModule, "G3");
     TemplateMappingConfiguration tmcA = newMapConfig(g1, "A");
     TemplateMappingConfiguration tmcB = newMapConfig(g2, "B");
     TemplateMappingConfiguration tmcC = newMapConfig(g3, "C");
@@ -591,7 +597,7 @@ public class GenPlanTest {
     for (Conflict c : myConflicts.getConflicts()) {
       System.out.println(c.getText());
     }
-    final List<Conflict> cycles = myConflicts.getConflicts(Arrays.asList(Kind.Cycle));
+    final List<Conflict> cycles = myConflicts.getConflicts(Collections.singletonList(Kind.Cycle));
     assertEquals(1, cycles.size());
   }
 
@@ -647,7 +653,7 @@ public class GenPlanTest {
 
 
   private static Set<Group> asSet(TemplateMappingConfiguration... tmc) {
-    HashSet<Group> rv = new HashSet<Group>();
+    HashSet<Group> rv = new HashSet<>();
     for (TemplateMappingConfiguration mc : tmc) {
       rv.add(new Group(mc));
     }
@@ -673,7 +679,7 @@ public class GenPlanTest {
     private final String myName;
     private final boolean myTopPri;
 
-    public MockMapConfig(MockTemplateModel model, SNode mcNode, String name, boolean topPri) {
+    MockMapConfig(MockTemplateModel model, SNode mcNode, String name, boolean topPri) {
       super(model, mcNode);
       // name and topPri are direct values, not through SNode.getProperty as it
       // name requires node to be isSubConceptOf(INamedConcept), which requires concept registry et al.
@@ -700,14 +706,46 @@ public class GenPlanTest {
     }
   }
 
+  private static class MockTemplateModule extends TemplateModuleBase {
+    private final SModuleReference myModuleReference;
+
+    MockTemplateModule() {
+      myModuleReference = new ModuleReference("MockModule", ModuleId.regular());
+    }
+
+    @NotNull
+    @Override
+    public SModuleReference getModuleReference() {
+      return myModuleReference;
+    }
+
+    @Override
+    public Collection<SLanguage> getTargetLanguages() {
+      return Collections.emptyList();
+    }
+
+    @Override
+    public String getAlias() {
+      return getClass().getSimpleName();
+    }
+
+    @NotNull
+    @Override
+    public LanguageRuntime getSourceLanguage() {
+      throw new UnsupportedOperationException();
+    }
+  }
+
   private static class MockTemplateModel implements TemplateModel {
+    private final MockTemplateModule myModule;
     private final String myName;
     private final SModelReference myModelRef;
-    private static final List<TemplateMappingConfiguration> myMC = new ArrayList<TemplateMappingConfiguration>();
+    private static final List<TemplateMappingConfiguration> myMC = new ArrayList<>();
 
-    public MockTemplateModel(String name) {
+    MockTemplateModel(MockTemplateModule tm, String name) {
+      myModule = tm;
       myName = name;
-      myModelRef = new SModelReference(new ModuleReference("MockModule", ModuleId.regular()), SModelId.generate(), name);
+      myModelRef = new SModelReference(tm.getModuleReference(), SModelId.generate(), name);
     }
 
     @Override
@@ -737,7 +775,7 @@ public class GenPlanTest {
 
     @Override
     public TemplateModule getModule() {
-      return null;
+      return myModule;
     }
 
     @Override

@@ -20,9 +20,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,10 +32,6 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public abstract class TemplateModuleBase implements TemplateModule {
-  @NotNull
-  @Override
-  public abstract SModuleReference getModuleReference();
-
 
   @Override
   public Collection<TemplateModel> getModels() {
