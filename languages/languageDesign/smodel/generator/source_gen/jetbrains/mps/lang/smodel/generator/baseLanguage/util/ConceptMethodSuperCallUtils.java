@@ -61,7 +61,7 @@ public class ConceptMethodSuperCallUtils {
         return method;
       }
     }
-    throw new IllegalArgumentException("Method " + SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) + " could not be found within " + SNodeOperations.getConcept(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"))));
+    throw new IllegalArgumentException("Method " + SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")) + " could not be found within " + concept);
   }
 
   private static SNode findOverridingMethodInConcept(SNode concept, SNode methodDecl) {
