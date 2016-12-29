@@ -251,7 +251,7 @@ public class EditorCellModel_TransformationMenu extends TransformationMenuBase {
           return false;
         }
         // Do not suggest creation of #alias# cell if concept has name property 
-        if (Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")), ((boolean) true))).contains(MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept").getDeclarationNode())) {
+        if (Sequence.fromIterable(AbstractConceptDeclaration__BehaviorDescriptor.getAllSuperConcepts_id2A8AB0rAWpG.invoke(SLinkOperations.getTarget(assistantUtils.getEditorDeclaration(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7df344a9L, 0x10f7df451aeL, "conceptDeclaration")), ((boolean) true))).contains(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1169194658468"))) {
           return false;
         }
 
