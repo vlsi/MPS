@@ -36,7 +36,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getLeftExpression_idhEwJdGu = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGu").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftExpressionLeftExpression_idhEwJdGS = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGS").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftExpressionOperation_idhEwJdHi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionOperation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHi").registry(REGISTRY).build();
-  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> operandCanBeNull_idhWYZ0eEN6z = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("operandCanBeNull").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWYZ0eEN6z").registry(REGISTRY).build();
   public static final SMethod<String> getVariableExpectedName_idhEwIP$B = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIP$B").registry(REGISTRY).build();
   public static final SMethod<Boolean> applicableToModel_id1653mnvAf1y = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToModel").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAf1y").registry(REGISTRY).build();
@@ -74,7 +74,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
   }
-  /*package*/ static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SNode parameterConcept) {
+  /*package*/ static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SAbstractConcept parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(parameterConcept));
@@ -153,7 +153,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
       case 2:
         return (T) ((SNode) getLeftExpressionOperation_idhEwJdHi(node));
       case 3:
-        return (T) ((SNode) getParameter_idhEwJdHG(node, (SNode) parameters[0]));
+        return (T) ((SNode) getParameter_idhEwJdHG(node, (SAbstractConcept) parameters[0]));
       case 4:
         return (T) ((Boolean) operandCanBeNull_idhWYZ0eEN6z(node));
       case 5:

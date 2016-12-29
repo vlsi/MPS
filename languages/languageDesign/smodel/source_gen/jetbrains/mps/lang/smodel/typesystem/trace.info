@@ -96,8 +96,8 @@
       <node id="1206099071408" at="222,5,223,46" concept="7" />
       <node id="1206099071408" at="223,46,224,196" concept="7" />
       <node id="1206099071408" at="224,196,225,196" concept="2" />
-      <node id="1207353525179" at="229,136,230,437" concept="7" />
-      <node id="1222429061140" at="230,437,231,443" concept="7" />
+      <node id="1207353525179" at="229,136,230,416" concept="7" />
+      <node id="1222429061140" at="230,416,231,422" concept="7" />
       <node id="1207352395113" at="234,9,235,50" concept="7" />
       <node id="1207352395113" at="235,50,236,200" concept="7" />
       <node id="1207352395113" at="236,200,237,253" concept="2" />
@@ -271,7 +271,7 @@
       <node id="3151251778255159691" at="259,102,292,7" concept="0" />
       <node id="1207350917191" at="257,10,298,5" concept="5" />
       <node id="1207350883719" at="250,10,298,5" concept="5" />
-      <node id="1207350652681" at="231,443,298,5" concept="5" />
+      <node id="1207350652681" at="231,422,298,5" concept="5" />
       <node id="1207350349061" at="228,0,300,0" concept="11" trace="equate_conceptFromOpParm#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1178292729089" at="35,0,110,0" concept="11" trace="checkAppliedCorrectly_generic#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1186067154867" at="49,128,50,22" />
