@@ -8850,9 +8850,6 @@
       <node concept="3cpWs8" id="2qM$EmJLX1n" role="3cqZAp">
         <node concept="3cpWsn" id="2qM$EmJLX1o" role="3cpWs9">
           <property role="TrG5h" value="attr" />
-          <node concept="3THzug" id="2qM$EmJLX1p" role="1tU5fm">
-            <ref role="3qa414" to="tpck:4uZwTti3_$T" resolve="Attribute" />
-          </node>
           <node concept="2OqwBi" id="2qM$EmJLX1x" role="33vP2m">
             <node concept="2OqwBi" id="2qM$EmJLX1s" role="2Oq$k0">
               <node concept="1YBJjd" id="2qM$EmJLX1r" role="2Oq$k0">
@@ -8865,6 +8862,9 @@
             <node concept="2qgKlT" id="2qM$EmJLX1_" role="2OqNvi">
               <ref role="37wK5l" to="tpeu:5zEkxuKhyRq" resolve="getTargetConcept" />
             </node>
+          </node>
+          <node concept="3Tqbb2" id="19B7r2Jarq" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
           </node>
         </node>
       </node>
