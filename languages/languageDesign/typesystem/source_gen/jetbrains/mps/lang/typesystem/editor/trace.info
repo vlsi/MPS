@@ -18324,7 +18324,7 @@
       <node id="1741258697587166873" at="30,140,31,99" concept="2" />
       <node id="1741258697587166873" at="31,99,32,18" concept="7" />
       <node id="1741258697587166879" at="36,68,37,239" concept="6" />
-      <node id="1741258697587166887" at="37,239,38,522" concept="7" />
+      <node id="1741258697587166887" at="37,239,38,481" concept="7" />
       <node id="1741258697587166873" at="42,84,43,494" concept="7" />
       <node id="1741258697587166873" at="24,0,27,0" concept="1" trace="subs_AttributedNodeExpression_Contribution#()V" />
       <node id="1741258697587166873" at="41,0,45,0" concept="5" trace="getParts#()Ljava/util/List;" />
@@ -18332,7 +18332,7 @@
       <node id="1741258697587166873" at="27,0,34,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
       <scope id="1741258697587166873" at="24,55,25,16" />
       <scope id="1741258697587166873" at="42,84,43,494" />
-      <scope id="1741258697587166878" at="36,68,38,522">
+      <scope id="1741258697587166878" at="36,68,38,481">
         <var name="absRule" id="1741258697587166880" />
       </scope>
       <scope id="1741258697587166873" at="24,0,27,0" />

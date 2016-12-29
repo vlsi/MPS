@@ -650,9 +650,6 @@
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -6308,8 +6305,8 @@
                       </node>
                     </node>
                     <node concept="3JPx81" id="78qF3ppJ34x" role="2OqNvi">
-                      <node concept="3TUQnm" id="78qF3ppJ34y" role="25WWJ7">
-                        <ref role="3TV0OU" to="tpck:h0TrEE$" resolve="INamedConcept" />
+                      <node concept="3B5_sB" id="19B7r2KJf8" role="25WWJ7">
+                        <ref role="3B5MYn" to="tpck:h0TrEE$" resolve="INamedConcept" />
                       </node>
                     </node>
                   </node>
