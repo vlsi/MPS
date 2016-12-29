@@ -95,10 +95,14 @@ public class MPSModulesPartitioner {
   }
 
   public void buildExternalDependencies() {
-    // XXX why runtimeClosure? why do we care about RT of the module? 
+    // Though we don't care about RT dependencies to generate a module, we need runtimeClosure() here due to 
+    // module compilation/reload Generate task does in addition to M2M, M2T transformations. 
     this.external = Sequence.fromIterable(new MPSModulesClosure(modules, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).generationDependenciesClosure().runtimeClosure().getAllModules()).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(MPSModulesPartitioner.this.project);
+        // FIXME exclusion of generator modules here is due to the fact ModuleMiner (which eventually takes whatever we specify in <library file>)  
+        //       is not ready yet to read generator modules (it's JavaModuleFacet of Language-loaded Generator that discovers -generator.jar) 
+        //       However, the way forward is to be explicit about generator modules (need to produce META-INF/module.xml first, though) 
+        return !(SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"))) && SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(MPSModulesPartitioner.this.project);
       }
     });
   }

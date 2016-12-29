@@ -127,6 +127,10 @@ public final class BuildMps_Module__BehaviorDescriptor extends BaseBHDescriptor 
 
     // fetch generation time dependencies 
     MPSModulesClosure genClosure = new MPSModulesClosure(__thisNode__, new MPSModulesClosure.ModuleDependenciesOptions().trackDevkits()).runtimeClosure().generationDependenciesClosure();
+    // FIXME this genClosure is the same as in MPSModulesPartitioner#buildExternalDependencies. 
+    // For reasons, why runtimeClosure is here, refer to MPSMP. 
+    // XXX perhaps, shall account for possible BM_Generators in genClosure, as I do in aforementioned MPSMP#buildExternalDependencies. OTOH, it's a hack and  
+    // it seems it doesn't hurt not to treat them in any special way here. 
     for (SNode m : Sequence.fromIterable(genClosure.getAllModules())) {
       SNode artifact;
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(__thisNode__)) {

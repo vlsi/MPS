@@ -8512,9 +8512,14 @@
       <node concept="3cqZAl" id="5bqm540IfbX" role="3clF45" />
       <node concept="3Tm1VV" id="5bqm540IfbY" role="1B3o_S" />
       <node concept="3clFbS" id="5bqm540IfbZ" role="3clF47">
-        <node concept="3SKdUt" id="5RIkdF7uzlx" role="3cqZAp">
-          <node concept="3SKdUq" id="5RIkdF7uzrK" role="3SKWNk">
-            <property role="3SKdUp" value="XXX why runtimeClosure? why do we care about RT of the module?" />
+        <node concept="3SKdUt" id="22_8qtikVIP" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtikVIR" role="3SKWNk">
+            <property role="3SKdUp" value="Though we don't care about RT dependencies to generate a module, we need runtimeClosure() here due to" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="22_8qtikUqY" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtikUr0" role="3SKWNk">
+            <property role="3SKdUp" value="module compilation/reload Generate task does in addition to M2M, M2T transformations." />
           </node>
         </node>
         <node concept="3clFbF" id="5bqm540IiQK" role="3cqZAp">
@@ -8562,22 +8567,51 @@
               <node concept="3zZkjj" id="5bqm540IiRD" role="2OqNvi">
                 <node concept="1bVj0M" id="5bqm540IiRE" role="23t8la">
                   <node concept="3clFbS" id="5bqm540IiRF" role="1bW5cS">
+                    <node concept="3SKdUt" id="22_8qtikUFS" role="3cqZAp">
+                      <node concept="3SKdUq" id="22_8qtikUFU" role="3SKWNk">
+                        <property role="3SKdUp" value="FIXME exclusion of generator modules here is due to the fact ModuleMiner (which eventually takes whatever we specify in &lt;library file&gt;) " />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="22_8qtikVcP" role="3cqZAp">
+                      <node concept="3SKdUq" id="22_8qtikVcR" role="3SKWNk">
+                        <property role="3SKdUp" value="      is not ready yet to read generator modules (it's JavaModuleFacet of Language-loaded Generator that discovers -generator.jar)" />
+                      </node>
+                    </node>
+                    <node concept="3SKdUt" id="22_8qtikVtN" role="3cqZAp">
+                      <node concept="3SKdUq" id="22_8qtikVtP" role="3SKWNk">
+                        <property role="3SKdUp" value="      However, the way forward is to be explicit about generator modules (need to produce META-INF/module.xml first, though)" />
+                      </node>
+                    </node>
                     <node concept="3clFbF" id="5bqm540IiRI" role="3cqZAp">
-                      <node concept="3y3z36" id="5bqm540IiSw" role="3clFbG">
-                        <node concept="2OqwBi" id="5bqm540IiTj" role="3uHU7w">
-                          <node concept="2OqwBi" id="5bqm540IiSS" role="2Oq$k0">
-                            <node concept="Xjq3P" id="5bqm540IiSz" role="2Oq$k0" />
-                            <node concept="2OwXpG" id="5bqm540IiSX" role="2OqNvi">
-                              <ref role="2Oxat5" node="2pk5iwY4UIm" resolve="project" />
+                      <node concept="1Wc70l" id="22_8qtikXrb" role="3clFbG">
+                        <node concept="3fqX7Q" id="22_8qtikZdj" role="3uHU7B">
+                          <node concept="2OqwBi" id="22_8qtikZdl" role="3fr31v">
+                            <node concept="37vLTw" id="22_8qtikZdm" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5bqm540IiRG" resolve="it" />
+                            </node>
+                            <node concept="1mIQ4w" id="22_8qtikZdn" role="2OqNvi">
+                              <node concept="chp4Y" id="22_8qtikZdo" role="cj9EA">
+                                <ref role="cht4Q" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
+                              </node>
                             </node>
                           </node>
-                          <node concept="2Rxl7S" id="5bqm540IiTp" role="2OqNvi" />
                         </node>
-                        <node concept="2OqwBi" id="5bqm540IiS4" role="3uHU7B">
-                          <node concept="37vLTw" id="2BHiRxgmx1c" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5bqm540IiRG" resolve="it" />
+                        <node concept="3y3z36" id="5bqm540IiSw" role="3uHU7w">
+                          <node concept="2OqwBi" id="5bqm540IiTj" role="3uHU7w">
+                            <node concept="2OqwBi" id="5bqm540IiSS" role="2Oq$k0">
+                              <node concept="Xjq3P" id="5bqm540IiSz" role="2Oq$k0" />
+                              <node concept="2OwXpG" id="5bqm540IiSX" role="2OqNvi">
+                                <ref role="2Oxat5" node="2pk5iwY4UIm" resolve="project" />
+                              </node>
+                            </node>
+                            <node concept="2Rxl7S" id="5bqm540IiTp" role="2OqNvi" />
                           </node>
-                          <node concept="2Rxl7S" id="5bqm540IiSa" role="2OqNvi" />
+                          <node concept="2OqwBi" id="5bqm540IiS4" role="3uHU7B">
+                            <node concept="37vLTw" id="2BHiRxgmx1c" role="2Oq$k0">
+                              <ref role="3cqZAo" node="5bqm540IiRG" resolve="it" />
+                            </node>
+                            <node concept="2Rxl7S" id="5bqm540IiSa" role="2OqNvi" />
+                          </node>
                         </node>
                       </node>
                     </node>
@@ -17438,6 +17472,31 @@
             <node concept="3SKdUt" id="1ziBHtGBQ6S" role="3cqZAp">
               <node concept="3SKdUq" id="1ziBHtGBQWP" role="3SKWNk">
                 <property role="3SKdUp" value="complete set of dependencies" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="22_8qtiluJa" role="3cqZAp">
+              <node concept="3SKdUq" id="22_8qtiluJc" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME Note, we don't need this hack once we have proper GENERATE_INTO dependency for languages. Now (for historical reasons), we do it " />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="22_8qtilx5N" role="3cqZAp">
+              <node concept="3SKdUq" id="22_8qtilx5P" role="3SKWNk">
+                <property role="3SKdUp" value="wrong - we do not record/ignore GENERATE_INTO dependencies (see collectDependencies above), but copy all generator dependencies into language" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="22_8qtilzK$" role="3cqZAp">
+              <node concept="3SKdUq" id="22_8qtilzKA" role="3SKWNk">
+                <property role="3SKdUp" value="at full import. Otherwise, we could record GENERATE_INTO (either at doPartialImport or perhaps better, at doFullImport), and do not copy a lot of unrelated dependencies" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="22_8qtilA7l" role="3cqZAp">
+              <node concept="3SKdUq" id="22_8qtilA7n" role="3SKWNk">
+                <property role="3SKdUp" value="from generator. MPSModulePartitioner.runtimeClosure() (or generationDependenciesClosure?) shall respect GENERATE_INTO so that &lt;generate&gt; task knows what it needs to compile" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="22_8qtilCYs" role="3cqZAp">
+              <node concept="3SKdUq" id="22_8qtilCYu" role="3SKWNk">
+                <property role="3SKdUp" value="generated code." />
               </node>
             </node>
             <node concept="3cpWs8" id="3ETuytTYzkE" role="3cqZAp">

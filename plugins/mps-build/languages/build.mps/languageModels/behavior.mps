@@ -1529,6 +1529,26 @@
             </node>
           </node>
         </node>
+        <node concept="3SKdUt" id="22_8qtigAMd" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtigAMf" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME this genClosure is the same as in MPSModulesPartitioner#buildExternalDependencies." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="22_8qtigFM_" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtigFMB" role="3SKWNk">
+            <property role="3SKdUp" value="For reasons, why runtimeClosure is here, refer to MPSMP." />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="22_8qtigDPq" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtigDPs" role="3SKWNk">
+            <property role="3SKdUp" value="XXX perhaps, shall account for possible BM_Generators in genClosure, as I do in aforementioned MPSMP#buildExternalDependencies. OTOH, it's a hack and " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="22_8qtigMO4" role="3cqZAp">
+          <node concept="3SKdUq" id="22_8qtigMO6" role="3SKWNk">
+            <property role="3SKdUp" value="it seems it doesn't hurt not to treat them in any special way here." />
+          </node>
+        </node>
         <node concept="2Gpval" id="5bqm540MqjK" role="3cqZAp">
           <node concept="2GrKxI" id="5bqm540MqjL" role="2Gsz3X">
             <property role="TrG5h" value="m" />
