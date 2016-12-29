@@ -21,6 +21,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder" />
+    <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.Finder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" file="ConstantFinder.java">
     <classNode dependClassName="java.lang.Override" />

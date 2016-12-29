@@ -1421,28 +1421,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7vbFQ4bPXB$" role="3cqZAp">
-          <node concept="3cpWsn" id="7vbFQ4bPXB_" role="3cpWs9">
-            <property role="TrG5h" value="finders" />
-            <node concept="10Q1$e" id="7vbFQ4bPXBA" role="1tU5fm">
-              <node concept="3uibUv" id="xobTEH9Nqd" role="10Q1$1">
-                <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="7vbFQ4bPXBC" role="33vP2m">
-              <node concept="3g6Rrh" id="7vbFQ4bPXBD" role="2ShVmc">
-                <node concept="2ShNRf" id="7vbFQ4bPXBE" role="3g7hyw">
-                  <node concept="1pGfFk" id="7vbFQ4bPXBF" role="2ShVmc">
-                    <ref role="37wK5l" to="5wna:6hha$XdHb04" resolve="AspectMethodsFinder" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="xobTEHazMt" role="3g7fb8">
-                  <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="4NF6yZZUkzD" role="3cqZAp">
           <node concept="3cpWsn" id="4NF6yZZUkzG" role="3cpWs9">
             <property role="TrG5h" value="opt" />
@@ -1496,8 +1474,17 @@
             <node concept="2YIFZM" id="7vbFQ4bPXBO" role="37wK5m">
               <ref role="37wK5l" to="ngmn:~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolve="makeProvider" />
               <ref role="1Pybhc" to="ngmn:~FindUtils" resolve="FindUtils" />
-              <node concept="37vLTw" id="3GM_nagTzzy" role="37wK5m">
-                <ref role="3cqZAo" node="7vbFQ4bPXB_" resolve="finders" />
+              <node concept="2ShNRf" id="3l3Dt6fEcnz" role="37wK5m">
+                <node concept="3g6Rrh" id="3l3Dt6fEcn$" role="2ShVmc">
+                  <node concept="2ShNRf" id="3l3Dt6fEcn_" role="3g7hyw">
+                    <node concept="1pGfFk" id="3l3Dt6fEcnA" role="2ShVmc">
+                      <ref role="37wK5l" to="5wna:6hha$XdHb04" resolve="AspectMethodsFinder" />
+                    </node>
+                  </node>
+                  <node concept="3uibUv" id="3l3Dt6fEcnB" role="3g7fb8">
+                    <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
+                  </node>
+                </node>
               </node>
             </node>
             <node concept="37vLTw" id="4NF6yZZY86C" role="37wK5m">
