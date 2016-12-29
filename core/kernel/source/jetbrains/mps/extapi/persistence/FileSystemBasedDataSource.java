@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.*;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -23,7 +23,13 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import java.util.Collection;
 
 /**
- * evgeny, 11/4/12
+ * This kind of data source describes a location within physical file system.
+ * For example it can be a folder or a single file or a set of folders.
+ *
+ * TODO I would rather have a single implementor of this
+ *
+ * @author evgeny, apyshkin
+ * @since 11/4/12
  */
 public interface FileSystemBasedDataSource extends DataSource, DisposableDataSource {
 
@@ -37,7 +43,7 @@ public interface FileSystemBasedDataSource extends DataSource, DisposableDataSou
   @NotNull Collection<IFile> getAffectedFiles();
 
   /**
-   * @see jetbrains.mps.extapi.persistence.datasource.FileDataSourceFactory
+   * @return the type of this data source
    */
   @NotNull DataSourceType getType();
 }

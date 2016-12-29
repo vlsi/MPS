@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
@@ -31,17 +32,15 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 @Immutable
 final class ParametersCalculator {
   @NotNull private final FileBasedModelRoot myModelRoot;
-  @NotNull private final SourceRoot mySourceRoot;
 
-  public ParametersCalculator(@NotNull FileBasedModelRoot modelRoot, @NotNull SourceRoot sourceRoot) {
+  public ParametersCalculator(@NotNull FileBasedModelRoot modelRoot) {
     myModelRoot = modelRoot;
-    mySourceRoot = sourceRoot;
   }
 
   @NotNull
-  public ModelCreationOptions calculate(@NotNull IFile modelFile) {
-    String modelName = new ModelNameCalculator(myModelRoot, mySourceRoot, modelFile).calcModelFqName();
-    return calculate(modelName);
+  public ModelCreationOptions calculate(@NotNull IFile modelFile, @NotNull SourceRoot sourceRoot) {
+    String modelName = new ModelNameCalculator(myModelRoot, sourceRoot, modelFile).calcModelFqName();
+    return calculate(new SModelName(modelName));
   }
 
   @NotNull
@@ -52,9 +51,9 @@ final class ParametersCalculator {
   }
 
   @NotNull
-  public ModelCreationOptions calculate(@NotNull String modelName) {
+  public ModelCreationOptions calculate(@NotNull SModelName modelName) {
     return ModelCreationOptions.startBuilding()
-                               .setModelName(modelName)
+                               .setModelName(modelName.getValue())
                                .setModuleReference(myModelRoot.getModule().getModuleReference())
                                .finishBuilding();
   }

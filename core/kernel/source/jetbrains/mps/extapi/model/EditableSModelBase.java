@@ -22,8 +22,12 @@ import jetbrains.mps.extapi.persistence.ModelSourceChangeTracker.ReloadCallback;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
+import jetbrains.mps.persistence.DataSourceFactoryNotFoundException;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.DataSourceFactoryBridge;
+import jetbrains.mps.persistence.NoSourceRootsInModelRootException;
+import jetbrains.mps.persistence.SourceRootDoesNotExistException;
 import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.util.FileUtil;
@@ -33,6 +37,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModelChangeListener;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeChangeListener;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -150,7 +155,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
   private boolean checkAndResolveConflictOnSave() {
     if (needsReloading()) {
       LOG.warning("Model file " + getReference().getModelName() + " was modified externally! " +
-          "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
+                  "You might want to turn \"Synchronize files on frame activation/deactivation\" option on to avoid conflicts.");
       resolveDiskConflict();
       return false;
     }
@@ -243,20 +248,25 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
         throw new UnsupportedOperationException("cannot change model file on non-file data source");
       }
 
-      ModelRoot root = getModelRoot();
-      if (root instanceof DefaultModelRoot) { // todo only default model root? this code does not belong here but model root
-        DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-        IFile oldFile = ((FileDataSource) getSource()).getFile();
-        SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
-        FileDataSource source = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(sourceRoot, newModelName).getDataSource();
-        IFile newFile = source.getFile();
-        if (!newFile.equals(oldFile)) {
-          newFile.getParent().mkdirs();
-          newFile.createNewFile();
-          changeModelFile(newFile);
-          deleteOldFile(oldFile);
+      try {
+        ModelRoot root = getModelRoot();
+        if (root instanceof DefaultModelRoot) { // todo only default model root? this code does not belong here but model root
+          DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
+          IFile oldFile = ((FileDataSource) getSource()).getFile();
+          SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
+          CompositeResult<DataSource> result = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(sourceRoot, new SModelName(newModelName));
+          FileDataSource source = (FileDataSource) result.getDataSource();
+          IFile newFile = source.getFile();
+          if (!newFile.equals(oldFile)) {
+            newFile.getParent().mkdirs();
+            newFile.createNewFile();
+            changeModelFile(newFile);
+            deleteOldFile(oldFile);
+          }
+          save();
         }
-        save();
+      } catch (DataSourceFactoryNotFoundException | NoSourceRootsInModelRootException | SourceRootDoesNotExistException e) {
+        LOG.error(e);
       }
     }
 

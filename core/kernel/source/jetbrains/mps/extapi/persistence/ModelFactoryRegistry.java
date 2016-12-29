@@ -15,25 +15,28 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 
 import java.util.List;
 
 /**
- * Stores default association between <code>ModelFactory</code> and <code>DataSourceType</code>
- * Stores association between data source keys and model factories.
+ * Stores default associations between {@link ModelFactory} and {@link DataSourceType}.
  * If #register is invoked for the same key twice, then the model factory value gets replaced.
+ * If #unregister is invoked then the previous associated value must be restored.
+ * To sum up it is a many-to-many mapping.
  *
+ * @see ModelFactory
  * @see DataSourceType
- * Created by apyshkin on 12/22/16.
+ *
+ * @author apyshkin
+ * @since 12/22/16
  */
 public interface ModelFactoryRegistry {
-
-  boolean unregister(@NotNull DataSourceType key, @NotNull ModelFactory factory);
 
   /**
    * @return all registered factories
@@ -42,28 +45,33 @@ public interface ModelFactoryRegistry {
   @NotNull List<ModelFactory> getFactories();
 
   /**
+   * Clients can gain from this logic by replacing the existing model factory logic in
+   * @param factoryId -- unique identifier
+   * @return the last registered factory with the given id
+   */
+  @Nullable ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryId);
+
+  /**
    * Returns the last registered factory (order of registration) which correspond to the specified
    * <code>key</code>.
    *
+   * Must be a shorthand for <code>getModelFactories(dataSourceType)?.getLast()</code>
+   *
    * @return null if there is no model factory which is registered to the specified data source
    */
-  @Nullable ModelFactory getModelFactory(@NotNull DataSourceType dataSourceType);
+  @Nullable ModelFactory getDefaultModelFactory(@NotNull DataSourceType dataSourceType);
 
   /**
-   * Returns the last registered data source for the specified factory
-   * @return null if there is no data source type associated with
+   * @return all the registered factories for the provided data source type sorted:
+   * 1. by the preferences of the model factory ({@link ModelFactory#getPreferredDataSourceTypes()},
+   * 2. in the <em>reverse</em> order of registration
    */
-  @Nullable DataSourceType getDataSourceType(@NotNull ModelFactory modelFactory);
+  @Immutable
+  @NotNull List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType);
 
   /**
-   * registers a new default association between data source type and a model factory instance
+   * @return all the factory types registered
    */
-  void register(@NotNull DataSourceType type, @NotNull ModelFactory factory);
-
-  /**
-   * @param key -- the key to clear all associations in which it had been involved.
-   *
-   * @return the previous associated if any
-   */
-  @Nullable ModelFactory unregister(@NotNull DataSourceType key);
+  @Immutable
+  @NotNull List<ModelFactoryType> getFactoryTypes();
 }

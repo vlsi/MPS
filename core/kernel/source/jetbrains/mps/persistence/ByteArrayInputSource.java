@@ -17,6 +17,8 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.persistence.PersistenceUtil.StreamDataSourceBase;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -40,5 +42,11 @@ public class ByteArrayInputSource extends StreamDataSourceBase {
   @Override
   public InputStream openInputStream() throws IOException {
     return new ByteArrayInputStream(myInput);
+  }
+
+  @Nullable
+  @Override
+  public DataSourceType getType() {
+    return null;
   }
 }

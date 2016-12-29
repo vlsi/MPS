@@ -31,7 +31,7 @@ public interface MultiStreamDataSource extends DataSource {
 
   /**
    * Access named stream for reading. Caller is responsible to close the stream once done.
-   * @param name name of the stream to read
+   * @param name name of the stream to read // fixme what does it mean -- the name???
    * @return stream to read from, never <code>null</code>
    * @throws IOException if failed to open given named stream
    */

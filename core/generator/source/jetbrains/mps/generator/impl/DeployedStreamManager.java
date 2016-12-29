@@ -17,9 +17,11 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.module.ReloadableModule;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -131,6 +133,12 @@ public class DeployedStreamManager implements ModelStreamManager {
     @Override
     public boolean isReadOnly() {
       return true;
+    }
+
+    @Nullable
+    @Override
+    public DataSourceType getType() {
+      return null;
     }
 
     private boolean isModuleClassLoaderAlive() {

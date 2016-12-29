@@ -21,7 +21,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author apyshkin
  */
-public final class NoSourceRootsInModelRootException extends RuntimeException {
+public final class NoSourceRootsInModelRootException extends ModelCannotBeCreatedException {
   @NotNull private final FileBasedModelRoot myModelRoot;
 
   public NoSourceRootsInModelRootException(@NotNull FileBasedModelRoot modelRoot) {

@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceType;
-import jetbrains.mps.extapi.persistence.datasource.FileDataSourceService;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
@@ -60,7 +60,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
    * FIXME remove modelRoot parameter
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    *
-   * @deprecated use {@link FileDataSourceService#getFactory} AND
+   * @deprecated use {@link DataSourceFactoryService#getFactory} AND
    *             {@link FileDataSourceFactory#create}
    */
   @ToRemove(version = 3.5)
@@ -191,7 +191,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   protected void fireChanged(ProgressMonitor monitor) {
     List<DataSourceListener> listeners;
     synchronized (LOCK) {
-      listeners = new ArrayList<DataSourceListener>(myListeners);
+      listeners = new ArrayList<>(myListeners);
     }
     monitor.start("Reloading", listeners.size());
     try {
@@ -213,6 +213,6 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
   @NotNull
   @Override
   public DataSourceType getType() {
-    return FileDataSourceType.INSTANCE;
+    return FileExtensionDataSourceType.of(myFile);
   }
 }

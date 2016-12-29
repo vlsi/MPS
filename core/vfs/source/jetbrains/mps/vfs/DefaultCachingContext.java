@@ -24,6 +24,9 @@ public final class DefaultCachingContext implements CachingContext {
   private final boolean mySynchronous;
   private final boolean myRecursive;
 
+  /**
+   * fixme bad style -- turn into cascade method call
+   */
   public DefaultCachingContext(boolean synchronous, boolean recursive) {
     mySynchronous = synchronous;
     myRecursive = recursive;

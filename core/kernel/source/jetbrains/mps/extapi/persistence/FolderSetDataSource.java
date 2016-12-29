@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.CachingFileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
@@ -28,6 +29,7 @@ import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
@@ -43,7 +45,13 @@ import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
-/**
+ /**
+ * Must be replaced with the FileDataSource everywhere.
+ * Additional functionality (like #isIncluded) must be extracted or removed.
+ * Remember: it is supposed to be just a simple notion of location with file system for {@link ModelFactory}
+ * to load/save/create models there.
+ *
+ * @author apyshkin
  * evgeny, 11/3/12
  */
 public class FolderSetDataSource extends DataSourceBase implements DataSource, FileSystemListener, FileSystemBasedDataSource {
@@ -77,7 +85,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
 
       myPaths.put(path.getPath(), listener);
       if (!(myListeners.isEmpty())) {
-        ((jetbrains.mps.vfs.FileSystem) path.getFileSystem()).addListener(listener);
+        path.getFileSystem().addListener(listener);
       }
     } finally {
       myLock.writeLock().unlock();
@@ -87,7 +95,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   public Collection<String> getPaths() {
     myLock.readLock().lock();
     try {
-      return new ArrayList<String>(myPaths.keySet());
+      return new ArrayList<>(myPaths.keySet());
     } finally {
       myLock.readLock().unlock();
     }
@@ -256,7 +264,7 @@ public class FolderSetDataSource extends DataSourceBase implements DataSource, F
   @NotNull
   @Override
   public DataSourceType getType() {
-   return FolderSetDataSourceType.INSTANCE;
+   return PreinstalledDataSourceTypes.FOLDER_SET;
   }
 
   private static class PathListener implements FileSystemListener {

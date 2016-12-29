@@ -27,7 +27,6 @@ import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
 import jetbrains.mps.make.java.BLDependenciesCache;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.PathMacros;
@@ -58,7 +57,7 @@ import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 /**
- * Core MPS functionality layer. Non-instantiable now, the only way to create MPS is via {@link jetbrains.mps.core.platform.PlatformFactory}.
+ * Core MPS functionality layer. Non-instantiable now, the only way to create MPS is via {@code jetbrains.mps.core.platform.PlatformFactory}.
  */
 public final class MPSCore extends ComponentPluginBase {
   private volatile boolean myInitialized = false;
@@ -86,7 +85,6 @@ public final class MPSCore extends ComponentPluginBase {
   private void doInit() {
     SNodeAccessUtil.setInstance(new SNodeAccessUtilImpl());
     myPersistenceFacade = init(new PersistenceRegistry());
-    myModelFactoryRegistry = init(ModelFactoryRegistryImpl.getInstance());
     init(new FacetsRegistry());
 
     SRepositoryRegistry repositoryRegistry = init(new SRepositoryRegistry());

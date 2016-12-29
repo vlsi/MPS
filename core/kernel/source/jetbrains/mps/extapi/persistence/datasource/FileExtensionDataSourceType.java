@@ -15,13 +15,62 @@
  */
 package jetbrains.mps.extapi.persistence.datasource;
 
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+
+import java.util.Objects;
 
 /**
- * Data Source Key based on the model file extension
- *
- * Created by apyshkin on 12/22/16.
+ * @author apyshkin
+ * @since 29/12/16
  */
-public interface FileExtensionDataSourceType extends DataSourceType {
-  @NotNull String getFileExtension();
+@Immutable
+public final class FileExtensionDataSourceType implements DataSourceType {
+  static final FileExtensionDataSourceType DOT_MPS = of(MPSExtentions.DOT_MODEL);
+  static final FileExtensionDataSourceType DOT_MODEL = of(MPSExtentions.DOT_MODEL_HEADER);
+  static final FileExtensionDataSourceType DOT_MODEL_ROOT = of(MPSExtentions.DOT_MODEL_ROOT);
+  static final FileExtensionDataSourceType DOT_BINARY = of(MPSExtentions.DOT + MPSExtentions.MODEL_BINARY);
+
+  private final String myFileExtension;
+
+  private FileExtensionDataSourceType(@NotNull String fileExtension) {
+    myFileExtension = fileExtension;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o instanceof FileExtensionDataSourceType) {
+      FileExtensionDataSourceType that = (FileExtensionDataSourceType) o;
+      return Objects.equals(myFileExtension, that.myFileExtension);
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    return myFileExtension.hashCode();
+  }
+
+  @NotNull
+  public static FileExtensionDataSourceType of(@NotNull String fileExtension) {
+    return new FileExtensionDataSourceType(fileExtension);
+  }
+
+  public static FileExtensionDataSourceType of(@NotNull IFile file) {
+    String extension = FileUtil.getExtension(file.getPath());
+    if (extension == null) {
+      throw new IllegalArgumentException("Null extension: " + file);
+    }
+    return of(extension);
+  }
+
+  @NotNull
+  @Override
+  public String getName() {
+    return "File Data Source Type : [file extension = '" + myFileExtension + "']";
+  }
 }

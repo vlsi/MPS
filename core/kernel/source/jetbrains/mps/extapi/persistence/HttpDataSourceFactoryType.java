@@ -13,17 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
+package jetbrains.mps.extapi.persistence;
 
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.annotations.Singleton;
 
 /**
- * Serves as a unique identifier between {@link DataSource} instances.
- * Currently it is used only for the file-based data sources.
+ * Default data source types for all kinds of file- and folder-based
+ * data sources one could imagine.
  *
- * Created by apyshkin on 12/22/16.
+ * Created by apyshkin on 12/27/16.
  */
-public interface DataSourceType {
-  @NotNull String getName();
+@Singleton
+public enum HttpDataSourceFactoryType implements DataSourceType {
+  INSTANCE;
+
+  @NotNull
+  @Override
+  public String getName() {
+    return "File Data Source Type";
+  }
 }

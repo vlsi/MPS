@@ -15,77 +15,76 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
-import org.xml.sax.SAXException;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
-import javax.xml.parsers.ParserConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.Collections;
+import java.net.URISyntaxException;
 import java.util.LinkedHashMap;
 import java.util.Map;
+
+import static java.util.Collections.singletonMap;
 
 /**
  * evgeny, 3/6/13
  */
-public class PersistenceUtil {
-  public final static String PER_ROOT_PERSISTENCE_FACTORY = "file-per-root";
-
-  protected static org.apache.log4j.Logger LOG = LogManager.getLogger(PersistenceUtil.class);
+public final class PersistenceUtil {
+  private static final Logger LOG = LogManager.getLogger(PersistenceUtil.class);
 
   private PersistenceUtil() {
   }
 
   /**
-   * Try to load a model using {@link org.jetbrains.mps.openapi.persistence.ModelFactory}
+   * Try to load a model using a default {@link org.jetbrains.mps.openapi.persistence.ModelFactory}
    * identified by <code>extension</code> from supplied textual <code>content</code>.
    *
    * @return <code>null</code> if fails to load model from the content supplied (either model read error, no model factory for the extension, or factory
    * doesn't support textual content)
    */
-  public static SModel loadModel(final String content, String extension) {
-    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
-    if (factory == null || factory.isBinary()) {
-      return null;
-    }
+  @Nullable
+  public static SModel loadModel(@NotNull String content) {
+    @SuppressWarnings("ConstantConditions")
+    @NotNull ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PLAIN_XML);
     byte[] bytes = content.getBytes(FileUtil.DEFAULT_CHARSET);
-    return loadModel(bytes, extension);
+    return loadModel(bytes, factory);
   }
 
   /**
    * Try to load a model using {@link org.jetbrains.mps.openapi.persistence.ModelFactory}
-   * identified by <code>extension</code> from supplied <code>content</code>.
+   * from supplied <code>content</code>.
    *
-   * @return <code>null</code> if fails to load model from the content supplied (either model read error, no model factory for the extension)
+   * @return <code>null</code> if fails to load model from the content supplied (either model read error)
+   *         or loaded model from the byte array content using the supplied model factory
    */
-  public static SModel loadModel(final byte[] content, String extension) {
-    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
-    if (factory == null) {
-      return null;
-    }
+  @Nullable
+  public static SModel loadModel(final byte[] content, @NotNull ModelFactory factory) {
     try {
-      SModel model = factory.load(new ByteArrayInputSource(content), Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
+      SModel model = factory.load(new ByteArrayInputSource(content), singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString()));
       model.load();
       return model;
     } catch (IOException ex) {
@@ -93,31 +92,28 @@ public class PersistenceUtil {
     }
   }
 
+  @Nullable
   public static SModel loadBinaryModel(final byte[] content) {
-    return loadModel(content, MPSExtentions.MODEL_BINARY);
+    //noinspection ConstantConditions
+    return loadModel(content, ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.BINARY));
   }
 
-  public static SModel loadModel(IFile file) {
-    return loadModel(file, FileUtil.getExtension(file.getName()));
-  }
-
-  private static SModel loadModel(IFile file, String extension) {
-    ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(extension);
-    if (factory == null) {
-      return null;
-    }
-    // FIXME why do we check here factory instanceof for FolderModelFactory, but didn't check the same in the rest of #loadModel methods?
+  public static SModel loadModel(@NotNull IFile file) {
     try {
-      SModel model;
-      final Map<String, String> options = Collections.singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
-      if (factory instanceof FolderModelFactory) {
-        model = factory.load(new FolderDataSource(file.getParent()), options);
-      } else {
-        model = factory.load(new FileDataSource(file), options);
+      DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(file.getUrl().toURI(), null);
+      if (dataSource.getType() == null) {
+        return null;
       }
+      ModelFactory factory = ModelFactoryService.getInstance().getDefaultModelFactory(dataSource.getType());
+      if (factory == null) {
+        return null;
+      }
+      final Map<String, String> options = singletonMap(ModelFactory.OPTION_CONTENT_ONLY, Boolean.TRUE.toString());
+      SModel model = factory.load(dataSource, options);
       model.load();
       return model;
-    } catch (IOException ex) {
+    } catch (IOException | URINotSupportedException | URISyntaxException e) {
+      LOG.error("", e);
       return null;
     }
   }
@@ -150,7 +146,7 @@ public class PersistenceUtil {
   }
 
   public static SModel loadModelFromXml(final Element element) {
-    return loadModel(JDOMUtil.asString(new org.jdom.Document(element)), MPSExtentions.MODEL);
+    return loadModel(JDOMUtil.asString(new org.jdom.Document(element)));
   }
 
   public static byte[] saveBinaryModel(final SModel model) {
@@ -185,7 +181,7 @@ public class PersistenceUtil {
   }
 
   public static String savePerRootModel(final SModel model, String name) {
-    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
+    ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
     if (factory == null || factory.isBinary()) {
       return null;
     }
@@ -200,7 +196,7 @@ public class PersistenceUtil {
   }
 
   public static String savePerRootModel(final SModel model, boolean isHeader) {
-    FolderModelFactory factory = PersistenceRegistry.getInstance().getFolderModelFactory(PER_ROOT_PERSISTENCE_FACTORY);
+    ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
     if (factory == null || factory.isBinary()) {
       return null;
     }
@@ -221,8 +217,7 @@ public class PersistenceUtil {
     return null;
   }
 
-  public static class StreamDataSourceBase implements StreamDataSource {
-
+  public static abstract class StreamDataSourceBase implements StreamDataSource {
     @NotNull
     @Override
     public String getLocation() {
@@ -273,6 +268,11 @@ public class PersistenceUtil {
       return false;
     }
 
+    @Override
+    public DataSourceType getType() {
+      return null;
+    }
+
     public InputStream getContentAsStream() {
       return new ByteArrayInputStream(myStream.toByteArray());
     }
@@ -288,7 +288,6 @@ public class PersistenceUtil {
   }
 
   public abstract static class MultiStreamDataSourceBase implements MultiStreamDataSource {
-
     @NotNull
     @Override
     public InputStream openInputStream(String name) throws IOException {
@@ -351,6 +350,11 @@ public class PersistenceUtil {
     @Override
     public boolean isReadOnly() {
       return false;
+    }
+
+    @Override
+    public DataSourceType getType() {
+      return null;
     }
 
     public String getContent(String name, String charsetName) {

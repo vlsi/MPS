@@ -125,7 +125,7 @@ public class ChangesCalculationTest extends ChangesTestBase {
     final Wrappers._T<SModel> modelCopy = new Wrappers._T<SModel>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        modelCopy.value = PersistenceUtil.loadModel(PersistenceUtil.saveModel(getTestModel(), getDefaultExt()), getDefaultExt());
+        modelCopy.value = PersistenceUtil.loadModel(PersistenceUtil.saveModel(getTestModel(), getDefaultExt()));
       }
     });
     makeChangeAndWait(todo);

@@ -16,8 +16,10 @@
 package jetbrains.mps.extapi.persistence;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 /**
  * A base convenience class for data sources with empty implementations for all methods.
@@ -30,6 +32,12 @@ public abstract class DataSourceBase implements DataSource {
 
   @Override
   public void removeListener(@NotNull DataSourceListener listener) {
+  }
+
+  @Nullable
+  @Override
+  public DataSourceType getType() {
+    return null;
   }
 
   @Override

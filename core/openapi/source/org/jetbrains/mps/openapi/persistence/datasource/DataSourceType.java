@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package org.jetbrains.mps.openapi.persistence.datasource;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 
 /**
+ * Serves as a unique identifier between {@link DataSource} instances.
+ *
  * Created by apyshkin on 12/22/16.
  */
-public enum FolderSetDataSourceType implements DataSourceType {
-  INSTANCE;
-
-  @NotNull
-  @Override
-  public String getName() {
-    return "Folder Set Data Source Key";
-  }
+public interface DataSourceType {
+  @NotNull String getName();
 }

@@ -95,11 +95,11 @@ final class CopyDefaultModelRootHelper {
       SourceRoot targetSourceRoot = targetFiles.get(cnt);
 
       sourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
-      ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot, targetSourceRoot);
+      ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot);
       ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
         try {
           IFile targetModelFile = calculateTargetModelFile(sourceModule, targetModule, sourceRoot, targetSourceRoot, file);
-          options = parametersCalculator.calculate(targetModelFile); // recalculating based on the target location and target name
+          options = parametersCalculator.calculate(targetModelFile, targetSourceRoot); // recalculating based on the target location and target name
           try {
             SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
             createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);

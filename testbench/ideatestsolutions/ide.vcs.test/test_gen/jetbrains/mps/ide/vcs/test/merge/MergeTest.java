@@ -139,7 +139,7 @@ public class MergeTest extends ChangesTestBase {
         SPropertyOperations.set(ListSequence.fromList(SModelOperations.roots(mine, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
 
         String baseString = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
-        SModel result = PersistenceUtil.loadModel(baseString, getDefaultExt());
+        SModel result = PersistenceUtil.loadModel(baseString);
         ListSequence.fromList(SLinkOperations.getChildren(ListSequence.fromList(SModelOperations.roots(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x4a9a46de59132803L, "member"))).addElement(((SNode) CopyUtil.copyAndPreserveId(newChild)));
         SPropertyOperations.set(ListSequence.fromList(SModelOperations.roots(result, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "ChangedName");
 
@@ -154,8 +154,8 @@ public class MergeTest extends ChangesTestBase {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         String baseString = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
-        mine.value = PersistenceUtil.loadModel(baseString, getDefaultExt());
-        theirs.value = PersistenceUtil.loadModel(baseString, getDefaultExt());
+        mine.value = PersistenceUtil.loadModel(baseString);
+        theirs.value = PersistenceUtil.loadModel(baseString);
 
         SModel result = changer.invoke(mine.value, theirs.value);
 

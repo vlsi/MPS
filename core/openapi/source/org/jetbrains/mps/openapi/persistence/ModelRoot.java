@@ -15,10 +15,12 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
@@ -80,9 +82,11 @@ public interface ModelRoot {
    *
    * FIXME it is strange to have two similar methods: we are better to merge this method into the method {@link #canCreateModel(String)}.
    *
+   * @deprecated use specific #canCreateModel(SModelName)
    * @return whether this model root is read-only in the way described above
    */
-  /*@Deprecated*/
+  @ToRemove(version = 4.0)
+  @Deprecated
   boolean canCreateModels();
 
   /**
@@ -97,7 +101,7 @@ public interface ModelRoot {
    * Creates a new model with the given name.
    * The new model will be contained in this model root (methods #getModel, #getModels).
    *
-   * @param modelName -- might fq name or just simple short model name. Up to implemetor
+   * @param modelName -- might fq name or just simple short model name. Up to implementor
    *                  @see org.jetbrains.mps.openapi.model.SModelName
    *
    * @return null if failed, for instance {@link #canCreateModel(String)} returned false.

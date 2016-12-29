@@ -16,9 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
 import jetbrains.mps.vfs.FileSystem;
@@ -86,12 +84,12 @@ final class ModelSourceRootWalker {
   private final static class ModelRootTreeWalkCallback implements FileTreeWalkListener {
     private final ModelRootWalkListener myCallback;
     private final FileBasedModelRoot myModelRoot;
-    private final DataSourceFactoryBridge myDataSourceFactory;
+    private final DataSourceFactoryBridge myDataSourceFactoryBridge;
 
     public ModelRootTreeWalkCallback(@NotNull FileBasedModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
       myCallback = callback;
       myModelRoot = modelRoot;
-      myDataSourceFactory = new DataSourceFactoryBridge(myModelRoot);
+      myDataSourceFactoryBridge = new DataSourceFactoryBridge(myModelRoot);
     }
 
     @Override
@@ -99,15 +97,16 @@ final class ModelSourceRootWalker {
       IFile file = state.getFile();
       SourceRoot sourceRoot = state.getSourceRoot();
       assert !file.isDirectory();
-      CompositeResult<FileSystemBasedDataSource>result = myDataSourceFactory.create(file, sourceRoot);
+      CompositeResult<DataSource> result = myDataSourceFactoryBridge.create(file);
       if (result != null) {
-        FileSystemBasedDataSource dataSource = result.getDataSource();
-        ModelFactory modelFactory = ModelFactoryRegistryImpl.getInstance().getModelFactory(dataSource.getType());
-        if (modelFactory == null) {
-          LOG.error("Model factory association is not found for the '" + dataSource.getType() + "'");
-        } else {
-          myCallback.onDataSourceVisited(modelFactory, dataSource, result.getOptions(), file);
+        DataSource dataSource = result.getDataSource();
+        for (ModelFactory modelFactory : ModelFactoryService.getInstance().getModelFactories(dataSource.getType())) {
+          if (modelFactory.supports(dataSource)) {
+            myCallback.onDataSourceVisited(modelFactory, dataSource, result.getOptions(), file);
+            return;
+          }
         }
+        LOG.error("Could not discover an appropriate model factory associated with the '" + dataSource.getType() + "'");
       }
 
     }

@@ -13,20 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package org.jetbrains.mps.openapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceType;
-import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
- * Created by apyshkin on 12/22/16.
+ * Created by apyshkin on 12/27/16.
  */
-public enum FolderDataSourceType implements DataSourceType {
-  INSTANCE;
-
-  @NotNull
-  @Override
-  public String getName() {
-    return "Folder Data Source Key";
-  }
+public interface FileExtension {
+  /**
+   * @return null iff it is directory
+   */
+  @Nullable String toText();
 }

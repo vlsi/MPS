@@ -15,10 +15,12 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.mps.openapi.model.SModelName;
+
 /**
  * Marker interface for the model creation/loading option
  *
- * @see ModelFactory#create(DataSource, String, ModelLoadingOption...)
+ * @see ModelFactory#create(DataSource, SModelName, ModelLoadingOption...)
  * @see ModelFactory#load(DataSource, ModelLoadingOption...)
  *
  * Created by apyshkin on 12/20/16.

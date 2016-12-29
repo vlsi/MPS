@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
@@ -29,47 +30,43 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PER_ROOT_XML;
+import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PLAIN_XML;
 
 /**
  * @author apyshkin
  * @since 27/12/16
  */
 @Immutable
-public final class FilePerRootDataSourceFactory implements DataSourceFactory {
+public final class FileDataSourceFactory implements DataSourceFactory {
   @Internal
-  public FilePerRootDataSourceFactory() {
+  public FileDataSourceFactory() {
     // do not remove
   }
 
   @NotNull
   @Override
   public DataSource create(@NotNull SModelName modelName,
-
-                           @ToRemove(version = 0)
                            @NotNull SourceRoot sourceRoot,
 
                            @ToRemove(version = 0)
                            @Nullable ModelRoot modelRoot) {
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, PER_ROOT_XML.getDefaultFileExtension());
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, PLAIN_XML.getDefaultFileExtension());
     IFile modelFile = modelFileCalculator.calculate();
     return createFromFile(modelFile, modelRoot);
   }
 
   @NotNull
   private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    if (!file.isDirectory()) {
-      throw new IllegalArgumentException("Cannot accept NOT directory file " + file);
+    if (file.isDirectory()) {
+      throw new IllegalArgumentException("Cannot accept directory file " + file);
     }
-    // redundant branch, will go away with the {@link FilePerRootDataSource}
-    // this must happen on the model factory side
-    return new FilePerRootDataSource(file, modelRoot);
+    return new FileDataSource(file, modelRoot);
   }
 
   @NotNull
   @Override
   public DataSourceType getType() {
-    return PreinstalledDataSourceTypes.DOT_MODEL;
+    return PreinstalledDataSourceTypes.DOT_MPS;
   }
 
   @Override

@@ -15,34 +15,45 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.FileExtension;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+/**
+ * Calculates model file from model name, enclosing source root and module and
+ * the extension of the model file
+ *
+ * @see MPSExtentions#DOT_MODEL_HEADER
+ * @see MPSExtentions#DOT_MODEL
+ */
 @Immutable
 public final class ModelFileCalculator {
-  @NotNull private final FileBasedModelRoot myModelRoot;
-  @NotNull private final String myModelName;
+  @Nullable private final SModule myModule;
+  @NotNull private final SModelName myModelName;
   @NotNull private final SourceRoot mySourceRoot;
-  @NotNull private final FileExtensionDataSourceType myDataSourceType;
+  @NotNull private final FileExtension myFileExtension;
 
-  ModelFileCalculator(@NotNull FileBasedModelRoot modelRoot,
-                      @NotNull String modelName,
+  ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
-                      @NotNull FileExtensionDataSourceType dataSourceType) {
-    myModelRoot = modelRoot;
+                      @Nullable ModelRoot modelRoot,
+                      @NotNull FileExtension modelFileExtension) {
+    myModule = modelRoot != null ? modelRoot.getModule() : null;
     myModelName = modelName;
     mySourceRoot = sourceRoot;
-    myDataSourceType = dataSourceType;
+    myFileExtension = modelFileExtension;
   }
 
   @NotNull
-  public IFile modelFile() {
+  public IFile calculate() {
     String fileName = calcFileName();
     IFile sourceRootFile = mySourceRoot.getAbsolutePath();
     return sourceRootFile.getDescendant(fileName);
@@ -50,20 +61,22 @@ public final class ModelFileCalculator {
 
   @NotNull
   private String calcFileName() {
-    String filenameSuffix = calcFileNameSuffix(myModelName);
+    String filenameSuffix = calcFileNameSuffix(myModelName.getValue());
     String extension = getFileExtension();
     return NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT + extension;
   }
 
   private String getFileExtension() {
-    return myDataSourceType.getFileExtension();
+    return StringUtil.emptyIfNull(myFileExtension.toText());
   }
 
   @NotNull
   private String calcFileNameSuffix(@NotNull String modelName) {
     String filenameSuffix = modelName;
-    String moduleFqName = myModelRoot.getModule().getModuleName();
-    filenameSuffix = cutRedundantModuleFqNamePrefix(filenameSuffix, moduleFqName);
+    if (myModule != null) {
+      String moduleFqName = myModule.getModuleName();
+      filenameSuffix = cutRedundantModuleFqNamePrefix(filenameSuffix, moduleFqName);
+    }
     filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     return filenameSuffix;
   }

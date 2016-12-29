@@ -101,7 +101,7 @@ public class IncrementalChangeUpdateTest_Model extends ChangesTestBase {
         model.value = PersistenceUtil.saveModel(getTestModel(), getDefaultExt());
       }
     });
-    final SModel changedCopy = PersistenceUtil.loadModel(model.value, getDefaultExt());
+    final SModel changedCopy = PersistenceUtil.loadModel(model.value);
     SModelOperations.addRootNode(changedCopy, createClassConcept_2jv4hj_a0a3a5());
     final Wrappers._T<String> changedContent = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {

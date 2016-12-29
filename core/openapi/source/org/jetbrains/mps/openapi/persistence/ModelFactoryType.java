@@ -13,22 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package org.jetbrains.mps.openapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceType;
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Singleton;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * A type associated with the {@link FilePerRootDataSource}
+ * Serves as identifier in the ModelFactoryRegistry.
+ * Implementors must redefine #equals and #hashcode methods properly.
+ *
+ * @author apyshkin
+ * @since 28/12/16
  */
-@Immutable
-@Singleton
-public final class FilePerRootDataSourceType extends FileExtDataSourceType {
-  public final static FilePerRootDataSourceType INSTANCE = new FilePerRootDataSourceType();
-
-  public FilePerRootDataSourceType() {
-    super(MPSExtentions.DOT_MODEL_HEADER);
-  }
+public interface ModelFactoryType {
+  @NotNull String getFormatTitle();
 }

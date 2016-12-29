@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
@@ -32,25 +33,34 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collections;
+import java.util.List;
 import java.util.Map;
 
 /**
  * evgeny, 11/20/12
  */
-public class BinaryModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
+public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwareModelFactory {
   private final PersistenceFacade myFacade;
   @NotNull
   private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  BinaryModelPersistence(@NotNull PersistenceFacade facade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
+  BinaryModelFactory(@NotNull PersistenceFacade facade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
     myFacade = facade;
     myModelFactoryRegistry = modelFactoryRegistry;
   }
@@ -58,12 +68,12 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
   @Override
   public void init() {
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
-    myModelFactoryRegistry.register(BinaryExtDataSourceType.INSTANCE, this);
+//    myModelFactoryRegistry.register(FileDataSourceType.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
-    myModelFactoryRegistry.unregister(BinaryExtDataSourceType.INSTANCE);
+//    myModelFactoryRegistry.unregister(this);
     myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
@@ -102,19 +112,36 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
-    String moduleRef = options.get(OPTION_MODULEREF);
-    if (moduleRef == null) {
-      throw new IOException("moduleRef is not provided");
-    }
 
     final SModelHeader header = new SModelHeader();
-    header.setModelReference(PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+    header.setModelReference(myFacade.createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
   }
 
   @Override
   public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
     return dataSource instanceof StreamDataSource;
+  }
+
+  @Override
+  public boolean supports(@NotNull DataSource dataSource) {
+    return dataSource instanceof StreamDataSource;
+  }
+
+  @NotNull
+  @Override
+  public SModel create(@NotNull DataSource dataSource,
+                       @NotNull SModelName modelName,
+                       @NotNull ModelLoadingOption... options) throws
+                                                               UnsupportedDataSourceException,
+                                                               ModelCreationException {
+    throw new NotImplementedException();
+  }
+
+  @NotNull
+  @Override
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
+    throw new NotImplementedException();
   }
 
   @Override
@@ -151,6 +178,18 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
     return "Universal binary format";
   }
 
+  @NotNull
+  @Override
+  public ModelFactoryType getType() {
+    return PreinstalledModelFactoryTypes.BINARY;
+  }
+
+  @NotNull
+  @Override
+  public List<DataSourceType> getPreferredDataSourceTypes() {
+    return Collections.singletonList(PreinstalledDataSourceTypes.DOT_BINARY);
+  }
+
   @Override
   public void index(@NotNull InputStream input, @NotNull Callback callback) throws IOException {
     BinaryPersistence.index(input, callback);
@@ -183,12 +222,12 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
    */
   public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
     final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
-    assert modelFactory instanceof BinaryModelPersistence;
-    return new DefaultSModelDescriptor(new PersistenceFacility((BinaryModelPersistence) modelFactory, dataSource), header.createCopy());
+    assert modelFactory instanceof BinaryModelFactory;
+    return new DefaultSModelDescriptor(new PersistenceFacility((BinaryModelFactory) modelFactory, dataSource), header.createCopy());
   }
 
   private static class PersistenceFacility extends LazyLoadFacility {
-    /*package*/ PersistenceFacility(BinaryModelPersistence modelFactory, StreamDataSource dataSource) {
+    /*package*/ PersistenceFacility(BinaryModelFactory modelFactory, StreamDataSource dataSource) {
       super(modelFactory, dataSource);
     }
 
@@ -203,7 +242,7 @@ public class BinaryModelPersistence implements CoreComponent, ModelFactory, Inde
       Map<String, String> generationHashes = ModelDigestHelper.getInstance().getGenerationHashes(getSource());
       if (generationHashes != null) return generationHashes;
 
-      return BinaryModelPersistence.getDigestMap(getSource());
+      return BinaryModelFactory.getDigestMap(getSource());
     }
 
     @NotNull

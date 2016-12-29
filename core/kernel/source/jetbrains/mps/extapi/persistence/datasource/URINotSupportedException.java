@@ -13,19 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.extapi.persistence.datasource;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtDataSourceType;
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Singleton;
-
-@Singleton
-@Immutable
-public final class BinaryExtDataSourceType extends FileExtDataSourceType {
-  public final static BinaryExtDataSourceType INSTANCE = new BinaryExtDataSourceType();
-
-  private BinaryExtDataSourceType() {
-    super(MPSExtentions.MODEL_BINARY);
-  }
+/**
+ * Created by apyshkin on 12/27/16.
+ */
+public class URINotSupportedException extends Exception {
 }

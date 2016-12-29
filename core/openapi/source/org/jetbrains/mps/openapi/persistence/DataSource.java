@@ -16,10 +16,16 @@
 package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 /**
- * Represents a location of model data sources to build models.
+ * Represents a location of the model data sources to build models.
  * For example it can be based on files, internet content, database content, etc.
+ *
+ * NB:
+ * Must not contain any information on the storage format specifics --
+ * all that belongs to the {@link ModelFactory}.
  *
  * For implementation consider extending {@code jetbrains.mps.extapi.persistence.DataSourceBase}.
  */
@@ -53,4 +59,11 @@ public interface DataSource {
    * @return whether this data source can be changed.
    */
   boolean isReadOnly();
+
+  /**
+   * @return the unique data source type for this instance of data source
+   * if the developer wants others to be able to change the default behavior of this data source (register with the same key)
+   * or if he desires to associate this data source with some specific model factory.
+   */
+  @Nullable DataSourceType getType();
 }

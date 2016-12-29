@@ -100,7 +100,6 @@ public interface IFile {
   @NotNull
   UniPath toPath();
 
-  @ToRemove(version = 3.4)
   URL getUrl() throws MalformedURLException;
 
   /**

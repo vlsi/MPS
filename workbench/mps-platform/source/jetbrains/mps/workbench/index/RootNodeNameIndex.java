@@ -25,15 +25,17 @@ import com.intellij.util.indexing.ID;
 import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
-import jetbrains.mps.persistence.FolderModelFactory;
 import jetbrains.mps.persistence.PersistenceUtil;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
@@ -44,11 +46,13 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.util.Condition;
 
+import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -70,24 +74,25 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     SModel model = inputData.getUserData(PARSED_MODEL);
 
     if (model == null) {
-      String ext = FileUtil.getExtension(inputData.getFileName());
-      if (MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())) {
-        ext = MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.getDefaultExtension();
+      try {
+        DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(URI.create(inputData.getFile().getUrl()), null);
+        DataSourceType type = dataSource.getType();
+        if (type == null) {
+          return null;
+        }
+        ModelFactory factory = ModelFactoryService.getInstance().getDefaultModelFactory(type);
+        if (factory == null) {
+          return null;
+        }
+      } catch (URINotSupportedException e) {
+        LOG.error("", e);
+        return null;
       }
-      ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
+      ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
       if (factory == null) {
         return null;
       }
-      if (factory instanceof FolderModelFactory) {
-        IFile file = VirtualFileUtils.toIFile(
-            MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
-            ? inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER)
-            : inputData.getFile());
-        model = PersistenceUtil.loadModel(file);
-      } else {
-        model = factory.isBinary() ? PersistenceUtil.loadModel(inputData.getContent(), ext)
-                                   : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
-      }
+      model = PersistenceUtil.loadModel(inputData.getContent(), factory);
       if (model == null) {
         return null;
       }
@@ -109,7 +114,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
     // SingleEntryFileBasedIndexExtension shall expose in its API but does not, and every client of it shall
     // duplicate this implementation logic when trying to access index values (Math.abs() is often overlooked)
     int fileId = FileBasedIndex.getFileId(file);
-    if (fileId != Math.abs(fileId)) {
+    if (fileId < 0) {
       System.out.printf("!!!" + file.getPath());
     }
     return fileId;

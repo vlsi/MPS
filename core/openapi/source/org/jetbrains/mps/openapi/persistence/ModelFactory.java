@@ -19,12 +19,20 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
- * Creates models (instances of SModel) from data sources
+ * Represents a data source loading/saving/upgrading strategy.
+ *
+ * The location resides rather on the {@link DataSource}
+ * side than here while the storage parameters belong here.
+ *
+ * Creates/upgrades/saves/loads models (instances of SModel) from data sources.
  */
 public interface ModelFactory {
   // --- default options ---
@@ -78,11 +86,12 @@ public interface ModelFactory {
    *
    * @return The loaded model
    * @throws UnsupportedDataSourceException if the data source is not supported
+   * @deprecated rather use {@link #load(DataSource, ModelLoadingOption...)} instead
    */
-  /*@Deprecated*/
+  @ToRemove(version = 3.7)
+  @Deprecated
   @NotNull
   SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
-  // FIXME odd to have #save with ModelSaveException, and no ModelLoadException for #load. There's ModelReadException, which is not openapi yet.
 
   /**
    * Creates a new empty model.
@@ -93,45 +102,65 @@ public interface ModelFactory {
    *
    * @throws UnsupportedDataSourceException if the data source is not supported, in other words {@link #canCreate(DataSource, Map)} returns false
    * @throws IOException if the model cannot be created for some other reasons
+   *
+   * @deprecated use more flexible {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead
    */
-//  @Deprecated
+  @ToRemove(version = 3.7)
+  @Deprecated
   @NotNull
-  SModel create(@Nullable DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
+  SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
+   *
+   * @deprecated rather try calling {@link #create(DataSource, SModelName, ModelLoadingOption...)} method and
+   * catching the {@link ModelCreationException} during creation or
+   * use {@link #supports(DataSource)} method to acknowledge whether this data source is supported at all.
    */
-//  @Deprecated
-  boolean canCreate(@Nullable DataSource dataSource, @NotNull Map<String, String> options);
+  @ToRemove(version = 3.7)
+  @Deprecated
+  boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
 
-//  /**
-//   * Creates a new model with the supplied <code>modelName</code> on the given <code>DataSource</code>.
-//   * Might consider additional options provided in the <code>options</code> varargs.
-//   * [General rule: options.contain(SomeOption) => SomeOption is on]
-//   *
-//   * @param dataSource
-//   * @param modelName
-//   * @param options
-//   * @return
-//   * @throws UnsupportedDataSourceException
-//   */
-//  @NotNull
+  /**
+   * Determines whether the provided data source is maintained by this model factory instance.
+   * Call it before calling load/create/upgrade methods in order to avoid the {@link UnsupportedDataSourceException}.
+   *
+   * @return true iff the given data source can be managed by this factory
+   */
+  boolean supports(@NotNull DataSource dataSource);
 
-//  SModel create(@NotNull DataSource dataSource, @NotNull String modelName, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException;
-//  /**
-//   * Loads an existing model from the given <code>DataSource</code>.
-//   * Might consider additional options provided in the <code>options</code> varargs.
-//   * [General rule: options.contain(SomeOption) => SomeOption is on]
-//   *
-//   * @param dataSource
-//   * @param modelName
-//   * @param options
-//   * @return
-//   * @throws UnsupportedDataSourceException
-//   */
-//  @NotNull
+  /**
+   * Creates a new model with the supplied <code>modelName</code> on the given <code>DataSource</code>.
+   * Might consider additional options provided in the <code>options</code> varargs.
+   * [General rule: options.contain(SomeOption) => SomeOption is on]
+   *
+   * @param dataSource -- location to create model in
+   * @param modelName -- new model name (note that it might be constructed easily from full-qualified <code>String</code>)
+   * @param options -- custom options
+   *                   @see ModelLoadingOption
+   * @return newly created model
+   *
+   * @throws UnsupportedDataSourceException iff {@link #supports(DataSource)} returns false
+   * @throws ModelCreationException iff there was an irrecoverable problem during creation (for instance model file already exists)
+   */
+  @NotNull SModel create(@NotNull DataSource dataSource,
+                         @NotNull SModelName modelName,
+                         @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelCreationException;
 
-//  SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException;
+  /**
+   * Loads an existing model from the given <code>DataSource</code>.
+   * Might consider additional options provided in the <code>options</code> varargs.
+   * [General rule: options.contain(SomeOption) => SomeOption is on]
+   *
+   * @param dataSource -- location to load model from
+   * @param options -- custom options
+   *                   @see ModelLoadingOption
+   * @return loaded model
+   *
+   * @throws UnsupportedDataSourceException iff {@link #supports(DataSource)} returns false
+   * @throws ModelLoadException iff there was an irrecoverable load problem (for instance format was broken or unrecognized)
+   */
+  @NotNull SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException;
 
   /**
    * Checks if the source content is outdated and needs to be upgraded.
@@ -156,7 +185,11 @@ public interface ModelFactory {
 
   /**
    * returns true if plain text is not enough to represent stored data.
+   *
+   * FIXME Rather turn this into some marker interface than have it here
    */
+  @ToRemove(version = 3.7)
+  @Deprecated
   boolean isBinary();
 
   /**
@@ -164,7 +197,7 @@ public interface ModelFactory {
    * null if for instance model factory is associated rather with a group of files than one file.
    * @deprecated The location notion is hidden in {@link DataSource} no need to expose it.
    */
-  @ToRemove(version = 3.6)
+  @ToRemove(version = 3.7)
   @Deprecated
   @Nullable String getFileExtension();
 
@@ -172,4 +205,26 @@ public interface ModelFactory {
    * User-readable title of the storage format.
    */
   @NotNull String getFormatTitle();
+
+  /**
+   * Returns an id which is used to get model factory by id in the
+   * {@link ModelFactoryService}.
+   *
+   * @return model factory unique identification entity
+   */
+  @NotNull ModelFactoryType getType();
+
+  /**
+   * Declares a list of preferred data source formats,
+   * sorted from the most preferred to the less preferred data source type.
+   *
+   * @return a list of data source kinds which might be considered when MPS
+   *         meets a data source location and needs to choose a model factory
+   *         which is likely to support the content of the data source.
+   *         For instance if we have data source types associated with file names (e.g. prefix or suffix)
+   *         we are able to establish a file name pattern association with a specific model factory.
+   *         For example each model file which ends with '.mps_binary' suffix would be associated with the
+   *         corresponding data source type which in turn would be associated with 'MyBinaryModelFactory'.
+   */
+  @NotNull List<DataSourceType> getPreferredDataSourceTypes();
 }

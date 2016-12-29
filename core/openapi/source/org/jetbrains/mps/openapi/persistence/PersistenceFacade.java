@@ -96,6 +96,7 @@ public abstract class PersistenceFacade {
    *             <code>jetbrains.mps.extapi.persistence.dataSource.FileBasedDataSourceService</code>
    *             which can be used to register your one file-based data source factories.
    */
+  @ToRemove(version = 3.6)
   @Deprecated
   public abstract Set<String> getModelFactoryExtensions();
 

@@ -28,7 +28,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class JavaClassesPersistence implements CoreComponent {
   private final PersistenceFacade myFacade;
 
-  public JavaClassesPersistence(@NotNull PersistenceFacade persistenceFacade, ModelFactoryRegistry modelFactoryRegistry) {
+  public JavaClassesPersistence(@NotNull PersistenceFacade persistenceFacade) {
     myFacade = persistenceFacade;
   }
   @Override

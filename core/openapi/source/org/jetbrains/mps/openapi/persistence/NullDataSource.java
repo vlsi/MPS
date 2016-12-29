@@ -15,7 +15,9 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import com.sun.org.apache.bcel.internal.generic.DASTORE;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 /**
  * An empty implementation of the DataSource interface.
@@ -44,5 +46,21 @@ public final class NullDataSource implements DataSource {
   @Override
   public boolean isReadOnly() {
     return true;
+  }
+
+  @NotNull
+  @Override
+  public DataSourceType getType() {
+    return NullDataSourceType.INSTANCE;
+  }
+
+  public enum NullDataSourceType implements DataSourceType {
+    INSTANCE;
+
+    @NotNull
+    @Override
+    public String getName() {
+      return "[NULL]";
+    }
   }
 }

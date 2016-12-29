@@ -20,12 +20,10 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.util.xmlb.annotations.Attribute;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistryImpl;
 import jetbrains.mps.ide.MPSCoreComponents;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;

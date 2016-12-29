@@ -17,24 +17,22 @@ package jetbrains.mps.extapi.persistence.datasource;
 
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.net.URI;
+
 /**
- * Service-provider interface for creating {@link FileSystemBasedDataSource}.
- * See how <code>FileDataSourceFactory</code> and <code>FolderDataSourceFactory</code> are implemented and
- * registered in the META-INF/services location.
- *
  * @author apyshkin
- * @since 3.5
+ * @since 29/12/16
  */
-public interface FileDataSourceFactory {
+public interface DataSourceFromURIFactory {
   /**
-   * Creates a new <code>FileSystemBasedDataSource</code> which points to the <code>file</code> location.
+   * Creates a new <code>DataSource</code>
    *
-   * @param file -- the physical location
+   * @param uri -- the abstract location
    * @param modelRoot -- @deprecated DataSource is a simple location entity
    *                  must not know anything about outer world
    *                  The listening mechanism (that is the reason we are passing ModelRoot parameter here) ought
@@ -42,14 +40,18 @@ public interface FileDataSourceFactory {
    *                  Probably {@link FileSystemBasedDataSource#getAffectedFiles()} is the way to go there.
    *
    * @return new <code>DataSource</code> which represents the <code>file</code> on the disk
+   * @throws URINotSupportedException iff {@link #supports} returns false
    */
-  @NotNull FileSystemBasedDataSource create(@NotNull IFile file,
+  @NotNull
+  DataSource create(@NotNull URI uri,
 
-                                            @ToRemove(version = 0)
-                                            @Nullable ModelRoot modelRoot);
+                    @ToRemove(version = 0)
+                    @Nullable ModelRoot modelRoot) throws URINotSupportedException;
 
   /**
-   * @return special key which identifies this factory in the {@link FileDataSourceService}
+   * Returns whether this factory is able to create a data source from the specified uri.
+   * Call it before calling the {@link #create} method -- it is a standard workflow.
    */
-  @NotNull DataSourceType getType();
+  boolean supports(@NotNull URI uri);
+
 }

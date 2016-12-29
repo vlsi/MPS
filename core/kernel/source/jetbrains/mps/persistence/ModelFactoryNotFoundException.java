@@ -15,20 +15,26 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
 /**
+ * TODO Review
  * Created by apyshkin on 12/23/16.
  */
 public class ModelFactoryNotFoundException extends ModelCannotBeCreatedException {
-
   public ModelFactoryNotFoundException(IOException e) {
     super(e);
   }
 
-  public ModelFactoryNotFoundException(FileExtensionDataSourceType dataSourceType) {
+  public ModelFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
+
+  }
+
+  public ModelFactoryNotFoundException(ModelFactoryType modelFactoryType) {
 
   }
 

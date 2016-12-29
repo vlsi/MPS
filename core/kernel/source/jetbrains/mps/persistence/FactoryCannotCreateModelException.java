@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
@@ -29,7 +30,7 @@ public class FactoryCannotCreateModelException extends ModelCannotBeCreatedExcep
     super(e);
   }
 
-  public FactoryCannotCreateModelException(String modelName, ModelFactory modelFactory) {
+  public FactoryCannotCreateModelException(SModelName modelName, ModelFactory modelFactory) {
     super();
   }
 

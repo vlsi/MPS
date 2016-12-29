@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * @author apyshkin
  */
-public final class SourceRootDoesNotExistException extends RuntimeException {
+public final class SourceRootDoesNotExistException extends ModelCannotBeCreatedException {
   @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final FileBasedModelRoot myModelRoot;
 

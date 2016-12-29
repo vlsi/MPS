@@ -13,21 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
+package jetbrains.mps.persistence;
 
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Singleton;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * A type associated with {@link jetbrains.mps.extapi.persistence.FileDataSource}
+ * @author apyshkin
+ * @since 27/12/16
  */
-@Singleton
-@Immutable
-public final class FileDataSourceType extends FileExtDataSourceType {
-  public final static FileDataSourceType INSTANCE = new FileDataSourceType();
+public final class DataSourceFactoryNotFoundException extends ModelCannotBeCreatedException {
+  private final DataSourceType myDataSourceType;
 
-  private FileDataSourceType() {
-    super(MPSExtentions.DOT_MODEL);
+  public DataSourceFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
+    myDataSourceType = dataSourceType;
+  }
+
+  @Override
+  public String getMessage() {
+    return "Could not find default mapping for particular Data Source Key: " + myDataSourceType;
   }
 }

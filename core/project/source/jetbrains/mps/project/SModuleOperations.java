@@ -35,9 +35,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
@@ -146,7 +148,7 @@ public class SModuleOperations {
   }
 
   @Nullable
-  public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root, @Nullable ModelFactory modelFactory) {
+  public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root, @Nullable ModelFactoryType modelFactoryType) {
     if (!root.canCreateModel(name)) {
       LOG.error("Can't create a model " + name + " under model root " + root);
       return null;
@@ -154,9 +156,9 @@ public class SModuleOperations {
 
     try {
       EditableSModel model;
-      if (modelFactory != null && root instanceof DefaultModelRoot) {
+      if (modelFactoryType != null && root instanceof DefaultModelRoot) {
         DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-        model = (EditableSModel) defaultModelRoot.createModel(name, null, modelFactory);
+        model = (EditableSModel) defaultModelRoot.createModel(new SModelName(name), null, null, modelFactoryType);
       } else {
         model = (EditableSModel) root.createModel(name);
       }

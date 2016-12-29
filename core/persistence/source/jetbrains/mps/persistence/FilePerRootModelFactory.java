@@ -21,7 +21,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
-import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
@@ -35,57 +35,56 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.xml.sax.InputSource;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
 /**
  * evgeny, 6/3/13
  */
-public class FilePerRootModelPersistence implements CoreComponent, ModelFactory, FolderModelFactory {
-  private static final Logger LOG = LogManager.getLogger(FilePerRootModelPersistence.class);
-  public static final String FACTORY_ID = "file-per-root";
+public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
+  private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
 
-  private final PersistenceRegistry myRegistry;
-  @NotNull
-  private final ModelFactoryRegistry myModelFactoryRegistry;
+  @NotNull private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  FilePerRootModelPersistence(@NotNull PersistenceFacade persistenceRegistry, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
-    myRegistry = (PersistenceRegistry) persistenceRegistry;
+  FilePerRootModelFactory(@NotNull ModelFactoryRegistry modelFactoryRegistry) {
     myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @Override
   public void init() {
-    myRegistry.addFolderModelFactory(this);
-    myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, this);
-    myModelFactoryRegistry.register(FilePerRootDataSourceType.INSTANCE, this);
   }
 
   @Override
   public void dispose() {
-    myModelFactoryRegistry.unregister(FilePerRootDataSourceType.INSTANCE);
-    myRegistry.setModelFactory(MPSExtentions.MODEL_HEADER, null);
-    myRegistry.removeFolderModelFactory(this);
   }
 
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(dataSource instanceof MultiStreamDataSource)) {
+    if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
@@ -108,7 +107,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!canCreate(dataSource, options)) {
+    if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
@@ -129,8 +128,27 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   @Override
+  public boolean supports(@NotNull DataSource dataSource) {
+    return dataSource instanceof MultiStreamDataSource;
+  }
+
+  @NotNull
+  @Override
+  public SModel create(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) throws
+                                                                                                                              UnsupportedDataSourceException,
+                                                                                                                              ModelCreationException {
+    throw new NotImplementedException();
+  }
+
+  @NotNull
+  @Override
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
+    throw new NotImplementedException();
+  }
+
+  @Override
   public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
-    if (!(dataSource instanceof MultiStreamDataSource)) {
+    if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
@@ -151,7 +169,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @Override
   public void upgrade(@NotNull DataSource dataSource) throws IOException {
-    if (!(dataSource instanceof MultiStreamDataSource)) {
+    if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
@@ -166,7 +184,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @Override
   public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException {
-    if (!(dataSource instanceof MultiStreamDataSource)) {
+    if (!supports(dataSource)) {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
@@ -192,8 +210,16 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
   @NotNull
   @Override
-  public String getFactoryId() {
-    return FACTORY_ID;
+  public ModelFactoryType getType() {
+    return PreinstalledModelFactoryTypes.PER_ROOT_XML;
+  }
+
+  @NotNull
+  @Override
+  public List<DataSourceType> getPreferredDataSourceTypes() {
+    return Arrays.asList(PreinstalledDataSourceTypes.DOT_MODEL,
+                         PreinstalledDataSourceTypes.FOLDER,
+                         PreinstalledDataSourceTypes.DOT_MODEL_ROOT);
   }
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {
@@ -231,7 +257,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
   }
 
   private static class PersistenceFacility extends LazyLoadFacility {
-    public PersistenceFacility(@NotNull FilePerRootModelPersistence modelFactory, @NotNull MultiStreamDataSource dataSource) {
+    public PersistenceFacility(@NotNull FilePerRootModelFactory modelFactory, @NotNull MultiStreamDataSource dataSource) {
       super(modelFactory, dataSource);
     }
 
@@ -254,7 +280,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
 
     @Override
     public Map<String, String> getGenerationHashes() {
-      return FilePerRootModelPersistence.getModelHashes(getSource());
+      return FilePerRootModelFactory.getModelHashes(getSource());
     }
 
     @NotNull

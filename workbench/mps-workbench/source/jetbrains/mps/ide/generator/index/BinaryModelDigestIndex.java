@@ -19,7 +19,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.ID;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.persistence.BinaryModelPersistence;
+import jetbrains.mps.persistence.BinaryModelFactory;
 import jetbrains.mps.persistence.ByteArrayInputSource;
 import org.jetbrains.annotations.NotNull;
 
@@ -48,6 +48,6 @@ public class BinaryModelDigestIndex extends BaseModelDigestIndex {
 
   @Override
   protected Map<String, String> calculateDigest(final byte[] content) {
-    return BinaryModelPersistence.getDigestMap(new ByteArrayInputSource(content));
+    return BinaryModelFactory.getDigestMap(new ByteArrayInputSource(content));
   }
 }
