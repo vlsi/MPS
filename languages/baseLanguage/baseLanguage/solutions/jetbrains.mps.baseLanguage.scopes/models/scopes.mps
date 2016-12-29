@@ -39,6 +39,7 @@
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="pjrh" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter(MPS.Core/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -5717,9 +5718,14 @@
       </node>
       <node concept="37vLTG" id="5uRQgQirCh9" role="3clF46">
         <property role="TrG5h" value="kind" />
-        <node concept="3THzug" id="5uRQgQirChb" role="1tU5fm" />
+        <node concept="3bZ5Sz" id="19B7r2SKho" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5uRQgQirCgs" role="3clF47">
+        <node concept="3SKdUt" id="19B7r2Sns8" role="3cqZAp">
+          <node concept="3SKdUq" id="19B7r2Snsa" role="3SKWNk">
+            <property role="3SKdUp" value="todo[MM]: concepts here must be replaces with a regular Java enum. No point in using concepts here" />
+          </node>
+        </node>
         <node concept="3cpWs8" id="2TtFo2u9RQk" role="3cqZAp">
           <node concept="3cpWsn" id="2TtFo2u9RQl" role="3cpWs9">
             <property role="TrG5h" value="membersScope" />
@@ -5751,8 +5757,8 @@
                         <node concept="37vLTw" id="2BHiRxgkYZ_" role="2Oq$k0">
                           <ref role="3cqZAo" node="5uRQgQirCh9" resolve="kind" />
                         </node>
-                        <node concept="3TrcHB" id="1e3SD9M6G21" role="2OqNvi">
-                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                        <node concept="liA8E" id="19B7r2SQh0" role="2OqNvi">
+                          <ref role="37wK5l" to="c17a:~SAbstractConcept.getName():java.lang.String" resolve="getName" />
                         </node>
                       </node>
                       <node concept="3cpWs3" id="1e3SD9M6G0X" role="3uHU7B">

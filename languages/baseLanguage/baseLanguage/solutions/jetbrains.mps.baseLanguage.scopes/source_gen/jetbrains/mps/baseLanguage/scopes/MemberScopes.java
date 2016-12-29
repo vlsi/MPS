@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.scopes;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -17,10 +18,11 @@ public class MemberScopes {
   private MemberScopes() {
   }
   @Deprecated
-  public static Scope visibleClassifierMembers(SNode contextClassifier, SNode kind, SNode contextNode) {
+  public static Scope visibleClassifierMembers(SNode contextClassifier, SAbstractConcept kind, SNode contextNode) {
+    // todo[MM]: concepts here must be replaces with a regular Java enum. No point in using concepts here 
     Scope membersScope = Classifier__BehaviorDescriptor.getMembers_id1UeCwxlVpJs.invoke(contextClassifier, kind);
     if (membersScope == null) {
-      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " and kind " + SPropertyOperations.getString(kind, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " is null");
+      throw new IllegalArgumentException("Member scope for classifier " + SPropertyOperations.getString(contextClassifier, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " and kind " + kind.getName() + " is null");
     }
     return new FilteringScope(membersScope) {
       @Override
