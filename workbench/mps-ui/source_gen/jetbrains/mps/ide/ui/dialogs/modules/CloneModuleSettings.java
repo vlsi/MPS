@@ -7,7 +7,7 @@ import java.awt.Dimension;
 import jetbrains.mps.smodel.Language;
 
 public class CloneModuleSettings extends AbstractModuleCreationSettings {
-  protected final AbstractModule myModuleOriginal;
+  private final AbstractModule myModuleOriginal;
 
   public CloneModuleSettings(String projectPath, AbstractModule moduleOriginal) {
     super(projectPath, "Cloned Module name:", "Clone Module to:");

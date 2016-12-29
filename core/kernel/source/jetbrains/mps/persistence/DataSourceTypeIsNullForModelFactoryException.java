@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence;
+package jetbrains.mps.persistence;
 
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 /**
  * Created by apyshkin on 12/27/16.
  */
-public interface FileExtension {
-  /**
-   * @return null iff it is directory
-   */
-  @Nullable String toText();
+public class DataSourceTypeIsNullForModelFactoryException extends ModelCannotBeCreatedException {
+  public DataSourceTypeIsNullForModelFactoryException(@NotNull ModelFactory modelFactory) {
+    super(String.format("%s does not have preferred data source types", modelFactory));
+  }
 }

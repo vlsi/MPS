@@ -87,8 +87,7 @@ public class NewModelAction extends NewModelActionBase {
                   sourceRoot0 = sourceRoot;
                 }
               }
-              model = (EditableSModel) myModelRoot.createFileModel(modelName, sourceRoot0);
-              if (
+              model = (EditableSModel) myModelRoot.createFileModel(modelName, sourceRoot0); // fixme file or per-root??
               model.setChanged(true);
               model.save();
             } catch (ModelCannotBeCreatedException e) {

@@ -15,11 +15,15 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.path.Path;
 import jetbrains.mps.vfs.path.UniPath;
 import jetbrains.mps.vfs.ex.IFileEx;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -27,7 +31,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -36,23 +43,36 @@ import java.util.List;
  * Todo rewrite using {@link Path}
  */
 public class JarEntryFile implements IFileEx {
-  public static final String JAR = "jar";
-  public static final String DOT_JAR = "." + JAR;
+  private static final Logger LOG = LogManager.getLogger(JarEntryFile.class);
 
-  private AbstractJarFileData myJarFileData;
-  private File myJarFile;
-  private String myEntryPath;
+  public static final String JAR = "jar";
+  private static final String DOT = ".";
+  public static final String DOT_JAR = DOT + JAR;
   private static final IoFileSystem FS = new IoFileSystem();
+
+  private final AbstractJarFileData myJarFileData;
+  private final File myJarFile;
+  private final String myEntryPath;
   private final IoFileSystem myFileSystem;
 
   JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IoFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
-    myEntryPath = path.replace(File.separator, "/");
+    myEntryPath = normalize0(path);
     myFileSystem = fileSystem;
-    if (myEntryPath.endsWith("/")) {
-      myEntryPath = myEntryPath.substring(0, myEntryPath.length() - 1);
+  }
+
+  // poor version of normalization
+  @NotNull
+  private String normalize0(@NotNull String path) {
+    path = FileUtil.stripLastSlashes(FileUtil.getUnixPath(path));
+    if (path.endsWith(Path.UNIX_SEPARATOR + DOT)) {
+      path = path.substring(0, path.length() - 2);
     }
+    if (path.contains(Path.UNIX_SEPARATOR + DOT + Path.UNIX_SEPARATOR)) {
+      LOG.warn(MessageFormat.format("Creating jar entry file with '{0}:::{1}' which seem not to be canonical", myJarFile, path));
+    }
+    return path;
   }
 
   @NotNull
@@ -195,8 +215,10 @@ public class JarEntryFile implements IFileEx {
     return myJarFileData.getLength(myEntryPath);
   }
 
+  @NotNull
+  @Override
   public String toString() {
-    return myEntryPath;
+    return getPath();
   }
 
   @Override
@@ -209,9 +231,33 @@ public class JarEntryFile implements IFileEx {
     return false;
   }
 
+
+  /**
+   * The problem here is with jar URLs.
+   * JDK does not allow us to work efficiently with jar files via URI.
+   * 0. I want to create URL which can be converted to URI.
+   * 1. Unfortunately that means that we need to escape space characters.
+   *    (unescaped URL cannot be converted to the URI due to the #toURI method contract)
+   * 2. We are urged to use multi-argument <code>URI</code> constructor in order to properly escape all characters (spaces for instance).
+   *    Moreover it is a recommended way to comply to all URI protocol conventions.
+   * 3. URI multi-arg constructor also asks for its path to be absolute (which -- in his understanding -- means a path starting with '/')
+   * 4. In jdk a default URL for a jar-file looks like 'jar:file://a.jar!/b.txt' and calling URL#getPath returns
+   *    'file://a.jar!/b.txt' which does not start with the slash and hence is not absolute and therefore cannot be simply passed to the URI constructor.
+   * 5. That is why we are compelled to use such a hack in constructor arguments which namely passes
+   *    a jar:file scheme and passes an honest absolute path '/a.jar!/b.txt'.
+   *
+   * [AP: I would rather return URLs which can be converted to URIs than the ones which can not]
+   * Hopefully this hell will be replaced by the upcoming <code>vfs.Path</code> features.
+   */
+  @Hack
   @Override
   public URL getUrl() throws MalformedURLException {
-    return new URL("jar:" + getPath());
+//    try {
+//      return new URI("jar:file", "", myJarFile.getAbsolutePath() + "!/" + myEntryPath, null, null).toURL();
+//    } catch (URISyntaxException e) {
+//      throw new RuntimeException(e);
+//    }
+    return new URL("jar:file://" + myJarFile.getAbsolutePath() + "!/" + myEntryPath);
   }
 
   @Override

@@ -51,4 +51,5 @@ public class MPSExtentions {
   public static final String DOT_WORKSPACE = DOT + WORKSPACE;
   public static final String DOT_IDEMODULE = DOT + IDEAMODULE;
   public static final String DOT_LIBRARY = DOT + LIBRARY;
+  public static final String DOT_MODEL_BINARY = DOT + MODEL_BINARY;
 }

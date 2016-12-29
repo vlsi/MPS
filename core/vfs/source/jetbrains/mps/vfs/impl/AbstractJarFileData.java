@@ -21,6 +21,9 @@ import java.io.InputStream;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * By default denotes non-existent jar file data
+ */
 class AbstractJarFileData {
   private final File myFile;
 

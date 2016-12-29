@@ -7,9 +7,9 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.project.AbstractModule;
-//import jetbrains.mps.ide.newSolutionDialog.CloneModuleUtil;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper;
+import jetbrains.mps.project.AbstractModule;
 import junit.framework.Assert;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.tool.environment.Environment;
@@ -27,7 +27,7 @@ import com.intellij.openapi.application.ModalityState;
 
 public class CloneModule_Test extends TestCase {
   private static final String PROJECT_PATH = "../testbench/modules/testCloneModule/";
-  private IFile clonedModelsDirectory;
+  private IFile clonedModulesDirectory;
   private Project project;
   public void test_cloneSolution_Default() throws Exception {
     executeUnderLock(new Runnable() {
@@ -36,12 +36,14 @@ public class CloneModule_Test extends TestCase {
 
         String clonedSolutionName = originalSolution.getModuleName() + "_clone_default";
 
-//        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, MPSExtentions.DOT_SOLUTION);
-//
-//        Assert.assertEquals(clonedSolution.getModuleName(), clonedSolutionName);
-//
-//        checkModule(originalSolution);
-//        checkModule(clonedSolution);
+        IFile copyLocation = clonedModulesDirectory.getDescendant(clonedSolutionName + MPSExtentions.DOT_SOLUTION);
+        CopyModuleHelper helper = new CopyModuleHelper(project, originalSolution, clonedSolutionName, copyLocation, "");
+        AbstractModule clonedSolution = helper.copy();
+
+        Assert.assertEquals(clonedSolution.getModuleName(), clonedSolutionName);
+
+        checkModule(originalSolution);
+        checkModule(clonedSolution);
       }
     });
   }
@@ -52,10 +54,13 @@ public class CloneModule_Test extends TestCase {
 
         String clonedSolutionName = originalSolution.getModuleName() + "_clone_stubs";
 
-//        AbstractModule clonedSolution = CloneModuleUtil.cloneModule(clonedSolutionName, clonedModelsDirectory.getDescendant(clonedSolutionName).toPath().toString(), project, originalSolution, MPSExtentions.DOT_SOLUTION);
-//
-//        checkModule(originalSolution);
-//        checkModule(clonedSolution);
+        IFile copyLocation = clonedModulesDirectory.getDescendant(clonedSolutionName + MPSExtentions.DOT_SOLUTION);
+
+        CopyModuleHelper helper = new CopyModuleHelper(project, originalSolution, clonedSolutionName, copyLocation, "");
+        AbstractModule clonedSolution = helper.copy();
+
+        checkModule(originalSolution);
+        checkModule(clonedSolution);
       }
     });
   }
@@ -66,10 +71,13 @@ public class CloneModule_Test extends TestCase {
 
         String clonedLanguageName = originalLanguage.getModuleName() + "_clone_language";
 
-//        AbstractModule clonedLanguage = CloneModuleUtil.cloneModule(clonedLanguageName, clonedModelsDirectory.getDescendant(clonedLanguageName).toPath().toString(), project, originalLanguage, MPSExtentions.DOT_LANGUAGE);
-//
-//        checkModule(originalLanguage);
-//        checkModule(clonedLanguage);
+        IFile copyLocation = clonedModulesDirectory.getDescendant(clonedLanguageName + MPSExtentions.DOT_LANGUAGE);
+
+        CopyModuleHelper helper = new CopyModuleHelper(project, originalLanguage, clonedLanguageName, copyLocation, "");
+        AbstractModule clonedLanguage = helper.copy();
+
+        checkModule(originalLanguage);
+        checkModule(clonedLanguage);
       }
     });
   }
@@ -79,14 +87,14 @@ public class CloneModule_Test extends TestCase {
 
     executeUnderLock(new Runnable() {
       public void run() {
-        clonedModelsDirectory = IFileUtils.createTmpDir();
+        clonedModulesDirectory = IFileUtils.createTmpDir();
       }
     });
   }
   public void tearDown() {
     executeUnderLock(new Runnable() {
       public void run() {
-        clonedModelsDirectory.delete();
+        clonedModulesDirectory.delete();
       }
     });
   }

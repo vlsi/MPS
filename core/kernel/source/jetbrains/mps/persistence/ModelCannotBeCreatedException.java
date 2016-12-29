@@ -15,18 +15,27 @@
  */
 package jetbrains.mps.persistence;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 
 /**
- * FIXME
+ * Base class for the whole hierarchy of the variety of problems which
+ * could arise during the model creation
+ *
+ * @see DefaultModelRoot#createModel
+ *
  * Created by apyshkin on 12/23/16.
  */
 public class ModelCannotBeCreatedException extends Exception {
-  public ModelCannotBeCreatedException(IOException e) {
-
-  }
-
   public ModelCannotBeCreatedException() {
   }
 
+  public ModelCannotBeCreatedException(IOException e) {
+    super("Due to IO exception", e);
+  }
+
+  public ModelCannotBeCreatedException(@NotNull String message) {
+    super(message);
+  }
 }

@@ -4228,18 +4228,10 @@
                 <node concept="1eOMI4" id="6BljlJl_Z93" role="33vP2m">
                   <node concept="10QFUN" id="6BljlJl_Z94" role="1eOMHV">
                     <node concept="2YIFZM" id="6BljlJl_Z90" role="10QFUP">
-                      <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                       <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
+                      <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                       <node concept="37vLTw" id="6BljlJl_Z91" role="37wK5m">
                         <ref role="3cqZAo" node="6BljlJl_Tgx" resolve="notUpgradedContent" />
-                      </node>
-                      <node concept="2OqwBi" id="2cKUqfNYzvf" role="37wK5m">
-                        <node concept="37vLTw" id="2cKUqfNYzvg" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2cKUqfNYkWf" resolve="helper" />
-                        </node>
-                        <node concept="liA8E" id="2cKUqfNYzvh" role="2OqNvi">
-                          <ref role="37wK5l" node="3ofMfJ51Maa" resolve="getDefaultExt" />
-                        </node>
                       </node>
                     </node>
                     <node concept="3uibUv" id="6BljlJl_Z8Z" role="10QFUM">
@@ -4324,17 +4316,9 @@
                   <node concept="10QFUN" id="6BljlJl_Zf7" role="1eOMHV">
                     <node concept="2YIFZM" id="6BljlJl_Zf3" role="10QFUP">
                       <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
-                      <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String,java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
+                      <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
                       <node concept="37vLTw" id="6BljlJl_Zf4" role="37wK5m">
                         <ref role="3cqZAo" node="6BljlJl_XDv" resolve="upgradedContent" />
-                      </node>
-                      <node concept="2OqwBi" id="2cKUqfNYwRh" role="37wK5m">
-                        <node concept="37vLTw" id="2cKUqfNYwL9" role="2Oq$k0">
-                          <ref role="3cqZAo" node="2cKUqfNYkWf" resolve="helper" />
-                        </node>
-                        <node concept="liA8E" id="2cKUqfNYygU" role="2OqNvi">
-                          <ref role="37wK5l" node="3ofMfJ51Maa" resolve="getDefaultExt" />
-                        </node>
                       </node>
                     </node>
                     <node concept="3uibUv" id="6BljlJl_Zf2" role="10QFUM">

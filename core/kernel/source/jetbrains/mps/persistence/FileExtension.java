@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package jetbrains.mps.persistence;
 
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.StringUtil;
@@ -24,20 +24,21 @@ import org.jetbrains.mps.annotations.Immutable;
 
 import java.util.Objects;
 
-/**
- * Created by apyshkin on 12/27/16.
- */
+import static jetbrains.mps.project.MPSExtentions.DOT;
+
 @Immutable
-public final class FileExtension implements org.jetbrains.mps.openapi.persistence.FileExtension {
-  @Nullable
-  private final String myExtension;
+public final class FileExtension {
+  @Nullable private final String myExtension;
 
   private FileExtension(@Nullable String extension) {
+    if (extension != null && extension.contains(DOT)) {
+      throw new IllegalArgumentException("File Extension String Must Not Contain DOTS : " + extension);
+    }
     myExtension = extension;
   }
 
   @NotNull
-  public static org.jetbrains.mps.openapi.persistence.FileExtension fromFile(@NotNull IFile file) {
+  public static FileExtension fromFile(@NotNull IFile file) {
     if (file.isDirectory()) {
       return fromDir();
     }
@@ -46,7 +47,7 @@ public final class FileExtension implements org.jetbrains.mps.openapi.persistenc
   }
 
   @NotNull
-  public static org.jetbrains.mps.openapi.persistence.FileExtension fromString(@Nullable String extension) {
+  public static FileExtension fromString(@Nullable String extension) {
     if (extension == null) {
       return fromDir();
     }
@@ -54,11 +55,10 @@ public final class FileExtension implements org.jetbrains.mps.openapi.persistenc
   }
 
   @NotNull
-  public static org.jetbrains.mps.openapi.persistence.FileExtension fromDir() {
+  public static FileExtension fromDir() {
     return new FileExtension(null);
   }
 
-  @Override
   @Nullable
   public String toText() {
     return myExtension;

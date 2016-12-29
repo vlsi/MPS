@@ -85,7 +85,10 @@
         <child id="1164903359218" name="catchBody" index="TDEfX" />
         <child id="1164903359217" name="throwable" index="TDEfY" />
       </concept>
-      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA" />
+      <concept id="1070462154015" name="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" flags="ig" index="Wx3nA">
+        <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
+        <property id="6468716278899125786" name="isTransient" index="2dld4O" />
+      </concept>
       <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475587102" name="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" flags="nn" index="XkiVB" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
@@ -403,6 +406,20 @@
         </node>
       </node>
     </node>
+    <node concept="2tJIrI" id="7l6b$Kxeg21" role="jymVt" />
+    <node concept="Wx3nA" id="7l6b$Kxeghb" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="PATH_KEY" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7l6b$KxegbU" role="1B3o_S" />
+      <node concept="3uibUv" id="7l6b$Kxegh9" role="1tU5fm">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="Xl_RD" id="7l6b$KxegmQ" role="33vP2m">
+        <property role="Xl_RC" value="path" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="3PyP5yK7qCq" role="jymVt" />
     <node concept="3Tm1VV" id="3PyP5yK7orv" role="1B3o_S" />
     <node concept="3clFbW" id="3PyP5yK7orw" role="jymVt">
@@ -579,8 +596,8 @@
               <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
             </node>
             <node concept="2OqwBi" id="rqS1YhJVEa" role="33vP2m">
-              <node concept="37vLTw" id="1OabvAsgSrQ" role="2Oq$k0">
-                <ref role="3cqZAo" to="ends:~FileBasedModelRoot.myFileSystem" resolve="myFileSystem" />
+              <node concept="1rXfSq" id="7l6b$Kxefk_" role="2Oq$k0">
+                <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
               </node>
               <node concept="liA8E" id="rqS1YhJVEc" role="2OqNvi">
                 <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
@@ -634,42 +651,20 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="rqS1YhJ$Fs" role="3cqZAp">
-          <node concept="3cpWsn" id="rqS1YhJ$Ft" role="3cpWs9">
-            <property role="TrG5h" value="files" />
-            <node concept="3uibUv" id="rqS1YhJ$F6" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="17QB3L" id="7o5OtEM79mS" role="11_B2D" />
+        <node concept="3clFbF" id="7l6b$Kxefnz" role="3cqZAp">
+          <node concept="1rXfSq" id="7l6b$Kxefnx" role="3clFbG">
+            <ref role="37wK5l" to="ends:~FileBasedModelRoot.addFile(java.lang.String,java.lang.String):void" resolve="addFile" />
+            <node concept="37vLTw" id="7l6b$Kxefxx" role="37wK5m">
+              <ref role="3cqZAo" to="ends:~FileBasedModelRoot.SOURCE_ROOTS" resolve="SOURCE_ROOTS" />
             </node>
-            <node concept="2OqwBi" id="rqS1YhJ$Fu" role="33vP2m">
-              <node concept="37vLTw" id="6aShalcyNnk" role="2Oq$k0">
-                <ref role="3cqZAo" to="ends:~FileBasedModelRoot.myFilesForKind" resolve="myFilesForKind" />
+            <node concept="2OqwBi" id="7l6b$KxefJQ" role="37wK5m">
+              <node concept="37vLTw" id="7l6b$Kxef_l" role="2Oq$k0">
+                <ref role="3cqZAo" node="3PyP5yK7pfR" resolve="memento" />
               </node>
-              <node concept="liA8E" id="rqS1YhJ$Fw" role="2OqNvi">
-                <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
-                <node concept="37vLTw" id="60ow$HSe5hS" role="37wK5m">
-                  <ref role="3cqZAo" to="ends:~FileBasedModelRoot.SOURCE_ROOTS" resolve="SOURCE_ROOTS" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="rqS1YhJv22" role="3cqZAp">
-          <node concept="2OqwBi" id="rqS1YhJ_QO" role="3clFbG">
-            <node concept="37vLTw" id="rqS1YhJ$Fy" role="2Oq$k0">
-              <ref role="3cqZAo" node="rqS1YhJ$Ft" resolve="files" />
-            </node>
-            <node concept="liA8E" id="rqS1YhJEDW" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-              <node concept="2OqwBi" id="rqS1YhJYUD" role="37wK5m">
-                <node concept="37vLTw" id="rqS1YhJYUE" role="2Oq$k0">
-                  <ref role="3cqZAo" node="3PyP5yK7pfR" resolve="memento" />
-                </node>
-                <node concept="liA8E" id="rqS1YhJYUF" role="2OqNvi">
-                  <ref role="37wK5l" to="dush:~Memento.get(java.lang.String):java.lang.String" resolve="get" />
-                  <node concept="Xl_RD" id="rqS1YhJYUG" role="37wK5m">
-                    <property role="Xl_RC" value="path" />
-                  </node>
+              <node concept="liA8E" id="7l6b$KxefPx" role="2OqNvi">
+                <ref role="37wK5l" to="dush:~Memento.get(java.lang.String):java.lang.String" resolve="get" />
+                <node concept="37vLTw" id="7l6b$KxeigQ" role="37wK5m">
+                  <ref role="3cqZAo" node="7l6b$Kxeghb" resolve="PATH_KEY" />
                 </node>
               </node>
             </node>
@@ -747,14 +742,14 @@
                   <node concept="1rXfSq" id="4250WDOpGsm" role="25WWJ7">
                     <ref role="37wK5l" node="1__2wAbtcch" resolve="getModels" />
                     <node concept="2OqwBi" id="4250WDOpGYl" role="37wK5m">
-                      <node concept="37vLTw" id="6aShalcyOkk" role="2Oq$k0">
-                        <ref role="3cqZAo" to="ends:~FileBasedModelRoot.myFileSystem" resolve="myFileSystem" />
-                      </node>
                       <node concept="liA8E" id="4250WDOpGYn" role="2OqNvi">
                         <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="4250WDOpGYo" role="37wK5m">
                           <ref role="3cqZAo" node="6STCsy2s48R" resolve="file" />
                         </node>
+                      </node>
+                      <node concept="1rXfSq" id="7l6b$Kxeldv" role="2Oq$k0">
+                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
                       </node>
                     </node>
                   </node>
@@ -771,6 +766,9 @@
       </node>
       <node concept="2AHcQZ" id="3PyP5yK7vCe" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+      <node concept="2AHcQZ" id="7l6b$KxenlF" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
       </node>
     </node>
     <node concept="2tJIrI" id="1OabvAsgOpv" role="jymVt" />

@@ -16,10 +16,10 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -29,18 +29,23 @@ import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PLAIN_XML;
 
 /**
+ * Data source factory base for factories based
+ * on the different file extensions :
+ * @see jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType
  * @author apyshkin
  * @since 27/12/16
  */
 @Immutable
-public final class FileDataSourceFactory implements DataSourceFactory {
-  @Internal
-  public FileDataSourceFactory() {
-    // do not remove
+public abstract class RegularFileDataSourceFactory implements DataSourceFactory {
+  @NotNull private final FileExtensionDataSourceType myDataSourceType;
+
+  protected RegularFileDataSourceFactory(@NotNull FileExtensionDataSourceType dataSourceType) {
+    myDataSourceType = dataSourceType;
   }
 
   @NotNull
@@ -50,7 +55,7 @@ public final class FileDataSourceFactory implements DataSourceFactory {
 
                            @ToRemove(version = 0)
                            @Nullable ModelRoot modelRoot) {
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, PLAIN_XML.getDefaultFileExtension());
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, myDataSourceType.getFileExtension());
     IFile modelFile = modelFileCalculator.calculate();
     return createFromFile(modelFile, modelRoot);
   }
@@ -65,8 +70,8 @@ public final class FileDataSourceFactory implements DataSourceFactory {
 
   @NotNull
   @Override
-  public DataSourceType getType() {
-    return PreinstalledDataSourceTypes.DOT_MPS;
+  public FileExtensionDataSourceType getType() {
+    return myDataSourceType;
   }
 
   @Override

@@ -49,7 +49,14 @@ public class IoFileSystem implements FileSystem {
 
       File jarFile = new File(jarPath);
 
-      return new JarEntryFile(jarFile.exists() ? JarFileDataCache.instance().getDataFor(jarFile) : new AbstractJarFileData(jarFile), jarFile, entryPath, this);
+      AbstractJarFileData jarFileData;
+      if (jarFile.exists()) {
+        jarFileData = JarFileDataCache.instance().getDataFor(jarFile);
+      } else {
+        LOG.warn("Requested jar file does not exist " + jarFile);
+        jarFileData = new AbstractJarFileData(jarFile);
+      }
+      return new JarEntryFile(jarFileData, jarFile, entryPath, this);
     } else {
       return new IoFile(path, this);
     }

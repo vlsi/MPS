@@ -29,6 +29,7 @@ import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.net.URI;
+import java.util.Objects;
 
 /**
  * @see FolderDataSource comments
@@ -55,6 +56,19 @@ public final class FilePerRootDataSource extends FolderDataSource {
   @Override
   public boolean isIncluded(@NotNull IFile file) {
     return super.isIncluded(file) && isPerRootPersistenceFile(file);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hashCode(getFolder());
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj instanceof FilePerRootDataSource) {
+      return Objects.equals(getFolder(), ((FilePerRootDataSource) obj).getFolder());
+    }
+    return false;
   }
 
   /**

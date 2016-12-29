@@ -20,12 +20,12 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.persistence.FileExtension;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
@@ -41,15 +41,31 @@ public final class ModelFileCalculator {
   @NotNull private final SModelName myModelName;
   @NotNull private final SourceRoot mySourceRoot;
   @NotNull private final FileExtension myFileExtension;
+  private final boolean myDirectoryBased;
+
+  /**
+   * @param directoryBased -- format is directory-based, if true the file must look like
+   *                       sourceRoot/[model-name-dir]/.[modelFileExtension]
+   *                       otherwise
+   *                       sourceRoot/[model-name + DOT + modelFileExtension] is fine
+   */
+  ModelFileCalculator(@NotNull SModelName modelName,
+                      @NotNull SourceRoot sourceRoot,
+                      @Nullable ModelRoot modelRoot,
+                      @NotNull FileExtension modelFileExtension,
+                      boolean directoryBased) {
+    myModule = modelRoot != null ? modelRoot.getModule() : null;
+    myModelName = modelName;
+    mySourceRoot = sourceRoot;
+    myFileExtension = modelFileExtension;
+    myDirectoryBased = directoryBased;
+  }
 
   ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
                       @Nullable ModelRoot modelRoot,
                       @NotNull FileExtension modelFileExtension) {
-    myModule = modelRoot != null ? modelRoot.getModule() : null;
-    myModelName = modelName;
-    mySourceRoot = sourceRoot;
-    myFileExtension = modelFileExtension;
+    this(modelName, sourceRoot, modelRoot, modelFileExtension, false);
   }
 
   @NotNull
@@ -61,24 +77,19 @@ public final class ModelFileCalculator {
 
   @NotNull
   private String calcFileName() {
-    String filenameSuffix = calcFileNameSuffix(myModelName.getValue());
-    String extension = getFileExtension();
-    return NameUtil.pathFromNamespace(filenameSuffix) + MPSExtentions.DOT + extension;
+    String modelFileName = myModelName.getValue();
+    if (myModule != null) {
+      String moduleFqName = myModule.getModuleName();
+      modelFileName = cutRedundantModuleFqNamePrefix(modelFileName, moduleFqName);
+    }
+    if (myDirectoryBased) {
+      modelFileName = modelFileName + Path.UNIX_SEPARATOR;
+    }
+    return modelFileName + MPSExtentions.DOT + getFileExtension();
   }
 
   private String getFileExtension() {
     return StringUtil.emptyIfNull(myFileExtension.toText());
-  }
-
-  @NotNull
-  private String calcFileNameSuffix(@NotNull String modelName) {
-    String filenameSuffix = modelName;
-    if (myModule != null) {
-      String moduleFqName = myModule.getModuleName();
-      filenameSuffix = cutRedundantModuleFqNamePrefix(filenameSuffix, moduleFqName);
-    }
-    filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
-    return filenameSuffix;
   }
 
   @NotNull

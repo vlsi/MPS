@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.util.IterableUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
@@ -28,24 +28,27 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.ServiceLoader;
-import java.util.stream.Collectors;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * Unlike the truly immutable core service {@link ModelFactoryCoreService}
+ * this class has special setter methods to allow workbench model factory extensions.
+ *
+ * NB: every method work with the last-added priority -- it acts like a model factory stack
+ *
  * @author apyshkin
  * @since 29/12/16
  */
-@Immutable
+@Mutable
 public final class ModelFactoryService implements ModelFactoryRegistry {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryService.class);
 
   private static ModelFactoryService ourInstance;
-  private static ServiceLoader<ModelFactory> ourServiceLoader;
+  private static final ModelFactoryCoreService CORE_SERVICE = ModelFactoryCoreService.getInstance();
+
+  private final List<ModelFactory> myCustomModelFactories = new CopyOnWriteArrayList<>();
 
   private ModelFactoryService() {
-    ourServiceLoader = ServiceLoader.load(ModelFactory.class);
   }
 
   @NotNull
@@ -56,91 +59,116 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
     return ourInstance;
   }
 
+  @Mutable
+  public void register(@NotNull ModelFactory factory) {
+    if (myCustomModelFactories.contains(factory)) {
+      LOG.error(String.format("Model factory '%s' is already registered", factory), new Throwable());
+      return;
+    }
+    myCustomModelFactories.add(factory);
+  }
+
+  @Mutable
+  public void unregister(@NotNull ModelFactory factory) {
+    if (!myCustomModelFactories.contains(factory)) {
+      LOG.error(String.format("Model factory '%s' is not found", factory), new Throwable());
+      return;
+    }
+    myCustomModelFactories.remove(factory);
+  }
+
+  @NotNull
+  private CompositeMFRegistry createComposite() {
+    return new CompositeMFRegistry(new ModelFactoryRegistryInt(myCustomModelFactories), CORE_SERVICE);
+  }
+
   /**
    * @return factories in the reverse order of registration -- from the newest to the oldest.
    */
-  @Immutable
   @NotNull
   public List<ModelFactory> getFactories() {
-    List<ModelFactory> list = IterableUtil.asList(ourServiceLoader);
-    Collections.reverse(list);
-    List<ModelFactory> result = Collections.unmodifiableList(list);
-    if (result.isEmpty()) {
-      LOG.warn("There are no registered data source factories");
-    }
-    return result;
+    return createComposite().getFactories();
   }
 
   @Nullable
   @Override
   public ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryId) {
-    return new Internal(ourServiceLoader).getFactoryByType(factoryId);
+    return createComposite().getFactoryByType(factoryId);
   }
 
   @Nullable
   @Override
   public ModelFactory getDefaultModelFactory(@NotNull DataSourceType dataSourceType) {
-    return new Internal(ourServiceLoader).getDefaultModelFactory(dataSourceType);
+    return createComposite().getDefaultModelFactory(dataSourceType);
   }
 
   @NotNull
   @Override
   public List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType) {
-    return new Internal(ourServiceLoader).getModelFactories(dataSourceType);
+    return createComposite().getModelFactories(dataSourceType);
   }
 
   @NotNull
   @Override
   public List<ModelFactoryType> getFactoryTypes() {
-    return new Internal(ourServiceLoader).getFactoryTypes();
+    return createComposite().getFactoryTypes();
   }
 
-  @Immutable
-  private static final class Internal implements ModelFactoryRegistry {
-    private final List<ModelFactory> myFactories;
+  /**
+   * Unites two different model factory registries
+   * Looks at the first registry then at the second one.
+   */
+  private static final class CompositeMFRegistry implements ModelFactoryRegistry {
+    private final ModelFactoryRegistry myFirst;
+    private final ModelFactoryRegistry mySecond;
 
-    private Internal(Iterable<ModelFactory> factories) {
-      myFactories = IterableUtil.asList(factories);
-      Collections.reverse(myFactories);
+    public CompositeMFRegistry(ModelFactoryRegistry first, ModelFactoryRegistry second) {
+      myFirst = first;
+      mySecond = second;
     }
 
     @NotNull
     @Override
-    @Immutable
     public List<ModelFactory> getFactories() {
-      return Collections.unmodifiableList(myFactories);
+      List<ModelFactory> result = new ArrayList<>(myFirst.getFactories());
+      result.addAll(mySecond.getFactories());
+      return Collections.unmodifiableList(result);
     }
 
     @Nullable
     @Override
-    public ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryType) {
-      Optional<ModelFactory> first = myFactories.stream().filter(factory -> Objects.equals(factoryType, factory.getType())).findFirst();
-      if (first.isPresent()) {
-        return first.get();
+    public ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryId) {
+      ModelFactory result = myFirst.getFactoryByType(factoryId);
+      if (result == null) {
+        result = mySecond.getFactoryByType(factoryId);
       }
-      return null;
+      return result;
     }
 
     @Nullable
     @Override
     public ModelFactory getDefaultModelFactory(@NotNull DataSourceType dataSourceType) {
-      List<ModelFactory> modelFactories = getModelFactories(dataSourceType);
-      if (modelFactories.isEmpty()) {
-        return null;
+      ModelFactory result = myFirst.getDefaultModelFactory(dataSourceType);
+      if (result == null) {
+        result = mySecond.getDefaultModelFactory(dataSourceType);
       }
-      return modelFactories.get(0);
+      return result;
     }
 
     @NotNull
     @Override
     public List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType) {
-      return myFactories.stream().filter(factory -> factory.getPreferredDataSourceTypes().contains(dataSourceType)).collect(Collectors.toList());
+      List<ModelFactory> result = new ArrayList<>(myFirst.getModelFactories(dataSourceType));
+      result.addAll(mySecond.getModelFactories(dataSourceType));
+      return Collections.unmodifiableList(result);
     }
 
+    @NotNull
     @Override
     public List<ModelFactoryType> getFactoryTypes() {
-      List<ModelFactoryType> result = getFactories().stream().map(ModelFactory::getType).distinct().collect(Collectors.toList());
-      return Collections.unmodifiableList(new ArrayList<>(result));
+      List<ModelFactoryType> result = new ArrayList<>(myFirst.getFactoryTypes());
+      result.addAll(mySecond.getFactoryTypes());
+      return Collections.unmodifiableList(result);
     }
   }
 }

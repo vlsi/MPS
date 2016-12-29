@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.net.URI;
+import java.net.URL;
 
 /**
  * @author apyshkin
@@ -32,7 +33,7 @@ public interface DataSourceFromURIFactory {
   /**
    * Creates a new <code>DataSource</code>
    *
-   * @param uri -- the abstract location
+   * @param url -- the abstract absolute location
    * @param modelRoot -- @deprecated DataSource is a simple location entity
    *                  must not know anything about outer world
    *                  The listening mechanism (that is the reason we are passing ModelRoot parameter here) ought
@@ -43,7 +44,7 @@ public interface DataSourceFromURIFactory {
    * @throws URINotSupportedException iff {@link #supports} returns false
    */
   @NotNull
-  DataSource create(@NotNull URI uri,
+  DataSource create(@NotNull URL url,
 
                     @ToRemove(version = 0)
                     @Nullable ModelRoot modelRoot) throws URINotSupportedException;

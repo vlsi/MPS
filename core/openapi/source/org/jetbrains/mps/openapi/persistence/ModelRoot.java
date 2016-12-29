@@ -46,7 +46,7 @@ public interface ModelRoot {
   /**
    * A textual representation of the model root
    * TODO what is the difference with the {@link Object#toString()}??
-   * TODO very ambiguous in API: is it to be used in UI? somewhere else? if in UI why is it a part of the API?
+   * TODO very ambiguous in API: is it to be used in UI? somewhere else?
    * TODO one needs to clarify or replace it with a prosy #getName
    */
   /*@Deprecated*/
@@ -80,7 +80,7 @@ public interface ModelRoot {
   /**
    * There are model roots which are read-only and fix the result of {@link #getModels} right away from the construction
    *
-   * FIXME it is strange to have two similar methods: we are better to merge this method into the method {@link #canCreateModel(String)}.
+   * FIXME it is strange to have two similar methods: we are better to merge this method into the method {@link #canCreateModel}.
    *
    * @deprecated use specific #canCreateModel(SModelName)
    * @return whether this model root is read-only in the way described above
@@ -92,9 +92,19 @@ public interface ModelRoot {
   /**
    * @return whether a model with a name {@code modelName} can be created under this model root.
    *
-   * @param modelName -- the same as in the
-   * @see #createModel(String)
+   * @deprecated we have a {@link DataSourceFactory#create} + {@link ModelFactory#create(DataSource, SModelName, ModelLoadingOption...)}
+   *                to create a new model (from a new data source) having just a model name and a model root.
+   *                this method gives out an insufficient API -- it kind of implies that a model root has the only way
+   *                to create a model given a name, however obviously it is not true in a current MPS setup.
+   *
+   *                Semantics of this method (as for 3.5) is to create a new model via default <code>DataSourceFactory</code>
+   *                and default <code>ModelFactory</code>.
+   *                Not sure if it makes sense at all shaped like this. The signature needs to be extended with a {@link ModelFactory} parameter.
+   *                The same applies to the #createModel as well.
+   *                [AP]
+   * @param modelName -- the same as in the {@link #createModel(String)}
    */
+  /*@Deprecated*/
   boolean canCreateModel(@NotNull String modelName);
 
   /**
@@ -103,9 +113,10 @@ public interface ModelRoot {
    *
    * @param modelName -- might fq name or just simple short model name. Up to implementor
    *                  @see org.jetbrains.mps.openapi.model.SModelName
-   *
-   * @return null if failed, for instance {@link #canCreateModel(String)} returned false.
+//   * @deprecated
+//   * @return null if failed, for instance {@link #canCreateModel(String)} returned false.
    */
+  /*@Deprecated*/
   @Nullable SModel createModel(@NotNull String modelName);
 
   /**

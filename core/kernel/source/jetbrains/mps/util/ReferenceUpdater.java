@@ -91,8 +91,10 @@ public final class ReferenceUpdater {
     for (int i = 0; i < oldRoots.size(); ++i) {
       ModelRoot oldRoot = oldRoots.get(i);
       ModelRoot newRoot = newRoots.get(i);
+      assert oldRoot.getClass().equals(newRoot.getClass()) : "Model roots are of different types " + oldRoot + " " + newRoot;
       List<SModel> oldModels = IterableUtil.asList(oldRoot.getModels());
       List<SModel> newModels = IterableUtil.asList(newRoot.getModels());
+      assert oldModels.size() == newModels.size() : "Model roots are supposed to have the same number of models " + oldRoot + " " + newRoot;
       for (int j = 0; j < oldModels.size(); ++j) {
         SModel oldModel = oldModels.get(j);
         SModel newModel = newModels.get(j);

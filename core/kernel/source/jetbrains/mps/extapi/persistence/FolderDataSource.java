@@ -71,7 +71,7 @@ public class FolderDataSource extends DataSourceBase implements MultiStreamDataS
   @ToRemove(version = 3.5)
   @Deprecated
   protected FolderDataSource(@NotNull IFile folder, @Nullable ModelRoot modelRoot) {
-    if (!folder.isDirectory()) {
+    if (folder.exists() && !folder.isDirectory()) {
       throw new IllegalArgumentException("Could not create FolderDataSource with regular file: " + folder);
     }
     this.myFolder = folder;

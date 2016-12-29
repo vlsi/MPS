@@ -14,6 +14,13 @@
         </modelRoot>
       </models>
       <external-templates />
+      <dependencies>
+        <dependency reexport="false">933c9b2b-12ae-43e4-b915-2bf5069087f9(TestLanguage_clone_language)</dependency>
+        <dependency reexport="false">5045d549-7586-43d3-996e-6013686c1ec8(TestLanguage_clone_language)</dependency>
+        <dependency reexport="false">f3f902d8-c856-4af4-952a-6bf49f5ba789(TestLanguage_clone_language)</dependency>
+        <dependency reexport="false">510e0dd8-9c40-4c68-bb8e-a286b5624880(TestLanguage_clone_language)</dependency>
+        <dependency reexport="false">b4f562bb-e987-427f-beb3-4715c9e497b4(TestLanguage_clone_language)</dependency>
+      </dependencies>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
       </usedDevKits>

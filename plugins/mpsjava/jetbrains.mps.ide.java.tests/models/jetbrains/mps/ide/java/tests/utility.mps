@@ -1423,7 +1423,7 @@
         <node concept="2Gpval" id="70HT6wFrYo2" role="3cqZAp">
           <node concept="2OqwBi" id="5Nq0x4ogU1o" role="2GsD0m">
             <node concept="liA8E" id="5Nq0x4ogUsD" role="2OqNvi">
-              <ref role="37wK5l" to="ends:~ModelRootBase.getModels():java.lang.Iterable" resolve="getModels" />
+              <ref role="37wK5l" to="ends:~ModelRootBase.getModels():java.util.List" resolve="getModels" />
             </node>
             <node concept="37vLTw" id="5Nq0x4ogTET" role="2Oq$k0">
               <ref role="3cqZAo" node="5Nq0x4ogLvU" resolve="mr" />

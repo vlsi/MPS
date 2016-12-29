@@ -15,8 +15,20 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Internal;
+
 /**
- * Created by apyshkin on 12/27/16.
+ * A data source factory which creates data sources for the .mps extension
+ *
+ * @author apyshkin
+ * @since 27/12/16
  */
-public class DataSourceTypeForModelFactoryNotFoundException extends ModelCannotBeCreatedException {
+@Immutable
+public final class FileMPSDataSourceFactory extends RegularFileDataSourceFactory {
+  @Internal
+  public FileMPSDataSourceFactory() {
+    super(PreinstalledDataSourceTypes.MPS);
+  }
 }

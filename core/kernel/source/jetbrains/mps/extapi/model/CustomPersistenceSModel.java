@@ -46,7 +46,9 @@ public final class CustomPersistenceSModel extends EditableSModelBase implements
   private Iterable<Problem> myProblems = Collections.emptySet();
 
   public CustomPersistenceSModel(@NotNull SModelReference modelReference, @NotNull StreamDataSource source, @NotNull SModelPersistence persistence) {
-    super(modelReference, source instanceof FileDataSource ? FileWithBackupDataSource.create((FileDataSource) source) : source);
+    super(modelReference, source instanceof FileDataSource
+                          ? FileWithBackupDataSource.create((FileDataSource) source)
+                          : source);
     myPersistence = persistence;
   }
 

@@ -20,8 +20,8 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
+import jetbrains.mps.persistence.BinaryModelFactory;
 import jetbrains.mps.persistence.DefaultModelRoot;
-import jetbrains.mps.persistence.BinaryModelPersistence;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
@@ -78,7 +78,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       FileDataSource source = new FileDataSource(file, this);
       Object header = mdata.getHeader();
       if (mdata.getCacheKind() == CachedModelData.Kind.Binary) {
-        result.add(BinaryModelPersistence.createFromHeader(((SModelHeader) header), source));
+        result.add(BinaryModelFactory.createFromHeader(((SModelHeader) header), source));
       } else if (mdata.getCacheKind() == CachedModelData.Kind.Regular) {
         result.add(DefaultModelPersistence.createFromHeader((SModelHeader) header, source));
       } else {

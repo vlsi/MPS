@@ -7,25 +7,7 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.project.StandaloneMPSProject;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.util.ReferenceUpdater;
-import jetbrains.mps.util.ModulePathConverter;
-import java.util.List;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import java.util.ArrayList;
-import jetbrains.mps.extapi.persistence.CopyableModelRoot;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.extapi.persistence.ModelRootBase;
-import java.util.Collection;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.mps.openapi.persistence.Memento;
-import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Solution;
@@ -51,91 +33,9 @@ public final class CloneModuleDialog extends AbstractModuleCreationDialog {
 
   @Override
   protected void runCreation() {
-    ModuleDescriptor moduleDescriptor = myModuleOriginal.getModuleDescriptor();
-    if (moduleDescriptor == null) {
-      throw new IllegalArgumentException("The module descriptor is null for the " + myModuleOriginal);
-    }
     IFile moduleLocationFile = myModuleOriginal.getFileSystem().getFile(mySettings.getModuleLocation());
-    IFile resultFile = moduleLocationFile.getDescendant(mySettings.getModuleName() + getExtension());
-    ModuleDescriptor copyDescriptor = new DescriptorCopyOrganizer(myModuleOriginal, mySettings.getModuleName(), resultFile).copyDescriptor();
-    myResult = createModule(resultFile, copyDescriptor);
-    try {
-      copyModelRoots(myModuleOriginal, myResult);
-      copyFacets(myModuleOriginal, myResult);
-    } catch (CopyNotSupportedException e) {
-      LOG.error("", e);
-      new ModuleRepositoryFacade(myProject).unregisterModule(myResult);
-      myResult = null;
-      return;
-    }
-    addModuleToProject();
-    adjustReferences();
-    myResult.save();
-  }
-
-  private void addModuleToProject() {
-    myProject.addModule(myResult);
-    if (myProject instanceof StandaloneMPSProject) {
-      ((StandaloneMPSProject) myProject).setFolderFor(myResult, myVirtualFolder);
-    }
-  }
-
-  /**
-   * We can exploit polymorphism by moving this code to the individual module [descriptor] classesh
-   * however I could not think of a nice API in that case.
-   * Should it be a #copy method which returns a Function-like constructor?
-   * Due to the mix-up in the SModule hierarchy API (descriptors reflect the persistence not the actual module properties)
-   * I am unable to design it right now. First we solve the module api problem and then we will write this code properly
-   */
-  private AbstractModule createModule(IFile resultFile, ModuleDescriptor copyDescriptor) {
-    ModuleRepositoryFacade facade = new ModuleRepositoryFacade(myProject);
-    SModule result = facade.instantiateModule(new ModulesMiner.ModuleHandle(resultFile, copyDescriptor), myProject);
-    return (AbstractModule) result;
-  }
-
-  private void adjustReferences() {
-    ReferenceUpdater referenceUpdater = new ReferenceUpdater();
-    referenceUpdater.addModuleToAdjust(myModuleOriginal, myResult);
-    // FIXME RADIMIR do we need this flag 
-    referenceUpdater.adjust();
-  }
-
-  private void hackGeneratorDescriptor(ModulePathConverter pathConverter) {
-  }
-
-  private static void copyModelRoots(AbstractModule source, AbstractModule target) throws CopyNotSupportedException {
-    List<ModelRoot> targetModelRoots = new ArrayList<ModelRoot>();
-    for (ModelRoot sourceModelRoot : source.getModelRoots()) {
-      if (!(sourceModelRoot instanceof CopyableModelRoot)) {
-        throw new CopyNotSupportedException("Can't clone model root " + sourceModelRoot + " : Cloning hasn't implemented for '" + sourceModelRoot.getType() + "' model roots");
-      }
-      ModelRoot targetModelRoot = PersistenceFacade.getInstance().getModelRootFactory(sourceModelRoot.getType()).create();
-      if (targetModelRoot instanceof ModelRootBase) {
-        ((ModelRootBase) targetModelRoot).setModule(target);
-      }
-      // noinspection unchecked 
-      ((CopyableModelRoot) sourceModelRoot).copyTo((CopyableModelRoot) targetModelRoot);
-      targetModelRoots.add(targetModelRoot);
-    }
-    // hack to synchronize the module descriptor with new model roots 
-    ModuleDescriptor targetDescriptor = target.getModuleDescriptor();
-    if (targetDescriptor != null) {
-      Collection<ModelRootDescriptor> modelRootDescriptors = targetDescriptor.getModelRootDescriptors();
-      for (ModelRoot targetModelRoot : targetModelRoots) {
-        Memento targetMemento = new MementoImpl();
-        targetModelRoot.save(targetMemento);
-        modelRootDescriptors.add(new ModelRootDescriptor(targetModelRoot.getType(), targetMemento));
-      }
-      target.setModuleDescriptor(targetDescriptor);
-    }
-  }
-
-  /**
-   * TODO formally facets need to be copied in the same way model roots are now.
-   * However facets are going to become totally independent from the module
-   */
-  public static void copyFacets(AbstractModule source, AbstractModule target) throws CopyNotSupportedException {
-    // nop 
+    CopyModuleHelper helper = new CopyModuleHelper(myProject, myModuleOriginal, mySettings.getModuleName(), moduleLocationFile, myVirtualFolder);
+    myResult = helper.copy();
   }
 
   @Override

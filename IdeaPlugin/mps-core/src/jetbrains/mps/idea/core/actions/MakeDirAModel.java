@@ -43,6 +43,8 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+import java.util.Objects;
+
 /**
  * Created by danilla on 28/10/15.
  */
@@ -142,7 +144,7 @@ public class MakeDirAModel extends NewModelActionBase {
   private SourceRoot findSourceRootWithAName() {
     SourceRoot result = null;
     for (SourceRoot sourceRoot : myModelRoot.getSourceRoots(SourceRootKinds.SOURCES)) {
-      if (sourceRoot.getPath().equals(myRootForModel)) {
+      if (Objects.equals(sourceRoot.getAbsolutePath().getPath(), myRootForModel)) {
         result = sourceRoot;
       }
     }

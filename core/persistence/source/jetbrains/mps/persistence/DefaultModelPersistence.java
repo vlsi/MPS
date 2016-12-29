@@ -18,8 +18,9 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
+import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.project.MPSExtentions;
@@ -33,13 +34,14 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
@@ -48,6 +50,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,7 +64,7 @@ import java.util.Map;
  * Factory for models stored in .mps files.
  */
 public class DefaultModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultModelPersistence.class));
+  private static final Logger LOG = LogManager.getLogger(DefaultModelPersistence.class);
 
   /**
    * Boolean option for model loading, indicates loaded model doesn't care about implementation node.
@@ -74,23 +77,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
    */
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
-  private final PersistenceFacade myFacade;
-  private final ModelFactoryRegistry myModelFactoryRegistry;
+  private static final PersistenceFacade FACADE = PersistenceFacade.getInstance();
 
-  DefaultModelPersistence(@NotNull PersistenceFacade persistenceFacade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
-    myFacade = persistenceFacade;
-    myModelFactoryRegistry = modelFactoryRegistry;
+  @Internal
+  public DefaultModelPersistence() {
   }
 
   @Override
   public void init() {
-    myFacade.setModelFactory(MPSExtentions.MODEL, this);
-    // fixme to enable : when legacy code works
+    FACADE.setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    myFacade.setModelFactory(MPSExtentions.MODEL, null);
+    FACADE.setModelFactory(MPSExtentions.MODEL, null);
   }
 
   @NotNull
@@ -172,20 +172,20 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
 
   @Override
   public boolean supports(@NotNull DataSource dataSource) {
-    return !(dataSource instanceof StreamDataSource);
+    return dataSource instanceof StreamDataSource;
   }
 
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) throws
                                                                                                                               UnsupportedDataSourceException {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override
@@ -263,7 +263,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   @NotNull
   @Override
   public List<DataSourceType> getPreferredDataSourceTypes() {
-    return Collections.singletonList(PreinstalledDataSourceTypes.DOT_MPS);
+    return Collections.singletonList(PreinstalledDataSourceTypes.MPS);
   }
 
   public static Map<String, String> getDigestMap(@NotNull MultiStreamDataSource source, String streamName) {

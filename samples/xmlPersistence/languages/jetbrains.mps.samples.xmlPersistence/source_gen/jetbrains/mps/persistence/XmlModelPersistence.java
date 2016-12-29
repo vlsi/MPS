@@ -19,6 +19,15 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.extapi.model.CustomPersistenceSModel;
+import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
+import org.jetbrains.mps.openapi.persistence.ModelCreationException;
+import java.util.List;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import java.util.Collections;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.ModelLoadException;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -34,7 +43,6 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.JDOMException;
 import java.util.Iterator;
-import java.util.Collections;
 import jetbrains.mps.extapi.model.PersistenceProblem;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.text.impl.RegularTextUnit;
@@ -92,6 +100,45 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
 
+  @NotNull
+  @Override
+  public SModel create(@NotNull DataSource source, @NotNull SModelName name, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelCreationException {
+    throw new UnsupportedOperationException();
+  }
+
+  @NotNull
+  @Override
+  public List<DataSourceType> getPreferredDataSourceTypes() {
+    return Collections.singletonList(((DataSourceType) PreinstalledDataSourceTypes.MPS));
+  }
+
+  @NotNull
+  @Override
+  public ModelFactoryType getType() {
+    return XmlModelPersistence.XmlModelPersistenceType.INSTANCE;
+  }
+
+  public enum XmlModelPersistenceType implements ModelFactoryType {
+    INSTANCE();
+
+
+    @NotNull
+    @Override
+    public String getFormatTitle() {
+      return "XML file sample persistence";
+    }
+  }
+
+  @NotNull
+  @Override
+  public SModel load(@NotNull DataSource source, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public boolean supports(@NotNull DataSource source) {
+    return true;
+  }
 
   /**
    * Creates a new empty model.

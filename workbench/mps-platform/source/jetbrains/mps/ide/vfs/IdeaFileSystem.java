@@ -128,7 +128,7 @@ public class IdeaFileSystem extends IdeaFSComponent implements SafeWriteRequesto
   @Override
   public boolean runWriteTransaction(@NotNull Runnable r) {
     final IdeaWriteAction action = new IdeaWriteAction(r);
-    ApplicationManager.getApplication().invokeAndWait(action, ModalityState.any());
+    ApplicationManager.getApplication().invokeAndWait(action, ModalityState.defaultModalityState());
     return action.getFailure() == null;
   }
 

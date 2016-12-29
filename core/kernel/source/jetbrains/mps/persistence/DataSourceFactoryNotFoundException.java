@@ -31,6 +31,6 @@ public final class DataSourceFactoryNotFoundException extends ModelCannotBeCreat
 
   @Override
   public String getMessage() {
-    return "Could not find default mapping for particular Data Source Key: " + myDataSourceType;
+    return "Could not find default data factory mapping for the '" + myDataSourceType + "'";
   }
 }

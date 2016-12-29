@@ -23,6 +23,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
 import jetbrains.mps.extapi.module.FacetsRegistry;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.languageScope.LanguageScopeFactory;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.facets.BootstrapMakeFacets;
@@ -66,7 +67,6 @@ public final class MPSCore extends ComponentPluginBase {
   private PersistenceRegistry myPersistenceFacade;
   private MPSModuleRepository myModuleRepository;
   private LanguageRegistry myLanguageRegistry;
-  private ModelFactoryRegistry myModelFactoryRegistry;
 
   /**
    * made package-private
@@ -163,7 +163,7 @@ public final class MPSCore extends ComponentPluginBase {
 
   @NotNull
   public ModelFactoryRegistry getModelFactoryRegistry() {
-    return myModelFactoryRegistry;
+    return ModelFactoryService.getInstance();
   }
 
   private static class ComponentNotInitializedException extends IllegalStateException {

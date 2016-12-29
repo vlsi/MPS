@@ -27,7 +27,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Walks recursively default model roots (alongside the filesystem tree)
@@ -85,6 +87,7 @@ final class ModelSourceRootWalker {
     private final ModelRootWalkListener myCallback;
     private final FileBasedModelRoot myModelRoot;
     private final DataSourceFactoryBridge myDataSourceFactoryBridge;
+    private final Set<DataSource> myVisitedDataSources = new HashSet<>();
 
     public ModelRootTreeWalkCallback(@NotNull FileBasedModelRoot modelRoot, @NotNull ModelRootWalkListener callback) {
       myCallback = callback;
@@ -95,20 +98,36 @@ final class ModelSourceRootWalker {
     @Override
     public void onFileVisited(@NotNull ModelRootFileTreeLocus state) {
       IFile file = state.getFile();
-      SourceRoot sourceRoot = state.getSourceRoot();
       assert !file.isDirectory();
       CompositeResult<DataSource> result = myDataSourceFactoryBridge.create(file);
       if (result != null) {
         DataSource dataSource = result.getDataSource();
-        for (ModelFactory modelFactory : ModelFactoryService.getInstance().getModelFactories(dataSource.getType())) {
-          if (modelFactory.supports(dataSource)) {
-            myCallback.onDataSourceVisited(modelFactory, dataSource, result.getOptions(), file);
+        if (dataSource.getType() == null) {
+          return;
+        }
+        if (!isVisited(dataSource)) {
+          List<ModelFactory> candidates = ModelFactoryService.getInstance().getModelFactories(dataSource.getType());
+          if (candidates.isEmpty()) {
             return;
           }
+          for (ModelFactory modelFactory : candidates) {
+            if (modelFactory.supports(dataSource)) {
+              markVisited(dataSource);
+              myCallback.onDataSourceVisited(modelFactory, dataSource, result.getOptions(), file);
+              return;
+            }
+          }
+          LOG.error("Could not discover an appropriate model factory associated with the '" + dataSource.getType() + "'");
         }
-        LOG.error("Could not discover an appropriate model factory associated with the '" + dataSource.getType() + "'");
       }
+    }
 
+    private void markVisited(@NotNull DataSource dataSource) {
+      myVisitedDataSources.add(dataSource);
+    }
+
+    private boolean isVisited(@NotNull DataSource dataSource) {
+      return myVisitedDataSources.contains(dataSource);
     }
 
     @Override

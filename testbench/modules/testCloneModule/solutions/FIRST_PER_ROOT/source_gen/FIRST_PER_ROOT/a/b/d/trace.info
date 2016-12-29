@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info version="2">
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root nodeRef="r:fa0893fc-52c6-4c61-8187-9d360a11104a(FIRST_PER_ROOT.a.b.d)/398152632769601252">
+    <file name="Maaain.java">
+      <node id="398152632769602765" at="8,42,9,14" concept="1" />
+      <node id="398152632769601615" at="9,14,10,34" concept="0" />
+      <node id="398152632769601256" at="8,0,12,0" concept="2" trace="main#([Ljava/lang/String;)V" />
+      <scope id="398152632769601262" at="8,42,10,34">
+        <var name="main" id="398152632769602766" />
+      </scope>
+      <scope id="398152632769601256" at="8,0,12,0">
+        <var name="args" id="398152632769601257" />
+      </scope>
+      <unit id="398152632769601252" at="7,0,13,0" name="FIRST_PER_ROOT.a.b.d.Maaain" />
+    </file>
+  </root>
+</debug-info>
+

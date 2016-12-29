@@ -28,6 +28,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.net.URI;
+import java.net.URL;
 
 /**
  * @author apyshkin
@@ -39,11 +40,11 @@ public enum PreinstalledDataSourceFactories implements DataSourceFromURIFactory 
 
   @NotNull
   @Override
-  public DataSource create(@NotNull URI uri,
+  public DataSource create(@NotNull URL url,
 
                            @ToRemove(version = 0)
                            @Nullable ModelRoot modelRoot) throws URINotSupportedException {
-    IFile file = Files.fromURI(uri);
+    IFile file = Files.fromURL(url);
     return createFromFile(file, modelRoot);
   }
 
@@ -53,8 +54,8 @@ public enum PreinstalledDataSourceFactories implements DataSourceFromURIFactory 
   }
 
   @NotNull
-  private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    if (file.isDirectory()) {
+  public DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
+    if (file.exists() && file.isDirectory()) {
       return createPerRootDS(file, modelRoot);
     } else if (file.getPath().endsWith(MPSExtentions.DOT_MODEL_ROOT)) {
       return createPerRootDS(file.getParent(), modelRoot);

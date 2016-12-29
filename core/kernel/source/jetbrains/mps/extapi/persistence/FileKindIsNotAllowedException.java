@@ -61,9 +61,9 @@ public final class FileKindIsNotAllowedException extends IllegalArgumentExceptio
   @NotNull
   public String getMessage() {
     if (myRoot != null) {
-      return MessageFormat.format("Trying to register the source root '{1}' with the prohibited FileKind: '{1}'", myRoot, myDisallowedKind);
+      return MessageFormat.format("Trying to register the source root '{0}' with the prohibited FileKind: '{1}'", myRoot, myDisallowedKind);
     } else {
-      return MessageFormat.format("The FileKind '{1}' is not allowed", myKindName);
+      return MessageFormat.format("The FileKind '{0}' is not allowed", myKindName);
     }
   }
 }

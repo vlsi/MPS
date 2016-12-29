@@ -2,7 +2,7 @@
 <model ref="r:00863020-daf1-45b8-a65d-eed8db0973d2(NewSolution3.ert)">
   <persistence version="9" />
   <languages>
-    <use id="97be17ef-fdbd-4cef-9020-22bfd7ecab87" name="NewLanguage" version="-1" />
+    <use id="97be17ef-fdbd-4cef-9020-22bfd7ecab87" name="NewLanguage" version="2" />
     <use id="9d4153a9-a100-4911-9688-094a7ba99d12" name="NewLanguage2" version="2" />
   </languages>
   <imports />
@@ -20,10 +20,10 @@
     </language>
   </registry>
   <node concept="2uc_Da" id="45hrIBvp0J1">
-    <property role="TrG5h" value="y" />
+    <property role="TrG5h" value="y_m1_m2" />
   </node>
   <node concept="2uc_Db" id="45hrIBvp0J2">
-    <property role="TrG5h" value="x" />
+    <property role="TrG5h" value="x_n1_n2" />
   </node>
 </model>
 

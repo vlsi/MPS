@@ -30,6 +30,6 @@ public final class NoSourceRootsInModelRootException extends ModelCannotBeCreate
 
   @Override
   public String getMessage() {
-    return String.format("Source roots are absent in the provided model root [%s], operation is impossible", myModelRoot);
+    return String.format("Source roots are absent in the provided model root [%s]", myModelRoot);
   }
 }

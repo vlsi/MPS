@@ -15,33 +15,23 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.persistence.FileExtension;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 
 /**
- * Model files formats which are provided in MPS by default.
+ * Model file formats which are provided in MPS by default.
  *
  * @author apyshkin on 12/27/16.
  */
 public enum PreinstalledModelFactoryTypes implements ModelFactoryType {
-  PLAIN_XML(MPSExtentions.DOT_MODEL, "Pre-installed XML-based Format"),
-  PER_ROOT_XML(MPSExtentions.DOT_MODEL_HEADER, "Pre-installed XML-based File-Per-Root Format"),
-  BINARY(MPSExtentions.MODEL_BINARY, "Pre-installed Binary Format");
+  PLAIN_XML("Pre-installed XML-based Format"),
+  PER_ROOT_XML("Pre-installed XML-based File-Per-Root Format"),
+  BINARY("Pre-installed Binary Format");
 
-  private final FileExtension myExtension;
   private final String myName;
 
-  PreinstalledModelFactoryTypes(@Nullable String extensionString, @NotNull String name) {
-    myExtension = jetbrains.mps.extapi.persistence.FileExtension.fromString(extensionString);
+  PreinstalledModelFactoryTypes(@NotNull String name) {
     myName = name;
-  }
-
-  @NotNull
-  public FileExtension getDefaultFileExtension() {
-    return myExtension;
   }
 
   @Override
@@ -52,6 +42,6 @@ public enum PreinstalledModelFactoryTypes implements ModelFactoryType {
 
   @Override
   public String toString() {
-    return String.format("Pre-installed model factory format [%s]", getDefaultFileExtension());
+    return myName;
   }
 }

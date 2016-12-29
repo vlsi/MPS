@@ -13,25 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence;
+package jetbrains.mps.persistence;
 
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.annotations.Singleton;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Internal;
 
 /**
- * Default data source types for all kinds of file- and folder-based
- * data sources one could imagine.
+ * A data source factory which creates data sources for the .mps extension
  *
- * Created by apyshkin on 12/27/16.
+ * @author apyshkin
+ * @since 27/12/16
  */
-@Singleton
-public enum HttpDataSourceFactoryType implements DataSourceType {
-  INSTANCE;
-
-  @NotNull
-  @Override
-  public String getName() {
-    return "File Data Source Type";
+@Immutable
+public final class FileBinaryDataSourceFactory extends RegularFileDataSourceFactory {
+  @Internal
+  public FileBinaryDataSourceFactory() {
+    super(PreinstalledDataSourceTypes.BINARY);
   }
 }

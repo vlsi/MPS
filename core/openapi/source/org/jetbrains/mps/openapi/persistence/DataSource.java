@@ -65,5 +65,8 @@ public interface DataSource {
    * if the developer wants others to be able to change the default behavior of this data source (register with the same key)
    * or if he desires to associate this data source with some specific model factory.
    */
-  @Nullable DataSourceType getType();
+  @Nullable
+  default DataSourceType getType() {
+    return null;
+  }
 }

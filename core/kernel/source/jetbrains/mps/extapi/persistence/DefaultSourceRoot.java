@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.persistence;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,7 +36,7 @@ public final class DefaultSourceRoot implements SourceRoot {
   private final IFile myAbsolutePath;
 
   public DefaultSourceRoot(@NotNull String path, @NotNull IFile contentRootDirectory) {
-    myPath = FileUtil.getUnixPath(path);
+    myPath = FileUtil.stripLastSlashes(FileUtil.getUnixPath(path));
     if (FileUtil.isAbsolute(myPath)) {
       myAbsolutePath = contentRootDirectory.getFileSystem().getFile(myPath);
     } else {

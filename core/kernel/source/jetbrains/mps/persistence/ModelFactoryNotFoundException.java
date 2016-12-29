@@ -21,25 +21,12 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
-/**
- * TODO Review
- * Created by apyshkin on 12/23/16.
- */
 public class ModelFactoryNotFoundException extends ModelCannotBeCreatedException {
-  public ModelFactoryNotFoundException(IOException e) {
-    super(e);
-  }
-
   public ModelFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
-
+    super("Model factory is not registered for the " + dataSourceType);
   }
 
-  public ModelFactoryNotFoundException(ModelFactoryType modelFactoryType) {
-
-  }
-
-  @Override
-  public String getMessage() {
-    return "TODO";
+  public ModelFactoryNotFoundException(@NotNull ModelFactoryType modelFactoryType) {
+    super("Model factory is not registered for the " + modelFactoryType);
   }
 }

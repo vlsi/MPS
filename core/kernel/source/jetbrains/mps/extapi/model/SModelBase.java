@@ -161,6 +161,7 @@ public abstract class SModelBase extends SModelDescriptorStub implements SModel 
   }
 
   @Override
+  @Deprecated
   public String getModelName() {
 //    assertCanRead(); model reference is read-only attribute, why care about read lock?
     return myModelReference.getModelName();

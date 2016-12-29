@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.index;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.util.Key;
+import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
@@ -36,6 +37,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
@@ -44,6 +46,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -52,7 +55,10 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTar
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.util.Condition;
 
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -75,7 +81,12 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
 
     if (model == null) {
       try {
-        DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(URI.create(inputData.getFile().getUrl()), null);
+        URL url = constructURLFromData(inputData);
+        if (url == null) {
+          LOG.error("URL cannot be created from " + inputData.getFile());
+          return null;
+        }
+        DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(url, null);
         DataSourceType type = dataSource.getType();
         if (type == null) {
           return null;
@@ -84,7 +95,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         if (factory == null) {
           return null;
         }
-      } catch (URINotSupportedException e) {
+      } catch (URINotSupportedException | URISyntaxException | MalformedURLException  e) {
         LOG.error("", e);
         return null;
       }
@@ -99,6 +110,10 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
       inputData.putUserData(PARSED_MODEL, model);
     }
     return model;
+  }
+  @Nullable
+  private static URL constructURLFromData(FileContent inputData) throws MalformedURLException, URISyntaxException {
+    return VfsUtilCore.convertToURL(inputData.getFile().getUrl());
   }
 
   // FIXME No idea what's this method for, why do we care about node id serialization format. Drop

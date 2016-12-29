@@ -19,7 +19,10 @@ import jetbrains.mps.vfs.path.Path;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.StringJoiner;
 
 /**
@@ -41,10 +44,27 @@ public final class Files {
   }
 
   /**
-   * @throws IllegalArgumentException if the uri is not compatible with plain files.
+   * Usually when one calls URL#getPath he expects the result to be without scheme.
+   * However in the case of the 'jar' scheme it is not true (nicely done, JDK!)
+   * Hence the hack to resolve 'jar:file://a.jar!/a.txt' like URI is to resolve two times.
+   *
+   * see <code>jetbrains.mps.workbench.index.RootNodeNameIndex</code> for a long and boring explanation
    */
   @NotNull
-  public static IFile fromURI(@NotNull URI uri) {
-    return getFile(new File(uri).getAbsolutePath());
+  public static IFile fromURL(@NotNull URL url) {
+    try {
+      String path = url.getPath();
+      if (!path.startsWith("/")) { //strangely not absolute
+        if ("jar".equals(url.getProtocol())) {
+          if (path.startsWith("file:")) {
+            path = new URL(path).getPath();
+          }
+          return getFile(path);
+        }
+      }
+      return getFile(path);
+    } catch (MalformedURLException e) {
+      throw new RuntimeException(e);
+    }
   }
 }

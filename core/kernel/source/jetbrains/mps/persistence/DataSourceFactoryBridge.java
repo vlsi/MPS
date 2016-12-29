@@ -17,7 +17,6 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
-import jetbrains.mps.extapi.persistence.HttpDataSourceFactoryType;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
@@ -37,7 +36,6 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -77,47 +75,49 @@ public final class DataSourceFactoryBridge {
   }
 
   @NotNull
-  public CompositeResult<DataSource> createFileDataSource(@NotNull SourceRoot sourceRoot,
-                                                          @NotNull SModelName modelName) throws DataSourceFactoryNotFoundException,
-                                                                                                NoSourceRootsInModelRootException,
-                                                                                                SourceRootDoesNotExistException {
-    return create(modelName, sourceRoot, PreinstalledDataSourceTypes.DOT_MPS);
+  public CompositeResult<DataSource> createFileDataSource(@NotNull SModelName modelName,
+                                                          @Nullable SourceRoot sourceRoot) throws DataSourceFactoryNotFoundException,
+                                                                                                  NoSourceRootsInModelRootException,
+                                                                                                  SourceRootDoesNotExistException {
+    return create(modelName, sourceRoot, PreinstalledDataSourceTypes.MPS);
   }
 
   @NotNull
-  public CompositeResult<DataSource> createPerRootDataSource(@NotNull SourceRoot sourceRoot,
-                                                             @NotNull SModelName modelName) throws DataSourceFactoryNotFoundException,
-                                                                                                   NoSourceRootsInModelRootException,
-                                                                                                   SourceRootDoesNotExistException {
-    return create(modelName, sourceRoot, PreinstalledDataSourceTypes.DOT_MODEL);
+  public CompositeResult<DataSource> createPerRootDataSource(@NotNull SModelName modelName,
+                                                             @Nullable SourceRoot sourceRoot) throws DataSourceFactoryNotFoundException,
+                                                                                                     NoSourceRootsInModelRootException,
+                                                                                                     SourceRootDoesNotExistException {
+    return create(modelName, sourceRoot, PreinstalledDataSourceTypes.MODEL);
   }
 
+  /**
+   * @param modelName new model name
+   * @param sourceRoot if null the default (the first one) is chosen
+   * @param dataSourceType the data source type you wish to create
+   * @return new data source and corresponding model creation parameters (FIXME remove params?)
+   * @throws DataSourceFactoryNotFoundException when there is no data source factory for a given type
+   * @throws SourceRootDoesNotExistException when the given source root is not found in the model root
+   * @throws NoSourceRootsInModelRootException when there are no source roots at all in the model root
+   */
   @NotNull
-  public CompositeResult<DataSource> createHtmlDataSource(@NotNull SourceRoot sourceRoot,
-                                                          @NotNull SModelName modelName) throws DataSourceFactoryNotFoundException,
-                                                                                                NoSourceRootsInModelRootException,
-                                                                                                SourceRootDoesNotExistException {
-    return create(modelName, sourceRoot, HttpDataSourceFactoryType.INSTANCE);
-  }
-
-  @NotNull
-  CompositeResult<DataSource> create(@NotNull SModelName modelName,
-                                     @NotNull SourceRoot sourceRoot,
+  public CompositeResult<DataSource> create(@NotNull SModelName modelName,
+                                     @Nullable SourceRoot sourceRoot,
                                      @NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException,
                                                                                     SourceRootDoesNotExistException,
                                                                                     NoSourceRootsInModelRootException {
-    checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     DataSourceFactory factory = getDataSourceFactory(dataSourceType);
     return create(modelName, sourceRoot, factory);
   }
 
-  /**
-   * Does not throw -- that is the difference with the one above
-   */
   @NotNull
   private CompositeResult<DataSource> create(@NotNull SModelName modelName,
-                                             @NotNull SourceRoot sourceRoot,
-                                             @NotNull DataSourceFactory factory) {
+                                             @Nullable SourceRoot sourceRoot,
+                                             @NotNull DataSourceFactory factory) throws SourceRootDoesNotExistException,
+                                                                                        NoSourceRootsInModelRootException {
+    if (sourceRoot == null) {
+      sourceRoot = DefaultModelRoot.Defaults.sourceRoot(myModelRoot);
+    }
+    checkSourceRootIsAttachedToTheModelRoot(sourceRoot);
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot).calculate(modelName);
     DataSource dataSource = factory.create(modelName, sourceRoot, myModelRoot);
     return build(dataSource, parameters);
@@ -144,9 +144,9 @@ public final class DataSourceFactoryBridge {
     DataSourceFromURIFactory factory = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY;
     DataSource dataSource;
     try {
-      dataSource = factory.create(file.getUrl().toURI(), myModelRoot);
-    } catch (URINotSupportedException | MalformedURLException | URISyntaxException e) {
-      LOG.error("Could not get uri from IFile : '" + file + "'", e);
+      dataSource = factory.create(file.getUrl(), myModelRoot);
+    } catch (URINotSupportedException | MalformedURLException e) {
+      LOG.error("Could not get URI from IFile : '" + file + "'", e);
       return null;
     }
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot).calculate();

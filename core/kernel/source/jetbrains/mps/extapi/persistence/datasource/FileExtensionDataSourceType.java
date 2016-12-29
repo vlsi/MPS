@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence.datasource;
 
+import jetbrains.mps.persistence.FileExtension;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
@@ -24,21 +25,31 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.Objects;
 
+import static jetbrains.mps.project.MPSExtentions.DOT;
+
 /**
  * @author apyshkin
  * @since 29/12/16
  */
 @Immutable
 public final class FileExtensionDataSourceType implements DataSourceType {
-  static final FileExtensionDataSourceType DOT_MPS = of(MPSExtentions.DOT_MODEL);
-  static final FileExtensionDataSourceType DOT_MODEL = of(MPSExtentions.DOT_MODEL_HEADER);
-  static final FileExtensionDataSourceType DOT_MODEL_ROOT = of(MPSExtentions.DOT_MODEL_ROOT);
-  static final FileExtensionDataSourceType DOT_BINARY = of(MPSExtentions.DOT + MPSExtentions.MODEL_BINARY);
+  static final FileExtensionDataSourceType MPS = of(MPSExtentions.MODEL);
+  static final FileExtensionDataSourceType MODEL = of(MPSExtentions.MODEL_HEADER);
+  static final FileExtensionDataSourceType MODEL_ROOT = of(MPSExtentions.MODEL_ROOT);
+  static final FileExtensionDataSourceType BINARY = of(MPSExtentions.MODEL_BINARY);
 
-  private final String myFileExtension;
+  private final FileExtension myFileExtension;
 
   private FileExtensionDataSourceType(@NotNull String fileExtension) {
-    myFileExtension = fileExtension;
+    if (fileExtension.contains(DOT)) {
+      throw new IllegalArgumentException("File Extension String Must Not Contain DOTS : " + fileExtension);
+    }
+    myFileExtension = FileExtension.fromString(fileExtension);
+  }
+
+  @NotNull
+  public FileExtension getFileExtension() {
+    return myFileExtension;
   }
 
   @Override
@@ -66,6 +77,11 @@ public final class FileExtensionDataSourceType implements DataSourceType {
       throw new IllegalArgumentException("Null extension: " + file);
     }
     return of(extension);
+  }
+
+  @Override
+  public String toString() {
+    return "File Extension Based Data Source Type [" + myFileExtension + "]";
   }
 
   @NotNull

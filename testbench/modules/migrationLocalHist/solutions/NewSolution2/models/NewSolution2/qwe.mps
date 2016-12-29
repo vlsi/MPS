@@ -20,10 +20,10 @@
     </language>
   </registry>
   <node concept="2uc_Db" id="45hrIBvp0J2">
-    <property role="TrG5h" value="x" />
+    <property role="TrG5h" value="x_n1_n2" />
   </node>
   <node concept="2uc_Da" id="45hrIBvp0J1">
-    <property role="TrG5h" value="y" />
+    <property role="TrG5h" value="y_m1_m2" />
   </node>
 </model>
 

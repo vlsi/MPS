@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 
 /**
  * The exception which might be thrown during copying.
@@ -27,6 +30,11 @@ public class CopyNotSupportedException extends Exception {
   private final String myErrorMessage;
 
   public CopyNotSupportedException(@NotNull String errorMessage) {
+    myErrorMessage = errorMessage;
+  }
+
+  public CopyNotSupportedException(@NotNull String errorMessage, Throwable cause) {
+    super(errorMessage, cause);
     myErrorMessage = errorMessage;
   }
 

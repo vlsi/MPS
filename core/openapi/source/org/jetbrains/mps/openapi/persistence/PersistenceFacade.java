@@ -243,5 +243,4 @@ public abstract class PersistenceFacade {
    */
   @Deprecated
   public abstract void removeNavigationParticipant(NavigationParticipant participant);
-
 }

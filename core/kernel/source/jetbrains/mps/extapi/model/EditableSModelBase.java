@@ -254,7 +254,7 @@ public abstract class EditableSModelBase extends SModelBase implements EditableS
           DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
           IFile oldFile = ((FileDataSource) getSource()).getFile();
           SourceRoot sourceRoot = findSourceRootOfMyself(oldFile, defaultModelRoot);
-          CompositeResult<DataSource> result = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(sourceRoot, new SModelName(newModelName));
+          CompositeResult<DataSource> result = new DataSourceFactoryBridge(defaultModelRoot).createFileDataSource(new SModelName(newModelName), sourceRoot);
           FileDataSource source = (FileDataSource) result.getDataSource();
           IFile newFile = source.getFile();
           if (!newFile.equals(oldFile)) {

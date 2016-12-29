@@ -33,6 +33,6 @@ public final class SourceRootDoesNotExistException extends ModelCannotBeCreatedE
 
   @Override
   public String getMessage() {
-    return String.format("Source root '%s' is absent in the provided model root [%s], operation is impossible", mySourceRoot, myModelRoot);
+    return String.format("Source root '%s' is absent in the provided model root [%s]", mySourceRoot, myModelRoot);
   }
 }

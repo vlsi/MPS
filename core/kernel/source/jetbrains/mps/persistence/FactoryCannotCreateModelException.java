@@ -15,31 +15,17 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
-import java.io.IOException;
-
-/**
- * Created by apyshkin on 12/23/16.
- */
-public class FactoryCannotCreateModelException extends ModelCannotBeCreatedException {
-
-  public FactoryCannotCreateModelException(IOException e) {
-    super(e);
+public final class FactoryCannotCreateModelException extends ModelCannotBeCreatedException {
+  public FactoryCannotCreateModelException(@NotNull ModelFactory modelFactory, @NotNull SModelName modelName) {
+    super(String.format("Model factory '%s' cannot create a model with a given name '%s'", modelFactory, modelName));
   }
 
-  public FactoryCannotCreateModelException(SModelName modelName, ModelFactory modelFactory) {
-    super();
-  }
-
-  public FactoryCannotCreateModelException(FileSystemBasedDataSource dataSource) {
-
-  }
-
-  @Override
-  public String getMessage() {
-    return "TODO";
+  public FactoryCannotCreateModelException(@NotNull ModelFactory modelFactory, @NotNull DataSource dataSource) {
+    super(String.format("Model factory '%s' cannot create a model with a given data source '%s'", modelFactory, modelFactory));
   }
 }

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
@@ -29,7 +30,7 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PER_ROOT_XML;
+import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes.MODEL_ROOT;
 
 /**
  * @author apyshkin
@@ -51,25 +52,20 @@ public final class FilePerRootDataSourceFactory implements DataSourceFactory {
 
                            @ToRemove(version = 0)
                            @Nullable ModelRoot modelRoot) {
-    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, PER_ROOT_XML.getDefaultFileExtension());
+    ModelFileCalculator modelFileCalculator = new ModelFileCalculator(modelName, sourceRoot, modelRoot, MODEL_ROOT.getFileExtension(), true);
     IFile modelFile = modelFileCalculator.calculate();
     return createFromFile(modelFile, modelRoot);
   }
 
   @NotNull
   private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    if (!file.isDirectory()) {
-      throw new IllegalArgumentException("Cannot accept NOT directory file " + file);
-    }
-    // redundant branch, will go away with the {@link FilePerRootDataSource}
-    // this must happen on the model factory side
-    return new FilePerRootDataSource(file, modelRoot);
+    return PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.createFromFile(file, modelRoot);
   }
 
   @NotNull
   @Override
   public DataSourceType getType() {
-    return PreinstalledDataSourceTypes.DOT_MODEL;
+    return PreinstalledDataSourceTypes.MODEL;
   }
 
   @Override

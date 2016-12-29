@@ -18,7 +18,6 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.CopyableModelRoot;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
@@ -67,7 +66,7 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
  *
  * evgeny, 11/9/12
  */
-public final class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
+public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
   private static final Logger LOG = LogManager.getLogger(DefaultModelRoot.class);
   private static final ModelFactoryRegistry ourModelFactoryRegistry = ModelFactoryService.getInstance();
 
@@ -169,7 +168,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    */
   @Nullable
   public SModel createPerRootModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
-    return createModel(new SModelName(modelName), sourceRoot, PreinstalledDataSourceTypes.DOT_MODEL, PreinstalledModelFactoryTypes.PER_ROOT_XML);
+    return createModel(new SModelName(modelName), sourceRoot, PreinstalledDataSourceTypes.MODEL, PreinstalledModelFactoryTypes.PER_ROOT_XML);
   }
   /**
    * Creates a new file based model in the default source root.
@@ -179,7 +178,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    */
   @Nullable
   public SModel createFileModel(@NotNull String modelName, @Nullable SourceRoot sourceRoot) throws ModelCannotBeCreatedException {
-    return createModel(new SModelName(modelName), sourceRoot, PreinstalledDataSourceTypes.DOT_MPS, PreinstalledModelFactoryTypes.PLAIN_XML);
+    return createModel(new SModelName(modelName), sourceRoot, PreinstalledDataSourceTypes.MPS, PreinstalledModelFactoryTypes.PLAIN_XML);
   }
 
   /**
@@ -191,6 +190,9 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
                             @Nullable SourceRoot sourceRoot,
                             @Nullable DataSourceType dataSourceType,
                             @Nullable ModelFactoryType modelFactoryType) throws ModelCannotBeCreatedException {
+    if (sourceRoot == null) {
+      sourceRoot = Defaults.sourceRoot(this);
+    }
     if (modelFactoryType == null) {
       modelFactoryType = Defaults.MODEL_FACTORY_TYPE;
     }
@@ -201,14 +203,18 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     if (dataSourceType == null) {
       List<DataSourceType> preferredDataSourceTypes = modelFactory.getPreferredDataSourceTypes();
       if (preferredDataSourceTypes.isEmpty()) {
-        throw new DataSourceTypeForModelFactoryNotFoundException();
-      }
-      dataSourceType = preferredDataSourceTypes.get(0);
-      if (dataSourceType == null) {
-        throw new DataSourceTypeForModelFactoryNotFoundException();
+        dataSourceType = Defaults.DATA_SOURCE_TYPE;
+      } else {
+        dataSourceType = preferredDataSourceTypes.get(0);
+        if (dataSourceType == null) {
+          throw new DataSourceTypeIsNullForModelFactoryException(modelFactory);
+        }
       }
     }
     DataSourceFactory dataSourceFactory = DataSourceFactoryService.getInstance().getFactory(dataSourceType);
+    if (dataSourceFactory == null) {
+      throw new DataSourceFactoryNotFoundException(dataSourceType);
+    }
     return createModel(modelName, sourceRoot, dataSourceFactory, modelFactory);
   }
 
@@ -219,7 +225,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
    * The most 'heavy' method (parameter-wise):
    * @param modelName -- controls the name of the new model
    * @param sourceRoot -- the source root to create the new model in
-   * @param dataSourceFactory -- data source factory which method {@link FileDataSourceFactory#create(SModelName, SourceRoot, ModelRoot)}
+   * @param dataSourceFactory -- data source factory which method {@link FileMPSDataSourceFactory#create(SModelName, SourceRoot, ModelRoot)}
    *                           is going to be used to create a new data source from the given model name and source root
    * @param modelFactory -- model factory which defines the persisting strategy of the new model.
    *
@@ -248,18 +254,18 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
       }
     }
     CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
-    FileSystemBasedDataSource dataSource = (FileSystemBasedDataSource) result.getDataSource();
+    DataSource dataSource = result.getDataSource();
     ModelCreationOptions parameters = result.getOptions();
     if (!new ModelFactoryFacade(modelFactory).canCreate(dataSource, parameters)) {
-      throw new FactoryCannotCreateModelException(dataSource);
+      throw new FactoryCannotCreateModelException(modelFactory, dataSource);
     }
     return createModel0(modelFactory, dataSource, parameters);
   }
 
   @NotNull
-  private SModel createModel0(@NotNull ModelFactory modelFactory,
-                              @NotNull DataSource dataSource,
-                              @NotNull ModelCreationOptions parameters) throws ModelCannotBeCreatedException {
+  /*package*/ SModel createModel0(@NotNull ModelFactory modelFactory,
+                                  @NotNull DataSource dataSource,
+                                  @NotNull ModelCreationOptions parameters) throws ModelCannotBeCreatedException {
     try {
       SModel model = new ModelFactoryFacade(modelFactory).create(dataSource, parameters);
       registerModel(model);
@@ -284,7 +290,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     DataSourceType dataSourceType = modelFactory.getPreferredDataSourceTypes().get(0);
     CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
     if (!new ModelFactoryFacade(modelFactory).canCreate(result.getDataSource(), result.getOptions())) {
-      throw new FactoryCannotCreateModelException(modelName, modelFactory);
+      throw new FactoryCannotCreateModelException(modelFactory, modelName);
     }
     return createModel0(modelFactory, result.getDataSource(), result.getOptions());
   }
@@ -308,12 +314,12 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     return result;
   }
 
-  private static final class Defaults {
-    @NotNull private static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.DOT_MPS;
+  static final class Defaults {
+    @NotNull private static final DataSourceType DATA_SOURCE_TYPE = PreinstalledDataSourceTypes.MPS;
     @NotNull private static final ModelFactoryType MODEL_FACTORY_TYPE = PreinstalledModelFactoryTypes.PLAIN_XML;
 
     @NotNull
-    private static DataSourceFactory dataSourceFactory() throws DataSourceFactoryNotFoundException {
+    static DataSourceFactory dataSourceFactory() throws DataSourceFactoryNotFoundException {
       DataSourceFactory factory = DataSourceFactoryService.getInstance().getFactory(DATA_SOURCE_TYPE);
       if (factory == null) {
         throw new DataSourceFactoryNotFoundException(DATA_SOURCE_TYPE);
@@ -322,7 +328,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
     }
 
     @NotNull
-    private static ModelFactory modelFactory() throws ModelFactoryNotFoundException {
+    static ModelFactory modelFactory() throws ModelFactoryNotFoundException {
       ModelFactory defaultModelFactory = ourModelFactoryRegistry.getDefaultModelFactory(DATA_SOURCE_TYPE);
       if (defaultModelFactory == null) {
         throw new ModelFactoryNotFoundException(DATA_SOURCE_TYPE);
@@ -335,7 +341,7 @@ public final class DefaultModelRoot extends FileBasedModelRoot implements Copyab
      * @throws NoSourceRootsInModelRootException if there are no source roots here
      */
     @NotNull
-    private static SourceRoot sourceRoot(@NotNull DefaultModelRoot modelRoot) throws NoSourceRootsInModelRootException {
+    static SourceRoot sourceRoot(@NotNull FileBasedModelRoot modelRoot) throws NoSourceRootsInModelRootException {
       List<SourceRoot> sourceRoots = modelRoot.getSourceRoots(SourceRootKinds.SOURCES);
       if (sourceRoots.isEmpty()) {
         throw new NoSourceRootsInModelRootException(modelRoot);

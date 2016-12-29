@@ -93,7 +93,7 @@ import jetbrains.mps.smodel.SModel;
       public String apply(String path) {
         return myModulePathConverter.source2Target(path);
       }
-    }).collect(Collectors.toList());
+    }).collect(Collectors.<String>toList());
     copyDescriptor.getAdditionalJavaStubPaths().clear();
     copyDescriptor.getAdditionalJavaStubPaths().addAll(newStubPaths);
     List<String> newSourcePaths = copyDescriptor.getSourcePaths().stream().map(new Function<String, String>() {
@@ -101,7 +101,7 @@ import jetbrains.mps.smodel.SModel;
       public String apply(String path) {
         return myModulePathConverter.source2Target(path);
       }
-    }).collect(Collectors.toList());
+    }).collect(Collectors.<String>toList());
     copyDescriptor.getSourcePaths().clear();
     copyDescriptor.getSourcePaths().addAll(newSourcePaths);
   }

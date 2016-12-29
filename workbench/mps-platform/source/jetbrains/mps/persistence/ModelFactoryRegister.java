@@ -20,15 +20,24 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import com.intellij.util.xmlb.annotations.Attribute;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Workbench extension point to client custom model factories
+ */
+@Internal
+@Deprecated
+@ToRemove(version = 3.7)
 public class ModelFactoryRegister implements ApplicationComponent {
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<>();
 
@@ -44,7 +53,8 @@ public class ModelFactoryRegister implements ApplicationComponent {
       try {
         ModelFactory modelFactory = provider.instantiate(provider.getImplementationClass(), ApplicationManager.getApplication().getPicoContainer());
         myRegisteredFactories.add(modelFactory);
-        myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
+        registerLEGACY(modelFactory);
+        registerNEW(modelFactory);
       } catch (ClassNotFoundException e) {
         String m = String.format("Failed to load ModelFactoryProvider in plugin %s", provider.getPluginDescriptor().getPluginId());
         LogManager.getLogger(ModelFactoryRegister.class).error(m, e);
@@ -52,12 +62,31 @@ public class ModelFactoryRegister implements ApplicationComponent {
     }
   }
 
+  @ToRemove(version = 3.7)
+  @Deprecated
+  private void registerLEGACY(ModelFactory modelFactory) {
+    myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
+  }
+
+  private void registerNEW(ModelFactory modelFactory) {
+    ModelFactoryService.getInstance().register(modelFactory);
+  }
+
   @Override
   public void disposeComponent() {
     for (ModelFactory modelFactory : myRegisteredFactories) {
-      myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), null);
+      unregisterLEGACY(modelFactory);
+      unregisterNEW(modelFactory);
     }
     myRegisteredFactories.clear();
+  }
+
+  private void unregisterLEGACY(ModelFactory modelFactory) {
+    myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), null);
+  }
+
+  private void unregisterNEW(ModelFactory modelFactory) {
+    ModelFactoryService.getInstance().unregister(modelFactory);
   }
 
   @NotNull

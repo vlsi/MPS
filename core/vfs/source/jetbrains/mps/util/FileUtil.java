@@ -16,6 +16,7 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.vfs.path.Path;
+import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -559,6 +560,7 @@ public class FileUtil {
     return null;
   }
 
+  @Contract(value = "null -> null;!null->!null")
   @Nullable
   public static String stripLastSlashes(@Nullable String path) {
     if (path == null) return null;

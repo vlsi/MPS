@@ -5,6 +5,15 @@
       <modulePath path="$PROJECT_DIR$/languages/TestLanguage/TestLanguage.mpl" folder="tests.testCloneModule" />
       <modulePath path="$PROJECT_DIR$/solutions/TestSolution_DefaultModelRoot/TestSolution_DefaultModelRoot.msd" folder="tests.testCloneModule" />
       <modulePath path="$PROJECT_DIR$/solutions/TestSolution_JavaClasses/TestSolution_JavaClasses.msd" folder="tests.testCloneModule" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST/FIRST.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST_BINARY/FIRST_BINARY.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST_BINARY_clone/FIRST_BINARY_clone.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST_PER_ROOT/FIRST_PER_ROOT.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST_PER_ROOT_clone/FIRST_PER_ROOT_clone.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/FIRST_clone/FIRST_clone.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/NewSolution/NewSolution.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/TEST1/TEST1.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/TEST1_clone/TEST1_clone.msd" folder="" />
     </projectModules>
   </component>
 </project>

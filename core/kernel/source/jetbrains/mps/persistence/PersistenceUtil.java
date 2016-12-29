@@ -100,7 +100,7 @@ public final class PersistenceUtil {
 
   public static SModel loadModel(@NotNull IFile file) {
     try {
-      DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(file.getUrl().toURI(), null);
+      DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(file.getUrl(), null);
       if (dataSource.getType() == null) {
         return null;
       }
@@ -112,7 +112,7 @@ public final class PersistenceUtil {
       SModel model = factory.load(dataSource, options);
       model.load();
       return model;
-    } catch (IOException | URINotSupportedException | URISyntaxException e) {
+    } catch (IOException | URINotSupportedException e) {
       LOG.error("", e);
       return null;
     }

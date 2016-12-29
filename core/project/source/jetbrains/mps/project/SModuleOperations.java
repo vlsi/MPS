@@ -144,38 +144,36 @@ public class SModuleOperations {
 
   @Nullable
   public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root) {
-    return createModelWithAdjustments(name, root, null);
-  }
-
-  @Nullable
-  public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root, @Nullable ModelFactoryType modelFactoryType) {
-    if (!root.canCreateModel(name)) {
-      LOG.error("Can't create a model " + name + " under model root " + root);
-      return null;
-    }
-
     try {
-      EditableSModel model;
-      if (modelFactoryType != null && root instanceof DefaultModelRoot) {
-        DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
-        model = (EditableSModel) defaultModelRoot.createModel(new SModelName(name), null, null, modelFactoryType);
-      } else {
-        model = (EditableSModel) root.createModel(name);
+      if (root.canCreateModel(name)) {
+        return createModelWithAdjustments(name, root, null);
       }
-
-      // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
-      // model.getSModel() ?
-      model.setChanged(true);
-      model.save();
-      // ((ModelRootBase) root).register(model);
-
-      ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
-      new MissingDependenciesFixer(model).fixModuleDependencies();
-      return model;
     } catch (ModelCannotBeCreatedException e) {
       LOG.error("", e);
-      return null;
     }
+    return null;
+  }
+
+  @NotNull
+  public static EditableSModel createModelWithAdjustments(@NotNull String name,
+                                                          @NotNull ModelRoot root,
+                                                          @Nullable ModelFactoryType modelFactoryType) throws ModelCannotBeCreatedException {
+    EditableSModel model;
+    if (modelFactoryType != null && root instanceof DefaultModelRoot) {
+      DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
+      model = (EditableSModel) defaultModelRoot.createModel(new SModelName(name), null, null, modelFactoryType);
+    } else {
+      model = (EditableSModel) root.createModel(name);
+    }
+
+    // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
+    // model.getSModel() ?
+    model.setChanged(true);
+    model.save();
+
+    ModelsAutoImportsManager.doAutoImport(root.getModule(), model);
+    new MissingDependenciesFixer(model).fixModuleDependencies();
+    return model;
   }
 
   public static boolean needReloading(AbstractModule module) {

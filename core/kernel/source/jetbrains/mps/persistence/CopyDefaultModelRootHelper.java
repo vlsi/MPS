@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.FileUtil;
@@ -28,14 +28,18 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
-import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.List;
+
+import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY;
 
 /**
  * Helps {@link DefaultModelRoot#copyTo(DefaultModelRoot)}
@@ -47,10 +51,14 @@ final class CopyDefaultModelRootHelper {
 
   private final DefaultModelRoot mySourceModelRoot;
   private final DefaultModelRoot myTargetModelRoot;
+  private final AbstractModule mySourceModule;
+  private final AbstractModule myTargetModule;
 
   CopyDefaultModelRootHelper(DefaultModelRoot sourceModelRoot, DefaultModelRoot targetModelRoot) {
     mySourceModelRoot = sourceModelRoot;
     myTargetModelRoot = targetModelRoot;
+    mySourceModule = ((AbstractModule) mySourceModelRoot.getModule());
+    myTargetModule = ((AbstractModule) myTargetModelRoot.getModule());
   }
 
   private boolean isInsideModuleDir() {
@@ -85,8 +93,6 @@ final class CopyDefaultModelRootHelper {
       throw new CopyNotSupportedException("The model root's content path must be inside module directory " + mySourceModelRoot + " : " + mySourceModelRoot.getModule());
     }
 
-    AbstractModule sourceModule = ((AbstractModule) mySourceModelRoot.getModule());
-    AbstractModule targetModule = ((AbstractModule) myTargetModelRoot.getModule());
     List<SourceRoot> sourceFiles = mySourceModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     List<SourceRoot> targetFiles = myTargetModelRoot.getSourceRoots(SourceRootKinds.SOURCES);
     assert sourceFiles.size() == targetFiles.size(); // #copyContentRootAndFiles guarantees
@@ -94,24 +100,38 @@ final class CopyDefaultModelRootHelper {
       SourceRoot sourceRoot = sourceFiles.get(cnt);
       SourceRoot targetSourceRoot = targetFiles.get(cnt);
 
-      sourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
-      ParametersCalculator parametersCalculator = new ParametersCalculator(myTargetModelRoot);
+      mySourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
       ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
         try {
-          IFile targetModelFile = calculateTargetModelFile(sourceModule, targetModule, sourceRoot, targetSourceRoot, file);
-          options = parametersCalculator.calculate(targetModelFile, targetSourceRoot); // recalculating based on the target location and target name
-          try {
-            SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
-            createModelCopy(factory, targetSourceRoot, options.getModelName(), modelData);
-          } catch (UnsupportedDataSourceException ignored) {
-            // FIXME this does not seem to be correct! I'd rather have ModelRootFactory know which DataSource it accepts beforehand
-          }
-        } catch (IOException e) {
-          LOG.error("Caught exception while collecting models in the '" + file + "'", e);
+          IFile targetModelFile = calculateTargetModelFile(mySourceModule, myTargetModule, sourceRoot, targetSourceRoot, file);
+          SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
+          createModelCopy(factory, targetModelFile, modelData);
+        } catch (URINotSupportedException | URISyntaxException | IOException | ModelCannotBeCreatedException e) {
+          LOG.error("", new CopyNotSupportedException("Could not copy because of unexpected error" , e));
         }
       });
       modelSourceRootWalker.traverse(sourceRoot);
     }
+  }
+
+  @NotNull
+  private SModel createModelCopy(@NotNull ModelFactory factory,
+                                 @NotNull IFile targetModelFile,
+                                 @NotNull SModelBase modelDataToCopy) throws IOException,
+                                                                             URISyntaxException,
+                                                                             URINotSupportedException,
+                                                                             ModelCannotBeCreatedException {
+    DataSource targetDataSource = FILE_FROM_URI_FACTORY.create(targetModelFile.getUrl(), myTargetModelRoot);
+    ParametersCalculator prmCalculator = new ParametersCalculator(myTargetModelRoot);
+    SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue(),
+                                                                          mySourceModule,
+                                                                          myTargetModule));
+    ModelCreationOptions options = prmCalculator.calculate(newModelName);
+    SModel targetModel = myTargetModelRoot.createModel0(factory, targetDataSource, options);
+    CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
+    CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), ((SModelBase) targetModel).getSModel());
+    saveModel(targetModel);
+    return targetModel;
   }
 
   @NotNull
@@ -121,32 +141,27 @@ final class CopyDefaultModelRootHelper {
                                          SourceRoot targetSourceRoot,
                                          IFile sourceModelFile) {
     String relPath = FileBasedModelRoot.relativize(sourceModelFile.getPath(), sourceRoot.getAbsolutePath());
-    String sourceModuleName = sourceModule.getModuleName();
-    if (relPath.startsWith(sourceModuleName)) { // our special hack fixme move to workbench
-      relPath = targetModule.getModuleName() + relPath.substring(sourceModuleName.length());
-    }
+    relPath = convertNameConsideringModule(relPath, sourceModule, targetModule);
     return targetSourceRoot.getAbsolutePath().getDescendant(relPath);
   }
 
+  /**
+   * A special hack
+   * fixme move to workbench
+   */
   @NotNull
-  private SModel createModelCopy(@NotNull ModelFactory factory,
-                                 @NotNull SourceRoot targetSourceRoot,
-                                 @NotNull String newModelName,
-                                 @NotNull SModelBase modelDataToCopy) throws IOException {
-//    EditableSModelBase targetModel = (EditableSModelBase) myTargetModelRoot.createModelWithFactory(factory, targetSourceRoot, newModelName);
-    throw new NotImplementedException();
-//    targetModel.setModelRoot(myTargetModelRoot);
-//    targetModel.setModule(myTargetModelRoot.getModule());
-//
-//    CopyUtil.copyModelContentAndPreserveIds(modelDataToCopy, targetModel);
-//    CopyUtil.copyModelProperties(modelDataToCopy.getSModel(), targetModel.getSModel());
-//    saveModel(targetModel);
-//    return targetModel;
+  private String convertNameConsideringModule(String name, AbstractModule sourceModule, AbstractModule targetModule) {
+    if (name.startsWith(sourceModule.getModuleName())) {
+      name = targetModule.getModuleName() + name.substring(sourceModule.getModuleName().length());
+    }
+    return name;
   }
 
   // FIXME see MPS-18545
-  private static void saveModel(@NotNull EditableSModelBase targetModel) {
-    targetModel.setChanged(true);
-    targetModel.save();
+  private static void saveModel(@NotNull SModel targetModel) {
+    if (targetModel instanceof EditableSModel) {
+      ((EditableSModel) targetModel).setChanged(true);
+      ((EditableSModel) targetModel).save();
+    }
   }
 }

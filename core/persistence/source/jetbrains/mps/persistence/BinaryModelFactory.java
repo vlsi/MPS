@@ -20,6 +20,7 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
@@ -32,6 +33,7 @@ import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -56,25 +58,20 @@ import java.util.Map;
  * evgeny, 11/20/12
  */
 public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwareModelFactory {
-  private final PersistenceFacade myFacade;
-  @NotNull
-  private final ModelFactoryRegistry myModelFactoryRegistry;
+  private static final PersistenceFacade FACADE = PersistenceFacade.getInstance();
 
-  BinaryModelFactory(@NotNull PersistenceFacade facade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
-    myFacade = facade;
-    myModelFactoryRegistry = modelFactoryRegistry;
+  @Internal
+  public BinaryModelFactory() {
   }
 
   @Override
   public void init() {
-    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
-//    myModelFactoryRegistry.register(FileDataSourceType.INSTANCE, this);
+    FACADE.setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-//    myModelFactoryRegistry.unregister(this);
-    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    FACADE.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull
@@ -114,7 +111,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
     }
 
     final SModelHeader header = new SModelHeader();
-    header.setModelReference(myFacade.createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
+    header.setModelReference(FACADE.createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
   }
 
@@ -187,7 +184,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
   @NotNull
   @Override
   public List<DataSourceType> getPreferredDataSourceTypes() {
-    return Collections.singletonList(PreinstalledDataSourceTypes.DOT_BINARY);
+    return Collections.singletonList(PreinstalledDataSourceTypes.BINARY);
   }
 
   @Override

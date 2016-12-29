@@ -42,5 +42,4 @@ public class JavaClassesPersistence implements CoreComponent {
     myFacade.setModelIdFactory(LanguageID.JAVA, null);
     myFacade.setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
   }
-
 }

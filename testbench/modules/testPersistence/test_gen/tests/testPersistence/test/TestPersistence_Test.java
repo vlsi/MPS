@@ -124,7 +124,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
 
         // load model from source version 
         String notUpgradedContent = notUpgradedData.getContent(FileUtil.DEFAULT_CHARSET_NAME);
-        SModelBase notUpgradedModel = ((SModelBase) PersistenceUtil.loadModel(notUpgradedContent, helper.getDefaultExt()));
+        SModelBase notUpgradedModel = ((SModelBase) PersistenceUtil.loadModel(notUpgradedContent));
 
         // save model in last persistence 
         PersistenceUtil.InMemoryStreamDataSource upgradedData = new PersistenceUtil.InMemoryStreamDataSource();
@@ -132,7 +132,7 @@ public class TestPersistence_Test extends BaseTransformationTest {
 
         // load model in last persistence from saved 
         String upgradedContent = upgradedData.getContent(FileUtil.DEFAULT_CHARSET_NAME);
-        SModelBase upgradedModel = ((SModelBase) PersistenceUtil.loadModel(upgradedContent, helper.getDefaultExt()));
+        SModelBase upgradedModel = ((SModelBase) PersistenceUtil.loadModel(upgradedContent));
 
         // do test 
         this.assertDeepModelEquals(notUpgradedModel.getSModel(), upgradedModel.getSModel());

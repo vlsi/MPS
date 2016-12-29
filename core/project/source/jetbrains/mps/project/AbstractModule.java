@@ -56,6 +56,7 @@ import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
@@ -426,8 +427,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       return;
     }
 
-    IFile bundleParent = bundleHomeFile.getParent();
-    if (bundleParent == null || !bundleParent.exists()) {
+    IFile newContentDir = bundleHomeFile.getParent();
+    if (newContentDir == null || !newContentDir.exists()) {
       return;
     }
 
@@ -471,12 +472,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
             for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
               paths.add(contentPath + File.separator + sourceRoot.get("location"));
             }
-            newMemento.put(FileBasedModelRoot.CONTENT_PATH, bundleParent.getPath());
+            newMemento.put(FileBasedModelRoot.CONTENT_PATH, newContentDir.getPath());
             Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
             for (String path : paths) {
               String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
               if (convertedPath != null) {
-                newMementoChild.put("location", convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
+                String newRelativeLocation = FileUtil.getRelativePath(FileUtil.getUnixPath(convertedPath),
+                                                              FileUtil.getUnixPath(newContentDir.getPath()),
+                                                              Path.UNIX_SEPARATOR);
+                newMementoChild.put("location", newRelativeLocation);
                 update = true;
               }
             }
@@ -495,7 +499,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     for (String jarFile : deplDescriptor.getLibraries()) {
       IFile jar = jarFile.startsWith("/")
           ? myFileSystem.getFile(PathManager.getHomePath() + jarFile)
-          : bundleParent.getDescendant(jarFile);
+          : newContentDir.getDescendant(jarFile);
       if (jar.exists()) {
         String path = jar.getPath();
         descriptor.getAdditionalJavaStubPaths().add(path);
@@ -515,7 +519,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   private String convertPath(String originalPath, IFile bundleHome, IFile sourcesDescriptorFile, ModuleDescriptor descriptor) {
     MacroHelper macroHelper = MacrosFactory.forModuleFile(sourcesDescriptorFile);
 
-    String canonicalPath = FileUtil.getCanonicalPath(originalPath).toLowerCase();
+    String canonicalPath = FileUtil.getCanonicalPath(originalPath);
 
     // /classes && /classes_gen hack
     String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
@@ -530,8 +534,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     // ${mps_home}/lib
-    String mpsHomeLibPath = FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib").toLowerCase();
-    if (canonicalPath.startsWith(mpsHomeLibPath)) {
+    String mpsHomeLibPath = FileUtil.getCanonicalPath(PathManager.getHomePath() + File.separator + "lib");
+    if (FileUtil.isAncestor(mpsHomeLibPath, canonicalPath)) {
       return canonicalPath;
     }
 
@@ -845,9 +849,9 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       }
     }
 
-    Set<ModelRoot> toRemove = new HashSet<ModelRoot>(mySModelRoots);
-    Set<ModelRoot> toUpdate = new HashSet<ModelRoot>(mySModelRoots);
-    Set<ModelRoot> toAttach = new HashSet<ModelRoot>();
+    Set<ModelRoot> toRemove = new LinkedHashSet<>(mySModelRoots);
+    Set<ModelRoot> toUpdate = new LinkedHashSet<>(mySModelRoots);
+    Set<ModelRoot> toAttach = new LinkedHashSet<>();
 
     for (ModelRoot root : loadRoots()) {
       try {

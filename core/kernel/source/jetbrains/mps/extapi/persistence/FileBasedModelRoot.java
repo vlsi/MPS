@@ -108,14 +108,14 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   /**
    * @deprecated use {@link #FileBasedModelRoot()} instead and
-   *             define your own {@link #getSupportedFileKinds()}
+   *             define your own {@link #getSupportedFileKinds1()}
    */
   @Deprecated
   @ToRemove(version = 3.5)
   protected FileBasedModelRoot(String[] supportedFileKinds) {
     mySupportedFileKinds = supportedFileKinds != null ?
                            unmodifiableList(asList(supportedFileKinds)) : emptyList();
-    mySourcePathStorage = new SourcePaths(mySupportedFileKinds::contains);
+    mySourcePathStorage = new SourcePaths((sourceRootKind) -> getSupportedFileKinds1().contains(sourceRootKind));
   }
 
   /**

@@ -4,12 +4,12 @@ package jetbrains.mps.ide.java.sourceStubs;
 
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -23,7 +23,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   private static final Logger LOG = Logger.getLogger(JavaSourceStubModelRoot.class);
-  private final String PATH_KEY = "path";
+
+  private static final String PATH_KEY = "path";
 
   public JavaSourceStubModelRoot() {
     super(new String[]{SOURCE_ROOTS});
@@ -35,7 +36,7 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public SModel getModel(@NotNull SModelId id) {
+  public SModel getModel(SModelId id) {
     // TODO 
     return null;
   }
@@ -45,12 +46,12 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public void load(@NotNull Memento memento) {
+  public void load(Memento memento) {
     super.load(memento);
-    if (memento.get(PATH_KEY) == null) {
+    if (memento.get("path") == null) {
       return;
     }
-    String path = FileUtil.stripLastSlashes(memento.get(PATH_KEY));
+    String path = FileUtil.stripLastSlashes(memento.get("path"));
     assert path != null;
     IFile file = getFileSystem().getFile(path);
     if (file.getParent() != null) {
@@ -60,8 +61,8 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
     addFile(SOURCE_ROOTS, memento.get(PATH_KEY));
   }
 
-  @NotNull
   @Override
+  @NotNull
   public Iterable<SModel> loadModels() {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     final Collection<String> files = getFiles(SOURCE_ROOTS);
@@ -109,12 +110,12 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   }
 
   @Override
-  public boolean canCreateModel(@NotNull String string) {
+  public boolean canCreateModel(String string) {
     return false;
   }
 
   @Override
-  public SModel createModel(@NotNull String string) {
+  public SModel createModel(String string) {
     return null;
   }
 }

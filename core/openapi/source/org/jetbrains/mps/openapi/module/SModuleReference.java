@@ -24,7 +24,11 @@ import org.jetbrains.annotations.Nullable;
 public interface SModuleReference {
   @NotNull SModuleId getModuleId();
 
-  @NotNull String getModuleName();
+  /**
+   * @return null if the name is not provided
+   * the name serves as extra information here
+   */
+  @Nullable String getModuleName();
 
   /**
    * @return the SModule such that {@link SModule#getModuleReference()} equals to this one.

@@ -36,9 +36,9 @@ public final class MPSPersistence extends ComponentPluginBase {
   @Override
   public void init() {
     super.init();
-    init(new DefaultModelPersistence(myPersistenceFacade, myModelFactoryRegistry));
-    init(new FilePerRootModelFactory(myModelFactoryRegistry));
-    init(new BinaryModelFactory(myPersistenceFacade, myModelFactoryRegistry));
+    init(new DefaultModelPersistence());
+    init(new FilePerRootModelFactory());
+    init(new BinaryModelFactory());
     init(new JavaClassesPersistence(myPersistenceFacade));
   }
 }

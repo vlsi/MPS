@@ -21,10 +21,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Denotes classes/enums/methods/fields which need to be treated carefully,
+ * Denotes classes/enums/methods/fields which are not recommended to be used by an outer client,
  * possibly it is better to keep away from using this API at all.
  *
- * This annotation is to be applied when there is a intention to warn user but
+ * This annotation is to be applied when there is a intention to warn a client but
  * a deprecation is not an option [for example it is not feasible to give out
  * an alternative API right in the moment].
  *

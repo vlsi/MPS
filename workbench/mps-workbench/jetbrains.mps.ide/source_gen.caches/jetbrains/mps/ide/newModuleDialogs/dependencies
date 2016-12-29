@@ -15,40 +15,54 @@
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog" file="CloneModuleDialog.java">
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Collection" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyNotSupportedException" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
-    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
-    <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" />
+    <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.modules.CloneModuleSettings" />
-    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
-    <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="jetbrains.mps.project.MPSExtentions" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.project.Solution" />
-    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
-    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
-    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
-    <classNode dependClassName="jetbrains.mps.util.ModulePathConverter" />
-    <classNode dependClassName="jetbrains.mps.util.ReferenceUpdater" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper" file="CopyModuleHelper.java">
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.extapi.model.SModelBase" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyNotSupportedException" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
+    <classNode dependClassName="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
+    <classNode dependClassName="jetbrains.mps.persistence.MementoImpl" />
+    <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.StandaloneMPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.structure.model.ModelRootDescriptor" />
+    <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
+    <classNode dependClassName="jetbrains.mps.util.ModulePathConverter" />
+    <classNode dependClassName="jetbrains.mps.util.ReferenceUpdater" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.log4j.LogManager" />
+    <classNode dependClassName="org.apache.log4j.Logger" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.newModuleDialogs.DescriptorCopyOrganizer" file="DescriptorCopyOrganizer.java">
     <classNode dependClassName="java.lang.Long" />

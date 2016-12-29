@@ -2,7 +2,7 @@
 <model ref="r:e4e2cb42-c7b0-4c15-842f-cc66f97c5e86(NewLanguage2.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="9d4153a9-a100-4911-9688-094a7ba99d12" name="NewLanguage2" version="-1" />
+    <use id="9d4153a9-a100-4911-9688-094a7ba99d12" name="NewLanguage2" version="2" />
     <devkit ref="a2eb3a43-fcc2-4200-80dc-c60110c4862d(jetbrains.mps.devkit.templates)" />
   </languages>
   <imports />

@@ -151,7 +151,7 @@ public class Utils {
     mr.attach();
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModel md : Sequence.fromIterable(mr.getModels())) {
+    for (SModel md : ListSequence.fromList(mr.getModels())) {
       ListSequence.fromList(models).addElement(md);
     }
 

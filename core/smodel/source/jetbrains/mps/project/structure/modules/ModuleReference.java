@@ -20,6 +20,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -37,7 +38,7 @@ public final class ModuleReference implements SModuleReference {
   private final String myModuleName;
   private final SModuleId myModuleId;
 
-  public ModuleReference(String moduleName, SModuleId moduleId) {
+  public ModuleReference(@Nullable String moduleName, @NotNull SModuleId moduleId) {
     myModuleName = InternUtil.intern(moduleName);
     myModuleId = moduleId;
   }
@@ -48,7 +49,7 @@ public final class ModuleReference implements SModuleReference {
     return myModuleId;
   }
 
-  @NotNull
+  @Nullable
   @Override
   public String getModuleName() {
     return myModuleName;

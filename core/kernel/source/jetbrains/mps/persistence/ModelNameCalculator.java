@@ -102,6 +102,9 @@ public final class ModelNameCalculator {
     if (prefixPackage.isEmpty()) {
       return suffixPackage;
     }
+    if (suffixPackage.isEmpty()) {
+      return prefixPackage;
+    }
     return prefixPackage + DOT + suffixPackage;
   }
 }

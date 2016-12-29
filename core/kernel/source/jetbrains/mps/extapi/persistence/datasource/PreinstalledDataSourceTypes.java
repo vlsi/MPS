@@ -20,6 +20,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
+ * Bundled data source types which are obviously connected with the possible file extension,
+ * for instance, '.mps', '.model' or '.mpsr'
+ *
+ * Use it to get a {@link DataSourceFactory} from the {@link DataSourceFactoryService}
+ * in order to construct a new data source.
+ *
  * @author apyshkin
  * @since 29/12/16
  */
@@ -28,10 +34,10 @@ public enum PreinstalledDataSourceTypes implements DataSourceType {
   FOLDER("Folder Data Source Type"),
   FOLDER_SET("Folder Set Data Source Type");
 
-  public static final FileExtensionDataSourceType DOT_MPS = FileExtensionDataSourceType.DOT_MPS;
-  public static final FileExtensionDataSourceType DOT_MODEL = FileExtensionDataSourceType.DOT_MODEL;
-  public static final FileExtensionDataSourceType DOT_MODEL_ROOT = FileExtensionDataSourceType.DOT_MODEL_ROOT;
-  public static final FileExtensionDataSourceType DOT_BINARY = FileExtensionDataSourceType.DOT_BINARY;
+  public static final FileExtensionDataSourceType MPS = FileExtensionDataSourceType.MPS;
+  public static final FileExtensionDataSourceType MODEL = FileExtensionDataSourceType.MODEL;
+  public static final FileExtensionDataSourceType MODEL_ROOT = FileExtensionDataSourceType.MODEL_ROOT;
+  public static final FileExtensionDataSourceType BINARY = FileExtensionDataSourceType.BINARY;
 
   private final String myName;
 

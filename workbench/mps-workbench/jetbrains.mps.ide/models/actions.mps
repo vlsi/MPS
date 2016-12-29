@@ -439,6 +439,9 @@
       <concept id="1081236700937" name="jetbrains.mps.baseLanguage.structure.StaticMethodCall" flags="nn" index="2YIFZM">
         <reference id="1144433194310" name="classConcept" index="1Pybhc" />
       </concept>
+      <concept id="1164991038168" name="jetbrains.mps.baseLanguage.structure.ThrowStatement" flags="nn" index="YS8fn">
+        <child id="1164991057263" name="throwable" index="YScLw" />
+      </concept>
       <concept id="1081256982272" name="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" flags="nn" index="2ZW3vV">
         <child id="1081256993305" name="classType" index="2ZW6by" />
         <child id="1081256993304" name="leftExpression" index="2ZW6bz" />
@@ -38242,26 +38245,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="38LNA6Kbjrn" role="3cqZAp" />
-        <node concept="3cpWs8" id="38LNA6Kbjro" role="3cqZAp">
-          <node concept="3cpWsn" id="38LNA6Kbjrp" role="3cpWs9">
-            <property role="TrG5h" value="filePerRootFactory" />
-            <node concept="2OqwBi" id="38LNA6Kbjrq" role="33vP2m">
-              <node concept="liA8E" id="38LNA6Kbjrr" role="2OqNvi">
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getFolderModelFactory(java.lang.String):jetbrains.mps.persistence.FolderModelFactory" resolve="getFolderModelFactory" />
-                <node concept="Xl_RD" id="4zbEaeUY6WK" role="37wK5m">
-                  <property role="Xl_RC" value="file-per-root" />
-                </node>
-              </node>
-              <node concept="2YIFZM" id="38LNA6Kbjrt" role="2Oq$k0">
-                <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="2eic0thdSax" role="1tU5fm">
-              <ref role="3uigEE" to="pa15:~FolderModelFactory" resolve="FolderModelFactory" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="38LNA6Kbjrv" role="3cqZAp" />
         <node concept="3clFbF" id="38LNA6Kbjrw" role="3cqZAp">
           <node concept="2OqwBi" id="38LNA6Kbjrx" role="3clFbG">
@@ -38486,37 +38469,40 @@
                         <node concept="3clFbS" id="38LNA6Kbjt3" role="SfCbr">
                           <node concept="3cpWs8" id="2eic0thf7Nm" role="3cqZAp">
                             <node concept="3cpWsn" id="2eic0thf7Nn" role="3cpWs9">
-                              <property role="TrG5h" value="newSource" />
+                              <property role="TrG5h" value="newDataSource" />
                               <node concept="3uibUv" id="2eic0thf7L4" role="1tU5fm">
                                 <ref role="3uigEE" to="dush:~DataSource" resolve="DataSource" />
                               </node>
-                              <node concept="2OqwBi" id="2eic0thf7No" role="33vP2m">
-                                <node concept="liA8E" id="2eic0thf7Np" role="2OqNvi">
-                                  <ref role="37wK5l" to="pa15:~FolderModelFactory.createNewSource(jetbrains.mps.extapi.persistence.FileBasedModelRoot,jetbrains.mps.extapi.persistence.SourceRoot,java.lang.String,jetbrains.mps.persistence.ModelCreationOptions):org.jetbrains.mps.openapi.persistence.DataSource" resolve="createNewSource" />
-                                  <node concept="10QFUN" id="3vK7u5YFO1u" role="37wK5m">
-                                    <node concept="3uibUv" id="3vK7u5YFPKF" role="10QFUM">
-                                      <ref role="3uigEE" to="ends:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
-                                    </node>
-                                    <node concept="37vLTw" id="3vK7u5YFJcK" role="10QFUP">
-                                      <ref role="3cqZAo" node="3vK7u5YFJcG" resolve="modelRoot" />
-                                    </node>
-                                  </node>
-                                  <node concept="10Nm6u" id="2eic0thf7Nt" role="37wK5m" />
-                                  <node concept="2OqwBi" id="2eic0thf7Nu" role="37wK5m">
-                                    <node concept="liA8E" id="2eic0thf7Nv" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SModel.getModelName():java.lang.String" resolve="getModelName" />
-                                    </node>
-                                    <node concept="37vLTw" id="2eic0thf7Nw" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="38LNA6KbjrP" resolve="newModel" />
+                              <node concept="2OqwBi" id="7l6b$KwMzDW" role="33vP2m">
+                                <node concept="2OqwBi" id="1gTR1uFgCh3" role="2Oq$k0">
+                                  <node concept="2ShNRf" id="1gTR1uFg23p" role="2Oq$k0">
+                                    <node concept="1pGfFk" id="1gTR1uFgBd5" role="2ShVmc">
+                                      <ref role="37wK5l" to="pa15:~DataSourceFactoryBridge.&lt;init&gt;(jetbrains.mps.extapi.persistence.FileBasedModelRoot)" resolve="DataSourceFactoryBridge" />
+                                      <node concept="10QFUN" id="1gTR1uFgBUc" role="37wK5m">
+                                        <node concept="3uibUv" id="1gTR1uFgBYy" role="10QFUM">
+                                          <ref role="3uigEE" to="ends:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
+                                        </node>
+                                        <node concept="37vLTw" id="1gTR1uFgBdl" role="10QFUP">
+                                          <ref role="3cqZAo" node="3vK7u5YFJcG" resolve="modelRoot" />
+                                        </node>
+                                      </node>
                                     </node>
                                   </node>
-                                  <node concept="10M0yZ" id="16Fpg60GWQn" role="37wK5m">
-                                    <ref role="1PxDUh" to="pa15:~ModelCreationOptions" resolve="ModelCreationOptions" />
-                                    <ref role="3cqZAo" to="pa15:~ModelCreationOptions.DEFAULT" resolve="DEFAULT" />
+                                  <node concept="liA8E" id="1gTR1uFgCIi" role="2OqNvi">
+                                    <ref role="37wK5l" to="pa15:~DataSourceFactoryBridge.createPerRootDataSource(org.jetbrains.mps.openapi.model.SModelName,jetbrains.mps.extapi.persistence.SourceRoot):jetbrains.mps.persistence.DataSourceFactoryBridge$CompositeResult" resolve="createPerRootDataSource" />
+                                    <node concept="2OqwBi" id="1gTR1uFgDTh" role="37wK5m">
+                                      <node concept="37vLTw" id="1gTR1uFgD_e" role="2Oq$k0">
+                                        <ref role="3cqZAo" node="38LNA6KbjrP" resolve="newModel" />
+                                      </node>
+                                      <node concept="liA8E" id="1gTR1uFgEgt" role="2OqNvi">
+                                        <ref role="37wK5l" to="mhbf:~SModel.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+                                      </node>
+                                    </node>
+                                    <node concept="10Nm6u" id="1gTR1uFgEww" role="37wK5m" />
                                   </node>
                                 </node>
-                                <node concept="37vLTw" id="2eic0thf7Nx" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="38LNA6Kbjrp" resolve="filePerRootFactory" />
+                                <node concept="liA8E" id="7l6b$KwNJVW" role="2OqNvi">
+                                  <ref role="37wK5l" to="pa15:~DataSourceFactoryBridge$CompositeResult.getDataSource():org.jetbrains.mps.openapi.persistence.DataSource" resolve="getDataSource" />
                                 </node>
                               </node>
                             </node>
@@ -38537,6 +38523,47 @@
                               </node>
                             </node>
                           </node>
+                          <node concept="3cpWs8" id="38LNA6Kbjro" role="3cqZAp">
+                            <node concept="3cpWsn" id="38LNA6Kbjrp" role="3cpWs9">
+                              <property role="TrG5h" value="filePerRootFactory" />
+                              <node concept="3uibUv" id="1lS_qvrhnFe" role="1tU5fm">
+                                <ref role="3uigEE" to="dush:~ModelFactory" resolve="ModelFactory" />
+                              </node>
+                              <node concept="2OqwBi" id="1lS_qvrho4o" role="33vP2m">
+                                <node concept="2YIFZM" id="1lS_qvrho4p" role="2Oq$k0">
+                                  <ref role="1Pybhc" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+                                  <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
+                                </node>
+                                <node concept="liA8E" id="1lS_qvrho4q" role="2OqNvi">
+                                  <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryByType(org.jetbrains.mps.openapi.persistence.ModelFactoryType):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getFactoryByType" />
+                                  <node concept="Rm8GO" id="1lS_qvrho4r" role="37wK5m">
+                                    <ref role="1Px2BO" to="pa15:~PreinstalledModelFactoryTypes" resolve="PreinstalledModelFactoryTypes" />
+                                    <ref role="Rm8GQ" to="pa15:~PreinstalledModelFactoryTypes.PER_ROOT_XML" resolve="PER_ROOT_XML" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="7l6b$KwR5_4" role="3cqZAp">
+                            <node concept="3clFbS" id="7l6b$KwR5_6" role="3clFbx">
+                              <node concept="YS8fn" id="7l6b$KwR7k6" role="3cqZAp">
+                                <node concept="2ShNRf" id="7l6b$KwR7kp" role="YScLw">
+                                  <node concept="1pGfFk" id="7l6b$KwRGUF" role="2ShVmc">
+                                    <ref role="37wK5l" to="guwi:~IOException.&lt;init&gt;(java.lang.String)" resolve="IOException" />
+                                    <node concept="Xl_RD" id="7l6b$KwRGUW" role="37wK5m">
+                                      <property role="Xl_RC" value="Could not find any per-root persistence model factory" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbC" id="7l6b$KwR6X4" role="3clFbw">
+                              <node concept="10Nm6u" id="7l6b$KwR6Xo" role="3uHU7w" />
+                              <node concept="37vLTw" id="7l6b$KwR6_I" role="3uHU7B">
+                                <ref role="3cqZAo" node="38LNA6Kbjrp" resolve="filePerRootFactory" />
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="38LNA6Kbjt4" role="3cqZAp">
                             <node concept="2OqwBi" id="38LNA6Kbjt5" role="3clFbG">
                               <node concept="liA8E" id="38LNA6Kbjt6" role="2OqNvi">
@@ -38545,7 +38572,7 @@
                                   <ref role="3cqZAo" node="38LNA6KbjrP" resolve="newModel" />
                                 </node>
                                 <node concept="37vLTw" id="2eic0thfrXv" role="37wK5m">
-                                  <ref role="3cqZAo" node="2eic0thf7Nn" resolve="newSource" />
+                                  <ref role="3cqZAo" node="2eic0thf7Nn" resolve="newDataSource" />
                                 </node>
                               </node>
                               <node concept="37vLTw" id="38LNA6Kbjtb" role="2Oq$k0">
@@ -38641,6 +38668,31 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="TDmWw" id="7l6b$KwW67W" role="TEbGg">
+                          <node concept="3cpWsn" id="7l6b$KwW67X" role="TDEfY">
+                            <property role="TrG5h" value="ex" />
+                            <node concept="3uibUv" id="7l6b$KwW6cB" role="1tU5fm">
+                              <ref role="3uigEE" to="pa15:~ModelCannotBeCreatedException" resolve="ModelCannotBeCreatedException" />
+                            </node>
+                          </node>
+                          <node concept="3clFbS" id="7l6b$KwW67Z" role="TDEfX">
+                            <node concept="34ab3g" id="7l6b$KwW6cH" role="3cqZAp">
+                              <property role="35gtTG" value="error" />
+                              <property role="34fQS0" value="true" />
+                              <node concept="3cpWs3" id="7l6b$KwW6cI" role="34bqiv">
+                                <node concept="2GrUjf" id="7l6b$KwW6cJ" role="3uHU7w">
+                                  <ref role="2Gs0qQ" node="38LNA6KbjrB" resolve="smodel" />
+                                </node>
+                                <node concept="Xl_RD" id="7l6b$KwW6cK" role="3uHU7B">
+                                  <property role="Xl_RC" value="cannot write " />
+                                </node>
+                              </node>
+                              <node concept="37vLTw" id="7l6b$KwW6cL" role="34bMjA">
+                                <ref role="3cqZAo" node="7l6b$KwW67X" resolve="ex" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="TDmWw" id="38LNA6KbjtJ" role="TEbGg">
                           <node concept="3cpWsn" id="38LNA6KbjtK" role="TDEfY">
                             <property role="TrG5h" value="ex" />
@@ -38694,20 +38746,21 @@
         <node concept="3cpWs8" id="4zbEaeUYfGv" role="3cqZAp">
           <node concept="3cpWsn" id="4zbEaeUYfGw" role="3cpWs9">
             <property role="TrG5h" value="filePerRootFactory" />
-            <node concept="2OqwBi" id="4zbEaeUYfGx" role="33vP2m">
-              <node concept="liA8E" id="4zbEaeUYfGy" role="2OqNvi">
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getFolderModelFactory(java.lang.String):jetbrains.mps.persistence.FolderModelFactory" resolve="getFolderModelFactory" />
-                <node concept="Xl_RD" id="4zbEaeUYfGz" role="37wK5m">
-                  <property role="Xl_RC" value="file-per-root" />
+            <node concept="2OqwBi" id="1lS_qvrhmrf" role="33vP2m">
+              <node concept="2YIFZM" id="1lS_qvrhmcm" role="2Oq$k0">
+                <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
+                <ref role="1Pybhc" to="ends:~ModelFactoryService" resolve="ModelFactoryService" />
+              </node>
+              <node concept="liA8E" id="1lS_qvrhno4" role="2OqNvi">
+                <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryByType(org.jetbrains.mps.openapi.persistence.ModelFactoryType):org.jetbrains.mps.openapi.persistence.ModelFactory" resolve="getFactoryByType" />
+                <node concept="Rm8GO" id="1lS_qvrhnyg" role="37wK5m">
+                  <ref role="Rm8GQ" to="pa15:~PreinstalledModelFactoryTypes.PER_ROOT_XML" resolve="PER_ROOT_XML" />
+                  <ref role="1Px2BO" to="pa15:~PreinstalledModelFactoryTypes" resolve="PreinstalledModelFactoryTypes" />
                 </node>
               </node>
-              <node concept="2YIFZM" id="4zbEaeUYfG$" role="2Oq$k0">
-                <ref role="1Pybhc" to="pa15:~PersistenceRegistry" resolve="PersistenceRegistry" />
-                <ref role="37wK5l" to="pa15:~PersistenceRegistry.getInstance():jetbrains.mps.persistence.PersistenceRegistry" resolve="getInstance" />
-              </node>
             </node>
-            <node concept="3uibUv" id="4zbEaeUYfG_" role="1tU5fm">
-              <ref role="3uigEE" to="pa15:~FolderModelFactory" resolve="FolderModelFactory" />
+            <node concept="3uibUv" id="1lS_qvrhlTj" role="1tU5fm">
+              <ref role="3uigEE" to="dush:~ModelFactory" resolve="ModelFactory" />
             </node>
           </node>
         </node>

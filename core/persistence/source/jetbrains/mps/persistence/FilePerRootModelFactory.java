@@ -21,6 +21,7 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
@@ -34,6 +35,7 @@ import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -67,10 +69,8 @@ import java.util.Map.Entry;
 public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
 
-  @NotNull private final ModelFactoryRegistry myModelFactoryRegistry;
-
-  FilePerRootModelFactory(@NotNull ModelFactoryRegistry modelFactoryRegistry) {
-    myModelFactoryRegistry = modelFactoryRegistry;
+  @Internal
+  public FilePerRootModelFactory() {
   }
 
   @Override
@@ -217,9 +217,9 @@ public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   @NotNull
   @Override
   public List<DataSourceType> getPreferredDataSourceTypes() {
-    return Arrays.asList(PreinstalledDataSourceTypes.DOT_MODEL,
+    return Arrays.asList(PreinstalledDataSourceTypes.MODEL,
                          PreinstalledDataSourceTypes.FOLDER,
-                         PreinstalledDataSourceTypes.DOT_MODEL_ROOT);
+                         PreinstalledDataSourceTypes.MODEL_ROOT);
   }
 
   public static Map<String, String> getModelHashes(@NotNull MultiStreamDataSource source) {
