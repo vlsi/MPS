@@ -88,6 +88,14 @@ public class VisibleModules {
     String targetName = moduleRef.getModuleName();
     return this.resolve(targetName, moduleRef.getModuleId().toString());
   }
+
+  public SNode resolveLanguage(SModuleReference moduleRef) {
+    return SNodeOperations.as(resolve(moduleRef), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f8L, "jetbrains.mps.build.mps.structure.BuildMps_Language"));
+  }
+  public SNode resolveGenerator(SModuleReference moduleRef) {
+    return SNodeOperations.as(resolve(moduleRef), MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4c6db07d2e56a8b4L, "jetbrains.mps.build.mps.structure.BuildMps_Generator"));
+  }
+
   public SNode resolve(String moduleName, String moduleId) {
     SNode result = null;
     if (moduleId != null) {

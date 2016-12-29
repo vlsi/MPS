@@ -714,7 +714,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build#3595702787188034882" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build#3595702787188034882" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.workflow, java.compile.jetbrains.mps.build.workflow#2769948622284786808, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build#3595702787188034882" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build#3595702787188034882" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -741,6 +741,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow#2769948622284786808" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -895,7 +896,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.mps#3189788309732033979" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.mps#3189788309732033979" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build#3595702787188034882, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps#3189788309732033979" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps#3189788309732033979" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -921,6 +922,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build#3595702787188034882" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -989,7 +991,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.mps.tests#4560297596904874237" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.mps.tests, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.mps.tests#4560297596904874237" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build#3595702787188034882, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.mps#3189788309732033979, java.compile.jetbrains.mps.build.mps.tests, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.tests#4560297596904874237" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.tests#4560297596904874237" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1015,7 +1017,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build#3595702787188034882" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps#3189788309732033979" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps.tests" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -1177,7 +1181,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.mps.runner#4173297143638823031" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.mps.runner, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.mps.runner#4173297143638823031" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build#3595702787188034882, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.mps#3189788309732033979, java.compile.jetbrains.mps.build.mps.runner, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner#4173297143638823031" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.mps.runner#4173297143638823031" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1203,7 +1207,9 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build#3595702787188034882" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps#3189788309732033979" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps.runner" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

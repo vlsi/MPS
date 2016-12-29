@@ -4,9 +4,8 @@ package jetbrains.mps.samples.Kaja;
 
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
 import jetbrains.mps.smodel.language.LanguageRuntime;
-import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
-import jetbrains.mps.generator.runtime.TemplateUtil;
+import java.util.Collection;
 import jetbrains.mps.samples.Kaja.generator.template.main.TemplateModelImpl;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -17,12 +16,10 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class Generator extends TemplateModuleBase {
   private final LanguageRuntime sourceLanguage;
-  private final Collection<String> referencedGenerators;
   private TemplateModel[] models;
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage#1129914002933");
   }
   @Override
   public String getAlias() {
@@ -58,8 +55,4 @@ public class Generator extends TemplateModuleBase {
     return sourceLanguage;
   }
 
-  @Override
-  public Collection<String> getReferencedModules() {
-    return referencedGenerators;
-  }
 }

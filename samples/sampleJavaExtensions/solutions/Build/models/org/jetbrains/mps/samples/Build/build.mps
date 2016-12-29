@@ -321,6 +321,11 @@
           <property role="TrG5h" value="org.jetbrains.mps.samples.Money#5447719361346496650" />
           <property role="3LESm3" value="f5860f3e-6f54-465b-9172-8b2a11b1bb2e" />
           <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="41_NtKZMqyh" role="3bR37C">
+            <node concept="3bR9La" id="41_NtKZMqyg" role="1SiIV1">
+              <ref role="3bR37D" to="ffeo:7YI57w6K08j" resolve="jetbrains.mps.baseLanguage#1129914002933" />
+            </node>
+          </node>
         </node>
         <node concept="1SiIV0" id="fdFyDsmKPl" role="3bR37C">
           <node concept="3bR9La" id="fdFyDsmKPm" role="1SiIV1">
