@@ -262,7 +262,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     myInProcessCheckBox.update();
   }
 
-
   public void dispose() {
     myModuleChooser.dispose();
     myModelChooser.dispose();

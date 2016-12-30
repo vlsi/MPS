@@ -31,6 +31,9 @@ import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.execution.actions.ConfigurationContext;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.Objects;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
@@ -127,8 +130,25 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
   public boolean isFromContext(@NotNull ConfigurationContext context) {
     if (context.getPsiLocation() instanceof MPSPsiElement) {
       MPSPsiElement mpsElement = (MPSPsiElement) context.getPsiLocation();
-      SNodeReference unresolvedItem = mpsElement.getUnresolvedItem(SNodeReference.class);
-      return Objects.equals(unresolvedItem, this.getNode().getNodePointer());
+      if (mpsElement != null) {
+        final SNodeReference nodePointer = mpsElement.getUnresolvedItem(SNodeReference.class);
+        final SRepository repository = mpsElement.getMPSProject().getRepository();
+        return new ModelAccessHelper(repository).runReadAction(new Computable<Boolean>() {
+          public Boolean compute() {
+            SNode source = nodePointer.resolve(repository);
+            if (!(SNodeOperations.isInstanceOf(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
+              SNode mainMethodCandidate = SNodeOperations.getNodeAncestor(source, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), true, false);
+              if (mainMethodCandidate != null && ((boolean) (Boolean) BHReflection.invoke(mainMethodCandidate, SMethodTrimmedId.create("isMainMethod", MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "hEwJkuu")))) {
+                SNode classifier = SNodeOperations.getNodeAncestor(mainMethodCandidate, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false);
+                source = classifier;
+              } else {
+                return false;
+              }
+            }
+            return Objects.equals(source.getReference(), Java_Configuration.this.getNode().getNodePointer());
+          }
+        });
+      }
     }
     return false;
   }
