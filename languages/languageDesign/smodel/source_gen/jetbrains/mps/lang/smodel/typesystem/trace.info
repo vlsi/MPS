@@ -2046,7 +2046,7 @@
     <file name="supertypesOf_SNodeListType_SubtypingRule.java">
       <node id="1179275501549" at="25,121,26,75" concept="7" />
       <node id="1179365670970" at="26,75,27,188" concept="7" />
-      <node id="1179365709343" at="28,33,29,99" concept="7" />
+      <node id="1179365709343" at="28,33,29,140" concept="7" />
       <node id="1179365768691" at="30,71,31,108" concept="2" />
       <node id="7376433222636453677" at="32,7,33,20" concept="9" />
       <node id="1179365852930" at="33,20,34,92" concept="2" />
@@ -2083,7 +2083,7 @@
       <node id="8675759500157011605" at="79,464,80,166" concept="2" />
       <node id="8675759500157011605" at="80,166,81,24" concept="8" />
       <node id="1178287491368" at="23,0,25,0" concept="1" trace="supertypesOf_SNodeListType_SubtypingRule#()V" />
-      <node id="1179365728313" at="29,99,32,7" concept="4" />
+      <node id="1179365728313" at="29,140,32,7" concept="4" />
       <node id="1178287491368" at="40,0,43,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1178287491368" at="43,0,46,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1178287491368" at="46,0,49,0" concept="6" trace="isWeak#()Z" />
@@ -2099,7 +2099,7 @@
       <scope id="1178287491368" at="43,68,44,102" />
       <scope id="1178287491368" at="46,27,47,17" />
       <scope id="1178287491368" at="23,0,25,0" />
-      <scope id="1179365728313" at="29,99,32,7">
+      <scope id="1179365728313" at="29,140,32,7">
         <var name="superConcept" id="1179365728314" />
       </scope>
       <scope id="1178287491368" at="40,0,43,0" />
@@ -2194,7 +2194,7 @@
       <node id="1179363847372" at="25,121,26,46" concept="7" />
       <node id="1179363886747" at="26,46,27,174" concept="7" />
       <node id="7376433222636454335" at="27,174,28,59" concept="9" />
-      <node id="1179363975332" at="29,225,30,92" concept="7" />
+      <node id="1179363975332" at="29,225,30,313" concept="7" />
       <node id="1179364020955" at="31,71,32,102" concept="2" />
       <node id="1179364105428" at="33,7,34,86" concept="2" />
       <node id="1178287491382" at="35,5,36,16" concept="8" />
@@ -2211,7 +2211,7 @@
       <node id="1196933487491" at="56,30,57,221" concept="2" />
       <node id="1196933487491" at="57,221,58,24" concept="8" />
       <node id="1178287491380" at="23,0,25,0" concept="1" trace="supertypesOf_SNodeType_SNodeType_SubtypingRule#()V" />
-      <node id="1179363991895" at="30,92,33,7" concept="4" />
+      <node id="1179363991895" at="30,313,33,7" concept="4" />
       <node id="1178287491380" at="38,0,41,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1178287491380" at="41,0,44,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1178287491380" at="44,0,47,0" concept="6" trace="isWeak#()Z" />
@@ -2225,7 +2225,7 @@
       <scope id="1178287491380" at="41,68,42,102" />
       <scope id="1178287491380" at="44,27,45,17" />
       <scope id="1178287491380" at="23,0,25,0" />
-      <scope id="1179363991895" at="30,92,33,7">
+      <scope id="1179363991895" at="30,313,33,7">
         <var name="superConcept" id="1179363991896" />
       </scope>
       <scope id="1178287491380" at="38,0,41,0" />
@@ -3330,7 +3330,7 @@
     <file name="supertypesOf_ConceptNodeType_ConceptNodeType_SubtypingRule.java">
       <node id="1180547887030" at="25,121,26,69" concept="7" />
       <node id="1180547887037" at="26,69,27,184" concept="7" />
-      <node id="1180547887045" at="28,206,29,92" concept="7" />
+      <node id="1180547887045" at="28,206,29,133" concept="7" />
       <node id="1180547887056" at="30,71,31,102" concept="2" />
       <node id="1180547887064" at="32,7,33,86" concept="2" />
       <node id="1180547887073" at="34,5,35,16" concept="8" />
@@ -3347,7 +3347,7 @@
       <node id="1196933487676" at="55,30,56,227" concept="2" />
       <node id="1196933487676" at="56,227,57,24" concept="8" />
       <node id="1180547887028" at="23,0,25,0" concept="1" trace="supertypesOf_ConceptNodeType_ConceptNodeType_SubtypingRule#()V" />
-      <node id="1180547887052" at="29,92,32,7" concept="4" />
+      <node id="1180547887052" at="29,133,32,7" concept="4" />
       <node id="1180547887028" at="37,0,40,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1180547887028" at="40,0,43,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="1180547887028" at="43,0,46,0" concept="6" trace="isWeak#()Z" />
@@ -3361,7 +3361,7 @@
       <scope id="1180547887028" at="40,68,41,102" />
       <scope id="1180547887028" at="43,27,44,17" />
       <scope id="1180547887028" at="23,0,25,0" />
-      <scope id="1180547887052" at="29,92,32,7">
+      <scope id="1180547887052" at="29,133,32,7">
         <var name="superConcept" id="1180547887053" />
       </scope>
       <scope id="1180547887028" at="37,0,40,0" />
@@ -9464,7 +9464,7 @@
     <file name="supertypesOf_SConceptType_SConceptType_SubtypingRule.java">
       <node id="6677504323281699325" at="25,121,26,69" concept="7" />
       <node id="6677504323281699331" at="26,69,27,194" concept="7" />
-      <node id="6677504323281699339" at="28,206,29,92" concept="7" />
+      <node id="6677504323281699339" at="28,206,29,133" concept="7" />
       <node id="6677504323281699350" at="30,71,31,102" concept="2" />
       <node id="6677504323281699358" at="32,7,33,86" concept="2" />
       <node id="6677504323281699368" at="34,5,35,16" concept="8" />
@@ -9481,7 +9481,7 @@
       <node id="6677504323281699362" at="55,30,56,229" concept="2" />
       <node id="6677504323281699362" at="56,229,57,24" concept="8" />
       <node id="6677504323281699323" at="23,0,25,0" concept="1" trace="supertypesOf_SConceptType_SConceptType_SubtypingRule#()V" />
-      <node id="6677504323281699346" at="29,92,32,7" concept="4" />
+      <node id="6677504323281699346" at="29,133,32,7" concept="4" />
       <node id="6677504323281699323" at="37,0,40,0" concept="6" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="6677504323281699323" at="40,0,43,0" concept="6" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
       <node id="6677504323281699323" at="43,0,46,0" concept="6" trace="isWeak#()Z" />
@@ -9495,7 +9495,7 @@
       <scope id="6677504323281699323" at="40,68,41,102" />
       <scope id="6677504323281699323" at="43,27,44,17" />
       <scope id="6677504323281699323" at="23,0,25,0" />
-      <scope id="6677504323281699346" at="29,92,32,7">
+      <scope id="6677504323281699346" at="29,133,32,7">
         <var name="superConcept" id="6677504323281699347" />
       </scope>
       <scope id="6677504323281699323" at="37,0,40,0" />

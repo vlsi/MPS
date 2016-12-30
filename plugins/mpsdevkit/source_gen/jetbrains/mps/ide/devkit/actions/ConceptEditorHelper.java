@@ -35,9 +35,7 @@ public class ConceptEditorHelper {
       if (!(SConceptOperations.isSubConceptOf(SNodeOperations.asSConcept(c), MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect")))) {
         continue;
       }
-
-      // todo rewrite canBeAppliedToNode 
-      if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept((SNode) c.getDeclarationNode()), SMethodTrimmedId.create("canBeAppliedToNode", null, "7IH442d05tK"), node))) {
+      if (((boolean) (Boolean) BHReflection.invoke(SNodeOperations.asSConcept(SNodeOperations.castConcept(c, MetaAdapterFactory.getInterfaceConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x24614259e94f0c84L, "jetbrains.mps.lang.structure.structure.IConceptAspect"))), SMethodTrimmedId.create("canBeAppliedToNode", null, "7IH442d05tK"), node))) {
         ListSequence.fromList(result).addElement(((SConcept) c));
       }
     }
