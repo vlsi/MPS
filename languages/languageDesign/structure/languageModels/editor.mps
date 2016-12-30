@@ -558,7 +558,6 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
-      <concept id="1179350041460" name="jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts" flags="nn" index="2mJo9A" />
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
@@ -649,7 +648,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -6835,13 +6833,17 @@
                 <node concept="3cpWsn" id="1wEcoXjJ81P" role="3cpWs9">
                   <property role="TrG5h" value="directSupers" />
                   <node concept="_YKpA" id="1wEcoXjJ81Q" role="1tU5fm">
-                    <node concept="3THzug" id="1wEcoXjJ81R" role="_ZDj9" />
+                    <node concept="3Tqbb2" id="2raaoKmZ87U" role="_ZDj9">
+                      <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                    </node>
                   </node>
                   <node concept="2OqwBi" id="1wEcoXjJ81S" role="33vP2m">
                     <node concept="37vLTw" id="1wEcoXjJ81T" role="2Oq$k0">
                       <ref role="3cqZAo" node="1wEcoXjJ81G" resolve="enclosingConcept" />
                     </node>
-                    <node concept="2mJo9A" id="1wEcoXjJ81U" role="2OqNvi" />
+                    <node concept="2qgKlT" id="2raaoKmZcSD" role="2OqNvi">
+                      <ref role="37wK5l" to="tpcn:hMuxyK2" resolve="getImmediateSuperconcepts" />
+                    </node>
                   </node>
                 </node>
               </node>
