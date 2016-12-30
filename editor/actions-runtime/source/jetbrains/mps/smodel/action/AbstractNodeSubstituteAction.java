@@ -117,8 +117,10 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
 
   @Override
   public boolean canSubstituteStrictly(String pattern) {
-    if (pattern == null || getMatchingText(pattern) == null) return false;
-    return getMatchingText(pattern).equals(pattern);
+    if (pattern == null) return false;
+    String matchingText = getMatchingText(pattern);
+    if (matchingText == null) return false;
+    return matchingText.equalsIgnoreCase(pattern);
   }
 
   /**

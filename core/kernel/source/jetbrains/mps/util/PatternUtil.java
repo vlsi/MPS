@@ -19,6 +19,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * evgeny, 11/18/11
@@ -38,8 +39,16 @@ public class PatternUtil {
     if (matchingText == null || matchingText.length() == 0) {
       return false;
     }
-    return matchingText.charAt(0) == pattern.charAt(0) &&
-        (matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*"));
+    return (matchingText.charAt(0) == pattern.charAt(0)
+        || Character.toLowerCase(matchingText.charAt(0)) == Character.toLowerCase(pattern.charAt(0))) &&
+        (matchingText.regionMatches(true, 0, pattern, 0, pattern.length()) || matchesIgnoreCase(pattern, matchingText));
+  }
+
+  private static boolean matchesIgnoreCase(String pattern, String matchingText) {
+    StringBuilder exactItemPatternBuilder = PatternUtil.getExactItemPatternBuilder(pattern, false, false);
+    exactItemPatternBuilder.append(".*");
+    String regex = exactItemPatternBuilder.toString();
+    return Pattern.compile(regex, Pattern.CASE_INSENSITIVE).matcher(matchingText).matches();
   }
 
   public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots, boolean useStarAndQuestionMark) {

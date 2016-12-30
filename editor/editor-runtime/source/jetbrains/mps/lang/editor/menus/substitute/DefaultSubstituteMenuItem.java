@@ -91,7 +91,7 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
 
   @Override
   public boolean canExecuteStrictly(@NotNull String pattern) {
-    return pattern.equals(getMatchingText(pattern));
+    return pattern.equalsIgnoreCase(getMatchingText(pattern));
   }
 
   @Nullable
