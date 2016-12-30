@@ -4,20 +4,16 @@ package jetbrains.mps.testbench.junit.suites;
 
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.Environment;
-import java.net.URLClassLoader;
 import java.util.List;
 import org.junit.runner.Runner;
 import org.junit.runners.model.RunnerBuilder;
 import org.junit.runners.model.InitializationError;
 import java.util.Collections;
 import jetbrains.mps.testbench.junit.runners.FromModulesListProjectStrategy;
-import java.net.URL;
-import java.util.ArrayList;
-import java.io.File;
-import java.net.MalformedURLException;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.io.File;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import java.util.Map;
 import java.util.LinkedHashMap;
@@ -25,8 +21,11 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.module.ReloadableModule;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,7 +34,6 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import jetbrains.mps.testbench.junit.runners.DelegatingRunner;
-import org.apache.log4j.Level;
 
 /**
  * Currently used for ant tests
@@ -47,7 +45,6 @@ public class MpsTestsSuite extends BaseMpsSuite {
 
   private final Project myContextProject;
   private final Environment myEnvironment;
-  private final URLClassLoader myClassLoader;
   private final List<Runner> myChildren;
 
   public MpsTestsSuite(Class<?> klass, RunnerBuilder builder) throws InitializationError {
@@ -55,21 +52,7 @@ public class MpsTestsSuite extends BaseMpsSuite {
     // todo: read config from annotations before start (project / ?) 
     myEnvironment = initIdeaEnvironment();
     myContextProject = myEnvironment.createProject(new FromModulesListProjectStrategy());
-    myClassLoader = createClassLoader();
     myChildren = createChildRunners(myContextProject, builder);
-  }
-
-  private URLClassLoader createClassLoader() {
-    List<URL> urls = new ArrayList<URL>();
-    for (String modulePath : System.getProperty(FromModulesListProjectStrategy.MODULES_PATHS_PROPERTY).split(File.pathSeparator)) {
-      try {
-        urls.add(new URL("file:///" + modulePath));
-      } catch (MalformedURLException e) {
-        e.printStackTrace();
-      }
-    }
-    URLClassLoader cl = new URLClassLoader(urls.toArray(new URL[urls.size()]), getClass().getClassLoader());
-    return cl;
   }
 
   public Environment initIdeaEnvironment() {
@@ -126,11 +109,18 @@ public class MpsTestsSuite extends BaseMpsSuite {
     project.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         for (SModule module : ListSequence.fromList(myContextProject.getProjectModules())) {
+          ClassLoader moduleCL = ((ReloadableModule) module).getClassLoader();
+          if (moduleCL == null) {
+            if (LOG.isEnabledFor(Level.ERROR)) {
+              LOG.error("Classloader is not found for the " + module);
+            }
+            continue;
+          }
           for (SModel model : Sequence.fromIterable(module.getModels())) {
             for (SNode testCase : ListSequence.fromList(SModelOperations.roots(((SModel) model), MetaAdapterFactory.getInterfaceConcept(0xf61473f9130f42f6L, 0xb98d6c438812c2f6L, 0x11b2709bd56L, "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")))) {
               String testClassName = ((String) BHReflection.invoke(testCase, SMethodTrimmedId.create("getClassName", null, "hGBnqtL")));
               try {
-                Class<?> testClass = myClassLoader.loadClass(testClassName);
+                Class<?> testClass = moduleCL.loadClass(testClassName);
                 result.add(new DelegatingRunner(builder, testClass));
               } catch (ClassNotFoundException e) {
                 if (LOG.isEnabledFor(Level.WARN)) {

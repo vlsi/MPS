@@ -2,14 +2,14 @@
 <model ref="r:984811b0-078d-45d7-bf58-fa501204c2fc(jetbrains.mps.testbench.junit.suites)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="oh7r" ref="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)" />
@@ -54,6 +54,7 @@
     <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
     <import index="vqh0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.make(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
+    <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -255,13 +256,6 @@
       <concept id="1214918800624" name="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression" flags="nn" index="3uNrnE" />
       <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1081855346303" name="jetbrains.mps.baseLanguage.structure.BreakStatement" flags="nn" index="3zACq4" />
-      <concept id="1184950988562" name="jetbrains.mps.baseLanguage.structure.ArrayCreator" flags="nn" index="3$_iS1">
-        <child id="1184951007469" name="componentType" index="3$_nBY" />
-        <child id="1184952969026" name="dimensionExpression" index="3$GQph" />
-      </concept>
-      <concept id="1184952934362" name="jetbrains.mps.baseLanguage.structure.DimensionExpression" flags="nn" index="3$GHV9">
-        <child id="1184953288404" name="expression" index="3$I4v7" />
-      </concept>
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -5197,16 +5191,6 @@
         <ref role="3uigEE" to="79ha:HKKzfMjqRV" resolve="Environment" />
       </node>
     </node>
-    <node concept="312cEg" id="ECLZhkn50$" role="jymVt">
-      <property role="34CwA1" value="false" />
-      <property role="eg7rD" value="false" />
-      <property role="TrG5h" value="myClassLoader" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="ECLZhkn3mQ" role="1B3o_S" />
-      <node concept="3uibUv" id="ECLZhkn4Z_" role="1tU5fm">
-        <ref role="3uigEE" to="zf81:~URLClassLoader" resolve="URLClassLoader" />
-      </node>
-    </node>
     <node concept="312cEg" id="1CBc8rDqhjp" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -5287,16 +5271,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="ECLZhkn5qa" role="3cqZAp">
-          <node concept="37vLTI" id="ECLZhkn5zn" role="3clFbG">
-            <node concept="1rXfSq" id="ECLZhkngpd" role="37vLTx">
-              <ref role="37wK5l" node="ECLZhkn8PA" resolve="createClassLoader" />
-            </node>
-            <node concept="37vLTw" id="ECLZhkn5q8" role="37vLTJ">
-              <ref role="3cqZAo" node="ECLZhkn50$" resolve="myClassLoader" />
-            </node>
-          </node>
-        </node>
         <node concept="3clFbF" id="1CBc8rDqix_" role="3cqZAp">
           <node concept="37vLTI" id="1CBc8rDqjec" role="3clFbG">
             <node concept="37vLTw" id="1CBc8rDqix$" role="37vLTJ">
@@ -5316,164 +5290,6 @@
       </node>
       <node concept="3uibUv" id="1CBc8rDnd82" role="Sfmx6">
         <ref role="3uigEE" to="7cms:~InitializationError" resolve="InitializationError" />
-      </node>
-    </node>
-    <node concept="2tJIrI" id="ECLZhknaP6" role="jymVt" />
-    <node concept="3clFb_" id="ECLZhkn8PA" role="jymVt">
-      <property role="TrG5h" value="createClassLoader" />
-      <property role="DiZV1" value="false" />
-      <property role="od$2w" value="false" />
-      <node concept="3clFbS" id="ECLZhkn8PB" role="3clF47">
-        <node concept="3cpWs8" id="ECLZhkn8PD" role="3cqZAp">
-          <node concept="3cpWsn" id="ECLZhkn8PC" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="urls" />
-            <node concept="3uibUv" id="ECLZhkn8PE" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="ECLZhkn8PF" role="11_B2D">
-                <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-              </node>
-            </node>
-            <node concept="2ShNRf" id="ECLZhkn8Qr" role="33vP2m">
-              <node concept="1pGfFk" id="ECLZhkn8Qs" role="2ShVmc">
-                <ref role="37wK5l" to="33ny:~ArrayList.&lt;init&gt;()" resolve="ArrayList" />
-                <node concept="3uibUv" id="ECLZhkn8PH" role="1pMfVU">
-                  <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1DcWWT" id="ECLZhkn8PI" role="3cqZAp">
-          <node concept="2OqwBi" id="ECLZhkn8Q5" role="1DdaDG">
-            <node concept="2YIFZM" id="ECLZhkn8QR" role="2Oq$k0">
-              <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-              <ref role="37wK5l" to="wyt6:~System.getProperty(java.lang.String):java.lang.String" resolve="getProperty" />
-              <node concept="10M0yZ" id="ECLZhkngea" role="37wK5m">
-                <ref role="1PxDUh" to="oh7r:5A5jZrz4rxb" resolve="FromModulesListProjectStrategy" />
-                <ref role="3cqZAo" to="oh7r:6yiPRtqjGE9" resolve="MODULES_PATHS_PROPERTY" />
-              </node>
-            </node>
-            <node concept="liA8E" id="ECLZhkn8Q8" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.split(java.lang.String):java.lang.String[]" resolve="split" />
-              <node concept="10M0yZ" id="ECLZhkn942" role="37wK5m">
-                <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                <ref role="3cqZAo" to="guwi:~File.pathSeparator" resolve="pathSeparator" />
-              </node>
-            </node>
-          </node>
-          <node concept="3cpWsn" id="ECLZhkn8Q2" role="1Duv9x">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="modulePath" />
-            <node concept="17QB3L" id="ECLZhkngj3" role="1tU5fm" />
-          </node>
-          <node concept="3clFbS" id="ECLZhkn8PK" role="2LFqv$">
-            <node concept="SfApY" id="ECLZhkn8Q0" role="3cqZAp">
-              <node concept="TDmWw" id="ECLZhkn8Q1" role="TEbGg">
-                <node concept="3clFbS" id="ECLZhkn8PX" role="TDEfX">
-                  <node concept="3clFbF" id="ECLZhkn8PY" role="3cqZAp">
-                    <node concept="2OqwBi" id="ECLZhkn8RI" role="3clFbG">
-                      <node concept="37vLTw" id="ECLZhkn8RH" role="2Oq$k0">
-                        <ref role="3cqZAo" node="ECLZhkn8PT" resolve="e" />
-                      </node>
-                      <node concept="liA8E" id="ECLZhkn8RJ" role="2OqNvi">
-                        <ref role="37wK5l" to="wyt6:~Throwable.printStackTrace():void" resolve="printStackTrace" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3cpWsn" id="ECLZhkn8PT" role="TDEfY">
-                  <property role="3TUv4t" value="false" />
-                  <property role="TrG5h" value="e" />
-                  <node concept="3uibUv" id="ECLZhkn8PV" role="1tU5fm">
-                    <ref role="3uigEE" to="zf81:~MalformedURLException" resolve="MalformedURLException" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="ECLZhkn8PM" role="SfCbr">
-                <node concept="3clFbF" id="ECLZhkn8PN" role="3cqZAp">
-                  <node concept="2OqwBi" id="ECLZhkn8Sb" role="3clFbG">
-                    <node concept="37vLTw" id="ECLZhkn8Sa" role="2Oq$k0">
-                      <ref role="3cqZAo" node="ECLZhkn8PC" resolve="urls" />
-                    </node>
-                    <node concept="liA8E" id="ECLZhkn8Sc" role="2OqNvi">
-                      <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                      <node concept="2ShNRf" id="ECLZhkn8Sd" role="37wK5m">
-                        <node concept="1pGfFk" id="ECLZhkn8Se" role="2ShVmc">
-                          <ref role="37wK5l" to="zf81:~URL.&lt;init&gt;(java.lang.String)" resolve="URL" />
-                          <node concept="3cpWs3" id="ECLZhkn8PQ" role="37wK5m">
-                            <node concept="Xl_RD" id="ECLZhkn8PR" role="3uHU7B">
-                              <property role="Xl_RC" value="file:///" />
-                            </node>
-                            <node concept="37vLTw" id="ECLZhkn8PS" role="3uHU7w">
-                              <ref role="3cqZAo" node="ECLZhkn8Q2" resolve="modulePath" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="ECLZhkn8Qb" role="3cqZAp">
-          <node concept="3cpWsn" id="ECLZhkn8Qa" role="3cpWs9">
-            <property role="3TUv4t" value="false" />
-            <property role="TrG5h" value="cl" />
-            <node concept="3uibUv" id="ECLZhkn8Qc" role="1tU5fm">
-              <ref role="3uigEE" to="zf81:~URLClassLoader" resolve="URLClassLoader" />
-            </node>
-            <node concept="2ShNRf" id="ECLZhkn8Sf" role="33vP2m">
-              <node concept="1pGfFk" id="ECLZhkn8Sg" role="2ShVmc">
-                <ref role="37wK5l" to="zf81:~URLClassLoader.&lt;init&gt;(java.net.URL[],java.lang.ClassLoader)" resolve="URLClassLoader" />
-                <node concept="2OqwBi" id="ECLZhkn8SG" role="37wK5m">
-                  <node concept="37vLTw" id="ECLZhkn8SF" role="2Oq$k0">
-                    <ref role="3cqZAo" node="ECLZhkn8PC" resolve="urls" />
-                  </node>
-                  <node concept="liA8E" id="ECLZhkn8SH" role="2OqNvi">
-                    <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
-                    <node concept="2ShNRf" id="ECLZhkn8Qj" role="37wK5m">
-                      <node concept="3$_iS1" id="ECLZhkn8Qh" role="2ShVmc">
-                        <node concept="3$GHV9" id="ECLZhkn8Qi" role="3$GQph">
-                          <node concept="2OqwBi" id="ECLZhkn8T9" role="3$I4v7">
-                            <node concept="37vLTw" id="ECLZhkn8T8" role="2Oq$k0">
-                              <ref role="3cqZAo" node="ECLZhkn8PC" resolve="urls" />
-                            </node>
-                            <node concept="liA8E" id="ECLZhkn8Ta" role="2OqNvi">
-                              <ref role="37wK5l" to="33ny:~List.size():int" resolve="size" />
-                            </node>
-                          </node>
-                        </node>
-                        <node concept="3uibUv" id="ECLZhkn8Qf" role="3$_nBY">
-                          <ref role="3uigEE" to="zf81:~URL" resolve="URL" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="2OqwBi" id="ECLZhkn8Qk" role="37wK5m">
-                  <node concept="1rXfSq" id="ECLZhkn8Ql" role="2Oq$k0">
-                    <ref role="37wK5l" to="wyt6:~Object.getClass():java.lang.Class" resolve="getClass" />
-                  </node>
-                  <node concept="liA8E" id="ECLZhkn8Qm" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~Class.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs6" id="ECLZhkn8Qn" role="3cqZAp">
-          <node concept="37vLTw" id="ECLZhkn8Qo" role="3cqZAk">
-            <ref role="3cqZAo" node="ECLZhkn8Qa" resolve="cl" />
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm6S6" id="ECLZhkn8Qp" role="1B3o_S" />
-      <node concept="3uibUv" id="ECLZhkn8Qq" role="3clF45">
-        <ref role="3uigEE" to="zf81:~URLClassLoader" resolve="URLClassLoader" />
       </node>
     </node>
     <node concept="2tJIrI" id="ECLZhkn5Ak" role="jymVt" />
@@ -5993,6 +5809,52 @@
                       </node>
                     </node>
                     <node concept="3clFbS" id="1CBc8rDv1vi" role="2LFqv$">
+                      <node concept="3cpWs8" id="4oW2E9aSh9C" role="3cqZAp">
+                        <node concept="3cpWsn" id="4oW2E9aSh9B" role="3cpWs9">
+                          <property role="3TUv4t" value="false" />
+                          <property role="TrG5h" value="moduleCL" />
+                          <node concept="3uibUv" id="4oW2E9aSh9D" role="1tU5fm">
+                            <ref role="3uigEE" to="wyt6:~ClassLoader" resolve="ClassLoader" />
+                          </node>
+                          <node concept="2OqwBi" id="4oW2E9aSh9E" role="33vP2m">
+                            <node concept="1eOMI4" id="4oW2E9aSh9I" role="2Oq$k0">
+                              <node concept="10QFUN" id="4oW2E9aSh9F" role="1eOMHV">
+                                <node concept="2GrUjf" id="4oW2E9aSn7I" role="10QFUP">
+                                  <ref role="2Gs0qQ" node="1CBc8rDv1ve" resolve="module" />
+                                </node>
+                                <node concept="3uibUv" id="4oW2E9aSh9H" role="10QFUM">
+                                  <ref role="3uigEE" to="j8aq:~ReloadableModule" resolve="ReloadableModule" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="liA8E" id="4oW2E9aSh9J" role="2OqNvi">
+                              <ref role="37wK5l" to="j8aq:~ReloadableModule.getClassLoader():java.lang.ClassLoader" resolve="getClassLoader" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="4oW2E9aSh9K" role="3cqZAp">
+                        <node concept="3clFbC" id="4oW2E9aSh9L" role="3clFbw">
+                          <node concept="37vLTw" id="4oW2E9aSh9M" role="3uHU7B">
+                            <ref role="3cqZAo" node="4oW2E9aSh9B" resolve="moduleCL" />
+                          </node>
+                          <node concept="10Nm6u" id="4oW2E9aSh9N" role="3uHU7w" />
+                        </node>
+                        <node concept="3clFbS" id="4oW2E9aSh9P" role="3clFbx">
+                          <node concept="34ab3g" id="4oW2E9aSiNc" role="3cqZAp">
+                            <property role="35gtTG" value="error" />
+                            <node concept="3cpWs3" id="4oW2E9aSh9S" role="34bqiv">
+                              <node concept="Xl_RD" id="4oW2E9aSh9T" role="3uHU7B">
+                                <property role="Xl_RC" value="Classloader is not found for the " />
+                              </node>
+                              <node concept="2GrUjf" id="4oW2E9aSugV" role="3uHU7w">
+                                <ref role="2Gs0qQ" node="1CBc8rDv1ve" resolve="module" />
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3N13vt" id="4oW2E9aSh9V" role="3cqZAp" />
+                        </node>
+                      </node>
                       <node concept="2Gpval" id="1CBc8rDv53K" role="3cqZAp">
                         <node concept="2GrKxI" id="1CBc8rDv53L" role="2Gsz3X">
                           <property role="TrG5h" value="model" />
@@ -6035,8 +5897,8 @@
                                         <node concept="3qTvmN" id="ECLZhkngL2" role="11_B2D" />
                                       </node>
                                       <node concept="2OqwBi" id="ECLZhknhng" role="33vP2m">
-                                        <node concept="37vLTw" id="ECLZhknhdI" role="2Oq$k0">
-                                          <ref role="3cqZAo" node="ECLZhkn50$" resolve="myClassLoader" />
+                                        <node concept="37vLTw" id="4oW2E9aSuCj" role="2Oq$k0">
+                                          <ref role="3cqZAo" node="4oW2E9aSh9B" resolve="moduleCL" />
                                         </node>
                                         <node concept="liA8E" id="ECLZhknh_7" role="2OqNvi">
                                           <ref role="37wK5l" to="wyt6:~ClassLoader.loadClass(java.lang.String):java.lang.Class" resolve="loadClass" />

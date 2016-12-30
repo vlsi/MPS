@@ -29,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public enum JUnitRunTypes {
   PROJECT() {
@@ -87,7 +88,7 @@ public enum JUnitRunTypes {
   MODEL() {
     @Override
     protected List<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, MPSProject project, ProgressMonitor monitor) {
-      SModel model = getModel(project, configuration.getModel());
+      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
       if (model == null) {
         return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
       }
@@ -97,7 +98,7 @@ public enum JUnitRunTypes {
       if (configuration.getModel() == null) {
         return "Model is not selected.";
       }
-      SModel model = getModel(project, configuration.getModel());
+      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
       if (model == null) {
         return "Could not find model " + configuration.getModel();
       }
@@ -111,7 +112,7 @@ public enum JUnitRunTypes {
       return null;
     }
     public boolean hasTests(JUnitSettings_Configuration configuration, MPSProject project) {
-      SModel model = getModel(project, configuration.getModel());
+      SModel model = getModel(project, configuration.getModel(), configuration.getModule());
       if (model == null) {
         return false;
       }
@@ -210,11 +211,23 @@ public enum JUnitRunTypes {
   }
 
   @Nullable
-  private static SModel getModel(Project mpsProject, @Nls String modelName) {
+  private static SModel getModel(Project mpsProject, @Nls String modelName, String moduleName) {
     if ((modelName == null || modelName.length() == 0)) {
       return null;
     }
-    return new ModuleRepositoryFacade(mpsProject).getModelByName(modelName);
+    if ((moduleName == null || moduleName.length() == 0)) {
+      return new ModuleRepositoryFacade(mpsProject).getModelByName(modelName);
+    }
+    SModule module = getModule(mpsProject, moduleName);
+    if (module == null) {
+      return null;
+    }
+    for (SModel model : Sequence.fromIterable(module.getModels())) {
+      if (model.getName().getValue().equals(modelName)) {
+        return model;
+      }
+    }
+    return null;
   }
 
   @Nullable

@@ -32,6 +32,9 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * MPS realisation of ClassLoader which uses non-standard way of class loading delegation.
@@ -53,7 +56,8 @@ public class ModuleClassLoader extends ClassLoader {
 
   private volatile Collection<ClassLoader> myDependenciesClassLoaders;
 
-  private final Map<String, Class> myClasses = new HashMap<>(); // cache for all initiated classes by this CL.
+  // null values are not allowed => using <code>Optional</code>
+  private final ConcurrentMap<String, Optional<Class<?>>> myClasses = new ConcurrentHashMap<>(); // cache for all initiated classes by this CL.
 
   private boolean myDisposed;
 
@@ -108,22 +112,37 @@ public class ModuleClassLoader extends ClassLoader {
 
     synchronized (this) {
       aClass = loadFromSelf(fqName);
-
+      if (aClass != null) {
+        return aClass;
+      }
       try {
-        if (aClass != null) return aClass;
         if (!onlyFromSelf) {
           aClass = loadFromDeps(fqName);
         }
-
-        if (aClass == null) throw createCLNFException(fqName);
-
-        if (resolve) resolveClass(aClass);
-
-        return aClass;
       } finally {
-        myClasses.put(fqName, aClass);
+        aClass = recordClass(fqName, aClass);
+      }
+      if (aClass == null) throw createCLNFException(fqName);
+
+      if (resolve) resolveClass(aClass);
+      return aClass;
+    }
+  }
+
+  /**
+   * @return new class if there was no same class already defined
+   *         or an old class if there is another definition already recorded into the map.
+   */
+  private Class<?> recordClass(String fqName, Class<?> aClass) {
+    Optional<Class<?>> previousValue =  myClasses.putIfAbsent(fqName, Optional.ofNullable(aClass));
+    if (previousValue != null) { // class has been already defined in a concurrent thread
+      if (previousValue.isPresent()) {
+        aClass = previousValue.get();
+      } else {
+        aClass = null;
       }
     }
+    return aClass;
   }
 
   private ModuleClassNotFoundException createCLNFException(String name) {
@@ -138,12 +157,17 @@ public class ModuleClassLoader extends ClassLoader {
    */
   private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
     if (!myClasses.containsKey(name)) return null;
-    Class aClass = myClasses.get(name);
-    if (aClass == null) throw createCLNFException(name);
-    return aClass;
+    Optional<Class<?>> optionalClass = myClasses.get(name);
+    if (optionalClass == null || !optionalClass.isPresent()) throw createCLNFException(name);
+    return optionalClass.get();
   }
 
-  private synchronized Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
+  /**
+   * Might be invoked from multiple threads!
+   * Cannot be synchronized because of two cross-dependent class loaders.
+   * Using concurrent map {@link #myClasses} instead.
+   */
+  private Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
     Class<?> aClass = getClassFromCache(fqName);
     if (aClass != null) {
       return aClass;
@@ -156,8 +180,7 @@ public class ModuleClassLoader extends ClassLoader {
         definePackage(pack, null, null, null, null, null, null, null);
       }
       aClass = defineClass(fqName, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
-      myClasses.put(fqName, aClass);
-      return aClass;
+      return recordClass(fqName, aClass);
     }
     return null;
   }
