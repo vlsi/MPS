@@ -40,6 +40,7 @@ import org.junit.runners.model.RunnerBuilder;
     jetbrains.mps.diff.DiffTestCase.class,
     jetbrains.mps.ide.blame.command.YouTrackURLTest.class,
     jetbrains.mps.compile.EclipseJavaCompilerTest.class,
+    jetbrains.mps.classloading.ModuleClassLoaderTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.classloading.ProjectMPSClassLoadingTest.class,
     jetbrains.mps.classloading.ModulesReloadTest.class,

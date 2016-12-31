@@ -36,6 +36,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.stream.Collectors;
 
 /**
  * Note:
@@ -152,8 +153,11 @@ class MPSClassLoadersRegistry {
   private ModuleClassLoader createModuleClassLoader(@NotNull ReloadableModule module) {
     myRepository.getModelAccess().checkReadAccess(); // need for new ModuleClassLoader()
     LOG.debug("Creating ModuleClassLoader for " + module);
-    Collection<? extends ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
-    final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(myClHolder, module, deps);
+    Collection<ReloadableModule> deps = myModulesWatcher.getResolvedDependencies(Collections.singletonList(module));
+    final ModuleClassLoaderSupport support = ModuleClassLoaderSupport.create(module, () -> deps.stream()
+                                                                                               .map(myClHolder::getClassLoader)
+                                                                                               .distinct()
+                                                                                               .collect(Collectors.toList()));
     return new ModuleClassLoader(support);
   }
 
