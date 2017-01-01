@@ -23,27 +23,33 @@ import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.annotations.NotNull;
 
 import java.net.URL;
-import java.util.Collection;
 import java.util.Enumeration;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.function.Supplier;
 
 public class ModuleClassLoaderSupport {
   private final ReloadableModule myModule;
   private final IClassPathItem myClassPathItem;
-  private final Collection<? extends ReloadableModule> myCompileDependencies;
-  private final ClassLoadersHolder myHolder;
+  private volatile List<ClassLoader> myCompileDependencies;
+  private final Supplier<List<ClassLoader>> myDependenciesSupplier;
 
-  private ModuleClassLoaderSupport(ClassLoadersHolder holder, @NotNull ReloadableModule module,
-      Collection<? extends ReloadableModule> compileDependencies) {
-    assert canCreate(module);
-    myHolder = holder;
-    myModule = module;
+  private ModuleClassLoaderSupport(@NotNull ReloadableModule module,
+                                   Supplier<List<ClassLoader>> dependencySupplier) {
+    this(module, dependencySupplier, calcClassPath(module));
+  }
+
+  private static IClassPathItem calcClassPath(@NotNull ReloadableModule module) {
     JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
     //noinspection ConstantConditions
-    myClassPathItem = JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
-    myCompileDependencies = compileDependencies;
-    myCompileDependencies.remove(myModule);
+    return JavaModuleOperations.createClassPathItem(facet.getClassPath(), ModuleClassLoaderSupport.class.getName());
+  }
+
+  ModuleClassLoaderSupport(@NotNull ReloadableModule module,
+                           Supplier<List<ClassLoader>> dependencySupplier,
+                           IClassPathItem classPathItem) {
+    myModule = module;
+    myDependenciesSupplier = dependencySupplier;
+    myClassPathItem = classPathItem;
   }
 
   /**
@@ -58,17 +64,13 @@ public class ModuleClassLoaderSupport {
     return facet != null && facet.isCompileInMps() && module.getFacet(CustomClassLoadingFacet.class) == null;
   }
 
-  public static ModuleClassLoaderSupport create(ClassLoadersHolder holder, @NotNull ReloadableModule module,
-      Collection<? extends ReloadableModule> compileDependencies) {
-    return new ModuleClassLoaderSupport(holder, module, compileDependencies);
+  public static ModuleClassLoaderSupport create(@NotNull ReloadableModule module,
+                                                Supplier<List<ClassLoader>> dependencySupplier) {
+    return new ModuleClassLoaderSupport(module, dependencySupplier);
   }
 
   public ReloadableModule getModule() {
     return myModule;
-  }
-
-  public boolean willLoad() {
-    return myModule.willLoad();
   }
 
   public boolean canFindClass(String name) {
@@ -76,17 +78,14 @@ public class ModuleClassLoaderSupport {
   }
 
   public ClassBytes findClassBytes(String name) throws ModuleIsNotLoadableException {
-    checkWillLoad();
     return myClassPathItem.getClassBytes(name);
   }
 
   public URL findResource(String name) throws ModuleIsNotLoadableException {
-    checkWillLoad();
     return myClassPathItem.getResource(name);
   }
 
   public Enumeration<URL> findResources(String name) throws ModuleIsNotLoadableException {
-    checkWillLoad();
     return myClassPathItem.getResources(name);
   }
 
@@ -94,18 +93,9 @@ public class ModuleClassLoaderSupport {
    * important to have the calculation here: at the time of construction the classloaders might be not available yet
    */
   List<ClassLoader> getCompileDependencies() {
-    return myCompileDependencies.stream().map(myHolder::getClassLoader).distinct().collect(Collectors.toList());
+    if (myCompileDependencies == null) {
+      myCompileDependencies = myDependenciesSupplier.get();
+    }
+    return myCompileDependencies;
   }
-
-  /**
-   * TODO the ModuleIsNotLoadableException will be enabled after 3.2 release
-   */
-  void checkWillLoad() throws ModuleIsNotLoadableException {
-//    if (!willLoad()) {
-//      throw new ModuleIsNotLoadableException(getModule(), "The solution " + getModule() +
-//          " is asked for classloader though it does not possess a valid class loading facet.\n" +
-//          "Try changing solution kind in the module properties dialog or adding a new idea plugin facet for this module.");
-//    }
-  }
-
 }

@@ -40,7 +40,7 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
   private final static Logger LOG = LogManager.getLogger(DeploymentConcurrencyTest.class);
 
   private final static int nThreads = 10;
-  private final static long timeOut = 10000;
+  private final static long TIME_OUT_MS = 10000;
   private Environment myEnvironment;
 
   private Environment createEnvironment() {
@@ -84,11 +84,11 @@ public class DeploymentConcurrencyTest extends BaseMpsTest {
       });
     }
     try {
-      pool.invokeAll(taskList, timeOut, TimeUnit.MILLISECONDS);
+      pool.invokeAll(taskList, TIME_OUT_MS, TimeUnit.MILLISECONDS);
+      pool.shutdownNow();
     } catch (InterruptedException e) {
       e.printStackTrace();
       Assert.fail();
     }
-    pool.shutdownNow();
   }
 }

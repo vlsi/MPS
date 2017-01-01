@@ -1,0 +1,110 @@
+/*
+ * Copyright 2003-2016 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package jetbrains.mps.classloading;
+
+import jetbrains.mps.module.ReloadableModule;
+import jetbrains.mps.module.SDependencyImpl;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Deque;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.LinkedBlockingDeque;
+
+/**
+ * @author apyshkin
+ * @since 31/12/16
+ */
+final class CrossDependentTaskGenerator1 extends TaskGenerator {
+  private static final Logger LOG = LogManager.getLogger(CrossDependentTaskGenerator1.class);
+  private final static int nThreads = 2;
+  private final CyclicBarrier barrier = new CyclicBarrier(2);
+  private final Deque<ModuleClassLoader> myFirst = new LinkedBlockingDeque<>();
+  private final Deque<ModuleClassLoader> mySecond = new LinkedBlockingDeque<>();
+
+  @NotNull
+  private Callable<Object> firstCLTask(FakeReloadableModule s1) {
+    return () -> {
+      try {
+        LOG.info("Creating first classloader");
+        ModuleClassLoader cl1 = createCL(s1, FIRST.class, myFirst, mySecond);
+        barrier.await();
+        LOG.info("First loaded " + cl1.loadClass(SECOND.class.getName()));
+        barrier.await();
+      } catch (VirtualMachineError e) {
+        throw e;
+      } catch (Throwable e) {
+        LOG.error("", e);
+        onError();
+      }
+      return null;
+    };
+  }
+
+  @NotNull
+  private Callable<Object> secondCLTask(FakeReloadableModule s2) {
+    return () -> {
+      try {
+        LOG.info("Creating second classloader");
+        ModuleClassLoader cl2 = createCL(s2, SECOND.class, mySecond, myFirst);
+        barrier.await();
+        LOG.info("Second loaded " + cl2.loadClass(FIRST.class.getName()));
+        barrier.await();
+      } catch (VirtualMachineError e) {
+        throw e;
+      } catch (Throwable e) {
+        LOG.error("", e);
+        onError();
+      }
+      return null;
+    };
+  }
+
+  private ModuleClassLoader createCL(ReloadableModule module, Class<?> aClass, Deque<ModuleClassLoader> toAdd, Deque<ModuleClassLoader> toPeek) {
+    ModuleClassLoader cl = new ModuleClassLoader(new ModuleClassLoaderSupport(module,
+                                                                              () -> Collections.singletonList(toPeek.peekLast()),
+                                                                              new FakeClassPathItem(aClass)));
+    toAdd.addLast(cl);
+    return cl;
+  }
+
+  @NotNull
+  @Override
+  public Collection<Callable<Object>> createTasks() {
+    FakeReloadableModule s1 = new FakeReloadableModule("FIRST");
+    FakeReloadableModule s2 = new FakeReloadableModule("SECOND");
+    s2.addDependency(new SDependencyImpl(s1, SDependencyScope.DEFAULT, false));
+    s1.addDependency(new SDependencyImpl(s2, SDependencyScope.DEFAULT, false));
+    Collection<Callable<Object>> taskList = new ArrayList<>(CrossDependentTaskGenerator1.nThreads);
+    taskList.add(firstCLTask(s1));
+    taskList.add(secondCLTask(s2));
+    return taskList;
+  }
+
+  // test data
+  private static final class FIRST {
+    SECOND mySECOND;
+  }
+  private static final class SECOND {
+    FIRST myFIRST;
+  }
+}

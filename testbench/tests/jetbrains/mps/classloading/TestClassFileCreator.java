@@ -42,9 +42,13 @@ public class TestClassFileCreator {
   private final String myTestSourceCode;
 
   public TestClassFileCreator(String testClassFqName, String classDir) {
+    this(testClassFqName, classDir, "public class " + testClassFqName + "{}");
+  }
+
+  public TestClassFileCreator(String testClassFqName, String classDir, String sourceCode) {
     myClassDir = classDir;
     myTestClassName = testClassFqName;
-    myTestSourceCode = "public class " + myTestClassName + "{}";
+    myTestSourceCode = sourceCode;
   }
 
   public void create() {
