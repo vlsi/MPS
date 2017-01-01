@@ -38,7 +38,7 @@ public final class ModuleClassLoaderTest {
 
   private static final long TIME_OUT_MS = 1000;
   private static final int DELAY_MS_TO_CHECK_DEADLOCK = 500;
-  private static final int NUMBER_OF_CHECKS = 10;
+  private static final int NUMBER_OF_CHECKS = 1000;
 
   static {
     new Log4jInitializer().init();

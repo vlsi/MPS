@@ -26,12 +26,11 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -59,6 +58,7 @@ public final class ModuleClassLoader extends ClassLoader {
 
   private volatile Collection<ClassLoader> myDependenciesClassLoaders;
   private boolean myDisposed;
+  private final Object myPackageLock = new Object();
 
   /**
    * MPS has a cyclic delegation classloading model (module A.a1 triggers class B.b which in turn triggers the loading of
@@ -181,12 +181,15 @@ public final class ModuleClassLoader extends ClassLoader {
       }
       ClassBytes classBytes = mySupport.findClassBytes(fqName);
       if (classBytes != null) {
-        byte[] bytes = classBytes.getBytes();
         String pack = NameUtil.namespaceFromLongName(fqName);
-        if (getPackage(pack) == null) {
-          definePackage(pack, null, null, null, null, null, null, null);
+        synchronized (myPackageLock) {
+          if (getPackage(pack) == null) {
+            definePackage(pack, null, null, null, null, null, null, null);
+          }
         }
-        aClass = defineClass(fqName, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
+        ProtectionDomain newProtectionDomain = ProtectionDomainUtil.loadedClassDomain(classBytes.getPath());
+        byte[] bytes = classBytes.getBytes();
+        aClass = defineClass(fqName, bytes, 0, bytes.length, newProtectionDomain);
         return recordClass(fqName, aClass);
       }
     }

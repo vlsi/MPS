@@ -32,13 +32,11 @@ final class DeadlockDetector {
   private static final Logger LOG = LogManager.getLogger(DeadlockDetector.class);
 
   private final ScheduledExecutorService myDeadlockDetector;
-  private final long myDelayMS;
   private volatile boolean myDeadlockDetected;
 
   public DeadlockDetector(long delayMS) {
-    myDelayMS = delayMS;
     myDeadlockDetector = Executors.newSingleThreadScheduledExecutor();
-    myDeadlockDetector.scheduleAtFixedRate(this::detectDeadLock, myDelayMS, myDelayMS, TimeUnit.MILLISECONDS);
+    myDeadlockDetector.scheduleAtFixedRate(this::detectDeadLock, delayMS, delayMS, TimeUnit.MILLISECONDS);
   }
 
   public void stop() {
