@@ -440,10 +440,12 @@
       <concept id="1160612413312" name="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" flags="nn" index="TSZUe" />
       <concept id="1160666733551" name="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" flags="nn" index="X8dFx" />
       <concept id="1162935959151" name="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" flags="nn" index="34oBXx" />
+      <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
       <concept id="1165525191778" name="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" flags="nn" index="1uHKPH" />
       <concept id="1165530316231" name="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" flags="nn" index="1v1jN8" />
       <concept id="1225727723840" name="jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation" flags="nn" index="1z4cxt" />
       <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
+      <concept id="1202128969694" name="jetbrains.mps.baseLanguage.collections.structure.SelectOperation" flags="nn" index="3$u5V9" />
       <concept id="1176501494711" name="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" flags="nn" index="3GX2aA" />
       <concept id="1172254888721" name="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation" flags="nn" index="3JPx81" />
     </language>
@@ -6208,6 +6210,257 @@
           </node>
         </node>
       </node>
+    </node>
+    <node concept="2tJIrI" id="4eJNqzIvsZ2" role="jymVt" />
+    <node concept="2YIFZL" id="4eJNqzIvY0U" role="jymVt">
+      <property role="TrG5h" value="collect" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4eJNqzIvtK6" role="3clF47">
+        <node concept="3clFbF" id="4eJNqzIvuP9" role="3cqZAp">
+          <node concept="2OqwBi" id="4eJNqzIvw2z" role="3clFbG">
+            <node concept="2OqwBi" id="4eJNqzIvuZo" role="2Oq$k0">
+              <node concept="37vLTw" id="4eJNqzIvuP8" role="2Oq$k0">
+                <ref role="3cqZAo" node="4eJNqzIvtTX" resolve="collection" />
+              </node>
+              <node concept="3$u5V9" id="4eJNqzIvv6T" role="2OqNvi">
+                <node concept="1bVj0M" id="4eJNqzIvv6V" role="23t8la">
+                  <node concept="3clFbS" id="4eJNqzIvv6W" role="1bW5cS">
+                    <node concept="3clFbF" id="4eJNqzIvvb4" role="3cqZAp">
+                      <node concept="1rXfSq" id="5y9ztNgVueN" role="3clFbG">
+                        <ref role="37wK5l" node="1pwnB5DiIwY" resolve="getTarget" />
+                        <node concept="37vLTw" id="5y9ztNgVurB" role="37wK5m">
+                          <ref role="3cqZAo" node="4eJNqzIvv6X" resolve="it" />
+                        </node>
+                        <node concept="37vLTw" id="5y9ztNgVuUE" role="37wK5m">
+                          <ref role="3cqZAo" node="4eJNqzIvtWO" resolve="l" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="4eJNqzIvv6X" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="4eJNqzIvv6Y" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3zZkjj" id="4eJNqzIvy0q" role="2OqNvi">
+              <node concept="1bVj0M" id="4eJNqzIvy0s" role="23t8la">
+                <node concept="3clFbS" id="4eJNqzIvy0t" role="1bW5cS">
+                  <node concept="3clFbF" id="4eJNqzIvy7h" role="3cqZAp">
+                    <node concept="3y3z36" id="4eJNqzIvyId" role="3clFbG">
+                      <node concept="10Nm6u" id="4eJNqzIvyRj" role="3uHU7w" />
+                      <node concept="37vLTw" id="4eJNqzIvy7g" role="3uHU7B">
+                        <ref role="3cqZAo" node="4eJNqzIvy0u" resolve="it" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="4eJNqzIvy0u" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="4eJNqzIvy0v" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIvtTX" role="3clF46">
+        <property role="TrG5h" value="collection" />
+        <node concept="A3Dl8" id="4eJNqzIvtTV" role="1tU5fm">
+          <node concept="3Tqbb2" id="4eJNqzIvtWz" role="A3Ik2" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIvtWO" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4eJNqzIvu5t" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+        </node>
+      </node>
+      <node concept="A3Dl8" id="4eJNqzIvtJI" role="3clF45">
+        <node concept="3Tqbb2" id="4eJNqzIvtK0" role="A3Ik2" />
+      </node>
+      <node concept="P$JXv" id="4eJNqzIvCnI" role="lGtFl">
+        <node concept="TZ5HA" id="4eJNqzIvCnJ" role="TZ5H$">
+          <node concept="1dT_AC" id="4eJNqzIvCnK" role="1dT_Ay">
+            <property role="1dT_AB" value="For each element of supplied collection, navigate specified reference and collect non-null targets as a resulting sequence." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5y9ztNgVv6h" role="TZ5H$">
+          <node concept="1dT_AC" id="5y9ztNgVv6i" role="1dT_Ay">
+            <property role="1dT_AB" value="Null elements in the source collections are tolerated (and ignored)" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4eJNqzIvtA2" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4eJNqzIvuBD" role="jymVt" />
+    <node concept="2YIFZL" id="4eJNqzIvYjP" role="jymVt">
+      <property role="TrG5h" value="collect" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4eJNqzIvupG" role="3clF47">
+        <node concept="3clFbF" id="4eJNqzIvyZT" role="3cqZAp">
+          <node concept="2OqwBi" id="4eJNqzIvyZU" role="3clFbG">
+            <node concept="2OqwBi" id="4eJNqzIvyZV" role="2Oq$k0">
+              <node concept="37vLTw" id="4eJNqzIvyZW" role="2Oq$k0">
+                <ref role="3cqZAo" node="4eJNqzIvupK" resolve="collection" />
+              </node>
+              <node concept="3$u5V9" id="4eJNqzIvyZX" role="2OqNvi">
+                <node concept="1bVj0M" id="4eJNqzIvyZY" role="23t8la">
+                  <node concept="3clFbS" id="4eJNqzIvyZZ" role="1bW5cS">
+                    <node concept="3clFbF" id="4eJNqzIvz00" role="3cqZAp">
+                      <node concept="1rXfSq" id="4eJNqzIv$5L" role="3clFbG">
+                        <ref role="37wK5l" node="1pwnB5DiOAj" resolve="getTarget" />
+                        <node concept="37vLTw" id="4eJNqzIv$cj" role="37wK5m">
+                          <ref role="3cqZAo" node="4eJNqzIvz06" resolve="it" />
+                        </node>
+                        <node concept="37vLTw" id="4eJNqzIv$lb" role="37wK5m">
+                          <ref role="3cqZAo" node="4eJNqzIvupN" resolve="l" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="4eJNqzIvz06" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="4eJNqzIvz07" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3zZkjj" id="4eJNqzIvz08" role="2OqNvi">
+              <node concept="1bVj0M" id="4eJNqzIvz09" role="23t8la">
+                <node concept="3clFbS" id="4eJNqzIvz0a" role="1bW5cS">
+                  <node concept="3clFbF" id="4eJNqzIvz0b" role="3cqZAp">
+                    <node concept="3y3z36" id="4eJNqzIvz0c" role="3clFbG">
+                      <node concept="10Nm6u" id="4eJNqzIvz0d" role="3uHU7w" />
+                      <node concept="37vLTw" id="4eJNqzIvz0e" role="3uHU7B">
+                        <ref role="3cqZAo" node="4eJNqzIvz0f" resolve="it" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="4eJNqzIvz0f" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="4eJNqzIvz0g" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIvupK" role="3clF46">
+        <property role="TrG5h" value="collection" />
+        <node concept="A3Dl8" id="4eJNqzIvupL" role="1tU5fm">
+          <node concept="3Tqbb2" id="4eJNqzIvupM" role="A3Ik2" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIvupN" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4eJNqzIvu$K" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
+      </node>
+      <node concept="A3Dl8" id="4eJNqzIvupI" role="3clF45">
+        <node concept="3Tqbb2" id="4eJNqzIvupJ" role="A3Ik2" />
+      </node>
+      <node concept="P$JXv" id="4eJNqzIvCc2" role="lGtFl">
+        <node concept="TZ5HA" id="4eJNqzIvCc3" role="TZ5H$">
+          <node concept="1dT_AC" id="4eJNqzIvCc4" role="1dT_Ay">
+            <property role="1dT_AB" value="For each element of supplied collection, take child from specified role (if any), and return these as a sequence." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4eJNqzIvCIr" role="TZ5H$">
+          <node concept="1dT_AC" id="4eJNqzIvCIs" role="1dT_Ay">
+            <property role="1dT_AB" value="Result sequence doesn't contain null values." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5y9ztNgVv9J" role="TZ5H$">
+          <node concept="1dT_AC" id="5y9ztNgVvaM" role="1dT_Ay">
+            <property role="1dT_AB" value="Null elements in the source collections are tolerated (and ignored)" />
+          </node>
+          <node concept="1dT_AC" id="5y9ztNgVv9K" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4eJNqzIvupH" role="1B3o_S" />
+    </node>
+    <node concept="2tJIrI" id="4eJNqzIv_EY" role="jymVt" />
+    <node concept="2YIFZL" id="4eJNqzIvYAw" role="jymVt">
+      <property role="TrG5h" value="collectMany" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3clFbS" id="4eJNqzIv_n9" role="3clF47">
+        <node concept="3clFbF" id="4eJNqzIv_na" role="3cqZAp">
+          <node concept="2OqwBi" id="4eJNqzIvAaE" role="3clFbG">
+            <node concept="37vLTw" id="4eJNqzIv_nd" role="2Oq$k0">
+              <ref role="3cqZAo" node="4eJNqzIv_nz" resolve="collection" />
+            </node>
+            <node concept="3goQfb" id="4eJNqzIvAt5" role="2OqNvi">
+              <node concept="1bVj0M" id="4eJNqzIvAt7" role="23t8la">
+                <node concept="3clFbS" id="4eJNqzIvAt8" role="1bW5cS">
+                  <node concept="3clFbF" id="4eJNqzIvAD2" role="3cqZAp">
+                    <node concept="1rXfSq" id="4eJNqzIvAD1" role="3clFbG">
+                      <ref role="37wK5l" node="3YzxW_BBSi6" resolve="getChildren" />
+                      <node concept="37vLTw" id="4eJNqzIvAR9" role="37wK5m">
+                        <ref role="3cqZAo" node="4eJNqzIvAt9" resolve="it" />
+                      </node>
+                      <node concept="37vLTw" id="4eJNqzIvB7L" role="37wK5m">
+                        <ref role="3cqZAo" node="4eJNqzIv_nA" resolve="l" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="Rh6nW" id="4eJNqzIvAt9" role="1bW2Oz">
+                  <property role="TrG5h" value="it" />
+                  <node concept="2jxLKc" id="4eJNqzIvAta" role="1tU5fm" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIv_nz" role="3clF46">
+        <property role="TrG5h" value="collection" />
+        <node concept="A3Dl8" id="4eJNqzIv_n$" role="1tU5fm">
+          <node concept="3Tqbb2" id="4eJNqzIv_n_" role="A3Ik2" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="4eJNqzIv_nA" role="3clF46">
+        <property role="TrG5h" value="l" />
+        <node concept="3uibUv" id="4eJNqzIv_nB" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
+      </node>
+      <node concept="A3Dl8" id="4eJNqzIv_nx" role="3clF45">
+        <node concept="3Tqbb2" id="4eJNqzIv_ny" role="A3Ik2" />
+      </node>
+      <node concept="P$JXv" id="4eJNqzIvBWI" role="lGtFl">
+        <node concept="TZ5HA" id="4eJNqzIvBWJ" role="TZ5H$">
+          <node concept="1dT_AC" id="4eJNqzIvBWK" role="1dT_Ay">
+            <property role="1dT_AB" value="For each element of supplied collection, collect all children from specified role and return them as flattened sequence." />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="4eJNqzIvCJs" role="TZ5H$">
+          <node concept="1dT_AC" id="4eJNqzIvCKt" role="1dT_Ay">
+            <property role="1dT_AB" value="Result sequence doesn't contain null values." />
+          </node>
+          <node concept="1dT_AC" id="4eJNqzIvCJt" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+        <node concept="TZ5HA" id="5y9ztNgVvaX" role="TZ5H$">
+          <node concept="1dT_AC" id="5y9ztNgVvc1" role="1dT_Ay">
+            <property role="1dT_AB" value="Null elements in the source collections are tolerated (and ignored)" />
+          </node>
+          <node concept="1dT_AC" id="5y9ztNgVvaY" role="1dT_Ay">
+            <property role="1dT_AB" value="" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="4eJNqzIv_nw" role="1B3o_S" />
     </node>
     <node concept="2AHcQZ" id="2NRh06snWi_" role="2AJF6D">
       <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
