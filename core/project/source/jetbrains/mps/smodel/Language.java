@@ -33,7 +33,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.reloading.ClassBytesProvider.ClassBytes;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.language.LanguageAspectSupport;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.NameUtil;
@@ -62,7 +61,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ListIterator;
+import java.util.Objects;
 import java.util.Set;
 
 public class Language extends ReloadableModuleBase implements MPSModuleOwner, ReloadableModule {
@@ -86,7 +85,6 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   @NotNull private LanguageDescriptor myLanguageDescriptor;
-  private List<Generator> myGenerators = new LinkedList<Generator>();
 
   private ClassLoader myStubsLoader = new StubsClassLoader();
 
@@ -175,9 +173,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public Collection<SModuleReference> getRuntimeModulesReferences() {
-    LanguageDescriptor descriptor = getModuleDescriptor();
-    if (descriptor == null) return Collections.emptySet();
-    return Collections.unmodifiableSet(descriptor.getRuntimeModules());
+    return Collections.unmodifiableSet(myLanguageDescriptor.getRuntimeModules());
   }
 
   @Override
@@ -210,29 +206,24 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
     }
   }
 
-  void revalidateGenerators() {
-    ListIterator<Generator> generators = myGenerators.listIterator();
-    Iterator<GeneratorDescriptor> generatorDescriptors =
-        getModuleDescriptor() != null && getModuleDescriptor().getGenerators() != null ? getModuleDescriptor().getGenerators().iterator() :
-            Collections.<GeneratorDescriptor>emptyList().iterator();
+  /*
+   * Update repository generator modules associated with this language with descriptors known to the language (registers new generators, if necessary)
+   */
+  private void revalidateGenerators() {
+    LinkedList<Generator> existingGenerators = new LinkedList<>(getGenerators());
 
     SRepositoryExt moduleRepository = (SRepositoryExt) getRepository();
-    while (generatorDescriptors.hasNext()) {
-      GeneratorDescriptor nextDescriptor = generatorDescriptors.next();
+    for (GeneratorDescriptor nextDescriptor : myLanguageDescriptor.getGenerators()) {
       Generator nextGenerator = null;
-
-      while (generators.hasNext() && nextGenerator == null) {
+      for (Iterator<Generator> it = existingGenerators.iterator(); it.hasNext(); ) {
         // looking for the existing generator with same ID
-        Generator nextGeneratorCandidate = generators.next();
+        Generator nextGeneratorCandidate = it.next();
         GeneratorDescriptor nextGeneratorCandidateDescriptor = nextGeneratorCandidate.getModuleDescriptor();
-        if (nextGeneratorCandidateDescriptor != null &&
-            EqualUtil.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
-            EqualUtil.equals(nextGeneratorCandidateDescriptor.getId(), nextDescriptor.getId())) {
+        if (Objects.equals(nextGeneratorCandidateDescriptor.getGeneratorUID(), nextDescriptor.getGeneratorUID()) &&
+            Objects.equals(nextGeneratorCandidateDescriptor.getId(), nextDescriptor.getId())) {
           nextGenerator = nextGeneratorCandidate;
-        } else {
-          // removing generator with different ID - either it was removed, or reordered, so will be added later
-          moduleRepository.unregisterModule(nextGeneratorCandidate, this);
-          generators.remove();
+          it.remove();
+          break;
         }
       }
 
@@ -241,20 +232,16 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
       } else {
         Generator generator = new Generator(this, nextDescriptor);
         moduleRepository.registerModule(generator, this);
-        generators.add(generator);
       }
     }
-    while (generators.hasNext()) {
-      Generator nextGenerator = generators.next();
-      moduleRepository.unregisterModule(nextGenerator, this);
-      generators.remove();
+    for (Generator stale : existingGenerators) {
+      moduleRepository.unregisterModule(stale, this);
     }
   }
 
   @Override
   public void dispose() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(this);
-    myGenerators.clear();
+    new ModuleRepositoryFacade(getRepository()).unregisterModules(this);
     super.dispose();
   }
 
@@ -290,8 +277,17 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public Collection<Generator> getGenerators() {
-    // TODO: use myGenerators collection instead?
-    return ModuleRepositoryFacade.getInstance().getModules(this, Generator.class);
+    SRepository repo = getRepository();
+    if (repo == null) {
+      return Collections.emptyList();
+    }
+    // Language module doesn't track Generator modules it is owner to. Instead, it relies on a repository
+    // to know actual set of generators. I expect Language to cease being module owner once Generators are full-fledged stand-alone
+    // modules and get into repository without help of a language module.
+    // OTOH, I don't have strong objection against a pattern when a subordinate registers with its master, and master keeps track of
+    // subordinates (e.g. new Generator(Language source) might tell source.iAmYourServant(this), which would keep collection of Generators
+    // so that we don't need to go into repository). It just feels more flexible when the two are not bound too tightly (with expense of repository access).
+    return new ModuleRepositoryFacade(repo).getModules(this, Generator.class);
   }
 
   @Override
@@ -355,7 +351,7 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public List<SModel> getAccessoryModels() {
-    List<SModel> result = new LinkedList<SModel>();
+    List<SModel> result = new LinkedList<>();
     for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
       SModel modelDescriptor = model.resolve(getRepository());
       if (modelDescriptor != null) {
@@ -366,22 +362,17 @@ public class Language extends ReloadableModuleBase implements MPSModuleOwner, Re
   }
 
   public boolean isAccessoryModel(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
-    for (SModelReference model : getModuleDescriptor().getAccessoryModels()) {
-      if (EqualUtil.equals(model, modelReference)) return true;
-    }
-    return false;
+    return myLanguageDescriptor.getAccessoryModels().stream().anyMatch(m -> Objects.equals(m, modelReference));
   }
 
   public void removeAccessoryModel(org.jetbrains.mps.openapi.model.SModel sm) {
-    Iterator<SModelReference> i = myLanguageDescriptor.getAccessoryModels().iterator();
-    while (i.hasNext()) {
-      SModelReference model = i.next();
-      if (model.equals(sm.getReference())) {
-        i.remove();
-      }
+    // XXX why removal of accessory model is not done through ModuleDescriptor as other editing activities?
+    final SModelReference accessoryModelRef = sm.getReference();
+    boolean changed = myLanguageDescriptor.getAccessoryModels().removeIf(m -> accessoryModelRef.equals(m));
+    if (changed) {
+      setModuleDescriptor(myLanguageDescriptor);
+      reload();
     }
-    setModuleDescriptor(myLanguageDescriptor);
-    this.reload();
   }
 
   public String toString() {

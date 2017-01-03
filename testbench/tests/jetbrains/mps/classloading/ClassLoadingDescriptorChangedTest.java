@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,20 +57,15 @@ public class ClassLoadingDescriptorChangedTest extends CoreMpsTest {
     assert language1 != null;
     final Language language2 = getLanguage("L2");
     assert language2 != null;
-    Generator generator1 = language1.getGenerators().iterator().next();
+    Generator generator1 = new TakeGenerator(language1).get();
     performCheck(generator1);
     reloadAfterDescriptorChange(language2);
-    generator1 = language1.getGenerators().iterator().next();
+    generator1 = new TakeGenerator(language1).get();
     performCheck(generator1);
   }
 
   private void reloadAfterDescriptorChange(final Language language2) {
-    myProject.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        language2.reloadAfterDescriptorChange();
-      }
-    });
+    myProject.getModelAccess().runWriteAction(language2::reloadAfterDescriptorChange);
   }
 
   private void performCheck(Generator generator1) {
@@ -78,5 +73,24 @@ public class ClassLoadingDescriptorChangedTest extends CoreMpsTest {
     Class aClass2 = ClassLoaderManager.getInstance().getClass(generator1, "L2.generator.template.main.QueriesGenerated");
     assertTrue(aClass != null);
     assertTrue(aClass2 != null);
+  }
+
+  private class TakeGenerator implements Runnable {
+    private final Language myLanguage;
+    private Generator myGenerator;
+
+    TakeGenerator(Language language) {
+      myLanguage = language;
+    }
+
+    @Override
+    public void run() {
+      myGenerator = myLanguage.getGenerators().iterator().next();
+    }
+
+    Generator get() {
+      myProject.getModelAccess().runReadAction(this);
+      return myGenerator;
+    }
   }
 }

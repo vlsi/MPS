@@ -23,6 +23,7 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
@@ -272,8 +273,13 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
     Language newLanguage = new Language(descriptor, handle.getFile());
     Language language = registerModule(newLanguage, moduleOwner);
-    if (language == newLanguage) {
-      language.revalidateGenerators();
+    if (language == newLanguage && !descriptor.getGenerators().isEmpty()) {
+      // once Generator modules are standalone, technically we could have their instances already.
+      // Now, I don't care as original revalidateGenerators didn't care. Perhaps, the code would stay the same
+      // even for pre-registered generators as registerModule() is aware of module multi registration
+      for (GeneratorDescriptor gd : descriptor.getGenerators()) {
+        registerModule(new Generator(language, gd), language);
+      }
     }
     return language;
   }

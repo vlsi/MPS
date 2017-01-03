@@ -200,7 +200,9 @@ public class TestModuleFactoryBase implements TestModuleFactory {
   @NotNull
   public Generator createGenerator() {
     Language sourceLang = createLanguageWithGenerator();
-    return sourceLang.getGenerators().toArray(new Generator[1])[0];
+    final Generator[] rv = new Generator[1];
+    getModelAccess().runReadAction(() -> sourceLang.getGenerators().toArray(rv));
+    return rv[0];
   }
 
   @Override
