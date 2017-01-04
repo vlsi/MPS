@@ -37,7 +37,6 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
@@ -51,8 +50,6 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.apache.log4j.LogManager;
@@ -78,7 +75,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -94,7 +90,7 @@ import java.util.Set;
 
 import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
 
-public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
+public abstract class AbstractModule extends SModuleBase implements EditableSModule {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -652,9 +648,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     if (myDescriptorFile != null) {
       // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
       // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
-      myFileSystem.removeListener(this);
       myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
-      myFileSystem.addListener(this);
     }
 
     if (descriptor != null) {
@@ -688,44 +682,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void attach(@NotNull SRepository repository) {
     super.attach(repository);
-    if (myDescriptorFile != null) {
-      myFileSystem.addListener(this);
-    }
     initFacetsAndModels();
-  }
-
-  @Nullable
-  @Override
-  public IFile getFileToListen() {
-    return myDescriptorFile;
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    List<FileSystemListener> listeners = new ArrayList<FileSystemListener>();
-    for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
-      if (owner instanceof FileSystemListener) {
-        listeners.add((FileSystemListener) owner);
-      }
-    }
-    return listeners.isEmpty() ? null : listeners;
-  }
-
-  @Override
-  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    assertCanChange();
-    for (IFile file : event.getRemoved()) {
-      if (file.equals(myDescriptorFile)) {
-        ModuleRepositoryFacade.getInstance().unregisterModule(this);
-        return;
-      }
-    }
-    for (IFile file : event.getChanged()) {
-      if (file.equals(myDescriptorFile)) {
-        SModuleOperations.reloadFromDisk(this);
-        return;
-      }
-    }
   }
 
   @Override
@@ -738,7 +695,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void dispose() {
     assertCanChange();
     LOG.trace("Disposing the module " + this);
-    myFileSystem.removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
     }

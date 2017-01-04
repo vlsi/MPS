@@ -45,6 +45,7 @@ import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Mediator between API aspects of an SRepository and out implementation aspects, like SRepositoryExt.
@@ -145,15 +146,15 @@ public final class ModuleRepositoryFacade implements CoreComponent {
 
   public <T extends SModule> Collection<T> getModules(MPSModuleOwner moduleOwner, @Nullable Class<T> cls) {
     Set<SModule> modules = REPO.getModules(moduleOwner);
-    if (modules == null) return Collections.emptyList();
-
-    List<T> list = new LinkedList<T>();
-    for (SModule m : modules) {
-      if (cls == null || cls.isInstance(m)) {
-        list.add((T) m);
-      }
+    if (modules == null) {
+      return Collections.emptyList();
     }
-    return list;
+    if (cls == null || cls == SModule.class) {
+//      return new LinkedList<T>().getClass().cast(modules)
+      return ((Collection<T>) modules);
+    }
+
+    return modules.stream().filter(cls::isInstance).map(cls::cast).collect(Collectors.toList());
   }
 
   /**
