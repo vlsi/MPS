@@ -13,11 +13,12 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
-import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,9 +29,9 @@ public final class Node_GetAncestorOperation__BehaviorDescriptor extends BaseBHD
 
   public static final SMethod<Boolean> applicableToNode_id1653mnvAgrs = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToNode").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgrs").registry(REGISTRY).build();
   public static final SMethod<Boolean> applicableToLink_id1653mnvAgvK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLink").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgvK").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getApplicableParameter_id2D1PBM_bxI0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxI0").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id6ALWH9fQysn = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9fQysn").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(applicableToNode_id1653mnvAgrs, applicableToLink_id1653mnvAgvK, getApplicableParameter_id2D1PBM_bxI0);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(applicableToNode_id1653mnvAgrs, applicableToLink_id1653mnvAgvK, getParameterConcepts_id6ALWH9fQysn);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -41,14 +42,8 @@ public final class Node_GetAncestorOperation__BehaviorDescriptor extends BaseBHD
   /*package*/ static boolean applicableToLink_id1653mnvAgvK(@NotNull SAbstractConcept __thisConcept__) {
     return true;
   }
-  /*package*/ static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144100932627"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1154546920561"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144101597970"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1540150895035667832"));
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)", "1144101972840"));
-    return result;
+  /*package*/ static List<SConcept> getParameterConcepts_id6ALWH9fQysn(@NotNull SAbstractConcept __thisConcept__) {
+    return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61bacc13L, "jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10cd05bec71L, "jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61c4f312L, "jetbrains.mps.lang.smodel.structure.OperationParm_Root"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x155fb7143719d578L, "jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel"), MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x10a61caab68L, "jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
   }
 
   /*package*/ Node_GetAncestorOperation__BehaviorDescriptor() {
@@ -84,7 +79,7 @@ public final class Node_GetAncestorOperation__BehaviorDescriptor extends BaseBHD
       case 1:
         return (T) ((Boolean) applicableToLink_id1653mnvAgvK(concept));
       case 2:
-        return (T) ((List<SNode>) getApplicableParameter_id2D1PBM_bxI0(concept));
+        return (T) ((List<SConcept>) getParameterConcepts_id6ALWH9fQysn(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
