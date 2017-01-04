@@ -8,6 +8,7 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
   </languages>
   <imports>
     <import index="tp25" ref="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
@@ -117,6 +118,11 @@
         <child id="2522969319638093993" name="descriptionFunction" index="2ZfVej" />
       </concept>
     </language>
+    <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation">
+      <concept id="1196350785113" name="jetbrains.mps.lang.quotation.structure.Quotation" flags="nn" index="2c44tf">
+        <child id="1196350785114" name="quotedNode" index="2c44tc" />
+      </concept>
+    </language>
     <language id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem">
       <concept id="1176544042499" name="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" flags="nn" index="3JvlWi" />
     </language>
@@ -152,6 +158,7 @@
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
+      <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
@@ -2142,6 +2149,50 @@
             <node concept="1_qnLN" id="5nUWeBp0Ajq" role="2OqNvi">
               <ref role="1_rbq0" to="tp25:6tLUGr5MYvi" resolve="Node_GetSConceptOperation" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="2S6QgY" id="6ALWH9fup5U">
+    <property role="TrG5h" value="ConceptNodeType2NodeType" />
+    <ref role="2ZfgGC" to="tp25:h3THzq0" resolve="ConceptNodeType" />
+    <node concept="2Sbjvc" id="6ALWH9fup5V" role="2ZfgGD">
+      <node concept="3clFbS" id="6ALWH9fup5W" role="2VODD2">
+        <node concept="3clFbF" id="6ALWH9fup6b" role="3cqZAp">
+          <node concept="2OqwBi" id="6ALWH9fup6c" role="3clFbG">
+            <node concept="2Sf5sV" id="6ALWH9fup6d" role="2Oq$k0" />
+            <node concept="1P9Npp" id="6ALWH9fup6e" role="2OqNvi">
+              <node concept="2c44tf" id="6ALWH9fus4u" role="1P9ThW">
+                <node concept="3Tqbb2" id="6ALWH9fus5r" role="2c44tc">
+                  <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2S6ZIM" id="6ALWH9fup6g" role="2ZfVej">
+      <node concept="3clFbS" id="6ALWH9fup6h" role="2VODD2">
+        <node concept="3clFbF" id="6ALWH9fup6i" role="3cqZAp">
+          <node concept="Xl_RD" id="6ALWH9fup6j" role="3clFbG">
+            <property role="Xl_RC" value="Convert to node&lt;ACD&gt;" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="2SaL7w" id="6ALWH9fuqaa" role="2ZfVeh">
+      <node concept="3clFbS" id="6ALWH9fuqab" role="2VODD2">
+        <node concept="3clFbF" id="6ALWH9fuqmg" role="3cqZAp">
+          <node concept="2OqwBi" id="6ALWH9furfK" role="3clFbG">
+            <node concept="2OqwBi" id="6ALWH9fuqyN" role="2Oq$k0">
+              <node concept="2Sf5sV" id="6ALWH9fuqmf" role="2Oq$k0" />
+              <node concept="3TrEf2" id="6ALWH9fuqNn" role="2OqNvi">
+                <ref role="3Tt5mk" to="tp25:hbqa45m" resolve="conceptDeclaraton" />
+              </node>
+            </node>
+            <node concept="3w_OXm" id="6ALWH9furJd" role="2OqNvi" />
           </node>
         </node>
       </node>
