@@ -668,35 +668,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_Editor" file="Concept_GetHierarchy_Editor.java">
-    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_EditorBuilder_a" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_EditorBuilder_a" file="Concept_GetHierarchy_EditorBuilder_a.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
-  </dependency>
-  <dependency className="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_SubstituteMenu" file="Concept_GetHierarchy_SubstituteMenu.java">
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.menus.MenuPart" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.nodeEditor.menus.substitute.SubstituteMenuBase" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.smodel.editor.Concept_IsExactlyOperation_Editor" file="Concept_IsExactlyOperation_Editor.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_IsExactlyOperation_EditorBuilder_a" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
@@ -909,8 +880,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetAllSubConcepts_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetAllSuperConcepts_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetDirectSuperConcepts_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_SubstituteMenu" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_IsExactlyOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_IsSubConceptOfOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Concept_IsSuperConceptOfOperation_Editor" />

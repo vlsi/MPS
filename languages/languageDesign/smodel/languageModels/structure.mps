@@ -1039,23 +1039,6 @@
     <property role="EcuMT" value="1180457458947" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
-  <node concept="1TIwiD" id="hboNAxt">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="Concept_GetHierarchy" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation.concept" />
-    <property role="34LRSv" value="hierarchy" />
-    <property role="EcuMT" value="1180458444893" />
-    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="asaX9" id="1EtdPNueXB$" role="lGtFl">
-      <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="can be removed after 3.4, though there are a couple of occurences in MPS codebase, all can be replaed with .getAllSuperConcepts()" />
-    </node>
-    <node concept="PrWs8" id="1EtdPNueYi4" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hbzrR4P">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />

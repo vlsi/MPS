@@ -7,9 +7,6 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.ArrayList;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SLanguageHierarchy;
@@ -19,6 +16,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -62,14 +60,6 @@ public final class SConceptOperations {
       result.remove(concept);
     }
     return Collections.unmodifiableList(result);
-  }
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static List<SNode> getConceptHierarchy(SNode conceptDeclarationNode) {
-    if (conceptDeclarationNode == null) {
-      return new ArrayList<SNode>();
-    }
-    return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
   /**
    * Find all concepts that extend supplied one, and are declared in a language either imported directly in to the model,

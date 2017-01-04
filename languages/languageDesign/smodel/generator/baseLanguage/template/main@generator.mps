@@ -6590,31 +6590,6 @@
         </node>
       </node>
     </node>
-    <node concept="3aamgX" id="hboSeDD" role="3acgRq">
-      <ref role="30HIoZ" to="tp25:hboNAxt" resolve="Concept_GetHierarchy" />
-      <node concept="gft3U" id="hboSeDE" role="1lVwrX">
-        <node concept="2YIFZM" id="hboSeDF" role="gfFT$">
-          <ref role="1Pybhc" to="i8bi:5IkW5anF8_6" resolve="SConceptOperations" />
-          <ref role="37wK5l" to="i8bi:5IkW5anF8CO" resolve="getConceptHierarchy" />
-          <node concept="10Nm6u" id="hboSeDG" role="37wK5m">
-            <node concept="29HgVG" id="hboSeDH" role="lGtFl">
-              <node concept="3NFfHV" id="hboSeDI" role="3NFExx">
-                <node concept="3clFbS" id="hboSeDJ" role="2VODD2">
-                  <node concept="3clFbF" id="hwNS8f9" role="3cqZAp">
-                    <node concept="2OqwBi" id="hxx$WWU" role="3clFbG">
-                      <node concept="30H73N" id="hwNS8fa" role="2Oq$k0" />
-                      <node concept="2qgKlT" id="hwNS9Ei" role="2OqNvi">
-                        <ref role="37wK5l" to="tpeu:hEwJdGu" resolve="getLeftExpression" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="3aamgX" id="hcLYwvk" role="3acgRq">
       <ref role="30HIoZ" to="tp25:hcLSoNs" resolve="Concept_GetAllSubConcepts" />
       <node concept="gft3U" id="hcLYIUB" role="1lVwrX">

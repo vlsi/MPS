@@ -9840,32 +9840,6 @@
       <ref role="1YaFvo" to="tp25:hboJPO3" resolve="Concept_GetAllSuperConcepts" />
     </node>
   </node>
-  <node concept="1YbPZF" id="$lsh0Ehgdd">
-    <property role="TrG5h" value="typeof_Concept_GetHierarchy" />
-    <property role="3GE5qa" value="operation.concept" />
-    <node concept="3clFbS" id="$lsh0Ehgde" role="18ibNy">
-      <node concept="1Z5TYs" id="$lsh0Ehggp" role="3cqZAp">
-        <node concept="mw_s8" id="$lsh0Ehggq" role="1ZfhKB">
-          <node concept="2c44tf" id="$lsh0Ehggr" role="mwGJk">
-            <node concept="_YKpA" id="$lsh0EhgNe" role="2c44tc">
-              <node concept="3THzug" id="$lsh0EhgNp" role="_ZDj9" />
-            </node>
-          </node>
-        </node>
-        <node concept="mw_s8" id="$lsh0Ehggs" role="1ZfhK$">
-          <node concept="1Z2H0r" id="$lsh0Ehggt" role="mwGJk">
-            <node concept="1YBJjd" id="$lsh0Ehggu" role="1Z2MuG">
-              <ref role="1YBMHb" node="$lsh0Ehgdg" resolve="operation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node concept="1YaCAy" id="$lsh0Ehgdg" role="1YuTPh">
-      <property role="TrG5h" value="operation" />
-      <ref role="1YaFvo" to="tp25:hboNAxt" resolve="Concept_GetHierarchy" />
-    </node>
-  </node>
   <node concept="1YbPZF" id="$lsh0EhwpM">
     <property role="TrG5h" value="typeof_EnumMember_NameOperation" />
     <property role="3GE5qa" value="enum.enumoperation" />

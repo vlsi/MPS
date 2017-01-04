@@ -16,7 +16,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1153952380246:jetbrains.mps.baseLanguage.structure.TryStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="20,0,446,0" name="jetbrains.mps.lang.smodel.editor.EditorAspectDescriptorImpl" />
+      <unit at="20,0,442,0" name="jetbrains.mps.lang.smodel.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1138063451695">
@@ -9662,54 +9662,6 @@
       <unit id="1180457501143" at="13,0,45,0" name="jetbrains.mps.lang.smodel.editor.Concept_GetAllSuperConcepts_EditorBuilder_a" />
     </file>
   </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1180459626073">
-    <file name="Concept_GetHierarchy_Editor.java">
-      <node id="1180459626073" at="11,79,12,86" concept="8" />
-      <node id="1180459626073" at="11,0,14,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="1180459626073" at="11,79,12,86" />
-      <scope id="1180459626073" at="11,0,14,0">
-        <var name="editorContext" id="1180459626073" />
-        <var name="node" id="1180459626073" />
-      </scope>
-      <unit id="1180459626073" at="10,0,15,0" name="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_Editor" />
-    </file>
-    <file name="Concept_GetHierarchy_EditorBuilder_a.java">
-      <node id="1180459626073" at="19,100,20,19" concept="12" />
-      <node id="1180459626073" at="20,19,21,18" concept="2" />
-      <node id="1180459626073" at="26,26,27,18" concept="8" />
-      <node id="1180459626073" at="30,39,31,37" concept="8" />
-      <node id="1180459627781" at="34,48,35,102" concept="7" />
-      <node id="1180459627781" at="35,102,36,46" concept="2" />
-      <node id="1180459627781" at="36,46,37,28" concept="2" />
-      <node id="1180459627781" at="37,28,38,65" concept="2" />
-      <node id="1180459627781" at="38,65,39,34" concept="7" />
-      <node id="1180459627781" at="39,34,40,48" concept="2" />
-      <node id="1180459627781" at="40,48,41,46" concept="2" />
-      <node id="1180459627781" at="41,46,42,40" concept="2" />
-      <node id="1180459627781" at="42,40,43,34" concept="2" />
-      <node id="1180459627781" at="43,34,44,22" concept="8" />
-      <node id="1180459626073" at="16,0,18,0" concept="3" trace="myNode" />
-      <node id="1180459626073" at="30,0,33,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1180459626073" at="19,0,23,0" concept="1" trace="Concept_GetHierarchy_EditorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1180459626073" at="24,0,29,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1180459627781" at="34,0,46,0" concept="6" trace="createConstant_qkpwwr_a#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="1180459626073" at="26,26,27,18" />
-      <scope id="1180459626073" at="30,39,31,37" />
-      <scope id="1180459626073" at="19,100,21,18" />
-      <scope id="1180459626073" at="30,0,33,0" />
-      <scope id="1180459626073" at="19,0,23,0">
-        <var name="context" id="1180459626073" />
-        <var name="node" id="1180459626073" />
-      </scope>
-      <scope id="1180459626073" at="24,0,29,0" />
-      <scope id="1180459627781" at="34,48,44,22">
-        <var name="editorCell" id="1180459627781" />
-        <var name="style" id="1180459627781" />
-      </scope>
-      <scope id="1180459627781" at="34,0,46,0" />
-      <unit id="1180459626073" at="15,0,47,0" name="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_EditorBuilder_a" />
-    </file>
-  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1180636825133">
     <file name="SNodeCreator_Editor.java">
       <node id="1180636825133" at="11,79,12,78" concept="8" />
@@ -14784,20 +14736,6 @@
         <var name="_context" id="1741258697587099590" />
       </scope>
       <unit id="1741258697587099590" at="13,0,21,0" name="jetbrains.mps.lang.smodel.editor.OperationParm_ConceptList_SubstituteMenu" />
-    </file>
-  </root>
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1741258697587099591">
-    <file name="Concept_GetHierarchy_SubstituteMenu.java">
-      <node id="1741258697587099591" at="16,118,17,140" concept="7" />
-      <node id="1741258697587099591" at="17,140,18,18" concept="8" />
-      <node id="1741258697587099591" at="14,0,20,0" concept="6" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/substitute/SubstituteMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587099591" at="16,118,18,18">
-        <var name="result" id="1741258697587099591" />
-      </scope>
-      <scope id="1741258697587099591" at="14,0,20,0">
-        <var name="_context" id="1741258697587099591" />
-      </scope>
-      <unit id="1741258697587099591" at="13,0,21,0" name="jetbrains.mps.lang.smodel.editor.Concept_GetHierarchy_SubstituteMenu" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902fd(jetbrains.mps.lang.smodel.editor)/1741258697587099592">

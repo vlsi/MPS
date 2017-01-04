@@ -2562,19 +2562,6 @@
       <node concept="l2Vlx" id="i0NEeOf" role="2iSdaV" />
     </node>
   </node>
-  <node concept="24kQdi" id="hboS6Tp">
-    <property role="3GE5qa" value="operation.concept" />
-    <ref role="1XX52x" to="tp25:hboNAxt" resolve="Concept_GetHierarchy" />
-    <node concept="3F0ifn" id="hboS7k5" role="2wV5jI">
-      <property role="3F0ifm" value="hierarchy" />
-      <node concept="3nxI2P" id="5q7UjaiXHWM" role="3F10Kt">
-        <property role="VOm3f" value="true" />
-      </node>
-      <node concept="VPxyj" id="hEZKQy6" role="3F10Kt">
-        <property role="VOm3f" value="true" />
-      </node>
-    </node>
-  </node>
   <node concept="24kQdi" id="hbzs4oH">
     <ref role="1XX52x" to="tp25:hbzrR4P" resolve="SNodeCreator" />
     <node concept="3EZMnI" id="hcKXBZw" role="2wV5jI">
@@ -7401,9 +7388,6 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJgv6">
     <ref role="aqKnT" to="tp25:gNgmYLL" resolve="OperationParm_ConceptList" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJgv7">
-    <ref role="aqKnT" to="tp25:hboNAxt" resolve="Concept_GetHierarchy" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJgv8">
     <ref role="aqKnT" to="tp25:gDxIGKj" resolve="OperationParm_Inclusion" />
