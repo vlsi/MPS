@@ -67,11 +67,12 @@ public class ProjectDescriptorPersistence {
   @NotNull
   public ProjectDescriptor load(@Nullable Element root) {
     final String name = myBaseDir.getName();
+    final jetbrains.mps.vfs.openapi.FileSystem fileSystem = myBaseDir.getFileSystem();
     ProjectDescriptor descriptor = new ProjectDescriptor(name);
     if (root == null) {
       return descriptor;
     }
-    ProjectDescriptor result_jnk9az_a3a81 = descriptor;
+    ProjectDescriptor result_jnk9az_a4a81 = descriptor;
     List<Element> moduleList = ListSequence.fromList(new ArrayList<Element>());
     // AP : these are deprecated, aren't they? 
     ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectSolutions"), "solutionPath")));
@@ -81,8 +82,8 @@ public class ProjectDescriptorPersistence {
     for (Element moduleElement : ListSequence.fromList(moduleList)) {
       String path = myMacroHelper.expandPath(moduleElement.getAttributeValue(PATH_TAG));
       String virtualFolder = moduleElement.getAttributeValue(FOLDER_TAG);
-      ModulePath modulePath = new ModulePath(path, virtualFolder);
-      result_jnk9az_a3a81.addModulePath(modulePath);
+      ModulePath modulePath = new ModulePath(fileSystem.getFile(path), virtualFolder);
+      result_jnk9az_a4a81.addModulePath(modulePath);
     }
     return descriptor;
   }

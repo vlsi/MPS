@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.project.ModulePath;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemEvent;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -34,23 +33,23 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
  */
 public class NotFoundModulesListener implements ProjectModuleLoadingListener {
   private final MPSProject myMpsProject;
-  private static final FileSystem FS = FileSystem.getInstance();
 
   public NotFoundModulesListener(MPSProject mpsProject) {
     myMpsProject = mpsProject;
   }
 
   @Override
-  public void moduleLoaded(@NotNull SModule module) {
+  public void moduleLoaded(ModulePath modulePath, @NotNull SModule module) {
   }
 
   @Override
-  public void moduleRemoved(@NotNull SModule module) {
+  public void moduleRemoved(ModulePath modulePath, @NotNull SModule module) {
   }
 
   @Override
   public void moduleNotFound(@NotNull final ModulePath modulePath) {
-    FS.addListener(new NotFoundModulePathListener(modulePath));
+    IFile moduleFile = modulePath.getFile();
+    moduleFile.getFileSystem().addListener(new NotFoundModulePathListener(moduleFile));
   }
 
   @Override
@@ -60,8 +59,8 @@ public class NotFoundModulesListener implements ProjectModuleLoadingListener {
   private class NotFoundModulePathListener implements FileSystemListener {
     private final IFile myModuleFile;
 
-    public NotFoundModulePathListener(@NotNull ModulePath modulePath) {
-      myModuleFile = FS.getFileByPath(modulePath.getPath());
+    public NotFoundModulePathListener(@NotNull IFile file) {
+      myModuleFile = file;
     }
 
     @Nullable
@@ -80,7 +79,7 @@ public class NotFoundModulesListener implements ProjectModuleLoadingListener {
       for (IFile file : event.getCreated()) {
         if (file.equals(myModuleFile)) {
           myMpsProject.update();
-          FS.removeListener(this);
+          myModuleFile.getFileSystem().removeListener(this);
         }
       }
     }

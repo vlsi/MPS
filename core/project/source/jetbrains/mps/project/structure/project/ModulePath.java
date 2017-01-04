@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,11 @@
  */
 package jetbrains.mps.project.structure.project;
 
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.annotations.Immutable;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
 
 /**
@@ -29,27 +27,21 @@ import java.util.Objects;
  * path representation in the project tree, needs to be persisted
  * equal iff both keys are equal
  */
+@Immutable
 public final class ModulePath {
-  private final Logger LOG = LogManager.getLogger(ModulePath.class);
+  private final String myPath; // always canonical path to the module descriptor file, never null
+  private final IFile myFile; // never null
+  private final String myVirtualFolder; // virtual folder, optional, never null
 
-  @NotNull
-  private final String myPath; // always canonical path to the module descriptor file
-  @NotNull
-  private String myVirtualFolder; // virtual folder, optional
-
-  public ModulePath(@NotNull String path) {
-    try {
-      path = new File(path).getCanonicalPath();
-    } catch (IOException e) {
-      LOG.error("", e);
-    }
-    myPath = path;
-    myVirtualFolder = "";
+  public ModulePath(@NotNull IFile file, @Nullable String virtualFolder) {
+    this(file.toPath().toString(), file, virtualFolder != null ? virtualFolder : "");
   }
 
-  public ModulePath(@NotNull String path, @Nullable String virtualFolder) {
-    this(path);
-    myVirtualFolder = virtualFolder != null ? virtualFolder : "";
+  // copy cons
+  private ModulePath(String path, IFile file, String virtualFolder) {
+    myPath = path;
+    myFile = file;
+    myVirtualFolder = virtualFolder;
   }
 
   @NotNull
@@ -58,12 +50,13 @@ public final class ModulePath {
   }
 
   @NotNull
-  public String getVirtualFolder() {
-    return myVirtualFolder;
+  public IFile getFile() {
+    return myFile;
   }
 
-  public void setVirtualFolder(@Nullable String virtualFolder) {
-    myVirtualFolder = virtualFolder != null ? virtualFolder : "";
+  @NotNull
+  public String getVirtualFolder() {
+    return myVirtualFolder;
   }
 
   @Override
@@ -89,5 +82,9 @@ public final class ModulePath {
   @Override
   public String toString() {
     return String.format("Path [%s]; virtual folder [%s]", myPath, myVirtualFolder);
+  }
+
+  public ModulePath withVirtualFolder(String newFolder) {
+    return new ModulePath(myPath, myFile, newFolder == null ? "" : newFolder);
   }
 }

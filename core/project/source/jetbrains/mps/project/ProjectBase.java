@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -86,7 +86,7 @@ public abstract class ProjectBase extends Project {
     }
     IFile descriptorFile = getDescriptorFileChecked(module);
     if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile.toPath().toString(), virtualFolder);
+      ModulePath path = new ModulePath(descriptorFile, virtualFolder);
       myModuleToPathMap.put(module, path);
       myProjectDescriptor.addModulePath(path);
       addRenameListener(module);
@@ -201,6 +201,20 @@ public abstract class ProjectBase extends Project {
     myProjectDescriptor = dataSource.loadDescriptor();
   }
 
+  // Used to live in StandaloneMPSProject. I don't see why it's restricted to that one, provided any
+  // ProjectBase derivative knows aboud ModulePath and its virtual folder.
+  protected void setVirtualFolder(@NotNull SModule module, String newFolder) {
+    // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
+    ModulePath modulePath = getPath(module);
+    if (modulePath != null) {
+      ModulePath newPath = modulePath.withVirtualFolder(newFolder);
+      myProjectDescriptor.replacePath(modulePath, newPath);
+      myModuleToPathMap.put(module, newPath);
+    } else {
+      LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
+    }
+  }
+
   public final void addListener(@NotNull ProjectModuleLoadingListener listener) {
     myModuleLoader.addListener(listener);
   }
@@ -209,22 +223,23 @@ public abstract class ProjectBase extends Project {
     myModuleLoader.removeListener(listener);
   }
 
+  // XXX use of SModule listener to detect renames smells wrong. I'd say Project shall deal with files, on a lower level than SRepository.
+  //     Perhaps, this comes along missing file rename event from FileListener?
   private class ModuleRenameListener extends SModuleListenerBase {
     @Override
     public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
-      ModulePath oldModulePath = myModuleToPathMap.remove(module);
-      String virtualFolder = myProjectDescriptor.removeModulePath(oldModulePath);
+      // why exceptions, why so intolerable? Just because we added the listener to a module with file?
       if (!(module instanceof AbstractModule)) {
         throw new IllegalArgumentException("Support only abstract module here " + module);
       }
+      ModulePath oldPath = myModuleToPathMap.remove(module);
       IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
       if (descriptorFile == null) {
         throw new IllegalArgumentException("The descriptor file is null " + module);
       }
-      String path = descriptorFile.toPath().toString();
-      ModulePath modulePath = new ModulePath(path, virtualFolder);
-      myProjectDescriptor.addModulePath(modulePath);
-      myModuleToPathMap.put(module, modulePath);
+      ModulePath newPath = new ModulePath(descriptorFile, oldPath.getVirtualFolder());
+      myProjectDescriptor.replacePath(oldPath, newPath);
+      myModuleToPathMap.put(module, newPath);
     }
   }
 }

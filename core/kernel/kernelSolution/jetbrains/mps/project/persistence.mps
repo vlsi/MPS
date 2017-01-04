@@ -7,8 +7,6 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
-    <use id="ed6d7656-532c-4bc2-81d1-af945aeb8280" name="jetbrains.mps.baseLanguage.blTypes" version="0" />
-    <use id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" name="jetbrains.mps.lang.traceable" version="0" />
   </languages>
   <imports>
     <import index="7a2w" ref="r:10bf3684-5fb2-4fa0-9dd9-1d05589df2e9(jetbrains.mps.util.xml)" />
@@ -34,6 +32,7 @@
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
     <import index="mcvo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.adapter.structure.language(MPS.Core/)" />
     <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" />
+    <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -271,12 +270,6 @@
     <language id="132aa4d8-a3f7-441c-a7eb-3fce23492c6a" name="jetbrains.mps.baseLanguage.builders">
       <concept id="7057666463730155278" name="jetbrains.mps.baseLanguage.builders.structure.BuilderCreator" flags="nn" index="g8Q5f" />
       <concept id="7057666463730155299" name="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" flags="nn" index="g8Q5y" />
-      <concept id="5425713840853682520" name="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter" flags="ng" index="2ijgy_">
-        <child id="5425713840853682521" name="type" index="2ijgy$" />
-      </concept>
-      <concept id="5425713840853785828" name="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference" flags="nn" index="2ijDOp">
-        <reference id="5425713840853785829" name="parameter" index="2ijDOo" />
-      </concept>
       <concept id="5389689214216557332" name="jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder" flags="ng" index="2tVtrs">
         <child id="5389689214216557333" name="type" index="2tVtrt" />
       </concept>
@@ -297,7 +290,6 @@
       <concept id="7288041816792374840" name="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration" flags="ng" index="1bf$Pj">
         <property id="7288041816792489431" name="root" index="1bfSUW" />
         <reference id="3816167865390363701" name="extends" index="1nbVh1" />
-        <child id="5425713840853683089" name="parameter" index="2ijgDG" />
         <child id="7288041816793525038" name="creator" index="1b3Zx5" />
         <child id="7288041816792733124" name="child" index="1beWqJ" />
         <child id="3816167865390455307" name="type" index="1nbxDZ" />
@@ -9414,6 +9406,23 @@
             </node>
           </node>
         </node>
+        <node concept="3cpWs8" id="BN7Pn0$yfp" role="3cqZAp">
+          <node concept="3cpWsn" id="BN7Pn0$yfq" role="3cpWs9">
+            <property role="TrG5h" value="fileSystem" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="BN7Pn0$yfn" role="1tU5fm">
+              <ref role="3uigEE" to="w827:~FileSystem" resolve="FileSystem" />
+            </node>
+            <node concept="2OqwBi" id="BN7Pn0$yfr" role="33vP2m">
+              <node concept="37vLTw" id="BN7Pn0$yfs" role="2Oq$k0">
+                <ref role="3cqZAo" node="3v_OXaS3ZEG" resolve="myBaseDir" />
+              </node>
+              <node concept="liA8E" id="BN7Pn0$yft" role="2OqNvi">
+                <ref role="37wK5l" to="3ju5:~IFile.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="3cpWs8" id="3v_OXaS43iH" role="3cqZAp">
           <node concept="3cpWsn" id="3v_OXaS43iI" role="3cpWs9">
             <property role="TrG5h" value="descriptor" />
@@ -9634,9 +9643,17 @@
                     </node>
                     <node concept="2ShNRf" id="IMUMWuHQZx" role="33vP2m">
                       <node concept="1pGfFk" id="IMUMWuHQZy" role="2ShVmc">
-                        <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="ModulePath" />
-                        <node concept="37vLTw" id="15VbAzME6a0" role="37wK5m">
-                          <ref role="3cqZAo" node="15VbAzME5St" resolve="path" />
+                        <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.String)" resolve="ModulePath" />
+                        <node concept="2OqwBi" id="BN7Pn0$$Lp" role="37wK5m">
+                          <node concept="37vLTw" id="BN7Pn0$$Iw" role="2Oq$k0">
+                            <ref role="3cqZAo" node="BN7Pn0$yfq" resolve="fileSystem" />
+                          </node>
+                          <node concept="liA8E" id="BN7Pn0$$ON" role="2OqNvi">
+                            <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
+                            <node concept="37vLTw" id="BN7Pn0$$S0" role="37wK5m">
+                              <ref role="3cqZAo" node="15VbAzME5St" resolve="path" />
+                            </node>
+                          </node>
                         </node>
                         <node concept="37vLTw" id="15VbAzME7w_" role="37wK5m">
                           <ref role="3cqZAo" node="15VbAzME6ep" resolve="virtualFolder" />
@@ -9649,7 +9666,7 @@
                   <node concept="2OqwBi" id="IMUMWuHQZU" role="3clFbG">
                     <node concept="1bf8Ab" id="IMUMWuHQZV" role="2Oq$k0" />
                     <node concept="liA8E" id="IMUMWuHQZW" role="2OqNvi">
-                      <ref role="37wK5l" to="y8s3:~ProjectDescriptor.addModulePath(jetbrains.mps.project.structure.project.ModulePath):java.lang.String" resolve="addModulePath" />
+                      <ref role="37wK5l" to="y8s3:~ProjectDescriptor.addModulePath(jetbrains.mps.project.structure.project.ModulePath):void" resolve="addModulePath" />
                       <node concept="37vLTw" id="3GM_nagTw3p" role="37wK5m">
                         <ref role="3cqZAo" node="IMUMWuHQZv" resolve="modulePath" />
                       </node>
@@ -11507,30 +11524,6 @@
       <node concept="2ShNRf" id="7OuC_CamAge" role="1b3Zx5">
         <node concept="1pGfFk" id="7OuC_CamAgf" role="2ShVmc">
           <ref role="37wK5l" to="w0gx:~DevkitDescriptor.&lt;init&gt;()" resolve="DevkitDescriptor" />
-        </node>
-      </node>
-    </node>
-  </node>
-  <node concept="1bf$Pg" id="7OuC_CamBEb">
-    <property role="TrG5h" value="ProjectDescriptorsBuilders" />
-    <property role="3GE5qa" value="builders" />
-    <ref role="2jAjfX" node="IMUMWuHQoA" resolve="ModuleDescriptorsBuilders" />
-    <node concept="1bf$Pj" id="7OuC_CamBEg" role="1bf$Pm">
-      <property role="1bfSUW" value="true" />
-      <property role="TrG5h" value="path" />
-      <node concept="2ijgy_" id="XZsBAoUrzB" role="2ijgDG">
-        <property role="TrG5h" value="path" />
-        <node concept="17QB3L" id="XZsBAoUrzQ" role="2ijgy$" />
-      </node>
-      <node concept="3uibUv" id="XZsBAoU4aL" role="1nbxDZ">
-        <ref role="3uigEE" to="y8s3:~ModulePath" resolve="ModulePath" />
-      </node>
-      <node concept="2ShNRf" id="7OuC_CamBEi" role="1b3Zx5">
-        <node concept="1pGfFk" id="7OuC_CamBEj" role="2ShVmc">
-          <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String)" resolve="ModulePath" />
-          <node concept="2ijDOp" id="XZsBAoUrzX" role="37wK5m">
-            <ref role="2ijDOo" node="XZsBAoUrzB" resolve="path" />
-          </node>
         </node>
       </node>
     </node>
