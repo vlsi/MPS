@@ -1134,7 +1134,9 @@
         <node concept="3cpWs8" id="6s_yi1IfHW1" role="3cqZAp">
           <node concept="3cpWsn" id="6s_yi1IfHW2" role="3cpWs9">
             <property role="TrG5h" value="target" />
-            <node concept="3THzug" id="6s_yi1IfHW3" role="1tU5fm" />
+            <node concept="3Tqbb2" id="6ALWH9ft4$v" role="1tU5fm">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
             <node concept="2OqwBi" id="6s_yi1IfHW5" role="33vP2m">
               <node concept="2OqwBi" id="6s_yi1IfHW6" role="2Oq$k0">
                 <node concept="2OqwBi" id="6s_yi1IfHW7" role="2Oq$k0">

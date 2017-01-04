@@ -1125,7 +1125,7 @@
                 <node concept="1pGfFk" id="7PbCNsf60KX" role="2ShVmc">
                   <ref role="37wK5l" node="7PbCNsf3ku0" resolve="container.DiagramCellImpl" />
                   <node concept="1rXfSq" id="4GrrhHorrgu" role="37wK5m">
-                    <ref role="37wK5l" to="qvne:4qA9Zh9H8TR" resolve="getEditorContext" />
+                    <ref role="37wK5l" to="qvne:6OQfiPCHBdf" resolve="getEditorContext" />
                   </node>
                   <node concept="37vLTw" id="4GrrhHorvHC" role="37wK5m">
                     <ref role="3cqZAo" to="tpc3:7GOmDNDA2zg" resolve="myNode" />
