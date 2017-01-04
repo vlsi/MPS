@@ -1803,42 +1803,6 @@
         </node>
       </node>
     </node>
-    <node concept="2YIFZL" id="55cpr5dyyCi" role="jymVt">
-      <property role="TrG5h" value="isDefaultSubstitutable" />
-      <property role="IEkAT" value="false" />
-      <node concept="10P_77" id="55cpr5dyyKM" role="3clF45" />
-      <node concept="3Tm1VV" id="55cpr5dyyCk" role="1B3o_S" />
-      <node concept="3clFbS" id="55cpr5dyyCl" role="3clF47">
-        <node concept="3clFbF" id="55cpr5dyyKP" role="3cqZAp">
-          <node concept="2OqwBi" id="55cpr5dyyKR" role="3clFbG">
-            <node concept="37vLTw" id="2BHiRxgmi1s" role="2Oq$k0">
-              <ref role="3cqZAo" node="55cpr5dyyKN" resolve="node" />
-            </node>
-            <node concept="2qgKlT" id="55cpr5dyVYq" role="2OqNvi">
-              <ref role="37wK5l" to="tpcn:6spw4TQeyqh" resolve="isDefaultSubstitutable" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="37vLTG" id="55cpr5dyyKN" role="3clF46">
-        <property role="TrG5h" value="node" />
-        <node concept="3Tqbb2" id="55cpr5dyyKO" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
-        </node>
-      </node>
-      <node concept="2AHcQZ" id="7vc5PjWu3p5" role="2AJF6D">
-        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
-      </node>
-      <node concept="2AHcQZ" id="7vc5PjWu3qW" role="2AJF6D">
-        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
-        <node concept="2B6LJw" id="7vc5PjWu3yR" role="2B76xF">
-          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
-          <node concept="3b6qkQ" id="7vc5PjWu3AR" role="2B70Vg">
-            <property role="$nhwW" value="3.3" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="2YIFZL" id="7vc5PjWu3AY" role="jymVt">
       <property role="TrG5h" value="isDefaultSubstitutable" />
       <property role="IEkAT" value="false" />
