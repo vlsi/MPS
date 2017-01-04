@@ -368,7 +368,9 @@
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
-      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz" />
+      <concept id="6677504323281689838" name="jetbrains.mps.lang.smodel.structure.SConceptType" flags="in" index="3bZ5Sz">
+        <reference id="6677504323281689839" name="conceptDeclaraton" index="3bZ5Sy" />
+      </concept>
       <concept id="1221161909218" name="jetbrains.mps.lang.smodel.structure.SearchScopeType" flags="in" index="1iUZFY" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -3809,12 +3811,14 @@
                 </node>
                 <node concept="2yIwOk" id="2JFJZufNFjK" role="2OqNvi" />
               </node>
-              <node concept="2qgKlT" id="2D1PBM_bDHJ" role="2OqNvi">
-                <ref role="37wK5l" to="tpeu:2D1PBM_bxI0" resolve="getApplicableParameter" />
+              <node concept="2qgKlT" id="6ALWH9fRjVT" role="2OqNvi">
+                <ref role="37wK5l" to="tpeu:6ALWH9fQysn" resolve="getParameterConcepts" />
               </node>
             </node>
-            <node concept="2I9FWS" id="hana27E" role="1tU5fm">
-              <ref role="2I9WkF" to="tpce:f_TIwhg" resolve="ConceptDeclaration" />
+            <node concept="_YKpA" id="6ALWH9fRklt" role="1tU5fm">
+              <node concept="3bZ5Sz" id="6ALWH9fRkCh" role="_ZDj9">
+                <ref role="3bZ5Sy" to="tp25:gDxHYCE" resolve="AbstractOperationParameter" />
+              </node>
             </node>
           </node>
         </node>
@@ -3838,11 +3842,11 @@
                     <ref role="3cqZAo" node="hana27D" resolve="applicableParmConcepts" />
                   </node>
                   <node concept="3JPx81" id="h9ohpxh" role="2OqNvi">
-                    <node concept="2OqwBi" id="hx2Fvdw" role="25WWJ7">
+                    <node concept="2OqwBi" id="6ALWH9fRlrj" role="25WWJ7">
                       <node concept="2GrUjf" id="h9ohpxj" role="2Oq$k0">
                         <ref role="2Gs0qQ" node="h9oh7qs" resolve="parm" />
                       </node>
-                      <node concept="3NT_Vc" id="h9ohpxk" role="2OqNvi" />
+                      <node concept="2yIwOk" id="6ALWH9fRlKM" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
