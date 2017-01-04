@@ -40,9 +40,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   @Override
   public void checkNode(final SNode node, LanguageErrorsComponent component, SRepository repository) {
     final SAbstractConcept nodeConcept = SNodeOperations.getConcept(node);
-    SNode nodeConceptNode = SNodeOperations.getConceptDeclaration(node);
-    final SNode parent = SNodeOperations.getParent(node);
-    SNode containingLink = SNodeOperations.getContainingLinkDeclaration(node);
+    SNode parent = SNodeOperations.getParent(node);
 
     ConstraintsDescriptor constraintsDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(nodeConcept);
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
@@ -50,7 +48,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (parent != null) {
       component.addDependency(parent);
       if (SNodeOperations.getConcept(parent).isValid()) {
-        final SContainmentLink link = node.getContainmentLink();
+        SContainmentLink link = node.getContainmentLink();
         if (link == null) {
           component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
           return;
@@ -83,15 +81,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       component.addError(node, "Concept of a node was not found", null);
     }
 
-    for (final SNode child : SNodeOperations.getChildren(node)) {
-      final SAbstractConcept childConcept = SNodeOperations.getConcept(child);
-      final SContainmentLink childLink = child.getContainmentLink();
-      if (childConcept == null || childLink == null) {
-        continue;
-      }
+    for (SNode child : SNodeOperations.getChildren(node)) {
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeParent(child, checkingNodeContext);
+          return ModelConstraints.canBeParent(node, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {

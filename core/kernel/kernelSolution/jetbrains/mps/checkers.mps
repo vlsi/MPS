@@ -380,7 +380,6 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -607,18 +606,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="D2SZDcASdI" role="3cqZAp">
-          <node concept="3cpWsn" id="D2SZDcASdJ" role="3cpWs9">
-            <property role="TrG5h" value="nodeConceptNode" />
-            <node concept="3THzug" id="D2SZDcASdH" role="1tU5fm" />
-            <node concept="2OqwBi" id="D2SZDcASdK" role="33vP2m">
-              <node concept="37vLTw" id="D2SZDcASdL" role="2Oq$k0">
-                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-              </node>
-              <node concept="3NT_Vc" id="D2SZDcASdM" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="552CEt2aC_L" role="3cqZAp">
           <node concept="3cpWsn" id="552CEt2aC_M" role="3cpWs9">
             <property role="TrG5h" value="parent" />
@@ -628,20 +615,6 @@
                 <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
               </node>
               <node concept="1mfA1w" id="552CEt2aC_P" role="2OqNvi" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="6qi2OtU3uq$" role="3cqZAp">
-          <node concept="3cpWsn" id="6qi2OtU3uq_" role="3cpWs9">
-            <property role="TrG5h" value="containingLink" />
-            <node concept="3Tqbb2" id="6qi2OtU3uqA" role="1tU5fm">
-              <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-            </node>
-            <node concept="2OqwBi" id="6qi2OtU3uqB" role="33vP2m">
-              <node concept="37vLTw" id="2BHiRxglldi" role="2Oq$k0">
-                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-              </node>
-              <node concept="25OxAV" id="6qi2OtU3uqD" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -784,18 +757,9 @@
                             <node concept="3clFbF" id="6xoucZk5aXI" role="3cqZAp">
                               <node concept="2YIFZM" id="6xoucZk5aXJ" role="3clFbG">
                                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                                <ref role="37wK5l" to="ykok:~ModelConstraints.canBeChild(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SContainmentLink,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeChild" />
+                                <ref role="37wK5l" to="ykok:~ModelConstraints.canBeChild(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeChild" />
                                 <node concept="37vLTw" id="6xoucZk5aXK" role="37wK5m">
                                   <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                                </node>
-                                <node concept="37vLTw" id="3bWbRfeuL5o" role="37wK5m">
-                                  <ref role="3cqZAo" node="552CEt2aC_M" resolve="parent" />
-                                </node>
-                                <node concept="37vLTw" id="6xoucZk5aXL" role="37wK5m">
-                                  <ref role="3cqZAo" node="D2SZDcALQJ" resolve="nodeConcept" />
-                                </node>
-                                <node concept="37vLTw" id="6xoucZk5aXM" role="37wK5m">
-                                  <ref role="3cqZAo" node="6xoucZk5aXe" resolve="link" />
                                 </node>
                                 <node concept="37vLTw" id="6xoucZk5aXN" role="37wK5m">
                                   <ref role="3cqZAo" node="7HmjS2NO_SP" resolve="checkingNodeContext" />
@@ -1024,55 +988,6 @@
         <node concept="3clFbH" id="6qi2OtU3usu" role="3cqZAp" />
         <node concept="1DcWWT" id="6qi2OtU3usv" role="3cqZAp">
           <node concept="3clFbS" id="6qi2OtU3usw" role="2LFqv$">
-            <node concept="3cpWs8" id="6qi2OtU3usA" role="3cqZAp">
-              <node concept="3cpWsn" id="6qi2OtU3usB" role="3cpWs9">
-                <property role="TrG5h" value="childConcept" />
-                <node concept="3bZ5Sz" id="3SMLHJk9cim" role="1tU5fm" />
-                <node concept="2OqwBi" id="6qi2OtU3usD" role="33vP2m">
-                  <node concept="2yIwOk" id="3SMLHJk9c2$" role="2OqNvi" />
-                  <node concept="37vLTw" id="3GM_nagTuhj" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6qi2OtU3uu6" resolve="child" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3cpWs8" id="6qi2OtU3usG" role="3cqZAp">
-              <node concept="3cpWsn" id="6qi2OtU3usH" role="3cpWs9">
-                <property role="TrG5h" value="childLink" />
-                <node concept="3uibUv" id="4Ocu28fIXhY" role="1tU5fm">
-                  <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
-                </node>
-                <node concept="2OqwBi" id="4Ocu28fIWHc" role="33vP2m">
-                  <node concept="2JrnkZ" id="4Ocu28fIWv5" role="2Oq$k0">
-                    <node concept="37vLTw" id="3GM_nagTusZ" role="2JrQYb">
-                      <ref role="3cqZAo" node="6qi2OtU3uu6" resolve="child" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4Ocu28fIWZq" role="2OqNvi">
-                    <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbJ" id="6qi2OtU3usM" role="3cqZAp">
-              <node concept="22lmx$" id="CWgWtOa89N" role="3clFbw">
-                <node concept="3clFbC" id="CWgWtOabO_" role="3uHU7B">
-                  <node concept="10Nm6u" id="CWgWtOabOO" role="3uHU7w" />
-                  <node concept="37vLTw" id="CWgWtOaaai" role="3uHU7B">
-                    <ref role="3cqZAo" node="6qi2OtU3usB" resolve="childConcept" />
-                  </node>
-                </node>
-                <node concept="3clFbC" id="6qi2OtU3usP" role="3uHU7w">
-                  <node concept="10Nm6u" id="6qi2OtU3usQ" role="3uHU7w" />
-                  <node concept="37vLTw" id="3GM_nagTudd" role="3uHU7B">
-                    <ref role="3cqZAo" node="6qi2OtU3usH" resolve="childLink" />
-                  </node>
-                </node>
-              </node>
-              <node concept="3clFbS" id="6qi2OtU3usN" role="3clFbx">
-                <node concept="3N13vt" id="6qi2OtU3usO" role="3cqZAp" />
-              </node>
-            </node>
             <node concept="3cpWs8" id="6qi2OtU3usS" role="3cqZAp">
               <node concept="3cpWsn" id="6qi2OtU3usT" role="3cpWs9">
                 <property role="TrG5h" value="canBeParent" />
@@ -1088,18 +1003,9 @@
                         <node concept="3clFbF" id="6qi2OtU3ut0" role="3cqZAp">
                           <node concept="2YIFZM" id="6xoucZk5dtw" role="3clFbG">
                             <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                            <ref role="37wK5l" to="ykok:~ModelConstraints.canBeParent(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.language.SContainmentLink,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeParent" />
+                            <ref role="37wK5l" to="ykok:~ModelConstraints.canBeParent(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeParent" />
                             <node concept="37vLTw" id="6xoucZk5dtx" role="37wK5m">
                               <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                            </node>
-                            <node concept="37vLTw" id="6xoucZk5dty" role="37wK5m">
-                              <ref role="3cqZAo" node="6qi2OtU3uu6" resolve="child" />
-                            </node>
-                            <node concept="37vLTw" id="6xoucZk5dtz" role="37wK5m">
-                              <ref role="3cqZAo" node="6qi2OtU3usB" resolve="childConcept" />
-                            </node>
-                            <node concept="37vLTw" id="6xoucZk5dt$" role="37wK5m">
-                              <ref role="3cqZAo" node="6qi2OtU3usH" resolve="childLink" />
                             </node>
                             <node concept="37vLTw" id="6xoucZk5dt_" role="37wK5m">
                               <ref role="3cqZAo" node="7HmjS2NO_SP" resolve="checkingNodeContext" />
@@ -1198,25 +1104,13 @@
                       <node concept="3clFbS" id="D2SZDcAKW2" role="1bW5cS">
                         <node concept="3clFbF" id="D2SZDcAKW3" role="3cqZAp">
                           <node concept="2YIFZM" id="3bWbRfeuLkg" role="3clFbG">
-                            <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestorDirect(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SAbstractConcept,org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SContainmentLink,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestorDirect" />
                             <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
+                            <ref role="37wK5l" to="ykok:~ModelConstraints.canBeAncestorDirect(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeAncestorDirect" />
                             <node concept="37vLTw" id="3bWbRfeuLkh" role="37wK5m">
                               <ref role="3cqZAo" node="D2SZDcAI5T" resolve="ancestor" />
                             </node>
                             <node concept="37vLTw" id="3bWbRfeuLki" role="37wK5m">
                               <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                            </node>
-                            <node concept="37vLTw" id="3bWbRfeuLkj" role="37wK5m">
-                              <ref role="3cqZAo" node="D2SZDcALQJ" resolve="nodeConcept" />
-                            </node>
-                            <node concept="37vLTw" id="3bWbRfeuM9I" role="37wK5m">
-                              <ref role="3cqZAo" node="552CEt2aC_M" resolve="parent" />
-                            </node>
-                            <node concept="2OqwBi" id="3bWbRfeuMp_" role="37wK5m">
-                              <node concept="37vLTw" id="3bWbRfeuMpA" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                              </node>
-                              <node concept="2NL2c5" id="6eL9dE3AfIy" role="2OqNvi" />
                             </node>
                             <node concept="37vLTw" id="3bWbRfeuLkk" role="37wK5m">
                               <ref role="3cqZAo" node="7HmjS2NO_SP" resolve="checkingNodeContext" />
