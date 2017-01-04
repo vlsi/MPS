@@ -24,6 +24,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public abstract class RelationDescriptor implements Comparable<RelationDescriptor> {
@@ -62,34 +63,16 @@ public abstract class RelationDescriptor implements Comparable<RelationDescripto
     return result;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public List<SNode> getConcepts(SNode baseNode) {
-    return new ArrayList<SNode>();
-  }
-
-  public Iterable<SConcept> getAspectConcepts(SNode baseNode) {
-    //todo remove body after 3.4
-    ArrayList<SConcept> result = new ArrayList<>();
-    for (SNode cn: getConcepts(baseNode)){
-      result.add(MetaAdapterByDeclaration.getInstanceConcept(cn));
-    }
-    return result;
+  public Iterable<SConcept> getAspectConcepts(SNode baseNode){
+    return Collections.emptyList();
   }
 
   public boolean commandOnCreate() {
     return true;
   }
 
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public SNode createNode(SNode baseNode, SNode concept) {
+  public SNode createAspect(SNode baseNode, SConcept concept){
     throw new UnsupportedOperationException();
-  }
-
-  public SNode createAspect(SNode baseNode, SConcept concept) {
-    //todo remove body after 3.4
-    return createNode(baseNode, concept.getDeclarationNode());
   }
 
   @Nullable
