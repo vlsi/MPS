@@ -4724,7 +4724,9 @@
     </node>
     <node concept="2YIFZL" id="hMuujzZ" role="jymVt">
       <property role="TrG5h" value="leastCommonSuperconcept" />
-      <node concept="3THzug" id="hMuulUs" role="3clF45" />
+      <node concept="3Tqbb2" id="6ALWH9fTznc" role="3clF45">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
       <node concept="3Tm1VV" id="hMuuj$1" role="1B3o_S" />
       <node concept="3clFbS" id="hMuuj$2" role="3clF47">
         <node concept="3cpWs8" id="5SjpIHv9$po" role="3cqZAp">
@@ -4968,7 +4970,9 @@
       <node concept="3cpWs8" id="hyX_Ecq" role="3cqZAp">
         <node concept="3cpWsn" id="hyX_Ecr" role="3cpWs9">
           <property role="TrG5h" value="parameterConcept" />
-          <node concept="3THzug" id="hyX_Ecs" role="1tU5fm" />
+          <node concept="3Tqbb2" id="6ALWH9fTzcX" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+          </node>
           <node concept="2OqwBi" id="hyX_Ect" role="33vP2m">
             <node concept="1YBJjd" id="hyX_Ecu" role="2Oq$k0">
               <ref role="1YBMHb" node="h9nq4km" resolve="op" />
@@ -5089,7 +5093,9 @@
       <node concept="3cpWs8" id="hyDXtDc" role="3cqZAp">
         <node concept="3cpWsn" id="hyDXtDd" role="3cpWs9">
           <property role="TrG5h" value="parameterConcept" />
-          <node concept="3THzug" id="hyDXtDe" role="1tU5fm" />
+          <node concept="3Tqbb2" id="6ALWH9fTzLH" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+          </node>
           <node concept="2OqwBi" id="hyDXtDf" role="33vP2m">
             <node concept="1YBJjd" id="hyDXtDg" role="2Oq$k0">
               <ref role="1YBMHb" node="h9nq4kz" resolve="op" />
