@@ -57,7 +57,7 @@ public final class ConstraintFunctions {
   /**
    * Creates a composition of constraint functions which returns {@code ReferenceScopeProvider} as result.
    *
-   * TODO While a scope conjunction not implemented, it returns first supplied constraint function
+   * TODO While a scope conjunction not implemented, it returns first not-null result of supplied constraint functions
    */
   public static <Context> ConstraintFunction<Context, ReferenceScopeProvider> createScopeProviderComposition(
       Iterable<ConstraintFunction<Context, ReferenceScopeProvider>> constraints
@@ -70,7 +70,7 @@ public final class ConstraintFunctions {
     if (constraintList.size() == 1) {
       return constraintList.get(0);
     }
-    return constraintList.get(0);
+    return new ScopeProviderCompositionConstraintFunction<>(constraintList);
   }
 
   public static ConstraintFunction<ConstraintContext_CanBeChild, Boolean> getCanBeChildConstraintFunction(ConstraintsDescriptor cd) {
@@ -111,8 +111,7 @@ public final class ConstraintFunctions {
 
   private static final ConstraintFunction<?, Boolean> EMPTY_BOOLEAN_COMPOSITION = (context, checkingNodeContext) -> true;
 
-  private static final ConstraintFunction<?, ReferenceScopeProvider> EMPTY_SCOPE_PROVIDER_COMPOSITION =
-      (context, checkingNodeContext) -> new BaseReferenceScopeProvider();
+  private static final ConstraintFunction<?, ReferenceScopeProvider> EMPTY_SCOPE_PROVIDER_COMPOSITION = (context, checkingNodeContext) -> null;
 
   private static final ConstraintFunction<?, ?> ERROR_COMPOSITION = (context, checkingNodeContext) -> {
     throw new IllegalStateException("Constraint functions can not be composed");
@@ -130,11 +129,31 @@ public final class ConstraintFunctions {
     @Override
     public Boolean invoke(@NotNull Context context, CheckingNodeContext checkingNodeContext) {
       for (ConstraintFunction<Context, Boolean> parent : myDirectParents) {
-        if (parent.invoke(context, checkingNodeContext)) {
-          return true;
+        if (!parent.invoke(context, checkingNodeContext)) {
+          return false;
         }
       }
-      return false;
+      return true;
+    }
+  }
+
+  private static final class ScopeProviderCompositionConstraintFunction<Context> implements ConstraintFunction<Context, ReferenceScopeProvider> {
+
+    private final Iterable<ConstraintFunction<Context, ReferenceScopeProvider>> myDirectParents;
+
+    public ScopeProviderCompositionConstraintFunction(Iterable<ConstraintFunction<Context, ReferenceScopeProvider>> directParents) {
+      myDirectParents = directParents;
+    }
+
+    @Override
+    public ReferenceScopeProvider invoke(@NotNull Context context, @Nullable CheckingNodeContext checkingNodeContext) {
+      for (ConstraintFunction<Context, ReferenceScopeProvider> parent : myDirectParents) {
+        ReferenceScopeProvider scopeProvider = parent.invoke(context, checkingNodeContext);
+        if (scopeProvider != null) {
+          return scopeProvider;
+        }
+      }
+      return null;
     }
   }
 }

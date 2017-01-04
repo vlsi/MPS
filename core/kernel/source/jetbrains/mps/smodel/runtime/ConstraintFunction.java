@@ -53,6 +53,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  */
 public interface ConstraintFunction<Context, Result> {
 
-  @NotNull
+  @Nullable
   Result invoke(@NotNull Context context, @Nullable CheckingNodeContext checkingNodeContext);
 }

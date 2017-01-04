@@ -142,6 +142,11 @@ public class BaseConstraintsDescriptor implements ConstraintsDispatchable, Const
   }
 
   protected ConstraintFunction<ConstraintContext_DefaultScopeProvider, ReferenceScopeProvider> calculateDefaultScopeConstraint() {
+    if (hasOwnDefaultScopeProvider()) {
+      // branch for interoperability with legacy non-regenerated code
+      // remove after 3.5
+      return (context, checkingNodeContext) -> getDefaultScopeProvider();
+    }
     return ConstraintFunctions.createScopeProviderComposition(collectParents(ConstraintFunctions::getDefaultScopeConstraintFunction));
   }
 
