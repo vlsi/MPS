@@ -22,7 +22,8 @@ import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
+import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 /**
  * Returns all parents of a concept or concept interface in "inheritance" order.
@@ -47,5 +48,9 @@ public class InheritanceIterable implements Iterable<SAbstractConcept> {
   @Override
   public Iterator<SAbstractConcept> iterator() {
     return myParents.iterator();
+  }
+
+  public final Stream<SAbstractConcept> stream() {
+    return StreamSupport.stream(spliterator(), false);
   }
 }
