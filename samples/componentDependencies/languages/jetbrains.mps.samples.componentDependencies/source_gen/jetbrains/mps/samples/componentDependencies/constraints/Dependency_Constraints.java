@@ -29,7 +29,6 @@ public class Dependency_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x3066bc0924384300L, 0xa9365bd59917ae9bL, 0x565e1976381b71a0L, "jetbrains.mps.samples.componentDependencies.structure.Dependency"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -44,7 +43,7 @@ public class Dependency_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_p94dcx_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_p94dcx_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -59,5 +58,5 @@ public class Dependency_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_p94dcx_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)", "9095678365530422331");
+  private static SNodePointer breakingNode_p94dcx_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a5fe27e7-3b9f-4548-9154-66721114c30d(jetbrains.mps.samples.componentDependencies.constraints)", "9095678365530422331");
 }

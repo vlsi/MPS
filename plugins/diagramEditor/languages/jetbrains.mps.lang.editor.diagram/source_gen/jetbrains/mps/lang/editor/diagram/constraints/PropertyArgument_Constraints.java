@@ -25,7 +25,6 @@ public class PropertyArgument_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x3f6e840fdc48c85L, "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class PropertyArgument_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_mf0hp0_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_mf0hp0_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class PropertyArgument_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_mf0hp0_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "3748979635598885857");
+  private static SNodePointer breakingNode_mf0hp0_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "3748979635598885857");
 }

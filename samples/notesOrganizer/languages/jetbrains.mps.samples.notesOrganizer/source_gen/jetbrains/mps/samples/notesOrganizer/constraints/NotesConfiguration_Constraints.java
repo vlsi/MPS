@@ -10,5 +10,4 @@ public class NotesConfiguration_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x4b0f115a88684d72L, 0x8d6197071eaaa5f1L, 0x7ba12f0b163d1745L, "jetbrains.mps.samples.notesOrganizer.structure.NotesConfiguration"));
   }
 
-
 }

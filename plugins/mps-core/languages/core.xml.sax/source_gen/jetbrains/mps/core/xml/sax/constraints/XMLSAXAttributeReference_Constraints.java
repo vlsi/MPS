@@ -44,7 +44,6 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -71,7 +70,7 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_4osf4s_a0a2a0a0a1a0b0a1a5;
+            return breakingNode_4osf4s_a0a2a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -90,5 +89,5 @@ public class XMLSAXAttributeReference_Constraints extends BaseConstraintsDescrip
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xdcb5a83a19a844ffL, 0xa4cbfc7d324ecc63L, 0x1f6c736337b5e301L, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140728");
-  private static SNodePointer breakingNode_4osf4s_a0a2a0a0a1a0b0a1a5 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "980633948652566941");
+  private static SNodePointer breakingNode_4osf4s_a0a2a0a0a1a0b0a1a4 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "980633948652566941");
 }

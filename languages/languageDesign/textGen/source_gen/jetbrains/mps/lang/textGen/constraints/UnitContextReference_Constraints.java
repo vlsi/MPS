@@ -44,7 +44,6 @@ public class UnitContextReference_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -59,7 +58,7 @@ public class UnitContextReference_Constraints extends BaseConstraintsDescriptor 
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_oh7wor_a0a0a0a0a1a0b0a1a5;
+            return breakingNode_oh7wor_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -79,5 +78,5 @@ public class UnitContextReference_Constraints extends BaseConstraintsDescriptor 
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f4b71f51fL, "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"), false, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "3996543181682101353");
-  private static SNodePointer breakingNode_oh7wor_a0a0a0a0a1a0b0a1a5 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "3996543181682110946");
+  private static SNodePointer breakingNode_oh7wor_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "3996543181682110946");
 }

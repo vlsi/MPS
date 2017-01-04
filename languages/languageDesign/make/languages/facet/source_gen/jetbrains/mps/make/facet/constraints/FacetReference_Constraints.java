@@ -10,5 +10,4 @@ public class FacetReference_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x5979ed6d2b21b2f2L, "jetbrains.mps.make.facet.structure.FacetReference"));
   }
 
-
 }

@@ -46,7 +46,6 @@ public class ParameterInitializer_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -61,7 +60,7 @@ public class ParameterInitializer_Constraints extends BaseConstraintsDescriptor 
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a5;
+            return breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a4;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -97,5 +96,5 @@ public class ParameterInitializer_Constraints extends BaseConstraintsDescriptor 
     return false;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "4622937352052264812");
-  private static SNodePointer breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a5 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "4622937352052268808");
+  private static SNodePointer breakingNode_9zeh4o_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "4622937352052268808");
 }

@@ -31,7 +31,6 @@ public class BuildLayout_Filemode_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode archive = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db927f229L, "jetbrains.mps.build.structure.BuildLayout_ContainerAcceptingFileSet"), true, false);

@@ -30,7 +30,6 @@ public class SideTransformMenuPart_Constraints extends BaseConstraintsDescriptor
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"), false, false) != null;

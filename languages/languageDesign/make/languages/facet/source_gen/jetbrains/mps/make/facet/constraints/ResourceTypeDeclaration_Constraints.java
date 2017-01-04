@@ -10,5 +10,4 @@ public class ResourceTypeDeclaration_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0x696c11654a59463bL, 0xbc5d902caab85dd0L, 0x1a6da65e8aab1d4L, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"));
   }
 
-
 }

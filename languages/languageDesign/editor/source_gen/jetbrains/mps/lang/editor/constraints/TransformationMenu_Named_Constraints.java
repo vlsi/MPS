@@ -34,6 +34,5 @@ public class TransformationMenu_Named_Constraints extends BaseConstraintsDescrip
       }
     };
   }
-
   private static SNodePointer breakingNode_6r45os_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "2710939522624558356");
 }

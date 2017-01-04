@@ -49,7 +49,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -84,7 +83,7 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ymgo28_a0a3a0a0a1a0b0a1a5;
+            return breakingNode_ymgo28_a0a3a0a0a1a0b0a1a4;
           }
         };
       }
@@ -110,5 +109,5 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     return quotedNode_1;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "4902420589279531869");
-  private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a5 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
+  private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a4 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
 }

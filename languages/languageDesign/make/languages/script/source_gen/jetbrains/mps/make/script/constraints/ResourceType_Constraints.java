@@ -10,5 +10,4 @@ public class ResourceType_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x20c069f80a947282L, "jetbrains.mps.make.script.structure.ResourceType"));
   }
 
-
 }

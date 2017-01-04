@@ -30,7 +30,6 @@ public class TemplateArgumentPropertyPatternRefExpression_Constraints extends Ba
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x42d71bfbeb1a5de7L, "jetbrains.mps.lang.generator.structure.TemplateArgumentPropertyPatternRefExpression"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -54,12 +53,12 @@ public class TemplateArgumentPropertyPatternRefExpression_Constraints extends Ba
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_d101zz_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_d101zz_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_d101zz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4816349095291149814");
+  private static SNodePointer breakingNode_d101zz_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "4816349095291149814");
 }

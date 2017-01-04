@@ -30,7 +30,6 @@ public class ContextExpression_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x22e72e4c0f6946ceL, 0x84036750153aa615L, 0x3c97fcb79c84cdc3L, "jetbrains.mps.execution.configurations.structure.Create_ConceptFunction"), true, false) != null);

@@ -34,7 +34,6 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -57,7 +56,7 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_4swebx_a0a2a0a0a1a0b0a1a3;
+            return breakingNode_4swebx_a0a2a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -66,11 +65,11 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
                 public boolean accept(final SNode b) {
                   return ListSequence.fromList(SModelOperations.nodes(_context.getModel(), MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, "jetbrains.mps.samples.languagePatterns.Basic.structure.ComponentUsage"))).where(new IWhereFilter<SNode>() {
                     public boolean accept(SNode u) {
-                      return neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0b0a1a0b0d(u, _context.getContextNode());
+                      return neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0b0a1a0b0c(u, _context.getContextNode());
                     }
                   }).all(new IWhereFilter<SNode>() {
                     public boolean accept(SNode u) {
-                      return neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a3(SLinkOperations.getTarget(u, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, 0x4ed97160b0a7fba5L, "usedComponent")), b);
+                      return neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(SLinkOperations.getTarget(u, MetaAdapterFactory.getReferenceLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x4ed97160b0a7fb71L, 0x4ed97160b0a7fba5L, "usedComponent")), b);
                     }
                   });
                 }
@@ -87,11 +86,11 @@ public class ComponentUsage_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static boolean neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0b0a1a0b0d(Object a, Object b) {
+  private static boolean neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a0d0a0a0b0a1a0b0c(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a3(Object a, Object b) {
+  private static boolean neq_4swebx_a0a0a0a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_4swebx_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "5681697064999413466");
+  private static SNodePointer breakingNode_4swebx_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "5681697064999413466");
 }

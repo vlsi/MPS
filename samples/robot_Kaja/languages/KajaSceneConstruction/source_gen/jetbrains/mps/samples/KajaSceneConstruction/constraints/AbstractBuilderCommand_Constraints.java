@@ -19,7 +19,6 @@ public class AbstractBuilderCommand_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getConcept(0xb56912a3674f4530L, 0xb0cf55261b526a1fL, 0x2c8eb033a834fe3fL, "jetbrains.mps.samples.KajaSceneConstruction.structure.AbstractBuilderCommand"));
   }
 
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

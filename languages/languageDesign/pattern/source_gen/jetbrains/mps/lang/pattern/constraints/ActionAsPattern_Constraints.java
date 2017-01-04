@@ -32,7 +32,6 @@ public class ActionAsPattern_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xd4615e3bd6714ba9L, 0xaf012b78369b0ba7L, 0x3d3ef1fc1814cb54L, 0x3d3ef1fc1814cb59L, "action"))) {

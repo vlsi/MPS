@@ -29,7 +29,6 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x7c9e280794ad4afcL, 0xadf0aaee45eb2895L, 0x48db75d5dc496b08L, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -53,12 +52,12 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_3k454j_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_3k454j_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_3k454j_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
+  private static SNodePointer breakingNode_3k454j_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
 }

@@ -33,7 +33,6 @@ public class AttributedNodePart_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode ctgd = SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0xb83431fe5c8f40bcL, 0x8a3665e25f4dd253L, 0x11f3c776369L, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), false, false);

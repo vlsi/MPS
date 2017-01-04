@@ -29,7 +29,6 @@ public class SubtreeStatisticsTarget_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAnAncestor_Old(SNode node, SNode childNode, SNode childConcept, SNode parentNode, SNode link, final IOperationContext operationContext) {
     return childConcept != MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x11be716563cL, "jetbrains.mps.lang.smodel.structure.NodeRefExpression").getDeclarationNode();

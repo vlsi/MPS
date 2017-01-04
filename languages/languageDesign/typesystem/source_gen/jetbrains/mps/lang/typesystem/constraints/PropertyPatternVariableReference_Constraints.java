@@ -30,7 +30,6 @@ public class PropertyPatternVariableReference_Constraints extends BaseConstraint
     super(MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x11192d97ff9L, "jetbrains.mps.lang.typesystem.structure.PropertyPatternVariableReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -68,12 +67,12 @@ public class PropertyPatternVariableReference_Constraints extends BaseConstraint
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_g13cad_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_g13cad_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_g13cad_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104844581");
+  private static SNodePointer breakingNode_g13cad_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104844581");
 }

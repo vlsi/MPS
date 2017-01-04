@@ -41,7 +41,6 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -61,7 +60,7 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ikwodz_a0a1a0a0a1a0b0a1a5;
+            return breakingNode_ikwodz_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -73,5 +72,5 @@ public class ActionParameterReference_Constraints extends BaseConstraintsDescrip
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x55f30a5d1e096c3aL, "jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange"), true, false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038327");
-  private static SNodePointer breakingNode_ikwodz_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038348");
+  private static SNodePointer breakingNode_ikwodz_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1821622352985038348");
 }

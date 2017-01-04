@@ -29,7 +29,6 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
     super(MetaAdapterFactory.getConcept(0xfa8aeae94df94e13L, 0xbfb19b04c67ddb77L, 0x9a1514044030ceL, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -52,12 +51,12 @@ public class HighLevelWatchableCreator_Constraints extends BaseConstraintsDescri
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_fcwqku_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_fcwqku_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_fcwqku_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128311164");
+  private static SNodePointer breakingNode_fcwqku_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128311164");
 }

@@ -27,7 +27,6 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
     super(MetaAdapterFactory.getConcept(0xdf345b11b8c74213L, 0xac6648d2a9b75d88L, 0x31c3f88088ed999aL, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,12 +45,12 @@ public class ExtractStaticMethod_CallExpression_Constraints extends BaseConstrai
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5857910569715972164");
+  private static SNodePointer breakingNode_v4p7j2_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5857910569715972164");
 }

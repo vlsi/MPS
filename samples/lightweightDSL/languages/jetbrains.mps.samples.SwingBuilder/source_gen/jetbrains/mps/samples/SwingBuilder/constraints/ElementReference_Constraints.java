@@ -30,7 +30,6 @@ public class ElementReference_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xb4dbff0c8c314a79L, 0xa45a98e5fd0530e7L, 0xd0f6999e83a1e8aL, "jetbrains.mps.samples.SwingBuilder.structure.ElementReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -45,7 +44,7 @@ public class ElementReference_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -60,5 +59,5 @@ public class ElementReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:7a1c88cb-66d9-4726-9b4a-d5dc6c544de7(jetbrains.mps.samples.SwingBuilder.constraints)", "941086956890759284");
+  private static SNodePointer breakingNode_4bmjf7_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7a1c88cb-66d9-4726-9b4a-d5dc6c544de7(jetbrains.mps.samples.SwingBuilder.constraints)", "941086956890759284");
 }

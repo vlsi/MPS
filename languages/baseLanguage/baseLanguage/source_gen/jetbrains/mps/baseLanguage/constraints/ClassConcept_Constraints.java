@@ -58,7 +58,6 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

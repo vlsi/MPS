@@ -27,7 +27,6 @@ public class DistantConstantReference_Constraints extends BaseConstraintsDescrip
     super(MetaAdapterFactory.getConcept(0xd40d465dded40d0L, 0x8d4c2c6d177f60d7L, 0x254b015f7d06d11fL, "org.jetbrains.mps.samples.Constants.structure.DistantConstantReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,7 +41,7 @@ public class DistantConstantReference_Constraints extends BaseConstraintsDescrip
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_3o2gse_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_3o2gse_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -56,5 +55,5 @@ public class DistantConstantReference_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-  private static SNodePointer breakingNode_3o2gse_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "2687243112287755566");
+  private static SNodePointer breakingNode_3o2gse_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:af985d7a-c914-498c-96e5-c3fe0f4471b1(org.jetbrains.mps.samples.Constants.constraints)", "2687243112287755566");
 }

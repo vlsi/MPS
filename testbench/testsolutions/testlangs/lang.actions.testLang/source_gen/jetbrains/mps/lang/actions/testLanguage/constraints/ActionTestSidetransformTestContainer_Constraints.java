@@ -32,7 +32,6 @@ public class ActionTestSidetransformTestContainer_Constraints extends BaseConstr
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (childConcept == MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x44969b12b8c94c1bL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1").getDeclarationNode() && link == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x179f28a7ade381e5L, 0x44969b12b8d87e51L, "abstractChildConstrained"))) {

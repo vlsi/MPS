@@ -30,7 +30,6 @@ public class AspectMethodDescriptor_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getConcept(0xf159adf43c9340f9L, 0x9c5a1f245a8697afL, 0x4ac0e6949ea3f2b0L, "jetbrains.mps.lang.aspect.structure.AspectMethodDescriptor"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -45,7 +44,7 @@ public class AspectMethodDescriptor_Constraints extends BaseConstraintsDescripto
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_10kavj_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_10kavj_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -61,5 +60,5 @@ public class AspectMethodDescriptor_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  private static SNodePointer breakingNode_10kavj_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.aspect.constraints)", "5386558680326436316");
+  private static SNodePointer breakingNode_10kavj_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:a0e4ce7a-b15e-427f-b0fd-cb52ffcd3e91(jetbrains.mps.lang.aspect.constraints)", "5386558680326436316");
 }

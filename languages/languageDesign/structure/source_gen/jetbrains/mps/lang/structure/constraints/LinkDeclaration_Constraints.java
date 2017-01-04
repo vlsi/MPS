@@ -35,7 +35,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, "jetbrains.mps.lang.structure.structure.LinkDeclaration"));
   }
 
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -139,7 +138,7 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a4;
+            return breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a3;
           }
         };
       }
@@ -149,5 +148,5 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static SNodePointer breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841302");
+  private static SNodePointer breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841302");
 }

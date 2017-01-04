@@ -72,6 +72,5 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
       }
     };
   }
-
   private static SNodePointer breakingNode_56bmov_a0a1a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1873972548978322667");
 }

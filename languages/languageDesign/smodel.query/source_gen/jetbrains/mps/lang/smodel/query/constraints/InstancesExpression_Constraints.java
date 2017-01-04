@@ -10,5 +10,4 @@ public class InstancesExpression_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x1a8554c4eb8443baL, 0x8c346f0d90c6e75aL, 0x6b643f33718aa10dL, "jetbrains.mps.lang.smodel.query.structure.InstancesExpression"));
   }
 
-
 }

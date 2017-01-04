@@ -37,7 +37,6 @@ public class ParallelLoopVariable_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

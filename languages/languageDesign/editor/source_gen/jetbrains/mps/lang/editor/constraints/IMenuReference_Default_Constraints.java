@@ -25,7 +25,6 @@ public class IMenuReference_Default_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x169efbc9a90a41c1L, "jetbrains.mps.lang.editor.structure.IMenuReference_Default"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class IMenuReference_Default_Constraints extends BaseConstraintsDescripto
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_bj65la_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_bj65la_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class IMenuReference_Default_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  private static SNodePointer breakingNode_bj65la_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1630016958698374834");
+  private static SNodePointer breakingNode_bj65la_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1630016958698374834");
 }

@@ -33,7 +33,6 @@ public class IMenuPartParameterized_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAParent_Old(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (IMenuPartParameterized__BehaviorDescriptor.getLinkNodeOfParameterizedPart_id1quYWAD03b2.invoke(node).getDeclarationNode() == link) {

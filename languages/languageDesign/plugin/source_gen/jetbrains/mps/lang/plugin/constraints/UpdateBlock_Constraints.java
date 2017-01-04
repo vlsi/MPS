@@ -14,5 +14,4 @@ public class UpdateBlock_Constraints extends BaseConstraintsDescriptor {
   public SAbstractConcept getDefaultConcreteConcept() {
     return MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x118b833c6a5L, "jetbrains.mps.lang.plugin.structure.IsApplicableBlock");
   }
-
 }

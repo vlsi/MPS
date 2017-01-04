@@ -10,5 +10,4 @@ public class CompactInvokeFunctionExpression_Constraints extends BaseConstraints
     super(MetaAdapterFactory.getConcept(0xfd3920347849419dL, 0x907112563d152375L, 0x11fb8425aa8L, "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression"));
   }
 
-
 }

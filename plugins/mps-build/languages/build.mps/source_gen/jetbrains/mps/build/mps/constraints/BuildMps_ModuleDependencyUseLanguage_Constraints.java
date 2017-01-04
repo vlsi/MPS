@@ -25,7 +25,6 @@ public class BuildMps_ModuleDependencyUseLanguage_Constraints extends BaseConstr
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c4467914643d2d2L, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class BuildMps_ModuleDependencyUseLanguage_Constraints extends BaseConstr
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_cq2hu9_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_cq2hu9_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class BuildMps_ModuleDependencyUseLanguage_Constraints extends BaseConstr
     });
     return references;
   }
-  private static SNodePointer breakingNode_cq2hu9_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913807");
+  private static SNodePointer breakingNode_cq2hu9_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913807");
 }

@@ -10,5 +10,4 @@ public class BuildStringPart_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7cffL, "jetbrains.mps.build.structure.BuildStringPart"));
   }
 
-
 }

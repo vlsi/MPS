@@ -27,7 +27,6 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
     super(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x84baf20c71f8a79L, "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -42,7 +41,7 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -53,5 +52,5 @@ public class ChildNodeRefExpression_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-  private static SNodePointer breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "7292653286930790166");
+  private static SNodePointer breakingNode_uq3qb6_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "7292653286930790166");
 }

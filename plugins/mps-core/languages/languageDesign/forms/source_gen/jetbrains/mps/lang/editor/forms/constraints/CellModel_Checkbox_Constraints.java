@@ -31,7 +31,6 @@ public class CellModel_Checkbox_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x602c36adcc5547ffL, 0x8c4073d7f12f035cL, 0x455f8dda63d6378L, "jetbrains.mps.lang.editor.forms.structure.CellModel_Checkbox"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -56,12 +55,12 @@ public class CellModel_Checkbox_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_glszdl_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_glszdl_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_glszdl_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:de912216-b4aa-4118-a243-c861c965b4d9(jetbrains.mps.lang.editor.forms.constraints)", "7569401714696485317");
+  private static SNodePointer breakingNode_glszdl_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:de912216-b4aa-4118-a243-c861c965b4d9(jetbrains.mps.lang.editor.forms.constraints)", "7569401714696485317");
 }

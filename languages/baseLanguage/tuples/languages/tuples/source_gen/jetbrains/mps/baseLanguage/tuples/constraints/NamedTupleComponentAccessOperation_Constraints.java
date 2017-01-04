@@ -50,7 +50,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
 
     return result;
   }
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -90,7 +89,7 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_snq09y_a0a1a0a0a1a0b0a1a6;
+            return breakingNode_snq09y_a0a1a0a0a1a0b0a1a5;
           }
         };
       }
@@ -102,5 +101,5 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"))), HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12099dc1365L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")), false) != null);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
-  private static SNodePointer breakingNode_snq09y_a0a1a0a0a1a0b0a1a6 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
+  private static SNodePointer breakingNode_snq09y_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
 }

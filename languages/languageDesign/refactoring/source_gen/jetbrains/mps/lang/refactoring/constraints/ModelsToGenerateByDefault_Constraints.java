@@ -30,7 +30,6 @@ public class ModelsToGenerateByDefault_Constraints extends BaseConstraintsDescri
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getNodeAncestor(parentNode, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x175aa0f4225aa61fL, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause"), true, false) != null);

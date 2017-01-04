@@ -10,5 +10,4 @@ public class NamedTupleComponentDeclaration_Constraints extends BaseConstraintsD
     super(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x12095b3e54fL, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration"));
   }
 
-
 }

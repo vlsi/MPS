@@ -31,7 +31,6 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xb5734616c4b04639L, 0x9c6af3a1cf5dc4dbL, 0xd0768d7cf132939L, "testDefaultEditor.structure.Developer"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,7 +45,7 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -108,5 +107,5 @@ public class Developer_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static SNodePointer breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)", "6007318803035473130");
+  private static SNodePointer breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)", "6007318803035473130");
 }

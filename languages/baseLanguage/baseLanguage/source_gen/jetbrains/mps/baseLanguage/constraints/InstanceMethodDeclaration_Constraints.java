@@ -16,5 +16,4 @@ public class InstanceMethodDeclaration_Constraints extends BaseConstraintsDescri
     return (SPropertyOperations.getBoolean(node, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b21dL, 0x1126a8d157dL, "isAbstract")) ? IconContainer.RESOURCE_a0a0b : null);
   }
 
-
 }

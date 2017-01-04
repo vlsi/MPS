@@ -24,7 +24,6 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
     super(MetaAdapterFactory.getConcept(0x97a52717898f4598L, 0x8150573d9fd03868L, 0x151c4f99e489a16L, "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -43,12 +42,12 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "178770917832460639");
+  private static SNodePointer breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "178770917832460639");
 }

@@ -10,5 +10,4 @@ public class BaseConcept_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept"));
   }
 
-
 }

@@ -19,7 +19,6 @@ public class BuildVariableMacroInitWithDate_Constraints extends BaseConstraintsD
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x365f30e12d2c3e4L, "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate"));
   }
 
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

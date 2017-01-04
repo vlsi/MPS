@@ -41,7 +41,6 @@ public class BuildSource_JavaLibrary_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();

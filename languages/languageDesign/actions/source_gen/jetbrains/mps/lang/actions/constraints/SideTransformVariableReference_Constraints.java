@@ -25,7 +25,6 @@ public class SideTransformVariableReference_Constraints extends BaseConstraintsD
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1182d21ed8dL, "jetbrains.mps.lang.actions.structure.SideTransformVariableReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class SideTransformVariableReference_Constraints extends BaseConstraintsD
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_o7hnag_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_o7hnag_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class SideTransformVariableReference_Constraints extends BaseConstraintsD
     });
     return references;
   }
-  private static SNodePointer breakingNode_o7hnag_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "7945085613660112075");
+  private static SNodePointer breakingNode_o7hnag_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "7945085613660112075");
 }

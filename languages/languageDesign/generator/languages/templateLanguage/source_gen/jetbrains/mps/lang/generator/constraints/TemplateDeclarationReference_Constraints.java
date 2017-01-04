@@ -25,7 +25,6 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
     super(MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0x11013906056L, "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -51,5 +50,5 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-  private static SNodePointer breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "982871510077720755");
+  private static SNodePointer breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "982871510077720755");
 }

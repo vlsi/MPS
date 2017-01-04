@@ -14,5 +14,4 @@ public class BuildSourcePath_Constraints extends BaseConstraintsDescriptor {
   public SAbstractConcept getDefaultConcreteConcept() {
     return MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4c12642949048fb2L, "jetbrains.mps.build.structure.BuildSourceProjectRelativePath");
   }
-
 }

@@ -29,7 +29,6 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
     super(MetaAdapterFactory.getConcept(0xa247e09e243545baL, 0xb8d207e93feba96aL, 0x1209b917141L, "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -52,12 +51,12 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239575924538");
+  private static SNodePointer breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239575924538");
 }

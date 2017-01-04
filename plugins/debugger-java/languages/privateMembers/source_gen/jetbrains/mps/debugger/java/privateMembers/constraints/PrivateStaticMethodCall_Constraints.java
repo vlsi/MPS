@@ -33,7 +33,6 @@ public class PrivateStaticMethodCall_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0x802088974572437dL, 0xb50e8f050cba9566L, 0x2ed6380fd7a2facbL, "jetbrains.mps.debugger.java.privateMembers.structure.PrivateStaticMethodCall"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -48,7 +47,7 @@ public class PrivateStaticMethodCall_Constraints extends BaseConstraintsDescript
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ij549v_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_ij549v_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -71,5 +70,5 @@ public class PrivateStaticMethodCall_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-  private static SNodePointer breakingNode_ij549v_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206792788860");
+  private static SNodePointer breakingNode_ij549v_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6405552206792788860");
 }

@@ -13,7 +13,7 @@
       <node id="3298469228705255568" at="9,0,12,0" concept="0" trace="TestModuleManifest_Constraints#()V" />
       <scope id="3298469228705255568" at="9,43,10,173" />
       <scope id="3298469228705255568" at="9,0,12,0" />
-      <unit id="3298469228705255568" at="8,0,15,0" name="jetbrains.mps.build.mps.testManifest.constraints.TestModuleManifest_Constraints" />
+      <unit id="3298469228705255568" at="8,0,14,0" name="jetbrains.mps.build.mps.testManifest.constraints.TestModuleManifest_Constraints" />
     </file>
   </root>
 </debug-info>

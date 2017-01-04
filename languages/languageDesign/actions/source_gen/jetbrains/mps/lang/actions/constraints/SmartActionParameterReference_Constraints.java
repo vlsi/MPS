@@ -28,7 +28,6 @@ public class SmartActionParameterReference_Constraints extends BaseConstraintsDe
     super(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x11f8ef01705L, "jetbrains.mps.lang.actions.structure.SmartActionParameterReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -51,12 +50,12 @@ public class SmartActionParameterReference_Constraints extends BaseConstraintsDe
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_lw5vd8_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_lw5vd8_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_lw5vd8_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1235053874371");
+  private static SNodePointer breakingNode_lw5vd8_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1235053874371");
 }

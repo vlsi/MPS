@@ -25,7 +25,6 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
     super(MetaAdapterFactory.getConcept(0x698a8d22a10447a0L, 0xba8d10e3ec237f13L, 0x2670d5989d5b49b8L, "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_45r57v_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_45r57v_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-  private static SNodePointer breakingNode_45r57v_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "2769948622284605893");
+  private static SNodePointer breakingNode_45r57v_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "2769948622284605893");
 }

@@ -25,7 +25,6 @@ public class QueryParameterReference_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0x817e4e70961e4a95L, 0x98a115e9f32231f1L, 0x205f4376c5884e95L, "jetbrains.mps.ide.httpsupport.structure.QueryParameterReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class QueryParameterReference_Constraints extends BaseConstraintsDescript
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_ja0ulc_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_ja0ulc_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class QueryParameterReference_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-  private static SNodePointer breakingNode_ja0ulc_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "52693210514578830");
+  private static SNodePointer breakingNode_ja0ulc_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:13dad04a-0370-4fef-a258-0eee3aa2ee6a(jetbrains.mps.ide.httpsupport.constraints)", "52693210514578830");
 }

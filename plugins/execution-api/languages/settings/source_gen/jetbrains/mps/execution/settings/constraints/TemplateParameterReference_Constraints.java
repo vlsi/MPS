@@ -43,7 +43,6 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -66,7 +65,7 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_hn11y1_a0a1a0a0a1a0b0a1a5;
+            return breakingNode_hn11y1_a0a1a0a0a1a0b0a1a4;
           }
         };
       }
@@ -78,5 +77,5 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f910113L, "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate"));
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067068");
-  private static SNodePointer breakingNode_hn11y1_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067045");
+  private static SNodePointer breakingNode_hn11y1_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067045");
 }

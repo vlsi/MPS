@@ -31,7 +31,6 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
     super(MetaAdapterFactory.getConcept(0xcffe907ed3de433fL, 0x89d657d9c449c0e2L, 0x41bc200f660dc377L, "jetbrains.mps.lang.editor.menus.extras.structure.TransformationMenuPart_Refactoring"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -46,20 +45,20 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_w30ll_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_w30ll_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(new ModelPlusImportedScope(_context.getModel(), true, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring"))) {
               @Override
               public boolean isExcluded(SNode node) {
-                SNode refactoringConcept = check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0d(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring")), MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x5fb04b74a77a0656L, "target")), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget")));
+                SNode refactoringConcept = check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0c(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, "jetbrains.mps.lang.refactoring.structure.Refactoring")), MetaAdapterFactory.getContainmentLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a778e245L, 0x5fb04b74a77a0656L, "target")), MetaAdapterFactory.getConcept(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, "jetbrains.mps.lang.refactoring.structure.NodeTarget")));
                 if ((refactoringConcept == null)) {
                   return true;
                 }
 
                 SNode menu = SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getInterfaceConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x4e0f93d8a0c11832L, "jetbrains.mps.lang.editor.structure.ITransformationMenu"), false, false);
-                return !(check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0d(check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a3(menu), refactoringConcept));
+                return !(check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0c(check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(menu), refactoringConcept));
               }
             };
           }
@@ -68,23 +67,23 @@ public class TransformationMenuPart_Refactoring_Constraints extends BaseConstrai
     });
     return references;
   }
-  private static SNode check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0d(SNode checkedDotOperand) {
+  private static SNode check_w30ll_a0a0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, MetaAdapterFactory.getReferenceLink(0x3ecd7c84cde345deL, 0x886c135ecc69b742L, 0x5fb04b74a77a056cL, 0x5fb04b74a77a0596L, "concept"));
     }
     return null;
   }
-  private static boolean check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0d(SNode checkedDotOperand, SNode refactoringConcept) {
+  private static boolean check_w30ll_a0e0a0a0a0a0b0a0a0b0a1a0b0c(SNode checkedDotOperand, SNode refactoringConcept) {
     if (null != checkedDotOperand) {
       return (boolean) AbstractConceptDeclaration__BehaviorDescriptor.isSubconceptOf_id73yVtVlWOga.invoke(checkedDotOperand, refactoringConcept);
     }
     return false;
   }
-  private static SNode check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a3(SNode checkedDotOperand) {
+  private static SNode check_w30ll_a0a4a0a0a0a0a1a0a0a1a0b0a1a2(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return IMenu__BehaviorDescriptor.getApplicableConcept_id1quYWAD18xk.invoke(checkedDotOperand);
     }
     return null;
   }
-  private static SNodePointer breakingNode_w30ll_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "4736696158596470772");
+  private static SNodePointer breakingNode_w30ll_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:bb97162f-2dcb-4ef8-802a-23987a8537bd(jetbrains.mps.lang.editor.menus.extras.constraints)", "4736696158596470772");
 }

@@ -33,7 +33,6 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0xcfa085c9af5e830L, "jetbrains.mps.samples.heating.structure.DailyPlanReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -56,13 +55,13 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_y2k5og_a0a2a0a0a1a0b0a1a3;
+            return breakingNode_y2k5og_a0a2a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ListScope(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.getNodeAncestor(_context.getContextNode(), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, "jetbrains.mps.samples.heating.structure.HeatingPlan"), false, false), MetaAdapterFactory.getContainmentLink(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aa3f2L, 0x4644aa4ce08aec4dL, "dailyPlans"))).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a3(it, _context.getContextNode());
+                return neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(it, _context.getContextNode());
               }
             })) {
               public String getName(SNode child) {
@@ -75,8 +74,8 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a3(Object a, Object b) {
+  private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a3 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "935069066463107223");
+  private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "935069066463107223");
 }

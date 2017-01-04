@@ -10,5 +10,4 @@ public class BuildSource_JavaSources_Constraints extends BaseConstraintsDescript
     super(MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x48d5d03db92974fcL, "jetbrains.mps.build.structure.BuildSource_JavaSources"));
   }
 
-
 }

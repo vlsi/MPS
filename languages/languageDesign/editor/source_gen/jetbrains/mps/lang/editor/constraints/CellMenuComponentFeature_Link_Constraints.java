@@ -27,7 +27,6 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
     super(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f7d86ed9bL, "jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -49,12 +48,12 @@ public class CellMenuComponentFeature_Link_Constraints extends BaseConstraintsDe
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_1eovyz_a0a1a0a0a1a0b0a1a3;
+            return breakingNode_1eovyz_a0a1a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_1eovyz_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846220");
+  private static SNodePointer breakingNode_1eovyz_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1213104846220");
 }

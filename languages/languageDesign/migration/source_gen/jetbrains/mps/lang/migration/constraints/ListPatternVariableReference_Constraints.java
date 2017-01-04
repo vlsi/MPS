@@ -25,7 +25,6 @@ public class ListPatternVariableReference_Constraints extends BaseConstraintsDes
     super(MetaAdapterFactory.getConcept(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x550f7de0eda8c07aL, "jetbrains.mps.lang.migration.structure.ListPatternVariableReference"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -40,7 +39,7 @@ public class ListPatternVariableReference_Constraints extends BaseConstraintsDes
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_dgjfve_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_dgjfve_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -54,5 +53,5 @@ public class ListPatternVariableReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-  private static SNodePointer breakingNode_dgjfve_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)", "6129256022887940369");
+  private static SNodePointer breakingNode_dgjfve_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)", "6129256022887940369");
 }

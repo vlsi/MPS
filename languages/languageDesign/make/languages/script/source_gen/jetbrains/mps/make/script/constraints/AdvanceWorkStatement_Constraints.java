@@ -28,7 +28,6 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
     super(MetaAdapterFactory.getConcept(0x95f8a3e6f9944ca0L, 0xa65e763c9bae2d3bL, 0x29929a95c9e6984L, "jetbrains.mps.make.script.structure.AdvanceWorkStatement"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -55,12 +54,12 @@ public class AdvanceWorkStatement_Constraints extends BaseConstraintsDescriptor 
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_vuepmh_a0a3a0a0a1a0b0a1a3;
+            return breakingNode_vuepmh_a0a3a0a0a1a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_vuepmh_a0a3a0a0a1a0b0a1a3 = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "682890046602395485");
+  private static SNodePointer breakingNode_vuepmh_a0a3a0a0a1a0b0a1a2 = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "682890046602395485");
 }

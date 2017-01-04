@@ -29,7 +29,6 @@ public class InternalSuperMethodCallOperation_Constraints extends BaseConstraint
 
     return result;
   }
-
   @Deprecated
   private static boolean staticCanBeAChild_Old(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     // override IOperation.canBeChild 

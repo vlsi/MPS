@@ -31,7 +31,6 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
     super(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d4348057eL, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -77,12 +76,12 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
           }
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_sgoqec_a0a1a0a0a4a0b0a1a3;
+            return breakingNode_sgoqec_a0a1a0a0a4a0b0a1a2;
           }
         };
       }
     });
     return references;
   }
-  private static SNodePointer breakingNode_sgoqec_a0a1a0a0a4a0b0a1a3 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
+  private static SNodePointer breakingNode_sgoqec_a0a1a0a0a4a0b0a1a2 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
 }

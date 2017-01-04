@@ -30,7 +30,6 @@ public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor
     super(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x5b7be37b4de9bb6eL, "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin"));
   }
 
-
   @Override
   protected Map<SProperty, PropertyConstraintsDescriptor> getSpecifiedProperties() {
     Map<SProperty, PropertyConstraintsDescriptor> properties = new HashMap<SProperty, PropertyConstraintsDescriptor>();
@@ -61,7 +60,7 @@ public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a4;
+            return breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a3;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -75,5 +74,5 @@ public class BuildMpsLayout_Plugin_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-  private static SNodePointer breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a4 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913818");
+  private static SNodePointer breakingNode_vhu3b2_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561913818");
 }

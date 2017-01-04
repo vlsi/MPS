@@ -10,5 +10,4 @@ public class ModuleDependency_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x86ef829012bb4ca7L, 0x947f093788f263a9L, 0x5869770da61dfe28L, "jetbrains.mps.lang.project.structure.ModuleDependency"));
   }
 
-
 }

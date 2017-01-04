@@ -34,7 +34,6 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
     super(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78e59fbL, "jetbrains.mps.samples.languagePatterns.Basic.structure.Participant"));
   }
 
-
   @Override
   protected Map<SReferenceLink, ReferenceConstraintsDescriptor> getSpecifiedReferences() {
     Map<SReferenceLink, ReferenceConstraintsDescriptor> references = new HashMap<SReferenceLink, ReferenceConstraintsDescriptor>();
@@ -49,7 +48,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
-            return breakingNode_wflc39_a0a0a0a0a1a0b0a1a3;
+            return breakingNode_wflc39_a0a0a0a0a1a0b0a1a2;
           }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -62,7 +61,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
 
               final Iterable<SNode> alreadyParticipatingSingersButMe = ListSequence.fromList(SLinkOperations.getChildren(performance, MetaAdapterFactory.getContainmentLink(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x34c8853ae78de950L, 0x34c8853ae78de9acL, "participants"))).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
-                  return neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0d(it, me);
+                  return neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0c(it, me);
                 }
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode participant) {
@@ -74,7 +73,7 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
                 public boolean accept(final SNode singer) {
                   return Sequence.fromIterable(alreadyParticipatingSingersButMe).all(new IWhereFilter<SNode>() {
                     public boolean accept(SNode participatingSinger) {
-                      return neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a3(participatingSinger, singer);
+                      return neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a2(participatingSinger, singer);
                     }
                   });
                 }
@@ -92,11 +91,11 @@ public class Participant_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-  private static boolean neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0d(Object a, Object b) {
+  private static boolean neq_wflc39_a0a0a0a0a0a0g0a0b0a0a0b0a1a0b0c(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a3(Object a, Object b) {
+  private static boolean neq_wflc39_a0a0a0a0a0a0a0a0a0a8a0a1a0a0a1a0b0a1a2(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "3803436373354372415");
+  private static SNodePointer breakingNode_wflc39_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:7e1c7518-df7a-4f22-84b2-a5e68261264a(jetbrains.mps.samples.languagePatterns.Basic.constraints)", "3803436373354372415");
 }
