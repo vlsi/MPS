@@ -22,7 +22,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -49,9 +51,10 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> applicableToSConcept_id7E3Sw0HhwkZ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7E3Sw0HhwkZ").registry(REGISTRY).build();
   public static final SMethod<Boolean> applicableToLinkList_id1653mnvAgwe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLinkList").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgwe").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getApplicableParameter_id2D1PBM_bxI0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxI0").registry(REGISTRY).build();
+  public static final SMethod<List<SAbstractConcept>> getParameterConcepts_id6ALWH9fQysn = new SMethodBuilder<List<SAbstractConcept>>(new SJavaCompoundTypeImpl((Class<List<SAbstractConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9fQysn").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftNodeConcept_idhEwJdFJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftNodeConcept").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdFJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLeftExpression_idhEwJdGu, getLeftExpressionLeftExpression_idhEwJdGS, getLeftExpressionOperation_idhEwJdHi, getParameter_idhEwJdHG, operandCanBeNull_idhWYZ0eEN6z, getVariableExpectedName_idhEwIP$B, applicableToModel_id1653mnvAf1y, applicableToConceptProperty_id1653mnvAgpp, applicableToNode_id1653mnvAgrs, applicableToSimpleProperty_id1653mnvAgrO, applicableToEnumProperty_id1653mnvAguj, applicableToLink_id1653mnvAgvK, applicableToConcept_id1653mnvAgvQ, applicableToSConcept_id7E3Sw0HhwkZ, applicableToLinkList_id1653mnvAgwe, getApplicableParameter_id2D1PBM_bxI0, getLeftNodeConcept_idhEwJdFJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLeftExpression_idhEwJdGu, getLeftExpressionLeftExpression_idhEwJdGS, getLeftExpressionOperation_idhEwJdHi, getParameter_idhEwJdHG, operandCanBeNull_idhWYZ0eEN6z, getVariableExpectedName_idhEwIP$B, applicableToModel_id1653mnvAf1y, applicableToConceptProperty_id1653mnvAgpp, applicableToNode_id1653mnvAgrs, applicableToSimpleProperty_id1653mnvAgrO, applicableToEnumProperty_id1653mnvAguj, applicableToLink_id1653mnvAgvK, applicableToConcept_id1653mnvAgvQ, applicableToSConcept_id7E3Sw0HhwkZ, applicableToLinkList_id1653mnvAgwe, getApplicableParameter_id2D1PBM_bxI0, getParameterConcepts_id6ALWH9fQysn, getLeftNodeConcept_idhEwJdFJ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -116,8 +119,18 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static boolean applicableToLinkList_id1653mnvAgwe(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
     return ListSequence.fromList(new ArrayList<SNode>());
+  }
+  /*package*/ static List<SAbstractConcept> getParameterConcepts_id6ALWH9fQysn(@NotNull SAbstractConcept __thisConcept__) {
+    // todo body should be removed after 3.5 
+    return ListSequence.fromList(SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(__thisConcept__)).select(new ISelector<SNode, SAbstractConcept>() {
+      public SAbstractConcept select(SNode it) {
+        return SNodeOperations.asSConcept(it);
+      }
+    }).toListSequence();
   }
   /*package*/ static SNode getLeftNodeConcept_idhEwJdFJ(@NotNull SAbstractConcept __thisConcept__, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
@@ -191,6 +204,8 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
       case 15:
         return (T) ((List<SNode>) getApplicableParameter_id2D1PBM_bxI0(concept));
       case 16:
+        return (T) ((List<SAbstractConcept>) getParameterConcepts_id6ALWH9fQysn(concept));
+      case 17:
         return (T) ((SNode) getLeftNodeConcept_idhEwJdFJ(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
