@@ -30,20 +30,17 @@ public interface ConstraintsDescriptor {
 
   SAbstractConcept getConcept();
 
-  boolean canBeChild(@Nullable SNode node, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept, /*TODO @NotNull */ SContainmentLink link,
-      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeChild(@NotNull ConstraintContext_CanBeChild context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeRoot(@NotNull ConstraintContext_CanBeRoot context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeParent(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, /*TODO @NotNull*/ SContainmentLink link,
-      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeParent(@NotNull ConstraintContext_CanBeParent context, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, @NotNull SNode parentNode, /*TODO @NotNull*/
-      SContainmentLink link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  boolean canBeAncestor(@NotNull ConstraintContext_CanBeAncestor context, @Nullable CheckingNodeContext checkingNodeContext);
 
   /**
    *
-   * @deprecated use {@link #canBeChild(SNode, SNode, SAbstractConcept, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   * @deprecated use {@link #canBeChild(ConstraintContext_CanBeChild, CheckingNodeContext)} instead
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -52,7 +49,15 @@ public interface ConstraintsDescriptor {
 
   /**
    *
-   * @deprecated use {@link #canBeParent(SNode, SNode, SAbstractConcept, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   * @deprecated use {@link #canBeRoot(ConstraintContext_CanBeRoot, CheckingNodeContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+
+  /**
+   *
+   * @deprecated use {@link #canBeParent(ConstraintContext_CanBeParent, CheckingNodeContext)} instead
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -61,7 +66,7 @@ public interface ConstraintsDescriptor {
 
   /**
    *
-   * @deprecated use {@link #canBeAncestor(SNode, SNode, SAbstractConcept, SNode, SContainmentLink, IOperationContext, CheckingNodeContext)} instead
+   * @deprecated use {@link #canBeAncestor(ConstraintContext_CanBeAncestor, CheckingNodeContext)} instead
    */
   @Deprecated
   @ToRemove(version = 3.5)

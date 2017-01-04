@@ -17,6 +17,10 @@ package jetbrains.mps.smodel.runtime.illegal;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeAncestor;
+import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeChild;
+import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeParent;
+import jetbrains.mps.smodel.runtime.ConstraintContext_CanBeRoot;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
 import jetbrains.mps.smodel.runtime.IconResource;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
@@ -72,20 +76,22 @@ public class IllegalConstraintsDescriptor implements ConstraintsDescriptor {
   }
 
   @Override
-  public boolean canBeChild(@Nullable SNode node, @NotNull SNode parentNode, @NotNull SAbstractConcept childConcept, SContainmentLink link,
-      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeChild(@NotNull ConstraintContext_CanBeChild context, @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
   @Override
-  public boolean canBeParent(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, SContainmentLink link,
-      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeRoot(@NotNull ConstraintContext_CanBeRoot context, @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 
   @Override
-  public boolean canBeAncestor(@NotNull SNode node, @Nullable SNode childNode, @NotNull SAbstractConcept childConcept, @NotNull SNode parentNode,
-      SContainmentLink link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+  public boolean canBeParent(@NotNull ConstraintContext_CanBeParent context, @Nullable CheckingNodeContext checkingNodeContext) {
+    return false;
+  }
+
+  @Override
+  public boolean canBeAncestor(@NotNull ConstraintContext_CanBeAncestor context, @Nullable CheckingNodeContext checkingNodeContext) {
     return false;
   }
 

@@ -57,7 +57,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         }
         boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
           public Boolean invoke() {
-            return ModelConstraints.canBeChild(node, parent, nodeConcept, link, checkingNodeContext);
+            return ModelConstraints.canBeChild(node, checkingNodeContext);
           }
         });
         if (!(canBeChild)) {
@@ -91,7 +91,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeParent(node, child, childConcept, childLink, checkingNodeContext);
+          return ModelConstraints.canBeParent(child, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {
@@ -103,7 +103,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     for (final Wrappers._T<SNode> ancestor = new Wrappers._T<SNode>(parent); ancestor.value != null; ancestor.value = SNodeOperations.getParent(ancestor.value)) {
       boolean canBeAncestor = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeAncestorDirect(ancestor.value, node, nodeConcept, parent, node.getContainmentLink(), checkingNodeContext);
+          return ModelConstraints.canBeAncestorDirect(ancestor.value, node, checkingNodeContext);
         }
       });
       if (!(canBeAncestor)) {

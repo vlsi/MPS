@@ -15,14 +15,28 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+/**
+ * Used to determine that concept defines own constraint function.
+ * Now {@link jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor} uses another mechanism for these proposals.
+ */
+@Deprecated
+@ToRemove(version = 3.5)
 public interface ConstraintsDispatchable extends ConstraintsDescriptor {
+
+  @Deprecated
   boolean hasOwnCanBeChildMethod();
 
+  @Deprecated
   boolean hasOwnCanBeRootMethod();
 
+  @Deprecated
   boolean hasOwnCanBeParentMethod();
 
+  @Deprecated
   boolean hasOwnCanBeAncestorMethod();
 
+  @Deprecated
   boolean hasOwnDefaultScopeProvider();
 }
