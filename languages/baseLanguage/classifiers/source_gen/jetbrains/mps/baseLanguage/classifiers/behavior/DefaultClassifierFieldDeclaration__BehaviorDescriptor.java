@@ -18,7 +18,7 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.ArrayList;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -28,9 +28,9 @@ public final class DefaultClassifierFieldDeclaration__BehaviorDescriptor extends
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getVisiblity_idhEwIBC5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getVisiblity").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIBC5").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getOperationConcept_id2D1PBM_bxJ5 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOperationConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJ5").registry(REGISTRY).build();
+  public static final SMethod<List<SAbstractConcept>> getOperationSConcept_id6ALWH9g2mqE = new SMethodBuilder<List<SAbstractConcept>>(new SJavaCompoundTypeImpl((Class<List<SAbstractConcept>>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2mqE").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationConcept_id2D1PBM_bxJ5);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVisiblity_idhEwIBC5, getOperationSConcept_id6ALWH9g2mqE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -38,10 +38,8 @@ public final class DefaultClassifierFieldDeclaration__BehaviorDescriptor extends
   /*package*/ static SNode getVisiblity_idhEwIBC5(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL, 0x112670d886aL, "visibility"));
   }
-  /*package*/ static List<SNode> getOperationConcept_id2D1PBM_bxJ5(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)", "1213999117680"));
-    return result;
+  /*package*/ static List<SAbstractConcept> getOperationSConcept_id6ALWH9g2mqE(@NotNull SAbstractConcept __thisConcept__) {
+    return ListSequence.fromListAndArray(new ArrayList<SAbstractConcept>(), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x11aa7fc7570L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation"));
   }
 
   /*package*/ DefaultClassifierFieldDeclaration__BehaviorDescriptor() {
@@ -75,7 +73,7 @@ public final class DefaultClassifierFieldDeclaration__BehaviorDescriptor extends
     }
     switch (methodIndex) {
       case 1:
-        return (T) ((List<SNode>) getOperationConcept_id2D1PBM_bxJ5(concept));
+        return (T) ((List<SAbstractConcept>) getOperationSConcept_id6ALWH9g2mqE(concept));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
