@@ -481,7 +481,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -3226,7 +3225,7 @@
                   <node concept="3cpWs8" id="6NgKRjrOSO4" role="3cqZAp">
                     <node concept="3cpWsn" id="6NgKRjrOSO5" role="3cpWs9">
                       <property role="TrG5h" value="parmConcept" />
-                      <node concept="3THzug" id="6NgKRjrOSO6" role="1tU5fm" />
+                      <node concept="3Tqbb2" id="6ALWH9fJigm" role="1tU5fm" />
                       <node concept="2OqwBi" id="6NgKRjrOSO7" role="33vP2m">
                         <node concept="3TrEf2" id="6NgKRjrOSO8" role="2OqNvi">
                           <ref role="3Tt5mk" to="tp25:g_A9B6W" resolve="concept" />
@@ -5631,7 +5630,7 @@
                   <node concept="3cpWs8" id="5M996lQUBhF" role="3cqZAp">
                     <node concept="3cpWsn" id="5M996lQUBhG" role="3cpWs9">
                       <property role="TrG5h" value="parmConcept" />
-                      <node concept="3THzug" id="5M996lQUBhH" role="1tU5fm" />
+                      <node concept="3Tqbb2" id="6ALWH9fJjjB" role="1tU5fm" />
                       <node concept="2OqwBi" id="5M996lQUBhI" role="33vP2m">
                         <node concept="3TrEf2" id="5M996lQUBhJ" role="2OqNvi">
                           <ref role="3Tt5mk" to="tp25:g_A0v_Z" resolve="concept" />

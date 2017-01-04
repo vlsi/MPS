@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.ArrayList;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.annotations.NotNull;
@@ -63,6 +64,7 @@ public final class SConceptOperations {
     return Collections.unmodifiableList(result);
   }
   @Deprecated
+  @ToRemove(version = 3.4)
   public static List<SNode> getConceptHierarchy(SNode conceptDeclarationNode) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();

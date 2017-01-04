@@ -397,7 +397,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
@@ -2679,7 +2678,9 @@
       </node>
       <node concept="37vLTG" id="5IkW5anF8CS" role="3clF46">
         <property role="TrG5h" value="conceptDeclarationNode" />
-        <node concept="3THzug" id="2ZJ5lqpDT5i" role="1tU5fm" />
+        <node concept="3Tqbb2" id="6ALWH9fKFcZ" role="1tU5fm">
+          <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+        </node>
       </node>
       <node concept="3clFbS" id="5IkW5anF8CU" role="3clF47">
         <node concept="3clFbJ" id="5IkW5anF8CV" role="3cqZAp">
@@ -2714,6 +2715,15 @@
       </node>
       <node concept="2AHcQZ" id="1EtdPNucgrW" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="6ALWH9fK2CK" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="6ALWH9fK2W3" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="6ALWH9fK2ZJ" role="2B70Vg">
+            <property role="$nhwW" value="3.4" />
+          </node>
+        </node>
       </node>
     </node>
     <node concept="2YIFZL" id="1EtdPNufFQS" role="jymVt">

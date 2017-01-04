@@ -6,6 +6,7 @@ import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.scope.Scope;
 
 public class ScopeUtils {
@@ -47,6 +48,7 @@ public class ScopeUtils {
    * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.ScopeUtils#parentScope(SNode, SAbstractConcept) } instead
    */
   @Deprecated
+  @ToRemove(version = 3.5)
   public static Scope parentScope(SNode node, SNode kind) {
     return Scope.getScope(Scope.parent(node), node, kind);
   }
@@ -55,6 +57,7 @@ public class ScopeUtils {
    * @deprecated use {@link jetbrains.mps.lang.scopes.runtime.ScopeUtils#lazyParentScope(SNode, SAbstractConcept) } instead
    */
   @Deprecated
+  @ToRemove(version = 3.5)
   public static Scope lazyParentScope(SNode node, SNode kind) {
     return new LazyParentScope(node, SNodeOperations.asSConcept(kind));
   }

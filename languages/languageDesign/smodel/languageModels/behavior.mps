@@ -6879,7 +6879,9 @@
         <node concept="3cpWs8" id="5MFgGQnlMK0" role="3cqZAp">
           <node concept="3cpWsn" id="5MFgGQnlMK1" role="3cpWs9">
             <property role="TrG5h" value="concept" />
-            <node concept="3THzug" id="5MFgGQnlMK2" role="1tU5fm" />
+            <node concept="3Tqbb2" id="6ALWH9fJ2cQ" role="1tU5fm">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
             <node concept="2OqwBi" id="5MFgGQnlMK3" role="33vP2m">
               <node concept="13iPFW" id="5MFgGQnlMK4" role="2Oq$k0" />
               <node concept="3TrEf2" id="4eGV4eBLXxF" role="2OqNvi">
