@@ -50,7 +50,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       if (SNodeOperations.getConcept(parent).isValid()) {
         SContainmentLink link = node.getContainmentLink();
         if (link == null) {
-          component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + SNodeOperations.getContainingLinkRole(node) + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
+          component.addError(node, "Incorrect child role used: LinkDeclaration with role \"" + node.getContainmentLink().getName() + "\" was not found in parent node's concept: " + SNodeOperations.getConcept(parent).getName(), null);
           return;
         }
         boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -65,7 +65,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
     }
 
-    if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
+    if ((SNodeOperations.getParent(node) == null)) {
       final SModel model = SNodeOperations.getModel(node);
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {

@@ -37,7 +37,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Concept_GetAllSubConcepts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_GetAllSuperConcepts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_GetDirectSuperConcepts = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Concept_GetHierarchy = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Concept_IsExactlyOperation = new ConceptPresentationBuilder().shortDesc("concept declaration is exactly the same").create();
   private final ConceptPresentation props_Concept_IsSubConceptOfOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_IsSuperConceptOfOperation = new ConceptPresentationBuilder().create();
@@ -243,8 +242,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Concept_GetAllSuperConcepts;
       case LanguageConceptSwitch.Concept_GetDirectSuperConcepts:
         return props_Concept_GetDirectSuperConcepts;
-      case LanguageConceptSwitch.Concept_GetHierarchy:
-        return props_Concept_GetHierarchy;
       case LanguageConceptSwitch.Concept_IsExactlyOperation:
         return props_Concept_IsExactlyOperation;
       case LanguageConceptSwitch.Concept_IsSubConceptOfOperation:

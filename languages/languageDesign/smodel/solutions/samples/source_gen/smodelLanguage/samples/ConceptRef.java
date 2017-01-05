@@ -59,7 +59,6 @@ public class ConceptRef {
   }
 
   public void concept_hierarchy1(SAbstractConcept concept) {
-    // concept and all its supers 
     // supers 
     List<SAbstractConcept> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
     List<SAbstractConcept> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);

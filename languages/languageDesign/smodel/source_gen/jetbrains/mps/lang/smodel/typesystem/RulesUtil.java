@@ -19,6 +19,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -154,9 +155,9 @@ public class RulesUtil {
   @CheckingMethod
   public static boolean checkOpParameters_generic(final TypeCheckingContext typeCheckingContext, SNode op) {
     boolean noProblem = true;
-    List<SNode> applicableParmConcepts = SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(op)));
+    List<SConcept> applicableParmConcepts = SNodeOperation__BehaviorDescriptor.getParameterConcepts_id6ALWH9fQysn.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(op)));
     for (SNode parm : ListSequence.fromList(SLinkOperations.getChildren(op, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter")))) {
-      if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
+      if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConcept(parm)))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parm, "not applicable here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1178302007667", null, errorTarget);

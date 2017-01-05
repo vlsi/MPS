@@ -20,10 +20,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.classifiers.behavior.IMember__BehaviorDescriptor;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
@@ -40,11 +39,11 @@ public final class ActionDataParameterDeclaration__BehaviorDescriptor extends Ba
 
   public static final SMethod<SNode> getType_id112RIkggjzD = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("112RIkggjzD").registry(REGISTRY).build();
   public static final SMethod<SNode> getFieldDeclaration_id112RIkgil0h = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getFieldDeclaration").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("112RIkgil0h").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getOperationConcept_id2D1PBM_bxJ5 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getOperationConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxJ5").registry(REGISTRY).build();
+  public static final SMethod<List<SAbstractConcept>> getOperationSConcept_id6ALWH9g2mqE = new SMethodBuilder<List<SAbstractConcept>>(new SJavaCompoundTypeImpl((Class<List<SAbstractConcept>>) ((Class) Object.class))).name("getOperationSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9g2mqE").registry(REGISTRY).build();
   public static final SMethod<String> getDescription_id2DsqYJxu5P = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDescription").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2DsqYJxu5P").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Iterable<SNode>> getDataKeys_id1BC2tkUXZ6F = new SMethodBuilder<Iterable<SNode>>(new SJavaCompoundTypeImpl((Class<Iterable<SNode>>) ((Class) Object.class))).name("getDataKeys").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1BC2tkUXZ6F").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SModel>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id112RIkggjzD, getFieldDeclaration_id112RIkgil0h, getOperationConcept_id2D1PBM_bxJ5, getDescription_id2DsqYJxu5P, getDataKeys_id1BC2tkUXZ6F);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getType_id112RIkggjzD, getFieldDeclaration_id112RIkgil0h, getOperationSConcept_id6ALWH9g2mqE, getDescription_id2DsqYJxu5P, getDataKeys_id1BC2tkUXZ6F);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -55,10 +54,8 @@ public final class ActionDataParameterDeclaration__BehaviorDescriptor extends Ba
   /*package*/ static SNode getFieldDeclaration_id112RIkgil0h(@NotNull SNode __thisNode__) {
     return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e025e0L, 0x11b69e95df5L, "key"));
   }
-  /*package*/ static List<SNode> getOperationConcept_id2D1PBM_bxJ5(@NotNull SAbstractConcept __thisConcept__) {
-    List<SNode> result = IMember__BehaviorDescriptor.getOperationConcept_id2D1PBM_bxJ5.invokeSpecial(__thisConcept__);
-    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1217252428768"));
-    return result;
+  /*package*/ static List<SAbstractConcept> getOperationSConcept_id6ALWH9g2mqE(@NotNull SAbstractConcept __thisConcept__) {
+    return ListSequence.fromListAndArray(new ArrayList<SAbstractConcept>(), MetaAdapterFactory.getConcept(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x11b69e60be0L, "jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation"));
   }
   /*package*/ static String getDescription_id2DsqYJxu5P(@NotNull SAbstractConcept __thisConcept__, SNode parameterObject) {
     SNode annotation = ListSequence.fromList(SLinkOperations.getChildren(parameterObject, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x114a6be947aL, 0x114a6beb0bdL, "annotation"))).where(new IWhereFilter<SNode>() {
@@ -131,7 +128,7 @@ public final class ActionDataParameterDeclaration__BehaviorDescriptor extends Ba
     }
     switch (methodIndex) {
       case 2:
-        return (T) ((List<SNode>) getOperationConcept_id2D1PBM_bxJ5(concept));
+        return (T) ((List<SAbstractConcept>) getOperationSConcept_id6ALWH9g2mqE(concept));
       case 3:
         return (T) ((String) getDescription_id2DsqYJxu5P(concept, (SNode) parameters[0]));
       case 4:

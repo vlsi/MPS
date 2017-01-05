@@ -807,31 +807,30 @@
       <node id="1180547809421" at="55,162,56,207" concept="5" />
       <node id="1180548270474" at="56,207,57,25" concept="1" />
       <node id="7376433222636453485" at="57,25,58,20" concept="7" />
-      <node id="7376433222636454091" at="61,60,62,34" concept="7" />
-      <node id="7376433222636453219" at="62,34,63,14" concept="7" />
-      <node id="1180458007462" at="63,14,64,95" concept="5" />
-      <node id="1206992723518" at="64,95,65,104" concept="5" />
-      <node id="7376433222636453927" at="65,104,66,21" concept="7" />
-      <node id="1180457401011" at="66,21,67,101" concept="5" />
-      <node id="1206993017954" at="67,101,68,110" concept="5" />
-      <node id="7376433222636454187" at="68,110,69,14" concept="7" />
-      <node id="1180546843524" at="69,14,70,366" concept="5" />
-      <node id="1206655034854" at="70,366,71,394" concept="5" />
-      <node id="1180546895943" at="71,394,72,364" concept="5" />
-      <node id="1206654587116" at="72,364,73,392" concept="5" />
-      <node id="1206661620799" at="73,392,74,112" concept="1" />
-      <node id="1206663146746" at="74,112,75,114" concept="1" />
-      <node id="1181953543593" at="77,48,78,222" concept="5" />
-      <node id="1181953582963" at="78,222,79,19" concept="5" />
-      <node id="1181953605568" at="79,19,80,117" concept="5" />
+      <node id="7376433222636453219" at="61,60,62,14" concept="7" />
+      <node id="1180458007462" at="62,14,63,95" concept="5" />
+      <node id="1206992723518" at="63,95,64,104" concept="5" />
+      <node id="7376433222636453927" at="64,104,65,21" concept="7" />
+      <node id="1180457401011" at="65,21,66,101" concept="5" />
+      <node id="1206993017954" at="66,101,67,110" concept="5" />
+      <node id="7376433222636454187" at="67,110,68,14" concept="7" />
+      <node id="1180546843524" at="68,14,69,366" concept="5" />
+      <node id="1206655034854" at="69,366,70,394" concept="5" />
+      <node id="1180546895943" at="70,394,71,364" concept="5" />
+      <node id="1206654587116" at="71,364,72,392" concept="5" />
+      <node id="1206661620799" at="72,392,73,112" concept="1" />
+      <node id="1206663146746" at="73,112,74,114" concept="1" />
+      <node id="1181953543593" at="76,48,77,222" concept="5" />
+      <node id="1181953582963" at="77,222,78,19" concept="5" />
+      <node id="1181953605568" at="78,19,79,117" concept="5" />
       <node id="1173133630403" at="20,65,22,5" concept="3" />
       <node id="1180482960664" at="36,0,39,0" concept="4" trace="concept_conceptProperties#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1180542870136" at="40,0,43,0" concept="4" trace="concept_conceptLinkTargets#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1181953387737" at="77,0,82,0" concept="4" trace="concept_hierarchy2#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1181953387737" at="76,0,81,0" concept="4" trace="concept_hierarchy2#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
       <node id="1173133347096" at="18,0,26,0" concept="4" trace="concept_ref_1#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1177011565489" at="27,0,35,0" concept="4" trace="instanceOf_1#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
+      <node id="1180456939140" at="61,0,76,0" concept="4" trace="concept_hierarchy1#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
       <node id="1180543684770" at="44,0,60,0" concept="4" trace="concept_types#()V" />
-      <node id="1180456939140" at="61,0,77,0" concept="4" trace="concept_hierarchy1#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)V" />
       <scope id="1173133630405" at="21,122,21,122" />
       <scope id="1180482960667" at="36,60,37,126">
         <var name="b" id="1180485643170" />
@@ -845,12 +844,12 @@
       <scope id="1180542870136" at="40,0,43,0">
         <var name="conceptFunctionConcept" id="1180542937630" />
       </scope>
-      <scope id="1181953387740" at="77,48,80,117">
+      <scope id="1181953387740" at="76,48,79,117">
         <var name="n" id="1181953582964" />
         <var name="subConcepts" id="1181953543594" />
         <var name="subConcepts1" id="1181953605569" />
       </scope>
-      <scope id="1181953387737" at="77,0,82,0">
+      <scope id="1181953387737" at="76,0,81,0">
         <var name="model" id="1206984437899" />
       </scope>
       <scope id="1173133347098" at="18,41,24,122">
@@ -868,16 +867,7 @@
         <var name="concept2" id="1177034215996" />
         <var name="node" id="1177011766342" />
       </scope>
-      <scope id="1180543684773" at="44,31,58,20">
-        <var name="bExprConc" id="1180547809422" />
-        <var name="c1" id="1180543735908" />
-        <var name="c2" id="1180543816746" />
-        <var name="exprConc" id="1180547775139" />
-        <var name="exprConcept" id="1180544050717" />
-        <var name="n1" id="1180544203372" />
-        <var name="n2" id="1180546113372" />
-      </scope>
-      <scope id="1180456939143" at="61,60,75,114">
+      <scope id="1180456939143" at="61,60,74,114">
         <var name="supers_all" id="1180458007463" />
         <var name="supers_all_inclusive" id="1206992723519" />
         <var name="supers_direct" id="1180457401012" />
@@ -887,11 +877,20 @@
         <var name="yes3" id="1180546895944" />
         <var name="yes4" id="1206654587117" />
       </scope>
-      <scope id="1180543684770" at="44,0,60,0" />
-      <scope id="1180456939140" at="61,0,77,0">
+      <scope id="1180543684773" at="44,31,58,20">
+        <var name="bExprConc" id="1180547809422" />
+        <var name="c1" id="1180543735908" />
+        <var name="c2" id="1180543816746" />
+        <var name="exprConc" id="1180547775139" />
+        <var name="exprConcept" id="1180544050717" />
+        <var name="n1" id="1180544203372" />
+        <var name="n2" id="1180546113372" />
+      </scope>
+      <scope id="1180456939140" at="61,0,76,0">
         <var name="concept" id="1180457006292" />
       </scope>
-      <unit id="1173133339986" at="16,0,83,0" name="smodelLanguage.samples.ConceptRef" />
+      <scope id="1180543684770" at="44,0,60,0" />
+      <unit id="1173133339986" at="16,0,82,0" name="smodelLanguage.samples.ConceptRef" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1206559673195">

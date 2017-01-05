@@ -31,17 +31,21 @@ public final class UniformScopeProvider__BehaviorDescriptor extends BaseBHDescri
   public static final SMethod<Scope> getScope_id52_Geb4QDV$ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QDV$").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Scope> getScope_id52_Geb4QFgX = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("52_Geb4QFgX").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(SContainmentLink.class, ""), SMethodBuilder.createJavaParameter(Integer.TYPE, ""));
   public static final SMethod<Scope> getScope_id2AitiqbD8uQ = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(12, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2AitiqbD8uQ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(ScopeProviderContext.class, ""));
+  public static final SMethod<Scope> getScope_id6ALWH9fZ5$3 = new SMethodBuilder<Scope>(new SJavaCompoundTypeImpl(Scope.class)).name("getScope").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9fZ5$3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter(ScopeProviderContext.class, ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX, getScope_id2AitiqbD8uQ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getScope_id52_Geb4QDV$, getScope_id52_Geb4QFgX, getScope_id2AitiqbD8uQ, getScope_id6ALWH9fZ5$3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode context) {
-    return ((Scope) UniformScopeProvider__BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, SNodeOperations.asNode(kind), ScopeProviderContext.childContext(context)));
+    return ((Scope) UniformScopeProvider__BehaviorDescriptor.getScope_id6ALWH9fZ5$3.invoke(__thisNode__, kind, ScopeProviderContext.childContext(context)));
   }
   /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink role, int index) {
-    return ((Scope) UniformScopeProvider__BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, SNodeOperations.asNode(kind), ScopeProviderContext.rolePlusIndexContext(role.getName(), index)));
+    return ((Scope) UniformScopeProvider__BehaviorDescriptor.getScope_id6ALWH9fZ5$3.invoke(__thisNode__, kind, ScopeProviderContext.rolePlusIndexContext(role.getName(), index)));
+  }
+  /*package*/ static Scope getScope_id6ALWH9fZ5$3(@NotNull SNode __thisNode__, SAbstractConcept kind, ScopeProviderContext context) {
+    return UniformScopeProvider__BehaviorDescriptor.getScope_id2AitiqbD8uQ.invoke(__thisNode__, SNodeOperations.asNode(kind), context);
   }
 
   /*package*/ UniformScopeProvider__BehaviorDescriptor() {
@@ -64,6 +68,8 @@ public final class UniformScopeProvider__BehaviorDescriptor extends BaseBHDescri
         return (T) ((Scope) getScope_id52_Geb4QDV$(node, (SAbstractConcept) parameters[0], (SNode) parameters[1]));
       case 1:
         return (T) ((Scope) getScope_id52_Geb4QFgX(node, (SAbstractConcept) parameters[0], (SContainmentLink) parameters[1], ((int) (Integer) parameters[2])));
+      case 3:
+        return (T) ((Scope) getScope_id6ALWH9fZ5$3(node, (SAbstractConcept) parameters[0], (ScopeProviderContext) parameters[1]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

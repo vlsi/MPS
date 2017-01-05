@@ -46,7 +46,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptCloseTabOperation = createDescriptorForCloseTabOperation();
   /*package*/ final ConceptDescriptor myConceptConceptCondition = createDescriptorForConceptCondition();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_AnActionEvent = createDescriptorForConceptFunctionParameter_AnActionEvent();
-  /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_Concept = createDescriptorForConceptFunctionParameter_Concept();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_CreatorType = createDescriptorForConceptFunctionParameter_CreatorType();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_IModule = createDescriptorForConceptFunctionParameter_IModule();
   /*package*/ final ConceptDescriptor myConceptConceptFunctionParameter_MPSProject = createDescriptorForConceptFunctionParameter_MPSProject();
@@ -99,8 +98,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptNodesBlock = createDescriptorForNodesBlock();
   /*package*/ final ConceptDescriptor myConceptNonDumbAwareActions = createDescriptorForNonDumbAwareActions();
   /*package*/ final ConceptDescriptor myConceptNumberToolShortcut = createDescriptorForNumberToolShortcut();
-  /*package*/ final ConceptDescriptor myConceptOldConceptsBlock = createDescriptorForOldConceptsBlock();
-  /*package*/ final ConceptDescriptor myConceptOldCreateBlock = createDescriptorForOldCreateBlock();
   /*package*/ final ConceptDescriptor myConceptOnAfterReadBlock = createDescriptorForOnAfterReadBlock();
   /*package*/ final ConceptDescriptor myConceptOnBeforeWriteBlock = createDescriptorForOnBeforeWriteBlock();
   /*package*/ final ConceptDescriptor myConceptOrder = createDescriptorForOrder();
@@ -148,7 +145,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractToolKeystroke, myConceptAbstractToolShortcut, myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_Concept, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptCustomToolShortcut, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptNumberToolShortcut, myConceptOldConceptsBlock, myConceptOldCreateBlock, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolKeystroke, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
+    return Arrays.asList(myConceptAbstractToolKeystroke, myConceptAbstractToolShortcut, myConceptActionAccessOperation, myConceptActionConstructionParameterDeclaration, myConceptActionConstructorParameterReferenceOperation, myConceptActionDataParameterDeclaration, myConceptActionDataParameterReferenceOperation, myConceptActionDeclaration, myConceptActionGroupDeclaration, myConceptActionGroupMember, myConceptActionGroupRef, myConceptActionInstance, myConceptActionParameter, myConceptActionParameterCondition, myConceptActionParameterDeclaration, myConceptActionParameterReference, myConceptActionParameterReferenceOperation, myConceptActionPlaceSpecification, myConceptActionReference, myConceptActionType, myConceptAddElementStatement, myConceptAddKeystrokeStatement, myConceptAddStatement, myConceptAddTabOperation, myConceptBaseNodeBlock, myConceptBaseProjectOperation, myConceptBaseToolDeclaration, myConceptBuildGroupBlock, myConceptButtonCreator, myConceptCloseTabOperation, myConceptConceptCondition, myConceptConceptFunctionParameter_AnActionEvent, myConceptConceptFunctionParameter_CreatorType, myConceptConceptFunctionParameter_IModule, myConceptConceptFunctionParameter_MPSProject, myConceptConceptFunctionParameter_Model, myConceptConceptFunctionParameter_OperationContext, myConceptConceptFunctionParameter_PreferencePage_component, myConceptConceptFunctionParameter_Project, myConceptConceptFunctionParameter_SConceptClass, myConceptConceptFunctionParameter_node, myConceptConceptsBlock, myConceptCreateBlock, myConceptCreateNodeAspectBlock, myConceptCreateTabBlock, myConceptCustomCondition, myConceptCustomToolShortcut, myConceptDisposeBlock, myConceptDoUpdateBlock, myConceptEditableModel, myConceptEditorTab, myConceptEditorTabReference, myConceptElementListContents, myConceptEnumerateChildrenFunction, myConceptEverywhereActionPlace, myConceptExecuteBlock, myConceptGetComponentBlock, myConceptGetGroupOperation, myConceptGetNodeBlock, myConceptGetNodesBlock, myConceptGetSelectedTabOperation, myConceptGroupAccessOperation, myConceptGroupAnchor, myConceptGroupContents, myConceptGroupType, myConceptIdeaActionsDescriptor, myConceptIdeaConfigurationXml, myConceptIdeaInitializerDescriptor, myConceptIdeaPluginDependency, myConceptInitBlock, myConceptInterfaceExtentionPoint, myConceptInterfaceGroup, myConceptIsApplicableBlock, myConceptIsApplicableTabBlock, myConceptKeyMapKeystroke, myConceptKeyStrokeType, myConceptKeymapChangesDeclaration, myConceptKeymapRef, myConceptListenBlock, myConceptMPSPluginDependency, myConceptModificationStatement, myConceptNodesBlock, myConceptNonDumbAwareActions, myConceptNumberToolShortcut, myConceptOnAfterReadBlock, myConceptOnBeforeWriteBlock, myConceptOrder, myConceptOrderConstraints, myConceptOrderReference, myConceptParameterCondition_ConceptFunctionParameter, myConceptParameterizedShortcutChange, myConceptPersistentPropertyDeclaration, myConceptPersistentPropertyReference, myConceptPinTabOperation, myConceptPluginDependency, myConceptPopupCreator, myConceptPreferencePage, myConceptPreferencePageCommitBlock, myConceptPreferencePageIsModifiedBlock, myConceptPreferencePageResetBlock, myConceptPreferencesComponentDeclaration, myConceptPreferencesComponentType, myConceptRequiredCondition, myConceptSeparator, myConceptShortcutChange, myConceptSimpleActionPlace, myConceptSimpleShortcutChange, myConceptSmartDisposeClosureParameterDeclaration, myConceptTabbedToolDeclaration, myConceptTabbedToolOperation, myConceptToStringConceptFunction, myConceptToStringParameter, myConceptToolActionPlace, myConceptToolDeclaration, myConceptToolInstanceExpression, myConceptToolKeystroke, myConceptToolTab, myConceptToolType, myConceptToolbarCreator, myConceptUnpinTabOperation, myConceptUpdateBlock, myConceptUpdateGroupBlock, myConceptUpdateGroupFunction);
   }
 
   @Override
@@ -219,8 +216,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptConceptCondition;
       case LanguageConceptSwitch.ConceptFunctionParameter_AnActionEvent:
         return myConceptConceptFunctionParameter_AnActionEvent;
-      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
-        return myConceptConceptFunctionParameter_Concept;
       case LanguageConceptSwitch.ConceptFunctionParameter_CreatorType:
         return myConceptConceptFunctionParameter_CreatorType;
       case LanguageConceptSwitch.ConceptFunctionParameter_IModule:
@@ -325,10 +320,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptNonDumbAwareActions;
       case LanguageConceptSwitch.NumberToolShortcut:
         return myConceptNumberToolShortcut;
-      case LanguageConceptSwitch.OldConceptsBlock:
-        return myConceptOldConceptsBlock;
-      case LanguageConceptSwitch.OldCreateBlock:
-        return myConceptOldCreateBlock;
       case LanguageConceptSwitch.OnAfterReadBlock:
         return myConceptOnAfterReadBlock;
       case LanguageConceptSwitch.OnBeforeWriteBlock:
@@ -734,15 +725,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.alias("event");
     return b.create();
   }
-  private static ConceptDescriptor createDescriptorForConceptFunctionParameter_Concept() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "ConceptFunctionParameter_Concept", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7fL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101c66e2c0bL);
-    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/7692832593197710975");
-    b.kind(ConceptKind.NORMAL, StaticScope.NONE);
-    b.alias("concept");
-    return b.create();
-  }
   private static ConceptDescriptor createDescriptorForConceptFunctionParameter_CreatorType() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "ConceptFunctionParameter_CreatorType", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x513f22c4bae4fb1bL);
     b.class_(false, true, false);
@@ -864,8 +846,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.prop("commandOnCreate", 0x16c373ab7fdbb66eL, "1640281869714699886");
     b.aggregate("conceptsBlock", 0x6785022a196e8ee3L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196e8effL).optional(true).ordered(true).multiple(false).origin("7459370737647652579").done();
     b.aggregate("createBlock", 0x6785022a196e8f03L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6785022a196e8f01L).optional(true).ordered(true).multiple(false).origin("7459370737647652611").done();
-    b.aggregate("oldConceptsBlock", 0x16c373ab7fdbb66aL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218aa1eL).optional(true).ordered(true).multiple(false).origin("1640281869714699882").done();
-    b.aggregate("oldCreateBlock", 0x16c373ab7fdbb66cL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7cL).optional(true).ordered(true).multiple(false).origin("1640281869714699884").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForCustomCondition() {
@@ -928,8 +908,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("isApplicableBlock", 0x33f4c34299ffc082L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff128fL).optional(true).ordered(true).multiple(false).origin("3743831881070657666").done();
     b.aggregate("nodesBlock", 0x33f4c34299ff11e0L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff11e2L).optional(true).ordered(true).multiple(false).origin("3743831881070612960").done();
     b.aggregate("createTabBlock", 0x16c373ab7fdbb670L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L).optional(true).ordered(true).multiple(false).origin("1640281869714699888").done();
-    b.aggregate("conceptsBlock", 0x33f4c34299ff1284L).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218aa1eL).optional(true).ordered(true).multiple(false).origin("3743831881070613124").done();
-    b.aggregate("createBlock", 0x33f4c34299ff11dfL).target(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7cL).optional(true).ordered(true).multiple(false).origin("3743831881070612959").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForEditorTabReference() {
@@ -1239,24 +1217,6 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/471625927503601927");
     b.prop("number", 0x68b8d4843b76123L, "471625927503601955");
     b.alias("number");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForOldConceptsBlock() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "OldConceptsBlock", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218aa1eL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
-    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/7692832593197705758");
-    b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("getConcepts (deprecated)");
-    return b.create();
-  }
-  private static ConceptDescriptor createDescriptorForOldCreateBlock() {
-    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.plugin", "OldCreateBlock", 0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x6ac26e7c3218be7cL);
-    b.class_(false, false, false);
-    b.super_("jetbrains.mps.baseLanguage.structure.ConceptFunction", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x108bbca0f48L);
-    b.origin("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/7692832593197710972");
-    b.kind(ConceptKind.INTERFACE, StaticScope.NONE);
-    b.alias("create (deprecated)");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForOnAfterReadBlock() {

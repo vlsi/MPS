@@ -113,10 +113,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_Concept_GetHierarchy_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_Concept_IsExactlyOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

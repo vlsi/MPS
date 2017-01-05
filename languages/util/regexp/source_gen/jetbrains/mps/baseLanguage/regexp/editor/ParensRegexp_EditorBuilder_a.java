@@ -99,9 +99,9 @@ import jetbrains.mps.baseLanguage.regexp.editor.RegexpStylesheet_StyleSheet.Righ
       return res;
     }
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
-      return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
+      return createReplacementNode_impl((SAbstractConcept) parameterObject, node, model, operationContext, editorContext);
     }
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+    public SNode createReplacementNode_impl(SAbstractConcept parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(parameterObject), node);
     }
     public boolean isReferentPresentation() {

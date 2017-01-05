@@ -446,7 +446,6 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -798,7 +797,7 @@
                 </node>
               </node>
             </node>
-            <node concept="3THzug" id="7BLlDyibQDx" role="1eyP2E" />
+            <node concept="3bZ5Sz" id="19B7r35He1" role="1eyP2E" />
           </node>
         </node>
       </node>
