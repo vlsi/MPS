@@ -30,8 +30,9 @@ public final class SideTransformHintSubstituteActions__BehaviorDescriptor extend
 
   public static final SMethod<List<SNode>> getBaseConceptCollection_id4$$3zrO3UBG = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getBaseConceptCollection").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4$$3zrO3UBG").registry(REGISTRY).build();
   public static final SMethod<Void> setBaseConcept_id5r_35Ihc58c = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("setBaseConcept").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5r_35Ihc58c").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> canBeAppliedToNode_id7IH442d05tK = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeAppliedToNode").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7IH442d05tK").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBaseConceptCollection_id4$$3zrO3UBG, setBaseConcept_id5r_35Ihc58c);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getBaseConceptCollection_id4$$3zrO3UBG, setBaseConcept_id5r_35Ihc58c, canBeAppliedToNode_id7IH442d05tK);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -47,6 +48,9 @@ public final class SideTransformHintSubstituteActions__BehaviorDescriptor extend
     SNode actionsBuilder = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder"));
     SLinkOperations.setTarget(actionsBuilder, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108facec6d2L, 0x108facec6d6L, "applicableConcept"), baseConcept);
     ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x108fad1c116L, 0x108fad1c117L, "actionsBuilder"))).addElement(actionsBuilder);
+  }
+  /*package*/ static boolean canBeAppliedToNode_id7IH442d05tK(@NotNull SAbstractConcept __thisConcept__, SNode candidate) {
+    return false;
   }
 
   /*package*/ SideTransformHintSubstituteActions__BehaviorDescriptor() {
@@ -82,6 +86,8 @@ public final class SideTransformHintSubstituteActions__BehaviorDescriptor extend
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 2:
+        return (T) ((Boolean) canBeAppliedToNode_id7IH442d05tK(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

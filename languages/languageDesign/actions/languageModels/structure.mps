@@ -28,7 +28,10 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
         <property id="6054523464626875854" name="value" index="tnX3d" />
       </concept>
@@ -105,7 +108,7 @@
     <node concept="PrWs8" id="h4Sihyj" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="4$$3zrO4dkW" role="PzmwI">
+    <node concept="PrWs8" id="4HFXRfJYw$X" role="PzmwI">
       <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
     </node>
     <node concept="1TJgyj" id="gbFOPfw" role="1TKVEi">
@@ -117,6 +120,10 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJR$" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/actions.png" />
+    </node>
+    <node concept="asaX9" id="f8ydv1t_qb" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use substitute menu in editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbFOIBE">
@@ -168,6 +175,10 @@
     </node>
     <node concept="PrWs8" id="7pgPxC8nT$I" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
+    <node concept="asaX9" id="f8ydv1t_qd" role="lGtFl">
+      <property role="YLQ7P" value="Use substitute menu in editor aspect" />
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="gzUNGri">
@@ -230,6 +241,10 @@
     <node concept="PrWs8" id="7pgPxC8nT$R" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
+    <node concept="asaX9" id="f8ydv1u5rX" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use transformation menu in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gzUOs4m">
     <property role="R5$K7" value="false" />
@@ -242,7 +257,7 @@
     <node concept="PrWs8" id="h4SilM7" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
-    <node concept="PrWs8" id="4$$3zrO4dsX" role="PzmwI">
+    <node concept="PrWs8" id="4HFXRfJYyze" role="PzmwI">
       <ref role="PrY4T" to="tpce:2hxg_BDjKM4" resolve="IConceptAspect" />
     </node>
     <node concept="1TJgyj" id="gzUOs4n" role="1TKVEi">
@@ -254,6 +269,10 @@
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRy" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/rightTransform.png" />
+    </node>
+    <node concept="asaX9" id="f8ydv1u5rV" role="lGtFl">
+      <property role="YLQ7P" value="Use transformation menu in editor aspect" />
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="AxPO7" id="gAuI3o6">
@@ -294,6 +313,9 @@
     <property role="34LRSv" value="precondition" />
     <property role="EcuMT" value="1154465102724" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="f8ydv1u3in" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gNbvxuM">
     <property role="R5$K7" value="false" />
@@ -308,6 +330,9 @@
     <node concept="PrWs8" id="1653mnvB6gC" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjBb" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gNkRJ8Q">
     <property role="R5$K7" value="false" />
@@ -317,6 +342,9 @@
     <property role="34LRSv" value="precondition" />
     <property role="EcuMT" value="1154622616118" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="f8ydv1ucYt" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gR7WgqM">
     <property role="R5$K7" value="false" />
@@ -388,6 +416,10 @@
     <property role="3GE5qa" value="menuParts.Substitute" />
     <property role="EcuMT" value="1177323652379" />
     <ref role="1TJDcQ" node="h8CdUfd" resolve="MenuPart" />
+    <node concept="asaX9" id="2WAOUMqQjC_" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart in editor spect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8tYCj$">
     <property role="R5$K7" value="false" />
@@ -403,6 +435,9 @@
     <node concept="PrWs8" id="7gMlvD5bznL" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1u3iH" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uaGWA">
     <property role="TrG5h" value="QueryFunction_CanSubstitute" />
@@ -411,6 +446,9 @@
     <property role="R4oN_" value="return false if this action should be excluded from the substitute menu" />
     <property role="EcuMT" value="1177327161126" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBR" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8ub8Bh">
     <property role="R5$K7" value="false" />
@@ -425,6 +463,9 @@
     <node concept="PrWs8" id="1653mnvB6Ci" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjBd" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8ucgLt">
     <property role="TrG5h" value="QueryFunction_Substitute_Handler" />
@@ -433,6 +474,9 @@
     <property role="R4oN_" value="return node&lt;&gt; to substitute currentTargetNode with" />
     <property role="EcuMT" value="1177327570013" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBV" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8ucCh3">
     <property role="R5$K7" value="false" />
@@ -487,6 +531,10 @@
       <property role="IQ2ns" value="441141899449127390" />
       <ref role="20lvS9" node="ovg3x$7z4z" resolve="QueryFunction_Substitute_SelectionHandler" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCz" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Action in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uyZJX">
     <property role="R5$K7" value="true" />
@@ -507,6 +555,9 @@
       <property role="IQ2ns" value="1177333559040" />
       <ref role="20lvS9" node="h8CdUfd" resolve="MenuPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1ugZu" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uGdld">
     <property role="TrG5h" value="QueryFunction_SubstituteString" />
@@ -517,6 +568,9 @@
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
     <node concept="PrWs8" id="hqh4cAM" role="PzmwI">
       <ref role="PrY4T" node="hqh421K" resolve="ISubstitute_String" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqQjC3" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8uMFyA">
@@ -579,6 +633,10 @@
       <property role="IQ2ns" value="6230186678247423853" />
       <ref role="20lvS9" node="ovg3x$7z4z" resolve="QueryFunction_Substitute_SelectionHandler" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCx" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Parameterized in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uNqqV">
     <property role="R5$K7" value="false" />
@@ -593,6 +651,9 @@
     <node concept="PrWs8" id="1653mnvB2v_" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjB9" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uNCo$">
     <property role="R4oN_" value="return collection of substitute menu part parameters" />
@@ -601,6 +662,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1177337890340" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBF" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uSje2">
     <property role="TrG5h" value="QueryFunction_ParameterizedSubstitute_String" />
@@ -609,6 +673,9 @@
     <property role="R4oN_" value="return text string" />
     <property role="EcuMT" value="1177339114370" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBJ" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8uSIgf">
     <property role="TrG5h" value="QueryFunction_ParameterizedSubstitute_Handler" />
@@ -617,6 +684,9 @@
     <property role="R4oN_" value="return node&lt;&gt; to substitute currentTargetNode with" />
     <property role="EcuMT" value="1177339225103" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBL" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8yp2gW">
     <property role="R5$K7" value="false" />
@@ -632,6 +702,10 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="1177398809232" />
       <ref role="20lvS9" node="h8uNCo$" resolve="QueryFunction_ParameterizedSubstitute_Query" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqQjCt" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Concepts in editor aspect " />
     </node>
   </node>
   <node concept="1TIwiD" id="h8yEb1F">
@@ -667,6 +741,10 @@
       <property role="IQ2ns" value="8749184937172692767" />
       <ref role="20lvS9" node="ovg3x$7z4z" resolve="QueryFunction_Substitute_SelectionHandler" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQxA0" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Wrapper in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8yEnIi">
     <property role="TrG5h" value="QueryFunction_SubstituteWrapper" />
@@ -675,6 +753,9 @@
     <property role="R4oN_" value="create new instance of output concept wrapping (containing) passed nodeToWrap" />
     <property role="EcuMT" value="1177402571666" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBZ" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8yECRK">
     <property role="R5$K7" value="false" />
@@ -688,6 +769,9 @@
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB5ZQ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqQjB7" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8z64ec">
@@ -709,6 +793,9 @@
     <node concept="PrWs8" id="7gMlvD5bzsW" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1u4Bz" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8zlx8_">
     <property role="R5$K7" value="false" />
@@ -727,6 +814,9 @@
     <node concept="PrWs8" id="7gMlvD5bz8u" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxPe" resolve="NodeSubstituteMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1u3jL" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8zlMKA">
     <property role="TrG5h" value="QueryFunction_RemoveBy_Condition" />
@@ -735,6 +825,9 @@
     <property role="R4oN_" value="return true if corresponding substitute action should be removed from the completion menu" />
     <property role="EcuMT" value="1177413954598" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjCj" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8zm4mF">
     <property role="R5$K7" value="false" />
@@ -748,6 +841,9 @@
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOWl" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqPvkb" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8CdUfd">
@@ -766,6 +862,9 @@
     <node concept="PrWs8" id="7pgPxC8nT_0" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQ$te" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8Cfj0N">
     <property role="R5$K7" value="true" />
@@ -774,6 +873,10 @@
     <property role="3GE5qa" value="menuParts.RightTransform" />
     <property role="EcuMT" value="1177496137779" />
     <ref role="1TJDcQ" node="h8CdUfd" resolve="MenuPart" />
+    <node concept="asaX9" id="2WAOUMqQjCp" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuPart in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8Cj7Ib">
     <property role="R5$K7" value="false" />
@@ -786,6 +889,9 @@
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB2t4" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqQjBh" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8Cmt3G">
@@ -829,6 +935,10 @@
       <property role="IQ2ns" value="1177498207384" />
       <ref role="20lvS9" node="h8Cnh9u" resolve="QueryFunction_SideTransform_Handler" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCr" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_Action in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8CmF48">
     <property role="R5$K7" value="false" />
@@ -842,6 +952,9 @@
     <node concept="PrWs8" id="hqh0AvK" role="PzmwI">
       <ref role="PrY4T" node="hqh0uUh" resolve="ISideTransform_String" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjC7" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8Cnh9u">
     <property role="TrG5h" value="QueryFunction_SideTransform_Handler" />
@@ -849,6 +962,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1177498227294" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBD" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8CZtG3">
     <property role="R5$K7" value="false" />
@@ -904,6 +1020,10 @@
       <property role="IQ2ns" value="1177508966300" />
       <ref role="20lvS9" node="h8D1tOg" resolve="QueryFunction_ParameterizedSideTransform_Handler" />
     </node>
+    <node concept="asaX9" id="f8ydv1ugZw" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_Parameterized in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8CZKMO">
     <property role="TrG5h" value="QueryFunction_ParameterizedSideTransform_Query" />
@@ -911,6 +1031,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1177508842676" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBx" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8D1tOg">
     <property role="TrG5h" value="QueryFunction_ParameterizedSideTransform_Handler" />
@@ -918,6 +1041,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1177509289232" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBB" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8E3goq">
     <property role="R5$K7" value="false" />
@@ -931,6 +1057,9 @@
     <node concept="PrWs8" id="1653mnvB6zn" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjBf" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8E3ugM">
     <property role="TrG5h" value="QueryFunction_SideTransform_ConceptHandler" />
@@ -938,6 +1067,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1177526592562" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjCb" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8GyYWS">
     <property role="R5$K7" value="false" />
@@ -952,6 +1084,9 @@
     <node concept="PrWs8" id="1653mnvAOGa" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqPvkf" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h8JjB70">
     <property role="R5$K7" value="false" />
@@ -962,6 +1097,9 @@
     <property role="EcuMT" value="1177614709184" />
     <node concept="PrWs8" id="7gMlvD5bxUh" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxPe" resolve="NodeSubstituteMenuBuilderPart" />
+    </node>
+    <node concept="asaX9" id="f8ydv1u4Bx" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8Svfym">
@@ -977,6 +1115,9 @@
     <node concept="PrWs8" id="1653mnvB6fH" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqOJUu" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h9Ai3Ko">
     <property role="TrG5h" value="QueryFunction_SideTransform_NodeQuery" />
@@ -984,6 +1125,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1178537049112" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjC9" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h9At2QK">
     <property role="TrG5h" value="SubstituteNodeBuilderVariableDeclaration" />
@@ -1002,6 +1146,10 @@
     <node concept="PrWs8" id="2HMNXpx7p$j" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="asaX9" id="f8ydv1u5rR" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuVariableDeclaration in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h9AzSZ$">
     <property role="TrG5h" value="SubstituteNodeBuilderVariableReference" />
@@ -1015,6 +1163,10 @@
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="h9At2QK" resolve="SubstituteNodeBuilderVariableDeclaration" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughW" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuVariableReference in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h9OR9UU">
     <property role="TrG5h" value="QueryFunction_Substitute_CommonInitializer" />
@@ -1026,6 +1178,9 @@
     <node concept="PrWs8" id="3PLPHlN3_I5" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
+    <node concept="asaX9" id="f8ydv1u5rT" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hat4xDW">
     <property role="TrG5h" value="QueryFunction_SubstituteVariableInitializer" />
@@ -1034,6 +1189,9 @@
     <property role="R4oN_" value="return initial value of the variable" />
     <property role="EcuMT" value="1179456248444" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjC5" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hb46O4k">
     <property role="R5$K7" value="false" />
@@ -1052,6 +1210,10 @@
     <node concept="PrWs8" id="7gMlvD5bzy8" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughM" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_IncludeMenu in editor aspect" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hb5xCbf">
     <property role="R5$K7" value="false" />
@@ -1068,6 +1230,10 @@
     </node>
     <node concept="PrWs8" id="7gMlvD5bz3n" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxPe" resolve="NodeSubstituteMenuBuilderPart" />
+    </node>
+    <node concept="asaX9" id="f8ydv1u3jJ" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_AddConcept in editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="hd_wSsX">
@@ -1099,11 +1265,18 @@
     <node concept="PrWs8" id="7gMlvD5bzBl" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1ucYx" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_WrapSubstituteMenu in editor aspect" />
+    </node>
   </node>
   <node concept="PlHQZ" id="hqh0uUh">
     <property role="TrG5h" value="ISideTransform_String" />
     <property role="3GE5qa" value="queryFunctions" />
     <property role="EcuMT" value="1196433731217" />
+    <node concept="asaX9" id="2WAOUMqQjBz" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hqh1dX7">
     <property role="R5$K7" value="false" />
@@ -1122,6 +1295,9 @@
     <node concept="PrWs8" id="hqh1hUM" role="PzmwI">
       <ref role="PrY4T" node="hqh0uUh" resolve="ISideTransform_String" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCl" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hqh3Z8b">
     <property role="TrG5h" value="Substitute_SimpleString" />
@@ -1139,11 +1315,17 @@
     <node concept="PrWs8" id="1653mnvB2ET" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCn" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="PlHQZ" id="hqh421K">
     <property role="TrG5h" value="ISubstitute_String" />
     <property role="3GE5qa" value="queryFunctions" />
     <property role="EcuMT" value="1196434661488" />
+    <node concept="asaX9" id="2WAOUMqQjBP" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hrdQ6ft">
     <property role="TrG5h" value="QueryFunction_ST_RemoveBy_Condition" />
@@ -1151,6 +1333,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1197454418909" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjCh" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hrdQSR_">
     <property role="R5$K7" value="false" />
@@ -1169,6 +1354,9 @@
     <node concept="PrWs8" id="7gMlvD5bzGz" role="PzmwI">
       <ref role="PrY4T" node="7gMlvD5bxAl" resolve="SideTransformMenuBuilderPart" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughO" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="htvLhee">
     <property role="R5$K7" value="false" />
@@ -1185,6 +1373,9 @@
       <property role="IQ2ns" value="1199902711133" />
       <ref role="20lvS9" node="htvLp3f" resolve="QueryFunction_GenericSubstituteMenuPart" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCv" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="htvLp3f">
     <property role="R4oN_" value="return collection of custom SubstituteActions" />
@@ -1193,6 +1384,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1199902658767" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBH" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="htvOpk0">
     <property role="R5$K7" value="false" />
@@ -1206,6 +1400,9 @@
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvAOTp" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqPvk3" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="hwsIhdl">
@@ -1252,6 +1449,10 @@
     <node concept="PrWs8" id="2HMNXpx7pXh" role="PzmwI">
       <ref role="PrY4T" to="tpck:19gBtYEAf4C" resolve="InterfacePart" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughQ" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuVariableDeclaration in editor declaration" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hwH6Pvu">
     <property role="TrG5h" value="QueryFunction_STVariableInitializer" />
@@ -1259,6 +1460,9 @@
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1203347609566" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjCd" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hwH8uQd">
     <property role="TrG5h" value="SideTransformVariableReference" />
@@ -1272,6 +1476,10 @@
       <ref role="20ksaX" to="tpee:fzcqZ_w" resolve="variableDeclaration" />
       <ref role="20lvS9" node="hwH6Al_" resolve="SideTransformVariableDeclaration" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughS" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationMenuVariableReference" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hwHdZwP">
     <property role="TrG5h" value="QueryFunction_ST_CommonInitializer" />
@@ -1282,6 +1490,9 @@
     <node concept="PrWs8" id="3PLPHlN2NxA" role="PzmwI">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjCf" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hzcQc_2">
     <property role="TrG5h" value="QueryFunction_ReturnSmallPart" />
@@ -1290,6 +1501,9 @@
     <property role="R4oN_" value="return true if wrapped node should be used to setup selection in editor" />
     <property role="EcuMT" value="1206027602242" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjC1" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="h_Q8NCa">
     <property role="R5$K7" value="false" />
@@ -1304,6 +1518,9 @@
     <node concept="PrWs8" id="1653mnvB6DG" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjBj" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hFp$ohJ">
     <property role="R5$K7" value="false" />
@@ -1317,6 +1534,9 @@
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
     <node concept="PrWs8" id="1653mnvB6jb" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
+    </node>
+    <node concept="asaX9" id="2WAOUMqQjBn" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="AxPO7" id="hG7GXih">
@@ -1424,6 +1644,9 @@
     <node concept="PrWs8" id="1653mnvB2uE" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqPvkq" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hTNCABk">
     <property role="TrG5h" value="QueryFunction_ActionType" />
@@ -1432,6 +1655,9 @@
     <property role="R4oN_" value="return result type for this action, used for smart completion" />
     <property role="EcuMT" value="1230300670420" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBv" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeMcvD">
     <property role="R5$K7" value="false" />
@@ -1461,6 +1687,9 @@
     <node concept="1QGGSu" id="4Q8sAA5iJR_" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/smartActions.png" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughU" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeMpW9">
     <property role="R5$K7" value="true" />
@@ -1468,6 +1697,9 @@
     <property role="TrG5h" value="SurroundWithAction" />
     <property role="EcuMT" value="1235051192073" />
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="asaX9" id="f8ydv1ugi2" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeMx5V">
     <property role="TrG5h" value="GenerateCodeAction" />
@@ -1504,6 +1736,9 @@
       <property role="IQ2ns" value="1235053836789" />
       <ref role="20lvS9" node="hYeVHMO" resolve="SmartActionParameter" />
     </node>
+    <node concept="asaX9" id="f8ydv1ugZo" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeVHMO">
     <property role="TrG5h" value="SmartActionParameter" />
@@ -1519,6 +1754,9 @@
     <node concept="PrWs8" id="hYeVPpc" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="asaX9" id="f8ydv1ughY" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeW1s5">
     <property role="TrG5h" value="SmartActionParameterReference" />
@@ -1532,12 +1770,18 @@
       <property role="IQ2ns" value="1235053754581" />
       <ref role="20lvS9" node="hYeVHMO" resolve="SmartActionParameter" />
     </node>
+    <node concept="asaX9" id="f8ydv1ugi0" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYeZWPR">
     <property role="TrG5h" value="IsSmartActionApplicableFunction" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1235054742903" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="f8ydv1ugZs" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYf4wkz">
     <property role="R5$K7" value="false" />
@@ -1548,6 +1792,9 @@
     <property role="34LRSv" value="selectedCell" />
     <property role="EcuMT" value="1235055936803" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="2WAOUMqOJUq" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYf4TGt">
     <property role="R5$K7" value="false" />
@@ -1558,18 +1805,27 @@
     <property role="34LRSv" value="operationContext" />
     <property role="EcuMT" value="1235056040733" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="2WAOUMqOJUs" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYfkhzk">
     <property role="TrG5h" value="GetActionUIFunction" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1235060070612" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="f8ydv1ugZq" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hYfkG6f">
     <property role="TrG5h" value="ExecuteSmartActionFunction" />
     <property role="2_RsDV" value="none" />
     <property role="EcuMT" value="1235060179343" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="f8ydv1ugZm" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="vkUVjS$P5G">
     <property role="R5$K7" value="false" />
@@ -1827,6 +2083,9 @@
     <node concept="PrWs8" id="1653mnvANB_" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="asaX9" id="2WAOUMqQjBl" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="4PZKMKmrdgZ">
     <property role="TrG5h" value="NodeSetupFunction_NewNode" />
@@ -1862,6 +2121,9 @@
     <node concept="PrWs8" id="7pgPxC8nT$Y" role="PrDN$">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
+    <node concept="asaX9" id="f8ydv1ucYv" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="PlHQZ" id="7gMlvD5bxPe">
     <property role="TrG5h" value="NodeSubstituteMenuBuilderPart" />
@@ -1869,6 +2131,9 @@
     <property role="EcuMT" value="8372849190626008398" />
     <node concept="PrWs8" id="7pgPxC8nT$W" role="PrDN$">
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
+    </node>
+    <node concept="asaX9" id="f8ydv1u3iF" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="5zjZZw1gO19">
@@ -1878,6 +2143,9 @@
     <property role="R4oN_" value="return concept&lt;&gt; or node&lt;&gt;. Icon associated with this concept&lt;&gt; or a concept of this node&lt;&gt; will be used for this menu item." />
     <property role="EcuMT" value="6400740936061763657" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjB_" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="ovg3x$7z4z">
     <property role="3GE5qa" value="queryFunctions" />
@@ -1886,6 +2154,9 @@
     <property role="R4oN_" value="return node to select or null if selection API was directly called from the query" />
     <property role="EcuMT" value="441141899447644451" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="2WAOUMqQjBN" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="ovg3xBSJrQ">
     <property role="3GE5qa" value="conceptFunctionParameters" />
@@ -1895,6 +2166,9 @@
     <property role="R4oN_" value="node&lt;&gt; returned from create child node block" />
     <property role="EcuMT" value="441141899510871798" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="2WAOUMqPvkd" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="ve0pwAkEAa">
     <property role="EcuMT" value="562388756457499018" />
