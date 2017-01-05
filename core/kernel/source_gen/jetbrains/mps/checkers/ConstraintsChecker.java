@@ -60,7 +60,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         });
         if (!(canBeChild)) {
           SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-          component.addError(node, "Node " + node + " cannot be child of node " + SNodeOperations.getParent(node), rule);
+          component.addError(node, "Node " + node + " cannot be child of node " + parent, rule);
         }
       }
     }
@@ -81,10 +81,10 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       component.addError(node, "Concept of a node was not found", null);
     }
 
-    for (SNode child : SNodeOperations.getChildren(node)) {
+    for (final SNode child : SNodeOperations.getChildren(node)) {
       boolean canBeParent = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraints.canBeParent(node, checkingNodeContext);
+          return ModelConstraints.canBeParent(child, checkingNodeContext);
         }
       });
       if (!(canBeParent)) {

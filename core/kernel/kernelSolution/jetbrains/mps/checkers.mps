@@ -799,11 +799,8 @@
                             <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
                           </node>
                           <node concept="3cpWs3" id="6xoucZk5aY0" role="37wK5m">
-                            <node concept="2OqwBi" id="6xoucZk5aY1" role="3uHU7w">
-                              <node concept="37vLTw" id="6xoucZk5aY2" role="2Oq$k0">
-                                <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
-                              </node>
-                              <node concept="1mfA1w" id="6xoucZk5aY3" role="2OqNvi" />
+                            <node concept="37vLTw" id="2w4VT5UaNgt" role="3uHU7w">
+                              <ref role="3cqZAo" node="552CEt2aC_M" resolve="parent" />
                             </node>
                             <node concept="3cpWs3" id="6xoucZk5aY4" role="3uHU7B">
                               <node concept="3cpWs3" id="6xoucZk5aY5" role="3uHU7B">
@@ -1004,8 +1001,8 @@
                           <node concept="2YIFZM" id="6xoucZk5dtw" role="3clFbG">
                             <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
                             <ref role="37wK5l" to="ykok:~ModelConstraints.canBeParent(org.jetbrains.mps.openapi.model.SNode,jetbrains.mps.smodel.runtime.CheckingNodeContext):boolean" resolve="canBeParent" />
-                            <node concept="37vLTw" id="6xoucZk5dtx" role="37wK5m">
-                              <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                            <node concept="37vLTw" id="2w4VT5UaNu0" role="37wK5m">
+                              <ref role="3cqZAo" node="6qi2OtU3uu6" resolve="child" />
                             </node>
                             <node concept="37vLTw" id="6xoucZk5dt_" role="37wK5m">
                               <ref role="3cqZAo" node="7HmjS2NO_SP" resolve="checkingNodeContext" />
