@@ -38,6 +38,9 @@ import java.util.Map;
  * MPS Project basic implementation.
  * Stores a set of modules.
  * Supported always by a {@link ProjectDescriptor} which stores paths to the module descriptors
+ * Doesn't manage lifecycle of a module descriptors other than "{@linkplain #update() update} 'em all" on demand.
+ * Check {@code ModuleFileChangeListener} of [mps-platform] for change tracking.
+ * However, tracks module renames (albeit in a bit weird way) to keep inner structures fit.
  *
  * @see ProjectDescriptor
  */
@@ -74,34 +77,41 @@ public abstract class ProjectBase extends Project {
   }
 
   /**
+   * This is auxiliary method to update ProjectBase internal state. When a new module is added to a project,
+   * use {@code {@link #addModule(SModule)}}, which records the module into persistent project descriptor as well.
+   *
    * @deprecated there is an intention to deduce virtual folders from the file system directly
    */
   @ToRemove(version = 3.5)
   @Deprecated
-  final void addModule(@NotNull SModule module, @NotNull String virtualFolder) {
+  final void addModule(@NotNull ModulePath path, @NotNull SModule module) {
     if (myModuleToPathMap.containsKey(module)) {
 //      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
       LOG.warn(module + " is already in " + this);
       return;
     }
-    IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile, virtualFolder);
-      myModuleToPathMap.put(module, path);
-      myProjectDescriptor.addModulePath(path);
-      addRenameListener(module);
-    }
+    myModuleToPathMap.put(module, path);
+    addRenameListener(module);
   }
 
   @Override
   public final void addModule(@NotNull SModule module) {
-    addModule(module, "");
+    IFile descriptorFile = getDescriptorFileChecked(module);
+    if (descriptorFile != null) {
+      ModulePath path = new ModulePath(descriptorFile, null);
+      addModule(path, module);
+      myProjectDescriptor.addModulePath(path);
+      myModuleLoader.fireModuleLoaded(path, module);
+    }
   }
 
   private void addRenameListener(@NotNull SModule module) {
-    ModuleRenameListener listener = new ModuleRenameListener();
-    myModulesListeners.put(module, listener);
-    module.addModuleListener(listener);
+    if (module instanceof AbstractModule) {
+      // ModuleRenameListener doesn't tolerate anything but AbstractModule. Not well-mannered, imo.
+      ModuleRenameListener listener = new ModuleRenameListener();
+      myModulesListeners.put(module, listener);
+      module.addModuleListener(listener);
+    }
   }
 
   @Override
@@ -112,6 +122,7 @@ public abstract class ProjectBase extends Project {
     }
     final ModulePath modulePath = myModuleToPathMap.remove(module);
     module.removeModuleListener(myModulesListeners.remove(module));
+    myModuleLoader.fireModuleRemoved(modulePath, module);
     myProjectDescriptor.removeModulePath(modulePath);
   }
 

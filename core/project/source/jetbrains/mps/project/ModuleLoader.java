@@ -52,7 +52,7 @@ final class ModuleLoader {
 
   private Collection<Pair<ModulePath, SModule>> getRemovedModules(List<ModulePath> newModulePaths) {
     ArrayList<Pair<ModulePath, SModule>> removedModules = new ArrayList<>();
-    for (SModule oldModule : myProject.getProjectModulesWithGenerators()) {
+    for (SModule oldModule : myProject.getProjectModules()) {
       ModulePath oldModulePath = myProject.getPath(oldModule);
       if (!newModulePaths.contains(oldModulePath)) {
         removedModules.add(new Pair<>(oldModulePath, oldModule));
@@ -115,11 +115,14 @@ final class ModuleLoader {
       }
     }
     int loadedModules = 0;
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myProject);
     for (ModuleHandle handle : modulesMiner.getCollectedModules()) {
       ModulePath modulePath = handleToPath.get(handle);
       if (handle.getDescriptor() != null) {
-        SModule module = ModuleRepositoryFacade.createModule(handle, myProject);
-        myProject.addModule(module, modulePath.getVirtualFolder());
+        SModule module = repoFacade.instantiateModule(handle, myProject);
+        // it's quite tempting, indeed, to move project update (i.e. addModule) into listener ProjectModuleLoadingListener.moduleLoaded
+        // just need to sort out MduleLoader and Project relationship.
+        myProject.addModule(modulePath, module);
         ++loadedModules;
         fireModuleLoaded(modulePath, module);
       } else {
@@ -174,13 +177,13 @@ final class ModuleLoader {
     }
   }
 
-  private void fireModuleRemoved(ModulePath modulePath, SModule module) {
+  /*package*/ void fireModuleRemoved(ModulePath modulePath, SModule module) {
     for (ProjectModuleLoadingListener listener : myListeners) {
       listener.moduleRemoved(modulePath, module);
     }
   }
 
-  private void fireModuleLoaded(ModulePath modulePath, SModule module) {
+  /*package*/ void fireModuleLoaded(ModulePath modulePath, SModule module) {
     for (ProjectModuleLoadingListener listener : myListeners) {
       listener.moduleLoaded(modulePath, module);
     }

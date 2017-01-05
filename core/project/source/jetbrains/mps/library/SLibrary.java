@@ -100,10 +100,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
     final Set<SModule> modules2remove = new THashSet<>();
     final Set<AbstractModule> modules2reload = new THashSet<>();
-    /// XXX perhaps, shall keep ModuleHandle-IFile-SModule data structure instead of manually building it this way each time
-    Map<IFile, SModule> fileToModule = ModuleRepositoryFacade.getInstance().getModules(this, null).stream().
-        filter(m -> m instanceof AbstractModule && ((AbstractModule) m).getDescriptorFile() != null).
-        collect(Collectors.toMap(m -> ((AbstractModule) m).getDescriptorFile(), Function.identity()));
+    Map<IFile, SModule> fileToModule = buildFileToModuleMap();
 
     for (IFile file : event.getRemoved()) {
       SModule m = fileToModule.get(file);
@@ -131,6 +128,15 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
         return;
       }
     }
+  }
+
+  // reverse map of existing modules to their origin descriptor files
+  private Map<IFile,SModule> buildFileToModuleMap() {
+    /// XXX perhaps, shall keep ModuleHandle-IFile-SModule data structure instead of manually building it this way each time
+    return ModuleRepositoryFacade.getInstance().getModules(this, null).stream().
+        filter(m -> m instanceof AbstractModule && ((AbstractModule) m).getDescriptorFile() != null).
+        collect(Collectors.toMap(m -> ((AbstractModule) m).getDescriptorFile(), Function.identity()));
+
   }
 
   private void collectAndRegisterModules() {
