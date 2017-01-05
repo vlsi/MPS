@@ -870,9 +870,6 @@ public class MigratePopularConceptAndNodeCasts extends MigrationScriptBase {
         }
       });
     }
-
-    // !!! the idea is to migrate only those occurences that couldn't be migrated by previous, more specific, migrations 
-
   }
   @Override
   public Iterable<Problem> check(SModule m) {

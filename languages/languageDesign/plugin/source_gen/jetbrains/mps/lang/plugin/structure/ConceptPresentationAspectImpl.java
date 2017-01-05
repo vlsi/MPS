@@ -42,7 +42,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CloseTabOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_AnActionEvent = new ConceptPresentationBuilder().shortDesc("function parameter").create();
-  private final ConceptPresentation props_ConceptFunctionParameter_Concept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_CreatorType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_IModule = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_MPSProject = new ConceptPresentationBuilder().shortDesc("MPS project").create();
@@ -55,13 +54,13 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptsBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CreateBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CreateNodeAspectBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CreateTabBlock = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x16c373ab7fdbb667L, 0x16c373ab7fdbb66eL, "commandOnCreate")).create();
+  private final ConceptPresentation props_CreateTabBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CustomCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CustomToolShortcut = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DisposeBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DoUpdateBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditableModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon(IconContainer.RESOURCE_a0a0zb).create();
+  private final ConceptPresentation props_EditorTab = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d37L, "shortcutChar"), MetaAdapterFactory.getProperty(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x71dc7d539b7857cfL, "commandOnCreate"), MetaAdapterFactory.getReferenceLink(0x28f9e4973b424291L, 0xaeba0a1039153ab1L, 0x33f4c34299ff0d2fL, 0x33f4c34299ff0d30L, "baseNodeConcept")).icon(IconContainer.RESOURCE_a0a0yb).create();
   private final ConceptPresentation props_EditorTabReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ElementListContents = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EnumerateChildrenFunction = new ConceptPresentationBuilder().create();
@@ -78,7 +77,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_GroupType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaActionsDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IdeaConfigurationXml = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0qc).create();
+  private final ConceptPresentation props_IdeaInitializerDescriptor = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pc).create();
   private final ConceptPresentation props_IdeaPluginDependency = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_InterfaceExtentionPoint = new ConceptPresentationBuilder().create();
@@ -87,7 +86,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsApplicableTabBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyMapKeystroke = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_KeyStrokeType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zc).create();
+  private final ConceptPresentation props_KeymapChangesDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0yc).create();
   private final ConceptPresentation props_KeymapRef = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ListenBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MPSPluginDependency = new ConceptPresentationBuilder().create();
@@ -95,8 +94,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodesBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NonDumbAwareActions = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NumberToolShortcut = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_OldConceptsBlock = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_OldCreateBlock = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_OnAfterReadBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_OnBeforeWriteBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Order = new ConceptPresentationBuilder().create();
@@ -113,7 +110,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PreferencePageCommitBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageIsModifiedBlock = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PreferencePageResetBlock = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zd).create();
+  private final ConceptPresentation props_PreferencesComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0wd).create();
   private final ConceptPresentation props_PreferencesComponentType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RequiredCondition = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Separator = new ConceptPresentationBuilder().shortDesc("separator").create();
@@ -206,8 +203,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConceptCondition;
       case LanguageConceptSwitch.ConceptFunctionParameter_AnActionEvent:
         return props_ConceptFunctionParameter_AnActionEvent;
-      case LanguageConceptSwitch.ConceptFunctionParameter_Concept:
-        return props_ConceptFunctionParameter_Concept;
       case LanguageConceptSwitch.ConceptFunctionParameter_CreatorType:
         return props_ConceptFunctionParameter_CreatorType;
       case LanguageConceptSwitch.ConceptFunctionParameter_IModule:
@@ -312,10 +307,6 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_NonDumbAwareActions;
       case LanguageConceptSwitch.NumberToolShortcut:
         return props_NumberToolShortcut;
-      case LanguageConceptSwitch.OldConceptsBlock:
-        return props_OldConceptsBlock;
-      case LanguageConceptSwitch.OldCreateBlock:
-        return props_OldCreateBlock;
       case LanguageConceptSwitch.OnAfterReadBlock:
         return props_OnAfterReadBlock;
       case LanguageConceptSwitch.OnBeforeWriteBlock:

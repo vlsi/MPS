@@ -478,8 +478,8 @@
       <node id="8786899561264147086" at="96,204,97,205" concept="2" />
       <node id="8786899561264147027" at="97,205,98,198" concept="2" />
       <node id="8786899561264147032" at="98,198,99,17" concept="8" />
-      <node id="8786899561264147012" at="101,155,102,111" concept="8" />
-      <node id="8786899561264147036" at="104,159,105,115" concept="8" />
+      <node id="8786899561264147012" at="101,155,102,122" concept="8" />
+      <node id="8786899561264147036" at="104,170,105,115" concept="8" />
       <node id="8786899561264147012" at="107,45,108,19" concept="8" />
       <node id="1174491183609" at="111,48,112,252" concept="7" />
       <node id="1174491183609" at="112,252,113,33" concept="8" />
@@ -520,7 +520,7 @@
       <node id="1174491183609" at="56,0,59,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="8786899561264364946" at="85,0,88,0" concept="6" trace="getReplacementConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="8786899561264147012" at="101,0,104,0" concept="6" trace="createReplacementNode#(Ljava/lang/Object;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="8786899561264147012" at="104,0,107,0" concept="6" trace="createReplacementNode_impl#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8786899561264147012" at="104,0,107,0" concept="6" trace="createReplacementNode_impl#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="8786899561264147012" at="107,0,110,0" concept="6" trace="isReferentPresentation#()Z" />
       <node id="1174491183609" at="146,70,149,7" concept="5" />
       <node id="1174491183609" at="149,7,152,7" concept="5" />
@@ -544,8 +544,8 @@
       <scope id="1174491183609" at="52,26,53,18" />
       <scope id="1174491183609" at="56,39,57,39" />
       <scope id="8786899561264364946" at="85,53,86,161" />
-      <scope id="8786899561264147012" at="101,155,102,111" />
-      <scope id="8786899561264147035" at="104,159,105,115" />
+      <scope id="8786899561264147012" at="101,155,102,122" />
+      <scope id="8786899561264147035" at="104,170,105,115" />
       <scope id="8786899561264147012" at="107,45,108,19" />
       <scope id="1174491183609" at="126,28,127,20" />
       <scope id="1174491183609" at="139,17,140,42" />

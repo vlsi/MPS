@@ -6,7 +6,6 @@ import jetbrains.mps.scope.Scope;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -23,16 +22,6 @@ public abstract class DescendantsScope extends Scope {
   private SNode node;
   private SContainmentLink link;
   private SAbstractConcept concept;
-  /**
-   * 
-   * @deprecated use SContainmentLink variant, remove this after 3.3
-   */
-  @Deprecated
-  public DescendantsScope(SNode node, SNode link, SNode concept) {
-    this.node = node;
-    this.link = MetaAdapterByDeclaration.getContainmentLink(link);
-    this.concept = MetaAdapterByDeclaration.getConcept(concept);
-  }
   public DescendantsScope(SNode node, SContainmentLink link, SAbstractConcept concept) {
     this.node = node;
     this.link = link;
@@ -95,22 +84,6 @@ public abstract class DescendantsScope extends Scope {
       }
     }
     return result;
-  }
-  /**
-   * 
-   * @deprecated use SContainmentLink variant, remove this after 3.3
-   */
-  @Deprecated
-  public static DescendantsScope forNamedElements(SNode node, SNode link, SNode concept) {
-    return new DescendantsScope(node, link, concept) {
-      @Override
-      public String getName(SNode child) {
-        if (!(SNodeOperations.isInstanceOf(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")))) {
-          return child.getPresentation();
-        }
-        return SPropertyOperations.getString(SNodeOperations.cast(child, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, "jetbrains.mps.lang.core.structure.INamedConcept")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
-      }
-    };
   }
   public static DescendantsScope forNamedElements(SNode node, SContainmentLink link, SAbstractConcept concept) {
     return new DescendantsScope(node, link, concept) {

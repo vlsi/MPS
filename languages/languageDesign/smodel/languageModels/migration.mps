@@ -312,9 +312,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
       <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
         <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
@@ -331,13 +328,6 @@
       </concept>
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
         <property id="1169194664001" name="name" index="TrG5h" />
-      </concept>
-      <concept id="709746936026466394" name="jetbrains.mps.lang.core.structure.ChildAttribute" flags="ng" index="3VBwX9">
-        <property id="709746936026609031" name="linkId" index="3V$3ak" />
-        <property id="709746936026609029" name="linkRole" index="3V$3am" />
-      </concept>
-      <concept id="4452961908202556907" name="jetbrains.mps.lang.core.structure.BaseCommentAttribute" flags="ng" index="1X3_iC">
-        <child id="3078666699043039389" name="commentedNode" index="8Wnug" />
       </concept>
     </language>
     <language id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration">
@@ -3563,70 +3553,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbH" id="7saShkZSCBH" role="3cqZAp" />
-        <node concept="3SKdUt" id="7saShkZSB$j" role="3cqZAp">
-          <node concept="3SKdUq" id="7saShkZSB$l" role="3SKWNk">
-            <property role="3SKdUp" value="!!! the idea is to migrate only those occurences that couldn't be migrated by previous, more specific, migrations" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="7saShkZSDhE" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3SqFnK" id="7saShkZSyWU" role="8Wnug">
-            <node concept="2DMOqp" id="7saShkZSyWV" role="3SqFnn">
-              <node concept="2c44tf" id="7saShkZSyWW" role="HM535">
-                <node concept="3THzug" id="7saShkZSCXe" role="2c44tc">
-                  <ref role="3qa414" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <node concept="3jrphi" id="7saShkZSD3n" role="lGtFl">
-                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172420572800/1180481110358" />
-                    <property role="2qtEX8" value="conceptDeclaraton" />
-                    <property role="3jrwYG" value="c" />
-                    <property role="TrG5h" value="#c " />
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3SqKpS" id="7saShkZSyX1" role="3SqFn9">
-              <node concept="2c44tf" id="7saShkZSyX2" role="2SEiMu">
-                <node concept="3B5_sB" id="7saShkZSyX3" role="2c44tc">
-                  <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                  <node concept="2c44tb" id="7saShkZSyX4" role="lGtFl">
-                    <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1219352745532/1219352800908" />
-                    <property role="2qtEX8" value="referentNode" />
-                    <node concept="spIps" id="7saShkZSD6P" role="2c44t1">
-                      <ref role="spIpr" node="7saShkZSD3n" resolve="#c" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node concept="3SqKme" id="7saShkZSyX6" role="3SqFnd">
-              <property role="3yWfEV" value="true" />
-              <node concept="37vLTG" id="7saShkZSyX7" role="1bW2Oz">
-                <property role="TrG5h" value="node" />
-                <node concept="3Tqbb2" id="7saShkZSyX8" role="1tU5fm">
-                  <ref role="ehGHo" to="tp25:h3THzq0" resolve="ConceptNodeType" />
-                </node>
-              </node>
-              <node concept="3clFbS" id="7saShkZSyX9" role="1bW5cS">
-                <node concept="3clFbF" id="7saShkZSyXa" role="3cqZAp">
-                  <node concept="3y3z36" id="7saShkZSyXb" role="3clFbG">
-                    <node concept="3B5_sB" id="7saShkZSyXc" role="3uHU7w">
-                      <ref role="3B5MYn" node="4YXTt1AHdjK" resolve="MigratePopularConceptAndNodeCasts" />
-                    </node>
-                    <node concept="2OqwBi" id="7saShkZSyXd" role="3uHU7B">
-                      <node concept="37vLTw" id="7saShkZSyXe" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7saShkZSyX7" resolve="node" />
-                      </node>
-                      <node concept="2Rxl7S" id="7saShkZSyXf" role="2OqNvi" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7saShkZSBQx" role="3cqZAp" />
       </node>
       <node concept="ffn8J" id="4YXTt1AHdjY" role="3clF46">
         <property role="TrG5h" value="m" />

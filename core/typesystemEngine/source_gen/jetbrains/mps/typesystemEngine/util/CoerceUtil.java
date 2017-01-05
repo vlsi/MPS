@@ -10,6 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public final class CoerceUtil {
   public static SConcept concept_MeetType = MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x114b68ad132L, "jetbrains.mps.lang.typesystem.structure.MeetType");
@@ -31,6 +32,7 @@ public final class CoerceUtil {
    * @deprecated we don't use qualified concept name any more
    */
   @Deprecated
+  @ToRemove(version = 3.5)
   public static boolean canBeCoerced(SNode type, String conceptFqName) {
     if (conceptFqName == null) {
       return true;
@@ -42,6 +44,7 @@ public final class CoerceUtil {
    * @deprecated 
    */
   @Deprecated
+  @ToRemove(version = 3.5)
   public static boolean canBeCoerced(SNode type, SNode conceptNode) {
     return canBeCoerced(type, SNodeOperations.asSConcept(conceptNode));
   }

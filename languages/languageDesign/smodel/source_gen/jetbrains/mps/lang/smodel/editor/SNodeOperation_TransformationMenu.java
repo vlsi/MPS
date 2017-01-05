@@ -57,7 +57,7 @@ public class SNodeOperation_TransformationMenu extends TransformationMenuBase {
       if (alreadyHasParms) {
         return false;
       }
-      return ListSequence.fromList(SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getNode())))).isNotEmpty();
+      return ListSequence.fromList(SNodeOperation__BehaviorDescriptor.getParameterConcepts_id6ALWH9fQysn.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(_context.getNode())))).isNotEmpty();
     }
 
     @Override

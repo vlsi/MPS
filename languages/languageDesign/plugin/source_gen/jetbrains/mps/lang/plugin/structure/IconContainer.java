@@ -8,8 +8,8 @@ public class IconContainer {
   protected static IconResource RESOURCE_a0a0h = new IconResource("actionNew.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0i = new IconResource("actionGroupNew.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0ab = new IconResource("tool.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0zb = new IconResource("tabbedEditor.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0qc = new IconResource("ideaPluginDeclaration.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0zc = new IconResource("keymapChangesDeclaration.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0zd = new IconResource("preferences.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0yb = new IconResource("tabbedEditor.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0pc = new IconResource("ideaPluginDeclaration.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0yc = new IconResource("keymapChangesDeclaration.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0wd = new IconResource("preferences.png", IconContainer.class);
 }
