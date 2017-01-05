@@ -2832,8 +2832,8 @@
                                                   <node concept="2JrnkZ" id="2H817XX55$z" role="2Oq$k0">
                                                     <node concept="2OqwBi" id="2H817XX55$$" role="2JrQYb">
                                                       <node concept="30H73N" id="2H817XX55$_" role="2Oq$k0" />
-                                                      <node concept="3TrEf2" id="2H817XX55$A" role="2OqNvi">
-                                                        <ref role="3Tt5mk" to="tp1t:hQNY24t" resolve="canBeRoot" />
+                                                      <node concept="3TrEf2" id="Cy$byQ0I68" role="2OqNvi">
+                                                        <ref role="3Tt5mk" to="tp1t:5O58T9kTYqU" resolve="canBeAncestor" />
                                                       </node>
                                                     </node>
                                                   </node>
