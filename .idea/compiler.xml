@@ -656,6 +656,9 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testConstraints/languages/constraints.test/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testConstraints/solutions/TestConstraints/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testConstraints/solutions/TestConstraints/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/source_gen" includeSubdirectories="true" />
