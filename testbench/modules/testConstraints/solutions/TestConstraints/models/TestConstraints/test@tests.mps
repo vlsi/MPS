@@ -2,8 +2,8 @@
 <model ref="r:63c35524-f256-4fdd-b128-2c53748bdd7c(TestConstraints.test@tests)">
   <persistence version="9" />
   <languages>
-    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
-    <use id="2b800570-3758-4c14-86fb-871266fb9d11" name="constraints.test" version="0" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
+    <use id="2b800570-3758-4c14-86fb-871266fb9d11" name="constraints.test" version="-1" />
   </languages>
   <imports>
     <import index="2k6j" ref="r:6789573d-c842-4805-bb3b-05fd4fbf786e(constraints.test.constraints)" />
@@ -40,6 +40,11 @@
       </concept>
     </language>
     <language id="2b800570-3758-4c14-86fb-871266fb9d11" name="constraints.test">
+      <concept id="8374682609824965612" name="constraints.test.structure.CanBeParentFail" flags="ng" index="5uJEq">
+        <child id="8374682609824965624" name="child" index="5uJEe" />
+      </concept>
+      <concept id="8374682609824965610" name="constraints.test.structure.CanBeChildFail" flags="ng" index="5uJEs" />
+      <concept id="730305212589577121" name="constraints.test.structure.Child" flags="ng" index="2W9wcp" />
       <concept id="5816870305080518533" name="constraints.test.structure.Concept_II" flags="ng" index="1YrwGW" />
       <concept id="5816870305080518517" name="constraints.test.structure.Concept_CI" flags="ng" index="1YrwJc" />
       <concept id="5816870305080518495" name="constraints.test.structure.Concept_CC" flags="ng" index="1YrwJA" />
@@ -136,6 +141,32 @@
   </node>
   <node concept="2XOHcx" id="4qWC2JVszPl">
     <property role="2XOHcw" value="${mps_home}" />
+  </node>
+  <node concept="1lH9Xt" id="7gSQnpLgxs1">
+    <property role="TrG5h" value="ConstraintsInvocation" />
+    <node concept="1qefOq" id="7gSQnpLgxs2" role="1SKRRt">
+      <node concept="5uJEq" id="Cy$byQ19er" role="1qenE9">
+        <node concept="2W9wcp" id="Cy$byQ19CX" role="5uJEe" />
+        <node concept="7CXmI" id="Cy$byQ1ySV" role="lGtFl">
+          <node concept="39XrGg" id="Cy$byQ1ySW" role="7EUXB">
+            <node concept="2u4KIi" id="Cy$byQ1ySX" role="39rjcI">
+              <ref role="39XzEq" to="2k6j:Cy$byQ0ume" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1qefOq" id="Cy$byQ1ySd" role="1SKRRt">
+      <node concept="5uJEs" id="Cy$byQ1ySq" role="1qenE9">
+        <node concept="7CXmI" id="Cy$byQ1ySs" role="lGtFl">
+          <node concept="39XrGg" id="Cy$byQ1ySt" role="7EUXB">
+            <node concept="2u4KIi" id="Cy$byQ1ySu" role="39rjcI">
+              <ref role="39XzEq" to="2k6j:Cy$byQ0$FA" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

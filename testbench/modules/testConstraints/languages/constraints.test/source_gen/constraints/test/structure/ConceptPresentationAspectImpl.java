@@ -10,6 +10,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_Base = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CanBeAncestorFail = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CanBeChildFail = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CanBeParentFail = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Child = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_CC = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Concept_CI = new ConceptPresentationBuilder().shortDesc("CF - composition of D1 & D2 CFs. D2 inherites Base CF. Hence, CF - composition of D1 & Base CFs").create();
   private final ConceptPresentation props_Concept_II = new ConceptPresentationBuilder().create();
@@ -26,6 +30,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
     switch (structureDescriptor.internalIndex(c)) {
       case LanguageConceptSwitch.Base:
         return props_Base;
+      case LanguageConceptSwitch.CanBeAncestorFail:
+        return props_CanBeAncestorFail;
+      case LanguageConceptSwitch.CanBeChildFail:
+        return props_CanBeChildFail;
+      case LanguageConceptSwitch.CanBeParentFail:
+        return props_CanBeParentFail;
+      case LanguageConceptSwitch.Child:
+        return props_Child;
       case LanguageConceptSwitch.Concept_CC:
         return props_Concept_CC;
       case LanguageConceptSwitch.Concept_CI:

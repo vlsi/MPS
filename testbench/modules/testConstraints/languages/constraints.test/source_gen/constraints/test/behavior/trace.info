@@ -7,6 +7,18 @@
     <file name="BehaviorAspectDescriptor.java">
       <unit at="11,0,22,0" name="constraints.test.behavior.BehaviorAspectDescriptor" />
     </file>
+    <file name="CanBeAncestorFail_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="constraints.test.behavior.CanBeAncestorFail_BehaviorDescriptor" />
+    </file>
+    <file name="CanBeChildFail_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="constraints.test.behavior.CanBeChildFail_BehaviorDescriptor" />
+    </file>
+    <file name="CanBeParentFail_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="constraints.test.behavior.CanBeParentFail_BehaviorDescriptor" />
+    </file>
+    <file name="Child_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="constraints.test.behavior.Child_BehaviorDescriptor" />
+    </file>
     <file name="Concept_CC_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="constraints.test.behavior.Concept_CC_BehaviorDescriptor" />
     </file>

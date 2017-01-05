@@ -138,5 +138,37 @@
       <ref role="PrY4T" node="52TFb$IPN4$" resolve="Derived2_Inherited" />
     </node>
   </node>
+  <node concept="1TIwiD" id="7gSQnpLgyfE">
+    <property role="EcuMT" value="8374682609824965610" />
+    <property role="TrG5h" value="CanBeChildFail" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
+  <node concept="1TIwiD" id="7gSQnpLgyfF">
+    <property role="EcuMT" value="8374682609824965611" />
+    <property role="TrG5h" value="CanBeAncestorFail" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7gSQnpLgyfH" role="1TKVEi">
+      <property role="IQ2ns" value="8374682609824965613" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="Cy$byQ19ex" resolve="Child" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="7gSQnpLgyfG">
+    <property role="EcuMT" value="8374682609824965612" />
+    <property role="TrG5h" value="CanBeParentFail" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="7gSQnpLgyfS" role="1TKVEi">
+      <property role="IQ2ns" value="8374682609824965624" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="child" />
+      <ref role="20lvS9" node="Cy$byQ19ex" resolve="Child" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="Cy$byQ19ex">
+    <property role="EcuMT" value="730305212589577121" />
+    <property role="TrG5h" value="Child" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+  </node>
 </model>
 

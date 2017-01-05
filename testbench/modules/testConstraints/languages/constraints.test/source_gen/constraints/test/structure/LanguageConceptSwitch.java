@@ -10,18 +10,26 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public final class LanguageConceptSwitch {
   private final LanguageConceptIndex myIndex;
   public static final int Base = 0;
-  public static final int Concept_CC = 1;
-  public static final int Concept_CI = 2;
-  public static final int Concept_II = 3;
-  public static final int Container = 4;
-  public static final int Derived1_Constrained = 5;
-  public static final int Derived1_Inherited = 6;
-  public static final int Derived2_Constrained = 7;
-  public static final int Derived2_Inherited = 8;
+  public static final int CanBeAncestorFail = 1;
+  public static final int CanBeChildFail = 2;
+  public static final int CanBeParentFail = 3;
+  public static final int Child = 4;
+  public static final int Concept_CC = 5;
+  public static final int Concept_CI = 6;
+  public static final int Concept_II = 7;
+  public static final int Container = 8;
+  public static final int Derived1_Constrained = 9;
+  public static final int Derived1_Inherited = 10;
+  public static final int Derived2_Constrained = 11;
+  public static final int Derived2_Inherited = 12;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x2b80057037584c14L, 0x86fb871266fb9d11L);
     builder.put(0x50b9acb92ed730ffL, Base);
+    builder.put(0x7438d976714223ebL, CanBeAncestorFail);
+    builder.put(0x7438d976714223eaL, CanBeChildFail);
+    builder.put(0x7438d976714223ecL, CanBeParentFail);
+    builder.put(0xa2290b8b60493a1L, Child);
     builder.put(0x50b9acb92ed7a75fL, Concept_CC);
     builder.put(0x50b9acb92ed7a775L, Concept_CI);
     builder.put(0x50b9acb92ed7a785L, Concept_II);
