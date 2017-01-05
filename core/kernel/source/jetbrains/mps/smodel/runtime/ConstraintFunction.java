@@ -22,6 +22,14 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 /**
  * Presents a constraint function.
  *
+ * Constraint function supplies a {@link Context} in which constraint function are applied.
+ * Resulting constraint contains a "sequence" of objects that are applicable/valid in this context.
+ *
+ * In case, when result has {@code boolean} type, it means that supplied context is valid if function returns true.
+ *
+ * If constraint function returns {@code null}, it means that this constraint function doesn't provide any restrictions
+ * for these context. Basically, it means that any "object" is valid in this context.
+ *
  * INHERITANCE NOTES:
  *
  * If constraint isn't defined externally, it should be calculated as composition of constraints defined in super concepts.
@@ -44,8 +52,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
  * 4) CF defined in D and redefined in B  =>  CF for A returns true only if CF for B & D returns true (but not only CF for B)
  *
  *
- * @param <Context> arguments of constraint function.
- * @param <Result> resulting constraint.
+ * @param <Context> constraint function context type.
+ * @param <Result> resulting constraint type.
  *
  * @see ConstraintFunctions
  * @author Radimir.Sorokin
