@@ -60,7 +60,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
       supers = ((SConcept) tt).getSuperInterfaces();
     } else {
       SetSequence.fromSet(result).addSequence(ListSequence.fromList(IApplicableToNothing__BehaviorDescriptor.getApplicableTypes_id5cL0w3DYzxf.invoke(__thisConcept__)));
-      supers = ((SInterfaceConcept) tt).getSuperInterfaces();
+      supers = ((SInterfaceConcept) ((SAbstractConcept) tt)).getSuperInterfaces();
     }
     Sequence.fromIterable(supers).where(new IWhereFilter<SInterfaceConcept>() {
       public boolean accept(SInterfaceConcept it) {
@@ -68,7 +68,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
       }
     }).select(new ISelector<SInterfaceConcept, SAbstractConcept>() {
       public SAbstractConcept select(SInterfaceConcept it) {
-        return ((SAbstractConcept) it);
+        return (SAbstractConcept) ((SAbstractConcept) it);
       }
     }).visitAll(new IVisitor<SAbstractConcept>() {
       public void visit(SAbstractConcept it) {
