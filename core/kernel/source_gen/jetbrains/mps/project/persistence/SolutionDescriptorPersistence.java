@@ -83,10 +83,6 @@ public class SolutionDescriptorPersistence {
           }
 
           ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0b0e, rootElement);
-          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
-            // runtime classpath left for compatibility 
-            result_8ckma3_a0a0g0b0e.getAdditionalJavaStubPaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
-          }
 
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
             result_8ckma3_a0a0g0b0e.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));

@@ -100,11 +100,7 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0e0c0b.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, contentRoot, macroHelper));
           }
 
-          for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "runtimeClassPath"), "entry")))) {
-            // runtimeClassPath was left for compatibility 
-            result_v3r4p8_a0a0e0c0b.getAdditionalJavaStubPaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
-          }
-
+          // odd 'stubModelEntry' name for auxiliary classpath is due to legacy 
           Element stubModelEntries = XmlUtil.first(languageElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<String> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);

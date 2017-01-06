@@ -434,18 +434,43 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
               update = true;
             }
           } else {
+            // there are few possible deployment layouts:
+            //    1. App/Contents/languages/my.lang.jar + -src.jar
+            //    2. App/Contents/plugins/<name>/languages/my.lang.jar + -src.jar + libraries from additional cp
+            //       (build language generator puts libraries there with the help of ArtifactsRelativePathHelper, base on extracted jar deps;
+            //       FWIW, build language ignores jars listed under stub models)
+            //       App/Contents/plugins/<name>/pluginSolutions/my.lang.pluginSolution.jar
+            //       App/Contents/plugins/<name>/lib/icons.jar (placed there by build language generator)
+            //    3. Custom layout:
+            //       e.g. jetpad, which differs from (2) with lib/ full of cp jars
+            //       mps-core, with languageDesign/ and util/ nested under languages/
+            //       mps-vcs, with cp jars under lib/
+            //
             // trying to load new format : replacing paths like **.jar!/module ->
             String contentPath = rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH);
             List<String> paths = new LinkedList<String>();
             for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
-              paths.add(contentPath + File.separator + sourceRoot.get("location"));
+              paths.add(contentPath + File.separator + sourceRoot.get(FileBasedModelRoot.LOCATION));
             }
+            // contentPath = my.lang-src.jar!/module/xxx (provided original was ${module}/xxx; although some have ${mps-home} there)
+            // bundleHomeFile == my.lang.jar
+            // bundleParent == folder of my.lang.jar
+            // e.g. for collections.trove.msd:
+            //    /plugins/mps-trove/languages/collections_trove.runtime.jar
+            //    /plugins/mps-trove/languages/trove-2.1.0.jar
+            //  and
+            //    <modelRoot contentPath="${module}" type="java_classes">
+            //      <sourceRoot location="classes_gen" />
+            //      <sourceRoot location="lib/trove-2.1.0.jar" />
+            //    </modelRoot>
+            // the code below makes no sense
+            // DD for the module lists <library jar="trove-2.1.0.jar" />, which is likely the way file from languages/ is loaded
             newMemento.put(FileBasedModelRoot.CONTENT_PATH, bundleParent.getPath());
             Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
             for (String path : paths) {
               String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
               if (convertedPath != null) {
-                newMementoChild.put("location", convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
+                newMementoChild.put(FileBasedModelRoot.LOCATION, convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
                 update = true;
               }
             }
@@ -468,6 +493,11 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
       if (jar.exists()) {
         String path = jar.getPath();
         descriptor.getAdditionalJavaStubPaths().add(path);
+        // FIXME why do we expose *each* cp jar as model stub? Seems to be legacy, when stubModelEntry used to specify
+        //       both cp+stub, now there's distinct model root for that. HOWEVER, now it's only dd that points correctly to
+        //       library jars (filesystem-wise). While module-relative stub jars from deployed modules are ignored in the update cycle
+        //       above (module-src.jar!/module/ doesn't contain lib/stub.jar), and stub.jar is often part of CP, this code helps to get
+        //       stubs in deployed modules (e.g. check collections_trove.runtime)
         descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(jar));
       }
     }
