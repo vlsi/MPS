@@ -863,10 +863,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Nullable
   @Override
-  public <T extends SModuleFacet> T getFacet(Class<T> clazz) {
+  public <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz) {
     for (SModuleFacet facet : getFacets()) {
       if (clazz.isInstance(facet)) {
-        return (T) facet;
+        return clazz.cast(facet);
       }
     }
     return null;

@@ -18,10 +18,8 @@ package jetbrains.mps.generator.cache;
 import jetbrains.mps.cleanup.CleanupListener;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -54,11 +52,10 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
 
   @Nullable
   protected IFile getCacheFile(SModel modelDescriptor) {
-    SModule m = modelDescriptor.getModule();
-    IFile cachesModuleDir = getCachesDirInternal(m, SModuleOperations.getOutputPathFor(modelDescriptor));
-    if (cachesModuleDir == null) return null;
-    IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, cachesModuleDir);
-    if (cachesDir == null) return null;
+    IFile cachesDir = getCachesDirInternal(SModelOperations.getOutputCacheLocation(modelDescriptor));
+    if (cachesDir == null) {
+      return null;
+    }
 
     return cachesDir.getDescendant(getCacheFileName());
   }
@@ -128,11 +125,9 @@ public abstract class BaseModelCache<T> implements CoreComponent, CleanupListene
   }
 
   @Nullable
-  protected IFile getCachesDirInternal(SModule module, String outputPath) {
-    if (outputPath == null) return null;
-
-    // output path should be from module sources?
-    return FileSystem.getInstance().getFileByPath(FileGenerationUtil.getCachesPath(outputPath));
+  protected IFile getCachesDirInternal(@Nullable IFile defaultCachesDir) {
+    // XXX there's little reason to keep this method, GenerationDependenciesCache shall override getCacheFile() directly.
+    return defaultCachesDir;
   }
 
   /**

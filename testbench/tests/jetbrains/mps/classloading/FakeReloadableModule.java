@@ -155,7 +155,7 @@ public class FakeReloadableModule implements ReloadableModule {
 
   @Nullable
   @Override
-  public <T extends SModuleFacet> T getFacet(Class<T> clazz) {
+  public <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz) {
     return null;
   }
 

@@ -79,7 +79,6 @@
     <import index="9mrk" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.executors(MPS.IDEA/)" />
     <import index="jkm4" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.ui(MPS.IDEA/)" />
     <import index="uof7" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.ui.actions(MPS.IDEA/)" />
-    <import index="t552" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.fileGenerator(MPS.Core/)" />
     <import index="qqrq" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui.components(MPS.IDEA/)" />
     <import index="9z78" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing.border(JDK/)" />
     <import index="f061" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application.ex(MPS.IDEA/)" />
@@ -102,8 +101,6 @@
     <import index="zn9m" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.util(MPS.IDEA/)" />
     <import index="g1go" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.util.io(MPS.IDEA/)" />
     <import index="irxm" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.plugins.runconfigs(MPS.Workbench/)" />
-    <import index="dj99" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.configurations(MPS.IDEA/)" />
-    <import index="dj18" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.psi(MPS.IDEA/)" />
     <import index="feyl" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.execution.actions(MPS.IDEA/)" />
     <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="tprs" ref="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" implicit="true" />
@@ -1045,7 +1042,7 @@
                                   </node>
                                 </node>
                                 <node concept="2XshWL" id="1hFhnCnylqP" role="2OqNvi">
-                                  <ref role="2WH_rO" to="awpe:7byHRlLCxOy" resolve="getNodePointer" />
+                                  <ref role="2WH_rO" to="awpe:7byHRlLCxOy" resolve="getNode" />
                                 </node>
                               </node>
                             </node>
@@ -10824,97 +10821,6 @@
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
       <node concept="3clFbS" id="4oL4a6slRrw" role="3clF47">
-        <node concept="3clFbF" id="4oL4a6smdTs" role="3cqZAp">
-          <node concept="2YIFZM" id="4oL4a6smdUc" role="3clFbG">
-            <ref role="37wK5l" to="18ew:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
-            <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-            <node concept="2OqwBi" id="4oL4a6smeff" role="37wK5m">
-              <node concept="37vLTw" id="4oL4a6smdUs" role="2Oq$k0">
-                <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
-              </node>
-              <node concept="liA8E" id="4oL4a6smhh$" role="2OqNvi">
-                <ref role="37wK5l" node="79FiGkx7hRb" resolve="getBaseDirectory" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4oL4a6sm8CD" role="3cqZAp">
-          <node concept="2YIFZM" id="4oL4a6sm8CE" role="3clFbG">
-            <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-            <ref role="37wK5l" to="18ew:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
-            <node concept="2ShNRf" id="4oL4a6sm8CF" role="37wK5m">
-              <node concept="1pGfFk" id="4oL4a6sm8CG" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="2OqwBi" id="4oL4a6sm8CH" role="37wK5m">
-                  <node concept="2OqwBi" id="4oL4a6sm8CI" role="2Oq$k0">
-                    <node concept="2OqwBi" id="4oL4a6sm8CJ" role="2Oq$k0">
-                      <node concept="liA8E" id="4oL4a6sm8CO" role="2OqNvi">
-                        <ref role="37wK5l" to="tqvn:~TempModule.getOutputPath():jetbrains.mps.vfs.IFile" resolve="getOutputPath" />
-                      </node>
-                      <node concept="37vLTw" id="4oL4a6sm908" role="2Oq$k0">
-                        <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
-                      </node>
-                    </node>
-                    <node concept="liA8E" id="4oL4a6sm8CP" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4oL4a6sm8CQ" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                    <node concept="Xl_RD" id="4oL4a6sm8CR" role="37wK5m">
-                      <property role="Xl_RC" value="/" />
-                    </node>
-                    <node concept="10M0yZ" id="4oL4a6sm8CS" role="37wK5m">
-                      <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                      <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbF" id="4oL4a6sm8CV" role="3cqZAp">
-          <node concept="2YIFZM" id="4oL4a6sm8CW" role="3clFbG">
-            <ref role="37wK5l" to="18ew:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
-            <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
-            <node concept="2ShNRf" id="4oL4a6sm8CX" role="37wK5m">
-              <node concept="1pGfFk" id="4oL4a6sm8CY" role="2ShVmc">
-                <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                <node concept="2OqwBi" id="4oL4a6sm8CZ" role="37wK5m">
-                  <node concept="2OqwBi" id="4oL4a6sm8D0" role="2Oq$k0">
-                    <node concept="liA8E" id="4oL4a6sm8D1" role="2OqNvi">
-                      <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
-                    </node>
-                    <node concept="2YIFZM" id="4oL4a6sm8D2" role="2Oq$k0">
-                      <ref role="37wK5l" to="t552:~FileGenerationUtil.getCachesDir(jetbrains.mps.vfs.IFile):jetbrains.mps.vfs.IFile" resolve="getCachesDir" />
-                      <ref role="1Pybhc" to="t552:~FileGenerationUtil" resolve="FileGenerationUtil" />
-                      <node concept="2OqwBi" id="4oL4a6sm8D3" role="37wK5m">
-                        <node concept="liA8E" id="4oL4a6sm8D8" role="2OqNvi">
-                          <ref role="37wK5l" to="tqvn:~TempModule.getOutputPath():jetbrains.mps.vfs.IFile" resolve="getOutputPath" />
-                        </node>
-                        <node concept="37vLTw" id="4oL4a6sm90h" role="2Oq$k0">
-                          <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="4oL4a6sm8D9" role="2OqNvi">
-                    <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                    <node concept="Xl_RD" id="4oL4a6sm8Da" role="37wK5m">
-                      <property role="Xl_RC" value="/" />
-                    </node>
-                    <node concept="10M0yZ" id="4oL4a6sm8Db" role="37wK5m">
-                      <ref role="1PxDUh" to="guwi:~File" resolve="File" />
-                      <ref role="3cqZAo" to="guwi:~File.separator" resolve="separator" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="4oL4a6sm8Dd" role="3cqZAp" />
         <node concept="3clFbF" id="4oL4a6sm8De" role="3cqZAp">
           <node concept="2OqwBi" id="4oL4a6sm8Df" role="3clFbG">
             <node concept="2OqwBi" id="3YA7anLPza7" role="2Oq$k0">
@@ -10964,6 +10870,20 @@
                         </node>
                         <node concept="37vLTw" id="3YA7anLO6Y1" role="37wK5m">
                           <ref role="3cqZAo" node="4oL4a6sm9xP" resolve="myProject" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="4oL4a6smdTs" role="3cqZAp">
+                    <node concept="2YIFZM" id="4oL4a6smdUc" role="3clFbG">
+                      <ref role="37wK5l" to="18ew:~FileUtil.delete(java.io.File):boolean" resolve="delete" />
+                      <ref role="1Pybhc" to="18ew:~FileUtil" resolve="FileUtil" />
+                      <node concept="2OqwBi" id="4oL4a6smeff" role="37wK5m">
+                        <node concept="37vLTw" id="4oL4a6smdUs" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4oL4a6slVaq" resolve="myModule" />
+                        </node>
+                        <node concept="liA8E" id="4oL4a6smhh$" role="2OqNvi">
+                          <ref role="37wK5l" node="79FiGkx7hRb" resolve="getBaseDirectory" />
                         </node>
                       </node>
                     </node>
@@ -11067,6 +10987,11 @@
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
         <node concept="3clFbS" id="79FiGkx5JUQ" role="3clF47">
+          <node concept="3SKdUt" id="22JnV7jmpeh" role="3cqZAp">
+            <node concept="3SKdUq" id="22JnV7jmpej" role="3SKWNk">
+              <property role="3SKdUp" value="who cares if this module has descriptor file? Do we need to extend TempModule?" />
+            </node>
+          </node>
           <node concept="3clFbF" id="79FiGkx5JZC" role="3cqZAp">
             <node concept="2OqwBi" id="79FiGkx5KvA" role="3clFbG">
               <node concept="2YIFZM" id="79FiGkx5Krc" role="2Oq$k0">

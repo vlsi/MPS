@@ -121,9 +121,11 @@ public interface SModule {
 
   /**
    *  Returns facet of the specified class.
+   *  If there is more than one facet instance that conforms specified class, it's unspecified which one is returned,
+   *  use {@link #getFacets()} instead and filter as appropriate.
    */
   @Nullable
-  <T extends SModuleFacet> T getFacet(Class<T> clazz);
+  <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz);
 
   // FIXME document whether read lock is required to access roots
   Iterable<ModelRoot> getModelRoots();

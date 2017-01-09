@@ -9,13 +9,13 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
@@ -66,17 +66,14 @@ public class CleanExportsMigration extends BaseProjectMigration implements Clean
    * be combined into one piece of universal code
    */
   private static void removeExports(Project p) {
-    Iterable<SModule> modulesToClean;
     Sequence.fromIterable(getModulesForCleanup(p)).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
       public void visit(AbstractModule it) {
-        IFile outputDir = it.getOutputPath();
-        IFile testDir = check_cifyrw_a0b0a0a1a21(it.getFacet(TestsFacet.class));
+        IFile outputDir = check_cifyrw_a0a0a0a0a21(it.getFacet(JavaModuleFacet.class));
+        IFile testDir = check_cifyrw_a0b0a0a0a21(it.getFacet(TestsFacet.class));
         if (outputDir != null) {
-          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
           refreshAndDeleteExports(outputDir);
         }
         if (testDir != null) {
-          IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
           refreshAndDeleteExports(testDir);
         }
       }
@@ -122,7 +119,13 @@ public class CleanExportsMigration extends BaseProjectMigration implements Clean
       f.delete();
     }
   }
-  private static IFile check_cifyrw_a0b0a0a1a21(TestsFacet checkedDotOperand) {
+  private static IFile check_cifyrw_a0a0a0a0a21(JavaModuleFacet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getOutputRoot();
+    }
+    return null;
+  }
+  private static IFile check_cifyrw_a0b0a0a0a21(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }

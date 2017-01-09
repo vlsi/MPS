@@ -5825,8 +5825,8 @@
             <property role="TrG5h" value="x" />
             <node concept="10Oyi0" id="3avV6wmsHax" role="1tU5fm" />
             <node concept="2YIFZM" id="3avV6wmsIfv" role="33vP2m">
-              <ref role="37wK5l" to="wyt6:~Math.min(double,double):double" resolve="min" />
               <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+              <ref role="37wK5l" to="wyt6:~Math.min(int,int):int" resolve="min" />
               <node concept="2OqwBi" id="3avV6wmsIpu" role="37wK5m">
                 <node concept="37vLTw" id="3avV6wmsIiE" role="2Oq$k0">
                   <ref role="3cqZAo" node="3avV6wmsqKB" resolve="path1" />

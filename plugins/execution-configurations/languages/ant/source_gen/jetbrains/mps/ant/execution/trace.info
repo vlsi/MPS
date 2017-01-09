@@ -8,6 +8,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242864:jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878:jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070462154015:jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
@@ -17,7 +18,7 @@
   <root nodeRef="r:d3378a35-13da-49cb-8ad1-afbd30e88ad8(jetbrains.mps.ant.execution)/352677614185351100">
     <file name="AntSettings_Configuration.java">
       <node id="352677614185351100" at="23,76,24,57" concept="1" />
-      <node id="352677614185351100" at="28,26,29,81" concept="12" />
+      <node id="352677614185351100" at="28,26,29,81" concept="13" />
       <node id="352677614185351100" at="30,5,31,83" concept="1" />
       <node id="352677614185351100" at="33,43,34,41" concept="7" />
       <node id="352677614185351100" at="36,39,37,38" concept="7" />
@@ -25,7 +26,7 @@
       <node id="352677614185351100" at="42,53,43,42" concept="1" />
       <node id="352677614185351100" at="45,49,46,39" concept="1" />
       <node id="352677614185351100" at="48,43,49,33" concept="1" />
-      <node id="352677614185351100" at="51,0,52,0" concept="9" trace="LOG" />
+      <node id="352677614185351100" at="51,0,52,0" concept="10" trace="LOG" />
       <node id="352677614185351100" at="53,44,54,43" concept="6" />
       <node id="352677614185351100" at="55,9,56,36" concept="1" />
       <node id="352677614185351100" at="56,36,57,74" concept="1" />
@@ -59,7 +60,7 @@
       <node id="352677614185351100" at="22,0,26,0" concept="5" trace="writeExternal#(Lorg/jdom/Element;)V" />
       <node id="352677614185351100" at="26,0,33,0" concept="5" trace="readExternal#(Lorg/jdom/Element;)V" />
       <node id="352677614185351100" at="72,0,80,0" concept="5" trace="clone#()Ljava/lang/Object;" />
-      <node id="352677614185351100" at="54,43,63,5" concept="13" />
+      <node id="352677614185351100" at="54,43,63,5" concept="14" />
       <node id="352677614185351100" at="52,0,66,0" concept="5" trace="clone#()Ljetbrains/mps/ant/execution/AntSettings_Configuration;" />
       <scope id="352677614185351100" at="20,117,20,117" />
       <scope id="352677614185351100" at="70,22,70,22" />
@@ -122,7 +123,7 @@
       <node id="352677614185351110" at="19,0,20,0" concept="2" trace="myAlternativeAnt" />
       <node id="352677614185351112" at="20,0,21,0" concept="2" trace="myAntOptions" />
       <node id="352677614185351116" at="24,32,25,51" concept="6" />
-      <node id="352677614185351123" at="25,51,26,0" concept="8" />
+      <node id="352677614185351123" at="25,51,26,0" concept="9" />
       <node id="352677614185351124" at="26,0,27,73" concept="1" />
       <node id="352677614185351130" at="27,73,28,73" concept="1" />
       <node id="352677614185351137" at="28,73,29,55" concept="1" />
@@ -131,7 +132,7 @@
       <node id="352677614185351158" at="31,80,32,48" concept="1" />
       <node id="352677614185351163" at="32,48,33,49" concept="1" />
       <node id="352677614185351168" at="33,49,34,66" concept="1" />
-      <node id="352677614185351175" at="34,66,35,0" concept="8" />
+      <node id="352677614185351175" at="34,66,35,0" concept="9" />
       <node id="352677614185351176" at="35,0,36,17" concept="7" />
       <node id="352677614185351203" at="38,106,39,75" concept="1" />
       <node id="352677614185351211" at="39,75,40,66" concept="1" />
@@ -144,7 +145,7 @@
       <node id="352677614185351100" at="50,0,53,0" concept="5" trace="create#()Ljetbrains/mps/ant/execution/AntSettings_Configuration;" />
       <node id="352677614185351100" at="38,0,43,0" concept="5" trace="applyEditorTo#(Ljetbrains/mps/ant/execution/AntSettings_Configuration;)V" />
       <node id="352677614185351100" at="43,0,48,0" concept="5" trace="resetEditorFrom#(Ljetbrains/mps/ant/execution/AntSettings_Configuration;)V" />
-      <node id="352677614185351100" at="48,45,53,7" concept="11" />
+      <node id="352677614185351100" at="48,45,53,7" concept="12" />
       <node id="352677614185351100" at="48,0,55,0" concept="0" trace="AntSettings_Configuration_Editor#()V" />
       <node id="352677614185351100" at="23,0,38,0" concept="5" trace="createEditor#()Ljavax/swing/JPanel;" />
       <scope id="352677614185351100" at="21,31,21,31" />
@@ -190,19 +191,19 @@
       <node id="1908995601061473419" at="72,46,73,176" concept="6" />
       <node id="352677614185351685" at="73,176,74,199" concept="7" />
       <node id="352677614185351712" at="76,85,77,47" concept="6" />
-      <node id="352677614185351720" at="78,53,79,70" concept="12" />
+      <node id="352677614185351720" at="78,53,79,70" concept="13" />
       <node id="352677614185351725" at="80,5,81,686" concept="7" />
       <node id="352677614185351786" at="85,45,86,87" concept="7" />
       <node id="352677614185351801" at="88,87,89,53" concept="6" />
       <node id="352677614185351809" at="89,53,90,39" concept="6" />
-      <node id="352677614185351817" at="91,33,92,83" concept="12" />
+      <node id="352677614185351817" at="91,33,92,83" concept="13" />
       <node id="352677614185351827" at="93,5,94,72" concept="6" />
       <node id="352677614185351840" at="95,49,96,53" concept="6" />
       <node id="352677614185351848" at="97,79,98,61" concept="1" />
-      <node id="8696860480643499412" at="100,5,101,0" concept="8" />
+      <node id="8696860480643499412" at="100,5,101,0" concept="9" />
       <node id="5878914391527571414" at="101,0,102,73" concept="6" />
       <node id="5878914391527612267" at="104,37,105,28" concept="7" />
-      <node id="8696860480643499413" at="107,8,108,0" concept="8" />
+      <node id="8696860480643499413" at="107,8,108,0" concept="9" />
       <node id="352677614185351857" at="108,0,109,21" concept="7" />
       <node id="352677614185351867" at="111,84,112,59" concept="6" />
       <node id="352677614185351871" at="112,59,113,88" concept="6" />
@@ -211,9 +212,11 @@
       <node id="8927840084194829216" at="122,40,123,80" concept="7" />
       <node id="8927840084194829230" at="126,44,127,82" concept="7" />
       <node id="352677614185351913" at="131,61,132,15" concept="6" />
-      <node id="2034046503360906450" at="132,15,133,167" concept="1" />
-      <node id="2034046503360906468" at="133,167,134,193" concept="1" />
-      <node id="352677614185351948" at="134,193,135,26" concept="7" />
+      <node id="2355206347497426758" at="132,15,133,53" concept="6" />
+      <node id="2355206347497474832" at="133,53,134,158" concept="8" />
+      <node id="2034046503360906450" at="134,158,135,86" concept="1" />
+      <node id="2034046503360906468" at="135,86,136,193" concept="1" />
+      <node id="352677614185351948" at="136,193,137,26" concept="7" />
       <node id="352677614185351672" at="38,0,40,0" concept="0" trace="Ant_Command#()V" />
       <node id="352677614185351672" at="40,64,43,5" concept="4" />
       <node id="352677614185351672" at="46,64,49,5" concept="4" />
@@ -221,7 +224,7 @@
       <node id="352677614185351672" at="58,62,61,5" concept="4" />
       <node id="352677614185351672" at="64,78,67,5" concept="4" />
       <node id="352677614185351718" at="77,47,80,5" concept="4" />
-      <node id="352677614185351672" at="85,0,88,0" concept="10" trace="getDefaultAntHome#()Ljava/lang/String;" />
+      <node id="352677614185351672" at="85,0,88,0" concept="11" trace="getDefaultAntHome#()Ljava/lang/String;" />
       <node id="352677614185351815" at="90,39,93,5" concept="4" />
       <node id="352677614185351846" at="96,53,99,7" concept="4" />
       <node id="5878914391527611211" at="104,0,107,0" concept="5" trace="select#(Ljava/lang/String;)Ljava/io/File;" />
@@ -237,11 +240,11 @@
       <node id="352677614185351672" at="58,0,64,0" concept="5" trace="setTargetName_String#(Ljava/lang/String;)Ljetbrains/mps/ant/execution/Ant_Command;" />
       <node id="352677614185351672" at="64,0,70,0" concept="5" trace="setMacroToDefine_ListString#(Ljava/util/List;)Ljetbrains/mps/ant/execution/Ant_Command;" />
       <node id="352677614185351834" at="94,72,100,5" concept="3" />
-      <node id="352677614185351672" at="131,0,137,0" concept="10" trace="getGeneratedFileName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="352677614185351672" at="76,0,83,0" concept="5" trace="createProcess#(Ljava/lang/String;)Lcom/intellij/execution/process/ProcessHandler;" />
+      <node id="352677614185351672" at="131,0,139,0" concept="11" trace="getGeneratedFileName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <node id="352677614185351881" at="116,5,129,8" concept="7" />
-      <node id="352677614185351672" at="111,0,131,0" concept="10" trace="getMacroValues#(Ljava/util/List;)Ljava/lang/Iterable;" />
-      <node id="352677614185351672" at="88,0,111,0" concept="10" trace="getAntClassPath#(Ljava/lang/String;)Ljava/util/List;" />
+      <node id="352677614185351672" at="111,0,131,0" concept="11" trace="getMacroValues#(Ljava/util/List;)Ljava/lang/Iterable;" />
+      <node id="352677614185351672" at="88,0,111,0" concept="11" trace="getAntClassPath#(Ljava/lang/String;)Ljava/util/List;" />
       <scope id="352677614185351672" at="38,24,38,24" />
       <scope id="352677614185351672" at="41,25,42,42" />
       <scope id="352677614185351672" at="47,30,48,41" />
@@ -281,9 +284,6 @@
       <scope id="352677614185351839" at="95,49,99,7">
         <var name="jarFilePath" id="352677614185351841" />
       </scope>
-      <scope id="352677614185351912" at="131,61,135,26">
-        <var name="file" id="352677614185351914" />
-      </scope>
       <scope id="352677614185351672" at="71,0,76,0">
         <var name="project" id="352677614185351672" />
       </scope>
@@ -308,11 +308,15 @@
       <scope id="352677614185351834" at="94,72,100,5">
         <var name="jarFile" id="352677614185351835" />
       </scope>
-      <scope id="352677614185351672" at="131,0,137,0">
-        <var name="project" id="352677614185351952" />
+      <scope id="352677614185351912" at="131,61,137,26">
+        <var name="file" id="352677614185351914" />
+        <var name="model" id="2355206347497426759" />
       </scope>
       <scope id="352677614185351672" at="76,0,83,0">
         <var name="antFilePath" id="352677614185351672" />
+      </scope>
+      <scope id="352677614185351672" at="131,0,139,0">
+        <var name="project" id="352677614185351952" />
       </scope>
       <scope id="352677614185351866" at="111,84,129,8">
         <var name="macroValues" id="352677614185351872" />
@@ -334,7 +338,7 @@
       <unit id="8927840084194829207" at="117,99,121,5" name="jetbrains.mps.ant.execution.Ant_Command$2" />
       <unit id="8927840084194829214" at="121,18,125,5" name="jetbrains.mps.ant.execution.Ant_Command$3" />
       <unit id="8927840084194829228" at="125,18,129,5" name="jetbrains.mps.ant.execution.Ant_Command$4" />
-      <unit id="352677614185351672" at="32,0,139,0" name="jetbrains.mps.ant.execution.Ant_Command" />
+      <unit id="352677614185351672" at="32,0,141,0" name="jetbrains.mps.ant.execution.Ant_Command" />
     </file>
   </root>
 </debug-info>

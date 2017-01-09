@@ -312,7 +312,7 @@ public final class ModulesMiner {
       myExcludes.add(sourceDir);
       // todo: why?
       if (!sourceDir.isReadOnly()) {
-        myExcludes.add(sourceDir.getFileSystem().getFile(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+        myExcludes.add(FileGenerationUtil.getCachesDir(sourceDir));
       }
     }
   }

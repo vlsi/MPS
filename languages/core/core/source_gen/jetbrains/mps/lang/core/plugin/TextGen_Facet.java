@@ -259,7 +259,7 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   mpsProject.getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(Sequence.fromIterable(inputResource.retainedModels()).where(new IWhereFilter<SModel>() {
+                      Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(inputResource.module(), Sequence.fromIterable(inputResource.retainedModels()).where(new IWhereFilter<SModel>() {
                         public boolean accept(SModel smd) {
                           return GenerationFacade.canGenerate(smd);
                         }

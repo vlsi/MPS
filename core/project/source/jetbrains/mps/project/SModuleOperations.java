@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
@@ -26,7 +26,8 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -45,13 +46,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class SModuleOperations {
   private static final Logger LOG = LogManager.getLogger(SModuleOperations.class);
 
+  /**
+   * @deprecated use {@link jetbrains.mps.project.facets.GenerationTargetFacet#getOutputLocation(SModel)} or {@link JavaModuleFacet#getOutputRoot()}.
+   *             Even {@link #getOutputRoot(SModel)} is much better as it (a) deals with IFile (b) hints it's root, not model-specific location
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static String getOutputPathFor(SModel model) {
-    // todo: move to SModelOperations?
-    IFile outputDir = getOutputRoot(model);
+    IFile outputDir = SModelOperations.getOutputLocation(model);
     return outputDir != null ? outputDir.getPath() : null;
   }
 
@@ -60,33 +67,45 @@ public class SModuleOperations {
    * Unlike {@link #getOutputPathFor(org.jetbrains.mps.openapi.model.SModel)} doesn't
    * translate IFile to String.
    *
+   * @deprecated use {@link jetbrains.mps.smodel.SModelOperations#getOutputLocation(SModel)} instead. This operation is not {@code SModuleOperation}'s.
+   *
    * @return module's output path, or null if unknown
    */
+  @ToRemove(version = 3.5)
+  @Deprecated
   public static IFile getOutputRoot(@NotNull SModel model) {
-    SModule module = model.getModule();
-    if (SModelStereotype.isTestModel(model) && module.getFacet(TestsFacet.class) != null) {
-      return module.getFacet(TestsFacet.class).getTestsOutputPath();
-    } else {
-      return ((AbstractModule) module).getOutputPath();
-    }
+    return SModelOperations.getOutputLocation(model);
   }
 
   /**
+   * @deprecated This operation knows about output roots of {@link JavaModuleFacet} and {@link TestsFacet} only. Locations of any other
+   *             {@link GenerationTargetFacet} are ignored. There's only 1 use in MPS. Client code shall not assume there's single output root for a
+   *             module, there could be multiple outputs, specified per model.
    * @return all locations where generated files (including auxiliary model streams, files with hashes and dependencies) of the module could be found.
    */
+  @ToRemove(version = 3.5)
+  @Deprecated
   public static Collection<IFile> getOutputRoots(@NotNull SModule module) {
     // XXX there's jetbrains.mps.tool.builder.paths.ModuleOutputPaths which looks quite similar, shall refactor. It's definitely not tooling-specific code.
-    ArrayList<IFile> rv = new ArrayList<IFile>();
-    if (module instanceof AbstractModule) {
-      IFile path = ((AbstractModule) module).getOutputPath();
+    ArrayList<IFile> rv = new ArrayList<>(4);
+    JavaModuleFacet jmf = module.getFacet(JavaModuleFacet.class);
+    if (jmf != null) {
+      IFile path = jmf.getOutputRoot();
       if (path != null) {
         rv.add(path);
-        rv.add(FileGenerationUtil.getCachesDir(path));
+      }
+      path = jmf.getOutputCacheRoot();
+      if (path != null) {
+        rv.add(path);
       }
     }
     TestsFacet testFacet = module.getFacet(TestsFacet.class);
     if (testFacet != null) {
       IFile path = testFacet.getTestsOutputPath();
+      if (path != null) {
+        rv.add(path);
+      }
+      path = testFacet.getOutputCacheRoot();
       if (path != null) {
         rv.add(path);
       }
@@ -120,23 +139,24 @@ public class SModuleOperations {
 
   public static Set<String> getAllSourcePaths(SModule module) {
     // todo: get rid from source paths?
-    Set<String> paths = new HashSet<String>();
-    if (module instanceof AbstractModule) {
-      IFile path = ((AbstractModule) module).getOutputPath();
+    ArrayList<String> paths = new ArrayList<>(4);
+    JavaModuleFacet jmf = module.getFacet(JavaModuleFacet.class);
+    if (jmf != null) {
+      IFile path = jmf.getOutputRoot();
+      if (path != null) {
+        paths.add(path.getPath());
+      }
+      paths.addAll(jmf.getAdditionalSourcePaths());
+    }
+
+    TestsFacet testsFacet = module.getFacet(TestsFacet.class);
+    if (testsFacet != null) {
+      IFile path = testsFacet.getTestsOutputPath();
       if (path != null) {
         paths.add(path.getPath());
       }
     }
-    if (module.getFacet(TestsFacet.class) != null) {
-      IFile path = module.getFacet(TestsFacet.class).getTestsOutputPath();
-      if (path != null) {
-        paths.add(path.getPath());
-      }
-    }
-    if (module.getFacet(JavaModuleFacet.class) != null) {
-      paths.addAll(module.getFacet(JavaModuleFacet.class).getAdditionalSourcePaths());
-    }
-    return paths;
+    return new TreeSet<>(paths);
   }
 
   public static EditableSModel createModelWithAdjustments(String name, @NotNull ModelRoot root) {

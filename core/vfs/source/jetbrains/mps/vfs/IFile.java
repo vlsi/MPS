@@ -193,6 +193,11 @@ public interface IFile {
    */
   boolean createNewFile();
   boolean mkdirs();
+
+  /**
+   * FIXME document what happens if one deletes non-empty folder. IoFile seems to force deletion. Is it the contract?
+   * FIXME document what happens if this file doesn't exist (false == exists()).
+   */
   boolean delete();
 
   boolean rename(String newName);

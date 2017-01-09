@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.FileUtil;
@@ -58,14 +57,13 @@ public final class FileIcon__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static List<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputRoot) {
+  /*package*/ static List<Tuples._2<IFile, byte[]>> generate_id7Mb2akaesv8(@NotNull SNode __thisNode__, IFile outputDir) {
     if (isEmptyString(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")))) {
       // todo compatibility code to be removed after 3.4 
       return null;
     }
 
     SModel model = SNodeOperations.getModel(__thisNode__);
-    IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
 
     String source = MacrosFactory.forModule((AbstractModule) model.getModule()).expandPath(SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file")));
     final String name = FileUtil.getNameWithoutExtension(source);

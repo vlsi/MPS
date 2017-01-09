@@ -22,9 +22,8 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.textgen.trace.BaseLanguageNodeLookup;
 import jetbrains.mps.textgen.trace.DefaultTraceInfoProvider;
@@ -110,7 +109,7 @@ public class GeneratedSourcePosition {
       public String compute() {
         SModel modelDescriptor = modelReference.resolve(repository);
         SModule module = modelDescriptor.getModule();
-        IFile defaultOutputDir = FileGenerationUtil.getDefaultOutputDir(modelDescriptor, ((AbstractModule) module).getOutputPath());
+        IFile defaultOutputDir = module.getFacet(JavaModuleFacet.class).getOutputLocation(modelDescriptor);
         IFile file = defaultOutputDir.getDescendant(generatedFileName);
         if (!file.exists()) {
           return null;

@@ -21,9 +21,8 @@ import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 
 public class RetainedUtil {
   public RetainedUtil() {
@@ -91,50 +90,42 @@ public class RetainedUtil {
     }
     return retainedModels;
   }
-  public static Iterable<IDelta> retainedDeltas(Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-    // FIXME odd to have two classes just to collect two locations per model (output and caches dirs) 
-    // rather shall spit out strings for these locations, and make shall translate them to IFile and IDelta itself. 
-    return Sequence.fromIterable(new RetainedUtil.RetainedFilesDelta(getFile).deltas(smd)).concat(Sequence.fromIterable(new RetainedUtil.RetainedCachesDelta(getFile).deltas(smd)));
-  }
-  /*package*/ static class RetainedFilesDelta {
-    protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
-    protected _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
-    public RetainedFilesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      this.getFile = getFile;
-    }
-    public Iterable<IDelta> deltas(Iterable<SModel> smds) {
-      for (SModel smd : smds) {
-        String output = SModuleOperations.getOutputPathFor(smd);
-        if (output != null) {
-          deltaForDir(output).kept(FileGenerationUtil.getDefaultOutputDir(smd, this.getRootOutputDir(output)));
+
+  public static Iterable<IDelta> retainedDeltas(final SModule module, Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+    // builds deltas that mark output locations of specified models to persist generation (respective folders marked as 'kept') 
+    assert Sequence.fromIterable(smd).all(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it.getModule() == module;
+      }
+    });
+    // XXX delta doesn't uilize IFile, it's merely an indication of a location. Perhaps, it should be caller responsibility 
+    // to translate delta's IFile to proper location (make.pathToFile) and leave this class straighforward delta builder without 
+    // knowledge of path translation? 
+    // FIXME need make.pathToFile to take IFile instead of String, it's odd to go there and back 
+    final Map<IFile, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<IFile, FilesDelta>());
+
+    for (SModuleFacet mf : module.getFacets()) {
+      if (mf instanceof GenerationTargetFacet) {
+        GenerationTargetFacet gtf = (GenerationTargetFacet) mf;
+        IFile[] outputLocations = new IFile[2];
+        for (SModel m : smd) {
+          outputLocations[0] = gtf.getOutputLocation(m);
+          outputLocations[1] = gtf.getOutputCacheLocation(m);
+          for (IFile f : outputLocations) {
+            if (f == null) {
+              continue;
+            }
+            IFile actualOutput = getFile.invoke(f.getPath());
+            FilesDelta fd = MapSequence.fromMap(dir2delta).get(actualOutput);
+            if (fd == null) {
+              // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
+              fd = new FilesDelta(actualOutput.getParent());
+            }
+            fd.kept(actualOutput);
+          }
         }
       }
-      return this.collectedDeltas();
     }
-    protected IFile getRootOutputDir(String output) {
-      return getFile.invoke(output);
-    }
-    private Iterable<IDelta> collectedDeltas() {
-      return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).select(new ISelector<FilesDelta, IDelta>() {
-        public IDelta select(FilesDelta it) {
-          return (IDelta) it;
-        }
-      });
-    }
-    protected FilesDelta deltaForDir(String dir) {
-      if (!(MapSequence.fromMap(dir2delta).containsKey(dir))) {
-        MapSequence.fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
-      }
-      return MapSequence.fromMap(dir2delta).get(dir);
-    }
-  }
-  /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
-    public RetainedCachesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      super(getFile);
-    }
-    @Override
-    protected IFile getRootOutputDir(String output) {
-      return getFile.invoke(FileGenerationUtil.getCachesPath(output));
-    }
+    return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).ofType(IDelta.class);
   }
 }

@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.mps.openapi.model.SNodeId;
@@ -118,9 +117,9 @@ public class GenerateImages_Facet extends IFacet.Stub {
                     collectingNodesMonitor.start("Collecting nodes to print", Sequence.fromIterable(allModels).count());
                     for (Tuples._2<SModel, SModel> modelsPair : Sequence.fromIterable(allModels)) {
                       collectingNodesMonitor.step(SModelOperations.getModelName(modelsPair._0()));
-                      String output = SModuleOperations.getOutputPathFor(modelsPair._0());
-                      IFile outputRoot = Target_make.vars(pa.global()).pathToFile().invoke(output);
-                      IFile outputDir = FileGenerationUtil.getDefaultOutputDir(modelsPair._0(), outputRoot);
+                      // XXX what if there are multiple GenerationTargetFacet (now it's only JavaModuleFacet), shall we generate into each? Or identify them somehow? 
+                      IFile modelOutputLocation = jetbrains.mps.smodel.SModelOperations.getOutputLocation(modelsPair._0());
+                      IFile outputDir = Target_make.vars(pa.global()).pathToFile().invoke(modelOutputLocation.getPath());
                       if (!(MapSequence.fromMap(folder2PrintRunnables).containsKey(outputDir))) {
                         MapSequence.fromMap(folder2PrintRunnables).put(outputDir, ListSequence.fromList(new ArrayList<PrintNodeRunnable>()));
                       }

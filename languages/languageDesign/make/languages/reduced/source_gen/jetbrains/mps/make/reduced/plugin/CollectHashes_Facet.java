@@ -19,12 +19,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.vfs.FileSystem;
+import java.io.File;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.io.File;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.make.script.IPropertiesPool;
@@ -68,13 +66,14 @@ public class CollectHashes_Facet extends IFacet.Stub {
           switch (0) {
             case 0:
               for (GResource gres : Sequence.fromIterable(input)) {
-                GenerationStatus status = (gres).status();
+                GenerationStatus status = gres.status();
                 if (status.isOk()) {
-                  String outputRoot = SModuleOperations.getOutputPathFor(gres.model());
-                  String outputDir = FileGenerationUtil.getDefaultOutputDir(gres.model(), FileSystem.getInstance().getFileByPath(outputRoot)).getPath();
+                  // XXX is it right that we don't use make.pathToFile conversion like other facets do? 
+                  // XXX does anyone needs the map we are constructing here? 
+                  File outputDir = new File(SModelOperations.getOutputLocation(gres.model()).getPath());
                   for (GenerationRootDependencies grd : status.getDependencies().getRootDependencies()) {
                     for (String file : grd.getFiles()) {
-                      MapSequence.fromMap(vars(pa.global()).fileHashes()).put(new File(new File(outputDir), file).getAbsolutePath(), grd.getHash());
+                      MapSequence.fromMap(vars(pa.global()).fileHashes()).put(new File(outputDir, file).getAbsolutePath(), grd.getHash());
                     }
                   }
                 }
