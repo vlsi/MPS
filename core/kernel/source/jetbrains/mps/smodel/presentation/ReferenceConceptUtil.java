@@ -179,8 +179,8 @@ public class ReferenceConceptUtil {
     SNode referentNode = node.getReferenceTarget(genuineRole);
     final String referentPresentation;
     if (referentNode != null) {
-      SNode targetConcept = referentNode.getConcept().getDeclarationNode();
-      if (targetConcept == null || getCharacteristicReference(targetConcept) != null) {
+      SConcept targetConcept = referentNode.getConcept();
+      if (getCharacteristicReference(targetConcept) != null) {
         referentPresentation = referentNode.getConcept().getName();
       } else {
         referentPresentation = referentNode.toString();
