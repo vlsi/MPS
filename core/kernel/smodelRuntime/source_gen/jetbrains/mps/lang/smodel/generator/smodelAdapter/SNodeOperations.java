@@ -24,9 +24,9 @@ import org.jetbrains.mps.openapi.language.SProperty;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -507,6 +507,12 @@ public class SNodeOperations {
     }
     return node.getParent().getConcept().isSubConceptOf(role.getOwner()) && role.equals(node.getContainmentLink());
   }
+  /**
+   * 
+   * @deprecated used in generator of deprecated concept only
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static SNode getConceptDeclaration(SNode node) {
     return (node == null ? null : node.getConcept().getDeclarationNode());
   }

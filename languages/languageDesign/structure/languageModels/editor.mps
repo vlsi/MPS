@@ -35,7 +35,6 @@
     <import index="5b0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.presentation(MPS.Core/)" />
     <import index="g51k" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.nodeEditor.cells(MPS.Editor/)" />
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" implicit="true" />
-    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" implicit="true" />
     <import index="o8zo" ref="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" implicit="true" />
   </imports>
   <registry>
@@ -5115,13 +5114,8 @@
               <node concept="1Wc70l" id="7Hlf$KPspTV" role="3clFbG">
                 <node concept="3y3z36" id="7Hlf$KPsqnH" role="3uHU7w">
                   <node concept="7Obwk" id="7Hlf$KPsq3L" role="3uHU7B" />
-                  <node concept="2OqwBi" id="7Hlf$KPsqxj" role="3uHU7w">
-                    <node concept="35c_gC" id="7Hlf$KPsqxk" role="2Oq$k0">
-                      <ref role="35c_gD" to="tpck:gw2VY9q" resolve="BaseConcept" />
-                    </node>
-                    <node concept="liA8E" id="7Hlf$KPsqxl" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SAbstractConcept.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
-                    </node>
+                  <node concept="3B5_sB" id="5_nPCOhgHtq" role="3uHU7w">
+                    <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
                   </node>
                 </node>
                 <node concept="3y3z36" id="7Hlf$KPsp66" role="3uHU7B">
