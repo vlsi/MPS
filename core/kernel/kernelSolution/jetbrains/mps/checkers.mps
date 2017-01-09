@@ -1150,12 +1150,12 @@
                       <node concept="37vLTw" id="D2SZDcAVoL" role="37wK5m">
                         <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
                       </node>
-                      <node concept="3cpWs3" id="D2SZDcAKWl" role="37wK5m">
-                        <node concept="Xl_RD" id="D2SZDcAKWm" role="3uHU7B">
-                          <property role="Xl_RC" value="Bad ancestor for node " />
+                      <node concept="3cpWs3" id="AU0DCkCsCU" role="37wK5m">
+                        <node concept="Xl_RD" id="AU0DCkCsi4" role="3uHU7B">
+                          <property role="Xl_RC" value="Invalid ancestor: " />
                         </node>
-                        <node concept="37vLTw" id="D2SZDcAVqU" role="3uHU7w">
-                          <ref role="3cqZAo" node="6qi2OtU3uwL" resolve="node" />
+                        <node concept="37vLTw" id="5UZMWpPse9N" role="3uHU7w">
+                          <ref role="3cqZAo" node="D2SZDcAI5T" resolve="ancestor" />
                         </node>
                       </node>
                       <node concept="37vLTw" id="D2SZDcAKWo" role="37wK5m">
