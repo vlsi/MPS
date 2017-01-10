@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
-import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.borderedCollectionStyleClass;
+import jetbrains.mps.lang.editor.editor.Styles_StyleSheet.rootCellModelStyleStyleClass;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 /*package*/ class CellModel_Custom_EditorBuilder_a extends AbstractEditorBuilder {
@@ -39,7 +39,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     Style style = new StyleImpl();
-    new borderedCollectionStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
+    new rootCellModelStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createComponent_zca0xt_a0());
     editorCell.addEditorCell(createConstant_zca0xt_b0());
