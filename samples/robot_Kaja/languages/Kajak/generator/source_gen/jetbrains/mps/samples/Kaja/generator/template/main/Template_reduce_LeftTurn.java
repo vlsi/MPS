@@ -44,12 +44,56 @@ public class Template_reduce_LeftTurn extends TemplateDeclarationBase {
             try {
               TemplateContext context3 = context2.subContext();
               {
-                final SNode tnode4 = environment.createOutputNode(myConcepts[3]);
+                final SNode tnode4 = environment.createOutputNode(myConcepts[1]);
                 try {
-                  tnode4.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode4, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039569996")));
+                  TemplateContext context4 = context3.subContext();
+                  {
+                    final SNode tnode5 = environment.createOutputNode(myConcepts[3]);
+                    try {
+                      TemplateContext context5 = context4.subContext();
+                      {
+                        final SNode tnode6 = environment.createOutputNode(myConcepts[4]);
+                        try {
+                          tnode6.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039569996")));
+                        } finally {
+                        }
+                        tnode5.addChild(myAggregationLinks[0], tnode6);
+                        // TODO validate child 
+                      }
+                    } finally {
+                    }
+                    tnode4.addChild(myAggregationLinks[1], tnode5);
+                    // TODO validate child 
+                  }
+                  {
+                    final SNode tnode7 = environment.createOutputNode(myConcepts[3]);
+                    try {
+                      TemplateContext context6 = context4.subContext();
+                      {
+                        final SNode tnode8 = environment.createOutputNode(myConcepts[4]);
+                        try {
+                          tnode8.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode8, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039570144")));
+                        } finally {
+                        }
+                        tnode7.addChild(myAggregationLinks[0], tnode8);
+                        // TODO validate child 
+                      }
+                    } finally {
+                    }
+                    tnode4.addChild(myAggregationLinks[1], tnode7);
+                    // TODO validate child 
+                  }
                 } finally {
                 }
-                tnode3.addChild(myAggregationLinks[0], tnode4);
+                tnode3.addChild(myAggregationLinks[2], tnode4);
+                // TODO validate child 
+              }
+              {
+                final SNode tnode9 = environment.createOutputNode(myConcepts[1]);
+                try {
+                } finally {
+                }
+                tnode3.addChild(myAggregationLinks[3], tnode9);
                 // TODO validate child 
               }
             } finally {
@@ -57,27 +101,9 @@ public class Template_reduce_LeftTurn extends TemplateDeclarationBase {
             tnode2.addChild(myAggregationLinks[1], tnode3);
             // TODO validate child 
           }
-          {
-            final SNode tnode5 = environment.createOutputNode(myConcepts[2]);
-            try {
-              TemplateContext context4 = context2.subContext();
-              {
-                final SNode tnode6 = environment.createOutputNode(myConcepts[3]);
-                try {
-                  tnode6.setReference(myAssociationLinks[0], SReference.create(myAssociationLinks[0], tnode6, PersistenceFacade.getInstance().createModelReference("r:f5e9b11f-5073-4786-8ed1-a9e42307c3f8(JavaKaja.runtime)"), PersistenceFacade.getInstance().createNodeId("3308300503039570144")));
-                } finally {
-                }
-                tnode5.addChild(myAggregationLinks[0], tnode6);
-                // TODO validate child 
-              }
-            } finally {
-            }
-            tnode2.addChild(myAggregationLinks[1], tnode5);
-            // TODO validate child 
-          }
         } finally {
         }
-        tnode1.addChild(myAggregationLinks[2], tnode2);
+        tnode1.addChild(myAggregationLinks[4], tnode2);
         // TODO validate child 
       }
     } finally {
@@ -98,11 +124,12 @@ public class Template_reduce_LeftTurn extends TemplateDeclarationBase {
   }
   @Override
   protected SConcept[] initConcepts() {
-    SConcept[] rv = new SConcept[4];
+    SConcept[] rv = new SConcept[5];
     rv[0] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xfc092b6b77L, "BlockStatement");
     rv[1] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b200L, "StatementList");
-    rv[2] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement");
-    rv[3] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x6c6b6a1e379f9404L, "LocalMethodCall");
+    rv[2] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x10cacebf556L, "TryStatement");
+    rv[3] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0xf8cc56b213L, "ExpressionStatement");
+    rv[4] = MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, "jetbrains.mps.baseLanguage"), 0x6c6b6a1e379f9404L, "LocalMethodCall");
     return rv;
   }
   @Override
@@ -113,10 +140,12 @@ public class Template_reduce_LeftTurn extends TemplateDeclarationBase {
   }
   @Override
   protected SContainmentLink[] initAggregationLinks() {
-    SContainmentLink[] rv = new SContainmentLink[3];
+    SContainmentLink[] rv = new SContainmentLink[5];
     rv[0] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b213L, 0xf8cc56b214L, "expression");
     rv[1] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc56b200L, 0xf8cc6bf961L, "statement");
-    rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements");
+    rv[2] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacec83aeL, "body");
+    rv[3] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x10cacebf556L, 0x10cacecb713L, "finallyBody");
+    rv[4] = MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc092b6b77L, 0xfc092b6b78L, "statements");
     return rv;
   }
 }
