@@ -101,7 +101,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       });
       if (!(canBeAncestor)) {
         SNodeReference rule = getBreakingNodeAndClearContext(checkingNodeContext);
-        component.addError(node, "Bad ancestor for node " + node, rule);
+        component.addError(node, "Invalid ancestor: " + ancestor.value, rule);
       }
     }
 

@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.legacy.ConceptMetaInfoConverter;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -42,6 +43,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   private SNode myChildConcept;
   private SNode myLinkDeclaration;
   private boolean myIsReverseOrder = false;
+  // TODO: remove after MPS 3.5 was introduced for backward compatibility
+  @Deprecated
+  private SNode myNode;
 
   public RefNodeListHandler(final SNode ownerNode, final String childRole, EditorContext editorContext) {
     super(childRole, editorContext);
@@ -60,6 +64,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
         myElementRole = SModelUtil.getLinkDeclarationRole(genuineLink);
       }
     });
+    myNode = ownerNode;
   }
 
   public RefNodeListHandler(SNode ownerNode, String childRole, EditorContext editorContext, boolean isReverseOrder) {
@@ -148,5 +153,14 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   protected void setInnerCellsContext() {
     setInnerCellsContext(myListEditorCell_Collection);
+  }
+
+  /**
+   * TODO: remove after MPS 3.5 was introduced for backward compatibility
+   */
+  @NotNull
+  @Override
+  public SNode getNode() {
+    return myNode;
   }
 }
