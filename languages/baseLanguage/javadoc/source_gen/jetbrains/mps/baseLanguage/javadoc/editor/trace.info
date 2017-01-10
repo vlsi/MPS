@@ -5330,29 +5330,35 @@
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/6566836696864452903">
     <file name="CommentLineEditingUtil.java">
-      <node id="6566836696864453196" at="12,62,13,57" concept="7" />
-      <node id="6566836696864453202" at="13,57,14,223" concept="7" />
-      <node id="6566836696864453212" at="15,34,16,13" concept="8" />
-      <node id="6566836696864453213" at="17,5,18,19" concept="7" />
-      <node id="6566836696864453216" at="18,19,19,87" concept="7" />
-      <node id="6566836696864453225" at="19,87,20,54" concept="7" />
-      <node id="6566836696864453231" at="20,54,21,143" concept="2" />
-      <node id="6566836696864453241" at="21,143,22,49" concept="2" />
-      <node id="6566836696864453246" at="22,49,23,77" concept="2" />
-      <node id="6566836696864453207" at="14,223,17,5" concept="5" />
-      <node id="6566836696864479147" at="12,0,25,0" concept="11" trace="insertLine#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <scope id="6566836696864453211" at="15,34,16,13" />
-      <scope id="6566836696864453002" at="12,62,23,77">
+      <node id="6566836696864453196" at="13,62,14,57" concept="7" />
+      <node id="6566836696864453202" at="14,57,15,223" concept="7" />
+      <node id="6566836696864453212" at="16,34,17,13" concept="8" />
+      <node id="6566836696864453213" at="18,5,19,19" concept="7" />
+      <node id="7852237505040415437" at="20,271,21,317" concept="2" />
+      <node id="6566836696864453216" at="22,12,23,89" concept="7" />
+      <node id="6566836696864453225" at="23,89,24,56" concept="7" />
+      <node id="6566836696864453231" at="24,56,25,145" concept="2" />
+      <node id="6566836696864453241" at="26,5,27,49" concept="2" />
+      <node id="6566836696864453246" at="27,49,28,77" concept="2" />
+      <node id="6566836696864453207" at="15,223,18,5" concept="5" />
+      <node id="7852237505040475082" at="22,10,26,5" concept="0" />
+      <node id="7852237505040410075" at="19,19,26,5" concept="5" />
+      <node id="6566836696864479147" at="13,0,30,0" concept="11" trace="insertLine#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="6566836696864453211" at="16,34,17,13" />
+      <scope id="7852237505040410077" at="20,271,21,317" />
+      <scope id="7852237505040475083" at="22,12,25,145">
         <var name="caretPosition" id="6566836696864453226" />
-        <var name="commentLinePart" id="6566836696864453203" />
         <var name="editorCell" id="6566836696864453217" />
+      </scope>
+      <scope id="6566836696864453002" at="13,62,28,77">
+        <var name="commentLinePart" id="6566836696864453203" />
         <var name="nextLine" id="6566836696864453214" />
         <var name="selectedNode" id="6566836696864453197" />
       </scope>
-      <scope id="6566836696864479147" at="12,0,25,0">
+      <scope id="6566836696864479147" at="13,0,30,0">
         <var name="editorContext" id="6566836696864455611" />
       </scope>
-      <unit id="6566836696864452903" at="11,0,26,0" name="jetbrains.mps.baseLanguage.javadoc.editor.CommentLineEditingUtil" />
+      <unit id="6566836696864452903" at="12,0,31,0" name="jetbrains.mps.baseLanguage.javadoc.editor.CommentLineEditingUtil" />
     </file>
   </root>
   <root nodeRef="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)/6612597108003615645">

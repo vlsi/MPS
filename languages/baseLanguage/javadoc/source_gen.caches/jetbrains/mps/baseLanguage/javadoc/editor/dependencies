@@ -245,6 +245,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javadoc.editor.CommentLineEditingUtil" file="CommentLineEditingUtil.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentPartUtil" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
