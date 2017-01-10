@@ -26,8 +26,7 @@ import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.text.TextGeneratorEngine;
@@ -199,8 +198,8 @@ public class TextGen_Facet extends IFacet.Stub {
               }
 
               for (GResource resource : Sequence.fromIterable(input)) {
-                if (SModuleOperations.getOutputPathFor(resource.model()) == null) {
-                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + SNodeOperations.getModelLongName(resource.model()))));
+                if (SModelOperations.getOutputLocation(resource.model()) == null) {
+                  monitor.reportFeedback(new IFeedback.ERROR(String.valueOf("no output location for " + resource.model().getName())));
                 }
               }
               final IMessageHandler messageHandler = TextGen_Facet.Target_configure.vars(pa.global()).makeSession().getMessageHandler();
@@ -211,7 +210,7 @@ public class TextGen_Facet extends IFacet.Stub {
               // couldn't be an output model with error state, and we'd like to see erroneous text to localize error 
               final Iterable<GResource> resourcesWithOutput = Sequence.fromIterable(input).where(new IWhereFilter<GResource>() {
                 public boolean accept(GResource it) {
-                  return SModuleOperations.getOutputPathFor(it.model()) != null && it.status().getOutputModel() != null;
+                  return SModelOperations.getOutputLocation(it.model()) != null && it.status().getOutputModel() != null;
                 }
               });
 

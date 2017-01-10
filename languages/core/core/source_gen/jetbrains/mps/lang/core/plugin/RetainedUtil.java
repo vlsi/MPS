@@ -11,12 +11,11 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
@@ -24,71 +23,53 @@ import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import jetbrains.mps.project.facets.GenerationTargetFacet;
 
-public class RetainedUtil {
-  public RetainedUtil() {
+public final class RetainedUtil {
+  private RetainedUtil() {
   }
   public static Map<SModule, Iterable<SModel>> collectModelsToRetain(Iterable<? extends IResource> input) {
-    final Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
+    Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
     Iterable<SModel> empty = ListSequence.fromList(new ArrayList<SModel>());
     for (IResource it : input) {
       MResource mres = ((MResource) it);
       SModule module = mres.module();
       MapSequence.fromMap(retainedModels).put(module, empty);
-      Iterable<SModel> modelsToRetain = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it2) {
-          return SNodeOperations.isGeneratable(it2);
-        }
-      });
       if (module instanceof Language) {
-        for (final Generator gen : ((Language) module).getGenerators()) {
+        // FIXME is there still a reason to record models of language's generators? Isn't generator module come as a distinct resource? 
+        // Perhaps, it doesn't hurt to supply more, OTOH is there any reason to? Modules are generated into distinct locations, why bother to mark 
+        // unrelated locations as retained? 
+        for (Generator gen : ((Language) module).getGenerators()) {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
-              public boolean accept(SModel it2) {
-                return SNodeOperations.isGeneratable(it2);
-              }
-            }));
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-            public Iterable<SModel> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
-            }
-          })));
         }
+        // fall-through 
       } else if (module instanceof Generator) {
-        final Language slang = ((Generator) module).getSourceLanguage();
+        Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getModels())).subtract(Sequence.fromIterable(module.getModels())).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it3) {
-              return SNodeOperations.isGeneratable(it3);
-            }
-          }));
+          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(generateableModels(slang)).toListSequence());
         }
-        for (final Generator gen : slang.getGenerators()) {
+        for (Generator gen : slang.getGenerators()) {
           if (gen == module) {
             continue;
           }
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
-              public boolean accept(SModel it2) {
-                return SNodeOperations.isGeneratable(it2);
-              }
-            }));
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-            public Iterable<SModel> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
-            }
-          })));
         }
-        modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-          public Iterable<SModel> iterable() {
-            return MapSequence.fromMap(retainedModels).get(slang);
-          }
-        })));
+        // fall-through 
       }
+      Iterable<SModel> modelsToRetain = generateableModels(module);
       MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
+  }
+
+  private static Iterable<SModel> generateableModels(SModule module) {
+    return Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return GenerationFacade.canGenerate(it);
+      }
+    });
   }
 
   public static Iterable<IDelta> retainedDeltas(final SModule module, Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
@@ -119,7 +100,8 @@ public class RetainedUtil {
             FilesDelta fd = MapSequence.fromMap(dir2delta).get(actualOutput);
             if (fd == null) {
               // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
-              fd = new FilesDelta(actualOutput.getParent());
+              IFile parent = actualOutput.getParent();
+              MapSequence.fromMap(dir2delta).put(parent, fd = new FilesDelta(parent));
             }
             fd.kept(actualOutput);
           }

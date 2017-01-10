@@ -20150,6 +20150,12 @@
           <ref role="3bR37D" node="7Kfy9QB6LfQ" resolve="jetbrains.mps.kernel" />
         </node>
       </node>
+      <node concept="1SiIV0" id="22o5mI4OAF7" role="3bR37C">
+        <node concept="3bR9La" id="22o5mI4OAF8" role="1SiIV1">
+          <property role="3bR36h" value="false" />
+          <ref role="3bR37D" node="mXGwHwhVPj" resolve="JDK" />
+        </node>
+      </node>
     </node>
     <node concept="1E1JtD" id="6g2V7OQGaJT" role="3989C9">
       <property role="BnDLt" value="true" />
