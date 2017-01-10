@@ -2,8 +2,8 @@
 <model ref="r:63b2f701-f24e-4662-9abc-8de126ffafeb(jetbrains.mps.lang.editor.test.generation.structure)">
   <persistence version="9" />
   <languages>
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
     <devkit ref="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   </languages>
   <imports>
@@ -93,12 +93,41 @@
     <property role="3GE5qa" value="abstractLabels" />
     <property role="TrG5h" value="RefNodeList" />
     <ref role="1TJDcQ" node="2XU9kLDC6x" resolve="AbstractCellTest" />
+    <node concept="1TJgyi" id="7LC8u44lxIv" role="1TKVEl">
+      <property role="IQ2nx" value="8964452308605082527" />
+      <property role="TrG5h" value="theProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
     <node concept="1TJgyj" id="2XU9kLFsIp" role="1TKVEi">
       <property role="IQ2ns" value="53454498079558553" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="children" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="2XU9kLFstH" resolve="RefNodeList" />
+    </node>
+    <node concept="1TJgyj" id="7LC8u44lWHN" role="1TKVEi">
+      <property role="IQ2ns" value="8964452308605193075" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="additionalChildren" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="2XU9kLFstH" resolve="RefNodeList" />
+    </node>
+    <node concept="1TJgyj" id="dbAGe2ejUY" role="1TKVEi">
+      <property role="IQ2ns" value="237453569861172926" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="differentTypeOfChildren" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="dbAGe2ejV2" resolve="TestTargetConcept" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="dbAGe2ejV2">
+    <property role="EcuMT" value="237453569861172930" />
+    <property role="TrG5h" value="TestTargetConcept" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyi" id="dbAGe2eK9k" role="1TKVEl">
+      <property role="IQ2nx" value="237453569861288532" />
+      <property role="TrG5h" value="property" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
 </model>

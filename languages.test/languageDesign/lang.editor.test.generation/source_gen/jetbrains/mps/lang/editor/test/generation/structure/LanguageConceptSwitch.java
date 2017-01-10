@@ -15,7 +15,8 @@ public final class LanguageConceptSwitch {
   public static final int ModelAccess = 3;
   public static final int ReadOnlyModelAccessor = 4;
   public static final int RefNodeList = 5;
-  public static final int TransactionalProperty = 6;
+  public static final int TestTargetConcept = 6;
+  public static final int TransactionalProperty = 7;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L);
@@ -25,6 +26,7 @@ public final class LanguageConceptSwitch {
     builder.put(0xbde89531a70c22L, ModelAccess);
     builder.put(0xbde89531a70c23L, ReadOnlyModelAccessor);
     builder.put(0xbde89531adc76dL, RefNodeList);
+    builder.put(0x34b9ac382393ec2L, TestTargetConcept);
     builder.put(0xbde89531aadcccL, TransactionalProperty);
     myIndex = builder.seal();
   }

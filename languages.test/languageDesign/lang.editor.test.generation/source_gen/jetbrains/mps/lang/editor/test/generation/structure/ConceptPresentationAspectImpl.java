@@ -15,6 +15,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ModelAccess = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReadOnlyModelAccessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RefNodeList = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TestTargetConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransactionalProperty = new ConceptPresentationBuilder().create();
 
   @Override
@@ -34,6 +35,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ReadOnlyModelAccessor;
       case LanguageConceptSwitch.RefNodeList:
         return props_RefNodeList;
+      case LanguageConceptSwitch.TestTargetConcept:
+        return props_TestTargetConcept;
       case LanguageConceptSwitch.TransactionalProperty:
         return props_TransactionalProperty;
     }
