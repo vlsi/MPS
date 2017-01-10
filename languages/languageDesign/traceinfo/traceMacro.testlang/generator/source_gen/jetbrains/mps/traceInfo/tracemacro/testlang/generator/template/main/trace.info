@@ -28,7 +28,7 @@
       <node id="7980748436587788164" at="37,64,38,17" concept="7" />
       <node id="7980748436587788164" at="41,29,42,349" concept="10" />
       <node id="7980748436587788164" at="45,103,46,80" concept="6" />
-      <node id="7980748436587788164" at="46,80,47,214" concept="6" />
+      <node id="7980748436587788164" at="46,80,47,239" concept="6" />
       <node id="7980748436587788164" at="48,11,49,56" concept="6" />
       <node id="7980748436587788164" at="50,9,51,42" concept="6" />
       <node id="7980748436587788164" at="51,42,52,173" concept="6" />
@@ -44,7 +44,7 @@
       <node id="7980748436587788164" at="70,15,71,31" concept="8" />
       <node id="7980748436587788164" at="71,31,72,176" concept="6" />
       <node id="7980748436587788164" at="72,176,73,32" concept="8" />
-      <node id="7980748436587788164" at="73,32,74,219" concept="6" />
+      <node id="7980748436587788164" at="73,32,74,244" concept="6" />
       <node id="7980748436587788164" at="75,17,76,340" concept="2" />
       <node id="7980748436587788164" at="78,13,79,56" concept="2" />
       <node id="7980748436587788164" at="79,56,80,30" concept="8" />
@@ -56,7 +56,7 @@
       <node id="7980748436587788164" at="98,29,99,347" concept="10" />
       <node id="7980748436587788164" at="102,94,103,131" concept="7" />
       <node id="7980748436587788164" at="106,103,107,80" concept="6" />
-      <node id="7980748436587788164" at="107,80,108,222" concept="6" />
+      <node id="7980748436587788164" at="107,80,108,247" concept="6" />
       <node id="7980748436587788164" at="112,35,113,105" concept="7" />
       <node id="7980748436587788164" at="117,7,118,48" concept="7" />
       <node id="7980748436587788164" at="121,0,122,0" concept="9" trace="copySrcMacro_ief6mt_b0a0c0b0c0b3" />
@@ -71,17 +71,17 @@
       <node id="7980748436587788164" at="98,0,101,0" concept="1" trace="ReductionRule1#()V" />
       <node id="7980748436587788164" at="32,0,36,0" concept="1" trace="Mapping_main#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
       <node id="7980748436587788164" at="36,0,40,0" concept="5" trace="getReductionRules#()Ljava/util/Collection;" />
-      <node id="7980748436587788164" at="74,219,78,13" concept="11" />
+      <node id="7980748436587788164" at="74,244,78,13" concept="11" />
       <node id="7980748436587788164" at="101,0,105,0" concept="5" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
       <node id="7980748436587788164" at="111,0,115,0" concept="5" trace="resolve#()Ljava/lang/Object;" />
       <node id="7980748436587788164" at="109,11,115,11" concept="2" />
       <node id="7980748436587788164" at="49,56,58,9" concept="0" />
       <node id="7980748436587788164" at="58,9,67,9" concept="0" />
-      <node id="7980748436587788164" at="108,222,117,7" concept="11" />
+      <node id="7980748436587788164" at="108,247,117,7" concept="11" />
       <node id="7980748436587788164" at="105,0,120,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <node id="7980748436587788164" at="69,42,85,11" concept="11" />
       <node id="7980748436587788164" at="67,9,90,9" concept="0" />
-      <node id="7980748436587788164" at="47,214,92,7" concept="11" />
+      <node id="7980748436587788164" at="47,239,92,7" concept="11" />
       <node id="7980748436587788164" at="44,0,96,0" concept="5" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
       <scope id="7980748436587788164" at="77,23,77,23" />
       <scope id="7980748436587788164" at="84,21,84,21" />

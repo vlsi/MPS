@@ -73,7 +73,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                 {
                   final List<SNode> tlist6 = new ArrayList<SNode>();
                   {
-                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
+                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1164564a526L, "OutputNode"));
                     tlist6.add(placeholder);
                     environment.postProcess(new MapSrcProcessor(new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338527050"), placeholder, context5) {
                       @NotNull
@@ -96,7 +96,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                 {
                   final List<SNode> tlist8 = new ArrayList<SNode>();
                   {
-                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
+                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1164564a526L, "OutputNode"));
                     tlist8.add(placeholder);
                     environment.postProcess(new MapSrcProcessor(new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338676108"), placeholder, context5) {
                       @NotNull
@@ -115,7 +115,7 @@ public class Template_OutputRoot_2 extends TemplateDeclarationBase implements Te
                 {
                   final List<SNode> tlist10 = new ArrayList<SNode>();
                   {
-                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(0x157a9668bf58417bL, 0x893e53d86388dc56L, 0x1164564a526L, "jetbrains.mps.transformation.test.outputLang.structure.OutputNode"));
+                    SNode placeholder = environment.createOutputNode(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0x157a9668bf58417bL, 0x893e53d86388dc56L, "jetbrains.mps.transformation.test.outputLang"), 0x1164564a526L, "OutputNode"));
                     tlist10.add(placeholder);
                     environment.postProcess(new MapSrcProcessor(new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338727992"), placeholder, context5) {
                       @NotNull
