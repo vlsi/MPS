@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Set;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -32,8 +33,8 @@ public final class IStyleContainer__BehaviorDescriptor extends BaseBHDescriptor 
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
   public static final SMethod<SNode> getParent_idhJF64sU = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParent").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF64sU").registry(REGISTRY).build();
-  public static final SMethod<List<SNode>> getClassItems_idhJF5KPu = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getClassItems").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF5KPu").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
-  /*package*/ static final SMethod<Void> fillClassItems_id2dDK17997Ii = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("fillClassItems").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2dDK17997Ii").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
+  public static final SMethod<List<SNode>> getClassItems_idhJF5KPu = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getClassItems").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hJF5KPu").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SConcept>) ((Class) Object.class), ""));
+  /*package*/ static final SMethod<Void> fillClassItems_id2dDK17997Ii = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("fillClassItems").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("2dDK17997Ii").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<SConcept>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
 
   private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getParent_idhJF64sU, getClassItems_idhJF5KPu, fillClassItems_id2dDK17997Ii);
 
@@ -43,12 +44,12 @@ public final class IStyleContainer__BehaviorDescriptor extends BaseBHDescriptor 
   /*package*/ static SNode getParent_idhJF64sU(@NotNull SNode __thisNode__) {
     return null;
   }
-  /*package*/ static List<SNode> getClassItems_idhJF5KPu(@NotNull SNode __thisNode__, SNode itemConcept) {
+  /*package*/ static List<SNode> getClassItems_idhJF5KPu(@NotNull SNode __thisNode__, SConcept itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
     IStyleContainer__BehaviorDescriptor.fillClassItems_id2dDK17997Ii.invoke(__thisNode__, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
     return result;
   }
-  /*package*/ static void fillClassItems_id2dDK17997Ii(@NotNull SNode __thisNode__, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
+  /*package*/ static void fillClassItems_id2dDK17997Ii(@NotNull SNode __thisNode__, List<SNode> classItems, SConcept itemConcept, Set<SNode> visitedContainers) {
     for (SNode item : SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11beb039542L, 0x11beb040d06L, "styleItem"))) {
       if (SNodeOperations.isInstanceOf(item, SNodeOperations.asSConcept(itemConcept))) {
         ListSequence.fromList(classItems).addElement(item);
@@ -79,9 +80,9 @@ public final class IStyleContainer__BehaviorDescriptor extends BaseBHDescriptor 
       case 0:
         return (T) ((SNode) getParent_idhJF64sU(node));
       case 1:
-        return (T) ((List<SNode>) getClassItems_idhJF5KPu(node, (SNode) parameters[0]));
+        return (T) ((List<SNode>) getClassItems_idhJF5KPu(node, (SConcept) parameters[0]));
       case 2:
-        fillClassItems_id2dDK17997Ii(node, (List<SNode>) parameters[0], (SNode) parameters[1], (Set<SNode>) parameters[2]);
+        fillClassItems_id2dDK17997Ii(node, (List<SNode>) parameters[0], (SConcept) parameters[1], (Set<SNode>) parameters[2]);
         return null;
       default:
         throw new BHMethodNotFoundException(this, method);

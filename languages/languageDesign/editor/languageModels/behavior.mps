@@ -510,12 +510,6 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -2718,8 +2712,8 @@
                   <node concept="13iPFW" id="hJF75kp" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hJF75kq" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hJF75kr" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVPM7F" resolve="SelectableStyleSheetItem" />
+                    <node concept="35c_gC" id="3s9f1KV3jSb" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVPM7F" resolve="SelectableStyleSheetItem" />
                     </node>
                   </node>
                 </node>
@@ -2776,8 +2770,8 @@
                   <node concept="13iPFW" id="i4bS1ga" role="2Oq$k0" />
                   <node concept="2qgKlT" id="i4bS1gb" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="i4bS1gc" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVPM7F" resolve="SelectableStyleSheetItem" />
+                    <node concept="35c_gC" id="3s9f1KV3k2u" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVPM7F" resolve="SelectableStyleSheetItem" />
                     </node>
                   </node>
                 </node>
@@ -3064,8 +3058,8 @@
                   <node concept="13iPFW" id="hL7c8dI" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hL7c8dJ" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hL7c8dK" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVeclI" resolve="ForegroundColorStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3mzl" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVeclI" resolve="ForegroundColorStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3112,8 +3106,8 @@
                   <node concept="13iPFW" id="hL7sCew" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hL7sCex" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hL7sCey" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVeijc" resolve="BackgroundColorStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3mGN" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVeijc" resolve="BackgroundColorStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3157,8 +3151,8 @@
                   <node concept="13iPFW" id="hL7BhMZ" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hL7BhN0" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hL7BhN1" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hF0gYTA" resolve="TextBackgroundColorStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3mQh" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hF0gYTA" resolve="TextBackgroundColorStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3200,8 +3194,8 @@
                   <node concept="13iPFW" id="hLnzTOY" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hLnzTOZ" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hLnzTP0" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVQ3vn" resolve="UnderlinedStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3mZJ" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVQ3vn" resolve="UnderlinedStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3254,8 +3248,8 @@
             <node concept="13iPFW" id="i0pNOh7" role="2Oq$k0" />
             <node concept="2qgKlT" id="i0pNOh8" role="2OqNvi">
               <ref role="37wK5l" node="i0pNf1r" resolve="getBooleanStyleValue" />
-              <node concept="3TUQnm" id="i0pNPdm" role="37wK5m">
-                <ref role="3TV0OU" to="tpc2:hNnxI6D" resolve="StrikeOutStyleSheet" />
+              <node concept="35c_gC" id="3s9f1KV3np9" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:hNnxI6D" resolve="StrikeOutStyleSheet" />
               </node>
               <node concept="3clFbT" id="i0pNP_G" role="37wK5m">
                 <property role="3clFbU" value="false" />
@@ -3285,8 +3279,8 @@
                   <node concept="13iPFW" id="hLmb09r" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hLmb09s" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hLmb0Zv" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVSNSQ" resolve="FontSizeStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3n7E" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVSNSQ" resolve="FontSizeStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3371,8 +3365,8 @@
                   <node concept="13iPFW" id="hLcvgOT" role="2Oq$k0" />
                   <node concept="2qgKlT" id="hLcvgOU" role="2OqNvi">
                     <ref role="37wK5l" node="hJF5KPu" resolve="getClassItems" />
-                    <node concept="3TUQnm" id="hLcvi37" role="37wK5m">
-                      <ref role="3TV0OU" to="tpc2:hgVb9tm" resolve="FontStyleStyleClassItem" />
+                    <node concept="35c_gC" id="3s9f1KV3nf_" role="37wK5m">
+                      <ref role="35c_gD" to="tpc2:hgVb9tm" resolve="FontStyleStyleClassItem" />
                     </node>
                   </node>
                 </node>
@@ -3886,8 +3880,8 @@
       <node concept="3Tm1VV" id="i0pNfNj" role="1B3o_S" />
       <node concept="37vLTG" id="i0pNgWO" role="3clF46">
         <property role="TrG5h" value="styleItem" />
-        <node concept="3THzug" id="i0pNgWP" role="1tU5fm">
-          <ref role="3qa414" to="tpc2:hgVOiwV" resolve="BooleanStyleSheetItem" />
+        <node concept="3bZ5Sz" id="3s9f1KV3gNP" role="1tU5fm">
+          <ref role="3bZ5Sy" to="tpc2:hgVOiwV" resolve="BooleanStyleSheetItem" />
         </node>
       </node>
       <node concept="37vLTG" id="i0pNr8W" role="3clF46">
@@ -3904,8 +3898,8 @@
             <node concept="13iPFW" id="i0pN$GA" role="2Oq$k0" />
             <node concept="2qgKlT" id="i0pN$GB" role="2OqNvi">
               <ref role="37wK5l" node="i0pNf1r" resolve="getBooleanStyleValue" />
-              <node concept="3TUQnm" id="i0pNAgq" role="37wK5m">
-                <ref role="3TV0OU" to="tpc2:i0ljvrN" resolve="IndentLayoutNewLineStyleClassItem" />
+              <node concept="35c_gC" id="3s9f1KV3f2Y" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:i0ljvrN" resolve="IndentLayoutNewLineStyleClassItem" />
               </node>
               <node concept="3clFbT" id="i0pNABz" role="37wK5m">
                 <property role="3clFbU" value="false" />
@@ -3925,8 +3919,8 @@
             <node concept="13iPFW" id="i0pUMOL" role="2Oq$k0" />
             <node concept="2qgKlT" id="i0pUMOM" role="2OqNvi">
               <ref role="37wK5l" node="i0pNf1r" resolve="getBooleanStyleValue" />
-              <node concept="3TUQnm" id="i0pUMON" role="37wK5m">
-                <ref role="3TV0OU" to="tpc2:i0pVoAY" resolve="IndentLayoutOnNewLineStyleClassItem" />
+              <node concept="35c_gC" id="3s9f1KV3hb$" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:i0pVoAY" resolve="IndentLayoutOnNewLineStyleClassItem" />
               </node>
               <node concept="3clFbT" id="i0pUMOO" role="37wK5m">
                 <property role="3clFbU" value="false" />
@@ -3946,8 +3940,8 @@
             <node concept="13iPFW" id="i0pNCkX" role="2Oq$k0" />
             <node concept="2qgKlT" id="i0pNC_9" role="2OqNvi">
               <ref role="37wK5l" node="i0pNf1r" resolve="getBooleanStyleValue" />
-              <node concept="3TUQnm" id="i0pND1J" role="37wK5m">
-                <ref role="3TV0OU" to="tpc2:i0lj429" resolve="IndentLayoutIndentStyleClassItem" />
+              <node concept="35c_gC" id="3s9f1KV3hhk" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:i0lj429" resolve="IndentLayoutIndentStyleClassItem" />
               </node>
               <node concept="3clFbT" id="i0pNG0u" role="37wK5m">
                 <property role="3clFbU" value="false" />
@@ -3966,8 +3960,8 @@
             <node concept="13iPFW" id="i0pNIaQ" role="2Oq$k0" />
             <node concept="2qgKlT" id="i0pNIH6" role="2OqNvi">
               <ref role="37wK5l" node="i0pNf1r" resolve="getBooleanStyleValue" />
-              <node concept="3TUQnm" id="i0pNJ44" role="37wK5m">
-                <ref role="3TV0OU" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
+              <node concept="35c_gC" id="3s9f1KV3hn4" role="37wK5m">
+                <ref role="35c_gD" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
               </node>
               <node concept="3clFbT" id="i0pNKVL" role="37wK5m">
                 <property role="3clFbU" value="false" />
@@ -5386,8 +5380,8 @@
       <node concept="3Tm1VV" id="hJF5LLQ" role="1B3o_S" />
       <node concept="37vLTG" id="hJF5Obs" role="3clF46">
         <property role="TrG5h" value="itemConcept" />
-        <node concept="3THzug" id="hJF5Obt" role="1tU5fm">
-          <ref role="3qa414" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+        <node concept="3bZ5Sz" id="3s9f1KV3ksu" role="1tU5fm">
+          <ref role="3bZ5Sy" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
         </node>
       </node>
     </node>
@@ -5403,8 +5397,8 @@
       </node>
       <node concept="37vLTG" id="2dDK17998aq" role="3clF46">
         <property role="TrG5h" value="itemConcept" />
-        <node concept="3THzug" id="2dDK17998ar" role="1tU5fm">
-          <ref role="3qa414" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
+        <node concept="3bZ5Sz" id="3s9f1KV3kw9" role="1tU5fm">
+          <ref role="3bZ5Sy" to="tpc2:hgV6hR6" resolve="StyleClassItem" />
         </node>
       </node>
       <node concept="37vLTG" id="2dDK17998ay" role="3clF46">
@@ -8608,8 +8602,8 @@
                       <node concept="3clFbF" id="2$SWsiCt91_" role="3cqZAp">
                         <node concept="1rXfSq" id="4hiugqyzhhT" role="3clFbG">
                           <ref role="37wK5l" node="2$SWsiCt98E" resolve="setBooleanStyle" />
-                          <node concept="3TUQnm" id="2$SWsiCt91B" role="37wK5m">
-                            <ref role="3TV0OU" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
+                          <node concept="35c_gC" id="3s9f1KV2d82" role="37wK5m">
+                            <ref role="35c_gD" to="tpc2:i0pj6JX" resolve="IndentLayoutNewLineChildrenStyleClassItem" />
                           </node>
                         </node>
                       </node>
@@ -9595,8 +9589,8 @@
         <node concept="3clFbF" id="2$SWsiCt987" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyz8gx" role="3clFbG">
             <ref role="37wK5l" node="2$SWsiCt98E" resolve="setBooleanStyle" />
-            <node concept="3TUQnm" id="2$SWsiCt989" role="37wK5m">
-              <ref role="3TV0OU" to="tpc2:hX1L4JR" resolve="PunctuationLeftStyleClassItem" />
+            <node concept="35c_gC" id="3s9f1KV2dcN" role="37wK5m">
+              <ref role="35c_gD" to="tpc2:hX1L4JR" resolve="PunctuationLeftStyleClassItem" />
             </node>
           </node>
         </node>
@@ -9614,8 +9608,8 @@
         <node concept="3clFbF" id="2$SWsiCt98g" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzgbC" role="3clFbG">
             <ref role="37wK5l" node="2$SWsiCt98E" resolve="setBooleanStyle" />
-            <node concept="3TUQnm" id="2$SWsiCt98i" role="37wK5m">
-              <ref role="3TV0OU" to="tpc2:hX1LMvx" resolve="PunctuationRightStyleClassItem" />
+            <node concept="35c_gC" id="3s9f1KV2dgh" role="37wK5m">
+              <ref role="35c_gD" to="tpc2:hX1LMvx" resolve="PunctuationRightStyleClassItem" />
             </node>
           </node>
         </node>
@@ -9628,8 +9622,8 @@
         <node concept="3clFbF" id="2$SWsiCt98n" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyyIf6" role="3clFbG">
             <ref role="37wK5l" node="2$SWsiCt98E" resolve="setBooleanStyle" />
-            <node concept="3TUQnm" id="2$SWsiCt98p" role="37wK5m">
-              <ref role="3TV0OU" to="tpc2:i0lj429" resolve="IndentLayoutIndentStyleClassItem" />
+            <node concept="35c_gC" id="3s9f1KV2dlt" role="37wK5m">
+              <ref role="35c_gD" to="tpc2:i0lj429" resolve="IndentLayoutIndentStyleClassItem" />
             </node>
           </node>
         </node>
@@ -9643,8 +9637,8 @@
         <node concept="3clFbF" id="2$SWsiCt98u" role="3cqZAp">
           <node concept="1rXfSq" id="4hiugqyzezA" role="3clFbG">
             <ref role="37wK5l" node="2$SWsiCt98E" resolve="setBooleanStyle" />
-            <node concept="3TUQnm" id="2$SWsiCt98w" role="37wK5m">
-              <ref role="3TV0OU" to="tpc2:i0ljvrN" resolve="IndentLayoutNewLineStyleClassItem" />
+            <node concept="35c_gC" id="3s9f1KV2dqd" role="37wK5m">
+              <ref role="35c_gD" to="tpc2:i0ljvrN" resolve="IndentLayoutNewLineStyleClassItem" />
             </node>
           </node>
         </node>
@@ -9773,8 +9767,8 @@
       </node>
       <node concept="37vLTG" id="2$SWsiCt98F" role="3clF46">
         <property role="TrG5h" value="concept" />
-        <node concept="3THzug" id="2$SWsiCt98G" role="1tU5fm">
-          <ref role="3qa414" to="tpc2:hgVOiwV" resolve="BooleanStyleSheetItem" />
+        <node concept="3bZ5Sz" id="3s9f1KV2cuT" role="1tU5fm">
+          <ref role="3bZ5Sy" to="tpc2:hgVOiwV" resolve="BooleanStyleSheetItem" />
         </node>
       </node>
     </node>
