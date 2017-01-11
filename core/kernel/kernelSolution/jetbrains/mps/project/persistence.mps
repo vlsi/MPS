@@ -1612,6 +1612,16 @@
   <node concept="312cEu" id="IMUMWuHQvz">
     <property role="TrG5h" value="GeneratorDescriptorPersistence" />
     <property role="3GE5qa" value="classes" />
+    <node concept="312cEg" id="33oJVYhqDvX" role="jymVt">
+      <property role="TrG5h" value="SOURCE_GEN_DEFAULT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="33oJVYhqDvY" role="1B3o_S" />
+      <node concept="17QB3L" id="33oJVYhq_If" role="1tU5fm" />
+      <node concept="Xl_RD" id="33oJVYhq_Ii" role="33vP2m">
+        <property role="Xl_RC" value="${module}/generator/source_gen" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="33oJVYhqF20" role="jymVt" />
     <node concept="312cEg" id="33oJVYhheqV" role="jymVt">
       <property role="TrG5h" value="myMacroHelper" />
       <property role="3TUv4t" value="true" />
@@ -1726,6 +1736,33 @@
                             </node>
                             <node concept="3clFbT" id="6iByHjqA4eC" role="37wK5m">
                               <property role="3clFbU" value="true" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="g8Q5y" id="33oJVYhpCG_" role="3cqZAp">
+                        <node concept="3clFbS" id="33oJVYhpCGB" role="GGjiV" />
+                        <node concept="3tyRfN" id="33oJVYhpCGx" role="GIGjv">
+                          <ref role="3tyRfW" to="w0gx:~GeneratorDescriptor.setOutputPath(java.lang.String):void" resolve="setOutputPath" />
+                          <node concept="2OqwBi" id="33oJVYhq5VY" role="3tyRfI">
+                            <node concept="37vLTw" id="33oJVYhq5Kz" role="2Oq$k0">
+                              <ref role="3cqZAo" node="33oJVYhheqV" resolve="myMacroHelper" />
+                            </node>
+                            <node concept="liA8E" id="33oJVYhq69S" role="2OqNvi">
+                              <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                              <node concept="2YIFZM" id="33oJVYhpDxF" role="37wK5m">
+                                <ref role="37wK5l" to="7a2w:4eI2K_IuewV" resolve="stringWithDefault" />
+                                <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                                <node concept="37vLTw" id="33oJVYhpNVR" role="37wK5m">
+                                  <ref role="3cqZAo" node="33oJVYhhiYs" resolve="generatorElement" />
+                                </node>
+                                <node concept="Xl_RD" id="33oJVYhpYw0" role="37wK5m">
+                                  <property role="Xl_RC" value="generatorOutputPath" />
+                                </node>
+                                <node concept="37vLTw" id="33oJVYhqFNc" role="37wK5m">
+                                  <ref role="3cqZAo" node="33oJVYhqDvX" resolve="SOURCE_GEN_DEFAULT" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                         </node>
@@ -2510,6 +2547,83 @@
               </node>
               <node concept="liA8E" id="6kEPduOzRok" role="2OqNvi">
                 <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.isReflectiveQueries():boolean" resolve="isReflectiveQueries" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="33oJVYhq73u" role="3cqZAp">
+          <node concept="3clFbS" id="33oJVYhq73w" role="3clFbx">
+            <node concept="3cpWs8" id="33oJVYhq_sS" role="3cqZAp">
+              <node concept="3cpWsn" id="33oJVYhq_sT" role="3cpWs9">
+                <property role="TrG5h" value="p" />
+                <node concept="3uibUv" id="33oJVYhq_sQ" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                </node>
+                <node concept="2OqwBi" id="33oJVYhq_sU" role="33vP2m">
+                  <node concept="37vLTw" id="33oJVYhq_sV" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33oJVYhheqV" resolve="myMacroHelper" />
+                  </node>
+                  <node concept="liA8E" id="33oJVYhq_sW" role="2OqNvi">
+                    <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
+                    <node concept="2OqwBi" id="33oJVYhq_sX" role="37wK5m">
+                      <node concept="37vLTw" id="33oJVYhq_sY" role="2Oq$k0">
+                        <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
+                      </node>
+                      <node concept="liA8E" id="33oJVYhq_sZ" role="2OqNvi">
+                        <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="33oJVYhqGcf" role="3cqZAp">
+              <node concept="3clFbS" id="33oJVYhqGch" role="3clFbx">
+                <node concept="3SKdUt" id="33oJVYhqHew" role="3cqZAp">
+                  <node concept="3SKdUq" id="33oJVYhqHez" role="3SKWNk">
+                    <property role="3SKdUp" value="meanwhile, don't want to persist default value as it requires re-generation of all modules. Can do it any time later" />
+                  </node>
+                </node>
+                <node concept="3clFbF" id="33oJVYhqHus" role="3cqZAp">
+                  <node concept="2OqwBi" id="33oJVYhqHzm" role="3clFbG">
+                    <node concept="37vLTw" id="33oJVYhqHuq" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1Tieq1imh0G" resolve="generator" />
+                    </node>
+                    <node concept="liA8E" id="33oJVYhqHOP" role="2OqNvi">
+                      <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+                      <node concept="Xl_RD" id="33oJVYhqIav" role="37wK5m">
+                        <property role="Xl_RC" value="generatorOutputPath" />
+                      </node>
+                      <node concept="37vLTw" id="33oJVYhqI0I" role="37wK5m">
+                        <ref role="3cqZAo" node="33oJVYhq_sT" resolve="p" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="33oJVYhqH3i" role="3clFbw">
+                <node concept="2OqwBi" id="33oJVYhqH3k" role="3fr31v">
+                  <node concept="37vLTw" id="33oJVYhqH3l" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33oJVYhqDvX" resolve="SOURCE_GEN_DEFAULT" />
+                  </node>
+                  <node concept="liA8E" id="33oJVYhqH3m" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="37vLTw" id="33oJVYhqH3n" role="37wK5m">
+                      <ref role="3cqZAo" node="33oJVYhq_sT" resolve="p" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3y3z36" id="33oJVYhq8XP" role="3clFbw">
+            <node concept="10Nm6u" id="33oJVYhq9um" role="3uHU7w" />
+            <node concept="2OqwBi" id="33oJVYhq8ax" role="3uHU7B">
+              <node concept="37vLTw" id="33oJVYhq7AV" role="2Oq$k0">
+                <ref role="3cqZAo" node="33oJVYhhW0c" resolve="descriptor" />
+              </node>
+              <node concept="liA8E" id="33oJVYhq8Jl" role="2OqNvi">
+                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
               </node>
             </node>
           </node>
@@ -3887,6 +4001,16 @@
   <node concept="312cEu" id="IMUMWuHQDZ">
     <property role="TrG5h" value="LanguageDescriptorPersistence" />
     <property role="3GE5qa" value="classes" />
+    <node concept="312cEg" id="2wxE5_AHfZ6" role="jymVt">
+      <property role="TrG5h" value="SOURCE_GEN_DEFAULT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2wxE5_AHfZ7" role="1B3o_S" />
+      <node concept="17QB3L" id="2wxE5_AHfZ8" role="1tU5fm" />
+      <node concept="Xl_RD" id="2wxE5_AHfZ9" role="33vP2m">
+        <property role="Xl_RC" value="${module}/source_gen" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2wxE5_AHfMm" role="jymVt" />
     <node concept="3Tm1VV" id="IMUMWuHQMX" role="1B3o_S" />
     <node concept="312cEg" id="33oJVYhiVhr" role="jymVt">
       <property role="TrG5h" value="myMacroHelper" />
@@ -4004,47 +4128,30 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="IMUMWuHQEV" role="3cqZAp" />
-                      <node concept="3cpWs8" id="1Tieq1imeKc" role="3cqZAp">
-                        <node concept="3cpWsn" id="1Tieq1imeKd" role="3cpWs9">
-                          <property role="TrG5h" value="genOutput" />
-                          <node concept="17QB3L" id="1Tieq1imeKe" role="1tU5fm" />
-                          <node concept="2OqwBi" id="1Tieq1imeKf" role="33vP2m">
-                            <node concept="37vLTw" id="3GM_nagTz54" role="2Oq$k0">
-                              <ref role="3cqZAo" node="33oJVYhkaUU" resolve="languageElement" />
+                      <node concept="g8Q5y" id="IMUMWuHQEY" role="3cqZAp">
+                        <node concept="3clFbS" id="IMUMWuHQEZ" role="GGjiV" />
+                        <node concept="3tyRfN" id="IMUMWuHQF0" role="GIGjv">
+                          <ref role="3tyRfW" to="w0gx:~LanguageDescriptor.setGenPath(java.lang.String):void" resolve="setGenPath" />
+                          <node concept="2OqwBi" id="IMUMWuHQF1" role="3tyRfI">
+                            <node concept="37vLTw" id="33oJVYhk$n2" role="2Oq$k0">
+                              <ref role="3cqZAo" node="33oJVYhiVhr" resolve="myMacroHelper" />
                             </node>
-                            <node concept="liA8E" id="1Tieq1imeKm" role="2OqNvi">
-                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                              <node concept="Xl_RD" id="1Tieq1imeKn" role="37wK5m">
-                                <property role="Xl_RC" value="generatorOutputPath" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="IMUMWuHQEW" role="3cqZAp">
-                        <node concept="3clFbS" id="IMUMWuHQEX" role="3clFbx">
-                          <node concept="g8Q5y" id="IMUMWuHQEY" role="3cqZAp">
-                            <node concept="3clFbS" id="IMUMWuHQEZ" role="GGjiV" />
-                            <node concept="3tyRfN" id="IMUMWuHQF0" role="GIGjv">
-                              <ref role="3tyRfW" to="w0gx:~LanguageDescriptor.setGenPath(java.lang.String):void" resolve="setGenPath" />
-                              <node concept="2OqwBi" id="IMUMWuHQF1" role="3tyRfI">
-                                <node concept="37vLTw" id="33oJVYhk$n2" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="33oJVYhiVhr" resolve="myMacroHelper" />
+                            <node concept="liA8E" id="IMUMWuHQF3" role="2OqNvi">
+                              <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                              <node concept="2YIFZM" id="2wxE5_AHBT7" role="37wK5m">
+                                <ref role="37wK5l" to="7a2w:4eI2K_IuewV" resolve="stringWithDefault" />
+                                <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                                <node concept="37vLTw" id="2wxE5_AHCeA" role="37wK5m">
+                                  <ref role="3cqZAo" node="33oJVYhkaUU" resolve="languageElement" />
                                 </node>
-                                <node concept="liA8E" id="IMUMWuHQF3" role="2OqNvi">
-                                  <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                                  <node concept="37vLTw" id="1Tieq1imeKj" role="37wK5m">
-                                    <ref role="3cqZAo" node="1Tieq1imeKd" resolve="genOutput" />
-                                  </node>
+                                <node concept="Xl_RD" id="1Tieq1imeKn" role="37wK5m">
+                                  <property role="Xl_RC" value="generatorOutputPath" />
+                                </node>
+                                <node concept="37vLTw" id="2wxE5_AHD7V" role="37wK5m">
+                                  <ref role="3cqZAo" node="2wxE5_AHfZ6" resolve="SOURCE_GEN_DEFAULT" />
                                 </node>
                               </node>
                             </node>
-                          </node>
-                        </node>
-                        <node concept="3y3z36" id="IMUMWuHQF8" role="3clFbw">
-                          <node concept="10Nm6u" id="IMUMWuHQF9" role="3uHU7w" />
-                          <node concept="37vLTw" id="1Tieq1imeKi" role="3uHU7B">
-                            <ref role="3cqZAo" node="1Tieq1imeKd" resolve="genOutput" />
                           </node>
                         </node>
                       </node>
@@ -5304,30 +5411,58 @@
         </node>
         <node concept="3clFbJ" id="33oJVYhj4Vh" role="3cqZAp">
           <node concept="3clFbS" id="33oJVYhj4Vi" role="3clFbx">
-            <node concept="3clFbF" id="33oJVYhj4Vj" role="3cqZAp">
-              <node concept="2OqwBi" id="33oJVYhj4Vk" role="3clFbG">
-                <node concept="37vLTw" id="33oJVYhj4Vl" role="2Oq$k0">
-                  <ref role="3cqZAo" node="33oJVYhj4UN" resolve="languageElement" />
+            <node concept="3cpWs8" id="2wxE5_AHH_3" role="3cqZAp">
+              <node concept="3cpWsn" id="2wxE5_AHH_4" role="3cpWs9">
+                <property role="TrG5h" value="p" />
+                <node concept="3uibUv" id="2wxE5_AHH$W" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-                <node concept="liA8E" id="33oJVYhj4Vm" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                  <node concept="Xl_RD" id="33oJVYhj4Vn" role="37wK5m">
-                    <property role="Xl_RC" value="generatorOutputPath" />
+                <node concept="2OqwBi" id="2wxE5_AHH_5" role="33vP2m">
+                  <node concept="37vLTw" id="2wxE5_AHH_6" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33oJVYhiVhr" resolve="myMacroHelper" />
                   </node>
-                  <node concept="2OqwBi" id="33oJVYhj4Vo" role="37wK5m">
-                    <node concept="37vLTw" id="33oJVYhj8uj" role="2Oq$k0">
-                      <ref role="3cqZAo" node="33oJVYhiVhr" resolve="myMacroHelper" />
-                    </node>
-                    <node concept="liA8E" id="33oJVYhj4Vq" role="2OqNvi">
-                      <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
-                      <node concept="2OqwBi" id="33oJVYhj4Vr" role="37wK5m">
-                        <node concept="37vLTw" id="33oJVYhj4Vs" role="2Oq$k0">
-                          <ref role="3cqZAo" node="33oJVYhj4UH" resolve="descriptor" />
-                        </node>
-                        <node concept="liA8E" id="33oJVYhj4Vt" role="2OqNvi">
-                          <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getGenPath():java.lang.String" resolve="getGenPath" />
-                        </node>
+                  <node concept="liA8E" id="2wxE5_AHH_7" role="2OqNvi">
+                    <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
+                    <node concept="2OqwBi" id="2wxE5_AHH_8" role="37wK5m">
+                      <node concept="37vLTw" id="2wxE5_AHH_9" role="2Oq$k0">
+                        <ref role="3cqZAo" node="33oJVYhj4UH" resolve="descriptor" />
                       </node>
+                      <node concept="liA8E" id="2wxE5_AHH_a" role="2OqNvi">
+                        <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getGenPath():java.lang.String" resolve="getGenPath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2wxE5_AHIl4" role="3cqZAp">
+              <node concept="3clFbS" id="2wxE5_AHIl6" role="3clFbx">
+                <node concept="3clFbF" id="33oJVYhj4Vj" role="3cqZAp">
+                  <node concept="2OqwBi" id="33oJVYhj4Vk" role="3clFbG">
+                    <node concept="37vLTw" id="33oJVYhj4Vl" role="2Oq$k0">
+                      <ref role="3cqZAo" node="33oJVYhj4UN" resolve="languageElement" />
+                    </node>
+                    <node concept="liA8E" id="33oJVYhj4Vm" role="2OqNvi">
+                      <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+                      <node concept="Xl_RD" id="33oJVYhj4Vn" role="37wK5m">
+                        <property role="Xl_RC" value="generatorOutputPath" />
+                      </node>
+                      <node concept="37vLTw" id="2wxE5_AHH_b" role="37wK5m">
+                        <ref role="3cqZAo" node="2wxE5_AHH_4" resolve="p" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="2wxE5_AHJBF" role="3clFbw">
+                <node concept="2OqwBi" id="2wxE5_AHJBH" role="3fr31v">
+                  <node concept="37vLTw" id="2wxE5_AHJBI" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2wxE5_AHfZ6" resolve="SOURCE_GEN_DEFAULT" />
+                  </node>
+                  <node concept="liA8E" id="2wxE5_AHJBJ" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="37vLTw" id="2wxE5_AHJBK" role="37wK5m">
+                      <ref role="3cqZAo" node="2wxE5_AHH_4" resolve="p" />
                     </node>
                   </node>
                 </node>
@@ -10265,6 +10400,16 @@
   <node concept="312cEu" id="IMUMWuHR4a">
     <property role="TrG5h" value="SolutionDescriptorPersistence" />
     <property role="3GE5qa" value="classes" />
+    <node concept="312cEg" id="2wxE5_AH65U" role="jymVt">
+      <property role="TrG5h" value="SOURCE_GEN_DEFAULT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2wxE5_AH65V" role="1B3o_S" />
+      <node concept="17QB3L" id="2wxE5_AH65W" role="1tU5fm" />
+      <node concept="Xl_RD" id="2wxE5_AH65X" role="33vP2m">
+        <property role="Xl_RC" value="${module}/source_gen" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="2wxE5_AH4U6" role="jymVt" />
     <node concept="3Tm1VV" id="IMUMWuHRam" role="1B3o_S" />
     <node concept="Wx3nA" id="1Tieq1im8ez" role="jymVt">
       <property role="TrG5h" value="SOURCE_PATH" />
@@ -10539,48 +10684,31 @@
                         </node>
                       </node>
                       <node concept="3clFbH" id="6oJSkzE8eJB" role="3cqZAp" />
-                      <node concept="3cpWs8" id="1Tieq1im85i" role="3cqZAp">
-                        <node concept="3cpWsn" id="1Tieq1im85j" role="3cpWs9">
-                          <property role="TrG5h" value="genOutput" />
-                          <node concept="17QB3L" id="3AeSCRVOTKm" role="1tU5fm" />
-                          <node concept="2OqwBi" id="1Tieq1im85l" role="33vP2m">
-                            <node concept="37vLTw" id="1Tieq1im85m" role="2Oq$k0">
-                              <ref role="3cqZAo" node="33oJVYhfQy$" resolve="rootElement" />
+                      <node concept="g8Q5y" id="IMUMWuHR5$" role="3cqZAp">
+                        <node concept="3clFbS" id="IMUMWuHR5_" role="GGjiV" />
+                        <node concept="3tyRfN" id="IMUMWuHR5A" role="GIGjv">
+                          <ref role="3tyRfW" to="w0gx:~SolutionDescriptor.setOutputPath(java.lang.String):void" resolve="setOutputPath" />
+                          <node concept="2OqwBi" id="IMUMWuHR5B" role="3tyRfI">
+                            <node concept="37vLTw" id="33oJVYhgiGD" role="2Oq$k0">
+                              <ref role="3cqZAo" node="33oJVYhfKyp" resolve="myMacroHelper" />
                             </node>
-                            <node concept="liA8E" id="1Tieq1im85n" role="2OqNvi">
-                              <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
-                              <node concept="Xl_RD" id="1Tieq1im85o" role="37wK5m">
-                                <property role="Xl_RC" value="generatorOutputPath" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="3clFbJ" id="IMUMWuHR5y" role="3cqZAp">
-                        <node concept="3clFbS" id="IMUMWuHR5z" role="3clFbx">
-                          <node concept="g8Q5y" id="IMUMWuHR5$" role="3cqZAp">
-                            <node concept="3clFbS" id="IMUMWuHR5_" role="GGjiV" />
-                            <node concept="3tyRfN" id="IMUMWuHR5A" role="GIGjv">
-                              <ref role="3tyRfW" to="w0gx:~SolutionDescriptor.setOutputPath(java.lang.String):void" resolve="setOutputPath" />
-                              <node concept="2OqwBi" id="IMUMWuHR5B" role="3tyRfI">
-                                <node concept="37vLTw" id="33oJVYhgiGD" role="2Oq$k0">
-                                  <ref role="3cqZAo" node="33oJVYhfKyp" resolve="myMacroHelper" />
+                            <node concept="liA8E" id="IMUMWuHR5D" role="2OqNvi">
+                              <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
+                              <node concept="2YIFZM" id="2wxE5_AHZ7g" role="37wK5m">
+                                <ref role="37wK5l" to="7a2w:4eI2K_IuewV" resolve="stringWithDefault" />
+                                <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                                <node concept="37vLTw" id="2wxE5_AHZxP" role="37wK5m">
+                                  <ref role="3cqZAo" node="33oJVYhfQy$" resolve="rootElement" />
                                 </node>
-                                <node concept="liA8E" id="IMUMWuHR5D" role="2OqNvi">
-                                  <ref role="37wK5l" to="18ew:~MacroHelper.expandPath(java.lang.String):java.lang.String" resolve="expandPath" />
-                                  <node concept="37vLTw" id="1Tieq1im85q" role="37wK5m">
-                                    <ref role="3cqZAo" node="1Tieq1im85j" resolve="genOutput" />
-                                  </node>
+                                <node concept="Xl_RD" id="1Tieq1im85o" role="37wK5m">
+                                  <property role="Xl_RC" value="generatorOutputPath" />
+                                </node>
+                                <node concept="37vLTw" id="2wxE5_AI0hS" role="37wK5m">
+                                  <ref role="3cqZAo" node="2wxE5_AH65U" resolve="SOURCE_GEN_DEFAULT" />
                                 </node>
                               </node>
                             </node>
                           </node>
-                        </node>
-                        <node concept="2OqwBi" id="IMUMWuHR5I" role="3clFbw">
-                          <node concept="37vLTw" id="1Tieq1im85p" role="2Oq$k0">
-                            <ref role="3cqZAo" node="1Tieq1im85j" resolve="genOutput" />
-                          </node>
-                          <node concept="17RvpY" id="IMUMWuHR5M" role="2OqNvi" />
                         </node>
                       </node>
                       <node concept="3clFbH" id="IMUMWuHR5N" role="3cqZAp" />
@@ -11254,30 +11382,58 @@
         </node>
         <node concept="3clFbJ" id="IMUMWuHR8z" role="3cqZAp">
           <node concept="3clFbS" id="IMUMWuHR8$" role="3clFbx">
-            <node concept="3clFbF" id="1Tieq1im8b1" role="3cqZAp">
-              <node concept="2OqwBi" id="1Tieq1im8bh" role="3clFbG">
-                <node concept="37vLTw" id="1Tieq1im8b2" role="2Oq$k0">
-                  <ref role="3cqZAo" node="1Tieq1im88u" resolve="result" />
+            <node concept="3cpWs8" id="2wxE5_AI36U" role="3cqZAp">
+              <node concept="3cpWsn" id="2wxE5_AI36V" role="3cpWs9">
+                <property role="TrG5h" value="p" />
+                <node concept="3uibUv" id="2wxE5_AI36P" role="1tU5fm">
+                  <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                 </node>
-                <node concept="liA8E" id="1Tieq1im8bo" role="2OqNvi">
-                  <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
-                  <node concept="Xl_RD" id="1Tieq1im8bp" role="37wK5m">
-                    <property role="Xl_RC" value="generatorOutputPath" />
+                <node concept="2OqwBi" id="2wxE5_AI36W" role="33vP2m">
+                  <node concept="37vLTw" id="2wxE5_AI36X" role="2Oq$k0">
+                    <ref role="3cqZAo" node="33oJVYhfKyp" resolve="myMacroHelper" />
                   </node>
-                  <node concept="2OqwBi" id="IMUMWuHR8C" role="37wK5m">
-                    <node concept="37vLTw" id="33oJVYhgTaH" role="2Oq$k0">
-                      <ref role="3cqZAo" node="33oJVYhfKyp" resolve="myMacroHelper" />
-                    </node>
-                    <node concept="liA8E" id="IMUMWuHR8E" role="2OqNvi">
-                      <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
-                      <node concept="2OqwBi" id="IMUMWuHR8F" role="37wK5m">
-                        <node concept="37vLTw" id="2BHiRxgm5KB" role="2Oq$k0">
-                          <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
-                        </node>
-                        <node concept="liA8E" id="IMUMWuHR8H" role="2OqNvi">
-                          <ref role="37wK5l" to="w0gx:~SolutionDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
-                        </node>
+                  <node concept="liA8E" id="2wxE5_AI36Y" role="2OqNvi">
+                    <ref role="37wK5l" to="18ew:~MacroHelper.shrinkPath(java.lang.String):java.lang.String" resolve="shrinkPath" />
+                    <node concept="2OqwBi" id="2wxE5_AI36Z" role="37wK5m">
+                      <node concept="37vLTw" id="2wxE5_AI370" role="2Oq$k0">
+                        <ref role="3cqZAo" node="33oJVYhgCCY" resolve="descriptor" />
                       </node>
+                      <node concept="liA8E" id="2wxE5_AI371" role="2OqNvi">
+                        <ref role="37wK5l" to="w0gx:~SolutionDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="3clFbJ" id="2wxE5_AI3$A" role="3cqZAp">
+              <node concept="3clFbS" id="2wxE5_AI3$C" role="3clFbx">
+                <node concept="3clFbF" id="1Tieq1im8b1" role="3cqZAp">
+                  <node concept="2OqwBi" id="1Tieq1im8bh" role="3clFbG">
+                    <node concept="37vLTw" id="1Tieq1im8b2" role="2Oq$k0">
+                      <ref role="3cqZAo" node="1Tieq1im88u" resolve="result" />
+                    </node>
+                    <node concept="liA8E" id="1Tieq1im8bo" role="2OqNvi">
+                      <ref role="37wK5l" to="mmaq:~Element.setAttribute(java.lang.String,java.lang.String):org.jdom.Element" resolve="setAttribute" />
+                      <node concept="Xl_RD" id="1Tieq1im8bp" role="37wK5m">
+                        <property role="Xl_RC" value="generatorOutputPath" />
+                      </node>
+                      <node concept="37vLTw" id="2wxE5_AI372" role="37wK5m">
+                        <ref role="3cqZAo" node="2wxE5_AI36V" resolve="p" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3fqX7Q" id="2wxE5_AI4ow" role="3clFbw">
+                <node concept="2OqwBi" id="2wxE5_AI4oy" role="3fr31v">
+                  <node concept="37vLTw" id="2wxE5_AI4oz" role="2Oq$k0">
+                    <ref role="3cqZAo" node="2wxE5_AH65U" resolve="SOURCE_GEN_DEFAULT" />
+                  </node>
+                  <node concept="liA8E" id="2wxE5_AI4o$" role="2OqNvi">
+                    <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+                    <node concept="37vLTw" id="2wxE5_AI4o_" role="37wK5m">
+                      <ref role="3cqZAo" node="2wxE5_AI36V" resolve="p" />
                     </node>
                   </node>
                 </node>

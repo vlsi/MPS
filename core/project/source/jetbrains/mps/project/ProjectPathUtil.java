@@ -21,6 +21,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
 import org.jetbrains.annotations.Nullable;
@@ -62,25 +63,39 @@ public class ProjectPathUtil {
     return parent != null ? parent.getDescendant("classes") : null;
   }
 
-  public static IFile getGeneratorOutputPath(@Nullable IFile moduleSourceDir, ModuleDescriptor descriptor) {
-    // todo: !
-    String generatorOutputPath;
+  /**
+   * PROVISIONAL CODE, WILL CEASE SOON. DO NOT USE OUTSIDE OF MPS INTERNALS
+   *
+   * Mechanism to deal with distinct attributes in {@code ModuleDescriptor} classes that specify location for generated files.
+   * See {@link GeneratorDescriptor#getOutputPath()} for more details. Once output path is refactored into ModuleDescriptor
+   * and finalized with regard to value kind (Path, IFile, File), there would be no need in this method.
+   * @return expanded path (no macros, at least known) of location for module generated files, if any, as specified in the descriptor.
+   */
+  @Nullable
+  public static String getGeneratorOutputPath(ModuleDescriptor descriptor) {
+    String generatorOutputPath = null;
     if (descriptor instanceof SolutionDescriptor) {
       generatorOutputPath = ((SolutionDescriptor) descriptor).getOutputPath();
     } else if (descriptor instanceof LanguageDescriptor) {
       generatorOutputPath = ((LanguageDescriptor) descriptor).getGenPath();
     } else if (descriptor instanceof GeneratorDescriptor) {
-      return moduleSourceDir.getDescendant("generator").getDescendant("source_gen");
-    } else {
-      return null;
+      generatorOutputPath = ((GeneratorDescriptor) descriptor).getOutputPath();
     }
+    return generatorOutputPath;
+  }
+
+  /**
+   * @deprecated refactor uses, may use {@link #getGeneratorOutputPath(ModuleDescriptor)} for transition (first argument of the method serves
+   *             merely as a FileSystem provider, if IFile is needed, do FileSystem.getFile() yourself
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static IFile getGeneratorOutputPath(@Nullable IFile moduleSourceDir, ModuleDescriptor descriptor) {
+    // todo: !
+    String generatorOutputPath = getGeneratorOutputPath(descriptor);
     if (generatorOutputPath != null) {
       FileSystem fileSystem = moduleSourceDir == null ? jetbrains.mps.vfs.FileSystem.getInstance() : moduleSourceDir.getFileSystem();
       return fileSystem.getFile(generatorOutputPath);
-    }
-    // todo: ???
-    if (moduleSourceDir != null) {
-      return moduleSourceDir.getDescendant("source_gen");
     }
     return null;
   }

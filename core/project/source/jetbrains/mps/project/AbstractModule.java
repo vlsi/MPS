@@ -918,7 +918,8 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   public IFile getOutputPath() {
-    return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
+    String outputPath = ProjectPathUtil.getGeneratorOutputPath(getModuleDescriptor());
+    return outputPath == null ? null : getFileSystem().getFile(outputPath);
   }
 
   /**

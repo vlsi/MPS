@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
@@ -35,11 +36,12 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   private boolean myGenerateTemplates = false;
   private boolean myQueriesViaReflection = true;
+  private String myGenOutputPath;
 
   public GeneratorDescriptor() {
     super();
-    myDepGenerators = new LinkedHashSet<SModuleReference>();
-    myPriorityRules = new ArrayList<MappingPriorityRule>();
+    myDepGenerators = new LinkedHashSet<>();
+    myPriorityRules = new ArrayList<>();
   }
 
   public String getGeneratorUID() {
@@ -79,7 +81,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   /**
    * Expects at least model read access (although likely no reason to invoke in any other case but from write that modified smth)
-   * @param repository
+   * @param repository where to look old/new module references up.
    */
   @Override
   public boolean updateModuleRefs(SRepository repository) {
@@ -89,6 +91,22 @@ public class GeneratorDescriptor extends ModuleDescriptor {
       uu.updateModuleRefs(myDepGenerators),
       uu.updateMappingPriorityRules(myPriorityRules));
   }
+
+  /**
+   * FIXME Likely, {@link SolutionDescriptor#getOutputPath()}, {@link LanguageDescriptor#getGenPath()} and this one need to move to
+   *       ModuleDescriptor. I would do that once there's clear idea whether to use IFile, java.io.File or Path for these locations,
+   *       and whether to keep these as module descriptor attributes or inside relevant {@link jetbrains.mps.project.facets.GenerationTargetFacet facets}.
+   * @return filesystem location where generated files for the generator go, or null if this module doesn't support output
+   */
+  @Nullable
+  public String getOutputPath() {
+    return myGenOutputPath;
+  }
+
+  public void setOutputPath(@Nullable String path) {
+    myGenOutputPath = path;
+  }
+
 
   @Override
   protected int getHeaderMarker() {
@@ -100,6 +118,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     super.save(stream);
     stream.writeString(myGeneratorUID);
     stream.writeBoolean(myGenerateTemplates);
+    stream.writeString(myGenOutputPath);
 
     stream.writeInt(myDepGenerators.size());
     for (SModuleReference ref : myDepGenerators) {
@@ -117,6 +136,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     super.load(stream);
     myGeneratorUID = stream.readString();
     myGenerateTemplates = stream.readBoolean();
+    myGenOutputPath = stream.readString();
 
     myDepGenerators.clear();
     for (int size = stream.readInt(); size > 0; size--) {

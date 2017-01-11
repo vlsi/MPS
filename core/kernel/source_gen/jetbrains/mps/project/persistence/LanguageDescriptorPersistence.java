@@ -32,6 +32,8 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
  * XML/DOM persistence for a descriptor of Language module 
  */
 public class LanguageDescriptorPersistence {
+  private final String SOURCE_GEN_DEFAULT = "${module}/source_gen";
+
   private final MacroHelper myMacroHelper;
 
   public LanguageDescriptorPersistence(@NotNull MacroHelper macroHelper) {
@@ -45,50 +47,47 @@ public class LanguageDescriptorPersistence {
     try {
       descriptor = new _FunctionTypes._return_P0_E0<LanguageDescriptor>() {
         public LanguageDescriptor invoke() {
-          final LanguageDescriptor result_v3r4p8_a0a0a0c0e = new LanguageDescriptor();
-          final String result_v3r4p8_a0a0a0a0c0e = languageElement.getAttributeValue("namespace");
-          result_v3r4p8_a0a0a0c0e.setNamespace(result_v3r4p8_a0a0a0a0c0e);
+          final LanguageDescriptor result_v3r4p8_a0a0a0c0g = new LanguageDescriptor();
+          final String result_v3r4p8_a0a0a0a0c0g = languageElement.getAttributeValue("namespace");
+          result_v3r4p8_a0a0a0c0g.setNamespace(result_v3r4p8_a0a0a0a0c0g);
           String uuid = languageElement.getAttributeValue("uuid");
           if (uuid != null) {
-            final ModuleId result_v3r4p8_a0a2a0a0a0c0e = ModuleId.fromString(uuid);
-            result_v3r4p8_a0a0a0c0e.setId(result_v3r4p8_a0a2a0a0a0c0e);
+            final ModuleId result_v3r4p8_a0a2a0a0a0c0g = ModuleId.fromString(uuid);
+            result_v3r4p8_a0a0a0c0g.setId(result_v3r4p8_a0a2a0a0a0c0g);
           }
 
-          String genOutput = languageElement.getAttributeValue("generatorOutputPath");
-          if (genOutput != null) {
-            final String result_v3r4p8_a0a5a0a0a0c0e = myMacroHelper.expandPath(genOutput);
-            result_v3r4p8_a0a0a0c0e.setGenPath(result_v3r4p8_a0a5a0a0a0c0e);
-          }
+          final String result_v3r4p8_a4a0a0a0c0g = myMacroHelper.expandPath(XmlUtil.stringWithDefault(languageElement, "generatorOutputPath", SOURCE_GEN_DEFAULT));
+          result_v3r4p8_a0a0a0c0g.setGenPath(result_v3r4p8_a4a0a0a0c0g);
 
           String moduleVersion = languageElement.getAttributeValue("moduleVersion");
           if (moduleVersion != null) {
             try {
-              result_v3r4p8_a0a0a0c0e.setModuleVersion(Integer.parseInt(moduleVersion));
+              result_v3r4p8_a0a0a0c0g.setModuleVersion(Integer.parseInt(moduleVersion));
             } catch (NumberFormatException ignored) {
             }
           }
           String languageVersion = (languageElement.getAttributeValue("languageVersion") != null ? languageElement.getAttributeValue("languageVersion") : languageElement.getAttributeValue("version"));
           if (languageVersion != null) {
             try {
-              result_v3r4p8_a0a0a0c0e.setLanguageVersion(Integer.parseInt(languageVersion));
+              result_v3r4p8_a0a0a0c0g.setLanguageVersion(Integer.parseInt(languageVersion));
             } catch (NumberFormatException ignored) {
             }
           }
 
           Element modelsTag = XmlUtil.first(languageElement, "models");
           if (modelsTag != null) {
-            result_v3r4p8_a0a0a0c0e.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), myMacroHelper));
+            result_v3r4p8_a0a0a0c0g.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(modelsTag, "modelRoot"), myMacroHelper));
           }
 
           Element facets = XmlUtil.first(languageElement, "facets");
           if (facets != null) {
-            result_v3r4p8_a0a0a0c0e.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), myMacroHelper));
+            result_v3r4p8_a0a0a0c0g.getModuleFacetDescriptors().addAll(ModuleDescriptorPersistence.loadFacets(XmlUtil.children(facets, "facet"), myMacroHelper));
           }
 
 
-          ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0a0c0e, languageElement);
+          ModuleDescriptorPersistence.loadDependencies(result_v3r4p8_a0a0a0c0g, languageElement);
           for (Element extendedLanguage : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "extendedLanguages"), "extendedLanguage"))) {
-            result_v3r4p8_a0a0a0c0e.getExtendedLanguages().add(PersistenceFacade.getInstance().createModuleReference(extendedLanguage.getText()));
+            result_v3r4p8_a0a0a0c0g.getExtendedLanguages().add(PersistenceFacade.getInstance().createModuleReference(extendedLanguage.getText()));
           }
 
           Element autoImports = XmlUtil.first(languageElement, "accessoryModels");
@@ -97,25 +96,25 @@ public class LanguageDescriptorPersistence {
             autoImports = XmlUtil.first(languageElement, "library");
           }
           for (Element modelElement : Sequence.fromIterable(XmlUtil.children(autoImports, "model"))) {
-            result_v3r4p8_a0a0a0c0e.getAccessoryModels().add(PersistenceFacade.getInstance().createModelReference(modelElement.getAttributeValue("modelUID")));
+            result_v3r4p8_a0a0a0c0g.getAccessoryModels().add(PersistenceFacade.getInstance().createModelReference(modelElement.getAttributeValue("modelUID")));
           }
 
           GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper);
           for (Element generatorElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "generators"), "generator"))) {
-            result_v3r4p8_a0a0a0c0e.getGenerators().add(gdp.load(generatorElement));
+            result_v3r4p8_a0a0a0c0g.getGenerators().add(gdp.load(generatorElement));
           }
 
           // odd 'stubModelEntry' name for auxiliary classpath is due to legacy 
           Element stubModelEntries = XmlUtil.first(languageElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<String> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, myMacroHelper);
-            result_v3r4p8_a0a0a0c0e.getAdditionalJavaStubPaths().addAll(roots);
+            result_v3r4p8_a0a0a0c0g.getAdditionalJavaStubPaths().addAll(roots);
           }
 
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "sourcePath"), "source"))) {
-            result_v3r4p8_a0a0a0c0e.getSourcePaths().add(myMacroHelper.expandPath(entryElement.getAttributeValue("path")));
+            result_v3r4p8_a0a0a0c0g.getSourcePaths().add(myMacroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
-          return result_v3r4p8_a0a0a0c0e;
+          return result_v3r4p8_a0a0a0c0g;
         }
       }.invoke();
     } catch (ModuleReadException ex) {
@@ -204,7 +203,10 @@ public class LanguageDescriptorPersistence {
       languageElement.setAttribute("uuid", descriptor.getId().toString());
     }
     if (descriptor.getGenPath() != null) {
-      languageElement.setAttribute("generatorOutputPath", myMacroHelper.shrinkPath(descriptor.getGenPath()));
+      String p = myMacroHelper.shrinkPath(descriptor.getGenPath());
+      if (!(SOURCE_GEN_DEFAULT.equals(p))) {
+        languageElement.setAttribute("generatorOutputPath", p);
+      }
     }
     languageElement.setAttribute("languageVersion", Integer.toString(descriptor.getLanguageVersion()));
     languageElement.setAttribute("moduleVersion", Integer.toString(descriptor.getModuleVersion()));
