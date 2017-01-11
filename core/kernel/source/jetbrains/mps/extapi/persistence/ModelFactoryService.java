@@ -19,8 +19,9 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.annotations.Mutable;
+import org.jetbrains.mps.annotations.Singleton;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
@@ -39,12 +40,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * @author apyshkin
  * @since 29/12/16
  */
+@Singleton
 @Mutable
 public final class ModelFactoryService implements ModelFactoryRegistry {
   private static final Logger LOG = LogManager.getLogger(ModelFactoryService.class);
+  private static final ModelFactoryCoreService CORE_SERVICE = ModelFactoryCoreService.getInstance();
 
   private static ModelFactoryService ourInstance;
-  private static final ModelFactoryCoreService CORE_SERVICE = ModelFactoryCoreService.getInstance();
 
   private final List<ModelFactory> myCustomModelFactories = new CopyOnWriteArrayList<>();
 
@@ -59,6 +61,14 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
     return ourInstance;
   }
 
+  /**
+   * @internal please do not invoke these two methods unless absolutely necessary -- the only caller is supposed to be ModelFactoryRegister$ModelFactoryProvider
+   * whose purpose is pushing up the model factories registered via IDEA extension points mechanism
+   *
+   * it is lowering its visibility after 3.6
+   * AP
+   */
+  @Internal
   @Mutable
   public void register(@NotNull ModelFactory factory) {
     if (myCustomModelFactories.contains(factory)) {
@@ -68,6 +78,7 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
     myCustomModelFactories.add(factory);
   }
 
+  @Internal
   @Mutable
   public void unregister(@NotNull ModelFactory factory) {
     if (!myCustomModelFactories.contains(factory)) {

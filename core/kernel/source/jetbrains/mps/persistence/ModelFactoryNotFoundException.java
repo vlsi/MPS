@@ -23,10 +23,10 @@ import java.io.IOException;
 
 public class ModelFactoryNotFoundException extends ModelCannotBeCreatedException {
   public ModelFactoryNotFoundException(@NotNull DataSourceType dataSourceType) {
-    super("Model factory is not registered for the " + dataSourceType);
+    super("Model factory is not registered for the '" + dataSourceType + "'");
   }
 
   public ModelFactoryNotFoundException(@NotNull ModelFactoryType modelFactoryType) {
-    super("Model factory is not registered for the " + modelFactoryType);
+    super("Model factory is not registered for the '" + modelFactoryType + "'");
   }
 }

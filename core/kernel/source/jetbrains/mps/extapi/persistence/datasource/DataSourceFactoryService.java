@@ -32,17 +32,20 @@ import java.util.ServiceLoader;
  * Service provider to define your own data source factories
  *
  * @see DataSourceFactory
- * Created by apyshkin on 12/22/16.
+ * @author apyshkin
+ * @since 12/22/16 [3.5]
  */
 @Singleton
+@Immutable
 public final class DataSourceFactoryService {
   private static final Logger LOG = LogManager.getLogger(DataSourceFactoryService.class);
+  private static final ClassLoader CORE_CLASSLOADER = DataSourceFactory.class.getClassLoader();
 
   private static DataSourceFactoryService ourInstance;
   private static ServiceLoader<DataSourceFactory> ourServiceLoader;
 
   private DataSourceFactoryService() {
-    ourServiceLoader = ServiceLoader.load(DataSourceFactory.class);
+    ourServiceLoader = ServiceLoader.load(DataSourceFactory.class, CORE_CLASSLOADER);
   }
 
   @NotNull
@@ -66,7 +69,6 @@ public final class DataSourceFactoryService {
   /**
    * @return factories in the reverse order of registration -- from the newest to the oldest.
    */
-  @Immutable
   @NotNull
   public List<DataSourceFactory> getFactories() {
     List<DataSourceFactory> list = IterableUtil.asList(ourServiceLoader);

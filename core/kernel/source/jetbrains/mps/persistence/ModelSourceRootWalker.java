@@ -107,9 +107,6 @@ final class ModelSourceRootWalker {
         }
         if (!isVisited(dataSource)) {
           List<ModelFactory> candidates = ModelFactoryService.getInstance().getModelFactories(dataSource.getType());
-          if (candidates.isEmpty()) {
-            return;
-          }
           for (ModelFactory modelFactory : candidates) {
             if (modelFactory.supports(dataSource)) {
               markVisited(dataSource);
@@ -117,7 +114,9 @@ final class ModelSourceRootWalker {
               return;
             }
           }
-          LOG.error("Could not discover an appropriate model factory associated with the '" + dataSource.getType() + "'");
+          if (!candidates.isEmpty()) { // means we are familiar with the file format but unable to load it
+            LOG.error("Could not discover an appropriate model factory associated with the '" + dataSource.getType() + "'");
+          }
         }
       }
     }
