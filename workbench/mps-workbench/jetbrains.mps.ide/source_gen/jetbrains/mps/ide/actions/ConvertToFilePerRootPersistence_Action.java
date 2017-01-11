@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import org.jetbrains.annotations.NotNull;
@@ -59,7 +58,7 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
     return ListSequence.fromList(m).all(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return (!((it.getModule() instanceof Language))) && !(it.isReadOnly()) && it.getSource() instanceof FileDataSource && it.getModelRoot() instanceof FileBasedModelRoot;
+        return !(it.isReadOnly()) && it.getSource() instanceof FileDataSource && it.getModelRoot() instanceof FileBasedModelRoot;
       }
     });
   }

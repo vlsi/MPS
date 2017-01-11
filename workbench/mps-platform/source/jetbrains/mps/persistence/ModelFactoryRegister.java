@@ -34,6 +34,7 @@ import java.util.List;
 
 /**
  * Workbench extension point to client custom model factories
+ * delegates to the {@link ModelFactoryService}
  */
 @Internal
 @Deprecated

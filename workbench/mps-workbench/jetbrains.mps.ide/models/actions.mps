@@ -38817,34 +38817,13 @@
                         </node>
                       </node>
                       <node concept="1Wc70l" id="38LNA6Kbjua" role="3uHU7B">
-                        <node concept="1Wc70l" id="58iFGGGW4TN" role="3uHU7B">
-                          <node concept="3fqX7Q" id="38LNA6Kbjub" role="3uHU7w">
-                            <node concept="2OqwBi" id="38LNA6Kbjuc" role="3fr31v">
-                              <node concept="37vLTw" id="58iFGGGVXB5" role="2Oq$k0">
-                                <ref role="3cqZAo" node="58iFGGGVWeK" resolve="it" />
-                              </node>
-                              <node concept="liA8E" id="38LNA6Kbjue" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
-                              </node>
+                        <node concept="3fqX7Q" id="38LNA6Kbjub" role="3uHU7B">
+                          <node concept="2OqwBi" id="38LNA6Kbjuc" role="3fr31v">
+                            <node concept="37vLTw" id="58iFGGGVXB5" role="2Oq$k0">
+                              <ref role="3cqZAo" node="58iFGGGVWeK" resolve="it" />
                             </node>
-                          </node>
-                          <node concept="1eOMI4" id="58iFGGGW7L6" role="3uHU7B">
-                            <node concept="3fqX7Q" id="58iFGGGW9AB" role="1eOMHV">
-                              <node concept="1eOMI4" id="58iFGGGW9UP" role="3fr31v">
-                                <node concept="2ZW3vV" id="58iFGGGW9UQ" role="1eOMHV">
-                                  <node concept="3uibUv" id="58iFGGGW9UR" role="2ZW6by">
-                                    <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
-                                  </node>
-                                  <node concept="2OqwBi" id="58iFGGGW9US" role="2ZW6bz">
-                                    <node concept="37vLTw" id="58iFGGGW9UT" role="2Oq$k0">
-                                      <ref role="3cqZAo" node="58iFGGGVWeK" resolve="it" />
-                                    </node>
-                                    <node concept="liA8E" id="58iFGGGW9UU" role="2OqNvi">
-                                      <ref role="37wK5l" to="mhbf:~SModel.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
+                            <node concept="liA8E" id="38LNA6Kbjue" role="2OqNvi">
+                              <ref role="37wK5l" to="mhbf:~SModel.isReadOnly():boolean" resolve="isReadOnly" />
                             </node>
                           </node>
                         </node>
