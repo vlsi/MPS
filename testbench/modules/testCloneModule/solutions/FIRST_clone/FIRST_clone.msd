@@ -18,7 +18,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="04399201-cb79-4edc-8d1a-e2b946892642(FIRST)" version="0" />
+    <module reference="e8fd1b36-718f-4664-86f3-31c37270e435(FIRST_clone)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
   </dependencyVersions>
 </solution>

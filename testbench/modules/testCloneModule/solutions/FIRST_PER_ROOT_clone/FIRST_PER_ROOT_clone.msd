@@ -19,7 +19,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="1b06eede-ff4f-40f3-92e8-3cf27f8127bd(FIRST_PER_ROOT)" version="0" />
+    <module reference="fd986c59-79d1-4a4e-8b39-c8cb7563a000(FIRST_PER_ROOT_clone)" version="0" />
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
   </dependencyVersions>
 </solution>

@@ -15,7 +15,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
-    <module reference="b5c4b8d4-5097-41cd-9b84-fd6eab9009f5(FIRST_BINARY)" version="0" />
+    <module reference="8f5ca933-c76a-4a8f-b39a-2d5c732d18ae(FIRST_BINARY_clone)" version="0" />
   </dependencyVersions>
 </solution>
 

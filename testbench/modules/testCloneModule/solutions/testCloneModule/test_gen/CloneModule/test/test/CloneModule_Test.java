@@ -22,8 +22,6 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.project.validation.MessageCollectProcessor;
 import jetbrains.mps.project.validation.ValidationUtil;
 import org.apache.log4j.Level;
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
 
 public class CloneModule_Test extends TestCase {
   private static final String PROJECT_PATH = "../testbench/modules/testCloneModule/";
@@ -113,16 +111,8 @@ public class CloneModule_Test extends TestCase {
     }
   }
 
-  public void executeUnderLock(final Runnable runnable) {
-    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
-      public void run() {
-        project.getRepository().getModelAccess().runWriteAction(new Runnable() {
-          public void run() {
-            runnable.run();
-          }
-        });
-      }
-    }, ModalityState.any());
+  public void executeUnderLock(Runnable runnable) {
+    project.getModelAccess().executeCommandInEDT(runnable);
   }
   private static <T> T as_i3fixg_a0a0a0a0a0a0d(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

@@ -140,14 +140,6 @@
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
     </language>
-    <language id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access">
-      <concept id="8974276187400348173" name="jetbrains.mps.lang.access.structure.CommandClosureLiteral" flags="nn" index="1QHqEC" />
-      <concept id="8974276187400348170" name="jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement" flags="nn" index="1QHqEJ">
-        <child id="1423104411234567454" name="repo" index="ukAjM" />
-        <child id="8974276187400348171" name="commandClosureLiteral" index="1QHqEI" />
-      </concept>
-      <concept id="8974276187400348183" name="jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement" flags="nn" index="1QHqEM" />
-    </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
         <child id="1199569916463" name="body" index="1bW5cS" />
@@ -825,45 +817,20 @@
       <property role="od$2w" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="2_jX3OnKGFp" role="3clF47">
-        <node concept="3clFbF" id="2_jX3OnKGFq" role="3cqZAp">
-          <node concept="2OqwBi" id="2_jX3OnKGFr" role="3clFbG">
-            <node concept="2YIFZM" id="2_jX3OnKGFs" role="2Oq$k0">
-              <ref role="37wK5l" to="bd8o:~ApplicationManager.getApplication():com.intellij.openapi.application.Application" resolve="getApplication" />
-              <ref role="1Pybhc" to="bd8o:~ApplicationManager" resolve="ApplicationManager" />
-            </node>
-            <node concept="liA8E" id="2_jX3OnKGFt" role="2OqNvi">
-              <ref role="37wK5l" to="bd8o:~Application.invokeAndWait(java.lang.Runnable,com.intellij.openapi.application.ModalityState):void" resolve="invokeAndWait" />
-              <node concept="1bVj0M" id="2_jX3OnKGFu" role="37wK5m">
-                <node concept="3clFbS" id="2_jX3OnKGFv" role="1bW5cS">
-                  <node concept="1QHqEM" id="2_jX3OnKGFw" role="3cqZAp">
-                    <node concept="1QHqEC" id="2_jX3OnKGFx" role="1QHqEI">
-                      <node concept="3clFbS" id="2_jX3OnKGFy" role="1bW5cS">
-                        <node concept="3clFbF" id="2_jX3OnKHM9" role="3cqZAp">
-                          <node concept="2OqwBi" id="2_jX3OnKI4v" role="3clFbG">
-                            <node concept="37vLTw" id="2_jX3OnKHM8" role="2Oq$k0">
-                              <ref role="3cqZAo" node="2_jX3OnKGF_" resolve="runnable" />
-                            </node>
-                            <node concept="liA8E" id="2_jX3OnKIki" role="2OqNvi">
-                              <ref role="37wK5l" to="wyt6:~Runnable.run():void" resolve="run" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="2OqwBi" id="2_jX3OnKHbB" role="ukAjM">
-                      <node concept="37vLTw" id="2_jX3OnKH2g" role="2Oq$k0">
-                        <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
-                      </node>
-                      <node concept="liA8E" id="2_jX3OnKHDJ" role="2OqNvi">
-                        <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
+        <node concept="3clFbF" id="4LMS1PLcwHP" role="3cqZAp">
+          <node concept="2OqwBi" id="4LMS1PLcxlG" role="3clFbG">
+            <node concept="2OqwBi" id="4LMS1PLcwS1" role="2Oq$k0">
+              <node concept="37vLTw" id="4LMS1PLcwHO" role="2Oq$k0">
+                <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
               </node>
-              <node concept="2YIFZM" id="2_jX3OnKIyW" role="37wK5m">
-                <ref role="37wK5l" to="bd8o:~ModalityState.any():com.intellij.openapi.application.ModalityState" resolve="any" />
-                <ref role="1Pybhc" to="bd8o:~ModalityState" resolve="ModalityState" />
+              <node concept="liA8E" id="4LMS1PLcxec" role="2OqNvi">
+                <ref role="37wK5l" to="z1c3:~Project.getModelAccess():org.jetbrains.mps.openapi.module.ModelAccess" resolve="getModelAccess" />
+              </node>
+            </node>
+            <node concept="liA8E" id="4LMS1PLcxBy" role="2OqNvi">
+              <ref role="37wK5l" to="lui2:~ModelAccess.executeCommandInEDT(java.lang.Runnable):void" resolve="executeCommandInEDT" />
+              <node concept="37vLTw" id="4LMS1PLcxFN" role="37wK5m">
+                <ref role="3cqZAo" node="2_jX3OnKGF_" resolve="runnable" />
               </node>
             </node>
           </node>

@@ -16,7 +16,7 @@
   </languageVersions>
   <dependencyVersions>
     <module reference="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" version="0" />
-    <module reference="476b39b4-2cde-45fe-a24b-5f7374df3032(TEST1)" version="0" />
+    <module reference="4af3067d-420b-4113-8e6b-572a094b124e(TEST1_clone)" version="0" />
   </dependencyVersions>
 </solution>
 
