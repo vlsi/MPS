@@ -2016,28 +2016,8 @@
                   <ref role="1Pybhc" to="z1c3:~SModuleOperations" resolve="SModuleOperations" />
                   <ref role="37wK5l" to="z1c3:~SModuleOperations.createModelWithAdjustments(java.lang.String,org.jetbrains.mps.openapi.persistence.ModelRoot):org.jetbrains.mps.openapi.model.EditableSModel" resolve="createModelWithAdjustments" />
                   <node concept="3cpWs3" id="7uHdBFXaejP" role="37wK5m">
-                    <node concept="3cpWs3" id="3kyIOmssZu8" role="3uHU7B">
-                      <node concept="3cpWs3" id="6Aoukto_NUi" role="3uHU7B">
-                        <node concept="Xl_RD" id="6Aoukto_PbD" role="3uHU7w">
-                          <property role="Xl_RC" value="." />
-                        </node>
-                        <node concept="3cpWs3" id="1pyYjDPRasz" role="3uHU7B">
-                          <node concept="2OqwBi" id="1pyYjDPRas$" role="3uHU7B">
-                            <node concept="37vLTw" id="3kyIOmst1Av" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7BBl3KI$P2v" resolve="language" />
-                            </node>
-                            <node concept="liA8E" id="1pyYjDPRasA" role="2OqNvi">
-                              <ref role="37wK5l" to="z1c3:~AbstractModule.getModuleName():java.lang.String" resolve="getModuleName" />
-                            </node>
-                          </node>
-                          <node concept="Xl_RD" id="1pyYjDPRasB" role="3uHU7w">
-                            <property role="Xl_RC" value=".generator.template" />
-                          </node>
-                        </node>
-                      </node>
-                      <node concept="Xl_RD" id="7uHdBFXaejV" role="3uHU7w">
-                        <property role="Xl_RC" value="main@" />
-                      </node>
+                    <node concept="Xl_RD" id="7uHdBFXaejV" role="3uHU7B">
+                      <property role="Xl_RC" value="main@" />
                     </node>
                     <node concept="10M0yZ" id="7uHdBFXaejW" role="3uHU7w">
                       <ref role="3cqZAo" to="w1kc:~SModelStereotype.GENERATOR" resolve="GENERATOR" />

@@ -73,7 +73,7 @@ public class ProjectCreationTest {
   private static List<String> PROJECT_WITH_MODULES_PATH_LIST_FB;
   private static List<String> PROJECT_WITH_MODULES_PATH_LIST_DB;
 
-  // project/root/module/...
+  // project/root/module/model_source_root/
   private static final String PATH_IN_PROJECT = "%s/%s/%s/%s/%s.%s";
   private static Environment ourEnvironment;
 
@@ -91,8 +91,7 @@ public class ProjectCreationTest {
 
   private static List<String> solutionModels(String projectName, String solutionNamespace) {
     return Collections.singletonList(
-        String.format(PATH_IN_PROJECT, projectName, SOLUTIONS_ROOT, solutionNamespace, Solution.SOLUTION_MODELS, solutionNamespace + "/sandbox",
-            MPSExtentions.MODEL));
+        String.format(PATH_IN_PROJECT, projectName, SOLUTIONS_ROOT, solutionNamespace, Solution.SOLUTION_MODELS, "sandbox", MPSExtentions.MODEL));
   }
 
   private IFile myTmpDir;
@@ -192,8 +191,13 @@ public class ProjectCreationTest {
     Set<String> unexpected = new HashSet<String>(actualList);
     unexpected.removeAll(expectedList);
 
-    Assert.assertTrue("Missing files: " + missing + ", unexpected files: " + unexpected,
-        missing.isEmpty() && unexpected.isEmpty());
+    StringJoiner missingString = new StringJoiner("\n");
+    missing.forEach(missingString::add);
+
+    StringJoiner unexpectedString = new StringJoiner("\n");
+    unexpected.forEach(unexpectedString::add);
+
+    Assert.assertTrue("\nMissing files:\n" + missingString + "\nUnexpected files:\n" + unexpectedString, missing.isEmpty() && unexpected.isEmpty());
   }
 
   private static List<String> collectFilePathList(IFile rootDir) {

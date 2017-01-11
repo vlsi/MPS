@@ -215,7 +215,7 @@ public class NewModuleUtil {
       }
     }
     if (!(alreadyOwnsTemplateModel)) {
-      EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(language.getModuleName() + ".generator.template" + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
+      EditableSModel templateModel = SModuleOperations.createModelWithAdjustments("main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
       SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
       SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
       SModelOperations.addRootNode(templateModel, mappingConfiguration);
