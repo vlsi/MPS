@@ -161,7 +161,7 @@ import java.util.Map;
         }
       });
     } catch (Exception e) {
-      LOG.error("Error indexing model file " + inputData.getFileName() + "; " + e.getMessage());
+      LOG.error("Error indexing model file " + inputData.getFileName(), e);
     }
 
     return map;
