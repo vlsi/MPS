@@ -145,11 +145,8 @@ public class SModuleOperations {
   @Nullable
   public static EditableSModel createModelWithAdjustments(@NotNull String name, @NotNull ModelRoot root) {
     try {
-      if (root.canCreateModel(name)) {
-        return createModelWithAdjustments(name, root, null);
-      }
-    } catch (ModelCannotBeCreatedException e) {
-      LOG.error("", e);
+      return createModelWithAdjustments(name, root, null);
+    } catch (ModelCannotBeCreatedException ignore) {
     }
     return null;
   }
