@@ -67,14 +67,15 @@ public class AddMenuPart_WrapperSubstitute extends SubstituteMenuBase {
           @Override
           public SNode createNode(@NotNull String pattern) {
             SNode nodeToWrap = super.createNode(pattern);
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
-            // compilation test for all passed parameters 
+            // additional compilation test for all passed parameters 
             boolean tmpVar = nodeToWrap != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
-            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && nodeToWrap != null;
 
             // Check if we have read access here 
             String name = SPropertyOperations.getString(nodeToWrap, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
@@ -85,11 +86,10 @@ public class AddMenuPart_WrapperSubstitute extends SubstituteMenuBase {
           }
           @Override
           public void select(@NotNull SNode createdNode, @NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = _context.getParentNode() != null;
             tmpVar = tmpVar && createdNode != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
 

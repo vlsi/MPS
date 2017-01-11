@@ -48,11 +48,11 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
       super.initialize(_context);
       firstMatchingText = new Computable<StringHolder>() {
         public StringHolder compute() {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
-          // compilation test for all passed parameters 
+          // additional compilation test for all passed parameters 
           boolean tmpVar = _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
+          tmpVar = tmpVar && _context.getEditorContext() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           return new StringHolder();
@@ -86,12 +86,11 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         @Nullable
         @Override
         public SNode createNode(@NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           SNode result = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"));
@@ -101,12 +100,11 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getMatchingText(@NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           return firstMatchingText.matchingText;
@@ -114,12 +112,11 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         @Nullable
         @Override
         public String getDescriptionText(@NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           return "Description of " + firstMatchingText.matchingText;
@@ -127,25 +124,23 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         @Nullable
         @Override
         public SNode getType(@NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
-          return _quotation_createNode_mw8afp_a8a0c0a();
+          return _quotation_createNode_mw8afp_a7a0c0a();
         }
         @Nullable
         @Override
         public IconResource getIcon(@NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           return IconResourceUtil.getIconResourceForConcept(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"));
@@ -159,13 +154,12 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
           return canExecute_internal(pattern, true);
         }
         public boolean canExecute_internal(@NotNull String pattern, boolean strictly) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && strictly;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
 
           return (strictly ? firstMatchingText.matchingText.equals(pattern) : firstMatchingText.matchingText.startsWith(pattern));
@@ -250,12 +244,11 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
         }
         @Override
         public void select(@NotNull SNode createdNode, @NotNull String pattern) {
-          SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
           // compilation test for all passed parameters 
           boolean tmpVar = pattern != null;
           tmpVar = tmpVar && _context.getParentNode() != null;
           tmpVar = tmpVar && createdNode != null;
-          tmpVar = tmpVar && conceptNode != null;
+          tmpVar = tmpVar && _context.getLink() != null;
           tmpVar = tmpVar && _context.getModel() != null;
           tmpVar = tmpVar && _context.getEditorContext() != null;
 
@@ -275,7 +268,7 @@ public class AddMenuPart_SimpleItemSubstitute extends SubstituteMenuBase {
       }
     }
   }
-  private static SNode _quotation_createNode_mw8afp_a8a0c0a() {
+  private static SNode _quotation_createNode_mw8afp_a7a0c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);

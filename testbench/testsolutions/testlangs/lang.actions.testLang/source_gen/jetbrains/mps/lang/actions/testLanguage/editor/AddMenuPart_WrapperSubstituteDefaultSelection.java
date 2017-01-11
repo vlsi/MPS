@@ -62,14 +62,15 @@ public class AddMenuPart_WrapperSubstituteDefaultSelection extends SubstituteMen
           @Override
           public SNode createNode(@NotNull String pattern) {
             SNode nodeToWrap = super.createNode(pattern);
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
-            // compilation test for all passed parameters 
+            // additional compilation test for all passed parameters 
             boolean tmpVar = nodeToWrap != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
-            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
+            tmpVar = tmpVar && _context.getModel() != null;
+            tmpVar = tmpVar && pattern != null;
+            tmpVar = tmpVar && nodeToWrap != null;
 
             SNode wrapperNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec9ad4dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper"));
             SLinkOperations.setTarget(wrapperNode, MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x47ad1fca2ec9ad4dL, 0x47ad1fca2ec9ad5fL, "childToWrap"), nodeToWrap);

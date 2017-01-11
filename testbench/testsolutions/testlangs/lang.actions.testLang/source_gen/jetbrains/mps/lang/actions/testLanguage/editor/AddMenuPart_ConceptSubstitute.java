@@ -43,11 +43,11 @@ public class AddMenuPart_ConceptSubstitute extends SubstituteMenuBase {
     }
     public class SubstituteMenuPart_Concepts_1nroa3_a0 extends ConceptMenusPart<SubstituteMenuItem, SubstituteMenuContext> {
       protected Collection getConcepts(SubstituteMenuContext _context) {
-        SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
-        // compilation test for all passed parameters 
+        // additional compilation test for all passed parameters 
         boolean tmpVar = _context.getParentNode() != null;
         tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-        tmpVar = tmpVar && conceptNode != null;
+        tmpVar = tmpVar && _context.getLink() != null;
+        tmpVar = tmpVar && _context.getEditorContext() != null;
         tmpVar = tmpVar && _context.getModel() != null;
 
         return ListSequence.fromListAndArray(new ArrayList<SConcept>(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
