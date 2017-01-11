@@ -3,9 +3,10 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mpsJava" />
   <property name="build.layout" location="${build.dir}/artifacts/mpsJava" />
-  <property name="mps_home" location="" />
+  <property name="mps_home" location="${basedir}" />
   <property name="idea_home" location="${mps_home}" />
   <property name="artifacts.mps" location="${mps_home}" />
+  <property name="artifacts.mpsJava" location="${build.dir}/artifacts/mpsJava" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mps}/build.properties" prefix="import.mps" />
   <property name="mps.build.number" value="${import.mps.mps.build.number}" />
@@ -70,14 +71,14 @@
     <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
       <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests" includes="icons/**, resources/**" />
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.tests.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models">
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/jetbrains.mps.ide.java.tests-src.jar" duplicate="preserve">
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen">
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
@@ -86,10 +87,32 @@
       <zipfileset file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.tests-models" prefix="module/models" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.testMaterial.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.java.testMaterial.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.ide.java.testMaterial.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.ide.java.testMaterial" type="solution" uuid="49166c31-952a-46f6-8970-ea45964379d0">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+        </dependencies>
+        <sources jar="." descriptor="jetbrains.mps.ide.java.testMaterial.msd" />
+      </module>
+    </echoxml>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.testMaterial">
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.testMaterial" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/jetbrains.mps.ide.java.testMaterial.jar" duplicate="preserve">
+      <zipfileset file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.testMaterial/jetbrains.mps.ide.java.testMaterial.msd" prefix="module" />
+      <zipfileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.testMaterial" includes="icons/**, resources/**" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-jetbrains.mps.ide.java.testMaterial" prefix="module/" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.testMaterial.jar" />
+    </jar>
     <echo file="${build.layout}/build.properties">mps.build.number=${mps.build.number}${line.separator}mps.date=${mps.date}${line.separator}mps.build.vcs.number=${mps.build.vcs.number}${line.separator}mps.teamcity.buildConfName=${mps.teamcity.buildConfName}${line.separator}mps.idea.platform.build.number=${mps.idea.platform.build.number}${line.separator}mps.mps.build.counter=${mps.mps.build.counter}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
-  <target name="buildDependents" />
+  <target name="buildDependents">
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
+  </target>
   
   <target name="fetchDependencies" />
   
@@ -181,6 +204,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
       <chunk>
+        <module file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.testMaterial/jetbrains.mps.ide.java.testMaterial.msd" />
         <module file="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/jetbrains.mps.ide.java.tests.msd" />
       </chunk>
       <jvmargs>
@@ -195,18 +219,27 @@
     <taskdef resource="jetbrains/mps/build/ant/antlib.xml" classpathref="path.mps.ant.path" />
   </target>
   
-  <target name="makeDependents" />
+  <target name="makeDependents">
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+  </target>
   
   <target name="module-tests" depends="assemble, test.java" />
   
   <target name="java.compile.jetbrains.mps.ide.java.tests" depends="fetchDependencies">
-    <mkdir dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
+    <mkdir dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
-        <pathelement path="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen/" />
+        <path location="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
+        <pathelement path="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen/" />
       </src>
       <classpath>
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
@@ -261,8 +294,8 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.ide.java.tests">
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen/" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -342,7 +375,10 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
-    <path location="${build.layout}/jetbrains.mps.ide.java.tests.jar" id="mps.tests.path" />
+    <path id="mps.tests.path">
+      <pathelement location="${build.layout}/jetbrains.mps.ide.java.testMaterial.jar" />
+      <pathelement location="${build.layout}/jetbrains.mps.ide.java.tests.jar" />
+    </path>
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
@@ -395,7 +431,8 @@
   </target>
   
   <target name="cleanSources">
-    <delete dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
-    <delete dir="${basedir}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/tests" />
+    <delete dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" />
   </target>
 </project>
