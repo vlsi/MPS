@@ -99,8 +99,7 @@ final class CopyDefaultModelRootHelper {
     for (int cnt = 0; cnt < sourceFiles.size(); ++cnt) {
       SourceRoot sourceRoot = sourceFiles.get(cnt);
       SourceRoot targetSourceRoot = targetFiles.get(cnt);
-
-      mySourceModule.getFileSystem().getFile(targetSourceRoot.getPath()).mkdirs();
+      targetSourceRoot.getAbsolutePath().mkdirs();
       ModelSourceRootWalker modelSourceRootWalker = new ModelSourceRootWalker(mySourceModelRoot, (factory, dataSource, options, file) -> {
         try {
           IFile targetModelFile = calculateTargetModelFile(mySourceModule, myTargetModule, sourceRoot, targetSourceRoot, file);

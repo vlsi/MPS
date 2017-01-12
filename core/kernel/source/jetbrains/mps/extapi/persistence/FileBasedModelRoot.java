@@ -286,6 +286,9 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         String contentRootPath = root.getAbsolutePath().getPath(); // must go away as soon as we allow relative paths
         if (FileUtil.isAncestor(myContentDir.getPath(), contentRootPath)) {
           String relPath = relativize(contentRootPath, myContentDir);
+          if (relPath.isEmpty()) {
+            relPath = MPSExtentions.DOT;
+          }
           modelRootMemento.put(LOCATION, relPath);
         } else {
           modelRootMemento.put(PATH, contentRootPath);
@@ -429,9 +432,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @NotNull
   public static String relativize(@NotNull String fullPath, @NotNull IFile contentHome) {
-    if (fullPath.isEmpty()) {
-      return MPSExtentions.DOT;
-    }
     String contentHomePath = independentAndAbsolute(contentHome.getPath());
     fullPath = independentAndAbsolute(fullPath);
     if (fullPath.equals(contentHomePath)) {

@@ -61,6 +61,6 @@ public abstract class DataSourceBase implements DataSource {
 
   @Override
   public String toString() {
-    return getClass().getName() + "; Location: " + getLocation();
+    return getClass().getSimpleName() + "; Location: " + getLocation();
   }
 }
