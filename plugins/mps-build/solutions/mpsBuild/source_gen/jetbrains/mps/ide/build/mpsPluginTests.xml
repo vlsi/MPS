@@ -6,11 +6,19 @@
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsPlugin" location="${build.dir}/artifacts/mpsPlugin" />
+  <property name="artifacts.mpsJavaPlatform" location="${build.dir}/artifacts/mpsJavaPlatform" />
+  <property name="artifacts.mpsJavaIdeaPlugin" location="${build.dir}/artifacts/mpsJavaIdeaPlugin" />
+  <property name="artifacts.mpsJpsIdeaPlugin" location="${build.dir}/artifacts/mpsJpsIdeaPlugin" />
+  <property name="artifacts.mpsPluginCore" location="${build.dir}/artifacts/mpsPluginCore" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsPlugin}/build.properties" prefix="import.mpsPlugin" />
   <property name="mpsPlugin.plugin.version" value="${import.mpsPlugin.mpsPlugin.plugin.version}" />
   <property name="mpsPlugin.date" value="${import.mpsPlugin.mpsPlugin.date}" />
   <property name="mpsBootstrapCore.version" value="${import.mpsPlugin.mpsBootstrapCore.version}" />
+  <property name="mpsPluginCommon.plugin.version" value="${import.mpsPlugin.mpsPluginCommon.plugin.version}" />
+  <property name="mpsPluginCommon.date" value="${import.mpsPlugin.mpsPluginCommon.date}" />
+  <property name="mpsPluginCore.plugin.version" value="${import.mpsPlugin.mpsPluginCore.plugin.version}" />
+  <property name="mpsPluginCore.date" value="${import.mpsPlugin.mpsPluginCore.date}" />
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
@@ -42,7 +50,7 @@
   </path>
   
   <path id="path.java.library.test.plugin">
-    <fileset dir="${artifacts.mpsPlugin}/mps-testing/languages/languageDesign" includes="*.jar" />
+    <fileset dir="${artifacts.mpsPlugin}/mps-core/languages/languageDesign" includes="*.jar" />
     <fileset dir="${artifacts.mpsPlugin}/mps-testing/lib" includes="*.jar" />
   </path>
   
@@ -93,14 +101,19 @@
     <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
     </jar>
-    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}</echo>
   </target>
   
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJpsIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -159,8 +172,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java-common.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java.jar" />
+        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -209,8 +221,8 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/jps/mps-jps-plugin.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-java/lib/jps/mps-java-jps-plugin.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-jps/lib/jps/mps-jps-plugin-core.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-jps/lib/jps/mps-java-jps-plugin.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

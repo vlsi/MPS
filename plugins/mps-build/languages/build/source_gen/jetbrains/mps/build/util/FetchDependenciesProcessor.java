@@ -26,7 +26,6 @@ public class FetchDependenciesProcessor {
   }
   public void process() {
     VisibleArtifacts artifacts = new VisibleArtifacts(project) {
-
       @Override
       protected ArtifactLookup createLookup() {
         return new ArtifactLookup(this, new DependenciesHelper(FetchDependenciesProcessor.this.genContext, project));

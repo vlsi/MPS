@@ -86,7 +86,7 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
 
     // add classes folder for modules compiled outside MPS
     if (getModule() instanceof Solution && !isCompileInMps()) {
-      // todo: remove this logic?
+      // todo: remove this logic
       IFile classes = ProjectPathUtil.getClassesFolder(getModule().getDescriptorFile());
       if (classes != null && classes.exists()) {
         libraryClassPath.add(getClassPath(classes));

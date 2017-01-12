@@ -8,7 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/core/tool/common/ant-mps-common.iml" filepath="$PROJECT_DIR$/core/tool/common/ant-mps-common.iml" group="ant" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/baseLanguage-search.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/baseLanguage-search.iml" group="languages" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/baseLanguage-util.iml" group="languages" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/basePlatform.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/aspects/behavior/behavior-api/behavior-api.iml" filepath="$PROJECT_DIR$/core/aspects/behavior/behavior-api/behavior-api.iml" group="core/aspects/behavior" />
       <module fileurl="file://$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/behavior-runtime.iml" filepath="$PROJECT_DIR$/core/aspects/behavior/behavior-runtime/behavior-runtime.iml" group="core/aspects/behavior" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/closures/runtime/closures-runtime.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/closures/runtime/closures-runtime.iml" group="languages" />
@@ -62,7 +61,9 @@
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" filepath="$PROJECT_DIR$/workbench/mps-icons/mps-icons.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" filepath="$PROJECT_DIR$/MPSPlugin/mps-idea-make-plugin-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" filepath="$PROJECT_DIR$/IdeaPlugin/mps-idea-plugin.iml" />
-      <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/mps-java.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/mps-java.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/mps-java-platform.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/mps-java-platform.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" filepath="$PROJECT_DIR$/plugins/mpsjava/basePlatform/mps-java-platform-base.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/plugins/mps-java-workbench/mps-java-workbench.iml" filepath="$PROJECT_DIR$/plugins/mps-java-workbench/mps-java-workbench.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" filepath="$PROJECT_DIR$/core/mps-messaging/mps-messaging.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" filepath="$PROJECT_DIR$/plugins/mpsmigration/mps-migration.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/workbench/mps-platform/mps-platform.iml" filepath="$PROJECT_DIR$/workbench/mps-platform/mps-platform.iml" group="workbench" />

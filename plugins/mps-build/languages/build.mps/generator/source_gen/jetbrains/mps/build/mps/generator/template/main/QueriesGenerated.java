@@ -204,14 +204,14 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("module")));
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("dependency")));
     if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("dependency")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
       return "???";
     }
-    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, ((SNode) _context.getVariable("module")));
+    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, ((SNode) _context.getVariable("dependency")));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      _context.showErrorMessage(_context.getNode(), "no location for the mps module " + SPropertyOperations.getString(((SNode) _context.getVariable("dependency")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
       return "???";
     }
     return val;
@@ -544,9 +544,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x11918e0f209b83e9L, "module"));
   }
   public static Object referenceMacro_GetReferent_8252715012761547084(final ReferenceMacroContext _context) {
-    SNode result = _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("module")), "javaModule");
+    SNode result = _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("dependency")), "javaModule");
     if (result == null) {
-      _context.showErrorMessage(_context.getNode(), "cannot get mps output for " + ((SNode) _context.getVariable("module")));
+      _context.showErrorMessage(_context.getNode(), "cannot get mps output for " + ((SNode) _context.getVariable("dependency")));
     }
     return result;
   }
@@ -614,7 +614,7 @@ public class QueriesGenerated {
     // are plain BuildSource_JavaModule references. 
     // OTOH, if we move towards partial model regeneration, we might need to reconsider assumptions like 'same model/root' and always rely on x-model 
     // reference restore mechanism (i.e. go on with BS_JavaModule and let generator restore the reference). 
-    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("module")));
+    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("dependency")));
   }
   public static boolean ifMacro_Condition_7753763219109750698(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dd40dL, "customContent")) && ListSequence.fromList(SLinkOperations.getChildren(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x11918e0f209b83e7L, 0x2e490987db3dc749L, "deployedJar")), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, 0x668c6cfbafac4c8eL, "children"))).isNotEmpty();

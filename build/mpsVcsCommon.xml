@@ -122,22 +122,22 @@
     </echoxml>
     <jar destfile="${build.layout}/languages/jetbrains.mps.vcs.mergehints.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints" includes="icons/**, resources/**" />
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
+      <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.jar" />
     </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-mergehints-languageModels">
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-languages-mergehints-languageModels">
+      <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
     <jar destfile="${build.layout}/languages/jetbrains.mps.vcs.mergehints-src.jar" duplicate="preserve">
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen">
+      <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
         <exclude name="**/checkpoints" />
         <exclude name="**/*.mps" />
       </fileset>
-      <zipfileset file="${mps_home}/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-mergehints-languageModels" prefix="module/languageModels" />
+      <zipfileset file="${mps_home}/plugins/vcs-core/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-languages-mergehints-languageModels" prefix="module/languageModels" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -231,7 +231,7 @@
       <chunk>
         <module file="${mps_home}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" />
         <module file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" />
-        <module file="${mps_home}/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" />
+        <module file="${mps_home}/plugins/vcs-core/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" />
       </chunk>
       <jvmargs>
         <arg value="-Xmx512m" />
@@ -256,7 +256,7 @@
     </ant>
   </target>
   
-  <target name="compileJava" depends="java.compile.vcs-core, java.compile.jetbrains.mps.ide.vcs.modelmetadata, java.compile.jetbrains.mps.vcs.mergehints" />
+  <target name="compileJava" depends="java.compile.vcs-core, java.compile.jetbrains.mps.vcs.mergehints, java.compile.jetbrains.mps.ide.vcs.modelmetadata" />
   
   <target name="processResources" />
   
@@ -293,6 +293,48 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/vcs-core">
       <fileset dir="${mps_home}/plugins/vcs-core/core/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.jetbrains.mps.vcs.mergehints" depends="fetchDependencies">
+    <mkdir dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
+    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints">
+      <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -339,51 +381,9 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.vcs.mergehints" depends="fetchDependencies">
-    <mkdir dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
-    <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" fork="false" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <path location="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints">
-      <fileset dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/vcs-core/core/source_gen" />
     <delete dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
-    <delete dir="${mps_home}/plugins/vcs/languages/mergehints/source_gen" />
+    <delete dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" />
   </target>
 </project>

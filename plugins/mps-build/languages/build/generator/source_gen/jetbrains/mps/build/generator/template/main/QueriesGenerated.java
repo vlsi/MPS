@@ -667,17 +667,18 @@ public class QueriesGenerated {
       return "???";
     }
     DependenciesHelper helper = new DependenciesHelper(_context, project);
-    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("module")));
+    SNode layoutNode = helper.getArtifact(((SNode) _context.getVariable("dependency")));
     if (layoutNode == null) {
-      _context.showErrorMessage(_context.getNode(), "java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " was not found in the layout");
+      _context.showErrorMessage(_context.getNode(), "java module dependency '" + SPropertyOperations.getString(((SNode) _context.getVariable("dependency")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "' was not found in the layout");
       return "???";
     }
     // it's the only use of helper.getOriginalNode outside of j.m.build.util package, and is somewhat legal, 
-    // as we still expect artifactId to come from original model (though do the translation ourselves in DH.getArtifact()) 
+    // as we still expect artifactId to come from original model 
+    // (though do the translation ourselves in DH.getArtifact()) 
     // Just don't want to deal with this code right now, need to return to artifactId concept anyway. 
-    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, helper.getOriginalNode(((SNode) _context.getVariable("module"))));
+    String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, helper.getOriginalNode(((SNode) _context.getVariable("dependency"))));
     if (val == null) {
-      _context.showErrorMessage(_context.getNode(), "no location for java module " + SPropertyOperations.getString(((SNode) _context.getVariable("module")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+      _context.showErrorMessage(_context.getNode(), "no location found for the java module dependency '" + SPropertyOperations.getString(((SNode) _context.getVariable("dependency")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "'");
       return "???";
     }
     return val;
@@ -897,7 +898,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("library")), "javalibrary");
   }
   public static Object referenceMacro_GetReferent_4821808014881207365(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("module")), "javamodule");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("dependency")), "javamodule");
   }
   public static Object referenceMacro_GetReferent_8847838005406041707(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")), MetaAdapterFactory.getInterfaceConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L, "jetbrains.mps.build.structure.BuildLayout_Container"));
@@ -1154,7 +1155,7 @@ public class QueriesGenerated {
     return SNodeOperations.getContainingRoot(_context.getNode()) != SNodeOperations.getContainingRoot(((SNode) _context.getVariable("library")));
   }
   public static boolean ifMacro_Condition_4821808014881207369(final IfMacroContext _context) {
-    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("module")));
+    return SNodeOperations.getContainingRoot(_context.getNode()) == SNodeOperations.getContainingRoot(((SNode) _context.getVariable("dependency")));
   }
   public static boolean ifMacro_Condition_2750015747481191497(final IfMacroContext _context) {
     return ListSequence.fromList(SLinkOperations.getChildren(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x7ea63ceef6e8c0edL, 0x7ea63ceef6e8c126L, "parameters"))).any(new IWhereFilter<SNode>() {

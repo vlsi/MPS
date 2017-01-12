@@ -369,8 +369,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.structure/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.typesystem.devkit/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.typesystem.devkit/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mpsjava/jetbrains.mps.ide.java.tests/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mpsjava/jetbrains.mps.ide.java.tests/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsmake/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsmake/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includeSubdirectories="true" />

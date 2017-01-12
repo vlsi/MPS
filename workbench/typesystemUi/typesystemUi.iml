@@ -17,7 +17,7 @@
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
-    <orderEntry type="module" module-name="mps-java" />
+    <orderEntry type="module" module-name="mps-java-platform" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />

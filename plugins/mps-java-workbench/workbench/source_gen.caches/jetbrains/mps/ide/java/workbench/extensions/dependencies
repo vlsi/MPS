@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry" file="JavaSourceStubsModelRootEntry.java">
+    <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="javax.swing.JComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.dialogs.properties.roots.editors.FileBasedModelRootEntry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt" />
+  </dependency>
+  <dependency className="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntryFactory" file="JavaSourceStubsModelRootEntryFactory.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
+    <classNode dependClassName="jetbrains.mps.ide.java.workbench.extensions.JavaSourceStubsModelRootEntry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryFactory" />
+  </dependency>
+</dependenciesRoot>
+

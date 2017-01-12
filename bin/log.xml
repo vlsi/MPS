@@ -125,7 +125,7 @@
   </category>
 
   <root>
-    <priority value="INFO"/>
+    <priority value="DEBUG"/>
     <appender-ref ref="CONSOLE-WARN"/>
     <appender-ref ref="DIALOG"/>
     <appender-ref ref="FILE"/>

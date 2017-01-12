@@ -481,68 +481,6 @@
           </node>
         </node>
       </node>
-      <node concept="1E1JtA" id="7xZqdYzzO9a" role="2G$12L">
-        <property role="TrG5h" value="CloneModule.test" />
-        <property role="3LESm3" value="99305b9b-aa2f-490a-a517-130cdd46b087" />
-        <property role="aoJFB" value="sources and tests" />
-        <property role="2GAjPV" value="false" />
-        <node concept="55IIr" id="7xZqdYzzO9b" role="3LF7KH">
-          <node concept="2Ry0Ak" id="7xZqdYzzO9c" role="iGT6I">
-            <property role="2Ry0Am" value="testbench" />
-            <node concept="2Ry0Ak" id="7xZqdYzzO9d" role="2Ry0An">
-              <property role="2Ry0Am" value="modules" />
-              <node concept="2Ry0Ak" id="7xZqdYzzO9e" role="2Ry0An">
-                <property role="2Ry0Am" value="testCloneModule" />
-                <node concept="2Ry0Ak" id="7xZqdYzzO9f" role="2Ry0An">
-                  <property role="2Ry0Am" value="solutions" />
-                  <node concept="2Ry0Ak" id="7xZqdYzzO9g" role="2Ry0An">
-                    <property role="2Ry0Am" value="testCloneModule" />
-                    <node concept="2Ry0Ak" id="7xZqdYzzO9h" role="2Ry0An">
-                      <property role="2Ry0Am" value="CloneModule.test.msd" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzOb$" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzOb_" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:mXGwHwhVPj" resolve="JDK" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzObA" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzObB" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:nbn5Dym2sp" resolve="Testbench" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzObC" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzObD" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzObE" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzObF" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:1TaHNgiIbIQ" resolve="MPS.Core" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzObG" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzObH" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:2eDSGe9d1qi" resolve="jetbrains.mps.ide" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="7xZqdYzzObI" role="3bR37C">
-          <node concept="3bR9La" id="7xZqdYzzObJ" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" to="ffeo:1TaHNgiIbJt" resolve="jetbrains.mps.ide.platform" />
-          </node>
-        </node>
-      </node>
       <node concept="1E1JtA" id="7xZqdYzzO9i" role="2G$12L">
         <property role="TrG5h" value="tests.testPersistence" />
         <property role="3LESm3" value="f2f32c65-17db-4e68-ad2f-8b0e2554dbd6" />
@@ -649,9 +587,6 @@
         </node>
         <node concept="L2wRC" id="7xZqdYzzO9x" role="39821P">
           <ref role="L2wRA" node="7xZqdYzzO94" resolve="tests.testDepViewer" />
-        </node>
-        <node concept="L2wRC" id="7xZqdYzzO9y" role="39821P">
-          <ref role="L2wRA" node="7xZqdYzzO9a" resolve="CloneModule.test" />
         </node>
         <node concept="L2wRC" id="7xZqdYzzO9z" role="39821P">
           <ref role="L2wRA" node="7xZqdYzzO9i" resolve="tests.testPersistence" />

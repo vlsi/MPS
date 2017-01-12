@@ -8,7 +8,7 @@
   <property name="plugin_home" location="${mps_home}/plugins/httpsupport" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
-  <property name="artifacts.mpsJava" location="${build.dir}/artifacts/mpsJava" />
+  <property name="artifacts.mpsJavaPlatform" location="${build.dir}/artifacts/mpsJavaPlatform" />
   <property name="artifacts.mpsWorkbench" location="${build.dir}/artifacts/mpsWorkbench" />
   <property name="artifacts.mpsTroveCollections" location="${build.dir}/artifacts/mpsTroveCollections" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
@@ -206,9 +206,9 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -342,15 +342,15 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>

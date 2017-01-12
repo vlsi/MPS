@@ -6725,7 +6725,12 @@
       <node concept="3clFbS" id="7o9H8C3yJPr" role="3clF47">
         <node concept="3SKdUt" id="7o9H8C3yJPs" role="3cqZAp">
           <node concept="3SKdUq" id="7o9H8C3yJPt" role="3SKWNk">
-            <property role="3SKdUp" value="this method is invoked from generation for specific usecases (wrap of a File wuth Copy), hence we expect nodes to be free-floating/transient, never from a regular model" />
+            <property role="3SKdUp" value="this method is invoked from generation for specific usecases (wrap of a File wuth Copy), " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4NIAGPNTVWJ" role="3cqZAp">
+          <node concept="3SKdUq" id="4NIAGPNTVWK" role="3SKWNk">
+            <property role="3SKdUp" value="hence we expect nodes to be free-floating/transient, never from a regular model" />
           </node>
         </node>
         <node concept="1gVbGN" id="7o9H8C3yJPu" role="3cqZAp">
@@ -7048,7 +7053,7 @@
                 <ref role="37wK5l" to="33ny:~Map.get(java.lang.Object):java.lang.Object" resolve="get" />
                 <node concept="1rXfSq" id="3h6igUp07Q0" role="37wK5m">
                   <ref role="37wK5l" node="4WwUR8hFE2y" resolve="getOriginalNode" />
-                  <node concept="37vLTw" id="3h6igUp0854" role="37wK5m">
+                  <node concept="37vLTw" id="4NIAGPNQYEk" role="37wK5m">
                     <ref role="3cqZAo" node="3h6igUoZq17" resolve="id" />
                   </node>
                 </node>
@@ -7116,19 +7121,14 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="4WwUR8hW0t8" role="3clF47">
-        <node concept="3clFbF" id="4WwUR8hW250" role="3cqZAp">
-          <node concept="2OqwBi" id="4WwUR8hW2n7" role="3clFbG">
-            <node concept="37vLTw" id="4WwUR8hW24Z" role="2Oq$k0">
-              <ref role="3cqZAo" node="5FtnUVJQGE$" resolve="idToArtifactMap" />
+        <node concept="3clFbF" id="7BaxmDyPsq5" role="3cqZAp">
+          <node concept="1rXfSq" id="7BaxmDyPsq3" role="3clFbG">
+            <ref role="37wK5l" node="7BaxmDyPjE8" resolve="putArtifact0" />
+            <node concept="37vLTw" id="7BaxmDyPsuE" role="37wK5m">
+              <ref role="3cqZAo" node="4WwUR8hW11n" resolve="id" />
             </node>
-            <node concept="liA8E" id="4WwUR8hW2Vx" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-              <node concept="37vLTw" id="4WwUR8hW32Z" role="37wK5m">
-                <ref role="3cqZAo" node="4WwUR8hW11n" resolve="id" />
-              </node>
-              <node concept="37vLTw" id="4WwUR8hW3mW" role="37wK5m">
-                <ref role="3cqZAo" node="4WwUR8hW1xZ" resolve="artifact" />
-              </node>
+            <node concept="37vLTw" id="7BaxmDyPt8A" role="37wK5m">
+              <ref role="3cqZAo" node="4WwUR8hW1xZ" resolve="artifact" />
             </node>
           </node>
         </node>
@@ -7154,22 +7154,17 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3h6igUoZ$56" role="3clF47">
-        <node concept="3clFbF" id="3h6igUoZ$57" role="3cqZAp">
-          <node concept="2OqwBi" id="3h6igUoZ$58" role="3clFbG">
-            <node concept="37vLTw" id="3h6igUoZ$59" role="2Oq$k0">
-              <ref role="3cqZAo" node="5FtnUVJQGE$" resolve="idToArtifactMap" />
+        <node concept="3clFbF" id="7BaxmDyPrWz" role="3cqZAp">
+          <node concept="1rXfSq" id="7BaxmDyPrWx" role="3clFbG">
+            <ref role="37wK5l" node="7BaxmDyPjE8" resolve="putArtifact0" />
+            <node concept="1rXfSq" id="4NIAGPNQM52" role="37wK5m">
+              <ref role="37wK5l" node="4WwUR8hFE2y" resolve="getOriginalNode" />
+              <node concept="37vLTw" id="4NIAGPNQMa_" role="37wK5m">
+                <ref role="3cqZAo" node="3h6igUoZ$5f" resolve="id" />
+              </node>
             </node>
-            <node concept="liA8E" id="3h6igUoZ$5a" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-              <node concept="1rXfSq" id="3h6igUoZBbs" role="37wK5m">
-                <ref role="37wK5l" node="4WwUR8hFE2y" resolve="getOriginalNode" />
-                <node concept="37vLTw" id="3h6igUoZBrU" role="37wK5m">
-                  <ref role="3cqZAo" node="3h6igUoZ$5f" resolve="id" />
-                </node>
-              </node>
-              <node concept="37vLTw" id="3h6igUoZ$5c" role="37wK5m">
-                <ref role="3cqZAo" node="3h6igUoZ$5h" resolve="artifact" />
-              </node>
+            <node concept="37vLTw" id="7BaxmDyPsfw" role="37wK5m">
+              <ref role="3cqZAo" node="3h6igUoZ$5h" resolve="artifact" />
             </node>
           </node>
         </node>
@@ -7195,19 +7190,14 @@
       <property role="DiZV1" value="false" />
       <property role="2aFKle" value="false" />
       <node concept="3clFbS" id="3h6igUoZ_$G" role="3clF47">
-        <node concept="3clFbF" id="3h6igUoZ_$H" role="3cqZAp">
-          <node concept="2OqwBi" id="3h6igUoZ_$I" role="3clFbG">
-            <node concept="37vLTw" id="3h6igUoZ_$J" role="2Oq$k0">
-              <ref role="3cqZAo" node="5FtnUVJQGE$" resolve="idToArtifactMap" />
+        <node concept="3clFbF" id="7BaxmDyPrpS" role="3cqZAp">
+          <node concept="1rXfSq" id="7BaxmDyPrpQ" role="3clFbG">
+            <ref role="37wK5l" node="7BaxmDyPjE8" resolve="putArtifact0" />
+            <node concept="37vLTw" id="7BaxmDyPryk" role="37wK5m">
+              <ref role="3cqZAo" node="3h6igUoZ_$P" resolve="id" />
             </node>
-            <node concept="liA8E" id="3h6igUoZ_$K" role="2OqNvi">
-              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
-              <node concept="37vLTw" id="3h6igUoZ_$L" role="37wK5m">
-                <ref role="3cqZAo" node="3h6igUoZ_$P" resolve="id" />
-              </node>
-              <node concept="37vLTw" id="3h6igUoZ_$M" role="37wK5m">
-                <ref role="3cqZAo" node="3h6igUoZ_$R" resolve="artifact" />
-              </node>
+            <node concept="37vLTw" id="7BaxmDyPrRd" role="37wK5m">
+              <ref role="3cqZAo" node="3h6igUoZ_$R" resolve="artifact" />
             </node>
           </node>
         </node>
@@ -7223,6 +7213,46 @@
       <node concept="37vLTG" id="3h6igUoZ_$R" role="3clF46">
         <property role="TrG5h" value="artifact" />
         <node concept="3Tqbb2" id="3h6igUoZ_$S" role="1tU5fm">
+          <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+        </node>
+      </node>
+    </node>
+    <node concept="2tJIrI" id="7BaxmDyPjaz" role="jymVt" />
+    <node concept="3clFb_" id="7BaxmDyPjE8" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="putArtifact0" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <node concept="3clFbS" id="7BaxmDyPjEb" role="3clF47">
+        <node concept="3clFbF" id="7BaxmDyPkIM" role="3cqZAp">
+          <node concept="2OqwBi" id="7BaxmDyPkIN" role="3clFbG">
+            <node concept="37vLTw" id="7BaxmDyPkIO" role="2Oq$k0">
+              <ref role="3cqZAo" node="5FtnUVJQGE$" resolve="idToArtifactMap" />
+            </node>
+            <node concept="liA8E" id="7BaxmDyPkIP" role="2OqNvi">
+              <ref role="37wK5l" to="33ny:~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolve="put" />
+              <node concept="37vLTw" id="7BaxmDyPkIQ" role="37wK5m">
+                <ref role="3cqZAo" node="7BaxmDyPjOK" resolve="id" />
+              </node>
+              <node concept="37vLTw" id="7BaxmDyPkIR" role="37wK5m">
+                <ref role="3cqZAo" node="7BaxmDyPjOO" resolve="artifact" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm6S6" id="7BaxmDyPjvy" role="1B3o_S" />
+      <node concept="3cqZAl" id="7BaxmDyPjE6" role="3clF45" />
+      <node concept="37vLTG" id="7BaxmDyPjOK" role="3clF46">
+        <property role="TrG5h" value="id" />
+        <node concept="3uibUv" id="7BaxmDyPjOJ" role="1tU5fm">
+          <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+        </node>
+      </node>
+      <node concept="37vLTG" id="7BaxmDyPjOO" role="3clF46">
+        <property role="TrG5h" value="artifact" />
+        <node concept="3Tqbb2" id="7BaxmDyPjOW" role="1tU5fm">
           <ref role="ehGHo" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
         </node>
       </node>
@@ -7529,7 +7559,6 @@
             <node concept="10Nm6u" id="5FtnUVJQfv_" role="3uHU7w" />
           </node>
         </node>
-        <node concept="3clFbH" id="2cKUqfNWHYo" role="3cqZAp" />
         <node concept="3cpWs8" id="5FtnUVJQfvB" role="3cqZAp">
           <node concept="3cpWsn" id="5FtnUVJQfvC" role="3cpWs9">
             <property role="TrG5h" value="originalNode" />
@@ -13868,7 +13897,6 @@
                   <node concept="37vLTw" id="2BHiRxeuoQr" role="37wK5m">
                     <ref role="3cqZAo" node="3u59u8luOxk" resolve="project" />
                   </node>
-                  <node concept="2tJIrI" id="7eQOMx7Xi9_" role="jymVt" />
                   <node concept="3clFb_" id="7eQOMx7XkzT" role="jymVt">
                     <property role="1EzhhJ" value="false" />
                     <property role="TrG5h" value="createLookup" />

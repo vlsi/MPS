@@ -7071,7 +7071,7 @@
               </node>
             </node>
             <node concept="5jKBG" id="4bEwduI8e8K" role="lGtFl">
-              <ref role="v9R2y" node="4bEwduI83eJ" resolve="reduceModule" />
+              <ref role="v9R2y" node="4bEwduI83eJ" resolve="reduceJavaModuleDependency" />
               <node concept="1UUvTB" id="4bEwduI8e8L" role="v9R3O">
                 <node concept="1UU6SM" id="4bEwduI8e8M" role="1UU7Ll">
                   <node concept="3clFbS" id="4bEwduI8e8N" role="2VODD2">
@@ -8963,7 +8963,7 @@
       <property role="3GE5qa" value="Project.Java.Dependencies" />
       <ref role="30HIoZ" to="3ior:2oUTXgLA9qB" resolve="BuildSource_JavaDependencyModule" />
       <node concept="j$656" id="4bEwduI83lW" role="1lVwrX">
-        <ref role="v9R2y" node="4bEwduI83eJ" resolve="reduceModule" />
+        <ref role="v9R2y" node="4bEwduI83eJ" resolve="reduceJavaModuleDependency" />
         <node concept="2OqwBi" id="4bEwduI83mi" role="v9R3O">
           <node concept="30H73N" id="4bEwduI83m1" role="2Oq$k0" />
           <node concept="3TrEf2" id="4bEwduI83mo" role="2OqNvi">
@@ -14918,9 +14918,9 @@
     </node>
   </node>
   <node concept="13MO4I" id="4bEwduI83eJ">
-    <property role="TrG5h" value="reduceModule" />
+    <property role="TrG5h" value="reduceJavaModuleDependency" />
     <node concept="1N15co" id="4bEwduI83eM" role="1s_3oS">
-      <property role="TrG5h" value="module" />
+      <property role="TrG5h" value="dependency" />
       <node concept="3Tqbb2" id="4bEwduI83eO" role="1N15GL">
         <ref role="ehGHo" to="3ior:6qcrfIJFdKS" resolve="BuildSource_JavaModule" />
       </node>
@@ -14945,7 +14945,7 @@
                     <node concept="2OqwBi" id="4bEwduI83h_" role="1iwH7V">
                       <node concept="1iwH7S" id="4bEwduI83hk" role="2Oq$k0" />
                       <node concept="3cR$yn" id="4bEwduI83hF" role="2OqNvi">
-                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                       </node>
                     </node>
                   </node>
@@ -14963,7 +14963,7 @@
                     <node concept="2OqwBi" id="4bEwduI83iG" role="2Oq$k0">
                       <node concept="1iwH7S" id="4bEwduI83ir" role="2Oq$k0" />
                       <node concept="3cR$yn" id="4bEwduI83iM" role="2OqNvi">
-                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                       </node>
                     </node>
                     <node concept="2Rxl7S" id="4bEwduI83ja" role="2OqNvi" />
@@ -15066,7 +15066,7 @@
                                   <node concept="2OqwBi" id="6b4RkXS8sVW" role="37wK5m">
                                     <node concept="1iwH7S" id="6b4RkXS8sVX" role="2Oq$k0" />
                                     <node concept="3cR$yn" id="6b4RkXS8sVY" role="2OqNvi">
-                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                     </node>
                                   </node>
                                 </node>
@@ -15082,13 +15082,13 @@
                                     <node concept="3cpWs3" id="4bEwduI83k2" role="2k5Stb">
                                       <node concept="3cpWs3" id="4bEwduI83k3" role="3uHU7B">
                                         <node concept="Xl_RD" id="4bEwduI83k4" role="3uHU7B">
-                                          <property role="Xl_RC" value="java module " />
+                                          <property role="Xl_RC" value="java module dependency '" />
                                         </node>
                                         <node concept="2OqwBi" id="4bEwduI83k5" role="3uHU7w">
                                           <node concept="2OqwBi" id="4bEwduI83lp" role="2Oq$k0">
                                             <node concept="1iwH7S" id="4bEwduI83l8" role="2Oq$k0" />
                                             <node concept="3cR$yn" id="4bEwduI83lv" role="2OqNvi">
-                                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                             </node>
                                           </node>
                                           <node concept="3TrcHB" id="4bEwduI83lx" role="2OqNvi">
@@ -15097,7 +15097,7 @@
                                         </node>
                                       </node>
                                       <node concept="Xl_RD" id="4bEwduI83ka" role="3uHU7w">
-                                        <property role="Xl_RC" value=" was not found in the layout" />
+                                        <property role="Xl_RC" value="' was not found in the layout" />
                                       </node>
                                     </node>
                                     <node concept="30H73N" id="4bEwduI83kb" role="2k6f33" />
@@ -15124,7 +15124,12 @@
                           </node>
                           <node concept="3SKdUt" id="42PYVEWFyhw" role="3cqZAp">
                             <node concept="3SKdUq" id="42PYVEWFyhy" role="3SKWNk">
-                              <property role="3SKdUp" value="as we still expect artifactId to come from original model (though do the translation ourselves in DH.getArtifact())" />
+                              <property role="3SKdUp" value="as we still expect artifactId to come from original model" />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="4NIAGPNRudZ" role="3cqZAp">
+                            <node concept="3SKdUq" id="4NIAGPNRue0" role="3SKWNk">
+                              <property role="3SKdUp" value="(though do the translation ourselves in DH.getArtifact())" />
                             </node>
                           </node>
                           <node concept="3SKdUt" id="42PYVEWFzxF" role="3cqZAp">
@@ -15145,16 +15150,16 @@
                                   <node concept="37vLTw" id="3GM_nagTBmM" role="37wK5m">
                                     <ref role="3cqZAo" node="4bEwduI83jD" resolve="helper" />
                                   </node>
-                                  <node concept="2OqwBi" id="4WwUR8hHuTF" role="37wK5m">
-                                    <node concept="37vLTw" id="4WwUR8hHuyA" role="2Oq$k0">
+                                  <node concept="2OqwBi" id="4NIAGPO0a5y" role="37wK5m">
+                                    <node concept="37vLTw" id="4NIAGPO09MH" role="2Oq$k0">
                                       <ref role="3cqZAo" node="4bEwduI83jD" resolve="helper" />
                                     </node>
-                                    <node concept="liA8E" id="4WwUR8hHvsf" role="2OqNvi">
+                                    <node concept="liA8E" id="4NIAGPO0av1" role="2OqNvi">
                                       <ref role="37wK5l" to="o3n2:4WwUR8hFE2y" resolve="getOriginalNode" />
                                       <node concept="2OqwBi" id="3h6igUp0nDT" role="37wK5m">
                                         <node concept="1iwH7S" id="3h6igUp0n97" role="2Oq$k0" />
-                                        <node concept="3cR$yn" id="3h6igUp0o8u" role="2OqNvi">
-                                          <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                        <node concept="3cR$yn" id="4NIAGPNRudQ" role="2OqNvi">
+                                          <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                         </node>
                                       </node>
                                     </node>
@@ -15169,19 +15174,24 @@
                                 <node concept="2OqwBi" id="4bEwduI83kt" role="3clFbG">
                                   <node concept="1iwH7S" id="4bEwduI83ku" role="2Oq$k0" />
                                   <node concept="2k5nB$" id="4bEwduI83kv" role="2OqNvi">
-                                    <node concept="3cpWs3" id="4bEwduI83kw" role="2k5Stb">
-                                      <node concept="Xl_RD" id="4bEwduI83kx" role="3uHU7B">
-                                        <property role="Xl_RC" value="no location for java module " />
+                                    <node concept="3cpWs3" id="3ZROizBXFWt" role="2k5Stb">
+                                      <node concept="Xl_RD" id="3ZROizBXFWz" role="3uHU7w">
+                                        <property role="Xl_RC" value="'" />
                                       </node>
-                                      <node concept="2OqwBi" id="4bEwduI83ky" role="3uHU7w">
-                                        <node concept="2OqwBi" id="4bEwduI83lO" role="2Oq$k0">
-                                          <node concept="1iwH7S" id="4bEwduI83lz" role="2Oq$k0" />
-                                          <node concept="3cR$yn" id="4bEwduI83lT" role="2OqNvi">
-                                            <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
-                                          </node>
+                                      <node concept="3cpWs3" id="4bEwduI83kw" role="3uHU7B">
+                                        <node concept="Xl_RD" id="4bEwduI83kx" role="3uHU7B">
+                                          <property role="Xl_RC" value="no location found for the java module dependency '" />
                                         </node>
-                                        <node concept="3TrcHB" id="4bEwduI83kA" role="2OqNvi">
-                                          <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                        <node concept="2OqwBi" id="4bEwduI83ky" role="3uHU7w">
+                                          <node concept="2OqwBi" id="4bEwduI83lO" role="2Oq$k0">
+                                            <node concept="1iwH7S" id="4bEwduI83lz" role="2Oq$k0" />
+                                            <node concept="3cR$yn" id="4bEwduI83lT" role="2OqNvi">
+                                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
+                                            </node>
+                                          </node>
+                                          <node concept="3TrcHB" id="4bEwduI83kA" role="2OqNvi">
+                                            <ref role="3TsBF5" to="tpck:h0TrG11" resolve="name" />
+                                          </node>
                                         </node>
                                       </node>
                                     </node>

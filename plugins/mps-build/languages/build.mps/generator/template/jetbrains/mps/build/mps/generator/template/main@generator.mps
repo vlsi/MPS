@@ -1104,7 +1104,7 @@
                   </node>
                 </node>
                 <node concept="5jKBG" id="7a7y9hgbR6s" role="lGtFl">
-                  <ref role="v9R2y" node="7a7y9hgbR50" resolve="reduceMPSModule" />
+                  <ref role="v9R2y" node="7a7y9hgbR50" resolve="reduceMPSModuleDependency" />
                   <node concept="2OqwBi" id="4j_Rh$ItR98" role="v9R3O">
                     <node concept="30H73N" id="3GUVQpJnGuB" role="2Oq$k0" />
                     <node concept="3TrEf2" id="4j_Rh$ItR9r" role="2OqNvi">
@@ -4931,10 +4931,10 @@
     </node>
   </node>
   <node concept="13MO4I" id="7a7y9hgbR50">
-    <property role="TrG5h" value="reduceMPSModule" />
+    <property role="TrG5h" value="reduceMPSModuleDependency" />
     <ref role="3gUMe" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
     <node concept="1N15co" id="4bEwduI83eM" role="1s_3oS">
-      <property role="TrG5h" value="module" />
+      <property role="TrG5h" value="dependency" />
       <node concept="3Tqbb2" id="4bEwduI83eO" role="1N15GL">
         <ref role="ehGHo" to="kdzh:4zCbl23cpcc" resolve="BuildMps_Module" />
       </node>
@@ -4993,7 +4993,7 @@
                     <node concept="2OqwBi" id="4bEwduI83iG" role="2Oq$k0">
                       <node concept="1iwH7S" id="4bEwduI83ir" role="2Oq$k0" />
                       <node concept="3cR$yn" id="4bEwduI83iM" role="2OqNvi">
-                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                        <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                       </node>
                     </node>
                     <node concept="2Rxl7S" id="4bEwduI83ja" role="2OqNvi" />
@@ -5096,7 +5096,7 @@
                                   <node concept="2OqwBi" id="3h6igUp0ZUC" role="37wK5m">
                                     <node concept="1iwH7S" id="3h6igUp0ZUD" role="2Oq$k0" />
                                     <node concept="3cR$yn" id="3h6igUp0ZUE" role="2OqNvi">
-                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                     </node>
                                   </node>
                                 </node>
@@ -5118,7 +5118,7 @@
                                           <node concept="2OqwBi" id="4bEwduI83lp" role="2Oq$k0">
                                             <node concept="1iwH7S" id="4bEwduI83l8" role="2Oq$k0" />
                                             <node concept="3cR$yn" id="7a7y9hgbR5f" role="2OqNvi">
-                                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                             </node>
                                           </node>
                                           <node concept="3TrcHB" id="4bEwduI83lx" role="2OqNvi">
@@ -5163,7 +5163,7 @@
                                   <node concept="2OqwBi" id="3g2FLTvbpCb" role="37wK5m">
                                     <node concept="1iwH7S" id="3g2FLTvbpCc" role="2Oq$k0" />
                                     <node concept="3cR$yn" id="3g2FLTvbpCd" role="2OqNvi">
-                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                      <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                     </node>
                                   </node>
                                 </node>
@@ -5178,13 +5178,13 @@
                                   <node concept="2k5nB$" id="4bEwduI83kv" role="2OqNvi">
                                     <node concept="3cpWs3" id="4bEwduI83kw" role="2k5Stb">
                                       <node concept="Xl_RD" id="4bEwduI83kx" role="3uHU7B">
-                                        <property role="Xl_RC" value="no location for java module " />
+                                        <property role="Xl_RC" value="no location for the mps module " />
                                       </node>
                                       <node concept="2OqwBi" id="4bEwduI83ky" role="3uHU7w">
                                         <node concept="2OqwBi" id="4bEwduI83lO" role="2Oq$k0">
                                           <node concept="1iwH7S" id="4bEwduI83lz" role="2Oq$k0" />
                                           <node concept="3cR$yn" id="4bEwduI83lT" role="2OqNvi">
-                                            <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                                            <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                                           </node>
                                         </node>
                                         <node concept="3TrcHB" id="4bEwduI83kA" role="2OqNvi">
@@ -5241,7 +5241,7 @@
                       <node concept="2OqwBi" id="7a7y9hgbR5Z" role="1iwH7V">
                         <node concept="1iwH7S" id="7a7y9hgbR5K" role="2Oq$k0" />
                         <node concept="3cR$yn" id="7a7y9hgbR64" role="2OqNvi">
-                          <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                          <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                         </node>
                       </node>
                     </node>
@@ -5261,7 +5261,7 @@
                           <node concept="2OqwBi" id="7a7y9hgbR6m" role="3uHU7w">
                             <node concept="1iwH7S" id="7a7y9hgbR6n" role="2Oq$k0" />
                             <node concept="3cR$yn" id="7a7y9hgbR6o" role="2OqNvi">
-                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="module" />
+                              <ref role="3cRzXn" node="4bEwduI83eM" resolve="dependency" />
                             </node>
                           </node>
                         </node>

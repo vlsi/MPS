@@ -84,7 +84,8 @@ public class DependenciesHelper {
   }
 
   public void preserveLocations(SNode from, SNode to) {
-    // this method is invoked from generation for specific usecases (wrap of a File wuth Copy), hence we expect nodes to be free-floating/transient, never from a regular model 
+    // this method is invoked from generation for specific usecases (wrap of a File wuth Copy),  
+    // hence we expect nodes to be free-floating/transient, never from a regular model 
     assert SNodeOperations.getModel(to) == null || SNodeOperations.getModel(to) instanceof TransientSModel;
     to.putUserObject(myLocationKey, from.getUserObject(myLocationKey));
     to.putUserObject(myContentLocationKey, from.getUserObject(myContentLocationKey));
@@ -131,14 +132,18 @@ public class DependenciesHelper {
   }
 
   public void putArtifact(String id, SNode artifact) {
-    idToArtifactMap.put(id, artifact);
+    putArtifact0(id, artifact);
   }
 
   public void putArtifact(SNode id, SNode artifact) {
-    idToArtifactMap.put(getOriginalNode(id), artifact);
+    putArtifact0(getOriginalNode(id), artifact);
   }
 
   public void putArtifact(LocalSourcePathArtifact id, SNode artifact) {
+    putArtifact0(id, artifact);
+  }
+
+  private void putArtifact0(Object id, SNode artifact) {
     idToArtifactMap.put(id, artifact);
   }
 
@@ -185,7 +190,6 @@ public class DependenciesHelper {
     if (genContext == null) {
       throw new IllegalStateException("transient model is not expected");
     }
-
     SNode originalNode = genContext.getOriginalCopiedInputNode(node);
     if ((originalNode == null)) {
       genContext.showErrorMessage(node, "cannot resolve dependency on transient model, no original node is available");

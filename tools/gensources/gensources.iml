@@ -1262,7 +1262,6 @@
     <orderEntry type="module" module-name="intentions-runtime" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="baseLanguage-util" />
-    <orderEntry type="module" module-name="basePlatform" />
     <orderEntry type="module" module-name="environment" />
     <orderEntry type="module" module-name="ideaIntegration" />
     <orderEntry type="module" module-name="make-facets" />
@@ -1294,6 +1293,6 @@
     <orderEntry type="module" module-name="smodelquery-runtime" />
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="refactoring" />
+    <orderEntry type="module" module-name="mps-java-platform-base" />
   </component>
 </module>
-

@@ -7,7 +7,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
   <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
-  <property name="artifacts.mpsJava" location="${build.dir}/artifacts/mpsJava" />
+  <property name="artifacts.mpsJavaWorkbench" location="${build.dir}/artifacts/mpsJavaWorkbench" />
   <property name="artifacts.mpsWorkbench" location="${build.dir}/artifacts/mpsWorkbench" />
   <property name="artifacts.mpsTroveCollections" location="${build.dir}/artifacts/mpsTroveCollections" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
@@ -45,38 +45,8 @@
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
-  <target name="assemble" depends="classes, declare-mps-tasks, fetchDependencies">
-    <mkdir dir="${build.layout}/mps-java" />
-    <copy todir="${build.layout}/mps-java">
-      <fileset dir="${artifacts.mpsJava}" />
-    </copy>
-    <mkdir dir="${build.layout}/mps-java/lib" />
-    <mkdir dir="${build.tmp}/default/mpsjava.jar" />
-    <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />
-    <copy todir="${build.tmp}/default/mpsjava.jar/META-INF">
-      <fileset file="${mps_home}/plugins/mpsjava/META-INF/plugin.xml" />
-      <filterchain>
-        <tokenfilter>
-          <replaceregex pattern="../platform/classes/jetbrains/" replace="../jetbrains/" flags="gi" />
-        </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="../workbench/classes/jetbrains/" replace="../jetbrains/" flags="gi" />
-        </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
-        </tokenfilter>
-      </filterchain>
-    </copy>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-workbench-models">
-      <fileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/mps-java/lib/mpsjava.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/mps-java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" prefix="modules/jetbrains.mps.ide.java" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-workbench-models" prefix="modules/jetbrains.mps.ide.java/models" />
-      <fileset dir="${build.tmp}/default/mpsjava.jar" />
-    </jar>
+  <target name="assemble" depends="classes, declare-mps-tasks">
+    <mkdir dir="${build.layout}" />
     <jar destfile="${build.layout}/ideaIntegration.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/ideaIntegration" />
       <zipfileset file="${mps_home}/plugins/ideaIntegration/META-INF/plugin.xml" prefix="META-INF" />
@@ -520,9 +490,10 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -537,7 +508,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.mps-java, java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.jetbrains.mps.console.actions, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.samples, java.compile.mpsmigration" />
+  <target name="compileJava" depends="java.compile.ideaIntegration, java.compile.migrationAssistant, java.compile.modelchecker, java.compile.consoleTool, java.compile.jetbrains.mps.console.base, java.compile.jetbrains.mps.console.base#5336086527852717844, java.compile.jetbrains.mps.console.scripts.runtime, java.compile.jetbrains.mps.console.scripts, java.compile.jetbrains.mps.console.scripts#1734392475490224704, java.compile.jetbrains.mps.console.actions, java.compile.jetbrains.mps.console.ideCommands.runtime, java.compile.jetbrains.mps.console.ideCommands, java.compile.jetbrains.mps.console.ideCommands#7935955022005272663, java.compile.jetbrains.mps.console.internalCommands.runtime, java.compile.jetbrains.mps.console.internalCommands, java.compile.jetbrains.mps.console.internalCommands#8483375838963160298, java.compile.samples, java.compile.mpsmigration" />
   
   <target name="processResources" />
   
@@ -626,7 +597,6 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tool.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
-      <library file="${artifacts.mpsJava}/lib/mps-java-common.jar" />
       <library file="${artifacts.mpsMakePlugin}/mps-make/solutions/jetbrains.mps.ide.make.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
@@ -639,7 +609,6 @@
         <module file="${mps_home}/plugins/console/lang/internalCommandsRuntime/jetbrains.mps.console.internalCommands.runtime.msd" />
         <module file="${mps_home}/plugins/console/lang/scripts/jetbrains.mps.console.scripts.mpl" />
         <module file="${mps_home}/plugins/console/lang/scriptsRuntime/jetbrains.mps.console.scripts.runtime.msd" />
-        <module file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" />
       </chunk>
       <chunk>
         <module file="${mps_home}/plugins/console/jetbrains.mps.console.actions.msd" />
@@ -665,15 +634,19 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
+    <ant antfile="build/mpsJavaWorkbench.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
@@ -813,52 +786,6 @@
       <fileset dir="${mps_home}/plugins/modelchecker/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/modelchecker/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/modelchecker/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-    </copy>
-  </target>
-  
-  <target name="java.compile.mps-java" depends="fetchDependencies">
-    <mkdir dir="${build.tmp}/java/out/mps-java" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="false" encoding="utf8" includeantruntime="false" debug="true">
-      <compilerarg value="-Xlint:none" />
-      <src>
-        <pathelement path="${mps_home}/plugins/mpsjava/platform/source" />
-        <pathelement path="${mps_home}/plugins/mpsjava/workbench/source_gen" />
-      </src>
-      <classpath>
-        <fileset file="${artifacts.mpsJava}/lib/mps-java-common.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-api.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-behavior-runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
-        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
-        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <path refid="path.jdk.classpath" />
-      </classpath>
-    </javac2>
-    <copy todir="${build.tmp}/java/out/mps-java">
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen">
-        <include name="**/*.xml" />
-      </fileset>
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mpsjava/workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1609,7 +1536,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mpsmigration" depends="java.compile.modelchecker, java.compile.mps-java, fetchDependencies">
+  <target name="java.compile.mpsmigration" depends="java.compile.modelchecker, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mpsmigration/source_gen" />
     <mkdir dir="${build.tmp}/java/out/mpsmigration" />
     <javac2 destdir="${build.tmp}/java/out/mpsmigration" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1637,8 +1564,6 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/modelchecker" />
-        <pathelement path="${build.tmp}/java/out/mps-java" />
-        <fileset file="${artifacts.mpsJava}/lib/mps-java-common.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -1664,7 +1589,6 @@
     <delete dir="${mps_home}/plugins/console/lang/scripts/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/scripts/generator/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/scriptsRuntime/source_gen" />
-    <delete dir="${mps_home}/plugins/mpsjava/workbench/source_gen" />
     <delete dir="${mps_home}/plugins/console/actions/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/base/generator/source_gen" />
     <delete dir="${mps_home}/plugins/console/lang/ideCommands/generator/source_gen" />

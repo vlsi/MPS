@@ -17,6 +17,8 @@
   <property name="artifacts.mpsStandalone" location="${build.dir}/artifacts/mpsStandalone" />
   <property name="artifacts.mpsDevKit" location="${build.dir}/artifacts/mpsDevKit" />
   <property name="artifacts.mpsPlugins" location="${build.dir}/artifacts/mpsPlugins" />
+  <property name="artifacts.mpsJavaPlatform" location="${build.dir}/artifacts/mpsJavaPlatform" />
+  <property name="artifacts.mpsJavaWorkbench" location="${build.dir}/artifacts/mpsJavaWorkbench" />
   <property name="artifacts.mpsHttpSupportPlugin" location="${build.dir}/artifacts/mpsHttpSupportPlugin" />
   <property name="artifacts.mpsMakePlugin" location="${build.dir}/artifacts/mpsMakePlugin" />
   <property name="artifacts.mpsBuildUI" location="${build.dir}/artifacts/mpsBuildUI" />
@@ -120,6 +122,14 @@
     <copy todir="${build.layout}/plugins/mps-trove">
       <fileset dir="${artifacts.mpsTroveCollections}/mps-trove" />
     </copy>
+    <mkdir dir="${build.layout}/plugins/mps-java-platform" />
+    <copy todir="${build.layout}/plugins/mps-java-platform">
+      <fileset dir="${artifacts.mpsJavaPlatform}/mps-java-platform" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-java-workbench" />
+    <copy todir="${build.layout}/plugins/mps-java-workbench">
+      <fileset dir="${artifacts.mpsJavaWorkbench}/mps-java-workbench" />
+    </copy>
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsStandalone}/plugins" />
     </copy>
@@ -204,7 +214,8 @@
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsStandalone.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsDevKit.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsHttpSupportPlugin.xml" inheritAll="false" useNativeBasedir="true" />

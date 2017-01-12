@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright 2003-2010 JetBrains s.r.o.
+  ~ Copyright 2003-2017 JetBrains s.r.o.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -15,23 +15,19 @@
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.ide.java</id>
-  <name>Java Integration</name>
+  <id>jetbrains.mps.ide.java.platform</id>
+  <name>MPS Java Integration Platform</name>
   <description>Allows importing sources from Java into MPS</description>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="163.1" until-build="171.1"/>
 
-  <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
-              xpointer="xpointer(/components/*)"/>
+  <depends>com.intellij.modules.mps</depends>
+  <xi:include href="platform/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder</implementation-class>
-    </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.java.sourceStubs.EmptyJavaSourcetubsFindUsages</implementation-class>
     </component>
   </application-components>
 
@@ -42,25 +38,10 @@
     <component>
       <implementation-class>jetbrains.mps.ide.java.platform.highlighters.JavaHighlighters</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.ide.java.JavaExtensionComponent</implementation-class>
-    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
-    <mps.LanguageLibrary dir=""/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
-    <mps.VisibleModuleMask mask="Ant"/>
-    <mps.VisibleModuleMask mask="closures.*"/>
-    <mps.VisibleModuleMask mask="collections.*"/>
-    <mps.VisibleModuleMask mask="JDK.*"/>
-    <mps.VisibleModuleMask mask="Annotations"/>
-    <mps.VisibleModuleMask mask="jetbrains\.mps\.ant"/>
-    <mps.VisibleModuleMask mask="jetbrains\.mps\.baseLanguage.*"/>
-    <mps.VisibleModuleMask mask="jetbrains\.mps\.devkit\.general-purpose"/>
-    <mps.modelRootFactory rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory"/>
-    <mps.modelRootSettings rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsProvider"/>
-    <mps.modelRootEntry rootType="java_source_stubs" className="jetbrains.mps.ide.java.ui.JavaSourceStubsModelRootEntryFactory"/>
   </extensions>
 </idea-plugin>
