@@ -37,10 +37,10 @@ public class JDOMUtil {
     try {
       return saxBuilder.build(new InputStreamReader(in, DEFAULT_CHARSET));
     } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } catch (IOException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } finally {
       in.close();

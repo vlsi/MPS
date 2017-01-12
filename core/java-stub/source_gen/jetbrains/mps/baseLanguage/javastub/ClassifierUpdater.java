@@ -147,7 +147,7 @@ public class ClassifierUpdater {
           } else {
             // TODO: avoid this quick fix for SchemeProcessor class in scheme.kt from IDEA platform 
             if (LOG.isEnabledFor(Level.WARN)) {
-              LOG.warn("ClassifierType was expected, but received: " + typeByASMType + " while parsing the " + myParsedClass);
+              LOG.warn("ClassifierType was expected, but received: " + typeByASMType + " when parsing the " + myClassifier);
             }
           }
 

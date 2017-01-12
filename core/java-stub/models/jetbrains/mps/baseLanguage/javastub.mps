@@ -4313,12 +4313,22 @@
                           </node>
                           <node concept="34ab3g" id="7KcHhTHUfQk" role="3cqZAp">
                             <property role="35gtTG" value="warn" />
-                            <node concept="3cpWs3" id="7KcHhTHUgtK" role="34bqiv">
-                              <node concept="37vLTw" id="7KcHhTHUgzS" role="3uHU7w">
-                                <ref role="3cqZAo" node="7KcHhTHUeF1" resolve="typeByASMType" />
+                            <node concept="3cpWs3" id="68ZF3WBP9$D" role="34bqiv">
+                              <node concept="37vLTw" id="68ZF3WBP9EM" role="3uHU7w">
+                                <ref role="3cqZAo" node="4H5njqSyyM1" resolve="myClassifier" />
                               </node>
-                              <node concept="Xl_RD" id="7KcHhTHUfQm" role="3uHU7B">
-                                <property role="Xl_RC" value="ClassifierType was expected, but received: " />
+                              <node concept="3cpWs3" id="68ZF3WBP9gd" role="3uHU7B">
+                                <node concept="3cpWs3" id="7KcHhTHUgtK" role="3uHU7B">
+                                  <node concept="Xl_RD" id="7KcHhTHUfQm" role="3uHU7B">
+                                    <property role="Xl_RC" value="ClassifierType was expected, but received: " />
+                                  </node>
+                                  <node concept="37vLTw" id="7KcHhTHUgzS" role="3uHU7w">
+                                    <ref role="3cqZAo" node="7KcHhTHUeF1" resolve="typeByASMType" />
+                                  </node>
+                                </node>
+                                <node concept="Xl_RD" id="68ZF3WBP9j6" role="3uHU7w">
+                                  <property role="Xl_RC" value=" when parsing the " />
+                                </node>
                               </node>
                             </node>
                           </node>
