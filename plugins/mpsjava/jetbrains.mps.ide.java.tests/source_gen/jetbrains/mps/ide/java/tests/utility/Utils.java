@@ -28,8 +28,11 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.DefaultSourceRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.project.Project;
@@ -42,7 +45,6 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import java.util.Collections;
 import jetbrains.mps.ide.java.newparser.DirParser;
-import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -57,9 +59,11 @@ public class Utils {
   public Utils(SRepository repository) {
     myRepo = repository;
   }
+
   private static SModule getModule() {
     return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("c3786d2b-aba2-45e5-8de0-1124fd14259b(jetbrains.mps.ide.java.tests)"));
   }
+
   public static String generateCode(SNode node) {
     return TextGeneratorEngine.generateText(node);
   }
@@ -109,11 +113,11 @@ public class Utils {
     }
   }
 
-  public static void checkFile(String path, SNode expected) {
+  public static void checkFile(IFile path, SNode expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule((SModuleBase) getModule());
-    mr.setContentRoot(path);
-    mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, path);
+    mr.setContentDirectory(path);
+    mr.addSourceRoot(SourceRootKinds.SOURCES, new DefaultSourceRoot("", path));
 
     Iterator<SModel> models = mr.loadModels().iterator();
     Assert.assertTrue("No models returned from model root", models.hasNext());
@@ -139,15 +143,15 @@ public class Utils {
 
   }
 
-  public static void checkStubModel(String dirPath, SModel expected) {
+  public static void checkStubModel(IFile dirPath, SModel expected) {
     checkStubModels(dirPath, ListSequence.fromListAndArray(new ArrayList<SModel>(), expected));
   }
 
-  public static void checkStubModels(String dirPath, List<SModel> expected) {
+  public static void checkStubModels(IFile dirPath, List<SModel> expected) {
     JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
     mr.setModule((SModuleBase) getModule());
-    mr.setContentRoot(dirPath);
-    mr.addFile(JavaSourceStubModelRoot.SOURCE_ROOTS, dirPath);
+    mr.setContentDirectory(dirPath);
+    mr.addSourceRoot(SourceRootKinds.SOURCES, new DefaultSourceRoot("", dirPath));
     mr.attach();
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
@@ -164,9 +168,10 @@ public class Utils {
     }
     compare(models, expected);
   }
-  public static void checkSourceModel(Project project, String dirPath, SModel expected) {
+
+  public static void checkSourceModel(Project project, IFile dirPath, SModel expected) {
     try {
-      SModule testMaterials = ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)"));
+      SModule testMaterials = PersistenceFacade.getInstance().createModuleReference("49166c31-952a-46f6-8970-ea45964379d0(jetbrains.mps.ide.java.testMaterial)").resolve(project.getRepository());
 
       String tmpDir = FileUtil.createTmpDir().getAbsolutePath();
 
@@ -182,7 +187,7 @@ public class Utils {
       TempModuleOptions tempModOpts = TempModuleOptions.forNewModule(Collections.singleton(mrDesc), false, true);
       testMaterials = tempModOpts.createModule();
 
-      DirParser dirParser = new DirParser(testMaterials, project.getModelAccess(), FileSystem.getInstance().getFileByPath(dirPath));
+      DirParser dirParser = new DirParser(testMaterials, project.getModelAccess(), dirPath);
 
       dirParser.parseDirs();
 
@@ -206,6 +211,7 @@ public class Utils {
       throw new RuntimeException(e);
     }
   }
+
   public void compareBinAndSrcStubs(String binPath, String sourcePath) {
     JavaSourceStubModelRoot src2 = new JavaSourceStubModelRoot();
 
@@ -259,6 +265,7 @@ public class Utils {
 
     compare(binModels, srcModelsX);
   }
+
   public static void compare(Iterable<SModel> leftModels, Iterable<SModel> rightModels) {
     Assert.assertSame("Different number of models: " + Sequence.fromIterable(leftModels).count() + " and " + Sequence.fromIterable(rightModels).count(), Sequence.fromIterable(leftModels).count(), Sequence.fromIterable(rightModels).count());
     Map<String, SModel> leftModelMap = MapSequence.fromMap(new HashMap<String, SModel>());
@@ -294,6 +301,7 @@ public class Utils {
 
     Assert.assertFalse("Models differ", errors);
   }
+
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     boolean wereErrors = false;
     List<SNode> binRoots = SModelOperations.roots(left, null);
@@ -317,6 +325,7 @@ public class Utils {
     }
     return wereErrors;
   }
+
   public static void buildModelNodeMap(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightRootIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightRoot : ListSequence.fromList(SModelOperations.roots(right, null))) {
@@ -331,6 +340,7 @@ public class Utils {
       buildClassifierNodeMap(SNodeOperations.cast(leftRoot, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), SNodeOperations.cast(rightBrother, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), nodeMap);
     }
   }
+
   public static void buildClassifierNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     // handling this class and nested classes 
     Map<String, SNode> rightNestedIndex = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -362,6 +372,7 @@ public class Utils {
       }
     }
   }
+
   public static void buildMethodsNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     List<SNode> leftMethods = new ArrayList<SNode>();
     List<SNode> rightMethods = new ArrayList<SNode>();
@@ -378,6 +389,7 @@ public class Utils {
       buildMethodBodyNodeMap(leftMthd, MapSequence.fromMap(rightIndex).get(SPropertyOperations.getString(leftMthd, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"))), nodeMap);
     }
   }
+
   public static void buildMethodBodyNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
 
     //  type vars 
@@ -395,9 +407,8 @@ public class Utils {
     buildJustNodeMap(leftVars, rightVars, nodeMap);
 
     // anonymous classes and their insides 
-
-
   }
+
   public static void buildJustNodeMap(List<SNode> left, List<SNode> right, Map<SNode, SNode> nodeMap) {
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightNode : ListSequence.fromList(right)) {
