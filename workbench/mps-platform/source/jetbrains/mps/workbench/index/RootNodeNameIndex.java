@@ -95,22 +95,19 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
         if (factory == null) {
           return null;
         }
+        model = PersistenceUtil.loadModel(inputData.getContent(), factory);
+        if (model == null) {
+          return null;
+        }
+        inputData.putUserData(PARSED_MODEL, model);
       } catch (URINotSupportedException | URISyntaxException | MalformedURLException  e) {
         LOG.error("", e);
         return null;
       }
-      ModelFactory factory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
-      if (factory == null) {
-        return null;
-      }
-      model = PersistenceUtil.loadModel(inputData.getContent(), factory);
-      if (model == null) {
-        return null;
-      }
-      inputData.putUserData(PARSED_MODEL, model);
     }
     return model;
   }
+
   @Nullable
   private static URL constructURLFromData(FileContent inputData) throws MalformedURLException, URISyntaxException {
     return VfsUtilCore.convertToURL(inputData.getFile().getUrl());
