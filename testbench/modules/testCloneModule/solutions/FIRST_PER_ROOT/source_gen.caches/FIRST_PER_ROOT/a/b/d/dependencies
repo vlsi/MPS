@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="FIRST_PER_ROOT.a.b.d.Maaain" file="Maaain.java">
-    <classNode dependClassName="FIRST_PER_ROOT.a.b.c.Main" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-  </dependency>
+  <dependency className="FIRST_PER_ROOT.a.b.d.Referent" file="Referent.java" />
 </dependenciesRoot>
 

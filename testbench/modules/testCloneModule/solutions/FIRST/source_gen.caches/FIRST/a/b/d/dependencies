@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="FIRST.a.b.d.Referee" file="Referee.java">
+    <classNode dependClassName="FIRST.a.b.c.Referent" />
+  </dependency>
+</dependenciesRoot>
+

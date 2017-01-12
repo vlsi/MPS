@@ -20,7 +20,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="1GXDfVtxufj">
-    <property role="TrG5h" value="abca" />
+    <property role="TrG5h" value="Referent" />
     <node concept="3Tm1VV" id="1GXDfVtxufk" role="1B3o_S" />
   </node>
 </model>
