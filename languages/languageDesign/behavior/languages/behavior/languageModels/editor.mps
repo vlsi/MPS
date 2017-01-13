@@ -1367,5 +1367,18 @@
   <node concept="3p36aQ" id="1wEcoXjJygY">
     <ref role="aqKnT" to="1i04:zUeTq_2vSb" resolve="InternalConceptDeclarationsHolder" />
   </node>
+  <node concept="24kQdi" id="1u_ffTorqpw">
+    <ref role="1XX52x" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
+    <node concept="3EZMnI" id="1u_ffTorqpy" role="2wV5jI">
+      <node concept="3F0ifn" id="1u_ffTorqpz" role="3EZMnx">
+        <property role="3F0ifm" value="this" />
+        <ref role="1k5W1q" to="tpen:hgVS8CF" resolve="KeyWord" />
+        <node concept="VPxyj" id="1u_ffTorqp$" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="1u_ffTorqp_" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

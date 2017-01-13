@@ -17,6 +17,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_InternalConceptDeclarationsHolder = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LocalBehaviorMethodCall = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SuperNodeExpression = new ConceptPresentationBuilder().shortDesc("super node").create();
+  private final ConceptPresentation props_ThisConceptExpression = new ConceptPresentationBuilder().shortDesc("this concept").create();
   private final ConceptPresentation props_ThisNodeExpression = new ConceptPresentationBuilder().shortDesc("this node").create();
 
   @Override
@@ -38,6 +39,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_LocalBehaviorMethodCall;
       case LanguageConceptSwitch.SuperNodeExpression:
         return props_SuperNodeExpression;
+      case LanguageConceptSwitch.ThisConceptExpression:
+        return props_ThisConceptExpression;
       case LanguageConceptSwitch.ThisNodeExpression:
         return props_ThisNodeExpression;
     }
