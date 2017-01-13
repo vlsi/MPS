@@ -128,6 +128,12 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
@@ -531,13 +537,28 @@
     <ref role="1M2myG" to="1i04:hP3iPJx" resolve="ThisNodeExpression" />
     <node concept="nKS2y" id="1LqCkvsbvmZ" role="1MLUbF">
       <node concept="3clFbS" id="1LqCkvsbvn0" role="2VODD2">
+        <node concept="3SKdUt" id="1u_ffTozXcq" role="3cqZAp">
+          <node concept="3SKdUq" id="1u_ffTozXcs" role="3SKWNk">
+            <property role="3SKdUp" value="todo [MM] remove call with &quot;true&quot; arg after 3.5, needed for compatibility purposes" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1LqCkvsbvn1" role="3cqZAp">
-          <node concept="2YIFZM" id="1LqCkvsbvn3" role="3clFbG">
-            <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
-            <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
-            <node concept="nLn13" id="1LqCkvsbvn4" role="37wK5m" />
-            <node concept="3clFbT" id="1u_ffTorO02" role="37wK5m">
-              <property role="3clFbU" value="false" />
+          <node concept="22lmx$" id="1u_ffTo$9gE" role="3clFbG">
+            <node concept="2YIFZM" id="1LqCkvsbvn3" role="3uHU7B">
+              <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
+              <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
+              <node concept="nLn13" id="1LqCkvsbvn4" role="37wK5m" />
+              <node concept="3clFbT" id="1u_ffTorO02" role="37wK5m">
+                <property role="3clFbU" value="false" />
+              </node>
+            </node>
+            <node concept="2YIFZM" id="1u_ffTo$9pC" role="3uHU7w">
+              <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
+              <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
+              <node concept="nLn13" id="1u_ffTo$9pD" role="37wK5m" />
+              <node concept="3clFbT" id="1u_ffTo$9pE" role="37wK5m">
+                <property role="3clFbU" value="true" />
+              </node>
             </node>
           </node>
         </node>
@@ -624,6 +645,7 @@
                     <ref role="cht4Q" to="1i04:hP3hLVH" resolve="ConceptConstructorDeclaration" />
                   </node>
                 </node>
+                <node concept="1xIGOp" id="1u_ffTozYHU" role="1xVPHs" />
               </node>
             </node>
             <node concept="3x8VRR" id="1u_ffToru7R" role="2OqNvi" />
@@ -641,6 +663,7 @@
                     <ref role="cht4Q" to="1i04:hP3i0lY" resolve="ConceptMethodDeclaration" />
                   </node>
                 </node>
+                <node concept="1xIGOp" id="1u_ffTozYZv" role="1xVPHs" />
               </node>
             </node>
             <node concept="2HwmR7" id="1u_ffTorXSl" role="2OqNvi">

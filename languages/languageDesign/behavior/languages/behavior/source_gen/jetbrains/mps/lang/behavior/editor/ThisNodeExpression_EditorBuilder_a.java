@@ -9,6 +9,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import jetbrains.mps.lang.behavior.constraints.ConstraintsUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -40,7 +41,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     editorCell.setBig(true);
     editorCell.setCellContext(getCellFactory().getCellContext());
     editorCell.addEditorCell(createConstant_t6mv7u_a0());
+    if (nodeCondition_t6mv7u_a1a()) {
+      editorCell.addEditorCell(createConstant_t6mv7u_b0());
+    }
     return editorCell;
+  }
+  private boolean nodeCondition_t6mv7u_a1a() {
+    return ConstraintsUtil.isInsideOfBehavior(myNode, true);
   }
   private EditorCell createConstant_t6mv7u_a0() {
     EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "this");
@@ -48,7 +55,17 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     Style style = new StyleImpl();
     new KeyWordStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     style.set(StyleAttributes.EDITABLE, true);
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_t6mv7u_a1a0());
     editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private boolean _StyleParameter_QueryFunction_t6mv7u_a1a0() {
+    return ConstraintsUtil.isInsideOfBehavior(getNode(), true);
+  }
+  private EditorCell createConstant_t6mv7u_b0() {
+    EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "(use ThisConceptExpression)");
+    editorCell.setCellId("Constant_t6mv7u_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
