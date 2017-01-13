@@ -42,6 +42,9 @@
     <file name="SuperNodeExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.behavior.behavior.SuperNodeExpression_BehaviorDescriptor" />
     </file>
+    <file name="ThisConceptExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.behavior.behavior.ThisConceptExpression_BehaviorDescriptor" />
+    </file>
     <file name="ThisNodeExpression_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.behavior.behavior.ThisNodeExpression_BehaviorDescriptor" />
     </file>
