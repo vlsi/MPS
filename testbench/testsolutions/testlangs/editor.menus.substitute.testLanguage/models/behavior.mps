@@ -2,7 +2,7 @@
 <model ref="r:74325108-7c6d-42c1-8e54-4f0d750bf90f(jetbrains.mps.lang.editor.menus.substitute.testLanguage.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -55,7 +55,7 @@
     </language>
   </registry>
   <node concept="13h7C7" id="7XjOxAidALA">
-    <ref role="13h7C2" to="wdez:7XjOxAidyWy" resolve="TestSubstitituteSubChildAmbigousPosition" />
+    <ref role="13h7C2" to="wdez:7XjOxAidyWy" resolve="TestSubstitituteAbstractSubChildAmbigousPosition" />
     <node concept="13hLZK" id="7XjOxAidALB" role="13h7CW">
       <node concept="3clFbS" id="7XjOxAidALC" role="2VODD2" />
     </node>
