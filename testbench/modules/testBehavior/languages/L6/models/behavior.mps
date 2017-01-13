@@ -29,6 +29,7 @@
         <reference id="5299096511375896640" name="superConcept" index="3eA5LN" />
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
+      <concept id="1703835097132541506" name="jetbrains.mps.lang.behavior.structure.ThisConceptExpression" flags="ng" index="1fM9EW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
@@ -330,7 +331,7 @@
       <node concept="3clFbS" id="5mnatV0hxLi" role="3clF47">
         <node concept="3cpWs6" id="5mnatV0hxMB" role="3cqZAp">
           <node concept="2OqwBi" id="5mnatV0hxPD" role="3cqZAk">
-            <node concept="13iPFW" id="5mnatV0hxMO" role="2Oq$k0" />
+            <node concept="1fM9EW" id="1u_ffTozL0b" role="2Oq$k0" />
             <node concept="2qgKlT" id="5mnatV0hy1g" role="2OqNvi">
               <ref role="37wK5l" node="5mnatV0hxLE" resolve="bar" />
             </node>
@@ -376,7 +377,7 @@
       <node concept="3clFbS" id="7zO8mNAVkj3" role="3clF47">
         <node concept="3cpWs6" id="7zO8mNAVkpL" role="3cqZAp">
           <node concept="2OqwBi" id="7zO8mNAVktn" role="3cqZAk">
-            <node concept="13iPFW" id="7zO8mNAVkpZ" role="2Oq$k0" />
+            <node concept="1fM9EW" id="1u_ffTozL0c" role="2Oq$k0" />
             <node concept="2qgKlT" id="7zO8mNAVk$4" role="2OqNvi">
               <ref role="37wK5l" node="47lrFSh1$Ca" resolve="virtual" />
             </node>

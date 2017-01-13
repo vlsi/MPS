@@ -46,6 +46,7 @@
         <reference id="5299096511375896640" name="superConcept" index="3eA5LN" />
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
+      <concept id="1703835097132541506" name="jetbrains.mps.lang.behavior.structure.ThisConceptExpression" flags="ng" index="1fM9EW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1080223426719" name="jetbrains.mps.baseLanguage.structure.OrExpression" flags="nn" index="22lmx$" />
@@ -6285,7 +6286,7 @@
               <ref role="3bZ5Sy" to="tp2q:5cL0w3CQuFQ" resolve="IApplicableToNothing" />
             </node>
             <node concept="2OqwBi" id="6ALWH9fZlwE" role="33vP2m">
-              <node concept="13iPFW" id="6ALWH9fZleX" role="2Oq$k0" />
+              <node concept="1fM9EW" id="1u_ffTozJUi" role="2Oq$k0" />
               <node concept="1rGIog" id="6ALWH9fZlLI" role="2OqNvi" />
             </node>
           </node>
@@ -6342,7 +6343,7 @@
                       <node concept="2qgKlT" id="1QUKo_KDnTO" role="2OqNvi">
                         <ref role="37wK5l" node="5cL0w3DYzxf" resolve="getApplicableTypes" />
                       </node>
-                      <node concept="13iPFW" id="1QUKo_KDnTR" role="2Oq$k0" />
+                      <node concept="1fM9EW" id="1u_ffTozJUh" role="2Oq$k0" />
                     </node>
                   </node>
                   <node concept="37vLTw" id="5cL0w3E096E" role="2Oq$k0">
@@ -6394,7 +6395,7 @@
                     <node concept="3clFbS" id="1QUKo_K_i_g" role="1bW5cS">
                       <node concept="3clFbF" id="1QUKo_KC74C" role="3cqZAp">
                         <node concept="2OqwBi" id="1QUKo_KC7by" role="3clFbG">
-                          <node concept="13iPFW" id="6t$j2SJkH5Q" role="2Oq$k0" />
+                          <node concept="1fM9EW" id="1u_ffTozJUg" role="2Oq$k0" />
                           <node concept="2qgKlT" id="1QUKo_KC7tu" role="2OqNvi">
                             <ref role="37wK5l" node="1QUKo_K_4f7" resolve="hasApplicableTypes" />
                             <node concept="37vLTw" id="4lu_6uqsecc" role="37wK5m">

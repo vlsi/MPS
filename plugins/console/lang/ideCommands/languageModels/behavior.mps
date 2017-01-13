@@ -59,6 +59,7 @@
         <reference id="1225194472831" name="overriddenMethod" index="13i0hy" />
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
+      <concept id="1703835097132541506" name="jetbrains.mps.lang.behavior.structure.ThisConceptExpression" flags="ng" index="1fM9EW" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1082485599095" name="jetbrains.mps.baseLanguage.structure.BlockStatement" flags="nn" index="9aQIb">
@@ -2881,7 +2882,7 @@
       <node concept="3clFbS" id="25MaZwhhNmL" role="3clF47">
         <node concept="3clFbF" id="25MaZwhi1kV" role="3cqZAp">
           <node concept="2OqwBi" id="25MaZwhi1pN" role="3clFbG">
-            <node concept="13iPFW" id="25MaZwhi1kS" role="2Oq$k0" />
+            <node concept="1fM9EW" id="1u_ffTozKij" role="2Oq$k0" />
             <node concept="2qgKlT" id="25MaZwhi1I2" role="2OqNvi">
               <ref role="37wK5l" to="fq2o:64VftqEenfn" resolve="getShortDisplayString" />
             </node>
