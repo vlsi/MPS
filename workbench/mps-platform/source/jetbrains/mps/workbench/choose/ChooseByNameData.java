@@ -38,7 +38,7 @@ import java.util.Set;
  * Replacement for {@link jetbrains.mps.workbench.choose.base.BaseMPSChooseModel}, with composition rather than
  * inheritance as usage pattern, and without need to know about peculiarities of {@link com.intellij.navigation.NavigationItem},
  * {@link com.intellij.navigation.ItemPresentation} and correspondence of their methods to
- * methods of {@link ChooseByNameModel}, like {@link NavigationItem#getName() vs {@link ChooseByNameModel#getElementName(Object)}
+ * methods of {@link ChooseByNameModel}, like {@link NavigationItem#getName()} vs {@link ChooseByNameModel#getElementName(Object)}
  * vs {@link ItemPresentation#getPresentableText()}. Besides, dumb mode control has nothing to do with choose model, and left to callers for management.
  * <p/>
  * Generally, there's no need to sub-class this class, composition should be enough, hence final. Nevertheless, the class is not inherently 'final', and
