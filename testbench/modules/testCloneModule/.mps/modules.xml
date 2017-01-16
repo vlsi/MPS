@@ -2,10 +2,10 @@
 <project version="4">
   <component name="MPSProject">
     <projectModules>
+      <modulePath path="$PROJECT_DIR$/solutions/BINARY/BINARY.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/PER_ROOT/PER_ROOT.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/XML/XML.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/TestLanguage/TestLanguage.mpl" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/FIRST/FIRST.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/FIRST_BINARY/FIRST_BINARY.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/solutions/FIRST_PER_ROOT/FIRST_PER_ROOT.msd" folder="" />
     </projectModules>
   </component>
 </project>

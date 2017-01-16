@@ -13,6 +13,7 @@
     <dependency reexport="false">709a7100-da7a-45a1-948b-53fdd43f5421(jetbrains.mps.baseLanguage.closures.test)</dependency>
     <dependency reexport="false">4c6a90ca-b7fe-4942-9ee4-58e09ff23d6d(tests.testDepViewer)</dependency>
     <dependency reexport="false">f2f32c65-17db-4e68-ad2f-8b0e2554dbd6(tests.testPersistence)</dependency>
+    <dependency reexport="false">99305b9b-aa2f-490a-a517-130cdd46b087(CloneModule.test)</dependency>
   </dependencies>
   <languageVersions>
     <language slang="l:f3061a53-9226-4cc5-a443-f952ceaf5816:jetbrains.mps.baseLanguage" version="4" />
@@ -24,6 +25,7 @@
     <language slang="l:9ded098b-ad6a-4657-bfd9-48636cfe8bc3:jetbrains.mps.lang.traceable" version="0" />
   </languageVersions>
   <dependencyVersions>
+    <module reference="99305b9b-aa2f-490a-a517-130cdd46b087(CloneModule.test)" version="0" />
     <module reference="709a7100-da7a-45a1-948b-53fdd43f5421(jetbrains.mps.baseLanguage.closures.test)" version="0" />
     <module reference="e2309f95-1261-44f8-a001-ea5c9cf826d7(jetbrains.mps.build.mps.testModules)" version="0" />
     <module reference="422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)" version="0" />

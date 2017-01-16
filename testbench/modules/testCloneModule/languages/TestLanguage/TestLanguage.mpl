@@ -2,7 +2,7 @@
 <language namespace="TestLanguage" uuid="d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7" languageVersion="0" moduleVersion="0">
   <models>
     <modelRoot contentPath="${module}" type="default">
-      <sourceRoot path="${module}/models" />
+      <sourceRoot location="models" />
     </modelRoot>
   </models>
   <accessoryModels />
