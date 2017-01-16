@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -917,6 +917,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
+  /**
+   * @deprecated this is internal method, ask ModuleDescriptor for persisted setting directly, if it's what you're
+   * looking for (check {@link ProjectPathUtil#getGeneratorOutputPath(ModuleDescriptor)}. There ain't no such thing as output path for a module in general.
+   * Not it's implementation method for use from MPS internals.
+   */
+  @Deprecated
   public IFile getOutputPath() {
     String outputPath = ProjectPathUtil.getGeneratorOutputPath(getModuleDescriptor());
     return outputPath == null ? null : getFileSystem().getFile(outputPath);
