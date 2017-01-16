@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.tool.builder" uuid="e6368d5c-b931-4d4d-9941-07b7da7d2e2d" moduleVersion="0" compileInMPS="false" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.tool.builder" uuid="e6368d5c-b931-4d4d-9941-07b7da7d2e2d" moduleVersion="0" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

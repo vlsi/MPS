@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.editor.multiple.tests" uuid="3c41aa01-5120-470c-8122-06f284bc0419" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.lang.editor.multiple.tests" uuid="3c41aa01-5120-470c-8122-06f284bc0419" moduleVersion="0" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

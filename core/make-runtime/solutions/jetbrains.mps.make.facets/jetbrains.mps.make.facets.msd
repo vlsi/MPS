@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.make.facets" uuid="f8e20673-3f65-44e9-84c0-c4a4b6ede37e" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.make.facets" uuid="f8e20673-3f65-44e9-84c0-c4a4b6ede37e" moduleVersion="0" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />

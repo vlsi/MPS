@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="smodelLanguage_typetest" uuid="5a1e04ce-7cc5-4317-83f4-378ddd48b5c7" moduleVersion="0" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="smodelLanguage_typetest" uuid="5a1e04ce-7cc5-4317-83f4-378ddd48b5c7" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />

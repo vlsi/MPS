@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.agreementLanguage.sandbox" uuid="8297e161-d142-4e1a-83a1-5f3e5124f9cf" moduleVersion="0" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.samples.agreementLanguage.sandbox" uuid="8297e161-d142-4e1a-83a1-5f3e5124f9cf" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models/postingrules" />

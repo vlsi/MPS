@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.samples.multipleProjections.stateMachine.sandbox" uuid="903685e5-d52a-4321-ba8e-7a304c8f0043" moduleVersion="0" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.samples.multipleProjections.stateMachine.sandbox" uuid="903685e5-d52a-4321-ba8e-7a304c8f0043" moduleVersion="0" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
