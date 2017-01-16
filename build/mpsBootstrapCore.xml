@@ -4245,9 +4245,6 @@
         <module file="${mps_home}/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" bootstrap="true" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" bootstrap="true" />
         <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
-        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
-        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
-        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
         <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" bootstrap="true" />
         <module file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" bootstrap="true" />
@@ -4317,6 +4314,9 @@
         <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.runner.runtime/jetbrains.mps.build.mps.runner.runtime.msd" />
         <module file="${mps_home}/core/tool/environment/jetbrains.mps.core.tool.environment.msd" />
         <module file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
+        <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.language-design.devkit" />
         <module file="${mps_home}/core/devkits/jetbrains.mps.devkit.templates.devkit" />
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
         <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" />
