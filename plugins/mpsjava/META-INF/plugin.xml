@@ -41,6 +41,7 @@
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="."/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
