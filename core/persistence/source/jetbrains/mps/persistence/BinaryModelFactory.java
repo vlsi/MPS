@@ -19,16 +19,16 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.persistence.MetaModelInfoProvider.MetaInfoLoadingOption;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.persistence.binary.BinaryPersistence;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -46,10 +47,10 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -58,7 +59,7 @@ import java.util.Map;
  * evgeny, 11/20/12
  */
 public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwareModelFactory {
-  private static final PersistenceFacade FACADE = PersistenceFacade.getInstance();
+  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
 
   @Internal
   public BinaryModelFactory() {
@@ -66,53 +67,39 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
 
   @Override
   public void init() {
-    FACADE.setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-    FACADE.setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(dataSource instanceof StreamDataSource)) {
-      throw new UnsupportedDataSourceException(dataSource);
-    }
-
-    StreamDataSource source = (StreamDataSource) dataSource;
-    SModelHeader binaryModelHeader;
     try {
-      binaryModelHeader = BinaryPersistence.readHeader(source);
-    } catch (ModelReadException e) {
-      if (e.getCause() instanceof IOException) {
-        throw (IOException) e.getCause();
+      if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
+        return load(dataSource, MetaInfoLoadingOption.KEEP_READ);
       }
-      throw new IOException(e.getMessageEx(), e);
+      return load(dataSource);
+    } catch (ModelLoadException e) {
+      throw new IOException(e);
     }
-    if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
-    }
-    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
   }
 
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(dataSource instanceof StreamDataSource)) {
-      throw new UnsupportedDataSourceException(dataSource);
-    }
-
-    StreamDataSource source = (StreamDataSource) dataSource;
     String modelName = options.get(OPTION_MODELNAME);
     if (modelName == null) {
-      throw new IOException("modelName is not provided");
+      throw new IOException("Model name is not provided");
     }
-
-    final SModelHeader header = new SModelHeader();
-    header.setModelReference(FACADE.createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName));
-    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
+    try {
+      return create(dataSource, new SModelName(modelName));
+    } catch (ModelCreationException e) {
+      throw new IOException(e);
+    }
   }
 
   @Override
@@ -132,13 +119,47 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
                        @NotNull ModelLoadingOption... options) throws
                                                                UnsupportedDataSourceException,
                                                                ModelCreationException {
-    throw new NotImplementedException();
+    if (!supports(dataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
+    final SModelHeader header = new SModelHeader();
+    SModelReference newModelRef = myFacade.createModelReference(null, SModelId.generate(), modelName.getValue());
+    header.setModelReference(newModelRef);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
   }
 
   @NotNull
   @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
-    throw new NotImplementedException();
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                                                    ModelLoadException {
+    if (!supports(dataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
+    SModelHeader binaryModelHeader;
+    try {
+      binaryModelHeader = BinaryPersistence.readHeader(source);
+    } catch (ModelReadException e) {
+      throw new ModelLoadException("Could not read the model header while loading from the '" + dataSource + "'", Collections.emptyList(),
+                                   getCause(e));
+    }
+    if (Arrays.asList(options).contains(MetaInfoLoadingOption.KEEP_READ)) {
+      binaryModelHeader.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(binaryModelHeader.getModelReference())));
+    }
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, source), binaryModelHeader);
+  }
+
+  private Throwable getCause(ModelReadException e) {
+    Throwable cause;
+    if (e.getCause() instanceof IOException) {
+      cause = e.getCause();
+    } else {
+      cause = e;
+    }
+    return cause;
   }
 
   @Override

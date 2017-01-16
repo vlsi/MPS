@@ -64,7 +64,9 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
  *
  * It is used by MPS to store all the kinds of models (except the java sources and classes stubs) -- therefore the poor naming.
  *
- * evgeny, 11/9/12
+ * @author apyshkin
+ * @author evgeny
+ * @since 11/9/12
  */
 public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements CopyableModelRoot<DefaultModelRoot> {
   private static final Logger LOG = LogManager.getLogger(DefaultModelRoot.class);

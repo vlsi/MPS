@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.persistence;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -35,6 +36,11 @@ public final class ModelLoadException extends Exception {
   public ModelLoadException(String message, @NotNull List<Problem> problems, Throwable cause) {
     super(message, cause);
     myProblems = problems;
+  }
+
+  public ModelLoadException(String message) {
+    super(message);
+    myProblems = Collections.emptyList();
   }
 
   @NotNull

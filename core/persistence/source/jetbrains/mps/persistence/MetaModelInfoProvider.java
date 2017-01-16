@@ -36,11 +36,13 @@ import jetbrains.mps.smodel.runtime.LinkDescriptor;
 import jetbrains.mps.smodel.runtime.PropertyDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -90,8 +92,15 @@ public interface MetaModelInfoProvider {
    * Boolean attribute to indicate whether we intend to use model read without access to regular (MPS instance) meta info.
    * The models read with this option set to true, could be serialized without access to concept registry of MPS (of course,
    * if respective ModelFactory supports this. Our default(aka xml) and binary do).
+   * @deprecated use {@link MetaInfoLoadingOption} instead
    */
-  public static final String OPTION_KEEP_READ_METAINFO = "keep-metainfo";
+  @ToRemove(version = 3.7)
+  @Deprecated
+  String OPTION_KEEP_READ_METAINFO = "keep-metainfo";
+
+  enum MetaInfoLoadingOption implements ModelLoadingOption {
+    KEEP_READ
+  }
 
   String getLanguageName(SLanguageId lang);
 

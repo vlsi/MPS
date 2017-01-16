@@ -18,9 +18,8 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import jetbrains.mps.persistence.MetaModelInfoProvider.MetaInfoLoadingOption;
 import jetbrains.mps.persistence.MetaModelInfoProvider.RegularMetaModelInfo;
 import jetbrains.mps.persistence.MetaModelInfoProvider.StuffedMetaModelInfo;
 import jetbrains.mps.project.MPSExtentions;
@@ -33,14 +32,17 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
@@ -50,12 +52,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
@@ -69,15 +72,28 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   /**
    * Boolean option for model loading, indicates loaded model doesn't care about implementation node.
    * For the time being, implementation node is the one with appropriate ConceptKind (designated according to concept's implemented interfaces).
+   *
+   * @deprecated use {@link ContentLoadingExtentOptions} instead
    */
+  @ToRemove(version = 3.7)
+  @Deprecated
   public static final String OPTION_STRIP_IMPLEMENTATION = "load-without-impl";
 
   /**
    * Boolean option for model loading, indicates loaded model cares about its interface aspects only.
+   *
+   * @deprecated use {@link ContentLoadingExtentOptions} instead
    */
+  @ToRemove(version = 3.7)
+  @Deprecated
   public static final String OPTION_INTERFACE_ONLY = "load-interface-only";
 
-  private static final PersistenceFacade FACADE = PersistenceFacade.getInstance();
+  public enum ContentLoadingExtentOptions implements ModelLoadingOption {
+    STRIP_IMPLEMENTATION,
+    INTERFACE_ONLY
+  }
+
+  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
 
   @Internal
   public DefaultModelPersistence() {
@@ -85,71 +101,70 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
 
   @Override
   public void init() {
-    FACADE.setModelFactory(MPSExtentions.MODEL, this);
+    myFacade.setModelFactory(MPSExtentions.MODEL, this);
   }
 
   @Override
   public void dispose() {
-    FACADE.setModelFactory(MPSExtentions.MODEL, null);
+    myFacade.setModelFactory(MPSExtentions.MODEL, null);
   }
 
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(dataSource instanceof StreamDataSource)) {
-      throw new UnsupportedDataSourceException(dataSource);
+    List<ModelLoadingOption> newOptions = new ArrayList<>();
+    if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
+      newOptions.add(MetaInfoLoadingOption.KEEP_READ);
     }
-
-    StreamDataSource source = (StreamDataSource) dataSource;
-    PersistenceFacility pf = new PersistenceFacility(this, source);
-    SModelHeader header;
+    if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
+      newOptions.add(ContentLoadingExtentOptions.STRIP_IMPLEMENTATION);
+    } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
+      newOptions.add(ContentLoadingExtentOptions.INTERFACE_ONLY);
+    }
     try {
-      header = pf.readHeader();
-      assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-      LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
-
-      if (Boolean.parseBoolean(options.get(MetaModelInfoProvider.OPTION_KEEP_READ_METAINFO))) {
-        header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(header.getModelReference())));
-      }
-
-      // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
-      final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(pf, header);
-
-      ModelLoadingState loadingLevel = null;
-      if (options.containsKey(OPTION_STRIP_IMPLEMENTATION) && Boolean.parseBoolean(options.get(OPTION_STRIP_IMPLEMENTATION))) {
-        // alternative to replace() method call (which is hacky) is to expose UpdateableModel field from LazyEditableSModelBase and use
-        // UpdateableModel#getModel(ModelLoadingState) instead to ensure model is loaded to desired state.
-        // However, not sure subsequent access to model won't trigger full load anyway, thus replace() which indicates supplied state is 'FULLY LOADED'
-        // might be the right (hacky, nonetheless) solution.
-        loadingLevel = ModelLoadingState.NO_IMPLEMENTATION;
-      } else if (options.containsKey(OPTION_INTERFACE_ONLY) && Boolean.parseBoolean(options.get(OPTION_INTERFACE_ONLY))) {
-        loadingLevel = ModelLoadingState.INTERFACE_LOADED;
-      }
-      if (loadingLevel != null) {
-        jetbrains.mps.smodel.SModel md = pf.readModel(header, loadingLevel).getModel();
-        rv.replace(md);
-      }
-      return rv;
-    } catch (ModelReadException ignored) {
-      LOG.error("Can't read model: ", ignored);
-      throw new IOException("Can't read model: ", ignored);
+      return load(dataSource, newOptions.toArray(new ModelLoadingOption[newOptions.size()]));
+    } catch (ModelLoadException e) {
+      throw new IOException(e);
     }
   }
 
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!(supports(dataSource))) {
-      throw new UnsupportedDataSourceException(dataSource);
-    }
 
     String modelName = options.get(OPTION_MODELNAME);
     if (modelName == null) {
       throw new IOException("modelName is not provided");
     }
+    try {
+      return create(dataSource, new SModelName(modelName));
+    } catch (ModelCreationException e) {
+      throw new IOException(e);
+    }
+  }
+
+  @Override
+  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    return dataSource instanceof StreamDataSource;
+  }
+
+  @Override
+  public boolean supports(@NotNull DataSource dataSource) {
+    return dataSource instanceof StreamDataSource;
+  }
+
+  @NotNull
+  @Override
+  public SModel create(@NotNull DataSource dataSource,
+                       @NotNull SModelName modelName,
+                       @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                      ModelCreationException {
+    if (!(supports(dataSource))) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
 
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
-    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName);
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName.getValue());
     header.setModelReference(modelReference);
     final DefaultSModelDescriptor rv = new DefaultSModelDescriptor(new PersistenceFacility(this, (StreamDataSource) dataSource), header);
     // Hack to ensure newly created model is indeed empty. Otherwise, with StreamDataSource pointing to existing model stream, an attempt to
@@ -165,27 +180,77 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
     return rv;
   }
 
+  @NotNull
   @Override
-  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
-    return dataSource instanceof StreamDataSource;
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                                                    ModelLoadException {
+    if (!(dataSource instanceof StreamDataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    StreamDataSource source = (StreamDataSource) dataSource;
+    PersistenceFacility persistenceFacility = new PersistenceFacility(this, source);
+    SModelHeader header = readHeader(dataSource, source, persistenceFacility);
+    LOG.debug("Getting model " + header.getModelReference() + " from " + dataSource.getLocation());
+
+    if (Arrays.asList(options).contains(MetaInfoLoadingOption.KEEP_READ)) {
+      header.setMetaInfoProvider(new StuffedMetaModelInfo(new RegularMetaModelInfo(header.getModelReference())));
+    }
+
+    // If there are any load options, process them and fill the model with desired model data, otherwise return a lightweight descriptor.
+    final DefaultSModelDescriptor resultingModel = new DefaultSModelDescriptor(persistenceFacility, header);
+    ModelLoadingState loadingLevel = detectLoadingLevel(options);
+    readModelUpToLevel(dataSource, persistenceFacility, header, resultingModel, loadingLevel);
+    return resultingModel;
   }
 
-  @Override
-  public boolean supports(@NotNull DataSource dataSource) {
-    return dataSource instanceof StreamDataSource;
+  private void readModelUpToLevel(@NotNull DataSource dataSource,
+                                  PersistenceFacility persistenceFacility,
+                                  SModelHeader header,
+                                  DefaultSModelDescriptor rv,
+                                  ModelLoadingState loadingLevel) throws ModelLoadException {
+    if (loadingLevel != null) {
+      try {
+        jetbrains.mps.smodel.SModel md = persistenceFacility.readModel(header, loadingLevel).getModel();
+        rv.replace(md);
+      } catch (ModelReadException e) {
+        LOG.error("Can't read model: ", e);
+        throw new ModelLoadException("Can't read a model from the '" + dataSource + "'", Collections.emptyList(), e);
+      }
+    }
   }
 
   @NotNull
-  @Override
-  public SModel create(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) throws
-                                                                                                                              UnsupportedDataSourceException {
-    throw new NotImplementedException();
+  private SModelHeader readHeader(@NotNull DataSource dataSource, StreamDataSource source, PersistenceFacility pf) throws ModelLoadException {
+    SModelHeader header;
+    try {
+      header = pf.readHeader();
+    } catch (ModelReadException e) {
+      LOG.error("Can't read model: ", e);
+      throw new ModelLoadException("Can't read model header from the '" + dataSource + "'", Collections.emptyList(), e);
+    }
+    if (header.getModelReference() == null) {
+      throw new ModelLoadException("Could not find model reference in the model header while loading from the " + source);
+    }
+    return header;
   }
 
-  @NotNull
-  @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
-    throw new NotImplementedException();
+  /**
+   * An alternative to replace() method call (which is hacky) is to expose UpdateableModel field from LazyEditableSModelBase and use
+   * UpdateableModel#getModel(ModelLoadingState) instead to ensure model is loaded to desired state.
+   * However, not sure subsequent access to model won't trigger full load anyway, thus replace() which indicates supplied state is 'FULLY LOADED'
+   * might be the right (hacky, nonetheless) solution.
+   * [atikhomirov]
+   */
+  @Nullable
+  private ModelLoadingState detectLoadingLevel(@NotNull ModelLoadingOption[] options) {
+    ModelLoadingState loadingLevel = null;
+    if (Arrays.asList(options).contains(ContentLoadingExtentOptions.STRIP_IMPLEMENTATION)) {
+      loadingLevel = ModelLoadingState.NO_IMPLEMENTATION;
+    } else if (Arrays.asList(options).contains(ContentLoadingExtentOptions.INTERFACE_ONLY)) {
+      loadingLevel = ModelLoadingState.INTERFACE_LOADED;
+    }
+    return loadingLevel;
   }
 
   @Override

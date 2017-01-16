@@ -20,11 +20,10 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.extapi.persistence.ModelFactoryRegistry;
-import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelHeader;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
@@ -51,13 +50,13 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.xml.sax.InputSource;
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,6 +67,8 @@ import java.util.Map.Entry;
  */
 public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
+
+  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
 
   @Internal
   public FilePerRootModelFactory() {
@@ -84,42 +85,25 @@ public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!supports(dataSource)) {
-      throw new UnsupportedDataSourceException(dataSource);
-    }
-
-    MultiStreamDataSource source = (MultiStreamDataSource) dataSource;
-    PersistenceFacility pf = new PersistenceFacility(this, source);
-    SModelHeader header;
     try {
-      header = pf.readHeader();
-    } catch (ModelReadException ignored) {
-      LOG.error("Can't read model: ", ignored);
-      throw new IOException("Can't read model: ", ignored);
+      return load(dataSource);
+    } catch (ModelLoadException e) {
+      throw new IOException(e);
     }
-
-    assert header.getModelReference() != null : "wrong model: " + source.getLocation();
-
-    LOG.debug("Getting model " + header.getModelReference() + " from " + source.getLocation());
-    return new DefaultSModelDescriptor(pf, header);
   }
 
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!supports(dataSource)) {
-      throw new UnsupportedDataSourceException(dataSource);
-    }
-
     String modelName = options.get(OPTION_MODELNAME);
     if (modelName == null) {
       throw new IOException("Model name is not provided");
     }
-
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
-    header.setModelReference(ref);
-    return new DefaultSModelDescriptor(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);
+    try {
+      return create(dataSource, new SModelName(modelName));
+    } catch (ModelCreationException e) {
+      throw new IOException(e);
+    }
   }
 
   @Override
@@ -137,13 +121,40 @@ public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   public SModel create(@NotNull DataSource dataSource, @NotNull SModelName modelName, @NotNull ModelLoadingOption... options) throws
                                                                                                                               UnsupportedDataSourceException,
                                                                                                                               ModelCreationException {
-    throw new NotImplementedException();
+    if (!supports(dataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    SModelReference ref = myFacade.createModelReference(null, SModelId.generate(), modelName.getValue());
+    final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
+    header.setModelReference(ref);
+    return new DefaultSModelDescriptor(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);
   }
 
   @NotNull
   @Override
-  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
-    throw new NotImplementedException();
+  public SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                                                    ModelLoadException {
+    if (!supports(dataSource)) {
+      throw new UnsupportedDataSourceException(dataSource);
+    }
+
+    MultiStreamDataSource source = (MultiStreamDataSource) dataSource;
+    PersistenceFacility pf = new PersistenceFacility(this, source);
+    SModelHeader header;
+    try {
+      header = pf.readHeader();
+    } catch (ModelReadException ignored) {
+      LOG.error("Can't read model: ", ignored);
+      throw new ModelLoadException("Can't read model: ", Collections.emptyList(), ignored);
+    }
+
+    if (header.getModelReference() == null) {
+      throw new ModelLoadException("Could not find model reference in the model header while loading from the " + source);
+    }
+
+    LOG.debug("Getting model " + header.getModelReference() + " from " + source.getLocation());
+    return new DefaultSModelDescriptor(pf, header);
   }
 
   @Override
