@@ -5251,6 +5251,27 @@
                             </node>
                           </node>
                         </node>
+                        <node concept="3SKdUt" id="6sUZr58t_uP" role="3cqZAp">
+                          <node concept="3SKdUq" id="6sUZr58t_uR" role="3SKWNk">
+                            <property role="3SKdUp" value="XXX I'm not sure FilesDelta(dir).kept(new IFile(&quot;.&quot;)) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent" />
+                          </node>
+                        </node>
+                        <node concept="3cpWs8" id="22o5mI4Ny_x" role="3cqZAp">
+                          <node concept="3cpWsn" id="22o5mI4Ny_y" role="3cpWs9">
+                            <property role="TrG5h" value="parent" />
+                            <node concept="3uibUv" id="22o5mI4Ny_c" role="1tU5fm">
+                              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
+                            </node>
+                            <node concept="2OqwBi" id="22o5mI4Ny_z" role="33vP2m">
+                              <node concept="37vLTw" id="22o5mI4Ny_$" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6sUZr58t67B" resolve="actualOutput" />
+                              </node>
+                              <node concept="liA8E" id="22o5mI4Ny__" role="2OqNvi">
+                                <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                         <node concept="3cpWs8" id="6sUZr58tq1m" role="3cqZAp">
                           <node concept="3cpWsn" id="6sUZr58tq1n" role="3cpWs9">
                             <property role="TrG5h" value="fd" />
@@ -5258,8 +5279,8 @@
                               <ref role="3uigEE" to="rk9m:s2Jv$gDl8s" resolve="FilesDelta" />
                             </node>
                             <node concept="3EllGN" id="6sUZr58tq1o" role="33vP2m">
-                              <node concept="37vLTw" id="6sUZr58tq1p" role="3ElVtu">
-                                <ref role="3cqZAo" node="6sUZr58t67B" resolve="actualOutput" />
+                              <node concept="37vLTw" id="7f1YHrvBcFj" role="3ElVtu">
+                                <ref role="3cqZAo" node="22o5mI4Ny_y" resolve="parent" />
                               </node>
                               <node concept="37vLTw" id="6sUZr58tq1q" role="3ElQJh">
                                 <ref role="3cqZAo" node="6sUZr58t9Bk" resolve="dir2delta" />
@@ -5269,27 +5290,6 @@
                         </node>
                         <node concept="3clFbJ" id="6sUZr58toeL" role="3cqZAp">
                           <node concept="3clFbS" id="6sUZr58toeN" role="3clFbx">
-                            <node concept="3SKdUt" id="6sUZr58t_uP" role="3cqZAp">
-                              <node concept="3SKdUq" id="6sUZr58t_uR" role="3SKWNk">
-                                <property role="3SKdUp" value="XXX I'm not sure FilesDelta(dir).kept(new IFile(&quot;.&quot;)) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent" />
-                              </node>
-                            </node>
-                            <node concept="3cpWs8" id="22o5mI4Ny_x" role="3cqZAp">
-                              <node concept="3cpWsn" id="22o5mI4Ny_y" role="3cpWs9">
-                                <property role="TrG5h" value="parent" />
-                                <node concept="3uibUv" id="22o5mI4Ny_c" role="1tU5fm">
-                                  <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-                                </node>
-                                <node concept="2OqwBi" id="22o5mI4Ny_z" role="33vP2m">
-                                  <node concept="37vLTw" id="22o5mI4Ny_$" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="6sUZr58t67B" resolve="actualOutput" />
-                                  </node>
-                                  <node concept="liA8E" id="22o5mI4Ny__" role="2OqNvi">
-                                    <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
-                                  </node>
-                                </node>
-                              </node>
-                            </node>
                             <node concept="3clFbF" id="22o5mI4NwxM" role="3cqZAp">
                               <node concept="37vLTI" id="22o5mI4Nzau" role="3clFbG">
                                 <node concept="3EllGN" id="22o5mI4Nyqh" role="37vLTJ">

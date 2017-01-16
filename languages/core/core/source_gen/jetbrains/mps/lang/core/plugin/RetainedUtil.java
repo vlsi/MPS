@@ -97,10 +97,10 @@ public final class RetainedUtil {
               continue;
             }
             IFile actualOutput = getFile.invoke(f.getPath());
-            FilesDelta fd = MapSequence.fromMap(dir2delta).get(actualOutput);
+            // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
+            IFile parent = actualOutput.getParent();
+            FilesDelta fd = MapSequence.fromMap(dir2delta).get(parent);
             if (fd == null) {
-              // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
-              IFile parent = actualOutput.getParent();
               MapSequence.fromMap(dir2delta).put(parent, fd = new FilesDelta(parent));
             }
             fd.kept(actualOutput);
