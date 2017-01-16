@@ -1073,5 +1073,54 @@
       <ref role="1YaFvo" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
     </node>
   </node>
+  <node concept="1YbPZF" id="6ADPXMKma5r">
+    <property role="TrG5h" value="typeof_SuperConceptExpression" />
+    <property role="3GE5qa" value="" />
+    <node concept="3clFbS" id="6ADPXMKma5s" role="18ibNy">
+      <node concept="3cpWs8" id="6ADPXMKma5t" role="3cqZAp">
+        <node concept="3cpWsn" id="6ADPXMKma5u" role="3cpWs9">
+          <property role="TrG5h" value="superConcept" />
+          <node concept="3Tqbb2" id="6ADPXMKma5v" role="1tU5fm">
+            <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+          </node>
+          <node concept="2OqwBi" id="6ADPXMKma5w" role="33vP2m">
+            <node concept="1YBJjd" id="6ADPXMKma5x" role="2Oq$k0">
+              <ref role="1YBMHb" node="6ADPXMKma5W" resolve="sc" />
+            </node>
+            <node concept="2qgKlT" id="2e_JfIKKX$C" role="2OqNvi">
+              <ref role="37wK5l" to="csvn:6ADPXMKm4qz" resolve="getSuperConcept" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="1Z5TYs" id="6ADPXMKma5C" role="3cqZAp">
+        <node concept="mw_s8" id="6ADPXMKma5D" role="1ZfhKB">
+          <node concept="2c44tf" id="6ADPXMKma5E" role="mwGJk">
+            <node concept="3bZ5Sz" id="6ADPXMKmaLN" role="2c44tc">
+              <ref role="3bZ5Sy" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              <node concept="2c44tb" id="6ADPXMKmaN6" role="lGtFl">
+                <property role="P3scX" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1/6677504323281689838/6677504323281689839" />
+                <property role="2qtEX8" value="conceptDeclaraton" />
+                <node concept="37vLTw" id="6ADPXMKmaNR" role="2c44t1">
+                  <ref role="3cqZAo" node="6ADPXMKma5u" resolve="superConcept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="6ADPXMKma5I" role="1ZfhK$">
+          <node concept="1Z2H0r" id="6ADPXMKma5J" role="mwGJk">
+            <node concept="1YBJjd" id="6ADPXMKma5K" role="1Z2MuG">
+              <ref role="1YBMHb" node="6ADPXMKma5W" resolve="sc" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="6ADPXMKma5W" role="1YuTPh">
+      <property role="TrG5h" value="sc" />
+      <ref role="1YaFvo" to="1i04:6ADPXMKlUuB" resolve="SuperConceptExpression" />
+    </node>
+  </node>
 </model>
 

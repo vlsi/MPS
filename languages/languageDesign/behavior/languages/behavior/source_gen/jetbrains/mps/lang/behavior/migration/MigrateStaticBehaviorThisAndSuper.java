@@ -21,20 +21,22 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import jetbrains.mps.lang.smodel.query.runtime.CommandUtil;
 import jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.migration.runtime.base.Problem;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.migration.runtime.base.NotMigratedNode;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.Collection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
 
-public class MigrateStaticBehaviorThis extends MigrationScriptBase {
+public class MigrateStaticBehaviorThisAndSuper extends MigrationScriptBase {
   public String getCaption() {
-    return "Migrate 'this' in static behavior methods";
+    return "Migrate 'this' and 'super' in static behavior methods";
   }
   @Override
   public boolean isRerunnable() {
@@ -46,7 +48,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
   }
   public void doExecute(final SModule m) {
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twamwvl(_quotation_createNode_kwdd1g_a0a0a6());
+      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twamwvl(_quotation_createNode_bb55mu_a0a0a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -72,14 +74,14 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_kwdd1g_a0a0g();
+              return _quotation_createNode_bb55mu_a0a0g();
             }
           }, null);
         }
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twanjp3(_quotation_createNode_kwdd1g_a0a1a6());
+      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twanjp3(_quotation_createNode_bb55mu_a0a1a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -105,14 +107,14 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_kwdd1g_a0b0g();
+              return _quotation_createNode_bb55mu_a0b0g();
             }
           }, null);
         }
       });
     }
     {
-      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twannv4(_quotation_createNode_kwdd1g_a0a2a6());
+      final GeneratedMatchingPattern pattern = new Pattern_cy0n4twannv4(_quotation_createNode_bb55mu_a0a2a6());
       Sequence.fromIterable(((Iterable<SModel>) m.getModels())).translate(new ITranslator2<SModel, SNode>() {
         public Iterable<SNode> translate(SModel it) {
           return SModelOperations.nodes(it, SNodeOperations.asSConcept(pattern.getConcept()));
@@ -138,7 +140,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
           pattern.match(nodeToMigrate);
           applyTransormMigration(nodeToMigrate, new Computable<SNode>() {
             public SNode compute() {
-              return _quotation_createNode_kwdd1g_a0c0g();
+              return _quotation_createNode_bb55mu_a0c0g();
             }
           }, null);
         }
@@ -157,12 +159,16 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
           SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x17a53cfe586da642L, "jetbrains.mps.lang.behavior.structure.ThisConceptExpression"));
         }
       });
+      Sequence.fromIterable(getApplicableNodes(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), false))).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, "jetbrains.mps.lang.behavior.structure.SuperConceptExpression")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, 0x69a9d7dcb057a7a8L, "superConcept"), SLinkOperations.getTarget(SNodeOperations.cast(it, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L, "superConcept")));
+        }
+      });
     }
   }
   @Override
   public Iterable<Problem> check(SModule m) {
-
-    Iterable<Problem> result;
+    List<Problem> result = ListSequence.fromList(new ArrayList<Problem>());
     {
       final SearchScope scope = CommandUtil.createScope(m);
       QueryExecutionContext context = new QueryExecutionContext() {
@@ -170,7 +176,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
           return scope;
         }
       };
-      result = CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"), false)).where(new IWhereFilter<SNode>() {
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"), false)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ConstraintsUtil.isInsideOfBehavior(it, true);
         }
@@ -182,7 +188,20 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
             }
           });
         }
-      });
+      }));
+      ListSequence.fromList(result).addSequence(CollectionSequence.fromCollection(CommandUtil.instances(CommandUtil.createConsoleScope(null, false, context), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"), false)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return ConstraintsUtil.isInsideOfBehavior(it, true);
+        }
+      }).select(new ISelector<SNode, Problem>() {
+        public Problem select(SNode it) {
+          return ((Problem) new NotMigratedNode(it) {
+            public String getMessage() {
+              return "SuperNodeExpression should be replaced with SuperConceptExpression";
+            }
+          });
+        }
+      }));
     }
     return result;
   }
@@ -210,7 +229,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
       }
     });
   }
-  private static SNode _quotation_createNode_kwdd1g_a0a0a6() {
+  private static SNode _quotation_createNode_bb55mu_a0a0a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -223,7 +242,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_kwdd1g_a0a0g() {
+  private static SNode _quotation_createNode_bb55mu_a0a0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -235,7 +254,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_kwdd1g_a0a1a6() {
+  private static SNode _quotation_createNode_bb55mu_a0a1a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -248,7 +267,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_kwdd1g_a0b0g() {
+  private static SNode _quotation_createNode_bb55mu_a0b0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -260,7 +279,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_kwdd1g_a0a2a6() {
+  private static SNode _quotation_createNode_bb55mu_a0a2a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -273,7 +292,7 @@ public class MigrateStaticBehaviorThis extends MigrationScriptBase {
     quotedNode_1.addChild(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), quotedNode_3);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_kwdd1g_a0c0g() {
+  private static SNode _quotation_createNode_bb55mu_a0c0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
