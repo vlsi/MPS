@@ -1,0 +1,16 @@
+<project name="mps" default="getidea">
+  <property name="idea_ce.url" 
+            value="https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIC/141.177.4/ideaIC-141.177.4.zip"/>
+
+  <target name="loadPathVariable">
+    <fail message="I need a system property: home.idea_ce = path to IDEA Community installation folder" unless="home.idea_ce"/>
+    <property name="ideaPath" value="${home.idea_ce}"/>
+    <echo message="IDEA: ${ideaPath}"/>
+  </target>
+
+  <target name="getidea" depends="loadPathVariable">
+    <get src="${idea_ce.url}" dest="ideaIC.zip" verbose="true"/>
+    <unzip src="ideaIC.zip" dest="${home.idea_ce}"/>
+    <delete file="ideaIC.zip"/>
+  </target>
+</project>
