@@ -6,7 +6,7 @@
       Sample persistence of MPS models into xml files</description>
   <version>1.0</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="163.1" until-build="171.1" />
+  <idea-version since-build="171.1" until-build="172.1" />
   
   <depends>jetbrains.mps.core</depends>
   

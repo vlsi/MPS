@@ -21,7 +21,7 @@
   <category>Custom Languages</category>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com" logo="/MPS_16.png" email="support@jetbrains.com">JetBrains s.r.o.</vendor>
-  <idea-version since-build="163.1" until-build="171.1"/>
+  <idea-version since-build="171.1" until-build="172.1"/>
   <depends>jetbrains.mps.core</depends>
   <depends optional="true" config-file="pluginSolutions.xml">jetbrains.mps.execution.configurations</depends>
 
