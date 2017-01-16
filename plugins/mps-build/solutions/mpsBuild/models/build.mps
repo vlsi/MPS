@@ -2536,11 +2536,11 @@
             </node>
             <node concept="1kK7hY" id="1cej1P1K6ok" role="39821P">
               <ref role="1kK7hZ" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-              <node concept="1cIVw3" id="7ndynaw0A8F" role="3E5mpp">
-                <property role="1cIVw0" value="." />
-              </node>
               <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
                 <property role="1cIVw0" value="mps-environment.jar" />
+              </node>
+              <node concept="1cIVw3" id="7ndynaw0A8F" role="3E5mpp">
+                <property role="1cIVw0" value="." />
               </node>
             </node>
           </node>
@@ -2739,11 +2739,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
-              <node concept="1cIVw3" id="7ndynaw0A8E" role="3E5mpp">
-                <property role="1cIVw0" value="." />
-              </node>
               <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
                 <property role="1cIVw0" value="mps-behavior-runtime.jar" />
+              </node>
+              <node concept="1cIVw3" id="7ndynaw0A8E" role="3E5mpp">
+                <property role="1cIVw0" value="." />
               </node>
             </node>
           </node>
@@ -2775,11 +2775,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
-              <node concept="1cIVw3" id="7ndynaw0A8G" role="3E5mpp">
-                <property role="1cIVw0" value="." />
-              </node>
               <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
                 <property role="1cIVw0" value="mps-behavior-api.jar" />
+              </node>
+              <node concept="1cIVw3" id="7ndynaw0A8G" role="3E5mpp">
+                <property role="1cIVw0" value="." />
               </node>
             </node>
           </node>
@@ -15443,7 +15443,7 @@
       <node concept="13uQ2_" id="5w9VucA$Mg7" role="39821P">
         <node concept="3_J27D" id="5w9VucA$Mg9" role="13uQ07">
           <node concept="3Mxwew" id="4vNfevbfZxr" role="3MwsjC">
-            <property role="3MwjfP" value="ecj-4.6.2RC3.jar" />
+            <property role="3MwjfP" value="ecj-4.6.2.jar" />
           </node>
         </node>
       </node>

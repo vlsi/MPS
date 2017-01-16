@@ -4300,7 +4300,7 @@
             <property role="Xl_RC" value="log4j.jar" />
           </node>
           <node concept="Xl_RD" id="5w9VucAHx14" role="3g7hyw">
-            <property role="Xl_RC" value="ecj-4.6.2RC3.jar" />
+            <property role="Xl_RC" value="ecj-4.6.2.jar" />
           </node>
           <node concept="Xl_RD" id="6IC6gZqCByZ" role="3g7hyw">
             <property role="Xl_RC" value="xstream-1.4.8.jar" />
