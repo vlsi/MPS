@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -82,6 +82,7 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleInstanceCondition;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.VisibleModuleCondition;
 import jetbrains.mps.project.dependency.GeneratorModuleScanner;
@@ -90,7 +91,6 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
@@ -111,7 +111,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ModelComputeRunnable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -403,8 +402,8 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private String getGenOutPath() {
-      IFile outputDir = myModule.getOutputPath();
-      return outputDir != null ? FileUtil.getCanonicalPath(outputDir.getPath()) : "";
+      String outputDir = ProjectPathUtil.getGeneratorOutputPath(myModuleDescriptor);
+      return outputDir != null ? FileUtil.getCanonicalPath(outputDir) : "";
     }
 
     @Override
@@ -455,19 +454,14 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       if (super.isModified()) {
         myModuleDescriptor.setNamespace(myTextFieldName.getText());
       }
-      if (myModule instanceof DevKit) {
+      if (myModuleDescriptor instanceof DevkitDescriptor) {
         myModuleDependenciesTab.apply();
         ((DevkitDescriptor) myModuleDescriptor).setAssociatedPlan(myPlanPanel.getPlanModel());
         myPlanPickScope.invalidateCaches();
       } else {
         if (myGenOut != null && !(myGenOut.getText().equals(getGenOutPath()))) {
-          if (myModule instanceof Language) {
-            ((LanguageDescriptor) myModule.getModuleDescriptor()).setGenPath(
-                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
-          } else if (myModule instanceof Solution) {
-            ((SolutionDescriptor) myModule.getModuleDescriptor()).setOutputPath(
-                myModule.getOutputPath().getPath().equals(myGenOut.getText()) ? null : myGenOut.getText());
-          }
+          // here we imply getGenOutPath uses ProjectPathUtil.getGeneratorOutputPath
+          ProjectPathUtil.setGeneratorOutputPath(myModuleDescriptor, myGenOut.getText());
         }
         if (myLanguageVersion != null) {
           try {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,8 +24,8 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.openapi.FileSystem;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.module.SModule;
 
 // todo: rewrite this. all methods should have same signature!
 public class ProjectPathUtil {
@@ -85,6 +85,19 @@ public class ProjectPathUtil {
   }
 
   /**
+   * Counterpart to {@link #getGeneratorOutputPath(ModuleDescriptor)} to modify path value
+   */
+  public static void setGeneratorOutputPath(@NotNull ModuleDescriptor descriptor, @Nullable String path) {
+    if (descriptor instanceof SolutionDescriptor) {
+      ((SolutionDescriptor) descriptor).setOutputPath(path);
+    } else if (descriptor instanceof LanguageDescriptor) {
+      ((LanguageDescriptor) descriptor).setGenPath(path);
+    } else if (descriptor instanceof GeneratorDescriptor) {
+      ((GeneratorDescriptor) descriptor).setOutputPath(path);
+    }
+  }
+
+  /**
    * @deprecated refactor uses, may use {@link #getGeneratorOutputPath(ModuleDescriptor)} for transition (first argument of the method serves
    *             merely as a FileSystem provider, if IFile is needed, do FileSystem.getFile() yourself
    */
@@ -104,12 +117,5 @@ public class ProjectPathUtil {
   public static IFile getGeneratorTestsOutputPath(IFile file, ModuleDescriptor descriptor) {
     TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(descriptor, file);
     return testsFacet != null ? testsFacet.getTestsOutputPath() : null;
-  }
-
-  public static IFile getGeneratorOutputPath(SModule module) {
-    if (!(module instanceof AbstractModule)) {
-      return null;
-    }
-    return ((AbstractModule) module).getOutputPath();
   }
 }
