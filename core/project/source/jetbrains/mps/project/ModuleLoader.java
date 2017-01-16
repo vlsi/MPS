@@ -52,7 +52,7 @@ final class ModuleLoader {
 
   private Set<SModule> getRemovedModules(List<ModulePath> newModulePaths) {
     Set<SModule> removedModules = new HashSet<SModule>();
-    for (SModule oldModule : myProject.getProjectModulesWithGenerators()) {
+    for (SModule oldModule : myProject.getProjectModules()) {
       ModulePath oldModulePath = myProject.getPath(oldModule);
       if (!newModulePaths.contains(oldModulePath)) {
         removedModules.add(oldModule);
