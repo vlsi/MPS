@@ -25,12 +25,12 @@
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJpsIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsJpsIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />

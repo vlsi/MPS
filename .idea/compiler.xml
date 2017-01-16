@@ -313,6 +313,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/pluginSolutions/jetbrains.mps.build.mps.pluginSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/pluginSolutions/jetbrains.mps.build.pluginSolution/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/mpsBuild/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/mpsBuild/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/workflow.preset/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/solutions/workflow.preset/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-build/test/jetbrains.mps.build.mps.runner.test/source_gen" includeSubdirectories="true" />
@@ -333,6 +335,8 @@
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/runtime/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/runtime/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-core/languages/languageDesign/table/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mps-testing/languages/baseLanguage/unitTest/solutions/sandbox/test_gen" includeSubdirectories="true" />
@@ -369,8 +373,6 @@
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.structure/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.typesystem.devkit/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsdevkit/languages/pluginSolutions/lang.typesystem.devkit/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.tests/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsmake/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/mpsmake/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testClosures/solutions/jetbrains.mps.baseLanguage.closures.test/source_gen" includeSubdirectories="true" />
@@ -385,7 +387,7 @@
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/plugins/vcs/languages/mergehints/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/plugins/vcs-core/languages/mergehints/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/plugins/vcs/languages/modelmetadata/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/agreementLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/agreement/agreementLanguage/source_gen" includeSubdirectories="true" />
@@ -650,12 +652,12 @@
       <directory url="file://$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L2/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/languages/TestLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/languages/TestLanguage/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/TestSolution_DefaultModelRoot/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/TestSolution_DefaultModelRoot/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/TestSolution_JavaClasses/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/TestSolution_JavaClasses/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/testCloneModule/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/testCloneModule/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/BINARY/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/BINARY/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/PER_ROOT/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/PER_ROOT/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/XML/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/XML/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCompilation/solutions/TestCompileSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testCompilation/solutions/TestCompileSolution/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/generator/source_gen" includeSubdirectories="true" />
@@ -701,6 +703,8 @@
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/bl.tuples.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/bl.unittest/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/bl.unittest/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/clone.module.test/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/testbench/testsolutions/clone.module.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/closures.test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/closures.test/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/testbench/testsolutions/collections_trove.test/source_gen" includeSubdirectories="true" />

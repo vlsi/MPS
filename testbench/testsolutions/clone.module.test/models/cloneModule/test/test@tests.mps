@@ -312,7 +312,7 @@
       <node concept="3Tm6S6" id="7l0SErcZi0B" role="1B3o_S" />
       <node concept="17QB3L" id="7l0SErcZi0F" role="1tU5fm" />
       <node concept="Xl_RD" id="7l0SErcZi2l" role="33vP2m">
-        <property role="Xl_RC" value="../testbench/modules/testCloneModule/" />
+        <property role="Xl_RC" value="testbench/modules/testCloneModule/" />
       </node>
     </node>
     <node concept="Wx3nA" id="1rpDfGKrJ9j" role="jymVt">

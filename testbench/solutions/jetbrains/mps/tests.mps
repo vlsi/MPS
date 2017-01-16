@@ -1406,18 +1406,6 @@
       <ref role="lpD7u" to="tpej:rutuztX2OS" resolve="TestMigrateCommentLines" />
     </node>
   </node>
-  <node concept="lpD6F" id="69H_rR6IcfB">
-    <node concept="2R4zua" id="69H_rR6IcfD" role="2R4z3u">
-      <property role="2R4zu8" value="c3786d2b-aba2-45e5-8de0-1124fd14259b" />
-      <property role="2R4zub" value="jetbrains.mps.ide.java.tests" />
-    </node>
-    <node concept="lpD6D" id="69H_rR6IlQe" role="lpD6w">
-      <ref role="lpD7u" to="5ivf:4ackmjcdGr8" resolve="RoundTrip" />
-    </node>
-    <node concept="lpD6D" id="69H_rR6IlQg" role="lpD6w">
-      <ref role="lpD7u" to="5ivf:4ackmjcdW2w" resolve="JavaToMps" />
-    </node>
-  </node>
   <node concept="lpD6F" id="3FJ0r$qNTEf">
     <node concept="2R4zua" id="3FJ0r$qNTEg" role="2R4z3u">
       <property role="2R4zu8" value="ab46529e-de2c-48b6-80f0-9ec2d78b7df3" />

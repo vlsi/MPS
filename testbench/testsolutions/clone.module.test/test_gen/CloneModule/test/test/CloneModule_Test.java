@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper;
 
 public class CloneModule_Test extends TestCase {
-  private static final String PROJECT_PATH = "../testbench/modules/testCloneModule/";
+  private static final String PROJECT_PATH = "testbench/modules/testCloneModule/";
   private static final String SUFFIX = "_testclone";
   private IFile clonedModulesDirectory;
   private Project project;

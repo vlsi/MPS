@@ -1,6 +1,7 @@
 <project name="mps" default="getidea">
+  <property name="idea_build_number" value ="163.7743.44"/>
   <property name="idea_ce.url" 
-            value="https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIC/141.177.4/ideaIC-141.177.4.zip"/>
+            value="https://www.jetbrains.com/intellij-repository/releases/com/jetbrains/intellij/idea/ideaIC/${idea_build_number}/ideaIC-${idea_build_number}.zip"/>
 
   <target name="loadPathVariable">
     <fail message="I need a system property: home.idea_ce = path to IDEA Community installation folder" unless="home.idea_ce"/>

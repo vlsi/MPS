@@ -12,6 +12,10 @@
   <property name="mpsPlugin.plugin.version" value="${import.mpsPlugin.mpsPlugin.plugin.version}" />
   <property name="mpsPlugin.date" value="${import.mpsPlugin.mpsPlugin.date}" />
   <property name="mpsBootstrapCore.version" value="${import.mpsPlugin.mpsBootstrapCore.version}" />
+  <property name="mpsPluginCommon.plugin.version" value="${import.mpsPlugin.mpsPluginCommon.plugin.version}" />
+  <property name="mpsPluginCommon.date" value="${import.mpsPlugin.mpsPluginCommon.date}" />
+  <property name="mpsPluginCore.plugin.version" value="${import.mpsPlugin.mpsPluginCore.plugin.version}" />
+  <property name="mpsPluginCore.date" value="${import.mpsPlugin.mpsPluginCore.date}" />
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
@@ -316,7 +320,7 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-ParallelFor-generator-template" prefix="module/generator/template" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/languages-ParallelFor-languageModels" prefix="module/languageModels" />
     </jar>
-    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
+    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}</echo>
   </target>
   
   <target name="buildDependents" />

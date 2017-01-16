@@ -271,7 +271,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.samples.xmlPersistence.build" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.samples.xmlPersistence.build">
     <mkdir dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" />
     <javac destdir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build" fork="false" encoding="utf8" includeantruntime="false">

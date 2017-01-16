@@ -116,38 +116,42 @@
   <target name="buildCore" depends="loadIdeaPathVar" unless="buildCoreProcessed">
     <property name="buildCoreProcessed" value="true"/>
     <ant antfile="${base_dir}/build/getDependencies.xml" target="${mps.plugin.dependencies.target}" inheritAll="true" useNativeBasedir="true"/>
-    <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="${base_dir}/build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
+    <!--<ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" locationm"${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
+    <!--<ant antfile="${base_dir}/build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">-->
+      <!--<property name="build.dir" location="${build.home}"/>-->
+      <!--<property name="idea_home" location="${ideaPath}"/>-->
+    <!--</ant>-->
   </target>
 
   <target name="build" depends="buildCore">
-    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="buildDependents">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" target="assemble">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>

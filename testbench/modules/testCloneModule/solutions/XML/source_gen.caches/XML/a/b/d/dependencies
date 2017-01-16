@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="XML.a.b.d.Referee" file="Referee.java">
+    <classNode dependClassName="XML.a.b.c.Referent" />
+  </dependency>
+</dependenciesRoot>
+

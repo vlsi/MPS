@@ -297,14 +297,6 @@
       <unit id="5934496548013521234" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_transformation_test_inputModels" />
     </file>
   </root>
-  <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7092489630493754343">
-    <file name="TestModule_jetbrains_mps_ide_java_tests.java">
-      <node id="7092489630493754343" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_ide_java_tests#()V" />
-      <scope id="7092489630493754343" at="12,52,12,52" />
-      <scope id="7092489630493754343" at="12,0,14,0" />
-      <unit id="7092489630493754343" at="8,0,15,0" name="jetbrains.mps.tests.TestModule_jetbrains_mps_ide_java_tests" />
-    </file>
-  </root>
   <root nodeRef="r:a549252a-5f7e-4e74-9e76-a86827f191ff(jetbrains.mps.tests)/7261441936922900508">
     <file name="TestModule_jetbrains_mps_baseLanguage_doubleDispatch_test.java">
       <node id="7261441936922900508" at="12,0,14,0" concept="0" trace="TestModule_jetbrains_mps_baseLanguage_doubleDispatch_test#()V" />
