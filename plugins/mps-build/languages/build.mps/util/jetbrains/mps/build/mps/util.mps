@@ -14464,6 +14464,23 @@
             <node concept="10P_77" id="6m8wrPAU4aB" role="1tU5fm" />
           </node>
         </node>
+        <node concept="3cpWs8" id="4u3NSgvg8AT" role="3cqZAp">
+          <node concept="3cpWsn" id="4u3NSgvg8AU" role="3cpWs9">
+            <property role="TrG5h" value="buildModuleFacade" />
+            <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="4u3NSgvg8AO" role="1tU5fm">
+              <ref role="3uigEE" node="16ApZ_poryA" resolve="ModuleChecker.BuildModuleFacade" />
+            </node>
+            <node concept="2ShNRf" id="4u3NSgvg8AV" role="33vP2m">
+              <node concept="1pGfFk" id="4u3NSgvg8AW" role="2ShVmc">
+                <ref role="37wK5l" node="16ApZ_poIWq" resolve="ModuleChecker.BuildModuleFacade" />
+                <node concept="37vLTw" id="4u3NSgvg8AX" role="37wK5m">
+                  <ref role="3cqZAo" node="6m8wrPAU4ap" resolve="module" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node concept="1DcWWT" id="6m8wrPAU4aC" role="3cqZAp">
           <node concept="3clFbS" id="6m8wrPAU4aD" role="2LFqv$">
             <node concept="3clFbJ" id="6m8wrPAU4aE" role="3cqZAp">
@@ -14588,13 +14605,8 @@
                   <node concept="3clFbS" id="6m8wrPAU4bv" role="3clFbx">
                     <node concept="3clFbF" id="16ApZ_prxbc" role="3cqZAp">
                       <node concept="2OqwBi" id="16ApZ_prxKu" role="3clFbG">
-                        <node concept="2ShNRf" id="16ApZ_prxb8" role="2Oq$k0">
-                          <node concept="1pGfFk" id="16ApZ_prxAh" role="2ShVmc">
-                            <ref role="37wK5l" node="16ApZ_poIWq" resolve="ModuleChecker.BuildModuleFacade" />
-                            <node concept="37vLTw" id="16ApZ_prxY$" role="37wK5m">
-                              <ref role="3cqZAo" node="6m8wrPAU4ap" resolve="module" />
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="4u3NSgvg8AZ" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4u3NSgvg8AU" resolve="buildModuleFacade" />
                         </node>
                         <node concept="liA8E" id="16ApZ_prye7" role="2OqNvi">
                           <ref role="37wK5l" node="16ApZ_prrcZ" resolve="addModelSources" />
@@ -14894,13 +14906,8 @@
                 </node>
                 <node concept="3clFbF" id="16ApZ_ppOR8" role="3cqZAp">
                   <node concept="2OqwBi" id="16ApZ_ppVtM" role="3clFbG">
-                    <node concept="2ShNRf" id="16ApZ_ppOR4" role="2Oq$k0">
-                      <node concept="1pGfFk" id="16ApZ_ppV5H" role="2ShVmc">
-                        <ref role="37wK5l" node="16ApZ_poIWq" resolve="ModuleChecker.BuildModuleFacade" />
-                        <node concept="37vLTw" id="16ApZ_ppVdh" role="37wK5m">
-                          <ref role="3cqZAo" node="6m8wrPAU4ap" resolve="module" />
-                        </node>
-                      </node>
+                    <node concept="37vLTw" id="4u3NSgvg8AY" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4u3NSgvg8AU" resolve="buildModuleFacade" />
                     </node>
                     <node concept="liA8E" id="16ApZ_ppVAz" role="2OqNvi">
                       <ref role="37wK5l" node="16ApZ_poJBn" resolve="addJavaSources" />
@@ -14930,9 +14937,9 @@
             <node concept="3clFbH" id="16ApZ_ppW7t" role="3cqZAp" />
             <node concept="3clFbJ" id="6YNIFBTDl5U" role="3cqZAp">
               <node concept="3clFbS" id="6YNIFBTDl5V" role="3clFbx">
-                <node concept="3SKdUt" id="16ApZ_pGATX" role="3cqZAp">
-                  <node concept="3SKdUq" id="16ApZ_pGATZ" role="3SKWNk">
-                    <property role="3SKdUp" value="FIXME (1) assume module file lies at the root of the module (not necessarily true, e.g. if we decide to move it to META-INF/ or another dedicated location" />
+                <node concept="3SKdUt" id="4u3NSgvgerV" role="3cqZAp">
+                  <node concept="3SKdUq" id="4u3NSgvgerW" role="3SKWNk">
+                    <property role="3SKdUp" value="XXX   (1) why do we assume all generated sources are Java? Why don't we look at JavaModuleFacet.getOutputRoot() instead?" />
                   </node>
                 </node>
                 <node concept="3SKdUt" id="16ApZ_pGCW7" role="3cqZAp">
@@ -14940,60 +14947,36 @@
                     <property role="3SKdUp" value="      (2) Use of ProjectPathUtil is dubious. Could have used AbstractModule.getOutputPath if I'd deal with SModule, not ModuleDescriptor." />
                   </node>
                 </node>
+                <node concept="3SKdUt" id="4u3NSgvhJPe" role="3cqZAp">
+                  <node concept="3SKdUq" id="4u3NSgvhJPg" role="3SKWNk">
+                    <property role="3SKdUp" value="      (3) Use of SModule would allow direct use of JavaModuleFacet instead of ModuleFacetDescriptor, keeping all the logic of location handling hidden." />
+                  </node>
+                </node>
                 <node concept="3cpWs8" id="6YNIFBTDl5W" role="3cqZAp">
                   <node concept="3cpWsn" id="6YNIFBTDl5X" role="3cpWs9">
-                    <property role="TrG5h" value="genPathFile" />
-                    <node concept="2YIFZM" id="6YNIFBTDl5Y" role="33vP2m">
+                    <property role="TrG5h" value="genPath" />
+                    <node concept="2YIFZM" id="4u3NSgvfH61" role="33vP2m">
                       <ref role="1Pybhc" to="z1c3:~ProjectPathUtil" resolve="ProjectPathUtil" />
-                      <ref role="37wK5l" to="z1c3:~ProjectPathUtil.getGeneratorOutputPath(jetbrains.mps.vfs.IFile,jetbrains.mps.project.structure.modules.ModuleDescriptor):jetbrains.mps.vfs.IFile" resolve="getGeneratorOutputPath" />
-                      <node concept="2OqwBi" id="16ApZ_pGA6e" role="37wK5m">
-                        <node concept="37vLTw" id="6YNIFBTDl60" role="2Oq$k0">
-                          <ref role="3cqZAo" node="6m8wrPAU3po" resolve="myModuleDescriptorFile" />
-                        </node>
-                        <node concept="liA8E" id="16ApZ_pGAuB" role="2OqNvi">
-                          <ref role="37wK5l" to="3ju5:~IFile.getParent():jetbrains.mps.vfs.IFile" resolve="getParent" />
-                        </node>
-                      </node>
-                      <node concept="37vLTw" id="6YNIFBTDl62" role="37wK5m">
+                      <ref role="37wK5l" to="z1c3:~ProjectPathUtil.getGeneratorOutputPath(jetbrains.mps.project.structure.modules.ModuleDescriptor):java.lang.String" resolve="getGeneratorOutputPath" />
+                      <node concept="37vLTw" id="4u3NSgvfH65" role="37wK5m">
                         <ref role="3cqZAo" node="6m8wrPAU3pl" resolve="myModuleDescriptor" />
                       </node>
                     </node>
-                    <node concept="3uibUv" id="6YNIFBTDl63" role="1tU5fm">
-                      <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-                    </node>
+                    <node concept="17QB3L" id="4u3NSgvg87k" role="1tU5fm" />
                   </node>
                 </node>
                 <node concept="3clFbJ" id="6YNIFBTDl64" role="3cqZAp">
                   <node concept="3y3z36" id="6YNIFBTDl65" role="3clFbw">
                     <node concept="10Nm6u" id="6YNIFBTDl66" role="3uHU7w" />
                     <node concept="37vLTw" id="3GM_nagTyes" role="3uHU7B">
-                      <ref role="3cqZAo" node="6YNIFBTDl5X" resolve="genPathFile" />
+                      <ref role="3cqZAo" node="6YNIFBTDl5X" resolve="genPath" />
                     </node>
                   </node>
                   <node concept="3clFbS" id="6YNIFBTDl68" role="3clFbx">
-                    <node concept="3cpWs8" id="6m8wrPAU4ch" role="3cqZAp">
-                      <node concept="3cpWsn" id="6m8wrPAU4ci" role="3cpWs9">
-                        <property role="TrG5h" value="genPath" />
-                        <node concept="17QB3L" id="6m8wrPAU4ck" role="1tU5fm" />
-                        <node concept="2OqwBi" id="6YNIFBTDl6c" role="33vP2m">
-                          <node concept="liA8E" id="6YNIFBTDl6d" role="2OqNvi">
-                            <ref role="37wK5l" to="3ju5:~IFile.getPath():java.lang.String" resolve="getPath" />
-                          </node>
-                          <node concept="37vLTw" id="3GM_nagTzj8" role="2Oq$k0">
-                            <ref role="3cqZAo" node="6YNIFBTDl5X" resolve="genPathFile" />
-                          </node>
-                        </node>
-                      </node>
-                    </node>
                     <node concept="3clFbF" id="16ApZ_pqzcb" role="3cqZAp">
                       <node concept="2OqwBi" id="16ApZ_pqzQe" role="3clFbG">
-                        <node concept="2ShNRf" id="16ApZ_pqzc7" role="2Oq$k0">
-                          <node concept="1pGfFk" id="16ApZ_pqzI6" role="2ShVmc">
-                            <ref role="37wK5l" node="16ApZ_poIWq" resolve="ModuleChecker.BuildModuleFacade" />
-                            <node concept="37vLTw" id="16ApZ_pq$43" role="37wK5m">
-                              <ref role="3cqZAo" node="6m8wrPAU4ap" resolve="module" />
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="4u3NSgvg8B0" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4u3NSgvg8AU" resolve="buildModuleFacade" />
                         </node>
                         <node concept="liA8E" id="16ApZ_pq$cu" role="2OqNvi">
                           <ref role="37wK5l" node="16ApZ_poJBn" resolve="addJavaSources" />
@@ -15001,7 +14984,7 @@
                             <node concept="1rXfSq" id="16ApZ_pq$lk" role="2Oq$k0">
                               <ref role="37wK5l" node="6m8wrPAU4eF" resolve="convertPath" />
                               <node concept="37vLTw" id="16ApZ_pq$Lv" role="37wK5m">
-                                <ref role="3cqZAo" node="6m8wrPAU4ci" resolve="genPath" />
+                                <ref role="3cqZAo" node="6YNIFBTDl5X" resolve="genPath" />
                               </node>
                             </node>
                             <node concept="1uHKPH" id="16ApZ_pqBue" role="2OqNvi" />
@@ -15051,9 +15034,9 @@
               </node>
             </node>
             <node concept="3clFbH" id="6YNIFBTE4QF" role="3cqZAp" />
-            <node concept="3SKdUt" id="6vEnYOlaJMI" role="3cqZAp">
-              <node concept="3SKdUq" id="6vEnYOlaJNu" role="3SKWNk">
-                <property role="3SKdUp" value="wat?" />
+            <node concept="3SKdUt" id="4u3NSgvgfZw" role="3cqZAp">
+              <node concept="3SKdUq" id="4u3NSgvgfZy" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME shall not limit tests sources to solutions only (even TestsFacetImpl allows Languages to have tests). Shall look to tests facet descriptor instead of blind forModuleDescriptor" />
               </node>
             </node>
             <node concept="3cpWs8" id="6YNIFBTDKKQ" role="3cqZAp">
@@ -15175,13 +15158,8 @@
                     </node>
                     <node concept="3clFbF" id="16ApZ_pqIws" role="3cqZAp">
                       <node concept="2OqwBi" id="16ApZ_pqJvw" role="3clFbG">
-                        <node concept="2ShNRf" id="16ApZ_pqIwo" role="2Oq$k0">
-                          <node concept="1pGfFk" id="16ApZ_pqJgu" role="2ShVmc">
-                            <ref role="37wK5l" node="16ApZ_poIWq" resolve="ModuleChecker.BuildModuleFacade" />
-                            <node concept="37vLTw" id="16ApZ_pqJoQ" role="37wK5m">
-                              <ref role="3cqZAo" node="6m8wrPAU4ap" resolve="module" />
-                            </node>
-                          </node>
+                        <node concept="37vLTw" id="4u3NSgvg8B1" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4u3NSgvg8AU" resolve="buildModuleFacade" />
                         </node>
                         <node concept="liA8E" id="16ApZ_pqJGI" role="2OqNvi">
                           <ref role="37wK5l" node="16ApZ_poKBK" resolve="addTestSources" />
@@ -18444,6 +18422,21 @@
                 <ref role="37wK5l" to="33ny:~Map.keySet():java.util.Set" resolve="keySet" />
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4u3NSgvfALe" role="3cqZAp">
+          <node concept="3SKdUq" id="4u3NSgvfALg" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME we don't persist used devkits in the module descriptor any longer (as well as used languages, that's why we use technical language version map)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4u3NSgvfD1x" role="3cqZAp">
+          <node concept="3SKdUq" id="4u3NSgvfD1z" role="3SKWNk">
+            <property role="3SKdUp" value="      but there's no proper replacement for devkits now. We need devkits e.g. to make GP models available, and the only workaround now is to add explicit" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4u3NSgvfFiX" role="3cqZAp">
+          <node concept="3SKdUq" id="4u3NSgvfFiZ" role="3SKWNk">
+            <property role="3SKdUp" value="      ModuleDependencyOnDevKit dependency to a module. The code to take devkits from module, although inactive, left as a reminder here." />
           </node>
         </node>
         <node concept="3cpWs8" id="3elU8iQ8$kO" role="3cqZAp">

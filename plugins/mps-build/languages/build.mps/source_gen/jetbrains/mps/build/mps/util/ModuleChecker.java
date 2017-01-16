@@ -427,6 +427,7 @@ public class ModuleChecker {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     Iterable<ModelRootDescriptor> modelRoots = myModuleDescriptor.getModelRootDescriptors();
     boolean hasModels = false;
+    final ModuleChecker.BuildModuleFacade buildModuleFacade = new ModuleChecker.BuildModuleFacade(module);
     for (ModelRootDescriptor modelRootDescriptor : modelRoots) {
       if (!(PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(modelRootDescriptor.getType()))) {
         continue;
@@ -444,7 +445,7 @@ public class ModuleChecker {
         }
 
         if (type.doFullImport) {
-          new ModuleChecker.BuildModuleFacade(module).addModelSources(p);
+          buildModuleFacade.addModelSources(p);
         }
         hasModels = true;
       }
@@ -469,20 +470,20 @@ public class ModuleChecker {
     if (type.doFullImport) {
       for (String path : myModuleDescriptor.getSourcePaths()) {
         SNode p = ListSequence.fromList(convertPath(path)).first();
-        new ModuleChecker.BuildModuleFacade(module).addJavaSources(p, false);
+        buildModuleFacade.addJavaSources(p, false);
       }
 
       if (!(SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) || ((boolean) BuildMps_Solution__BehaviorDescriptor.hasSources_id6ogfLD6hwDf.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution"))) && hasModels)) {
-        // FIXME (1) assume module file lies at the root of the module (not necessarily true, e.g. if we decide to move it to META-INF/ or another dedicated location 
+        // XXX   (1) why do we assume all generated sources are Java? Why don't we look at JavaModuleFacet.getOutputRoot() instead? 
         //       (2) Use of ProjectPathUtil is dubious. Could have used AbstractModule.getOutputPath if I'd deal with SModule, not ModuleDescriptor. 
-        IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleDescriptorFile.getParent(), myModuleDescriptor);
-        if (genPathFile != null) {
-          String genPath = genPathFile.getPath();
-          new ModuleChecker.BuildModuleFacade(module).addJavaSources(ListSequence.fromList(convertPath(genPath)).first(), true);
+        //       (3) Use of SModule would allow direct use of JavaModuleFacet instead of ModuleFacetDescriptor, keeping all the logic of location handling hidden. 
+        String genPath = ProjectPathUtil.getGeneratorOutputPath(myModuleDescriptor);
+        if (genPath != null) {
+          buildModuleFacade.addJavaSources(ListSequence.fromList(convertPath(genPath)).first(), true);
         }
       }
 
-      // wat? 
+      // FIXME shall not limit tests sources to solutions only (even TestsFacetImpl allows Languages to have tests). Shall look to tests facet descriptor instead of blind forModuleDescriptor 
       TestsFacet testsFacet = TestsFacetImpl.fromModuleDescriptor(myModuleDescriptor, myModuleDescriptorFile);
       boolean hasTests = SNodeOperations.isInstanceOf(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) && (boolean) BuildMps_Solution__BehaviorDescriptor.hasTestsSources_id6ogfLD6evrW.invoke(SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x2c446791464290f7L, "jetbrains.mps.build.mps.structure.BuildMps_Solution")));
       if (testsFacet != null && hasTests) {
@@ -490,7 +491,7 @@ public class ModuleChecker {
         if (testsPathFile != null) {
           String testPath = testsPathFile.getPath();
           SNode p = ListSequence.fromList(convertPath(testPath)).first();
-          new ModuleChecker.BuildModuleFacade(module).addTestSources(p, true);
+          buildModuleFacade.addTestSources(p, true);
         }
       }
     }
@@ -788,6 +789,9 @@ public class ModuleChecker {
   private void collectLocalDependencies() {
     SNode module = SNodeOperations.cast(myModule, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"));
     Set<SLanguage> usedLanguages = myModuleDescriptor.getLanguageVersions().keySet();
+    // FIXME we don't persist used devkits in the module descriptor any longer (as well as used languages, that's why we use technical language version map) 
+    //       but there's no proper replacement for devkits now. We need devkits e.g. to make GP models available, and the only workaround now is to add explicit 
+    //       ModuleDependencyOnDevKit dependency to a module. The code to take devkits from module, although inactive, left as a reminder here. 
     Iterable<SModuleReference> usedDevkits = myModuleDescriptor.getUsedDevkits();
 
     for (SLanguage lang : usedLanguages) {
