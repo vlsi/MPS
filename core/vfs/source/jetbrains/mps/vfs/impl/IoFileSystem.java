@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vfs.impl;
 
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -37,7 +38,7 @@ public class IoFileSystem implements FileSystem {
   @Override
   public IFile getFile(@NotNull String path) {
     // fix for MPS-10350; todo move
-    path = path.replace("//", "/").replace("\\\\", "\\");
+    path = FileUtil.getCanonicalPath(path);
     if (path.contains("!")) {
       int index = path.indexOf("!");
       String jarPath = path.substring(0, index);

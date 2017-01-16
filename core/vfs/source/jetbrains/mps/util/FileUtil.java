@@ -16,6 +16,8 @@
 package jetbrains.mps.util;
 
 import jetbrains.mps.vfs.path.Path;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -33,6 +35,7 @@ import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.Reader;
 import java.nio.charset.Charset;
+import java.text.MessageFormat;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +49,8 @@ import java.util.zip.ZipOutputStream;
  * @author Kostik
  */
 public class FileUtil {
+  private static final Logger LOG = LogManager.getLogger(FileUtil.class);
+
   private static final String[] IGNORED_DIRS = new String[]{".svn", ".git", "_svn"};
   public static final String DEFAULT_CHARSET_NAME = "UTF-8";
   public static final Charset DEFAULT_CHARSET = Charset.forName(DEFAULT_CHARSET_NAME);
@@ -182,10 +187,35 @@ public class FileUtil {
   }
 
   public static String getCanonicalPath(String path) {
-    if (path == null) return "";
+    if (path == null) {
+      path = "";
+    }
+    path = normalize0(path, Path.SYSTEM_SEPARATOR);
     File file = new File(path);
     return getCanonicalPath(file);
   }
+
+  @NotNull
+  public static String normalize(@NotNull String path) {
+    return stripLastSlashes(normalize0(getUnixPath(path), Path.UNIX_SEPARATOR));
+  }
+
+  // poor version of normalization
+  private static String normalize0(@NotNull String path, @NotNull String separator) {
+    path = path.replace("//", "/").replace("\\\\", "\\");
+    if (path.endsWith(separator + DOT)) {
+      path = path.substring(0, path.length() - 1);
+    }
+    if (path.equals("" + DOT)) {
+      return "";
+    }
+    path = path.replaceAll(Pattern.quote(separator + DOT + separator), separator);
+    if (path.contains(separator + DOT + DOT + separator)) {
+      LOG.warn("fixme: failed to normalize properly '..' elements '" + path + "'");
+    }
+    return path;
+  }
+
 
   public static boolean delete(File root) {
     boolean result = true;

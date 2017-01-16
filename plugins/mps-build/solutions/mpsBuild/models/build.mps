@@ -31091,6 +31091,30 @@
       <property role="TrG5h" value="mps_home" />
       <node concept="55IIr" id="6ifcnI8$2kf" role="398pKh" />
     </node>
+    <node concept="1E1JtD" id="6ifcnI8$2j3" role="3989C9">
+      <property role="BnDLt" value="true" />
+      <property role="TrG5h" value="jetbrains.mps.vcs.mergehints" />
+      <property role="3LESm3" value="37e03aa1-7289-49bc-8269-30de5eceec76" />
+      <property role="2GAjPV" value="false" />
+      <node concept="398BVA" id="6ifcnI8$2j4" role="3LF7KH">
+        <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
+        <node concept="2Ry0Ak" id="6ifcnI8$2j5" role="iGT6I">
+          <property role="2Ry0Am" value="plugins" />
+          <node concept="2Ry0Ak" id="6ifcnI8$2j6" role="2Ry0An">
+            <property role="2Ry0Am" value="vcs-core" />
+            <node concept="2Ry0Ak" id="6ifcnI8$2j7" role="2Ry0An">
+              <property role="2Ry0Am" value="languages" />
+              <node concept="2Ry0Ak" id="6ifcnI8$2j8" role="2Ry0An">
+                <property role="2Ry0Am" value="mergehints" />
+                <node concept="2Ry0Ak" id="6ifcnI8$2j9" role="2Ry0An">
+                  <property role="2Ry0Am" value="jetbrains.mps.vcs.mergehints.mpl" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="1E1JtD" id="6ifcnI8$2iU" role="3989C9">
       <property role="BnDLt" value="true" />
       <property role="TrG5h" value="jetbrains.mps.ide.vcs.modelmetadata" />
@@ -31117,30 +31141,6 @@
       <node concept="1SiIV0" id="6ifcnI8$2j1" role="3bR37C">
         <node concept="1Busua" id="6ifcnI8$2j2" role="1SiIV1">
           <ref role="1Busuk" node="7Kfy9QB6L8Y" resolve="jetbrains.mps.lang.project" />
-        </node>
-      </node>
-    </node>
-    <node concept="1E1JtD" id="6ifcnI8$2j3" role="3989C9">
-      <property role="BnDLt" value="true" />
-      <property role="TrG5h" value="jetbrains.mps.vcs.mergehints" />
-      <property role="3LESm3" value="37e03aa1-7289-49bc-8269-30de5eceec76" />
-      <property role="2GAjPV" value="false" />
-      <node concept="398BVA" id="6ifcnI8$2j4" role="3LF7KH">
-        <ref role="398BVh" node="6ifcnI8$2ke" resolve="mps_home" />
-        <node concept="2Ry0Ak" id="6ifcnI8$2j5" role="iGT6I">
-          <property role="2Ry0Am" value="plugins" />
-          <node concept="2Ry0Ak" id="6ifcnI8$2j6" role="2Ry0An">
-            <property role="2Ry0Am" value="vcs" />
-            <node concept="2Ry0Ak" id="6ifcnI8$2j7" role="2Ry0An">
-              <property role="2Ry0Am" value="languages" />
-              <node concept="2Ry0Ak" id="6ifcnI8$2j8" role="2Ry0An">
-                <property role="2Ry0Am" value="mergehints" />
-                <node concept="2Ry0Ak" id="6ifcnI8$2j9" role="2Ry0An">
-                  <property role="2Ry0Am" value="jetbrains.mps.vcs.mergehints.mpl" />
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
       </node>
     </node>

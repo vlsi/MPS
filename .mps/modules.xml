@@ -110,15 +110,14 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/entity/jetbrains.mps.generator.test.crossmodel.entity.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/inputLang/jetbrains.mps.transformation.test.inputLang.mpl" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" folder="core.aspects.generator" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.dk/jetbrains.mps.generator.xmodel-sample.devkit" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.lang1/jetbrains.mps.generator.test.xmodel.lang1.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.test/jetbrains.mps.generator.xmodel.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.aspects.intentions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/jetbrains.mps.lang.editor.imageGen.mpl" folder="core.aspects.editor" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.refactoring.participant.jar!/META-INF/module.xml" folder="core.aspects.refactoring" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/gentest/jetbrains.mps.tool.gentest.mpl" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/outlook/jetbrains.mps.make.outlook.mpl" folder="core.make" />
@@ -290,10 +289,10 @@
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingA/testSubtypingA.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/languages/testSubtypingB/testSubtypingB.mpl" folder="tests.subtyping" />
       <modulePath path="$PROJECT_DIR$/plugins/testModules/testSubtyping/solutions/testSubtypingTest/testSubtypingTest.msd" folder="tests.subtyping" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" folder="platform.vcs.core" />
+      <modulePath path="$PROJECT_DIR$/plugins/vcs-core/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs.core" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/common/jetbrains.mps.ide.vcs.platform.msd" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/jetbrains.mps.ide.vcs.msd" folder="platform.vcs" />
-      <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" folder="platform.vcs" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" folder="samples" />
       <modulePath path="$PROJECT_DIR$/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
@@ -433,7 +432,6 @@
       <modulePath path="$PROJECT_DIR$/testbench/modules/testBehavior/solutions/UtilSolution/UtilSolution.msd" folder="tests.testBehavior" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L1/L1.mpl" folder="tests.testClassLoading" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testClassLoading/languages/L2/L2.mpl" folder="tests.testClassLoading" />
-      <modulePath path="$PROJECT_DIR$/testbench/modules/testCloneModule/solutions/testCloneModule/CloneModule.test.msd" folder="tests.testCloneModule" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomAnalyzer/testCustomAnalyzer.mpl" folder="tests.testDataflow" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testCustomDataFlow/jetbrains.mps.testCustomDataFlow.mpl" folder="tests.testDataflow" />
       <modulePath path="$PROJECT_DIR$/testbench/modules/testDataFlow/languages/testExtendingAnalyzer/testExtendingAnalyzer.mpl" folder="tests.testDataflow" />

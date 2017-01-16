@@ -58,21 +58,8 @@ public class JarEntryFile implements IFileEx {
   JarEntryFile(AbstractJarFileData jarFileData, File jarFile, String path, IoFileSystem fileSystem) {
     myJarFileData = jarFileData;
     myJarFile = jarFile;
-    myEntryPath = normalize0(path);
+    myEntryPath = FileUtil.normalize(path);
     myFileSystem = fileSystem;
-  }
-
-  // poor version of normalization
-  @NotNull
-  private String normalize0(@NotNull String path) {
-    path = FileUtil.stripLastSlashes(FileUtil.getUnixPath(path));
-    if (path.endsWith(Path.UNIX_SEPARATOR + DOT)) {
-      path = path.substring(0, path.length() - 2);
-    }
-    if (path.contains(Path.UNIX_SEPARATOR + DOT + Path.UNIX_SEPARATOR)) {
-      LOG.warn(MessageFormat.format("Creating jar entry file with '{0}:::{1}' which seem not to be canonical", myJarFile, path));
-    }
-    return path;
   }
 
   @NotNull

@@ -68,9 +68,7 @@ public class IdeaFile implements IFileEx, CachingFile {
   @Internal
   public IdeaFile(IdeaFileSystem fileSystem, @NotNull String path) {
     myFileSystem = fileSystem;
-
-    // fix for MPS-10350; todo move
-    myPath = path.replace("//", "/").replace("\\\\", "\\");
+    myPath = jetbrains.mps.util.FileUtil.normalize(path);
   }
 
   @Internal
