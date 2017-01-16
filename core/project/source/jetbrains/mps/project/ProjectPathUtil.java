@@ -49,6 +49,12 @@ public class ProjectPathUtil {
     }
   }
 
+  /**
+   * @deprecated makes some odd assumptions (read-only file doesn't necessarily means it's from a jar; file argument not necessarily a
+   * <em>source</em> or <em>deployment</em> module descriptor file (in fact, might be any unrelated file at all)
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static IFile getClassesFolder(IFile moduleDescriptor) {
     // generator doesn't contain classes folder because generators compiled in mps
     if (moduleDescriptor == null) {
@@ -99,7 +105,8 @@ public class ProjectPathUtil {
 
   /**
    * @deprecated refactor uses, may use {@link #getGeneratorOutputPath(ModuleDescriptor)} for transition (first argument of the method serves
-   *             merely as a FileSystem provider, if IFile is needed, do FileSystem.getFile() yourself
+   *             merely as a FileSystem provider, if IFile is needed, do FileSystem.getFile() yourself.
+   *             There are no uses in MPS code now (nor in mbeddr, AFAIK).
    */
   @Deprecated
   @ToRemove(version = 3.5)
