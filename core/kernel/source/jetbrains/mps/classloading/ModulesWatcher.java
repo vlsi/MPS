@@ -166,10 +166,18 @@ public class ModulesWatcher {
         }
       }
       LOG.info(invalidModules.size() + " modules are marked as invalid roots for class loading out of " + getAllModules().size() +
-          " modules [totally in the repository]");
-      LOG.info("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading");
+          " modules [totally in the repository]:");
+      print(invalidModules);
+      LOG.info("Totally " + allInvalidModules.size() + " modules are marked invalid for class loading:");
+      print(allInvalidModules);
 
       checkStatusMapCorrectness();
+    }
+  }
+
+  private void print(Collection<? extends SModuleReference> modules) {
+    for (SModuleReference ref : modules) {
+      LOG.info(ref);
     }
   }
 

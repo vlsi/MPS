@@ -392,7 +392,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
         String relFromModuleDirToContentDir = relativize(getContentDirectory().getPath(), source.getModuleSourceDir());
         targetContentDir = target.getModuleSourceDir().getDescendant(relFromModuleDirToContentDir);
       } else {
-        targetContentDir = getContentDirectory(); // no changes are needed
+        throw new CopyNotSupportedException("The model root is not located under the module source directory " + this);
       }
       targetModelRoot.setContentDirectory(targetContentDir);
       for (SourceRootKind kind : getSupportedFileKinds1()) {
