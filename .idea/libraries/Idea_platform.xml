@@ -34,6 +34,7 @@
       <root url="jar://$PROJECT_DIR$/lib/openapi.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/snappy-in-java-0.5.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/lib/netty-all-4.1.6.Final.Patched.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/xercesImpl.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
