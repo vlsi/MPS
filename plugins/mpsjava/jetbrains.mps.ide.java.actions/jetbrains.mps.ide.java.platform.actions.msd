@@ -7,7 +7,6 @@
   </models>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">8a2e464f-d2c2-485e-a2ed-8b50c6327795(jetbrains.mps.ide.java)</dependency>
     <dependency reexport="false">f33a6c9c-f660-4bdb-aecd-2d144c61f7d2(jetbrains.mps.ide.java.platform)</dependency>
   </dependencies>
   <languageVersions>
@@ -28,9 +27,8 @@
     <module reference="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" version="0" />
     <module reference="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" version="0" />
     <module reference="fdaaf35f-8ee3-4c37-b09d-9efaeaaa7a41(jetbrains.mps.core.tool.environment)" version="0" />
-    <module reference="8a2e464f-d2c2-485e-a2ed-8b50c6327795(jetbrains.mps.ide.java)" version="0" />
-    <module reference="546f6e5c-e4a5-492f-bb5a-17f680dec8fd(jetbrains.mps.ide.java.actions)" version="0" />
     <module reference="f33a6c9c-f660-4bdb-aecd-2d144c61f7d2(jetbrains.mps.ide.java.platform)" version="0" />
+    <module reference="546f6e5c-e4a5-492f-bb5a-17f680dec8fd(jetbrains.mps.ide.java.platform.actions)" version="0" />
     <module reference="8d29d73f-ed99-4652-ae0a-083cdfe53c34(jetbrains.mps.ide.platform)" version="0" />
     <module reference="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" version="0" />
     <module reference="e6368d5c-b931-4d4d-9941-07b7da7d2e2d(jetbrains.mps.tool.builder)" version="0" />

@@ -15,7 +15,7 @@
       </models>
       <external-templates />
       <dependencies>
-        <dependency reexport="false">d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)</dependency>
+        <dependency reexport="false">f1d72cd7-4c96-4463-b124-bc959c21742a(TestLanguage_testclone)</dependency>
       </dependencies>
       <usedDevKits>
         <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>

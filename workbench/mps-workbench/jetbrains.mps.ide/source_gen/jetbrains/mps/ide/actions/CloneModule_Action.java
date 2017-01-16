@@ -26,7 +26,7 @@ public class CloneModule_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public CloneModule_Action() {
-    super("Clone Module", "", ICON);
+    super("Clone Module...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -87,7 +87,6 @@ public class CloneModule_Action extends BaseAction {
       return;
     }
 
-    // TODO: RADIDMIR Sync ProjectPane.rebuildTree() with NewLanguage, NewSolution actions 
     ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
     projectPane.selectModule(result, false);
   }

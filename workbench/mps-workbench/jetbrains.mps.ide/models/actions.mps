@@ -43724,7 +43724,7 @@
   <node concept="sE7Ow" id="2IfCauKtxv3">
     <property role="3GE5qa" value="Menu.ProjectPane.Module.Actions" />
     <property role="TrG5h" value="CloneModule" />
-    <property role="2uzpH1" value="Clone Module" />
+    <property role="2uzpH1" value="Clone Module..." />
     <node concept="2XrIbr" id="5HjGCfRi8dJ" role="32lrUH">
       <property role="TrG5h" value="getErrorMessage" />
       <node concept="17QB3L" id="5HjGCfRi$s7" role="3clF45" />
@@ -44192,11 +44192,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="1WyghFwQU68" role="3cqZAp" />
-        <node concept="3SKdUt" id="2_jX3OnDMo0" role="3cqZAp">
-          <node concept="3SKdUq" id="2_jX3OnDMo2" role="3SKWNk">
-            <property role="3SKdUp" value="TODO: RADIDMIR Sync ProjectPane.rebuildTree() with NewLanguage, NewSolution actions" />
-          </node>
-        </node>
         <node concept="3cpWs8" id="56$IWKxenbX" role="3cqZAp">
           <node concept="3cpWsn" id="56$IWKxenbY" role="3cpWs9">
             <property role="TrG5h" value="projectPane" />

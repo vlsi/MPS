@@ -58,6 +58,10 @@
       <concept id="1207145163717" name="jetbrains.mps.lang.plugin.structure.ElementListContents" flags="ng" index="ftmFs">
         <child id="1207145201301" name="reference" index="ftvYc" />
       </concept>
+      <concept id="1207318242772" name="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" flags="ng" index="pLAjd">
+        <property id="1207318242773" name="modifiers" index="pLAjc" />
+        <property id="1207318242774" name="keycode" index="pLAjf" />
+      </concept>
       <concept id="1203071646776" name="jetbrains.mps.lang.plugin.structure.ActionDeclaration" flags="ng" index="sE7Ow">
         <property id="1211298967294" name="outsideCommandExecution" index="72QZ$" />
         <property id="1207149998849" name="isAlwaysVisible" index="fJN8o" />
@@ -82,6 +86,16 @@
       </concept>
       <concept id="1205679047295" name="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" flags="ig" index="2S4$dB" />
       <concept id="1205681243813" name="jetbrains.mps.lang.plugin.structure.IsApplicableBlock" flags="in" index="2ScWuX" />
+      <concept id="1562714432501166198" name="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" flags="lg" index="Zd509">
+        <child id="1562714432501166206" name="keystroke" index="Zd501" />
+      </concept>
+      <concept id="1562714432501166197" name="jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration" flags="ng" index="Zd50a">
+        <property id="8646726056720906098" name="isPluginXmlKeymap" index="Z2u3V" />
+        <child id="1562714432501166199" name="shortcutChange" index="Zd508" />
+      </concept>
+      <concept id="6193305307616715384" name="jetbrains.mps.lang.plugin.structure.ShortcutChange" flags="lg" index="1bYyw_">
+        <reference id="6193305307616734326" name="action" index="1bYAoF" />
+      </concept>
       <concept id="1206092561075" name="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation" flags="nn" index="3gHZIF" />
       <concept id="5538333046911348654" name="jetbrains.mps.lang.plugin.structure.RequiredCondition" flags="ng" index="1oajcY" />
       <concept id="1217252042208" name="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" flags="ng" index="1DS2jV">
@@ -2767,6 +2781,17 @@
     <node concept="ftmFs" id="2Y91NYHrIeP" role="ftER_">
       <node concept="tCFHf" id="2Y91NYHrIeS" role="ftvYc">
         <ref role="tCJdB" node="7F9FiYySOv7" resolve="AnalyzeClasspath" />
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="5U9rQri5Gky">
+    <property role="TrG5h" value="Default" />
+    <property role="Z2u3V" value="true" />
+    <node concept="Zd509" id="cvGLnZnSxd" role="Zd508">
+      <ref role="1bYAoF" node="5U9rQri5GcF" resolve="ChangeMethodSignature" />
+      <node concept="pLAjd" id="5GUQLVLhjm0" role="Zd501">
+        <property role="pLAjf" value="VK_F6" />
+        <property role="pLAjc" value="ctrl" />
       </node>
     </node>
   </node>
