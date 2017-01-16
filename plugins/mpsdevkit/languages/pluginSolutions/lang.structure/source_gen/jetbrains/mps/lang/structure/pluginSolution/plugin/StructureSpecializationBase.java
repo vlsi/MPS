@@ -6,6 +6,8 @@ import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNode;
+import java.util.List;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.util.annotation.ToRemove;
 
@@ -17,7 +19,7 @@ public abstract class StructureSpecializationBase<T> implements StructureSpecial
     return fetchState(movedNode);
   }
   public abstract Tuples._2<T, SNodeReference> fetchState(SNode movingNode);
-  public void confirm(Tuples._2<T, SNodeReference> initialState, Tuples._2<T, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder, boolean updateModuleDependencies) {
+  public void confirm(List<RefactoringParticipant.Option> selectedOptions, Tuples._2<T, SNodeReference> initialState, Tuples._2<T, SNodeReference> finalState, SRepository repository, LanguageStructureMigrationParticipant.MigrationBuilder migrationBuilder, boolean updateModuleDependencies) {
     confirm(initialState, finalState, repository, migrationBuilder);
   }
   @Deprecated

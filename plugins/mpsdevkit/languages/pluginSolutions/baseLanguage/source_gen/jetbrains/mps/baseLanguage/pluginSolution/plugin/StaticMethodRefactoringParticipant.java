@@ -7,6 +7,8 @@ import jetbrains.mps.refactoring.participant.MoveNodeRefactoringParticipant;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import java.util.List;
+import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase;
@@ -35,21 +37,21 @@ public class StaticMethodRefactoringParticipant extends StaticMemberRefactoringP
   }
 
   @Override
-  protected void doUpdateReference(SRepository repository, final SNode containingNode, final SReferenceLink role, UpdateReferencesParticipantBase.NodeData<UpdateReferencesParticipantBase.NamedNodeReference> newTarget, final String resolveInfo) {
+  protected void doUpdateReference(List<RefactoringParticipant.Option> selectedOptions, SRepository repository, final SNode containingNode, final SReferenceLink role, UpdateReferencesParticipantBase.NodeData<UpdateReferencesParticipantBase.NamedNodeReference> oldTarget, UpdateReferencesParticipantBase.NodeData<UpdateReferencesParticipantBase.NamedNodeReference> newTarget, final String resolveInfo) {
     if (!(SNodeOperations.isInstanceOf(containingNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall"))) || newTarget.other() == null) {
-      super.doUpdateReference(repository, containingNode, role, newTarget, resolveInfo);
+      super.doUpdateReference(selectedOptions, repository, containingNode, role, oldTarget, newTarget, resolveInfo);
     } else {
       @Nullable SNode tryToResolveNewTarget = newTarget.baseData().reference().resolve(repository);
       SNode replacement;
       if (tryToResolveNewTarget != null && SNodeOperations.getNodeAncestor(containingNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false) == SNodeOperations.getNodeAncestor(tryToResolveNewTarget, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"), false, false)) {
         replacement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6b6a1e379f9404L, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"));
         SNodeOperations.replaceWithAnother(containingNode, replacement);
-        super.doUpdateReference(repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), newTarget, resolveInfo);
+        super.doUpdateReference(selectedOptions, repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), oldTarget, newTarget, resolveInfo);
       } else {
         replacement = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, "jetbrains.mps.baseLanguage.structure.StaticMethodCall"));
         SNodeOperations.replaceWithAnother(containingNode, replacement);
-        super.doUpdateReference(repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), newTarget, resolveInfo);
-        super.doUpdateReference(repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), new NodeData<UpdateReferencesParticipantBase.NamedNodeReference>(newTarget.other(), ((UpdateReferencesParticipantBase.NamedNodeReference) null)), newTarget.other().name());
+        super.doUpdateReference(selectedOptions, repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), oldTarget, newTarget, resolveInfo);
+        super.doUpdateReference(selectedOptions, repository, replacement, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), new NodeData<UpdateReferencesParticipantBase.NamedNodeReference>(oldTarget.other(), ((UpdateReferencesParticipantBase.NamedNodeReference) null)), new NodeData<UpdateReferencesParticipantBase.NamedNodeReference>(newTarget.other(), ((UpdateReferencesParticipantBase.NamedNodeReference) null)), newTarget.other().name());
       }
       ListSequence.fromList(SLinkOperations.getChildren(replacement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(containingNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"))));
       ListSequence.fromList(SLinkOperations.getChildren(replacement, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))).addSequence(ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(containingNode, MetaAdapterFactory.getInterfaceConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, "jetbrains.mps.baseLanguage.structure.IMethodCall")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0x4500f31eb02a7788L, "typeArgument"))));
