@@ -63,6 +63,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.testMetaLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.testMetaLanguage.mpl" />
       </module>
     </echoxml>
@@ -115,6 +118,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.testLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.testLanguage.mpl" />
       </module>
     </echoxml>
@@ -154,6 +160,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.testExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.testExtendingLanguage.mpl" />
       </module>
     </echoxml>
@@ -193,6 +202,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.testUnusedExtendingLanguage.mpl" />
       </module>
     </echoxml>
@@ -237,6 +249,9 @@
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage.mpl" />
       </module>
     </echoxml>
@@ -279,6 +294,9 @@
           <module ref="314be7f0-41fb-4055-ab41-207bb8f69d95(jetbrains.mps.lang.editor.menus.extras.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.mpl" />
       </module>
     </echoxml>
@@ -321,6 +339,9 @@
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.extras.testLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.extras.testLanguage.mpl" />
       </module>
     </echoxml>
@@ -360,6 +381,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.substitute.testLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.substitute.testLanguage.mpl" />
       </module>
     </echoxml>
@@ -399,6 +423,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.substitute.testExtendingLanguage.mpl" />
       </module>
     </echoxml>
@@ -442,6 +469,9 @@
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.tests-src.jar" descriptor="jetbrains.mps.lang.editor.menus.tests.msd" />
       </module>
     </echoxml>
@@ -474,6 +504,9 @@
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.contextAssistant.tests-src.jar" descriptor="jetbrains.mps.lang.editor.menus.contextAssistant.tests.msd" />
       </module>
     </echoxml>
@@ -508,6 +541,9 @@
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.extras.tests-src.jar" descriptor="jetbrains.mps.lang.editor.menus.extras.tests.msd" />
       </module>
     </echoxml>
@@ -541,6 +577,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.editor.contextActionsTool.tests-src.jar" descriptor="jetbrains.mps.editor.contextActionsTool.tests.msd" />
       </module>
     </echoxml>
@@ -575,6 +614,9 @@
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.menus.substitute.tests-src.jar" descriptor="jetbrains.mps.lang.editor.menus.substitute.tests.msd" />
       </module>
     </echoxml>

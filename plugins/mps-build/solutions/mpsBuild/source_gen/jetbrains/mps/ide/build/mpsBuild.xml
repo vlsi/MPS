@@ -69,6 +69,9 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build-src.jar" descriptor="jetbrains.mps.build.mpl" />
       </module>
     </echoxml>
@@ -125,6 +128,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.workflow-src.jar" descriptor="jetbrains.mps.build.workflow.mpl" />
       </module>
     </echoxml>
@@ -185,6 +191,9 @@
           <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps-src.jar" descriptor="jetbrains.mps.build.mps.mpl" />
       </module>
     </echoxml>
@@ -241,6 +250,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.tests-src.jar" descriptor="jetbrains.mps.build.mps.tests.mpl" />
       </module>
     </echoxml>
@@ -297,6 +309,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.testManifest-src.jar" descriptor="jetbrains.mps.build.mps.testManifest.mpl" />
       </module>
     </echoxml>
@@ -349,6 +364,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.runner-src.jar" descriptor="jetbrains.mps.build.mps.runner.mpl" />
       </module>
     </echoxml>
@@ -397,6 +415,9 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.migration-src.jar" descriptor="jetbrains.mps.build.migration.msd" />
       </module>
     </echoxml>
@@ -436,6 +457,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="jetbrains.mps.build.startup.mpl" />
       </module>
     </echoxml>
@@ -485,6 +509,7 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath />
         <sources jar="." descriptor="jetbrains.mps.ide.build.msd" />
       </module>
     </echoxml>
@@ -502,6 +527,9 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.build.workflow.preset.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.build.workflow.preset" type="solution" uuid="cca2431b-e74f-4066-9344-e40022d0908a">
         <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.workflow.preset-src.jar" descriptor="jetbrains.mps.build.workflow.preset.msd" />
       </module>
     </echoxml>

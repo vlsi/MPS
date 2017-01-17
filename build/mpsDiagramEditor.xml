@@ -69,6 +69,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.diagram-src.jar" descriptor="jetbrains.mps.lang.editor.diagram.mpl" />
       </module>
     </echoxml>
@@ -120,6 +123,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.diagram.runtime-src.jar" descriptor="jetbrains.mps.lang.editor.diagram.runtime.msd" />
       </module>
     </echoxml>
@@ -160,6 +166,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.figures-src.jar" descriptor="jetbrains.mps.lang.editor.figures.mpl" />
       </module>
     </echoxml>
@@ -205,6 +214,9 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6(jetbrains.jetpad)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.lang.editor.figures.library-src.jar" descriptor="jetbrains.mps.lang.editor.figures.library.msd" />
       </module>
     </echoxml>

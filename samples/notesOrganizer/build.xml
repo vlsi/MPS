@@ -58,6 +58,9 @@
           <module ref="90966cb5-4f67-429a-b7ba-d0fded4ede71(jetbrains.mps.lang.editor.forms.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.samples.notesOrganizer-src.jar" descriptor="jetbrains.mps.samples.notesOrganizer.mpl" />
       </module>
     </echoxml>

@@ -49,6 +49,9 @@
         <library jar="../../lib/test-1.0.0-jvm6.jar" />
         <library jar="../../lib/values-1.0.0-jvm6.jar" />
         <library jar="../../lib/view-1.0.0-jvm6.jar" />
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.jetpad-src.jar" descriptor="jetbrains.jetpad.msd" />
       </module>
     </echoxml>

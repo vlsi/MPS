@@ -35,6 +35,9 @@
     <echoxml file="${build.tmp}/default/jetbrains.mps.samples.xmlPersistence.ideaPlugin.jar/META-INF/module.xml">
       <module namespace="jetbrains.mps.samples.xmlPersistence.ideaPlugin" type="solution" uuid="c5acfe9f-68f7-4748-bd01-8f9f42e607b7">
         <dependencies />
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.samples.xmlPersistence.ideaPlugin-src.jar" descriptor="jetbrains.mps.samples.xmlPersistence.ideaPlugin.msd" />
       </module>
     </echoxml>
@@ -72,6 +75,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.samples.xmlPersistence-src.jar" descriptor="jetbrains.mps.samples.xmlPersistence.msd" />
       </module>
     </echoxml>

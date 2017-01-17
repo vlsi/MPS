@@ -72,6 +72,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.commands-src.jar" descriptor="jetbrains.mps.execution.commands.mpl" />
       </module>
     </echoxml>
@@ -133,6 +136,9 @@
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.configurations-src.jar" descriptor="jetbrains.mps.execution.configurations.mpl" />
       </module>
     </echoxml>
@@ -188,6 +194,9 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.configurations.pluginSolution-src.jar" descriptor="jetbrains.mps.execution.configurations.pluginSolution.msd" />
       </module>
     </echoxml>
@@ -259,6 +268,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.commands-src.jar" descriptor="jetbrains.mps.execution.commands.mpl" />
       </module>
     </echoxml>
@@ -320,6 +332,9 @@
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.configurations-src.jar" descriptor="jetbrains.mps.execution.configurations.mpl" />
       </module>
     </echoxml>
@@ -375,6 +390,9 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.execution.configurations.pluginSolution-src.jar" descriptor="jetbrains.mps.execution.configurations.pluginSolution.msd" />
       </module>
     </echoxml>
@@ -411,6 +429,9 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.baseLanguage.execution.startup-src.jar" descriptor="jetbrains.mps.baseLanguage.execution.startup.msd" />
       </module>
     </echoxml>

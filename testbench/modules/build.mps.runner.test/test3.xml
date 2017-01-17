@@ -35,6 +35,9 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.runner.test.test3-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.test3.msd" />
       </module>
     </echoxml>
