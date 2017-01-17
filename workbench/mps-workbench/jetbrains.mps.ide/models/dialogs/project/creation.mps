@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="tpf8" ref="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
@@ -3439,7 +3439,7 @@
                             <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
                           </node>
                           <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
-                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                            <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
                           </node>
                         </node>
                       </node>

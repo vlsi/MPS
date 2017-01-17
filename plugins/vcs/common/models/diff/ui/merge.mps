@@ -6,8 +6,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="bmv6" ref="r:e9c4e128-4808-4224-a92b-dbeed02eb860(jetbrains.mps.vcs.diff.merge)" />
@@ -1788,7 +1788,7 @@
           <node concept="10Nm6u" id="BjUsE2KPWN" role="37wK5m" />
           <node concept="2YIFZM" id="BjUsE2KPWO" role="37wK5m">
             <ref role="1Pybhc" to="g1qu:~EmptyIcon" resolve="EmptyIcon" />
-            <ref role="37wK5l" to="g1qu:~EmptyIcon.create(int):javax.swing.Icon" resolve="create" />
+            <ref role="37wK5l" to="g1qu:~EmptyIcon.create(int):com.intellij.util.ui.EmptyIcon" resolve="create" />
             <node concept="3cmrfG" id="BjUsE2KPWP" role="37wK5m">
               <property role="3cmrfH" value="1" />
             </node>
