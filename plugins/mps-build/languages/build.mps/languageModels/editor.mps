@@ -2233,11 +2233,18 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="s7_iJZHIsE" role="3EZMnx">
-        <property role="3F0ifm" value="jar locations:" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+      <node concept="3EZMnI" id="7ndynavQi2O" role="3EZMnx">
         <node concept="ljvvj" id="s7_iJZHIsF" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRfu4" id="7ndynavQi2P" role="2iSdaV" />
+        <node concept="3F0ifn" id="s7_iJZHIsE" role="3EZMnx">
+          <property role="3F0ifm" value="jar locations:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0ifn" id="7ndynavQin6" role="3EZMnx">
+          <property role="3F0ifm" value="runtime library jars" />
+          <ref role="1k5W1q" to="o2va:1zyPPevfOM0" resolve="hint" />
         </node>
       </node>
       <node concept="3F2HdR" id="s7_iJZHIsQ" role="3EZMnx">
@@ -2246,6 +2253,7 @@
         <node concept="3F0ifn" id="s7_iJZHIsS" role="2czzBI">
           <property role="3F0ifm" value="" />
           <property role="ilYzB" value="&lt;&lt; default relative locations for all jars &gt;&gt;" />
+          <ref role="1k5W1q" to="o2va:7UAfeVQSDww" resolve="comment" />
           <node concept="VPxyj" id="s7_iJZHIsT" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -2258,6 +2266,34 @@
         </node>
       </node>
       <node concept="l2Vlx" id="3LQl9buGsTV" role="2iSdaV" />
+      <node concept="3EZMnI" id="7ndynavQi3l" role="3EZMnx">
+        <node concept="ljvvj" id="7ndynavQi3R" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRfu4" id="7ndynavQi3m" role="2iSdaV" />
+        <node concept="3F0ifn" id="7ndynavQfgQ" role="3EZMnx">
+          <property role="3F0ifm" value="module classes:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0ifn" id="7ndynavQpae" role="3EZMnx">
+          <property role="3F0ifm" value="module-relative path to compiled classes" />
+          <ref role="1k5W1q" to="o2va:1zyPPevfOM0" resolve="hint" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="7ndynavQfhb" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+        <node concept="l2Vlx" id="7ndynavQfhc" role="2czzBx" />
+        <node concept="3F0ifn" id="7ndynavQfhd" role="2czzBI">
+          <property role="ilYzB" value="&lt;&lt; none &gt;&gt;" />
+          <ref role="1k5W1q" to="o2va:7UAfeVQSDww" resolve="comment" />
+        </node>
+        <node concept="pj6Ft" id="7ndynavQfhf" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="7ndynavQfhg" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="1h_SRR" id="41K1b4v5Bzs">

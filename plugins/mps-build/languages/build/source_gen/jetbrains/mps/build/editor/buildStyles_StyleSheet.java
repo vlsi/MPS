@@ -216,8 +216,9 @@ public class buildStyles_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
+      style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.PLAIN);
+      style.set(StyleAttributes.EDITABLE, false);
     }
 
   }

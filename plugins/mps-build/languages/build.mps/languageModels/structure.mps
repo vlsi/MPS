@@ -543,6 +543,13 @@
       <property role="IQ2ns" value="506537499308757750" />
       <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
     </node>
+    <node concept="1TJgyj" id="7ndynavQeWF" role="1TKVEi">
+      <property role="IQ2ns" value="8488591998064324395" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="classpathEntries" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
+    </node>
     <node concept="1TJgyj" id="6CY5wCYZA9P" role="1TKVEi">
       <property role="20lmBu" value="reference" />
       <property role="20kJfa" value="module" />

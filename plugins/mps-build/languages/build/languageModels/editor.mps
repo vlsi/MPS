@@ -1571,10 +1571,13 @@
     <node concept="14StLt" id="1zyPPevfOM0" role="V601i">
       <property role="TrG5h" value="hint" />
       <node concept="VechU" id="1zyPPevfOM1" role="3F10Kt">
-        <property role="Vb096" value="darkGray" />
+        <property role="Vb096" value="lightGray" />
       </node>
       <node concept="Vb9p2" id="1zyPPevfOM3" role="3F10Kt">
         <property role="Vbekb" value="PLAIN" />
+      </node>
+      <node concept="VPxyj" id="7ndynavQruI" role="3F10Kt">
+        <property role="VOm3f" value="false" />
       </node>
     </node>
     <node concept="14StLt" id="7UAfeVQSDww" role="V601i">

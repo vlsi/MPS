@@ -247,6 +247,9 @@
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
+      <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
+        <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
+      </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
@@ -257,6 +260,7 @@
       </concept>
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
+      <concept id="1139184414036" name="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" flags="nn" index="WFELt" />
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -1963,6 +1967,159 @@
     <node concept="1YaCAy" id="3Iy_$1rNnDj" role="1YuTPh">
       <property role="TrG5h" value="genOpts" />
       <ref role="1YaFvo" to="kdzh:3Iy_$1rrNGr" resolve="BuildMps_GeneratorOptions" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7ndynavW9JU">
+    <property role="TrG5h" value="check_ModuleXml_SpecifiesClasspath" />
+    <property role="3GE5qa" value="Layout" />
+    <node concept="3clFbS" id="7ndynavW9JV" role="18ibNy">
+      <node concept="3clFbJ" id="7ndynavWca4" role="3cqZAp">
+        <node concept="3clFbS" id="7ndynavWca6" role="3clFbx">
+          <node concept="3cpWs6" id="7ndynavWicJ" role="3cqZAp" />
+        </node>
+        <node concept="2OqwBi" id="7ndynavWfMU" role="3clFbw">
+          <node concept="2OqwBi" id="7ndynavWcoz" role="2Oq$k0">
+            <node concept="1YBJjd" id="7ndynavWcet" role="2Oq$k0">
+              <ref role="1YBMHb" node="7ndynavW9JX" resolve="n" />
+            </node>
+            <node concept="3Tsc0h" id="7ndynavWcFI" role="2OqNvi">
+              <ref role="3TtcxE" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+            </node>
+          </node>
+          <node concept="3GX2aA" id="7ndynavWic6" role="2OqNvi" />
+        </node>
+      </node>
+      <node concept="3cpWs8" id="7ndynavVWsW" role="3cqZAp">
+        <node concept="3cpWsn" id="7ndynavVWsX" role="3cpWs9">
+          <property role="TrG5h" value="containerJar" />
+          <node concept="3Tqbb2" id="7ndynavVWsO" role="1tU5fm">
+            <ref role="ehGHo" to="3ior:6qcrfIJF7Yq" resolve="BuildLayout_Jar" />
+          </node>
+          <node concept="1PxgMI" id="7ndynavVWsY" role="33vP2m">
+            <property role="1BlNFB" value="true" />
+            <node concept="chp4Y" id="7ndynavVWsZ" role="3oSUPX">
+              <ref role="cht4Q" to="3ior:6qcrfIJF7Yq" resolve="BuildLayout_Jar" />
+            </node>
+            <node concept="2OqwBi" id="7ndynavVWt0" role="1m5AlR">
+              <node concept="1PxgMI" id="7ndynavVWt1" role="2Oq$k0">
+                <property role="1BlNFB" value="true" />
+                <node concept="chp4Y" id="7ndynavVWt2" role="3oSUPX">
+                  <ref role="cht4Q" to="3ior:6qcrfIJF4LS" resolve="BuildLayout_Folder" />
+                </node>
+                <node concept="2OqwBi" id="7ndynavVWt3" role="1m5AlR">
+                  <node concept="1YBJjd" id="7ndynavW9Se" role="2Oq$k0">
+                    <ref role="1YBMHb" node="7ndynavW9JX" resolve="n" />
+                  </node>
+                  <node concept="1mfA1w" id="7ndynavVWt5" role="2OqNvi" />
+                </node>
+              </node>
+              <node concept="1mfA1w" id="7ndynavVWt6" role="2OqNvi" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3clFbJ" id="7ndynavW9Xr" role="3cqZAp">
+        <node concept="3clFbS" id="7ndynavW9Xt" role="3clFbx">
+          <node concept="a7r0C" id="7ndynavWiNt" role="3cqZAp">
+            <node concept="3Cnw8n" id="7ndynavWwiv" role="2OEOjU">
+              <ref role="QpYPw" node="7ndynavWohJ" resolve="SetModuleJarClasspathEntry" />
+            </node>
+            <node concept="Xl_RD" id="7ndynavWnBM" role="a7wSD">
+              <property role="Xl_RC" value="Module descriptor inside a jar with compiled classes doesn't specify classpath" />
+            </node>
+            <node concept="1YBJjd" id="7ndynavWnFo" role="2OEOjV">
+              <ref role="1YBMHb" node="7ndynavW9JX" resolve="n" />
+            </node>
+            <node concept="2OE7Q9" id="7ndynavWnSO" role="2OEWyd">
+              <ref role="2OEe5H" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+            </node>
+          </node>
+        </node>
+        <node concept="1Wc70l" id="7ndynavWbXc" role="3clFbw">
+          <node concept="2OqwBi" id="7ndynavWa1_" role="3uHU7B">
+            <node concept="37vLTw" id="7ndynavWa1A" role="2Oq$k0">
+              <ref role="3cqZAo" node="7ndynavVWsX" resolve="containerJar" />
+            </node>
+            <node concept="3x8VRR" id="7ndynavWbTH" role="2OqNvi" />
+          </node>
+          <node concept="2OqwBi" id="7ndynavWc0P" role="3uHU7w">
+            <node concept="2OqwBi" id="7ndynavWc0Q" role="2Oq$k0">
+              <node concept="2OqwBi" id="7ndynavWc0R" role="2Oq$k0">
+                <node concept="37vLTw" id="7ndynavWc0S" role="2Oq$k0">
+                  <ref role="3cqZAo" node="7ndynavVWsX" resolve="containerJar" />
+                </node>
+                <node concept="3Tsc0h" id="7ndynavWc0T" role="2OqNvi">
+                  <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
+                </node>
+              </node>
+              <node concept="v3k3i" id="7ndynavWc0U" role="2OqNvi">
+                <node concept="chp4Y" id="7ndynavWc0V" role="v3oSu">
+                  <ref role="cht4Q" to="3ior:2fQZjorRfO$" resolve="BuildLayout_CompileOutputOf" />
+                </node>
+              </node>
+            </node>
+            <node concept="3GX2aA" id="7ndynavWc0W" role="2OqNvi" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7ndynavW9JX" role="1YuTPh">
+      <property role="TrG5h" value="n" />
+      <ref role="1YaFvo" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
+    </node>
+  </node>
+  <node concept="Q5z_Y" id="7ndynavWohJ">
+    <property role="TrG5h" value="SetModuleJarClasspathEntry" />
+    <node concept="Q5ZZ6" id="7ndynavWohK" role="Q6x$H">
+      <node concept="3clFbS" id="7ndynavWohL" role="2VODD2">
+        <node concept="3cpWs8" id="7ndynavWq$S" role="3cqZAp">
+          <node concept="3cpWsn" id="7ndynavWq$T" role="3cpWs9">
+            <property role="TrG5h" value="moduleXml" />
+            <node concept="3Tqbb2" id="7ndynavWq$Q" role="1tU5fm">
+              <ref role="ehGHo" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
+            </node>
+            <node concept="1PxgMI" id="7ndynavWq$U" role="33vP2m">
+              <property role="1BlNFB" value="true" />
+              <node concept="chp4Y" id="7ndynavWq$V" role="3oSUPX">
+                <ref role="cht4Q" to="kdzh:6CY5wCYZA9O" resolve="BuildMpsLayout_ModuleXml" />
+              </node>
+              <node concept="Q6c8r" id="7ndynavWq$W" role="1m5AlR" />
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="7ndynavWpEy" role="3cqZAp">
+          <node concept="37vLTI" id="7ndynavWvR6" role="3clFbG">
+            <node concept="Xl_RD" id="7ndynavWw7S" role="37vLTx">
+              <property role="Xl_RC" value="." />
+            </node>
+            <node concept="2OqwBi" id="7ndynavWv1x" role="37vLTJ">
+              <node concept="2OqwBi" id="7ndynavWsm6" role="2Oq$k0">
+                <node concept="2OqwBi" id="7ndynavWqKr" role="2Oq$k0">
+                  <node concept="37vLTw" id="7ndynavWq$X" role="2Oq$k0">
+                    <ref role="3cqZAo" node="7ndynavWq$T" resolve="moduleXml" />
+                  </node>
+                  <node concept="3Tsc0h" id="7ndynavWqTe" role="2OqNvi">
+                    <ref role="3TtcxE" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+                  </node>
+                </node>
+                <node concept="WFELt" id="7ndynavWuAE" role="2OqNvi" />
+              </node>
+              <node concept="3TrcHB" id="7ndynavWvqt" role="2OqNvi">
+                <ref role="3TsBF5" to="kdzh:QkG2t1bKwB" resolve="path" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="QznSV" id="7ndynavWwIY" role="QzAvj">
+      <node concept="3clFbS" id="7ndynavWwIZ" role="2VODD2">
+        <node concept="3clFbF" id="7ndynavWwRr" role="3cqZAp">
+          <node concept="Xl_RD" id="7ndynavWwRq" role="3clFbG">
+            <property role="Xl_RC" value="Add classpath entry that corresponds to jar root" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
