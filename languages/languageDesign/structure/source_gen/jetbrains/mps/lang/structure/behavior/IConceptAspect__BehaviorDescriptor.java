@@ -59,7 +59,7 @@ public final class IConceptAspect__BehaviorDescriptor extends BaseBHDescriptor {
     return true;
   }
   /*package*/ static boolean canBeAppliedToNode_id7IH442d05tK(@NotNull SAbstractConcept __thisConcept__, SNode candidate) {
-    return (boolean) IConceptAspect__BehaviorDescriptor.isApplicable_id6NcFj35FbEV.invoke(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(__thisConcept__.getDeclarationNode())), candidate);
+    return (boolean) IConceptAspect__BehaviorDescriptor.isApplicable_id6NcFj35FbEV.invoke(SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(__thisConcept__)), candidate);
   }
 
   /*package*/ IConceptAspect__BehaviorDescriptor() {

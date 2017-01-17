@@ -54,7 +54,7 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
     // [MM] I don't understand this code and have just wrote an equivalent to the previous version w/o conceptNodes 
     // [MM] I suppose what's meant here is concept.hierarchy.subconcepts(IApplicableToNothing).selectMany(it->it.getApplicableTypes()) 
     // [MM] this differs much from the current code: getAT() is only called for direct super-interfaces 
-    SAbstractConcept tt = SNodeOperations.asSConcept(__thisConcept__.getDeclarationNode());
+    SAbstractConcept tt = SNodeOperations.asSConcept(__thisConcept__);
     Iterable<SInterfaceConcept> supers;
     if (tt instanceof SConcept) {
       supers = ((SConcept) tt).getSuperInterfaces();
