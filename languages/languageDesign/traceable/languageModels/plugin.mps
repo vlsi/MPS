@@ -13,7 +13,6 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="1kj4" ref="r:0bcaf439-5bc6-429b-a457-4e0d9746449f(jetbrains.mps.make.delta)" />
     <import index="b0pz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.facets(MPS.Core/)" />
-    <import index="unno" ref="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" />
     <import index="fy8e" ref="r:89c0fb70-0977-7777-a076-5906f9d8630f(jetbrains.mps.make.facets)" />
     <import index="tpcq" ref="r:00000000-0000-4000-0000-011c89590286(jetbrains.mps.lang.core.plugin)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
@@ -429,38 +428,18 @@
                         <node concept="3uibUv" id="emRLGQDZkV" role="1tU5fm">
                           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
                         </node>
-                        <node concept="2OqwBi" id="emRLGQDYRs" role="33vP2m">
-                          <node concept="2OqwBi" id="emRLGQDYq9" role="2Oq$k0">
-                            <node concept="37vLTw" id="6IMrezboXdE" role="2Oq$k0">
-                              <ref role="3cqZAo" node="6IMrezbnZ4F" resolve="facet" />
-                            </node>
-                            <node concept="liA8E" id="emRLGQDYRr" role="2OqNvi">
-                              <ref role="37wK5l" to="b0pz:~JavaModuleFacet.getClassesGen():jetbrains.mps.vfs.IFile" resolve="getClassesGen" />
-                            </node>
+                        <node concept="2OqwBi" id="emRLGQDYq9" role="33vP2m">
+                          <node concept="37vLTw" id="6IMrezboXdE" role="2Oq$k0">
+                            <ref role="3cqZAo" node="6IMrezbnZ4F" resolve="facet" />
                           </node>
-                          <node concept="liA8E" id="emRLGQDYRw" role="2OqNvi">
-                            <ref role="37wK5l" to="3ju5:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />
-                            <node concept="2OqwBi" id="emRLGQDZ9R" role="37wK5m">
-                              <node concept="2YIFZM" id="791rit5f64y" role="2Oq$k0">
-                                <ref role="37wK5l" to="unno:7WvVJ3rORmu" resolve="getModelLongName" />
-                                <ref role="1Pybhc" to="unno:1NYD3hytmTa" resolve="SNodeOperations" />
-                                <node concept="2OqwBi" id="791rit5f64z" role="37wK5m">
-                                  <node concept="2GrUjf" id="791rit5f64$" role="2Oq$k0">
-                                    <ref role="2Gs0qQ" node="4g8ToP4XNp3" resolve="tres" />
-                                  </node>
-                                  <node concept="2sxana" id="791rit5f64_" role="2OqNvi">
-                                    <ref role="2sxfKC" to="fn29:44ybjD5JWZk" resolve="modelDescriptor" />
-                                  </node>
-                                </node>
+                          <node concept="liA8E" id="emRLGQDYRr" role="2OqNvi">
+                            <ref role="37wK5l" to="b0pz:~JavaModuleFacet.getClassesLocation(org.jetbrains.mps.openapi.model.SModel):jetbrains.mps.vfs.IFile" resolve="getClassesLocation" />
+                            <node concept="2OqwBi" id="4dUVvwo2aj5" role="37wK5m">
+                              <node concept="2GrUjf" id="4dUVvwo28WX" role="2Oq$k0">
+                                <ref role="2Gs0qQ" node="4g8ToP4XNp3" resolve="tres" />
                               </node>
-                              <node concept="liA8E" id="emRLGQDZ9V" role="2OqNvi">
-                                <ref role="37wK5l" to="wyt6:~String.replace(java.lang.CharSequence,java.lang.CharSequence):java.lang.String" resolve="replace" />
-                                <node concept="Xl_RD" id="emRLGQDZ9W" role="37wK5m">
-                                  <property role="Xl_RC" value="." />
-                                </node>
-                                <node concept="Xl_RD" id="emRLGQDZ9Y" role="37wK5m">
-                                  <property role="Xl_RC" value="/" />
-                                </node>
+                              <node concept="2sxana" id="4dUVvwo2dyE" role="2OqNvi">
+                                <ref role="2sxfKC" to="fn29:44ybjD5JWZk" resolve="modelDescriptor" />
                               </node>
                             </node>
                           </node>
