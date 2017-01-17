@@ -30,6 +30,7 @@
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
       <concept id="1703835097132541506" name="jetbrains.mps.lang.behavior.structure.ThisConceptExpression" flags="ng" index="1fM9EW" />
+      <concept id="7613853987897845671" name="jetbrains.mps.lang.behavior.structure.SuperConceptExpression" flags="ng" index="3pZB1V" />
     </language>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
       <concept id="1202948039474" name="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" flags="nn" index="liA8E" />
@@ -551,7 +552,7 @@
       <node concept="3clFbS" id="5mnatV0hyuQ" role="3clF47">
         <node concept="3clFbF" id="5mnatV0hyuZ" role="3cqZAp">
           <node concept="2OqwBi" id="5mnatV0hyxK" role="3clFbG">
-            <node concept="13iAh5" id="5mnatV0hyuY" role="2Oq$k0" />
+            <node concept="3pZB1V" id="7tU$0ZcyCcW" role="2Oq$k0" />
             <node concept="2qgKlT" id="5mnatV0hyBF" role="2OqNvi">
               <ref role="37wK5l" node="5mnatV0hxLf" resolve="foo" />
             </node>

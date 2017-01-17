@@ -73,6 +73,7 @@
         <reference id="5299096511375896640" name="superConcept" index="3eA5LN" />
       </concept>
       <concept id="1225194691553" name="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" flags="nn" index="13iPFW" />
+      <concept id="7613853987897845671" name="jetbrains.mps.lang.behavior.structure.SuperConceptExpression" flags="ng" index="3pZB1V" />
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
       <concept id="3903367331818357915" name="jetbrains.mps.lang.editor.structure.StyledTextType" flags="in" index="1YN$XN" />
@@ -11767,7 +11768,7 @@
               <node concept="2qgKlT" id="5GZRL5t2yTK" role="2OqNvi">
                 <ref role="37wK5l" node="5GZRL5t2d36" resolve="getOperationArgumentType" />
               </node>
-              <node concept="13iAh5" id="5GZRL5t2qTV" role="2Oq$k0" />
+              <node concept="3pZB1V" id="7tU$0ZcxJXS" role="2Oq$k0" />
             </node>
           </node>
         </node>
@@ -11854,7 +11855,7 @@
               <node concept="2qgKlT" id="5GZRL5t2yC2" role="2OqNvi">
                 <ref role="37wK5l" node="5GZRL5t2d36" resolve="getOperationArgumentType" />
               </node>
-              <node concept="13iAh5" id="5GZRL5t2wDZ" role="2Oq$k0" />
+              <node concept="3pZB1V" id="7tU$0ZcxJXR" role="2Oq$k0" />
             </node>
             <node concept="_YKpA" id="5GZRL5t2wDW" role="1tU5fm">
               <node concept="3Tqbb2" id="5GZRL5t2wDX" role="_ZDj9">
