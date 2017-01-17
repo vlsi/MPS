@@ -73,9 +73,7 @@ public final class RepositoryInitializingComponent implements ApplicationCompone
     myLibraryInitializer = coreComponents.getLibraryInitializer();
     myFS = InternalFlag.isInternalMode() ? FileSystemExtPoint.getFS() : new IoFileSystem();
     myContributors.add(new BootstrapLibraryContributor(myFS));
-    if (InternalFlag.isInternalMode()) {
-      myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
-    }
+    myContributors.add(new WorkbenchLibraryContributor(myFS)); // need only on sources
     myContributors.add(new PluginLibraryContributor(myFS));
   }
 
