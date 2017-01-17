@@ -324,6 +324,7 @@ public final class ModulesMiner {
       // Yet one more, ProjectPathUtil.getClassesGenFolder(descriptorFile, descriptor instanceof GeneratorDescriptor) replaced with
       // 'sibling classes_gen/' as ProjectPathUtil.getGeneratorOutputPath(descriptor) (together with MDPersistence code) gives us proper FS location
       // of generator's source_gen, and no reason for md.IsInstanceOf(GeneratorMD) -> getDescendant("generator") magic
+      // XXX Would be great to reuse constant from JavaModuleFacetImpl#getClassesGen
       myExcludes.add(genOutputFile.getParent().getDescendant("classes_gen"));
 
       // and as for jars (-src.jar and -generator.jar) that used to be excluded if descriptorFile.isReadOnly(),

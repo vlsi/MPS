@@ -914,7 +914,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   /**
    * @deprecated this is internal method, ask ModuleDescriptor for persisted setting directly, if it's what you're
    * looking for (check {@link ProjectPathUtil#getGeneratorOutputPath(ModuleDescriptor)}. There ain't no such thing as output path for a module in general.
-   * Not it's implementation method for use from MPS internals.
+   * Now it's implementation method for use from MPS internals.
    */
   @Deprecated
   public IFile getOutputPath() {

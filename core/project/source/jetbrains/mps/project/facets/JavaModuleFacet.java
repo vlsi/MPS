@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@ import org.jetbrains.mps.openapi.module.SModuleFacet;
 
 import java.util.Set;
 
+// FIXME why some API is with String for files (like getLibraryClassPath, getClassPath, getAdditionalSourcePaths), not IFile?
 public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
   String FACET_TYPE = "java";
 
@@ -69,7 +70,8 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
    */
   @Nullable
   default IFile getOutputRoot() {
-    if (getModule() instanceof AbstractModule) {
+    if (getModule() instanceof AbstractModule && !getModule().isPackaged()) {
+      // there's no output location for packaged/deployed modules
       return ((AbstractModule) getModule()).getOutputPath();
     }
     return null;

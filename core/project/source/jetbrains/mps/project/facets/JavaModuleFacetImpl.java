@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,12 +66,27 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
   @Override
   @Nullable
   public IFile getClassesGen() {
-    if (getModule() instanceof Generator) {
-      Generator generator = (Generator) getModule();
-      return ProjectPathUtil.getClassesGenFolder(generator.getSourceLanguage().getDescriptorFile(), true);
-    } else {
-      return ProjectPathUtil.getClassesGenFolder(getModule().getDescriptorFile(), false);
+    if (getModule().isPackaged()) {
+      return null;
     }
+    ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
+    if (moduleDescriptor == null) {
+      // this facet implementation doesn't know how to handle modules not based on ModuleDescriptor
+      return null;
+    }
+    if (moduleDescriptor.getDeploymentDescriptor() != null) {
+      // in fact, this is what isPackaged() shall check (according to its javadoc), but at the moment it cares about
+      // module source dir not being in archive, which is not exactly the same, hence extra check here.
+      return null;
+    }
+    // XXX there's same code in MM, shall refactor, likely move to ModuleDescriptor
+    String sourceGenPath = ProjectPathUtil.getGeneratorOutputPath(moduleDescriptor);
+    if (sourceGenPath == null) {
+      // a kind of a module without generated sources, no classes_gen then.
+      return null;
+    }
+    // XXX would adore IFile from ModuleDescriptor, not String.
+    return getModule().getFileSystem().getFile(sourceGenPath).getParent().getDescendant("classes_gen");
   }
 
   @Override
@@ -85,14 +100,21 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     }
 
     // add classes folder for modules compiled outside MPS
-    if (getModule() instanceof Solution && !isCompileInMps()) {
+    if (getModule() instanceof Solution && !isCompileInMps() && !getModule().isPackaged()) {
+      // for packaged modules, we can't tell if classes deployed with it shall go into libraryCP or into #getClassPath(). Now they
+      // go into latter, as there's (a) no uses for #getLibraryClassPath; (b) there's no need to compile deployed modules, hence no
+      // reason to have its external classes available in libraries.
       // todo: remove this logic?
-      IFile classes = ProjectPathUtil.getClassesFolder(getModule().getDescriptorFile());
+      String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(getModule().getModuleDescriptor());
+      IFile classes = null;
+      if (generatorOutputPath != null) {
+        // same 'sibling to sources_gen/' logic is in ModulesMiner. Location of a module as IFile would be much more handy.
+        classes = getModule().getFileSystem().getFile(generatorOutputPath).getParent().getDescendant("classes");
+      }
       if (classes != null && classes.exists()) {
         libraryClassPath.add(getClassPath(classes));
       }
     }
-
     return libraryClassPath;
   }
 
@@ -104,6 +126,28 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     //     On the one hand, we might need classes compiled outside of a module to build it, OTOH, it makes classes/
     //     somewhat different from classes_gen/
     IFile classesGen = getClassesGen();
+    if (classesGen == null && getModule().isPackaged()) {
+      // until deployed generator modules are read independently from their source languages, need this legacy hack to include their separate jar
+      // into classpath. Jar of a language or a solution gets into CP the same way.
+      // FIXME DeploymentModule shall tell its classpath locations, so that we don't need to care here, just take one from DD.
+      // packaged
+      if (getModule() instanceof Generator) {
+        IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
+        IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
+        if (bundleHome != null) {
+          // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
+          String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
+          String jarPath = mainPath + "-generator.jar";
+          classesGen = bundleHome.getFileSystem().getFile(jarPath);
+        }
+      } else {
+        // XXX assume classes are directly in the jar, and that a file associated with deployed module points to that very jar.
+        // XXX doesn't respect the case when module comes without classes (just sources)
+        IFile descriptorFile = getModule().getDescriptorFile();
+        // descriptorFile == null for Generator, stub and test modules
+        classesGen = descriptorFile == null ? null : descriptorFile.getBundleHome();
+      }
+    }
     if (classesGen != null) {
       result.add(getClassPath(classesGen));
     }

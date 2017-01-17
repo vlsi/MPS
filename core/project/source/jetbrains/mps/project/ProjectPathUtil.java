@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.facets.TestsFacetImpl;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -29,6 +30,12 @@ import org.jetbrains.annotations.Nullable;
 
 // todo: rewrite this. all methods should have same signature!
 public class ProjectPathUtil {
+  /**
+   * @deprecated see {@link #getClassesFolder(IFile)} for reasons. To replace, consider {@link JavaModuleFacet#getClassPath()}.
+   *             Not used from MPS.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static IFile getClassesGenFolder(IFile descriptorFile, boolean isGenerator) {
     if (descriptorFile == null) return null;
 
@@ -40,6 +47,8 @@ public class ProjectPathUtil {
       // packaged
       IFile bundleHome = descriptorFile.getBundleHome();
       if (bundleHome == null) return null;
+
+      // XXX when isGenerator == false, may just use bundleHome, without need to strip "jar" first, then append, and toFile.
 
       // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
       String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
