@@ -11401,13 +11401,20 @@
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/5610619299014531839">
     <file name="BuildSource_JavaLibraryExternalJarFolder_Editor.java">
       <node id="5610619299014531839" at="11,79,12,106" concept="8" />
+      <node id="5610619299014531839" at="14,82,15,109" concept="8" />
       <node id="5610619299014531839" at="11,0,14,0" concept="6" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5610619299014531839" at="14,0,17,0" concept="6" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="5610619299014531839" at="11,79,12,106" />
+      <scope id="5610619299014531839" at="14,82,15,109" />
       <scope id="5610619299014531839" at="11,0,14,0">
         <var name="editorContext" id="5610619299014531839" />
         <var name="node" id="5610619299014531839" />
       </scope>
-      <unit id="5610619299014531839" at="10,0,15,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJarFolder_Editor" />
+      <scope id="5610619299014531839" at="14,0,17,0">
+        <var name="editorContext" id="5610619299014531839" />
+        <var name="node" id="5610619299014531839" />
+      </scope>
+      <unit id="5610619299014531839" at="10,0,18,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJarFolder_Editor" />
     </file>
     <file name="BuildSource_JavaLibraryExternalJarFolder_EditorBuilder_a.java">
       <node id="5610619299014531839" at="28,120,29,19" concept="13" />
@@ -11511,6 +11518,73 @@
       <scope id="5610619299014531842" at="52,0,61,0" />
       <unit id="5610619299014531839" at="65,0,105,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJarFolder_EditorBuilder_a$extFolderSingleRoleHandler_onthxk_b0" />
       <unit id="5610619299014531839" at="24,0,106,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJarFolder_EditorBuilder_a" />
+    </file>
+    <file name="BuildSource_JavaLibraryExternalJarFolder_InspectorBuilder_a.java">
+      <node id="5610619299014531839" at="24,123,25,19" concept="13" />
+      <node id="5610619299014531839" at="25,19,26,18" concept="3" />
+      <node id="5610619299014531839" at="31,26,32,18" concept="8" />
+      <node id="5610619299014531839" at="35,39,36,41" concept="8" />
+      <node id="5610619299014531839" at="39,52,40,118" concept="7" />
+      <node id="5610619299014531839" at="40,118,41,50" concept="3" />
+      <node id="5610619299014531839" at="41,50,42,28" concept="3" />
+      <node id="5610619299014531839" at="42,28,43,65" concept="3" />
+      <node id="5610619299014531839" at="43,65,44,59" concept="3" />
+      <node id="5610619299014531839" at="44,59,45,57" concept="3" />
+      <node id="5610619299014531839" at="45,57,46,22" concept="8" />
+      <node id="2059522355690539047" at="48,51,49,113" concept="7" />
+      <node id="2059522355690539047" at="49,113,50,49" concept="3" />
+      <node id="2059522355690539047" at="50,49,51,34" concept="3" />
+      <node id="2059522355690539047" at="51,34,52,22" concept="8" />
+      <node id="2059522355690539039" at="54,49,55,89" concept="7" />
+      <node id="2059522355690539039" at="55,89,56,43" concept="3" />
+      <node id="2059522355690539039" at="56,43,57,56" concept="3" />
+      <node id="2059522355690539039" at="57,56,58,26" concept="7" />
+      <node id="2059522355690539039" at="58,26,59,63" concept="3" />
+      <node id="2059522355690539039" at="59,63,60,56" concept="3" />
+      <node id="2059522355690539039" at="60,56,61,34" concept="7" />
+      <node id="2059522355690539039" at="61,34,62,60" concept="3" />
+      <node id="2059522355690539039" at="62,60,63,40" concept="3" />
+      <node id="2059522355690539039" at="63,40,64,73" concept="3" />
+      <node id="2059522355690539039" at="64,73,65,57" concept="7" />
+      <node id="2059522355690539039" at="66,35,67,87" concept="7" />
+      <node id="2059522355690539039" at="67,87,68,112" concept="8" />
+      <node id="2059522355690539039" at="69,10,70,22" concept="8" />
+      <node id="5610619299014531839" at="21,0,23,0" concept="4" trace="myNode" />
+      <node id="5610619299014531839" at="35,0,38,0" concept="6" trace="createCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5610619299014531839" at="24,0,28,0" concept="2" trace="BuildSource_JavaLibraryExternalJarFolder_InspectorBuilder_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5610619299014531839" at="29,0,34,0" concept="6" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2059522355690539039" at="65,57,70,22" concept="5" />
+      <node id="2059522355690539047" at="48,0,54,0" concept="6" trace="createConstant_onthxk_a0_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="5610619299014531839" at="39,0,48,0" concept="6" trace="createCollection_onthxk_a_0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2059522355690539039" at="54,0,72,0" concept="6" trace="createProperty_onthxk_b0#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5610619299014531839" at="31,26,32,18" />
+      <scope id="5610619299014531839" at="35,39,36,41" />
+      <scope id="5610619299014531839" at="24,123,26,18" />
+      <scope id="2059522355690539039" at="66,35,68,112">
+        <var name="manager" id="2059522355690539039" />
+      </scope>
+      <scope id="5610619299014531839" at="35,0,38,0" />
+      <scope id="5610619299014531839" at="24,0,28,0">
+        <var name="context" id="5610619299014531839" />
+        <var name="node" id="5610619299014531839" />
+      </scope>
+      <scope id="2059522355690539047" at="48,51,52,22">
+        <var name="editorCell" id="2059522355690539047" />
+      </scope>
+      <scope id="5610619299014531839" at="29,0,34,0" />
+      <scope id="2059522355690539047" at="48,0,54,0" />
+      <scope id="5610619299014531839" at="39,52,46,22">
+        <var name="editorCell" id="5610619299014531839" />
+      </scope>
+      <scope id="5610619299014531839" at="39,0,48,0" />
+      <scope id="2059522355690539039" at="54,49,70,22">
+        <var name="attributeConcept" id="2059522355690539039" />
+        <var name="editorCell" id="2059522355690539039" />
+        <var name="provider" id="2059522355690539039" />
+        <var name="style" id="2059522355690539039" />
+      </scope>
+      <scope id="2059522355690539039" at="54,0,72,0" />
+      <unit id="5610619299014531839" at="20,0,73,0" name="jetbrains.mps.build.editor.BuildSource_JavaLibraryExternalJarFolder_InspectorBuilder_a" />
     </file>
   </root>
   <root nodeRef="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)/5617550519002745365">

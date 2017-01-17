@@ -1255,6 +1255,11 @@
     <property role="34LRSv" value="external jars" />
     <property role="EcuMT" value="5610619299014531832" />
     <ref role="1TJDcQ" node="3elU8iQ72g4" resolve="BuildSource_JavaCP" />
+    <node concept="1TJgyi" id="1MkTaILUgwk" role="1TKVEl">
+      <property role="IQ2nx" value="2059522355690539028" />
+      <property role="TrG5h" value="includeRecursively" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
     <node concept="1TJgyj" id="4RsV8qJH_FU" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="extFolder" />

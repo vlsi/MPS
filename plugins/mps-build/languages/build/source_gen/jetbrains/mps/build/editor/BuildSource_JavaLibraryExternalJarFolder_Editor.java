@@ -11,4 +11,7 @@ public class BuildSource_JavaLibraryExternalJarFolder_Editor extends DefaultNode
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return new BuildSource_JavaLibraryExternalJarFolder_EditorBuilder_a(editorContext, node).createCell();
   }
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return new BuildSource_JavaLibraryExternalJarFolder_InspectorBuilder_a(editorContext, node).createCell();
+  }
 }

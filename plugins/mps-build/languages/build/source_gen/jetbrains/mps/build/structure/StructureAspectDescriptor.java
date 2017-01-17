@@ -1343,6 +1343,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.build.structure.BuildSource_JavaCP", 0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x3395e884b61c2404L);
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1a36a3L);
     b.origin("r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)/5610619299014531832");
+    b.prop("includeRecursively", 0x1c94e4abb1e90814L, "2059522355690539028");
     b.aggregate("extFolder", 0x4ddcec86afb65afaL).target(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4ddcec86afb65a3fL).optional(false).ordered(true).multiple(false).origin("5610619299014531834").done();
     b.alias("external jars");
     return b.create();

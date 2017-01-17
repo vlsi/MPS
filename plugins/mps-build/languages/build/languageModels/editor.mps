@@ -4669,6 +4669,18 @@
       </node>
       <node concept="l2Vlx" id="4RsV8qJH_G4" role="2iSdaV" />
     </node>
+    <node concept="3EZMnI" id="1MkTaILUgwo" role="6VMZX">
+      <node concept="3F0ifn" id="1MkTaILUgwB" role="3EZMnx">
+        <property role="3F0ifm" value="include recursively:" />
+      </node>
+      <node concept="3F0A7n" id="1MkTaILUgwv" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:1MkTaILUgwk" resolve="includeRecursively" />
+        <node concept="ljvvj" id="1MkTaILUgww" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="1MkTaILUgwr" role="2iSdaV" />
+    </node>
   </node>
   <node concept="24kQdi" id="NvWe6Dqhow">
     <property role="3GE5qa" value="Project.Java" />

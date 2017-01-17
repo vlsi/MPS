@@ -348,6 +348,7 @@
         <child id="1167169362365" name="conditionFunction" index="30HLyM" />
       </concept>
       <concept id="1092059087312" name="jetbrains.mps.lang.generator.structure.TemplateDeclaration" flags="ig" index="13MO4I">
+        <reference id="1168285871518" name="applicableConcept" index="3gUMe" />
         <child id="1092060348987" name="contentNode" index="13RCb5" />
       </concept>
       <concept id="1195158154974" name="jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence" flags="lg" index="14YyZ8">
@@ -15839,6 +15840,7 @@
   </node>
   <node concept="13MO4I" id="4RsV8qJH_Hv">
     <property role="TrG5h" value="reduceExternalJarFolder" />
+    <ref role="3gUMe" to="3ior:4RsV8qJH_FS" resolve="BuildSource_JavaLibraryExternalJarFolder" />
     <node concept="1N15co" id="4RsV8qJH_H$" role="1s_3oS">
       <property role="TrG5h" value="jarFolder" />
       <node concept="3Tqbb2" id="4RsV8qJH_H_" role="1N15GL">
@@ -16136,7 +16138,29 @@
           <node concept="2pNUuL" id="4RsV8qJH_JH" role="2pNNFR">
             <property role="2pNUuO" value="includes" />
             <node concept="2pMdtt" id="4RsV8qJH_JI" role="2pMdts">
-              <property role="2pMdty" value="*.jar" />
+              <property role="2pMdty" value="**/*.jar" />
+            </node>
+            <node concept="1W57fq" id="1MkTaILUhcc" role="lGtFl">
+              <node concept="3IZrLx" id="1MkTaILUhce" role="3IZSJc">
+                <node concept="3clFbS" id="1MkTaILUhcg" role="2VODD2">
+                  <node concept="3clFbF" id="1MkTaILUi1V" role="3cqZAp">
+                    <node concept="2OqwBi" id="1MkTaILUidk" role="3clFbG">
+                      <node concept="30H73N" id="1MkTaILUi1U" role="2Oq$k0" />
+                      <node concept="3TrcHB" id="1MkTaILUGWH" role="2OqNvi">
+                        <ref role="3TsBF5" to="3ior:1MkTaILUgwk" resolve="includeRecursively" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="gft3U" id="1MkTaILUO1Y" role="UU_$l">
+                <node concept="2pNUuL" id="1MkTaILUObp" role="gfFT$">
+                  <property role="2pNUuO" value="includes" />
+                  <node concept="2pMdtt" id="1MkTaILUObq" role="2pMdts">
+                    <property role="2pMdty" value="*.jar" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
