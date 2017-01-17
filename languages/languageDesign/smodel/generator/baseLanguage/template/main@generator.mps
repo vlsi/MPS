@@ -17181,6 +17181,42 @@
         </node>
       </node>
     </node>
+    <node concept="3aamgX" id="2ytHpS0_GP2" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
+      <node concept="gft3U" id="2ytHpS0_GP3" role="1lVwrX">
+        <node concept="10Nm6u" id="2ytHpS0_GP4" role="gfFT$">
+          <node concept="5jKBG" id="2ytHpS0_GP5" role="lGtFl">
+            <ref role="v9R2y" node="7rdthmpIB5h" resolve="reduce_ConceptMethodCallWithThis" />
+            <node concept="3NFfHV" id="2ytHpS0_GP6" role="5jGum">
+              <node concept="3clFbS" id="2ytHpS0_GP7" role="2VODD2">
+                <node concept="3clFbF" id="2ytHpS0_GP8" role="3cqZAp">
+                  <node concept="1PxgMI" id="2ytHpS0_GP9" role="3clFbG">
+                    <node concept="2OqwBi" id="2ytHpS0_GPa" role="1m5AlR">
+                      <node concept="1PxgMI" id="2ytHpS0_GPb" role="2Oq$k0">
+                        <node concept="2OqwBi" id="2ytHpS0_GPc" role="1m5AlR">
+                          <node concept="30H73N" id="2ytHpS0_GPd" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="2ytHpS0_GPe" role="2OqNvi" />
+                        </node>
+                        <node concept="chp4Y" id="2ytHpS0_GPf" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="2ytHpS0_GPg" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                      </node>
+                    </node>
+                    <node concept="chp4Y" id="2ytHpS0_GPh" role="3oSUPX">
+                      <ref role="cht4Q" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="3aamgX" id="5WXskL2h6m$" role="3aUrZf">
       <property role="36QftV" value="true" />
       <ref role="30HIoZ" to="1i04:hP3iAlo" resolve="SuperNodeExpression" />
@@ -17207,6 +17243,42 @@
                       </node>
                     </node>
                     <node concept="chp4Y" id="714IaVdGZie" role="3oSUPX">
+                      <ref role="cht4Q" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="3aamgX" id="2ytHpS0_H5B" role="3aUrZf">
+      <property role="36QftV" value="true" />
+      <ref role="30HIoZ" to="1i04:6ADPXMKlUuB" resolve="SuperConceptExpression" />
+      <node concept="gft3U" id="2ytHpS0_H5C" role="1lVwrX">
+        <node concept="10Nm6u" id="2ytHpS0_H5D" role="gfFT$">
+          <node concept="5jKBG" id="2ytHpS0_H5E" role="lGtFl">
+            <ref role="v9R2y" node="5$gQw6IYFcT" resolve="reduce_ConceptMethodCallWithSuper" />
+            <node concept="3NFfHV" id="2ytHpS0_H5F" role="5jGum">
+              <node concept="3clFbS" id="2ytHpS0_H5G" role="2VODD2">
+                <node concept="3clFbF" id="2ytHpS0_H5H" role="3cqZAp">
+                  <node concept="1PxgMI" id="2ytHpS0_H5I" role="3clFbG">
+                    <node concept="2OqwBi" id="2ytHpS0_H5J" role="1m5AlR">
+                      <node concept="1PxgMI" id="2ytHpS0_H5K" role="2Oq$k0">
+                        <node concept="2OqwBi" id="2ytHpS0_H5L" role="1m5AlR">
+                          <node concept="30H73N" id="2ytHpS0_H5M" role="2Oq$k0" />
+                          <node concept="1mfA1w" id="2ytHpS0_H5N" role="2OqNvi" />
+                        </node>
+                        <node concept="chp4Y" id="2ytHpS0_H5O" role="3oSUPX">
+                          <ref role="cht4Q" to="tpee:hqOqwz4" resolve="DotExpression" />
+                        </node>
+                      </node>
+                      <node concept="3TrEf2" id="2ytHpS0_H5P" role="2OqNvi">
+                        <ref role="3Tt5mk" to="tpee:hqOqNr4" resolve="operation" />
+                      </node>
+                    </node>
+                    <node concept="chp4Y" id="2ytHpS0_H5Q" role="3oSUPX">
                       <ref role="cht4Q" to="tp25:haqgKhF" resolve="Node_ConceptMethodCall" />
                     </node>
                   </node>
