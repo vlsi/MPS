@@ -6430,9 +6430,14 @@
             <node concept="3uibUv" id="a8z8zytENk" role="1tU5fm">
               <ref role="3uigEE" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
             </node>
-            <node concept="2YIFZM" id="a8z8zytENn" role="33vP2m">
-              <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
-              <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+            <node concept="2OqwBi" id="63DSRaTik3u" role="33vP2m">
+              <node concept="2YIFZM" id="a8z8zytENn" role="2Oq$k0">
+                <ref role="37wK5l" to="79ha:6rx4kZDkZ7z" resolve="defaultConfig" />
+                <ref role="1Pybhc" to="79ha:6rx4kZDk5A9" resolve="EnvironmentConfig" />
+              </node>
+              <node concept="liA8E" id="63DSRaTikig" role="2OqNvi">
+                <ref role="37wK5l" to="79ha:6uGRett37Lr" resolve="withJavaPlugin" />
+              </node>
             </node>
           </node>
         </node>

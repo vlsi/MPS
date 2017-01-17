@@ -77,6 +77,10 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mps-java-workbench-workbench-models" prefix="module/models" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.jar" />
     </jar>
+    <mkdir dir="${build.layout}/mps-java-workbench/META-INF" />
+    <copy todir="${build.layout}/mps-java-workbench/META-INF">
+      <fileset file="${mps_home}/plugins/mps-java-workbench/META-INF/workbench" />
+    </copy>
     <mkdir dir="${build.layout}/mps-java-workbench/lib" />
     <jar destfile="${build.layout}/mps-java-workbench/lib/mps-java-workbench-sources-compile-output.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-java" />
@@ -87,9 +91,9 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -208,15 +212,15 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
+    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true">
+      <target name="generate" />
+      <target name="assemble" />
+    </ant>
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true">
       <target name="generate" />
       <target name="assemble" />
     </ant>
@@ -231,7 +235,7 @@
         <path location="${mps_home}/plugins/mps-java-workbench/workbench/source" />
       </src>
       <classpath>
-        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-common.jar" />
+        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-platform.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />

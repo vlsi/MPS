@@ -67,7 +67,7 @@ public class BuildScript_Configuration_RunProfileState implements RunProfileStat
         SNode projectNode = SNodeOperations.cast((configuredNode == null ? null : configuredNode.resolve(mpsProject.getRepository())), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, "jetbrains.mps.build.structure.BuildProject"));
         String scriptsPath = (projectNode != null ? BuildProject__BehaviorDescriptor.getScriptsPath_id4ahc858UcHk.invoke(projectNode, Context.defaultContext()) : null);
         if (scriptsPath != null) {
-          file.value = FileSystem.getInstance().getFileByPath(scriptsPath);
+          file.value = FileSystem.getInstance().getFile(scriptsPath);
           // todo 
           file.value = file.value.getDescendant(BuildProject__BehaviorDescriptor.getOutputFileName_id4gSHdTptyu0.invoke(projectNode));
           // todo select task 

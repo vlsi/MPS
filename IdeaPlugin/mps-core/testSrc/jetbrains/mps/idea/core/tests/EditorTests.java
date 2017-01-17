@@ -66,7 +66,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
       public void run() {
         DefaultModelRoot sModelRoot = (DefaultModelRoot) myFacet.getSolution().getModelRoots().iterator().next();
         String path = sModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next();
-        final IFile modelFile = FileSystem.getInstance().getFileByPath(path + "/test.mps");
+        final IFile modelFile = FileSystem.getInstance().getFile(path + "/test.mps");
         final List<SNode> roots = new ArrayList<SNode>();
 
         SModel descr = SModelFileTracker.getInstance(ProjectHelper.getProjectRepository(myProjectBuilder.getFixture().getProject())).findModel(modelFile);
@@ -75,17 +75,14 @@ public class EditorTests extends DataMPSFixtureTestCase {
           return;
         }
 
-        SModel model = descr;
-        if (model != null) {
-          for (SNode root : model.getRootNodes()) {
-            roots.add(root);
-          }
+        for (SNode root : descr.getRootNodes()) {
+          roots.add(root);
         }
 
         for (SNode r : roots) {
           if ("EditorTestCase".equals(r.getConcept().getName())) {
             try {
-              Class<?> cls = Class.forName(jetbrains.mps.util.SNodeOperations.getModelLongName(model) + "." + r.getName() + "_Test");
+              Class<?> cls = Class.forName(jetbrains.mps.util.SNodeOperations.getModelLongName(descr) + "." + r.getName() + "_Test");
               Method mth = cls.getMethod("test_" + r.getName());
               TransformationTest btt = (TransformationTest) cls.newInstance();
               final TestRunner testRunner = new SimpleTransformationTestRunner(r, mth);

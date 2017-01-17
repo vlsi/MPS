@@ -121,7 +121,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (result.isEmpty()) {
       LOG.warn("Models have not been found within the " + sourceRoot);
     }
-    Collections.sort(result, MODEL_BY_NAME_COMPARATOR);
+    result.sort(MODEL_BY_NAME_COMPARATOR);
     return result;
   }
 
@@ -248,14 +248,14 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     if (dataSourceFactory == null) {
       dataSourceFactory = Defaults.dataSourceFactory();
     }
-    DataSourceType dataSourceType = dataSourceFactory.getType();
     if (modelFactory == null) {
+      DataSourceType dataSourceType = dataSourceFactory.getType();
       modelFactory = ourModelFactoryRegistry.getDefaultModelFactory(dataSourceType);
       if (modelFactory == null) {
         throw new ModelFactoryNotFoundException(dataSourceType);
       }
     }
-    CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
+    CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceFactory);
     DataSource dataSource = result.getDataSource();
     ModelCreationOptions parameters = result.getOptions();
     if (!new ModelFactoryFacade(modelFactory).canCreate(dataSource, parameters)) {

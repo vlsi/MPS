@@ -50,7 +50,7 @@
   </path>
   
   <path id="path.java.library.mps-testing-artifacts">
-    <fileset dir="${artifacts.mpsPlugin}/mps-testing" includes="*.jar" />
+    <fileset dir="${artifacts.mpsPlugin}/mps-testing" includes="**/*.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
@@ -107,9 +107,9 @@
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="IdeaPlugin/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsJpsIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -170,8 +170,9 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-idea-java/lib/mps-java-idea.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
-        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-common.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-java-platform/lib/mps-java-platform.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -219,7 +220,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-jps/lib/jps/mps-jps-plugin-core.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-jps/lib/jps/mps-core-jps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-jps/lib/jps/mps-java-jps-plugin.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

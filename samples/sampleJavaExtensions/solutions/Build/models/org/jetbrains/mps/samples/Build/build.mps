@@ -7,6 +7,7 @@
   </languages>
   <imports>
     <import index="ffeo" ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
+    <import index="hh2c" ref="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)" />
   </imports>
   <registry>
     <language id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build">
@@ -460,7 +461,7 @@
       </node>
     </node>
     <node concept="2sgV4H" id="fdFyDsn2g6" role="1l3spa">
-      <ref role="1l3spb" to="ffeo:4tNwrSpaf04" resolve="mpsPlugin" />
+      <ref role="1l3spb" to="hh2c:4tNwrSpaf04" resolve="mpsPlugin" />
       <node concept="398BVA" id="2HnsMd13Cgq" role="2JcizS">
         <ref role="398BVh" node="2HnsMd13C4R" resolve="mps_plugin_home" />
       </node>

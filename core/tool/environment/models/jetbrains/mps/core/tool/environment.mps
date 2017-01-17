@@ -1214,13 +1214,24 @@
       <property role="TrG5h" value="withJavaPlugin" />
       <node concept="3clFbS" id="6uGRett37Ls" role="3clF47">
         <node concept="3cpWs6" id="6uGRett37Lt" role="3cqZAp">
-          <node concept="1rXfSq" id="6uGRett37Lu" role="3cqZAk">
-            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
-            <node concept="Xl_RD" id="6uGRett37Lv" role="37wK5m">
-              <property role="Xl_RC" value="mpsjava" />
+          <node concept="2OqwBi" id="63DSRaTiiEd" role="3cqZAk">
+            <node concept="1rXfSq" id="6uGRett37Lu" role="2Oq$k0">
+              <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+              <node concept="Xl_RD" id="6uGRett37Lv" role="37wK5m">
+                <property role="Xl_RC" value="mps-java-workbench" />
+              </node>
+              <node concept="Xl_RD" id="6uGRett37Lw" role="37wK5m">
+                <property role="Xl_RC" value="jetbrains.mps.ide.java" />
+              </node>
             </node>
-            <node concept="Xl_RD" id="6uGRett37Lw" role="37wK5m">
-              <property role="Xl_RC" value="jetbrains.mps.ide.java" />
+            <node concept="liA8E" id="63DSRaTiiK5" role="2OqNvi">
+              <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+              <node concept="Xl_RD" id="63DSRaTijVH" role="37wK5m">
+                <property role="Xl_RC" value="mpsjava" />
+              </node>
+              <node concept="Xl_RD" id="63DSRaTijX5" role="37wK5m">
+                <property role="Xl_RC" value="jetbrains.mps.ide.java.platform" />
+              </node>
             </node>
           </node>
         </node>

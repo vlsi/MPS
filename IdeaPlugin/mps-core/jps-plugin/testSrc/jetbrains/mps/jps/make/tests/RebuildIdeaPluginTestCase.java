@@ -88,7 +88,6 @@ public class RebuildIdeaPluginTestCase extends MpsJpsBuildTestCaseWithEnvironmen
     copyToProject("../plugins/vcs/common/source", "plugins/vcs/common/source");
     copyToProject("../plugins/mpsjava/basePlatform/source_gen", "plugins/mpsjava/basePlatform/source_gen");
     copyToProject("../plugins/mpsjava/platform/source_gen", "plugins/mpsjava/platform/source_gen");
-    copyToProject("../plugins/mpsjava/platform/source", "plugins/mpsjava/platform/source");
 
     // this is the counter-part of pre-building and copying core jars before compiling IdeaPlugin sources
     copyToProject(APPLLICATION_PLUGINS_DIR + "/mps-core/lib", "IdeaPlugin/mps-core/lib");

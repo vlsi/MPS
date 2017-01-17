@@ -36,7 +36,7 @@ public class BaseProjectsTest {
 
   @Parameterized.Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
-    EnvironmentConfig defaultConfig = EnvironmentConfig.defaultConfig();
+    EnvironmentConfig defaultConfig = EnvironmentConfig.defaultConfig().withJavaPlugin();
     // todo generalize it when there are more tests 
     defaultConfig.addPlugin(MIGRATION_PLUGIN, MIGRATION_PLUGIN_ID);
 

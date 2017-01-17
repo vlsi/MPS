@@ -528,6 +528,35 @@
       </node>
     </node>
     <node concept="2tJIrI" id="4wYSx2JAsxZ" role="jymVt" />
+    <node concept="3clFb_" id="390SM3Indek" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="getModule" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="390SM3Indel" role="1B3o_S" />
+      <node concept="2AHcQZ" id="390SM3Inden" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~Nullable" resolve="Nullable" />
+      </node>
+      <node concept="3uibUv" id="390SM3InftM" role="3clF45">
+        <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+      </node>
+      <node concept="3clFbS" id="390SM3Indeq" role="3clF47">
+        <node concept="3clFbF" id="390SM3Indet" role="3cqZAp">
+          <node concept="10QFUN" id="390SM3Inh$P" role="3clFbG">
+            <node concept="3uibUv" id="390SM3Inh_e" role="10QFUM">
+              <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
+            </node>
+            <node concept="3nyPlj" id="390SM3Indes" role="10QFUP">
+              <ref role="37wK5l" to="g3l6:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="390SM3Inder" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
+    </node>
+    <node concept="2tJIrI" id="390SM3Ineni" role="jymVt" />
     <node concept="3clFb_" id="2qqFBg4W_N$" role="jymVt">
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="load" />
@@ -628,7 +657,7 @@
                       <node concept="1pGfFk" id="2qqFBg4WBIc" role="2ShVmc">
                         <ref role="37wK5l" to="1ltj:3M1v4zmXszA" resolve="ASMModelLoader" />
                         <node concept="1rXfSq" id="2qqFBg4WBId" role="37wK5m">
-                          <ref role="37wK5l" to="g3l6:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                          <ref role="37wK5l" node="390SM3Indek" resolve="getModule" />
                         </node>
                         <node concept="2OqwBi" id="2qqFBg4WBIe" role="37wK5m">
                           <node concept="1rXfSq" id="2qqFBg4WBIf" role="2Oq$k0">
@@ -911,7 +940,7 @@
               <node concept="1pGfFk" id="3M1v4zmXBiV" role="2ShVmc">
                 <ref role="37wK5l" to="1ltj:3M1v4zmXszA" resolve="ASMModelLoader" />
                 <node concept="1rXfSq" id="2qqFBg4Wzpp" role="37wK5m">
-                  <ref role="37wK5l" to="g3l6:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                  <ref role="37wK5l" node="390SM3Indek" resolve="getModule" />
                 </node>
                 <node concept="2OqwBi" id="3M1v4zmXBiZ" role="37wK5m">
                   <node concept="1rXfSq" id="3M1v4zmXBj0" role="2Oq$k0">
@@ -1089,7 +1118,7 @@
                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                 </node>
                 <node concept="1rXfSq" id="2upfhDvp8gG" role="33vP2m">
-                  <ref role="37wK5l" to="g3l6:~SModelBase.getModule():org.jetbrains.mps.openapi.module.SModule" resolve="getModule" />
+                  <ref role="37wK5l" node="390SM3Indek" resolve="getModule" />
                 </node>
               </node>
             </node>
@@ -1148,6 +1177,7 @@
       <node concept="3Tm1VV" id="5JsnGMj1qid" role="1B3o_S" />
       <node concept="3cqZAl" id="5JsnGMj1qie" role="3clF45" />
     </node>
+    <node concept="2tJIrI" id="390SM3Inq9e" role="jymVt" />
     <node concept="3clFb_" id="5JsnGMj1qif" role="jymVt">
       <property role="od$2w" value="false" />
       <property role="TrG5h" value="reload" />
@@ -1192,6 +1222,32 @@
       </node>
       <node concept="3Tm6S6" id="5JsnGMj1qiF" role="1B3o_S" />
       <node concept="3cqZAl" id="5JsnGMj1qiG" role="3clF45" />
+    </node>
+    <node concept="2tJIrI" id="390SM3InpXX" role="jymVt" />
+    <node concept="3clFb_" id="390SM3Inqfb" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="TrG5h" value="toString" />
+      <property role="DiZV1" value="false" />
+      <property role="od$2w" value="false" />
+      <node concept="3Tm1VV" id="390SM3Inqfc" role="1B3o_S" />
+      <node concept="3uibUv" id="390SM3Inqfe" role="3clF45">
+        <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+      </node>
+      <node concept="3clFbS" id="390SM3Inqfm" role="3clF47">
+        <node concept="3clFbF" id="390SM3Inquz" role="3cqZAp">
+          <node concept="3cpWs3" id="390SM3InrKD" role="3clFbG">
+            <node concept="1rXfSq" id="390SM3InrO9" role="3uHU7w">
+              <ref role="37wK5l" to="g3l6:~SModelBase.getName():org.jetbrains.mps.openapi.model.SModelName" resolve="getName" />
+            </node>
+            <node concept="Xl_RD" id="390SM3Inquy" role="3uHU7B">
+              <property role="Xl_RC" value="JavaClassStubModelDescriptor " />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="390SM3Inqfn" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
+      </node>
     </node>
     <node concept="3uibUv" id="4wjoHLQ_8n" role="EKbjA">
       <ref role="3uigEE" to="ends:~ModelSourceChangeTracker$ReloadCallback" resolve="ModelSourceChangeTracker.ReloadCallback" />

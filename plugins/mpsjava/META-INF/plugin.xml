@@ -21,8 +21,8 @@
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="163.1" until-build="171.1"/>
+  <depends>jetbrains.mps.core</depends>
 
-  <depends>com.intellij.modules.mps</depends>
   <xi:include href="platform/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>

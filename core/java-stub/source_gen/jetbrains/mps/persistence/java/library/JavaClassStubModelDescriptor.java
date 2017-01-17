@@ -8,6 +8,8 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.javastub.ASMModelLoader;
@@ -59,6 +61,12 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
   @Override
   public FolderSetDataSource getSource() {
     return (FolderSetDataSource) super.getSource();
+  }
+
+  @Nullable
+  @Override
+  public AbstractModule getModule() {
+    return (AbstractModule) super.getModule();
   }
 
   @Override
@@ -137,6 +145,7 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
     reload();
     myTimestampTracker.updateTimestamp(getSource());
   }
+
   private void reload() {
     final SModel oldModel = getCurrentModelInternal();
     if (oldModel == null) {
@@ -144,5 +153,10 @@ public class JavaClassStubModelDescriptor extends RegularModelDescriptor impleme
     }
     // XXX shall I synchronize(myLoadLock) so that unload and subsequent partial load are from the same thread? I'm in the write anyway. 
     replace(createModel());
+  }
+
+  @Override
+  public String toString() {
+    return "JavaClassStubModelDescriptor " + getName();
   }
 }

@@ -87,6 +87,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     runModelRead(() -> {
       // Default Solution settings
       Solution solution = myFacet.getSolution();
+      // relies on the fact that only the core plugin is on (my god why)
       assertFalse(solution.getModelRoots().iterator().hasNext());
       // JDK solution should be always returned as module dependencies for now
       // Commented out: jdk is connected like a real module sdk, which is probably absent in this test environment

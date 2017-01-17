@@ -6,7 +6,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="idea_home" location="" />
   <property name="artifacts.mpsBootstrapCore" location="${build.dir}/artifacts/mpsBootstrapCore" />
-  <property name="artifacts.mpsWorkbench" location="${build.dir}/artifacts/mpsWorkbench" />
+  <property name="artifacts.mpsCore" location="${build.dir}/artifacts/mpsCore" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.mpsBootstrapCore}/build.properties" prefix="import.mpsBootstrapCore" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBootstrapCore.mpsBootstrapCore.version}" />
@@ -107,9 +107,13 @@
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models" prefix="module/models" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.java.platform.jar" />
     </jar>
+    <mkdir dir="${build.layout}/mps-java-platform/META-INF/platform" />
+    <copy todir="${build.layout}/mps-java-platform/META-INF/platform">
+      <fileset dir="${mps_home}/plugins/mpsjava/META-INF/platform" />
+    </copy>
     <mkdir dir="${build.layout}/mps-java-platform/lib" />
-    <jar destfile="${build.layout}/mps-java-platform/lib/mps-java-common.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/mps-java-common" />
+    <jar destfile="${build.layout}/mps-java-platform/lib/mps-java-platform.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/mps-java-platform" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -117,8 +121,6 @@
   <target name="buildDependents">
     <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -130,7 +132,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-java-common" />
+  <target name="compileJava" depends="java.compile.mps-java-platform" />
   
   <target name="processResources" />
   
@@ -143,6 +145,7 @@
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
+      <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -235,21 +238,13 @@
       <target name="generate" />
       <target name="assemble" />
     </ant>
-    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
-    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <target name="generate" />
-      <target name="assemble" />
-    </ant>
   </target>
   
-  <target name="java.compile.mps-java-common" depends="fetchDependencies">
+  <target name="java.compile.mps-java-platform" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
     <mkdir dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
-    <mkdir dir="${build.tmp}/java/out/mps-java-common" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java-common" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+    <mkdir dir="${build.tmp}/java/out/mps-java-platform" />
+    <javac2 destdir="${build.tmp}/java/out/mps-java-platform" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
@@ -282,7 +277,7 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/mps-java-common">
+    <copy todir="${build.tmp}/java/out/mps-java-platform">
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

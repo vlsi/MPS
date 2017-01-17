@@ -110,10 +110,10 @@ public final class DataSourceFactoryBridge {
   }
 
   @NotNull
-  private CompositeResult<DataSource> create(@NotNull SModelName modelName,
-                                             @Nullable SourceRoot sourceRoot,
-                                             @NotNull DataSourceFactory factory) throws SourceRootDoesNotExistException,
-                                                                                        NoSourceRootsInModelRootException {
+  public CompositeResult<DataSource> create(@NotNull SModelName modelName,
+                                            @Nullable SourceRoot sourceRoot,
+                                            @NotNull DataSourceFactory factory) throws SourceRootDoesNotExistException,
+                                                                                       NoSourceRootsInModelRootException {
     if (sourceRoot == null) {
       sourceRoot = DefaultModelRoot.Defaults.sourceRoot(myModelRoot);
     }

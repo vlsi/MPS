@@ -42,7 +42,7 @@ public class IoFileSystem implements FileSystem {
     if (path.contains("!")) {
       int index = path.indexOf("!");
       String jarPath = path.substring(0, index);
-      String entryPath = path.substring(index + 1);
+      String entryPath = FileUtil.getUnixPath(path.substring(index + 1));
 
       if (entryPath.startsWith("/")) {
         entryPath = entryPath.substring(1);

@@ -97,7 +97,7 @@ public class GenSourcesAndCompilerXmlGenerationTest {
 
       //test material
       if (isUnder(cp, "/plugins/mps-obsolete/languages/generictasks/tests/")) continue;
-      if (isUnder(cp, "/plugins/mpsjava/tests/")) continue;
+      if (isUnder(cp, "/plugins/mps-java-workbench/tests/jetbrains.mps.ide.java.testMaterial/resources/testData")) continue;
       if (isUnder(cp, "/testbench/modules/testMake/solutions/jetbrains.mps.makeTest/")) continue;
       if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoring/")) continue;
       if (isUnder(cp, "/testbench/modules/testRefactoring/languages/testRefactoringTargetLang/")) continue;

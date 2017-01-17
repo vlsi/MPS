@@ -39,7 +39,6 @@ public class ForeignIdReferenceCacheTest extends DataMPSFixtureTestCase {
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     myModule = configuration.getFacet().getModule();
-    String moduleFileName = myModule.getModuleFilePath();
 
     VirtualFile[] sourceRoots = ModuleRootManager.getInstance(myModule).getSourceRoots();
     assertEquals(sourceRoots.length, 1);

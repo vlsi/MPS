@@ -44,7 +44,7 @@
     <echoxml file="${build.layout}/mps-jps/META-INF/plugin.xml">
       <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
         <id>jetbrains.mps.idea.jps</id>
-        <name>MPS jps plugin integration</name>
+        <name>MPS Jps Plugin Integration</name>
         <version>1.0</version>
         
         <extensions defaultExtensionNs="com.intellij">
@@ -58,8 +58,8 @@
       <fileset dir="${build.tmp}/java/out/mps-java-jps-plugin" />
       <zipfileset dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/META-INF/services" prefix="META-INF/services" />
     </jar>
-    <jar destfile="${build.layout}/mps-jps/lib/jps/mps-jps-plugin-core.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/mps-jps-plugin-core" />
+    <jar destfile="${build.layout}/mps-jps/lib/jps/mps-core-jps-plugin.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/mps-core-jps-plugin" />
       <zipfileset dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/META-INF/services" prefix="META-INF/services" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}</echo>
@@ -83,7 +83,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-jps-plugin-core, java.compile.mps-java-jps-plugin" />
+  <target name="compileJava" depends="java.compile.mps-core-jps-plugin, java.compile.mps-java-jps-plugin" />
   
   <target name="processResources" />
   
@@ -99,10 +99,10 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.mps-jps-plugin-core" depends="fetchDependencies">
+  <target name="java.compile.mps-core-jps-plugin" depends="fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
-    <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-core" />
-    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-core" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+    <mkdir dir="${build.tmp}/java/out/mps-core-jps-plugin" />
+    <javac2 destdir="${build.tmp}/java/out/mps-core-jps-plugin" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
@@ -133,12 +133,12 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/mps-jps-plugin-core">
+    <copy todir="${build.tmp}/java/out/mps-core-jps-plugin">
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
-  <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-jps-plugin-core, fetchDependencies">
+  <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-core-jps-plugin, fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
     <mkdir dir="${build.tmp}/java/out/mps-java-jps-plugin" />
     <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -159,8 +159,8 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mpsPluginCommon}/mps-common.jar" />
-        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-common.jar" />
-        <pathelement path="${build.tmp}/java/out/mps-jps-plugin-core" />
+        <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-core-jps-plugin" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

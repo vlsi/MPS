@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
@@ -202,14 +203,15 @@ public class FileUtil {
 
   // poor version of normalization
   private static String normalize0(@NotNull String path, @NotNull String separator) {
-    path = path.replace("//", "/").replace("\\\\", "\\");
+    path = path.replaceAll("/+", "/").replaceAll("\\\\+", "\\\\");
     if (path.endsWith(separator + DOT)) {
       path = path.substring(0, path.length() - 1);
     }
     if (path.equals("" + DOT)) {
       return "";
     }
-    path = path.replaceAll(Pattern.quote(separator + DOT + separator), separator);
+    // four backslashes are for windows file separator (escaping it twice), and two are escaping the dot
+    path = path.replaceAll("\\\\\\.\\\\", "\\\\").replaceAll("/\\./", "/");
     if (path.contains(separator + DOT + DOT + separator)) {
       LOG.warn("fixme: failed to normalize properly '..' elements '" + path + "'");
     }

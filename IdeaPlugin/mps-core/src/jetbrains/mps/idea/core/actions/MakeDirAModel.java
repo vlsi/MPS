@@ -21,27 +21,47 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.ide.vfs.IdeaFile;
+import jetbrains.mps.ide.vfs.IdeaFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.persistence.FilePerRootDataSource;
+import jetbrains.mps.persistence.FilePerRootDataSourceFactory;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
+import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.LanguageImportHelper;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.EditableSModel;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.Objects;
 
@@ -121,16 +141,23 @@ public class MakeDirAModel extends NewModelActionBase {
       }
       EditableSModel model = null;
       try {
-        model = (EditableSModel) myModelRoot.createPerRootModel(myModelPrefix, sourceRoot);
+        SModelName newModelName = new SModelName(myModelPrefix);
+        PsiDirectory psiDir = (PsiDirectory) e.getData(LangDataKeys.PSI_ELEMENT);
+        if (psiDir == null) {
+          throw new IllegalStateException("Could not find psi directory in the context");
+        }
+        VirtualFile targetFile = psiDir.getVirtualFile();
+        DataSourceFactory dataSourceFactory = createDataSourceFactory(targetFile);
+        ModelFactory modelFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
+        model = (EditableSModel) myModelRoot.createModel(newModelName, sourceRoot, dataSourceFactory, modelFactory);
       } catch (ModelCannotBeCreatedException ex) {
         LOG.error("", ex);
         return null;
       }
 
-      if (model != null) {
-        model.setChanged(true);
-        model.load();
-      }
+      model.setChanged(true);
+      model.load();
+      model.save();
 
       //TODO: This methods are from SModuleOperations.createModelWithAdjustments. Need to check them really needed.
 //        ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
@@ -138,6 +165,24 @@ public class MakeDirAModel extends NewModelActionBase {
 
       return model;
     });
+  }
+
+  @NotNull
+  private DataSourceFactory createDataSourceFactory(VirtualFile targetFile) {
+    return new DataSourceFactory() {
+      @NotNull
+      @Override
+      public DataSourceType getType() {
+        return PreinstalledDataSourceTypes.MODEL_ROOT;
+      }
+
+      @NotNull
+      @Override
+      public DataSource create(@NotNull SModelName modelName, @NotNull SourceRoot sourceRoot, @Nullable ModelRoot modelRoot) {
+        IFile folder = VirtualFileUtils.toIFile(targetFile);
+        return new FilePerRootDataSource(folder, modelRoot);
+      }
+    };
   }
 
   @Nullable

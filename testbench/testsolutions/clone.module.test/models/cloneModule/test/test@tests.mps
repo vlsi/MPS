@@ -551,7 +551,7 @@
             <node concept="YS8fn" id="1rpDfGKs7_s" role="3cqZAp">
               <node concept="2ShNRf" id="1rpDfGKs9zR" role="YScLw">
                 <node concept="1pGfFk" id="1rpDfGKs9Th" role="2ShVmc">
-                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;()" resolve="RuntimeException" />
+                  <ref role="37wK5l" to="wyt6:~RuntimeException.&lt;init&gt;(java.lang.Throwable)" resolve="RuntimeException" />
                   <node concept="2OqwBi" id="1rpDfGKs8Jw" role="37wK5m">
                     <node concept="37vLTw" id="1rpDfGKs7_K" role="2Oq$k0">
                       <ref role="3cqZAo" node="1rpDfGKrPZC" resolve="ref" />

@@ -62,7 +62,7 @@ import java.util.Set;
  * Created by danilla on 03/06/16.
  */
 public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
-  private VirtualFile packageDir;
+  private VirtualFile myPackageDir;
 
   @Override
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
@@ -78,7 +78,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     root.addFile(DefaultModelRoot.SOURCE_ROOTS, sourceRootPath);
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
 
-    packageDir = VfsUtil.createDirectories(sourceRootPath + "/com/jetbrains/pkg");
+    myPackageDir = VfsUtil.createDirectories(sourceRootPath + "/com/jetbrains/pkg");
   }
 
   protected void doTest(Interaction interaction) {
@@ -88,7 +88,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     ApplicationManager.getApplication().runReadAction(new Runnable() {
       @Override
       public void run() {
-        dirElement.set(PsiManager.getInstance(project).findDirectory(packageDir));
+        dirElement.set(PsiManager.getInstance(project).findDirectory(myPackageDir));
       }
     });
 
@@ -164,7 +164,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(packageDir));
+        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(myPackageDir));
         assertNull("Model must not have been created under the directory because the action was cancelled", smodel);
       }
     });
@@ -177,7 +177,7 @@ public class UseLanguageInPackageTest extends DataMPSFixtureTestCase {
     repository.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(packageDir));
+        SModel smodel = SModelFileTracker.getInstance(repository).findModel(VirtualFileUtils.toIFile(myPackageDir));
         assertNotNull("Model hasn't been created under the directory", smodel);
         Collection<SLanguage> importedLanguages = ((SModelInternal) smodel).importedLanguageIds();
         assertTrue("Model is expected to have exactly one used language", importedLanguages.size() == 1);

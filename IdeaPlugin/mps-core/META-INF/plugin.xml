@@ -183,9 +183,9 @@
 
       mps-editor.jar added :( due to NoClassDef for IntentionAspectDescriptor
     -->
-    <!-- IMORTANT keep it in sync with build.xml runTests target, otherwise jps tests fill fail -->
+    <!-- IMPORTANT keep it in sync with build.xml runTests target, otherwise jps tests fill fail -->
     <compileServer.plugin
-            classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar;mps-boot-util.jar"/>
+            classpath="jps/mps-core-jps-plugin.jar;jps/mps-java-jps-plugin.jar;mps-java-platform.jar;mps-common.jar;mps-tool.jar;mps-core.jar;mps-openapi.jar;mps-logging.jar;mps-messaging.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;mps-editor.jar;mps-editor-api.jar;mps-platform.jar;mps-behavior-api.jar;mps-behavior-runtime.jar;mps-boot-util.jar"/>
     <buildProcess.parametersProvider implementation="jetbrains.mps.idea.build.MPSBuildProcessParametersProvider"/>
     <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
     <projectConfigurable instance="jetbrains.mps.idea.core.codeStyle.MpsCodeStyleSettingsConfigurable"
