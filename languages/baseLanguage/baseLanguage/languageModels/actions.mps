@@ -5113,6 +5113,53 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="2ytHpS0C7fO" role="3cqZAp">
+            <node concept="2OqwBi" id="2ytHpS0C7fP" role="3clFbG">
+              <node concept="2OqwBi" id="2ytHpS0C7fQ" role="2Oq$k0">
+                <node concept="2OqwBi" id="2ytHpS0C7fR" role="2Oq$k0">
+                  <node concept="37vLTw" id="2ytHpS0C7fS" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5I1xGJZr8e" resolve="method" />
+                  </node>
+                  <node concept="3TrEf2" id="2ytHpS0C7fT" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
+                  </node>
+                </node>
+                <node concept="2Rf3mk" id="2ytHpS0C7fU" role="2OqNvi">
+                  <node concept="1xMEDy" id="2ytHpS0C7fV" role="1xVPHs">
+                    <node concept="chp4Y" id="2ytHpS0DfYp" role="ri$Ld">
+                      <ref role="cht4Q" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2es0OD" id="2ytHpS0C7fX" role="2OqNvi">
+                <node concept="1bVj0M" id="2ytHpS0C7fY" role="23t8la">
+                  <node concept="3clFbS" id="2ytHpS0C7fZ" role="1bW5cS">
+                    <node concept="3clFbF" id="2ytHpS0C7g0" role="3cqZAp">
+                      <node concept="2OqwBi" id="2ytHpS0C7g1" role="3clFbG">
+                        <node concept="37vLTw" id="2ytHpS0C7g2" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ytHpS0C7g4" resolve="it" />
+                        </node>
+                        <node concept="1_qnLN" id="2ytHpS0C7g3" role="2OqNvi">
+                          <ref role="1_rbq0" to="tpee:f$Xjq0c" resolve="ThisExpression" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="2ytHpS0C7g4" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="2ytHpS0C7g5" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3SKdUt" id="2ytHpS0DDBy" role="3cqZAp">
+            <node concept="3SKdUq" id="2ytHpS0DDB$" role="3SKWNk">
+              <property role="3SKdUp" value="[MM] how about supers?" />
+            </node>
+          </node>
+          <node concept="3clFbH" id="2ytHpS0DqE9" role="3cqZAp" />
           <node concept="3clFbF" id="fNOVZ5sSfj" role="3cqZAp">
             <node concept="2OqwBi" id="fNOVZ5t3IE" role="3clFbG">
               <node concept="2OqwBi" id="fNOVZ5sSv4" role="2Oq$k0">
@@ -5700,6 +5747,11 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="2ytHpS0DSFD" role="3cqZAp">
+            <node concept="3SKdUq" id="2ytHpS0DSFF" role="3SKWNk">
+              <property role="3SKdUp" value="since we don't produce static methods here, ThisNodeExpression is used (could be ThisConceptExpression also)" />
+            </node>
+          </node>
           <node concept="3clFbF" id="5I1xGKFH9T" role="3cqZAp">
             <node concept="2OqwBi" id="5I1xGKFH9U" role="3clFbG">
               <node concept="2OqwBi" id="5I1xGKFH9V" role="2Oq$k0">
@@ -6061,6 +6113,11 @@
               </node>
             </node>
           </node>
+          <node concept="3SKdUt" id="2ytHpS0E9UZ" role="3cqZAp">
+            <node concept="3SKdUq" id="2ytHpS0E9V1" role="3SKWNk">
+              <property role="3SKdUp" value="[MM] what about supers?" />
+            </node>
+          </node>
           <node concept="3clFbF" id="5I1xGKNcSL" role="3cqZAp">
             <node concept="2OqwBi" id="5I1xGKNcSM" role="3clFbG">
               <node concept="2OqwBi" id="5I1xGKNcSN" role="2Oq$k0">
@@ -6097,6 +6154,47 @@
                   <node concept="Rh6nW" id="5I1xGKNcT1" role="1bW2Oz">
                     <property role="TrG5h" value="it" />
                     <node concept="2jxLKc" id="5I1xGKNcT2" role="1tU5fm" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3clFbF" id="2ytHpS0DVEc" role="3cqZAp">
+            <node concept="2OqwBi" id="2ytHpS0DVEd" role="3clFbG">
+              <node concept="2OqwBi" id="2ytHpS0DVEe" role="2Oq$k0">
+                <node concept="2OqwBi" id="2ytHpS0DVEf" role="2Oq$k0">
+                  <node concept="37vLTw" id="2ytHpS0DVEg" role="2Oq$k0">
+                    <ref role="3cqZAo" node="5I1xGKHjdG" resolve="method" />
+                  </node>
+                  <node concept="3TrEf2" id="2ytHpS0DVEh" role="2OqNvi">
+                    <ref role="3Tt5mk" to="tpee:fzclF7Z" resolve="body" />
+                  </node>
+                </node>
+                <node concept="2Rf3mk" id="2ytHpS0DVEi" role="2OqNvi">
+                  <node concept="1xMEDy" id="2ytHpS0DVEj" role="1xVPHs">
+                    <node concept="chp4Y" id="2ytHpS0E2K8" role="ri$Ld">
+                      <ref role="cht4Q" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2es0OD" id="2ytHpS0DVEl" role="2OqNvi">
+                <node concept="1bVj0M" id="2ytHpS0DVEm" role="23t8la">
+                  <node concept="3clFbS" id="2ytHpS0DVEn" role="1bW5cS">
+                    <node concept="3clFbF" id="2ytHpS0DVEo" role="3cqZAp">
+                      <node concept="2OqwBi" id="2ytHpS0DVEp" role="3clFbG">
+                        <node concept="37vLTw" id="2ytHpS0DVEq" role="2Oq$k0">
+                          <ref role="3cqZAo" node="2ytHpS0DVEs" resolve="it" />
+                        </node>
+                        <node concept="1_qnLN" id="2ytHpS0DVEr" role="2OqNvi">
+                          <ref role="1_rbq0" to="tp4f:hyWthE1" resolve="ThisClassifierExpression" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="Rh6nW" id="2ytHpS0DVEs" role="1bW2Oz">
+                    <property role="TrG5h" value="it" />
+                    <node concept="2jxLKc" id="2ytHpS0DVEt" role="1tU5fm" />
                   </node>
                 </node>
               </node>
