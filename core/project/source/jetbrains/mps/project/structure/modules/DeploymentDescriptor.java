@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ public class DeploymentDescriptor extends ModuleDescriptor {
   private String myDescriptorFile;
   private String myType;
 
-  private final List<String> myLibraries = new ArrayList<String>();
+  private final List<String> myLibraries = new ArrayList<>();
 
   public String getSourcesJar() {
     return mySourcesJar;
@@ -57,6 +57,13 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     myType = type;
   }
 
+  /**
+   * Deployed modules may expose own class files, as well as redistribute (or reuse redistributed otherwise) jar libraries required for their operation.
+   * Library location starting with "/" indicates distribution-relative path, any other location is relative to distributed module home (which is either
+   * parent directory of a .jar file, if module distributed as a jar, or directory with META-INF/ if module isn't in a jar).
+   * @return collection of jar files, as written in the deployment descriptor (with no path unwrap/expand done).
+   */
+  @NotNull
   public List<String> getLibraries() {
     return myLibraries;
   }

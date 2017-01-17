@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -272,8 +273,26 @@ public final class ModulesMiner {
       // TODO create module without sources
       if (result != null) {
         result.setDeploymentDescriptor(deploymentDescriptor);
-        // TODO fix stubs
+        // fix stubs libraries:
+        // META-INF/module.xml contains info about model libs, while clients generally look at MD.getAdditionalJavaStubPaths() which were not
+        // updated by build language at deployment time and still points to design-time lib location.
+        // Here we ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
+        result.getAdditionalJavaStubPaths().clear();
+        // FIXME getBundleHome is not smart enough to recognize META-INF/module.xml in a regular directory (not archive), and yields
+        //       wrong result then (file.getParent() == META-INF/ location which won't help to locate libraries). Instead, pass module home
+        //       location from the caller.
+        IFile bundleParent = file.getBundleHome().getParent();
+        for (String jarFile : deploymentDescriptor.getLibraries()) {
+          IFile jar = jarFile.startsWith("/")
+              ? bundleParent.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
+              : bundleParent.getDescendant(jarFile);
+          if (jar.exists()) {
+            String path = jar.getPath();
+            result.getAdditionalJavaStubPaths().add(path);
+          }
+        }
       }
+      // XXX why don't we return DD if no source MD found?
       return result;
     } catch (ModuleReadException e) {
       LOG.error("Exception while loading a deployment descriptor from the path " + file.getPath(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -200,6 +200,7 @@ public class ModuleDescriptor {
    * Paths to extra jar files needed to compile and run given module, generally empty unless a module has some peculiar dependencies on existing java libraries.
    * As of today, these come from {@code <stubModelEntry path=""/>} in a module descriptor.
    * according to {@code LanguageDescriptorPersistence}, legacy entries were {@code classPath} and {@code runtimeClassPath}
+   * FIXME WHY DOES IT USE String for File location, which FS shall I use to resolve these locations?
    */
   public Collection<String> getAdditionalJavaStubPaths() {
     return myAdditionalJavaStubPaths;

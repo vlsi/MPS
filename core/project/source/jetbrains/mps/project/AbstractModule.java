@@ -410,11 +410,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     // 1 && 2
     if (sourcesDescriptorFile != null) {
-      // stub libraries
-      // todo: looks like module.xml contains info about model libs
-      // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
-      descriptor.getAdditionalJavaStubPaths().clear();
-
       // stub model roots
       List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
       List<ModelRootDescriptor> toAdd = new ArrayList<ModelRootDescriptor>();
@@ -486,13 +481,12 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     // 3
-    for (String jarFile : deplDescriptor.getLibraries()) {
-      IFile jar = jarFile.startsWith("/")
-          ? myFileSystem.getFile(PathManager.getHomePath() + jarFile)
-          : bundleParent.getDescendant(jarFile);
+    // MD.getAdditionalJavaStubPaths() has been updated by ModulesMiner to point to correct location according to information from DD
+    // Would be great to have IFile here directly, but alas, there's no well-established idea what's relation between MD and IFile/Path
+    // the problem is that myFileSystem not necessarily match that of deployment descriptor (the one we used to create these paths in MM).
+    for (String jarFile : descriptor.getAdditionalJavaStubPaths()) {
+      IFile jar = myFileSystem.getFile(jarFile);
       if (jar.exists()) {
-        String path = jar.getPath();
-        descriptor.getAdditionalJavaStubPaths().add(path);
         // FIXME why do we expose *each* cp jar as model stub? Seems to be legacy, when stubModelEntry used to specify
         //       both cp+stub, now there's distinct model root for that. HOWEVER, now it's only dd that points correctly to
         //       library jars (filesystem-wise). While module-relative stub jars from deployed modules are ignored in the update cycle
