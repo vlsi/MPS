@@ -132,6 +132,7 @@
         <child id="5610619299014446504" name="extJar" index="3yqu4I" />
       </concept>
       <concept id="5610619299014531832" name="jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder" flags="ng" index="3yqFpY">
+        <property id="2059522355690539028" name="includeRecursively" index="2HvuMZ" />
         <child id="5610619299014531834" name="extFolder" index="3yqFpW" />
       </concept>
       <concept id="5610619299014531647" name="jetbrains.mps.build.structure.BuildSource_JavaExternalJarFolderRef" flags="ng" index="3yqFqT">
@@ -1446,18 +1447,12 @@
       </node>
     </node>
     <node concept="PiPfp" id="3L2iO8sIVea" role="3989C9">
-      <property role="TrG5h" value="test.plugin" />
-      <node concept="25yagZ" id="3L2iO8sIVfH" role="PiKyV">
-        <node concept="3yqFpY" id="3L2iO8sIVfN" role="25yagT">
-          <node concept="3yqFqT" id="611WBGkdBBa" role="3yqFpW">
-            <ref role="3yqFr6" to="ffeo:ymnOULBdbY" resolve="languageDesign" />
-          </node>
-        </node>
-      </node>
+      <property role="TrG5h" value="mps-testing-artifacts" />
       <node concept="25yagZ" id="3L2iO8sLKhW" role="PiKyV">
         <node concept="3yqFpY" id="3L2iO8sLKhX" role="25yagT">
-          <node concept="3yqFqT" id="3L2iO8sLKi5" role="3yqFpW">
-            <ref role="3yqFr6" to="ffeo:45oiMWk3r6m" resolve="lib" />
+          <property role="2HvuMZ" value="true" />
+          <node concept="3yqFqT" id="1MkTaILVNVs" role="3yqFpW">
+            <ref role="3yqFr6" to="ffeo:ymnOULAZ8H" resolve="mps-testing" />
           </node>
         </node>
       </node>
@@ -1712,6 +1707,22 @@
           </node>
         </node>
       </node>
+      <node concept="2GAZfH" id="4F_fjXK9I_w" role="398b2p">
+        <node concept="TIC1d" id="4F_fjXK9I_x" role="2GAZfG">
+          <node concept="398BVA" id="4F_fjXK9I_y" role="TIC6M">
+            <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="4F_fjXK9I_z" role="iGT6I">
+              <property role="2Ry0Am" value="IdeaPlugin" />
+              <node concept="2Ry0Ak" id="4F_fjXK9I_$" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-java" />
+                <node concept="2Ry0Ak" id="4F_fjXK9I__" role="2Ry0An">
+                  <property role="2Ry0Am" value="testSrc" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="2GAZfH" id="63lu3g6BW2k" role="398b2p">
         <node concept="TIC1d" id="63lu3g6BW2l" role="2GAZfG">
           <node concept="398BVA" id="63lu3g6BW2m" role="TIC6M">
@@ -1744,22 +1755,6 @@
           </node>
         </node>
       </node>
-      <node concept="2GAZfH" id="4F_fjXK9I_w" role="398b2p">
-        <node concept="TIC1d" id="4F_fjXK9I_x" role="2GAZfG">
-          <node concept="398BVA" id="4F_fjXK9I_y" role="TIC6M">
-            <ref role="398BVh" node="63lu3g6BW1R" resolve="mps_home" />
-            <node concept="2Ry0Ak" id="4F_fjXK9I_z" role="iGT6I">
-              <property role="2Ry0Am" value="IdeaPlugin" />
-              <node concept="2Ry0Ak" id="4F_fjXK9I_$" role="2Ry0An">
-                <property role="2Ry0Am" value="mps-java" />
-                <node concept="2Ry0Ak" id="4F_fjXK9I__" role="2Ry0An">
-                  <property role="2Ry0Am" value="testSrc" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node concept="nCB5N" id="63lu3g6BW2P" role="nCB5Z">
         <ref role="nCB5Y" node="16Vg0jOdbWA" resolve="mps-plugin-core" />
       </node>
@@ -1769,11 +1764,8 @@
       <node concept="nCB5N" id="3ZROizBYYvl" role="nCB5Z">
         <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-common" />
       </node>
-      <node concept="nCB5N" id="DRazW80wZy" role="nCB5Z">
-        <ref role="nCB5Y" to="ffeo:2aRSPSKEe9G" resolve="test-util" />
-      </node>
       <node concept="2sjeV3" id="3L2iO8sKLih" role="nCB5Z">
-        <ref role="2sjeV2" node="3L2iO8sIVea" resolve="test.plugin" />
+        <ref role="2sjeV2" node="3L2iO8sIVea" resolve="mps-testing-artifacts" />
       </node>
     </node>
     <node concept="398b33" id="H87DT7jZis" role="3989C9">

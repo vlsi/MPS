@@ -49,9 +49,8 @@
     <fileset file="${artifacts.IDEA}/plugins/devkit/lib/devkit-jps-plugin.jar" />
   </path>
   
-  <path id="path.java.library.test.plugin">
-    <fileset dir="${artifacts.mpsPlugin}/mps-core/languages/languageDesign" includes="*.jar" />
-    <fileset dir="${artifacts.mpsPlugin}/mps-testing/lib" includes="*.jar" />
+  <path id="path.java.library.mps-testing-artifacts">
+    <fileset dir="${artifacts.mpsPlugin}/mps-testing" includes="*.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
@@ -140,17 +139,17 @@
   
   <target name="java.compile.mps-plugin-tests" depends="fetchDependencies">
     <mkdir dir="${mps_home}/IdeaPlugin/mps-core/testSrc" />
+    <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
     <mkdir dir="${mps_home}/testbench/source_gen" />
-    <mkdir dir="${mps_home}/IdeaPlugin/mps-java/testSrc" />
     <mkdir dir="${build.tmp}/java/out/mps-plugin-tests" />
     <javac2 destdir="${build.tmp}/java/out/mps-plugin-tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/IdeaPlugin/mps-core/testSrc" />
+        <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
         <path location="${mps_home}/testbench/testsolutions/editor.test/source_gen" />
         <path location="${mps_home}/testbench/source_gen" />
-        <path location="${mps_home}/IdeaPlugin/mps-java/testSrc" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-annotations.jar" />
@@ -173,7 +172,6 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsJavaPlatform}/mps-java-platform/lib/mps-java-common.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
@@ -181,15 +179,15 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
-        <path refid="path.java.library.test.plugin" />
+        <path refid="path.java.library.mps-testing-artifacts" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-plugin-tests">
       <fileset dir="${mps_home}/IdeaPlugin/mps-core/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/testsolutions/editor.test/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/IdeaPlugin/mps-java/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
