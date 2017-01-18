@@ -4,6 +4,7 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
+    <modelRoot contentPath="${module}/source_gen/PER_ROOT" type="java_source_stubs" />
   </models>
   <sourcePath />
   <dependencies>
