@@ -21,8 +21,12 @@ package org.jetbrains.mps.openapi.persistence;
  * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
  * We use this mechanism from merge driver and various tools that are going to access nodes from
  * the model but are not going to expose this model anywhere else.
+ * [AT]
  *
  * @see ModelFactory#OPTION_CONTENT_ONLY
+ * @see ModelFactory#create(DataSource, SModelName, ModelLoadingOption...)
+ * @see ModelFactory#load(DataSource, ModelLoadingOption...)
+ * @author apyshkin
  */
 public enum ContentOption implements ModelLoadingOption {
   CONTENT_ONLY

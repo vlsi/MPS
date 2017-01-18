@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import org.jetbrains.mps.annotations.ImmutableReturn;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -26,9 +27,10 @@ import java.util.List;
 
 /**
  * Stores default associations between {@link ModelFactory} and {@link DataSourceType}.
- * If #register is invoked for the same key twice, then the model factory value gets replaced.
- * If #unregister is invoked then the previous associated value must be restored.
- * To sum up it is a many-to-many mapping.
+ * It is a many-to-many mapping.
+ * Also it stores a mapping between model factory types and model factories (which allows user to replace
+ * the bundled persistence we provide)
+ *
  *
  * @see ModelFactory
  * @see DataSourceType
@@ -41,7 +43,7 @@ public interface ModelFactoryRegistry {
   /**
    * @return all registered factories
    */
-  @Immutable
+  @ImmutableReturn
   @NotNull List<ModelFactory> getFactories();
 
   /**
@@ -66,12 +68,12 @@ public interface ModelFactoryRegistry {
    * 1. by the preferences of the model factory ({@link ModelFactory#getPreferredDataSourceTypes()},
    * 2. in the <em>reverse</em> order of registration
    */
-  @Immutable
+  @ImmutableReturn
   @NotNull List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType);
 
   /**
    * @return all the factory types registered
    */
-  @Immutable
+  @ImmutableReturn
   @NotNull List<ModelFactoryType> getFactoryTypes();
 }

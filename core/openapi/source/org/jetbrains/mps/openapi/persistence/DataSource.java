@@ -28,6 +28,8 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
  * all that belongs to the {@link ModelFactory}.
  *
  * For implementation consider extending {@code jetbrains.mps.extapi.persistence.DataSourceBase}.
+ *
+ * @author apyshkin
  */
 public interface DataSource {
 
@@ -61,6 +63,11 @@ public interface DataSource {
   boolean isReadOnly();
 
   /**
+   * Defines a data source type for this kind of data sources.
+   * The data source type notion is strongly associated with the possibility to provide DataSourceFactory and
+   * ModelFactory custom mappings.
+   * See DataSourceFactoryService and ModelFactoryService for the implementation details.
+   *
    * @return the unique data source type for this instance of data source
    * if the developer wants others to be able to change the default behavior of this data source (register with the same key)
    * or if he desires to associate this data source with some specific model factory.

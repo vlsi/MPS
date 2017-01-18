@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.persistence.datasource;
+package org.jetbrains.mps.annotations;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.persistence.DataSource;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * Serves as a unique identifier between {@link DataSource} instances.
+ * Marks methods which return value can not be changed.
  *
- * @see DataSource
- * also see DataSourceFactory
- *
- * Created by apyshkin on 12/22/16.
+ * If an interface method bears this annotation then all the subclasses must have this method return-immutable as well.
  */
-public interface DataSourceType {
-  @NotNull String getName();
+@Retention(RetentionPolicy.SOURCE)
+@Target({ElementType.METHOD})
+public @interface ImmutableReturn {
 }

@@ -25,8 +25,8 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 /**
- * Service-provider interface for creating {@link DataSource} from the given model name.
- * See how <code>FileDataSourceFactory</code> is implemented and
+ * Service-provider interface for creating a new {@link DataSource} from the given model name.
+ * See how <code>jetbrains.mps.persistence.FileMPSDataSourceFactory</code> is implemented and
  * registered in the META-INF/services location.
  *
  * @author apyshkin

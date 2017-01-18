@@ -62,7 +62,7 @@ public final class ModelFactoryService implements ModelFactoryRegistry {
   }
 
   /**
-   * @internal please do not invoke these two methods unless absolutely necessary -- the only caller is supposed to be ModelFactoryRegister$ModelFactoryProvider
+   * @internal please do not invoke these two methods -- the only caller is supposed to be ModelFactoryRegister$ModelFactoryProvider
    * whose purpose is pushing up the model factories registered via IDEA extension points mechanism
    *
    * it is lowering its visibility after 3.6

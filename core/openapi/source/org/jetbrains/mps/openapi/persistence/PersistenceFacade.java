@@ -64,27 +64,33 @@ public abstract class PersistenceFacade {
   /**
    * Retrieves the factory associated with the given file extension.
    * @deprecated use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
+   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.6)
+  @ToRemove(version = 3.7)
   @Deprecated
   public abstract ModelFactory getModelFactory(@Nullable String extension);
 
   /**
    * Retrieves the factory for default MPS storage format (xml-based).
    * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
+   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.6)
+  @ToRemove(version = 3.7)
   @Deprecated
   public abstract ModelFactory getDefaultModelFactory();
 
   /**
-   * Registers the factory with the file extension, overwriting potential earlier registration.
+   * Registers the factory with the file extension, overwriting the potential earlier registration.
    *
    * @param factory The factory to register, null to clear the registration for the given type.
    * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
    *             Use {@code ModelFactoryRegistry#register} instead.
+   *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.6)
+  @ToRemove(version = 3.7)
   @Deprecated
   public abstract void setModelFactory(@Nullable String extension, ModelFactory factory);
 
@@ -93,10 +99,13 @@ public abstract class PersistenceFacade {
    * @deprecated the model factories are separated from the type of location
    *             (while file extension as a key clearly violates this idea).
    *             Thus one might to look at the
-   *             <code>jetbrains.mps.extapi.persistence.dataSource.FileBasedDataSourceService</code>
-   *             which can be used to register your one file-based data source factories.
+   *             <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
+   *             which can be used to register your one custom data source factories.
+   *             <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code> is an extension point
+   *             to register your custom model factory implementation and associate it (if needed)
+   *             with some specific data source type.
    */
-  @ToRemove(version = 3.6)
+  @ToRemove(version = 3.7)
   @Deprecated
   public abstract Set<String> getModelFactoryExtensions();
 

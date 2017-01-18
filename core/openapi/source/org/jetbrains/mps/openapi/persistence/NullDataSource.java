@@ -15,7 +15,6 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
-import com.sun.org.apache.bcel.internal.generic.DASTORE;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 

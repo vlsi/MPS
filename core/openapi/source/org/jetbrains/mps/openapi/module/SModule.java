@@ -122,9 +122,11 @@ public interface SModule {
 
   /**
    *  Returns facet of the specified class.
+   *  It is the implementor matter to decide which facet to return
+   *  in the case there are several facets of the given class in this module.
    */
   @Nullable
-  <T extends SModuleFacet> T getFacet(Class<T> clazz);
+  <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz);
 
   // FIXME document whether read lock is required to access roots
   Iterable<ModelRoot> getModelRoots();

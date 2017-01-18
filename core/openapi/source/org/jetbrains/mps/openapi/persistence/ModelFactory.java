@@ -32,7 +32,12 @@ import java.util.Map;
  * The location resides rather on the {@link DataSource}
  * side than here while the storage parameters belong here.
  *
+ * NB: The <code>ModelFactory</code> knows about <code>DataSource</code> but
+ * not vice versa.
+ *
  * Creates/upgrades/saves/loads models (instances of SModel) from data sources.
+ *
+ * @author apyshkin
  */
 public interface ModelFactory {
   // --- default options ---
@@ -60,7 +65,11 @@ public interface ModelFactory {
   /**
    * Denotes a model name, used as a key in the <code>Map<String, String></code> parameter
    * in the {@link #create(DataSource, Map)} methods.
+   *
+   * @deprecated this option is unnecessary. Use {@link create(DataSource, ModelLoadingOption...)} instead.
    */
+  @ToRemove(version = 3.7)
+  @Deprecated
   String OPTION_MODELNAME = "modelName";
 
   /**
@@ -68,7 +77,11 @@ public interface ModelFactory {
    * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
    * We use this mechanism from merge driver and various tools that are going to access nodes from
    * the model but are not going to expose this model anywhere else.
+   * 
+   * @deprecated String option is not informatory. Use {@link ContentOption} instead
    */
+  @ToRemove(version = 3.7)
+  @Deprecated
   String OPTION_CONTENT_ONLY = "contentOnly";
 
   // --- API ---
@@ -78,15 +91,10 @@ public interface ModelFactory {
    * like stream encoding (usually, the default is utf-8), package name, containing module reference
    * or module relative path of the source.
    *
-   * It will be deprecated as soon as I grant an alternative.
-   * --Why?
-   * --Because of the Map<String,String>.
-   *
-   * Right now consider using <code>jetbrains.mps.persistence.ModelFactoryFacade</code>
-   *
    * @return The loaded model
    * @throws UnsupportedDataSourceException if the data source is not supported
-   * @deprecated rather use {@link #load(DataSource, ModelLoadingOption...)} instead
+   * @deprecated Map<String,String> is hardly perceivable. Please use
+   *             rather {@link #load(DataSource, ModelLoadingOption...)} instead
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -97,10 +105,12 @@ public interface ModelFactory {
    * Creates a new empty model.
    * Implementor must throw <code>UnsupportedDataSourceException</code> if
    * #canCreate returns false.
+   *
    * @param dataSource if null then the default data source is created for the supplied model name
    * @param options must content {@link #OPTION_MODELNAME} mapping.
    *
-   * @throws UnsupportedDataSourceException if the data source is not supported, in other words {@link #canCreate(DataSource, Map)} returns false
+   * @throws UnsupportedDataSourceException if the data source is not supported, in other words 
+   *                                        {@link #canCreate(DataSource, Map)} returns false
    * @throws IOException if the model cannot be created for some other reasons
    *
    * @deprecated use more flexible {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead
@@ -112,6 +122,15 @@ public interface ModelFactory {
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
+   * 
+   * ---------
+   * Currently this method implementations are quite shallow and de facto it does not work at all
+   * as the API designer must have suggested. Now the real semantics of this method is whether the data 
+   * source is supported by the <code>ModelFactory</code>.
+   * I suggest to use the honest {@link #supports} method and catch the {@link ModelCreationException}  post factum rather then
+   * do the check beforehand.
+   * AP
+   * ---------
    *
    * @deprecated rather try calling {@link #create(DataSource, SModelName, ModelLoadingOption...)} method and
    * catching the {@link ModelCreationException} during creation or
@@ -134,8 +153,8 @@ public interface ModelFactory {
    * Might consider additional options provided in the <code>options</code> varargs.
    * [General rule: options.contain(SomeOption) => SomeOption is on]
    *
-   * @param dataSource -- location to create model in
-   * @param modelName -- new model name (note that it might be constructed easily from full-qualified <code>String</code>)
+   * @param dataSource -- location to create the model in
+   * @param modelName -- a new model name (note that it might be constructed easily from full-qualified <code>String</code>)
    * @param options -- custom options
    *                   @see ModelLoadingOption
    * @return newly created model
@@ -181,21 +200,28 @@ public interface ModelFactory {
    *
    * @throws UnsupportedDataSourceException if the data source is not supported
    */
-  void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException;
+  void save(@NotNull SModel model, @NotNull DataSource dataSource) throws UnsupportedDataSourceException, ModelSaveException, IOException;
 
   /**
    * returns true if plain text is not enough to represent stored data.
    *
-   * FIXME Rather turn this into some marker interface than have it here
+   * // @deprecated The contract is not clear ("not enought" means what exactly?).
+   *                We would rather turn this into some marker interface than have it here
    */
-  @ToRemove(version = 3.7)
-  @Deprecated
+  /*@ToRemove(version = 3.7)*/
+  /*@Deprecated*/
   boolean isBinary();
 
   /**
    * @return the file extension this factory is registered on
-   * null if for instance model factory is associated rather with a group of files than one file.
-   * @deprecated The location notion is hidden in {@link DataSource} no need to expose it.
+   *         null if for instance model factory is associated rather with a group of files than one file.
+   *
+   * @deprecated Outrageous breaking of the separation location from the loading strategy principle, which is
+   *             planted in the create, load, etc. methods.
+   *             The location notion is hidden in {@link DataSource} and there is absolutely no need to expose it.
+   *             In order to work out the currently running scenarios we set up special DataSourceFactory <-> ModelFactory
+   *             relations which are exposed through the <code>DataSourceFactoryService</code>, <code>ModelFactoryService</code> and
+   *             {@link #getPreferredDataSourceTypes}.
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -208,7 +234,7 @@ public interface ModelFactory {
 
   /**
    * Returns an id which is used to get model factory by id in the
-   * {@link ModelFactoryService}.
+   * {@code ModelFactoryService}.
    *
    * @return model factory unique identification entity
    */
