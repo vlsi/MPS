@@ -147,6 +147,12 @@ public class SLinkOperations {
     }
     return reference.getRole();
   }
+  public static SReferenceLink getRefLink(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    return reference.getLink();
+  }
   public static String getResolveInfo(SReference reference) {
     if (reference == null) {
       return null;

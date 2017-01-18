@@ -5579,6 +5579,44 @@
         </node>
       </node>
     </node>
+    <node concept="2YIFZL" id="2ytHpS0VOl8" role="jymVt">
+      <property role="TrG5h" value="getRefLink" />
+      <node concept="3Tm1VV" id="2ytHpS0VOl9" role="1B3o_S" />
+      <node concept="3uibUv" id="2ytHpS0VOSH" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+      </node>
+      <node concept="37vLTG" id="2ytHpS0VOlb" role="3clF46">
+        <property role="TrG5h" value="reference" />
+        <node concept="3uibUv" id="2ytHpS0VOlc" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SReference" resolve="SReference" />
+        </node>
+      </node>
+      <node concept="3clFbS" id="2ytHpS0VOld" role="3clF47">
+        <node concept="3clFbJ" id="2ytHpS0VOle" role="3cqZAp">
+          <node concept="3clFbC" id="2ytHpS0VOlf" role="3clFbw">
+            <node concept="37vLTw" id="2ytHpS0VOlg" role="3uHU7B">
+              <ref role="3cqZAo" node="2ytHpS0VOlb" resolve="reference" />
+            </node>
+            <node concept="10Nm6u" id="2ytHpS0VOlh" role="3uHU7w" />
+          </node>
+          <node concept="3clFbS" id="2ytHpS0VOli" role="3clFbx">
+            <node concept="3cpWs6" id="2ytHpS0VOlj" role="3cqZAp">
+              <node concept="10Nm6u" id="2ytHpS0VOlk" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="2ytHpS0VOll" role="3cqZAp">
+          <node concept="2OqwBi" id="2ytHpS0VOlm" role="3cqZAk">
+            <node concept="37vLTw" id="2ytHpS0VOln" role="2Oq$k0">
+              <ref role="3cqZAo" node="2ytHpS0VOlb" resolve="reference" />
+            </node>
+            <node concept="liA8E" id="2ytHpS0VOlo" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SReference.getLink():org.jetbrains.mps.openapi.language.SReferenceLink" resolve="getLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2YIFZL" id="5IkW5anFcxF" role="jymVt">
       <property role="TrG5h" value="getResolveInfo" />
       <node concept="3Tm1VV" id="5IkW5anFcxG" role="1B3o_S" />
