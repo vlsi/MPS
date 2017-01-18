@@ -239,6 +239,9 @@
         <reference id="1170346070688" name="classifier" index="1Y3XeK" />
       </concept>
     </language>
+    <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots">
+      <concept id="4079382982702596667" name="jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression" flags="nn" index="2EnYce" />
+    </language>
     <language id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow">
       <concept id="2769948622284574294" name="jetbrains.mps.build.workflow.structure.BwfTaskDependency" flags="ng" index="2VaxJe">
         <reference id="2769948622284574295" name="target" index="2VaxJf" />
@@ -334,7 +337,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1960721196051541146" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" flags="nn" index="13GOg" />
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -365,6 +367,7 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1145570846907" name="jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingsOperation" flags="nn" index="2TlYAL" />
@@ -1246,11 +1249,16 @@
                 <node concept="37vLTw" id="42Bx8VbD0xq" role="37wK5m">
                   <ref role="3cqZAo" node="6qcrfIJFCf3" resolve="kind" />
                 </node>
-                <node concept="2OqwBi" id="13YBgBBRT54" role="37wK5m">
-                  <node concept="37vLTw" id="2BHiRxghiP_" role="2Oq$k0">
-                    <ref role="3cqZAo" node="6qcrfIJFCf5" resolve="child" />
+                <node concept="2EnYce" id="13YBgBBRT54" role="37wK5m">
+                  <node concept="2OqwBi" id="2ytHpS1e0OA" role="2Oq$k0">
+                    <node concept="37vLTw" id="2ytHpS1e0OB" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6qcrfIJFCf5" resolve="child" />
+                    </node>
+                    <node concept="2NL2c5" id="2ytHpS1e0OC" role="2OqNvi" />
                   </node>
-                  <node concept="13GOg" id="13YBgBBRT5c" role="2OqNvi" />
+                  <node concept="liA8E" id="2ytHpS1e0OD" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
+                  </node>
                 </node>
               </node>
             </node>
