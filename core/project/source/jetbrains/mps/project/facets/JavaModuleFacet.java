@@ -17,6 +17,7 @@ package jetbrains.mps.project.facets;
 
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -72,7 +73,8 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
   default IFile getOutputRoot() {
     if (getModule() instanceof AbstractModule ) {
       // there's no output location for packaged/deployed modules
-      return ((AbstractModule) getModule()).getOutputPath();
+      String outputPath = ProjectPathUtil.getGeneratorOutputPath(((AbstractModule) getModule()).getModuleDescriptor());
+      return outputPath == null ? null : ((AbstractModule) getModule()).getFileSystem().getFile(outputPath);
     }
     return null;
   }

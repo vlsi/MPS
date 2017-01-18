@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -70,11 +69,6 @@ public class TestModule extends AbstractModule {
     super.dispose();
   }
 
-  @Override
-  public IFile getOutputPath() {
-    return ((AbstractModule) myPeer).getOutputPath();
-  }
-
   private void clearAll() {
     myPeer = null;
     myModels.clear();
@@ -102,6 +96,8 @@ public class TestModule extends AbstractModule {
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     // todo: is it ok?
+    // At least, JavaModuleFacet cares about proper module descriptor (although it's not obvious whether there's JMF for this module at all)
+    // What are scenarios for this TestModule anyway?
     return ((AbstractModule) myPeer).getModuleDescriptor();
   }
 

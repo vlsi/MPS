@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -94,7 +95,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
 //    assertEquals(1, solution.getDependencies().size());
       assertEmpty(myFacet.getConfiguration().getBean().getUsedLanguages());
 
-      assertEquals(getModuleHome() + "/src_gen", solution.getOutputPath().toPath().toString());
+      assertEquals(getModuleHome() + "/src_gen", solution.getFacet(JavaModuleFacet.class).getOutputRoot().toPath().toString());
 
       Solution repositorySolution = myModuleRepositoryFacade.getModule(solution.getModuleReference(), Solution.class);
       assertEquals(solution, repositorySolution);
@@ -217,7 +218,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     myFacet.setConfiguration(configurationBean);
     flushEDT();
 
-    assertEquals(generatorOutputPath, myFacet.getSolution().getOutputPath().toPath().toString());
+    assertEquals(generatorOutputPath, myFacet.getSolution().getFacet(JavaModuleFacet.class).getOutputRoot().toPath().toString());
   }
 
   public void testDefaultOutput() {
