@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public abstract class BaseLanguageTextGen {
   public static void typeParameters(List<SNode> types, final TextGenContext ctx) {
@@ -243,7 +244,7 @@ public abstract class BaseLanguageTextGen {
     } else {
       SNode targetNode = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
       if (targetNode == null) {
-        tgs.reportError("Target node is null for reference to classifier with role " + SLinkOperations.getRole(classifierRef) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
+        tgs.reportError("Target node is null for reference to classifier with role " + check_v9xqql_a0a0a0a0b0a4a0(SLinkOperations.getRefLink(classifierRef)) + "; resolve info " + SLinkOperations.getResolveInfo(classifierRef) + "; " + jetbrains.mps.util.SNodeOperations.getDebugText(classifierRef.getSourceNode()));
         return null;
       }
       return MultiTuple.<String,String>from(SModelOperations.getModelName(SNodeOperations.getModel(targetNode)), (SNodeOperations.isInstanceOf(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")) ? SPropertyOperations.getString(SNodeOperations.cast(targetNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, 0x11a134c900dL, "nestedName")) : jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode)));
@@ -277,5 +278,11 @@ public abstract class BaseLanguageTextGen {
   }
   public static ClassifierUnitContext contextObjectInstance_ctx(SNode primaryInputNode) {
     return new ClassifierUnitContext(primaryInputNode);
+  }
+  private static String check_v9xqql_a0a0a0a0b0a4a0(SReferenceLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
   }
 }

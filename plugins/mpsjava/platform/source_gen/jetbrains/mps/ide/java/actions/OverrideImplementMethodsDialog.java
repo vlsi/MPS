@@ -20,6 +20,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
@@ -87,8 +88,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         SNode parentA = SNodeOperations.getParent(a);
         SNode parentB = SNodeOperations.getParent(b);
         if (parentA == parentB) {
-          String aRole = SNodeOperations.getContainingLinkRole(a);
-          String bRole = SNodeOperations.getContainingLinkRole(b);
+          String aRole = check_sivw9t_a0a0c0a0a3a21(a.getContainmentLink());
+          String bRole = check_sivw9t_a0b0c0a0a3a21(b.getContainmentLink());
 
           if (neq_sivw9t_a0d0c0a0a0a0d0m(aRole, bRole)) {
             return aRole.compareTo(bRole);
@@ -113,6 +114,18 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         return SNodeOperations.getPointer(it);
       }
     }).toGenericArray(SNodeReference.class);
+  }
+  private static String check_sivw9t_a0a0c0a0a3a21(SContainmentLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
+  private static String check_sivw9t_a0b0c0a0a3a21(SContainmentLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
   }
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0m(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));

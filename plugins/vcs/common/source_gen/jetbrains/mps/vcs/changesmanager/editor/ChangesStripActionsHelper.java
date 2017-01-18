@@ -31,6 +31,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class ChangesStripActionsHelper {
   private ChangesStripActionsHelper() {
@@ -168,7 +169,7 @@ public class ChangesStripActionsHelper {
       });
       Iterable<String> roles = Sequence.fromIterable(children).select(new ISelector<SNode, String>() {
         public String select(SNode c) {
-          return SNodeOperations.getContainingLinkRole(c);
+          return check_ikrecr_a0a0a0a1a02a11(c.getContainmentLink());
         }
       });
       final String commonRole = Sequence.fromIterable(roles).first();
@@ -259,6 +260,12 @@ public class ChangesStripActionsHelper {
   private static Bounds check_ikrecr_a2a9(ChangeGroup checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(true);
+    }
+    return null;
+  }
+  private static String check_ikrecr_a0a0a0a1a02a11(SContainmentLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
     }
     return null;
   }

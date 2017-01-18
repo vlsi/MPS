@@ -6687,7 +6687,7 @@
       <node id="1224588814561811145" at="141,5,142,28" concept="9" />
       <node id="3767587139141108590" at="145,216,146,150" concept="9" />
       <node id="1224588814561808601" at="147,5,148,0" concept="11" />
-      <node id="1224588814561810320" at="149,24,150,142" concept="9" />
+      <node id="1224588814561810320" at="149,24,150,146" concept="9" />
       <node id="1224588814562008035" at="151,5,152,28" concept="9" />
       <node id="1224588814561810322" at="154,137,155,120" concept="9" />
       <node id="1224588814561807753" at="160,41,161,552" concept="9" />
@@ -6741,10 +6741,12 @@
       <node id="7389400916848182205" at="301,14,302,58" concept="16" />
       <node id="7389400916848182205" at="308,48,309,22" concept="9" />
       <node id="7389400916848182205" at="314,40,315,19" concept="9" />
-      <node id="5204048710541158324" at="317,55,318,43" concept="9" />
-      <node id="4915877860351551292" at="320,52,321,44" concept="9" />
-      <node id="3767587139141109779" at="323,64,324,51" concept="9" />
-      <node id="3767587139141108566" at="326,78,327,46" concept="9" />
+      <node id="1224588814561808708" at="318,36,319,41" concept="9" />
+      <node id="1224588814561808708" at="320,5,321,16" concept="9" />
+      <node id="5204048710541158324" at="323,55,324,43" concept="9" />
+      <node id="4915877860351551292" at="326,52,327,44" concept="9" />
+      <node id="3767587139141109779" at="329,64,330,51" concept="9" />
+      <node id="3767587139141108566" at="332,78,333,46" concept="9" />
       <node id="7389400916848182205" at="66,0,68,0" concept="13" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="4796668409958419289" at="86,104,89,5" concept="6" />
       <node id="7389400916848182205" at="92,0,95,0" concept="13" trace="getOutputFileName_id4gSHdTptyu0#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
@@ -6771,10 +6773,11 @@
       <node id="7389400916848182205" at="250,0,253,0" concept="2" trace="BuildProject__BehaviorDescriptor#()V" />
       <node id="7389400916848182205" at="261,49,264,5" concept="6" />
       <node id="7389400916848182205" at="296,49,299,5" concept="6" />
-      <node id="5204048710541158324" at="317,0,320,0" concept="13" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
-      <node id="4915877860351551292" at="320,0,323,0" concept="13" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="3767587139141109779" at="323,0,326,0" concept="13" trace="neq_671s9y_a0e0cb#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-      <node id="3767587139141108566" at="326,0,329,0" concept="13" trace="eq_671s9y_a0a0a0a0a0b0a1a2a5a82#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="1224588814561808708" at="317,82,320,5" concept="6" />
+      <node id="5204048710541158324" at="323,0,326,0" concept="13" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="4915877860351551292" at="326,0,329,0" concept="13" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="3767587139141109779" at="329,0,332,0" concept="13" trace="neq_671s9y_a0e0cb#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="3767587139141108566" at="332,0,335,0" concept="13" trace="eq_671s9y_a0a0a0a0a0b0a1a2a5a82#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
       <node id="1841835149314794754" at="71,114,75,5" concept="6" />
       <node id="1841835149314837102" at="100,51,104,7" concept="6" />
       <node id="6592112598314785676" at="240,0,244,0" concept="7" trace="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
@@ -6794,6 +6797,7 @@
       <node id="1224588814561808312" at="178,5,184,5" concept="5" />
       <node id="384280137912314828" at="205,12,211,7" concept="0" />
       <node id="3767587139141108588" at="238,0,244,6" concept="9" />
+      <node id="1224588814561808708" at="317,0,323,0" concept="13" trace="check_save77_b0a0c0f#(Lorg/jetbrains/mps/openapi/language/SContainmentLink;)Ljava/lang/String;" />
       <node id="5204048710541158301" at="75,5,82,5" concept="6" />
       <node id="7389400916848182205" at="85,0,92,0" concept="13" trace="getScriptsPath_id4ahc858UcHk#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/build/util/Context;)Ljava/lang/String;" />
       <node id="8258189873530212442" at="112,0,120,5" concept="6" />
@@ -6831,7 +6835,7 @@
       <scope id="1224588814561811093" at="130,34,131,29" />
       <scope id="1224588814561811134" at="137,35,138,30" />
       <scope id="7389400916848182256" at="145,216,146,150" />
-      <scope id="1224588814561808605" at="149,24,150,142" />
+      <scope id="1224588814561808605" at="149,24,150,146" />
       <scope id="1224588814561808631" at="154,137,155,120" />
       <scope id="1224588814561807750" at="160,41,161,552" />
       <scope id="1224588814561807823" at="164,39,165,350" />
@@ -6865,10 +6869,11 @@
       <scope id="7389400916848182205" at="301,14,302,58" />
       <scope id="7389400916848182205" at="308,48,309,22" />
       <scope id="7389400916848182205" at="314,40,315,19" />
-      <scope id="5204048710541158324" at="317,55,318,43" />
-      <scope id="4915877860351551292" at="320,52,321,44" />
-      <scope id="3767587139141109779" at="323,64,324,51" />
-      <scope id="3767587139141108566" at="326,78,327,46" />
+      <scope id="1224588814561808708" at="318,36,319,41" />
+      <scope id="5204048710541158324" at="323,55,324,43" />
+      <scope id="4915877860351551292" at="326,52,327,44" />
+      <scope id="3767587139141109779" at="329,64,330,51" />
+      <scope id="3767587139141108566" at="332,78,333,46" />
       <scope id="7389400916848182205" at="66,0,68,0">
         <var name="__thisNode__" id="7389400916848182205" />
       </scope>
@@ -6917,17 +6922,17 @@
         <var name="__thisNode__" id="7389400916848182205" />
       </scope>
       <scope id="7389400916848182205" at="250,0,253,0" />
-      <scope id="5204048710541158324" at="317,0,320,0">
+      <scope id="5204048710541158324" at="323,0,326,0">
         <var name="str" id="5204048710541158324" />
       </scope>
-      <scope id="4915877860351551292" at="320,0,323,0">
+      <scope id="4915877860351551292" at="326,0,329,0">
         <var name="str" id="4915877860351551292" />
       </scope>
-      <scope id="3767587139141109779" at="323,0,326,0">
+      <scope id="3767587139141109779" at="329,0,332,0">
         <var name="a" id="3767587139141109779" />
         <var name="b" id="3767587139141109779" />
       </scope>
-      <scope id="3767587139141108566" at="326,0,329,0">
+      <scope id="3767587139141108566" at="332,0,335,0">
         <var name="a" id="3767587139141108566" />
         <var name="b" id="3767587139141108566" />
       </scope>
@@ -6950,6 +6955,7 @@
         <var name="node" id="7389400916848182205" />
         <var name="parameters" id="7389400916848182205" />
       </scope>
+      <scope id="1224588814561808708" at="317,82,321,16" />
       <scope id="5204048710541158302" at="76,213,81,7" />
       <scope id="1841835149314837097" at="100,0,105,18">
         <var name="ex" id="1841835149314837098" />
@@ -6973,6 +6979,9 @@
       </scope>
       <scope id="3767587139141109768" at="193,61,199,9" />
       <scope id="3767587139141108538" at="212,41,218,11" />
+      <scope id="1224588814561808708" at="317,0,323,0">
+        <var name="checkedDotOperand" id="1224588814561808708" />
+      </scope>
       <scope id="7389400916848182205" at="85,0,92,0">
         <var name="__thisNode__" id="7389400916848182205" />
         <var name="context" id="6432389088572870584" />
@@ -7056,7 +7065,7 @@
       <unit id="3643570831019136017" at="228,18,232,5" name="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor$8" />
       <unit id="3643570831019136134" at="233,301,237,5" name="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor$9" />
       <unit id="6592112598314785674" at="239,15,244,5" name="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor$10" />
-      <unit id="7389400916848182205" at="48,0,330,0" name="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
+      <unit id="7389400916848182205" at="48,0,336,0" name="jetbrains.mps.build.behavior.BuildProject__BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)/7471276865246016972">

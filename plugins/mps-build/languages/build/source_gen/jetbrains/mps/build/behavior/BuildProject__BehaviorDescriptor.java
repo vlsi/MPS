@@ -147,7 +147,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     }
 
     if (child != null) {
-      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, SNodeOperations.getContainingLinkRole(child));
+      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, check_save77_b0a0c0f(child.getContainmentLink()));
     }
     return new EmptyScope();
   }
@@ -313,6 +313,12 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
   @Override
   public SAbstractConcept getConcept() {
     return CONCEPT;
+  }
+  private static String check_save77_b0a0c0f(SContainmentLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

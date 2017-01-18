@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 @MPSLaunch
 public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
@@ -133,7 +134,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       addNodeById("2906110183022432276");
       TestUtilities.assertEquals(Sequence.fromArray(new String[]{SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac8L, "leftChild")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac9L, "rightChild")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))}), ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.cast(getNodeById("2906110183022219844"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x798c0d67da965ac6L, "ReferenceContainer"))))).select(new ISelector<SReference, String>() {
         public String select(SReference it) {
-          return SLinkOperations.getRole(it);
+          return check_s3ecl5_a0a0a1a5a4k(SLinkOperations.getRefLink(it));
         }
       }));
     }
@@ -177,7 +178,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       });
       Assert.assertEquals(1, Sequence.fromIterable(unspecifiedReferences).count());
       SReference theReference = Sequence.fromIterable(unspecifiedReferences).first();
-      Assert.assertEquals(unspecifiedReferenceName, SLinkOperations.getRole(theReference));
+      Assert.assertEquals(unspecifiedReferenceName, check_s3ecl5_a31a6k(SLinkOperations.getRefLink(theReference)));
       Assert.assertEquals(SNodeOperations.cast(getNodeById("2906110183022219849"), SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(MetaAdapterFactory.getLanguage(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, "jetbrains.mps.lang.smodelTests"), 0x3dd540b968e9fc4L, "GrandChild"))), SLinkOperations.getTargetNode(theReference));
     }
     public void test_unresolvedReference() throws Exception {
@@ -210,7 +211,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       });
       Assert.assertEquals(1, Sequence.fromIterable(brokenReferences).count());
       SReference theReference = Sequence.fromIterable(brokenReferences).first();
-      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), SLinkOperations.getRole(theReference));
+      Assert.assertEquals(SPropertyOperations.getString(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role")), check_s3ecl5_a12a7k(SLinkOperations.getRefLink(theReference)));
       Assert.assertEquals(SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getReferenceLink(0xb02ae39f4c164545L, 0x8dfa88df16804e7eL, 0x798c0d67da965ac6L, 0x798c0d67da965ac7L, "root")), SLinkOperations.findLinkDeclaration(theReference));
       Assert.assertNotNull(SLinkOperations.getResolveInfo(theReference));
     }
@@ -224,7 +225,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       Assert.assertTrue(ListSequence.fromList(SNodeOperations.getReferences(nullNode)).isEmpty());
       SReference nullReference = null;
       Assert.assertNull(SLinkOperations.findLinkDeclaration(nullReference));
-      Assert.assertNull(SLinkOperations.getRole(nullReference));
+      Assert.assertNull(check_s3ecl5_a9a8k(SLinkOperations.getRefLink(nullReference)));
       Assert.assertNull(SLinkOperations.getTargetNode(nullReference));
       Assert.assertNull(SLinkOperations.getResolveInfo(nullReference));
     }
@@ -234,6 +235,30 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest {
       String referenceName = "unspecifiedReference";
       SNodeAccessUtil.setReferenceTarget(input, referenceName, referenceTarget);
       return referenceName;
+    }
+    private static String check_s3ecl5_a0a0a1a5a4k(SReferenceLink checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getName();
+      }
+      return null;
+    }
+    private static String check_s3ecl5_a31a6k(SReferenceLink checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getName();
+      }
+      return null;
+    }
+    private static String check_s3ecl5_a12a7k(SReferenceLink checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getName();
+      }
+      return null;
+    }
+    private static String check_s3ecl5_a9a8k(SReferenceLink checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getName();
+      }
+      return null;
     }
   }
 }
