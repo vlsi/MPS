@@ -81,10 +81,26 @@ public final class ModulesMiner {
     myExcludes.addAll(excludes);
   }
 
+  /**
+   * Updates {@link #getCollectedModules() outcome} and excludes, may be invoked several times.
+   * @param file folder or file (descriptor or jar) to look for modules at.
+   * @return {@code this} for convenience (chained calls)
+   */
   @NotNull
-  public ModulesMiner collectModules(IFile dir) {
-    LOG.debug("Reading modules from " + dir);
-    readModuleDescriptors(dir);
+  public ModulesMiner collectModules(IFile file) {
+    LOG.debug("Reading modules from " + file);
+    if (!needProcess(file)) {
+      return this;
+    }
+    if (file.isDirectory()) {
+      readModuleDescriptorsFromFolder(file);
+    } else {
+      if (IFileUtils.isJarFile(file)) {
+        readModuleDescriptorsFromJarFile(file);
+      } else {
+        trySourceModuleDescriptorsFromFile(file);
+      }
+    }
     return this;
   }
 
@@ -115,7 +131,7 @@ public final class ModulesMiner {
     }
     myOutcome.clear();
     collectModules(dir);
-    return new ArrayList<ModuleHandle>(myOutcome);
+    return new ArrayList<>(myOutcome);
   }
 
   private boolean needProcess(IFile file) {
@@ -123,92 +139,184 @@ public final class ModulesMiner {
   }
 
 
-  private void readModuleDescriptors(IFile file) {
-    if (!needProcess(file)) {
-      return;
-    }
-
-    if (file.isDirectory()) {
-      readModuleDescriptorsFromFolder(file);
-    } else {
-      readModuleDescriptorsFromFile(file);
-    }
-  }
-
-  private void readModuleDescriptorsFromFile(IFile file) {
-    if (!needProcess(file)) {
-      return;
-    }
-
-    if (IFileUtils.isJarFile(file)) {
-      readModuleDescriptorsFromFolder(file);
-    } else {
-      if (isSourceModuleFile(file)) {
-        ModuleDescriptor moduleDescriptor = loadModuleDescriptor(file);
-        if (moduleDescriptor != null) {
-          myOutcome.add(new ModuleHandle(file, moduleDescriptor));
-        }
+  private boolean trySourceModuleDescriptorsFromFile(IFile file) {
+    assert !file.isDirectory();
+    if (isSourceModuleFile(file)) {
+      ModuleDescriptor moduleDescriptor = loadSourceModuleDescriptor(file);
+      if (moduleDescriptor != null) {
+        processExcludes(file, moduleDescriptor);
+        myOutcome.add(new ModuleHandle(file, moduleDescriptor));
+        return true; // unlike other tryXXX methods, here we make sure descriptor actually read
+        // because of .iml files (see DescriptorIOFacade) that are treated as solution module and thus break
+        // readModuleDescriptorsFromFolder assumption of a single descriptor per dir.
       }
     }
-  }
-
-  // if this is a jar dir, we need to go to modules sub dir or check for META-INF/module.xml
-  // if this is just good old plain directory, we check every file in it
-  private void readModuleDescriptorsFromFolder(IFile file) {
-    if (!needProcess(file)) return;
-
-    if (IFileUtils.isJarFile(file)) { // ends with .jar
-      IFile jarFile = IFileUtils.stepIntoJar(file);
-      readModuleDescriptorsFromFolder(jarFile);
-    } else if (file.getPath().endsWith(JAR_SEPARATOR)) { // ends with .jar/!
-      IFile moduleXml = file.getDescendant(META_INF).getDescendant(MODULE_XML);
-      if (moduleXml.exists() && !moduleXml.isDirectory()) {
-        ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleXml);
-        if (moduleDescriptor != null) {
-          myOutcome.add(new ModuleHandle(moduleXml, moduleDescriptor));
-        }
-      } else {
-        IFile dirInJar = file.getDescendant(MODULES_DIR);
-        if (dirInJar.exists() && dirInJar.isDirectory()) {
-          readModuleDescriptorsFromFolder0(dirInJar, Location.INSIDE_THE_JAR);
-        }
-      }
-    } else {
-      readModuleDescriptorsFromFolder0(file, Location.OUTSIDE_THE_JAR);
-    }
+    return false;
   }
 
   /**
-   * insideTheJar == Location.INSIDE_THE_JAR whether ModulesMiner is inside some jar already
-   * first, we read from files
-   * this way all modules roots, sources/classes folders are in excludes and we do not even go into them
+   * Looks for source module descriptors in the given folder, and if none found, tries
+   * deployment descriptor, collection of modules (under modules/) and deployed jars.
+   * Dives into nested folders unless the folder is home for unjarred deployed module or modules/ collection
    */
-  private void readModuleDescriptorsFromFolder0(IFile file, Location insideTheJar) {
-    if (insideTheJar == Location.INSIDE_THE_JAR) {
-      assert file.getPath().contains(DOT_JAR + JAR_SEPARATOR + MODULES_DIR); // note: we must be scanning for modules in the 'modules' directory
-    }
-    List<IFile> children = file.getChildren();
-    if (children == null) {
-      LOG.warn("#getChildren returned null for " + file);
+  private void readModuleDescriptorsFromFolder(IFile folder) {
+    assert folder.isDirectory();
+    if (!needProcess(folder)) {
+      // files and folders are collected prior to processing of descriptor excludes,
+      // chances are we get here in a recursive call with a folder marked to exclude.
       return;
     }
-    ArrayList<IFile> folders = new ArrayList<IFile>();
-    for (IFile child : children) {
-      if (!child.isDirectory()) {
-        readModuleDescriptorsFromFile(child);
-      } else {
-        folders.add(child);
-      }
-    }
 
-    // now read from folders
-    for (IFile child : folders) {
-      if (insideTheJar == Location.INSIDE_THE_JAR) {
-        readModuleDescriptorsFromFolder0(child, Location.INSIDE_THE_JAR);
+    ArrayList<IFile> files = new ArrayList<>();
+    ArrayList<IFile> folders = new ArrayList<>();
+    for (IFile f : folder.getChildren()) {
+      if (!needProcess(f)) {
+        continue;
+      }
+      if (f.isDirectory()) {
+        folders.add(f);
       } else {
-        readModuleDescriptorsFromFolder(child);
+        files.add(f);
+      }
+    };
+
+    boolean sourceModuleFound = false;
+    for (IFile f : files) {
+      if (trySourceModuleDescriptorsFromFile(f)) {
+        sourceModuleFound = true;
+        // XXX Generally, I shall not expect more than 1 module descriptor per directory, and shall break loop here.
+        //     However, it's not true for e.g. devkits/, where few devkit descriptors reside
       }
     }
+    // code below intentionally uses explicit !sourceModuleFound check 2 times, to illustrate
+    // independent logical blocks, I'm not yet sure which gonna stay
+    if (!sourceModuleFound) {
+      // don't expect nested module collections or deployed modules nested into another module
+      //
+      // folder/modules/module-folder-x
+      if (tryReadFromModulesDir(folder, folder.getDescendant(MODULES_DIR))) {
+        // no need to process nested jars or folders
+        return;
+      }
+      // folder/META-INF/module.xml
+      if (tryModuleFromDeploymentDescriptor(folder, folder.getDescendant(META_INF).getDescendant(MODULE_XML))) {
+        // no need to process nested jars or folders
+        return;
+      }
+    }
+    if (!sourceModuleFound) {
+      // nor expect jar with modules nested into another module, and
+      // do not look into jars under a folder with either META-INF/ or modules/ they are likely auxiliary.
+      for (IFile f : files) {
+        if (IFileUtils.isJarFile(f)) {
+          readModuleDescriptorsFromJarFile(f);
+        }
+      }
+    }
+    // It's possible to have extra module under module-folder, i.e. module-folder/module2-folder/descriptor-file2,
+    // e.g. baseLanguage/bl.mpl and baseLanguage/solutions/
+    folders.forEach(this::readModuleDescriptorsFromFolder);
+  }
+
+  /**
+   * There are 2 scenarios we consider here:
+   * Layout 1:
+   *   folder/module.name.jar
+   *     META-INF/module.xml
+   *     whatever file|folder structure of the module
+   * Layout2:
+   *   folder/group.name.jar
+   *     modules/
+   *       module1.name/descriptor1.file
+   *       module2.name/descriptor2.file
+   *       ...
+   *     whatever file|folder structure (e.g. classes, resources) for the modules listed
+   *
+   * Note, we don't walk arbitrary jars (i.e. we ignore -src.jar and -generator.jar because there's neither META-INF/module.xml nor modules/).
+   *
+   * @param jarFile {@code folder/module.name.jar} from the sample layouts above.
+   */
+  private void readModuleDescriptorsFromJarFile(IFile jarFile) {
+    assert IFileUtils.isJarFile(jarFile);
+    IFile jarFileRoot = IFileUtils.stepIntoJar(jarFile);
+
+    if (tryModuleFromDeploymentDescriptor(jarFile, jarFileRoot.getDescendant(META_INF).getDescendant(MODULE_XML))) {
+      return;
+    }
+    tryReadFromModulesDir(jarFile, jarFileRoot.getDescendant(MODULES_DIR));
+  }
+
+  /**
+   * Attempt to read a module with a layout:
+   * moduleHome/
+   *   META-INF/module.xml
+   *   whatever file|folder structure of the module
+   *
+   * @param moduleHome either a jar file or a directory, base location for any module-relative paths
+   * @param moduleXml path to META-INF/module.xml
+   * @return true if module found under the {@code moduleHome}
+   */
+  private boolean tryModuleFromDeploymentDescriptor(IFile moduleHome, IFile moduleXml) {
+    if (moduleXml.exists() && !moduleXml.isDirectory()) {
+      ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleHome.getParent(), moduleXml);
+      if (moduleDescriptor != null) {
+        processExcludes(moduleXml, moduleDescriptor); // do I really need to exclude anything for DD? There's source module, indeed.
+        myOutcome.add(new ModuleHandle(moduleXml, moduleDescriptor));
+      }
+      // even if we didn't succeed to read a module, presence of META-INF/module.xml prevents processing of any other possible
+      // module location under moduleHome
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * Layout with collection of modules under single deployment element (jar or folder):
+   *
+   * bundleHome/
+   *   whatever file|folder structure (e.g. classes, resources) for the modules listed, accessible relative to bundleHome
+   *   modules/
+   *     module1.name/module1.descriptor.msd
+   *     module2.name/module2.descriptor.mpl
+   *     ...
+   *
+   * Note, at the moment, we don't expect nested collections or deployed modules under modules/
+   *
+   * @param bundleHome root location for collection of modules (jar or a directory)
+   * @return {@code true} if module collection found under bundle home
+   */
+  private boolean tryReadFromModulesDir(IFile bundleHome, IFile modulesDir) {
+    if (modulesDir.exists() && modulesDir.isDirectory()) {
+      for (IFile child : modulesDir.getChildren()) {
+        if (child.isDirectory()) {
+          // perhaps, we could allow nested directories in tryReadModuleDescriptor, but at the moment
+          // we expect 1 level of directories only (XXX what about mps/testbench/modules/aaa.test/languages - disjunction of RVs would help).
+          tryReadModuleDescriptor(bundleHome, child);
+          // XXX may collect folders without modules and dig into them, with e.g. readModuleDescriptorsFromFolder(), just need to pass bundleHome there
+        }
+        // expect no descriptors under modules/
+      }
+      return true; // disjunction of tryReadModuleDescriptor return values, perhaps?
+    }
+    return false;
+  }
+
+  /**
+   * Read descriptor for a module bundled under bundleHome/.../moduleHomeDir, if any.
+   * @return {@code true} if module descriptor found under bundle home
+   */
+  private boolean tryReadModuleDescriptor(IFile bundleHome, IFile moduleHomeDir) {
+    assert moduleHomeDir.isDirectory();
+    for (IFile child : moduleHomeDir.getChildren()) {
+      if (child.isDirectory()) {
+        continue;
+      }
+      // XXX now we ignore deployment descriptors here, is it desired?
+      if (trySourceModuleDescriptorsFromFile(child)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   /**
@@ -237,7 +345,7 @@ public final class ModulesMiner {
       // there are no excludes in deployment descriptor, but loadDD reads and returns MD from source module, if any.
       // OTOH, file is the one under META-INF, and no chances to find neither source_gen nor test_gen relative to it
       // (need one at lang-src.jar!/module/source.lang.mpl)
-      descriptor = loadDeploymentDescriptor(file);
+      descriptor = loadDeploymentDescriptor(file.getBundleHome().getParent(), file);
     } else {
       descriptor = loadSourceModuleDescriptor(file);
     }
@@ -262,8 +370,11 @@ public final class ModulesMiner {
 
   /**
    * loads deployment descriptor and try to load the corresponding source module descriptor
+   * Both arguments are != null.
+   * @param bundleHome location where dependencies of DD reside (i.e. extra libraries)
+   * @param file META-INF/module.xml
    */
-  private ModuleDescriptor loadDeploymentDescriptor(IFile file) {
+  private ModuleDescriptor loadDeploymentDescriptor(IFile bundleHome, IFile file) {
     try {
       DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
       ModuleDescriptor result = null;
@@ -282,11 +393,10 @@ public final class ModulesMiner {
         // FIXME getBundleHome is not smart enough to recognize META-INF/module.xml in a regular directory (not archive), and yields
         //       wrong result then (file.getParent() == META-INF/ location which won't help to locate libraries). Instead, pass module home
         //       location from the caller.
-        IFile bundleParent = file.getBundleHome().getParent();
         for (String jarFile : deploymentDescriptor.getLibraries()) {
           IFile jar = jarFile.startsWith("/")
-              ? bundleParent.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
-              : bundleParent.getDescendant(jarFile);
+              ? bundleHome.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
+              : bundleHome.getDescendant(jarFile);
           if (jar.exists()) {
             String path = jar.getPath();
             result.getAdditionalJavaStubPaths().add(path);
@@ -304,6 +414,7 @@ public final class ModulesMiner {
     }
   }
 
+  // part of processExcludes() with common code for any module type
   private void processModuleExcludes(jetbrains.mps.vfs.openapi.FileSystem fileSystem, ModuleDescriptor descriptor) {
     String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
     if (generatorOutputPath != null) {
@@ -466,10 +577,5 @@ public final class ModulesMiner {
     public String toString() {
       return myDescriptor == null ? "[null descriptor]" : myDescriptor.getNamespace();
     }
-  }
-
-  private enum Location {
-    INSIDE_THE_JAR,
-    OUTSIDE_THE_JAR
   }
 }
