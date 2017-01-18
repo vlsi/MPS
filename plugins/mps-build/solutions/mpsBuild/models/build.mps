@@ -4,7 +4,7 @@
   <languages>
     <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
     <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
   </languages>
   <imports />
@@ -2536,11 +2536,11 @@
             </node>
             <node concept="1kK7hY" id="1cej1P1K6ok" role="39821P">
               <ref role="1kK7hZ" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-              <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
-                <property role="1cIVw0" value="mps-environment.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8F" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
+                <property role="1cIVw0" value="mps-environment.jar" />
               </node>
             </node>
           </node>
@@ -2739,11 +2739,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
-              <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8E" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
               </node>
             </node>
           </node>
@@ -2775,11 +2775,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
-              <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-api.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8G" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-api.jar" />
               </node>
             </node>
           </node>
@@ -8479,6 +8479,12 @@
           <node concept="3bR9La" id="tXmJuW3t4U" role="1SiIV1">
             <property role="3bR36h" value="false" />
             <ref role="3bR37D" node="7Kfy9QB6LaO" resolve="jetbrains.mps.lang.structure" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="2ytHpS1kedQ" role="3bR37C">
+          <node concept="3bR9La" id="2ytHpS1kedR" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="5cCcm$KATVz" resolve="jetbrains.mps.lang.migration.runtime" />
           </node>
         </node>
       </node>
