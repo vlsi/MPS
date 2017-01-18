@@ -96,6 +96,8 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     // add additional java stub paths
     ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
     if (moduleDescriptor != null) {
+      // XXX for deployed modules, we could use DD.getLibraries here. But as long as MM updates getAdditionalJavaStubPaths of a source module
+      //     and source module is always present, enjoy.
       libraryClassPath.addAll(moduleDescriptor.getAdditionalJavaStubPaths());
     }
 
@@ -128,9 +130,8 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     IFile classesGen = getClassesGen();
     if (classesGen == null && getModule().isPackaged()) {
       // until deployed generator modules are read independently from their source languages, need this legacy hack to include their separate jar
-      // into classpath. Jar of a language or a solution gets into CP the same way.
-      // FIXME DeploymentModule shall tell its classpath locations, so that we don't need to care here, just take one from DD.
-      // packaged
+      // into classpath.
+      // FIXME DeploymentModule now tells its classpath locations, but there's no DD for generator modules yet.
       if (getModule() instanceof Generator) {
         IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
         IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
@@ -141,11 +142,11 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
           classesGen = bundleHome.getFileSystem().getFile(jarPath);
         }
       } else {
-        // XXX assume classes are directly in the jar, and that a file associated with deployed module points to that very jar.
-        // XXX doesn't respect the case when module comes without classes (just sources)
-        IFile descriptorFile = getModule().getDescriptorFile();
-        // descriptorFile == null for Generator, stub and test modules
-        classesGen = descriptorFile == null ? null : descriptorFile.getBundleHome();
+        // Despite isPackaged(), there might be modules like stub and test that lack MD or DD, doesn't hurt to check
+        ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
+        if (moduleDescriptor != null && moduleDescriptor.getDeploymentDescriptor() != null) {
+          result.addAll(moduleDescriptor.getDeploymentDescriptor().getClasspath());
+        }
       }
     }
     if (classesGen != null) {

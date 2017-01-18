@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -161,6 +161,7 @@ public interface IFile {
    //   * Thus the client of this method need not to bother to expand the archives on his own: the implementing class
    //   * must do it automatically. Probably cosy recursive processing also will be provided.
    * TODO
+   * FIXME please document whether suffix may include path separators (i.e. if one could query folder.getDescendant("my/relative/path/to/file")
    * @return the file which has this file's path + suffix
    */
   @NotNull IFile getDescendant(@NotNull String suffix);

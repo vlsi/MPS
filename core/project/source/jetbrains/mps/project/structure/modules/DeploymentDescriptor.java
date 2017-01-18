@@ -43,6 +43,29 @@ import java.util.List;
  * --------------------------------------------
  * Here the source descriptor is 'myLang.mpl' and the executable (deployed)
  * descriptor is 'module.xml'
+ * <p>
+ *   TODO merge javadoc from above with doc below:
+ * <pre>
+ * Layout of deployed module:
+ * Jar:
+ *   module.jar/
+ *     META-INF/module.xml
+ *     resources/
+ *     classes/my/package/One.class
+ *       or
+ *     my/package/One.class
+ *     my/package/msg.properties
+ *   aux-library.jar
+ *
+ * Folder:
+ *   module-dir/
+ *     META-INF/module.xml
+ *     resources/my/package/msg.properties
+ *     classes/my/package/One.class
+ *
+ * module.jar and module-dir are referred to as 'module home'
+ * </pre>
+ * </p>
  *
  * @see jetbrains.mps.project.persistence.DeploymentDescriptorPersistence
  * AP
@@ -68,7 +91,8 @@ public class DeploymentDescriptor extends ModuleDescriptor {
    */
   private String myType;
 
-  private final List<String> myLibraries = new ArrayList<>();
+  private final List<String> myLibraries = new ArrayList<>(3);
+  private final List<String> myClasspath = new ArrayList<>(3);
 
   public final String getSourcesJar() {
     return mySourcesJar;
@@ -105,6 +129,21 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     return myLibraries;
   }
 
+
+  /**
+   * Locations with module's own classes, relative to module home. Value "." indicates module home itself.
+   * Empty value means there are no classes in the module (however, classes still could be loaded through {@link #getLibraries() libraries}).
+   *
+   * XXX not sure whether we shall keep libraries and classpath distinct, perhaps, one is enough (provided ModulesMiner#loadDeploymentDescriptor doesn't
+   * expose libraries as stubs)
+   *
+   * @return Locations with module's own classes
+   */
+  @NotNull
+  public List<String> getClasspath() {
+    return myClasspath;
+  }
+
   @Override
   protected int getHeaderMarker() {
     return 0xabababa;
@@ -118,6 +157,7 @@ public class DeploymentDescriptor extends ModuleDescriptor {
     stream.writeString(myType);
 
     stream.writeStrings(myLibraries);
+    stream.writeStrings(myClasspath);
   }
 
   @Override
@@ -129,6 +169,8 @@ public class DeploymentDescriptor extends ModuleDescriptor {
 
     myLibraries.clear();
     myLibraries.addAll(stream.readStrings());
+    myClasspath.clear();
+    myClasspath.addAll(stream.readStrings());
   }
 
   @NotNull

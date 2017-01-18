@@ -57,12 +57,24 @@ public class DeploymentDescriptorPersistence {
             result_wu2j1h_a0a0d0c0b.getLibraries().add(b.getAttributeValue("jar"));
           }
 
+          Element classpath = XmlUtil.first(rootElement, "classpath");
+          if (classpath == null) {
+            // compatibility with DD produced prior to introduction of the element. 
+            // now we use empty tag to indicate no classpath. Once 3.5 is out, remove this code and  
+            // fix build language not to inject empty <classpath/> tag for modules without classes 
+            result_wu2j1h_a0a0d0c0b.getClasspath().add(".");
+          } else {
+            for (Element e : Sequence.fromIterable(XmlUtil.children(classpath, "entry"))) {
+              result_wu2j1h_a0a0d0c0b.getClasspath().add(e.getAttributeValue("path"));
+            }
+          }
+
           Element sources = XmlUtil.first(rootElement, "sources");
           if (sources != null) {
-            final String result_wu2j1h_a0a01a0a0d0c0b = sources.getAttributeValue("jar");
-            result_wu2j1h_a0a0d0c0b.setSourcesJar(result_wu2j1h_a0a01a0a0d0c0b);
-            final String result_wu2j1h_a1a01a0a0d0c0b = sources.getAttributeValue("descriptor");
-            result_wu2j1h_a0a0d0c0b.setDescriptorFile(result_wu2j1h_a1a01a0a0d0c0b);
+            final String result_wu2j1h_a0a31a0a0d0c0b = sources.getAttributeValue("jar");
+            result_wu2j1h_a0a0d0c0b.setSourcesJar(result_wu2j1h_a0a31a0a0d0c0b);
+            final String result_wu2j1h_a1a31a0a0d0c0b = sources.getAttributeValue("descriptor");
+            result_wu2j1h_a0a0d0c0b.setDescriptorFile(result_wu2j1h_a1a31a0a0d0c0b);
           }
 
           return result_wu2j1h_a0a0d0c0b;

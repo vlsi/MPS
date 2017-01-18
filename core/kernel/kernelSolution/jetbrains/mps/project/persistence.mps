@@ -12354,6 +12354,111 @@
                           </node>
                         </node>
                       </node>
+                      <node concept="3clFbH" id="1uZnkmTHuzu" role="3cqZAp" />
+                      <node concept="3cpWs8" id="1uZnkmTHwLZ" role="3cqZAp">
+                        <node concept="3cpWsn" id="1uZnkmTHwM0" role="3cpWs9">
+                          <property role="TrG5h" value="classpath" />
+                          <node concept="3uibUv" id="1uZnkmTHwM1" role="1tU5fm">
+                            <ref role="3uigEE" to="mmaq:~Element" resolve="Element" />
+                          </node>
+                          <node concept="2YIFZM" id="1uZnkmTHxjX" role="33vP2m">
+                            <ref role="37wK5l" to="7a2w:4eI2K_Iuew6" resolve="first" />
+                            <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                            <node concept="37vLTw" id="1uZnkmTHxpq" role="37wK5m">
+                              <ref role="3cqZAo" node="59iL5sJt5P5" resolve="rootElement" />
+                            </node>
+                            <node concept="Xl_RD" id="1uZnkmTHxzA" role="37wK5m">
+                              <property role="Xl_RC" value="classpath" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node concept="3clFbJ" id="1uZnkmTHHgG" role="3cqZAp">
+                        <node concept="3clFbS" id="1uZnkmTHHgI" role="3clFbx">
+                          <node concept="3SKdUt" id="1uZnkmTHHUE" role="3cqZAp">
+                            <node concept="3SKdUq" id="1uZnkmTHHUG" role="3SKWNk">
+                              <property role="3SKdUp" value="compatibility with DD produced prior to introduction of the element." />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="1uZnkmTHI40" role="3cqZAp">
+                            <node concept="3SKdUq" id="1uZnkmTHI42" role="3SKWNk">
+                              <property role="3SKdUp" value="now we use empty tag to indicate no classpath. Once 3.5 is out, remove this code and " />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="1uZnkmTHJGw" role="3cqZAp">
+                            <node concept="3SKdUq" id="1uZnkmTHJGy" role="3SKWNk">
+                              <property role="3SKdUp" value="fix build language not to inject empty &lt;classpath/&gt; tag for modules without classes" />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="1uZnkmTHIiw" role="3cqZAp">
+                            <node concept="2OqwBi" id="1uZnkmTHIHs" role="3clFbG">
+                              <node concept="2OqwBi" id="1uZnkmTHIl7" role="2Oq$k0">
+                                <node concept="1bf8Ab" id="1uZnkmTHIiu" role="2Oq$k0" />
+                                <node concept="liA8E" id="1uZnkmTHIvh" role="2OqNvi">
+                                  <ref role="37wK5l" to="w0gx:~DeploymentDescriptor.getClasspath():java.util.List" resolve="getClasspath" />
+                                </node>
+                              </node>
+                              <node concept="liA8E" id="1uZnkmTHJeS" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                                <node concept="Xl_RD" id="1uZnkmTHJnz" role="37wK5m">
+                                  <property role="Xl_RC" value="." />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="3clFbC" id="1uZnkmTHHKI" role="3clFbw">
+                          <node concept="10Nm6u" id="1uZnkmTHHPH" role="3uHU7w" />
+                          <node concept="37vLTw" id="1uZnkmTHHzu" role="3uHU7B">
+                            <ref role="3cqZAo" node="1uZnkmTHwM0" resolve="classpath" />
+                          </node>
+                        </node>
+                        <node concept="9aQIb" id="1uZnkmTHI8Q" role="9aQIa">
+                          <node concept="3clFbS" id="1uZnkmTHI8R" role="9aQI4">
+                            <node concept="2Gpval" id="1uZnkmTHJMX" role="3cqZAp">
+                              <node concept="2GrKxI" id="1uZnkmTHJMY" role="2Gsz3X">
+                                <property role="TrG5h" value="e" />
+                              </node>
+                              <node concept="2YIFZM" id="1uZnkmTHK4M" role="2GsD0m">
+                                <ref role="37wK5l" to="7a2w:4eI2K_IuevB" resolve="children" />
+                                <ref role="1Pybhc" to="7a2w:4eI2K_Iuet$" resolve="XmlUtil" />
+                                <node concept="37vLTw" id="1uZnkmTHKaU" role="37wK5m">
+                                  <ref role="3cqZAo" node="1uZnkmTHwM0" resolve="classpath" />
+                                </node>
+                                <node concept="Xl_RD" id="1uZnkmTHKmV" role="37wK5m">
+                                  <property role="Xl_RC" value="entry" />
+                                </node>
+                              </node>
+                              <node concept="3clFbS" id="1uZnkmTHJN0" role="2LFqv$">
+                                <node concept="3clFbF" id="1uZnkmTHKz2" role="3cqZAp">
+                                  <node concept="2OqwBi" id="1uZnkmTHKYu" role="3clFbG">
+                                    <node concept="2OqwBi" id="1uZnkmTHK__" role="2Oq$k0">
+                                      <node concept="1bf8Ab" id="1uZnkmTHKz1" role="2Oq$k0" />
+                                      <node concept="liA8E" id="1uZnkmTHKK1" role="2OqNvi">
+                                        <ref role="37wK5l" to="w0gx:~DeploymentDescriptor.getClasspath():java.util.List" resolve="getClasspath" />
+                                      </node>
+                                    </node>
+                                    <node concept="liA8E" id="1uZnkmTHLwc" role="2OqNvi">
+                                      <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
+                                      <node concept="2OqwBi" id="1uZnkmTHLJg" role="37wK5m">
+                                        <node concept="2GrUjf" id="1uZnkmTHLD9" role="2Oq$k0">
+                                          <ref role="2Gs0qQ" node="1uZnkmTHJMY" resolve="e" />
+                                        </node>
+                                        <node concept="liA8E" id="1uZnkmTHMbD" role="2OqNvi">
+                                          <ref role="37wK5l" to="mmaq:~Element.getAttributeValue(java.lang.String):java.lang.String" resolve="getAttributeValue" />
+                                          <node concept="Xl_RD" id="1uZnkmTHMoS" role="37wK5m">
+                                            <property role="Xl_RC" value="path" />
+                                          </node>
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                       <node concept="3clFbH" id="59iL5sJt6p7" role="3cqZAp" />
                       <node concept="3cpWs8" id="1Tieq1imcTA" role="3cqZAp">
                         <node concept="3cpWsn" id="1Tieq1imcTB" role="3cpWs9">

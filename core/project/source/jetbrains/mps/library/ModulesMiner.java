@@ -50,6 +50,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 
 /**
@@ -258,7 +259,7 @@ public final class ModulesMiner {
    */
   private boolean tryModuleFromDeploymentDescriptor(IFile moduleHome, IFile moduleXml) {
     if (moduleXml.exists() && !moduleXml.isDirectory()) {
-      ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleHome.getParent(), moduleXml);
+      ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleHome, moduleXml);
       if (moduleDescriptor != null) {
         processExcludes(moduleXml, moduleDescriptor); // do I really need to exclude anything for DD? There's source module, indeed.
         myOutcome.add(new ModuleHandle(moduleXml, moduleDescriptor));
@@ -342,10 +343,19 @@ public final class ModulesMiner {
     String filePath = file.getPath();
     ModuleDescriptor descriptor;
     if (filePath.endsWith(SLASH_META_INF_MODULE_XML)) {
+      IFile moduleHome;
+      if (file.isInArchive()) {
+        moduleHome = file.getBundleHome();
+      } else {
+        // IFile.getBundleHome is not smart enough to recognize META-INF/module.xml in a regular directory (not archive), and yields
+        // wrong result then (file.getParent() == META-INF/ location which won't help to locate libraries).
+        // Instead, assume META-INF/module.xml is at the root of a module location (which if generally the case).
+        moduleHome = file.getParent().getParent();
+      }
       // there are no excludes in deployment descriptor, but loadDD reads and returns MD from source module, if any.
       // OTOH, file is the one under META-INF, and no chances to find neither source_gen nor test_gen relative to it
       // (need one at lang-src.jar!/module/source.lang.mpl)
-      descriptor = loadDeploymentDescriptor(file.getBundleHome().getParent(), file);
+      descriptor = loadDeploymentDescriptor(moduleHome, file);
     } else {
       descriptor = loadSourceModuleDescriptor(file);
     }
@@ -371,16 +381,39 @@ public final class ModulesMiner {
   /**
    * loads deployment descriptor and try to load the corresponding source module descriptor
    * Both arguments are != null.
-   * @param bundleHome location where dependencies of DD reside (i.e. extra libraries)
+   * @param moduleHome either a jar file or a directory, base location for any module-relative paths
    * @param file META-INF/module.xml
    */
-  private ModuleDescriptor loadDeploymentDescriptor(IFile bundleHome, IFile file) {
+  private ModuleDescriptor loadDeploymentDescriptor(IFile moduleHome, IFile file) {
     try {
       DeploymentDescriptor deploymentDescriptor = DeploymentDescriptorPersistence.loadDeploymentDescriptor(file);
       ModuleDescriptor result = null;
       IFile sourceDescriptorFile = getSourceDescriptorFile(file, deploymentDescriptor);
       if (sourceDescriptorFile != null) {
         result = loadSourceModuleDescriptor(sourceDescriptorFile);
+      }
+      for (ListIterator<String> it = deploymentDescriptor.getClasspath().listIterator(); it.hasNext(); ) {
+        // Not sure it's the best idea to change paths inplace, but at the moment it's the only place I'm aware of moduleHome
+        // Source module descriptors resolve paths during read using MacroHelper, why not the same here with DD?
+        // Alternatively, could keep moduleHome value within DD and resolve on use
+        String cpEntry = it.next();
+        String newPath = null;
+        if (".".equals(cpEntry)) {
+          it.set(moduleHome.getPath());
+        } else if (!cpEntry.isEmpty()) {
+          StringBuilder moduleHomePath = new StringBuilder();
+          if (IFileUtils.isJarFile(moduleHome)) {
+            moduleHomePath.append(IFileUtils.stepIntoJar(moduleHome).getPath());
+          } else {
+            moduleHomePath.append(moduleHome.getPath());
+          }
+          if (cpEntry.charAt(0) != '/') {
+            // it doesn't hurt to have extra fs delimiter, e.g. if moduleHome doesn't ends with one.
+            moduleHomePath.append('/');
+          }
+          moduleHomePath.append(cpEntry);
+          it.set(moduleHome.getFileSystem().getFile(moduleHomePath.toString()).getPath());
+        }
       }
       // TODO create module without sources
       if (result != null) {
@@ -390,13 +423,12 @@ public final class ModulesMiner {
         // updated by build language at deployment time and still points to design-time lib location.
         // Here we ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
         result.getAdditionalJavaStubPaths().clear();
-        // FIXME getBundleHome is not smart enough to recognize META-INF/module.xml in a regular directory (not archive), and yields
-        //       wrong result then (file.getParent() == META-INF/ location which won't help to locate libraries). Instead, pass module home
-        //       location from the caller.
+        // XXX I don't like this assumption that libraries are siblings to module home, but have no better idea now.
+        IFile bundleParent = moduleHome.getParent();
         for (String jarFile : deploymentDescriptor.getLibraries()) {
           IFile jar = jarFile.startsWith("/")
-              ? bundleHome.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
-              : bundleHome.getDescendant(jarFile);
+              ? bundleParent.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
+              : bundleParent.getDescendant(jarFile);
           if (jar.exists()) {
             String path = jar.getPath();
             result.getAdditionalJavaStubPaths().add(path);
