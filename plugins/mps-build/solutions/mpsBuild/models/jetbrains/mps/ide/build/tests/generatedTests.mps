@@ -588,6 +588,9 @@
         <ref role="398BVh" node="3XdPonscwOy" resolve="mps_home" />
       </node>
     </node>
+    <node concept="2sgV4H" id="3v68VbmlbWv" role="1l3spa">
+      <ref role="1l3spb" to="ffeo:6WtY9M1bDN0" resolve="mpsJavaWorkbench" />
+    </node>
     <node concept="398rNT" id="3XdPonscwOy" role="1l3spd">
       <property role="TrG5h" value="mps_home" />
     </node>

@@ -70,6 +70,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.CopyNotSupportedException" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -84,6 +85,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.CopyableModelRoot" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FileBasedModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory" file="JavaSourceStubModelRootFactory.java">
