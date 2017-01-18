@@ -239,11 +239,6 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
     if (!(sourceModule instanceof Language)) {
       return false;
     }
-    for (SModule module : Sequence.fromIterable(repository.getModules())) {
-      if (MigrationModuleUtil.isModuleMigrateable(module) && !(MigrationModuleUtil.allDependenciesActual(module))) {
-        return false;
-      }
-    }
     return true;
   }
   @Override
@@ -263,6 +258,14 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
           return ((List<RefactoringParticipant.Change<SNodeReference, SNodeReference>>) ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<SNodeReference, SNodeReference>>()));
         }
       }).toListSequence();
+    }
+    for (SModule module : Sequence.fromIterable(searchScope.getModules())) {
+      if (MigrationModuleUtil.isModuleMigrateable(module) && !(MigrationModuleUtil.allDependenciesActual(module))) {
+        String message = "Module " + module + " requires migration. It is recommended to run migration first and then restart refactoring.";
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(message);
+        }
+      }
     }
     return super.getChanges(initialStates, repository, selectedOptions, searchScope, progressMonitor);
   }
