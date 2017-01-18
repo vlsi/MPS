@@ -2,7 +2,7 @@
 <debug-info version="2">
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/2773971779181619526">
     <file name="mpsJavaIdeaPlugin.xml">
-      <unit id="2773971779181619526" at="1,0,145,10" name="jetbrains.mps.ide.idea.plugin.build.mpsJavaIdeaPlugin" />
+      <unit id="2773971779181619526" at="1,0,143,10" name="jetbrains.mps.ide.idea.plugin.build.mpsJavaIdeaPlugin" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/4609382717257597716">
@@ -12,12 +12,12 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/4609382717257603555">
     <file name="mpsJpsIdeaPlugin.xml">
-      <unit id="4609382717257603555" at="1,0,176,10" name="jetbrains.mps.ide.idea.plugin.build.mpsJpsIdeaPlugin" />
+      <unit id="4609382717257603555" at="1,0,174,10" name="jetbrains.mps.ide.idea.plugin.build.mpsJpsIdeaPlugin" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/5148601452480491524">
     <file name="mpsPlugin.xml">
-      <unit id="5148601452480491524" at="1,0,201,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPlugin" />
+      <unit id="5148601452480491524" at="1,0,200,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPlugin" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/6936091511561272758">
@@ -27,12 +27,12 @@
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/6977615362525216882">
     <file name="mpsPluginTests.xml">
-      <unit id="6977615362525216882" at="1,0,241,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginTests" />
+      <unit id="6977615362525216882" at="1,0,240,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginTests" />
     </file>
   </root>
   <root nodeRef="r:5c70a88b-9c77-4970-b930-a9ff601a03a0(jetbrains.mps.ide.idea.plugin.build)/8658995123701267517">
     <file name="mpsPluginDist.xml">
-      <unit id="8658995123701267517" at="1,0,47,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginDist" />
+      <unit id="8658995123701267517" at="1,0,46,10" name="jetbrains.mps.ide.idea.plugin.build.mpsPluginDist" />
     </file>
   </root>
 </debug-info>
