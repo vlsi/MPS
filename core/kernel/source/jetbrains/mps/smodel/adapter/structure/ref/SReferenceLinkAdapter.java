@@ -50,6 +50,11 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   @Nullable
   public abstract ReferenceDescriptor getReferenceDescriptor();
 
+  @Override
+  public boolean isValid() {
+    return getReferenceDescriptor() == null;
+  }
+
   @NotNull
   public abstract SAbstractConcept getOwner();
 

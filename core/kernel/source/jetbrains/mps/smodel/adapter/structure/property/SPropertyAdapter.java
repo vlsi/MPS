@@ -52,6 +52,11 @@ public abstract class SPropertyAdapter implements SProperty {
   public abstract PropertyDescriptor getPropertyDescriptor();
 
   @Override
+  public boolean isValid() {
+    return getPropertyDescriptor() == null;
+  }
+
+  @Override
   public String toString() {
     return myPropertyName;
   }

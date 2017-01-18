@@ -44,6 +44,11 @@ public abstract class SContainmentLinkAdapter implements SContainmentLink {
   @Nullable
   public abstract LinkDescriptor getLinkDescriptor();
 
+  @Override
+  public boolean isValid() {
+    return getLinkDescriptor() == null;
+  }
+
   @NotNull
   @Override
   public String getName() {
