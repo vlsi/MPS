@@ -150,7 +150,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Property_SetOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RefConcept_Reference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReferenceLinkId = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Reference_GetLinkDeclarationOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Reference_ContainingLinkOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Reference_GetLinkDeclarationOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Reference_GetResolveInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Reference_GetRoleOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_Reference_GetTargetOperation = new ConceptPresentationBuilder().create();
@@ -468,6 +469,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_RefConcept_Reference;
       case LanguageConceptSwitch.ReferenceLinkId:
         return props_ReferenceLinkId;
+      case LanguageConceptSwitch.Reference_ContainingLinkOperation:
+        return props_Reference_ContainingLinkOperation;
       case LanguageConceptSwitch.Reference_GetLinkDeclarationOperation:
         return props_Reference_GetLinkDeclarationOperation;
       case LanguageConceptSwitch.Reference_GetResolveInfo:

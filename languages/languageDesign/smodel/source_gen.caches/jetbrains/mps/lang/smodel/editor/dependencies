@@ -982,6 +982,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Property_SetOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.RefConcept_Reference_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.ReferenceLinkId_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_ContainingLinkOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_GetLinkDeclarationOperation_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_GetResolveInfo_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_GetRoleOperation_Editor" />
@@ -4137,6 +4138,22 @@
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.style.Style" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.editor.Reference_ContainingLinkOperation_Editor" file="Reference_ContainingLinkOperation_Editor.java">
+    <classNode dependClassName="jetbrains.mps.lang.smodel.editor.Reference_ContainingLinkOperation_EditorBuilder_a" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.smodel.editor.Reference_ContainingLinkOperation_EditorBuilder_a" file="Reference_ContainingLinkOperation_EditorBuilder_a.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.BigCellUtil" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.descriptor.AbstractEditorBuilder" />

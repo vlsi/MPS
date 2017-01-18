@@ -27,6 +27,7 @@
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="tp2g" ref="r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)" />
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -12904,6 +12905,32 @@
     <node concept="1YaCAy" id="6K4PaDT596v" role="1YuTPh">
       <property role="TrG5h" value="equalsExpression" />
       <ref role="1YaFvo" to="tpee:fzclF8g" resolve="EqualsExpression" />
+    </node>
+  </node>
+  <node concept="1YbPZF" id="2ytHpS0VKmq">
+    <property role="TrG5h" value="typeof_Reference_ContainingLinkOperation" />
+    <property role="3GE5qa" value="operation.reference" />
+    <node concept="1YaCAy" id="2ytHpS0VKmr" role="1YuTPh">
+      <property role="TrG5h" value="op" />
+      <ref role="1YaFvo" to="tp25:2ytHpS0VIut" resolve="Reference_ContainingLinkOperation" />
+    </node>
+    <node concept="3clFbS" id="2ytHpS0VKms" role="18ibNy">
+      <node concept="1Z5TYs" id="2ytHpS0VKmt" role="3cqZAp">
+        <node concept="mw_s8" id="2ytHpS0VKmu" role="1ZfhK$">
+          <node concept="1Z2H0r" id="2ytHpS0VKmv" role="mwGJk">
+            <node concept="1YBJjd" id="2ytHpS0VKmw" role="1Z2MuG">
+              <ref role="1YBMHb" node="2ytHpS0VKmr" resolve="op" />
+            </node>
+          </node>
+        </node>
+        <node concept="mw_s8" id="2ytHpS0VKmx" role="1ZfhKB">
+          <node concept="2c44tf" id="2ytHpS0VKmy" role="mwGJk">
+            <node concept="3uibUv" id="2ytHpS0VLDi" role="2c44tc">
+              <ref role="3uigEE" to="c17a:~SReferenceLink" resolve="SReferenceLink" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

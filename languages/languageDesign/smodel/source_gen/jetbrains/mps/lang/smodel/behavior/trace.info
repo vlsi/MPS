@@ -439,6 +439,9 @@
     <file name="ReferenceLinkId_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.ReferenceLinkId_BehaviorDescriptor" />
     </file>
+    <file name="Reference_ContainingLinkOperation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.Reference_ContainingLinkOperation_BehaviorDescriptor" />
+    </file>
     <file name="Reference_GetLinkDeclarationOperation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.smodel.behavior.Reference_GetLinkDeclarationOperation_BehaviorDescriptor" />
     </file>
