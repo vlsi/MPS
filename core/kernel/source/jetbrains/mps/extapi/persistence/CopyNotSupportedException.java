@@ -15,16 +15,14 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import org.jetbrains.annotations.NotNull;
-
-import java.io.IOException;
 
 /**
  * The exception which might be thrown during copying.
  * Means that there are some problems which make the operation impossible to accomplish.
  *
- * Created by apyshkin on 12/2/16.
+ * @author apyshkin
+ * @since 12/2/16 [3.5]
  */
 public class CopyNotSupportedException extends Exception {
   private final String myErrorMessage;

@@ -13,6 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Preinstalled core model factories which are bundled with MPS.
+#
+# To provide your own extension consider looking at the
+# https://confluence.jetbrains.com/display/MPSD32/Custom+Persistence+Cookbook.
+#
+# The service extension point needs to be chosen only when the client would like to
+# extend the mps core part [not the whole MPS] which is very unlikely.
+#
+# The common way is to register via the workbench extension point
+# see jetbrains.mps.persistence.ModelFactoryRegister.ModelFactoryProvider#EP_MODEL_FACTORY
+#
 jetbrains.mps.persistence.FilePerRootModelFactory
 jetbrains.mps.persistence.BinaryModelFactory
 jetbrains.mps.persistence.DefaultModelPersistence

@@ -22,14 +22,18 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.net.URI;
 import java.net.URL;
 
 /**
+ * Logic defining how to create data source from the given URL.
+ * Supposed to parse URL and give out a corresponding <code>DataSource</code>
+ *
+ * @see DataSource
+ * @see DataSourceFactory
  * @author apyshkin
  * @since 29/12/16
  */
-public interface DataSourceFromURIFactory {
+public interface DataSourceFromURLFactory {
   /**
    * Creates a new <code>DataSource</code>
    *
@@ -41,18 +45,17 @@ public interface DataSourceFromURIFactory {
    *                  Probably {@link FileSystemBasedDataSource#getAffectedFiles()} is the way to go there.
    *
    * @return new <code>DataSource</code> which represents the <code>file</code> on the disk
-   * @throws URINotSupportedException iff {@link #supports} returns false
+   * @throws URLNotSupportedException iff {@link #supports} returns false
    */
   @NotNull
   DataSource create(@NotNull URL url,
 
                     @ToRemove(version = 0)
-                    @Nullable ModelRoot modelRoot) throws URINotSupportedException;
+                    @Nullable ModelRoot modelRoot) throws URLNotSupportedException;
 
   /**
    * Returns whether this factory is able to create a data source from the specified uri.
    * Call it before calling the {@link #create} method -- it is a standard workflow.
    */
-  boolean supports(@NotNull URI uri);
-
+  boolean supports(@NotNull URL url);
 }

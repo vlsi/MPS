@@ -20,13 +20,13 @@ package jetbrains.mps.project.structure.modules;
  * to look like this:
  * <code>
  *   public class ExampleDescriptor implements CopyableDescriptor<ExampleDescriptor> {
- *     <members>
+ *     [members]
  *
  *     ExampleDescriptor copy() {
- *       <implementation>
+ *       [implementation]
  *     }
  *
- *     <members>
+ *     [members]
  *   }
  * </code>
  *

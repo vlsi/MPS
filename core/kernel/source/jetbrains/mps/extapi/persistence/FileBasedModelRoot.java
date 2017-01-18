@@ -301,7 +301,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public void load(@NotNull Memento memento) {
     checkNotRegistered();
 
-    mySourcePathStorage.clearAll(); // AP: I'd rather force single invocation the of #load method
+    mySourcePathStorage.clearAll(); // AP: I'd rather force a single invocation of the #load method
 
     if (memento instanceof MementoWithFS) {
       myFileSystem = ((MementoWithFS) memento).getFileSystem();
@@ -370,7 +370,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
    * Sets the same content root to the target model root
    * Adds the corresponding files to the target model root
    * If the content root is out of the module directory location then
-   * its value is preserved in the target model root of the copying procedure.
+   * the exception is thrown (since we have no idea which location for the copy we need to choose)
    *
    * @see #setContentRoot(String)
    * @see #addFile

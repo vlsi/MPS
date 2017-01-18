@@ -16,8 +16,8 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
-import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
@@ -44,7 +44,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.net.URISyntaxException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -100,7 +99,7 @@ public final class PersistenceUtil {
 
   public static SModel loadModel(@NotNull IFile file) {
     try {
-      DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(file.getUrl(), null);
+      DataSource dataSource = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.create(file.getUrl(), null);
       if (dataSource.getType() == null) {
         return null;
       }
@@ -112,7 +111,7 @@ public final class PersistenceUtil {
       SModel model = factory.load(dataSource, options);
       model.load();
       return model;
-    } catch (IOException | URINotSupportedException e) {
+    } catch (IOException | URLNotSupportedException e) {
       LOG.error("", e);
       return null;
     }

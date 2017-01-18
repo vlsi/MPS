@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  * Represents that {@link ModelRoot} can be cloned.
  * @param <T> -- is the type of the model root which one wants to copy
  *
- * @author Radimir.Sorokin
+ * @author Radimir.Sorokin, apyshkin
  */
 public interface CopyableModelRoot<T extends CopyableModelRoot<T> & ModelRoot> {
   /**

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,11 +30,13 @@ import java.util.Map;
  * Cosy facade which effectively replaces the <code>map<string, string></code> parameter in the create methods
  * with the {@link ModelCreationOptions} instances.
  *
- * TODO Might be transferred to api whenever we are able to create ModelCreationParameters in API (path, files are not in API yet)
- *
- * Created by apyshkin on 12/14/16.
+ * @deprecated totally unnecessary now when we have a cosy api
+ * @author apyshkin
+ * @since 12/14/16.
  */
 @Immutable
+@ToRemove(version = 3.5)
+@Deprecated
 public final class ModelFactoryFacade {
   private final ModelFactory myDelegatingFactory;
 

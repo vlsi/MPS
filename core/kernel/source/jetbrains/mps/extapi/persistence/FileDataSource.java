@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
@@ -38,7 +39,15 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * evgeny, 11/2/12
+ * A data source which points explicitly to the single file location.
+ * Currently it also knows something about vfs (listens to the events)
+ * but it is going to be cleared away.
+ * Also it is worth considering the merging of this notion with the <code>FolderDataSource</code>
+ * and others which points to some files on the file system.
+ * It seems that it is unnecessary to separate these entities [as soon as there is no additional vfs functionality]
+ * AP
+ *
+ * @author evgeny, 11/2/12
  */
 public class FileDataSource extends DataSourceBase implements StreamDataSource, FileSystemListener, FileSystemBasedDataSource {
   private final Object LOCK = new Object();
@@ -61,7 +70,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    *
    * @deprecated use {@link DataSourceFactoryService#getFactory} AND
-   *             {@link FileDataSourceFactory#create}
+   *             {@link DataSourceFactory#create}
    */
   @ToRemove(version = 3.5)
   @Deprecated

@@ -27,30 +27,35 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.net.URI;
 import java.net.URL;
 
 /**
+ * Bundled data source factories by default.
+ *
  * @author apyshkin
  * @since 29/12/16
  */
 @Immutable
-public enum PreinstalledDataSourceFactories implements DataSourceFromURIFactory {
-  FILE_FROM_URI_FACTORY;
+public enum PreinstalledURLDataSourceFactories implements DataSourceFromURLFactory {
+  FILE_FROM_URL_FACTORY;
 
   @NotNull
   @Override
   public DataSource create(@NotNull URL url,
 
                            @ToRemove(version = 0)
-                           @Nullable ModelRoot modelRoot) throws URINotSupportedException {
+                           @Nullable ModelRoot modelRoot) throws URLNotSupportedException {
+    if (!supports(url)) {
+      throw new URLNotSupportedException(this, url);
+    }
     IFile file = Files.fromURL(url);
     return createFromFile(file, modelRoot);
   }
 
+  // fixme elaborate
   @Override
-  public boolean supports(@NotNull URI uri) {
-    return "file".equals(uri.getScheme()); // fixme elaborate
+  public boolean supports(@NotNull URL url) {
+    return true;
   }
 
   @NotNull

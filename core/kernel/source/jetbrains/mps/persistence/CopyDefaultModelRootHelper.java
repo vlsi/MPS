@@ -20,7 +20,7 @@ import jetbrains.mps.extapi.persistence.CopyNotSupportedException;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
+import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.util.FileUtil;
@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY;
+import static jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY;
 
 /**
  * Helps {@link DefaultModelRoot#copyTo(DefaultModelRoot)}
@@ -105,7 +105,7 @@ final class CopyDefaultModelRootHelper {
           IFile targetModelFile = calculateTargetModelFile(mySourceModule, myTargetModule, sourceRoot, targetSourceRoot, file);
           SModelBase modelData = (SModelBase) new ModelFactoryFacade(factory).load(dataSource, options);
           createModelCopy(factory, targetModelFile, modelData);
-        } catch (URINotSupportedException | URISyntaxException | IOException | ModelCannotBeCreatedException e) {
+        } catch (URLNotSupportedException | URISyntaxException | IOException | ModelCannotBeCreatedException e) {
           LOG.error("", new CopyNotSupportedException("Could not copy because of unexpected error" , e));
         }
       });
@@ -118,9 +118,9 @@ final class CopyDefaultModelRootHelper {
                                  @NotNull IFile targetModelFile,
                                  @NotNull SModelBase modelDataToCopy) throws IOException,
                                                                              URISyntaxException,
-                                                                             URINotSupportedException,
+                                                                             URLNotSupportedException,
                                                                              ModelCannotBeCreatedException {
-    DataSource targetDataSource = FILE_FROM_URI_FACTORY.create(targetModelFile.getUrl(), myTargetModelRoot);
+    DataSource targetDataSource = FILE_FROM_URL_FACTORY.create(targetModelFile.getUrl(), myTargetModelRoot);
     ParametersCalculator prmCalculator = new ParametersCalculator(myTargetModelRoot);
     SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue(),
                                                                           mySourceModule,

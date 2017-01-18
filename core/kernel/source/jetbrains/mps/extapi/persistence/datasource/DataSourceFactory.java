@@ -29,6 +29,11 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
  * See how <code>jetbrains.mps.persistence.FileMPSDataSourceFactory</code> is implemented and
  * registered in the META-INF/services location.
  *
+ * It is somehow vital to extract the strategy defining the location (data source) of the new model
+ * when the name is given. One could choose the place to store a model in various ways depending on
+ * structure of the model name (for example if we are java-minded we might store a model with a name
+ * 'my.favourite.package.modelName' as a folder cascade: 'my/favourite/package/modelName.mps').
+ *
  * @author apyshkin
  * @since 3.5
  */

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
@@ -59,7 +59,7 @@ public final class FilePerRootDataSourceFactory implements DataSourceFactory {
 
   @NotNull
   private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    return PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.createFromFile(file, modelRoot);
+    return PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.createFromFile(file, modelRoot);
   }
 
   @NotNull

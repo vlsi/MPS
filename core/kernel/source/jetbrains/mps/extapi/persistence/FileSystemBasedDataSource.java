@@ -41,9 +41,4 @@ public interface FileSystemBasedDataSource extends DataSource, DisposableDataSou
    * 2. All the files in the directory could not be there (the parent directory as a whole would be returned instead)
    */
   @NotNull Collection<IFile> getAffectedFiles();
-
-  /**
-   * @return the type of this data source
-   */
-  @NotNull DataSourceType getType();
 }

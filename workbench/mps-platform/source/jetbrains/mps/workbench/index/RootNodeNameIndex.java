@@ -27,18 +27,13 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
-import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.PersistenceUtil;
-import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
-import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.ConditionalIterable;
-import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
 import jetbrains.mps.workbench.index.ModelRootsData.Entry;
@@ -56,7 +51,6 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.mps.util.Condition;
 
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -86,7 +80,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           LOG.error("URL cannot be created from " + inputData.getFile());
           return null;
         }
-        DataSource dataSource = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY.create(url, null);
+        DataSource dataSource = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.create(url, null);
         DataSourceType type = dataSource.getType();
         if (type == null) {
           return null;
@@ -100,7 +94,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           return null;
         }
         inputData.putUserData(PARSED_MODEL, model);
-      } catch (URINotSupportedException | URISyntaxException | MalformedURLException  e) {
+      } catch (URLNotSupportedException | URISyntaxException | MalformedURLException  e) {
         LOG.error("", e);
         return null;
       }

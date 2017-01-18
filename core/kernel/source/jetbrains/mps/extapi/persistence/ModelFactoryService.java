@@ -34,6 +34,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
  * Unlike the truly immutable core service {@link ModelFactoryCoreService}
  * this class has special setter methods to allow workbench model factory extensions.
+ * These are going to disappear as API in the 3.6 version, since the public access is unnecessary.
  *
  * NB: every method work with the last-added priority -- it acts like a model factory stack
  *

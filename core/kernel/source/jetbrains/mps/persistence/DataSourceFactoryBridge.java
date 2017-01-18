@@ -20,12 +20,12 @@ import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFromURIFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFromURLFactory;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceFactories;
-import jetbrains.mps.extapi.persistence.datasource.URINotSupportedException;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
+import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -141,11 +141,11 @@ public final class DataSourceFactoryBridge {
   @Nullable
   CompositeResult<DataSource> create(@NotNull IFile file) {
     assert !file.isDirectory();
-    DataSourceFromURIFactory factory = PreinstalledDataSourceFactories.FILE_FROM_URI_FACTORY;
+    DataSourceFromURLFactory factory = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY;
     DataSource dataSource;
     try {
       dataSource = factory.create(file.getUrl(), myModelRoot);
-    } catch (URINotSupportedException | MalformedURLException e) {
+    } catch (URLNotSupportedException | MalformedURLException e) {
       LOG.error("Could not get URI from IFile : '" + file + "'", e);
       return null;
     }

@@ -55,10 +55,10 @@ public class JDOMUtil {
       in = file.openInputStream();
       return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
     } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getPath(), e);
+      LOG.error("FAILED TO LOAD FILE : " + file.getPath(), e);
       throw e;
     } catch (IOException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getPath(), e);
+      LOG.error("FAILED TO LOAD FILE : " + file.getPath(), e);
       throw e;
     } finally {
       if (in != null) {
@@ -76,10 +76,10 @@ public class JDOMUtil {
     try {
       return saxBuilder.build(source);
     } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + source.toString());
+      LOG.error("FAILED TO LOAD FILE : " + source.toString());
       throw e;
     } catch (IOException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + source.toString());
+      LOG.error("FAILED TO LOAD FILE : " + source.toString());
       throw e;
     }
   }
@@ -90,10 +90,10 @@ public class JDOMUtil {
     try {
       return saxBuilder.build(new InputStreamReader(in, FileUtil.DEFAULT_CHARSET));
     } catch (JDOMException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } catch (IOException e) {
-      LOG.error("FAILED TO LOAD FILE_FROM_URI_FACTORY : " + file.getAbsolutePath());
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
       throw e;
     } finally {
       in.close();

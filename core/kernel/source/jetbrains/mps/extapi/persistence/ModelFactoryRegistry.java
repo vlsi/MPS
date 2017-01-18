@@ -31,7 +31,6 @@ import java.util.List;
  * Also it stores a mapping between model factory types and model factories (which allows user to replace
  * the bundled persistence we provide)
  *
- *
  * @see ModelFactory
  * @see DataSourceType
  *
@@ -66,7 +65,7 @@ public interface ModelFactoryRegistry {
   /**
    * @return all the registered factories for the provided data source type sorted:
    * 1. by the preferences of the model factory ({@link ModelFactory#getPreferredDataSourceTypes()},
-   * 2. in the <em>reverse</em> order of registration
+   * 2. in the <em>reverse</em> order of registration: the last one has a top priority
    */
   @ImmutableReturn
   @NotNull List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType);

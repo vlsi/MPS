@@ -15,8 +15,17 @@
  */
 package jetbrains.mps.extapi.persistence.datasource;
 
+import java.net.URL;
+import java.text.MessageFormat;
+
 /**
+ * Thrown if the {@link DataSourceFromURLFactory} is not able
+ * to use this <code>URL</code> to construct a new data source.
+ *
  * Created by apyshkin on 12/27/16.
  */
-public class URINotSupportedException extends Exception {
+public final class URLNotSupportedException extends Exception {
+  public URLNotSupportedException(DataSourceFromURLFactory factory, URL problemUrl) {
+    super(MessageFormat.format("Factory '{0}' is not able to construct data source given the '{1}'", factory, problemUrl));
+  }
 }
