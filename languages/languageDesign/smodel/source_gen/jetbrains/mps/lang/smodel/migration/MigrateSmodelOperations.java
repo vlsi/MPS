@@ -111,7 +111,6 @@ public class MigrateSmodelOperations extends MigrationScriptBase {
         }
       });
     }
-
   }
   @Override
   public Iterable<Problem> check(SModule m) {
