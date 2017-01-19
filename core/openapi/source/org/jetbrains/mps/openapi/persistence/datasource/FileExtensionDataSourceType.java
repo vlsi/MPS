@@ -13,42 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.persistence.datasource;
+package org.jetbrains.mps.openapi.persistence.datasource;
 
-import jetbrains.mps.persistence.FileExtension;
-import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.Objects;
 
-import static jetbrains.mps.project.MPSExtentions.DOT;
-
 /**
+ * A data source type based on the file name extension
+ * This type allows us to associate the corresponding data sources
+ * with various model factories.
+ *
  * @author apyshkin
  * @since 29/12/16
  */
 @Immutable
 public final class FileExtensionDataSourceType implements DataSourceType {
-  static final FileExtensionDataSourceType MPS = of(MPSExtentions.MODEL);
-  static final FileExtensionDataSourceType MODEL = of(MPSExtentions.MODEL_HEADER);
-  static final FileExtensionDataSourceType MODEL_ROOT = of(MPSExtentions.MODEL_ROOT);
-  static final FileExtensionDataSourceType BINARY = of(MPSExtentions.MODEL_BINARY);
+  private static final String DOT = ".";
 
-  private final FileExtension myFileExtension;
+  private final String myFileExtension;
 
-  private FileExtensionDataSourceType(@NotNull String fileExtension) {
-    if (fileExtension.contains(DOT)) {
+  private FileExtensionDataSourceType(@Nullable String fileExtension) {
+    if (fileExtension != null && fileExtension.contains(DOT)) {
       throw new IllegalArgumentException("File Extension String Must Not Contain DOTS : " + fileExtension);
     }
-    myFileExtension = FileExtension.fromString(fileExtension);
+    myFileExtension = fileExtension;
   }
 
   @NotNull
-  public FileExtension getFileExtension() {
+  public static FileExtensionDataSourceType of(@Nullable String fileExtension) {
+    return new FileExtensionDataSourceType(fileExtension);
+  }
+
+  @NotNull
+  public String getFileExtension() {
     return myFileExtension;
   }
 
@@ -66,22 +66,9 @@ public final class FileExtensionDataSourceType implements DataSourceType {
     return myFileExtension.hashCode();
   }
 
-  @NotNull
-  public static FileExtensionDataSourceType of(@NotNull String fileExtension) {
-    return new FileExtensionDataSourceType(fileExtension);
-  }
-
-  public static FileExtensionDataSourceType of(@NotNull IFile file) {
-    String extension = FileUtil.getExtension(file.getPath());
-    if (extension == null) {
-      throw new IllegalArgumentException("Null extension: " + file);
-    }
-    return of(extension);
-  }
-
   @Override
   public String toString() {
-    return "File Extension Based Data Source Type [" + myFileExtension + "]";
+    return getName();
   }
 
   @NotNull

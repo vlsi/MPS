@@ -21,8 +21,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -36,6 +38,9 @@ import java.util.Map;
  * not vice versa.
  *
  * Creates/upgrades/saves/loads models (instances of SModel) from data sources.
+ *
+ * NB: the default implementation of the methods added in 3.5 will be dropped at the 2017.3
+ * minor release. Please do not long linger to pass on the new API.
  *
  * @author apyshkin
  */
@@ -77,7 +82,7 @@ public interface ModelFactory {
    * and tread loaded model as mere container for nodes, <code>SModelData</code>-like.
    * We use this mechanism from merge driver and various tools that are going to access nodes from
    * the model but are not going to expose this model anywhere else.
-   * 
+   *
    * @deprecated String option is not informatory. Use a {@link ContentOption} instead
    */
   @ToRemove(version = 3.7)
@@ -93,7 +98,7 @@ public interface ModelFactory {
    *
    * @return The loaded model
    * @throws UnsupportedDataSourceException if the data source is not supported
-   * @deprecated Map<String,String> is hardly perceivable. Please use
+   * @deprecated <code>Map<String,String></code> is hardly perceivable. Please use
    *             rather {@link #load(DataSource, ModelLoadingOption...)} instead
    */
   @ToRemove(version = 3.7)
@@ -122,7 +127,7 @@ public interface ModelFactory {
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
-   * 
+   *
    * ---------
    * Currently this method implementations are quite shallow and de facto it does not work at all
    * as the API designer must have suggested. Now the real semantics of this method is whether the data 
@@ -146,7 +151,9 @@ public interface ModelFactory {
    *
    * @return true iff the given data source can be managed by this factory
    */
-  boolean supports(@NotNull DataSource dataSource);
+  default boolean supports(@NotNull DataSource dataSource) {
+    return true;
+  }
 
   /**
    * Creates a new model with the supplied <code>modelName</code> on the given <code>DataSource</code>.
@@ -162,9 +169,18 @@ public interface ModelFactory {
    * @throws UnsupportedDataSourceException iff {@link #supports(DataSource)} returns false
    * @throws ModelCreationException iff there was an irrecoverable problem during creation (for instance model file already exists)
    */
-  @NotNull SModel create(@NotNull DataSource dataSource,
-                         @NotNull SModelName modelName,
-                         @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelCreationException;
+  @NotNull
+  default SModel create(@NotNull DataSource dataSource,
+                        @NotNull SModelName modelName,
+                        @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException,
+                                                                       ModelCreationException {
+    try {
+      Map<String, String> options0 = Collections.singletonMap(OPTION_MODELNAME, modelName.getValue());
+      return create(dataSource, options0);
+    } catch (IOException e) {
+      throw new ModelCreationException("Default #create implementation failed. Please implement.", Collections.emptyList(), e);
+    }
+  }
 
   /**
    * Loads an existing model from the given <code>DataSource</code>.
@@ -179,7 +195,14 @@ public interface ModelFactory {
    * @throws UnsupportedDataSourceException iff {@link #supports(DataSource)} returns false
    * @throws ModelLoadException iff there was an irrecoverable load problem (for instance format was broken or unrecognized)
    */
-  @NotNull SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException;
+  @NotNull
+  default SModel load(@NotNull DataSource dataSource, @NotNull ModelLoadingOption... options) throws UnsupportedDataSourceException, ModelLoadException {
+    try {
+      return load(dataSource, Collections.emptyMap());
+    } catch (IOException e) {
+      throw new ModelLoadException("Default #load implementation failed. Please implement.", Collections.emptyList(), e);
+    }
+  }
 
   /**
    * Checks if the source content is outdated and needs to be upgraded.
@@ -235,17 +258,22 @@ public interface ModelFactory {
   @NotNull
   @Deprecated
   @ToRemove(version = 2017.3)
-  default String getFormatTitle() {
+  /*default*/ String getFormatTitle(); /*{
     return getType().getFormatTitle();
-  }
+  }*/
 
   /**
    * Returns an id which is used to get model factory by id in the
    * {@code ModelFactoryService}.
    *
    * @return model factory unique identification entity
+   *
+   * @implNote THE DEFAULT IMPLEMENTATION IS A FALLBACK STUB, PLEASE IMPLEMENT
    */
-  @NotNull ModelFactoryType getType();
+  @NotNull
+  default ModelFactoryType getType() {
+    return NotImplementedModelFactoryType.INSTANCE; // return value is chosen on purpose
+  }
 
   /**
    * Declares a list of preferred data source formats,
@@ -258,6 +286,12 @@ public interface ModelFactory {
    *         we are able to establish a file name pattern association with a specific model factory.
    *         For example each model file which ends with '.mps_binary' suffix would be associated with the
    *         corresponding data source type which in turn would be associated with 'MyBinaryModelFactory'.
+   *
+   * @implNote THE DEFAULT IMPLEMENTATION IS A FALLBACK STUB, PLEASE IMPLEMENT
    */
-  @NotNull List<DataSourceType> getPreferredDataSourceTypes();
+  @NotNull
+  default List<DataSourceType> getPreferredDataSourceTypes() {
+    String fileExtension = getFileExtension();
+    return Collections.singletonList(FileExtensionDataSourceType.of(fileExtension));
+  }
 }

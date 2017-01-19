@@ -18,7 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

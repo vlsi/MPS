@@ -19,15 +19,22 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.extensions.AbstractExtensionPointBean;
 import com.intellij.openapi.extensions.ExtensionPointName;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.util.xmlb.annotations.Attribute;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.NotImplementedModelFactoryType;
+import org.jetbrains.mps.openapi.persistence.NullDataSource.NullDataSourceType;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +42,12 @@ import java.util.List;
 /**
  * A platform extension point to client custom model factories
  * delegates to the {@link ModelFactoryService}
+ * The legacy persistence facade registration eventually triggers the registration in the {@link ModelFactoryService}.
  */
 @Internal
-@Deprecated
-@ToRemove(version = 3.7)
 public final class ModelFactoryRegister implements ApplicationComponent {
+  private static final Logger LOG = LogManager.getLogger(ModelFactoryRegister.class);
+
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<>();
 
   private final PersistenceFacade myPersistenceRegistry;
@@ -54,13 +62,30 @@ public final class ModelFactoryRegister implements ApplicationComponent {
       try {
         ModelFactory modelFactory = provider.instantiate(provider.getImplementationClass(), ApplicationManager.getApplication().getPicoContainer());
         myRegisteredFactories.add(modelFactory);
+        check(modelFactory);
         registerLEGACY(modelFactory);
-        registerNEW(modelFactory);
       } catch (ClassNotFoundException e) {
         String m = String.format("Failed to load %s in the plugin %s",
                                  provider.getImplementationClass(),
                                  provider.getPluginDescriptor().getPluginId());
         LogManager.getLogger(ModelFactoryRegister.class).error(m, e);
+      }
+    }
+  }
+
+  @ToRemove(version = 181)
+  private boolean isLegacy(ModelFactory factory) {
+    return factory.getType() == NotImplementedModelFactoryType.INSTANCE;
+  }
+
+  private void check(@NotNull ModelFactory modelFactory) {
+    if (isLegacy(modelFactory)) {
+      String message = "The model factory '" + modelFactory + "' seems to be restrained to the legacy API.\n" +
+                       "Please reimplement new methods properly since the legacy API will be dropped in the 2018.1 version.";
+      if (ApplicationManager.getApplication().isHeadlessEnvironment()) {
+        LOG.error(message, new Throwable());
+      } else {
+        Messages.showErrorDialog((Project) null, message, "Attention");
       }
     }
   }
@@ -71,25 +96,16 @@ public final class ModelFactoryRegister implements ApplicationComponent {
     myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), modelFactory);
   }
 
-  private void registerNEW(ModelFactory modelFactory) {
-    ModelFactoryService.getInstance().register(modelFactory);
-  }
-
   @Override
   public void disposeComponent() {
     for (ModelFactory modelFactory : myRegisteredFactories) {
       unregisterLEGACY(modelFactory);
-      unregisterNEW(modelFactory);
     }
     myRegisteredFactories.clear();
   }
 
   private void unregisterLEGACY(ModelFactory modelFactory) {
     myPersistenceRegistry.setModelFactory(modelFactory.getFileExtension(), null);
-  }
-
-  private void unregisterNEW(ModelFactory modelFactory) {
-    ModelFactoryService.getInstance().unregister(modelFactory);
   }
 
   @NotNull

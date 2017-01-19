@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -24,6 +25,9 @@ import jetbrains.mps.smodel.SModelId.IntegerSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelId.RelativePathSModelId;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -38,27 +42,40 @@ import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant;
 import org.jetbrains.mps.openapi.persistence.SModelIdFactory;
 import org.jetbrains.mps.openapi.persistence.SNodeIdFactory;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 
 /**
  * evgeny, 10/23/12
  */
 public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.PersistenceFacade implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(PersistenceRegistry.class);
+
   public static final String DEFAULT_MODEL_ROOT = "default";
   public static final String OBSOLETE_MODEL_ROOT = "obsolete";
   public static final String JAVA_CLASSES_ROOT = "java_classes";
 
-  private Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
-  private Map<String, ModelFactory> myExtensionToModelFactoryMap = new HashMap<String, ModelFactory>();
-  private Map<String, SModelIdFactory> myModelIdFactory = new HashMap<String, SModelIdFactory>();
-  private Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<String, SNodeIdFactory>();
-  private Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
-  private Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
+  private final ModelFactoryService MODEL_FACTORY_SERVICE = ModelFactoryService.getInstance();
+
+  @ToRemove(version = 181) private final Map<String, ModelFactory> myLegacyFileExt2ModelFactoryMap = new ConcurrentHashMap<>();
+
+  private final Map<String, ModelRootFactory> myRootFactories = new HashMap<String, ModelRootFactory>();
+  private final Map<String, SModelIdFactory> myModelIdFactory = new HashMap<String, SModelIdFactory>();
+  private final Map<String, SNodeIdFactory> myNodeIdFactory = new HashMap<String, SNodeIdFactory>();
+  private final Set<FindUsagesParticipant> myFindUsagesParticipants = new LinkedHashSet<FindUsagesParticipant>();
+  private final Set<NavigationParticipant> myNavigationParticipants = new LinkedHashSet<NavigationParticipant>();
 
   private boolean isDisabled = false;
 
@@ -83,28 +100,52 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
     }
   }
 
+  @Deprecated
   @Override
   public ModelFactory getModelFactory(String extension) {
-    return myExtensionToModelFactoryMap.get(extension);
+    if (myLegacyFileExt2ModelFactoryMap.containsKey(extension)) {
+      return myLegacyFileExt2ModelFactoryMap.get(extension);
+    }
+    return MODEL_FACTORY_SERVICE.getDefaultModelFactory(FileExtensionDataSourceType.of(extension));
   }
 
+  @Deprecated
   @Override
   public ModelFactory getDefaultModelFactory() {
-    return myExtensionToModelFactoryMap.get(MPSExtentions.MODEL);
+    String defaultExt = MPSExtentions.MODEL;
+    return getModelFactory(defaultExt);
   }
 
+  @Deprecated
   @Override
   public void setModelFactory(String extension, ModelFactory factory) {
     if (factory == null) {
-      myExtensionToModelFactoryMap.remove(extension);
+      FileExtensionDataSourceType type = FileExtensionDataSourceType.of(extension);
+      MODEL_FACTORY_SERVICE.getModelFactories(type).forEach(MODEL_FACTORY_SERVICE::unregister);
     } else {
-      myExtensionToModelFactoryMap.put(extension, factory);
+      myLegacyFileExt2ModelFactoryMap.put(extension, factory);
+      if (!Objects.equals(factory.getFileExtension(), extension)) {
+        LOG.error("The model factory '" + factory + "' is trying to register using the legacy mechanism via PersistenceFacade.\n" +
+                  "The declared file extension '" + factory.getFileExtension() + "' is not equal to the passed '" + extension + "'\n" +
+                  "Please fix this.", new Throwable());
+        return;
+      }
+      MODEL_FACTORY_SERVICE.register(factory);
     }
   }
 
+  @Deprecated
   @Override
   public Set<String> getModelFactoryExtensions() {
-    return myExtensionToModelFactoryMap.keySet();
+    Set<String> result = new HashSet<>(myLegacyFileExt2ModelFactoryMap.keySet());
+    for (ModelFactory modelFactory : MODEL_FACTORY_SERVICE.getFactories()) {
+      List<DataSourceType> preferredDataSourceTypes = new ArrayList<>(modelFactory.getPreferredDataSourceTypes());
+      result.addAll(preferredDataSourceTypes.stream()
+                                            .filter(dataSourceType -> dataSourceType instanceof FileExtensionDataSourceType)
+                                            .map(dataSourceType -> ((FileExtensionDataSourceType) dataSourceType).getFileExtension())
+                                            .collect(Collectors.toList()));
+    }
+    return Collections.unmodifiableSet(result);
   }
 
   @NotNull

@@ -67,7 +67,7 @@ public abstract class PersistenceFacade {
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
    *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 181)
   @Deprecated
   public abstract ModelFactory getModelFactory(@Nullable String extension);
 
@@ -77,7 +77,7 @@ public abstract class PersistenceFacade {
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
    *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 181)
   @Deprecated
   public abstract ModelFactory getDefaultModelFactory();
 
@@ -90,7 +90,7 @@ public abstract class PersistenceFacade {
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
    *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 181)
   @Deprecated
   public abstract void setModelFactory(@Nullable String extension, ModelFactory factory);
 
@@ -105,7 +105,7 @@ public abstract class PersistenceFacade {
    *             to register your custom model factory implementation and associate it (if needed)
    *             with some specific data source type.
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 181)
   @Deprecated
   public abstract Set<String> getModelFactoryExtensions();
 

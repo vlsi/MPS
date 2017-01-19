@@ -59,7 +59,10 @@ import java.util.Map;
  * evgeny, 11/20/12
  */
 public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwareModelFactory {
-  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
+  @NotNull
+  private static PersistenceFacade FACADE() {
+    return PersistenceFacade.getInstance();
+  }
 
   @Internal
   public BinaryModelFactory() {
@@ -67,12 +70,12 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
 
   @Override
   public void init() {
-    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, this);
+    FACADE().setModelFactory(MPSExtentions.MODEL_BINARY, this);
   }
 
   @Override
   public void dispose() {
-    myFacade.setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    FACADE().setModelFactory(MPSExtentions.MODEL_BINARY, null);
   }
 
   @NotNull
@@ -125,7 +128,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
 
     StreamDataSource source = (StreamDataSource) dataSource;
     final SModelHeader header = new SModelHeader();
-    SModelReference newModelRef = myFacade.createModelReference(null, SModelId.generate(), modelName.getValue());
+    SModelReference newModelRef = FACADE().createModelReference(null, SModelId.generate(), modelName.getValue());
     header.setModelReference(newModelRef);
     return new DefaultSModelDescriptor(new PersistenceFacility(this, source), header);
   }
@@ -239,7 +242,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
    * FIXME revisit, reconsider approach
    */
   public static SModel createFromHeader(@NotNull SModelHeader header, @NotNull StreamDataSource dataSource) {
-    final ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL_BINARY);
+    final ModelFactory modelFactory = FACADE().getModelFactory(MPSExtentions.MODEL_BINARY);
     assert modelFactory instanceof BinaryModelFactory;
     return new DefaultSModelDescriptor(new PersistenceFacility((BinaryModelFactory) modelFactory, dataSource), header.createCopy());
   }

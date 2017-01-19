@@ -38,6 +38,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
  *
  * NB: every method work with the last-added priority -- it acts like a model factory stack
  *
+ * NB: LEGACY registrations are not available here (though the opposite is a guarantee).
+ * Thus when one uses this API he/she must be strongly convinced that the provider also used
+ * this API not the LEGACY one
+ *
+ * @see org.jetbrains.mps.openapi.persistence.PersistenceFacade
+ *
  * @author apyshkin
  * @since 29/12/16
  */

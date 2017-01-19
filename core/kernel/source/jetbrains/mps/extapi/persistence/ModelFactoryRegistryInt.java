@@ -52,9 +52,6 @@ final class ModelFactoryRegistryInt implements ModelFactoryRegistry {
   @Immutable
   public List<ModelFactory> getFactories() {
     List<ModelFactory> result = new ArrayList<>(myFactories);
-    if (result.isEmpty()) {
-      LOG.warn("There are no registered data source factories");
-    }
     return Collections.unmodifiableList(result);
   }
 
@@ -84,8 +81,13 @@ final class ModelFactoryRegistryInt implements ModelFactoryRegistry {
   @Override
   public List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType) {
     return myFactories.stream()
-                      .filter(factory -> factory.getPreferredDataSourceTypes().contains(dataSourceType))
+                      .filter(factory -> getPreferredDataSourceTypes0(factory).contains(dataSourceType))
                       .collect(Collectors.toList());
+  }
+
+  @NotNull
+  private List<DataSourceType> getPreferredDataSourceTypes0(ModelFactory factory) {
+    return factory.getPreferredDataSourceTypes();
   }
 
   @Override

@@ -15,9 +15,11 @@
  */
 package jetbrains.mps.extapi.persistence.datasource;
 
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 
 /**
  * Bundled data source types which are obviously connected with the possible file extension,
@@ -34,10 +36,10 @@ public enum PreinstalledDataSourceTypes implements DataSourceType {
   FOLDER("Folder Data Source Type"),
   FOLDER_SET("Folder Set Data Source Type");
 
-  public static final FileExtensionDataSourceType MPS = FileExtensionDataSourceType.MPS;
-  public static final FileExtensionDataSourceType MODEL = FileExtensionDataSourceType.MODEL;
-  public static final FileExtensionDataSourceType MODEL_ROOT = FileExtensionDataSourceType.MODEL_ROOT;
-  public static final FileExtensionDataSourceType BINARY = FileExtensionDataSourceType.BINARY;
+  public static final FileExtensionDataSourceType MPS = FileExtensionDataSourceType.of(MPSExtentions.MODEL);
+  public static final FileExtensionDataSourceType MODEL = FileExtensionDataSourceType.of(MPSExtentions.MODEL_HEADER);
+  public static final FileExtensionDataSourceType MODEL_ROOT = FileExtensionDataSourceType.of(MPSExtentions.MODEL_ROOT);
+  public static final FileExtensionDataSourceType BINARY = FileExtensionDataSourceType.of(MPSExtentions.MODEL_BINARY);
 
   private final String myName;
 

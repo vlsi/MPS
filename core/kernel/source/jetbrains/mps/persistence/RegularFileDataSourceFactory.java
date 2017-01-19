@@ -18,7 +18,7 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 /**
  * Data source factory base for factories based
  * on the different file extensions :
- * @see jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType
+ * @see FileExtensionDataSourceType
  * @author apyshkin
  * @since 27/12/16
  */

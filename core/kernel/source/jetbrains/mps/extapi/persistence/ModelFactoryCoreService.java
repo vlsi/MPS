@@ -71,7 +71,11 @@ public final class ModelFactoryCoreService implements ModelFactoryRegistry {
    */
   @NotNull
   public List<ModelFactory> getFactories() {
-    return myModelFactoryRegistryInt.getFactories();
+    List<ModelFactory> factories = myModelFactoryRegistryInt.getFactories();
+    if (factories.isEmpty()) {
+      LOG.warn("There are no registered data source factories which is suspicious");
+    }
+    return factories;
   }
 
   @Nullable

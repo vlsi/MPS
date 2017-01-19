@@ -68,7 +68,10 @@ import java.util.Map.Entry;
 public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
 
-  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
+  @NotNull
+  private static PersistenceFacade FACADE() {
+    return PersistenceFacade.getInstance();
+  }
 
   @Internal
   public FilePerRootModelFactory() {
@@ -125,7 +128,7 @@ public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
       throw new UnsupportedDataSourceException(dataSource);
     }
 
-    SModelReference ref = myFacade.createModelReference(null, SModelId.generate(), modelName.getValue());
+    SModelReference ref = FACADE().createModelReference(null, SModelId.generate(), modelName.getValue());
     final SModelHeader header = SModelHeader.create(ModelPersistence.LAST_VERSION);
     header.setModelReference(ref);
     return new DefaultSModelDescriptor(new PersistenceFacility(this, (MultiStreamDataSource) dataSource), header);

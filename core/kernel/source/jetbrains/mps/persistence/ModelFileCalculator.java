@@ -40,7 +40,7 @@ public final class ModelFileCalculator {
   @Nullable private final SModule myModule;
   @NotNull private final SModelName myModelName;
   @NotNull private final SourceRoot mySourceRoot;
-  @NotNull private final FileExtension myFileExtension;
+  @NotNull private final String myFileExtension;
   private final boolean myDirectoryBased;
 
   /**
@@ -52,7 +52,7 @@ public final class ModelFileCalculator {
   ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
                       @Nullable ModelRoot modelRoot,
-                      @NotNull FileExtension modelFileExtension,
+                      @NotNull String modelFileExtension,
                       boolean directoryBased) {
     myModule = modelRoot != null ? modelRoot.getModule() : null;
     myModelName = modelName;
@@ -64,7 +64,7 @@ public final class ModelFileCalculator {
   ModelFileCalculator(@NotNull SModelName modelName,
                       @NotNull SourceRoot sourceRoot,
                       @Nullable ModelRoot modelRoot,
-                      @NotNull FileExtension modelFileExtension) {
+                      @NotNull String modelFileExtension) {
     this(modelName, sourceRoot, modelRoot, modelFileExtension, false);
   }
 
@@ -89,7 +89,7 @@ public final class ModelFileCalculator {
   }
 
   private String getFileExtension() {
-    return StringUtil.emptyIfNull(myFileExtension.toText());
+    return StringUtil.emptyIfNull(myFileExtension);
   }
 
   @NotNull
