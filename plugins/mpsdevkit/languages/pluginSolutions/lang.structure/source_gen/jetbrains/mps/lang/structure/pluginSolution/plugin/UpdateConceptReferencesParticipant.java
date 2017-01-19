@@ -40,9 +40,9 @@ public class UpdateConceptReferencesParticipant extends UpdateReferencesParticip
   }
 
   @Override
-  protected void doUpdateReference(List<RefactoringParticipant.Option> selectedOptions, SRepository repository, SNode containingNode, SReferenceLink role, UpdateReferencesParticipantBase.NodeData<Void> initialTarget, UpdateReferencesParticipantBase.NodeData<Void> newTarget, String resolveInfo) {
+  protected void doUpdateReference(List<RefactoringParticipant.Option> selectedOptions, SRepository repository, SNode containingNode, SReferenceLink role, UpdateReferencesParticipantBase.NodeData<Void> newTarget, String resolveInfo) {
     if (ListSequence.fromList(selectedOptions).contains(WriteSubconceptMigrationParticipant.OPTION)) {
-      super.doUpdateReference(selectedOptions, repository, containingNode, role, initialTarget, newTarget, resolveInfo);
+      super.doUpdateReference(selectedOptions, repository, containingNode, role, newTarget, resolveInfo);
     } else {
       // do nothing 
     }
