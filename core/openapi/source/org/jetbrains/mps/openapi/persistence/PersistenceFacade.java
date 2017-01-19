@@ -65,7 +65,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory associated with the given file extension.
    * @deprecated use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -75,7 +75,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory for default MPS storage format (xml-based).
    * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -88,7 +88,7 @@ public abstract class PersistenceFacade {
    * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
    *             Use {@code ModelFactoryRegistry#register} instead.
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -99,7 +99,7 @@ public abstract class PersistenceFacade {
    * @deprecated the model factories are separated from the type of location
    *             (while file extension as a key clearly violates this idea).
    *             Thus one might to look at the
-   *             <code>jetbrains.mps.extapi.persistence.dataSource.DataSourceFactoryService</code>
+   *             <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
    *             which can be used to register your one custom data source factories.
    *             <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code> is an extension point
    *             to register your custom model factory implementation and associate it (if needed)

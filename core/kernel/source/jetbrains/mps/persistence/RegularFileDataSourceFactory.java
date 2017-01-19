@@ -41,10 +41,10 @@ import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PLAIN_XML;
  * @since 27/12/16
  */
 @Immutable
-public abstract class RegularFileDataSourceFactory implements DataSourceFactory {
+public class RegularFileDataSourceFactory implements DataSourceFactory {
   @NotNull private final FileExtensionDataSourceType myDataSourceType;
 
-  protected RegularFileDataSourceFactory(@NotNull FileExtensionDataSourceType dataSourceType) {
+  RegularFileDataSourceFactory(@NotNull FileExtensionDataSourceType dataSourceType) {
     myDataSourceType = dataSourceType;
   }
 

@@ -66,7 +66,7 @@ public interface ModelFactory {
    * Denotes a model name, used as a key in the <code>Map<String, String></code> parameter
    * in the {@link #create(DataSource, Map)} methods.
    *
-   * @deprecated this option is unnecessary. Use {@link create(DataSource, ModelLoadingOption...)} instead.
+   * @deprecated this option is unnecessary. Use {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead.
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -78,7 +78,7 @@ public interface ModelFactory {
    * We use this mechanism from merge driver and various tools that are going to access nodes from
    * the model but are not going to expose this model anywhere else.
    * 
-   * @deprecated String option is not informatory. Use {@link ContentOption} instead
+   * @deprecated String option is not informatory. Use a {@link ContentOption} instead
    */
   @ToRemove(version = 3.7)
   @Deprecated
@@ -205,7 +205,7 @@ public interface ModelFactory {
   /**
    * returns true if plain text is not enough to represent stored data.
    *
-   * // @deprecated The contract is not clear ("not enought" means what exactly?).
+   * // @deprecated The contract is not clear ("not enough" means what exactly?).
    *                We would rather turn this into some marker interface than have it here
    */
   /*@ToRemove(version = 3.7)*/
@@ -229,8 +229,15 @@ public interface ModelFactory {
 
   /**
    * User-readable title of the storage format.
+   *
+   * @deprecated use {@link #getType()} and {@link ModelFactoryType#getFormatTitle()} instead
    */
-  @NotNull String getFormatTitle();
+  @NotNull
+  @Deprecated
+  @ToRemove(version = 2017.3)
+  default String getFormatTitle() {
+    return getType().getFormatTitle();
+  }
 
   /**
    * Returns an id which is used to get model factory by id in the

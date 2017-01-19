@@ -61,7 +61,9 @@ final class ModelFactoryRegistryInt implements ModelFactoryRegistry {
   @Nullable
   @Override
   public ModelFactory getFactoryByType(@NotNull ModelFactoryType factoryType) {
-    Optional<ModelFactory> first = myFactories.stream().filter(factory -> Objects.equals(factoryType, factory.getType())).findFirst();
+    Optional<ModelFactory> first = myFactories.stream()
+                                              .filter(factory -> Objects.equals(factoryType, factory.getType()))
+                                              .findFirst();
     if (first.isPresent()) {
       return first.get();
     }
@@ -81,7 +83,9 @@ final class ModelFactoryRegistryInt implements ModelFactoryRegistry {
   @NotNull
   @Override
   public List<ModelFactory> getModelFactories(@NotNull DataSourceType dataSourceType) {
-    return myFactories.stream().filter(factory -> factory.getPreferredDataSourceTypes().contains(dataSourceType)).collect(Collectors.toList());
+    return myFactories.stream()
+                      .filter(factory -> factory.getPreferredDataSourceTypes().contains(dataSourceType))
+                      .collect(Collectors.toList());
   }
 
   @Override

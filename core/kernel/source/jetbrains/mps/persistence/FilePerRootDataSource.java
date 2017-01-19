@@ -17,7 +17,7 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFromURLFactory;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
@@ -44,7 +44,7 @@ public final class FilePerRootDataSource extends FolderDataSource {
   /**
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    *
-   * @deprecated use {@link DataSourceFactoryService#getFactory} AND
+   * @deprecated use {@link DataSourceFactoryRuleService#getFactory} AND
    *             {@link DataSourceFactory#create}
    */
   @ToRemove(version = 3.5) // will become package private

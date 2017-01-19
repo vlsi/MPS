@@ -33,13 +33,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Workbench extension point to client custom model factories
+ * A platform extension point to client custom model factories
  * delegates to the {@link ModelFactoryService}
  */
 @Internal
 @Deprecated
 @ToRemove(version = 3.7)
-public class ModelFactoryRegister implements ApplicationComponent {
+public final class ModelFactoryRegister implements ApplicationComponent {
   private final List<ModelFactory> myRegisteredFactories = new ArrayList<>();
 
   private final PersistenceFacade myPersistenceRegistry;
@@ -57,7 +57,9 @@ public class ModelFactoryRegister implements ApplicationComponent {
         registerLEGACY(modelFactory);
         registerNEW(modelFactory);
       } catch (ClassNotFoundException e) {
-        String m = String.format("Failed to load ModelFactoryProvider in plugin %s", provider.getPluginDescriptor().getPluginId());
+        String m = String.format("Failed to load %s in the plugin %s",
+                                 provider.getImplementationClass(),
+                                 provider.getPluginDescriptor().getPluginId());
         LogManager.getLogger(ModelFactoryRegister.class).error(m, e);
       }
     }

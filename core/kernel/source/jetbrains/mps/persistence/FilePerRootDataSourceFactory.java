@@ -38,16 +38,12 @@ import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSource
  */
 @Immutable
 public final class FilePerRootDataSourceFactory implements DataSourceFactory {
-  @Internal
   public FilePerRootDataSourceFactory() {
-    // do not remove
   }
 
   @NotNull
   @Override
   public DataSource create(@NotNull SModelName modelName,
-
-                           @ToRemove(version = 0)
                            @NotNull SourceRoot sourceRoot,
 
                            @ToRemove(version = 0)

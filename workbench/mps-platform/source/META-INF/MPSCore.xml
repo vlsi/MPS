@@ -53,6 +53,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.persistence.DataSourceFactoryRuleRegistrar</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.ide.platform.actions.core.RefactoringActionsExtensionComponent</implementation-class>
     </component>
   </application-components>
@@ -81,6 +85,8 @@
                     beanClass="jetbrains.mps.ide.persistence.ModelRootSettingsEP"/>
     <extensionPoint qualifiedName="com.intellij.mps.ModelFactoryProvider"
                     beanClass="jetbrains.mps.persistence.ModelFactoryRegister$ModelFactoryProvider"/>
+    <extensionPoint qualifiedName="com.intellij.mps.DataSourceFactoryRuleProvider"
+                    beanClass="jetbrains.mps.persistence.DataSourceFactoryRuleRegistrar.DataSourceFactoryRuleProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">

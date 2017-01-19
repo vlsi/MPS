@@ -25,7 +25,7 @@ import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKind;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult;
@@ -55,7 +55,7 @@ import static jetbrains.mps.extapi.module.SModuleBase.MODEL_BY_NAME_COMPARATOR;
  * as well as for creating models and register them in itself.
  *
  * It looks for {@link jetbrains.mps.extapi.persistence.datasource.DataSourceFactory} instances
- * through the {@link DataSourceFactoryService} and
+ * through the {@link DataSourceFactoryRuleService} and
  * finds proper {@link ModelFactory} instances via the {@link jetbrains.mps.extapi.persistence.ModelFactoryRegistry}
  * data source kind to model factory association.
  *
@@ -213,7 +213,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
         }
       }
     }
-    DataSourceFactory dataSourceFactory = DataSourceFactoryService.getInstance().getFactory(dataSourceType);
+    DataSourceFactory dataSourceFactory = DataSourceFactoryRuleService.getInstance().getFactory(dataSourceType);
     if (dataSourceFactory == null) {
       throw new DataSourceFactoryNotFoundException(dataSourceType);
     }
@@ -227,7 +227,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
    * The most 'heavy' method (parameter-wise):
    * @param modelName -- controls the name of the new model
    * @param sourceRoot -- the source root to create the new model in
-   * @param dataSourceFactory -- data source factory which method {@link FileMPSDataSourceFactory#create(SModelName, SourceRoot, ModelRoot)}
+   * @param dataSourceFactory -- data source factory which method {@link DataSourceFactory#create(SModelName, SourceRoot, ModelRoot)}
    *                           is going to be used to create a new data source from the given model name and source root
    * @param modelFactory -- model factory which defines the persisting strategy of the new model.
    *
@@ -277,27 +277,6 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
     }
   }
 
-  /**
-   * @return a new model with a given name which is created via the specified factory
-   * @throws ModelCannotBeCreatedException iff the factory #canCreate method returns false or
-   *                                       if the factory #create method threw an IOException.
-   */
-  @Nullable
-  private SModel createModel(@NotNull SModelName modelName,
-                            @Nullable SourceRoot sourceRoot,
-                            @NotNull ModelFactory modelFactory) throws ModelCannotBeCreatedException {
-    if (sourceRoot == null) {
-      sourceRoot = Defaults.sourceRoot(this);
-    }
-    DataSourceType dataSourceType = modelFactory.getPreferredDataSourceTypes().get(0);
-    CompositeResult<DataSource> result = new DataSourceFactoryBridge(this).create(modelName, sourceRoot, dataSourceType);
-    if (!new ModelFactoryFacade(modelFactory).canCreate(result.getDataSource(), result.getOptions())) {
-      throw new FactoryCannotCreateModelException(modelFactory, modelName);
-    }
-    return createModel0(modelFactory, result.getDataSource(), result.getOptions());
-  }
-
-
   @Override
   public void copyTo(@NotNull DefaultModelRoot targetModelRoot) throws CopyNotSupportedException {
     copyContentRootAndFiles(targetModelRoot);
@@ -322,7 +301,7 @@ public /*final*/ class DefaultModelRoot extends FileBasedModelRoot implements Co
 
     @NotNull
     static DataSourceFactory dataSourceFactory() throws DataSourceFactoryNotFoundException {
-      DataSourceFactory factory = DataSourceFactoryService.getInstance().getFactory(DATA_SOURCE_TYPE);
+      DataSourceFactory factory = DataSourceFactoryRuleService.getInstance().getFactory(DATA_SOURCE_TYPE);
       if (factory == null) {
         throw new DataSourceFactoryNotFoundException(DATA_SOURCE_TYPE);
       }

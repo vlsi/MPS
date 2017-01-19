@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+import org.jetbrains.mps.openapi.model.SModelName;
+
 /**
  * If appears among the parameters in the {@link ModelFactory#load(DataSource, ModelLoadingOption...)}
  * then we don't care to build complete model on load, rather read content as-is,

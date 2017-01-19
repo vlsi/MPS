@@ -37,30 +37,32 @@ import java.util.ServiceLoader;
  */
 @Singleton
 @Immutable
-public final class DataSourceFactoryService {
-  private static final Logger LOG = LogManager.getLogger(DataSourceFactoryService.class);
+public final class DataSourceFactoryRuleCoreService {
+  private static final Logger LOG = LogManager.getLogger(DataSourceFactoryRuleCoreService.class);
   private static final ClassLoader CORE_CLASSLOADER = DataSourceFactory.class.getClassLoader();
 
-  private static DataSourceFactoryService ourInstance;
-  private static ServiceLoader<DataSourceFactory> ourServiceLoader;
+  private static DataSourceFactoryRuleCoreService ourInstance;
+  private static ServiceLoader<DataSourceFactoryRule> ourServiceLoader;
 
-  private DataSourceFactoryService() {
-    ourServiceLoader = ServiceLoader.load(DataSourceFactory.class, CORE_CLASSLOADER);
+  private DataSourceFactoryRuleCoreService() {
+    ourServiceLoader = ServiceLoader.load(DataSourceFactoryRule.class, CORE_CLASSLOADER);
   }
 
   @NotNull
-  public static synchronized DataSourceFactoryService getInstance() {
+  public static synchronized DataSourceFactoryRuleCoreService getInstance() {
     if (ourInstance == null) {
-      ourInstance = new DataSourceFactoryService();
+      ourInstance = new DataSourceFactoryRuleCoreService();
     }
     return ourInstance;
   }
 
   @Nullable
   public synchronized DataSourceFactory getFactory(@NotNull DataSourceType dataSourceType) {
-    for (DataSourceFactory factory : ourServiceLoader) {
-      if (factory.getType().equals(dataSourceType)) {
-        return factory;
+    for (DataSourceFactoryRule rule : getFactoryRules()) {
+      //noinspection unchecked
+      DataSourceFactory dataSourceFactory = rule.spawn(dataSourceType);
+      if (dataSourceFactory != null) {
+        return dataSourceFactory;
       }
     }
     return null;
@@ -70,10 +72,10 @@ public final class DataSourceFactoryService {
    * @return factories in the reverse order of registration -- from the newest to the oldest.
    */
   @NotNull
-  public List<DataSourceFactory> getFactories() {
-    List<DataSourceFactory> list = IterableUtil.asList(ourServiceLoader);
+  public synchronized List<DataSourceFactoryRule> getFactoryRules() {
+    List<DataSourceFactoryRule> list = IterableUtil.asList(ourServiceLoader);
     Collections.reverse(list);
-    List<DataSourceFactory> result = Collections.unmodifiableList(list);
+    List<DataSourceFactoryRule> result = Collections.unmodifiableList(list);
     if (result.isEmpty()) {
       LOG.warn("There are no registered data source factories");
     }

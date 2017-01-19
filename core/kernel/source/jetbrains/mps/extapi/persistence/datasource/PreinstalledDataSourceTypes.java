@@ -23,7 +23,7 @@ import org.jetbrains.mps.annotations.Immutable;
  * Bundled data source types which are obviously connected with the possible file extension,
  * for instance, '.mps', '.model' or '.mpsr'
  *
- * Use it to get a {@link DataSourceFactory} from the {@link DataSourceFactoryService}
+ * Use it to get a {@link DataSourceFactory} from the {@link DataSourceFactoryRuleService}
  * in order to construct a new data source.
  *
  * @author apyshkin

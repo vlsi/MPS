@@ -131,7 +131,6 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
   @NotNull
   @Override
   public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-
     String modelName = options.get(OPTION_MODELNAME);
     if (modelName == null) {
       throw new IOException("modelName is not provided");

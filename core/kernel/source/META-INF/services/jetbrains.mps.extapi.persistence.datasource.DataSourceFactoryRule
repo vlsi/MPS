@@ -13,8 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Preinstalled data source factories which are bundled with MPS.
+# Preinstalled data source factory rules which are bundled with MPS.
 #
-jetbrains.mps.persistence.FileBinaryDataSourceFactory
-jetbrains.mps.persistence.FilePerRootDataSourceFactory
-jetbrains.mps.persistence.FileMPSDataSourceFactory
+jetbrains.mps.persistence.FileDataSourceFactoryRule
+jetbrains.mps.persistence.FilePerRootDataSourceFactoryRule
