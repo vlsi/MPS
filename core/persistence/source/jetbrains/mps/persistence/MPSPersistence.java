@@ -26,19 +26,14 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
  */
 public final class MPSPersistence extends ComponentPluginBase {
   @NotNull private final PersistenceFacade myPersistenceFacade;
-  @NotNull private final ModelFactoryRegistry myModelFactoryRegistry;
 
-  public MPSPersistence(@NotNull PersistenceFacade persistenceFacade, @NotNull ModelFactoryRegistry modelFactoryRegistry) {
+  public MPSPersistence(@NotNull PersistenceFacade persistenceFacade) {
     myPersistenceFacade = persistenceFacade;
-    myModelFactoryRegistry = modelFactoryRegistry;
   }
 
   @Override
   public void init() {
     super.init();
-    init(new DefaultModelPersistence());
-    init(new FilePerRootModelFactory());
-    init(new BinaryModelFactory());
     init(new JavaClassesPersistence(myPersistenceFacade));
   }
 }

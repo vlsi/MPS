@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
@@ -58,7 +57,7 @@ import java.util.Map;
 /**
  * evgeny, 11/20/12
  */
-public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwareModelFactory {
+public class BinaryModelFactory implements ModelFactory, IndexAwareModelFactory {
   @NotNull
   private static PersistenceFacade FACADE() {
     return PersistenceFacade.getInstance();
@@ -66,16 +65,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
 
   @Internal
   public BinaryModelFactory() {
-  }
-
-  @Override
-  public void init() {
-    FACADE().setModelFactory(MPSExtentions.MODEL_BINARY, this);
-  }
-
-  @Override
-  public void dispose() {
-    FACADE().setModelFactory(MPSExtentions.MODEL_BINARY, null);
+    // do not delete, it is a java service
   }
 
   @NotNull
@@ -226,7 +216,7 @@ public class BinaryModelFactory implements CoreComponent, ModelFactory, IndexAwa
       return result;
     } catch (ModelReadException ignored) {
       /* ignore */
-    } catch (IOException e) {
+    } catch (IOException ignored) {
       /* ignore */
     }
     return null;

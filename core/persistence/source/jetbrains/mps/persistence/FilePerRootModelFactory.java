@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
@@ -65,7 +64,7 @@ import java.util.Map.Entry;
 /**
  * evgeny, 6/3/13
  */
-public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
+public class FilePerRootModelFactory implements ModelFactory {
   private static final Logger LOG = LogManager.getLogger(FilePerRootModelFactory.class);
 
   @NotNull
@@ -75,14 +74,7 @@ public class FilePerRootModelFactory implements CoreComponent, ModelFactory {
 
   @Internal
   public FilePerRootModelFactory() {
-  }
-
-  @Override
-  public void init() {
-  }
-
-  @Override
-  public void dispose() {
+    // do not delete, it is a java service
   }
 
   @NotNull

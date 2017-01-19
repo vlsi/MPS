@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
@@ -66,7 +65,7 @@ import java.util.Map;
 /**
  * Factory for models stored in .mps files.
  */
-public class DefaultModelPersistence implements CoreComponent, ModelFactory, IndexAwareModelFactory {
+public class DefaultModelPersistence implements ModelFactory, IndexAwareModelFactory {
   private static final Logger LOG = LogManager.getLogger(DefaultModelPersistence.class);
 
   /**
@@ -93,20 +92,9 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory, Ind
     INTERFACE_ONLY
   }
 
-  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
-
   @Internal
   public DefaultModelPersistence() {
-  }
-
-  @Override
-  public void init() {
-    myFacade.setModelFactory(MPSExtentions.MODEL, this);
-  }
-
-  @Override
-  public void dispose() {
-    myFacade.setModelFactory(MPSExtentions.MODEL, null);
+    // do not delete, it is a java service
   }
 
   @NotNull
