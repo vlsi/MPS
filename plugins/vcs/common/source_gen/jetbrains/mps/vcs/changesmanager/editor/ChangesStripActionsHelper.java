@@ -169,7 +169,7 @@ public class ChangesStripActionsHelper {
       });
       Iterable<String> roles = Sequence.fromIterable(children).select(new ISelector<SNode, String>() {
         public String select(SNode c) {
-          return check_ikrecr_a0a0a0a1a02a11(c.getContainmentLink());
+          return check_ikrecr_a0a0a0a1a02a11(SNodeOperations.getContainingLink(c));
         }
       });
       final String commonRole = Sequence.fromIterable(roles).first();

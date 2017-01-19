@@ -59,7 +59,7 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
 
     if (referenceCell != null && CellTraversalUtil.getFirstLeaf(CellTraversalUtil.getContainingBigCell(referenceCell)) == referenceCell && ReferenceConceptUtil.getCharacteristicReference(SNodeOperations.getConceptDeclaration(mySourceNode)) == myLinkDeclaration && SNodeOperations.getParent(mySourceNode) != null && ListSequence.fromList(SNodeOperations.getChildren(mySourceNode)).isEmpty()) {
       SNode parent = SNodeOperations.getParent(mySourceNode);
-      String role = check_n4bs7j_a0b0e0g(mySourceNode.getContainmentLink());
+      String role = check_n4bs7j_a0b0e0g(SNodeOperations.getContainingLink(mySourceNode));
       SNode roleLink = ((SNode) SModelSearchUtil.findLinkDeclaration(SNodeOperations.getConceptDeclaration(parent), role));
       return ModelActions.createChildNodeSubstituteActions(parent, mySourceNode, SLinkOperations.getTarget(roleLink, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")), new DefaultChildNodeSetter(roleLink), mySubstituteInfo.getOperationContext());
     }

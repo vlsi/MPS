@@ -28,7 +28,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       if (link != null && SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
         component.addDependency(link);
         if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child))))) {
-          component.addError(child, "incompatible target concept in role \"" + child.getContainmentLink() + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
+          component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
         }
       }
     }

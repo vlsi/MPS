@@ -147,7 +147,7 @@ public final class BuildProject__BehaviorDescriptor extends BaseBHDescriptor {
     }
 
     if (child != null) {
-      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, check_save77_b0a0c0f(child.getContainmentLink()));
+      return BuildProject__BehaviorDescriptor.getScope_id13YBgBBRT49.invoke(__thisNode__, kind, check_save77_b0a0c0f(SNodeOperations.getContainingLink(child)));
     }
     return new EmptyScope();
   }

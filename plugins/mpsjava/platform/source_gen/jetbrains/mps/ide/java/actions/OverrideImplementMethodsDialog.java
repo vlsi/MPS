@@ -88,8 +88,8 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
         SNode parentA = SNodeOperations.getParent(a);
         SNode parentB = SNodeOperations.getParent(b);
         if (parentA == parentB) {
-          String aRole = check_sivw9t_a0a0c0a0a3a21(a.getContainmentLink());
-          String bRole = check_sivw9t_a0b0c0a0a3a21(b.getContainmentLink());
+          String aRole = check_sivw9t_a0a0c0a0a3a21(SNodeOperations.getContainingLink(a));
+          String bRole = check_sivw9t_a0b0c0a0a3a21(SNodeOperations.getContainingLink(b));
 
           if (neq_sivw9t_a0d0c0a0a0a0d0m(aRole, bRole)) {
             return aRole.compareTo(bRole);

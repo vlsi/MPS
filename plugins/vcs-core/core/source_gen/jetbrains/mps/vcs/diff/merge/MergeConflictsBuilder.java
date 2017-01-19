@@ -113,7 +113,7 @@ public class MergeConflictsBuilder {
             addPossibleConflict(change, conflicting);
           }
         } else {
-          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getNodeId(), check_thl6ft_b0a0a0a0g0b0p(node.getContainmentLink()));
+          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getNodeId(), check_thl6ft_b0a0a0a0g0b0p(SNodeOperations.getContainingLink(node)));
           final int index = SNodeOperations.getIndexInParent(node);
           NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
             public boolean accept(NodeGroupChange ch) {

@@ -71,7 +71,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return (SNodeOperations.getParent(node) != null) && !(node.getContainmentLink().isValid());
+        return (SNodeOperations.getParent(node) != null) && !(SNodeOperations.getContainingLink(node).isValid());
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
