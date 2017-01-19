@@ -1025,8 +1025,8 @@
             <ref role="ehGHo" to="1i04:hP3h7Gq" resolve="ConceptBehavior" />
           </node>
           <node concept="2OqwBi" id="1u_ffTorZye" role="33vP2m">
-            <node concept="1YBJjd" id="1u_ffTorZyf" role="2Oq$k0">
-              <ref role="1YBMHb" node="hP3pWYk" resolve="thisNode" />
+            <node concept="1YBJjd" id="2S4aO2s1chC" role="2Oq$k0">
+              <ref role="1YBMHb" node="1u_ffTorZ7C" resolve="thisConceptExpression" />
             </node>
             <node concept="2Xjw5R" id="1u_ffTorZyg" role="2OqNvi">
               <node concept="1xMEDy" id="1u_ffTorZyh" role="1xVPHs">

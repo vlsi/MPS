@@ -107,9 +107,7 @@
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
       </concept>
-      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
-        <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
-      </concept>
+      <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
@@ -439,9 +437,7 @@
         <node concept="3cpWs8" id="1u_ffTothph" role="3cqZAp">
           <node concept="3cpWsn" id="1u_ffTothpi" role="3cpWs9">
             <property role="TrG5h" value="thisNodes" />
-            <node concept="2I9FWS" id="1u_ffTothpd" role="1tU5fm">
-              <ref role="2I9WkF" to="1i04:1u_ffTorqp2" resolve="ThisConceptExpression" />
-            </node>
+            <node concept="2I9FWS" id="1u_ffTothpd" role="1tU5fm" />
             <node concept="3K4zz7" id="1u_ffTothVH" role="33vP2m">
               <node concept="37vLTw" id="1u_ffTothAb" role="3K4Cdx">
                 <ref role="3cqZAo" node="1u_ffToth$o" resolve="oldStatic" />
@@ -517,9 +513,7 @@
         <node concept="3cpWs8" id="2ytHpS0EtLY" role="3cqZAp">
           <node concept="3cpWsn" id="2ytHpS0EtLZ" role="3cpWs9">
             <property role="TrG5h" value="superNodes" />
-            <node concept="2I9FWS" id="2ytHpS0EtM0" role="1tU5fm">
-              <ref role="2I9WkF" to="1i04:6ADPXMKlUuB" resolve="SuperConceptExpression" />
-            </node>
+            <node concept="2I9FWS" id="2ytHpS0EtM0" role="1tU5fm" />
             <node concept="3K4zz7" id="2ytHpS0EtM1" role="33vP2m">
               <node concept="37vLTw" id="2ytHpS0EtM2" role="3K4Cdx">
                 <ref role="3cqZAo" node="1u_ffToth$o" resolve="oldStatic" />

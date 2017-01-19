@@ -70,6 +70,10 @@
       <concept id="1070534058343" name="jetbrains.mps.baseLanguage.structure.NullLiteral" flags="nn" index="10Nm6u" />
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468198" name="jetbrains.mps.baseLanguage.structure.ClassConcept" flags="ig" index="312cEu" />
       <concept id="1068431474542" name="jetbrains.mps.baseLanguage.structure.VariableDeclaration" flags="ng" index="33uBYm">
         <property id="1176718929932" name="isFinal" index="3TUv4t" />
@@ -2314,8 +2318,15 @@
                               <node concept="2YIFZM" id="6Lvy_K1IOUt" role="mwGJk">
                                 <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
                                 <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
-                                <node concept="1Z$b5t" id="6Lvy_K1IQ5f" role="37wK5m">
-                                  <ref role="1Z$eMM" node="hgAJkf7" resolve="LeftType" />
+                                <node concept="1eOMI4" id="2S4aO2s49CJ" role="37wK5m">
+                                  <node concept="10QFUN" id="2S4aO2s49CK" role="1eOMHV">
+                                    <node concept="1Z$b5t" id="2S4aO2s49CI" role="10QFUP">
+                                      <ref role="1Z$eMM" node="hgAJkf7" resolve="LeftType" />
+                                    </node>
+                                    <node concept="3Tqbb2" id="2S4aO2s49CH" role="10QFUM">
+                                      <ref role="ehGHo" to="tpee:fz3vP1H" resolve="Type" />
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
@@ -4184,6 +4195,11 @@
               </node>
               <node concept="3eNFk2" id="vMpy$Q_e$o" role="3eNLev">
                 <node concept="3clFbS" id="vMpy$Q_e$q" role="3eOfB_">
+                  <node concept="3SKdUt" id="2S4aO2s3O2n" role="3cqZAp">
+                    <node concept="3SKdUq" id="2S4aO2s3O2p" role="3SKWNk">
+                      <property role="3SKdUp" value="todo [MM] always false, introduced in 6b8f810722d9d5733105c471d4b54f83e6462863, asked Fedor to review this" />
+                    </node>
+                  </node>
                   <node concept="3clFbF" id="vMpy$Q_e$X" role="3cqZAp">
                     <node concept="37vLTI" id="vMpy$Q_e$Y" role="3clFbG">
                       <node concept="3TUQnm" id="vMpy$Q_e$Z" role="37vLTx">

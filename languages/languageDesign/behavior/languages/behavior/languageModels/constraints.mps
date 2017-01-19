@@ -928,10 +928,10 @@
     <node concept="nKS2y" id="1LqCkvsbvrE" role="1MLUbF">
       <node concept="3clFbS" id="1LqCkvsbvrF" role="2VODD2">
         <node concept="3clFbF" id="1LqCkvsbvrG" role="3cqZAp">
-          <node concept="2YIFZM" id="1LqCkvsbvrH" role="3clFbG">
+          <node concept="2YIFZM" id="2S4aO2s0X8n" role="3clFbG">
+            <ref role="37wK5l" node="1LqCkvsbvlX" resolve="isInsideOfBehavior" />
             <ref role="1Pybhc" node="1LqCkvsbvlQ" resolve="ConstraintsUtil" />
-            <ref role="37wK5l" node="1LqCkvsbvmp" resolve="isInsideOfBehavior" />
-            <node concept="nLn13" id="1LqCkvsbvrI" role="37wK5m" />
+            <node concept="nLn13" id="2S4aO2s0X8o" role="37wK5m" />
           </node>
         </node>
       </node>
