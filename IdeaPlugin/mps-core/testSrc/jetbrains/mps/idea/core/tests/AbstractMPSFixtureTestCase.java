@@ -115,8 +115,16 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
       // fixme needed at all? another way? maybe flushEDT()
       ModelAccess.instance().flushEventQueue();
     }
-    myFixture.tearDown();
-    super.tearDown();
+
+    myModule = null;
+
+    try {
+      myFixture.tearDown();
+    } finally {
+      myFixture = null;
+
+      super.tearDown();
+    }
   }
 
   protected Module addModuleAndSetupFixture(TestFixtureBuilder<IdeaProjectTestFixture> projectBuilder) throws Exception {

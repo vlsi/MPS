@@ -33,6 +33,7 @@ import java.util.Collections;
 public class RegisterMoveNodePsiParticipant implements ProjectComponent {
   private Project myProject;
   private ExtensionDescriptor myExtensionDescriptor;
+  private UpdatePsiReferencesParticipant_extension myParticipantExtension;
 
   public static class UpdatePsiReferencesParticipant_extension extends Extension.Default<UpdatePsiReferencesMoveParticipant> {
     private Project myProject;
@@ -57,6 +58,7 @@ public class RegisterMoveNodePsiParticipant implements ProjectComponent {
 
   @Override
   public void projectOpened() {
+    myParticipantExtension = new UpdatePsiReferencesParticipant_extension(myProject);
     ExtensionRegistry.getInstance().registerExtensionDescriptor(myExtensionDescriptor = new ExtensionDescriptor() {
       @Override
       public Iterable<? extends ExtensionPoint> getExtensionPoints() {
@@ -65,7 +67,7 @@ public class RegisterMoveNodePsiParticipant implements ProjectComponent {
 
       @Override
       public Iterable<? extends Extension> getExtensions() {
-        return Collections.singletonList(new UpdatePsiReferencesParticipant_extension(myProject));
+        return Collections.singletonList(myParticipantExtension);
       }
     });
   }
@@ -73,6 +75,10 @@ public class RegisterMoveNodePsiParticipant implements ProjectComponent {
   @Override
   public void projectClosed() {
     ExtensionRegistry.getInstance().unregisterExtensionDescriptor(myExtensionDescriptor);
+    myParticipantExtension.myProject = null;
+    myParticipantExtension.myParticipant = null;
+    myExtensionDescriptor = null;
+    myProject = null;
   }
 
   @Override
