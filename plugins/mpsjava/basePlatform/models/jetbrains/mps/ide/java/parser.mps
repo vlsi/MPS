@@ -29444,8 +29444,8 @@
                 <node concept="3cpWs8" id="7l6b$Kx34TY" role="3cqZAp">
                   <node concept="3cpWsn" id="7l6b$Kx34TZ" role="3cpWs9">
                     <property role="TrG5h" value="dataSourceFactory" />
-                    <node concept="3uibUv" id="7l6b$Kx34U0" role="1tU5fm">
-                      <ref role="3uigEE" to="iyvn:~DataSourceFactory" resolve="DataSourceFactory" />
+                    <node concept="3uibUv" id="L71x4GYltq" role="1tU5fm">
+                      <ref role="3uigEE" to="iyvn:~DataSourceFactoryFromName" resolve="DataSourceFactoryFromName" />
                     </node>
                     <node concept="2ShNRf" id="7l6b$Kx352X" role="33vP2m">
                       <node concept="1pGfFk" id="7l6b$Kx3Zri" role="2ShVmc">
@@ -29475,7 +29475,7 @@
                             <ref role="3cqZAo" node="7l6b$Kx34TZ" resolve="dataSourceFactory" />
                           </node>
                           <node concept="liA8E" id="7l6b$Kx49da" role="2OqNvi">
-                            <ref role="37wK5l" to="iyvn:~DataSourceFactory.getType():org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" resolve="getType" />
+                            <ref role="37wK5l" to="iyvn:~DataSourceFactoryFromName.getType():org.jetbrains.mps.openapi.persistence.datasource.DataSourceType" resolve="getType" />
                           </node>
                         </node>
                       </node>
@@ -29505,7 +29505,7 @@
                         <ref role="3cqZAo" node="3dW4p_N7WJR" resolve="modelRoot" />
                       </node>
                       <node concept="liA8E" id="1hNA49pCR9" role="2OqNvi">
-                        <ref role="37wK5l" to="pa15:~DefaultModelRoot.createModel(org.jetbrains.mps.openapi.model.SModelName,jetbrains.mps.extapi.persistence.SourceRoot,jetbrains.mps.extapi.persistence.datasource.DataSourceFactory,org.jetbrains.mps.openapi.persistence.ModelFactory):org.jetbrains.mps.openapi.model.SModel" resolve="createModel" />
+                        <ref role="37wK5l" to="pa15:~DefaultModelRoot.createModel(org.jetbrains.mps.openapi.model.SModelName,jetbrains.mps.extapi.persistence.SourceRoot,jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName,org.jetbrains.mps.openapi.persistence.ModelFactory):org.jetbrains.mps.openapi.model.SModel" resolve="createModel" />
                         <node concept="37vLTw" id="7l6b$Kx4CGE" role="37wK5m">
                           <ref role="3cqZAo" node="7l6b$Kx4oYq" resolve="newModelName" />
                         </node>
@@ -29811,8 +29811,8 @@
       </node>
       <node concept="2tJIrI" id="7l6b$Kx3t7L" role="jymVt" />
       <node concept="3Tm6S6" id="7l6b$Kx37zR" role="1B3o_S" />
-      <node concept="3uibUv" id="7l6b$Kx39pa" role="EKbjA">
-        <ref role="3uigEE" to="iyvn:~DataSourceFactory" resolve="DataSourceFactory" />
+      <node concept="3uibUv" id="L71x4GYlzh" role="EKbjA">
+        <ref role="3uigEE" to="iyvn:~DataSourceFactoryFromName" resolve="DataSourceFactoryFromName" />
       </node>
       <node concept="3clFb_" id="7l6b$Kx3p3X" role="jymVt">
         <property role="1EzhhJ" value="false" />

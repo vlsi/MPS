@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.extapi.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
@@ -70,7 +70,7 @@ public class FileDataSource extends DataSourceBase implements StreamDataSource, 
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    *
    * @deprecated use {@link DataSourceFactoryRuleService#getFactory} AND
-   *             {@link DataSourceFactory#create}
+   *             {@link DataSourceFactoryFromName#create}
    */
   @ToRemove(version = 3.5)
   @Deprecated

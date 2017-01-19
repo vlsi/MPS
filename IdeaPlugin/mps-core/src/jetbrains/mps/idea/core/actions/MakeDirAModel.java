@@ -21,8 +21,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.actionSystem.LangDataKeys;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiDirectory;
 import com.intellij.psi.PsiElement;
@@ -31,16 +29,13 @@ import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.IdeaFile;
-import jetbrains.mps.ide.vfs.IdeaFileSystem;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.persistence.FilePerRootDataSource;
-import jetbrains.mps.persistence.FilePerRootDataSourceFactory;
 import jetbrains.mps.persistence.ModelCannotBeCreatedException;
 import jetbrains.mps.persistence.PreinstalledModelFactoryTypes;
 import jetbrains.mps.project.LanguageImportHelper;
@@ -48,7 +43,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -147,7 +141,7 @@ public class MakeDirAModel extends NewModelActionBase {
           throw new IllegalStateException("Could not find psi directory in the context");
         }
         VirtualFile targetFile = psiDir.getVirtualFile();
-        DataSourceFactory dataSourceFactory = createDataSourceFactory(targetFile);
+        DataSourceFactoryFromName dataSourceFactory = createDataSourceFactory(targetFile);
         ModelFactory modelFactory = ModelFactoryService.getInstance().getFactoryByType(PreinstalledModelFactoryTypes.PER_ROOT_XML);
         model = (EditableSModel) myModelRoot.createModel(newModelName, sourceRoot, dataSourceFactory, modelFactory);
       } catch (ModelCannotBeCreatedException ex) {
@@ -168,8 +162,8 @@ public class MakeDirAModel extends NewModelActionBase {
   }
 
   @NotNull
-  private DataSourceFactory createDataSourceFactory(VirtualFile targetFile) {
-    return new DataSourceFactory() {
+  private DataSourceFactoryFromName createDataSourceFactory(VirtualFile targetFile) {
+    return new DataSourceFactoryFromName() {
       @NotNull
       @Override
       public DataSourceType getType() {

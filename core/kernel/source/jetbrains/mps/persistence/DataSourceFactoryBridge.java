@@ -20,9 +20,9 @@ import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
 import jetbrains.mps.extapi.persistence.SourceRootKinds;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFromURLFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 import static jetbrains.mps.persistence.DataSourceFactoryBridge.CompositeResult.build;
@@ -58,8 +59,8 @@ public final class DataSourceFactoryBridge {
   }
 
   @NotNull
-  private static DataSourceFactory getDataSourceFactory(@NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException {
-    DataSourceFactory factory = DataSourceFactoryRuleService.getInstance().getFactory(dataSourceType);
+  private static DataSourceFactoryFromName getDataSourceFactory(@NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException {
+    DataSourceFactoryFromName factory = DataSourceFactoryRuleService.getInstance().getFactory(dataSourceType);
     if (factory == null) {
       throw new DataSourceFactoryNotFoundException(dataSourceType);
     }
@@ -97,15 +98,15 @@ public final class DataSourceFactoryBridge {
                                      @NotNull DataSourceType dataSourceType) throws DataSourceFactoryNotFoundException,
                                                                                     SourceRootDoesNotExistException,
                                                                                     NoSourceRootsInModelRootException {
-    DataSourceFactory factory = getDataSourceFactory(dataSourceType);
+    DataSourceFactoryFromName factory = getDataSourceFactory(dataSourceType);
     return create(modelName, sourceRoot, factory);
   }
 
   @NotNull
   public CompositeResult<DataSource> create(@NotNull SModelName modelName,
                                             @Nullable SourceRoot sourceRoot,
-                                            @NotNull DataSourceFactory factory) throws SourceRootDoesNotExistException,
-                                                                                       NoSourceRootsInModelRootException {
+                                            @NotNull DataSourceFactoryFromName factory) throws SourceRootDoesNotExistException,
+                                                                                               NoSourceRootsInModelRootException {
     if (sourceRoot == null) {
       sourceRoot = DefaultModelRoot.Defaults.sourceRoot(myModelRoot);
     }
@@ -133,17 +134,20 @@ public final class DataSourceFactoryBridge {
   @Nullable
   CompositeResult<DataSource> create(@NotNull IFile file) {
     assert !file.isDirectory();
-    DataSourceFromURLFactory factory = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY; // fixme merge factory interfaces into a single
-    DataSource dataSource;
+    DataSource dataSource = null;
     try {
-      dataSource = factory.create(file.getUrl(), myModelRoot);
+      URL url = file.getUrl();
+      DataSourceFactoryFromURL factory = DataSourceFactoryRuleService.getInstance().getFactory(url);
+      if (factory.supports(url)) {
+        dataSource = factory.create(url, myModelRoot);
+      }
     } catch (URLNotSupportedException | MalformedURLException e) {
       LOG.error("Could not get URL from IFile : '" + file + "'", e);
       return null;
     }
     ModelCreationOptions parameters = new ParametersCalculator(myModelRoot).calculate();
-    if (!(dataSource instanceof FileSystemBasedDataSource)) {
-      LOG.error("Data source is not file-based!", new Throwable());
+    if (dataSource == null) {
+      LOG.error("Data source could not be constructed from the file: " + file, new Throwable());
       return null;
     }
     return build(dataSource, parameters);

@@ -98,7 +98,7 @@ final class ModelSourceRootWalker {
     @Override
     public void onFileVisited(@NotNull ModelRootFileTreeLocus state) {
       IFile file = state.getFile();
-      assert !file.isDirectory();
+      assert !file.isDirectory() : "a regular file is promised";
       CompositeResult<DataSource> result = myDataSourceFactoryBridge.create(file);
       if (result != null) {
         DataSource dataSource = result.getDataSource();

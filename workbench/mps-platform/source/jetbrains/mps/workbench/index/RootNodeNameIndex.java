@@ -27,6 +27,9 @@ import com.intellij.util.indexing.SingleEntryFileBasedIndexExtension;
 import com.intellij.util.indexing.SingleEntryIndexer;
 import com.intellij.util.io.DataExternalizer;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
@@ -80,7 +83,11 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
           LOG.error("URL cannot be created from " + inputData.getFile());
           return null;
         }
-        DataSource dataSource = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.create(url, null);
+        DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(url);
+        if (dataSourceFactory == null) {
+          return null;
+        }
+        DataSource dataSource = dataSourceFactory.create(url, null);
         DataSourceType type = dataSource.getType();
         if (type == null) {
           return null;
@@ -100,6 +107,16 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<ModelR
       }
     }
     return model;
+  }
+
+  @Nullable
+  private static DataSourceFactoryFromURL getDataSourceFactory(URL url) {
+    DataSourceFactoryRuleService service = DataSourceFactoryRuleService.getInstance();
+    DataSourceFactoryFromURL dataSourceFactory = service.getFactory(url);
+    if (dataSourceFactory == null) {
+      LOG.error("Data Source Factory is not found for " + url);
+    }
+    return dataSourceFactory;
   }
 
   @Nullable

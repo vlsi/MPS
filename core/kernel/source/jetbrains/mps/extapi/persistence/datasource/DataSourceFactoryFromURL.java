@@ -27,22 +27,24 @@ import java.net.URL;
 /**
  * Logic defining how to create data source from the given URL.
  * Supposed to parse URL and give out a corresponding <code>DataSource</code>
+ * It is used when we read the model from some storage (disk, net, anything).
  *
  * @see DataSource
- * @see DataSourceFactory
+ * @see DataSourceFactoryFromName
+ *
  * @author apyshkin
  * @since 29/12/16
  */
-public interface DataSourceFromURLFactory {
+public interface DataSourceFactoryFromURL {
   /**
    * Creates a new <code>DataSource</code>
    *
    * @param url -- the abstract absolute location
    * @param modelRoot -- @deprecated DataSource is a simple location entity
    *                  must not know anything about outer world
-   *                  The listening mechanism (that is the reason we are passing ModelRoot parameter here) ought
-   *                  to be done on the ModelRoot side.
-   *                  Probably {@link FileSystemBasedDataSource#getAffectedFiles()} is the way to go there.
+   *                  The file system listening mechanism in implementing data sources
+   *                  (that is the reason we are passing ModelRoot parameter here) ought to be done on the ModelRoot side.
+   *                  [Probably {@link FileSystemBasedDataSource#getAffectedFiles()} is the way to go there]
    *
    * @return new <code>DataSource</code> which represents the <code>file</code> on the disk
    * @throws URLNotSupportedException iff {@link #supports} returns false

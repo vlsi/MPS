@@ -62,7 +62,7 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
 import org.jetbrains.mps.openapi.model.SModelName;
@@ -1055,7 +1055,7 @@ public class JavaToMpsConverter {
         return null;
       }
       try {
-        DataSourceFactory dataSourceFactory = new JavaToMpsConverter.MyDataSourceFactory(pkgDir);
+        DataSourceFactoryFromName dataSourceFactory = new JavaToMpsConverter.MyDataSourceFactory(pkgDir);
         ModelFactory modelFactory = ModelFactoryService.getInstance().getDefaultModelFactory(dataSourceFactory.getType());
         SModelName newModelName = new SModelName(pkgFqName);
         modelDescr = modelRoot.createModel(newModelName, sourceRoot, dataSourceFactory, modelFactory);
@@ -1086,7 +1086,7 @@ public class JavaToMpsConverter {
     return modelDescr;
   }
 
-  private static final class MyDataSourceFactory implements DataSourceFactory {
+  private static final class MyDataSourceFactory implements DataSourceFactoryFromName {
     private final IFile myPkgDir;
 
     public MyDataSourceFactory(IFile pkgDir) {

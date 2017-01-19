@@ -24,6 +24,7 @@ import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.annotations.Singleton;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
+import java.net.URL;
 import java.util.Collections;
 import java.util.List;
 import java.util.ServiceLoader;
@@ -31,7 +32,7 @@ import java.util.ServiceLoader;
 /**
  * Service provider to define your own data source factories
  *
- * @see DataSourceFactory
+ * @see DataSourceFactoryFromName
  * @author apyshkin
  * @since 12/22/16 [3.5]
  */
@@ -39,7 +40,7 @@ import java.util.ServiceLoader;
 @Immutable
 public final class DataSourceFactoryRuleCoreService {
   private static final Logger LOG = LogManager.getLogger(DataSourceFactoryRuleCoreService.class);
-  private static final ClassLoader CORE_CLASSLOADER = DataSourceFactory.class.getClassLoader();
+  private static final ClassLoader CORE_CLASSLOADER = DataSourceFactoryFromName.class.getClassLoader();
 
   private static DataSourceFactoryRuleCoreService ourInstance;
   private static ServiceLoader<DataSourceFactoryRule> ourServiceLoader;
@@ -57,10 +58,22 @@ public final class DataSourceFactoryRuleCoreService {
   }
 
   @Nullable
-  public synchronized DataSourceFactory getFactory(@NotNull DataSourceType dataSourceType) {
+  public DataSourceFactoryFromName getFactory(@NotNull DataSourceType dataSourceType) {
     for (DataSourceFactoryRule rule : getFactoryRules()) {
       //noinspection unchecked
-      DataSourceFactory dataSourceFactory = rule.spawn(dataSourceType);
+      DataSourceFactoryFromName dataSourceFactory = rule.spawn(dataSourceType);
+      if (dataSourceFactory != null) {
+        return dataSourceFactory;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public DataSourceFactoryFromURL getFactory(@NotNull URL url) {
+    for (DataSourceFactoryRule rule : getFactoryRules()) {
+      //noinspection unchecked
+      DataSourceFactoryFromURL dataSourceFactory = rule.spawn(url);
       if (dataSourceFactory != null) {
         return dataSourceFactory;
       }
@@ -72,7 +85,7 @@ public final class DataSourceFactoryRuleCoreService {
    * @return factories in the reverse order of registration -- from the newest to the oldest.
    */
   @NotNull
-  public synchronized List<DataSourceFactoryRule> getFactoryRules() {
+  public List<DataSourceFactoryRule> getFactoryRules() {
     List<DataSourceFactoryRule> list = IterableUtil.asList(ourServiceLoader);
     Collections.reverse(list);
     List<DataSourceFactoryRule> result = Collections.unmodifiableList(list);

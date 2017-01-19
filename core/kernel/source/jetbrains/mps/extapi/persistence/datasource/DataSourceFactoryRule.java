@@ -19,8 +19,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
+import java.net.URL;
+
 /**
- * Service-provider interface for breeding a new {@link DataSourceFactory} from the given data source type.
+ * Service-provider interface for breeding a new {@link DataSourceFactoryFromName} from the given data source type.
  * Note that only core MPS developers are able to register it as a service.
  * Other clients are welcome to use the platform-level extension point which is located at
  * the <code>jetbrains.mps.persistence.DataSourceFactoryRuleRegistrar</code>
@@ -28,18 +30,19 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
  * registered in the META-INF/services location.
  *
  * We provide a function here rather than register <code>DataSourceFactory</code>
- * themselves since we need to expose the logic of constructing factory from a specified data source type.
+ * themselves since we need to expose the logic of constructing factory from a specified data source type (or url)
  * For example: if we view a data source as a location in a file system
  * and we need to differentiate the locations by file names or file name extensions or
  * some specific folders in the path we are able to implement a <code>FileDataSource</code> which
  * is attributed to a file location and a single <code>FileExtensionDataSourceType</code> which is defined
  * exclusively by the file extension string.
  *
+ * One method is used when creating a new data source and the second -- when reading models.
+ *
  * @see DataSourceFactoryRuleService
  * @author apyshkin
  * @since 3.5
  */
-@FunctionalInterface
 public interface DataSourceFactoryRule {
 
   /**
@@ -49,5 +52,16 @@ public interface DataSourceFactoryRule {
    * @return a new data source factory based on the data source type information
    *         null if the provided data source type does not suit the rule preconditions.
    */
-  @Nullable DataSourceFactory spawn(@NotNull DataSourceType dataSourceType);
+  @Nullable
+  DataSourceFactoryFromName spawn(@NotNull DataSourceType dataSourceType);
+
+  /**
+   * Constructs a factory from a specified URL.
+   * Might return null which means that the passed argument does not satisfy
+   * the rule.
+   * @return a new data source factory based on the data source type information
+   *         null if the provided data source type does not suit the rule preconditions.
+   */
+  @Nullable
+  DataSourceFactoryFromURL spawn(@NotNull URL url);
 }

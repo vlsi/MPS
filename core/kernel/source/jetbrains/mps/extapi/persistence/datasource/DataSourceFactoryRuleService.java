@@ -24,6 +24,7 @@ import org.jetbrains.mps.annotations.Mutable;
 import org.jetbrains.mps.annotations.Singleton;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Deque;
@@ -33,7 +34,7 @@ import java.util.List;
 /**
  * Service provider to define your own data source factories
  *
- * @see DataSourceFactory
+ * @see DataSourceFactoryFromName
  * @author apyshkin
  * @since 12/22/16 [3.5]
  */
@@ -69,15 +70,26 @@ public final class DataSourceFactoryRuleService {
   }
 
   @Nullable
-  public synchronized DataSourceFactory getFactory(@NotNull DataSourceType dataSourceType) {
+  public synchronized DataSourceFactoryFromName getFactory(@NotNull DataSourceType dataSourceType) {
     for (DataSourceFactoryRule rule : myCustomFactoryRules) {
       //noinspection unchecked
-      DataSourceFactory result = rule.spawn(dataSourceType);
+      DataSourceFactoryFromName result = rule.spawn(dataSourceType);
       if (result != null) {
         return result;
       }
     }
     return myCoreService.getFactory(dataSourceType);
+  }
+
+  public synchronized DataSourceFactoryFromURL getFactory(@NotNull URL url) {
+    for (DataSourceFactoryRule rule : myCustomFactoryRules) {
+      //noinspection unchecked
+      DataSourceFactoryFromURL result = rule.spawn(url);
+      if (result != null) {
+        return result;
+      }
+    }
+    return myCoreService.getFactory(url);
   }
 
   /**

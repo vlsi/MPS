@@ -32,13 +32,16 @@ import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
  * structure of the model name (for example if we are java-minded we might store a model with a name
  * 'my.favourite.package.modelName' as a folder cascade: 'my/favourite/package/modelName.mps').
  *
+ * It is used when we create a new model from anywhere (IDE, tests, etc.).
+ *
+ * @see DataSourceFactoryFromURL
  * @author apyshkin
  * @since 3.5
  */
-public interface DataSourceFactory {
+public interface DataSourceFactoryFromName {
 
   /**
-   * @return a special key which identifies this factory in the {@link DataSourceFactoryRuleService}
+   * @return the type of the created data sources
    */
   @NotNull DataSourceType getType();
 

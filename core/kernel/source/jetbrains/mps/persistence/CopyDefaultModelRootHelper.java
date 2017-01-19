@@ -39,7 +39,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.List;
 
-import static jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY;
+import static jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories.FILE_OR_FOLDER;
 
 /**
  * Helps {@link DefaultModelRoot#copyTo(DefaultModelRoot)}
@@ -120,7 +120,7 @@ final class CopyDefaultModelRootHelper {
                                                                              URISyntaxException,
                                                                              URLNotSupportedException,
                                                                              ModelCannotBeCreatedException {
-    DataSource targetDataSource = FILE_FROM_URL_FACTORY.create(targetModelFile.getUrl(), myTargetModelRoot);
+    DataSource targetDataSource = FILE_OR_FOLDER.create(targetModelFile.getUrl(), myTargetModelRoot);
     ParametersCalculator prmCalculator = new ParametersCalculator(myTargetModelRoot);
     SModelName newModelName = new SModelName(convertNameConsideringModule(modelDataToCopy.getName().getValue(),
                                                                           mySourceModule,

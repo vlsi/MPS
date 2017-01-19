@@ -17,21 +17,16 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
-
-import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PLAIN_XML;
 
 /**
  * Data source factory base for factories based
@@ -41,7 +36,7 @@ import static jetbrains.mps.persistence.PreinstalledModelFactoryTypes.PLAIN_XML;
  * @since 27/12/16
  */
 @Immutable
-public class RegularFileDataSourceFactory implements DataSourceFactory {
+public class RegularFileDataSourceFactory implements DataSourceFactoryFromName {
   @NotNull private final FileExtensionDataSourceType myDataSourceType;
 
   RegularFileDataSourceFactory(@NotNull FileExtensionDataSourceType dataSourceType) {

@@ -15,14 +15,16 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
-import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+
+import java.net.URL;
 
 /**
  * A default rule for file-per-root kind data sources.
@@ -37,10 +39,16 @@ public class FilePerRootDataSourceFactoryRule implements DataSourceFactoryRule {
 
   @Nullable
   @Override
-  public DataSourceFactory spawn(@NotNull DataSourceType dataSourceType) {
+  public DataSourceFactoryFromName spawn(@NotNull DataSourceType dataSourceType) {
     if (dataSourceType == PreinstalledDataSourceTypes.MODEL) {
       return new FilePerRootDataSourceFactory();
     }
     return null;
+  }
+
+  @Nullable
+  @Override
+  public DataSourceFactoryFromURL spawn(@NotNull URL url) {
+    return PreinstalledURLDataSourceFactories.FILE_OR_FOLDER;
   }
 }

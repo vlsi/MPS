@@ -16,9 +16,9 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FolderDataSource;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFromURLFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -45,7 +45,7 @@ public final class FilePerRootDataSource extends FolderDataSource {
    * @param modelRoot (optional) containing model root, which should be notified before the source during the update
    *
    * @deprecated use {@link DataSourceFactoryRuleService#getFactory} AND
-   *             {@link DataSourceFactory#create}
+   *             {@link DataSourceFactoryFromName#create}
    */
   @ToRemove(version = 3.5) // will become package private
   @Deprecated
@@ -72,7 +72,7 @@ public final class FilePerRootDataSource extends FolderDataSource {
   }
 
   /**
-   * fixme exposes my internal notion -- better use {@link DataSourceFromURLFactory#create(URI, ModelRoot)}
+   * fixme exposes my internal notion -- better use {@link DataSourceFactoryFromURL#create(URI, ModelRoot)}
    */
   @Internal
   public static boolean isPerRootPersistenceFile(@NotNull IFile file) {

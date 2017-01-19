@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.persistence;
 
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
 import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRule;
 import jetbrains.mps.extapi.persistence.datasource.FileExtensionDataSourceType;
+import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+
+import java.net.URL;
 
 /**
  * A bundled MPS rule for the data source kinds which are based on the file extensions.
@@ -36,10 +40,16 @@ public class FileDataSourceFactoryRule implements DataSourceFactoryRule {
 
   @Nullable
   @Override
-  public DataSourceFactory spawn(@NotNull DataSourceType dataSourceType) {
+  public DataSourceFactoryFromName spawn(@NotNull DataSourceType dataSourceType) {
     if (dataSourceType instanceof FileExtensionDataSourceType) {
       return new RegularFileDataSourceFactory((FileExtensionDataSourceType) dataSourceType);
     }
     return null;
+  }
+
+  @Nullable
+  @Override
+  public DataSourceFactoryFromURL spawn(@NotNull URL url) {
+    return PreinstalledURLDataSourceFactories.FILE_OR_FOLDER;
   }
 }

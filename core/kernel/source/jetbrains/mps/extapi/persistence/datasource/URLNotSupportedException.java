@@ -19,13 +19,13 @@ import java.net.URL;
 import java.text.MessageFormat;
 
 /**
- * Thrown if the {@link DataSourceFromURLFactory} is not able
+ * Thrown if the {@link DataSourceFactoryFromURL} is not able
  * to use this <code>URL</code> to construct a new data source.
  *
  * Created by apyshkin on 12/27/16.
  */
 public final class URLNotSupportedException extends Exception {
-  public URLNotSupportedException(DataSourceFromURLFactory factory, URL problemUrl) {
+  public URLNotSupportedException(DataSourceFactoryFromURL factory, URL problemUrl) {
     super(MessageFormat.format("Factory '{0}' is not able to construct data source given the '{1}'", factory, problemUrl));
   }
 }

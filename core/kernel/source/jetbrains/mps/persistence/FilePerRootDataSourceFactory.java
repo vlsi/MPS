@@ -18,14 +18,13 @@ package jetbrains.mps.persistence;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
 import jetbrains.mps.extapi.persistence.SourceRoot;
-import jetbrains.mps.extapi.persistence.datasource.DataSourceFactory;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromName;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
-import org.jetbrains.mps.annotations.Internal;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -37,7 +36,7 @@ import static jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSource
  * @since 27/12/16
  */
 @Immutable
-public final class FilePerRootDataSourceFactory implements DataSourceFactory {
+public final class FilePerRootDataSourceFactory implements DataSourceFactoryFromName {
   public FilePerRootDataSourceFactory() {
   }
 
@@ -55,7 +54,7 @@ public final class FilePerRootDataSourceFactory implements DataSourceFactory {
 
   @NotNull
   private DataSource createFromFile(@NotNull IFile file, @Nullable ModelRoot modelRoot) {
-    return PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.createFromFile(file, modelRoot);
+    return PreinstalledURLDataSourceFactories.FILE_OR_FOLDER.createFromFile(file, modelRoot);
   }
 
   @NotNull

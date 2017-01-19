@@ -16,6 +16,8 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.ModelFactoryService;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryFromURL;
+import jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleCoreService;
 import jetbrains.mps.extapi.persistence.datasource.PreinstalledURLDataSourceFactories;
 import jetbrains.mps.extapi.persistence.datasource.URLNotSupportedException;
 import jetbrains.mps.project.MPSExtentions;
@@ -44,6 +46,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.net.URL;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -99,7 +102,12 @@ public final class PersistenceUtil {
 
   public static SModel loadModel(@NotNull IFile file) {
     try {
-      DataSource dataSource = PreinstalledURLDataSourceFactories.FILE_FROM_URL_FACTORY.create(file.getUrl(), null);
+      URL url = file.getUrl();
+      DataSourceFactoryFromURL dataSourceFactory = getDataSourceFactory(url);
+      if (dataSourceFactory == null) {
+        return null;
+      }
+      DataSource dataSource = dataSourceFactory.create(url, null);
       if (dataSource.getType() == null) {
         return null;
       }
@@ -115,6 +123,17 @@ public final class PersistenceUtil {
       LOG.error("", e);
       return null;
     }
+  }
+
+  @Nullable
+  private static DataSourceFactoryFromURL getDataSourceFactory(@NotNull URL url) {
+    DataSourceFactoryRuleCoreService service = DataSourceFactoryRuleCoreService.getInstance();
+    DataSourceFactoryFromURL dataSourceFactory = service.getFactory(url);
+    if (dataSourceFactory == null) {
+      LOG.error("Data Source Factory is not found for " + url);
+      return null;
+    }
+    return dataSourceFactory;
   }
 
   public static String saveModel(final SModel model, String extension) {

@@ -26,6 +26,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 import java.net.URL;
 
@@ -36,8 +37,8 @@ import java.net.URL;
  * @since 29/12/16
  */
 @Immutable
-public enum PreinstalledURLDataSourceFactories implements DataSourceFromURLFactory {
-  FILE_FROM_URL_FACTORY;
+public enum PreinstalledURLDataSourceFactories implements DataSourceFactoryFromURL {
+  FILE_OR_FOLDER;
 
   @NotNull
   @Override

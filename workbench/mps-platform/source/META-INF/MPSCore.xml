@@ -86,7 +86,7 @@
     <extensionPoint qualifiedName="com.intellij.mps.ModelFactoryProvider"
                     beanClass="jetbrains.mps.persistence.ModelFactoryRegister$ModelFactoryProvider"/>
     <extensionPoint qualifiedName="com.intellij.mps.DataSourceFactoryRuleProvider"
-                    beanClass="jetbrains.mps.persistence.DataSourceFactoryRuleRegistrar.DataSourceFactoryRuleProvider"/>
+                    beanClass="jetbrains.mps.persistence.DataSourceFactoryRuleProvider"/>
   </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
