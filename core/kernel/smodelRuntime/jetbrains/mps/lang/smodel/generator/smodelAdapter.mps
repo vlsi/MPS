@@ -11448,6 +11448,44 @@
       <node concept="3Tm1VV" id="5IkW5anFeAR" role="1B3o_S" />
       <node concept="3Tqbb2" id="3WQ1sVBtaAi" role="3clF45" />
     </node>
+    <node concept="2YIFZL" id="7MLygkug6GJ" role="jymVt">
+      <property role="TrG5h" value="getContainingLink" />
+      <node concept="37vLTG" id="7MLygkug6GK" role="3clF46">
+        <property role="TrG5h" value="childNode" />
+        <node concept="3Tqbb2" id="7MLygkug6GL" role="1tU5fm" />
+      </node>
+      <node concept="3clFbS" id="7MLygkug6GM" role="3clF47">
+        <node concept="3clFbJ" id="7MLygkug6GN" role="3cqZAp">
+          <node concept="3clFbC" id="7MLygkug6GO" role="3clFbw">
+            <node concept="37vLTw" id="7MLygkug6GP" role="3uHU7B">
+              <ref role="3cqZAo" node="7MLygkug6GK" resolve="childNode" />
+            </node>
+            <node concept="10Nm6u" id="7MLygkug6GQ" role="3uHU7w" />
+          </node>
+          <node concept="3clFbS" id="7MLygkug6GR" role="3clFbx">
+            <node concept="3cpWs6" id="7MLygkug6GS" role="3cqZAp">
+              <node concept="10Nm6u" id="7MLygkug6GT" role="3cqZAk" />
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="7MLygkug8$s" role="3cqZAp">
+          <node concept="2OqwBi" id="7MLygkug6GX" role="3cqZAk">
+            <node concept="2JrnkZ" id="7MLygkug6GY" role="2Oq$k0">
+              <node concept="37vLTw" id="7MLygkug6GZ" role="2JrQYb">
+                <ref role="3cqZAo" node="7MLygkug6GK" resolve="childNode" />
+              </node>
+            </node>
+            <node concept="liA8E" id="7MLygkug6H0" role="2OqNvi">
+              <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="7MLygkug6Hc" role="1B3o_S" />
+      <node concept="3uibUv" id="7MLygkug8nu" role="3clF45">
+        <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+      </node>
+    </node>
     <node concept="2YIFZL" id="5IkW5anFeBi" role="jymVt">
       <property role="TrG5h" value="getContainingLinkRole" />
       <node concept="3clFbS" id="5IkW5anFeBn" role="3clF47">

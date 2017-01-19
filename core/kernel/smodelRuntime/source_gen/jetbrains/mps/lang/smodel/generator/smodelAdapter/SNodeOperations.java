@@ -652,6 +652,12 @@ public class SNodeOperations {
     }
     return containmentLink.getDeclarationNode();
   }
+  public static SContainmentLink getContainingLink(SNode childNode) {
+    if (childNode == null) {
+      return null;
+    }
+    return childNode.getContainmentLink();
+  }
   public static String getContainingLinkRole(SNode childNode) {
     if (childNode == null) {
       return null;
