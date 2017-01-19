@@ -168,10 +168,6 @@ public final class FileBasedModelRootEntry implements ModelRootEntry<FileBasedMo
 
   private JComponent createKindFileComponent(@NotNull SourceRoot sourceRoot, @NotNull Color foreground) {
     String pathPresentation = sourceRoot.getPath();
-    IFile contentDirectory = myFileBasedModelRoot.getContentDirectory();
-    if (contentDirectory != null) {
-      pathPresentation = pathPresentation.replace(contentDirectory.getPath(), "").replaceFirst(Matcher.quoteReplacement(Path.SYSTEM_SEPARATOR), "");
-    }
     if (pathPresentation.equals("")) {
       pathPresentation = ".";
     }
