@@ -449,14 +449,13 @@
             </node>
             <node concept="3clFbS" id="5gLR1OH$42F" role="2LFqv$">
               <node concept="3clFbJ" id="5gLR1OH$bK5" role="3cqZAp">
-                <node concept="3clFbC" id="5gLR1OH$bKh" role="3clFbw">
-                  <node concept="10Nm6u" id="5gLR1OH$bKk" role="3uHU7w" />
-                  <node concept="2OqwBi" id="HL_aTAgcQm" role="3uHU7B">
-                    <node concept="2GrUjf" id="HL_aTAgcQn" role="2Oq$k0">
+                <node concept="3fqX7Q" id="2S4aO2s5_jX" role="3clFbw">
+                  <node concept="2OqwBi" id="2S4aO2s5_jZ" role="3fr31v">
+                    <node concept="2GrUjf" id="2S4aO2s5_k0" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="5gLR1OH$42D" resolve="prop" />
                     </node>
-                    <node concept="liA8E" id="HL_aTAgcQo" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SProperty.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                    <node concept="liA8E" id="2S4aO2s5_k1" role="2OqNvi">
+                      <ref role="37wK5l" to="c17a:~SConceptFeature.isValid():boolean" resolve="isValid" />
                     </node>
                   </node>
                 </node>
@@ -497,14 +496,15 @@
             </node>
             <node concept="3clFbS" id="5gLR1OHzVbS" role="2LFqv$">
               <node concept="3clFbJ" id="5gLR1OHzVbZ" role="3cqZAp">
-                <node concept="3clFbC" id="5gLR1OHzVch" role="3clFbw">
-                  <node concept="10Nm6u" id="5gLR1OHzVck" role="3uHU7w" />
-                  <node concept="2OqwBi" id="HL_aTAgbPK" role="3uHU7B">
-                    <node concept="2GrUjf" id="HL_aTAgbJg" role="2Oq$k0">
-                      <ref role="2Gs0qQ" node="5gLR1OHzVbQ" resolve="prop" />
-                    </node>
-                    <node concept="liA8E" id="HL_aTAgc_W" role="2OqNvi">
-                      <ref role="37wK5l" to="c17a:~SProperty.getDeclarationNode():org.jetbrains.mps.openapi.model.SNode" resolve="getDeclarationNode" />
+                <node concept="3fqX7Q" id="2S4aO2s5_FU" role="3clFbw">
+                  <node concept="1eOMI4" id="2S4aO2s5_G0" role="3fr31v">
+                    <node concept="2OqwBi" id="2S4aO2s5AXF" role="1eOMHV">
+                      <node concept="2GrUjf" id="2S4aO2s5A_U" role="2Oq$k0">
+                        <ref role="2Gs0qQ" node="5gLR1OHzVbQ" resolve="prop" />
+                      </node>
+                      <node concept="liA8E" id="2S4aO2s5BrH" role="2OqNvi">
+                        <ref role="37wK5l" to="c17a:~SConceptFeature.isValid():boolean" resolve="isValid" />
+                      </node>
                     </node>
                   </node>
                 </node>
