@@ -6,33 +6,35 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.extapi.model.SModelPersistence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
+import org.jetbrains.mps.openapi.persistence.datasource.FileExtensionDataSourceType;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.persistence.UnsupportedDataSourceException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import java.util.Map;
 import java.io.IOException;
-import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.extapi.persistence.FileDataSource;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.extapi.model.CustomPersistenceSModel;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.ModelLoadingOption;
 import org.jetbrains.mps.openapi.persistence.ModelCreationException;
 import java.util.List;
-import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 import java.util.Collections;
-import jetbrains.mps.extapi.persistence.datasource.PreinstalledDataSourceTypes;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.persistence.ModelFactoryType;
 import org.jetbrains.mps.openapi.persistence.ModelLoadException;
-import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
-import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.persistence.xml.XmlConverter;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
@@ -55,8 +57,11 @@ import java.io.BufferedOutputStream;
  * Read http://confluence.jetbrains.com/display/MPSD32/Custom+Persistence+Cookbook for details on custom persistence.
  */
 public class XmlModelPersistence implements ModelFactory, SModelPersistence {
-  private static final String XML_EXTENSION = "xml";
   private static final Logger LOG = LogManager.getLogger(XmlModelPersistence.class);
+  private static final String XML_EXTENSION = "xml";
+  private static final DataSourceType XML_TYPE = FileExtensionDataSourceType.of(XML_EXTENSION);
+
+  private final PersistenceFacade myFacade = PersistenceFacade.getInstance();
 
   public XmlModelPersistence() {
   }
@@ -72,30 +77,22 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!((dataSource instanceof StreamDataSource))) {
+    if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
     String moduleRef = options.get(ModelFactory.OPTION_MODULEREF);
-    String relPath = options.get(ModelFactory.OPTION_RELPATH);
-    String modelName = options.get(ModelFactory.OPTION_MODELNAME);
     boolean contentOnly = "true".equals(options.get(ModelFactory.OPTION_CONTENT_ONLY));
     SModelReference ref;
-    if (relPath == null || moduleRef == null || modelName == null) {
+    if (moduleRef == null) {
       if (!(contentOnly)) {
-        if (dataSource instanceof FileDataSource) {
-          LOG.error("cannot load " + dataSource.getLocation() + ": relPath = " + relPath, new Throwable());
-        }
         throw new IOException("cannot load xml model from " + dataSource.getLocation());
       }
-      ref = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), "temp");
+      ref = myFacade.createModelReference(null, SModelId.generate(), "temp");
     } else {
-      org.jetbrains.mps.openapi.model.SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
-      SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(moduleRef);
-      if (mref == null) {
-        // TODO fix 
-        return null;
-      }
-      ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
+      org.jetbrains.mps.openapi.model.SModelId id = myFacade.createModelId("path:" + getLocation(dataSource).getPath());
+      SModuleReference mRef = myFacade.createModuleReference(moduleRef);
+      String filenameNoExt = FileUtil.getNameWithoutExtension(getLocation(dataSource).getName());
+      ref = myFacade.createModelReference(mRef, id, NameUtil.namespaceFromPath(filenameNoExt));
     }
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
@@ -109,7 +106,13 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   @NotNull
   @Override
   public List<DataSourceType> getPreferredDataSourceTypes() {
-    return Collections.singletonList(((DataSourceType) PreinstalledDataSourceTypes.MPS));
+    return Collections.singletonList(XML_TYPE);
+  }
+
+  private IFile getLocation(DataSource dataSource) {
+    FileSystemBasedDataSource source = (FileSystemBasedDataSource) dataSource;
+    IFile dataSourceFile = new ArrayList<IFile>(source.getAffectedFiles()).get(0);
+    return dataSourceFile;
   }
 
   @NotNull
@@ -125,7 +128,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     @NotNull
     @Override
     public String getFormatTitle() {
-      return "XML file sample persistence";
+      return "XML Language Persistence";
     }
   }
 
@@ -137,7 +140,7 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
 
   @Override
   public boolean supports(@NotNull DataSource source) {
-    return true;
+    return source instanceof FileSystemBasedDataSource && source instanceof StreamDataSource;
   }
 
   /**
@@ -148,71 +151,60 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
    */
   @NotNull
   @Override
-  public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
-    if (!((dataSource instanceof StreamDataSource))) {
+  public SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
+    if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
     String moduleRef = options.get(ModelFactory.OPTION_MODULEREF);
-    String relPath = options.get(ModelFactory.OPTION_RELPATH);
     String modelName = options.get(ModelFactory.OPTION_MODELNAME);
-    if (relPath == null || moduleRef == null || modelName == null || !(relPath.equals(NameUtil.pathFromNamespace(modelName) + "." + XML_EXTENSION))) {
+    if (moduleRef == null || modelName == null) {
       throw new IOException("cannot create xml model from " + dataSource.getLocation());
     }
-    org.jetbrains.mps.openapi.model.SModelId id = PersistenceFacade.getInstance().createModelId("path:" + relPath);
-    SModuleReference mref = PersistenceFacade.getInstance().createModuleReference(moduleRef);
+    org.jetbrains.mps.openapi.model.SModelId id = myFacade.createModelId("path:" + getLocation(dataSource).getPath());
+    SModuleReference mref = myFacade.createModuleReference(moduleRef);
     if (mref == null) {
       throw new IOException("cannot create xml model for " + moduleRef);
     }
-    SModelReference ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
+    SModelReference ref = myFacade.createModelReference(mref, id, modelName);
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
-
 
   /**
    * Indicates, whether the supplied data source can be used to hold models created by this factory.
    */
   @Override
-  public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
-    if (!((dataSource instanceof StreamDataSource))) {
-      return false;
-    }
-    String modelName = options.get(ModelFactory.OPTION_MODELNAME);
-    String relPath = NameUtil.pathFromNamespace(modelName) + "." + XML_EXTENSION;
-    if (!(relPath.equals(options.get(ModelFactory.OPTION_RELPATH)))) {
+  public boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options) {
+    if (!(supports(dataSource))) {
       return false;
     }
     return true;
   }
 
-
   /**
    * Saves the model in the factory-specific format (including conversion when needed).
    */
   @Override
-  public void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException {
-    if (!((dataSource instanceof StreamDataSource))) {
+  public void save(@NotNull SModel model, @NotNull DataSource dataSource) throws ModelSaveException, IOException {
+    if (!(supports(dataSource))) {
       throw new UnsupportedDataSourceException(dataSource);
     }
     writeModel(((SModelBase) model).getSModel(), (StreamDataSource) dataSource);
   }
 
-
   /**
    * Checks if the source content is outdated and needs to be upgraded.
    */
   @Override
-  public boolean needsUpgrade(DataSource dataSource) throws IOException {
+  public boolean needsUpgrade(@NotNull DataSource dataSource) throws IOException {
     return false;
   }
-
 
   /**
    * Loads the model content, and saves it back in the up-to-date format.
    */
   @Override
-  public void upgrade(DataSource dataSource) throws IOException {
+  public void upgrade(@NotNull DataSource dataSource) throws IOException {
   }
-
 
   /**
    * returns true if plain text is not enough to represent stored data.
@@ -222,7 +214,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     return false;
   }
 
-
   /**
    * returns the file extension this factory is registered on
    */
@@ -231,15 +222,14 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     return XML_EXTENSION;
   }
 
-
   /**
    * User-readable title of the storage format.
    */
   @Override
+  @NotNull
   public String getFormatTitle() {
-    return "XML file";
+    return "XML File";
   }
-
 
   /**
    * Creates an empty model
@@ -256,7 +246,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     sModel.addRootNode(xmlFile);
     return sModel;
   }
-
 
   /**
    * Reads the model
@@ -284,7 +273,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       FileUtil.closeFileSafe(in);
     }
   }
-
 
   /**
    * Saves the model
