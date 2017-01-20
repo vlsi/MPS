@@ -1,11 +1,9 @@
 <component name="libraryTable">
   <library name="Eclipse-compiler">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/ecj-4.6.2RC3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/ecj-4.6.2.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$PROJECT_DIR$/lib/src/ecj-4.6.2RC3-src.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

@@ -5,7 +5,7 @@
   <description>The Context Actions sidebar shows context-dependent actions when editing MPS models</description>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/">JetBrains</vendor>
-  <idea-version since-build="163.1" until-build="171.1"/>
+  <idea-version since-build="171.1" until-build="172.1"/>
 
   <depends>jetbrains.mps.core</depends>
 

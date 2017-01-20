@@ -125,9 +125,9 @@ public class EditorTests extends DataMPSFixtureTestCase {
     });
     if (thrown[0] != null) throw thrown[0];
 
-    Project prj = myModule.getProject();
     //TODO: see commit 543037363dfc71abd442f8963c60bfcbb066fcfb and 6f76d0b27dad6b10b908eebb158d8a8e81f7fbe4 in IDEA to decide how to handle this
-    /*if (prj instanceof ProjectImpl) {
+    /*Project prj = myModule.getProject();
+    if (prj instanceof ProjectImpl) {
       ((ProjectImpl)prj).setTemporarilyDisposed(true);
     }*/
   }

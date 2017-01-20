@@ -24,10 +24,9 @@ import com.intellij.openapi.module.impl.ModuleEx;
 import com.intellij.openapi.module.impl.ModuleManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.graph.Graph;
-import com.intellij.util.messages.MessageBus;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.io.IOException;
 import java.util.Comparator;
@@ -35,20 +34,20 @@ import java.util.List;
 
 @State(name = ModuleManagerImpl.COMPONENT_NAME, storages = @Storage("modules.xml"))
 public class EmptyModuleManager extends ModuleManagerImpl{
-  public EmptyModuleManager(Project project, MessageBus messageBus) {
-    super(project, messageBus);
+  public EmptyModuleManager(Project project) {
+    super(project);
   }
 
   @NotNull
   @Override
   public Module newModule(@NotNull @NonNls String filePath, String moduleTypeId) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
-  public Module loadModule(@NotNull String filePath) throws IOException, JDOMException, ModuleWithNameAlreadyExists {
-    return null;
+  public Module loadModule(@NotNull String filePath) throws IOException, ModuleWithNameAlreadyExists {
+    throw new NotImplementedException();
   }
 
   @Override
@@ -76,13 +75,13 @@ public class EmptyModuleManager extends ModuleManagerImpl{
   @NotNull
   @Override
   public Comparator<Module> moduleDependencyComparator() {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   public List<Module> getModuleDependentModules(@NotNull Module module) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override
@@ -93,31 +92,31 @@ public class EmptyModuleManager extends ModuleManagerImpl{
   @NotNull
   @Override
   protected ModuleEx createModule(@NotNull String filePath) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   protected ModuleEx createAndLoadModule(@NotNull String filePath) throws IOException {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   public Graph<Module> moduleGraph() {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   public Graph<Module> moduleGraph(boolean includeTests) {
-    return null;
+    throw new NotImplementedException();
   }
 
   @NotNull
   @Override
   public ModifiableModuleModel getModifiableModel() {
-    return null;
+    throw new NotImplementedException();
   }
 
   @Override

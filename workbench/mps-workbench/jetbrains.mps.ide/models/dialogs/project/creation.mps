@@ -3440,7 +3440,7 @@
                             <ref role="3cqZAo" node="1kPkRp81JoW" resolve="configurableEditor" />
                           </node>
                           <node concept="liA8E" id="1kPkRp81Jpk" role="2OqNvi">
-                            <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                            <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
                           </node>
                         </node>
                       </node>

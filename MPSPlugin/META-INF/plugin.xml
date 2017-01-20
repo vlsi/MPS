@@ -4,7 +4,7 @@
   <description>JetBrains MPS Integration</description>
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="139.1" until-build="171.1"/>
+  <idea-version since-build="139.1" until-build="172.1"/>
 
   <application-components>
     <component>

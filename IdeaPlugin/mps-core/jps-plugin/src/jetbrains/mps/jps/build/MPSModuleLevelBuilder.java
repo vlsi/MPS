@@ -16,7 +16,6 @@
 
 package jetbrains.mps.jps.build;
 
-import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.util.io.FileUtilRt;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
@@ -48,6 +47,7 @@ import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
 import org.jetbrains.jps.incremental.messages.FileDeletedEvent;
+import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.indices.ModuleExcludeIndex;
 import org.jetbrains.jps.model.java.JavaSourceRootProperties;
 import org.jetbrains.jps.model.java.JavaSourceRootType;
@@ -80,7 +80,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   private MPSIdeaRefreshComponent refreshComponent = new MPSIdeaRefreshComponent();
   // keep track of what sources we cleared, in case of full rebuild
-  // the thing is: out source gen dir is per module, but our builder is called per module chunk. For isntance,
+  // the thing is: out source gen dir is per module, but our builder is called per module chunk. For instance,
   // a module can be compiled in two goes: 1st chunk - module's sources, 2nd - module tests. Without
   // keeping track we would erase the sources that were generated on the previous step.
   private Set<JpsModule> cleanedGenSources;
@@ -97,15 +97,15 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildStarted(final CompileContext context) {
-    cleanedGenSources = new HashSet<JpsModule>();
+    cleanedGenSources = new HashSet<>();
     context.addBuildListener(new BuildListener() {
       @Override
-      public void filesGenerated(Collection<Pair<String, String>> paths) {
+      public void filesGenerated(FileGeneratedEvent fileGeneratedEvent) {
       }
 
       @Override
-      public void filesDeleted(Collection<String> paths) {
-        refreshComponent.removed(paths);
+      public void filesDeleted(FileDeletedEvent fileDeletedEvent) {
+        refreshComponent.removed(fileDeletedEvent.getFilePaths());
       }
     });
   }
@@ -150,7 +150,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       if (!outputDir.exists()) {
         continue;
       }
-      // check that in case it's a module source root then it's marked as generated, only detele of it's true
+      // check that in case it's a module source root then it's marked as generated, only delete of it's true
       Set<File> sourceRootsToKeep = untouchableSourceRoots(compileContext, jpsModule, moduleChunk.getTargets());
 
       boolean okToDelete = true;
@@ -161,8 +161,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         // so in this case it is safe to delete such root
         if (JpsPathUtil.isUnder(sourceRootsToKeep, outputDir)) {
           okToDelete = false;
-        }
-        else {
+        } else {
           final Set<File> _outRoot = Collections.singleton(outputDir);
           for (File srcRoot : sourceRootsToKeep) {
             if (JpsPathUtil.isUnder(_outRoot, srcRoot)) {
@@ -186,7 +185,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         }
         cleanedGenSources.add(jpsModule);
       }
-      List<String> deleted = new ArrayList<String>();
+      List<String> deleted = new ArrayList<>();
       BuildOperations.deleteRecursively(extension.getConfiguration().getGeneratorOutputPath(), deleted, null);
       compileContext.processMessage(new FileDeletedEvent(deleted));
       ProjectBuilderLogger logger = compileContext.getLoggingManager().getProjectBuilderLogger();
@@ -201,7 +200,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
     // jps's IncProjectBuilder.clearOutpus() computes them in the same way. actually, the code is copied from there
     // note: we could check for extension.getConfiguration().isUseModuleSourceFolder() but we'd rather be more general
     // as our gen output path may be under a source root, or contrary, include a source root
-    Set<File> result = new HashSet<File>();
+    Set<File> result = new HashSet<>();
     BuildRootIndex buildRootIndex = compileContext.getProjectDescriptor().getBuildRootIndex();
     ModuleExcludeIndex moduleIndex = compileContext.getProjectDescriptor().getModuleExcludeIndex();
     for (ModuleBuildTarget target : targets) {
@@ -241,7 +240,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                         final OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
-      final Set<ModuleBuildTarget> targets = new HashSet<ModuleBuildTarget>();
+      final Set<ModuleBuildTarget> targets = new HashSet<>();
       dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
         @Override
         public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor javaSourceRootDescriptor) throws IOException {
@@ -310,7 +309,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   }
 
   private Map<SModel, ModuleBuildTarget> collectChangedModels(final CompileContext compileContext, DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder) throws IOException {
-    final Map<SModel, ModuleBuildTarget> toCompile = new LinkedHashMap<SModel, ModuleBuildTarget>();
+    final Map<SModel, ModuleBuildTarget> toCompile = new LinkedHashMap<>();
     dirtyFilesHolder.processDirtyFiles(new FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget>() {
       @Override
       public boolean apply(ModuleBuildTarget target, File file, JavaSourceRootDescriptor sourceRoot) throws IOException {

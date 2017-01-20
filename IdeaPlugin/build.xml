@@ -211,6 +211,9 @@
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
+      <!-- TODO: remove property after investigation and fix MPS-25217 -->
+      <!-- See com.intellij.openapi.project.impl.ProjectManagerImpl#newProject and ProjectManagerImpl#LOG_PROJECT_LEAKAGE_IN_TESTS-->
+      <sysproperty key="idea.log.leaked.projects.in.tests" value="false"/>
       <classpath>
         <fileset dir="${ideaPath}/lib">
           <include name="**/*.jar"/>

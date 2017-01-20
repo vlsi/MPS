@@ -2073,7 +2073,7 @@
                       <ref role="3cqZAo" node="78MpzK$YNLl" resolve="configurableEditor" />
                     </node>
                     <node concept="liA8E" id="4Ghy7cFYEaS" role="2OqNvi">
-                      <ref role="37wK5l" to="qxsb:~SingleConfigurableEditor.show():void" resolve="show" />
+                      <ref role="37wK5l" to="jkm4:~DialogWrapper.show():void" resolve="show" />
                     </node>
                   </node>
                 </node>
