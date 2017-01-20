@@ -70,7 +70,7 @@ public interface JavaModuleFacet extends SModuleFacet, GenerationTargetFacet {
    */
   @Nullable
   default IFile getOutputRoot() {
-    if (getModule() instanceof AbstractModule && !getModule().isPackaged()) {
+    if (getModule() instanceof AbstractModule ) {
       // there's no output location for packaged/deployed modules
       return ((AbstractModule) getModule()).getOutputPath();
     }
