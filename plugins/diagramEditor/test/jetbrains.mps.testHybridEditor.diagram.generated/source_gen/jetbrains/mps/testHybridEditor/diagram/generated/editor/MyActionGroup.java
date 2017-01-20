@@ -20,7 +20,7 @@ public class MyActionGroup implements PaletteActionGroup {
   private DiagramCell myDiagramCell;
   private String myText;
 
-  public MyActionGroup(Iterable<SNode> nodes, DiagramCell diagramCell, SNode container, SNode containingLink, String text) {
+  public MyActionGroup(Iterable<SNode> nodes, DiagramCell diagramCell, SNode container, String text) {
     myNodes = nodes;
     myDiagramCell = diagramCell;
     myText = text;

@@ -9,11 +9,15 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.jetpad.DiagramCell;
 import javax.swing.Icon;
+import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteElement;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
@@ -30,13 +34,18 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
   private DiagramCell myDiagramCell;
   private Icon myIcon;
+  @Deprecated
+  @ToRemove(version = 3.5)
   public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+    this(diagramCell, container, SNodeOperations.asSConcept(childNodeConcept), MetaAdapterByDeclaration.getContainmentLink(containingLink), setNodePositionCallback);
+  }
+  public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SAbstractConcept childConcept, SContainmentLink containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     myDiagramCell = diagramCell;
     myEditorContext = diagramCell.getContext();
     myCallback = setNodePositionCallback;
 
-    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink)});
-    myIcon = IconManager.getIcon(SNodeOperations.asSConcept(childNodeConcept));
+    mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childConcept, containingLink)});
+    myIcon = IconManager.getIcon(childConcept);
   }
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();
@@ -55,11 +64,11 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   public String getText() {
     return null;
   }
-  private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink) {
+  private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SAbstractConcept childNodeConcept, final SContainmentLink containingLink) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept.getDeclarationNode(), new DefaultChildNodeSetter(containingLink.getDeclarationNode()), editorContext.getOperationContext()))) {
           result.add(action);
         }
         return result;

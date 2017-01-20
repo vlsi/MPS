@@ -22,7 +22,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.table.runtime.TableModelFactory;
 import jetbrains.mps.lang.editor.table.runtime.TableModel;
 import jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModelWithHeader;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
@@ -86,7 +85,7 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
   private EditorCell createTable_sl01pn_c0() {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel() {
-        return new HierarchycalTableModelWithHeader(myNode, SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, 0x28004d411fa3bea2L, "rows")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells")), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, 0x760c9302beb3e1d4L, "headers")));
+        return new HierarchycalTableModelWithHeader(myNode, MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea0L, 0x28004d411fa3bea2L, "rows"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x28004d411fa3bea6L, 0x28004d411fa3bea7L, "cells"), MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0x760c9302beb3e1d1L, 0x760c9302beb3e1d4L, "headers"));
       }
     };
     jetbrains.mps.openapi.editor.cells.EditorCell_Collection editorCell = EditorCell_Table.createTable(getEditorContext(), myNode, creator.createTableModel(), "Table_sl01pn_c0");

@@ -38,7 +38,12 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.editor.runtime.commands.EditorCommand;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -47,8 +52,6 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.Collections;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
@@ -286,11 +289,16 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   private void hidePatternEditor() {
     getEditor().getNodeSubstituteChooser().setVisible(false);
   }
-  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public SubstituteInfoPartExt createNewDiagramNodeActions(SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
+    return createNewDiagramNodeActions(container, SNodeOperations.asSConcept(childNodeConcept), MetaAdapterByDeclaration.getContainmentLink(containingLink), setNodePositionCallback);
+  }
+  public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SAbstractConcept childNodeConcept, final SContainmentLink containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
         List<SubstituteAction> result = new ArrayList<SubstituteAction>();
-        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, childNodeConcept, new DefaultChildNodeSetter(containingLink), editorContext.getOperationContext()))) {
+        for (SubstituteAction action : ListSequence.fromList(ModelActions.createChildNodeSubstituteActions(container, null, SNodeOperations.asNode(childNodeConcept), new DefaultChildNodeSetter(containingLink.getDeclarationNode()), editorContext.getOperationContext()))) {
           result.add(new DiagramCell.DiagramSubstituteActionWraper(action) {
             @Override
             public boolean canSubstitute(String string) {
@@ -308,13 +316,18 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     };
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
+    return createNewDiagramConnectorActions(container, SNodeOperations.asSConcept(childNodeConcept), MetaAdapterByDeclaration.getContainmentLink(containingLink), canCreateConnector, setConnectorCallback);
+  }
+  public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SAbstractConcept childNodeConcept, final SContainmentLink containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
     // TMP solution: manually creating instance of connection instead of using 
     // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
     // hiding text-specific connection substitute actions from the diagram 
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, final EditorContext editorContext) {
-        AbstractNodeSubstituteAction action = new AbstractNodeSubstituteAction(childNodeConcept, childNodeConcept, container) {
+        AbstractNodeSubstituteAction action = new AbstractNodeSubstituteAction(childNodeConcept.getDeclarationNode(), childNodeConcept, container) {
           @Override
           public boolean canSubstitute(String string) {
             if (!(hasConnectionDragFeedback()) || !(super.canSubstitute(string))) {
@@ -327,7 +340,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
-            ListSequence.fromList(SNodeOperations.getChildren(container, MetaAdapterByDeclaration.getContainmentLink(containingLink))).addElement(result);
+            ListSequence.fromList(SNodeOperations.getChildren(container, containingLink)).addElement(result);
             DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
             setConnectorCallback.invoke(result, connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
             return result;

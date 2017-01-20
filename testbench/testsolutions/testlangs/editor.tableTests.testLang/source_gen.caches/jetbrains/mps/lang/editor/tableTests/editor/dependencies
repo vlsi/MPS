@@ -133,7 +133,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModelWithHeader" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />
@@ -164,7 +163,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
@@ -189,7 +187,6 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSColors" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.MPSFonts" />

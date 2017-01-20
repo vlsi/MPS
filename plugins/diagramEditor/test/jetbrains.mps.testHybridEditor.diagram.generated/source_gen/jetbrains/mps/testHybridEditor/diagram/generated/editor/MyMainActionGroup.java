@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import javax.swing.Icon;
 
 public class MyMainActionGroup implements PaletteActionGroup {
@@ -44,7 +43,7 @@ public class MyMainActionGroup implements PaletteActionGroup {
       ListSequence.fromList(MapSequence.fromMap(tagToGroupMap).get(key)).addElement(node);
     }
     for (String tag : MapSequence.fromMap(tagToGroupMap).keySet()) {
-      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks")), tag));
+      ListSequence.fromList(groups).addElement(new MyActionGroup(MapSequence.fromMap(tagToGroupMap).get(tag), myDiagramCell, myDiagramCell.getSNode(), tag));
     }
     ListSequence.fromList(groups).addElement(new MyConnectorCreationAction(myDiagramCell));
     return ListSequence.fromList(groups).toGenericArray(PaletteElement.class);

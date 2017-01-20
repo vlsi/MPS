@@ -19,11 +19,11 @@ import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.jetpad.mapper.Mapper;
 import jetbrains.jetpad.projectional.diagram.view.DiagramView;
 import jetbrains.jetpad.mapper.Synchronizers;
@@ -119,14 +119,14 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
   private class DiagramCellImpl_32adaa_c0 extends DiagramCell {
     private DiagramCellImpl_32adaa_c0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fd8L, "blocks")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fd8L, "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65702ffeL, "inputPorts"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort")));
           SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65703000L, "outputPorts"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort")));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0x57239d35e26cf167L, "x"), "" + (x));
           SPropertyOperations.set(node, MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0x57239d35e26cf357L, "y"), "" + (y));
         }
-      }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort"));
         }
@@ -140,7 +140,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fd8L, "blocks")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, "jetbrains.mps.testHybridEditor.structure.Block"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fd8L, "blocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65702ffeL, "inputPorts"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort")));
           SNodeFactoryOperations.addNewChild(node, MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702f98L, 0xa10615a65703000L, "outputPorts"), SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort")));
@@ -150,7 +150,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
       })};
     }
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fa1L, "jetbrains.mps.testHybridEditor.structure.Connector"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0xa10615a65702fdaL, "connectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fbfL, "jetbrains.mps.testHybridEditor.structure.OutputPort")) && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702fb4L, "jetbrains.mps.testHybridEditor.structure.InputPort"));
         }
@@ -248,13 +248,13 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
   private class DiagramCellImpl_32adaa_e0 extends DiagramCell {
     private DiagramCellImpl_32adaa_e0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
-      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "block");
           SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")), MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (x));
           SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")), MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec44048aL, "y"), "" + (y));
         }
-      }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec4425e0L, "newConnectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      }), createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec4425e0L, "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && toId instanceof SNode && eq_voju58_a0a0a0a0d1a2a0a1a0r(SNodeOperations.getContainingLink(((SNode) toId)), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"));
         }
@@ -277,7 +277,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
     }
 
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks")), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec43f4b6L, "newBlocks"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
           SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "block");
           SPropertyOperations.set(SNodeOperations.cast(node, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")), MetaAdapterFactory.getProperty(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, 0x20a804e2ec440489L, "x"), "" + (x));
@@ -286,7 +286,7 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
       })};
     }
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
-      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance").getDeclarationNode(), SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec4425e0L, "newConnectors")), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
+      return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec441516L, "jetbrains.mps.testHybridEditor.structure.ConnectorInstance"), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0xa10615a65702ec1L, 0x20a804e2ec4425e0L, "newConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
           return SNodeOperations.isInstanceOf(from, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && fromId instanceof SNode && SNodeOperations.isInstanceOf(to, MetaAdapterFactory.getConcept(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec43f49dL, "jetbrains.mps.testHybridEditor.structure.BlockInstance")) && toId instanceof SNode && eq_voju58_a0a0a0a0d0a0a0d71(SNodeOperations.getContainingLink(((SNode) toId)), MetaAdapterFactory.getContainmentLink(0x913a1d639e1948faL, 0xad03e33ecccd3814L, 0x20a804e2ec40c2c8L, 0x20a804e2ec410486L, "inMetaPorts"));
         }
