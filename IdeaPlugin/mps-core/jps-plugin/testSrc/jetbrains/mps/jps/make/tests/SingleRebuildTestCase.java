@@ -17,10 +17,16 @@
 package jetbrains.mps.jps.make.tests;
 
 import com.intellij.testFramework.TestDataFile;
-import com.intellij.testFramework.TestDataPath;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.builders.BuildResult;
+import org.jetbrains.jps.model.java.JavaSourceRootType;
+import org.jetbrains.jps.model.java.JpsJavaExtensionService;
+import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.module.impl.JpsModuleSourceRootImpl;
+import org.jetbrains.jps.util.JpsPathUtil;
+
+import java.io.File;
 
 public class SingleRebuildTestCase extends MpsJpsSingleTestCase {
   @Override
@@ -32,5 +38,22 @@ public class SingleRebuildTestCase extends MpsJpsSingleTestCase {
     setUpEnvironment("brokenProject/in");
     final BuildResult buildResult = doMake(true);
     buildResult.assertFailed();
+  }
+
+  /**
+   * Test the case when module has sources and test sources.
+   * This leads to our {@link jetbrains.mps.jps.build.MPSModuleLevelBuilder} being run twice for the same module,
+   * which requires care not to delete source_gen twice
+   */
+  public void testMultipleTargetsDontEraseSrcGen() {
+    setUpEnvironment("java/in");
+    // adding test source root by hand
+    @NonNls String testSrc = "testSrc";
+    JpsModule module = myProject.getModules().iterator().next();;
+    module.addSourceRoot(new JpsModuleSourceRootImpl<>(JpsPathUtil.pathToUrl(testSrc), JavaSourceRootType.TEST_SOURCE, JpsJavaExtensionService.getInstance().createSourceRootProperties("")));
+    doMake(true);
+    // make sure file hasn't been deleted by the second invocation of our MPSModuleLevelBuilder, on test build target
+    File projectRoot = getOrCreateProjectDir();
+    assertExists(new File(projectRoot, "source_gen/MainJava/Main.java"));
   }
 }
