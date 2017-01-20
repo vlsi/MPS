@@ -770,7 +770,6 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
-      <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
@@ -827,6 +826,7 @@
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171305280644" name="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" flags="nn" index="2Rf3mk" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
@@ -24581,14 +24581,14 @@
           <node concept="3clFbS" id="1wEcoXjJNdY" role="2VODD2">
             <node concept="3clFbF" id="1wEcoXjJNdZ" role="3cqZAp">
               <node concept="1Wc70l" id="1wEcoXjJNe0" role="3clFbG">
-                <node concept="3clFbC" id="1wEcoXjJNe1" role="3uHU7w">
-                  <node concept="28GBK8" id="1wEcoXjJNe2" role="3uHU7w">
-                    <ref role="28GBKb" to="tpc2:3ath0p6n6ew" resolve="SelectInEditorOperation" />
-                    <ref role="28H3Ia" to="tpc2:1GaASKe_7Fu" resolve="editorContext" />
-                  </node>
+                <node concept="17R0WA" id="4jf2Bbg5jZO" role="3uHU7w">
                   <node concept="2OqwBi" id="1wEcoXjJNe3" role="3uHU7B">
                     <node concept="7Obwk" id="1wEcoXjJNec" role="2Oq$k0" />
-                    <node concept="25OxAV" id="1wEcoXjJNe5" role="2OqNvi" />
+                    <node concept="2NL2c5" id="4jf2Bbg5kAL" role="2OqNvi" />
+                  </node>
+                  <node concept="359W_D" id="4jf2Bbg5keH" role="3uHU7w">
+                    <ref role="359W_E" to="tpc2:3ath0p6n6ew" resolve="SelectInEditorOperation" />
+                    <ref role="359W_F" to="tpc2:1GaASKe_7Fu" resolve="editorContext" />
                   </node>
                 </node>
                 <node concept="2OqwBi" id="1wEcoXjJNe6" role="3uHU7B">
@@ -24814,14 +24814,14 @@
                     <node concept="10Nm6u" id="1wEcoXjJNfN" role="3uHU7w" />
                   </node>
                 </node>
-                <node concept="3clFbC" id="1wEcoXjJNfO" role="3uHU7w">
-                  <node concept="28GBK8" id="1wEcoXjJNfP" role="3uHU7w">
-                    <ref role="28GBKb" to="tpc2:3ath0p6n6ew" resolve="SelectInEditorOperation" />
-                    <ref role="28H3Ia" to="tpc2:385mdrZMmPM" resolve="selectionStart" />
-                  </node>
+                <node concept="17R0WA" id="4jf2Bbg5lgI" role="3uHU7w">
                   <node concept="2OqwBi" id="1wEcoXjJNfQ" role="3uHU7B">
                     <node concept="7Obwk" id="1wEcoXjJNfV" role="2Oq$k0" />
-                    <node concept="25OxAV" id="1wEcoXjJNfS" role="2OqNvi" />
+                    <node concept="2NL2c5" id="4jf2Bbg5lCi" role="2OqNvi" />
+                  </node>
+                  <node concept="359W_D" id="4jf2Bbg5kPy" role="3uHU7w">
+                    <ref role="359W_E" to="tpc2:3ath0p6n6ew" resolve="SelectInEditorOperation" />
+                    <ref role="359W_F" to="tpc2:385mdrZMmPM" resolve="selectionStart" />
                   </node>
                 </node>
               </node>

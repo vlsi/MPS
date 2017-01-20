@@ -166,10 +166,6 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="2788452359612124333" name="jetbrains.mps.lang.smodel.structure.PropertyQualifier" flags="ng" index="29tlS8">
         <reference id="2788452359612124335" name="property" index="29tlSa" />
       </concept>
@@ -5775,29 +5771,14 @@
       <node concept="3cqZAl" id="hQ8S9NX" role="3clF45" />
       <node concept="3Tm1VV" id="hQ8S9NY" role="1B3o_S" />
       <node concept="3clFbS" id="hQ8S9NZ" role="3clF47">
-        <node concept="3cpWs8" id="hQ8Sirj" role="3cqZAp">
-          <node concept="3cpWsn" id="hQ8Sirk" role="3cpWs9">
-            <property role="TrG5h" value="link" />
-            <node concept="3Tqbb2" id="hQ8Sirl" role="1tU5fm">
-              <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+        <node concept="3clFbF" id="4jf2Bbg4BVH" role="3cqZAp">
+          <node concept="2OqwBi" id="4jf2Bbg4BbG" role="3clFbG">
+            <node concept="359W_D" id="4jf2Bbg4ATq" role="2Oq$k0">
+              <ref role="359W_E" to="tpee:hqOqwz4" resolve="DotExpression" />
+              <ref role="359W_F" to="tpee:hqOqNr4" resolve="operation" />
             </node>
-            <node concept="28GBK8" id="hQ8Sirm" role="33vP2m">
-              <ref role="28GBKb" to="tpee:hqOqwz4" resolve="DotExpression" />
-              <ref role="28H3Ia" to="tpee:hqOqNr4" resolve="operation" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="hQ8Sz7P" role="3cqZAp">
-          <node concept="3cpWsn" id="hQ8Sz7Q" role="3cpWs9">
-            <property role="TrG5h" value="singular" />
-            <node concept="10P_77" id="hQ8Sz7R" role="1tU5fm" />
-            <node concept="2OqwBi" id="hQ8Sz7S" role="33vP2m">
-              <node concept="37vLTw" id="3GM_nagTxM6" role="2Oq$k0">
-                <ref role="3cqZAo" node="hQ8Sirk" resolve="link" />
-              </node>
-              <node concept="2qgKlT" id="hQ8Sz7U" role="2OqNvi">
-                <ref role="37wK5l" to="tpcn:hEwIfAt" resolve="isSingular" />
-              </node>
+            <node concept="liA8E" id="4jf2Bbg4BCC" role="2OqNvi">
+              <ref role="37wK5l" to="c17a:~SAbstractLink.isMultiple():boolean" resolve="isMultiple" />
             </node>
           </node>
         </node>

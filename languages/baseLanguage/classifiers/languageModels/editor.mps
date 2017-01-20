@@ -241,6 +241,7 @@
       </concept>
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
       </concept>
@@ -317,13 +318,8 @@
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
-      </concept>
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
       </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
@@ -344,6 +340,7 @@
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
         <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
@@ -1037,16 +1034,16 @@
                 <node concept="3clFbS" id="hLuQ$Yf3Bo" role="1bW5cS">
                   <node concept="3clFbF" id="hLuQ$Yf3Bz" role="3cqZAp">
                     <node concept="1Wc70l" id="hLuQ$Yf3BL" role="3clFbG">
-                      <node concept="3clFbC" id="hLuQ$Yf3BW" role="3uHU7w">
-                        <node concept="28GBK8" id="hLuQ$Yf3BZ" role="3uHU7w">
-                          <ref role="28GBKb" to="tp4f:hyXshSD" resolve="DefaultClassifierMethodCallOperation" />
-                          <ref role="28H3Ia" to="tp4f:hyXxRup" resolve="actualArgument" />
-                        </node>
+                      <node concept="17R0WA" id="4jf2Bbg4tei" role="3uHU7w">
                         <node concept="2OqwBi" id="hLuQ$Yf3BP" role="3uHU7B">
                           <node concept="37vLTw" id="2BHiRxgm6pb" role="2Oq$k0">
                             <ref role="3cqZAo" node="hLuQ$Yf3Bw" resolve="it" />
                           </node>
-                          <node concept="25OxAV" id="hLuQ$Yf3BV" role="2OqNvi" />
+                          <node concept="2NL2c5" id="4jf2Bbg4s$0" role="2OqNvi" />
+                        </node>
+                        <node concept="359W_D" id="4jf2Bbg4tQ2" role="3uHU7w">
+                          <ref role="359W_E" to="tp4f:hyXshSD" resolve="DefaultClassifierMethodCallOperation" />
+                          <ref role="359W_F" to="tp4f:hyXxRup" resolve="actualArgument" />
                         </node>
                       </node>
                       <node concept="2OqwBi" id="hLuQ$Yf3BE" role="3uHU7B">
