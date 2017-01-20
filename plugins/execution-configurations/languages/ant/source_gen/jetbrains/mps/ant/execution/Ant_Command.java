@@ -25,9 +25,9 @@ import com.intellij.openapi.application.PathMacros;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 
 public class Ant_Command {
   private SNode myTarget_NodeINamedConcept;
@@ -130,7 +130,9 @@ public class Ant_Command {
   }
   private static String getGeneratedFileName(SNode project) {
     IFile file;
-    file = FileGenerationUtil.getDefaultOutputDir(SNodeOperations.getModel(project), ((AbstractModule) SNodeOperations.getModel(project).getModule()).getOutputPath());
+    SModel model = SNodeOperations.getModel(project);
+    // XXX note, build scripts are copied/deployed to a different location with CopyGeneratedScripts, here we use origin, not the 'deployed' script location. 
+    file = model.getModule().getFacet(JavaModuleFacet.class).getOutputLocation(model);
     file = file.getDescendant(SPropertyOperations.getString(project, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + ".xml");
     return file.getPath();
   }

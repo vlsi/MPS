@@ -14,7 +14,7 @@ import java.util.HashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.SModuleOperations;
-import com.intellij.openapi.vfs.LocalFileSystem;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy {
   private final MPSProject myMPSProject;
@@ -32,9 +32,9 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
       return Collections.EMPTY_SET;
     }
     Set<VirtualFile> roots = new HashSet<VirtualFile>();
-    for (SModule module : myMPSProject.getModulesWithGenerators()) {
+    for (SModule module : myMPSProject.getProjectModulesWithGenerators()) {
       for (IFile f : SModuleOperations.getOutputRoots(module)) {
-        VirtualFile root = LocalFileSystem.getInstance().findFileByPath(f.getPath());
+        VirtualFile root = VirtualFileUtils.getProjectVirtualFile(f);
         if (root != null) {
           roots.add(root);
         }

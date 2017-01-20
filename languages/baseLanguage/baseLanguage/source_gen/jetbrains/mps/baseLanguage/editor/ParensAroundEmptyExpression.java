@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
@@ -20,6 +21,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   @NotNull
@@ -38,7 +40,7 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_a.SubstituteMenuPart_Action_z82rnb_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_a.SubstituteMenuPart_Action_z82rnb_a0(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfb4ed32b7fL, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")));
     }
     private class SubstituteMenuPart_Action_z82rnb_a0 extends SingleItemSubstituteMenuPart {
 
@@ -94,12 +96,13 @@ public class ParensAroundEmptyExpression extends SubstituteMenuBase {
   public class SubstituteMenuPart_Group_z82rnb_b extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
     protected boolean isApplicable(SubstituteMenuContext _context) {
-      return SNodeOperations.getConcept(_context.getCurrentTargetNode()).isAbstract();
+      SConcept c = SNodeOperations.getConcept(_context.getCurrentTargetNode());
+      return c != null && c.isAbstract();
     }
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_b.SubstituteMenuPart_Action_z82rnb_a1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new ParensAroundEmptyExpression.SubstituteMenuPart_Group_z82rnb_b.SubstituteMenuPart_Action_z82rnb_a1(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbcf6bd10dL, "jetbrains.mps.baseLanguage.structure.NotExpression")));
     }
     private class SubstituteMenuPart_Action_z82rnb_a1 extends SingleItemSubstituteMenuPart {
 

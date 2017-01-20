@@ -7,8 +7,15 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import java.io.File;
-import jetbrains.mps.library.ModulesMiner;
+import java.util.List;
+import java.util.Arrays;
+import java.util.function.Function;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystem;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import com.intellij.openapi.vfs.newvfs.impl.VfsRootAccess;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.vfs.FileSystem;
 
 /**
@@ -30,9 +37,25 @@ public class FromModulesListProjectStrategy extends ProjectStrategyBase {
   @Override
   public Project construct(@NotNull Project emptyProject) {
     final String[] modules = myModulesPath.split(File.pathSeparator);
+    List<String> moduleFolders = Arrays.stream(modules).map(new Function<String, String>() {
+      @Override
+      public String apply(String module) {
+        IFile file = new IoFileSystem().getFile(module);
+        IFile parent = file.getParent();
+        if (parent == null) {
+          return null;
+        }
+        return parent.getPath();
+      }
+    }).filter(new Predicate<String>() {
+      public boolean test(String file) {
+        return file != null;
+      }
+    }).collect(Collectors.toList());
+    VfsRootAccess.allowRootAccess(moduleFolders.toArray(new String[moduleFolders.size()]));
     ModulesMiner mm = new ModulesMiner();
     for (String modulePath : modules) {
-      IFile fileByPath = FileSystem.getInstance().getFileByPath(modulePath);
+      IFile fileByPath = FileSystem.getInstance().getFile(modulePath);
       mm.collectModules(fileByPath);
     }
     return loadProjectFromModuleHandles(emptyProject, mm.getCollectedModules());

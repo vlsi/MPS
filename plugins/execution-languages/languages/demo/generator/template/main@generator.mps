@@ -60,7 +60,6 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
-      <concept id="1068581242874" name="jetbrains.mps.baseLanguage.structure.ParameterReference" flags="nn" index="3cpWs2" />
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
@@ -181,7 +180,7 @@
                     <node concept="3cmrfG" id="HJg0JQ4abG" role="AHEQo">
                       <property role="3cmrfH" value="0" />
                     </node>
-                    <node concept="3cpWs2" id="HJg0JQ4abC" role="AHHXb">
+                    <node concept="37vLTw" id="HJg0JQ4abC" role="AHHXb">
                       <ref role="3cqZAo" node="HJg0JQ4a8U" resolve="args" />
                     </node>
                   </node>

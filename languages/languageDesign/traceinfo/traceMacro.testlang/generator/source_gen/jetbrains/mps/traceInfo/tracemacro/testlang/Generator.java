@@ -24,7 +24,7 @@ public class Generator extends TemplateModuleBase {
 
   public Generator(LanguageRuntime sourceLanguage) {
     this.sourceLanguage = sourceLanguage;
-    priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)", TemplateUtil.createRefNormal("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "*")), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
+    priorities = TemplateUtil.asCollection(TemplateUtil.createStrictlyBeforeRule(TemplateUtil.createRefExternal("791a790e-6d6d-4aa8-8917-3b269a164450(jetbrains.mps.traceInfo.tracemacro.testlang#7980748436587788163)", TemplateUtil.createRefNormal("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "*", "*")), TemplateUtil.createRefExternal("5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)", TemplateUtil.createRefLocal())));
     referencedGenerators = TemplateUtil.<String>asCollection("jetbrains.mps.baseLanguage.collections/jetbrains.mps.baseLanguage.collections#1151699677197");
   }
   @Override

@@ -3,15 +3,12 @@
   <persistence version="9" />
   <languages>
     <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
-    <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
-    <import index="tpcw" ref="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" />
     <import index="4j10" ref="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" />
   </imports>
   <registry>
@@ -134,9 +131,6 @@
     <property role="34LRSv" value="node" />
     <property role="EcuMT" value="1197386047362" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
-    <node concept="PrWs8" id="1653mnvB6e5" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
   </node>
   <node concept="1TIwiD" id="htO1afO">
     <property role="R5$K7" value="false" />
@@ -357,6 +351,21 @@
     <property role="34LRSv" value="isUsedByDefault" />
     <property role="EcuMT" value="100784871586155151" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="5UvmwWxPpEG">
+    <property role="EcuMT" value="6818267381900876460" />
+    <property role="TrG5h" value="FinderReferenceExpression" />
+    <property role="34LRSv" value="finder" />
+    <property role="3GE5qa" value="Statements" />
+    <property role="R4oN_" value="Access to an instance of linked FinderDeclaration" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="5UvmwWxPpEH" role="1TKVEi">
+      <property role="IQ2ns" value="6818267381900876461" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="finder" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="1JlDhgSjx_v" resolve="FinderReference" />
+    </node>
   </node>
 </model>
 

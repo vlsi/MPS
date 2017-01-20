@@ -42,8 +42,9 @@ public final class CellModel_Collection__BehaviorDescriptor extends BaseBHDescri
   public static final SMethod<Boolean> canBeSynchronized_id3wXm3h1AYM7 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeSynchronized").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3wXm3h1AYM7").registry(REGISTRY).build();
   /*package*/ static final SMethod<Boolean> canBeSynchronized_id3wXm3h1BRps = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeSynchronized").modifiers(SModifiersImpl.create(0, AccessPrivileges.PRIVATE)).concept(CONCEPT).id("3wXm3h1BRps").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> canBeUsedAsEmptyCell_id6RO52Mcgrfa = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeUsedAsEmptyCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6RO52Mcgrfa").registry(REGISTRY).build();
+  public static final SMethod<SNode> getLayout_iditlittTD4U = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLayout").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("itlittTD4U").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, isVertical_idi0pAV23, isVerticalGrid_idi2IbWq8, isHorizontal_idi0pB4gH, isIndentLayout_idi0pB9jQ, isFoldingEnabled_id1_9L3A4DrOF, isVerticalIndent_idi0tOX1j, shellBeSynchronized_id3TPTV99_TMT, shellBeSynchronized_id3TPTV99Aiv4, canBeSynchronized_id3wXm3h1AYM7, canBeSynchronized_id3wXm3h1BRps, canBeUsedAsEmptyCell_id6RO52Mcgrfa);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getOpeningText_idhKxU$w9, getClosingText_idhKxUEwj, isVertical_idi0pAV23, isVerticalGrid_idi2IbWq8, isHorizontal_idi0pB4gH, isIndentLayout_idi0pB9jQ, isFoldingEnabled_id1_9L3A4DrOF, isVerticalIndent_idi0tOX1j, shellBeSynchronized_id3TPTV99_TMT, shellBeSynchronized_id3TPTV99Aiv4, canBeSynchronized_id3wXm3h1AYM7, canBeSynchronized_id3wXm3h1BRps, canBeUsedAsEmptyCell_id6RO52Mcgrfa, getLayout_iditlittTD4U);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -121,6 +122,9 @@ public final class CellModel_Collection__BehaviorDescriptor extends BaseBHDescri
   /*package*/ static boolean canBeUsedAsEmptyCell_id6RO52Mcgrfa(@NotNull SNode __thisNode__) {
     return true;
   }
+  /*package*/ static SNode getLayout_iditlittTD4U(@NotNull SNode __thisNode__) {
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eaff2517L, 0x10192e0d3baL, "cellLayout"));
+  }
 
   /*package*/ CellModel_Collection__BehaviorDescriptor() {
     super(REGISTRY);
@@ -164,6 +168,8 @@ public final class CellModel_Collection__BehaviorDescriptor extends BaseBHDescri
         return (T) ((Boolean) canBeSynchronized_id3wXm3h1BRps(node, (SNode) parameters[0]));
       case 12:
         return (T) ((Boolean) canBeUsedAsEmptyCell_id6RO52Mcgrfa(node));
+      case 13:
+        return (T) ((SNode) getLayout_iditlittTD4U(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

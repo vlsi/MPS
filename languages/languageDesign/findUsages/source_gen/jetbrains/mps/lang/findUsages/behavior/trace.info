@@ -39,6 +39,9 @@
     <file name="FinderDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.findUsages.behavior.FinderDeclaration_BehaviorDescriptor" />
     </file>
+    <file name="FinderReferenceExpression_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.findUsages.behavior.FinderReferenceExpression_BehaviorDescriptor" />
+    </file>
     <file name="FinderReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.findUsages.behavior.FinderReference_BehaviorDescriptor" />
     </file>

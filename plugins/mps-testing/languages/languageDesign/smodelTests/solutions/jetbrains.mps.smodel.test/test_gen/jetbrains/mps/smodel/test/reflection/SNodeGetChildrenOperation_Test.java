@@ -113,7 +113,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       addNodeById("2166349271756548530");
       SNode nullNode = null;
       Assert.assertNull(SNodeOperations.getContainingLinkDeclaration(nullNode));
-      Assert.assertNull(SNodeOperations.getContainingLinkRole(nullNode));
+      Assert.assertNull(check_vfao6t_a5a4j(SNodeOperations.getContainingLink(nullNode)));
     }
     public void test_childrenByLinkDeclaration() throws Exception {
       addNodeById("8758390115029078425");
@@ -147,6 +147,12 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest {
       SContainmentLink link = MetaAdapterFactory.getContainmentLink(1, 1, 1, 1, "unspecifiedChild");
       input.addChild(link, unspecifiedChild);
       return link;
+    }
+    private static String check_vfao6t_a5a4j(SContainmentLink checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getName();
+      }
+      return null;
     }
   }
 }

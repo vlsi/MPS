@@ -42,6 +42,13 @@ public class Members {
       }
     });
   }
+  public static Iterable<SNode> visibleClassifiers(SNode classifier, SNode contextNode) {
+    return (Iterable<SNode>) Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getVisibleMembers_id5laDzmpBPtZ.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier), contextNode)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier"));
+      }
+    });
+  }
   public static Iterable<SNode> visibleEnumConstants(SNode classifier) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType__BehaviorDescriptor.getMembers_id6r77ob2V1Fr.invoke(IClassifier__BehaviorDescriptor.getThisType_id6r77ob2UWbY.invoke(classifier))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

@@ -4,7 +4,9 @@ package jetbrains.mps.samples.multipleProjections.stateMachine.tabular;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +19,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "9357c0ba-2430-4f01-b20a-cc8947960ac3(jetbrains.mps.samples.multipleProjections.stateMachine.tabular)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("9357c0ba-2430-4f01-b20a-cc8947960ac3");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.tabular";
@@ -31,12 +36,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("9357c0ba-2430-4f01-b20a-cc8947960ac3"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("530533ee-f789-4c1e-ba56-de1bbf3afda7"), "jetbrains.mps.samples.multipleProjections.stateMachine"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

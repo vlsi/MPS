@@ -25,6 +25,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Iterator;
@@ -174,16 +175,15 @@ public abstract class AbstractCellListHandler extends AbstractEditorBuilder impl
     return myListEditorCell_Collection;
   }
 
-  protected void createInnerCells() {
+  /**
+   * @deprecated since MPS 3.5 use {@link #createInnerCells()}
+   */
+  protected void createInnerCells(SNode node, EditorContext editorContext) {
     //TODO: after MPS 3.5 remove createInnerCells(SNode node, EditorContext editorContext) & inline it here.
     createInnerCells(getNode(), getEditorContext());
   }
 
-  /**
-   * @deprecated since MPS 3.5 use {@link #createInnerCells()}
-   */
-  @Deprecated
-  protected void createInnerCells(SNode node, EditorContext editorContext) {
+  protected void createInnerCells() {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell();

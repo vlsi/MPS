@@ -17,14 +17,16 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -169,25 +171,55 @@ public abstract class LanguageRuntime {
     return Collections.unmodifiableCollection(myExtendedLanguages);
   }
 
-  protected abstract String[] getExtendedLanguageIDs();
+  /**
+   * @deprecated override {@link #fillExtendedLanguages(Collection)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected String[] getExtendedLanguageIDs() {
+    // non-abstract to facilitate transition
+    return new String[0];
+  }
+
+  /**
+   * Subclasses shall override to report languages they extend (fill in supplied collection).
+   * It's not necessary to override the method if language doesn't extend any other, not to invoke super, this method is no-op.
+   * <p/>
+   * DESIGN NOTE: while it's sufficient to know SLanguageId only, I stick to SLanguage to keep namespace as debug information.
+   *              Perhaps, shall pass an object that could take different alternatives (e.g. SLanguageId, (long,long), module reference)?
+   */
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    // intentionally non-abstract and no-op
+  }
 
   private void registerExtendingLanguage(LanguageRuntime extendingLanguage) {
     myExtendingLanguages.add(extendingLanguage);
     extendingLanguage.myExtendedLanguages.add(this);
   }
 
+  @ToRemove(version = 3.5)
+  private void fillLegacyExtendedLanguages(Collection<SLanguage> extendedLanguages, LanguageRegistry registry) {
+    for (String namespace : getExtendedLanguageIDs()) {
+      LanguageRuntime l = registry.getLanguage(namespace);
+      if (l != null) {
+        extendedLanguages.add(MetaAdapterFactory.getLanguage(l.getId(), l.getNamespace()));
+      }
+    }
+  }
+
   void initialize(LanguageRegistry registry) {
-    Queue<String> extendedLanguageIDs = new ArrayDeque<String>(Arrays.asList(getExtendedLanguageIDs()));
-    Set<String> visitedLanguages = new HashSet<String>();
-    visitedLanguages.add(getNamespace());
+    Queue<SLanguage> extendedLanguageIDs = new ArrayDeque<>();
+    fillExtendedLanguages(extendedLanguageIDs);
+    fillLegacyExtendedLanguages(extendedLanguageIDs, registry);
+    Set<SLanguageId> visitedLanguages = new HashSet<>();
+    visitedLanguages.add(getId());
     while (!extendedLanguageIDs.isEmpty()) {
-      String nextLanguageID = extendedLanguageIDs.remove();
-      if (visitedLanguages.add(nextLanguageID)) {
-        LanguageRuntime extendedLanguage = registry.getLanguage(nextLanguageID);
-        if (extendedLanguage != null) {
-          extendedLanguage.registerExtendingLanguage(this);
-          extendedLanguageIDs.addAll(Arrays.asList(extendedLanguage.getExtendedLanguageIDs()));
-        }
+      SLanguage nextLanguageID = extendedLanguageIDs.remove();
+      LanguageRuntime extendedLanguage = registry.getLanguage(nextLanguageID);
+      if (extendedLanguage != null && visitedLanguages.add(extendedLanguage.getId())) {
+        extendedLanguage.registerExtendingLanguage(this);
+        extendedLanguage.fillExtendedLanguages(extendedLanguageIDs);
+        extendedLanguage.fillLegacyExtendedLanguages(extendedLanguageIDs, registry);
       }
     }
     // generally, should never happen, but doesn't hurt to ensure exclusive contract of getExtended/getExtendingLanguages()
@@ -197,9 +229,11 @@ public abstract class LanguageRuntime {
     // as extended language for any other language module, and once we switched to SLanguage, shall do the same at least for compatibility reasons.
     // Once we generate this extends inside #getExtendedLanguageIDs() (better the new one that yield SLanguage instead of String),
     // AND there are no old LanguageRuntime classes (i.e. past MPS 3.3), the hack shall cease to exist.
+    //
+    // XXX OTOH, does it make sense to force generation of explicit extends lang.core in each language?
     LanguageRuntime langCore = registry.getLanguage(BootstrapLanguages.getLangCore());
     assert langCore != null;
-    if (this != langCore && !visitedLanguages.contains(langCore.getNamespace())) {
+    if (this != langCore && !visitedLanguages.contains(langCore.getId())) {
       myExtendedLanguages.add(langCore);
       langCore.registerExtendingLanguage(this);
     }

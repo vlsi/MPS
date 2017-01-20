@@ -16,12 +16,17 @@
 package jetbrains.mps.lang.editor.menus.substitute;
 
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * @author simon
  */
 public class SubstituteMenuItemUtil {
+
+  public static SAbstractConcept getWrappedOutputConcept(SubstituteMenuItem item) {
+    return getWrappedItem(item).getOutputConcept();
+  }
 
   public static SNode getReferentNode(SubstituteMenuItem item) {
     final SmartReferenceSubstituteMenuItem smartItem = getSmartItem(item);
@@ -34,12 +39,17 @@ public class SubstituteMenuItemUtil {
   }
 
   private static SmartReferenceSubstituteMenuItem getSmartItem(SubstituteMenuItem item) {
-    if (item instanceof SmartReferenceSubstituteMenuItem) {
-      return ((SmartReferenceSubstituteMenuItem) item);
-    } else if (item instanceof SubstituteMenuItemWrapper) {
-      return getSmartItem(((SubstituteMenuItemWrapper) item).getWrappedItem());
+    final SubstituteMenuItem wrappedItem = getWrappedItem(item);
+    if (wrappedItem instanceof SmartReferenceSubstituteMenuItem) {
+      return ((SmartReferenceSubstituteMenuItem) wrappedItem);
     }
     return null;
   }
 
+  private static SubstituteMenuItem getWrappedItem(SubstituteMenuItem item) {
+    if (item instanceof SubstituteMenuItemWrapper) {
+      return getWrappedItem(((SubstituteMenuItemWrapper) item).getWrappedItem());
+    }
+    return item;
+  }
 }

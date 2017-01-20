@@ -18,19 +18,16 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
 import jetbrains.mps.ide.make.actions.MakeActionParameters;
-import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
+import java.util.function.Consumer;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.facets.TestsFacet;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -88,12 +85,13 @@ public class IdeCommandUtil {
               return mgsm.generationRequired(it);
             }
           }).toListSequence();
+        } else {
+          modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
+            public boolean accept(SModel it) {
+              return GenerationFacade.canGenerate(it);
+            }
+          }).toListSequence();
         }
-        modelsToGenerate.value = ListSequence.fromList(modelsToGenerate.value).where(new IWhereFilter<SModel>() {
-          public boolean accept(SModel it) {
-            return SNodeOperations.isGeneratable(it);
-          }
-        }).toListSequence();
       }
     });
     SwingUtilities.invokeLater(new Runnable() {
@@ -120,7 +118,7 @@ public class IdeCommandUtil {
     });
     ListSequence.fromList(modelsToClean.value).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
-        return it instanceof GeneratableSModel && ((GeneratableSModel) it).isGeneratable();
+        return GenerationFacade.canGenerate(it);
       }
     }).visitAll(new IVisitor<SModel>() {
       public void visit(SModel it) {
@@ -136,76 +134,54 @@ public class IdeCommandUtil {
         if (wholeProject) {
           _modules.value = (Iterable<? extends SModule>) (Iterable<SModule>) project.getProjectModulesWithGenerators();
         }
+        final Consumer<IFile> deleteIfFile = new Consumer<IFile>() {
+          public void accept(IFile file) {
+            if (!(file.isDirectory())) {
+              file.delete();
+            }
+          }
+        };
         Sequence.fromIterable(models).where(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
-            return SNodeOperations.isGeneratable(it);
+            return !(it.getModule().isPackaged()) && GenerationFacade.canGenerate(it);
           }
         }).visitAll(new IVisitor<SModel>() {
           public void visit(SModel model) {
-            String outputPath = SModuleOperations.getOutputPathFor(model);
-            String cachePath = FileGenerationUtil.getCachesPath(outputPath);
+            for (SModuleFacet mf : model.getModule().getFacets()) {
+              if (mf instanceof GenerationTargetFacet) {
+                GenerationTargetFacet genFacet = ((GenerationTargetFacet) mf);
 
-            IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(outputPath));
-            IFile cachesDir = FileGenerationUtil.getDefaultOutputDir(model, FileSystem.getInstance().getFileByPath(cachePath));
-
-            Iterable<IFile> outputItems = outputDir.getChildren();
-            Sequence.fromIterable(outputItems).where(new IWhereFilter<IFile>() {
-              public boolean accept(IFile it) {
-                return !(it.isDirectory());
+                genFacet.getOutputLocation(model).getChildren().forEach(deleteIfFile);
+                genFacet.getOutputCacheLocation(model).getChildren().forEach(deleteIfFile);
               }
-            }).visitAll(new IVisitor<IFile>() {
-              public void visit(IFile it) {
-                it.delete();
+              if (mf instanceof JavaModuleFacet) {
+                ((JavaModuleFacet) mf).getClassesLocation(model).getChildren().forEach(deleteIfFile);
               }
-            });
-
-            Iterable<IFile> cachedItems = cachesDir.getChildren();
-            Sequence.fromIterable(cachedItems).where(new IWhereFilter<IFile>() {
-              public boolean accept(IFile it) {
-                return !(it.isDirectory());
-              }
-            }).visitAll(new IVisitor<IFile>() {
-              public void visit(IFile it) {
-                it.delete();
-              }
-            });
-
-            JavaModuleFacet javaFacet = model.getModule().getFacet(JavaModuleFacet.class);
-            if (javaFacet != null) {
-              IFile classesRootPath = check_nf7729_a0a0n0a0a1a0a0e(javaFacet);
-              IFile classesDir = FileGenerationUtil.getDefaultOutputDir(model, classesRootPath);
-              Iterable<IFile> classesItems = classesDir.getChildren();
-              Sequence.fromIterable(classesItems).where(new IWhereFilter<IFile>() {
-                public boolean accept(IFile it) {
-                  return !(it.isDirectory());
-                }
-              }).visitAll(new IVisitor<IFile>() {
-                public void visit(IFile it) {
-                  it.delete();
-                }
-              });
             }
           }
         });
       }
     });
-    Sequence.fromIterable(_modules.value).ofType(AbstractModule.class).visitAll(new IVisitor<AbstractModule>() {
-      public void visit(AbstractModule module) {
-        IFile outputDir = module.getOutputPath();
-        IFile testDir = check_nf7729_a0b0a0a1a4(module.getFacet(TestsFacet.class));
-        IFile classesDir = check_nf7729_a0c0a0a1a4(module.getFacet(JavaModuleFacet.class));
-        if (outputDir != null) {
-          IFile cacheDir = FileGenerationUtil.getCachesDir(outputDir);
-          outputDir.delete();
-          cacheDir.delete();
+    Sequence.fromIterable(_modules.value).visitAll(new IVisitor<SModule>() {
+      public void visit(SModule module) {
+        // would be nice to handle all GenerationTargetFacet here, but for transition, rely on only facets we are aware at the moment (and those with single-root output) 
+        // FWIF, DeleteModuleHelper.deleteModuleFiles is pretty much about the same. 
+        ArrayList<IFile> roots = new ArrayList<IFile>(5);
+        JavaModuleFacet jmf = module.getFacet(JavaModuleFacet.class);
+        if (jmf != null) {
+          roots.add(jmf.getOutputRoot());
+          roots.add(jmf.getOutputCacheRoot());
+          roots.add(jmf.getClassesGen());
         }
-        if (testDir != null) {
-          IFile testCacheDir = FileGenerationUtil.getCachesDir(testDir);
-          testDir.delete();
-          testCacheDir.delete();
+        TestsFacet testsFacet = module.getFacet(TestsFacet.class);
+        if (testsFacet != null) {
+          roots.add(testsFacet.getTestsOutputPath());
+          roots.add(testsFacet.getOutputCacheRoot());
         }
-        if (classesDir != null) {
-          classesDir.delete();
+        for (IFile f : roots) {
+          if (f != null) {
+            f.delete();
+          }
         }
       }
     });
@@ -229,22 +205,4 @@ public class IdeCommandUtil {
     }));
   }
 
-  private static IFile check_nf7729_a0a0n0a0a1a0a0e(JavaModuleFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassesGen();
-    }
-    return null;
-  }
-  private static IFile check_nf7729_a0b0a0a1a4(TestsFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getTestsOutputPath();
-    }
-    return null;
-  }
-  private static IFile check_nf7729_a0c0a0a1a4(JavaModuleFacet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getClassesGen();
-    }
-    return null;
-  }
 }

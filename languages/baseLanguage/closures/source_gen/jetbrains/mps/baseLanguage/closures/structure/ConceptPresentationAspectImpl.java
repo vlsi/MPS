@@ -9,27 +9,27 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_AbstractFunctionType = new ConceptPresentationBuilder().deprecated(true).shortDesc("abstract function type").create();
   private final ConceptPresentation props_ClosureArgReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ClosureControlStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ClosureLiteral = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ClosureLiteral = new ConceptPresentationBuilder().shortDesc("closure literal").create();
   private final ConceptPresentation props_ClosureLiteralType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CompactInvokeFunctionExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CompactInvokeFunctionExpression = new ConceptPresentationBuilder().shortDesc("invoke function").create();
   private final ConceptPresentation props_ControlAbstractionContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ControlAbstractionDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ControlClosureLiteral = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FunctionMethodDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_FunctionType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InvokeExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InvokeFunctionExpression = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_InvokeFunctionOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_FunctionType = new ConceptPresentationBuilder().shortDesc("function type").create();
+  private final ConceptPresentation props_InvokeExpression = new ConceptPresentationBuilder().shortDesc("this function invocation expression").create();
+  private final ConceptPresentation props_InvokeFunctionExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("function invocation expression").create();
+  private final ConceptPresentation props_InvokeFunctionOperation = new ConceptPresentationBuilder().shortDesc("invoke function").create();
   private final ConceptPresentation props_PairOfInts = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StringPropertyHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnboundClosureParameterDeclaration = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnrestrictedClosureLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_UnrestrictedFunctionType = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_YieldAllStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_YieldStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_UnboundClosureParameterDeclaration = new ConceptPresentationBuilder().shortDesc("unbound closure parameter declaration").create();
+  private final ConceptPresentation props_UnrestrictedClosureLiteral = new ConceptPresentationBuilder().shortDesc("unrestricted closure literal").create();
+  private final ConceptPresentation props_UnrestrictedFunctionType = new ConceptPresentationBuilder().shortDesc("unrestricted function type").create();
+  private final ConceptPresentation props_YieldAllStatement = new ConceptPresentationBuilder().shortDesc("yield all elements in a sequence").create();
+  private final ConceptPresentation props_YieldStatement = new ConceptPresentationBuilder().shortDesc("yield next element").create();
 
   @Override
   @Nullable

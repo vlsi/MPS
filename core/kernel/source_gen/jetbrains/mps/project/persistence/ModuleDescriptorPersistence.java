@@ -6,34 +6,33 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import org.jdom.Element;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.adapter.structure.language.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.Map;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import java.util.Collection;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import org.jetbrains.mps.openapi.persistence.Memento;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.MacroHelper;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
 import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.modules.ModuleFacetDescriptor;
@@ -55,18 +54,6 @@ public class ModuleDescriptorPersistence {
 
   public static void loadDependencies(final ModuleDescriptor descriptor, Element root) {
     descriptor.getDependencies().addAll(loadDependenciesList(XmlUtil.first(root, "dependencies")));
-
-    descriptor.getUsedLanguages().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedLanguages"), "usedLanguage")).select(new ISelector<Element, SModuleReference>() {
-      public SModuleReference select(Element ul) {
-        return PersistenceFacade.getInstance().createModuleReference(ul.getText());
-      }
-    }).toListSequence());
-
-    descriptor.getUsedDevkits().addAll(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "usedDevKits"), "usedDevKit")).select(new ISelector<Element, SModuleReference>() {
-      public SModuleReference select(Element udk) {
-        return PersistenceFacade.getInstance().createModuleReference(udk.getText());
-      }
-    }).toListSequence());
 
     descriptor.setHasLanguageVersions(!(root.getChildren("languageVersions").isEmpty()));
     Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "languageVersions"), "language")).visitAll(new IVisitor<Element>() {
@@ -110,20 +97,6 @@ public class ModuleDescriptorPersistence {
       result.addContent(dependencies);
     }
 
-    if (!(descriptor.getUsedLanguages().isEmpty())) {
-      Element usedLanguages = new Element("usedLanguages");
-      for (SModuleReference langRef : CollectionSequence.fromCollection(descriptor.getUsedLanguages())) {
-        XmlUtil.tagWithText(usedLanguages, "usedLanguage", langRef.toString());
-      }
-      result.addContent(usedLanguages);
-    }
-    if (!(descriptor.getUsedDevkits().isEmpty())) {
-      Element usedDevKits = new Element("usedDevKits");
-      for (SModuleReference dkRef : CollectionSequence.fromCollection(descriptor.getUsedDevkits())) {
-        XmlUtil.tagWithText(usedDevKits, "usedDevKit", dkRef.toString());
-      }
-      result.addContent(usedDevKits);
-    }
     Map<SLanguage, Integer> lver = descriptor.getLanguageVersions();
     ArrayList<SLanguage> langs = new ArrayList<SLanguage>(lver.keySet());
     Collections.sort(langs, new Comparator<SLanguage>() {
@@ -204,15 +177,9 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] cache) {
-    assert type != null;
-    return new ModelRootDescriptor(type, m);
-  }
-
   protected static Logger LOG = LogManager.getLogger(ModuleDescriptorPersistence.class);
-  public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, String moduleContentRoot, MacroHelper macroHelper) {
+  public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, MacroHelper macroHelper) {
     List<ModelRootDescriptor> result = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
-    ModelRootDescriptor[] cache = new ModelRootDescriptor[2];
     for (Element element : modelRootElements) {
       Memento m = new MementoImpl();
       readMemento(m, element, macroHelper);
@@ -225,10 +192,7 @@ public class ModuleDescriptorPersistence {
         }
         throw new IllegalStateException(msg);
       }
-      ModelRootDescriptor descriptor = createDescriptor(type, m, moduleContentRoot, cache);
-      if (descriptor != null) {
-        ListSequence.fromList(result).addElement(descriptor);
-      }
+      ListSequence.fromList(result).addElement(new ModelRootDescriptor(type, m));
     }
     return result;
   }

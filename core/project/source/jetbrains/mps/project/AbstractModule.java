@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.DefaultScope;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SLanguageHierarchy;
@@ -80,7 +79,6 @@ import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -119,7 +117,7 @@ import static org.jetbrains.mps.openapi.module.FacetsFacade.FacetFactory;
  *
  * @see ModuleDescriptor for the details
  */
-public abstract class AbstractModule extends SModuleBase implements EditableSModule, FileSystemListener {
+public abstract class AbstractModule extends SModuleBase implements EditableSModule {
   private static final Logger LOG = LogManager.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
@@ -442,11 +440,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
     // 1 && 2
     if (sourcesDescriptorFile != null) {
-      // stub libraries
-      // todo: looks like module.xml contains info about model libs
-      // ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
-      descriptor.getAdditionalJavaStubPaths().clear();
-
       // stub model roots
       List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
       List<ModelRootDescriptor> toAdd = new ArrayList<ModelRootDescriptor>();
@@ -466,17 +459,43 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
               update = true;
             }
           } else {
+            // there are few possible deployment layouts:
+            //    1. App/Contents/languages/my.lang.jar + -src.jar
+            //    2. App/Contents/plugins/<name>/languages/my.lang.jar + -src.jar + libraries from additional cp
+            //       (build language generator puts libraries there with the help of ArtifactsRelativePathHelper, base on extracted jar deps;
+            //       FWIW, build language ignores jars listed under stub models)
+            //       App/Contents/plugins/<name>/pluginSolutions/my.lang.pluginSolution.jar
+            //       App/Contents/plugins/<name>/lib/icons.jar (placed there by build language generator)
+            //    3. Custom layout:
+            //       e.g. jetpad, which differs from (2) with lib/ full of cp jars
+            //       mps-core, with languageDesign/ and util/ nested under languages/
+            //       mps-vcs, with cp jars under lib/
+            //
             // trying to load new format : replacing paths like **.jar!/module ->
             String contentPath = rootDescriptor.getMemento().get(FileBasedModelRoot.CONTENT_PATH);
             List<String> paths = new LinkedList<String>();
             for (Memento sourceRoot : rootDescriptor.getMemento().getChildren(FileBasedModelRoot.SOURCE_ROOTS)) {
-              paths.add(contentPath + File.separator + sourceRoot.get("location"));
+              paths.add(contentPath + File.separator + sourceRoot.get(FileBasedModelRoot.LOCATION));
             }
-            newMemento.put(FileBasedModelRoot.CONTENT_PATH, newContentDir.getPath());
+            // contentPath = my.lang-src.jar!/module/xxx (provided original was ${module}/xxx; although some have ${mps-home} there)
+            // bundleHomeFile == my.lang.jar
+            // bundleParent == folder of my.lang.jar
+            // e.g. for collections.trove.msd:
+            //    /plugins/mps-trove/languages/collections_trove.runtime.jar
+            //    /plugins/mps-trove/languages/trove-2.1.0.jar
+            //  and
+            //    <modelRoot contentPath="${module}" type="java_classes">
+            //      <sourceRoot location="classes_gen" />
+            //      <sourceRoot location="lib/trove-2.1.0.jar" />
+            //    </modelRoot>
+            // the code below makes no sense
+            // DD for the module lists <library jar="trove-2.1.0.jar" />, which is likely the way file from languages/ is loaded
+            newMemento.put(FileBasedModelRoot.CONTENT_PATH, bundleParent.getPath());
             Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
             for (String path : paths) {
               String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
               if (convertedPath != null) {
+                newMementoChild.put(FileBasedModelRoot.LOCATION, convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
                 String newRelativeLocation = FileUtil.getRelativePath(FileUtil.getUnixPath(convertedPath),
                                                               FileUtil.getUnixPath(newContentDir.getPath()),
                                                               Path.UNIX_SEPARATOR);
@@ -496,13 +515,17 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     // 3
-    for (String jarFile : deplDescriptor.getLibraries()) {
-      IFile jar = jarFile.startsWith("/")
-          ? myFileSystem.getFile(PathManager.getHomePath() + jarFile)
-          : newContentDir.getDescendant(jarFile);
+    // MD.getAdditionalJavaStubPaths() has been updated by ModulesMiner to point to correct location according to information from DD
+    // Would be great to have IFile here directly, but alas, there's no well-established idea what's relation between MD and IFile/Path
+    // the problem is that myFileSystem not necessarily match that of deployment descriptor (the one we used to create these paths in MM).
+    for (String jarFile : descriptor.getAdditionalJavaStubPaths()) {
+      IFile jar = myFileSystem.getFile(jarFile);
       if (jar.exists()) {
-        String path = jar.getPath();
-        descriptor.getAdditionalJavaStubPaths().add(path);
+        // FIXME why do we expose *each* cp jar as model stub? Seems to be legacy, when stubModelEntry used to specify
+        //       both cp+stub, now there's distinct model root for that. HOWEVER, now it's only dd that points correctly to
+        //       library jars (filesystem-wise). While module-relative stub jars from deployed modules are ignored in the update cycle
+        //       above (module-src.jar!/module/ doesn't contain lib/stub.jar), and stub.jar is often part of CP, this code helps to get
+        //       stubs in deployed modules (e.g. check collections_trove.runtime)
         descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(jar));
       }
     }
@@ -690,9 +713,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
       // fixme AP: this looks awful -- I agree; the right way is to have IFile something immutable
       // fixme or just work in <code>WatchedRoots</code> by IFile (not by String) and listen for rename
-      myFileSystem.removeListener(this);
-      myDescriptorFile.rename(newDescriptorName);
-      myFileSystem.addListener(this);
+      myDescriptorFile.rename(newName + "." + FileUtil.getExtension(myDescriptorFile.getName()));
     }
 
     if (descriptor != null) {
@@ -738,44 +759,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   @Override
   public void attach(@NotNull SRepository repository) {
     super.attach(repository);
-    if (myDescriptorFile != null) {
-      myFileSystem.addListener(this);
-    }
     initFacetsAndModels();
-  }
-
-  @Nullable
-  @Override
-  public IFile getFileToListen() {
-    return myDescriptorFile;
-  }
-
-  @Override
-  public Iterable<FileSystemListener> getListenerDependencies() {
-    List<FileSystemListener> listeners = new ArrayList<FileSystemListener>();
-    for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(this)) {
-      if (owner instanceof FileSystemListener) {
-        listeners.add((FileSystemListener) owner);
-      }
-    }
-    return listeners.isEmpty() ? null : listeners;
-  }
-
-  @Override
-  public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    assertCanChange();
-    for (IFile file : event.getRemoved()) {
-      if (file.equals(myDescriptorFile)) {
-        ModuleRepositoryFacade.getInstance().unregisterModule(this);
-        return;
-      }
-    }
-    for (IFile file : event.getChanged()) {
-      if (file.equals(myDescriptorFile)) {
-        SModuleOperations.reloadFromDisk(this);
-        return;
-      }
-    }
   }
 
   @Override
@@ -788,7 +772,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public void dispose() {
     assertCanChange();
     LOG.trace("Disposing the module " + this);
-    myFileSystem.removeListener(this);
     for (ModuleFacetBase f : myFacets) {
       f.dispose();
     }
@@ -927,10 +910,10 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   @Nullable
   @Override
-  public <T extends SModuleFacet> T getFacet(Class<T> clazz) {
+  public <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz) {
     for (SModuleFacet facet : getFacets()) {
       if (clazz.isInstance(facet)) {
-        return (T) facet;
+        return clazz.cast(facet);
       }
     }
     return null;
@@ -982,8 +965,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
   }
 
+  /**
+   * @deprecated this is internal method, ask ModuleDescriptor for persisted setting directly, if it's what you're
+   * looking for (check {@link ProjectPathUtil#getGeneratorOutputPath(ModuleDescriptor)}. There ain't no such thing as output path for a module in general.
+   * Now it's implementation method for use from MPS internals.
+   */
+  @Deprecated
   public IFile getOutputPath() {
-    return ProjectPathUtil.getGeneratorOutputPath(getModuleSourceDir(), getModuleDescriptor());
+    String outputPath = ProjectPathUtil.getGeneratorOutputPath(getModuleDescriptor());
+    return outputPath == null ? null : getFileSystem().getFile(outputPath);
   }
 
   /**

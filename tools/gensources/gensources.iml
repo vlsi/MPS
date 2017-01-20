@@ -587,6 +587,12 @@
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConsMigrations/languages/jetbrains.mps.test.mainLang/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../../testbench/modules/testConstraints">
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConstraints/languages/constraints.test/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testConstraints/solutions/TestConstraints/test_gen" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testConstraints/languages/constraints.test/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../testbench/modules/testConstraints/solutions/TestConstraints/classes_gen" />
+    </content>
     <content url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow">
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomAnalyzer/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../testbench/modules/testDataFlow/languages/testCustomDataFlow/source_gen" isTestSource="false" />

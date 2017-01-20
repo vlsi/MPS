@@ -4,8 +4,9 @@ package jetbrains.mps.console.scripts;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -21,9 +22,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.console.scripts.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "f26691d2-0def-4c06-aec6-2cb90c4af0a4(jetbrains.mps.console.scripts)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("f26691d2-0def-4c06-aec6-2cb90c4af0a4");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.console.scripts";
@@ -35,12 +39,15 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("f26691d2-0def-4c06-aec6-2cb90c4af0a4"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.console.base", "jetbrains.mps.lang.smodel.query"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("de1ad86d-6e50-4a02-b306-d4d17f64c375"), "jetbrains.mps.console.base"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("1a8554c4-eb84-43ba-8c34-6f0d90c6e75a"), "jetbrains.mps.lang.smodel.query"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "b372f31d-dc58-46b6-ad0b-2e1b2e187b9d(jetbrains.mps.console.scripts#1734392475490224704)"));

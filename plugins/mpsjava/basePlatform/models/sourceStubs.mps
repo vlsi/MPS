@@ -5,7 +5,7 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -390,6 +390,12 @@
   </node>
   <node concept="312cEu" id="3PyP5yK7oru">
     <property role="TrG5h" value="JavaSourceStubModelRoot" />
+    <node concept="3uibUv" id="3v68VbmkQZb" role="EKbjA">
+      <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
+      <node concept="3uibUv" id="3v68VbmkU3y" role="11_B2D">
+        <ref role="3uigEE" node="3PyP5yK7oru" resolve="JavaSourceStubModelRoot" />
+      </node>
+    </node>
     <node concept="Wx3nA" id="3se2FvxAxve" role="jymVt">
       <property role="TrG5h" value="LOG" />
       <property role="3TUv4t" value="true" />
@@ -741,14 +747,14 @@
                   <node concept="1rXfSq" id="4250WDOpGsm" role="25WWJ7">
                     <ref role="37wK5l" node="1__2wAbtcch" resolve="getModels" />
                     <node concept="2OqwBi" id="4250WDOpGYl" role="37wK5m">
+                      <node concept="1rXfSq" id="7l6b$Kxeldv" role="2Oq$k0">
+                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
+                      </node>
                       <node concept="liA8E" id="4250WDOpGYn" role="2OqNvi">
                         <ref role="37wK5l" to="w827:~FileSystem.getFile(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getFile" />
                         <node concept="37vLTw" id="4250WDOpGYo" role="37wK5m">
                           <ref role="3cqZAo" node="6STCsy2s48R" resolve="file" />
                         </node>
-                      </node>
-                      <node concept="1rXfSq" id="7l6b$Kxeldv" role="2Oq$k0">
-                        <ref role="37wK5l" to="ends:~FileBasedModelRoot.getFileSystem():jetbrains.mps.vfs.openapi.FileSystem" resolve="getFileSystem" />
                       </node>
                     </node>
                   </node>
@@ -1155,12 +1161,6 @@
       </node>
       <node concept="2AHcQZ" id="3PyP5yK7w2m" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3uibUv" id="3v68VbmkQZb" role="EKbjA">
-      <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
-      <node concept="3uibUv" id="3v68VbmkU3y" role="11_B2D">
-        <ref role="3uigEE" node="3PyP5yK7oru" resolve="JavaSourceStubModelRoot" />
       </node>
     </node>
   </node>

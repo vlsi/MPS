@@ -229,6 +229,70 @@
       <unit id="2893289111810594296" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_Visibility_Test" />
     </file>
   </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2943053183527886975">
+    <file name="DelOnInterfaceChild1DeleteParent_Test.java">
+      <node id="2943053183527886975" at="13,72,14,110" concept="0" />
+      <node id="2943053183527886975" at="14,110,15,122" concept="0" />
+      <node id="2943053183527886975" at="21,51,22,72" concept="0" />
+      <node id="2943053183527886983" at="22,72,23,69" concept="0" />
+      <node id="2943053183527886975" at="12,0,17,0" concept="1" trace="test_DelOnInterfaceChild1DeleteParent#()V" />
+      <node id="2943053183527886975" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2943053183527886975" at="13,72,15,122" />
+      <scope id="2943053183527886975" at="21,51,23,69" />
+      <scope id="2943053183527886975" at="12,0,17,0" />
+      <scope id="2943053183527886975" at="20,0,25,0" />
+      <unit id="2943053183527886975" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test$TestBody" />
+      <unit id="2943053183527886975" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1DeleteParent_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2943053183528016305">
+    <file name="DelOnInterfaceChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="2943053183528016305" at="13,83,14,110" concept="0" />
+      <node id="2943053183528016305" at="14,110,15,133" concept="0" />
+      <node id="2943053183528016305" at="21,51,22,72" concept="0" />
+      <node id="2943053183528016312" at="22,72,23,69" concept="0" />
+      <node id="2943053183528016305" at="12,0,17,0" concept="1" trace="test_DelOnInterfaceChild1ReplaceItWithLinkTarget#()V" />
+      <node id="2943053183528016305" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2943053183528016305" at="13,83,15,133" />
+      <scope id="2943053183528016305" at="21,51,23,69" />
+      <scope id="2943053183528016305" at="12,0,17,0" />
+      <scope id="2943053183528016305" at="20,0,25,0" />
+      <unit id="2943053183528016305" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="2943053183528016305" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnInterfaceChild1ReplaceItWithLinkTarget_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2943053183528026729">
+    <file name="DelOnSpecialInterfaceChild1DeleteParent_Test.java">
+      <node id="2943053183528026729" at="13,79,14,110" concept="0" />
+      <node id="2943053183528026729" at="14,110,15,129" concept="0" />
+      <node id="2943053183528026729" at="21,51,22,72" concept="0" />
+      <node id="2943053183528026735" at="22,72,23,69" concept="0" />
+      <node id="2943053183528026729" at="12,0,17,0" concept="1" trace="test_DelOnSpecialInterfaceChild1DeleteParent#()V" />
+      <node id="2943053183528026729" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2943053183528026729" at="13,79,15,129" />
+      <scope id="2943053183528026729" at="21,51,23,69" />
+      <scope id="2943053183528026729" at="12,0,17,0" />
+      <scope id="2943053183528026729" at="20,0,25,0" />
+      <unit id="2943053183528026729" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test$TestBody" />
+      <unit id="2943053183528026729" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1DeleteParent_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2943053183528078689">
+    <file name="DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="2943053183528078689" at="13,90,14,110" concept="0" />
+      <node id="2943053183528078689" at="14,110,15,140" concept="0" />
+      <node id="2943053183528078689" at="21,51,22,72" concept="0" />
+      <node id="2943053183528078695" at="22,72,23,69" concept="0" />
+      <node id="2943053183528078689" at="12,0,17,0" concept="1" trace="test_DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget#()V" />
+      <node id="2943053183528078689" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="2943053183528078689" at="13,90,15,140" />
+      <scope id="2943053183528078689" at="21,51,23,69" />
+      <scope id="2943053183528078689" at="12,0,17,0" />
+      <scope id="2943053183528078689" at="20,0,25,0" />
+      <unit id="2943053183528078689" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="2943053183528078689" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialInterfaceChild1ReplaceItWithLinkTarget_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/2972757353564036659">
     <file name="Comment_Return_Test.java">
       <node id="2972757353564036659" at="13,54,14,110" concept="0" />
@@ -441,6 +505,38 @@
       <scope id="4247887444754152430" at="20,0,25,0" />
       <unit id="4247887444754152430" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeWithComment_Test$TestBody" />
       <unit id="4247887444754152430" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.Uncomment_NodeWithComment_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/5383578965096699346">
+    <file name="DelOnSpecialChild1DeleteParent_Test.java">
+      <node id="5383578965096699346" at="13,70,14,110" concept="0" />
+      <node id="5383578965096699346" at="14,110,15,120" concept="0" />
+      <node id="5383578965096699346" at="21,51,22,72" concept="0" />
+      <node id="5383578965096699354" at="22,72,23,69" concept="0" />
+      <node id="5383578965096699346" at="12,0,17,0" concept="1" trace="test_DelOnSpecialChild1DeleteParent#()V" />
+      <node id="5383578965096699346" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5383578965096699346" at="13,70,15,120" />
+      <scope id="5383578965096699346" at="21,51,23,69" />
+      <scope id="5383578965096699346" at="12,0,17,0" />
+      <scope id="5383578965096699346" at="20,0,25,0" />
+      <unit id="5383578965096699346" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test$TestBody" />
+      <unit id="5383578965096699346" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1DeleteParent_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/5383578965096740755">
+    <file name="DelOnSpecialChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="5383578965096740755" at="13,81,14,110" concept="0" />
+      <node id="5383578965096740755" at="14,110,15,131" concept="0" />
+      <node id="5383578965096740755" at="21,51,22,72" concept="0" />
+      <node id="5383578965096740765" at="22,72,23,69" concept="0" />
+      <node id="5383578965096740755" at="12,0,17,0" concept="1" trace="test_DelOnSpecialChild1ReplaceItWithLinkTarget#()V" />
+      <node id="5383578965096740755" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5383578965096740755" at="13,81,15,131" />
+      <scope id="5383578965096740755" at="21,51,23,69" />
+      <scope id="5383578965096740755" at="12,0,17,0" />
+      <scope id="5383578965096740755" at="20,0,25,0" />
+      <unit id="5383578965096740755" at="18,0,26,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="5383578965096740755" at="10,0,27,0" name="jetbrains.mps.lang.editor.actions.test.DelOnSpecialChild1ReplaceItWithLinkTarget_Test" />
     </file>
   </root>
   <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/5639868649489808119">

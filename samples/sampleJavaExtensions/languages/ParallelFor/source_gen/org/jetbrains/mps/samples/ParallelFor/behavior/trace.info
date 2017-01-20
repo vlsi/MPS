@@ -167,7 +167,7 @@
     <file name="ParallelFor__BehaviorDescriptor.java">
       <node id="4120418308311043819" at="41,0,42,0" concept="7" trace="CONCEPT" />
       <node id="4120418308311043819" at="42,0,43,0" concept="7" trace="REGISTRY" />
-      <node id="4120418308311043819" at="44,0,45,0" concept="7" trace="getScope_id3fifI_xCJOQ" />
+      <node id="4120418308311043819" at="44,0,45,0" concept="7" trace="getScope_id52_Geb4QDV$" />
       <node id="4120418308311043819" at="45,0,46,0" concept="7" trace="collectUncaughtMethodThrowables_id4Gt7ANIVH8f" />
       <node id="4120418308311043819" at="46,0,47,0" concept="7" trace="uncaughtThrowables_id2SVUfbZ9Qq1" />
       <node id="4120418308311043819" at="47,0,48,0" concept="7" trace="getThrowableTypes_id5op8ooRkkc7" />
@@ -177,7 +177,7 @@
       <node id="4120418308311043819" at="51,0,52,0" concept="7" trace="findPoolDeclaration_id6FH9fp$mItT" />
       <node id="4120418308311043819" at="53,0,54,0" concept="7" trace="BH_METHODS" />
       <node id="2832018561209150769" at="59,221,60,53" concept="4" />
-      <node id="2832018561209150778" at="61,72,62,232" concept="1" />
+      <node id="2832018561209150778" at="61,195,62,232" concept="1" />
       <node id="7497677991177984042" at="63,7,64,98" concept="5" />
       <node id="4120418308311047376" at="65,5,66,0" concept="6" />
       <node id="7362994916699057920" at="66,0,67,127" concept="5" />
@@ -195,7 +195,7 @@
       <node id="4120418308311043819" at="103,114,104,21" concept="1" />
       <node id="4120418308311043819" at="108,114,109,49" concept="4" />
       <node id="4120418308311043819" at="110,26,111,56" concept="11" />
-      <node id="4120418308311043819" at="114,13,115,104" concept="5" />
+      <node id="4120418308311043819" at="114,13,115,115" concept="5" />
       <node id="4120418308311043819" at="116,13,117,125" concept="1" />
       <node id="4120418308311043819" at="117,125,118,20" concept="5" />
       <node id="4120418308311043819" at="119,13,120,110" concept="5" />
@@ -232,16 +232,16 @@
       <node id="4120418308311043819" at="148,0,153,0" concept="3" trace="getDeclaredMethods#()Ljava/util/List;" />
       <node id="4120418308311043819" at="154,0,159,0" concept="3" trace="getConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="7704855178165046206" at="88,69,94,5" concept="12" />
-      <node id="2832018561209150737" at="58,105,65,5" concept="2" />
+      <node id="2832018561209150737" at="58,116,65,5" concept="2" />
       <node id="7704855178166514891" at="159,0,166,0" concept="8" trace="_quotation_createNode_1tdh13_a0a0a0b0h#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="4120418308311043819" at="87,0,97,0" concept="8" trace="findPoolDeclaration_id6FH9fp$mItT#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="4120418308311043819" at="58,0,69,0" concept="8" trace="getScope_id3fifI_xCJOQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="4120418308311043819" at="58,0,69,0" concept="8" trace="getScope_id52_Geb4QDV$#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
       <node id="4120418308311043819" at="136,0,147,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <node id="4120418308311043819" at="112,5,133,5" concept="10" />
       <node id="4120418308311043819" at="107,0,135,0" concept="3" trace="invokeSpecial0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/core/aspects/behaviour/api/SMethod;[Ljava/lang/Object;)null" />
       <scope id="4120418308311043819" at="55,63,55,63" />
       <scope id="5337045848190663579" at="69,156,69,156" />
-      <scope id="2832018561209150777" at="61,72,62,232" />
+      <scope id="2832018561209150777" at="61,195,62,232" />
       <scope id="5337045848190935672" at="75,95,76,34" />
       <scope id="5337045848190935668" at="78,75,79,172" />
       <scope id="5337045848190935664" at="81,86,82,16" />
@@ -250,7 +250,7 @@
       <scope id="4120418308311043819" at="98,49,99,20" />
       <scope id="4120418308311043819" at="103,114,104,21" />
       <scope id="4120418308311043819" at="110,26,111,56" />
-      <scope id="4120418308311043819" at="114,13,115,104" />
+      <scope id="4120418308311043819" at="114,13,115,115" />
       <scope id="4120418308311043819" at="119,13,120,110" />
       <scope id="4120418308311043819" at="121,13,122,73" />
       <scope id="4120418308311043819" at="123,13,124,53" />
@@ -313,7 +313,7 @@
       <scope id="4120418308311043819" at="137,128,145,5">
         <var name="methodIndex" id="4120418308311043819" />
       </scope>
-      <scope id="4120418308311047359" at="58,105,67,127" />
+      <scope id="4120418308311047359" at="58,116,67,127" />
       <scope id="4120418308311043819" at="87,0,97,0">
         <var name="__thisNode__" id="4120418308311043819" />
       </scope>

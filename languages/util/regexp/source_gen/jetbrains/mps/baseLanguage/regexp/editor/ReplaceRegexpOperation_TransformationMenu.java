@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -60,7 +61,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_a1.TransformationMenuPart_Action_z6skvi_a0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_a1.TransformationMenuPart_Action_z6skvi_a0b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")));
     }
     private class TransformationMenuPart_Action_z6skvi_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
@@ -108,7 +109,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_b1.TransformationMenuPart_Action_z6skvi_a1b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_b1.TransformationMenuPart_Action_z6skvi_a1b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")));
     }
     private class TransformationMenuPart_Action_z6skvi_a1b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
@@ -156,7 +157,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_c1.TransformationMenuPart_Action_z6skvi_a2b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_c1.TransformationMenuPart_Action_z6skvi_a2b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")));
     }
     private class TransformationMenuPart_Action_z6skvi_a2b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
@@ -204,7 +205,7 @@ public class ReplaceRegexpOperation_TransformationMenu extends TransformationMen
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_d1.TransformationMenuPart_Action_z6skvi_a3b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new ReplaceRegexpOperation_TransformationMenu.TransformationMenuPart_Group_z6skvi_d1.TransformationMenuPart_Action_z6skvi_a3b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117648961dL, "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression")));
     }
     private class TransformationMenuPart_Action_z6skvi_a3b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable

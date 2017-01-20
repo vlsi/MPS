@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debug-info version="2">
   <root>
+    <file name="AbstractChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.AbstractChild_BehaviorDescriptor" />
+    </file>
     <file name="AbstractDeveloper_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.AbstractDeveloper_BehaviorDescriptor" />
     </file>
@@ -12,6 +15,12 @@
     </file>
     <file name="Company_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.Company_BehaviorDescriptor" />
+    </file>
+    <file name="ConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.ConcreteChild_BehaviorDescriptor" />
+    </file>
+    <file name="Container_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.Container_BehaviorDescriptor" />
     </file>
     <file name="DefaultNodeAttribute_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.DefaultNodeAttribute_BehaviorDescriptor" />
@@ -31,8 +40,17 @@
     <file name="Friend_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.Friend_BehaviorDescriptor" />
     </file>
+    <file name="IConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.IConcreteChild_BehaviorDescriptor" />
+    </file>
+    <file name="IParent_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="testDefaultEditor.behavior.IParent_BehaviorDescriptor" />
+    </file>
     <file name="NotSubstitutableDeveloper_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" />
+    </file>
+    <file name="Parent_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="testDefaultEditor.behavior.Parent_BehaviorDescriptor" />
     </file>
     <file name="Shape_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="testDefaultEditor.behavior.Shape_BehaviorDescriptor" />

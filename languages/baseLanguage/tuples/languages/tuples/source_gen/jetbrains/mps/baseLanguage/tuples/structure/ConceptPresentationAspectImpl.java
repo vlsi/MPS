@@ -9,15 +9,15 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_IndexedTupleLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IndexedTupleMemberAccessExpression = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_IndexedTupleType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IndexedTupleLiteral = new ConceptPresentationBuilder().shortDesc("indexed tuple").create();
+  private final ConceptPresentation props_IndexedTupleMemberAccessExpression = new ConceptPresentationBuilder().shortDesc("access tuple member by index").create();
+  private final ConceptPresentation props_IndexedTupleType = new ConceptPresentationBuilder().shortDesc("indexed tuple type").create();
   private final ConceptPresentation props_NamedTupleComponentAccessOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedTupleComponentDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedTupleComponentReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NamedTupleDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
-  private final ConceptPresentation props_NamedTupleLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NamedTupleType = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NamedTupleDeclaration = new ConceptPresentationBuilder().shortDesc("Named tuple declaration").icon(IconContainer.RESOURCE_a0a0g).create();
+  private final ConceptPresentation props_NamedTupleLiteral = new ConceptPresentationBuilder().shortDesc("tuple literal").create();
+  private final ConceptPresentation props_NamedTupleType = new ConceptPresentationBuilder().shortDesc("reference to named tuple declaration").create();
 
   @Override
   @Nullable

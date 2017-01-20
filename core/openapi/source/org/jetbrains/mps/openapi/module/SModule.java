@@ -122,8 +122,8 @@ public interface SModule {
 
   /**
    *  Returns facet of the specified class.
-   *  It is the implementor matter to decide which facet to return
-   *  in the case there are several facets of the given class in this module.
+   *  If there is more than one facet instance that conforms specified class, it's unspecified which one is returned,
+   *  use {@link #getFacets()} instead and filter as appropriate.
    */
   @Nullable
   <T extends SModuleFacet> T getFacet(@NotNull Class<T> clazz);

@@ -108,13 +108,18 @@ public abstract class Project implements MPSModuleOwner, IProject {
 
   @NotNull
   public final List<SModule> getProjectModulesWithGenerators() {
-    List<SModule> result = new ArrayList<SModule>();
-    for (SModule m : getProjectModules()) {
-      result.add(m);
-      if (m instanceof Language) {
-        result.addAll(((Language) m).getGenerators());
+    final ArrayList<SModule> result = new ArrayList<>();
+    // although getProjectModules likely to access cached value, Language.getGenerators needs MA.
+    // Since we are interested in a consistent repository state, and add/remove of a module from a repository
+    // is guarded by repository's MA, it doesn't hurt to ensure proper access here.
+    getModelAccess().runReadAction(() -> {
+      for (SModule m : getProjectModules()) {
+        result.add(m);
+        if (m instanceof Language) {
+          result.addAll(((Language) m).getGenerators());
+        }
       }
-    }
+    });
     return result;
   }
 

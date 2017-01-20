@@ -227,5 +227,28 @@
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
   </node>
+  <node concept="1TIwiD" id="1u_ffTorqp2">
+    <property role="EcuMT" value="1703835097132541506" />
+    <property role="TrG5h" value="ThisConceptExpression" />
+    <property role="34LRSv" value="this" />
+    <property role="R4oN_" value="this concept" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="PrWs8" id="1u_ffTorqp3" role="PzmwI">
+      <ref role="PrY4T" to="tpee:hOwrSQh" resolve="IThisExpression" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6ADPXMKlUuB">
+    <property role="EcuMT" value="7613853987897845671" />
+    <property role="TrG5h" value="SuperConceptExpression" />
+    <property role="34LRSv" value="super" />
+    <property role="R4oN_" value="super concept" />
+    <ref role="1TJDcQ" to="tpee:fz3vP1J" resolve="Expression" />
+    <node concept="1TJgyj" id="6ADPXMKlUuC" role="1TKVEi">
+      <property role="IQ2ns" value="7613853987897845672" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="superConcept" />
+      <ref role="20lvS9" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+    </node>
+  </node>
 </model>
 

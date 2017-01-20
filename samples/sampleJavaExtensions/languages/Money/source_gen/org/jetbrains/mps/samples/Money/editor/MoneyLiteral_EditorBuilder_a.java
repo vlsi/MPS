@@ -13,9 +13,10 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.FocusPolicy;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 /*package*/ class MoneyLiteral_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -61,11 +62,24 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
     return editorCell;
   }
   private EditorCell createRefCell_84i1v2_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
+      @Override
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new MoneyLiteral_EditorBuilder_a.Inline_Builder_84i1v2_a1a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "unit");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
+      }
+    };
     provider.setRole("unit");
     provider.setNoTargetText("<no unit>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new MoneyLiteral_EditorBuilder_a._Inline_84i1v2_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -81,18 +95,6 @@ import jetbrains.mps.nodeEditor.InlineCellProvider;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_84i1v2_a1a extends InlineCellProvider {
-    public _Inline_84i1v2_a1a() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new MoneyLiteral_EditorBuilder_a.Inline_Builder_84i1v2_a1a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_84i1v2_a1a extends AbstractEditorBuilder {
     @NotNull

@@ -5,8 +5,8 @@
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="64d34fcd-ad02-4e73-aff8-a581124c2e30" name="jetbrains.mps.lang.findUsages" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="tpci" ref="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" />
@@ -205,6 +205,9 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
+        <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
+      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1171315804604" name="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" flags="nn" index="2RRcyG">
         <reference id="1171315804605" name="concept" index="2RRcyH" />
@@ -245,7 +248,6 @@
       </concept>
       <concept id="1203518072036" name="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration" flags="ig" index="Rh6nW" />
       <concept id="1201792049884" name="jetbrains.mps.baseLanguage.collections.structure.TranslateOperation" flags="nn" index="3goQfb" />
-      <concept id="1202120902084" name="jetbrains.mps.baseLanguage.collections.structure.WhereOperation" flags="nn" index="3zZkjj" />
     </language>
   </registry>
   <node concept="312cEu" id="6hha$XdHaWh">
@@ -1575,6 +1577,9 @@
     <node concept="3uibUv" id="1Fz6CCoewya" role="1zkMxy">
       <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
     </node>
+    <node concept="3uibUv" id="3l3Dt6fEdDm" role="EKbjA">
+      <ref role="3uigEE" to="k4i4:~Finder" resolve="Finder" />
+    </node>
   </node>
   <node concept="312cEu" id="6hha$XdHb3A">
     <property role="TrG5h" value="ConstantFinder" />
@@ -1853,33 +1858,16 @@
           </node>
           <node concept="3clFbS" id="5gewV25wDeZ" role="2LFqv$">
             <node concept="1DcWWT" id="5gewV25wDff" role="3cqZAp">
-              <node concept="2OqwBi" id="5gewV25wJsf" role="1DdaDG">
+              <node concept="2OqwBi" id="2MPx6ZV4T5i" role="1DdaDG">
                 <node concept="2OqwBi" id="5gewV25wJrQ" role="2Oq$k0">
                   <node concept="37vLTw" id="3GM_nagTsuM" role="2Oq$k0">
                     <ref role="3cqZAo" node="5gewV25wDeX" resolve="mappingConfig" />
                   </node>
                   <node concept="32TBzR" id="5gewV25wQSc" role="2OqNvi" />
                 </node>
-                <node concept="3zZkjj" id="5gewV25wJsj" role="2OqNvi">
-                  <node concept="1bVj0M" id="5gewV25wJsk" role="23t8la">
-                    <node concept="3clFbS" id="5gewV25wJsl" role="1bW5cS">
-                      <node concept="3clFbF" id="5gewV25wJso" role="3cqZAp">
-                        <node concept="2OqwBi" id="5gewV25wJsq" role="3clFbG">
-                          <node concept="37vLTw" id="2BHiRxgm8cO" role="2Oq$k0">
-                            <ref role="3cqZAo" node="5gewV25wJsm" resolve="it" />
-                          </node>
-                          <node concept="1mIQ4w" id="5gewV25wJsu" role="2OqNvi">
-                            <node concept="chp4Y" id="5gewV25wJsw" role="cj9EA">
-                              <ref role="cht4Q" to="tpf8:gZ0H$p7" resolve="BaseMappingRule" />
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                    <node concept="Rh6nW" id="5gewV25wJsm" role="1bW2Oz">
-                      <property role="TrG5h" value="it" />
-                      <node concept="2jxLKc" id="5gewV25wJsn" role="1tU5fm" />
-                    </node>
+                <node concept="v3k3i" id="2MPx6ZV4UHf" role="2OqNvi">
+                  <node concept="chp4Y" id="2MPx6ZV4UPL" role="v3oSu">
+                    <ref role="cht4Q" to="tpf8:gZ0H$p7" resolve="BaseMappingRule" />
                   </node>
                 </node>
               </node>
@@ -2147,6 +2135,9 @@
     </node>
     <node concept="3uibUv" id="1Fz6CCofUnJ" role="1zkMxy">
       <ref role="3uigEE" to="b2d5:1Fz6CCoeqzM" resolve="BaseFinder" />
+    </node>
+    <node concept="3uibUv" id="2MPx6ZV4QiC" role="EKbjA">
+      <ref role="3uigEE" to="k4i4:~IFinder" resolve="IFinder" />
     </node>
   </node>
 </model>

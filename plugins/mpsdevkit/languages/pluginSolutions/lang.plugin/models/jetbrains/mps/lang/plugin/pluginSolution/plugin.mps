@@ -732,6 +732,9 @@
                         </node>
                         <node concept="3clFbF" id="_7spT05mWs" role="3cqZAp">
                           <node concept="2OqwBi" id="_7spT05nWw" role="3clFbG">
+                            <node concept="liA8E" id="_7spT05otD" role="2OqNvi">
+                              <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
+                            </node>
                             <node concept="2OqwBi" id="6s_qFz8HpdO" role="2Oq$k0">
                               <node concept="2OqwBi" id="6s_qFz8Hoxx" role="2Oq$k0">
                                 <node concept="2WthIp" id="6s_qFz8Hoxy" role="2Oq$k0" />
@@ -742,9 +745,6 @@
                               <node concept="liA8E" id="6s_qFz8HqdE" role="2OqNvi">
                                 <ref role="37wK5l" to="z1c3:~Project.getRepository():org.jetbrains.mps.openapi.module.SRepository" resolve="getRepository" />
                               </node>
-                            </node>
-                            <node concept="liA8E" id="_7spT05otD" role="2OqNvi">
-                              <ref role="37wK5l" to="lui2:~SRepository.saveAll():void" resolve="saveAll" />
                             </node>
                           </node>
                         </node>

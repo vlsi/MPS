@@ -10,7 +10,7 @@
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <import index="1i04" ref="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" />
-    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" implicit="true" />
+    <import index="tp2q" ref="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
   </imports>
   <registry>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
@@ -1039,20 +1039,6 @@
     <property role="EcuMT" value="1180457458947" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
   </node>
-  <node concept="1TIwiD" id="hboNAxt">
-    <property role="R5$K7" value="false" />
-    <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="Concept_GetHierarchy" />
-    <property role="2_RsDV" value="none" />
-    <property role="3GE5qa" value="operation.concept" />
-    <property role="34LRSv" value="hierarchy" />
-    <property role="EcuMT" value="1180458444893" />
-    <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
-    <node concept="asaX9" id="1EtdPNueXB$" role="lGtFl" />
-    <node concept="PrWs8" id="1EtdPNueYi4" role="PzmwI">
-      <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
-    </node>
-  </node>
   <node concept="1TIwiD" id="hbzrR4P">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
@@ -1607,6 +1593,10 @@
     <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
     <node concept="PrWs8" id="1lUJQtrPjSa" role="PzmwI">
       <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
+    </node>
+    <node concept="asaX9" id="2ytHpS0VIur" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use .link instead" />
     </node>
   </node>
   <node concept="PlHQZ" id="1lUJQtrPjRM">
@@ -2752,6 +2742,19 @@
     <property role="34LRSv" value="link" />
     <property role="EcuMT" value="7504436213544206332" />
     <ref role="1TJDcQ" node="g$eCIIG" resolve="SNodeOperation" />
+  </node>
+  <node concept="1TIwiD" id="2ytHpS0VIut">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="TrG5h" value="Reference_ContainingLinkOperation" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="operation.reference" />
+    <property role="34LRSv" value="link" />
+    <property role="EcuMT" value="2926695023085807517" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="PrWs8" id="2ytHpS0VKmm" role="PzmwI">
+      <ref role="PrY4T" node="1lUJQtrPjRM" resolve="IReferenceOperation" />
+    </node>
   </node>
 </model>
 

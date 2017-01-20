@@ -17,7 +17,6 @@ package jetbrains.mps.generator.test;
 
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
@@ -26,7 +25,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.plan.PlanSignature;
 import jetbrains.mps.messages.LogHandler;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.text.TextGenResult;
 import jetbrains.mps.text.TextGeneratorEngine;
 import jetbrains.mps.textgen.trace.TraceInfoCache;
@@ -36,7 +35,6 @@ import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Status;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
@@ -117,7 +115,7 @@ public class IncrementalTestGenerationHandler {
 
   public boolean handleOutput(SModel inputModel, GenerationStatus status) {
     myLastDependencies = null;
-    IFile targetDir = FileSystem.getInstance().getFileByPath(SModuleOperations.getOutputPathFor(inputModel));
+    IFile targetDir = inputModel.getModule().getFacet(JavaModuleFacet.class).getOutputLocation(inputModel);
 
     Assert.assertTrue(status.isOk());
     Assert.assertTrue("should be called once", timesCalled++ == 0);
@@ -141,7 +139,7 @@ public class IncrementalTestGenerationHandler {
 
     if (status.isOk()) {
       myLastDependencies = status.getDependencies();
-      myFilesDir = FileGenerationUtil.getDefaultOutputDir(inputModel, targetDir);
+      myFilesDir = targetDir;
 
       CollectingStreamHandler toStringHandler = new CollectingStreamHandler(generatedContent, getExistingContent());
 

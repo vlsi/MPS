@@ -15,8 +15,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -63,11 +64,24 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     return (SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(myNode, MetaAdapterFactory.getReferenceLink(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, 0xd244b712f91001dL, "persistentConfiguration")), new IAttributeDescriptor.NodeAttribute(MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0x7f8de21e263f5819L, "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation"))) != null);
   }
   private EditorCell createRefCell_c5arh5_a0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
+      @Override
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a0a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "persistentConfiguration");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_nullable_reference(cell);
+        return cell;
+      }
+    };
     provider.setRole("persistentConfiguration");
     provider.setNoTargetText("<no persistentConfiguration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentConfigurationType_EditorBuilder_a._Inline_c5arh5_a0a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -80,18 +94,6 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_c5arh5_a0a extends InlineCellProvider {
-    public _Inline_c5arh5_a0a() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a0a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_c5arh5_a0a extends AbstractEditorBuilder {
     @NotNull
@@ -135,11 +137,24 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
     }
   }
   private EditorCell createRefCell_c5arh5_b0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
+      @Override
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a1a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "persistentConfiguration");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_nullable_reference(cell);
+        return cell;
+      }
+    };
     provider.setRole("persistentConfiguration");
     provider.setNoTargetText("<no persistentConfiguration>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new PersistentConfigurationType_EditorBuilder_a._Inline_c5arh5_a1a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -155,18 +170,6 @@ import jetbrains.mps.execution.settings.editor.ExecutionSettings_StyleSheet.pers
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_c5arh5_a1a extends InlineCellProvider {
-    public _Inline_c5arh5_a1a() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new PersistentConfigurationType_EditorBuilder_a.Inline_Builder_c5arh5_a1a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_c5arh5_a1a extends AbstractEditorBuilder {
     @NotNull

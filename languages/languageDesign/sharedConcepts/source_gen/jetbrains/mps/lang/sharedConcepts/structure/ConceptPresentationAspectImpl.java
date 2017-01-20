@@ -9,12 +9,12 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_ConceptFunctionParameter_editorContext = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_model = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptFunctionParameter_editorContext = new ConceptPresentationBuilder().shortDesc("current EditorContext instance").create();
+  private final ConceptPresentation props_ConceptFunctionParameter_model = new ConceptPresentationBuilder().shortDesc("model of the reference node").create();
   private final ConceptPresentation props_ConceptFunctionParameter_node = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_operationContext = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_ConceptFunctionParameter_progressMonitor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFunctionParameter_scope = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptFunctionParameter_operationContext = new ConceptPresentationBuilder().deprecated(true).shortDesc("IOperationContext").create();
+  private final ConceptPresentation props_ConceptFunctionParameter_progressMonitor = new ConceptPresentationBuilder().shortDesc("progress monitor").create();
+  private final ConceptPresentation props_ConceptFunctionParameter_scope = new ConceptPresentationBuilder().shortDesc("context (SearchScope)").create();
 
   @Override
   @Nullable

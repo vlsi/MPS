@@ -8,8 +8,8 @@
     <use id="ef7bf5ac-d06c-4342-b11d-e42104eb9343" name="jetbrains.mps.lang.plugin.standalone" version="0" />
     <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
     <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
   </languages>
   <imports>
@@ -507,7 +507,7 @@
                                 <ref role="37wK5l" to="u78q:~TypeCheckingContext.getTypeMessageDontCheck(org.jetbrains.mps.openapi.model.SNode):jetbrains.mps.errors.IErrorReporter" resolve="getTypeMessageDontCheck" />
                                 <node concept="2OqwBi" id="1KUoCiqb5F_" role="37wK5m">
                                   <node concept="2WthIp" id="1KUoCiqb5FA" role="2Oq$k0" />
-                                  <node concept="1DTwFV" id="1KUoCiqb5FB" role="2OqNvi">
+                                  <node concept="3gHZIF" id="4Ng3MJZbFOI" role="2OqNvi">
                                     <ref role="2WH_rO" node="7yrT30bWG3K" resolve="node" />
                                   </node>
                                 </node>

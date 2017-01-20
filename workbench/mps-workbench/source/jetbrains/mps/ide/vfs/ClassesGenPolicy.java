@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +17,11 @@ package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.vfs.IFile;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -31,6 +29,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+// XXX Resembles GeneratedFilesExcludePolicy, which deals with generated sources, while this one with artifacts compiled from these sources.
 public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
   protected ClassesGenPolicy(@NotNull Project project) {
     super(project);
@@ -45,7 +44,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        for (SModule module : mpsProject.getModulesWithGenerators()) {
+        for (SModule module : mpsProject.getProjectModulesWithGenerators()) {
           JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
           if (facet == null) {
             continue;
@@ -57,6 +56,7 @@ public class ClassesGenPolicy extends BaseDirectoryIndexExcludePolicy {
           }
 
           // todo: this trash should be removed after reconsidering language packaging. see MPS-11757 for details
+          // XXX why not IFile.isPackaged()?
           if (classesGen.getName().endsWith("." + MPSExtentions.MPS_ARCH)) {
             continue;
           }

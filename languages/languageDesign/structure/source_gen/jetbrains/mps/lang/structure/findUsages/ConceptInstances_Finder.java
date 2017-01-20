@@ -22,6 +22,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import java.util.Collections;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SModel;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
@@ -40,6 +42,7 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   public SAbstractConcept getSConcept() {
     return MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
+
   protected static Logger LOG_1127887887 = LogManager.getLogger(ConceptInstances_Finder.class);
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
@@ -75,6 +78,12 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";
+  }
+
+  @Nullable
+  @Override
+  public SNodeReference getDeclarationNode() {
+    return buildNodePointer(FindUsagesDescriptor.DECLARING_MODEL, "1197632773078");
   }
   private static SModule check_mbibnv_a0g0b0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

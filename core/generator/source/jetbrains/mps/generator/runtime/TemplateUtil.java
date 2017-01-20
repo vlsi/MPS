@@ -27,6 +27,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -184,10 +185,21 @@ public class TemplateUtil {
     return result;
   }
 
+  /**
+   * @deprecated Use {@link #createRefNormal(String, String, String)} instead. Deployment-time ref shall record
+   *             name of MC not to expect presence of template source model to find it out.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static TemplateMappingConfigRef createRefNormal(String modelUID, String nodeUID) {
+    return createRefNormal(modelUID, nodeUID, nodeUID);
+  }
+
+  public static TemplateMappingConfigRef createRefNormal(String modelUID, String nodeUID, String mapConfigName) {
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.setModelUID(modelUID);
     result.setNodeID(nodeUID);
+    result.setMapConfigName(mapConfigName);
     return result;
   }
 

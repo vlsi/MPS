@@ -17,8 +17,10 @@ package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -28,16 +30,48 @@ public interface ConstraintsDescriptor {
 
   SAbstractConcept getConcept();
 
-  boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, @Deprecated SNode childConcept, IOperationContext operationContext,
+  boolean canBeChild(@NotNull ConstraintContext_CanBeChild context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  boolean canBeRoot(@NotNull ConstraintContext_CanBeRoot context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  boolean canBeParent(@NotNull ConstraintContext_CanBeParent context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  boolean canBeAncestor(@NotNull ConstraintContext_CanBeAncestor context, @Nullable CheckingNodeContext checkingNodeContext);
+
+  /**
+   *
+   * @deprecated use {@link #canBeChild(ConstraintContext_CanBeChild, CheckingNodeContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  boolean canBeChild(@Nullable SNode node, SNode parentNode, @Deprecated SNode link, @Deprecated SNode childConcept, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeRoot(SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
+  /**
+   *
+   * @deprecated use {@link #canBeRoot(ConstraintContext_CanBeRoot, CheckingNodeContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  boolean canBeRoot(@NotNull SModel model, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext,
+  /**
+   *
+   * @deprecated use {@link #canBeParent(ConstraintContext_CanBeParent, CheckingNodeContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  boolean canBeParent(SNode node, @Nullable SNode childNode, @Deprecated SNode childConcept, @Deprecated SNode link, IOperationContext operationContext,
       @Nullable CheckingNodeContext checkingNodeContext);
 
-  boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, SNode parentNode, SNode link, IOperationContext operationContext,
-      @Nullable CheckingNodeContext checkingNodeContext);
+  /**
+   *
+   * @deprecated use {@link #canBeAncestor(ConstraintContext_CanBeAncestor, CheckingNodeContext)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  boolean canBeAncestor(SNode node, @Nullable SNode childNode, @Deprecated SNode childConcept, SNode parentNode, @Deprecated SNode link,
+      IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext);
 
   PropertyConstraintsDescriptor getProperty(SProperty property);
 

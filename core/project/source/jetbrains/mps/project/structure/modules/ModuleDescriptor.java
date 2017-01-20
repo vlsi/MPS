@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.modules;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
@@ -209,10 +210,23 @@ public class ModuleDescriptor implements CopyableDescriptor<ModuleDescriptor>  {
     return myUsedDevkits;
   }
 
+  /**
+   * Paths to extra jar files needed to compile and run given module, generally empty unless a module has some peculiar dependencies on existing java libraries.
+   * As of today, these come from {@code <stubModelEntry path=""/>} in a module descriptor.
+   * according to {@code LanguageDescriptorPersistence}, legacy entries were {@code classPath} and {@code runtimeClassPath}
+   * FIXME WHY DOES IT USE String for File location, which FS shall I use to resolve these locations?
+   */
   public final Collection<String> getAdditionalJavaStubPaths() {
     return myAdditionalJavaStubPaths;
   }
 
+  /**
+   * Additional source files to compile along with module's own generated output.
+   * Though, uses are bit odd:
+   *  - There's unused {@link AbstractModule#getSourcePaths()}
+   *  - JavaModuleFacet manifests these {@link JavaModuleFacet#getAdditionalSourcePaths()}, likely using module descriptor just as a storage (it's what JMF does anyway)
+   *  - Make respects these to compile a module
+   */
   public final Collection<String> getSourcePaths() {
     return mySourcePaths;
   }

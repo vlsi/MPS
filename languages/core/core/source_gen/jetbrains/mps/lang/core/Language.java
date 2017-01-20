@@ -4,8 +4,8 @@ package jetbrains.mps.lang.core;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -26,9 +26,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.core.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.core";
@@ -40,12 +43,13 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "1f3698ec-8a44-4aaa-b907-0ac2077d80a4(jetbrains.mps.lang.core#9100558062448742579)"));

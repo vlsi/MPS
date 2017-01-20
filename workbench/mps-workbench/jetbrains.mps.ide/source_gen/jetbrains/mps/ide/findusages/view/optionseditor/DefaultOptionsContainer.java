@@ -9,8 +9,6 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -40,14 +38,8 @@ public class DefaultOptionsContainer {
     ScopeOptions scopeOptions = new ScopeOptions(((InternalFlag.isInternalMode() ? ScopeOptions.ScopeType.GLOBAL : ScopeOptions.ScopeType.PROJECT)), ScopeOptions.DEFAULT_VALUE, ScopeOptions.DEFAULT_VALUE);
     return new FindUsagesOptions(new FindersOptions(), scopeOptions, new ViewOptions());
   }
-  public FindersOptions createDefaultFindersOption() {
-    final Wrappers._T<FindersOptions> findersOptions = new Wrappers._T<FindersOptions>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        findersOptions.value = new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
-      }
-    });
-    return findersOptions.value;
+  private FindersOptions createDefaultFindersOption() {
+    return new FindersOptions("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
   }
   public Element writeOptions(MPSProject project) {
     Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);

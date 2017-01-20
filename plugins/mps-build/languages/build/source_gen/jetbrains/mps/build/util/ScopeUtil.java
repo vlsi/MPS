@@ -11,12 +11,13 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.scope.FilteringScope;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.core.behavior.ScopeProvider__BehaviorDescriptor;
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +51,16 @@ public class ScopeUtil {
       }
     };
   }
-  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SNode concept, final SNode child) {
+  /**
+   * 
+   * @deprecated use the version with conceptparameter
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, SNode concept, SNode child) {
+    return imported(importDeclarations, SNodeOperations.asSConcept(concept), child);
+  }
+  public static Iterable<Scope> imported(Iterable<SNode> importDeclarations, final SAbstractConcept concept, final SNode child) {
     return Sequence.fromIterable(importDeclarations).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         // searching for smart references 
@@ -68,7 +78,7 @@ public class ScopeUtil {
       }
     }).select(new ISelector<SNode, Scope>() {
       public Scope select(SNode it) {
-        return (Scope) ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(it, concept, child);
+        return (Scope) ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(it, concept, child);
       }
     });
   }

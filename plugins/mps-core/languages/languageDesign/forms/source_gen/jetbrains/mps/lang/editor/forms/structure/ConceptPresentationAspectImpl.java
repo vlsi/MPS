@@ -10,9 +10,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractCheckboxUI = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellModel_Checkbox = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckboxUI_Platform = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CheckboxUI_Text = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_CellModel_Checkbox = new ConceptPresentationBuilder().shortDesc("checkbox").create();
+  private final ConceptPresentation props_CheckboxUI_Platform = new ConceptPresentationBuilder().shortDesc("platform checkbox UI").create();
+  private final ConceptPresentation props_CheckboxUI_Text = new ConceptPresentationBuilder().shortDesc("text checkbox UI").create();
   private final ConceptPresentation props_StubCellModel_Checkbox = new ConceptPresentationBuilder().create();
 
   @Override

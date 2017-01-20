@@ -13,6 +13,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
@@ -25,15 +26,35 @@ public final class StyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
   private static final SAbstractConcept CONCEPT = MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1143b191dc6L, "jetbrains.mps.lang.editor.structure.StyleClassItem");
   private static final BehaviorRegistry REGISTRY = ConceptRegistry.getInstance().getBehaviorRegistry();
 
-  public static final SMethod<Boolean> isApplicableTo_idhEUcU7K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isApplicableTo").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEUcU7K").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isApplicableToCell_idhEUcU7K = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isApplicableToCell").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEUcU7K").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isApplicableToCellConcept_id2u3gVK1lsco = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isApplicableToCellConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2u3gVK1lsco").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SConcept>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isApplicableForLayout_iditlittOTie = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isApplicableForLayout").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("itlittOTie").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SConcept>) ((Class) Object.class), ""));
+  public static final SMethod<Boolean> isApplicableInLayout_iditlittOTkB = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("isApplicableInLayout").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("itlittOTkB").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SConcept>) ((Class) Object.class), ""));
   public static final SMethod<SNode> getStyleContainer_id6VCLXpKS8DC = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getStyleContainer").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6VCLXpKS8DC").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isApplicableTo_idhEUcU7K, getStyleContainer_id6VCLXpKS8DC);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(isApplicableToCell_idhEUcU7K, isApplicableToCellConcept_id2u3gVK1lsco, isApplicableForLayout_iditlittOTie, isApplicableInLayout_iditlittOTkB, getStyleContainer_id6VCLXpKS8DC);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
-  /*package*/ static boolean isApplicableTo_idhEUcU7K(@NotNull SNode __thisNode__, SNode cellModel) {
+  @Deprecated
+  /*package*/ static boolean isApplicableToCell_idhEUcU7K(@NotNull SNode __thisNode__, SNode cellModel) {
+    // Since MPS 3.5 is deprecated.  
+    // Use one of isApplicableToCellConcept/isApplicableForLayout/isApplicableInLayout  
+    // methods instead 
+    return true;
+  }
+  /*package*/ static boolean isApplicableToCellConcept_id2u3gVK1lsco(@NotNull SAbstractConcept __thisConcept__, SConcept cellConcept) {
+    // Return true if this StyleClassItem may be applied to the cell with the specified concept 
+    return true;
+  }
+  /*package*/ static boolean isApplicableForLayout_iditlittOTie(@NotNull SAbstractConcept __thisConcept__, SConcept layoutConcept) {
+    // Return true if this StyleClassItem may be applied for the cell having specified layout 
+    // null passed as an argument for cells having no layouts (e.g. CellModel_Constant instance) 
+    return true;
+  }
+  /*package*/ static boolean isApplicableInLayout_iditlittOTkB(@NotNull SAbstractConcept __thisConcept__, SConcept layoutConcept) {
+    // Return true if this StyleClassItem may be applied for the cell located inside specified layout 
     return true;
   }
   /*package*/ static SNode getStyleContainer_id6VCLXpKS8DC(@NotNull SNode __thisNode__) {
@@ -57,8 +78,8 @@ public final class StyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
     }
     switch (methodIndex) {
       case 0:
-        return (T) ((Boolean) isApplicableTo_idhEUcU7K(node, (SNode) parameters[0]));
-      case 1:
+        return (T) ((Boolean) isApplicableToCell_idhEUcU7K(node, (SNode) parameters[0]));
+      case 4:
         return (T) ((SNode) getStyleContainer_id6VCLXpKS8DC(node));
       default:
         throw new BHMethodNotFoundException(this, method);
@@ -72,6 +93,12 @@ public final class StyleClassItem__BehaviorDescriptor extends BaseBHDescriptor {
       throw new BHMethodNotFoundException(this, method);
     }
     switch (methodIndex) {
+      case 1:
+        return (T) ((Boolean) isApplicableToCellConcept_id2u3gVK1lsco(concept, (SConcept) parameters[0]));
+      case 2:
+        return (T) ((Boolean) isApplicableForLayout_iditlittOTie(concept, (SConcept) parameters[0]));
+      case 3:
+        return (T) ((Boolean) isApplicableInLayout_iditlittOTkB(concept, (SConcept) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

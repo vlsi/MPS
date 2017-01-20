@@ -24,10 +24,15 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
-  public static final int PERSISTENCE_ID = 0x55550002;
+  static final int PERSISTENCE_ID = 0x55550002;
 
   private String myModelUID;
   private String myNodeID;
+  /*
+   * hint for MC name (if myNodeId points to specific MC), to avoid dependency from sources
+   * when we need to report an issue with deployed priority rule.
+   */
+  private String myConfigName;
 
   public String getModelUID() {
     return myModelUID;
@@ -45,21 +50,27 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
     myNodeID = nodeID;
   }
 
+  public boolean includesAll() {
+    return "*".equals(myNodeID);
+  }
+
+  public void setMapConfigName(String mcName) {
+    myConfigName = mcName;
+  }
+
   @Override
   @NotNull
   public MappingConfig_SimpleRef copy() {
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.myModelUID = myModelUID;
     result.myNodeID = myNodeID;
+    result.myConfigName = myConfigName;
     return result;
   }
 
   @Override
   public boolean isIncomplete() {
-    if (myModelUID == null) return true;
-    if (myModelUID.equals("*")) return false;
-    if (myNodeID == null) return true;
-    return false;
+    return myModelUID == null || myNodeID == null;
   }
 
   @Override
@@ -106,5 +117,20 @@ public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
       }
     }
     return sb.append(myNodeID).append("!unresolved!").toString();
+  }
+
+  @Override
+  public String asString() {
+    final SModelReference modelReference = PersistenceFacade.getInstance().createModelReference(myModelUID);
+    String modelName = modelReference.getName().getLongName();
+    StringBuilder sb = new StringBuilder();
+    sb.append(modelName);
+    sb.append('.');
+    if (myNodeID.equals("*")) {
+      sb.append('*');
+    } else {
+      sb.append(myConfigName == null ? myNodeID : myConfigName);
+    }
+    return sb.toString();
   }
 }

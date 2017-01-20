@@ -37,7 +37,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
-          if (prop.getDeclarationNode() == null) {
+          if (!((prop.isValid()))) {
             return true;
           }
         }
@@ -46,7 +46,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       @Override
       public void doUpdateInstanceNode(SNode node) {
         for (SProperty prop : Sequence.fromIterable(node.getProperties())) {
-          if (prop.getDeclarationNode() == null) {
+          if (!(prop.isValid())) {
             node.setProperty(prop, null);
           }
         }
@@ -71,7 +71,7 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return (SNodeOperations.getParent(node) != null) && (SNodeOperations.getContainingLinkDeclaration(node) == null);
+        return (SNodeOperations.getParent(node) != null) && !(SNodeOperations.getContainingLink(node).isValid());
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
@@ -97,17 +97,17 @@ public final class DeleteUndeclaredLinksAndProperties_MigrationScript extends Ba
       }
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
-        return ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+        return ListSequence.fromList(SNodeOperations.getReferences(node)).any(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return (SLinkOperations.findLinkDeclaration(it) == null);
+            return !(SLinkOperations.getRefLink(it).isValid());
           }
-        }).isNotEmpty();
+        });
       }
       @Override
       public void doUpdateInstanceNode(SNode node) {
         for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return (SLinkOperations.findLinkDeclaration(it) == null);
+            return !(SLinkOperations.getRefLink(it).isValid());
           }
         }).toGenericArray(SReference.class)) {
           node.setReference(ref.getRole(), null);

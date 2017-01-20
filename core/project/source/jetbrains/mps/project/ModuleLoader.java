@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -27,9 +27,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -41,7 +42,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 final class ModuleLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleLoader.class);
-  private static final FileSystem FS = FileSystem.getInstance();
   @NotNull private final ProjectBase myProject;
   private final List<ProjectModuleLoadingListener> myListeners = new CopyOnWriteArrayList<ProjectModuleLoadingListener>();
   private final StringBuilder myErrors = new StringBuilder();
@@ -50,12 +50,12 @@ final class ModuleLoader {
     myProject = project;
   }
 
-  private Set<SModule> getRemovedModules(List<ModulePath> newModulePaths) {
-    Set<SModule> removedModules = new HashSet<SModule>();
+  private Collection<Pair<ModulePath, SModule>> getRemovedModules(List<ModulePath> newModulePaths) {
+    ArrayList<Pair<ModulePath, SModule>> removedModules = new ArrayList<>();
     for (SModule oldModule : myProject.getProjectModules()) {
       ModulePath oldModulePath = myProject.getPath(oldModule);
       if (!newModulePaths.contains(oldModulePath)) {
-        removedModules.add(oldModule);
+        removedModules.add(new Pair<>(oldModulePath, oldModule));
       }
     }
     return removedModules;
@@ -86,7 +86,7 @@ final class ModuleLoader {
     // Note the order which matters (the case is when the modules.xml is updated from the FS directly --
     // one of the modules might change its virtual folder but not the location
     // in this case we need to remove that module from project and insert it again
-    final Set<SModule> removedModules = getRemovedModules(newModulePaths);
+    final Collection<Pair<ModulePath, SModule>> removedModules = getRemovedModules(newModulePaths);
     removeAbsentModules(removedModules);
 
     final List<ModulePath> pathsToLoad = getPathsToLoad(newModulePaths);
@@ -99,22 +99,13 @@ final class ModuleLoader {
    * @return the number of successfully loaded modules
    */
   private int loadNewPaths(final List<ModulePath> pathsToLoad) {
-    int loadedModules = 0;
+    final ModulesMiner modulesMiner = new ModulesMiner();
+    final Map<ModuleHandle, ModulePath> handleToPath = new HashMap<>();
     for (ModulePath modulePath : pathsToLoad) {
-      String path = modulePath.getPath();
-      IFile descriptorFile = FS.getFile(path);
+      IFile descriptorFile = modulePath.getFile();
       if (descriptorFile.exists()) {
-        final ModulesMiner modulesMiner = new ModulesMiner();
         ModuleHandle handle = modulesMiner.loadModuleHandle(descriptorFile);
-        if (handle.getDescriptor() != null) {
-          SModule module = ModuleRepositoryFacade.createModule(handle, myProject);
-          myProject.addModule(module, modulePath.getVirtualFolder());
-          ++loadedModules;
-          fireModuleLoaded(module);
-        } else {
-          error(String.format("Can't load module from %s. Unknown file type.", descriptorFile.getPath()));
-          fireModuleTypeIsUnknown(modulePath);
-        }
+        handleToPath.put(handle, modulePath);
       } else {
         // TODO listen to file location in the MPSProject
         // AP : it is kind of strange having module watching for removing/changing its file descriptor and having someone else
@@ -123,14 +114,31 @@ final class ModuleLoader {
         fireModuleNotFound(modulePath);
       }
     }
+    int loadedModules = 0;
+    ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myProject);
+    for (ModuleHandle handle : modulesMiner.getCollectedModules()) {
+      ModulePath modulePath = handleToPath.get(handle);
+      if (handle.getDescriptor() != null) {
+        SModule module = repoFacade.instantiateModule(handle, myProject);
+        // it's quite tempting, indeed, to move project update (i.e. addModule) into listener ProjectModuleLoadingListener.moduleLoaded
+        // just need to sort out MduleLoader and Project relationship.
+        myProject.addModule(modulePath, module);
+        ++loadedModules;
+        fireModuleLoaded(modulePath, module);
+      } else {
+        error(String.format("Can't load module from %s. Unknown file type.", handle.getFile().getPath()));
+        fireModuleTypeIsUnknown(modulePath);
+      }
+    }
+
     return loadedModules;
   }
 
-  private void removeAbsentModules(final Set<SModule> removedModules) {
-    for (SModule module : removedModules) {
-      fireModuleRemoved(module);
-      myProject.removeModule(module);
-      new ModuleRepositoryFacade(myProject).unregisterModule(module);
+  private void removeAbsentModules(final Collection<Pair<ModulePath, SModule>> removedModules) {
+    for (Pair<ModulePath, SModule> p : removedModules) {
+      fireModuleRemoved(p.o1, p.o2);
+      myProject.removeModule(p.o2);
+      new ModuleRepositoryFacade(myProject).unregisterModule(p.o2);
     }
   }
 
@@ -169,15 +177,15 @@ final class ModuleLoader {
     }
   }
 
-  private void fireModuleRemoved(SModule module) {
+  /*package*/ void fireModuleRemoved(ModulePath modulePath, SModule module) {
     for (ProjectModuleLoadingListener listener : myListeners) {
-      listener.moduleRemoved(module);
+      listener.moduleRemoved(modulePath, module);
     }
   }
 
-  private void fireModuleLoaded(SModule module) {
+  /*package*/ void fireModuleLoaded(ModulePath modulePath, SModule module) {
     for (ProjectModuleLoadingListener listener : myListeners) {
-      listener.moduleLoaded(module);
+      listener.moduleLoaded(modulePath, module);
     }
   }
 }

@@ -48,7 +48,7 @@ public final class QueryFunction_SubstituteMenu_WrapperHandler__BehaviorDescript
   /*package*/ static SNode getExpectedReturnType_idhEwIGRD(@NotNull SNode __thisNode__) {
     SNode ancestor = SNodeOperations.getNodeAncestor(__thisNode__, MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x5cc5669cafd1be9bL, "jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Wrapper"), false, false);
     if (ancestor != null) {
-      SNode outputConcept = SubstituteMenuPart__BehaviorDescriptor.getOutputConcept_id7mC_uHFK7Hn.invoke(ancestor);
+      SNode outputConcept = IMenuPartWithOutputConcept__BehaviorDescriptor.getOutputConcept_id3mnwiBI8ZE2.invoke(ancestor);
       if (outputConcept != null) {
         return _quotation_createNode_72xm95_a0a1a1a1(outputConcept);
       }

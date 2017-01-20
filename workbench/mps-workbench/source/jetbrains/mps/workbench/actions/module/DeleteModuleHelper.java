@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
 package jetbrains.mps.workbench.actions.module;
 
 import jetbrains.mps.extapi.module.SRepositoryExt;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.facets.JavaModuleFacet;
@@ -30,6 +29,7 @@ import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -92,19 +92,10 @@ public final class DeleteModuleHelper {
 
     if (module instanceof AbstractModule) {
       AbstractModule curModule = (AbstractModule) module;
-      IFile outputPath = curModule.getOutputPath();
-      if (outputPath != null) {
-        deleteFile(outputPath);
-        deleteFile(FileGenerationUtil.getCachesDir(outputPath));
-      }
 
-      if (curModule.getDescriptorFile() != null) {
-        deleteFile(curModule.getDescriptorFile());
-      }
+      deleteFile(curModule.getDescriptorFile());
 
-      if (curModule.getModuleSourceDir() != null &&
-          curModule.getModuleSourceDir().getChildren() != null &&
-          curModule.getModuleSourceDir().getChildren().isEmpty()) {
+      if (curModule.getModuleSourceDir() != null && deleteDirIfEmpty(curModule.getModuleSourceDir())) {
         deleteFile(curModule.getModuleSourceDir());
       }
 
@@ -159,26 +150,26 @@ public final class DeleteModuleHelper {
 
   private static void deleteTestsFacet(SModule module) {
     TestsFacet testsFacet = module.getFacet(TestsFacet.class);
-    if (testsFacet != null) {
-      final IFile testsOutputPath = testsFacet.getTestsOutputPath();
-      if (testsOutputPath != null) {
-        deleteFile(testsOutputPath);
-      }
+    if (testsFacet == null) {
+      return;
     }
+    deleteFile(testsFacet.getTestsOutputPath());
+    deleteFile(testsFacet.getOutputCacheRoot());
   }
 
   private static void deleteJavaFacet(SModule module) {
     JavaModuleFacet javaModuleFacet = module.getFacet(JavaModuleFacet.class);
-    if (javaModuleFacet != null) {
-      IFile classesGen = javaModuleFacet.getClassesGen();
-      if (classesGen != null) {
-        deleteFile(classesGen);
-      }
+    if (javaModuleFacet == null) {
+      return;
     }
+    deleteFile(javaModuleFacet.getClassesGen());
+    deleteFile(javaModuleFacet.getOutputRoot());
+    deleteFile(javaModuleFacet.getOutputCacheRoot());
   }
 
-  private static void deleteFile(@NotNull IFile file) {
-    if (file.exists()) {
+  private static void deleteFile(@Nullable IFile file) {
+    if (file != null && file.exists()) {
+      // FIXME is there true need to check for existence file that gonna be deleted? Does delete() tolerate non-existent files?
       file.delete();
     }
   }
@@ -192,13 +183,14 @@ public final class DeleteModuleHelper {
       return false;
     }
 
-    if (file.isDirectory() &&
-        file.getChildren() != null &&
-        file.getChildren().isEmpty()) {
+    List<IFile> children = file.getChildren();
+    if (file.isDirectory() && children.isEmpty()) {
       return true;
     }
 
-    for (IFile child : file.getChildren()) {
+    assert children != null : "IFile.getChildren() == null iff !isDirectory";
+
+    for (IFile child : children) {
       if (!deleteDirIfEmpty(child)) {
         return false;
       }

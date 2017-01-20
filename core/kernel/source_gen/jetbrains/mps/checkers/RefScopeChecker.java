@@ -20,6 +20,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -51,7 +52,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
+        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(check_bt3k2y_a0d0a0a11a4a1(SLinkOperations.getRefLink(ref))));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
@@ -59,7 +60,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + check_bt3k2y_a0b0a4a0l0e0b(SLinkOperations.getRefLink(ref)) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(check_bt3k2y_a0d0a4a0l0e0b(SLinkOperations.getRefLink(ref))), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }
@@ -105,6 +106,24 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
   private static SModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+  private static String check_bt3k2y_a0d0a0a11a4a1(SReferenceLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
+  private static String check_bt3k2y_a0b0a4a0l0e0b(SReferenceLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
+  }
+  private static String check_bt3k2y_a0d0a4a0l0e0b(SReferenceLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
     }
     return null;
   }

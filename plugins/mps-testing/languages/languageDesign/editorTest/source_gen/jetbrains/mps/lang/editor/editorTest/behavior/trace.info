@@ -60,14 +60,35 @@
     <file name="DelTestChildContainer_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildContainer_BehaviorDescriptor" />
     </file>
+    <file name="DelTestChildSpecialContainer_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildSpecialContainer_BehaviorDescriptor" />
+    </file>
     <file name="DelTestRoot_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestRoot_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestSpecialAbstractChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialAbstractChild_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestSpecialChild1_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestSpecialChild1_BehaviorDescriptor" />
     </file>
     <file name="FoldingContainer_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.FoldingContainer_BehaviorDescriptor" />
     </file>
     <file name="IBaseTestBlock_BehaviorDescriptor.java">
       <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
+    </file>
+    <file name="IDelTestChild_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestChild_BehaviorDescriptor" />
+    </file>
+    <file name="IDelTestConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IDelTestConcreteChild_BehaviorDescriptor" />
+    </file>
+    <file name="ISpecialDelTestChild_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestChild_BehaviorDescriptor" />
+    </file>
+    <file name="ISpecialDelTestConcreteChild_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ISpecialDelTestConcreteChild_BehaviorDescriptor" />
     </file>
     <file name="InitAbstractChild_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InitAbstractChild_BehaviorDescriptor" />

@@ -8,7 +8,7 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -30,8 +30,8 @@
     <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="i290" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.java.stub(MPS.Core/)" />
     <import index="g3l6" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.extapi.model(MPS.Core/)" />
-    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
+    <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="lhc4" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.annotations(MPS.OpenAPI/)" />
     <import index="w827" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.openapi(MPS.Core/)" implicit="true" />
     <import index="tpek" ref="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" implicit="true" />
@@ -464,6 +464,9 @@
     <property role="TrG5h" value="ASMModelLoader" />
     <property role="1sVAO0" value="false" />
     <property role="1EXbeo" value="true" />
+    <node concept="2AHcQZ" id="390SM3InlJQ" role="2AJF6D">
+      <ref role="2AI5Lk" to="lhc4:~Immutable" resolve="Immutable" />
+    </node>
     <node concept="3Tm1VV" id="6hYzBiUOtJp" role="1B3o_S" />
     <node concept="Wx3nA" id="6hYzBiUOtJq" role="jymVt">
       <property role="TrG5h" value="LOG" />
@@ -484,10 +487,10 @@
     <node concept="312cEg" id="4WsV6X003Z_" role="jymVt">
       <property role="TrG5h" value="myModule" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="4WsV6X003ZA" role="1B3o_S" />
       <node concept="3uibUv" id="390SM3Inam8" role="1tU5fm">
         <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
       </node>
+      <node concept="3Tm6S6" id="4WsV6X003ZA" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="3oDzK78mgWp" role="jymVt">
       <property role="TrG5h" value="myPaths" />
@@ -513,11 +516,11 @@
     <node concept="3clFbW" id="3M1v4zmXszA" role="jymVt">
       <node concept="37vLTG" id="3M1v4zmXtao" role="3clF46">
         <property role="TrG5h" value="module" />
-        <node concept="3uibUv" id="390SM3Inam1" role="1tU5fm">
-          <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
-        </node>
         <node concept="2AHcQZ" id="390SM3In6__" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="390SM3Inam1" role="1tU5fm">
+          <ref role="3uigEE" to="z1c3:~AbstractModule" resolve="AbstractModule" />
         </node>
       </node>
       <node concept="37vLTG" id="3M1v4zmXtcn" role="3clF46">
@@ -533,11 +536,11 @@
       <node concept="3clFbS" id="3M1v4zmXszE" role="3clF47">
         <node concept="3clFbF" id="3M1v4zmXtgv" role="3cqZAp">
           <node concept="37vLTI" id="3M1v4zmXtgw" role="3clFbG">
-            <node concept="37vLTw" id="3M1v4zmXtgy" role="37vLTJ">
-              <ref role="3cqZAo" node="4WsV6X003Z_" resolve="myModule" />
-            </node>
             <node concept="37vLTw" id="3M1v4zmXtgx" role="37vLTx">
               <ref role="3cqZAo" node="3M1v4zmXtao" resolve="module" />
+            </node>
+            <node concept="37vLTw" id="3M1v4zmXtgy" role="37vLTJ">
+              <ref role="3cqZAo" node="4WsV6X003Z_" resolve="myModule" />
             </node>
           </node>
         </node>
@@ -1047,9 +1050,6 @@
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
       </node>
-    </node>
-    <node concept="2AHcQZ" id="390SM3InlJQ" role="2AJF6D">
-      <ref role="2AI5Lk" to="lhc4:~Immutable" resolve="Immutable" />
     </node>
   </node>
   <node concept="312cEu" id="6hYzBiUOvcI">

@@ -16,19 +16,18 @@
 package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.ide.findusages.FindersManager;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.Finder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ModuleClassReference;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.FinderNode;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.UnionNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.IllegalModelAccessError;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -41,29 +40,17 @@ import java.util.Collection;
 import java.util.List;
 
 public class FindUtils {
-  private static final Logger LOG = LogManager.getLogger(FindUtils.class);
-
   @Deprecated
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final String... finderClassNames) {
-    List<IFinder> finders = new ArrayList<IFinder>(finderClassNames.length);
+    List<IInterfacedFinder> finders = new ArrayList<>(finderClassNames.length);
     for (String finderClassName : finderClassNames) {
-      IFinder finder = getFinderByClassName(finderClassName);
+      IInterfacedFinder finder = FindersManager.getInstance().getFinder(finderClassName);
       if (finder != null) {
         finders.add(finder);
       }
     }
 
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IFinder[finders.size()]));
-  }
-
-  public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final @NotNull SNode node, final SearchScope scope, final ModuleClassReference<GeneratedFinder>... finderClasses) {
-    List<GeneratedFinder> finders = new ArrayList<GeneratedFinder>(finderClasses.length);
-    for (ModuleClassReference<GeneratedFinder> finderClass : finderClasses) {
-      GeneratedFinder finder = getFinderByClass(finderClass);
-      if (finder != null) finders.add(finder);
-    }
-
-    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new GeneratedFinder[0]));
+    return getSearchResults(monitor, new SearchQuery(node, scope), finders.toArray(new IInterfacedFinder[finders.size()]));
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IFinder... finders) {
@@ -71,73 +58,72 @@ public class FindUtils {
   }
 
   public static SearchResults getSearchResults(@Nullable final ProgressMonitor monitor, final SearchQuery query, final IResultProvider provider) {
-    final SearchResults[] results = new SearchResults[1];
-    try {
-      return provider.getResults(query, monitor);
-    } catch (IllegalModelAccessError ex) {
-      // if there's query without model access, we shall never get here
-      // if the query does need model access, then it's caller's responsibility to ensure one. What would it do with
-      // e.g. SNode result returned, unless there's a lock?
-      //
-      // TODO remove once 3.4 is out and we are sure we've never noticed the error (or have fixed all the defects in invocation of the method)
-      LOG.error("SHALL NOT HAPPEN. If your query needs model access, wrap the call with proper model lock.", ex);
-    }
-    return new SearchResults();
+    return provider.getResults(query, monitor);
   }
 
   @Deprecated
   public static List<SNode> executeFinder(String className, SNode node, SearchScope scope, ProgressMonitor monitor) {
-    List<SNode> result = new ArrayList<SNode>();
-    IInterfacedFinder finder = getFinderByClassName(className);
-    if (finder == null) return result;
+    List<SNode> result = new ArrayList<>();
+    IInterfacedFinder finder = FindersManager.getInstance().getFinder(className);
+    if (finder == null) {
+      return result;
+    }
     for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
       result.add(searchResult.getObject());
     }
     return result;
   }
 
-  public static List<SNode> executeFinder(ModuleClassReference<GeneratedFinder> finderClass, SNode node, SearchScope scope, ProgressMonitor monitor) {
-    List<SNode> result = new ArrayList<SNode>();
-    IInterfacedFinder finder = getFinderByClass(finderClass);
-    if (finder == null) return result;
-    for (SearchResult<SNode> searchResult : finder.find(new SearchQuery(node, scope), monitor).getSearchResults()) {
-      result.add(searchResult.getObject());
-    }
-    return result;
-  }
-
+  /**
+   * @deprecated see {@link FindersManager#getFinderByClassName(String)} for explanation. Replace with {@link #getFinder(String)}
+   */
   @Deprecated
   @Nullable
+  @ToRemove(version = 3.5)
   public static IInterfacedFinder getFinderByClassName(String className) {
-    return FindersManager.getInstance().getFinderByClassName(className);
+    return FindersManager.getInstance().getFinder(className);
   }
 
-  public static GeneratedFinder getFinderByClass(ModuleClassReference<GeneratedFinder> finderClass) {
-    try {
-      Class<GeneratedFinder> fClass = finderClass.loadClass();
-
-      if (fClass == null) {
-        LOG.error("Class " + finderClass.getClassName() + " not found. Returning empty results.");
-        return null;
-      }
-
-      GeneratedFinder finder = fClass.newInstance();
-      return finder;
-    } catch (Throwable t) {
-      LOG.error("Error instantiating finder \"" + finderClass.getClassName() + "\". Returning empty results.  Message:" + t.getMessage(), t);
-      return null;
-    }
+  /**
+   * There would be another {@code getFinder(FinderIdentity}) later (perhaps, with distinct FinderIdentity implementations, one to take string, another
+   * takes SLanguage + int token + optional? String mangledName)
+   */
+  public static IInterfacedFinder getFinder(String finderIdentity) {
+    return FindersManager.getInstance().getFinder(finderIdentity);
   }
 
-  public static IResultProvider makeProvider(Collection<IFinder> finders) {
+  public static IResultProvider makeProvider(Collection<? extends IFinder> finders) {
     UnionNode unionNode = new UnionNode();
     for (IFinder finder : finders) {
-      unionNode.addChild(new FinderNode(finder));
+      final FinderNode fn;
+      if (finder instanceof GeneratedFinder) {
+        // just in case IResultProvider get serialized later, we give it an indication this one could get reloaded
+        // XXX OTOH, it mught be IResultProvider itself to care about GeneratedFinder on write as it does on read for ReloadableFinders (so that RF
+        // knowledge stays in a single place)?
+        fn = new FinderNode(new ReloadableFinder((GeneratedFinder) finder));
+      } else {
+        fn = new FinderNode(finder);
+      }
+      unionNode.addChild(fn);
     }
     return unionNode;
   }
 
   public static IResultProvider makeProvider(IFinder... finders) {
     return makeProvider(Arrays.asList(finders));
+  }
+
+  /**
+   * @param finderIdentity at the moment, we use finder implementation class fqn to identify it
+   */
+  public static IResultProvider makeProvider(@NotNull String... finderIdentity) {
+    ArrayList<Finder> finders = new ArrayList<>(finderIdentity.length);
+    for (String fi : finderIdentity) {
+      IInterfacedFinder f = FindersManager.getInstance().getFinder(fi);
+      if (f != null) {
+        finders.add(f);
+      }
+    }
+    return makeProvider(finders);
   }
 }

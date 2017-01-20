@@ -12,12 +12,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BaseExecuteCommandStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BaseExecuteCommandStatementSync = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CommandClosureLiteral = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteCommandInEDTStatement = new ConceptPresentationBuilder().deprecated().create();
-  private final ConceptPresentation props_ExecuteCommandStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteEDTCommandStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteLightweightCommandStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ExecuteCommandInEDTStatement = new ConceptPresentationBuilder().deprecated().shortDesc("Schedule command to run from EDT asynchronously").create();
+  private final ConceptPresentation props_ExecuteCommandStatement = new ConceptPresentationBuilder().shortDesc("Synchronous model command").create();
+  private final ConceptPresentation props_ExecuteEDTCommandStatement = new ConceptPresentationBuilder().shortDesc("Schedule asynchronous model read from EDT").create();
+  private final ConceptPresentation props_ExecuteLightweightCommandStatement = new ConceptPresentationBuilder().shortDesc("Synchronous model read").create();
   private final ConceptPresentation props_ExecuteTransparentCommandStatement = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ExecuteWriteActionStatement = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ExecuteWriteActionStatement = new ConceptPresentationBuilder().shortDesc("Synchronous model write").create();
   private final ConceptPresentation props_IExecuteCommandStatementSync = new ConceptPresentationBuilder().create();
 
   @Override

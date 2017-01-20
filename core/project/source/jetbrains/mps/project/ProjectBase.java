@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2014 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,6 +38,9 @@ import java.util.Map;
  * MPS Project basic implementation.
  * Stores a set of modules.
  * Supported always by a {@link ProjectDescriptor} which stores paths to the module descriptors
+ * Doesn't manage lifecycle of a module descriptors other than "{@linkplain #update() update} 'em all" on demand.
+ * Check {@code ModuleFileChangeListener} of [mps-platform] for change tracking.
+ * However, tracks module renames (albeit in a bit weird way) to keep inner structures fit.
  *
  * @see ProjectDescriptor
  */
@@ -74,34 +77,41 @@ public abstract class ProjectBase extends Project {
   }
 
   /**
+   * This is auxiliary method to update ProjectBase internal state. When a new module is added to a project,
+   * use {@code {@link #addModule(SModule)}}, which records the module into persistent project descriptor as well.
+   *
    * @deprecated there is an intention to deduce virtual folders from the file system directly
    */
   @ToRemove(version = 3.5)
   @Deprecated
-  final void addModule(@NotNull SModule module, @NotNull String virtualFolder) {
+  final void addModule(@NotNull ModulePath path, @NotNull SModule module) {
     if (myModuleToPathMap.containsKey(module)) {
 //      throw new IllegalArgumentException(module + " is already in the " + this); todo enable after MPS-24400
       LOG.warn(module + " is already in " + this);
       return;
     }
-    IFile descriptorFile = getDescriptorFileChecked(module);
-    if (descriptorFile != null) {
-      ModulePath path = new ModulePath(descriptorFile.toPath().toString(), virtualFolder);
-      myModuleToPathMap.put(module, path);
-      myProjectDescriptor.addModulePath(path);
-      addRenameListener(module);
-    }
+    myModuleToPathMap.put(module, path);
+    addRenameListener(module);
   }
 
   @Override
   public final void addModule(@NotNull SModule module) {
-    addModule(module, "");
+    IFile descriptorFile = getDescriptorFileChecked(module);
+    if (descriptorFile != null) {
+      ModulePath path = new ModulePath(descriptorFile, null);
+      addModule(path, module);
+      myProjectDescriptor.addModulePath(path);
+      myModuleLoader.fireModuleLoaded(path, module);
+    }
   }
 
   private void addRenameListener(@NotNull SModule module) {
-    ModuleRenameListener listener = new ModuleRenameListener();
-    myModulesListeners.put(module, listener);
-    module.addModuleListener(listener);
+    if (module instanceof AbstractModule) {
+      // ModuleRenameListener doesn't tolerate anything but AbstractModule. Not well-mannered, imo.
+      ModuleRenameListener listener = new ModuleRenameListener();
+      myModulesListeners.put(module, listener);
+      module.addModuleListener(listener);
+    }
   }
 
   @Override
@@ -112,6 +122,7 @@ public abstract class ProjectBase extends Project {
     }
     final ModulePath modulePath = myModuleToPathMap.remove(module);
     module.removeModuleListener(myModulesListeners.remove(module));
+    myModuleLoader.fireModuleRemoved(modulePath, module);
     myProjectDescriptor.removeModulePath(modulePath);
   }
 
@@ -201,6 +212,20 @@ public abstract class ProjectBase extends Project {
     myProjectDescriptor = dataSource.loadDescriptor();
   }
 
+  // Used to live in StandaloneMPSProject. I don't see why it's restricted to that one, provided any
+  // ProjectBase derivative knows aboud ModulePath and its virtual folder.
+  protected void setVirtualFolder(@NotNull SModule module, String newFolder) {
+    // TODO: remove duplication of ModulePath in ProjectBase.myModuleToPathMap to avoid handling both lists
+    ModulePath modulePath = getPath(module);
+    if (modulePath != null) {
+      ModulePath newPath = modulePath.withVirtualFolder(newFolder);
+      myProjectDescriptor.replacePath(modulePath, newPath);
+      myModuleToPathMap.put(module, newPath);
+    } else {
+      LOG.warn("Could not set virtual folder for the module " + module + ", module could not be found");
+    }
+  }
+
   public final void addListener(@NotNull ProjectModuleLoadingListener listener) {
     myModuleLoader.addListener(listener);
   }
@@ -209,22 +234,23 @@ public abstract class ProjectBase extends Project {
     myModuleLoader.removeListener(listener);
   }
 
+  // XXX use of SModule listener to detect renames smells wrong. I'd say Project shall deal with files, on a lower level than SRepository.
+  //     Perhaps, this comes along missing file rename event from FileListener?
   private class ModuleRenameListener extends SModuleListenerBase {
     @Override
     public void moduleRenamed(@NotNull SModule module, @NotNull SModuleReference oldRef) {
-      ModulePath oldModulePath = myModuleToPathMap.remove(module);
-      String virtualFolder = myProjectDescriptor.removeModulePath(oldModulePath);
+      // why exceptions, why so intolerable? Just because we added the listener to a module with file?
       if (!(module instanceof AbstractModule)) {
         throw new IllegalArgumentException("Support only abstract module here " + module);
       }
+      ModulePath oldPath = myModuleToPathMap.remove(module);
       IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
       if (descriptorFile == null) {
         throw new IllegalArgumentException("The descriptor file is null " + module);
       }
-      String path = descriptorFile.toPath().toString();
-      ModulePath modulePath = new ModulePath(path, virtualFolder);
-      myProjectDescriptor.addModulePath(modulePath);
-      myModuleToPathMap.put(module, modulePath);
+      ModulePath newPath = new ModulePath(descriptorFile, oldPath.getVirtualFolder());
+      myProjectDescriptor.replacePath(oldPath, newPath);
+      myModuleToPathMap.put(module, newPath);
     }
   }
 }

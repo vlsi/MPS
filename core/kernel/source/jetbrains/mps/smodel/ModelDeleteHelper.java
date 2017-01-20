@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,20 +18,17 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.SModuleBase;
 import jetbrains.mps.extapi.persistence.DisposableDataSource;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 import jetbrains.mps.project.facets.JavaModuleFacet;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getCachesDir;
-import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getCachesPath;
-import static jetbrains.mps.generator.fileGenerator.FileGenerationUtil.getDefaultOutputDir;
+import java.util.ArrayDeque;
 
 /**
  * Utility to perform various aspects of expelling a model:
@@ -63,37 +60,54 @@ public class ModelDeleteHelper {
     deleteDataSource();
   }
 
-  private void removeGeneratedArtifacts() {
-    IFile moduleOutput = SModuleOperations.getOutputRoot(myModel);
-    if (moduleOutput == null) {
-      return;
-    }
+  public void removeGeneratedArtifacts() {
     SModule module = myModel.getModule();
     JavaModuleFacet javaFacet = module.getFacet(JavaModuleFacet.class);
-    IFile classesGenDir = null;
+    // perhaps, worth an option (pruneEmpty)?
+    ArrayDeque<IFile> possiblyEmptyDirsToPrune = new ArrayDeque<>();
     if (javaFacet != null) {
-      classesGenDir = javaFacet.getClassesGen();
+      IFile classesGenDir = javaFacet.getClassesLocation(myModel);
+      if (classesGenDir != null) {
+        possiblyEmptyDirsToPrune.add(classesGenDir.getParent()); // I don't expect model output dir to be top of the disk, don't care about parent == null
+        classesGenDir.delete();
+      }
     }
 
-    getDefaultOutputDir(myModel, moduleOutput).delete();
-    getDefaultOutputDir(myModel, getCachesDir(moduleOutput)).delete();
-    if (classesGenDir != null) {
-      getDefaultOutputDir(myModel, classesGenDir).delete();
+    for (SModuleFacet mf : module.getFacets()) {
+      if (!(mf instanceof GenerationTargetFacet)) {
+        continue;
+      }
+      GenerationTargetFacet genFacet = (GenerationTargetFacet) mf;
+      IFile modelOutput = genFacet.getOutputLocation(myModel);
+      IFile modelCaches = genFacet.getOutputCacheLocation(myModel);
+      // XXX if model serves as a namespace, there might be child folders with output for nested models
+      // nevertheless, we delete them altogether as removal of a model likely means removal of nested models as well. Or not?
+      // e.g. IdeCommandUtil is more careful when executing #removeGenSources console command
+      if (modelOutput != null) {
+        possiblyEmptyDirsToPrune.add(modelOutput.getParent());
+        modelOutput.delete();
+      }
+      if (modelCaches != null) {
+        possiblyEmptyDirsToPrune.add(modelCaches.getParent());
+        modelCaches.delete();
+      }
     }
 
-    if (moduleOutput.getChildren().isEmpty()) {
-      moduleOutput.delete();
-    }
-    final IFile sourceGenCaches = getCachesDir(moduleOutput);
-    if (sourceGenCaches.getChildren().isEmpty()) {
-      sourceGenCaches.delete();
-    }
-    if (classesGenDir != null && classesGenDir.getChildren().isEmpty()) {
-      classesGenDir.delete();
+    // FIXME what about TestsFacet, why not deleting its artifacts?
+
+    while (!possiblyEmptyDirsToPrune.isEmpty()) {
+      IFile d = possiblyEmptyDirsToPrune.removeFirst();
+      if (d.exists() && d.getChildren().isEmpty()) {
+        IFile parent = d.getParent();
+        if (parent != null) {
+          possiblyEmptyDirsToPrune.addLast(parent);
+        }
+        d.delete();
+      }
     }
   }
 
-  private void detachFromModule() {
+  public void detachFromModule() {
     SModule module = myModel.getModule();
     if (module == null) {
       return;
@@ -101,9 +115,9 @@ public class ModelDeleteHelper {
     ((SModuleBase) module).unregisterModel((SModelBase) myModel);
   }
 
-  private void deleteDataSource() {
+  public void deleteDataSource() {
     DataSource source = myModel.getSource();
-    String modelName = myModel.getName().getSimpleName();
+    String modelName = myModel.getModelName();
     if (source instanceof DisposableDataSource) {
       ((DisposableDataSource) source).delete();
     } else {

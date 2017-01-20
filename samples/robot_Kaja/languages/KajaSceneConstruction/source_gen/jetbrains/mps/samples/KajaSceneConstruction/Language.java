@@ -4,7 +4,9 @@ package jetbrains.mps.samples.KajaSceneConstruction;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +19,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.KajaSceneConstruction.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "b56912a3-674f-4530-b0cf-55261b526a1f(jetbrains.mps.samples.KajaSceneConstruction)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("b56912a3-674f-4530-b0cf-55261b526a1f");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.KajaSceneConstruction";
@@ -31,12 +36,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("b56912a3-674f-4530-b0cf-55261b526a1f"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.samples.Kaja"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("049a08c5-1fe5-43cc-bd99-8b46d641d7f5"), "jetbrains.mps.samples.Kaja"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

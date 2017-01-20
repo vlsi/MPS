@@ -11,130 +11,103 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.resources.MResource;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.make.delta.IDelta;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModuleFacet;
+import jetbrains.mps.project.facets.GenerationTargetFacet;
 
-public class RetainedUtil {
-  public RetainedUtil() {
+public final class RetainedUtil {
+  private RetainedUtil() {
   }
   public static Map<SModule, Iterable<SModel>> collectModelsToRetain(Iterable<? extends IResource> input) {
-    final Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
+    Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
     Iterable<SModel> empty = ListSequence.fromList(new ArrayList<SModel>());
     for (IResource it : input) {
       MResource mres = ((MResource) it);
       SModule module = mres.module();
       MapSequence.fromMap(retainedModels).put(module, empty);
-      Iterable<SModel> modelsToRetain = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
-        public boolean accept(SModel it2) {
-          return SNodeOperations.isGeneratable(it2);
-        }
-      });
       if (module instanceof Language) {
-        for (final Generator gen : ((Language) module).getGenerators()) {
+        // FIXME is there still a reason to record models of language's generators? Isn't generator module come as a distinct resource? 
+        // Perhaps, it doesn't hurt to supply more, OTOH is there any reason to? Modules are generated into distinct locations, why bother to mark 
+        // unrelated locations as retained? 
+        for (Generator gen : ((Language) module).getGenerators()) {
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
-              public boolean accept(SModel it2) {
-                return SNodeOperations.isGeneratable(it2);
-              }
-            }));
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-            public Iterable<SModel> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
-            }
-          })));
         }
+        // fall-through 
       } else if (module instanceof Generator) {
-        final Language slang = ((Generator) module).getSourceLanguage();
+        Language slang = ((Generator) module).getSourceLanguage();
         if (!(MapSequence.fromMap(retainedModels).containsKey(slang))) {
-          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(((Iterable<SModel>) slang.getModels())).subtract(Sequence.fromIterable(module.getModels())).where(new IWhereFilter<SModel>() {
-            public boolean accept(SModel it3) {
-              return SNodeOperations.isGeneratable(it3);
-            }
-          }));
+          MapSequence.fromMap(retainedModels).put(slang, Sequence.fromIterable(generateableModels(slang)).toListSequence());
         }
-        for (final Generator gen : slang.getGenerators()) {
+        for (Generator gen : slang.getGenerators()) {
           if (gen == module) {
             continue;
           }
           if (!(MapSequence.fromMap(retainedModels).containsKey(gen))) {
-            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(((Iterable<SModel>) gen.getModels())).where(new IWhereFilter<SModel>() {
-              public boolean accept(SModel it2) {
-                return SNodeOperations.isGeneratable(it2);
-              }
-            }));
+            MapSequence.fromMap(retainedModels).put(gen, Sequence.fromIterable(generateableModels(gen)).toListSequence());
           }
-          modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-            public Iterable<SModel> iterable() {
-              return MapSequence.fromMap(retainedModels).get(gen);
-            }
-          })));
         }
-        modelsToRetain = Sequence.fromIterable(modelsToRetain).concat(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<SModel>() {
-          public Iterable<SModel> iterable() {
-            return MapSequence.fromMap(retainedModels).get(slang);
-          }
-        })));
+        // fall-through 
       }
+      Iterable<SModel> modelsToRetain = generateableModels(module);
       MapSequence.fromMap(retainedModels).put(mres.module(), Sequence.fromIterable(modelsToRetain).subtract(Sequence.fromIterable(mres.models())).toListSequence());
     }
     return retainedModels;
   }
-  public static Iterable<IDelta> retainedDeltas(Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-    // FIXME odd to have two classes just to collect two locations per model (output and caches dirs) 
-    // rather shall spit out strings for these locations, and make shall translate them to IFile and IDelta itself. 
-    return Sequence.fromIterable(new RetainedUtil.RetainedFilesDelta(getFile).deltas(smd)).concat(Sequence.fromIterable(new RetainedUtil.RetainedCachesDelta(getFile).deltas(smd)));
+
+  private static Iterable<SModel> generateableModels(SModule module) {
+    return Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return GenerationFacade.canGenerate(it);
+      }
+    });
   }
-  /*package*/ static class RetainedFilesDelta {
-    protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
-    protected _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
-    public RetainedFilesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      this.getFile = getFile;
-    }
-    public Iterable<IDelta> deltas(Iterable<SModel> smds) {
-      for (SModel smd : smds) {
-        String output = SModuleOperations.getOutputPathFor(smd);
-        if (output != null) {
-          deltaForDir(output).kept(FileGenerationUtil.getDefaultOutputDir(smd, this.getRootOutputDir(output)));
+
+  public static Iterable<IDelta> retainedDeltas(final SModule module, Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
+    // builds deltas that mark output locations of specified models to persist generation (respective folders marked as 'kept') 
+    assert Sequence.fromIterable(smd).all(new IWhereFilter<SModel>() {
+      public boolean accept(SModel it) {
+        return it.getModule() == module;
+      }
+    });
+    // XXX delta doesn't uilize IFile, it's merely an indication of a location. Perhaps, it should be caller responsibility 
+    // to translate delta's IFile to proper location (make.pathToFile) and leave this class straighforward delta builder without 
+    // knowledge of path translation? 
+    // FIXME need make.pathToFile to take IFile instead of String, it's odd to go there and back 
+    final Map<IFile, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<IFile, FilesDelta>());
+
+    for (SModuleFacet mf : module.getFacets()) {
+      if (mf instanceof GenerationTargetFacet) {
+        GenerationTargetFacet gtf = (GenerationTargetFacet) mf;
+        IFile[] outputLocations = new IFile[2];
+        for (SModel m : smd) {
+          outputLocations[0] = gtf.getOutputLocation(m);
+          outputLocations[1] = gtf.getOutputCacheLocation(m);
+          for (IFile f : outputLocations) {
+            if (f == null) {
+              continue;
+            }
+            IFile actualOutput = getFile.invoke(f.getPath());
+            // XXX I'm not sure FilesDelta(dir).kept(new IFile(".")) or FilesDelta(dir).kept(dir) would work correctly, hence the magic with parent 
+            IFile parent = actualOutput.getParent();
+            FilesDelta fd = MapSequence.fromMap(dir2delta).get(parent);
+            if (fd == null) {
+              MapSequence.fromMap(dir2delta).put(parent, fd = new FilesDelta(parent));
+            }
+            fd.kept(actualOutput);
+          }
         }
       }
-      return this.collectedDeltas();
     }
-    protected IFile getRootOutputDir(String output) {
-      return getFile.invoke(output);
-    }
-    private Iterable<IDelta> collectedDeltas() {
-      return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).select(new ISelector<FilesDelta, IDelta>() {
-        public IDelta select(FilesDelta it) {
-          return (IDelta) it;
-        }
-      });
-    }
-    protected FilesDelta deltaForDir(String dir) {
-      if (!(MapSequence.fromMap(dir2delta).containsKey(dir))) {
-        MapSequence.fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
-      }
-      return MapSequence.fromMap(dir2delta).get(dir);
-    }
-  }
-  /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
-    public RetainedCachesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
-      super(getFile);
-    }
-    @Override
-    protected IFile getRootOutputDir(String output) {
-      return getFile.invoke(FileGenerationUtil.getCachesPath(output));
-    }
+    return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).ofType(IDelta.class);
   }
 }

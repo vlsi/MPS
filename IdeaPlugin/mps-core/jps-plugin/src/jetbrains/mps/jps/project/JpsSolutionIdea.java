@@ -92,6 +92,11 @@ public class JpsSolutionIdea extends Solution {
   }
 
   @Override
+  public boolean isPackaged() {
+    return false;
+  }
+
+  @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     List<SDependency> dependencies = new ArrayList<SDependency>();
 

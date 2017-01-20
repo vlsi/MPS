@@ -15,24 +15,27 @@
  */
 package jetbrains.mps.project.structure.project;
 
+import gnu.trove.THashSet;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
- * Represents a persisted project state
+ * Represents set of project modules ready for persistence.
+ * Preserves order of module paths.
  * TODO make immutable
+ * XXX why immutable? what for?
  */
 public final class ProjectDescriptor {
   private final String myName;
-  private final Map<String, String> myPath2VFolderMap = new HashMap<>();
+  private final List<ModulePath> myPaths = new ArrayList<>();
+  // XXX added just to keep check in addModulePath(), as I don't understand the reason behind it. Remove once cleared.
+  private final Set<String> myKnownPaths = new THashSet<>();
 
   public ProjectDescriptor(@Nullable String name) {
     myName = name;
@@ -44,35 +47,40 @@ public final class ProjectDescriptor {
   }
 
   public List<ModulePath> getModulePaths() {
-    List<ModulePath> result = new ArrayList<>();
-    myPath2VFolderMap.entrySet().forEach((entry) -> result.add(new ModulePath(entry.getKey(), entry.getValue())));
-    return Collections.unmodifiableList(result);
-  }
-
-  public boolean contains(@NotNull ModulePath path) {
-    return myPath2VFolderMap.containsKey(path.getPath());
+    return Collections.unmodifiableList(myPaths);
   }
 
   private static boolean isEmpty(String s) {
     return s == null || s.equals("");
   }
 
-  @Nullable
-  public String addModulePath(@NotNull ModulePath path) {
-    if (myPath2VFolderMap.containsKey(path.getPath()) && isEmpty(path.getVirtualFolder())) {
+  public void addModulePath(@NotNull ModulePath path) {
+    if (myKnownPaths.contains(path.getPath()) && isEmpty(path.getVirtualFolder())) {
       LogManager.getLogger(ProjectDescriptor.class).warn("Not adding module path with an empty virtual folder; already have one");
-      return null;
     } else {
-      return myPath2VFolderMap.put(path.getPath(), path.getVirtualFolder());
+      if (myPaths.contains(path)) {
+        // Bad smell. We get here when project starts, and existing ProjectDescriptor serves as an input to populate Project (through ModuleLoader),
+        // which, in turn, in addModule() adds the path to the descriptor again. Shall rather tell 'load' from 'augment' scenario.
+        return;
+      }
+      myPaths.add(path);
+      myKnownPaths.add(path.getPath());
     }
   }
 
-  @Nullable
-  public String removeModulePath(@NotNull ModulePath path) {
-    return myPath2VFolderMap.remove(path.getPath());
+  public void removeModulePath(@NotNull ModulePath path) {
+    myPaths.remove(path);
+    myKnownPaths.remove(path.getPath());
+  }
+
+
+  public void replacePath(@NotNull ModulePath modulePath, @NotNull ModulePath newPath) {
+    int i = myPaths.indexOf(modulePath);
+    assert i != -1;
+    myPaths.set(i, newPath);
   }
 
   public String toString() {
-    return String.format("%s:%d modules", myName, myPath2VFolderMap.size());
+    return String.format("%s:%d modules", myName, myPaths.size());
   }
 }

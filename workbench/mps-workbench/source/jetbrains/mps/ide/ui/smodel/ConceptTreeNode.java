@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import org.jetbrains.annotations.Nullable;
@@ -31,9 +31,8 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
     myNode = node;
     SConcept concept = myNode.getConcept();
     setNodeIdentifier(concept.getName());
-    final SNode conceptDecl = concept.getDeclarationNode();
-    myConceptDeclaration = conceptDecl == null ? null : conceptDecl.getReference();
-    setIcon(IconManager.getIconFor(conceptDecl));
+    myConceptDeclaration = concept.getSourceNode();
+    setIcon(IdeIcons.DEFAULT_CONCEPT_ICON);
   }
 
   @Override

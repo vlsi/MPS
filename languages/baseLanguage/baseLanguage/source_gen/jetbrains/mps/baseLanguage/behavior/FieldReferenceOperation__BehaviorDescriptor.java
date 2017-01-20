@@ -57,8 +57,8 @@ public final class FieldReferenceOperation__BehaviorDescriptor extends BaseBHDes
     if (!(SNodeOperations.isInstanceOf(IOperation__BehaviorDescriptor.getOperand_idhEwIP$m.invoke(__thisNode__), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf93d4da00cL, "jetbrains.mps.baseLanguage.structure.ThisExpression")))) {
       return false;
     }
-    Scope paramsScope = Scope.getScope(Scope.parent(__thisNode__), __thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration").getDeclarationNode());
-    Scope localsScope = Scope.getScope(Scope.parent(__thisNode__), __thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration").getDeclarationNode());
+    Scope paramsScope = Scope.getScope(Scope.parent(__thisNode__), __thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e94L, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"));
+    Scope localsScope = Scope.getScope(Scope.parent(__thisNode__), __thisNode__, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7efL, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
     List<SNode> vars = new ArrayList<SNode>();
     if (localsScope != null) {
       vars.addAll(Sequence.fromIterable(localsScope.getAvailableElements(null)).toListSequence());

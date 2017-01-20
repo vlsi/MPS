@@ -2,14 +2,14 @@
 <model ref="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="2" />
-    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="0" />
-    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="0" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
-    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
-    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
+    <use id="698a8d22-a104-47a0-ba8d-10e3ec237f13" name="jetbrains.mps.build.workflow" version="-1" />
+    <use id="479c7a8c-02f9-43b5-9139-d910cb22f298" name="jetbrains.mps.core.xml" version="-1" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
+    <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="-1" />
+    <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="-1" />
+    <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -744,6 +744,7 @@
       <concept id="7655580649838764660" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml" flags="ng" index="1kK7hY">
         <reference id="7655580649838764661" name="module" index="1kK7hZ" />
         <child id="4356762679305686649" name="jarLocations" index="3yLTFF" />
+        <child id="8488591998064324395" name="classpathEntries" index="3E5mpp" />
         <child id="506537499308757750" name="sourcesJarLocation" index="3SGgvt" />
       </concept>
       <concept id="4356762679305675652" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation" flags="ng" index="3yLZsm">
@@ -2813,6 +2814,72 @@
                 </node>
               </node>
             </node>
+            <node concept="2pNNFK" id="7ndynavPhVs" role="3o6s8t">
+              <property role="2pNNFO" value="classpath" />
+              <node concept="2pNNFK" id="7ndynavPjL3" role="3o6s8t">
+                <property role="2pNNFO" value="entry" />
+                <property role="qg3DV" value="true" />
+                <node concept="2pNUuL" id="7ndynavPjL9" role="2pNNFR">
+                  <property role="2pNUuO" value="path" />
+                  <node concept="2pMdtt" id="7ndynavPjLc" role="2pMdts">
+                    <property role="2pMdty" value="." />
+                    <node concept="17Uvod" id="7ndynavVB0M" role="lGtFl">
+                      <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/6666499814681541919/6666499814681541920" />
+                      <property role="2qtEX9" value="text" />
+                      <node concept="3zFVjK" id="7ndynavVB0N" role="3zH0cK">
+                        <node concept="3clFbS" id="7ndynavVB0O" role="2VODD2">
+                          <node concept="3clFbF" id="7ndynavVBdD" role="3cqZAp">
+                            <node concept="2OqwBi" id="7ndynavVBFA" role="3clFbG">
+                              <node concept="30H73N" id="7ndynavVBdC" role="2Oq$k0" />
+                              <node concept="3TrcHB" id="7ndynavVBUw" role="2OqNvi">
+                                <ref role="3TsBF5" to="kdzh:QkG2t1bKwB" resolve="path" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="1WS0z7" id="7ndynavVAyh" role="lGtFl">
+                  <node concept="3JmXsc" id="7ndynavVAyr" role="3Jn$fo">
+                    <node concept="3clFbS" id="7ndynavVAy_" role="2VODD2">
+                      <node concept="3clFbF" id="7ndynavVAB_" role="3cqZAp">
+                        <node concept="2OqwBi" id="7ndynavVvgC" role="3clFbG">
+                          <node concept="30H73N" id="7ndynavVv2P" role="2Oq$k0" />
+                          <node concept="3Tsc0h" id="7ndynavVvwf" role="2OqNvi">
+                            <ref role="3TtcxE" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="1W57fq" id="7ndynavVGlY" role="lGtFl">
+                <node concept="3IZrLx" id="7ndynavVGm0" role="3IZSJc">
+                  <node concept="3clFbS" id="7ndynavVGm2" role="2VODD2">
+                    <node concept="3clFbF" id="7ndynavVGJT" role="3cqZAp">
+                      <node concept="2OqwBi" id="7ndynavVJ1g" role="3clFbG">
+                        <node concept="2OqwBi" id="7ndynavVGXC" role="2Oq$k0">
+                          <node concept="30H73N" id="7ndynavVGJS" role="2Oq$k0" />
+                          <node concept="3Tsc0h" id="7ndynavVHdj" role="2OqNvi">
+                            <ref role="3TtcxE" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+                          </node>
+                        </node>
+                        <node concept="3GX2aA" id="7ndynavVLoC" role="2OqNvi" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node concept="gft3U" id="7ndynavVLWY" role="UU_$l">
+                  <node concept="2pNNFK" id="7ndynavVMny" role="gfFT$">
+                    <property role="2pNNFO" value="classpath" />
+                    <property role="qg3DV" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="2pNNFK" id="47iBkDRSWpV" role="3o6s8t">
               <property role="qg3DV" value="true" />
               <property role="2pNNFO" value="sources" />
@@ -4157,6 +4224,9 @@
             <node concept="398223" id="41K1b4v5Zw5" role="39821P">
               <node concept="1kK7hY" id="41K1b4v5ZvV" role="39821P">
                 <ref role="1kK7hZ" node="6CY5wCYZIX6" resolve="aaa" />
+                <node concept="1cIVw3" id="7ndynavVn4t" role="3E5mpp">
+                  <property role="1cIVw0" value="." />
+                </node>
                 <node concept="3yLZsm" id="3LQl9buGBE1" role="3yLTFF">
                   <property role="3yLZsk" value="aaa.jar" />
                   <node concept="55IIr" id="3LQl9buGBE2" role="3yLZsn">

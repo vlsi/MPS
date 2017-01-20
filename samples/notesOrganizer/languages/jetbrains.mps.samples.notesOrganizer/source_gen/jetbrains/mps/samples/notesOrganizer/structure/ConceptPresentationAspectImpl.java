@@ -14,7 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Note = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NoteMetaInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotePart = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Notes = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Notes = new ConceptPresentationBuilder().shortDesc("Notes list").create();
   private final ConceptPresentation props_NotesConfiguration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Priority = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Status = new ConceptPresentationBuilder().create();

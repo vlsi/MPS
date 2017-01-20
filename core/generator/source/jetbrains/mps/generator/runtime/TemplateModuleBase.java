@@ -20,9 +20,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -34,18 +32,6 @@ import java.util.Set;
  * @author Artem Tikhomirov
  */
 public abstract class TemplateModuleBase implements TemplateModule {
-  @NotNull
-  @Override
-  public SModuleReference getModuleReference() {
-    // FIXME shall become abstract method once getReference() is removed.
-    return getReference();
-  }
-
-  @Override
-  @ToRemove(version = 3.4)
-  public SModuleReference getReference() {
-    throw new IllegalStateException("Code generated with MPS 3.3 overrides this method, new code generated with MPS 3.4 shall override getModuleReference");
-  }
 
   @Override
   public Collection<TemplateModel> getModels() {

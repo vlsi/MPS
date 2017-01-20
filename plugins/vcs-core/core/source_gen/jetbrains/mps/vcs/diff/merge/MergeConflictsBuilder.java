@@ -37,6 +37,7 @@ import jetbrains.mps.vcs.diff.changes.UsedLanguageChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class MergeConflictsBuilder {
   private SModel myBaseModel;
@@ -112,7 +113,7 @@ public class MergeConflictsBuilder {
             addPossibleConflict(change, conflicting);
           }
         } else {
-          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getNodeId(), SNodeOperations.getContainingLinkRole(node));
+          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getNodeId(), check_thl6ft_b0a0a0a0g0b0p(SNodeOperations.getContainingLink(node)));
           final int index = SNodeOperations.getIndexInParent(node);
           NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
             public boolean accept(NodeGroupChange ch) {
@@ -285,5 +286,11 @@ public class MergeConflictsBuilder {
       }
     });
     return map;
+  }
+  private static String check_thl6ft_b0a0a0a0g0b0p(SContainmentLink checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getName();
+    }
+    return null;
   }
 }

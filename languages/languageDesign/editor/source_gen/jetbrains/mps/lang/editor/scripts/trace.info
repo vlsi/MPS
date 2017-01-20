@@ -38,8 +38,8 @@
       <node id="1234198385755" at="106,31,107,51" concept="5" />
       <node id="1234198385755" at="110,41,111,51" concept="5" />
       <node id="1234198385755" at="114,54,115,176" concept="5" />
-      <node id="1234781753684" at="118,59,119,486" concept="4" />
-      <node id="1234366043062" at="119,486,120,227" concept="5" />
+      <node id="1234781753684" at="118,59,119,465" concept="4" />
+      <node id="1234366043062" at="119,465,120,227" concept="5" />
       <node id="1234366172738" at="123,52,124,216" concept="4" />
       <node id="1234366206952" at="124,216,125,168" concept="1" />
       <node id="1234366218894" at="125,168,126,58" concept="1" />
@@ -48,7 +48,7 @@
       <node id="1234198385755" at="139,41,140,34" concept="5" />
       <node id="1234198385755" at="143,54,144,167" concept="5" />
       <node id="1234369974784" at="147,59,148,175" concept="5" />
-      <node id="1234783755512" at="151,52,152,486" concept="4" />
+      <node id="1234783755512" at="151,52,152,465" concept="4" />
       <node id="1234783832280" at="153,63,154,218" concept="4" />
       <node id="1234783854960" at="154,218,155,170" concept="1" />
       <node id="1234783865492" at="155,170,156,64" concept="1" />
@@ -60,8 +60,8 @@
       <node id="1234198385755" at="173,41,174,55" concept="5" />
       <node id="1234198385755" at="177,54,178,160" concept="5" />
       <node id="1234797313801" at="182,224,183,60" concept="4" />
-      <node id="1234797231546" at="184,466,185,24" concept="5" />
-      <node id="1234797403798" at="188,778,189,26" concept="5" />
+      <node id="1234797231546" at="184,445,185,24" concept="5" />
+      <node id="1234797403798" at="188,757,189,26" concept="5" />
       <node id="1234797276127" at="192,9,193,21" concept="5" />
       <node id="1234797443198" at="196,52,197,215" concept="4" />
       <node id="1234797458200" at="197,215,198,168" concept="1" />
@@ -101,7 +101,7 @@
       <node id="1234198385755" at="176,0,180,0" concept="3" trace="getApplicableConcept#()Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1234198385755" at="201,0,205,0" concept="3" trace="isShowAsIntention#()Z" />
       <node id="1234198385755" at="117,0,122,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1234783795991" at="152,486,157,9" concept="2" />
+      <node id="1234783795991" at="152,465,157,9" concept="2" />
       <node id="1234797236241" at="186,11,191,11" concept="2" />
       <node id="1234198385755" at="208,0,213,0" concept="3" trace="getScriptNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="1234198385755" at="93,0,99,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
@@ -146,8 +146,8 @@
       <scope id="1234198385755" at="169,31,170,55" />
       <scope id="1234198385755" at="173,41,174,55" />
       <scope id="1234198385755" at="177,54,178,160" />
-      <scope id="1234797137771" at="184,466,185,24" />
-      <scope id="1234797320705" at="188,778,189,26" />
+      <scope id="1234797137771" at="184,445,185,24" />
+      <scope id="1234797320705" at="188,757,189,26" />
       <scope id="1234198385755" at="202,42,203,21" />
       <scope id="1234198385755" at="210,41,211,154" />
       <scope id="1234366040380" at="118,59,120,227">

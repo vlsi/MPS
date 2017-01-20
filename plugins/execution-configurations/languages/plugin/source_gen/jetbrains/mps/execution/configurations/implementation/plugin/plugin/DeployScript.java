@@ -34,7 +34,6 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
 import org.apache.log4j.Level;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.smodel.tempmodel.TempModule;
 import java.util.Collections;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -98,14 +97,11 @@ public class DeployScript {
   }
 
   public void dispose() {
-    FileUtil.delete(myModule.getBaseDirectory());
-    FileUtil.delete(new File(myModule.getOutputPath().getPath().replace("/", File.separator)));
-    FileUtil.delete(new File(FileGenerationUtil.getCachesDir(myModule.getOutputPath()).getPath().replace("/", File.separator)));
-
     myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         SRepository projectRepo = myProject.getRepository();
         ((SRepositoryExt) projectRepo).unregisterModule(myModule, myProject);
+        FileUtil.delete(myModule.getBaseDirectory());
       }
     });
   }
@@ -121,6 +117,7 @@ public class DeployScript {
     }
     @Override
     public IFile getDescriptorFile() {
+      // who cares if this module has descriptor file? Do we need to extend TempModule? 
       return FileSystem.getInstance().getFileByPath(myDescriptorFile.getAbsolutePath().replace("\\", "/"));
     }
     public File getBaseDirectory() {

@@ -34,6 +34,9 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.runner.test.test1-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.test1.msd" />
       </module>
     </echoxml>
@@ -70,6 +73,9 @@
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
         </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
         <sources jar="jetbrains.mps.build.mps.runner.test.test4-src.jar" descriptor="jetbrains.mps.build.mps.runner.test.test4.msd" />
       </module>
     </echoxml>

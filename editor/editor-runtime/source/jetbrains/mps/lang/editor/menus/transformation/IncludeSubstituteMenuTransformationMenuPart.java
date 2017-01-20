@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuContext;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,9 +39,13 @@ public class IncludeSubstituteMenuTransformationMenuPart implements Transformati
     SContainmentLink containmentLink = getContainmentLink(context);
     if (parent != null && containmentLink != null) {
       SubstituteMenuLookup substituteMenuLookup = getSubstituteMenuLookup(context);
-      return new SubstituteItemsCollector(parent, currentChild, containmentLink, context.getEditorContext(), substituteMenuLookup).collect();
+      return new SubstituteItemsCollector(parent, currentChild, containmentLink, getTargetConcept(context), context.getEditorContext(), substituteMenuLookup).collect();
     }
     return Collections.emptyList();
+  }
+
+  protected SAbstractConcept getTargetConcept(TransformationMenuContext context) {
+    return context.getNodeLocation().getTargetConcept();
   }
 
   protected SNode getParentNode(TransformationMenuContext context) {

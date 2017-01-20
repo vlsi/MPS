@@ -4,7 +4,9 @@ package jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +19,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c(jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.editor.menus.contextAssistant.testExtendingLanguage";
@@ -31,12 +36,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("d1fa0116-fbd7-44fe-bcc8-e093dfdf9f3c"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("9a629f9a-abc9-4c29-b1b8-db7f349f7fbc"), "jetbrains.mps.lang.editor.menus.contextAssistant.testLanguage"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

@@ -22,11 +22,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_URL;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class URLCellProvider extends PropertyCellProvider {  
+public class URLCellProvider extends PropertyCellProvider {
 
-  public URLCellProvider(SNode node, EditorContext context) {
+  public URLCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
 

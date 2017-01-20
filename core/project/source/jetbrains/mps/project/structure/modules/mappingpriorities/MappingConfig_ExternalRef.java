@@ -23,6 +23,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
+/**
+ * FIXME Superfluous as long as {@link MappingConfig_SimpleRef} holds full-fledged {@link SModelReference}
+ */
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
   public static final int PERSISTENCE_ID = 0x55550004;
 
@@ -98,5 +101,10 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
     }
     String alias = ((Generator) generator).getAlias();
     return '[' + alias + ':' + myMappingConfig.asString(repository) + ']';
+  }
+
+  @Override
+  public String asString() {
+    return '[' + myGenerator.getModuleName() + ':' + myMappingConfig.asString() + ']';
   }
 }

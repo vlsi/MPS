@@ -4,7 +4,9 @@ package jetbrains.mps.testHybridEditor.diagram.generated;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +19,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.testHybridEditor.diagram.generated.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "dabb32d7-ce29-4e63-bdf4-c024c25acf62(jetbrains.mps.testHybridEditor.diagram.generated)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("dabb32d7-ce29-4e63-bdf4-c024c25acf62");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.testHybridEditor.diagram.generated";
@@ -31,12 +36,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("dabb32d7-ce29-4e63-bdf4-c024c25acf62"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.testHybridEditor"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("913a1d63-9e19-48fa-ad03-e33ecccd3814"), "jetbrains.mps.testHybridEditor"));
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

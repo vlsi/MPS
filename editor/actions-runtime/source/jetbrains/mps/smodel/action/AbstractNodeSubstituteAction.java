@@ -103,7 +103,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
     }
     if (myParameterObject instanceof SAbstractConcept) {
-      return NodePresentationUtil.matchingText(((SAbstractConcept) myParameterObject).getDeclarationNode(), referent_presentation, visible);
+      return NodePresentationUtil.matchingText((SAbstractConcept) myParameterObject, referent_presentation);
     }
     return "" + myParameterObject;
   }

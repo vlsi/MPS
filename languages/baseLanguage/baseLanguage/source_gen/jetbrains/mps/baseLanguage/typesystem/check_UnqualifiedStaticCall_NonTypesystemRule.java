@@ -31,7 +31,7 @@ public class check_UnqualifiedStaticCall_NonTypesystemRule extends AbstractNonTy
       return;
     }
 
-    Scope staticMethodScope = Scope.getScope(SNodeOperations.getParent(localCall), localCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration").getDeclarationNode());
+    Scope staticMethodScope = Scope.getScope(SNodeOperations.getParent(localCall), localCall, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf0aL, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
     if (staticMethodScope == null) {
       return;
     }

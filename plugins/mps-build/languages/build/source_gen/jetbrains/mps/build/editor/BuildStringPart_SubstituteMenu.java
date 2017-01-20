@@ -9,11 +9,12 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -41,8 +42,8 @@ public class BuildStringPart_SubstituteMenu extends SubstituteMenuBase {
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new BuildStringPart_SubstituteMenu.SubstituteMenuPart_Parameterized_fvo6kj_a());
-    result.add(new BuildStringPart_SubstituteMenu.SubstituteMenuPart_Action_fvo6kj_b());
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildStringPart_SubstituteMenu.SubstituteMenuPart_Parameterized_fvo6kj_a(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d01L, "jetbrains.mps.build.structure.BuildVarRefStringPart")));
+    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new BuildStringPart_SubstituteMenu.SubstituteMenuPart_Action_fvo6kj_b(), MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x440d7ea3b68b7d03L, "jetbrains.mps.build.structure.BuildTextStringPart")));
     result.add(new BuildStringPart_SubstituteMenu.SubstituteMenuPart_Subconcepts_fvo6kj_c());
     return result;
   }
@@ -55,7 +56,7 @@ public class BuildStringPart_SubstituteMenu extends SubstituteMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(SubstituteMenuContext _context) {
-      Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ? _context.getCurrentTargetNode() : _context.getParentNode()), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro").getDeclarationNode());
+      Scope scope = Scope.getScope(((_context.getCurrentTargetNode() != null) ? _context.getCurrentTargetNode() : _context.getParentNode()), null, MetaAdapterFactory.getConcept(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a1fL, "jetbrains.mps.build.structure.BuildMacro"));
       if (scope == null) {
         return null;
       }

@@ -4,8 +4,9 @@ package jetbrains.mps.samples.generator_demo.demoLang6;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -20,9 +21,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.samples.generator_demo.demoLang6.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "82fb751d-f7fb-4b58-a16e-303356f8e0af(jetbrains.mps.samples.generator_demo.demoLang6)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("82fb751d-f7fb-4b58-a16e-303356f8e0af");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.generator_demo.demoLang6";
@@ -34,12 +38,14 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("82fb751d-f7fb-4b58-a16e-303356f8e0af"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.sampleXML"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("772f6dcd-8c0d-48f7-869c-908e036f7c8e"), "jetbrains.mps.sampleXML"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "910496bc-87ae-4b1f-afbe-f17b888f6fa6(jetbrains.mps.samples.generator_demo.demoLang6#3978102045101855018)"));

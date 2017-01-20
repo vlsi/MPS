@@ -23,19 +23,19 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelOperations;
+import jetbrains.mps.make.facets.Make_Facet.Target_make;
+import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.resources.behavior.Resource__BehaviorDescriptor;
-import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.smodel.resources.DResource;
 import jetbrains.mps.vfs.FileSystem;
@@ -90,24 +90,26 @@ public class Binaries_Facet extends IFacet.Stub {
                 final Map<IFile, byte[]> dataToWrite = MapSequence.fromMap(new HashMap<IFile, byte[]>());
                 final List<IDelta> deltaList = ListSequence.fromList(new ArrayList<IDelta>());
 
-                ModelAccess.instance().runReadAction(new Runnable() {
+                final SRepository repository = Target_checkParameters.vars(pa.global()).makeSession().getProject().getRepository();
+
+                repository.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
                     Iterable<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
                       public Iterable<SModel> translate(MResource res) {
                         return Sequence.fromIterable(res.models()).ofType(SModel.class).where(new IWhereFilter<SModel>() {
                           public boolean accept(SModel it) {
-                            return SModuleOperations.getOutputPathFor(it) != null;
+                            return SModelOperations.getOutputLocation(it) != null;
                           }
                         });
                       }
                     });
 
-                    for (final SModel model : Sequence.fromIterable(models)) {
-                      ListSequence.fromList(SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).visitAll(new IVisitor<SNode>() {
+                    for (SModel model : Sequence.fromIterable(models)) {
+                      final IFile outputDir = Target_make.vars(pa.global()).pathToFile().invoke(SModelOperations.getOutputLocation(model).getPath());
+                      final FilesDelta fd = new FilesDelta(outputDir);
+                      ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.nodes(model, MetaAdapterFactory.getInterfaceConcept(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6caL, "jetbrains.mps.lang.resources.structure.Resource"))).visitAll(new IVisitor<SNode>() {
                         public void visit(SNode it) {
-                          IFile outputRootFile = Target_make.vars(pa.global()).pathToFile().invoke(SModuleOperations.getOutputPathFor(model));
-
-                          List<Tuples._2<IFile, byte[]>> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputRootFile);
+                          List<Tuples._2<IFile, byte[]>> data = Resource__BehaviorDescriptor.generate_id7Mb2akaesv8.invoke(it, outputDir);
 
                           for (Tuples._2<IFile, byte[]> d : ListSequence.fromList(data).where(new IWhereFilter<Tuples._2<IFile, byte[]>>() {
                             public boolean accept(Tuples._2<IFile, byte[]> it) {
@@ -116,16 +118,13 @@ public class Binaries_Facet extends IFacet.Stub {
                           })) {
                             if (d._1() != null) {
                               MapSequence.fromMap(dataToWrite).put(d._0(), d._1());
+                              fd.written(d._0());
                             }
-
-                            // todo check whether it's possible to pass not outputDir here 
-                            FilesDelta fd = new FilesDelta(outputRootFile);
-                            new StaleFilesCollector(outputRootFile).updateDelta(fd);
-                            fd.written(d._0());
-                            ListSequence.fromList(deltaList).addElement(fd);
                           }
                         }
                       });
+                      new StaleFilesCollector(outputDir).updateDelta(fd);
+                      ListSequence.fromList(deltaList).addElement(fd);
                     }
                   }
                 });

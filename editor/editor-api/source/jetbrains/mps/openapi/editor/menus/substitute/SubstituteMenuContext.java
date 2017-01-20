@@ -18,11 +18,13 @@ package jetbrains.mps.openapi.editor.menus.substitute;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
+import java.util.function.Predicate;
 
 /**
  * @author simon
@@ -38,9 +40,15 @@ public interface SubstituteMenuContext {
   SContainmentLink getLink();
 
   @Nullable
+  default SAbstractConcept getTargetConcept() {
+    return getLink() != null ? getLink().getTargetConcept() : null;
+  }
+
+  @Nullable
   SNode getCurrentTargetNode();
 
   SModel getModel();
+
   /**
    * Creates applicable menu items from the menus returned by {@code menuLookup}. If menuLookup is null, creates the default menu lookup.
    *
@@ -51,4 +59,8 @@ public interface SubstituteMenuContext {
   List<SubstituteMenuItem> createItems(@Nullable SubstituteMenuLookup menuLookup);
 
   SubstituteMenuContext withLink(SContainmentLink link);
+
+  default Predicate<SAbstractConcept> getConstraintsCheckingPredicate() {
+    return (concept -> true);
+  }
 }

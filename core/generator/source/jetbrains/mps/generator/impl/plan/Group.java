@@ -15,8 +15,11 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.MapCfgGroups;
+import jetbrains.mps.generator.impl.MapCfgGroups.ByModule;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.annotations.Immutable;
 
@@ -26,6 +29,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Collection of TemplateMappingConfigurations as a unit of generation plan.
@@ -128,11 +132,9 @@ final class Group {
       sb.append("Empty");
     }
     sb.append("Group[");
-    for (TemplateMappingConfiguration c : myMappings) {
-//      sb.append(jetbrains.mps.util.NameUtil.compactNamespace(jetbrains.mps.smodel.SModelStereotype.withoutStereotype(c.getMappingNode().getModelReference().getModelName())));
-//      sb.append('.');
-      sb.append(c.getName());
-      sb.append(',');
+    for (ByModule chunk : new MapCfgGroups(myMappings).groupByModule()) {
+      sb.append(NameUtil.compactNamespace(chunk.getKey().getAlias()));
+      chunk.getElements().map(TemplateMappingConfiguration::getName).collect(Collectors.joining(",", ":{", "}; "));
     }
     sb.append(']');
     return sb.toString();

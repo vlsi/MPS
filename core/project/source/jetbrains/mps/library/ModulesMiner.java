@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -143,7 +144,7 @@ public final class ModulesMiner {
       readModuleDescriptorsFromFolder(file);
     } else {
       if (isSourceModuleFile(file)) {
-        ModuleDescriptor moduleDescriptor = loadDescriptorOnly_internal(file);
+        ModuleDescriptor moduleDescriptor = loadModuleDescriptor(file);
         if (moduleDescriptor != null) {
           myOutcome.add(new ModuleHandle(file, moduleDescriptor));
         }
@@ -223,13 +224,27 @@ public final class ModulesMiner {
     return moduleHandle;
   }
 
+  /**
+   * read a module file and update excludes set with output locations (classes, generated sources) of the module
+   * if file points to deployment descriptor, attempt to read descriptor of source module, associates DD with it and return it, or DD if no source
+   * module found.
+   */
+  @Nullable
   private ModuleDescriptor loadModuleDescriptor(IFile file) {
     String filePath = file.getPath();
+    ModuleDescriptor descriptor;
     if (filePath.endsWith(SLASH_META_INF_MODULE_XML)) {
-      return loadDeploymentDescriptor(file);
+      // there are no excludes in deployment descriptor, but loadDD reads and returns MD from source module, if any.
+      // OTOH, file is the one under META-INF, and no chances to find neither source_gen nor test_gen relative to it
+      // (need one at lang-src.jar!/module/source.lang.mpl)
+      descriptor = loadDeploymentDescriptor(file);
     } else {
-      return loadSourceModuleDescriptor(file);
+      descriptor = loadSourceModuleDescriptor(file);
     }
+    if (descriptor != null) {
+      processExcludes(file, descriptor);
+    }
+    return descriptor;
   }
 
   private ModuleDescriptor loadSourceModuleDescriptor(IFile file) {
@@ -259,8 +274,26 @@ public final class ModulesMiner {
       // TODO create module without sources
       if (result != null) {
         result.setDeploymentDescriptor(deploymentDescriptor);
-        // TODO fix stubs
+        // fix stubs libraries:
+        // META-INF/module.xml contains info about model libs, while clients generally look at MD.getAdditionalJavaStubPaths() which were not
+        // updated by build language at deployment time and still points to design-time lib location.
+        // Here we ignore stub libraries from source module descriptor, use libs from DeploymentDescriptor
+        result.getAdditionalJavaStubPaths().clear();
+        // FIXME getBundleHome is not smart enough to recognize META-INF/module.xml in a regular directory (not archive), and yields
+        //       wrong result then (file.getParent() == META-INF/ location which won't help to locate libraries). Instead, pass module home
+        //       location from the caller.
+        IFile bundleParent = file.getBundleHome().getParent();
+        for (String jarFile : deploymentDescriptor.getLibraries()) {
+          IFile jar = jarFile.startsWith("/")
+              ? bundleParent.getFileSystem().getFile(PathManager.getHomePath() + jarFile)
+              : bundleParent.getDescendant(jarFile);
+          if (jar.exists()) {
+            String path = jar.getPath();
+            result.getAdditionalJavaStubPaths().add(path);
+          }
+        }
       }
+      // XXX why don't we return DD if no source MD found?
       return result;
     } catch (ModuleReadException e) {
       LOG.error("Exception while loading a deployment descriptor from the path " + file.getPath(), e);
@@ -271,15 +304,45 @@ public final class ModulesMiner {
     }
   }
 
-  // read a module file and update excludes set with output locations (classes, generated sources) of the module
-  private ModuleDescriptor loadDescriptorOnly_internal(IFile descriptorFile) {
-    ModuleDescriptor descriptor = loadModuleDescriptor(descriptorFile);
-    if (descriptor != null) {
-      processExcludes(descriptorFile, descriptor);
+  private void processModuleExcludes(jetbrains.mps.vfs.openapi.FileSystem fileSystem, ModuleDescriptor descriptor) {
+    String generatorOutputPath = ProjectPathUtil.getGeneratorOutputPath(descriptor);
+    if (generatorOutputPath != null) {
+      IFile genOutputFile = fileSystem.getFile(generatorOutputPath);
+      excludeGeneratedSourcesDir(genOutputFile);
+      // we don't care if there's indeed tests facet or if the folder exists
+      // and I don't see why TestsFacetImpl.fromModuleDescriptor(arbitraryFile, MD) gives better result than hard-coded, source_gen-relative path,
+      // namely why magic with possiblyDeploymentDescriptorFile.getParent().getDescendant is better than the assumption test_gen
+      // is at the same level as source_gen
+      // Proper solution would be to use default {module}/test_gen in ModuleDeploymentPersistence for Tests Facet, let it resolve to FS location
+      // and use the value here much like we did for getGeneratorOutputPath(MD) above.
+      excludeGeneratedSourcesDir(genOutputFile.getParent().getDescendant("test_gen"));
+      //
+      // excludeIdeaClassesGen(descriptorFile, descriptor);
+      // Again, no reason to expect ProjectPathUtil.getClassesFolder(arbitraryFile) to yield any more meaningful result than 'sibling classes/'.
+      myExcludes.add(genOutputFile.getParent().getDescendant("classes"));
+      //
+      // excludeClassesGen(descriptorFile, descriptor);
+      // Yet one more, ProjectPathUtil.getClassesGenFolder(descriptorFile, descriptor instanceof GeneratorDescriptor) replaced with
+      // 'sibling classes_gen/' as ProjectPathUtil.getGeneratorOutputPath(descriptor) (together with MDPersistence code) gives us proper FS location
+      // of generator's source_gen, and no reason for md.IsInstanceOf(GeneratorMD) -> getDescendant("generator") magic
+      // XXX Would be great to reuse constant from JavaModuleFacetImpl#getClassesGen
+      myExcludes.add(genOutputFile.getParent().getDescendant("classes_gen"));
+
+      // and as for jars (-src.jar and -generator.jar) that used to be excluded if descriptorFile.isReadOnly(),
+      // check readModuleDescriptorsFromFolder(IFile) - it reads jar only if there's META-INF/module.xml or modules/, neither of this happens to
+      // -generator.jar nor -src.jar, so no reason to put their roots into excludes (on a side note, why not ".jar" itself, but ".jar!/"?)
     }
-    return descriptor;
+
+    for (String p : descriptor.getSourcePaths()) {
+      myExcludes.add(fileSystem.getFile(p));
+    }
+
+    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
+      myExcludes.add(fileSystem.getFile(entry));
+    }
   }
 
+  // makes sense for module descriptors from loadSourceModuleDescriptor(), not for DeploymentDescriptor
   private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor) {
     // in fact, descriptorFile.isReadOnly doesn't really mean there could be no dirs to exclude
     // perhaps, there should be two distinct miners, one to look up source modules, and another one for deployed?
@@ -287,23 +350,11 @@ public final class ModulesMiner {
       return;
     }
     jetbrains.mps.vfs.openapi.FileSystem fileSystem = descriptorFile.getFileSystem();
-
-    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorOutputPath(descriptorFile.getParent(), descriptor));
-    excludeGeneratedSourcesDir(ProjectPathUtil.getGeneratorTestsOutputPath(descriptorFile, descriptor));
-    excludeIdeaClassesGen(descriptorFile, descriptor);
-    excludeClassesGen(descriptorFile, descriptor);
-
-    for (String p : descriptor.getSourcePaths()) {
-      myExcludes.add(fileSystem.getFile(p));
-    }
-
-    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
-      myExcludes.add(descriptorFile.getFileSystem().getFile(entry));
-    }
+    processModuleExcludes(fileSystem, descriptor);
 
     if (descriptor instanceof LanguageDescriptor) {
       for (GeneratorDescriptor generator : ((LanguageDescriptor) descriptor).getGenerators()) {
-        processExcludes(descriptorFile, generator);
+        processModuleExcludes(fileSystem, generator);
       }
     }
   }
@@ -313,22 +364,8 @@ public final class ModulesMiner {
       myExcludes.add(sourceDir);
       // todo: why?
       if (!sourceDir.isReadOnly()) {
-        myExcludes.add(sourceDir.getFileSystem().getFile(FileGenerationUtil.getCachesPath(sourceDir.getPath())));
+        myExcludes.add(FileGenerationUtil.getCachesDir(sourceDir));
       }
-    }
-  }
-
-  private void excludeClassesGen(IFile descriptorFile, ModuleDescriptor descriptor) {
-    IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile, descriptor instanceof GeneratorDescriptor);
-    if (classesGen != null) {
-      myExcludes.add(classesGen);
-    }
-  }
-
-  private void excludeIdeaClassesGen(IFile descriptorFile, ModuleDescriptor descriptor) {
-    IFile classesDir = ProjectPathUtil.getClassesFolder(descriptorFile);
-    if (classesDir != null) {
-      myExcludes.add(classesDir);
     }
   }
 

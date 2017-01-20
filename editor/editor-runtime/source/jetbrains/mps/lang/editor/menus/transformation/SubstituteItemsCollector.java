@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -38,19 +39,26 @@ public class SubstituteItemsCollector {
   private final SContainmentLink myContainmentLink;
   private final EditorContext myEditorContext;
   private final SubstituteMenuLookup myMenuLookup;
+  private SAbstractConcept myTargetConcept;
 
   public SubstituteItemsCollector(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink containmentLink,
+      @NotNull EditorContext editorContext, @Nullable SubstituteMenuLookup menuLookup) {
+    this(parentNode, currentChild, containmentLink, null, editorContext, menuLookup);
+  }
+
+  public SubstituteItemsCollector(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink containmentLink, @Nullable SAbstractConcept targetConcept,
       @NotNull EditorContext editorContext, @Nullable SubstituteMenuLookup menuLookup) {
     myParent = parentNode;
     myCurrentChild = currentChild;
     myContainmentLink = containmentLink;
-    myEditorContext = editorContext;
+    myTargetConcept = targetConcept;
+    myEditorContext =  editorContext;
     myMenuLookup = menuLookup;
   }
 
   public List<TransformationMenuItem> collect() {
     DefaultSubstituteMenuContext substituteMenuContext =
-        DefaultSubstituteMenuContext.createInitialContextForNode(myContainmentLink, myParent, myCurrentChild, myEditorContext);
+        DefaultSubstituteMenuContext.createInitialContextForNode(myContainmentLink, myTargetConcept, myParent, myCurrentChild, myEditorContext);
     return substituteMenuContext.createItems(myMenuLookup).stream().
         map(item -> convert(item, substituteMenuContext)).
         collect(Collectors.toList());

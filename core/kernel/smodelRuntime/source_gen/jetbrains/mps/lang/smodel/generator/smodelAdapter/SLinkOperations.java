@@ -11,6 +11,10 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 
 /**
  * 
@@ -143,10 +147,62 @@ public class SLinkOperations {
     }
     return reference.getRole();
   }
+  public static SReferenceLink getRefLink(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    return reference.getLink();
+  }
   public static String getResolveInfo(SReference reference) {
     if (reference == null) {
       return null;
     }
     return ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
+  }
+
+  /**
+   * For each element of supplied collection, navigate specified reference and collect non-null targets as a resulting sequence.
+   * Null elements in the source collections are tolerated (and ignored)
+   */
+  public static Iterable<SNode> collect(Iterable<SNode> collection, final SReferenceLink l) {
+    return Sequence.fromIterable(collection).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return getTarget(it, l);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != null;
+      }
+    });
+  }
+
+  /**
+   * For each element of supplied collection, take child from specified role (if any), and return these as a sequence.
+   * Result sequence doesn't contain null values.
+   * Null elements in the source collections are tolerated (and ignored)
+   */
+  public static Iterable<SNode> collect(Iterable<SNode> collection, final SContainmentLink l) {
+    return Sequence.fromIterable(collection).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return getTarget(it, l);
+      }
+    }).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return it != null;
+      }
+    });
+  }
+
+  /**
+   * For each element of supplied collection, collect all children from specified role and return them as flattened sequence.
+   * Result sequence doesn't contain null values.
+   * Null elements in the source collections are tolerated (and ignored)
+   */
+  public static Iterable<SNode> collectMany(Iterable<SNode> collection, final SContainmentLink l) {
+    return Sequence.fromIterable(collection).translate(new ITranslator2<SNode, SNode>() {
+      public Iterable<SNode> translate(SNode it) {
+        return getChildren(it, l);
+      }
+    });
   }
 }

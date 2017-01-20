@@ -42,13 +42,10 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
   }
   @Override
   public void addMethod(SNode method) {
-    if (eq_z7f2gu_a0a0e(SNodeOperations.getConcept(this.getContainerMethod()), SNodeOperations.getConcept(method))) {
+    if (SNodeOperations.getConcept(this.getContainerMethod()) == SNodeOperations.getConcept(method)) {
       SNodeOperations.insertNextSiblingChild(this.getContainerMethod(), method);
     } else {
       super.addMethod(method);
     }
-  }
-  private static boolean eq_z7f2gu_a0a0e(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

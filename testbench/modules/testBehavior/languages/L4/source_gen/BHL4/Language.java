@@ -4,7 +4,8 @@ package BHL4;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
+import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
@@ -17,9 +18,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import BHL4.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "2b679aa1-c9e8-4a47-84b9-ce94c2202df5(BHL4)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("2b679aa1-c9e8-4a47-84b9-ce94c2202df5");
   }
+
   @Override
   public String getNamespace() {
     return "BHL4";
@@ -31,12 +35,13 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("2b679aa1-c9e8-4a47-84b9-ce94c2202df5"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
   }
+
   @Override
   protected <T extends ILanguageAspect> T createAspect(Class<T> aspectClass) {
     if (aspectClass.getName().equals("jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor")) {

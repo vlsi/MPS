@@ -33,7 +33,7 @@ public final class NodeAttributeQualifier__BehaviorDescriptor extends BaseBHDesc
   }
 
   /*package*/ static SNode getTargetConcept_id5zEkxuKhyRq(@NotNull SNode __thisNode__) {
-    return (SNode) SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, 0x58ea5217b045b9b6L, "attributeConcept"));
+    return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x58ea5217b045b9b5L, 0x58ea5217b045b9b6L, "attributeConcept"));
   }
 
   /*package*/ NodeAttributeQualifier__BehaviorDescriptor() {

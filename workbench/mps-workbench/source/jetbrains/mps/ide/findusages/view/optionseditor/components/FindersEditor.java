@@ -20,8 +20,9 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.BorderFactory;
@@ -37,16 +38,20 @@ import javax.swing.event.MenuKeyEvent;
 import java.awt.Cursor;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Set;
+import java.util.function.Consumer;
 
-public abstract class FindersEditor extends BaseEditor<FindersOptions> {
+public class FindersEditor extends BaseEditor<FindersOptions> {
   public FindersEditor(FindersOptions defaultOptions, final SNode node) {
+    this(defaultOptions, node, null);
+  }
+
+  public FindersEditor(FindersOptions defaultOptions, final SNode node, @Nullable final Consumer<IInterfacedFinder> navigation) {
     super(defaultOptions);
 
     myPanel = new JPanel();
@@ -54,32 +59,21 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
     myPanel.setBorder(IdeBorderFactory.createTitledBorder("Finders", false));
 
-    Set<ReloadableFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
+    Set<IInterfacedFinder> availableFinders = FindersManager.getInstance().getAvailableFinders(node);
 
-    List<ReloadableFinder> sortedFinders = new ArrayList<ReloadableFinder>(availableFinders);
-    Collections.sort(sortedFinders, new Comparator<ReloadableFinder>() {
-      @Override
-      public int compare(ReloadableFinder o1, ReloadableFinder o2) {
-        return o1.getDescription().compareToIgnoreCase(o2.getDescription());
-      }
-    });
+    List<IInterfacedFinder> sortedFinders = new ArrayList<>(availableFinders);
+    Collections.sort(sortedFinders, (o1, o2) -> o1.getDescription().compareToIgnoreCase(o2.getDescription()));
 
-    List<String> correctEnabledFinders = new ArrayList<String>();
+    for (final IInterfacedFinder finder : sortedFinders) {
+      boolean isEnabled = myOptions.getFindersClassNames().contains(finder.getClass().getName());
 
-    for (final ReloadableFinder finder : sortedFinders) {
-      boolean isEnabled = finder.isUsedByDefault(node) || (!resetToDefaults() && myOptions.getFindersClassNames().contains(finder.getFinder().getClass().getName()));
-
-      if (isEnabled) {
-        correctEnabledFinders.add(finder.getFinder().getClass().getName());
-      }
-
-      final JBCheckBox finderCheckBox = new JBCheckBox(finder.getFinder().getDescription(), isEnabled);
+      final JBCheckBox finderCheckBox = new JBCheckBox(finder.getDescription(), isEnabled);
       finderCheckBox.setBorder(BorderFactory.createEmptyBorder(0, 5, 5, 0));
 
       finderCheckBox.addChangeListener(new ChangeListener() {
         @Override
         public void stateChanged(ChangeEvent e) {
-          String finderClassName = finder.getFinder().getClass().getName();
+          String finderClassName = finder.getClass().getName();
           if (((JCheckBox) e.getSource()).isSelected()) {
             if (!myOptions.getFindersClassNames().contains(finderClassName)) {
               myOptions.getFindersClassNames().add(finderClassName);
@@ -88,18 +82,6 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
           } else {
             myOptions.getFindersClassNames().remove(finderClassName);
             findersListChangedByUser();
-          }
-        }
-      });
-
-      finderCheckBox.addKeyListener(new KeyAdapter() {
-        @Override
-        public void keyPressed(KeyEvent e) {
-          if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
-            if (finder.canNavigate()) {
-              goToFinder(finder);
-              e.consume();
-            }
           }
         }
       });
@@ -113,30 +95,26 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
       JToolBar finderHolder = new JToolBar(JToolBar.HORIZONTAL);
       finderHolder.add(finderCheckBox);
 
-      if (finder.canNavigate()) {
+      if (navigation != null && finder.canNavigate()) {
+        finderCheckBox.addKeyListener(new KeyAdapter() {
+          @Override
+          public void keyPressed(KeyEvent e) {
+            if ((e.getKeyCode() == MenuKeyEvent.VK_B) && (e.getID() == MenuKeyEvent.KEY_PRESSED) && (e.isControlDown())) {
+              navigation.accept(finder);
+              e.consume();
+            }
+          }
+        });
+
         JBLabel goToFinderLabel = new JBLabel(Nodes.Symlink, JLabel.CENTER);
         goToFinderLabel.setBorder(BorderFactory.createEmptyBorder());
         goToFinderLabel.setFocusable(false);
         goToFinderLabel.setToolTipText("Go to finder declaration");
-        goToFinderLabel.addMouseListener(new MouseListener() {
+        goToFinderLabel.addMouseListener(new MouseAdapter() {
           @Override
           public void mouseClicked(MouseEvent e) {
-            if (finder.canNavigate()) {
-              goToFinder(finder);
-            }
+            navigation.accept(finder);
           }
-
-          @Override
-          public void mousePressed(MouseEvent e) {}
-
-          @Override
-          public void mouseReleased(MouseEvent e) {}
-
-          @Override
-          public void mouseEntered(MouseEvent e) {}
-
-          @Override
-          public void mouseExited(MouseEvent e) {}
         });
         goToFinderLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
@@ -150,17 +128,9 @@ public abstract class FindersEditor extends BaseEditor<FindersOptions> {
 
       myPanel.add(finderHolder);
     }
-
-    myOptions.setFindersClassNames(correctEnabledFinders);
   }
-
-  public abstract void goToFinder(ReloadableFinder finder);
 
   protected void findersListChangedByUser() {
 
-  }
-
-  protected boolean resetToDefaults(){
-    return false;
   }
 }

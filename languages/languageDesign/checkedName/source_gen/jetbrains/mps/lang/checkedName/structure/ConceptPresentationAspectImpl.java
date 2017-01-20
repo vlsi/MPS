@@ -10,7 +10,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ICheckedNamePolicy = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyRefExpression = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_PropertyRefExpression = new ConceptPresentationBuilder().shortDesc("property reference").create();
   private final ConceptPresentation props_PropertyRefType = new ConceptPresentationBuilder().create();
 
   @Override

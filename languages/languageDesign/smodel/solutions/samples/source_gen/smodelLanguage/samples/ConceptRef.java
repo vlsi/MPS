@@ -30,7 +30,7 @@ public class ConceptRef {
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.getConcept(node)));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.getConcept(concept1)));
     SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept2));
-    SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(SNodeOperations.asSConcept(concept2)));
+    SNodeOperations.isInstanceOf(node, SNodeOperations.asSConcept(concept2));
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
@@ -59,7 +59,6 @@ public class ConceptRef {
   }
 
   public void concept_hierarchy1(SAbstractConcept concept) {
-    // concept and all its supers 
     // supers 
     List<SAbstractConcept> supers_all = SConceptOperations.getAllSuperConcepts(concept, false);
     List<SAbstractConcept> supers_all_inclusive = SConceptOperations.getAllSuperConcepts(concept, true);

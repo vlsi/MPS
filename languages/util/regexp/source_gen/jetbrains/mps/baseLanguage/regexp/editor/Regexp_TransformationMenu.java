@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.menus.transformation.DefaultConceptMenusTransformationMenuPart;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Arrays;
@@ -65,11 +66,11 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.RIGHT_SIDE_TRANSFORM).contains(_context.getMenuLocation())) {
       result.add(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1());
       result.add(new Regexp_TransformationMenu.TransformationMenuPart_WrapSubstituteMenu_luzgqn_b1());
-      result.add(new Regexp_TransformationMenu.TransformationMenuPart_Action_luzgqn_c1());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Action_luzgqn_c1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x111752101b0L, "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp")));
       result.add(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_d1());
-      result.add(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_e1());
-      result.add(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_f1());
-      result.add(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_g1());
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_e1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_f1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11178fa2a18L, "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp")));
+      result.add(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Parameterized_luzgqn_g1(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1117f58ea2aL, "jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp")));
     }
     return result;
   }
@@ -82,7 +83,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_a0b(), new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_b0b(), new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_c0b(), new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Parameterized_luzgqn_d0b());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_a0b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dbeda57L, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp")), new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_b0b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc30ee2L, "jetbrains.mps.baseLanguage.regexp.structure.AtLeastNTimesRegexp")), new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Action_luzgqn_c0b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118dc58c6eL, "jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp")), new ConstraintsFilteringTransformationMenuPartDecorator(new Regexp_TransformationMenu.TransformationMenuPart_Group_luzgqn_a1.TransformationMenuPart_Parameterized_luzgqn_d0b(), MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x11174c678adL, "jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp")));
     }
     private class TransformationMenuPart_Action_luzgqn_a0b extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
@@ -428,7 +429,7 @@ public class Regexp_TransformationMenu extends TransformationMenuBase {
     @Nullable
     @Override
     protected Iterable<? extends SNode> getParameters(TransformationMenuContext _context) {
-      Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getNode(), null, 0, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp").getDeclarationNode()).getScope();
+      Scope refScope = ModelConstraints.getSmartReferenceDescriptor(_context.getNode(), null, 0, MetaAdapterFactory.getConcept(0xdaafa647f1f74b0bL, 0xb09669cd7c8408c0L, 0x1118e0a1c55L, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp")).getScope();
       return (List<SNode>) refScope.getAvailableElements(null);
     }
 

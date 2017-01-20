@@ -8,7 +8,7 @@
     <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="-1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
@@ -1574,9 +1574,6 @@
             <node concept="3cpWs8" id="37zweLarDXB" role="3cqZAp">
               <node concept="3cpWsn" id="37zweLarDXC" role="3cpWs9">
                 <property role="TrG5h" value="testMaterials" />
-                <node concept="3uibUv" id="37zweLarDXD" role="1tU5fm">
-                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
-                </node>
                 <node concept="2OqwBi" id="68ZF3WBIlQO" role="33vP2m">
                   <node concept="37shsh" id="68ZF3WBHZ7A" role="2Oq$k0">
                     <node concept="20RdaH" id="68ZF3WBIlHW" role="37shsm">
@@ -1595,6 +1592,9 @@
                       </node>
                     </node>
                   </node>
+                </node>
+                <node concept="3uibUv" id="37zweLarDXD" role="1tU5fm">
+                  <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
                 </node>
               </node>
             </node>

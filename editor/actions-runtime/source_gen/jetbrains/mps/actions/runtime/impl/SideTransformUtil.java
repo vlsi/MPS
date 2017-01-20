@@ -79,15 +79,7 @@ public class SideTransformUtil {
     List<SubstituteAction> result = ListSequence.fromList(new LinkedList<SubstituteAction>());
 
     for (SNode actionBuilder : Sequence.fromIterable(getApplicableActionsBuilders(node, stringTags, cellSide, context))) {
-      SetSequence.fromSet(conceptsToRemove).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"), false, new SAbstractConcept[]{})).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return (SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove")) != null);
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove"));
-        }
-      }));
+      SetSequence.fromSet(conceptsToRemove).addSequence(Sequence.fromIterable(SLinkOperations.collect(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, "jetbrains.mps.lang.actions.structure.RemovePart"), false, new SAbstractConcept[]{}), MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x1122318438cL, 0x11223185f62L, "conceptToRemove"))));
       ListSequence.fromList(removeByConditions).addSequence(ListSequence.fromList(SNodeOperations.getNodeDescendants(actionBuilder, MetaAdapterFactory.getConcept(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x116cddb8de5L, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart"), false, new SAbstractConcept[]{})));
       ListSequence.fromList(result).addSequence(ListSequence.fromList(invokeActionBuilder(actionBuilder, node, cellSide, context)));
     }

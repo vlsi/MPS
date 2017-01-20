@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,19 +110,20 @@ public class Utils {
 
       final IFile moduleIFile = new IoFileSystem().getFile(child.getAbsolutePath());
       IFile moduleDir = moduleIFile.getParent();
+      // XXX what's the reason for custom MyMacroHelper, why not MacrosFactory.forModuleFile()
       MacroHelper expander = new MyMacroHelper(moduleIFile);
 
       if (solution) {
         SolutionDescriptor sd = SolutionDescriptorPersistence.loadSolutionDescriptor(moduleIFile, expander);
         if (!sd.getCompileInMPS()) continue;
 
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, sd).getPath();
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(sd);
         result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
         String testPath = ProjectPathUtil.getGeneratorTestsOutputPath(moduleIFile, sd).getPath();
         result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(testPath));
       } else {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
-        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, ld).getPath();
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(ld);
         result.putValue(getCanonicalPath(moduleDir.getPath()), getCanonicalPath(srcPath));
         // currently same getGeneratorOutputPath used for all generators, so generatorSrcPath will be the same for
         // all generators in the language. Using only first one for now.
@@ -131,7 +132,7 @@ public class Utils {
           if (generatorAdded) {
             break;
           }
-          String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(moduleDir, generator).getPath();
+          String generatorSrcPath = ProjectPathUtil.getGeneratorOutputPath(generator);
           result.putValue(getCanonicalPath(moduleDir.getPath() + "/generator"), getCanonicalPath(generatorSrcPath));
           generatorAdded = true;
         }

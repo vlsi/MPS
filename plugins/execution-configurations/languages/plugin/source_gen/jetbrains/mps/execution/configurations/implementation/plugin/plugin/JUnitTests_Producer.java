@@ -21,6 +21,9 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SRepository;
+import jetbrains.mps.smodel.ModelAccessHelper;
+import jetbrains.mps.util.Computable;
 import java.util.Objects;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -145,6 +148,7 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + name.getValue() + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
       configuration.getJUnitSettings().setJUnitRunType(JUnitRunTypes.MODEL);
       configuration.getJUnitSettings().setModel(name.getValue());
+      configuration.getJUnitSettings().setModule(source.getModule().getModuleName());
       configuration.getJUnitSettings().setInProcess(false);
       return configuration;
     }
@@ -157,11 +161,22 @@ public class JUnitTests_Producer {
       JUnitTests_Configuration configuration = (JUnitTests_Configuration) configuration0;
       JUnitSettings_Configuration settings = configuration.getJUnitSettings();
       if (context.getPsiLocation() instanceof MPSPsiElement) {
-        SModelReference mRef = (((MPSPsiElement) context.getPsiLocation())).getUnresolvedItem(SModelReference.class);
+        MPSPsiElement element = ((MPSPsiElement) context.getPsiLocation());
+        final SModelReference mRef = element.getUnresolvedItem(SModelReference.class);
         if (mRef == null) {
           return false;
         }
-        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModel(), mRef.getName().getValue());
+        final SRepository repository = element.getMPSProject().getRepository();
+        SModule module = new ModelAccessHelper(repository).runReadAction(new Computable<SModule>() {
+          public SModule compute() {
+            SModel model = mRef.resolve(repository);
+            return model.getModule();
+          }
+        });
+        if (module == null) {
+          return false;
+        }
+        return settings.getJUnitRunType() == JUnitRunTypes.MODEL && Objects.equals(settings.getModel(), mRef.getName().getValue()) && Objects.equals(settings.getModule(), module.getModuleName());
       }
       return false;
     }

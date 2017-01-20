@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c895904ab(jetbrains.mps.ide.newSolutionDialog)">
   <persistence version="9" />
   <languages>
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
   </languages>
   <imports>
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -616,14 +616,6 @@
     <node concept="2tJIrI" id="7BBl3KJytL$" role="jymVt" />
     <node concept="2YIFZL" id="3WcIkZauat2" role="jymVt">
       <property role="TrG5h" value="createSolution" />
-      <node concept="P$JXv" id="7vEL9Rt8DAf" role="lGtFl">
-        <node concept="TZ5HA" id="7vEL9Rt8DAg" role="TZ5H$">
-          <node concept="1dT_AC" id="7vEL9Rt8DTC" role="1dT_Ay">
-            <property role="1dT_AB" value="create new solution module and register it with the project" />
-          </node>
-          <node concept="1dT_AC" id="7vEL9Rt8DAh" role="1dT_Ay" />
-        </node>
-      </node>
       <node concept="3uibUv" id="3WcIkZauat6" role="3clF45">
         <ref role="3uigEE" to="z1c3:~Solution" resolve="Solution" />
       </node>
@@ -785,19 +777,20 @@
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
+      <node concept="P$JXv" id="7vEL9Rt8DAf" role="lGtFl">
+        <node concept="TZ5HA" id="7vEL9Rt8DAg" role="TZ5H$">
+          <node concept="1dT_AC" id="7vEL9Rt8DTC" role="1dT_Ay">
+            <property role="1dT_AB" value="create new solution module and register it with the project" />
+          </node>
+          <node concept="1dT_AC" id="7vEL9Rt8DAh" role="1dT_Ay" />
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="6s6LYnVtP3_" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KIzam7" role="jymVt">
       <property role="TrG5h" value="createLanguage" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="P$JXv" id="7vEL9Rt8Dc6" role="lGtFl">
-        <node concept="TZ5HA" id="7vEL9Rt8Dc7" role="TZ5H$">
-          <node concept="1dT_AC" id="7vEL9Rt8Dc8" role="1dT_Ay">
-            <property role="1dT_AB" value="create new language module and register it with the project" />
-          </node>
-        </node>
-      </node>
       <node concept="3uibUv" id="7BBl3KIzm2M" role="3clF45">
         <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
       </node>
@@ -894,19 +887,19 @@
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
         </node>
       </node>
+      <node concept="P$JXv" id="7vEL9Rt8Dc6" role="lGtFl">
+        <node concept="TZ5HA" id="7vEL9Rt8Dc7" role="TZ5H$">
+          <node concept="1dT_AC" id="7vEL9Rt8Dc8" role="1dT_Ay">
+            <property role="1dT_AB" value="create new language module and register it with the project" />
+          </node>
+        </node>
+      </node>
     </node>
     <node concept="2tJIrI" id="7vEL9Rt8CFn" role="jymVt" />
     <node concept="2YIFZL" id="7BBl3KIzvoe" role="jymVt">
       <property role="TrG5h" value="createDevKit" />
       <property role="od$2w" value="false" />
       <property role="DiZV1" value="false" />
-      <node concept="P$JXv" id="7vEL9Rt8D0P" role="lGtFl">
-        <node concept="TZ5HA" id="7vEL9Rt8D0Q" role="TZ5H$">
-          <node concept="1dT_AC" id="7vEL9Rt8D0R" role="1dT_Ay">
-            <property role="1dT_AB" value="create new devkit module and register it with the project" />
-          </node>
-        </node>
-      </node>
       <node concept="3uibUv" id="7BBl3KIzxKM" role="3clF45">
         <ref role="3uigEE" to="z1c3:~DevKit" resolve="DevKit" />
       </node>
@@ -1057,6 +1050,13 @@
         <property role="TrG5h" value="project" />
         <node concept="3uibUv" id="OqYxEjWy76" role="1tU5fm">
           <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+        </node>
+      </node>
+      <node concept="P$JXv" id="7vEL9Rt8D0P" role="lGtFl">
+        <node concept="TZ5HA" id="7vEL9Rt8D0Q" role="TZ5H$">
+          <node concept="1dT_AC" id="7vEL9Rt8D0R" role="1dT_Ay">
+            <property role="1dT_AB" value="create new devkit module and register it with the project" />
+          </node>
         </node>
       </node>
     </node>
@@ -1578,6 +1578,9 @@
           <node concept="3cpWsn" id="7BBl3KI$P2v" role="3cpWs9">
             <property role="TrG5h" value="language" />
             <node concept="10QFUN" id="5n0OdAz11oA" role="33vP2m">
+              <node concept="3uibUv" id="5n0OdAz11oB" role="10QFUM">
+                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
+              </node>
               <node concept="2OqwBi" id="7vEL9Rt9qMB" role="10QFUP">
                 <node concept="37vLTw" id="7vEL9Rt9QdE" role="2Oq$k0">
                   <ref role="3cqZAo" node="7vEL9Rt9QdA" resolve="projectRepoFacade" />
@@ -1601,9 +1604,6 @@
                     <ref role="3cqZAo" node="7vEL9Rt9naT" resolve="project" />
                   </node>
                 </node>
-              </node>
-              <node concept="3uibUv" id="5n0OdAz11oB" role="10QFUM">
-                <ref role="3uigEE" to="w1kc:~Language" resolve="Language" />
               </node>
             </node>
             <node concept="3uibUv" id="7BBl3KI$P2w" role="1tU5fm">
@@ -1927,6 +1927,9 @@
           <node concept="3cpWsn" id="3J$DPqOkidz" role="3cpWs9">
             <property role="TrG5h" value="newGenerator" />
             <property role="3TUv4t" value="true" />
+            <node concept="3uibUv" id="3J$DPqOkid$" role="1tU5fm">
+              <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+            </node>
             <node concept="2OqwBi" id="1Yd98ZZnqEm" role="33vP2m">
               <node concept="37vLTw" id="7vEL9Rt9VHz" role="2Oq$k0">
                 <ref role="3cqZAo" node="7vEL9Rt9QdA" resolve="projectRepoFacade" />
@@ -1945,9 +1948,6 @@
                   <ref role="3VsUkX" to="w1kc:~Generator" resolve="Generator" />
                 </node>
               </node>
-            </node>
-            <node concept="3uibUv" id="3J$DPqOkid$" role="1tU5fm">
-              <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
             </node>
           </node>
         </node>

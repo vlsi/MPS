@@ -2,7 +2,7 @@
 <model ref="r:5d9868cc-091b-49b3-85eb-87af773e0884(jetbrains.mps.console.ideCommands.editor)">
   <persistence version="9" />
   <languages>
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -1048,9 +1048,6 @@
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7Kc">
     <ref role="aqKnT" to="caxt:4PRmqZe_ouN" resolve="ModuleProperties" />
-  </node>
-  <node concept="3p36aQ" id="1wEcoXjJ7Kd">
-    <ref role="aqKnT" to="caxt:4PRmqZe_ouK" resolve="ModelProperties" />
   </node>
   <node concept="3p36aQ" id="1wEcoXjJ7Ke">
     <ref role="aqKnT" to="caxt:7mV0m3L$tW2" resolve="RebuildProjectCommand" />

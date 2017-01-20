@@ -18,6 +18,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.transformation.ConstraintsFilteringTransformationMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.SingleItemMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.menus.transformation.ActionItemBase;
@@ -61,7 +62,7 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_a0a(), new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_b0a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_a0.TransformationMenuPart_Action_j08dcv_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8cc67c7f0L, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")));
     }
     private class TransformationMenuPart_Action_j08dcv_a0a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable
@@ -147,7 +148,7 @@ public class AbstractClassifierReference_TransformationMenu extends Transformati
 
     @Override
     protected List<MenuPart<TransformationMenuItem, TransformationMenuContext>> getParts() {
-      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"))), new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_b0.TransformationMenuPart_Action_j08dcv_b1a());
+      return Arrays.<MenuPart<TransformationMenuItem, TransformationMenuContext>>asList(new DefaultConceptMenusTransformationMenuPart(SModelUtil.getDirectSuperConcepts(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x6c6c91efa5ec8cd7L, "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference"))), new ConstraintsFilteringTransformationMenuPartDecorator(new AbstractClassifierReference_TransformationMenu.TransformationMenuPart_Group_j08dcv_b0.TransformationMenuPart_Action_j08dcv_b1a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType")));
     }
     private class TransformationMenuPart_Action_j08dcv_b1a extends SingleItemMenuPart<TransformationMenuItem, TransformationMenuContext> {
       @Nullable

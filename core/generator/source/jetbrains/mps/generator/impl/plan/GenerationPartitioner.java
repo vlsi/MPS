@@ -144,9 +144,6 @@ public class GenerationPartitioner {
     // read user-defined rules
     for (TemplateModule generator : myGenerators) {
       Collection<TemplateMappingPriorityRule> priorities = generator.getPriorities();
-      if (priorities == null) {
-        continue;
-      }
       for (TemplateMappingPriorityRule rule : priorities) {
         processRule((MappingPriorityRule) rule, generator);
       }
@@ -359,14 +356,15 @@ public class GenerationPartitioner {
       }
 
       if (mappingRef instanceof MappingConfig_SimpleRef) {
-        String modelUID = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
-        String nodeID = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
+        MappingConfig_SimpleRef simpleRef = (MappingConfig_SimpleRef) mappingRef;
+        String modelUID = simpleRef.getModelUID();
+        String nodeID = simpleRef.getNodeID();
         if (modelUID != null && nodeID != null) {
           SModelReference reference = PersistenceFacade.getInstance().createModelReference(modelUID);
           TemplateModel refModel = myModelMap.get(reference);
 
           if (refModel != null) {
-            if (nodeID.equals("*")) {
+            if (simpleRef.includesAll()) {
               return refModel.getConfigurations();
             } else {
               SNodeReference node = new jetbrains.mps.smodel.SNodePointer(reference, PersistenceFacade.getInstance().createNodeId(nodeID));

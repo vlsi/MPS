@@ -4,9 +4,9 @@
   <languages>
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -223,7 +223,6 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
-      <concept id="1068581242866" name="jetbrains.mps.baseLanguage.structure.LocalVariableReference" flags="nn" index="3cpWsa" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
         <child id="1079359253376" name="expression" index="1eOMHV" />
@@ -1964,7 +1963,7 @@
                   <node concept="22lmx$" id="1wEcoXjJxT$" role="1eOMHV">
                     <node concept="2OqwBi" id="1wEcoXjJxT_" role="3uHU7B">
                       <node concept="2OqwBi" id="1wEcoXjJxTA" role="2Oq$k0">
-                        <node concept="3cpWsa" id="1wEcoXjJxUi" role="2Oq$k0">
+                        <node concept="37vLTw" id="1wEcoXjJxUi" role="2Oq$k0">
                           <ref role="3cqZAo" node="1wEcoXjJxUg" resolve="linkNode" />
                         </node>
                         <node concept="3TrcHB" id="1wEcoXjJxTC" role="2OqNvi">
@@ -1985,7 +1984,7 @@
                     </node>
                     <node concept="2OqwBi" id="1wEcoXjJxTH" role="3uHU7w">
                       <node concept="2OqwBi" id="1wEcoXjJxTI" role="2Oq$k0">
-                        <node concept="3cpWsa" id="1wEcoXjJxUj" role="2Oq$k0">
+                        <node concept="37vLTw" id="1wEcoXjJxUj" role="2Oq$k0">
                           <ref role="3cqZAo" node="1wEcoXjJxUg" resolve="linkNode" />
                         </node>
                         <node concept="3TrcHB" id="1wEcoXjJxTK" role="2OqNvi">
@@ -2018,7 +2017,7 @@
                 </node>
                 <node concept="2OqwBi" id="1wEcoXjJxTU" role="3uHU7w">
                   <node concept="2OqwBi" id="1wEcoXjJxTV" role="2Oq$k0">
-                    <node concept="3cpWsa" id="1wEcoXjJxUk" role="2Oq$k0">
+                    <node concept="37vLTw" id="1wEcoXjJxUk" role="2Oq$k0">
                       <ref role="3cqZAo" node="1wEcoXjJxUg" resolve="linkNode" />
                     </node>
                     <node concept="3TrcHB" id="1wEcoXjJxTX" role="2OqNvi">

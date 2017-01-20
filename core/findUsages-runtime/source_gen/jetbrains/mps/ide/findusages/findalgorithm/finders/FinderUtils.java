@@ -43,10 +43,10 @@ public class FinderUtils {
     return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
   }
   public static int compareBrothers(SNode n1, SNode n2) {
-    if (n1.getContainmentLink() == null) {
+    if (SNodeOperations.getContainingLink(n1) == null) {
       return n1.getPresentation().compareTo(n2.getPresentation());
     }
-    if (eq_u06ccl_a0b0e(n1.getContainmentLink(), n2.getContainmentLink())) {
+    if (eq_u06ccl_a0b0e(SNodeOperations.getContainingLink(n1), SNodeOperations.getContainingLink(n2))) {
       return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
     }
     List<SNode> children = IterableUtil.asList(SNodeOperations.getParent(n1).getChildren());

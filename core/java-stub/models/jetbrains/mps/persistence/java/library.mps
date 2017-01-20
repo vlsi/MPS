@@ -1287,6 +1287,12 @@
   </node>
   <node concept="312cEu" id="5JsnGMj1qiW">
     <property role="TrG5h" value="JavaClassStubsModelRoot" />
+    <node concept="3uibUv" id="6sKuV4a30np" role="EKbjA">
+      <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
+      <node concept="3uibUv" id="6sKuV4a30n$" role="11_B2D">
+        <ref role="3uigEE" node="5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
+      </node>
+    </node>
     <node concept="312cEg" id="3mzc6JEn9ey" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -1333,11 +1339,11 @@
       </node>
       <node concept="37vLTG" id="5JsnGMj1qjr" role="3clF46">
         <property role="TrG5h" value="id" />
-        <node concept="3uibUv" id="5JsnGMj1qjs" role="1tU5fm">
-          <ref role="3uigEE" to="mhbf:~SModelId" resolve="SModelId" />
-        </node>
         <node concept="2AHcQZ" id="6sKuV4a30oi" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="5JsnGMj1qjs" role="1tU5fm">
+          <ref role="3uigEE" to="mhbf:~SModelId" resolve="SModelId" />
         </node>
       </node>
       <node concept="3clFbS" id="5JsnGMj1qjt" role="3clF47">
@@ -1364,11 +1370,11 @@
       <node concept="3cqZAl" id="rP8MxQUY2m" role="3clF45" />
       <node concept="37vLTG" id="rP8MxQUY2n" role="3clF46">
         <property role="TrG5h" value="memento" />
-        <node concept="3uibUv" id="rP8MxQUY2o" role="1tU5fm">
-          <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
-        </node>
         <node concept="2AHcQZ" id="6sKuV4a30oZ" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="rP8MxQUY2o" role="1tU5fm">
+          <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
         </node>
       </node>
       <node concept="3clFbS" id="rP8MxQUY2p" role="3clF47">
@@ -1454,11 +1460,11 @@
       <node concept="3cqZAl" id="4KlVfHJ29y" role="3clF45" />
       <node concept="37vLTG" id="4KlVfHJ29z" role="3clF46">
         <property role="TrG5h" value="memento" />
-        <node concept="3uibUv" id="4KlVfHJ29$" role="1tU5fm">
-          <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
-        </node>
         <node concept="2AHcQZ" id="6sKuV4a30pG" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+        </node>
+        <node concept="3uibUv" id="4KlVfHJ29$" role="1tU5fm">
+          <ref role="3uigEE" to="dush:~Memento" resolve="Memento" />
         </node>
       </node>
       <node concept="3clFbS" id="4KlVfHJ29_" role="3clF47">
@@ -1512,6 +1518,9 @@
       <property role="1EzhhJ" value="false" />
       <property role="TrG5h" value="loadModels" />
       <property role="DiZV1" value="false" />
+      <node concept="2AHcQZ" id="6sKuV4a30rJ" role="2AJF6D">
+        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+      </node>
       <node concept="3Tm1VV" id="5JsnGMj1qjz" role="1B3o_S" />
       <node concept="3uibUv" id="5JsnGMj1qj$" role="3clF45">
         <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
@@ -1812,9 +1821,6 @@
           </node>
         </node>
       </node>
-      <node concept="2AHcQZ" id="6sKuV4a30rJ" role="2AJF6D">
-        <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
-      </node>
       <node concept="2AHcQZ" id="3tYsUK_sS5c" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
       </node>
@@ -1998,10 +2004,10 @@
       <node concept="10P_77" id="5JsnGMj1qk5" role="3clF45" />
       <node concept="37vLTG" id="5JsnGMj1qk6" role="3clF46">
         <property role="TrG5h" value="string" />
-        <node concept="17QB3L" id="7o5OtEM79J0" role="1tU5fm" />
         <node concept="2AHcQZ" id="6sKuV4a33jX" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
+        <node concept="17QB3L" id="7o5OtEM79J0" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5JsnGMj1qk8" role="3clF47">
         <node concept="3clFbF" id="5JsnGMj1qk9" role="3cqZAp">
@@ -2024,10 +2030,10 @@
       </node>
       <node concept="37vLTG" id="5JsnGMj1qke" role="3clF46">
         <property role="TrG5h" value="string" />
-        <node concept="17QB3L" id="7o5OtEM79UB" role="1tU5fm" />
         <node concept="2AHcQZ" id="6sKuV4a33jg" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
         </node>
+        <node concept="17QB3L" id="7o5OtEM79UB" role="1tU5fm" />
       </node>
       <node concept="3clFbS" id="5JsnGMj1qkg" role="3clF47">
         <node concept="3clFbF" id="5JsnGMj1qkh" role="3cqZAp">
@@ -2770,12 +2776,6 @@
       </node>
       <node concept="2AHcQZ" id="6sKuV4a33ur" role="2AJF6D">
         <ref role="2AI5Lk" to="wyt6:~Override" resolve="Override" />
-      </node>
-    </node>
-    <node concept="3uibUv" id="6sKuV4a30np" role="EKbjA">
-      <ref role="3uigEE" to="ends:~CopyableModelRoot" resolve="CopyableModelRoot" />
-      <node concept="3uibUv" id="6sKuV4a30n$" role="11_B2D">
-        <ref role="3uigEE" node="5JsnGMj1qiW" resolve="JavaClassStubsModelRoot" />
       </node>
     </node>
   </node>

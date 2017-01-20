@@ -24,10 +24,10 @@ import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.AspectMethodsFinder;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.view.UsageToolOptions;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -126,9 +126,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   @Override
   public void showAspectMethodUsages(final String namespace, final String name) throws RemoteException {
     SearchQuery searchQuery = new SearchQuery(new AspectMethodsFinder.AspectMethodsHolder(namespace, name), GlobalScope.getInstance());
-    IFinder[] finders = new IFinder[]{new AspectMethodsFinder()};
     UsageToolOptions opt = new UsageToolOptions().allowRunAgain(false).navigateIfSingle(false).forceNewTab(false).notFoundMessage("No usages for that method");
-    UsagesViewTool.showUsages(myProject, FindUtils.makeProvider(finders), searchQuery, opt);
+    UsagesViewTool.showUsages(myProject, FindUtils.makeProvider(new IFinder[]{new AspectMethodsFinder()}), searchQuery, opt);
   }
   @Override
   public void showClassUsages(final String fqName) throws RemoteException {
@@ -142,7 +141,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder")));
+        findUsages(cls, GlobalScope.getInstance(), FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder"));
       }
     });
   }
@@ -173,7 +172,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           return;
         }
         FrameUtil.activateFrame(getMainFrame());
-        IResultProvider provider = FindUtils.makeProvider(FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder"), FindUtils.getFinderByClassName("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder"));
+        IResultProvider provider = FindUtils.makeProvider("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder", "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
         findUsages(method, GlobalScope.getInstance(), provider);
       }
     });

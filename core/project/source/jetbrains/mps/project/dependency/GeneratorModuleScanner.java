@@ -54,6 +54,7 @@ public class GeneratorModuleScanner {
       }
       if (ref instanceof MappingConfig_ExternalRef) {
         myReferencedGenerators.add(((MappingConfig_ExternalRef) ref).getGenerator());
+        mcRefs.add(((MappingConfig_ExternalRef) ref).getMappingConfig());
       }
     }
   }

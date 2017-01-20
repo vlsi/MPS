@@ -11,10 +11,10 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_BuildLayout_ToBinaryCopyProcessor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMPSPlugin = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BuildMPSPlugin = new ConceptPresentationBuilder().shortDesc("adds MPS capabilities (packaging, generation) to the project").create();
   private final ConceptPresentation props_BuildMpsAspect = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMpsLayout_FolderWithSources = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMpsLayout_ModuleJarContent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BuildMpsLayout_FolderWithSources = new ConceptPresentationBuilder().shortDesc("MPS module").create();
+  private final ConceptPresentation props_BuildMpsLayout_ModuleJarContent = new ConceptPresentationBuilder().shortDesc("Control/augment content of mps module jar (either deployment or source)").create();
   private final ConceptPresentation props_BuildMpsLayout_ModuleJars = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_ModuleSources = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_ModuleXml = new ConceptPresentationBuilder().create();
@@ -22,7 +22,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_BuildMpsLayout_Plugin = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMpsLayout_PluginDescriptor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_AbstractModule = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_BuildMps_Branding = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x3acf8ab06f017071L, "bugfixNr"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e46L, "eap")).create();
+  private final ConceptPresentation props_BuildMps_Branding = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x3acf8ab06f017071L, "bugfixNr"), MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e46L, "eap")).shortDesc("name, version and images of your custom IDE").create();
   private final ConceptPresentation props_BuildMps_BrandingCompany = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_BrandingHelp = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BuildMps_BrandingKeymap = new ConceptPresentationBuilder().create();

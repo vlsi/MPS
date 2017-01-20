@@ -26,15 +26,17 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.ProtectionDomain;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 /**
- * MPS realisation of ClassLoader which uses non-standard way of class loading delegation.
+ * MPS implementation of <code>java.lang.ClassLoader</code> which uses non-standard way of class loading delegation.
  * Its methods #loadClass, #findResources are called by JVM during JVM class loading process and also
  * by an explicit user call of #getClass and #getOwnClass methods in {@link ReloadableModule} and
  * in {@link ClassLoaderManager} instance (old deprecated way).
@@ -43,19 +45,35 @@ import java.util.Map;
  *
  * @see jetbrains.mps.classloading.ModuleIsNotLoadableException
  * @see jetbrains.mps.classloading.ModuleClassNotFoundException
+ *
+ * @author apyshkin
  */
-public class ModuleClassLoader extends ClassLoader {
+public final class ModuleClassLoader extends ClassLoader {
   private static final Logger LOG = LogManager.getLogger(ModuleClassLoader.class);
-
   private static final ClassLoader BOOTSTRAP_CLASSLOADER = Object.class.getClassLoader();
 
   private final ModuleClassLoaderSupport mySupport;
+  // null values are not allowed => using <code>Optional</code>
+  private final ConcurrentMap<String, Optional<Class<?>>> myClasses = new ConcurrentHashMap<>();
 
   private volatile Collection<ClassLoader> myDependenciesClassLoaders;
-
-  private final Map<String, Class> myClasses = new HashMap<>(); // cache for all initiated classes by this CL.
-
   private boolean myDisposed;
+  private final Object myPackageLock = new Object();
+
+  /**
+   * MPS has a cyclic delegation classloading model (module A.a1 triggers class B.b which in turn triggers the loading of
+   * the class A.a2 in the case when A depends on B and vice versa; the implicit class loading is triggered in the #defineClass invocation
+   * in the {@link #loadFromSelf(String)} method).
+   *
+   * Thus according to jls we declare it as a parallel capable.
+   * Without this registration the threading model of the MPS classloading is flawed.
+   * @since 3.4
+   */
+  static {
+    if (!registerAsParallelCapable()) {
+      LOG.error("Was not able to register the MPS class loader as parallel capable: one might encounter a deadlock", new Throwable());
+    }
+  }
 
   public boolean isDisposed() {
     return myDisposed;
@@ -90,12 +108,6 @@ public class ModuleClassLoader extends ClassLoader {
     return loadClass(name, resolve, false);
   }
 
-  /**
-   * synchronization on 'this' is unavoidable (at least under JDK 6) because of implicit lock
-   * on {@link #loadClass(String)} method in {@link java.lang.ClassLoader}.
-   *
-   * synchronization on some internal lock object leads to a dead lock.
-   */
   private Class<?> loadClass(String fqName, boolean resolve, boolean onlyFromSelf) throws ClassNotFoundException {
     checkNotDisposed();
 
@@ -106,30 +118,44 @@ public class ModuleClassLoader extends ClassLoader {
       return Class.forName(fqName, false, BOOTSTRAP_CLASSLOADER);
     }
 
-    synchronized (this) {
-      aClass = loadFromSelf(fqName);
+    aClass = loadFromSelf(fqName);
+    if (aClass != null) {
+      return aClass;
+    }
+    try {
+      if (!onlyFromSelf) {
+        aClass = loadFromDeps(fqName);
+      }
+    } finally {
+      aClass = recordClass(fqName, aClass);
+    }
+    if (aClass == null) throw createCLNFException(fqName);
 
-      try {
-        if (aClass != null) return aClass;
-        if (!onlyFromSelf) {
-          aClass = loadFromDeps(fqName);
-        }
+    if (resolve) resolveClass(aClass);
+    return aClass;
+  }
 
-        if (aClass == null) throw createCLNFException(fqName);
-
-        if (resolve) resolveClass(aClass);
-
-        return aClass;
-      } finally {
-        myClasses.put(fqName, aClass);
+  /**
+   * @return new class if there was no same class already defined
+   *         or an old class if there is another definition already recorded into the map.
+   */
+  private Class<?> recordClass(String fqName, Class<?> aClass) {
+    Optional<Class<?>> previousValue =  myClasses.putIfAbsent(fqName, Optional.ofNullable(aClass));
+    if (previousValue != null) { // class has been already defined in a concurrent thread
+      if (previousValue.isPresent()) {
+        aClass = previousValue.get();
+      } else {
+        aClass = null;
       }
     }
+    return aClass;
   }
 
   private ModuleClassNotFoundException createCLNFException(String name) {
     ReloadableModule module = mySupport.getModule();
-    return new ModuleClassNotFoundException(module, "Unable to load class: " + name +
-        " using ModuleClassLoader of " + module.getModuleName() + " module");
+    return new ModuleClassNotFoundException(module,
+                                            String.format("Unable to load class: '%s' using ModuleClassLoader of the '%s' module", name,
+                                                          module.getModuleName()));
   }
 
   /**
@@ -137,27 +163,35 @@ public class ModuleClassLoader extends ClassLoader {
    * @throws ClassNotFoundException if class has been found already and it was null
    */
   private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
-    if (!myClasses.containsKey(name)) return null;
-    Class aClass = myClasses.get(name);
-    if (aClass == null) throw createCLNFException(name);
-    return aClass;
+    Optional<Class<?>> optionalClass = myClasses.get(name);
+    if (optionalClass == null) {
+      return null;
+    }
+    if (!optionalClass.isPresent()) {
+      throw createCLNFException(name);
+    }
+    return optionalClass.get();
   }
 
-  private synchronized Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
-    Class<?> aClass = getClassFromCache(fqName);
-    if (aClass != null) {
-      return aClass;
-    }
-    ClassBytes classBytes = mySupport.findClassBytes(fqName);
-    if (classBytes != null) {
-      byte[] bytes = classBytes.getBytes();
-      String pack = NameUtil.namespaceFromLongName(fqName);
-      if (getPackage(pack) == null) {
-        definePackage(pack, null, null, null, null, null, null, null);
+  private Class<?> loadFromSelf(String fqName) throws ClassNotFoundException {
+    synchronized (getClassLoadingLock(fqName)) {
+      Class<?> aClass = getClassFromCache(fqName);
+      if (aClass != null) {
+        return aClass;
       }
-      aClass = defineClass(fqName, bytes, 0, bytes.length, ProtectionDomainUtil.loadedClassDomain(classBytes.getPath()));
-      myClasses.put(fqName, aClass);
-      return aClass;
+      ClassBytes classBytes = mySupport.findClassBytes(fqName);
+      if (classBytes != null) {
+        String pack = NameUtil.namespaceFromLongName(fqName);
+        synchronized (myPackageLock) {
+          if (getPackage(pack) == null) {
+            definePackage(pack, null, null, null, null, null, null, null);
+          }
+        }
+        ProtectionDomain newProtectionDomain = ProtectionDomainUtil.loadedClassDomain(classBytes.getPath());
+        byte[] bytes = classBytes.getBytes();
+        aClass = defineClass(fqName, bytes, 0, bytes.length, newProtectionDomain);
+        return recordClass(fqName, aClass);
+      }
     }
     return null;
   }

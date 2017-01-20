@@ -11,8 +11,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_AbstractConsoleScript = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConsoleScript = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_Execute = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RefactorOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Execute = new ConceptPresentationBuilder().shortDesc("execute a script").create();
+  private final ConceptPresentation props_RefactorOperation = new ConceptPresentationBuilder().shortDesc("perform changes on selected nodes").create();
 
   @Override
   @Nullable

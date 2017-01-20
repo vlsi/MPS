@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -29,6 +28,10 @@ import java.io.File;
  *             does it tell anything about where to take <code>outputRootDir</code> from (assumes it comes
  *             from {@link jetbrains.mps.project.SModuleOperations#getOutputRoot(SModel)} while it's common to see invocations of
  *             {@link #getDefaultOutputDir(SModel, IFile)} with <code>((AbstractModule) module).getOutputPath()</code>
+ *
+ * TODO remove once 3.5 is out as replacement API, {@link jetbrains.mps.project.facets.GenerationTargetFacet}, has been introduced in 3.5 and there's no
+ *      legitimate way to get rid of used of the class prior to that. Uses of the class in MPS code are implementation dependencies and shall get refactored
+ *      one the class is gone (either copy implementation or drop transitional uses).
  */
 @Deprecated
 @ToRemove(version = 3.4)
@@ -54,6 +57,8 @@ public class FileGenerationUtil {
     String packageName = reference.getName().getLongName();
     String packagePath;
     if (outputRootDir.isInArchive()) {
+      // in fact, we shall not care about *output* dir in archives. However, the same code is likely used for any source path, e.g. to access
+      // generated source files from deployed modules.
       packagePath = packageName.replace('.', '/');
     } else {
       packagePath = packageName.replace('.', File.separatorChar);

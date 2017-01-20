@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.vfs.IFile;
 
@@ -34,10 +35,12 @@ public final class TestLanguage extends Language {
     Language newLanguage = new TestLanguage(descriptor, null);
 
     Language language = repo.registerModule(newLanguage, moduleOwner);
-    if (language == newLanguage) {
+    if (language == newLanguage && !descriptor.getGenerators().isEmpty()) {
       // FIXME ModuleRepositoryFacade shall deal with SRepository instance and keep the knowledge what to do with a registered module,
-      // shall not duplicate it here
-      language.revalidateGenerators();
+      // shall not duplicate it here. MRF shall instantiate module instance classes (won't need TestLanguage nor public Generator)
+      for (GeneratorDescriptor gd : descriptor.getGenerators()) {
+        repo.registerModule(new Generator(language, gd), language);
+      }
     }
     return language;
   }

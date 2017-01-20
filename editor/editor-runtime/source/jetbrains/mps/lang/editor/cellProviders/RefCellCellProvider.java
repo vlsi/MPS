@@ -34,12 +34,13 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class RefCellCellProvider extends AbstractReferentCellProvider {
 
   //it is important for descendants to have a unique constructor and with the same parameters as this one
-  public RefCellCellProvider(SNode node, EditorContext context) {
+  public RefCellCellProvider(@NotNull SNode node, EditorContext context) {
     super(node, context);
   }
 
@@ -68,28 +69,40 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     }
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(new SNodeLegacy(node).getConceptDeclarationNode()) != null) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
-      } else {
-        editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-        editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-      }
+      installDeleteActions_atLeastOne(editorCell);
     } else {
       if (myIsAggregation) {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node, DeleteDirection.FORWARD));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node, DeleteDirection.BACKWARD));
+        installDeleteActions_nullable_aggregation(editorCell);
       } else {
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(node, myGenuineRole));
+        installDeleteActions_nullable_reference(editorCell);
       }
     }
     return editorCell;
   }
 
+  protected void installDeleteActions_atLeastOne(EditorCell editorCell) {
+    if (ReferenceConceptUtil.getCharacteristicReference(getSNode().getConcept()) != null) {
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
+    } else {
+      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    }
+  }
+
+  protected void installDeleteActions_nullable_aggregation(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode(), DeleteDirection.FORWARD));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode(), DeleteDirection.BACKWARD));
+  }
+
+  protected void installDeleteActions_nullable_reference(EditorCell editorCell) {
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(getSNode(), myGenuineRole));
+  }
+
   // TODO: review the logic of reference cell lookup in editor. Proposal is: use external logic for reference cell
   // TODO: lookup (either empty or top-level cell) & remove this method completely.
-  private void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
+  protected void setSemanticNodeToCells(EditorCell rootCell, SNode semanticNode) {
     if (!(rootCell instanceof EditorCell_Basic) || semanticNode == null) {
       return;
     }

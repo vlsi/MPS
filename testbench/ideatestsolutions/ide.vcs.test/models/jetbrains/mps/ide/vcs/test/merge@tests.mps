@@ -2,16 +2,16 @@
 <model ref="r:b4fd80fc-7d6c-4c99-be6d-090ae8779bdc(jetbrains.mps.ide.vcs.test.merge@tests)">
   <persistence version="9" />
   <languages>
-    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
-    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="-1" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="18nx" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.vcs.checkin(MPS.IDEA/)" />
@@ -2806,7 +2806,6 @@
                 <node concept="3cpWs8" id="7HgS$VkfFrf" role="3cqZAp">
                   <node concept="3cpWsn" id="7HgS$VkfFrg" role="3cpWs9">
                     <property role="TrG5h" value="result" />
-                    <node concept="H_c77" id="7HgS$VkfG_O" role="1tU5fm" />
                     <node concept="2YIFZM" id="7l6b$Kxxug3" role="33vP2m">
                       <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
                       <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
@@ -2814,6 +2813,7 @@
                         <ref role="3cqZAo" node="7HgS$VkfFk7" resolve="baseString" />
                       </node>
                     </node>
+                    <node concept="H_c77" id="7HgS$VkfG_O" role="1tU5fm" />
                   </node>
                 </node>
                 <node concept="3clFbF" id="7HgS$VkfFHH" role="3cqZAp">
@@ -8646,7 +8646,6 @@
         <node concept="3cpWs8" id="7HgS$VkfPgO" role="3cqZAp">
           <node concept="3cpWsn" id="7HgS$VkfPgP" role="3cpWs9">
             <property role="TrG5h" value="changedCopy" />
-            <node concept="H_c77" id="7HgS$VkfPSf" role="1tU5fm" />
             <node concept="2YIFZM" id="7l6b$KxxsLj" role="33vP2m">
               <ref role="1Pybhc" to="pa15:~PersistenceUtil" resolve="PersistenceUtil" />
               <ref role="37wK5l" to="pa15:~PersistenceUtil.loadModel(java.lang.String):org.jetbrains.mps.openapi.model.SModel" resolve="loadModel" />
@@ -8654,6 +8653,7 @@
                 <ref role="3cqZAo" node="7HgS$VkfP9f" resolve="model" />
               </node>
             </node>
+            <node concept="H_c77" id="7HgS$VkfPSf" role="1tU5fm" />
           </node>
         </node>
         <node concept="3clFbF" id="7HgS$VkfPyZ" role="3cqZAp">

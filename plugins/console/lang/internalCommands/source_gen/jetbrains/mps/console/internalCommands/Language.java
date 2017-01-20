@@ -4,8 +4,9 @@ package jetbrains.mps.console.internalCommands;
 
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.adapter.ids.SLanguageId;
-import java.util.UUID;
 import java.util.Collection;
+import org.jetbrains.mps.openapi.language.SLanguage;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.runtime.ILanguageAspect;
@@ -20,9 +21,12 @@ import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
 import jetbrains.mps.console.internalCommands.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
-  public static final String MODULE_REF = "995a7394-7f76-4b8b-a929-c53448708106(jetbrains.mps.console.internalCommands)";
+  private final SLanguageId myId;
+
   public Language() {
+    myId = SLanguageId.deserialize("995a7394-7f76-4b8b-a929-c53448708106");
   }
+
   @Override
   public String getNamespace() {
     return "jetbrains.mps.console.internalCommands";
@@ -34,12 +38,15 @@ public class Language extends LanguageRuntime {
   }
 
   public SLanguageId getId() {
-    return new SLanguageId(UUID.fromString("995a7394-7f76-4b8b-a929-c53448708106"));
+    return myId;
   }
+
   @Override
-  protected String[] getExtendedLanguageIDs() {
-    return new String[]{"jetbrains.mps.console.base", "jetbrains.mps.lang.smodel.query"};
+  protected void fillExtendedLanguages(Collection<SLanguage> extendedLanguages) {
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("de1ad86d-6e50-4a02-b306-d4d17f64c375"), "jetbrains.mps.console.base"));
+    extendedLanguages.add(MetaAdapterFactory.getLanguage(SLanguageId.deserialize("1a8554c4-eb84-43ba-8c34-6f0d90c6e75a"), "jetbrains.mps.lang.smodel.query"));
   }
+
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "617a0779-e3b2-43a9-8c87-970aed8e6992(jetbrains.mps.console.internalCommands#8483375838963160298)"));

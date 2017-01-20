@@ -4,7 +4,7 @@
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
     <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
-    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
+    <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -2234,11 +2234,18 @@
           <property role="VOm3f" value="true" />
         </node>
       </node>
-      <node concept="3F0ifn" id="s7_iJZHIsE" role="3EZMnx">
-        <property role="3F0ifm" value="jar locations:" />
-        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+      <node concept="3EZMnI" id="7ndynavQi2O" role="3EZMnx">
         <node concept="ljvvj" id="s7_iJZHIsF" role="3F10Kt">
           <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRfu4" id="7ndynavQi2P" role="2iSdaV" />
+        <node concept="3F0ifn" id="s7_iJZHIsE" role="3EZMnx">
+          <property role="3F0ifm" value="jar locations:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0ifn" id="7ndynavQin6" role="3EZMnx">
+          <property role="3F0ifm" value="runtime library jars" />
+          <ref role="1k5W1q" to="o2va:1zyPPevfOM0" resolve="hint" />
         </node>
       </node>
       <node concept="3F2HdR" id="s7_iJZHIsQ" role="3EZMnx">
@@ -2247,6 +2254,7 @@
         <node concept="3F0ifn" id="s7_iJZHIsS" role="2czzBI">
           <property role="3F0ifm" value="" />
           <property role="ilYzB" value="&lt;&lt; default relative locations for all jars &gt;&gt;" />
+          <ref role="1k5W1q" to="o2va:7UAfeVQSDww" resolve="comment" />
           <node concept="VPxyj" id="s7_iJZHIsT" role="3F10Kt">
             <property role="VOm3f" value="true" />
           </node>
@@ -2255,6 +2263,34 @@
           <property role="VOm3f" value="true" />
         </node>
         <node concept="lj46D" id="s7_iJZHIsV" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="3EZMnI" id="7ndynavQi3l" role="3EZMnx">
+        <node concept="ljvvj" id="7ndynavQi3R" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="2iRfu4" id="7ndynavQi3m" role="2iSdaV" />
+        <node concept="3F0ifn" id="7ndynavQfgQ" role="3EZMnx">
+          <property role="3F0ifm" value="module classes:" />
+          <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        </node>
+        <node concept="3F0ifn" id="7ndynavQpae" role="3EZMnx">
+          <property role="3F0ifm" value="module-relative path to compiled classes" />
+          <ref role="1k5W1q" to="o2va:1zyPPevfOM0" resolve="hint" />
+        </node>
+      </node>
+      <node concept="3F2HdR" id="7ndynavQfhb" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:7ndynavQeWF" resolve="classpathEntries" />
+        <node concept="l2Vlx" id="7ndynavQfhc" role="2czzBx" />
+        <node concept="3F0ifn" id="7ndynavQfhd" role="2czzBI">
+          <property role="ilYzB" value="&lt;&lt; none &gt;&gt;" />
+          <ref role="1k5W1q" to="o2va:7UAfeVQSDww" resolve="comment" />
+        </node>
+        <node concept="pj6Ft" id="7ndynavQfhf" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="lj46D" id="7ndynavQfhg" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
       </node>

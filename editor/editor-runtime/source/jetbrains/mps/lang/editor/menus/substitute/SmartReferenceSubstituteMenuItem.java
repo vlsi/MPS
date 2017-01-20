@@ -84,12 +84,6 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
 
   @Nullable
   @Override
-  public SNode getType(@NotNull String pattern) {
-    return null;
-  }
-
-  @Nullable
-  @Override
   public IconResource getIcon(@NotNull String pattern) {
     return IconResourceUtil.getIconResourceForConcept(myReferentNode.getConcept());
   }

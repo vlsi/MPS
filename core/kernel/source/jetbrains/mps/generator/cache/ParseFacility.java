@@ -27,6 +27,7 @@ import java.net.URL;
 
 /**
  * Facility to mimic try-with-resource clause, to ensure streams are closed once parse is complete
+ *
  * @author Artem Tikhomirov
  */
 public final class ParseFacility<T> {
@@ -65,6 +66,7 @@ public final class ParseFacility<T> {
 
   /**
    * Parse and ignore errors, if any
+   *
    * @return <code>null</code> if didn't succeed
    */
   public T parseSilently() {
@@ -76,7 +78,7 @@ public final class ParseFacility<T> {
     } catch (FileNotFoundException ex) {
       // ok, just ignore
     } catch (IOException ex) {
-      getLog().warn("Ignored parse error", ex);
+      getLog().warn("Ignored parse error in file " + myFile == null ? null : myFile.getPath(), ex);
     }
     return null;
   }

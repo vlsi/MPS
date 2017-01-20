@@ -149,6 +149,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)/2721285250110400375");
     b.prop("modelUID", 0x25c3f28459572778L, "2721285250110400376");
     b.prop("nodeID", 0x25c3f28459572779L, "2721285250110400377");
+    b.prop("mcName", 0x600daa40a8a549d9L, "6921375397022353881");
     b.alias("ref");
     return b.create();
   }

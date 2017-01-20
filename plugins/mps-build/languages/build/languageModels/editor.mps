@@ -2,9 +2,9 @@
 <model ref="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)">
   <persistence version="9" />
   <languages>
-    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
-    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="6" />
-    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="0" />
+    <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="-1" />
+    <use id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor" version="-1" />
+    <use id="daafa647-f1f7-4b0b-b096-69cd7c8408c0" name="jetbrains.mps.baseLanguage.regexp" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -673,9 +673,6 @@
       </concept>
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
       </concept>
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
@@ -1574,10 +1571,13 @@
     <node concept="14StLt" id="1zyPPevfOM0" role="V601i">
       <property role="TrG5h" value="hint" />
       <node concept="VechU" id="1zyPPevfOM1" role="3F10Kt">
-        <property role="Vb096" value="darkGray" />
+        <property role="Vb096" value="lightGray" />
       </node>
       <node concept="Vb9p2" id="1zyPPevfOM3" role="3F10Kt">
         <property role="Vbekb" value="PLAIN" />
+      </node>
+      <node concept="VPxyj" id="7ndynavQruI" role="3F10Kt">
+        <property role="VOm3f" value="false" />
       </node>
     </node>
     <node concept="14StLt" id="7UAfeVQSDww" role="V601i">
@@ -1908,7 +1908,8 @@
               <node concept="YeOm9" id="6qcrfIJFv3M" role="2ShVmc">
                 <node concept="1Y3b0j" id="6qcrfIJFv3N" role="YeSDq">
                   <ref role="1Y3XeK" to="exr9:~AbstractCellProvider" resolve="AbstractCellProvider" />
-                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;()" resolve="AbstractCellProvider" />
+                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="AbstractCellProvider" />
+                  <node concept="pncrf" id="1A9ZZarVq9f" role="37wK5m" />
                   <node concept="3clFb_" id="6qcrfIJFv3O" role="jymVt">
                     <property role="TrG5h" value="createEditorCell" />
                     <node concept="2AHcQZ" id="3tYsUK_Setj" role="2AJF6D">
@@ -2997,7 +2998,8 @@
               <node concept="YeOm9" id="4zlO3QT8rPz" role="2ShVmc">
                 <node concept="1Y3b0j" id="4zlO3QT8rP$" role="YeSDq">
                   <ref role="1Y3XeK" to="exr9:~AbstractCellProvider" resolve="AbstractCellProvider" />
-                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;()" resolve="AbstractCellProvider" />
+                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="AbstractCellProvider" />
+                  <node concept="pncrf" id="1A9ZZarVoAb" role="37wK5m" />
                   <node concept="3clFb_" id="4zlO3QT8rP_" role="jymVt">
                     <property role="TrG5h" value="createEditorCell" />
                     <node concept="2AHcQZ" id="3tYsUK_Sg4z" role="2AJF6D">
@@ -4659,16 +4661,6 @@
   <node concept="24kQdi" id="4RsV8qJH_FZ">
     <property role="3GE5qa" value="Project.Java.Library" />
     <ref role="1XX52x" to="3ior:4RsV8qJH_FS" resolve="BuildSource_JavaLibraryExternalJarFolder" />
-    <node concept="3EZMnI" id="4RsV8qJH_G1" role="2wV5jI">
-      <node concept="3F0ifn" id="4RsV8qJH_G2" role="3EZMnx">
-        <property role="3F0ifm" value="external jars from" />
-        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
-      </node>
-      <node concept="3F1sOY" id="4RsV8qJH_G3" role="3EZMnx">
-        <ref role="1NtTu8" to="3ior:4RsV8qJH_FU" resolve="extFolder" />
-      </node>
-      <node concept="l2Vlx" id="4RsV8qJH_G4" role="2iSdaV" />
-    </node>
     <node concept="3EZMnI" id="1MkTaILUgwo" role="6VMZX">
       <node concept="3F0ifn" id="1MkTaILUgwB" role="3EZMnx">
         <property role="3F0ifm" value="include recursively:" />
@@ -4680,6 +4672,16 @@
         </node>
       </node>
       <node concept="l2Vlx" id="1MkTaILUgwr" role="2iSdaV" />
+    </node>
+    <node concept="3EZMnI" id="4RsV8qJH_G1" role="2wV5jI">
+      <node concept="3F0ifn" id="4RsV8qJH_G2" role="3EZMnx">
+        <property role="3F0ifm" value="external jars from" />
+        <ref role="1k5W1q" node="hwW5xkg" resolve="keyword" />
+      </node>
+      <node concept="3F1sOY" id="4RsV8qJH_G3" role="3EZMnx">
+        <ref role="1NtTu8" to="3ior:4RsV8qJH_FU" resolve="extFolder" />
+      </node>
+      <node concept="l2Vlx" id="4RsV8qJH_G4" role="2iSdaV" />
     </node>
   </node>
   <node concept="24kQdi" id="NvWe6Dqhow">
@@ -4994,7 +4996,8 @@
               <node concept="YeOm9" id="7XQqoCTjxMP" role="2ShVmc">
                 <node concept="1Y3b0j" id="7XQqoCTjxMQ" role="YeSDq">
                   <ref role="1Y3XeK" to="exr9:~AbstractCellProvider" resolve="AbstractCellProvider" />
-                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;()" resolve="AbstractCellProvider" />
+                  <ref role="37wK5l" to="exr9:~AbstractCellProvider.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode)" resolve="AbstractCellProvider" />
+                  <node concept="pncrf" id="1A9ZZarVpt8" role="37wK5m" />
                   <node concept="3clFb_" id="7XQqoCTjxMR" role="jymVt">
                     <property role="TrG5h" value="createEditorCell" />
                     <node concept="2AHcQZ" id="3tYsUK_U_hF" role="2AJF6D">
@@ -9117,7 +9120,7 @@
               </node>
               <node concept="2YIFZM" id="1wEcoXjJD$Q" role="33vP2m">
                 <ref role="1Pybhc" to="o8zo:3fifI_xCtN$" resolve="Scope" />
-                <ref role="37wK5l" to="o8zo:3fifI_xCtPu" resolve="getScope" />
+                <ref role="37wK5l" to="o8zo:52_Geb4SiYg" resolve="getScope" />
                 <node concept="3K4zz7" id="1wEcoXjJD$R" role="37wK5m">
                   <node concept="1yR$tW" id="1wEcoXjJD_y" role="3K4E3e" />
                   <node concept="3bvxqY" id="1wEcoXjJD_x" role="3K4GZi" />
@@ -9127,8 +9130,8 @@
                   </node>
                 </node>
                 <node concept="10Nm6u" id="1wEcoXjJD$X" role="37wK5m" />
-                <node concept="3TUQnm" id="1wEcoXjJD$Y" role="37wK5m">
-                  <ref role="3TV0OU" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
+                <node concept="35c_gC" id="EB2Sz2Ss_S" role="37wK5m">
+                  <ref role="35c_gD" to="3ior:4RPz6WoY4Cv" resolve="BuildMacro" />
                 </node>
               </node>
             </node>

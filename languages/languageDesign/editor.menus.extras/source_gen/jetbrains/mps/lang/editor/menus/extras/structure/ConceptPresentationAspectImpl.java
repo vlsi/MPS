@@ -9,10 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_QueryFunctionParameter_IntentionExecutable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenuPart_Intention = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenuPart_PluginAction = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenuPart_Refactoring = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryFunctionParameter_IntentionExecutable = new ConceptPresentationBuilder().shortDesc("the runtime representation of the intention").create();
+  private final ConceptPresentation props_TransformationMenuPart_Intention = new ConceptPresentationBuilder().shortDesc("performs an intention").create();
+  private final ConceptPresentation props_TransformationMenuPart_PluginAction = new ConceptPresentationBuilder().shortDesc("plugin action item").create();
+  private final ConceptPresentation props_TransformationMenuPart_Refactoring = new ConceptPresentationBuilder().shortDesc("performs a refactoring").create();
 
   @Override
   @Nullable

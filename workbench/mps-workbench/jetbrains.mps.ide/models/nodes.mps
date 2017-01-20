@@ -4,8 +4,8 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="tpd4" ref="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" />
@@ -24,6 +24,7 @@
     <import index="f7uj" ref="r:8ffb9fde-829b-4ee3-ade6-f4eee43e66a8(jetbrains.mps.lang.typesystem.plugin)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
+    <import index="tpcn" ref="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" implicit="true" />
     <import index="tpdd" ref="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)" implicit="true" />
   </imports>
   <registry>
@@ -806,7 +807,9 @@
         <node concept="3cpWs8" id="4cg0dYPIxGi" role="3cqZAp">
           <node concept="3cpWsn" id="4cg0dYPIxGj" role="3cpWs9">
             <property role="TrG5h" value="applicableConcept" />
-            <node concept="3Tqbb2" id="3_kHiPlqRQ$" role="1tU5fm" />
+            <node concept="3Tqbb2" id="3_kHiPlqRQ$" role="1tU5fm">
+              <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+            </node>
             <node concept="1rXfSq" id="4hiugqysiPg" role="33vP2m">
               <ref role="37wK5l" node="4cg0dYPIxGH" resolve="getApplicableConcept" />
               <node concept="2OqwBi" id="3_kHiPlqRQ_" role="37wK5m">
@@ -850,15 +853,16 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs6" id="4cg0dYPIxGD" role="3cqZAp">
-          <node concept="2YIFZM" id="4cg0dYPIxGE" role="3cqZAk">
-            <ref role="1Pybhc" to="urda:~SModelUtil" resolve="SModelUtil" />
-            <ref role="37wK5l" to="urda:~SModelUtil.isAssignableConcept(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="isAssignableConcept" />
-            <node concept="37vLTw" id="2BHiRxgm5Ck" role="37wK5m">
-              <ref role="3cqZAo" node="4cg0dYPIxFM" resolve="concept" />
+        <node concept="3cpWs6" id="6z6zF1G70kL" role="3cqZAp">
+          <node concept="2OqwBi" id="6z6zF1G70kM" role="3cqZAk">
+            <node concept="2qgKlT" id="6z6zF1G7riN" role="2OqNvi">
+              <ref role="37wK5l" to="tpcn:73yVtVlWOga" resolve="isSubconceptOf" />
+              <node concept="37vLTw" id="6z6zF1G7tGo" role="37wK5m">
+                <ref role="3cqZAo" node="4cg0dYPIxGj" resolve="applicableConcept" />
+              </node>
             </node>
-            <node concept="37vLTw" id="3GM_nagT_95" role="37wK5m">
-              <ref role="3cqZAo" node="4cg0dYPIxGj" resolve="applicableConcept" />
+            <node concept="37vLTw" id="6z6zF1G7yqS" role="2Oq$k0">
+              <ref role="3cqZAo" node="4cg0dYPIxFM" resolve="concept" />
             </node>
           </node>
         </node>
@@ -867,7 +871,9 @@
     <node concept="2YIFZL" id="4cg0dYPIxGH" role="jymVt">
       <property role="TrG5h" value="getApplicableConcept" />
       <node concept="3Tm6S6" id="4cg0dYPIxGI" role="1B3o_S" />
-      <node concept="3Tqbb2" id="3_kHiPlqRQy" role="3clF45" />
+      <node concept="3Tqbb2" id="3_kHiPlqRQy" role="3clF45">
+        <ref role="ehGHo" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
+      </node>
       <node concept="37vLTG" id="4cg0dYPIxGK" role="3clF46">
         <property role="TrG5h" value="applicableNode" />
         <node concept="3Tqbb2" id="3_kHiPlqLgD" role="1tU5fm">

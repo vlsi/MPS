@@ -51,8 +51,8 @@
     <file name="ParallelLoopVariable_Constraints.java">
       <node id="7793246093816048068" at="22,45,23,176" concept="9" />
       <node id="7793246093816048068" at="27,43,28,16" concept="5" />
-      <node id="7793246093816048068" at="31,200,32,96" concept="4" />
-      <node id="7793246093816048068" at="32,96,33,0" concept="6" />
+      <node id="7793246093816048068" at="31,200,32,99" concept="4" />
+      <node id="7793246093816048068" at="32,99,33,0" concept="6" />
       <node id="7793246093816048068" at="34,51,35,67" concept="1" />
       <node id="7793246093816048068" at="36,5,37,0" concept="6" />
       <node id="7793246093816048068" at="37,0,38,18" concept="5" />
@@ -61,13 +61,13 @@
       <node id="7793246093816048068" at="49,70,50,40" concept="4" />
       <node id="7793246093816048072" at="50,40,51,63" concept="5" />
       <node id="7793246093816048068" at="53,7,54,22" concept="5" />
-      <node id="47688671297852483" at="56,148,57,209" concept="5" />
-      <node id="7793246093816048068" at="59,0,60,0" concept="7" trace="canBeChildBreakingPoint" />
+      <node id="47688671297852483" at="57,152,58,209" concept="5" />
+      <node id="7793246093816048068" at="60,0,61,0" concept="7" trace="canBeChildBreakingPoint" />
       <node id="7793246093816048068" at="22,0,25,0" concept="0" trace="ParallelLoopVariable_Constraints#()V" />
       <node id="7793246093816048068" at="33,0,36,5" concept="2" />
-      <node id="7793246093816048068" at="56,0,59,0" concept="8" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="7793246093816048068" at="26,0,30,0" concept="3" trace="hasOwnCanBeChildMethod#()Z" />
       <node id="7793246093816048068" at="44,0,48,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="7793246093816048068" at="56,0,60,0" concept="8" trace="staticCanBeAChild_Old#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
       <node id="7793246093816048068" at="48,0,53,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
       <node id="7793246093816048068" at="30,0,40,0" concept="3" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
       <node id="7793246093816048068" at="42,119,53,7" concept="1" />
@@ -76,20 +76,20 @@
       <scope id="7793246093816048068" at="27,43,28,16" />
       <scope id="7793246093816048068" at="34,51,35,67" />
       <scope id="7793246093816048068" at="45,40,46,20" />
-      <scope id="47688671297852482" at="56,148,57,209" />
+      <scope id="47688671297852482" at="57,152,58,209" />
       <scope id="7793246093816048068" at="49,70,51,63">
         <var name="propertyName" id="7793246093816048068" />
       </scope>
       <scope id="7793246093816048068" at="22,0,25,0" />
-      <scope id="7793246093816048068" at="56,0,59,0">
+      <scope id="7793246093816048068" at="26,0,30,0" />
+      <scope id="7793246093816048068" at="44,0,48,0" />
+      <scope id="7793246093816048068" at="56,0,60,0">
         <var name="childConcept" id="7793246093816048068" />
         <var name="link" id="7793246093816048068" />
         <var name="node" id="7793246093816048068" />
         <var name="operationContext" id="7793246093816048068" />
         <var name="parentNode" id="7793246093816048068" />
       </scope>
-      <scope id="7793246093816048068" at="26,0,30,0" />
-      <scope id="7793246093816048068" at="44,0,48,0" />
       <scope id="7793246093816048068" at="48,0,53,0">
         <var name="node" id="7793246093816048068" />
         <var name="propertyValue" id="7793246093816048068" />
@@ -110,7 +110,7 @@
       </scope>
       <scope id="7793246093816048068" at="40,0,56,0" />
       <unit id="7793246093816048068" at="43,139,53,5" name="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints$1" />
-      <unit id="7793246093816048068" at="21,0,61,0" name="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
+      <unit id="7793246093816048068" at="21,0,62,0" name="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
     </file>
   </root>
 </debug-info>

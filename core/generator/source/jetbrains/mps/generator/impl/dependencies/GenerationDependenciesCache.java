@@ -34,7 +34,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.IOException;
@@ -132,14 +131,14 @@ public class GenerationDependenciesCache extends BaseModelCache<GenerationDepend
     return null;
   }
 
+  @Nullable
   @Override
-  protected IFile getCachesDirInternal(SModule module, String outputPath) {
-    IFile cachesPath = super.getCachesDirInternal(module, outputPath);
-    if (cachesPath == null) {
+  protected IFile getCachesDirInternal(@Nullable IFile defaultCachesDir) {
+    if (defaultCachesDir == null) {
       return null;
     }
-    IFile redir = findCachesPathRedirect(cachesPath);
-    return redir != null ? redir : cachesPath;
+    IFile redir = findCachesPathRedirect(defaultCachesDir);
+    return redir != null ? redir : defaultCachesDir;
   }
 
   @Override

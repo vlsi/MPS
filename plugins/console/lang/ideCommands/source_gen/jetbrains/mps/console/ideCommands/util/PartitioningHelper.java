@@ -25,6 +25,7 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.generator.impl.plan.Conflict;
+import java.util.Set;
 
 public class PartitioningHelper {
   private final MessagesViewTool messagesView;
@@ -41,9 +42,6 @@ public class PartitioningHelper {
     messageViewDelimiter();
     for (TemplateModule generator : plan.getGenerators()) {
       Collection<TemplateMappingPriorityRule> rules = generator.getPriorities();
-      if (rules == null) {
-        continue;
-      }
       for (TemplateMappingPriorityRule r : rules) {
         Message msg = new Message(MessageKind.INFORMATION, r.toString());
         msg.setHintObject(generator.getModuleReference());
@@ -150,6 +148,17 @@ public class PartitioningHelper {
       msg.setHintObject(c.getOrigin());
       messagesView.add(msg);
       console.addText(String.format("%s\n", c.getText()));
+      Set<TemplateMappingPriorityRule> rules = c.getRules();
+      if (!(rules.isEmpty())) {
+        if (rules.size() == 1) {
+          console.addText(String.format("\tRule: %s\n", rules.iterator().next()));
+        } else {
+          console.addText("\tRules:\n");
+          for (TemplateMappingPriorityRule r : rules) {
+            console.addText(String.format("\t%s\n", r));
+          }
+        }
+      }
     }
     consoleDelimiter();
     messageViewDelimiter();

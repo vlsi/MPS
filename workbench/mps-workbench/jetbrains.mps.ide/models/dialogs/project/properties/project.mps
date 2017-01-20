@@ -4,11 +4,10 @@
   <languages>
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="nh3n" ref="r:4cfa2d82-0f6c-496f-bd56-08bca0eb8e02(jetbrains.mps.workbench.dialogs.project.components.parts.renderers)" />
-    <import index="4igl" ref="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="dwmc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.uiDesigner.core(MPS.IDEA/)" />
     <import index="4nm9" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.project(MPS.IDEA/)" />
@@ -31,7 +30,6 @@
     <import index="z1c5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="4hrd" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.vfs(MPS.Platform/)" />
-    <import index="eurq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.path(MPS.Core/)" implicit="true" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" implicit="true" />
   </imports>
   <registry>
@@ -639,7 +637,7 @@
                   <ref role="3cqZAo" node="7gZx2pWIfSp" resolve="projectDescriptor" />
                 </node>
                 <node concept="liA8E" id="2LIxlaqyBH3" role="2OqNvi">
-                  <ref role="37wK5l" to="y8s3:~ProjectDescriptor.addModulePath(jetbrains.mps.project.structure.project.ModulePath):java.lang.String" resolve="addModulePath" />
+                  <ref role="37wK5l" to="y8s3:~ProjectDescriptor.addModulePath(jetbrains.mps.project.structure.project.ModulePath):void" resolve="addModulePath" />
                   <node concept="37vLTw" id="3GM_nagTyKa" role="37wK5m">
                     <ref role="3cqZAo" node="2LIxlaqyBGV" resolve="path" />
                   </node>
@@ -1497,20 +1495,11 @@
                                   <property role="TrG5h" value="path" />
                                   <node concept="2ShNRf" id="3b6xVKVT4py" role="33vP2m">
                                     <node concept="1pGfFk" id="9$$2x2f7d6" role="2ShVmc">
-                                      <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(java.lang.String)" resolve="ModulePath" />
-                                      <node concept="2OqwBi" id="9$$2x2fdIa" role="37wK5m">
-                                        <node concept="2OqwBi" id="9$$2x2fbbC" role="2Oq$k0">
-                                          <node concept="37vLTw" id="9$$2x2favd" role="2Oq$k0">
-                                            <ref role="3cqZAo" node="1mBiRF0LCS8" resolve="file" />
-                                          </node>
-                                          <node concept="liA8E" id="9$$2x2fdhw" role="2OqNvi">
-                                            <ref role="37wK5l" to="3ju5:~IFile.toPath():jetbrains.mps.vfs.path.UniPath" resolve="toPath" />
-                                          </node>
-                                        </node>
-                                        <node concept="liA8E" id="9$$2x2fe7O" role="2OqNvi">
-                                          <ref role="37wK5l" to="eurq:~UniPath.toString():java.lang.String" resolve="toString" />
-                                        </node>
+                                      <ref role="37wK5l" to="y8s3:~ModulePath.&lt;init&gt;(jetbrains.mps.vfs.IFile,java.lang.String)" resolve="ModulePath" />
+                                      <node concept="37vLTw" id="BN7Pn0A9aq" role="37wK5m">
+                                        <ref role="3cqZAo" node="1mBiRF0LCS8" resolve="file" />
                                       </node>
+                                      <node concept="10Nm6u" id="BN7Pn0Aa$z" role="37wK5m" />
                                     </node>
                                   </node>
                                   <node concept="3uibUv" id="XZsBAoSLw4" role="1tU5fm">

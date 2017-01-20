@@ -2,18 +2,15 @@
 <model ref="r:7f24d329-a444-4288-af92-f8ef91dfd241(jetbrains.mps.lang.resources.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="0" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="95f8a3e6-f994-4ca0-a65e-763c9bae2d3b" name="jetbrains.mps.make.script" version="0" />
     <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
     <import index="1oap" ref="r:03d44d4c-3d65-461c-9085-0f48e9569e59(jetbrains.mps.lang.resources.structure)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
-    <import index="t552" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator.fileGenerator(MPS.Core/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
@@ -23,8 +20,6 @@
     <import index="z60i" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt(JDK/)" />
     <import index="fbzs" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.geom(JDK/)" />
     <import index="lzb2" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ui(MPS.IDEA/)" />
-    <import index="rk9m" ref="r:f8580193-afc4-4673-a635-d4757ca591cf(jetbrains.mps.internal.make.runtime.util)" />
-    <import index="uskx" ref="r:b63b6f93-e29a-4718-8cc3-affacae32340(jetbrains.mps.lang.resources.plugin)" />
     <import index="ewej" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.awt.font(JDK/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
@@ -341,24 +336,6 @@
             </node>
           </node>
         </node>
-        <node concept="3cpWs8" id="7Mb2akaest8" role="3cqZAp">
-          <node concept="3cpWsn" id="7Mb2akaest9" role="3cpWs9">
-            <property role="TrG5h" value="outputDir" />
-            <node concept="3uibUv" id="7Mb2akaesta" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-            </node>
-            <node concept="2YIFZM" id="7Mb2akaestb" role="33vP2m">
-              <ref role="1Pybhc" to="t552:~FileGenerationUtil" resolve="FileGenerationUtil" />
-              <ref role="37wK5l" to="t552:~FileGenerationUtil.getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.vfs.IFile):jetbrains.mps.vfs.IFile" resolve="getDefaultOutputDir" />
-              <node concept="37vLTw" id="3GM_nagTtfu" role="37wK5m">
-                <ref role="3cqZAo" node="7Mb2akaessK" resolve="model" />
-              </node>
-              <node concept="37vLTw" id="Ib_Fk7Bdpf" role="37wK5m">
-                <ref role="3cqZAo" node="Ib_Fk7BbR4" resolve="outputRoot" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="Ib_Fk7AdV3" role="3cqZAp" />
         <node concept="3cpWs8" id="7Mb2akaesth" role="3cqZAp">
           <node concept="3cpWsn" id="7Mb2akaesti" role="3cpWs9">
@@ -471,7 +448,7 @@
                   <ref role="3cqZAo" node="7Mb2akaesti" resolve="source" />
                 </node>
                 <node concept="37vLTw" id="34SjXUxBckZ" role="37wK5m">
-                  <ref role="3cqZAo" node="7Mb2akaest9" resolve="outputDir" />
+                  <ref role="3cqZAo" node="Ib_Fk7BbR4" resolve="outputDir" />
                 </node>
               </node>
             </node>
@@ -504,7 +481,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="34SjXUxBwPR" role="37wK5m">
-                  <ref role="3cqZAo" node="7Mb2akaest9" resolve="outputDir" />
+                  <ref role="3cqZAo" node="Ib_Fk7BbR4" resolve="outputDir" />
                 </node>
               </node>
             </node>
@@ -532,7 +509,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="34SjXUxBwRv" role="37wK5m">
-                  <ref role="3cqZAo" node="7Mb2akaest9" resolve="outputDir" />
+                  <ref role="3cqZAo" node="Ib_Fk7BbR4" resolve="outputDir" />
                 </node>
               </node>
             </node>
@@ -560,7 +537,7 @@
                   </node>
                 </node>
                 <node concept="37vLTw" id="34SjXUxBCcy" role="37wK5m">
-                  <ref role="3cqZAo" node="7Mb2akaest9" resolve="outputDir" />
+                  <ref role="3cqZAo" node="Ib_Fk7BbR4" resolve="outputDir" />
                 </node>
               </node>
             </node>
@@ -596,7 +573,7 @@
         </node>
       </node>
       <node concept="37vLTG" id="Ib_Fk7BbR4" role="3clF46">
-        <property role="TrG5h" value="outputRoot" />
+        <property role="TrG5h" value="outputDir" />
         <node concept="3uibUv" id="Ib_Fk7BbR3" role="1tU5fm">
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
@@ -1088,7 +1065,7 @@
       <property role="TrG5h" value="generate" />
       <property role="13i0it" value="true" />
       <node concept="37vLTG" id="Ib_Fk7C0Nl" role="3clF46">
-        <property role="TrG5h" value="outputRoot" />
+        <property role="TrG5h" value="outputDir" />
         <node concept="3uibUv" id="Ib_Fk7C0Nm" role="1tU5fm">
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
@@ -1260,7 +1237,7 @@
       <property role="13i0it" value="false" />
       <ref role="13i0hy" node="7Mb2akaesv8" resolve="generate" />
       <node concept="37vLTG" id="Ib_Fk7C1Cf" role="3clF46">
-        <property role="TrG5h" value="outputRoot" />
+        <property role="TrG5h" value="outputDir" />
         <node concept="3uibUv" id="Ib_Fk7C1Cg" role="1tU5fm">
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
@@ -1280,39 +1257,6 @@
             </node>
             <node concept="BsUDl" id="73kiaCIa9nc" role="3uHU7B">
               <ref role="37wK5l" to="tpcu:3t0v3yFOD1A" resolve="getMetaLevel" />
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="73kiaCIa8MO" role="3cqZAp" />
-        <node concept="3cpWs8" id="Ib_Fk7CFdA" role="3cqZAp">
-          <node concept="3cpWsn" id="Ib_Fk7CFdB" role="3cpWs9">
-            <property role="TrG5h" value="model" />
-            <node concept="2JrnkZ" id="Ib_Fk7CFdC" role="33vP2m">
-              <node concept="2OqwBi" id="Ib_Fk7CFdD" role="2JrQYb">
-                <node concept="13iPFW" id="Ib_Fk7CFdE" role="2Oq$k0" />
-                <node concept="I4A8Y" id="Ib_Fk7CFdF" role="2OqNvi" />
-              </node>
-            </node>
-            <node concept="3uibUv" id="Ib_Fk7CFdG" role="1tU5fm">
-              <ref role="3uigEE" to="mhbf:~SModel" resolve="SModel" />
-            </node>
-          </node>
-        </node>
-        <node concept="3cpWs8" id="Ib_Fk7CFdH" role="3cqZAp">
-          <node concept="3cpWsn" id="Ib_Fk7CFdI" role="3cpWs9">
-            <property role="TrG5h" value="outputDir" />
-            <node concept="3uibUv" id="Ib_Fk7CFdJ" role="1tU5fm">
-              <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
-            </node>
-            <node concept="2YIFZM" id="Ib_Fk7CFdK" role="33vP2m">
-              <ref role="1Pybhc" to="t552:~FileGenerationUtil" resolve="FileGenerationUtil" />
-              <ref role="37wK5l" to="t552:~FileGenerationUtil.getDefaultOutputDir(org.jetbrains.mps.openapi.model.SModel,jetbrains.mps.vfs.IFile):jetbrains.mps.vfs.IFile" resolve="getDefaultOutputDir" />
-              <node concept="37vLTw" id="Ib_Fk7CFdL" role="37wK5m">
-                <ref role="3cqZAo" node="Ib_Fk7CFdB" resolve="model" />
-              </node>
-              <node concept="37vLTw" id="Ib_Fk7CFdM" role="37wK5m">
-                <ref role="3cqZAo" node="Ib_Fk7C1Cf" resolve="outputRoot" />
-              </node>
             </node>
           </node>
         </node>
@@ -1485,7 +1429,7 @@
               <node concept="1Ls8ON" id="Ib_Fk7CLif" role="HW$Y0">
                 <node concept="2OqwBi" id="Ib_Fk7CLQ4" role="1Lso8e">
                   <node concept="37vLTw" id="Ib_Fk7CLQ5" role="2Oq$k0">
-                    <ref role="3cqZAo" node="Ib_Fk7CFdI" resolve="outputDir" />
+                    <ref role="3cqZAo" node="Ib_Fk7C1Cf" resolve="outputDir" />
                   </node>
                   <node concept="liA8E" id="Ib_Fk7CLQ6" role="2OqNvi">
                     <ref role="37wK5l" to="3ju5:~IFile.getDescendant(java.lang.String):jetbrains.mps.vfs.IFile" resolve="getDescendant" />

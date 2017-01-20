@@ -18,13 +18,14 @@ public final class LanguageConceptSwitch {
   public static final int FindBlock = 6;
   public static final int FinderDeclaration = 7;
   public static final int FinderReference = 8;
-  public static final int IsApplicableBlock = 9;
-  public static final int IsUsedByDefault = 10;
-  public static final int IsVisibleBlock = 11;
-  public static final int MakeResultProvider = 12;
-  public static final int NodeStatement = 13;
-  public static final int ResultStatement = 14;
-  public static final int SearchedNodesBlock = 15;
+  public static final int FinderReferenceExpression = 9;
+  public static final int IsApplicableBlock = 10;
+  public static final int IsUsedByDefault = 11;
+  public static final int IsVisibleBlock = 12;
+  public static final int MakeResultProvider = 13;
+  public static final int NodeStatement = 14;
+  public static final int ResultStatement = 15;
+  public static final int SearchedNodesBlock = 16;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0x64d34fcdad024e73L, 0xaff8a581124c2e30L);
@@ -37,6 +38,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x116b5695a88L, FindBlock);
     builder.put(0x116b5695a8dL, FinderDeclaration);
     builder.put(0x1bd5a514384e195fL, FinderReference);
+    builder.put(0x5e9f5a0f21d59aacL, FinderReferenceExpression);
     builder.put(0x116b5695a94L, IsApplicableBlock);
     builder.put(0x1660f4e85a04a8fL, IsUsedByDefault);
     builder.put(0x11b36e60151L, IsVisibleBlock);

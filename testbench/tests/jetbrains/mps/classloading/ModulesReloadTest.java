@@ -53,12 +53,7 @@ public class ModulesReloadTest extends ModuleMpsTest {
   private static final String CLASS_TO_LOAD = "Test";
   private static final File TEMP_DIR = createTempDir();
   private static final String TEMP_DIR_PATH = getTempDirPath();
-  private static final FacetFactory FACET_FACTORY = new FacetFactory() {
-    @Override
-    public SModuleFacet create() {
-      return new TestJavaModuleFacet();
-    }
-  };
+  private static final FacetFactory FACET_FACTORY = TestJavaModuleFacet::new;
 
   private static File createTempDir() {
     File tempDir = FileUtil.createTmpDir();
@@ -102,12 +97,9 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Language language = createLanguage();
     Assert.assertTrue(safeGetClass(language, CLASS_TO_LOAD) == null);
     addClassTo(language);
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        language.reload();
-        Assert.assertTrue(classIsLoadableFromModule(language));
-      }
+    getModelAccess().runWriteAction(() -> {
+      language.reload();
+      Assert.assertTrue(classIsLoadableFromModule(language));
     });
   }
 
@@ -116,12 +108,9 @@ public class ModulesReloadTest extends ModuleMpsTest {
     final Generator generator = createGenerator();
     Assert.assertTrue(safeGetClass(generator, CLASS_TO_LOAD) == null);
     addClassTo(generator);
-    getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        generator.reload();
-        Assert.assertTrue(classIsLoadableFromModule(generator));
-      }
+    getModelAccess().runWriteAction(() -> {
+      generator.reload();
+      Assert.assertTrue(classIsLoadableFromModule(generator));
     });
   }
 
@@ -547,7 +536,6 @@ public class ModulesReloadTest extends ModuleMpsTest {
   private Solution createSolution(SolutionKind kind) {
     Solution solution = super.createSolution();
     SolutionDescriptor moduleDescriptor = solution.getModuleDescriptor();
-    assert moduleDescriptor != null;
     moduleDescriptor.setKind(kind);
     return solution;
   }

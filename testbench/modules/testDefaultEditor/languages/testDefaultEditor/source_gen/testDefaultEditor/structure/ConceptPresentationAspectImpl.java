@@ -9,16 +9,22 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
+  private final ConceptPresentation props_AbstractChild = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractDeveloper = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Canvas = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Company = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Container = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultNodeAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultPropertyAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DefaultReferenceAttribute = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Developer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DummyMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Friend = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IConcreteChild = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_IParent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NotSubstitutableDeveloper = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Parent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Shape = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Team = new ConceptPresentationBuilder().create();
 
@@ -27,12 +33,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   public ConceptPresentation getDescriptor(SAbstractConcept c) {
     StructureAspectDescriptor structureDescriptor = (StructureAspectDescriptor) myLanguageRuntime.getAspect(jetbrains.mps.smodel.runtime.StructureAspectDescriptor.class);
     switch (structureDescriptor.internalIndex(c)) {
+      case LanguageConceptSwitch.AbstractChild:
+        return props_AbstractChild;
       case LanguageConceptSwitch.AbstractDeveloper:
         return props_AbstractDeveloper;
       case LanguageConceptSwitch.Canvas:
         return props_Canvas;
       case LanguageConceptSwitch.Company:
         return props_Company;
+      case LanguageConceptSwitch.ConcreteChild:
+        return props_ConcreteChild;
+      case LanguageConceptSwitch.Container:
+        return props_Container;
       case LanguageConceptSwitch.DefaultNodeAttribute:
         return props_DefaultNodeAttribute;
       case LanguageConceptSwitch.DefaultPropertyAttribute:
@@ -45,8 +57,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DummyMethod;
       case LanguageConceptSwitch.Friend:
         return props_Friend;
+      case LanguageConceptSwitch.IConcreteChild:
+        return props_IConcreteChild;
+      case LanguageConceptSwitch.IParent:
+        return props_IParent;
       case LanguageConceptSwitch.NotSubstitutableDeveloper:
         return props_NotSubstitutableDeveloper;
+      case LanguageConceptSwitch.Parent:
+        return props_Parent;
       case LanguageConceptSwitch.Shape:
         return props_Shape;
       case LanguageConceptSwitch.Team:

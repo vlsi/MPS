@@ -25,9 +25,9 @@ import org.jetbrains.mps.openapi.module.SModule;
  * Created by apyshkin on 11/5/15.
  */
 interface ProjectModuleLoadingListener {
-  void moduleLoaded(@NotNull SModule module);
+  void moduleLoaded(ModulePath modulePath, @NotNull SModule module);
 
-  void moduleRemoved(@NotNull SModule module);
+  void moduleRemoved(ModulePath modulePath, @NotNull SModule module);
 
   void moduleNotFound(@NotNull ModulePath modulePath);
 

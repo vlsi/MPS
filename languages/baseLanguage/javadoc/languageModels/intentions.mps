@@ -8,8 +8,8 @@
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" version="0" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" version="0" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -517,8 +517,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3Tsc0h" id="7lVCwDc$oeI" role="2OqNvi">
-                    <ref role="3TtcxE" to="m373:7lVCwDc$eFT" resolve="param" />
+                  <node concept="3Tsc0h" id="7vJ8oZwZihA" role="2OqNvi">
+                    <ref role="3TtcxE" to="m373:4EPKw6tR9BN" resolve="tags" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3IxUQxtNDi8" role="2OqNvi">
@@ -596,8 +596,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3Tsc0h" id="1MQnpZAqSUw" role="2OqNvi">
-                    <ref role="3TtcxE" to="m373:7lVCwDc$eFT" resolve="param" />
+                  <node concept="3Tsc0h" id="7vJ8oZwZiK9" role="2OqNvi">
+                    <ref role="3TtcxE" to="m373:4EPKw6tR9BN" resolve="tags" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3IxUQxtNDic" role="2OqNvi">
@@ -670,8 +670,8 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3Tsc0h" id="55c3QxKkx1O" role="2OqNvi">
-                    <ref role="3TtcxE" to="m373:55c3QxKk96c" resolve="throwsTag" />
+                  <node concept="3Tsc0h" id="7vJ8oZwZk6Y" role="2OqNvi">
+                    <ref role="3TtcxE" to="m373:4EPKw6tR9BN" resolve="tags" />
                   </node>
                 </node>
                 <node concept="TSZUe" id="3IxUQxtNDie" role="2OqNvi">
@@ -692,8 +692,8 @@
         <node concept="3clFbJ" id="55c3QxKkx22" role="3cqZAp">
           <node concept="3clFbS" id="55c3QxKkx23" role="3clFbx">
             <node concept="3clFbF" id="55c3QxKkx30" role="3cqZAp">
-              <node concept="37vLTI" id="55c3QxKkx3f" role="3clFbG">
-                <node concept="2OqwBi" id="55c3QxKkx39" role="37vLTJ">
+              <node concept="2OqwBi" id="7vJ8oZwZmDr" role="3clFbG">
+                <node concept="2OqwBi" id="55c3QxKkx39" role="2Oq$k0">
                   <node concept="2OqwBi" id="55c3QxKkx32" role="2Oq$k0">
                     <node concept="2Sf5sV" id="55c3QxKkx31" role="2Oq$k0" />
                     <node concept="3CFZ6_" id="2EuZkDRzIjC" role="2OqNvi">
@@ -702,14 +702,16 @@
                       </node>
                     </node>
                   </node>
-                  <node concept="3TrEf2" id="55c3QxKkx3e" role="2OqNvi">
-                    <ref role="3Tt5mk" to="m373:55c3QxKk96o" resolve="return" />
+                  <node concept="3Tsc0h" id="7vJ8oZwZk$k" role="2OqNvi">
+                    <ref role="3TtcxE" to="m373:4EPKw6tR9BN" resolve="tags" />
                   </node>
                 </node>
-                <node concept="2ShNRf" id="55c3QxKkx3i" role="37vLTx">
-                  <node concept="2fJWfE" id="5wUAOoBBjmU" role="2ShVmc">
-                    <node concept="3Tqbb2" id="5wUAOoBBjmV" role="3zrR0E">
-                      <ref role="ehGHo" to="m373:55c3QxKk96e" resolve="ReturnBlockDocTag" />
+                <node concept="TSZUe" id="7vJ8oZwZql0" role="2OqNvi">
+                  <node concept="2ShNRf" id="55c3QxKkx3i" role="25WWJ7">
+                    <node concept="2fJWfE" id="5wUAOoBBjmU" role="2ShVmc">
+                      <node concept="3Tqbb2" id="5wUAOoBBjmV" role="3zrR0E">
+                        <ref role="ehGHo" to="m373:55c3QxKk96e" resolve="ReturnBlockDocTag" />
+                      </node>
                     </node>
                   </node>
                 </node>

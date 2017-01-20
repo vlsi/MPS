@@ -20,8 +20,11 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.facets.JavaModuleFacet;
+import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -42,6 +45,53 @@ import java.util.List;
 import java.util.Set;
 
 public class SModelOperations {
+
+  /**
+   * Tell output folder of a model based on its kind and {@linkplain jetbrains.mps.project.facets.GenerationTargetFacet code generation facets}
+   * active for model's module.
+   *
+   * PROVISIONAL CODE. Needed for transition from cumbersome {@link jetbrains.mps.generator.fileGenerator.FileGenerationUtil} to facet-backed output
+   * locations. Doesn't support facets other than {@link JavaModuleFacet} and {@link TestsFacet}
+   *
+   * @return {@code null} if model is not capable to produce output for a model (e.g. deployed/packaged module)
+   * @see jetbrains.mps.project.facets.JavaModuleFacet
+   * @see jetbrains.mps.project.facets.TestsFacet
+   */
+  @Nullable
+  public static IFile getOutputLocation(@NotNull SModel model) {
+    assert model.getModule() != null;
+    if (SModelStereotype.isTestModel(model)) {
+      TestsFacet facet = model.getModule().getFacet(TestsFacet.class);
+      if (facet != null) {
+        return facet.getOutputLocation(model);
+      }
+      // fall-through
+    }
+    JavaModuleFacet jmf = model.getModule().getFacet(JavaModuleFacet.class);
+    return jmf == null ? null : jmf.getOutputLocation(model);
+  }
+
+  /**
+   * Pair method to {@link #getOutputLocation(SModel)}, responsible for
+   * {@linkplain jetbrains.mps.project.facets.GenerationTargetFacet#getOutputCacheLocation(SModel) model cache file location}.
+   *
+   * PROVISIONAL CODE. Same considerations as for {@link #getOutputLocation(SModel)} apply.
+   */
+  @Nullable
+  public static IFile getOutputCacheLocation(@NotNull SModel model) {
+    assert model.getModule() != null;
+    if (SModelStereotype.isTestModel(model)) {
+      TestsFacet facet = model.getModule().getFacet(TestsFacet.class);
+      if (facet != null) {
+        return facet.getOutputCacheLocation(model);
+      }
+      // fall-through
+    }
+    JavaModuleFacet jmf = model.getModule().getFacet(JavaModuleFacet.class);
+    return jmf == null ? null : jmf.getOutputCacheLocation(model);
+
+  }
+
   @Nullable
   public static SNode getRootByName(SModel model, @NotNull String name) {
     for (SNode root : model.getRootNodes()) {

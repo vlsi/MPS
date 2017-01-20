@@ -15,25 +15,31 @@
  */
 package jetbrains.mps.library;
 
+import gnu.trove.THashSet;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vfs.FileListener;
 import jetbrains.mps.vfs.FileSystemEvent;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * SLibrary tracks a path {@link #myFile} with modules inside.
@@ -92,12 +98,45 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
+    final Set<SModule> modules2remove = new THashSet<>();
+    final Set<AbstractModule> modules2reload = new THashSet<>();
+    Map<IFile, SModule> fileToModule = buildFileToModuleMap();
+
+    for (IFile file : event.getRemoved()) {
+      SModule m = fileToModule.get(file);
+      if (m != null) {
+        modules2remove.add(m);
+      }
+    }
+    for (IFile file : event.getChanged()) {
+      SModule m = fileToModule.get(file);
+      // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
+      if (m instanceof AbstractModule && !modules2remove.contains(m)) {
+        modules2reload.add(((AbstractModule) m));
+      }
+    }
+    // FIXME update() comes with global model write lock. This code might have better idea about what to lock
+    //       (although write per jar file is not the best alternative. SLibrary not always a directory, it's a single jar e.g. in Ant::generate).
+    modules2remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
+    modules2reload.forEach(SModuleOperations::reloadFromDisk);
+    // XXX Note, removed modules do not update myHandles (as it used to be with AbstractModule listening to changes). Perhaps, shall clean
+    //     respective ModuleHandles here, as well.
+
     for (IFile f : event.getCreated()) {
       if (ModulesMiner.isSourceModuleFile(f)) {
         collectAndRegisterModules();
         return;
       }
     }
+  }
+
+  // reverse map of existing modules to their origin descriptor files
+  private Map<IFile,SModule> buildFileToModuleMap() {
+    /// XXX perhaps, shall keep ModuleHandle-IFile-SModule data structure instead of manually building it this way each time
+    return ModuleRepositoryFacade.getInstance().getModules(this, null).stream().
+        filter(m -> m instanceof AbstractModule && ((AbstractModule) m).getDescriptorFile() != null).
+        collect(Collectors.toMap(m -> ((AbstractModule) m).getDescriptorFile(), Function.identity()));
+
   }
 
   private void collectAndRegisterModules() {

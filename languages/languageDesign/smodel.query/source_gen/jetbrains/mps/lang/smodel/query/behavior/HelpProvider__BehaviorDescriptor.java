@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -39,7 +39,7 @@ public final class HelpProvider__BehaviorDescriptor extends BaseBHDescriptor {
   }
 
   /*package*/ static String getShortHelp_idqgIopNa9Hb(@NotNull SAbstractConcept __thisConcept__) {
-    return SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x403a32c5772bbe20L, "conceptShortDescription"));
+    return SConceptOperations.shortDescription(__thisConcept__);
   }
   /*package*/ static String getHelpPage_id64VftqEen2L(@NotNull SAbstractConcept __thisConcept__) {
     return null;
@@ -48,11 +48,11 @@ public final class HelpProvider__BehaviorDescriptor extends BaseBHDescriptor {
     return SNodeOperations.getModel(__thisConcept__.getDeclarationNode()).getModule().getModuleName();
   }
   /*package*/ static String getShortDisplayString_id64VftqEenfn(@NotNull SAbstractConcept __thisConcept__) {
-    String alias = SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, 0x46ab0ad5826c74caL, "conceptAlias"));
+    String alias = SConceptOperations.conceptAlias(__thisConcept__);
     if ((alias != null && alias.length() > 0)) {
       return alias;
     } else {
-      return SPropertyOperations.getString(__thisConcept__.getDeclarationNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+      return __thisConcept__.getName();
     }
   }
   /*package*/ static String getDisplayString_id5YxQmqOFZEf(@NotNull SAbstractConcept __thisConcept__) {

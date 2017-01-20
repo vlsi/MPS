@@ -14,6 +14,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.console.tool.ConsoleStream" />
     <classNode dependClassName="jetbrains.mps.generator.ModelGenerationPlan" />
     <classNode dependClassName="jetbrains.mps.generator.impl.plan.Conflict" />

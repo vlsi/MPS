@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -47,7 +47,6 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
-import jetbrains.mps.vfs.impl.IoFileSystem;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -164,7 +163,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
   public void testCompileAfterTouch() throws InterruptedException {
     doSolutionsCompilation();
 
-    IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
+    IFile outputPath = myCreatedSolution.getFacet(JavaModuleFacet.class).getOutputRoot();
     IFile javaFile = outputPath.getDescendant(TEST_JAVA_FILE);
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
     if (!FileSystem.getInstance().setTimeStamp(javaFile, time)) {
@@ -180,7 +179,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
   public void testFileDelete() throws InterruptedException {
     doSolutionsCompilation();
 
-    IFile outputPath = FileSystem.getInstance().getFileByPath(myCreatedSolution.getOutputPath().getPath());
+    IFile outputPath = myCreatedSolution.getFacet(JavaModuleFacet.class).getOutputRoot();
     outputPath.getDescendant(TEST_JAVA_FILE).delete();
 
     ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.singleton((SModule) myCreatedSolution)));
@@ -231,8 +230,9 @@ public class TestMakeOnRealProject extends CoreMpsTest {
         myCreatedSolution = createNewSolution();
         createJavaFiles(myCreatedSolution);
 
-        String generatorOutputPath = myCreatedSolution.getOutputPath().getPath();
-        IFile resourceDir = FileSystem.getInstance().getFileByPath(generatorOutputPath).getParent().getDescendant("resources");
+        IFile generatorOutputPath = myCreatedSolution.getFacet(JavaModuleFacet.class).getOutputRoot();
+        // XXX where from comes the assumption resources/ dir is sibling to source_gen? Why this location is not part of any facet?
+        IFile resourceDir = generatorOutputPath.getParent().getDescendant("resources");
         myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourceDir.getPath());
         createFile(resourceDir, "res.0.1/test.txt", "test");
       }
@@ -240,7 +240,7 @@ public class TestMakeOnRealProject extends CoreMpsTest {
   }
 
   public void createJavaFiles(AbstractModule module) {
-    createFile(FileSystem.getInstance().getFileByPath(module.getOutputPath().getPath()), TEST_JAVA_FILE, "class Test {}");
+    createFile(module.getFacet(JavaModuleFacet.class).getOutputRoot(), TEST_JAVA_FILE, "class Test {}");
   }
 
   private void createFile(IFile dir, String fileName, String text) {

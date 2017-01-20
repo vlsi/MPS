@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="testDefaultEditor.behavior.AbstractChild_BehaviorDescriptor" file="AbstractChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="testDefaultEditor.behavior.AbstractDeveloper_BehaviorDescriptor" file="AbstractDeveloper_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -16,6 +20,14 @@
     <classNode dependClassName="java.lang.String" />
   </dependency>
   <dependency className="testDefaultEditor.behavior.Company_BehaviorDescriptor" file="Company_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.ConcreteChild_BehaviorDescriptor" file="ConcreteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.Container_BehaviorDescriptor" file="Container_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
@@ -43,7 +55,18 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="testDefaultEditor.behavior.IConcreteChild_BehaviorDescriptor" file="IConcreteChild_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.IParent_BehaviorDescriptor" file="IParent_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+  </dependency>
   <dependency className="testDefaultEditor.behavior.NotSubstitutableDeveloper_BehaviorDescriptor" file="NotSubstitutableDeveloper_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="testDefaultEditor.behavior.Parent_BehaviorDescriptor" file="Parent_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

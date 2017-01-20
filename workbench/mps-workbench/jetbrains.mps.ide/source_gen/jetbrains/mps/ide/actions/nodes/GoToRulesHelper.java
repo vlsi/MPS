@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
 import javax.swing.AbstractAction;
@@ -95,7 +94,7 @@ public final class GoToRulesHelper {
     if (exactConcept) {
       return concept == applicableConcept;
     }
-    return SModelUtil.isAssignableConcept(concept, applicableConcept);
+    return ((boolean) (Boolean) BHReflection.invoke(concept, SMethodTrimmedId.create("isSubconceptOf", MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "73yVtVlWOga"), applicableConcept));
   }
   private static SNode getApplicableConcept(SNode applicableNode) {
     if (SNodeOperations.isInstanceOf(applicableNode, MetaAdapterFactory.getConcept(0x7a5dda6291404668L, 0xab76d5ed1746f2b2L, 0x1117e2a88b3L, "jetbrains.mps.lang.typesystem.structure.ConceptReference"))) {

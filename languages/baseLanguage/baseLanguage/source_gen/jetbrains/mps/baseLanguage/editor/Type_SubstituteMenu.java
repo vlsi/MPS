@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -72,7 +73,7 @@ public class Type_SubstituteMenu extends SubstituteMenuBase {
 
       @Override
       protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_a0a(), new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_b0a());
+        return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_a0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x102467229d8L, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")), new ConstraintsFilteringSubstituteMenuPartDecorator(new Type_SubstituteMenu.SubstituteMenuPart_Group_mqq6an_a.SubstituteMenuPart_Group_mqq6an_a0.SubstituteMenuPart_Parameterized_mqq6an_b0a(), MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, "jetbrains.mps.baseLanguage.structure.ClassifierType")));
       }
       private class SubstituteMenuPart_Parameterized_mqq6an_a0a extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
         @NotNull

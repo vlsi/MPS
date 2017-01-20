@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import jetbrains.mps.smodel.adapter.structure.FormatException;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ReferenceDescriptor;
@@ -48,6 +49,11 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
 
   @Nullable
   public abstract ReferenceDescriptor getReferenceDescriptor();
+
+  @Override
+  public boolean isValid() {
+    return getReferenceDescriptor() == null;
+  }
 
   @NotNull
   public abstract SAbstractConcept getOwner();
@@ -91,21 +97,13 @@ public abstract class SReferenceLinkAdapter implements SReferenceLink {
   }
 
   public SScope getScope(SNode referenceNode) {
-    // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope()
-    Scope scope = null;
-    if (scope != null) {
-      return new SScopeAdapter(scope, referenceNode);
-    }
-    return null;
+    Scope scope = ModelConstraints.getReferenceDescriptor(referenceNode, this).getScope();
+    return new SScopeAdapter(scope, referenceNode);
   }
 
   public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
-    // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role, contextNode, link.role(), index).getScope()
-    Scope scope = null;
-    if (scope != null) {
-      return new SScopeAdapter(scope, contextNode);
-    }
-    return null;
+    Scope scope = ModelConstraints.getReferenceDescriptor(contextNode, link, index, this).getScope();
+    return new SScopeAdapter(scope, contextNode);
   }
 
   private static class SScopeAdapter implements SScope {

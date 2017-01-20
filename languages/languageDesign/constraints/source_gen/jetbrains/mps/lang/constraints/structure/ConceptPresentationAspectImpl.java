@@ -11,44 +11,52 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ConceptConstraints = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a720969b6L, "concept"), MetaAdapterFactory.getReferenceLink(0x3f4bc5f5c6c14a28L, 0x8b10c83066ffa4a1L, 0x11a7208faaeL, 0x11a72ce9037L, "defaultConcreteConcept")).icon(IconContainer.RESOURCE_a0a0a).create();
-  private final ConceptPresentation props_ConceptParameter_ReferentSearchScope_enclosingNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_checkedNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_childConcept = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_childNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_containingLink = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_contextNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_contextRole = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_exists = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConceptParameter_ReferentSearchScope_enclosingNode = new ConceptPresentationBuilder().shortDesc("parent of the referenceNode, useful when the reference node is not defined yet (null)").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_checkedNode = new ConceptPresentationBuilder().shortDesc("node to be validated").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_childConcept = new ConceptPresentationBuilder().shortDesc("the concept of the child/descendant node to test against").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_childConceptNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the concept of the child/descendant node to test against").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_childNode = new ConceptPresentationBuilder().shortDesc("the child/descendant node to test against, may be null if is yet to be created").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_containingLink = new ConceptPresentationBuilder().deprecated(true).create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_containmentLink = new ConceptPresentationBuilder().shortDesc("containment link between contextNode and its child").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_contextNode = new ConceptPresentationBuilder().shortDesc("node with the reference, or closest not-null context node").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_contextRole = new ConceptPresentationBuilder().shortDesc("target role in contextNode").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_exists = new ConceptPresentationBuilder().shortDesc("false when reference is being created").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_inEditor = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_link = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_linkTarget = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_newReferentNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_oldReferentNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_parameterNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_parentNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_position = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunctionParameter_referenceNode = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_link = new ConceptPresentationBuilder().shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_linkNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("the containment link in question between the parent and the (potential or existing) child").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_linkTarget = new ConceptPresentationBuilder().shortDesc("target concept (useful for specialized links)").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_linkTargetNode = new ConceptPresentationBuilder().deprecated(true).shortDesc("target concept node (useful for specialized links)").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_newReferentNode = new ConceptPresentationBuilder().shortDesc("new value of the reference").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_oldReferentNode = new ConceptPresentationBuilder().shortDesc("old value of the reference").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_parameterNode = new ConceptPresentationBuilder().shortDesc("node to present (target of the referenceNode's reference)").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_parentNode = new ConceptPresentationBuilder().shortDesc("parent node to check").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_position = new ConceptPresentationBuilder().shortDesc("target index in contextRole").create();
+  private final ConceptPresentation props_ConstraintFunctionParameter_referenceNode = new ConceptPresentationBuilder().shortDesc("node with the reference").create();
   private final ConceptPresentation props_ConstraintFunctionParameter_smartReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunctionParameter_visible = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAChild = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAParent = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAChild = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a child of parentNode").create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAChild_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("return false if node cannot be a child of parentNode").create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAParent = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a parent of given node").create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAParent_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("return false if node cannot be a parent of given node").create();
   private final ConceptPresentation props_ConstraintFunction_CanBeARoot = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor = new ConceptPresentationBuilder().shortDesc("return false if node cannot be a ancestor of given node").create();
+  private final ConceptPresentation props_ConstraintFunction_CanBeAnAncestor_Old = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ConstraintFunction_GetAlternativeIcon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConstraintFunction_GetInstanceIcon = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_PropertyGetter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_PropertySetter = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_PropertyValidator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_RefSetHandlerKeepsReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_PropertyGetter = new ConceptPresentationBuilder().shortDesc("property getter").create();
+  private final ConceptPresentation props_ConstraintFunction_PropertySetter = new ConceptPresentationBuilder().shortDesc("property setter").create();
+  private final ConceptPresentation props_ConstraintFunction_PropertyValidator = new ConceptPresentationBuilder().shortDesc("property validator").create();
+  private final ConceptPresentation props_ConstraintFunction_RefSetHandlerKeepsReference = new ConceptPresentationBuilder().shortDesc("whether reference set handler keeps original reference").create();
   private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_AbstractBase = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Factory = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Presentation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Validator = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintFunction_ReferentSetHandler = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintsFunctionParameter_node = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConstraintsFunctionParameter_propertyValue = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InheritedNodeScopeFactory = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Factory = new ConceptPresentationBuilder().shortDesc("return list of nodes that can be referenced from given node").create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Presentation = new ConceptPresentationBuilder().shortDesc("reference presentation in completion list (default - reference name)").create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope = new ConceptPresentationBuilder().shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)").create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Scope_Old = new ConceptPresentationBuilder().deprecated(true).shortDesc("creates scope for the reference (jetbrains.mps.scope.Scope)").create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSearchScope_Validator = new ConceptPresentationBuilder().shortDesc("return true if the reference is in scope").create();
+  private final ConceptPresentation props_ConstraintFunction_ReferentSetHandler = new ConceptPresentationBuilder().shortDesc("executed on every link assignment").create();
+  private final ConceptPresentation props_ConstraintsFunctionParameter_node = new ConceptPresentationBuilder().shortDesc("the node in question").create();
+  private final ConceptPresentation props_ConstraintsFunctionParameter_propertyValue = new ConceptPresentationBuilder().shortDesc("new value of the node").create();
+  private final ConceptPresentation props_InheritedNodeScopeFactory = new ConceptPresentationBuilder().shortDesc("scope provided by parent elements").create();
   private final ConceptPresentation props_NodeDefaultSearchScope = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodePropertyConstraint = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeReferentConstraint = new ConceptPresentationBuilder().create();
@@ -67,10 +75,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_checkedNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childConcept:
         return props_ConstraintFunctionParameter_childConcept;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_childConceptNode:
+        return props_ConstraintFunctionParameter_childConceptNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_childNode:
         return props_ConstraintFunctionParameter_childNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_containingLink:
         return props_ConstraintFunctionParameter_containingLink;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_containmentLink:
+        return props_ConstraintFunctionParameter_containmentLink;
       case LanguageConceptSwitch.ConstraintFunctionParameter_contextNode:
         return props_ConstraintFunctionParameter_contextNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_contextRole:
@@ -81,8 +93,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_inEditor;
       case LanguageConceptSwitch.ConstraintFunctionParameter_link:
         return props_ConstraintFunctionParameter_link;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_linkNode:
+        return props_ConstraintFunctionParameter_linkNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_linkTarget:
         return props_ConstraintFunctionParameter_linkTarget;
+      case LanguageConceptSwitch.ConstraintFunctionParameter_linkTargetNode:
+        return props_ConstraintFunctionParameter_linkTargetNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_newReferentNode:
         return props_ConstraintFunctionParameter_newReferentNode;
       case LanguageConceptSwitch.ConstraintFunctionParameter_oldReferentNode:
@@ -101,12 +117,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunctionParameter_visible;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAChild:
         return props_ConstraintFunction_CanBeAChild;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAChild_Old:
+        return props_ConstraintFunction_CanBeAChild_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAParent:
         return props_ConstraintFunction_CanBeAParent;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAParent_Old:
+        return props_ConstraintFunction_CanBeAParent_Old;
       case LanguageConceptSwitch.ConstraintFunction_CanBeARoot:
         return props_ConstraintFunction_CanBeARoot;
       case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor:
         return props_ConstraintFunction_CanBeAnAncestor;
+      case LanguageConceptSwitch.ConstraintFunction_CanBeAnAncestor_Old:
+        return props_ConstraintFunction_CanBeAnAncestor_Old;
       case LanguageConceptSwitch.ConstraintFunction_GetAlternativeIcon:
         return props_ConstraintFunction_GetAlternativeIcon;
       case LanguageConceptSwitch.ConstraintFunction_GetInstanceIcon:
@@ -127,6 +149,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConstraintFunction_ReferentSearchScope_Presentation;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope:
         return props_ConstraintFunction_ReferentSearchScope_Scope;
+      case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Scope_Old:
+        return props_ConstraintFunction_ReferentSearchScope_Scope_Old;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSearchScope_Validator:
         return props_ConstraintFunction_ReferentSearchScope_Validator;
       case LanguageConceptSwitch.ConstraintFunction_ReferentSetHandler:

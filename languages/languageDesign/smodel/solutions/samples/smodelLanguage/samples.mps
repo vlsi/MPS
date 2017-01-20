@@ -6,8 +6,8 @@
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" version="4" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -280,8 +280,6 @@
       </concept>
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
       <concept id="1180457458947" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts" flags="nn" index="3oJPKh" />
-      <concept id="1180458444893" name="jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy" flags="nn" index="3oNA_f" />
-      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1146171026731" name="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" flags="nn" index="3t7uKx">
         <child id="1146171026732" name="value" index="3t7uKA" />
       </concept>
@@ -4746,11 +4744,8 @@
             </node>
             <node concept="1mIQ4w" id="hzMzNqB" role="2OqNvi">
               <node concept="25Kdxt" id="hzMxpC$" role="cj9EA">
-                <node concept="2OqwBi" id="2XA_ayKxdKs" role="25KhWn">
-                  <node concept="37vLTw" id="2BHiRxgmJgx" role="2Oq$k0">
-                    <ref role="3cqZAo" node="h8cHd8W" resolve="concept2" />
-                  </node>
-                  <node concept="1rGIog" id="2XA_ayKxiqY" role="2OqNvi" />
+                <node concept="37vLTw" id="2BHiRxgmJgx" role="25KhWn">
+                  <ref role="3cqZAo" node="h8cHd8W" resolve="concept2" />
                 </node>
               </node>
             </node>
@@ -5037,29 +5032,6 @@
       <node concept="3cqZAl" id="hboHQU5" role="3clF45" />
       <node concept="3Tm1VV" id="hboHQU6" role="1B3o_S" />
       <node concept="3clFbS" id="hboHQU7" role="3clF47">
-        <node concept="3SKdUt" id="6pumIWoCG3b" role="3cqZAp">
-          <node concept="3SKdUq" id="6pumIWoCG3c" role="3SKWNk">
-            <property role="3SKdUp" value="concept and all its supers" />
-          </node>
-        </node>
-        <node concept="1X3_iC" id="3$ZLRFpRgUS" role="lGtFl">
-          <property role="3V$3am" value="statement" />
-          <property role="3V$3ak" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" />
-          <node concept="3cpWs8" id="hboSYH3" role="8Wnug">
-            <node concept="3cpWsn" id="hboSYH4" role="3cpWs9">
-              <property role="TrG5h" value="hierarchy" />
-              <node concept="_YKpA" id="hboSYH5" role="1tU5fm">
-                <node concept="3THzug" id="hboSYH6" role="_ZDj9" />
-              </node>
-              <node concept="2OqwBi" id="hxx_0eo" role="33vP2m">
-                <node concept="37vLTw" id="2BHiRxghiSS" role="2Oq$k0">
-                  <ref role="3cqZAo" node="hboI7jk" resolve="concept" />
-                </node>
-                <node concept="3oNA_f" id="hboSY2f" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3SKdUt" id="6pumIWoCFPz" role="3cqZAp">
           <node concept="3SKdUq" id="6pumIWoCFP$" role="3SKWNk">
             <property role="3SKdUp" value="supers" />

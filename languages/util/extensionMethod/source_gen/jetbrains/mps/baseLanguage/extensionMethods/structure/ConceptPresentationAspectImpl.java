@@ -14,7 +14,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ExtensionMethodDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtensionStaticFieldDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExtensionStaticFieldReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LocalExtendedMethodCall = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_LocalExtendedMethodCall = new ConceptPresentationBuilder().shortDesc("local extended method call").create();
   private final ConceptPresentation props_SimpleExtensionMethodsContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ThisExtensionExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TypeExtension = new ConceptPresentationBuilder().create();

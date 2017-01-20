@@ -13,13 +13,37 @@ import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptTestConceptForMenuParameterizedByPrimitiveType = createDescriptorForTestConceptForMenuParameterizedByPrimitiveType();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteAbstractChildAmbigousPosition = createDescriptorForTestSubstitituteAbstractChildAmbigousPosition();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteAbstractSubChildAmbigousPosition = createDescriptorForTestSubstitituteAbstractSubChildAmbigousPosition();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteChildAmbigousPosition1 = createDescriptorForTestSubstitituteChildAmbigousPosition1();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteChildAmbigousPosition2 = createDescriptorForTestSubstitituteChildAmbigousPosition2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteSubChildAmbigousPosition1 = createDescriptorForTestSubstitituteSubChildAmbigousPosition1();
+  /*package*/ final ConceptDescriptor myConceptTestSubstitituteSubChildAmbigousPosition2 = createDescriptorForTestSubstitituteSubChildAmbigousPosition2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteAbstractChildWithConstraints = createDescriptorForTestSubstituteAbstractChildWithConstraints();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteChild = createDescriptorForTestSubstituteChild();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteChildBrother = createDescriptorForTestSubstituteChildBrother();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteChildSuper = createDescriptorForTestSubstituteChildSuper();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildToSpecialize = createDescriptorForTestSubstituteChildToSpecialize();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraints1 = createDescriptorForTestSubstituteChildWithConstraints1();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraints2 = createDescriptorForTestSubstituteChildWithConstraints2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraints3 = createDescriptorForTestSubstituteChildWithConstraints3();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraintsAbstractWrapper = createDescriptorForTestSubstituteChildWithConstraintsAbstractWrapper();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraintsToWrap = createDescriptorForTestSubstituteChildWithConstraintsToWrap();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraintsWrapper1 = createDescriptorForTestSubstituteChildWithConstraintsWrapper1();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraintsWrapper2 = createDescriptorForTestSubstituteChildWithConstraintsWrapper2();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteChildWithConstraintsWrapper3 = createDescriptorForTestSubstituteChildWithConstraintsWrapper3();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptChildToReference = createDescriptorForTestSubstituteConceptChildToReference();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteConceptToWrap = createDescriptorForTestSubstituteConceptToWrap();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteGrandChildWithConstraints = createDescriptorForTestSubstituteGrandChildWithConstraints();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteGrandChildWithConstraintsProhibited = createDescriptorForTestSubstituteGrandChildWithConstraintsProhibited();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteNotSubconceptOfChild = createDescriptorForTestSubstituteNotSubconceptOfChild();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteParent = createDescriptorForTestSubstituteParent();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteParentToReference = createDescriptorForTestSubstituteParentToReference();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteParentWithConstraints = createDescriptorForTestSubstituteParentWithConstraints();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteSpecialChild = createDescriptorForTestSubstituteSpecialChild();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteSpecialChildAttribute = createDescriptorForTestSubstituteSpecialChildAttribute();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteSpecialParent = createDescriptorForTestSubstituteSpecialParent();
+  /*package*/ final ConceptDescriptor myConceptTestSubstituteSpecialSubChild = createDescriptorForTestSubstituteSpecialSubChild();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteSubChild1 = createDescriptorForTestSubstituteSubChild1();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteSubChild2 = createDescriptorForTestSubstituteSubChild2();
   /*package*/ final ConceptDescriptor myConceptTestSubstituteSubChildSmartReference = createDescriptorForTestSubstituteSubChildSmartReference();
@@ -32,7 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
+    return Arrays.asList(myConceptTestConceptForMenuParameterizedByPrimitiveType, myConceptTestSubstitituteAbstractChildAmbigousPosition, myConceptTestSubstitituteAbstractSubChildAmbigousPosition, myConceptTestSubstitituteChildAmbigousPosition1, myConceptTestSubstitituteChildAmbigousPosition2, myConceptTestSubstitituteSubChildAmbigousPosition1, myConceptTestSubstitituteSubChildAmbigousPosition2, myConceptTestSubstituteAbstractChildWithConstraints, myConceptTestSubstituteChild, myConceptTestSubstituteChildBrother, myConceptTestSubstituteChildSuper, myConceptTestSubstituteChildToSpecialize, myConceptTestSubstituteChildWithConstraints1, myConceptTestSubstituteChildWithConstraints2, myConceptTestSubstituteChildWithConstraints3, myConceptTestSubstituteChildWithConstraintsAbstractWrapper, myConceptTestSubstituteChildWithConstraintsToWrap, myConceptTestSubstituteChildWithConstraintsWrapper1, myConceptTestSubstituteChildWithConstraintsWrapper2, myConceptTestSubstituteChildWithConstraintsWrapper3, myConceptTestSubstituteConceptChildToReference, myConceptTestSubstituteConceptToWrap, myConceptTestSubstituteGrandChildWithConstraints, myConceptTestSubstituteGrandChildWithConstraintsProhibited, myConceptTestSubstituteNotSubconceptOfChild, myConceptTestSubstituteParent, myConceptTestSubstituteParentToReference, myConceptTestSubstituteParentWithConstraints, myConceptTestSubstituteSpecialChild, myConceptTestSubstituteSpecialChildAttribute, myConceptTestSubstituteSpecialParent, myConceptTestSubstituteSpecialSubChild, myConceptTestSubstituteSubChild1, myConceptTestSubstituteSubChild2, myConceptTestSubstituteSubChildSmartReference, myConceptTestSubstituteSubConceptToWrap);
   }
 
   @Override
@@ -41,20 +65,68 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     switch (myConceptIndex.index(id)) {
       case LanguageConceptSwitch.TestConceptForMenuParameterizedByPrimitiveType:
         return myConceptTestConceptForMenuParameterizedByPrimitiveType;
+      case LanguageConceptSwitch.TestSubstitituteAbstractChildAmbigousPosition:
+        return myConceptTestSubstitituteAbstractChildAmbigousPosition;
+      case LanguageConceptSwitch.TestSubstitituteAbstractSubChildAmbigousPosition:
+        return myConceptTestSubstitituteAbstractSubChildAmbigousPosition;
+      case LanguageConceptSwitch.TestSubstitituteChildAmbigousPosition1:
+        return myConceptTestSubstitituteChildAmbigousPosition1;
+      case LanguageConceptSwitch.TestSubstitituteChildAmbigousPosition2:
+        return myConceptTestSubstitituteChildAmbigousPosition2;
+      case LanguageConceptSwitch.TestSubstitituteSubChildAmbigousPosition1:
+        return myConceptTestSubstitituteSubChildAmbigousPosition1;
+      case LanguageConceptSwitch.TestSubstitituteSubChildAmbigousPosition2:
+        return myConceptTestSubstitituteSubChildAmbigousPosition2;
+      case LanguageConceptSwitch.TestSubstituteAbstractChildWithConstraints:
+        return myConceptTestSubstituteAbstractChildWithConstraints;
       case LanguageConceptSwitch.TestSubstituteChild:
         return myConceptTestSubstituteChild;
       case LanguageConceptSwitch.TestSubstituteChildBrother:
         return myConceptTestSubstituteChildBrother;
       case LanguageConceptSwitch.TestSubstituteChildSuper:
         return myConceptTestSubstituteChildSuper;
+      case LanguageConceptSwitch.TestSubstituteChildToSpecialize:
+        return myConceptTestSubstituteChildToSpecialize;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraints1:
+        return myConceptTestSubstituteChildWithConstraints1;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraints2:
+        return myConceptTestSubstituteChildWithConstraints2;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraints3:
+        return myConceptTestSubstituteChildWithConstraints3;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraintsAbstractWrapper:
+        return myConceptTestSubstituteChildWithConstraintsAbstractWrapper;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraintsToWrap:
+        return myConceptTestSubstituteChildWithConstraintsToWrap;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraintsWrapper1:
+        return myConceptTestSubstituteChildWithConstraintsWrapper1;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraintsWrapper2:
+        return myConceptTestSubstituteChildWithConstraintsWrapper2;
+      case LanguageConceptSwitch.TestSubstituteChildWithConstraintsWrapper3:
+        return myConceptTestSubstituteChildWithConstraintsWrapper3;
       case LanguageConceptSwitch.TestSubstituteConceptChildToReference:
         return myConceptTestSubstituteConceptChildToReference;
       case LanguageConceptSwitch.TestSubstituteConceptToWrap:
         return myConceptTestSubstituteConceptToWrap;
+      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraints:
+        return myConceptTestSubstituteGrandChildWithConstraints;
+      case LanguageConceptSwitch.TestSubstituteGrandChildWithConstraintsProhibited:
+        return myConceptTestSubstituteGrandChildWithConstraintsProhibited;
+      case LanguageConceptSwitch.TestSubstituteNotSubconceptOfChild:
+        return myConceptTestSubstituteNotSubconceptOfChild;
       case LanguageConceptSwitch.TestSubstituteParent:
         return myConceptTestSubstituteParent;
       case LanguageConceptSwitch.TestSubstituteParentToReference:
         return myConceptTestSubstituteParentToReference;
+      case LanguageConceptSwitch.TestSubstituteParentWithConstraints:
+        return myConceptTestSubstituteParentWithConstraints;
+      case LanguageConceptSwitch.TestSubstituteSpecialChild:
+        return myConceptTestSubstituteSpecialChild;
+      case LanguageConceptSwitch.TestSubstituteSpecialChildAttribute:
+        return myConceptTestSubstituteSpecialChildAttribute;
+      case LanguageConceptSwitch.TestSubstituteSpecialParent:
+        return myConceptTestSubstituteSpecialParent;
+      case LanguageConceptSwitch.TestSubstituteSpecialSubChild:
+        return myConceptTestSubstituteSpecialSubChild;
       case LanguageConceptSwitch.TestSubstituteSubChild1:
         return myConceptTestSubstituteSubChild1;
       case LanguageConceptSwitch.TestSubstituteSubChild2:
@@ -76,6 +148,59 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestConceptForMenuParameterizedByPrimitiveType", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x75a761fb50351afbL);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8477852555558591227");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteAbstractChildAmbigousPosition() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteAbstractChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL);
+    b.class_(false, true, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873152812907");
+    b.aggregate("subchild", 0x7f53d21992362f25L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992362f22L).optional(true).ordered(true).multiple(false).origin("9174907873152872229").done();
+    b.alias("ambigous");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteAbstractSubChildAmbigousPosition() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteAbstractSubChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992362f22L);
+    b.class_(false, true, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873152872226");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteChildAmbigousPosition1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteChildAmbigousPosition1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992378bccL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873152961484");
+    b.alias("ambigous");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteChildAmbigousPosition2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteChildAmbigousPosition2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992378f83L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873152962435");
+    b.alias("ambigous");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteSubChildAmbigousPosition1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteSubChildAmbigousPosition1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992386b18L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractSubChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992362f22L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873153018648");
+    b.alias("subambigous");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstitituteSubChildAmbigousPosition2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstitituteSubChildAmbigousPosition2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992386b19L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstitituteAbstractSubChildAmbigousPosition", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992362f22L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873153018649");
+    b.alias("subambigous");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteAbstractChildWithConstraints() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteAbstractChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL);
+    b.class_(false, true, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849506459");
+    b.aggregate("child", 0x2d4683aef72697c3L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L).optional(true).ordered(true).multiple(false).origin("3262439767570552771").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSubstituteChild() {
@@ -100,6 +225,71 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9151323058739046798");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildToSpecialize() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildToSpecialize", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4085424218237852311");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraints1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraints1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b4L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849542068");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraints2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraints2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ccf9b3L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849542067");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraints3() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraints3", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2ceddc8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteAbstractChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849665992");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraintsAbstractWrapper() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraintsAbstractWrapper", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL);
+    b.class_(false, true, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849964251");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraintsToWrap() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraintsToWrap", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21688L);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849877128");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraintsWrapper1() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraintsWrapper1", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21687L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsAbstractWrapper", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849877127");
+    b.aggregate("childToWrap", 0x9c8de75f2d2168bL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21688L).optional(true).ordered(true).multiple(false).origin("705057939849877131").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraintsWrapper2() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraintsWrapper2", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36ae2L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsAbstractWrapper", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849964258");
+    b.aggregate("childToWrap", 0x9c8de75f2d36ae3L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21688L).optional(true).ordered(true).multiple(false).origin("705057939849964259").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteChildWithConstraintsWrapper3() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteChildWithConstraintsWrapper3", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d41c8eL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildWithConstraintsAbstractWrapper", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939850009742");
+    b.aggregate("childToWrap", 0x9c8de75f2d41c8fL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d21688L).optional(true).ordered(true).multiple(false).origin("705057939850009743").done();
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForTestSubstituteConceptChildToReference() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteConceptChildToReference", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L);
     b.class_(false, false, false);
@@ -111,6 +301,25 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteConceptToWrap", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2aaL);
     b.class_(false, false, false);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8998492695587451562");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteGrandChildWithConstraints() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteGrandChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/3262439767570552768");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteGrandChildWithConstraintsProhibited() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteGrandChildWithConstraintsProhibited", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x73096e13d1e2b4e1L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteGrandChildWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x2d4683aef72697c0L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8289277620556838113");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteNotSubconceptOfChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteNotSubconceptOfChild", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d21992314d41L);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/9174907873152552257");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSubstituteParent() {
@@ -128,6 +337,19 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.aggregate("childrenToContributeMenu", 0x7ce1116e3a7111ffL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL).optional(true).ordered(true).multiple(true).origin("8998492695587525119").done();
     b.aggregate("wrapSubstituteFromTransform", 0x407fe8717d8c3029L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL).optional(true).ordered(true).multiple(true).origin("4647688914604929065").done();
     b.aggregate("superChild", 0x7f0007d60cfb6991L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f0007d60cfb698eL).optional(true).ordered(true).multiple(true).origin("9151323058739046801").done();
+    b.aggregate("singleChildToSpecialize", 0x38b257ae54d85a8aL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(false).origin("4085424218237852298").done();
+    b.aggregate("multipleChildToSpecialize", 0x594ecee804fb990L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(true).origin("402206775841896848").done();
+    b.aggregate("singleChildToSpecializeInCustomEmptyCellWithCustomMenu", 0x6fb66acd1deb9305L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(false).origin("8049738813174158085").done();
+    b.aggregate("singleChildToSpecializeInCustomEmptyCell", 0x29ee208cfc22de31L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(false).origin("3021388189909835313").done();
+    b.aggregate("singleChildToSpecializeWithPrimaryReplaceGroup", 0x6ab3554ec9e9d0f0L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(false).origin("7688582785734922480").done();
+    b.aggregate("multipleChildToSpecializeInCustomEmptyCellWithCustomMenu", 0x360a10c84d96af00L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(true).origin("3893943280296439552").done();
+    b.aggregate("multipleChildToSpecializeInCustomEmptyCell", 0x29ee208cfc22de42L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(true).origin("3021388189909835330").done();
+    b.aggregate("multipleChildToSpecializeWithPrimaryReplaceGroup", 0x6ab3554ec9e9d108L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L).optional(true).ordered(true).multiple(true).origin("7688582785734922504").done();
+    b.aggregate("notSubconcept", 0x7f53d2199230e174L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0beL).optional(true).ordered(true).multiple(true).origin("9174907873152524660").done();
+    b.aggregate("ambigousSameConcepts", 0x7f53d2199235476fL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL).optional(true).ordered(true).multiple(true).origin("9174907873152812911").done();
+    b.aggregate("ambigousWrapSameConcepts", 0x7f53d219923643dcL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL).optional(true).ordered(true).multiple(true).origin("9174907873152877532").done();
+    b.aggregate("ambigousDifferentConcepts", 0x7f53d21992386290L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL).optional(true).ordered(true).multiple(true).origin("9174907873153016464").done();
+    b.aggregate("ambigousWrapDifferentConcepts", 0x7f53d219923862afL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7f53d2199235476bL).optional(true).ordered(true).multiple(true).origin("9174907873153016495").done();
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSubstituteParentToReference() {
@@ -136,6 +358,48 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L);
     b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8998492695591110495");
     b.aggregate("children", 0x7ce1116e3aa7c76cL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6ff2b0L).optional(true).ordered(true).multiple(true).origin("8998492695591110508").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteParentWithConstraints() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteParentWithConstraints", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9aL);
+    b.class_(false, false, true);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/705057939849506458");
+    b.aggregate("childCanBeParent", 0x9c8de75f2cc6e9cL).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL).optional(true).ordered(true).multiple(false).origin("705057939849506460").done();
+    b.aggregate("childCanBeAncestor", 0x9c8de75f2ced771L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL).optional(true).ordered(true).multiple(false).origin("705057939849664369").done();
+    b.aggregate("childCanBeChild", 0x9c8de75f2d0d666L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2cc6e9bL).optional(true).ordered(true).multiple(false).origin("705057939849795174").done();
+    b.aggregate("childWrapperCanBeParent", 0x9c8de75f2d23240L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL).optional(true).ordered(true).multiple(false).origin("705057939849884224").done();
+    b.aggregate("childWrapperCanBeAncestor", 0x9c8de75f2d41c81L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL).optional(true).ordered(true).multiple(false).origin("705057939850009729").done();
+    b.aggregate("childWrapperCanBeChild", 0x9c8de75f2d41c87L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x9c8de75f2d36adbL).optional(true).ordered(true).multiple(false).origin("705057939850009735").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteSpecialChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteSpecialChild", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a98L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteChildToSpecialize", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a97L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4085424218237852312");
+    b.aggregate("subChild", 0x77c1a85c9f90b761L).target(0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL).optional(true).ordered(true).multiple(false).origin("8629363476786100065").done();
+    b.alias("special");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteSpecialChildAttribute() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteSpecialChildAttribute", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x51ed57d5dc9c3b8L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.core.structure.NodeAttribute", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x2eb1ad060897da54L);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/368966953912091576");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteSpecialParent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteSpecialParent", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x38b257ae54d85a99L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure.TestSubstituteParent", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x7ce1116e3a6fb0bdL);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/4085424218237852313");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForTestSubstituteSpecialSubChild() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.menus.substitute.testLanguage", "TestSubstituteSpecialSubChild", 0xcb6d57037c8e46a9L, 0xb993c1373dc0942fL, 0x77c1a85c9f90b75bL);
+    b.class_(false, false, false);
+    b.origin("r:c9a3f91a-729c-4ebe-a9f0-0bd3bc03e39c(jetbrains.mps.lang.editor.menus.substitute.testLanguage.structure)/8629363476786100059");
+    b.alias("sub-child");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForTestSubstituteSubChild1() {

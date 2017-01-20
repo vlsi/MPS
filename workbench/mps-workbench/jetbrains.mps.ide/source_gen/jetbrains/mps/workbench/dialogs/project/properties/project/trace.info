@@ -155,7 +155,7 @@
       <node id="1560298786499497479" at="68,0,69,48" concept="6" />
       <node id="1560298786499497495" at="70,27,71,17" concept="7" />
       <node id="172421188331061184" at="72,9,73,0" concept="9" />
-      <node id="3658760989813524062" at="73,0,74,67" concept="6" />
+      <node id="3658760989813524062" at="73,0,74,53" concept="6" />
       <node id="3658760989813524124" at="76,51,77,43" concept="1" />
       <node id="3658760989813524130" at="77,43,78,19" concept="7" />
       <node id="3658760989813524133" at="80,9,81,84" concept="1" />
@@ -201,7 +201,7 @@
       <node id="3658760989813806517" at="153,0,157,0" concept="5" trace="removePath#(Ljava/lang/Object;)V" />
       <node id="3201642974933583229" at="108,31,113,7" concept="7" />
       <node id="3658760989812686679" at="49,0,55,0" concept="5" trace="getGridConstraints#(IZ)Ljava/lang/Object;" />
-      <node id="3658760989813524108" at="74,67,80,9" concept="3" />
+      <node id="3658760989813524108" at="74,53,80,9" concept="3" />
       <node id="3201642974933583245" at="116,23,122,7" concept="1" />
       <node id="3201642974933583256" at="127,0,133,0" concept="5" trace="reset#()V" />
       <node id="3658760989812040340" at="38,0,45,0" concept="0" trace="ProjectPropertiesComponent#(Lcom/intellij/openapi/project/Project;[Ljetbrains/mps/workbench/dialogs/project/properties/project/ProjectPrefsExtraPanel;)V" />
@@ -271,7 +271,7 @@
         <var name="fill" id="3658760989812686728" />
         <var name="row" id="3658760989812686726" />
       </scope>
-      <scope id="3658760989813524108" at="74,67,80,9">
+      <scope id="3658760989813524108" at="74,53,80,9">
         <var name="p" id="3658760989813524131" />
       </scope>
       <scope id="3201642974933583256" at="127,0,133,0" />

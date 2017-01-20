@@ -6,10 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation__BehaviorDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.core.aspects.behaviour.C3StarMethodResolutionOrder;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -26,28 +26,37 @@ public class ConceptMethodSuperCallUtils {
       // by default we resolve non-virtual method calls already 
       return SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"));
     }
-    SAbstractConcept concept;
+    SNode concept;
     boolean includingStart;
-    SNode superNode = SNodeOperations.cast(SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(methodCall), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"));
-    if (SLinkOperations.getTarget(superNode, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L, "superConcept")) != null) {
-      SNode superConcept = SLinkOperations.getTarget(superNode, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L, "superConcept"));
-      concept = SNodeOperations.asSConcept(superConcept);
+    SNode superNode = SNodeOperation__BehaviorDescriptor.getLeftExpression_idhEwJdGu.invoke(methodCall);
+    SNode superConcept;
+    if (SNodeOperations.isInstanceOf(superNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression"))) {
+      superConcept = SLinkOperations.getTarget(SNodeOperations.cast(superNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434a6558L, 0x498a2c3387127040L, "superConcept"));
+    } else if (SNodeOperations.isInstanceOf(superNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, "jetbrains.mps.lang.behavior.structure.SuperConceptExpression"))) {
+      superConcept = SLinkOperations.getTarget(SNodeOperations.cast(superNode, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, "jetbrains.mps.lang.behavior.structure.SuperConceptExpression")), MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x69a9d7dcb057a7a7L, 0x69a9d7dcb057a7a8L, "superConcept"));
+    } else {
+      throw new IllegalArgumentException(SNodeOperations.getConcept(superNode).getName());
+    }
+    if (superConcept != null) {
+      concept = superConcept;
       includingStart = true;
     } else {
       SNode behavior = SNodeOperations.getNodeAncestor(methodCall, MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), false, false);
-      concept = SNodeOperations.asSConcept(SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept")));
+      concept = SLinkOperations.getTarget(behavior, MetaAdapterFactory.getReferenceLink(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d43447b1aL, 0x11d43447b1fL, "concept"));
       includingStart = false;
     }
     return ConceptMethodSuperCallUtils.findMethodInConceptMethods(concept, methodCall, includingStart);
   }
 
-  private static SNode findMethodInConceptMethods(SAbstractConcept concept, SNode methodCall, boolean includingStart) {
-    List<SAbstractConcept> ancestors = new C3StarMethodResolutionOrder().linearize(concept);
+  private static SNode findMethodInConceptMethods(SNode concept, SNode methodCall, boolean includingStart) {
+    List<SAbstractConcept> ancestors = new C3StarMethodResolutionOrder().linearize(SNodeOperations.asSConcept(concept));
     for (SAbstractConcept ancestor : ListSequence.fromList(ancestors)) {
-      if (!(includingStart) && ancestor == concept) {
+      // todo [MM]: need an analog to C3Star... working on nodes 
+      SNode ancNode = ancestor.getDeclarationNode();
+      if (!(includingStart) && ancNode == concept) {
         continue;
       }
-      SNode method = findOverridingMethodInConcept(SNodeOperations.cast(ancestor.getDeclarationNode(), MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
+      SNode method = findOverridingMethodInConcept(SNodeOperations.cast(ancNode, MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")), SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")));
       if (method != null) {
         return method;
       }

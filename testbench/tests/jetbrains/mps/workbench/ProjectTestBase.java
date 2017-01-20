@@ -45,7 +45,7 @@ public abstract class ProjectTestBase extends BaseMpsTest {
     myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFile(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
-    project.addModule(newModule);
+    project.getModelAccess().runWriteAction(() -> project.addModule(newModule));
     Assert.assertTrue(project.getProjectModules().contains(newModule));
     project.dispose();
   }
@@ -56,8 +56,8 @@ public abstract class ProjectTestBase extends BaseMpsTest {
     myTestModuleFactory = new TestModuleFactoryBase((SRepositoryExt) project.getRepository());
     IFile descriptorFile = FS.getFile(FileUtil.createTmpFile().getPath());
     SModule newModule = myTestModuleFactory.createSolution(descriptorFile);
-    project.addModule(newModule);
-    project.removeModule(newModule);
+    project.getModelAccess().runWriteAction(() -> project.addModule(newModule));
+    project.getModelAccess().runWriteAction(() -> project.removeModule(newModule));
     Assert.assertFalse(project.getProjectModules().contains(newModule));
     project.dispose();
   }

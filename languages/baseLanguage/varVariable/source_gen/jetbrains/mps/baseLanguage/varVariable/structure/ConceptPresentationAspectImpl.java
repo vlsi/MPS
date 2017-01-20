@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_VarVariableDeclaration = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_VarVariableDeclaration = new ConceptPresentationBuilder().shortDesc("var definition").create();
 
   @Override
   @Nullable

@@ -14,6 +14,7 @@ import jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl;
 import jetbrains.mps.core.aspects.behaviour.SModifiersImpl;
 import jetbrains.mps.core.aspects.behaviour.AccessPrivileges;
 import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,7 +23,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.annotation.ToRemove;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -36,7 +39,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getLeftExpression_idhEwJdGu = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGu").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftExpressionLeftExpression_idhEwJdGS = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionLeftExpression").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdGS").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftExpressionOperation_idhEwJdHi = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftExpressionOperation").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHi").registry(REGISTRY).build();
-  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
+  public static final SMethod<SNode> getParameter_idhEwJdHG = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getParameter").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdHG").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
   public static final SMethod<Boolean> operandCanBeNull_idhWYZ0eEN6z = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("operandCanBeNull").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hWYZ0eEN6z").registry(REGISTRY).build();
   public static final SMethod<String> getVariableExpectedName_idhEwIP$B = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVariableExpectedName").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIP$B").registry(REGISTRY).build();
   public static final SMethod<Boolean> applicableToModel_id1653mnvAf1y = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToModel").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAf1y").registry(REGISTRY).build();
@@ -49,9 +52,10 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> applicableToSConcept_id7E3Sw0HhwkZ = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToSConcept").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7E3Sw0HhwkZ").registry(REGISTRY).build();
   public static final SMethod<Boolean> applicableToLinkList_id1653mnvAgwe = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("applicableToLinkList").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("1653mnvAgwe").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getApplicableParameter_id2D1PBM_bxI0 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getApplicableParameter").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2D1PBM_bxI0").registry(REGISTRY).build();
+  public static final SMethod<List<SConcept>> getParameterConcepts_id6ALWH9fQysn = new SMethodBuilder<List<SConcept>>(new SJavaCompoundTypeImpl((Class<List<SConcept>>) ((Class) Object.class))).name("getParameterConcepts").modifiers(SModifiersImpl.create(9, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("6ALWH9fQysn").registry(REGISTRY).build();
   public static final SMethod<SNode> getLeftNodeConcept_idhEwJdFJ = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLeftNodeConcept").modifiers(SModifiersImpl.create(1, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwJdFJ").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLeftExpression_idhEwJdGu, getLeftExpressionLeftExpression_idhEwJdGS, getLeftExpressionOperation_idhEwJdHi, getParameter_idhEwJdHG, operandCanBeNull_idhWYZ0eEN6z, getVariableExpectedName_idhEwIP$B, applicableToModel_id1653mnvAf1y, applicableToConceptProperty_id1653mnvAgpp, applicableToNode_id1653mnvAgrs, applicableToSimpleProperty_id1653mnvAgrO, applicableToEnumProperty_id1653mnvAguj, applicableToLink_id1653mnvAgvK, applicableToConcept_id1653mnvAgvQ, applicableToSConcept_id7E3Sw0HhwkZ, applicableToLinkList_id1653mnvAgwe, getApplicableParameter_id2D1PBM_bxI0, getLeftNodeConcept_idhEwJdFJ);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getLeftExpression_idhEwJdGu, getLeftExpressionLeftExpression_idhEwJdGS, getLeftExpressionOperation_idhEwJdHi, getParameter_idhEwJdHG, operandCanBeNull_idhWYZ0eEN6z, getVariableExpectedName_idhEwIP$B, applicableToModel_id1653mnvAf1y, applicableToConceptProperty_id1653mnvAgpp, applicableToNode_id1653mnvAgrs, applicableToSimpleProperty_id1653mnvAgrO, applicableToEnumProperty_id1653mnvAguj, applicableToLink_id1653mnvAgvK, applicableToConcept_id1653mnvAgvQ, applicableToSConcept_id7E3Sw0HhwkZ, applicableToLinkList_id1653mnvAgwe, getApplicableParameter_id2D1PBM_bxI0, getParameterConcepts_id6ALWH9fQysn, getLeftNodeConcept_idhEwJdFJ);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -74,7 +78,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, "jetbrains.mps.baseLanguage.structure.DotExpression")), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"));
   }
-  /*package*/ static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SNode parameterConcept) {
+  /*package*/ static SNode getParameter_idhEwJdHG(@NotNull SNode __thisNode__, final SAbstractConcept parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getChildren(__thisNode__, MetaAdapterFactory.getContainmentLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x1090ea2ebacL, 0x10a61ef5a56L, "parameter"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, SNodeOperations.asSConcept(parameterConcept));
@@ -116,8 +120,18 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static boolean applicableToLinkList_id1653mnvAgwe(@NotNull SAbstractConcept __thisConcept__) {
     return false;
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static List<SNode> getApplicableParameter_id2D1PBM_bxI0(@NotNull SAbstractConcept __thisConcept__) {
     return ListSequence.fromList(new ArrayList<SNode>());
+  }
+  /*package*/ static List<SConcept> getParameterConcepts_id6ALWH9fQysn(@NotNull SAbstractConcept __thisConcept__) {
+    // todo body should be removed after 3.5 
+    return ListSequence.fromList(SNodeOperation__BehaviorDescriptor.getApplicableParameter_id2D1PBM_bxI0.invoke(__thisConcept__)).select(new ISelector<SNode, SConcept>() {
+      public SConcept select(SNode it) {
+        return ((SConcept) SNodeOperations.asSConcept(it));
+      }
+    }).toListSequence();
   }
   /*package*/ static SNode getLeftNodeConcept_idhEwJdFJ(@NotNull SAbstractConcept __thisConcept__, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"));
@@ -127,7 +141,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
     }
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConcept(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType")), true);
-    return ((SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) != null) ? SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) : MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept").getDeclarationNode());
+    return ((SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) != null) ? SLinkOperations.getTarget(nodeType, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept")) : SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
   }
 
   /*package*/ SNodeOperation__BehaviorDescriptor() {
@@ -153,7 +167,7 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
       case 2:
         return (T) ((SNode) getLeftExpressionOperation_idhEwJdHi(node));
       case 3:
-        return (T) ((SNode) getParameter_idhEwJdHG(node, (SNode) parameters[0]));
+        return (T) ((SNode) getParameter_idhEwJdHG(node, (SAbstractConcept) parameters[0]));
       case 4:
         return (T) ((Boolean) operandCanBeNull_idhWYZ0eEN6z(node));
       case 5:
@@ -191,6 +205,8 @@ public final class SNodeOperation__BehaviorDescriptor extends BaseBHDescriptor {
       case 15:
         return (T) ((List<SNode>) getApplicableParameter_id2D1PBM_bxI0(concept));
       case 16:
+        return (T) ((List<SConcept>) getParameterConcepts_id6ALWH9fQysn(concept));
+      case 17:
         return (T) ((SNode) getLeftNodeConcept_idhEwJdFJ(concept, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);

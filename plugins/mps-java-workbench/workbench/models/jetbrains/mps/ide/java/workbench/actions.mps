@@ -2,13 +2,13 @@
 <model ref="r:147fb550-8026-46fe-830c-81449036a4c3(jetbrains.mps.ide.java.workbench.actions)">
   <persistence version="9" />
   <languages>
-    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="0" />
-    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="2" />
-    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="0" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
+    <use id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" name="jetbrains.mps.baseLanguage.classifiers" version="-1" />
+    <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="-1" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
+    <use id="28f9e497-3b42-4291-aeba-0a1039153ab1" name="jetbrains.mps.lang.plugin" version="-1" />
+    <use id="3ecd7c84-cde3-45de-886c-135ecc69b742" name="jetbrains.mps.lang.refactoring" version="-1" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
   </languages>
   <imports>
     <import index="9oh" ref="r:de82dfab-9448-49ba-813e-2b0579f7fb15(jetbrains.mps.ide.platform.actions)" />
@@ -1721,6 +1721,17 @@
       <ref role="3uigEE" to="u42p:1t_LRy89k3m" resolve="RefactoringDialog" />
     </node>
   </node>
+  <node concept="Zd50a" id="5U9rQri5Gky">
+    <property role="Z2u3V" value="true" />
+    <property role="TrG5h" value="Default" />
+    <node concept="Zd509" id="cvGLnZnSxd" role="Zd508">
+      <ref role="1bYAoF" node="5U9rQri5GcF" resolve="ChangeMethodSignature" />
+      <node concept="pLAjd" id="5GUQLVLhjm0" role="Zd501">
+        <property role="pLAjf" value="VK_F6" />
+        <property role="pLAjc" value="ctrl" />
+      </node>
+    </node>
+  </node>
   <node concept="sE7Ow" id="60HWYcsjXng">
     <property role="TrG5h" value="NewModelFromSource" />
     <property role="72QZ$" value="true" />
@@ -2781,17 +2792,6 @@
     <node concept="ftmFs" id="2Y91NYHrIeP" role="ftER_">
       <node concept="tCFHf" id="2Y91NYHrIeS" role="ftvYc">
         <ref role="tCJdB" node="7F9FiYySOv7" resolve="AnalyzeClasspath" />
-      </node>
-    </node>
-  </node>
-  <node concept="Zd50a" id="5U9rQri5Gky">
-    <property role="TrG5h" value="Default" />
-    <property role="Z2u3V" value="true" />
-    <node concept="Zd509" id="cvGLnZnSxd" role="Zd508">
-      <ref role="1bYAoF" node="5U9rQri5GcF" resolve="ChangeMethodSignature" />
-      <node concept="pLAjd" id="5GUQLVLhjm0" role="Zd501">
-        <property role="pLAjf" value="VK_F6" />
-        <property role="pLAjc" value="ctrl" />
       </node>
     </node>
   </node>

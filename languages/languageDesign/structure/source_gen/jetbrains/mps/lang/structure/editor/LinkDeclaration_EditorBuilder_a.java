@@ -39,7 +39,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.ConceptNameStyleClass;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.NumericLiteralStyleClass;
@@ -181,11 +182,24 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     return IdEditorHelper.shownInEditor(myNode);
   }
   private EditorCell createRefCell_6h6dhy_a2a() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
+      @Override
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new LinkDeclaration_EditorBuilder_a.Inline_Builder_6h6dhy_a0c0(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "target");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_atLeastOne(cell);
+        return cell;
+      }
+    };
     provider.setRole("target");
     provider.setNoTargetText("<no target>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_EditorBuilder_a._Inline_6h6dhy_a0c0());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -199,18 +213,6 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_6h6dhy_a0c0 extends InlineCellProvider {
-    public _Inline_6h6dhy_a0c0() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new LinkDeclaration_EditorBuilder_a.Inline_Builder_6h6dhy_a0c0(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_6h6dhy_a0c0 extends AbstractEditorBuilder {
     @NotNull
@@ -350,11 +352,24 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
     return editorCell;
   }
   private EditorCell createRefCell_6h6dhy_b5c0() {
-    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext());
+    CellProviderWithRole provider = new RefCellCellProvider(myNode, getEditorContext()) {
+
+      @Override
+      protected EditorCell createRefCell(EditorContext context, final SNode effectiveNode, SNode node) {
+        EditorCell cell = getUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+          public EditorCell compute() {
+            return new LinkDeclaration_EditorBuilder_a.Inline_Builder_6h6dhy_a1f2a(getEditorContext(), myNode, effectiveNode).createCell();
+          }
+        }, effectiveNode, "specializedLink");
+        CellUtil.setupIDeprecatableStyles(effectiveNode, cell);
+        setSemanticNodeToCells(cell, myNode);
+        installDeleteActions_nullable_reference(cell);
+        return cell;
+      }
+    };
     provider.setRole("specializedLink");
     provider.setNoTargetText("<none>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new LinkDeclaration_EditorBuilder_a._Inline_6h6dhy_a1f2a());
     editorCell = provider.createEditorCell(getEditorContext());
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -367,18 +382,6 @@ import jetbrains.mps.lang.structure.editor.structure_StyleSheet.KeywordStyleClas
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  public static class _Inline_6h6dhy_a1f2a extends InlineCellProvider {
-    public _Inline_6h6dhy_a1f2a() {
-      super();
-    }
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return createEditorCell(editorContext, getSNode());
-    }
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      // looks like getRefNode() == node 
-      return new LinkDeclaration_EditorBuilder_a.Inline_Builder_6h6dhy_a1f2a(editorContext, getRefNode(), node).createCell();
-    }
   }
   /*package*/ static class Inline_Builder_6h6dhy_a1f2a extends AbstractEditorBuilder {
     @NotNull

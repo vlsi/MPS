@@ -322,10 +322,10 @@
       <property role="eg7rD" value="false" />
       <property role="TrG5h" value="myProject" />
       <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="4oi2Bf2q_eD" role="1B3o_S" />
       <node concept="3uibUv" id="1lS_qvri4mL" role="1tU5fm">
         <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
+      <node concept="3Tm6S6" id="4oi2Bf2q_eD" role="1B3o_S" />
     </node>
     <node concept="312cEg" id="1pyYjDPR9ZY" role="jymVt">
       <property role="TrG5h" value="myModule" />
@@ -1840,6 +1840,9 @@
               <node concept="2ShNRf" id="1pyYjDPRa2i" role="37wK5m">
                 <node concept="1pGfFk" id="1pyYjDPRa2j" role="2ShVmc">
                   <ref role="37wK5l" to="dxuu:~DefaultComboBoxModel.&lt;init&gt;(java.lang.Object[])" resolve="DefaultComboBoxModel" />
+                  <node concept="3uibUv" id="1lS_qvri$nb" role="1pMfVU">
+                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+                  </node>
                   <node concept="2OqwBi" id="6BEHsuXlmA7" role="37wK5m">
                     <node concept="liA8E" id="6BEHsuXly40" role="2OqNvi">
                       <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
@@ -1862,9 +1865,6 @@
                     <node concept="37vLTw" id="6BEHsuXlm1m" role="2Oq$k0">
                       <ref role="3cqZAo" node="6BEHsuXjPto" resolve="stereotypes" />
                     </node>
-                  </node>
-                  <node concept="3uibUv" id="1lS_qvri$nb" role="1pMfVU">
-                    <ref role="3uigEE" to="wyt6:~String" resolve="String" />
                   </node>
                 </node>
               </node>
@@ -2149,11 +2149,11 @@
               <node concept="2ShNRf" id="5f5B$0GHJP$" role="37wK5m">
                 <node concept="1pGfFk" id="5f5B$0GHTjE" role="2ShVmc">
                   <ref role="37wK5l" to="dxuu:~DefaultComboBoxModel.&lt;init&gt;(java.lang.Object[])" resolve="DefaultComboBoxModel" />
-                  <node concept="1rXfSq" id="5f5B$0GVaMm" role="37wK5m">
-                    <ref role="37wK5l" node="5f5B$0GPkxH" resolve="getStorageFormats" />
-                  </node>
                   <node concept="3uibUv" id="1lS_qvrj6Cu" role="1pMfVU">
                     <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+                  </node>
+                  <node concept="1rXfSq" id="5f5B$0GVaMm" role="37wK5m">
+                    <ref role="37wK5l" node="5f5B$0GPkxH" resolve="getStorageFormats" />
                   </node>
                 </node>
               </node>
@@ -2173,6 +2173,9 @@
                     <property role="2bfB8j" value="true" />
                     <ref role="1Y3XeK" to="lzb2:~ColoredListCellRenderer" resolve="ColoredListCellRenderer" />
                     <ref role="37wK5l" to="lzb2:~ColoredListCellRenderer.&lt;init&gt;()" resolve="ColoredListCellRenderer" />
+                    <node concept="3uibUv" id="1lS_qvrjfQC" role="2Ghqu4">
+                      <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+                    </node>
                     <node concept="3Tm1VV" id="5f5B$0GMfg1" role="1B3o_S" />
                     <node concept="3clFb_" id="5f5B$0GMfiL" role="jymVt">
                       <property role="1EzhhJ" value="false" />
@@ -2215,19 +2218,16 @@
                           <node concept="1rXfSq" id="5f5B$0GVyXn" role="3clFbG">
                             <ref role="37wK5l" to="lzb2:~SimpleColoredComponent.append(java.lang.String):com.intellij.ui.SimpleColoredComponent" resolve="append" />
                             <node concept="2OqwBi" id="5f5B$0GWYDC" role="37wK5m">
-                              <node concept="liA8E" id="5f5B$0GX77m" role="2OqNvi">
-                                <ref role="37wK5l" to="dush:~ModelFactoryType.getFormatTitle():java.lang.String" resolve="getFormatTitle" />
-                              </node>
                               <node concept="37vLTw" id="1lS_qvrjrDE" role="2Oq$k0">
                                 <ref role="3cqZAo" node="5f5B$0GMfiR" resolve="factoryType" />
+                              </node>
+                              <node concept="liA8E" id="5f5B$0GX77m" role="2OqNvi">
+                                <ref role="37wK5l" to="dush:~ModelFactoryType.getFormatTitle():java.lang.String" resolve="getFormatTitle" />
                               </node>
                             </node>
                           </node>
                         </node>
                       </node>
-                    </node>
-                    <node concept="3uibUv" id="1lS_qvrjfQC" role="2Ghqu4">
-                      <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
                     </node>
                   </node>
                 </node>
@@ -2310,12 +2310,6 @@
         <node concept="3cpWs8" id="5f5B$0GQHqa" role="3cqZAp">
           <node concept="3cpWsn" id="5f5B$0GQHqb" role="3cpWs9">
             <property role="TrG5h" value="result" />
-            <node concept="3uibUv" id="5f5B$0GQHq8" role="1tU5fm">
-              <ref role="3uigEE" to="33ny:~List" resolve="List" />
-              <node concept="3uibUv" id="1lS_qvrk7Nf" role="11_B2D">
-                <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
-              </node>
-            </node>
             <node concept="2OqwBi" id="1lS_qvrkbOU" role="33vP2m">
               <node concept="2YIFZM" id="1lS_qvrkbOV" role="2Oq$k0">
                 <ref role="37wK5l" to="ends:~ModelFactoryService.getInstance():jetbrains.mps.extapi.persistence.ModelFactoryService" resolve="getInstance" />
@@ -2323,6 +2317,12 @@
               </node>
               <node concept="liA8E" id="1lS_qvrkbOW" role="2OqNvi">
                 <ref role="37wK5l" to="ends:~ModelFactoryService.getFactoryTypes():java.util.List" resolve="getFactoryTypes" />
+              </node>
+            </node>
+            <node concept="3uibUv" id="5f5B$0GQHq8" role="1tU5fm">
+              <ref role="3uigEE" to="33ny:~List" resolve="List" />
+              <node concept="3uibUv" id="1lS_qvrk7Nf" role="11_B2D">
+                <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
               </node>
             </node>
           </node>
@@ -2333,6 +2333,9 @@
               <ref role="37wK5l" to="33ny:~List.toArray(java.lang.Object[]):java.lang.Object[]" resolve="toArray" />
               <node concept="2ShNRf" id="5f5B$0GTxh2" role="37wK5m">
                 <node concept="3$_iS1" id="5f5B$0GTMfP" role="2ShVmc">
+                  <node concept="3uibUv" id="1lS_qvrkvEm" role="3$_nBY">
+                    <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
+                  </node>
                   <node concept="3$GHV9" id="5f5B$0GTMfR" role="3$GQph">
                     <node concept="2OqwBi" id="5f5B$0GUASA" role="3$I4v7">
                       <node concept="liA8E" id="5f5B$0GUN0_" role="2OqNvi">
@@ -2342,9 +2345,6 @@
                         <ref role="3cqZAo" node="5f5B$0GQHqb" resolve="result" />
                       </node>
                     </node>
-                  </node>
-                  <node concept="3uibUv" id="1lS_qvrkvEm" role="3$_nBY">
-                    <ref role="3uigEE" to="dush:~ModelFactoryType" resolve="ModelFactoryType" />
                   </node>
                 </node>
               </node>
@@ -2862,14 +2862,6 @@
                     <node concept="3clFbS" id="2OVU6XAacf$" role="2LFqv$">
                       <node concept="3clFbJ" id="2OVU6XAacy0" role="3cqZAp">
                         <node concept="1Wc70l" id="2OVU6XAadnu" role="3clFbw">
-                          <node concept="2ZW3vV" id="2OVU6XAacSc" role="3uHU7B">
-                            <node concept="37vLTw" id="2n112xqZ9xG" role="2ZW6bz">
-                              <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
-                            </node>
-                            <node concept="3uibUv" id="2OVU6XAacY$" role="2ZW6by">
-                              <ref role="3uigEE" to="ends:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
-                            </node>
-                          </node>
                           <node concept="2YIFZM" id="1lS_qvrkBWn" role="3uHU7w">
                             <ref role="1Pybhc" to="33ny:~Objects" resolve="Objects" />
                             <ref role="37wK5l" to="33ny:~Objects.equals(java.lang.Object,java.lang.Object):boolean" resolve="equals" />
@@ -2895,6 +2887,14 @@
                               <node concept="liA8E" id="3n24nrxKmwk" role="2OqNvi">
                                 <ref role="37wK5l" to="ends:~FileBasedModelRoot.getContentRoot():java.lang.String" resolve="getContentRoot" />
                               </node>
+                            </node>
+                          </node>
+                          <node concept="2ZW3vV" id="2OVU6XAacSc" role="3uHU7B">
+                            <node concept="37vLTw" id="2n112xqZ9xG" role="2ZW6bz">
+                              <ref role="3cqZAo" node="2OVU6XAacf_" resolve="modelRoot" />
+                            </node>
+                            <node concept="3uibUv" id="2OVU6XAacY$" role="2ZW6by">
+                              <ref role="3uigEE" to="ends:~FileBasedModelRoot" resolve="FileBasedModelRoot" />
                             </node>
                           </node>
                         </node>
@@ -3034,11 +3034,11 @@
                           <node concept="3cpWs8" id="1NKXwjPQ_hO" role="3cqZAp">
                             <node concept="3cpWsn" id="1NKXwjPQ_hP" role="3cpWs9">
                               <property role="TrG5h" value="result" />
-                              <node concept="3uibUv" id="1NKXwjPQ_hQ" role="1tU5fm">
-                                <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
-                              </node>
                               <node concept="2AHcQZ" id="1lS_qvrhzVG" role="2AJF6D">
                                 <ref role="2AI5Lk" to="mhfm:~NotNull" resolve="NotNull" />
+                              </node>
+                              <node concept="3uibUv" id="1NKXwjPQ_hQ" role="1tU5fm">
+                                <ref role="3uigEE" to="mhbf:~EditableSModel" resolve="EditableSModel" />
                               </node>
                             </node>
                           </node>
@@ -3371,6 +3371,12 @@
         </node>
         <node concept="3clFbH" id="45TH7vNIK_q" role="3cqZAp" />
         <node concept="3clFbJ" id="4tC7IH_ZtKh" role="3cqZAp">
+          <node concept="3y3z36" id="45TH7vNFGFW" role="3clFbw">
+            <node concept="37vLTw" id="4tC7IH_ZtRG" role="3uHU7B">
+              <ref role="3cqZAo" node="1pyYjDPRa0n" resolve="myResult" />
+            </node>
+            <node concept="10Nm6u" id="4tC7IH_Zuxq" role="3uHU7w" />
+          </node>
           <node concept="3clFbS" id="4tC7IH_ZtKk" role="3clFbx">
             <node concept="3cpWs8" id="1kPkRp81JoN" role="3cqZAp">
               <node concept="3cpWsn" id="1kPkRp81JoO" role="3cpWs9">
@@ -3447,12 +3453,6 @@
                 </node>
               </node>
             </node>
-          </node>
-          <node concept="3y3z36" id="45TH7vNFGFW" role="3clFbw">
-            <node concept="37vLTw" id="4tC7IH_ZtRG" role="3uHU7B">
-              <ref role="3cqZAo" node="1pyYjDPRa0n" resolve="myResult" />
-            </node>
-            <node concept="10Nm6u" id="4tC7IH_Zuxq" role="3uHU7w" />
           </node>
         </node>
       </node>

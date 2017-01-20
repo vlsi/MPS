@@ -31,8 +31,11 @@ public class MarkSniffer extends KajaFrame {
     if (isMark()) {
       pickAll_from_library_Filling_routine();
       while (!(heading(Direction.west))) {
-        turnLeft();
-        pause();
+        try {
+          turnLeft();
+          pause();
+        } finally {
+        }
       }
     } else {
       safeStep_routine();
@@ -165,15 +168,24 @@ public class MarkSniffer extends KajaFrame {
   }
   public void turnRight_from_library_Common_routine() {
     for (int indexVariable_ormfpz_a0e = 0; indexVariable_ormfpz_a0e < 3; indexVariable_ormfpz_a0e++) {
-      turnLeft();
-      pause();
+      try {
+        turnLeft();
+        pause();
+      } finally {
+      }
     }
   }
   public void turnAround_from_library_Common_routine() {
-    turnLeft();
-    pause();
-    turnLeft();
-    pause();
+    try {
+      turnLeft();
+      pause();
+    } finally {
+    }
+    try {
+      turnLeft();
+      pause();
+    } finally {
+    }
   }
   public void fetch_from_library_Common_routine() {
     if (isMark()) {

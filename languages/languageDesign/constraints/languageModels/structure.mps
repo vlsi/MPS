@@ -2,10 +2,10 @@
 <model ref="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)">
   <persistence version="9" />
   <languages>
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
-    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="3" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
-    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure" version="-1" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
+    <use id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources" version="-1" />
   </languages>
   <imports>
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -19,7 +19,10 @@
       </concept>
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
-      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9" />
+      <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
+        <property id="1225118933224" name="comment" index="YLQ7P" />
+      </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
         <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
@@ -302,11 +305,15 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="return false if node cannot be a child of parentNode" />
-    <property role="TrG5h" value="ConstraintFunction_CanBeAChild" />
+    <property role="TrG5h" value="ConstraintFunction_CanBeAChild_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="EcuMT" value="1202989531578" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="5O58T9kTi91" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunction_CanBeAChild instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hwnLn5r">
     <property role="R5$K7" value="false" />
@@ -326,22 +333,30 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="return false if node cannot be a parent of given node" />
-    <property role="TrG5h" value="ConstraintFunction_CanBeAParent" />
+    <property role="TrG5h" value="ConstraintFunction_CanBeAParent_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="EcuMT" value="1203001093456" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="5O58T9kTi93" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunction_CanBeAParent_Old instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hwotxKp">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ConstraintFunctionParameter_childConcept" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_childConceptNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="childConcept" />
     <property role="R4oN_" value="the concept of the child/descendant node to test against" />
     <property role="EcuMT" value="1203001236505" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="3ISr2Yi73tz" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunctionParameter_childConcept instead" />
+    </node>
     <node concept="PrWs8" id="1653mnvB5Zj" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -349,13 +364,17 @@
   <node concept="1TIwiD" id="hwoXsFk">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="TrG5h" value="ConstraintFunctionParameter_link" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_linkNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="link" />
     <property role="R4oN_" value="the containment link in question between the parent and the (potential or existing) child" />
     <property role="EcuMT" value="1203009604308" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="3ISr2Yi80g2" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunctionParameter_link instead" />
+    </node>
     <node concept="PrWs8" id="1653mnvB6$E" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -363,13 +382,17 @@
   <node concept="1TIwiD" id="hyXa2tv">
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
-    <property role="R4oN_" value="target concept (useful for specialized links)" />
-    <property role="TrG5h" value="ConstraintFunctionParameter_linkTarget" />
+    <property role="R4oN_" value="target concept node (useful for specialized links)" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_linkTargetNode" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Parameters" />
     <property role="34LRSv" value="linkTarget" />
     <property role="EcuMT" value="1205764368223" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="4OU1gA0vgrS" role="lGtFl">
+      <property role="YLQ7P" value="use ConstraintFunctionParameter_linkTarget instead" />
+      <property role="YLPcu" value="3.5" />
+    </node>
     <node concept="PrWs8" id="1653mnvB5YZ" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -437,11 +460,11 @@
       <property role="IQ2ns" value="1213101058038" />
       <ref role="20lvS9" node="gREP7xi" resolve="NodeDefaultSearchScope" />
     </node>
-    <node concept="1TJgyj" id="hDMLUfL" role="1TKVEi">
+    <node concept="1TJgyj" id="5O58T9kUKnq" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="canBeChild" />
-      <property role="IQ2ns" value="1213106463729" />
-      <ref role="20lvS9" node="hwnKS6U" resolve="ConstraintFunction_CanBeAChild" />
+      <property role="IQ2ns" value="6702802731807737306" />
+      <ref role="20lvS9" node="5O58T9kTi97" resolve="ConstraintFunction_CanBeAChild" />
     </node>
     <node concept="1TJgyj" id="hQNY24t" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -449,17 +472,38 @@
       <property role="IQ2ns" value="1227085062429" />
       <ref role="20lvS9" node="hQNXJYV" resolve="ConstraintFunction_CanBeARoot" />
     </node>
-    <node concept="1TJgyj" id="hDMLXKE" role="1TKVEi">
+    <node concept="1TJgyj" id="5O58T9kTYqC" role="1TKVEi">
+      <property role="IQ2ns" value="6702802731807532712" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="canBeParent" />
+      <ref role="20lvS9" node="5O58T9kTz2F" resolve="ConstraintFunction_CanBeAParent" />
+    </node>
+    <node concept="1TJgyj" id="5O58T9kTYqU" role="1TKVEi">
+      <property role="IQ2ns" value="6702802731807532730" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canBeAncestor" />
+      <ref role="20lvS9" node="5O58T9kT$5q" resolve="ConstraintFunction_CanBeAnAncestor" />
+    </node>
+    <node concept="1TJgyj" id="hDMLUfL" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canBeChild_Old" />
+      <property role="IQ2ns" value="1213106463729" />
+      <ref role="20lvS9" node="hwnKS6U" resolve="ConstraintFunction_CanBeAChild_Old" />
+      <node concept="asaX9" id="5O58T9kY2Cq" role="lGtFl" />
+    </node>
+    <node concept="1TJgyj" id="hDMLXKE" role="1TKVEi">
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="canBeParent_Old" />
       <property role="IQ2ns" value="1213106478122" />
-      <ref role="20lvS9" node="hwosYPg" resolve="ConstraintFunction_CanBeAParent" />
+      <ref role="20lvS9" node="hwosYPg" resolve="ConstraintFunction_CanBeAParent_Old" />
+      <node concept="asaX9" id="5O58T9kSJf7" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="6NUs9sSEnlw" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="canBeAncestor" />
+      <property role="20kJfa" value="canBeAncestor_Old" />
       <property role="IQ2ns" value="7852712695066883424" />
-      <ref role="20lvS9" node="6O3HjXnmTq5" resolve="ConstraintFunction_CanBeAnAncestor" />
+      <ref role="20lvS9" node="6O3HjXnmTq5" resolve="ConstraintFunction_CanBeAnAncestor_Old" />
+      <node concept="asaX9" id="5O58T9kSJf9" role="lGtFl" />
     </node>
     <node concept="1TJgyj" id="3gr0SYj1Yno" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
@@ -565,11 +609,15 @@
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
   </node>
   <node concept="1TIwiD" id="6O3HjXnmTq5">
-    <property role="TrG5h" value="ConstraintFunction_CanBeAnAncestor" />
+    <property role="TrG5h" value="ConstraintFunction_CanBeAnAncestor_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
     <property role="EcuMT" value="7855321458717464197" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="asaX9" id="5O58T9kTi95" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunction_CanBeAnAncestor_Old instead" />
+    </node>
   </node>
   <node concept="1TIwiD" id="31gaXo4G$ca">
     <property role="R5$K7" value="false" />
@@ -616,6 +664,10 @@
     <property role="34LRSv" value="containingLink" />
     <property role="EcuMT" value="2978993595262518683" />
     <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+    <node concept="asaX9" id="4OU1gA0uWhI" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use ConstraintFunctionParameter_containmentLink instead" />
+    </node>
     <node concept="PrWs8" id="1653mnvAmr0" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
@@ -703,12 +755,16 @@
     <property role="R5$K7" value="false" />
     <property role="R5$K2" value="false" />
     <property role="R4oN_" value="creates scope for the reference (jetbrains.mps.scope.Scope)" />
-    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope" />
+    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope_Old" />
     <property role="2_RsDV" value="none" />
     <property role="3GE5qa" value="Functions" />
-    <property role="34LRSv" value="reference scope" />
+    <property role="34LRSv" value="reference scope (deprecated)" />
     <property role="EcuMT" value="5676632058862809931" />
     <ref role="1TJDcQ" node="gI1PhqO" resolve="ConstraintFunction_ReferentSearchScope_AbstractBase" />
+    <node concept="asaX9" id="4OU1gA0uRQC" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="Use ConstraintFunction_ReferentSearchScope_Scope instead" />
+    </node>
     <node concept="PrWs8" id="4V7sGwd7bdc" role="PzmwI">
       <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
     </node>
@@ -733,6 +789,74 @@
     <property role="3GE5qa" value="Functions" />
     <property role="EcuMT" value="1426851521646451314" />
     <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="3ISr2Yi73Ul">
+    <property role="EcuMT" value="4303308395523096213" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_childConcept" />
+    <property role="34LRSv" value="childConcept" />
+    <property role="R4oN_" value="the concept of the child/descendant node to test against" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="5O58T9kT$5q">
+    <property role="TrG5h" value="ConstraintFunction_CanBeAnAncestor" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Functions" />
+    <property role="EcuMT" value="6702802731807424858" />
+    <property role="R4oN_" value="return false if node cannot be a ancestor of given node" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="3ISr2Yi80g4">
+    <property role="EcuMT" value="4303308395523343364" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_link" />
+    <property role="34LRSv" value="link" />
+    <property role="R4oN_" value="the containment link in question between the parent and the (potential or existing) child" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="5O58T9kTi97">
+    <property role="R5$K7" value="false" />
+    <property role="R5$K2" value="false" />
+    <property role="R4oN_" value="return false if node cannot be a child of parentNode" />
+    <property role="TrG5h" value="ConstraintFunction_CanBeAChild" />
+    <property role="2_RsDV" value="none" />
+    <property role="3GE5qa" value="Functions" />
+    <property role="EcuMT" value="6702802731807351367" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0uWhK">
+    <property role="EcuMT" value="5564765827938108528" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_containmentLink" />
+    <property role="34LRSv" value="containmentLink" />
+    <property role="R4oN_" value="containment link between contextNode and its child" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0uS0v">
+    <property role="EcuMT" value="5564765827938091039" />
+    <property role="3GE5qa" value="Functions" />
+    <property role="TrG5h" value="ConstraintFunction_ReferentSearchScope_Scope" />
+    <property role="34LRSv" value="reference scope" />
+    <property role="R4oN_" value="creates scope for the reference (jetbrains.mps.scope.Scope)" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+    <node concept="PrWs8" id="4OU1gA0uS0w" role="PzmwI">
+      <ref role="PrY4T" node="7ipADkTf7eE" resolve="NodeScopeFactory" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="5O58T9kTz2F">
+    <property role="EcuMT" value="6702802731807420587" />
+    <property role="3GE5qa" value="Functions" />
+    <property role="TrG5h" value="ConstraintFunction_CanBeAParent" />
+    <property role="R4oN_" value="return false if node cannot be a parent of given node" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="4OU1gA0vgAx">
+    <property role="EcuMT" value="5564765827938191777" />
+    <property role="3GE5qa" value="Parameters" />
+    <property role="TrG5h" value="ConstraintFunctionParameter_linkTarget" />
+    <property role="34LRSv" value="linkTarget" />
+    <property role="R4oN_" value="target concept (useful for specialized links)" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 

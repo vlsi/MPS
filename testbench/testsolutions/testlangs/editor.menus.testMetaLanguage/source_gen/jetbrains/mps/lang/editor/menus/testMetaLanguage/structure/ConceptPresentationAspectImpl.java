@@ -9,10 +9,10 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
-  private final ConceptPresentation props_TransformationFeature_Optional = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationFeature_Required = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationFeature_Unavailable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationLocation_Test = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_TransformationFeature_Optional = new ConceptPresentationBuilder().shortDesc("optional feature").create();
+  private final ConceptPresentation props_TransformationFeature_Required = new ConceptPresentationBuilder().shortDesc("required feature").create();
+  private final ConceptPresentation props_TransformationFeature_Unavailable = new ConceptPresentationBuilder().shortDesc("unavailable feature").create();
+  private final ConceptPresentation props_TransformationLocation_Test = new ConceptPresentationBuilder().shortDesc("location for use in tests").create();
   private final ConceptPresentation props_TransformationLocation_WithFeatures = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationLocation_WithoutFeatures = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenu_Test = new ConceptPresentationBuilder().create();

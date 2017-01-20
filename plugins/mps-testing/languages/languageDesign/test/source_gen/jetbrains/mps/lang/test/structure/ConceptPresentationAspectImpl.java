@@ -26,7 +26,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EditorExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_EditorOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
-  private final ConceptPresentation props_ExpressionContainer = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ExpressionContainer = new ConceptPresentationBuilder().shortDesc("expression container (used inside test nodes)").create();
   private final ConceptPresentation props_IChecksRules = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_INodeAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_INodesTestMethod = new ConceptPresentationBuilder().create();
@@ -43,7 +43,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_MockScopeProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NamedNodeReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeCheckOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NodeCheckOperation = new ConceptPresentationBuilder().shortDesc("tag for checking either type errors or error messages, attached to some node").create();
   private final ConceptPresentation props_NodeConstraintsErrorCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeConstraintsWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeErrorCheckOperation = new ConceptPresentationBuilder().create();
@@ -52,12 +52,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeOperationsContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodePropertiesContainer = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_NodeReachable = new ConceptPresentationBuilder().deprecated(true).create();
-  private final ConceptPresentation props_NodeRuleCheckOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NodeRuleCheckOperation = new ConceptPresentationBuilder().shortDesc("check specific rule").create();
   private final ConceptPresentation props_NodeTypeCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeTypeSetCheckOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeTypeSystemErrorCheckOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NodeTypeSystemErrorCheckOperation = new ConceptPresentationBuilder().shortDesc("check for unknown typesystem error").create();
   private final ConceptPresentation props_NodeTypeSystemRuleCheckOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodeTypeSystemWarningCheckOperation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_NodeTypeSystemWarningCheckOperation = new ConceptPresentationBuilder().shortDesc("check for unknown typesystem warning").create();
   private final ConceptPresentation props_NodeUnknownErrorCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeUnknownWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeUnreachable = new ConceptPresentationBuilder().deprecated(true).create();

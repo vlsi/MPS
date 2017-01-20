@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
@@ -36,7 +37,7 @@ public class BLC_substitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_a0(), new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_b0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_a0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")), new ConstraintsFilteringSubstituteMenuPartDecorator(new BLC_substitute.SubstituteMenuPart_Group_4r5ods_a.SubstituteMenuPart_Action_4r5ods_b0(), MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x11257567b07L, "jetbrains.mps.baseLanguage.collections.structure.SortDirection")));
     }
     private class SubstituteMenuPart_Action_4r5ods_a0 extends SingleItemSubstituteMenuPart {
 

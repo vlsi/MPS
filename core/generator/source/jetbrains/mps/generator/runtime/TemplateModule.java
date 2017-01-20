@@ -29,22 +29,13 @@ import java.util.Set;
 public interface TemplateModule extends GeneratorRuntime {
 
   /**
-   * @deprecated use {@link GeneratorRuntime#getModuleReference()} instead
+   * @return collection (possibly empty) of priority rules defined in this generator module, never {@code null}.
    */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  SModuleReference getReference();
-
-  /**
-   * @return could be null with MPS-3.3 code, ToRemove indicates we enforce non-null in 3.4 and need to update callers once 3.3 is history
-   */
-  @ToRemove(version = 3.4)
   Collection<TemplateMappingPriorityRule> getPriorities();
 
   /**
-   * @return could be null with MPS-3.3, though generally not empty, we do not account for null value. Update javadoc (force !null) after 3.4 release
+   * @return set of models in the generator module, generally not empty, never {@code null}.
    */
-  @ToRemove(version = 3.4)
   Collection<TemplateModel> getModels();
 
   /**

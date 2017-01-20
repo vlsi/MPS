@@ -12,15 +12,16 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
 import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.runtime.IconResource;
@@ -50,7 +51,7 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new AddMenuPart_ParameterizedSubstitute.SubstituteMenuPart_Group_qp9nsj_a.SubstituteMenuPart_Parameterized_qp9nsj_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new AddMenuPart_ParameterizedSubstitute.SubstituteMenuPart_Group_qp9nsj_a.SubstituteMenuPart_Parameterized_qp9nsj_a0(), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild")));
     }
     private class SubstituteMenuPart_Parameterized_qp9nsj_a0 extends ParameterizedMenuPart<SConcept, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
@@ -61,11 +62,11 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
       @Nullable
       @Override
       protected Iterable<? extends SConcept> getParameters(SubstituteMenuContext _context) {
-        SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
-        // compilation test for all passed parameters 
+        // additional compilation test for all passed parameters 
         boolean tmpVar = _context.getParentNode() != null;
         tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-        tmpVar = tmpVar && conceptNode != null;
+        tmpVar = tmpVar && _context.getLink() != null;
+        tmpVar = tmpVar && _context.getEditorContext() != null;
         tmpVar = tmpVar && _context.getModel() != null;
 
         return ListSequence.fromList(SConceptOperations.getAllSubConcepts2(MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1671a9caL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild"), _context.getModel())).where(new IWhereFilter<SConcept>() {
@@ -95,17 +96,16 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
           @Nullable
           @Override
           public SNode createNode(@NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
             SNode result = SConceptOperations.createNewNode(SNodeOperations.asInstanceConcept(myParameterObject));
-            if (eq_qp9nsj_a0k0d4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
+            if (eq_qp9nsj_a0j0d4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
               SLinkOperations.addNewChild(SNodeOperations.cast(result, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, 0x7f805f0c2dd46343L, "child1"), MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x7f805f0c2dd45b4eL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child"));
             }
             return result;
@@ -113,13 +113,12 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
           @Nullable
           @Override
           public String getMatchingText(@NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
             return myParameterObject.getName();
@@ -127,13 +126,12 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
           @Nullable
           @Override
           public String getDescriptionText(@NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
             return "Create new instance of concept: " + myParameterObject.getName();
@@ -141,45 +139,42 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
           @Nullable
           @Override
           public SNode getType(@NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
-            boolean useNodeType = eq_qp9nsj_a0a9a6e2d1(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
-            return (useNodeType ? _quotation_createNode_qp9nsj_a0k0a2a0a_0() : _quotation_createNode_qp9nsj_a0k0a2a0a((SNode) SNodeOperations.asNode(myParameterObject)));
+            boolean useNodeType = eq_qp9nsj_a0a8a6e2d1(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2c99ba4dd5ff2533L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept"));
+            return (useNodeType ? _quotation_createNode_qp9nsj_a0j0a2a0a_0() : _quotation_createNode_qp9nsj_a0j0a2a0a((SNode) SNodeOperations.asNode(myParameterObject)));
           }
           @Nullable
           @Override
           public IconResource getIcon(@NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && _context.getCurrentTargetNode() != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
             return IconResourceUtil.getIconResourceForNode(SNodeOperations.asNode(myParameterObject));
           }
           @Override
           public void select(@NotNull SNode createdNode, @NotNull String pattern) {
-            SNode conceptNode = (_context.getLink() == null ? null : ((SNode) _context.getLink().getTargetConcept().getDeclarationNode()));
             // compilation test for all passed parameters 
             boolean tmpVar = pattern != null;
             tmpVar = tmpVar && myParameterObject != null;
             tmpVar = tmpVar && _context.getParentNode() != null;
             tmpVar = tmpVar && createdNode != null;
-            tmpVar = tmpVar && conceptNode != null;
+            tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
             tmpVar = tmpVar && _context.getEditorContext() != null;
 
-            if (eq_qp9nsj_a0k0i4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2"))) {
+            if (eq_qp9nsj_a0j0i4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e1672224dL, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2"))) {
               // selecting a custom cell 
               _context.getEditorContext().flushEvents();
               EditorCell createdNodeCell = _context.getEditorContext().getEditorComponent().findNodeCell(createdNode);
@@ -192,7 +187,7 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
                 return;
               }
             }
-            if (eq_qp9nsj_a0l0i4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
+            if (eq_qp9nsj_a0k0i4c3b(myParameterObject, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1"))) {
               // returning node to select 
               SelectionUtil.selectLabelCellAnSetCaret(_context.getEditorContext(), ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(createdNode, MetaAdapterFactory.getConcept(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1")), MetaAdapterFactory.getContainmentLink(0x737ed1fffa634ebcL, 0xa834435499b23c64L, 0x2365c14e167220f9L, 0x7f805f0c2dd46343L, "child1"))).first(), SelectionManager.FIRST_ERROR_CELL + "|" + SelectionManager.FOCUS_POLICY_CELL + "|" + SelectionManager.FIRST_EDITABLE_CELL + "|" + SelectionManager.FIRST_CELL, -1);
               return;
@@ -207,29 +202,29 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
   private static boolean neq_qp9nsj_a0a0a0a0a0h0b3b(Object a, Object b) {
     return !(((a != null ? a.equals(b) : a == b)));
   }
-  private static boolean eq_qp9nsj_a0k0d4c3b(Object a, Object b) {
+  private static boolean eq_qp9nsj_a0j0d4c3b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_qp9nsj_a0a9a6e2d1(Object a, Object b) {
+  private static boolean eq_qp9nsj_a0a8a6e2d1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static SNode _quotation_createNode_qp9nsj_a0k0a2a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_qp9nsj_a0j0a2a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, MetaAdapterFactory.getReferenceLink(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, 0x1090e46ca51L, "concept"), (SNode) parameter_1);
     return quotedNode_2;
   }
-  private static SNode _quotation_createNode_qp9nsj_a0k0a2a0a_0() {
+  private static SNode _quotation_createNode_qp9nsj_a0j0a2a0a_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x108f968b3caL, "jetbrains.mps.lang.smodel.structure.SNodeType"), null, null, false);
     return quotedNode_1;
   }
-  private static boolean eq_qp9nsj_a0k0i4c3b(Object a, Object b) {
+  private static boolean eq_qp9nsj_a0j0i4c3b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_qp9nsj_a0l0i4c3b(Object a, Object b) {
+  private static boolean eq_qp9nsj_a0k0i4c3b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

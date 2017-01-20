@@ -18,8 +18,7 @@ package jetbrains.mps.lang.editor.menus.transformation;
 import jetbrains.mps.lang.editor.menus.substitute.SubstituteMenuItemUtil;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.transformation.CompletionActionItem;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
+import jetbrains.mps.openapi.editor.menus.transformation.ConstraintsVerifiableActionItem;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -27,9 +26,12 @@ import org.jetbrains.mps.openapi.model.SNode;
  * @author simon
  */
 public class CompletionActionItemUtil {
-  public static SAbstractConcept getOutputConcept(CompletionActionItem item) {
+  public static SAbstractConcept getWrappedOutputConcept(CompletionActionItem item) {
     if (item instanceof SubstituteMenuItemAsActionItem) {
-      return ((SubstituteMenuItemAsActionItem) item).getSubstituteItem().getOutputConcept();
+      return SubstituteMenuItemUtil.getWrappedOutputConcept(((SubstituteMenuItemAsActionItem) item).getSubstituteItem());
+    }
+    if (item instanceof ConstraintsVerifiableActionItem) {
+      return ((ConstraintsVerifiableActionItem) item).getOutputConcept();
     }
     return null;
   }

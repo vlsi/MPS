@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2016 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,13 @@ import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.generator.runtime.TemplateModuleBase;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
+import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -29,17 +35,19 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SDependency;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * Lifecycle of the module is not quite well defined now, it's assumed instances are not kept too long
@@ -58,19 +66,54 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
     this.generator = generator;
   }
 
+  @NotNull
   @Override
   public LanguageRuntime getSourceLanguage() {
     return sourceLanguage;
   }
 
+
+  @NotNull
   @Override
-  public SModuleReference getReference() {
+  public SModuleReference getModuleReference() {
     return generator.getModuleReference();
   }
 
   @Override
   public List<TemplateMappingPriorityRule> getPriorities() {
-    return Collections.<TemplateMappingPriorityRule>unmodifiableList(generator.getModuleDescriptor().getPriorityRules());
+    return generator.getModuleDescriptor().getPriorityRules().stream().map(this::fixup).collect(Collectors.toList());
+  }
+
+  /**
+   * We need to translate 'design' MPR into 'deployed' MPR (we need different behavior in RT and DT, alas, we use the same class).
+   * Here we populate simple reference with actual MC name not to depend from SRepository (see {@link MappingConfig_AbstractRef#asString(SRepository)}.
+   * FIXME I don't really like this approach as we compute values we are unlikely to need. Proper solution is to get rid of TemplateModuleInterpreted altogether.
+   */
+  private MappingPriorityRule fixup(MappingPriorityRule r) {
+    MappingPriorityRule rv = r.getCopy();
+    fixup(rv.getLeft());
+    fixup(rv.getRight());
+    return rv;
+  }
+
+  // somewhat similar to GenerationPartitioner.RuleHelper
+  // Perhaps, I shall introduce a visitor, at last (MPR.acceptLeft(Visitor), Visitor.allOfGenerator(SModuleReference)
+  // Note, it's odd to have MC_ExternalRef as long as SimpleRef bears complete SModelReference
+  private void fixup(MappingConfig_AbstractRef mcRef) {
+    if (mcRef instanceof MappingConfig_SimpleRef) {
+      MappingConfig_SimpleRef r = (MappingConfig_SimpleRef) mcRef;
+      if (!r.isIncomplete() && !r.includesAll()) {
+        SNode mc = new SNodePointer(r.getModelUID(), r.getNodeID()).resolve(generator.getRepository());
+        if (mc != null) {
+          r.setMapConfigName(mc.getName());
+        }
+      }
+    } else if (mcRef instanceof MappingConfig_ExternalRef) {
+      fixup(((MappingConfig_ExternalRef) mcRef).getMappingConfig());
+    } else if (mcRef instanceof MappingConfig_RefSet) {
+      ((MappingConfig_RefSet) mcRef).getMappingConfigs().forEach(this::fixup);
+    }
+    // don't care about others.
   }
 
   @Override
@@ -82,11 +125,11 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
       if (myModels != null) {
         return myModels;
       }
-      ArrayList<TemplateModelInterpreted> rv = new ArrayList<TemplateModelInterpreted>();
+      ArrayList<TemplateModelInterpreted> rv = new ArrayList<>();
       for (SModel m : generator.getOwnTemplateModels()) {
         rv.add(new TemplateModelInterpreted(this, m));
       }
-      myModels = Arrays.<TemplateModel>asList(rv.toArray(new TemplateModelInterpreted[rv.size()]));
+      myModels = Arrays.asList(rv.toArray(new TemplateModelInterpreted[rv.size()]));
     }
     return myModels;
   }
@@ -95,7 +138,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   @Deprecated
   @ToRemove(version = 3.2)
   public Collection<String> getReferencedModules() {
-    List<String> result = new ArrayList<String>(2);
+    List<String> result = new ArrayList<>(2);
     for (SDependency dep : generator.getDeclaredDependencies()) {
       if (dep.getScope() != SDependencyScope.EXTENDS) {
         continue;
@@ -116,7 +159,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateModule> getExtendedGenerators() {
-    List<TemplateModule> result = new ArrayList<TemplateModule>(2);
+    List<TemplateModule> result = new ArrayList<>(2);
     for (Pair<SDependencyScope, TemplateModule> p : getReferencedGenerators()) {
       if (p.o1 == SDependencyScope.EXTENDS) {
         result.add(p.o2);
@@ -127,7 +170,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
 
   @Override
   public Collection<TemplateModule> getEmployedGenerators() {
-    List<TemplateModule> result = new ArrayList<TemplateModule>(4);
+    List<TemplateModule> result = new ArrayList<>(4);
     for (Pair<SDependencyScope, TemplateModule> p : getReferencedGenerators()) {
       if (p.o1 == SDependencyScope.DEFAULT) {
         result.add(p.o2);
@@ -161,13 +204,13 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
   }
 
   private Collection<Pair<SDependencyScope, TemplateModule>> getReferencedGenerators() {
-    List<Pair<SDependencyScope, TemplateModule>> result = new ArrayList<Pair<SDependencyScope, TemplateModule>>(5);
+    List<Pair<SDependencyScope, TemplateModule>> result = new ArrayList<>(5);
     for (SDependency dep : generator.getDeclaredDependencies()) {
       SModule referencedGenerator = dep.getTarget();
       if (referencedGenerator instanceof Generator) {
         GeneratorRuntime grt = LanguageRegistry.getInstance(generator.getRepository()).getGenerator((Generator) referencedGenerator);
         if (grt instanceof TemplateModule) {
-          result.add(new Pair<SDependencyScope, TemplateModule>(dep.getScope(), (TemplateModule) grt));
+          result.add(new Pair<>(dep.getScope(), (TemplateModule) grt));
         }
       }
     }

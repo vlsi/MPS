@@ -13,6 +13,7 @@ import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
 import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -50,7 +51,7 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a.SubstituteMenuPart_Parameterized_67nl4b_a0());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_a.SubstituteMenuPart_Parameterized_67nl4b_a0(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f9100fdL, "jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType")));
     }
     private class SubstituteMenuPart_Parameterized_67nl4b_a0 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
@@ -126,7 +127,7 @@ public class PersistentConfigurationType_Contribution extends SubstituteMenuBase
 
     @Override
     protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
-      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b.SubstituteMenuPart_Parameterized_67nl4b_a1());
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new PersistentConfigurationType_Contribution.SubstituteMenuPart_Group_67nl4b_b.SubstituteMenuPart_Parameterized_67nl4b_a1(), MetaAdapterFactory.getConcept(0x756e911c3f1f4a48L, 0xbdf5a2ceb91b723cL, 0xd244b712f91001cL, "jetbrains.mps.execution.settings.structure.PersistentConfigurationType")));
     }
     private class SubstituteMenuPart_Parameterized_67nl4b_a1 extends ParameterizedMenuPart<SNode, SubstituteMenuItem, SubstituteMenuContext> {
       @NotNull
