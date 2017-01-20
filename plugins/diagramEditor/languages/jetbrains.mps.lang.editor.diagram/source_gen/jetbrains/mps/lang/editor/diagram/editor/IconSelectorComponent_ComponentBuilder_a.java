@@ -141,6 +141,6 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_6g738i_a2b0() {
-    return EditorUtil.createSelectIconButton(myNode, getEditorContext());
+    return EditorUtil.createSelectIconButton(myNode, MetaAdapterFactory.getProperty(0x6106f6117a7442d1L, 0x80deedc5c602bfd1L, 0x5bdb7aaec13745e9L, 0x3cfdbd635b5afe8dL, "iconPath"), getEditorContext(), false);
   }
 }

@@ -400,6 +400,10 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
+        <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
+        <reference id="2644386474302386082" name="propertyDeclaration" index="355D3u" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -1806,12 +1810,19 @@
         <node concept="3gTLQM" id="4ttM7y2aZL6" role="3EZMnx">
           <node concept="3Fmcul" id="4ttM7y2aZL7" role="3FoqZy">
             <node concept="3clFbS" id="4ttM7y2aZL8" role="2VODD2">
-              <node concept="3cpWs6" id="4ttM7y2aZL9" role="3cqZAp">
-                <node concept="2YIFZM" id="18qFtJYHd9T" role="3cqZAk">
-                  <ref role="37wK5l" to="7a0s:6UDbxo8i0R2" resolve="createSelectIconButton" />
+              <node concept="3clFbF" id="5xzMQBRCx7R" role="3cqZAp">
+                <node concept="2YIFZM" id="5xzMQBRCzi0" role="3clFbG">
+                  <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
                   <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                  <node concept="pncrf" id="18qFtJYHd9U" role="37wK5m" />
-                  <node concept="1Q80Hx" id="18qFtJYHd9V" role="37wK5m" />
+                  <node concept="pncrf" id="5xzMQBRCzi1" role="37wK5m" />
+                  <node concept="355D3s" id="5xzMQBRExAW" role="37wK5m">
+                    <ref role="355D3t" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
+                    <ref role="355D3u" to="gbdf:3NXJmdrmJUd" resolve="iconPath" />
+                  </node>
+                  <node concept="1Q80Hx" id="5xzMQBRCzi2" role="37wK5m" />
+                  <node concept="3clFbT" id="5xzMQBRCzi4" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
                 </node>
               </node>
             </node>

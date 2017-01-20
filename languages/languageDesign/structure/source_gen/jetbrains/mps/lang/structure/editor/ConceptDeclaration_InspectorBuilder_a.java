@@ -21,9 +21,6 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.UrlStyleClass;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet.StringLiteralStyleClass;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Component;
-import javax.swing.JComponent;
-import jetbrains.mps.editor.runtime.EditorUtil;
 import jetbrains.mps.lang.editor.cellProviders.SingleRoleCellProvider;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
@@ -149,7 +146,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(createConstant_ueqr71_a2a());
     editorCell.addEditorCell(createProperty_ueqr71_b2a());
-    editorCell.addEditorCell(createJComponent_ueqr71_c2a());
     return editorCell;
   }
   private EditorCell createConstant_ueqr71_a2a() {
@@ -176,14 +172,6 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return manager.createNodeRoleAttributeCell(attributeConcept, provider.getRoleAttributeKind(), editorCell);
     } else
     return editorCell;
-  }
-  private EditorCell createJComponent_ueqr71_c2a() {
-    EditorCell editorCell = EditorCell_Component.createComponentCell(getEditorContext(), myNode, _QueryFunction_JComponent_ueqr71_a2c0(), "_ueqr71_c2a");
-    editorCell.setCellId("JComponent_ueqr71_c2a");
-    return editorCell;
-  }
-  private JComponent _QueryFunction_JComponent_ueqr71_a2c0() {
-    return EditorUtil.createSelectIconButton(myNode, getEditorContext(), true);
   }
   private EditorCell createCollection_ueqr71_d0() {
     EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Horizontal());

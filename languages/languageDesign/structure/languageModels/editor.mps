@@ -221,9 +221,6 @@
         <child id="414384289274424751" name="parts" index="3ft5RZ" />
       </concept>
       <concept id="414384289274418284" name="jetbrains.mps.lang.editor.structure.QueryFunction_SubstituteMenu_Condition" flags="ig" index="3ft6gW" />
-      <concept id="1103016434866" name="jetbrains.mps.lang.editor.structure.CellModel_JComponent" flags="sg" stub="8104358048506731196" index="3gTLQM">
-        <child id="1176475119347" name="componentProvider" index="3FoqZy" />
-      </concept>
       <concept id="1139535219966" name="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration" flags="ig" index="1h_SRR">
         <reference id="1139535219968" name="applicableConcept" index="1h_SK9" />
         <child id="1139535219969" name="item" index="1h_SK8" />
@@ -294,7 +291,6 @@
         <reference id="1173177718857" name="elementActionMap" index="APP_o" />
         <child id="1182233390675" name="filter" index="12AuX0" />
       </concept>
-      <concept id="1176474535556" name="jetbrains.mps.lang.editor.structure.QueryFunction_JComponent" flags="in" index="3Fmcul" />
       <concept id="843003353410421268" name="jetbrains.mps.lang.editor.structure.IOutputConceptTransformationMenuPart" flags="ng" index="1FNN41">
         <child id="843003353410424960" name="outputConceptReference" index="1FNMel" />
       </concept>
@@ -2683,23 +2679,6 @@
           <property role="1$x2rV" value="&lt;no icon&gt;" />
           <ref role="1NtTu8" to="tpce:gSMwhzt" resolve="iconPath" />
           <ref role="1k5W1q" to="tpen:hgVSdfU" resolve="StringLiteral" />
-        </node>
-        <node concept="3gTLQM" id="gSMKOBU" role="3EZMnx">
-          <node concept="3Fmcul" id="h7Gq5ai" role="3FoqZy">
-            <node concept="3clFbS" id="h7Gq5aj" role="2VODD2">
-              <node concept="3cpWs6" id="h7GrovA" role="3cqZAp">
-                <node concept="2YIFZM" id="18qFtJYNa0a" role="3cqZAk">
-                  <ref role="37wK5l" to="7a0s:1tyjSjK5Gdd" resolve="createSelectIconButton" />
-                  <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                  <node concept="pncrf" id="18qFtJYNa0b" role="37wK5m" />
-                  <node concept="1Q80Hx" id="18qFtJYNa0c" role="37wK5m" />
-                  <node concept="3clFbT" id="18qFtJYNa0d" role="37wK5m">
-                    <property role="3clFbU" value="true" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
         </node>
         <node concept="VPM3Z" id="hEU$PQn" role="3F10Kt">
           <property role="VOm3f" value="false" />
