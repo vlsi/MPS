@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,11 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -46,11 +46,12 @@ import java.util.Set;
 public class TempModule extends ReloadableModuleBase implements SModule, MPSModuleOwner {
   private final static Logger LOG = LogManager.getLogger(TempModule.class);
   private final ModuleDescriptor myDescriptor;
-
-  private final IFile mySourceGen;
   private final JavaModuleFacet myJavaModuleFacet;
 
   public TempModule(Set<ModelRootDescriptor> modelRoots, boolean withSourceGen, boolean withJavaFacet) {
+    if (withSourceGen && !withJavaFacet) {
+      throw new IllegalArgumentException("Don't have GenerationTargetFacet implementation other than JavaModuleFacet handy, either write one or re-consider arguments");
+    }
     SModuleId id = ModuleId.regular();
     SModuleReference reference = new ModuleReference("TempModule" + id, id);
     setModuleReference(reference);
@@ -58,19 +59,10 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     myDescriptor.getModelRootDescriptors().addAll(modelRoots);
     dependenciesChanged();
 
-    if (withSourceGen) {
-      mySourceGen = createTempDirectory("TempModule_source_gen");
-    } else {
-      mySourceGen = null;
-    }
-
     if (withJavaFacet) {
+      IFile sourcesGen = withSourceGen ? createTempDirectory("TempModule_source_gen") : null;
       IFile classesGen = createTempDirectory("TempModule_classes_gen");
-      if (classesGen != null) {
-        myJavaModuleFacet = new TempModuleJavaFacet(classesGen);
-      } else {
-        myJavaModuleFacet = null;
-      }
+      myJavaModuleFacet = new TempModuleJavaFacet(sourcesGen, classesGen);
     } else {
       myJavaModuleFacet = null;
     }
@@ -97,15 +89,10 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     return false;
   }
 
-  @Override
-  public IFile getOutputPath() {
-    return mySourceGen;
-  }
-
   @NotNull
   @Override
   public Iterable<SModuleFacet> getFacets() {
-    return myJavaModuleFacet != null ? Collections.<SModuleFacet>singleton(myJavaModuleFacet) : Collections.<SModuleFacet>emptySet();
+    return myJavaModuleFacet != null ? Collections.singleton(myJavaModuleFacet) : Collections.emptySet();
   }
 
   public String toString() {
@@ -117,7 +104,7 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
     return myDescriptor;
   }
 
-  private static IFile createTempDirectory(String prefix) {
+  private IFile createTempDirectory(String prefix) {
     try {
       final File temp;
 
@@ -131,14 +118,15 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
         throw new IOException("Could not create temp directory: " + temp.getAbsolutePath());
       }
 
-      return FileSystem.getInstance().getFileByPath(temp.getAbsolutePath());
+      return getFileSystem().getFile(temp.getAbsolutePath());
     } catch (IOException e) {
-      LOG.error("", e);
+      LOG.error(e.toString(), e);
       return null;
     }
   }
 
   private class TempModuleJavaFacet implements JavaModuleFacet {
+    private final IFile mySourceGen;
     private final IFile myClassesGen;
 
     @NotNull
@@ -147,13 +135,20 @@ public class TempModule extends ReloadableModuleBase implements SModule, MPSModu
       return FACET_TYPE;
     }
 
-    public TempModuleJavaFacet(IFile classesGen) {
-      this.myClassesGen = classesGen;
+    public TempModuleJavaFacet(IFile sourceGen, IFile classesGen) {
+      mySourceGen = sourceGen;
+      myClassesGen = classesGen;
     }
 
     @Override
     public boolean isCompileInMps() {
       return true;
+    }
+
+    @Nullable
+    @Override
+    public IFile getOutputRoot() {
+      return mySourceGen;
     }
 
     @NotNull
