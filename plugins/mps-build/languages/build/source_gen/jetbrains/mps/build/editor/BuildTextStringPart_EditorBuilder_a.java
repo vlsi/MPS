@@ -58,7 +58,7 @@ import java.awt.Color;
     return editorCell;
   }
   private boolean nodeCondition_zen9g6_a0() {
-    return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode), SNodeOperations.getParent(myNode).getRoleInParent()) != null;
+    return (BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode) != null) && BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(myNode), SNodeOperations.getParent(myNode).getContainmentLink()) != null;
   }
   private EditorCell createAlternation_zen9g6_a0() {
     boolean alternationCondition = true;
@@ -98,7 +98,7 @@ import java.awt.Color;
   private Color _StyleParameter_QueryFunction_zen9g6_a1a0a() {
     SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(getNode());
     if ((container != null)) {
-      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getRoleInParent());
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getContainmentLink());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }
@@ -128,7 +128,7 @@ import java.awt.Color;
   private Color _StyleParameter_QueryFunction_zen9g6_a0a0a() {
     SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(getNode());
     if ((container != null)) {
-      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getRoleInParent());
+      Color colorForTextPart = BuildStringContainer__BehaviorDescriptor.getColorForTextPart_id5hFYqIiXWl$.invoke(container, SNodeOperations.getParent(getNode()).getContainmentLink());
       if (colorForTextPart != null) {
         return colorForTextPart;
       }

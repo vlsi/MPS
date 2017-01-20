@@ -3167,7 +3167,7 @@
                             <ref role="37wK5l" to="vbkb:5hFYqIiXWl$" resolve="getColorForTextPart" />
                             <node concept="2OqwBi" id="2btsGKIXGEd" role="37wK5m">
                               <node concept="liA8E" id="2btsGKIXGEe" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                               </node>
                               <node concept="2JrnkZ" id="2btsGKIXGEf" role="2Oq$k0">
                                 <node concept="2OqwBi" id="2btsGKIXGEg" role="2JrQYb">
@@ -3259,7 +3259,7 @@
                             <ref role="37wK5l" to="vbkb:5hFYqIiXWl$" resolve="getColorForTextPart" />
                             <node concept="2OqwBi" id="2btsGKIXGEp" role="37wK5m">
                               <node concept="liA8E" id="2btsGKIXGEq" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                               </node>
                               <node concept="2JrnkZ" id="2btsGKIXGEr" role="2Oq$k0">
                                 <node concept="2OqwBi" id="2btsGKIXGEs" role="2JrQYb">
@@ -3320,7 +3320,7 @@
                     <ref role="37wK5l" to="vbkb:5hFYqIiXWl$" resolve="getColorForTextPart" />
                     <node concept="2OqwBi" id="2btsGKIXGEj" role="37wK5m">
                       <node concept="liA8E" id="2btsGKIXGEk" role="2OqNvi">
-                        <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                        <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                       </node>
                       <node concept="2JrnkZ" id="2btsGKIXGEl" role="2Oq$k0">
                         <node concept="2OqwBi" id="2btsGKIXGEm" role="2JrQYb">
@@ -9338,7 +9338,7 @@
                                 <node concept="1yR$tW" id="1wEcoXjJDCu" role="2JrQYb" />
                               </node>
                               <node concept="liA8E" id="1wEcoXjJDBZ" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="1wEcoXjJDC0" role="3K4E3e">
@@ -9346,7 +9346,7 @@
                                 <node concept="3bvxqY" id="1wEcoXjJDCs" role="2JrQYb" />
                               </node>
                               <node concept="liA8E" id="1wEcoXjJDC3" role="2OqNvi">
-                                <ref role="37wK5l" to="mhbf:~SNode.getRoleInParent():java.lang.String" resolve="getRoleInParent" />
+                                <ref role="37wK5l" to="mhbf:~SNode.getContainmentLink():org.jetbrains.mps.openapi.language.SContainmentLink" resolve="getContainmentLink" />
                               </node>
                             </node>
                             <node concept="2OqwBi" id="1wEcoXjJDC4" role="3K4Cdx">

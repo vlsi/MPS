@@ -3970,7 +3970,9 @@
       </node>
       <node concept="37vLTG" id="5HVSRHdVWLb" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWLc" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0LQM" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="10P_77" id="7XQqoCTkVNr" role="3clF45" />
     </node>
@@ -4327,7 +4329,9 @@
       </node>
       <node concept="37vLTG" id="5HVSRHdVWL7" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWL8" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0LmB" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="10P_77" id="7F9PsAYry0E" role="3clF45" />
     </node>
@@ -9773,7 +9777,9 @@
       </node>
       <node concept="37vLTG" id="5HVSRHdVWKY" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWL0" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0Jvz" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
     </node>
     <node concept="13i0hz" id="5hFYqIiXWl$" role="13h7CS">
@@ -9791,7 +9797,9 @@
       </node>
       <node concept="37vLTG" id="5hFYqIiXWlE" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5hFYqIiXWlF" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0Uvf" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
         <node concept="2AHcQZ" id="5hFYqIiYDdq" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
         </node>
@@ -9864,7 +9872,9 @@
       </node>
       <node concept="37vLTG" id="5HVSRHdVWL5" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWL6" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0JV_" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="10P_77" id="6CY5wCYZQE$" role="3clF45" />
     </node>
@@ -10020,13 +10030,15 @@
       </node>
       <node concept="37vLTG" id="bgY2XVZG2m" role="3clF46">
         <property role="TrG5h" value="propertyValue" />
-        <node concept="17QB3L" id="bgY2XVZG2n" role="1tU5fm" />
+        <node concept="17QB3L" id="4jf2Bbg0Jwh" role="1tU5fm" />
       </node>
       <node concept="37vLTG" id="5HVSRHdVWL2" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWL4" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0Jwi" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
-      <node concept="10P_77" id="bgY2XVZG2o" role="3clF45" />
+      <node concept="10P_77" id="4jf2Bbg0Jwg" role="3clF45" />
     </node>
     <node concept="13i0hz" id="bgY2XVZG2p" role="13h7CS">
       <property role="TrG5h" value="getOutputPath_WithMacro" />
@@ -12183,10 +12195,10 @@
               <ref role="3cqZAo" node="6uJjF_N_jnl" resolve="role" />
             </node>
             <node concept="liA8E" id="6uJjF_N_jnV" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="prKvN" id="5hFYqIiYD2f" role="37wK5m">
-                <ref role="prhl4" to="3ior:15teMbUWwWK" resolve="BuildLayout_JarManifest_Attribute" />
-                <ref role="prhl7" to="3ior:15teMbUWwWL" resolve="name" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="359W_D" id="4jf2Bbg0V8W" role="37wK5m">
+                <ref role="359W_E" to="3ior:15teMbUWwWK" resolve="BuildLayout_JarManifest_Attribute" />
+                <ref role="359W_F" to="3ior:15teMbUWwWL" resolve="name" />
               </node>
             </node>
           </node>
@@ -12228,7 +12240,9 @@
       </node>
       <node concept="37vLTG" id="6uJjF_N_jnl" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="6uJjF_N_jnm" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0LoB" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="10P_77" id="6uJjF_N_jnn" role="3clF45" />
     </node>
@@ -12248,10 +12262,10 @@
               <ref role="3cqZAo" node="5hFYqIiYuJV" resolve="role" />
             </node>
             <node concept="liA8E" id="5hFYqIiYDdp" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-              <node concept="prKvN" id="5hFYqIiYDds" role="37wK5m">
-                <ref role="prhl7" to="3ior:15teMbUWwWL" resolve="name" />
-                <ref role="prhl4" to="3ior:15teMbUWwWK" resolve="BuildLayout_JarManifest_Attribute" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+              <node concept="359W_D" id="4jf2Bbg0UPY" role="37wK5m">
+                <ref role="359W_E" to="3ior:15teMbUWwWK" resolve="BuildLayout_JarManifest_Attribute" />
+                <ref role="359W_F" to="3ior:15teMbUWwWL" resolve="name" />
               </node>
             </node>
           </node>
@@ -12283,7 +12297,9 @@
       </node>
       <node concept="37vLTG" id="5hFYqIiYuJV" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5hFYqIiYuJW" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0UHq" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
         <node concept="2AHcQZ" id="5hFYqIiYDdr" role="2AJF6D">
           <ref role="2AI5Lk" to="mhfm:~NonNls" resolve="NonNls" />
         </node>

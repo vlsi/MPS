@@ -46,7 +46,7 @@ public class BuildTextStringPart_Constraints extends BaseConstraintsDescriptor {
         {
           SNode container = BuildTextStringPart__BehaviorDescriptor.getContainer_id5hFYqIiYHaE.invoke(node);
           if (container != null) {
-            return (boolean) BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(container, (SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getRoleInParent());
+            return (boolean) BuildStringContainer__BehaviorDescriptor.isValidPart_id7XQqoCTkVIS.invoke(container, (SPropertyOperations.getString(propertyValue)), SNodeOperations.getParent(node).getContainmentLink());
           }
           return !((SPropertyOperations.getString(propertyValue)).contains("$"));
         }
