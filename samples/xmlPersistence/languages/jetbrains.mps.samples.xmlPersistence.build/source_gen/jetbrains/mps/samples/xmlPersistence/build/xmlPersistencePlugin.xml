@@ -285,9 +285,7 @@
       <src>
         <path location="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" />
       </src>
-      <classpath>
-        <fileset file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
-      </classpath>
+      <classpath />
     </javac>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.samples.xmlPersistence.build">
       <fileset dir="${basedir}/languages/jetbrains.mps.samples.xmlPersistence.build/source_gen" excludes="**/*.java" />
