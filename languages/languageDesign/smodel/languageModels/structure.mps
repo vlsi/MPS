@@ -1332,6 +1332,10 @@
       <property role="IQ2ns" value="1226359192215" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
     </node>
+    <node concept="asaX9" id="5xzMQBRF0EQ" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="migrate to link/.../" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hQYFoq3">
     <property role="R5$K7" value="false" />
@@ -1817,6 +1821,10 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5253134957341833006" />
       <ref role="20lvS9" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
+    </node>
+    <node concept="asaX9" id="5xzMQBRF3uX" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use link/.../.getName(), better migrate to link/.../" />
     </node>
   </node>
   <node concept="1TIwiD" id="4zASA_hz8BR">
