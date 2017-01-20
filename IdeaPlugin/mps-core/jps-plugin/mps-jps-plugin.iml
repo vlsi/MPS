@@ -46,5 +46,8 @@
     <orderEntry type="library" name="mps-closures" level="project" />
     <orderEntry type="library" name="mps-tuples" level="project" />
     <orderEntry type="library" scope="TEST" name="jpsPlatformTests" level="project" />
+    <orderEntry type="library" scope="TEST" name="mps-behavior-api" level="project" />
+    <orderEntry type="library" scope="TEST" name="mps-behavior-runtime" level="project" />
+    <orderEntry type="library" scope="TEST" name="mps-boot-util" level="project" />
   </component>
 </module>
