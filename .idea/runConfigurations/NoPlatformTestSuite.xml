@@ -1,11 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="PerformanceTests" type="JUnit" factoryName="JUnit">
-    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+  <configuration default="false" name="NoPlatformTestSuite" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
     <module name="testbench" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" />
-    <option name="PACKAGE_NAME" value="jetbrains.mps.smodel" />
-    <option name="MAIN_CLASS_NAME" value="jetbrains.mps.smodel.ModelPerformanceTest" />
+    <option name="PACKAGE_NAME" value="jetbrains.mps.testsuites" />
+    <option name="MAIN_CLASS_NAME" value="jetbrains.mps.testsuites.NoPlatformTestSuite" />
     <option name="METHOD_NAME" value="" />
     <option name="TEST_OBJECT" value="class" />
     <option name="VM_PARAMETERS" value="-ea" />
