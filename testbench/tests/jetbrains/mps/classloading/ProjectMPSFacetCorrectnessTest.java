@@ -52,7 +52,8 @@ public class ProjectMPSFacetCorrectnessTest extends CoreMpsTest {
   private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ProjectMPSFacetCorrectnessTest.class);
 
   private List<String> EXCLUDES = Arrays.asList("jetbrains.mps.ide.java.workbench.actions",
-                                                "jetbrains.mps.ide.java.platform.actions"); // these are waiting for the java facet to be disabled (not possible for now)
+                                                "jetbrains.mps.ide.java.platform.actions",
+                                                "jetbrains.mps.ide.build"); // these are waiting for the java facet to be disabled (not possible for now)
 
   @BeforeClass
   public static void beforeTest() {
