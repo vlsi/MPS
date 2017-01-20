@@ -31,8 +31,11 @@ public class BaseMethodParameterInformationQueryRestricted implements Parameters
     }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) == methodCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
+        return SNodeOperations.getParent(it) == methodCall && eq_kusojb_a0a0a0a0a0a2a4(SNodeOperations.getContainingLink(it), MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301aeL, "actualArgument"));
       }
     });
+  }
+  private static boolean eq_kusojb_a0a0a0a0a0a2a4(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
