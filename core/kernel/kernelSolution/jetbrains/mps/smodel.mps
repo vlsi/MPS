@@ -246,6 +246,10 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
+      <concept id="5253134957341870583" name="jetbrains.mps.lang.smodel.structure.PropertyNameRefExpression" flags="nn" index="pqAIu">
+        <reference id="5253134957341870585" name="propertyDeclaration" index="pqAIg" />
+        <reference id="5253134957341870584" name="conceptDeclaration" index="pqAIh" />
+      </concept>
       <concept id="4497478346159780083" name="jetbrains.mps.lang.smodel.structure.LanguageRefExpression" flags="ng" index="pHN19">
         <child id="3542851458883491298" name="languageId" index="2V$M_3" />
       </concept>
@@ -1598,14 +1602,9 @@
       <property role="3TUv4t" value="true" />
       <node concept="3Tm1VV" id="6pIEkniRZWx" role="1B3o_S" />
       <node concept="17QB3L" id="6pIEkniRZWy" role="1tU5fm" />
-      <node concept="2OqwBi" id="5xzMQBRESjc" role="33vP2m">
-        <node concept="355D3s" id="5xzMQBRES2Z" role="2Oq$k0">
-          <ref role="355D3t" to="tpck:gw2VY9q" resolve="BaseConcept" />
-          <ref role="355D3u" to="tpck:hnGE5uv" resolve="virtualPackage" />
-        </node>
-        <node concept="liA8E" id="5xzMQBRESDL" role="2OqNvi">
-          <ref role="37wK5l" to="c17a:~SProperty.getName():java.lang.String" resolve="getName" />
-        </node>
+      <node concept="pqAIu" id="4jf2Bbgo_F5" role="33vP2m">
+        <ref role="pqAIh" to="tpck:gw2VY9q" resolve="BaseConcept" />
+        <ref role="pqAIg" to="tpck:hnGE5uv" resolve="virtualPackage" />
       </node>
     </node>
     <node concept="Wx3nA" id="2iMJRNxJZV0" role="jymVt">
