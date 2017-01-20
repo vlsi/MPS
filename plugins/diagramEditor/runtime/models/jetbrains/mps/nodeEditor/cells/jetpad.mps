@@ -359,6 +359,7 @@
       <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
         <child id="1144104376918" name="parameter" index="1xVPHs" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
@@ -3122,8 +3123,11 @@
                     <ref role="3cqZAo" node="4jf2Bbgqr96" resolve="container" />
                   </node>
                   <node concept="10Nm6u" id="4jf2Bbgqral" role="37wK5m" />
-                  <node concept="37vLTw" id="4jf2Bbgqram" role="37wK5m">
-                    <ref role="3cqZAo" node="4jf2Bbgqr98" resolve="childNodeConcept" />
+                  <node concept="2OqwBi" id="4jf2Bbg$Yev" role="37wK5m">
+                    <node concept="37vLTw" id="4jf2Bbgqram" role="2Oq$k0">
+                      <ref role="3cqZAo" node="4jf2Bbgqr98" resolve="childNodeConcept" />
+                    </node>
+                    <node concept="FGMqu" id="4jf2Bbg_2sj" role="2OqNvi" />
                   </node>
                   <node concept="2ShNRf" id="4jf2Bbgqran" role="37wK5m">
                     <node concept="1pGfFk" id="4jf2Bbgqrao" role="2ShVmc">

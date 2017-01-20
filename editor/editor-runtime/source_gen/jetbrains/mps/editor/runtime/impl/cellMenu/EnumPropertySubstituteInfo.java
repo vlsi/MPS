@@ -38,7 +38,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo imple
     SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
     List<SubstituteAction> actions = ListSequence.fromList(new ArrayList<SubstituteAction>(ListSequence.fromList(SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))).count()));
     for (final SNode enumMemberDeclaration : SLinkOperations.getChildren(enumDataType, MetaAdapterFactory.getContainmentLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc26875dfbL, 0xfc32151efeL, "member"))) {
-      ListSequence.fromList(actions).addElement(new AbstractNodeSubstituteAction(null, enumMemberDeclaration, myNode) {
+      ListSequence.fromList(actions).addElement(new AbstractNodeSubstituteAction(((SNode) null), enumMemberDeclaration, myNode) {
         @Override
         public String getMatchingText(String pattern) {
           return SPropertyOperations.getString(enumMemberDeclaration, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xfc321331b2L, 0xfc5ee06664L, "externalValue"));
