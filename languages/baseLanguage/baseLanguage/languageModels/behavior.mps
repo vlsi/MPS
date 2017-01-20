@@ -548,10 +548,6 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138661924179" name="jetbrains.mps.lang.smodel.structure.Property_SetOperation" flags="nn" index="tyxLq">
         <child id="1138662048170" name="value" index="tz02z" />
@@ -32178,19 +32174,14 @@
                 </node>
               </node>
               <node concept="2OqwBi" id="2j5FokKLpXp" role="3clFbw">
-                <node concept="2OqwBi" id="42Bx8VbD0$n" role="2Oq$k0">
-                  <node concept="liA8E" id="42Bx8VbD0$o" role="2OqNvi">
-                    <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
-                  </node>
-                  <node concept="37vLTw" id="42Bx8VbD0$p" role="2Oq$k0">
-                    <ref role="3cqZAo" node="2j5FokKL1EH" resolve="role" />
-                  </node>
+                <node concept="37vLTw" id="42Bx8VbD0$p" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2j5FokKL1EH" resolve="role" />
                 </node>
                 <node concept="liA8E" id="2j5FokKLq87" role="2OqNvi">
-                  <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
-                  <node concept="prKvN" id="2j5FokKLwY3" role="37wK5m">
-                    <ref role="prhl4" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
-                    <ref role="prhl7" to="tpee:fz3vP1I" resolve="initializer" />
+                  <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                  <node concept="359W_D" id="5xzMQBRQoR$" role="37wK5m">
+                    <ref role="359W_E" to="tpee:fzcpWvJ" resolve="LocalVariableDeclaration" />
+                    <ref role="359W_F" to="tpee:fz3vP1I" resolve="initializer" />
                   </node>
                 </node>
               </node>
