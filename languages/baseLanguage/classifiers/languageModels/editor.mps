@@ -334,10 +334,6 @@
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="1138757581985" name="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" flags="nn" index="zfrQC">
         <reference id="1139880128956" name="concept" index="1A9B2P" />
@@ -349,6 +345,10 @@
       </concept>
       <concept id="7835263205327057228" name="jetbrains.mps.lang.smodel.structure.Node_GetChildrenAndChildAttributesOperation" flags="ng" index="Bykcj" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
+      </concept>
       <concept id="5168775467716640652" name="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" flags="ng" index="1aIX9F">
         <child id="5168775467716640653" name="linkQualifier" index="1aIX9E" />
       </concept>
@@ -828,13 +828,13 @@
             <node concept="2OqwBi" id="3n123GgVb9c" role="33vP2m">
               <node concept="2YIFZM" id="3n123GgVb8O" role="2Oq$k0">
                 <ref role="1Pybhc" to="ykok:~ModelConstraints" resolve="ModelConstraints" />
-                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,java.lang.String):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
+                <ref role="37wK5l" to="ykok:~ModelConstraints.getReferenceDescriptor(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.language.SReferenceLink):jetbrains.mps.smodel.constraints.ReferenceDescriptor" resolve="getReferenceDescriptor" />
                 <node concept="37vLTw" id="3GM_nagTBv0" role="37wK5m">
                   <ref role="3cqZAo" node="hLuQ$Yf3D$" resolve="methodCall" />
                 </node>
-                <node concept="prKvN" id="3n123GgVb8Q" role="37wK5m">
-                  <ref role="prhl4" to="tp4f:hyXshSD" resolve="DefaultClassifierMethodCallOperation" />
-                  <ref role="prhl7" to="tp4f:hyXtfQh" resolve="method" />
+                <node concept="359W_D" id="5xzMQBRGCda" role="37wK5m">
+                  <ref role="359W_E" to="tp4f:hyXshSD" resolve="DefaultClassifierMethodCallOperation" />
+                  <ref role="359W_F" to="tp4f:hyXtfQh" resolve="method" />
                 </node>
               </node>
               <node concept="liA8E" id="3n123GgVb9i" role="2OqNvi">

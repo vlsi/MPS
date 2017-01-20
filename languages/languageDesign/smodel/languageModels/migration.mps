@@ -4737,7 +4737,7 @@
   </node>
   <node concept="3SyAh_" id="2ytHpS0VDi6">
     <property role="qMTe8" value="7" />
-    <property role="TrG5h" value="MigrateSmodelOperations" />
+    <property role="TrG5h" value="MigrateOperationsAndNodeRefs" />
     <node concept="3Tm1VV" id="2ytHpS0VDi7" role="1B3o_S" />
     <node concept="3tTeZs" id="2ytHpS0VDi8" role="jymVt">
       <property role="3tTeZt" value="&lt;no execute after&gt;" />
@@ -4761,7 +4761,7 @@
     </node>
     <node concept="3tYpXE" id="2ytHpS0VDDw" role="jymVt">
       <property role="TrG5h" value="description" />
-      <property role="3tYpXF" value="Migrate smodel operations" />
+      <property role="3tYpXF" value="Migrate smodel operations and node/name references" />
       <ref role="25KYV2" to="slm6:1_lSsE3RFpE" resolve="description" />
       <node concept="3Tm1VV" id="2ytHpS0VDDy" role="1B3o_S" />
       <node concept="17QB3L" id="2ytHpS0VDDz" role="1tU5fm" />

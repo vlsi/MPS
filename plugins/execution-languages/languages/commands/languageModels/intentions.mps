@@ -100,16 +100,11 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1960721196051541146" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation" flags="nn" index="13GOg" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
       <concept id="1140725362528" name="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" flags="nn" index="2oxUTD">
         <child id="1140725362529" name="linkTarget" index="2oxUTC" />
-      </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
       </concept>
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
@@ -117,6 +112,11 @@
       </concept>
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
+      </concept>
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
+      <concept id="2644386474301421077" name="jetbrains.mps.lang.smodel.structure.LinkIdRefExpression" flags="nn" index="359W_D">
+        <reference id="2644386474301421078" name="conceptDeclaration" index="359W_E" />
+        <reference id="2644386474301421079" name="linkDeclaration" index="359W_F" />
       </concept>
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
@@ -237,13 +237,13 @@
       <node concept="3clFbS" id="1SmDPX5dwrh" role="2VODD2">
         <node concept="3clFbF" id="1SmDPX5dwri" role="3cqZAp">
           <node concept="17R0WA" id="1SmDPX5dwAx" role="3clFbG">
-            <node concept="prKvN" id="1SmDPX5dwA$" role="3uHU7w">
-              <ref role="prhl4" to="rzqf:5XgVhg2qpB9" resolve="ListCommandPart" />
-              <ref role="prhl7" to="rzqf:5XgVhg2qpBb" resolve="list" />
+            <node concept="359W_D" id="5xzMQBRGAjc" role="3uHU7w">
+              <ref role="359W_E" to="rzqf:5XgVhg2qpB9" resolve="ListCommandPart" />
+              <ref role="359W_F" to="rzqf:5XgVhg2qpBb" resolve="list" />
             </node>
             <node concept="2OqwBi" id="1SmDPX5dwrk" role="3uHU7B">
               <node concept="zTJq_" id="1SmDPX5dwrj" role="2Oq$k0" />
-              <node concept="13GOg" id="1SmDPX5dwro" role="2OqNvi" />
+              <node concept="2NL2c5" id="5xzMQBRGA17" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -433,13 +433,13 @@
       <node concept="3clFbS" id="1SmDPX5d$r2" role="2VODD2">
         <node concept="3clFbF" id="1SmDPX5d$r3" role="3cqZAp">
           <node concept="17R0WA" id="1SmDPX5d$r4" role="3clFbG">
-            <node concept="prKvN" id="1SmDPX5d$r5" role="3uHU7w">
-              <ref role="prhl4" to="rzqf:5XgVhg2qpB9" resolve="ListCommandPart" />
-              <ref role="prhl7" to="rzqf:1SmDPX5d1dR" resolve="items" />
+            <node concept="359W_D" id="5xzMQBRGB7i" role="3uHU7w">
+              <ref role="359W_E" to="rzqf:5XgVhg2qpB9" resolve="ListCommandPart" />
+              <ref role="359W_F" to="rzqf:1SmDPX5d1dR" resolve="items" />
             </node>
             <node concept="2OqwBi" id="1SmDPX5d$r6" role="3uHU7B">
               <node concept="zTJq_" id="1SmDPX5d$r7" role="2Oq$k0" />
-              <node concept="13GOg" id="1SmDPX5d$r8" role="2OqNvi" />
+              <node concept="2NL2c5" id="5xzMQBRGAHm" role="2OqNvi" />
             </node>
           </node>
         </node>
