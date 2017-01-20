@@ -70,9 +70,9 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> expandGenerics_id3$PgO9fYTB5 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("expandGenerics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PROTECTED)).concept(CONCEPT).id("3$PgO9fYTB5").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""), SMethodBuilder.createJavaParameter((Class<List<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<SNode> eraseGenerics_id4qyz6djw13y = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("eraseGenerics").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4qyz6djw13y").registry(REGISTRY).build();
   public static final SMethod<Void> collectGenericSubstitutions_id3zZky3wF74h = new SMethodBuilder<Void>(new SJavaCompoundTypeImpl(Void.class)).name("collectGenericSubstitutions").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("3zZky3wF74h").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Map<SNode, SNode>>) ((Class) Object.class), ""));
-  public static final SMethod<Boolean> canBeCoerced_id5uUZ$FUUb6B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5uUZ$FUUb6B").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Boolean> canBeCoerced_id476YRQvP9l3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("476YRQvP9l3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getPresentation_id22G2W3WJcwT, getDetailedPresentation_id22G2W3WJ92t, getErasureSignature_idhEwIzNx, getErasure_idB1mAlA38Mq, isRawType_idB1mAlA3eUL, getVariableSuffixes_idhEwIzNo, getClassExpression_idhEwIzOd, getAbstractCreator_idhEwIzNW, isSupersetOf_idhKBOZqh, isSupersetOf_id7PgshREdQKp, createDefaultTypeExpression_id2UvJdVpqUA4, hasMissingParameters_id32KZwowVoMu, getLooseType_id4YTQtEKnnzf, jniSignature_id7F81Cd2C7e3, isReifiable_id2soW6EObTNQ, getClassifier_id6r77ob2URY9, getTypeParameters_id6r77ob2URYe, expandGenerics_id3$PgO9fYTB5, eraseGenerics_id4qyz6djw13y, collectGenericSubstitutions_id3zZky3wF74h, canBeCoerced_id5uUZ$FUUb6B);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getPresentation_id22G2W3WJcwT, getDetailedPresentation_id22G2W3WJ92t, getErasureSignature_idhEwIzNx, getErasure_idB1mAlA38Mq, isRawType_idB1mAlA3eUL, getVariableSuffixes_idhEwIzNo, getClassExpression_idhEwIzOd, getAbstractCreator_idhEwIzNW, isSupersetOf_idhKBOZqh, isSupersetOf_id7PgshREdQKp, createDefaultTypeExpression_id2UvJdVpqUA4, hasMissingParameters_id32KZwowVoMu, getLooseType_id4YTQtEKnnzf, jniSignature_id7F81Cd2C7e3, isReifiable_id2soW6EObTNQ, getClassifier_id6r77ob2URY9, getTypeParameters_id6r77ob2URYe, expandGenerics_id3$PgO9fYTB5, eraseGenerics_id4qyz6djw13y, collectGenericSubstitutions_id3zZky3wF74h, canBeCoerced_id476YRQvP9l3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -404,8 +404,8 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
       }
     }
   }
-  /*package*/ static boolean canBeCoerced_id5uUZ$FUUb6B(@NotNull SNode __thisNode__, String conceptFqName) {
-    if ("jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName)) {
+  /*package*/ static boolean canBeCoerced_id476YRQvP9l3(@NotNull SNode __thisNode__, SAbstractConcept c) {
+    if (MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940d819f7L, "jetbrains.mps.baseLanguage.structure.ArrayType").equals(c)) {
       return SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0v_0(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) || SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier")) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0v(), MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101de48bf9eL, 0x101de490babL, "classifier"));
     }
     return true;
@@ -471,7 +471,7 @@ public final class ClassifierType__BehaviorDescriptor extends BaseBHDescriptor {
         collectGenericSubstitutions_id3zZky3wF74h(node, (Map<SNode, SNode>) parameters[0]);
         return null;
       case 21:
-        return (T) ((Boolean) canBeCoerced_id5uUZ$FUUb6B(node, (String) parameters[0]));
+        return (T) ((Boolean) canBeCoerced_id476YRQvP9l3(node, (SAbstractConcept) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

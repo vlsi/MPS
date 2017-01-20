@@ -42,9 +42,9 @@ public final class SNodeType__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<Boolean> hasMissingParameters_id32KZwowVoMu = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("hasMissingParameters").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("32KZwowVoMu").registry(REGISTRY).build();
   public static final SMethod<SNode> getErasure_idB1mAlA38Mq = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getErasure").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("B1mAlA38Mq").registry(REGISTRY).build();
   public static final SMethod<SNode> getJavaType_idhEwIzO1 = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getJavaType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hEwIzO1").registry(REGISTRY).build();
-  public static final SMethod<Boolean> canBeCoerced_id5uUZ$FUUb6B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5uUZ$FUUb6B").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Boolean> canBeCoerced_id476YRQvP9l3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("476YRQvP9l3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getVariableSuffixes_idhEwIzNo, getAbstractCreator_idhEwIzNW, getClassExpression_idhEwIzOd, hasMissingParameters_id32KZwowVoMu, getErasure_idB1mAlA38Mq, getJavaType_idhEwIzO1, canBeCoerced_id5uUZ$FUUb6B);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getPresentation_idhEwIMiw, getVariableSuffixes_idhEwIzNo, getAbstractCreator_idhEwIzNW, getClassExpression_idhEwIzOd, hasMissingParameters_id32KZwowVoMu, getErasure_idB1mAlA38Mq, getJavaType_idhEwIzO1, canBeCoerced_id476YRQvP9l3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -81,8 +81,8 @@ public final class SNodeType__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static SNode getJavaType_idhEwIzO1(@NotNull SNode __thisNode__) {
     return _quotation_createNode_4ouf01_a0a6();
   }
-  /*package*/ static boolean canBeCoerced_id5uUZ$FUUb6B(@NotNull SNode __thisNode__, String conceptFqName) {
-    if ("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(conceptFqName)) {
+  /*package*/ static boolean canBeCoerced_id476YRQvP9l3(@NotNull SNode __thisNode__, SAbstractConcept c) {
+    if (MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x10c260e9444L, "jetbrains.mps.baseLanguage.collections.structure.SequenceType").equals(c)) {
       return false;
     }
     return true;
@@ -119,7 +119,7 @@ public final class SNodeType__BehaviorDescriptor extends BaseBHDescriptor {
       case 6:
         return (T) ((SNode) getJavaType_idhEwIzO1(node));
       case 7:
-        return (T) ((Boolean) canBeCoerced_id5uUZ$FUUb6B(node, (String) parameters[0]));
+        return (T) ((Boolean) canBeCoerced_id476YRQvP9l3(node, (SAbstractConcept) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
