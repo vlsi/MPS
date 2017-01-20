@@ -35,17 +35,22 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
-import com.intellij.openapi.vfs.VfsUtil;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.persistence.DefaultModelRoot;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.project.SModuleOperations;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.LanguageAspect;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.ModuleId;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -185,28 +190,23 @@ public class NewModuleUtil {
       }
     }
 
-    String templateModelsDir = descriptorFile.getParent().getPath() + File.separator + "generator" + File.separator + "template";
-    try {
-      VfsUtil.createDirectories(templateModelsDir);
-    } catch (IOException ioException) {
-    }
+    IFile generatorLocation = descriptorFile.getParent().getDescendant("generator");
+    IFile templateModelsLocation = generatorLocation.getDescendant("template");
+    templateModelsLocation.mkdirs();
 
-    // FIXME NewGeneratorDialog.createNewGenerator() has similar code, refactor to avoid duplication 
-
-    final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
-    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
-    generatorDescriptor.setNamespace(null);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
-    templateModelsRoot.setContentRoot(descriptorFile.getParent().getPath());
-    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
-    generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
-    generatorDescriptor.getUsedDevkits().add(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
+    final GeneratorDescriptor generatorDescriptor = createGeneratorDescriptor(Generator.generateGeneratorUID(language), generatorLocation, templateModelsLocation);
     descriptor.getGenerators().add(generatorDescriptor);
     language.setLanguageDescriptor(descriptor);
     language.save();
 
     final Generator newGenerator = projectRepoFacade.getModule(generatorDescriptor.getModuleReference(), Generator.class);
 
+    createTemplateModelIfNoneYet(newGenerator);
+
+    return language;
+  }
+
+  public static void createTemplateModelIfNoneYet(Generator newGenerator) {
     boolean alreadyOwnsTemplateModel = false;
     for (SModel modelDescriptor : newGenerator.getModels()) {
       if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
@@ -215,14 +215,13 @@ public class NewModuleUtil {
       }
     }
     if (!(alreadyOwnsTemplateModel)) {
-      EditableSModel templateModel = SModuleOperations.createModelWithAdjustments("main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
+      SModel templateModel = SModuleOperations.createModelWithAdjustments(new SModelName(null, "main", SModelStereotype.GENERATOR).getValue(), newGenerator.getModelRoots().iterator().next());
       SNode mappingConfiguration = SModelOperations.createNewNode(templateModel, null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
+      // both model and MC named 'main' is a bit confusing 
       SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
       SModelOperations.addRootNode(templateModel, mappingConfiguration);
-      templateModel.save();
+      ((EditableSModel) templateModel).save();
     }
-
-    return language;
   }
 
   public static void createMainLanguageAspects(Language language) throws IOException {
@@ -234,6 +233,36 @@ public class NewModuleUtil {
     ((EditableSModel) LanguageAspect.TYPESYSTEM.createNew(language)).save();
   }
 
+  /**
+   * Fill in new descriptor of Generator module with defaults.
+   * This code is shared with NewGeneratorDialog. Please refactor this class, full of static, to something that 
+   * an ocassional OOP stroller would admire.
+   * 
+   * 
+   * @param generatorModuleLocation base root for generator module. This method doesn't care if location exist, nor ensures its existence.
+   * @param templateModelsLocation generally a location under generator module root to keem template models. May be the same as {@code generatorModuleLocation}. Use {@code null} to use default ('templates').
+   */
+  @NotNull
+  public static GeneratorDescriptor createGeneratorDescriptor(String namespace, @NotNull IFile generatorModuleLocation, @Nullable IFile templateModelsLocation) {
+    final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
+    generatorDescriptor.setGeneratorUID(namespace);
+    // unlike other modules, in outburst of pure antagonism, namespace in generator means alias 
+    generatorDescriptor.setNamespace("main");
+    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
+    // XXX instead of this odd logic and conventions, need a factory object with reasobable defaults, so that external code that cares about 
+    // IFile.mkdirs doesn't need to pass location here, and instead can rely on factory to obtain actual value. 
+    IFile modelsDir = (templateModelsLocation == null ? generatorModuleLocation.getDescendant("template") : templateModelsLocation);
+    // there used to be 2 approaches, contentRoot = moduleRoot + sourceRoot descendant, and the one with both pointing to the same location 
+    // no idea how to reason to pick one, go ahead and change if you're brave to prove. 
+    templateModelsRoot.setContentRoot(modelsDir.getPath());
+    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
+    ModelRootDescriptor mrd = new ModelRootDescriptor(templateModelsRoot.getType(), new MementoImpl());
+    templateModelsRoot.save(mrd.getMemento());
+    generatorDescriptor.getModelRootDescriptors().add(mrd);
+    ProjectPathUtil.setGeneratorOutputPath(generatorDescriptor, generatorModuleLocation.getDescendant("source_gen").getPath());
+    return generatorDescriptor;
+  }
+
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
     String path = rootPath + File.separator + namespace + extension;
     return FileSystem.getInstance().getFileByPath(path);
@@ -243,9 +272,10 @@ public class NewModuleUtil {
     SolutionDescriptor descriptor = new SolutionDescriptor();
     descriptor.setNamespace(namespace);
     descriptor.setId(ModuleId.regular());
-    final IFile modelsDir = descriptorFile.getParent().getDescendant(Solution.SOLUTION_MODELS);
+    IFile moduleLocation = descriptorFile.getParent();
+    final IFile modelsDir = moduleLocation.getDescendant(Solution.SOLUTION_MODELS);
     if (modelsDir.exists() && modelsDir.getChildren().size() != 0) {
-      throw new IllegalStateException("Trying to create a solution in an existing solution's directory: " + descriptorFile.getParent());
+      throw new IllegalStateException("Trying to create a solution in an existing solution's directory: " + moduleLocation);
     } else {
       // we assume create happens under proper application write lock, would be odd to manage locks here 
       modelsDir.mkdirs();
@@ -256,6 +286,7 @@ public class NewModuleUtil {
     modelRoot.setContentRoot(modelsDir.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
     descriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    ProjectPathUtil.setGeneratorOutputPath(descriptor, moduleLocation.getDescendant("source_gen").getPath());
     return descriptor;
   }
 
@@ -263,7 +294,8 @@ public class NewModuleUtil {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();
     languageDescriptor.setNamespace(languageNamespace);
     languageDescriptor.setId(ModuleId.regular());
-    IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
+    IFile moduleLocation = descriptorFile.getParent();
+    IFile languageModels = moduleLocation.getDescendant(Language.LANGUAGE_MODELS);
     if (languageModels.exists()) {
       throw new IllegalStateException("Trying to create a language in an existing language's directory " + languageModels);
     }
@@ -272,6 +304,7 @@ public class NewModuleUtil {
     modelRoot.setContentRoot(languageModels.getParent().getPath());
     modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
     languageDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+    ProjectPathUtil.setGeneratorOutputPath(languageDescriptor, moduleLocation.getDescendant("source_gen").getPath());
     return languageDescriptor;
   }
 

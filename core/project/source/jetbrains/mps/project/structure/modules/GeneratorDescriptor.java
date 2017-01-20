@@ -47,6 +47,12 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myPriorityRules = new ArrayList<>();
   }
 
+  /**
+   * for whatever reason, getGeneratorUID() is in fact module name, or what {@link #getNamespace()} is for other modules.
+   * In generators, {@link #getNamespace()} is employed for module alias, instead. Shall refactor this, use namespace uniformly among modules
+   * to represent its name, and use dedicated {@code getAlias()} to keep generator short name (if needed).
+   * @return
+   */
   public String getGeneratorUID() {
     return myGeneratorUID;
   }

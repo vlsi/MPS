@@ -9,6 +9,7 @@ import javax.swing.JTextField;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.vfs.FileSystem;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
 import java.awt.Dimension;
@@ -18,7 +19,6 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
 import org.apache.log4j.Logger;
@@ -26,23 +26,11 @@ import org.apache.log4j.LogManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import com.intellij.openapi.vfs.VfsUtil;
-import java.io.IOException;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import org.apache.log4j.Level;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
-import jetbrains.mps.persistence.DefaultModelRoot;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.smodel.SModelStereotype;
-import org.jetbrains.mps.openapi.model.EditableSModel;
-import jetbrains.mps.project.SModuleOperations;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NewGeneratorDialog extends DialogWrapper {
   private final JPanel myContenetPane;
@@ -51,12 +39,16 @@ public class NewGeneratorDialog extends DialogWrapper {
   private final Language mySourceLanguage;
   private Generator myResult;
   private final MPSProject myProject;
+  private final FileSystem myProjectFS;
 
   public NewGeneratorDialog(MPSProject project, Language sourceLanguage) throws HeadlessException {
     super(project.getProject());
     myProject = project;
     setTitle("New Generator");
     mySourceLanguage = sourceLanguage;
+    // I don't know what's proper mechanism to obtain FS for the project. Could use one from sourceLanguage's descriptor file 
+    // but would prefer not to access module's descriptor file at all. 
+    myProjectFS = FileSystem.getInstance();
     myContenetPane = new JPanel(new GridLayout(4, 1));
     myContenetPane.setPreferredSize(new Dimension(600, 100));
     initContentPane();
@@ -82,7 +74,7 @@ public class NewGeneratorDialog extends DialogWrapper {
         TreeFileChooser chooser = new TreeFileChooser();
         chooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
         if (oldPath != null && oldPath.length() != 0) {
-          chooser.setInitialFile(FileSystem.getInstance().getFile(oldPath));
+          chooser.setInitialFile(myProjectFS.getFile(oldPath));
         }
         IFile result = chooser.showDialog();
         if (result != null) {
@@ -115,13 +107,13 @@ public class NewGeneratorDialog extends DialogWrapper {
   protected static Logger LOG = LogManager.getLogger(NewGeneratorDialog.class);
   @Override
   protected void doOKAction() {
-    final String templateModelsPath = myTemplateModelsDir.getText();
-    if (templateModelsPath.length() == 0) {
+    if (myTemplateModelsDir.getText().length() == 0) {
       setErrorText("No template models root");
       return;
     }
-    final File dir = new File(templateModelsPath);
-    if (!(dir.isAbsolute())) {
+
+    final IFile templateModelsPath = myProjectFS.getFile(myTemplateModelsDir.getText());
+    if (templateModelsPath.toPath().isRelative()) {
       setErrorText("Path should be absolute");
       return;
     }
@@ -137,12 +129,18 @@ public class NewGeneratorDialog extends DialogWrapper {
         try {
           // see MPS-18743 
           myProject.getRepository().saveAll();
-          VfsUtil.createDirectories(templateModelsPath);
-          newGenerator.value = createNewGenerator(mySourceLanguage, templateModelsPath, name);
-          adjustTemplateModel(mySourceLanguage, newGenerator.value);
-        } catch (IOException e) {
+          // XXX why saveAll is not part of NewModuleUtil.runModuleCreation? 
+          templateModelsPath.mkdirs();
+          // FIXME I know it's ugly to assume templateModelsPath always points to a descendant of generator module location, just don't want to deal with UI update 
+          //       right now, nor to introduce a hack to guess whether it's relative to mySourceLanguage.getModuleSourceDir() and how many separators are there. 
+          final GeneratorDescriptor generatorDescriptor = NewModuleUtil.createGeneratorDescriptor(Generator.generateGeneratorUID(mySourceLanguage), templateModelsPath.getParent(), templateModelsPath);
+          generatorDescriptor.setNamespace(name);
+          newGenerator.value = createNewGenerator(mySourceLanguage, generatorDescriptor);
+          NewModuleUtil.createTemplateModelIfNoneYet(newGenerator.value);
+        } catch (Exception e) {
+          // XXX again, why it's not common for any runModuleCreation? 
           if (LOG.isEnabledFor(Level.ERROR)) {
-            LOG.error("", e);
+            LOG.error("Failed to create new generator module", e);
           }
           newGenerator.value = null;
         }
@@ -159,43 +157,12 @@ public class NewGeneratorDialog extends DialogWrapper {
     Disposer.dispose(myTemplateModelsDir);
   }
 
-  protected Generator createNewGenerator(final Language language, String templateModelsDir, String name) {
-    //  FIXME similar to NewModuleUtil.createNewLanguage 
+  /*package*/ Generator createNewGenerator(final Language language, GeneratorDescriptor generatorDescriptor) {
     final LanguageDescriptor languageDescriptor = language.getModuleDescriptor();
-    final GeneratorDescriptor generatorDescriptor = new GeneratorDescriptor();
-    generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
-    generatorDescriptor.setNamespace(name);
-    DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
-    templateModelsRoot.setContentRoot(templateModelsDir);
-    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
-    generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
-    generatorDescriptor.getUsedDevkits().add(PersistenceFacade.getInstance().createModuleReference("fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)"));
     languageDescriptor.getGenerators().add(generatorDescriptor);
     language.setModuleDescriptor(languageDescriptor);
     language.save();
 
     return new ModuleRepositoryFacade(myProject).getModule(generatorDescriptor.getModuleReference(), Generator.class);
-  }
-
-  private String getTemplateModelPrefix(Language sourceLanguage) {
-    return sourceLanguage.getModuleName() + ".generator.template";
-  }
-
-  private void adjustTemplateModel(Language sourceLanguage, Generator newGenerator) {
-    boolean alreadyOwnsTemplateModel = false;
-    for (SModel modelDescriptor : newGenerator.getModels()) {
-      if (SModelStereotype.isGeneratorModel(modelDescriptor)) {
-        alreadyOwnsTemplateModel = true;
-        break;
-      }
-    }
-    if (alreadyOwnsTemplateModel) {
-      return;
-    }
-    EditableSModel templateModel = SModuleOperations.createModelWithAdjustments(getTemplateModelPrefix(sourceLanguage) + "." + "main@" + SModelStereotype.GENERATOR, newGenerator.getModelRoots().iterator().next());
-    SNode mappingConfiguration = SModelOperations.createNewNode(((SModel) templateModel), null, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"));
-    SPropertyOperations.set(mappingConfiguration, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"), "main");
-    SModelOperations.addRootNode(((SModel) templateModel), mappingConfiguration);
-    templateModel.save();
   }
 }
