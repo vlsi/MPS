@@ -90,7 +90,7 @@ public class TemplateModuleInterpreted extends TemplateModuleBase {
    * FIXME I don't really like this approach as we compute values we are unlikely to need. Proper solution is to get rid of TemplateModuleInterpreted altogether.
    */
   private MappingPriorityRule fixup(MappingPriorityRule r) {
-    MappingPriorityRule rv = r.getCopy();
+    MappingPriorityRule rv = r.copy();
     fixup(rv.getLeft());
     fixup(rv.getRight());
     return rv;

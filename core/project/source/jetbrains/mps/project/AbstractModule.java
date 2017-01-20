@@ -490,16 +490,15 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
             //    </modelRoot>
             // the code below makes no sense
             // DD for the module lists <library jar="trove-2.1.0.jar" />, which is likely the way file from languages/ is loaded
-            newMemento.put(FileBasedModelRoot.CONTENT_PATH, bundleParent.getPath());
+            newMemento.put(FileBasedModelRoot.CONTENT_PATH, newContentDir.getPath());
             Memento newMementoChild = newMemento.createChild(FileBasedModelRoot.SOURCE_ROOTS);
             for (String path : paths) {
               String convertedPath = convertPath(path, bundleHomeFile, sourcesDescriptorFile, descriptor);
               if (convertedPath != null) {
-                newMementoChild.put(FileBasedModelRoot.LOCATION, convertedPath.replace(newMemento.get(FileBasedModelRoot.CONTENT_PATH), ""));
                 String newRelativeLocation = FileUtil.getRelativePath(FileUtil.getUnixPath(convertedPath),
-                                                              FileUtil.getUnixPath(newContentDir.getPath()),
-                                                              Path.UNIX_SEPARATOR);
-                newMementoChild.put("location", newRelativeLocation);
+                                                                      FileUtil.getUnixPath(newContentDir.getPath()),
+                                                                      Path.UNIX_SEPARATOR);
+                newMementoChild.put(FileBasedModelRoot.LOCATION, newRelativeLocation);
                 update = true;
               }
             }
