@@ -46,7 +46,7 @@ public final class ConvertToItems_Intention extends IntentionDescriptorBase impl
     return SNodeOperations.isInstanceOf(creator, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) && ListSequence.fromList(SLinkOperations.getChildren(SNodeOperations.cast(creator, MetaAdapterFactory.getConcept(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")), MetaAdapterFactory.getContainmentLink(0x8388864671ce4f1cL, 0x9c53c54016f6ad4fL, 0x1202df1ada0L, 0x1202df24ea0L, "initValue"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_icoqxr_a0a0f(SNodeOperations.getContainingLinkRole(childNode), "list");
+    return eq_icoqxr_a0a0f(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x5f50ed14026999cbL, "list"));
   }
   @Override
   public boolean isSurroundWith() {

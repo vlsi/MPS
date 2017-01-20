@@ -188,9 +188,9 @@ public class ResolveUnknownUtil {
           if ((target != null)) {
             SLinkOperations.setTarget(call, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), SNodeOperations.cast(target, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept")));
           } else {
-            call.setReference(new DynamicReference("classConcept", call, null, className).getRole(), new DynamicReference("classConcept", call, null, className));
+            call.setReference(new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), call, null, className).getRole(), new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfbbebabf09L, 0x10a7588b546L, "classConcept"), call, null, className));
           }
-          SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee")));
+          SReference sref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), call, null, SPropertyOperations.getString(x, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee")));
           call.setReference(sref.getRole(), sref);
           reattachMethodArguments(x, call);
           reattachTypeArguments(x, call);
@@ -209,7 +209,7 @@ public class ResolveUnknownUtil {
           SNode call = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x118154a6332L, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));
           SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), call);
 
-          SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee")));
+          SReference sref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration"), call, null, SPropertyOperations.getString(x, MetaAdapterFactory.getProperty(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x245faa02186fc7b5L, 0x439f6403036ad2f4L, "callee")));
           call.setReference(sref.getRole(), sref);
 
           reattachMethodArguments(x, call);
@@ -280,7 +280,7 @@ public class ResolveUnknownUtil {
           SNode statFieldRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, "jetbrains.mps.baseLanguage.structure.StaticFieldReference"));
           SLinkOperations.setTarget(statFieldRef, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf940c80846L, 0x10a75869f9bL, "classifier"), cls);
           SReference fieldRef;
-          fieldRef = new DynamicReference("variableDeclaration", statFieldRef, null, memberName);
+          fieldRef = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), statFieldRef, null, memberName);
           statFieldRef.setReference(fieldRef.getRole(), fieldRef);
           operand = statFieldRef;
         }
@@ -307,7 +307,7 @@ public class ResolveUnknownUtil {
     SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46a4416L, "operand"), holder);
     SNode fieldRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"));
     SLinkOperations.setTarget(dotExpr, MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b46a08c4L, 0x116b46b36c4L, "operation"), fieldRef);
-    SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
+    SReference sref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x116b483d77aL, 0x116b484a653L, "fieldDeclaration"), fieldRef, null, fieldName);
     fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
   }
@@ -324,7 +324,7 @@ public class ResolveUnknownUtil {
       // it's a variable 
 
       SNode varRef = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, "jetbrains.mps.baseLanguage.structure.VariableReference"));
-      SReference sref = new DynamicReference("variableDeclaration", varRef, null, name);
+      SReference sref = new DynamicReference(MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c77f1e98L, 0xf8cc6bf960L, "variableDeclaration"), varRef, null, name);
       varRef.setReference(sref.getRole(), sref);
 
       return varRef;

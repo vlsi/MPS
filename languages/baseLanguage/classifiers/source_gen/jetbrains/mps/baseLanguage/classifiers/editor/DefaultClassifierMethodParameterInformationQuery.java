@@ -24,7 +24,7 @@ public class DefaultClassifierMethodParameterInformationQuery implements Paramet
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
     SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), MetaAdapterFactory.getConcept(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bd711e29L, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")) : node);
-    Scope scope = ModelConstraints.getReferenceDescriptor(methodCall, "method").getScope();
+    Scope scope = ModelConstraints.getReferenceDescriptor(methodCall, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member")).getScope();
     String name = SPropertyOperations.getString(SLinkOperations.getTarget(methodCall, MetaAdapterFactory.getReferenceLink(0x443f4c36fcf54eb6L, 0x95008d06ed259e3eL, 0x118bca97396L, 0x118bcb657ecL, "member")), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
     Iterable<SNode> availableElements = scope.getAvailableElements((name != null ? name : ""));
     return Sequence.fromIterable(availableElements).select(new ISelector<SNode, SNode>() {
