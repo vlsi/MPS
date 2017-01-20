@@ -5,11 +5,11 @@
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" version="0" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" version="1" />
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" version="0" />
-    <use id="2f3265e1-d1fe-41fd-ade0-b2f1afd4a87a" name="TestLanguage_testclone" version="-1" />
+    <use id="d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7" name="TestLanguage" version="0" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
-    <import index="wxd8" ref="r:fb0ce488-5cbf-418c-ad70-726f1a8c8587(TestLanguage_testclone.structure)" implicit="true" />
+    <import index="8f0y" ref="r:98395163-4b79-4816-934b-611fd70a3d78(TestLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator">
@@ -33,7 +33,7 @@
   <node concept="bUwia" id="21vA1rjfcRh">
     <property role="TrG5h" value="main" />
     <node concept="3aamgX" id="21vA1rjfd1R" role="3acgRq">
-      <ref role="30HIoZ" to="wxd8:21vA1rjfd1A" resolve="TestConcept" />
+      <ref role="30HIoZ" to="8f0y:21vA1rjfd1A" resolve="TestConcept" />
       <node concept="b5Tf3" id="21vA1rjfd23" role="1lVwrX" />
     </node>
   </node>
