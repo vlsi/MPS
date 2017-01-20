@@ -223,10 +223,6 @@
       <concept id="5979988948250981289" name="jetbrains.mps.lang.actions.structure.SNodeCreatorAndInitializer" flags="nn" index="2fJWfE" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
@@ -2411,19 +2407,19 @@
             <node concept="3cpWs6" id="3N6JpByfK_x" role="3cqZAp">
               <node concept="2ShNRf" id="3N6JpByfK_y" role="3cqZAk">
                 <node concept="1pGfFk" id="3N6JpByfNLT" role="2ShVmc">
-                  <ref role="37wK5l" to="squ6:Oi8IO9sN2E" resolve="XYCTableModel" />
+                  <ref role="37wK5l" to="squ6:4jf2BbgpZDu" resolve="XYCTableModel" />
                   <node concept="pncrf" id="3N6JpByfNLU" role="37wK5m" />
-                  <node concept="28GBK8" id="3N6JpByfOWU" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
-                    <ref role="28H3Ia" to="2qyu:3N6JpByfK$L" resolve="xs" />
+                  <node concept="359W_D" id="4jf2Bbgfnta" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
+                    <ref role="359W_F" to="2qyu:3N6JpByfK$L" resolve="xs" />
                   </node>
-                  <node concept="28GBK8" id="3N6JpByfOWW" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
-                    <ref role="28H3Ia" to="2qyu:3N6JpByfK$M" resolve="ys" />
+                  <node concept="359W_D" id="4jf2BbgfnzW" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
+                    <ref role="359W_F" to="2qyu:3N6JpByfK$M" resolve="ys" />
                   </node>
-                  <node concept="28GBK8" id="3N6JpByfOWY" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
-                    <ref role="28H3Ia" to="2qyu:3N6JpByfK$N" resolve="contents" />
+                  <node concept="359W_D" id="4jf2BbgfnEI" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:3N6JpByf$mg" resolve="Matrix" />
+                    <ref role="359W_F" to="2qyu:3N6JpByfK$N" resolve="contents" />
                   </node>
                   <node concept="1Q80Hx" id="3N6JpByfOX0" role="37wK5m" />
                 </node>
@@ -2446,20 +2442,20 @@
                 <node concept="1Y3b0j" id="3W_zVC89LXW" role="YeSDq">
                   <property role="2bfB8j" value="true" />
                   <ref role="1Y3XeK" to="squ6:Oi8IO9sN2p" resolve="XYCTableModel" />
-                  <ref role="37wK5l" to="squ6:Oi8IO9sN2E" resolve="XYCTableModel" />
+                  <ref role="37wK5l" to="squ6:4jf2BbgpZDu" resolve="XYCTableModel" />
                   <node concept="3Tm1VV" id="3W_zVC89LXX" role="1B3o_S" />
                   <node concept="pncrf" id="6CJUZdX4x0M" role="37wK5m" />
-                  <node concept="28GBK8" id="6CJUZdX4x0S" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
-                    <ref role="28H3Ia" to="2qyu:6CJUZdX4x01" resolve="column" />
+                  <node concept="359W_D" id="4jf2Bbgfm$v" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
+                    <ref role="359W_F" to="2qyu:6CJUZdX4x01" resolve="column" />
                   </node>
-                  <node concept="28GBK8" id="6CJUZdX4x0X" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
-                    <ref role="28H3Ia" to="2qyu:6CJUZdX4x0A" resolve="row" />
+                  <node concept="359W_D" id="4jf2BbgfmPq" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
+                    <ref role="359W_F" to="2qyu:6CJUZdX4x0A" resolve="row" />
                   </node>
-                  <node concept="28GBK8" id="6CJUZdX4x0Z" role="37wK5m">
-                    <ref role="28GBKb" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
-                    <ref role="28H3Ia" to="2qyu:6CJUZdX4x0B" resolve="body" />
+                  <node concept="359W_D" id="4jf2Bbgfn6l" role="37wK5m">
+                    <ref role="359W_E" to="2qyu:6CJUZdX4tfv" resolve="LightWeightDecisionTable" />
+                    <ref role="359W_F" to="2qyu:6CJUZdX4x0B" resolve="body" />
                   </node>
                   <node concept="1Q80Hx" id="6CJUZdX4x37" role="37wK5m" />
                 </node>

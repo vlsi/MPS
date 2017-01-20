@@ -23,9 +23,9 @@
     <import index="ia57" ref="r:fc9c4864-4036-4c2e-9220-1fcd2b04815c(jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi)" />
     <import index="jqfx" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.projectional.view(jetbrains.jetpad/)" />
     <import index="sn11" ref="r:836426ab-a6f4-4fa3-9a9c-34c02ed6ab5d(jetbrains.mps.ide.icons)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="lgza" ref="67b3c41d-58b3-4756-b971-30bf8a9d63e6/java:jetbrains.jetpad.model.property(jetbrains.jetpad/)" implicit="true" />
-    <import index="tpce" ref="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" implicit="true" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
   </imports>
   <registry>
@@ -310,10 +310,6 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -1727,12 +1723,6 @@
         <property role="TrG5h" value="container" />
         <node concept="3Tqbb2" id="21G88dstpen" role="1tU5fm" />
       </node>
-      <node concept="37vLTG" id="21G88dstpeo" role="3clF46">
-        <property role="TrG5h" value="containingLink" />
-        <node concept="3Tqbb2" id="21G88dstpep" role="1tU5fm">
-          <ref role="ehGHo" to="tpce:f_TJgxE" resolve="LinkDeclaration" />
-        </node>
-      </node>
       <node concept="37vLTG" id="BmcO$nL80P" role="3clF46">
         <property role="TrG5h" value="text" />
         <node concept="17QB3L" id="BmcO$nL8Fl" role="1tU5fm" />
@@ -2940,10 +2930,6 @@
                         <node concept="liA8E" id="21G88dswd9O" role="2OqNvi">
                           <ref role="37wK5l" to="g51k:~EditorCell_Basic.getSNode():org.jetbrains.mps.openapi.model.SNode" resolve="getSNode" />
                         </node>
-                      </node>
-                      <node concept="28GBK8" id="21G88dswk0e" role="37wK5m">
-                        <ref role="28GBKb" to="adck:CgolD_s2V1" resolve="Diagram" />
-                        <ref role="28H3Ia" to="adck:22C1ebGgZiQ" resolve="newBlocks" />
                       </node>
                       <node concept="2GrUjf" id="BmcO$nLFI4" role="37wK5m">
                         <ref role="2Gs0qQ" node="21G88ds_xNy" resolve="tag" />

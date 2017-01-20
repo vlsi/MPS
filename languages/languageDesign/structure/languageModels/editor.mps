@@ -543,10 +543,6 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
-      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -595,6 +591,10 @@
       </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
+      </concept>
+      <concept id="597763930871270009" name="jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression" flags="nn" index="3fl2lp">
+        <reference id="597763930871272016" name="targetNode" index="3fl3PK" />
+        <child id="597763930871272014" name="parent" index="3fl3PI" />
       </concept>
       <concept id="1139613262185" name="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation" flags="nn" index="1mfA1w" />
       <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
@@ -5932,9 +5932,11 @@
                               <node concept="37vLTw" id="78qF3ppISt8" role="3uHU7B">
                                 <ref role="3cqZAo" node="78qF3ppISta" resolve="it" />
                               </node>
-                              <node concept="28GBK8" id="78qF3ppISt9" role="3uHU7w">
-                                <ref role="28H3Ia" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
-                                <ref role="28GBKb" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                              <node concept="3fl2lp" id="4jf2Bbgfd0m" role="3uHU7w">
+                                <ref role="3fl3PK" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
+                                <node concept="3B5_sB" id="4jf2Bbgfcce" role="3fl3PI">
+                                  <ref role="3B5MYn" to="tpck:gw2VY9q" resolve="BaseConcept" />
+                                </node>
                               </node>
                             </node>
                           </node>
