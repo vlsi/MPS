@@ -16114,6 +16114,60 @@
         <property role="TrG5h" value="conceptFqName" />
         <node concept="17QB3L" id="5uUZ$FUUb6J" role="1tU5fm" />
       </node>
+      <node concept="P$JXv" id="476YRQvP6bO" role="lGtFl">
+        <node concept="TZ5HI" id="476YRQvP6bP" role="3nqlJM">
+          <node concept="TZ5HA" id="476YRQvP6bQ" role="3HnX3l">
+            <node concept="1dT_AC" id="476YRQvP9kM" role="1dT_Ay">
+              <property role="1dT_AB" value="use version with concept parameter" />
+            </node>
+            <node concept="1dT_AC" id="476YRQvP9kO" role="1dT_Ay">
+              <property role="1dT_AB" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="476YRQvP6bR" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
+      <node concept="2AHcQZ" id="476YRQvP6co" role="2AJF6D">
+        <ref role="2AI5Lk" to="ncw5:~ToRemove" resolve="ToRemove" />
+        <node concept="2B6LJw" id="476YRQvP9jX" role="2B76xF">
+          <ref role="2B6OnR" to="ncw5:~ToRemove.version()" resolve="version" />
+          <node concept="3b6qkQ" id="476YRQvP9kz" role="2B70Vg">
+            <property role="$nhwW" value="3.5" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="476YRQvP9l3" role="13h7CS">
+      <property role="TrG5h" value="canBeCoerced" />
+      <property role="13i0it" value="true" />
+      <node concept="3Tm1VV" id="476YRQvP9l4" role="1B3o_S" />
+      <node concept="10P_77" id="476YRQvP9l5" role="3clF45" />
+      <node concept="3clFbS" id="476YRQvP9l6" role="3clF47">
+        <node concept="3SKdUt" id="476YRQvPbPs" role="3cqZAp">
+          <node concept="3SKdUq" id="476YRQvPbPu" role="3SKWNk">
+            <property role="3SKdUp" value="todo remove body after 3.5" />
+          </node>
+        </node>
+        <node concept="3cpWs6" id="476YRQvPbiV" role="3cqZAp">
+          <node concept="BsUDl" id="476YRQvPbjx" role="3cqZAk">
+            <ref role="37wK5l" node="5uUZ$FUUb6B" resolve="canBeCoerced" />
+            <node concept="2OqwBi" id="476YRQvPbsh" role="37wK5m">
+              <node concept="37vLTw" id="476YRQvPbjY" role="2Oq$k0">
+                <ref role="3cqZAo" node="476YRQvP9l9" resolve="c" />
+              </node>
+              <node concept="liA8E" id="476YRQvPbFM" role="2OqNvi">
+                <ref role="37wK5l" to="c17a:~SAbstractConcept.getQualifiedName():java.lang.String" resolve="getQualifiedName" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="37vLTG" id="476YRQvP9l9" role="3clF46">
+        <property role="TrG5h" value="c" />
+        <node concept="3bZ5Sz" id="476YRQvPbeM" role="1tU5fm" />
+      </node>
     </node>
     <node concept="13hLZK" id="hEwIzOf" role="13h7CW">
       <node concept="3clFbS" id="hEwIzOg" role="2VODD2" />

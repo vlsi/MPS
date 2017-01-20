@@ -25,7 +25,7 @@ public final class CoerceUtil {
     if (concept == null) {
       return true;
     }
-    return (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")) ? ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")), SMethodTrimmedId.create("canBeCoerced", null, "5uUZ$FUUb6B"), concept.getQualifiedName())) : true);
+    return (SNodeOperations.isInstanceOf(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")) ? ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(type, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL, "jetbrains.mps.baseLanguage.structure.Type")), SMethodTrimmedId.create("canBeCoerced", null, "476YRQvP9l3"), concept)) : true);
   }
   /**
    * 
