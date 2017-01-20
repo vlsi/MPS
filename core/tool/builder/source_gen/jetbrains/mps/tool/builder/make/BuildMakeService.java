@@ -135,6 +135,7 @@ public class BuildMakeService extends AbstractMakeService implements IMakeServic
     @Override
     protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
       Message message = new Message(MessageKind.fromPriority(priority), messageText);
+      message.setException(throwable);
       message.setHintObject(object);
       myMessageHandler.handle(message);
     }

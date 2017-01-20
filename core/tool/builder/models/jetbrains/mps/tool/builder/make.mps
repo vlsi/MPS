@@ -1438,6 +1438,19 @@
               </node>
             </node>
           </node>
+          <node concept="3clFbF" id="H0JT4CpCu3" role="3cqZAp">
+            <node concept="2OqwBi" id="H0JT4CpC_p" role="3clFbG">
+              <node concept="37vLTw" id="H0JT4CpCu1" role="2Oq$k0">
+                <ref role="3cqZAo" node="6Hsvt1DY5$K" resolve="message" />
+              </node>
+              <node concept="liA8E" id="H0JT4CpCHW" role="2OqNvi">
+                <ref role="37wK5l" to="et5u:~Message.setException(java.lang.Throwable):jetbrains.mps.messages.Message" resolve="setException" />
+                <node concept="37vLTw" id="H0JT4CpCRj" role="37wK5m">
+                  <ref role="3cqZAo" node="6Hsvt1DXYJg" resolve="throwable" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="3clFbF" id="6Hsvt1DY5$V" role="3cqZAp">
             <node concept="2OqwBi" id="6Hsvt1DY5$W" role="3clFbG">
               <node concept="37vLTw" id="3GM_nagTuHf" role="2Oq$k0">

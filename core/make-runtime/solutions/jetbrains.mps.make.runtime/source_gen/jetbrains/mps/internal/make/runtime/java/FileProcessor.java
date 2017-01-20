@@ -100,7 +100,7 @@ public class FileProcessor {
         writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
         writer.write(myContent);
       } catch (IOException e) {
-        FileProcessor.LOG.error(null, e);
+        FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
       } finally {
         if (writer != null) {
           try {
@@ -153,7 +153,7 @@ public class FileProcessor {
         stream = file.openOutputStream();
         stream.write(myContent);
       } catch (IOException e) {
-        FileProcessor.LOG.error(null, e);
+        FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
       } finally {
         if (stream != null) {
           try {
@@ -214,7 +214,7 @@ public class FileProcessor {
       try {
         JDOMUtil.writeDocument(myDocument, file);
       } catch (IOException e) {
-        FileProcessor.LOG.error(null, e);
+        FileProcessor.LOG.error((e.getMessage() == null ? e.getClass().getName() : e.getMessage()), e);
       }
     }
 

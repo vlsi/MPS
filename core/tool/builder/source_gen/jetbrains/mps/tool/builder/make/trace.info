@@ -391,9 +391,10 @@
       <node id="878521226301293417" at="126,45,127,402" concept="11" />
       <node id="3744525589868092396" at="132,69,133,45" concept="4" />
       <node id="7736196594000222511" at="136,170,137,85" concept="10" />
-      <node id="7736196594000222523" at="137,85,138,36" concept="4" />
-      <node id="7736196594000222530" at="138,36,139,39" concept="4" />
-      <node id="3744525589868092392" at="142,0,143,0" concept="5" trace="myMessageHandler" />
+      <node id="810858563095660419" at="137,85,138,38" concept="4" />
+      <node id="7736196594000222523" at="138,38,139,36" concept="4" />
+      <node id="7736196594000222530" at="139,36,140,39" concept="4" />
+      <node id="3744525589868092392" at="143,0,144,0" concept="5" trace="myMessageHandler" />
       <node id="878521226301293132" at="37,0,39,0" concept="2" trace="BuildMakeService#()V" />
       <node id="9122198050635685790" at="103,14,105,9" concept="0" />
       <node id="9122198050635693273" at="111,14,113,9" concept="0" />
@@ -412,7 +413,7 @@
       <node id="9122198050635665892" at="100,91,105,9" concept="8" />
       <node id="9122198050635688359" at="108,97,113,9" concept="8" />
       <node id="9122198050635695771" at="117,25,122,9" concept="8" />
-      <node id="7736196594000194499" at="135,0,141,0" concept="9" trace="append#(Lorg/apache/log4j/Priority;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Object;)V" />
+      <node id="7736196594000194499" at="135,0,142,0" concept="9" trace="append#(Lorg/apache/log4j/Priority;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;Ljava/lang/Object;)V" />
       <node id="9122198050635646890" at="99,0,107,0" concept="9" trace="runJobWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
       <node id="9122198050635646908" at="107,0,115,0" concept="9" trace="runConfigWithMonitor#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_void_P1_E0;)V" />
       <node id="9122198050635646926" at="115,0,124,0" concept="9" trace="setup#(Ljetbrains/mps/make/script/IPropertiesPool;Ljava/lang/Iterable;Ljava/lang/Iterable;)V" />
@@ -448,9 +449,6 @@
       <scope id="3744525589867790713" at="132,0,135,0">
         <var name="messageHandler" id="3744525589867792025" />
       </scope>
-      <scope id="7736196594000194518" at="136,170,139,39">
-        <var name="message" id="7736196594000222512" />
-      </scope>
       <scope id="878521226301293135" at="39,0,43,0">
         <var name="controller" id="878521226301293145" />
         <var name="monitor" id="878521226301293147" />
@@ -472,10 +470,13 @@
       <scope id="878521226301293252" at="62,0,66,0">
         <var name="listener" id="878521226301293255" />
       </scope>
+      <scope id="7736196594000194518" at="136,170,140,39">
+        <var name="message" id="7736196594000222512" />
+      </scope>
       <scope id="9122198050635646904" at="100,91,105,9" />
       <scope id="9122198050635646922" at="108,97,113,9" />
       <scope id="9122198050635646944" at="116,111,122,9" />
-      <scope id="7736196594000194499" at="135,0,141,0">
+      <scope id="7736196594000194499" at="135,0,142,0">
         <var name="categoryName" id="7736196594000194506" />
         <var name="messageText" id="7736196594000194509" />
         <var name="object" id="7736196594000194515" />
@@ -515,9 +516,9 @@
         <var name="ctl" id="878521226301293327" />
         <var name="msess" id="878521226301293324" />
       </scope>
-      <unit id="3744525589867716036" at="130,0,144,0" name="jetbrains.mps.tool.builder.make.BuildMakeService$ForwardingLoggingHandler" />
+      <unit id="3744525589867716036" at="130,0,145,0" name="jetbrains.mps.tool.builder.make.BuildMakeService$ForwardingLoggingHandler" />
       <unit id="9122198050635635597" at="98,15,124,5" name="jetbrains.mps.tool.builder.make.BuildMakeService$1" />
-      <unit id="878521226301293123" at="36,0,145,0" name="jetbrains.mps.tool.builder.make.BuildMakeService" />
+      <unit id="878521226301293123" at="36,0,146,0" name="jetbrains.mps.tool.builder.make.BuildMakeService" />
     </file>
   </root>
   <root nodeRef="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)/878521226301293996">
