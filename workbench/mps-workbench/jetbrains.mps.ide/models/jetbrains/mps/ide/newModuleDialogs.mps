@@ -908,6 +908,7 @@
       </node>
       <node concept="3Tm6S6" id="6CFNGGphKia" role="1B3o_S" />
     </node>
+    <node concept="2tJIrI" id="6o4hadNg8yz" role="jymVt" />
     <node concept="3clFbW" id="6CFNGGphKib" role="jymVt">
       <property role="DiZV1" value="false" />
       <property role="od$2w" value="false" />
@@ -1930,6 +1931,32 @@
                 <node concept="2YIFZM" id="6CFNGGphKo5" role="3uHU7w">
                   <ref role="37wK5l" to="w1kc:~SModel.generateUniqueId():jetbrains.mps.smodel.SNodeId" resolve="generateUniqueId" />
                   <ref role="1Pybhc" to="w1kc:~SModel" resolve="SModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="6o4hadNg7IT" role="3cqZAp">
+          <node concept="2OqwBi" id="6o4hadNg7XK" role="3clFbG">
+            <node concept="37vLTw" id="6o4hadNg7IR" role="2Oq$k0">
+              <ref role="3cqZAo" node="6CFNGGphKnR" resolve="copyDescriptor" />
+            </node>
+            <node concept="liA8E" id="6o4hadNg8jF" role="2OqNvi">
+              <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setOutputPath(java.lang.String):void" resolve="setOutputPath" />
+              <node concept="2OqwBi" id="6o4hadNg8sC" role="37wK5m">
+                <node concept="37vLTw" id="6o4hadNg8mY" role="2Oq$k0">
+                  <ref role="3cqZAo" node="6CFNGGphKi8" resolve="myModulePathConverter" />
+                </node>
+                <node concept="liA8E" id="6o4hadNg9gb" role="2OqNvi">
+                  <ref role="37wK5l" to="18ew:~ModulePathConverter.source2Target(java.lang.String):java.lang.String" resolve="source2Target" />
+                  <node concept="2OqwBi" id="6o4hadNg9x_" role="37wK5m">
+                    <node concept="37vLTw" id="6o4hadNg9nr" role="2Oq$k0">
+                      <ref role="3cqZAo" node="6CFNGGphKnR" resolve="copyDescriptor" />
+                    </node>
+                    <node concept="liA8E" id="6o4hadNg9Ok" role="2OqNvi">
+                      <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.getOutputPath():java.lang.String" resolve="getOutputPath" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

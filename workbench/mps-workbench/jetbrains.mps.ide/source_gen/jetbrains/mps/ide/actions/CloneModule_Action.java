@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.AbstractModule;
+import com.intellij.util.Generator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
@@ -36,7 +37,7 @@ public class CloneModule_Action extends BaseAction {
   }
   @Override
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule;
+    return event.getData(MPSCommonDataKeys.TREE_SELECTION_SIZE) == 1 && event.getData(MPSCommonDataKeys.MODULE) instanceof AbstractModule && (!(event.getData(MPSCommonDataKeys.MODULE) instanceof Generator));
   }
   @Override
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

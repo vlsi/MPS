@@ -295,6 +295,7 @@
   <dependency className="jetbrains.mps.ide.actions.CloneModule_Action" file="CloneModule_Action.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.util.Generator" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />

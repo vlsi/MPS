@@ -112,6 +112,9 @@ public final class ReferenceUpdater {
         MetaAdapterByDeclaration.getLanguage(oldLanguage),
         MetaAdapterByDeclaration.getLanguage(newLanguage)
     );
+    if (oldLanguage.getGenerators().size() != newLanguage.getGenerators().size()) {
+      throw new IllegalArgumentException("The number of generators do not match!");
+    }
     Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
     for (Generator oldGenerator : oldLanguage.getGenerators()) {
       addModuleToAdjustImpl(oldGenerator, newGeneratorIt.next());

@@ -146,9 +146,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
     List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {
       SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
-      if (module != null) {
-        loaded.add(module);
-      }
+      loaded.add(module);
     }
     for (SModule module : loaded) {
       ((AbstractModule) module).onModuleLoad();

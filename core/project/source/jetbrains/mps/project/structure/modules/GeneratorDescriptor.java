@@ -159,6 +159,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     GeneratorDescriptor copy = super.copy0(GeneratorDescriptor::new);
     copy.setGeneratorUID(myGeneratorUID);
     copy.setGenerateTemplates(isGenerateTemplates());
+    copy.setOutputPath(getOutputPath());
     copy.setReflectiveQueries(isReflectiveQueries());
     copy.getDepGenerators().addAll(getDepGenerators());
     copy.getPriorityRules().addAll(getPriorityRules().stream().map(MappingPriorityRule::copy).collect(toList()));

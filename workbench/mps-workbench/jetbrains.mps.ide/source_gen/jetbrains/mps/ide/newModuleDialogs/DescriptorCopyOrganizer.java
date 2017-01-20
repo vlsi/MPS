@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.SModel;
   @NotNull
   private final String myNewName;
   private final ModulePathConverter myModulePathConverter;
+
   public DescriptorCopyOrganizer(@NotNull AbstractModule moduleToCopy, @NotNull String newName, @NotNull IFile newFile) {
     myModuleToCopy = moduleToCopy;
     myNewName = newName;
@@ -140,5 +141,6 @@ import jetbrains.mps.smodel.SModel;
 
   private void hackGeneratorDescriptor(@NotNull GeneratorDescriptor copyDescriptor) {
     copyDescriptor.setGeneratorUID(copyDescriptor.getNamespace() + "#" + SModel.generateUniqueId());
+    copyDescriptor.setOutputPath(myModulePathConverter.source2Target(copyDescriptor.getOutputPath()));
   }
 }
