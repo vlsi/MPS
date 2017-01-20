@@ -1290,8 +1290,8 @@
       <scope id="511002117671748040" at="103,0,143,0">
         <var name="node" id="511002117671748040" />
       </scope>
-      <unit id="4633202057941642082" at="87,525,90,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$1" />
-      <unit id="4633202057941642082" at="95,443,98,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$2" />
+      <unit id="4633202057941642082" at="87,467,90,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$1" />
+      <unit id="4633202057941642082" at="95,385,98,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$2" />
       <unit id="511002117671748040" at="108,114,112,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$3$1" />
       <unit id="511002117671748040" at="113,109,117,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$3$2" />
       <unit id="511002117671748040" at="148,123,152,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram1_EditorBuilder_a$DiagramCellImpl_yfdxtz_a0a$4$1" />
@@ -4611,15 +4611,15 @@
       <scope id="8794120090374245752" at="114,0,154,0">
         <var name="node" id="8794120090374245752" />
       </scope>
-      <unit id="5540569706413846293" at="81,437,85,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$2" />
-      <unit id="5540569706413846293" at="103,468,107,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$5" />
+      <unit id="5540569706413846293" at="81,379,85,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$2" />
+      <unit id="5540569706413846293" at="103,410,107,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$5" />
       <unit id="8794120090374245752" at="119,114,123,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$7$1" />
       <unit id="8794120090374245752" at="124,109,128,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$7$2" />
       <unit id="8794120090374245752" at="159,123,163,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$8$1" />
       <unit id="8794120090374245752" at="164,132,168,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$8$2" />
-      <unit id="8794120090374256321" at="76,518,81,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$1" />
+      <unit id="8794120090374256321" at="76,460,81,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$1" />
       <unit id="5540569706413846293" at="85,13,90,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$3" />
-      <unit id="8794120090374256321" at="95,436,100,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$4" />
+      <unit id="8794120090374256321" at="95,378,100,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$4" />
       <unit id="5540569706413846293" at="107,13,112,7" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$6" />
       <unit id="8794120090374245752" at="129,83,137,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$7$3" />
       <unit id="8794120090374245752" at="138,74,149,11" name="jetbrains.mps.lang.editor.diagram.testLanguage.editor.Diagram2_EditorBuilder_a$DiagramCellImpl_dbn5di_a0$7$4" />

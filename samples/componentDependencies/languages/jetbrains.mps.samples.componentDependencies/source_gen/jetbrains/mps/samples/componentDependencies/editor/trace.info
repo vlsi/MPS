@@ -745,8 +745,8 @@
       <unit id="6223439730610570923" at="157,123,161,11" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$4$1" />
       <unit id="6223439730610570923" at="162,132,166,11" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$4$2" />
       <unit id="6223439730610754296" at="176,239,180,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$5" />
-      <unit id="9095678365528627841" at="90,522,96,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$1" />
-      <unit id="9095678365528627841" at="101,440,107,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$2" />
+      <unit id="9095678365528627841" at="90,464,96,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$1" />
+      <unit id="9095678365528627841" at="101,382,107,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$2" />
       <unit id="6223439730610570923" at="127,83,135,11" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$3$3" />
       <unit id="6223439730610570923" at="136,74,147,11" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$3$4" />
       <unit id="6223439730610570923" at="153,17,168,7" name="jetbrains.mps.samples.componentDependencies.editor.ComponentSet_diagram_EditorBuilder_a$DiagramCellImpl_amytw9_a0a$4" />
