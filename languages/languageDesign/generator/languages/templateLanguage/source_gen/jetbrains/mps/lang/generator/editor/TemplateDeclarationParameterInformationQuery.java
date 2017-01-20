@@ -34,7 +34,7 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
     }
     return ListSequence.fromList(SNodeOperations.getNodeAncestors(selectedNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL, "jetbrains.mps.baseLanguage.structure.Expression"), true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.getParent(it) == templateCall && SNodeOperations.getContainingLinkDeclaration(it) == SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"));
+        return SNodeOperations.getParent(it) == templateCall && eq_r8vx8y_a0a0a0a0a0a2a4(SNodeOperations.getContainingLink(it), MetaAdapterFactory.getContainmentLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x17e941d108ce3120L, 0x17e941d108ce3125L, "actualArgument"));
       }
     });
   }
@@ -65,5 +65,8 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
       styledText.setBold(false);
     }
     styledText.append(")");
+  }
+  private static boolean eq_r8vx8y_a0a0a0a0a0a2a4(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }

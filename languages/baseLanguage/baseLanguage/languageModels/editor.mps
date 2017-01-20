@@ -843,7 +843,6 @@
       <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
         <child id="1204834868751" name="expression" index="25KhWn" />
       </concept>
-      <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
@@ -43821,16 +43820,16 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3clFbC" id="1wEcoXjIF3N" role="3uHU7w">
-                  <node concept="28GBK8" id="1wEcoXjIF3O" role="3uHU7w">
-                    <ref role="28H3Ia" to="tpee:fz7vLUn" resolve="lValue" />
-                    <ref role="28GBKb" to="tpee:hGd03cG" resolve="BaseAssignmentExpression" />
-                  </node>
+                <node concept="17R0WA" id="4jf2BbgbAMt" role="3uHU7w">
                   <node concept="2OqwBi" id="1wEcoXjIF3P" role="3uHU7B">
                     <node concept="37vLTw" id="1wEcoXjIF3Q" role="2Oq$k0">
                       <ref role="3cqZAo" node="1wEcoXjIF3q" resolve="source" />
                     </node>
-                    <node concept="25OxAV" id="1wEcoXjIF3R" role="2OqNvi" />
+                    <node concept="2NL2c5" id="4jf2BbgbAwk" role="2OqNvi" />
+                  </node>
+                  <node concept="359W_D" id="4jf2BbgbAW$" role="3uHU7w">
+                    <ref role="359W_E" to="tpee:hGd03cG" resolve="BaseAssignmentExpression" />
+                    <ref role="359W_F" to="tpee:fz7vLUn" resolve="lValue" />
                   </node>
                 </node>
               </node>
