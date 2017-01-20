@@ -1842,6 +1842,10 @@
       <property role="IQ2ns" value="5253134957341870585" />
       <ref role="20lvS9" to="tpce:f_TJgxF" resolve="PropertyDeclaration" />
     </node>
+    <node concept="asaX9" id="5xzMQBRESIM" role="lGtFl">
+      <property role="YLPcu" value="3.5" />
+      <property role="YLQ7P" value="use property/.../.getName() instead, better to migrate to property/.../" />
+    </node>
   </node>
   <node concept="1TIwiD" id="5zEkxuKhqeM">
     <property role="R5$K7" value="false" />

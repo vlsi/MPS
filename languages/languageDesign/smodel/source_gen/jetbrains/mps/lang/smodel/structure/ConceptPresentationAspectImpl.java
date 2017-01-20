@@ -142,7 +142,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PropertyId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PropertyIdRefExpression = new ConceptPresentationBuilder().shortDesc("openapi SProperty").create();
   private final ConceptPresentation props_PropertyIdentity = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyNameRefExpression = new ConceptPresentationBuilder().shortDesc("name").create();
+  private final ConceptPresentation props_PropertyNameRefExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("name").create();
   private final ConceptPresentation props_PropertyQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Property_HasValue_Enum = new ConceptPresentationBuilder().shortDesc("check value of enum property").create();
   private final ConceptPresentation props_Property_HasValue_Simple = new ConceptPresentationBuilder().shortDesc("check value of property").create();
