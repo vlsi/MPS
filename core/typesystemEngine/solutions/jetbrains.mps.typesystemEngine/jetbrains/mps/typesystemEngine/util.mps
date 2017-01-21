@@ -203,7 +203,6 @@
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
         <child id="1180636770616" name="createdType" index="3zrR0E" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -332,7 +331,7 @@
                         <node concept="37vLTw" id="3GM_nagTxLk" role="2Oq$k0">
                           <ref role="3cqZAo" node="1Cyzq4PvtAB" resolve="child" />
                         </node>
-                        <node concept="1PgB_6" id="1Cyzq4PwPHe" role="2OqNvi" />
+                        <node concept="3YRAZt" id="1Cyzq4PwPHe" role="2OqNvi" />
                       </node>
                     </node>
                   </node>
@@ -433,7 +432,7 @@
                         <node concept="37vLTw" id="3GM_nagTuTq" role="2Oq$k0">
                           <ref role="3cqZAo" node="1Cyzq4PwPHx" resolve="child" />
                         </node>
-                        <node concept="1PgB_6" id="1Cyzq4PwPHZ" role="2OqNvi" />
+                        <node concept="3YRAZt" id="1Cyzq4PwPHZ" role="2OqNvi" />
                       </node>
                     </node>
                   </node>

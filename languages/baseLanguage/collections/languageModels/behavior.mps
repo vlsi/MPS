@@ -300,7 +300,6 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="6870613620390542976" name="jetbrains.mps.lang.smodel.structure.ConceptAliasOperation" flags="ng" index="3n3YKJ" />
-      <concept id="334628810661441841" name="jetbrains.mps.lang.smodel.structure.AsSConcept" flags="nn" index="1rGIog" />
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
       <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1180636770613" name="jetbrains.mps.lang.smodel.structure.SNodeCreator" flags="nn" index="3zrR0B">
@@ -6260,11 +6259,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="6ALWH9g0b$0" role="3cqZAp" />
-        <node concept="3SKdUt" id="6ALWH9fZoDh" role="3cqZAp">
-          <node concept="3SKdUq" id="6ALWH9fZoDj" role="3SKWNk">
-            <property role="3SKdUp" value="todo remove this line after this becomes a concept&lt;&gt;" />
-          </node>
-        </node>
         <node concept="3SKdUt" id="6ALWH9g1dpx" role="3cqZAp">
           <node concept="3SKdUq" id="6ALWH9g1dpz" role="3SKWNk">
             <property role="3SKdUp" value="[MM] I don't understand this code and have just wrote an equivalent to the previous version w/o conceptNodes" />
@@ -6283,12 +6277,9 @@
         <node concept="3cpWs8" id="6ALWH9fZiq0" role="3cqZAp">
           <node concept="3cpWsn" id="6ALWH9fZiq3" role="3cpWs9">
             <property role="TrG5h" value="tt" />
+            <node concept="1fM9EW" id="1u_ffTozJUi" role="33vP2m" />
             <node concept="3bZ5Sz" id="6ALWH9fZipY" role="1tU5fm">
               <ref role="3bZ5Sy" to="tp2q:5cL0w3CQuFQ" resolve="IApplicableToNothing" />
-            </node>
-            <node concept="2OqwBi" id="6ALWH9fZlwE" role="33vP2m">
-              <node concept="1fM9EW" id="1u_ffTozJUi" role="2Oq$k0" />
-              <node concept="1rGIog" id="6ALWH9fZlLI" role="2OqNvi" />
             </node>
           </node>
         </node>

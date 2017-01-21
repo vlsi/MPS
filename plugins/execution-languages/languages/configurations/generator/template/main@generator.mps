@@ -475,7 +475,6 @@
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -5963,10 +5962,12 @@
                         <node concept="3clFbF" id="6dw4cFkLdWK" role="3cqZAp">
                           <node concept="2OqwBi" id="6dw4cFkLdWL" role="3clFbG">
                             <node concept="1PxgMI" id="6dw4cFkLdWM" role="2Oq$k0">
-                              <ref role="1m5ApE" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                               <node concept="2OqwBi" id="6dw4cFkLdWN" role="1m5AlR">
                                 <node concept="30H73N" id="6dw4cFkLdWO" role="2Oq$k0" />
                                 <node concept="2Rxl7S" id="6dw4cFkLdWP" role="2OqNvi" />
+                              </node>
+                              <node concept="chp4Y" id="7BApNipLn$a" role="3oSUPX">
+                                <ref role="cht4Q" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6dw4cFkLdWQ" role="2OqNvi">
@@ -5996,10 +5997,12 @@
                         <node concept="3clFbF" id="6dw4cFkKdKY" role="3cqZAp">
                           <node concept="2OqwBi" id="6dw4cFkKdKZ" role="3clFbG">
                             <node concept="1PxgMI" id="6dw4cFkKdL0" role="2Oq$k0">
-                              <ref role="1m5ApE" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                               <node concept="2OqwBi" id="6dw4cFkKdL1" role="1m5AlR">
                                 <node concept="30H73N" id="6dw4cFkKdL2" role="2Oq$k0" />
                                 <node concept="2Rxl7S" id="6dw4cFkKdL3" role="2OqNvi" />
+                              </node>
+                              <node concept="chp4Y" id="7BApNipLn$8" role="3oSUPX">
+                                <ref role="cht4Q" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                               </node>
                             </node>
                             <node concept="3TrEf2" id="6dw4cFkKdL4" role="2OqNvi">
@@ -6020,10 +6023,12 @@
                       <node concept="3clFbF" id="6dw4cFkL6JL" role="3cqZAp">
                         <node concept="2OqwBi" id="6dw4cFkL6JM" role="3clFbG">
                           <node concept="1PxgMI" id="6dw4cFkL6JN" role="2Oq$k0">
-                            <ref role="1m5ApE" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                             <node concept="2OqwBi" id="6dw4cFkL6JO" role="1m5AlR">
                               <node concept="30H73N" id="6dw4cFkL6JP" role="2Oq$k0" />
                               <node concept="2Rxl7S" id="6dw4cFkL6JQ" role="2OqNvi" />
+                            </node>
+                            <node concept="chp4Y" id="7BApNipLn$9" role="3oSUPX">
+                              <ref role="cht4Q" to="uhxm:3MnZbusx2c5" resolve="RunConfigurationProducer" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="6dw4cFkL6JR" role="2OqNvi">

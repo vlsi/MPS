@@ -337,7 +337,6 @@
       </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -3839,12 +3838,14 @@
                                       <node concept="3clFbS" id="3g99cIN5jqS" role="2VODD2">
                                         <node concept="3clFbF" id="3g99cIN5jqT" role="3cqZAp">
                                           <node concept="1PxgMI" id="OxzdsehT2X" role="3clFbG">
-                                            <ref role="1m5ApE" to="tp1t:gHMUpHN" resolve="ConstraintFunction_ReferentSearchScope_Factory" />
                                             <node concept="2OqwBi" id="3g99cIN5jqU" role="1m5AlR">
                                               <node concept="30H73N" id="3g99cIN5jqV" role="2Oq$k0" />
                                               <node concept="3TrEf2" id="3g99cIN5jqW" role="2OqNvi">
                                                 <ref role="3Tt5mk" to="tp1t:gHN6uun" resolve="searchScopeFactory" />
                                               </node>
+                                            </node>
+                                            <node concept="chp4Y" id="7BApNipKZbe" role="3oSUPX">
+                                              <ref role="cht4Q" to="tp1t:gHMUpHN" resolve="ConstraintFunction_ReferentSearchScope_Factory" />
                                             </node>
                                           </node>
                                         </node>
@@ -5398,9 +5399,11 @@
                       <node concept="3clFbF" id="6PjwVxt76l7" role="3cqZAp">
                         <node concept="2OqwBi" id="6PjwVxt76l8" role="3clFbG">
                           <node concept="1PxgMI" id="6PjwVxt76l9" role="2Oq$k0">
-                            <ref role="1m5ApE" to="tp1t:4OU1gA0uS0v" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
                             <node concept="v3LJS" id="6PjwVxt7hy$" role="1m5AlR">
                               <ref role="v3LJV" node="59r$iG97Ntm" resolve="factory" />
+                            </node>
+                            <node concept="chp4Y" id="7BApNipKZbf" role="3oSUPX">
+                              <ref role="cht4Q" to="tp1t:4OU1gA0uS0v" resolve="ConstraintFunction_ReferentSearchScope_Scope" />
                             </node>
                           </node>
                           <node concept="3TrEf2" id="6PjwVxt76ld" role="2OqNvi">

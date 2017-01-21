@@ -1656,11 +1656,8 @@
             <node concept="2YIFZM" id="4jf2BbgppR_" role="37vLTx">
               <ref role="37wK5l" to="sn11:2qySP5iSNLp" resolve="getIcon" />
               <ref role="1Pybhc" to="sn11:277Nzj6qTEj" resolve="IconManager" />
-              <node concept="2OqwBi" id="4jf2BbgppRA" role="37wK5m">
-                <node concept="37vLTw" id="4jf2BbgppRB" role="2Oq$k0">
-                  <ref role="3cqZAo" node="4jf2BbgppRH" resolve="childConcept" />
-                </node>
-                <node concept="1rGIog" id="4jf2BbgppRC" role="2OqNvi" />
+              <node concept="37vLTw" id="4jf2BbgppRB" role="37wK5m">
+                <ref role="3cqZAo" node="4jf2BbgppRH" resolve="childConcept" />
               </node>
             </node>
           </node>

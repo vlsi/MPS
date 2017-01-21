@@ -627,7 +627,6 @@
       <concept id="1240930444945" name="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation" flags="ng" index="3HdYuL">
         <reference id="1240930444946" name="member" index="3HdYuM" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -643,6 +642,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -3547,7 +3547,7 @@
           <node concept="3clFbF" id="hP4b_XQ" role="3cqZAp">
             <node concept="2OqwBi" id="hP4bApX" role="3clFbG">
               <node concept="0IXxy" id="hP4b_XR" role="2Oq$k0" />
-              <node concept="1PgB_6" id="hP4bX3Y" role="2OqNvi" />
+              <node concept="3YRAZt" id="hP4bX3Y" role="2OqNvi" />
             </node>
           </node>
         </node>
@@ -4640,7 +4640,7 @@
             <node concept="37vLTw" id="16BE8ZlmWCn" role="2Oq$k0">
               <ref role="3cqZAo" node="16BE8ZlmWC6" resolve="node" />
             </node>
-            <node concept="1PgB_6" id="16BE8ZlmWCo" role="2OqNvi" />
+            <node concept="3YRAZt" id="16BE8ZlmWCo" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbJ" id="16BE8ZlmWCp" role="3cqZAp">
@@ -4783,7 +4783,7 @@
             <node concept="37vLTw" id="16BE8Zlm7s$" role="2Oq$k0">
               <ref role="3cqZAo" node="16BE8Zlle8Z" resolve="node" />
             </node>
-            <node concept="1PgB_6" id="16BE8ZlkWQ6" role="2OqNvi" />
+            <node concept="3YRAZt" id="16BE8ZlkWQ6" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbJ" id="16BE8Zlmtlk" role="3cqZAp">

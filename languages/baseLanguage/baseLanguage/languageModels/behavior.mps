@@ -663,7 +663,6 @@
       <concept id="1140131837776" name="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" flags="nn" index="1P9Npp">
         <child id="1140131861877" name="replacementNode" index="1P9ThW" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -13420,7 +13419,7 @@
                 <node concept="37vLTw" id="1aCFZIaP0D3" role="2Oq$k0">
                   <ref role="3cqZAo" node="1aCFZIaP0D5" resolve="c" />
                 </node>
-                <node concept="1PgB_6" id="1aCFZIaP0D4" role="2OqNvi" />
+                <node concept="3YRAZt" id="1aCFZIaP0D4" role="2OqNvi" />
               </node>
             </node>
           </node>
@@ -24957,7 +24956,7 @@
         <node concept="3clFbF" id="hIdkKmM" role="3cqZAp">
           <node concept="2OqwBi" id="hIdkKqw" role="3clFbG">
             <node concept="13iPFW" id="hIdkKmN" role="2Oq$k0" />
-            <node concept="1PgB_6" id="hIdkKDt" role="2OqNvi" />
+            <node concept="3YRAZt" id="hIdkKDt" role="2OqNvi" />
           </node>
         </node>
         <node concept="3clFbF" id="hIdkLjK" role="3cqZAp">
@@ -40871,7 +40870,7 @@
                       <node concept="37vLTw" id="63oBH1IMex4" role="2Oq$k0">
                         <ref role="3cqZAo" node="63oBH1IMex6" resolve="it" />
                       </node>
-                      <node concept="1PgB_6" id="63oBH1IMex5" role="2OqNvi" />
+                      <node concept="3YRAZt" id="63oBH1IMex5" role="2OqNvi" />
                     </node>
                   </node>
                 </node>
@@ -40890,7 +40889,7 @@
                 <node concept="37vLTw" id="63oBH1IMfm_" role="2Oq$k0">
                   <ref role="3cqZAo" node="63oBH1IM86c" resolve="comment" />
                 </node>
-                <node concept="1PgB_6" id="63oBH1IMfGx" role="2OqNvi" />
+                <node concept="3YRAZt" id="63oBH1IMfGx" role="2OqNvi" />
               </node>
             </node>
           </node>
