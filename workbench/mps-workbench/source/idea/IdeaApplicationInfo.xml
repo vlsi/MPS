@@ -1,5 +1,5 @@
 <component>
-  <version codename="MPS" major="3" minor="5" eap="true" update-channel="MPS35"/>
+  <version codename="MPS" major="2017" minor="1" eap="true" update-channel="MPS35"/>
   <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
   <!--<install-over minbuild="" maxbuild="" version=""/>-->
