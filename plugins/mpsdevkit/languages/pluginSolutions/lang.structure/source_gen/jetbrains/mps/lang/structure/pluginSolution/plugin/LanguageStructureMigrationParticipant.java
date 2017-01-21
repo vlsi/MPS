@@ -169,7 +169,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
   }
   public static final RefactoringParticipant.Option OPTION = new RefactoringParticipant.Option("moveNode.options.writeMigrationScript", "Write migration script");
 
-  public List<RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>> getChanges(final Tuples._2<I, SNodeReference> initialState, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
+  public List<RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>> getChanges(final Tuples._2<I, SNodeReference> initialState, SRepository repository, final List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope) {
     if (initialState == null || !(ListSequence.fromList(selectedOptions).contains(OPTION))) {
       return ListSequence.fromList(new ArrayList<RefactoringParticipant.Change<Tuples._2<I, SNodeReference>, Tuples._2<F, SNodeReference>>>());
     }
@@ -195,7 +195,7 @@ public class LanguageStructureMigrationParticipant<I, F> extends RefactoringPart
         Language targetModule = as_kz6lmo_a0a1a2a0a0j0q(check_kz6lmo_a0a1a2a0a0j0q(check_kz6lmo_a0a0b0c0a0a9a61(finalState._1().resolve(repository))), Language.class);
         if (sourceModule != null) {
           LanguageStructureMigrationParticipant.MigrationBuilder logBuilder = LanguageStructureMigrationParticipant.MigrationBuilder.getBuilder(refactoringSession, sourceModule);
-          myStructureSpecialization.confirm(initialState, finalState, repository, logBuilder, updateModelImports);
+          myStructureSpecialization.confirm(selectedOptions, initialState, finalState, repository, logBuilder, updateModelImports);
         }
       }
     };

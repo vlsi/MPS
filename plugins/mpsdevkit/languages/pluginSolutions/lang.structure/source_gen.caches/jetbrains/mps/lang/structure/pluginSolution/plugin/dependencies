@@ -148,6 +148,7 @@
     <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -165,8 +166,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.query.runtime.QueryExecutionContext" />
     <classNode dependClassName="jetbrains.mps.lang.structure.plugin.RefactoringRuntime" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant" />
     <classNode dependClassName="jetbrains.mps.lang.structure.util.ConceptIdHelper" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.LanguageAspect" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
@@ -582,8 +585,10 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecialization" file="StructureSpecialization.java">
     <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SRepository" />
@@ -593,8 +598,10 @@
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.StructureSpecializationBase" file="StructureSpecializationBase.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.LanguageStructureMigrationParticipant" />
+    <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
@@ -614,8 +621,11 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.Void" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.core.plugin.UpdateReferencesParticipantBase.NodeData" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.pluginSolution.plugin.WriteSubconceptMigrationParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
