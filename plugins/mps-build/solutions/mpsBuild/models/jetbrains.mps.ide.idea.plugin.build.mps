@@ -185,6 +185,7 @@
       <concept id="6592112598314498932" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin" flags="ng" index="m$_wf">
         <property id="6592112598314498927" name="id" index="m$_wk" />
         <child id="6592112598314498931" name="version" index="m$_w8" />
+        <child id="6592112598314499050" name="content" index="m$_yh" />
         <child id="6592112598314499028" name="dependencies" index="m$_yJ" />
         <child id="6592112598314499021" name="name" index="m$_yQ" />
         <child id="6592112598314855574" name="containerName" index="m_cZH" />
@@ -192,6 +193,9 @@
       </concept>
       <concept id="6592112598314498926" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin" flags="ng" index="m$_wl">
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
+      </concept>
+      <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
+        <reference id="6592112598314499037" name="target" index="m$_yA" />
       </concept>
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
         <reference id="6592112598314499066" name="target" index="m$_y1" />
@@ -273,7 +277,7 @@
         <ref role="nCB5Y" to="ffeo:5_uX04TlQXW" resolve="mps-icons" />
       </node>
       <node concept="nCB5N" id="3ZROizBYYuW" role="nCB5Z">
-        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-common" />
+        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-platform" />
       </node>
     </node>
     <node concept="2sgV4H" id="2pZ8abj52_O" role="1l3spa">
@@ -288,8 +292,11 @@
     </node>
     <node concept="m$_wf" id="2pZ8abj52_S" role="3989C9">
       <property role="m$_wk" value="jetbrains.mps.idea.java" />
-      <node concept="m$_yC" id="2pZ8abj55F5" role="m$_yJ">
-        <ref role="m$_y1" to="ffeo:2idOD0A_SCY" resolve="jetbrains.mps.ide.java.platform" />
+      <node concept="m$_yB" id="4qmhgpFI_YQ" role="m$_yh">
+        <ref role="m$_yA" to="ffeo:5xwbQ0eEV3B" resolve="jetbrains.mps.ide.java.basePlatform" />
+      </node>
+      <node concept="m$_yB" id="4qmhgpFI_YY" role="m$_yh">
+        <ref role="m$_yA" to="ffeo:5xwbQ0eEV3x" resolve="jetbrains.mps.ide.java.platform" />
       </node>
       <node concept="3_J27D" id="2pZ8abj52_T" role="m$_yQ">
         <node concept="3Mxwew" id="2pZ8abj52_U" role="3MwsjC">
@@ -321,8 +328,8 @@
           </node>
         </node>
       </node>
-      <node concept="m$_yC" id="3ZROizBXKx6" role="m$_yJ">
-        <ref role="m$_y1" node="3ZROizBXHBR" resolve="jetbrains.mps.idea.jps" />
+      <node concept="m$_yC" id="4qmhgpFIB6X" role="m$_yJ">
+        <ref role="m$_y1" to="ffeo:4k71ibbKLe8" resolve="jetbrains.mps.core" />
       </node>
     </node>
     <node concept="55IIr" id="2pZ8abj52A5" role="auvoZ">
@@ -333,6 +340,15 @@
     <node concept="1l3spV" id="2pZ8abj52A7" role="1l3spN">
       <node concept="m$_wl" id="2pZ8abj52A8" role="39821P">
         <ref role="m_rDy" node="2pZ8abj52_S" resolve="jetbrains.mps.idea.java" />
+        <node concept="3_I8Xc" id="4hCebq6T567" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:390SM3Ioekq" resolve="META-INF" />
+        </node>
+        <node concept="3_I8Xc" id="4hCebq6T56M" role="39821P">
+          <ref role="3_I8Xa" to="ffeo:3ZROizBYrvW" resolve="lib" />
+        </node>
+        <node concept="3_I8Xc" id="4qmhgpFZ4cA" role="39821P">
+          <ref role="3_I8Xa" node="3ZROizBXHC2" resolve="lib" />
+        </node>
         <node concept="398223" id="2pZ8abj52A9" role="39821P">
           <node concept="3_J27D" id="2pZ8abj52Aa" role="Nbhlr">
             <node concept="3Mxwew" id="2pZ8abj52Ab" role="3MwsjC">
@@ -361,7 +377,7 @@
       </node>
     </node>
     <node concept="2sgV4H" id="3ZROizBXKwZ" role="1l3spa">
-      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdeaPlugin" />
+      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdea" />
     </node>
     <node concept="2sgV4H" id="2pZ8abj55ET" role="1l3spa">
       <ref role="1l3spb" to="ffeo:6qT2v0qOlpw" resolve="mpsJavaPlatform" />
@@ -374,10 +390,10 @@
     </node>
   </node>
   <node concept="1l3spW" id="3ZROizBXHBz">
-    <property role="TrG5h" value="mpsJpsIdeaPlugin" />
+    <property role="TrG5h" value="mpsJpsIdea" />
     <property role="3GE5qa" value="plugin" />
     <property role="2DA0ip" value="../../../../" />
-    <property role="turDy" value="mpsJpsIdeaPlugin.xml" />
+    <property role="turDy" value="mpsJpsIdea.xml" />
     <node concept="2_Ic$z" id="3ZROizBXHB$" role="3989C9">
       <property role="2_Ic$$" value="true" />
       <property role="2_Ic$B" value="true" />
@@ -444,7 +460,7 @@
         </node>
       </node>
       <node concept="nCB5N" id="3ZROizBYYvd" role="nCB5Z">
-        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-common" />
+        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-platform" />
       </node>
       <node concept="nCB5N" id="3ZROizBXHBL" role="nCB5Z">
         <ref role="nCB5Y" node="t7CJPgp3el" resolve="mps-core-jps-plugin" />
@@ -466,69 +482,97 @@
     <node concept="398rNT" id="3ZROizBXHBQ" role="1l3spd">
       <property role="TrG5h" value="idea_home" />
     </node>
-    <node concept="m$_wf" id="3ZROizBXHBR" role="3989C9">
-      <property role="m$_wk" value="jetbrains.mps.idea.jps" />
-      <node concept="3_J27D" id="3ZROizBXHBS" role="m$_yQ">
-        <node concept="3Mxwew" id="3ZROizBXHBT" role="3MwsjC">
-          <property role="3MwjfP" value="MPS Jps Plugin Integration" />
-        </node>
-      </node>
-      <node concept="3_J27D" id="3ZROizBXHBU" role="m_cZH">
-        <node concept="3Mxwew" id="3ZROizBXHBV" role="3MwsjC">
-          <property role="3MwjfP" value="mps-jps" />
-        </node>
-      </node>
-      <node concept="3_J27D" id="3ZROizBXHBW" role="m$_w8">
-        <node concept="3Mxwew" id="3ZROizBXHBX" role="3MwsjC">
-          <property role="3MwjfP" value="1.0" />
-        </node>
-      </node>
-    </node>
     <node concept="55IIr" id="3ZROizBXHBY" role="auvoZ">
       <node concept="2Ry0Ak" id="3ZROizBXHBZ" role="iGT6I">
         <property role="2Ry0Am" value="IdeaPlugin" />
       </node>
     </node>
     <node concept="1l3spV" id="3ZROizBXHC0" role="1l3spN">
-      <node concept="m$_wl" id="3ZROizBXHC1" role="39821P">
-        <ref role="m_rDy" node="3ZROizBXHBR" resolve="jetbrains.mps.idea.jps" />
-        <node concept="398223" id="3ZROizBXHC2" role="39821P">
-          <node concept="3_J27D" id="3ZROizBXHC3" role="Nbhlr">
-            <node concept="3Mxwew" id="3ZROizBXHC4" role="3MwsjC">
-              <property role="3MwjfP" value="lib" />
+      <node concept="398223" id="3ZROizBXHC2" role="39821P">
+        <node concept="3_J27D" id="3ZROizBXHC3" role="Nbhlr">
+          <node concept="3Mxwew" id="3ZROizBXHC4" role="3MwsjC">
+            <property role="3MwjfP" value="lib" />
+          </node>
+        </node>
+        <node concept="398223" id="t7CJPgp1D_" role="39821P">
+          <node concept="3981dx" id="3ZROizBXHC6" role="39821P">
+            <node concept="3_J27D" id="3ZROizBXHC7" role="Nbhlr">
+              <node concept="3Mxwew" id="3ZROizBXHC8" role="3MwsjC">
+                <property role="3MwjfP" value="mps-java-jps-plugin.jar" />
+              </node>
+            </node>
+            <node concept="Saw0i" id="3ZROizBXHCm" role="39821P">
+              <ref role="Saw0g" node="3ZROizBXHBA" resolve="mps-java-jps-plugin" />
+            </node>
+            <node concept="398223" id="3ZROizBXHC9" role="39821P">
+              <node concept="398223" id="3ZROizBXHCa" role="39821P">
+                <node concept="3_J27D" id="3ZROizBXHCb" role="Nbhlr">
+                  <node concept="3Mxwew" id="3ZROizBXHCc" role="3MwsjC">
+                    <property role="3MwjfP" value="services" />
+                  </node>
+                </node>
+                <node concept="2HvfSZ" id="3ZROizBXHCd" role="39821P">
+                  <node concept="398BVA" id="3ZROizBXHCe" role="2HvfZ0">
+                    <ref role="398BVh" node="3ZROizBXHBO" resolve="mps_home" />
+                    <node concept="2Ry0Ak" id="3ZROizBXHCf" role="iGT6I">
+                      <property role="2Ry0Am" value="IdeaPlugin" />
+                      <node concept="2Ry0Ak" id="3ZROizBXHCg" role="2Ry0An">
+                        <property role="2Ry0Am" value="mps-java" />
+                        <node concept="2Ry0Ak" id="3ZROizBXHCh" role="2Ry0An">
+                          <property role="2Ry0Am" value="jps-plugin" />
+                          <node concept="2Ry0Ak" id="3ZROizBXHCi" role="2Ry0An">
+                            <property role="2Ry0Am" value="META-INF" />
+                            <node concept="2Ry0Ak" id="3ZROizBXHCj" role="2Ry0An">
+                              <property role="2Ry0Am" value="services" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="3_J27D" id="3ZROizBXHCk" role="Nbhlr">
+                <node concept="3Mxwew" id="3ZROizBXHCl" role="3MwsjC">
+                  <property role="3MwjfP" value="META-INF" />
+                </node>
+              </node>
             </node>
           </node>
-          <node concept="398223" id="t7CJPgp1D_" role="39821P">
-            <node concept="3981dx" id="3ZROizBXHC6" role="39821P">
-              <node concept="3_J27D" id="3ZROizBXHC7" role="Nbhlr">
-                <node concept="3Mxwew" id="3ZROizBXHC8" role="3MwsjC">
-                  <property role="3MwjfP" value="mps-java-jps-plugin.jar" />
-                </node>
+          <node concept="3_J27D" id="t7CJPgp1DB" role="Nbhlr">
+            <node concept="3Mxwew" id="t7CJPgp1EF" role="3MwsjC">
+              <property role="3MwjfP" value="jps" />
+            </node>
+          </node>
+          <node concept="3981dx" id="t7CJPgp1EH" role="39821P">
+            <node concept="3_J27D" id="t7CJPgp1EI" role="Nbhlr">
+              <node concept="3Mxwew" id="t7CJPgp3bQ" role="3MwsjC">
+                <property role="3MwjfP" value="mps-core-jps-plugin.jar" />
               </node>
-              <node concept="Saw0i" id="3ZROizBXHCm" role="39821P">
-                <ref role="Saw0g" node="3ZROizBXHBA" resolve="mps-java-jps-plugin" />
-              </node>
-              <node concept="398223" id="3ZROizBXHC9" role="39821P">
-                <node concept="398223" id="3ZROizBXHCa" role="39821P">
-                  <node concept="3_J27D" id="3ZROizBXHCb" role="Nbhlr">
-                    <node concept="3Mxwew" id="3ZROizBXHCc" role="3MwsjC">
-                      <property role="3MwjfP" value="services" />
-                    </node>
+            </node>
+            <node concept="Saw0i" id="t7CJPgpctD" role="39821P">
+              <ref role="Saw0g" node="t7CJPgp3el" resolve="mps-core-jps-plugin" />
+            </node>
+            <node concept="398223" id="t7CJPgpctI" role="39821P">
+              <node concept="398223" id="3ZROizBXKwp" role="39821P">
+                <node concept="3_J27D" id="3ZROizBXKwr" role="Nbhlr">
+                  <node concept="3Mxwew" id="3ZROizBXKw_" role="3MwsjC">
+                    <property role="3MwjfP" value="services" />
                   </node>
-                  <node concept="2HvfSZ" id="3ZROizBXHCd" role="39821P">
-                    <node concept="398BVA" id="3ZROizBXHCe" role="2HvfZ0">
-                      <ref role="398BVh" node="3ZROizBXHBO" resolve="mps_home" />
-                      <node concept="2Ry0Ak" id="3ZROizBXHCf" role="iGT6I">
-                        <property role="2Ry0Am" value="IdeaPlugin" />
-                        <node concept="2Ry0Ak" id="3ZROizBXHCg" role="2Ry0An">
-                          <property role="2Ry0Am" value="mps-java" />
-                          <node concept="2Ry0Ak" id="3ZROizBXHCh" role="2Ry0An">
-                            <property role="2Ry0Am" value="jps-plugin" />
-                            <node concept="2Ry0Ak" id="3ZROizBXHCi" role="2Ry0An">
-                              <property role="2Ry0Am" value="META-INF" />
-                              <node concept="2Ry0Ak" id="3ZROizBXHCj" role="2Ry0An">
-                                <property role="2Ry0Am" value="services" />
-                              </node>
+                </node>
+                <node concept="2HvfSZ" id="t7CJPgpcu5" role="39821P">
+                  <node concept="398BVA" id="t7CJPgpcu9" role="2HvfZ0">
+                    <ref role="398BVh" node="3ZROizBXHBO" resolve="mps_home" />
+                    <node concept="2Ry0Ak" id="t7CJPgpcub" role="iGT6I">
+                      <property role="2Ry0Am" value="IdeaPlugin" />
+                      <node concept="2Ry0Ak" id="t7CJPgpcud" role="2Ry0An">
+                        <property role="2Ry0Am" value="mps-core" />
+                        <node concept="2Ry0Ak" id="t7CJPgpcuf" role="2Ry0An">
+                          <property role="2Ry0Am" value="jps-plugin" />
+                          <node concept="2Ry0Ak" id="t7CJPgpcuh" role="2Ry0An">
+                            <property role="2Ry0Am" value="META-INF" />
+                            <node concept="2Ry0Ak" id="3ZROizBXKwX" role="2Ry0An">
+                              <property role="2Ry0Am" value="services" />
                             </node>
                           </node>
                         </node>
@@ -536,59 +580,10 @@
                     </node>
                   </node>
                 </node>
-                <node concept="3_J27D" id="3ZROizBXHCk" role="Nbhlr">
-                  <node concept="3Mxwew" id="3ZROizBXHCl" role="3MwsjC">
-                    <property role="3MwjfP" value="META-INF" />
-                  </node>
-                </node>
               </node>
-            </node>
-            <node concept="3_J27D" id="t7CJPgp1DB" role="Nbhlr">
-              <node concept="3Mxwew" id="t7CJPgp1EF" role="3MwsjC">
-                <property role="3MwjfP" value="jps" />
-              </node>
-            </node>
-            <node concept="3981dx" id="t7CJPgp1EH" role="39821P">
-              <node concept="3_J27D" id="t7CJPgp1EI" role="Nbhlr">
-                <node concept="3Mxwew" id="t7CJPgp3bQ" role="3MwsjC">
-                  <property role="3MwjfP" value="mps-core-jps-plugin.jar" />
-                </node>
-              </node>
-              <node concept="Saw0i" id="t7CJPgpctD" role="39821P">
-                <ref role="Saw0g" node="t7CJPgp3el" resolve="mps-core-jps-plugin" />
-              </node>
-              <node concept="398223" id="t7CJPgpctI" role="39821P">
-                <node concept="398223" id="3ZROizBXKwp" role="39821P">
-                  <node concept="3_J27D" id="3ZROizBXKwr" role="Nbhlr">
-                    <node concept="3Mxwew" id="3ZROizBXKw_" role="3MwsjC">
-                      <property role="3MwjfP" value="services" />
-                    </node>
-                  </node>
-                  <node concept="2HvfSZ" id="t7CJPgpcu5" role="39821P">
-                    <node concept="398BVA" id="t7CJPgpcu9" role="2HvfZ0">
-                      <ref role="398BVh" node="3ZROizBXHBO" resolve="mps_home" />
-                      <node concept="2Ry0Ak" id="t7CJPgpcub" role="iGT6I">
-                        <property role="2Ry0Am" value="IdeaPlugin" />
-                        <node concept="2Ry0Ak" id="t7CJPgpcud" role="2Ry0An">
-                          <property role="2Ry0Am" value="mps-core" />
-                          <node concept="2Ry0Ak" id="t7CJPgpcuf" role="2Ry0An">
-                            <property role="2Ry0Am" value="jps-plugin" />
-                            <node concept="2Ry0Ak" id="t7CJPgpcuh" role="2Ry0An">
-                              <property role="2Ry0Am" value="META-INF" />
-                              <node concept="2Ry0Ak" id="3ZROizBXKwX" role="2Ry0An">
-                                <property role="2Ry0Am" value="services" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node concept="3_J27D" id="t7CJPgpctK" role="Nbhlr">
-                  <node concept="3Mxwew" id="t7CJPgpcu3" role="3MwsjC">
-                    <property role="3MwjfP" value="META-INF" />
-                  </node>
+              <node concept="3_J27D" id="t7CJPgpctK" role="Nbhlr">
+                <node concept="3Mxwew" id="t7CJPgpcu3" role="3MwsjC">
+                  <property role="3MwjfP" value="META-INF" />
                 </node>
               </node>
             </node>
@@ -728,7 +723,7 @@
       <ref role="1l3spb" node="2pZ8abj52_6" resolve="mpsJavaIdeaPlugin" />
     </node>
     <node concept="2sgV4H" id="3ZROizBXKv3" role="1l3spa">
-      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdeaPlugin" />
+      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdea" />
     </node>
     <node concept="2sgV4H" id="5HVSRHdSKeg" role="1l3spa">
       <ref role="1l3spb" to="ffeo:7pdFgzxlDme" resolve="mpsBuild" />
@@ -774,14 +769,8 @@
       <node concept="3_I8Xc" id="611WBGkd$8f" role="39821P">
         <ref role="3_I8Xa" node="611WBGkdzRn" resolve="mps-core" />
       </node>
-      <node concept="3_I8Xc" id="390SM3Io7iP" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:6WtY9M1bDMd" resolve="mps-java-platform" />
-      </node>
       <node concept="3_I8Xc" id="2pZ8abj52OX" role="39821P">
         <ref role="3_I8Xa" node="2pZ8abj52A8" resolve="mps-idea-java" />
-      </node>
-      <node concept="3_I8Xc" id="3ZROizBXKtD" role="39821P">
-        <ref role="3_I8Xa" node="3ZROizBXHC1" resolve="mps-jps" />
       </node>
       <node concept="3_I8Xc" id="ymnOULChn3" role="39821P">
         <ref role="3_I8Xa" to="ffeo:ymnOULAZ8H" resolve="mps-testing" />
@@ -1479,7 +1468,7 @@
       <ref role="1l3spb" node="2pZ8abj52_6" resolve="mpsJavaIdeaPlugin" />
     </node>
     <node concept="2sgV4H" id="3ZROizBXKxa" role="1l3spa">
-      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdeaPlugin" />
+      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdea" />
     </node>
     <node concept="2sgV4H" id="611WBGkdBB1" role="1l3spa">
       <ref role="1l3spb" node="611WBGkdzQQ" resolve="mpsPluginCore" />
@@ -1771,7 +1760,7 @@
         <ref role="nCB5Y" to="ffeo:1FaKCGJSzMQ" resolve="mps-tool" />
       </node>
       <node concept="nCB5N" id="3ZROizBYYvl" role="nCB5Z">
-        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-common" />
+        <ref role="nCB5Y" to="ffeo:57J5fkcylG8" resolve="mps-java-platform" />
       </node>
       <node concept="2sjeV3" id="3L2iO8sKLih" role="nCB5Z">
         <ref role="2sjeV2" node="3L2iO8sIVea" resolve="mps-testing-artifacts" />

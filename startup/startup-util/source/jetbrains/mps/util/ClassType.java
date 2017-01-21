@@ -32,6 +32,7 @@ public enum ClassType {
   PLATFORM("platform"),
   IDEA("idea"),
   WORKBENCH("workbench"),
+  PLUGINS("plugins"),
   TEST("test");
 
   private String myTypeString;

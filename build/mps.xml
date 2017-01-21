@@ -122,10 +122,6 @@
     <copy todir="${build.layout}/plugins/mps-trove">
       <fileset dir="${artifacts.mpsTroveCollections}/mps-trove" />
     </copy>
-    <mkdir dir="${build.layout}/plugins/mps-java-platform" />
-    <copy todir="${build.layout}/plugins/mps-java-platform">
-      <fileset dir="${artifacts.mpsJavaPlatform}/mps-java-platform" />
-    </copy>
     <mkdir dir="${build.layout}/plugins/mps-java-workbench" />
     <copy todir="${build.layout}/plugins/mps-java-workbench">
       <fileset dir="${artifacts.mpsJavaWorkbench}/mps-java-workbench" />

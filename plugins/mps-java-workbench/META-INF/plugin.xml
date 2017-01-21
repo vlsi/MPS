@@ -21,10 +21,10 @@
   <version>3.5</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="171.1" until-build="172.1"/>
-  <depends>jetbrains.mps.ide.java.platform</depends>
   <depends>com.intellij.modules.mps</depends>
 
   <xi:include href="workbench/actions/JavaWorkbenchActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="/META-INF/JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>

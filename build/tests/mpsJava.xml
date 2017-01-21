@@ -210,7 +210,7 @@
       <library file="${artifacts.mps}/lib/mps-test.jar" />
       <library file="${artifacts.mps}/lib/mps-tool.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
-      <library file="${artifacts.mps}/plugins/mps-java-platform/languages/jetbrains.mps.ide.java.basePlatform.jar" />
+      <library file="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.basePlatform.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
@@ -286,7 +286,7 @@
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
-        <fileset file="${artifacts.mps}/plugins/mps-java-platform/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.mps}/plugins/mps-java-workbench/lib/mps-java-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-test.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
@@ -391,7 +391,7 @@
       <pathelement location="${artifacts.mps}/lib/mps-test.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-java-platform/languages/jetbrains.mps.ide.java.basePlatform.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.basePlatform.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
@@ -401,7 +401,6 @@
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
       <pathelement location="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
-      <pathelement location="${artifacts.mps}/plugins/mps-java-platform" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.plugins.path.string" refid="mps.plugins.path" />
@@ -412,10 +411,6 @@
     <pathconvert pathsep="${path.separator}" property="mps.tests.path.string" refid="mps.tests.path" />
     <path id="long.class.path">
       <fileset dir="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../..">
-        <include name="lib/**/*.jar" />
-        <include name="languages/**/*.jar" />
-      </fileset>
-      <fileset dir="${artifacts.mps}/plugins/mps-java-platform">
         <include name="lib/**/*.jar" />
         <include name="languages/**/*.jar" />
       </fileset>

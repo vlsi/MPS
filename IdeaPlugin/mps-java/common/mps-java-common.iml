@@ -23,7 +23,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$APPLICATION_PLUGINS_DIR$/mps-java-platform/lib/mps-java-platform.jar!/" />
+          <root url="jar://$APPLICATION_PLUGINS_DIR$/mps-idea-java/lib/mps-java-platform.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

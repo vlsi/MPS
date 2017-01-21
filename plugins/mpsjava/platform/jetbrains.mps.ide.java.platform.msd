@@ -6,7 +6,7 @@
     </modelRoot>
   </models>
   <facets>
-    <facet pluginId="jetbrains.mps.ide.java.platform" type="ideaPlugin" />
+    <facet pluginId="jetbrains.mps.ide.java" type="ideaPlugin" />
   </facets>
   <sourcePath />
   <dependencies>

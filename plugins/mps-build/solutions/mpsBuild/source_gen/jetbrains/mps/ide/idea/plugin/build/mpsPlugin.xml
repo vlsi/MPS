@@ -14,7 +14,7 @@
   <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property name="artifacts.mpsJavaPlatform" location="${build.dir}/artifacts/mpsJavaPlatform" />
   <property name="artifacts.mpsJavaIdeaPlugin" location="${build.dir}/artifacts/mpsJavaIdeaPlugin" />
-  <property name="artifacts.mpsJpsIdeaPlugin" location="${build.dir}/artifacts/mpsJpsIdeaPlugin" />
+  <property name="artifacts.mpsJpsIdea" location="${build.dir}/artifacts/mpsJpsIdea" />
   <property name="artifacts.mpsBuild" location="${build.dir}/artifacts/mpsBuild" />
   <property name="artifacts.mpsVcsCommon" location="${build.dir}/artifacts/mpsVcsCommon" />
   <property name="artifacts.mpsPluginCommon" location="${build.dir}/artifacts/mpsPluginCommon" />
@@ -61,17 +61,9 @@
     <copy todir="${build.layout}/mps-core">
       <fileset dir="${artifacts.mpsPluginCore}/mps-core" />
     </copy>
-    <mkdir dir="${build.layout}/mps-java-platform" />
-    <copy todir="${build.layout}/mps-java-platform">
-      <fileset dir="${artifacts.mpsJavaPlatform}/mps-java-platform" />
-    </copy>
     <mkdir dir="${build.layout}/mps-idea-java" />
     <copy todir="${build.layout}/mps-idea-java">
       <fileset dir="${artifacts.mpsJavaIdeaPlugin}/mps-idea-java" />
-    </copy>
-    <mkdir dir="${build.layout}/mps-jps" />
-    <copy todir="${build.layout}/mps-jps">
-      <fileset dir="${artifacts.mpsJpsIdeaPlugin}/mps-jps" />
     </copy>
     <mkdir dir="${build.layout}/mps-testing" />
     <copy todir="${build.layout}/mps-testing">
@@ -118,7 +110,7 @@
     <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsJavaPlatform.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPluginCommon.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="IdeaPlugin/mpsJpsIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsJpsIdea.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPluginCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
@@ -186,7 +178,7 @@
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
-        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2RC3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>

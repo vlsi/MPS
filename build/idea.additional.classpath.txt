@@ -58,6 +58,9 @@ workbench/resources_en/classes
 workbench/typesystemUi/classes
 workbench/mps-workbench/jetbrains.mps.ide/classes
 MPSPlugin/apiclasses
+:plugins
+plugins/mpsjava/classes
+plugins/mpsjava/basePlatform/classes
 :test
 core/tool/environment/classes
 testbench/classes

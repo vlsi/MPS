@@ -166,7 +166,7 @@
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.ide.java.platform,jetbrains.mps.idea.java,jetbrains.mps.idea.jps"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
@@ -179,9 +179,6 @@
         </fileset>
         <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
-          <include name="*.jar"/>
-        </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-java-platform/lib">
           <include name="*.jar"/>
         </fileset>
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-idea-java/lib">
@@ -228,9 +225,6 @@
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-testing">
           <include name="**/*.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-java-platform/lib">
-          <include name="*.jar"/>
-        </fileset>
         <pathelement path="${java.class.path}"/>
       </classpath>
       <test name="jetbrains.mps.idea.core.tests.MiscTestSuite"/>
@@ -250,7 +244,7 @@
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.ide.java.platform,jetbrains.mps.idea.java,jetbrains.mps.idea.jps"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing,jetbrains.mps.idea.java"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="jdk.home.path" value="${jdkPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
@@ -292,13 +286,7 @@
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib/jps">
           <include name="*.jar"/>
         </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-java-platform/lib">
-          <include name="*.jar"/>
-        </fileset>
         <fileset dir="${plugins.sandbox.dir}/plugins/mps-idea-java/lib">
-          <include name="*.jar"/>
-        </fileset>
-        <fileset dir="${plugins.sandbox.dir}/plugins/mps-jps/lib">
           <include name="**/*.jar"/>
         </fileset>
         <pathelement path="${java.class.path}"/>
