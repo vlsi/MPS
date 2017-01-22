@@ -156,8 +156,8 @@
       </fileset>
     </copy>
     <mkdir dir="${build.layout}/mps-java-workbench/lib" />
-    <jar destfile="${build.layout}/mps-java-workbench/lib/mps-java-workbench-sources-compile-output.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/mps-java" />
+    <jar destfile="${build.layout}/mps-java-workbench/lib/mps-java-workbench.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/mps-java-workbench" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
@@ -179,7 +179,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-java" />
+  <target name="compileJava" depends="java.compile.mps-java-workbench" />
   
   <target name="processResources" />
   
@@ -299,13 +299,15 @@
     </ant>
   </target>
   
-  <target name="java.compile.mps-java" depends="fetchDependencies">
+  <target name="java.compile.mps-java-workbench" depends="fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-java-workbench/workbench/source" />
-    <mkdir dir="${build.tmp}/java/out/mps-java" />
-    <javac2 destdir="${build.tmp}/java/out/mps-java" fork="false" encoding="utf8" includeantruntime="false" debug="true">
+    <mkdir dir="${mps_home}/plugins/mps-java-workbench/workbench/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/mps-java-workbench" />
+    <javac2 destdir="${build.tmp}/java/out/mps-java-workbench" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mps-java-workbench/workbench/source" />
+        <path location="${mps_home}/plugins/mps-java-workbench/workbench/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.mpsJavaPlatform}/lib/mps-java-platform.jar" />
@@ -336,8 +338,9 @@
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
-    <copy todir="${build.tmp}/java/out/mps-java">
+    <copy todir="${build.tmp}/java/out/mps-java-workbench">
       <fileset dir="${mps_home}/plugins/mps-java-workbench/workbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-java-workbench/workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

@@ -1942,7 +1942,10 @@
         <property role="aoJFB" value="sources and tests" />
         <property role="2GAjPV" value="false" />
         <node concept="1E1SXE" id="611WBGkvE3m" role="3bR37C">
-          <ref role="1E1SXG" to="ffeo:57J5fkcylG8" resolve="mps-java-common" />
+          <ref role="1E1SXG" to="ffeo:57J5fkcylG8" resolve="mps-java-platform" />
+        </node>
+        <node concept="3bR9La" id="5ibTClnaKgN" role="3bR37C">
+          <ref role="3bR37D" to="ffeo:6p9dGL_t6T4" resolve="jetbrains.mps.ide.java" />
         </node>
         <node concept="55IIr" id="yja7V_1TlT" role="3LF7KH">
           <node concept="2Ry0Ak" id="yja7V_1TlW" role="iGT6I">

@@ -1035,6 +1035,36 @@
           <property role="nFU4j" value="source" />
         </node>
       </node>
+      <node concept="398b2D" id="2dAqFSOd34z" role="398b2p">
+        <node concept="398BVA" id="2dAqFSOd34$" role="398b2C">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="2dAqFSOd34_" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="2dAqFSOd34A" role="2Ry0An">
+              <property role="2Ry0Am" value="module" />
+            </node>
+          </node>
+        </node>
+        <node concept="nFU4i" id="2dAqFSOd34B" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="source" />
+        </node>
+      </node>
+      <node concept="398b2D" id="2dAqFSOd3A7" role="398b2p">
+        <node concept="398BVA" id="2dAqFSOd3A8" role="398b2C">
+          <ref role="398BVh" node="16Vg0jOco3V" resolve="mps_home" />
+          <node concept="2Ry0Ak" id="2dAqFSOd3A9" role="iGT6I">
+            <property role="2Ry0Am" value="core" />
+            <node concept="2Ry0Ak" id="2dAqFSOd3Aa" role="2Ry0An">
+              <property role="2Ry0Am" value="model" />
+            </node>
+          </node>
+        </node>
+        <node concept="nFU4i" id="2dAqFSOd3Ab" role="nFU4p">
+          <property role="3LZaj6" value="source" />
+          <property role="nFU4j" value="source" />
+        </node>
+      </node>
       <node concept="nCB5N" id="1FaKCGJSzEz" role="nCB5Z">
         <property role="1Sh$E4" value="true" />
         <ref role="nCB5Y" node="6S1jmf0xEsq" resolve="mps-closures" />
@@ -31397,7 +31427,7 @@
       </node>
     </node>
     <node concept="398b33" id="1nJh0raVJSd" role="3989C9">
-      <property role="TrG5h" value="mps-java" />
+      <property role="TrG5h" value="mps-java-workbench" />
       <node concept="2GAZfH" id="2pZ8abj57tJ" role="398b2p">
         <node concept="TIC1d" id="2pZ8abj57tF" role="2GAZfG">
           <node concept="398BVA" id="1nJh0raVJSg" role="TIC6M">
@@ -31410,6 +31440,25 @@
                   <property role="2Ry0Am" value="workbench" />
                   <node concept="2Ry0Ak" id="2pZ8abj57u1" role="2Ry0An">
                     <property role="2Ry0Am" value="source" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2GAZfH" id="5ibTClnfWzQ" role="398b2p">
+        <node concept="TIC1d" id="5ibTClnfWzM" role="2GAZfG">
+          <node concept="398BVA" id="5ibTClnfW$b" role="TIC6M">
+            <ref role="398BVh" node="6WtY9M1bDNn" resolve="mps_home" />
+            <node concept="2Ry0Ak" id="5ibTClnfW$c" role="iGT6I">
+              <property role="2Ry0Am" value="plugins" />
+              <node concept="2Ry0Ak" id="5ibTClnfW$d" role="2Ry0An">
+                <property role="2Ry0Am" value="mps-java-workbench" />
+                <node concept="2Ry0Ak" id="5ibTClnfW$e" role="2Ry0An">
+                  <property role="2Ry0Am" value="workbench" />
+                  <node concept="2Ry0Ak" id="5ibTClnfW$f" role="2Ry0An">
+                    <property role="2Ry0Am" value="source_gen" />
                   </node>
                 </node>
               </node>
@@ -31431,7 +31480,7 @@
       <property role="2GAjPV" value="true" />
       <node concept="1E1SXE" id="2TOH$jQbYJo" role="3bR37C">
         <property role="1E1SXH" value="true" />
-        <ref role="1E1SXG" node="1nJh0raVJSd" resolve="mps-java" />
+        <ref role="1E1SXG" node="1nJh0raVJSd" resolve="mps-java-workbench" />
       </node>
       <node concept="1SiIV0" id="2a9bszgrveu" role="3bR37C">
         <node concept="3bR9La" id="2a9bszgrvet" role="1SiIV1">
@@ -31636,11 +31685,11 @@
           <node concept="3981dx" id="2pZ8abj52x6" role="39821P">
             <node concept="3_J27D" id="2pZ8abj52x7" role="Nbhlr">
               <node concept="3Mxwew" id="2pZ8abj52xa" role="3MwsjC">
-                <property role="3MwjfP" value="mps-java-workbench-sources-compile-output.jar" />
+                <property role="3MwjfP" value="mps-java-workbench.jar" />
               </node>
             </node>
             <node concept="Saw0i" id="2pZ8abj52xc" role="39821P">
-              <ref role="Saw0g" node="1nJh0raVJSd" resolve="mps-java" />
+              <ref role="Saw0g" node="1nJh0raVJSd" resolve="mps-java-workbench" />
             </node>
           </node>
         </node>
