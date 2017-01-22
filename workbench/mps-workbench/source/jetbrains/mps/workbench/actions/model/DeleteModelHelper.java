@@ -22,6 +22,7 @@ import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.ui.finders.ModelImportsUsagesFinder;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.model.ModelDeleteHelper;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
@@ -35,7 +36,6 @@ import jetbrains.mps.refactoring.runtime.access.RefactoringAccess;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModelDeleteHelper;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.apache.log4j.LogManager;
@@ -74,8 +74,8 @@ public class DeleteModelHelper {
     } else if (contextModule instanceof Generator) {
       deleteModelFromGenerator((Generator) contextModule, modelDescriptor);
     } else {
-      LOG.warn(
-          "Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
+      LOG.warn("Module type " + contextModule.getClass().getSimpleName() + " is not supported by delete refactoring." +
+               "Changes will not be saved automatically for modules of this type.");
     }
 
     if (!modelDescriptor.isReadOnly()) {
@@ -91,10 +91,8 @@ public class DeleteModelHelper {
     context.setSelectedModel(modelDescriptor);
     context.setSelectedModule(modelDescriptor.getModule());
 
-    project.getRepository().getModelAccess().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        if (modelDescriptor.getReference().resolve(project.getRepository()) != modelDescriptor) return;
+    project.getRepository().getModelAccess().runWriteInEDT(() -> {
+      if (modelDescriptor.getReference().resolve(project.getRepository()) == modelDescriptor) {
         RefactoringAccess.getInstance().getRefactoringFacade().execute(context);
       }
     });
@@ -155,16 +153,6 @@ public class DeleteModelHelper {
     public void refactor(RefactoringContext refactoringContext) {
       SModel modelDescriptor = refactoringContext.getSelectedModel();
       SModule modelOwner = modelDescriptor.getModule();
-      if (modelOwner instanceof Language) {
-        deleteModelFromLanguage((Language) modelOwner, modelDescriptor);
-      } else if (modelOwner instanceof Solution) {
-        deleteModelFromSolution((Solution) modelOwner, modelDescriptor);
-      } else if (modelOwner instanceof Generator) {
-        deleteModelFromGenerator((Generator) modelOwner, modelDescriptor);
-      } else if (modelOwner != null) {
-        LOG.warn(
-            "Module type " + modelOwner.getClass().getSimpleName() + " is not supported by delete refactoring. Changes will not be saved automatically for modules of this type.");
-      }
 
       // delete imports from available models, helps if there are no references to deleted model
       Set<SModel> usages = FindUsagesFacade.getInstance().findModelUsages(
@@ -176,10 +164,7 @@ public class DeleteModelHelper {
           ((SModelInternal) md).deleteModelImport(modelDescriptor.getReference());
         }
       }
-
-      if (myDeleteFiles) {
-        new ModelDeleteHelper(modelDescriptor).delete();
-      }
+      delete(modelOwner, modelDescriptor, myDeleteFiles);
 
       //todo: check correctness - they are not ALL model owners
       if (modelOwner instanceof AbstractModule) {

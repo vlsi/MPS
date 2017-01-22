@@ -71,7 +71,7 @@ public final class ReferenceUpdater {
    * @param oldModule old module - others contain refs to it
    * @param newModule new module - others will contain refs to it
    */
-  public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule) {
+  public void addModuleToAdjust(@NotNull SModule oldModule, @NotNull SModule newModule) throws RefUpdateException {
     assertNotAdjusted();
     addModuleToAdjustImpl(oldModule, newModule);
 
@@ -80,40 +80,48 @@ public final class ReferenceUpdater {
     }
   }
 
-  private void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule) {
+  private void addModuleToAdjustImpl(@NotNull SModule oldModule, @NotNull SModule newModule) throws RefUpdateException {
     myModules.add(newModule);
     myModuleReferenceMap.put(oldModule.getModuleReference(), newModule.getModuleReference());
 
     // AP let us assume that the models are in the same order (it is rational since we are _cloning_ modules)
     List<ModelRoot> oldRoots = IterableUtil.asList(oldModule.getModelRoots());
     List<ModelRoot> newRoots = IterableUtil.asList(newModule.getModelRoots());
-    assert oldRoots.size() == newRoots.size();
+    if (oldRoots.size() != newRoots.size()) {
+      throw new RefUpdateException("The number of the model roots are not the same");
+    }
     for (int i = 0; i < oldRoots.size(); ++i) {
       ModelRoot oldRoot = oldRoots.get(i);
       ModelRoot newRoot = newRoots.get(i);
-      assert oldRoot.getClass().equals(newRoot.getClass()) : "Model roots are of different types " + oldRoot + " " + newRoot;
+      if (!oldRoot.getClass().equals(newRoot.getClass())) {
+        throw new RefUpdateException("Model roots are of different types " + oldRoot + " " + newRoot);
+      }
       List<SModel> oldModels = IterableUtil.asList(oldRoot.getModels());
       List<SModel> newModels = IterableUtil.asList(newRoot.getModels());
-      assert oldModels.size() == newModels.size() : "Model roots are supposed to have the same number of models " + oldRoot + " " + newRoot;
+      if (oldModels.size() != newModels.size()) {
+        throw new RefUpdateException("Model roots are supposed to have the same number of models " + oldRoot + " " + newRoot);
+      }
       for (int j = 0; j < oldModels.size(); ++j) {
         SModel oldModel = oldModels.get(j);
         SModel newModel = newModels.get(j);
         if (!oldModel.isReadOnly()) {
           addModelToAdjust(oldModel, newModel);
         } else {
-          assert newModel.isReadOnly();
+          if (!newModel.isReadOnly()) {
+            throw new RefUpdateException("Readonly status differs in the clone " + newModel);
+          }
         }
       }
     }
   }
 
-  private void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage) {
+  private void addLanguageToAdjustImpl(@NotNull Language oldLanguage, @NotNull Language newLanguage) throws RefUpdateException {
     myUsedLanguagesMap.put(
         MetaAdapterByDeclaration.getLanguage(oldLanguage),
         MetaAdapterByDeclaration.getLanguage(newLanguage)
     );
     if (oldLanguage.getGenerators().size() != newLanguage.getGenerators().size()) {
-      throw new IllegalArgumentException("The number of generators do not match!");
+      throw new RefUpdateException("The number of generators do not match!");
     }
     Iterator<Generator> newGeneratorIt = newLanguage.getGenerators().iterator();
     for (Generator oldGenerator : oldLanguage.getGenerators()) {
@@ -128,10 +136,10 @@ public final class ReferenceUpdater {
    * @param oldModel old model - other models contain refs to it
    * @param newModel new model - other models will be contain refs to it
    */
-  public void addModelToAdjust(@NotNull SModel oldModel, @NotNull SModel newModel) {
+  public void addModelToAdjust(@NotNull SModel oldModel, @NotNull SModel newModel) throws RefUpdateException {
     assertNotAdjusted();
     if (newModel.isReadOnly()) {
-      throw new IllegalArgumentException(String.format("The model '%s' is readonly", newModel));
+      throw new RefUpdateException(String.format("The model '%s' is readonly", newModel));
     }
 
     addModelToAdjustImpl(oldModel, newModel);
@@ -149,7 +157,7 @@ public final class ReferenceUpdater {
    * It saves all models after references updating.
    * Note that after calling this method you can't use this instance to update references.
    */
-  public void adjust() {
+  public void adjust() throws RefUpdateException {
     assertNotAdjusted();
 
     myModules.forEach(module -> {
@@ -203,14 +211,16 @@ public final class ReferenceUpdater {
     myModelReferenceMap.put(oldModel.getReference(), newModel.getReference());
   }
 
-  private void assertNotAdjusted() {
-    assert !myAdjusted : "ReferenceUpdater instances can't be reused";
+  private void assertNotAdjusted() throws RefUpdateException {
+    if (myAdjusted) {
+      throw new RefUpdateException("ReferenceUpdater instances can't be reused");
+    }
   }
 
   private void updateReferences(SNode node){
     node.getReferences().forEach(ref -> {
       if (ref instanceof StaticReference) {
-      StaticReference reference = (StaticReference) ref;
+        StaticReference reference = (StaticReference) ref;
         SModelReference targetSModelReference = reference.getTargetSModelReference();
         if (myModelReferenceMap.containsKey(targetSModelReference)) {
           StaticReference newReference = new StaticReference(
@@ -225,5 +235,11 @@ public final class ReferenceUpdater {
       }
     });
     node.getChildren().forEach(this::updateReferences);
+  }
+
+  public static final class RefUpdateException extends Exception {
+    public RefUpdateException(@NotNull String message) {
+      super(message);
+    }
   }
 }

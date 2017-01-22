@@ -13,11 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.module;
+package jetbrains.mps.module;
 
 import jetbrains.mps.extapi.module.SRepositoryExt;
+import jetbrains.mps.model.ModelDeleteHelper;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectBase;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -25,7 +27,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.actions.model.DeleteModelHelper;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -38,15 +39,15 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public final class DeleteModuleHelper {
-  private static final Logger LOG = LogManager.getLogger(DeleteModuleHelper.class);
+public final class ModuleDeleteHelper {
+  private static final Logger LOG = LogManager.getLogger(ModuleDeleteHelper.class);
 
   @NotNull
-  private final MPSProject myProject;
+  private final Project myProject;
   private final static String NON_PROJECT_MODULES_MSG =
       "Non-project modules can only be deleted with files deletion enabled. The module %s will not be deleted";
 
-  public DeleteModuleHelper(@NotNull MPSProject project) {
+  public ModuleDeleteHelper(@NotNull Project project) {
     myProject = project;
   }
 
@@ -82,9 +83,9 @@ public final class DeleteModuleHelper {
     }
   }
 
-  private void deleteModuleFiles(SModule module) {
+  public void deleteModuleFiles(@NotNull SModule module) {
     for (SModel model : module.getModels()) {
-      DeleteModelHelper.delete(module, model, true);
+      new ModelDeleteHelper(model).delete();
     }
 
     deleteJavaFacet(module);
@@ -132,7 +133,7 @@ public final class DeleteModuleHelper {
         ((SRepositoryExt) repository).unregisterModule(module, myProject);
       }
       myProject.removeModule(module);
-      myProject.save();
+      ((ProjectBase) myProject).save();
     }
 
     // TODO: remove after Generator will be moved it's own descriptor file

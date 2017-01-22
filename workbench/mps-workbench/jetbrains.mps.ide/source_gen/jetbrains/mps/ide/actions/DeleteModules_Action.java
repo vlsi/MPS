@@ -22,7 +22,7 @@ import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.openapi.ui.Messages;
 import org.jetbrains.mps.openapi.module.ModelAccess;
-import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import jetbrains.mps.module.ModuleDeleteHelper;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -123,7 +123,7 @@ public class DeleteModules_Action extends BaseAction {
     // While don't support undo no need for command here 
     modelAccess.runWriteAction(new Runnable() {
       public void run() {
-        new DeleteModuleHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")), false, filesOption.selected);
+        new ModuleDeleteHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")), false, filesOption.selected);
       }
     });
   }

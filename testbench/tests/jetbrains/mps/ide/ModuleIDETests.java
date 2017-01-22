@@ -17,27 +17,23 @@ package jetbrains.mps.ide;
 
 import com.intellij.configurationStore.StoreAwareProjectManager;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
+import jetbrains.mps.module.ModuleDeleteHelper;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DescriptorTargetFileAlreadyExistsException;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.refactoring.Renamer;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Reference;
 import jetbrains.mps.vfs.CachingFile;
 import jetbrains.mps.vfs.DefaultCachingContext;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
-import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.io.File;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -258,8 +254,8 @@ public class ModuleIDETests extends ModuleInProjectTest {
     });
   }
 
-  void deleteModule(AbstractModule lang, boolean deleteFiles) {
-    new DeleteModuleHelper(ourProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
+  private void deleteModule(AbstractModule lang, boolean deleteFiles) {
+    new ModuleDeleteHelper(ourProject).deleteModules(Collections.singletonList(lang), false, deleteFiles);
   }
 }
 

@@ -12,6 +12,8 @@ core/platform/classes
 core/vfs/classes
 core/kernel/classes
 core/kernel/resources/classes
+core/model/classes
+core/module/classes
 core/logging/classes
 core/mps-messaging/classes
 core/mps-annotations/classes

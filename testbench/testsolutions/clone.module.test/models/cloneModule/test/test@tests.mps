@@ -25,6 +25,7 @@
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="uhcb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.xml.crypto.dsig(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
+    <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" implicit="true" />
   </imports>
@@ -84,6 +85,10 @@
       <concept id="1070533707846" name="jetbrains.mps.baseLanguage.structure.StaticFieldReference" flags="nn" index="10M0yZ">
         <reference id="1144433057691" name="classifier" index="1PxDUh" />
       </concept>
+      <concept id="1070534934090" name="jetbrains.mps.baseLanguage.structure.CastExpression" flags="nn" index="10QFUN">
+        <child id="1070534934091" name="type" index="10QFUM" />
+        <child id="1070534934092" name="expression" index="10QFUP" />
+      </concept>
       <concept id="1068390468200" name="jetbrains.mps.baseLanguage.structure.FieldDeclaration" flags="ig" index="312cEg">
         <property id="8606350594693632173" name="isTransient" index="eg7rD" />
         <property id="1240249534625" name="isVolatile" index="34CwA1" />
@@ -126,6 +131,9 @@
       </concept>
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1079359253375" name="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" flags="nn" index="1eOMI4">
+        <child id="1079359253376" name="expression" index="1eOMHV" />
+      </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
       </concept>
@@ -340,8 +348,8 @@
       <property role="TrG5h" value="project" />
       <property role="3TUv4t" value="false" />
       <node concept="3Tm6S6" id="7l0SErcZkaz" role="1B3o_S" />
-      <node concept="3uibUv" id="7l0SErcZmlL" role="1tU5fm">
-        <ref role="3uigEE" to="z1c3:~Project" resolve="Project" />
+      <node concept="3uibUv" id="2Mi1qAhXUU" role="1tU5fm">
+        <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
       </node>
     </node>
     <node concept="2tJIrI" id="1rpDfGKrKQr" role="jymVt" />
@@ -789,17 +797,24 @@
             <node concept="37vLTw" id="7l0SErcZo9P" role="37vLTJ">
               <ref role="3cqZAo" node="7l0SErcZkaN" resolve="project" />
             </node>
-            <node concept="2OqwBi" id="4uPaNIY9iFu" role="37vLTx">
-              <node concept="37vLTw" id="4uPaNIY9iFv" role="2Oq$k0">
-                <ref role="3cqZAo" node="6EMTxOPTaV0" resolve="env" />
-              </node>
-              <node concept="liA8E" id="4uPaNIY9iFw" role="2OqNvi">
-                <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
-                <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
-                  <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
-                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
-                    <node concept="37vLTw" id="7l0SErcZo7L" role="37wK5m">
-                      <ref role="3cqZAo" node="7l0SErcZi0H" resolve="PROJECT_PATH" />
+            <node concept="1eOMI4" id="2Mi1qAhYp6" role="37vLTx">
+              <node concept="10QFUN" id="2Mi1qAhYp3" role="1eOMHV">
+                <node concept="3uibUv" id="2Mi1qAhYzY" role="10QFUM">
+                  <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+                </node>
+                <node concept="2OqwBi" id="4uPaNIY9iFu" role="10QFUP">
+                  <node concept="37vLTw" id="4uPaNIY9iFv" role="2Oq$k0">
+                    <ref role="3cqZAo" node="6EMTxOPTaV0" resolve="env" />
+                  </node>
+                  <node concept="liA8E" id="4uPaNIY9iFw" role="2OqNvi">
+                    <ref role="37wK5l" to="79ha:6rx4kZDjWg4" resolve="openProject" />
+                    <node concept="2ShNRf" id="4uPaNIY9iFx" role="37wK5m">
+                      <node concept="1pGfFk" id="4uPaNIY9iFy" role="2ShVmc">
+                        <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String)" resolve="File" />
+                        <node concept="37vLTw" id="7l0SErcZo7L" role="37wK5m">
+                          <ref role="3cqZAo" node="7l0SErcZi0H" resolve="PROJECT_PATH" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

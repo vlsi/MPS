@@ -18,7 +18,7 @@ import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.Status;
-import jetbrains.mps.workbench.actions.module.DeleteModuleHelper;
+import jetbrains.mps.module.ModuleDeleteHelper;
 import java.util.Collections;
 import com.intellij.openapi.ui.Messages;
 
@@ -93,7 +93,7 @@ public class DeleteGenerator_Action extends BaseAction {
         public void run() {
           // Parameter safeDelete set to false, because safety has been already checked  
           // and DeleteModuleHelper currently not allow to do it. 
-          new DeleteModuleHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(Collections.singletonList(((SModule) MapSequence.fromMap(_params).get("module"))), false, filesOption.selected);
+          new ModuleDeleteHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteModules(Collections.singletonList(((SModule) MapSequence.fromMap(_params).get("module"))), false, filesOption.selected);
         }
       });
     } else {

@@ -50,7 +50,9 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" filepath="$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/core/migration-runtime/migrations-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" filepath="$PROJECT_DIR$/testbench/modules/miscTests/misc-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/core/model/model.iml" filepath="$PROJECT_DIR$/core/model/model.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" filepath="$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" group="plugins" />
+      <module fileurl="file://$PROJECT_DIR$/core/module/module.iml" filepath="$PROJECT_DIR$/core/module/module.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" filepath="$PROJECT_DIR$/core/mps-annotations/mps-annotations.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/tool/builder/mps-ant.iml" filepath="$PROJECT_DIR$/core/tool/builder/mps-ant.iml" group="ant" />

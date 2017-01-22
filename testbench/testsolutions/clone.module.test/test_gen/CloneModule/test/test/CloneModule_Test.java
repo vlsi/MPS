@@ -4,7 +4,7 @@ package CloneModule.test.test;
 
 import junit.framework.TestCase;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.Project;
+import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.tool.environment.Environment;
@@ -30,7 +30,7 @@ public class CloneModule_Test extends TestCase {
   private static final String PROJECT_PATH = "testbench/modules/testCloneModule/";
   private static final String SUFFIX = "_testclone";
   private IFile clonedModulesDirectory;
-  private Project project;
+  private MPSProject project;
   public void test_cloneXMLSolution() throws Exception {
     testModule(PersistenceFacade.getInstance().createModuleReference("04399201-cb79-4edc-8d1a-e2b946892642(XML)"), MPSExtentions.DOT_SOLUTION);
   }
@@ -45,7 +45,7 @@ public class CloneModule_Test extends TestCase {
   }
   public void setUp() {
     Environment env = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
-    project = env.openProject(new File(PROJECT_PATH));
+    project = ((MPSProject) env.openProject(new File(PROJECT_PATH)));
 
     executeUnderLock(new Runnable() {
       public void run() {

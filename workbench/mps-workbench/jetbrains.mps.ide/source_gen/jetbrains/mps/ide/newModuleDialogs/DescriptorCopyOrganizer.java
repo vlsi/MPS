@@ -9,16 +9,15 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.PathConverters;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.function.Consumer;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.ModuleId;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
-import jetbrains.mps.smodel.SModel;
 
 /**
  *  Incorporates the descriptor copying ('cloning') logic,
@@ -57,13 +56,12 @@ import jetbrains.mps.smodel.SModel;
     if (moduleDescriptor == null) {
       return null;
     }
-    ModuleDescriptor copyDescriptor = moduleDescriptor.copy();
-    copyDescriptor.setId(ModuleId.regular());
+    final ModuleDescriptor copyDescriptor = moduleDescriptor.copy();
+    setNewIdAndTimestamp(copyDescriptor);
     copyDescriptor.setNamespace(myNewName);
-    copyDescriptor.setTimestamp(Long.toString(System.currentTimeMillis()));
     if (myModulePathConverter != null) {
-      hackJavaFacetProperties(copyDescriptor);
-      hackDeploymentDescriptor(copyDescriptor);
+      hackModuleDescriptor(copyDescriptor);
+
       if (copyDescriptor instanceof SolutionDescriptor) {
         hackSolutionDescriptor((SolutionDescriptor) copyDescriptor);
       } else
@@ -71,17 +69,32 @@ import jetbrains.mps.smodel.SModel;
         hackLanguageDescriptor((LanguageDescriptor) copyDescriptor);
         ((LanguageDescriptor) copyDescriptor).getGenerators().forEach(new Consumer<GeneratorDescriptor>() {
           @Override
-          public void accept(GeneratorDescriptor copyDescriptor1) {
-            DescriptorCopyOrganizer.this.hackGeneratorDescriptor(copyDescriptor1);
+          public void accept(GeneratorDescriptor genDescriptor) {
+            DescriptorCopyOrganizer.this.hackGeneratorDescriptor(genDescriptor);
+            hackModuleDescriptor(genDescriptor);
           }
         });
       }
     }
+    return copyDescriptor;
+  }
+
+  private void hackModuleDescriptor(final ModuleDescriptor copyDescriptor) {
+    hackJavaFacetProperties(copyDescriptor);
+    hackDeploymentDescriptor(copyDescriptor);
+    resetModelRootsAndFacets(copyDescriptor);
+  }
+
+  private void resetModelRootsAndFacets(final ModuleDescriptor copyDescriptor) {
     // these are descriptors not the model roots themselves and thus we have a problem 
     copyDescriptor.getModuleFacetDescriptors().clear();
     // same problem with facets 
     copyDescriptor.getModelRootDescriptors().clear();
-    return copyDescriptor;
+  }
+
+  private static void setNewIdAndTimestamp(final ModuleDescriptor descriptor) {
+    descriptor.setId(ModuleId.regular());
+    descriptor.setTimestamp(Long.toString(System.currentTimeMillis()));
   }
 
   /**
@@ -139,8 +152,12 @@ import jetbrains.mps.smodel.SModel;
     }
   }
 
-  private void hackGeneratorDescriptor(@NotNull GeneratorDescriptor copyDescriptor) {
-    copyDescriptor.setGeneratorUID(copyDescriptor.getNamespace() + "#" + SModel.generateUniqueId());
-    copyDescriptor.setOutputPath(myModulePathConverter.source2Target(copyDescriptor.getOutputPath()));
+  private void hackGeneratorDescriptor(@NotNull GeneratorDescriptor genDescriptor) {
+    setNewIdAndTimestamp(genDescriptor);
+    genDescriptor.setGeneratorUID(null);
+    String outputPath = genDescriptor.getOutputPath();
+    if (outputPath != null) {
+      genDescriptor.setOutputPath(myModulePathConverter.source2Target(outputPath));
+    }
   }
 }

@@ -127,9 +127,9 @@
     <import index="6sb4" ref="r:c11a4a93-6ff1-406e-b7f8-f5bafc5a1697(jetbrains.mps.lang.refactoring.plugin)" />
     <import index="beg" ref="r:09811e4e-aa47-4ea2-ad3d-57b7b9ffc7e3(jetbrains.mps.lang.constraints.plugin)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
-    <import index="bmn6" ref="86441d7a-e194-42da-81a5-2161ec62a379/java:jetbrains.mps.workbench.actions.module(MPS.Workbench/)" />
     <import index="tya3" ref="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
+    <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -3233,7 +3233,7 @@
                 <node concept="2OqwBi" id="1tuGf38GoKA" role="10QFUP">
                   <node concept="2WthIp" id="1tuGf38GoKB" role="2Oq$k0" />
                   <node concept="1DTwFV" id="1tuGf38GoKC" role="2OqNvi">
-                    <ref role="2WH_rO" node="1tuGf38GoLk" />
+                    <ref role="2WH_rO" node="1tuGf38GoLk" resolve="module" />
                   </node>
                 </node>
                 <node concept="3uibUv" id="1tuGf38GoKD" role="10QFUM">
@@ -3384,7 +3384,7 @@
                         <node concept="2OqwBi" id="6s6LYnVxBzm" role="3clFbG">
                           <node concept="2ShNRf" id="6s6LYnVx2ar" role="2Oq$k0">
                             <node concept="1pGfFk" id="6s6LYnVxAHM" role="2ShVmc">
-                              <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.&lt;init&gt;(jetbrains.mps.project.MPSProject)" resolve="DeleteModuleHelper" />
+                              <ref role="37wK5l" to="j8aq:~ModuleDeleteHelper.&lt;init&gt;(jetbrains.mps.project.Project)" resolve="ModuleDeleteHelper" />
                               <node concept="2OqwBi" id="6s6LYnVxB0U" role="37wK5m">
                                 <node concept="2WthIp" id="6s6LYnVxAIa" role="2Oq$k0" />
                                 <node concept="1DTwFV" id="6s6LYnVxBqv" role="2OqNvi">
@@ -3394,7 +3394,7 @@
                             </node>
                           </node>
                           <node concept="liA8E" id="6s6LYnVxC4W" role="2OqNvi">
-                            <ref role="37wK5l" to="bmn6:~DeleteModuleHelper.deleteModules(java.util.List,boolean,boolean):void" resolve="deleteModules" />
+                            <ref role="37wK5l" to="j8aq:~ModuleDeleteHelper.deleteModules(java.util.List,boolean,boolean):void" resolve="deleteModules" />
                             <node concept="2YIFZM" id="6s6LYnVxCid" role="37wK5m">
                               <ref role="37wK5l" to="33ny:~Collections.singletonList(java.lang.Object):java.util.List" resolve="singletonList" />
                               <ref role="1Pybhc" to="33ny:~Collections" resolve="Collections" />

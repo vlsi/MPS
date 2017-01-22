@@ -16,7 +16,9 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.newModuleDialogs.AbstractModuleCreationDialog;
 import jetbrains.mps.ide.newModuleDialogs.CloneModuleDialog;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -80,16 +82,20 @@ public class CloneModule_Action extends BaseAction {
 
     String virtualFolder = as_i0xx9i_a0a0f0h(event.getData(MPSCommonDataKeys.MPS_PROJECT), StandaloneMPSProject.class).getFolderFor(event.getData(MPSCommonDataKeys.MODULE));
 
-    AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a7(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
-    dialog.show();
+    final AbstractModuleCreationDialog dialog = new CloneModuleDialog(event.getData(MPSCommonDataKeys.MPS_PROJECT), virtualFolder, as_i0xx9i_a2a0a7a7(event.getData(MPSCommonDataKeys.MODULE), AbstractModule.class));
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        dialog.show();
 
-    SModule result = dialog.getModule();
-    if (result == null) {
-      return;
-    }
+        SModule result = dialog.getModule();
+        if (result == null) {
+          return;
+        }
 
-    ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
-    projectPane.selectModule(result, false);
+        ProjectPane projectPane = ProjectPane.getInstance(event.getData(MPSCommonDataKeys.MPS_PROJECT));
+        projectPane.selectModule(result, false);
+      }
+    }, ModalityState.current());
   }
   private String getErrorMessage(Map<ModelRoot, String> roots, final AnActionEvent event) {
     StringBuilder sb = new StringBuilder();

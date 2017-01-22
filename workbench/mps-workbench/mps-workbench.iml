@@ -50,5 +50,7 @@
     <orderEntry type="module" module-name="make-facets" />
     <orderEntry type="module" module-name="scripts-runtime" />
     <orderEntry type="module" module-name="refactoring" />
+    <orderEntry type="module" module-name="model" />
+    <orderEntry type="module" module-name="module" />
   </component>
 </module>

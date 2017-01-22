@@ -386,7 +386,6 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     }
 
     if (getContentDirectory() != null) {
-      assert target.getDescriptorFile() != null;
       IFile targetContentDir;
       if (isUnderModuleSourceDir(source, getContentDirectory())) {
         String relFromModuleDirToContentDir = relativize(getContentDirectory().getPath(), source.getModuleSourceDir());
