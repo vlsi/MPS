@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="jar" build-on-make="true" name="mps-java">
-    <output-path>$PROJECT_DIR$/plugins/mpsjava/lib</output-path>
+    <output-path>$PROJECT_DIR$/plugins/mps-java-workbench/lib</output-path>
     <root id="archive" name="mps-java.jar">
       <element id="module-output" name="mps-java-platform" />
       <element id="module-output" name="mps-java-platform-base" />

@@ -43,7 +43,11 @@
   <target name="assemble" depends="classes, declare-mps-tasks">
     <mkdir dir="${build.layout}/META-INF" />
     <copy todir="${build.layout}/META-INF">
-      <fileset dir="${mps_home}/plugins/mpsjava/resources/META-INF">
+      <fileset file="${mps_home}/plugins/mps-java-workbench/META-INF/JavaPlatform.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/META-INF/platform" />
+    <copy todir="${build.layout}/META-INF/platform">
+      <fileset dir="${mps_home}/plugins/mps-java-workbench/META-INF/platform">
         <include name="**/*.xml" />
       </fileset>
     </copy>

@@ -24,7 +24,7 @@
   <idea-version since-build="171.1" until-build="172.1"/>
   <depends>jetbrains.mps.core</depends>
 
-  <xi:include href="/META-INF/JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>

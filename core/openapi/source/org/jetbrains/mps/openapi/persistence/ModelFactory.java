@@ -40,7 +40,7 @@ import java.util.Map;
  * Creates/upgrades/saves/loads models (instances of SModel) from data sources.
  *
  * NB: the default implementation of the methods added in 3.5 will be dropped at the 2017.3
- * minor release. Please do not long linger to pass on the new API.
+ * minor release. Please do not linger to pass on the new API.
  *
  * @author apyshkin
  */

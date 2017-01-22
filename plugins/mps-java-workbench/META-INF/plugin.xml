@@ -24,7 +24,7 @@
   <depends>com.intellij.modules.mps</depends>
 
   <xi:include href="workbench/actions/JavaWorkbenchActions.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="/META-INF/JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="JavaPlatform.xml" xpointer="xpointer(/components/*)"/>
 
   <application-components>
     <component>

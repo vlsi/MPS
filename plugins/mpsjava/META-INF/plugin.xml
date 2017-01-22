@@ -12,6 +12,9 @@
   ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
+
+  THIS plugin is enabled only when MPS started on sources.
+  In the distribution one can find either mps-java-workbench or mps-java-idea (standalone or idea plugin, respectively)
   -->
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
@@ -23,6 +26,7 @@
   <idea-version since-build="171.1" until-build="174.1"/>
   <depends>jetbrains.mps.core</depends>
 
+  <!--this works only on sources in order to load all the modules under this root since this xml is only on sources-->
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="."/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
