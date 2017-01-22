@@ -25,6 +25,7 @@
       <classpath>
         <pathelement path="${build.tmp}/MPS ${mpsBootstrapCore.version}/lib/mps-workbench.jar"/>
         <pathelement path="${build.tmp}/MPS ${mpsBootstrapCore.version}/lib/mps-core.jar"/>
+        <pathelement path="${build.tmp}/MPS ${mpsBootstrapCore.version}/lib/log4j.jar"/>
       </classpath>
     </java>
 
