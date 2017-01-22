@@ -2616,6 +2616,7 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.generator.editor.TemplateDeclarationParameterInformationQuery" file="TemplateDeclarationParameterInformationQuery.java">
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />

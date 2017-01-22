@@ -22,8 +22,8 @@
     </file>
   </root>
   <root nodeRef="r:18ddb7a1-bae8-47e8-a653-f672ff99522d(jetbrains.mps.lang.smodel.migration)/2926695023085786246">
-    <file name="MigrateSmodelOperations.java">
-      <node id="2926695023085786246" at="34,30,35,39" concept="10" />
+    <file name="MigrateOperationsAndNodeRefs.java">
+      <node id="2926695023085786246" at="34,30,35,64" concept="10" />
       <node id="2926695023085786246" at="38,33,39,16" concept="10" />
       <node id="2926695023085786246" at="41,41,42,17" concept="5" />
       <node id="2926695023085786246" at="42,17,43,16" concept="10" />
@@ -133,18 +133,18 @@
       <node id="2926695023085786579" at="71,0,79,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2926695023085792529" at="104,0,112,0" concept="8" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2926695023085786592" at="123,8,132,9" concept="10" />
-      <node id="2926695023085786581" at="139,0,152,0" concept="13" trace="_quotation_createNode_c6awyu_a0a2a6#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2926695023085792531" at="172,0,185,0" concept="13" trace="_quotation_createNode_c6awyu_a0a3a6#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2926695023085786581" at="139,0,152,0" concept="13" trace="_quotation_createNode_3qm329_a0a2a6#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2926695023085792531" at="172,0,185,0" concept="13" trace="_quotation_createNode_3qm329_a0a3a6#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2926695023085786590" at="116,45,133,5" concept="1" />
       <node id="2926695023085786246" at="115,0,135,0" concept="8" trace="check#(Lorg/jetbrains/mps/openapi/module/SModule;)Ljava/lang/Iterable;" />
-      <node id="2926695023085786584" at="152,0,172,0" concept="13" trace="_quotation_createNode_c6awyu_a0c0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2926695023085792536" at="185,0,205,0" concept="13" trace="_quotation_createNode_c6awyu_a0d0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2926695023085786584" at="152,0,172,0" concept="13" trace="_quotation_createNode_3qm329_a0c0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2926695023085792536" at="185,0,205,0" concept="13" trace="_quotation_createNode_3qm329_a0d0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2926695023085786579" at="49,111,79,9" concept="5" />
       <node id="2926695023085792529" at="82,111,112,9" concept="5" />
       <node id="2926695023085786579" at="47,17,80,5" concept="1" />
       <node id="2926695023085792529" at="80,5,113,5" concept="1" />
       <node id="2926695023085786246" at="45,0,115,0" concept="8" trace="doExecute#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-      <scope id="2926695023085786246" at="34,30,35,39" />
+      <scope id="2926695023085786246" at="34,30,35,64" />
       <scope id="2926695023085786246" at="38,33,39,16" />
       <scope id="2926695023085786579" at="51,53,52,94" />
       <scope id="2926695023085786579" at="55,41,56,35" />
@@ -273,24 +273,24 @@
       <scope id="2926695023085786246" at="45,0,115,0">
         <var name="m" id="2926695023085786246" />
       </scope>
-      <unit id="2926695023085786579" at="50,78,54,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$1" />
-      <unit id="2926695023085786579" at="54,19,58,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$2" />
-      <unit id="2926695023085786579" at="58,19,62,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$3" />
-      <unit id="2926695023085786579" at="62,19,66,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$4" />
-      <unit id="2926695023085786579" at="66,18,70,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$5" />
-      <unit id="2926695023085786579" at="73,52,77,11" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$6$1" />
-      <unit id="2926695023085792529" at="83,78,87,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$7" />
-      <unit id="2926695023085792529" at="87,19,91,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$8" />
-      <unit id="2926695023085792529" at="91,19,95,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$9" />
-      <unit id="2926695023085792529" at="95,19,99,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$10" />
-      <unit id="2926695023085792529" at="99,18,103,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$11" />
-      <unit id="2926695023085792529" at="106,52,110,11" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$12$1" />
-      <unit id="2926695023085786590" at="119,42,123,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$13" />
-      <unit id="2926695023085786600" at="124,289,128,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$14" />
-      <unit id="2926695023085786614" at="128,20,132,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$15" />
-      <unit id="2926695023085786579" at="70,29,79,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$6" />
-      <unit id="2926695023085792529" at="103,29,112,7" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations$12" />
-      <unit id="2926695023085786246" at="33,0,206,0" name="jetbrains.mps.lang.smodel.migration.MigrateSmodelOperations" />
+      <unit id="2926695023085786579" at="50,78,54,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$1" />
+      <unit id="2926695023085786579" at="54,19,58,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$2" />
+      <unit id="2926695023085786579" at="58,19,62,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$3" />
+      <unit id="2926695023085786579" at="62,19,66,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$4" />
+      <unit id="2926695023085786579" at="66,18,70,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$5" />
+      <unit id="2926695023085786579" at="73,52,77,11" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$6$1" />
+      <unit id="2926695023085792529" at="83,78,87,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$7" />
+      <unit id="2926695023085792529" at="87,19,91,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$8" />
+      <unit id="2926695023085792529" at="91,19,95,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$9" />
+      <unit id="2926695023085792529" at="95,19,99,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$10" />
+      <unit id="2926695023085792529" at="99,18,103,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$11" />
+      <unit id="2926695023085792529" at="106,52,110,11" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$12$1" />
+      <unit id="2926695023085786590" at="119,42,123,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$13" />
+      <unit id="2926695023085786600" at="124,289,128,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$14" />
+      <unit id="2926695023085786614" at="128,20,132,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$15" />
+      <unit id="2926695023085786579" at="70,29,79,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$6" />
+      <unit id="2926695023085792529" at="103,29,112,7" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs$12" />
+      <unit id="2926695023085786246" at="33,0,206,0" name="jetbrains.mps.lang.smodel.migration.MigrateOperationsAndNodeRefs" />
     </file>
     <file name="Pattern_m8hesshz2pqs.java">
       <node id="2926695023085786580" at="10,50,11,30" concept="14" />

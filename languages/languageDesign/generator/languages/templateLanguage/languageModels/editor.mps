@@ -326,6 +326,7 @@
       <concept id="1068498886292" name="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" flags="ir" index="37vLTG" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
       <concept id="1225271221393" name="jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression" flags="nn" index="17QLQc" />
+      <concept id="1225271283259" name="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression" flags="nn" index="17R0WA" />
       <concept id="1225271408483" name="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation" flags="nn" index="17RvpY" />
       <concept id="4972933694980447171" name="jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration" flags="ng" index="19Szcq">
         <child id="5680397130376446158" name="type" index="1tU5fm" />
@@ -431,13 +432,8 @@
       <concept id="767145758118872830" name="jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation" flags="nn" index="2DeJnY" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="5820409030208923287" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation" flags="nn" index="25OxAV" />
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
-      </concept>
-      <concept id="1226359078165" name="jetbrains.mps.lang.smodel.structure.LinkRefExpression" flags="nn" index="28GBK8">
-        <reference id="1226359078166" name="conceptDeclaration" index="28GBKb" />
-        <reference id="1226359192215" name="linkDeclaration" index="28H3Ia" />
       </concept>
       <concept id="1179168000618" name="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation" flags="nn" index="2bSWHS" />
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
@@ -463,6 +459,7 @@
       <concept id="1181952871644" name="jetbrains.mps.lang.smodel.structure.Concept_GetAllSubConcepts" flags="nn" index="LSoRf">
         <child id="1182506816063" name="smodel" index="1iTxcG" />
       </concept>
+      <concept id="7504436213544206332" name="jetbrains.mps.lang.smodel.structure.Node_ContainingLinkOperation" flags="nn" index="2NL2c5" />
       <concept id="1171310072040" name="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation" flags="nn" index="2Rxl7S" />
       <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
       <concept id="1205861725686" name="jetbrains.mps.lang.smodel.structure.Node_IsAttributeOperation" flags="nn" index="32XrjI" />
@@ -5603,16 +5600,16 @@
                 <node concept="3clFbS" id="6q2TEcjuEZv" role="1bW5cS">
                   <node concept="3clFbF" id="6q2TEcjuEZw" role="3cqZAp">
                     <node concept="1Wc70l" id="6q2TEcjuEZx" role="3clFbG">
-                      <node concept="3clFbC" id="6q2TEcjuEZy" role="3uHU7w">
-                        <node concept="28GBK8" id="6q2TEcjuEZz" role="3uHU7w">
-                          <ref role="28GBKb" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
-                          <ref role="28H3Ia" to="tpf8:1vDgt48Nz4_" resolve="actualArgument" />
-                        </node>
+                      <node concept="17R0WA" id="4jf2Bbgb$Lt" role="3uHU7w">
                         <node concept="2OqwBi" id="6q2TEcjuEZ$" role="3uHU7B">
                           <node concept="37vLTw" id="2BHiRxgmkmn" role="2Oq$k0">
                             <ref role="3cqZAo" node="6q2TEcjuEZG" resolve="it" />
                           </node>
-                          <node concept="25OxAV" id="6q2TEcjuEZA" role="2OqNvi" />
+                          <node concept="2NL2c5" id="4jf2Bbgb$tm" role="2OqNvi" />
+                        </node>
+                        <node concept="359W_D" id="4jf2Bbgb_34" role="3uHU7w">
+                          <ref role="359W_E" to="tpf8:1vDgt48Nz4w" resolve="ITemplateCall" />
+                          <ref role="359W_F" to="tpf8:1vDgt48Nz4_" resolve="actualArgument" />
                         </node>
                       </node>
                       <node concept="3clFbC" id="6q2TEcjuEZB" role="3uHU7B">

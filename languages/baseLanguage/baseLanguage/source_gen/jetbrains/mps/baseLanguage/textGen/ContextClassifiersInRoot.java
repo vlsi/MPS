@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.textGen;
 
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import java.util.Map;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -18,12 +19,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept__BehaviorDescriptor;
 
 public class ContextClassifiersInRoot {
-  private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
+  private SimpleCache<Tuples._2<SNode, SContainmentLink>, Map<String, String>> contextClassifiersCache;
   private SimpleCache<SNode, Map<String, String>> nestedClassifiersCache;
   public ContextClassifiersInRoot(SNode rootNode) {
-    contextClassifiersCache = new SimpleCache<Tuples._2<SNode, String>, Map<String, String>>() {
+    contextClassifiersCache = new SimpleCache<Tuples._2<SNode, SContainmentLink>, Map<String, String>>() {
       @Override
-      protected Map<String, String> innerGet(Tuples._2<SNode, String> key) {
+      protected Map<String, String> innerGet(Tuples._2<SNode, SContainmentLink> key) {
         return getContextClassifiers(key._0(), key._1());
       }
     };
@@ -49,9 +50,9 @@ public class ContextClassifiersInRoot {
     }
 
     // find first classifier in path 
-    String sourceChildRole = null;
+    SContainmentLink sourceChildRole = null;
     while ((contextNode != null) && !(SNodeOperations.isInstanceOf(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")))) {
-      sourceChildRole = contextNode.getRoleInParent();
+      sourceChildRole = contextNode.getContainmentLink();
       contextNode = SNodeOperations.getParent(contextNode);
     }
 
@@ -60,9 +61,9 @@ public class ContextClassifiersInRoot {
       return Collections.emptyMap();
     }
 
-    return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), sourceChildRole));
+    return contextClassifiersCache.get(MultiTuple.<SNode,SContainmentLink>from(SNodeOperations.cast(contextNode, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101d9d3ca30L, "jetbrains.mps.baseLanguage.structure.Classifier")), sourceChildRole));
   }
-  private Map<String, String> getContextClassifiers(SNode contextNode, String sourceChildRole) {
+  private Map<String, String> getContextClassifiers(SNode contextNode, SContainmentLink sourceChildRole) {
     Map<String, String> bindings = new HashMap<String, String>();
 
     SNode current = contextNode;
@@ -72,9 +73,9 @@ public class ContextClassifiersInRoot {
         if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x1107e0cb103L, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) || SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
           processNestedClassifiers = true;
         } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-          processNestedClassifiers = !("extendedInterface".equals(sourceChildRole));
+          processNestedClassifiers = !(MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x101edd46144L, 0x101eddadad7L, "extendedInterface").equals(sourceChildRole));
         } else if (SNodeOperations.isInstanceOf(current, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
-          processNestedClassifiers = !(("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole)));
+          processNestedClassifiers = !((MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0x10f6353296dL, "superclass").equals(sourceChildRole) || MetaAdapterFactory.getContainmentLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c108ca66L, 0xff2ac0b419L, "implementedInterface").equals(sourceChildRole)));
         } else {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Illegal classifier node in bl textgen: " + current);
@@ -94,7 +95,7 @@ public class ContextClassifiersInRoot {
 
       // todo: specialized links? 
       // should not be a problem: superclass/extendedInterface/implementedInterface not specialized 
-      sourceChildRole = current.getRoleInParent();
+      sourceChildRole = current.getContainmentLink();
       current = SNodeOperations.getParent(current);
     }
 

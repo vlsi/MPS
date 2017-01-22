@@ -4,6 +4,7 @@ package jetbrains.mps.lang.editor.table.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -18,11 +19,20 @@ public class HierarchycalTableModel extends AbstractTableModel {
   private SContainmentLink myColumnsLinkDeclaration;
   private int myColumnCount;
   private int myRowCount;
+  /**
+   * 
+   * @deprecated 
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration) {
+    this(tableNode, MetaAdapterByDeclaration.getContainmentLink(rowsLinkDeclaration), MetaAdapterByDeclaration.getContainmentLink(cellsLinkDeclaration));
+  }
+  public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SContainmentLink rowsLink, @NotNull SContainmentLink cellsLink) {
     myTableNode = tableNode;
-    myRowsLinkDeclaration = MetaAdapterByDeclaration.getContainmentLink(rowsLinkDeclaration);
+    myRowsLinkDeclaration = rowsLink;
     assert SNodeOperations.getConcept(myTableNode).getContainmentLinks().contains(myRowsLinkDeclaration);
-    myColumnsLinkDeclaration = MetaAdapterByDeclaration.getContainmentLink(cellsLinkDeclaration);
+    myColumnsLinkDeclaration = cellsLink;
     assert myRowsLinkDeclaration.getTargetConcept().getContainmentLinks().contains(myColumnsLinkDeclaration);
 
     myRowCount = ListSequence.fromList(getRows()).count();

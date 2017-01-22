@@ -372,7 +372,6 @@
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
       <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -385,6 +384,7 @@
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -941,7 +941,7 @@
                     <node concept="2GrUjf" id="1mruP2nnW1J" role="2Oq$k0">
                       <ref role="2Gs0qQ" node="1mruP2nnW17" resolve="child" />
                     </node>
-                    <node concept="1PgB_6" id="1mruP2nnW1Q" role="2OqNvi" />
+                    <node concept="3YRAZt" id="1mruP2nnW1Q" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -1961,7 +1961,7 @@
         <node concept="3clFbF" id="4Fsfm22QbFX" role="3cqZAp">
           <node concept="2OqwBi" id="4Fsfm22QmVN" role="3clFbG">
             <node concept="Q6c8r" id="4Fsfm22QmON" role="2Oq$k0" />
-            <node concept="1PgB_6" id="4Fsfm22Qnff" role="2OqNvi" />
+            <node concept="3YRAZt" id="4Fsfm22Qnff" role="2OqNvi" />
           </node>
         </node>
       </node>
@@ -2003,7 +2003,7 @@
         <node concept="3clFbF" id="4Fsfm22QngZ" role="3cqZAp">
           <node concept="2OqwBi" id="4Fsfm22Qnh0" role="3clFbG">
             <node concept="Q6c8r" id="4Fsfm22Qnh1" role="2Oq$k0" />
-            <node concept="1PgB_6" id="4Fsfm22Qnh2" role="2OqNvi" />
+            <node concept="3YRAZt" id="4Fsfm22Qnh2" role="2OqNvi" />
           </node>
         </node>
       </node>

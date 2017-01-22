@@ -411,7 +411,14 @@
                         <ref role="1Y3XeK" to="zce0:~AbstractNodeSubstituteAction" resolve="AbstractNodeSubstituteAction" />
                         <ref role="37wK5l" to="zce0:~AbstractNodeSubstituteAction.&lt;init&gt;(org.jetbrains.mps.openapi.model.SNode,java.lang.Object,org.jetbrains.mps.openapi.model.SNode)" resolve="AbstractNodeSubstituteAction" />
                         <node concept="3Tm1VV" id="3NL5ivGjY7d" role="1B3o_S" />
-                        <node concept="10Nm6u" id="3NL5ivGjY7k" role="37wK5m" />
+                        <node concept="1eOMI4" id="4jf2BbgmhqI" role="37wK5m">
+                          <node concept="10QFUN" id="4jf2BbgmhqJ" role="1eOMHV">
+                            <node concept="10Nm6u" id="4jf2BbgmhqH" role="10QFUP" />
+                            <node concept="3uibUv" id="4jf2BbgmhqG" role="10QFUM">
+                              <ref role="3uigEE" to="mhbf:~SNode" resolve="SNode" />
+                            </node>
+                          </node>
+                        </node>
                         <node concept="37vLTw" id="3GM_nagTwHI" role="37wK5m">
                           <ref role="3cqZAo" node="3NL5ivGjZyk" resolve="enumMemberDeclaration" />
                         </node>

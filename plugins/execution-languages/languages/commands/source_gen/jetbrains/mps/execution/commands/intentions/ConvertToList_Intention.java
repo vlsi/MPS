@@ -46,7 +46,7 @@ public final class ConvertToList_Intention extends IntentionDescriptorBase imple
     return ListSequence.fromList(SLinkOperations.getChildren(node, MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"))).isNotEmpty();
   }
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_63cojg_a0a0f(SNodeOperations.getContainingLinkRole(childNode), "items");
+    return eq_63cojg_a0a0f(SNodeOperations.getContainingLink(childNode), MetaAdapterFactory.getContainmentLink(0xf3347d8a0e794f35L, 0x8ac91574f25c986fL, 0x5f50ed14026999c9L, 0x1e16a75f45341377L, "items"));
   }
   @Override
   public boolean isSurroundWith() {

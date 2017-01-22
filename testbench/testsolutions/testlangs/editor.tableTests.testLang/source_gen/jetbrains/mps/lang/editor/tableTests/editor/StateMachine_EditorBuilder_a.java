@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import org.jetbrains.annotations.Nullable;
@@ -163,20 +164,20 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
           }
           @Override
           public SubstituteInfo getSubstituteInfo(final int row, final int column) {
-            SNode linkDeclaration = null;
+            SContainmentLink linkDeclaration = null;
             if (row == 0 && column > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba3L, "events"));
+              linkDeclaration = MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba3L, "events");
             }
             if (column == 0 && row > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba5L, "states"));
+              linkDeclaration = MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba5L, "states");
             }
             if (row > 0 && column > 0) {
-              linkDeclaration = SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba4L, "transitions"));
+              linkDeclaration = MetaAdapterFactory.getContainmentLink(0xdf8799e7254a406fL, 0xbd67f4cc27337152L, 0xa99ffe1c8456ba1L, 0xa99ffe1c8456ba4L, "transitions");
             }
             if (linkDeclaration == null) {
               return null;
             }
-            return new DefaultChildSubstituteInfo(myNode, getValueAt(row, column), linkDeclaration, getEditorContext()) {
+            return new DefaultChildSubstituteInfo(myNode, getValueAt(row, column), linkDeclaration.getDeclarationNode(), getEditorContext()) {
               @Override
               protected DefaultChildNodeSetter createDefaultNodeSetter() {
                 return new DefaultChildNodeSetter(getLinkDeclaration()) {

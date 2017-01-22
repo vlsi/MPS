@@ -260,7 +260,7 @@ import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
       // never happens, see show if condition on outer cell 
       return null;
     }
-    return EditorUtil.createSelectButton(myNode, "internalBaseDirectory", getEditorContext(), false, new _FunctionTypes._return_P1_E0<String, String>() {
+    return EditorUtil.createSelectButton(myNode, MetaAdapterFactory.getProperty(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x48387ebae1a07a23L, "internalBaseDirectory"), getEditorContext(), false, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String path) {
         try {
           return rph.makeRelative(path);

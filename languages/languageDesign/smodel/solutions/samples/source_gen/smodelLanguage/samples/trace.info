@@ -982,15 +982,11 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1226362060907">
     <file name="LinkRef.java">
-      <node id="1226362136275" at="11,23,12,179" concept="5" />
-      <node id="1226362204661" at="12,179,13,103" concept="5" />
-      <node id="1226362100988" at="11,0,15,0" concept="4" trace="test1#()V" />
-      <scope id="1226362100991" at="11,23,13,103">
-        <var name="link" id="1226362136276" />
-        <var name="singular" id="1226362204662" />
-      </scope>
-      <scope id="1226362100988" at="11,0,15,0" />
-      <unit id="1226362060907" at="10,0,16,0" name="smodelLanguage.samples.LinkRef" />
+      <node id="4958193202991628013" at="8,23,9,142" concept="1" />
+      <node id="1226362100988" at="8,0,11,0" concept="4" trace="test1#()V" />
+      <scope id="1226362100991" at="8,23,9,142" />
+      <scope id="1226362100988" at="8,0,11,0" />
+      <unit id="1226362060907" at="7,0,12,0" name="smodelLanguage.samples.LinkRef" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)/1241018402608">

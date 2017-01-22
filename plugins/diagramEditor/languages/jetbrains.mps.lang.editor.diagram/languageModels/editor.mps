@@ -400,6 +400,10 @@
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
       </concept>
+      <concept id="2644386474302386080" name="jetbrains.mps.lang.smodel.structure.PropertyIdRefExpression" flags="nn" index="355D3s">
+        <reference id="2644386474302386081" name="conceptDeclaration" index="355D3t" />
+        <reference id="2644386474302386082" name="propertyDeclaration" index="355D3u" />
+      </concept>
       <concept id="2644386474300074836" name="jetbrains.mps.lang.smodel.structure.ConceptIdRefExpression" flags="nn" index="35c_gC">
         <reference id="2644386474300074837" name="conceptDeclaration" index="35c_gD" />
       </concept>
@@ -412,7 +416,6 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
@@ -426,6 +429,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -1292,7 +1296,7 @@
                 <node concept="3clFbF" id="4Xny4S7rIVJ" role="3cqZAp">
                   <node concept="2OqwBi" id="4Xny4S7rJ0k" role="3clFbG">
                     <node concept="0IXxy" id="4Xny4S7rIVI" role="2Oq$k0" />
-                    <node concept="1PgB_6" id="4Xny4S7rKaU" role="2OqNvi" />
+                    <node concept="3YRAZt" id="4Xny4S7rKaU" role="2OqNvi" />
                   </node>
                 </node>
               </node>
@@ -1806,12 +1810,19 @@
         <node concept="3gTLQM" id="4ttM7y2aZL6" role="3EZMnx">
           <node concept="3Fmcul" id="4ttM7y2aZL7" role="3FoqZy">
             <node concept="3clFbS" id="4ttM7y2aZL8" role="2VODD2">
-              <node concept="3cpWs6" id="4ttM7y2aZL9" role="3cqZAp">
-                <node concept="2YIFZM" id="18qFtJYHd9T" role="3cqZAk">
-                  <ref role="37wK5l" to="7a0s:6UDbxo8i0R2" resolve="createSelectIconButton" />
+              <node concept="3clFbF" id="5xzMQBRCx7R" role="3cqZAp">
+                <node concept="2YIFZM" id="5xzMQBRCzi0" role="3clFbG">
+                  <ref role="37wK5l" to="7a0s:6UDbxo8i0Rf" resolve="createSelectIconButton" />
                   <ref role="1Pybhc" to="7a0s:6UDbxo8i0QW" resolve="EditorUtil" />
-                  <node concept="pncrf" id="18qFtJYHd9U" role="37wK5m" />
-                  <node concept="1Q80Hx" id="18qFtJYHd9V" role="37wK5m" />
+                  <node concept="pncrf" id="5xzMQBRCzi1" role="37wK5m" />
+                  <node concept="355D3s" id="5xzMQBRExAW" role="37wK5m">
+                    <ref role="355D3t" to="gbdf:5JruEV1dOnD" resolve="CreationActionReference" />
+                    <ref role="355D3u" to="gbdf:3NXJmdrmJUd" resolve="iconPath" />
+                  </node>
+                  <node concept="1Q80Hx" id="5xzMQBRCzi2" role="37wK5m" />
+                  <node concept="3clFbT" id="5xzMQBRCzi4" role="37wK5m">
+                    <property role="3clFbU" value="false" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -132,7 +132,7 @@ import jetbrains.mps.editor.runtime.EditorUtil;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_w2956w_a1a() {
-    return EditorUtil.createSelectIconButton(myNode, "file", getEditorContext());
+    return EditorUtil.createSelectIconButton(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0xb8b96b5078f3367L, 0xb8b96b5078f33bbL, "file"), getEditorContext(), false);
   }
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;

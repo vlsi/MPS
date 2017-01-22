@@ -146,7 +146,6 @@
         <child id="1164826688380" name="menuDescriptor" index="P5bDN" />
       </concept>
       <concept id="1073389446423" name="jetbrains.mps.lang.editor.structure.CellModel_Collection" flags="sn" stub="3013115976261988961" index="3EZMnI">
-        <property id="1073389446425" name="vertical" index="3EZMnw" />
         <child id="1106270802874" name="cellLayout" index="2iSdaV" />
         <child id="1073389446424" name="childCellModel" index="3EZMnx" />
       </concept>
@@ -675,7 +674,6 @@
       <concept id="7453996997717780434" name="jetbrains.mps.lang.smodel.structure.Node_GetSConceptOperation" flags="nn" index="2yIwOk" />
       <concept id="1173122760281" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorsOperation" flags="nn" index="z$bX8" />
       <concept id="2396822768958367367" name="jetbrains.mps.lang.smodel.structure.AbstractTypeCastExpression" flags="nn" index="$5XWr">
-        <reference id="6733348108486823428" name="concept" index="1m5ApE" />
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
@@ -755,7 +753,6 @@
       <concept id="1172326502327" name="jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation" flags="nn" index="3O6GUB">
         <child id="1206733650006" name="conceptArgument" index="3QVz_e" />
       </concept>
-      <concept id="1140133623887" name="jetbrains.mps.lang.smodel.structure.Node_DeleteOperation" flags="nn" index="1PgB_6" />
       <concept id="1140137987495" name="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" flags="nn" index="1PxgMI">
         <property id="1238684351431" name="asCast" index="1BlNFB" />
       </concept>
@@ -771,6 +768,7 @@
       <concept id="1138056282393" name="jetbrains.mps.lang.smodel.structure.SLinkListAccess" flags="nn" index="3Tsc0h">
         <reference id="1138056546658" name="link" index="3TtcxE" />
       </concept>
+      <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -8816,7 +8814,6 @@
                                     <node concept="3clFbS" id="6ENlkV9WryK" role="2VODD2">
                                       <node concept="3clFbF" id="6ENlkV9Wsn7" role="3cqZAp">
                                         <node concept="1PxgMI" id="6ENlkV9Wsn8" role="3clFbG">
-                                          <ref role="1m5ApE" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                                           <node concept="2OqwBi" id="6ENlkV9Wsn9" role="1m5AlR">
                                             <node concept="2OqwBi" id="6ENlkV9Wsna" role="2Oq$k0">
                                               <node concept="30H73N" id="6ENlkV9Wsnb" role="2Oq$k0" />
@@ -8825,6 +8822,9 @@
                                               </node>
                                             </node>
                                             <node concept="2Rxl7S" id="6ENlkV9Wsnd" role="2OqNvi" />
+                                          </node>
+                                          <node concept="chp4Y" id="7BApNipL0vi" role="3oSUPX">
+                                            <ref role="cht4Q" to="tpce:h0PkWnZ" resolve="AbstractConceptDeclaration" />
                                           </node>
                                         </node>
                                       </node>
@@ -15100,7 +15100,6 @@
       <node concept="3EZMnI" id="hsbBhJT" role="3EZMnx">
         <node concept="raruj" id="hsbBi4r" role="lGtFl" />
         <node concept="3EZMnI" id="hsbBmfk" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3F0ifn" id="hsbBmfl" role="3EZMnx">
             <property role="3F0ifm" value="header" />
             <node concept="29HgVG" id="hsbBq8L" role="lGtFl">
@@ -15152,7 +15151,6 @@
           <node concept="2iRfu4" id="i2IxuR2" role="2iSdaV" />
         </node>
         <node concept="3EZMnI" id="hsbBnrN" role="3EZMnx">
-          <property role="3EZMnw" value="false" />
           <node concept="3XFhqQ" id="hsbBnPt" role="3EZMnx" />
           <node concept="3F0ifn" id="hsbBoh$" role="3EZMnx">
             <property role="3F0ifm" value="body" />
@@ -15935,7 +15933,6 @@
     <ref role="3gUMe" to="tpc2:fBEYTCT" resolve="EditorCellModel" />
     <node concept="3EZMnI" id="hxAmhpx" role="13RCb5">
       <node concept="3EZMnI" id="hxAmoz_" role="3EZMnx">
-        <property role="3EZMnw" value="false" />
         <node concept="3F0ifn" id="hxAmq52" role="3EZMnx">
           <property role="3F0ifm" value="abcdef" />
           <node concept="29HgVG" id="hxAmBs7" role="lGtFl" />
@@ -34218,7 +34215,7 @@
                       <node concept="37vLTw" id="4YKBkH7kauY" role="2Oq$k0">
                         <ref role="3cqZAo" node="4YKBkH7karn" resolve="it" />
                       </node>
-                      <node concept="1PgB_6" id="4YKBkH7kaX2" role="2OqNvi" />
+                      <node concept="3YRAZt" id="4YKBkH7kaX2" role="2OqNvi" />
                     </node>
                   </node>
                 </node>

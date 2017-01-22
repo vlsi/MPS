@@ -19,7 +19,6 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -27,6 +26,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
@@ -50,11 +50,10 @@ public final class IApplicableToNothing__BehaviorDescriptor extends BaseBHDescri
   /*package*/ static Set<SNode> getAllApplicableTypes_id5cL0w3DYWgB(@NotNull final SAbstractConcept __thisConcept__) {
     final Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
 
-    // todo remove this line after this becomes a concept<> 
     // [MM] I don't understand this code and have just wrote an equivalent to the previous version w/o conceptNodes 
     // [MM] I suppose what's meant here is concept.hierarchy.subconcepts(IApplicableToNothing).selectMany(it->it.getApplicableTypes()) 
     // [MM] this differs much from the current code: getAT() is only called for direct super-interfaces 
-    SAbstractConcept tt = SNodeOperations.asSConcept(__thisConcept__);
+    SAbstractConcept tt = __thisConcept__;
     Iterable<SInterfaceConcept> supers;
     if (tt instanceof SConcept) {
       supers = ((SConcept) tt).getSuperInterfaces();

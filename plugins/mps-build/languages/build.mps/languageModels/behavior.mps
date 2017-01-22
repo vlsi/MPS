@@ -2,8 +2,8 @@
 <model ref="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)">
   <persistence version="9" />
   <languages>
-    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" name="jetbrains.mps.lang.behavior" version="-1" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -21,6 +21,7 @@
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="c17a" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.language(MPS.OpenAPI/)" />
   </imports>
   <registry>
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples">
@@ -155,6 +156,10 @@
       </concept>
       <concept id="1081516740877" name="jetbrains.mps.baseLanguage.structure.NotExpression" flags="nn" index="3fqX7Q">
         <child id="1081516765348" name="expression" index="3fr31v" />
+      </concept>
+      <concept id="1160998861373" name="jetbrains.mps.baseLanguage.structure.AssertStatement" flags="nn" index="1gVbGN">
+        <child id="1160998896846" name="condition" index="1gVkn0" />
+        <child id="1160998916832" name="message" index="1gVpfI" />
       </concept>
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
         <reference id="1068499141037" name="baseMethodDeclaration" index="37wK5l" />
@@ -3966,6 +3971,35 @@
       <ref role="13i0hy" to="vbkb:7XQqoCTkVIS" resolve="isValidPart" />
       <node concept="3Tm1VV" id="5HVSRHdVWPz" role="1B3o_S" />
       <node concept="3clFbS" id="5HVSRHdVWP$" role="3clF47">
+        <node concept="3SKdUt" id="4jf2Bbg1rIF" role="3cqZAp">
+          <node concept="3SKdUq" id="4jf2Bbg1rIH" role="3SKWNk">
+            <property role="3SKdUp" value="todo [MM] remove after 3.5. This check is needed as there was a string here and I'm not sure the " />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="4jf2Bbg1rOR" role="3cqZAp">
+          <node concept="3SKdUq" id="4jf2Bbg1rOS" role="3SKWNk">
+            <property role="3SKdUp" value="BuildLayout_NC.containerName wasn't expected here" />
+          </node>
+        </node>
+        <node concept="1gVbGN" id="4jf2Bbg1rge" role="3cqZAp">
+          <node concept="3fqX7Q" id="4jf2Bbg1rmw" role="1gVkn0">
+            <node concept="2OqwBi" id="4jf2Bbg1p73" role="3fr31v">
+              <node concept="359W_D" id="4jf2Bbg1owD" role="2Oq$k0">
+                <ref role="359W_E" to="3ior:6qcrfIJF7Yc" resolve="BuildLayout_NamedContainer" />
+                <ref role="359W_F" to="3ior:3NagsOfTPim" resolve="containerName" />
+              </node>
+              <node concept="liA8E" id="4jf2Bbg1p$8" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
+                <node concept="37vLTw" id="4jf2Bbg1p$W" role="37wK5m">
+                  <ref role="3cqZAo" node="5HVSRHdVWPB" resolve="role" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="Xl_RD" id="4jf2Bbg1si1" role="1gVpfI">
+            <property role="Xl_RC" value="If this exception happens, change BuildMps_IdeaPlugin.isValidPart()-considered concepts" />
+          </node>
+        </node>
         <node concept="3clFbJ" id="5HVSRHdVWPH" role="3cqZAp">
           <property role="TyiWK" value="true" />
           <property role="TyiWL" value="false" />
@@ -4015,11 +4049,12 @@
             </node>
           </node>
           <node concept="2OqwBi" id="5HVSRHdVWR3" role="3clFbw">
-            <node concept="Xl_RD" id="5HVSRHdVWQI" role="2Oq$k0">
-              <property role="Xl_RC" value="containerName" />
+            <node concept="359W_D" id="4jf2Bbg1ob5" role="2Oq$k0">
+              <ref role="359W_E" to="kdzh:5HVSRHdUrHO" resolve="BuildMps_IdeaPlugin" />
+              <ref role="359W_F" to="kdzh:5HVSRHdVMMm" resolve="containerName" />
             </node>
             <node concept="liA8E" id="5HVSRHdVWR9" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~String.equals(java.lang.Object):boolean" resolve="equals" />
+              <ref role="37wK5l" to="wyt6:~Object.equals(java.lang.Object):boolean" resolve="equals" />
               <node concept="37vLTw" id="2BHiRxgmFzk" role="37wK5m">
                 <ref role="3cqZAo" node="5HVSRHdVWPB" resolve="role" />
               </node>
@@ -4048,7 +4083,9 @@
       </node>
       <node concept="37vLTG" id="5HVSRHdVWPB" role="3clF46">
         <property role="TrG5h" value="role" />
-        <node concept="17QB3L" id="5HVSRHdVWPC" role="1tU5fm" />
+        <node concept="3uibUv" id="4jf2Bbg0ORT" role="1tU5fm">
+          <ref role="3uigEE" to="c17a:~SContainmentLink" resolve="SContainmentLink" />
+        </node>
       </node>
       <node concept="10P_77" id="5HVSRHdVWPD" role="3clF45" />
     </node>

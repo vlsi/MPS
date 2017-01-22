@@ -68,9 +68,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_LinkAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LinkIdRefExpression = new ConceptPresentationBuilder().shortDesc("SContainmentLink or SReferenceLink").create();
   private final ConceptPresentation props_LinkList_AddNewChildOperation = new ConceptPresentationBuilder().shortDesc("add new child").create();
-  private final ConceptPresentation props_LinkNameRefExpression = new ConceptPresentationBuilder().shortDesc("name").create();
+  private final ConceptPresentation props_LinkNameRefExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("name").create();
   private final ConceptPresentation props_LinkQualifier = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkRefExpression = new ConceptPresentationBuilder().shortDesc("link declaration node").create();
+  private final ConceptPresentation props_LinkRefExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("link declaration node").create();
   private final ConceptPresentation props_LinkRefQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Link_SetNewChildOperation = new ConceptPresentationBuilder().shortDesc("set new child").create();
   private final ConceptPresentation props_Link_SetTargetOperation = new ConceptPresentationBuilder().shortDesc("set child or referent").create();
@@ -142,7 +142,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PropertyId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PropertyIdRefExpression = new ConceptPresentationBuilder().shortDesc("openapi SProperty").create();
   private final ConceptPresentation props_PropertyIdentity = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_PropertyNameRefExpression = new ConceptPresentationBuilder().shortDesc("name").create();
+  private final ConceptPresentation props_PropertyNameRefExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("name").create();
   private final ConceptPresentation props_PropertyQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Property_HasValue_Enum = new ConceptPresentationBuilder().shortDesc("check value of enum property").create();
   private final ConceptPresentation props_Property_HasValue_Simple = new ConceptPresentationBuilder().shortDesc("check value of property").create();

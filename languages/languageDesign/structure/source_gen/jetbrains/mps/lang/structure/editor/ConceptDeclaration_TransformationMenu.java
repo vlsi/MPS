@@ -261,7 +261,7 @@ public class ConceptDeclaration_TransformationMenu extends TransformationMenuBas
       protected boolean isApplicable(TransformationMenuContext _context) {
         Iterable<SNode> links = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getLinkDeclarations_idhEwILKK.invoke(_context.getNode())).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return it != SLinkOperations.findLinkDeclaration(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"));
+            return it != SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591170");
           }
         });
         // skipping abstract nodes & smart references 

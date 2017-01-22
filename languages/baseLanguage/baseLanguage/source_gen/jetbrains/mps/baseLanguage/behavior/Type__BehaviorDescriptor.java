@@ -32,6 +32,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -64,8 +65,9 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   public static final SMethod<SNode> getLooseType_id4YTQtEKnnzf = new SMethodBuilder<SNode>(new SJavaCompoundTypeImpl((Class<SNode>) ((Class) Object.class))).name("getLooseType").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("4YTQtEKnnzf").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<Set<SNode>>) ((Class) Object.class), ""));
   public static final SMethod<String> jniSignature_id7F81Cd2C7e3 = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("jniSignature").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7F81Cd2C7e3").registry(REGISTRY).build();
   public static final SMethod<Boolean> canBeCoerced_id5uUZ$FUUb6B = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("5uUZ$FUUb6B").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(String.class, ""));
+  public static final SMethod<Boolean> canBeCoerced_id476YRQvP9l3 = new SMethodBuilder<Boolean>(new SJavaCompoundTypeImpl(Boolean.TYPE)).name("canBeCoerced").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("476YRQvP9l3").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SAbstractConcept>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariableSuffixes_idhEwIzNo, hasPluralVariableSuffixes_id1gn9ujF3bz3, getErasureSignature_idhEwIzNx, getErasure_idB1mAlA38Mq, isReifiable_id2soW6EObTNQ, isValueType_id4ctkEngAqej, getBoxedType_idhEwIzNC, getClass_idhEwIzNJ, getAbstractCreator_idhEwIzNW, getAbstractCreators_idhQFCQT0, getAbstractCreators_id6A07P3f4z36, getJavaType_idhEwIzO1, selectOnVariableCreation_idhEwIzO8, getClassExpression_idhEwIzOd, isSupersetOf_idhKBOZqh, isSupersetOf_id7PgshREdQKp, createDefaultTypeExpression_id2UvJdVpqUA4, hasMissingParameters_id32KZwowVoMu, getLooseType_id4YTQtEKnnzf, jniSignature_id7F81Cd2C7e3, canBeCoerced_id5uUZ$FUUb6B);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getVariableSuffixes_idhEwIzNo, hasPluralVariableSuffixes_id1gn9ujF3bz3, getErasureSignature_idhEwIzNx, getErasure_idB1mAlA38Mq, isReifiable_id2soW6EObTNQ, isValueType_id4ctkEngAqej, getBoxedType_idhEwIzNC, getClass_idhEwIzNJ, getAbstractCreator_idhEwIzNW, getAbstractCreators_idhQFCQT0, getAbstractCreators_id6A07P3f4z36, getJavaType_idhEwIzO1, selectOnVariableCreation_idhEwIzO8, getClassExpression_idhEwIzOd, isSupersetOf_idhKBOZqh, isSupersetOf_id7PgshREdQKp, createDefaultTypeExpression_id2UvJdVpqUA4, hasMissingParameters_id32KZwowVoMu, getLooseType_id4YTQtEKnnzf, jniSignature_id7F81Cd2C7e3, canBeCoerced_id5uUZ$FUUb6B, canBeCoerced_id476YRQvP9l3);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -176,8 +178,14 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
   /*package*/ static String jniSignature_id7F81Cd2C7e3(@NotNull SNode __thisNode__) {
     return null;
   }
+  @Deprecated
+  @ToRemove(version = 3.5)
   /*package*/ static boolean canBeCoerced_id5uUZ$FUUb6B(@NotNull SNode __thisNode__, String conceptFqName) {
     return true;
+  }
+  /*package*/ static boolean canBeCoerced_id476YRQvP9l3(@NotNull SNode __thisNode__, SAbstractConcept c) {
+    // todo remove body after 3.5 
+    return ((boolean) Type__BehaviorDescriptor.canBeCoerced_id5uUZ$FUUb6B.invoke(__thisNode__, c.getQualifiedName()));
   }
 
   /*package*/ Type__BehaviorDescriptor() {
@@ -238,6 +246,8 @@ public final class Type__BehaviorDescriptor extends BaseBHDescriptor {
         return (T) ((String) jniSignature_id7F81Cd2C7e3(node));
       case 20:
         return (T) ((Boolean) canBeCoerced_id5uUZ$FUUb6B(node, (String) parameters[0]));
+      case 21:
+        return (T) ((Boolean) canBeCoerced_id476YRQvP9l3(node, (SAbstractConcept) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

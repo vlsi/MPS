@@ -239,7 +239,7 @@ public class JavaParser {
     }
 
     // inserting it in the beginning 
-    clas.addChild("smodelAttribute", imports);
+    clas.addChild(MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), imports);
 
     // we want to insert imports section before any javadoc 
     // because javadoc is data while imports section is meta-data for assisting class resolving 

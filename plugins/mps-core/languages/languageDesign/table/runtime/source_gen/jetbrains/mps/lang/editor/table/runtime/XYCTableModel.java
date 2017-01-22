@@ -5,6 +5,7 @@ package jetbrains.mps.lang.editor.table.runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -20,11 +21,16 @@ public class XYCTableModel implements TableModel {
   private SContainmentLink ylink;
   private SContainmentLink clink;
   private EditorContext editorCtx;
+  @Deprecated
+  @ToRemove(version = 3.5)
   public XYCTableModel(SNode node, SNode xlink, SNode ylink, SNode clink, EditorContext editorContext) {
+    this(node, MetaAdapterByDeclaration.getContainmentLink(xlink), MetaAdapterByDeclaration.getContainmentLink(ylink), MetaAdapterByDeclaration.getContainmentLink(clink), editorContext);
+  }
+  public XYCTableModel(SNode node, SContainmentLink xlink, SContainmentLink ylink, SContainmentLink clink, EditorContext editorContext) {
     this.node = node;
-    this.xlink = MetaAdapterByDeclaration.getContainmentLink(xlink);
-    this.ylink = MetaAdapterByDeclaration.getContainmentLink(ylink);
-    this.clink = MetaAdapterByDeclaration.getContainmentLink(clink);
+    this.xlink = xlink;
+    this.ylink = ylink;
+    this.clink = clink;
     this.editorCtx = editorContext;
   }
   public List<SNode> x() {

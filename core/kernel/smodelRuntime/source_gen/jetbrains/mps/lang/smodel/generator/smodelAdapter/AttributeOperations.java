@@ -238,7 +238,7 @@ public class AttributeOperations {
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), descriptor)).toListSequence());
+      super(attributed, MetaAdapterFactory.getContainmentLink(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, 0x47bf8397520e5942L, "smodelAttribute"), (List) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, MetaAdapterFactory.getConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL, "jetbrains.mps.lang.core.structure.BaseConcept")), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
     @Override

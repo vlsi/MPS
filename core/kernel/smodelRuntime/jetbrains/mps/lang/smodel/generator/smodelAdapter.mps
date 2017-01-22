@@ -337,10 +337,6 @@
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
-      <concept id="5253134957341697434" name="jetbrains.mps.lang.smodel.structure.LinkNameRefExpression" flags="nn" index="prKvN">
-        <reference id="5253134957341833005" name="conceptDeclaration" index="prhl4" />
-        <reference id="5253134957341833006" name="linkDeclaration" index="prhl7" />
-      </concept>
       <concept id="1179409122411" name="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" flags="nn" index="2qgKlT" />
       <concept id="4693937538533521280" name="jetbrains.mps.lang.smodel.structure.OfConceptOperation" flags="ng" index="v3k3i">
         <child id="4693937538533538124" name="requestedConcept" index="v3oSu" />
@@ -15184,9 +15180,9 @@
             <node concept="37vLTw" id="2BHiRxgma8G" role="37wK5m">
               <ref role="3cqZAo" node="5zEkxuKhyCK" resolve="attributed" />
             </node>
-            <node concept="prKvN" id="17ve4Lhld_G" role="37wK5m">
-              <ref role="prhl4" to="tpck:gw2VY9q" resolve="BaseConcept" />
-              <ref role="prhl7" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
+            <node concept="359W_D" id="5xzMQBRQ9Mo" role="37wK5m">
+              <ref role="359W_E" to="tpck:gw2VY9q" resolve="BaseConcept" />
+              <ref role="359W_F" to="tpck:4uZwTti3__2" resolve="smodelAttribute" />
             </node>
             <node concept="10QFUN" id="4iyRyVzWEdB" role="37wK5m">
               <node concept="2OqwBi" id="4iyRyVzWEdw" role="10QFUP">

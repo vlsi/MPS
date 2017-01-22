@@ -156,7 +156,7 @@ import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
     return editorCell;
   }
   private JComponent _QueryFunction_JComponent_tl1n57_a1a0() {
-    return EditorUtil.createSelectIconButton(myNode, "file", getEditorContext());
+    return EditorUtil.createSelectIconButton(myNode, MetaAdapterFactory.getProperty(0x982eb8df2c964bd7L, 0x996311712ea622e5L, 0x7c8b08a50a39c6bbL, 0x26417c377428f6b3L, "file"), getEditorContext(), false);
   }
   private EditorCell createAlternation_tl1n57_b0() {
     boolean alternationCondition = true;
