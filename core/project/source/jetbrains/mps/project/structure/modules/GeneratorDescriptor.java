@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,6 +40,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
   private boolean myGenerateTemplates = false;
   private boolean myQueriesViaReflection = true;
   private String myGenOutputPath;
+  private SModuleReference mySourceLanguage;
 
   public GeneratorDescriptor() {
     super();
@@ -59,6 +60,18 @@ public class GeneratorDescriptor extends ModuleDescriptor {
 
   public void setGeneratorUID(String generatorUID) {
     myGeneratorUID = generatorUID;
+  }
+
+  public void setSourceLanguage(SModuleReference sourceLanguage) {
+    mySourceLanguage = sourceLanguage;
+  }
+
+  /**
+   * @return identifier of a language this generator transforms
+   */
+  @NotNull
+  public SModuleReference getSourceLanguage() {
+    return mySourceLanguage;
   }
 
   public Set<SModuleReference> getDepGenerators() {

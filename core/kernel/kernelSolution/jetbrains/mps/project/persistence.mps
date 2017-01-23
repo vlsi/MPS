@@ -4600,6 +4600,51 @@
                           <property role="TrG5h" value="generatorElement" />
                         </node>
                         <node concept="3clFbS" id="IMUMWuHQGZ" role="2LFqv$">
+                          <node concept="3cpWs8" id="4R9aBsIP7xJ" role="3cqZAp">
+                            <node concept="3cpWsn" id="4R9aBsIP7xK" role="3cpWs9">
+                              <property role="TrG5h" value="gd" />
+                              <node concept="3uibUv" id="4R9aBsIP7xE" role="1tU5fm">
+                                <ref role="3uigEE" to="w0gx:~GeneratorDescriptor" resolve="GeneratorDescriptor" />
+                              </node>
+                              <node concept="2OqwBi" id="4R9aBsIP7xL" role="33vP2m">
+                                <node concept="37vLTw" id="4R9aBsIP7xM" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="33oJVYhixsW" resolve="gdp" />
+                                </node>
+                                <node concept="liA8E" id="4R9aBsIP7xN" role="2OqNvi">
+                                  <ref role="37wK5l" node="33oJVYhhiyQ" resolve="load" />
+                                  <node concept="2GrUjf" id="4R9aBsIP7xO" role="37wK5m">
+                                    <ref role="2Gs0qQ" node="IMUMWuHQGR" resolve="generatorElement" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="4R9aBsIPbvm" role="3cqZAp">
+                            <node concept="3SKdUq" id="4R9aBsIPbvo" role="3SKWNk">
+                              <property role="3SKdUp" value="as long as generator descriptors are part of language descriptor, no need to persist identity of a source language, we can" />
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="4R9aBsIPccq" role="3cqZAp">
+                            <node concept="3SKdUq" id="4R9aBsIPccs" role="3SKWNk">
+                              <property role="3SKdUp" value="re-construct it here at loading time." />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="4R9aBsIP8WS" role="3cqZAp">
+                            <node concept="2OqwBi" id="4R9aBsIP97r" role="3clFbG">
+                              <node concept="37vLTw" id="4R9aBsIP8WQ" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4R9aBsIP7xK" resolve="gd" />
+                              </node>
+                              <node concept="liA8E" id="4R9aBsIP9_A" role="2OqNvi">
+                                <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setSourceLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="setSourceLanguage" />
+                                <node concept="2OqwBi" id="4R9aBsIPa7D" role="37wK5m">
+                                  <node concept="1bf8Ab" id="4R9aBsIP9Zn" role="2Oq$k0" />
+                                  <node concept="liA8E" id="4R9aBsIPaMD" role="2OqNvi">
+                                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="IMUMWuHQH0" role="3cqZAp">
                             <node concept="2OqwBi" id="IMUMWuHQH1" role="3clFbG">
                               <node concept="2OqwBi" id="IMUMWuHQH2" role="2Oq$k0">
@@ -4610,16 +4655,8 @@
                               </node>
                               <node concept="liA8E" id="IMUMWuHQH5" role="2OqNvi">
                                 <ref role="37wK5l" to="33ny:~List.add(java.lang.Object):boolean" resolve="add" />
-                                <node concept="2OqwBi" id="33oJVYhlT$Y" role="37wK5m">
-                                  <node concept="37vLTw" id="33oJVYhlT$Z" role="2Oq$k0">
-                                    <ref role="3cqZAo" node="33oJVYhixsW" resolve="gdp" />
-                                  </node>
-                                  <node concept="liA8E" id="33oJVYhlT_0" role="2OqNvi">
-                                    <ref role="37wK5l" node="33oJVYhhiyQ" resolve="load" />
-                                    <node concept="2GrUjf" id="33oJVYhlT_1" role="37wK5m">
-                                      <ref role="2Gs0qQ" node="IMUMWuHQGR" resolve="generatorElement" />
-                                    </node>
-                                  </node>
+                                <node concept="37vLTw" id="4R9aBsIP7xP" role="37wK5m">
+                                  <ref role="3cqZAo" node="4R9aBsIP7xK" resolve="gd" />
                                 </node>
                               </node>
                             </node>

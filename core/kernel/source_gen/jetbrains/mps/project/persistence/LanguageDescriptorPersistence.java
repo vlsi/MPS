@@ -11,11 +11,11 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import java.util.List;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.annotation.ToRemove;
@@ -101,7 +101,11 @@ public class LanguageDescriptorPersistence {
 
           GeneratorDescriptorPersistence gdp = new GeneratorDescriptorPersistence(myMacroHelper);
           for (Element generatorElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "generators"), "generator"))) {
-            result_v3r4p8_a0a0a0c0g.getGenerators().add(gdp.load(generatorElement));
+            GeneratorDescriptor gd = gdp.load(generatorElement);
+            // as long as generator descriptors are part of language descriptor, no need to persist identity of a source language, we can 
+            // re-construct it here at loading time. 
+            gd.setSourceLanguage(result_v3r4p8_a0a0a0c0g.getModuleReference());
+            result_v3r4p8_a0a0a0c0g.getGenerators().add(gd);
           }
 
           // odd 'stubModelEntry' name for auxiliary classpath is due to legacy 

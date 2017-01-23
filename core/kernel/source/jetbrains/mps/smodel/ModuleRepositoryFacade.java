@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,10 +25,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.ComputeRunnable;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -247,15 +249,35 @@ public final class ModuleRepositoryFacade implements CoreComponent {
   @NotNull
   public SModule instantiateModule(@NotNull ModuleHandle handle, @NotNull MPSModuleOwner owner) {
     LOG.debug("Creating a module " + handle);
-    if (handle.getDescriptor() instanceof LanguageDescriptor) {
-      return newLanguageInstance(handle, owner);
-    } else if (handle.getDescriptor() instanceof SolutionDescriptor) {
-      return newSolutionInstance(handle, owner);
-    } else if (handle.getDescriptor() instanceof DevkitDescriptor) {
-      return newDevKitInstance(handle, owner);
+    ModuleDescriptor moduleDescriptor = handle.getDescriptor();
+    AbstractModule instance;
+    // XXX left distinct one-liner newXXXInstance methods as a hint for future API (e.g. protected; separate module factory and
+    //     registration, for use e.g. in tests). Besides, there's little reason to propagate ModuleHandle there (in fact, it's too much even here - why
+    //     do I care modules are instantiated with the help of ModulesMiner). Check TestLanguage for sample case.
+    if (moduleDescriptor instanceof LanguageDescriptor) {
+      instance = newLanguageInstance((LanguageDescriptor) moduleDescriptor, handle.getFile());
+    } else if (moduleDescriptor instanceof SolutionDescriptor) {
+      instance = newSolutionInstance((SolutionDescriptor) moduleDescriptor, handle.getFile());
+    } else if (moduleDescriptor instanceof DevkitDescriptor) {
+      instance = newDevKitInstance((DevkitDescriptor) moduleDescriptor, handle.getFile());
+    } else if (moduleDescriptor instanceof GeneratorDescriptor) {
+      instance = newGeneratorInstance((GeneratorDescriptor) moduleDescriptor);
     } else {
       throw new IllegalArgumentException("Unknown module " + handle.getFile().getName());
     }
+    AbstractModule actualRepoModule = registerModule(instance, instance instanceof Generator ? ((Generator) instance).getSourceLanguage(): owner);
+    if (moduleDescriptor instanceof LanguageDescriptor && actualRepoModule == instance) {
+      // once Generator modules are standalone, technically we could have their instances already.
+      // Now, I don't care as original revalidateGenerators didn't care. Perhaps, the code would stay the same
+      // even for pre-registered generators as registerModule() is aware of module multi registration
+      for (GeneratorDescriptor gd : ((LanguageDescriptor) moduleDescriptor).getGenerators()) {
+        // for transition, we register generators with their source language module as owner, as it used to be,
+        // although there's no reason why generators could not belong to the same owner as the rest.
+        registerModule(newGeneratorInstance(gd), (Language) instance);
+      }
+    }
+
+    return actualRepoModule;
   }
 
   /**
@@ -267,37 +289,40 @@ public final class ModuleRepositoryFacade implements CoreComponent {
     return INSTANCE.instantiateModule(handle, owner);
   }
 
-  private Language newLanguageInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    LanguageDescriptor descriptor = ((LanguageDescriptor) handle.getDescriptor());
-    assert descriptor != null;
+  @NotNull
+  private Language newLanguageInstance(@NotNull LanguageDescriptor descriptor, IFile descriptorFile) {
     assert descriptor.getId() != null;
+    return new Language(descriptor, descriptorFile);
+  }
 
-    Language newLanguage = new Language(descriptor, handle.getFile());
-    Language language = registerModule(newLanguage, moduleOwner);
-    if (language == newLanguage && !descriptor.getGenerators().isEmpty()) {
-      // once Generator modules are standalone, technically we could have their instances already.
-      // Now, I don't care as original revalidateGenerators didn't care. Perhaps, the code would stay the same
-      // even for pre-registered generators as registerModule() is aware of module multi registration
-      for (GeneratorDescriptor gd : descriptor.getGenerators()) {
-        registerModule(new Generator(language, gd), language);
-      }
+  @NotNull
+  private Solution newSolutionInstance(@NotNull SolutionDescriptor descriptor, IFile descriptorFile) {
+    assert descriptor.getId() != null;
+    return new Solution(descriptor, descriptorFile);
+  }
+
+  @NotNull
+  private DevKit newDevKitInstance(@NotNull DevkitDescriptor descriptor, IFile descriptorFile) {
+    assert descriptor.getId() != null;
+    return new DevKit(descriptor, descriptorFile);
+  }
+
+  @NotNull
+  private Generator newGeneratorInstance(@NotNull GeneratorDescriptor descriptor) {
+    SModule module = getModule(descriptor.getSourceLanguage());
+    if (module == null) {
+      // XXX for the time being, we register generator modules only *after* respective source language module, although
+      //     generally we shall not insist on the ordering (generator could obtain source language lazily, not at construction time,
+      //     or we can make up a proxy Language instance, and replace it with real once proper module comes to the repository).
+      String msg =
+          String.format("Can't register generator %s for not yet known language module %s", descriptor.getGeneratorUID(), descriptor.getSourceLanguage());
+      throw new IllegalStateException(msg);
     }
-    return language;
-  }
-
-  private Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    SolutionDescriptor descriptor = ((SolutionDescriptor) handle.getDescriptor());
-    assert descriptor != null;
-    assert descriptor.getId() != null;
-
-    return registerModule(new Solution(descriptor, handle.getFile()), moduleOwner);
-  }
-
-  private DevKit newDevKitInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {
-    DevkitDescriptor descriptor = (DevkitDescriptor) handle.getDescriptor();
-    assert descriptor != null;
-    assert descriptor.getId() != null;
-    return registerModule(new DevKit(descriptor, handle.getFile()), moduleOwner);
+    if (false == module instanceof Language) {
+      String msg = String.format("Module %s specified as source language of genrator %s in not a Language module", descriptor.getSourceLanguage(), descriptor.getGeneratorUID());
+      throw new IllegalStateException(msg);
+    }
+    return new Generator((Language) module, descriptor);
   }
 
   private <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
