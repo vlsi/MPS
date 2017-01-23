@@ -14,8 +14,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractNodeRuleCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AbstractNodeWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ActionReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AfterTestsMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AnonymousCellAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AssertMatch = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_BeforeTestsMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_BootstrapActionReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CheckDataFlowOperation = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_CheckNodeDataflow = new ConceptPresentationBuilder().create();
@@ -25,7 +27,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EditorComponentExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorExpression = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_EditorOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
+  private final ConceptPresentation props_EditorTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0s).create();
   private final ConceptPresentation props_ExpressionContainer = new ConceptPresentationBuilder().shortDesc("expression container (used inside test nodes)").create();
   private final ConceptPresentation props_IChecksRules = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_INodeAnnotation = new ConceptPresentationBuilder().create();
@@ -38,7 +40,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IsIntentionApplicableExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_LogEvent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MPSActionReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MigrationTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0db).create();
+  private final ConceptPresentation props_MigrationTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0fb).create();
   private final ConceptPresentation props_MockAnnotation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_MockScopeProvider = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelExpression = new ConceptPresentationBuilder().create();
@@ -62,7 +64,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_NodeUnknownWarningCheckOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_NodeUnreachable = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_NodeWarningCheckOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0bc).create();
+  private final ConceptPresentation props_NodesTestCase = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0dc).create();
   private final ConceptPresentation props_NodesTestMethod = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressKeyStatement = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PressMouseStatement = new ConceptPresentationBuilder().create();
@@ -99,10 +101,14 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_AbstractNodeWarningCheckOperation;
       case LanguageConceptSwitch.ActionReference:
         return props_ActionReference;
+      case LanguageConceptSwitch.AfterTestsMethod:
+        return props_AfterTestsMethod;
       case LanguageConceptSwitch.AnonymousCellAnnotation:
         return props_AnonymousCellAnnotation;
       case LanguageConceptSwitch.AssertMatch:
         return props_AssertMatch;
+      case LanguageConceptSwitch.BeforeTestsMethod:
+        return props_BeforeTestsMethod;
       case LanguageConceptSwitch.BootstrapActionReference:
         return props_BootstrapActionReference;
       case LanguageConceptSwitch.CheckDataFlowOperation:

@@ -98,6 +98,10 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.test.behavior.AfterTestsMethod_BehaviorDescriptor" file="AfterTestsMethod_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" file="AnonymousCellAnnotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
@@ -142,6 +146,10 @@
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" file="AssertMatch_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.test.behavior.BeforeTestsMethod_BehaviorDescriptor" file="BeforeTestsMethod_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>

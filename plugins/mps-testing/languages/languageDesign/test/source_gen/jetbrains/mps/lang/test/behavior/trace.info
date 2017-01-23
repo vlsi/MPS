@@ -34,11 +34,17 @@
     <file name="ActionReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.ActionReference_BehaviorDescriptor" />
     </file>
+    <file name="AfterTestsMethod_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.AfterTestsMethod_BehaviorDescriptor" />
+    </file>
     <file name="AnonymousCellAnnotation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.AnonymousCellAnnotation_BehaviorDescriptor" />
     </file>
     <file name="AssertMatch_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.AssertMatch_BehaviorDescriptor" />
+    </file>
+    <file name="BeforeTestsMethod_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.test.behavior.BeforeTestsMethod_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="14,0,170,0" name="jetbrains.mps.lang.test.behavior.BehaviorAspectDescriptor" />

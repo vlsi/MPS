@@ -370,6 +370,18 @@
       <property role="IQ2ns" value="1217501822150" />
       <ref role="20lvS9" node="hHqefK1" resolve="TestNode" />
     </node>
+    <node concept="1TJgyj" id="2154_0wVVpx" role="1TKVEi">
+      <property role="IQ2ns" value="2325284917965993569" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="beforeTests" />
+      <ref role="20lvS9" node="2154_0wV2x7" resolve="BeforeTestsMethod" />
+    </node>
+    <node concept="1TJgyj" id="2154_0wVVpG" role="1TKVEi">
+      <property role="IQ2ns" value="2325284917965993580" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="afterTests" />
+      <ref role="20lvS9" node="2154_0wV2x8" resolve="AfterTestsMethod" />
+    </node>
     <node concept="1TJgyj" id="hHSL9AP" role="1TKVEi">
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="testMethods" />
@@ -396,6 +408,11 @@
     <node concept="1TJgyi" id="5vTxdEzuHPa" role="1TKVEl">
       <property role="TrG5h" value="needsNoWriteAction" />
       <property role="IQ2nx" value="6339244025081158986" />
+      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
+    </node>
+    <node concept="1TJgyi" id="2vy5TEsvX5g" role="1TKVEl">
+      <property role="IQ2nx" value="2873885465033822544" />
+      <property role="TrG5h" value="sdfsdf" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
     <node concept="1QGGSu" id="4Q8sAA5iJSw" role="rwd14">
@@ -1317,6 +1334,18 @@
     <node concept="1QGGSu" id="4K12N3pJ$JJ" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/nodesTest.png" />
     </node>
+  </node>
+  <node concept="1TIwiD" id="2154_0wV2x7">
+    <property role="EcuMT" value="2325284917965760583" />
+    <property role="TrG5h" value="BeforeTestsMethod" />
+    <property role="34LRSv" value="before tests" />
+    <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
+  </node>
+  <node concept="1TIwiD" id="2154_0wV2x8">
+    <property role="EcuMT" value="2325284917965760584" />
+    <property role="TrG5h" value="AfterTestsMethod" />
+    <property role="34LRSv" value="after tests" />
+    <ref role="1TJDcQ" to="tpee:fzclF7W" resolve="BaseMethodDeclaration" />
   </node>
 </model>
 
