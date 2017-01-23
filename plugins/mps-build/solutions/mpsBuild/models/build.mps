@@ -2,10 +2,10 @@
 <model ref="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
   <persistence version="9" />
   <languages>
-    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="-1" />
-    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="-1" />
-    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="-1" />
-    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="-1" />
+    <use id="798100da-4f0a-421a-b991-71f8c50ce5d2" name="jetbrains.mps.build" version="0" />
+    <use id="d5033cee-f632-44b6-b308-89d4fbde34ff" name="jetbrains.mps.build.startup" version="0" />
+    <use id="0cf935df-4699-4e9c-a132-fa109541cba3" name="jetbrains.mps.build.mps" version="3" />
+    <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" version="0" />
   </languages>
   <imports />
   <registry>
@@ -2289,7 +2289,7 @@
       <node concept="aVJcg" id="5HVSRHdVf2e" role="aVJcv">
         <node concept="NbPM2" id="5HVSRHdVf2f" role="aVJcq">
           <node concept="3Mxwew" id="5HVSRHdVf2g" role="3MwsjC">
-            <property role="3MwjfP" value="3.5" />
+            <property role="3MwjfP" value="2017.1" />
           </node>
         </node>
       </node>
@@ -2565,11 +2565,11 @@
             </node>
             <node concept="1kK7hY" id="1cej1P1K6ok" role="39821P">
               <ref role="1kK7hZ" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
-              <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
-                <property role="1cIVw0" value="mps-environment.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8F" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
+                <property role="1cIVw0" value="mps-environment.jar" />
               </node>
             </node>
           </node>
@@ -2768,11 +2768,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
-              <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8E" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
               </node>
             </node>
           </node>
@@ -2804,11 +2804,11 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
-              <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-api.jar" />
-              </node>
               <node concept="1cIVw3" id="7ndynaw0A8G" role="3E5mpp">
                 <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
+                <property role="1cIVw0" value="mps-behavior-api.jar" />
               </node>
             </node>
           </node>
@@ -17315,9 +17315,9 @@
       <ref role="1l3spb" node="7pdFgzxlDme" resolve="mpsBuild" />
     </node>
     <node concept="1zClus" id="6Iq8148fw_a" role="3989C9">
-      <property role="2OjLBK" value="5" />
+      <property role="2OjLBK" value="1" />
       <property role="TrG5h" value="MPS" />
-      <property role="2OjLBL" value="3" />
+      <property role="2OjLBL" value="2017" />
       <property role="2OjLBN" value="true" />
       <node concept="NbPM2" id="2FTyjkjSqva" role="2gocG4">
         <node concept="3Mxwew" id="2FTyjkjSqv9" role="3MwsjC">

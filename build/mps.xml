@@ -56,7 +56,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="5" eap="true" update-channel="MPS35" />
+        <version codename="MPS" major="2017" minor="1" eap="true" update-channel="MPS35" />
         <company name="JetBrains s.r.o." url="https://www.jetbrains.com/?fromIDE" />
         <build number="${build.number}" date="${date}" />
         <logo url="/splash.png" textcolor="c2c2c2" progressColor="F97A12" progressX="117" progressY="280" progressHeight="3" />
