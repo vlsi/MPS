@@ -2094,6 +2094,40 @@
           </node>
         </node>
       </node>
+      <node concept="3s$Bmu" id="7MbtyEhksj0" role="3s_gse">
+        <property role="3s$Bm0" value="diamond5" />
+        <node concept="3cqZAl" id="7MbtyEhksj1" role="3clF45" />
+        <node concept="3Tm1VV" id="7MbtyEhksj2" role="1B3o_S" />
+        <node concept="3clFbS" id="7MbtyEhksj3" role="3clF47">
+          <node concept="3cpWs8" id="7MbtyEhksj4" role="3cqZAp">
+            <node concept="3cpWsn" id="7MbtyEhksj5" role="3cpWs9">
+              <property role="TrG5h" value="nodeI" />
+              <node concept="3Tqbb2" id="7MbtyEhksj6" role="1tU5fm">
+                <ref role="ehGHo" to="g0pg:7MbtyEhkjZR" resolve="I3" />
+              </node>
+              <node concept="2pJPEk" id="7MbtyEhksj7" role="33vP2m">
+                <node concept="2pJPED" id="7MbtyEhksGb" role="2pJPEn">
+                  <ref role="2pJxaS" to="g0pg:7MbtyEhkjZQ" resolve="C5" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="3vlDli" id="7MbtyEhksj9" role="3cqZAp">
+            <node concept="2OqwBi" id="7MbtyEhksja" role="3tpDZA">
+              <node concept="37vLTw" id="7MbtyEhksjb" role="2Oq$k0">
+                <ref role="3cqZAo" node="7MbtyEhksj5" resolve="nodeI" />
+              </node>
+              <node concept="2qgKlT" id="7MbtyEhkTwB" role="2OqNvi">
+                <ref role="37wK5l" to="se8q:7MbtyEhkk0m" resolve="foo" />
+              </node>
+            </node>
+            <node concept="10M0yZ" id="7MbtyEhksGE" role="3tpDZB">
+              <ref role="3cqZAo" to="ynox:5mnatV0hxlh" resolve="DEFAULT_RETURN_VALUE" />
+              <ref role="1PxDUh" to="ynox:6EMTxOPT4es" resolve="TestResults" />
+            </node>
+          </node>
+        </node>
+      </node>
       <node concept="3s$Bmu" id="6LXMTdV54Zw" role="3s_gse">
         <property role="3s$Bm0" value="constructorInvocation1" />
         <node concept="3cqZAl" id="6LXMTdV54Zy" role="3clF45" />

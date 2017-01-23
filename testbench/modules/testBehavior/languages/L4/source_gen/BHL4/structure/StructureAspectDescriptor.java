@@ -16,9 +16,13 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptC2 = createDescriptorForC2();
   /*package*/ final ConceptDescriptor myConceptC3 = createDescriptorForC3();
   /*package*/ final ConceptDescriptor myConceptC4 = createDescriptorForC4();
+  /*package*/ final ConceptDescriptor myConceptC5 = createDescriptorForC5();
   /*package*/ final ConceptDescriptor myConceptI = createDescriptorForI();
   /*package*/ final ConceptDescriptor myConceptI1 = createDescriptorForI1();
   /*package*/ final ConceptDescriptor myConceptI2 = createDescriptorForI2();
+  /*package*/ final ConceptDescriptor myConceptI3 = createDescriptorForI3();
+  /*package*/ final ConceptDescriptor myConceptI4 = createDescriptorForI4();
+  /*package*/ final ConceptDescriptor myConceptI5 = createDescriptorForI5();
   private final LanguageConceptSwitch myConceptIndex;
 
   public StructureAspectDescriptor() {
@@ -27,7 +31,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptC1, myConceptC2, myConceptC3, myConceptC4, myConceptI, myConceptI1, myConceptI2);
+    return Arrays.asList(myConceptC1, myConceptC2, myConceptC3, myConceptC4, myConceptC5, myConceptI, myConceptI1, myConceptI2, myConceptI3, myConceptI4, myConceptI5);
   }
 
   @Override
@@ -42,12 +46,20 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptC3;
       case LanguageConceptSwitch.C4:
         return myConceptC4;
+      case LanguageConceptSwitch.C5:
+        return myConceptC5;
       case LanguageConceptSwitch.I:
         return myConceptI;
       case LanguageConceptSwitch.I1:
         return myConceptI1;
       case LanguageConceptSwitch.I2:
         return myConceptI2;
+      case LanguageConceptSwitch.I3:
+        return myConceptI3;
+      case LanguageConceptSwitch.I4:
+        return myConceptI4;
+      case LanguageConceptSwitch.I5:
+        return myConceptI5;
       default:
         return null;
     }
@@ -91,6 +103,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/4577111222072310233");
     return b.create();
   }
+  private static ConceptDescriptor createDescriptorForC5() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL4", "C5", 0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91513ff6L);
+    b.class_(false, false, false);
+    b.parent(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a9153b68eL);
+    b.parent(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91514024L);
+    b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/8974396607664570358");
+    return b.create();
+  }
   private static ConceptDescriptor createDescriptorForI() {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL4", "I", 0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L);
     b.interface_();
@@ -109,6 +129,26 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.interface_();
     b.parent(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x6ab2e61d35e495a3L);
     b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/7688460527007471021");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForI3() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL4", "I3", 0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91513ff7L);
+    b.interface_();
+    b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/8974396607664570359");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForI4() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL4", "I4", 0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91514024L);
+    b.interface_();
+    b.parent(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91513ff7L);
+    b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/8974396607664570404");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForI5() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("BHL4", "I5", 0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a9153b68eL);
+    b.interface_();
+    b.parent(0x2b679aa1c9e84a47L, 0x84b9ce94c2202df5L, 0x7c8b762a91513ff7L);
+    b.origin("r:d510b5d3-1f95-49d0-a4ec-479ac64c820d(BHL4.structure)/8974396607664731790");
     return b.create();
   }
 }

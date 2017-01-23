@@ -2,13 +2,13 @@
 <debug-info version="2">
   <root>
     <file name="ConceptPresentationAspectImpl.java">
-      <unit at="11,0,43,0" name="BHL4.structure.ConceptPresentationAspectImpl" />
+      <unit at="11,0,55,0" name="BHL4.structure.ConceptPresentationAspectImpl" />
     </file>
     <file name="LanguageConceptSwitch.java">
-      <unit at="10,0,40,0" name="BHL4.structure.LanguageConceptSwitch" />
+      <unit at="10,0,48,0" name="BHL4.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="14,0,115,0" name="BHL4.structure.StructureAspectDescriptor" />
+      <unit at="14,0,155,0" name="BHL4.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>
