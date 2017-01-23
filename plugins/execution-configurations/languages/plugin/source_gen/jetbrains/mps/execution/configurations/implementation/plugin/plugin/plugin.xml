@@ -4,9 +4,9 @@
   <id>jetbrains.mps.execution.configurations</id>
   <name>Execution Configurations</name>
   <description>Execution configurations for MPS</description>
-  <version>3.5</version>
+  <version>2017.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="163.1" />
+  <idea-version since-build="171.1" />
   
   <depends>jetbrains.mps.execution.languages</depends>
   <depends>jetbrains.mps.debugger.java</depends>
