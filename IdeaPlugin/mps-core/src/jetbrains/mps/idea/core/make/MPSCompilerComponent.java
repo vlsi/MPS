@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.compiler.CompilerConfiguration;
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
@@ -30,6 +31,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
@@ -38,6 +40,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -46,15 +49,17 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class MPSCompilerComponent implements ProjectComponent {
   private final Project myProject;
+  private final CompilerManager compilerManager;
+  private final CompilerConfiguration compilerConfiguration;
 
-  public MPSCompilerComponent(Project project) {
+  public MPSCompilerComponent(Project project, CompilerManager compilerManager, CompilerConfiguration compilerConfiguration) {
     myProject = project;
+    this.compilerManager = compilerManager;
+    this.compilerConfiguration = compilerConfiguration;
   }
 
   @Override
   public void projectOpened() {
-    CompilerManager compilerManager = CompilerManager.getInstance(myProject);
-
     final List<String> errorMessages = new ArrayList<>();
 
     myProject.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
@@ -62,6 +67,12 @@ public class MPSCompilerComponent implements ProjectComponent {
 
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_FILE_TYPE);
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE);
+    for (String ext : Arrays.asList(MPSExtentions.MODEL, MPSExtentions.MODEL_ROOT, MPSExtentions.MODEL_HEADER)) {
+      if (compilerConfiguration.isResourceFile("." + ext)) {
+        String negatedPattern = "!*." + ext;
+        compilerConfiguration.addResourceFilePattern(negatedPattern);
+      }
+    }
 
     compilerManager.addBeforeTask(context -> {
       final CompileScope compileScope = context.getCompileScope();

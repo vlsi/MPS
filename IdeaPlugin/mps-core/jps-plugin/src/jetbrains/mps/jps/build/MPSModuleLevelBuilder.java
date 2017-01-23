@@ -83,7 +83,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   // the thing is: out source gen dir is per module, but our builder is called per module chunk. For instance,
   // a module can be compiled in two goes: 1st chunk - module's sources, 2nd - module tests. Without
   // keeping track we would erase the sources that were generated on the previous step.
-  private Set<JpsModule> cleanedGenSources;
+  private Set<JpsModule> genSourcesNotToClean;
 
   protected MPSModuleLevelBuilder() {
     super(BuilderCategory.SOURCE_GENERATOR);
@@ -97,7 +97,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildStarted(final CompileContext context) {
-    cleanedGenSources = new HashSet<>();
+    genSourcesNotToClean = new HashSet<JpsModule>();
     context.addBuildListener(new BuildListener() {
       @Override
       public void filesGenerated(FileGeneratedEvent fileGeneratedEvent) {
@@ -112,7 +112,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
   @Override
   public void buildFinished(CompileContext context) {
-    cleanedGenSources = null;
+    genSourcesNotToClean = null;
     Collection<String> filesToRefresh = refreshComponent.getFilesToRefresh();
     if (!filesToRefresh.isEmpty()) {
       for (String file : filesToRefresh) {
@@ -147,10 +147,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         continue;
       }
       File outputDir = new File(extension.getConfiguration().getGeneratorOutputPath());
-      if (!outputDir.exists()) {
-        continue;
-      }
-      // check that in case it's a module source root then it's marked as generated, only delete of it's true
+      // check that in case it's a module source root then it's marked as generated, only detele of it's true
       Set<File> sourceRootsToKeep = untouchableSourceRoots(compileContext, jpsModule, moduleChunk.getTargets());
 
       boolean okToDelete = true;
@@ -176,14 +173,20 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         LOG.warn("Not cleaning generator output path "
           + outputDir.getPath()
           + " because user files may be there. Either mark it as generated or exclude from module");
+        synchronized (this) {
+          genSourcesNotToClean.add(jpsModule);
+        }
         return;
       }
 
-      synchronized (cleanedGenSources) {
-        if (cleanedGenSources.contains(jpsModule)) {
+      synchronized (this) {
+        if (genSourcesNotToClean.contains(jpsModule)) {
           continue;
         }
-        cleanedGenSources.add(jpsModule);
+        genSourcesNotToClean.add(jpsModule);
+      }
+      if (!outputDir.exists()) {
+        continue;
       }
       List<String> deleted = new ArrayList<>();
       BuildOperations.deleteRecursively(extension.getConfiguration().getGeneratorOutputPath(), deleted, null);
@@ -293,8 +296,12 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       }
 
       final JpsMPSProject project = JpsMPSRepositoryFacade.getInstance().getProject();
+      long start = System.nanoTime();
       MPSMakeMediator makeMediator = new MPSMakeMediator(project, toMake, compileContext, outputConsumer);
       boolean success = makeMediator.build();
+      if (MPSCompilerUtil.isTracingMode()) {
+        compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Generation took " + (System.nanoTime() - start) / 1000000 + " ms"));
+      }
       if (success) {
         status = ExitCode.OK;
       }
@@ -302,9 +309,6 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       throw new ProjectBuildException(ex);
     }
 
-    if (MPSCompilerUtil.isTracingMode()) {
-      compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
-    }
     return status;
   }
 

@@ -18,6 +18,7 @@ package jetbrains.mps.vfs.impl;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.util.Consumer;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,12 +41,17 @@ class JarFileData extends AbstractJarFileData {
 
   private final Object myLock = new Object();
   private boolean isInitialized = false;
+  private final ZipFileContainer myZipFileContainer = new ZipFileContainer(); // cleared up in the JarFileDataCache#removeGCedReferences
   private Map<String, Set<String>> myFiles = new HashMap<>();
   private Map<String, Set<String>> mySubDirectories = new HashMap<>();
   private Map<String, ZipEntry> myEntries = new HashMap<>();
 
   JarFileData(File file) {
     super(file);
+  }
+
+  ZipFileContainer getZipFileContainer() {
+    return myZipFileContainer;
   }
 
   @Override
@@ -83,7 +89,9 @@ class JarFileData extends AbstractJarFileData {
   @Override
   String getParentDirectory(String dir) {
     int lastSlash = dir.lastIndexOf("/");
-    if (lastSlash == -1) return "";
+    if (lastSlash == -1) {
+      return "";
+    }
     return dir.substring(0, lastSlash);
   }
 
@@ -101,9 +109,8 @@ class JarFileData extends AbstractJarFileData {
   InputStream openStream(String path) throws IOException {
     ensureInitialized();
 
-    ZipFile zipFile = new ZipFile(getFile());
     ZipEntry entry = myEntries.get(path);
-    return new MyInputStream(zipFile, entry);
+    return new MyInputStream(entry);
   }
 
   @Override
@@ -115,13 +122,15 @@ class JarFileData extends AbstractJarFileData {
 
   private void ensureInitialized() {
     synchronized (myLock) {
-      if (isInitialized) return;
+      if (isInitialized) {
+        return;
+      }
 
       isInitialized = true;
-      ZipFile zipFile = null;
+      myZipFileContainer.zipFile = null;
       try {
-        zipFile = new ZipFile(getFile());
-        Enumeration<? extends ZipEntry> entries = zipFile.entries();
+        myZipFileContainer.zipFile = new ZipFile(getFile());
+        Enumeration<? extends ZipEntry> entries = myZipFileContainer.zipFile.entries();
 
         while (entries.hasMoreElements()) {
           ZipEntry entry = entries.nextElement();
@@ -158,13 +167,6 @@ class JarFileData extends AbstractJarFileData {
         }
       } catch (IOException e) {
         LOG.error(null, e);
-      } finally {
-        if (zipFile != null) {
-          try {
-            zipFile.close();
-          } catch (IOException ignored) {
-          }
-        }
       }
     }
   }
@@ -175,18 +177,21 @@ class JarFileData extends AbstractJarFileData {
     getDirectoriesFor(dir);
     getFilesFor(dir);
 
-    if (parent.equals(dir)) return;
+    if (parent.equals(dir)) {
+      return;
+    }
     getDirectoriesFor(parent).add(dir);
     buildDirectoryCaches(parent);
   }
 
+  // Let's be paranoid and have it non-static, because when the enclosing JarFileData is garbage collected
+  // its ZipFile will be closed (see JarFileDataCache)
+  // And this way the instance of this class will retain the enclosing instance from becoming garbage
   private class MyInputStream extends InputStream {
     private InputStream stream;
-    private ZipFile myZipFile;
 
-    public MyInputStream(ZipFile zipFile, ZipEntry entry) throws IOException {
-      myZipFile = zipFile;
-      stream = zipFile.getInputStream(entry);
+    public MyInputStream(ZipEntry entry) throws IOException {
+      stream = myZipFileContainer.zipFile.getInputStream(entry);
     }
 
     @Override
@@ -219,11 +224,7 @@ class JarFileData extends AbstractJarFileData {
       try {
         super.close();
       } finally {
-        try {
-          stream.close();
-        } finally {
-          myZipFile.close();
-        }
+        stream.close();
       }
     }
 
