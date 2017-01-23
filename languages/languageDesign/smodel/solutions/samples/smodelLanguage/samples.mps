@@ -356,9 +356,6 @@
       <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
         <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
       </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
       <concept id="1228341669568" name="jetbrains.mps.lang.smodel.structure.Node_DetachOperation" flags="nn" index="3YRAZt" />
       <concept id="1215467301810" name="jetbrains.mps.lang.smodel.structure.Property_RemoveOperation" flags="nn" index="3ZvMEC" />
     </language>
@@ -4075,8 +4072,8 @@
               <ref role="ehGHo" to="tpee:fzclF8n" resolve="IfStatement" />
             </node>
             <node concept="2OqwBi" id="hxx$JKt" role="33vP2m">
-              <node concept="3TUQnm" id="hcLIW7T" role="2Oq$k0">
-                <ref role="3TV0OU" to="tpee:fzclF8n" resolve="IfStatement" />
+              <node concept="35c_gC" id="7jOavasijtl" role="2Oq$k0">
+                <ref role="35c_gD" to="tpee:fzclF8n" resolve="IfStatement" />
               </node>
               <node concept="LFhST" id="hcLJ11g" role="2OqNvi" />
             </node>
@@ -4089,8 +4086,8 @@
               <ref role="ehGHo" to="tpee:fzclF8n" resolve="IfStatement" />
             </node>
             <node concept="2OqwBi" id="hxx$VD2" role="33vP2m">
-              <node concept="3TUQnm" id="hcLKaPs" role="2Oq$k0">
-                <ref role="3TV0OU" to="tpee:fzclF8n" resolve="IfStatement" />
+              <node concept="35c_gC" id="7jOavasijyt" role="2Oq$k0">
+                <ref role="35c_gD" to="tpee:fzclF8n" resolve="IfStatement" />
               </node>
               <node concept="q_SaT" id="2b3Tt7jqktk" role="2OqNvi">
                 <node concept="37vLTw" id="2BHiRxgmhEb" role="1wAxWu">
@@ -4308,8 +4305,8 @@
             </node>
             <node concept="3BYIHo" id="h$5Qx74" role="2OqNvi">
               <node concept="2OqwBi" id="h$5QA9C" role="3BYIHq">
-                <node concept="3TUQnm" id="h$5QxWO" role="2Oq$k0">
-                  <ref role="3TV0OU" to="tpee:fzclF8l" resolve="Statement" />
+                <node concept="35c_gC" id="7jOavasigSo" role="2Oq$k0">
+                  <ref role="35c_gD" to="tpee:fzclF8l" resolve="Statement" />
                 </node>
                 <node concept="LFhST" id="h$5QAE8" role="2OqNvi" />
               </node>
