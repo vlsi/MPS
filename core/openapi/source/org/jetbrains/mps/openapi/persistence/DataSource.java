@@ -64,9 +64,9 @@ public interface DataSource {
 
   /**
    * Defines a data source type for this kind of data sources.
-   * The data source type notion is strongly associated with the possibility to provide DataSourceFactory and
-   * ModelFactory custom mappings.
-   * See DataSourceFactoryService and ModelFactoryService for the implementation details.
+   * The data source type notion is strongly associated with the possibility to provide <code>DataSourceFactory</code> and
+   * <code>ModelFactory</code> custom mappings.
+   * See <code>DataSourceFactoryRuleService</code> and <code>ModelFactoryService</code> for the implementation details.
    *
    * @return the unique data source type for this instance of data source
    * if the developer wants others to be able to change the default behavior of this data source (register with the same key)

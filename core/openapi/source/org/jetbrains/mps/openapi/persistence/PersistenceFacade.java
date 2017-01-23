@@ -65,7 +65,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory associated with the given file extension.
    * @deprecated use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
    */
   @ToRemove(version = 181)
   @Deprecated
@@ -75,7 +75,7 @@ public abstract class PersistenceFacade {
    * Retrieves the factory for default MPS storage format (xml-based).
    * @deprecated unclear contract, use {@code ModelFactoryRegistry#getDefault(DataSourceType)}
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
    */
   @ToRemove(version = 181)
   @Deprecated
@@ -88,7 +88,7 @@ public abstract class PersistenceFacade {
    * @deprecated ModelFactory notion is isolated from the location by {@link DataSource}.
    *             Use {@code ModelFactoryRegistry#register} instead.
    *             see <code>jetbrains.mps.extapi.persistence.ModelFactoryService</code>
-   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryService</code>
+   *             see <code>jetbrains.mps.extapi.persistence.datasource.DataSourceFactoryRuleService</code>
    */
   @ToRemove(version = 181)
   @Deprecated

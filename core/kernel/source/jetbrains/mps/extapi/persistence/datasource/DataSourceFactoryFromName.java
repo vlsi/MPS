@@ -25,11 +25,11 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.datasource.DataSourceType;
 
 /**
- * Interface for creating a new {@link DataSource} from the given model name.
+ * Interface for creating a new {@link DataSource} from a given model name.
  *
  * It is somehow vital to extract the strategy defining the location (data source) of the new model
  * when the name is given. One could choose the place to store a model in various ways depending on
- * structure of the model name (for example if we are java-minded we might store a model with a name
+ * the structure of the model name (for example if we are java-minded we might store a model with a name
  * 'my.favourite.package.modelName' as a folder cascade: 'my/favourite/package/modelName.mps').
  *
  * It is used when we create a new model from anywhere (IDE, tests, etc.).

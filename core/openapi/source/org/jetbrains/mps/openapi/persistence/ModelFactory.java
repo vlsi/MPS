@@ -49,21 +49,21 @@ public interface ModelFactory {
   /**
    * @deprecated not used currently
    */
-  @ToRemove(version = 3.5)
+  @ToRemove(version = 2017.2)
   @Deprecated
   String OPTION_MODULEREF = "moduleReference";
 
   /**
    * @deprecated not used currently
    */
-  @ToRemove(version = 3.5)
+  @ToRemove(version = 2017.2)
   @Deprecated
   String OPTION_PACKAGE = "package";
 
   /**
    * @deprecated not in use anymore
    */
-  @ToRemove(version = 3.5)
+  @ToRemove(version = 2017.2)
   @Deprecated
   String OPTION_RELPATH = "relativePath";
 
@@ -73,7 +73,7 @@ public interface ModelFactory {
    *
    * @deprecated this option is unnecessary. Use {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead.
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   String OPTION_MODELNAME = "modelName";
 
@@ -85,7 +85,7 @@ public interface ModelFactory {
    *
    * @deprecated String option is not informatory. Use a {@link ContentOption} instead
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   String OPTION_CONTENT_ONLY = "contentOnly";
 
@@ -101,7 +101,7 @@ public interface ModelFactory {
    * @deprecated <code>Map<String,String></code> is hardly perceivable. Please use
    *             rather {@link #load(DataSource, ModelLoadingOption...)} instead
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   @NotNull
   SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
@@ -120,7 +120,7 @@ public interface ModelFactory {
    *
    * @deprecated use more flexible {@link #create(DataSource, SModelName, ModelLoadingOption...)} instead
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   @NotNull
   SModel create(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException;
@@ -141,7 +141,7 @@ public interface ModelFactory {
    * catching the {@link ModelCreationException} during creation or
    * use {@link #supports(DataSource)} method to acknowledge whether this data source is supported at all.
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   boolean canCreate(@NotNull DataSource dataSource, @NotNull Map<String, String> options);
 
@@ -231,7 +231,7 @@ public interface ModelFactory {
    * // @deprecated The contract is not clear ("not enough" means what exactly?).
    *                We would rather turn this into some marker interface than have it here
    */
-  /*@ToRemove(version = 3.7)*/
+  /*@ToRemove(version = 2017.3)*/
   /*@Deprecated*/
   boolean isBinary();
 
@@ -243,10 +243,10 @@ public interface ModelFactory {
    *             planted in the create, load, etc. methods.
    *             The location notion is hidden in {@link DataSource} and there is absolutely no need to expose it.
    *             In order to work out the currently running scenarios we set up special DataSourceFactory <-> ModelFactory
-   *             relations which are exposed through the <code>DataSourceFactoryService</code>, <code>ModelFactoryService</code> and
+   *             relations which are exposed through the <code>DataSourceFactoryRuleService</code>, <code>ModelFactoryService</code> and
    *             {@link #getPreferredDataSourceTypes}.
    */
-  @ToRemove(version = 3.7)
+  @ToRemove(version = 2017.3)
   @Deprecated
   @Nullable String getFileExtension();
 
