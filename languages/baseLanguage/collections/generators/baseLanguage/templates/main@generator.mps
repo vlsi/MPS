@@ -578,33 +578,22 @@
       <node concept="gft3U" id="3ZZC$G5DIQ9" role="1lVwrX">
         <node concept="liA8E" id="3ZZC$G5DIQj" role="gfFT$">
           <ref role="37wK5l" to="urs3:3ZZC$G5BZiA" resolve="ofType" />
-          <node concept="3VsKOn" id="3ZZC$G5DIRo" role="37wK5m">
-            <ref role="3VsUkX" to="wyt6:~Object" resolve="Object" />
-            <node concept="1ZhdrF" id="3ZZC$G5DIRp" role="lGtFl">
-              <property role="2qtEX8" value="classifier" />
-              <property role="P3scX" value="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" />
-              <node concept="3$xsQk" id="3ZZC$G5DIRs" role="3$ytzL">
-                <node concept="3clFbS" id="3ZZC$G5DIRt" role="2VODD2">
-                  <node concept="3clFbF" id="3ZZC$G5DIQF" role="3cqZAp">
-                    <node concept="2OqwBi" id="3ZZC$G5DIR_" role="3clFbG">
-                      <node concept="1PxgMI" id="3ZZC$G5DIRz" role="2Oq$k0">
-                        <property role="1BlNFB" value="true" />
-                        <node concept="2YIFZM" id="3ZZC$G5DIQG" role="1m5AlR">
-                          <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
-                          <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
-                          <node concept="2OqwBi" id="3ZZC$G5DIQP" role="37wK5m">
-                            <node concept="3TrEf2" id="3ZZC$G5DIQQ" role="2OqNvi">
-                              <ref role="3Tt5mk" to="tp2q:3ZZC$G5C4uC" resolve="requestedType" />
-                            </node>
-                            <node concept="30H73N" id="3ZZC$G5DIQR" role="2Oq$k0" />
+          <node concept="1OoodG" id="4MxZuRX23Yh" role="37wK5m">
+            <node concept="3uibUv" id="4MxZuRX23Yi" role="1Ooz5N">
+              <ref role="3uigEE" to="wyt6:~Object" resolve="Object" />
+              <node concept="29HgVG" id="4MxZuRX23Yj" role="lGtFl">
+                <node concept="3NFfHV" id="4MxZuRX23Yk" role="3NFExx">
+                  <node concept="3clFbS" id="4MxZuRX23Yl" role="2VODD2">
+                    <node concept="3clFbF" id="4MxZuRX23Ym" role="3cqZAp">
+                      <node concept="2YIFZM" id="4MxZuRX23Yn" role="3clFbG">
+                        <ref role="1Pybhc" to="tp2g:hv18zCR" resolve="ClassifierTypeUtil" />
+                        <ref role="37wK5l" to="tp2g:hv18AMC" resolve="getTypeCoercedToClassifierType" />
+                        <node concept="2OqwBi" id="4MxZuRX23Yo" role="37wK5m">
+                          <node concept="3TrEf2" id="4MxZuRX23Yp" role="2OqNvi">
+                            <ref role="3Tt5mk" to="tp2q:3ZZC$G5C4uC" resolve="requestedType" />
                           </node>
+                          <node concept="30H73N" id="4MxZuRX23Yq" role="2Oq$k0" />
                         </node>
-                        <node concept="chp4Y" id="714IaVdGYHa" role="3oSUPX">
-                          <ref role="cht4Q" to="tpee:g7uibYu" resolve="ClassifierType" />
-                        </node>
-                      </node>
-                      <node concept="3TrEf2" id="3ZZC$G5DRdW" role="2OqNvi">
-                        <ref role="3Tt5mk" to="tpee:g7uigIF" resolve="classifier" />
                       </node>
                     </node>
                   </node>
