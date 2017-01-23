@@ -37,7 +37,7 @@ public final class SMethodVirtualTable {
 
   public SMethodVirtualTable(@NotNull BHDescriptor startingDescriptor, List<SMethod<?>> methods) {
     for (SMethod<?> method : methods) {
-      if (method.isVirtual()) {
+      if (method.isVirtual() && !method.isAbstract()) {
         myTable.put(method, startingDescriptor);
       }
     }
@@ -56,6 +56,7 @@ public final class SMethodVirtualTable {
    * merges two vTables, stores the results in this.
    */
   public void merge(@NotNull final SMethodVirtualTable another) {
+    //noinspection UnnecessaryLocalVariable
     Map<SMethod<?>, BHDescriptor> anotherTable = another.myTable;
     for (Entry<SMethod<?>, BHDescriptor> pair : anotherTable.entrySet()) {
       SMethod method = pair.getKey();

@@ -74,6 +74,12 @@ public interface SMethod<T> extends SExecutable {
   boolean isVirtual();
 
   /**
+   * abstract => virtual
+   * @return true iff the method has an abstract modifier
+   */
+  boolean isAbstract();
+
+  /**
    * @return true iff the method has a static modifier
    * @see #getModifiers()
    */

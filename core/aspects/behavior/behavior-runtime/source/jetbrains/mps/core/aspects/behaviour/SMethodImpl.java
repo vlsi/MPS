@@ -195,6 +195,11 @@ public final class SMethodImpl<T> implements SMethod<T> {
   }
 
   @Override
+  public boolean isAbstract() {
+    return myMethodModifiers.isAbstract();
+  }
+
+  @Override
   public boolean isStatic() {
     return myMethodModifiers.isStatic();
   }
