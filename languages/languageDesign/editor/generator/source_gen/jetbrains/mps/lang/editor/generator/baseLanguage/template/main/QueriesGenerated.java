@@ -1353,7 +1353,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static Object referenceMacro_GetReferent_6920313902514831797(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
   }
-  public static Object referenceMacro_GetReferent_5284120499281518305(final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_3554348643636177866(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"));
   }
   public static Object referenceMacro_GetReferent_5284120499281660032(final ReferenceMacroContext _context) {
@@ -1613,7 +1613,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_7991857262601020815(final IfMacroContext _context) {
     return (boolean) QueryFunction_StyleParameter__BehaviorDescriptor.isSeparatorStyleQuery_id6VCLXpKP7HP.invoke(_context.getNode());
   }
-  public static boolean ifMacro_Condition_5284120499282346304(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3554348643636131218(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null);
   }
   public static boolean ifMacro_Condition_2327135064575820628(final IfMacroContext _context) {
@@ -1859,7 +1859,7 @@ public class QueriesGenerated extends QueryProviderBase {
   public static boolean ifMacro_Condition_1106598080605870181(final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x1098c8cf48aL, 0xce215999c843265L, "separatorTextQuery")) != null;
   }
-  public static boolean ifMacro_Condition_5284120499282301127(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3554348643636177875(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10964446123L, 0x10973779681L, "relationDeclaration")), MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98051c244L, "specializedLink")) != null);
   }
   public static boolean ifMacro_Condition_1106598080605870263(final IfMacroContext _context) {
@@ -5082,7 +5082,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("1165277664808", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7991857262601913960", new QueriesGenerated.IfMC(i++));
     imcMethods.put("7991857262601020813", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("5284120499282346303", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("3554348643636131216", new QueriesGenerated.IfMC(i++));
     imcMethods.put("2327135064575820626", new QueriesGenerated.IfMC(i++));
     imcMethods.put("2327135064575850031", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1065015894494536074", new QueriesGenerated.IfMC(i++));
@@ -5155,7 +5155,7 @@ public class QueriesGenerated extends QueryProviderBase {
     imcMethods.put("6920313902514738808", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1106598080605870166", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1106598080605870180", new QueriesGenerated.IfMC(i++));
-    imcMethods.put("5284120499282301125", new QueriesGenerated.IfMC(i++));
+    imcMethods.put("3554348643636177874", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1106598080605870262", new QueriesGenerated.IfMC(i++));
     imcMethods.put("1106598080605870335", new QueriesGenerated.IfMC(i++));
     imcMethods.put("5284120499282295783", new QueriesGenerated.IfMC(i++));
@@ -5337,7 +5337,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 43:
           return QueriesGenerated.ifMacro_Condition_7991857262601020815(ctx);
         case 44:
-          return QueriesGenerated.ifMacro_Condition_5284120499282346304(ctx);
+          return QueriesGenerated.ifMacro_Condition_3554348643636131218(ctx);
         case 45:
           return QueriesGenerated.ifMacro_Condition_2327135064575820628(ctx);
         case 46:
@@ -5483,7 +5483,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 116:
           return QueriesGenerated.ifMacro_Condition_1106598080605870181(ctx);
         case 117:
-          return QueriesGenerated.ifMacro_Condition_5284120499282301127(ctx);
+          return QueriesGenerated.ifMacro_Condition_3554348643636177875(ctx);
         case 118:
           return QueriesGenerated.ifMacro_Condition_1106598080605870263(ctx);
         case 119:
@@ -5770,7 +5770,7 @@ public class QueriesGenerated extends QueryProviderBase {
     rtqMethods.put("5238877291853311522", new QueriesGenerated.RTQ(81, "smodelAttribute"));
     rtqMethods.put("5238877291853311959", new QueriesGenerated.RTQ(82, "CustomSingleRoleCellProvider"));
     rtqMethods.put("6920313902514831796", new QueriesGenerated.RTQ(83, "BaseConcept"));
-    rtqMethods.put("5284120499281518304", new QueriesGenerated.RTQ(84, "BaseConcept"));
+    rtqMethods.put("3554348643636177865", new QueriesGenerated.RTQ(84, "BaseConcept"));
     rtqMethods.put("5284120499281660031", new QueriesGenerated.RTQ(85, "BaseConcept"));
     rtqMethods.put("5284120499281660042", new QueriesGenerated.RTQ(86, "smodelAttribute"));
     rtqMethods.put("5284120499281660050", new QueriesGenerated.RTQ(87, "BaseConcept"));
@@ -5997,7 +5997,7 @@ public class QueriesGenerated extends QueryProviderBase {
         case 83:
           return QueriesGenerated.referenceMacro_GetReferent_6920313902514831797(ctx);
         case 84:
-          return QueriesGenerated.referenceMacro_GetReferent_5284120499281518305(ctx);
+          return QueriesGenerated.referenceMacro_GetReferent_3554348643636177866(ctx);
         case 85:
           return QueriesGenerated.referenceMacro_GetReferent_5284120499281660032(ctx);
         case 86:

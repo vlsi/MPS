@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.update;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -86,11 +87,31 @@ public interface UpdateSession {
    * <p/>
    * Can be called to update editor cell for the child node to insert it into
    * constructing cell tree as a child cell.
+   * <p/>
+   * This method creates the new cell context with the node location
+   * created from node and its {@link SNode#getContainmentLink()} and
+   * pushes it to the editor cell factory.
    *
    * @param node - node to create cell for
    * @return updated EditorCell for the specified node
    */
   EditorCell updateChildNodeCell(SNode node);
+
+  /**
+   * Should be called as a part of incremental update of EditorCells tree represented
+   * inside associated EditorComponent only.
+   * <p/>
+   * Can be called to update editor cell for the child node to insert it into
+   * constructing cell tree as a child cell.
+   * <p/>
+   * This method creates the new cell context with the specified node location
+   * and pushes it to the editor cell factory.
+   *
+   * @param node - node to create cell for
+   * @param location - location of the node in the tree
+   * @return updated EditorCell for the specified node
+   */
+  EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location);
 
   /**
    * @deprecated since MPS3.4 use {@link #updateAttributeCell(AttributeKind, EditorCell, SNode)}

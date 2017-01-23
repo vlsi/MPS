@@ -15,11 +15,27 @@
  */
 package jetbrains.mps.smodel.action;
 
+import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuLookup;
+import jetbrains.mps.lang.editor.menus.transformation.DefaultSubstituteMenuItemAsActionItem;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteActionsCollector;
+import jetbrains.mps.lang.editor.menus.transformation.SubstituteItemsCollector;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
+import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
+import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SNode;
 
+import java.util.Collections;
 import java.util.List;
 
 public class ModelActions {
@@ -30,6 +46,30 @@ public class ModelActions {
   public static List<SubstituteAction> createChildNodeSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
       IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
+  }
+
+  public static List<SubstituteAction> createChildNodeSubstituteActions(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink link, @Nullable SAbstractConcept targetConcept,
+      @NotNull IChildNodeSetter setter, @NotNull EditorContext editorContext) {
+    if (targetConcept == null) {
+      if (link != null) {
+        targetConcept = link.getTargetConcept();
+      } else {
+        return Collections.emptyList();
+      }
+    }
+    SubstituteMenuLookup lookup = new DefaultSubstituteMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), targetConcept);
+    List<TransformationMenuItem> transformationItems = new SubstituteItemsCollector(parentNode, currentChild, link, targetConcept, editorContext, lookup) {
+      @Override
+      protected TransformationMenuItem convert(SubstituteMenuItem item, SubstituteMenuContext context) {
+        return new DefaultSubstituteMenuItemAsActionItem(item, context) {
+          @Override
+          protected SNode doSubstitute(SNode newChild) {
+            return setter.execute(context.getParentNode(), context.getCurrentTargetNode(), newChild, context.getEditorContext());
+          }
+        };
+      }
+    }.collect();
+    return new SubstituteActionsCollector(parentNode, transformationItems, editorContext.getRepository()).collect();
   }
 
   //-------------------

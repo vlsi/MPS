@@ -101,7 +101,7 @@ public abstract class AbstractCellListHandler {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    createInnerCellsWithEditorCellContext(myOwnerNode, editorContext);
+    createInnerCells(myOwnerNode, editorContext);
 
     // add insert/insert-before actions
     myListEditorCell_Collection.setAction(CellActionType.INSERT, new CellAction_InsertIntoCollection(this, false));
@@ -116,6 +116,7 @@ public abstract class AbstractCellListHandler {
   }
 
 
+  @ToRemove(version = 3.5)
   protected void createInnerCellsWithEditorCellContext(SNode node, EditorContext editorContext) {
     if (isCompatibilityMode()) {
       getEditorContext().getCellFactory().pushCellContext();
@@ -133,9 +134,19 @@ public abstract class AbstractCellListHandler {
   protected void createInnerCells(SNode node, EditorContext editorContext) {
     Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
-      EditorCell emptyCell = createEmptyCell(editorContext);
-      emptyCell.setRole(getElementRole());
-      myListEditorCell_Collection.addEditorCell(emptyCell);
+      if (isCompatibilityMode()) {
+        getEditorContext().getCellFactory().pushCellContext();
+        getEditorContext().getCellFactory().setNodeLocation(null);
+      }
+      try {
+        EditorCell emptyCell = createEmptyCell(editorContext);
+        emptyCell.setRole(getElementRole());
+        myListEditorCell_Collection.addEditorCell(emptyCell);
+      } finally {
+        if (isCompatibilityMode()) {
+          getEditorContext().getCellFactory().popCellContext();
+        }
+      }
     } else {
       SNode prevNode = null;
       while (listNodes.hasNext()) {
