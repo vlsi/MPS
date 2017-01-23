@@ -1762,14 +1762,16 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.BRACES_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.BRACKETS_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.CLASS_NAME_StyleKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_CONSTANT_StyleKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_IDENTIFIER_StyleKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_INSTANCE_FIELD_StyleKey" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_STATIC_FIELD_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DOC_COMMENT_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DOC_TAG_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DOT_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.FOLDED_TEXT_StyleKey" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.INSTANCE_FIELD_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.KEYWORD_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.LINE_COMMENT_StyleKey" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.LOCAL_VARIABLE_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.METHOD_CALL_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.METHOD_DECLARATION_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.NOT_USED_ELEMENT_StyleKey" />
@@ -1778,8 +1780,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.PARAMETER_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.PARENTH_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.SEMICOLON_StyleKey" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STATIC_FIELD_StyleKey" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STATIC_FINAL_FIELD_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STATIC_METHOD_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STRING_StyleKey" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.TODO_StyleKey" />

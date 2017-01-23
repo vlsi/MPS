@@ -16,8 +16,8 @@ import jetbrains.mps.baseLanguage.behavior.CommentPart__BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.BLOCK_COMMENT_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DOC_COMMENT_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DOC_TAG_StyleKey;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.INSTANCE_FIELD_StyleKey;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.LOCAL_VARIABLE_StyleKey;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_INSTANCE_FIELD_StyleKey;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_IDENTIFIER_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.PARAMETER_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STRING_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.NUMBER_StyleKey;
@@ -32,8 +32,8 @@ import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.BRACES_Styl
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.BRACKETS_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.METHOD_DECLARATION_StyleKey;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.METHOD_CALL_StyleKey;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STATIC_FINAL_FIELD_StyleKey;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.STATIC_FIELD_StyleKey;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_CONSTANT_StyleKey;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.DEFAULT_STATIC_FIELD_StyleKey;
 import jetbrains.mps.baseLanguage.behavior.IClassifierMember__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageKeyPack_KeyPack.CLASS_NAME_StyleKey;
@@ -605,7 +605,7 @@ public class BaseLanguageStyle_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      new INSTANCE_FIELD_StyleKey().apply(style);
+      new DEFAULT_INSTANCE_FIELD_StyleKey().apply(style);
     }
 
   }
@@ -616,7 +616,7 @@ public class BaseLanguageStyle_StyleSheet {
 
     @Override
     public void apply(Style style, EditorCell editorCell) {
-      new LOCAL_VARIABLE_StyleKey().apply(style);
+      new DEFAULT_IDENTIFIER_StyleKey().apply(style);
     }
 
   }
@@ -924,16 +924,16 @@ public class BaseLanguageStyle_StyleSheet {
     @Override
     public void apply(Style style, EditorCell editorCell) {
       if (_StyleParameter_QueryFunction_the604_a0ib()) {
-        new STATIC_FINAL_FIELD_StyleKey().apply(style);
+        new DEFAULT_CONSTANT_StyleKey().apply(style);
       }
       if (_StyleParameter_QueryFunction_the604_a1ib()) {
-        new STATIC_FIELD_StyleKey().apply(style);
+        new DEFAULT_STATIC_FIELD_StyleKey().apply(style);
       }
       if (_StyleParameter_QueryFunction_the604_a2ib()) {
-        new INSTANCE_FIELD_StyleKey().apply(style);
+        new DEFAULT_INSTANCE_FIELD_StyleKey().apply(style);
       }
       if (_StyleParameter_QueryFunction_the604_a3ib()) {
-        new LOCAL_VARIABLE_StyleKey().apply(style);
+        new DEFAULT_IDENTIFIER_StyleKey().apply(style);
       }
     }
 

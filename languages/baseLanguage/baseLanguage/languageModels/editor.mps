@@ -22807,10 +22807,10 @@
       <property role="Xl_RC" value="URL" />
     </node>
     <node concept="2NdhxG" id="aeM1BF$xqy" role="2NdZaQ">
-      <property role="Xl_RC" value="LOCAL_VARIABLE" />
+      <property role="Xl_RC" value="DEFAULT_IDENTIFIER" />
     </node>
     <node concept="2NdhxG" id="aeM1BF$_eX" role="2NdZaQ">
-      <property role="Xl_RC" value="INSTANCE_FIELD" />
+      <property role="Xl_RC" value="DEFAULT_INSTANCE_FIELD" />
     </node>
     <node concept="2NdhxG" id="6HlOI92Mcte" role="2NdZaQ">
       <property role="Xl_RC" value="METHOD_DECLARATION" />
@@ -22819,10 +22819,10 @@
       <property role="Xl_RC" value="METHOD_CALL" />
     </node>
     <node concept="2NdhxG" id="aeM1BF$B9t" role="2NdZaQ">
-      <property role="Xl_RC" value="STATIC_FIELD" />
+      <property role="Xl_RC" value="DEFAULT_STATIC_FIELD" />
     </node>
     <node concept="2NdhxG" id="aeM1BF$D3T" role="2NdZaQ">
-      <property role="Xl_RC" value="STATIC_FINAL_FIELD" />
+      <property role="Xl_RC" value="DEFAULT_CONSTANT" />
     </node>
     <node concept="2NdhxG" id="6HlOI92JYyF" role="2NdZaQ">
       <property role="Xl_RC" value="STATIC_METHOD" />

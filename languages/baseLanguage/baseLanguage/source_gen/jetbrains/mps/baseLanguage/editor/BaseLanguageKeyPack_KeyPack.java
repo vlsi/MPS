@@ -21,20 +21,20 @@ public class BaseLanguageKeyPack_KeyPack {
       super("URL", priority);
     }
   }
-  public static class LOCAL_VARIABLE_StyleKey extends AbstractStyleKey {
-    public LOCAL_VARIABLE_StyleKey() {
-      super("LOCAL_VARIABLE");
+  public static class DEFAULT_IDENTIFIER_StyleKey extends AbstractStyleKey {
+    public DEFAULT_IDENTIFIER_StyleKey() {
+      super("DEFAULT_IDENTIFIER");
     }
-    public LOCAL_VARIABLE_StyleKey(int priority) {
-      super("LOCAL_VARIABLE", priority);
+    public DEFAULT_IDENTIFIER_StyleKey(int priority) {
+      super("DEFAULT_IDENTIFIER", priority);
     }
   }
-  public static class INSTANCE_FIELD_StyleKey extends AbstractStyleKey {
-    public INSTANCE_FIELD_StyleKey() {
-      super("INSTANCE_FIELD");
+  public static class DEFAULT_INSTANCE_FIELD_StyleKey extends AbstractStyleKey {
+    public DEFAULT_INSTANCE_FIELD_StyleKey() {
+      super("DEFAULT_INSTANCE_FIELD");
     }
-    public INSTANCE_FIELD_StyleKey(int priority) {
-      super("INSTANCE_FIELD", priority);
+    public DEFAULT_INSTANCE_FIELD_StyleKey(int priority) {
+      super("DEFAULT_INSTANCE_FIELD", priority);
     }
   }
   public static class METHOD_DECLARATION_StyleKey extends AbstractStyleKey {
@@ -53,20 +53,20 @@ public class BaseLanguageKeyPack_KeyPack {
       super("METHOD_CALL", priority);
     }
   }
-  public static class STATIC_FIELD_StyleKey extends AbstractStyleKey {
-    public STATIC_FIELD_StyleKey() {
-      super("STATIC_FIELD");
+  public static class DEFAULT_STATIC_FIELD_StyleKey extends AbstractStyleKey {
+    public DEFAULT_STATIC_FIELD_StyleKey() {
+      super("DEFAULT_STATIC_FIELD");
     }
-    public STATIC_FIELD_StyleKey(int priority) {
-      super("STATIC_FIELD", priority);
+    public DEFAULT_STATIC_FIELD_StyleKey(int priority) {
+      super("DEFAULT_STATIC_FIELD", priority);
     }
   }
-  public static class STATIC_FINAL_FIELD_StyleKey extends AbstractStyleKey {
-    public STATIC_FINAL_FIELD_StyleKey() {
-      super("STATIC_FINAL_FIELD");
+  public static class DEFAULT_CONSTANT_StyleKey extends AbstractStyleKey {
+    public DEFAULT_CONSTANT_StyleKey() {
+      super("DEFAULT_CONSTANT");
     }
-    public STATIC_FINAL_FIELD_StyleKey(int priority) {
-      super("STATIC_FINAL_FIELD", priority);
+    public DEFAULT_CONSTANT_StyleKey(int priority) {
+      super("DEFAULT_CONSTANT", priority);
     }
   }
   public static class STATIC_METHOD_StyleKey extends AbstractStyleKey {
