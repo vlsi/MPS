@@ -49,6 +49,8 @@ public final class Files {
    * Hence the hack to resolve 'jar:file://a.jar!/a.txt' like URI is to resolve two times.
    *
    * see <code>jetbrains.mps.workbench.index.RootNodeNameIndex</code> for a long and boring explanation
+   *
+   * fixme it is better to parse on our own [apyshkin]
    */
   @NotNull
   public static IFile fromURL(@NotNull URL url) {
@@ -57,7 +59,9 @@ public final class Files {
       if (!path.startsWith("/")) { //strangely not absolute
         if ("jar".equals(url.getProtocol())) {
           if (path.startsWith("file:")) {
-            path = new URL(path).getPath();
+            URL hackUrl = new URL(path);
+            String authority = hackUrl.getAuthority();
+            path = (authority != null ? authority : "") + hackUrl.getPath();
           }
           return getFile(path);
         }
