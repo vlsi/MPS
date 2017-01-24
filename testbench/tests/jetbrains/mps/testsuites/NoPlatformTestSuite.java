@@ -30,7 +30,6 @@ import org.junit.runners.Suite.SuiteClasses;
 @RunWith(Suite.class)
 @SuiteClasses({
     GenPlanTest.class,
-    ModelPerformanceTest.class,
     MPSPackageItemProviderTests.class,
     ThreadUtilsTest.class})
 public class NoPlatformTestSuite {
