@@ -60,7 +60,7 @@ public class TransformationTestRunner implements TestRunner {
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
   protected void doInitTest(@NotNull final TransformationTest test, @NotNull final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Initializing test");
+      LOG.info("Initializing the test");
     }
     test.setProject(testProject);
     TransformationTest cachedTest = TestModelSaver.getInstance().getTest();
@@ -70,7 +70,7 @@ public class TransformationTestRunner implements TestRunner {
     String cachedModelName = check_ovzmet_a0g0l(check_ovzmet_a0a6a11(cachedModel));
     if (cachedModelName != null && cachedModelName.equals(modelName)) {
       if (LOG.isDebugEnabled()) {
-        LOG.debug("Using cached model");
+        LOG.debug("Using the cached model");
       }
       test.setModelDescriptor(cachedModel);
       test.setTransientModelDescriptor(cachedTransientModel);
@@ -147,7 +147,7 @@ public class TransformationTestRunner implements TestRunner {
 
   public void runTest(@NotNull final TransformationTest projectTest, final String className, final String methodName, boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
-      LOG.info("Running test " + methodName);
+      LOG.info("Running the test " + methodName);
     }
     final Wrappers._T<Class> clazz = new Wrappers._T<Class>();
     final Throwable[] error = new Throwable[1];

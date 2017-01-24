@@ -10,6 +10,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.tool.environment.IdeaEnvironment;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
+import jetbrains.mps.lang.test.util.MpsRunListener;
+import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
@@ -46,6 +48,12 @@ public abstract class BaseTransformationTest implements TransformationTest {
     myModel = modelDescriptor;
   }
 
+  public void beforeTests() {
+  }
+
+  public void afterTests() {
+  }
+
   @Override
   public void setTestRunner(TestRunner runner) {
     myRunner = runner;
@@ -62,9 +70,26 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
   public void initTest(@NotNull String projectName, final String model, boolean reOpenProject) throws Exception {
     if (myRunner == null) {
-      setTestRunner(defaultTestRunner());
+      initTests();
     }
     myRunner.initTest(this, projectName, model, reOpenProject);
+  }
+
+  private void initTests() {
+    setTestRunner(defaultTestRunner());
+    beforeTests();
+    registerAfterTestsListener();
+  }
+
+  private void registerAfterTestsListener() {
+    MpsRunListener listener = new MpsRunListener() {
+      @Override
+      public void testRunDone() {
+        afterTests();
+        RunEventsDispatcher.getInstance().removeListener(this);
+      }
+    };
+    RunEventsDispatcher.getInstance().addListener(listener);
   }
 
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
@@ -87,22 +112,27 @@ public abstract class BaseTransformationTest implements TransformationTest {
   public SModel getModelDescriptor() {
     return myModel;
   }
+
   @Override
   public void setModelDescriptor(SModel descriptor) {
     myModel = descriptor;
   }
+
   @Override
   public void setTransientModelDescriptor(SModel descriptor) {
     myTransientModel = descriptor;
   }
+
   @Override
   public SModel getTransientModelDescriptor() {
     return myTransientModel;
   }
+
   @Override
   public Project getProject() {
     return myProject;
   }
+
   @Override
   public void setProject(Project project) {
     myProject = project;

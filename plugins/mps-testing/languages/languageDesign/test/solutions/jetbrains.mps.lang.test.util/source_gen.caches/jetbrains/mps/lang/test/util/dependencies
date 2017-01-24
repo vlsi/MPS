@@ -2,6 +2,8 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.test.util.MpsRunListener" file="MpsRunListener.java" />
   <dependency className="jetbrains.mps.lang.test.util.RunEventsDispatcher" file="RunEventsDispatcher.java">
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.concurrent.CopyOnWriteArrayList" />
     <classNode dependClassName="jetbrains.mps.lang.test.util.MpsRunListener" />
   </dependency>
   <dependency className="jetbrains.mps.lang.test.util.RunStateEnum" file="RunStateEnum.java" />

@@ -6,11 +6,18 @@ import jetbrains.mps.lang.test.util.MpsRunListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.test.util.RunEventsDispatcher;
 
+/**
+ * 
+ * 
+ * @deprecated each test model must be copied only once (here we are endangered to noclassdeffound
+ */
+@Deprecated
 public class TestModelSaver {
   private static TestModelSaver ourInstance = new TestModelSaver();
   private static MpsRunListener ourListener = createListener();
   private volatile TransformationTest myTest = null;
 
+  @Deprecated
   private TestModelSaver() {
   }
 
@@ -45,9 +52,10 @@ public class TestModelSaver {
       @Override
       public void testRunDone() {
         TestModelSaver.ourInstance.clean();
+        RunEventsDispatcher.getInstance().removeListener(this);
       }
     };
-    RunEventsDispatcher.getInstance().setListener(listener);
+    RunEventsDispatcher.getInstance().addListener(listener);
     return listener;
   }
 }

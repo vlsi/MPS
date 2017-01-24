@@ -410,11 +410,6 @@
       <property role="IQ2nx" value="6339244025081158986" />
       <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
     </node>
-    <node concept="1TJgyi" id="2vy5TEsvX5g" role="1TKVEl">
-      <property role="IQ2nx" value="2873885465033822544" />
-      <property role="TrG5h" value="sdfsdf" />
-      <ref role="AX2Wp" to="tpck:fKAQMTB" resolve="boolean" />
-    </node>
     <node concept="1QGGSu" id="4Q8sAA5iJSw" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/nodesTest.png" />
     </node>
