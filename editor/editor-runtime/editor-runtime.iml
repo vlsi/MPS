@@ -36,5 +36,6 @@
     <orderEntry type="module" module-name="testbench" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
     <orderEntry type="library" scope="TEST" name="JMock" level="project" />
+    <orderEntry type="module" module-name="editing-runtime" exported="" />
   </component>
 </module>

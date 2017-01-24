@@ -32,6 +32,7 @@
       <modulePath path="$PROJECT_DIR$/core/tool/environment/jetbrains.mps.core.tool.environment.msd" folder="core.tool" />
       <modulePath path="$PROJECT_DIR$/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core.aspects.typesystem" />
       <modulePath path="$PROJECT_DIR$/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.aspects.actions" />
+      <modulePath path="$PROJECT_DIR$/editor/editing-runtime/jetbrains.mps.editing.runtime.msd" folder="core.aspects.actions" />
       <modulePath path="$PROJECT_DIR$/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/editorlang-runtime/jetbrains.mps.editorlang.runtime.msd" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/editor/typesystemIntegration/typesystemIntegration.msd" folder="core.aspects.editor" />

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:4f7c3989-6242-48ab-8db0-62a0fa1f8c29(jetbrains.mps.datatransfer)">
+<model ref="r:1797d8fa-0ead-4018-8649-d2ee4016be0a(jetbrains.mps.datatransfer)">
   <persistence version="9" />
   <languages>
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="7" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="4" />
     <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
   </languages>
   <imports>
-    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
-    <import index="9eus" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.actions.descriptor(MPS.Editor/)" />
-    <import index="iaml" ref="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)" />
     <import index="qzxn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.datatransfer(MPS.Core/)" />
+    <import index="9eus" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.actions.descriptor(MPS.Editor/)" />
+    <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
+    <import index="iaml" ref="2d3c70e9-aab2-4870-8d8d-6036800e4103/r:6bf310d1-d8fa-4af9-9587-692311b8be46(jetbrains.mps.kernel/jetbrains.mps.datatransfer)" />
+    <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -404,7 +404,7 @@
       <node concept="3Tm1VV" id="3wPbnawHL1h" role="1B3o_S" />
       <node concept="3clFbS" id="3wPbnawHL1i" role="3clF47">
         <node concept="3cpWs6" id="3wPbnawHMN3" role="3cqZAp">
-          <node concept="37vLTw" id="3wPbnawHMUZ" role="3cqZAk">
+          <node concept="37vLTw" id="7G8F81M6T4F" role="3cqZAk">
             <ref role="3cqZAo" node="ymNu2s6MeP" resolve="INSTANCE" />
           </node>
         </node>
@@ -698,8 +698,8 @@
           </node>
           <node concept="2OqwBi" id="ymNu2s9hdw" role="3clFbw">
             <node concept="2YIFZM" id="11cLQV4zooD" role="2Oq$k0">
-              <ref role="37wK5l" to="iaml:1pMYFACd7fW" resolve="getInstance" />
               <ref role="1Pybhc" to="iaml:1q5tOkAt8k6" resolve="CopyPasteManager" />
+              <ref role="37wK5l" to="iaml:1pMYFACd7fW" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="ymNu2s9hdy" role="2OqNvi">
               <ref role="37wK5l" to="iaml:ymNu2s9G6S" resolve="postProcessNodeInternal" />
@@ -780,8 +780,8 @@
         <node concept="3cpWs6" id="11cLQV4zHEJ" role="3cqZAp">
           <node concept="2OqwBi" id="11cLQV4zKKf" role="3cqZAk">
             <node concept="2YIFZM" id="11cLQV4zJEh" role="2Oq$k0">
-              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.getInstance():jetbrains.mps.datatransfer.PasteWrappersManager" resolve="getInstance" />
               <ref role="1Pybhc" to="qzxn:~PasteWrappersManager" resolve="PasteWrappersManager" />
+              <ref role="37wK5l" to="qzxn:~PasteWrappersManager.getInstance():jetbrains.mps.datatransfer.PasteWrappersManager" resolve="getInstance" />
             </node>
             <node concept="liA8E" id="11cLQV4zLXp" role="2OqNvi">
               <ref role="37wK5l" to="qzxn:~PasteWrappersManager.canWrapInto(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):boolean" resolve="canWrapInto" />

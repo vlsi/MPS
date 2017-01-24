@@ -45,6 +45,7 @@ languages/baseLanguage/tuples/runtime/classes
 editor/editor-api/classes
 editor/editorlang-runtime/classes
 editor/editor-runtime/classes
+editor/editing-runtime/classes
 editor/actions-runtime/classes
 editor/intentions-runtime/classes
 editor/typesystemIntegration/classes

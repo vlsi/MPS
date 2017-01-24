@@ -2,13 +2,13 @@
 <model ref="r:84719e1a-99f6-4297-90ba-8ad2a947fa4a(jetbrains.mps.ide.datatransfer)">
   <persistence version="9" />
   <languages>
-    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="-1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="-1" />
-    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="-1" />
-    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="-1" />
-    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="-1" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="-1" />
-    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="-1" />
+    <use id="774bf8a0-62e5-41e1-af63-f4812e60e48b" name="jetbrains.mps.baseLanguage.checkedDots" version="0" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" version="0" />
+    <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc" version="2" />
+    <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
+    <use id="a247e09e-2435-45ba-b8d2-07e93feba96a" name="jetbrains.mps.baseLanguage.tuples" version="0" />
   </languages>
   <imports>
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -19,7 +19,6 @@
     <import index="guwi" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.io(JDK/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
-    <import index="qzxn" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.datatransfer(MPS.Core/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
     <import index="ddhc" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide(MPS.IDEA/)" />
     <import index="9gz3" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.ide.datatransfer(MPS.Platform/)" />
@@ -29,7 +28,8 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="vndm" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.language(MPS.Core/)" />
-    <import index="qzxo" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.datatransfer(MPS.Editor/)" />
+    <import index="qzxn" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.datatransfer(MPS.Editor/)" />
+    <import index="qzxo" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.datatransfer(MPS.Core/)" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -537,10 +537,10 @@
     </node>
     <node concept="2YIFZL" id="5tGs5KqKixN" role="jymVt">
       <property role="TrG5h" value="createNodeDataIn" />
-      <node concept="3Tm1VV" id="5tGs5KqKixO" role="1B3o_S" />
       <node concept="3uibUv" id="5tGs5KqKixP" role="3clF45">
-        <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+        <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
       </node>
+      <node concept="3Tm1VV" id="5tGs5KqKixO" role="1B3o_S" />
       <node concept="37vLTG" id="5tGs5KqKixQ" role="3clF46">
         <property role="TrG5h" value="sourceNodes" />
         <node concept="_YKpA" id="75_1K8NDuVZ" role="1tU5fm">
@@ -574,8 +574,8 @@
           <node concept="3clFbS" id="5tGs5KqKiy3" role="3clFbx">
             <node concept="3cpWs6" id="5tGs5KqKiy4" role="3cqZAp">
               <node concept="2YIFZM" id="5tGs5KqKiy5" role="3cqZAk">
-                <ref role="1Pybhc" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
+                <ref role="1Pybhc" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
                 <node concept="10Nm6u" id="25Z1rh3qCzZ" role="37wK5m" />
               </node>
             </node>
@@ -752,11 +752,11 @@
             <node concept="3clFbF" id="18jObec_CXu" role="3cqZAp">
               <node concept="2OqwBi" id="18jObec_CXv" role="3clFbG">
                 <node concept="2YIFZM" id="2LXoN5Z_$U2" role="2Oq$k0">
-                  <ref role="37wK5l" to="qzxo:~DataTransferManager.getInstance():jetbrains.mps.datatransfer.DataTransferManager" resolve="getInstance" />
-                  <ref role="1Pybhc" to="qzxo:~DataTransferManager" resolve="DataTransferManager" />
+                  <ref role="37wK5l" to="qzxn:~DataTransferManager.getInstance():jetbrains.mps.datatransfer.DataTransferManager" resolve="getInstance" />
+                  <ref role="1Pybhc" to="qzxn:~DataTransferManager" resolve="DataTransferManager" />
                 </node>
                 <node concept="liA8E" id="18jObec_CXx" role="2OqNvi">
-                  <ref role="37wK5l" to="qzxo:~DataTransferManager.preProcessNode(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="preProcessNode" />
+                  <ref role="37wK5l" to="qzxn:~DataTransferManager.preProcessNode(org.jetbrains.mps.openapi.model.SNode,org.jetbrains.mps.openapi.model.SNode):void" resolve="preProcessNode" />
                   <node concept="3EllGN" id="75_1K8NDoY7" role="37wK5m">
                     <node concept="2GrUjf" id="75_1K8NDpxk" role="3ElVtu">
                       <ref role="2Gs0qQ" node="18jObec_CXC" resolve="source" />
@@ -782,7 +782,7 @@
         <node concept="3cpWs6" id="5tGs5KqKi$w" role="3cqZAp">
           <node concept="2ShNRf" id="5tGs5KqKi$x" role="3cqZAk">
             <node concept="1pGfFk" id="5tGs5KqKi$y" role="2ShVmc">
-              <ref role="37wK5l" to="qzxn:~PasteNodeData.&lt;init&gt;(java.util.List,java.util.Set,org.jetbrains.mps.openapi.model.SModelReference,java.util.Set,java.util.Set)" resolve="PasteNodeData" />
+              <ref role="37wK5l" to="qzxo:~PasteNodeData.&lt;init&gt;(java.util.List,java.util.Set,org.jetbrains.mps.openapi.model.SModelReference,java.util.Set,java.util.Set)" resolve="PasteNodeData" />
               <node concept="2OqwBi" id="75_1K8NE3Ip" role="37wK5m">
                 <node concept="2OqwBi" id="75_1K8NDZRI" role="2Oq$k0">
                   <node concept="37vLTw" id="75_1K8NDrob" role="2Oq$k0">
@@ -833,10 +833,10 @@
     </node>
     <node concept="2YIFZL" id="5tGs5KqKi$D" role="jymVt">
       <property role="TrG5h" value="createNodeDataOut" />
-      <node concept="3Tm1VV" id="5tGs5KqKi$E" role="1B3o_S" />
       <node concept="3uibUv" id="5tGs5KqKi$F" role="3clF45">
-        <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+        <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
       </node>
+      <node concept="3Tm1VV" id="5tGs5KqKi$E" role="1B3o_S" />
       <node concept="37vLTG" id="5tGs5KqKi$G" role="3clF46">
         <property role="TrG5h" value="sourceNodes" />
         <node concept="3uibUv" id="5tGs5KqKi$H" role="1tU5fm">
@@ -883,8 +883,8 @@
           <node concept="3clFbS" id="5tGs5KqKi_0" role="3clFbx">
             <node concept="3cpWs6" id="5tGs5KqKi_1" role="3cqZAp">
               <node concept="2YIFZM" id="5tGs5KqKi_2" role="3cqZAk">
-                <ref role="1Pybhc" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
+                <ref role="1Pybhc" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
                 <node concept="10Nm6u" id="25Z1rh3qV6E" role="37wK5m" />
               </node>
             </node>
@@ -1077,7 +1077,7 @@
         <node concept="3cpWs6" id="5tGs5KqKiAY" role="3cqZAp">
           <node concept="2ShNRf" id="5tGs5KqKiAZ" role="3cqZAk">
             <node concept="1pGfFk" id="5tGs5KqKiB0" role="2ShVmc">
-              <ref role="37wK5l" to="qzxn:~PasteNodeData.&lt;init&gt;(java.util.List,java.util.Set,org.jetbrains.mps.openapi.model.SModelReference,java.util.Set,java.util.Set)" resolve="PasteNodeData" />
+              <ref role="37wK5l" to="qzxo:~PasteNodeData.&lt;init&gt;(java.util.List,java.util.Set,org.jetbrains.mps.openapi.model.SModelReference,java.util.Set,java.util.Set)" resolve="PasteNodeData" />
               <node concept="37vLTw" id="3GM_nagTA0J" role="37wK5m">
                 <ref role="3cqZAo" node="5tGs5KqKi_6" resolve="result" />
               </node>
@@ -2772,7 +2772,7 @@
               </node>
             </node>
             <node concept="liA8E" id="5tGs5KqKiKe" role="2OqNvi">
-              <ref role="37wK5l" to="qzxn:~PasteNodeData.getNodes():java.util.List" resolve="getNodes" />
+              <ref role="37wK5l" to="qzxo:~PasteNodeData.getNodes():java.util.List" resolve="getNodes" />
             </node>
           </node>
         </node>
@@ -2780,10 +2780,10 @@
     </node>
     <node concept="2YIFZL" id="5tGs5KqKiKf" role="jymVt">
       <property role="TrG5h" value="getPasteNodeDataFromClipboard" />
-      <node concept="3Tm1VV" id="5tGs5KqKiKg" role="1B3o_S" />
       <node concept="3uibUv" id="5tGs5KqKiKh" role="3clF45">
-        <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+        <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
       </node>
+      <node concept="3Tm1VV" id="5tGs5KqKiKg" role="1B3o_S" />
       <node concept="37vLTG" id="5tGs5KqKiKi" role="3clF46">
         <property role="TrG5h" value="model" />
         <node concept="3uibUv" id="5tGs5KqKiKj" role="1tU5fm">
@@ -2864,8 +2864,8 @@
           <node concept="3clFbS" id="5tGs5KqKiKV" role="3clFbx">
             <node concept="3cpWs6" id="5tGs5KqKiKW" role="3cqZAp">
               <node concept="2YIFZM" id="5tGs5KqKiKX" role="3cqZAk">
-                <ref role="1Pybhc" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
+                <ref role="1Pybhc" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
                 <node concept="2OqwBi" id="25Z1rh3raLD" role="37wK5m">
                   <node concept="37vLTw" id="25Z1rh3r8Eh" role="2Oq$k0">
                     <ref role="3cqZAo" node="5tGs5KqKiKi" resolve="model" />
@@ -2968,11 +2968,11 @@
                 </node>
                 <node concept="3cpWs6" id="5tGs5KqKiLC" role="3cqZAp">
                   <node concept="2OqwBi" id="5tGs5KqKiLD" role="3cqZAk">
-                    <node concept="37vLTw" id="3GM_nagTz7g" role="2Oq$k0">
-                      <ref role="3cqZAo" node="5tGs5KqKiL7" resolve="nodeTransferable" />
-                    </node>
                     <node concept="liA8E" id="5tGs5KqKiLF" role="2OqNvi">
                       <ref role="37wK5l" node="5tGs5KqKj7n" resolve="createNodeData" />
+                    </node>
+                    <node concept="37vLTw" id="3GM_nagTz7g" role="2Oq$k0">
+                      <ref role="3cqZAo" node="5tGs5KqKiL7" resolve="nodeTransferable" />
                     </node>
                   </node>
                 </node>
@@ -2982,8 +2982,8 @@
         </node>
         <node concept="3cpWs6" id="5tGs5KqKiLH" role="3cqZAp">
           <node concept="2YIFZM" id="5tGs5KqKiLI" role="3cqZAk">
-            <ref role="1Pybhc" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
-            <ref role="37wK5l" to="qzxn:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
+            <ref role="1Pybhc" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
+            <ref role="37wK5l" to="qzxo:~PasteNodeData.emptyPasteNodeData(org.jetbrains.mps.openapi.model.SModelReference):jetbrains.mps.datatransfer.PasteNodeData" resolve="emptyPasteNodeData" />
             <node concept="2OqwBi" id="25Z1rh3ro_Y" role="37wK5m">
               <node concept="37vLTw" id="25Z1rh3rmu2" role="2Oq$k0">
                 <ref role="3cqZAo" node="5tGs5KqKiKi" resolve="model" />
@@ -3593,7 +3593,7 @@
                 <ref role="3cqZAo" node="acLuhI6Q4N" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="25Z1rh3$1BV" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getSourceModel():org.jetbrains.mps.openapi.model.SModelReference" resolve="getSourceModel" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getSourceModel():org.jetbrains.mps.openapi.model.SModelReference" resolve="getSourceModel" />
               </node>
             </node>
           </node>
@@ -3649,7 +3649,7 @@
                 <ref role="3cqZAo" node="acLuhI6Q4N" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="2qqFBg4NOcf" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getNecessaryLanguages():java.util.Set" resolve="getNecessaryLanguages" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getNecessaryLanguages():java.util.Set" resolve="getNecessaryLanguages" />
               </node>
             </node>
             <node concept="2OqwBi" id="2qqFBg4NOcg" role="37wK5m">
@@ -3657,7 +3657,7 @@
                 <ref role="3cqZAo" node="acLuhI6Q4N" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="2qqFBg4NOci" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getNecessaryModels():java.util.Set" resolve="getNecessaryModels" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getNecessaryModels():java.util.Set" resolve="getNecessaryModels" />
               </node>
             </node>
             <node concept="37vLTw" id="2qqFBg4NOck" role="37wK5m">
@@ -3669,7 +3669,7 @@
       <node concept="37vLTG" id="acLuhI6Q4N" role="3clF46">
         <property role="TrG5h" value="pasteNodeData" />
         <node concept="3uibUv" id="acLuhI6Q4O" role="1tU5fm">
-          <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+          <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
         </node>
       </node>
       <node concept="37vLTG" id="acLuhI6Q4Z" role="3clF46">
@@ -4886,7 +4886,7 @@
           <node concept="3cpWsn" id="5tGs5KqKj6C" role="3cpWs9">
             <property role="TrG5h" value="pasteNodeData" />
             <node concept="3uibUv" id="5tGs5KqKj6D" role="1tU5fm">
-              <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+              <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
             </node>
             <node concept="2YIFZM" id="5tGs5KqKj6E" role="33vP2m">
               <ref role="1Pybhc" node="5tGs5KqKfGH" resolve="CopyPasteUtil" />
@@ -4912,7 +4912,7 @@
                   <ref role="3cqZAo" node="5tGs5KqKj6C" resolve="pasteNodeData" />
                 </node>
                 <node concept="liA8E" id="5tGs5KqKj6N" role="2OqNvi">
-                  <ref role="37wK5l" to="qzxn:~PasteNodeData.getNodes():java.util.List" resolve="getNodes" />
+                  <ref role="37wK5l" to="qzxo:~PasteNodeData.getNodes():java.util.List" resolve="getNodes" />
                 </node>
               </node>
             </node>
@@ -4925,7 +4925,7 @@
                 <ref role="3cqZAo" node="5tGs5KqKj6C" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="25Z1rh3pMAY" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getSourceModel():org.jetbrains.mps.openapi.model.SModelReference" resolve="getSourceModel" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getSourceModel():org.jetbrains.mps.openapi.model.SModelReference" resolve="getSourceModel" />
               </node>
             </node>
             <node concept="37vLTw" id="25Z1rh3pJYl" role="37vLTJ">
@@ -4943,7 +4943,7 @@
                 <ref role="3cqZAo" node="5tGs5KqKj6C" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="5tGs5KqKj7g" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getNecessaryModels():java.util.Set" resolve="getNecessaryModels" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getNecessaryModels():java.util.Set" resolve="getNecessaryModels" />
               </node>
             </node>
           </node>
@@ -4958,7 +4958,7 @@
                 <ref role="3cqZAo" node="5tGs5KqKj6C" resolve="pasteNodeData" />
               </node>
               <node concept="liA8E" id="5tGs5KqKj7m" role="2OqNvi">
-                <ref role="37wK5l" to="qzxn:~PasteNodeData.getNecessaryLanguages():java.util.Set" resolve="getNecessaryLanguages" />
+                <ref role="37wK5l" to="qzxo:~PasteNodeData.getNecessaryLanguages():java.util.Set" resolve="getNecessaryLanguages" />
               </node>
             </node>
           </node>
@@ -5078,10 +5078,10 @@
     </node>
     <node concept="3clFb_" id="5tGs5KqKj7n" role="jymVt">
       <property role="TrG5h" value="createNodeData" />
-      <node concept="3Tm1VV" id="5tGs5KqKj7o" role="1B3o_S" />
       <node concept="3uibUv" id="5tGs5KqKj7p" role="3clF45">
-        <ref role="3uigEE" to="qzxn:~PasteNodeData" resolve="PasteNodeData" />
+        <ref role="3uigEE" to="qzxo:~PasteNodeData" resolve="PasteNodeData" />
       </node>
+      <node concept="3Tm1VV" id="5tGs5KqKj7o" role="1B3o_S" />
       <node concept="3clFbS" id="5tGs5KqKj7s" role="3clF47">
         <node concept="3cpWs6" id="5tGs5KqKj89" role="3cqZAp">
           <node concept="2YIFZM" id="5tGs5KqKj8a" role="3cqZAk">

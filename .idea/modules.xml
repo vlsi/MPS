@@ -21,6 +21,7 @@
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/customViewers/debugger-java-customViewers.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/customViewers/debugger-java-customViewers.iml" group="plugins/debugger" />
       <module fileurl="file://$PROJECT_DIR$/plugins/debugger-java/runtime/debugger-java-runtime.iml" filepath="$PROJECT_DIR$/plugins/debugger-java/runtime/debugger-java-runtime.iml" group="plugins/debugger/debugger-java" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/jetbrains.mps.debug.api.info/debuginfo-api.iml" filepath="$PROJECT_DIR$/core/kernel/jetbrains.mps.debug.api.info/debuginfo-api.iml" group="core" />
+      <module fileurl="file://$PROJECT_DIR$/editor/editing-runtime/editing-runtime.iml" filepath="$PROJECT_DIR$/editor/editing-runtime/editing-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/editor/editor-api/editor-api.iml" filepath="$PROJECT_DIR$/editor/editor-api/editor-api.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/editor/editor-runtime/editor-runtime.iml" filepath="$PROJECT_DIR$/editor/editor-runtime/editor-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/editor/editorlang-runtime/editorlang-runtime.iml" filepath="$PROJECT_DIR$/editor/editorlang-runtime/editorlang-runtime.iml" group="editor" />
