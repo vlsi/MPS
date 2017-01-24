@@ -248,6 +248,7 @@
     </language>
     <language id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures">
       <concept id="1199569711397" name="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" flags="nn" index="1bVj0M">
+        <child id="1199569906740" name="parameter" index="1bW2Oz" />
         <child id="1199569916463" name="body" index="1bW5cS" />
       </concept>
     </language>
@@ -1130,6 +1131,68 @@
               <node concept="37vLTw" id="6CFNGGphKjw" role="37wK5m">
                 <ref role="3cqZAo" node="6CFNGGphKi4" resolve="myNewName" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4BlK4j80hwn" role="3cqZAp">
+          <node concept="3clFbS" id="4BlK4j80hwp" role="3clFbx">
+            <node concept="3clFbF" id="4BlK4j80jis" role="3cqZAp">
+              <node concept="2OqwBi" id="4BlK4j80kqD" role="3clFbG">
+                <node concept="2OqwBi" id="4BlK4j80k2w" role="2Oq$k0">
+                  <node concept="1eOMI4" id="4BlK4j80jW8" role="2Oq$k0">
+                    <node concept="10QFUN" id="4BlK4j80jW5" role="1eOMHV">
+                      <node concept="3uibUv" id="4BlK4j80jWa" role="10QFUM">
+                        <ref role="3uigEE" to="w0gx:~LanguageDescriptor" resolve="LanguageDescriptor" />
+                      </node>
+                      <node concept="37vLTw" id="4BlK4j80jWb" role="10QFUP">
+                        <ref role="3cqZAo" node="6CFNGGphKji" resolve="copyDescriptor" />
+                      </node>
+                    </node>
+                  </node>
+                  <node concept="liA8E" id="4BlK4j80kbn" role="2OqNvi">
+                    <ref role="37wK5l" to="w0gx:~LanguageDescriptor.getGenerators():java.util.List" resolve="getGenerators" />
+                  </node>
+                </node>
+                <node concept="liA8E" id="4BlK4j80ldS" role="2OqNvi">
+                  <ref role="37wK5l" to="wyt6:~Iterable.forEach(java.util.function.Consumer):void" resolve="forEach" />
+                  <node concept="1bVj0M" id="4BlK4j80lqN" role="37wK5m">
+                    <node concept="3clFbS" id="4BlK4j80lqO" role="1bW5cS">
+                      <node concept="3clFbF" id="4BlK4j80BT5" role="3cqZAp">
+                        <node concept="2OqwBi" id="4BlK4j80C4J" role="3clFbG">
+                          <node concept="37vLTw" id="4BlK4j80BT4" role="2Oq$k0">
+                            <ref role="3cqZAo" node="4BlK4j80BFe" resolve="gd" />
+                          </node>
+                          <node concept="liA8E" id="4BlK4j80Cn1" role="2OqNvi">
+                            <ref role="37wK5l" to="w0gx:~GeneratorDescriptor.setSourceLanguage(org.jetbrains.mps.openapi.module.SModuleReference):void" resolve="setSourceLanguage" />
+                            <node concept="2OqwBi" id="4BlK4j80CFE" role="37wK5m">
+                              <node concept="37vLTw" id="4BlK4j80Cwr" role="2Oq$k0">
+                                <ref role="3cqZAo" node="6CFNGGphKji" resolve="copyDescriptor" />
+                              </node>
+                              <node concept="liA8E" id="4BlK4j80CZb" role="2OqNvi">
+                                <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getModuleReference():org.jetbrains.mps.openapi.module.SModuleReference" resolve="getModuleReference" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node concept="37vLTG" id="4BlK4j80BFe" role="1bW2Oz">
+                      <property role="TrG5h" value="gd" />
+                      <node concept="3uibUv" id="4BlK4j80BFd" role="1tU5fm">
+                        <ref role="3uigEE" to="w0gx:~GeneratorDescriptor" resolve="GeneratorDescriptor" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="2ZW3vV" id="4BlK4j80iOm" role="3clFbw">
+            <node concept="3uibUv" id="4BlK4j80j9c" role="2ZW6by">
+              <ref role="3uigEE" to="w0gx:~LanguageDescriptor" resolve="LanguageDescriptor" />
+            </node>
+            <node concept="37vLTw" id="4BlK4j80ipu" role="2ZW6bz">
+              <ref role="3cqZAo" node="6CFNGGphKji" resolve="copyDescriptor" />
             </node>
           </node>
         </node>

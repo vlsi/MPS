@@ -9,10 +9,10 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.PathConverters;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import java.util.function.Consumer;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.ModuleId;
 import java.util.List;
 import java.util.function.Function;
@@ -59,6 +59,13 @@ import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
     final ModuleDescriptor copyDescriptor = moduleDescriptor.copy();
     setNewIdAndTimestamp(copyDescriptor);
     copyDescriptor.setNamespace(myNewName);
+    if (copyDescriptor instanceof LanguageDescriptor) {
+      ((LanguageDescriptor) copyDescriptor).getGenerators().forEach(new Consumer<GeneratorDescriptor>() {
+        public void accept(GeneratorDescriptor gd) {
+          gd.setSourceLanguage(copyDescriptor.getModuleReference());
+        }
+      });
+    }
     if (myModulePathConverter != null) {
       hackModuleDescriptor(copyDescriptor);
 

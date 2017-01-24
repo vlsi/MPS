@@ -180,6 +180,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     copy.setGenerateTemplates(isGenerateTemplates());
     copy.setOutputPath(getOutputPath());
     copy.setReflectiveQueries(isReflectiveQueries());
+    copy.setSourceLanguage(getSourceLanguage());
     copy.getDepGenerators().addAll(getDepGenerators());
     copy.getPriorityRules().addAll(getPriorityRules().stream().map(MappingPriorityRule::copy).collect(toList()));
     return copy;
