@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,6 +31,12 @@ import org.jetbrains.mps.openapi.module.SRepositoryListenerBase;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * @deprecated It's possible to have more than one module for the same file (e.g. .mpl hosts both language and its generators).
+ *             Review uses of the class and decide whether its API needs an update or we don't need it altogether (there are few dubious uses, it's
+ *             not evident if there's any value in this map). For the time being, whatever module it gives, is fine.
+ */
+@Deprecated
 public class ModuleFileTracker implements CoreComponent {
   private static ModuleFileTracker INSTANCE;
   private SRepository myRepo;
@@ -97,7 +103,9 @@ public class ModuleFileTracker implements CoreComponent {
     @Override
     public void beforeModuleRemoved(@NotNull SModule module) {
       IFile file = ((AbstractModule) module).getDescriptorFile();
-      if (file == null) return;
+      if (file == null) {
+        return;
+      }
       removeModuleFile(file);
       removeModuleFile(getSourceModuleDescriptor((AbstractModule) module));
     }
@@ -105,7 +113,10 @@ public class ModuleFileTracker implements CoreComponent {
     @Override
     public void moduleAdded(@NotNull SModule module) {
       IFile file = ((AbstractModule) module).getDescriptorFile();
-      if (file == null) return;
+      if (file == null) {
+        // XXX file used to be null for Generator module, now chances are generator overrides location of its language
+        return;
+      }
       addCanonicalFile(file, module);
       addCanonicalFile(getSourceModuleDescriptor((AbstractModule) module), module);
     }

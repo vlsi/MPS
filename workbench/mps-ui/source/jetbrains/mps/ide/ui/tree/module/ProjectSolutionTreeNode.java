@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -39,10 +38,7 @@ public class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   protected ProjectSolutionTreeNode(@NotNull AbstractModule solution, Project project, boolean shortNameOnly) {
     super(solution);
     myShortNameOnly = shortNameOnly;
-
-    IFile descriptorFile = solution.getDescriptorFile();
-    String id = descriptorFile == null ? solution.getModuleName() : descriptorFile.getPath();
-    setNodeIdentifier(id);
+    setNodeIdentifier(solution.getModuleId().toString());
     setIcon(IdeIcons.SOLUTION_ICON);
   }
 
