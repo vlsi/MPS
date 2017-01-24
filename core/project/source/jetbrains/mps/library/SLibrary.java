@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,8 @@ import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.EqualUtil;
@@ -55,7 +57,7 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
   @NotNull private final IFile myFile;
   private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
-  private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
+  private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<>();
 
   public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
@@ -117,6 +119,8 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
     }
     // FIXME update() comes with global model write lock. This code might have better idea about what to lock
     //       (although write per jar file is not the best alternative. SLibrary not always a directory, it's a single jar e.g. in Ant::generate).
+    // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
+    //     do when a module/file is removed
     modules2remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
     modules2reload.forEach(SModuleOperations::reloadFromDisk);
     // XXX Note, removed modules do not update myHandles (as it used to be with AbstractModule listening to changes). Perhaps, shall clean
@@ -141,15 +145,19 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   private void collectAndRegisterModules() {
     final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
-    List<ModuleHandle> moduleHandles = new ArrayList<ModuleHandle>(modulesMiner.getCollectedModules());
+    List<ModuleHandle> moduleHandles = new ArrayList<>(modulesMiner.getCollectedModules());
     myHandles.set(moduleHandles);
-    List<SModule> loaded = new ArrayList<SModule>();
+    List<SModule> loaded = new ArrayList<>();
     for (ModuleHandle moduleHandle : moduleHandles) {
       SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
       loaded.add(module);
     }
     for (SModule module : loaded) {
+      // FIXME if there are generators among loaded, Generator.onModuleLoad() is invoked twice.
       ((AbstractModule) module).onModuleLoad();
+      if (module instanceof Language) {
+        ((Language) module).getGenerators().forEach(Generator::onModuleLoad);
+      }
     }
   }
 
