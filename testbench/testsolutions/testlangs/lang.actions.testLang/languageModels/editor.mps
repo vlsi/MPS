@@ -21,11 +21,9 @@
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
-      <concept id="562388756444896282" name="jetbrains.mps.lang.resources.structure.NodeIconResourceExpression" flags="ng" index="yn5Q2">
-        <child id="562388756444896284" name="node" index="yn5Q4" />
-      </concept>
       <concept id="562388756444790046" name="jetbrains.mps.lang.resources.structure.ConceptIconResourceExpression" flags="ng" index="ynFM6">
         <reference id="562388756444790088" name="concept_old" index="ynFNg" />
+        <child id="4786190798786350692" name="concept" index="mzb_8" />
       </concept>
     </language>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -348,6 +346,9 @@
       <concept id="767145758118872828" name="jetbrains.mps.lang.actions.structure.NF_Node_ReplaceWithNewOperation" flags="nn" index="2DeJnW" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1204834851141" name="jetbrains.mps.lang.smodel.structure.PoundExpression" flags="ng" index="25Kdxt">
+        <child id="1204834868751" name="expression" index="25KhWn" />
+      </concept>
       <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
         <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
       </concept>
@@ -2724,10 +2725,9 @@
                 </node>
                 <node concept="3clFbH" id="1wEcoXjJ1jF" role="3cqZAp" />
                 <node concept="3cpWs6" id="1wEcoXjJ1jG" role="3cqZAp">
-                  <node concept="yn5Q2" id="1wEcoXjJ1kj" role="3cqZAk">
-                    <node concept="2OqwBi" id="1wEcoXjJ1jH" role="yn5Q4">
-                      <node concept="2ZBlsa" id="1wEcoXjJ1jP" role="2Oq$k0" />
-                      <node concept="FGMqu" id="1wEcoXjJ1jJ" role="2OqNvi" />
+                  <node concept="ynFM6" id="2StKqlGDDRh" role="3cqZAk">
+                    <node concept="25Kdxt" id="2StKqlGDDVf" role="mzb_8">
+                      <node concept="2ZBlsa" id="2StKqlGDDZe" role="25KhWn" />
                     </node>
                   </node>
                 </node>

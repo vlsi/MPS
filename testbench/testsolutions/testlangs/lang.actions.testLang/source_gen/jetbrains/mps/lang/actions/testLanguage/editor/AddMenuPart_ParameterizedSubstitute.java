@@ -161,7 +161,7 @@ public class AddMenuPart_ParameterizedSubstitute extends SubstituteMenuBase {
             tmpVar = tmpVar && _context.getLink() != null;
             tmpVar = tmpVar && _context.getModel() != null;
 
-            return IconResourceUtil.getIconResourceForNode(SNodeOperations.asNode(myParameterObject));
+            return IconResourceUtil.getIconResourceForConcept(myParameterObject);
           }
           @Override
           public void select(@NotNull SNode createdNode, @NotNull String pattern) {
