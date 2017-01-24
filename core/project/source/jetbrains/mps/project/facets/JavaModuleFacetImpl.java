@@ -144,8 +144,24 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
       } else {
         // Despite isPackaged(), there might be modules like stub and test that lack MD or DD, doesn't hurt to check
         ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
-        if (moduleDescriptor != null && moduleDescriptor.getDeploymentDescriptor() != null) {
-          result.addAll(moduleDescriptor.getDeploymentDescriptor().getClasspath());
+        if (moduleDescriptor != null) {
+          if (moduleDescriptor.getDeploymentDescriptor() != null) {
+            result.addAll(moduleDescriptor.getDeploymentDescriptor().getClasspath());
+          } else if (getModule().getDescriptorFile() != null) {
+            // HACK. Fallback for manually bundled modules (vcs.jar or mps-core.jar):
+            //   my.jar
+            //     compile output of module1
+            //   modules
+            //      module sources of module1
+            // There's no DD there, and assumption is that there are classes at the jar root.
+            // Not yet sure what's the right way to deal with them:
+            //   - specify DD (META-INF/module.xml) at build time looks most 'honest', however, with multiple modules inside same jar it's not an option,
+            //     unless we can make DD per module, not per jar (requires support in MM)
+            //   - Patch MD in MM when loaded from modules/ location (e.g. add DD with proper classpath there). (+) keep knowledge about deployment layout
+            //     inside MM.
+            //   - Hack here
+            classesGen = getModule().getDescriptorFile().getBundleHome();
+          }
         }
       }
     }
