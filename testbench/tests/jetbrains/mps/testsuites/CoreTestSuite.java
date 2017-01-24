@@ -24,10 +24,12 @@ import org.junit.runners.model.InitializationError;
 import org.junit.runners.model.RunnerBuilder;
 
 /**
- * These are the tests which DO NOT require the idea platform
+ * These are the tests which require the MPS core platform (NOT the IDEA platform)
  * <p>
  * NB: the test which prints errors to output (apache Logger#error) is considered failed.
  * Further the level will be lowered so that any warning will fail the test.
+ *
+ * @see PlatformTestSuite
  */
 @RunWith(CoreTestSuite.class)
 @Suite.SuiteClasses({

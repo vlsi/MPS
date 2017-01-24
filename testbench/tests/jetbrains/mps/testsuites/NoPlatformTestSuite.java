@@ -24,6 +24,11 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 /**
+ * These are the test suites which require no MPS platform.
+ *
+ * @see CoreTestSuite
+ * @see PlatformTestSuite
+ *
  * User: shatalin
  * Date: 23/01/2017
  */
