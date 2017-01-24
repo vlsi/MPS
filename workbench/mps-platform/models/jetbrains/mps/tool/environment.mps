@@ -522,6 +522,18 @@
             </node>
           </node>
         </node>
+        <node concept="3clFbF" id="2vy5TEsyQRJ" role="3cqZAp">
+          <node concept="2YIFZM" id="2vy5TEsyT4C" role="3clFbG">
+            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
+            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
+            <node concept="Xl_RD" id="2vy5TEsyT9Z" role="37wK5m">
+              <property role="Xl_RC" value="NO_FS_ROOTS_ACCESS_CHECK" />
+            </node>
+            <node concept="3clFbT" id="2vy5TEsyTfq" role="37wK5m">
+              <property role="3clFbU" value="true" />
+            </node>
+          </node>
+        </node>
         <node concept="3clFbH" id="3eUNqOk7Ge1" role="3cqZAp" />
         <node concept="3cpWs8" id="5A5jZrz2zs3" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZrz2zs4" role="3cpWs9">

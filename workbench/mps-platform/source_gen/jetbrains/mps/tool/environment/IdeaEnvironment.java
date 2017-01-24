@@ -79,6 +79,7 @@ public class IdeaEnvironment extends EnvironmentBase {
     // this code will work if on executing tests with "reuse caches" option 
     // TODO: should we modify FSChangesWatcher to always listen for FS notifications (even in tests)? 
     FSChangesWatcher.instance().initComponent(true);
+    System.setProperty("NO_FS_ROOTS_ACCESS_CHECK", "true");
 
     MPSCoreComponents coreComponents = getMPSCoreComponents();
     super.init(coreComponents.getLibraryInitializer());

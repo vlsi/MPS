@@ -116,7 +116,7 @@ public final class CopyModuleHelper {
   }
 
   /**
-   * We can exploit polymorphism by moving this code to the individual module [descriptor] classesh
+   * We can exploit polymorphism by moving this code to the individual module [descriptor] classes
    * however I could not think of a nice API in that case.
    * Should it be a #copy method which returns a Function-like constructor?
    * Due to the mix-up in the SModule hierarchy API (descriptors reflect the persistence not the actual module properties)
