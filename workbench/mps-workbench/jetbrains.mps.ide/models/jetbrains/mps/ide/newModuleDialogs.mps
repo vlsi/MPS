@@ -3679,7 +3679,7 @@
       <node concept="P$JXv" id="6CFNGGpiNCp" role="lGtFl">
         <node concept="TZ5HA" id="6CFNGGpiNCq" role="TZ5H$">
           <node concept="1dT_AC" id="6CFNGGpiNCr" role="1dT_Ay">
-            <property role="1dT_AB" value="We can exploit polymorphism by moving this code to the individual module [descriptor] classesh" />
+            <property role="1dT_AB" value="We can exploit polymorphism by moving this code to the individual module [descriptor] classes" />
           </node>
         </node>
         <node concept="TZ5HA" id="6CFNGGpiNCy" role="TZ5H$">
