@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
     return INSTANCE;
   }
 
+  private final SRepository myRepository;
   private final ModelAccess myModelAccess;
   private final List<LibraryContributor> myContributors = new CopyOnWriteArrayList<LibraryContributor>();
   private final Set<SLibrary> myLibraries = new LinkedHashSet<SLibrary>();
@@ -76,6 +77,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
   }
 
   public LibraryInitializer(@NotNull SRepository repository) {
+    myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
 
@@ -131,7 +133,7 @@ public final class LibraryInitializer implements CoreComponent, RepositoryReader
         for (LibraryContributor contributor : contributors) {
           boolean hidden = contributor.hiddenLanguages();
           for (LibDescriptor pathDescriptor : contributor.getPaths()) {
-            SLibrary lib = new SLibrary(pathDescriptor, hidden);
+            SLibrary lib = new SLibrary(myRepository, pathDescriptor, hidden);
             currentLibs.add(lib);
           }
         }

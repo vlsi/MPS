@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.library;
 
-import gnu.trove.THashSet;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.library.contributor.LibDescriptor;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -32,16 +30,13 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * SLibrary tracks a path {@link #myFile} with modules inside.
@@ -55,14 +50,19 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
   private static final Logger LOG = Logger.getLogger(SLibrary.class);
 
   @NotNull private final IFile myFile;
+  private final SRepository myRepository;
   private final ClassLoader myPluginClassLoader;
   private final boolean myHidden;
   private final AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<>();
+  private ModuleFileTracker myFileTracker;
 
-  public SLibrary(LibDescriptor pathDescriptor, boolean hidden) {
+  public SLibrary(@NotNull SRepository repoToUpdate, LibDescriptor pathDescriptor, boolean hidden) {
+    myRepository = repoToUpdate;
     myPluginClassLoader = pathDescriptor.getPluginClassLoader();
     myFile = pathDescriptor.getPath();
     myHidden = hidden;
+    // SLibrary listens to file changes as it needs to react to create events anyway. ModuleFileTracker is a storage + change/delete handler.
+    myFileTracker = new ModuleFileTracker(false);
   }
 
   @NotNull
@@ -100,29 +100,9 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   @Override
   public void update(ProgressMonitor monitor, @NotNull FileSystemEvent event) {
-    final Set<SModule> modules2remove = new THashSet<>();
-    final Set<AbstractModule> modules2reload = new THashSet<>();
-    Map<IFile, SModule> fileToModule = buildFileToModuleMap();
-
-    for (IFile file : event.getRemoved()) {
-      SModule m = fileToModule.get(file);
-      if (m != null) {
-        modules2remove.add(m);
-      }
-    }
-    for (IFile file : event.getChanged()) {
-      SModule m = fileToModule.get(file);
-      // if module file comes both removed and changed (is it reasonable to expect?), pretend it's gone, do not revive it.
-      if (m instanceof AbstractModule && !modules2remove.contains(m)) {
-        modules2reload.add(((AbstractModule) m));
-      }
-    }
     // FIXME update() comes with global model write lock. This code might have better idea about what to lock
     //       (although write per jar file is not the best alternative. SLibrary not always a directory, it's a single jar e.g. in Ant::generate).
-    // XXX why not unregister with the owner of the library, perhaps other owners listen to the change and unregister themselves, or have better idea what to
-    //     do when a module/file is removed
-    modules2remove.forEach(ModuleRepositoryFacade.getInstance()::unregisterModule);
-    modules2reload.forEach(SModuleOperations::reloadFromDisk);
+    myFileTracker.update(monitor, event);
     // XXX Note, removed modules do not update myHandles (as it used to be with AbstractModule listening to changes). Perhaps, shall clean
     //     respective ModuleHandles here, as well.
 
@@ -134,23 +114,16 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
     }
   }
 
-  // reverse map of existing modules to their origin descriptor files
-  private Map<IFile,SModule> buildFileToModuleMap() {
-    /// XXX perhaps, shall keep ModuleHandle-IFile-SModule data structure instead of manually building it this way each time
-    return ModuleRepositoryFacade.getInstance().getModules(this, null).stream().
-        filter(m -> m instanceof AbstractModule && ((AbstractModule) m).getDescriptorFile() != null).
-        collect(Collectors.toMap(m -> ((AbstractModule) m).getDescriptorFile(), Function.identity()));
-
-  }
-
   private void collectAndRegisterModules() {
     final ModulesMiner modulesMiner = new ModulesMiner().collectModules(myFile);
     List<ModuleHandle> moduleHandles = new ArrayList<>(modulesMiner.getCollectedModules());
+    ModuleRepositoryFacade mrf = new ModuleRepositoryFacade(myRepository);
     myHandles.set(moduleHandles);
     List<SModule> loaded = new ArrayList<>();
     for (ModuleHandle moduleHandle : moduleHandles) {
-      SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
+      SModule module = mrf.instantiateModule(moduleHandle, this);
       loaded.add(module);
+      myFileTracker.track(moduleHandle.getFile(), module);
     }
     for (SModule module : loaded) {
       // FIXME if there are generators among loaded, Generator.onModuleLoad() is invoked twice.

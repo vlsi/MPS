@@ -131,6 +131,8 @@ final class ModuleLoader {
         // just need to sort out ModuleLoader and Project relationship.
         myProject.addModule(modulePath, module);
         ++loadedModules;
+        // XXX Here, in ProjectModuleLoadingListener/ModuleFileChangeListener, we track language files only, and rely on regular
+        //     Language.reloadAfterDescriptorChange code to reflect changes in Generator modules
         fireModuleLoaded(modulePath, module);
       } else {
         error(String.format("Can't load module from %s. Unknown file type.", handle.getFile().getPath()));

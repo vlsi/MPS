@@ -24,6 +24,7 @@ import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.facets.TestsFacet;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -226,6 +227,11 @@ public class SModuleOperations {
     module.getRepository().getModelAccess().checkWriteAccess();
 
     try {
+      if (module instanceof Generator) {
+        // loadDescriptor == null for Generator
+        // FIXME shall support reload for generator modules (not necessarily with modile.loadDescriptor() thought)
+        return;
+      }
       ModuleDescriptor descriptor = module.loadDescriptor();
       module.setModuleDescriptor(descriptor);
     } catch (ModuleReadException e) {
