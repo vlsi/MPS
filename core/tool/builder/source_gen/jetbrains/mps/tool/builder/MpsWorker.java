@@ -201,6 +201,7 @@ public abstract class MpsWorker {
     if (moduleByFile != null) {
       tmpmodules = Collections.singletonList(moduleByFile);
     } else {
+      // XXX moduleFile.getPath vs moduleFile.getAbsolutePath above - why is it different? 
       IFile file = FileSystem.getInstance().getFileByPath(moduleFile.getPath());
       // XXX new owner for each module?! 
       BaseMPSModuleOwner owner = new BaseMPSModuleOwner();
@@ -213,6 +214,7 @@ public abstract class MpsWorker {
     }
     for (SModule module : tmpmodules) {
       info("Loaded module " + module);
+      // XXX it's suspicious to ignore read-only module and DevKit when we have no idea what's the reason to load the module in the first place. 
       if (module.isReadOnly()) {
         continue;
       }
@@ -220,6 +222,8 @@ public abstract class MpsWorker {
         continue;
       }
       modules.add(module);
+      // FIXME Although MM.getCollectedModules gives us Generator modules directly, keep this code to handle ModuleFileTracker case, it's a Set anyway. 
+      //       Have to decide whether that branch makes sense at all. ModuleFileTracker likely to change anyway, if we allow more modules per 1 file. 
       if (module instanceof Language) {
         Language language = (Language) module;
         for (Generator gen : language.getGenerators()) {

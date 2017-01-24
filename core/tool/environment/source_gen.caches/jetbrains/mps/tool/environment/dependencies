@@ -169,6 +169,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.library.ModulesMiner" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.smodel.Generator" />
     <classNode dependClassName="jetbrains.mps.smodel.ModuleRepositoryFacade" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />

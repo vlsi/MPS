@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.log4j.Level;
@@ -51,8 +52,16 @@ public class ImportModuleHelper {
         SNode devkit = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x4780308f5d2060eL, "jetbrains.mps.build.mps.structure.BuildMps_DevKit"));
         initModule(devkit);
         created = devkit;
+      } else if (moduleDescriptor instanceof GeneratorDescriptor) {
+        // TODO once we allow standalone generators in Build language, have to put reasonable code here 
+        if (LOG.isDebugEnabled()) {
+          LOG.debug("Standalone generators are not yet implemented");
+        }
+        created = null;
       }
-      ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(created);
+      if ((created != null)) {
+        ListSequence.fromList(SLinkOperations.getChildren(project, MetaAdapterFactory.getContainmentLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4df58c6f18f84a13L, 0x668c6cfbafacf6f2L, "parts"))).addElement(created);
+      }
     } catch (PathConverter.PathConvertException ex) {
       // ignore 
       if (LOG.isEnabledFor(Level.ERROR)) {

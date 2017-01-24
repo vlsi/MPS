@@ -14,7 +14,6 @@
     <import index="je6q" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.library.contributor(MPS.Core/)" />
     <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="32g5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.library(MPS.Core/)" />
-    <import index="k9t0" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.internal.collections.runtime(MPS.Core/)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
     <import index="fyhk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps(MPS.Core/)" />
     <import index="zf81" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.net(JDK/)" />
@@ -29,7 +28,6 @@
     <import index="d6hn" ref="r:f9ad0653-f934-4037-8035-de5d2e74cf22(jetbrains.mps.core.tool.environment.classloading)" />
     <import index="v9gs" ref="r:a139668a-5a0e-46e2-a802-102190e497e5(jetbrains.mps.core.tool.environment.util)" />
     <import index="4o98" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.core.platform(MPS.Core/)" />
-    <import index="hhlx" ref="r:2758abb3-4e9a-4fac-8e72-2fadd8b5c3d7(jetbrains.mps.tool.builder.make)" />
     <import index="amo1" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs.impl(MPS.Core/)" />
     <import index="wyuk" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.components(MPS.Core/)" implicit="true" />
   </imports>
@@ -237,6 +235,7 @@
       <concept id="1107796713796" name="jetbrains.mps.baseLanguage.structure.Interface" flags="ig" index="3HP615">
         <child id="1107797138135" name="extendedInterface" index="3HQHJm" />
       </concept>
+      <concept id="1082113931046" name="jetbrains.mps.baseLanguage.structure.ContinueStatement" flags="nn" index="3N13vt" />
       <concept id="1221737317277" name="jetbrains.mps.baseLanguage.structure.StaticInitializer" flags="lg" index="1Pe0a1">
         <child id="1221737317278" name="statementList" index="1Pe0a2" />
       </concept>
@@ -6194,6 +6193,29 @@
                                 </node>
                                 <node concept="3uibUv" id="5A5jZrz7bXL" role="1tU5fm">
                                   <ref role="3uigEE" to="lui2:~SModule" resolve="SModule" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="3clFbJ" id="wIkNewrU1C" role="3cqZAp">
+                              <node concept="3clFbS" id="wIkNewrU1E" role="3clFbx">
+                                <node concept="3SKdUt" id="wIkNewrVzQ" role="3cqZAp">
+                                  <node concept="3SKdUq" id="wIkNewrVzR" role="3SKWNk">
+                                    <property role="3SKdUp" value="With MM delivering GeneratorDescriptors and MRF capable of instantiating them, we can face Generator here" />
+                                  </node>
+                                </node>
+                                <node concept="3SKdUt" id="wIkNewrVwj" role="3cqZAp">
+                                  <node concept="3SKdUq" id="wIkNewrVwl" role="3SKWNk">
+                                    <property role="3SKdUp" value="FIXME at the moment, Project is not ready to receive Generator as a module to add need to refactor it first. " />
+                                  </node>
+                                </node>
+                                <node concept="3N13vt" id="wIkNewrVCJ" role="3cqZAp" />
+                              </node>
+                              <node concept="2ZW3vV" id="wIkNewrVrG" role="3clFbw">
+                                <node concept="3uibUv" id="wIkNewrVuV" role="2ZW6by">
+                                  <ref role="3uigEE" to="w1kc:~Generator" resolve="Generator" />
+                                </node>
+                                <node concept="37vLTw" id="wIkNewrU6T" role="2ZW6bz">
+                                  <ref role="3cqZAo" node="5A5jZrz7bXJ" resolve="module" />
                                 </node>
                               </node>
                             </node>

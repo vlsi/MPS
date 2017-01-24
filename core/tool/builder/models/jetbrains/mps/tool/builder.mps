@@ -1710,6 +1710,11 @@
           </node>
           <node concept="9aQIb" id="KL8Aqlj5uH" role="9aQIa">
             <node concept="3clFbS" id="KL8Aqlj5uI" role="9aQI4">
+              <node concept="3SKdUt" id="wIkNewrvI6" role="3cqZAp">
+                <node concept="3SKdUq" id="wIkNewrvI8" role="3SKWNk">
+                  <property role="3SKdUp" value="XXX moduleFile.getPath vs moduleFile.getAbsolutePath above - why is it different?" />
+                </node>
+              </node>
               <node concept="3cpWs8" id="KL8Aqlj5uR" role="3cqZAp">
                 <node concept="3cpWsn" id="KL8Aqlj5uS" role="3cpWs9">
                   <property role="TrG5h" value="file" />
@@ -1869,6 +1874,11 @@
                 </node>
               </node>
             </node>
+            <node concept="3SKdUt" id="wIkNewrv3n" role="3cqZAp">
+              <node concept="3SKdUq" id="wIkNewrv3p" role="3SKWNk">
+                <property role="3SKdUp" value="XXX it's suspicious to ignore read-only module and DevKit when we have no idea what's the reason to load the module in the first place." />
+              </node>
+            </node>
             <node concept="3clFbJ" id="KL8Aqlj5vX" role="3cqZAp">
               <node concept="2OqwBi" id="KL8Aqlj5vY" role="3clFbw">
                 <node concept="37vLTw" id="3GM_nagTsx$" role="2Oq$k0">
@@ -1906,6 +1916,16 @@
                 <node concept="37vLTw" id="7P_U$gDQiXY" role="2Oq$k0">
                   <ref role="3cqZAo" node="KL8Aqlj5u1" resolve="modules" />
                 </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="wIkNewrwlp" role="3cqZAp">
+              <node concept="3SKdUq" id="wIkNewrwlr" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME Although MM.getCollectedModules gives us Generator modules directly, keep this code to handle ModuleFileTracker case, it's a Set anyway." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="wIkNewrx2K" role="3cqZAp">
+              <node concept="3SKdUq" id="wIkNewrx2M" role="3SKWNk">
+                <property role="3SKdUp" value="      Have to decide whether that branch makes sense at all. ModuleFileTracker likely to change anyway, if we allow more modules per 1 file." />
               </node>
             </node>
             <node concept="3clFbJ" id="KL8Aqlj5w3" role="3cqZAp">

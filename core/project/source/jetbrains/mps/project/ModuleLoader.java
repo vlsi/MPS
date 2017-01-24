@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.project.ModulePath;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Pair;
@@ -117,11 +118,17 @@ final class ModuleLoader {
     int loadedModules = 0;
     ModuleRepositoryFacade repoFacade = new ModuleRepositoryFacade(myProject);
     for (ModuleHandle handle : modulesMiner.getCollectedModules()) {
+      if (handle.getDescriptor() instanceof GeneratorDescriptor) {
+        // FIXME getCollectedModules() yields extended set of ModuleHandle compared to collection of MM.loadModuleHandle return values
+        //       that are keys in handleToPath. Namely, there are distinct mined handles for generator modules, which Project implementation
+        //       at the moment doesn't expect to see. Perhaps, handleToPath shall map descriptorFile -> ModulePath instead?
+        continue;
+      }
       ModulePath modulePath = handleToPath.get(handle);
       if (handle.getDescriptor() != null) {
         SModule module = repoFacade.instantiateModule(handle, myProject);
         // it's quite tempting, indeed, to move project update (i.e. addModule) into listener ProjectModuleLoadingListener.moduleLoaded
-        // just need to sort out MduleLoader and Project relationship.
+        // just need to sort out ModuleLoader and Project relationship.
         myProject.addModule(modulePath, module);
         ++loadedModules;
         fireModuleLoaded(modulePath, module);

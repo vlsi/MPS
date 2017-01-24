@@ -582,6 +582,7 @@
         <child id="1177027386292" name="conceptArgument" index="cj9EA" />
       </concept>
       <concept id="1171999116870" name="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" flags="nn" index="3w_OXm" />
+      <concept id="1172008320231" name="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" flags="nn" index="3x8VRR" />
       <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
         <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
@@ -1493,22 +1494,63 @@
                   </node>
                 </node>
               </node>
+              <node concept="3eNFk2" id="wIkNewswX4" role="3eNLev">
+                <node concept="2ZW3vV" id="wIkNewsxRd" role="3eO9$A">
+                  <node concept="3uibUv" id="wIkNewsyg4" role="2ZW6by">
+                    <ref role="3uigEE" to="w0gx:~GeneratorDescriptor" resolve="GeneratorDescriptor" />
+                  </node>
+                  <node concept="37vLTw" id="wIkNewsxg6" role="2ZW6bz">
+                    <ref role="3cqZAo" node="7o2AF0ojgNO" resolve="moduleDescriptor" />
+                  </node>
+                </node>
+                <node concept="3clFbS" id="wIkNewswX6" role="3eOfB_">
+                  <node concept="3SKdUt" id="wIkNewswAz" role="3cqZAp">
+                    <node concept="3SKdUq" id="wIkNewswA_" role="3SKWNk">
+                      <property role="3SKdUp" value="TODO once we allow standalone generators in Build language, have to put reasonable code here" />
+                    </node>
+                  </node>
+                  <node concept="34ab3g" id="wIkNewsz4Z" role="3cqZAp">
+                    <property role="35gtTG" value="debug" />
+                    <node concept="Xl_RD" id="wIkNewsz51" role="34bqiv">
+                      <property role="Xl_RC" value="Standalone generators are not yet implemented" />
+                    </node>
+                  </node>
+                  <node concept="3clFbF" id="wIkNews$3Y" role="3cqZAp">
+                    <node concept="37vLTI" id="wIkNews$kk" role="3clFbG">
+                      <node concept="10Nm6u" id="wIkNews$ur" role="37vLTx" />
+                      <node concept="37vLTw" id="wIkNews$3W" role="37vLTJ">
+                        <ref role="3cqZAo" node="2hkCNA7Z6qb" resolve="created" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
-            <node concept="3clFbF" id="2hkCNA7Z6qF" role="3cqZAp">
-              <node concept="2OqwBi" id="2hkCNA7Z6rs" role="3clFbG">
-                <node concept="2OqwBi" id="2hkCNA7Z6r1" role="2Oq$k0">
-                  <node concept="37vLTw" id="2BHiRxeumtR" role="2Oq$k0">
-                    <ref role="3cqZAo" node="7o2AF0ojgNy" resolve="project" />
-                  </node>
-                  <node concept="3Tsc0h" id="2hkCNA7Z6r6" role="2OqNvi">
-                    <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
+            <node concept="3clFbJ" id="wIkNewsu9D" role="3cqZAp">
+              <node concept="3clFbS" id="wIkNewsu9F" role="3clFbx">
+                <node concept="3clFbF" id="2hkCNA7Z6qF" role="3cqZAp">
+                  <node concept="2OqwBi" id="2hkCNA7Z6rs" role="3clFbG">
+                    <node concept="2OqwBi" id="2hkCNA7Z6r1" role="2Oq$k0">
+                      <node concept="37vLTw" id="2BHiRxeumtR" role="2Oq$k0">
+                        <ref role="3cqZAo" node="7o2AF0ojgNy" resolve="project" />
+                      </node>
+                      <node concept="3Tsc0h" id="2hkCNA7Z6r6" role="2OqNvi">
+                        <ref role="3TtcxE" to="3ior:6qcrfIJFfrM" resolve="parts" />
+                      </node>
+                    </node>
+                    <node concept="TSZUe" id="2hkCNA7Z6ry" role="2OqNvi">
+                      <node concept="37vLTw" id="2BHiRxeuddX" role="25WWJ7">
+                        <ref role="3cqZAo" node="2hkCNA7Z6qb" resolve="created" />
+                      </node>
+                    </node>
                   </node>
                 </node>
-                <node concept="TSZUe" id="2hkCNA7Z6ry" role="2OqNvi">
-                  <node concept="37vLTw" id="2BHiRxeuddX" role="25WWJ7">
-                    <ref role="3cqZAo" node="2hkCNA7Z6qb" resolve="created" />
-                  </node>
+              </node>
+              <node concept="2OqwBi" id="wIkNewsuPv" role="3clFbw">
+                <node concept="37vLTw" id="wIkNewsuzF" role="2Oq$k0">
+                  <ref role="3cqZAo" node="2hkCNA7Z6qb" resolve="created" />
                 </node>
+                <node concept="3x8VRR" id="wIkNewsvmi" role="2OqNvi" />
               </node>
             </node>
           </node>
