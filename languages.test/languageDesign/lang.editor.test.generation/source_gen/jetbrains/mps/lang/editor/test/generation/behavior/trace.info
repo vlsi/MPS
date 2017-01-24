@@ -22,6 +22,9 @@
     <file name="RefNodeList_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.RefNodeList_BehaviorDescriptor" />
     </file>
+    <file name="TestTargetConcept_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.TestTargetConcept_BehaviorDescriptor" />
+    </file>
     <file name="TransactionalProperty_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.TransactionalProperty_BehaviorDescriptor" />
     </file>
