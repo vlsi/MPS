@@ -5,10 +5,10 @@
     <use id="f61473f9-130f-42f6-b98d-6c438812c2f6" name="jetbrains.mps.baseLanguage.unitTest" version="0" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" version="5" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" version="8" />
-    <use id="63650c59-16c8-498a-99c8-005c7ee9515d" name="jetbrains.mps.lang.access" version="0" />
     <use id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" version="0" />
     <use id="9f846aef-4e4a-4a84-828e-7e83fe2697f2" name="jetbrains.mps.build.mps.testManifest" version="0" />
     <use id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging" version="0" />
+    <use id="8585453e-6bfb-4d80-98de-b16074f1d86c" name="jetbrains.mps.lang.test" version="1" />
   </languages>
   <imports>
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" />
@@ -17,13 +17,11 @@
     <import index="3ju5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.vfs(MPS.Core/)" />
     <import index="6if8" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.validation(MPS.Core/)" />
     <import index="bd8o" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.openapi.application(MPS.IDEA/)" />
-    <import index="w1kc" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel(MPS.Core/)" />
     <import index="cky9" ref="r:1d4e7c57-c144-4228-9dec-8180ddf9f0ee(jetbrains.mps.tool.environment)" />
     <import index="lui2" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.module(MPS.OpenAPI/)" />
     <import index="rjhg" ref="920eaa0e-ecca-46bc-bee7-4e5c59213dd6/java:org.junit(Testbench/)" />
     <import index="dsk9" ref="r:8bdc9cf5-28de-48ab-8b85-36b2d96bc635(jetbrains.mps.ide.newModuleDialogs)" />
     <import index="mhfm" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/java:org.jetbrains.annotations(Annotations/)" />
-    <import index="uhcb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.xml.crypto.dsig(JDK/)" />
     <import index="18ew" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util(MPS.Core/)" />
     <import index="z1c4" ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61/java:jetbrains.mps.project(MPS.Platform/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" implicit="true" />
@@ -54,6 +52,9 @@
         <child id="1197027771414" name="operand" index="2Oq$k0" />
         <child id="1197027833540" name="operation" index="2OqNvi" />
       </concept>
+      <concept id="1197029447546" name="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" flags="nn" index="2OwXpG">
+        <reference id="1197029500499" name="fieldDeclaration" index="2Oxat5" />
+      </concept>
       <concept id="1164879751025" name="jetbrains.mps.baseLanguage.structure.TryCatchStatement" flags="nn" index="SfApY">
         <child id="1164879758292" name="body" index="SfCbr" />
         <child id="1164903496223" name="catchClause" index="TEbGg" />
@@ -72,6 +73,7 @@
         <property id="6468716278899126575" name="isVolatile" index="2dlcS1" />
         <property id="6468716278899125786" name="isTransient" index="2dld4O" />
       </concept>
+      <concept id="1070475354124" name="jetbrains.mps.baseLanguage.structure.ThisExpression" flags="nn" index="Xjq3P" />
       <concept id="1070475926800" name="jetbrains.mps.baseLanguage.structure.StringLiteral" flags="nn" index="Xl_RD">
         <property id="1070475926801" name="value" index="Xl_RC" />
       </concept>
@@ -221,6 +223,17 @@
   </registry>
   <node concept="3s_ewN" id="7l0SErcZhR9">
     <property role="3s_ewP" value="CloneModule" />
+    <node concept="Wx3nA" id="7l0SErcZi0H" role="jymVt">
+      <property role="2dlcS1" value="false" />
+      <property role="2dld4O" value="false" />
+      <property role="TrG5h" value="PROJECT_PATH" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="7l0SErcZi0B" role="1B3o_S" />
+      <node concept="17QB3L" id="7l0SErcZi0F" role="1tU5fm" />
+      <node concept="Xl_RD" id="7l0SErcZi2l" role="33vP2m">
+        <property role="Xl_RC" value="testbench/modules/testCloneModule/" />
+      </node>
+    </node>
     <node concept="3Tm1VV" id="7l0SErcZhRa" role="1B3o_S" />
     <node concept="3s_gsd" id="7l0SErcZhRb" role="3s_ewO">
       <node concept="3s$Bmu" id="7l0SErcZopE" role="3s_gse">
@@ -231,11 +244,8 @@
           <node concept="3clFbF" id="1rpDfGKrKQq" role="3cqZAp">
             <node concept="1rXfSq" id="1rpDfGKrKQp" role="3clFbG">
               <ref role="37wK5l" node="1rpDfGKrKQm" resolve="testModule" />
-              <node concept="37shsh" id="1rpDfGKrKQx" role="37wK5m">
-                <node concept="20RdaH" id="1rpDfGKrKQy" role="37shsm">
-                  <property role="20Rdg5" value="04399201-cb79-4edc-8d1a-e2b946892642" />
-                  <property role="20Rdg7" value="XML" />
-                </node>
+              <node concept="37vLTw" id="2vy5TEsz1q6" role="37wK5m">
+                <ref role="3cqZAo" node="2154_0wUZH7" resolve="XML" />
               </node>
               <node concept="10M0yZ" id="1rpDfGKrKPQ" role="37wK5m">
                 <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
@@ -253,11 +263,8 @@
           <node concept="3clFbF" id="1rpDfGKrLy3" role="3cqZAp">
             <node concept="1rXfSq" id="1rpDfGKrLy4" role="3clFbG">
               <ref role="37wK5l" node="1rpDfGKrKQm" resolve="testModule" />
-              <node concept="37shsh" id="1rpDfGKrLy5" role="37wK5m">
-                <node concept="20RdaH" id="1rpDfGKrLWz" role="37shsm">
-                  <property role="20Rdg5" value="1b06eede-ff4f-40f3-92e8-3cf27f8127bd" />
-                  <property role="20Rdg7" value="PER_ROOT" />
-                </node>
+              <node concept="37vLTw" id="2vy5TEsz2y6" role="37wK5m">
+                <ref role="3cqZAo" node="2154_0wV0ao" resolve="PER_ROOT" />
               </node>
               <node concept="10M0yZ" id="1rpDfGKrOv7" role="37wK5m">
                 <ref role="1PxDUh" to="z1c3:~MPSExtentions" resolve="MPSExtentions" />
@@ -275,10 +282,10 @@
           <node concept="3clFbF" id="1rpDfGKrLyb" role="3cqZAp">
             <node concept="1rXfSq" id="1rpDfGKrLyc" role="3clFbG">
               <ref role="37wK5l" node="1rpDfGKrKQm" resolve="testModule" />
-              <node concept="37shsh" id="1rpDfGKrLyd" role="37wK5m">
-                <node concept="20RdaH" id="1rpDfGKrLSu" role="37shsm">
-                  <property role="20Rdg5" value="6c080adc-7c51-4b56-a8e2-17397071f3cc" />
-                  <property role="20Rdg7" value="BINARY" />
+              <node concept="2OqwBi" id="2154_0wV0F_" role="37wK5m">
+                <node concept="Xjq3P" id="2154_0wV0FA" role="2Oq$k0" />
+                <node concept="2OwXpG" id="2154_0wV0FB" role="2OqNvi">
+                  <ref role="2Oxat5" node="2154_0wV0Ft" resolve="BINARY" />
                 </node>
               </node>
               <node concept="10M0yZ" id="1rpDfGKrOvq" role="37wK5m">
@@ -297,10 +304,10 @@
           <node concept="3clFbF" id="1rpDfGKs7Sq" role="3cqZAp">
             <node concept="1rXfSq" id="1rpDfGKs7Sp" role="3clFbG">
               <ref role="37wK5l" node="1rpDfGKrKQm" resolve="testModule" />
-              <node concept="37shsh" id="1rpDfGKs7Ug" role="37wK5m">
-                <node concept="20RdaH" id="1rpDfGKs86i" role="37shsm">
-                  <property role="20Rdg5" value="d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7" />
-                  <property role="20Rdg7" value="TestLanguage" />
+              <node concept="2OqwBi" id="2154_0wV19u" role="37wK5m">
+                <node concept="Xjq3P" id="2154_0wV19v" role="2Oq$k0" />
+                <node concept="2OwXpG" id="2154_0wV19w" role="2OqNvi">
+                  <ref role="2Oxat5" node="2154_0wV19m" resolve="TEST_LANG" />
                 </node>
               </node>
               <node concept="10M0yZ" id="1rpDfGKs89J" role="37wK5m">
@@ -310,17 +317,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-    <node concept="Wx3nA" id="7l0SErcZi0H" role="jymVt">
-      <property role="2dlcS1" value="false" />
-      <property role="2dld4O" value="false" />
-      <property role="TrG5h" value="PROJECT_PATH" />
-      <property role="3TUv4t" value="true" />
-      <node concept="3Tm6S6" id="7l0SErcZi0B" role="1B3o_S" />
-      <node concept="17QB3L" id="7l0SErcZi0F" role="1tU5fm" />
-      <node concept="Xl_RD" id="7l0SErcZi2l" role="33vP2m">
-        <property role="Xl_RC" value="testbench/modules/testCloneModule/" />
       </node>
     </node>
     <node concept="Wx3nA" id="1rpDfGKrJ9j" role="jymVt">
@@ -350,6 +346,62 @@
       <node concept="3Tm6S6" id="7l0SErcZkaz" role="1B3o_S" />
       <node concept="3uibUv" id="2Mi1qAhXUU" role="1tU5fm">
         <ref role="3uigEE" to="z1c4:~MPSProject" resolve="MPSProject" />
+      </node>
+    </node>
+    <node concept="312cEg" id="2154_0wUZH7" role="jymVt">
+      <property role="TrG5h" value="XML" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2154_0wUZH3" role="1B3o_S" />
+      <node concept="3uibUv" id="2154_0wUZH4" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="37shsh" id="2154_0wUZH5" role="33vP2m">
+        <node concept="20RdaH" id="2154_0wUZH6" role="37shsm">
+          <property role="20Rdg5" value="04399201-cb79-4edc-8d1a-e2b946892642" />
+          <property role="20Rdg7" value="XML" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="2154_0wV0ao" role="jymVt">
+      <property role="TrG5h" value="PER_ROOT" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2154_0wV0ak" role="1B3o_S" />
+      <node concept="3uibUv" id="2154_0wV0al" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="37shsh" id="2154_0wV0am" role="33vP2m">
+        <node concept="20RdaH" id="2154_0wV0an" role="37shsm">
+          <property role="20Rdg5" value="1b06eede-ff4f-40f3-92e8-3cf27f8127bd" />
+          <property role="20Rdg7" value="PER_ROOT" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="2154_0wV0Ft" role="jymVt">
+      <property role="TrG5h" value="BINARY" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2154_0wV0Fp" role="1B3o_S" />
+      <node concept="3uibUv" id="2154_0wV0Fq" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="37shsh" id="2154_0wV0Fr" role="33vP2m">
+        <node concept="20RdaH" id="2154_0wV0Fs" role="37shsm">
+          <property role="20Rdg5" value="6c080adc-7c51-4b56-a8e2-17397071f3cc" />
+          <property role="20Rdg7" value="BINARY" />
+        </node>
+      </node>
+    </node>
+    <node concept="312cEg" id="2154_0wV19m" role="jymVt">
+      <property role="TrG5h" value="TEST_LANG" />
+      <property role="3TUv4t" value="true" />
+      <node concept="3Tm6S6" id="2154_0wV19i" role="1B3o_S" />
+      <node concept="3uibUv" id="2154_0wV19j" role="1tU5fm">
+        <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
+      </node>
+      <node concept="37shsh" id="2154_0wV19k" role="33vP2m">
+        <node concept="20RdaH" id="2154_0wV19l" role="37shsm">
+          <property role="20Rdg5" value="d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7" />
+          <property role="20Rdg7" value="TestLanguage" />
+        </node>
       </node>
     </node>
     <node concept="2tJIrI" id="1rpDfGKrKQr" role="jymVt" />

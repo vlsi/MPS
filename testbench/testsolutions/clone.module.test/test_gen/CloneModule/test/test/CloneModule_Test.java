@@ -5,6 +5,7 @@ package CloneModule.test.test;
 import junit.framework.TestCase;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.tool.environment.Environment;
@@ -23,7 +24,6 @@ import jetbrains.mps.util.Reference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.newModuleDialogs.CopyModuleHelper;
 
 public class CloneModule_Test extends TestCase {
@@ -31,17 +31,21 @@ public class CloneModule_Test extends TestCase {
   private static final String SUFFIX = "_testclone";
   private IFile clonedModulesDirectory;
   private MPSProject project;
+  private final SModuleReference XML = PersistenceFacade.getInstance().createModuleReference("04399201-cb79-4edc-8d1a-e2b946892642(XML)");
+  private final SModuleReference PER_ROOT = PersistenceFacade.getInstance().createModuleReference("1b06eede-ff4f-40f3-92e8-3cf27f8127bd(PER_ROOT)");
+  private final SModuleReference BINARY = PersistenceFacade.getInstance().createModuleReference("6c080adc-7c51-4b56-a8e2-17397071f3cc(BINARY)");
+  private final SModuleReference TEST_LANG = PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)");
   public void test_cloneXMLSolution() throws Exception {
-    testModule(PersistenceFacade.getInstance().createModuleReference("04399201-cb79-4edc-8d1a-e2b946892642(XML)"), MPSExtentions.DOT_SOLUTION);
+    testModule(XML, MPSExtentions.DOT_SOLUTION);
   }
   public void test_clonePerRootSolution() throws Exception {
-    testModule(PersistenceFacade.getInstance().createModuleReference("1b06eede-ff4f-40f3-92e8-3cf27f8127bd(PER_ROOT)"), MPSExtentions.DOT_SOLUTION);
+    testModule(PER_ROOT, MPSExtentions.DOT_SOLUTION);
   }
   public void test_cloneBinarySolution() throws Exception {
-    testModule(PersistenceFacade.getInstance().createModuleReference("6c080adc-7c51-4b56-a8e2-17397071f3cc(BINARY)"), MPSExtentions.DOT_SOLUTION);
+    testModule(this.BINARY, MPSExtentions.DOT_SOLUTION);
   }
   public void test_cloneLanguage() throws Exception {
-    testModule(PersistenceFacade.getInstance().createModuleReference("d1ea9b08-060f-4f7d-83b7-0f97f71cbbf7(TestLanguage)"), MPSExtentions.DOT_LANGUAGE);
+    testModule(this.TEST_LANG, MPSExtentions.DOT_LANGUAGE);
   }
   public void setUp() {
     Environment env = IdeaEnvironment.getOrCreate(EnvironmentConfig.defaultConfig());
@@ -99,7 +103,7 @@ public class CloneModule_Test extends TestCase {
   private void testModule(@NotNull final SModuleReference moduleRef, final String moduleFileNameExtension) {
     executeUnderLock(new Runnable() {
       public void run() {
-        AbstractModule originalModule = as_i3fixg_a0a0a0a0a0a0q(moduleRef.resolve(project.getRepository()), AbstractModule.class);
+        AbstractModule originalModule = as_i3fixg_a0a0a0a0a0a0u(moduleRef.resolve(project.getRepository()), AbstractModule.class);
 
         String clonedModuleName = originalModule.getModuleName() + SUFFIX;
 
@@ -114,7 +118,7 @@ public class CloneModule_Test extends TestCase {
       }
     });
   }
-  private static <T> T as_i3fixg_a0a0a0a0a0a0q(Object o, Class<T> type) {
+  private static <T> T as_i3fixg_a0a0a0a0a0a0u(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
