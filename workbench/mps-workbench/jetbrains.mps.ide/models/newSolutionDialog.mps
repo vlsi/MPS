@@ -244,16 +244,9 @@
       </concept>
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
-      <concept id="427659576753752243" name="jetbrains.mps.lang.smodel.structure.ModulePointer" flags="ng" index="20RdaH">
-        <property id="427659576753753627" name="moduleId" index="20Rdg5" />
-        <property id="427659576753753625" name="moduleName" index="20Rdg7" />
-      </concept>
       <concept id="1143226024141" name="jetbrains.mps.lang.smodel.structure.SModelType" flags="in" index="H_c77" />
       <concept id="1143235216708" name="jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation" flags="nn" index="I8ghe">
         <reference id="1143235391024" name="concept" index="I8UWU" />
-      </concept>
-      <concept id="1678062499342629858" name="jetbrains.mps.lang.smodel.structure.ModuleRefExpression" flags="ng" index="37shsh">
-        <child id="1678062499342629861" name="moduleId" index="37shsm" />
       </concept>
       <concept id="1206482823744" name="jetbrains.mps.lang.smodel.structure.Model_AddRootOperation" flags="nn" index="3BYIHo">
         <child id="1206482823746" name="nodeArgument" index="3BYIHq" />
@@ -849,9 +842,6 @@
               </node>
               <node concept="37vLTw" id="7vEL9Rt8F$g" role="37wK5m">
                 <ref role="3cqZAo" node="7vEL9Rt8DVB" resolve="descriptorFile" />
-              </node>
-              <node concept="3clFbT" id="7vEL9Rt8FNB" role="37wK5m">
-                <property role="3clFbU" value="true" />
               </node>
               <node concept="3clFbT" id="7vEL9Rt8ELD" role="37wK5m">
                 <property role="3clFbU" value="true" />
@@ -1452,10 +1442,6 @@
           <ref role="3uigEE" to="3ju5:~IFile" resolve="IFile" />
         </node>
       </node>
-      <node concept="37vLTG" id="7BBl3KIwkAf" role="3clF46">
-        <property role="TrG5h" value="importLangDevDevkit" />
-        <node concept="10P_77" id="7BBl3KIwkCg" role="1tU5fm" />
-      </node>
       <node concept="37vLTG" id="7BBl3KIwkDm" role="3clF46">
         <property role="TrG5h" value="createMainAspectModels" />
         <node concept="10P_77" id="7BBl3KIwkFh" role="1tU5fm" />
@@ -1518,46 +1504,6 @@
           </node>
         </node>
         <node concept="3clFbH" id="7BBl3KI$UWE" role="3cqZAp" />
-        <node concept="3clFbJ" id="7BBl3KIwKqp" role="3cqZAp">
-          <node concept="37vLTw" id="7BBl3KIwKw9" role="3clFbw">
-            <ref role="3cqZAo" node="7BBl3KIwkAf" resolve="importLangDevDevkit" />
-          </node>
-          <node concept="3clFbS" id="7BBl3KIwKqr" role="3clFbx">
-            <node concept="3cpWs8" id="3WcIkZauasI" role="3cqZAp">
-              <node concept="3cpWsn" id="3WcIkZauasJ" role="3cpWs9">
-                <property role="TrG5h" value="devkitRef" />
-                <node concept="37shsh" id="7ESDA_iqTD9" role="33vP2m">
-                  <node concept="20RdaH" id="7ESDA_iqTDa" role="37shsm">
-                    <property role="20Rdg5" value="2677cb18-f558-4e33-bc38-a5139cee06dc" />
-                    <property role="20Rdg7" value="jetbrains.mps.devkit.language-design" />
-                  </node>
-                </node>
-                <node concept="3uibUv" id="3WcIkZauasK" role="1tU5fm">
-                  <ref role="3uigEE" to="lui2:~SModuleReference" resolve="SModuleReference" />
-                </node>
-              </node>
-            </node>
-            <node concept="3clFbF" id="3WcIkZauasM" role="3cqZAp">
-              <node concept="2OqwBi" id="3WcIkZauasN" role="3clFbG">
-                <node concept="2OqwBi" id="3WcIkZauasO" role="2Oq$k0">
-                  <node concept="37vLTw" id="7BBl3KIwKNa" role="2Oq$k0">
-                    <ref role="3cqZAo" node="1Yd98ZZnqH$" resolve="descriptor" />
-                  </node>
-                  <node concept="liA8E" id="3WcIkZauasQ" role="2OqNvi">
-                    <ref role="37wK5l" to="w0gx:~ModuleDescriptor.getUsedDevkits():java.util.Collection" resolve="getUsedDevkits" />
-                  </node>
-                </node>
-                <node concept="liA8E" id="3WcIkZauasR" role="2OqNvi">
-                  <ref role="37wK5l" to="33ny:~Collection.add(java.lang.Object):boolean" resolve="add" />
-                  <node concept="37vLTw" id="3GM_nagTxyf" role="37wK5m">
-                    <ref role="3cqZAo" node="3WcIkZauasJ" resolve="devkitRef" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node concept="3clFbH" id="7BBl3KI$VbI" role="3cqZAp" />
         <node concept="3clFbF" id="1Yd98ZZnqHD" role="3cqZAp">
           <node concept="2YIFZM" id="2DWNAT6xrzT" role="3clFbG">
             <ref role="1Pybhc" to="gn4j:IMUMWuHQDZ" resolve="LanguageDescriptorPersistence" />

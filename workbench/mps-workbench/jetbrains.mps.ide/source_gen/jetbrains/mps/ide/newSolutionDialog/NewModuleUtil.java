@@ -32,8 +32,6 @@ import javax.lang.model.SourceVersion;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.smodel.Generator;
@@ -105,7 +103,7 @@ public class NewModuleUtil {
    */
   public static Language createLanguage(String namespace, String rootPath, Project project) {
     IFile descriptorFile = NewModuleUtil.getModuleFile(namespace, rootPath, MPSExtentions.DOT_LANGUAGE);
-    Language module = createNewLanguage(namespace, descriptorFile, true, true, project);
+    Language module = createNewLanguage(namespace, descriptorFile, true, project);
     project.addModule(module);
     module.save();
     return module;
@@ -165,16 +163,11 @@ public class NewModuleUtil {
   }
 
   @Deprecated
-  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean importLangDevDevkit, boolean createMainAspectModels, Project project) {
+  private static Language createNewLanguage(String namespace, IFile descriptorFile, boolean createMainAspectModels, Project project) {
     if (descriptorFile.exists()) {
       throw new IllegalArgumentException("Descriptor file " + descriptorFile + " already exists");
     }
     LanguageDescriptor descriptor = createNewLanguageDescriptor(namespace, descriptorFile);
-
-    if (importLangDevDevkit) {
-      SModuleReference devkitRef = PersistenceFacade.getInstance().createModuleReference("2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)");
-      descriptor.getUsedDevkits().add(devkitRef);
-    }
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, descriptor, MacrosFactory.forModuleFile(descriptorFile));
     ModuleRepositoryFacade projectRepoFacade = new ModuleRepositoryFacade(project);
