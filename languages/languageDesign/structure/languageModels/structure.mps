@@ -228,6 +228,9 @@
     <node concept="PrWs8" id="yuXZmMPAvJ" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="5GuVNMLxi4Q" role="PzmwI">
+      <ref role="PrY4T" node="hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
   </node>
   <node concept="1TIwiD" id="fKAxPRV">
     <property role="19KtqR" value="true" />

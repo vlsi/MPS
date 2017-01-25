@@ -123,7 +123,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1t_qb" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use substitute menu in editor aspect" />
+      <property role="YLQ7P" value="Use substitute menu in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="gbFOIBE">
@@ -177,7 +177,7 @@
       <ref role="PrY4T" node="7pgPxC8nT$D" resolve="ICouldBeAnnotatedWithMigrateManually" />
     </node>
     <node concept="asaX9" id="f8ydv1t_qd" role="lGtFl">
-      <property role="YLQ7P" value="Use substitute menu in editor aspect" />
+      <property role="YLQ7P" value="Use substitute menu in the editor aspect" />
       <property role="YLPcu" value="3.4" />
     </node>
   </node>
@@ -243,7 +243,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1u5rX" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use transformation menu in editor aspect" />
+      <property role="YLQ7P" value="Use transformation menu in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="gzUOs4m">
@@ -271,7 +271,7 @@
       <property role="1iqoE4" value="${module}/icons/rightTransform.png" />
     </node>
     <node concept="asaX9" id="f8ydv1u5rV" role="lGtFl">
-      <property role="YLQ7P" value="Use transformation menu in editor aspect" />
+      <property role="YLQ7P" value="Use transformation menu in the editor aspect" />
       <property role="YLPcu" value="3.4" />
     </node>
   </node>
@@ -302,6 +302,10 @@
     <node concept="M4N5e" id="gAuIk07" role="M5hS2">
       <property role="1uS6qv" value="ext_5_RTransform" />
       <property role="1uS6qo" value="ext_5" />
+    </node>
+    <node concept="asaX9" id="5GuVNMLyo6b" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Attach transformation menu to the specific editor cell in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="gNbuRI4">
@@ -533,7 +537,7 @@
     </node>
     <node concept="asaX9" id="2WAOUMqQjCz" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuPart_Action in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Action in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8uyZJX">
@@ -635,7 +639,7 @@
     </node>
     <node concept="asaX9" id="2WAOUMqQjCx" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuPart_Parameterized in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Parameterized in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8uNqqV">
@@ -705,7 +709,7 @@
     </node>
     <node concept="asaX9" id="2WAOUMqQjCt" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuPart_Concepts in editor aspect " />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Concepts in the editor aspect " />
     </node>
   </node>
   <node concept="1TIwiD" id="h8yEb1F">
@@ -743,7 +747,7 @@
     </node>
     <node concept="asaX9" id="2WAOUMqQxA0" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuPart_Wrapper in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_Wrapper in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8yEnIi">
@@ -875,7 +879,7 @@
     <ref role="1TJDcQ" node="h8CdUfd" resolve="MenuPart" />
     <node concept="asaX9" id="2WAOUMqQjCp" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use TransformationMenuPart in editor aspect" />
+      <property role="YLQ7P" value="Use TransformationMenuPart in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8Cj7Ib">
@@ -937,7 +941,7 @@
     </node>
     <node concept="asaX9" id="2WAOUMqQjCr" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use TransformationMenuPart_Action in editor aspect" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_Action in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8CmF48">
@@ -1022,7 +1026,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1ugZw" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use TransformationMenuPart_Parameterized in editor aspect" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_Parameterized in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h8CZKMO">
@@ -1148,7 +1152,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1u5rR" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuVariableDeclaration in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuVariableDeclaration in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h9AzSZ$">
@@ -1165,7 +1169,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1ughW" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuVariableReference in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuVariableReference in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="h9OR9UU">
@@ -1212,7 +1216,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1ughM" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use TransformationMenuPart_IncludeMenu in editor aspect" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_IncludeMenu in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="hb5xCbf">
@@ -1233,7 +1237,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1u3jJ" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use SubstituteMenuPart_AddConcept in editor aspect" />
+      <property role="YLQ7P" value="Use SubstituteMenuPart_AddConcept in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="hd_wSsX">
@@ -1267,7 +1271,7 @@
     </node>
     <node concept="asaX9" id="f8ydv1ucYx" role="lGtFl">
       <property role="YLPcu" value="3.4" />
-      <property role="YLQ7P" value="Use TransformationMenuPart_WrapSubstituteMenu in editor aspect" />
+      <property role="YLQ7P" value="Use TransformationMenuPart_WrapSubstituteMenu in the editor aspect" />
     </node>
   </node>
   <node concept="PlHQZ" id="hqh0uUh">
@@ -1552,6 +1556,10 @@
     <node concept="M4N5e" id="38nmGbCPLik" role="M5hS2">
       <property role="1uS6qv" value="both" />
       <property role="1uS6qo" value="both sides" />
+    </node>
+    <node concept="asaX9" id="5GuVNMLxmI_" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use TransformationLocation_SideTransform in the editor aspect" />
     </node>
   </node>
   <node concept="1TIwiD" id="hLhljPe">

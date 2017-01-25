@@ -22,6 +22,7 @@
     </language>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" name="jetbrains.mps.lang.structure">
       <concept id="1224240836180" name="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" flags="ig" index="asaX9">
+        <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
       <concept id="6054523464626862044" name="jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple" flags="ng" index="tn0Fv">
@@ -1494,6 +1495,10 @@
       <property role="1uS6qv" value="ext_5_RTransform" />
       <property role="1uS6qo" value="ext_5" />
     </node>
+    <node concept="asaX9" id="5GuVNMLy0Rm" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Attach transformation menu to the specific editor cell" />
+    </node>
   </node>
   <node concept="AxPO7" id="gAIkV5K">
     <property role="TrG5h" value="CellKeyMapCaretPolicy" />
@@ -2728,6 +2733,10 @@
       <property role="IQ2nx" value="1214320119174" />
       <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
     </node>
+    <node concept="asaX9" id="5GuVNMLwQXW" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+      <property role="YLQ7P" value="Use transformation menu" />
+    </node>
   </node>
   <node concept="1TIwiD" id="hF0gYTA">
     <property role="R5$K7" value="false" />
@@ -3700,6 +3709,9 @@
       <property role="IQ2nx" value="3608226089191997418" />
       <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
     </node>
+    <node concept="asaX9" id="5GuVNMLwQXY" role="lGtFl">
+      <property role="YLPcu" value="3.4" />
+    </node>
   </node>
   <node concept="1TIwiD" id="Bqq$mhZ7YP">
     <property role="R5$K7" value="false" />
@@ -3875,6 +3887,10 @@
       <property role="TrG5h" value="tag" />
       <property role="IQ2nx" value="870577895075788418" />
       <ref role="AX2Wp" node="gAtNdpl" resolve="RightTransformAnchorTag" />
+    </node>
+    <node concept="asaX9" id="5GuVNMLwW$G" role="lGtFl">
+      <property role="YLQ7P" value="Use transformation menu. Include menu for side transform in completion section" />
+      <property role="YLPcu" value="3.4" />
     </node>
   </node>
   <node concept="1TIwiD" id="33FxyQ70GUZ">
