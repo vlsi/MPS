@@ -129,39 +129,40 @@ public class JavaModuleFacetImpl extends ModuleFacetBase implements JavaModuleFa
     //     somewhat different from classes_gen/
     IFile classesGen = getClassesGen();
     if (classesGen == null && getModule().isPackaged()) {
-      // until deployed generator modules are read independently from their source languages, need this legacy hack to include their separate jar
-      // into classpath.
-      // FIXME DeploymentModule now tells its classpath locations, but there's no DD for generator modules yet.
-      if (getModule() instanceof Generator) {
-        IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
-        IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
-        if (bundleHome != null) {
-          // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
-          String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
-          String jarPath = mainPath + "-generator.jar";
-          classesGen = bundleHome.getFileSystem().getFile(jarPath);
-        }
+      // Despite isPackaged(), there might be modules like stub and test that lack MD or DD, doesn't hurt to check
+      ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
+      if (moduleDescriptor != null && moduleDescriptor.getDeploymentDescriptor() != null) {
+        // 'Right' scenario. Deployed module has DD and we take classpath from there
+        result.addAll(moduleDescriptor.getDeploymentDescriptor().getClasspath());
       } else {
-        // Despite isPackaged(), there might be modules like stub and test that lack MD or DD, doesn't hurt to check
-        ModuleDescriptor moduleDescriptor = getModule().getModuleDescriptor();
-        if (moduleDescriptor != null) {
-          if (moduleDescriptor.getDeploymentDescriptor() != null) {
-            result.addAll(moduleDescriptor.getDeploymentDescriptor().getClasspath());
-          } else if (getModule().getDescriptorFile() != null) {
-            // HACK. Fallback for manually bundled modules (vcs.jar or mps-core.jar):
-            //   my.jar
-            //     compile output of module1
-            //   modules
-            //      module sources of module1
-            // There's no DD there, and assumption is that there are classes at the jar root.
-            // Not yet sure what's the right way to deal with them:
-            //   - specify DD (META-INF/module.xml) at build time looks most 'honest', however, with multiple modules inside same jar it's not an option,
-            //     unless we can make DD per module, not per jar (requires support in MM)
-            //   - Patch MD in MM when loaded from modules/ location (e.g. add DD with proper classpath there). (+) keep knowledge about deployment layout
-            //     inside MM.
-            //   - Hack here
-            classesGen = getModule().getDescriptorFile().getBundleHome();
+        // Compatibility code:
+        // Case 1. Deployed generator modules have no DD and are read independently from their source languages.
+        //         Include their separate jar (hard-coded knowledge about build layout) into classpath.
+        if (getModule() instanceof Generator) {
+          IFile descriptorFile = ((Generator) getModule()).getSourceLanguage().getDescriptorFile();
+          IFile bundleHome = descriptorFile == null ? null : descriptorFile.getBundleHome();
+          if (bundleHome != null) {
+            // bundleHome for module itself and {bundleHome without .jar}-generator.jar for generator
+            String mainPath = bundleHome.getPath().substring(0, bundleHome.getPath().length() - ".jar".length());
+            String jarPath = mainPath + "-generator.jar";
+            classesGen = bundleHome.getFileSystem().getFile(jarPath);
           }
+        } else if (getModule().getDescriptorFile() != null) {
+          // CASE 2. Solution(s) bundled into single jar with classes (both from hand-written and generated sources) at the root.
+          // HACK. Fallback for manually bundled modules (vcs.jar or mps-core.jar):
+          //   my.jar
+          //     compile output of module1
+          //   modules
+          //      module sources of module1
+          // There's no DD there, and assumption is that there are classes at the jar root.
+          // Not yet sure what's the right way to deal with them:
+          //   - specify DD (META-INF/module.xml) at build time looks most 'honest', however, with multiple modules inside same jar it's not an option,
+          //     unless we can make DD per module, not per jar (requires support in MM.tryReadFromModulesDir). Support in Build language needed, too (to
+          //     specify 'module descriptor of' under 'folder with sources of'
+          //   - Patch MD in MM when loaded from modules/ location (e.g. add DD with proper classpath there). (+) keep knowledge about deployment layout
+          //     inside MM.
+          //   - Hack here
+          classesGen = getModule().getDescriptorFile().getBundleHome();
         }
       }
     }

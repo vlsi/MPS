@@ -73,6 +73,11 @@ import java.util.List;
  * @author Evgeny Gryaznov, 7/12/11
  */
 public class DeploymentDescriptor extends ModuleDescriptor {
+  public static String TYPE_LANGUAGE = "language";
+  public static String TYPE_GENERATOR = "generator";
+  public static String TYPE_SOLUTION = "solution";
+
+
   /**
    * relative path to the sources jar ('myLang-src.jar' in the ex above) from the language directory
    *
@@ -87,7 +92,8 @@ public class DeploymentDescriptor extends ModuleDescriptor {
   private String mySourceDescriptorFile;
 
   /**
-   * 'language' if it is a language (always a language for the time being)
+   * Identity token to identify module kind. MPS uses {@link #TYPE_LANGUAGE}, {@link #TYPE_GENERATOR} and {@link #TYPE_SOLUTION} itself,
+   * however the set of possible tokens is open, hence it's a string.
    */
   private String myType;
 

@@ -405,13 +405,25 @@ public final class ModulesMiner {
       IFile sourceDescriptorFile = getSourceDescriptorFile(file, deploymentDescriptor);
       if (sourceDescriptorFile != null) {
         result = loadSourceModuleDescriptor(sourceDescriptorFile);
+        if (DeploymentDescriptor.TYPE_GENERATOR.equals(deploymentDescriptor.getType()) && result instanceof LanguageDescriptor) {
+          // source module keeps generators as part of a language (the only possible layout for the time being)
+          for (GeneratorDescriptor gd : ((LanguageDescriptor) result).getGenerators()) {
+            if (gd.getId().equals(deploymentDescriptor.getId())) {
+              result = gd;
+              break;
+            }
+          }
+          if (false == result instanceof GeneratorDescriptor) {
+            // it's wrong to have DD for generator with source MD of a Language, better not to have any
+            result = null;
+          }
+        }
       }
       for (ListIterator<String> it = deploymentDescriptor.getClasspath().listIterator(); it.hasNext(); ) {
         // Not sure it's the best idea to change paths inplace, but at the moment it's the only place I'm aware of moduleHome
         // Source module descriptors resolve paths during read using MacroHelper, why not the same here with DD?
         // Alternatively, could keep moduleHome value within DD and resolve on use
         String cpEntry = it.next();
-        String newPath = null;
         if (".".equals(cpEntry)) {
           it.set(moduleHome.getPath());
         } else if (!cpEntry.isEmpty()) {
