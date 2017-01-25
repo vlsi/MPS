@@ -207,6 +207,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="8866923313515890008" name="jetbrains.mps.lang.smodel.structure.AsNodeOperation" flags="nn" index="FGMqu" />
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145383075378" name="jetbrains.mps.lang.smodel.structure.SNodeListType" flags="in" index="2I9FWS">
         <reference id="1145383142433" name="elementConcept" index="2I9WkF" />
@@ -457,17 +458,20 @@
             </node>
             <node concept="1eOMI4" id="i2gppLV" role="33vP2m">
               <node concept="10QFUN" id="i2gppLW" role="1eOMHV">
-                <node concept="2OqwBi" id="i2gppLX" role="10QFUP">
-                  <node concept="2OqwBi" id="2D1PBM_b_Dq" role="2Oq$k0">
-                    <node concept="2OqwBi" id="2D1PBM_b_Dr" role="2Oq$k0">
-                      <node concept="13iPFW" id="2D1PBM_b_Ds" role="2Oq$k0" />
-                      <node concept="2yIwOk" id="2eXSyKpuEkK" role="2OqNvi" />
+                <node concept="2OqwBi" id="4nRfr7j_uLt" role="10QFUP">
+                  <node concept="2OqwBi" id="i2gppLX" role="2Oq$k0">
+                    <node concept="2OqwBi" id="2D1PBM_b_Dq" role="2Oq$k0">
+                      <node concept="2OqwBi" id="2D1PBM_b_Dr" role="2Oq$k0">
+                        <node concept="13iPFW" id="2D1PBM_b_Ds" role="2Oq$k0" />
+                        <node concept="2yIwOk" id="2eXSyKpuEkK" role="2OqNvi" />
+                      </node>
+                      <node concept="2qgKlT" id="6ALWH9g2o5f" role="2OqNvi">
+                        <ref role="37wK5l" node="6ALWH9g2mqE" resolve="getOperationSConcept" />
+                      </node>
                     </node>
-                    <node concept="2qgKlT" id="6ALWH9g2o5f" role="2OqNvi">
-                      <ref role="37wK5l" node="6ALWH9g2mqE" resolve="getOperationSConcept" />
-                    </node>
+                    <node concept="1uHKPH" id="i2gppLY" role="2OqNvi" />
                   </node>
-                  <node concept="1uHKPH" id="i2gppLY" role="2OqNvi" />
+                  <node concept="FGMqu" id="4nRfr7j_vom" role="2OqNvi" />
                 </node>
                 <node concept="3THzug" id="i2gppM2" role="10QFUM">
                   <ref role="3qa414" to="tp4f:hyWEnem" resolve="IMemberOperation" />

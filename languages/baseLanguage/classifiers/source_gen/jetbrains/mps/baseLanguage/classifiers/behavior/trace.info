@@ -232,7 +232,7 @@
       <node id="1213877352964" at="42,0,43,0" concept="7" trace="getOperationSConcept_id6ALWH9g2mqE" />
       <node id="1213877352964" at="44,0,45,0" concept="7" trace="BH_METHODS" />
       <node id="1213877352968" at="49,80,50,190" concept="6" />
-      <node id="1213877352975" at="54,87,55,216" concept="5" />
+      <node id="1213877352975" at="54,87,55,240" concept="5" />
       <node id="1213877352986" at="56,41,57,124" concept="11" />
       <node id="1213877352998" at="58,5,59,34" concept="6" />
       <node id="7616135429960056487" at="61,103,62,118" concept="6" />
@@ -265,7 +265,7 @@
       <node id="1213877352964" at="150,40,151,19" concept="6" />
       <node id="1213877352964" at="46,0,48,0" concept="8" trace="___init___#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1213877352964" at="49,0,52,0" concept="8" trace="getVisiblity_idhEwIBC5#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877352984" at="55,216,58,5" concept="3" />
+      <node id="1213877352984" at="55,240,58,5" concept="3" />
       <node id="1213877352964" at="61,0,64,0" concept="8" trace="getOperationSConcept_id6ALWH9g2jU8#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/language/SAbstractConcept;" />
       <node id="1213877352964" at="69,0,72,0" concept="8" trace="getContainer_idhEwIBCW#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="1213877352964" at="72,0,75,0" concept="8" trace="canBeReferent_id762MQfghnJQ#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />

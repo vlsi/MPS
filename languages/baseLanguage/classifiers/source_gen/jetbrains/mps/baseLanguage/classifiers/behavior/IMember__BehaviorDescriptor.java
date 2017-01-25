@@ -18,8 +18,8 @@ import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -52,7 +52,7 @@ public final class IMember__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   @ToRemove(version = 3.5)
   /*package*/ static SNode getOperationConcept_idhEwIBCc(@NotNull SNode __thisNode__) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2mqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first());
+    SNode memberOperationConcept = ((SNode) SNodeOperations.asNode(ListSequence.fromList(IMember__BehaviorDescriptor.getOperationSConcept_id6ALWH9g2mqE.invoke(SNodeOperations.asSConcept(SNodeOperations.getConcept(__thisNode__)))).first()));
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConcept(__thisNode__) + " concept");
     }
