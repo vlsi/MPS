@@ -105,8 +105,33 @@
       <fileset dir="${mps_home}/plugins/console/lang/base/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.base.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.base-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.console.base-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.console.base#5336086527852717844" type="generator" uuid="9a50fa6b-b447-4a24-90b5-e61ff938abaf">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.base-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.base#5336086527852717844" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.console.base-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-base-generator-template">
       <fileset dir="${mps_home}/plugins/console/lang/base/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -164,8 +189,28 @@
       <fileset dir="${mps_home}/plugins/console/lang/scripts/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.scripts.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.scripts-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.scripts-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.console.scripts-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.console.scripts#1734392475490224704" type="generator" uuid="b372f31d-dc58-46b6-ad0b-2e1b2e187b9d">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.scripts-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.scripts#1734392475490224704" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.console.scripts-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-scripts-generator-template">
       <fileset dir="${mps_home}/plugins/console/lang/scripts/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -314,8 +359,35 @@
       <fileset dir="${mps_home}/plugins/console/lang/ideCommands/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.ideCommands.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.ideCommands-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.ideCommands-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.console.ideCommands-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.console.ideCommands#7935955022005272663" type="generator" uuid="cb761471-7219-4984-9a63-b9c8b4d27e89">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="a8de7923-dc6f-4aa1-b8a9-2d19ffee3edd(jetbrains.mps.console)" />
+          <module ref="c7567052-205c-4a15-80b0-7a32b32a9656(jetbrains.mps.console.ideCommands.runtime)" />
+          <module ref="019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="31f56055-9d30-42b3-a2b1-fb3f554d7075(jetbrains.mps.lang.smodel.query.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.ideCommands-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.ideCommands#7935955022005272663" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.console.ideCommands-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-ideCommands-generator-template">
       <fileset dir="${mps_home}/plugins/console/lang/ideCommands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -415,8 +487,30 @@
       <fileset dir="${mps_home}/plugins/console/lang/internalCommands/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.console.internalCommands.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.internalCommands-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.console.internalCommands-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.console.internalCommands-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.console.internalCommands#8483375838963160298" type="generator" uuid="617a0779-e3b2-43a9-8c87-970aed8e6992">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.internalCommands-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.console.internalCommands#8483375838963160298" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.console.internalCommands-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-console-lang-internalCommands-generator-template">
       <fileset dir="${mps_home}/plugins/console/lang/internalCommands/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />

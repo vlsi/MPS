@@ -102,8 +102,32 @@
       <fileset dir="${plugin_home}/language/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport.jar" />
     </jar>
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport-generator.jar" />
+    <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport-generator.jar/META-INF" />
+    <echoxml file="${build.tmp}/default/jetbrains.mps.ide.httpsupport-generator.jar/META-INF/module.xml">
+      <module namespace="jetbrains.mps.ide.httpsupport#4517832885627178591" type="generator" uuid="69433612-0c08-4d65-8f7c-839ae8b13b0d">
+        <dependencies>
+          <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
+          <module ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)" />
+          <module ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)" />
+          <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
+          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
+          <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="23865718-e2ed-41b5-a132-0da1d04e266d(jetbrains.mps.ide.httpsupport.manager)" />
+          <module ref="ae6d8005-36be-4cb6-945b-8c8cfc033c51(jetbrains.mps.ide.httpsupport.runtime)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
+          <module ref="d936855b-48da-4812-a8a0-2bfddd633ac4(jetbrains.mps.lang.behavior.runtime)" />
+          <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+        </dependencies>
+        <classpath>
+          <entry path="." />
+        </classpath>
+      </module>
+    </echoxml>
     <jar destfile="${build.layout}/http-support/languages/jetbrains.mps.ide.httpsupport-generator.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.httpsupport#4517832885627178591" />
+      <fileset dir="${build.tmp}/default/jetbrains.mps.ide.httpsupport-generator.jar" />
     </jar>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/language-generator-template">
       <fileset dir="${plugin_home}/language/generator/template" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
