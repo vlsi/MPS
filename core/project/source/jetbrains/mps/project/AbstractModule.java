@@ -191,7 +191,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     }
 
     // add dependencies provided by devkits as nonreexport dependencies
-    for (SModuleReference usedDevkit : descriptor.getUsedDevkits()) {
+    for (SModuleReference usedDevkit : collectLanguagesAndDevkits().devkits) {
       final SModule devkit = usedDevkit.resolve(repo);
       if (DevKit.class.isInstance(devkit)) {
         for (Solution solution : ((DevKit) devkit).getAllExportedSolutions()) {
