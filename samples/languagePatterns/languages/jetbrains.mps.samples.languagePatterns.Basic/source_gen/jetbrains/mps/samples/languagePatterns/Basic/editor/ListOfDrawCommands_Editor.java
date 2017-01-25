@@ -105,15 +105,9 @@ public class ListOfDrawCommands_Editor extends DefaultNodeEditor {
       return SNodeFactoryOperations.createNewNode(SNodeFactoryOperations.asInstanceConcept(MetaAdapterFactory.getConcept(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x313e78bb265d1a2bL, "jetbrains.mps.samples.languagePatterns.Basic.structure.EmptyLine")), null);
     }
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
-      editorContext.getCellFactory().pushCellContext();
-      editorContext.getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-      try {
-        EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
-        this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
-        return elementCell;
-      } finally {
-        editorContext.getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
+      return elementCell;
     }
     protected boolean isCompatibilityMode() {
       return false;
