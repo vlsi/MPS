@@ -25,9 +25,6 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.dependency.PostingWarningsErrorHandler;
 import jetbrains.mps.project.facets.JavaModuleFacet;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -40,7 +37,6 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SuspiciousModelHandler;
 import jetbrains.mps.util.EqualUtil;
@@ -48,13 +44,10 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.util.Reference;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.ToRemove;
-import jetbrains.mps.vfs.FileSystemEvent;
-import jetbrains.mps.vfs.openapi.FileSystem;
-import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.openapi.FileSystem;
 import jetbrains.mps.vfs.path.Path;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -973,141 +966,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   public IFile getOutputPath() {
     String outputPath = ProjectPathUtil.getGeneratorOutputPath(getModuleDescriptor());
     return outputPath == null ? null : getFileSystem().getFile(outputPath);
-  }
-
-  /**
-   * AP
-   * the contract is not clear: when should this method be called?
-   * it seems to be our internal mechanism which is exposed to the client
-   * it must be done on the fs update (actually it is #update method here)
-   * Nobody must recount the module dependency versions from the outside
-   * <p>
-   * Currently happens only during migration;
-   *
-   * @deprecated please do not use
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void validateLanguageVersions() {
-    assertCanChange();
-    ModuleDescriptor md = getModuleDescriptor();
-    if (md == null) {
-      return;
-    }
-    Map<SLanguage, Integer> oldLanguageVersions = md.getLanguageVersions();
-    Map<SLanguage, Integer> newLanguageVersions = new HashMap<SLanguage, Integer>();
-
-    LangAndDevkits langAndDevkits = collectLanguagesAndDevkits();
-    Set<SLanguage> usedLanguages = langAndDevkits.languages;
-    Set<SModuleReference> devkits = langAndDevkits.devkits;
-    SLanguageHierarchy languageHierarchy = new SLanguageHierarchy(usedLanguages);
-    Reference<Boolean> hasErrors = new Reference<>(false);
-    Set<SLanguage> extendingLangsClosure = languageHierarchy.getExtendedLangs(language -> hasErrors.set(true));
-    if (hasErrors.get()) {
-      return;
-    }
-    if (!md.hasLanguageVersions()) {
-      for (SLanguage lang : extendingLangsClosure) {
-        newLanguageVersions.put(lang, 0);
-      }
-      md.getUsedDevkits().addAll(devkits);
-      md.setHasLanguageVersions(true);
-    } else {
-      for (SLanguage lang : extendingLangsClosure) {
-        if (oldLanguageVersions.containsKey(lang)) {
-          newLanguageVersions.put(lang, oldLanguageVersions.get(lang));
-        } else {
-          checkModelVersionsAreValid(lang);
-          newLanguageVersions.put(lang, lang.getLanguageVersion());
-          // this check is needed to avoid numerous changes in msd/mpl files when opening project without dependency versions
-          // here we assume that validateLanguageVersions() is called before validateDependencyVersions()
-          // todo: remove this hack after 3.4
-          if (md.hasDependencyVersions()) {
-            setChanged();
-          }
-        }
-      }
-      if (!md.getUsedDevkits().containsAll(devkits)) {
-        // intentionally no clean(), augmentation only, just in case there's anything vital already.
-        md.getUsedDevkits().addAll(devkits);
-        setChanged();
-      }
-      if (!oldLanguageVersions.equals(newLanguageVersions)) {
-        // todo: remove this hack after 3.4
-        if (md.hasDependencyVersions()) {
-          setChanged();
-        }
-      }
-    }
-    oldLanguageVersions.clear();
-    oldLanguageVersions.putAll(newLanguageVersions);
-  }
-
-  private void checkModelVersionsAreValid(SLanguage lang) {
-    int currentVersion = lang.getLanguageVersion();
-    for (SModel m : getModels()) {
-      SModelInternal modelInternal = (SModelInternal) m;
-      if (modelInternal.importedLanguageIds().contains(lang)) {
-        int modelVer = modelInternal.getLanguageImportVersion(lang);
-        if (modelVer != -1) {
-          if (modelInternal.importedLanguageIds().contains(lang) && modelVer != currentVersion) {
-            LOG.error("Could not update used language versions. Language " + lang + " has current version " + currentVersion
-                + " while model " + m.getName() + " uses this language with version " + modelVer);
-          }
-        }
-      }
-    }
-  }
-
-  /**
-   * FIXME
-   * Obviously it must be internal module method:
-   * it must be done on the fs update (actually it is #update method here)
-   * Nobody must recount the module dependency versions from the outside
-   * AP
-   * <p>
-   * Currently happens only during migration;
-   *
-   * @deprecated please do not use
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public void validateDependencyVersions() {
-    assertCanChange();
-    ModuleDescriptor md = getModuleDescriptor();
-    if (md == null) {
-      return;
-    }
-    Map<SModuleReference, Integer> oldDepVersions = md.getDependencyVersions();
-    Map<SModuleReference, Integer> newDepVersions = new HashMap<SModuleReference, Integer>();
-    Set<SModule> visible = new LinkedHashSet<SModule>();
-    visible.add(this);
-    PostingWarningsErrorHandler handler = new PostingWarningsErrorHandler();
-    Collection<SModule> dependentModules = new GlobalModuleDependenciesManager(this, handler).getModules(Deptype.VISIBLE);
-    if (handler.hasErrors()) {
-      return;
-    }
-    visible.addAll(dependentModules);
-    if (!md.hasDependencyVersions()) {
-      for (SModule dep : visible) {
-        newDepVersions.put(dep.getModuleReference(), 0);
-      }
-      md.setHasDependencyVersions(true);
-    } else {
-      for (SModule dep : visible) {
-        if (oldDepVersions.containsKey(dep.getModuleReference())) {
-          newDepVersions.put(dep.getModuleReference(), oldDepVersions.get(dep.getModuleReference()));
-        } else {
-          newDepVersions.put(dep.getModuleReference(), ((AbstractModule) dep).getModuleVersion());
-          setChanged();
-        }
-      }
-      if (oldDepVersions.size() != newDepVersions.size()) {
-        setChanged();
-      }
-    }
-    oldDepVersions.clear();
-    oldDepVersions.putAll(newDepVersions);
   }
 
   @Override
