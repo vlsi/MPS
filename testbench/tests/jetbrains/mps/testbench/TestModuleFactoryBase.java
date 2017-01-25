@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -250,14 +250,6 @@ public class TestModuleFactoryBase implements TestModuleFactory {
           ((SModelInternal) m).addLanguage(MetaAdapterFactory.getLanguage(toUse));
         }
         ((SModelBase) m).getSModel().leaveUpdateMode();
-        // HACK.
-        // DependencyUtil.build looks into dependencies between module descriptors, so we mimic them there,
-        // although the right solution is to <strikeout>throw DependencyUtil away</strikeout> rewrite DependencyUtil to use SModule API
-        if (isDevKit) {
-          client.getModuleDescriptor().getUsedDevkits().add(toUse);
-        } else {
-          client.getModuleDescriptor().getUsedLanguages().add(toUse);
-        }
         return;
       }
     }
