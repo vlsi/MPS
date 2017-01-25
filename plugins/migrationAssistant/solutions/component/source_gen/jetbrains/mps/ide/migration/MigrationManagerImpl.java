@@ -19,8 +19,8 @@ import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import java.util.Collections;
 import org.jetbrains.mps.openapi.language.SLanguage;
-import java.util.Set;
 import java.util.HashMap;
+import java.util.Set;
 import jetbrains.mps.smodel.SLanguageHierarchy;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.LinkedHashSet;
@@ -101,11 +101,6 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       if (!(oldLangVersions.equals(newLangVersions))) {
         return true;
       }
-
-      Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
-      if (!(md.getUsedDevkits().equals(devkits))) {
-        return true;
-      }
     }
 
     return false;
@@ -134,13 +129,6 @@ public class MigrationManagerImpl extends AbstractProjectComponent implements Mi
       abstractModule.setChanged();
       langVersions.clear();
       langVersions.putAll(newLangVersions);
-    }
-
-    Set<SModuleReference> devkits = abstractModule.collectLanguagesAndDevkits().devkits;
-    if (!(md.getUsedDevkits().equals(devkits))) {
-      abstractModule.setChanged();
-      md.getUsedDevkits().clear();
-      md.getUsedDevkits().addAll(devkits);
     }
   }
 
