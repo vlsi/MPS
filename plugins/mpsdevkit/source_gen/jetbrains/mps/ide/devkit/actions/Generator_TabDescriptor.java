@@ -28,8 +28,8 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.kernel.model.SModelUtil;
 import java.util.ArrayList;
 import jetbrains.mps.ide.dialogs.project.creation.NewGeneratorDialog;
 import org.jetbrains.mps.openapi.model.EditableSModel;
@@ -115,33 +115,34 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     MPSProject mpsProject = MPSCommonDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
 
     final Wrappers._T<Language> language = new Wrappers._T<Language>();
+    final Wrappers._T<List<Generator>> genList = new Wrappers._T<List<Generator>>();
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
         language.value = SModelUtil.getDeclaringLanguage(node);
         assert language.value != null : "Language shouldn't be null for " + node;
+        genList.value = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
       }
     });
 
-    final List<Generator> genList = ListSequence.fromListWithValues(new ArrayList<Generator>(), language.value.getGenerators());
-    if (ListSequence.fromList(genList).isEmpty()) {
+    if (ListSequence.fromList(genList.value).isEmpty()) {
       NewGeneratorDialog dialog = new NewGeneratorDialog(mpsProject, language.value);
       dialog.show();
       Generator createdGenerator = dialog.getResult();
       if (createdGenerator == null) {
         return null;
       }
-      ListSequence.fromList(genList).addElement(createdGenerator);
+      ListSequence.fromList(genList.value).addElement(createdGenerator);
     } else {
       mpsProject.getModelAccess().executeCommand(new Runnable() {
         public void run() {
-          for (Generator generator : genList) {
+          for (Generator generator : genList.value) {
             if (generator.getOwnTemplateModels().isEmpty()) {
               continue;
             }
             return;
           }
           // this means there are generators, but no template models 
-          Generator firstGen = ListSequence.fromList(genList).first();
+          Generator firstGen = ListSequence.fromList(genList.value).first();
           EditableSModel templateModelDescriptor = SModuleOperations.createModelWithAdjustments(language.value.getModuleName() + ".generator.template.main@" + SModelStereotype.GENERATOR, firstGen.getModelRoots().iterator().next());
           templateModelDescriptor.save();
           language.value.save();
@@ -152,7 +153,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     final List<SNode> mappings = new ArrayList<SNode>();
     mpsProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        for (Generator generator : genList) {
+        for (Generator generator : genList.value) {
           for (SModel gm : generator.getOwnTemplateModels()) {
             ListSequence.fromList(mappings).addSequence(ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.roots(gm, MetaAdapterFactory.getConcept(0xb401a68083254110L, 0x8fd384331ff25befL, 0xff0bea0475L, "jetbrains.mps.lang.generator.structure.MappingConfiguration"))));
           }
@@ -165,7 +166,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
       mpsProject.getModelAccess().executeCommand(new Runnable() {
         public void run() {
           SModel model = null;
-          for (Generator generator : genList) {
+          for (Generator generator : genList.value) {
             if (generator.getOwnTemplateModels().isEmpty()) {
               continue;
             }
