@@ -126,6 +126,7 @@
         <reference id="6592112598314801433" name="plugin" index="m_rDy" />
       </concept>
       <concept id="6592112598314499036" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule" flags="ng" index="m$_yB">
+        <property id="4034578608468849375" name="customPackaging" index="1ZOk41" />
         <reference id="6592112598314499037" name="target" index="m$_yA" />
       </concept>
       <concept id="6592112598314499027" name="jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency" flags="ng" index="m$_yC">
@@ -3171,34 +3172,6 @@
               </node>
             </node>
           </node>
-          <node concept="398223" id="6sT62Z6Skhn" role="39821P">
-            <node concept="3_J27D" id="6sT62Z6Skho" role="Nbhlr">
-              <node concept="3Mxwew" id="6sT62Z6Skhp" role="3MwsjC">
-                <property role="3MwjfP" value="languages" />
-              </node>
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhq" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6SkhI" resolve="BHL1" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhr" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6SkhV" resolve="BHL2" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhs" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6Ski8" resolve="BHL3" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skht" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6Skil" resolve="BHL4" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhu" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6Ski$" resolve="BHL5" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhv" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6SkiJ" resolve="BHL6" />
-            </node>
-            <node concept="L2wRC" id="6sT62Z6Skhw" role="39821P">
-              <ref role="L2wRA" node="6sT62Z6SkiW" resolve="BHL7" />
-            </node>
-          </node>
         </node>
         <node concept="398223" id="6sT62Z6Skhx" role="39821P">
           <node concept="3_J27D" id="6sT62Z6Skhy" role="Nbhlr">
@@ -3758,6 +3731,7 @@
     <node concept="m$_wf" id="6sT62Z6Skkm" role="3989C9">
       <property role="m$_wk" value="test.behavior.plugin" />
       <node concept="m$_yB" id="6sT62Z6Skkn" role="m$_yh">
+        <property role="1ZOk41" value="true" />
         <ref role="m$_yA" node="6sT62Z6Skja" resolve="UtilSolution" />
       </node>
       <node concept="m$_yB" id="6sT62Z6Skko" role="m$_yh">
@@ -3802,6 +3776,7 @@
         </node>
       </node>
       <node concept="m$_yB" id="6sT62Z6SkkB" role="m$_yh">
+        <property role="1ZOk41" value="true" />
         <ref role="m$_yA" node="6sT62Z6SkjQ" resolve="TestBehaviorReflective" />
       </node>
       <node concept="m$_yC" id="6sT62Z6SkkC" role="m$_yJ">
