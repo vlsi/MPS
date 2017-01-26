@@ -9,82 +9,30 @@ import jetbrains.mps.lang.editor.menus.MenuPart;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuItem;
 import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuContext;
 import java.util.ArrayList;
-import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.ParameterizedMenuPart;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.editor.menus.GroupMenuPart;
 import jetbrains.mps.lang.behavior.constraints.ConstraintsUtil;
-import jetbrains.mps.lang.editor.menus.substitute.SingleItemSubstituteMenuPart;
-import jetbrains.mps.lang.editor.menus.substitute.DefaultSubstituteMenuItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.runtime.IconResource;
+import java.util.Arrays;
+import jetbrains.mps.lang.editor.menus.substitute.ConstraintsFilteringSubstituteMenuPartDecorator;
+import jetbrains.mps.lang.editor.menus.substitute.SimpleConceptSubstituteMenuPart;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 public class ThisNodeExpression_SubstituteMenu extends SubstituteMenuBase {
   @NotNull
   @Override
   protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts(final SubstituteMenuContext _context) {
     List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> result = new ArrayList<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>();
-    result.add(new ConstraintsFilteringSubstituteMenuPartDecorator(new ThisNodeExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_mpxvc0_a(), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression")));
+    result.add(new ThisNodeExpression_SubstituteMenu.SubstituteMenuPart_Group_mpxvc0_a());
     return result;
   }
-  private class SubstituteMenuPart_Parameterized_mpxvc0_a extends ParameterizedMenuPart<Object, SubstituteMenuItem, SubstituteMenuContext> {
-    @NotNull
+  public class SubstituteMenuPart_Group_mpxvc0_a extends GroupMenuPart<SubstituteMenuItem, SubstituteMenuContext> {
     @Override
-    protected List<SubstituteMenuItem> createItems(Object parameter, SubstituteMenuContext context) {
-      return new ThisNodeExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_mpxvc0_a.SubstituteMenuPart_Action_mpxvc0_a0(parameter).createItems(context);
+    protected boolean isApplicable(SubstituteMenuContext _context) {
+      return ConstraintsUtil.isInsideOfBehavior(_context.getParentNode(), false);
     }
-    @Nullable
+
     @Override
-    protected Iterable<? extends Object> getParameters(SubstituteMenuContext _context) {
-      // todo [MM] remove this after 3.5, needed for compatibility purposes 
-      List<Object> res = ListSequence.fromList(new ArrayList<Object>());
-      if (ConstraintsUtil.isInsideOfBehavior(_context.getParentNode(), false)) {
-        ListSequence.fromList(res).addElement(new Object());
-      }
-      return res;
+    protected List<MenuPart<SubstituteMenuItem, SubstituteMenuContext>> getParts() {
+      return Arrays.<MenuPart<SubstituteMenuItem, SubstituteMenuContext>>asList(new ConstraintsFilteringSubstituteMenuPartDecorator(new SimpleConceptSubstituteMenuPart(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression")), MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression")));
     }
-    private class SubstituteMenuPart_Action_mpxvc0_a0 extends SingleItemSubstituteMenuPart {
-      private final Object myParameterObject;
-      public SubstituteMenuPart_Action_mpxvc0_a0(Object parameterObject) {
-        myParameterObject = parameterObject;
-      }
-
-      @Nullable
-      @Override
-      protected SubstituteMenuItem createItem(SubstituteMenuContext _context) {
-        return new ThisNodeExpression_SubstituteMenu.SubstituteMenuPart_Parameterized_mpxvc0_a.SubstituteMenuPart_Action_mpxvc0_a0.Item(_context);
-      }
-      private class Item extends DefaultSubstituteMenuItem {
-        private final SubstituteMenuContext _context;
-        public Item(SubstituteMenuContext context) {
-          super(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"), context.getParentNode(), context.getCurrentTargetNode(), context.getEditorContext());
-          _context = context;
-        }
-
-        @Nullable
-        @Override
-        public SNode createNode(@NotNull String pattern) {
-          return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xaf65afd8f0dd4942L, 0x87d963a55f2a9db1L, 0x11d434b5be1L, "jetbrains.mps.lang.behavior.structure.ThisNodeExpression"));
-        }
-        @Nullable
-        @Override
-        public String getMatchingText(@NotNull String pattern) {
-          return "" + myParameterObject;
-        }
-        @Nullable
-        @Override
-        public String getDescriptionText(@NotNull String pattern) {
-          return "";
-        }
-        @Nullable
-        @Override
-        public IconResource getIcon(@NotNull String pattern) {
-          return null;
-        }
-      }
-    }
-
   }
 }
