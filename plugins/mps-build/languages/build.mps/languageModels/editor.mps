@@ -5185,5 +5185,57 @@
       </node>
     </node>
   </node>
+  <node concept="24kQdi" id="7dATtiK8ofw">
+    <property role="3GE5qa" value="Layout" />
+    <ref role="1XX52x" to="kdzh:1OSlDLmr8Mh" resolve="BuildMpsLayout_FolderWithSources" />
+    <node concept="3EZMnI" id="7dATtiK8ofE" role="2wV5jI">
+      <node concept="PMmxH" id="2wdLO7KhXZi" role="3EZMnx">
+        <property role="1cu_pB" value="0" />
+        <ref role="PMmxG" to="tpco:2wZex4PafBj" resolve="alias" />
+        <ref role="1k5W1q" to="o2va:hwW5CRV" resolve="outputLayout" />
+        <node concept="OXEIz" id="2wdLO7KhXZj" role="P5bDN">
+          <node concept="UkePV" id="2wdLO7KhXZk" role="OY2wv">
+            <ref role="Ul1FP" to="3ior:6qcrfIJF4M5" resolve="BuildLayout_Node" />
+          </node>
+        </node>
+      </node>
+      <node concept="1iCGBv" id="7dATtiK8o$S" role="3EZMnx">
+        <ref role="1NtTu8" to="kdzh:1tWbYFNhzsh" resolve="module" />
+        <node concept="1sVBvm" id="7dATtiK8o$T" role="1sWHZn">
+          <node concept="3F0A7n" id="7dATtiK8o$U" role="2wV5jI">
+            <property role="1Intyy" value="true" />
+            <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
+          </node>
+        </node>
+      </node>
+      <node concept="3F0ifn" id="7dATtiK8o$V" role="3EZMnx">
+        <property role="3F0ifm" value="(models only)" />
+        <ref role="1k5W1q" to="o2va:hwW5xkg" resolve="keyword" />
+        <ref role="1ERwB7" node="41K1b4v5Bzs" resolve="delete_ModuleSources_modelsOnly" />
+        <node concept="ljvvj" id="3NagsOfU4ZQ" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+        <node concept="pkWqt" id="7dATtiK8o$W" role="pqm2j">
+          <node concept="3clFbS" id="7dATtiK8o$X" role="2VODD2">
+            <node concept="3clFbF" id="7dATtiK8o$Y" role="3cqZAp">
+              <node concept="2OqwBi" id="7dATtiK8o$Z" role="3clFbG">
+                <node concept="pncrf" id="7dATtiK8o_0" role="2Oq$k0" />
+                <node concept="3TrcHB" id="7dATtiK8o_1" role="2OqNvi">
+                  <ref role="3TsBF5" to="kdzh:41K1b4v5By6" resolve="modelsOnly" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="PMmxH" id="7dATtiK8ofF" role="3EZMnx">
+        <ref role="PMmxG" to="o2va:6qcrfIJF4M6" resolve="BuildLayout_containerElements" />
+        <node concept="lj46D" id="7dATtiK8ofG" role="3F10Kt">
+          <property role="VOm3f" value="true" />
+        </node>
+      </node>
+      <node concept="l2Vlx" id="7dATtiK8ofH" role="2iSdaV" />
+    </node>
+  </node>
 </model>
 

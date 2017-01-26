@@ -2265,6 +2265,27 @@
               <ref role="v9R2y" node="1OSlDLmrbuv" resolve="contentOf_BuildMpsLayout_ModuleSources" />
             </node>
           </node>
+          <node concept="398223" id="7dATtiK9fkl" role="39821P">
+            <node concept="3_J27D" id="7dATtiK9fkm" role="Nbhlr">
+              <node concept="3Mxwew" id="7dATtiK9fkn" role="3MwsjC">
+                <property role="3MwjfP" value="child" />
+              </node>
+            </node>
+            <node concept="2b32R4" id="7dATtiK9fko" role="lGtFl">
+              <node concept="3JmXsc" id="7dATtiK9fkp" role="2P8S$">
+                <node concept="3clFbS" id="7dATtiK9fkq" role="2VODD2">
+                  <node concept="3clFbF" id="7dATtiK9fkr" role="3cqZAp">
+                    <node concept="2OqwBi" id="7dATtiK9fks" role="3clFbG">
+                      <node concept="30H73N" id="7dATtiK9fkt" role="2Oq$k0" />
+                      <node concept="3Tsc0h" id="7dATtiK9fku" role="2OqNvi">
+                        <ref role="3TtcxE" to="3ior:6qcrfIJF4Me" resolve="children" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

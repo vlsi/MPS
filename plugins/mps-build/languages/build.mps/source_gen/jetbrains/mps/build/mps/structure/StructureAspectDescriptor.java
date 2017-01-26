@@ -233,6 +233,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", 0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x177c2feaf3463710L);
     b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x52da585100c24b07L);
+    b.parent(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0x4140393b234482c3L);
     b.origin("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)/2105528055260548241");
     b.alias("folder with sources of");
     return b.create();

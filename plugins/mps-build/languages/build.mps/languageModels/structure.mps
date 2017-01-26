@@ -470,6 +470,9 @@
     <node concept="PrWs8" id="5bqm540KDky" role="PzmwI">
       <ref role="PrY4T" to="3ior:5bqm540K$G7" resolve="BuildLayout_InJarNode" />
     </node>
+    <node concept="PrWs8" id="7dATtiK6r5S" role="PzmwI">
+      <ref role="PrY4T" to="3ior:450ejGzh8b3" resolve="BuildLayout_Container" />
+    </node>
   </node>
   <node concept="1TIwiD" id="16hzwWwASfB">
     <property role="TrG5h" value="BuildMpsLayout_ModuleJars" />
