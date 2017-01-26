@@ -68,6 +68,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.origin("r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)/3885435385580582152");
     b.prop("startupFolder", 0x35ebd6e5b343750bL, "3885435385580582155");
     b.prop("startupClass", 0x35ebd6e5b3443492L, "3885435385580631186");
+    b.associate("branding", 0x30a61e6d55f6abc9L).target(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL).optional(true).origin("3505522814897007561").done();
     b.aggregate("bootClasspath", 0x35ebd6e5b3437728L).target(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437509L).optional(true).ordered(true).multiple(true).origin("3885435385580582696").done();
     b.aggregate("vmOptions", 0x35ebd6e5b3442664L).target(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL).optional(true).ordered(true).multiple(true).origin("3885435385580627556").done();
     b.aggregate("vmOptions64", 0x2560aecfb4da3f5bL).target(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343750dL).optional(true).ordered(true).multiple(true).origin("2693344784283221851").done();

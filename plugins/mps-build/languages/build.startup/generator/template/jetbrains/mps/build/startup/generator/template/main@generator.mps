@@ -881,7 +881,23 @@
               <node concept="2pNNFK" id="7d8Y7G7P4eu" role="3o6s8t">
                 <property role="2pNNFO" value="string" />
                 <node concept="3o6iSG" id="7d8Y7G7PRyo" role="3o6s8t">
-                  <property role="3o6i5n" value="MPS35" />
+                  <property role="3o6i5n" value="MPS" />
+                  <node concept="17Uvod" id="BsOHnjacbs" role="lGtFl">
+                    <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" />
+                    <property role="2qtEX9" value="value" />
+                    <node concept="3zFVjK" id="BsOHnjacbt" role="3zH0cK">
+                      <node concept="3clFbS" id="BsOHnjacbu" role="2VODD2">
+                        <node concept="3clFbF" id="BsOHnjatiu" role="3cqZAp">
+                          <node concept="2OqwBi" id="BsOHnjatG3" role="3clFbG">
+                            <node concept="30H73N" id="BsOHnjatit" role="2Oq$k0" />
+                            <node concept="2qgKlT" id="BsOHnjatVD" role="2OqNvi">
+                              <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
               <node concept="3o6iSG" id="7d8Y7G7PT4P" role="3o6s8t" />
@@ -1209,8 +1225,30 @@
     <node concept="2DRAP_" id="1w81suLSrDJ" role="2DRAPQ">
       <property role="2DPR8u" value="FOR /F &quot;delims=&quot; %%i in ('TYPE &quot;%MPS_VM_OPTIONS%&quot;') DO call :parse_vmoptions &quot;%%i&quot;" />
     </node>
+    <node concept="2DRAP_" id="7C7qUK4u4Jh" role="2DRAPQ">
+      <property role="2DPR8u" value="set IDEA_PATHS_SELECTOR=" />
+      <node concept="17Uvod" id="7C7qUK4u5SH" role="lGtFl">
+        <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
+        <property role="2qtEX9" value="text" />
+        <node concept="3zFVjK" id="7C7qUK4u5SI" role="3zH0cK">
+          <node concept="3clFbS" id="7C7qUK4u5SJ" role="2VODD2">
+            <node concept="3clFbF" id="7C7qUK4u5TW" role="3cqZAp">
+              <node concept="3cpWs3" id="7C7qUK4uXPW" role="3clFbG">
+                <node concept="3zGtF$" id="7C7qUK4uXSV" role="3uHU7B" />
+                <node concept="2OqwBi" id="7C7qUK4u5W_" role="3uHU7w">
+                  <node concept="30H73N" id="7C7qUK4u5TV" role="2Oq$k0" />
+                  <node concept="2qgKlT" id="7C7qUK4u61q" role="2OqNvi">
+                    <ref role="37wK5l" to="tgdw:BsOHnja5fe" resolve="getIdeaPathSelector" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node concept="2DRAP_" id="1w81suLSrGt" role="2DRAPQ">
-      <property role="2DPR8u" value="set JVM_ARGS=%ACC%" />
+      <property role="2DPR8u" value="set JVM_ARGS=%ACC% -Didea.paths.selector=%IDEA_PATHS_SELECTOR%" />
     </node>
     <node concept="2DRAP_" id="2lwFGYOZQab" role="2DRAPQ">
       <property role="2DPR8u" value=":: 32 bit" />

@@ -8,6 +8,8 @@
   <imports>
     <import index="s7om" ref="r:a930f08c-5447-4203-8f2e-507bb76fab12(jetbrains.mps.build.startup.structure)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <import index="tpch" ref="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)" implicit="true" />
+    <import index="o2va" ref="r:00f69407-23a8-49a2-a236-9e89a32679aa(jetbrains.mps.build.editor)" implicit="true" />
   </imports>
   <registry>
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" name="jetbrains.mps.lang.editor">
@@ -31,6 +33,13 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
+      <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
+        <child id="1088186146602" name="editorComponent" index="1sWHZn" />
+      </concept>
+      <concept id="1381004262292414836" name="jetbrains.mps.lang.editor.structure.ICellStyle" flags="ng" index="1k5N5V">
+        <reference id="1381004262292426837" name="parentStyleClass" index="1k5W1q" />
+      </concept>
+      <concept id="1088185857835" name="jetbrains.mps.lang.editor.structure.InlineEditorComponent" flags="ig" index="1sVBvm" />
       <concept id="1139848536355" name="jetbrains.mps.lang.editor.structure.CellModel_WithRole" flags="ng" index="1$h60E">
         <property id="1214560368769" name="emptyNoTargetText" index="39s7Ar" />
         <property id="1140114345053" name="allowEmptyText" index="1O74Pk" />
@@ -51,6 +60,7 @@
         <child id="1219418656006" name="styleItem" index="3F10Kt" />
       </concept>
       <concept id="1073390211982" name="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" flags="sg" stub="2794558372793454595" index="3F2HdR" />
+      <concept id="625126330682908270" name="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" flags="sg" stub="730538219795961225" index="3SHvHV" />
       <concept id="1198256887712" name="jetbrains.mps.lang.editor.structure.CellModel_Indent" flags="ng" index="3XFhqQ" />
       <concept id="1166049232041" name="jetbrains.mps.lang.editor.structure.AbstractComponent" flags="ng" index="1XWOmA">
         <reference id="1166049300910" name="conceptDeclaration" index="1XX52x" />
@@ -100,6 +110,17 @@
         </node>
         <node concept="2iRfu4" id="3nFPImNh3in" role="2iSdaV" />
       </node>
+      <node concept="3EZMnI" id="32A7APlXFaE" role="3EZMnx">
+        <node concept="2iRfu4" id="32A7APlXFaF" role="2iSdaV" />
+        <node concept="3F0ifn" id="32A7APlXF9n" role="3EZMnx">
+          <property role="3F0ifm" value="@Deprecated" />
+          <ref role="1k5W1q" to="tpch:hOawUFH" resolve="AnnotationNode" />
+        </node>
+        <node concept="3F0ifn" id="32A7APlXFa0" role="3EZMnx">
+          <property role="3F0ifm" value="(Since version 2017.1 it is not used anymore.)" />
+          <ref role="1k5W1q" to="o2va:7UAfeVQSDww" resolve="comment" />
+        </node>
+      </node>
       <node concept="3EZMnI" id="3nFPImNgRsr" role="3EZMnx">
         <node concept="VPM3Z" id="3nFPImNgRss" role="3F10Kt">
           <property role="VOm3f" value="false" />
@@ -111,6 +132,21 @@
           <ref role="1NtTu8" to="s7om:3nFPImNgRkb" resolve="startupFolder" />
         </node>
         <node concept="2iRfu4" id="3nFPImNgRsu" role="2iSdaV" />
+      </node>
+      <node concept="3EZMnI" id="32A7APlXFcM" role="3EZMnx">
+        <node concept="VPM3Z" id="32A7APlXFcO" role="3F10Kt">
+          <property role="VOm3f" value="false" />
+        </node>
+        <node concept="3F0ifn" id="32A7APlXFcQ" role="3EZMnx">
+          <property role="3F0ifm" value="branding" />
+        </node>
+        <node concept="1iCGBv" id="BsOHnj9Vew" role="3EZMnx">
+          <ref role="1NtTu8" to="s7om:32A7APlXEJ9" resolve="branding" />
+          <node concept="1sVBvm" id="BsOHnj9Vey" role="1sWHZn">
+            <node concept="3SHvHV" id="BsOHnja3C5" role="2wV5jI" />
+          </node>
+        </node>
+        <node concept="2iRfu4" id="32A7APlXFcR" role="2iSdaV" />
       </node>
       <node concept="3F0ifn" id="3nFPImNgRsz" role="3EZMnx">
         <node concept="VPM3Z" id="3nFPImNgRs_" role="3F10Kt">

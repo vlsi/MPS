@@ -30,6 +30,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_8979762117546982017(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b3443492L, "startupClass"));
   }
+  public static Object propertyMacro_GetPropertyValue_710674657030226653(final PropertyMacroContext _context) {
+    return (String) MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode());
+  }
   public static Object propertyMacro_GetPropertyValue_8979762117546982114(final PropertyMacroContext _context) {
     return (String) MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(_context.getNode(), ((boolean) true));
   }
@@ -44,6 +47,9 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_2693344784285481482(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + MpsStartupScript__BehaviorDescriptor.getPathToVmOptionsFile_id54lRqzvvwXi.invoke(_context.getNode(), ((boolean) true)).replace(MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(_context.getNode()), "exe." + MpsStartupScript__BehaviorDescriptor.getVmOptionsExtension_id54lRqzvvwXR.invoke(_context.getNode())).replace("/", "\\");
+  }
+  public static Object propertyMacro_GetPropertyValue_8793115184017727022(final PropertyMacroContext _context) {
+    return _context.getTemplateValue() + MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_1731640411964953768(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x35ebd6e5b343774dL, "options"));

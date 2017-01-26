@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -41,14 +42,15 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   public static final SMethod<String> getPathToVmOptionsFile_id54lRqzvvwXi = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getPathToVmOptionsFile").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("54lRqzvvwXi").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   public static final SMethod<String> getVmOptionsFileName_id2lwFGYOYlNP = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVmOptionsFileName").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("2lwFGYOYlNP").registry(REGISTRY).build(SMethodBuilder.createJavaParameter(Boolean.TYPE, ""));
   public static final SMethod<String> getVmOptionsExtension_id54lRqzvvwXR = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getVmOptionsExtension").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("54lRqzvvwXR").registry(REGISTRY).build();
+  public static final SMethod<String> getIdeaPathSelector_idBsOHnja5fe = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getIdeaPathSelector").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("BsOHnja5fe").registry(REGISTRY).build();
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultVmoptions_id54lRqzvuHDj, getCommentedOptions_id54lRqzvvwVL, getVmOptions_id2lwFGYOX$qJ, getDefaultVmOptionsLines_id2lwFGYOXBOk, getPathToVmOptionsFile_id54lRqzvvwXi, getVmOptionsFileName_id2lwFGYOYlNP, getVmOptionsExtension_id54lRqzvvwXR);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getDefaultVmoptions_id54lRqzvuHDj, getCommentedOptions_id54lRqzvvwVL, getVmOptions_id2lwFGYOX$qJ, getDefaultVmOptionsLines_id2lwFGYOXBOk, getPathToVmOptionsFile_id54lRqzvvwXi, getVmOptionsFileName_id2lwFGYOYlNP, getVmOptionsExtension_id54lRqzvvwXR, getIdeaPathSelector_idBsOHnja5fe);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
   /*package*/ static String getDefaultVmoptions_id54lRqzvuHDj(@NotNull SNode __thisNode__, boolean is64bit) {
-    return trim_9sggks_a0a0p(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, ((boolean) is64bit))).where(new IWhereFilter<SNode>() {
+    return trim_9sggks_a0a0q(Sequence.fromIterable(MpsStartupScript__BehaviorDescriptor.getVmOptions_id2lwFGYOX$qJ.invoke(__thisNode__, ((boolean) is64bit))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x5115dda8df7dfca2L, "commented")));
       }
@@ -88,6 +90,16 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   /*package*/ static String getVmOptionsExtension_id54lRqzvvwXR(@NotNull SNode __thisNode__) {
     return "vmoptions";
   }
+  /*package*/ static String getIdeaPathSelector_idBsOHnja5fe(@NotNull SNode __thisNode__) {
+    SNode branding = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding"));
+
+    if ((branding == null)) {
+      return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
+    }
+
+    // Assume that brandig.codename always consists from instances of BuildTextStringPart so we don't need MacroHelper 
+    return BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(branding, MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c76f03L, "codename")), null) + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e44L, "major")) + "." + SPropertyOperations.getInteger(branding, MetaAdapterFactory.getProperty(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x308857b584c74e45L, "minor"));
+  }
 
   /*package*/ MpsStartupScript__BehaviorDescriptor() {
     super(REGISTRY);
@@ -119,6 +131,8 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
         return (T) ((String) getVmOptionsFileName_id2lwFGYOYlNP(node, ((boolean) (Boolean) parameters[0])));
       case 6:
         return (T) ((String) getVmOptionsExtension_id54lRqzvvwXR(node));
+      case 7:
+        return (T) ((String) getIdeaPathSelector_idBsOHnja5fe(node));
       default:
         throw new BHMethodNotFoundException(this, method);
     }
@@ -147,7 +161,7 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  public static String trim_9sggks_a0a0p(String str) {
+  public static String trim_9sggks_a0a0q(String str) {
     return (str == null ? null : str.trim());
   }
   private static SNode _quotation_createNode_p7akvg_a0a0a0a0d(Object parameter_1) {

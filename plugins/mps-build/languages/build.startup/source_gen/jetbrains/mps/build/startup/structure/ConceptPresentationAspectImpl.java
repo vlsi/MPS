@@ -5,12 +5,13 @@ package jetbrains.mps.build.startup.structure;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspectBase;
 import jetbrains.mps.smodel.runtime.ConceptPresentation;
 import jetbrains.mps.smodel.runtime.ConceptPresentationBuilder;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase {
   private final ConceptPresentation props_ClassPathItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_MpsStartupScript = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_MpsStartupScript = new ConceptPresentationBuilder().deprecated(MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder"), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b3443492L, "startupClass"), MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")).create();
   private final ConceptPresentation props_SimpleVmOptions = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextFile = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TextLine = new ConceptPresentationBuilder().create();
