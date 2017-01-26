@@ -262,6 +262,7 @@
       <concept id="3885435385580582152" name="jetbrains.mps.build.startup.structure.MpsStartupScript" flags="ng" index="26EafH">
         <property id="3885435385580582155" name="startupFolder" index="26EafI" />
         <property id="3885435385580631186" name="startupClass" index="26FY9R" />
+        <reference id="3505522814897007561" name="branding" index="1_kbm$" />
         <child id="3885435385580582696" name="bootClasspath" index="26Ea7d" />
         <child id="3885435385580627556" name="vmOptions" index="26FZ21" />
         <child id="2693344784283221851" name="vmOptions64" index="2hID6k" />
@@ -20624,6 +20625,18 @@
         <property role="TrG5h" value="jetbrains.mps.build.startup" />
         <property role="3LESm3" value="d5033cee-f632-44b6-b308-89d4fbde34ff" />
         <property role="2GAjPV" value="false" />
+        <node concept="1SiIV0" id="BsOHnjbkDo" role="3bR37C">
+          <node concept="3bR9La" id="BsOHnjbkDp" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7pdFgzxlDoA" resolve="jetbrains.mps.build" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="BsOHnjbkDq" role="3bR37C">
+          <node concept="3bR9La" id="BsOHnjbkDr" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7pdFgzxlDoP" resolve="jetbrains.mps.build.mps" />
+          </node>
+        </node>
         <node concept="1yeLz9" id="7YI57w6KjYf" role="1TViLv">
           <property role="TrG5h" value="jetbrains.mps.build.startup#3885435385580635037" />
           <property role="3LESm3" value="806e3b22-557f-4d5e-94a3-443cbb7dc456" />
@@ -25954,6 +25967,7 @@
     <property role="TrG5h" value="mps" />
     <property role="3GE5qa" value="ide.data" />
     <property role="26EafI" value="bin" />
+    <ref role="1_kbm$" node="6Iq8148fw_a" resolve="MPS" />
     <node concept="26Ea6D" id="2lwFGYOW7EY" role="2hID6k">
       <property role="26Ea6C" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none" />
     </node>
@@ -25965,9 +25979,6 @@
     </node>
     <node concept="26Ea6D" id="3ue78b0PEyn" role="2hID6k">
       <property role="26Ea6C" value="-Dide.mac.message.dialogs.as.sheets=false" />
-    </node>
-    <node concept="26Ea6D" id="41$40Av8yB1" role="2hID6k">
-      <property role="26Ea6C" value="-Didea.paths.selector=MPS35" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yAw" role="2hID6k">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />
@@ -26017,9 +26028,6 @@
     </node>
     <node concept="26Ea6D" id="3ue78b0PHL9" role="26FZ21">
       <property role="26Ea6C" value="-Dide.mac.message.dialogs.as.sheets=false" />
-    </node>
-    <node concept="26Ea6D" id="41$40Av8yBe" role="26FZ21">
-      <property role="26Ea6C" value="-Didea.paths.selector=MPS35" />
     </node>
     <node concept="26Ea6D" id="41$40Av8yAF" role="26FZ21">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />

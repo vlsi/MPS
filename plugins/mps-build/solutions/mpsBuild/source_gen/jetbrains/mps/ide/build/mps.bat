@@ -31,7 +31,8 @@ SET MPS_VM_OPTIONS=%PROJECT_HOME%bin\mps64.exe.vmoptions
 
 set ACC=
 FOR /F "delims=" %%i in ('TYPE "%MPS_VM_OPTIONS%"') DO call :parse_vmoptions "%%i"
-set JVM_ARGS=%ACC%
+set IDEA_PATHS_SELECTOR=MPS2017.1
+set JVM_ARGS=%ACC% -Didea.paths.selector=%IDEA_PATHS_SELECTOR%
 :: 32 bit
 ::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041
 :: 64 bit

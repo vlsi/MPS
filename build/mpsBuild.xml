@@ -811,7 +811,6 @@
       <chunk>
         <module file="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/jetbrains.mps.build.migration.msd" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/jetbrains.mps.build.mps.testManifest.mpl" />
-        <module file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" />
       </chunk>
       <chunk>
@@ -819,6 +818,7 @@
         <module file="${mps_home}/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.runner/jetbrains.mps.build.mps.runner.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.mps.tests/jetbrains.mps.build.mps.tests.mpl" />
+        <module file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" />
         <module file="${mps_home}/plugins/mps-build/solutions/workflow.preset/jetbrains.mps.build.workflow.preset.msd" />
       </chunk>
       <chunk>
@@ -1451,7 +1451,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.startup" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.startup" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.startup" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.startup" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1476,15 +1476,20 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -1554,20 +1559,20 @@
   <target name="cleanSources">
     <delete dir="${mps_home}/plugins/mps-build/languages/solutions/jetbrains.mps.build.mps.migration/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.testManifest/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.workflow/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/solutions/workflow.preset/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.runner/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/languages/build.mps.tests/generator/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
     <delete dir="${mps_home}/plugins/mps-build/solutions/mpsBuild/source_gen" />
   </target>
 </project>
