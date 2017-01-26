@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring" file="EditorGeneratorRefactoring.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring" file="EditorGeneratorRefactoring.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
@@ -35,18 +35,18 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode extendsClassName="jetbrains.mps.migration.global.BaseProjectMigration" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v35.Migrations35" file="Migrations35.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1" file="Migrations_2017_1.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring" />
-    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring" />
+    <classNode dependClassName="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigration" />
     <classNode dependClassName="jetbrains.mps.migration.global.ProjectMigrationsRegistry" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles" file="RemoveHistoryFiles.java">
+  <dependency className="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles" file="RemoveHistoryFiles.java">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

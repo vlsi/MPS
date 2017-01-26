@@ -15,7 +15,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700938:jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v35)/4140180342946030802">
+  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/4140180342946030802">
     <file name="RemoveHistoryFiles.java">
       <node id="4140180342946076749" at="23,31,24,46" concept="14" />
       <node id="2395946271876055851" at="27,45,28,58" concept="11" />
@@ -83,22 +83,22 @@
       <scope id="4140180342946030861" at="26,0,66,0">
         <var name="project" id="4140180342946030865" />
       </scope>
-      <unit id="4140180342946106171" at="31,42,35,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$1" />
-      <unit id="2395946271875943794" at="36,174,40,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$2" />
-      <unit id="4140180342946156605" at="40,51,44,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$3" />
-      <unit id="2395946271875984068" at="44,19,48,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$4" />
-      <unit id="2395946271876042152" at="48,23,52,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$5" />
-      <unit id="2395946271876061452" at="52,19,56,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$6" />
-      <unit id="4140180342946159721" at="58,52,62,7" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles$7" />
-      <unit id="4140180342946030802" at="22,0,71,0" name="jetbrains.mps.ide.mpsmigration.v35.RemoveHistoryFiles" />
+      <unit id="4140180342946106171" at="31,42,35,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$1" />
+      <unit id="2395946271875943794" at="36,174,40,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$2" />
+      <unit id="4140180342946156605" at="40,51,44,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$3" />
+      <unit id="2395946271875984068" at="44,19,48,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$4" />
+      <unit id="2395946271876042152" at="48,23,52,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$5" />
+      <unit id="2395946271876061452" at="52,19,56,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$6" />
+      <unit id="4140180342946159721" at="58,52,62,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles$7" />
+      <unit id="4140180342946030802" at="22,0,71,0" name="jetbrains.mps.ide.mpsmigration.v_2017_1.RemoveHistoryFiles" />
     </file>
   </root>
-  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v35)/7831187068298098498">
-    <file name="Migrations35.java">
+  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/7831187068298098498">
+    <file name="Migrations_2017_1.java">
       <node id="2400678414103294607" at="12,0,13,0" concept="5" trace="myMigrations" />
       <node id="2400678414103294623" at="17,46,18,70" concept="4" />
       <node id="2400678414103294640" at="23,46,24,73" concept="4" />
-      <node id="7831187068298098648" at="30,36,31,26" concept="10" />
+      <node id="7831187068298098648" at="30,36,31,31" concept="10" />
       <node id="2400678414103294620" at="16,31,19,5" concept="6" />
       <node id="2400678414103294637" at="22,34,25,5" concept="6" />
       <node id="7831187068298098623" at="15,0,21,0" concept="8" trace="initComponent#()V" />
@@ -106,7 +106,7 @@
       <node id="7831187068298098637" at="27,0,33,0" concept="8" trace="getComponentName#()Ljava/lang/String;" />
       <scope id="2400678414103294622" at="17,46,18,70" />
       <scope id="2400678414103294639" at="23,46,24,73" />
-      <scope id="7831187068298098645" at="30,36,31,26" />
+      <scope id="7831187068298098645" at="30,36,31,31" />
       <scope id="2400678414103294620" at="16,31,19,5">
         <var name="pm" id="2400678414103294628" />
       </scope>
@@ -118,10 +118,10 @@
       <scope id="7831187068298098623" at="15,0,21,0" />
       <scope id="7831187068298098630" at="21,0,27,0" />
       <scope id="7831187068298098637" at="27,0,33,0" />
-      <unit id="7831187068298098498" at="11,0,34,0" name="jetbrains.mps.ide.mpsmigration.v35.Migrations35" />
+      <unit id="7831187068298098498" at="11,0,34,0" name="jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1" />
     </file>
   </root>
-  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v35)/7831187068298103528">
+  <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/7831187068298103528">
     <file name="EditorGeneratorRefactoring.java">
       <node id="7014341036936497733" at="36,0,37,0" concept="5" trace="myCellFactoryCompatibilityTemplate" />
       <node id="129608261008896134" at="38,39,39,54" concept="14" />
@@ -269,13 +269,13 @@
       <scope id="7831187068298105302" at="42,0,75,0">
         <var name="project" id="7831187068298105306" />
       </scope>
-      <unit id="5369771541921952907" at="52,90,56,7" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$1" />
-      <unit id="2180956403484877067" at="61,240,65,11" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$2" />
-      <unit id="2180956403484883560" at="65,26,69,11" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$3" />
-      <unit id="2180956403485398377" at="82,728,86,9" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$4$1" />
-      <unit id="2180956403484602864" at="96,538,100,5" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$5" />
-      <unit id="2180956403485385367" at="80,85,88,5" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring$4" />
-      <unit id="7831187068298103528" at="35,0,143,0" name="jetbrains.mps.ide.mpsmigration.v35.EditorGeneratorRefactoring" />
+      <unit id="5369771541921952907" at="52,90,56,7" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$1" />
+      <unit id="2180956403484877067" at="61,240,65,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$2" />
+      <unit id="2180956403484883560" at="65,26,69,11" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$3" />
+      <unit id="2180956403485398377" at="82,728,86,9" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$4$1" />
+      <unit id="2180956403484602864" at="96,538,100,5" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$5" />
+      <unit id="2180956403485385367" at="80,85,88,5" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring$4" />
+      <unit id="7831187068298103528" at="35,0,143,0" name="jetbrains.mps.ide.mpsmigration.v_2017_1.EditorGeneratorRefactoring" />
     </file>
   </root>
 </debug-info>

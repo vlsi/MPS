@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model ref="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v35)">
+<model ref="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)">
   <persistence version="9" />
   <languages>
     <use id="1a8554c4-eb84-43ba-8c34-6f0d90c6e75a" name="jetbrains.mps.lang.smodel.query" version="2" />
@@ -300,7 +300,7 @@
     </language>
   </registry>
   <node concept="312cEu" id="6MHXMmJyBt2">
-    <property role="TrG5h" value="Migrations35" />
+    <property role="TrG5h" value="Migrations_2017_1" />
     <node concept="312cEg" id="25gV4Ls$Naf" role="jymVt">
       <property role="34CwA1" value="false" />
       <property role="eg7rD" value="false" />
@@ -436,7 +436,7 @@
       <node concept="3clFbS" id="6MHXMmJyBvl" role="3clF47">
         <node concept="3clFbF" id="6MHXMmJyBvo" role="3cqZAp">
           <node concept="Xl_RD" id="6MHXMmJyBBF" role="3clFbG">
-            <property role="Xl_RC" value="Migrations35" />
+            <property role="Xl_RC" value="Migrations_2017_1" />
           </node>
         </node>
       </node>

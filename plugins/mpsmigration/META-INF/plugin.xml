@@ -4,8 +4,8 @@
         "http://plugins.intellij.net/plugin.dtd"
         >
 <idea-plugin xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.ide.mpsmigration_34</id>
-  <name>Migration 3.5</name>
+  <id>jetbrains.mps.ide.mpsmigration_2017_1</id>
+  <name>Migration 2017.1</name>
   <description>Provides actions to migrate models and languages developed using previous versions of MPS</description>
   <version>2017.1</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
@@ -22,7 +22,7 @@
 
   <application-components>
     <component>
-      <implementation-class>jetbrains.mps.ide.mpsmigration.v35.Migrations35</implementation-class>
+      <implementation-class>jetbrains.mps.ide.mpsmigration.v_2017_1.Migrations_2017_1</implementation-class>
     </component>
   </application-components>
 </idea-plugin>
