@@ -31739,6 +31739,9 @@
         <node concept="3_I8Xc" id="4hCebq6T56M" role="39821P">
           <ref role="3_I8Xa" node="3ZROizBYrvW" resolve="lib" />
         </node>
+        <node concept="3_I8Xc" id="6qTsxPvXLlV" role="39821P">
+          <ref role="3_I8Xa" node="390SM3Ioekq" resolve="META-INF" />
+        </node>
         <node concept="398223" id="390SM3Ioelo" role="39821P">
           <node concept="398223" id="7EO9qyxy3UZ" role="39821P">
             <node concept="2HvfSZ" id="4qmhgpFOcbp" role="39821P">

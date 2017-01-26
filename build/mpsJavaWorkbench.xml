@@ -146,6 +146,10 @@
       <fileset dir="${artifacts.mpsJavaPlatform}/lib" />
     </copy>
     <mkdir dir="${build.layout}/mps-java-workbench/META-INF" />
+    <copy todir="${build.layout}/mps-java-workbench/META-INF">
+      <fileset dir="${artifacts.mpsJavaPlatform}/META-INF" />
+    </copy>
+    <mkdir dir="${build.layout}/mps-java-workbench/META-INF" />
     <mkdir dir="${build.layout}/mps-java-workbench/META-INF/workbench" />
     <copy todir="${build.layout}/mps-java-workbench/META-INF/workbench">
       <fileset dir="${mps_home}/plugins/mps-java-workbench/META-INF/workbench">

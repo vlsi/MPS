@@ -112,7 +112,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8006829063600512192">
     <file name="mpsJavaWorkbench.xml">
-      <unit id="8006829063600512192" at="1,0,347,10" name="jetbrains.mps.ide.build.mpsJavaWorkbench" />
+      <unit id="8006829063600512192" at="1,0,351,10" name="jetbrains.mps.ide.build.mpsJavaWorkbench" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8227093612176368028">
