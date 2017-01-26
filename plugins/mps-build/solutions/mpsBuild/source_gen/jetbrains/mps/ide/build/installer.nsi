@@ -8,14 +8,14 @@
 !define PRODUCT_MAJOR_VERSION "$version$"
 !define PRODUCT_PUBLISHER "JetBrains"
 !define PRODUCT_WEB_SITE "http://www.jetbrains.com/mps"
-!define APP_NAME "JetBrains MPS $version$"
+!define APP_NAME "MPS $version$"
 
 #************************************ Registry ************************************************************#
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
 
 #************************************ Shortcuts ***********************************************************#
-!define MAIN_MENU_FOLDER "$SMPROGRAMS\${PRODUCT_NAME}"
+!define MAIN_MENU_FOLDER "$SMPROGRAMS\${PRODUCT_PUBLISHER}"
 !define PROGRAM_LINK "${MAIN_MENU_FOLDER}\${APP_NAME}.lnk"
 !define DESKTOP_LINK "$DESKTOP\${APP_NAME}.lnk"
 !define QL_LINK "$QUICKLAUNCH\${APP_NAME}.lnk"
