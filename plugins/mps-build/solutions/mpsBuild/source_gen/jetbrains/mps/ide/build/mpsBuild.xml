@@ -1498,7 +1498,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.jetbrains.mps.build.startup#3885435385580635037" depends="java.compile.jetbrains.mps.build.startup, fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.startup#3885435385580635037" depends="java.compile.jetbrains.mps.build, java.compile.jetbrains.mps.build.mps, java.compile.jetbrains.mps.build.startup, java.compile.jetbrains.mps.build.workflow, fetchDependencies">
     <mkdir dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/source_gen" />
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.startup#3885435385580635037" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.startup#3885435385580635037" fork="false" encoding="utf8" includeantruntime="false" debug="true">
@@ -1523,16 +1523,21 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-environment.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-platform.jar" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.mps" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.startup" />
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.build.workflow" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.6.2.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+        <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>

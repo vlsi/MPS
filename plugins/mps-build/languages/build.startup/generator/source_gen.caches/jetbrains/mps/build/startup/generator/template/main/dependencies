@@ -5,6 +5,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.build.startup.behavior.MpsStartupScript__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />

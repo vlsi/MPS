@@ -20625,22 +20625,22 @@
         <property role="TrG5h" value="jetbrains.mps.build.startup" />
         <property role="3LESm3" value="d5033cee-f632-44b6-b308-89d4fbde34ff" />
         <property role="2GAjPV" value="false" />
-        <node concept="1SiIV0" id="BsOHnjbkDo" role="3bR37C">
-          <node concept="3bR9La" id="BsOHnjbkDp" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7pdFgzxlDoA" resolve="jetbrains.mps.build" />
-          </node>
-        </node>
-        <node concept="1SiIV0" id="BsOHnjbkDq" role="3bR37C">
-          <node concept="3bR9La" id="BsOHnjbkDr" role="1SiIV1">
-            <property role="3bR36h" value="false" />
-            <ref role="3bR37D" node="7pdFgzxlDoP" resolve="jetbrains.mps.build.mps" />
-          </node>
-        </node>
         <node concept="1yeLz9" id="7YI57w6KjYf" role="1TViLv">
           <property role="TrG5h" value="jetbrains.mps.build.startup#3885435385580635037" />
           <property role="3LESm3" value="806e3b22-557f-4d5e-94a3-443cbb7dc456" />
           <property role="2GAjPV" value="false" />
+          <node concept="1SiIV0" id="BsOHnjnizw" role="3bR37C">
+            <node concept="3bR9La" id="BsOHnjnizx" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7pdFgzxlDoA" resolve="jetbrains.mps.build" />
+            </node>
+          </node>
+          <node concept="1SiIV0" id="BsOHnjnizy" role="3bR37C">
+            <node concept="3bR9La" id="BsOHnjnizz" role="1SiIV1">
+              <property role="3bR36h" value="false" />
+              <ref role="3bR37D" node="7pdFgzxlDoP" resolve="jetbrains.mps.build.mps" />
+            </node>
+          </node>
         </node>
         <node concept="398BVA" id="7LCLXvK1uwa" role="3LF7KH">
           <ref role="398BVh" node="7pdFgzxlDn3" resolve="mps_home" />
@@ -20658,6 +20658,18 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node concept="1SiIV0" id="BsOHnjbkDo" role="3bR37C">
+          <node concept="3bR9La" id="BsOHnjbkDp" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7pdFgzxlDoA" resolve="jetbrains.mps.build" />
+          </node>
+        </node>
+        <node concept="1SiIV0" id="BsOHnjbkDq" role="3bR37C">
+          <node concept="3bR9La" id="BsOHnjbkDr" role="1SiIV1">
+            <property role="3bR36h" value="false" />
+            <ref role="3bR37D" node="7pdFgzxlDoP" resolve="jetbrains.mps.build.mps" />
           </node>
         </node>
       </node>
@@ -25996,11 +26008,11 @@
     <node concept="26EafG" id="4KL8ISnt6x5" role="26Ea7d">
       <property role="26EafJ" value="lib/mps-boot-util.jar" />
     </node>
-    <node concept="26EafG" id="BJYGrH08X$" role="26Ea7d">
-      <property role="26EafJ" value="lib/boot.jar" />
-    </node>
     <node concept="26EafG" id="BJYGrH08X_" role="26Ea7d">
       <property role="26EafJ" value="lib/bootstrap.jar" />
+    </node>
+    <node concept="26EafG" id="BJYGrH08XD" role="26Ea7d">
+      <property role="26EafJ" value="lib/extensions.jar" />
     </node>
     <node concept="26EafG" id="BJYGrH08XA" role="26Ea7d">
       <property role="26EafJ" value="lib/util.jar" />
@@ -26011,11 +26023,11 @@
     <node concept="26EafG" id="BJYGrH08XC" role="26Ea7d">
       <property role="26EafJ" value="lib/log4j.jar" />
     </node>
-    <node concept="26EafG" id="BJYGrH08XD" role="26Ea7d">
-      <property role="26EafJ" value="lib/extensions.jar" />
-    </node>
     <node concept="26EafG" id="BJYGrH08XE" role="26Ea7d">
       <property role="26EafJ" value="lib/trove4j.jar" />
+    </node>
+    <node concept="26EafG" id="BsOHnjrceI" role="26Ea7d">
+      <property role="26EafJ" value="lib/jna.jar" />
     </node>
     <node concept="26Ea6D" id="BJYGrH08XF" role="26FZ21">
       <property role="26Ea6C" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none" />

@@ -41,13 +41,13 @@ set JVM_ARGS=%ACC% -Didea.paths.selector=%IDEA_PATHS_SELECTOR%
 set CLASSPATH=%PROJECT_HOME%lib\branding.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\mps-boot.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\mps-boot-util.jar
-set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\boot.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\bootstrap.jar
+set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\extensions.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\util.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\jdom.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\log4j.jar
-set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\extensions.jar
 set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\trove4j.jar
+set CLASSPATH=%CLASSPATH%;%PROJECT_HOME%lib\jna.jar
 set CLASSPATH=%CLASSPATH%;%JDK%\lib\tools.jar
 
 pushd bin
