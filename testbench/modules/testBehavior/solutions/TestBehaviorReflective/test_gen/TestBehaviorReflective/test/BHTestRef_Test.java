@@ -397,7 +397,7 @@ public class BHTestRef_Test extends TestCase {
         aNode = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
         aNode = SNodeOperations.getNode("r:e2b20dd3-debc-4be6-b7ff-17ade77d9a0f(BHL2.structure)", "7688460527007456349");
         SNode nodeA = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"));
-        SNode conceptNodeA = SNodeOperations.getConceptDeclaration(nodeA);
+        SConcept conceptNodeA = SNodeOperations.getConcept(nodeA);
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((int) (Integer) BHReflection.invoke(SNodeOperations.asSConcept(conceptNodeA), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
       }
     });
