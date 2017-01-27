@@ -23,7 +23,7 @@ public class DeletedNodeMessageTarget implements MessageTarget {
   private String myRole;
   private int myNextChildIndex = -1; // -1 for deleted in single role
 
-  public DeletedNodeMessageTarget(String role, int nextChildIndex) {
+  public DeletedNodeMessageTarget(@NotNull String role, int nextChildIndex) {
     myRole = role;
     myNextChildIndex = nextChildIndex;
   }
@@ -49,6 +49,6 @@ public class DeletedNodeMessageTarget implements MessageTarget {
   @Override
   public boolean sameAs(@NotNull MessageTarget errorTarget) {
     return errorTarget instanceof DeletedNodeMessageTarget && EqualUtil.equals(errorTarget.getRole(), getRole())
-      && myNextChildIndex == ((DeletedNodeMessageTarget) errorTarget).myNextChildIndex;
+           && myNextChildIndex == ((DeletedNodeMessageTarget) errorTarget).myNextChildIndex;
   }
 }

@@ -42,8 +42,13 @@ public class CellFinder {
 
   @Nullable
   public static EditorCell getCellForReference(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String role) {
+    if (role == null) {
+      return null;
+    }
     EditorCell rawCell = getRawCell(editorComponent, node);
-    if (rawCell == null) { return null; }
+    if (rawCell == null) {
+      return null;
+    }
     EditorCell child = CellFinderUtil.findChildByCondition(rawCell, new Condition<EditorCell>() {
       @Override
       public boolean met(EditorCell cell) {
@@ -59,11 +64,18 @@ public class CellFinder {
 
   @Nullable
   public static EditorCell getCellForProperty(@Nullable EditorComponent editorComponent, @Nullable final SNode node, final String name) {
+    if (name == null) {
+      return null;
+    }
     EditorCell rawCell = getRawCell(editorComponent, node);
-    if (rawCell == null) { return null; }
+    if (rawCell == null) {
+      return null;
+    }
 
     EditorCell child = CellFinderUtil.findChildByCondition(rawCell, cell -> isCellForProperty(cell, node, name), true, true);
-    if (child == null) { return rawCell; }
+    if (child == null) {
+      return rawCell;
+    }
 
     return child;
   }
@@ -81,7 +93,7 @@ public class CellFinder {
 
     ModelAccessor modelAccessor = propertyCell.getModelAccessor();
     return modelAccessor instanceof PropertyAccessor && node == propertyCell.getSNode()
-        && name.equals(((PropertyAccessor) modelAccessor).getPropertyName());
+           && name.equals(((PropertyAccessor) modelAccessor).getPropertyName());
   }
 
   @Nullable
@@ -94,7 +106,7 @@ public class CellFinder {
       @Override
       public boolean met(EditorCell cell) {
         return role.equals(cell.getRole()) &&
-            (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig());
+               (node == cell.getSNode() || node == cell.getSNode().getParent() && cell.isBig());
       }
     }, true, true);
     if (child != null) {
