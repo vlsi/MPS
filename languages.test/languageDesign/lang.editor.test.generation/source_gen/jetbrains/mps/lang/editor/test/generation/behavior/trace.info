@@ -16,6 +16,9 @@
     <file name="ModelAccess_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.ModelAccess_BehaviorDescriptor" />
     </file>
+    <file name="Property_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.Property_BehaviorDescriptor" />
+    </file>
     <file name="ReadOnlyModelAccessor_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.editor.test.generation.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" />
     </file>

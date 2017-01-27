@@ -130,5 +130,16 @@
       <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
     </node>
   </node>
+  <node concept="1TIwiD" id="3iX8RSsB3Yb">
+    <property role="EcuMT" value="3800232685123420043" />
+    <property role="3GE5qa" value="abstractLabels" />
+    <property role="TrG5h" value="Property" />
+    <ref role="1TJDcQ" node="2XU9kLDC6x" resolve="AbstractCellTest" />
+    <node concept="1TJgyi" id="3iX8RSsBpkN" role="1TKVEl">
+      <property role="IQ2nx" value="3800232685123507507" />
+      <property role="TrG5h" value="theProperty" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
 </model>
 

@@ -101,6 +101,18 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
         if (true) {
           switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0d1a3, editorComponentId)) {
             case 0:
+              return Collections.<ConceptEditorComponent>singletonList(new Property_Default());
+            case 1:
+              return Collections.<ConceptEditorComponent>singletonList(new Property_IStyleContainer());
+            default:
+              return Collections.<ConceptEditorComponent>emptyList();
+          }
+        }
+        break;
+      case 4:
+        if (true) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a3, editorComponentId)) {
+            case 0:
               return Collections.<ConceptEditorComponent>singletonList(new ReadOnlyModelAccessor_EditorCellModel());
             case 1:
               return Collections.<ConceptEditorComponent>singletonList(new ReadOnlyModelAccessor_ICellStyle());
@@ -111,9 +123,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
           }
         }
         break;
-      case 4:
+      case 5:
         if (true) {
-          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0e1a3, editorComponentId)) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a3, editorComponentId)) {
             case 0:
               return Collections.<ConceptEditorComponent>singletonList(new RefNodeList_Default());
             case 1:
@@ -129,9 +141,9 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
           }
         }
         break;
-      case 5:
+      case 6:
         if (true) {
-          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0f1a3, editorComponentId)) {
+          switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0a0g1a3, editorComponentId)) {
             case 0:
               return Collections.<ConceptEditorComponent>singletonList(new TransactionalProperty_Default());
             case 1:
@@ -182,14 +194,15 @@ public class EditorAspectDescriptorImpl extends EditorAspectDescriptorBase imple
   }
 
   private static final ConceptSwitchIndex index_xbvbvu_a0b = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
-  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
+  private static final ConceptSwitchIndex index_xbvbvu_a0d = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde8953186ee02L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a5a543L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c22L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a70c23L), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531adc76dL), MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531aadcccL)).seal();
   private static final ConceptSwitchIndex index_xbvbvu_a0h = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L)).seal();
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Constant_Default", "jetbrains.mps.lang.editor.test.generation.editor.Constant_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Constant_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Constant_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0b1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Error_Default", "jetbrains.mps.lang.editor.test.generation.editor.Error_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.Error_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.Error_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0c1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_Default", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ModelAccess_IStyleContainer"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_IStyleContainer"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_Default", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ICelllStyle", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_IStyleContainer", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ListWithRole"};
-  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_Default", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_IStyleContainer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0d1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.Property_Default", "jetbrains.mps.lang.editor.test.generation.editor.Property_IStyleContainer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0e1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.ReadOnlyModelAccessor_IStyleContainer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0f1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_Default", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ICelllStyle", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_IStyleContainer", "jetbrains.mps.lang.editor.test.generation.editor.RefNodeList_ListWithRole"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0a0g1a3 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_Default", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_EditorCellModel", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_ICellStyle", "jetbrains.mps.lang.editor.test.generation.editor.TransactionalProperty_IStyleContainer"};
   private static String[] stringSwitchCases_xbvbvu_a0a0g = new String[]{"testStringAttribute"};
   private static String[] stringSwitchCases_xbvbvu_a0a0a0a1a7 = new String[]{"jetbrains.mps.lang.editor.test.generation.editor.TestTargetTransformationMenu"};
 }

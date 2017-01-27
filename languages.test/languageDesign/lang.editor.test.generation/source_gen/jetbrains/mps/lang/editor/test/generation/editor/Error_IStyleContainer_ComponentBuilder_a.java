@@ -7,6 +7,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
@@ -24,6 +26,8 @@ import jetbrains.mps.editor.runtime.style.CellAlign;
 import jetbrains.mps.editor.runtime.style.ShowBoundariesArea;
 import jetbrains.mps.editor.runtime.style.TableComponent;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Superscript;
+import jetbrains.mps.editor.runtime.style.ScriptKind;
 
 /*package*/ class Error_IStyleContainer_ComponentBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -41,78 +45,85 @@ import jetbrains.mps.util.Pair;
   }
 
   /*package*/ EditorCell createCell() {
-    return createError_47wt8x_a();
+    return createCollection_47wt8x_a();
   }
 
-  private EditorCell createError_47wt8x_a() {
+  private EditorCell createCollection_47wt8x_a() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Indent());
+    editorCell.setCellId("Collection_47wt8x_a");
+    editorCell.addEditorCell(createError_47wt8x_a0());
+    editorCell.addEditorCell(createCollection_47wt8x_b0());
+    return editorCell;
+  }
+  private EditorCell createError_47wt8x_a0() {
     EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
-    editorCell.setCellId("Error_47wt8x_a");
+    editorCell.setCellId("Error_47wt8x_a0");
     Style style = new StyleImpl();
     new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     new testKey_StyleKey().apply(style);
-    if (_StyleParameter_QueryFunction_47wt8x_a2a()) {
+    if (_StyleParameter_QueryFunction_47wt8x_a2a0()) {
       new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     }
-    if (_StyleParameter_QueryFunction_47wt8x_a3a()) {
+    if (_StyleParameter_QueryFunction_47wt8x_a3a0()) {
       new testStyleStyleClass(getEditorContext(), getNode()).apply(style, editorCell);
     }
-    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.test.generation", "testStringAttribute"), _StyleParameter_QueryFunction_47wt8x_a4a());
+    style.set(StyleAttributes.getInstance().<String>getAttribute("jetbrains.mps.lang.editor.test.generation", "testStringAttribute"), _StyleParameter_QueryFunction_47wt8x_a4a0());
     style.set(StyleAttributes.AUTO_DELETABLE, true);
-    style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_47wt8x_a6a());
+    style.set(StyleAttributes.AUTO_DELETABLE, _StyleParameter_QueryFunction_47wt8x_a6a0());
     style.set(StyleAttributes.BASE_LINE_CELL, true);
-    style.set(StyleAttributes.BASE_LINE_CELL, _StyleParameter_QueryFunction_47wt8x_a8a());
+    style.set(StyleAttributes.BASE_LINE_CELL, _StyleParameter_QueryFunction_47wt8x_a8a0());
     style.set(StyleAttributes.DRAW_BORDER, false);
-    style.set(StyleAttributes.DRAW_BORDER, _StyleParameter_QueryFunction_47wt8x_a01a());
+    style.set(StyleAttributes.DRAW_BORDER, _StyleParameter_QueryFunction_47wt8x_a01a0());
     style.set(StyleAttributes.DRAW_BRACKETS, false);
-    style.set(StyleAttributes.DRAW_BRACKETS, _StyleParameter_QueryFunction_47wt8x_a21a());
+    style.set(StyleAttributes.DRAW_BRACKETS, _StyleParameter_QueryFunction_47wt8x_a21a0());
     style.set(StyleAttributes.EDITABLE, false);
-    style.set(StyleAttributes.EDITABLE, _StyleParameter_QueryFunction_47wt8x_a41a());
+    style.set(StyleAttributes.EDITABLE, _StyleParameter_QueryFunction_47wt8x_a41a0());
     style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, _StyleParameter_QueryFunction_47wt8x_a61a());
+    style.set(StyleAttributes.FIRST_POSITION_ALLOWED, _StyleParameter_QueryFunction_47wt8x_a61a0());
     style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_47wt8x_a81a());
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, _StyleParameter_QueryFunction_47wt8x_a81a0());
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_47wt8x_a02a());
+    style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, _StyleParameter_QueryFunction_47wt8x_a02a0());
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, _StyleParameter_QueryFunction_47wt8x_a22a());
+    style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, _StyleParameter_QueryFunction_47wt8x_a22a0());
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, true);
-    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_47wt8x_a42a());
+    style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, _StyleParameter_QueryFunction_47wt8x_a42a0());
     style.set(StyleAttributes.LAST_POSITION_ALLOWED, true);
-    style.set(StyleAttributes.LAST_POSITION_ALLOWED, _StyleParameter_QueryFunction_47wt8x_a62a());
+    style.set(StyleAttributes.LAST_POSITION_ALLOWED, _StyleParameter_QueryFunction_47wt8x_a62a0());
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_47wt8x_a82a());
+    style.set(StyleAttributes.PUNCTUATION_LEFT, _StyleParameter_QueryFunction_47wt8x_a82a0());
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_47wt8x_a03a());
+    style.set(StyleAttributes.PUNCTUATION_RIGHT, _StyleParameter_QueryFunction_47wt8x_a03a0());
     style.set(StyleAttributes.READ_ONLY, true);
-    style.set(StyleAttributes.READ_ONLY, _StyleParameter_QueryFunction_47wt8x_a23a());
+    style.set(StyleAttributes.READ_ONLY, _StyleParameter_QueryFunction_47wt8x_a23a0());
     style.set(StyleAttributes.SELECTABLE, true);
-    style.set(StyleAttributes.SELECTABLE, _StyleParameter_QueryFunction_47wt8x_a43a());
+    style.set(StyleAttributes.SELECTABLE, _StyleParameter_QueryFunction_47wt8x_a43a0());
     style.set(StyleAttributes.STRIKE_OUT, true);
-    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_47wt8x_a63a());
+    style.set(StyleAttributes.STRIKE_OUT, _StyleParameter_QueryFunction_47wt8x_a63a0());
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.blue));
-    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a83a()));
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a83a0()));
     style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a04a().o1 : _StyleParameter_QueryFunction_47wt8x_a04a().o2));
+    style.set(StyleAttributes.BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a04a0().o1 : _StyleParameter_QueryFunction_47wt8x_a04a0().o2));
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
-    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a24a()));
+    style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a24a0()));
     style.set(StyleAttributes.BRACKETS_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.BRACKETS_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a44a().o1 : _StyleParameter_QueryFunction_47wt8x_a44a().o2));
+    style.set(StyleAttributes.BRACKETS_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a44a0().o1 : _StyleParameter_QueryFunction_47wt8x_a44a0().o2));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan)));
-    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a64a()));
+    style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a64a0()));
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a84a().o1 : _StyleParameter_QueryFunction_47wt8x_a84a().o2));
+    style.set(StyleAttributes.TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a84a0().o1 : _StyleParameter_QueryFunction_47wt8x_a84a0().o2));
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a05a()));
+    style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a05a0()));
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.NULL_TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a25a().o1 : _StyleParameter_QueryFunction_47wt8x_a25a().o2));
+    style.set(StyleAttributes.NULL_TEXT_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a25a0().o1 : _StyleParameter_QueryFunction_47wt8x_a25a0().o2));
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a45a()));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a45a0()));
     style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a65a().o1 : _StyleParameter_QueryFunction_47wt8x_a65a().o2));
+    style.set(StyleAttributes.SELECTED_TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a65a0().o1 : _StyleParameter_QueryFunction_47wt8x_a65a0().o2));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.cyan));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a85a()));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(_StyleParameter_QueryFunction_47wt8x_a85a0()));
     style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(new Color(291)));
-    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a06a().o1 : _StyleParameter_QueryFunction_47wt8x_a06a().o2));
+    style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, (!(StyleRegistry.getInstance().isDarkTheme()) ? _StyleParameter_QueryFunction_47wt8x_a06a0().o1 : _StyleParameter_QueryFunction_47wt8x_a06a0().o2));
     style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
     style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.FIRST);
     style.set(StyleAttributes.DEFAULT_CARET_POSITION, CaretPosition.LAST);
@@ -122,17 +133,17 @@ import jetbrains.mps.util.Pair;
     style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.PADDING_TOP, new Padding(0, Measure.SPACES));
     style.set(StyleAttributes.FONT_SIZE, 15);
-    style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_47wt8x_a07a());
+    style.set(StyleAttributes.FONT_SIZE, _StyleParameter_QueryFunction_47wt8x_a07a0());
     style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD_ITALIC);
-    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_47wt8x_a27a());
+    style.set(StyleAttributes.FONT_STYLE, _StyleParameter_QueryFunction_47wt8x_a27a0());
     style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     style.set(StyleAttributes.LAYOUT_CONSTRAINT, "noflow");
     style.set(StyleAttributes.MATCHING_LABEL, (String) null);
     style.set(StyleAttributes.MATCHING_LABEL, "labelName");
-    style.set(StyleAttributes.MATCHING_LABEL, matchingNode_47wt8x_a77a());
+    style.set(StyleAttributes.MATCHING_LABEL, matchingNode_47wt8x_a77a0());
     style.set(StyleAttributes.MAX_WIDTH, 10);
-    style.set(StyleAttributes.MAX_WIDTH, _StyleParameter_QueryFunction_47wt8x_a97a());
-    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_47wt8x_a08a());
+    style.set(StyleAttributes.MAX_WIDTH, _StyleParameter_QueryFunction_47wt8x_a97a0());
+    style.set(StyleAttributes.NAVIGATABLE_NODE, _StyleParameter_QueryFunction_47wt8x_a08a0());
     style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "navigable");
     style.set(StyleAttributes.PARAMETERS_INFORMATION, new TestTargetParametersInformation());
     style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
@@ -144,156 +155,175 @@ import jetbrains.mps.util.Pair;
     new testStyleStyleClass(getEditorContext(), getNode()).unapply(style, editorCell);
     new testKey_StyleKey().unapply(style);
     style.set(StyleAttributes.UNDERLINED, false);
-    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_47wt8x_a29a());
+    style.set(StyleAttributes.UNDERLINED, _StyleParameter_QueryFunction_47wt8x_a29a0());
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a2a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a2a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a3a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a3a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private String _StyleParameter_QueryFunction_47wt8x_a4a() {
+  private String _StyleParameter_QueryFunction_47wt8x_a4a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return String.valueOf(var);
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a6a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a6a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a8a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a8a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a01a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a01a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a21a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a21a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a41a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a41a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a61a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a61a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a81a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a81a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a02a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a02a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a22a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a22a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a42a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a42a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a62a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a62a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a82a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a82a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a03a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a03a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a23a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a23a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a43a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a43a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a63a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a63a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a83a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a83a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a04a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a04a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a24a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a24a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a44a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a44a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a64a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a64a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return null;
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a84a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a84a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a05a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a05a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a25a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a25a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a45a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a45a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a65a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a65a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Color _StyleParameter_QueryFunction_47wt8x_a85a() {
+  private Color _StyleParameter_QueryFunction_47wt8x_a85a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a06a() {
+  private Pair<Color, Color> _StyleParameter_QueryFunction_47wt8x_a06a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private int _StyleParameter_QueryFunction_47wt8x_a07a() {
+  private int _StyleParameter_QueryFunction_47wt8x_a07a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? 10 : 20);
   }
-  private int _StyleParameter_QueryFunction_47wt8x_a27a() {
+  private int _StyleParameter_QueryFunction_47wt8x_a27a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? 10 : 20);
   }
-  private String matchingNode_47wt8x_a77a() {
+  private String matchingNode_47wt8x_a77a0() {
     boolean var = getNode() != null;
     return (var ? "l1" : "l2");
   }
-  private int _StyleParameter_QueryFunction_47wt8x_a97a() {
+  private int _StyleParameter_QueryFunction_47wt8x_a97a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? 10 : 20);
   }
-  private SNode _StyleParameter_QueryFunction_47wt8x_a08a() {
+  private SNode _StyleParameter_QueryFunction_47wt8x_a08a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return (var ? null : null);
   }
-  private boolean _StyleParameter_QueryFunction_47wt8x_a29a() {
+  private boolean _StyleParameter_QueryFunction_47wt8x_a29a0() {
     boolean var = getEditorContext() != null || getNode() != null;
     return var;
+  }
+  private EditorCell createCollection_47wt8x_b0() {
+    EditorCell_Collection editorCell = new EditorCell_Collection(getEditorContext(), myNode, new CellLayout_Superscript());
+    editorCell.setCellId("Collection_47wt8x_b0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    editorCell.addEditorCell(createError_47wt8x_a1a());
+    return editorCell;
+  }
+  private EditorCell createError_47wt8x_a1a() {
+    EditorCell_Error editorCell = new EditorCell_Error(getEditorContext(), myNode, "");
+    editorCell.setCellId("Error_47wt8x_a1a");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.NORMAL);
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUBSCRIPT);
+    style.set(StyleAttributes.SCRIPT_KIND, ScriptKind.SUPERSCRIPT);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
   }
 }

@@ -13,6 +13,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_Constant = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Error = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ModelAccess = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_Property = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReadOnlyModelAccessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_RefNodeList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TestTargetConcept = new ConceptPresentationBuilder().create();
@@ -31,6 +32,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Error;
       case LanguageConceptSwitch.ModelAccess:
         return props_ModelAccess;
+      case LanguageConceptSwitch.Property:
+        return props_Property;
       case LanguageConceptSwitch.ReadOnlyModelAccessor:
         return props_ReadOnlyModelAccessor;
       case LanguageConceptSwitch.RefNodeList:

@@ -317,6 +317,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       editorCell.addEditorCell(createConstant_i8r80j_o0a0());
       editorCell.addEditorCell(createConstant_i8r80j_p0a0());
       editorCell.addEditorCell(createCollection_i8r80j_q0a0());
+      editorCell.addEditorCell(createConstant_i8r80j_r0a0());
+      editorCell.addEditorCell(createConstant_i8r80j_s0a0());
       return editorCell;
     }
     private EditorCell createConstant_i8r80j_a0a0() {
@@ -3659,6 +3661,18 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
     private EditorCell createConstant_i8r80j_e61a0a() {
       EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "// TODO: copy me here!");
       editorCell.setCellId("Constant_i8r80j_e61a0a");
+      editorCell.setDefaultText("");
+      return editorCell;
+    }
+    private EditorCell createConstant_i8r80j_r0a0() {
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "");
+      editorCell.setCellId("Constant_i8r80j_r0a0");
+      editorCell.setDefaultText("");
+      return editorCell;
+    }
+    private EditorCell createConstant_i8r80j_s0a0() {
+      EditorCell_Constant editorCell = new EditorCell_Constant(getEditorContext(), myNode, "//TODO: copy other cells here!");
+      editorCell.setCellId("Constant_i8r80j_s0a0");
       editorCell.setDefaultText("");
       return editorCell;
     }

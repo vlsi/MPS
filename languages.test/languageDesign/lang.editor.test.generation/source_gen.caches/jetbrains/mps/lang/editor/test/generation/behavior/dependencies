@@ -23,6 +23,10 @@
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
   </dependency>
+  <dependency className="jetbrains.mps.lang.editor.test.generation.behavior.Property_BehaviorDescriptor" file="Property_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
   <dependency className="jetbrains.mps.lang.editor.test.generation.behavior.ReadOnlyModelAccessor_BehaviorDescriptor" file="ReadOnlyModelAccessor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />

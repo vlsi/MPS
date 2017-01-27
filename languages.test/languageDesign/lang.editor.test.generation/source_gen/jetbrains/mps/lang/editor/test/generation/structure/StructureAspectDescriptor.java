@@ -16,6 +16,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptConstant = createDescriptorForConstant();
   /*package*/ final ConceptDescriptor myConceptError = createDescriptorForError();
   /*package*/ final ConceptDescriptor myConceptModelAccess = createDescriptorForModelAccess();
+  /*package*/ final ConceptDescriptor myConceptProperty = createDescriptorForProperty();
   /*package*/ final ConceptDescriptor myConceptReadOnlyModelAccessor = createDescriptorForReadOnlyModelAccessor();
   /*package*/ final ConceptDescriptor myConceptRefNodeList = createDescriptorForRefNodeList();
   /*package*/ final ConceptDescriptor myConceptTestTargetConcept = createDescriptorForTestTargetConcept();
@@ -28,7 +29,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractCellTest, myConceptConstant, myConceptError, myConceptModelAccess, myConceptReadOnlyModelAccessor, myConceptRefNodeList, myConceptTestTargetConcept, myConceptTransactionalProperty);
+    return Arrays.asList(myConceptAbstractCellTest, myConceptConstant, myConceptError, myConceptModelAccess, myConceptProperty, myConceptReadOnlyModelAccessor, myConceptRefNodeList, myConceptTestTargetConcept, myConceptTransactionalProperty);
   }
 
   @Override
@@ -43,6 +44,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptError;
       case LanguageConceptSwitch.ModelAccess:
         return myConceptModelAccess;
+      case LanguageConceptSwitch.Property:
+        return myConceptProperty;
       case LanguageConceptSwitch.ReadOnlyModelAccessor:
         return myConceptReadOnlyModelAccessor;
       case LanguageConceptSwitch.RefNodeList:
@@ -86,6 +89,14 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(false, false, false);
     b.super_("jetbrains.mps.lang.editor.test.generation.structure.AbstractCellTest", 0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L);
     b.origin("r:63b2f701-f24e-4662-9abc-8de126ffafeb(jetbrains.mps.lang.editor.test.generation.structure)/53454498079116322");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForProperty() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.editor.test.generation", "Property", 0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0x34bd237e1c9c3f8bL);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.lang.editor.test.generation.structure.AbstractCellTest", 0xeaa98d49af584b80L, 0xb585c05e7b5fd335L, 0xbde89531a681a1L);
+    b.origin("r:63b2f701-f24e-4662-9abc-8de126ffafeb(jetbrains.mps.lang.editor.test.generation.structure)/3800232685123420043");
+    b.prop("theProperty", 0x34bd237e1c9d9533L, "3800232685123507507");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForReadOnlyModelAccessor() {
