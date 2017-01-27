@@ -202,7 +202,6 @@
       <concept id="1219352745532" name="jetbrains.mps.lang.smodel.structure.NodeRefExpression" flags="nn" index="3B5_sB">
         <reference id="1219352800908" name="referentNode" index="3B5MYn" />
       </concept>
-      <concept id="1172323065820" name="jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation" flags="nn" index="3NT_Vc" />
       <concept id="1138055754698" name="jetbrains.mps.lang.smodel.structure.SNodeType" flags="in" index="3Tqbb2">
         <reference id="1138405853777" name="concept" index="ehGHo" />
       </concept>
@@ -3680,14 +3679,14 @@
                     <node concept="3cpWs8" id="7DwYn_xfHFR" role="3cqZAp">
                       <node concept="3cpWsn" id="7DwYn_xfHFS" role="3cpWs9">
                         <property role="TrG5h" value="conceptNodeA" />
-                        <node concept="3THzug" id="7DwYn_xfHFT" role="1tU5fm">
-                          <ref role="3qa414" to="n871:5mnatV0hAOW" resolve="A" />
+                        <node concept="3bZ5Sz" id="3ZqD6vjawWq" role="1tU5fm">
+                          <ref role="3bZ5Sy" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                         <node concept="2OqwBi" id="7DwYn_xfHFU" role="33vP2m">
                           <node concept="37vLTw" id="7DwYn_xfHFV" role="2Oq$k0">
                             <ref role="3cqZAo" node="7DwYn_xfHFM" resolve="nodeA" />
                           </node>
-                          <node concept="3NT_Vc" id="7DwYn_xfHFW" role="2OqNvi" />
+                          <node concept="2yIwOk" id="3ZqD6vjaxrJ" role="2OqNvi" />
                         </node>
                       </node>
                     </node>
