@@ -46,6 +46,7 @@
       </concept>
       <concept id="1169125787135" name="jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration" flags="ig" index="PkWjJ">
         <property id="6714410169261853888" name="conceptId" index="EcuMT" />
+        <property id="4628067390765907488" name="conceptShortDescription" index="R4oN_" />
         <property id="4628067390765956807" name="final" index="R5$K2" />
         <property id="4628067390765956802" name="abstract" index="R5$K7" />
         <property id="5092175715804935370" name="conceptAlias" index="34LRSv" />
@@ -132,6 +133,9 @@
     <node concept="1QGGSu" id="4Q8sAA5iJRI" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/structure.png" />
     </node>
+    <node concept="PrWs8" id="6OtXG9KbAAY" role="PzmwI">
+      <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
+    </node>
   </node>
   <node concept="1TIwiD" id="f_TJgxE">
     <property role="R5$K7" value="false" />
@@ -188,6 +192,9 @@
     <node concept="PrWs8" id="3pPFrMaA2Yn" role="PzmwI">
       <ref role="PrY4T" to="tpck:h0TrEE$" resolve="INamedConcept" />
     </node>
+    <node concept="PrWs8" id="6OtXG9KbAAy" role="PzmwI">
+      <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
+    </node>
     <node concept="1QGGSu" id="4Q8sAA5iJRH" role="rwd14">
       <property role="1iqoE4" value="${module}/icons/link.png" />
     </node>
@@ -211,6 +218,9 @@
     </node>
     <node concept="PrWs8" id="hOIDY1x" role="PzmwI">
       <ref role="PrY4T" node="hOIDzy1" resolve="IStructureDeprecatable" />
+    </node>
+    <node concept="PrWs8" id="6OtXG9KbA_V" role="PzmwI">
+      <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
     </node>
     <node concept="1TJgyj" id="fKAX2Z_" role="1TKVEi">
       <property role="20kJfa" value="dataType" />
@@ -663,6 +673,52 @@
   <node concept="Az7Fb" id="3H1xM9LtLda">
     <property role="TrG5h" value="IDNumber" />
     <property role="FLfZY" value="-?[0-9]+" />
+  </node>
+  <node concept="1TIwiD" id="6OtXG9K2KUD">
+    <property role="EcuMT" value="7862711839422615209" />
+    <property role="TrG5h" value="DocumentedNodeAnnotation" />
+    <property role="3GE5qa" value="document" />
+    <ref role="1TJDcQ" to="tpck:2ULFgo8_XDk" resolve="NodeAttribute" />
+    <node concept="1TJgyj" id="6OtXG9K2KUS" role="1TKVEi">
+      <property role="IQ2ns" value="7862711839422615224" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="seeAlso" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6OtXG9K2KUP" resolve="DocumentationObjectiveRef" />
+    </node>
+    <node concept="M6xJ_" id="6OtXG9K2KUE" role="lGtFl">
+      <property role="Hh88m" value="doc" />
+      <node concept="tn0Fv" id="6OtXG9K2KUG" role="HhnKV">
+        <property role="tnX3d" value="true" />
+      </node>
+      <node concept="trNpa" id="6OtXG9K2KUJ" role="EQaZv">
+        <ref role="trN6q" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
+      </node>
+    </node>
+    <node concept="1TJgyi" id="6OtXG9K2KUL" role="1TKVEl">
+      <property role="IQ2nx" value="7862711839422615217" />
+      <property role="TrG5h" value="text" />
+      <ref role="AX2Wp" to="tpck:fKAOsGN" resolve="string" />
+    </node>
+  </node>
+  <node concept="PlHQZ" id="6OtXG9K2KUI">
+    <property role="EcuMT" value="7862711839422615214" />
+    <property role="3GE5qa" value="document" />
+    <property role="TrG5h" value="DocumentationObjective" />
+  </node>
+  <node concept="1TIwiD" id="6OtXG9K2KUP">
+    <property role="EcuMT" value="7862711839422615221" />
+    <property role="3GE5qa" value="document" />
+    <property role="TrG5h" value="DocumentationObjectiveRef" />
+    <property role="R4oN_" value="smart reference to documentable target" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6OtXG9K2KUQ" role="1TKVEi">
+      <property role="IQ2ns" value="7862711839422615222" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="target" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
+    </node>
   </node>
 </model>
 

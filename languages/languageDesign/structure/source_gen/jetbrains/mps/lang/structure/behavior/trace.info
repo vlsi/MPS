@@ -49,6 +49,15 @@
     <file name="DeprecatedNodeAnnotation_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DeprecatedNodeAnnotation_BehaviorDescriptor" />
     </file>
+    <file name="DocumentationObjectiveRef_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DocumentationObjectiveRef_BehaviorDescriptor" />
+    </file>
+    <file name="DocumentationObjective_BehaviorDescriptor.java">
+      <unit at="11,0,14,0" name="jetbrains.mps.lang.structure.behavior.DocumentationObjective_BehaviorDescriptor" />
+    </file>
+    <file name="DocumentedNodeAnnotation_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.DocumentedNodeAnnotation_BehaviorDescriptor" />
+    </file>
     <file name="EnumerationDataTypeDeclaration_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_BehaviorDescriptor" />
     </file>

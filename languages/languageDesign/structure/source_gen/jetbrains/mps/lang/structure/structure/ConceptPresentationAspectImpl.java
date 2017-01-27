@@ -19,15 +19,18 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConstrainedDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0g).create();
   private final ConceptPresentation props_DataTypeDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_DeprecatedNodeAnnotation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EnumerationDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0j).create();
+  private final ConceptPresentation props_DocumentationObjective = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_DocumentationObjectiveRef = new ConceptPresentationBuilder().shortDesc("smart reference to documentable target").create();
+  private final ConceptPresentation props_DocumentedNodeAnnotation = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_EnumerationDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0m).create();
   private final ConceptPresentation props_EnumerationMemberDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IConceptAspect = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStructureDeprecatable = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_InterfaceConceptDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0n).create();
+  private final ConceptPresentation props_InterfaceConceptDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
   private final ConceptPresentation props_InterfaceConceptReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_LinkDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0p).create();
-  private final ConceptPresentation props_PrimitiveDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0q).create();
-  private final ConceptPresentation props_PropertyDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0r).create();
+  private final ConceptPresentation props_LinkDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0s).create();
+  private final ConceptPresentation props_PrimitiveDataTypeDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0t).create();
+  private final ConceptPresentation props_PropertyDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0u).create();
   private final ConceptPresentation props_ReferenceLinkDeclartionScopeKind = new ConceptPresentationBuilder().create();
 
   @Override
@@ -53,6 +56,12 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_DataTypeDeclaration;
       case LanguageConceptSwitch.DeprecatedNodeAnnotation:
         return props_DeprecatedNodeAnnotation;
+      case LanguageConceptSwitch.DocumentationObjective:
+        return props_DocumentationObjective;
+      case LanguageConceptSwitch.DocumentationObjectiveRef:
+        return props_DocumentationObjectiveRef;
+      case LanguageConceptSwitch.DocumentedNodeAnnotation:
+        return props_DocumentedNodeAnnotation;
       case LanguageConceptSwitch.EnumerationDataTypeDeclaration:
         return props_EnumerationDataTypeDeclaration;
       case LanguageConceptSwitch.EnumerationMemberDeclaration:
