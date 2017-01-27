@@ -21,6 +21,13 @@
         <property id="1225118929411" name="build" index="YLPcu" />
         <property id="1225118933224" name="comment" index="YLQ7P" />
       </concept>
+      <concept id="7862711839422615209" name="jetbrains.mps.lang.structure.structure.DocumentedNodeAnnotation" flags="ng" index="t5JxF">
+        <property id="7862711839422615217" name="text" index="t5JxN" />
+        <child id="7862711839422615224" name="seeAlso" index="t5JxU" />
+      </concept>
+      <concept id="7862711839422615221" name="jetbrains.mps.lang.structure.structure.DocumentationObjectiveRef" flags="ng" index="t5JxR">
+        <reference id="7862711839422615222" name="target" index="t5JxO" />
+      </concept>
       <concept id="1082978164219" name="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" flags="ng" index="AxPO7">
         <property id="1212080844762" name="hasNoDefaultMember" index="PDuV0" />
         <reference id="1083171729157" name="memberDataType" index="M4eZT" />
@@ -189,6 +196,19 @@
       <property role="20lbJX" value="0..1" />
       <property role="IQ2ns" value="9200313594498201639" />
       <ref role="20lvS9" node="4LHG7OIlEyO" resolve="BuildMps_Generator" />
+    </node>
+    <node concept="1TJgyj" id="6OtXG9K2II8" role="1TKVEi">
+      <property role="IQ2ns" value="7862711839422606216" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="managedGenerators" />
+      <property role="20lbJX" value="0..n" />
+      <ref role="20lvS9" node="6OtXG9K2II1" resolve="BuildMps_GeneratorRef" />
+      <node concept="t5JxF" id="6OtXG9KbD9B" role="lGtFl">
+        <property role="t5JxN" value="unlike generator containment, this one references generators onwed by project itself. Generator modules refererences this way are bundled along with the language." />
+        <node concept="t5JxR" id="6OtXG9KlQBU" role="t5JxU">
+          <ref role="t5JxO" node="7YI57w6gNwB" resolve="generator" />
+        </node>
+      </node>
     </node>
   </node>
   <node concept="1TIwiD" id="2L4pT56gSBR">
@@ -1339,6 +1359,20 @@
       <property role="20lbJX" value="1" />
       <property role="IQ2ns" value="5894421362117677528" />
       <ref role="20lvS9" to="3ior:IFRVVI5ZTn" resolve="BuildStringNotEmpty" />
+    </node>
+  </node>
+  <node concept="1TIwiD" id="6OtXG9K2II1">
+    <property role="EcuMT" value="7862711839422606209" />
+    <property role="TrG5h" value="BuildMps_GeneratorRef" />
+    <property role="R4oN_" value="'smart' reference to a generator module" />
+    <property role="3GE5qa" value="Project" />
+    <ref role="1TJDcQ" to="tpck:gw2VY9q" resolve="BaseConcept" />
+    <node concept="1TJgyj" id="6OtXG9K2II2" role="1TKVEi">
+      <property role="IQ2ns" value="7862711839422606210" />
+      <property role="20lmBu" value="reference" />
+      <property role="20kJfa" value="generator" />
+      <property role="20lbJX" value="1" />
+      <ref role="20lvS9" node="4LHG7OIlEyO" resolve="BuildMps_Generator" />
     </node>
   </node>
 </model>
