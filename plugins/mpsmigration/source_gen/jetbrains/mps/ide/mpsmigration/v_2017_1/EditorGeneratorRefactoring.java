@@ -36,7 +36,7 @@ public class EditorGeneratorRefactoring extends BaseProjectMigration {
   private SNode myCellFactoryCompatibilityTemplate;
 
   public EditorGeneratorRefactoring() {
-    super(EditorGeneratorRefactoring.class.getName());
+    super("jetbrains.mps.ide.mpsmigration.v35." + EditorGeneratorRefactoring.class.getSimpleName());
   }
 
   @Override

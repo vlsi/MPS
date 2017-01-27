@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class RemoveHistoryFiles extends BaseProjectMigration {
   public RemoveHistoryFiles() {
-    super(RemoveHistoryFiles.class.getName());
+    super("jetbrains.mps.ide.mpsmigration.v35." + RemoveHistoryFiles.class.getSimpleName());
   }
   @Override
   public boolean doExecute(Project project) {

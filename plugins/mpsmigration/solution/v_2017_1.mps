@@ -121,6 +121,7 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
       </concept>
@@ -462,12 +463,17 @@
       <node concept="3clFbS" id="7ctwrlp2ZY" role="3clF47">
         <node concept="XkiVB" id="7ctwrlp326" role="3cqZAp">
           <ref role="37wK5l" to="bdll:~BaseProjectMigration.&lt;init&gt;(java.lang.String)" resolve="BaseProjectMigration" />
-          <node concept="2OqwBi" id="7ctwrlp3lc" role="37wK5m">
-            <node concept="3VsKOn" id="7ctwrlp354" role="2Oq$k0">
-              <ref role="3VsUkX" node="6MHXMmJyCFC" resolve="EditorGeneratorRefactoring" />
+          <node concept="3cpWs3" id="1HQi3LGmBd1" role="37wK5m">
+            <node concept="Xl_RD" id="1HQi3LGmBkH" role="3uHU7B">
+              <property role="Xl_RC" value="jetbrains.mps.ide.mpsmigration.v35." />
             </node>
-            <node concept="liA8E" id="7ctwrlp4bd" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+            <node concept="2OqwBi" id="7ctwrlp3lc" role="3uHU7w">
+              <node concept="3VsKOn" id="7ctwrlp354" role="2Oq$k0">
+                <ref role="3VsUkX" node="6MHXMmJyCFC" resolve="EditorGeneratorRefactoring" />
+              </node>
+              <node concept="liA8E" id="7ctwrlp4bd" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getSimpleName():java.lang.String" resolve="getSimpleName" />
+              </node>
             </node>
           </node>
         </node>
@@ -1090,12 +1096,17 @@
       <node concept="3clFbS" id="3_OS1onmLxb" role="3clF47">
         <node concept="XkiVB" id="3_OS1onmLxd" role="3cqZAp">
           <ref role="37wK5l" to="bdll:~BaseProjectMigration.&lt;init&gt;(java.lang.String)" resolve="BaseProjectMigration" />
-          <node concept="2OqwBi" id="3_OS1onmPo9" role="37wK5m">
-            <node concept="3VsKOn" id="3_OS1onmP1k" role="2Oq$k0">
-              <ref role="3VsUkX" node="3_OS1onmAji" resolve="RemoveHistoryFiles" />
+          <node concept="3cpWs3" id="1HQi3LGmBNC" role="37wK5m">
+            <node concept="Xl_RD" id="1HQi3LGmBTU" role="3uHU7B">
+              <property role="Xl_RC" value="jetbrains.mps.ide.mpsmigration.v35." />
             </node>
-            <node concept="liA8E" id="3_OS1onmQ7Z" role="2OqNvi">
-              <ref role="37wK5l" to="wyt6:~Class.getName():java.lang.String" resolve="getName" />
+            <node concept="2OqwBi" id="3_OS1onmPo9" role="3uHU7w">
+              <node concept="3VsKOn" id="3_OS1onmP1k" role="2Oq$k0">
+                <ref role="3VsUkX" node="3_OS1onmAji" resolve="RemoveHistoryFiles" />
+              </node>
+              <node concept="liA8E" id="3_OS1onmQ7Z" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~Class.getSimpleName():java.lang.String" resolve="getSimpleName" />
+              </node>
             </node>
           </node>
         </node>

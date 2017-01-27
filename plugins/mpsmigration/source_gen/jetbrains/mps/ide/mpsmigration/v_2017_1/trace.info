@@ -17,7 +17,7 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1070475587102:jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/4140180342946030802">
     <file name="RemoveHistoryFiles.java">
-      <node id="4140180342946076749" at="23,31,24,46" concept="14" />
+      <node id="4140180342946076749" at="23,31,24,92" concept="14" />
       <node id="2395946271876055851" at="27,45,28,58" concept="11" />
       <node id="4140180342946106171" at="29,5,30,65" concept="9" />
       <node id="4140180342946106171" at="32,52,33,23" concept="10" />
@@ -44,7 +44,7 @@
       <node id="4140180342946156584" at="35,8,56,9" concept="9" />
       <node id="4140180342946106171" at="28,58,63,5" concept="1" />
       <node id="4140180342946030861" at="26,0,66,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
-      <scope id="4140180342946076747" at="23,31,24,46" />
+      <scope id="4140180342946076747" at="23,31,24,92" />
       <scope id="4140180342946106171" at="32,52,33,23" />
       <scope id="2395946271875943795" at="37,65,38,36" />
       <scope id="4140180342946156606" at="41,50,42,71" />
@@ -124,7 +124,7 @@
   <root nodeRef="r:87ca99dc-4ebb-4b25-aad1-a314895ec01e(jetbrains.mps.ide.mpsmigration.v_2017_1)/7831187068298103528">
     <file name="EditorGeneratorRefactoring.java">
       <node id="7014341036936497733" at="36,0,37,0" concept="5" trace="myCellFactoryCompatibilityTemplate" />
-      <node id="129608261008896134" at="38,39,39,54" concept="14" />
+      <node id="129608261008896134" at="38,39,39,100" concept="14" />
       <node id="7014341036936512554" at="43,45,44,402" concept="4" />
       <node id="7014341036936534107" at="44,402,45,54" concept="0" />
       <node id="2180956403484676601" at="45,54,46,94" concept="9" />
@@ -195,7 +195,7 @@
       <node id="5369771541921941019" at="49,161,72,5" concept="6" />
       <node id="2180956403485033180" at="112,0,142,0" concept="13" trace="_quotation_createNode_647dgd_a0a3a6#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="7831187068298105302" at="42,0,75,0" concept="8" trace="doExecute#(Ljetbrains/mps/project/Project;)Z" />
-      <scope id="129608261008895998" at="38,39,39,54" />
+      <scope id="129608261008895998" at="38,39,39,100" />
       <scope id="5369771541921952908" at="53,47,54,102" />
       <scope id="5369771541921952897" at="56,12,57,17" />
       <scope id="2180956403484877068" at="62,45,63,425" />
