@@ -4,11 +4,13 @@ package jetbrains.mps.editor.runtime.impl;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.smodel.runtime.ConceptPresentation;
+import jetbrains.mps.kernel.language.ConceptAspectsHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -17,10 +19,26 @@ public class CellUtil {
   public CellUtil() {
   }
   public static void setupIDeprecatableStyles(SNode node, EditorCell cell) {
-    SNode deprecatable = SNodeOperations.as(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable"));
-    if (deprecatable != null && (((boolean) (Boolean) BHReflection.invoke(deprecatable, SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))) || ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.getConceptDeclaration(deprecatable), SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR"))))) {
+    if (isNodeDeprecated(node)) {
       cell.getStyle().set(StyleAttributes.STRIKE_OUT, true);
     }
+  }
+
+  private static boolean isNodeDeprecated(SNode node) {
+    if (isConceptDeprecated(node)) {
+      return true;
+    }
+    if (!(SNodeOperations.isInstanceOf(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable")))) {
+      return false;
+    }
+    return ((boolean) (Boolean) BHReflection.invoke(SNodeOperations.cast(node, MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11d205fe38dL, "jetbrains.mps.lang.core.structure.IDeprecatable")), SMethodTrimmedId.create("isDeprecated", null, "hOwoPtR")));
+  }
+  private static boolean isConceptDeprecated(SNode node) {
+    ConceptPresentation cp = ConceptAspectsHelper.getPresentationAspect(node);
+    if (cp == null) {
+      return false;
+    }
+    return cp.isDeprecated();
   }
   public static SNode getNodeToDelete(SNode node) {
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), MetaAdapterFactory.getInterfaceConcept(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11c6fd75034L, "jetbrains.mps.lang.core.structure.IWrapper"))) {
