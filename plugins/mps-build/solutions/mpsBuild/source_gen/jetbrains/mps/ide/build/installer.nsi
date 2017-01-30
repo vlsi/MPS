@@ -62,16 +62,16 @@ SectionEnd
 Section "Start Menu Folder" setStartMenuFolder
     SetOutPath $INSTDIR
     CreateDirectory "${MAIN_MENU_FOLDER}"
-    CreateShortCut "${PROGRAM_LINK}" "$INSTDIR\mps.bat" "" "$INSTDIR\mps.ico" "" SW_SHOWMINIMIZED
+    CreateShortCut "${PROGRAM_LINK}" "$INSTDIR\bin\mps.bat" "" "$INSTDIR\bin\mps.ico" "" SW_SHOWMINIMIZED
     WriteIniStr "$INSTDIR\${PRODUCT_NAME}.url" "InternetShortcut" "URL" "${PRODUCT_WEB_SITE}"
 SectionEnd
 
 Section "Desktop Shortcut" secDesktop
-    CreateShortCut "${DESKTOP_LINK}" "$INSTDIR\mps.bat" "" "$INSTDIR\mps.ico" "" SW_SHOWMINIMIZED
+    CreateShortCut "${DESKTOP_LINK}" "$INSTDIR\bin\mps.bat" "" "$INSTDIR\bin\mps.ico" "" SW_SHOWMINIMIZED
 SectionEnd
 
 Section "Quick Launch Shortcut" secQuickLaunch
-    CreateShortCut "${QL_LINK}" "$INSTDIR\mps.bat" "" "$INSTDIR\mps.ico" "" SW_SHOWMINIMIZED
+    CreateShortCut "${QL_LINK}" "$INSTDIR\bin\mps.bat" "" "$INSTDIR\bin\mps.ico" "" SW_SHOWMINIMIZED
 SectionEnd
 
 Section -Post

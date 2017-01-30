@@ -46,11 +46,18 @@
       </filterchain>
       <globmapper from="*" to="mps64.exe.vmoptions" />
     </copy>
-    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" />
-    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551">
+    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" />
+    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755">
       <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
+      </filterchain>
+    </copy>
+    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" />
+    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551">
+      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" />
+      <filterchain>
+        <fixcrlf eol="crlf" />
       </filterchain>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip/MPS ${mpsBootstrapCore.version}/bin/mac" />
@@ -75,17 +82,11 @@
       </filterchain>
       <globmapper from="*" to="Info.plist" />
     </copy>
-    <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" />
-    <copy todir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755">
-      <fileset file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" />
-      <filterchain>
-        <fixcrlf eol="crlf" />
-      </filterchain>
-    </copy>
     <zip destfile="${build.layout}/${mps.build.number}.zip">
       <zipfileset dir="${artifacts.mps}" prefix="MPS ${mpsBootstrapCore.version}" />
       <zipfileset dir="${basedir}/bin/win" prefix="MPS ${mpsBootstrapCore.version}/bin/win">
         <exclude name="**/*.exe" />
+        <exclude name="**/*.bat" />
       </zipfileset>
       <zipfileset file="${basedir}/bin/win/fsnotifier.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/win/fsnotifier64.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
@@ -93,6 +94,7 @@
       <zipfileset file="${basedir}/bin/win/runnerw.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/win/WinProcessListHelper.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/append.bat" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier-arm" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
@@ -105,8 +107,8 @@
       <zipfileset file="${basedir}/build/resources/idea_appLauncher" prefix="MPS ${mpsBootstrapCore.version}/bin/mac/Contents/MacOS" />
       <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${mpsBootstrapCore.version}/bin/mac/Contents/MacOS" filemode="755" />
       <zipfileset file="${artifacts.resources}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
+      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
+      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7551" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin/win" />
       <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip_f7552" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <fileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_.zip" />
     </zip>
@@ -170,19 +172,21 @@
     </copy>
     <zip destfile="${build.layout}/${mps.build.number}-windows.zip">
       <zipfileset dir="${artifacts.mps}" prefix="MPS ${mpsBootstrapCore.version}" />
-      <zipfileset file="${basedir}/build/resources/mps.ico" prefix="MPS ${mpsBootstrapCore.version}" />
       <zipfileset dir="${basedir}/bin/win" prefix="MPS ${mpsBootstrapCore.version}/bin">
         <exclude name="**/*.exe" />
+        <exclude name="**/*.bat" />
       </zipfileset>
+      <zipfileset file="${basedir}/build/resources/mps.ico" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <zipfileset file="${basedir}/bin/win/fsnotifier.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/fsnotifier64.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/restarter.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/runnerw.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/WinProcessListHelper.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/append.bat" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset dir="${build.tmp}/deps/jdk.zip" prefix="MPS ${mpsBootstrapCore.version}/jre" />
       <zipfileset file="${artifacts.resources}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
-      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
+      <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <fileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip" />
     </zip>
     <mkdir dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-macos.zip" />
