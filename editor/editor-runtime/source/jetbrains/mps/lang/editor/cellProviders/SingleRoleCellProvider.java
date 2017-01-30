@@ -75,6 +75,19 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
     myEditorContext = editorContext;
   }
 
+  /**
+   * This is a compatibility implementation of corresponding method from super-class.
+   * Since MPS 3.5 this method will be generated in sub-classes.
+   * After MPS 3.5 this method should be removed, so sub-classes will implement it directly.
+   *
+   * @return
+   */
+  @NotNull
+  @Override
+  public SNode getNode() {
+    return myOwnerNode;
+  }
+
   protected EditorCell createChildCell(SNode child) {
     return createChildCell_internal(child);
   }
@@ -147,7 +160,7 @@ public abstract class SingleRoleCellProvider extends AbstractEditorBuilder imple
 
   protected EditorCell createEmptyCell() {
     EditorCell_Label result = myContainmentLink.isOptional() ? new EditorCell_Constant(getEditorContext(), getNode(), "") :
-        new EditorCell_Error(getEditorContext(), getNode(), getNoTargetText());
+                              new EditorCell_Error(getEditorContext(), getNode(), getNoTargetText());
     result.setDefaultText(getNoTargetText());
     result.setEditable(true);
     return result;
