@@ -15938,6 +15938,9 @@
                 <node concept="3LWZYq" id="6xv$4WsFw$Q" role="2HvfZ1">
                   <property role="3LWZYl" value="**/*.exe" />
                 </node>
+                <node concept="3LWZYq" id="4eWOtEm3qsh" role="2HvfZ1">
+                  <property role="3LWZYl" value="**/*.bat" />
+                </node>
                 <node concept="55IIr" id="2lgcjg39Ytd" role="2HvfZ0">
                   <node concept="2Ry0Ak" id="2lgcjg39Yte" role="iGT6I">
                     <property role="2Ry0Am" value="bin" />
@@ -16026,6 +16029,20 @@
                       <property role="2Ry0Am" value="win" />
                       <node concept="2Ry0Ak" id="4eWOtElVDvT" role="2Ry0An">
                         <property role="2Ry0Am" value="WinProcessListHelper.exe" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="4eWOtEm3qsY" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="4eWOtEm3qt0" role="28jJRO">
+                  <node concept="2Ry0Ak" id="4eWOtEm3qtF" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="4eWOtEm3qtK" role="2Ry0An">
+                      <property role="2Ry0Am" value="win" />
+                      <node concept="2Ry0Ak" id="4eWOtEm3qtP" role="2Ry0An">
+                        <property role="2Ry0Am" value="append.bat" />
                       </node>
                     </node>
                   </node>
@@ -16712,6 +16729,9 @@
               <node concept="3LWZYq" id="AwiPu7jHRp" role="2HvfZ1">
                 <property role="3LWZYl" value="**/*.exe" />
               </node>
+              <node concept="3LWZYq" id="4eWOtEm3qtU" role="2HvfZ1">
+                <property role="3LWZYl" value="**/*.bat" />
+              </node>
               <node concept="55IIr" id="AwiPu7jHRq" role="2HvfZ0">
                 <node concept="2Ry0Ak" id="AwiPu7jHRr" role="iGT6I">
                   <property role="2Ry0Am" value="bin" />
@@ -16800,6 +16820,20 @@
                     <property role="2Ry0Am" value="win" />
                     <node concept="2Ry0Ak" id="4eWOtElVGeM" role="2Ry0An">
                       <property role="2Ry0Am" value="WinProcessListHelper.exe" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="28jJK3" id="4eWOtEm3qv7" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="4eWOtEm3qv9" role="28jJRO">
+                <node concept="2Ry0Ak" id="4eWOtEm3qwk" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="4eWOtEm3qwp" role="2Ry0An">
+                    <property role="2Ry0Am" value="win" />
+                    <node concept="2Ry0Ak" id="4eWOtEm3qwu" role="2Ry0An">
+                      <property role="2Ry0Am" value="append.bat" />
                     </node>
                   </node>
                 </node>
@@ -26090,11 +26124,11 @@
               </node>
               <node concept="1kK7hY" id="1N8m_MUbJWp" role="39821P">
                 <ref role="1kK7hZ" node="5sovPIfS$nd" resolve="jetbrains.mps.ide.mpsdevkit" />
-                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
-                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
-                </node>
                 <node concept="1cIVw3" id="6v5CVv8fxrk" role="3SGgvt">
                   <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit-src.jar" />
+                </node>
+                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
+                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
                 </node>
                 <node concept="1cIVw3" id="7ndynaw0A8H" role="3E5mpp">
                   <property role="1cIVw0" value="." />
