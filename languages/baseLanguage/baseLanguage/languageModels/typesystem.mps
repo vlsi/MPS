@@ -583,7 +583,6 @@
       <concept id="1204851882688" name="jetbrains.mps.lang.smodel.structure.LinkRefQualifier" flags="ng" index="26LbJo">
         <reference id="1204851882689" name="link" index="26LbJp" />
       </concept>
-      <concept id="5692182839349412519" name="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" flags="nn" index="90r25" />
       <concept id="2788452359612124332" name="jetbrains.mps.lang.smodel.structure.LinkQualifier" flags="ng" index="29tlS9">
         <reference id="2788452359612124336" name="link" index="29tlSl" />
       </concept>
@@ -613,6 +612,7 @@
         <child id="6733348108486823193" name="leftExpression" index="1m5AlR" />
         <child id="3906496115198199033" name="conceptArgument" index="3oSUPX" />
       </concept>
+      <concept id="2926695023085807517" name="jetbrains.mps.lang.smodel.structure.Reference_ContainingLinkOperation" flags="nn" index="CsP83" />
       <concept id="1143224127713" name="jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation" flags="nn" index="HtX7F">
         <child id="1143224127716" name="insertedNode" index="HtX7I" />
       </concept>
@@ -42243,18 +42243,6 @@
             </node>
           </node>
           <node concept="3clFbH" id="5t1QwMgTtH9" role="3cqZAp" />
-          <node concept="3cpWs8" id="5t1QwMgLGFE" role="3cqZAp">
-            <node concept="3cpWsn" id="5t1QwMgLGFH" role="3cpWs9">
-              <property role="TrG5h" value="badRole" />
-              <node concept="17QB3L" id="5t1QwMgLGFC" role="1tU5fm" />
-              <node concept="2OqwBi" id="5t1QwMgLH05" role="33vP2m">
-                <node concept="2GrUjf" id="5t1QwMgLGLV" role="2Oq$k0">
-                  <ref role="2Gs0qQ" node="5t1QwMgLyav" resolve="ref" />
-                </node>
-                <node concept="90r25" id="5t1QwMgLHwp" role="2OqNvi" />
-              </node>
-            </node>
-          </node>
           <node concept="2MkqsV" id="5t1QwMgLzne" role="3cqZAp">
             <node concept="Xl_RD" id="5t1QwMgLzow" role="2MkJ7o">
               <property role="Xl_RC" value="Dynamic reference" />
@@ -42267,18 +42255,33 @@
               <ref role="QpYPw" node="5t1QwMgLGkE" resolve="makeReferenceStatic" />
               <node concept="3CnSsL" id="5t1QwMgLHDh" role="3Coj4f">
                 <ref role="QkamJ" node="5t1QwMgLHCz" resolve="role" />
-                <node concept="37vLTw" id="5t1QwMgLHDZ" role="3CoRuB">
-                  <ref role="3cqZAo" node="5t1QwMgLGFH" resolve="badRole" />
+                <node concept="2OqwBi" id="4L5lkpK9fHB" role="3CoRuB">
+                  <node concept="2OqwBi" id="4L5lkpK9fHC" role="2Oq$k0">
+                    <node concept="2GrUjf" id="4L5lkpK9fHD" role="2Oq$k0">
+                      <ref role="2Gs0qQ" node="5t1QwMgLyav" resolve="ref" />
+                    </node>
+                    <node concept="CsP83" id="4L5lkpK9fHE" role="2OqNvi" />
+                  </node>
+                  <node concept="liA8E" id="4L5lkpK9fHF" role="2OqNvi">
+                    <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
+                  </node>
                 </node>
               </node>
             </node>
             <node concept="2PjuBw" id="5t1QwMgLGtN" role="2OEWyd">
-              <node concept="37vLTw" id="5t1QwMgLHwJ" role="2Pjzse">
-                <ref role="3cqZAo" node="5t1QwMgLGFH" resolve="badRole" />
+              <node concept="2OqwBi" id="4L5lkpK9eXW" role="2Pjzse">
+                <node concept="2OqwBi" id="4L5lkpK9ewK" role="2Oq$k0">
+                  <node concept="2GrUjf" id="4L5lkpK9eoN" role="2Oq$k0">
+                    <ref role="2Gs0qQ" node="5t1QwMgLyav" resolve="ref" />
+                  </node>
+                  <node concept="CsP83" id="4L5lkpK9eHa" role="2OqNvi" />
+                </node>
+                <node concept="liA8E" id="4L5lkpK9fu5" role="2OqNvi">
+                  <ref role="37wK5l" to="c17a:~SNamedElement.getName():java.lang.String" resolve="getName" />
+                </node>
               </node>
             </node>
           </node>
-          <node concept="3clFbH" id="5t1QwMgTtAt" role="3cqZAp" />
         </node>
       </node>
     </node>
