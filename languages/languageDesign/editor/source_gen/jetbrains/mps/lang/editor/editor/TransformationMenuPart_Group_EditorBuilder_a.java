@@ -136,16 +136,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x11266742db0L, "jetbrains.mps.lang.editor.structure.TransformationMenuVariableDeclaration"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
@@ -204,17 +197,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     }
 
     protected EditorCell createChildCell(SNode child) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(child));
-      try {
-        EditorCell editorCell = super.createChildCell(child);
-        editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition"), child));
-        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition"), child));
-        installCellInfo(child, editorCell);
-        return editorCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell editorCell = getUpdateSession().updateChildNodeCell(child);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition"), child));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(getNode(), MetaAdapterFactory.getContainmentLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x671b36136d224047L, 0x671b36136d22404dL, "condition"), child));
+      installCellInfo(child, editorCell);
+      return editorCell;
     }
 
 
@@ -305,16 +292,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
       return SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6ed0e5fc004ba432L, "jetbrains.mps.lang.editor.structure.TransformationMenuPart_Placeholder"));
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();

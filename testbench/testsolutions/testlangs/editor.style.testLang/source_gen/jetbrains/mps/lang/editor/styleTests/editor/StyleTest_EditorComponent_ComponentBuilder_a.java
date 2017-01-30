@@ -120,16 +120,9 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xa936c42ccb2c4d64L, 0xa1dc12986579a998L, 0x74e28664f056014cL, "jetbrains.mps.lang.editor.styleTests.structure.NodeContainer"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();

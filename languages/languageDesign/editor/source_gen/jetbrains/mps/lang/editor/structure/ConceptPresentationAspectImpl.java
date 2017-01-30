@@ -61,7 +61,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_CellMenuPart_AbstractGroup_Query = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_AbstractGroup_parameterObject = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_Abstract_editedNode = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_CellMenuPart_ApplySideTransforms = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_CellMenuPart_ApplySideTransforms = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_CellMenuPart_CellMenuComponent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_Generic_Group = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_CellMenuPart_Generic_Group_Handler = new ConceptPresentationBuilder().create();
@@ -295,7 +295,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_RGBColor = new ConceptPresentationBuilder().shortDesc("#RRGGBB").create();
   private final ConceptPresentation props_ReadOnlyModelAccessor = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ReadOnlyStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_RightTransformAnchorTagWrapper = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_RightTransformAnchorTagWrapper = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_ScriptKindClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SelectInEditorOperation = new ConceptPresentationBuilder().shortDesc("select node in the editor").create();
   private final ConceptPresentation props_SelectParameter = new ConceptPresentationBuilder().create();
@@ -303,7 +303,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SelectableStyleSheetItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SetBoldOperation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ShowBoundariesInStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SideTransformAnchorTagStyleClassItem = new ConceptPresentationBuilder().deprecated().create();
+  private final ConceptPresentation props_SideTransformAnchorTagStyleClassItem = new ConceptPresentationBuilder().deprecated(true).create();
   private final ConceptPresentation props_StrikeOutStyleSheet = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubCellModel_Alternation = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StubCellModel_Block = new ConceptPresentationBuilder().create();

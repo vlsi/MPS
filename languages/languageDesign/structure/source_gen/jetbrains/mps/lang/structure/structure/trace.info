@@ -21,7 +21,7 @@
       <unit at="10,0,64,0" name="jetbrains.mps.lang.structure.structure.LanguageConceptSwitch" />
     </file>
     <file name="StructureAspectDescriptor.java">
-      <unit at="16,0,296,0" name="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
+      <unit at="16,0,297,0" name="jetbrains.mps.lang.structure.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1084197782722">

@@ -117,16 +117,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f707L, "jetbrains.mps.samples.customizedDebugger.Highlevel.structure.Participant"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
@@ -201,16 +194,9 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xbdab7456dc1d4dc5L, 0xb5bfab059630252dL, 0x71d6f475fc93f713L, "jetbrains.mps.samples.customizedDebugger.Highlevel.structure.Message"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();

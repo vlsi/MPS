@@ -181,16 +181,9 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x110356fc618L, "jetbrains.mps.lang.structure.structure.InterfaceConceptReference"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
@@ -327,16 +320,9 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       return NodeFactoryManager.createNode(MetaAdapterFactory.getConcept(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), null, getNode(), getNode().getModel());
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
@@ -431,18 +417,11 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       return result;
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_f1c0(), "emptyChildrenPlaceHolder", getEditorContext(), true));
-        elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_f1c0(), "emptyChildrenPlaceHolder", getEditorContext(), false));
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_f1c0(), "emptyChildrenPlaceHolder", getEditorContext(), true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_f1c0(), "emptyChildrenPlaceHolder", getEditorContext(), false));
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
@@ -549,18 +528,11 @@ import jetbrains.mps.nodeEditor.selection.NodeRangeSelection;
       return result;
     }
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new SNodeLocation.FromNode(elementNode));
-
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        installElementCellActions(elementNode, elementCell);
-        elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_i1c0(), "emptyRefPlaceHolder", getEditorContext(), true));
-        elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_i1c0(), "emptyRefPlaceHolder", getEditorContext(), false));
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      installElementCellActions(elementNode, elementCell);
+      elementCell.setAction(CellActionType.SELECT_NEXT, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_i1c0(), "emptyRefPlaceHolder", getEditorContext(), true));
+      elementCell.setAction(CellActionType.SELECT_PREVIOUS, new CellAction_CreateChildRangeSelection(elementNode, new InterfaceConceptDeclaration_EditorBuilder_a.RangeSelectionFilter_7v1nzk_i1c0(), "emptyRefPlaceHolder", getEditorContext(), false));
+      return elementCell;
     }
     public EditorCell createEmptyCell() {
       getCellFactory().pushCellContext();
