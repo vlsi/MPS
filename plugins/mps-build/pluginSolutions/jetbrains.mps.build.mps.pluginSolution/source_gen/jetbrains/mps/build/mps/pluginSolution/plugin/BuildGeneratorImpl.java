@@ -30,9 +30,12 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.project.structure.modules.Dependency;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.ModelImports;
+import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.project.Solution;
+import org.jetbrains.mps.openapi.model.SModelName;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -164,7 +167,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     ((SModelInternal) smodel).addLanguage(MetaAdapterFactory.getLanguage(0xcf935df46994e9cL, 0xa132fa109541cba3L, "jetbrains.mps.build.mps"));
 
     moduleDescriptor.getDependencies().add(new Dependency(PersistenceFacade.getInstance().createModuleReference("422c2909-59d6-41a9-b318-40e6256b250f(jetbrains.mps.ide.build)"), false));
-    ((SModelInternal) smodel).addModelImport(new ModuleRepositoryFacade(smodel.getRepository()).getModelByName("jetbrains.mps.ide.build").getReference(), false);
+    new ModelImports(smodel).addModelImport(new SNodePointer("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)", "4301118715654192646").getModelReference());
   }
   public SModel getSModelDescriptor(ProgressIndicator indicator) {
     if (getCreateModel()) {
@@ -180,7 +183,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         solution = getSolution();
       }
       indicator.setText("Creating Model...");
-      return BuildGeneratorUtil.createModel(getNewModelName(), solution);
+      return BuildGeneratorUtil.createModel(new SModelName(getNewModelName()), solution);
     } else {
       return this.getModel();
     }
