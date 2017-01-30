@@ -13,7 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.DefaultSChildSetter;
 
 public class XYCTableModel implements TableModel {
   private SNode node;
@@ -84,17 +87,23 @@ public class XYCTableModel implements TableModel {
     }
   }
   @Override
-  public SubstituteInfo getSubstituteInfo(int row, int column) {
+  public SubstituteInfo getSubstituteInfo(final int row, final int column) {
     if (row == 0 && column == 0) {
       return null;
     }
+    final SContainmentLink link;
     if (row == 0 && column > 0) {
-      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), xlink.getDeclarationNode(), editorCtx);
+      link = xlink;
+    } else if (row > 0 && column == 0) {
+      link = ylink;
+    } else {
+      link = clink;
     }
-    if (row > 0 && column == 0) {
-      return new DefaultChildSubstituteInfo(node, getValueAt(row, column), ylink.getDeclarationNode(), editorCtx);
-    }
-    return new DefaultChildSubstituteInfo(node, getValueAt(row, column), clink.getDeclarationNode(), editorCtx);
+    return new AbstractNodeSubstituteInfo(editorCtx) {
+      protected List<SubstituteAction> createActions() {
+        return ModelActions.createChildNodeSubstituteActions(node, getValueAt(row, column), link, null, new DefaultSChildSetter(link), editorCtx);
+      }
+    };
   }
   @Override
   public void createElement(int row, int column) {

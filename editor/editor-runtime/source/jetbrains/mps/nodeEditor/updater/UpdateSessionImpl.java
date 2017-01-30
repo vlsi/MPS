@@ -27,6 +27,7 @@ import jetbrains.mps.nodeEditor.hintsSettings.ConceptEditorHintSettingsComponent
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.EditorCellFactory;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -194,6 +195,13 @@ public class UpdateSessionImpl implements UpdateSession {
 
   @Override
   public EditorCell updateChildNodeCell(final SNode node) {
+    return updateChildNodeCell(node, new SNodeLocation.FromNode(node));
+  }
+
+  @Override
+  public EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location) {
+    getUpdater().getEditorContext().getCellFactory().pushCellContext();
+    getUpdater().getEditorContext().getCellFactory().setNodeLocation(location);
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
@@ -205,6 +213,7 @@ public class UpdateSessionImpl implements UpdateSession {
       });
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
+      getUpdater().getEditorContext().getCellFactory().popCellContext();
     }
   }
 

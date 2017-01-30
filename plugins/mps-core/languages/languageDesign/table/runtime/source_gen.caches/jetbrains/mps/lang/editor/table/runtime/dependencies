@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel" file="AbstractTableModel.java">
-    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
+    <classNode dependClassName="java.lang.Override" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" file="ColumnNotFoundException.java">
@@ -10,103 +10,103 @@
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" file="EditorCell_Table.java">
     <classNode dependClassName="java.awt.Color" />
-    <classNode dependClassName="java.awt.Graphics" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.style.TableComponent" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableColumnSelection" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.TableComponent" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorSettings" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode" />
+    <classNode dependClassName="java.lang.Math" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.EditorCell_Empty" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellAction" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical" />
+    <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableColumnSelection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+    <classNode dependClassName="java.awt.Graphics" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModel" file="HierarchycalTableModel.java">
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.Utils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.AbstractTableModel" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModelWithHeader" file="HierarchycalTableModelWithHeader.java">
-    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.Utils" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.HierarchycalTableModel" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.TableColumnSelection" file="TableColumnSelection.java">
-    <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
-    <classNode dependClassName="java.lang.Integer" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.editor.runtime.TextBuilderImpl" />
-    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionInfoImpl" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionRestoreException" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionStoreException" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionManager" />
+    <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.editor.runtime.TextBuilderImpl" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.Selection" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellInfo" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.ide.datatransfer.SNodeTransferable" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell_Collection" />
+    <classNode dependClassName="com.intellij.ide.CopyPasteManagerEx" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.EditorCell_Table" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionStoreException" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.CellActionType" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionRestoreException" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.ColumnNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.selection.SelectionInfo" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.TextBuilder" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.selection.SelectionInfoImpl" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.selection.AbstractMultipleSelection" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.TableModel" file="TableModel.java">
@@ -114,39 +114,43 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.TableModelCreator" file="TableModelCreator.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
+    <classNode dependClassName="java.lang.Deprecated" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.TableModelFactory" file="TableModelFactory.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.Utils" file="Utils.java">
     <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.table.runtime.XYCTableModel" file="XYCTableModel.java">
-    <classNode dependClassName="java.lang.Deprecated" />
-    <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.Utils" />
-    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
-    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
-    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SContainmentLink" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteAction" />
+    <classNode dependClassName="java.lang.Deprecated" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.table.runtime.Utils" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.DefaultSChildSetter" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.SubstituteInfo" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.SNodeFactoryOperations" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo" />
     <classNode extendsClassName="jetbrains.mps.lang.editor.table.runtime.TableModel" />
   </dependency>
 </dependenciesRoot>

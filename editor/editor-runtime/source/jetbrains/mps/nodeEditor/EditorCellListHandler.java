@@ -20,8 +20,10 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.menus.transformation.SNodeLocation.FromParentAndLink;
 import jetbrains.mps.smodel.SNodeLegacy;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -73,15 +75,19 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   @Override
   protected EditorCell createEmptyCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getNode(), null);
-    emptyCell.setDefaultText("<< ... >>");
-    emptyCell.setEditable(true);
-    emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getNode(), null, getLinkDeclaration(), editorContext));
-    emptyCell.setRole(getElementRole());
-    return emptyCell;
+    getCellFactory().pushCellContext();
+    getCellFactory().setNodeLocation(new FromParentAndLink(getOwner(), MetaAdapterByDeclaration.getContainmentLink(myLinkDeclaration)));
+    try {
+      EditorCell_Constant emptyCell = new EditorCell_Constant(editorContext, getOwner(), null);
+      emptyCell.setDefaultText("<< ... >>");
+      emptyCell.setEditable(true);
+      emptyCell.setSubstituteInfo(new DefaultChildSubstituteInfo(getOwner(), null, getLinkDeclaration(), editorContext));
+      emptyCell.setRole(getElementRole());
+      return emptyCell;
+    } finally {
+      getCellFactory().popCellContext();
+    }
   }
-
-
   @Override
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);

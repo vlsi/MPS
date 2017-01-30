@@ -3,6 +3,26 @@
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155:jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165:jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104954:jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="c:f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123157:jetbrains.mps.baseLanguage.structure.Statement" />
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/5434709452673208690">
+    <file name="Complete_Statement_CellInDecisionTable_Test.java">
+      <node id="5434709452673208690" at="15,78,16,123" concept="0" />
+      <node id="5434709452673208690" at="16,123,17,135" concept="0" />
+      <node id="5434709452673208690" at="23,51,24,72" concept="0" />
+      <node id="5434709452673208720" at="24,72,25,23" concept="0" />
+      <node id="5434709452673208721" at="25,23,26,71" concept="0" />
+      <node id="5434709452673208723" at="26,71,27,82" concept="0" />
+      <node id="5434709452673208725" at="27,82,28,0" concept="3" />
+      <node id="5434709452673208690" at="14,0,19,0" concept="1" trace="test_Complete_Statement_CellInDecisionTable#()V" />
+      <node id="5434709452673208690" at="22,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="5434709452673208690" at="15,78,17,135" />
+      <scope id="5434709452673208690" at="14,0,19,0" />
+      <scope id="5434709452673208690" at="23,51,28,0" />
+      <scope id="5434709452673208690" at="22,0,30,0" />
+      <unit id="5434709452673208690" at="20,0,31,0" name="jetbrains.mps.lang.editor.table.decTable.test.Complete_Statement_CellInDecisionTable_Test$TestBody" />
+      <unit id="5434709452673208690" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.decTable.test.Complete_Statement_CellInDecisionTable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7651593722933722504">
     <file name="TableColumnsDefaultWrapping_Test.java">
       <node id="7651593722933722504" at="13,67,14,123" concept="0" />
@@ -21,6 +41,113 @@
       <scope id="7651593722933722504" at="20,0,29,0" />
       <unit id="7651593722933722504" at="18,0,30,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test$TestBody" />
       <unit id="7651593722933722504" at="10,0,31,0" name="jetbrains.mps.lang.editor.table.decTable.test.TableColumnsDefaultWrapping_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609769358">
+    <file name="Complete_WrapLVD_CellInDecisionTable_Test.java">
+      <node id="7976451618609769358" at="15,76,16,123" concept="0" />
+      <node id="7976451618609769358" at="16,123,17,133" concept="0" />
+      <node id="7976451618609769358" at="23,51,24,72" concept="0" />
+      <node id="7976451618609808264" at="24,72,25,27" concept="0" />
+      <node id="7976451618609821871" at="25,27,26,71" concept="0" />
+      <node id="7976451618609822118" at="26,71,27,82" concept="0" />
+      <node id="7976451618609821735" at="27,82,28,0" concept="3" />
+      <node id="7976451618609769358" at="14,0,19,0" concept="1" trace="test_Complete_WrapLVD_CellInDecisionTable#()V" />
+      <node id="7976451618609769358" at="22,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609769358" at="15,76,17,133" />
+      <scope id="7976451618609769358" at="14,0,19,0" />
+      <scope id="7976451618609769358" at="23,51,28,0" />
+      <scope id="7976451618609769358" at="22,0,30,0" />
+      <unit id="7976451618609769358" at="20,0,31,0" name="jetbrains.mps.lang.editor.table.decTable.test.Complete_WrapLVD_CellInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609769358" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.decTable.test.Complete_WrapLVD_CellInDecisionTable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609816575">
+    <file name="TypeCellInDecisionTable_Test.java">
+      <node id="7976451618609816575" at="13,63,14,123" concept="0" />
+      <node id="7976451618609816575" at="14,123,15,120" concept="0" />
+      <node id="7976451618609816575" at="21,51,22,72" concept="0" />
+      <node id="7976451618609816606" at="22,72,23,22" concept="0" />
+      <node id="7976451618609816575" at="12,0,17,0" concept="1" trace="test_TypeCellInDecisionTable#()V" />
+      <node id="7976451618609816575" at="20,0,25,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609816575" at="13,63,15,120" />
+      <scope id="7976451618609816575" at="21,51,23,22" />
+      <scope id="7976451618609816575" at="12,0,17,0" />
+      <scope id="7976451618609816575" at="20,0,25,0" />
+      <unit id="7976451618609816575" at="18,0,26,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeCellInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609816575" at="10,0,27,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeCellInDecisionTable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609824933">
+    <file name="CompleteColumnInDecisionTable_Test.java">
+      <node id="7976451618609824933" at="15,69,16,123" concept="0" />
+      <node id="7976451618609824933" at="16,123,17,126" concept="0" />
+      <node id="7976451618609824933" at="23,51,24,72" concept="0" />
+      <node id="7976451618609824962" at="24,72,25,27" concept="0" />
+      <node id="7976451618609824963" at="25,27,26,71" concept="0" />
+      <node id="7976451618609824965" at="26,71,27,82" concept="0" />
+      <node id="7976451618609824967" at="27,82,28,0" concept="3" />
+      <node id="7976451618609824933" at="14,0,19,0" concept="1" trace="test_CompleteColumnInDecisionTable#()V" />
+      <node id="7976451618609824933" at="22,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609824933" at="15,69,17,126" />
+      <scope id="7976451618609824933" at="14,0,19,0" />
+      <scope id="7976451618609824933" at="23,51,28,0" />
+      <scope id="7976451618609824933" at="22,0,30,0" />
+      <unit id="7976451618609824933" at="20,0,31,0" name="jetbrains.mps.lang.editor.table.decTable.test.CompleteColumnInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609824933" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.decTable.test.CompleteColumnInDecisionTable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609826519">
+    <file name="TypeColumnInDecisionTable_Test.java">
+      <node id="7976451618609826519" at="13,65,14,123" concept="0" />
+      <node id="7976451618609826519" at="14,123,15,122" concept="0" />
+      <node id="7976451618609826519" at="21,51,22,72" concept="0" />
+      <node id="7976451618609827678" at="22,72,23,22" concept="0" />
+      <node id="7976451618609826552" at="23,22,24,0" concept="3" />
+      <node id="7976451618609826519" at="12,0,17,0" concept="1" trace="test_TypeColumnInDecisionTable#()V" />
+      <node id="7976451618609826519" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609826519" at="13,65,15,122" />
+      <scope id="7976451618609826519" at="21,51,24,0" />
+      <scope id="7976451618609826519" at="12,0,17,0" />
+      <scope id="7976451618609826519" at="20,0,26,0" />
+      <unit id="7976451618609826519" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeColumnInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609826519" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeColumnInDecisionTable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609827693">
+    <file name="CompleteRowInDecisionTable_Test.java">
+      <node id="7976451618609827693" at="15,66,16,123" concept="0" />
+      <node id="7976451618609827693" at="16,123,17,123" concept="0" />
+      <node id="7976451618609827693" at="23,51,24,72" concept="0" />
+      <node id="7976451618609827725" at="24,72,25,27" concept="0" />
+      <node id="7976451618609827726" at="25,27,26,71" concept="0" />
+      <node id="7976451618609827728" at="26,71,27,82" concept="0" />
+      <node id="7976451618609827730" at="27,82,28,0" concept="3" />
+      <node id="7976451618609827693" at="14,0,19,0" concept="1" trace="test_CompleteRowInDecisionTable#()V" />
+      <node id="7976451618609827693" at="22,0,30,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609827693" at="15,66,17,123" />
+      <scope id="7976451618609827693" at="14,0,19,0" />
+      <scope id="7976451618609827693" at="23,51,28,0" />
+      <scope id="7976451618609827693" at="22,0,30,0" />
+      <unit id="7976451618609827693" at="20,0,31,0" name="jetbrains.mps.lang.editor.table.decTable.test.CompleteRowInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609827693" at="12,0,32,0" name="jetbrains.mps.lang.editor.table.decTable.test.CompleteRowInDecisionTable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c09cbf74-c0bb-4531-bd9d-ade611acf77c(jetbrains.mps.lang.editor.table.decTable.test@tests)/7976451618609830033">
+    <file name="TypeRowInDecisionTable_Test.java">
+      <node id="7976451618609830033" at="13,62,14,123" concept="0" />
+      <node id="7976451618609830033" at="14,123,15,119" concept="0" />
+      <node id="7976451618609830033" at="21,51,22,72" concept="0" />
+      <node id="7976451618609830063" at="22,72,23,22" concept="0" />
+      <node id="7976451618609830068" at="23,22,24,0" concept="3" />
+      <node id="7976451618609830033" at="12,0,17,0" concept="1" trace="test_TypeRowInDecisionTable#()V" />
+      <node id="7976451618609830033" at="20,0,26,0" concept="1" trace="testMethodImpl#()V" />
+      <scope id="7976451618609830033" at="13,62,15,119" />
+      <scope id="7976451618609830033" at="21,51,24,0" />
+      <scope id="7976451618609830033" at="12,0,17,0" />
+      <scope id="7976451618609830033" at="20,0,26,0" />
+      <unit id="7976451618609830033" at="18,0,27,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeRowInDecisionTable_Test$TestBody" />
+      <unit id="7976451618609830033" at="10,0,28,0" name="jetbrains.mps.lang.editor.table.decTable.test.TypeRowInDecisionTable_Test" />
     </file>
   </root>
 </debug-info>

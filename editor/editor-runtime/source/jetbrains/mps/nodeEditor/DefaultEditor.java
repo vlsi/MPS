@@ -281,15 +281,9 @@ public class DefaultEditor extends AbstractDefaultEditor {
     }
 
     public EditorCell createNodeCell(SNode elementNode) {
-      getCellFactory().pushCellContext();
-      getCellFactory().setNodeLocation(new FromNode(elementNode));
-      try {
-        EditorCell elementCell = super.createNodeCell(elementNode);
-        this.installElementCellActions(getNode(), elementNode, elementCell);
-        return elementCell;
-      } finally {
-        getCellFactory().popCellContext();
-      }
+      EditorCell elementCell = getUpdateSession().updateChildNodeCell(elementNode);
+      this.installElementCellActions(getNode(), elementNode, elementCell);
+      return elementCell;
     }
 
     public EditorCell createEmptyCell() {

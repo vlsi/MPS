@@ -26,12 +26,12 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 /**
  * @author simon
  */
-class DefaultSubstituteMenuItemAsActionItem extends SubstituteMenuItemAsActionItem {
+public class DefaultSubstituteMenuItemAsActionItem extends SubstituteMenuItemAsActionItem {
   private static final Logger LOG = Logger.getLogger(DefaultSubstituteMenuItemAsActionItem.class);
 
   private final SubstituteMenuContext myContext;
 
-  DefaultSubstituteMenuItemAsActionItem(SubstituteMenuItem substituteItem, SubstituteMenuContext context) {
+  public DefaultSubstituteMenuItemAsActionItem(SubstituteMenuItem substituteItem, SubstituteMenuContext context) {
     super(substituteItem);
     myContext = context;
   }
@@ -40,17 +40,31 @@ class DefaultSubstituteMenuItemAsActionItem extends SubstituteMenuItemAsActionIt
   @Override
   public void execute(@NotNull String pattern) {
     SNode newChild = getSubstituteItem().createNode(pattern);
+    final SNode nodeToSelect = doSubstitute(newChild);
+    if (nodeToSelect != null) {
+      myContext.getEditorContext().flushEvents();
+      select(nodeToSelect, pattern);
+    }
+  }
+
+  protected void select(SNode newChild, @NotNull String pattern) {
+    getSubstituteItem().select(newChild, pattern);
+  }
+
+
+  protected SNode doSubstitute(SNode newChild) {
     if (newChild != null) {
       SContainmentLink containmentLink = myContext.getLink();
       SNode parentNode = myContext.getParentNode();
       SNode currentChild = myContext.getCurrentTargetNode();
       if (containmentLink == null) {
         LOG.error("Containment link should not be null. " + "Parent node" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
-        return;
+        return null;
       }
       if (!newChild.getConcept().isSubConceptOf(containmentLink.getTargetConcept())) {
         LOG.error("couldn't set instance of " + newChild.getConcept().getName() +
             " as child '" + containmentLink.getName() + "' to parent" + parentNode.getPresentation() + " Parent id: " + parentNode.getNodeId());
+        return null;
       }
       if (currentChild == null) {
         parentNode.addChild(containmentLink, newChild);
@@ -58,8 +72,11 @@ class DefaultSubstituteMenuItemAsActionItem extends SubstituteMenuItemAsActionIt
         SNodeUtil.replaceWithAnother(currentChild, newChild);
         currentChild.delete();
       }
-      myContext.getEditorContext().flushEvents();
-      getSubstituteItem().select(newChild, pattern);
     }
+    return newChild;
+  }
+
+  protected SubstituteMenuContext getSubstituteMenuContext() {
+    return myContext;
   }
 }
