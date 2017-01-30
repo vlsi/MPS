@@ -387,10 +387,10 @@ public class BHTestRef_Test extends TestCase {
     Assert.assertSame(2, ((int) (Integer) BHReflection.invoke(node3, SMethodTrimmedId.create("foo", null, "12MCENn4RcU"))));
     Assert.assertSame(1, ((int) (Integer) BHReflection.invoke(node3, SMethodTrimmedId.create("foo", null, "12MCENn4Rd5"))));
   }
-  public void test_conceptNodeConstruction() throws Exception {
+  public void test_conceptConstruction() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode();
+        SConcept node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A");
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((int) (Integer) BHReflection.invoke(SNodeOperations.asSConcept(node), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, ((int) (Integer) BHReflection.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A")), SMethodTrimmedId.create("staticMethod", MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"), "5mnatV0hAQH"))));
         SNode aNode;

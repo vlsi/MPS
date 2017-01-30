@@ -400,10 +400,10 @@ public class BHTest_Test extends TestCase {
     Assert.assertSame(2, (int) BHL7.behavior.I3__BehaviorDescriptor.foo_id12MCENn4RcU.invoke(node3));
     Assert.assertSame(1, (int) BHL7.behavior.I3__BehaviorDescriptor.foo_id12MCENn4Rd5.invoke(node3));
   }
-  public void test_conceptNodeConstruction() throws Exception {
+  public void test_conceptConstruction() throws Exception {
     myProject.getModelAccess().runReadAction(new Runnable() {
       public void run() {
-        SNode node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A").getDeclarationNode();
+        SConcept node = MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A");
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) BHL7.behavior.A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(SNodeOperations.asSConcept(node)));
         Assert.assertSame(TestResults.DEFAULT_RETURN_VALUE, (int) BHL7.behavior.A__BehaviorDescriptor.staticMethod_id5mnatV0hAQH.invoke(SNodeOperations.asSConcept(MetaAdapterFactory.getConcept(0x4239359f64574d2aL, 0xb1e014d3f948db39L, 0x559729dec0466d3cL, "BHL7.structure.A"))));
         SNode aNode;
