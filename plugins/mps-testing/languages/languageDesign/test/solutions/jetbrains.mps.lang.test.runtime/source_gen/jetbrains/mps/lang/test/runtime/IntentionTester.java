@@ -64,7 +64,7 @@ public class IntentionTester {
 
   private Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final SNode node) {
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
-    query.setCurrentNodeOnly(true);
+    query.setCurrentNodeOnly(false);
     return IntentionsManager.getInstance().getAvailableIntentions(query, node, myEditorTest.getEditorContext());
   }
 }

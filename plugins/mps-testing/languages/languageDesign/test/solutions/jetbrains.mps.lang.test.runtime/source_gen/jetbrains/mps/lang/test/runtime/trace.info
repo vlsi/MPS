@@ -1257,8 +1257,8 @@
       <node id="592868908271295356" at="56,136,57,91" concept="11" />
       <node id="592868908271299021" at="59,66,60,36" concept="12" />
       <node id="592868908270592625" at="65,97,66,86" concept="11" />
-      <node id="592868908270592630" at="66,86,67,35" concept="6" />
-      <node id="592868908270592635" at="67,35,68,112" concept="12" />
+      <node id="592868908270592630" at="66,86,67,36" concept="6" />
+      <node id="592868908270592635" at="67,36,68,112" concept="12" />
       <node id="592868908270586839" at="22,0,25,0" concept="3" trace="IntentionTester#(Ljetbrains/mps/lang/test/runtime/BaseEditorTestBody;)V" />
       <node id="592868908271271207" at="29,0,32,0" concept="10" trace="run#()V" />
       <node id="592868908270592592" at="48,0,51,5" concept="9" />
