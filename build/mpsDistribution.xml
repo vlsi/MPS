@@ -92,19 +92,12 @@
       <zipfileset file="${basedir}/bin/win/restarter.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/win/runnerw.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
-      <zipfileset dir="${basedir}/bin/linux" prefix="MPS ${mpsBootstrapCore.version}/bin/linux">
-        <exclude name="**/fsnotifier" />
-        <exclude name="**/fsnotifier64" />
-        <exclude name="**/fsnotifier-arm" />
-      </zipfileset>
+      <zipfileset file="${basedir}/bin/win/WinProcessListHelper.exe" prefix="MPS ${mpsBootstrapCore.version}/bin/win" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
       <zipfileset file="${basedir}/bin/linux/fsnotifier-arm" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
-      <zipfileset file="${basedir}/bin/nix/idea.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
-      <zipfileset file="${basedir}/bin/nix/inspect.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
-      <zipfileset file="${basedir}/bin/nix/inspect_diff.sh" prefix="MPS ${mpsBootstrapCore.version}/bin/nix" filemode="755" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
+      <zipfileset file="${basedir}/bin/linux/restart.py" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
+      <zipfileset file="${basedir}/bin/linux/printenv.py" prefix="MPS ${mpsBootstrapCore.version}/bin/linux" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/libMacNativeKit64.dylib" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" />
       <zipfileset file="${basedir}/bin/mac/restarter" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin/mac" filemode="755" />
@@ -141,15 +134,12 @@
     </copy>
     <tar destfile="${build.layout}/${mps.build.number}-linux.tar.gz" compression="gzip" longfile="gnu">
       <tarfileset dir="${artifacts.mps}" prefix="MPS ${mpsBootstrapCore.version}" />
-      <tarfileset dir="${basedir}/bin/linux" prefix="MPS ${mpsBootstrapCore.version}/bin">
-        <exclude name="**/fsnotifier" />
-        <exclude name="**/fsnotifier64" />
-        <exclude name="**/fsnotifier-arm" />
-      </tarfileset>
       <tarfileset file="${basedir}/workbench/mps-icons/source/MPS_128.png" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier64" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${basedir}/bin/linux/fsnotifier-arm" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/linux/restart.py" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
+      <tarfileset file="${basedir}/bin/linux/printenv.py" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <tarfileset file="${artifacts.resources}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
       <tarfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}/bin" />
       <tarfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-linux.tar.gz" />
@@ -189,6 +179,7 @@
       <zipfileset file="${basedir}/bin/win/restarter.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/runnerw.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/win/vistalauncher.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
+      <zipfileset file="${basedir}/bin/win/WinProcessListHelper.exe" prefix="MPS ${mpsBootstrapCore.version}/bin" filemode="755" />
       <zipfileset dir="${build.tmp}/deps/jdk.zip" prefix="MPS ${mpsBootstrapCore.version}/jre" />
       <zipfileset file="${artifacts.resources}/help/mpshelp.jar" prefix="MPS ${mpsBootstrapCore.version}/help" />
       <zipfileset dir="${build.tmp}/default/_dl__lbrace_build.number_rbrace_-windows.zip_f755" filemode="755" prefix="MPS ${mpsBootstrapCore.version}" />
@@ -235,8 +226,6 @@
       <zipfileset file="${basedir}/build/resources/mps.icns" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/Resources" />
       <zipfileset file="${basedir}/build/resources/idea_appLauncher" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/MacOS" />
       <zipfileset file="${basedir}/build/resources/mps" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/MacOS" filemode="755" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
-      <zipfileset file="${basedir}/bin/mac/libbreakgen64.jnilib" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
       <zipfileset file="${basedir}/bin/mac/libMacNativeKit64.dylib" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" />
       <zipfileset file="${basedir}/bin/mac/restarter" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" filemode="755" />
       <zipfileset file="${basedir}/bin/mac/fsnotifier" prefix="MPS ${mpsBootstrapCore.version}.app/Contents/bin" filemode="755" />

@@ -2599,14 +2599,14 @@
             </node>
             <node concept="1kK7hY" id="1cej1P1K6ok" role="39821P">
               <ref role="1kK7hZ" node="3zjMY$95UAa" resolve="jetbrains.mps.core.tool.environment" />
+              <node concept="1cIVw3" id="6v5CVv8ftj4" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.core.tool.environment.msd" />
+              </node>
               <node concept="1cIVw3" id="7ndynaw0A8F" role="3E5mpp">
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
                 <property role="1cIVw0" value="." />
-              </node>
-              <node concept="1cIVw3" id="6v5CVv8ftj4" role="2JVP1x">
-                <property role="1cIVw0" value="jetbrains.mps.core.tool.environment.msd" />
               </node>
             </node>
           </node>
@@ -2811,14 +2811,14 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwDhm" role="39821P">
               <ref role="1kK7hZ" node="bOvjGOUy$U" resolve="jetbrains.mps.lang.behavior.runtime" />
+              <node concept="1cIVw3" id="6v5CVv8fukA" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.runtime.msd" />
+              </node>
               <node concept="1cIVw3" id="7ndynaw0A8E" role="3E5mpp">
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
                 <property role="1cIVw0" value="." />
-              </node>
-              <node concept="1cIVw3" id="6v5CVv8fukA" role="2JVP1x">
-                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.runtime.msd" />
               </node>
             </node>
           </node>
@@ -2850,14 +2850,14 @@
             </node>
             <node concept="1kK7hY" id="36zc_GPwFZK" role="39821P">
               <ref role="1kK7hZ" node="2Tl9xCDWpd" resolve="jetbrains.mps.lang.behavior.api" />
+              <node concept="1cIVw3" id="6v5CVv8fwnC" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.api.msd" />
+              </node>
               <node concept="1cIVw3" id="7ndynaw0A8G" role="3E5mpp">
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
                 <property role="1cIVw0" value="." />
-              </node>
-              <node concept="1cIVw3" id="6v5CVv8fwnC" role="2JVP1x">
-                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.api.msd" />
               </node>
             </node>
           </node>
@@ -16017,27 +16017,22 @@
                   </node>
                 </node>
               </node>
-            </node>
-            <node concept="398223" id="6xv$4WsFwAu" role="39821P">
-              <node concept="2HvfSZ" id="2lgcjg39Ytk" role="39821P">
-                <node concept="3LWZYq" id="6xv$4WsFwBP" role="2HvfZ1">
-                  <property role="3LWZYl" value="**/fsnotifier" />
-                </node>
-                <node concept="3LWZYq" id="6xv$4WsFwBQ" role="2HvfZ1">
-                  <property role="3LWZYl" value="**/fsnotifier64" />
-                </node>
-                <node concept="3LWZYq" id="6DuyMKt09ys" role="2HvfZ1">
-                  <property role="3LWZYl" value="**/fsnotifier-arm" />
-                </node>
-                <node concept="55IIr" id="6xv$4WsFwBR" role="2HvfZ0">
-                  <node concept="2Ry0Ak" id="6xv$4WsFwBS" role="iGT6I">
+              <node concept="28jJK3" id="4eWOtElVDv8" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="4eWOtElVDva" role="28jJRO">
+                  <node concept="2Ry0Ak" id="4eWOtElVDvJ" role="iGT6I">
                     <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="6xv$4WsFwBT" role="2Ry0An">
-                      <property role="2Ry0Am" value="linux" />
+                    <node concept="2Ry0Ak" id="4eWOtElVDvO" role="2Ry0An">
+                      <property role="2Ry0Am" value="win" />
+                      <node concept="2Ry0Ak" id="4eWOtElVDvT" role="2Ry0An">
+                        <property role="2Ry0Am" value="WinProcessListHelper.exe" />
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
+            </node>
+            <node concept="398223" id="6xv$4WsFwAu" role="39821P">
               <node concept="28jJK3" id="2lgcjg39Yu5" role="39821P">
                 <property role="28jJZ5" value="755" />
                 <node concept="55IIr" id="2lgcjg39Yu6" role="28jJRO">
@@ -16080,88 +16075,41 @@
                   </node>
                 </node>
               </node>
+              <node concept="28jJK3" id="4eWOtElVDxn" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="4eWOtElVDxp" role="28jJRO">
+                  <node concept="2Ry0Ak" id="4eWOtElVDxQ" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="4eWOtElVDxV" role="2Ry0An">
+                      <property role="2Ry0Am" value="linux" />
+                      <node concept="2Ry0Ak" id="4eWOtElVDy0" role="2Ry0An">
+                        <property role="2Ry0Am" value="restart.py" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="28jJK3" id="4eWOtElVDyy" role="39821P">
+                <property role="28jJZ5" value="755" />
+                <node concept="55IIr" id="4eWOtElVDy$" role="28jJRO">
+                  <node concept="2Ry0Ak" id="4eWOtElVDz6" role="iGT6I">
+                    <property role="2Ry0Am" value="bin" />
+                    <node concept="2Ry0Ak" id="4eWOtElVDzb" role="2Ry0An">
+                      <property role="2Ry0Am" value="linux" />
+                      <node concept="2Ry0Ak" id="4eWOtElVDzg" role="2Ry0An">
+                        <property role="2Ry0Am" value="printenv.py" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
               <node concept="3_J27D" id="6xv$4WsFwAv" role="Nbhlr">
                 <node concept="3Mxwew" id="6xv$4WsFwAw" role="3MwsjC">
                   <property role="3MwjfP" value="linux" />
                 </node>
               </node>
             </node>
-            <node concept="398223" id="6xv$4WsFw_T" role="39821P">
-              <node concept="28jJK3" id="2lgcjg39Yux" role="39821P">
-                <property role="28jJZ5" value="755" />
-                <node concept="55IIr" id="2lgcjg39YuA" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg39YuB" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg39YuC" role="2Ry0An">
-                      <property role="2Ry0Am" value="nix" />
-                      <node concept="2Ry0Ak" id="2lgcjg39YuD" role="2Ry0An">
-                        <property role="2Ry0Am" value="idea.sh" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="28jJK3" id="2lgcjg39Yuz" role="39821P">
-                <property role="28jJZ5" value="755" />
-                <node concept="55IIr" id="2lgcjg39YuE" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg39YuF" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg39YuG" role="2Ry0An">
-                      <property role="2Ry0Am" value="nix" />
-                      <node concept="2Ry0Ak" id="2lgcjg39YuH" role="2Ry0An">
-                        <property role="2Ry0Am" value="inspect.sh" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="28jJK3" id="2lgcjg39Yu$" role="39821P">
-                <property role="28jJZ5" value="755" />
-                <node concept="55IIr" id="2lgcjg39YuI" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg39YuJ" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg39YuK" role="2Ry0An">
-                      <property role="2Ry0Am" value="nix" />
-                      <node concept="2Ry0Ak" id="2lgcjg39YuL" role="2Ry0An">
-                        <property role="2Ry0Am" value="inspect_diff.sh" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="3_J27D" id="6xv$4WsFw_U" role="Nbhlr">
-                <node concept="3Mxwew" id="6xv$4WsFw_V" role="3MwsjC">
-                  <property role="3MwjfP" value="nix" />
-                </node>
-              </node>
-            </node>
             <node concept="398223" id="6xv$4WsFQKU" role="39821P">
-              <node concept="28jJK3" id="2lgcjg3aF5j" role="39821P">
-                <node concept="55IIr" id="2lgcjg3aF5k" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg3aF5l" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg3aF5m" role="2Ry0An">
-                      <property role="2Ry0Am" value="mac" />
-                      <node concept="2Ry0Ak" id="2lgcjg3aF5n" role="2Ry0An">
-                        <property role="2Ry0Am" value="libbreakgen.jnilib" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="28jJK3" id="2lgcjg3aF5o" role="39821P">
-                <node concept="55IIr" id="2lgcjg3aF5p" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg3aF5q" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg3aF5r" role="2Ry0An">
-                      <property role="2Ry0Am" value="mac" />
-                      <node concept="2Ry0Ak" id="2lgcjg3aF5s" role="2Ry0An">
-                        <property role="2Ry0Am" value="libbreakgen64.jnilib" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
               <node concept="28jJK3" id="6DuyMKt09$Q" role="39821P">
                 <node concept="55IIr" id="6DuyMKt09$S" role="28jJRO">
                   <node concept="2Ry0Ak" id="6DuyMKt09A7" role="iGT6I">
@@ -16466,6 +16414,34 @@
                 </node>
               </node>
             </node>
+            <node concept="28jJK3" id="4eWOtElVGaD" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="4eWOtElVGaE" role="28jJRO">
+                <node concept="2Ry0Ak" id="4eWOtElVGaF" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="4eWOtElVGaG" role="2Ry0An">
+                    <property role="2Ry0Am" value="linux" />
+                    <node concept="2Ry0Ak" id="4eWOtElVGaH" role="2Ry0An">
+                      <property role="2Ry0Am" value="restart.py" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node concept="28jJK3" id="4eWOtElVGaI" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="4eWOtElVGaJ" role="28jJRO">
+                <node concept="2Ry0Ak" id="4eWOtElVGaK" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="4eWOtElVGaL" role="2Ry0An">
+                    <property role="2Ry0Am" value="linux" />
+                    <node concept="2Ry0Ak" id="4eWOtElVGaM" role="2Ry0An">
+                      <property role="2Ry0Am" value="printenv.py" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="28jJK3" id="2lgcjg39Cce" role="39821P">
               <node concept="55IIr" id="6jTFJ4eVmDv" role="28jJRO">
                 <node concept="2Ry0Ak" id="6jTFJ4eVmDw" role="iGT6I">
@@ -16540,25 +16516,6 @@
               <node concept="3co7Ac" id="2lwFGYPkDMI" role="28jJR8">
                 <property role="3co7Am" value="lf" />
                 <property role="3cpA_W" value="true" />
-              </node>
-            </node>
-            <node concept="2HvfSZ" id="2lgcjg39Ccl" role="39821P">
-              <node concept="3LWZYq" id="6xv$4WsFwxU" role="2HvfZ1">
-                <property role="3LWZYl" value="**/fsnotifier" />
-              </node>
-              <node concept="3LWZYq" id="6xv$4WsFwxV" role="2HvfZ1">
-                <property role="3LWZYl" value="**/fsnotifier64" />
-              </node>
-              <node concept="3LWZYq" id="6DuyMKt09qx" role="2HvfZ1">
-                <property role="3LWZYl" value="**/fsnotifier-arm" />
-              </node>
-              <node concept="55IIr" id="2lgcjg39Ccn" role="2HvfZ0">
-                <node concept="2Ry0Ak" id="2lgcjg39Cco" role="iGT6I">
-                  <property role="2Ry0Am" value="bin" />
-                  <node concept="2Ry0Ak" id="2lgcjg39Ccp" role="2Ry0An">
-                    <property role="2Ry0Am" value="linux" />
-                  </node>
-                </node>
               </node>
             </node>
             <node concept="28jJK3" id="2lgcjg3aF5C" role="39821P">
@@ -16834,6 +16791,20 @@
                 </node>
               </node>
             </node>
+            <node concept="28jJK3" id="4eWOtElVGeI" role="39821P">
+              <property role="28jJZ5" value="755" />
+              <node concept="55IIr" id="4eWOtElVGeJ" role="28jJRO">
+                <node concept="2Ry0Ak" id="4eWOtElVGeK" role="iGT6I">
+                  <property role="2Ry0Am" value="bin" />
+                  <node concept="2Ry0Ak" id="4eWOtElVGeL" role="2Ry0An">
+                    <property role="2Ry0Am" value="win" />
+                    <node concept="2Ry0Ak" id="4eWOtElVGeM" role="2Ry0An">
+                      <property role="2Ry0Am" value="WinProcessListHelper.exe" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node concept="398223" id="AwiPu7jIs_" role="39821P">
             <node concept="3_J27D" id="AwiPu7jIsB" role="Nbhlr">
@@ -17001,32 +16972,6 @@
               <node concept="3_J27D" id="6xv$4WsFwzk" role="Nbhlr">
                 <node concept="3Mxwew" id="6xv$4WsFwzl" role="3MwsjC">
                   <property role="3MwjfP" value="bin" />
-                </node>
-              </node>
-              <node concept="28jJK3" id="2lgcjg3akKQ" role="39821P">
-                <node concept="55IIr" id="2lgcjg3akKR" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg3akKS" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg3akKT" role="2Ry0An">
-                      <property role="2Ry0Am" value="mac" />
-                      <node concept="2Ry0Ak" id="2lgcjg3akKU" role="2Ry0An">
-                        <property role="2Ry0Am" value="libbreakgen.jnilib" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node concept="28jJK3" id="2lgcjg3akKV" role="39821P">
-                <node concept="55IIr" id="2lgcjg3akKW" role="28jJRO">
-                  <node concept="2Ry0Ak" id="2lgcjg3akKX" role="iGT6I">
-                    <property role="2Ry0Am" value="bin" />
-                    <node concept="2Ry0Ak" id="2lgcjg3akKY" role="2Ry0An">
-                      <property role="2Ry0Am" value="mac" />
-                      <node concept="2Ry0Ak" id="2lgcjg3akKZ" role="2Ry0An">
-                        <property role="2Ry0Am" value="libbreakgen64.jnilib" />
-                      </node>
-                    </node>
-                  </node>
                 </node>
               </node>
               <node concept="28jJK3" id="6DuyMKt09EH" role="39821P">
@@ -26145,14 +26090,14 @@
               </node>
               <node concept="1kK7hY" id="1N8m_MUbJWp" role="39821P">
                 <ref role="1kK7hZ" node="5sovPIfS$nd" resolve="jetbrains.mps.ide.mpsdevkit" />
-                <node concept="1cIVw3" id="7ndynaw0A8H" role="3E5mpp">
-                  <property role="1cIVw0" value="." />
+                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
+                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
                 </node>
                 <node concept="1cIVw3" id="6v5CVv8fxrk" role="3SGgvt">
                   <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit-src.jar" />
                 </node>
-                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
-                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
+                <node concept="1cIVw3" id="7ndynaw0A8H" role="3E5mpp">
+                  <property role="1cIVw0" value="." />
                 </node>
               </node>
             </node>
