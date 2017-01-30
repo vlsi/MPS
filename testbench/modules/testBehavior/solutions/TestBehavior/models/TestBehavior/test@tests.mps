@@ -215,12 +215,6 @@
       <concept id="1138056022639" name="jetbrains.mps.lang.smodel.structure.SPropertyAccess" flags="nn" index="3TrcHB">
         <reference id="1138056395725" name="property" index="3TsBF5" />
       </concept>
-      <concept id="1172420572800" name="jetbrains.mps.lang.smodel.structure.ConceptNodeType" flags="in" index="3THzug">
-        <reference id="1180481110358" name="conceptDeclaraton" index="3qa414" />
-      </concept>
-      <concept id="1172424058054" name="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" flags="nn" index="3TUQnm">
-        <reference id="1172424100906" name="conceptDeclaration" index="3TV0OU" />
-      </concept>
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1133920641626" name="jetbrains.mps.lang.core.structure.BaseConcept" flags="ng" index="2VYdi">
@@ -3633,7 +3627,7 @@
         </node>
       </node>
       <node concept="3s$Bmu" id="MsDpdTh7DB" role="3s_gse">
-        <property role="3s$Bm0" value="conceptNodeConstruction" />
+        <property role="3s$Bm0" value="conceptConstruction" />
         <node concept="3cqZAl" id="MsDpdTh7DD" role="3clF45" />
         <node concept="3Tm1VV" id="MsDpdTh7DF" role="1B3o_S" />
         <node concept="3clFbS" id="MsDpdTh7DG" role="3clF47">
@@ -3654,11 +3648,11 @@
                     <node concept="3cpWs8" id="MsDpdTh8au" role="3cqZAp">
                       <node concept="3cpWsn" id="MsDpdTh8ax" role="3cpWs9">
                         <property role="TrG5h" value="node" />
-                        <node concept="3THzug" id="MsDpdTh8as" role="1tU5fm">
-                          <ref role="3qa414" to="n871:5mnatV0hAOW" resolve="A" />
+                        <node concept="35c_gC" id="4L5lkpK59AP" role="33vP2m">
+                          <ref role="35c_gD" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
-                        <node concept="3TUQnm" id="MsDpdTh8bg" role="33vP2m">
-                          <ref role="3TV0OU" to="n871:5mnatV0hAOW" resolve="A" />
+                        <node concept="3bZ5Sz" id="4L5lkpK59fu" role="1tU5fm">
+                          <ref role="3bZ5Sy" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                       </node>
                     </node>
@@ -3744,10 +3738,10 @@
                           <ref role="3bZ5Sy" to="n871:5mnatV0hAOW" resolve="A" />
                         </node>
                         <node concept="2OqwBi" id="MsDpdThjgJ" role="33vP2m">
-                          <node concept="2yIwOk" id="3ZqD6vjay6T" role="2OqNvi" />
                           <node concept="37vLTw" id="MsDpdThjK8" role="2Oq$k0">
                             <ref role="3cqZAo" node="MsDpdThjm$" resolve="nodeA" />
                           </node>
+                          <node concept="2yIwOk" id="3ZqD6vjay6T" role="2OqNvi" />
                         </node>
                       </node>
                     </node>
