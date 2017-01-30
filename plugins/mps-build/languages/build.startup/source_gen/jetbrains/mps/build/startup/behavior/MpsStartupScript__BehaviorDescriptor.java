@@ -23,6 +23,7 @@ import jetbrains.mps.internal.collections.runtime.IRightCombinator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.build.behavior.BuildString__BehaviorDescriptor;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
@@ -81,6 +82,8 @@ public final class MpsStartupScript__BehaviorDescriptor extends BaseBHDescriptor
       }
     });
   }
+  @Deprecated
+  @ToRemove(version = 2017.1)
   /*package*/ static String getPathToVmOptionsFile_id54lRqzvvwXi(@NotNull SNode __thisNode__, boolean is64bit) {
     return SPropertyOperations.getString(__thisNode__, MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder")) + "/" + MpsStartupScript__BehaviorDescriptor.getVmOptionsFileName_id2lwFGYOYlNP.invoke(__thisNode__, ((boolean) is64bit));
   }
