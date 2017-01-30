@@ -28,7 +28,6 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(link.getTargetConcept()), SNodeOperations.asSConcept(SNodeOperations.getConcept(child))))) {
         component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept().getQualifiedName() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
       }
-
     }
 
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {

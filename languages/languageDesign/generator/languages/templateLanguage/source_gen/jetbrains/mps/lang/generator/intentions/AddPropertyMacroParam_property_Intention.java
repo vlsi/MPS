@@ -68,26 +68,28 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
     if (sourceNodeConcept == null) {
       return null;
     }
-    final String propertyName = EditingUtil.getEditedPropertyName(editorContext.getSelectedCell());
-    if (propertyName == null) {
+
+    // todo replace with SProperty here 
+    final String p = EditingUtil.getEditedPropertyName(editorContext.getSelectedCell());
+    if (p == null) {
       return null;
     }
+
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SNodeOperations.getConceptDeclaration(node))).where(new IWhereFilter<SNode>() {
+    final SNode propertyDeclaration = ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(SNodeOperations.asNode(SNodeOperations.getConcept(node)))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return propertyName.equals(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")));
+        return eq_wcza7p_a0a0a0a0a0a0i0g(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")), p);
       }
     }).first();
     if (propertyDeclaration == null) {
       return result;
     }
-    SNode property = SLinkOperations.getTarget(propertyDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
-    for (SNode propertySource : AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(sourceNodeConcept)) {
-      if (property == SLinkOperations.getTarget(propertySource, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"))) {
-        ListSequence.fromList(result).addElement(propertySource);
+
+    return ListSequence.fromList(AbstractConceptDeclaration__BehaviorDescriptor.getPropertyDeclarations_idhEwILLM.invoke(sourceNodeConcept)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType")) == SLinkOperations.getTarget(propertyDeclaration, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086bL, 0xfc26f42fe5L, "dataType"));
       }
-    }
-    return result;
+    }).toListSequence();
   }
   /*package*/ final class IntentionImplementation extends IntentionExecutableBase implements ParameterizedIntentionExecutable {
     private SNode myParameter;
@@ -121,5 +123,8 @@ public final class AddPropertyMacroParam_property_Intention extends IntentionDes
     public Object getParameter() {
       return myParameter;
     }
+  }
+  private static boolean eq_wcza7p_a0a0a0a0a0a0i0g(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
 }
