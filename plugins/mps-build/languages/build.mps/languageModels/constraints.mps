@@ -112,6 +112,12 @@
         <child id="1163668922816" name="ifTrue" index="3K4E3e" />
         <child id="1163668934364" name="ifFalse" index="3K4GZi" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
       <concept id="1170345865475" name="jetbrains.mps.baseLanguage.structure.AnonymousClass" flags="ig" index="1Y3b0j">
@@ -119,7 +125,7 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
+      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="3906442776579556545" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Presentation" flags="in" index="Bn3R3" />
@@ -130,7 +136,7 @@
       </concept>
       <concept id="1147467790433" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" flags="in" index="Eqf_E" />
       <concept id="1147468365020" name="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" flags="nn" index="EsrRn" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
+      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope_Old" flags="in" index="13QW63" />
       <concept id="8401916545537438642" name="jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory" flags="ng" index="1dDu$B">
         <reference id="8401916545537438643" name="kind" index="1dDu$A" />
       </concept>
@@ -138,7 +144,7 @@
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213098023997" name="property" index="1MhHOB" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild" index="1MLUbF" />
+        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
@@ -775,14 +781,39 @@
                         <node concept="3Tqbb2" id="7fR23Zqrocl" role="1tU5fm" />
                       </node>
                       <node concept="3clFbS" id="7fR23Zqrocn" role="3clF47">
+                        <node concept="3SKdUt" id="6OtXG9KbRV3" role="3cqZAp">
+                          <node concept="3SKdUq" id="6OtXG9KbRV5" role="3SKWNk">
+                            <property role="3SKdUp" value="it's ok to reference generators that are project parts, but those that come as part of a language" />
+                          </node>
+                        </node>
+                        <node concept="3SKdUt" id="6OtXG9KbS4d" role="3cqZAp">
+                          <node concept="3SKdUq" id="6OtXG9KbS4f" role="3SKWNk">
+                            <property role="3SKdUp" value="get processed together with language and doesn't need distinct layout" />
+                          </node>
+                        </node>
                         <node concept="3clFbF" id="7fR23ZqrodV" role="3cqZAp">
-                          <node concept="2OqwBi" id="7fR23Zqroil" role="3clFbG">
-                            <node concept="37vLTw" id="7fR23ZqrodU" role="2Oq$k0">
-                              <ref role="3cqZAo" node="7fR23Zqrock" resolve="node" />
+                          <node concept="1Wc70l" id="6OtXG9KbGit" role="3clFbG">
+                            <node concept="2OqwBi" id="6OtXG9KbHcR" role="3uHU7w">
+                              <node concept="2OqwBi" id="6OtXG9KbGCu" role="2Oq$k0">
+                                <node concept="37vLTw" id="6OtXG9KbGtd" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="7fR23Zqrock" resolve="node" />
+                                </node>
+                                <node concept="1mfA1w" id="6OtXG9KbGRT" role="2OqNvi" />
+                              </node>
+                              <node concept="1mIQ4w" id="6OtXG9KbHwU" role="2OqNvi">
+                                <node concept="chp4Y" id="6OtXG9KbHDY" role="cj9EA">
+                                  <ref role="cht4Q" to="kdzh:2L4pT56gD3S" resolve="BuildMps_Language" />
+                                </node>
+                              </node>
                             </node>
-                            <node concept="1mIQ4w" id="7fR23Zqrp53" role="2OqNvi">
-                              <node concept="chp4Y" id="7fR23ZqrpcH" role="cj9EA">
-                                <ref role="cht4Q" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
+                            <node concept="2OqwBi" id="7fR23Zqroil" role="3uHU7B">
+                              <node concept="37vLTw" id="7fR23ZqrodU" role="2Oq$k0">
+                                <ref role="3cqZAo" node="7fR23Zqrock" resolve="node" />
+                              </node>
+                              <node concept="1mIQ4w" id="7fR23Zqrp53" role="2OqNvi">
+                                <node concept="chp4Y" id="7fR23ZqrpcH" role="cj9EA">
+                                  <ref role="cht4Q" to="kdzh:4LHG7OIlEyO" resolve="BuildMps_Generator" />
+                                </node>
                               </node>
                             </node>
                           </node>

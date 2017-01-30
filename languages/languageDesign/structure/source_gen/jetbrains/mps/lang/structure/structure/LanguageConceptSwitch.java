@@ -18,16 +18,19 @@ public final class LanguageConceptSwitch {
   public static final int ConstrainedDataTypeDeclaration = 6;
   public static final int DataTypeDeclaration = 7;
   public static final int DeprecatedNodeAnnotation = 8;
-  public static final int EnumerationDataTypeDeclaration = 9;
-  public static final int EnumerationMemberDeclaration = 10;
-  public static final int IConceptAspect = 11;
-  public static final int IStructureDeprecatable = 12;
-  public static final int InterfaceConceptDeclaration = 13;
-  public static final int InterfaceConceptReference = 14;
-  public static final int LinkDeclaration = 15;
-  public static final int PrimitiveDataTypeDeclaration = 16;
-  public static final int PropertyDeclaration = 17;
-  public static final int ReferenceLinkDeclartionScopeKind = 18;
+  public static final int DocumentationObjective = 9;
+  public static final int DocumentationObjectiveRef = 10;
+  public static final int DocumentedNodeAnnotation = 11;
+  public static final int EnumerationDataTypeDeclaration = 12;
+  public static final int EnumerationMemberDeclaration = 13;
+  public static final int IConceptAspect = 14;
+  public static final int IStructureDeprecatable = 15;
+  public static final int InterfaceConceptDeclaration = 16;
+  public static final int InterfaceConceptReference = 17;
+  public static final int LinkDeclaration = 18;
+  public static final int PrimitiveDataTypeDeclaration = 19;
+  public static final int PropertyDeclaration = 20;
+  public static final int ReferenceLinkDeclartionScopeKind = 21;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xc72da2b97cce4447L, 0x8389f407dc1158b7L);
@@ -40,6 +43,9 @@ public final class LanguageConceptSwitch {
     builder.put(0xfc268c7a37L, ConstrainedDataTypeDeclaration);
     builder.put(0xfc26875dfaL, DataTypeDeclaration);
     builder.put(0x11d0a70ae54L, DeprecatedNodeAnnotation);
+    builder.put(0x6d1df6c2700b0eaeL, DocumentationObjective);
+    builder.put(0x6d1df6c2700b0eb5L, DocumentationObjectiveRef);
+    builder.put(0x6d1df6c2700b0ea9L, DocumentedNodeAnnotation);
     builder.put(0xfc26875dfbL, EnumerationDataTypeDeclaration);
     builder.put(0xfc321331b2L, EnumerationMemberDeclaration);
     builder.put(0x24614259e94f0c84L, IConceptAspect);

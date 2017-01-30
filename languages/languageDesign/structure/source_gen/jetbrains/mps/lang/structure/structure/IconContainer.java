@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.runtime.IconResource;
 public class IconContainer {
   protected static IconResource RESOURCE_a0a0f = new IconResource("structure.png", IconContainer.class);
   protected static IconResource RESOURCE_a0a0g = new IconResource("constrainedTD.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0j = new IconResource("enum.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0n = new IconResource("interfaceStructure.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0p = new IconResource("link.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0q = new IconResource("primitiveTD.png", IconContainer.class);
-  protected static IconResource RESOURCE_a0a0r = new IconResource("property.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0m = new IconResource("enum.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0q = new IconResource("interfaceStructure.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0s = new IconResource("link.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0t = new IconResource("primitiveTD.png", IconContainer.class);
+  protected static IconResource RESOURCE_a0a0u = new IconResource("property.png", IconContainer.class);
 }
