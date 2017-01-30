@@ -24,7 +24,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ChildAttributeQualifier = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ChildNodeRefExpression = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptAliasOperation = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ConceptFqNameRefExpression = new ConceptPresentationBuilder().shortDesc("full qualified name").create();
+  private final ConceptPresentation props_ConceptFqNameRefExpression = new ConceptPresentationBuilder().deprecated(true).shortDesc("full qualified name").create();
   private final ConceptPresentation props_ConceptId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptIdRefExpression = new ConceptPresentationBuilder().shortDesc("openapi SAbstractConcept").create();
   private final ConceptPresentation props_ConceptIdentity = new ConceptPresentationBuilder().create();
