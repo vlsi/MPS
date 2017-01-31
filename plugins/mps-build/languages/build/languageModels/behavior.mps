@@ -2180,6 +2180,21 @@
       <node concept="3Tm1VV" id="1bWeed$oUb6" role="1B3o_S" />
       <node concept="17QB3L" id="1bWeed$oUb9" role="3clF45" />
       <node concept="3clFbS" id="1bWeed$oUb8" role="3clF47">
+        <node concept="3SKdUt" id="6v5CVv8dg45" role="3cqZAp">
+          <node concept="3SKdUq" id="6v5CVv8dg47" role="3SKWNk">
+            <property role="3SKdUp" value="FIXME pay attention to uses of the method. Its uses may expect certain layout. E.g. its uses with 'module descriptor of' (BuildMpsLayout_ModuleJars) suggest" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6v5CVv8dghP" role="3cqZAp">
+          <node concept="3SKdUq" id="6v5CVv8dghR" role="3SKWNk">
+            <property role="3SKdUp" value="      module descriptors always reside under module root (otherwise, LAST segment makes no sense)" />
+          </node>
+        </node>
+        <node concept="3SKdUt" id="6v5CVv8dlhL" role="3cqZAp">
+          <node concept="3SKdUq" id="6v5CVv8dlhN" role="3SKWNk">
+            <property role="3SKdUp" value="XXX Besides, it's not apparent if there's any reason to pass MacroHelper in here, if all we care is last segment of a path. Could it be a macro?" />
+          </node>
+        </node>
         <node concept="3clFbF" id="1bWeed$oUbc" role="3cqZAp">
           <node concept="10Nm6u" id="1bWeed$oUbd" role="3clFbG" />
         </node>

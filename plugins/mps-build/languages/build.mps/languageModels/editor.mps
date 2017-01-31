@@ -2233,6 +2233,22 @@
         <node concept="ljvvj" id="s7_iJZIwsH" role="3F10Kt">
           <property role="VOm3f" value="true" />
         </node>
+        <node concept="3F0ifn" id="6v5CVv8aJnw" role="3EZMnx">
+          <node concept="VPM3Z" id="6v5CVv8aM8p" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F0ifn" id="6v5CVv8aM7P" role="3EZMnx">
+          <property role="3F0ifm" value="module descriptor file:" />
+        </node>
+        <node concept="3F0ifn" id="6v5CVv8aM8b" role="3EZMnx">
+          <node concept="VPM3Z" id="6v5CVv8aM8n" role="3F10Kt">
+            <property role="VOm3f" value="false" />
+          </node>
+        </node>
+        <node concept="3F1sOY" id="6v5CVv8aM7x" role="3EZMnx">
+          <ref role="1NtTu8" to="kdzh:6v5CVv8aJfm" resolve="sourceDescriptorFile" />
+        </node>
       </node>
       <node concept="3EZMnI" id="7ndynavQi2O" role="3EZMnx">
         <node concept="ljvvj" id="s7_iJZHIsF" role="3F10Kt">

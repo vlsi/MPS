@@ -566,12 +566,27 @@
       <property role="IQ2ns" value="506537499308757750" />
       <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
     </node>
+    <node concept="1TJgyj" id="6v5CVv8aJfm" role="1TKVEi">
+      <property role="IQ2ns" value="7477562766051177430" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="sourceDescriptorFile" />
+      <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
+      <node concept="t5JxF" id="6v5CVv8aJfs" role="lGtFl">
+        <property role="t5JxN" value="location of a file with source module descriptor, relative to sourcesJarLocation root." />
+        <node concept="t5JxR" id="6v5CVv8aJfy" role="t5JxU">
+          <ref role="t5JxO" node="s7_iJZHDbQ" resolve="sourcesJarLocation" />
+        </node>
+      </node>
+    </node>
     <node concept="1TJgyj" id="7ndynavQeWF" role="1TKVEi">
       <property role="IQ2ns" value="8488591998064324395" />
       <property role="20lmBu" value="aggregation" />
       <property role="20kJfa" value="classpathEntries" />
       <property role="20lbJX" value="0..n" />
       <ref role="20lvS9" node="QkG2t1bKw$" resolve="GeneratorInternal_String" />
+      <node concept="t5JxF" id="6v5CVv8aJfu" role="lGtFl">
+        <property role="t5JxN" value="Location relative to module root, where to load deployed classes from. If empty, module has no classpath. &quot;.&quot; indicates module root itelf (jar, if the module is packed)." />
+      </node>
     </node>
     <node concept="1TJgyj" id="6CY5wCYZA9P" role="1TKVEi">
       <property role="20lmBu" value="reference" />

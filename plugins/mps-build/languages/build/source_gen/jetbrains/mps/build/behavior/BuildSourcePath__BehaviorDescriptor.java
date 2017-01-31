@@ -48,6 +48,9 @@ public final class BuildSourcePath__BehaviorDescriptor extends BaseBHDescriptor 
     return ((String) BuildSourcePath__BehaviorDescriptor.getRelativePath_id4Kip2_918YF.invoke(__thisNode__));
   }
   /*package*/ static String getLastSegment_id1bWeed$oUb5(@NotNull SNode __thisNode__, MacroHelper helper) {
+    // FIXME pay attention to uses of the method. Its uses may expect certain layout. E.g. its uses with 'module descriptor of' (BuildMpsLayout_ModuleJars) suggest 
+    //       module descriptors always reside under module root (otherwise, LAST segment makes no sense) 
+    // XXX Besides, it's not apparent if there's any reason to pass MacroHelper in here, if all we care is last segment of a path. Could it be a macro? 
     return null;
   }
   /*package*/ static SNode getParent_id7wpYgMyTXsR(@NotNull SNode __thisNode__) {
