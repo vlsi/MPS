@@ -26124,11 +26124,11 @@
               </node>
               <node concept="1kK7hY" id="1N8m_MUbJWp" role="39821P">
                 <ref role="1kK7hZ" node="5sovPIfS$nd" resolve="jetbrains.mps.ide.mpsdevkit" />
-                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
-                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
-                </node>
                 <node concept="1cIVw3" id="6v5CVv8fxrk" role="3SGgvt">
                   <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit-src.jar" />
+                </node>
+                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
+                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
                 </node>
                 <node concept="1cIVw3" id="7ndynaw0A8H" role="3E5mpp">
                   <property role="1cIVw0" value="." />
@@ -29294,7 +29294,7 @@
       <property role="2DPR8u" value="    CreateDirectory &quot;${MAIN_MENU_FOLDER}&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM8MUT" role="2DRAPQ">
-      <property role="2DPR8u" value="    CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+      <property role="2DPR8u" value="    CreateShortCut &quot;${PROGRAM_LINK}&quot; &quot;$INSTDIR\bin\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\bin\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
     </node>
     <node concept="2DRAP_" id="1w81suM8Pj6" role="2DRAPQ">
       <property role="2DPR8u" value="    WriteIniStr &quot;$INSTDIR\${PRODUCT_NAME}.url&quot; &quot;InternetShortcut&quot; &quot;URL&quot; &quot;${PRODUCT_WEB_SITE}&quot;" />
@@ -29307,7 +29307,7 @@
       <property role="2DPR8u" value="Section &quot;Desktop Shortcut&quot; secDesktop" />
     </node>
     <node concept="2DRAP_" id="1w81suM93$Z" role="2DRAPQ">
-      <property role="2DPR8u" value="    CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+      <property role="2DPR8u" value="    CreateShortCut &quot;${DESKTOP_LINK}&quot; &quot;$INSTDIR\bin\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\bin\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
     </node>
     <node concept="2DRAP_" id="1w81suM95Xq" role="2DRAPQ">
       <property role="2DPR8u" value="SectionEnd" />
@@ -29317,7 +29317,7 @@
       <property role="2DPR8u" value="Section &quot;Quick Launch Shortcut&quot; secQuickLaunch" />
     </node>
     <node concept="2DRAP_" id="1w81suM9d6S" role="2DRAPQ">
-      <property role="2DPR8u" value="    CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
+      <property role="2DPR8u" value="    CreateShortCut &quot;${QL_LINK}&quot; &quot;$INSTDIR\bin\mps.bat&quot; &quot;&quot; &quot;$INSTDIR\bin\mps.ico&quot; &quot;&quot; SW_SHOWMINIMIZED" />
     </node>
     <node concept="2DRAP_" id="1w81suM9fvr" role="2DRAPQ">
       <property role="2DPR8u" value="SectionEnd" />
