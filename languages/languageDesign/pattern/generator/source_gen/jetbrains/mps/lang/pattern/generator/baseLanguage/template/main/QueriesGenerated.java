@@ -31,6 +31,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.smodel.behavior.ContainmentLinkId__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
@@ -406,9 +407,10 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1949222934982669673(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
-  public static SNode sourceNodeQuery_1949222934982669683(final SourceSubstituteMacroNodeContext _context) {
-    // FIXME use SContainmentLink instead 
-    return SNodeOperations.getContainingLinkDeclaration(_context.getNode());
+  public static SNode sourceNodeQuery_5495892681292567294(final SourceSubstituteMacroNodeContext _context) {
+    SNode id = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId"));
+    ContainmentLinkId__BehaviorDescriptor.setLink_id7jb4LXp8VsD.invoke(id, SNodeOperations.getContainingLink(_context.getNode()));
+    return id;
   }
   public static SNode sourceNodeQuery_7503628237557099095(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
@@ -456,10 +458,11 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_5149262387754026894(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
-  public static SNode sourceNodeQuery_5149262387754026904(final SourceSubstituteMacroNodeContext _context) {
-    // FIXME containingLink - either wrap to AggregationIdentity or introduce a template that takes SContainmentLink as argument 
+  public static SNode sourceNodeQuery_5495892681292543908(final SourceSubstituteMacroNodeContext _context) {
     // Here we assume ListPattern could not be applied to top-most node (as it needs a list of children, while quotation is single node) 
-    return SNodeOperations.getContainingLinkDeclaration(_context.getNode());
+    SNode id = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x74cb131f5923b6e7L, "jetbrains.mps.lang.smodel.structure.ContainmentLinkId"));
+    ContainmentLinkId__BehaviorDescriptor.setLink_id7jb4LXp8VsD.invoke(id, SNodeOperations.getContainingLink(_context.getNode()));
+    return id;
   }
   public static Object templateArgumentQuery_1949222934982538480(final TemplateArgumentContext _context) {
     return ListSequence.fromList(((List<SNode>) _context.getVariable("var:disjunctClause"))).skip(1);
