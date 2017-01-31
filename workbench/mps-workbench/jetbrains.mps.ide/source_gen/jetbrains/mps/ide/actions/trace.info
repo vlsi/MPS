@@ -11706,23 +11706,24 @@
       <node id="6874470910152579882" at="13,105,14,107" concept="6" />
       <node id="6874470910152579882" at="14,107,15,102" concept="6" />
       <node id="6874470910152579882" at="15,102,16,114" concept="6" />
-      <node id="6874470910152579882" at="16,114,17,104" concept="6" />
-      <node id="6874470910152579882" at="17,104,18,28" concept="14" />
-      <node id="6874470910152579882" at="18,28,19,15" concept="14" />
-      <node id="6874470910152579882" at="21,29,22,31" concept="13" />
-      <node id="6874470910152579882" at="24,53,25,70" concept="13" />
-      <node id="6874470910152579882" at="21,0,24,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
-      <node id="6874470910152579882" at="24,0,27,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
-      <node id="6874470910152579882" at="11,0,21,0" concept="4" trace="GnomeActionsKeymap_KeymapChanges#()V" />
-      <scope id="6874470910152579882" at="21,29,22,31" />
-      <scope id="6874470910152579882" at="24,53,25,70" />
-      <scope id="6874470910152579882" at="21,0,24,0" />
-      <scope id="6874470910152579882" at="24,0,27,0">
+      <node id="6874470910152579882" at="16,114,17,34" concept="14" />
+      <node id="6874470910152579882" at="17,34,18,156" concept="6" />
+      <node id="6874470910152579882" at="18,156,19,28" concept="14" />
+      <node id="6874470910152579882" at="19,28,20,15" concept="14" />
+      <node id="6874470910152579882" at="22,29,23,31" concept="13" />
+      <node id="6874470910152579882" at="25,53,26,70" concept="13" />
+      <node id="6874470910152579882" at="22,0,25,0" concept="11" trace="getScheme#()Ljava/lang/String;" />
+      <node id="6874470910152579882" at="25,0,28,0" concept="17" trace="getShortcut#(Ljava/lang/String;)Lcom/intellij/openapi/actionSystem/Shortcut;" />
+      <node id="6874470910152579882" at="11,0,22,0" concept="4" trace="GnomeActionsKeymap_KeymapChanges#()V" />
+      <scope id="6874470910152579882" at="22,29,23,31" />
+      <scope id="6874470910152579882" at="25,53,26,70" />
+      <scope id="6874470910152579882" at="22,0,25,0" />
+      <scope id="6874470910152579882" at="25,0,28,0">
         <var name="stroke" id="6874470910152579882" />
       </scope>
-      <scope id="6874470910152579882" at="11,45,19,15" />
-      <scope id="6874470910152579882" at="11,0,21,0" />
-      <unit id="6874470910152579882" at="10,0,28,0" name="jetbrains.mps.ide.actions.GnomeActionsKeymap_KeymapChanges" />
+      <scope id="6874470910152579882" at="11,45,20,15" />
+      <scope id="6874470910152579882" at="11,0,22,0" />
+      <unit id="6874470910152579882" at="10,0,29,0" name="jetbrains.mps.ide.actions.GnomeActionsKeymap_KeymapChanges" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)/6981599660810253824">

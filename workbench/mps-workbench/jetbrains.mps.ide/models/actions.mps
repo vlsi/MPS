@@ -37586,6 +37586,7 @@
       <node concept="pLAjd" id="6YDbIqV7uhh" role="Zd501">
         <property role="pLAjf" value="VK_2" />
         <property role="pLAjc" value="alt+shift" />
+        <property role="3hacHL" value="replace all" />
       </node>
     </node>
   </node>
