@@ -99,6 +99,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.execution.settings-src.jar" descriptor="jetbrains.mps.execution.settings.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-generator.jar" duplicate="preserve">
@@ -249,6 +250,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.debugger.api.lang-src.jar" descriptor="jetbrains.mps.debugger.api.lang.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-generator.jar" duplicate="preserve">
@@ -420,6 +422,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="jetbrains.mps.debugger.java.customViewers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-generator.jar" duplicate="preserve">
@@ -499,6 +502,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="jetbrains.mps.debugger.java.evaluation.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-generator.jar" duplicate="preserve">

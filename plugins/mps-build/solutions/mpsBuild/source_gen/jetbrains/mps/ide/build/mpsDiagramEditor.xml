@@ -101,6 +101,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.diagram-src.jar" descriptor="jetbrains.mps.lang.editor.diagram.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.diagram-generator.jar" duplicate="preserve">
@@ -221,6 +222,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.figures-src.jar" descriptor="jetbrains.mps.lang.editor.figures.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/diagramEditor/languages/jetbrains.mps.lang.editor.figures-generator.jar" duplicate="preserve">

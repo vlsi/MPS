@@ -274,7 +274,7 @@
         <classpath>
           <entry path="." />
         </classpath>
-        <sources jar="mps-environment.jar" descriptor="jetbrains.mps.core.tool.environment.msd" />
+        <sources jar="." descriptor="jetbrains.mps.core.tool.environment.msd" />
       </module>
     </echoxml>
     <copyModels todir="${build.tmp}/customProcessors/copyModels/core-tool-environment-models">
@@ -409,7 +409,7 @@
         <classpath>
           <entry path="." />
         </classpath>
-        <sources jar="mps-behavior-runtime.jar" descriptor="jetbrains.mps.lang.behavior.runtime.msd" />
+        <sources jar="." descriptor="jetbrains.mps.lang.behavior.runtime.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/lib/mps-behavior-runtime.jar" duplicate="preserve">
@@ -428,7 +428,7 @@
         <classpath>
           <entry path="." />
         </classpath>
-        <sources jar="mps-behavior-api.jar" descriptor="jetbrains.mps.lang.behavior.api.msd" />
+        <sources jar="." descriptor="jetbrains.mps.lang.behavior.api.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/lib/mps-behavior-api.jar" duplicate="preserve">
@@ -511,6 +511,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.make.facet-src.jar" descriptor="jetbrains.mps.make.facet.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/make/jetbrains.mps.make.facet-generator.jar" duplicate="preserve">
@@ -594,6 +595,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.make.script-src.jar" descriptor="jetbrains.mps.make.script.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/make/jetbrains.mps.make.script-generator.jar" duplicate="preserve">
@@ -804,6 +806,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.core.xml.sax-src.jar" descriptor="jetbrains.mps.core.xml.sax.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/xml/jetbrains.mps.core.xml.sax-generator.jar" duplicate="preserve">
@@ -884,6 +887,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.access-src.jar" descriptor="jetbrains.mps.lang.access.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.access-generator.jar" duplicate="preserve">
@@ -967,6 +971,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.actions-src.jar" descriptor="jetbrains.mps.lang.actions.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.actions-generator.jar" duplicate="preserve">
@@ -1044,6 +1049,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.checkedName-src.jar" descriptor="jetbrains.mps.lang.checkedName.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.checkedName-generator.jar" duplicate="preserve">
@@ -1121,6 +1127,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.constraints-src.jar" descriptor="jetbrains.mps.lang.constraints.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.constraints-generator.jar" duplicate="preserve">
@@ -1205,6 +1212,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.core-src.jar" descriptor="jetbrains.mps.lang.core.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.core-generator.jar" duplicate="preserve">
@@ -1284,6 +1292,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.dataFlow-src.jar" descriptor="jetbrains.mps.lang.dataFlow.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.dataFlow-generator.jar" duplicate="preserve">
@@ -1363,6 +1372,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.dataFlow.analyzers-src.jar" descriptor="jetbrains.mps.lang.dataFlow.analyzers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers-generator.jar" duplicate="preserve">
@@ -1440,6 +1450,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.descriptor-src.jar" descriptor="jetbrains.mps.lang.descriptor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.descriptor-generator.jar" duplicate="preserve">
@@ -1525,6 +1536,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.behavior-src.jar" descriptor="jetbrains.mps.lang.behavior.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.behavior-generator.jar" duplicate="preserve">
@@ -1610,6 +1622,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor-src.jar" descriptor="jetbrains.mps.lang.editor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.editor-generator.jar" duplicate="preserve">
@@ -1689,6 +1702,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.imageGen-src.jar" descriptor="jetbrains.mps.lang.editor.imageGen.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.editor.imageGen-generator.jar" duplicate="preserve">
@@ -1766,6 +1780,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.menus.extras-src.jar" descriptor="jetbrains.mps.lang.editor.menus.extras.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.editor.menus.extras-generator.jar" duplicate="preserve">
@@ -1878,6 +1893,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.extension-src.jar" descriptor="jetbrains.mps.lang.extension.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.extension-generator.jar" duplicate="preserve">
@@ -1960,6 +1976,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.findUsages-src.jar" descriptor="jetbrains.mps.lang.findUsages.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.findUsages-generator.jar" duplicate="preserve">
@@ -2038,6 +2055,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.generator-src.jar" descriptor="jetbrains.mps.lang.generator.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.generator-generator.jar" duplicate="preserve">
@@ -2120,6 +2138,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.generator.generationContext-src.jar" descriptor="jetbrains.mps.lang.generator.generationContext.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext-generator.jar" duplicate="preserve">
@@ -2201,6 +2220,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.generator.generationParameters-src.jar" descriptor="jetbrains.mps.lang.generator.generationParameters.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters-generator.jar" duplicate="preserve">
@@ -2321,6 +2341,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.intentions-src.jar" descriptor="jetbrains.mps.lang.intentions.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.intentions-generator.jar" duplicate="preserve">
@@ -2403,6 +2424,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.lightweightdsl-src.jar" descriptor="jetbrains.mps.baseLanguage.lightweightdsl.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.baseLanguage.lightweightdsl-generator.jar" duplicate="preserve">
@@ -2517,6 +2539,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.migration-src.jar" descriptor="jetbrains.mps.lang.migration.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.migration-generator.jar" duplicate="preserve">
@@ -2603,6 +2626,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.aspect-src.jar" descriptor="jetbrains.mps.lang.aspect.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.aspect-generator.jar" duplicate="preserve">
@@ -2703,6 +2727,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.util.order-src.jar" descriptor="jetbrains.mps.lang.util.order.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.util.order-generator.jar" duplicate="preserve">
@@ -2789,6 +2814,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.pattern-src.jar" descriptor="jetbrains.mps.lang.pattern.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.pattern-generator.jar" duplicate="preserve">
@@ -2911,6 +2937,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.quotation-src.jar" descriptor="jetbrains.mps.lang.quotation.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.quotation-generator.jar" duplicate="preserve">
@@ -2997,6 +3024,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.plugin-src.jar" descriptor="jetbrains.mps.lang.plugin.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.plugin-generator.jar" duplicate="preserve">
@@ -3080,6 +3108,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.resources-src.jar" descriptor="jetbrains.mps.lang.resources.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.resources-generator.jar" duplicate="preserve">
@@ -3160,6 +3189,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.refactoring-src.jar" descriptor="jetbrains.mps.lang.refactoring.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.refactoring-generator.jar" duplicate="preserve">
@@ -3281,6 +3311,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.scopes-src.jar" descriptor="jetbrains.mps.lang.scopes.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.scopes-generator.jar" duplicate="preserve">
@@ -3401,6 +3432,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.script-src.jar" descriptor="jetbrains.mps.lang.script.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.script-generator.jar" duplicate="preserve">
@@ -3478,6 +3510,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.sharedConcepts-src.jar" descriptor="jetbrains.mps.lang.sharedConcepts.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts-generator.jar" duplicate="preserve">
@@ -3562,6 +3595,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="jetbrains.mps.lang.smodel.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.smodel-generator.jar" duplicate="preserve">
@@ -3639,6 +3673,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.slanguage-src.jar" descriptor="jetbrains.mps.lang.slanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.slanguage-generator.jar" duplicate="preserve">
@@ -3722,6 +3757,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="jetbrains.mps.lang.structure.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.structure-generator.jar" duplicate="preserve">
@@ -3801,6 +3837,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.textGen-src.jar" descriptor="jetbrains.mps.lang.textGen.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.textGen-generator.jar" duplicate="preserve">
@@ -3926,6 +3963,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.typesystem-src.jar" descriptor="jetbrains.mps.lang.typesystem.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.typesystem-generator.jar" duplicate="preserve">
@@ -4007,6 +4045,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.smodel.query-src.jar" descriptor="jetbrains.mps.lang.smodel.query.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/languageDesign/jetbrains.mps.lang.smodel.query-generator.jar" duplicate="preserve">
@@ -4093,6 +4132,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="jetbrains.mps.baseLanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage-generator.jar" duplicate="preserve">
@@ -4218,6 +4258,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.builders-src.jar" descriptor="jetbrains.mps.baseLanguage.builders.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.builders-generator.jar" duplicate="preserve">
@@ -4296,6 +4337,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.checkedDots-src.jar" descriptor="jetbrains.mps.baseLanguage.checkedDots.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots-generator.jar" duplicate="preserve">
@@ -4375,6 +4417,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.classifiers-src.jar" descriptor="jetbrains.mps.baseLanguage.classifiers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-generator.jar" duplicate="preserve">
@@ -4455,6 +4498,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.closures-src.jar" descriptor="jetbrains.mps.baseLanguage.closures.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures-generator.jar" duplicate="preserve">
@@ -4536,6 +4580,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.collections-src.jar" descriptor="jetbrains.mps.baseLanguage.collections.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections-generator.jar" duplicate="preserve">
@@ -4616,6 +4661,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.constructors-src.jar" descriptor="jetbrains.mps.baseLanguage.constructors.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.constructors-generator.jar" duplicate="preserve">
@@ -4693,6 +4739,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.extensionMethods-src.jar" descriptor="jetbrains.mps.baseLanguage.extensionMethods.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods-generator.jar" duplicate="preserve">
@@ -4817,6 +4864,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.jdk7-src.jar" descriptor="jetbrains.mps.baseLanguage.jdk7.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7-generator.jar" duplicate="preserve">
@@ -4938,6 +4986,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="jetbrains.mps.baseLanguage.logging.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging-generator.jar" duplicate="preserve">
@@ -5036,6 +5085,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.overloadedOperators-src.jar" descriptor="jetbrains.mps.baseLanguage.overloadedOperators.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.overloadedOperators-generator.jar" duplicate="preserve">
@@ -5117,6 +5167,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.regexp-src.jar" descriptor="jetbrains.mps.baseLanguage.regexp.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp-generator.jar" duplicate="preserve">
@@ -5272,6 +5323,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.tuples-src.jar" descriptor="jetbrains.mps.baseLanguage.tuples.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples-generator.jar" duplicate="preserve">
@@ -5350,6 +5402,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.varVariable-src.jar" descriptor="jetbrains.mps.baseLanguage.varVariable.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.varVariable-generator.jar" duplicate="preserve">
@@ -5427,6 +5480,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.doubleDispatch-src.jar" descriptor="jetbrains.mps.baseLanguage.doubleDispatch.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguage.doubleDispatch-generator.jar" duplicate="preserve">
@@ -5506,6 +5560,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguageInternal-src.jar" descriptor="jetbrains.mps.baseLanguageInternal.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal-generator.jar" duplicate="preserve">

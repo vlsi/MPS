@@ -97,6 +97,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.samples.Kaja-src.jar" descriptor="Kajak.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.samples.Kaja-generator.jar" duplicate="preserve">

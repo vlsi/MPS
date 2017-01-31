@@ -100,6 +100,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build-src.jar" descriptor="jetbrains.mps.build.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build-generator.jar" duplicate="preserve">
@@ -181,6 +182,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.workflow-src.jar" descriptor="jetbrains.mps.build.workflow.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.workflow-generator.jar" duplicate="preserve">
@@ -266,6 +268,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.mps-src.jar" descriptor="jetbrains.mps.build.mps.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps-generator.jar" duplicate="preserve">
@@ -347,6 +350,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.mps.tests-src.jar" descriptor="jetbrains.mps.build.mps.tests.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.tests-generator.jar" duplicate="preserve">
@@ -428,6 +432,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.mps.testManifest-src.jar" descriptor="jetbrains.mps.build.mps.testManifest.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.testManifest-generator.jar" duplicate="preserve">
@@ -505,6 +510,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.mps.runner-src.jar" descriptor="jetbrains.mps.build.mps.runner.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.mps.runner-generator.jar" duplicate="preserve">
@@ -620,6 +626,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="jetbrains.mps.build.startup.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-build/languages/build/jetbrains.mps.build.startup-generator.jar" duplicate="preserve">

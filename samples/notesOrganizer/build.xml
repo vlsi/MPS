@@ -93,6 +93,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.samples.notesOrganizer-src.jar" descriptor="jetbrains.mps.samples.notesOrganizer.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.tmp}/default/notesOrganizer.zip/notesOrganizer/languages/notesOrganizer/jetbrains.mps.samples.notesOrganizer-generator.jar" duplicate="preserve">

@@ -123,6 +123,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.ide.httpsupport-src.jar" descriptor="jetbrains.mps.ide.httpsupport.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/http-support/languages/jetbrains.mps.ide.httpsupport-generator.jar" duplicate="preserve">

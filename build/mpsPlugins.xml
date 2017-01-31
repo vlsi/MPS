@@ -127,6 +127,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.console.base-src.jar" descriptor="jetbrains.mps.console.base.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.base-generator.jar" duplicate="preserve">
@@ -206,6 +207,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.console.scripts-src.jar" descriptor="jetbrains.mps.console.scripts.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.scripts-generator.jar" duplicate="preserve">
@@ -383,6 +385,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.console.ideCommands-src.jar" descriptor="jetbrains.mps.console.ideCommands.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.ideCommands-generator.jar" duplicate="preserve">
@@ -506,6 +509,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.console.internalCommands-src.jar" descriptor="jetbrains.mps.console.internalCommands.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-console/lang/jetbrains.mps.console.internalCommands-generator.jar" duplicate="preserve">

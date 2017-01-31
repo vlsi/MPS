@@ -82,6 +82,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.unitTest-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest-generator.jar" duplicate="preserve">
@@ -206,6 +207,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.test-src.jar" descriptor="jetbrains.mps.lang.test.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-testing/languages/languageDesign/jetbrains.mps.lang.test-generator.jar" duplicate="preserve">

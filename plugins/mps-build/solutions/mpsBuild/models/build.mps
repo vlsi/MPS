@@ -344,6 +344,7 @@
       </concept>
       <concept id="7655580649838764660" name="jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml" flags="ng" index="1kK7hY">
         <reference id="7655580649838764661" name="module" index="1kK7hZ" />
+        <child id="7477562766051177430" name="sourceDescriptorFile" index="2JVP1x" />
         <child id="8488591998064324395" name="classpathEntries" index="3E5mpp" />
         <child id="506537499308757750" name="sourcesJarLocation" index="3SGgvt" />
       </concept>
@@ -2602,7 +2603,10 @@
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="1cej1P1K6ol" role="3SGgvt">
-                <property role="1cIVw0" value="mps-environment.jar" />
+                <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="6v5CVv8ftj4" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.core.tool.environment.msd" />
               </node>
             </node>
           </node>
@@ -2811,7 +2815,10 @@
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="s7_iJZINB_" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-runtime.jar" />
+                <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="6v5CVv8fukA" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.runtime.msd" />
               </node>
             </node>
           </node>
@@ -2847,7 +2854,10 @@
                 <property role="1cIVw0" value="." />
               </node>
               <node concept="1cIVw3" id="s7_iJZIN5T" role="3SGgvt">
-                <property role="1cIVw0" value="mps-behavior-api.jar" />
+                <property role="1cIVw0" value="." />
+              </node>
+              <node concept="1cIVw3" id="6v5CVv8fwnC" role="2JVP1x">
+                <property role="1cIVw0" value="jetbrains.mps.lang.behavior.api.msd" />
               </node>
             </node>
           </node>
@@ -26137,6 +26147,12 @@
                 <ref role="1kK7hZ" node="5sovPIfS$nd" resolve="jetbrains.mps.ide.mpsdevkit" />
                 <node concept="1cIVw3" id="7ndynaw0A8H" role="3E5mpp">
                   <property role="1cIVw0" value="." />
+                </node>
+                <node concept="1cIVw3" id="6v5CVv8fxrk" role="3SGgvt">
+                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit-src.jar" />
+                </node>
+                <node concept="1cIVw3" id="6v5CVv8fxvE" role="2JVP1x">
+                  <property role="1cIVw0" value="jetbrains.mps.ide.mpsdevkit.msd" />
                 </node>
               </node>
             </node>

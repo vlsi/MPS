@@ -140,6 +140,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.editor.contextActionsTool.lang.menus-src.jar" descriptor="jetbrains.mps.editor.contextActionsTool.lang.menus.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/context-tool/languages/mps-context-actions-tool/jetbrains.mps.editor.contextActionsTool.lang.menus-generator.jar" duplicate="preserve">

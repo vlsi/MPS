@@ -95,6 +95,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.imageGen.testLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.imageGen.testLanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/tests/jetbrains.mps.lang.editor.imageGen.testLanguage-generator.jar" duplicate="preserve">

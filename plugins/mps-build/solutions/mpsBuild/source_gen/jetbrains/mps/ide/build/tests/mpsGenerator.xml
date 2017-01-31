@@ -203,6 +203,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.traceInfo.testWeavingGenerated.data-src.jar" descriptor="jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingGenerated.data-generator.jar" duplicate="preserve">
@@ -278,6 +279,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.traceInfo.testWeavingInterpreted.data-src.jar" descriptor="jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/traceMacro/jetbrains.mps.traceInfo.testWeavingInterpreted.data-generator.jar" duplicate="preserve">

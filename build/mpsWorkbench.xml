@@ -300,6 +300,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.plugin.standalone-src.jar" descriptor="jetbrains.mps.lang.plugin.standalone.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/workbench/jetbrains.mps.lang.plugin.standalone-generator.jar" duplicate="preserve">

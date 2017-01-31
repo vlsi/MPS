@@ -92,6 +92,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="org.jetbrains.mps.samples.Constants-src.jar" descriptor="org.jetbrains.mps.samples.Constants.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Constants-generator.jar" duplicate="preserve">
@@ -171,6 +172,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="org.jetbrains.mps.samples.IfAndUnless-src.jar" descriptor="org.jetbrains.mps.samples.IfAndUnless.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.IfAndUnless-generator.jar" duplicate="preserve">
@@ -318,6 +320,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="org.jetbrains.mps.samples.Money-src.jar" descriptor="org.jetbrains.mps.samples.Money.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Money-generator.jar" duplicate="preserve">
@@ -398,6 +401,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="org.jetbrains.mps.samples.ParallelFor-src.jar" descriptor="org.jetbrains.mps.samples.ParallelFor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelFor-generator.jar" duplicate="preserve">

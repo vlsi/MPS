@@ -103,6 +103,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.execution.commands-src.jar" descriptor="jetbrains.mps.execution.commands.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands-generator.jar" duplicate="preserve">
@@ -192,6 +193,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.execution.configurations-src.jar" descriptor="jetbrains.mps.execution.configurations.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations-generator.jar" duplicate="preserve">
@@ -346,6 +348,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.execution.commands-src.jar" descriptor="jetbrains.mps.execution.commands.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.commands-generator.jar" duplicate="preserve">
@@ -435,6 +438,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.execution.configurations-src.jar" descriptor="jetbrains.mps.execution.configurations.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-execution-languages/languages/jetbrains.mps.execution.configurations-generator.jar" duplicate="preserve">

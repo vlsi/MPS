@@ -95,6 +95,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.menus.testMetaLanguage-src.jar" descriptor="jetbrains.mps.lang.editor.menus.testMetaLanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/languages/jetbrains.mps.lang.editor.menus.testMetaLanguage-generator.jar" duplicate="preserve">

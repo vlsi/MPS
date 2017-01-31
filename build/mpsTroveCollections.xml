@@ -106,6 +106,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="jetbrains.mps.baseLanguage.collections.trove.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove-generator.jar" duplicate="preserve">

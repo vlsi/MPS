@@ -139,6 +139,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.table-src.jar" descriptor="jetbrains.mps.lang.editor.table.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table-generator.jar" duplicate="preserve">
@@ -256,6 +257,7 @@
         <classpath>
           <entry path="." />
         </classpath>
+        <sources jar="jetbrains.mps.lang.editor.forms-src.jar" descriptor="jetbrains.mps.lang.editor.forms.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.forms-generator.jar" duplicate="preserve">
