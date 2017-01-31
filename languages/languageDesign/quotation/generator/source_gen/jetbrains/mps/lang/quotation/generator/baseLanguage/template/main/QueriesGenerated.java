@@ -23,6 +23,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.textgen.trace.TracingUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.behavior.ConceptId__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.behavior.PropertyId__BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.PropertyAttribute__BehaviorDescriptor;
@@ -319,12 +321,14 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5494233285271349734(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x4bb51009d20a4a9dL, 0x4bb51009d20a4a9fL, "modelToCreate")) != null);
   }
-  public static SNode sourceNodeQuery_4273238084345062237(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5495892681291849165(final SourceSubstituteMacroNodeContext _context) {
     SNode originalNode = TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
     if (originalNode == null) {
       originalNode = _context.getNode();
     }
-    return SNodeOperations.getConceptDeclaration(originalNode);
+    SNode c = SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x7866978ea0f04cc7L, 0x81bc4d213d9375e1L, 0x5fea1eb9fefb6fe7L, "jetbrains.mps.lang.smodel.structure.ConceptId"));
+    ConceptId__BehaviorDescriptor.setConcept_id5ZE7FBYYR6j.invoke(c, SNodeOperations.getConcept(originalNode));
+    return c;
   }
   public static SNode sourceNodeQuery_2652588855789568154(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x3a13115c633c4c5cL, 0xbbcc75c4219e9555L, 0x746e600f0bda67c7L, 0x166bab613f6f633aL, "propertyIdentity"));
