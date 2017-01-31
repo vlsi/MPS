@@ -48,6 +48,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
@@ -107,7 +108,10 @@ public final class ModulesMiner {
 
   @NotNull
   public Collection<ModuleHandle> getCollectedModules() {
-    return Collections.unmodifiableList(myOutcome);
+    ArrayList<ModuleHandle> rv = new ArrayList<>(myOutcome);
+    // sort values so that languages come in front of generators.
+    rv.sort(Comparator.comparingInt(v -> v.getDescriptor() instanceof LanguageDescriptor ? 0 : 1));
+    return Collections.unmodifiableList(rv);
   }
 
   @Deprecated
