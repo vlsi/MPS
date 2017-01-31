@@ -9,8 +9,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 
 public class CellAction_DeleteEasily extends CellAction_DeleteNode {
   public CellAction_DeleteEasily(SNode semanticNode) {
@@ -30,8 +29,8 @@ public class CellAction_DeleteEasily extends CellAction_DeleteNode {
         return !(AttributeOperations.isAttribute(it));
       }
     })) {
-      SNode containingLink = SNodeOperations.getContainingLinkDeclaration(child);
-      if (containingLink != null && !(SPropertyOperations.hasValue(containingLink, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98054bb04L, "sourceCardinality"), "1", "0..1"))) {
+      SContainmentLink l = SNodeOperations.getContainingLink(child);
+      if (l.isValid() && (l.isMultiple() || l.isOptional())) {
         return false;
       }
     }
