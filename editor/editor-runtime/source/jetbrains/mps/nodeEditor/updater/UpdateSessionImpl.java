@@ -200,8 +200,8 @@ public class UpdateSessionImpl implements UpdateSession {
 
   @Override
   public EditorCell updateChildNodeCell(SNode node, @NotNull SNodeLocation location) {
-    getUpdater().getEditorContext().getCellFactory().pushCellContext();
-    getUpdater().getEditorContext().getCellFactory().setNodeLocation(location);
+    getCellFactory().pushCellContext();
+    getCellFactory().setNodeLocation(location);
     myCurrentUpdateInfo = new UpdateInfoNode(getCurrentContext().sameContextButAnotherNode(node), myCurrentUpdateInfo);
     try {
       final EditorContext editorContext = getUpdater().getEditorContext();
@@ -213,7 +213,7 @@ public class UpdateSessionImpl implements UpdateSession {
       });
     } finally {
       myCurrentUpdateInfo = myCurrentUpdateInfo.getParent();
-      getUpdater().getEditorContext().getCellFactory().popCellContext();
+      getCellFactory().popCellContext();
     }
   }
 
