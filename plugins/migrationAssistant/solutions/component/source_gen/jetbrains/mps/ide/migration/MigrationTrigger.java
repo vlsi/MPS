@@ -54,6 +54,7 @@ import com.intellij.openapi.application.Application;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.ide.platform.watching.ReloadListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
 import jetbrains.mps.smodel.event.SModelEventVisitorAdapter;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
@@ -418,7 +419,32 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     }
   }
 
+  private boolean isProjectMigrateableModule(@NotNull SModule module) {
+    return myMpsProject.getProjectModulesWithGenerators().contains(module) && MigrationsUtil.isModuleMigrateable(module);
+  }
+
   private class MyRepoListener extends SRepositoryContentAdapter {
+
+    private class ModuleBatchUpdater implements Runnable {
+      public Set<SModule> modulesTouched = SetSequence.fromSet(new HashSet<SModule>());
+      private boolean touchedUnderReload = false;
+      public void run() {
+        myTask = null;
+        List<SModule> toUpdate = SetSequence.fromSet(modulesTouched).distinct().where(new IWhereFilter<SModule>() {
+          public boolean accept(SModule it) {
+            return isProjectMigrateableModule(it);
+          }
+        }).toListSequence();
+        if (!(touchedUnderReload)) {
+          for (SModule m : ListSequence.fromList(toUpdate)) {
+            updateSingleModuleDescriptorSilently(m);
+          }
+        }
+        postponeMigrationIfNeededOnModuleChange(toUpdate);
+      }
+    }
+    private MigrationTrigger.MyRepoListener.ModuleBatchUpdater myTask = null;
+
     private void updateSingleModuleDescriptorSilently(SModule module) {
       if (!(isProjectMigrateableModule(module))) {
         return;
@@ -426,16 +452,18 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
       myMigrationManager.doUpdateImportVersions(module);
     }
     private void triggerOnModuleChanged(SModule module) {
-      if (!(isProjectMigrateableModule(module))) {
-        return;
+      if (myTask == null) {
+        myTask = new MigrationTrigger.MyRepoListener.ModuleBatchUpdater();
+        ApplicationManager.getApplication().invokeLater(new Runnable() {
+          public void run() {
+            myMpsProject.getModelAccess().executeCommand(myTask);
+          }
+        });
       }
-      if (!(myReloadListener.isIsUnderReload())) {
-        updateSingleModuleDescriptorSilently(module);
+      SetSequence.fromSet(myTask.modulesTouched).addElement(module);
+      if (myReloadListener.isIsUnderReload()) {
+        myTask.touchedUnderReload = true;
       }
-      postponeMigrationIfNeededOnModuleChange(Sequence.<SModule>singleton(module));
-    }
-    private boolean isProjectMigrateableModule(@NotNull SModule module) {
-      return myMpsProject.isProjectModule(module) && MigrationsUtil.isModuleMigrateable(module);
     }
     private SModelEventVisitor myVisitor = new SModelEventVisitorAdapter() {
       @Override
@@ -471,14 +499,14 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
     @Override
     protected void startListening(SModel model) {
       super.startListening(model);
-      if (myMpsProject.isProjectModule(model.getModule())) {
+      if (isProjectMigrateableModule(model.getModule())) {
         myModelListener.startListeningToModel(model);
       }
     }
     @Override
     protected void stopListening(SModel model) {
       super.stopListening(model);
-      if (myMpsProject.isProjectModule(model.getModule())) {
+      if (isProjectMigrateableModule(model.getModule())) {
         myModelListener.stopListeningToModel(model);
       }
     }
@@ -487,8 +515,16 @@ public class MigrationTrigger extends AbstractProjectComponent implements Persis
 
   private class MyClassesListener extends MPSClassesListenerAdapter {
     @Override
-    public void afterClassesLoaded(Set<? extends ReloadableModuleBase> modules) {
-      postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
+    public void afterClassesLoaded(final Set<? extends ReloadableModuleBase> modules) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          myMpsProject.getRepository().getModelAccess().runWriteAction(new Runnable() {
+            public void run() {
+              postponeMigrationIfNeededOnLanguageReload(SetSequence.fromSet(modules).ofType(Language.class));
+            }
+          });
+        }
+      });
     }
   }
 
