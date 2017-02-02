@@ -19,11 +19,9 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -35,15 +33,19 @@ import java.util.HashMap;
 public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction {
   private final SNode myCurrentReferent;
   private final SReferenceLink myLink;
-  private final ReferenceDescriptor myRefDescriptor;
+  private final String myMatchingText;
   private final SNode myTargetNode;
 
   public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
+    this(targetNode, sourceNode, currentReferent, link, IReferentPresentationProvider.getDefault(link).getPresentation(sourceNode, targetNode));
+  }
+
+  public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link, @NotNull String matchingText) {
     super(sourceNode);
     myTargetNode = targetNode;
     myCurrentReferent = currentReferent;
     myLink = link;
-    myRefDescriptor = ModelConstraints.getReferenceDescriptor(sourceNode, link);
+    myMatchingText = matchingText;
     assert myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept());
   }
 
@@ -64,25 +66,12 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
 
   @Override
   public String getMatchingText(String pattern) {
-    final String text = myRefDescriptor.getReferencePresentation(myTargetNode, false, false, false);
-    if (text != null) {
-      return text;
-    }
-
-    if (myCurrentReferent!=null) {
-      String referentMatchingText = NodePresentationUtil.matchingText(myTargetNode, true, true);
-      if (referentMatchingText != null) return referentMatchingText;
-    }
-
-    if (myTargetNode.getConcept().isSubConceptOf(SNodeUtil.concept_IResolveInfo)) {
-      return SNodeUtil.getResolveInfo(myTargetNode);
-    }
-    return myTargetNode.getPresentation();
+    return myMatchingText;
   }
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    return getMatchingText(pattern);
+    return myMatchingText;
   }
 
   @Override

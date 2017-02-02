@@ -28,7 +28,6 @@ import jetbrains.mps.openapi.editor.menus.substitute.SubstituteMenuLookup;
 import jetbrains.mps.openapi.editor.menus.transformation.TransformationMenuItem;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.language.LanguageRegistry;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -44,12 +43,13 @@ public class ModelActions {
   //-------------------
 
   public static List<SubstituteAction> createChildNodeSubstituteActions(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter,
-      IOperationContext context) {
+                                                                        IOperationContext context) {
     return ChildSubstituteActionsHelper.createActions(parentNode, currentChild, childConcept, childSetter, context);
   }
 
-  public static List<SubstituteAction> createChildNodeSubstituteActions(@NotNull SNode parentNode, @Nullable SNode currentChild, @Nullable SContainmentLink link, @Nullable SAbstractConcept targetConcept,
-      @NotNull IChildNodeSetter setter, @NotNull EditorContext editorContext) {
+  public static List<SubstituteAction> createChildNodeSubstituteActions(@NotNull SNode parentNode, @Nullable SNode currentChild,
+                                                                        @Nullable SContainmentLink link, @Nullable SAbstractConcept targetConcept,
+                                                                        @NotNull IChildNodeSetter setter, @NotNull EditorContext editorContext) {
     if (targetConcept == null) {
       if (link != null) {
         targetConcept = link.getTargetConcept();
@@ -77,8 +77,14 @@ public class ModelActions {
   //-------------------
 
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-      IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration);
+                                                                       IOperationContext context) {
+    IReferentPresentationProvider presentationProvider = IReferentPresentationProvider.getDefault(linkDeclaration);
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, presentationProvider);
+  }
+
+  public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
+                                                                       @NotNull IReferentPresentationProvider presentationProvider, IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, presentationProvider);
   }
 
   //-------------------
@@ -90,7 +96,7 @@ public class ModelActions {
   }
 
   public static List<SubstituteAction> createSideTransformHintSubstituteActions(SNode sourceNode, CellSide side, String transformTag,
-      IOperationContext context) {
+                                                                                IOperationContext context) {
     return new SideTransformHintSubstituteActionsHelper(sourceNode, side, transformTag, context).createActions();
   }
 }
