@@ -7,19 +7,16 @@ import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import javax.swing.KeyStroke;
 
-public class MacOSX105_KeymapChanges extends BaseKeymapChanges {
-  public MacOSX105_KeymapChanges() {
+public class Mac_KeymapChanges extends BaseKeymapChanges {
+  public Mac_KeymapChanges() {
     // simple 
     // simple with remove/replace 
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.GoToConceptDeclaration_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("alt shift S"), false, true));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl I"), false, true));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.OverrideBehaviorMethod_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl O"), false, true));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", new BaseKeymapChanges.ShortcutWrapper(getShortcut("ctrl X"), false, true));
     // simple parameterized 
     // complex 
   }
   public String getScheme() {
-    return "Mac OS X 10.5+";
+    return "Mac OS X";
   }
   public static Shortcut getShortcut(String stroke) {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);

@@ -130,6 +130,7 @@
     <import index="tya3" ref="r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)" />
     <import index="b2d5" ref="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)" />
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
+    <import index="tqbz" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/java:com.intellij.ide.actions(MPS.IDEA/)" />
   </imports>
   <registry>
     <language id="982eb8df-2c96-4bd7-9963-11712ea622e5" name="jetbrains.mps.lang.resources">
@@ -757,7 +758,7 @@
     <node concept="Zd509" id="7LWFAMfAqWi" role="Zd508">
       <ref role="1bYAoF" node="7LWFAMfAqWk" resolve="ShowNodeInExplorer" />
       <node concept="pLAjd" id="7LWFAMfAqWj" role="Zd501">
-        <property role="pLAjf" value="VK_F12" />
+        <property role="pLAjf" value="VK_X" />
         <property role="pLAjc" value="alt" />
       </node>
     </node>
@@ -5476,6 +5477,21 @@
                     <node concept="3Tm1VV" id="6JP69lPx1iW" role="1B3o_S" />
                     <node concept="2WthIp" id="6JP69lPx1ji" role="37wK5m" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbF" id="3IixYXRL5lm" role="3cqZAp">
+          <node concept="2OqwBi" id="3IixYXRL5JZ" role="3clFbG">
+            <node concept="37vLTw" id="3IixYXRL5lk" role="2Oq$k0">
+              <ref role="3cqZAo" node="6JP69lPx1iL" resolve="group" />
+            </node>
+            <node concept="liA8E" id="3IixYXRL6rz" role="2OqNvi">
+              <ref role="37wK5l" to="qkt:~DefaultActionGroup.add(com.intellij.openapi.actionSystem.AnAction):void" resolve="add" />
+              <node concept="2ShNRf" id="3IixYXRLdOO" role="37wK5m">
+                <node concept="1pGfFk" id="3IixYXRMeGS" role="2ShVmc">
+                  <ref role="37wK5l" to="tqbz:~PinActiveTabAction$TW.&lt;init&gt;()" resolve="PinActiveTabAction.TW" />
                 </node>
               </node>
             </node>
@@ -14854,6 +14870,14 @@
         <property role="3hacHL" value="replace all" />
       </node>
     </node>
+    <node concept="Zd509" id="oTl4nIRSu8" role="Zd508">
+      <ref role="1bYAoF" node="7LWFAMfAqWk" resolve="ShowNodeInExplorer" />
+      <node concept="pLAjd" id="oTl4nIRSua" role="Zd501">
+        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_X" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
   </node>
   <node concept="Zd50a" id="1RsxAOl3$Gc">
     <property role="TrG5h" value="DefaultForKDE" />
@@ -14877,6 +14901,18 @@
       <node concept="pLAjd" id="1RsxAOl3$Gb" role="Zd501">
         <property role="pLAjc" value="alt+shift" />
         <property role="pLAjf" value="VK_8" />
+        <property role="3hacHL" value="replace all" />
+      </node>
+    </node>
+  </node>
+  <node concept="Zd50a" id="oTl4nIRSuC">
+    <property role="TrG5h" value="Mac" />
+    <property role="Zd52Q" value="Mac OS X" />
+    <node concept="Zd509" id="oTl4nIRSuD" role="Zd508">
+      <ref role="1bYAoF" node="7LWFAMfAqWk" resolve="ShowNodeInExplorer" />
+      <node concept="pLAjd" id="oTl4nIRSuE" role="Zd501">
+        <property role="pLAjc" value="ctrl" />
+        <property role="pLAjf" value="VK_X" />
         <property role="3hacHL" value="replace all" />
       </node>
     </node>

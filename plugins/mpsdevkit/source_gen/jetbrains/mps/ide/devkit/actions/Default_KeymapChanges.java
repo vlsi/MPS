@@ -21,7 +21,7 @@ public class Default_KeymapChanges extends BaseKeymapChanges {
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ImplementBehaviorMethod_Action", getShortcut("ctrl I"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.NavigateToGeneratedQuery_Action", getShortcut("ctrl alt shift Q"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.OverrideBehaviorMethod_Action", getShortcut("ctrl O"));
-    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", getShortcut("alt F12"));
+    addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowNodeInExplorer_Action", getShortcut("alt X"));
     addSimpleShortcut("jetbrains.mps.ide.devkit.actions.ShowStructure_Action", getShortcut("ctrl F10"));
     // simple parameterized 
     // complex 
