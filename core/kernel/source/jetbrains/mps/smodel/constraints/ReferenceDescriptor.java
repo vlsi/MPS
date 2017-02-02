@@ -64,8 +64,12 @@ public abstract class ReferenceDescriptor {
 
   /**
    * @return null if there is no presentation for reference
+   *
+   * @deprecated uses only in the editor
    */
   @Nullable
+  @Deprecated
+  @ToRemove(version = 3.5)
   abstract public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor);
 
   /**
@@ -167,6 +171,8 @@ public abstract class ReferenceDescriptor {
 
     @Override
     @Nullable
+    @Deprecated
+    @ToRemove(version = 3.5)
     public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
       if (myScopeProvider == null || !myScopeProvider.hasPresentation()) {
         return null;
@@ -231,6 +237,8 @@ public abstract class ReferenceDescriptor {
 
     @Override
     @Nullable
+    @Deprecated
+    @ToRemove(version = 3.5)
     public String getReferencePresentation(SNode targetNode, boolean visible, boolean smartRef, boolean inEditor) {
       return null;
     }
