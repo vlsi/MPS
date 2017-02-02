@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,8 +62,8 @@ import java.util.stream.StreamSupport;
  * 5. Files: checkpoints [1] + planName-cpName.mps [*], former lists all known .mps files with cp models.
  *    What about conflicts? Another file extension? UUID file names? On one hand, don't need them human-readable
  *    OTOH, when it's easy to recognize where file belongs is nice
- * 6. Where in a CP model to keep name/identity (if I need one to reconstruct ModelCheckpoints in RT, without serializing
- *    the registry). cp-name pattern is not nice. property in model header? ModelWithMetadata?
+ * 6. Do I need to reconstruct ModelCheckpoints in RT, without serializing the registry)? Perhaps, I don't need to
+ *    keep identity of checkpoint and plan inside a model (now with facilities of ModelWithAttributes)
  * 7. What about consistency of plan and its persisted cp models? What if Plan is expected to have CP1 and CP2, but locally
  *    we've got CP1 and CP3? How do we check consistency, how do we react to inconsistency.
  *

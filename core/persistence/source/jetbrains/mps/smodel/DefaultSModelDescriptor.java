@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
+import jetbrains.mps.extapi.model.ModelWithAttributes;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.LazyLoadFacility;
@@ -32,9 +33,10 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 
 import java.io.IOException;
 import java.util.Map;
+import java.util.function.BiConsumer;
 
 
-public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, PersistenceVersionAware {
+public class DefaultSModelDescriptor extends LazyEditableSModelBase implements GeneratableSModel, PersistenceVersionAware, ModelWithAttributes {
   private static final String MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(DefaultSModelDescriptor.class));
   private final LazyLoadFacility myPersistence;
@@ -179,6 +181,22 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
   @Override
   public boolean isDoNotGenerate() {
     return getModelHeader().isDoNotGenerate();
+  }
+
+  @Override
+  public void setAttribute(@NotNull String key, @Nullable String value) {
+    getModelHeader().setOptionalProperty(key, value);
+  }
+
+  @Nullable
+  @Override
+  public String getAttribute(@NotNull String key) {
+    return getModelHeader().getOptionalProperty(key);
+  }
+
+  @Override
+  public void forEach(@NotNull BiConsumer<String, String> action) {
+    getModelHeader().getOptionalProperties().forEach(action);
   }
 
   private SModelHeader getModelHeader() {

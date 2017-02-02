@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, Apr 19, 2010
  */
-public class TransientSModel extends SModel {
+public class TransientSModel extends DefaultSModel {
   public TransientSModel(@NotNull SModelReference modelReference) {
     super(modelReference);
   }

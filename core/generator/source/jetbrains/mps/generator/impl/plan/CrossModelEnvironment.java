@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,13 +15,16 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.extapi.model.ModelWithAttributes;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.cache.CacheGenerator;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.CloneUtil;
+import jetbrains.mps.generator.impl.MappingLabelExtractor;
 import jetbrains.mps.generator.impl.ModelStreamManager;
+import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
@@ -49,11 +52,14 @@ import java.util.HashSet;
  * @since 3.3
  */
 public class CrossModelEnvironment {
+  private static final String GENERATION_PLAN = "generation-plan";
+  private static final String CHECKPOINT = "checkpoint";
+
   // these are checkpoints for actual plan, for different models that are cross-referenced from the one being transformed
   private final HashMap<SModelReference, ModelCheckpoints> myTransientCheckpoints = new HashMap<>();
   // these are CPs for all plans of x-referenced models
   private final HashMap<SModelReference, CheckpointVault> myPersistedCheckpoints = new HashMap<>();
-  // thise are CPs for actual plan, loaded from persisted CPs and re-published as transient models
+  // these are CPs for actual plan, loaded from persisted CPs and re-published as transient models
   private final HashMap<SModelReference, ModelCheckpoints> myExposedPersisted = new HashMap<>();
   private final TransientModelsModule myModule;
   private final ModelStreamManager.Provider myStreamProvider;
@@ -117,13 +123,29 @@ public class CrossModelEnvironment {
       @Override
       public ModelCheckpoints compute() {
         String nameNoStereotype = originalModelName.getLongName();
-        ArrayList<SModel> cpModels = new ArrayList<SModel>(4);
+        ArrayList<CheckpointState> cpModels = new ArrayList<>(4);
         for (SModel m : myModule.getModels()) {
-          if (nameNoStereotype.equals(m.getName().getLongName())) {
-            cpModels.add(m);
+          if (!nameNoStereotype.equals(m.getName().getLongName()) || false == m instanceof ModelWithAttributes) {
+            continue;
           }
+          String gpAttrValue = ((ModelWithAttributes) m).getAttribute(GENERATION_PLAN);
+          String cpAttrValue = ((ModelWithAttributes) m).getAttribute(CHECKPOINT);
+          if (gpAttrValue == null || cpAttrValue == null) {
+            continue;
+          }
+          PlanIdentity modelPlan = new PlanIdentity(gpAttrValue);
+          if (!modelPlan.equals(planIdentity)) {
+            continue;
+          }
+          CheckpointIdentity modelCheckpoint = new CheckpointIdentity(modelPlan, cpAttrValue /* here, persistent identity*/);
+          // FIXME read and fill memento with MappingLabels
+          //       now, just restore it from debug root we've got there. Later (once true persistence is done), shall consider
+          //       option to keep mappings inside a model (not to bother with persistence) or to follow MappingsMemento approach with
+          //       custom serialization code (and to solve the issue of associated model streams serialized/managed (i.e. deleted) along with a cp model)
+          MappingsMemento memento = new MappingLabelExtractor().restore(MappingLabelExtractor.findDebugNode(m));
+          cpModels.add(new CheckpointState(memento, m, modelCheckpoint));
         }
-        return cpModels.isEmpty() ? null : new ModelCheckpoints(planIdentity, cpModels.toArray(new SModel[cpModels.size()]));
+        return cpModels.isEmpty() ? null : new ModelCheckpoints(planIdentity, cpModels);
       }
     });
   }
@@ -144,7 +166,7 @@ public class CrossModelEnvironment {
 
   /*package*/ static SModelName createCheckpointModelName(SModelReference originalModel, CheckpointIdentity step) {
     String longName = originalModel.getName().getLongName();
-    String stereotype = "cp-" + step.getPersistenceValue();
+    String stereotype = step.getPersistenceValue();
     return new SModelName(longName, stereotype);
   }
 
@@ -153,6 +175,9 @@ public class CrossModelEnvironment {
     final SModelName transientModelName = createCheckpointModelName(originalModel, step);
     final SModelReference mr = PersistenceFacade.getInstance().createModelReference(myModule.getModuleReference(), jetbrains.mps.smodel.SModelId.generate(), transientModelName.getValue());
     SModel checkpointModel = myModule.createTransientModel(mr);
+    assert checkpointModel instanceof ModelWithAttributes;
+    ((ModelWithAttributes) checkpointModel).setAttribute(GENERATION_PLAN, step.getPlan().getPersistenceValue());
+    ((ModelWithAttributes) checkpointModel).setAttribute(CHECKPOINT, step.getPersistenceValue());
     return checkpointModel;
   }
 

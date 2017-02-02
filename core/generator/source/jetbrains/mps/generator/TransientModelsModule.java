@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
+import jetbrains.mps.extapi.model.ModelWithAttributes;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
@@ -26,6 +27,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
@@ -53,6 +55,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.BiConsumer;
 
 public class TransientModelsModule extends AbstractModule implements TransientSModule {
   private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
@@ -277,8 +280,8 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
-  public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel {
-    protected volatile jetbrains.mps.smodel.SModel mySModel;
+  public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel, ModelWithAttributes {
+    protected volatile TransientSModel mySModel;
     private boolean wasUnloaded = false;
     private ImmatureReferencesTracker myRefsTracker = new ImmatureReferencesTracker();
 
@@ -327,7 +330,7 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
       }
     }
 
-    private jetbrains.mps.smodel.SModel createModel() {
+    private TransientSModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
 
@@ -411,6 +414,27 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
     public void makeRefsMature() {
       myRefsTracker.makeMature();
+    }
+
+    private SModelHeader getModelHeader() {
+      getModelData(); // init mySModel field, just in case it hasn't been initialized
+      return mySModel.getSModelHeader();
+    }
+
+    @Override
+    public void setAttribute(@NotNull String key, @Nullable String value) {
+      getModelHeader().setOptionalProperty(key, value);
+    }
+
+    @Nullable
+    @Override
+    public String getAttribute(@NotNull String key) {
+      return getModelHeader().getOptionalProperty(key);
+    }
+
+    @Override
+    public void forEach(@NotNull BiConsumer<String, String> action) {
+      getModelHeader().getOptionalProperties().forEach(action);
     }
   }
 }

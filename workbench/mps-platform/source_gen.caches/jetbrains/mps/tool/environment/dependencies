@@ -10,7 +10,6 @@
     <classNode dependClassName="com.intellij.openapi.startup.StartupManager" />
     <classNode dependClassName="com.intellij.testFramework.PlatformTestUtil" />
     <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.ClassLoader" />
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.IllegalStateException" />
@@ -19,7 +18,6 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.concurrent.Semaphore" />
