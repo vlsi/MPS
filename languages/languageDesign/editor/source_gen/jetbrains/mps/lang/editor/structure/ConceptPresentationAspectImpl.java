@@ -132,6 +132,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_ConceptFunctionParameter_parameterObject = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ConceptFunctionParameter_prevNode = new ConceptPresentationBuilder().shortDesc("function parameter").create();
   private final ConceptPresentation props_ConceptFunctionParameter_selectedNode = new ConceptPresentationBuilder().shortDesc("selected node").create();
+  private final ConceptPresentation props_ConceptFunctionParameter_sourceNode = new ConceptPresentationBuilder().shortDesc("function parameter").create();
+  private final ConceptPresentation props_ConceptFunctionParameter_targetNode = new ConceptPresentationBuilder().shortDesc("function parameter").create();
   private final ConceptPresentation props_ConceptFunctionParameter_text = new ConceptPresentationBuilder().shortDesc("function parameter").create();
   private final ConceptPresentation props_ContextHintsSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ContextVariable = new ConceptPresentationBuilder().create();
@@ -145,7 +147,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_EditableStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorCellId = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_EditorCellModel = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_EditorComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ff).create();
+  private final ConceptPresentation props_EditorComponentDeclaration = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0hf).create();
   private final ConceptPresentation props_EditorComponentDeclarationReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ExplicitHintsSpecification = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_FirstPositionAllowedStyleClassItem = new ConceptPresentationBuilder().create();
@@ -216,7 +218,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_PaddingLeftStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingRightStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PaddingTopStyleClassItem = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0yh).create();
+  private final ConceptPresentation props_ParametersInformationQuery = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ai).create();
   private final ConceptPresentation props_ParametersInformationStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionChildrenStyleClassItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_PositionStyleClassItem = new ConceptPresentationBuilder().create();
@@ -257,6 +259,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_QueryFunction_NodeFactory = new ConceptPresentationBuilder().shortDesc("embedded block of code").create();
   private final ConceptPresentation props_QueryFunction_NodeListFilter = new ConceptPresentationBuilder().shortDesc("embedded block of code").create();
   private final ConceptPresentation props_QueryFunction_ParametersList = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_QueryFunction_RefPresentation = new ConceptPresentationBuilder().shortDesc("custom referent presentation").create();
   private final ConceptPresentation props_QueryFunction_SNode = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_QueryFunction_SeparatorText = new ConceptPresentationBuilder().shortDesc("embedded block of code").create();
   private final ConceptPresentation props_QueryFunction_String = new ConceptPresentationBuilder().create();
@@ -334,9 +337,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_StyleClassReference = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleClassReferenceList = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_StyleKey = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mm).create();
+  private final ConceptPresentation props_StyleKeyPack = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pm).create();
   private final ConceptPresentation props_StyleReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0om).create();
+  private final ConceptPresentation props_StyleSheet = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rm).create();
   private final ConceptPresentation props_StyledTextType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_ActionType = new ConceptPresentationBuilder().create();
@@ -345,7 +348,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteFeature_Icon = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_MatchingText = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteFeature_Selection = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0xm).create();
+  private final ConceptPresentation props_SubstituteMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0an).create();
   private final ConceptPresentation props_SubstituteMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_Action = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuPart_AddConcept = new ConceptPresentationBuilder().create();
@@ -362,9 +365,9 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_SubstituteMenuReference_Named = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_SubstituteMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0on).create();
-  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0pn).create();
-  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0qn).create();
+  private final ConceptPresentation props_SubstituteMenu_Contribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0rn).create();
+  private final ConceptPresentation props_SubstituteMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0sn).create();
+  private final ConceptPresentation props_SubstituteMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0tn).create();
   private final ConceptPresentation props_SubstituteMenu_SimpleString = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Synchronizeable = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TableComponentStyleClassItem = new ConceptPresentationBuilder().create();
@@ -382,8 +385,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationLocation_ContextAssistant = new ConceptPresentationBuilder().shortDesc("in-editor context assistant").create();
   private final ConceptPresentation props_TransformationLocation_SideTransform = new ConceptPresentationBuilder().shortDesc("bound of the cell").create();
   private final ConceptPresentation props_TransformationLocation_SideTransform_PlaceInCellHolder = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0io).create();
-  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0jo).create();
+  private final ConceptPresentation props_TransformationMenu = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0lo).create();
+  private final ConceptPresentation props_TransformationMenuContribution = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0mo).create();
   private final ConceptPresentation props_TransformationMenuPart = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuPart_Action = new ConceptPresentationBuilder().shortDesc("action with custom code").create();
   private final ConceptPresentation props_TransformationMenuPart_Group = new ConceptPresentationBuilder().shortDesc("composite part").create();
@@ -399,8 +402,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_TransformationMenuSection = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableDeclaration = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_TransformationMenuVariableReference = new ConceptPresentationBuilder().create();
-  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0zo).create();
-  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0ap).create();
+  private final ConceptPresentation props_TransformationMenu_Default = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0cp).create();
+  private final ConceptPresentation props_TransformationMenu_Named = new ConceptPresentationBuilder().icon(IconContainer.RESOURCE_a0a0dp).create();
   private final ConceptPresentation props_UnapplyStyle = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_UnderlinedStyleClassItem = new ConceptPresentationBuilder().create();
 
@@ -653,6 +656,10 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_ConceptFunctionParameter_prevNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_selectedNode:
         return props_ConceptFunctionParameter_selectedNode;
+      case LanguageConceptSwitch.ConceptFunctionParameter_sourceNode:
+        return props_ConceptFunctionParameter_sourceNode;
+      case LanguageConceptSwitch.ConceptFunctionParameter_targetNode:
+        return props_ConceptFunctionParameter_targetNode;
       case LanguageConceptSwitch.ConceptFunctionParameter_text:
         return props_ConceptFunctionParameter_text;
       case LanguageConceptSwitch.ContextHintsSpecification:
@@ -903,6 +910,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_QueryFunction_NodeListFilter;
       case LanguageConceptSwitch.QueryFunction_ParametersList:
         return props_QueryFunction_ParametersList;
+      case LanguageConceptSwitch.QueryFunction_RefPresentation:
+        return props_QueryFunction_RefPresentation;
       case LanguageConceptSwitch.QueryFunction_SNode:
         return props_QueryFunction_SNode;
       case LanguageConceptSwitch.QueryFunction_SeparatorText:

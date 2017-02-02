@@ -1778,6 +1778,12 @@
     <node concept="PrWs8" id="1653mnvAmCG" role="PzmwI">
       <ref role="PrY4T" to="tpck:1_TrU5E6oyb" resolve="IDontSubstituteByDefault" />
     </node>
+    <node concept="1TJgyj" id="601LQojQ6kk" role="1TKVEi">
+      <property role="IQ2ns" value="6918029743851332884" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referentPresentation" />
+      <ref role="20lvS9" node="601LQojMcdN" resolve="QueryFunction_RefPresentation" />
+    </node>
   </node>
   <node concept="1TIwiD" id="gWZEnmw">
     <property role="R5$K7" value="false" />
@@ -6338,6 +6344,30 @@
     <property role="EcuMT" value="7674872385216913084" />
     <property role="3GE5qa" value="QueryFunction" />
     <property role="TrG5h" value="IContextNodeAccessQualifier" />
+  </node>
+  <node concept="1TIwiD" id="601LQojMcdN">
+    <property role="EcuMT" value="6918029743850308467" />
+    <property role="3GE5qa" value="QueryFunction" />
+    <property role="TrG5h" value="QueryFunction_RefPresentation" />
+    <property role="34LRSv" value="ref. presentation" />
+    <property role="R4oN_" value="custom referent presentation" />
+    <ref role="1TJDcQ" to="tpee:gyVMwX8" resolve="ConceptFunction" />
+  </node>
+  <node concept="1TIwiD" id="601LQojMpCQ">
+    <property role="EcuMT" value="6918029743850363446" />
+    <property role="3GE5qa" value="QueryFunction.Parameters" />
+    <property role="TrG5h" value="ConceptFunctionParameter_sourceNode" />
+    <property role="34LRSv" value="sourceNode" />
+    <property role="R4oN_" value="function parameter" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
+  </node>
+  <node concept="1TIwiD" id="601LQojMpCR">
+    <property role="EcuMT" value="6918029743850363447" />
+    <property role="3GE5qa" value="QueryFunction.Parameters" />
+    <property role="TrG5h" value="ConceptFunctionParameter_targetNode" />
+    <property role="34LRSv" value="targetNode" />
+    <property role="R4oN_" value="function parameter" />
+    <ref role="1TJDcQ" to="tpee:g76ryKb" resolve="ConceptFunctionParameter" />
   </node>
 </model>
 
