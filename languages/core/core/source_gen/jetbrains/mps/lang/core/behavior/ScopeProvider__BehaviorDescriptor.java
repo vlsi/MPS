@@ -44,27 +44,23 @@ public final class ScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   @ToRemove(version = 3.5)
   /*package*/ static Scope getScope_id3fifI_xCJOQ(@NotNull SNode __thisNode__, SNode kind, SNode child) {
-    Boolean newCall = ScopeProviderHelper.ourNewCall.get();
-    if (newCall == null) {
-      ScopeProviderHelper.ourNewCall.set(false);
+    if (ScopeProviderHelper.lock(__thisNode__)) {
       try {
         return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(__thisNode__, SNodeOperations.asSConcept(kind), child);
       } finally {
-        ScopeProviderHelper.ourNewCall.set(null);
+        ScopeProviderHelper.unlock();
       }
     } else {
       return null;
     }
   }
   /*package*/ static Scope getScope_id52_Geb4QDV$(@NotNull SNode __thisNode__, SAbstractConcept kind, SNode child) {
-    // todo after 3.5 body should be chnged to "return null" 
-    Boolean newCall = ScopeProviderHelper.ourNewCall.get();
-    if (newCall == null) {
-      ScopeProviderHelper.ourNewCall.set(true);
+    // todo after 3.5 body should be changed to "return null" 
+    if (ScopeProviderHelper.lock(__thisNode__)) {
       try {
         return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, SNodeOperations.asNode(kind), child);
       } finally {
-        ScopeProviderHelper.ourNewCall.set(null);
+        ScopeProviderHelper.unlock();
       }
     } else {
       return null;
@@ -73,33 +69,33 @@ public final class ScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   @Deprecated
   @ToRemove(version = 3.5)
   /*package*/ static Scope getScope_id6GEzh_Hz_wK(@NotNull SNode __thisNode__, SNode kind, final String role, int index) {
-    Boolean newCall = ScopeProviderHelper.ourNewCall.get();
-    if (newCall == null) {
-      ScopeProviderHelper.ourNewCall.set(false);
+    if (ScopeProviderHelper.lock(__thisNode__)) {
       try {
         Collection<SContainmentLink> links = SNodeOperations.asSConcept(kind).getContainmentLinks();
-        return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QFgX.invoke(__thisNode__, SNodeOperations.asSConcept(kind), CollectionSequence.fromCollection(links).findFirst(new IWhereFilter<SContainmentLink>() {
+        SContainmentLink link = CollectionSequence.fromCollection(links).findFirst(new IWhereFilter<SContainmentLink>() {
           public boolean accept(SContainmentLink it) {
-            return eq_zhdzf7_a0a0a0a0a2a0b0b0b0o(it.getName(), role);
+            return eq_zhdzf7_a0a0a0a0a0a1a0a0a41(it.getName(), role);
           }
-        }), ((int) index));
+        });
+        return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QFgX.invoke(__thisNode__, SNodeOperations.asSConcept(kind), link, ((int) index));
       } finally {
-        ScopeProviderHelper.ourNewCall.set(null);
+        ScopeProviderHelper.unlock();
       }
     } else {
+      ScopeProviderHelper.unlock();
       return ScopeProvider__BehaviorDescriptor.getScope_id52_Geb4QDV$.invoke(__thisNode__, SNodeOperations.asSConcept(kind), null);
     }
   }
   /*package*/ static Scope getScope_id52_Geb4QFgX(@NotNull SNode __thisNode__, SAbstractConcept kind, SContainmentLink link, int index) {
-    // todo after 3.5 body should be chnged to "return getScope(kind,null)" 
-    if (ScopeProviderHelper.ourNewCall.get() == null) {
-      ScopeProviderHelper.ourNewCall.set(true);
+    // todo after 3.5 body should be changed to "return getScope(kind,null)" 
+    if (ScopeProviderHelper.lock(__thisNode__)) {
       try {
         return ScopeProvider__BehaviorDescriptor.getScope_id6GEzh_Hz_wK.invoke(__thisNode__, SNodeOperations.asNode(kind), (link == null ? null : link.getName()), ((int) index));
       } finally {
-        ScopeProviderHelper.ourNewCall.set(null);
+        ScopeProviderHelper.unlock();
       }
     } else {
+      ScopeProviderHelper.unlock();
       return ScopeProvider__BehaviorDescriptor.getScope_id3fifI_xCJOQ.invoke(__thisNode__, SNodeOperations.asNode(kind), null);
     }
   }
@@ -156,7 +152,7 @@ public final class ScopeProvider__BehaviorDescriptor extends BaseBHDescriptor {
   public SAbstractConcept getConcept() {
     return CONCEPT;
   }
-  private static boolean eq_zhdzf7_a0a0a0a0a2a0b0b0b0o(Object a, Object b) {
+  private static boolean eq_zhdzf7_a0a0a0a0a0a1a0a0a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
