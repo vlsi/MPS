@@ -60,10 +60,6 @@
     <copy todir="${build.layout}/mps-vcs/META-INF">
       <fileset file="${mps_home}/plugins/vcs/META-INF/MPSVcs.xml" />
     </copy>
-    <mkdir dir="${build.layout}/mps-vcs/languages" />
-    <copy todir="${build.layout}/mps-vcs/languages">
-      <fileset dir="${artifacts.mpsVcsCommon}/languages" />
-    </copy>
     <mkdir dir="${build.layout}/mps-vcs/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models">
       <fileset dir="${mps_home}/plugins/vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
@@ -80,7 +76,18 @@
       <zipfileset dir="${mps_home}/plugins/vcs/common" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.platform" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models" prefix="modules/jetbrains.mps.ide.vcs.platform/models" />
     </jar>
-    <copy file="${artifacts.mpsVcsCommon}/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
+    <mkdir dir="${build.layout}/mps-vcs/lib/vcs-core" />
+    <copy todir="${build.layout}/mps-vcs/lib/vcs-core">
+      <fileset dir="${artifacts.mpsVcsCommon}/vcs-core" />
+    </copy>
+    <mkdir dir="${build.layout}/git4idea" />
+    <copy todir="${build.layout}/git4idea">
+      <fileset dir="${artifacts.mpsVcsCommon}/git4idea" />
+    </copy>
+    <mkdir dir="${build.layout}/svn4idea" />
+    <copy todir="${build.layout}/svn4idea">
+      <fileset dir="${artifacts.mpsVcsCommon}/svn4idea" />
+    </copy>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
@@ -122,6 +129,9 @@
     <echo message="generating" />
     <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true">
       <plugin path="${artifacts.mpsCore}/mps-core/META-INF/plugin.xml/../.." />
+      <plugin path="${artifacts.mpsVcsCommon}/git4idea" />
+      <plugin path="${artifacts.mpsVcsCommon}/svn4idea" />
+      <plugin path="${artifacts.mpsVcsCommon}/vcs-core" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
@@ -194,9 +204,9 @@
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.jar" />
       <library file="${artifacts.mpsBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
-      <library file="${artifacts.mpsVcsCommon}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
-      <library file="${artifacts.mpsVcsCommon}/languages/jetbrains.mps.vcs.mergehints.jar" />
-      <library file="${artifacts.mpsVcsCommon}/vcs-core.jar" />
+      <library file="${artifacts.mpsVcsCommon}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" />
+      <library file="${artifacts.mpsVcsCommon}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" />
+      <library file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" />
       <library file="${artifacts.mpsWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.mpsWorkbench}/lib/mps-workbench.jar" />
       <chunk>
@@ -277,7 +287,7 @@
       </src>
       <classpath>
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.mpsVcsCommon}/mps-vcs-core.jar" />
+        <fileset file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-openapi.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/mps-logging.jar" />

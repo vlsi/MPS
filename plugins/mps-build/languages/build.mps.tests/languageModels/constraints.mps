@@ -121,16 +121,16 @@
       </concept>
     </language>
     <language id="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1" name="jetbrains.mps.lang.constraints">
-      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" flags="in" index="nKS2y" />
+      <concept id="1202989531578" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild_Old" flags="in" index="nKS2y" />
       <concept id="1202989658459" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" flags="nn" index="nLn13" />
       <concept id="8966504967485224688" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextNode" flags="nn" index="2rP1CM" />
       <concept id="4656991770397278586" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_contextRole" flags="nn" index="$OBgH" />
       <concept id="4656991770397278600" name="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_position" flags="nn" index="$OBjv" />
-      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope" flags="in" index="13QW63" />
+      <concept id="5676632058862809931" name="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope_Old" flags="in" index="13QW63" />
       <concept id="1213093968558" name="jetbrains.mps.lang.constraints.structure.ConceptConstraints" flags="ng" index="1M2fIO">
         <reference id="1213093996982" name="concept" index="1M2myG" />
         <child id="1213100494875" name="referent" index="1Mr941" />
-        <child id="1213106463729" name="canBeChild" index="1MLUbF" />
+        <child id="1213106463729" name="canBeChild_Old" index="1MLUbF" />
       </concept>
       <concept id="1148687176410" name="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" flags="ng" index="1N5Pfh">
         <reference id="1148687202698" name="applicableLink" index="1N5Vy1" />
@@ -200,20 +200,6 @@
   <node concept="1M2fIO" id="7rX0uLRY4B$">
     <property role="3GE5qa" value="Project.Testing" />
     <ref role="1M2myG" to="5tjl:3X9rC2XzJdM" resolve="BuildMpsLayout_TestModule" />
-    <node concept="nKS2y" id="7rX0uM17sKH" role="1MLUbF">
-      <node concept="3clFbS" id="7rX0uM17sKI" role="2VODD2">
-        <node concept="3clFbF" id="7rX0uM17sWe" role="3cqZAp">
-          <node concept="2OqwBi" id="7rX0uM17t7U" role="3clFbG">
-            <node concept="1mIQ4w" id="7rX0uM17tZK" role="2OqNvi">
-              <node concept="chp4Y" id="7rX0uM17uxG" role="cj9EA">
-                <ref role="cht4Q" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
-              </node>
-            </node>
-            <node concept="nLn13" id="7rX0uM17sWd" role="2Oq$k0" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node concept="1N5Pfh" id="7rX0uLRY4Dj" role="1Mr941">
       <ref role="1N5Vy1" to="5tjl:3X9rC2XzJdN" resolve="module" />
       <node concept="13QW63" id="7rX0uLRYOZE" role="1N6uqs">
@@ -285,6 +271,20 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="nKS2y" id="7rX0uM17sKH" role="1MLUbF">
+      <node concept="3clFbS" id="7rX0uM17sKI" role="2VODD2">
+        <node concept="3clFbF" id="7rX0uM17sWe" role="3cqZAp">
+          <node concept="2OqwBi" id="7rX0uM17t7U" role="3clFbG">
+            <node concept="1mIQ4w" id="7rX0uM17tZK" role="2OqNvi">
+              <node concept="chp4Y" id="7rX0uM17uxG" role="cj9EA">
+                <ref role="cht4Q" to="5tjl:3X9rC2XzJdH" resolve="BuildMpsLayout_TestModules" />
+              </node>
+            </node>
+            <node concept="nLn13" id="7rX0uM17sWd" role="2Oq$k0" />
           </node>
         </node>
       </node>

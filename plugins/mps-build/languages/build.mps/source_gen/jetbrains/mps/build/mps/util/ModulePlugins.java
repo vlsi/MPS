@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.mps.behavior.BuildMps_IdeaPluginContent__BehaviorDescriptor;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildLayout_PathElement__BehaviorDescriptor;
 
 public class ModulePlugins {
@@ -64,10 +65,12 @@ public class ModulePlugins {
       public String select(SNode it) {
         SNode layoutNode = helper.getArtifact(it);
         if ((layoutNode == null)) {
+          myContext.showWarningMessage(myInitialProject, "The plugin '" + SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "' was not found in the layout of `" + SPropertyOperations.getString(myInitialProject, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "'");
           return null;
         }
         String val = BuildLayout_PathElement__BehaviorDescriptor.location_id6b4RkXS8sT2.invoke(layoutNode, helper, it);
         if (val == null) {
+          myContext.showWarningMessage(myInitialProject, "Found no location for plugin '" + SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + "'");
           return null;
         }
         return val;

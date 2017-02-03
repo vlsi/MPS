@@ -52,8 +52,20 @@
       </fileset>
     </copy>
     <mkdir dir="${build.layout}/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models">
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
     <jar destfile="${build.layout}/lib/mps-java-platform.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-java-platform" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-basePlatform-models" prefix="modules/jetbrains.mps.ide.java.basePlatform/models" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
+      <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-mpsjava-platform-models" prefix="modules/jetbrains.mps.ide.java.platform/models" />
     </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>

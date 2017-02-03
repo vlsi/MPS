@@ -13304,14 +13304,14 @@
                           </node>
                         </node>
                         <node concept="398223" id="2OJWaFGOVpK" role="39821P">
-                          <node concept="3_I8Xc" id="2OJWaFGOVpL" role="39821P">
-                            <ref role="3_I8Xa" to="ffeo:1diLdO26H81" resolve="svn4idea" />
-                          </node>
                           <node concept="3_I8Xc" id="2OJWaFGOVpM" role="39821P">
                             <ref role="3_I8Xa" to="ffeo:1diLdO26H7T" resolve="cvsIntegration" />
                           </node>
-                          <node concept="3_I8Xc" id="2OJWaFGOVpN" role="39821P">
-                            <ref role="3_I8Xa" to="ffeo:1diLdO26H8a" resolve="git4idea" />
+                          <node concept="3_I8Xc" id="3nGzrDEksX6" role="39821P">
+                            <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="Subversion" />
+                          </node>
+                          <node concept="3_I8Xc" id="73fHb9hpuxm" role="39821P">
+                            <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
                           </node>
                           <node concept="3_I8Xc" id="5wzCg4BvpWy" role="39821P">
                             <ref role="3_I8Xa" to="ffeo:ymnOULBdbM" resolve="mps-core" />

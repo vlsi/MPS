@@ -164,10 +164,14 @@
       <concept id="4278635856200794926" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage" flags="ng" index="1Busua">
         <reference id="4278635856200794928" name="language" index="1Busuk" />
       </concept>
+      <concept id="3189788309731981027" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime" flags="ng" index="1E0d5M">
+        <reference id="3189788309731981028" name="solution" index="1E0d5P" />
+      </concept>
       <concept id="3189788309731840247" name="jetbrains.mps.build.mps.structure.BuildMps_Solution" flags="ng" index="1E1JtA">
         <property id="269707337715731330" name="sourcesKind" index="aoJFB" />
       </concept>
       <concept id="3189788309731840248" name="jetbrains.mps.build.mps.structure.BuildMps_Language" flags="ng" index="1E1JtD">
+        <child id="3189788309731917348" name="runtime" index="1E1XAP" />
         <child id="9200313594498201639" name="generator" index="1TViLv" />
       </concept>
       <concept id="3189788309731928315" name="jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule" flags="ng" index="1E1SXE">
@@ -2737,6 +2741,9 @@
               <ref role="3bR37D" to="ffeo:7Kfy9QB6KYb" resolve="jetbrains.mps.baseLanguage" />
             </node>
           </node>
+        </node>
+        <node concept="1E0d5M" id="2f92Y3ifpMi" role="1E1XAP">
+          <ref role="1E0d5P" node="1vCYg$WBasC" resolve="jetbrains.mps.samples.JavaKaja" />
         </node>
       </node>
       <node concept="1E1JtA" id="1vCYg$WBasC" role="2G$12L">

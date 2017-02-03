@@ -146,6 +146,14 @@
     <copy todir="${build.layout}/plugins/mps-vcs">
       <fileset dir="${artifacts.mpsVcs}/mps-vcs" />
     </copy>
+    <mkdir dir="${build.layout}/plugins/git4idea" />
+    <copy todir="${build.layout}/plugins/git4idea">
+      <fileset dir="${artifacts.mpsVcs}/git4idea" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/svn4idea" />
+    <copy todir="${build.layout}/plugins/svn4idea">
+      <fileset dir="${artifacts.mpsVcs}/svn4idea" />
+    </copy>
     <mkdir dir="${build.layout}/plugins/mps-build" />
     <copy todir="${build.layout}/plugins/mps-build">
       <fileset dir="${artifacts.mpsBuildUI}/mps-build" />

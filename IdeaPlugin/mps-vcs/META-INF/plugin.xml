@@ -27,7 +27,7 @@
   <depends optional="true">Subversion</depends>
   <depends optional="true">Git4Idea</depends>
 
-  <xi:include href="../../../plugins/vcs/common/source_gen/jetbrains/mps/vcs/platform/actions/MPSVcs.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="MPSVcs.xml" xpointer="xpointer(/components/*)"/>
 
   <project-components>
     <component>

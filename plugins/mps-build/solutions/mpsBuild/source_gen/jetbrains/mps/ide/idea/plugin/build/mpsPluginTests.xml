@@ -19,6 +19,8 @@
   <property name="mpsPluginCommon.date" value="${import.mpsPlugin.mpsPluginCommon.date}" />
   <property name="mpsPluginCore.plugin.version" value="${import.mpsPlugin.mpsPluginCore.plugin.version}" />
   <property name="mpsPluginCore.date" value="${import.mpsPlugin.mpsPluginCore.date}" />
+  <property name="mpsIdeaVcs.plugin.version" value="${import.mpsPlugin.mpsIdeaVcs.plugin.version}" />
+  <property name="mpsIdeaVcs.date" value="${import.mpsPlugin.mpsIdeaVcs.date}" />
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
@@ -100,7 +102,7 @@
     <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
     </jar>
-    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}</echo>
+    <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}${line.separator}mpsPluginCommon.plugin.version=${mpsPluginCommon.plugin.version}${line.separator}mpsPluginCommon.date=${mpsPluginCommon.date}${line.separator}mpsPluginCore.plugin.version=${mpsPluginCore.plugin.version}${line.separator}mpsPluginCore.date=${mpsPluginCore.date}${line.separator}mpsIdeaVcs.plugin.version=${mpsIdeaVcs.plugin.version}${line.separator}mpsIdeaVcs.date=${mpsIdeaVcs.date}</echo>
   </target>
   
   <target name="buildDependents">
@@ -114,6 +116,7 @@
     <ant antfile="IdeaPlugin/mpsJavaIdeaPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/mpsVcsCommon.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="IdeaPlugin/mpsIdeaVcs.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="IdeaPlugin/mpsPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

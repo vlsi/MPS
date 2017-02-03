@@ -522,24 +522,6 @@
             </node>
           </node>
         </node>
-        <node concept="3clFbF" id="2vy5TEsyQRJ" role="3cqZAp">
-          <node concept="2YIFZM" id="2vy5TEsyT4C" role="3clFbG">
-            <ref role="37wK5l" to="wyt6:~System.setProperty(java.lang.String,java.lang.String):java.lang.String" resolve="setProperty" />
-            <ref role="1Pybhc" to="wyt6:~System" resolve="System" />
-            <node concept="Xl_RD" id="2vy5TEsyT9Z" role="37wK5m">
-              <property role="Xl_RC" value="NO_FS_ROOTS_ACCESS_CHECK" />
-            </node>
-            <node concept="2OqwBi" id="7B0vV7JfETC" role="37wK5m">
-              <node concept="10M0yZ" id="7B0vV7JfEPs" role="2Oq$k0">
-                <ref role="3cqZAo" to="wyt6:~Boolean.TRUE" resolve="TRUE" />
-                <ref role="1PxDUh" to="wyt6:~Boolean" resolve="Boolean" />
-              </node>
-              <node concept="liA8E" id="7B0vV7JfF2n" role="2OqNvi">
-                <ref role="37wK5l" to="wyt6:~Boolean.toString():java.lang.String" resolve="toString" />
-              </node>
-            </node>
-          </node>
-        </node>
         <node concept="3clFbH" id="3eUNqOk7Ge1" role="3cqZAp" />
         <node concept="3cpWs8" id="5A5jZrz2zs3" role="3cqZAp">
           <node concept="3cpWsn" id="5A5jZrz2zs4" role="3cpWs9">

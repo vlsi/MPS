@@ -2,12 +2,12 @@
 <debug-info version="2">
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1392391688312941958">
     <file name="mpsStandalone.xml">
-      <unit id="1392391688312941958" at="1,0,109,10" name="jetbrains.mps.ide.build.mpsStandalone" />
+      <unit id="1392391688312941958" at="1,0,97,10" name="jetbrains.mps.ide.build.mpsStandalone" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/1545517825663017278">
     <file name="mpsVcs.xml">
-      <unit id="1545517825663017278" at="1,0,322,10" name="jetbrains.mps.ide.build.mpsVcs" />
+      <unit id="1545517825663017278" at="1,0,332,10" name="jetbrains.mps.ide.build.mpsVcs" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/2002671966457711287">
@@ -27,7 +27,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654192646">
     <file name="mps.xml">
-      <unit id="4301118715654192646" at="1,0,236,10" name="jetbrains.mps.ide.build.mps" />
+      <unit id="4301118715654192646" at="1,0,244,10" name="jetbrains.mps.ide.build.mps" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/4301118715654497533">
@@ -92,7 +92,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7246064732104303799">
     <file name="mpsVcsCommon.xml">
-      <unit id="7246064732104303799" at="1,0,390,10" name="jetbrains.mps.ide.build.mpsVcsCommon" />
+      <unit id="7246064732104303799" at="1,0,416,10" name="jetbrains.mps.ide.build.mpsVcsCommon" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7375832234660265597">
@@ -102,7 +102,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7401958389406848608">
     <file name="mpsJavaPlatform.xml">
-      <unit id="7401958389406848608" at="1,0,231,10" name="jetbrains.mps.ide.build.mpsJavaPlatform" />
+      <unit id="7401958389406848608" at="1,0,243,10" name="jetbrains.mps.ide.build.mpsJavaPlatform" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7926701909975931624">
@@ -112,7 +112,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8006829063600512192">
     <file name="mpsJavaWorkbench.xml">
-      <unit id="8006829063600512192" at="1,0,351,10" name="jetbrains.mps.ide.build.mpsJavaWorkbench" />
+      <unit id="8006829063600512192" at="1,0,262,10" name="jetbrains.mps.ide.build.mpsJavaWorkbench" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/8227093612176368028">

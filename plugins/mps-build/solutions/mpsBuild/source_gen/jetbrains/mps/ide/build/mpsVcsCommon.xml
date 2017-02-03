@@ -46,20 +46,32 @@
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
   
   <target name="assemble" depends="declare-mps-tasks, classes">
-    <mkdir dir="${build.layout}" />
-    <jar destfile="${build.layout}/mps-vcs-core.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/vcs-core" />
-    </jar>
-    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models">
-      <fileset dir="${mps_home}/plugins/vcs-core/core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
-    </copyModels>
-    <jar destfile="${build.layout}/vcs-core.jar" duplicate="preserve">
-      <fileset dir="${build.tmp}/java/out/vcs-core" />
-      <zipfileset file="${mps_home}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" prefix="modules/jetbrains.mps.ide.vcs.core" />
-      <zipfileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.core" />
-      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models" prefix="modules/jetbrains.mps.ide.vcs.core/models" />
-    </jar>
-    <mkdir dir="${build.layout}/languages" />
+    <mkdir dir="${build.layout}/svn4idea" />
+    <mkdir dir="${build.layout}/svn4idea/META-INF" />
+    <copy todir="${build.layout}/svn4idea/META-INF">
+      <fileset file="${build.tmp}/default/svn4idea_jar/META-INF/plugin.xml" />
+    </copy>
+    <copy todir="${build.layout}/svn4idea">
+      <fileset dir="${basedir}/plugins/svn4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.layout}/git4idea" />
+    <mkdir dir="${build.layout}/git4idea/META-INF" />
+    <copy todir="${build.layout}/git4idea/META-INF">
+      <fileset file="${build.tmp}/default/git4idea_jar/META-INF/plugin.xml" />
+    </copy>
+    <copy todir="${build.layout}/git4idea">
+      <fileset dir="${basedir}/plugins/git4idea">
+        <exclude name="**/*.zip" />
+      </fileset>
+    </copy>
+    <mkdir dir="${build.layout}/vcs-core" />
+    <mkdir dir="${build.layout}/vcs-core/META-INF" />
+    <copy todir="${build.layout}/vcs-core/META-INF">
+      <fileset file="${mps_home}/plugins/vcs-core/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/vcs-core/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.ide.vcs.modelmetadata.jar/META-INF/module.xml">
@@ -83,7 +95,7 @@
         <sources jar="jetbrains.mps.ide.vcs.modelmetadata-src.jar" descriptor="jetbrains.mps.ide.vcs.modelmetadata.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.ide.vcs.modelmetadata" />
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -92,7 +104,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/vcs-core/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -102,6 +114,7 @@
       <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-languages-modelmetadata-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.layout}/vcs-core/languages" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.vcs.mergehints.jar/META-INF" />
     <echoxml file="${build.tmp}/default/jetbrains.mps.vcs.mergehints.jar/META-INF/module.xml">
@@ -126,7 +139,7 @@
         <sources jar="jetbrains.mps.vcs.mergehints-src.jar" descriptor="jetbrains.mps.vcs.mergehints.mpl" />
       </module>
     </echoxml>
-    <jar destfile="${build.layout}/languages/jetbrains.mps.vcs.mergehints.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/vcs-core/languages/jetbrains.mps.vcs.mergehints.jar" duplicate="preserve">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.vcs.mergehints" />
       <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints" includes="icons/**, resources/**" />
       <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
@@ -135,7 +148,7 @@
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-languages-mergehints-languageModels">
       <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
-    <jar destfile="${build.layout}/languages/jetbrains.mps.vcs.mergehints-src.jar" duplicate="preserve">
+    <jar destfile="${build.layout}/vcs-core/languages/jetbrains.mps.vcs.mergehints-src.jar" duplicate="preserve">
       <fileset dir="${mps_home}/plugins/vcs-core/languages/mergehints/source_gen">
         <exclude name="**/trace.info" />
         <exclude name="**/exports" />
@@ -145,6 +158,16 @@
       <zipfileset file="${mps_home}/plugins/vcs-core/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-languages-mergehints-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.layout}/vcs-core/lib" />
+    <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models">
+      <fileset dir="${mps_home}/plugins/vcs-core/core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
+    </copyModels>
+    <jar destfile="${build.layout}/vcs-core/lib/vcs-core.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/vcs-core" />
+      <zipfileset file="${mps_home}/plugins/vcs-core/core/jetbrains.mps.ide.vcs.core.msd" prefix="modules/jetbrains.mps.ide.vcs.core" />
+      <zipfileset dir="${mps_home}/plugins/vcs-core/core" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.core" />
+      <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models" prefix="modules/jetbrains.mps.ide.vcs.core/models" />
+    </jar>
     <echo file="${build.layout}/build.properties">mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
@@ -153,7 +176,10 @@
     <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
-  <target name="fetchDependencies" />
+  <target name="fetchDependencies">
+    <unjar src="${mps_home}/plugins/git4idea/lib/git4idea.jar" dest="${build.tmp}/default/git4idea_jar" />
+    <unjar src="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" dest="${build.tmp}/default/svn4idea_jar" />
+  </target>
   
   <target name="build" depends="assemble" />
   

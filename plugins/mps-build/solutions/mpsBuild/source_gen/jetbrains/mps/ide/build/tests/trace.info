@@ -7,7 +7,7 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/2085316548396374793">
     <file name="mpsImplementationStripping.xml">
-      <unit id="2085316548396374793" at="1,0,651,10" name="jetbrains.mps.ide.build.tests.mpsImplementationStripping" />
+      <unit id="2085316548396374793" at="1,0,654,10" name="jetbrains.mps.ide.build.tests.mpsImplementationStripping" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/2883693069523015134">
@@ -67,7 +67,7 @@
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/617882099353331886">
     <file name="mpsJava.xml">
-      <unit id="617882099353331886" at="1,0,479,10" name="jetbrains.mps.ide.build.tests.mpsJava" />
+      <unit id="617882099353331886" at="1,0,477,10" name="jetbrains.mps.ide.build.tests.mpsJava" />
     </file>
   </root>
   <root nodeRef="r:42d04941-551b-420d-9485-a5f496e15594(jetbrains.mps.ide.build.tests)/6238501899265293051">

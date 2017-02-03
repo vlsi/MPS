@@ -179,6 +179,7 @@
           <module ref="e55e6749-03cb-4ea7-9695-2322bab791c1(jetbrains.mps.lang.test.matcher)" />
           <module ref="707c4fde-f79a-44b5-b3d7-b5cef8844ccf(jetbrains.mps.lang.test.runtime)" />
           <module ref="9a4afe51-f114-4595-b5df-048ce3c596be(jetbrains.mps.runtime)" />
+          <module ref="5004e7d9-a353-4cb0-960a-68fc804bd95d(jetbrains.mps.samples.JavaKaja)" />
         </dependencies>
         <classpath>
           <entry path="." />
@@ -325,12 +326,13 @@
   
   <target name="module-tests" depends="assemble, test.implementationStripping" />
   
-  <target name="java.compile.jetbrains.mps.build.stripping.tests" depends="fetchDependencies">
+  <target name="java.compile.jetbrains.mps.build.stripping.tests" depends="java.compile.jetbrains.mps.samples.JavaKaja, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" />
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.build.stripping.tests" fork="false" encoding="utf8" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src path="${basedir}/testbench/testsolutions/jetbrains.mps.build.stripping.tests/test_gen/" />
       <classpath>
+        <pathelement path="${build.tmp}/java/out/jetbrains.mps.samples.JavaKaja" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
@@ -351,6 +353,7 @@
         <fileset file="${artifacts.mps}/lib/mps-icons.jar" />
         <fileset file="${artifacts.mps}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.mps}/plugins/mps-testing/lib/jetbrains.mps.lang.test.util.jar" />
+        <fileset file="${basedir}/samples/robot_Kaja/solutions/JavaKajak/images/kaja_images.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />

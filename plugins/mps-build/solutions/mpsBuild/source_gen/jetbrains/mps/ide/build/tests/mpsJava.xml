@@ -211,9 +211,8 @@
       <library file="${artifacts.mps}/lib/mps-tool.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <library file="${artifacts.mps}/lib/mps-workbench.jar" />
-      <library file="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.basePlatform.jar" />
-      <library file="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.jar" />
-      <library file="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.platform.jar" />
+      <library file="${artifacts.mps}/plugins/mps-java-workbench/lib/mps-java-platform.jar" />
+      <library file="${artifacts.mps}/plugins/mps-java-workbench/lib/mps-java-workbench.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />
@@ -396,9 +395,8 @@
       <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.basePlatform.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.jar" />
-      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/languages/jetbrains.mps.ide.java.platform.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/lib/mps-java-platform.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-java-workbench/lib/mps-java-workbench.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.matcher.jar" />

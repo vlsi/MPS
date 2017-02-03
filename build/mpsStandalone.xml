@@ -56,18 +56,6 @@
     <copy todir="${build.layout}/plugins/cvsIntegration">
       <fileset dir="${basedir}/plugins/cvsIntegration" />
     </copy>
-    <mkdir dir="${build.layout}/plugins/svn4idea" />
-    <copy todir="${build.layout}/plugins/svn4idea">
-      <fileset dir="${basedir}/plugins/svn4idea">
-        <exclude name="**/*.zip" />
-      </fileset>
-    </copy>
-    <mkdir dir="${build.layout}/plugins/git4idea" />
-    <copy todir="${build.layout}/plugins/git4idea">
-      <fileset dir="${basedir}/plugins/git4idea">
-        <exclude name="**/*.zip" />
-      </fileset>
-    </copy>
     <mkdir dir="${build.layout}/plugins/terminal" />
     <copy todir="${build.layout}/plugins/terminal">
       <fileset dir="${basedir}/plugins/terminal" />
