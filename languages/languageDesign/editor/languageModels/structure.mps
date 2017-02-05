@@ -3351,6 +3351,12 @@
     <property role="34LRSv" value="ref. presentation" />
     <property role="EcuMT" value="625126330682908270" />
     <ref role="1TJDcQ" node="fBEYTCT" resolve="EditorCellModel" />
+    <node concept="1TJgyj" id="6K3nYZv1g25" role="1TKVEi">
+      <property role="IQ2ns" value="7783170064869818501" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="referentPresentation" />
+      <ref role="20lvS9" node="601LQojMcdN" resolve="QueryFunction_RefPresentation" />
+    </node>
     <node concept="PrWs8" id="7x0o_8QOa6J" role="PzmwI">
       <ref role="PrY4T" to="tpck:64$4ecGX64Q" resolve="ImplementationWithStubPart" />
     </node>

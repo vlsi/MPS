@@ -2254,6 +2254,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.EditorCellModel", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0xf9eafb9a39L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x612410e32cf46136L);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/625126330682908270");
+    b.aggregate("referentPresentation", 0x6c035fefdf050085L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L).optional(true).ordered(true).multiple(false).origin("7783170064869818501").done();
     b.kind(ConceptKind.IMPLEMENTATION_WITH_STUB, StaticScope.GLOBAL);
     b.alias("ref. presentation");
     return b.create();

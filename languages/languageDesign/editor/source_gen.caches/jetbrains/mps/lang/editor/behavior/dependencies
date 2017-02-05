@@ -314,6 +314,7 @@
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_Generic_Item_Handler__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_PropertyPostfixHints_GetPostfixes__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_PropertyValues_GetValues__BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReferentPrimary__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_CustomChildConcept_Query__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Create__BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_Group_Query__BehaviorDescriptor" />
@@ -1182,6 +1183,30 @@
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReferentPrimary_BehaviorDescriptor" file="CellMenuPart_ReferentPrimary_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReferentPrimary__BehaviorDescriptor" file="CellMenuPart_ReferentPrimary__BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.AccessPrivileges" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SJavaCompoundTypeImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SMethodBuilder" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.SModifiersImpl" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
+    <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory" />
+    <classNode dependClassName="jetbrains.mps.smodel.language.ConceptRegistry" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChildPrimary_BehaviorDescriptor" file="CellMenuPart_ReplaceChildPrimary_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Deprecated" />

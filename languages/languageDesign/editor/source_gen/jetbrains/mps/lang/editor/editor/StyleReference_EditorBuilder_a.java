@@ -16,6 +16,8 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -101,7 +103,7 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
     }
 
     private EditorCell createReferencePresentation_d8oyft_a0a0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "style");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefault(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7e9b10ab1edbd2fbL, 0x7e9b10ab1edbd57eL, "style")));
       editorCell.setCellId("ReferencePresentation_d8oyft_a0a0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);
