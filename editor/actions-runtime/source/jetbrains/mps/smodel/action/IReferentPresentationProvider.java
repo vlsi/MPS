@@ -27,33 +27,37 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
- * Provides a textual presentation of target node in completion menu.
+ * Provides a textual presentation of a referent node.
  *
  * @author Radimir.Sorokin
  */
 public interface IReferentPresentationProvider {
 
   @NotNull
-  String getPresentation(@NotNull SNode sourceNode, @NotNull SNode targetNode);
+  String getPresentation(@NotNull SNode referenceNode, @NotNull SNode referentNode);
 
   /**
-   * Default presentation.
-   * Uses when language designer doesn't specify another one.
+   * Referent presentation that used by editor in substitute menu & ref. presentation cells when language designer doesn't specify another one.
    */
+  IReferentPresentationProvider DEFAULT = (referenceNode, referentNode) -> referentNode.getPresentation();
+
+  /**
+   * TODO 3.4->3.5 compatibility method. after 3.5 use {@link #DEFAULT} instead
+   */
+  @ToRemove(version = 2017.2)
   static IReferentPresentationProvider getDefault(@NotNull SReferenceLink link) {
-    return (sourceNode, targetNode) -> {
-      //legacy interoperability. Remove after 3.5
+    return (referenceNode, referentNode) -> {
       String legacyPresentation =
-          ModelConstraints.getReferenceDescriptor(sourceNode, link).getReferencePresentation(targetNode, false, false, false);
+          ModelConstraints.getReferenceDescriptor(referenceNode, link).getReferencePresentation(referentNode, false, false, false);
       if (legacyPresentation != null) {
         return legacyPresentation;
       }
-      return targetNode.getPresentation();
+      return referentNode.getPresentation();
     };
   }
 
   /**
-   * @deprecated use {@link #getDefault(SReferenceLink)} instead
+   * @deprecated use {@link #getDefault(SReferenceLink)} (for 3.4->3.5 compatibility) instead
    */
   @Deprecated
   @ToRemove(version = 3.5)
