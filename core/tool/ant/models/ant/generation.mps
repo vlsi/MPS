@@ -7,7 +7,6 @@
   <imports>
     <import index="644x" ref="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
     <import index="rg95" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant.types(Ant/)" />
-    <import index="67b4" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant.types.resources(Ant/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="gola" ref="847a3235-09f9-403c-b6a9-1c294a212e92/java:org.apache.tools.ant(Ant/)" />
     <import index="asz6" ref="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
@@ -90,6 +89,7 @@
       <concept id="1068580123165" name="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" flags="ig" index="3clFb_">
         <property id="1178608670077" name="isAbstract" index="1EzhhJ" />
       </concept>
+      <concept id="1068580123152" name="jetbrains.mps.baseLanguage.structure.EqualsExpression" flags="nn" index="3clFbC" />
       <concept id="1068580123155" name="jetbrains.mps.baseLanguage.structure.ExpressionStatement" flags="nn" index="3clFbF">
         <child id="1068580123156" name="expression" index="3clFbG" />
       </concept>
@@ -106,6 +106,9 @@
         <property id="1068580123138" name="value" index="3clFbU" />
       </concept>
       <concept id="1068580123140" name="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" flags="ig" index="3clFbW" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581242878" name="jetbrains.mps.baseLanguage.structure.ReturnStatement" flags="nn" index="3cpWs6">
         <child id="1068581517676" name="expression" index="3cqZAk" />
@@ -113,6 +116,7 @@
       <concept id="1068581242864" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" flags="nn" index="3cpWs8">
         <child id="1068581242865" name="localVariableDeclaration" index="3cpWs9" />
       </concept>
+      <concept id="1068581242869" name="jetbrains.mps.baseLanguage.structure.MinusExpression" flags="nn" index="3cpWsd" />
       <concept id="1068581242863" name="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" flags="nr" index="3cpWsn" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1204053956946" name="jetbrains.mps.baseLanguage.structure.IMethodCall" flags="ng" index="1ndlxa">
@@ -134,7 +138,6 @@
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
       </concept>
-      <concept id="1073239437375" name="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" flags="nn" index="3y3z36" />
       <concept id="1178549954367" name="jetbrains.mps.baseLanguage.structure.IVisible" flags="ng" index="1B3ioH">
         <child id="1178549979242" name="visibility" index="1B3o_S" />
       </concept>
@@ -144,9 +147,16 @@
       <concept id="1144230876926" name="jetbrains.mps.baseLanguage.structure.AbstractForStatement" flags="nn" index="1DupvO">
         <child id="1144230900587" name="variable" index="1Duv9x" />
       </concept>
+      <concept id="6329021646629104957" name="jetbrains.mps.baseLanguage.structure.TextCommentPart" flags="nn" index="3SKdUq">
+        <property id="6329021646629104958" name="text" index="3SKdUp" />
+      </concept>
+      <concept id="6329021646629104954" name="jetbrains.mps.baseLanguage.structure.SingleLineComment" flags="nn" index="3SKdUt">
+        <child id="6329021646629175155" name="commentPart" index="3SKWNk" />
+      </concept>
       <concept id="1146644602865" name="jetbrains.mps.baseLanguage.structure.PublicVisibility" flags="nn" index="3Tm1VV" />
       <concept id="1146644623116" name="jetbrains.mps.baseLanguage.structure.PrivateVisibility" flags="nn" index="3Tm6S6" />
       <concept id="1146644641414" name="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" flags="nn" index="3Tmbuc" />
+      <concept id="1080120340718" name="jetbrains.mps.baseLanguage.structure.AndExpression" flags="nn" index="1Wc70l" />
     </language>
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core">
       <concept id="1169194658468" name="jetbrains.mps.lang.core.structure.INamedConcept" flags="ng" index="TrEIO">
@@ -545,29 +555,186 @@
         </node>
         <node concept="3clFbJ" id="4Vsuddjh5hB" role="3cqZAp">
           <node concept="3clFbS" id="4Vsuddjh5hC" role="3clFbx">
-            <node concept="3clFbF" id="4Vsuddjh5hD" role="3cqZAp">
-              <node concept="2OqwBi" id="4Vsuddjh5hE" role="3clFbG">
-                <node concept="37vLTw" id="2BHiRxeuCqq" role="2Oq$k0">
-                  <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+            <node concept="3cpWs6" id="4Y7Caw8vzuc" role="3cqZAp" />
+          </node>
+          <node concept="3clFbC" id="4Y7Caw8vyDS" role="3clFbw">
+            <node concept="37vLTw" id="3GM_nagTAvy" role="3uHU7B">
+              <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+            </node>
+            <node concept="10Nm6u" id="4Vsuddjh5hL" role="3uHU7w" />
+          </node>
+        </node>
+        <node concept="3clFbF" id="4Vsuddjh5hD" role="3cqZAp">
+          <node concept="2OqwBi" id="4Vsuddjh5hE" role="3clFbG">
+            <node concept="37vLTw" id="2BHiRxeuCqq" role="2Oq$k0">
+              <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+            </node>
+            <node concept="liA8E" id="4Vsuddjh5hG" role="2OqNvi">
+              <ref role="37wK5l" to="asz6:3GGnItM95YQ" resolve="addLibraryJar" />
+              <node concept="2OqwBi" id="4Vsuddjh5hH" role="37wK5m">
+                <node concept="37vLTw" id="3GM_nagT_Y_" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
                 </node>
-                <node concept="liA8E" id="4Vsuddjh5hG" role="2OqNvi">
-                  <ref role="37wK5l" to="asz6:3GGnItM95YQ" resolve="addLibraryJar" />
-                  <node concept="2OqwBi" id="4Vsuddjh5hH" role="37wK5m">
-                    <node concept="37vLTw" id="3GM_nagT_Y_" role="2Oq$k0">
-                      <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+                <node concept="liA8E" id="4Vsuddjh5hJ" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs8" id="4Y7Caw8wb_f" role="3cqZAp">
+          <node concept="3cpWsn" id="4Y7Caw8wb_g" role="3cpWs9">
+            <property role="TrG5h" value="fname" />
+            <node concept="3uibUv" id="4Y7Caw8wbxc" role="1tU5fm">
+              <ref role="3uigEE" to="wyt6:~String" resolve="String" />
+            </node>
+            <node concept="2OqwBi" id="4Y7Caw8wb_h" role="33vP2m">
+              <node concept="37vLTw" id="4Y7Caw8wb_i" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4Y7Caw8wb_j" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.getName():java.lang.String" resolve="getName" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3clFbJ" id="4Y7Caw8vzQO" role="3cqZAp">
+          <node concept="3clFbS" id="4Y7Caw8vzQQ" role="3clFbx">
+            <node concept="3SKdUt" id="4Y7Caw8v_vM" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8v_vO" role="3SKWNk">
+                <property role="3SKdUp" value="perhaps, it's a language.jar, register corresponding generator.jar, if any." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8v_wz" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8v_w_" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME note, this is a hack as build language doesn't record generators among MPSModulesClosure.generationDependenciesClosure()" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8w5MS" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8w5MU" role="3SKWNk">
+                <property role="3SKdUp" value="      (check MPSModulesPartitioner.buildExternalDependencies() and &lt;generate&gt; task template." />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8w68G" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8w68I" role="3SKWNk">
+                <property role="3SKdUp" value="      MPS used to guess (aka 'derive') generator module from language's module (ProjectPathUtil gave file with &quot;-generator.jar&quot; suffix" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8w69D" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8w69F" role="3SKWNk">
+                <property role="3SKdUp" value="      as classpath for packaged Generator module), in 2017.1 we try to switch to 'honest' modules, gradually moving towards generators listed" />
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8w6bg" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8w6bi" role="3SKWNk">
+                <property role="3SKdUp" value="      inside &lt;generate&gt; task. For the transition period, however, the code below mimics what we would have explicitly specified in &lt;generate&gt;." />
+              </node>
+            </node>
+            <node concept="3cpWs8" id="4Y7Caw8wg78" role="3cqZAp">
+              <node concept="3cpWsn" id="4Y7Caw8wg79" role="3cpWs9">
+                <property role="TrG5h" value="generatorJar" />
+                <node concept="3uibUv" id="4Y7Caw8wg6Q" role="1tU5fm">
+                  <ref role="3uigEE" to="guwi:~File" resolve="File" />
+                </node>
+                <node concept="2ShNRf" id="4Y7Caw8wg7a" role="33vP2m">
+                  <node concept="1pGfFk" id="4Y7Caw8wg7b" role="2ShVmc">
+                    <ref role="37wK5l" to="guwi:~File.&lt;init&gt;(java.lang.String,java.lang.String)" resolve="File" />
+                    <node concept="2OqwBi" id="4Y7Caw8wg7c" role="37wK5m">
+                      <node concept="37vLTw" id="4Y7Caw8wkDa" role="2Oq$k0">
+                        <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+                      </node>
+                      <node concept="liA8E" id="4Y7Caw8wg7e" role="2OqNvi">
+                        <ref role="37wK5l" to="guwi:~File.getParent():java.lang.String" resolve="getParent" />
+                      </node>
                     </node>
-                    <node concept="liA8E" id="4Vsuddjh5hJ" role="2OqNvi">
-                      <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                    <node concept="3cpWs3" id="4Y7Caw8wg7f" role="37wK5m">
+                      <node concept="Xl_RD" id="4Y7Caw8wg7g" role="3uHU7w">
+                        <property role="Xl_RC" value="-generator.jar" />
+                      </node>
+                      <node concept="2OqwBi" id="4Y7Caw8wg7h" role="3uHU7B">
+                        <node concept="liA8E" id="4Y7Caw8wg7i" role="2OqNvi">
+                          <ref role="37wK5l" to="wyt6:~String.substring(int,int):java.lang.String" resolve="substring" />
+                          <node concept="3cmrfG" id="4Y7Caw8wg7j" role="37wK5m">
+                            <property role="3cmrfH" value="0" />
+                          </node>
+                          <node concept="3cpWsd" id="4Y7Caw8wg7k" role="37wK5m">
+                            <node concept="2OqwBi" id="4Y7Caw8wg7l" role="3uHU7B">
+                              <node concept="37vLTw" id="4Y7Caw8wg7m" role="2Oq$k0">
+                                <ref role="3cqZAo" node="4Y7Caw8wb_g" resolve="fname" />
+                              </node>
+                              <node concept="liA8E" id="4Y7Caw8wg7n" role="2OqNvi">
+                                <ref role="37wK5l" to="wyt6:~String.length():int" resolve="length" />
+                              </node>
+                            </node>
+                            <node concept="3cmrfG" id="4Y7Caw8wg7o" role="3uHU7w">
+                              <property role="3cmrfH" value="4" />
+                            </node>
+                          </node>
+                        </node>
+                        <node concept="37vLTw" id="4Y7Caw8wg7p" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4Y7Caw8wb_g" resolve="fname" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>
               </node>
             </node>
+            <node concept="3clFbJ" id="4Y7Caw8wir9" role="3cqZAp">
+              <node concept="3clFbS" id="4Y7Caw8wirb" role="3clFbx">
+                <node concept="3clFbF" id="4Y7Caw8w6ei" role="3cqZAp">
+                  <node concept="2OqwBi" id="4Y7Caw8w6lo" role="3clFbG">
+                    <node concept="37vLTw" id="4Y7Caw8w6eg" role="2Oq$k0">
+                      <ref role="3cqZAo" to="644x:3ufQioQQtje" resolve="myWhatToDo" />
+                    </node>
+                    <node concept="liA8E" id="4Y7Caw8w6uP" role="2OqNvi">
+                      <ref role="37wK5l" to="asz6:3GGnItM95YQ" resolve="addLibraryJar" />
+                      <node concept="2OqwBi" id="4Y7Caw8wl0J" role="37wK5m">
+                        <node concept="37vLTw" id="4Y7Caw8wky3" role="2Oq$k0">
+                          <ref role="3cqZAo" node="4Y7Caw8wg79" resolve="generatorJar" />
+                        </node>
+                        <node concept="liA8E" id="4Y7Caw8wle4" role="2OqNvi">
+                          <ref role="37wK5l" to="guwi:~File.getAbsolutePath():java.lang.String" resolve="getAbsolutePath" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node concept="2OqwBi" id="4Y7Caw8wj1X" role="3clFbw">
+                <node concept="37vLTw" id="4Y7Caw8wiUr" role="2Oq$k0">
+                  <ref role="3cqZAo" node="4Y7Caw8wg79" resolve="generatorJar" />
+                </node>
+                <node concept="liA8E" id="4Y7Caw8wja4" role="2OqNvi">
+                  <ref role="37wK5l" to="guwi:~File.isFile():boolean" resolve="isFile" />
+                </node>
+              </node>
+            </node>
+            <node concept="3SKdUt" id="4Y7Caw8wm4i" role="3cqZAp">
+              <node concept="3SKdUq" id="4Y7Caw8wm4k" role="3SKWNk">
+                <property role="3SKdUp" value="FIXME if I don't fix build language templates to list generator.jar explicitly, shall account for lang-N-generator.jar here to support multiple generators per language case." />
+              </node>
+            </node>
           </node>
-          <node concept="3y3z36" id="4Vsuddjh5hK" role="3clFbw">
-            <node concept="10Nm6u" id="4Vsuddjh5hL" role="3uHU7w" />
-            <node concept="37vLTw" id="3GM_nagTAvy" role="3uHU7B">
-              <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+          <node concept="1Wc70l" id="4Y7Caw8v$uL" role="3clFbw">
+            <node concept="2OqwBi" id="4Y7Caw8v$Qq" role="3uHU7B">
+              <node concept="37vLTw" id="4Y7Caw8v$Ez" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Vsuddjh5hy" resolve="file" />
+              </node>
+              <node concept="liA8E" id="4Y7Caw8v_2Q" role="2OqNvi">
+                <ref role="37wK5l" to="guwi:~File.isFile():boolean" resolve="isFile" />
+              </node>
+            </node>
+            <node concept="2OqwBi" id="4Y7Caw8v_cA" role="3uHU7w">
+              <node concept="37vLTw" id="4Y7Caw8wb_l" role="2Oq$k0">
+                <ref role="3cqZAo" node="4Y7Caw8wb_g" resolve="fname" />
+              </node>
+              <node concept="liA8E" id="4Y7Caw8v_nQ" role="2OqNvi">
+                <ref role="37wK5l" to="wyt6:~String.endsWith(java.lang.String):boolean" resolve="endsWith" />
+                <node concept="Xl_RD" id="4Y7Caw8v_qq" role="37wK5m">
+                  <property role="Xl_RC" value=".jar" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
