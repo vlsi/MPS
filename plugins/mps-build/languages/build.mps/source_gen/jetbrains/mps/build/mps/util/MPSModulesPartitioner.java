@@ -139,7 +139,7 @@ public class MPSModulesPartitioner {
 
     public void fill(Map<SNode, MPSModulesPartitioner.Node> map) {
       if (SNodeOperations.isInstanceOf(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module"))) {
-        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions().skipExternalModules()).generationDependenciesClosure();
+        MPSModulesClosure closure = new MPSModulesClosure(SNodeOperations.cast(module, MetaAdapterFactory.getConcept(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x48e82d508331930cL, "jetbrains.mps.build.mps.structure.BuildMps_Module")), new MPSModulesClosure.ModuleDependenciesOptions()).generationDependenciesClosure();
         for (SNode q : Sequence.fromIterable(closure.getAllModules())) {
           MPSModulesPartitioner.Node node = map.get(q);
           if (node != null) {
