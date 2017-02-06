@@ -150,7 +150,7 @@ public final class ModulesMiner {
       ModuleDescriptor moduleDescriptor = loadSourceModuleDescriptor(file);
       if (moduleDescriptor != null) {
         processExcludes(file, moduleDescriptor);
-        fillOutcome(new ModuleHandle(file, moduleDescriptor));
+        fillOutcome(new ModuleHandle(file, moduleDescriptor), true);
         return true; // unlike other tryXXX methods, here we make sure descriptor actually read
         // because of .iml files (see DescriptorIOFacade) that are treated as solution module and thus break
         // readModuleDescriptorsFromFolder assumption of a single descriptor per dir.
@@ -266,7 +266,7 @@ public final class ModulesMiner {
       ModuleDescriptor moduleDescriptor = loadDeploymentDescriptor(moduleHome, moduleXml);
       if (moduleDescriptor != null) {
         processExcludes(moduleXml, moduleDescriptor); // do I really need to exclude anything for DD? There's source module, indeed.
-        fillOutcome(new ModuleHandle(moduleXml, moduleDescriptor));
+        fillOutcome(new ModuleHandle(moduleXml, moduleDescriptor), false);
       }
       // even if we didn't succeed to read a module, presence of META-INF/module.xml prevents processing of any other possible
       // module location under moduleHome
@@ -330,6 +330,9 @@ public final class ModulesMiner {
    * NOTE: single file could trigger more than one module loaded (e.g. lang.mpl loads generators), returned value
    * is the 'primary' module, i.e. language. Other loaded modules are available in {@link #getCollectedModules()}
    *
+   * Note, loading a file with language module not necessarily triggers loading of respective generators, only language source
+   * module would pick generator modules up. Deployed language doesn't load generators.
+   *
    * Please do not use this method, it gonna fade away. With few modules coming from the same file, its API is not handy.
    *
    * @param file descriptor file to parse for module information
@@ -338,13 +341,16 @@ public final class ModulesMiner {
   @NotNull
   public ModuleHandle loadModuleHandle(@NotNull IFile file) {
     final ModuleHandle moduleHandle = new ModuleHandle(file, loadModuleDescriptor(file));
-    fillOutcome(moduleHandle);
+    fillOutcome(moduleHandle, !file.getPath().endsWith(SLASH_META_INF_MODULE_XML));
     return moduleHandle;
   }
 
-  private void fillOutcome(ModuleHandle moduleHandle) {
+  private void fillOutcome(ModuleHandle moduleHandle, boolean isSourceNotDeployment) {
     myOutcome.add(moduleHandle);
-    if (moduleHandle.getDescriptor() instanceof LanguageDescriptor) {
+    // Deployed Language and Generator modules have their own DD now, and their modules either listed (almost) directly, in GenerateTask (till the moment
+    // build language does this in the proper way for <generate> task), or SLibrary(dir) gives them when walks languages/ fs location.
+    // The only case when we need to extract generators out from language's MD is when we walk non-deployed module sources.
+    if (isSourceNotDeployment && moduleHandle.getDescriptor() instanceof LanguageDescriptor) {
       for (GeneratorDescriptor gd : ((LanguageDescriptor) moduleHandle.getDescriptor()).getGenerators()) {
         myOutcome.add(new ModuleHandle(moduleHandle.getFile(), gd));
       }

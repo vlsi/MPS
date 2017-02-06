@@ -167,6 +167,14 @@ public class SLibrary implements FileListener, MPSModuleOwner, Comparable<SLibra
 
   @Override
   public int compareTo(@NotNull SLibrary another) {
-    return getFile().getName().compareTo(another.getFile().getName());
+    String n1 = getFile().getName();
+    String n2 = another.getFile().getName();
+    // when comparing generator module, ensure it goes after any other non-generator module, to ensure languages come first.
+    // At the moment, ModuleRepositoryFacade is not capable to register generator for a language not yet known to the repo.
+    // Also see ModulesMiner.getCollectedModules()
+    if (n1.endsWith("-generator.jar") ^ n2.endsWith("-generator.jar")) {
+      return n1.endsWith("-generator.jar") ? 1 : -1;
+    }
+    return n1.compareTo(n2);
   }
 }
