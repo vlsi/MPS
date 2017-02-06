@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 public class ReferencesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
 
-  private boolean myInitialized;
+  protected boolean myInitialized;
 
   public ReferencesTreeNode(SNode node) {
     myNode = node;

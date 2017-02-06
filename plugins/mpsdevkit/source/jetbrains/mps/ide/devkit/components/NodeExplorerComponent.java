@@ -17,18 +17,23 @@ package jetbrains.mps.ide.devkit.components;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
+import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
+import jetbrains.mps.ide.ui.smodel.ReferencesTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode.NodeChildrenProvider;
+import jetbrains.mps.openapi.navigation.EditorNavigator;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelReadRunnable;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import org.jetbrains.mps.openapi.language.SProperty;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
@@ -39,7 +44,7 @@ public class NodeExplorerComponent {
   private final MyTree myTree = new MyTree();
   private final MPSProject myProject;
   private SNodeReference myNode;
-  private JScrollPane myScrollPane;
+  private final JScrollPane myScrollPane;
 
   public NodeExplorerComponent(MPSProject mpsProject) {
     myProject = mpsProject;
@@ -61,7 +66,7 @@ public class NodeExplorerComponent {
     myTree.rebuildLater();
   }
 
-  private class MyTree extends MPSTree {
+  private class MyTree extends MPSTree implements NodeChildrenProvider {
     @Override
     protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
       return null;
@@ -74,120 +79,82 @@ public class NodeExplorerComponent {
 
     @Override
     protected MPSTreeNode rebuild() {
-      if (myNode == null || myNode.resolve(myProject.getRepository()) == null) {
-        return new TextTreeNode("no node");
+      if (myNode == null) {
+        return new TextTreeNode("Null node reference");
+      } else if (myNode.resolve(myProject.getRepository()) == null) { //TODO: use global repository here? Node reference can come from anywhere.
+        return new TextTreeNode(String.format("Node reference %s can't be resolved", myNode.toString()));
       } else {
-        TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(myProject.getRepository()));
+        TextTreeNode textTreeNode = new TextTreeNode("Node");
+        SNodeTreeNode sNodeTreeNode = new SNodeTreeNodeWithType(myNode.resolve(myProject.getRepository()));
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
     }
+
+    @Override
+    public void populate(SNodeTreeNode treeNode) {
+      SNode n = treeNode.getSNode();
+      if (n == null || n.getModel() == null) {
+        return;
+      }
+
+      treeNode.add(new ConceptTreeNode(n));
+      treeNode.add(new PropertiesTreeNode(n));
+      treeNode.add(new ReferencesTreeNode(n) {
+        @Override
+        protected void doInit() {
+          // TODO: move to base ReferencesTreeNode class as option?
+          for (final SReference ref : getSNode().getReferences()) {
+            final SNode targetNode = ref.getTargetNode();
+            if (targetNode != null) {
+              add(new SNodeTreeNodeWithType(targetNode, ref.getLink().getName()));
+            } else {
+              // Try to show user as much info as possible
+              add(new TextTreeNode(Nodes.Unknown, String.valueOf(ref.getTargetNodeReference())));
+            }
+          }
+          myInitialized = true;
+        }
+      });
+    }
+
+    @Override
+    protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
+      // TODO: update navigation logic to avoid this copy/paste
+      // Copied from jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree.doubleClick()
+      if (nodeToClick instanceof NodeTargetProvider) {
+        final SNodeReference navigationTarget = ((NodeTargetProvider) nodeToClick).getNavigationTarget();
+        if (navigationTarget != null) {
+          new EditorNavigator(myProject).shallFocus(true).selectIfChild().open(navigationTarget);
+          return;
+        }
+        // fall-through
+      }
+      super.doubleClick(nodeToClick);
+    }
   }
 
-  private class MySNodeTreeNode extends SNodeTreeNode {
+  private class SNodeTreeNodeWithType extends SNodeTreeNode {
 
-    public MySNodeTreeNode(SNode node) {
+    public SNodeTreeNodeWithType(SNode node) {
       super(node);
     }
 
-    public MySNodeTreeNode(SNode node, String role) {
+    public SNodeTreeNodeWithType(SNode node, String role) {
       super(node, role);
     }
 
     @Override
     protected void doUpdatePresentation_internal() {
       super.doUpdatePresentation_internal();
+
+      // TODO: add to base SNodeTreeNode class and get rid of this inner class?
       String string = getText();
       final SNode typeOf = TypeChecker.getInstance().getTypeOf(getSNode());
       if (typeOf != null) {
         String typeInfo = " {" + PresentationManager.toString(typeOf) + "}";
         setText(string + typeInfo);
       }
-    }
-
-    @Override
-    protected void doInit() {
-      this.removeAllChildren();
-      if (getSNode() == null) return;
-
-      add(new TextTreeNode("Concept = " + getSNode().getConcept().getQualifiedName()));
-
-      for (SNode childNode : getSNode().getChildren()) {
-        add(new MySNodeTreeNode(childNode, childNode.getRoleInParent()));
-      }
-      add(new MyPropertiesNode(getSNode()));
-      add(new MyReferentsNode(getSNode()));
-      myInitialized = true;
-    }
-  }
-
-  // FIXME see jetbrains.mps.ide.ui.smodel.ReferenceTreeNode
-  private class MyReferentsNode extends TextTreeNode {
-    private SNodeReference myNode;
-    private boolean myIsInitialized = false;
-
-    public MyReferentsNode(SNode node) {
-      super("referents");
-      myNode = new jetbrains.mps.smodel.SNodePointer(node);
-    }
-
-    @Override
-    public boolean isLeaf() {
-      return false;
-    }
-
-    @Override
-    protected void doInit() {
-      SNode node = myNode.resolve(myProject.getRepository());
-      if (node != null) {
-        for (SReference reference : node.getReferences()) {
-          SNode referent = reference.getTargetNode();
-          if (referent != null) {
-            add(new MySNodeTreeNode(referent, reference.getRole()));
-          }
-        }
-      }
-      myIsInitialized = true;
-    }
-
-    @Override
-    public boolean isInitialized() {
-      return myIsInitialized;
-    }
-  }
-
-  // FIXME there's PropertyTreeNode implementation, almost identical, re-use
-  private class MyPropertiesNode extends TextTreeNode {
-    private SNodeReference myNode;
-    private boolean myIsInitialized = false;
-
-    public MyPropertiesNode(SNode node) {
-      super("properties");
-      myNode = new jetbrains.mps.smodel.SNodePointer(node);
-    }
-
-    @Override
-    public boolean isLeaf() {
-      return false;
-    }
-
-    @Override
-    protected void doInit() {
-      SNode node = myNode.resolve(myProject.getRepository());
-      if (node != null) {
-        for (SProperty prop : node.getProperties()) {
-          TextTreeNode tn = new TextTreeNode(prop.getName() + " : " + SNodeAccessUtil.getProperty(node, prop));
-          tn.setIcon(Icons.DEFAULT_ICON);
-          add(tn);
-        }
-      }
-      myIsInitialized = true;
-    }
-
-    @Override
-    public boolean isInitialized() {
-      return myIsInitialized;
     }
   }
 }

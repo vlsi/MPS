@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
 import org.jetbrains.annotations.Nullable;
@@ -30,9 +30,9 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
   public ConceptTreeNode(SNode node) {
     myNode = node;
     SConcept concept = myNode.getConcept();
-    setNodeIdentifier(concept.getName());
+    setNodeIdentifier("Concept: " + concept.getName());
     myConceptDeclaration = concept.getSourceNode();
-    setIcon(IdeIcons.DEFAULT_CONCEPT_ICON);
+    setIcon(Nodes.Structure);
   }
 
   @Override
@@ -45,5 +45,10 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
   public SNodeReference getNavigationTarget() {
     // navigate to concept declaration, if any
     return myConceptDeclaration;
+  }
+
+  @Override
+  public boolean isLeaf() {
+    return true;
   }
 }
