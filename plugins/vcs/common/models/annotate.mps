@@ -7052,12 +7052,66 @@
                       <node concept="3clFbH" id="13$TqNLIgzg" role="3cqZAp" />
                       <node concept="3clFbJ" id="13$TqNLIgzh" role="3cqZAp">
                         <node concept="3y3z36" id="13$TqNLIgzi" role="3clFbw">
-                          <node concept="10Nm6u" id="13$TqNLIgzj" role="3uHU7w" />
                           <node concept="37vLTw" id="13$TqNLIgzk" role="3uHU7B">
                             <ref role="3cqZAo" node="13$TqNLIgye" resolve="myFileAnnotation" />
                           </node>
+                          <node concept="10Nm6u" id="13$TqNLIgzj" role="3uHU7w" />
                         </node>
                         <node concept="3clFbS" id="13$TqNLIgzl" role="3clFbx">
+                          <node concept="3SKdUt" id="7Tvsx7gwzs8" role="3cqZAp">
+                            <node concept="3SKdUq" id="7Tvsx7gwzsa" role="3SKWNk">
+                              <property role="3SKdUp" value="Now annotation is build asynchroniously, and is reloaded after build finished (can be done several times)" />
+                            </node>
+                          </node>
+                          <node concept="3clFbF" id="7Tvsx7gvR4V" role="3cqZAp">
+                            <node concept="2OqwBi" id="7Tvsx7gvRXn" role="3clFbG">
+                              <node concept="37vLTw" id="7Tvsx7gvR4T" role="2Oq$k0">
+                                <ref role="3cqZAo" node="13$TqNLIgye" resolve="myFileAnnotation" />
+                              </node>
+                              <node concept="liA8E" id="7Tvsx7gvSy9" role="2OqNvi">
+                                <ref role="37wK5l" to="8voc:~FileAnnotation.setReloader(com.intellij.util.Consumer):void" resolve="setReloader" />
+                                <node concept="1bVj0M" id="7Tvsx7gvTow" role="37wK5m">
+                                  <node concept="3clFbS" id="7Tvsx7gvTox" role="1bW5cS">
+                                    <node concept="3clFbF" id="7Tvsx7gwezb" role="3cqZAp">
+                                      <node concept="1rXfSq" id="7Tvsx7gweza" role="3clFbG">
+                                        <ref role="37wK5l" node="13$TqNLIflz" resolve="annotate" />
+                                        <node concept="37vLTw" id="7Tvsx7gwhUl" role="37wK5m">
+                                          <ref role="3cqZAo" node="13$TqNLIguV" resolve="editorComponent" />
+                                        </node>
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node concept="37vLTG" id="7Tvsx7gwcHu" role="1bW2Oz">
+                                    <property role="TrG5h" value="newFA" />
+                                    <node concept="3uibUv" id="7Tvsx7gwdb4" role="1tU5fm">
+                                      <ref role="3uigEE" to="8voc:~FileAnnotation" resolve="FileAnnotation" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node concept="3SKdUt" id="7Tvsx7gw_Ch" role="3cqZAp">
+                            <node concept="3SKdUq" id="7Tvsx7gw_Cj" role="3SKWNk">
+                              <property role="3SKdUp" value="if annotation is not ready yet - just wait for reload" />
+                            </node>
+                          </node>
+                          <node concept="3clFbJ" id="7Tvsx7gwjcj" role="3cqZAp">
+                            <node concept="3clFbS" id="7Tvsx7gwjcl" role="3clFbx">
+                              <node concept="3cpWs6" id="7Tvsx7gw$Oy" role="3cqZAp" />
+                            </node>
+                            <node concept="3clFbC" id="7Tvsx7gwzY5" role="3clFbw">
+                              <node concept="2OqwBi" id="7Tvsx7gwkKo" role="3uHU7B">
+                                <node concept="37vLTw" id="7Tvsx7gwk6F" role="2Oq$k0">
+                                  <ref role="3cqZAo" node="13$TqNLIgye" resolve="myFileAnnotation" />
+                                </node>
+                                <node concept="liA8E" id="7Tvsx7gwl6r" role="2OqNvi">
+                                  <ref role="37wK5l" to="8voc:~FileAnnotation.getRevisions():java.util.List" resolve="getRevisions" />
+                                </node>
+                              </node>
+                              <node concept="10Nm6u" id="7Tvsx7gwmma" role="3uHU7w" />
+                            </node>
+                          </node>
                           <node concept="3clFbF" id="13$TqNLIgzm" role="3cqZAp">
                             <node concept="2OqwBi" id="13$TqNLIgzn" role="3clFbG">
                               <node concept="liA8E" id="13$TqNLIgzo" role="2OqNvi">

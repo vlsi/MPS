@@ -33,6 +33,7 @@ import com.intellij.openapi.vcs.VcsException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.vcs.AbstractVcsHelper;
 import java.util.Arrays;
+import com.intellij.util.Consumer;
 import com.intellij.openapi.progress.ProgressManager;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -135,6 +136,16 @@ public class AnnotationHelper {
         }
 
         if (myFileAnnotation != null) {
+          // Now annotation is build asynchroniously, and is reloaded after build finished (can be done several times) 
+          myFileAnnotation.setReloader(new Consumer<FileAnnotation>() {
+            public void consume(FileAnnotation newFA) {
+              annotate(editorComponent);
+            }
+          });
+          // if annotation is not ready yet - just wait for reload 
+          if (myFileAnnotation.getRevisions() == null) {
+            return;
+          }
           editorComponent.getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
             public void run() {
               AnnotationColumn annotationColumn = new AnnotationColumn(leftEditorHighlighter, root, myFileAnnotation, vcs, file);
