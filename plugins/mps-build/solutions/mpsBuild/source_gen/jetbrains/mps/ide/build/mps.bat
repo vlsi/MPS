@@ -64,9 +64,9 @@ IF EXIST "%JRE%\lib\amd64" SET BITS=64
 :: ---------------------------------------------------------------------
 IF NOT "%IDEA_PROPERTIES%" == "" SET IDE_PROPERTIES_PROPERTY="-Didea.properties.file=%IDEA_PROPERTIES%"
 
-SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS2017.1\idea%BITS%.exe.vmoptions
-SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\idea%BITS%.exe.vmoptions
-IF EXIST "%IDE_BIN_DIR%\win\idea%BITS%.exe.vmoptions" SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\idea%BITS%.exe.vmoptions
+SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS2017.1\mps%BITS%.exe.vmoptions
+SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\mps%BITS%.exe.vmoptions
+IF EXIST "%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions" SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions
 IF EXIST %USER_VM_OPTIONS_FILE% SET VM_OPTIONS_FILE=%USER_VM_OPTIONS_FILE%
 IF NOT "%IDEA_VM_OPTIONS%" == "" SET VM_OPTIONS_FILE=%IDEA_VM_OPTIONS%
 
