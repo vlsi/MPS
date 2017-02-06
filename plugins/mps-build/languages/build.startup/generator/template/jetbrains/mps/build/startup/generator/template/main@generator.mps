@@ -1401,7 +1401,7 @@
     </node>
     <node concept="2DRAP_" id="4eWOtElZZKu" role="2DRAPQ" />
     <node concept="2DRAP_" id="4eWOtEm1hvk" role="2DRAPQ">
-      <property role="2DPR8u" value="SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS20xx.x\idea%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="SET USER_VM_OPTIONS_FILE=%USERPROFILE%\.MPS20xx.x\mps%BITS%.exe.vmoptions" />
       <node concept="17Uvod" id="4eWOtEm1nYk" role="lGtFl">
         <property role="P4ACc" value="d5033cee-f632-44b6-b308-89d4fbde34ff/1731640411964205218/1731640411964798937" />
         <property role="2qtEX9" value="text" />
@@ -1412,7 +1412,7 @@
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <node concept="Xl_RD" id="4eWOtEm1o6O" role="37wK5m">
-                  <property role="Xl_RC" value="SET USER_VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\idea%%BITS%%.exe.vmoptions" />
+                  <property role="Xl_RC" value="SET USER_VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\mps%%BITS%%.exe.vmoptions" />
                 </node>
                 <node concept="2OqwBi" id="4eWOtEm1o6P" role="37wK5m">
                   <node concept="30H73N" id="4eWOtEm1o6Q" role="2Oq$k0" />
@@ -1427,10 +1427,10 @@
       </node>
     </node>
     <node concept="2DRAP_" id="4eWOtEm1h_a" role="2DRAPQ">
-      <property role="2DPR8u" value="SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\idea%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\mps%BITS%.exe.vmoptions" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm1iPV" role="2DRAPQ">
-      <property role="2DPR8u" value="IF EXIST &quot;%IDE_BIN_DIR%\win\idea%BITS%.exe.vmoptions&quot; SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\idea%BITS%.exe.vmoptions" />
+      <property role="2DPR8u" value="IF EXIST &quot;%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions&quot; SET VM_OPTIONS_FILE=%IDE_BIN_DIR%\win\mps%BITS%.exe.vmoptions" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm1k5T" role="2DRAPQ">
       <property role="2DPR8u" value="IF EXIST %USER_VM_OPTIONS_FILE% SET VM_OPTIONS_FILE=%USER_VM_OPTIONS_FILE%" />

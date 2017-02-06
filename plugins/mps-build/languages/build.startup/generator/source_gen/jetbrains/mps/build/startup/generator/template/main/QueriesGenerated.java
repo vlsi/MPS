@@ -63,7 +63,7 @@ public class QueriesGenerated {
     return String.format("  ECHO No JDK found. Please validate either %s_JDK, JDK_HOME or JAVA_HOME points to valid JDK installation.", BuildString__BehaviorDescriptor.getText_id3NagsOfTioI.invoke(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getReferenceLink(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x30a61e6d55f6abc9L, "branding")), MetaAdapterFactory.getContainmentLink(0xcf935df46994e9cL, 0xa132fa109541cba3L, 0x6b9a2011083b778dL, 0x54c4eb89feb230afL, "shortName")), null));
   }
   public static Object propertyMacro_GetPropertyValue_4881006832912793493(final PropertyMacroContext _context) {
-    return String.format("SET USER_VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\idea%%BITS%%.exe.vmoptions", MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode()));
+    return String.format("SET USER_VM_OPTIONS_FILE=%%USERPROFILE%%\\.%s\\mps%%BITS%%.exe.vmoptions", MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode()));
   }
   public static Object propertyMacro_GetPropertyValue_1731640411964953768(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b343774cL, 0x35ebd6e5b343774dL, "options"));
