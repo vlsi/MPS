@@ -12,6 +12,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_AbstractRequestDescription = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Address = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AddressReference = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_AddressType = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_AgendaItem = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Apple = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_Car = new ConceptPresentationBuilder().create();
@@ -60,6 +61,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_Address;
       case LanguageConceptSwitch.AddressReference:
         return props_AddressReference;
+      case LanguageConceptSwitch.AddressType:
+        return props_AddressType;
       case LanguageConceptSwitch.AgendaItem:
         return props_AgendaItem;
       case LanguageConceptSwitch.Apple:

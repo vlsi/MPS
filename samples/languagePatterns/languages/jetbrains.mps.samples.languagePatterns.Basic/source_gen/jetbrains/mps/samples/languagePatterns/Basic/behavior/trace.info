@@ -18,6 +18,9 @@
     <file name="AddressReference_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AddressReference_BehaviorDescriptor" />
     </file>
+    <file name="AddressType_BehaviorDescriptor.java">
+      <unit at="11,0,17,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.AddressType_BehaviorDescriptor" />
+    </file>
     <file name="Address_BehaviorDescriptor.java">
       <unit at="11,0,17,0" name="jetbrains.mps.samples.languagePatterns.Basic.behavior.Address_BehaviorDescriptor" />
     </file>

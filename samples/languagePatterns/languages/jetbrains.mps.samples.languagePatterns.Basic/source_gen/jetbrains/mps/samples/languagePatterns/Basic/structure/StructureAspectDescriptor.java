@@ -10,11 +10,14 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.adapter.ids.SConceptId;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.smodel.runtime.impl.ConceptDescriptorBuilder2;
+import jetbrains.mps.smodel.runtime.ConceptKind;
+import jetbrains.mps.smodel.runtime.StaticScope;
 
 public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptAbstractRequestDescription = createDescriptorForAbstractRequestDescription();
   /*package*/ final ConceptDescriptor myConceptAddress = createDescriptorForAddress();
   /*package*/ final ConceptDescriptor myConceptAddressReference = createDescriptorForAddressReference();
+  /*package*/ final ConceptDescriptor myConceptAddressType = createDescriptorForAddressType();
   /*package*/ final ConceptDescriptor myConceptAgendaItem = createDescriptorForAgendaItem();
   /*package*/ final ConceptDescriptor myConceptApple = createDescriptorForApple();
   /*package*/ final ConceptDescriptor myConceptCar = createDescriptorForCar();
@@ -59,7 +62,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAbstractRequestDescription, myConceptAddress, myConceptAddressReference, myConceptAgendaItem, myConceptApple, myConceptCar, myConceptCombinedPerformance, myConceptComponent, myConceptComponentUsage, myConceptConcert, myConceptContainer, myConceptDottedLine, myConceptDrawCommand, myConceptDrawLine, myConceptDrawRect, myConceptEmptyLine, myConceptFormDescription, myConceptFruit, myConceptFruitPlate, myConceptIncompleteCommand, myConceptItem, myConceptItemReference, myConceptLineStyle, myConceptListOfDrawCommands, myConceptOperationOnAddress, myConceptOrange, myConceptParticipant, myConceptPerformance, myConceptPerformanceWithTitle, myConceptRaceParticipant, myConceptRequest, myConceptSimplifiedFormDescription, myConceptSinger, myConceptSolidLine, myConceptSomeForm, myConceptStreetOperation, myConceptStringDescription, myConceptTruck, myConceptZipOperation);
+    return Arrays.asList(myConceptAbstractRequestDescription, myConceptAddress, myConceptAddressReference, myConceptAddressType, myConceptAgendaItem, myConceptApple, myConceptCar, myConceptCombinedPerformance, myConceptComponent, myConceptComponentUsage, myConceptConcert, myConceptContainer, myConceptDottedLine, myConceptDrawCommand, myConceptDrawLine, myConceptDrawRect, myConceptEmptyLine, myConceptFormDescription, myConceptFruit, myConceptFruitPlate, myConceptIncompleteCommand, myConceptItem, myConceptItemReference, myConceptLineStyle, myConceptListOfDrawCommands, myConceptOperationOnAddress, myConceptOrange, myConceptParticipant, myConceptPerformance, myConceptPerformanceWithTitle, myConceptRaceParticipant, myConceptRequest, myConceptSimplifiedFormDescription, myConceptSinger, myConceptSolidLine, myConceptSomeForm, myConceptStreetOperation, myConceptStringDescription, myConceptTruck, myConceptZipOperation);
   }
 
   @Override
@@ -72,6 +75,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptAddress;
       case LanguageConceptSwitch.AddressReference:
         return myConceptAddressReference;
+      case LanguageConceptSwitch.AddressType:
+        return myConceptAddressType;
       case LanguageConceptSwitch.AgendaItem:
         return myConceptAgendaItem;
       case LanguageConceptSwitch.Apple:
@@ -174,6 +179,15 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.baseLanguage.structure.Expression", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506fL);
     b.origin("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/5235060235297961269");
     b.associate("target", 0x48a6ab8c26b53536L).target(0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x48a6ab8c26b3f40bL).optional(false).origin("5235060235297961270").done();
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForAddressType() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.samples.languagePatterns.Basic", "AddressType", 0x7a6f7ef73988464bL, 0x8cc51182671c136eL, 0x68125646bda3d6b4L);
+    b.class_(false, false, false);
+    b.super_("jetbrains.mps.baseLanguage.structure.Type", 0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xf8c37f506dL);
+    b.origin("r:150e80ad-a158-4a95-9515-f61f51743da4(jetbrains.mps.samples.languagePatterns.Basic.structure)/7499151191354627764");
+    b.kind(ConceptKind.INTERFACE, StaticScope.GLOBAL);
+    b.alias("address");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForAgendaItem() {
