@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -117,6 +117,32 @@ public final class SModelName {
   public String getStereotype() {
     int atIndex = myValue.lastIndexOf('@');
     return atIndex != -1 ? myValue.substring(atIndex+1) : "";
+  }
+
+  /**
+   *
+   * @param newStereotype stereotype for the constructed name, or {@code null} to indicate new name
+   *        shall not specify stereotype (identical to {@link #withoutStereotype()}
+   * @return model name with {@linkplain #getLongName() qualified name} identical to this model name and with a given stereotype.
+   *         May return same instance if new stereotype is the same as actual.
+   */
+  @NotNull
+  public SModelName withStereotype(@Nullable CharSequence newStereotype) {
+    if (newStereotype == null) {
+      return withoutStereotype();
+    }
+    return new SModelName(getLongName(), newStereotype);
+  }
+
+  /**
+   * Construct a name with the identical {@linkplain #getLongName() qualified name}, and without any stereotype.
+   * May return {@code this} if there's no stereotype in the actual name ({@code SModelName} is immutable).
+   * @return model name without a stereotype, never {@code null}
+   */
+  @NotNull
+  public SModelName withoutStereotype() {
+    int atIndex = myValue.lastIndexOf('@');
+    return atIndex == -1 ? this : new SModelName(myValue.substring(0, atIndex)); // superfluous check for illegal chars, but no private cons.
   }
 
   @Override

@@ -22,10 +22,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
+import org.jetbrains.mps.openapi.model.SModelName;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_checkParameters;
+import jetbrains.mps.lang.core.plugin.Generate_Facet.Target_configure;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.runtime.evaluation.container.Properties;
@@ -79,15 +79,18 @@ public class JavaDebugEvaluate_Facet extends IFacet.Stub {
             case 0:
 
               for (GResource res : Sequence.fromIterable(input)) {
-                final SModel originalModel = res.status().getOutputModel();
+                final SModel outcomeModel = res.status().getOutputModel();
                 // The code below was copied from TransformingGenerationHandler 
                 final Wrappers._T<SNode> evaluator = new Wrappers._T<SNode>();
-                if (originalModel != null) {
-                  final TransientModelsModule module = Target_configure.vars(pa.global()).transientModelsProvider().getModule(res.module());
-                  final SModel newModel = module.createTransientModel(PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), SModelId.generate(), res.model().getModelName() + "@evaluate"));
-                  Target_checkParameters.vars(pa.global()).makeSession().getProject().getRepository().getModelAccess().runReadAction(new Runnable() {
+                if (outcomeModel != null) {
+                  // XXX would be better to create new module rather than expect output model to belong to transient module, but not sure if 
+                  //     there's any hidden assumption regarding Evaluator location (dependencies, module name, etc.) 
+                  final TransientModelsModule module = (TransientModelsModule) outcomeModel.getModule();
+                  SModelName newModelName = res.model().getName().withStereotype("evaluate");
+                  final SModel newModel = module.createTransientModel(PersistenceFacade.getInstance().createModelReference(module.getModuleReference(), SModelId.generate(), newModelName.getValue()));
+                  Target_configure.vars(pa.global()).transientModelsProvider().getRepository().getModelAccess().runReadAction(new Runnable() {
                     public void run() {
-                      CopyUtil.copyModelContent(originalModel, newModel);
+                      CopyUtil.copyModelContent(outcomeModel, newModel);
                       SModelOperations.validateLanguagesAndImports(newModel, false, false);
                       evaluator.value = SModelOperations.getRootByName(newModel, Properties.EVALUATOR_NAME);
                       if (evaluator.value != null) {
