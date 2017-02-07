@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.Arrays;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.generator.TransientModelsModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.ReflectionUtil;
@@ -49,9 +48,6 @@ public final class StaticMethodCall__BehaviorDescriptor extends BaseBHDescriptor
   }
 
   /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, @NotNull SModule module) {
-    if (module instanceof TransientModelsModule) {
-      module = ((TransientModelsModule) module).getOriginalModule();
-    }
     Method method = BaseMethodDeclaration__BehaviorDescriptor.getMethod_idhEwIAZT.invoke(SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x11857355952L, 0xf8c78301adL, "baseMethodDeclaration")), module);
     Object[] actualArguments = BaseMethodCall__BehaviorDescriptor.getActualArguments_idhEwI$gh.invoke(__thisNode__, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);

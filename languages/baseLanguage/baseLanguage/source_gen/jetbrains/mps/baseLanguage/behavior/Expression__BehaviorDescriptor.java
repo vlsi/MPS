@@ -42,6 +42,7 @@ public final class Expression__BehaviorDescriptor extends BaseBHDescriptor {
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
 
+  @Deprecated
   /*package*/ static Object eval_idhEwJgmp(@NotNull SNode __thisNode__, SModule module) {
     throw new UnsupportedOperationException(SNodeOperations.getDebugText(__thisNode__));
   }

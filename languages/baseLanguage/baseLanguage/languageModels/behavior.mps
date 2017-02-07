@@ -20,8 +20,6 @@
     <import index="tpcu" ref="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
     <import index="tp3r" ref="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
-    <import index="5h2r" ref="r:e985db5c-6ba2-43f6-94fe-1b4547c2cc5c(jetbrains.mps.baseLanguage.search)" />
-    <import index="inbo" ref="r:22db907b-8239-4180-8797-e91cea0b9573(jetbrains.mps.smodel.search)" />
     <import index="if8w" ref="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)" />
     <import index="pz2c" ref="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" />
     <import index="89o2" ref="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" />
@@ -43,10 +41,8 @@
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" />
     <import index="zkib" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.reloading(MPS.Core/)" />
     <import index="q7tw" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:org.apache.log4j(MPS.Core/)" />
-    <import index="ap4t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.generator(MPS.Core/)" />
     <import index="wyt6" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.lang(JDK/)" />
     <import index="33ny" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util(JDK/)" />
-    <import index="dxuu" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:javax.swing(JDK/)" />
     <import index="tpen" ref="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" />
     <import index="ncw5" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.util.annotation(MPS.Core/)" />
     <import index="ze1i" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.smodel.runtime(MPS.Core/)" />
@@ -418,6 +414,10 @@
       </concept>
     </language>
     <language id="f2801650-65d5-424e-bb1b-463a8781b786" name="jetbrains.mps.baseLanguage.javadoc">
+      <concept id="2546654756694997551" name="jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag" flags="ng" index="92FcH">
+        <child id="2546654756694997556" name="reference" index="92FcQ" />
+        <child id="3106559687488913694" name="line" index="2XjZqd" />
+      </concept>
       <concept id="5858074156537516430" name="jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag" flags="ng" index="x79VA">
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
@@ -442,6 +442,9 @@
       </concept>
       <concept id="2217234381367049075" name="jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag" flags="ng" index="VVOAv">
         <child id="3106559687488741665" name="line" index="2Xj1qM" />
+      </concept>
+      <concept id="2217234381367530195" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference" flags="ng" index="VXe0Z">
+        <reference id="2217234381367530196" name="methodDeclaration" index="VXe0S" />
       </concept>
       <concept id="8970989240999019145" name="jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart" flags="ng" index="1dT_AA">
         <child id="6962838954693749192" name="tag" index="qph3F" />
@@ -35963,6 +35966,29 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="hJrm0Br" role="1B3o_S" />
+      <node concept="P$JXv" id="2E8HqJ77wsT" role="lGtFl">
+        <node concept="TZ5HI" id="2E8HqJ77wsU" role="3nqlJM">
+          <node concept="TZ5HA" id="2E8HqJ77wsV" role="3HnX3l">
+            <node concept="1dT_AC" id="2E8HqJ77wGx" role="1dT_Ay">
+              <property role="1dT_AB" value="We are not aware of a legitimate scenario which uses this functionality. Seems to be a left-over from Charisma time. If looking for a replacement, check if " />
+            </node>
+            <node concept="1dT_AA" id="2E8HqJ77wG$" role="1dT_Ay">
+              <node concept="92FcH" id="2E8HqJ77wGE" role="qph3F">
+                <node concept="TZ5HA" id="2E8HqJ77wGG" role="2XjZqd" />
+                <node concept="VXe0Z" id="2E8HqJ77KKQ" role="92FcQ">
+                  <ref role="VXe0S" node="i1LP2xI" resolve="getCompileTimeConstantValue" />
+                </node>
+              </node>
+            </node>
+            <node concept="1dT_AC" id="2E8HqJ77wGz" role="1dT_Ay">
+              <property role="1dT_AB" value=" serves your needs." />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="2AHcQZ" id="2E8HqJ77wsW" role="2AJF6D">
+        <ref role="2AI5Lk" to="wyt6:~Deprecated" resolve="Deprecated" />
+      </node>
     </node>
     <node concept="13i0hz" id="hEwJgm_" role="13h7CS">
       <property role="13i0is" value="false" />
@@ -37426,40 +37452,6 @@
       <property role="TrG5h" value="eval" />
       <ref role="13i0hy" node="hEwJgmp" resolve="eval" />
       <node concept="3clFbS" id="hEwJhHn" role="3clF47">
-        <node concept="3clFbJ" id="5u3ILwPAZEg" role="3cqZAp">
-          <node concept="3clFbS" id="5u3ILwPAZEj" role="3clFbx">
-            <node concept="3clFbF" id="5u3ILwPEGdl" role="3cqZAp">
-              <node concept="37vLTI" id="5u3ILwPEGkv" role="3clFbG">
-                <node concept="2OqwBi" id="5u3ILwPEGZD" role="37vLTx">
-                  <node concept="1eOMI4" id="5u3ILwPEGmG" role="2Oq$k0">
-                    <node concept="10QFUN" id="5u3ILwPEGmH" role="1eOMHV">
-                      <node concept="37vLTw" id="5u3ILwPEGmF" role="10QFUP">
-                        <ref role="3cqZAo" node="hEwJhHH" resolve="module" />
-                      </node>
-                      <node concept="3uibUv" id="5u3ILwPEGDo" role="10QFUM">
-                        <ref role="3uigEE" to="ap4t:~TransientModelsModule" resolve="TransientModelsModule" />
-                      </node>
-                    </node>
-                  </node>
-                  <node concept="liA8E" id="5u3ILwPEKgr" role="2OqNvi">
-                    <ref role="37wK5l" to="ap4t:~TransientModelsModule.getOriginalModule():org.jetbrains.mps.openapi.module.SModule" resolve="getOriginalModule" />
-                  </node>
-                </node>
-                <node concept="37vLTw" id="5u3ILwPEGdk" role="37vLTJ">
-                  <ref role="3cqZAo" node="hEwJhHH" resolve="module" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node concept="2ZW3vV" id="5u3ILwPB0JQ" role="3clFbw">
-            <node concept="3uibUv" id="5u3ILwPEG5M" role="2ZW6by">
-              <ref role="3uigEE" to="ap4t:~TransientModelsModule" resolve="TransientModelsModule" />
-            </node>
-            <node concept="37vLTw" id="5u3ILwPB0bJ" role="2ZW6bz">
-              <ref role="3cqZAo" node="hEwJhHH" resolve="module" />
-            </node>
-          </node>
-        </node>
         <node concept="3cpWs8" id="hEwJhHo" role="3cqZAp">
           <node concept="3cpWsn" id="hEwJhHp" role="3cpWs9">
             <property role="TrG5h" value="method" />

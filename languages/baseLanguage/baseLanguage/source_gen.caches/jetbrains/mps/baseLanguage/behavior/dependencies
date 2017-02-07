@@ -2535,6 +2535,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.behavior.Expression__BehaviorDescriptor" file="Expression__BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Deprecated" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -6209,7 +6210,6 @@
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BehaviorRegistry" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SConstructor" />
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.SMethod" />
-    <classNode dependClassName="jetbrains.mps.generator.TransientModelsModule" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
