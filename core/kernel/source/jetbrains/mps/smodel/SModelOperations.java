@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -128,7 +128,7 @@ public class SModelOperations {
    */
   public static void validateLanguagesAndImports(@NotNull SModel model, boolean updateModuleImports, boolean firstVersion) {
     final SModule module = model.getModule();
-    final Collection<SModule> moduleDeclaredDependencies = module != null ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
+    final Collection<SModule> moduleDeclaredDependencies = module != null && updateModuleImports ? new GlobalModuleDependenciesManager(module).getModules(Deptype.VISIBLE) : null;
     Set<SLanguage> modelDeclaredUsedLanguages = getAllLanguageImports(model);
 
     Set<SModelReference> importedModels = new HashSet<SModelReference>();
@@ -145,6 +145,7 @@ public class SModelOperations {
         ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(language);
       }
     }
+    ModelImports modelImports = new ModelImports(model);
     for (SModelReference targetModelReference : modelScanner.getCrossModelReferences()) {
       if (importedModels.add(targetModelReference)) {
         if (updateModuleImports && module != null) {
@@ -154,7 +155,7 @@ public class SModelOperations {
             ((AbstractModule) module).addDependency(targetModule.getModuleReference(), false); // cannot decide re-export or not here!
           }
         }
-        ((jetbrains.mps.smodel.SModelInternal) model).addModelImport(targetModelReference);
+        modelImports.addModelImport(targetModelReference);
       }
     }
     importedModels.clear();

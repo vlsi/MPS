@@ -24,9 +24,8 @@ import jetbrains.mps.generator.impl.ModelVault;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import jetbrains.mps.smodel.ModelImports;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -37,7 +36,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -49,7 +47,7 @@ import org.jetbrains.mps.openapi.persistence.ModelSaveException;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
 import java.io.IOException;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -67,8 +65,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
   private final ModelVault<TransientSModelDescriptor> myModelVault = new ModelVault<TransientSModelDescriptor>();
-
-  private Set<SDependency> myCachedDependencies = null;
 
   private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
@@ -244,27 +240,31 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
     return modelRef != null && myModelVault.known(modelRef);
   }
 
-  @Override
-  public Set<SLanguage> getUsedLanguages() {
-    return myOriginalModule == null ? Collections.<SLanguage>emptySet() : myOriginalModule.getUsedLanguages();
-  }
-
+  /**
+   * Module of any referenced model we can access through our repository (one of TransientModelsProvider) is deemed declared dependency.
+   * There's little value to show 'out of scope' errors for transient nodes, that's why everything is here.
+   * It used to be GMDM(originalModule, Compile), but I don't see any reason for that.
+   */
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
-    if (myCachedDependencies == null) {
-      // could be invoked from multiple threads. Don't want synchronization, and hope extra iteration won't hurt that much
-      Set<SDependency> deps;
-      if (myOriginalModule == null) {
-        deps = Collections.emptySet();
-      } else {
-        deps = new HashSet<SDependency>();
-        for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
-          deps.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
-        }
-      }
-      myCachedDependencies = deps;
+    assertCanRead();
+    // SModelOperations.validateLanguagesAndImports could update this set for us (if I override addDependency() to record values),
+    // but I don't think the method deserves to survive, and its extra use doesn't help this.
+    HashSet<SModelReference> referencedModels = new HashSet<>();
+    for (SModel m : getModels()) {
+      // I'd love to collect importedModel.getModuleReference(), but GUID model references would leave out quite some module dependencies
+      referencedModels.addAll(new ModelImports(m).getImportedModels());
     }
-    return myCachedDependencies;
+    HashSet<SModule> deps = new HashSet<>();
+    for (SModelReference mr : referencedModels) {
+      SModel model = mr.resolve(myComponent.getRepository());
+      if (model != null && model.getModule() != null) {
+        deps.add(model.getModule());
+      }
+    }
+    ArrayList<SDependency> rv = new ArrayList<>(deps.size());
+    deps.forEach(m -> rv.add(new SDependencyImpl(m, SDependencyScope.DEFAULT, false)));
+    return rv;
   }
 
   public GenerationTrace getTrace(SModelReference model) {
