@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,15 +27,17 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsProvider {
 
-  private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<SModule, TransientModelsModule>();
+  private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<>();
   private int myModelsToKeepMax = 0; /* unlimited */
   private final SRepositoryExt myRepository;
   private int myKeptModels;
@@ -60,7 +62,7 @@ public class TransientModelsProvider {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        List<TransientModelsModule> toRemove = new ArrayList<TransientModelsModule>(myModuleMap.values());
+        List<TransientModelsModule> toRemove = new ArrayList<>(myModuleMap.values());
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
           myRepository.unregisterModule(m, myOwner);
@@ -80,33 +82,53 @@ public class TransientModelsProvider {
     myKeptModels = 0;
   }
 
+  /**
+   * Requires write lock for {@linkplain #getRepository() associated repository}
+   */
   public void publishAll() {
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (TransientModelsModule m : myModuleMap.values()) {
-          m.publishAll();
-        }
-        myCheckpointsModule.publishAll();
-      }
-    });
+    for (TransientModelsModule m : myModuleMap.values()) {
+      m.publishAll();
+    }
+    myCheckpointsModule.publishAll();
   }
 
-  public void createModule(final SModule module) {
-    if (myModuleMap.containsKey(module)) {
-      return;
-    }
+  private static final AtomicInteger ourModuleCounter = new AtomicInteger();
 
-    final TransientModelsModule transientModelsModule = new TransientModelsModule(module, this);
+  /**
+   * Instantiate new transient module with given {@code moduleName} augmented with implementation-specific stereotype,
+   * registers it with associated {@linkplain #getRepository() repository}
+   * @param moduleName name for a new transient module, without stereotype
+   * @return new module instance
+   */
+  @NotNull
+  public TransientModelsModule createModule(@NotNull String moduleName) {
+    String fqName = moduleName + "@transient" + ourModuleCounter.getAndIncrement();
+    SModuleReference reference = PersistenceFacade.getInstance().createModuleReference(ModuleId.regular(), fqName);
+    final TransientModelsModule transientModelsModule = new TransientModelsModule(this, reference);
     myRepository.registerModule(transientModelsModule, myOwner);
-    myModuleMap.put(module, transientModelsModule);
+    return transientModelsModule;
   }
 
-  public TransientModelsModule getModule(final SModule module) {
-    if (myModuleMap.containsKey(module)) {
-      return myModuleMap.get(module);
-    }
+  /**
+   * Record module that keeps transient models for the given task. Module originates from {@link #createModule(String)}.
+   * This association is utilized by {@link #getModule(GeneratorTask)}. Silently overwrites existing association, if any.
+   * @param task transformation activity
+   * @param transientModule module to keep transient models at
+   */
+  public void associate(@NotNull GeneratorTask task, @NotNull TransientModelsModule transientModule) {
+    myModuleMap.put(task.getModel().getModule(), transientModule);
+  }
 
+  /**
+   * XXX perhaps, GeneratorTask shall answer getTransientModule():SModule itself.
+   *
+   * @param task not {@code null}
+   * @return module to keep transients models of the task at
+   */
+  public TransientModelsModule getModule(GeneratorTask task) {
+    if (myModuleMap.containsKey(task.getModel().getModule())) {
+      return myModuleMap.get(task.getModel().getModule());
+    }
     throw new IllegalStateException();
   }
 
@@ -115,25 +137,27 @@ public class TransientModelsProvider {
     return myCheckpointsModule;
   }
 
+  /**
+   * Requires model read to register checkpoint module with a {@linkplain #getRepository() repository}
+   */
   public void initCheckpointModule() {
     if (myCheckpointsModule == null) {
-      myRepository.getModelAccess().runWriteAction(new Runnable() {
-        @Override
-        public void run() {
-          final String checkpointModuleName = "checkpoints";
-          // HACK. Though Make disposes TMP if creates one, there's distinct TMP for each model generated during the session.
-          // We can't dispose all transients right after generation (need them for textgen), hence we re-use checkpoints module here
-          for (SModule m : myRepository.getModules()) {
-            if (checkpointModuleName.equals(m.getModuleName()) && m instanceof TransientModelsModule) {
-              myCheckpointsModule = (TransientModelsModule) m;
-              return;
-            }
-          }
-          SModuleReference cpModuleRef = new ModuleReference(checkpointModuleName, ModuleId.regular());
-          myCheckpointsModule = new TransientModelsModule(TransientModelsProvider.this, cpModuleRef);
-          myRepository.registerModule(myCheckpointsModule, myOwner);
+      final String checkpointModuleName = "checkpoints";
+      // HACK. Though Make disposes TMP if creates one, there's distinct TMP for each model generated during the session.
+      // We can't dispose all transients right after generation (need them for textgen), hence we re-use checkpoints module here
+      for (SModule m : myRepository.getModules()) {
+        if (checkpointModuleName.equals(m.getModuleName()) && m instanceof TransientModelsModule) {
+          myCheckpointsModule = (TransientModelsModule) m;
+          return;
         }
-      });
+      }
+      SModuleReference cpModuleRef = new ModuleReference(checkpointModuleName, ModuleId.regular());
+      // I could have used custom subclass of AbstractModule and regular models (instanceof extapi.TransientSModel, not necessarily
+      // the same as generator.TransientSModel TransientModelsModule class produces), there's no true need in TransientModelsModule, however,
+      // (a) don't want to refactor right now; (b) perhaps, could use swap mechanism of TransientModelsModule in future to keep checkpoint models
+      // (though later could be addressed with extra consumer for TransientSwapOwner, not to mix the two kinds of transient models into single module kind).
+      myCheckpointsModule = new TransientModelsModule(this, cpModuleRef);
+      myRepository.registerModule(myCheckpointsModule, myOwner);
     }
   }
 

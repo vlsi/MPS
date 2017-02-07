@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.generator.GeneratorTask.Factory;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenControllerContext;
@@ -31,13 +31,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.UndoHelper;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -57,7 +53,7 @@ import java.util.Set;
 public final class GenerationFacade {
 
   public static Collection<SModel> getModifiedModels(Collection<? extends SModel> models) {
-    Set<SModel> result = new LinkedHashSet<SModel>();
+    Set<SModel> result = new LinkedHashSet<>();
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (SModel sm : models) {
       if (statusManager.generationRequired(sm)) {
@@ -110,7 +106,7 @@ public final class GenerationFacade {
   }
 
   public static boolean canGenerate(SModel sm) {
-    return SNodeOperations.isGeneratable(sm);
+    return sm instanceof GeneratableSModel && ((GeneratableSModel) sm).isGeneratable();
   }
 
 
@@ -129,10 +125,10 @@ public final class GenerationFacade {
 
   /**
    * Optional handler to get notified about generation process
-   * @param taskHandler
+   * @param taskHandler receives notifications
    * @return <code>this</code> for convenience
    */
-  public GenerationFacade taskHandler(GeneratorTaskListener<GeneratorTask> taskHandler) {
+  public GenerationFacade taskHandler(@Nullable GeneratorTaskListener<GeneratorTask> taskHandler) {
     myTaskListener = taskHandler;
     return this;
   }
@@ -204,7 +200,7 @@ public final class GenerationFacade {
    */
   public GenerationStatus process(@NotNull final ProgressMonitor monitor, @NotNull SModel model) {
     final GeneratorTaskListener<GeneratorTask> originalListener = myTaskListener;
-    final GenerationTaskRecorder<GeneratorTask> recorder = new GenerationTaskRecorder<GeneratorTask>(originalListener);
+    final GenerationTaskRecorder<GeneratorTask> recorder = new GenerationTaskRecorder<>(originalListener);
     myTaskListener = recorder;
     try {
       final GeneratorTaskBase task = new GeneratorTaskBase(model);
@@ -227,28 +223,12 @@ public final class GenerationFacade {
   }
 
   /**
-   * @return <code>true</code> to indicate generation success (what does constitute a success is, alas, undefined)
+   * FIXME drop return value along with {@link #generateModels(Project, List, IOperationContext, IGenerationHandler, ProgressMonitor, IMessageHandler, GenerationOptions, TransientModelsProvider)}
    */
   private boolean process0(@NotNull final ProgressMonitor monitor, @NotNull final List<? extends GeneratorTask> tasks) {
-    final boolean[] result = new boolean[1];
     myTransientModelsProvider.startGeneration(myGenerationOptions.getNumberOfModelsToKeep());
 
     final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(myMessageHandler, myGenerationOptions.isShowInfo(), myGenerationOptions.isShowWarnings());
-
-    myRepository.getModelAccess().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        for (GeneratorTask t : tasks) {
-          SModel d = t.getModel();
-          if (d instanceof EditableSModel && ((EditableSModel) d).needsReloading()) {
-            ((EditableSModel) d).reloadFromSource();
-            logger.info("Model " + d + " reloaded from disk.");
-          }
-          myTransientModelsProvider.createModule(d.getModule());
-        }
-      }
-    });
-    myTransientModelsProvider.initCheckpointModule(); // at the moment, starts write action, thus shall start outside of read
 
     GenControllerContext ctx = new GenControllerContext(myRepository, myGenerationOptions, myTransientModelsProvider, myStreamProvider);
     GeneratorTaskListener<GeneratorTask> taskListener;
@@ -259,22 +239,7 @@ public final class GenerationFacade {
     }
 
     final GenerationController gc = new GenerationController(tasks, ctx, taskListener, logger);
-    myRepository.getModelAccess().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        result[0] = UndoHelper.getInstance().runNonUndoableAction(new Computable<Boolean>() {
-          @Override
-          public Boolean compute() {
-            return gc.generate(monitor);
-          }
-        });
-      }
-    });
-
-    // XXX removeAllTransients done from make facet, perhaps publish shall be part of external code as well?
-    myTransientModelsProvider.publishAll();
-    CleanupManager.getInstance().cleanup();
-    return result[0];
+    return gc.generate(monitor);
   }
 
   private static class EmptyTaskListener implements GeneratorTaskListener<GeneratorTask> {

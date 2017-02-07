@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,6 +53,9 @@ public class GenerationController implements ITaskPoolProvider {
     myOptions = context.getOptions();
   }
 
+  /**
+   * @return <code>true</code> to indicate generation success (what does constitute a success is, alas, undefined)
+   */
   public boolean generate(ProgressMonitor monitor) {
     long startJobTime = System.currentTimeMillis();
 
@@ -112,7 +115,7 @@ public class GenerationController implements ITaskPoolProvider {
     boolean traceTypes = myOptions.getTracingMode() == GenerationOptions.TRACE_TYPES;
     TypeChecker.getInstance().generationStarted(traceTypes ? ttrace : null);
 
-    final TransientModelsModule transientModule = myContext.getTransientModelProvider().getModule(module);
+    final TransientModelsModule transientModule = myContext.getTransientModelProvider().getModule(task);
     final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl(transientModule) : new GenerationTrace.NoOp();
 
     final GenerationSession generationSession = new GenerationSession(inputModel, myContext, this, myLogger, transientModule, ttrace, genTrace);

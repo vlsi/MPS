@@ -47,16 +47,18 @@ import jetbrains.mps.generator.GenPlanExtractor;
 import jetbrains.mps.generator.GenerationTaskRecorder;
 import jetbrains.mps.generator.GeneratorTask;
 import jetbrains.mps.messages.IMessageHandler;
+import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.generator.DefaultTaskBuilder;
 import jetbrains.mps.generator.GeneratorTaskBase;
+import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.generator.DefaultTaskBuilder;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.generator.GenerationFacade;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.smodel.resources.GResource;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.cleanup.CleanupManager;
 
 public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -454,30 +456,69 @@ public class Generate_Facet extends IFacet.Stub {
                 });
               }
 
-              GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
-              IMessageHandler mh = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getMessageHandler();
+              final GenerationTaskRecorder<GeneratorTask> taskHandler = new GenerationTaskRecorder<GeneratorTask>(null);
+              final IMessageHandler mh = Generate_Facet.Target_checkParameters.vars(pa.global()).makeSession().getMessageHandler();
 
               progressMonitor.start("Generating", 110);
               try {
-                List<GeneratorTask> tasks = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<List<GeneratorTask>>() {
+                // in fact, transientsModuleRepo == mpsProject.getRepository, but I keep them separate to stress different lock scope 
+                final SRepository transientsModuleRepo = Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().getRepository();
+
+                // XXX write is to tmm.createModule() and tmm.initCheckpointModule, although the moment transients live in a separate repository, we may 
+                // write-lock transients repository only, and read-lock the one with source models. 
+                final List<GeneratorTask> tasks = new ModelAccessHelper(transientsModuleRepo).runWriteAction(new Computable<List<GeneratorTask>>() {
                   public List<GeneratorTask> compute() {
-                    List<SModel> models = Sequence.fromIterable(input).translate(new ITranslator2<MResource, SModel>() {
-                      public Iterable<SModel> translate(MResource in) {
-                        return in.models();
-                      }
-                    }).toListSequence();
-                    DefaultTaskBuilder<GeneratorTask> tb = new DefaultTaskBuilder<GeneratorTask>(new GeneratorTask.Factory<GeneratorTask>() {
+                    Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().initCheckpointModule();
+
+                    GeneratorTask.Factory<GeneratorTask> factory = new GeneratorTask.Factory<GeneratorTask>() {
                       public GeneratorTask create(SModel model) {
                         return new GeneratorTaskBase(model);
                       }
-                    });
-                    tb.addAll(models);
-                    return tb.getResult();
+                    };
+                    ArrayList<GeneratorTask> rv = new ArrayList<GeneratorTask>();
+                    for (MResource res : input) {
+                      final TransientModelsModule tm = Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().createModule(res.module().getModuleName());
+                      DefaultTaskBuilder<GeneratorTask> tb = new DefaultTaskBuilder<GeneratorTask>(factory);
+                      tb.addAll(Sequence.fromIterable(res.models()).toListSequence());
+                      List<GeneratorTask> tasks = tb.getResult();
+                      for (GeneratorTask t : tasks) {
+                        Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().associate(t, tm);
+                      }
+                      rv.addAll(tasks);
+                    }
+                    return rv;
                   }
                 });
-                GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
-                genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
-                genFacade.process(progressMonitor.subTask(100), tasks);
+
+                final SRepository projectRepo = mpsProject.getRepository();
+
+                // FIXME How come MA.executeCommand knows about undo, but readAction does not? Why on earth do I need to nest UndoHelper.runNonUndoableAction explicitly? 
+                projectRepo.getModelAccess().runReadAction(new Runnable() {
+                  public void run() {
+                    UndoHelper.getInstance().runNonUndoableAction(new Computable<Object>() {
+                      public Object compute() {
+                        GenerationFacade genFacade = new GenerationFacade(projectRepo, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
+                        genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
+                        genFacade.process(progressMonitor.subTask(100), tasks);
+                        return null;
+                      }
+                    });
+                    // without explicit return, outer closure is translated into dedicated _Adapters.Runnable that can return values. 
+                    // Here, I just explicitly tell I don't care about return value, therefore, regular Runnable is enough. 
+                    return;
+                  }
+                });
+
+
+                transientsModuleRepo.getModelAccess().runWriteAction(new Runnable() {
+                  public void run() {
+                    Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider().publishAll();
+                  }
+                });
+                // XXX I have no idea if there's a reason to invoke cleanup right after transformation, just copied this code here from GenerationFacade 
+                //     I'd remove listeners first, and then drop CM altogether 
+                CleanupManager.getInstance().cleanup();
+
 
                 for (GenerationStatus genStatus : taskHandler.getAllRecorded()) {
                   if (!(genStatus.isOk())) {

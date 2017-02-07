@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.references.ImmatureReferencesTracker;
-import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -58,9 +57,6 @@ import java.util.function.BiConsumer;
 public class TransientModelsModule extends AbstractModule implements TransientSModule {
   private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
 
-  private static final AtomicInteger ourModuleCounter = new AtomicInteger();
-
-  private final SModule myOriginalModule;
   private final TransientModelsProvider myComponent;
 
   private Set<SModel> myPublished = new ConcurrentHashSet<SModel>();
@@ -68,23 +64,8 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   private final Map<String, GenerationTrace> myTraces = new HashMap<String, GenerationTrace>();
 
-  public TransientModelsModule(@NotNull SModule original, @NotNull TransientModelsProvider component) {
-    assert !(original instanceof TransientModelsModule) :
-        "create TransientModelsModule based on another TransientModelsModule with name " + original.getModuleName();
-    myComponent = component;
-    myOriginalModule = original;
-    String fqName = original.getModuleName() + "@transient" + ourModuleCounter.getAndIncrement();
-    SModuleReference reference = new jetbrains.mps.project.structure.modules.ModuleReference(fqName, ModuleId.regular());
-    setModuleReference(reference);
-  }
-
   /*package*/ TransientModelsModule(@NotNull TransientModelsProvider tmProvider, @NotNull SModuleReference moduleReference) {
-    // I could have used custom subclass of AbstractModule and regular models (instanceof extapi.TransientSModel, not necessarily
-    // the same as generator.TransientSModel this class produces), there's no true need in TransientModelsModule, however,
-    // (a) don't want to refactor right now; (b) perhaps, could use swap mechanism of TransientModelsModule in future to keep checkpoint models
-    // (though later could be addressed with extra consumer for TransientSwapOwner, not to mix the two kinds of transient models into single module kind).
     myComponent = tmProvider;
-    myOriginalModule = null;
     setModuleReference(moduleReference);
   }
 
@@ -204,17 +185,6 @@ public class TransientModelsModule extends AbstractModule implements TransientSM
 
   public String toString() {
     return getModuleName() + " [transient models module]";
-  }
-
-  /**
-   * @deprecated need for the method is dubious, though the method itself is ok (transient module could be associated with an origin module).
-   * This is a reminder to refactor StaticMethodCall.eval() not to use this method
-   */
-  @Deprecated
-  @ToRemove(version = 3.3)
-  @Nullable
-  public SModule getOriginalModule() {
-    return myOriginalModule;
   }
 
   // Purpose of this implementation is to resolve references to yet not public transient models
