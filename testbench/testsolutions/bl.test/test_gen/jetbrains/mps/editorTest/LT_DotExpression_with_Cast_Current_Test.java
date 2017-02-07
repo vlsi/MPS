@@ -8,19 +8,19 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class LT_DotExpression_with_Cast_Test extends BaseTransformationTest {
+public class LT_DotExpression_with_Cast_Current_Test extends BaseTransformationTest {
   @Test
-  public void test_LT_DotExpression_with_Cast() throws Throwable {
+  public void test_LT_DotExpression_with_Cast_Current() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Current_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("3066122669860255529", "3066122669860255543");
-      typeString("()");
+      initEditorComponent("4507831107788309260", "3066122669859156950");
+      typeString("((type)exp)");
     }
   }
 }

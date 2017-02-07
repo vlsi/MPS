@@ -20,7 +20,7 @@ public class LT_PlusExpression_with_Cast_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("3956753173913342772", "3956753173913342774");
-      typeString("(type");
+      typeString("((type");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
     }
   }

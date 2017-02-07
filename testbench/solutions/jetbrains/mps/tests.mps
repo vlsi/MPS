@@ -994,7 +994,7 @@
       <ref role="lpD7u" to="e7z4:1YIxz0TA89S" resolve="SLinkListAccess_ListModifyingOperaions" />
     </node>
     <node concept="lpD6D" id="7KUdrkEJoZV" role="lpD6w">
-      <ref role="lpD7u" to="62xu:4K12N3pNt7K" resolve="MigrateAsNodeOperation_Test" />
+      <ref role="lpD7u" to="62xu:4K12N3pNt7K" resolve="MigratePopularConceptAndNodeCasts_Test" />
     </node>
   </node>
   <node concept="lpD6F" id="2m_lP2P61F4">
@@ -3206,7 +3206,10 @@
       <ref role="lpD7u" to="ryl9:3rDdwL30rCc" resolve="LT_Assignment_with_PlusAssignment" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3e2" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:3Uf289favLe" resolve="LT_DotExpression_with_Cast" />
+      <ref role="lpD7u" to="ryl9:2Ed3_aYMJsC" resolve="LT_DotExpression_with_Cast" />
+    </node>
+    <node concept="lpD6D" id="2Ed3_aYRX9M" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3Uf289favLe" resolve="LT_DotExpression_with_Cast_Current" />
     </node>
     <node concept="lpD6D" id="3FJ0r$qO3e4" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5fpK8OwRYzt" resolve="LT_DotExpression_with_MinusAssignment" />
@@ -3387,6 +3390,12 @@
     </node>
     <node concept="lpD6D" id="P9hc2Kf0pJ" role="lpD6w">
       <ref role="lpD7u" to="ryl9:P9hc2K2Okf" resolve="SUBST_BooleanConstant_with_value" />
+    </node>
+    <node concept="lpD6D" id="2Ed3_aYMKww" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2ANKNsL7KEe" resolve="SUBST_DotExpression_with_Cast" />
+    </node>
+    <node concept="lpD6D" id="2ANKNsL8DlA" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:2Ed3_aYMJ3p" resolve="SUBST_DotExpression_with_Smart_Cast" />
     </node>
     <node concept="lpD6D" id="4Awu96F2Qmg" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4Awu96F17J3" resolve="RedoIncorrectlyTypedValue" />

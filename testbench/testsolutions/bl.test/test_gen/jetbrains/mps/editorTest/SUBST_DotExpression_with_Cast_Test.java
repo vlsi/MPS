@@ -10,20 +10,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class SurroundExpressionWithParenthesis_Test extends BaseTransformationTest {
+public class SUBST_DotExpression_with_Cast_Test extends BaseTransformationTest {
   @Test
-  public void test_SurroundExpressionWithParenthesis() throws Throwable {
+  public void test_SUBST_DotExpression_with_Cast() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.SUBST_DotExpression_with_Cast_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("1989240834983537721", "1989240834983537728");
+      initEditorComponent("3004960018200988303", "3004960018200988322");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
-      typeString("(e");
+      typeString("(type");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

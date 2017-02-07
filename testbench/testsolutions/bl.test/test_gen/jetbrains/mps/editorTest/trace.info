@@ -1645,9 +1645,9 @@
       <node id="1989240834983537719" at="15,73,16,102" concept="3" />
       <node id="1989240834983537719" at="16,102,17,109" concept="3" />
       <node id="1989240834983537719" at="23,51,24,72" concept="3" />
-      <node id="1989240834983537737" at="24,72,25,23" concept="3" />
-      <node id="3694071247855998005" at="25,23,26,71" concept="3" />
-      <node id="1989240834983537746" at="26,71,27,82" concept="3" />
+      <node id="3694071247855998005" at="24,72,25,71" concept="3" />
+      <node id="1989240834983537737" at="25,71,26,23" concept="3" />
+      <node id="1989240834983537746" at="26,23,27,82" concept="3" />
       <node id="1989240834983537719" at="14,0,19,0" concept="6" trace="test_SurroundExpressionWithParenthesis#()V" />
       <node id="1989240834983537719" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="1989240834983537719" at="15,73,17,109" />
@@ -2750,6 +2750,24 @@
       <unit id="2943053183528195669" at="10,0,28,0" name="jetbrains.mps.editorTest.DefaultEditor_DelOnInterfaceChild1ReplaceItWithLinkTarget_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3004960018200988302">
+    <file name="SUBST_DotExpression_with_Cast_Test.java">
+      <node id="3004960018200988302" at="15,69,16,102" concept="3" />
+      <node id="3004960018200988302" at="16,102,17,105" concept="3" />
+      <node id="3004960018200988302" at="23,51,24,72" concept="3" />
+      <node id="3004960018200988317" at="24,72,25,71" concept="3" />
+      <node id="3004960018200988319" at="25,71,26,26" concept="3" />
+      <node id="3004960018200988320" at="26,26,27,82" concept="3" />
+      <node id="3004960018200988302" at="14,0,19,0" concept="6" trace="test_SUBST_DotExpression_with_Cast#()V" />
+      <node id="3004960018200988302" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3004960018200988302" at="15,69,17,105" />
+      <scope id="3004960018200988302" at="23,51,27,82" />
+      <scope id="3004960018200988302" at="14,0,19,0" />
+      <scope id="3004960018200988302" at="22,0,29,0" />
+      <unit id="3004960018200988302" at="20,0,30,0" name="jetbrains.mps.editorTest.SUBST_DotExpression_with_Cast_Test$TestBody" />
+      <unit id="3004960018200988302" at="12,0,31,0" name="jetbrains.mps.editorTest.SUBST_DotExpression_with_Cast_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3009615984009684603">
     <file name="AddConstructorInEnumCaret1_Test.java">
       <node id="3009615984009684603" at="13,66,14,102" concept="3" />
@@ -2828,6 +2846,40 @@
       <scope id="3009615984010100006" at="20,0,25,0" />
       <unit id="3009615984010100006" at="18,0,26,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret5_Test$TestBody" />
       <unit id="3009615984010100006" at="10,0,27,0" name="jetbrains.mps.editorTest.AddConstructorInEnumCaret5_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3066122669860253913">
+    <file name="SUBST_DotExpression_with_Smart_Cast_Test.java">
+      <node id="3066122669860253913" at="15,75,16,102" concept="3" />
+      <node id="3066122669860253913" at="16,102,17,111" concept="3" />
+      <node id="3066122669860253913" at="23,51,24,72" concept="3" />
+      <node id="3066122669860257072" at="24,72,25,71" concept="3" />
+      <node id="3066122669860253927" at="25,71,26,26" concept="3" />
+      <node id="3066122669860258508" at="26,26,27,82" concept="3" />
+      <node id="3066122669860253913" at="14,0,19,0" concept="6" trace="test_SUBST_DotExpression_with_Smart_Cast#()V" />
+      <node id="3066122669860253913" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3066122669860253913" at="15,75,17,111" />
+      <scope id="3066122669860253913" at="23,51,27,82" />
+      <scope id="3066122669860253913" at="14,0,19,0" />
+      <scope id="3066122669860253913" at="22,0,29,0" />
+      <unit id="3066122669860253913" at="20,0,30,0" name="jetbrains.mps.editorTest.SUBST_DotExpression_with_Smart_Cast_Test$TestBody" />
+      <unit id="3066122669860253913" at="12,0,31,0" name="jetbrains.mps.editorTest.SUBST_DotExpression_with_Smart_Cast_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3066122669860255528">
+    <file name="LT_DotExpression_with_Cast_Test.java">
+      <node id="3066122669860255528" at="13,66,14,102" concept="3" />
+      <node id="3066122669860255528" at="14,102,15,102" concept="3" />
+      <node id="3066122669860255528" at="21,51,22,72" concept="3" />
+      <node id="3066122669860255542" at="22,72,23,23" concept="3" />
+      <node id="3066122669860255528" at="12,0,17,0" concept="6" trace="test_LT_DotExpression_with_Cast#()V" />
+      <node id="3066122669860255528" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="3066122669860255528" at="13,66,15,102" />
+      <scope id="3066122669860255528" at="21,51,23,23" />
+      <scope id="3066122669860255528" at="12,0,17,0" />
+      <scope id="3066122669860255528" at="20,0,25,0" />
+      <unit id="3066122669860255528" at="18,0,26,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Test$TestBody" />
+      <unit id="3066122669860255528" at="10,0,27,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3150412412946301151">
@@ -5145,8 +5197,8 @@
       <node id="3956753173913342768" at="13,67,14,102" concept="3" />
       <node id="3956753173913342768" at="14,102,15,103" concept="3" />
       <node id="3956753173913342768" at="21,51,22,72" concept="3" />
-      <node id="3956753173913350791" at="22,72,23,26" concept="3" />
-      <node id="3694071247855998009" at="23,26,24,71" concept="3" />
+      <node id="3956753173913350791" at="22,72,23,27" concept="3" />
+      <node id="3694071247855998009" at="23,27,24,71" concept="3" />
       <node id="3956753173913342768" at="12,0,17,0" concept="6" trace="test_LT_PlusExpression_with_Cast#()V" />
       <node id="3956753173913342768" at="20,0,26,0" concept="6" trace="testMethodImpl#()V" />
       <scope id="3956753173913342768" at="13,67,15,103" />
@@ -5731,19 +5783,19 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4507831107788078158">
-    <file name="LT_DotExpression_with_Cast_Test.java">
-      <node id="4507831107788078158" at="13,66,14,102" concept="3" />
-      <node id="4507831107788078158" at="14,102,15,102" concept="3" />
+    <file name="LT_DotExpression_with_Cast_Current_Test.java">
+      <node id="4507831107788078158" at="13,74,14,102" concept="3" />
+      <node id="4507831107788078158" at="14,102,15,110" concept="3" />
       <node id="4507831107788078158" at="21,51,22,72" concept="3" />
-      <node id="4507831107788309306" at="22,72,23,30" concept="3" />
-      <node id="4507831107788078158" at="12,0,17,0" concept="6" trace="test_LT_DotExpression_with_Cast#()V" />
+      <node id="4507831107788309306" at="22,72,23,32" concept="3" />
+      <node id="4507831107788078158" at="12,0,17,0" concept="6" trace="test_LT_DotExpression_with_Cast_Current#()V" />
       <node id="4507831107788078158" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="4507831107788078158" at="13,66,15,102" />
-      <scope id="4507831107788078158" at="21,51,23,30" />
+      <scope id="4507831107788078158" at="13,74,15,110" />
+      <scope id="4507831107788078158" at="21,51,23,32" />
       <scope id="4507831107788078158" at="12,0,17,0" />
       <scope id="4507831107788078158" at="20,0,25,0" />
-      <unit id="4507831107788078158" at="18,0,26,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Test$TestBody" />
-      <unit id="4507831107788078158" at="10,0,27,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Test" />
+      <unit id="4507831107788078158" at="18,0,26,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Current_Test$TestBody" />
+      <unit id="4507831107788078158" at="10,0,27,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_Cast_Current_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4507831107788309237">
