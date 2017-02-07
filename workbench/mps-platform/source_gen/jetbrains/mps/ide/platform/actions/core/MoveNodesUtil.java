@@ -82,8 +82,11 @@ public class MoveNodesUtil {
     }
   }
 
+  public static void moveTo(final MPSProject project, String refactoringName, Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots) {
+    moveTo(project, refactoringName, processorToMoveRoots, new DefaultRefactoringUI(project));
+  }
 
-  public static void moveTo(final MPSProject project, String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots) {
+  public static void moveTo(final MPSProject project, String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots, RefactoringUI refactoringUI) {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -121,7 +124,7 @@ public class MoveNodesUtil {
 
     Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>> participants = (Iterable<? extends RefactoringParticipant<?, ?, SNode, SNode>>) new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP").getObjects();
     final Map<SNode, RefactoringParticipant.KeepOldNodes> removeOldRoots = MapSequence.fromMap(new HashMap<SNode, RefactoringParticipant.KeepOldNodes>());
-    RefactoringProcessor.performRefactoringUserInteractive(project, refactoringName, participants, allNodes, new _FunctionTypes._return_P2_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
+    RefactoringProcessor.performRefactoringInProject(project, refactoringUI, refactoringName, participants, allNodes, new _FunctionTypes._return_P2_E0<Map<SNode, SNode>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>>, RefactoringSession>() {
       public Map<SNode, SNode> invoke(final Iterable<RefactoringParticipant.ParticipantApplied<?, ?, SNode, SNode, SNode, SNode>> participantStates, RefactoringSession refactoringSession) {
         for (IMapping<MoveNodesUtil.NodeProcessor, List<SNode>> mapping : MapSequence.fromMap(processorToMoveRoots)) {
           List<SNode> moveRoots = mapping.value();

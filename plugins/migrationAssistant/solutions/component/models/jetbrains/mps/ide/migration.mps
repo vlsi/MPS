@@ -8658,7 +8658,7 @@
             <node concept="3cpWsn" id="XAmMekir_k" role="3cpWs9">
               <property role="TrG5h" value="ui" />
               <node concept="3uibUv" id="XAmMekir_i" role="1tU5fm">
-                <ref role="3uigEE" to="lfzw:4N6D1IPLesH" resolve="RefactoringProcessor.RefactoringUI" />
+                <ref role="3uigEE" to="lfzw:4N6D1IPLesH" resolve="RefactoringUI" />
               </node>
               <node concept="2ShNRf" id="XAmMekir_l" role="33vP2m">
                 <node concept="1pGfFk" id="XAmMekqSHd" role="2ShVmc">
@@ -9296,7 +9296,7 @@
         </node>
       </node>
       <node concept="3uibUv" id="XAmMekqhjo" role="EKbjA">
-        <ref role="3uigEE" to="lfzw:4N6D1IPLesH" resolve="RefactoringProcessor.RefactoringUI" />
+        <ref role="3uigEE" to="lfzw:4N6D1IPLesH" resolve="RefactoringUI" />
       </node>
     </node>
     <node concept="2tJIrI" id="XAmMekqIGx" role="jymVt" />

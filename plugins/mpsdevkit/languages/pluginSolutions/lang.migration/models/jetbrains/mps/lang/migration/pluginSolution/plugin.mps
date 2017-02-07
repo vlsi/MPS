@@ -1004,6 +1004,11 @@
         <ref role="2VtyIY" to="90d:3zLwYDe0svr" resolve="get" />
         <node concept="3Tm1VV" id="39r_V8zIIq4" role="1B3o_S" />
         <node concept="3clFbS" id="39r_V8zIIq6" role="3clF47">
+          <node concept="3SKdUt" id="3D2IEK87rXR" role="3cqZAp">
+            <node concept="3SKdUq" id="3D2IEK87rXT" role="3SKWNk">
+              <property role="3SKdUp" value="here lazyness is important because extension objects should never be saved for long time" />
+            </node>
+          </node>
           <node concept="3clFbF" id="39r_V8zIMrg" role="3cqZAp">
             <node concept="2OqwBi" id="39r_V8zMm9N" role="3clFbG">
               <node concept="2OqwBi" id="39r_V8zIJVA" role="2Oq$k0">

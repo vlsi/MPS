@@ -28,13 +28,14 @@ import jetbrains.mps.lang.migration.runtime.base.RefactoringPart;
 import jetbrains.mps.refactoring.participant.RefactoringParticipant;
 import java.util.List;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
-import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
+import jetbrains.mps.ide.platform.actions.core.RefactoringUI;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.ide.platform.actions.core.RefactoringProcessor;
 import jetbrains.mps.ide.findusages.model.scopes.ModulesScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.ArrayList;
@@ -138,7 +139,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
     public <IP, FP> void performDeserializingRefactoring(final SModule module, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, IP, FP> participant, RefactoringSession refactoringSession) {
 
-      RefactoringProcessor.RefactoringUI ui = new MigrationComponent.MigrationRefactoringUI((mySelectedOptionsSerialized == null ? null : ListSequence.fromList(SLinkOperations.getChildren(mySelectedOptionsSerialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, 0x31ee543051f23346L, "options"))).select(new ISelector<SNode, RefactoringParticipant.Option>() {
+      RefactoringUI ui = new MigrationComponent.MigrationRefactoringUI((mySelectedOptionsSerialized == null ? null : ListSequence.fromList(SLinkOperations.getChildren(mySelectedOptionsSerialized, MetaAdapterFactory.getContainmentLink(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23340L, 0x31ee543051f23346L, "options"))).select(new ISelector<SNode, RefactoringParticipant.Option>() {
         public RefactoringParticipant.Option select(SNode it) {
           return new RefactoringParticipant.Option(SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23343L, 0x31ee543051f23344L, "optionId")), SPropertyOperations.getString(it, MetaAdapterFactory.getProperty(0x9074634404fd4286L, 0x97d5b46ae6a81709L, 0x31ee543051f23343L, 0x31ee543051f30774L, "description")));
         }
@@ -179,7 +180,7 @@ public class MigrationComponent extends AbstractProjectComponent {
     }
   }
 
-  private static class MigrationRefactoringUI implements RefactoringProcessor.RefactoringUI {
+  private static class MigrationRefactoringUI implements RefactoringUI {
     private List<RefactoringParticipant.Option> mySelectedOptions;
     private MigrationRefactoringUI(List<RefactoringParticipant.Option> selectedOptions) {
       mySelectedOptions = selectedOptions;

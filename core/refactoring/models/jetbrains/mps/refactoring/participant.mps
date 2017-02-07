@@ -244,9 +244,17 @@
         <property id="5858074156537516431" name="text" index="x79VB" />
       </concept>
       <concept id="5349172909345501395" name="jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment" flags="ng" index="P$AiS">
+        <child id="8465538089690331502" name="body" index="TZ5H$" />
         <child id="5383422241790532083" name="tags" index="3nqlJM" />
       </concept>
       <concept id="5349172909345532724" name="jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment" flags="ng" index="P$JXv" />
+      <concept id="8465538089690331500" name="jetbrains.mps.baseLanguage.javadoc.structure.CommentLine" flags="ng" index="TZ5HA">
+        <child id="8970989240999019149" name="part" index="1dT_Ay" />
+      </concept>
+      <concept id="8970989240999019143" name="jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart" flags="ng" index="1dT_AC">
+        <property id="8970989240999019144" name="text" index="1dT_AB" />
+      </concept>
+      <concept id="2068944020170241612" name="jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment" flags="ng" index="3UR2Jj" />
     </language>
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" name="jetbrains.mps.baseLanguage.logging">
       <concept id="1167227138527" name="jetbrains.mps.baseLanguage.logging.structure.LogStatement" flags="nn" index="34ab3g">
@@ -777,6 +785,13 @@
         <ref role="3uigEE" to="wyt6:~Comparable" resolve="Comparable" />
         <node concept="3uibUv" id="7tV5ZLw2EYk" role="11_B2D">
           <ref role="3uigEE" node="7tV5ZLw0mML" resolve="RefactoringParticipant.KeepOldNodes" />
+        </node>
+      </node>
+      <node concept="3UR2Jj" id="3D2IEK815Hy" role="lGtFl">
+        <node concept="TZ5HA" id="3D2IEK815Hz" role="TZ5H$">
+          <node concept="1dT_AC" id="3D2IEK815H$" role="1dT_Ay">
+            <property role="1dT_AB" value="POSTPONE_REMOVE is a hack used only in idea plugin" />
+          </node>
         </node>
       </node>
     </node>

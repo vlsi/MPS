@@ -67,6 +67,9 @@ public interface RefactoringParticipant<InitialDataObject, FinalDataObject, Init
 
   List<List<RefactoringParticipant.Change<InitialDataObject, FinalDataObject>>> getChanges(@NonNls List<InitialDataObject> initialStates, SRepository repository, List<RefactoringParticipant.Option> selectedOptions, SearchScope searchScope, ProgressMonitor progressMonitor);
 
+  /**
+   * POSTPONE_REMOVE is a hack used only in idea plugin
+   */
   enum KeepOldNodes implements Comparable<RefactoringParticipant.KeepOldNodes> {
     REMOVE(),
     POSTPONE_REMOVE(),

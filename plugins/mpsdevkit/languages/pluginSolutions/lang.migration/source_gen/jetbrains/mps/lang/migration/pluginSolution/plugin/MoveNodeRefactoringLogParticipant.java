@@ -47,6 +47,7 @@ public class MoveNodeRefactoringLogParticipant extends RefactoringParticipantBas
       super("jetbrains.mps.refactoring.participant.PersistentRefactoringParticipantsEP");
     }
     public Iterable<RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>> get() {
+      // here lazyness is important because extension objects should never be saved for long time 
       return Sequence.fromIterable(new ExtensionPoint<MoveNodeRefactoringParticipant<?, ?>>("jetbrains.mps.refactoring.participant.MoveNodeParticipantEP").getObjects()).ofType(RefactoringParticipant.PersistentRefactoringParticipant.class).select(new ISelector<RefactoringParticipant.PersistentRefactoringParticipant, RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>>() {
         public RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?> select(RefactoringParticipant.PersistentRefactoringParticipant it) {
           return (RefactoringParticipant.PersistentRefactoringParticipant<?, ?, ?, ?>) it;

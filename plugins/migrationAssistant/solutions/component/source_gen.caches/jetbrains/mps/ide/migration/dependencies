@@ -97,6 +97,7 @@
     <classNode dependClassName="jetbrains.mps.ide.migration.RefactoringLogApplied" />
     <classNode dependClassName="jetbrains.mps.ide.migration.RefactoringStepImpl" />
     <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringProcessor" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.actions.core.RefactoringUI" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
