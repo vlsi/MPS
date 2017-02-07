@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.projectPane.Icons;
+import com.intellij.icons.AllIcons.Nodes;
+import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
@@ -28,7 +29,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   public ReferencesTreeNode(SNode node) {
     myNode = node;
 
-    setIcon(Icons.REFERENCE_ICON);
+    // TODO: add special icon for node references
+    setIcon(LayeredIcon.create(Nodes.Folder, Nodes.Symlink));
     setNodeIdentifier("references");
   }
 

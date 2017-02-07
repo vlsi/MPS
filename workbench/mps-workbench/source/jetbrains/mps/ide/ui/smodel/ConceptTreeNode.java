@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.util.IconUtil;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.smodel.NodeTargetProvider;
@@ -32,7 +33,9 @@ public class ConceptTreeNode extends MPSTreeNodeEx implements NodeTargetProvider
     SConcept concept = myNode.getConcept();
     setNodeIdentifier("Concept: " + concept.getName());
     myConceptDeclaration = concept.getSourceNode();
-    setIcon(Nodes.Structure);
+    // Use grayed out icon because it is less distracting for user [then original green one],
+    // but in the same time looks different in comparison to default node icon.
+    setIcon(IconUtil.desaturate(Nodes.Structure));
   }
 
   @Override

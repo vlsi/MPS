@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
-import jetbrains.mps.ide.projectPane.Icons;
+import com.intellij.icons.AllIcons.Nodes;
+import com.intellij.util.IconUtil;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.model.SNode;
-
-import javax.swing.tree.DefaultTreeModel;
 
 public class PropertiesTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -29,7 +28,8 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
   public PropertiesTreeNode(SNode node) {
     myNode = node;
 
-    setIcon(Icons.PROPERTY_ICON);
+    // TODO: add special icon for node properties
+    setIcon(IconUtil.addText(Nodes.Folder, "P"));
     setNodeIdentifier("properties");
   }
 
