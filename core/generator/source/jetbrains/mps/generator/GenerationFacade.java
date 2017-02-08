@@ -48,7 +48,21 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 /**
- * Evgeny Gryaznov, 1/25/11
+ * Entry point to model transformation (aka generation) process. Populate with relevant context information:
+ * {@link #messages(IMessageHandler)}  to receive generator messages (optional);
+ * {@link #transients(TransientModelsProvider)} where to keep transient models (mandatory);
+ * {@link #taskHandler(GeneratorTaskListener)} get notified about progress (optional);
+ * then fire off with {@link #process(ProgressMonitor, List)}
+ *
+ * IMPLEMENTATION NOTE:
+ *  transformation requires model read lock for a repository of transformed model. At certain moments, it also requires write lock on a repository with
+ *  transient modules. Although I can (and would like to) hide appropriate locks inside TransientModelsProvider, now these are explicit and are outside
+ *  of the class to avoid accidental 'can't write from read'. Shall investigate if there's true need to expose transient modules in a repository right
+ *  from the very beginning. If yes, shall double efforts to get distinct repository for transient modules (so that only transient repo is write-locked,
+ *  while input model's repo is read-locked).
+ *
+ * @author Artem Tikhomirov
+ * @author Evgeny Gryaznov, 1/25/11
  */
 public final class GenerationFacade {
 
@@ -204,6 +218,8 @@ public final class GenerationFacade {
     myTaskListener = recorder;
     try {
       final GeneratorTaskBase task = new GeneratorTaskBase(model);
+      TransientModelsModule tm = myTransientModelsProvider.createModule(model.getModule().getModuleName());
+      myTransientModelsProvider.associate(task, tm);
       modelStreams(new ModelStreamProviderImpl());
       process0(monitor, Collections.singletonList(task));
       return recorder.getRecorded(task);

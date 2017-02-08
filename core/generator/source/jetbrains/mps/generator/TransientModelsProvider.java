@@ -129,7 +129,7 @@ public class TransientModelsProvider {
     if (myModuleMap.containsKey(task.getModel().getModule())) {
       return myModuleMap.get(task.getModel().getModule());
     }
-    throw new IllegalStateException();
+    throw new IllegalStateException("No transient module associated with task " + task);
   }
 
   // despite public, not part of API/contract. Made available to friend classes
@@ -138,7 +138,7 @@ public class TransientModelsProvider {
   }
 
   /**
-   * Requires model read to register checkpoint module with a {@linkplain #getRepository() repository}
+   * Requires model write to register checkpoint module with a {@linkplain #getRepository() repository}.
    */
   public void initCheckpointModule() {
     if (myCheckpointsModule == null) {

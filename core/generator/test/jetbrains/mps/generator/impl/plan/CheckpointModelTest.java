@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,8 @@ import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.LogHandler;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccessHelper;
@@ -38,6 +40,7 @@ import jetbrains.mps.smodel.language.GeneratorRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.PathManager;
+import org.apache.log4j.Logger;
 import org.hamcrest.CoreMatchers;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -68,6 +71,8 @@ public class CheckpointModelTest extends PlatformMpsTest {
 
   @Rule
   public final ErrorCollector myErrors = new ErrorCollector();
+
+  private final IMessageHandler myGeneratorMessages = new LogHandler(Logger.getLogger(CheckpointModelTest.class));
 
   @BeforeClass
   public static void setup() {
@@ -101,8 +106,14 @@ public class CheckpointModelTest extends PlatformMpsTest {
     final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
-    GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
+    // need write for process(x, model) to construct transient module, and need model read to run transformation
+    GenerationStatus genStatus = new ModelAccessHelper(mpsProject.getRepository()).runWriteAction(() -> {
+      GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider).messages(myGeneratorMessages);
+      tmProvider.initCheckpointModule();
+      GenerationStatus rv = genFacade.process(new EmptyProgressMonitor(), m);
+      tmProvider.publishAll();
+      return rv;
+    });
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     // Now I can access CME from GenerationStatus, but keep new CME to verify the environment is capable
     // to get populated from transient models. In fact, GenerationStatus shall give access to smth directed
@@ -153,8 +164,14 @@ public class CheckpointModelTest extends PlatformMpsTest {
     final PlanIdentity planIdentity = new PlanIdentity(plan);
     GenerationOptions opt = GenerationOptions.getDefaults().customPlan(m, plan).create();
     final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
-    GenerationStatus genStatus = genFacade.process(new EmptyProgressMonitor(), m);
+    // write lock - see above #createModelWithOneCheckpoint
+    GenerationStatus genStatus = new ModelAccessHelper(mpsProject.getRepository()).runWriteAction(() -> {
+      GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider).messages(myGeneratorMessages);
+      tmProvider.initCheckpointModule();
+      GenerationStatus rv = genFacade.process(new EmptyProgressMonitor(), m);
+      tmProvider.publishAll();
+      return rv;
+    });
     myErrors.checkThat("Generation succeeds", genStatus.isOk(), CoreMatchers.equalTo(true));
     CrossModelEnvironment cme = new CrossModelEnvironment(tmProvider, new ModelStreamProviderImpl());
     ModelCheckpoints modelCheckpoints = cme.getState(m, planIdentity);
@@ -204,29 +221,31 @@ public class CheckpointModelTest extends PlatformMpsTest {
   public void testTwoModelsIndividually() {
     final SModelReference mr1 = PersistenceFacade.getInstance().createModelReference("r:a2bc1c51-b81b-4f90-a208-04e6bd08c9c2(jetbrains.mps.generator.xmodel.test.m1)");
     final SModelReference mr2 = PersistenceFacade.getInstance().createModelReference("r:1ae0d5a3-32c6-406d-9a53-f40b122309f5(jetbrains.mps.generator.xmodel.test.m2)");
-    ModelGenerationPlan plan = new ModelAccessHelper(mpsProject.getModelAccess()).runReadAction(new Computable<ModelGenerationPlan>() {
-      @Override
-      public ModelGenerationPlan compute() {
-        SLanguage lang1 = MetaAdapterFactory.getLanguage(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, "jetbrains.mps.generator.test.xmodel.lang1");
-        final Transform step1 = new Transform(getGenerators(lang1));
-        final Transform step2 = new Transform(getBaseLanguageGenerators());
-        final Checkpoint cp1 = new Checkpoint("aaa");
-        return new RigidGenerationPlan("test.plan.3", step1, cp1, step2);
-      }
+    GenerationStatus[] genStatus = new GenerationStatus[2];
+    mpsProject.getModelAccess().runWriteAction(() -> {
+      SLanguage lang1 = MetaAdapterFactory.getLanguage(0xb2d9d19b9a4747a4L, 0x93f40c9390001bf2L, "jetbrains.mps.generator.test.xmodel.lang1");
+      final Transform step1 = new Transform(getGenerators(lang1));
+      final Transform step2 = new Transform(getBaseLanguageGenerators());
+      final Checkpoint cp1 = new Checkpoint("aaa");
+      ModelGenerationPlan plan =  new RigidGenerationPlan("test.plan.3", step1, cp1, step2);
+      SModel m1 = resolve(mr1);
+      OptionsBuilder optBuilder = GenerationOptions.getDefaults();
+      GenerationOptions opt = optBuilder.customPlan(m1, plan).create();
+      final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
+      GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider).messages(myGeneratorMessages);
+      tmProvider.initCheckpointModule();
+      genStatus[0] = genFacade.process(new EmptyProgressMonitor(), m1);
+      tmProvider.publishAll();
+      SModel m2 = resolve(mr2);
+      // although could, don't want to put plan for m2 right along with plan for m1, want to have them separate
+      opt = optBuilder.customPlan(m2, plan).create();
+      genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider).messages(myGeneratorMessages);
+      tmProvider.initCheckpointModule();
+      genStatus[1] = genFacade.process(new EmptyProgressMonitor(), m2);
+      tmProvider.publishAll();
     });
-    SModel m1 = resolve(mr1);
-    OptionsBuilder optBuilder = GenerationOptions.getDefaults();
-    GenerationOptions opt = optBuilder.customPlan(m1, plan).create();
-    final TransientModelsProvider tmProvider = mpsProject.getComponent(TransientModelsProvider.class);
-    GenerationFacade genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
-    GenerationStatus genStatus1 = genFacade.process(new EmptyProgressMonitor(), m1);
-    SModel m2 = resolve(mr2);
-    // although could, don't want to put plan for m2 right along with plan for m1, want to have them separate
-    opt = optBuilder.customPlan(m2, plan).create();
-    genFacade = new GenerationFacade(mpsProject.getRepository(), opt).transients(tmProvider);
-    GenerationStatus genStatus2 = genFacade.process(new EmptyProgressMonitor(), m2);
-    myErrors.checkThat("m1 generation succeeds", genStatus1.isOk(), CoreMatchers.equalTo(true));
-    myErrors.checkThat("m2 generation succeeds", genStatus2.isOk(), CoreMatchers.equalTo(true));
+    myErrors.checkThat("m1 generation succeeds", genStatus[0].isOk(), CoreMatchers.equalTo(true));
+    myErrors.checkThat("m2 generation succeeds", genStatus[1].isOk(), CoreMatchers.equalTo(true));
   }
 
   @Test
