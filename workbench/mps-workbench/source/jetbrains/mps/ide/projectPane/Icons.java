@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,12 @@ import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.util.annotation.ToRemove;
 
 import javax.swing.Icon;
 
+@Deprecated
+@ToRemove(version = 2017.1)
 public class Icons extends IdeIcons {
 
 

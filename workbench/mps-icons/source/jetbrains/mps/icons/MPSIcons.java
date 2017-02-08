@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,6 +59,7 @@ public class MPSIcons {
   }
 
   public static class General {
+    @Deprecated /* Will be removed in MPS 2017.2 */
     public static final Icon Block = IconLoader.getIcon("/general/block.png");
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
     public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
