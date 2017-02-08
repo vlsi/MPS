@@ -1019,7 +1019,7 @@
                 <ref role="37wK5l" to="wyt6:~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolve="format" />
                 <ref role="1Pybhc" to="wyt6:~String" resolve="String" />
                 <node concept="Xl_RD" id="4eWOtElZCdu" role="37wK5m">
-                  <property role="Xl_RC" value="%s startup script" />
+                  <property role="Xl_RC" value=":: %s startup script" />
                 </node>
                 <node concept="2OqwBi" id="4eWOtElZCdv" role="37wK5m">
                   <node concept="2OqwBi" id="4eWOtElZCdw" role="2Oq$k0">
@@ -1748,11 +1748,15 @@
       </node>
     </node>
     <node concept="2DRAP_" id="4eWOtEm2LWg" role="2DRAPQ">
-      <property role="2DPR8u" value="&quot;%JAVA_EXE%&quot; %ALL_JVM_ARGS% -cp &quot;%CLASS_PATH%&quot; %MAIN_CLASS% %*" />
+      <property role="2DPR8u" value="start &quot;&quot; &quot;%JAVA_EXE%&quot; %ALL_JVM_ARGS% -cp &quot;%CLASS_PATH%&quot; %MAIN_CLASS% %*" />
     </node>
     <node concept="2DRAP_" id="4eWOtEm2KJ4" role="2DRAPQ" />
     <node concept="2DRAP_" id="4eWOtEm2OmL" role="2DRAPQ">
       <property role="2DPR8u" value="SET PATH=%OLD_PATH%" />
+    </node>
+    <node concept="2DRAP_" id="4A8SxGHrdsx" role="2DRAPQ" />
+    <node concept="2DRAP_" id="4A8SxGHrdxv" role="2DRAPQ">
+      <property role="2DPR8u" value="exit" />
     </node>
     <node concept="n94m4" id="1w81suLRS6P" role="lGtFl">
       <ref role="n9lRv" to="s7om:3nFPImNgRk8" resolve="MpsStartupScript" />
