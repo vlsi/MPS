@@ -60,6 +60,10 @@
     
     <key>NSHighResolutionCapable</key>
     <true />
+    
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true />
+    
     <key>LSArchitecturePriority</key>
     <array>
       <string>x86_64</string>
@@ -105,7 +109,7 @@
         <string>$APP_PACKAGE/Contents</string>
       </dict>
       <key>VMOptions</key>
-      <string>-Dintellij.config.imported.in.current.session=true -Dide.mac.message.dialogs.as.sheets=false -Dapple.awt.graphics.UseQuartz=true -Dfile.encoding=UTF-8 -client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none</string>
+      <string>-XX:MaxJavaStackTraceDepth=-1 -XX:-OmitStackTraceInFastThrow -Djava.net.preferIPv4Stack=true -Dsun.io.useCanonCaches=false -XX:SoftRefLRUPolicyMSPerMB=50 -XX:+UseConcMarkSweepGC -Dintellij.config.imported.in.current.session=true -Dide.mac.message.dialogs.as.sheets=false -Dapple.awt.graphics.UseQuartz=true -Dfile.encoding=UTF-8 -client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar</string>
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/Contents/bin</string>
     </dict>

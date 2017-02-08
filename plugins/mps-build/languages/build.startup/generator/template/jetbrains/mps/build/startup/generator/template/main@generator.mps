@@ -543,6 +543,18 @@
             <property role="qg3DV" value="true" />
             <property role="2pNNFO" value="true" />
           </node>
+          <node concept="3o6iSG" id="4A8SxGHvLOW" role="3o6s8t" />
+          <node concept="2pNNFK" id="4A8SxGHvNkc" role="3o6s8t">
+            <property role="2pNNFO" value="key" />
+            <node concept="3o6iSG" id="4A8SxGHvNNX" role="3o6s8t">
+              <property role="3o6i5n" value="NSSupportsAutomaticGraphicsSwitching" />
+            </node>
+          </node>
+          <node concept="2pNNFK" id="4A8SxGHvOjM" role="3o6s8t">
+            <property role="2pNNFO" value="true" />
+            <property role="qg3DV" value="true" />
+          </node>
+          <node concept="3o6iSG" id="4A8SxGHvMkF" role="3o6s8t" />
           <node concept="2pNNFK" id="7d8Y7G7OThC" role="3o6s8t">
             <property role="2pNNFO" value="key" />
             <node concept="3o6iSG" id="7d8Y7G7OTJM" role="3o6s8t">
@@ -922,19 +934,27 @@
             <node concept="2pNNFK" id="7Muxx6JTrEQ" role="3o6s8t">
               <property role="2pNNFO" value="string" />
               <node concept="3o6iSG" id="7Muxx6JTrER" role="3o6s8t">
-                <property role="3o6i5n" value="VM Options" />
+                <property role="3o6i5n" value="-XX:+UseCompressedOops -Xbootclasspath/a:../lib/boot.jar" />
                 <node concept="17Uvod" id="7Muxx6JTrFx" role="lGtFl">
                   <property role="2qtEX9" value="value" />
                   <property role="P4ACc" value="479c7a8c-02f9-43b5-9139-d910cb22f298/1622293396948952339/1622293396948953704" />
                   <node concept="3zFVjK" id="7Muxx6JTrFy" role="3zH0cK">
                     <node concept="3clFbS" id="7Muxx6JTrFz" role="2VODD2">
                       <node concept="3clFbF" id="7Muxx6JTrF$" role="3cqZAp">
-                        <node concept="2OqwBi" id="7Muxx6JTrF_" role="3clFbG">
-                          <node concept="30H73N" id="7Muxx6JTrFA" role="2Oq$k0" />
-                          <node concept="2qgKlT" id="7Muxx6JTrFB" role="2OqNvi">
-                            <ref role="37wK5l" to="tgdw:54lRqzvuHDj" resolve="getDefaultVmoptions" />
-                            <node concept="3clFbT" id="2lwFGYOXwbx" role="37wK5m">
-                              <property role="3clFbU" value="true" />
+                        <node concept="3cpWs3" id="4A8SxGHvS4D" role="3clFbG">
+                          <node concept="3zGtF$" id="4A8SxGHvReH" role="3uHU7w" />
+                          <node concept="3cpWs3" id="4A8SxGHvPVZ" role="3uHU7B">
+                            <node concept="2OqwBi" id="7Muxx6JTrF_" role="3uHU7B">
+                              <node concept="30H73N" id="7Muxx6JTrFA" role="2Oq$k0" />
+                              <node concept="2qgKlT" id="7Muxx6JTrFB" role="2OqNvi">
+                                <ref role="37wK5l" to="tgdw:54lRqzvuHDj" resolve="getDefaultVmoptions" />
+                                <node concept="3clFbT" id="2lwFGYOXwbx" role="37wK5m">
+                                  <property role="3clFbU" value="true" />
+                                </node>
+                              </node>
+                            </node>
+                            <node concept="Xl_RD" id="4A8SxGHvSlv" role="3uHU7w">
+                              <property role="Xl_RC" value=" " />
                             </node>
                           </node>
                         </node>
@@ -2881,6 +2901,12 @@
     </node>
     <node concept="2DRAP_" id="7C7qUK4tcD6" role="2DRAPQ">
       <property role="2DPR8u" value="  ${VM_OPTIONS} \" />
+    </node>
+    <node concept="2DRAP_" id="4A8SxGHvXEx" role="2DRAPQ">
+      <property role="2DPR8u" value="  -Dawt.useSystemAAFontSettings=lcd \" />
+    </node>
+    <node concept="2DRAP_" id="4A8SxGHvYOW" role="2DRAPQ">
+      <property role="2DPR8u" value="  -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine \" />
     </node>
     <node concept="2DRAP_" id="7C7qUK4tcX2" role="2DRAPQ">
       <property role="2DPR8u" value="  &quot;-XX:ErrorFile=$HOME/java_error_in_MPS_%p.log&quot; \" />

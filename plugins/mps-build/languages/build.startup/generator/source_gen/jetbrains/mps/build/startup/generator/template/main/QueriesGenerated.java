@@ -35,7 +35,7 @@ public class QueriesGenerated {
     return (String) MpsStartupScript__BehaviorDescriptor.getIdeaPathSelector_idBsOHnja5fe.invoke(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_8979762117546982114(final PropertyMacroContext _context) {
-    return (String) MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(_context.getNode(), ((boolean) true));
+    return MpsStartupScript__BehaviorDescriptor.getDefaultVmoptions_id54lRqzvuHDj.invoke(_context.getNode(), ((boolean) true)) + " " + _context.getTemplateValue();
   }
   public static Object propertyMacro_GetPropertyValue_8979762117546982098(final PropertyMacroContext _context) {
     return _context.getTemplateValue() + "/" + SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xd5033ceef63244b6L, 0xb30889d4fbde34ffL, 0x35ebd6e5b3437508L, 0x35ebd6e5b343750bL, "startupFolder"));

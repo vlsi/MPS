@@ -172,8 +172,10 @@ fi
 
 IDE_JVM_ARGS=""
 # 32 bit
+# ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
 # ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041"
 # 64 bit
+# ADDITIONAL_JVM_ARGS="-XX:ReservedCodeCacheSize=240m"
 # ADDITIONAL_JVM_ARGS="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041"
 
 CLASSPATH=""
@@ -203,6 +205,8 @@ LD_LIBRARY_PATH="$IDE_BIN_HOME:$LD_LIBRARY_PATH" "$JAVA_BIN" \
   "-Xbootclasspath/a:$IDE_HOME/lib/boot.jar" \
   -classpath "$CLASSPATH:$MAIN_CLASS" \
   ${VM_OPTIONS} \
+  -Dawt.useSystemAAFontSettings=lcd \
+  -Dsun.java2d.renderer=sun.java2d.marlin.MarlinRenderingEngine \
   "-XX:ErrorFile=$HOME/java_error_in_MPS_%p.log" \
   "-XX:HeapDumpPath=$HOME/java_error_in_IDEA.hprof" \
   -Didea.paths.selector=$IDEA_PATHS_SELECTOR \

@@ -76,8 +76,10 @@ FOR /F "usebackq delims=" %%i IN ("%VM_OPTIONS_FILE%") DO CALL "%IDE_BIN_DIR%\ap
 IF EXIST "%VM_OPTIONS_FILE%" SET ACC=%ACC% -Djb.vmOptionsFile="%VM_OPTIONS_FILE%"
 
 :: 32 bit
+::set ADDITIONAL_JVM_ARGS=-XX:ReservedCodeCacheSize=240m
 ::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041
 :: 64 bit
+::set ADDITIONAL_JVM_ARGS=-XX:ReservedCodeCacheSize=240m
 ::set ADDITIONAL_JVM_ARGS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041
 
 set IDEA_PATHS_SELECTOR=MPS2017.1

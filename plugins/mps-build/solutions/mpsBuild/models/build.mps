@@ -25999,6 +25999,28 @@
     <node concept="26Ea6D" id="41$40Av8yAw" role="2hID6k">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />
     </node>
+    <node concept="26Ea6D" id="4A8SxGHvP8x" role="2hID6k">
+      <property role="26Ea6C" value="-XX:+UseConcMarkSweepGC" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvP94" role="2hID6k">
+      <property role="26Ea6C" value="-XX:SoftRefLRUPolicyMSPerMB=50" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvP9F" role="2hID6k">
+      <property role="26Ea6C" value="-Dsun.io.useCanonCaches=false" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPam" role="2hID6k">
+      <property role="26Ea6C" value="-Djava.net.preferIPv4Stack=true" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPb5" role="2hID6k">
+      <property role="26Ea6C" value="-XX:-OmitStackTraceInFastThrow" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPbS" role="2hID6k">
+      <property role="26Ea6C" value="-XX:MaxJavaStackTraceDepth=-1" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPcJ" role="2hID6k">
+      <property role="26Ea6C" value="-XX:ReservedCodeCacheSize=240m" />
+      <property role="2eq24a" value="true" />
+    </node>
     <node concept="26Ea6D" id="2lwFGYOW7EZ" role="2hID6k">
       <property role="2eq24a" value="true" />
       <property role="26Ea6C" value="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5041" />
@@ -26047,6 +26069,28 @@
     </node>
     <node concept="26Ea6D" id="41$40Av8yAF" role="26FZ21">
       <property role="26Ea6C" value="-Dintellij.config.imported.in.current.session=true" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvP8M" role="26FZ21">
+      <property role="26Ea6C" value="-XX:+UseConcMarkSweepGC" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvP9n" role="26FZ21">
+      <property role="26Ea6C" value="-XX:SoftRefLRUPolicyMSPerMB=50" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPa0" role="26FZ21">
+      <property role="26Ea6C" value="-Dsun.io.useCanonCaches=false" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPaH" role="26FZ21">
+      <property role="26Ea6C" value="-Djava.net.preferIPv4Stack=true" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPbu" role="26FZ21">
+      <property role="26Ea6C" value="-XX:-OmitStackTraceInFastThrow" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPcj" role="26FZ21">
+      <property role="26Ea6C" value="-XX:MaxJavaStackTraceDepth=-1" />
+    </node>
+    <node concept="26Ea6D" id="4A8SxGHvPdc" role="26FZ21">
+      <property role="26Ea6C" value="-XX:ReservedCodeCacheSize=240m" />
+      <property role="2eq24a" value="true" />
     </node>
     <node concept="26Ea6D" id="BJYGrH08XG" role="26FZ21">
       <property role="2eq24a" value="true" />
