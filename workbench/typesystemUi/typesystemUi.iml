@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="mps-java-platform" />
     <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="Idea-platform" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />

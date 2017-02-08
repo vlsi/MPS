@@ -21,6 +21,7 @@ import com.intellij.icons.AllIcons.Nodes;
 import jetbrains.mps.icons.MPSIcons.Generator;
 import jetbrains.mps.ide.devkit.generator.TraceNodeUI.Kind;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -48,7 +49,7 @@ import java.awt.Graphics;
 
   private static Icon getNodeIcon(@Nullable SNode node) {
     Icon icon = node == null ? null : IconManager.getIconFor(node);
-    return icon != null ? icon : jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON;
+    return icon != null ? icon : IdeIcons.DEFAULT_ICON;
   }
 
   private static Icon getKindIcon(Kind kind) {

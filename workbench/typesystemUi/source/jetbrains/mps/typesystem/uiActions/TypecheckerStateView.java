@@ -17,8 +17,8 @@ package jetbrains.mps.typesystem.uiActions;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 
 import javax.swing.JComponent;
@@ -27,7 +27,7 @@ public class TypecheckerStateView extends BaseProjectTool {
   private TypecheckerStateViewComponent myComponent;
 
   protected TypecheckerStateView(Project project) {
-    super(project, "Typechecker State", -1, Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Typechecker State", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public JComponent getComponent() {

@@ -22,10 +22,11 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.icons.MPSIcons.Actions;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyTree;
 import jetbrains.mps.ide.hierarchy.AbstractHierarchyView;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.JComponent;
@@ -34,7 +35,7 @@ import java.awt.BorderLayout;
 
 public class SupertypesViewTool extends AbstractHierarchyView {
   public SupertypesViewTool(Project project) {
-    super(project, "Supertypes", -1, Icons.DEFAULT_ICON);
+    super(project, "Supertypes", -1, IdeIcons.DEFAULT_ICON);
   }
 
   protected AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy) {
@@ -61,7 +62,7 @@ public class SupertypesViewTool extends AbstractHierarchyView {
   }
 
   protected DefaultActionGroup createButtonsGroup() {
-    ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", Icons.STRONG_SUBTYPE_ICON) {
+    ToggleAction action = new ToggleAction("Strong", "Show Only Strong Supertypes", Actions.ShowOnlyStrongSubtypes) {
       private boolean myState = false;
 
       public boolean isSelected(AnActionEvent e) {
