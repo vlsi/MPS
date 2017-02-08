@@ -15,7 +15,15 @@
  */
 package jetbrains.mps.ide.devkit.components;
 
+import com.intellij.ide.actions.CloseTabToolbarAction;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.IdeActions;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.ui.smodel.ConceptTreeNode;
@@ -37,33 +45,50 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
 
-public class NodeExplorerComponent {
+public class NodeExplorerComponent extends JPanel implements Disposable {
+  private MPSProject myProject;
+  private SNode myNode;
+
   private final MyTree myTree = new MyTree();
-  private final MPSProject myProject;
-  private SNodeReference myNode;
-  private final JScrollPane myScrollPane;
 
-  public NodeExplorerComponent(MPSProject mpsProject) {
+  private Runnable myCloseAction = null;
+
+  public NodeExplorerComponent(MPSProject mpsProject, SNode node) {
+    super(new BorderLayout());
     myProject = mpsProject;
-    myScrollPane = ScrollPaneFactory.createScrollPane(myTree);
-    myTree.setRootVisible(true);
-  }
 
-  public JComponent getComponent() {
-    return myScrollPane;
-  }
+    this.add(ScrollPaneFactory.createScrollPane(myTree), BorderLayout.CENTER);
 
-  public void showNode(SNode node) {
-    myNode = node == null ? null : new jetbrains.mps.smodel.SNodePointer(node);
+    DefaultActionGroup group = new DefaultActionGroup();
+    group.addAll(new CloseTabToolbarAction() {
+      @Override
+      public void actionPerformed(AnActionEvent e) {
+        if(myCloseAction != null) {
+          myCloseAction.run();
+        }
+      }
+    }, ActionManager.getInstance().getAction(IdeActions.ACTION_PIN_ACTIVE_TAB));
+    final ActionToolbar actionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.TOOLBAR, group, false);
+    actionToolbar.setTargetComponent(myTree);
+    this.add(actionToolbar.getComponent(), BorderLayout.WEST);
+
+    myNode = node;
     myTree.rebuildNow();
   }
 
-  public void clear() {
+  public void setCloseAction(Runnable closeAction) {
+    myCloseAction = closeAction;
+  }
+
+  @Override
+  public void dispose() {
+    myProject = null;
     myNode = null;
-    myTree.rebuildLater();
+
+    myTree.dispose();
   }
 
   private class MyTree extends MPSTree implements NodeChildrenProvider {
@@ -79,13 +104,12 @@ public class NodeExplorerComponent {
 
     @Override
     protected MPSTreeNode rebuild() {
+      myTree.setRootVisible(myNode == null);
       if (myNode == null) {
-        return new TextTreeNode("Null node reference");
-      } else if (myNode.resolve(myProject.getRepository()) == null) { //TODO: use global repository here? Node reference can come from anywhere.
-        return new TextTreeNode(String.format("Node reference %s can't be resolved", myNode.toString()));
+        return new TextTreeNode("No node");
       } else {
         TextTreeNode textTreeNode = new TextTreeNode("Node");
-        SNodeTreeNode sNodeTreeNode = new SNodeTreeNodeWithType(myNode.resolve(myProject.getRepository()));
+        SNodeTreeNode sNodeTreeNode = new SNodeTreeNodeWithType(myNode);
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
