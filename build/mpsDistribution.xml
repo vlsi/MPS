@@ -249,9 +249,6 @@
         <tokenfilter>
           <replaceregex pattern="NoJavaDistribution" replace="custom-jdk-bundled" flags="" />
         </tokenfilter>
-        <tokenfilter>
-          <replaceregex pattern="public\.app-category\.developer-tools&lt;/string&gt;" replace="public\.app-category\.developer-tools&lt;/string&gt;&#10; &lt;key&gt;NSSupportsAutomaticGraphicsSwitching&lt;/key&gt;&lt;true/&gt;" flags="m" />
-        </tokenfilter>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
       <globmapper from="*" to="jdk-bundled-Info.plist" />

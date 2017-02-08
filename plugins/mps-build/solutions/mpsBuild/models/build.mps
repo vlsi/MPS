@@ -17266,15 +17266,6 @@
             </node>
           </node>
         </node>
-        <node concept="1688n2" id="AwiPu7kupa" role="28jJR8">
-          <property role="1688n3" value="public\.app-category\.developer-tools&amp;lt;/string&amp;gt;" />
-          <property role="1688n6" value="m" />
-          <node concept="NbPM2" id="AwiPu7kupc" role="1688n0">
-            <node concept="3Mxwew" id="AwiPu7kupw" role="3MwsjC">
-              <property role="3MwjfP" value="public\.app-category\.developer-tools&amp;lt;/string&amp;gt;&amp;#10; &amp;lt;key&amp;gt;NSSupportsAutomaticGraphicsSwitching&amp;lt;/key&amp;gt;&amp;lt;true/&amp;gt;" />
-            </node>
-          </node>
-        </node>
         <node concept="3co7Ac" id="AwiPu7jIGl" role="28jJR8">
           <property role="3co7Am" value="lf" />
           <property role="3cpA_W" value="true" />
