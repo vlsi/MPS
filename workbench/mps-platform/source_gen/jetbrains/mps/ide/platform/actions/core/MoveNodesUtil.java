@@ -86,7 +86,7 @@ public class MoveNodesUtil {
     moveTo(project, refactoringName, processorToMoveRoots, new DefaultRefactoringUI(project));
   }
 
-  public static void moveTo(final MPSProject project, String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots, RefactoringUI refactoringUI) {
+  public static void moveTo(final Project project, String refactoringName, final Map<MoveNodesUtil.NodeProcessor, List<SNode>> processorToMoveRoots, RefactoringUI refactoringUI) {
 
     project.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {

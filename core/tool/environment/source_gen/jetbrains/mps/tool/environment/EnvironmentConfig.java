@@ -104,6 +104,10 @@ public class EnvironmentConfig {
     return addPlugin("migrationAssistant", "jetbrains.mps.ide.migration.assistant");
   }
 
+  public EnvironmentConfig withDevkitPlugin() {
+    return addPlugin("mpsdevkit", "jetbrains.mps.ide.devkit");
+  }
+
   public EnvironmentConfig withBootstrapLibraries() {
     for (String path : PathManager.getBootstrapPaths()) {
       addLib(path);

@@ -26,6 +26,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Map;
 import jetbrains.mps.refactoring.participant.RefactoringSession;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.refactoring.participant.RefactoringSessionImpl;
@@ -113,7 +114,7 @@ public class RefactoringProcessor {
 
   /**
    * 
-   * @see jetbrains.mps.ide.platform.actions.core.RefactoringProcessor#performRefactoringInProject(MPSProject, RefactoringUI, String, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>, List<IP>, _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession>, _FunctionTypes._void_P1_E0<? super RefactoringSession>) 
+   * @see jetbrains.mps.ide.platform.actions.core.RefactoringProcessor#performRefactoringInProject(Project, RefactoringUI, String, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>>, List<IP>, _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession>, _FunctionTypes._void_P1_E0<? super RefactoringSession>) 
    * @deprecated 
    */
   @Deprecated
@@ -130,7 +131,7 @@ public class RefactoringProcessor {
    * @param doRefactor callback that performs refactoring itself (e.g. moves or renames smth)
    * @param doCleanup cleanup that should be performed after all usages are updated (e.g. deletion of old code that can be used by participants), used only because of POSTPONE_REMOVE option
    */
-  public static <IP, FP> void performRefactoringInProject(MPSProject project, RefactoringUI refactoringUI, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor, @Nullable final _FunctionTypes._void_P1_E0<? super RefactoringSession> doCleanup) {
+  public static <IP, FP> void performRefactoringInProject(Project project, RefactoringUI refactoringUI, String refactoringName, Iterable<? extends RefactoringParticipant<?, ?, IP, FP>> participants, final List<IP> initialStates, final _FunctionTypes._return_P2_E0<? extends Map<IP, FP>, ? super Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>, ? super RefactoringSession> doRefactor, @Nullable final _FunctionTypes._void_P1_E0<? super RefactoringSession> doCleanup) {
     final RefactoringSessionImpl refactoringSession = new RefactoringSessionImpl();
     performRefactoring(new RefactoringParticipant.CollectingParticipantStateFactory<IP, FP>(), refactoringUI, refactoringSession, project.getRepository(), project.getScope(), refactoringName, participants, initialStates, new _FunctionTypes._return_P1_E0<Map<IP, FP>, Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>>>() {
       public Map<IP, FP> invoke(Iterable<RefactoringParticipant.ParticipantApplied<?, ?, IP, FP, IP, FP>> participantStates) {

@@ -1263,6 +1263,31 @@
         <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
       </node>
     </node>
+    <node concept="2tJIrI" id="3_WtNdZj_XO" role="jymVt" />
+    <node concept="3clFb_" id="3_WtNdZjBT1" role="jymVt">
+      <property role="1EzhhJ" value="false" />
+      <property role="od$2w" value="false" />
+      <property role="DiZV1" value="false" />
+      <property role="2aFKle" value="false" />
+      <property role="TrG5h" value="withDevkitPlugin" />
+      <node concept="3clFbS" id="3_WtNdZjBT2" role="3clF47">
+        <node concept="3cpWs6" id="3_WtNdZjBT3" role="3cqZAp">
+          <node concept="1rXfSq" id="3_WtNdZjBT5" role="3cqZAk">
+            <ref role="37wK5l" node="6rx4kZDk6GC" resolve="addPlugin" />
+            <node concept="Xl_RD" id="3_WtNdZjBT6" role="37wK5m">
+              <property role="Xl_RC" value="mpsdevkit" />
+            </node>
+            <node concept="Xl_RD" id="3_WtNdZjBT7" role="37wK5m">
+              <property role="Xl_RC" value="jetbrains.mps.ide.devkit" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3_WtNdZjBTb" role="1B3o_S" />
+      <node concept="3uibUv" id="3_WtNdZjBTc" role="3clF45">
+        <ref role="3uigEE" node="6rx4kZDk5A9" resolve="EnvironmentConfig" />
+      </node>
+    </node>
     <node concept="2tJIrI" id="MVJ1IE6A6O" role="jymVt" />
     <node concept="3clFb_" id="5mza6QqhjgL" role="jymVt">
       <property role="1EzhhJ" value="false" />

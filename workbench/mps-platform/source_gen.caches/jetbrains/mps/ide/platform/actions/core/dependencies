@@ -176,6 +176,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringParticipant" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSession" />
     <classNode dependClassName="jetbrains.mps.refactoring.participant.RefactoringSessionImpl" />
