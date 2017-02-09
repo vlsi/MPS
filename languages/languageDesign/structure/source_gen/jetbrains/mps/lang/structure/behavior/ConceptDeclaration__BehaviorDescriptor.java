@@ -25,6 +25,8 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.core.aspects.behaviour.api.SConstructor;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.core.aspects.behaviour.api.BHMethodNotFoundException;
@@ -35,8 +37,9 @@ public final class ConceptDeclaration__BehaviorDescriptor extends BaseBHDescript
 
   public static final SMethod<List<SNode>> getImmediateSuperconcepts_idhMuxyK2 = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getImmediateSuperconcepts").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("hMuxyK2").registry(REGISTRY).build();
   public static final SMethod<List<SNode>> getAllMethodsInPriorityOrder_id7TwdR6lloFy = new SMethodBuilder<List<SNode>>(new SJavaCompoundTypeImpl((Class<List<SNode>>) ((Class) Object.class))).name("getAllMethodsInPriorityOrder").modifiers(SModifiersImpl.create(0, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("7TwdR6lloFy").registry(REGISTRY).build();
+  public static final SMethod<String> getDescriptionText_id69Qfsw3IqwE = new SMethodBuilder<String>(new SJavaCompoundTypeImpl(String.class)).name("getDescriptionText").modifiers(SModifiersImpl.create(8, AccessPrivileges.PUBLIC)).concept(CONCEPT).id("69Qfsw3IqwE").registry(REGISTRY).build(SMethodBuilder.createJavaParameter((Class<SNode>) ((Class) Object.class), ""));
 
-  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getImmediateSuperconcepts_idhMuxyK2, getAllMethodsInPriorityOrder_id7TwdR6lloFy);
+  private static final List<SMethod<?>> BH_METHODS = Arrays.<SMethod<?>>asList(getImmediateSuperconcepts_idhMuxyK2, getAllMethodsInPriorityOrder_id7TwdR6lloFy, getDescriptionText_id69Qfsw3IqwE);
 
   private static void ___init___(@NotNull SNode __thisNode__) {
   }
@@ -70,6 +73,14 @@ public final class ConceptDeclaration__BehaviorDescriptor extends BaseBHDescript
 
     return methods;
   }
+  /*package*/ static String getDescriptionText_id69Qfsw3IqwE(@NotNull SNode __thisNode__, SNode reference) {
+    SNode anExtends = SLinkOperations.getTarget(__thisNode__, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979ba0450L, 0xf979be93cfL, "extends"));
+    if (anExtends != null) {
+      String namespace = NameUtil.compactNamespace(NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(__thisNode__)));
+      return "(" + SPropertyOperations.getString(anExtends, MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name")) + " in " + namespace + ")";
+    }
+    return "";
+  }
 
   /*package*/ ConceptDeclaration__BehaviorDescriptor() {
     super(REGISTRY);
@@ -91,6 +102,8 @@ public final class ConceptDeclaration__BehaviorDescriptor extends BaseBHDescript
         return (T) ((List<SNode>) getImmediateSuperconcepts_idhMuxyK2(node));
       case 1:
         return (T) ((List<SNode>) getAllMethodsInPriorityOrder_id7TwdR6lloFy(node));
+      case 2:
+        return (T) ((String) getDescriptionText_id69Qfsw3IqwE(node, (SNode) parameters[0]));
       default:
         throw new BHMethodNotFoundException(this, method);
     }

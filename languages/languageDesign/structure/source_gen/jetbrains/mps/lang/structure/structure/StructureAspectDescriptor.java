@@ -162,6 +162,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.class_(true, false, true);
     b.super_("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", 0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x1103553c5ffL);
     b.parent(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0x6d1df6c2700b0eaeL);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L);
     b.origin("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)/1071489090640");
     b.prop("rootable", 0xff49c1d648L, "1096454100552");
     b.prop("iconPath", 0x10e328118ddL, "1160488491229");

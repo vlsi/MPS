@@ -98,6 +98,9 @@
     <node concept="PrWs8" id="6OtXG9KbAAY" role="PzmwI">
       <ref role="PrY4T" node="6OtXG9K2KUI" resolve="DocumentationObjective" />
     </node>
+    <node concept="PrWs8" id="1YcAZC571At" role="PzmwI">
+      <ref role="PrY4T" to="tpck:69Qfsw3InJo" resolve="ISmartReferent" />
+    </node>
     <node concept="1TJgyi" id="fX9Ktp8" role="1TKVEl">
       <property role="TrG5h" value="rootable" />
       <property role="IQ2nx" value="1096454100552" />
