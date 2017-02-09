@@ -8,11 +8,11 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class SUBST_BooleanConstantArgiument_with_vaue_Test extends BaseTransformationTest {
+public class SUBST_BooleanConstantArgument_with_vaue_Test extends BaseTransformationTest {
   @Test
-  public void test_SUBST_BooleanConstantArgiument_with_vaue() throws Throwable {
+  public void test_SUBST_BooleanConstantArgument_with_vaue() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_vaue_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgument_with_vaue_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch

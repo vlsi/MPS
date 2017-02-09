@@ -6,13 +6,15 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 @MPSLaunch
-public class SUBST_BooleanConstantArgiument_with_Expression_Test extends BaseTransformationTest {
+public class SUBST_BooleanConstantArgument_with_Expression_Test extends BaseTransformationTest {
   @Test
-  public void test_SUBST_BooleanConstantArgiument_with_Expression() throws Throwable {
+  public void test_SUBST_BooleanConstantArgument_with_Expression() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgiument_with_Expression_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.SUBST_BooleanConstantArgument_with_Expression_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -22,6 +24,7 @@ public class SUBST_BooleanConstantArgiument_with_Expression_Test extends BaseTra
       initEditorComponent("957371990172616469", "957371990172715706");
       typeString("localVar");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }

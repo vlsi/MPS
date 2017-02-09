@@ -47,7 +47,6 @@
     <import index="pzbl" ref="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
-    <import index="xq5q" ref="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
@@ -44165,7 +44164,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="P9hc2K9otJ">
-    <property role="TrG5h" value="SUBST_BooleanConstantArgiument_with_Expression" />
+    <property role="TrG5h" value="SUBST_BooleanConstantArgument_with_Expression" />
     <property role="3GE5qa" value="substitute" />
     <node concept="3clFbS" id="P9hc2K9otY" role="LjaKd">
       <node concept="2TK7Tu" id="P9hc2K9otZ" role="3cqZAp">
@@ -44174,6 +44173,11 @@
       <node concept="2HxZob" id="3d3YzDnsdhJ" role="3cqZAp">
         <node concept="1iFQzN" id="3d3YzDnsdhK" role="3iKnsn">
           <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="5Zah1g2j2MJ" role="3cqZAp">
+        <node concept="pLAjd" id="5Zah1g2j2ML" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
@@ -44271,7 +44275,7 @@
     </node>
   </node>
   <node concept="LiM7Y" id="P9hc2Kb14K">
-    <property role="TrG5h" value="SUBST_BooleanConstantArgiument_with_vaue" />
+    <property role="TrG5h" value="SUBST_BooleanConstantArgument_with_vaue" />
     <property role="3GE5qa" value="substitute" />
     <node concept="3clFbS" id="P9hc2Kb14L" role="LjaKd">
       <node concept="2TK7Tu" id="P9hc2Kb14M" role="3cqZAp">
