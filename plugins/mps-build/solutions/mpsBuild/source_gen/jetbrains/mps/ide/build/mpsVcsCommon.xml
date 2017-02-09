@@ -158,6 +158,7 @@
       <zipfileset file="${mps_home}/plugins/vcs-core/languages/mergehints/jetbrains.mps.vcs.mergehints.mpl" prefix="module" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-languages-mergehints-languageModels" prefix="module/languageModels" />
     </jar>
+    <mkdir dir="${build.layout}/vcs-core/languages" />
     <mkdir dir="${build.layout}/vcs-core/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-core-core-models">
       <fileset dir="${mps_home}/plugins/vcs-core/core/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />

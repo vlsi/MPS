@@ -21123,11 +21123,17 @@
             </node>
           </node>
         </node>
+        <node concept="3_I8Xc" id="79dnIA70i0g" role="39821P">
+          <ref role="3_I8Xa" node="79dnIA70i5s" resolve="languages" />
+        </node>
         <node concept="398223" id="3SChJ9Xz4om" role="39821P">
           <node concept="3_J27D" id="3SChJ9Xz4oo" role="Nbhlr">
             <node concept="3Mxwew" id="3SChJ9Xz4pp" role="3MwsjC">
               <property role="3MwjfP" value="lib" />
             </node>
+          </node>
+          <node concept="3_I8Xc" id="I6XuqH6x77" role="39821P">
+            <ref role="3_I8Xa" node="7TqXBxc99L$" resolve="vcs-core.jar" />
           </node>
           <node concept="3981dx" id="1lMM4owFq7W" role="39821P">
             <node concept="3_J27D" id="1lMM4owFq7X" role="Nbhlr">
@@ -21151,9 +21157,6 @@
                 <ref role="3$exzV" node="39HJr_hyEzS" resolve="jetbrains.mps.ide.vcs.platform" />
               </node>
             </node>
-          </node>
-          <node concept="3_I8Xc" id="I6XuqH6x77" role="39821P">
-            <ref role="3_I8Xa" node="I6XuqGYlJK" resolve="vcs-core" />
           </node>
         </node>
       </node>
@@ -30790,6 +30793,13 @@
       </node>
       <node concept="m$_wl" id="I6XuqGYlJK" role="39821P">
         <ref role="m_rDy" node="6ifcnI8BosJ" resolve="mpsVcsCore" />
+        <node concept="398223" id="79dnIA70i5s" role="39821P">
+          <node concept="3_J27D" id="79dnIA70i5u" role="Nbhlr">
+            <node concept="3Mxwew" id="79dnIA70i6h" role="3MwsjC">
+              <property role="3MwjfP" value="languages" />
+            </node>
+          </node>
+        </node>
         <node concept="398223" id="I6XuqGYf2C" role="39821P">
           <node concept="3_J27D" id="I6XuqGYf2E" role="Nbhlr">
             <node concept="3Mxwew" id="I6XuqGYf3k" role="3MwsjC">

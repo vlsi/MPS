@@ -60,7 +60,12 @@
     <copy todir="${build.layout}/mps-vcs/META-INF">
       <fileset file="${mps_home}/plugins/vcs/META-INF/MPSVcs.xml" />
     </copy>
+    <mkdir dir="${build.layout}/mps-vcs/languages" />
+    <copy todir="${build.layout}/mps-vcs/languages">
+      <fileset dir="${artifacts.mpsVcsCommon}/vcs-core/languages" />
+    </copy>
     <mkdir dir="${build.layout}/mps-vcs/lib" />
+    <copy file="${artifacts.mpsVcsCommon}/vcs-core/lib/vcs-core.jar" todir="${build.layout}/mps-vcs/lib" />
     <copyModels todir="${build.tmp}/customProcessors/copyModels/plugins-vcs-models">
       <fileset dir="${mps_home}/plugins/vcs/models" includes="**/*.mps, **/*.metadata, **/*.history, **/*.mpsr, **/.model" />
     </copyModels>
@@ -76,10 +81,6 @@
       <zipfileset dir="${mps_home}/plugins/vcs/common" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.vcs.platform" />
       <zipfileset dir="${build.tmp}/customProcessors/copyModels/plugins-vcs-common-models" prefix="modules/jetbrains.mps.ide.vcs.platform/models" />
     </jar>
-    <mkdir dir="${build.layout}/mps-vcs/lib/vcs-core" />
-    <copy todir="${build.layout}/mps-vcs/lib/vcs-core">
-      <fileset dir="${artifacts.mpsVcsCommon}/vcs-core" />
-    </copy>
     <mkdir dir="${build.layout}/git4idea" />
     <copy todir="${build.layout}/git4idea">
       <fileset dir="${artifacts.mpsVcsCommon}/git4idea" />
