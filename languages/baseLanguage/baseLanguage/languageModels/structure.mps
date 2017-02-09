@@ -1319,6 +1319,9 @@
     <node concept="PrWs8" id="7LNwt32HBp$" role="PzmwI">
       <ref role="PrY4T" to="tpck:3fifI_xCcJN" resolve="ScopeProvider" />
     </node>
+    <node concept="PrWs8" id="1YcAZC59Lce" role="PzmwI">
+      <ref role="PrY4T" to="tpck:69Qfsw3InJo" resolve="ISmartReferent" />
+    </node>
   </node>
   <node concept="1TIwiD" id="g7uibYu">
     <property role="R4oN_" value="reference to classifier" />

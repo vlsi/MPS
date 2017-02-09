@@ -1456,6 +1456,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.parent(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0x112670d273fL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x11f1e14d895L);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x33d23ee961a0cbf3L);
+    b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L);
     b.origin("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1107461130800");
     b.prop("nestedName", 0x11a134c900dL, "1211504562189");
     b.prop("isDeprecated", 0x11ce63f4b3bL, "1223633619771");

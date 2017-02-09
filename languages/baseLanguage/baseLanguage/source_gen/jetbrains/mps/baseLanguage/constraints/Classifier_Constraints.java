@@ -6,11 +6,9 @@ import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.runtime.ReferencePresentationContext;
-import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
 import java.util.Map;
@@ -20,6 +18,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
 import jetbrains.mps.smodel.adapter.ids.MetaIdFactory;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.baseLanguage.behavior.Classifier__BehaviorDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
@@ -39,16 +38,8 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
-      public boolean hasPresentation() {
-        return true;
-      }
-      @Override
-      public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
-        return (String) Classifier__BehaviorDescriptor.getNestedNameInContext_id7q4lzBFjvF8.invoke(_context.getParameterNode(), _context.getContextNode());
-      }
-      @Override
       public SNodeReference getSearchScopeValidatorNode() {
-        return breakingNode_z47b7w_a0a2a0a0a3;
+        return breakingNode_z47b7w_a0a0a0a0a3;
       }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
@@ -94,5 +85,5 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-  private static SNodePointer breakingNode_z47b7w_a0a2a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
+  private static SNodePointer breakingNode_z47b7w_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 }
