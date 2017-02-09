@@ -112,6 +112,7 @@ public class NodePresentationUtil {
   /**
    *
    * @deprecated use {@link #matchingText(SNode)}  instead.
+   * TODO usages in gensources
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -122,6 +123,7 @@ public class NodePresentationUtil {
   /**
    *
    * @deprecated use {@link #matchingText(SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
+   * TODO no usages
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -177,11 +179,12 @@ public class NodePresentationUtil {
 
   /**
    * @deprecated use {@link #descriptionText(SNode)} instead.
+   * TODO usages in gensources
    */
   @Deprecated
   @ToRemove(version = 3.5)
   public static String descriptionText(SNode node, boolean referent_presentation) {
-    return descriptionText_internal(node);
+    return descriptionText(node, null);
   }
 
   public static String descriptionText(SNode node, SNode context) {

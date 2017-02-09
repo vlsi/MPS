@@ -84,10 +84,10 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
-      return NodePresentationUtil.matchingText((SNode) parameterObject, isReferentPresentation());
+      return NodePresentationUtil.matchingText((SNode) parameterObject);
     }
     if (parameterObject instanceof SConcept) {
-      return NodePresentationUtil.matchingText((SConcept) parameterObject, isReferentPresentation());
+      return NodePresentationUtil.matchingText((SConcept) parameterObject);
     }
     return "" + parameterObject;
   }
@@ -95,7 +95,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_Group implements Substitu
 
   protected String getDescriptionText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
-      return NodePresentationUtil.descriptionText((SNode) parameterObject, isReferentPresentation());
+      return NodePresentationUtil.descriptionText((SNode) parameterObject);
     }
     if (parameterObject instanceof SConcept) {
       return NodePresentationUtil.descriptionText((SConcept) parameterObject, isReferentPresentation());

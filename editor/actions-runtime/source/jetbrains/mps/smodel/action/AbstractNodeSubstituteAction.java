@@ -100,7 +100,7 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
 
   protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
     if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.matchingText((SNode) myParameterObject, referent_presentation, visible);
+      return NodePresentationUtil.matchingText((SNode) myParameterObject, mySourceNode, visible);
     }
     if (myParameterObject instanceof SAbstractConcept) {
       return NodePresentationUtil.matchingText((SAbstractConcept) myParameterObject, referent_presentation);
@@ -108,9 +108,10 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
     return "" + myParameterObject;
   }
 
+  // TODO pattern & referent_presentation has no sense
   protected String getDescriptionText(String pattern, boolean referent_presentation) {
     if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.descriptionText((SNode) myParameterObject, referent_presentation);
+      return NodePresentationUtil.descriptionText((SNode) myParameterObject);
     }
     return "";
   }

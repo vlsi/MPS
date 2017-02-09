@@ -52,6 +52,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   @Override
   public String getMatchingText(@NotNull String pattern) {
     if (myMatchingText == null) {
+      // TODO compatibility with legacy. remove after 3.5
       myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
       if (myMatchingText == null) {
         myMatchingText = getSmartMatchingText(false);
@@ -61,7 +62,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   private String getSmartMatchingText(boolean visible) {
-    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, true, visible);
+    String referentMatchingText = NodePresentationUtil.matchingText(myReferentNode, getReferentNode(), visible);
     if (ReferenceConceptUtil.hasSmartAlias(mySmartConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(mySmartConcept, referentMatchingText);
     }
@@ -71,7 +72,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
-    return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
+    return "^" + NodePresentationUtil.descriptionText(myReferentNode, getParentNode());
   }
 
   @Nullable
@@ -93,6 +94,7 @@ public class SmartReferenceSubstituteMenuItem extends DefaultSubstituteMenuItem 
   }
 
   String getVisibleMatchingText() {
+    // TODO compatibility with legacy. remove after 3.5
     String visibleMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, true, true, false);
     if (visibleMatchingText == null) {
       visibleMatchingText = getSmartMatchingText(true);

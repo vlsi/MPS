@@ -255,8 +255,8 @@ public class ChildSubstituteActionsHelper {
     return actions;
   }
 
-  private static String getSmartMatchingText(SNode referenceNodeConcept, SNode referentNode, boolean visible) {
-    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, true, visible);
+  private static String getSmartMatchingText(SNode referenceNodeConcept, SNode referentNode, boolean visible, SNode context) {
+    String referentMatchingText = NodePresentationUtil.matchingText(referentNode, context, visible);
     if (ReferenceConceptUtil.hasSmartAlias(referenceNodeConcept)) {
       return ReferenceConceptUtil.getPresentationFromSmartAlias(referenceNodeConcept, referentMatchingText);
     }
@@ -287,9 +287,10 @@ public class ChildSubstituteActionsHelper {
     @Override
     public String getMatchingText(String pattern) {
       if (myMatchingText == null) {
+        // TODO legacy compatibility. remove after 3.5
         myMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, false, true, false);
         if (myMatchingText == null) {
-          myMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, false);
+          myMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, false, myParentNode);
         }
       }
       return myMatchingText;
@@ -298,9 +299,10 @@ public class ChildSubstituteActionsHelper {
     @Override
     public String getVisibleMatchingText(String pattern) {
       if (myVisibleMatchingText == null) {
+        // TODO legacy compatibility. remove after 3.5
         myVisibleMatchingText = myRefDescriptor.getReferencePresentation(myReferentNode, true, true, false);
         if (myVisibleMatchingText == null) {
-          myVisibleMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, true);
+          myVisibleMatchingText = getSmartMatchingText(mySmartConcept, myReferentNode, true, myParentNode);
         }
       }
       return myVisibleMatchingText;
@@ -318,7 +320,7 @@ public class ChildSubstituteActionsHelper {
 
     @Override
     public String getDescriptionText(String pattern) {
-      return "^" + NodePresentationUtil.descriptionText(myReferentNode, true);
+      return "^" + NodePresentationUtil.descriptionText(myReferentNode);
     }
 
     @Override
