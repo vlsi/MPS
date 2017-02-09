@@ -29,21 +29,22 @@ public final class LanguageConceptSwitch {
   public static final int IOldCommentContainer = 17;
   public static final int IResolveInfo = 18;
   public static final int ISkipConstraintsChecking = 19;
-  public static final int IStubForAnotherConcept = 20;
-  public static final int ISuppressErrors = 21;
-  public static final int IType = 22;
-  public static final int IWrapper = 23;
-  public static final int ImplementationContainer = 24;
-  public static final int ImplementationPart = 25;
-  public static final int ImplementationWithStubPart = 26;
-  public static final int InterfacePart = 27;
-  public static final int LinkAttribute = 28;
-  public static final int NodeAttribute = 29;
-  public static final int PropertyAttribute = 30;
-  public static final int ScopeFacade = 31;
-  public static final int ScopeProvider = 32;
-  public static final int SideTransformInfo = 33;
-  public static final int SuppressErrorsAnnotation = 34;
+  public static final int ISmartReferent = 20;
+  public static final int IStubForAnotherConcept = 21;
+  public static final int ISuppressErrors = 22;
+  public static final int IType = 23;
+  public static final int IWrapper = 24;
+  public static final int ImplementationContainer = 25;
+  public static final int ImplementationPart = 26;
+  public static final int ImplementationWithStubPart = 27;
+  public static final int InterfacePart = 28;
+  public static final int LinkAttribute = 29;
+  public static final int NodeAttribute = 30;
+  public static final int PropertyAttribute = 31;
+  public static final int ScopeFacade = 32;
+  public static final int ScopeProvider = 33;
+  public static final int SideTransformInfo = 34;
+  public static final int SuppressErrorsAnnotation = 35;
 
   public LanguageConceptSwitch() {
     LanguageConceptIndexBuilder builder = new LanguageConceptIndexBuilder(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL);
@@ -67,6 +68,7 @@ public final class LanguageConceptSwitch {
     builder.put(0x39384475a5756fb0L, IOldCommentContainer);
     builder.put(0x116b17c6e46L, IResolveInfo);
     builder.put(0x50ef06e32fec9043L, ISkipConstraintsChecking);
+    builder.put(0x62763dc803b97bd8L, ISmartReferent);
     builder.put(0x226fb4c3ba26d45L, IStubForAnotherConcept);
     builder.put(0x2f16f1b357e19f43L, ISuppressErrors);
     builder.put(0x11f8a0774f2L, IType);

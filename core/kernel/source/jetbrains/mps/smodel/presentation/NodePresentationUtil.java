@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.smodel.presentation;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodeUtil;
+import jetbrains.mps.smodel.SmartReferentUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.StringUtil;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
@@ -30,6 +34,28 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 import java.awt.Font;
 
+/**
+ * This class provides utility methods for default presentation logic for referenced nodes.
+ *
+ * Here is some implementation notes how presentation text is calculated:
+ *
+ * 1) default presentation:
+ *     - custom text by overriding BC#getPresentation() or ISmartReferent#getPresentation(context)
+ *     - name from INamedConcept
+ *     - special presentation for smart. refs. TODO should be removed
+ *     - concept alias
+ * 2) matching text:
+ *     - custom text by overriding ISmartReferent#getMatchingText(context)
+ *     - resolveInfo from IResolveInfo
+ *       TODO IResolveInfo now uses mostly to distinct matchingText and visibleMatchingText
+ *     - default presentation
+ * 3) matching text:
+ *     - custom text by overriding ISmartReferent#getVisibleMatchingText(context)
+ *     - default presentation
+ * 4) description text:
+ *     - custom text by overriding ISmartReferent#getDescriptionText(context)
+ *     - {conceptName} ( {where} )
+ */
 public class NodePresentationUtil {
 
   public static boolean isLocalTo(SNode referenceNode, SNode referentNode) {
@@ -80,29 +106,47 @@ public class NodePresentationUtil {
   }
 
   public static String matchingText(SNode node) {
-    return matchingText(node, false);
+    return matchingText(node, null);
   }
 
+  /**
+   *
+   * @deprecated use {@link #matchingText(SNode)}  instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static String matchingText(SNode node, boolean referent_presentation) {
-    return matchingText(node, referent_presentation, true);
+    return matchingText(node, null);
   }
 
+  /**
+   *
+   * @deprecated use {@link #matchingText(SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static String matchingText(SNode node, boolean referent_presentation, boolean visible) {
-    // handle concept declarations is a special way.
-    if (SNodeUtil.isInstanceOfConceptDeclaration(node)) {
-      if (!referent_presentation) {
-        String alias = SNodeUtil.getConceptAlias(node);
-        if (alias != null) {
-          return alias;
-        }
-      }
-      return node.getName();
-    }
+    return matchingText(node, null, visible);
+  }
 
-    if (!visible) {
-      if (node.getConcept().isSubConceptOf(SNodeUtil.concept_IResolveInfo)) {
-        return SNodeUtil.getResolveInfo(node);
-      }
+  public static String matchingText(@NotNull SNode node, @Nullable SNode context) {
+    return getPresentation(node, SmartReferentUtil.getMatchingText(context, node));
+  }
+
+  /**
+   * It's preferred to use {@link #matchingText(SNode, SNode)} or {@link #visibleMatchingText(SNode, SNode)} instead.
+   */
+  public static String matchingText(@NotNull SNode node, @Nullable SNode context, boolean visible) {
+    return getPresentation(node, SmartReferentUtil.getMatchingText(context, node, visible));
+  }
+
+  public static String visibleMatchingText(@NotNull SNode node, @Nullable SNode context) {
+    return getPresentation(node, SmartReferentUtil.getVisibleMatchingText(context, node));
+  }
+
+  private static String getPresentation(SNode node, String matchingText) {
+    if (!StringUtil.isEmpty(matchingText)) {
+      return matchingText;
     }
     return node.getPresentation();
   }
@@ -128,36 +172,29 @@ public class NodePresentationUtil {
   }
 
   public static String descriptionText(SNode node) {
-    return descriptionText(node, false);
+    return descriptionText(node, null);
   }
 
+  /**
+   * @deprecated use {@link #descriptionText(SNode)} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
   public static String descriptionText(SNode node, boolean referent_presentation) {
-    if (SNodeUtil.isInstanceOfConceptDeclaration(node) && !referent_presentation) {
-      String description = SNodeUtil.getConceptShortDescription(node);
-      if (description != null) {
-        return description;
-      }
+    return descriptionText_internal(node);
+  }
 
-      SNode anExtends = SNodeUtil.getConceptDeclaration_Extends(node);
-      if (anExtends != null) {
-        String namespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(node));
-        namespace = NameUtil.compactNamespace(namespace);
-        return "(" + anExtends.getName() + " in " + namespace + ")";
-      }
-      return "";
+  public static String descriptionText(SNode node, SNode context) {
+    String description = SmartReferentUtil.getDescriptionText(context, node);
+    if (!StringUtil.isEmpty(description)) {
+      return description;
     }
-
     return descriptionText_internal(node);
   }
 
   private static String descriptionText_internal(SNode node) {
     if (node == null) {
       return "";
-    }
-
-    String shortDescription = SNodeUtil.getNodeShortDescription(node);
-    if (shortDescription != null) {
-      return shortDescription;
     }
 
     if (node.getParent() == null) {
@@ -169,7 +206,7 @@ public class NodePresentationUtil {
     }
     SContainmentLink containmentLink = node.getContainmentLink();
     assert containmentLink != null;
-    return containmentLink.getRoleName() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
+    return containmentLink.getName() + " (" + NameUtil.compactNodeFQName(node.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {

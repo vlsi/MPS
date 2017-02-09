@@ -493,5 +493,9 @@
     <property role="TrG5h" value="IOldCommentAnnotation" />
     <property role="EcuMT" value="699163291708883436" />
   </node>
+  <node concept="PlHQZ" id="69Qfsw3InJo">
+    <property role="EcuMT" value="7094926192234036184" />
+    <property role="TrG5h" value="ISmartReferent" />
+  </node>
 </model>
 

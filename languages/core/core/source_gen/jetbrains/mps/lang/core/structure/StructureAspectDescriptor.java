@@ -32,6 +32,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
   /*package*/ final ConceptDescriptor myConceptIOldCommentContainer = createDescriptorForIOldCommentContainer();
   /*package*/ final ConceptDescriptor myConceptIResolveInfo = createDescriptorForIResolveInfo();
   /*package*/ final ConceptDescriptor myConceptISkipConstraintsChecking = createDescriptorForISkipConstraintsChecking();
+  /*package*/ final ConceptDescriptor myConceptISmartReferent = createDescriptorForISmartReferent();
   /*package*/ final ConceptDescriptor myConceptIStubForAnotherConcept = createDescriptorForIStubForAnotherConcept();
   /*package*/ final ConceptDescriptor myConceptISuppressErrors = createDescriptorForISuppressErrors();
   /*package*/ final ConceptDescriptor myConceptIType = createDescriptorForIType();
@@ -55,7 +56,7 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
 
   @Override
   public Collection<ConceptDescriptor> getDescriptors() {
-    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentAnnotation, myConceptIOldCommentContainer, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
+    return Arrays.asList(myConceptAttribute, myConceptBaseCommentAttribute, myConceptBaseConcept, myConceptChildAttribute, myConceptExportScope, myConceptExportScopeModule, myConceptExportScopeNamespace, myConceptExportScopePublic, myConceptIAntisuppressErrors, myConceptICanSuppressErrors, myConceptIContainer, myConceptIDeprecatable, myConceptIDontApplyTypesystemRules, myConceptIDontSubstituteByDefault, myConceptIMetaLevelChanger, myConceptINamedConcept, myConceptIOldCommentAnnotation, myConceptIOldCommentContainer, myConceptIResolveInfo, myConceptISkipConstraintsChecking, myConceptISmartReferent, myConceptIStubForAnotherConcept, myConceptISuppressErrors, myConceptIType, myConceptIWrapper, myConceptImplementationContainer, myConceptImplementationPart, myConceptImplementationWithStubPart, myConceptInterfacePart, myConceptLinkAttribute, myConceptNodeAttribute, myConceptPropertyAttribute, myConceptScopeFacade, myConceptScopeProvider, myConceptSideTransformInfo, myConceptSuppressErrorsAnnotation);
   }
 
   @Override
@@ -102,6 +103,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
         return myConceptIResolveInfo;
       case LanguageConceptSwitch.ISkipConstraintsChecking:
         return myConceptISkipConstraintsChecking;
+      case LanguageConceptSwitch.ISmartReferent:
+        return myConceptISmartReferent;
       case LanguageConceptSwitch.IStubForAnotherConcept:
         return myConceptIStubForAnotherConcept;
       case LanguageConceptSwitch.ISuppressErrors:
@@ -284,6 +287,12 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ISkipConstraintsChecking", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x50ef06e32fec9043L);
     b.interface_();
     b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/5831887615299457091");
+    return b.create();
+  }
+  private static ConceptDescriptor createDescriptorForISmartReferent() {
+    ConceptDescriptorBuilder2 b = new ConceptDescriptorBuilder2("jetbrains.mps.lang.core", "ISmartReferent", 0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x62763dc803b97bd8L);
+    b.interface_();
+    b.origin("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)/7094926192234036184");
     return b.create();
   }
   private static ConceptDescriptor createDescriptorForIStubForAnotherConcept() {

@@ -30,6 +30,7 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
   private final ConceptPresentation props_IOldCommentContainer = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IResolveInfo = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ISkipConstraintsChecking = new ConceptPresentationBuilder().create();
+  private final ConceptPresentation props_ISmartReferent = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IStubForAnotherConcept = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_ISuppressErrors = new ConceptPresentationBuilder().create();
   private final ConceptPresentation props_IType = new ConceptPresentationBuilder().create();
@@ -91,6 +92,8 @@ public class ConceptPresentationAspectImpl extends ConceptPresentationAspectBase
         return props_IResolveInfo;
       case LanguageConceptSwitch.ISkipConstraintsChecking:
         return props_ISkipConstraintsChecking;
+      case LanguageConceptSwitch.ISmartReferent:
+        return props_ISmartReferent;
       case LanguageConceptSwitch.IStubForAnotherConcept:
         return props_IStubForAnotherConcept;
       case LanguageConceptSwitch.ISuppressErrors:
