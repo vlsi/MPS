@@ -874,7 +874,7 @@
               <node concept="2pNNFK" id="7d8Y7G7P4e4" role="3o6s8t">
                 <property role="2pNNFO" value="key" />
                 <node concept="3o6iSG" id="7d8Y7G7P4ef" role="3o6s8t">
-                  <property role="3o6i5n" value="idea.path.selector" />
+                  <property role="3o6i5n" value="idea.paths.selector" />
                 </node>
               </node>
               <node concept="2pNNFK" id="7d8Y7G7P4eu" role="3o6s8t">
@@ -899,7 +899,7 @@
                   </node>
                 </node>
               </node>
-              <node concept="3o6iSG" id="7d8Y7G7PT4P" role="3o6s8t" />
+              <node concept="3o6iSG" id="1KJW3X3W5FY" role="3o6s8t" />
               <node concept="2pNNFK" id="7d8Y7G7P4fl" role="3o6s8t">
                 <property role="2pNNFO" value="key" />
                 <node concept="3o6iSG" id="7d8Y7G7P4fz" role="3o6s8t">

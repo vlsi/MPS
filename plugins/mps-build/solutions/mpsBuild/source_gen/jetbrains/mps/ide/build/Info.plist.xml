@@ -100,7 +100,7 @@
         <key>com.apple.mrj.application.live-resize</key>
         <string>false</string>
         
-        <key>idea.path.selector</key>
+        <key>idea.paths.selector</key>
         <string>MPS2017.1</string>
         
         <key>idea.java.redist</key>
