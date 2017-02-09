@@ -29169,7 +29169,7 @@
       <property role="2DPR8u" value="!define PRODUCT_WEB_SITE &quot;http://www.jetbrains.com/mps&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM7oIK" role="2DRAPQ">
-      <property role="2DPR8u" value="!define APP_NAME &quot;MPS $version$&quot;" />
+      <property role="2DPR8u" value="!define APP_NAME &quot;JetBrains MPS $version$&quot;" />
     </node>
     <node concept="2DRAP_" id="1w81suM7oIS" role="2DRAPQ" />
     <node concept="2DRAP_" id="1w81suM7oJ1" role="2DRAPQ">

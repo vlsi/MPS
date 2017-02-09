@@ -8,7 +8,7 @@
 !define PRODUCT_MAJOR_VERSION "$version$"
 !define PRODUCT_PUBLISHER "JetBrains"
 !define PRODUCT_WEB_SITE "http://www.jetbrains.com/mps"
-!define APP_NAME "MPS $version$"
+!define APP_NAME "JetBrains MPS $version$"
 
 #************************************ Registry ************************************************************#
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APP_NAME}"
