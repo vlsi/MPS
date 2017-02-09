@@ -30,6 +30,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -37,7 +39,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class TransientModelsProvider {
 
-  private final ConcurrentMap<SModule, TransientModelsModule> myModuleMap = new ConcurrentHashMap<>();
+  private final ConcurrentMap<GeneratorTask, TransientModelsModule> myModuleMap = new ConcurrentHashMap<>();
   private int myModelsToKeepMax = 0; /* unlimited */
   private final SRepositoryExt myRepository;
   private int myKeptModels;
@@ -62,7 +64,7 @@ public class TransientModelsProvider {
     myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        List<TransientModelsModule> toRemove = new ArrayList<>(myModuleMap.values());
+        Collection<TransientModelsModule> toRemove = getModuleMapValues();
         myModuleMap.clear();
         for (TransientModelsModule m : toRemove) {
           myRepository.unregisterModule(m, myOwner);
@@ -86,7 +88,7 @@ public class TransientModelsProvider {
    * Requires write lock for {@linkplain #getRepository() associated repository}
    */
   public void publishAll() {
-    for (TransientModelsModule m : myModuleMap.values()) {
+    for (TransientModelsModule m : getModuleMapValues()) {
       m.publishAll();
     }
     myCheckpointsModule.publishAll();
@@ -116,7 +118,7 @@ public class TransientModelsProvider {
    * @param transientModule module to keep transient models at
    */
   public void associate(@NotNull GeneratorTask task, @NotNull TransientModelsModule transientModule) {
-    myModuleMap.put(task.getModel().getModule(), transientModule);
+    myModuleMap.put(task, transientModule);
   }
 
   /**
@@ -126,8 +128,8 @@ public class TransientModelsProvider {
    * @return module to keep transients models of the task at
    */
   public TransientModelsModule getModule(GeneratorTask task) {
-    if (myModuleMap.containsKey(task.getModel().getModule())) {
-      return myModuleMap.get(task.getModel().getModule());
+    if (myModuleMap.containsKey(task)) {
+      return myModuleMap.get(task);
     }
     throw new IllegalStateException("No transient module associated with task " + task);
   }
@@ -207,11 +209,12 @@ public class TransientModelsProvider {
   public Iterable<TransientModelsModule> getModules() {
     myRepository.getModelAccess().checkReadAccess();
 
-    List<TransientModelsModule> result = new ArrayList<TransientModelsModule>(myModuleMap.size());
+    Collection<TransientModelsModule> knownTransientModules = getModuleMapValues();
+    List<TransientModelsModule> result = new ArrayList<>(knownTransientModules.size() + 1);
     if (getCheckpointsModule() != null && getCheckpointsModule().hasPublished()) {
       result.add(getCheckpointsModule());
     }
-    for (TransientModelsModule m : myModuleMap.values()) {
+    for (TransientModelsModule m : knownTransientModules) {
       if (m.hasPublished()) {
         result.add(m);
       }
@@ -222,7 +225,7 @@ public class TransientModelsProvider {
 
   @Nullable
   public GenerationTrace getTrace(@NotNull SModelReference model) {
-    for (TransientModelsModule m : myModuleMap.values()) {
+    for (TransientModelsModule m : getModuleMapValues()) {
       if (m.hasPublished() ) {
         // not quite sure there's strong reason to check if module has anything published,
         // although we are likely to navigate from trace to transient models and would need them published
@@ -245,6 +248,13 @@ public class TransientModelsProvider {
 
   private String newSessionId() {
     return String.valueOf(System.identityHashCode(myRepository)) + Long.toHexString(System.currentTimeMillis());
+  }
+
+  /**
+   * @return collection of unique modules associated with tasks
+   */
+  private Collection<TransientModelsModule> getModuleMapValues() {
+    return new LinkedHashSet<>(myModuleMap.values());
   }
 
   public interface TransientSwapSpace {
