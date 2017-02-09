@@ -16,8 +16,6 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.GeneratorTask.Factory;
-import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.impl.GenControllerContext;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter;
@@ -26,12 +24,8 @@ import jetbrains.mps.generator.impl.ModelStreamProviderImpl;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -179,35 +173,9 @@ public final class GenerationFacade {
   }
 
   /**
-   * @deprecated use {@link #process(ProgressMonitor, List)} or {@link #process(ProgressMonitor, SModel)} instead
-   * @param invocationContext ignored, may be null
-   */
-  @Deprecated
-  @ToRemove(version = 3.4)
-  public static boolean generateModels(final Project p,
-      final List<? extends SModel> inputModels,
-      final IOperationContext invocationContext,
-      final IGenerationHandler generationHandler,
-      final ProgressMonitor monitor,
-      final IMessageHandler messages,
-      final GenerationOptions options,
-      @NotNull final TransientModelsProvider tmProvider) {
-
-    final GenerationFacade generationFacade = new GenerationFacade(p.getRepository(), options);
-    generationFacade.taskHandler(new LegacyTaskListener(generationHandler)).messages(messages).transients(tmProvider);
-    generationFacade.modelStreams(new ModelStreamProviderImpl());
-    final DefaultTaskBuilder<GeneratorTaskBase> tb = new DefaultTaskBuilder<GeneratorTaskBase>(new Factory<GeneratorTaskBase>() {
-      @Override
-      public GeneratorTaskBase create(SModel inputModel) {
-        return new GeneratorTaskBase(inputModel);
-      }
-    });
-    tb.addAll(inputModels);
-    return generationFacade.process0(monitor, tb.getResult());
-  }
-
-  /**
    * Generate single model. {@link GenerationFacade} instance can be reused then for other generation activities.
+   * IMPORTANT: unlike {@link #process(ProgressMonitor, List)}, requires model write lock (on a repository of TransientModelsProvider)
+   * as it needs to create and publish module with transient models.
    * @param monitor report progress/cancellation
    * @param model input
    * @return status object that describes generation outcome
@@ -222,6 +190,7 @@ public final class GenerationFacade {
       myTransientModelsProvider.associate(task, tm);
       modelStreams(new ModelStreamProviderImpl());
       process0(monitor, Collections.singletonList(task));
+      myTransientModelsProvider.publishAll();
       return recorder.getRecorded(task);
     } finally {
       myTaskListener = originalListener;
@@ -229,7 +198,8 @@ public final class GenerationFacade {
   }
 
   /**
-   * Generate sequence of models
+   * Feed transformation process with sequence of task. Tasks are processed in the order given. If a task deals with a model
+   * from a repository, calling code shall ensure respective read lock.
    * @param monitor report progress/cancellation
    * @param tasks models to generate
    */
@@ -238,10 +208,7 @@ public final class GenerationFacade {
     process0(monitor, tasks);
   }
 
-  /**
-   * FIXME drop return value along with {@link #generateModels(Project, List, IOperationContext, IGenerationHandler, ProgressMonitor, IMessageHandler, GenerationOptions, TransientModelsProvider)}
-   */
-  private boolean process0(@NotNull final ProgressMonitor monitor, @NotNull final List<? extends GeneratorTask> tasks) {
+  private void process0(@NotNull final ProgressMonitor monitor, @NotNull final List<? extends GeneratorTask> tasks) {
     myTransientModelsProvider.startGeneration(myGenerationOptions.getNumberOfModelsToKeep());
 
     final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(myMessageHandler, myGenerationOptions.isShowInfo(), myGenerationOptions.isShowWarnings());
@@ -255,7 +222,7 @@ public final class GenerationFacade {
     }
 
     final GenerationController gc = new GenerationController(tasks, ctx, taskListener, logger);
-    return gc.generate(monitor);
+    gc.generate(monitor);
   }
 
   private static class EmptyTaskListener implements GeneratorTaskListener<GeneratorTask> {
@@ -267,29 +234,6 @@ public final class GenerationFacade {
     @Override
     public void done(@NotNull GeneratorTask task, @NotNull GenerationStatus status) {
       // no-op
-    }
-  }
-
-  // support only two methods of the handler that are mostly in use
-  // remove along with IGenerationHandler
-  @ToRemove(version = 3.4)
-  private static class LegacyTaskListener implements GeneratorTaskListener<GeneratorTask> {
-    private final IGenerationHandler myGenerationHandler;
-
-    public LegacyTaskListener(IGenerationHandler legacyHandler) {
-      myGenerationHandler = legacyHandler;
-    }
-
-    @Override
-    public void start(@NotNull GeneratorTask task) {
-      final SModel inputModel = task.getModel();
-      myGenerationHandler.startModule(inputModel.getModule(), Collections.singletonList(inputModel), null);
-    }
-
-    @Override
-    public void done(@NotNull GeneratorTask task, @NotNull GenerationStatus status) {
-      final SModel inputModel = task.getModel();
-      myGenerationHandler.handleOutput(inputModel.getModule(), inputModel, status, null, new EmptyProgressMonitor());
     }
   }
 }
