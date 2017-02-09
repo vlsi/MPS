@@ -138,7 +138,13 @@ public class GoToOverridenMethod_Action extends BaseAction {
   private Set<Tuples._2<SNodeReference, SNode>> getOverridenMethod(final Map<String, Object> _params) {
     SNode method = GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params);
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier(_params);
-    Set<Tuples._2<SNode, SNode>> overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
+    SNode enumConstant = SNodeOperations.getNodeAncestor(method, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367388b3L, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), false, false);
+    Set<Tuples._2<SNode, SNode>> overridenMethods;
+    if (enumConstant != null) {
+      overridenMethods = new OverridingMethodsFinder(SNodeOperations.cast(classifier, MetaAdapterFactory.getConcept(0xf3061a5392264cc5L, 0xa443f952ceaf5816L, 0xfc367070a5L, "jetbrains.mps.baseLanguage.structure.EnumClass")), enumConstant).getOverridenMethods(method);
+    } else {
+      overridenMethods = new OverridingMethodsFinder(classifier, Sequence.<SNode>singleton(method)).getOverridenMethods(method);
+    }
     Set<Tuples._2<SNodeReference, SNode>> result = SetSequence.fromSet(new HashSet<Tuples._2<SNodeReference, SNode>>());
     if (overridenMethods != null) {
       for (Tuples._2<SNode, SNode> entry : overridenMethods) {

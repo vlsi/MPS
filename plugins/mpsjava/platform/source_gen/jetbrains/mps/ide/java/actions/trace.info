@@ -1590,10 +1590,14 @@
       <node id="2808756344206305986" at="135,66,136,268" concept="12" />
       <node id="2808756344206305997" at="138,103,139,89" concept="11" />
       <node id="2808756344206306003" at="139,89,140,78" concept="11" />
-      <node id="2808756344206306009" at="140,78,141,155" concept="11" />
-      <node id="2808756344206306025" at="141,155,142,120" concept="11" />
-      <node id="2808756344206306040" at="144,62,145,147" concept="5" />
-      <node id="2808756344206306061" at="147,5,148,18" concept="12" />
+      <node id="7484242025510066474" at="140,78,141,231" concept="11" />
+      <node id="2808756344206306009" at="141,231,142,50" concept="11" />
+      <node id="7484242025510161339" at="143,31,144,267" concept="5" />
+      <node id="7484242025510125334" at="145,12,146,128" concept="5" />
+      <node id="2808756344206306025" at="147,5,148,120" concept="11" />
+      <node id="2808756344206306040" at="150,62,151,147" concept="5" />
+      <node id="2808756344206306061" at="153,5,154,18" concept="12" />
+      <node id="7484242025510074808" at="145,10,147,5" concept="2" />
       <node id="2808756344206305969" at="64,95,67,5" concept="9" />
       <node id="2808756344206305969" at="70,61,73,7" concept="9" />
       <node id="2808756344206305969" at="77,58,80,7" concept="9" />
@@ -1603,14 +1607,15 @@
       <node id="1616056205645252210" at="124,0,127,0" concept="10" trace="select#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
       <node id="2808756344206305970" at="132,0,135,0" concept="10" trace="getInstanceMethodDeclaration#(Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="2808756344206305983" at="135,0,138,0" concept="10" trace="getClassifier#(Ljava/util/Map;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="2808756344206306038" at="143,35,146,7" concept="8" />
+      <node id="2808756344206306038" at="149,35,152,7" concept="8" />
       <node id="2808756344206305969" at="51,0,55,0" concept="10" trace="isDumbAware#()Z" />
       <node id="2808756344206305969" at="55,0,59,0" concept="10" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <node id="2808756344206305969" at="59,0,63,0" concept="10" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="4424432534975432" at="114,0,118,0" concept="10" trace="run#()V" />
       <node id="2808756344206305969" at="46,0,51,0" concept="4" trace="GoToOverridenMethod_Action#()V" />
       <node id="1616056205645252204" at="122,50,127,24" concept="11" />
-      <node id="2808756344206306036" at="142,120,147,5" concept="9" />
+      <node id="7484242025510051647" at="142,50,147,5" concept="9" />
+      <node id="2808756344206306036" at="148,120,153,5" concept="9" />
       <node id="4424432534955903" at="112,54,118,11" concept="5" />
       <node id="2808756344206305969" at="67,5,74,5" concept="2" />
       <node id="2808756344206305969" at="74,5,81,5" concept="2" />
@@ -1619,7 +1624,7 @@
       <node id="2808756344206305969" at="95,5,102,5" concept="2" />
       <node id="2808756344206306098" at="111,0,120,0" concept="10" trace="run#(Lcom/intellij/openapi/progress/ProgressIndicator;)V" />
       <node id="2808756344206306085" at="109,46,120,7" concept="5" />
-      <node id="2808756344206305995" at="138,0,150,0" concept="10" trace="getOverridenMethod#(Ljava/util/Map;)Ljava/util/Set;" />
+      <node id="2808756344206305995" at="138,0,156,0" concept="10" trace="getOverridenMethod#(Ljava/util/Map;)Ljava/util/Set;" />
       <node id="2808756344206305969" at="105,0,132,0" concept="10" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="2808756344206305969" at="63,0,105,0" concept="10" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
       <scope id="2808756344206305969" at="52,32,53,16" />
@@ -1634,7 +1639,9 @@
       <scope id="1616056205645252211" at="124,73,125,23" />
       <scope id="2808756344206305972" at="132,81,133,270" />
       <scope id="2808756344206305985" at="135,66,136,268" />
-      <scope id="2808756344206306039" at="144,62,145,147" />
+      <scope id="7484242025510051649" at="143,31,144,267" />
+      <scope id="7484242025510074809" at="145,12,146,128" />
+      <scope id="2808756344206306039" at="150,62,151,147" />
       <scope id="4424432534975433" at="114,29,116,243" />
       <scope id="2808756344206305969" at="46,39,49,40" />
       <scope id="1616056205645252210" at="124,0,127,0">
@@ -1646,8 +1653,8 @@
       <scope id="2808756344206305983" at="135,0,138,0">
         <var name="_params" id="2808756344206305983" />
       </scope>
-      <scope id="2808756344206306037" at="143,35,146,7" />
-      <scope id="2808756344206306038" at="143,35,146,7">
+      <scope id="2808756344206306037" at="149,35,152,7" />
+      <scope id="2808756344206306038" at="149,35,152,7">
         <var name="entry" id="2808756344206306053" />
       </scope>
       <scope id="2808756344206305969" at="51,0,55,0" />
@@ -1680,13 +1687,14 @@
       <scope id="2808756344206306098" at="111,0,120,0">
         <var name="p0" id="2808756344206306101" />
       </scope>
-      <scope id="2808756344206305996" at="138,103,148,18">
+      <scope id="2808756344206305996" at="138,103,154,18">
         <var name="classifier" id="2808756344206306004" />
+        <var name="enumConstant" id="7484242025510066475" />
         <var name="method" id="2808756344206305998" />
         <var name="overridenMethods" id="2808756344206306010" />
         <var name="result" id="2808756344206306026" />
       </scope>
-      <scope id="2808756344206305995" at="138,0,150,0">
+      <scope id="2808756344206305995" at="138,0,156,0">
         <var name="_params" id="2808756344206305995" />
       </scope>
       <scope id="2808756344206305969" at="106,96,130,233">
@@ -1710,7 +1718,7 @@
       <unit id="1616056205645252210" at="123,90,127,5" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$2" />
       <unit id="4424432534975432" at="113,127,118,9" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$1$1" />
       <unit id="2808756344206306091" at="110,42,120,5" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action$1" />
-      <unit id="2808756344206305969" at="43,0,151,0" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" />
+      <unit id="2808756344206305969" at="43,0,157,0" name="jetbrains.mps.ide.java.actions.GoToOverridenMethod_Action" />
     </file>
   </root>
   <root nodeRef="r:c6bc30d1-d0d1-44c6-ba7e-90e78619615e(jetbrains.mps.ide.java.actions)/2808756344206306210">
