@@ -20,6 +20,7 @@ import com.intellij.credentialStore.Credentials;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.passwordSafe.PasswordSafe;
 import com.intellij.openapi.application.ApplicationInfo;
+import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
@@ -31,6 +32,7 @@ import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.ide.diagnostic.MPSErrorReporterConfigurable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -124,6 +126,8 @@ public class BlameDialog extends DialogWrapper {
     mySubsystem = subsystem;
   }
 
+  @Deprecated /*Unused method*/
+  @ToRemove(version = 2017.1)
   public void setSourceRevision(String sourceRevision) {
     mySourceRevision = sourceRevision;
   }
@@ -193,7 +197,7 @@ public class BlameDialog extends DialogWrapper {
 
   private Query createQuery() {
     return myAnonymousRadio.isSelected() || myUsername.getText().isEmpty() ? Query.ANONYMOUS :
-        new Query(myUsername.getText(), new String(myPassword.getPassword()));
+           new Query(myUsername.getText(), new String(myPassword.getPassword()));
   }
 
   private String ex2str(Throwable e) {
@@ -208,24 +212,16 @@ public class BlameDialog extends DialogWrapper {
     return (e.getMessage() == null ? "" : e.getMessage() + "\n") + sw.toString();
   }
 
-  private String getBuildString() {
-    String build = ApplicationInfo.getInstance().getBuild().asString();
-    return "[build:" + build + "] ";
-  }
-
   private String getAdditionalInfo() {
     ApplicationInfo ai = ApplicationInfo.getInstance();
-    return "[Build info]\n" +
-        "build number: " + ai.getBuild().asString() + "\n" +
-        "version name: " + ai.getVersionName() + "\n" +
-        "build date: " + ai.getBuildDate().getTime().toString() + "\n" +
-        getRevisionNumber();
+    StringBuilder builder = new StringBuilder("[Build info]\n");
+    if (ai instanceof ApplicationInfoEx) {
+      builder.append("Application name: ").append(((ApplicationInfoEx) ai).getFullApplicationName()).append("\n");
+    }
+    builder.append("Build number: ").append(ai.getBuild().asString()).append("\n");
+    builder.append("Version: ").append(ai.getFullVersion());
+    return builder.toString();
   }
-
-  private String getRevisionNumber() {
-    return mySourceRevision == null ? "" : "revision: " + mySourceRevision;
-  }
-
 
   protected JComponent getMainComponent() {
     return myPanel;
@@ -240,32 +236,33 @@ public class BlameDialog extends DialogWrapper {
     return myResult;
   }
 
-
   @Override
   protected void doOKAction() {
-    String title = getBuildString() + myTitleField.getText();
-
-    StringBuilder description = new StringBuilder(1000);
+    StringBuilder description = new StringBuilder(myTitleField.getText().length() + myDescription.getText().length() + 1000);
     if (myTitleField.getText().trim().length() != 0) {
       description.append(myTitleField.getText());
       description.append("\n\n");
     }
 
-    description.append(myDescription.getText());
-    if (description.length() != 0) {
+    if (myDescription.getText().trim().length() != 0) {
+      description.append(myDescription.getText());
       description.append("\n\n");
     }
 
     description.append(getAdditionalInfo());
-    description.append("\n\n\n");
+    description.append("\n\n");
 
-    for (Throwable ex : myEx) {
-      description.append(ex2str(ex)).append("\n\n");
+    if (!myEx.isEmpty()) {
+      description.append("{code}");
+      for (Throwable ex : myEx) {
+        description.append(ex2str(ex)).append("\n");
+      }
+      description.append("{code}");
     }
 
     Poster poster = new Poster(myProject);
     Query query = createQuery();
-    query.setIssueTitle(title);
+    query.setIssueTitle(myTitleField.getText());
     query.setDescription(description.toString());
     query.setFiles(myFilesToAttach.toArray(new File[myFilesToAttach.size()]));
     query.setHidden(myHiddenCheckBox.isSelected());
@@ -294,14 +291,12 @@ public class BlameDialog extends DialogWrapper {
     close(DialogWrapper.OK_EXIT_CODE);
   }
 
-
   private void openIssueInBrowser() {
     String id = myResult.getIssueId();
     if (id != null) {
       BrowserUtil.browse(Command.ISSUE_BASE_URL + id);
     }
   }
-
 
   @Override
   public void doCancelAction() {
