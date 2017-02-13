@@ -26,22 +26,26 @@
       <node id="7034487495166188593" at="47,23,48,18" concept="4" />
       <node id="4418595146207024043" at="49,5,50,0" concept="6" />
       <node id="7034487495166197771" at="50,0,51,119" concept="3" />
-      <node id="6301062378819388914" at="51,119,52,81" concept="4" />
+      <node id="6301062378819388914" at="51,119,52,58" concept="4" />
       <node id="7034487495166182231" at="56,36,57,43" concept="4" />
       <node id="7034487495166182231" at="58,5,59,16" concept="4" />
       <node id="7034487495166182232" at="62,36,63,42" concept="4" />
       <node id="7034487495166182232" at="64,5,65,16" concept="4" />
       <node id="7034487495166212304" at="68,36,69,76" concept="4" />
       <node id="7034487495166212304" at="70,5,71,16" concept="4" />
+      <node id="6430266965569377490" at="74,36,75,74" concept="4" />
+      <node id="6430266965569377490" at="76,5,77,16" concept="4" />
       <node id="616772488615050004" at="25,113,28,5" concept="2" />
       <node id="2970389781193035811" at="38,37,41,5" concept="2" />
       <node id="7034487495166184797" at="46,84,49,5" concept="2" />
       <node id="7034487495166182231" at="55,72,58,5" concept="2" />
       <node id="7034487495166182232" at="61,71,64,5" concept="2" />
       <node id="7034487495166212304" at="67,110,70,5" concept="2" />
+      <node id="6430266965569377490" at="73,98,76,5" concept="2" />
       <node id="7034487495166182231" at="55,0,61,0" concept="7" trace="check_b9zw68_a0a0a3#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
       <node id="7034487495166182232" at="61,0,67,0" concept="7" trace="check_b9zw68_a0a0a0d#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
       <node id="7034487495166212304" at="67,0,73,0" concept="7" trace="check_b9zw68_a4a3#(Ljetbrains/mps/smodel/runtime/ConceptPresentationAspect;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/runtime/ConceptPresentation;" />
+      <node id="6430266965569377490" at="73,0,79,0" concept="7" trace="check_b9zw68_a0e0d#(Ljetbrains/mps/smodel/language/LanguageRuntime;)Ljetbrains/mps/smodel/runtime/ConceptPresentationAspect;" />
       <node id="2970389781193035758" at="24,0,32,0" concept="7" trace="attachNewConceptAspect#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <node id="6301062378819378619" at="45,0,54,0" concept="7" trace="getPresentationAspect#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/smodel/runtime/ConceptPresentation;" />
       <node id="2970389781193035787" at="33,0,45,0" concept="7" trace="attachNewConceptAspect#(Ljetbrains/mps/smodel/LanguageAspect;Lorg/jetbrains/mps/openapi/model/SNode;null)null" />
@@ -51,9 +55,11 @@
       <scope id="7034487495166182231" at="56,36,57,43" />
       <scope id="7034487495166182232" at="62,36,63,42" />
       <scope id="7034487495166212304" at="68,36,69,76" />
+      <scope id="6430266965569377490" at="74,36,75,74" />
       <scope id="7034487495166182231" at="55,72,59,16" />
       <scope id="7034487495166182232" at="61,71,65,16" />
       <scope id="7034487495166212304" at="67,110,71,16" />
+      <scope id="6430266965569377490" at="73,98,77,16" />
       <scope id="2970389781193035761" at="24,103,30,22" />
       <scope id="7034487495166182231" at="55,0,61,0">
         <var name="checkedDotOperand" id="7034487495166182231" />
@@ -65,7 +71,10 @@
         <var name="checkedDotOperand" id="7034487495166212304" />
         <var name="n" id="7034487495166212304" />
       </scope>
-      <scope id="6301062378819378627" at="45,68,52,81">
+      <scope id="6430266965569377490" at="73,0,79,0">
+        <var name="checkedDotOperand" id="6430266965569377490" />
+      </scope>
+      <scope id="6301062378819378627" at="45,68,52,58">
         <var name="lang" id="7034487495166197772" />
         <var name="repo" id="7034487495166182229" />
       </scope>
@@ -86,7 +95,7 @@
         <var name="aspectNode" id="8796678305523261207" />
         <var name="conceptNode" id="2970389781193035832" />
       </scope>
-      <unit id="616772488614529103" at="23,0,74,0" name="jetbrains.mps.kernel.language.ConceptAspectsHelper" />
+      <unit id="616772488614529103" at="23,0,80,0" name="jetbrains.mps.kernel.language.ConceptAspectsHelper" />
     </file>
   </root>
 </debug-info>
