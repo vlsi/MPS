@@ -71,9 +71,10 @@
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
     </copy>
-    <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">
-      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsWorkbench/lib/mps-resources_en.jar"/>
-    </copy>
+    <!-- temp, will get back this -->
+    <!--<copy todir="${base_dir}/IdeaPlugin/mps-core/lib">-->
+      <!--<file file="${base_dir}/IdeaPlugin/build/artifacts/mpsWorkbench/lib/mps-resources_en.jar"/>-->
+    <!--</copy>-->
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
@@ -82,6 +83,9 @@
     <mkdir dir="${base_dir}/IdeaPlugin/mps-testing"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-testing">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing"/>
+    </copy>
+    <copy todir="${base_dir}/IdeaPlugin/mps-java/lib">
+      <file file="${base_dir}/IdeaPlugin/build/artifacts/mpsJavaPlatform/lib/mps-java-platform.jar"/>
     </copy>
     <!-- only for running tests in mps-core -->
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib">

@@ -222,7 +222,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
-        <fileset file="${artifacts.mpsPlugin}/mps-idea-java/lib/jps/mps-core-jps-plugin.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/jps/mps-core-jps-plugin.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-idea-java/lib/jps/mps-java-jps-plugin.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

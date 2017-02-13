@@ -346,10 +346,17 @@
         <node concept="3_I8Xc" id="4hCebq6T56M" role="39821P">
           <ref role="3_I8Xa" to="ffeo:3ZROizBYrvW" resolve="lib" />
         </node>
-        <node concept="3_I8Xc" id="4qmhgpFZ4cA" role="39821P">
-          <ref role="3_I8Xa" node="3ZROizBXHC2" resolve="lib" />
-        </node>
         <node concept="398223" id="2pZ8abj52A9" role="39821P">
+          <node concept="398223" id="THVUQCTNEU" role="39821P">
+            <node concept="3_I8Xc" id="3b8oNYN2iQd" role="39821P">
+              <ref role="3_I8Xa" node="3ZROizBXHC6" resolve="mps-java-jps-plugin.jar" />
+            </node>
+            <node concept="3_J27D" id="THVUQCTNEW" role="Nbhlr">
+              <node concept="3Mxwew" id="THVUQCTNF4" role="3MwsjC">
+                <property role="3MwjfP" value="jps" />
+              </node>
+            </node>
+          </node>
           <node concept="3_J27D" id="2pZ8abj52Aa" role="Nbhlr">
             <node concept="3Mxwew" id="2pZ8abj52Ab" role="3MwsjC">
               <property role="3MwjfP" value="lib" />
@@ -702,7 +709,7 @@
         <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
       </node>
       <node concept="3_I8Xc" id="3nGzrDEq4D0" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="Subversion" />
+        <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="svn4idea" />
       </node>
       <node concept="398223" id="4tNwrSpaf0f" role="39821P">
         <node concept="398223" id="611WBGkdBGa" role="39821P">
@@ -953,6 +960,9 @@
     <node concept="2sgV4H" id="611WBGkeUrH" role="1l3spa">
       <ref role="1l3spb" node="3ZROizBXGck" resolve="mpsPluginCommon" />
     </node>
+    <node concept="2sgV4H" id="2lhaZfbX07x" role="1l3spa">
+      <ref role="1l3spb" node="3ZROizBXHBz" resolve="mpsJpsIdea" />
+    </node>
     <node concept="2kB4xC" id="611WBGkdzRb" role="1l3spd">
       <property role="TrG5h" value="plugin.version" />
       <node concept="aVJcg" id="611WBGkdzRc" role="aVJcv">
@@ -989,6 +999,16 @@
           </node>
         </node>
         <node concept="398223" id="611WBGkdzRq" role="39821P">
+          <node concept="398223" id="THVUQCTNHm" role="39821P">
+            <node concept="3_I8Xc" id="2lhaZfbX066" role="39821P">
+              <ref role="3_I8Xa" node="t7CJPgp1EH" resolve="mps-core-jps-plugin.jar" />
+            </node>
+            <node concept="3_J27D" id="THVUQCTNHo" role="Nbhlr">
+              <node concept="3Mxwew" id="THVUQCTNIC" role="3MwsjC">
+                <property role="3MwjfP" value="jps" />
+              </node>
+            </node>
+          </node>
           <node concept="3981dx" id="4tNwrSpaf0m" role="39821P">
             <node concept="Saw0i" id="4tNwrSpaf0n" role="39821P">
               <ref role="Saw0g" node="16Vg0jOdbWA" resolve="mps-plugin-core" />
@@ -1818,7 +1838,7 @@
         <ref role="3_I8Xa" to="ffeo:I6XuqH2zYV" resolve="git4idea" />
       </node>
       <node concept="3_I8Xc" id="3nGzrDDNoNa" role="39821P">
-        <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="Subversion" />
+        <ref role="3_I8Xa" to="ffeo:3nGzrDEfcNJ" resolve="svn4idea" />
       </node>
       <node concept="398223" id="73fHb9hpulH" role="39821P">
         <node concept="3_J27D" id="73fHb9hpulI" role="Nbhlr">
