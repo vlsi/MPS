@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,6 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.smodel.InvalidSModel;
 import jetbrains.mps.smodel.ModelLoadResult;
-import jetbrains.mps.smodel.UndoHelper;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -78,32 +76,33 @@ public final class PartialModelDataSupport<T extends SModelData & UpdateModeSupp
     }
     myLoading = true;  //this is for elimination of infinite recursion
     try {
-      // FIXME I'm quite uncertain whether it's necessary to run non-undo action here, but got no chance to figure out the right way, left intact.
-      ModelLoadResult<T> res = UndoHelper.getInstance().runNonUndoableAction(new Computable<ModelLoadResult<T>>() {
-        @Override
-        public ModelLoadResult<T> compute() {
-          if (state == ModelLoadingState.NOT_LOADED) {
-            // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
-            return new ModelLoadResult<T>(null, ModelLoadingState.NOT_LOADED);
-          }
-          if (state == ModelLoadingState.INTERFACE_LOADED) {
-            return myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
-          }
-          if (state == ModelLoadingState.FULLY_LOADED) {
-            ModelLoadResult<T> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
-            if (myModel == null || fullModel.getModelData() == null) {
-              return fullModel;
-            }
+      ModelLoadResult<T> res;
+      switch (state) {
+        case NOT_LOADED: {
+          // XXX j.m.s.loading.ModelLoadResult that used to be here didn't tolerate null as an argument. If it never failed, the code is dead?
+          res = new ModelLoadResult<T>(null, ModelLoadingState.NOT_LOADED);
+          break;
+        }
+        case INTERFACE_LOADED: {
+          res = myLoader.doLoad(ModelLoadingState.INTERFACE_LOADED);
+          break;
+        }
+        case FULLY_LOADED: {
+          ModelLoadResult<T> fullModel = myLoader.doLoad(ModelLoadingState.FULLY_LOADED);
+          if (myModel == null || fullModel.getModelData() == null) {
+            res = fullModel;
+          } else {
             myModel.enterUpdateMode();   //not to send events on changes
             fullModel.getModelData().enterUpdateMode();
             new PartialModelUpdateFacility(myModel, fullModel.getModelData(), myModelDescriptor).update();
             fullModel.getModelData().leaveUpdateMode();
             myModel.leaveUpdateMode();  //enable events
-            return new ModelLoadResult<T>(myModel, fullModel.getState());
+            res = new ModelLoadResult<T>(myModel, fullModel.getState());
           }
-          throw new UnsupportedOperationException();
+          break;
         }
-      });
+        default: throw new UnsupportedOperationException();
+      }
       doReplace(res.getModelData(), res.getState());
     } finally {
       myLoading = false;
