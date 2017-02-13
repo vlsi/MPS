@@ -53,7 +53,6 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.generator.GeneratorTaskBase;
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.DefaultTaskBuilder;
-import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.GenerationStatus;
@@ -492,20 +491,11 @@ public class Generate_Facet extends IFacet.Stub {
 
                 final SRepository projectRepo = mpsProject.getRepository();
 
-                // FIXME How come MA.executeCommand knows about undo, but readAction does not? Why on earth do I need to nest UndoHelper.runNonUndoableAction explicitly? 
                 projectRepo.getModelAccess().runReadAction(new Runnable() {
                   public void run() {
-                    UndoHelper.getInstance().runNonUndoableAction(new Computable<Object>() {
-                      public Object compute() {
-                        GenerationFacade genFacade = new GenerationFacade(projectRepo, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
-                        genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
-                        genFacade.process(progressMonitor.subTask(100), tasks);
-                        return null;
-                      }
-                    });
-                    // without explicit return, outer closure is translated into dedicated _Adapters.Runnable that can return values. 
-                    // Here, I just explicitly tell I don't care about return value, therefore, regular Runnable is enough. 
-                    return;
+                    GenerationFacade genFacade = new GenerationFacade(projectRepo, Generate_Facet.Target_configure.vars(pa.global()).generationOptions().create());
+                    genFacade.transients(Generate_Facet.Target_configure.vars(pa.global()).transientModelsProvider()).messages(mh).taskHandler(taskHandler);
+                    genFacade.process(progressMonitor.subTask(100), tasks);
                   }
                 });
 

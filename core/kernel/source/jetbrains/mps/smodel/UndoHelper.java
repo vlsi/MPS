@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,20 +48,15 @@ public class UndoHelper {
     myHandler.flushCommand(p);
   }
 
+  /**
+   * CAUTION: there's no clear contract what this method does and whether there's reason for its existence at all. If you use it,
+   * please state your scenario here, so that others know it, too. FWIW, there are no uses in mbeddr.
+   * @deprecated don't use it at all, unless there's solid and sound reason, stated here in the method's javadoc explicitly.
+   */
   // FIXME any restriction whether this method is invoked within model read/write action?
+  @Deprecated
   public <T> T runNonUndoableAction(Computable<T> t) {
-    if (ModelAccess.instance().canWrite() && myHandler != DEFAULT) {
-      // locks optimization, install temporary dummy handler
-      UndoHandler old = myHandler;
-      try {
-        myHandler = DEFAULT;
-        return t.compute();
-      } finally {
-        myHandler = old;
-      }
-    } else {
-      return myHandler.runNonUndoableAction(t);
-    }
+    return myHandler.runNonUndoableAction(t);
   }
 
   public boolean needRegisterUndo() {
