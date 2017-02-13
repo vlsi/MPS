@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -284,8 +284,7 @@ class GenerationSession {
             myDependenciesBuilder.getResult(myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         generationStatus.setModelExports(mySessionContext.getExports().getExports());
-        // FIXME uncomment once CME persistence is full-fledged
-        // generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
+        generationStatus.setCrossModelEnvironment(mySessionContext.getCrossModelEnvironment());
         success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {
