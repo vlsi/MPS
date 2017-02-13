@@ -41,6 +41,10 @@
     </component>
 
     <component>
+      <implementation-class>jetbrains.mps.ide.diagnostic.MPSErrorReporterConfigurable</implementation-class>
+    </component>
+
+    <component>
       <implementation-class>jetbrains.mps.workbench.goTo.index.MPSModelNavigationContributor</implementation-class>
     </component>
 
