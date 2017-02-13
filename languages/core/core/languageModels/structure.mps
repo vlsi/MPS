@@ -108,7 +108,7 @@
       <ref role="AX2Wp" node="fKAOsGN" resolve="string" />
       <node concept="asaX9" id="66vxhH65cCn" role="lGtFl">
         <property role="YLPcu" value="3.5" />
-        <property role="YLQ7P" value="This property should not be used. Use conceptShortDescription for concepts or create a custom property if needed for another type of nodes" />
+        <property role="YLQ7P" value="This property should not be used. Override ISmartReferent#getDescriptionText(context) to customize description text " />
       </node>
     </node>
     <node concept="1TJgyi" id="gOOYy9I" role="1TKVEl">
