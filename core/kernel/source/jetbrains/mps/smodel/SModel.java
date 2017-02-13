@@ -716,7 +716,8 @@ public class SModel implements SModelData, UpdateModeSupport {
   }
 
   public void addModelImport(ImportElement importElement) {
-    if (myImports.add(importElement)) {
+    // myImports is ArrayList, AL.add() doesn't check for presence.
+    if (!myImports.contains(importElement) && myImports.add(importElement)) {
       fireImportAddedEvent(importElement.getModelReference());
       markChanged();
     }
