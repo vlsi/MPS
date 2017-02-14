@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 
 public class UndoHelper {
   private static final UndoHandler DEFAULT = new DefaultUndoHandler();
@@ -51,6 +52,9 @@ public class UndoHelper {
   /**
    * CAUTION: there's no clear contract what this method does and whether there's reason for its existence at all. If you use it,
    * please state your scenario here, so that others know it, too. FWIW, there are no uses in mbeddr.
+   * Possible use is for {@link #needRegisterUndo()} to tell false (or for {@link #addUndoableAction(SNodeUndoableAction)} to ignore
+   * actions added). However, this is insufficient for a platform to figure out there's a non-undoable action. Check
+   * {@code WorkbenchUndoHandler.flushCommand()} implementation - there's nothing done in case list of actions is empty.
    * @deprecated don't use it at all, unless there's solid and sound reason, stated here in the method's javadoc explicitly.
    */
   // FIXME any restriction whether this method is invoked within model read/write action?
@@ -63,6 +67,17 @@ public class UndoHelper {
     return myHandler.needRegisterUndo();
   }
 
+  /**
+   * Implementation used to respect state imposed by {@link #runNonUndoableAction(Computable)}, effectively blocking modification
+   * of a registered/attached model from non-undoable action, which is odd. Either requirement to modify registered models
+   * from isInsideUndoableCommand() == true was too much, or implementation of the method shall ignore non-undoable state of
+   * {@link #runNonUndoableAction(Computable)}. Since its name bears explicit 'Undoable', I assume its use was incorrect,
+   * rather than implementation, and thus replaced the check (see {@link AttachedNodeOwner}) and relaxed to ensure
+   * {@link org.jetbrains.mps.openapi.module.ModelAccess#isCommandAction()} only. This method is not in use any more.
+   * @deprecated no uses, uncertain contract, any reason to survive?
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public boolean isInsideUndoableCommand() {
     return myHandler.isInsideUndoableCommand();
   }

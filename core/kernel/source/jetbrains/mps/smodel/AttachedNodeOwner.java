@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -79,8 +79,8 @@ final class AttachedNodeOwner extends SNodeOwner {
       return;
     }
     repo.getModelAccess().checkWriteAccess();
-    if (!UndoHelper.getInstance().isInsideUndoableCommand()) {
-      throw new IllegalModelChangeError("registered node can only be modified inside undoable command or in 'loading' model " + myModel);
+    if (!repo.getModelAccess().isCommandAction()) {
+      throw new IllegalModelChangeError("registered node can only be modified inside a command or due to model loading process " + myModel);
     }
   }
 
