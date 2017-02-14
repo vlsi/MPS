@@ -92,7 +92,7 @@
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7246064732104303799">
     <file name="mpsVcsCommon.xml">
-      <unit id="7246064732104303799" at="1,0,417,10" name="jetbrains.mps.ide.build.mpsVcsCommon" />
+      <unit id="7246064732104303799" at="1,0,415,10" name="jetbrains.mps.ide.build.mpsVcsCommon" />
     </file>
   </root>
   <root nodeRef="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)/7375832234660265597">

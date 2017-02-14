@@ -30753,9 +30753,11 @@
         </node>
       </node>
       <node concept="m$_yB" id="6ifcnI8Bov9" role="m$_yh">
+        <property role="1ZOk41" value="true" />
         <ref role="m$_yA" node="6ifcnI8$2iU" resolve="jetbrains.mps.ide.vcs.modelmetadata" />
       </node>
       <node concept="m$_yB" id="6ifcnI8BovY" role="m$_yh">
+        <property role="1ZOk41" value="true" />
         <ref role="m$_yA" node="6ifcnI8$2j3" resolve="jetbrains.mps.vcs.mergehints" />
       </node>
       <node concept="m$_yC" id="6ifcnI8BoxH" role="m$_yJ">
@@ -30829,6 +30831,12 @@
       <node concept="m$_wl" id="I6XuqGYlJK" role="39821P">
         <ref role="m_rDy" node="6ifcnI8BosJ" resolve="mpsVcsCore" />
         <node concept="398223" id="79dnIA70i5s" role="39821P">
+          <node concept="L2wRC" id="79dnIA7836O" role="39821P">
+            <ref role="L2wRA" node="6ifcnI8$2iU" resolve="jetbrains.mps.ide.vcs.modelmetadata" />
+          </node>
+          <node concept="L2wRC" id="79dnIA7838v" role="39821P">
+            <ref role="L2wRA" node="6ifcnI8$2j3" resolve="jetbrains.mps.vcs.mergehints" />
+          </node>
           <node concept="3_J27D" id="79dnIA70i5u" role="Nbhlr">
             <node concept="3Mxwew" id="79dnIA70i6h" role="3MwsjC">
               <property role="3MwjfP" value="languages" />
