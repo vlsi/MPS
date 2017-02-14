@@ -76,7 +76,7 @@
     <mps.psiSourceFinder implementation="jetbrains.mps.idea.java.psiStubs.Mapper"/>
     <mps.renameRefactoringContributor className="jetbrains.mps.idea.java.refactoring.MethodRenameContributor" order="before mps-core-rename"/>
     <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
-    <compileServer.plugin classpath="jps/mps-java-jps-plugin.jar;jps/mps-core-jps-plugin.jar;mps-java-platform.jar"/>
+    <compileServer.plugin classpath="jps/mps-java-jps-plugin.jar;mps-java-platform.jar"/>
     <referencesSearch implementation="jetbrains.mps.idea.java.usages.MPSReferenceSearch"/>
     <referencesSearch implementation="jetbrains.mps.idea.java.usages.IdPrefixSearch"/>
     <java.elementFinder implementation="jetbrains.mps.idea.java.psi.impl.MPSJavaClassFinder"/>
