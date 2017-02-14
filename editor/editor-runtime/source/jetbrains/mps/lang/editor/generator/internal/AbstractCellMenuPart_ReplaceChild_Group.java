@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -113,5 +114,13 @@ public abstract class AbstractCellMenuPart_ReplaceChild_Group implements Substit
   protected abstract List createParameterObjects(SNode node, SNode currentChild, SNode defaultConceptOfChild, IOperationContext operationContext,
       EditorContext editorContext);
 
-  protected abstract boolean isReferentPresentation();
+  /**
+   * @deprecated This method was used only to distinct concept declaration reference and concept that is given as node.
+   *             Now we should use truly concepts in parameter objects, not concept nodes.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected boolean isReferentPresentation() {
+    return true;
+  }
 }

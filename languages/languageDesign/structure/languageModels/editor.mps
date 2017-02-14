@@ -7608,11 +7608,8 @@
                 <node concept="3clFbF" id="1wEcoXjJ88m" role="3cqZAp">
                   <node concept="2YIFZM" id="1wEcoXjJ88n" role="3clFbG">
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="matchingText" />
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
                     <node concept="2ZBlsa" id="1wEcoXjJ88q" role="37wK5m" />
-                    <node concept="3clFbT" id="1wEcoXjJ88p" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -7623,12 +7620,9 @@
                   <node concept="3clFbF" id="1wEcoXjJ88u" role="3cqZAp">
                     <node concept="3cpWs3" id="1wEcoXjJ88v" role="3clFbG">
                       <node concept="2YIFZM" id="1wEcoXjJ88w" role="3uHU7w">
-                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="descriptionText" />
                         <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
+                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="descriptionText" />
                         <node concept="2ZBlsa" id="1wEcoXjJ88$" role="37wK5m" />
-                        <node concept="3clFbT" id="1wEcoXjJ88y" role="37wK5m">
-                          <property role="3clFbU" value="true" />
-                        </node>
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJ88z" role="3uHU7B">
                         <property role="Xl_RC" value="^" />
@@ -8015,13 +8009,10 @@
             <node concept="1hCUdq" id="1wEcoXjJ8bv" role="1hCUd6">
               <node concept="3clFbS" id="1wEcoXjJ8bw" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJ8bx" role="3cqZAp">
-                  <node concept="2YIFZM" id="1wEcoXjJ8by" role="3clFbG">
+                  <node concept="2YIFZM" id="5dQjTsKl_gn" role="3clFbG">
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="matchingText" />
-                    <node concept="2ZBlsa" id="1wEcoXjJ8b_" role="37wK5m" />
-                    <node concept="3clFbT" id="1wEcoXjJ8b$" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
+                    <node concept="2ZBlsa" id="5dQjTsKl_go" role="37wK5m" />
                   </node>
                 </node>
               </node>
@@ -8031,13 +8022,10 @@
                 <node concept="3clFbS" id="1wEcoXjJ8bC" role="2VODD2">
                   <node concept="3clFbF" id="1wEcoXjJ8bD" role="3cqZAp">
                     <node concept="3cpWs3" id="1wEcoXjJ8bE" role="3clFbG">
-                      <node concept="2YIFZM" id="1wEcoXjJ8bF" role="3uHU7w">
+                      <node concept="2YIFZM" id="5dQjTsKl_A6" role="3uHU7w">
                         <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="descriptionText" />
-                        <node concept="2ZBlsa" id="1wEcoXjJ8bJ" role="37wK5m" />
-                        <node concept="3clFbT" id="1wEcoXjJ8bH" role="37wK5m">
-                          <property role="3clFbU" value="true" />
-                        </node>
+                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="descriptionText" />
+                        <node concept="2ZBlsa" id="5dQjTsKl_A7" role="37wK5m" />
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJ8bI" role="3uHU7B">
                         <property role="Xl_RC" value="^" />
@@ -8377,12 +8365,9 @@
               <node concept="3clFbS" id="1wEcoXjJ8en" role="2VODD2">
                 <node concept="3clFbF" id="1wEcoXjJ8eo" role="3cqZAp">
                   <node concept="2YIFZM" id="1wEcoXjJ8ep" role="3clFbG">
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="matchingText" />
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
                     <node concept="2ZBlsa" id="1wEcoXjJ8es" role="37wK5m" />
-                    <node concept="3clFbT" id="1wEcoXjJ8er" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -8394,11 +8379,8 @@
                     <node concept="3cpWs3" id="1wEcoXjJ8ex" role="3clFbG">
                       <node concept="2YIFZM" id="1wEcoXjJ8ey" role="3uHU7w">
                         <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="descriptionText" />
+                        <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="descriptionText" />
                         <node concept="2ZBlsa" id="1wEcoXjJ8eA" role="37wK5m" />
-                        <node concept="3clFbT" id="1wEcoXjJ8e$" role="37wK5m">
-                          <property role="3clFbU" value="true" />
-                        </node>
                       </node>
                       <node concept="Xl_RD" id="1wEcoXjJ8e_" role="3uHU7B">
                         <property role="Xl_RC" value="^" />
@@ -8644,11 +8626,8 @@
                 <node concept="3clFbF" id="1wEcoXjJfkm" role="3cqZAp">
                   <node concept="2YIFZM" id="1wEcoXjJfkn" role="3clFbG">
                     <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="matchingText" />
+                    <ref role="37wK5l" to="5b0:~NodePresentationUtil.matchingText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="matchingText" />
                     <node concept="2ZBlsa" id="1wEcoXjJfkq" role="37wK5m" />
-                    <node concept="3clFbT" id="1wEcoXjJfkp" role="37wK5m">
-                      <property role="3clFbU" value="true" />
-                    </node>
                   </node>
                 </node>
               </node>
@@ -8661,11 +8640,8 @@
                   <node concept="3cpWs3" id="1wEcoXjJfkT" role="3clFbG">
                     <node concept="2YIFZM" id="1wEcoXjJfkU" role="3uHU7w">
                       <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-                      <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="descriptionText" />
+                      <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="descriptionText" />
                       <node concept="2ZBlsa" id="1wEcoXjJfkY" role="37wK5m" />
-                      <node concept="3clFbT" id="1wEcoXjJfkW" role="37wK5m">
-                        <property role="3clFbU" value="true" />
-                      </node>
                     </node>
                     <node concept="Xl_RD" id="1wEcoXjJfkX" role="3uHU7B">
                       <property role="Xl_RC" value="^" />

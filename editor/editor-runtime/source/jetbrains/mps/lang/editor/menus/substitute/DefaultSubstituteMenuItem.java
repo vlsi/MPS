@@ -93,17 +93,13 @@ public class DefaultSubstituteMenuItem implements SubstituteMenuItem {
   @Nullable
   @Override
   public String getMatchingText(@NotNull String pattern) {
-    return NodePresentationUtil.matchingText(myConcept, false);
+    return NodePresentationUtil.matchingText(myConcept);
   }
 
   @Nullable
   @Override
   public String getDescriptionText(@NotNull String pattern) {
-    if (myConcept instanceof SConcept) {
-      return NodePresentationUtil.descriptionText(myConcept, false);
-    }
-    //todo...
-    return "";
+    return NodePresentationUtil.descriptionText(myConcept);
   }
 
   @Override

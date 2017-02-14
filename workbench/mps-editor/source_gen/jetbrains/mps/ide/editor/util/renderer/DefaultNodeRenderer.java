@@ -38,7 +38,7 @@ public class DefaultNodeRenderer extends BaseRenderer<NodeNavigatable> {
   }
   @Override
   protected String getContainerText(final NodeNavigatable element, String name) {
-    return NodePresentationUtil.descriptionText(getContainerNode(element), false);
+    return NodePresentationUtil.descriptionText(getContainerNode(element));
   }
   @Override
   protected Icon getIcon(NodeNavigatable element) {

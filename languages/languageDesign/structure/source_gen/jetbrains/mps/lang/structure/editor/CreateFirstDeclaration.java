@@ -148,7 +148,7 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
           @Nullable
           @Override
           public String getLabelText(String pattern) {
-            return NodePresentationUtil.matchingText(myParameterObject, true);
+            return NodePresentationUtil.matchingText(myParameterObject);
           }
 
           @Override
@@ -161,7 +161,7 @@ public class CreateFirstDeclaration extends TransformationMenuBase {
 
           @Override
           public String getShortDescriptionText(@NotNull String pattern) {
-            return "^" + NodePresentationUtil.descriptionText(myParameterObject, true);
+            return "^" + NodePresentationUtil.descriptionText(myParameterObject);
           }
         }
       }

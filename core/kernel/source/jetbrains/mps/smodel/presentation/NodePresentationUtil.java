@@ -95,14 +95,20 @@ public class NodePresentationUtil {
     return m;
   }
   public static String matchingText(SAbstractConcept concept) {
-    return matchingText(concept, false);
-  }
-
-  public static String matchingText(SAbstractConcept concept, boolean referentPresentation) {
-    if (!referentPresentation && !concept.getConceptAlias().isEmpty()) {
+    if (!concept.getConceptAlias().isEmpty()) {
       return concept.getConceptAlias();
     }
     return concept.getName();
+  }
+
+  /**
+   *
+   * @deprecated use {@link #matchingText(SAbstractConcept)}  instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static String matchingText(SAbstractConcept concept, boolean referentPresentation) {
+    return matchingText(concept);
   }
 
   public static String matchingText(SNode node) {
@@ -112,7 +118,6 @@ public class NodePresentationUtil {
   /**
    *
    * @deprecated use {@link #matchingText(SNode)}  instead.
-   * TODO usages in gensources
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -123,7 +128,6 @@ public class NodePresentationUtil {
   /**
    *
    * @deprecated use {@link #matchingText(SNode)}, {@link #matchingText(SNode, SNode, boolean)} or {@link #visibleMatchingText(SNode, SNode)}
-   * TODO no usages
    */
   @Deprecated
   @ToRemove(version = 3.5)
@@ -154,23 +158,26 @@ public class NodePresentationUtil {
   }
 
   public static String descriptionText(SAbstractConcept concept) {
-    return descriptionText(concept, false);
-  }
-
-  public static String descriptionText(SAbstractConcept concept, boolean referentPresentation) {
+    if (!concept.getShortDescription().isEmpty()) {
+      return concept.getShortDescription();
+    }
+    // Maybe its better to simply return a language fqName?
     if (concept instanceof SConcept) {
-      if (!referentPresentation) {
-        if (!concept.getShortDescription().isEmpty()) {
-          return concept.getShortDescription();
-        }
-        SConcept superConcept = ((SConcept) concept).getSuperConcept();
-        if (superConcept != null) {
-          return "(" + superConcept.getName() + " in " + superConcept.getLanguage().getQualifiedName() + ")";
-        }
+      SConcept superConcept = ((SConcept) concept).getSuperConcept();
+      if (superConcept != null) {
+        return "(" + superConcept.getName() + " in " + superConcept.getLanguage().getQualifiedName() + ")";
       }
-      return SNodeUtil.concept_ConceptDeclaration.getName() + " (" + SNodeUtil.concept_ConceptDeclaration.getLanguage().getQualifiedName() + ")";
     }
     return "";
+  }
+
+  /**
+   * @deprecated use {@link #descriptionText(SAbstractConcept)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  public static String descriptionText(SAbstractConcept concept, boolean referentPresentation) {
+    return descriptionText(concept);
   }
 
   public static String descriptionText(SNode node) {
@@ -179,7 +186,6 @@ public class NodePresentationUtil {
 
   /**
    * @deprecated use {@link #descriptionText(SNode)} instead.
-   * TODO usages in gensources
    */
   @Deprecated
   @ToRemove(version = 3.5)

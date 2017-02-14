@@ -433,14 +433,13 @@
         <node concept="3cpWs6" id="1pHoCUaw9e_" role="3cqZAp">
           <node concept="2YIFZM" id="1pHoCUaw9eA" role="3cqZAk">
             <ref role="1Pybhc" to="5b0:~NodePresentationUtil" resolve="NodePresentationUtil" />
-            <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode,boolean):java.lang.String" resolve="descriptionText" />
+            <ref role="37wK5l" to="5b0:~NodePresentationUtil.descriptionText(org.jetbrains.mps.openapi.model.SNode):java.lang.String" resolve="descriptionText" />
             <node concept="1rXfSq" id="1pHoCUaw9eB" role="37wK5m">
               <ref role="37wK5l" node="1pHoCUaw9fn" resolve="getContainerNode" />
               <node concept="37vLTw" id="1pHoCUaw9eC" role="37wK5m">
                 <ref role="3cqZAo" node="1pHoCUaw9en" resolve="element" />
               </node>
             </node>
-            <node concept="3clFbT" id="1pHoCUaw9eD" role="37wK5m" />
           </node>
         </node>
       </node>

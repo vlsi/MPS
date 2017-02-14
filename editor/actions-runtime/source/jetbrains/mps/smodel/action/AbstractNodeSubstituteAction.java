@@ -75,7 +75,13 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
 
   @Override
   public String getDescriptionText(String pattern) {
-    return getDescriptionText(pattern, false);
+    if (myParameterObject instanceof SNode) {
+      return NodePresentationUtil.descriptionText((SNode) myParameterObject);
+    }
+    if(myParameterObject instanceof SConcept) {
+      return NodePresentationUtil.descriptionText((SConcept) myParameterObject);
+    }
+    return "";
   }
 
   @Override
@@ -103,17 +109,9 @@ public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
       return NodePresentationUtil.matchingText((SNode) myParameterObject, mySourceNode, visible);
     }
     if (myParameterObject instanceof SAbstractConcept) {
-      return NodePresentationUtil.matchingText((SAbstractConcept) myParameterObject, referent_presentation);
+      return NodePresentationUtil.matchingText((SAbstractConcept) myParameterObject);
     }
     return "" + myParameterObject;
-  }
-
-  // TODO pattern & referent_presentation has no sense
-  protected String getDescriptionText(String pattern, boolean referent_presentation) {
-    if (myParameterObject instanceof SNode) {
-      return NodePresentationUtil.descriptionText((SNode) myParameterObject);
-    }
-    return "";
   }
 
   @Override

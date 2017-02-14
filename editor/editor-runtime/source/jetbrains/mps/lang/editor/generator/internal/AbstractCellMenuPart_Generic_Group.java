@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -97,5 +98,13 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
 
   protected abstract void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext);
 
-  protected abstract boolean isReferentPresentation();
+  /**
+   * @deprecated This method was used only to distinct concept declaration reference and concept that is given as node.
+   *             Now we should use truly concepts in parameter objects, not concept nodes.
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  protected boolean isReferentPresentation() {
+    return true;
+  }
 }

@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -26,6 +27,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public interface SubstituteAction {
   SNode getIconNode(String pattern);
 
+  /**
+   * @deprecated This method was used only to distinct concept declaration reference and concept that is given as node.
+   *             Now we should use truly concepts in parameter objects, not concept nodes.
+   *             FIXME 1 usage: {@code NodeItemCellRenderer#getIcon(SubstituteAction, String)}
+   */
+  @Deprecated
   boolean isReferentPresentation();
 
   SNode getSourceNode();

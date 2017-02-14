@@ -94,12 +94,12 @@ public class LinkDeclaration_SubstituteMenu extends SubstituteMenuBase {
           @Nullable
           @Override
           public String getMatchingText(@NotNull String pattern) {
-            return NodePresentationUtil.matchingText(myParameterObject, true);
+            return NodePresentationUtil.matchingText(myParameterObject);
           }
           @Nullable
           @Override
           public String getDescriptionText(@NotNull String pattern) {
-            return "^" + NodePresentationUtil.descriptionText(myParameterObject, true);
+            return "^" + NodePresentationUtil.descriptionText(myParameterObject);
           }
           @Nullable
           @Override
