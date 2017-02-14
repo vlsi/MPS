@@ -80,7 +80,7 @@ final class AttachedNodeOwner extends SNodeOwner {
     }
     repo.getModelAccess().checkWriteAccess();
     if (!repo.getModelAccess().isCommandAction()) {
-      throw new IllegalModelChangeError("registered node can only be modified inside a command or due to model loading process " + myModel);
+      throw new IllegalModelChangeError("registered node can be modified only inside a command or during model loading process " + myModel);
     }
   }
 

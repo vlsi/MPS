@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -355,7 +355,7 @@ public class ModelListenerTest {
   public void testNodeAddRemoveNotify() {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(3, 2);
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
     final SNode r1 = m1f.getRoot(1);
     final SNode c = m1f.createNode();
@@ -402,7 +402,7 @@ public class ModelListenerTest {
   public void testRootAddRemoveNotify() {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(2, 2);
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
     final SNode c = m1f.createNode();
     ChangeListener1 cl1 = new ChangeListener1();
@@ -450,7 +450,7 @@ public class ModelListenerTest {
   public void testPropertyChangeNotify() {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(3, 2);
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
     final SNode r1 = m1f.getRoot(1);
 
@@ -474,7 +474,7 @@ public class ModelListenerTest {
     final SNode r1 = m1f.getRoot(1);
     final SNode r2c1 = m1f.getRoot(2).getFirstChild();
     final SNode r3c2 = m1f.getRoot(3).getFirstChild().getNextSibling();
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
 
     ChangeListener1 cl1 = new ChangeListener1();

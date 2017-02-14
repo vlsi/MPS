@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -52,7 +52,7 @@ public class ModelImplementationTest {
   public void testRootInsertedAsChild_sameModel() {
     final TestModelFactory m1f = new TestModelFactory();
     org.jetbrains.mps.openapi.model.SModel m1 = m1f.createModel(2, 2);
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
     final org.jetbrains.mps.openapi.model.SNode r1 = m1f.getRoot(1);
     final org.jetbrains.mps.openapi.model.SNode r2 = m1f.getRoot(2);
@@ -85,7 +85,7 @@ public class ModelImplementationTest {
   public void testRootInsertedAsChild_otherModel() {
     final TestModelFactory m1f = new TestModelFactory();
     org.jetbrains.mps.openapi.model.SModel m1 = m1f.createModel(2, 2);
-    myTestModelAccess.enableWrite();
+    myTestModelAccess.enterCommand();
     m1f.attachTo(myTestRepo);
     final org.jetbrains.mps.openapi.model.SNode r1 = m1f.getRoot(1);
     final SNode ffn = m1f.createNode();

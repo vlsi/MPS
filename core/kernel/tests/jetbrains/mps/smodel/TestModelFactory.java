@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -287,6 +287,8 @@ final class TestModelFactory {
   /*package*/ static class TestModelAccess extends ModelAccessBase {
     private boolean myCanRead;
     private boolean myCanWrite;
+    private int myCommandCount = 0;
+
     void disableRead() {
       myCanRead = myCanWrite = false;
     }
@@ -297,6 +299,20 @@ final class TestModelFactory {
     void enableWrite() {
       myCanRead = myCanWrite = true;
     }
+    void disableWrite() {
+      myCanRead = myCanWrite = false;
+    }
+    void enterCommand() {
+      if (myCommandCount++ == 0) {
+        enableWrite();
+      }
+    }
+    void leaveCommand() {
+      if (--myCommandCount == 0) {
+        disableWrite();
+      }
+    }
+
 
     @Override
     public boolean canRead() {
@@ -324,12 +340,16 @@ final class TestModelFactory {
 
     @Override
     public void executeCommand(Runnable r) {
+      myCommandCount++;
       r.run();
+      myCommandCount--;
     }
 
     @Override
     public void executeCommandInEDT(Runnable r) {
+      myCommandCount++;
       r.run();
+      myCommandCount--;
     }
 
     @Override
@@ -339,7 +359,7 @@ final class TestModelFactory {
 
     @Override
     public boolean isCommandAction() {
-      return false;
+      return myCommandCount > 0;
     }
   }
 }

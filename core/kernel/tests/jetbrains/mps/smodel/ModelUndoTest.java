@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -74,7 +74,7 @@ public class ModelUndoTest {
   public void testChangeFreeNodeChangedWithDetached() {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(3, 2);
-    myModelAccess.enableWrite();
+    myModelAccess.enterCommand();
     m1f.attachTo(myRepo);
     final int initialNodeCount = m1f.countModelNodes();
     //
@@ -112,7 +112,7 @@ public class ModelUndoTest {
   public void testNoUndoDuringModelConstruction() {
     final TestModelFactory m1f = new TestModelFactory();
     SModel m1 = m1f.createModel(3, 1);
-    myModelAccess.enableWrite();
+    myModelAccess.enterCommand();
     m1f.attachTo(myRepo);
     final jetbrains.mps.smodel.SModel modelData = (jetbrains.mps.smodel.SModel) m1f.getModelData();
     final SNode r1 = m1.getRootNodes().iterator().next();
@@ -160,7 +160,7 @@ public class ModelUndoTest {
   public void testNodeDeleteUndoRedo() {
     final TestModelFactory m1f = new TestModelFactory();
     m1f.createModel(3, 5, 2, 3);
-    myModelAccess.enableWrite();
+    myModelAccess.enterCommand();
     m1f.attachTo(myRepo);
 
     final int initialNodeCount = m1f.countModelNodes();
@@ -199,7 +199,7 @@ public class ModelUndoTest {
   public void testRemoveChildOfRemoved() {
     final TestModelFactory m1f = new TestModelFactory();
     m1f.createModel(1, 1, 1);
-    myModelAccess.enableWrite();
+    myModelAccess.enterCommand();
     m1f.attachTo(myRepo);
     SNode r1 = m1f.getRoot(1);
     SNode r1c1 = r1.getFirstChild();
@@ -226,7 +226,7 @@ public class ModelUndoTest {
     final TestModelFactory m1f = new TestModelFactory();
     m1f.createModel(3, 3);
     final int initialNodeCount = m1f.countModelNodes();
-    myModelAccess.enableWrite();
+    myModelAccess.enterCommand();
     m1f.attachTo(myRepo);
     // one with anchor == null
     SNode r1c1 = m1f.getRoot(1).getFirstChild();
