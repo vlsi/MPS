@@ -268,7 +268,9 @@ public class ModelUndoTest {
 
     @Override
     public void addUndoableAction(SNodeUndoableAction action) {
-      myActions.add(action);
+      if (myNeedUndo && myIsInsideCommand && !myIsUndoBlocked) {
+        myActions.add(action);
+      }
     }
 
     @Override
@@ -283,21 +285,11 @@ public class ModelUndoTest {
     }
 
     @Override
-    public boolean needRegisterUndo() {
-      return myNeedUndo && isInsideUndoableCommand();
-    }
-
-    @Override
-    public boolean isInsideUndoableCommand() {
-      return myIsInsideCommand && !myIsUndoBlocked;
-    }
-
-    @Override
     public void flushCommand(Project p) {
       if (myActions.isEmpty()) {
         return;
       }
-      myUndoStack.push(new UndoUnit(new ArrayList<SNodeUndoableAction>(myActions), this));
+      myUndoStack.push(new UndoUnit(new ArrayList<>(myActions), this));
       myActions.clear();
     }
 

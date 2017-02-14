@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2015 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,9 +57,8 @@ final class FreeFloatNodeOwner extends SNodeOwner {
 
   @Override
   void performUndoableAction(org.jetbrains.mps.openapi.model.SNode node, SNodeUndoableAction action) {
-    if (!UndoHelper.getInstance().needRegisterUndo()) return;
-    if (!UnregisteredNodes.instance().contains(node)) return;
-
-    UndoHelper.getInstance().addUndoableAction(action);
+    if (UnregisteredNodes.instance().contains(node)) {
+      UndoHelper.getInstance().addUndoableAction(action);
+    }
   }
 }

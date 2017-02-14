@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2016 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -193,7 +193,7 @@ public class SModel implements SModelData, UpdateModeSupport {
     SNode sn = (SNode) node;
     myRoots.add(sn);
     sn.attach(myNodeOwner);
-    performUndoableAction(new AddRootUndoableAction(node));
+    myNodeOwner.performUndoableAction(node, new AddRootUndoableAction(node));
     myNodeOwner.fireNodeAdd(null, null, sn, null);
   }
 
@@ -206,7 +206,7 @@ public class SModel implements SModelData, UpdateModeSupport {
       myRoots.remove(node);
       SNode sn = (SNode) node;
       sn.detach(new DetachedNodeOwner(this));
-      performUndoableAction(new RemoveRootUndoableAction(node, myModelDescriptor));
+      myNodeOwner.performUndoableAction(node, new RemoveRootUndoableAction(node, myModelDescriptor));
       myNodeOwner.fireNodeRemove(null, null, sn, null);
     }
   }
@@ -309,14 +309,15 @@ public class SModel implements SModelData, UpdateModeSupport {
 
 //---------listeners--------
 
+  /**
+   * Name clash with {@link SNodeOwner#performUndoableAction(org.jetbrains.mps.openapi.model.SNode, SNodeUndoableAction)} is unfortunate.
+   * This one is rather 'registerActionWithUndo'.
+   */
   protected void performUndoableAction(@NotNull SNodeUndoableAction action) {
     if (!canFireEvent()) {
       return;
     }
-    final UndoHelper uh = UndoHelper.getInstance();
-    if (uh.needRegisterUndo()) {
-      uh.addUndoableAction(action);
-    }
+    UndoHelper.getInstance().addUndoableAction(action);
   }
 
     //todo code in the following methods should be written w/o duplication

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.undo.UndoContext;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -37,19 +37,21 @@ import java.util.List;
  */
 public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
   private boolean ourUndoBlocked = false;
-  private List<SNodeUndoableAction> myActions = new LinkedList<SNodeUndoableAction>();
+  private final List<SNodeUndoableAction> myActions = new ArrayList<>(50);
   private UndoContext myUndoContext = null;
 
   @Override
   public void addUndoableAction(SNodeUndoableAction action) {
-    if (!ModelAccess.instance().isInsideCommand()) return;
-
-    myActions.add(action);
+    if (needRegisterAction()) {
+      myActions.add(action);
+    }
   }
 
   @Override
   public <T> T runNonUndoableAction(Computable<T> t) {
-    if (!ThreadUtils.isEventDispatchThread() || ourUndoBlocked) return t.compute();
+    if (!ThreadUtils.isInEDT() || ourUndoBlocked) {
+      return t.compute();
+    }
 
     try {
       ourUndoBlocked = true;
@@ -59,13 +61,7 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
     }
   }
 
-  @Override
-  public boolean needRegisterUndo() {
-    return isInsideUndoableCommand();
-  }
-
-  @Override
-  public boolean isInsideUndoableCommand() {
+  private boolean needRegisterAction() {
     return ModelAccess.instance().isInsideCommand() && !ourUndoBlocked && ThreadUtils.isInEDT();
   }
 
@@ -82,8 +78,8 @@ public class WorkbenchUndoHandler implements UndoHandler, ApplicationComponent {
     }
     UndoManager undoManager = UndoManager.getInstance(ideaProject);
 
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions, myUndoContext));
-    myActions = new LinkedList<SNodeUndoableAction>();
+    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, new ArrayList<>(myActions), myUndoContext));
+    myActions.clear();
     myUndoContext = null;
   }
 

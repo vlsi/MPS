@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2017 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,16 +27,6 @@ public class DefaultUndoHandler implements UndoHandler {
   @Override
   public <T> T runNonUndoableAction(Computable<T> t) {
     return t.compute();
-  }
-
-  @Override
-  public boolean needRegisterUndo() {
-    return false;
-  }
-
-  @Override
-  public boolean isInsideUndoableCommand() {
-    return ModelAccess.instance().isInsideCommand();
   }
 
   @Override

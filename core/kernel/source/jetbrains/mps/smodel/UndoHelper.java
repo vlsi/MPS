@@ -63,6 +63,13 @@ public class UndoHelper {
     return myHandler.runNonUndoableAction(t);
   }
 
+  /**
+   * @deprecated it's handler-specific implementation detail. It used to be expose likely to optimize and not to instantiate undoable action
+   *             unless necessary. Now it's just an extra clutter in the client's code. Just don't use, {@link #addUndoableAction(SNodeUndoableAction)} can
+   *             figure out whether it needs to register undo or not.
+   */
+  @Deprecated
+  @ToRemove(version = 0)
   public boolean needRegisterUndo() {
     return myHandler.needRegisterUndo();
   }
