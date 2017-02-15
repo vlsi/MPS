@@ -15,10 +15,11 @@
  */
 package jetbrains.mps.nodeEditor.cellActions;
 
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.datatransfer.PastePlaceHint;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
@@ -90,7 +91,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
     boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selectedNodes, pasteNodes);
     if (selection instanceof SingularSelection &&
         (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
-            (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+         (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
       EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
       if (selectedCell == null) {
         return false;
@@ -174,10 +175,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
     final PasteNodeData pasteNodeData = CopyPasteUtil.getPasteNodeDataFromClipboard(modelToPaste);
 
-    // FIXME Is it necessary to execute in EDT thread? If not, use any other thread than UI, e.g. app's pooled one.
-    ThreadUtils.runInUIThreadNoWait(() -> {
+    ApplicationManager.getApplication().invokeLater(() -> {
       final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, mpsProject);
-      context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
+      context.getRepository().getModelAccess().executeCommand(new Runnable() {
         @Override
         public void run() {
           if (addImportsRunnable != null) {
@@ -201,7 +201,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
           boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
           if (selection instanceof SingularSelection &&
               (selection instanceof EditorCellLabelSelection && !CellAction_PasteNode.this.isCompletelySelected((EditorCellLabelSelection) selection) ||
-                  (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+               (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
             EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
             assert selectedCell != null;
 
@@ -238,7 +238,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
           editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
         }
       });
-    });
+    }, ModalityState.current());
   }
 
   private boolean checkDisposedSelectedNodes(SRepository repository, List<SNode> currentSelectedNodes, List<SNodeReference> selectedReferences) {
@@ -269,7 +269,8 @@ public class CellAction_PasteNode extends AbstractCellAction {
       return false;
     }
 
-    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, anchor.getRoleInParent(), false);
+    final String role = anchor.getContainmentLink() != null ? anchor.getContainmentLink().getName() : null;
+    NodeAndRole nodeAndRole = new NodePaster(pasteNodes).getActualAnchorNode(anchor, role, false);
     if (nodeAndRole == null) {
       return false;
     }
