@@ -7040,6 +7040,24 @@
       <unit id="5527013591529129291" at="10,0,28,0" name="jetbrains.mps.editorTest.MoveInManyStatementsList_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5579506316679368425">
+    <file name="CompleteThrowsGenericType_Test.java">
+      <node id="5579506316679368425" at="15,65,16,102" concept="3" />
+      <node id="5579506316679368425" at="16,102,17,101" concept="3" />
+      <node id="5579506316679368425" at="23,51,24,72" concept="3" />
+      <node id="5579506316679566190" at="24,72,25,28" concept="3" />
+      <node id="5579506316679566757" at="25,28,26,71" concept="3" />
+      <node id="5579506316679567340" at="26,71,27,82" concept="3" />
+      <node id="5579506316679368425" at="14,0,19,0" concept="6" trace="test_CompleteThrowsGenericType#()V" />
+      <node id="5579506316679368425" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="5579506316679368425" at="15,65,17,101" />
+      <scope id="5579506316679368425" at="23,51,27,82" />
+      <scope id="5579506316679368425" at="14,0,19,0" />
+      <scope id="5579506316679368425" at="22,0,29,0" />
+      <unit id="5579506316679368425" at="20,0,30,0" name="jetbrains.mps.editorTest.CompleteThrowsGenericType_Test$TestBody" />
+      <unit id="5579506316679368425" at="12,0,31,0" name="jetbrains.mps.editorTest.CompleteThrowsGenericType_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5633355289409916129">
     <file name="TestForNonEmptyProperty_Test.java">
       <node id="5633355289409916129" at="13,63,14,102" concept="3" />
