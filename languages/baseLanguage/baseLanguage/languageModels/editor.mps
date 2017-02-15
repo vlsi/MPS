@@ -6864,11 +6864,7 @@
           </node>
         </node>
         <node concept="1sVBvm" id="yGThnK7s6l" role="1sWHZn">
-          <node concept="3SHvHV" id="5iECrHfg5YP" role="2wV5jI">
-            <node concept="2V7CMv" id="1o6G0snj8eP" role="3F10Kt">
-              <property role="2V7CMs" value="ext_1_RTransform" />
-            </node>
-          </node>
+          <node concept="3SHvHV" id="5iECrHfg5YP" role="2wV5jI" />
         </node>
         <node concept="A1WHu" id="1wEcoXjJMFl" role="3vIgyS">
           <ref role="A1WHt" node="1wEcoXjIDDH" resolve="ClassifierClassExpressionToArray" />

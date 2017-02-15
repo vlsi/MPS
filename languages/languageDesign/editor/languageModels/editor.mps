@@ -121,7 +121,6 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
@@ -11953,14 +11952,6 @@
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
           </node>
         </node>
-        <node concept="1X3_iC" id="1wEcoXjJNxd" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="3Un2VKL_U9z" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xG$WE" id="1wEcoXjJNxc" role="lGtFl" />
-          </node>
-        </node>
         <node concept="OXEIz" id="3Un2VKMmy1D" role="P5bDN">
           <node concept="ZcVJ$" id="3Un2VKMmy1G" role="OY2wv" />
           <node concept="1ou48o" id="3Un2VKMTiGQ" role="OY2wv">
@@ -12032,6 +12023,9 @@
               </node>
             </node>
           </node>
+        </node>
+        <node concept="A1WHu" id="1LAhwtrIoNz" role="3vIgyS">
+          <ref role="A1WHt" node="1LAhwtrIom1" resolve="PropertyDeclarationCellSelector_Empty_SideTransformMenu" />
         </node>
       </node>
       <node concept="3F0ifn" id="3Un2VKK5m8X" role="3EZMnx">
@@ -25048,6 +25042,21 @@
       </node>
       <node concept="VPxyj" id="2n7QBnujo4G" role="3F10Kt">
         <property role="VOm3f" value="true" />
+      </node>
+    </node>
+  </node>
+  <node concept="3ICXOK" id="1LAhwtrIom1">
+    <property role="3GE5qa" value="SNode.select" />
+    <property role="TrG5h" value="PropertyDeclarationCellSelector_Empty_SideTransformMenu" />
+    <ref role="aqKnT" to="tpc2:3Un2VKK2uez" resolve="PropertyDeclarationCellSelector" />
+    <node concept="1Qtc8_" id="1LAhwtrIom2" role="IW6Ez">
+      <node concept="3cWJ9i" id="1LAhwtrIom6" role="1Qtc8$">
+        <node concept="CtIbL" id="1LAhwtrIom8" role="CtIbM">
+          <property role="CtIbK" value="RIGHT" />
+        </node>
+        <node concept="CtIbL" id="1LAhwtrIomc" role="CtIbM">
+          <property role="CtIbK" value="LEFT" />
+        </node>
       </node>
     </node>
   </node>

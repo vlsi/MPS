@@ -34,7 +34,6 @@
       <concept id="1237307900041" name="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" flags="ln" index="lj46D" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="784421273959492578" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu" flags="ng" index="mvV$s">
-        <child id="1873541086576603957" name="location" index="3vPi4" />
         <child id="6718020819487784677" name="menuReference" index="A14EM" />
       </concept>
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
@@ -46,11 +45,9 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="562388756460228274" name="jetbrains.mps.lang.editor.structure.MigrateManuallyAnnotation" flags="ng" index="xG$WE" />
       <concept id="562388756446465666" name="jetbrains.mps.lang.editor.structure.MigratedSideTransformMenuAttribute" flags="ng" index="yp4Wq">
         <property id="562388756446465811" name="transformTag" index="yp4Ub" />
       </concept>
-      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
@@ -81,9 +78,6 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
-      <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
-        <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
-      </concept>
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
@@ -266,14 +260,6 @@
       </node>
       <node concept="3F1sOY" id="42WFAKeqbyb" role="3EZMnx">
         <ref role="1NtTu8" to="vw7d:42WFAKeq6ZY" resolve="applicability" />
-        <node concept="1X3_iC" id="1wEcoXjJ$dh" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="NU25MqYRdF" role="8Wnug">
-            <property role="2V7CMs" value="ext_1_RTransform" />
-            <node concept="xG$WE" id="1wEcoXjJ$dg" role="lGtFl" />
-          </node>
-        </node>
       </node>
       <node concept="3F0ifn" id="NU25MqXed4" role="3EZMnx">
         <property role="3F0ifm" value="customizing the" />
@@ -651,6 +637,7 @@
           <property role="CtIbK" value="LEFT" />
         </node>
       </node>
+      <node concept="3eGOoe" id="1LAhwtrLj5i" role="1Qtc8$" />
       <node concept="aenpk" id="1wEcoXjJ4vG" role="1Qtc8A">
         <node concept="27VH4U" id="1wEcoXjJ4vH" role="aenpu">
           <node concept="3clFbS" id="1wEcoXjJ4vI" role="2VODD2">
@@ -743,22 +730,10 @@
           <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
+      <node concept="3eGOoe" id="1LAhwtrLa7E" role="1Qtc8$" />
       <node concept="mvV$s" id="1wEcoXjJ$cX" role="1Qtc8A">
         <node concept="A1WHu" id="1wEcoXjJ$cR" role="A14EM">
           <ref role="A1WHt" node="1wEcoXjJ4vA" resolve="Customizes" />
-        </node>
-      </node>
-    </node>
-    <node concept="1Qtc8_" id="1wEcoXjJ$cY" role="IW6Ez">
-      <node concept="3eGOoe" id="1wEcoXjJ$cZ" role="1Qtc8$" />
-      <node concept="mvV$s" id="1wEcoXjJ$d2" role="1Qtc8A">
-        <node concept="3cWJ9i" id="1wEcoXjJ$d0" role="3vPi4">
-          <node concept="CtIbL" id="1wEcoXjJ$d1" role="CtIbM">
-            <property role="CtIbK" value="LEFT" />
-          </node>
-        </node>
-        <node concept="A1WHr" id="1wEcoXjJ$d3" role="A14EM">
-          <ref role="2ZyFGn" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
         </node>
       </node>
     </node>

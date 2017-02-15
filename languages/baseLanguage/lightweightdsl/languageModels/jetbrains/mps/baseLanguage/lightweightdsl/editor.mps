@@ -581,9 +581,6 @@
           <node concept="3F0A7n" id="3crTN2XYLYx" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="2V7CMv" id="4auf8pYbjEl" role="3F10Kt">
-              <property role="2V7CMs" value="ext_5_RTransform" />
-            </node>
           </node>
         </node>
       </node>

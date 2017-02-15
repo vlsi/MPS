@@ -41,7 +41,6 @@
       <concept id="1237303669825" name="jetbrains.mps.lang.editor.structure.CellLayout_Indent" flags="nn" index="l2Vlx" />
       <concept id="1237308012275" name="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" flags="ln" index="ljvvj" />
       <concept id="784421273959492578" name="jetbrains.mps.lang.editor.structure.TransformationMenuPart_IncludeMenu" flags="ng" index="mvV$s">
-        <child id="1873541086576603957" name="location" index="3vPi4" />
         <child id="6718020819487784677" name="menuReference" index="A14EM" />
       </concept>
       <concept id="1142886221719" name="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" flags="in" index="pkWqt" />
@@ -52,7 +51,6 @@
       <concept id="562388756457499018" name="jetbrains.mps.lang.editor.structure.MigratedToAnnotation" flags="ng" index="xBawi">
         <reference id="562388756457499129" name="migratedTo" index="xBaxx" />
       </concept>
-      <concept id="6718020819487620876" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Default" flags="ng" index="A1WHr" />
       <concept id="6718020819487620873" name="jetbrains.mps.lang.editor.structure.TransformationMenuReference_Named" flags="ng" index="A1WHu">
         <reference id="6718020819487620874" name="menu" index="A1WHt" />
       </concept>
@@ -73,9 +71,6 @@
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
       <concept id="1186414928363" name="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" flags="ln" index="VPM3Z" />
-      <concept id="1630016958697718209" name="jetbrains.mps.lang.editor.structure.IMenuReference_Default" flags="ng" index="2Z_bC8">
-        <reference id="1630016958698373342" name="concept" index="2ZyFGn" />
-      </concept>
       <concept id="1630016958697344083" name="jetbrains.mps.lang.editor.structure.IMenu_Concept" flags="ng" index="2ZABuq">
         <reference id="6591946374543067572" name="conceptDeclaration" index="aqKnT" />
       </concept>
@@ -1195,22 +1190,10 @@
           <property role="CtIbK" value="RIGHT" />
         </node>
       </node>
+      <node concept="3eGOoe" id="1LAhwtrLbKK" role="1Qtc8$" />
       <node concept="mvV$s" id="1wEcoXjJM_z" role="1Qtc8A">
         <node concept="A1WHu" id="1wEcoXjJM_t" role="A14EM">
           <ref role="A1WHt" to="ln9p:1wEcoXjJ4vA" resolve="Customizes" />
-        </node>
-      </node>
-    </node>
-    <node concept="1Qtc8_" id="1wEcoXjJM_$" role="IW6Ez">
-      <node concept="3eGOoe" id="1wEcoXjJM__" role="1Qtc8$" />
-      <node concept="mvV$s" id="1wEcoXjJM_C" role="1Qtc8A">
-        <node concept="3cWJ9i" id="1wEcoXjJM_A" role="3vPi4">
-          <node concept="CtIbL" id="1wEcoXjJM_B" role="CtIbM">
-            <property role="CtIbK" value="LEFT" />
-          </node>
-        </node>
-        <node concept="A1WHr" id="1wEcoXjJM_D" role="A14EM">
-          <ref role="2ZyFGn" to="vw7d:4p4E$NwyILf" resolve="DailyPlan" />
         </node>
       </node>
     </node>

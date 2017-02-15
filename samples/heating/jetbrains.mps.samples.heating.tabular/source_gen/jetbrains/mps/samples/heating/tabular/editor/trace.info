@@ -99,61 +99,42 @@
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/1741258697587239262">
     <file name="DailyPlan_ApplySideTransforms.java">
-      <node id="1741258697587239262" at="28,0,29,0" concept="3" trace="myLocations" />
-      <node id="1741258697587239262" at="30,67,31,63" concept="7" />
-      <node id="1741258697587239262" at="36,124,37,156" concept="6" />
-      <node id="1741258697587239262" at="38,173,39,99" concept="2" />
-      <node id="1741258697587239262" at="41,128,42,99" concept="2" />
-      <node id="1741258697587239262" at="43,5,44,18" concept="7" />
-      <node id="1741258697587239263" at="50,90,51,44" concept="6" />
-      <node id="1741258697587239263" at="51,44,52,70" concept="6" />
-      <node id="1741258697587239263" at="52,70,53,0" concept="8" />
-      <node id="1741258697587239263" at="53,0,54,306" concept="7" />
-      <node id="1741258697587239268" at="61,90,62,44" concept="6" />
-      <node id="1741258697587239268" at="62,44,63,70" concept="6" />
-      <node id="1741258697587239268" at="63,70,64,0" concept="8" />
-      <node id="1741258697587239268" at="64,0,65,257" concept="7" />
-      <node id="1741258697587239268" at="70,70,71,47" concept="7" />
-      <node id="1741258697587239262" at="37,156,40,5" concept="4" />
-      <node id="1741258697587239262" at="40,5,43,5" concept="4" />
-      <node id="1741258697587239262" at="29,0,33,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
-      <node id="1741258697587239268" at="68,0,73,0" concept="5" trace="getLocation#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/lang/String;" />
-      <node id="1741258697587239263" at="48,0,56,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
-      <node id="1741258697587239268" at="59,0,67,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
-      <node id="1741258697587239262" at="34,0,46,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
-      <scope id="1741258697587239262" at="30,67,31,63" />
-      <scope id="1741258697587239262" at="38,173,39,99" />
-      <scope id="1741258697587239262" at="41,128,42,99" />
-      <scope id="1741258697587239268" at="70,70,71,47" />
-      <scope id="1741258697587239262" at="29,0,33,0">
+      <node id="1741258697587239262" at="27,0,28,0" concept="3" trace="myLocations" />
+      <node id="1741258697587239262" at="29,67,30,63" concept="7" />
+      <node id="1741258697587239262" at="35,124,36,156" concept="6" />
+      <node id="1741258697587239262" at="37,173,38,99" concept="2" />
+      <node id="1741258697587239262" at="40,128,41,99" concept="2" />
+      <node id="1741258697587239262" at="42,5,43,18" concept="7" />
+      <node id="1741258697587239263" at="49,90,50,44" concept="6" />
+      <node id="1741258697587239263" at="50,44,51,70" concept="6" />
+      <node id="1741258697587239263" at="51,70,52,0" concept="8" />
+      <node id="1741258697587239263" at="52,0,53,306" concept="7" />
+      <node id="1741258697587239262" at="36,156,39,5" concept="4" />
+      <node id="1741258697587239262" at="39,5,42,5" concept="4" />
+      <node id="1741258697587239262" at="28,0,32,0" concept="5" trace="isApplicableToLocation#(Ljava/lang/String;)Z" />
+      <node id="1741258697587239263" at="47,0,55,0" concept="5" trace="getMenuLookup#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuLookup;" />
+      <node id="1741258697587239262" at="33,0,45,0" concept="5" trace="getParts#(Ljetbrains/mps/openapi/editor/menus/transformation/TransformationMenuContext;)Ljava/util/List;" />
+      <scope id="1741258697587239262" at="29,67,30,63" />
+      <scope id="1741258697587239262" at="37,173,38,99" />
+      <scope id="1741258697587239262" at="40,128,41,99" />
+      <scope id="1741258697587239262" at="28,0,32,0">
         <var name="location" id="1741258697587239262" />
       </scope>
-      <scope id="1741258697587239263" at="50,90,54,306">
+      <scope id="1741258697587239263" at="49,90,53,306">
         <var name="editorContext" id="1741258697587239263" />
         <var name="node" id="1741258697587239263" />
       </scope>
-      <scope id="1741258697587239268" at="61,90,65,257">
-        <var name="editorContext" id="1741258697587239268" />
-        <var name="node" id="1741258697587239268" />
-      </scope>
-      <scope id="1741258697587239268" at="68,0,73,0">
-        <var name="_context" id="1741258697587239268" />
-      </scope>
-      <scope id="1741258697587239262" at="36,124,44,18">
+      <scope id="1741258697587239262" at="35,124,43,18">
         <var name="result" id="1741258697587239262" />
       </scope>
-      <scope id="1741258697587239263" at="48,0,56,0">
+      <scope id="1741258697587239263" at="47,0,55,0">
         <var name="_context" id="1741258697587239263" />
       </scope>
-      <scope id="1741258697587239268" at="59,0,67,0">
-        <var name="_context" id="1741258697587239268" />
-      </scope>
-      <scope id="1741258697587239262" at="34,0,46,0">
+      <scope id="1741258697587239262" at="33,0,45,0">
         <var name="_context" id="1741258697587239262" />
       </scope>
-      <unit id="1741258697587239263" at="47,0,58,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms$TransformationMenuPart_IncludeMenu_dzntsn_a0" />
-      <unit id="1741258697587239268" at="58,0,74,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms$TransformationMenuPart_IncludeMenu_dzntsn_a1" />
-      <unit id="1741258697587239262" at="27,0,75,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms" />
+      <unit id="1741258697587239263" at="46,0,57,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms$TransformationMenuPart_IncludeMenu_dzntsn_a0" />
+      <unit id="1741258697587239262" at="26,0,58,0" name="jetbrains.mps.samples.heating.tabular.editor.DailyPlan_ApplySideTransforms" />
     </file>
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/2161719505005242389">

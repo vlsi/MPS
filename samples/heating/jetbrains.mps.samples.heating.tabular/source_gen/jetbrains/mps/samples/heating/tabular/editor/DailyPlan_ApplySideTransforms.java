@@ -22,7 +22,6 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.editor.menus.transformation.NamedTransformationMenuLookup;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.editor.menus.transformation.DefaultTransformationMenuLookup;
 
 public class DailyPlan_ApplySideTransforms extends TransformationMenuBase {
   private final Set<String> myLocations = SetSequence.fromSetAndArray(new HashSet<String>(), MenuLocations.LEFT_SIDE_TRANSFORM, MenuLocations.RIGHT_SIDE_TRANSFORM, MenuLocations.SUBSTITUTE);
@@ -39,7 +38,7 @@ public class DailyPlan_ApplySideTransforms extends TransformationMenuBase {
       result.add(new DailyPlan_ApplySideTransforms.TransformationMenuPart_IncludeMenu_dzntsn_a0());
     }
     if (ListSequence.fromListAndArray(new ArrayList<String>(), MenuLocations.SUBSTITUTE).contains(_context.getMenuLocation())) {
-      result.add(new DailyPlan_ApplySideTransforms.TransformationMenuPart_IncludeMenu_dzntsn_a1());
+      result.add(new DailyPlan_ApplySideTransforms.TransformationMenuPart_IncludeMenu_dzntsn_a0());
     }
     return result;
   }
@@ -54,21 +53,5 @@ public class DailyPlan_ApplySideTransforms extends TransformationMenuBase {
       return new NamedTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"), "jetbrains.mps.samples.heating.editor.Customizes");
     }
 
-  }
-  public class TransformationMenuPart_IncludeMenu_dzntsn_a1 extends IncludeTransformationMenuTransformationMenuPart {
-    @Nullable
-    @Override
-    protected TransformationMenuLookup getMenuLookup(TransformationMenuContext _context) {
-      final SNode node = _context.getNode();
-      final EditorContext editorContext = _context.getEditorContext();
-
-      return new DefaultTransformationMenuLookup(LanguageRegistry.getInstance(editorContext.getRepository()), MetaAdapterFactory.getConcept(0xa7d67633e8d9473bL, 0x98ce995a7aa66941L, 0x4644aa4ce08aec4fL, "jetbrains.mps.samples.heating.structure.DailyPlan"));
-    }
-
-    @Nullable
-    @Override
-    protected String getLocation(TransformationMenuContext _context) {
-      return MenuLocations.LEFT_SIDE_TRANSFORM;
-    }
   }
 }

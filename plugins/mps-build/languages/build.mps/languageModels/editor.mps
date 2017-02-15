@@ -1286,10 +1286,10 @@
           <node concept="3F0A7n" id="2L4pT56gY$4" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="2V7CMv" id="2L4pT56h9RL" role="3F10Kt">
-              <property role="2V7CMs" value="ext_2_RTransform" />
-            </node>
           </node>
+        </node>
+        <node concept="A1WHu" id="1LAhwtrOXOV" role="3vIgyS">
+          <ref role="A1WHt" node="1wEcoXjJz45" resolve="add_reexport_BuildMps_ModuleDependencyOnJavaModule" />
         </node>
       </node>
       <node concept="3F0ifn" id="2L4pT56h8Kt" role="3EZMnx">

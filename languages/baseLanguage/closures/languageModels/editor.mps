@@ -1202,20 +1202,11 @@
           <node concept="3F0A7n" id="hZQ3gt6" role="2wV5jI">
             <property role="1Intyy" value="true" />
             <ref role="1NtTu8" to="tpck:h0TrG11" resolve="name" />
-            <node concept="2V7CMv" id="hZQ3gt7" role="3F10Kt">
-              <property role="2V7CMs" value="default_RTransform" />
-            </node>
           </node>
         </node>
       </node>
       <node concept="3EZMnI" id="hZQ3gt8" role="3EZMnx">
         <node concept="VPM3Z" id="hZQ3gt9" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="VPM3Z" id="hZQ3gtq" role="3F10Kt">
-          <property role="VOm3f" value="false" />
-        </node>
-        <node concept="VPM3Z" id="hZQ3gtB" role="3F10Kt">
           <property role="VOm3f" value="false" />
         </node>
         <node concept="pkWqt" id="hZQ3gtC" role="pqm2j">
