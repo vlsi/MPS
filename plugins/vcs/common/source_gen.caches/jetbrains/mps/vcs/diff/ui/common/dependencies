@@ -236,8 +236,11 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.commands.CommandContextImpl" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.commands.CommandContextWithVF" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.configuration.EditorConfigurationBuilder" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodefs.MPSNodeVirtualFile" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.extensions.EditorExtensionUtil" />
     <classNode dependClassName="jetbrains.mps.project.IProject" />
@@ -328,7 +331,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.undo.MPSUndoUtil" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
+    <classNode dependClassName="jetbrains.mps.nodefs.MPSNodeVirtualFile" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

@@ -27,6 +27,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.nodeEditor.commands.CommandContextWithVF;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.smodel.behaviour.BHReflection;
 import jetbrains.mps.core.aspects.behaviour.SMethodTrimmedId;
@@ -35,6 +36,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import org.jetbrains.annotations.NonNls;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.nodeEditor.commands.CommandContextImpl;
+import jetbrains.mps.nodefs.MPSNodeVirtualFile;
 
 public class DiffEditor implements EditorMessageOwner {
   private DiffEditor.MainEditorComponent myMainEditorComponent;
@@ -142,6 +145,8 @@ public class DiffEditor implements EditorMessageOwner {
   }
   public class MainEditorComponent extends EditorComponent {
     private DiffFileEditor myDiffFileEditor;
+    private CommandContextWithVF myCommandContext;
+
     public MainEditorComponent(SRepository repository, boolean showGutter, boolean rightToLeft) {
       super(repository, new EditorConfigurationBuilder().showErrorsGutter(showGutter).rightToLeft(rightToLeft).build());
       myDiffFileEditor = new DiffFileEditor(this);
@@ -163,6 +168,15 @@ public class DiffEditor implements EditorMessageOwner {
         return myDiffFileEditor;
       }
       return super.getData(dataId);
+    }
+
+    @Override
+    protected CommandContextImpl createCommandContext() {
+      return myCommandContext = new CommandContextWithVF(this, getRepository());
+    }
+
+    public MPSNodeVirtualFile getVirtualFile() {
+      return myCommandContext.getContextVirtualFile();
     }
   }
 }
