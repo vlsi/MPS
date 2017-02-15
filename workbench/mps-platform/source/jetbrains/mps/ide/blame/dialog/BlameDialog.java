@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.blame.dialog;
 
 import com.intellij.ide.BrowserUtil;
+import com.intellij.ide.passwordSafe.PasswordSafe;
+import com.intellij.ide.passwordSafe.PasswordSafeException;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -28,8 +30,9 @@ import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import org.apache.log4j.Logger;
+import jetbrains.mps.ide.diagnostic.MPSErrorReporterConfigurable;
 import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -152,17 +155,28 @@ public class BlameDialog extends DialogWrapper {
         Response response = poster.test(query);
         if (response.isSuccess()) {
           Messages.showMessageDialog(myProject, response.getMessage(), "Test Login", Messages.getInformationIcon());
+          saveCredentials(); // On success test login we can save credentials
         } else {
           Messages.showErrorDialog(myProject, response.getMessage(), "Test Login Failed");
           LOG.warn("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
         }
       }
     });
+    myTestLoginButton.setEnabled(!myAnonymousRadio.getModel().isSelected()); // javax.swing.AbstractButton.setAction() set button to enabled state
+
     Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
       myPanel.setPreferredSize(new Dimension(750, 550));
     }
 
+    final String username = MPSErrorReporterConfigurable.getInstance().getState().myUsername;
+    if (username == null) {
+      myAnonymousRadio.setSelected(true);
+    } else {
+      myRegisteredRadio.setSelected(true);
+      myUsername.setText(username);
+      myPassword.setText(MPSErrorReporterConfigurable.getInstance().getPassword());
+    }
 
     Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
     if (location == null) {
@@ -278,7 +292,7 @@ public class BlameDialog extends DialogWrapper {
     openIssueInBrowser();
 
     myIsCancelled = false;
-    BlameDialogComponent.getInstance().loadState(getState());
+    saveCredentials();
     close(DialogWrapper.OK_EXIT_CODE);
   }
 
@@ -298,22 +312,19 @@ public class BlameDialog extends DialogWrapper {
     close(DialogWrapper.CANCEL_EXIT_CODE);
   }
 
-  public MyState getState() {
-    return new MyState(myAnonymousRadio.isSelected(), myUsername.getText(), myPassword.getText());
-  }
-
-  public void loadState(MyState state) {
-    if (state == null) {
-      return;
+  private void saveCredentials() {
+    final boolean saveCredentials = myRegisteredRadio.isSelected();
+    MPSErrorReporterConfigurable.getInstance().getState().myUsername = saveCredentials ? myUsername.getText() : null;
+    try {
+      PasswordSafe.getInstance().storePassword(
+          null,
+          MPSErrorReporterConfigurable.class,
+          MPSErrorReporterConfigurable.SERVICE,
+          saveCredentials ? String.valueOf(myPassword.getPassword()) : ""
+      );
+    } catch (PasswordSafeException e) {
+      LOG.info("Can't store YouTrack password in secure storage", e);
     }
-    if (state.isAnonymous()) {
-      myAnonymousRadio.setSelected(true);
-    } else {
-      myRegisteredRadio.setSelected(true);
-    }
-
-    myUsername.setText(state.getUsername());
-    myPassword.setText(state.getPassword());
   }
 
   {
@@ -459,46 +470,5 @@ public class BlameDialog extends DialogWrapper {
    */
   public JComponent $$$getRootComponent$$$() {
     return myPanel;
-  }
-
-
-  public static class MyState {
-    private boolean myAnonymous;
-    private String myUsername;
-    private String myPassword;
-
-
-    public MyState() {
-    }
-
-    public MyState(boolean anonymous, String username, String password) {
-      myAnonymous = anonymous;
-      myUsername = username;
-      myPassword = password;
-    }
-
-    public boolean isAnonymous() {
-      return myAnonymous;
-    }
-
-    public void setAnonymous(boolean anonymous) {
-      myAnonymous = anonymous;
-    }
-
-    public String getUsername() {
-      return myUsername;
-    }
-
-    public void setUsername(String username) {
-      myUsername = username;
-    }
-
-    public String getPassword() {
-      return myPassword;
-    }
-
-    public void setPassword(String password) {
-      myPassword = password;
-    }
   }
 }

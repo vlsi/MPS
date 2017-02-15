@@ -18,10 +18,11 @@ package jetbrains.mps.ide.blame.dialog;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.blame.dialog.BlameDialog.MyState;
+import jetbrains.mps.ide.blame.dialog.BlameDialogComponent.MyState;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,10 +33,10 @@ import java.awt.Frame;
 
 @State(
     name = "CharismaBlameDialog",
-    storages = @Storage("charismaBlameDialog.xml")
+    storages = @Storage(value = "charismaBlameDialog.xml", deprecated = true, roamingType = RoamingType.DISABLED)
 )
-public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<BlameDialog.MyState> {
-  private BlameDialog.MyState myDialogState = new MyState();
+public class BlameDialogComponent implements ApplicationComponent, PersistentStateComponent<MyState> {
+  private MyState myDialogState = new MyState();
 
   @Override
   @NonNls
@@ -74,7 +75,6 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
       throw new IllegalArgumentException("Can't show on " + component);
     }
 
-    result.loadState(myDialogState);
     return result;
   }
 
@@ -82,4 +82,42 @@ public class BlameDialogComponent implements ApplicationComponent, PersistentSta
     return ApplicationManager.getApplication().getComponent(BlameDialogComponent.class);
   }
 
+  public static class MyState {
+    private boolean myAnonymous;
+    private String myUsername;
+    private String myPassword;
+
+
+    public MyState() {
+    }
+
+    public MyState(boolean anonymous, String username) {
+      myAnonymous = anonymous;
+      myUsername = username;
+    }
+
+    public boolean isAnonymous() {
+      return myAnonymous;
+    }
+
+    public void setAnonymous(boolean anonymous) {
+      myAnonymous = anonymous;
+    }
+
+    public String getUsername() {
+      return myUsername;
+    }
+
+    public void setUsername(String username) {
+      myUsername = username;
+    }
+
+    public String getPassword() {
+      return myPassword;
+    }
+
+    public void setPassword(String password) {
+      myPassword = password;
+    }
+  }
 }
