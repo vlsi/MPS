@@ -19,6 +19,7 @@
     <import index="j8aq" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.module(MPS.Core/)" />
     <import index="b0pz" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project.facets(MPS.Core/)" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
+    <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
   </imports>
   <registry>
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage">
@@ -77,6 +78,9 @@
       <concept id="1185788614172" name="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" flags="ng" index="mw_s8">
         <child id="1185788644032" name="normalType" index="mwGJk" />
       </concept>
+      <concept id="1224760201579" name="jetbrains.mps.lang.typesystem.structure.InfoStatement" flags="nn" index="Dpp1Q">
+        <child id="1224760230762" name="infoText" index="Dpw9R" />
+      </concept>
       <concept id="1175517767210" name="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement" flags="nn" index="2MkqsV">
         <child id="1175517851849" name="errorString" index="2MkJ7o" />
       </concept>
@@ -107,9 +111,22 @@
       <concept id="1174663118805" name="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" flags="nn" index="1ZobV4" />
     </language>
     <language id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel">
+      <concept id="1177026924588" name="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" flags="nn" index="chp4Y">
+        <reference id="1177026940964" name="conceptDeclaration" index="cht4Q" />
+      </concept>
+      <concept id="1138411891628" name="jetbrains.mps.lang.smodel.structure.SNodeOperation" flags="nn" index="eCIE_">
+        <child id="1144104376918" name="parameter" index="1xVPHs" />
+      </concept>
       <concept id="1143234257716" name="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" flags="nn" index="I4A8Y" />
       <concept id="1145404486709" name="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" flags="nn" index="2JrnkZ">
         <child id="1145404616321" name="leftExpression" index="2JrQYb" />
+      </concept>
+      <concept id="1171407110247" name="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" flags="nn" index="2Xjw5R" />
+      <concept id="1139621453865" name="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" flags="nn" index="1mIQ4w">
+        <child id="1177027386292" name="conceptArgument" index="cj9EA" />
+      </concept>
+      <concept id="1144101972840" name="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" flags="ng" index="1xMEDy">
+        <child id="1207343664468" name="conceptArgument" index="ri$Ld" />
       </concept>
       <concept id="1138056143562" name="jetbrains.mps.lang.smodel.structure.SLinkAccess" flags="nn" index="3TrEf2">
         <reference id="1138056516764" name="link" index="3Tt5mk" />
@@ -202,6 +219,46 @@
     <node concept="1YaCAy" id="7Cm4l4AZ8s1" role="1YuTPh">
       <property role="TrG5h" value="testCase" />
       <ref role="1YaFvo" to="tpe3:hGB2rPm" resolve="ITestCase" />
+    </node>
+  </node>
+  <node concept="18kY7G" id="7i4U50br2rF">
+    <property role="TrG5h" value="AssertStatementInsideTestMethodInfo" />
+    <node concept="3clFbS" id="7i4U50br2rG" role="18ibNy">
+      <node concept="3clFbJ" id="7i4U50br3zQ" role="3cqZAp">
+        <node concept="3clFbS" id="7i4U50br3zS" role="3clFbx">
+          <node concept="Dpp1Q" id="7i4U50br4iF" role="3cqZAp">
+            <node concept="Xl_RD" id="7i4U50br4sK" role="Dpw9R">
+              <property role="Xl_RC" value="This is a usual Java assert statement. For testing with JUnit use assert constructions from jetbrains.mps.baseLanguage.unitTest" />
+            </node>
+            <node concept="1YBJjd" id="7i4U50br4o$" role="2OEOjV">
+              <ref role="1YBMHb" node="7i4U50br2rI" resolve="node" />
+            </node>
+          </node>
+        </node>
+        <node concept="2OqwBi" id="1wEcoXjJlaY" role="3clFbw">
+          <node concept="2OqwBi" id="1wEcoXjJlaZ" role="2Oq$k0">
+            <node concept="1YBJjd" id="7i4U50br3Lo" role="2Oq$k0">
+              <ref role="1YBMHb" node="7i4U50br2rI" resolve="node" />
+            </node>
+            <node concept="2Xjw5R" id="1wEcoXjJlb1" role="2OqNvi">
+              <node concept="1xMEDy" id="1wEcoXjJlb2" role="1xVPHs">
+                <node concept="chp4Y" id="7i4U50br3XB" role="ri$Ld">
+                  <ref role="cht4Q" to="tpee:htgVS9_" resolve="IStatementListContainer" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node concept="1mIQ4w" id="7i4U50br4dh" role="2OqNvi">
+            <node concept="chp4Y" id="7i4U50br4fj" role="cj9EA">
+              <ref role="cht4Q" to="tpe3:h3s$Bie" resolve="TestMethod" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node concept="1YaCAy" id="7i4U50br2rI" role="1YuTPh">
+      <property role="TrG5h" value="node" />
+      <ref role="1YaFvo" to="tpee:gTgVbCX" resolve="AssertStatement" />
     </node>
   </node>
 </model>
