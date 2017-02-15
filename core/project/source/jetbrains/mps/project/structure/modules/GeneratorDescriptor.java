@@ -141,6 +141,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     stream.writeString(myGeneratorUID);
     stream.writeBoolean(myGenerateTemplates);
     stream.writeString(myGenOutputPath);
+    stream.writeModuleReference(mySourceLanguage);
 
     stream.writeInt(myDepGenerators.size());
     for (SModuleReference ref : myDepGenerators) {
@@ -159,6 +160,7 @@ public class GeneratorDescriptor extends ModuleDescriptor {
     myGeneratorUID = stream.readString();
     myGenerateTemplates = stream.readBoolean();
     myGenOutputPath = stream.readString();
+    mySourceLanguage = stream.readModuleReference();
 
     myDepGenerators.clear();
     for (int size = stream.readInt(); size > 0; size--) {
