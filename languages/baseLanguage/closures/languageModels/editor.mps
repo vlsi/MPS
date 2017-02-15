@@ -1907,14 +1907,6 @@
       </node>
       <node concept="3F1sOY" id="4RyexnR6mM5" role="3EZMnx">
         <ref role="1NtTu8" to="tp2c:4RyexnR6jlZ" resolve="resultType" />
-        <node concept="1X3_iC" id="1wEcoXjJ$Oi" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="4RyexnR6mM6" role="8Wnug">
-            <property role="2V7CMs" value="default_RTransform" />
-            <node concept="xG$WE" id="1wEcoXjJ$Oh" role="lGtFl" />
-          </node>
-        </node>
       </node>
       <node concept="3F0ifn" id="4RyexnR6mMa" role="3EZMnx">
         <property role="3F0ifm" value="}" />

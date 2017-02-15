@@ -1438,14 +1438,6 @@
           <property role="1$x2rV" value="&lt;none&gt;" />
           <ref role="1ERwB7" node="2L7NFMBAeoh" resolve="_ClassConcept_Extends_Delete" />
           <ref role="1NtTu8" to="tpee:gXzkM_H" resolve="superclass" />
-          <node concept="1X3_iC" id="1wEcoXjJMEk" role="lGtFl">
-            <property role="3V$3am" value="styleItem" />
-            <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-            <node concept="2V7CMv" id="7_64S$ZQh5n" role="8Wnug">
-              <property role="2V7CMs" value="ext_3_RTransform" />
-              <node concept="xG$WE" id="1wEcoXjJMEj" role="lGtFl" />
-            </node>
-          </node>
         </node>
         <node concept="pkWqt" id="6PSwRUiKpT9" role="pqm2j">
           <node concept="3clFbS" id="6PSwRUiKpTa" role="2VODD2">
@@ -8239,14 +8231,6 @@
         <ref role="1ERwB7" node="ETMmLKkRnQ" resolve="HandleFirstForLoopVar" />
         <ref role="34QXea" node="ETMmLKnkcF" resolve="AddForStatementVar" />
         <ref role="1NtTu8" to="tpee:gDDuvdF" resolve="variable" />
-        <node concept="1X3_iC" id="1wEcoXjJMHA" role="lGtFl">
-          <property role="3V$3am" value="styleItem" />
-          <property role="3V$3ak" value="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346/1219418656006" />
-          <node concept="2V7CMv" id="Tj67gFBCDv" role="8Wnug">
-            <property role="2V7CMs" value="ext_2_RTransform" />
-            <node concept="xG$WE" id="1wEcoXjJMH_" role="lGtFl" />
-          </node>
-        </node>
       </node>
       <node concept="3EZMnI" id="Tj67gFBhgj" role="3EZMnx">
         <node concept="VPM3Z" id="Tj67gFBhgk" role="3F10Kt">
