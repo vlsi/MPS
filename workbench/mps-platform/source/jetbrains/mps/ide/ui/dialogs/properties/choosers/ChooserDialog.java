@@ -18,9 +18,12 @@ package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElementsCallback;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.DumbService.DumbModeListener;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.NotNull;
@@ -66,6 +69,27 @@ final class ChooserDialog<T> extends DialogWrapper {
       }
     }, ModalityState.stateForComponent(getWindow()), multiSelection);
     Disposer.register(getDisposable(), myChooser);
+
+    MessageBusConnection connection = project.getMessageBus().connect();
+    Disposer.register(getDisposable(), connection);
+
+    Runnable reactToDumbMode = () -> ChooserDialog.this.setErrorText("List of elements can be incomplete or empty while indexing is in progress");
+    connection.subscribe(DumbService.DUMB_MODE, new DumbModeListener() {
+      @Override
+      public void enteredDumbMode() {
+        reactToDumbMode.run();
+      }
+
+      @Override
+      public void exitDumbMode() {
+        ChooserDialog.this.setErrorText(null);
+      }
+    });
+    // Can open dialog, while in dumb mode, so need additional check after subscribe to events.
+    if (DumbService.isDumb(myProject)) {
+      reactToDumbMode.run();
+    }
+
     init();
   }
 
