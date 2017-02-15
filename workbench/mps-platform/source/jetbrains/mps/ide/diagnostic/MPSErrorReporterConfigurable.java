@@ -16,11 +16,13 @@
  */
 package jetbrains.mps.ide.diagnostic;
 
+import com.intellij.credentialStore.CredentialAttributes;
+import com.intellij.credentialStore.Credentials;
 import com.intellij.ide.passwordSafe.PasswordSafe;
-import com.intellij.ide.passwordSafe.PasswordSafeException;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.components.PersistentStateComponent;
+import com.intellij.openapi.components.RoamingType;
 import com.intellij.openapi.components.ServiceManager;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -32,7 +34,7 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * <p>
- *   Store YouTrack credentials for error report dialog.
+ * Store YouTrack credentials for error report dialog.
  * </p>
  * Currently is transition class from {@link BlameDialogComponent}.<br/>
  * After MPS 2017.1:
@@ -41,34 +43,46 @@ import org.jetbrains.annotations.NotNull;
  * <li>{@link State} will be reduced and moved to {@link PasswordSafe} as part of credentials.
  * <li>Class itself will be converted to service and accessed with {@link ServiceManager}.
  * </ul>
- *
  */
 @State(
     name = "MPSErrorReporter",
-    storages = @Storage(value = "mpsErrorReporter.xml")
+    storages = @Storage(value = "mpsErrorReporter.xml", deprecated = true, roamingType = RoamingType.DISABLED)
 )
 public class MPSErrorReporterConfigurable implements ApplicationComponent, PersistentStateComponent<MPSErrorReporterConfigurable.State> {
   public static final String SERVICE = "MPS Error Reporter";
   private static final Logger LOG = LogManager.getLogger(MPSErrorReporterConfigurable.class);
 
-  private State myState = new State();
-
   private MPSErrorReporterConfigurable(@ToRemove(version = 2017.1) BlameDialogComponent blameDialogComponent) {
-    if (blameDialogComponent.getState() != null) {
-      if (blameDialogComponent.getState().getPassword() != null && !blameDialogComponent.getState().getPassword().isEmpty()) {
-        try {
-          PasswordSafe.getInstance().storePassword(null, MPSErrorReporterConfigurable.class, MPSErrorReporterConfigurable.SERVICE,
-              blameDialogComponent.getState().getPassword());
-        } catch (PasswordSafeException e) {
-          // If try to re-save password fails, than it is safer to ignore it and drop it, making user to update it.
-        }
-      }
+    if (blameDialogComponent.getState() != null && !blameDialogComponent.getState().isAnonymous()) {
 
-      if (!blameDialogComponent.getState().isAnonymous() &&
-          blameDialogComponent.getState().getUsername() != null && !blameDialogComponent.getState().getUsername().isEmpty()) {
-        myState.myUsername = blameDialogComponent.getState().getUsername();
+      final String username = blameDialogComponent.getState().getUsername();
+      final String password = blameDialogComponent.getState().getPassword();
+      if (username != null && !username.isEmpty() && password != null && !password.isEmpty()) {
+
+        final CredentialAttributes credentialAttributes = new CredentialAttributes(SERVICE, username);
+        final Credentials credentials = new Credentials(username, password);
+
+        PasswordSafe.getInstance().set(credentialAttributes, credentials);
       }
     }
+
+  }
+
+  @Deprecated
+  @ToRemove(version = 2017.1)
+  @NotNull
+  public static MPSErrorReporterConfigurable getInstance() {
+    return ApplicationManager.getApplication().getComponent(MPSErrorReporterConfigurable.class);
+  }
+
+  /**
+   * Use this method to get saved in secure storage user credentials for YouTrack.
+   * Allow to submit issues with YouTrack RespAPI from user account.
+   *
+   * @return saved user credentials to YouTrack
+   */
+  public static Credentials getCredentials() {
+    return PasswordSafe.getInstance().get(new CredentialAttributes(SERVICE));
   }
 
   @Override
@@ -79,19 +93,15 @@ public class MPSErrorReporterConfigurable implements ApplicationComponent, Persi
   public void disposeComponent() {
   }
 
-  @NotNull
-  public static MPSErrorReporterConfigurable getInstance() {
-    return ApplicationManager.getApplication().getComponent(MPSErrorReporterConfigurable.class);
-  }
-
+  /**
+   * Use {@link MPSErrorReporterConfigurable#getCredentials()}
+   *
+   * @return YouTrack password
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public String getPassword() {
-    String password = null;
-    try {
-      password = PasswordSafe.getInstance().getPassword(null, MPSErrorReporterConfigurable.class, MPSErrorReporterConfigurable.SERVICE);
-    } catch (PasswordSafeException e) {
-      LOG.info("Can't load YouTrack password from secure storage", e);
-    }
-    return password;
+    return PasswordSafe.getInstance().getPassword(null, MPSErrorReporterConfigurable.class, MPSErrorReporterConfigurable.SERVICE);
   }
 
   @NotNull
@@ -103,14 +113,25 @@ public class MPSErrorReporterConfigurable implements ApplicationComponent, Persi
   @NotNull
   @Override
   public State getState() {
-    return myState;
+    return new State();
   }
 
   @Override
   public void loadState(State state) {
-    myState = state;
+    if (state != null && state.myUsername != null && !state.myUsername.isEmpty()) {
+
+      final String password = getPassword();
+      if (password != null && !password.isEmpty()) {
+        final CredentialAttributes credentialAttributes = new CredentialAttributes(SERVICE, state.myUsername);
+        final Credentials credentials = new Credentials(state.myUsername, password);
+
+        PasswordSafe.getInstance().set(credentialAttributes, credentials);
+      }
+    }
   }
 
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static final class State {
     public String myUsername = null;
   }

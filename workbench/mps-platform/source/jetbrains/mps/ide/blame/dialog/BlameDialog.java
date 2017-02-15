@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.ide.blame.dialog;
 
+import com.intellij.credentialStore.CredentialAttributes;
+import com.intellij.credentialStore.Credentials;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.passwordSafe.PasswordSafe;
-import com.intellij.ide.passwordSafe.PasswordSafeException;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
@@ -69,8 +70,8 @@ public class BlameDialog extends DialogWrapper {
   private Response myResult;
   private Project myProject;
 
-  private List<Throwable> myEx = new ArrayList<Throwable>();
-  private List<File> myFilesToAttach = new ArrayList<File>();
+  private List<Throwable> myEx = new ArrayList<>();
+  private List<File> myFilesToAttach = new ArrayList<>();
   private String mySubsystem = null;
   private String mySourceRevision;
 
@@ -136,14 +137,11 @@ public class BlameDialog extends DialogWrapper {
     setModal(true);
     myExceptionContainer.setVisible(false);
 
-    myAnonymousRadio.addChangeListener(new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        boolean enabled = !myAnonymousRadio.getModel().isSelected();
-        myUsername.setEnabled(enabled);
-        myPassword.setEnabled(enabled);
-        myTestLoginButton.setEnabled(enabled);
-      }
+    myAnonymousRadio.addChangeListener(e -> {
+      boolean enabled = !myAnonymousRadio.getModel().isSelected();
+      myUsername.setEnabled(enabled);
+      myPassword.setEnabled(enabled);
+      myTestLoginButton.setEnabled(enabled);
     });
 
     myTestLoginButton.setAction(new AbstractAction("Test Login") {
@@ -169,13 +167,13 @@ public class BlameDialog extends DialogWrapper {
       myPanel.setPreferredSize(new Dimension(750, 550));
     }
 
-    final String username = MPSErrorReporterConfigurable.getInstance().getState().myUsername;
-    if (username == null) {
+    final Credentials credentials = MPSErrorReporterConfigurable.getCredentials();
+    if (credentials == null) {
       myAnonymousRadio.setSelected(true);
     } else {
       myRegisteredRadio.setSelected(true);
-      myUsername.setText(username);
-      myPassword.setText(MPSErrorReporterConfigurable.getInstance().getPassword());
+      myUsername.setText(credentials.getUserName());
+      myPassword.setText(credentials.getPasswordAsString());
     }
 
     Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
@@ -313,18 +311,9 @@ public class BlameDialog extends DialogWrapper {
   }
 
   private void saveCredentials() {
-    final boolean saveCredentials = myRegisteredRadio.isSelected();
-    MPSErrorReporterConfigurable.getInstance().getState().myUsername = saveCredentials ? myUsername.getText() : null;
-    try {
-      PasswordSafe.getInstance().storePassword(
-          null,
-          MPSErrorReporterConfigurable.class,
-          MPSErrorReporterConfigurable.SERVICE,
-          saveCredentials ? String.valueOf(myPassword.getPassword()) : ""
-      );
-    } catch (PasswordSafeException e) {
-      LOG.info("Can't store YouTrack password in secure storage", e);
-    }
+    final CredentialAttributes credentialAttributes = new CredentialAttributes(MPSErrorReporterConfigurable.SERVICE, myUsername.getText());
+    final Credentials credentials = new Credentials(myUsername.getText(), String.valueOf(myPassword.getPassword()));
+    PasswordSafe.getInstance().set(credentialAttributes, myRegisteredRadio.isSelected() ? credentials :  null);
   }
 
   {
