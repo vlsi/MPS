@@ -10,19 +10,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 
 @MPSLaunch
-public class IncorrectStaticMethodCall_Test extends BaseTransformationTest {
+public class CompleteInterfaceInStaticMethodCall_Test extends BaseTransformationTest {
   @Test
-  public void test_IncorrectStaticMethodCall() throws Throwable {
+  public void test_CompleteInterfaceInStaticMethodCall() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.IncorrectStaticMethodCall_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.CompleteInterfaceInStaticMethodCall_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("609981668907111219", "609981668907111229");
-      typeString("getStaticTestValue");
+      initEditorComponent("4461104661471085752", "4461104661471085762");
+      typeString("Predicat");
+      invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }

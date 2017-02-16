@@ -8,11 +8,11 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class ResolveSuperInterfaceMethod_Test extends BaseTransformationTest {
+public class ResolveSuperInterfaceMethodReference_Test extends BaseTransformationTest {
   @Test
-  public void test_ResolveSuperInterfaceMethod() throws Throwable {
+  public void test_ResolveSuperInterfaceMethodReference() throws Throwable {
     initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    runTest("jetbrains.mps.editorTest.ResolveSuperInterfaceMethod_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.editorTest.ResolveSuperInterfaceMethodReference_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -20,7 +20,7 @@ public class ResolveSuperInterfaceMethod_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditorComponent("4340730515376445627", "4340730515376445638");
-      typeString("getDefaultTestValue");
+      typeString("forEach");
     }
   }
 }

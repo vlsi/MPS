@@ -5687,19 +5687,19 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4340730515376445626">
-    <file name="ResolveSuperInterfaceMethod_Test.java">
-      <node id="4340730515376445626" at="13,67,14,102" concept="3" />
-      <node id="4340730515376445626" at="14,102,15,103" concept="3" />
+    <file name="ResolveSuperInterfaceMethodReference_Test.java">
+      <node id="4340730515376445626" at="13,76,14,102" concept="3" />
+      <node id="4340730515376445626" at="14,102,15,112" concept="3" />
       <node id="4340730515376445626" at="21,51,22,72" concept="3" />
-      <node id="4340730515376445637" at="22,72,23,40" concept="3" />
-      <node id="4340730515376445626" at="12,0,17,0" concept="6" trace="test_ResolveSuperInterfaceMethod#()V" />
+      <node id="4340730515376445637" at="22,72,23,28" concept="3" />
+      <node id="4340730515376445626" at="12,0,17,0" concept="6" trace="test_ResolveSuperInterfaceMethodReference#()V" />
       <node id="4340730515376445626" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="4340730515376445626" at="13,67,15,103" />
-      <scope id="4340730515376445626" at="21,51,23,40" />
+      <scope id="4340730515376445626" at="13,76,15,112" />
+      <scope id="4340730515376445626" at="21,51,23,28" />
       <scope id="4340730515376445626" at="12,0,17,0" />
       <scope id="4340730515376445626" at="20,0,25,0" />
-      <unit id="4340730515376445626" at="18,0,26,0" name="jetbrains.mps.editorTest.ResolveSuperInterfaceMethod_Test$TestBody" />
-      <unit id="4340730515376445626" at="10,0,27,0" name="jetbrains.mps.editorTest.ResolveSuperInterfaceMethod_Test" />
+      <unit id="4340730515376445626" at="18,0,26,0" name="jetbrains.mps.editorTest.ResolveSuperInterfaceMethodReference_Test$TestBody" />
+      <unit id="4340730515376445626" at="10,0,27,0" name="jetbrains.mps.editorTest.ResolveSuperInterfaceMethodReference_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4360574204777335616">
@@ -5732,6 +5732,58 @@
       <scope id="4439253381394558442" at="20,0,25,0" />
       <unit id="4439253381394558442" at="18,0,26,0" name="jetbrains.mps.editorTest.SubstitudeAmbigousActions_Test$TestBody" />
       <unit id="4439253381394558442" at="10,0,27,0" name="jetbrains.mps.editorTest.SubstitudeAmbigousActions_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4461104661471085751">
+    <file name="CompleteInterfaceInStaticMethodCall_Test.java">
+      <node id="4461104661471085751" at="15,75,16,102" concept="3" />
+      <node id="4461104661471085751" at="16,102,17,111" concept="3" />
+      <node id="4461104661471085751" at="23,51,24,72" concept="3" />
+      <node id="4461104661471085790" at="24,72,25,29" concept="3" />
+      <node id="4461104661471085791" at="25,29,26,71" concept="3" />
+      <node id="2441446913339961035" at="26,71,27,82" concept="3" />
+      <node id="4461104661471085751" at="14,0,19,0" concept="6" trace="test_CompleteInterfaceInStaticMethodCall#()V" />
+      <node id="4461104661471085751" at="22,0,29,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="4461104661471085751" at="15,75,17,111" />
+      <scope id="4461104661471085751" at="23,51,27,82" />
+      <scope id="4461104661471085751" at="14,0,19,0" />
+      <scope id="4461104661471085751" at="22,0,29,0" />
+      <unit id="4461104661471085751" at="20,0,30,0" name="jetbrains.mps.editorTest.CompleteInterfaceInStaticMethodCall_Test$TestBody" />
+      <unit id="4461104661471085751" at="12,0,31,0" name="jetbrains.mps.editorTest.CompleteInterfaceInStaticMethodCall_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4489930728028576766">
+    <file name="CompleteStaticMethodCall_Test.java">
+      <node id="4489930728028576766" at="13,64,14,102" concept="3" />
+      <node id="4489930728028576766" at="14,102,15,100" concept="3" />
+      <node id="4489930728028576766" at="21,51,22,72" concept="3" />
+      <node id="609981668907110685" at="22,72,23,28" concept="3" />
+      <node id="6412997412518197745" at="23,28,24,71" concept="3" />
+      <node id="4461104661471121252" at="24,71,25,0" concept="8" />
+      <node id="4489930728028576766" at="12,0,17,0" concept="6" trace="test_CompleteStaticMethodCall#()V" />
+      <node id="4489930728028576766" at="20,0,27,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="4489930728028576766" at="13,64,15,100" />
+      <scope id="4489930728028576766" at="21,51,25,0" />
+      <scope id="4489930728028576766" at="12,0,17,0" />
+      <scope id="4489930728028576766" at="20,0,27,0" />
+      <unit id="4489930728028576766" at="18,0,28,0" name="jetbrains.mps.editorTest.CompleteStaticMethodCall_Test$TestBody" />
+      <unit id="4489930728028576766" at="10,0,29,0" name="jetbrains.mps.editorTest.CompleteStaticMethodCall_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4489930728028578716">
+    <file name="TypeSuperInterfaceConstruction_Test.java">
+      <node id="4489930728028578716" at="13,70,14,102" concept="3" />
+      <node id="4489930728028578716" at="14,102,15,106" concept="3" />
+      <node id="4489930728028578716" at="21,51,22,72" concept="3" />
+      <node id="609981668907081408" at="22,72,23,35" concept="3" />
+      <node id="4489930728028578716" at="12,0,17,0" concept="6" trace="test_TypeSuperInterfaceConstruction#()V" />
+      <node id="4489930728028578716" at="20,0,25,0" concept="6" trace="testMethodImpl#()V" />
+      <scope id="4489930728028578716" at="13,70,15,106" />
+      <scope id="4489930728028578716" at="21,51,23,35" />
+      <scope id="4489930728028578716" at="12,0,17,0" />
+      <scope id="4489930728028578716" at="20,0,25,0" />
+      <unit id="4489930728028578716" at="18,0,26,0" name="jetbrains.mps.editorTest.TypeSuperInterfaceConstruction_Test$TestBody" />
+      <unit id="4489930728028578716" at="10,0,27,0" name="jetbrains.mps.editorTest.TypeSuperInterfaceConstruction_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4497978391706421674">
@@ -8156,23 +8208,6 @@
       <scope id="6080342878134138487" at="22,0,29,0" />
       <unit id="6080342878134138487" at="20,0,30,0" name="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test$TestBody" />
       <unit id="6080342878134138487" at="12,0,31,0" name="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test" />
-    </file>
-  </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/609981668907111218">
-    <file name="IncorrectStaticMethodCall_Test.java">
-      <node id="609981668907111218" at="15,65,16,102" concept="3" />
-      <node id="609981668907111218" at="16,102,17,101" concept="3" />
-      <node id="609981668907111218" at="23,51,24,70" concept="3" />
-      <node id="609981668907111240" at="24,70,25,39" concept="3" />
-      <node id="4340730515376735059" at="25,39,26,82" concept="3" />
-      <node id="609981668907111218" at="14,0,19,0" concept="6" trace="test_IncorrectStaticMethodCall#()V" />
-      <node id="609981668907111218" at="22,0,28,0" concept="6" trace="testMethodImpl#()V" />
-      <scope id="609981668907111218" at="15,65,17,101" />
-      <scope id="609981668907111218" at="23,51,26,82" />
-      <scope id="609981668907111218" at="14,0,19,0" />
-      <scope id="609981668907111218" at="22,0,28,0" />
-      <unit id="609981668907111218" at="20,0,29,0" name="jetbrains.mps.editorTest.IncorrectStaticMethodCall_Test$TestBody" />
-      <unit id="609981668907111218" at="12,0,30,0" name="jetbrains.mps.editorTest.IncorrectStaticMethodCall_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6131265013450950732">

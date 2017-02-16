@@ -2425,11 +2425,17 @@
     <node concept="lpD6D" id="2TdQhrRPT78" role="lpD6w">
       <ref role="lpD7u" to="ryl9:5kDx1Sj6jIQ" resolve="AddStaticBeforeVisibility" />
     </node>
-    <node concept="lpD6D" id="3KXnQviOuoq" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:xR5LymHlcM" resolve="IncorrectStaticMethodCall" />
+    <node concept="lpD6D" id="4K0yewF6i4b" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3RD1KQWOGiR" resolve="CompleteInterfaceInStaticMethodCall" />
+    </node>
+    <node concept="lpD6D" id="4K0yewF6iw7" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3Tfs3lughJY" resolve="CompleteStaticMethodCall" />
     </node>
     <node concept="lpD6D" id="3KXnQviOvcg" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:3KXnQviHxyU" resolve="ResolveSuperInterfaceMethod" />
+      <ref role="lpD7u" to="ryl9:3KXnQviHxyU" resolve="ResolveSuperInterfaceMethodReference" />
+    </node>
+    <node concept="lpD6D" id="4K0yewF6kni" role="lpD6w">
+      <ref role="lpD7u" to="ryl9:3Tfs3lugies" resolve="TypeSuperInterfaceConstruction" />
     </node>
     <node concept="lpD6D" id="4Voc8ROh7y9" role="lpD6w">
       <ref role="lpD7u" to="ryl9:4Voc8ROgYUv" resolve="psvmLiveTemplate" />
@@ -3380,10 +3386,10 @@
       <ref role="lpD7u" to="ryl9:434bMCwsQH8" resolve="WhileLoopUnwrap2" />
     </node>
     <node concept="lpD6D" id="P9hc2KeZh4" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:P9hc2K9otJ" resolve="SUBST_BooleanConstantArgiument_with_Expression" />
+      <ref role="lpD7u" to="ryl9:P9hc2K9otJ" resolve="SUBST_BooleanConstantArgument_with_Expression" />
     </node>
     <node concept="lpD6D" id="P9hc2KeZD9" role="lpD6w">
-      <ref role="lpD7u" to="ryl9:P9hc2Kb14K" resolve="SUBST_BooleanConstantArgiument_with_vaue" />
+      <ref role="lpD7u" to="ryl9:P9hc2Kb14K" resolve="SUBST_BooleanConstantArgument_with_vaue" />
     </node>
     <node concept="lpD6D" id="P9hc2Kf01A" role="lpD6w">
       <ref role="lpD7u" to="ryl9:P9hc2JZwYJ" resolve="SUBST_BooleanConstant_with_Expression" />

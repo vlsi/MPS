@@ -43,10 +43,11 @@
     <import index="lwvz" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.selection(MPS.Editor/)" />
     <import index="y49u" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.util(MPS.OpenAPI/)" />
     <import index="4rc5" ref="r:be519384-ff73-407d-8bb6-1d18a1417684(testDefaultEditor.intentions)" />
-    <import index="487m" ref="9c8b4b95-5d89-4201-ad78-0b2db3a22768/java:test(jetbrains.mps.baseLanguage.test/)" />
     <import index="pzbl" ref="r:7d1e02c6-b403-4705-bcbd-976df276fcbf(testSpaceCompletion.structure)" />
     <import index="tpeh" ref="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
     <import index="tpco" ref="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)" />
+    <import index="l46t" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.compiler(MPS.Core/)" />
+    <import index="82uw" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/java:java.util.function(JDK/)" />
     <import index="z1c3" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/java:jetbrains.mps.project(MPS.Core/)" implicit="true" />
     <import index="22ra" ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224/java:jetbrains.mps.openapi.editor.update(MPS.Editor/)" implicit="true" />
     <import index="mhbf" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/java:org.jetbrains.mps.openapi.model(MPS.OpenAPI/)" implicit="true" />
@@ -41627,71 +41628,8 @@
       </node>
     </node>
   </node>
-  <node concept="LiM7Y" id="xR5LymHlcM">
-    <property role="3GE5qa" value="jdk8" />
-    <property role="TrG5h" value="IncorrectStaticMethodCall" />
-    <node concept="312cEu" id="xR5LymHlcN" role="LiRBU">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymHlcO" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymHlcP" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymHlcQ" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymHlcR" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymHlcS" role="3clF47">
-          <node concept="3clFbF" id="xR5LymHlcT" role="3cqZAp">
-            <node concept="10M0yZ" id="xR5LymHlcU" role="3clFbG">
-              <ref role="1PxDUh" to="487m:~TestInterface" resolve="TestInterface" />
-              <node concept="LIFWc" id="3KXnQvi$LVT" role="lGtFl">
-                <property role="ZRATv" value="true" />
-                <property role="OXtK3" value="true" />
-                <property role="p6zMq" value="0" />
-                <property role="p6zMs" value="0" />
-                <property role="LIFWd" value="empty_staticFieldDeclaration" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymHlcW" role="1B3o_S" />
-    </node>
-    <node concept="312cEu" id="xR5LymHlcX" role="LiZbd">
-      <property role="2bfB8j" value="true" />
-      <property role="TrG5h" value="TestSuperClass" />
-      <node concept="2tJIrI" id="xR5LymHlcY" role="jymVt" />
-      <node concept="3clFb_" id="xR5LymHlcZ" role="jymVt">
-        <property role="1EzhhJ" value="false" />
-        <property role="TrG5h" value="getDefaultTestValue" />
-        <property role="DiZV1" value="false" />
-        <property role="IEkAT" value="false" />
-        <node concept="3Tm1VV" id="xR5LymHld0" role="1B3o_S" />
-        <node concept="10Oyi0" id="xR5LymHld1" role="3clF45" />
-        <node concept="3clFbS" id="xR5LymHld2" role="3clF47">
-          <node concept="3clFbF" id="xR5LymHld3" role="3cqZAp">
-            <node concept="10M0yZ" id="xR5LymHld4" role="3clFbG">
-              <ref role="1PxDUh" to="487m:~TestInterface" resolve="TestInterface" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="3Tm1VV" id="xR5LymHld6" role="1B3o_S" />
-    </node>
-    <node concept="3clFbS" id="xR5LymHld7" role="LjaKd">
-      <node concept="2TK7Tu" id="xR5LymHld8" role="3cqZAp">
-        <property role="2TTd_B" value="getStaticTestValue" />
-      </node>
-      <node concept="yd1bK" id="3KXnQviICdj" role="3cqZAp">
-        <node concept="pLAjd" id="3KXnQviICdl" role="yd6KS">
-          <property role="pLAjf" value="VK_ENTER" />
-        </node>
-      </node>
-    </node>
-  </node>
   <node concept="LiM7Y" id="3KXnQviHxyU">
-    <property role="TrG5h" value="ResolveSuperInterfaceMethod" />
+    <property role="TrG5h" value="ResolveSuperInterfaceMethodReference" />
     <property role="3GE5qa" value="jdk8" />
     <node concept="312cEu" id="3KXnQviHxyV" role="LiRBU">
       <property role="2bfB8j" value="true" />
@@ -41707,8 +41645,8 @@
         <node concept="3clFbS" id="3KXnQviHxz0" role="3clF47">
           <node concept="3clFbF" id="3KXnQviHxzc" role="3cqZAp">
             <node concept="3WEljn" id="3KXnQviHxzd" role="3clFbG">
-              <ref role="3WFDBg" to="487m:~TestInterface" resolve="TestInterface" />
-              <node concept="LIFWc" id="3KXnQviHxLY" role="lGtFl">
+              <ref role="3WFDBg" to="wyt6:~Iterable" resolve="Iterable" />
+              <node concept="LIFWc" id="27xKKx7Azrw" role="lGtFl">
                 <property role="ZRATv" value="true" />
                 <property role="OXtK3" value="true" />
                 <property role="p6zMq" value="0" />
@@ -41720,13 +41658,13 @@
         </node>
       </node>
       <node concept="3Tm1VV" id="3KXnQviHxz2" role="1B3o_S" />
-      <node concept="3uibUv" id="3KXnQviHxz3" role="EKbjA">
-        <ref role="3uigEE" to="487m:~TestInterface" resolve="TestInterface" />
+      <node concept="3uibUv" id="27xKKx7Azq8" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
       </node>
     </node>
     <node concept="3clFbS" id="3KXnQviHxz4" role="LjaKd">
       <node concept="2TK7Tu" id="3KXnQviHxz5" role="3cqZAp">
-        <property role="2TTd_B" value="getDefaultTestValue" />
+        <property role="2TTd_B" value="forEach" />
       </node>
     </node>
     <node concept="312cEu" id="3KXnQviHxz6" role="LiZbd">
@@ -41741,17 +41679,24 @@
         <node concept="3Tm1VV" id="3KXnQviHxz9" role="1B3o_S" />
         <node concept="10Oyi0" id="3KXnQviHxza" role="3clF45" />
         <node concept="3clFbS" id="3KXnQviHxzb" role="3clF47">
-          <node concept="3clFbF" id="3KXnQviHywE" role="3cqZAp">
-            <node concept="3WEljn" id="3KXnQviHywD" role="3clFbG">
-              <ref role="3WFDBg" to="487m:~TestInterface" resolve="TestInterface" />
-              <ref role="37wK5l" to="487m:~TestInterface.getDefaultTestValue():int" resolve="getDefaultTestValue" />
+          <node concept="3clFbF" id="27xKKx7AzyL" role="3cqZAp">
+            <node concept="3WEljn" id="27xKKx7AzyM" role="3clFbG">
+              <ref role="3WFDBg" to="wyt6:~Iterable" resolve="Iterable" />
+              <ref role="37wK5l" to="wyt6:~Iterable.forEach(java.util.function.Consumer):void" resolve="forEach" />
+              <node concept="LIFWc" id="27xKKx7AzDr" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="7" />
+                <property role="p6zMs" value="7" />
+                <property role="LIFWd" value="SMCC_property_name" />
+              </node>
             </node>
           </node>
         </node>
       </node>
       <node concept="3Tm1VV" id="3KXnQviHxze" role="1B3o_S" />
-      <node concept="3uibUv" id="3KXnQviHxzf" role="EKbjA">
-        <ref role="3uigEE" to="487m:~TestInterface" resolve="TestInterface" />
+      <node concept="3uibUv" id="27xKKx7Azse" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
       </node>
     </node>
   </node>
@@ -55146,6 +55091,221 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3Tfs3lughJY">
+    <property role="3GE5qa" value="jdk8" />
+    <property role="TrG5h" value="CompleteStaticMethodCall" />
+    <node concept="312cEu" id="3Tfs3lughJZ" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3Tfs3lughK0" role="jymVt" />
+      <node concept="3clFb_" id="3Tfs3lughK1" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3Tfs3lughK2" role="1B3o_S" />
+        <node concept="10Oyi0" id="3Tfs3lughK3" role="3clF45" />
+        <node concept="3clFbS" id="3Tfs3lughK4" role="3clF47">
+          <node concept="3clFbF" id="3Tfs3lughK5" role="3cqZAp">
+            <node concept="10M0yZ" id="3Tfs3lughK6" role="3clFbG">
+              <ref role="1PxDUh" to="82uw:~Predicate" resolve="Predicate" />
+              <node concept="LIFWc" id="27xKKx7AyjR" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="empty_staticFieldDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3Tfs3lughK8" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="3Tfs3lughK9" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3Tfs3lughKa" role="jymVt" />
+      <node concept="3clFb_" id="3Tfs3lughKb" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3Tfs3lughKc" role="1B3o_S" />
+        <node concept="10Oyi0" id="3Tfs3lughKd" role="3clF45" />
+        <node concept="3clFbS" id="3Tfs3lughKe" role="3clF47">
+          <node concept="3clFbF" id="27xKKx7Aywa" role="3cqZAp">
+            <node concept="2YIFZM" id="27xKKx7Ayym" role="3clFbG">
+              <ref role="37wK5l" to="82uw:~Predicate.isEqual(java.lang.Object):java.util.function.Predicate" resolve="isEqual" />
+              <ref role="1Pybhc" to="82uw:~Predicate" resolve="Predicate" />
+              <node concept="LIFWc" id="27xKKx7AyAp" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="Constant_arlg9k_a1a" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3Tfs3lughKh" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="3Tfs3lughKi" role="LjaKd">
+      <node concept="2TK7Tu" id="xR5LymHl4t" role="3cqZAp">
+        <property role="2TTd_B" value="isEqual" />
+      </node>
+      <node concept="2HxZob" id="5zZyMHeDnBL" role="3cqZAp">
+        <node concept="1iFQzN" id="5zZyMHeDnDK" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="3clFbH" id="3RD1KQWOOX$" role="3cqZAp" />
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3Tfs3lugies">
+    <property role="TrG5h" value="TypeSuperInterfaceConstruction" />
+    <property role="3GE5qa" value="jdk8" />
+    <node concept="312cEu" id="3Tfs3lugiet" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3Tfs3lugieu" role="jymVt" />
+      <node concept="3clFb_" id="3Tfs3lugiev" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3Tfs3lugiew" role="1B3o_S" />
+        <node concept="10Oyi0" id="3Tfs3lugiex" role="3clF45" />
+        <node concept="3clFbS" id="3Tfs3lugiey" role="3clF47">
+          <node concept="LIFWc" id="5sBGr36vuw1" role="lGtFl">
+            <property role="ZRATv" value="true" />
+            <property role="OXtK3" value="true" />
+            <property role="p6zMq" value="0" />
+            <property role="p6zMs" value="0" />
+            <property role="LIFWd" value="Constant_u338ov_a0a" />
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3Tfs3lugieA" role="1B3o_S" />
+      <node concept="3uibUv" id="27xKKx7AzFW" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+      </node>
+    </node>
+    <node concept="3clFbS" id="3Tfs3lugieC" role="LjaKd">
+      <node concept="2TK7Tu" id="xR5LymHdV0" role="3cqZAp">
+        <property role="2TTd_B" value="Iterable.super" />
+      </node>
+    </node>
+    <node concept="312cEu" id="3Tfs3lugieE" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3Tfs3lugieF" role="jymVt" />
+      <node concept="3clFb_" id="3Tfs3lugieG" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3Tfs3lugieH" role="1B3o_S" />
+        <node concept="10Oyi0" id="3Tfs3lugieI" role="3clF45" />
+        <node concept="3clFbS" id="3Tfs3lugieJ" role="3clF47">
+          <node concept="3clFbF" id="27xKKx7AzOl" role="3cqZAp">
+            <node concept="3WEljn" id="27xKKx7AzOk" role="3clFbG">
+              <ref role="3WFDBg" to="wyt6:~Iterable" resolve="Iterable" />
+              <node concept="LIFWc" id="27xKKx7AzPv" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="0" />
+                <property role="LIFWd" value="empty_instanceMethodDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3Tfs3lugieM" role="1B3o_S" />
+      <node concept="3uibUv" id="27xKKx7AzGf" role="EKbjA">
+        <ref role="3uigEE" to="wyt6:~Iterable" resolve="Iterable" />
+      </node>
+    </node>
+  </node>
+  <node concept="LiM7Y" id="3RD1KQWOGiR">
+    <property role="3GE5qa" value="jdk8" />
+    <property role="TrG5h" value="CompleteInterfaceInStaticMethodCall" />
+    <node concept="312cEu" id="3RD1KQWOGiS" role="LiRBU">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3RD1KQWOGiT" role="jymVt" />
+      <node concept="3clFb_" id="3RD1KQWOGiU" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3RD1KQWOGiV" role="1B3o_S" />
+        <node concept="10Oyi0" id="3RD1KQWOGiW" role="3clF45" />
+        <node concept="3clFbS" id="3RD1KQWOGiX" role="3clF47">
+          <node concept="3clFbF" id="3RD1KQWOGiY" role="3cqZAp">
+            <node concept="2YIFZM" id="3RD1KQWOGiZ" role="3clFbG">
+              <ref role="1Pybhc" to="wyt6:~Math" resolve="Math" />
+              <ref role="37wK5l" to="wyt6:~Math.max(double,double):double" resolve="max" />
+              <node concept="LIFWc" id="3RD1KQWOGj0" role="lGtFl">
+                <property role="LIFWa" value="0" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="0" />
+                <property role="p6zMs" value="4" />
+                <property role="LIFWd" value="property_name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3RD1KQWOGj1" role="1B3o_S" />
+    </node>
+    <node concept="312cEu" id="3RD1KQWOGj2" role="LiZbd">
+      <property role="2bfB8j" value="true" />
+      <property role="TrG5h" value="TestSuperClass" />
+      <node concept="2tJIrI" id="3RD1KQWOGj3" role="jymVt" />
+      <node concept="3clFb_" id="3RD1KQWOGj4" role="jymVt">
+        <property role="1EzhhJ" value="false" />
+        <property role="TrG5h" value="getDefaultTestValue" />
+        <property role="DiZV1" value="false" />
+        <property role="IEkAT" value="false" />
+        <node concept="3Tm1VV" id="3RD1KQWOGj5" role="1B3o_S" />
+        <node concept="10Oyi0" id="3RD1KQWOGj6" role="3clF45" />
+        <node concept="3clFbS" id="3RD1KQWOGj7" role="3clF47">
+          <node concept="3clFbF" id="3RD1KQWOGj8" role="3cqZAp">
+            <node concept="2YIFZM" id="3RD1KQWOGj9" role="3clFbG">
+              <ref role="37wK5l" to="wyt6:~Math.max(double,double):double" resolve="max" />
+              <ref role="1Pybhc" to="82uw:~Predicate" resolve="Predicate" />
+              <node concept="LIFWc" id="27xKKx7Azi4" role="lGtFl">
+                <property role="ZRATv" value="true" />
+                <property role="OXtK3" value="true" />
+                <property role="p6zMq" value="9" />
+                <property role="p6zMs" value="9" />
+                <property role="LIFWd" value="property_name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node concept="3Tm1VV" id="3RD1KQWOGjb" role="1B3o_S" />
+    </node>
+    <node concept="3clFbS" id="3RD1KQWOGjc" role="LjaKd">
+      <node concept="2TK7Tu" id="3RD1KQWOGju" role="3cqZAp">
+        <property role="2TTd_B" value="Predicat" />
+      </node>
+      <node concept="2HxZob" id="3RD1KQWOGjv" role="3cqZAp">
+        <node concept="1iFQzN" id="3RD1KQWOGjw" role="3iKnsn">
+          <ref role="1iFR8X" to="ekwn:2XByp9s_j7f" resolve="Complete" />
+        </node>
+      </node>
+      <node concept="yd1bK" id="27xKKx7AyVb" role="3cqZAp">
+        <node concept="pLAjd" id="27xKKx7AyVd" role="yd6KS">
+          <property role="pLAjf" value="VK_ENTER" />
         </node>
       </node>
     </node>
