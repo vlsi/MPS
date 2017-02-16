@@ -23,8 +23,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import java.awt.event.ItemEvent;
 import java.awt.Component;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
@@ -99,12 +98,9 @@ public class ConceptEditorHintPreferencesPage {
     JCheckBox item = new JCheckBox(hint.getId() + ": " + hint.getPresentation());
     item.setSelected(state);
     panel.add(item);
-    item.addChangeListener(new ChangeListener() {
-      @Override
-      public void stateChanged(ChangeEvent e) {
-        assert currentSettings.containsKey(lang, hint);
-        currentSettings.put(lang, hint, !currentSettings.get(lang, hint));
-      }
+    item.addItemListener(e -> {
+      assert currentSettings.containsKey(lang, hint);
+      currentSettings.put(lang, hint, e.getStateChange() == ItemEvent.SELECTED);
     });
   }
 
