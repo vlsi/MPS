@@ -8,12 +8,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.project.validation.ValidationUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.validation.SuppressingAwareProcessorDecorator;
 import org.jetbrains.mps.openapi.util.Processor;
-import jetbrains.mps.project.validation.ValidationProblem;
 import jetbrains.mps.project.validation.NodeValidationProblem;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.project.validation.ValidationUtil;
 
 public class StructureChecker extends SpecificChecker {
   public StructureChecker() {
@@ -22,19 +22,18 @@ public class StructureChecker extends SpecificChecker {
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, final ProgressMonitor monitor) {
     monitor.start("structure", 1);
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
-    ValidationUtil.validateModelContent(SModelOperations.roots(model, null), new SuppressingAwareProcessorDecorator(new Processor<ValidationProblem>() {
-      public boolean process(ValidationProblem vp) {
+    SuppressingAwareProcessorDecorator processor = new SuppressingAwareProcessorDecorator(new Processor<NodeValidationProblem>() {
+      public boolean process(NodeValidationProblem vp) {
         if (monitor.isCanceled()) {
           return false;
         }
-        if (!((vp instanceof NodeValidationProblem))) {
-          return true;
-        }
-        NodeValidationProblem nvp = (NodeValidationProblem) vp;
-        SpecificChecker.addIssue(results, nvp.getNode(), nvp.getMessage(), ModelChecker.SEVERITY_ERROR, "structure error", null);
+        SpecificChecker.addIssue(results, vp.getNode(), vp.getMessage(), ModelChecker.SEVERITY_ERROR, "structure error", null);
         return true;
       }
-    }));
+    });
+    for (SNode node : ListSequence.fromList(SModelOperations.nodes(model, null))) {
+      ValidationUtil.validateSingleNode(node, processor);
+    }
     monitor.done();
 
     return results;

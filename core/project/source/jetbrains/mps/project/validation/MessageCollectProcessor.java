@@ -16,15 +16,14 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.validation.ValidationProblem.Severity;
-import org.jetbrains.mps.openapi.util.Consumer;
 import org.jetbrains.mps.openapi.util.Processor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MessageCollectProcessor implements Processor<ValidationProblem> {
-  private List<String> myWarnings = new ArrayList<String>(1);
-  private List<String> myErrors = new ArrayList<String>(1);
+public class MessageCollectProcessor<T extends ValidationProblem> implements Processor<T> {
+  private List<String> myWarnings = new ArrayList<>(1);
+  private List<String> myErrors = new ArrayList<>(1);
   private final boolean myCollectWarnings;
 
   public MessageCollectProcessor() {
@@ -36,7 +35,7 @@ public class MessageCollectProcessor implements Processor<ValidationProblem> {
   }
 
   @Override
-  public boolean process(ValidationProblem problem) {
+  public boolean process(T problem) {
     if (problem.getSeverity() == Severity.ERROR) {
       myErrors.add(formatMessage(problem));
     } else if (myCollectWarnings){
@@ -45,7 +44,7 @@ public class MessageCollectProcessor implements Processor<ValidationProblem> {
     return true;
   }
 
-  protected String formatMessage(ValidationProblem problem) {
+  protected String formatMessage(T problem) {
     return problem.getMessage();
   }
 
