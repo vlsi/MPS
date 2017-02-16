@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.resolve.ReferenceResolverUtils;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.Scope;
@@ -19,8 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.language.SReferenceLink;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -30,21 +29,20 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     if (node == null || SNodeOperations.getModel(node) == null) {
       return;
     }
-    SModule module = check_bt3k2y_a0b0b(SNodeOperations.getModel(node));
+    SModule module = SNodeOperations.getModel(node).getModule();
     if (module == null) {
       return;
     }
     boolean executeImmediately = ReferenceResolverUtils.canExecuteImmediately(SNodeOperations.getModel(node), repository);
     for (SReference ref : SNodeOperations.getReferences(node)) {
       SNode target = SLinkOperations.getTargetNode(ref);
-      SNode ld = SLinkOperations.findLinkDeclaration(ref);
+      SReferenceLink link = SLinkOperations.getRefLink(ref);
       // don't check unresolved and broken references, they should already have an error message 
-      if ((target == null) || ld == null) {
+      if ((target == null) || !(link.isValid())) {
         continue;
       }
       // do we need all these additional dependencies? mb. it's better to use .runcheckingAction() instead? 
       component.addDependency(target);
-      component.addDependency(ld);
       component.addDependency(SNodeOperations.getParent(node));
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
@@ -52,7 +50,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(ref);
       Scope refScope = refDescriptor.getScope();
       if (refScope instanceof ErrorScope) {
-        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(check_bt3k2y_a0d0a0a11a4a1(SLinkOperations.getRefLink(ref))));
+        component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()));
       } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = refDescriptor.getScopeProvider();
@@ -60,7 +58,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         if (scopeProvider != null) {
           ruleNode = scopeProvider.getSearchScopeValidatorNode();
         }
-        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + check_bt3k2y_a0b0a4a0l0e0b(SLinkOperations.getRefLink(ref)) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(check_bt3k2y_a0d0a4a0l0e0b(SLinkOperations.getRefLink(ref))), createResolveReferenceQuickfix(ref, repository, executeImmediately));
+        component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRefLink(ref).getName() + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRefLink(ref).getName()), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
   }
@@ -86,7 +84,7 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         }
         @Override
         public String getDescription(SNode node) {
-          return "Resolve \"" + myReference.getLink().getRoleName() + "\" reference";
+          return "Resolve \"" + myReference.getLink().getName() + "\" reference";
         }
       };
     }
@@ -102,29 +100,5 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
     public boolean isError() {
       return myIsError;
     }
-  }
-  private static SModule check_bt3k2y_a0b0b(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-  private static String check_bt3k2y_a0d0a0a11a4a1(SReferenceLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
-  }
-  private static String check_bt3k2y_a0b0a4a0l0e0b(SReferenceLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
-  }
-  private static String check_bt3k2y_a0d0a4a0l0e0b(SReferenceLink checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getName();
-    }
-    return null;
   }
 }

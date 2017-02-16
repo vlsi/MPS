@@ -21,9 +21,9 @@ public class TypesystemChecker implements INodeChecker {
   public TypesystemChecker() {
   }
   @Override
-  public Set<IErrorReporter> getErrors(SNode node, SRepository repository) {
+  public Set<IErrorReporter> getErrors(SNode root, SRepository repository) {
     final Set<IErrorReporter> errors = SetSequence.fromSet(new HashSet<IErrorReporter>());
-    TypeContextManager.getInstance().runTypeCheckingAction(myContextOwner, node, new ITypechecking.Action() {
+    TypeContextManager.getInstance().runTypeCheckingAction(myContextOwner, root, new ITypechecking.Action() {
       public void run(TypeCheckingContext typeContext) {
         for (Pair<SNode, List<IErrorReporter>> pair : typeContext.checkRootAndGetErrors(true)) {
           SetSequence.fromSet(errors).addSequence(ListSequence.fromList(pair.o2));
