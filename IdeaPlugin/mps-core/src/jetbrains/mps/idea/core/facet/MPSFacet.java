@@ -109,7 +109,7 @@ public class MPSFacet extends Facet<MPSFacetConfiguration> {
     if (!wasInitialized()) {
       return;
     }
-    myMpsProject.getModelAccess().runWriteInEDT(() -> mySolution.setModuleDescriptor(configurationBean.getSolutionDescriptor()));
+    myMpsProject.getModelAccess().runWriteAction(() -> mySolution.setModuleDescriptor(configurationBean.getSolutionDescriptor()));
   }
 
   public Solution getSolution() {

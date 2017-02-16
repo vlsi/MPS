@@ -36,8 +36,6 @@ import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
-import com.intellij.openapi.startup.StartupManager;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
@@ -51,6 +49,7 @@ import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.module.ModuleMPSSupport;
 import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.MultipleSdkProblemNotifier;
 import jetbrains.mps.idea.core.psi.impl.PsiModelReloadListener;
 import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.ModuleId;
@@ -140,19 +139,7 @@ public class SolutionIdea extends Solution {
     try {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
     } catch (final DifferentSdkException e) {
-
-      // TODO this seems to behave suspiciously in tests
-      StartupManager.getInstance(myModule.getProject()).runWhenProjectIsInitialized(new Runnable() {
-        @Override
-        public void run() {
-          Messages.showErrorDialog(myModule.getProject(),
-            "There are more than one different SDKs used in modules with MPS facets.\n" +
-              "Trying to use " + e.getRequestedSdk().getName() +
-              " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
-            "Multiple SDKs not supported in MPS plugin"
-          );
-        }
-      });
+      myModule.getProject().getComponent(MultipleSdkProblemNotifier.class).reportSdkProblem(myModule, e);
     }
   }
 

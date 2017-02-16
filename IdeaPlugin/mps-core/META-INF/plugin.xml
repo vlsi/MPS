@@ -135,6 +135,9 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.module.ModuleMPSSupportInit</implementation-class>
     </component>
+    <component>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.MultipleSdkProblemNotifier</implementation-class>
+    </component>
   </project-components>
 
   <extensionPoints>

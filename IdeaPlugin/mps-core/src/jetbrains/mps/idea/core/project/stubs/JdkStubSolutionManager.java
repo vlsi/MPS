@@ -45,6 +45,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -104,8 +105,10 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
         return (Solution) repository.getModule(ModuleId.foreign(sdk.getName()));
       }
     });
+  }
 
-
+  public Collection<Module> getModules() {
+    return Collections.unmodifiableCollection(myModules);
   }
 
   public void claimSdk(Module module) throws DifferentSdkException {
@@ -125,7 +128,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
         if (sdk.equals(myJavaSdk)) return; // nothing to do
         dropSdksIfUnused((SRepositoryExt) repository);
         if (myJavaSdk == null) {
-          // either no sdks at all, or only idea sdk without underlying jsk: we're free to set it up
+          // either no sdks at all, or only idea sdk without underlying jdk: we're free to set it up
           setUpJdk(sdk, repository);
           myModules.add(module);
           return;
