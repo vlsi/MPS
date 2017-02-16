@@ -51,8 +51,13 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
       actions.add(new AbstractNodeSubstituteAction(null, parameterObject, node) {
 
         @Override
-        protected String getMatchingText(String pattern, boolean referent_presentation, boolean visible) {
+        public String getMatchingText(String pattern) {
           return AbstractCellMenuPart_Generic_Group.this.getMatchingText(parameterObject);
+        }
+
+        @Override
+        public String getVisibleMatchingText(String pattern) {
+          return AbstractCellMenuPart_Generic_Group.this.getVisibleMatchingText(parameterObject);
         }
 
         @Override
@@ -79,6 +84,13 @@ public abstract class AbstractCellMenuPart_Generic_Group implements SubstituteIn
   protected String getMatchingText(Object parameterObject) {
     if (parameterObject instanceof SNode) {
       return NodePresentationUtil.matchingText((SNode) parameterObject);
+    }
+    return "" + parameterObject;
+  }
+
+  protected String getVisibleMatchingText(Object parameterObject) {
+    if (parameterObject instanceof SNode) {
+      return NodePresentationUtil.visibleMatchingText((SNode) parameterObject);
     }
     return "" + parameterObject;
   }
