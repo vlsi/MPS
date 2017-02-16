@@ -4,6 +4,7 @@ package jetbrains.mps.ide.modelchecker.platform.actions;
 
 import jetbrains.mps.checkers.INodeChecker;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -18,15 +19,11 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 
 public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
-  private INodeChecker myChecker;
-  private String myCategory;
-  private SRepository myRepository;
+  private final INodeChecker myChecker;
+  private final String myCategory;
+  private final SRepository myRepository;
 
-  @Deprecated
-  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category) {
-    this(checker, category, null);
-  }
-  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category, SRepository repository) {
+  public INodeCheckerSpecificCheckerAdapter(INodeChecker checker, String category, @NotNull SRepository repository) {
     myChecker = checker;
     myCategory = category;
     myRepository = repository;
@@ -37,9 +34,8 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
 
     monitor.start(myCategory, 1);
     for (final SNode rootNode : SModelOperations.roots(model, null)) {
-      SRepository repository = (myRepository != null ? myRepository : model.getRepository());
-      for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, repository))) {
-        QuickFixProvider provider = check_m7souj_a0a0b0d0h(errorReporter);
+      for (final IErrorReporter errorReporter : SetSequence.fromSet(myChecker.getErrors(rootNode, myRepository))) {
+        QuickFixProvider provider = check_m7souj_a0a0a0d0g(errorReporter);
         IModelCheckerFix fix = null;
         if (provider != null) {
           final QuickFix_Runtime quickFix = provider.getQuickFix();
@@ -58,7 +54,7 @@ public class INodeCheckerSpecificCheckerAdapter extends SpecificChecker {
     monitor.done();
     return results;
   }
-  private static QuickFixProvider check_m7souj_a0a0b0d0h(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_m7souj_a0a0a0d0g(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }
