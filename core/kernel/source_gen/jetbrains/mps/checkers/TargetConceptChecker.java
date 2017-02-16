@@ -7,11 +7,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class TargetConceptChecker extends AbstractConstraintsChecker {
@@ -24,27 +23,26 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
         return !(SNodeOperations.isAttribute(it));
       }
     })) {
-      SNode link = SNodeOperations.getContainingLinkDeclaration(child);
-      if (link != null && SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "aggregation", "reference")) {
-        component.addDependency(link);
-        if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(child))))) {
-          component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
-        }
+      SContainmentLink link = SNodeOperations.getContainingLink(child);
+      if (!(link.isValid())) {
+        continue;
+      }
+      if (!(SNodeOperations.getConcept(child).isSubConceptOf(link.getTargetConcept()))) {
+        component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLink(child) + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(child) + "\" found", null);
       }
     }
 
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
-      SNode link = SLinkOperations.findLinkDeclaration(reference);
-      if (link == null || !(SPropertyOperations.hasValue(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf980556927L, "metaClass"), "reference", "reference"))) {
+      SReferenceLink link = SLinkOperations.getRefLink(reference);
+      if (!(link.isValid())) {
         continue;
       }
       SNode target = SLinkOperations.getTargetNode(reference);
       if (target == null) {
         continue;
       }
-      component.addDependency(link);
-      if (!(SConceptOperations.isSuperConceptOf(SNodeOperations.asSConcept(SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target"))), SNodeOperations.asSConcept(SNodeOperations.getConceptDeclaration(target))))) {
-        component.addError(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + SLinkOperations.getTarget(link, MetaAdapterFactory.getReferenceLink(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98055fef0L, "target")) + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, MetaAdapterFactory.getProperty(0xc72da2b97cce4447L, 0x8389f407dc1158b7L, 0xf979bd086aL, 0xf98052f333L, "role"))));
+      if (!(SNodeOperations.getConcept(target).isSubConceptOf(link.getTargetConcept()))) {
+        component.addError(node, "incompatible target concept in role \"" + ((SReference) reference).getLink().getName() + "\": subconcept of \"" + link.getTargetConcept() + "\" expected, \"" + SNodeOperations.getConcept(target) + "\" found", null, new ReferenceMessageTarget(link.getName()));
       }
     }
   }

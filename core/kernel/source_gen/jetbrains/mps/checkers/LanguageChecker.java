@@ -19,9 +19,9 @@ public class LanguageChecker implements INodeChecker {
     SetSequence.fromSet(myRules).addElement(new TargetConceptChecker());
   }
   @Override
-  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repoitory) {
+  public Set<IErrorReporter> getErrors(SNode rootNode, SRepository repository) {
     LanguageErrorsComponent errorsComponent = new LanguageErrorsComponent(SNodeOperations.getModel(rootNode));
-    errorsComponent.check(rootNode, myRules, repoitory, Cancellable.NEVER);
+    errorsComponent.check(rootNode, myRules, repository, Cancellable.NEVER);
     Set<IErrorReporter> result = errorsComponent.getErrors();
     errorsComponent.dispose();
     return result;

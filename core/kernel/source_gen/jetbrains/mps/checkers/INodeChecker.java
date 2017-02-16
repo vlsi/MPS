@@ -8,5 +8,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 public interface INodeChecker {
-  Set<IErrorReporter> getErrors(SNode node, SRepository repoitory);
+  Set<IErrorReporter> getErrors(SNode node, SRepository repository);
 }
