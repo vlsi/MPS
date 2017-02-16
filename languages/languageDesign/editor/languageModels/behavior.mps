@@ -22483,7 +22483,7 @@
     <property role="3GE5qa" value="CellMenu" />
     <ref role="13h7C2" to="tpc2:gWZcVFF" resolve="CellMenuPart_ReferentPrimary" />
     <node concept="13i0hz" id="6K3nYZvn7p1" role="13h7CS">
-      <property role="TrG5h" value="getRefPresentation" />
+      <property role="TrG5h" value="getMatchingTextFunction" />
       <node concept="3Tm1VV" id="6K3nYZvn7p2" role="1B3o_S" />
       <node concept="3Tqbb2" id="6K3nYZvn7ph" role="3clF45">
         <ref role="ehGHo" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
@@ -22494,7 +22494,7 @@
             <node concept="2OqwBi" id="6K3nYZvn7$K" role="2Oq$k0">
               <node concept="13iPFW" id="6K3nYZvn7qC" role="2Oq$k0" />
               <node concept="3TrEf2" id="6K3nYZvn7Ji" role="2OqNvi">
-                <ref role="3Tt5mk" to="tpc2:601LQojQ6kk" resolve="referentPresentation" />
+                <ref role="3Tt5mk" to="tpc2:601LQojQ6kk" resolve="matchingText" />
               </node>
             </node>
             <node concept="3x8VRR" id="6K3nYZvn8M4" role="2OqNvi" />
@@ -22504,7 +22504,7 @@
               <node concept="2OqwBi" id="6K3nYZvn97p" role="3cqZAk">
                 <node concept="13iPFW" id="6K3nYZvn8X1" role="2Oq$k0" />
                 <node concept="3TrEf2" id="6K3nYZvn9x6" role="2OqNvi">
-                  <ref role="3Tt5mk" to="tpc2:601LQojQ6kk" resolve="referentPresentation" />
+                  <ref role="3Tt5mk" to="tpc2:601LQojQ6kk" resolve="matchingText" />
                 </node>
               </node>
             </node>
@@ -22571,6 +22571,41 @@
         </node>
         <node concept="3cpWs6" id="6K3nYZvnrie" role="3cqZAp">
           <node concept="10Nm6u" id="6K3nYZvnrSC" role="3cqZAk" />
+        </node>
+      </node>
+    </node>
+    <node concept="13i0hz" id="5KYS0pi3wd5" role="13h7CS">
+      <property role="TrG5h" value="getVisibleMatchingTextFunction" />
+      <node concept="3Tm1VV" id="5KYS0pi3wd6" role="1B3o_S" />
+      <node concept="3Tqbb2" id="5KYS0pi3ALq" role="3clF45">
+        <ref role="ehGHo" to="tpc2:601LQojMcdN" resolve="QueryFunction_RefPresentation" />
+      </node>
+      <node concept="3clFbS" id="5KYS0pi3wd8" role="3clF47">
+        <node concept="3clFbJ" id="5KYS0pi3G13" role="3cqZAp">
+          <node concept="2OqwBi" id="5KYS0pi3Hed" role="3clFbw">
+            <node concept="2OqwBi" id="5KYS0pi3Gvb" role="2Oq$k0">
+              <node concept="13iPFW" id="5KYS0pi3Gl3" role="2Oq$k0" />
+              <node concept="3TrEf2" id="5KYS0pi3GNK" role="2OqNvi">
+                <ref role="3Tt5mk" to="tpc2:5KYS0pi3vFm" resolve="visibleMatchingText" />
+              </node>
+            </node>
+            <node concept="3w_OXm" id="5KYS0pi3KND" role="2OqNvi" />
+          </node>
+          <node concept="3clFbS" id="5KYS0pi3G15" role="3clFbx">
+            <node concept="3cpWs6" id="5KYS0pi3HVS" role="3cqZAp">
+              <node concept="BsUDl" id="5KYS0pi3IJ0" role="3cqZAk">
+                <ref role="37wK5l" node="6K3nYZvn7p1" resolve="getMatchingTextFunction" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node concept="3cpWs6" id="5KYS0pi3IUc" role="3cqZAp">
+          <node concept="2OqwBi" id="5KYS0pi3Jti" role="3cqZAk">
+            <node concept="13iPFW" id="5KYS0pi3J5u" role="2Oq$k0" />
+            <node concept="3TrEf2" id="5KYS0pi3JR8" role="2OqNvi">
+              <ref role="3Tt5mk" to="tpc2:5KYS0pi3vFm" resolve="visibleMatchingText" />
+            </node>
+          </node>
         </node>
       </node>
     </node>

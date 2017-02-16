@@ -1805,7 +1805,8 @@ public class StructureAspectDescriptor extends BaseStructureAspectDescriptor {
     b.super_("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", 0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x10f34f8c0deL);
     b.parent(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x19796fa16a19888bL);
     b.origin("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)/1164996492011");
-    b.aggregate("referentPresentation", 0x6001c76613d86514L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L).optional(true).ordered(true).multiple(false).origin("6918029743851332884").done();
+    b.aggregate("matchingText", 0x6001c76613d86514L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L).optional(true).ordered(true).multiple(false).origin("6918029743851332884").done();
+    b.aggregate("visibleMatchingText", 0x5c3ee006520dfad6L).target(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x6001c76613c8c373L).optional(true).ordered(true).multiple(false).origin("6646996417796504278").done();
     b.alias("primary choose referent menu");
     return b.create();
   }

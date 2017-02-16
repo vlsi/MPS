@@ -1781,7 +1781,13 @@
     <node concept="1TJgyj" id="601LQojQ6kk" role="1TKVEi">
       <property role="IQ2ns" value="6918029743851332884" />
       <property role="20lmBu" value="aggregation" />
-      <property role="20kJfa" value="referentPresentation" />
+      <property role="20kJfa" value="matchingText" />
+      <ref role="20lvS9" node="601LQojMcdN" resolve="QueryFunction_RefPresentation" />
+    </node>
+    <node concept="1TJgyj" id="5KYS0pi3vFm" role="1TKVEi">
+      <property role="IQ2ns" value="6646996417796504278" />
+      <property role="20lmBu" value="aggregation" />
+      <property role="20kJfa" value="visibleMatchingText" />
       <ref role="20lvS9" node="601LQojMcdN" resolve="QueryFunction_RefPresentation" />
     </node>
   </node>

@@ -151,7 +151,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     }
 
     private EditorCell createReferencePresentation_kasd0f_a0b1a0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefault(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo")));
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x18bc659203a64e29L, 0xa83a7ff23bde13baL, 0x7ce0198267c4eb2L, 0x7ce0198267c4eb3L, "migrateTo")));
       editorCell.setCellId("ReferencePresentation_kasd0f_a0b1a0");
       return editorCell;
     }
