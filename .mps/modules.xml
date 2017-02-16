@@ -114,9 +114,7 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/property/jetbrains.mps.generator.test.crossmodel.property.mpl" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/jetbrains.mps.generator.sandbox.msd" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.dk/jetbrains.mps.generator.xmodel-sample.devkit" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.lang1/jetbrains.mps.generator.test.xmodel.lang1.mpl" folder="core.aspects.generator" />
-      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.test/jetbrains.mps.generator.xmodel.test.msd" folder="core.aspects.generator" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.build/jetbrains.mps.generator.xmodel.build.test.msd" folder="core.aspects.generator" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" folder="core.aspects.intentions" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/jetbrains.mps.lang.editor.imageGen.mpl" folder="core.aspects.editor" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" folder="core.make" />
@@ -194,8 +192,8 @@
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor.sandbox/jetbrains.mps.testHybridEditor.sandbox.msd" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/diagramEditor/test/jetbrains.mps.testHybridEditor/jetbrains.mps.testHybridEditor.mpl" folder="core.aspects.editor.diagram" />
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/lang.menus/jetbrains.mps.editor.contextActionsTool.lang.menus.mpl" folder="workbench.editor.contextActionsTool" />
-      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/pluginSolution/jetbrains.mps.editor.contextActionsTool.pluginSolution.msd" folder="workbench.editor.contextActionsTool" />
+      <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/modules/runtime/jetbrains.mps.editor.contextActionsTool.lang.menus.runtime.msd" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/editor.contextActionsTool/testModules/tests/jetbrains.mps.editor.contextActionsTool.tests.msd" folder="workbench.editor.contextActionsTool" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/jetbrains.mps.execution.api.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" folder="workbench.execution" />

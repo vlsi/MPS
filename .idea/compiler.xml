@@ -107,6 +107,12 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/plan/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/languages/templateLanguage/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.lang1/generator/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.lang1/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.test/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.test/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.test2/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/project.xmodel.test1/xmodel.test2/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/crossmodel/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/crossmodel/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/entity/generator/source_gen" includeSubdirectories="true" />
@@ -121,10 +127,8 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/property/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/sandbox/test_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.lang1/generator/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.lang1/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.test/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.test/test_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.build/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/generator/test/xmodel.build/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions/generator/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/intentions/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/jetbrains.mps.lang.editor.imageGen/generator/source_gen" includeSubdirectories="true" />
@@ -792,7 +796,6 @@
       <directory url="file://$PROJECT_DIR$/workbench/mps-workbench/pluginSolutions/lang.typesystem/test_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/IdeaPlugin" includeSubdirectories="true" />
     </excludeFromCompile>
-    <resourceExtensions />
     <wildcardResourcePatterns>
       <entry name="!?*.java" />
       <entry name="!?*.form" />
