@@ -15,16 +15,15 @@
  */
 package jetbrains.mps.ide.test.blame.command;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import jetbrains.mps.PlatformMpsTest;
 import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import org.jdom.Element;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
+import java.util.Set;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -32,8 +31,10 @@ import static org.junit.Assert.fail;
 public class AffectedVersionTest extends PlatformMpsTest {
   @Test
   public void testVersion() throws IOException {
-    String version = Command.getVersion();
-    if (version == null) return;
+    String version = ApplicationInfo.getInstance().getFullVersion();
+    if (version == null) {
+      fail("Can't get current application version");
+    }
 
     String login = System.getProperty("mps.youtrack.login");
     String password = System.getProperty("mps.youtrack.password");
@@ -43,7 +44,6 @@ public class AffectedVersionTest extends PlatformMpsTest {
     }
 
     Command c = new Command();
-    c.setTimeouts(5000);
 
     Response r = c.login(new Query(login, password));
     assertTrue("Was not able to login", r.isSuccess());
@@ -53,15 +53,11 @@ public class AffectedVersionTest extends PlatformMpsTest {
     if (!r.isSuccess()) {
       fail("Failed to retrieve list of versions from server");
     }
-    Element e = r.getResponseXml();
 
-    assertTrue("Failed to retrieve list of versions from server", e != null);
+    Set<String> availableVersions = c.extractVersions(r);
 
-    List<Element> versions = e.getChildren("version");
-    HashSet<String> availableVersions = new HashSet<String>();
-    for (Element v : versions) {
-      availableVersions.add(v.getText());
-    }
+    assertTrue("Failed to retrieve list of versions from server", availableVersions != null);
+
     assertTrue("version " + version + " does not exist in tracker", availableVersions.contains(version));
   }
 }

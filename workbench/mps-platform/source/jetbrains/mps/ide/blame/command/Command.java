@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
@@ -28,16 +29,25 @@ import org.apache.commons.httpclient.methods.multipart.MultipartRequestEntity;
 import org.apache.commons.httpclient.methods.multipart.Part;
 import org.apache.commons.httpclient.methods.multipart.StringPart;
 import org.apache.commons.httpclient.params.HttpClientParams;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.TestOnly;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+/**
+ * Wrapper class for requests to YouTrack
+ */
 public class Command {
   public static final String YOUTRACK_BASE_URL = "https://youtrack.jetbrains.com";
   public static final String ISSUE_BASE_URL = YOUTRACK_BASE_URL + "/issue/";
+
   private static final String LOGIN = "/rest/user/login";
   private static final String POST_ISSUE = "/rest/issue/";
   private static final String ISSUE_COMMAND_FORMAT = "/rest/issue/%s/execute";
@@ -55,15 +65,30 @@ public class Command {
   private static final String PERMITTED_GROUP_PARAM_NAME = "permittedGroup";
   private static final String MPS_GROUP_NAME = "mps-developers";
   private static final String COMMAND_PARAM_NAME = "command";
-  private static final String SUBSYSTEM_COMMAND_FORMAT = "Subsystem %s";
+  private static final String COMMAND_ADD_PARAM_NAME = COMMAND_PARAM_NAME + " add";
+  private static final String SUBSYSTEM_FIELD = "Subsystem";
+  private static final String AFFECTED_VERSIONS_FIELD = "Affected versions";
+
+  private static final String RESPONSE_FAILED = "Can't update issue";
+  private static final String RESPONSE_SUCCEEDED = "Issue updated";
+
+  private static final int DEFAULT_TIMEOUT = 5000;
 
   private final HttpClient c;
 
   public Command() {
     c = new HttpClient();
+    setTimeouts(DEFAULT_TIMEOUT);
   }
 
-  public void setTimeouts(int timeoutMillis) {
+  /**
+   * Sets timeout for waiting for response from server.
+   * By default it is set to {@link Command#DEFAULT_TIMEOUT} = 5000
+   *
+   * @param timeoutMillis timeout in milliseconds
+   */
+  public final void setTimeouts(int timeoutMillis) {
+    // Final method, because called in constructor - avoiding road to hell.
     HttpClientParams params = c.getParams();
     params.setConnectionManagerTimeout(timeoutMillis);
     params.setSoTimeout(timeoutMillis);
@@ -71,6 +96,13 @@ public class Command {
   }
 
 
+  /**
+   * Logs into YouTrack with provided credentials
+   *
+   * @param query with user credentials
+   * @return server response if authentication with provided credentials succeeded
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
   public Response login(Query query) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + LOGIN);
     p.addParameter(LOGIN_PARAM_NAME, query.getUser());
@@ -86,6 +118,18 @@ public class Command {
     }
   }
 
+  /**
+   * Creates new issue in YouTrack for MPS projects.
+   * <br/>
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid or anonymous credentials first.
+   *
+   * @param summary     title of the issue
+   * @param description description of issue (system info, build info, steps to reproduce, exception message and stack traces)
+   * @param hidden      determine if issue will be visible only to creator and mps-developers group
+   * @param files       list of files to be attached to the issue
+   * @return response with created issue id if response succeeded
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
   @NotNull
   public Response postIssue(String summary, String description, boolean hidden, File... files) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + POST_ISSUE);
@@ -97,7 +141,7 @@ public class Command {
       p.addParameter(PERMITTED_GROUP_PARAM_NAME, MPS_GROUP_NAME);
     }
     if (files.length != 0) {
-      List<Part> parts = new ArrayList<Part>();
+      List<Part> parts = new ArrayList<>();
       for (NameValuePair nameValuePair : p.getParameters()) {
         parts.add(new StringPart(nameValuePair.getName(), nameValuePair.getValue()));
       }
@@ -117,21 +161,108 @@ public class Command {
     }
   }
 
+  /**
+   * This is utility method for short call of more general method {@link Command#setIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   * <br/>
+   * Used to update issue subsystem.
+   * <br/>
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid or anonymous credentials first.
+   *
+   * @param issueId   YouTrack issue with this id will be updated
+   * @param subsystem subsystem of the bug
+   * @return server response to update query
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
   @NotNull
   public Response setIssueSubsystem(@NotNull String issueId, @NotNull String subsystem) throws IOException {
+    return setIssueField(issueId, SUBSYSTEM_FIELD, subsystem);
+  }
+
+  /**
+   * This is utility method for short call of more general method {@link Command#setIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   * <br/>
+   * Used to update issue affected version.
+   * <br/>
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid or anonymous credentials first.
+   *
+   * @param issueId         YouTrack issue with this id will be updated
+   * @param affectedVersion current MPS version containing bug
+   * @return server response to update query
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
+  @NotNull
+  public Response setIssueAffectedVersion(@NotNull String issueId, @NotNull String affectedVersion) throws IOException {
+    return setIssueField(issueId, AFFECTED_VERSIONS_FIELD, affectedVersion);
+  }
+
+  /**
+   * <p>
+   * Sets new value to specified field of <a href="https://youtrack.jetbrains.com">YouTrack</a> issue with provided ID.
+   * <br/>
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid or anonymous credentials first.
+   * </p>
+   * <p>
+   * ATTENTION: old value of field, if it was already set, will be overridden.
+   * <br/>
+   * If you need to update filed value and preserve old one, use {@link Command#updateIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   *
+   * @param issueId YouTrack issue with this id will be updated
+   * @param field   of issue to change (as shown in web)
+   * @param value   value which will be set to issue field
+   * @return server response to update query
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
+  public Response setIssueField(@NotNull String issueId, @NotNull String field, @NotNull String value) throws IOException {
+    return modifyIssueField(issueId, COMMAND_PARAM_NAME, field, value);
+  }
+
+  /**
+   * <p>
+   * Adds new value to specified field of <a href="https://youtrack.jetbrains.com">YouTrack</a> issue with provided ID.
+   * <br/>
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid or anonymous credentials first.
+   * </p>
+   * ATTENTION: new value of field, will be added to current value.
+   * <br/>
+   * If you need to override old value, use {@link Command#setIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   *
+   * @param issueId YouTrack issue with this id will be updated
+   * @param field   of issue to update (as shown in web)
+   * @param value   value which will added to field
+   * @return server response to update query
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
+  public Response updateIssueField(@NotNull String issueId, @NotNull String field, @NotNull String value) throws IOException {
+    return modifyIssueField(issueId, COMMAND_ADD_PARAM_NAME, field, value);
+  }
+
+  /**
+   * Implementation for {@link Command#updateIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   * and {@link Command#setIssueField(java.lang.String, java.lang.String, java.lang.String)}
+   */
+  private Response modifyIssueField(@NotNull String issueId, @NotNull String commandString, @NotNull String field, @NotNull String value) throws IOException {
     PostMethod p = new PostMethod(YOUTRACK_BASE_URL + String.format(ISSUE_COMMAND_FORMAT, issueId));
-    p.addParameter(COMMAND_PARAM_NAME, String.format(SUBSYSTEM_COMMAND_FORMAT, subsystem));
+    p.addParameter(commandString, String.format("%s %s", field, value));
     c.executeMethod(p);
 
     int statusCode = p.getStatusCode();
     String responseString = p.getResponseBodyAsString();
     if (statusCode == 200) {
-      return new Response("Issue posted", responseString, true, null);
+      return new Response(RESPONSE_SUCCEEDED, responseString, true, null);
     } else {
-      return new Response("Can't post issue", responseString, false, null);
+      return new Response(RESPONSE_FAILED, responseString, false, null);
     }
   }
 
+  /**
+   * Requests for list of versions.
+   * This method require call of {@link Command#login(jetbrains.mps.ide.blame.perform.Query)} with valid credentials first.
+   * To retrieve list, user must be part of mps-developers group
+   *
+   * @return server response for list of versions request
+   * @throws IOException can be thrown by {@link org.apache.commons.httpclient.HttpClient#executeMethod(org.apache.commons.httpclient.HttpMethod)}
+   */
+  @TestOnly
   @NotNull
   public Response listVersions() throws IOException {
     GetMethod p = new GetMethod(YOUTRACK_BASE_URL + LIST_VERSIONS);
@@ -142,6 +273,35 @@ public class Command {
     return new Response("List MPS versions", responseString, statusCode == 200, null);
   }
 
+  /**
+   * Utility method to encapsulate response parsing
+   *
+   * @param response with list of versions from YouTrack
+   * @return set of versions as strings or {@code null} if request returned fail response
+   */
+  @TestOnly
+  @Nullable
+  public Set<String> extractVersions(Response response) {
+    Element e = response.getResponseXml();
+
+    if (e == null) {
+      return null;
+    }
+
+    Set<String> availableVersions = new HashSet<>();
+    for (Element v : e.getChildren("version")) {
+      availableVersions.add(v.getText());
+    }
+    return availableVersions;
+  }
+
+  /**
+   * Unused method.
+   * <p>
+   * Use {@code ApplicationInfo.getInstance().getFullVersion()} instead
+   */
+  @Deprecated
+  @ToRemove(version = 2017.1)
   public static String getVersion() {
     String version = ApplicationInfo.getInstance().getMajorVersion() + "." + ApplicationInfo.getInstance().getMinorVersion();
     return ApplicationInfoEx.getInstanceEx().isEAP() ? version + " EAP" : version;

@@ -26,27 +26,21 @@ import java.io.InterruptedIOException;
 public class YouTrackURLTest extends TestCase {
   public void testLogin() throws IOException {
     Command c = new Command();
-    c.setTimeouts(Poster.DEFAULT_TIMEOUT);
     Response result = null;
     IOException lastEx = null;
-    for (int i=1; i<=3; ++i) {
+    for (int i = 1; i <= 3; ++i) {
       lastEx = null;
       try {
         result = c.login(Query.ANONYMOUS);
         if (!result.isSuccess()) {
           try {
-            Thread.sleep(3000*i);
+            Thread.sleep(3000 * i);
+          } catch (InterruptedException ignore) {
           }
-          catch (InterruptedException ignore) {}
-        }
-        else {
+        } else {
           break;
         }
-      }
-      catch (HttpException ex) {
-        lastEx = ex;
-      }
-      catch (InterruptedIOException ex) {
+      } catch (HttpException | InterruptedIOException ex) {
         lastEx = ex;
       }
     }

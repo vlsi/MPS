@@ -15,18 +15,21 @@
  */
 package jetbrains.mps.ide.blame.command;
 
+import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.blame.perform.Executor;
 import jetbrains.mps.ide.blame.perform.Performable;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class Poster {
-  /*package*/ static final int DEFAULT_TIMEOUT = 5000;
+  private static final Logger LOG = LogManager.getLogger(Poster.class);
 
-  private Executor myExecutor;
+  private final Executor myExecutor;
 
   public Poster(@Nullable Project project) {
     myExecutor = new Executor(project);
@@ -39,14 +42,25 @@ public class Poster {
       @NotNull
       public Response perform() throws Exception {
         Command c = new Command();
-        c.setTimeouts(DEFAULT_TIMEOUT);
         Response r = c.login(query);
         if (r.isSuccess()) {
           r = c.postIssue(query.getIssueTitle(), query.getDescription(), query.isHidden(), query.getFiles());
           String subsystem = query.getSubsystem();
           String id = r.getIssueId();
-          if (r.isSuccess() && subsystem != null && id != null) {
-            c.setIssueSubsystem(id, subsystem);
+          if (r.isSuccess() && id != null) {
+            if (subsystem != null) {
+              final Response subsystemResponse = c.setIssueSubsystem(id, subsystem);
+              if (!subsystemResponse.isSuccess()) {
+                final String subSystemMessage = String.format("Can't set %s subsystem to issue %s", subsystem, id);
+                LOG.info(subSystemMessage, subsystemResponse.getThrowable());
+              }
+            }
+            final String fullVersion = ApplicationInfo.getInstance().getFullVersion();
+            final Response affectedVersionResponse = c.setIssueAffectedVersion(id, fullVersion);
+            if (!affectedVersionResponse.isSuccess()) {
+              final String affectedVersionMessage = String.format("Can't set %s affected version to issue %s", fullVersion, id);
+              LOG.info(affectedVersionMessage, affectedVersionResponse.getThrowable());
+            }
           }
         }
         return r;
@@ -56,14 +70,9 @@ public class Poster {
   }
 
   public Response test(final Query query) {
-    Performable test = new Performable() {
-      @Override
-      @NotNull
-      public Response perform() throws Exception {
-        Command c = new Command();
-        c.setTimeouts(DEFAULT_TIMEOUT);;
-        return c.login(query);
-      }
+    Performable test = () -> {
+      Command c = new Command();
+      return c.login(query);
     };
     return myExecutor.execute(test);
   }
