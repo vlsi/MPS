@@ -43,14 +43,6 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   @Override
   public void loadState(ModelCheckerSettings.MyState state) {
     myState = state;
-    if (!(myState.myCheckTypesystem)) {
-      myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.CONSTRAINTS;
-      if (!(myState.myCheckConstraints)) {
-        myState.myCheckingLevel = ModelCheckerSettings.CheckingLevel.STRUCTURE;
-      }
-    }
-    myState.myCheckTypesystem = true;
-    myState.myCheckConstraints = true;
   }
   @Nullable
   public Icon getIcon() {
@@ -73,7 +65,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
         ListSequence.fromList(checkers).addElement(new UnresolvedReferencesChecker(mpsProject));
     }
 
-    if (isCheckSpecific()) {
+    if (isIncludeAdditionalChecks()) {
       ListSequence.fromList(checkers).addElement(new GeneratorTemplatesChecker());
     }
     return checkers;
@@ -85,11 +77,11 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   public void setCheckingLevel(ModelCheckerSettings.CheckingLevel checkingLevel) {
     myState.myCheckingLevel = checkingLevel;
   }
-  public boolean isCheckSpecific() {
-    return myState.myCheckSpecific;
+  public boolean isIncludeAdditionalChecks() {
+    return myState.myIncludeAdditionalChecks;
   }
-  public void setCheckSpecific(boolean checkSpecific) {
-    myState.myCheckSpecific = checkSpecific;
+  public void setIncludeAdditionalChecks(boolean checkSpecific) {
+    myState.myIncludeAdditionalChecks = checkSpecific;
   }
   public boolean isCheckStubs() {
     return myState.myCheckStubs;
@@ -105,21 +97,8 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
   }
 
   public static class MyState {
-    /**
-     * 
-     * @deprecated remove following 4 fields after 3.3, left just to make settings compatible
-     */
-    @Deprecated
-    public boolean myCheckUnresolvedReferences = true;
-    @Deprecated
-    public boolean myCheckConstraints = true;
-    @Deprecated
-    public boolean myCheckModelProperties = true;
-    @Deprecated
-    public boolean myCheckTypesystem = true;
-
     public ModelCheckerSettings.CheckingLevel myCheckingLevel = ModelCheckerSettings.CheckingLevel.TYPESYSTEM;
-    public boolean myCheckSpecific = true;
+    public boolean myIncludeAdditionalChecks = true;
     public boolean myCheckBeforeCommit = true;
     public boolean myCheckStubs = false;
     public MyState() {
