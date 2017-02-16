@@ -6,23 +6,26 @@ import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 @MPSLaunch
-public class TestSubstitute_CheckSubconcept_Test extends BaseTransformationTest {
+public class TestSubstitute_Subconcepts_Test extends BaseTransformationTest {
   @Test
-  public void test_TestSubstitute_CheckSubconcept() throws Throwable {
+  public void test_TestSubstitute_Subconcepts() throws Throwable {
     initTest("${mps_home}", "r:62873c84-7a76-488a-9b84-4e0ffdbec8db(jetbrains.mps.lang.editor.menus.substitute.tests.tests@tests)");
-    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_CheckSubconcept_Test$TestBody", "testMethod", false);
+    runTest("jetbrains.mps.lang.editor.menus.substitute.tests.tests.TestSubstitute_Subconcepts_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     @Override
     public void testMethodImpl() throws Exception {
-      initEditorComponent("9174907873152785195", "9174907873152785197");
+      initEditorComponent("5476527677618977237", "5476527677618977239");
       invokeAction("jetbrains.mps.ide.editor.actions.Complete_Action");
       assert getEditorComponent().getNodeSubstituteChooser().isVisible();
-      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 0;
+      assert getEditorComponent().getNodeSubstituteChooser().getNumberOfActions() == 4;
+      pressKeys(ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
     }
   }
 }
