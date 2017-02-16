@@ -57,6 +57,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     blameDialog.addEx(events[0].getThrowable());
     blameDialog.setIssueTitle(events[0].getMessage());
     blameDialog.setDescription(additionalInfo);
+    blameDialog.setPluginDescriptor(getPluginDescriptor());
 
     blameDialog.show();
 
