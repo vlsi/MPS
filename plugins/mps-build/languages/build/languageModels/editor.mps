@@ -227,9 +227,6 @@
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
       </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
-        <reference id="697754674827630451" name="concept" index="4PJHt" />
-      </concept>
       <concept id="414384289274418283" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Group" flags="ng" index="3ft6gV">
         <child id="540685334802084769" name="variables" index="23Ddnj" />
         <child id="414384289274424750" name="condition" index="3ft5RY" />
@@ -8478,10 +8475,6 @@
         </node>
       </node>
     </node>
-    <node concept="2VfDsV" id="1wEcoXjJDEP" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJDEQ" role="3ft7WO">
-      <ref role="4PJHt" to="3ior:2oUTXgL_kr6" resolve="BuildSource_JavaContentFolder" />
-    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJDri">
     <ref role="aqKnT" to="3ior:3elU8iQ65L0" resolve="BuildSource_JavaDependencyJar" />
@@ -9031,10 +9024,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2VfDsV" id="1wEcoXjJDES" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJDET" role="3ft7WO">
-      <ref role="4PJHt" to="3ior:7usrAn056vL" resolve="BuildCompositePath" />
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJDzL">

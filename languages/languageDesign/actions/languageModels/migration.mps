@@ -12327,15 +12327,6 @@
                 </node>
               </node>
             </node>
-            <node concept="3cpWs8" id="41ZU75WZ_Lp" role="3cqZAp">
-              <node concept="3cpWsn" id="41ZU75WZ_Ls" role="3cpWs9">
-                <property role="TrG5h" value="hasStrictRemoveDefaults" />
-                <node concept="10P_77" id="41ZU75WZ_Ln" role="1tU5fm" />
-                <node concept="3clFbT" id="41ZU75WZBCJ" role="33vP2m">
-                  <property role="3clFbU" value="false" />
-                </node>
-              </node>
-            </node>
             <node concept="2Gpval" id="1mnY7H6cX$0" role="3cqZAp">
               <node concept="2GrKxI" id="1mnY7H6cX$1" role="2Gsz3X">
                 <property role="TrG5h" value="actions" />
@@ -12913,8 +12904,16 @@
                       <node concept="3clFbJ" id="AIV2SdGMzs" role="3cqZAp">
                         <node concept="1Wc70l" id="41ZU75WZR7f" role="3clFbw">
                           <node concept="3fqX7Q" id="41ZU75WZRhC" role="3uHU7B">
-                            <node concept="37vLTw" id="41ZU75WZRqY" role="3fr31v">
-                              <ref role="3cqZAo" node="41ZU75WZ_Ls" resolve="hasStrictRemoveDefaults" />
+                            <node concept="2OqwBi" id="3CLtxR_eVQ1" role="3fr31v">
+                              <node concept="37vLTw" id="3CLtxR_eUQ4" role="2Oq$k0">
+                                <ref role="3cqZAo" node="3_9$nOtKa9_" resolve="myConceptsWithRemoveDefaults" />
+                              </node>
+                              <node concept="liA8E" id="3CLtxR_eX4E" role="2OqNvi">
+                                <ref role="37wK5l" to="33ny:~Set.contains(java.lang.Object):boolean" resolve="contains" />
+                                <node concept="37vLTw" id="3CLtxR_eXEW" role="37wK5m">
+                                  <ref role="3cqZAo" node="AIV2SdGsTC" resolve="conceptDeclaration" />
+                                </node>
+                              </node>
                             </node>
                           </node>
                           <node concept="1rXfSq" id="AIV2SdGMEu" role="3uHU7w">

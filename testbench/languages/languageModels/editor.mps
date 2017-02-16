@@ -52,7 +52,6 @@
       <concept id="1164914519156" name="jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept" flags="ng" index="UkePV">
         <reference id="1164914727930" name="replacementConcept" index="Ul1FP" />
       </concept>
-      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
         <child id="1223387335081" name="query" index="3n$kyP" />
@@ -72,9 +71,6 @@
       <concept id="1154465273778" name="jetbrains.mps.lang.editor.structure.QueryFunctionParameter_SubstituteMenu_ParentNode" flags="nn" index="3bvxqY" />
       <concept id="7342352913006985483" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Action" flags="ng" index="3eGOop">
         <child id="8612453216082699922" name="substituteHandler" index="3aKz83" />
-      </concept>
-      <concept id="414384289274424754" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_AddConcept" flags="ng" index="3ft5Ry">
-        <reference id="697754674827630451" name="concept" index="4PJHt" />
       </concept>
       <concept id="1088013125922" name="jetbrains.mps.lang.editor.structure.CellModel_RefCell" flags="sg" stub="730538219795941030" index="1iCGBv">
         <child id="1088186146602" name="editorComponent" index="1sWHZn" />
@@ -578,10 +574,6 @@
         </node>
       </node>
     </node>
-    <node concept="2VfDsV" id="1wEcoXjJk7N" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJk7O" role="3ft7WO">
-      <ref role="4PJHt" to="pop3:3U1VhSFTRMT" resolve="JUnit3TestCaseRef" />
-    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJk09">
     <ref role="aqKnT" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
@@ -740,10 +732,6 @@
         </node>
       </node>
     </node>
-    <node concept="2VfDsV" id="1wEcoXjJk7P" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJk7Q" role="3ft7WO">
-      <ref role="4PJHt" to="pop3:3U1VhSFTRMS" resolve="JUnit4TestCaseRef" />
-    </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJk2E">
     <ref role="aqKnT" to="pop3:173Z5qAOsJs" resolve="SolutionRef" />
@@ -888,10 +876,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2VfDsV" id="1wEcoXjJk7L" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJk7M" role="3ft7WO">
-      <ref role="4PJHt" to="pop3:173Z5qAOsJs" resolve="SolutionRef" />
     </node>
   </node>
   <node concept="3p36aQ" id="1wEcoXjJk4X">
@@ -1090,10 +1074,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2VfDsV" id="1wEcoXjJk7R" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJk7S" role="3ft7WO">
-      <ref role="4PJHt" to="pop3:3U1VhSFTRMR" resolve="TestCaseRef" />
     </node>
   </node>
 </model>

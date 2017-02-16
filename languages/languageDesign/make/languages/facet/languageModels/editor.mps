@@ -123,7 +123,6 @@
         <property id="1186403771423" name="style" index="Vbekb" />
       </concept>
       <concept id="1186404549998" name="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" flags="ln" index="VechU" />
-      <concept id="615427434521884870" name="jetbrains.mps.lang.editor.structure.SubstituteMenuPart_Subconcepts" flags="ng" index="2VfDsV" />
       <concept id="1186414536763" name="jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem" flags="ln" index="VOi$J">
         <property id="1186414551515" name="flag" index="VOm3f" />
       </concept>
@@ -2550,10 +2549,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node concept="2VfDsV" id="1wEcoXjJiPx" role="3ft7WO" />
-    <node concept="3ft5Ry" id="1wEcoXjJiPy" role="3ft7WO">
-      <ref role="4PJHt" to="vvvw:5$iCEGsO$Lw" resolve="TargetDependency" />
     </node>
   </node>
   <node concept="Q6S24" id="1wEcoXjJiMJ">
