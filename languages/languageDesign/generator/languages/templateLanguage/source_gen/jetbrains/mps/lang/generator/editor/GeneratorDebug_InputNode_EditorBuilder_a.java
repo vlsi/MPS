@@ -19,6 +19,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
 /*package*/ class GeneratorDebug_InputNode_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -122,7 +123,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
     }
 
     private EditorCell createReferencePresentation_6u0t67_a0b0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "nodePtr");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0xb401a68083254110L, 0x8fd384331ff25befL, 0x509c00a998897534L, 0x509c00a99889f6ffL, "nodePtr")));
       editorCell.setCellId("ReferencePresentation_6u0t67_a0b0");
       return editorCell;
     }

@@ -23,6 +23,8 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
+import jetbrains.mps.smodel.adapter.structure.MetaAdapterFactory;
 
 /*package*/ class BuildSolutionRunnerAspect_InspectorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -238,7 +240,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
     }
 
     private EditorCell createReferencePresentation_xi87ym_a0h0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "solution");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x427a473d5177432cL, 0x9905bcbceb71b996L, 0x39ea87a41cc0827eL, 0x54b085b5945c6691L, "solution")));
       editorCell.setCellId("ReferencePresentation_xi87ym_a0h0");
       return editorCell;
     }

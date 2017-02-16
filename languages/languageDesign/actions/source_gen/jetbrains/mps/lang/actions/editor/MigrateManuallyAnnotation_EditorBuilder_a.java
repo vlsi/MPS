@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 import jetbrains.mps.openapi.editor.update.AttributeKind;
 
 /*package*/ class MigrateManuallyAnnotation_EditorBuilder_a extends AbstractEditorBuilder {
@@ -150,7 +151,7 @@ import jetbrains.mps.openapi.editor.update.AttributeKind;
     }
 
     private EditorCell createReferencePresentation_kasd0f_a0b1a0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "migrateTo");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0xaee9cad2acd44608L, 0xaef20004f6a1cdbdL, 0x7ce019826543db5L, 0x7ce019826543db6L, "migrateTo")));
       editorCell.setCellId("ReferencePresentation_kasd0f_a0b1a0");
       return editorCell;
     }

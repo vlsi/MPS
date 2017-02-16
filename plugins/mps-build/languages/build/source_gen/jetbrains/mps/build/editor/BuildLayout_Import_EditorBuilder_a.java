@@ -28,6 +28,7 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
 /*package*/ class BuildLayout_Import_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -129,7 +130,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
     }
 
     private EditorCell createReferencePresentation_4dmy40_a0b0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "target");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0x798100da4f0a421aL, 0xb99171f8c50ce5d2L, 0xbabdfbeee1350f2L, 0xbabdfbeee1350f4L, "target")));
       editorCell.setCellId("ReferencePresentation_4dmy40_a0b0");
       return editorCell;
     }

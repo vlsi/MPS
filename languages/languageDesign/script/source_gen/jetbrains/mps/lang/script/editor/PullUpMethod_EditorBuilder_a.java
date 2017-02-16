@@ -31,6 +31,7 @@ import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
+import jetbrains.mps.smodel.action.IReferentPresentationProvider;
 
 /*package*/ class PullUpMethod_EditorBuilder_a extends AbstractEditorBuilder {
   @NotNull
@@ -187,7 +188,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_RefPresentation;
     }
 
     private EditorCell createReferencePresentation_errt5h_a0d0() {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, "newMethodDeclaration");
+      EditorCell_Property editorCell = EditorCell_RefPresentation.create(getEditorContext(), myNode, myReferencingNode, IReferentPresentationProvider.getDefaultPresentation(MetaAdapterFactory.getReferenceLink(0xeddeefac2d64437L, 0xbc2cde50fd4ce470L, 0xbc887f0950c99c4L, 0x3ae1f3a73b9e55daL, "newMethodDeclaration")));
       editorCell.setCellId("ReferencePresentation_errt5h_a0d0");
       return editorCell;
     }
