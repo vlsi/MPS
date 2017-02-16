@@ -36,7 +36,8 @@ import java.util.List;
   private static final Logger LOG = LogManager.getLogger(ReferentSubstituteActionsHelper.class);
 
   public static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-                                                     IReferentPresentationProvider presentationProvider) {
+                                                     IReferentPresentationProvider matchingTextProvider,
+                                                     IReferentPresentationProvider visibleMatchingTextProvider) {
     // search scope
     // ModelConstraints works with valid links that should be taken from genuine link declaration
     final SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
@@ -47,11 +48,12 @@ import java.util.List;
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
       return Collections.emptyList();
     }
-    return createActions(referenceNode, currentReferent, association, refDescriptor, presentationProvider);
+    return createActions(referenceNode, currentReferent, association, refDescriptor, matchingTextProvider, visibleMatchingTextProvider);
   }
 
   private static List<SubstituteAction> createActions(SNode referenceNode, SNode currentReferent, SReferenceLink association,
-                                                      ReferenceDescriptor descriptor, IReferentPresentationProvider presentationProvider) {
+                                                      ReferenceDescriptor descriptor, IReferentPresentationProvider matchingTextProvider,
+                                                      IReferentPresentationProvider visibleMatchingTextProvider) {
 
     final SAbstractConcept targetConcept = association.getTargetConcept();
     Iterable<SNode> nodes = descriptor.getScope().getAvailableElements(null);
@@ -60,8 +62,9 @@ import java.util.List;
       if (node == null || !node.getConcept().isSubConceptOf(targetConcept)) {
         continue;
       }
-      String presentation = presentationProvider.getPresentation(referenceNode, node);
-      actions.add(new DefaultSReferenceSubstituteAction(node, referenceNode, currentReferent, association, presentation));
+      String matchingText = matchingTextProvider.getPresentation(referenceNode, node);
+      String visibleMatchingText = visibleMatchingTextProvider.getPresentation(referenceNode, node);
+      actions.add(new DefaultSReferenceSubstituteAction(node, referenceNode, currentReferent, association, matchingText, visibleMatchingText));
     }
     return actions;
   }

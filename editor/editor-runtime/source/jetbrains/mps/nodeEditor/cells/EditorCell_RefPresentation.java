@@ -35,7 +35,7 @@ public final class EditorCell_RefPresentation {
   @Deprecated
   public static EditorCell_Property create(EditorContext context, SNode node, SNode refNode, String role) {
     SReferenceLink link = getLinkByRole(refNode.getConcept(), role);
-    IReferentPresentationProvider presentationProvider = link == null ? IReferentPresentationProvider.DEFAULT : IReferentPresentationProvider.getDefault(link);
+    IReferentPresentationProvider presentationProvider = link == null ? IReferentPresentationProvider.DEFAULT_PRESENTATION : IReferentPresentationProvider.getDefaultPresentation(link);
     MyAccessor accessor = new MyAccessor(node, refNode, presentationProvider);
     return EditorCell_Property.create(context, accessor, node);
   }

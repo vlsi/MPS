@@ -78,13 +78,16 @@ public class ModelActions {
 
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
                                                                        IOperationContext context) {
-    IReferentPresentationProvider presentationProvider = IReferentPresentationProvider.getDefault(linkDeclaration);
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, presentationProvider);
+    IReferentPresentationProvider matchingTextProvider = IReferentPresentationProvider.getDefaultMatchingText(linkDeclaration);
+    IReferentPresentationProvider visibleMatchingTextProvider = IReferentPresentationProvider.getDefaultVisibleMatchingText(linkDeclaration);
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
   }
 
   public static List<SubstituteAction> createReferentSubstituteActions(SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-                                                                       @NotNull IReferentPresentationProvider presentationProvider, IOperationContext context) {
-    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, presentationProvider);
+                                                                       @NotNull IReferentPresentationProvider matchingTextProvider,
+                                                                       @NotNull IReferentPresentationProvider visibleMatchingTextProvider,
+                                                                       IOperationContext context) {
+    return ReferentSubstituteActionsHelper.createActions(referenceNode, currentReferent, linkDeclaration, matchingTextProvider, visibleMatchingTextProvider);
   }
 
   //-------------------

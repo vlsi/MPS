@@ -94,6 +94,11 @@ public class NodePresentationUtil {
     }
     return m;
   }
+
+  public static String presentation(@NotNull SNode node, @Nullable SNode context) {
+    return getPresentation(node, SmartReferentUtil.getPresentation(context, node));
+  }
+
   public static String matchingText(SAbstractConcept concept) {
     if (!concept.getConceptAlias().isEmpty()) {
       return concept.getConceptAlias();
@@ -150,9 +155,9 @@ public class NodePresentationUtil {
     return getPresentation(node, SmartReferentUtil.getVisibleMatchingText(context, node));
   }
 
-  private static String getPresentation(SNode node, String matchingText) {
-    if (!StringUtil.isEmpty(matchingText)) {
-      return matchingText;
+  private static String getPresentation(SNode node, String custom) {
+    if (!StringUtil.isEmpty(custom)) {
+      return custom;
     }
     return node.getPresentation();
   }

@@ -34,18 +34,27 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
   private final SNode myCurrentReferent;
   private final SReferenceLink myLink;
   private final String myMatchingText;
+  private final String myVisibleMatchingText;
   private final SNode myTargetNode;
 
   public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link) {
-    this(targetNode, sourceNode, currentReferent, link, IReferentPresentationProvider.getDefault(link).getPresentation(sourceNode, targetNode));
+    this(targetNode,
+         sourceNode,
+         currentReferent,
+         link,
+         IReferentPresentationProvider.getDefaultMatchingText(link).getPresentation(sourceNode, targetNode),
+         IReferentPresentationProvider.getDefaultVisibleMatchingText(link).getPresentation(sourceNode, targetNode)
+    );
   }
 
-  public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link, @NotNull String matchingText) {
+  public DefaultSReferenceSubstituteAction(SNode targetNode, SNode sourceNode, SNode currentReferent, SReferenceLink link, @NotNull String matchingText,
+                                           @NotNull String visibleMatchingText) {
     super(sourceNode);
     myTargetNode = targetNode;
     myCurrentReferent = currentReferent;
     myLink = link;
     myMatchingText = matchingText;
+    myVisibleMatchingText = visibleMatchingText;
     assert myTargetNode.getConcept().isSubConceptOf(myLink.getTargetConcept());
   }
 
@@ -71,7 +80,7 @@ public class DefaultSReferenceSubstituteAction extends AbstractSubstituteAction 
 
   @Override
   public String getVisibleMatchingText(String pattern) {
-    return myMatchingText;
+    return myVisibleMatchingText;
   }
 
   @Override

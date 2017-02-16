@@ -16,7 +16,6 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.MetaAdapterByDeclaration;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -24,7 +23,6 @@ import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SReference;
 
 /**
  * Provides a textual presentation of a referent node.
@@ -37,31 +35,85 @@ public interface IReferentPresentationProvider {
   String getPresentation(@NotNull SNode referenceNode, @NotNull SNode referentNode);
 
   /**
-   * Referent presentation that used by editor in substitute menu & ref. presentation cells when language designer doesn't specify another one.
+   * Default referent presentation that used in `ref. presentation` cells.
    */
-  IReferentPresentationProvider DEFAULT = (referenceNode, referentNode) -> referentNode.getPresentation();
+  IReferentPresentationProvider DEFAULT_PRESENTATION =
+      (referenceNode, referentNode) -> NodePresentationUtil.presentation(referentNode, referenceNode);
 
   /**
-   * TODO 3.4->3.5 compatibility method. after 3.5 use {@link #DEFAULT} instead
+   * Default matching text in completion menu.
+   */
+  IReferentPresentationProvider DEFAULT_MATCHING_TEXT =
+      (referenceNode, referentNode) -> NodePresentationUtil.matchingText(referentNode, referenceNode);
+
+  /**
+   * Default visible matching text in completion menu.
+   */
+  IReferentPresentationProvider DEFAULT_VISIBLE_MATCHING_TEXT =
+      (referenceNode, referentNode) -> NodePresentationUtil.visibleMatchingText(referentNode, referenceNode);
+
+  /**
+   * 3.4->3.5 compatibility method. after 3.5 use {@link #DEFAULT_PRESENTATION} instead
    */
   @ToRemove(version = 2017.2)
-  static IReferentPresentationProvider getDefault(@NotNull SReferenceLink link) {
+  static IReferentPresentationProvider getDefaultPresentation(@NotNull SReferenceLink link) {
     return (referenceNode, referentNode) -> {
       String legacyPresentation =
-          ModelConstraints.getReferenceDescriptor(referenceNode, link).getReferencePresentation(referentNode, false, false, false);
+          ModelConstraints.getReferenceDescriptor(referenceNode, link).getReferencePresentation(referentNode, false, false, true);
       if (legacyPresentation != null) {
         return legacyPresentation;
       }
-      return referentNode.getPresentation();
+      return NodePresentationUtil.presentation(referentNode, referenceNode);
     };
   }
 
   /**
-   * @deprecated use {@link #getDefault(SReferenceLink)} (for 3.4->3.5 compatibility) instead
+   * 3.4->3.5 compatibility method. after 3.5 use {@link #DEFAULT_MATCHING_TEXT} instead
+   */
+  @ToRemove(version = 2017.2)
+  static IReferentPresentationProvider getDefaultMatchingText(@NotNull SReferenceLink link) {
+    return (referenceNode, referentNode) -> {
+      String legacyMatchingText =
+          ModelConstraints.getReferenceDescriptor(referenceNode, link).getReferencePresentation(referentNode, false, false, false);
+      if (legacyMatchingText != null) {
+        return legacyMatchingText;
+      }
+      return NodePresentationUtil.matchingText(referentNode, referenceNode);
+    };
+  }
+
+  /**
+   * @deprecated use {@link #getDefaultMatchingText(SReferenceLink)} (for 3.4->3.5 compatibility) instead
    */
   @Deprecated
   @ToRemove(version = 3.5)
-  static IReferentPresentationProvider getDefault(@NotNull SNode linkDeclaration) {
-    return getDefault(MetaAdapterByDeclaration.getReferenceLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration)));
+  static IReferentPresentationProvider getDefaultMatchingText(@NotNull SNode linkDeclaration) {
+    SReferenceLink link = MetaAdapterByDeclaration.getReferenceLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
+    return link.isValid() ? getDefaultMatchingText(link) : DEFAULT_MATCHING_TEXT;
+  }
+
+  /**
+   * 3.4->3.5 compatibility method. after 3.5 use {@link #DEFAULT_VISIBLE_MATCHING_TEXT} instead
+   */
+  @ToRemove(version = 2017.2)
+  static IReferentPresentationProvider getDefaultVisibleMatchingText(@NotNull SReferenceLink link) {
+    return (referenceNode, referentNode) -> {
+      String legacyMatchingText =
+          ModelConstraints.getReferenceDescriptor(referenceNode, link).getReferencePresentation(referentNode, true, false, false);
+      if (legacyMatchingText != null) {
+        return legacyMatchingText;
+      }
+      return NodePresentationUtil.visibleMatchingText(referentNode, referenceNode);
+    };
+  }
+
+  /**
+   * @deprecated use {@link #getDefaultVisibleMatchingText(SReferenceLink)} (for 3.4->3.5 compatibility) instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.5)
+  static IReferentPresentationProvider getDefaultVisibleMatchingText(@NotNull SNode linkDeclaration) {
+    SReferenceLink link = MetaAdapterByDeclaration.getReferenceLink(SModelUtil.getGenuineLinkDeclaration(linkDeclaration));
+    return link.isValid() ? getDefaultVisibleMatchingText(link) : DEFAULT_VISIBLE_MATCHING_TEXT;
   }
 }
