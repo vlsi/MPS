@@ -15,7 +15,7 @@ import java.util.List;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.typesystemEngine.checker.TypesystemChecker;
+import jetbrains.mps.checkers.TypesystemChecker;
 import jetbrains.mps.checkers.LanguageChecker;
 
 @State(name = "ModelCheckerSettings", storages = @Storage(value = "modelCheckerSettings.xml")

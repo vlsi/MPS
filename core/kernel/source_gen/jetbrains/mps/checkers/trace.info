@@ -53,6 +53,38 @@
       <unit id="3364928926666856641" at="14,0,30,0" name="jetbrains.mps.checkers.LanguageChecker" />
     </file>
   </root>
+  <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/5231630840089786268">
+    <file name="TypesystemChecker.java">
+      <node id="6978373592756382071" at="20,0,21,0" concept="5" trace="myContextOwner" />
+      <node id="6978373592756354578" at="24,76,25,90" concept="10" />
+      <node id="6978373592756373238" at="28,96,29,82" concept="4" />
+      <node id="1436978233839335295" at="32,7,33,18" concept="11" />
+      <node id="5231630840089786270" at="21,0,23,0" concept="2" trace="TypesystemChecker#()V" />
+      <node id="6978373592756373231" at="27,56,30,9" concept="7" />
+      <node id="6978373592756353014" at="27,0,32,0" concept="9" trace="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
+      <node id="5376460755542186281" at="25,90,32,7" concept="4" />
+      <node id="5231630840089786279" at="23,0,35,0" concept="9" trace="getErrors#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Ljava/util/Set;" />
+      <scope id="5231630840089786273" at="21,30,21,30" />
+      <scope id="6978373592756373237" at="28,96,29,82" />
+      <scope id="5231630840089786270" at="21,0,23,0" />
+      <scope id="6978373592756353052" at="27,56,30,9" />
+      <scope id="6978373592756373231" at="27,56,30,9">
+        <var name="pair" id="6978373592756373232" />
+      </scope>
+      <scope id="6978373592756353014" at="27,0,32,0">
+        <var name="typeContext" id="6978373592756353014" />
+      </scope>
+      <scope id="5231630840089786287" at="24,76,33,18">
+        <var name="errors" id="6978373592756354579" />
+      </scope>
+      <scope id="5231630840089786279" at="23,0,35,0">
+        <var name="node" id="5231630840089786283" />
+        <var name="repository" id="5231630840089786285" />
+      </scope>
+      <unit id="6978373592756353014" at="26,85,32,5" name="jetbrains.mps.checkers.TypesystemChecker$1" />
+      <unit id="5231630840089786268" at="19,0,36,0" name="jetbrains.mps.checkers.TypesystemChecker" />
+    </file>
+  </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/6803901086853929087">
     <file name="ErrorReportUtil.java">
       <node id="414045414354340895" at="21,61,22,35" concept="10" />

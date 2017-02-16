@@ -9023,11 +9023,11 @@
               <node concept="2OqwBi" id="3fCX6WCBvIi" role="25WWJ7">
                 <node concept="2ShNRf" id="63oasX2ebIj" role="2Oq$k0">
                   <node concept="1pGfFk" id="63oasX2ebIk" role="2ShVmc">
-                    <ref role="37wK5l" to="k8ev:4yqv8vrxVuu" resolve="TypesystemChecker" />
+                    <ref role="37wK5l" to="wsw7:4yqv8vrxVuu" resolve="TypesystemChecker" />
                   </node>
                 </node>
                 <node concept="liA8E" id="3fCX6WCBvIk" role="2OqNvi">
-                  <ref role="37wK5l" to="k8ev:4yqv8vrxVuB" resolve="getErrors" />
+                  <ref role="37wK5l" to="wsw7:4yqv8vrxVuB" resolve="getErrors" />
                   <node concept="37vLTw" id="3fCX6WCBvIm" role="37wK5m">
                     <ref role="3cqZAo" node="3fCX6WCBvHQ" resolve="myRoot" />
                   </node>

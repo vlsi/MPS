@@ -2120,7 +2120,7 @@
                           <ref role="37wK5l" node="2$EeqAz24yU" resolve="applyChecker" />
                           <node concept="2ShNRf" id="7X3$Ctw9fo1" role="37wK5m">
                             <node concept="1pGfFk" id="7X3$Ctw9fo2" role="2ShVmc">
-                              <ref role="37wK5l" to="k8ev:4yqv8vrxVuu" resolve="TypesystemChecker" />
+                              <ref role="37wK5l" to="wsw7:4yqv8vrxVuu" resolve="TypesystemChecker" />
                             </node>
                           </node>
                           <node concept="37vLTw" id="7X3$Ctw9fkA" role="37wK5m">
