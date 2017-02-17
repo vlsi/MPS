@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.ide.blame.dialog;
 
-import com.intellij.credentialStore.CredentialAttributes;
+import com.intellij.credentialStore.CredentialAttributesKt;
 import com.intellij.credentialStore.Credentials;
 import com.intellij.diagnostic.DiagnosticBundle;
+import com.intellij.diagnostic.ErrorReportConfigurable;
+import com.intellij.diagnostic.JetBrainsAccountDialogKt;
 import com.intellij.ide.BrowserUtil;
-import com.intellij.ide.passwordSafe.PasswordSafe;
 import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.openapi.application.ApplicationInfo;
 import com.intellij.openapi.application.ex.ApplicationInfoEx;
@@ -28,11 +29,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.util.DimensionService;
-import com.intellij.ui.HideableTitledPanel;
+import com.intellij.ui.HyperlinkLabel;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBLabel;
-import com.intellij.ui.components.JBPasswordField;
-import com.intellij.ui.components.JBRadioButton;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.ui.components.JBTextField;
 import com.intellij.uiDesigner.core.GridConstraints;
@@ -41,32 +40,21 @@ import jetbrains.mps.ide.blame.command.Command;
 import jetbrains.mps.ide.blame.command.Poster;
 import jetbrains.mps.ide.blame.perform.Query;
 import jetbrains.mps.ide.blame.perform.Response;
-import jetbrains.mps.ide.diagnostic.MPSErrorReporterConfigurable;
 import jetbrains.mps.util.annotation.ToRemove;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.AbstractAction;
-import javax.swing.BorderFactory;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
-import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import java.awt.BorderLayout;
+import javax.swing.event.HyperlinkEvent;
 import java.awt.Dialog;
 import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.Insets;
-import java.awt.Point;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -74,20 +62,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BlameDialog extends DialogWrapper {
-  private static final Logger LOG = LogManager.getLogger(BlameDialog.class);
   private static final String CAPTION = "Submit System Exception to Developers";
 
   private JPanel myPanel;
-  private JTextArea myDescriptionField;
-  private JTextArea myException;
-  private JTextField myUsername;
-  private JPasswordField myPassword;
-  private JButton myTestLoginButton;
-  private JRadioButton myRegisteredRadio;
-  private JRadioButton myAnonymousRadio;
   private JTextField myTitleField;
-  private JCheckBox myHiddenCheckBox;
+  private JTextArea myDescriptionField;
   private JPanel myExceptionContainer;
+  private JTextArea myException;
+  private JCheckBox myHiddenCheckBox;
+  private HyperlinkLabel myCredentialsLabel;
 
   private boolean myIsCancelled = true;
   private Response myResult;
@@ -99,7 +82,6 @@ public class BlameDialog extends DialogWrapper {
   private List<File> myFilesToAttach = new ArrayList<>();
   private String mySubsystem = null;
   private PluginDescriptor myPluginDescriptor;
-  private String mySourceRevision;
 
   public BlameDialog(Project project, Dialog dialog) {
     super(dialog, true);
@@ -144,31 +126,27 @@ public class BlameDialog extends DialogWrapper {
   @Deprecated /*Unused method*/
   @ToRemove(version = 2017.1)
   public void setSourceRevision(String sourceRevision) {
-    mySourceRevision = sourceRevision;
   }
 
   @Override
   protected JComponent createCenterPanel() {
-    myPanel = new JPanel(new BorderLayout());
+    myPanel = new JPanel(new GridLayoutManager(7, 1, new Insets(0, 0, 0, 0), -1, -1));
 
-    JPanel issuePanel = new JPanel(new GridLayoutManager(6, 1, new Insets(0, 0, 0, 0), -1, -1));
-    issuePanel.setBorder(BorderFactory.createTitledBorder(BorderFactory.createEtchedBorder(), "Issue properties"));
-
-    issuePanel.add(new JBLabel("Title:"), getConstraints(issuePanel.getComponentCount()));
+    myPanel.add(new JBLabel("Title:"), getConstraints(myPanel.getComponentCount()));
     myTitleField = new JBTextField();
-    issuePanel.add(myTitleField, getConstraints(issuePanel.getComponentCount()));
+    myPanel.add(myTitleField, getConstraints(myPanel.getComponentCount()));
 
-    issuePanel.add(new JBLabel(DiagnosticBundle.message("error.dialog.comment.prompt")), getConstraints(issuePanel.getComponentCount()));
+    myPanel.add(new JBLabel(DiagnosticBundle.message("error.dialog.comment.prompt")), getConstraints(myPanel.getComponentCount()));
     myDescriptionField = new JTextArea();
     myDescriptionField.setEditable(true);
     myDescriptionField.setRows(2);
     JBScrollPane descriptionScrollPane = new JBScrollPane();
     descriptionScrollPane.setViewportView(myDescriptionField);
-    final GridConstraints descriptionConstraints = getConstraints(issuePanel.getComponentCount());
+    final GridConstraints descriptionConstraints = getConstraints(myPanel.getComponentCount());
     descriptionConstraints.setAnchor(GridConstraints.ANCHOR_CENTER);
     descriptionConstraints.setFill(GridConstraints.FILL_BOTH);
     descriptionConstraints.setVSizePolicy(GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_WANT_GROW);
-    issuePanel.add(descriptionScrollPane, descriptionConstraints);
+    myPanel.add(descriptionScrollPane, descriptionConstraints);
 
     myExceptionContainer = new JPanel(new GridLayoutManager(2, 1, new Insets(0, 0, 0, 0), -1, -1));
 
@@ -179,52 +157,28 @@ public class BlameDialog extends DialogWrapper {
     exceptionScrollPane.setViewportView(myException);
     myExceptionContainer.add(exceptionScrollPane, getConstraints(myExceptionContainer.getComponentCount()));
 
-    issuePanel.add(myExceptionContainer, getConstraints(issuePanel.getComponentCount()));
+    myPanel.add(myExceptionContainer, getConstraints(myPanel.getComponentCount()));
 
     myHiddenCheckBox = new JBCheckBox("Visible only to MPS developers");
-    issuePanel.add(myHiddenCheckBox, getConstraints(issuePanel.getComponentCount()));
+    myPanel.add(myHiddenCheckBox, getConstraints(myPanel.getComponentCount()));
     myHiddenCheckBox.setToolTipText("Select this if you want this bug report will be visible only to you and MPS developers");
 
-    myPanel.add(issuePanel, BorderLayout.CENTER);
-
-    JPanel bugTrackerPanel = new JPanel(new GridLayoutManager(7, 1, new Insets(0, 0, 0, 0), -1, -1));
-    HideableTitledPanel hideableTitledPanel = new HideableTitledPanel("Bug tracker login settings", bugTrackerPanel, false);
-
-    myAnonymousRadio = new JBRadioButton("Anonymous");
-    myAnonymousRadio.setSelected(true);
-    bugTrackerPanel.add(myAnonymousRadio, getConstraints(bugTrackerPanel.getComponentCount()));
-    myRegisteredRadio = new JBRadioButton("Registered user");
-    myAnonymousRadio.setSelected(false);
-    bugTrackerPanel.add(myRegisteredRadio, getConstraints(bugTrackerPanel.getComponentCount()));
-
-    ButtonGroup buttonGroup;
-    buttonGroup = new ButtonGroup();
-    buttonGroup.add(myRegisteredRadio);
-    buttonGroup.add(myAnonymousRadio);
-
-    bugTrackerPanel.add(new JBLabel("Username:"), getConstraints(bugTrackerPanel.getComponentCount()));
-    myUsername = new JBTextField();
-    myUsername.setEnabled(false);
-    bugTrackerPanel.add(myUsername, getConstraints(bugTrackerPanel.getComponentCount()));
-
-    bugTrackerPanel.add(new JBLabel("Password:"), getConstraints(bugTrackerPanel.getComponentCount()));
-    myPassword = new JBPasswordField();
-    myPassword.setEnabled(false);
-    bugTrackerPanel.add(myPassword, getConstraints(bugTrackerPanel.getComponentCount()));
-
-    myTestLoginButton = new JButton("Test Login");
-    myTestLoginButton.setEnabled(false);
-    final GridConstraints buttonConstraints = getConstraints(bugTrackerPanel.getComponentCount());
-    buttonConstraints.setFill(GridConstraints.FILL_NONE);
-    buttonConstraints.setAnchor(GridConstraints.ANCHOR_EAST);
-    bugTrackerPanel.add(myTestLoginButton, buttonConstraints);
-
-    myPanel.add(hideableTitledPanel, BorderLayout.SOUTH);
+    myCredentialsLabel = new HyperlinkLabel();
+    myCredentialsLabel.addHyperlinkListener(e -> {
+      if (e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+        JetBrainsAccountDialogKt.showJetBrainsAccountDialog(getRootPane()).show();
+        updateCredentialsPane();
+      }
+    });
+    final GridConstraints credentialsConstraints = getConstraints(myPanel.getComponentCount());
+    credentialsConstraints.setAnchor(GridConstraints.ANCHOR_EAST);
+    credentialsConstraints.setFill(GridConstraints.FILL_NONE);
+    myPanel.add(myCredentialsLabel, credentialsConstraints);
 
     return myPanel;
   }
 
-  private final GridConstraints getConstraints(int row) {
+  private GridConstraints getConstraints(int row) {
     return new GridConstraints(row, 0, 1, 1,
                                GridConstraints.ANCHOR_WEST,
                                GridConstraints.FILL_HORIZONTAL,
@@ -239,6 +193,20 @@ public class BlameDialog extends DialogWrapper {
     return myDescriptionField;
   }
 
+  private void updateCredentialsPane() {
+    Credentials credentials = ErrorReportConfigurable.getCredentials();
+    if (CredentialAttributesKt.isFulfilled(credentials)) {
+      assert credentials != null;
+      myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.report.as", credentials.getUserName()));
+    } else {
+      myCredentialsLabel.setHtmlText(DiagnosticBundle.message("diagnostic.error.report.submit.error.anonymously"));
+    }
+  }
+
+  /**
+   * This method initialize UI components and update them with data from setters.<br/>
+   * Must be called before {@link DialogWrapper#show()} method.
+   */
   public void initDialog() {
     setTitle(CAPTION);
     setModal(true);
@@ -256,49 +224,13 @@ public class BlameDialog extends DialogWrapper {
       myException.setText(builder.toString());
     }
 
-    myAnonymousRadio.addChangeListener(e -> {
-      boolean enabled = !myAnonymousRadio.getModel().isSelected();
-      myUsername.setEnabled(enabled);
-      myPassword.setEnabled(enabled);
-      myTestLoginButton.setEnabled(enabled);
-    });
-
-    myTestLoginButton.setAction(new AbstractAction("Test Login") {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        Poster poster = new Poster(myProject);
-        Query query = createQuery();
-
-        Response response = poster.test(query);
-        if (response.isSuccess()) {
-          Messages.showMessageDialog(myProject, response.getMessage(), "Test Login", Messages.getInformationIcon());
-          saveCredentials(); // On success test login we can save credentials
-        } else {
-          Messages.showErrorDialog(myProject, response.getMessage(), "Test Login Failed");
-          LOG.warn("Submit failed: " + response.getMessage() + ":" + response.getResponseString(), response.getThrowable());
-        }
-      }
-    });
-    myTestLoginButton.setEnabled(false); // javax.swing.AbstractButton.setAction() set button to enabled state
-
-    final Credentials credentials = MPSErrorReporterConfigurable.getCredentials();
-    if (credentials == null) {
-      myAnonymousRadio.setSelected(true);
-    } else {
-      myRegisteredRadio.setSelected(true);
-      myUsername.setText(credentials.getUserName());
-      myPassword.setText(credentials.getPasswordAsString());
-    }
+    updateCredentialsPane();
 
     Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
     if (size == null) {
       myPanel.setPreferredSize(new Dimension(750, 550));
     }
 
-    Point location = DimensionService.getInstance().getLocation(getDimensionServiceKey(), myProject);
-    if (location == null) {
-      setLocation(200, 200);
-    }
     setOKButtonText("Send");
     setOKButtonMnemonic('S');
   }
@@ -310,8 +242,9 @@ public class BlameDialog extends DialogWrapper {
   }
 
   private Query createQuery() {
-    return myAnonymousRadio.isSelected() || myUsername.getText().isEmpty() ? Query.ANONYMOUS :
-           new Query(myUsername.getText(), new String(myPassword.getPassword()));
+    Credentials credentials = ErrorReportConfigurable.getCredentials();
+    return CredentialAttributesKt.isFulfilled(credentials) ?
+           new Query(credentials.getUserName(), credentials.getPasswordAsString()) : Query.ANONYMOUS;
   }
 
   private String ex2str(Throwable e) {
@@ -413,7 +346,6 @@ public class BlameDialog extends DialogWrapper {
     openIssueInBrowser();
 
     myIsCancelled = false;
-    saveCredentials();
     close(DialogWrapper.OK_EXIT_CODE);
   }
 
@@ -429,11 +361,5 @@ public class BlameDialog extends DialogWrapper {
     myResult = null;
     myIsCancelled = true;
     close(DialogWrapper.CANCEL_EXIT_CODE);
-  }
-
-  private void saveCredentials() {
-    final CredentialAttributes credentialAttributes = new CredentialAttributes(MPSErrorReporterConfigurable.SERVICE, myUsername.getText());
-    final Credentials credentials = new Credentials(myUsername.getText(), String.valueOf(myPassword.getPassword()));
-    PasswordSafe.getInstance().set(credentialAttributes, myRegisteredRadio.isSelected() ? credentials : null);
   }
 }
